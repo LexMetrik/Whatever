@@ -8,8 +8,13 @@
 //   (3) Cross-Link-Integrität — jeder botschaftKey verweist auf einen existierenden
 //       Paket-2-Botschaftseintrag (kein toter Link, §8; Cross-Package-Key-Stabilität, Finding 9).
 //   (4) Sortierung — Datum absteigend.
-//   (5) DSG-Regressionsanker — Timeline SR 235.1 enthält Einträge VOR und NACH der
-//       Totalrevision 2020 (spannt die Totalrevision, Referenzfall).
+//   (5) Regressionsanker. BIS 22.9.2026: «DSG-Timeline SR 235.1 enthält Einträge VOR und NACH
+//       der Totalrevision 2020» — FALSIFIZIERT 23.9.2026 (S6-D1, AE-3): Einträge vor 2020
+//       waren Änderungen des VORGÄNGER-DSG 1992 (anderes Abstract, gleiche SR), der Anker
+//       hat genau die Fehlerklasse festgeschrieben. Seither vier Anker aus der amtlichen
+//       Rechtsanalyse (live 23.9.2026): DSG ohne Eintrag vor 2023-09-01 und ohne Stammerlass
+//       AS 2022 491; ZPO ohne GestG AS 2000 2355; OR mit dem Sammelerlass AS 2022 732 (AE-4)
+//       und der Aktienrechtsrevision AS 2020 4005 an 2021-01-01 UND 2023-01-01 (AE-5).
 //   (6) nichtKonsolidiert-Marker gesetzt gdw. dateEntryInForce > Korpus-Stand (Finding 4).
 //   (7) Coverage — je Bund-Volltext-Erlass genau ein Sidecar (kein Drift Grundmenge↔Dateien).
 //   (8) §8-Marker (§703, Semantik zweimal korrigiert — Gegenprüfung PR #827 Auflagen a+f — s.
@@ -20,13 +25,22 @@
 //       für den oc eine `rectifies`-Bindung UND raw.rectifiesInfoProOc löst sie auf eine von
 //       `sidecar.sr` abweichende SR auf). Rot-Beweis (§6.7): manuell ein `plausibilitaet`
 //       ohne Rückhalt in raw eingefügt → dieser Ast schlägt fehl (s. ROADMAP-CHRONIK.md).
+//   (9)-(12) Pfad (c), S6-D1 23.9.2026 (Befunde AE-2..AE-5) — direkt aus raw.kontext, OHNE
+//       baueRevisionen: (9) kein Eintrag ist der Stammerlass (`kontext.basicAct`); (10) jeder
+//       Marker verlinkt die Fassung seines Datums (`/eli/<abstract>/<YYYYMMDD>/de`) und das
+//       Datum ist ein Pfad-(a)-Stand (Rot-Beleg: der Alt-Link `/eli/cc/<SR>` fällt hier durch);
+//       (11) Einträge ohne `wirkungen` (nur Pfad b) liegen im Geltungsfenster
+//       [inkrafttreten, aufhebung]; (12) `etappen` ≥ 2, aufsteigend, enthält das eigene Datum,
+//       und jede Etappe steht als Eintrag desselben ocUri da; `wirkungen` nur bekannte Werte.
+//       Jeder Bund-Volltext-Erlass mit Pin trägt raw.kontext.
 //
 // NETZ (`check:revisionen-netz`, in check:netz, --netz): Stichproben-Nachfahrt Pfad (b) +
 // Cross-Check (a)vs(b) gegen den amtlichen Endpunkt; Treffermenge/shas vs. committet, Drift=Exit 1.
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import {
   grundmenge, holeBindingsB, holeStaendeA, baueRevisionen, serialisiere, botschaftIndex,
-  ermittleBelegteOcs, holeRectifiesSr, baueOcZuRectifiesSr, type RevisionSidecar, type RectifiesInfo,
+  ermittleBelegteOcs, holeRectifiesSr, baueOcZuRectifiesSr, holeAbstractStamm, holeAuswirkungen, holeOcStamm,
+  fassungsUrl, WIRKUNGEN, type RevisionSidecar, type RectifiesInfo, type RevisionsKontext, type OcStamm,
 } from './revisionen-generieren.ts';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register.ts';
 import { BOTSCHAFTEN } from '../../src/lib/materialien/botschaften.generated.ts';
@@ -64,13 +78,15 @@ for (const m of meta) {
   if (!existsSync(rawP)) { fehler.push(`Determinismus: store-raw fehlt für ${m.key}.`); continue; }
   const raw = JSON.parse(readFileSync(rawP, 'utf8')) as {
     korpusStand: string; bBindings: SparqlBinding[]; aStaende: string[]; belegteOcs?: string[];
-    rectifiesInfoProOc?: Record<string, RectifiesInfo>;
+    rectifiesInfoProOc?: Record<string, RectifiesInfo>; kontext?: RevisionsKontext | null;
   };
+  const kontext = raw.kontext ?? undefined;
+  if (!kontext) fehler.push(`${m.key}: store-raw ohne Pfad-(c)-Kontext (normtext:revisionen neu laufen lassen).`);
   const belegteOcsSet = new Set(raw.belegteOcs ?? []);
   const rectifiesInfoProOc = new Map(Object.entries(raw.rectifiesInfoProOc ?? {}));
 
   // (1) Determinismus: aus raw neu bauen (mit committetem abgerufen + raw.korpusStand).
-  const neu = baueRevisionen(m, raw.bBindings, raw.aStaende, raw.korpusStand, ocZuBotschaft, sidecar.abgerufen, belegteOcsSet, rectifiesInfoProOc);
+  const neu = baueRevisionen(m, raw.bBindings, raw.aStaende, raw.korpusStand, ocZuBotschaft, sidecar.abgerufen, belegteOcsSet, rectifiesInfoProOc, kontext);
   if (serialisiere(neu) !== serialisiere(sidecar)) {
     fehler.push(`Determinismus: ${m.key} — Neubau aus raw ≠ committetes Sidecar (Nichtdeterminismus oder Handedit).`);
   }
@@ -78,7 +94,6 @@ for (const m of meta) {
   // (2)-(6) Invarianten auf dem committeten Sidecar.
   if (!registerKeys.has(sidecar.erlassKey)) fehler.push(`${m.key}: erlassKey nicht im Register.`);
   let vorher = '￿';
-  let hatVor2020 = false, hatAb2020 = false;
   for (const r of sidecar.revisionen) {
     if (r.art !== 'aenderung' && r.art !== 'sammelerlass-marker') fehler.push(`${m.key}: unbekannte art «${r.art}».`);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(r.dateEntryInForce)) fehler.push(`${m.key}: dateEntryInForce «${r.dateEntryInForce}» nicht ISO.`);
@@ -117,15 +132,44 @@ for (const m of meta) {
     // Text-Beleg (belegteOcs) vorliegt.
     const soll = r.dateEntryInForce > raw.korpusStand && !(r.ocUri && belegteOcsSet.has(r.ocUri));
     if (soll !== !!r.nichtKonsolidiert) fehler.push(`${m.key}: nichtKonsolidiert falsch bei ${r.dateEntryInForce} (Korpus-Stand ${raw.korpusStand}).`);
+    // (9)-(12) Pfad (c), direkt aus raw (s. Kopf).
+    if (kontext) {
+      if (r.ocUri && r.ocUri === kontext.basicAct) fehler.push(`${m.key}: Stammerlass ${r.ocUri} als Eintrag (AE-3).`);
+      if (r.art === 'sammelerlass-marker') {
+        const soll = fassungsUrl(kontext.abstractEli, r.dateEntryInForce);
+        if (r.quelleUrl !== soll) fehler.push(`${m.key}: Marker ${r.dateEntryInForce} verlinkt «${r.quelleUrl}» statt der Fassung «${soll}» (AE-2).`);
+        if (!raw.aStaende.includes(r.dateEntryInForce)) fehler.push(`${m.key}: Marker ${r.dateEntryInForce} ist kein Pfad-(a)-Stand (Link ohne Fassung).`);
+      }
+      if (r.art === 'aenderung' && !r.wirkungen) {
+        if (kontext.inkrafttreten && r.dateEntryInForce < kontext.inkrafttreten) fehler.push(`${m.key}: Pfad-(b)-Eintrag ${r.roFundstelle ?? r.ocUri} ${r.dateEntryInForce} vor Inkrafttreten ${kontext.inkrafttreten} (AE-3).`);
+        if (kontext.aufhebung && r.dateEntryInForce > kontext.aufhebung) fehler.push(`${m.key}: Pfad-(b)-Eintrag ${r.roFundstelle ?? r.ocUri} ${r.dateEntryInForce} nach Aufhebung ${kontext.aufhebung}.`);
+      }
+    }
+    if (r.wirkungen) {
+      for (const w of r.wirkungen) if (!(WIRKUNGEN as readonly string[]).includes(w)) fehler.push(`${m.key}: unbekannte Wirkung «${w}».`);
+      if (r.art !== 'aenderung') fehler.push(`${m.key}: wirkungen auf einem ${r.art}-Eintrag.`);
+    }
+    if (r.etappen) {
+      const e = r.etappen;
+      const sortiert = e.every((d, i) => i === 0 || e[i - 1] < d);
+      if (e.length < 2 || !sortiert || !e.includes(r.dateEntryInForce)) fehler.push(`${m.key}: etappen ${e.join(',')} inkonsistent bei ${r.ocUri} ${r.dateEntryInForce}.`);
+      for (const d of e) {
+        if (!sidecar.revisionen.some((x) => x.ocUri === r.ocUri && x.dateEntryInForce === d)) fehler.push(`${m.key}: Etappe ${d} von ${r.ocUri} ohne eigenen Eintrag.`);
+      }
+    }
     // (4) Sortierung Datum absteigend.
     if (r.dateEntryInForce > vorher) fehler.push(`${m.key}: Sortierung verletzt bei ${r.dateEntryInForce} (> ${vorher}).`);
     vorher = r.dateEntryInForce;
-    if (r.dateEntryInForce < '2020-09-01') hatVor2020 = true; else hatAb2020 = true;
   }
 
-  // (5) DSG-Regressionsanker: spannt die Totalrevision 2020.
-  if (m.key === 'DSG' && !(hatVor2020 && hatAb2020)) {
-    fehler.push('DSG-Anker: Timeline spannt die Totalrevision 2020 NICHT (Einträge vor UND nach 2020-09-01 erwartet).');
+  // (5) Regressionsanker (s. Kopf; AE-3/AE-4/AE-5).
+  const hat = (fund: string, datum?: string) => sidecar.revisionen.some((r) => r.roFundstelle === fund && (!datum || r.dateEntryInForce === datum));
+  if (m.key === 'DSG' && (sidecar.revisionen.some((r) => r.dateEntryInForce < '2023-09-01') || hat('AS 2022 491'))) {
+    fehler.push('DSG-Anker: Eintrag vor dem Inkrafttreten 2023-09-01 oder Stammerlass AS 2022 491 in der Timeline (AE-3).');
+  }
+  if (m.key === 'ZPO' && hat('AS 2000 2355')) fehler.push('ZPO-Anker: GestG AS 2000 2355 (Vorgänger gleicher SR) in der Timeline (AE-3).');
+  if (m.key === 'OR' && !(hat('AS 2022 732') && hat('AS 2020 4005', '2021-01-01') && hat('AS 2020 4005', '2023-01-01'))) {
+    fehler.push('OR-Anker: Sammelerlass AS 2022 732 oder eine Etappe von AS 2020 4005 (2021-01-01/2023-01-01) fehlt (AE-4/AE-5).');
   }
 }
 
@@ -144,6 +188,14 @@ if (netz) {
     // bliebe grün, §6.7 «ein Tor, das nicht scheitern kann»).
     const rectifiesZieleFrisch = [...new Set(bindings.map((b) => b.rectifies?.value).filter((v): v is string => !!v))];
     const zielInfoProOcFrisch = await holeRectifiesSr(rectifiesZieleFrisch, fetch);
+    // Pfad (c) frisch (S6-D1): sonst könnten holeAuswirkungen/holeAbstractStamm/holeOcStamm
+    // beliebig kaputtgehen und dieses Netz-Tor bliebe grün (§6.7).
+    const stichAbstracts = stichprobe.map((m) => liesAbstract(m.sr)).filter((a) => !!a);
+    const stammFrisch = await holeAbstractStamm(stichAbstracts, fetch);
+    const auswFrisch = await holeAuswirkungen(stichAbstracts, fetch);
+    const bOcsFrisch = new Set(bindings.map((b) => b.oc?.value));
+    const ocNurCFrisch = [...new Set([...auswFrisch.values()].flat().map((a) => a.oc))].filter((oc) => !bOcsFrisch.has(oc));
+    const ocStammFrisch = await holeOcStamm(ocNurCFrisch, fetch);
     for (const m of stichprobe) {
       const committet = lade(m.key);
       const rawP = `${RAW_DIR}/${m.key}.json`;
@@ -160,10 +212,30 @@ if (netz) {
       // Text-Beleg für die ohnehin gezogene Stichprobe frisch gegen die amtliche
       // Konsolidierungs-XML nachfahren (1 XML-Fetch je Erlass mit Kandidaten) und gegen
       // `raw.belegteOcs` vergleichen — Drift = Rot.
-      const kandidatOcs = [...new Set(
-        frischeBindings.filter((b) => (b.dateForce?.value ?? '') > raw.korpusStand)
-          .map((b) => b.oc?.value).filter((v): v is string => !!v),
-      )];
+      let kontextFrisch: RevisionsKontext | undefined;
+      if (abstractEli) {
+        const st = stammFrisch.get(abstractEli) ?? {};
+        const ausw = auswFrisch.get(abstractEli) ?? [];
+        const eigene = new Set(frischeBindings.map((b) => b.oc?.value));
+        const ocStamm: Record<string, OcStamm> = {};
+        for (const oc of [...new Set(ausw.map((a) => a.oc))].sort()) {
+          if (eigene.has(oc)) continue;
+          const bs = bindings.filter((b) => b.oc?.value === oc);
+          const min = (w: (string | undefined)[]) => w.filter((v): v is string => !!v).sort()[0];
+          const sB: OcStamm | undefined = bs.length ? {
+            dateForce: min(bs.map((b) => b.dateForce?.value)), dateDoc: min(bs.map((b) => b.dateDoc?.value)),
+            roId: min(bs.map((b) => b.roId?.value)), titelDe: min(bs.map((b) => b.titleDe?.value)),
+            titelFr: min(bs.map((b) => b.titleFr?.value)), titelIt: min(bs.map((b) => b.titleIt?.value)),
+          } : undefined;
+          const st2 = sB ?? ocStammFrisch.get(oc);
+          if (st2) ocStamm[oc] = Object.fromEntries(Object.entries(st2).filter(([, v]) => v !== undefined)) as OcStamm;
+        }
+        kontextFrisch = { abstractEli, basicAct: st.basicAct, inkrafttreten: st.inkrafttreten, aufhebung: st.aufhebung, auswirkungen: ausw, ocStamm };
+      }
+      const kandidatOcs = [...new Set([
+        ...frischeBindings.filter((b) => (b.dateForce?.value ?? '') > raw.korpusStand).map((b) => b.oc?.value),
+        ...(kontextFrisch?.auswirkungen ?? []).filter((a) => (a.datum ?? '') > raw.korpusStand).map((a) => a.oc),
+      ].filter((v): v is string => !!v))].sort();
       const konsEli = abstractEli ? `${abstractEli}/${raw.korpusStand.replace(/-/g, '')}` : null;
       const belegteOcsFrisch = konsEli && kandidatOcs.length
         ? await ermittleBelegteOcs(konsEli, kandidatOcs, fetch) : new Set<string>();
@@ -178,7 +250,7 @@ if (netz) {
       }
 
       const rectifiesInfoProOcFrisch = baueOcZuRectifiesSr(frischeBindings, zielInfoProOcFrisch);
-      const frisch = baueRevisionen(m, frischeBindings, aStaende, raw.korpusStand, ocZuBotschaft, committet.abgerufen, belegteOcsFrisch, rectifiesInfoProOcFrisch);
+      const frisch = baueRevisionen(m, frischeBindings, aStaende, raw.korpusStand, ocZuBotschaft, committet.abgerufen, belegteOcsFrisch, rectifiesInfoProOcFrisch, kontextFrisch);
       if (frisch.sha !== committet.sha) {
         fehler.push(`Netz-Drift: ${m.key} — frische Query-sha ≠ committet (${frisch.revisionen.length} vs ${committet.revisionen.length} Einträge). Neu generieren.`);
       }
@@ -205,4 +277,4 @@ if (fehler.length) {
   process.exit(1);
 }
 const total = meta.reduce((n, m) => n + (lade(m.key)?.revisionen.length ?? 0), 0);
-console.log(`check:revisionen grün${netz ? ' (+netz)' : ''}: ${meta.length} Sidecars, ${total} Einträge, Determinismus + Schema + Cross-Link + DSG-Anker ok.`);
+console.log(`check:revisionen grün${netz ? ' (+netz)' : ''}: ${meta.length} Sidecars, ${total} Einträge, Determinismus + Schema + Cross-Link + Pfad (c) + Anker DSG/ZPO/OR ok.`);

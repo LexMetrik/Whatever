@@ -1,8 +1,8 @@
 {
   "erlassKey": "PUEG",
   "sr": "942.20",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,69 +13,89 @@
       "titelDe": "Preisüberwachungsgesetz. Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale concernant la surveillance des prix. Erratum (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla sorveglianza dei prezzi. Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/206/de",
-      "sha": "ed4262eb89a8acbe5404f5858f933436b3b1b52ed4f7dc7c8471778c3872e9d0"
+      "sha": "b90aadc2352473d55ebed738d86d780af8418873e05f58dc901659200fa2a4fd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/942.20",
-      "sha": "a5cbe5c232f688d55753ee56be2995ab7c2066390632de7d64e6a00d254e967f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3655",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "sha": "98d16fb59413c6c4baa7392dc8196897ed57422734e9dc5d05c78fdcf450a38c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/942.20",
-      "sha": "9141a4a483f3119e90925b515a8c600747798a055b5d538823c9d2eacc914827"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1986-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895",
-      "dateDocument": "1985-12-20",
-      "roFundstelle": "AS 1986 895",
-      "titelDe": "Preisüberwachungsgesetz vom 20. Dezember 1985 (PüG)",
-      "titelFr": "Loi fédérale du 20 décembre 1985 concernant la surveillance des prix (LSPr)",
-      "titelIt": "Legge federale del 20 dicembre 1985 sulla sorveglianza dei prezzi (LSPr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/895_895_895/de",
-      "sha": "b49b560e03c6b15c362dee5f4e32f6c3868a9b5f01b2559f0efef3259aa4e3f5"
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/546_546_546",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 546",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+      "titelFr": "Loi fédérale du 6 octobre 1995 sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
+      "titelIt": "Legge federale del 6 ottobre 1995 sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/546_546_546/de",
+      "sha": "13f4fddb9a88e7729cfcf0b5cbdd96b6c98bee1afaf16c00bf34be0e3713f9e4"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1976-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/2552_2552_2552",
-      "dateDocument": "1975-12-19",
-      "roFundstelle": "AS 1975 2552",
-      "titelDe": "Bundesbeschluss vom 19. Dezember 1975 über die Preisüberwachung",
-      "titelFr": "Arrêté fédéral du 19 décembre 1975 sur la surveillance des prix",
-      "titelIt": "Decreto federale del 19 dicembre 1975 concernente la vigilanza sui prezzi",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/2552_2552_2552/de",
-      "sha": "98b660ae3fc389b0b2e482a70e42b6ab51fb77e5f5a3a7fb99fc2b01ae9417e1"
+      "dateEntryInForce": "1992-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 288",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+      "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+      "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/288_288_288/de",
+      "sha": "0c5574a100dad5b72cbeba99589bf267f0999e850fb4637d013b4edba523c554"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1972-12-20",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/3059_3112_2893",
-      "dateDocument": "1972-12-20",
-      "roFundstelle": "AS 1972 3059",
-      "titelDe": "Bundesbeschluss vom 20. Dezember 1972 betreffend Überwachung der Preise, Löhne und Gewinne",
-      "titelFr": "Arrêté fédéral du 20 décembre 1972 sur la surveillance des prix, des salaires et des bénéfices",
-      "titelIt": "Decreto federale del 20 dicembre 1972 concernente la vigilanza su i prezzi, i salari e i profitti",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/3059_3112_2893/de",
-      "sha": "af88d6f22107c3a0be35b4d84b853aaeced274197165e78f2c26974fcbc36aed"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1966-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1965/1209_1221_1209",
-      "dateDocument": "1965-09-30",
-      "roFundstelle": "AS 1965 1209",
-      "titelDe": "Bundesbeschluss vom 30. September 1965 über Mietzinse für Immobilien",
-      "titelFr": "Arrêté fédéral du 30 septembre 1965 sur les loyers des biens immobiliers",
-      "titelIt": "Decreto federale del 30 settembre 1965 concernente le pigioni di immobili",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1965/1209_1221_1209/de",
-      "sha": "ec84bbd3a1430a7e880ee42dadabc6c8345909659eb3d214a89d09005d4499da"
+      "dateEntryInForce": "1991-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2092_2092_2092",
+      "dateDocument": "1991-03-22",
+      "roFundstelle": "AS 1991 2092",
+      "titelDe": "Preisüberwachungsgesetz (PüG), Änderung",
+      "titelFr": "Loi fédérale concernant la surveillance des prix (LSPr), Modifcation",
+      "titelIt": "Legge federale sulla sorveglianza dei prezzi (LSPr), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2092_2092_2092/de",
+      "sha": "9ab3139b55d8000a1fbe772fa8719da37eef242cc32bb930e50c6ad7298c7f78"
     }
   ],
-  "sha": "1fdfd12d5accaae4431513b85f9ab3073e308cf1817c55915cc28d7c82128e66"
+  "sha": "7d69587911baa79c7956a793c93ef7cb41e9ad07f94cc6766f94505598924e1a"
 }

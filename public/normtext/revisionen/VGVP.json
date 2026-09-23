@@ -1,8 +1,8 @@
 {
   "erlassKey": "VGVP",
   "sr": "814.621",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,45 +14,87 @@
       "titelFr": "Ordonnance du 24 juin 2026 sur les emballages (OEmb)",
       "titelIt": "Ordinanza del 24 giugno 2026 sugli imballaggi (OI)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "vollstaendige-aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/358/de",
-      "sha": "1a0ac463b2f9b5ff50b7cb162f56e2841f32afe01ea29b8c0487cfdd00c8c068"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.621",
-      "sha": "baa14782e7742cb66cc091b8c88a1c25da010d2ac4990877e73b6d64a287f948"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.621",
-      "sha": "74d5e7637b3a99abc02228782d2fb0c7a4eb5f06e9a618808e80157bde834ccc"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.621",
-      "sha": "a5fc279d3c3d081061b5ec4ebb2b42ae53016233dd0f93e93fe09c3f75204f95"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.621",
-      "sha": "9dc56f3f1af73d5fe8058a7c82230256209b08740c633dfbfad84fa3f44e3b83"
+      "sha": "296f28dd6dd734ffe9b34e0de8ccbf107137ba20ebfc4c28f684c7a2bb7c5eec"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2001-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/299",
-      "dateDocument": "2000-07-05",
-      "roFundstelle": "AS 2000 1949",
-      "titelDe": "Verordnung über Getränkeverpackungen (VGV)",
-      "titelFr": "Ordonnance sur les emballages pour boissons (OEB)",
-      "titelIt": "Ordinanza sugli imballaggi per bevande (OIB)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/299/de",
-      "sha": "881055aa645610914f282be060d957357ee84367417ae46997f3f12ec4b277cf"
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/633",
+      "dateDocument": "2021-10-20",
+      "roFundstelle": "AS 2021 633",
+      "titelDe": "Verordnung vom 20. Oktober 2021 über die Rückgabe, die Rücknahme und die Entsorgung elektrischer und elektronischer Geräte (VREG)",
+      "titelFr": "Ordonnance du 20 octobre 2021 sur la restitution, la reprise et l’élimination des appareils électriques et électroniques (OREA)",
+      "titelIt": "Ordinanza del 20 ottobre 2021 concernente la restituzione, la ripresa e lo smaltimento degli apparecchi elettrici ed elettronici (ORSAE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/633/de",
+      "sha": "8bdd22b39d1cdf95fb5e6e03c2ff569330d35c1b50c13f92fc63c57e30701bff"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "2c5ac94c95d54792d20aa35f2fad47c31052ee4233948fb1b05d9876531d69d9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/359",
+      "dateDocument": "2001-09-07",
+      "roFundstelle": "AS 2001 2450",
+      "titelDe": "Verordnung über die Höhe der vorgezogenen Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+      "titelFr": "Ordonnance relative au montant de la taxe d'élimination anticipée sur les bouteilles en verre pour boissons",
+      "titelIt": "Ordinanza relativa all'ammontare della tassa di smaltimento anticipata sugli imballaggi per bevande in vetro",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/359/de",
+      "sha": "7109742a4d42f33860a6aa9fac9fe06fe4bfdbdef13603318b7b0779c990e4bb"
     }
   ],
-  "sha": "71a8288e31a0bf45d94f5b5860611d9520254b432df87a79f17d784f54b7a86c"
+  "sha": "dd4578866a5de3adddb02f90e3c6f3349fb97bc409ea16e2ff70271c3406c3f3"
 }

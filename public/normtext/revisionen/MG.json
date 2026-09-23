@@ -1,8 +1,8 @@
 {
   "erlassKey": "MG",
   "sr": "510.10",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,32 +14,110 @@
       "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
       "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)",
       "botschaftKey": "BOTSCHAFT-2025-960",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/164/de",
-      "sha": "b08b310f931f06b8f6e860ce97871b71a4159cfd0fd2b92fad17483a652effda"
+      "sha": "d75d6d18d6a066ccaff5722c0867367021259092efe64e7846f5093e8c7ee3c9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "31f5897951ffa517b2dc01dd217f70feecd0b8017e65861a1fac60421e90214a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/703",
+      "dateDocument": "2025-03-21",
+      "roFundstelle": "AS 2025 703",
+      "titelDe": "Bundesgesetz über den Bevölkerungsschutz und den Zivilschutz (Bevölkerungs- und Zivilschutzgesetz, BZG) Vorlage B: Bestimmungen zum Koordinierten Sanitätsdienst, dem Koordinierten Verkehr und den kantonalen Notfalltreffpunkten sowie allgemeine Bestimmungen zum Zivilschutz",
+      "titelFr": "Loi fédérale sur la protection de la population et sur la protection civile (LPPCi) Projet B: dispositions relatives au Service sanitaire coordonné, à la coordination des transports et aux points de rencontre d’urgence cantonaux ainsi que dispositions générales relatives à la protection civile",
+      "titelIt": "Legge federale sulla protezione della popolazione e sulla protezione civile (LPPC) Progetto B: disposizioni relative al servizio sanitario coordinato, al coordinamento dei trasporti e ai punti di raccolta d’urgenza cantonali nonché disposizioni generali concernenti la protezione civile",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/703/de",
+      "sha": "448678893eb70f60cd90aae570e1563d8710045bc56c6eee84d2744509c87346"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "fdb96e65fb24de9c16ed1ab184b0920d76c32e4fe81ad913af84105e6cd9bebe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/232",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2022 232",
+      "titelDe": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "titelFr": "Loi fédérale du 18 décembre 2020 sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI)",
+      "titelIt": "Legge federale del 18 dicembre 2020 sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "sha": "f3151f761dceccabc1776ca0903424da4f73bc2464eaaf81738636b73d87984a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/650",
+      "dateDocument": "2023-11-08",
+      "roFundstelle": "AS 2023 650",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Informationssicherheitsgesetzes vom 18. Dezember 2020",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi du 18 décembre 2020 sur la sécurité de l’information",
+      "titelIt": "Ordinanza concernente l’entrata in vigore parziale della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/650/de",
+      "sha": "7759f570a6cb64b16ed6b4fff6dde0e8a0be5f9e27ed3e357421ac51b06db230"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "d1a8304e1a8475ba030b790eb313d5aa01179c44e820be615f80a3279153f898"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/117",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 117",
+      "titelDe": "Bundesgesetz über die militärischen Informationssysteme (MIG)",
+      "titelFr": "Loi fédérale sur les systèmes d’information de l’armée (LSIA)",
+      "titelIt": "Legge federale sui sistemi d’informazione militari (LSIM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-04-01",
+        "2023-09-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/117/de",
+      "sha": "38449c1fc8de493ffcb23f7f7d2bf3795d5883e1eefd81e63c560e5815f25b13"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "460fd920fcdf285d0968284c83fc5c7c6789ba947b53a0bee035914ce67861d5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/117",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 117",
+      "titelDe": "Bundesgesetz über die militärischen Informationssysteme (MIG)",
+      "titelFr": "Loi fédérale sur les systèmes d’information de l’armée (LSIA)",
+      "titelIt": "Legge federale sui sistemi d’informazione militari (LSIM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-04-01",
+        "2023-09-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/117/de",
+      "sha": "399523f7e1f44653ff815297cdb3889e97cd97de64655b33c546db608282995c"
     },
     {
       "art": "aenderung",
@@ -51,20 +129,45 @@
       "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
       "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)",
       "botschaftKey": "BOTSCHAFT-2021-2198",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/725/de",
-      "sha": "c22e9f5ae4be397ea7e37fbb3a8d591642a8efd8e448176721799bca46421fee"
+      "sha": "6095327ba3b3681a21cc163d1a7d57e988b0f7e13ee5879eb83698ed9644d20c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "1d350a5e92794cd3d1ca9c08470512df1795a70dedec4fc255865a84524a8cc7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "56036cdadf4c7c9406bd9c7ce894cfbd817789d865b457b9f8ac2d4b15c9a5f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "5d2fe40ec35fb6880b8e7211ecb9cf76c90b7e2beb54ef058df0ac62aba90834"
     },
     {
       "art": "aenderung",
@@ -76,14 +179,27 @@
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
       "botschaftKey": "BOTSCHAFT-2019-618",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/307/de",
-      "sha": "b31a6e9ff1e6c6d540c3fb41db45e6e6749e3822d8cd9fdf4d4b4b19ae4b7ca1"
+      "sha": "e67d6812700dbee3b66c54b13ef33e6fada88691b198431ddf5b0ac7f9c236c9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "3beda3b60714ffe672affa4a66ce2ad1575aa401ecfb9b5c3f07334cf8debc8b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
       "art": "aenderung",
@@ -94,8 +210,11 @@
       "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/490/de",
-      "sha": "a7c812bcc8ef67318d77f70f2ed8b10dad3d56deb6c9d4858d570ce2bef098df"
+      "sha": "2a4fc72b72d8faffaa8b6cf40fe98624b8e0edd61e20c935a15d74a11ce27540"
     },
     {
       "art": "aenderung",
@@ -106,14 +225,42 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Militärgesetzes",
       "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur l'armée",
       "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge militare",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/215/de",
-      "sha": "09bcd77282a71c5e691993d61b56ba3d8cf2cf1957869bed730a9e490c80ab13"
+      "sha": "28fbb7acf22af29622115ea30bf78668a8759beac759308c357dcf1eb1553d9d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "5a3ee405a6462784725fafe7bf7cf43f960d6c7943a72171f6e13c28827f3148"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "203aa9b6f92a450dd04dddb9144f4d3490ab38dfa1ab0e6274c5bd1d0cc77027"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
       "art": "aenderung",
@@ -125,8 +272,12 @@
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
       "botschaftKey": "BOTSCHAFT-2014-1566",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/714/de",
-      "sha": "48bf1349c186ce688369c458ca5d5fa76f41507278531da9f6bac393c33d9a91"
+      "sha": "bf1b29790ff5ce242e1ed96a32089f871eebcfb8630fbca8bb7db5c3839b817e"
     },
     {
       "art": "aenderung",
@@ -137,20 +288,58 @@
       "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG) (Betrifft nur den französischen Text)",
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/530/de",
-      "sha": "ce7e500761e8633e83161fd1304fcfbb6fcbbe3d9a43185f893c9c032704462d"
+      "sha": "326814adb72bf1394d69a592b96ad45ce5cbfe618ddeab89ceb80c2dffe5eb19"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "4b73144c5a73cdf40ea558d6beb49115f781f87948f747a52077070e9cb4a5f1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/326",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2016 1831",
+      "titelDe": "Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen",
+      "titelFr": "Loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes",
+      "titelIt": "Legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi",
+      "botschaftKey": "BOTSCHAFT-2014-67",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/326/de",
+      "sha": "6742b92ec0edb811ab92fc1297451b5bf6658baa4a65a7fe8ea0b65ada9c5b45"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "02d69c21a8d4615bb140d58738241d44fe68c701388223afe6b364c116a97f2e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/637",
+      "dateDocument": "2012-10-17",
+      "roFundstelle": "AS 2012 5525",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 23. Dezember 2011 des Bundesgesetzes über Massnahmen zur Wahrung der inneren Sicherheit",
+      "titelFr": "Ordonnance sur l'entrée en vigueur définitive de la modification du 23 décembre 2011 de la loi fédérale instituant des mesures visant au maintien de la sûreté intérieure",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 23 dicembre 2011 della legge federale sulle misure per la salvaguardia della sicurezza interna",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/637/de",
+      "sha": "bbb69af91b5f48198bb6a3bd92bc5a79eb6bf657e3d996abd6eea5198df47279"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-07-16",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/428",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 3745",
+      "titelDe": "Bundesgesetz über Massnahmen zur Wahrung der inneren Sicherheit (BWIS)",
+      "titelFr": "Loi fédérale instituant des mesures visant au maintien de la sûreté intérieure (LMSI)",
+      "titelIt": "Legge federale sulle misure per la salvaguardia della sicurezza interna (LMSI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/428/de",
+      "sha": "2ce11e260eb2d12b647a45959b5c3265d6ca04a31ee39e6e12a6bb5601a6d2e3"
     },
     {
       "art": "aenderung",
@@ -162,50 +351,169 @@
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (LAAM)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
       "botschaftKey": "BOTSCHAFT-2009-1057",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/869/de",
-      "sha": "0a73f754aee8dda4d51ad0fab16e01c6beab7990d84892e5f38c0578d47ce87d"
+      "sha": "9f7642c6af1ea8e850c44967ea4235d8b043e38c4b0f539369856d1788dd9095"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "0fa0df512c4811323ed0052185c08386c306247f90f6491daa773bec5a52331c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2009 5597",
+      "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+      "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+      "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)",
+      "botschaftKey": "BOTSCHAFT-2007-425",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/679/de",
+      "sha": "c22c07799150a0df60e5545f52d4cfc630ae521ba82ca58b5270b77e3a5ae969"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/809",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 6565",
+      "titelDe": "Bundesgesetz über die Zuständigkeiten im Bereich des zivilen Nachrichtendienstes (ZNDG)",
+      "titelFr": "Loi fédérale sur le renseignement civil (LFRC)",
+      "titelIt": "Legge federale sul servizio informazioni civile (LSIC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/809/de",
+      "sha": "9ac94b0ae20febe7eb28a210da914ddeb01b1b7468aa7d608d7f180f9078c559"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/823",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 6617",
+      "titelDe": "Bundesgesetz über die militärischen Informationssysteme (MIG)",
+      "titelFr": "Loi fédérale sur les systèmes d'information de l'armée (LSIA)",
+      "titelIt": "Legge federale sui sistemi d'informazione militari (LSIM)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/823/de",
+      "sha": "1ef42f7a4d892e86c50532a787814d8c6676d4c3ceaa4230b789d53fef5394cd"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "90a8531c82a484eca1b4262b98ce8e7dfaada6d1f6e4db0980afc15535dec09a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/759",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 5463",
+      "titelDe": "Bundesgesetz über die Anwendung polizeilichen Zwangs und polizeilicher Massnahmen im Zuständigkeitsbereich des Bundes (Zwangsanwendungsgesetz, ZAG)",
+      "titelFr": "Loi sur l'usage de la contrainte et de mesures policières dans les domaines relevant de la compétence de la Confédération (Loi sur l'usage de la contrainte, LUsC)",
+      "titelIt": "Legge federale sulla coercizione di polizia e le misure di polizia negli ambiti di competenza della Confederazione (Legge sulla coercizione, LCoe)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/759/de",
+      "sha": "18f38ae8c8e658b230b13451002764b56d2af780da04358861681e0b69f8c5e3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/853",
+      "dateDocument": "2008-12-12",
+      "roFundstelle": "AS 2008 6261",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge Überführung der nachrichtendienstlichen Teile des Dienstes für Analyse und Prävention zum VBS",
+      "titelFr": "Ordonnance sur l'adaptation des dispositions légales suite au transfert des unités de renseignements du Service d'analyse et de prévention au DDPS",
+      "titelIt": "Ordinanza sull'adeguamento delle disposizioni legali in seguito al trasferimento delle unità di informazioni del Servizio di analisi e prevenzione nel DDPS",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/853/de",
+      "sha": "8af2e0bea5c781f8dabf6286e79b395e1ea7034e315272a699c8ae9e4eea5032"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "d2e1e2ae4aac4f01e5da5f4f222dd94ae4e879eda3f970ba5c4577a73d468f89"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "3613f4ea32ab3a9088144cab745fc5ac715de61c09879c29dc3f15f9c4511173"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "9ae046f2d0ebb9bea5226ecfd41770cffa2dd71f2bf9929c5bf65835af78a947"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2007 5259",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)",
+      "botschaftKey": "BOTSCHAFT-2006-52",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "sha": "c598ef37bb15cbed37724779fb3cdf4f7ee5459d0057f7498ef7d645fa90749b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "fcd11b7fd6823326f05bb9e55e81447d7c6bae4c3532d5cfa0b974b81c7ce306"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/249",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2007 1411",
+      "titelDe": "Zollgesetz (ZG)",
+      "titelFr": "Loi sur les douanes (LD)",
+      "titelIt": "Legge sulle dogane (LD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/249/de",
+      "sha": "fb5f4289cf5ed36ff858bd8d2b43c519ebb3ca440b0262ef02fa8829058a0658"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "6ef12d45e7e34ae1a5d896981ac11620edaa32fbbd2707c45b549fd20c54e6db"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "b0917ec7107ce1d75b193080b8004e74f5de44ff18004eb32202d66f168ad456"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/472",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2005 2881",
+      "titelDe": "Bundesgesetz über die Übertragung der Führung der Militärversicherung an die SUVA",
+      "titelFr": "Loi fédérale sur le transfert à la CNA de la gestion de l'assurance militaire",
+      "titelIt": "Legge federale sul trasferimento della gestione dell'assicurazione militare all'INSAI",
+      "botschaftKey": "BOTSCHAFT-2004-552",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/472/de",
+      "sha": "f4dbb388e961f140c552f00d01fd0cecf62544c932d9524c291702e9f3aae563"
     },
     {
       "art": "aenderung",
@@ -217,8 +525,12 @@
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
       "botschaftKey": "BOTSCHAFT-2002-118",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/570/de",
-      "sha": "9407194feb40126e8b15ecdc1cd2fec19b6763ab694cd5fc3431973c3ff24b52"
+      "sha": "bff4e23ac00433d0423273e4fc26132a77059ea04fb1f86fe3ae824d2da461a6"
     },
     {
       "art": "aenderung",
@@ -230,8 +542,11 @@
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (LAAM) (Coopération en matière d'instruction)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)(Cooperazione in materia di istruzione)",
       "botschaftKey": "BOTSCHAFT-2000-142",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/323/de",
-      "sha": "d1748c5241a88b39f87276074ee666085360e9f0fdd2b76c4cb77bef7487b9a2"
+      "sha": "1bdaee253249a416555870577964c77d175401f63420540bfb8926bca9b6bc26"
     },
     {
       "art": "aenderung",
@@ -243,8 +558,11 @@
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (LAAM) (Armement)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM) (Armamento)",
       "botschaftKey": "BOTSCHAFT-2000-142",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/324/de",
-      "sha": "234ed4c4abdabbc9bc39ccedaa652eb0cb3a147d02b5a1864265dc6b1439c0d8"
+      "sha": "8feaa9bf7b3a79ce3762b33feba43109687b21950e3d6f23a787f9ebddf36ff5"
     },
     {
       "art": "aenderung",
@@ -256,26 +574,58 @@
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire",
       "titelIt": "Legge militare",
       "botschaftKey": "BOTSCHAFT-2000-114",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/165/de",
-      "sha": "5dff7cd8181f131f75171bb3c08c9e090ff44540b34a94062cbc4927e916baff"
+      "sha": "a852d91ba1eda6a5e0d876fd5b82b7a666cdf2f788e93235811529e09c34e336"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "848ce50af8639b03fec6213f2726a299e555ff57cd8b4f84abadc7a66c7f117e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/21",
+      "dateDocument": "2000-06-23",
+      "roFundstelle": "AS 2001 114",
+      "titelDe": "Bundesgesetz über Titel und Orden ausländischer Regierungen",
+      "titelFr": "Loi fédérale sur les titres et les décorations octroyés par des autorités étrangères",
+      "titelIt": "Legge federale concernente le liberalità e le onorificenze di Governi esteri",
+      "botschaftKey": "BOTSCHAFT-1999-1_7922_7145_6784",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/21/de",
+      "sha": "6e178a71d7921f95c40ae95fb916a169c7e96646a9860c2cb2669a9c51755a59"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "0aa4771caea0944cb2eb8ea78e96c5e1de81c355ca2c3f896bfe8ae0b28e6191"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/293",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 1891",
+      "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
+      "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali",
+      "botschaftKey": "BOTSCHAFT-1999-1_9005_8381_7979",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/293/de",
+      "sha": "ae30ef945d2254069bf01059d72440b99fb1ff98b57b429a9c56f864a83dc501"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/510.10",
-      "sha": "341aecde8e3c1188706404b9833e310297065cdefbbbdfda4b10fd592e482f6b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
     },
     {
       "art": "aenderung",
@@ -286,33 +636,57 @@
       "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (LAAM)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/151/de",
-      "sha": "e8dcd19927cc8ffaaab456312f241877919653bb2fc3546efdb193921740e903"
+      "sha": "dcb38896e6f7237a161628e663db5136ce82237ba778c4aeb36a3953da50db3a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1202_1202_1202",
+      "dateDocument": "1997-10-10",
+      "roFundstelle": "AS 1998 1202",
+      "titelDe": "Bundesgesetz vom 10. Oktober 1997 über die Rüstungsunternehmen des Bundes (BGRB)",
+      "titelFr": "Loi fédérale du 10 octobre 1997 sur les entreprises d'armement de la Confédération (LEAC)",
+      "titelIt": "Legge federale del 10 ottobre 1997 concernente le imprese d'armamento della Confederazione (LIAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1202_1202_1202/de",
+      "sha": "041b70a5a2579fb3e118b210c9de150b7316ca04185081fb613da535f92a6a7b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 1445",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale du 6 octobre 1995 sur le service civil (LSC)",
+      "titelIt": "Legge federale del 6 ottobre 1995 sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1445_1445_1445/de",
+      "sha": "9366c55e276536bca375f6011fd10e590471fc41d55a4ec6c3114b50c9e6b9f4"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1996-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4093_4093_4093",
-      "dateDocument": "1995-02-03",
-      "roFundstelle": "AS 1995 4093",
-      "titelDe": "Bundesgesetz vom 3. Februar 1995 über die Armee und die Militärverwaltung (Militärgesetz, MG)",
-      "titelFr": "Loi fédérale du 3 février 1995 sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
-      "titelIt": "Legge federale del 3 febbraio 1995 sull'esercito e sull'amministrazione militare (Legge militare, LM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4093_4093_4093/de",
-      "sha": "1b6989a87894a01f086d80f3f02a463817d724835a0b5d82015dd6408976c3f1"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1908-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/23/781_695_745",
-      "dateDocument": "1907-04-12",
-      "roFundstelle": "AS 23 781",
-      "titelDe": "Bundesgesetz über die Militärorganisation (Militärorganisation [MO])",
-      "titelFr": "Loi fédérale concernant l'organisation militaire de la Confédération suisse",
-      "titelIt": "Legge federale concernente l'organizzazione militare della Confederazione Svizzera",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/23/781_695_745/de",
-      "sha": "e3f1d16099d93cb8c44a0232542131604ea212fee84ecea47049a0782b52a857"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3517_3517_3517",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1995 3517",
+      "titelDe": "Bundesgesetz vom 24. März 1995 über die Sanierungsmassnahmen 1994",
+      "titelFr": "Loi fédérale du 24 mars 1995 sur les mesures d'assainissement 1994",
+      "titelIt": "Legge federale del 24 marzo 1995 concernente le misure di risanamento 1994",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3517_3517_3517/de",
+      "sha": "9657adfb9a0e616f5acb0151038d2e30240f93203051290ebba251d8f4d4ae13"
     }
   ],
-  "sha": "d8ab477c097800a332427be689c41fc0c697ab9474b18332b63af6100ed312ea"
+  "sha": "551ad1c2db6d17e76b697b7db9c4a0a2d832160d58129d0c2164ee2da2e88936"
 }

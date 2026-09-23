@@ -1,8 +1,8 @@
 {
   "erlassKey": "HEUE",
   "sr": "0.211.232.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 13. Januar 2000 über den internationalen Schutz von Erwachsenen",
       "titelFr": "Convention du 13 janvier 2000 sur la protection internationale des adultes",
       "titelIt": "Convenzione del 13 gennaio 2000 sulla protezione internazionale degli adulti",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/228/de",
-      "sha": "9eed965ca7560d8073f66ea1f754e0b1fe4fafe4bf10837bd09045d4da536218"
+      "sha": "f647cd308a91300bd711bf2adfd8ec44a657e162d296184a6924f3059b88c461"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,12 @@
       "titelDe": "Übereinkommen vom 13. Januar 2000 über den internationalen Schutz von Erwachsenen",
       "titelFr": "Convention du 13 janvier 2000 sur la protection internationale des adultes",
       "titelIt": "Convenzione del 13 gennaio 2000 sulla protezione internazionale degli adulti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/698/de",
-      "sha": "008d4f0569964cf6dcd0ac53e9e571a954368ff14c04d73276ec256b6e8487aa"
+      "sha": "0e923390f9e1d9169e828d5632ba317efbf5f1df07b56807e4a0c93335b2de35"
     },
     {
       "art": "aenderung",
@@ -37,8 +44,12 @@
       "titelDe": "Übereinkommen vom 13. Januar 2000 über den internationalen Schutz von Erwachsenen",
       "titelFr": "Convention du 13 janvier 2000 sur la protection internationale des adultes",
       "titelIt": "Convenzione del 13 gennaio 2000 sulla protezione internazionale degli adulti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/579/de",
-      "sha": "b272c98e3c76adadd5e15573c637ff96ab1aa3f56336fa727538c85f3715d19a"
+      "sha": "7e79e7ac5a50e169700a5a75132ac7a0c6baec4f3d3f80c8fe040232b3fad983"
     },
     {
       "art": "aenderung",
@@ -49,8 +60,12 @@
       "titelDe": "Übereinkommen vom 13. Januar 2000 über den internationalen Schutz von Erwachsenen",
       "titelFr": "Convention du 13 janvier 2000 sur la protection internationale des adultes",
       "titelIt": "Convenzione del 13 gennaio 2000 sulla protezione internazionale degli adulti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/247/de",
-      "sha": "b7e7bd1a51a9c59a876c52bfc53d6b0c7bcb78b1cfb46ecf38c98755975e6797"
+      "sha": "3cef66756639640da172fdaa86d61a45668690c9fa37a6a8eec82b4a9a84d96b"
     },
     {
       "art": "aenderung",
@@ -61,22 +76,28 @@
       "titelDe": "Übereinkommen vom 13. Januar 2000 über den internationalen Schutz von Erwachsenen",
       "titelFr": "Convention du 13 janvier 2000 sur la protection internationale des adultes",
       "titelIt": "Convenzione del 13 gennaio 2000 sulla protezione internazionale degli adulti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/217/de",
-      "sha": "aff8d59cf8599708d9bd8188dfcc442a329cf9195b96c610a993acabcf7a2531"
+      "sha": "79ca1c4f1f320de05b68786996634a99d50d335468902dc548e5444725f81527"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2009-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/381",
-      "dateDocument": "2000-01-13",
-      "roFundstelle": "AS 2009 3107",
-      "titelDe": "Übereinkommen über den internationalen Schutz von Erwachsenen",
-      "titelFr": "Convention sur la protection internationale des adultes",
-      "titelIt": "Convenzione sulla protezione internazionale degli adulti",
-      "botschaftKey": "BOTSCHAFT-2007-421",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/381/de",
-      "sha": "5b3986d7c0e34202f00c5cb2837a74a632a2910857895caf819b34f36eb63af7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/379",
+      "dateDocument": "2007-12-21",
+      "roFundstelle": "AS 2009 3077",
+      "titelDe": "Bundesbeschluss über die Umsetzung der Übereinkommen über internationale Kindesentführung sowie die Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
+      "titelFr": "Arrêté fédéral portant mise en uvre des conventions sur l'enlèvement international d'enfants et portant approbation et mise en uvre des Conventions de La Haye sur la protection des enfants et des adultes",
+      "titelIt": "Decreto federale che attua le convenzioni sul rapimento internazionale dei minori e che approva e attua le Convenzioni dell'Aia sulla protezione dei minori e degli adulti",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/379/de",
+      "sha": "a5df24ca5150e4e716be87b20bc6508a69768ed756c4cc45f3842b425fba40da"
     }
   ],
-  "sha": "1801306224644d199c8add428a4e04ca1ab738434d68636e47259dd26c7a9518"
+  "sha": "01d5f40474c1a2123bb96b90d028a7d481f3bd601ab135ba8c5a604b29db3c49"
 }

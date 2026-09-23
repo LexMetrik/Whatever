@@ -14685,5 +14685,1782 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2014/269",
       "zielFundstelle": "AS 2014 1251"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1995/4964_4964_4964",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1995/4964_4964_4964",
+    "inkrafttreten": "1996-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4964_4964_4964",
+        "typ": 5,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1232_1232_1232",
+        "typ": 1,
+        "datum": "1996-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1232_1232_1232",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1496_1496_1496",
+        "typ": 1,
+        "datum": "1996-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2430_2430_2430",
+        "typ": 1,
+        "datum": "1996-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2430_2430_2430",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/909_909_909",
+        "typ": 1,
+        "datum": "1996-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/909_909_909",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2020_2020_2020",
+        "typ": 1,
+        "datum": "1997-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2039_2039_2039",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2436_2436_2436",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2436_2436_2436",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2697_2697_2697",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2697_2697_2697",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2697_2697_2697",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2697_2697_2697",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/564_564_564",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/564_564_564",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/677_677_677",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/727_727_727",
+        "typ": 1,
+        "datum": "1997-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/150_150_150",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/150_150_150",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2034_2034_2034",
+        "typ": 1,
+        "datum": "1998-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2923_2923_2923",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2923_2923_2923",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/750_750_750",
+        "typ": 1,
+        "datum": "1998-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/107",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/107",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/387",
+        "typ": 1,
+        "datum": "1999-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/388",
+        "typ": 1,
+        "datum": "1999-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/389",
+        "typ": 1,
+        "datum": "1999-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/398",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/399",
+        "typ": 1,
+        "datum": "1999-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/399",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/65",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/65",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/366",
+        "typ": 1,
+        "datum": "2000-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/39",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/406",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/406",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/437",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/444",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/560",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/560",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/560",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/259",
+        "typ": 1,
+        "datum": "2001-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/310",
+        "typ": 1,
+        "datum": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/315",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/315",
+        "typ": 1,
+        "datum": "2001-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/315",
+        "typ": 1,
+        "datum": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/315",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/412",
+        "typ": 1,
+        "datum": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/514",
+        "typ": 1,
+        "datum": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/514",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/61",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/240",
+        "typ": 1,
+        "datum": "2002-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/436",
+        "typ": 1,
+        "datum": "2002-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/436",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/436",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/562",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/562",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/692",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/692",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/775",
+        "typ": 1,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/775",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/209",
+        "typ": 1,
+        "datum": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/231",
+        "typ": 1,
+        "datum": "2004-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/370",
+        "typ": 1,
+        "datum": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/436",
+        "typ": 1,
+        "datum": "2004-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/827",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/827",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/470",
+        "typ": 1,
+        "datum": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/470",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/471",
+        "typ": 1,
+        "datum": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/696",
+        "typ": 6,
+        "datum": "2002-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/696",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/10",
+        "typ": 1,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/10",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/271",
+        "typ": 1,
+        "datum": "2006-05-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/271",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/452",
+        "typ": 1,
+        "datum": "2006-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/452",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/856",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/856",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/9",
+        "typ": 1,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/110",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/227",
+        "typ": 1,
+        "datum": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/227",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/440",
+        "typ": 1,
+        "datum": "2007-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/440",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/440",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/542",
+        "typ": 1,
+        "datum": "2007-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/542",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/618",
+        "typ": 1,
+        "datum": "2007-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/618",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/648",
+        "typ": 6,
+        "datum": "2007-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/648",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/882",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/882",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/458",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/458",
+        "typ": 1,
+        "datum": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/458",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/885",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/885",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/246",
+        "typ": 1,
+        "datum": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/246",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/370",
+        "typ": 1,
+        "datum": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/370",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/370",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/401",
+        "typ": 1,
+        "datum": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/401",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/435",
+        "typ": 1,
+        "datum": "2009-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/435",
+        "typ": 1,
+        "datum": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/435",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/435",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/521",
+        "typ": 1,
+        "datum": "2009-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/521",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/744",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/744",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/837",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/837",
+        "typ": 5,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/359",
+        "typ": 1,
+        "datum": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/359",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/436",
+        "typ": 1,
+        "datum": "2010-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/436",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/513",
+        "typ": 1,
+        "datum": "2010-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/831",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/831",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/105",
+        "typ": 1,
+        "datum": "2011-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/105",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/370",
+        "typ": 1,
+        "datum": "2011-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/370",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/370",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/899",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/899",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/247",
+        "typ": 1,
+        "datum": "2012-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/247",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/400",
+        "typ": 1,
+        "datum": "2012-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/400",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/511",
+        "typ": 1,
+        "datum": "2012-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/511",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/681",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/681",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/795",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/795",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/319",
+        "typ": 1,
+        "datum": "2013-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/319",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/319",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/319",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/414",
+        "typ": 1,
+        "datum": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/414",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/850",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/850",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/269",
+        "typ": 1,
+        "datum": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/269",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/607",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/607",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/724",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/724",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/281",
+        "typ": 1,
+        "datum": "2015-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/281",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/281",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/406",
+        "typ": 1,
+        "datum": "2015-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/406",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/406",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/587",
+        "typ": 6,
+        "datum": "2015-09-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/587",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/700",
+        "typ": 1,
+        "datum": "2015-11-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/700",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/837",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/837",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/837",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/220",
+        "typ": 1,
+        "datum": "2016-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/220",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/396",
+        "typ": 1,
+        "datum": "2016-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/396",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/750",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/750",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/793",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/793",
+        "typ": 1,
+        "datum": "2017-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/793",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/108",
+        "typ": 1,
+        "datum": "2017-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/108",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/108",
+        "typ": 2,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/23",
+        "typ": 6,
+        "datum": "2017-01-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/379",
+        "typ": 1,
+        "datum": "2017-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/379",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/421",
+        "typ": 1,
+        "datum": "2017-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/421",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/460",
+        "typ": 6,
+        "datum": "2017-08-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/773",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/773",
+        "typ": 1,
+        "datum": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/773",
+        "typ": 1,
+        "datum": "2018-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/773",
+        "typ": 1,
+        "datum": "2018-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/773",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/773",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/138",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/339",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/339",
+        "typ": 1,
+        "datum": "2018-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/339",
+        "typ": 1,
+        "datum": "2018-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/339",
+        "typ": 1,
+        "datum": "2018-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/339",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/339",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/340",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/340",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/348",
+        "typ": 6,
+        "datum": "2018-06-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/348",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/403",
+        "typ": 6,
+        "datum": "2018-07-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/432",
+        "typ": 6,
+        "datum": "2018-07-31"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/432",
+        "typ": 6,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/432",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/588",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/588",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/616",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/793",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/793",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/793",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/120",
+        "typ": 6,
+        "datum": "2019-02-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/120",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/121",
+        "typ": 6,
+        "datum": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/355",
+        "typ": 1,
+        "datum": "2019-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/355",
+        "typ": 1,
+        "datum": "2019-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/355",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/393",
+        "typ": 6,
+        "datum": "2019-07-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/393",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/398",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/398",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/554",
+        "typ": 6,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/554",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/756",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/756",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/78",
+        "typ": 1,
+        "datum": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/78",
+        "typ": 1,
+        "datum": "2019-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/78",
+        "typ": 1,
+        "datum": "2019-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/78",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/792",
+        "typ": 6,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1033",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1033",
+        "typ": 1,
+        "datum": "2021-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1033",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1033",
+        "typ": 1,
+        "datum": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1033",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1034",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/121",
+        "typ": 1,
+        "datum": "2020-03-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/121",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/277",
+        "typ": 1,
+        "datum": "2020-04-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/277",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/464",
+        "typ": 1,
+        "datum": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/464",
+        "typ": 1,
+        "datum": "2020-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/464",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/464",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/514",
+        "typ": 6,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/514",
+        "typ": 6,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/755",
+        "typ": 1,
+        "datum": "2020-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/755",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/98",
+        "typ": 1,
+        "datum": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/98",
+        "typ": 1,
+        "datum": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/98",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/99",
+        "typ": 1,
+        "datum": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/99",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/148",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/189",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/324",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/347",
+        "typ": 1,
+        "datum": "2021-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/392",
+        "typ": 1,
+        "datum": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/393",
+        "typ": 1,
+        "datum": "2021-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/394",
+        "typ": 1,
+        "datum": "2021-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/395",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/44",
+        "typ": 1,
+        "datum": "2021-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/440",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/440",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/440",
+        "typ": 2,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/649",
+        "typ": 1,
+        "datum": "2021-11-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/649",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/885",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/885",
+        "typ": 7,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/885",
+        "typ": 7,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/886",
+        "typ": 1,
+        "datum": "2022-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/887",
+        "typ": 1,
+        "datum": "2022-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/369",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/369",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/370",
+        "typ": 1,
+        "datum": "2022-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/371",
+        "typ": 1,
+        "datum": "2022-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/527",
+        "typ": 1,
+        "datum": "2022-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/840",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/840",
+        "typ": 7,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/840",
+        "typ": 7,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/858",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/195",
+        "typ": 1,
+        "datum": "2023-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/244",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/313",
+        "typ": 1,
+        "datum": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/313",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/571",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/571",
+        "typ": 2,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/603",
+        "typ": 1,
+        "datum": "2023-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/75",
+        "typ": 1,
+        "datum": "2023-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/773",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/773",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/807",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/807",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/807",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/807",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/221",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/303",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/36",
+        "typ": 6,
+        "datum": "2024-01-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/788",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/788",
+        "typ": 7,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/788",
+        "typ": 7,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/125",
+        "typ": 1,
+        "datum": "2025-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/419",
+        "typ": 1,
+        "datum": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/419",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/419",
+        "typ": 1,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/419",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/845",
+        "typ": 6,
+        "datum": "2025-12-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/846",
+        "typ": 6,
+        "datum": "2025-12-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/851",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/851",
+        "typ": 1,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/851",
+        "typ": 7,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/851",
+        "typ": 7,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/852",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/852",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/853",
+        "typ": 1,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/209",
+        "typ": 6,
+        "datum": "2026-05-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/336",
+        "typ": 1,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/336",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/337",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/337",
+        "typ": 1,
+        "datum": "2028-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/348",
+        "typ": 1,
+        "datum": "2026-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/348",
+        "typ": 1,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1996/1232_1232_1232": {
+        "dateForce": "1996-06-01",
+        "dateDoc": "1996-02-26",
+        "roId": "RO 1996 1232",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur certaines prestation dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1496_1496_1496": {
+        "dateForce": "1996-05-15",
+        "dateDoc": "1996-04-26",
+        "roId": "RO 1996 1496",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2430_2430_2430": {
+        "dateForce": "1996-10-01",
+        "dateDoc": "1996-07-03",
+        "roId": "RO 1996 2430",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/909_909_909": {
+        "dateForce": "1996-05-01",
+        "dateDoc": "1996-01-15",
+        "roId": "RO 1996 909",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2020_2020_2020": {
+        "dateForce": "1997-10-01",
+        "dateDoc": "1997-07-01",
+        "roId": "RO 1997 2020",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2039_2039_2039": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-07-03",
+        "roId": "RO 1997 2039",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2436_2436_2436": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-09-18",
+        "roId": "RO 1997 2436",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2697_2697_2697": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-07-04",
+        "roId": "RO 1997 2697",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/564_564_564": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-12-13",
+        "roId": "RO 1997 564",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/677_677_677": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-12-20",
+        "roId": "RO 1997 677",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/727_727_727": {
+        "dateForce": "1997-04-01",
+        "dateDoc": "1996-12-30",
+        "roId": "RO 1997 727",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/150_150_150": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-12-18",
+        "roId": "RO 1998 150",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/750_750_750": {
+        "dateForce": "1998-03-15",
+        "dateDoc": "1998-01-16",
+        "roId": "RO 1998 750",
+        "titelDe": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+        "titelFr": "Ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (Ordonnance sur les prestations de l'assurance des soins, OPAS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2001/514": {
+        "dateForce": "2002-01-01",
+        "dateDoc": "2001-10-26",
+        "roId": "RO 2001 3397",
+        "titelDe": "Verordnung des EDI über die Aufhebung und Änderung von Erlassen im Zusammenhang mit dem Inkrafttreten des Heilmittelgesetzes",
+        "titelFr": "Ordonnance du DFI sur l'abrogation et la modification du droit en vigueur du fait de la loi sur les produits thérapeutiques",
+        "titelIt": "Ordinanza del DFI concernente l'abrogazione e la modifica di atti normativi in relazione all'entrata in vigore della legge sugli agenti terapeutici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/542": {
+        "dateForce": "2007-09-01",
+        "dateDoc": "2007-08-20",
+        "roId": "RO 2007 4085",
+        "titelDe": "Verordnung des EDI über die anerkannten Studiengänge für Chiropraktik ausländischer universitärer Hochschulen",
+        "titelFr": "Ordonnance du DFI sur les filières d'études de chiropratique reconnues offertes par des hautes écoles universitaires étrangères",
+        "titelIt": "Ordinanza del DFI concernente i cicli di studio in chiropratica riconosciuti offerti da scuole universitarie estere"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/588": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-09-21",
+        "roId": "RO 2018 3577",
+        "titelDe": "Verordnung über die Arzneimittel (Arzneimittelverordnung, VAM) ",
+        "titelFr": "Ordonnance sur les médicaments (OMéd) ",
+        "titelIt": "Ordinanza sui medicamenti (OM) "
+      }
+    }
   }
 }

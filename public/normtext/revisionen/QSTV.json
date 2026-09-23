@@ -1,9 +1,25 @@
 {
   "erlassKey": "QSTV",
   "sr": "642.118.2",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/485",
+      "dateDocument": "2026-09-11",
+      "roFundstelle": "AS 2026 485",
+      "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
+      "titelFr": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS)",
+      "titelIt": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/485/de",
+      "sha": "12b9a152ae32e8acc8d3796be808d99c1f252b245c90361fb4f8cc81f423c672"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2025-01-10",
@@ -13,8 +29,11 @@
       "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS). Erratum",
       "titelIt": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/8/de",
-      "sha": "705906db5cda1324668fc1a34eef56623f958b1152ba52538b4113b470fbc40b"
+      "sha": "7ff029fd9aeeebfb37671399bbead0c64056b29e82ac3dd784bbf6bdd91073a2"
     },
     {
       "art": "aenderung",
@@ -25,8 +44,11 @@
       "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
       "titelFr": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS)",
       "titelIt": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/478/de",
-      "sha": "57780490db7963ca6139709395e85d6991751b224e5f3ddfbc686357d33257d4"
+      "sha": "db910e423451e68acc8bb60e3e55e0af22a90084321dad6d67cd0ba5587a8fbd"
     },
     {
       "art": "aenderung",
@@ -37,8 +59,11 @@
       "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
       "titelFr": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS)",
       "titelIt": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/586/de",
-      "sha": "e8095acdba4bf0a016fc9bbae87d464d41e12dc9c6e55b81e2abb31ede34b966"
+      "sha": "5cba3c2faf91904e9233423dd487556556b4c7e8918c241bd63d59566599a5f6"
     },
     {
       "art": "aenderung",
@@ -49,8 +74,11 @@
       "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
       "titelFr": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS)",
       "titelIt": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/398/de",
-      "sha": "1eb5ac0742555020d167405601976d4621b8c5ddfa8aee6ba534146449173669"
+      "sha": "86ac996f5b6e08a7afb1ce85e1bfa9008400bafebca8473cc715732fbba8d229"
     },
     {
       "art": "aenderung",
@@ -61,8 +89,11 @@
       "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
       "titelFr": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS)",
       "titelIt": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/492/de",
-      "sha": "c43e4574742d8fa448e99d461c77e5c8872c0d39e8381055ae96f95e2eb0f9a3"
+      "sha": "54a83065a658316856e7e8df3f95f432715c1156659679806fe24eb506124096"
     },
     {
       "art": "aenderung",
@@ -73,129 +104,12 @@
       "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
       "titelFr": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS)",
       "titelIt": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/574/de",
-      "sha": "1bb2bea670e7e30027aaa50863fe19755e819a6aefd9a1485c321b1c86cd81c1"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2021-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/274",
-      "dateDocument": "2018-04-11",
-      "roFundstelle": "AS 2018 1829",
-      "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance du DFF sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza del DFF sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/274/de",
-      "sha": "8d42e58e840a58177977c76bec14ff529590074fba8449d2e2a05ef8f649ac98"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2014-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/156",
-      "dateDocument": "2013-02-25",
-      "roFundstelle": "AS 2013 783",
-      "titelDe": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance du DFF sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza del DFF sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/156/de",
-      "sha": "3f109d496a3dd589eb472997e9cdacfdc96ec2e226cc9e81bb4398978e57ebea"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/590",
-      "dateDocument": "2011-08-18",
-      "roFundstelle": "AS 2011 4329",
-      "titelDe": "Verordnung über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/590/de",
-      "sha": "901fb671873546c74417511c603c8368a97e73013fa5b3d7969e08b69225d236"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/633",
-      "dateDocument": "2010-09-28",
-      "roFundstelle": "AS 2010 4481",
-      "titelDe": "Verordnung über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/633/de",
-      "sha": "06bb17e63029fcbe2012b5727f48ef9d8f06fa9cd413e93e7f42b253dfd3224c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/420",
-      "dateDocument": "2008-06-04",
-      "roFundstelle": "AS 2008 3163",
-      "titelDe": "Verordnung über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/420/de",
-      "sha": "e2b208ac47f94c78da0d45168863191602bfd9fcc20a5c5420df3c7085eef749"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/653",
-      "dateDocument": "2006-07-10",
-      "roFundstelle": "AS 2006 4277",
-      "titelDe": "Verordnung über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/653/de",
-      "sha": "d6b877678d95361eb2845e718ca801895692554537979df6e0b9c4e9ce15151d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/247",
-      "dateDocument": "2002-05-13",
-      "roFundstelle": "AS 2002 1621",
-      "titelDe": "Verordnung über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/247/de",
-      "sha": "7346cef2ffcb7d94b8468cf9c7e0cf334a8322ab76070be0772efc9c5c572183"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/308",
-      "dateDocument": "2001-07-06",
-      "roFundstelle": "AS 2001 2132",
-      "titelDe": "Verordnung über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/308/de",
-      "sha": "d4967674b69f1d47970df8a27e337066360da0af8b49e56127a5146c68d9e52d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2001-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/156",
-      "dateDocument": "2001-03-23",
-      "roFundstelle": "AS 2001 1055",
-      "titelDe": "Verordnung über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverodnung, QStV)",
-      "titelFr": "Ordonnance sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/156/de",
-      "sha": "6b853ca4fe5c9e5fcee8a4a69725bcd864f2cc07c1a262820f0f2a0575cc9fc0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3324_3324_3324",
-      "dateDocument": "1993-10-19",
-      "roFundstelle": "AS 1993 3324",
-      "titelDe": "Verordnung des EFD vom 19. Oktober 1993 über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)",
-      "titelFr": "Ordonnance du DFF du 19 octobre 1993 sur l'imposition à la source dans le cadre de l'impôt fédéral direct (Ordonnance sur l'imposition à la source, OIS)",
-      "titelIt": "Ordinanza del DFF del 19 ottobre 1993 sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3324_3324_3324/de",
-      "sha": "49f3a6a18665dd9aba646d21ff8cc5c76bb6596516cdc90edae2aceb26266394"
+      "sha": "7325fae94c5570a50c6cb0e3e066ce254954919a4a7feb6f300f92a430beed5e"
     }
   ],
-  "sha": "e8746c911688fc0feed6e696f2ca029589b916aa21a7343493527e8a7dde30ab"
+  "sha": "5e418c117acd0fd1b4e97733b719072b03ad6801efde068abaa497ff7ce05b31"
 }

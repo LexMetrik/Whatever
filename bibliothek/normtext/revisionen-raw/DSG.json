@@ -669,5 +669,65 @@
     "2025-07-07"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2022/491",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+    "inkrafttreten": "2023-09-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 5,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/231",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/257",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/168",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/173",
+        "typ": 5,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/444",
+        "typ": 6,
+        "datum": "2025-07-07"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2024/257": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2023-09-29",
+        "titelDe": "Bundesgesetz über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG) (Einführung einer Meldepflicht für Cyberangriffe auf kritische Infrastrukturen)",
+        "titelFr": "Loi fédérale sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI) (Mise en place d’une obligation de signaler les cyberattaques contre les infrastructures critiques)",
+        "titelIt": "Legge federale sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn) (Introduzione dell’obbligo di segnalare ciberattacchi a infrastrutture critiche)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/168": {
+        "dateForce": "2025-04-01",
+        "dateDoc": "2025-03-07",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung des Nationalen Zentrums für Cybersicherheit (NCSC) in Bundesamt für Cybersicherheit (BACS)",
+        "titelFr": "Ordonnance concernant l’adaptation de dispositions légales à la suite du changement de nom du Centre national pour la cybersécurité (NCSC) en Office fédéral de la cybersécurité (OFCS)",
+        "titelIt": "Ordinanza sull’adeguamento di leggi in seguito al cambiamento della designazione del Centro nazionale per la cibersicurezza (NCSC) in Ufficio federale della cibersicurezza (UFCS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/173": {
+        "dateForce": "2025-04-01",
+        "dateDoc": "2025-03-18",
+        "titelDe": "Mitteilung über die Inkraftsetzung der Änderung vom 29. September 2023 des  Informationssicherheitsgesetzes",
+        "titelFr": "Communication concernant la mise en vigueur de la modification du 29 septembre 2023 de la loi sur la sécurité de l’information",
+        "titelIt": "Comunicazione sull’entrata in vigore della modifica del 29 settembre 2023 della legge sulla sicurezza delle informazioni"
+      }
+    }
+  }
 }

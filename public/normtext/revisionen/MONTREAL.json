@@ -1,8 +1,8 @@
 {
   "erlassKey": "MONTREAL",
   "sr": "0.748.411",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l’unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l’unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/153/de",
-      "sha": "251d7133990a29e67f879bc53365dc5b8adb309afa241ca7d8abb86765763b00"
+      "sha": "59b5443feefe5d49e792768697d5797fbb4fb2273606dd1d8946bb7ed0d04aac"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l’unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l’unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/106/de",
-      "sha": "153fd948c4480926a27bbe911465076b9055f55db1b2450b27d3965529dd7092"
+      "sha": "fd6ff3be6ceb2baf013f425fe9a645b448d536aaa552959c9c2bb56f06a2e64e"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l’unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l’unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/417/de",
-      "sha": "9ded4d9393b09a94c4497aef6ed6719e3c0dba57c0039b54f393898a1dfad392"
+      "sha": "0e0ffb7329dd5ae87f2bad7618c35cff98bc16057fc88eb37cdd818f0a034cd2"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,11 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l’unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l’unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/322/de",
-      "sha": "d55211942bd8f4bfb59a2812b67d1d88608d02ba4974010242d19ccea7e42256"
+      "sha": "bd10e8ecfb76e481171f61de92d55999dd1586113ebe2df00b2b09f8ceba4c97"
     },
     {
       "art": "aenderung",
@@ -61,8 +73,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/814/de",
-      "sha": "b7883243a4db5be52917a9e6ab3e801bb117e3299d334456417bfa94defdf0d1"
+      "sha": "cc20f22cc667d63f1d9554f5a71774b780a214f3c5c7d269645b7e234469416d"
     },
     {
       "art": "aenderung",
@@ -73,8 +89,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/659/de",
-      "sha": "2946bfff8be10887a803b1850069c83839212d2e11bd95cb2fb1f75b977511c8"
+      "sha": "82a175d6d9bde17cf7a84f0c9144326e8a3a91f0a1b3c7f5ab8e7a4a844e939b"
     },
     {
       "art": "aenderung",
@@ -85,8 +105,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/87/de",
-      "sha": "ba867af95d9b258ded22e95e968c5cfe90e9d92fbea91a3c0b9e44f91d9ca722"
+      "sha": "61e921531ad614cd876a5ce5643341611e6df8e0a96ead8178160d3af2343780"
     },
     {
       "art": "aenderung",
@@ -97,8 +121,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/930/de",
-      "sha": "b4d56d24b77456226315121c5d22fbb4edfd273968c1f08b2b33c50102521e20"
+      "sha": "2fa1df843b9385cfded7bf6e05dfd2f40e8df09b59203f9b37e466e22fdd5e79"
     },
     {
       "art": "aenderung",
@@ -109,8 +137,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/412/de",
-      "sha": "402d3851a6e58becdc1bf9dd8bd8e8b72d4c32ee8942d35beba748ca1b799f79"
+      "sha": "40e8ebe53b4d1dc1104228c6fbb8effc2941783a071bf725a37060415c53562f"
     },
     {
       "art": "aenderung",
@@ -121,8 +153,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/586/de",
-      "sha": "7bacdc59f29790b1f5b45386a33676953dd9b0bc78cc595dcbfbfdec459a086d"
+      "sha": "cfb6493e12d0b444dcebc2a126e10543f0359ed9fd19eae0a8840400bfaf4514"
     },
     {
       "art": "aenderung",
@@ -133,8 +169,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/19/de",
-      "sha": "ca81a56144c624962235c4ec307bfa5945c2900243a55e96ab138a290f515b97"
+      "sha": "2bb51f0c7da70bf7fc23bea82b426f043863534109e0ffb505f7c4dce076e23d"
     },
     {
       "art": "aenderung",
@@ -145,8 +185,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/469/de",
-      "sha": "9538a14a85e8c0cd0544088edfbe8afcd8025456fba4d8e2055c460cdda48960"
+      "sha": "7f4a985595234932706a8e2ad2598427e6dec08d75c35fa237bd16ecaece7145"
     },
     {
       "art": "aenderung",
@@ -157,8 +201,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/239/de",
-      "sha": "e45aeb282bedf9d9ba17cf240cbcedf2745366823750a3f9146be3f2b29b84e3"
+      "sha": "771d5f5ad7d94f01752acb61e776615381a2c6235d7b67103692ea274e170607"
     },
     {
       "art": "aenderung",
@@ -169,8 +217,12 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/755/de",
-      "sha": "0b2628152250c2a4fec3d2805f229cfe1dd4dfc9968a50e7ab764741477dfcd8"
+      "sha": "14961f4ea0adb961d397decb00976e94401e8c7bffb989ad6bdd734789590981"
     },
     {
       "art": "aenderung",
@@ -181,22 +233,13 @@
       "titelDe": "Übereinkommen vom 28. Mai 1999 zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
       "titelFr": "Convention du 28 mai 1999 pour l'unification de certaines règles relatives au transport aérien international",
       "titelIt": "Convenzione del 28 maggio 1999 per l'unificazione di alcune norme sul trasporto aereo internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/528/de",
-      "sha": "b895e7d0761e959ac1ac7dcd4d47e081b9447e749bf6f4c1d2b500231378efa5"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2005-09-05",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/566",
-      "dateDocument": "1999-05-28",
-      "roFundstelle": "AS 2005 4395",
-      "titelDe": "Übereinkommen zur Vereinheitlichung bestimmter Vorschriften über die Beförderung im internationalen Luftverkehr",
-      "titelFr": "Convention pour l'unification de certaines règles relatives au transport aérien international",
-      "titelIt": "Convenzione per l'unificazione di alcune norme sul trasporto aereo internazionale",
-      "botschaftKey": "BOTSCHAFT-2004-558",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/566/de",
-      "sha": "40ea4d3bf54212ec366493dd035add19505f63d967a1f1505dc6f04652e5f2b1"
+      "sha": "b5f19c7daa641686404edf94a8e75aed8bc07f49eb6b5e72d82cea9f863bd358"
     }
   ],
-  "sha": "2b5b7ce66f5321395c34fa2827a7267be3356e7e72438548b2c8204f2708cbf2"
+  "sha": "df696d1889890a05853c889623b6e0d9c081ce724ee1cbe1a8b6cc33e0f242f7"
 }

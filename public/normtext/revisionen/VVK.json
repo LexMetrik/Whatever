@@ -1,20 +1,38 @@
 {
   "erlassKey": "VVK",
   "sr": "832.105",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.105",
-      "sha": "a6f214d46e846959c1ba72d1e7ced2f8304ad698bfde4a87e0e0a2eac99851ea"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/658",
+      "dateDocument": "2022-10-26",
+      "roFundstelle": "AS 2022 658",
+      "titelDe": "Verordnung vom 26. Oktober 2022 über die Änderung von Verordnungen im Bereich der Krankenversicherung zur Umsetzung des Abkommens zur Koordinierung der sozialen Sicherheit zwischen der Schweizerischen Eidgenossenschaft und dem Vereinigten Königreich von Grossbritannien und Nordirland",
+      "titelFr": "Ordonnance du 26 octobre 2022 sur les modifications d’ordonnances en matière d’assurance-maladie concernant la mise en œuvre de la Convention sur la coordination de la sécurité sociale entre la Confédération suisse et le Royaume-Uni de Grande-Bretagne et d’Irlande du Nord",
+      "titelIt": "Ordinanza del 26 ottobre 2022 sulla modifica di ordinanze in materia di assicurazione malattie in attuazione della Convenzione sul coordinamento della sicurezza sociale tra il Regno Unito di Gran Bretagna e Irlanda del Nord e la Confederazione Svizzera",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/658/de",
+      "sha": "9e25d9791402b8a14431b303b6e7d6d29a107b871ef2e13b202caea7b9fbd688"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.105",
-      "sha": "a244f45372658fe6f911e117fd0475b76b7e7b712699867317932326e08fa4eb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+      "dateDocument": "2021-11-17",
+      "roFundstelle": "AS 2021 800",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "sha": "01821c1c4afbc3a6add1f457b75e1324bd1fd6dd6525736c7991ab85f093a8fb"
     },
     {
       "art": "aenderung",
@@ -25,26 +43,27 @@
       "titelDe": "Verordnung über die Versichertenkarte für die obligatorische Krankenpflegeversicherung (VVK)",
       "titelFr": "Ordonnance sur la carte d'assuré pour l'assurance obligatoire des soins (OCA)",
       "titelIt": "Ordinanza sulla tessera d'assicurato per l'assicurazione obbligatoria delle cure medico-sanitarie (OTeA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/844/de",
-      "sha": "04bfce3a96ac0134f8a9918320fbaa3b13f54ae621cc6338387178783d761779"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.105",
-      "sha": "fcf649446cd837e7a40f5a2c5f2ab91dfbc5879cd5401411206ad05decef4d95"
+      "sha": "db31757fa85bd35cb21692e1408cde200eb1013141b86b2456fb226ad3bd1df9"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2007-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/101",
-      "dateDocument": "2007-02-14",
-      "roFundstelle": "AS 2007 497",
-      "titelDe": "Verordnung über die Versichertenkarte für die obligatorische Krankenpflegeversicherung (VVK)",
-      "titelFr": "Ordonnance sur la carte d'assuré pour l'assurance obligatoire des soins (OCA)",
-      "titelIt": "Ordinanza sulla tessera d'assicurato per l'assicurazione obbligatoria delle cure medico-sanitarie (OTeA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/101/de",
-      "sha": "201569809ba9db3c0dadf7ec6ba14f577077c378cc0a813fdc2dde2ec0c8b464"
+      "dateEntryInForce": "2007-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/748",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5271",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l'assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/748/de",
+      "sha": "e346e50d07e1a7621db44ac2d21c490205becb5d79631a74b70faba1439dc312"
     },
     {
       "art": "aenderung",
@@ -55,9 +74,12 @@
       "titelDe": "Verordnung über die Versichertenkarte für die obligatorische Krankenpflegeversicherung (VVK) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la carte d'assuré pour l'assurance obligatoire des soins (OCA) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla tessera d'assicurato per l'assicurazione obbligatoria delle cure medico-sanitarie (OTA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/181/de",
-      "sha": "0233845cecdc8ade6611d9461bb564ced8ee79f379c7888cd14c398f37157252"
+      "sha": "465416ba10a0bef5f7a9501e2db289e3591d013fb2bc97e6d7b68dc34d034836"
     }
   ],
-  "sha": "ab4f0a617245bcab91252aa6f7d661dfceb058ffd3b7792ec7abc303783f6d43"
+  "sha": "0c5fcd114ad5f19c646cd55d0e40e5ecfdde8bbdfc2680c58e9358b9687df849"
 }

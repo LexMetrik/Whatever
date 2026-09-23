@@ -1,8 +1,8 @@
 {
   "erlassKey": "VGR",
   "sr": "173.320.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/238/de",
-      "sha": "442f88e7636ebcf70a2f79501b760b1df34406ff16e756a57967af8af5196096"
+      "sha": "8ddab722078ce3f2fe1ce318b3593d4196984e82d25d5a0b3da5b9b716c2d2a2"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/844/de",
-      "sha": "68bd9b952cf8a2bddfe259da07677c180988297e3c5c52ec3100b1eb7ba82af8"
+      "sha": "3f55f2516654d24a5ba8659303e2a769a5d4ecc62f93ffa42b6d8a42cf9195ef"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/501/de",
-      "sha": "0a492031e0640f8b1b80d1a76f8e8cde5c905a738f5027f31444e9962222c27a"
+      "sha": "849912013700ce3fe58e23be69cd65194442c6b7e1537813a01b06ad844468f2"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/355/de",
-      "sha": "da4c0d6597a39e87f791c078fee00f92be691043b0f71d46e6994db4ee58da32"
+      "sha": "70b49228455d6d12a1e6f5dcbeadac281f14d50223b977789fbafb2eee78fb64"
     },
     {
       "art": "aenderung",
@@ -61,8 +73,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/671/de",
-      "sha": "3d4817c2375db0b3d058a946b6075e09ff8a3ed20dbc53ba134af781c2a9c209"
+      "sha": "e69ffce4f8022b5a517df4cbee96e642b0d1b7d64e65bef6e9c4a36579a7b9ff"
     },
     {
       "art": "aenderung",
@@ -73,8 +88,12 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/629/de",
-      "sha": "abf9068b122d9468a99802325d7cdeb7c4f92bef91a5783d4085dd29a4a1f581"
+      "sha": "9df6b15508e76d608b3987c90f27c091ccb2c62d56ac942cc26c34441b09dfd6"
     },
     {
       "art": "aenderung",
@@ -85,8 +104,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/518/de",
-      "sha": "88b9cf366523b2f28eb985796866ece127a70c154c6196b66651dd16453a6927"
+      "sha": "7e78e11a5d1d4e222abc7b42cd3cc4b68629adce2a8fd76f52f86e6f3cb69584"
     },
     {
       "art": "aenderung",
@@ -97,8 +119,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/412/de",
-      "sha": "3716fac9ecdda1741baabe5f61aeec633316e8fd9c8205a22c85be3cfacb6b60"
+      "sha": "7015230c71918a1e10a99685e7e720e807d304b899e0e0d47128f59c207d680e"
     },
     {
       "art": "aenderung",
@@ -109,8 +134,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/692/de",
-      "sha": "046ada53f29d89143a2f5a6e555e0e1a6a842a61814153ed657b315b4bc221b1"
+      "sha": "897c66100f8871621639d9ae0f0c818a7fcd54aa1103a9c49142fe70a298d5c6"
     },
     {
       "art": "aenderung",
@@ -121,8 +149,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/2/de",
-      "sha": "caa42e0f6506b88edf23a81d811cb1e5b9d324c5321fb57eec5e0ce647e8b9d0"
+      "sha": "d0ab49d90924d93d2710adbc6aec2221c08ac14a7905c2fe1682a62a57e91668"
     },
     {
       "art": "aenderung",
@@ -133,8 +164,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/623/de",
-      "sha": "9129a4d4392a67ed58cce8145c748eea22fc9373b21236b2891a2e06fd3f4586"
+      "sha": "581912ad293ed8e67ed8d63d83bd3fd2cf24f3bceb56ef08e6e4a5941e8e0d2e"
     },
     {
       "art": "aenderung",
@@ -145,8 +179,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/450/de",
-      "sha": "47ac0779682438779842c889326a9858244c20835ab131b01ca4a2023207f4d4"
+      "sha": "ef4f938ac469da8faa25fddfeaa201c4a1894af2fc5900c20539a81aaee8df6b"
     },
     {
       "art": "aenderung",
@@ -157,8 +194,11 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/373/de",
-      "sha": "2e025b1e209a8e14cd9dcb6c4598d5df918b3ad5f213070bf09558ad0512ba01"
+      "sha": "ffa8d223dd914ed97f07045de6f4d180146694cfd494d60107ee1cfd812b1c2d"
     },
     {
       "art": "aenderung",
@@ -169,8 +209,12 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/271/de",
-      "sha": "a9b262d778c374c2fbba4eb60fe96846573525e299e699a13bb8c0410c766a47"
+      "sha": "e02e417e139c65c964c02511eada6fd84f61e84093be3f4c395491f14bc32793"
     },
     {
       "art": "aenderung",
@@ -181,33 +225,12 @@
       "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
       "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
       "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/145/de",
-      "sha": "d850678547622ed9ac3f534563f4c97434d60dfa00a9209c7de795f566c805c0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/320",
-      "dateDocument": "2008-04-17",
-      "roFundstelle": "AS 2008 2189",
-      "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
-      "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
-      "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/320/de",
-      "sha": "a9141741003c2a0a138002ea21d1854a6333bb6591f9cef23a3f1a66c431c564"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/799",
-      "dateDocument": "2006-12-11",
-      "roFundstelle": "AS 2006 5287",
-      "titelDe": "Geschäftsreglement für das Bundesverwaltungsgericht (VGR)",
-      "titelFr": "Règlement du Tribunal administratif fédéral (RTAF)",
-      "titelIt": "Regolamento del Tribunale amministrativo federale (RTAF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/799/de",
-      "sha": "f9e02fc452693d06a87ec28de09506d6068dd849aaef0ef5a5ebf5e00894ab56"
+      "sha": "7b929ef472a82c4ef8c68f5a0a8aa6e5ebdcee2e98e8d9ab33084df2c99bd316"
     }
   ],
-  "sha": "cdbfeef9e7da1666e6bff5d4519aaa674e7aa2ab7a45aa17f83d30ce4a23d37a"
+  "sha": "1ee23208ec810128ebc202b2e76cffdf22baf4bd1219abd927abc831cb311a7d"
 }

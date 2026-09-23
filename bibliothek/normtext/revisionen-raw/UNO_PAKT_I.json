@@ -1123,5 +1123,158 @@
     "2024-11-28"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/725_725_725",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/725_725_725",
+    "inkrafttreten": "1992-09-18",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3101_3101_3101",
+        "typ": 1,
+        "datum": "1993-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3101_3101_3101",
+        "typ": 9,
+        "datum": "1993-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/724_724_724",
+        "typ": 3,
+        "datum": "1992-09-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/725_725_725",
+        "typ": 5,
+        "datum": "1992-09-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/716_716_716",
+        "typ": 1,
+        "datum": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/716_716_716",
+        "typ": 9,
+        "datum": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/536",
+        "typ": 1,
+        "datum": "2004-05-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/536",
+        "typ": 9,
+        "datum": "2004-05-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/83",
+        "typ": 1,
+        "datum": "2006-01-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/83",
+        "typ": 9,
+        "datum": "2006-01-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/81",
+        "typ": 1,
+        "datum": "2006-10-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/81",
+        "typ": 9,
+        "datum": "2006-10-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/102",
+        "typ": 1,
+        "datum": "2008-12-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/102",
+        "typ": 9,
+        "datum": "2008-12-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/364",
+        "typ": 1,
+        "datum": "2012-05-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/364",
+        "typ": 9,
+        "datum": "2012-05-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/184",
+        "typ": 1,
+        "datum": "2015-03-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/184",
+        "typ": 9,
+        "datum": "2015-03-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/460",
+        "typ": 1,
+        "datum": "2018-07-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/460",
+        "typ": 9,
+        "datum": "2018-07-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/327",
+        "typ": 1,
+        "datum": "2019-05-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/327",
+        "typ": 9,
+        "datum": "2019-05-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/103",
+        "typ": 9,
+        "datum": "2022-02-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/712",
+        "typ": 9,
+        "datum": "2024-11-28"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1993/3101_3101_3101": {
+        "dateForce": "1993-11-01",
+        "dateDoc": "1993-11-01",
+        "roId": "RO 1993 3101",
+        "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
+        "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques sociaux et culturels",
+        "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/724_724_724": {
+        "dateForce": "1992-09-18",
+        "dateDoc": "1991-12-13",
+        "roId": "RO 1993 724",
+        "titelDe": "Bundesbeschluss vom 13. Dezember 1991 betreffend den internationalen Pakt über wirtschaftliche, soziale und kulturelle Rechte",
+        "titelFr": "Arrêté fédéral du 13 décembre 1991 concernant le Pacte international relatif aux droits économiques, sociaux et culturels",
+        "titelIt": "Decreto federale del 13 dicembre concernente il Patto internazionale relativo ai dirittti economici sociali e culturali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/716_716_716": {
+        "dateForce": "1996-02-01",
+        "dateDoc": "1996-02-01",
+        "roId": "RO 1996 716",
+        "titelDe": "Internationaler Pakt vom 16 Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
+        "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques sociaux et culturels",
+        "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali"
+      }
+    }
+  }
 }

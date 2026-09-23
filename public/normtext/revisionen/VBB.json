@@ -1,8 +1,8 @@
 {
   "erlassKey": "VBB",
   "sr": "281.31",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung (VFRR)",
       "titelFr": "Ordonnance sur les formulaires et registres à employer en matière de poursuite pour dettes et de faillite et sur la comptabilité (Oform)",
       "titelIt": "Regolamento sui formulari e registri da impiegare in tema d'esecuzione e di fallimento e sulla contabilità (Rform)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/671/de",
-      "sha": "fa2307654d5b39646bcec39d96cf17cffc29829222b7194e371c20640e38266c"
+      "sha": "5005ed57290011d0c4a73c0de720f61e82b3ad9aa79ca51be3398f5f5e9c7f66"
     },
     {
       "art": "aenderung",
@@ -25,33 +28,27 @@
       "titelDe": "Verordnung über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung (VFRR)",
       "titelFr": "Ordonnance sur les formulaires et registres à employer en matière de poursuite pour dettes et de faillite et sur la comptabilité (Oform)",
       "titelIt": "Regolamento sui formulari e registri da impiegare in tema d'esecuzione e di fallimento e sulla contabilità (Rform)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/726/de",
-      "sha": "6727c2b641e207c6e05d6b442921847eef944b170c44f518d3866cf71e58f17d"
+      "sha": "1becd26c438efe66ecffbe96eb6c53dda2d2fbbc1cd642ce7dfd6756084b9229"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1997-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2877_2877_2877",
-      "dateDocument": "1996-06-05",
-      "roFundstelle": "AS 1996 2877",
-      "titelDe": "Verordnung vom 5. Juni 1996 über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung (VFRR)",
-      "titelFr": "Ordonnance du 5 juin 1996 sur les formulaires et registres à employer en matière de poursuite pour dettes et de faillite et sur la comptabilité (Oform)",
-      "titelIt": "Regolamento del 5 giugno 1996 sui formulari e registri da impiegare in tema d'esecuzione e di fallimento e sulla contabilità (Rform)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2877_2877_2877/de",
-      "sha": "614859803dfc6601f763a92030aeddf43594ace31b6ab97d6239332aefd02101"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1892-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/12/401_369_401",
-      "dateDocument": "1891-12-18",
-      "roFundstelle": "AS 12 401",
-      "titelDe": "Verordnung Nr. 1 zum Bundesgesetz über Schuldbetreibung und Konkurs: Reglement über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register und die Rechnungsführung",
-      "titelFr": "Ordonnance no 1 pour l'exécution de la loi fédérale sur la poursuite pour dettes et la faillite: Règlement sur les formulaires et les registres à employer en matière de poursuite pour dettes et de faillite et la comptabilité",
-      "titelIt": "Ordinanza n. 1 per l'attuazione della legge federale sulla esecuzione e sul fallimento: Regolamento sui formolari e registri da impiegare in tema d'esecuzione e di fallimento e sulla contabilità",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/12/401_369_401/de",
-      "sha": "df11973338e2919ffdd1f54f76146374bd941202ee27a04eddce9fff5331c049"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3490_3490_3490",
+      "dateDocument": "1996-12-04",
+      "roFundstelle": "AS 1996 3490",
+      "titelDe": "Verordnung über die im Betreibungs- und Konkursverfahren zu verwendenden Formulare und Register sowie die Rechnungsführung (VFRR), Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur les formulaires et registres à employer en matière de poursuite pour dettes et de faillite et sur la comptabilité (Oform), Errata (seulement en italien)",
+      "titelIt": "Ordinanza sui formulari e registri da impiegare in tema d'esecuzione e di fallimento e sulla contabilità (OFRC), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3490_3490_3490/de",
+      "sha": "3aa5e1e27f98e486240f77c34d99293494f56e61c5d2c90cae1b5ec722ba3aea"
     }
   ],
-  "sha": "478eda87541867a7dccbea2c03e227e44d244d0c4672e2598859e6f13d8d8401"
+  "sha": "292ef226630e56f21f2ea6bc66784baa7da6ff8bdb3039ed5d4566a31da235e0"
 }

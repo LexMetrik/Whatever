@@ -771,5 +771,153 @@
     "2025-08-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1991/249_249_249",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1991/249_249_249",
+    "inkrafttreten": "1991-02-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/249_249_249",
+        "typ": 5,
+        "datum": "1991-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/225_225_225",
+        "typ": 1,
+        "datum": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/225_225_225",
+        "typ": 2,
+        "datum": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+        "typ": 1,
+        "datum": "2000-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/288",
+        "typ": 1,
+        "datum": "2000-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/179",
+        "typ": 1,
+        "datum": "2001-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/251",
+        "typ": 6,
+        "datum": "2000-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/389",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/103",
+        "typ": 1,
+        "datum": "2011-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/765",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/199",
+        "typ": 1,
+        "datum": "2014-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/63",
+        "typ": 1,
+        "datum": "2015-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/290",
+        "typ": 1,
+        "datum": "2017-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/449",
+        "typ": 1,
+        "datum": "2025-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1996/225_225_225": {
+        "dateForce": "1996-02-01",
+        "dateDoc": "1995-12-18",
+        "roId": "RO 1996 225",
+        "titelDe": "Verordnung über den Natur- und Heimatschutz (NHV), Änderung",
+        "titelFr": "Ordonnance sur la protection de la nature et du paysage (OPN), Modification",
+        "titelIt": "Ordinanza sulla protezione della natura e del paesaggio (OPN), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2001/179": {
+        "dateForce": "2001-05-01",
+        "dateDoc": "2001-04-04",
+        "roId": "RO 2001 1310",
+        "titelDe": "Verordnung über die regionale Förderung der Qualität und der Vernetzung von ökologischen Ausgleichsflächen in der Landwirtschaft (Öko-Qualitätsverordnung, ÖQV)",
+        "titelFr": "Ordonnance sur la promotion régionale de la qualité et de la mise en réseau des surfaces de compensation écologique dans l'agriculture (Ordonnance sur la qualité écologique, OQE)",
+        "titelIt": "Ordinanza sul promovimento regionale della qualità e dell'interconnessione delle superfici di compensazione ecologica nell'agricoltura (Ordinanza sulla qualità ecologica, OQE)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/789": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5823",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+        "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+        "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/389": {
+        "dateForce": "2008-07-01",
+        "dateDoc": "2008-05-21",
+        "roId": "RO 2008 2809",
+        "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+        "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+        "titelIt": "Ordinanza sulla geoinformazione (OGI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/765": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2013-10-23",
+        "roId": "RO 2013 4145",
+        "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+        "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+        "titelIt": "Ordinanza concernente i pagamenti diretti all'agricolt ura (Ordinanza sui pagamenti diretti, OPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/199": {
+        "dateForce": "2014-05-01",
+        "dateDoc": "2014-04-02",
+        "roId": "RO 2014 909",
+        "titelDe": "Raumplanungsverordnung (RPV)",
+        "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
+        "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/63": {
+        "dateForce": "2015-03-01",
+        "dateDoc": "2015-01-28",
+        "roId": "RO 2015 427",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts im Umweltbereich, insbesondere hinsichtlich der Programmvereinbarungen für die Programmperiode 20162019",
+        "titelFr": "Ordonnance sur les adaptations d'ordonnances dans le domaine de l'environnement, liées en particulier aux conventions-programmes à conclure pour la période allant de 2016 à 2019",
+        "titelIt": "Ordinanza che adegua ordinanze nel settore ambientale, legate in particolare agli accordi programmatici per il periodo 20162019"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/290": {
+        "dateForce": "2017-06-01",
+        "dateDoc": "2017-03-29",
+        "roId": "RO 2017 2815",
+        "titelDe": "Verordnung über das Bundesinventar der Landschaften und Naturdenkmäler (VBLN) ",
+        "titelFr": "Ordonnance concernant l'inventaire fédéral des paysages, sites et monuments naturels (OIFP) ",
+        "titelIt": "Ordinanza riguardante l'inventario federale dei paesaggi, siti e monumenti naturali (OIFP) "
+      }
+    }
+  }
 }

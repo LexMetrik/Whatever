@@ -1,8 +1,8 @@
 {
   "erlassKey": "UVV",
   "sr": "832.202",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Ordonnance sur l’assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/432/de",
-      "sha": "25bf8e36222703b8b494adcb7569f430f7bcc4c41ea289a19a0b52c515e5b642"
+      "sha": "9d9770b74adca615422cc9a0829e1adf802e1761c82e36d06f46317e80cf063e"
     },
     {
       "art": "aenderung",
@@ -26,14 +29,26 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l’assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/599/de",
-      "sha": "c7d68363338e5ea746d42b890cbf189d858733414dec1861a61e5f2d7cc70f49"
+      "sha": "4acf38e24d32039103a1ea99a5acb63593ead94f8dad75b4bb17d6435adbfd2a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "38549971d2d141343b803d948cb4ce75915f25a5f65c7347a5998cfc0c944eb6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/318",
+      "dateDocument": "2025-04-30",
+      "roFundstelle": "AS 2025 318",
+      "titelDe": "Verordnung vom 30. April 2025 über die Bundesstatistik (Bundesstatistikverordnung, BStatV)",
+      "titelFr": "Ordonnance du 30 avril 2025 sur la statistique fédérale (OStatF)",
+      "titelIt": "Ordinanza del 30 aprile 2025 sulla statistica federale (OStatF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/318/de",
+      "sha": "a0d516944978e599d214a04df26542360ff487ce10413512053a37c9f61589fe"
     },
     {
       "art": "aenderung",
@@ -44,20 +59,41 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l’assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/752/de",
-      "sha": "cec20f8d920ba8e92cec7135b111fe81e04757278a4f238dcad165bfc17cea29"
+      "sha": "cb3355765577f0560cc8c02b4839f4ba032941a4576fcfa17bedc54d367ae019"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "23a7e86fc9196a6aa8e13d4c859057ac1b9e2d4681c07e1732ff3718b4347550"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "5c7dddebd3667bd2e5e37e0414d505dec30f1f7afa17760d0578b07c3cc6f54c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "063305b6c0b138baccdb91dd897a1882ffc694fd5b94012d1197a4858ba43cbf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
       "art": "aenderung",
@@ -68,14 +104,56 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l’assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/380/de",
-      "sha": "0fad84c4531ed166f46102355db46808607280fa23a069b7311548e9406d2cdb"
+      "sha": "441011faa68e6901fee7222f6114d5fb94bab541c6d801b92417bf1cf896670a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/814",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 814",
+      "titelDe": "Verordnung über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance sur l’assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza sull’assicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/814/de",
+      "sha": "17af8fdfe06ba3a1c41272c93d73c318fc3093bd7b3ea08b642fafae3a3d901e"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "3a716eae8ae958da266eddff7f71b39da272453935fbcdff4e860bbd903e4010"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/439",
+      "dateDocument": "2021-06-23",
+      "roFundstelle": "AS 2021 439",
+      "titelDe": "Verordnung über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance sur l’assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza sullʼassicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/439/de",
+      "sha": "6782a51565a940cd244f1930a95e9a104d9a08ed7642acb2a4bf0db3ffe75a42"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/706",
+      "dateDocument": "2021-11-03",
+      "roFundstelle": "AS 2021 706",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l’assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/706/de",
+      "sha": "99d19a3437028d4e9fec4f5578c808e95ae052f8bf9e6566d9c4a27114c63265"
     },
     {
       "art": "aenderung",
@@ -86,8 +164,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/157/de",
-      "sha": "c9e185ebae183b306a9015c537193c661ef185f3c130ecbf3773f98544a407b6"
+      "sha": "d495de596d2cfbc255298045dd3a4c3a78722824b8c43d1278258af72a8e6965"
     },
     {
       "art": "aenderung",
@@ -98,8 +179,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/56/de",
-      "sha": "c8966b28dff0e3f8d2d3785427d893db18485d831f1d75722fc3cc79b28e08bd"
+      "sha": "c600df3aa82209ea6a8e495ddfd7a09f3a591f547124936243cbdd6ac575b512"
     },
     {
       "art": "aenderung",
@@ -110,8 +194,12 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/724/de",
-      "sha": "662135fdf30584b821b79649c73e7b33ac4870488164490170c85b55047780b0"
+      "sha": "cf6b353f0abb8ba5b4d97a38c95787db855e335ca254763bbfdfcf330a54e6da"
     },
     {
       "art": "aenderung",
@@ -122,8 +210,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/702/de",
-      "sha": "19c8b4dfea9a981c7a4e337001103c988ae01ad35292a8b416e09140910b75a9"
+      "sha": "431ec3ea5e21bd26bcbec1b024a1286bb9facd0551afd9d4ca9e7b324a6bc5d4"
     },
     {
       "art": "aenderung",
@@ -134,14 +225,26 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/639/de",
-      "sha": "66b18e83a97794a78fb9aa5c7dfcada2564aa9e5783e605a49c05cf835de145e"
+      "sha": "e688a0d920a76fbb2646cbf7d70c600e6760b84e2f4f8e2f8a6d637593409e10"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "2193358af77247a57df0eada69fe0bc924dcd5bb596ef5c9ea74b77dec3c1f38"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/812",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4561",
+      "titelDe": "Organisationsverordnung für den Bundesrat (OV-BR)",
+      "titelFr": "Ordonnance sur l'organisation du Conseil fédéral (Org CF)",
+      "titelIt": "Ordinanza sull'organizzazione del Consiglio federale (OOrg-CF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/812/de",
+      "sha": "5bb68f2d2455664c95b9e15079952fd3bb0d64a032cfc67f1970deb600b9f3e6"
     },
     {
       "art": "aenderung",
@@ -152,14 +255,26 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/731/de",
-      "sha": "6d12b30488e765c46d12955f60dad4273b6ceb069f8a4656a78523efa57acc10"
+      "sha": "6f8c4e2dc782218f31cb713bdfb09e9fadfb7647f6c4d6a71060f68831eac1b8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "0211002a12554f0769cedf1e4d6c252175664af75e017452bcdf5d6c2cc9dc8e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/800",
+      "dateDocument": "2011-11-16",
+      "roFundstelle": "AS 2011 5679",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/800/de",
+      "sha": "7a0f1c42e267b94f85796687a1d7b9ac46c4298af049b6d18252720c1c15c3d1"
     },
     {
       "art": "aenderung",
@@ -170,14 +285,56 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/457/de",
-      "sha": "594d970ffc9a13a39af02681a3641bbf86dbb3e796aad4662d7292c2885dea35"
+      "sha": "9222b07a82b5c69598a1ad4c3099354b8c2e0085b29b72087545c41cbd5ed626"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/72",
+      "dateDocument": "2006-09-06",
+      "roFundstelle": "AS 2007 373",
+      "titelDe": "Verordnung über Massnahmen zur Bekämpfung der Schwarzarbeit (Verordnung gegen die Schwarzarbeit, VOSA)",
+      "titelFr": "Ordonnance concernant des mesures en matière de lutte contre le travail au noir (Ordonnance sur le travail au noir, OTN)",
+      "titelIt": "Ordinanza concernente i provvedimenti in materia di lotta contro il lavoro nero (Ordinanza contro il lavoro nero, OLN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/72/de",
+      "sha": "ad022560baacbc9e4cd97f0d4705045e6c2a327960459f29796c0bcc0ad19717"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/861",
+      "dateDocument": "2007-12-07",
+      "roFundstelle": "AS 2007 6657",
+      "titelDe": "Verordnung zum Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatverordnung, V-GSG)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Ordonnance sur l'Etat hôte, OLEH)",
+      "titelIt": "Ordinanza relativa alla legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Ordinanza sullo Stato ospite, OSOsp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/861/de",
+      "sha": "c578a4ca8dd7595111b9b14c9dac58d721b1b9ef422202efbb2856eb45540563"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "1d751ab476b30ae47e62c4c133a71da6b5899126eb224121b8e21a73ec593602"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
       "art": "aenderung",
@@ -188,14 +345,26 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/731/de",
-      "sha": "547e19186657c6fc434ab29230920dcf5a0e11789f2a3f371b52e17c92aa68ad"
+      "sha": "daf7a2be6f08303908b72a891631b71ff3bb6cdff8427bdcaa1cf2cdc840e26e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.202",
-      "sha": "78e98fb5bf489aaf35624229164dfe507a7c7ea2e01ab5fe6702c9d3daaadaa6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/187",
+      "dateDocument": "2004-11-24",
+      "roFundstelle": "AS 2005 1251",
+      "titelDe": "Verordnung zum Erwerbsersatzgesetz (EOV)",
+      "titelFr": "Règlement sur les allocations pour perte de gain (RAPG)",
+      "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/187/de",
+      "sha": "d0911960da0bd3c449bae5203172ef81c78fb743f3c23d348184af9632daf7f8"
     },
     {
       "art": "aenderung",
@@ -206,8 +375,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OLAA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/446/de",
-      "sha": "1e18b3875a5fc6a5a55795956e2d48832536702cf1714f1267ddb3e6c76e0737"
+      "sha": "5f0463b2705fc06be08cfb9bee6267ad6ee25094b2341c2cc555c3b65e9d3ab1"
     },
     {
       "art": "aenderung",
@@ -218,8 +390,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/563/de",
-      "sha": "9b12310b1aa88caaf656900dd538db680c92e36c1ff4beac4d56176b6df93629"
+      "sha": "bac8aa45d2e081722e2f5081a76611d2e8d049f3f30b62fccaa2eb3aedd152e6"
     },
     {
       "art": "aenderung",
@@ -230,8 +405,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/322/de",
-      "sha": "b787f814a3e536cb385bb4726662c9fe92b4bd2e7e15a69fc85722bbfcbf9836"
+      "sha": "926c740de465ad3a861ad0686f4aa159749a8dacd585a08c1301ead6e6538203"
     },
     {
       "art": "aenderung",
@@ -242,8 +420,12 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/607/de",
-      "sha": "c4b9671caab78bee1c31a6ebe2a338a1179cffa4dcc2df9b79fe003e3b87cce4"
+      "sha": "ed1b92f565bb8df36aac8fbbb0be55770fc7ac9a61a043c4d1f7e2f9e1ec9b5d"
     },
     {
       "art": "aenderung",
@@ -254,8 +436,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/430/de",
-      "sha": "c2a3808bba26d770f633442c19eebd76b1c3fb992a8782ffaec18f920dc29e85"
+      "sha": "11777380f0940fac0c3a07d07fe21893a14ceee4f1bdc2ddb011e7806aee2bb8"
     },
     {
       "art": "aenderung",
@@ -266,8 +451,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/270/de",
-      "sha": "3a49201d75898688b6125ea987e01fdd4e5845e3a310fafb3b0ccab3f82f6d95"
+      "sha": "30f17632883ec7c97b044ab41fa5ea01a8888782a1276a004d5358efcf202f8d"
     },
     {
       "art": "aenderung",
@@ -278,8 +466,12 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/511/de",
-      "sha": "5712352dc7f762357ef44b81fd45de8b38d8352086071fde5b40fd617995ec54"
+      "sha": "7e9b8cabb7629719ad2d115142bd44e6846312467ddc9eabb42aa8a93e18c099"
     },
     {
       "art": "aenderung",
@@ -290,8 +482,11 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2588_2588_2588/de",
-      "sha": "664e4a050a870fd63f279293e967698283d4bd3105241adde50596a50c9bc396"
+      "sha": "c38ffb8a8c59d5a64d89c65c9f7bca453d0e256f34360b3803fb1eee84a0917c"
     },
     {
       "art": "aenderung",
@@ -302,8 +497,56 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/453/de",
-      "sha": "bb468845b6840b343a59f8986c1fe771d0de7d0f0a69444c9aeb09c7c3daa370"
+      "sha": "d6588680632066f39ee94649100362d9005d6dbd089690b773618d9704a00bf1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/151_151_151",
+      "dateDocument": "1997-12-15",
+      "roFundstelle": "AS 1998 151",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli in fortuni (OAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/151_151_151/de",
+      "sha": "fdcc189b98689ae0e0eca25e172faf4ddba68dd99cafc164d7a0ae39b5972c5e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3456_3456_3456",
+      "dateDocument": "1996-12-09",
+      "roFundstelle": "AS 1996 3456",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli in fortuni (OAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3456_3456_3456/de",
+      "sha": "8d8d659b20bdde2445f37737d7617648abe3ef2956846ee96b3e679842b92b20"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2685_2685_2685",
+      "dateDocument": "1996-09-11",
+      "roFundstelle": "AS 1996 2685",
+      "titelDe": "Verordnung vom 11. September 1996 über den zivilen Ersatzdienst (Zivildienstverordnung, ZDV)",
+      "titelFr": "Ordonnance du 11 septembre 1996 sur le service civil (OSCi)",
+      "titelIt": "Ordinanza dell'11 settembre 1996 sul servizio civile (OSCi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2685_2685_2685/de",
+      "sha": "52bb68399447bf19a4943c7d566fd9ed52604f2b320116f99e1a723d4071f4b3"
     },
     {
       "art": "aenderung",
@@ -314,21 +557,221 @@
       "titelDe": "Verordnung über die Unfallversicherung (UVV)",
       "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
       "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/252/de",
-      "sha": "ac60e5e9d29efc7a6fa0f485bbdbb8fa9ce58722958cc6d46f30efb5ef90da27"
+      "sha": "c73aacad2e98bf6a0ead3fdf5dd6d7308a021242c846a8ec87d6a985d78ece83"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3867_3867_3867",
+      "dateDocument": "1995-06-27",
+      "roFundstelle": "AS 1995 3867",
+      "titelDe": "Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance du 27 juin 1995 sur l'assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3867_3867_3867/de",
+      "sha": "3dfd34000e90542d80ae00ff816cbc13fb65e7c82af05cf50f9bdfe540e3eb7c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5691_5691_5691",
+      "dateDocument": "1995-12-27",
+      "roFundstelle": "AS 1995 5691",
+      "titelDe": "Verordnung über die Krankenversicherung, Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur l'assurance-maladie, Errata (seulement en italien)",
+      "titelIt": "Ordinanza sull'assicurazione malattie, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5691_5691_5691/de",
+      "sha": "bc6c3afdcabfbaa205867a0ef72458002aac31a41b70e66ccfc5915f92b35b91"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/698_698_698",
+      "dateDocument": "1996-01-24",
+      "roFundstelle": "AS 1996 698",
+      "titelDe": "Verordnung vom 24. Januar 1996 über die Unfallversicherung von arbeitslosen Personen",
+      "titelFr": "Ordonnance du 24 janvier 1996 sur l'assurance-accidents des personnes au chômage",
+      "titelIt": "Ordinanza del 24 gennaio 1996 sull'assicurazione contro gli infortuni dei disoccupati",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/698_698_698/de",
+      "sha": "b15856496ae6062553cbc30c1e43067de1a918f5cf4babb6e7b5d2b3cf04ce31"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2483_2483_2483",
+      "dateDocument": "1994-10-26",
+      "roFundstelle": "AS 1994 2483",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli in fortuni (OAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2483_2483_2483/de",
+      "sha": "1bfbda71e9bac256d54d5f216fb47df20feafb8cd4bcbdb2d896ca46b6bff0b3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/879_879_879",
+      "dateDocument": "1993-02-03",
+      "roFundstelle": "AS 1993 879",
+      "titelDe": "Verordnung vom 3. Februar 1993 über Organisation und Verfahren eidgenössischer Rekurs- und Schiedskommissionen",
+      "titelFr": "Ordonnance du 3 février 1993 concernant l'organisation et la procédure des commissions fédérales de recours et d'arbitrage",
+      "titelIt": "Ordinanza del 3 febbraio 1993 concernente l'organizzazione e la procedura delle commissioni federali di ricorso e di arbitrato",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/879_879_879/de",
+      "sha": "70fd5bc19bf90f6b06daf300d032e36ab2bf0881f0c9402452acf56f5f8e563c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-07-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1516_1516_1516",
+      "dateDocument": "1992-07-01",
+      "roFundstelle": "AS 1992 1516",
+      "titelDe": "Verordnung vom 1. Juli 1992 über die Arbeitsleistung infolge Militärdienstverweigerung (VAL)",
+      "titelFr": "Ordonnance du 1er juillet 1992 sur l'astreinte au travail pour les objecteurs de conscience (OAST)",
+      "titelIt": "Ordinanza del 1o luglio 1992 concernente la prestazione di lavoro degli obiettori di coscienza (OPL)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1516_1516_1516/de",
+      "sha": "abd343a1106cabcb54048e5b5940295f66879ce0d7245713227e5ecadc1b62e9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1290_1290_1290",
+      "dateDocument": "1992-06-24",
+      "roFundstelle": "AS 1992 1290",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli in fortuni (OINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1290_1290_1290/de",
+      "sha": "fff9472b1e01603a2ec5da839bd4ac63f5ce35066eba00445d88bd22250112a1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/768_768_768",
+      "dateDocument": "1990-05-02",
+      "roFundstelle": "AS 1990 768",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli in fortuni (OAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/768_768_768/de",
+      "sha": "e41aa87c96e41d3a11688a00b56d53300a3f6bdbf4065a4a64b27181a7a7f618"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1498_1498_1498",
+      "dateDocument": "1987-10-21",
+      "roFundstelle": "AS 1987 1498",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli in fortuni, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1498_1498_1498/de",
+      "sha": "0d60951da578ee8ef50f8fc15f88b4f1fcdd146576988c449fb385ef52cafe50"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/464_464_464",
+      "dateDocument": "1987-01-22",
+      "roFundstelle": "AS 1987 464",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli in fortuni (OAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/464_464_464/de",
+      "sha": "a81eba4dc8b56d889e8ea6af76f84e58b692752b138ed70b8ecd42fd40696015"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1438_1438_1438",
+      "dateDocument": "1986-08-12",
+      "roFundstelle": "AS 1986 1438",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1438_1438_1438/de",
+      "sha": "1eedda890e6ae6541d632840f504b18d66e6ee2ad9275640d04057d845ddb174"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/825_825_825",
+      "dateDocument": "1986-04-30",
+      "roFundstelle": "AS 1986 825",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/825_825_825/de",
+      "sha": "3aee5a6ceba9a803cd8fce567c3abfe43a2b73e6e68bd698555c39a32833c90a"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1984-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/38_38_38",
-      "dateDocument": "1982-12-20",
-      "roFundstelle": "AS 1983 38",
-      "titelDe": "Verordnung vom 20. Dezember 1982 über die Unfallversicherung (UVV)",
-      "titelFr": "Ordonnance du 20 décembre 1982 sur l'assurance-accidents (OLAA)",
-      "titelIt": "Ordinanza del 20 dicembre 1982 sull'assicurazione contro gli infortuni (OAINF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/38_38_38/de",
-      "sha": "6d149082eeb1eb724bc1bd510e5a786f698b4f95db541f6fa84ca2e08acfab5f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/__1160",
+      "dateDocument": "1983-08-30",
+      "titelIt": "Correzione: Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/__1160/de",
+      "sha": "d927cdddad5938ba01d7a44732858472a068f369d87ef8e36d82ad9191113831"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/606_606_606",
+      "dateDocument": "1985-05-15",
+      "roFundstelle": "AS 1985 606",
+      "titelDe": "Übereinkommen Nr. 111 vom 25. Juni 1958 über die Diskriminierung in Beschäftigung und Beruf",
+      "titelFr": "Convention no 111 du 25 juin 1958 concernant la discrimination en matière d'emploi et de profession",
+      "titelIt": "Convenzione n. 111 del 25 giugno 1958 concernente la discriminazione nell'impiego e nella professione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/606_606_606/de",
+      "sha": "e4341c86f9390d4f140c08a5b5503e1c4895652b77c582782626bd65e99ab399"
     }
   ],
-  "sha": "149dae85880097cd85700fd047c3dfa735cbeb3714ab79a5ba9e371b0166cbaa"
+  "sha": "3ea88f53f09f928c23dea8904cb3bc3f7e5e2541ca415381d913f4804d4a1620"
 }

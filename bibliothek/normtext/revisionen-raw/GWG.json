@@ -550,5 +550,407 @@
     "2026-10-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1998/892_892_892",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1998/892_892_892",
+    "inkrafttreten": "1998-04-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/892_892_892",
+        "typ": 5,
+        "datum": "1998-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/118",
+        "typ": 1,
+        "datum": "2000-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+        "typ": 1,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/734",
+        "typ": 1,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/698",
+        "typ": 1,
+        "datum": "2008-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 2,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/64",
+        "typ": 1,
+        "datum": "2009-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/781",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/781",
+        "typ": 5,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/587",
+        "typ": 1,
+        "datum": "2012-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+        "typ": 1,
+        "datum": "2013-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/648",
+        "typ": 1,
+        "datum": "2013-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+        "typ": 2,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+        "typ": 1,
+        "datum": "2014-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/795",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 2,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 5,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/803",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/803",
+        "typ": 6,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/91",
+        "typ": 6,
+        "datum": "2020-02-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+        "typ": 1,
+        "datum": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/360",
+        "typ": 1,
+        "datum": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/399",
+        "typ": 5,
+        "datum": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/656",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/656",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/656",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/551",
+        "typ": 5,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+        "typ": 1,
+        "datum": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+        "typ": 1,
+        "datum": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/322",
+        "typ": 1,
+        "datum": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+        "typ": 1,
+        "datum": "2026-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2000/118": {
+        "dateForce": "2000-04-01",
+        "dateDoc": "1998-12-18",
+        "roId": "RO 2000 677",
+        "titelDe": "Bundesgesetz über Glücksspiele und Spielbanken (Spielbankengesetz, SBG)",
+        "titelFr": "Loi fédérale sur les jeux de hasard et les maisons de jeu (Loi sur les maisons de jeu, LMJ)",
+        "titelIt": "Legge federale sul gioco d'azzardo e sulle case da gioco (Legge sulle case da gioco, LCG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/200": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2003-12-19",
+        "roId": "RO 2004 1633",
+        "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+        "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+        "titelIt": "Legge federale sul programma di sgravio 2003"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/734": {
+        "dateForce": "2006-01-01",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2005 5269",
+        "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+        "titelFr": "Loi fédérale sur la surveillance des entreprises d'assurance (Loi sur la surveillance des assurances, LSA)",
+        "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/822": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-06-23",
+        "roId": "RO 2006 5379",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/698": {
+        "dateForce": "2008-12-05",
+        "dateDoc": "2008-06-13",
+        "roId": "RO 2008 4989",
+        "titelDe": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
+        "titelFr": "Loi fédérale sur les systèmes d'information de police de la Confédération (LSIP)",
+        "titelIt": "Legge federale sui sistemi d'informazione di polizia della Confederazione (LSIP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/736": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 5207",
+        "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+        "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+        "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/64": {
+        "dateForce": "2009-02-01",
+        "dateDoc": "2008-10-03",
+        "roId": "RO 2009 361",
+        "titelDe": "Bundesgesetz zur Umsetzung der revidierten Empfehlungen der Groupe d'action financière",
+        "titelFr": "Loi fédérale sur la mise en uvre des recommandations révisées du Groupe d'action financière",
+        "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni rivedute del Gruppo d'azione finanziaria"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/679": {
+        "dateForce": "2010-01-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2009 5597",
+        "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+        "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+        "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/587": {
+        "dateForce": "2012-10-01",
+        "dateDoc": "2010-12-17",
+        "roId": "RO 2012 5043",
+        "titelDe": "Bundesgesetz über die Organisation der Schweizerischen Post (Postorganisationsgesetz, POG)",
+        "titelFr": "Loi fédérale sur l'organisation de La Poste Suisse (Loi sur l'organisation de la Poste, LOP)",
+        "titelIt": "Legge federale sull'organizzazione della Posta Svizzera (Legge sull'organizzazione della Posta, LOP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/116": {
+        "dateForce": "2013-03-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 585",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/685": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2014 4073",
+        "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+        "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+        "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/289": {
+        "dateForce": "2015-07-01",
+        "dateDoc": "2014-12-12",
+        "roId": "RO 2015 1389",
+        "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+        "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+        "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/853": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2015 5339",
+        "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+        "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+        "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/795": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-09-29",
+        "roId": "RO 2018 5103",
+        "titelDe": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+        "titelFr": "Loi fédérale sur les jeux d'argent (LJAr)",
+        "titelIt": "Legge federale sui giochi in denaro (LGD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/801": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5247",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/762": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4631",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/803": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-12-31",
+        "roId": "RO 2019 5065",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/91": {
+        "dateForce": "2020-02-18",
+        "dateDoc": "2020-01-31",
+        "roId": "RO 2020 501",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/33": {
+        "dateForce": "2021-02-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/360": {
+        "dateForce": "2021-07-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität",
+        "titelFr": "Arrêté fédéral du 25 septembre 2020 portant approbation et mise en œuvre de la Convention du Conseil de l’Europe pour la prévention du terrorisme et de son Protocole additionnel et concernant le renforcement des normes pénales contre le terrorisme et le crime organisé",
+        "titelIt": "Decreto federale del 25 settembre 2020 che approva e traspone nel diritto svizzero la Convenzione del Consiglio d’Europa per la prevenzione del terrorismo e il relativo Protocollo addizionale e potenzia il dispositivo penale contro il terrorismo e la criminalità organizzata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/399": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Verordnung vom 18. Juni 2021 über die abschliessende Inkraftsetzung des Bundesgesetzes zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Ordonnance du 18 juin 2021 portant dernière mise en vigueur partielle de la loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Ordinanza del 18 giugno 2021 concernente l’entrata in vigore integrale della legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/600": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2016-06-17",
+        "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+        "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+        "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/53": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/323": {
+        "dateForce": "2026-10-01",
+        "dateDoc": "2025-09-26",
+        "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+        "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+        "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)"
+      }
+    }
+  }
 }

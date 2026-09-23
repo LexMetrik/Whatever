@@ -1,8 +1,8 @@
 {
   "erlassKey": "FAMZG",
   "sr": "836.2",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,32 +14,90 @@
       "titelFr": "Loi fédérale sur les allocations familiales et les aides financières allouées aux organisations familiales (Loi sur les allocations familiales, LAFam)",
       "titelIt": "Legge federale sugli assegni familiari e sugli aiuti finanziari a organizzazioni familiari (Legge sugli assegni familiari, LAFam)",
       "botschaftKey": "BOTSCHAFT-2023-1469",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/770/de",
-      "sha": "dd64783c4435f420131ba0986cd5b6d3740c400d497ee313980c6fb03cf48a35"
+      "sha": "7ccafa8bfbe9a0c2dfac2889d4dacc744bbe346dbb785e3bdaed2d0ce0ea06ec"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.2",
-      "sha": "7c6b654ce7c70347d25ab3426339d323b64f92f37940863f892289b47c82c9be"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/493",
+      "dateDocument": "2024-08-28",
+      "roFundstelle": "AS 2024 493",
+      "titelDe": "Verordnung vom 28. August 2024 über die Anpassung der Familienzulagen an die Preisentwicklung",
+      "titelFr": "Ordonnance du 28 août 2024 sur les adaptations à l’évolution des prix dans le régime des allocations familiales",
+      "titelIt": "Ordinanza del 28 agosto 2024 sull’adeguamento degli assegni familiari all’evoluzione dei prezzi",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/493/de",
+      "sha": "ca5baebe975fef6ccd8686170f70c427ba684f93298c4832f9135d69511c7b9a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/681",
+      "dateDocument": "2024-06-14",
+      "roFundstelle": "AS 2024 681",
+      "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Digitalisierung in der Erwerbsersatzordnung)",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Numérisation dans le régime des APG)",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno)",
+      "botschaftKey": "BOTSCHAFT-2023-2245",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/681/de",
+      "sha": "c8b333a4b6e854b0ffe4bbafcaf600c70cd0a2bf597807080d50458051bd633e"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.2",
-      "sha": "5817296f491e9bd84707c0af523a2d8bff4d1d546af5bbf3b4c14daf0a136cb1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/688",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 688",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Modernisierung der Aufsicht)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Modernisation de la surveillance)",
+      "titelIt": "Legge federale su l’assicurazione per la vecchiaia e per i superstiti (LAVS) (Modernizzazione della vigilanza)",
+      "botschaftKey": "BOTSCHAFT-2020-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/688/de",
+      "sha": "d9051c28aae4ac3b412b130c837e95e4500f0571df44855b65aff804b4a16360"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.2",
-      "sha": "04d5ac438ef3a8453f4ef01e40a6a5629cbb6c07b4ef05ec8e1656807fcf2e48"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.2",
-      "sha": "cad153a91b5af65162c23ce2c34d56afc292351279bbe20bc643d7a1cbec248e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/892",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2020 5137",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "botschaftKey": "BOTSCHAFT-2018-671",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/892/de",
+      "sha": "38cbac33c69962fff073dc6eec2959b44b5f08600c33cc650d52c19bbe769505"
     },
     {
       "art": "aenderung",
@@ -51,14 +109,42 @@
       "titelFr": "Loi fédérale sur les allocations familiales (Loi sur les allocations familiales, LAFam)",
       "titelIt": "Legge federale sugli assegni familiari (Legge sugli assegni familiari, LAFam)",
       "botschaftKey": "BOTSCHAFT-2019-171",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/502/de",
-      "sha": "008c50ebeb71dd0ce05f90fda8f2e1da0edcdbb98a3aca008b44d6f54517c671"
+      "sha": "a6ef6dd8771b6a2b25a04ff838ee4836880e60bc0173171cea3fa80d01bc8a54"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.2",
-      "sha": "78443a242e2201b1f3a373cbfcecd794f929bca31d0b2f3c468b0e58bab02159"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/425",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2017 3699",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Adoption)",
+      "titelFr": "Code civil suisse (Droit de l'adoption)",
+      "titelIt": "Codice civile svizzero (Adozione)",
+      "botschaftKey": "BOTSCHAFT-2015-94",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/425/de",
+      "sha": "12214447015a3177a464e06e7f635d2e45e9b0d98d635e2e163388bdcfc4d421"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/595",
+      "dateDocument": "2017-03-17",
+      "roFundstelle": "AS 2017 5521",
+      "titelDe": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+      "titelFr": "Loi fédérale concernant des mesures en matière de lutte contre le travail au noir (Loi sur le travail au noir, LTN)",
+      "titelIt": "Legge federale concernente i provvedimenti in materia di lotta contro il lavoro nero (Legge contro il lavoro nero, LLN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/595/de",
+      "sha": "c0c6e1e9118ce458011a9c601a5791531c8a5493cfde60455dd7ae92bf0e7c9b"
     },
     {
       "art": "aenderung",
@@ -69,8 +155,12 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2011 des Bundesgesetzes über die Familienzulagen",
       "titelFr": "Ordonnance sur la mise en vigueur complète de la modification du 18 mars 2011 de la loi sur les allocations familiales",
       "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 18 marzo 2011 della legge sugli assegni familiari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/718/de",
-      "sha": "6e7a62902a72868d642d27908f9b7b5cb1b5427b3299c4bf259949193a2c76af"
+      "sha": "5c824c3f9ed190e79faea5dc1c43b4d825d317d6db63a4f03e435f2ebe4a124f"
     },
     {
       "art": "aenderung",
@@ -81,8 +171,11 @@
       "titelDe": "Bundesgesetz über die Familienzulagen (Familienzulagengesetz, FamZG)",
       "titelFr": "Loi fédérale sur les allocations familiales (Loi sur les allocations familiales, LAFam)",
       "titelIt": "Legge federale sugli assegni familiari (Legge sugli assegni familiari, LAFam)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/567/de",
-      "sha": "57cdf0709a2a3b82640c15bf5a6073fe535cccbc86ecbc8490ed2fba1ce61eb0"
+      "sha": "4c4cef4391a337f48a593f0ce769a1564d0018ff83e9dba961198e110d64a01d"
     },
     {
       "art": "aenderung",
@@ -94,27 +187,28 @@
       "titelFr": "Loi fédérale sur les allocations familiales (Loi sur les allocations familiales, LAFam)",
       "titelIt": "Legge federale sugli assegni familiari (Legge sugli assegni familiari, LAFam)",
       "botschaftKey": "BOTSCHAFT-2009-1101",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/636/de",
-      "sha": "2d33d53e5c1418865959c01e85d8a3c6bc35cbdf9409f37311a08bdcf75a64b8"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2009-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.2",
-      "sha": "14646d23f17b4666596de305cf67a16b3c3f7e0c026b7c952632221e0c590059"
+      "sha": "9a5e44dceca7bb4eeeded517edcc6ae4babbd74c9b2a693ac0cebab170be2f98"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/51",
-      "dateDocument": "2006-03-24",
-      "roFundstelle": "AS 2008 131",
-      "titelDe": "Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen (Familienzulagengesetz, FamZG)",
-      "titelFr": "Loi fédérale sur les allocations familiales et les aides financières aux organisations familiales (Loi sur les allocations familiales, LAFam)",
-      "titelIt": "Legge federale sugli assegni familiari e sugli aiuti finanziari a organizzazioni familiari (Legge sugli assegni familiari, LAFam)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/51/de",
-      "sha": "949c807228d89bc771c5c136f7588c5cea5f26259782ae242c8981cb3909ac9d"
+      "dateEntryInForce": "2009-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 2411",
+      "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+      "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+      "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2008-472",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/296/de",
+      "sha": "e07086feffd5384b9382e60148cdf60e8e4f923f8b7078dfc66273593ff33371"
     }
   ],
-  "sha": "eda3eda3e5fce2157ef2fd2e0333f07050efa4eb3759eec62c73683681e85d54"
+  "sha": "c7e32a56b662a50724e9c8d0111cca6f11217176b65f7bf3aaa65bb52ca7bdc8"
 }

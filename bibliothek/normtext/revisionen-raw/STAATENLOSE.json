@@ -1313,5 +1313,249 @@
     "2026-05-22"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1972/2320_2374_2150",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1972/2320_2374_2150",
+    "inkrafttreten": "1972-10-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/2317_2371_2147",
+        "typ": 3
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/2320_2374_2150",
+        "typ": 5,
+        "datum": "1972-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1742_1742_1742",
+        "typ": 1,
+        "datum": "1975-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1742_1742_1742",
+        "typ": 9,
+        "datum": "1975-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2856_2856_2856",
+        "typ": 1,
+        "datum": "1977-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2856_2856_2856",
+        "typ": 9,
+        "datum": "1977-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/2072_2072_2072",
+        "typ": 1,
+        "datum": "1982-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/2072_2072_2072",
+        "typ": 9,
+        "datum": "1982-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/976_976_976",
+        "typ": 1,
+        "datum": "1984-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/976_976_976",
+        "typ": 9,
+        "datum": "1984-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/322_322_322",
+        "typ": 1,
+        "datum": "1990-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/322_322_322",
+        "typ": 9,
+        "datum": "1990-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2266_2266_2266",
+        "typ": 1,
+        "datum": "1993-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2266_2266_2266",
+        "typ": 9,
+        "datum": "1993-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/414",
+        "typ": 1,
+        "datum": "2004-03-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/414",
+        "typ": 9,
+        "datum": "2004-03-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/664",
+        "typ": 1,
+        "datum": "2006-09-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/664",
+        "typ": 9,
+        "datum": "2006-09-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/404",
+        "typ": 1,
+        "datum": "2009-06-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/404",
+        "typ": 9,
+        "datum": "2009-06-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/433",
+        "typ": 1,
+        "datum": "2011-06-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/433",
+        "typ": 9,
+        "datum": "2011-06-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/215",
+        "typ": 1,
+        "datum": "2012-03-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/215",
+        "typ": 9,
+        "datum": "2012-03-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/36",
+        "typ": 1,
+        "datum": "2012-11-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/36",
+        "typ": 9,
+        "datum": "2012-11-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/563",
+        "typ": 1,
+        "datum": "2014-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/563",
+        "typ": 9,
+        "datum": "2014-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/354",
+        "typ": 1,
+        "datum": "2016-06-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/354",
+        "typ": 9,
+        "datum": "2016-06-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/128",
+        "typ": 1,
+        "datum": "2019-02-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/128",
+        "typ": 9,
+        "datum": "2019-02-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/335",
+        "typ": 1,
+        "datum": "2020-05-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/335",
+        "typ": 9,
+        "datum": "2020-05-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/294",
+        "typ": 9,
+        "datum": "2023-06-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/248",
+        "typ": 9,
+        "datum": "2026-05-22"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1972/2317_2371_2147": {
+        "dateForce": "1972-04-27",
+        "dateDoc": "1972-04-27",
+        "roId": "RO 1972 2371",
+        "titelDe": "Bundesbeschluss vom 27. April 1972 betreffend die Genehmigung des Übereinkommens über die Rechtsstellung der Staatenlosen",
+        "titelFr": "Arrêté fédéral du 27 avril 1972 approuvant la convention relative au statut des apatrides",
+        "titelIt": "Decreto federale del 27 aprile 1972 che approva la convenzione sullo statuto degli apolidi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/1742_1742_1742": {
+        "dateForce": "1975-09-01",
+        "dateDoc": "1975-09-01",
+        "roId": "RO 1975 1742",
+        "titelDe": "Übereinkommen über die Rechtsstellung der Staatenlosen vom 28. September 1954",
+        "titelFr": "Convention relative au statut des apatrides du 28 septembre 1954",
+        "titelIt": "Convenzione sullo statuto degli apolidi del 28 settembre 1954"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/2856_2856_2856": {
+        "dateForce": "1977-01-01",
+        "dateDoc": "1977-01-01",
+        "roId": "RO 1976 2856",
+        "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+        "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+        "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/2072_2072_2072": {
+        "dateForce": "1982-12-01",
+        "dateDoc": "1982-12-01",
+        "roId": "RO 1982 2072",
+        "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+        "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+        "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/976_976_976": {
+        "dateForce": "1984-09-01",
+        "dateDoc": "1984-09-01",
+        "roId": "RO 1984 976",
+        "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+        "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+        "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/322_322_322": {
+        "dateForce": "1990-02-01",
+        "dateDoc": "1990-02-01",
+        "roId": "RO 1990 322",
+        "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+        "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+        "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/2266_2266_2266": {
+        "dateForce": "1993-06-01",
+        "dateDoc": "1993-06-01",
+        "roId": "RO 1993 2266",
+        "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+        "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+        "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi"
+      }
+    }
+  }
 }

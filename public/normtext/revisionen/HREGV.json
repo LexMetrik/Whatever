@@ -1,15 +1,24 @@
 {
   "erlassKey": "HREGV",
   "sr": "221.411",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/364",
+      "dateDocument": "2026-06-12",
+      "roFundstelle": "AS 2026 364",
+      "titelDe": "Verordnung vom 12. Juni 2026 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPV)",
+      "titelFr": "Ordonnance du 12 juin 2026 sur la transparence des personnes morales et l’identification des ayants droit économiques (Ordonnance sur la transparence des personnes morales, OTPM)",
+      "titelIt": "Ordinanza del 12 giugno 2026 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Ordinanza sulla trasparenza delle persone giuridiche, OTPG)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "271fa2a364f600fcc8878334b618b92ea1a251b9e04fc9dc43d4251c11eca63d"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/364/de",
+      "sha": "7b71ac07c557b94d6175172d4870ec9f0e3585c7c356c1dd770287d193f1b3e4"
     },
     {
       "art": "aenderung",
@@ -20,8 +29,11 @@
       "titelDe": "Handelsregisterverordnung (HRegV)",
       "titelFr": "Ordonnance sur le registre du commerce (ORC)",
       "titelIt": "Ordinanza sul registro di commercio (ORC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/634/de",
-      "sha": "50dece321e0e3ae3d63d841d8be58fd37f1fd89629f1c9f48ed57112d69b973c"
+      "sha": "8405ddbfe804486ae8a81771c165a2b2301868b1650e5ca060101a22145f0c2e"
     },
     {
       "art": "aenderung",
@@ -32,8 +44,11 @@
       "titelDe": "Handelsregisterverordnung (HRegV). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur le registre du commerce (ORC). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sul registro di commercio (ORC). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/234/de",
-      "sha": "9db9d3e3ad227e65f9a67da653c7b035b5ff427e2ea20312e1b484cf9a0073fd"
+      "sha": "e2f7d1174053a29a3a1f18242dd10d2279130eab16d1e93c547e5b8fcb690380"
     },
     {
       "art": "aenderung",
@@ -44,20 +59,41 @@
       "titelDe": "Handelsregisterverordnung (HRegV). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur le registre du commerce (ORC). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sul registro di commercio (ORC). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/349/de",
-      "sha": "536ec9c06f9edcb24870bdc266a3905863e88c3f7f4a190a69998c394581c92e"
+      "sha": "1bb3b5c88f1d77996e64e60aefa45c3d462f78958448e9d4a424e35371bf1e63"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "694a77c0f9c03d66445d3faf05125092a1b07fcbde5da87cd19123d8ed6d1962"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+      "dateDocument": "2024-01-31",
+      "roFundstelle": "AS 2024 73",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
+      "sha": "35de68fc5b4d08d65bee8ad1e2323255996dd65893a7b39f9cad25ab7b258877"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "109715c6b70834ddaa237c99dc1b22625fec5ae863d11fbbbce951c9c34d6945"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
       "art": "aenderung",
@@ -68,20 +104,61 @@
       "titelDe": "Handelsregisterverordnung (HRegV)",
       "titelFr": "Ordonnance sur le registre du commerce (ORC)",
       "titelIt": "Ordinanza sul registro di commercio (ORC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/114/de",
-      "sha": "a77338d61f3c17362900fc7ab93d3e3db35ef0698ec935942a2e27da896dd41b"
+      "sha": "1c5dc1da8f8b81680a9ea31d4bc6b2c3ef3c4b302317d569d333948283c570ca"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/552",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 552",
+      "titelDe": "Verordnung über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereiverordnung, GwV)",
+      "titelFr": "Ordonnance sur la lutte contre le blanchiment d’argent et le financement du terrorisme (Ordonnance sur le blanchiment d’argent, OBA)",
+      "titelIt": "Ordinanza relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Ordinanza sul riciclaggio di denaro, ORD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/552/de",
+      "sha": "13bc7e3425a7209fee6f5dc82f93d8ecc4c562360fd397bda54245ac87289bd1"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "6506ab09f64c87694efba1e40d01a2d581ef82df4c3956d31bcc0eeb5ce4c78b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+      "dateDocument": "2021-11-17",
+      "roFundstelle": "AS 2021 800",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "sha": "01821c1c4afbc3a6add1f457b75e1324bd1fd6dd6525736c7991ab85f093a8fb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "4dc1660d82a0b20f43851b98a2aee1780b094a068fba3c5ae221a7c5b37ecafa"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/179",
+      "dateDocument": "2020-03-06",
+      "roFundstelle": "AS 2020 971",
+      "titelDe": "Handelsregisterverordnung (HRegV)",
+      "titelFr": "Ordonnance sur le registre du commerce (ORC)",
+      "titelIt": "Ordinanza sul registro di commercio (ORC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-04-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/179/de",
+      "sha": "7f2662bb4b1ec97211b66a0ff75622b4d4c44324b8a18308e9ac6ab9e2d88859"
     },
     {
       "art": "aenderung",
@@ -92,26 +169,62 @@
       "titelDe": "Handelsregisterverordnung (HRegV)",
       "titelFr": "Ordonnance sur le registre du commerce (ORC)",
       "titelIt": "Ordinanza sul registro di commercio (ORC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2020-04-01",
+        "2021-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/179/de",
-      "sha": "ceb771b98379df6cdcda3d8bef04bd3f40a1748908cdc6c304283c0177beb32e"
+      "sha": "18d79230d4721dd3faacab8846e69febf77a5fbce100149b66fc14ba6d5f2ab8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "90119250d74b31724d0fa180f7183bca95f1a613c298a0442678419fca23d90d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+      "dateDocument": "2017-12-08",
+      "roFundstelle": "AS 2018 89",
+      "titelDe": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "titelFr": "Ordonnance sur l'établissement d'actes authentiques électroniques et la légalisation électronique (OAAE)",
+      "titelIt": "Ordinanza sulla realizzazione di atti pubblici e autenticazioni in forma elettronica (OAPuE)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/29/de",
+      "sha": "91690b27c46adad9d845e2d78ca64ab263ccc88612b520d2116feba56d278c6d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "56a351e75ea5c9ccd566a0cde34af8fda84058db48cdf8f0b623ba14dc85594e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/797",
+      "dateDocument": "2017-11-22",
+      "roFundstelle": "AS 2017 7319",
+      "titelDe": "Verordnung über das Schweizerische Handelsamtsblatt (Verordnung SHAB)",
+      "titelFr": "Ordonnance sur la Feuille officielle suisse du commerce (Ordonnance FOSC)",
+      "titelIt": "Ordinanza sul Foglio ufficiale svizzero di commercio (Ordinanza FUSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/797/de",
+      "sha": "12b1f5e7c85b50f94988ab6dc5b0b4b656f9acefb4ca01002c89454eb6a1384a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "80efb85860ef978176d0ef494fa408fa0b60c5ed2bb8bc0d7b3cc64cba4399d0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/753",
+      "dateDocument": "2016-11-23",
+      "roFundstelle": "AS 2016 4667",
+      "titelDe": "Verordnung über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Verordnung über die elektronische Signatur, VZertES)",
+      "titelFr": "Ordonnance sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (Ordonnance sur la signature électronique, OSCSE)",
+      "titelIt": "Ordinanza sui servizi di certificazione nel campo della firma elettronica e di altre applicazioni di certificati digitali (Ordinanza sulla firma elettronica, OFiEle)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/753/de",
+      "sha": "2833c337150970c755894cd485d7b5f7f6a92b1f9e8753f14b630873fd80e881"
     },
     {
       "art": "aenderung",
@@ -122,81 +235,87 @@
       "titelDe": "Handelsregisterverordnung (HRegV)",
       "titelFr": "Ordonnance sur le registre du commerce (ORC)",
       "titelIt": "Ordinanza sul registro di commercio (ORC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/304/de",
-      "sha": "4ebc214444ab75fd04a7cabbaeaae6071c20859da3bd6d647afe4cca081fe280"
+      "sha": "b2b36b61077e4108d50adc69565608b21cb34686d0a048c0c6dda63fd3347ec8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "5b4e07d169754cf523b305a41cb6a5364201682310cba93daaacadf09daf8208"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/791",
+      "dateDocument": "2015-11-11",
+      "roFundstelle": "AS 2015 4819",
+      "titelDe": "Verordnung über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereiverordnung, GwV)",
+      "titelFr": "Ordonnance sur la lutte contre le blanchiment d'argent et le financement du terrorisme (Ordonnance sur le blanchiment d'argent, OBA)",
+      "titelIt": "Ordinanza relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Ordinanza sul riciclaggio di denaro, ORD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/791/de",
+      "sha": "7588c832a9bb2932e770d710ffafaa3c22feb6265d708ee6312f4b4245c02af2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "5f77aeb9ddc22c7192a2ba6f3f8b0bdfea4847e113596aba039d05a8c973519d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+      "dateDocument": "2014-11-05",
+      "roFundstelle": "AS 2014 4295",
+      "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+      "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+      "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/708/de",
+      "sha": "979fc81920fd0c2f8d0ac5e1ba9ef94c952f8719ee01b0bee83df1f42c5734c8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "98cb4cf39f5e92e56a940518446a6a8a1ef63470d2a103cce423ddb81f2b70f2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/460",
+      "dateDocument": "2011-06-22",
+      "roFundstelle": "AS 2011 3425",
+      "titelDe": "Verordnung über die Aufsicht in der beruflichen Vorsorge (BVV 1)",
+      "titelFr": "Ordonnance sur la surveillance dans la prévoyance professionnelle (OPP 1)",
+      "titelIt": "Ordinanza concernente la vigilanza nella previdenza professionale (OPP 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/460/de",
+      "sha": "1491d3f52402a539ebf68f262f452003b1a4bec656f9b1e848ff25e56f1c67d4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/667",
+      "dateDocument": "2011-09-23",
+      "roFundstelle": "AS 2011 4659",
+      "titelDe": "Grundbuchverordnung (GBV)",
+      "titelFr": "Ordonnance sur le registre foncier (ORF)",
+      "titelIt": "Ordinanza sul registro fondiario (ORF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/667/de",
+      "sha": "1e64ee85f76b157821b8229a9cbe4d598a28160f70eaba6909430960157b002f"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2011-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.411",
-      "sha": "a201b8a64f4597f6e66488627b9defc2520a8462d8a1c607e707e84cb2637062"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/686",
-      "dateDocument": "2007-10-17",
-      "roFundstelle": "AS 2007 4851",
-      "titelDe": "Handelsregisterverordnung (HRegV)",
-      "titelFr": "Ordonnance sur le registre du commerce (ORC)",
-      "titelIt": "Ordinanza sul registro di commercio (ORC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/686/de",
-      "sha": "ce3a15c0b14da9b136429f33307e3a2352973294bf43417fc4833ad3c7f865fb"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/593",
-      "dateDocument": "2005-08-24",
-      "roFundstelle": "AS 2005 4557",
-      "titelDe": "Handelsregisterverordnung (HRegV)",
-      "titelFr": "Ordonnance sur le registre du commerce (ORC)",
-      "titelIt": "Ordinanza sul registro di commercio (ORC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/593/de",
-      "sha": "430241ae3227858f46e37ca3f83fb71bdcbe4ccdd3766040d97d836deb643679"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/321",
-      "dateDocument": "2004-04-21",
-      "roFundstelle": "AS 2004 2669",
-      "titelDe": "Handelsregisterverordnung (HRegV)",
-      "titelFr": "Ordonnance sur le registre du commerce (ORC)",
-      "titelIt": "Ordinanza sul registro di commercio (ORC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/321/de",
-      "sha": "b96d6c74ac7518d7be72535b9e91c768110861d91e79a0ffd2f0f0d45ba10284"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1937-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/53/577_573_593",
-      "dateDocument": "1937-06-07",
-      "roFundstelle": "AS 53 577",
-      "titelDe": "Handelsregisterverordnung vom 7. Juni 1937 (HRegV)",
-      "titelFr": "Ordonnance du 7 juin 1937 sur le registre du commerce (ORC)",
-      "titelIt": "Ordinanza del 7 giugno 1937 sul registro di commercio (ORC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/53/577_573_593/de",
-      "sha": "9ea0fbf0778ba8da61f19f4377c9dafdb668204357c10322dc29989671692c07"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/81",
+      "dateDocument": "2011-01-26",
+      "roFundstelle": "AS 2011 533",
+      "titelDe": "Verordnung über die Unternehmens-Identifikationsnummer (UIDV)",
+      "titelFr": "Ordonnance sur le numéro d'identification des entreprises (OIDE)",
+      "titelIt": "Ordinanza sul numero d'identificazione delle imprese (OIDI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/81/de",
+      "sha": "b1c07f42e338069b003ccdeec3fc4df5722539e98ff6329ef9d6b61d1f2964ee"
     }
   ],
-  "sha": "9263be7174cee3c21880b8d11531a2cf257ac88d581d969f5a80cd2faf6941cb"
+  "sha": "6b5ec580862d63554d47e59d26db38c098d43babb85d97b1ae8c5c29b8312a76"
 }

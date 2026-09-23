@@ -1,75 +1,168 @@
 {
   "erlassKey": "FINMA_GEBV",
   "sr": "956.122",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/207",
+      "dateDocument": "2026-04-22",
+      "roFundstelle": "AS 2026 207",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "486c976df4cbcd5c4bfa7e686b51c213456041a7d95227e4df3597e7fc020de8"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/207/de",
+      "sha": "1beb820840e50180edfde52f85339e406c25a9421464e8f0c62b28e8f91b423b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "409280336278d5b553d57c25b84164a2c59decd5be831eb8628af7d6b0db5ba9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+      "dateDocument": "2024-01-31",
+      "roFundstelle": "AS 2024 73",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
+      "sha": "35de68fc5b4d08d65bee8ad1e2323255996dd65893a7b39f9cad25ab7b258877"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "728f2f431897af5f71369d0412c7f6201f1c23712cc9fa251a2e98984fd7f68c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+      "dateDocument": "2023-06-02",
+      "roFundstelle": "AS 2023 356",
+      "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
+      "titelFr": "Ordonnance sur la surveillance des entreprises d’assurance privées (Ordonnance sur la surveillance, OS)",
+      "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/356/de",
+      "sha": "2ceff150679a94e2131dbd69a2bcf35646058745720bee68f16acf186cca7c2f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "2d7c199053864623b257bd1b912e45c37a9a293e01f0212f26e7009c196175c1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/804",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 804",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d’épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/804/de",
+      "sha": "61a9a59e3eb86d6fe0cd1784ca9fef3ee95cb598c5f14ba23cddb4572d1c6599"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "272e0bd56ca965c2c22eb7bf45ec2a32387d634d667e4ae2b544ab0b32337228"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 400",
+      "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "sha": "cbaa09b474cb03fa4335cbbe4d0eb3cd22f479df7c6b4dafb89f95ae9cca1d03"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "d25c3baa5ad29c866aa7822148cc3a8f60f1d4a358f06c7db6a31e2f0e93da35"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "78622120bffa36e289220d609d5ea877824ef86698b217752bebc15e0f161914"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "c20f58a504d55baeb20c0f1d45d63c150409cb591f963a160a277f7f2686c1ea"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/799",
+      "dateDocument": "2018-11-30",
+      "roFundstelle": "AS 2018 5229",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/799/de",
+      "sha": "6f08ba8d69922872b384b61db424912b16c9a4818889012240eb19b6beb2f8e1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "e3e09cce8eb4dcea36a81365696a47401263c902bc825d14aebbbac16ad4886c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5413",
+      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "sha": "90b8fcf400b2660ed84646cb82308bdb6330eb5e76c1b0cbd3063db47c665540"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "470ddad5aaeaf531b535fb9594688672a57b49398dc50abf65931bb67d525534"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+      "dateDocument": "2014-11-05",
+      "roFundstelle": "AS 2014 4295",
+      "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+      "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+      "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/708/de",
+      "sha": "0602f5b423cbc6cfbef0bbb326a8e1edfbd23cc883868b4312368527f95acb0c"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2014-11-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "981786073ab64da477e1edd2f0ea2f851daf2c0aefdc500983eb3754e849d340"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2008/749/20141105/de",
+      "sha": "4d64f7f93570761ebf5e4be2918e104dd6d7300086933bbfc3613673cdd0aca3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.122",
-      "sha": "5d2801c38e9f9090483899dbccbd87a7ce7f929adc301fdedf8ed4606e3c0802"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/117",
+      "dateDocument": "2013-02-13",
+      "roFundstelle": "AS 2013 607",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/117/de",
+      "sha": "9a7d8454824f282ba8a67aba4d4dd5869277e047f1c791a15fd709ba113a80b1"
     },
     {
       "art": "aenderung",
@@ -80,8 +173,11 @@
       "titelDe": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht (FINMA-Gebühren- und Abgabenverordnung, FINMA-GebV)",
       "titelFr": "Ordonnance réglant la perception d'émoluments et de taxes par l'Autorité fédérale de surveillance des marchés financiers (Ordonnance sur les émoluments et les taxes de la FINMA, Oém-FINMA)",
       "titelIt": "Ordinanza sulla riscossione di emolumenti e tasse da parte dell'Autorità federale di vigilanza sui mercati finanziari (Ordinanza sugli emolumenti e sulle tasse della FINMA, Oem-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/834/de",
-      "sha": "ec804ed67d6ef1e3b1f926c6b5f9836e5972eb20d0f348b6e6f07927f93fba66"
+      "sha": "cd21c694f67e8ab6efaf98fddc1934575e3454f44554a9546df046d05d8df33a"
     },
     {
       "art": "aenderung",
@@ -92,20 +188,11 @@
       "titelDe": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht (FINMA-Gebühren- und Abgabenverordnung, FINMA-GebV)",
       "titelFr": "Ordonnance réglant la perception d'émoluments et de taxes par l'Autorité fédérale de surveillance des marchés financiers (Ordonnance sur les émoluments et les taxes de la FINMA, Oém-FINMA)",
       "titelIt": "Ordinanza sulla riscossione di emolumenti e tasse da parte dell'Autorità federale di vigilanza sui mercati finanziari (Ordinanza sugli emolumenti e sulle tasse della FINMA, Oem-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/799/de",
-      "sha": "385278a2a1de685ececcda75e3770c09b8e0527f89cfba3376641135578a9f9b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/749",
-      "dateDocument": "2008-10-15",
-      "roFundstelle": "AS 2008 5343",
-      "titelDe": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht (FINMA-Gebühren- und Abgabenverordnung, FINMA-GebV)",
-      "titelFr": "Ordonnance réglant la perception d'émoluments et de taxes par l'Autorité fédérale de surveillance des marchés financiers (Ordonnance sur les émoluments et les taxes de la FINMA, Oém-FINMA)",
-      "titelIt": "Ordinanza sulla riscossione di emolumenti e tasse da parte dell'Autorità federale di vigilanza sui mercati finanziari (Ordinanza sugli emolumenti e sulle tasse della FINMA, Oem-FINMA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/749/de",
-      "sha": "0bba0c68bdf8a657a9a58cec52dc6bf587ae4dccb474fb8ce1521da6dcaf5e43"
+      "sha": "164a690a06bf3b3d37a0c0b3ba10931a93e30b3dff1ed62a2f9ebdb01160f307"
     },
     {
       "art": "aenderung",
@@ -116,9 +203,12 @@
       "titelDe": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht (FINMA-Gebühren- und Abgabenverordnung; FINMA-GebV)",
       "titelFr": "Ordonnance réglant la perception d'émoluments et de taxes par l'Autorité fédérale de surveillance des marchés financiers (Ordonnance sur les émoluments et les taxes de la FINMA, Oém FINMA)",
       "titelIt": "Ordinanza sulla riscossione di emolumenti e tasse da parte dell'Autorità federale di vigilanza sui mercati finanziari (Ordinanza sugli emolumenti e sulle tasse della FINMA, Oem-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/224/de",
-      "sha": "898a799a22ada6d28e16f530a678d539b8a9a17eb0bf5cb4a67b175029a8203d"
+      "sha": "54a956dda635e49ac8b7e82ee74ba4f9974afd93b8410847e3afd75e536afa62"
     }
   ],
-  "sha": "f70232457596160fce3e1a350ad2c55da0859b2f8d7d0f8c37f20c8379241fb1"
+  "sha": "e22728d196ce27b74f23c9cceb17241dbd64337cf3ddcb1e04b7cdf64c7602b2"
 }

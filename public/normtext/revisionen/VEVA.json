@@ -1,8 +1,8 @@
 {
   "erlassKey": "VEVA",
   "sr": "814.610",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,26 +13,60 @@
       "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
       "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
       "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/454/de",
-      "sha": "63a374dc9797142a0d8cabc15307c50f707fb5a9568652aed33e8952a9907bdf"
+      "sha": "6c4424f58284c06d6f2aba515915ca5717b112bb48b7453a7f51b762b2121bf0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.610",
-      "sha": "a1f3af833e2361d4ef0a242e50d9cdc5b5b9b928c7559fcdfe5a4168ffdc14a3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/93",
+      "dateDocument": "2019-01-16",
+      "roFundstelle": "AS 2019 529",
+      "titelDe": "Ordnungsbussenverordnung (OBV)",
+      "titelFr": "Ordonnance sur les amendes d'ordre (OAO)",
+      "titelIt": "Ordinanza concernente le multe disciplinari (OMD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/93/de",
+      "sha": "d700f47fd3dbed502ecc64745080fb59ffcf5cadaf7926be68a2182ab23265f7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.610",
-      "sha": "efff8a2f0e47bfa20272a1ecb3c414140cce56d0f3184f263cdae45c95a299b6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/653",
+      "dateDocument": "2017-10-25",
+      "roFundstelle": "AS 2017 5963",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/653/de",
+      "sha": "4305ddb8304eeb2de63864a4f3002d51d9df33e37b798927c5f40f1b42acec2d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.610",
-      "sha": "3f8246df772a981c8392ebd84e4aa878f3b2222ae46d2c536b32d77378f5cdf0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/207",
+      "dateDocument": "2016-03-23",
+      "roFundstelle": "AS 2016 1117",
+      "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
+      "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
+      "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2017-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/207/de",
+      "sha": "3cb01b5db4ae764dc11b3fbede2696f617869d3fede8734fc8f6947db00c5d1c"
     },
     {
       "art": "aenderung",
@@ -43,14 +77,31 @@
       "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
       "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
       "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2017-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/207/de",
-      "sha": "a6869dc70a6d25b858fc36ada010a7b272f791d94ae01cb17599f83963060ab3"
+      "sha": "c9275d168e968836b4b34f4b2d33c3e7a0632de90925afbfc799cd1899682dea"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.610",
-      "sha": "d54609aa7f19fa26d018905703b43aa1d0ebde66c754c1c18be7dcaba5dd54df"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+      "dateDocument": "2015-12-04",
+      "roFundstelle": "AS 2015 5699",
+      "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+      "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+      "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/891/de",
+      "sha": "a3eb5cb57a2400e8c6b3eaaae28dcfeda24c1967897c7d90a12ff01e3e78b022"
     },
     {
       "art": "aenderung",
@@ -61,8 +112,11 @@
       "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
       "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
       "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/28/de",
-      "sha": "2fd3d9b6e9978e9bc0a1eaae255209ea6516feab2e495760ce9080437d38596a"
+      "sha": "4f9e0691721891cfce66d70cd08fa90c58cdd012a16f774a5cc321009b8a9a1a"
     },
     {
       "art": "aenderung",
@@ -73,20 +127,11 @@
       "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
       "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
       "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/764/de",
-      "sha": "973116ffe090730bf5542e8116db10000bfba45908cc73d16c822c0537209e75"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/551",
-      "dateDocument": "2005-06-22",
-      "roFundstelle": "AS 2005 4199",
-      "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
-      "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
-      "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/551/de",
-      "sha": "3b239287a3552de5a910c573a5c558d937b5f39f2140fc2ef0af3854b2a0082b"
+      "sha": "ad955e17f6a29627828d74434860c7c110dbf1cf1651b97f09bc98fa7e08815f"
     },
     {
       "art": "aenderung",
@@ -97,21 +142,12 @@
       "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
       "titelIt": "Ordinanza sul traffico di rifiuti (OTRif) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/569/de",
-      "sha": "40eaa94751c828fdb1d86454a8d389b3004373998b7a8da4c5a85d639de6bbf0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1987-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/55_55_55",
-      "dateDocument": "1986-11-12",
-      "roFundstelle": "AS 1987 55",
-      "titelDe": "Verordnung vom 12. November 1986 über den Verkehr mit Sonderabfällen (VVS)",
-      "titelFr": "Ordonnance du 12 novembre 1986 sur les mouvements de déchets spéciaux (ODS)",
-      "titelIt": "Ordinanza del 12 novembre 1986 sul traffico dei rifiuti speciali (OTRS)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/55_55_55/de",
-      "sha": "b3fb51bf7f3fedce46238400d124327fdc3d0416b4601ec39c80416c8828e4af"
+      "sha": "964d32c10dca74a741e5d9491ce17ecd254db80e8daaa46081342fd8d4ed6e02"
     }
   ],
-  "sha": "f51830ab02dee64dd88b321d55c7299e155e02dafa4fff5c9cea274ead6ab7cb"
+  "sha": "7e90a2de8c28076c1e288821ef426c70441e331fca8afe24774f40ed2e4ded72"
 }

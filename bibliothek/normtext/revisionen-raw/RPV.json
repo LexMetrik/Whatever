@@ -1884,7 +1884,8 @@
     "2022-07-01",
     "2026-01-01",
     "2026-05-20",
-    "2026-07-01"
+    "2026-07-01",
+    "2026-11-01"
   ],
   "belegteOcs": [],
   "rectifiesInfoProOc": {
@@ -1897,6 +1898,224 @@
       "fremdeSr": "700.1",
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2025/659",
       "zielFundstelle": "AS 2025 659"
+    }
+  },
+  "kontext": {
+    "abstractEli": "cc/2000/310",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2000/310",
+    "inkrafttreten": "2000-09-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/310",
+        "typ": 5,
+        "datum": "2000-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/236",
+        "typ": 1,
+        "datum": "2003-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/718",
+        "typ": 1,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/453",
+        "typ": 1,
+        "datum": "2007-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/429",
+        "typ": 1,
+        "datum": "2009-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/556",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/641",
+        "typ": 1,
+        "datum": "2012-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/765",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/199",
+        "typ": 1,
+        "datum": "2014-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/199",
+        "typ": 2,
+        "datum": "2014-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/616",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/669",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/887",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/252",
+        "typ": 1,
+        "datum": "2019-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/654",
+        "typ": 1,
+        "datum": "2019-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1010",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/333",
+        "typ": 1,
+        "datum": "2020-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/67",
+        "typ": 1,
+        "datum": "2020-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/357",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/659",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/659",
+        "typ": 1,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/762",
+        "typ": 6,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/227",
+        "typ": 6,
+        "datum": "2026-05-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/488",
+        "typ": 1,
+        "datum": "2026-11-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2003/718": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-11-26",
+        "roId": "RO 2003 4873",
+        "titelDe": "Verordnung über landwirtschaftliche Begriffe und die Anerkennung von Betriebsformen (Landwirtschaftliche Begriffsverordnung, LBV)",
+        "titelFr": "Ordonnance sur la terminologie agricole et la reconnaissance des formes d'exploitation (Ordonnance sur la terminologie agricole, OTerm)",
+        "titelIt": "Ordinanza sulla terminologia agricola e sul riconoscimento delle forme di azienda (Ordinanza sulla terminologia agricola, OTerm)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/429": {
+        "dateForce": "2009-09-01",
+        "dateDoc": "2009-06-24",
+        "roId": "RO 2009 3507",
+        "titelDe": "Verordnung über das Plangenehmigungsverfahren für elektrische Anlagen (VPeA)",
+        "titelFr": "Ordonnance sur la procédure d'approbation des plans d'installations électriques (OPIE)",
+        "titelIt": "Ordinanza sulla procedura d'approvazione dei piani di impianti elettrici (OPIE)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/418": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3631",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/556": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-08-22",
+        "roId": "RO 2012 4583",
+        "titelDe": "Verordnung über Zweitwohnungen",
+        "titelFr": "Ordonnance sur les résidences secondaires",
+        "titelIt": "Ordinanza sulle abitazioni secondarie"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/765": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2013-10-23",
+        "roId": "RO 2013 4145",
+        "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+        "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+        "titelIt": "Ordinanza concernente i pagamenti diretti all'agricolt ura (Ordinanza sui pagamenti diretti, OPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/616": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-10-29",
+        "roId": "RO 2014 3555",
+        "titelDe": "Verordnung über den Schutz der Kulturgüter bei bewaffneten Konflikten, bei Katastrophen und in Notlagen (KGSV)",
+        "titelFr": "Ordonnance sur la protection des biens culturels en cas de conflit armé, de catastrophe ou de situation d'urgence (OPBC)",
+        "titelIt": "Ordinanza sulla protezione dei beni culturali in caso di conflitti armati, catastrofi e situazioni d'emergenza (OPBC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/669": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-10-29",
+        "roId": "RO 2014 3909",
+        "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+        "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+        "titelIt": "Ordinanza concernente i pagamenti diretti all'agricoltura (Ordinanza sui pagamenti diretti, OPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/887": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-12-04",
+        "roId": "RO 2015 5669",
+        "titelDe": "Zweitwohnungsverordnung (ZWV)",
+        "titelFr": "Ordonnance sur les résidences secondaires (ORSec)",
+        "titelIt": "Ordinanza sulle abitazioni secondarie (OASec)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/488": {
+        "dateForce": "2026-11-01",
+        "dateDoc": "2026-09-18",
+        "titelDe": "Verordnung über das Bundesinventar der schützenswerten Ortsbilder der Schweiz (VISOS)",
+        "titelFr": "Ordonnance concernant l’Inventaire fédéral des sites construits à protéger en Suisse (OISOS)",
+        "titelIt": "Ordinanza riguardante l’inventario federale degli insediamenti svizzeri da proteggere (OISOS)"
+      }
     }
   }
 }

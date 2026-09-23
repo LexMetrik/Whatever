@@ -1,8 +1,8 @@
 {
   "erlassKey": "PATG",
   "sr": "232.14",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -15,32 +15,90 @@
       "titelIt": "Legge federale sui brevetti d’invenzione (Legge sui brevetti, LBI)",
       "botschaftKey": "BOTSCHAFT-2023-7",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/232/de",
-      "sha": "60f411277e3a40bba4a858629c0c51c38ad0a0b3fe8e14c2e53cb6bf2ae21a5e"
+      "sha": "0b638e30b9b25741853478de9cd7743eef12e8cfc99977b16f922548a6078088"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "4b3548fe1189663b4aeee81651c1847696707cae5e128c4473db680c15f775f1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/313",
+      "dateDocument": "2023-12-22",
+      "roFundstelle": "AS 2025 313",
+      "titelDe": "Bundesgesetz über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+      "titelFr": "Loi fédérale sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+      "titelIt": "Legge federale che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/313/de",
+      "sha": "d3fa89b27f0a57089f573fa4d2cedc2280da2aa664db6f7caac1b9a3dc42ae60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "8aafb014f7119b48d0bad14933cd0cab007e5166481504f50b2c5b7c87665112"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 259",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+      "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "sha": "64e1e609ccf5d5a5532e3f42aec1fd1e1c0d6c9345913a92606b4f68339c0b0d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "5ab05f2f59b576092718db445505017854d3d148af4fab63c835a4af699b85e1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "fbf69e763321b0af98e60dd0077dc90f6ee4965530ed2ae788fc356fcbd5857e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/177",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2019 975",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens Nr. 94 des Europarates über die Zustellung von Schriftstücken in Verwaltungssachen im Ausland",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention no 94 du Conseil de l'Europe sur la notification à l'étranger des documents en matière administrative",
+      "titelIt": "Decreto federale concernente l'approvazione e l'attuazione della Convenzione n. 94 del Consiglio d'Europa sulla notificazione all'estero dei documenti in materia amministrativa",
+      "botschaftKey": "BOTSCHAFT-2017-1678",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/177/de",
+      "sha": "020f4cce2eb3d9d9d4adb9cc2bf20440226f9e703472ca148bf34921abbd3b46"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3575",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
+      "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
+      "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/587/de",
+      "sha": "f48b5647f979691041faf0709b088a730a8a84a0c404b7cb1e1ce8de09ee9b31"
     },
     {
       "art": "aenderung",
@@ -51,32 +109,107 @@
       "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG) (Betrifft nur den französischen und italienischen Text)",
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/599/de",
-      "sha": "35937e45be00b626805a6a5f82f3c36b710c5ef0641bf898476eea9812489a8c"
+      "sha": "4814aec19e4664737518b612ef5828c81bbf4437a625bc6bbeda9f13387d46e6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/280",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2017 2745",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "botschaftKey": "BOTSCHAFT-2013-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
+      "sha": "ea4787803f69be76c30c1a2a24d5407559e593f3b171f21b66df76a71faa9623"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "492ae73ac19ba833e43a31659ebb5999f584d4a6e3679a4a2d73b3e7247ba751"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/609",
+      "dateDocument": "2013-06-21",
+      "roFundstelle": "AS 2015 3631",
+      "titelDe": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
+      "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM)",
+      "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM)",
+      "botschaftKey": "BOTSCHAFT-2009-1471",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/609/de",
+      "sha": "4095a23ecdaaf9a7458cbe6d2daf8446d79574097932213e2f37d53d409d3b48"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "9d04203005aae166183146d68dc24ae2e575b8799835ea91fed2851e2d1452b3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/306",
+      "dateDocument": "2011-05-11",
+      "roFundstelle": "AS 2011 2241",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Patentgerichtsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi sur le Tribunal fédéral des brevets",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della legge sul Tribunale federale dei brevetti",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/306/de",
+      "sha": "9d0bca996dbfa499b0885488de4ce23cd5c34cafc9ed15f28e002faff3201aa8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "2c064cbd11a42e4ce1e9217b074ef6413ad90457d90a2d185c1a7a509b9faaea"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/312",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2011 2259",
+      "titelDe": "Bundesgesetz über die Patentanwältinnen und Patentanwälte (Patentanwaltsgesetz, PAG)",
+      "titelFr": "Loi sur les conseils en brevets (LCBr)",
+      "titelIt": "Legge federale sui consulenti in brevetti (Legge sui consulenti in brevetti, LCB)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/312/de",
+      "sha": "e762b79988ea97c3aed9e52b949ded141556cc655e35333a817b86a83b2cfe1f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "c6079c11f869713925323306a7726cb4359e17ea3f90a42809742101eaf111ff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4680b94aca04870448f933a54c75b33319b3d325b89428dcf20b5c0518e9c6aa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2010-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/72",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2010 513",
+      "titelDe": "Bundesgesetz über das Bundespatentgericht (Patentgerichtsgesetz, PatGG)",
+      "titelFr": "Loi sur le Tribunal fédéral des brevets (LTFB)",
+      "titelIt": "Legge sul Tribunale federale dei brevetti (LTFB)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/72/de",
+      "sha": "a9a653118a54e1b32ef48ae060e91523f055cebfd46609c64519b936e778b803"
     },
     {
       "art": "aenderung",
@@ -88,14 +221,27 @@
       "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
       "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)",
       "botschaftKey": "BOTSCHAFT-2008-109",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/349/de",
-      "sha": "4aed1c4314cff12a3c39b79dba911000c59c9f85dcda9096f0ef6d5f23e2f126"
+      "sha": "7020b81440d7200609339f6a2a1a36e0c0c6fc953c29a60e11e3319ddb8f3b96"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "6bfb17d1d1b84b80d544e5161ed2a288ada18ae2fd6eb4cea45906bac90bafc2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/526",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2008 3897",
+      "titelDe": "Bundesbeschluss über die Genehmigung des revidierten internationalen Übereinkommens zum Schutz von Pflanzenzüchtungen und die Änderung des Sortenschutzgesetzes und des Patentgesetzes",
+      "titelFr": "Arrêté fédéral relatif à l'approbation de la Convention internationale révisée pour la protection des obtentions végétales et à la modification de la loi sur la protection des variétés et de la loi sur les brevets d'invention",
+      "titelIt": "Decreto federale che approva la Convenzione internazionale riveduta per la protezione delle novità vegetali e modifica la legge federale sulla protezione delle novità vegetali e la legge sui brevetti d'invenzione",
+      "botschaftKey": "BOTSCHAFT-2004-683",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/526/de",
+      "sha": "afe6e87eafbd7be4931f44c89ce8f1c089243eeb96a6fc72ade31e18b720b0c1"
     },
     {
       "art": "aenderung",
@@ -107,8 +253,12 @@
       "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
       "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)",
       "botschaftKey": "BOTSCHAFT-2006-1",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/366/de",
-      "sha": "f61b8ed0aedc31a4b6790638329234d791cfc31f0bda795c12a3cf8c4651f109"
+      "sha": "865d0b39fab47f2a65f3df7895defdea147f3fae4b4fe438300a4651ce286e1f"
     },
     {
       "art": "aenderung",
@@ -120,8 +270,11 @@
       "titelFr": "Arrêté fédéral relatif à l'approbation du Traité sur le droit des brevets et du Règlement d'exécution",
       "titelIt": "Decreto federale che approva il Trattato sul diritto dei brevetti e il relativo Regolamento di esecuzione",
       "botschaftKey": "BOTSCHAFT-2006-1",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/374/de",
-      "sha": "3e278e94c6501821aed4ad122c082216496f584990af4d19ada8c225e665895d"
+      "sha": "108212d70ba235189b1a08da73a923f4313705427baacae89610b48639478f02"
     },
     {
       "art": "aenderung",
@@ -133,8 +286,12 @@
       "titelFr": "Arrêté fédéral relatif à l'approbation de l'Accord sur l'application de l'art. 65 de la Convention sur le brevet européen et à la modification de la loi sur les brevets",
       "titelIt": "Decreto federale che approva l'Accordo relativo all'applicazione dell'articolo 65 della Convenzione sul brevetto europeo e modifica la legge sui brevetti",
       "botschaftKey": "BOTSCHAFT-2005-556",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/251/de",
-      "sha": "fea81c95f63af9e37148e23bed274f0533dd38e4b7c3d95f8e8b7065273d8558"
+      "sha": "fad90034ee7d626876cdfbac4c6e9b854af87c5948b40ba559054ee559f86910"
     },
     {
       "art": "aenderung",
@@ -146,38 +303,89 @@
       "titelFr": "Arrêté fédéral relatif à l'approbation de l'Acte portant révision de la Convention sur le brevet européen et à la modification de la loi sur les brevets",
       "titelIt": "Decreto federale che approva l'Atto di revisione della Convenzione sul brevetto europeo e modifica la legge sui brevetti",
       "botschaftKey": "BOTSCHAFT-2005-556",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/848/de",
-      "sha": "f265041b30168a27906bbf29ae942082444628d6f1bb0df47a60e063e51fc916"
+      "sha": "fca413525ae49004912bb42fa3aa63e07c1be6ae1e2bef3cdc5bdea5c0d795ba"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "f186c11c5dab2b88b2476203c7bf8e680d2f57dd57c88e27d327fa55ec23a0b1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "35fe3ccab3a725a0168177bf039c289739e8162558654f54b62692ea4f4978ff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/104",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2005 947",
+      "titelDe": "Bundesgesetz über die Forschung an embryonalen Stammzellen (Stammzellenforschungsgesetz, StFG)",
+      "titelFr": "Loi fédérale relative à la recherche sur les cellules souches embryonnaires (Loi relative à la recherche sur les cellules souches, LRCS)",
+      "titelIt": "Legge federale concernente la ricerca sulle cellule staminali embrionali (Legge sulle cellule staminali, LCel)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/104/de",
+      "sha": "3c1564b022d4bc6c5838022783c966bbf562073f293bc348fc4feba21d40af79"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "28e3146b3f129f7d4c0d2bd34fb2ada2fb21d9ae8d1b016ef2700c0a13af7fc7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/788",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 5085",
+      "titelDe": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur (Bundesgesetz über die elektronische Signatur, ZertES)",
+      "titelFr": "Loi fédérale sur les services de certification dans le domaine de la signature électronique (Loi sur la signature électronique, SCSE)",
+      "titelIt": "Legge federale sui servizi di certificazione nel campo della firma elettronica (Legge sulla firma elettronica, FiEle)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/788/de",
+      "sha": "ba58ee962299de0991747ac1bcf7a01551abd5abf26fff1b95755235eabd4f82"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "368180a109a44529cbd83ab1f46c2e0ea8cb837c926e616e85ce971ed60e89e2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/226",
+      "dateDocument": "2001-10-05",
+      "roFundstelle": "AS 2002 1456",
+      "titelDe": "Bundesgesetz über den Schutz von Design (Designgesetz, DesG)",
+      "titelFr": "Loi fédérale sur la protection des designs (Loi sur les designs, LDes)",
+      "titelIt": "Legge federale sulla protezione del design (Legge sul design, LDes)",
+      "botschaftKey": "BOTSCHAFT-2000-557",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/226/de",
+      "sha": "92eacf7e2f97432e7babe97899c08c1746bb1f725ae0d4cfb183a60018fd53de"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.14",
-      "sha": "2863ffe7bd6ff2262f09ac116f03e06f3c0bc123b79d783c0ece9e6bf344aca3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "0315f070905114e706498f35ffee0312d3de77a82d0be616c329cf3cff07dee4"
     },
     {
       "art": "aenderung",
@@ -188,21 +396,223 @@
       "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
       "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
       "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/193/de",
-      "sha": "5d60ca20b73267f03449c96cbcb3760436725df4e1490a7297acf7d6e7e9a831"
+      "sha": "5a23f71084b6cea23661f2cdaed0e951503636b28e4119a606fc4c1378a88b7b"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1956-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1955/871_893_899",
-      "dateDocument": "1954-06-25",
-      "roFundstelle": "AS 1955 871",
-      "titelDe": "Bundesgesetz vom 25. Juni 1954 über die Erfindungspatente (Patentgesetz, PatG)",
-      "titelFr": "Loi fédérale du 25 juin 1954 sur les brevets d'invention (Loi sur les brevets, LBI)",
-      "titelIt": "Legge federale del 25 giugno 1954 sui brevetti d'invenzione (Legge sui brevetti, LBI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1955/871_893_899/de",
-      "sha": "f64343b45aa3a58ba303a9a725ede3987e4a649a3db4402901e3dd375717fda6"
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2465",
+      "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Postunternehmung des Bundes (Postorganisationsgesetz, POG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de la poste (Loi sur l'organisation de la Poste, LOP)",
+      "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle poste della Confederazione (Legge sull'organizzazione delle poste, LOP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2465_2465_2465/de",
+      "sha": "1c531c943780a259f85322fd1b6d710c0de36b4b65ceb60d2d1cbcc39ff37272"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5050_5050_5050",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1995 5050",
+      "titelDe": "Bundesgesetz vom 24. März 1995 über Statut und Aufgaben des Eidgenössischen Instituts für Geistiges Eigentum (IGEG)",
+      "titelFr": "Loi fédérale du 24 mars 1995 sur le statut et les tâches de l'Institut Fédéral de la Propriété Intellectuelle (LIPI)",
+      "titelIt": "Legge federale del 24 marzo 1995 sullo statuto e sui compiti dell'Istituto federale della proprietà intellettuale (LIPI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5050_5050_5050/de",
+      "sha": "34269c3e3afc4e987ab5de1dedc301ece5d09ee04d690aed8135a9a70d9a313c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/2879_2879_2879",
+      "dateDocument": "1995-02-03",
+      "roFundstelle": "AS 1995 2879",
+      "titelDe": "Bundesgesetz betreffend die Erfindungspatente, Änderung",
+      "titelFr": "Loi fédérale sur les brevets d'invention, Modification",
+      "titelIt": "Legge federale sui brevetti d'invenzione, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/2879_2879_2879/de",
+      "sha": "67dc1b094bbeda3c511dce70550356af05b99af8517462a129591b246e6d3e8a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/2606_2606_2606",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 2606",
+      "titelDe": "Bundesgesetz betreffend die Erfindungspatente, Änderung",
+      "titelFr": "Loi fédérale sur les brevets d'invention, Modification",
+      "titelIt": "Legge federale sui brevetti d'invenzione, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/2606_2606_2606/de",
+      "sha": "7db112ce73c0876178d19e8ae71eeb89b0bfa0b9103e249006c7c39070b2bacf"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 288",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+      "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+      "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/288_288_288/de",
+      "sha": "9423b844ec90b7ef52908dcd89bd29c51f601e98bf021fc3c9b407df75a99bac"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+      "dateDocument": "1987-12-18",
+      "roFundstelle": "AS 1988 1776",
+      "titelDe": "Bundesgesetz vom 18. Dezember 1987 über das Internationale Privatrecht (IPRG)",
+      "titelFr": "Loi fédérale du 18 décembre 1987 sur le droit international privé (LDIP)",
+      "titelIt": "Legge federale del 18 dicembre 1987 sul diritto internazionale privato (LDIP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1776_1776_1776/de",
+      "sha": "333ce8d5c0c425111b46dbb06816e994aae4553a44c201c676bfa42212defbe1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997",
+      "dateDocument": "1976-12-17",
+      "roFundstelle": "AS 1977 1997",
+      "titelDe": "Bundesgesetz betreffend die Erfindungspatente, Änderung",
+      "titelFr": "Loi fédérale sur les brevets d'invention, Modification",
+      "titelIt": "Legge federale sui brevetti d'invenzione, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1978-01-01",
+        "1978-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/1997_1997_1997/de",
+      "sha": "065864b4f1db36484f85c1cc2547894c6d1803af9e9cb2072f81df60ded78d9c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/__2434",
+      "dateDocument": "1977-12-27",
+      "titelIt": "Legge federale sui brevetti d'invenzione, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/__2434/de",
+      "sha": "6d79590452034efa7ab035dc3094bf9fc295d2e7efe0ff7a3eb4c9052563bd22"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/550_550_550",
+      "dateDocument": "1978-05-10",
+      "roFundstelle": "AS 1978 550",
+      "titelDe": "Bundesratsbeschluss vom 10. Mai 1978 über die Inkraftsetzung des sechsten Titels des geänderten Bundesgesetzes betreffend die Erfindungspatente",
+      "titelFr": "Arrêté du Conseil fédéral du 10 mai 1978 relatif à l'entrée en vigueur du titre sixième de la loi fédérale modifiée sur les brevets d'invention",
+      "titelIt": "Decreto del Consiglio federale del 10 maggio 1978 che mette in vigore il titolo sesto della legge federale modificata sui brevetti d'invenzione",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "etappen": [
+        "1978-05-10",
+        "1978-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/550_550_550/de",
+      "sha": "f294d82f7be18accf023cb7ec9c6028e77b8b9702e8caac2cea8f4713edbbd28"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-05-10",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/550_550_550",
+      "dateDocument": "1978-05-10",
+      "roFundstelle": "AS 1978 550",
+      "titelDe": "Bundesratsbeschluss vom 10. Mai 1978 über die Inkraftsetzung des sechsten Titels des geänderten Bundesgesetzes betreffend die Erfindungspatente",
+      "titelFr": "Arrêté du Conseil fédéral du 10 mai 1978 relatif à l'entrée en vigueur du titre sixième de la loi fédérale modifiée sur les brevets d'invention",
+      "titelIt": "Decreto del Consiglio federale del 10 maggio 1978 che mette in vigore il titolo sesto della legge federale modificata sui brevetti d'invenzione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1978-05-10",
+        "1978-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/550_550_550/de",
+      "sha": "3a1647c654bf74ec457bfb8d0503d81dc8eaf674677f553aac8c067036caa644"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/1997_1997_1997",
+      "dateDocument": "1976-12-17",
+      "roFundstelle": "AS 1977 1997",
+      "titelDe": "Bundesgesetz betreffend die Erfindungspatente, Änderung",
+      "titelFr": "Loi fédérale sur les brevets d'invention, Modification",
+      "titelIt": "Legge federale sui brevetti d'invenzione, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "1978-01-01",
+        "1978-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/1997_1997_1997/de",
+      "sha": "0ed14b500be8d643433d9a964cbcf9c55ef6d583d503518ad7bf0e084182d469"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1959-09-08",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/861_891_879",
+      "dateDocument": "1959-09-08",
+      "roFundstelle": "AS 1959 861",
+      "titelDe": "Bundesratsbeschluss vom 8. September 1959 über die Inkraftsetzung des IV. Titels des Bundesgesetzes betreffend die Erfindungspatente",
+      "titelFr": "Arrêté du Conseil fédéral du 8 septembre 1959 mettane en vigueur le titre quatrième de loi fédérale sur les brevets d'invention",
+      "titelIt": "Decreto del Consiglio federale dell'8 settembre 1959 che metta en vigore il titolo quarto della Legge federale sui brevetti d'invenzione",
+      "wirkungen": [
+        "inkrafttreten",
+        "teilinkraftsetzung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/861_891_879/de",
+      "sha": "2178a11225e5b286589101cd7892e7f80b17eed6e30f85de6443e3d90f659e9c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1959-01-09",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/_77_81",
+      "dateDocument": "1959-01-09",
+      "titelFr": "Arrêté du Conseil fédéral rectifiant une erreur de traduction dans le texte français de l'article 64, 1er alinéa, de la loi fédérale sur les brevets d'invention, Errata",
+      "titelIt": "Decreto del Consiglio federale che rettifica il testo italiano dell'articolo 64, capoverso 1, della legge federale sui brevetti d'invenzione, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/_77_81/de",
+      "sha": "8d0f332c15e1fb30bba4468fe0d2e00dd83f3048379c1a74da941138c0eb91a5"
     }
   ],
-  "sha": "e2e65c4d367efa3ddf10c5cb3e0c87e5632499053147b6431780cd9439962bd0"
+  "sha": "41d4eb48f7e6b897682ee355fcc48121cb64e5f1b50956aeea84c8353dd7f18a"
 }

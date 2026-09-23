@@ -1666,5 +1666,103 @@
     "2023-06-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2008/320",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2008/320",
+    "inkrafttreten": "2008-06-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/320",
+        "typ": 5,
+        "datum": "2008-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/145",
+        "typ": 1,
+        "datum": "2014-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/271",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/271",
+        "typ": 2,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/373",
+        "typ": 1,
+        "datum": "2017-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/450",
+        "typ": 1,
+        "datum": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/623",
+        "typ": 1,
+        "datum": "2017-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/2",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/692",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/412",
+        "typ": 1,
+        "datum": "2019-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/518",
+        "typ": 1,
+        "datum": "2020-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/629",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/629",
+        "typ": 2,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/671",
+        "typ": 1,
+        "datum": "2021-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/355",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/501",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/844",
+        "typ": 1,
+        "datum": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/238",
+        "typ": 1,
+        "datum": "2023-06-01"
+      }
+    ],
+    "ocStamm": {}
+  }
 }

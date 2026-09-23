@@ -1,8 +1,8 @@
 {
   "erlassKey": "HAUE",
   "sr": "0.211.221.311",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d’adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/291/de",
-      "sha": "d34dadab66df1675cbe0358ae618a55192b74682d50d40eb8c0757330d27fb46"
+      "sha": "0c21c1171326d1e573f389d269461eaa22c6ac238d188176479c335a14bf997f"
     },
     {
       "art": "aenderung",
@@ -25,8 +29,11 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d’adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/243/de",
-      "sha": "67f207eeabf21d93fc73e7b0eca4df4ce5c2d8f8b052b597347b1dd63ac548e2"
+      "sha": "e9d3dd0afcdd5d3e96e55653ffcffaf54e965ffb51e7e1187764b5646fa4377a"
     },
     {
       "art": "aenderung",
@@ -37,8 +44,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/684/de",
-      "sha": "e51e0007d1eff20eff3b1c63e27525f7b45b4a1ce8f51177931c6501232e69ec"
+      "sha": "19eb62eec7b7ba6cdc1f1c9868ff325afc0e6376c50334407eb7bf63f2ec4523"
     },
     {
       "art": "aenderung",
@@ -49,8 +60,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/9/de",
-      "sha": "e6c2cf1960aa8cc6ec23fc5d764e2b74ceac7221f7915cddcc2509b6e18e3221"
+      "sha": "a350ee8578737ff9d2629f5a9804b8088d3e6e105e049ce1a01f2508d125d9f5"
     },
     {
       "art": "aenderung",
@@ -61,8 +76,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/189/de",
-      "sha": "dbb5dd66980557eac4f8b535965073306272ed355313323b8baf512358e81c5f"
+      "sha": "cb534b8336dab644b37180c9cc3679c9038897514fef1a321ca77212cee43572"
     },
     {
       "art": "aenderung",
@@ -73,8 +92,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/671/de",
-      "sha": "8de662dae14fa746200cb3bf46ccd1a9a07c6636a52f7c9a18f9a0a176c12613"
+      "sha": "12fd802524216fc1f6c434183d17d2761f8129dae3ebd518226af30e201a4d78"
     },
     {
       "art": "aenderung",
@@ -85,8 +108,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/437/de",
-      "sha": "6ea6838b801c6eb87811d173d9a659f31c9ff4d97e0d01c131239b2795fb6020"
+      "sha": "670df66f2d2272d09e914a1baba0d5f0fd8cd1185757341a3cc40fabb0a1e714"
     },
     {
       "art": "aenderung",
@@ -97,8 +124,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/146/de",
-      "sha": "c43ebc6b9fb39160f9b69351d3a97b38a197ba2b434f1daba6f79519d3b863ba"
+      "sha": "6fc57394a4cdc3887568cca44fa1afc62ad409d08a0a991e96763d282f949730"
     },
     {
       "art": "aenderung",
@@ -109,8 +140,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/235/de",
-      "sha": "1599a7194f014e13cee518e7d2d50f58de34b171265506673bc274fb3af69c6b"
+      "sha": "91757b7731e87e0b4f83a0c583dbeeeeb6faa6a1b1b43a48a9d4c976fdd7a1da"
     },
     {
       "art": "aenderung",
@@ -121,8 +156,12 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/257/de",
-      "sha": "ab7a52ded6fd49b78d06cc7222e582008553f2b1e36def81951a5acb9a0d58a4"
+      "sha": "de428ff27c99ec01d9a27e77373a393d7bef9964ea3fee2322154253fe938222"
     },
     {
       "art": "aenderung",
@@ -133,21 +172,11 @@
       "titelDe": "Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption (mit Verzeichnis)",
       "titelFr": "Convention du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale (avec liste)",
       "titelIt": "Convenzione del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale (con elenco)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/310/de",
-      "sha": "effd8bb45b50dbe215b7188383c6d0ed8d6ea5831db4273f5161c2f06662a9a0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/99",
-      "dateDocument": "1993-05-29",
-      "roFundstelle": "AS 2003 415",
-      "titelDe": "Übereinkommen über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption (mit Verzeichnis)",
-      "titelFr": "Convention sur la protection des enfants et la coopération en matière d'adoption internationale (avec liste)",
-      "titelIt": "Convenzione sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale (Elenco)",
-      "botschaftKey": "BOTSCHAFT-1999-1_5795_5129_4799",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/99/de",
-      "sha": "6d25a58ad8682406416d62a58e49b47bc5a7213ccde60dbb35821820e870af8f"
+      "sha": "11f3124e26938f094f72aaf39f25f09f06736271d5a08f043b0834b233eef7cc"
     },
     {
       "art": "aenderung",
@@ -158,9 +187,12 @@
       "titelDe": "Übereinkommen über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der Internationalen Adoption",
       "titelFr": "Convention sur la protection des enfants et la coopération en matière d'adoption internationale (Ne concerne que le texte allemand)",
       "titelIt": "Convenzione sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale (Concerne solo il testo tedesco)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/815/de",
-      "sha": "166e5b41b0510e1a0c366a662048760e297719832419548f94459efe76a5ee42"
+      "sha": "4f1a4ebc41dc27835222cbda3b5b23db20eab7051b3d8474c2c723567ae6ffa1"
     }
   ],
-  "sha": "628f1d84da1200f9494847f714f7b8a3ccf4ecc9d7bd80169231e2a9c87ce691"
+  "sha": "aa23d27a9609c610e0e954c44709f214726ad01dd7c7dce3d3741b4d9c64fab3"
 }

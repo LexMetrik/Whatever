@@ -1,8 +1,8 @@
 {
   "erlassKey": "VFV",
   "sr": "831.111",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,26 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l’assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l’assicurazione facoltativa per la vecchiaia, i superstiti e l’invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/464/de",
-      "sha": "dc89295835be04c25925bd4b7ad1434f28c982026027cc5326768eb3c47e195f"
+      "sha": "cc1d0467e1120d1c695a972d5a3e85d939b18a0e8011762f7a715159458e8ae0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.111",
-      "sha": "dc71001876c2e650249a563a05898cb8d68cf94876c469df5bd29aed23690c34"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "5c7dddebd3667bd2e5e37e0414d505dec30f1f7afa17760d0578b07c3cc6f54c"
     },
     {
       "art": "aenderung",
@@ -31,8 +43,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l’assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l’assicurazione facoltativa per la vecchiaia, i superstiti e l’invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/605/de",
-      "sha": "9f483302494eeb5016795773d8ff10c060685399ea67a63aaf8427763cfe2d0d"
+      "sha": "96af7cc6e1ce5d8e9b9b6711d68b4502e9a219c8333c712bd2edb6174bbb922d"
     },
     {
       "art": "aenderung",
@@ -43,8 +58,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/820/de",
-      "sha": "4a360978f5e397c0fc6e8c8fadbdb1d2a7c5108d9c40eb2656dfd6c7066ee092"
+      "sha": "f312c99b3901fc47cd70c92fb5ae841137829c877c690cf0af64390f2f3cddc6"
     },
     {
       "art": "aenderung",
@@ -55,8 +73,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/678/de",
-      "sha": "7c16a40a3976c8c2e1cefd64ebd28718fe192abad15f9b4386561e5319a8d8c5"
+      "sha": "24e68af432053f1de1bfb189bab034bfd8e27a67305146dda862698ac6c686f9"
     },
     {
       "art": "aenderung",
@@ -67,8 +88,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/575/de",
-      "sha": "37d1fb866004ea0fe0df36a605d25260ce67ea135107c3b441ee486bdf26918f"
+      "sha": "4396158f02a34347138ee99b3d4e72a5996f6ea19bce29044ce75524b693e362"
     },
     {
       "art": "aenderung",
@@ -79,14 +103,26 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/748/de",
-      "sha": "628b2c1dd09c942fe7a116d4ddbeda058c455f8020502abcd8f22a665b2ef970"
+      "sha": "55000146a665602bb8afb8fcbbf815ba99a998dde0cfc6409ad6b04fd7e3c923"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.111",
-      "sha": "18d44edf1cc11ab676cc6fbaa71748ea3829b5e6c059dff6bcd9b9dfbe1a219a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/674",
+      "dateDocument": "2011-10-19",
+      "roFundstelle": "AS 2011 4759",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l'assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/674/de",
+      "sha": "a2371440086d1a3ef5e025cbf1bbedf4424bca1bb32fb6fd9f2792996b9f4837"
     },
     {
       "art": "aenderung",
@@ -97,8 +133,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/657/de",
-      "sha": "9911d25369bd1c48664d56f271a8e9baa71d4fa50225826aa82d05bf6e1795ba"
+      "sha": "15f21fdec9ae0cc12496826a5c0de03fc863d6129e8e59c1d39c31a515ae7ffa"
     },
     {
       "art": "aenderung",
@@ -109,8 +148,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/660/de",
-      "sha": "244a4e81a95f0b0a30f1328d305f819c98333ed298ba4e79c8c1a0ae2e09679f"
+      "sha": "65417ef0f1273df7edacb4272d2ebe31b0f8af61b6c6f5af4e90fabc96203bed"
     },
     {
       "art": "aenderung",
@@ -121,8 +163,28 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/226/de",
-      "sha": "4710e68353a700f2d4a89c81d02e036434f5a17b5020e229a07e2e2ece1a7687"
+      "sha": "0f3cba6bbbaa1e55d5c2d3d33f6a8863e6bec853fc51a267db9a77979a4782f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
     },
     {
       "art": "aenderung",
@@ -133,14 +195,26 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/612/de",
-      "sha": "610254b8f027b8d668a64e403784549fb69f90500c58c12b116581ea31e7fac8"
+      "sha": "5ef1a3b87b45732260623f699c569b1d792f948b7a6de07883b0460dd6d8ceb5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.111",
-      "sha": "6bd7dbe80128826d56e5c203de0d096ac9b5cd32e7accc6ea2aa368ff8a7659a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/163",
+      "dateDocument": "2005-11-02",
+      "roFundstelle": "AS 2006 923",
+      "titelDe": "Verordnung über die schrittweise Einführung des freien Personenverkehrs zwischen der Schweizerischen Eidgenossenschaft und der Europäischen Gemeinschaft und deren Mitgliedstaaten sowie unter den Mitgliedstaaten der Europäischen Freihandelsassoziation (Verordnung über die Einführung des freien Personenverkehrs, VEP)",
+      "titelFr": "Ordonnance sur l'introduction progressive de la libre circulation des personnes entre, d'une part, la Confédération suisse et, d'autre part, la Communauté européenne et ses Etats membres, ainsi qu'entre les Etats membres de l'Association européenne de libre-échange (Ordonnance sur l'introduction de la libre circulation des personnes, OLCP)",
+      "titelIt": "Ordinanza concernente l'introduzione graduale della libera circolazione delle persone tra la Confederazione Svizzera e la Comunità europea e i suoi Stati membri nonché gli Stati membri dell'Associazione europea di libero scambio (Ordinanza sull'introduzione della libera circolazione delle persone, OLCP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/163/de",
+      "sha": "b8d4c1eb8e58cb1f7db25ccfa2e39d925e7a064970b597251e4d0936f8b18a5a"
     },
     {
       "art": "aenderung",
@@ -151,8 +225,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/768/de",
-      "sha": "9b0638aa01461a2f76d34b4d21a35c8380d20a5d4b63044608957102c76461b3"
+      "sha": "c3a657dfac5df6b93d370ff7d352bb73761dd801e7287fe26076922d21d5e953"
     },
     {
       "art": "aenderung",
@@ -163,8 +240,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/230/de",
-      "sha": "b3bd4fc3b91b24a32ad8de0e7eb8e864833b376db4f16ff8400c0622a8620030"
+      "sha": "47b71519e8b4030b89447363a1754529b463381691c0f7028d7a8232222d4cba"
     },
     {
       "art": "aenderung",
@@ -175,8 +255,11 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/502/de",
-      "sha": "9797e47f8f69b6d00a8a41c369558d95e2fd72c9687c013c5dbd687d3ca83903"
+      "sha": "b1db81029e1c9b2708ec67aea6bb19ff62d4bba2174169fab08dd468d20a5258"
     },
     {
       "art": "aenderung",
@@ -187,14 +270,30 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/571/de",
-      "sha": "05dd0c08642a6a24fb4049ff711453b8c3a3ffb04bec8781e7259b3d139d5905"
+      "sha": "25c3777c6b4347649e112020356bd63edafc7336a6dbed0f842baceac4d87529"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.111",
-      "sha": "4d03accbd9ad35897786c9ac8d357c2e3ffcd70f93a18e98aa3711cc78e8a4cc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/479",
+      "dateDocument": "2000-10-18",
+      "roFundstelle": "AS 2000 2828",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV)",
+      "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF)",
+      "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2001-01-01",
+        "2001-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/479/de",
+      "sha": "7e24d45171462f3f75d72423db5e5877915a35a670c6923568463137c9562d8e"
     },
     {
       "art": "aenderung",
@@ -205,8 +304,16 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2001-01-01",
+        "2001-04-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/479/de",
-      "sha": "b775bead54da079436120febcee354001ad42ac05e81a1ef36ee6516aa764930"
+      "sha": "1bb3536b42329b8c7f3a4a825871de1598e68df0d9ef7cfc15065a36be0a131a"
     },
     {
       "art": "aenderung",
@@ -217,21 +324,179 @@
       "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV)",
       "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisse résidant a l'étranger (OAF)",
       "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/421/de",
-      "sha": "3a1466354a209bbcbbfbec5cc05a54dbbca5af32c05728b2b5bc8fdb6c4cbe90"
+      "sha": "ab2b6b97310cb35e8a20318c54537daf42662dddc7fd83e4394f645ccbdad5a6"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1961-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1961/419_429_439",
-      "dateDocument": "1961-05-26",
-      "roFundstelle": "AS 1961 419",
-      "titelDe": "Verordnung vom 26. Mai 1961 über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung (VFV)",
-      "titelFr": "Ordonnance du 26 mai 1961 concernant l'assurance-vieillesse, survivants et invalidité facultative (OAF)",
-      "titelIt": "Ordinanza del 26 maggio 1961 concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità (OAF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1961/419_429_439/de",
-      "sha": "a75c66e59fd85ce1c7a3f0070b9c293ec468f00a5599d7bbd8df61e78f28c11c"
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/686_686_686",
+      "dateDocument": "1995-11-29",
+      "roFundstelle": "AS 1996 686",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV), Änderung",
+      "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF), Modification",
+      "titelIt": "Ordinanza concernente l'assicurazione facol tativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/686_686_686/de",
+      "sha": "c587af44e7dcbd2127e05f8cd38d67401fc4ff2c804c70f30da6ead1b0e434c7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2168_2168_2168",
+      "dateDocument": "1994-09-26",
+      "roFundstelle": "AS 1994 2168",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV), Änderung",
+      "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF), Modification",
+      "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2168_2168_2168/de",
+      "sha": "1398d961f1d0b9f8e9b53d59d9fd51a415c21d240f9aed94284105f1f01c862a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/922_922_922",
+      "dateDocument": "1985-06-17",
+      "roFundstelle": "AS 1985 922",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV), Änderung",
+      "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF), Modification",
+      "titelIt": "Ordinanza concernente l'assicurazione facol tativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/922_922_922/de",
+      "sha": "0b359c51943ee8e705951c93105982c37f6168d5258cc6bcf775cda77d98ef5e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/102_102_102",
+      "dateDocument": "1983-11-28",
+      "roFundstelle": "AS 1984 102",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV), Änderung",
+      "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF), Modification",
+      "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/102_102_102/de",
+      "sha": "b86ae42b32327d1f43beacc56366107c63ac729d432a704405ef9b661618e78b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1282_1282_1282",
+      "dateDocument": "1982-07-07",
+      "roFundstelle": "AS 1982 1282",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV), Änderung",
+      "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF), Modification",
+      "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità degli svizzeri dell'estero (OAF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1282_1282_1282/de",
+      "sha": "3d661a92101693f9e25192f023cb05a5dac334c00b102c965923f3e23e816aa2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420",
+      "dateDocument": "1978-04-05",
+      "roFundstelle": "AS 1978 420",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV), Änderung",
+      "titelFr": "Règlement sur l'assurance vieillesse et survivants (RAVS), Modification",
+      "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/420_420_420/de",
+      "sha": "dd4aea2976582a082f99f07e803c0a49abc5fdbfda7dff8f3e5becda728f6b47"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1878_1878_1878",
+      "dateDocument": "1975-10-15",
+      "roFundstelle": "AS 1975 1878",
+      "titelDe": "Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer (VFV), Änderung",
+      "titelFr": "Ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger (OAF), Modification",
+      "titelIt": "Ordinanza concernente l'assicurazione facoltativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero (OAF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1878_1878_1878/de",
+      "sha": "2df56d4346fa0b51876415bfdbf551d0006540cb39c822423625a99d9757cb4d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/2507_2560_2338",
+      "dateDocument": "1972-10-11",
+      "roFundstelle": "AS 1972 2507",
+      "titelDe": "Verordnung vom 11. Oktober 1972 über die Änderung von Vollzugserlassen zur Alters-, Hinterlassenen- und Invalidenversicherung",
+      "titelFr": "Ordonnance du 11 octobre 1972 modifiant des dispositions d'éxécution sur l'assurance vieillesse, survivants et invalidité",
+      "titelIt": "Ordinanza dell'11 ottobre 1972 sulla modificazione di disposizioni esecutive dell'Assicurazione per la vecchiaia, i superstiti e l'invalitità",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/2507_2560_2338/de",
+      "sha": "5e9ebb7addbea8633d444df956ce81e8d5093ceaf1ce55db91d1bde5f96c797b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1969-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/125_135_135",
+      "dateDocument": "1969-01-10",
+      "roFundstelle": "AS 1969 125",
+      "titelDe": "Bundesratsbeschluss vom 10. Januar 1969 betreffend Änderung von Vollzugserlassen zum Bundesgesetz über die Alters- und Hinterlassenenversicherung",
+      "titelFr": "Arrêté du Conseil fédéral du 10 janvier 1969 modifiant les dispositions d'exécution de la loi fédéral sur l'assurance-vieillesse et survivants",
+      "titelIt": "Decreto del Consiglio federale del 10 gennaio 1969 che modifica le disposizioni esecutive della legge federale sull'assicurazione per la vecchiaia e per i superstiti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/125_135_135/de",
+      "sha": "82318601c2c8f73ecf0add08a3d490e1ff89278d9d4be0e624ba36f3cd75c661"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1968/43_43_43",
+      "dateDocument": "1968-01-15",
+      "roFundstelle": "AS 1968 43",
+      "titelDe": "Bundesratsbeschluss betreffend Änderung von Vollzugserlassen zum Bundesgesetz über die Invalidenversicherung",
+      "titelFr": "Arrêté du Conseil fédéral modifiant des dispositions d'exécution de la loi fédérale sur l'assurance-invalidité",
+      "titelIt": "Decreto del Consiglio federale che modifica le ordinanze d'esecuzione della lege federale su l'assicurazione per l'invalidità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1968/43_43_43/de",
+      "sha": "456a4f6ba053d0379739bd4790eef0b977afcd7f7de86ceccb1127bc5a0d8790"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1964-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1964/340_332_329",
+      "dateDocument": "1964-04-03",
+      "roFundstelle": "AS 1964 340",
+      "titelDe": "Bundesratsbeschluss betreffend Änderung der Verordnung über die freiwillige Alters-, Hinterlassenen- und Invalidenversicherung für Auslandschweizer",
+      "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance concernant l'assurance-vieillesse, survivants et invalidité facultative des ressortissants suisses résidant à l'étranger",
+      "titelIt": "Decreto del Consiglio federale che modifca l'ordinanza concernente l'assicurazione facol tativa per la vecchiaia, i superstiti e l'invalidità degli Svizzeri dell'estero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1964/340_332_329/de",
+      "sha": "9aef275f89cc552425115751eae3689f78eb3a09604d3bd2f092cc78d52ff43b"
     }
   ],
-  "sha": "b63b3a262df52075536e3ed6d6287bdaa3bf9161894cf899cb445e91e1257d3c"
+  "sha": "28dddaa04f554f7bfb4c4e82eea7d2c753d0590123760b7f985633888d7e31ed"
 }

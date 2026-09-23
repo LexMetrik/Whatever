@@ -1,20 +1,39 @@
 {
   "erlassKey": "URG",
   "sr": "231.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "6eb0b1463b835bc476fa9b5344bab97722e1067e594a8a5df79a977af74fe94f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/313",
+      "dateDocument": "2023-12-22",
+      "roFundstelle": "AS 2025 313",
+      "titelDe": "Bundesgesetz über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+      "titelFr": "Loi fédérale sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+      "titelIt": "Legge federale che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/313/de",
+      "sha": "d3fa89b27f0a57089f573fa4d2cedc2280da2aa664db6f7caac1b9a3dc42ae60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "a4dd053b30239cdd6cf56e4c21249ac5ddd14f457fbb7379753727c6de17a957"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 259",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+      "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "sha": "64e1e609ccf5d5a5532e3f42aec1fd1e1c0d6c9345913a92606b4f68339c0b0d"
     },
     {
       "art": "aenderung",
@@ -25,8 +44,11 @@
       "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
       "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
       "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
-      "sha": "5a097d9bbc3531c900c9aadb5f6386e08673d09adccdd3ad56a29dd0bf80fbef"
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
     },
     {
       "art": "aenderung",
@@ -38,8 +60,11 @@
       "titelFr": "Loi fédérale sur le droit d'auteur et les droits voisins (Loi sur le droit d'auteur, LDA)",
       "titelIt": "Legge federale sul diritto d'autore e sui diritti di protezione affini (Legge sul diritto d'autore, LDA)",
       "botschaftKey": "BOTSCHAFT-2018-184",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/181/de",
-      "sha": "10731224d003cd6e9da738faab98ed23e8923dc18bc29610ab6d4852b69a19dd"
+      "sha": "ec3f11fe71ade00097ed284d3cf8b904f482842bf3b4e96d11d9eafcb92f681f"
     },
     {
       "art": "aenderung",
@@ -51,20 +76,45 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre du Traité de Marrakech visant à faciliter l'accès des aveugles, des déficients visuels et des personnes ayant d'autres difficultés de lecture des textes imprimés aux uvres publiées (modification de la loi sur le droit d'auteur)",
       "titelIt": "Decreto federale che approva il Trattato di Marrakech volto a facilitare l'accesso alle opere pubblicate per le persone non vedenti, con disabilità visive o con altre difficoltà nella lettura di testi a stampa e lo traspone nel diritto svizzero (modifica della legge sul diritto d'autore)",
       "botschaftKey": "BOTSCHAFT-2018-184",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/182/de",
-      "sha": "fbd4c2af83e8ad9a83d647b5beebfaa41a7908612804a8d2c7d88c6da78100f2"
+      "sha": "756a550c2ed6c3af3350fc5854e0487831298be205ff734541a1db73db8e36c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "1b1f66bba6c65902cacd1d5d15fe54c5172cb48499cbbf42b91473a7f289dc0b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/609",
+      "dateDocument": "2013-06-21",
+      "roFundstelle": "AS 2015 3631",
+      "titelDe": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
+      "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM)",
+      "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM)",
+      "botschaftKey": "BOTSCHAFT-2009-1471",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/609/de",
+      "sha": "4095a23ecdaaf9a7458cbe6d2daf8446d79574097932213e2f37d53d409d3b48"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "17ecbb160372e462fc1ecab27e730f2a4d0afc871b03e1c0312a43020d43e98d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4680b94aca04870448f933a54c75b33319b3d325b89428dcf20b5c0518e9c6aa"
     },
     {
       "art": "aenderung",
@@ -76,8 +126,11 @@
       "titelFr": "Loi fédérale sur le droit d'auteur et les droits voisins (Loi sur le droit d'auteur, LDA)",
       "titelIt": "Legge federale sul diritto d'autore e sui diritti di protezione affini (Legge sul diritto d'autore, LDA)",
       "botschaftKey": "BOTSCHAFT-2006-359",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/347/de",
-      "sha": "66a6f9bd6a89fcf471992b8bd03b84f4cd04163385d23bfbf3f48593a772db8d"
+      "sha": "ff832ec3ce3a666a7f3257d3a98fe783a4e1c2ff41386aa57e8e168f806a9e1d"
     },
     {
       "art": "aenderung",
@@ -89,57 +142,105 @@
       "titelFr": "Arrêté fédéral portant approbation de deux traités de l'Organisation Mondiale de la Propriété Intellectuelle et modification de la loi sur le droit d'auteur",
       "titelIt": "Decreto federale che approva due trattati dell'Organizzazione mondiale della Proprietà Intellettuale e modifica la legge sul diritto d'autore",
       "botschaftKey": "BOTSCHAFT-2006-359",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/357/de",
-      "sha": "c7966719842c9838f8fe98ba5e4c547fec708da4db2b92ad226fc328e04febcc"
+      "sha": "24109d4aa2154929987e9a56f06c62e6755dc1a62adc627ce3ce27dd80c137bd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/366",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 2551",
+      "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+      "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
+      "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)",
+      "botschaftKey": "BOTSCHAFT-2006-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/366/de",
+      "sha": "abbcc319138e396a66468d0798510c8bfc881cf7a7588eb9ec58eef224627d7a"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "391afe1c70d1b1b1f7cdefcf5dda3314fa6e35fc5a899f8b824e32d8b83c0cbc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "814f4fea5a1fbb74b8771abcaa71a5e6a59ee5c8b7df8292003718eafe6b4f99"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/172",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2004 1385",
+      "titelDe": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+      "titelFr": "Loi fédérale sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
+      "titelIt": "Legge federale sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)",
+      "botschaftKey": "BOTSCHAFT-2002-265",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/172/de",
+      "sha": "ca20079743f183749f1033411e833454a0c01bc8d9c7158996520c76a0c57233"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "cb03ff55e4d148d43c5158212a03379b27c1a511af36670294c00ae587994892"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/283",
+      "dateDocument": "2001-12-14",
+      "roFundstelle": "AS 2002 1904",
+      "titelDe": "Bundesgesetz über Filmproduktion und Filmkultur (Filmgesetz, FiG)",
+      "titelFr": "Loi fédérale sur la culture et la production cinématographiques (Loi sur le cinéma, LCin)",
+      "titelIt": "Legge federale sulla produzione e la cultura cinematografiche (Legge sul cinema, LCin)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/283/de",
+      "sha": "304fdaa99a43513f10ca2177a3515aa15199fccf005f03c4440a07215872f987"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.1",
-      "sha": "92f647e9a894a4fc969a71a0b6a430fe0ea735c402bd7e9637803456d886f5a4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1993-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1798_1798_1798",
-      "dateDocument": "1992-10-09",
-      "roFundstelle": "AS 1993 1798",
-      "titelDe": "Bundesgesetz vom 9. Oktober 1992 über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz, URG)",
-      "titelFr": "Loi fédérale du 9 octobre 1992 sur le droit d'auteur et les droits voisins (Loi sur le droit d'auteur, LDA)",
-      "titelIt": "Legge federale del 9 ottobre 1992 sul diritto d'autore e sui diritti di protezione affini (Legge sul diritto d'autore, LDA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1798_1798_1798/de",
-      "sha": "aeade8df8a317638ec2f0fce4114ae15b38b51a1ac40437ca764feef98d67ffe"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1923-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/39/65_65_67",
-      "dateDocument": "1922-12-07",
-      "roFundstelle": "AS 39 65",
-      "titelDe": "Bundesgesetz vom 7. Dezember 1922 betreffend das Urheberrecht an Werken der Literatur und Kunst",
-      "titelFr": "Loi fédérale du 7 décembre 1922 concernant le droit d'auteur sur les œuvres littéraires et artistiques",
-      "titelIt": "Legge federale del 7 dicembre 1922 concernente il diritto d'autore sulle opere letterarie ed artistiche",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/39/65_65_67/de",
-      "sha": "a7ec21db9b953544d74a17b96a2676b03efcb81c681c547bbb5408f561d9a5b5"
+      "dateEntryInForce": "1995-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1776_1776_1776",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 1776",
+      "titelDe": "Bundesgesetz über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz, URG), Änderung",
+      "titelFr": "Loi fédérale sur le droit d'auteur et les droits voisins (Loi sur le droit d'auteur, LDA), Modification",
+      "titelIt": "Legge federale sul diritto d'autore e sui diritti di protezione affini (Legge sul diritto d'autore, LDA), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1776_1776_1776/de",
+      "sha": "d4c10bf7527558b0891370137e1e72e6bfccd16105f1934d636edfb918aef44e"
     }
   ],
-  "sha": "8b0ecafa65e649d5d5c6aa9ce766331299369b318bc4d8e2f4017a1c68ae76d2"
+  "sha": "ef82858c0816e483c930d6f384b2ea78b7c856b056dac45440d4a285d216cf44"
 }

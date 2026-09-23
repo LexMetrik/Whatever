@@ -582,5 +582,90 @@
     "2023-09-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2004/745",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2004/745",
+    "inkrafttreten": "2005-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/745",
+        "typ": 5,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/821",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/669",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/669",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/669",
+        "typ": 2,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/161",
+        "typ": 1,
+        "datum": "2016-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/562",
+        "typ": 1,
+        "datum": "2018-11-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/693",
+        "typ": 5,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2009/821": {
+        "dateForce": "2010-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2009 6605",
+        "titelDe": "Bundesgesetz über die Landessprachen und die Verständigung zwischen den Sprachgemeinschaften (Sprachengesetz, SpG)",
+        "titelFr": "Loi fédérale sur les langues nationales et la compréhension entre les communautés linguistiques (Loi sur les langues, LLC)",
+        "titelIt": "Legge federale sulle lingue nazionali e la comprensione tra le comunità linguistiche (Legge sulle lingue, LLing)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/161": {
+        "dateForce": "2016-04-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2016 925",
+        "titelDe": "Bundesgesetz über das Vernehmlassungsverfahren (Vernehmlassungsgesetz, VlG)",
+        "titelFr": "Loi fédérale sur la procédure de consultation (Loi sur la consultation, LCo)",
+        "titelIt": "Legge federale sulla procedura di consultazione (Legge sulla consultazione, LCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/562": {
+        "dateForce": "2018-11-26",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 3461",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verschiedene Änderungen des Parlamentsrechts)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Modifications diverses du droit parlementaire)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Diverse modifiche del diritto parlamentare)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      }
+    }
+  }
 }

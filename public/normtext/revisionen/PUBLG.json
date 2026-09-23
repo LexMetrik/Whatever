@@ -1,14 +1,44 @@
 {
   "erlassKey": "PUBLG",
   "sr": "170.512",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.512",
-      "sha": "0b8e77efbfde98cb00b1da09735f305cad147a88aabc90543dba6f3da77b1556"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/669",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 3977",
+      "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
+      "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubl)",
+      "botschaftKey": "BOTSCHAFT-2013-1331",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/669/de",
+      "sha": "ba7f1ff251c21180722bb04b99d7dd3f632e414b7de0e05f6da28a6df0d662b2"
     },
     {
       "art": "aenderung",
@@ -19,26 +49,47 @@
       "titelDe": "Verordnung vom 10. November 2021 über die abschliessende Inkraftsetzung der Änderung vom 26. September 2014 des Publikationsgesetzes",
       "titelFr": "Ordonnance du 10 novembre 2021 portant dernière mise en œuvre partielle de la modification du 26 septembre 2014 de la loi sur les publications officielles",
       "titelIt": "Ordinanza del 10 novembre 2021 concernente l’entrata in vigore integrale della modifica del 26 settembre 2014 della legge sulle pubblicazioni ufficiali",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/693/de",
-      "sha": "75a1b340fe98b357a8a3916d7e56164bb56d1890534b4abe161078a545d3b363"
+      "sha": "7dae27eacedc463aab0df95c92fb09bd3b024c15d3ed28e597f60e80524fd7f6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-11-26",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.512",
-      "sha": "1a7f302208792187edae560f795b45b368339a0db1720e7b2ab65f10f0fbc5f6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/562",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 3461",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verschiedene Änderungen des Parlamentsrechts)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Modifications diverses du droit parlementaire)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Diverse modifiche del diritto parlamentare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/562/de",
+      "sha": "94432abe13c833b20682548bc896d1effdbfd2f0aa4220c9256d2e2376f7d627"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2018-06-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.512",
-      "sha": "6eb30e7a483004fb6d2002a0fa8916d7a0fa9c848863e2e0c05229dc48144a81"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2004/745/20180615/de",
+      "sha": "f657c7c4c43a16e25fc1de9a7d4c6ac313056147256009c600ae31c8b6daa7aa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.512",
-      "sha": "93c3bcc107573d299a26d6e6b5a6087e3d07a14368a013ddbdd5ddd0bb625f99"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/161",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2016 925",
+      "titelDe": "Bundesgesetz über das Vernehmlassungsverfahren (Vernehmlassungsgesetz, VlG)",
+      "titelFr": "Loi fédérale sur la procédure de consultation (Loi sur la consultation, LCo)",
+      "titelIt": "Legge federale sulla procedura di consultazione (Legge sulla consultazione, LCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/161/de",
+      "sha": "db1fac9d50921896f72e7e2233f3fec6255c57256597b36f00bc00b5798e4522"
     },
     {
       "art": "aenderung",
@@ -50,52 +101,32 @@
       "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
       "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubl)",
       "botschaftKey": "BOTSCHAFT-2013-1331",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/669/de",
-      "sha": "20471b9814c09239cd8760ed8e6425e9ebbec2533009957d144b9a23f0da5168"
+      "sha": "1cf4a22f7811c8a6d1a4fb90c05b63b903208dd16f1f6a8a557780275ea0559d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.512",
-      "sha": "c594ee9644841cdffb5983533f9018506696605fbde2df1690bf72679fd8fd5b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2005-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/745",
-      "dateDocument": "2004-06-18",
-      "roFundstelle": "AS 2004 4929",
-      "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
-      "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
-      "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubb)",
-      "botschaftKey": "BOTSCHAFT-2003-1274",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/745/de",
-      "sha": "2cd46f427a95b235c89de647d686be3ffd035db673d852b6ee10f45d2d7454ab"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1987-05-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/600_600_600",
-      "dateDocument": "1986-03-21",
-      "roFundstelle": "AS 1987 600",
-      "titelDe": "Bundesgesetz vom 21. März 1986 über die Gesetzessammlungen und das Bundesblatt (Publikationsgesetz)",
-      "titelFr": "Loi fédérale du 21 mars 1986 sur les recueils de lois et la Feuille fédérale (Loi sur les publications officielles)",
-      "titelIt": "Legge federale del 21 marzo 1986 sulle raccolte delle leggi e sul Foglio federale (Legge sulle pubblicazioni ufficiali)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/600_600_600/de",
-      "sha": "afc278889ac207ac4cdde888615296f7cf7a4e62a58369f95fd8d9d741370b81"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1849-03-05",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/I/275_275_439",
-      "dateDocument": "1849-03-05",
-      "roFundstelle": "RO I 275",
-      "titelDe": "Verordnung vom 5. März 1849 betreffend die Herausgabe eines Bundesblattes",
-      "titelFr": "Ordonnance du 5 mars 1849 relative à la publication d'une Feuille fédérale",
-      "titelIt": "Ordinanza del 5 marzo 1849 sulla pubblicazione di un foglio federale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/I/275_275_439/de",
-      "sha": "8e0397e2ef0e7b5b92ae09e7a79ae66569f58da2555cafe3a5fe0c3fb010c019"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/821",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2009 6605",
+      "titelDe": "Bundesgesetz über die Landessprachen und die Verständigung zwischen den Sprachgemeinschaften (Sprachengesetz, SpG)",
+      "titelFr": "Loi fédérale sur les langues nationales et la compréhension entre les communautés linguistiques (Loi sur les langues, LLC)",
+      "titelIt": "Legge federale sulle lingue nazionali e la comprensione tra le comunità linguistiche (Legge sulle lingue, LLing)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/821/de",
+      "sha": "b82fa70574016b5d9f959e92a4df40d881a94dc752f268fc8fcdf59efb6704cc"
     }
   ],
-  "sha": "2bdf046c3b6a6d5655b1b41db5ca016e38a745bbc897654a466d7e387665165a"
+  "sha": "778e8bbb420ce10480c778e0d8face943cb206b47c983142ae64a46d3b5d4439"
 }

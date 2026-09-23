@@ -1,8 +1,8 @@
 {
   "erlassKey": "EOG",
   "sr": "834.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -15,14 +15,28 @@
       "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Armonizzazione delle prestazioni nell’ordinamento delle IPG)",
       "botschaftKey": "BOTSCHAFT-2025-1528",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/433/de",
-      "sha": "bba41d4d924443585733ac7837c132050ea39fde6e2dcd9cff56ef24ac349c4c"
+      "sha": "f36acbb4b4bf0f7554c504e885f2ed1458d30449164079ad9209837fd76745b2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "110cdd36472b6e28c0444371e7bf3c5b3f4f8466b0393c388c218f5c18d1e7b2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/164",
+      "dateDocument": "2025-12-19",
+      "roFundstelle": "AS 2026 164",
+      "titelDe": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG)",
+      "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
+      "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)",
+      "botschaftKey": "BOTSCHAFT-2025-960",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/164/de",
+      "sha": "d75d6d18d6a066ccaff5722c0867367021259092efe64e7846f5093e8c7ee3c9"
     },
     {
       "art": "aenderung",
@@ -33,8 +47,26 @@
       "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/72/de",
-      "sha": "3c1e4836b0755e8cb1ab71a2639f98bec884180ee5380e7bf5927e4c08bf736a"
+      "sha": "fa554b0263970d5cefb68df707bfe673e234cffe3f0f4faf0cba69153963b8ad"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/463",
+      "dateDocument": "2024-08-28",
+      "roFundstelle": "AS 2024 463",
+      "titelDe": "Verordnung vom 28. August 2024 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO ab dem Jahr 2025",
+      "titelFr": "Ordonnance du 28 août 2024 sur les adaptations à l’évolution des salaires et des prix dans le régime de l’AVS, de l’AI et des APG à partir de 2025",
+      "titelIt": "Ordinanza del 28 agosto 2024 sugli adeguamenti all’evoluzione dei prezzi e dei salari nell’AVS/AI/IPG dal 2025",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/463/de",
+      "sha": "ae87404ede09cf3d1e924430b26aaa4ba31f192c8b2f15d772e9421676873406"
     },
     {
       "art": "aenderung",
@@ -46,8 +78,11 @@
       "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Numérisation dans le régime des APG)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno)",
       "botschaftKey": "BOTSCHAFT-2023-2245",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/681/de",
-      "sha": "f036973255bc97c63ea28e85898ee9b59fe90ec8939ea58f1b5b29e40011ccf3"
+      "sha": "c8b333a4b6e854b0ffe4bbafcaf600c70cd0a2bf597807080d50458051bd633e"
     },
     {
       "art": "aenderung",
@@ -58,8 +93,11 @@
       "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Mutterschaftsentschädigung von Parlamentarierinnen)",
       "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Allocation de maternité pour les députées)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Indennità di maternità per le parlamentari)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/151/de",
-      "sha": "a9473ca69b6d3e5b8f216c6ae6cd0e10ecca59a68dbef792516b63fd2fcf4df0"
+      "sha": "c2aeb4b30a9155a37edbc52ee045a3a51dab04a8db9cdf5c6c61d7f0c8842cf5"
     },
     {
       "art": "aenderung",
@@ -70,8 +108,43 @@
       "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Taggelder für den hinterlassenen Elternteil)",
       "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Indemnités journalières pour le parent survivant)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Indennità giornaliere per il genitore superstite)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/680/de",
-      "sha": "ad28dcb0676fdf64b7d81d889d8daacfcb233eca3c0db731c6cfa78fa1effebf"
+      "sha": "5cf537d67e50c98aa59b32313108d5433b586504373cdaf39910941c93d67819"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/688",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 688",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Modernisierung der Aufsicht)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Modernisation de la surveillance)",
+      "titelIt": "Legge federale su l’assicurazione per la vecchiaia e per i superstiti (LAVS) (Modernizzazione della vigilanza)",
+      "botschaftKey": "BOTSCHAFT-2020-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/688/de",
+      "sha": "d9051c28aae4ac3b412b130c837e95e4500f0571df44855b65aff804b4a16360"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/92",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 92",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (AHV 21)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (AVS 21)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (AVS 21)",
+      "botschaftKey": "BOTSCHAFT-2019-2267",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/92/de",
+      "sha": "be5abf75dc966d36808e8c840961bdbca32ac150b669f9624bc2cb14338ebca2"
     },
     {
       "art": "aenderung",
@@ -82,14 +155,62 @@
       "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG)",
       "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/468/de",
-      "sha": "ac3bf20520853800eb4d892e80ba8ecd0b778a5c15acbf8f4b50632080d3efb3"
+      "sha": "4bda8abe6c337b9e57d84dd29c95810fa3723a8591ec75b5a37cc68557670f76"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/604",
+      "dateDocument": "2022-10-12",
+      "roFundstelle": "AS 2022 604",
+      "titelDe": "Verordnung 23 vom 12. Oktober 2022 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 23 du 12 octobre 2022 sur les adaptations à l’évolution des salaires et des prix dans le régime de l’AVS, de l’AI et des APG",
+      "titelIt": "Ordinanza 23 del 12 ottobre 2022 sugli adeguamenti all’evoluzione dei prezzi e dei salari nell’AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/604/de",
+      "sha": "d22ffb1b2ed91faf9096bf48bcb56b56ba32da43a0c959bf234a425df0c3b9b3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "b0780af8fc99d107beb35cbd4109f80fdff4f17ca5ba2847d1949b244bd3e344"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/799",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 4525",
+      "titelDe": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "titelFr": "Loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches",
+      "titelIt": "Legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari",
+      "botschaftKey": "BOTSCHAFT-2019-1504",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/799/de",
+      "sha": "439817656e93b6cf44fa509e237275a6740feaa1a7de67f15be57ed7c8e87673"
     },
     {
       "art": "aenderung",
@@ -101,8 +222,80 @@
       "titelFr": "Loi fédérale sur les allocations pour perte de gain en cas de service et de maternité (Loi sur les allocations pour perte de gain, LAPG)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno per chi presta servizio e in caso di maternità (Legge sulle indennità di perdita di guadagno, LIPG)",
       "botschaftKey": "BOTSCHAFT-2019-9",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/288/de",
-      "sha": "8acdf64056ed68f656ecec497a1e01a846d52dadcc4007cb304a465317e6f28f"
+      "sha": "05964f9e33541141fc34a3c09e9a3832ba03a85a4aaaa74ef3914487951281e7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/677",
+      "dateDocument": "2019-11-13",
+      "roFundstelle": "AS 2019 3753",
+      "titelDe": "Verordnung 20 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 20 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 20 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-01-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/677/de",
+      "sha": "411f3002a5480d8e50c021dc79425b5c468dbbfd8e44b76d6f93a220a6402687"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/799",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 4525",
+      "titelDe": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "titelFr": "Loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches",
+      "titelIt": "Legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari",
+      "botschaftKey": "BOTSCHAFT-2019-1504",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/799/de",
+      "sha": "db71a37fc03ba92e15836438e34c911630b9e028219e2f1ea9b69c508f387b2e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/819",
+      "dateDocument": "2020-10-14",
+      "roFundstelle": "AS 2020 4609",
+      "titelDe": "Verordnung 21 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 21 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 21 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/819/de",
+      "sha": "eab505783563fe961574e46393654ea625627635af02f5dd4893c315d37f5d8e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/842",
+      "dateDocument": "2020-10-21",
+      "roFundstelle": "AS 2020 4683",
+      "titelDe": "Verordnung 21 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 21 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 21 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/842/de",
+      "sha": "d0920392fdca4f60bb502f131366879c9c0e451f623cdceb40682a7b9a6ef314"
     },
     {
       "art": "aenderung",
@@ -113,104 +306,385 @@
       "titelDe": "Bundesgesetz über den Erwerbsersatz für Dienstleistende und bei Mutterschaft (Erwerbsersatzgesetz, EOG)",
       "titelFr": "Loi fédérale sur les allocations pour perte de gain en cas de service et de maternité (Loi sur les allocations pour perte de gain, LAPG)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno per chi presta servizio e in caso di maternità (Legge sulle indennità di perdita di guadagno, LIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/844/de",
-      "sha": "7ae934dc9a14c6ecb71186d3e82565dd08c5b18167fc20d862f481d059aea0c0"
+      "sha": "5466b3249b3ffe701a95d1f91af3aad0b78924b4d65783e6eed31097214bae65"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/887",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 4995",
+      "titelDe": "Bundesgesetz über den Bevölkerungsschutz und den Zivilschutz (Bevölkerungs- und Zivilschutzgesetz, BZG)",
+      "titelFr": "Loi fédérale sur la protection de la population et sur la protection civile (LPPCi)",
+      "titelIt": "Legge federale sulla protezione della popolazione e sulla protezione civile (LPPC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/887/de",
+      "sha": "d71b5e36d0cc6c04f708174c89b2dd113b09c122f52326441fb17960a55c80b5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/892",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2020 5137",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "botschaftKey": "BOTSCHAFT-2018-671",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/892/de",
+      "sha": "38cbac33c69962fff073dc6eec2959b44b5f08600c33cc650d52c19bbe769505"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "0b45f3138171d57f668e3af5dcf854fc5b7e463504b3e3c092e85826987dff8a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/677",
+      "dateDocument": "2019-11-13",
+      "roFundstelle": "AS 2019 3753",
+      "titelDe": "Verordnung 20 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 20 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 20 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-01-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/677/de",
+      "sha": "cd24bc94d7673c5166bf5bf2393b92e1f8e07fac70588ed10121a355824c83c8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "4d0e4cc753be347cd8948f47832dd0cbe89c712479855a5336c4bd1eecc8d8d8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 7563",
+      "titelDe": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+      "titelFr": "Loi fédérale sur l'établissement chargé de l'administration des fonds de compensation de l'AVS, de l'AI et du régime des APG (Loi sur les fonds de compensation)",
+      "titelIt": "Legge federale sull'istituto amministratore dei fondi di compensazione AVS, AI e IPG (Legge sui fondi di compensazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/820/de",
+      "sha": "ec7f7770ab90eada61540d36fd0063f13a9918c0ecc3e13de9186fd2cf21748c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/574",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3527",
+      "titelDe": "Verordnung 19 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 19 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 19 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/574/de",
+      "sha": "dd86719c9ebe52b14791c22f2866c79daf27d46574374a14878d43c1142161d7"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "8896a290c771c0b10a9f2deb4d919067972cce1ec3ee31dc016687d5b602f330"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/215",
+      "dateDocument": "2017-03-29",
+      "roFundstelle": "AS 2017 2297",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Militärgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur l'armée",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge militare",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/215/de",
+      "sha": "28fbb7acf22af29622115ea30bf78668a8759beac759308c357dcf1eb1553d9d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 7563",
+      "titelDe": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+      "titelFr": "Loi fédérale sur l'établissement chargé de l'administration des fonds de compensation de l'AVS, de l'AI et du régime des APG (Loi sur les fonds de compensation)",
+      "titelIt": "Legge federale sull'istituto amministratore dei fondi di compensazione AVS, AI e IPG (Legge sui fondi di compensazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/820/de",
+      "sha": "2fb3745326d3d7377b795b245646dcc184cfff86ad1ebe44cad2ec1ef71d4734"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "61a815ed81753ce6df15848dd72d3ce7f65f7c19a14bf9bd50e6750929c08863"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/714",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2016 4277",
+      "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
+      "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "botschaftKey": "BOTSCHAFT-2014-1566",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/714/de",
+      "sha": "0a58ab58c5f1cc12a3fcff653f447b47722ac9cf608451893ae4b93a3623be51"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 5233",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'accord sur la libre circulation des personnes entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, concernant l'extension à la République de Croatie",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Croazia dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2016-467",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/828/de",
+      "sha": "bb90556bcbac556ce4680f1e92fa83291e88f8600accc1894dc289b9650c8aa5"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "2d176f587c26f6bf97212e6f65cf9c1a5c21059993de12b61d1d291a589f4136"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/576",
+      "dateDocument": "2014-10-15",
+      "roFundstelle": "AS 2014 3335",
+      "titelDe": "Verordnung 15 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 15 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 15 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/576/de",
+      "sha": "08a870ee77e398dcfc52878a1a78b53a5e94eabf0e7338310421257fd3620121"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/575",
+      "dateDocument": "2015-09-02",
+      "roFundstelle": "AS 2015 3079",
+      "titelDe": "Verordnung zum Erwerbsersatzgesetz (EOV)",
+      "titelFr": "Règlement sur les allocations pour perte de gain (RAPG)",
+      "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/575/de",
+      "sha": "fd104b382e23470fbb67ad145a54b8118b29316568056cf5dd5e61d7de859d49"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2015-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "7360e6e66d3cc624ea33d9c4f3178584a213d765c47807b163fb7053c1aba2d2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/24",
+      "dateDocument": "2013-09-27",
+      "roFundstelle": "AS 2015 187",
+      "titelDe": "Bundesgesetz über den Bevölkerungsschutz und den Zivilschutz (Bevölkerungs- und Zivilschutzgesetz, BZG)",
+      "titelFr": "Loi fédérale sur la protection de la population et sur la protection civile (LPPCi)",
+      "titelIt": "Legge federale sulla protezione della popolazione e sulla protezione civile (LPPC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/24/de",
+      "sha": "8cb8eea105e27e490988fca8dafee313ee11544cea51a3573237c08924abb738"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "38343dcb438109f086f00a682f47a45dabaf98a2cfdfb4a8a22e4851b29adfd5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/576",
+      "dateDocument": "2014-10-15",
+      "roFundstelle": "AS 2014 3335",
+      "titelDe": "Verordnung 15 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 15 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 15 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/576/de",
+      "sha": "7155d389d884e8e93536bbb19ce4c151eba8139cf083dbe2dd0b3295db42d2d1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "26a4bff4257f96df251df46bebf08146d6d11d30a90f81fa52ec8c38d4182521"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/460",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2012 3953",
+      "titelDe": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+      "titelFr": "Loi fédérale sur l'encouragement du sport et de l'activité physique (Loi sur l'encouragement du sport, LESp)",
+      "titelIt": "Legge federale sulla promozione dello sport e dell'attività fisica (Legge sulla promozione dello sport, LPSpo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/460/de",
+      "sha": "2c93ec6501807c64da4271aa95ec5004f7eb6c3ce3bfe65ca2cc71ac2ebc4f86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "0e84f2f91b0854ea915b8d63360b9e333be40eb72ead0af2ce66c37ed64b49a5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/673",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 4745",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramento dell'esecuzione)",
+      "botschaftKey": "BOTSCHAFT-2011-61",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/673/de",
+      "sha": "d2034468173b6b387cdc98132b4839f40e08e7f9b5580215e67656d779c01ce3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "8691f50527978692914c08ad5d4aa9644cdb617ee958eb203375d3f3d5419523"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/548",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2010 3835",
+      "titelDe": "Bundesgesetz über die Sanierung der Invalidenversicherung",
+      "titelFr": "Loi fédérale sur l'assainissement de l'assurance-invalidité",
+      "titelIt": "Legge federale sul risanamento dell'assicurazione invalidità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/548/de",
+      "sha": "72801a867081558fc2290c3f16250652a30ff61ab751959fe8f72870b0b63276"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/656",
+      "dateDocument": "2010-09-24",
+      "roFundstelle": "AS 2010 4577",
+      "titelDe": "Verordnung 11 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 11 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 11 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/656/de",
+      "sha": "28c335f931591565c42a96d68ff8850a97f0c6773056e7973dba16c892864239"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2009-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "4cdc8b7dd705253cb2e24f6c7d13de5465065c2c484036910b0392d4d29499b8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 2411",
+      "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+      "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+      "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2008-472",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/296/de",
+      "sha": "e07086feffd5384b9382e60148cdf60e8e4f923f8b7078dfc66273593ff33371"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "8416224c670ba97020c325cb2ab291ab12581cce19c9eaf2c9a524d317db012a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/172",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 1093",
+      "titelDe": "Bundesgesetz über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale sur le service civil (LSC)",
+      "titelIt": "Legge federale sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/172/de",
+      "sha": "2c4be5baf22392a031817ec382de71d341a26595eefbd7fa0113d7baae33eaaa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "e8655f4ab61f79f1ad854c9ba141b8833793832a11b95b58f2ff62731ba5b504"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/659",
+      "dateDocument": "2008-09-26",
+      "roFundstelle": "AS 2008 4715",
+      "titelDe": "Verordnung 09 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+      "titelFr": "Ordonnance 09 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+      "titelIt": "Ordinanza 09 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/659/de",
+      "sha": "7d5dce1a7aba34da10d96d3f1808af289095caf8a24f33538f896de0feb4d7a0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "bb1c871587d21d8824a305ceff1870b838a1a9bd26f4b1c8742a020f200a0751"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "39818a52f3d1b0d46ce5d43f4f769f3161e686721e6147b36164552748bcf45d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "bbbf97c885a86d666b6bab7059b980cdb5814d1d8619b4332eb3936ab6119e48"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "60bed692900bbadc2f6e19c9095240d94d0bedbac336cea5e509a8285a1a3dcd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2006 979",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea",
+      "botschaftKey": "BOTSCHAFT-2004-1081",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/178/de",
+      "sha": "fb28e531ac518999edb18c74ef49b103f3639306177d1a467c84970b57cf997b"
     },
     {
       "art": "aenderung",
@@ -221,14 +695,42 @@
       "titelDe": "Bundesgesetz über die Erwerbsersatzordnung für Dienstleistende in Armee, Zivildienst und Zivilschutz (Erwerbsersatzgesetz, EOG)",
       "titelFr": "Loi fédérale du 25 septembre 1952 sur le régime des allocations pour perte de gain en faveur des personnes servant dans l'armée, dans le service civil ou dans la protection civile (Loi sur les allocations pour perte de gain, LAPG)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno in caso di servizio militare, servizio civile o servizio di protezione civile (Legge sulle indennità di perdita di guadagno, LIPG)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/217/de",
-      "sha": "3bba693faf15d3be7d54222f191924de62abd026b131ba03a7233c570745007f"
+      "sha": "00002d6f3d333d93a38817888f0536a674f90d0cdd95e72bb74ab2cd6c6eaa58"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/834.1",
-      "sha": "85b863dfc0000d790792dd926b0e122a41fbaeeb34e15036a91cd1a2d0b094d7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/510",
+      "dateDocument": "2000-10-06",
+      "roFundstelle": "AS 2002 3371",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/510/de",
+      "sha": "65f85906c8d461467e18c9e6ca34710c01694a983121b53ad5a65f48fa0e5bc9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/511",
+      "dateDocument": "2002-06-21",
+      "roFundstelle": "AS 2002 3453",
+      "titelDe": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (Revision 1 des Anhangs zum ATSG)",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales (Révision 1 de l'annexe de la LPGA)",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente la modifica dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (Revisione 1 dell'allegato alla LPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/511/de",
+      "sha": "c0927a5c37ab1e526bc7d37dde229bc79bf766dd34c04e78b02cbacd841f73a7"
     },
     {
       "art": "aenderung",
@@ -240,8 +742,11 @@
       "titelFr": "Loi fédérale sur le régime des allocations pour perte de gain en faveur des personnes servant dans l'armée, dans le service civil ou dans la protection civile (LAPG)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno in caso di servizio militare, servizio civile o servizio di protezione civile (LIPG)",
       "botschaftKey": "BOTSCHAFT-2000-99",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/466/de",
-      "sha": "95516ae4747effc320bde83cd10937b04d6c74b6fb8a0591906190c079de0d6c"
+      "sha": "09b965c8c948ecfc053a3ae1bb13ce71b46802923a31424976099f34c995d2f8"
     },
     {
       "art": "aenderung",
@@ -252,21 +757,271 @@
       "titelDe": "Bundesgesetz über die Erwerbsersatzordnung für Dienstleistende in Armee, Zivildienst und Zivilschutz (Erwerbsersatzgesetz, EOG)",
       "titelFr": "Loi fédérale sur le régime des allocations pour perte de gain en faveur des personnes servant dans l'armée, dans le service civil ou dans la protection civile (Loi sur les allocations pour perte de gain, LAPG)",
       "titelIt": "Legge federale sulle indennità di perdita di guadagno in caso di servizio militare, servizio civile o servizio di protezione civile (LIPG)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/237/de",
-      "sha": "c265dd88adbbd77e1bb6e8c139dbdd74d26f2fb9410ba9f779654c72e6ac3f3a"
+      "sha": "e9fa8597d3901c094be7c0469c94c98ba58fe987facd5fd752b84781b707e081"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1953-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/1021_1046_1050",
-      "dateDocument": "1952-09-25",
-      "roFundstelle": "AS 1952 1021",
-      "titelDe": "Bundesgesetz vom 25. September 1952 über den Erwerbsersatz (Erwerbsersatzgesetz, EOG)",
-      "titelFr": "Loi fédérale du 25 septembre 1952 sur les allocations pour perte de gain (Loi sur les allocations pour perte de gain, LAPG)",
-      "titelIt": "Legge federale del 25 settembre 1952 sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/1021_1046_1050/de",
-      "sha": "208ca5dd5a457a2cfe07a3862be62e0b33ac94363f21530b45fc909895d0f616"
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466",
+      "dateDocument": "1994-10-07",
+      "roFundstelle": "AS 1996 2466",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (10. AHV-Revision), Änderung",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (10e révision de l'AVS), Modification",
+      "titelIt": "Legge federale su l'assicurazione per la vecchiaia e per i superstiti (LAVS) 10a revisione dell'AVS, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2466_2466_2466/de",
+      "sha": "7dee517831a05bb3f22269289504c04c3fa2764bfdaf4420c0ae8a8dd49dfca7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 1445",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale du 6 octobre 1995 sur le service civil (LSC)",
+      "titelIt": "Legge federale del 6 ottobre 1995 sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1445_1445_1445/de",
+      "sha": "9366c55e276536bca375f6011fd10e590471fc41d55a4ec6c3114b50c9e6b9f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/1882_1882_1882",
+      "dateDocument": "1990-06-22",
+      "roFundstelle": "AS 1990 1882",
+      "titelDe": "Bundesgesetz über die Militärorganisation (Militärorganisation, MO), Änderung",
+      "titelFr": "Loi fédérale sur l'organisation militaire (Organisation militaire, OM), Modification",
+      "titelIt": "Legge federale sull'organizzazione militare (Organizzaione militare, OM), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/1882_1882_1882/de",
+      "sha": "809af4b8f826c2ab2760e83c696666503d86b64867c74eddef972ce87b9662d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1393_1393_1393",
+      "dateDocument": "1987-06-19",
+      "roFundstelle": "AS 1987 1393",
+      "titelDe": "Bundesgesetz über die Erwerbsersatzordnung für Wehr- und Zivilschutzpflichtige (EOG) (5. EO-Revison), Änderung",
+      "titelFr": "Loi fédérale sur le régime des allocations pour perte de gain en faveur des personnes astreintes au service militaire ou à la protection civile (LAPG) (Cinquième revision), Modification",
+      "titelIt": "Legge federale sull'ordinamento delle indennità di perdita di guadagno per gli obbligati al servizio militare e di protezione civile (LIPG) (5a revisione IPG), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1393_1393_1393/de",
+      "sha": "6e1f88bbd721ef515b56d88364b24702b759c8b0cae4181e04520bb10c50dc15"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
+      "dateDocument": "1981-03-20",
+      "roFundstelle": "AS 1982 1676",
+      "titelDe": "Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG)",
+      "titelFr": "Loi fédérale du 20 mars 1981 sur l'assurance-accidents (LAA)",
+      "titelIt": "Legge federale del 20 marzo 1981 sull'assicurazione contro gli infortuni (LAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1676_1676_1676/de",
+      "sha": "7b21d4631f6c1ad5991578a582c676a2b5711dcdd1e22e9786cec15ce5fdc27b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/391_391_391",
+      "dateDocument": "1977-06-24",
+      "roFundstelle": "AS 1978 391",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (9. AHV-Revision), Änderung",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (9e revision de l'AVS), Modification",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i supersiti (9a revisione dell'AVS), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/391_391_391/de",
+      "sha": "3179d1d9e19a6a3425ade971f1872a6f0d21135998748da5dd9ffabd74b5f302"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/57_57_57",
+      "dateDocument": "1975-10-03",
+      "roFundstelle": "AS 1976 57",
+      "titelDe": "Bundesgesetz über die Erwerbsausfallentschädigungen an Wehr- und Zivilschutzpflichtige (Erwerbsersatzordnung), Änderung",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain en faveur des militaires et des personnes astreintes à la protection civile (Régime des allocations pour perte de gain), Modification",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno per gli obbligati al servizio militare e di protezione civile (Ordinamento delle indennità per perdita di guadagno), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/57_57_57/de",
+      "sha": "e9f7b665eaca84cd7213bf53c0031153964985490205e4cb706cdc5d02ba4363"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1974-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/166_166_166",
+      "dateDocument": "1973-09-27",
+      "roFundstelle": "AS 1974 166",
+      "titelDe": "Bundesgesetz über die Erwerbsausfallentschädigungen an Wehr- und Zivilschutzpflichtige (Erwerbsersatzordnung), Änderung",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain aux militaires (Régime des allocations pour perte de gain). Modification",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno per gli obbligati al servizio militare e di protezione civile (Ordinameto delle indennità per perdita di guadagno), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/166_166_166/de",
+      "sha": "ffc26c9407cd0a30b6b26dcf8ac1721457206475b3afc35a81b5b73798925297"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/2483_2537_2314",
+      "dateDocument": "1972-06-30",
+      "roFundstelle": "AS 1972 2483",
+      "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung und damit im Zusammenhang stehender Gesetze (8. AHV-Revision)",
+      "titelFr": "Loi fédérale modifiant celle qui concerne l'assurance-vieillesse et survivants ainsi que les lois qui sont en rapport avec elle (8e revision de l'AVS)",
+      "titelIt": "Legge federael che modifica quella sull'assicurazione per la vecchiaia e i superstiti e le leggi in rapporto con essa (Ottavia revisione dell'AVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/2483_2537_2314/de",
+      "sha": "fbaf52a5c006723377164d810572e813d8a6526db193cf17e9c3e63bff46dc2c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/897_909_1069",
+      "dateDocument": "1972-03-17",
+      "roFundstelle": "AS 1972 897",
+      "titelDe": "Bundesgesetz vom 17. März 1972 über die Förderung von Turnen und Sport",
+      "titelFr": "Loi fédérale du 17 mars 1972 encourageant la gymnastique et les sports",
+      "titelIt": "Legge federale del 17 marzo 1972 che promuove la ginnastica e lo sport",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/897_909_1069/de",
+      "sha": "0e08cd5527b0b5e295106176bd593dbca4003bd39cd33d4f6e7b3d4ae1c2753a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+      "dateDocument": "1971-06-25",
+      "roFundstelle": "AS 1971 1465",
+      "titelDe": "Bundesgesetz vom 25. Juni 1971 über die Revision des Zehnten Titels und des Zehnten Titelsbis des Obligationenrechts (Der Arbeitsvertrag)",
+      "titelFr": "Loi fédérale du 25 juin 1971 revisant les titres dixième et dixièmebis du code des obligations (Du contrat de travail)",
+      "titelIt": "Legge federale del 25 giugno 1971 sulla revisione dei titoli decimo e decimobis del Codice delle obbligazioni (Contratto di lavoro)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1465_1461_1461/de",
+      "sha": "d6853fc7d3d871a6c88c6cd983014bce9549f845294d91602fa13e7748d41059"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1969-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/111_120_120",
+      "dateDocument": "1968-10-04",
+      "roFundstelle": "AS 1969 111",
+      "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung",
+      "titelFr": "Loi fédérale modifiant la loi sur l'assurance-vieillesses et survivants",
+      "titelIt": "Legge federale che modifica quella su l'assiurazione per la vecchiaia e per i superstiti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/111_120_120/de",
+      "sha": "cc84628b5d3d28167dc716c5d745b78e4f7d51386e4c5bdfaa9186b5a3069c96"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1969-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/310_318_319",
+      "dateDocument": "1968-12-18",
+      "roFundstelle": "AS 1969 310",
+      "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über die Erwerbsausfallentschädigung an Wehrpflichtige (Erwerbsersatzordnung)",
+      "titelFr": "Loi fédérale modifiant la loi sur les allocations aux militaires pour perte de gain (Régime des allocations pour perte de gain)",
+      "titelIt": "Legge federale che modifica quella sulle indennità ai militari per perdita di guadagno (Ordinamento dell'indennità per perdita di guadagno)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/310_318_319/de",
+      "sha": "66da095100c6054c4835201b8295cc5079dbbd91c3057cc3b5bba03d91170de6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1964-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1964/294_286_286",
+      "dateDocument": "1963-12-19",
+      "roFundstelle": "AS 1964 294",
+      "titelDe": "Bundesgesetz betreffend die Änderung des Bundesgesetzes über die Erwerbsausfallentschädigungen an Wehrpflichtige (Erwerbsersatzordnung)",
+      "titelFr": "Loi fédérale modifiant celle sur les allocations aux militaires pour perte de gain (Régime des allocations pour perte de gain)",
+      "titelIt": "Legge federale che modifica quella sulle indennità ai militari per perdita di guadagno",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1964/294_286_286/de",
+      "sha": "201bb40d6a2e8f0f4ffa3f02f6d6b82fe6f10e46554469e32fc3972200988f07"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1962-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1962/1089_1127_1131",
+      "dateDocument": "1962-03-23",
+      "roFundstelle": "AS 1962 1089",
+      "titelDe": "Bundesgesetz vom 23. März 1962 über den Zivilschutz (Zivilschutzgesetz)",
+      "titelFr": "Loi fédérale du 23 mars 1962 sur la protection civile (Loi sur la protection civile)",
+      "titelIt": "Legge federale del 23 marzo 1962 sulla protezione civile",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1962/1089_1127_1131/de",
+      "sha": "7bb63143a179b09806ba0d2d6fa4e512df232928a3cd89afe6fe981d86c55c5e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1960-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/567_589_565",
+      "dateDocument": "1959-03-06",
+      "roFundstelle": "AS 1959 567",
+      "titelDe": "Bundesgesetz betreffend die Änderung des Bundesgesetzes über die Erwerbsausfallentschädigungen an Wehrpflichtige (Erwerbsersatzordnung)",
+      "titelFr": "Loi fédérale modifiant la loi sur les allocations aux militaires pour perte de gain (Régime des allocations aux militaires)",
+      "titelIt": "Legge federale che modifica quella sulle indennità ai militari per perdita di guadagno",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/567_589_565/de",
+      "sha": "8a4202154f7e1c55ed6be3223c15413b51286abd20ce1f7c373a0534265bf0b7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1954-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1954/559_573_455",
+      "dateDocument": "1953-12-23",
+      "roFundstelle": "AS 1954 559",
+      "titelDe": "Bundesgesetzvom 23. Dezember 1953 über besondere Sparmassnahmen",
+      "titelFr": "Loi fédérale du 23 décembre 1953 instituant des mesures spéciales propres à réduire les dépenses de la Confédération",
+      "titelIt": "Legge federale du 23 décembre 1953 che istituisce misure speciali intese a ridurre le spese della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1954/559_573_455/de",
+      "sha": "73002bce01beddc08f2a359b43be82e221b3c4b4787d87a4bbbb28452a8d58b6"
     }
   ],
-  "sha": "059b622032448b2ce270f2c151c83aa2a41605c033828630125fe9db967bf967"
+  "sha": "fd0f7f34cfb0fff9d05611ca256de95a92d3daebd9ad521ca43410d3ddec0b38"
 }

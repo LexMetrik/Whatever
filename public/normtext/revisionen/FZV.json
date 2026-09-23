@@ -1,39 +1,92 @@
 {
   "erlassKey": "FZV",
   "sr": "831.425",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/325",
+      "dateDocument": "2026-06-12",
+      "roFundstelle": "AS 2026 325",
+      "titelDe": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026",
+      "titelFr": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026",
+      "titelIt": "Ordinanza concernente la modifica di ordinanze nell’ambito della previdenza professionale nel 2026",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "5606282a5a44741599433c5cc3cd6797bed04985fd877e68bf80f051e1d810c6"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-08-01",
+        "2027-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/325/de",
+      "sha": "da868f11ec685de7b45aafc2ea60b512b65cb04bda8eb8cbee6930687dd40b3f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "0c4677dbb529abb0471b2c90d1de5c35fd2a010413afed3d32396ad10652c9db"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/325",
+      "dateDocument": "2026-06-12",
+      "roFundstelle": "AS 2026 325",
+      "titelDe": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026",
+      "titelFr": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026",
+      "titelIt": "Ordinanza concernente la modifica di ordinanze nell’ambito della previdenza professionale nel 2026",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-08-01",
+        "2027-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/325/de",
+      "sha": "2b26c66dfc28f57125a35fb1e5cef874a6344a044ce8aa39cb45ae51b40e4ebc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "44502f48126ef12d417b554ca8c55cf4b7e1272757051a737446809a1ccaa78c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+      "dateDocument": "2024-01-31",
+      "roFundstelle": "AS 2024 73",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
+      "sha": "35de68fc5b4d08d65bee8ad1e2323255996dd65893a7b39f9cad25ab7b258877"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "278b5f29f66ca722aa9c325410cccd1c8f03d9c61c1634170814aa9b8a214952"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "5c7dddebd3667bd2e5e37e0414d505dec30f1f7afa17760d0578b07c3cc6f54c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "de55e7bad501c437d2132155746cdad5c5fd7979cb16121308e145076dc136c2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+      "dateDocument": "2021-11-17",
+      "roFundstelle": "AS 2021 800",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "sha": "01821c1c4afbc3a6add1f457b75e1324bd1fd6dd6525736c7991ab85f093a8fb"
     },
     {
       "art": "aenderung",
@@ -44,20 +97,41 @@
       "titelDe": "Verordnung über Änderungen in der beruflichen Vorsorge",
       "titelFr": "Ordonnance portant modification de dispositions dans la prévoyance professionnelle",
       "titelIt": "Ordinanza concernente modifiche nell'ambito della previdenza professionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/681/de",
-      "sha": "b26746d8f07191cafe19f4fa3d57a9d905bac9fda230d4d524dd74f57edcd464"
+      "sha": "30885a467cd53824d3f97f80b827c0f27ce81559af2e5a36f42343629ddc1d5d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "b0124e2db9cf58e8f15f0439d20849790d0a2da3d90b0757e754d1999dc74735"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "c51fd587d9ec14868e8f4aeab014c00a2b53aa599ae0c4aaa8d690d968c4c771"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "76248810573b36de0987986f6de97e3a014f16d5959364382da0a8b0b7939792"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/381",
+      "dateDocument": "2016-06-10",
+      "roFundstelle": "AS 2016 2347",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/381/de",
+      "sha": "9d58cf89b5b48de97fe44f0882f66261cfe29ed847845fd3cb6edf474cd44ee8"
     },
     {
       "art": "aenderung",
@@ -68,14 +142,49 @@
       "titelDe": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
       "titelFr": "Ordonnance sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
       "titelIt": "Ordinanza sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/752/de",
-      "sha": "d6cd56d6f0c32fec12087b98bf3d9068a0267aae07a94d9f7342f6809eea480e"
+      "sha": "1e07232e30cd10ed7322aba7fdb703856aac4e48cd538e10ff7d7f6234b121a6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "3133d0ca5b1d9f2d16f0865d057226eeb30ef3f01dba73a058d24c1d25df1d47"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+      "dateDocument": "2011-06-22",
+      "roFundstelle": "AS 2011 3435",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-08-01",
+        "2012-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/461/de",
+      "sha": "44295d9d2764c31172a2ed6fd2db15fa3e83bfe779a99b5571ca04ad047dfe6f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+      "dateDocument": "2011-06-22",
+      "roFundstelle": "AS 2011 3435",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-08-01",
+        "2012-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/461/de",
+      "sha": "e513df346dd56520ba86cb8729c38195a017d3dc87fd36d28af6bfd0ed729cb2"
     },
     {
       "art": "aenderung",
@@ -86,38 +195,119 @@
       "titelDe": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
       "titelFr": "Ordonnance sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
       "titelIt": "Ordinanza sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/623/de",
-      "sha": "955c4571f55b877f4651d3fa9f80c1d77c65a033e0be7938efa7f87a17a58ef4"
+      "sha": "4e1e66e38a3e99a4efe772dc525b8352c04e0ab84869d227345fc23ce4138cea"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "8eff38a30758b37c3a4783d830da0cd80c0e1df3d30fd0f672c108b6be27629f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/650",
+      "dateDocument": "2008-09-19",
+      "roFundstelle": "AS 2008 4651",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/650/de",
+      "sha": "ba8a28b910dacfaf77702785029db63d2248f360c3c393094c8117e0bd831fa1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "7930c512b000c64fab9b9d3748d034d9c1cfd358e414e6297e251531fc869cd7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "f0eabb2ce4130c11c1dc6f9d300ce616a3878520cea6da2509aea558001ff3d0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/615",
+      "dateDocument": "2006-09-29",
+      "roFundstelle": "AS 2006 4155",
+      "titelDe": "Verordnung über die Umsetzung des Partnerschaftsgesetzes vom 18. Juni 2004 in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
+      "titelFr": "Ordonnance sur la mise en uvre de la loi du 18 juin 2004 sur le partenariat dans la prévoyance professionnelle vieillesse, survivants et invalidité",
+      "titelIt": "Ordinanza concernente l'attuazione della legge del 18 giugno 2004 sull'unione domestica registrata nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/615/de",
+      "sha": "4b68c2cc0b8aa146ffb84c9e623a6c76e464ff26e95cb85dd1b3fceb98cf9bbb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "b56d8b008e59d6086db4eb13e6ae3c65a537a25cae963e8ac26ab48cf783fac9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/644",
+      "dateDocument": "2004-08-18",
+      "roFundstelle": "AS 2004 4279",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/644/de",
+      "sha": "2b7650b979dc6a13f965d4c171035ac7fa63f81268e233d56567697a8cad9cc3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/712",
+      "dateDocument": "2004-10-27",
+      "roFundstelle": "AS 2004 4643",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/712/de",
+      "sha": "2ba83a91a2089d56e19cc1c62616018dcf136a3af0cea508e21f9bfc6db1141c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/714",
+      "dateDocument": "2004-11-23",
+      "roFundstelle": "AS 2004 4653",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/714/de",
+      "sha": "18aceb7144d16147d4047202c4ddcd088daeda2747a8e8cb012d31545b542d48"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.425",
-      "sha": "eb5fc8c4ed0843864e78493cdc343627b41db8d50b8472138c3127be452974bd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/559",
+      "dateDocument": "2000-11-27",
+      "roFundstelle": "AS 2000 3086",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/559/de",
+      "sha": "7ab9c8b4c7309999a1d25eacbf0f69dca4a716562e44b23c7041cafb1448b081"
     },
     {
       "art": "aenderung",
@@ -128,8 +318,11 @@
       "titelDe": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
       "titelFr": "Ordonnance sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
       "titelIt": "Ordinanza sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/520/de",
-      "sha": "02bde3dd740b82ad2cd9fad171d7f79700027922497f4b6f8a876e19c11ca1c3"
+      "sha": "d746b3c2015f1a07ae4c58da3dd21cfc4ddc718b978b55f4d92cef514103b37e"
     },
     {
       "art": "aenderung",
@@ -140,33 +333,27 @@
       "titelDe": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
       "titelFr": "Ordonnance sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
       "titelIt": "Ordinanza sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/285/de",
-      "sha": "e1bd286718b6dd44c03eab4c217135a537869fefb01a8c9148ddb6ed95cb8745"
+      "sha": "79145e3e69e80c9071a5f3e7d1d4bc667360b73aad1b1ce656013ef96b2f4973"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2399_2399_2399",
-      "dateDocument": "1994-10-03",
-      "roFundstelle": "AS 1994 2399",
-      "titelDe": "Verordnung vom 3. Oktober 1994 über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
-      "titelFr": "Ordonnance du 3 octobre 1994 sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
-      "titelIt": "Ordinanza del 3 ottobre 1994 sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2399_2399_2399/de",
-      "sha": "1a8bac62b618265547d610cd5d787d261f82c7fa4d91cc1abb65f52a74ae6732"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1987-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/2008_2008_2008",
-      "dateDocument": "1986-11-12",
-      "roFundstelle": "AS 1986 2008",
-      "titelDe": "Verordnung vom 12. November 1986 über die Erhaltung des Vorsorgeschutzes und die Freizügigkeit",
-      "titelFr": "Ordonnance du 12 novembre 1986 sur le maintien de la prévoyance et le libre passage",
-      "titelIt": "Ordinanza del 12 novembre 1986 sul mantenimento della previdenza e del libero passaggio",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/2008_2008_2008/de",
-      "sha": "51e1b3d45f3554d728c3d1ccae43ad1cfdd65031dba36ec4e1f2ef07abcc71b5"
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3450_3450_3450",
+      "dateDocument": "1996-12-09",
+      "roFundstelle": "AS 1996 3450",
+      "titelDe": "Verordnung über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV), Änderung",
+      "titelFr": "Ordonnance sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP), Modification",
+      "titelIt": "Ordinanza sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3450_3450_3450/de",
+      "sha": "7412d1ab51645c8d014d7885d593b81b077753db376ec30625ff905aaa7c2520"
     }
   ],
-  "sha": "5761743881d4335b798b00712956089e3da1ccf5b805c0ec4404b356057bdfa4"
+  "sha": "cbce745f1a56c565ba3b9ffab3215f6fe6456608c62bd243d5405cc53b91dd48"
 }

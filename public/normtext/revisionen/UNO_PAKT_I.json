@@ -1,8 +1,8 @@
 {
   "erlassKey": "UNO_PAKT_I",
   "sr": "0.103.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/712/de",
-      "sha": "ae313172e621b3cd0b3ef53ad51d94c4d1fe9f9f4fbfe8200cf3240a4a362c0a"
+      "sha": "e602bd467f1beea41a951a72587748c4e2f111b802256f8326524305a56620ab"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/103/de",
-      "sha": "945327250b8e068b1168182ffcf39ebe95ee5245337160ebab9dcc0c2699cd1f"
+      "sha": "9dbd7f15d6521dbed4f04275b2ed8c4de61c8faca23277d8a8d2411a3eefb1da"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,12 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/327/de",
-      "sha": "801a2ef8dc825891c222052d0b4015436483098a8c53e51e5615cff04cc5ac4f"
+      "sha": "dcc607a2a4f740b0b609a5967fc49e74bb5d4f90f3ffcd16173f6990c08c39a9"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,12 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/460/de",
-      "sha": "072fc77e0791ba1e76b13e887b3082bf559eb353683eba324158b6e559619291"
+      "sha": "7bce037de0a42e474b44d3f068f3edca35e4b88410e8cc8a0e68104e52ba5ef0"
     },
     {
       "art": "aenderung",
@@ -61,8 +75,12 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/184/de",
-      "sha": "017255565e2f8af5227bfee344e071fd05c380d1da57f01232ce6e29058d4910"
+      "sha": "5ce1db6a110926a49f1ebda9cb5d7013fbd1a406c6512223e1c30ee43a10fb0c"
     },
     {
       "art": "aenderung",
@@ -73,8 +91,12 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/364/de",
-      "sha": "a3831960a3c6b067189aebd1af9aa600c34c53623ffb0a5baa1fe00fc5f1680b"
+      "sha": "127e8969d182c44122571d8f434799f24af620bb9af52092790c830ff37c1860"
     },
     {
       "art": "aenderung",
@@ -85,8 +107,12 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/102/de",
-      "sha": "0d34ad39572e2e27b6180197a4dad3bf63ac1079d10e89072f9f207cf56fa947"
+      "sha": "5b279b8e635d9eedcaa67b13897eaa8d733400552e0c994cdb61125987986f1d"
     },
     {
       "art": "aenderung",
@@ -97,8 +123,12 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/81/de",
-      "sha": "e18cfa29e0a6530b18e089df89b2a04e77a1010b87b79bf55ea8af6ae821e6f8"
+      "sha": "698005163ed0920007d131f037660afca142303f74b6f9f35dd18453baffd488"
     },
     {
       "art": "aenderung",
@@ -109,8 +139,12 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/83/de",
-      "sha": "f5a32679e6e6dfa7435973bd800b1cfc8d1f37ebbe17cc0c15dcf20eb7a1a835"
+      "sha": "ebbdf0e38004005afdc54fd6b4cf49a55eee290488fd781a1361c8d16916bb83"
     },
     {
       "art": "aenderung",
@@ -121,21 +155,60 @@
       "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
       "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
       "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/536/de",
-      "sha": "46daa102ffeccc0f5601ce5b0f31f759d3a67555c8d1c3592967c22bae4fb0d1"
+      "sha": "81e53a986016bc407f1cfa522235528e1226c7599be85492056e907241342d9c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/716_716_716",
+      "dateDocument": "1996-02-01",
+      "roFundstelle": "AS 1996 716",
+      "titelDe": "Internationaler Pakt vom 16 Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
+      "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques sociaux et culturels",
+      "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/716_716_716/de",
+      "sha": "27c250492dfda7c3ee1157cd99233fa52ba19fd3d0e652b1a1e0c7153b3d7819"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3101_3101_3101",
+      "dateDocument": "1993-11-01",
+      "roFundstelle": "AS 1993 3101",
+      "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
+      "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques sociaux et culturels",
+      "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3101_3101_3101/de",
+      "sha": "ea527ab7d577a110c97b0c0666f8d4afb806c7f20b76ed38af6d5f84bb70ec6c"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1992-09-18",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/725_725_725",
-      "dateDocument": "1966-12-16",
-      "roFundstelle": "AS 1993 725",
-      "titelDe": "Internationaler Pakt vom 16. Dezember 1966 über wirtschaftliche, soziale und kulturelle Rechte",
-      "titelFr": "Pacte international du 16 décembre 1966 relatif aux droits économiques, sociaux et culturels",
-      "titelIt": "Patto internazionale del 16 dicembre 1966 relativo ai diritti economici, sociali e culturali",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/725_725_725/de",
-      "sha": "8b60c8d5997d08f20d5beb1c57ad986d1ebea5c8d5173f40d2febf5f4dd7e9f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/724_724_724",
+      "dateDocument": "1991-12-13",
+      "roFundstelle": "AS 1993 724",
+      "titelDe": "Bundesbeschluss vom 13. Dezember 1991 betreffend den internationalen Pakt über wirtschaftliche, soziale und kulturelle Rechte",
+      "titelFr": "Arrêté fédéral du 13 décembre 1991 concernant le Pacte international relatif aux droits économiques, sociaux et culturels",
+      "titelIt": "Decreto federale del 13 dicembre concernente il Patto internazionale relativo ai dirittti economici sociali e culturali",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/724_724_724/de",
+      "sha": "fa77e3fb8af0b29a6717d0c95fccca76237b7f49a3bc9ae2a883d39029db380a"
     }
   ],
-  "sha": "6bbc3a624cca9321ebc613efe7c7e8cfbf451cb8665948bd75b17f2f360a2720"
+  "sha": "f3c31ce5ee9eaa1fd258dcf42feee572166958d37515cd9392007a50b31281c3"
 }

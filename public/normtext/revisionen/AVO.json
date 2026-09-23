@@ -1,8 +1,8 @@
 {
   "erlassKey": "AVO",
   "sr": "961.011",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,20 +13,45 @@
       "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la surveillance des entreprises d’assurance privées (Ordonnance sur la surveillance, OS). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/95/de",
-      "sha": "f1b9b76004713d10cd4a37d670de3b404d8ffc047d3de7f08d8893e92ce603a3"
+      "sha": "cd69d685661c9639e1ef4118d5d163a662c7f49672c3b68070da2af864f9d9fd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.011",
-      "sha": "4befac9f215f40c8d016b81dfce0d2282189e31b51664672aa774c05b6b98178"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+      "dateDocument": "2023-06-02",
+      "roFundstelle": "AS 2023 356",
+      "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
+      "titelFr": "Ordonnance sur la surveillance des entreprises d’assurance privées (Ordonnance sur la surveillance, OS)",
+      "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2026-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/356/de",
+      "sha": "c9b38104bb1935875a7eada80f25d3c6a47cd3f6aa5850e11a032bbe37e9706b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.011",
-      "sha": "4f039922a778ee68f615b785ef4f2c9606d905815ce3d9816a90af684ec5c85b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/425",
+      "dateDocument": "2024-08-14",
+      "roFundstelle": "AS 2024 425",
+      "titelDe": "Verordnung über die Regulierung der Versicherungsvermittlertätigkeit",
+      "titelFr": "Ordonnance sur la réglementation de l’activité des intermédiaires d’assurance",
+      "titelIt": "Ordinanza che disciplina l’attività degli intermediari assicurativi",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/425/de",
+      "sha": "b000a9b68df02c08bbbd6a77234cc260393917a5cf57b13437d5e603b898c38b"
     },
     {
       "art": "aenderung",
@@ -37,20 +62,61 @@
       "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
       "titelFr": "Ordonnance sur la surveillance des entreprises d’assurance privées (Ordonnance sur la surveillance, OS)",
       "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2026-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/356/de",
-      "sha": "a08aba524d14bd369b050fab0fad488e3300ef958da989fb3abecd57cd821011"
+      "sha": "0fc3909127c47282e188e1164eaf65f9a43c4a4ba2cfdbc247d951e99927327b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.011",
-      "sha": "0ac9fe93e72d8e1188124bdc8462a486d8a4b8912990d5d7f9b982c481334622"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.011",
-      "sha": "ade57b0bd81f83f32807f22909b159c46f27c5e5eb05b118a02a4f8280576619"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/840",
+      "dateDocument": "2015-11-18",
+      "roFundstelle": "AS 2015 5165",
+      "titelDe": "Verordnung betreffend die Aufsicht über die soziale Krankenversicherung (Krankenversicherungsaufsichtsverordnung, KVAV)",
+      "titelFr": "Ordonnance sur la surveillance de l'assurance-maladie sociale (Ordonnance sur la surveillance de l'assurance-maladie, OSAMal)",
+      "titelIt": "Ordinanza concernente la vigilanza sull'assicurazione sociale contro le malattie (Ordinanza sulla vigilanza sull'assicurazione malattie, OVAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/840/de",
+      "sha": "381794e6ea5bb957558d992f7f98259b26322698ff6e2545db5695f1223d06fa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5413",
+      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "sha": "1dafdd859641fa404d58133e5b4a5fbffc90cf3b941d5b67377c0ecbd1b63527"
     },
     {
       "art": "aenderung",
@@ -61,8 +127,12 @@
       "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
       "titelFr": "Ordonnance sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)",
       "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/233/de",
-      "sha": "a833420b29be0e6166a8be27dd4ccd4fe7d9dc4c299ddecc9a4856cd280d585e"
+      "sha": "1a23912b29ee05409ccf22c6b98f6ecd8474c3a0fd573f0b74bad6d0c2cb403b"
     },
     {
       "art": "aenderung",
@@ -73,8 +143,11 @@
       "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/21/de",
-      "sha": "934fb574599f6c6d6a8eaead28599c2396c09c6cf4904f42bd66e80d8cdcd108"
+      "sha": "d64591c3733220c551b741b4ab030458dc4053a8cc5420a4319199f3a318f7a2"
     },
     {
       "art": "aenderung",
@@ -85,20 +158,58 @@
       "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
       "titelFr": "Ordonnance sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)",
       "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/884/de",
-      "sha": "f25e5baa40f54c900f813f8e3def785ef373b6f7fe9e266a50dab15d323987cc"
+      "sha": "3218a980c99ec34c32c8ad63d02928853e691831cc719f589426c1dc9612d1af"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.011",
-      "sha": "4d6fbed3010731fadaf8d281911086e31b89f14f2f452e9e327d9de00466c60e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/749",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 5343",
+      "titelDe": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht (FINMA-Gebühren- und Abgabenverordnung, FINMA-GebV)",
+      "titelFr": "Ordonnance réglant la perception d'émoluments et de taxes par l'Autorité fédérale de surveillance des marchés financiers (Ordonnance sur les émoluments et les taxes de la FINMA, Oém-FINMA)",
+      "titelIt": "Ordinanza sulla riscossione di emolumenti e tasse da parte dell'Autorità federale di vigilanza sui mercati finanziari (Ordinanza sugli emolumenti e sulle tasse della FINMA, Oem-FINMA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/749/de",
+      "sha": "d61aa303341bdea8acfaaf41b8d8e32e7a2f116c7af8b9505482b4fe9c11f67b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/750",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 5363",
+      "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+      "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+      "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/750/de",
+      "sha": "f897ea3eddc6735d483fcebae527eb153235ce9d64615acb89f3de78ed87d7b8"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.011",
-      "sha": "05237a4925992594705ef416ab4d760d24618255dfcd14e11412c786bb13f598"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/534",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 3989",
+      "titelDe": "Verordnung über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsverordnung, RAV)",
+      "titelFr": "Ordonnance sur l'agrément et la surveillance des réviseurs (Ordonnance sur la surveillance de la révision, OSRev)",
+      "titelIt": "Ordinanza sull'abilitazione e la sorveglianza dei revisori (Ordinanza sui revisori, OSRev)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/534/de",
+      "sha": "63564c19588a1e82ddbe9a7b1a789ee4312c8f47f594d1e827db92fa5bbb0af3"
     },
     {
       "art": "aenderung",
@@ -109,33 +220,13 @@
       "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
       "titelFr": "Ordonnance sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)",
       "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/671/de",
-      "sha": "1b58238c50b380a35c364bc07b3649ea43465df5359791efbef45281d1d203f7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/735",
-      "dateDocument": "2005-11-09",
-      "roFundstelle": "AS 2005 5305",
-      "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
-      "titelFr": "Ordonnance sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)",
-      "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/735/de",
-      "sha": "726f081f52cbb186715c8a396ee2a871c78c52e7944760427077d14df740e2c0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1979-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1856_1856_1856",
-      "dateDocument": "1978-11-22",
-      "roFundstelle": "AS 1978 1856",
-      "titelDe": "Bundesratsbeschluss vom 22. November 1978 über die Inkraftsetzung des Versicherungsaufsichtsgesetzes und die Weitergeltung von Bundesrecht",
-      "titelFr": "Arrêté du Conseil fédéral du 22 novembre 1978 concernant l'entrée en vigueur de la loi sur la surveillance des assurances et le maintien en vigueur de certains actes législatifs",
-      "titelIt": "Decreto del Consiglio federale del 22 novembre 1978 concernente l'entrata in vigore della legge sulla sorveglianza degli assicuratori e il mantenimento in vigore di taluni atti legislativi",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1856_1856_1856/de",
-      "sha": "0e7973b2fac0a891efc0c4fab37bb2c6cac9273a26c4f25b53e9c59173b98207"
+      "sha": "b196b4fc42101fad79d623c31dce20610757a58cd1bd3f9cd61166c7b72db80c"
     }
   ],
-  "sha": "a327b1930334aaa1f0462ed3e4acf64fc42558951679d15889afe975e90836cd"
+  "sha": "b1c5a7f4d0d71d6227b3a7543f09b9a1d48225a6906e20f3a66d3ef3229f4e76"
 }

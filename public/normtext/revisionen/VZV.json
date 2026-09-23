@@ -1,8 +1,8 @@
 {
   "erlassKey": "VZV",
   "sr": "741.51",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/26/de",
-      "sha": "e848d4058a37c2eeb0b148fa485cae5b463d6194aba8a7d066d6dd6e36d38fc3"
+      "sha": "fbaa50234c97db16d496189867ab56cee083b26749523322685e34f2a9941d81"
     },
     {
       "art": "aenderung",
@@ -26,8 +29,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/650/de",
-      "sha": "008e1ece5255796da580f2e2e9a31c30343a9423c9cbb5adcd7f5ce5825b0b2c"
+      "sha": "b8147641667828b5ce0c07f4801e76855589cd307d4b9c9996b1af6480c4f890"
     },
     {
       "art": "aenderung",
@@ -38,8 +44,30 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/30/de",
-      "sha": "1fa8d72edb67667a43309f1377fb4be40b3b08c30e47e6bd56dc2cd67392ea90"
+      "sha": "fba6a69da28e9e8c9004b0ab79fc26203af4661e31058f1780fd7a2a061d283a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/50",
+      "dateDocument": "2024-12-13",
+      "roFundstelle": "AS 2025 50",
+      "titelDe": "Verordnung vom 13. Dezember 2024 über das automatisierte Fahren (VAF)",
+      "titelFr": "Ordonnance du 13 décembre 2024 sur la conduite automatisée (OCA)",
+      "titelIt": "Ordinanza del 13 dicembre 2024 sulla guida automatizzata (OGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-03-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/50/de",
+      "sha": "948c19c83d8af31d35898e1625a1912b39641cf5f10ebd71892540d7c70972b1"
     },
     {
       "art": "aenderung",
@@ -50,20 +78,45 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV). Berichtigung (Betrifft nur den französichen Text)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC). Erratum",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/405/de",
-      "sha": "a491190a46b0df375415e8defb7b94e9e6a32560539d4279520cf96653172789"
+      "sha": "17f7b79c3538ab4ab80430aeb26a80577c629bdedcb62a0ec357460d68e3a56b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "864170e375e43a7f7915546ae1c8069cf7cd56b46090985d2aad871263317cbe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/50",
+      "dateDocument": "2024-12-13",
+      "roFundstelle": "AS 2025 50",
+      "titelDe": "Verordnung vom 13. Dezember 2024 über das automatisierte Fahren (VAF)",
+      "titelFr": "Ordonnance du 13 décembre 2024 sur la conduite automatisée (OCA)",
+      "titelIt": "Ordinanza del 13 dicembre 2024 sulla guida automatizzata (OGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-03-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/50/de",
+      "sha": "42ee11453f850f49a8803d7e7c1e4cc626f629e3fbaf51f25089132502b439c7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "47fe5798a4c5f5fadf512d8a2511815a581f01cd18967136300b3eaf638ff5c1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/150",
+      "dateDocument": "2024-03-27",
+      "roFundstelle": "AS 2024 150",
+      "titelDe": "Verordnung vom 27. März 2024 über die Schwerverkehrsabgabe (Schwerverkehrsabgabeverordnung, SVAV)",
+      "titelFr": "Ordonnance du 27 mars 2024 concernant la redevance sur le trafic des poids lourds (ORPL)",
+      "titelIt": "Ordinanza del 27 marzo 2024 concernente la tassa sul traffico pesante (Ordinanza sul traffico pesante, OTTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/150/de",
+      "sha": "dda0273dc490a6ecc3fa160f4f67fe0cfbf22b3cbd027ba139a67208ea55cd28"
     },
     {
       "art": "aenderung",
@@ -74,14 +127,30 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/31/de",
-      "sha": "4a1d6b50be0b8f1b624d525ac916e8a66153b47a17e864841adcd5dfb0f0de8b"
+      "sha": "27a064de0f5885cf25f1ad4fe1fd93127373e5b2495810a9a7d525f124e921ea"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "c5cb84a239d4b003b48ad764e750ef4f3509a8f601bd9cf2341e2467c875bc83"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/255",
+      "dateDocument": "2023-05-10",
+      "roFundstelle": "AS 2023 255",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-07-15",
+        "2024-03-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/255/de",
+      "sha": "7a2ea84eb602efa28bf3e3ec6e2c72cdcf5c8bb98655c76577007ffc162980f4"
     },
     {
       "art": "aenderung",
@@ -92,8 +161,15 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-07-15",
+        "2024-03-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/255/de",
-      "sha": "f60349b008b71a6f41c65a329f4d1fb1891a962dd18381615dc16382dbb7bea9"
+      "sha": "8732ca31e1c13a0b14b90a126af47b24d89eb96303543179356f1c36ea2f2bbb"
     },
     {
       "art": "aenderung",
@@ -104,14 +180,26 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/407/de",
-      "sha": "b3fbc6271abe5f4e53b07152d912e5a3ae23faecf543b578d7f82ac1a77c8678"
+      "sha": "9c9fd1a205dae55f6086b2735d09a0b9dceb96bb92fbe8b3edc0750a7e380397"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "3e67fac09eeca11fed7f18926fc7d853ef7ef8b9790fe2ead318d8288e0323d4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
       "art": "aenderung",
@@ -122,14 +210,26 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/15/de",
-      "sha": "6071c0df1355da4eb22e0614a58e88e94262733d8cc91a7131a1f7abff81f8ff"
+      "sha": "16fd916f91d873994254d881c927470b73cc346969c5b3f32f79481ef75a6bed"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "ec8074d626207d567089d768a1dcab9b2b4cf4366632cb75c5d3ec69a4e6476a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
       "art": "aenderung",
@@ -140,8 +240,31 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC). Erratum",
       "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/419/de",
-      "sha": "768c1ef09a8ee73ea8d08ef355b578452de151e98c18e7680f5f7976f4ddcbed"
+      "sha": "46e057467959fd3fcb1205c89efd743230555aeeb94b7aa655669807cb41bb70"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/29",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 191",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière. (Ordonnance réglant l'admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2020-01-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/29/de",
+      "sha": "a6cbc7db3a756f95fd0a2e028b31dbba09a93a357d1cb358808a08a8e3925018"
     },
     {
       "art": "aenderung",
@@ -152,32 +275,46 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/397/de",
-      "sha": "3fd7671c0764b4184297949ab1292d25ff9e6fbac4a1756025f1ee1eeec72a16"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "85ade16a5064e2efbdb3739484af2a2bf16118889a624959322082738af26285"
+      "sha": "15858b4c2f405d204096c101d41723260a6c0e6e4fe78eb876acf5317e37b75c"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2019-06-04",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/29",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 191",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière. (Ordonnance réglant l'admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2020-01-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/29/de",
+      "sha": "85b3b8f9d722e3e08bc903163793b05e8ca31a7e723fc767213cd42384099ae3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-06-03",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/317",
       "dateDocument": "2019-06-04",
       "roFundstelle": "AS 2019 1645",
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/317/de",
-      "sha": "3c6d91def805341a98ce5a41d3a70e637e26204a3c494a2989d5d6f11de48336"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2019-06-03",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "88fc3769587c2ec88558ba53603ef74f93010d398076a1423a4b2b2f358f99e2"
+      "sha": "99740f07b102e7b2542d62ef734ef5f2f0d1ca02865a3a0ae2f791c0f8851e5f"
     },
     {
       "art": "aenderung",
@@ -188,8 +325,16 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière. (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2020-01-01",
+        "2021-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/29/de",
-      "sha": "c786ff87f2aa1ac94a751e0d3d61a35004b02cd2b2f5931474fc598c350c60d2"
+      "sha": "09cb0003ef61931070cdffc98b4ea47344c0562f73c9ef63bf2ec90dd4246714"
     },
     {
       "art": "aenderung",
@@ -200,8 +345,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/48/de",
-      "sha": "f991e4ae6c8ff3e361e613bfba23622744ccb7b1406ba5698f10b348e1803d64"
+      "sha": "7b155571f8816ab931873f2aad570914b81ee1c66c21c4489a259679a6bfd6f9"
     },
     {
       "art": "aenderung",
@@ -212,8 +361,27 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/426/de",
-      "sha": "8968fe2b4d42faa578f171ef662a8eb4cd6b48eb8aef8fefefeb5f7db7799fe3"
+      "sha": "3553292d33b8f5d90b50d80acf6a528e1e8f4b84f10cbf31f3f582f40fdfeb04"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/783",
+      "dateDocument": "2018-11-30",
+      "roFundstelle": "AS 2018 4997",
+      "titelDe": "Verordnung über das Informationssystem Verkehrszulassung (IVZV)",
+      "titelFr": "Ordonnance sur le système d'information relatif à l'admission à la circulation (OSIAC)",
+      "titelIt": "Ordinanza concernente il sistema d'informazione sull'ammissione alla circolazione (OSIAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/783/de",
+      "sha": "2e64b1ed960aad67f6e9b73d429d1fc363135b3740730699dd4bbfafb60ff00b"
     },
     {
       "art": "aenderung",
@@ -224,8 +392,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/495/de",
-      "sha": "be7fc1dd3bf7903f1a93d98b38ebde4d78459a8deae4f443720faf6120b04050"
+      "sha": "6afd469b1ea1f6a5a9c007d2d0280bfbc943d69a5cea4a34ecf336eaa56ea1d3"
     },
     {
       "art": "aenderung",
@@ -236,8 +407,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/494/de",
-      "sha": "d51f2dfe226589c880f0aa4be5a9c39fb61c8dfa140e6bcedc45cb3a070f392c"
+      "sha": "6dc8b9ee5f76f68ad1e4af9a7c9fdcd9042e77f1441fd9d34aefb2be8fb16d3f"
     },
     {
       "art": "aenderung",
@@ -248,8 +423,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/934/de",
-      "sha": "6e5b3082adea0c0fa82f972055b9fcdebae25a77b8f4f6d43879038d5e55f11a"
+      "sha": "6a5edc0e6240d35be9660fd774444485376a41fd424cb77ce265ec83b4015b53"
     },
     {
       "art": "aenderung",
@@ -260,8 +438,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/62/de",
-      "sha": "2190e5214c47d75a42fd56070c561d9746652fcc17d0a587f4bdf03d56156170"
+      "sha": "173cb2862ee555aff5090257c519a96d310fb84f3af6bc307ac92f53b5040263"
     },
     {
       "art": "aenderung",
@@ -272,8 +453,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veic oli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/278/de",
-      "sha": "7dbb1336df88500d28d1103c5d1e852bf85d0457ec6ac9735725e18baa838cab"
+      "sha": "d240712681c6dd9719a254a10943bcd2c3a311374e54c7ffeb693e1c3bee49d4"
     },
     {
       "art": "aenderung",
@@ -284,14 +468,30 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/454/de",
-      "sha": "ec7ad964ea6db000c695615a07ba9f631b5c05c6ea688ba5c46c33f5cc47c3f0"
+      "sha": "79b90e0194449b30fd8592fd4e113dd274ee33da7db9fe3ea4ab76798ede37b3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "821377ec138881b1913baa83e1c2e3728c8c5ec33d872cfde0ac7ad6f319c007"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/828",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4697",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/828/de",
+      "sha": "eb4da209bf12be9253409d980acfb76ccad2a6a8566c5f7c6698e6aef0b25c00"
     },
     {
       "art": "aenderung",
@@ -302,14 +502,34 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/828/de",
-      "sha": "f550e48d5ca5d8862a3ab05c31c20c391d388aceaa1e0a50729d5a9f5b31986e"
+      "sha": "530b57e6e1d11f863a8368c3a138110144cd21613c648668e4bc870491d19583"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "27b8b4fbf5dbbcb189e3cb89d21857b32925540d1b60337b1883e2d759e4f54e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/863",
+      "dateDocument": "2012-11-30",
+      "roFundstelle": "AS 2012 7149",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2013-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/863/de",
+      "sha": "64de8066676db4e369d194002760bca717c03b4412bb239edf3ba00f02ab6c77"
     },
     {
       "art": "aenderung",
@@ -320,8 +540,15 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2013-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/863/de",
-      "sha": "8a438b5588056318539d9111e82dfe1f9080d3876f0300188067c6ce43e92af9"
+      "sha": "4c9aece5e10ac5d3f09ac6488b079e51b8b177f7f04f7b101f3363d88d78c039"
     },
     {
       "art": "aenderung",
@@ -332,8 +559,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/715/de",
-      "sha": "88a1fe172d19bdbaf7a462d020afbdf76a071be6af4afb05087c113dc6ceee1c"
+      "sha": "852d317f875a77e67ca2095da9c63b9c7ebd52a58c37f84cc161f44e3b3e574a"
     },
     {
       "art": "aenderung",
@@ -344,8 +574,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/246/de",
-      "sha": "d3ecf3dfa21af2b61c9108f081a647cb575d8ee2aa5bf7ab5b19435b59c8c8a2"
+      "sha": "77f720ccef9ee018ee1ebe62a0ef38880cb3ef8c466762e00549e5e1073571cf"
     },
     {
       "art": "aenderung",
@@ -356,8 +590,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/436/de",
-      "sha": "d63fa857a1d84d42b296f4d9a80f9e2c06b0e4c83722c5f66b613944ad0357da"
+      "sha": "a0c82e4ef3bb2b9f1a6ddd88916dab72034f809b2058ae3494e870b8f87ad4e6"
     },
     {
       "art": "aenderung",
@@ -368,20 +606,41 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/769/de",
-      "sha": "b9031ab0b9d186d6ed06486b2b51228246916010e06385f800a2a28586ffec2b"
+      "sha": "6e4f7f05d9c3b9d698e43e3d6b69713779b07072bdd88bb9b3a9d9a5a405ee11"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "eafa08ece5b1212bdfa8dd10b2f0c05bdde9476f64d586405989a35a430132a4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/694",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 4943",
+      "titelDe": "Verordnung über die Anpassungen an das Bundesgesetz über die polizeilichen Informationssysteme des Bundes",
+      "titelFr": "Ordonnance sur les adaptations découlant de la loi fédérale sur les systèmes d'information de police de la Confédération",
+      "titelIt": "Ordinanza sugli adeguamenti alla legge federale sui sistemi d'informazione di polizia della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/694/de",
+      "sha": "fd3c4faefc694cc551cd718ddc685f1c630c0e6e5330d9947609877d81520e98"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "6206a902d3d78501b2dfe97b69b2d3a886d557fddcdf6f1a3fb478316c358220"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/190",
+      "dateDocument": "2008-03-07",
+      "roFundstelle": "AS 2008 769",
+      "titelDe": "Verordnung über eine leistungsabhängige Schwerverkehrsabgabe (Schwerverkehrsabgabeverordnung, SVAV)",
+      "titelFr": "Ordonnance concernant une redevance sur le trafic des poids lourds liée aux prestations (Ordonnance relative à une redevance sur le trafic des poids lourds, ORPL)",
+      "titelIt": "Ordinanza concernente una tassa sul traffico pesante commisurata alle prestazioni (Ordinanza sul traffico pesante, OTTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/190/de",
+      "sha": "a0f8e6f179c7097776e447c0c486160d86442a75be5af02b631078db9d0fcd35"
     },
     {
       "art": "aenderung",
@@ -392,8 +651,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/303/de",
-      "sha": "1174ab7491999faeacdf39ba22d5f088e750c037ef431e8a3026fedb12bf44ea"
+      "sha": "0a55c835a4b0dd2f8c104d1797f342ac8dfc297cd55d116daa0e8db059b7918d"
     },
     {
       "art": "aenderung",
@@ -404,8 +667,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/703/de",
-      "sha": "ce3bc4c3a861f863bcfa55924968293c4ef3c58feb5cc5c1b3520c68b9a241b0"
+      "sha": "3652c3d059068eb64b12722c7ebe760d061ea039529c0a4ae190b903c6da040c"
     },
     {
       "art": "aenderung",
@@ -416,14 +683,41 @@
       "titelDe": "Verkehrszulassungsverordnung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance réglant l'admission à la circulation routière",
       "titelIt": "Ordinanza sull'ammissione alla circolazione (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/854/de",
-      "sha": "ac1298177f9a8f1b6ef43066deed270e26f3b1b6d636344dc4996ee9d4b99351"
+      "sha": "5a309f81960d46a5b5b655116777fdfaf5138d0284e618772d6010d0d05369d6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/861",
+      "dateDocument": "2007-12-07",
+      "roFundstelle": "AS 2007 6657",
+      "titelDe": "Verordnung zum Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatverordnung, V-GSG)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Ordonnance sur l'Etat hôte, OLEH)",
+      "titelIt": "Ordinanza relativa alla legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Ordinanza sullo Stato ospite, OSOsp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/861/de",
+      "sha": "c578a4ca8dd7595111b9b14c9dac58d721b1b9ef422202efbb2856eb45540563"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "75c87e03cea7b7298689e0b53a03b77f13d7338e1759eeef96e63767ba4dcac8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+      "dateDocument": "2006-11-01",
+      "roFundstelle": "AS 2007 1469",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/250/de",
+      "sha": "d2113a1186c90ab946018f502f4631d6cd830fbc87fa71a4ab6896829104ecfa"
     },
     {
       "art": "aenderung",
@@ -434,14 +728,27 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/23/de",
-      "sha": "d82824b3bfcb3c5d0b3e7fd18e74d3fdcb2c41f03e55dc0f6ab34e63be6c0116"
+      "sha": "de10eb8e8de2981c374722e9d963125900396b1b306c82927742ca6ddcba945c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "82ffce4a772b88ae49d2baf568d9fc3b281c6fa964aa71614333661c8fa48d21"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "46881dae06fda414f35308af21fa0ff79f00208d5a08263331f675df982db42f"
     },
     {
       "art": "aenderung",
@@ -452,8 +759,30 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/584/de",
-      "sha": "ced7144cb253d7727c7368ca7552c5ffacaeb30fa2e67a763e3900ac57835218"
+      "sha": "5adb3ef409ddab8a258c71f8d9f2c80592cd0169244a394194815732893d986c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/780",
+      "dateDocument": "2004-10-27",
+      "roFundstelle": "AS 2004 5057",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-02-01",
+        "2005-12-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/780/de",
+      "sha": "d99859b8739e74849fa4098916e9ba23861e43463ccf0cf7d587ee289437ce2f"
     },
     {
       "art": "aenderung",
@@ -464,8 +793,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/606/de",
-      "sha": "b090ec3bd2238393bb68de0fd9882fcae8f37213268a4cd09320904440152ac3"
+      "sha": "634d5f9e12f6b17c9d384a4aad9c68aff5857c953bd0734cba0d45a38bcb7444"
     },
     {
       "art": "aenderung",
@@ -476,14 +808,42 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/548/de",
-      "sha": "108eb74377678bcef82ebcfbecae5b273d7502c2c704c9c160f2d5647a348585"
+      "sha": "ae27a60e27927e8d296b4b10614ad9c21c932004b772d7b5190a1e1f58911587"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "bc0eedcf11b8779de7f2fb8a4743f706896f2d7d0932f69a892210ddb9a75fec"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/163",
+      "dateDocument": "2005-02-23",
+      "roFundstelle": "AS 2005 1167",
+      "titelDe": "Verordnung über die Fahrzeuge des Bundes und ihre Führer und Führerinnen (VFBF)",
+      "titelFr": "Ordonnance concernant les véhicules automobiles de la Confédération et leurs conducteurs (OVCC)",
+      "titelIt": "Ordinanza concernente i veicoli della Confederazione e i loro conducenti (OVCC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/163/de",
+      "sha": "527a37abf59a78f00c5ba868e2de8df954c8bef5f695fd48f4ffafb645d6e71f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/241",
+      "dateDocument": "2005-03-29",
+      "roFundstelle": "AS 2005 1587",
+      "titelDe": "Verordnung über die Fahrzeuge des Bundes und ihre Führer und Führerinnen (VFBF)",
+      "titelFr": "Ordonnance concernant les véhicules automobiles de la Confédération et leurs conducteurs (OVCC)",
+      "titelIt": "Ordinanza concernente i veicoli della Confederazione e i loro conducenti (OVCC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/241/de",
+      "sha": "acfc41f27f72accb0be07fce22bed00b5d133683c5ed85eb639030d6de07bb7e"
     },
     {
       "art": "aenderung",
@@ -494,8 +854,15 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-02-01",
+        "2005-12-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/780/de",
-      "sha": "57870f8d7414c04a4144eb55fa63eaf55b0a33735378860a740e78b4165572dc"
+      "sha": "57d35fc9de61e82bcce66e5d17131c214b6cba34a3c35b376f5afbf48efa8438"
     },
     {
       "art": "aenderung",
@@ -506,8 +873,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/352/de",
-      "sha": "2c35567c9a3f67df23ae68034b00ae7d9af031bd735f2c0d460a44170c8aa3f2"
+      "sha": "fa59c8ab22861ee936d04d4f8c1cf8bfa055c36e88aed97b01645bea5103e0f4"
     },
     {
       "art": "aenderung",
@@ -518,8 +889,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV) (Betrifft nur den französischen und italienischen Text)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/426/de",
-      "sha": "b2fe0c1c7a8df843091289bf97ee9e99ce7a07b5fb19ca80612aae4d2238f5a9"
+      "sha": "bb75095985551da08e668130f754b6f24c4facf85ec2bf5baa96c61be13b01e7"
     },
     {
       "art": "aenderung",
@@ -530,14 +904,26 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/474/de",
-      "sha": "63e6da7f5ae67e17bc3f60dcccefae53d9f725f1bc03347f6c928658bad4c5a4"
+      "sha": "9072156c0a371a8bf5497e577ad1803a78140b5108adbc7aec55d79a51b9d9a1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "b08500cdccceb9263b759561e71a35726205b21497d24c8db9422136088fd179"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/108",
+      "dateDocument": "2004-02-11",
+      "roFundstelle": "AS 2004 945",
+      "titelDe": "Verordnung über den militärischen Strassenverkehr (VMSV)",
+      "titelFr": "Ordonnance sur la circulation militaire (OCM)",
+      "titelIt": "Ordinanza sulla circolazione stradale militare (OCSM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/108/de",
+      "sha": "9526ee0c9e782c862322a1e7b51eddbb18e591c6d3a5114ef65832bc5bc5768a"
     },
     {
       "art": "aenderung",
@@ -548,8 +934,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/529/de",
-      "sha": "63a531910162b9fe47760e63b13ab68fd02b7c4da745668cdc73b66122d2b900"
+      "sha": "d96b06bb5e295c85f97a66871dc9a7b5880a252b4e7c4bb61041b0c2739ce9aa"
     },
     {
       "art": "aenderung",
@@ -560,8 +949,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/283/de",
-      "sha": "c912220c7de0e29730aec95673887eac22ee5873550a933627f9dce53e0e8425"
+      "sha": "4caa4c608500840b7b74326d7fe8266f83bc4dd379b582c64c18a05f51048e79"
     },
     {
       "art": "aenderung",
@@ -572,8 +964,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/470/de",
-      "sha": "cdb2cbbf9068300eff2ce080289a0fcd2e16a9ccaf26c7e7f500b87b7e156a59"
+      "sha": "e5341b988dd281053e90fd7c2f07b3e03fe21bfe1c81714c0736218d2d950029"
     },
     {
       "art": "aenderung",
@@ -584,8 +980,12 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/486/de",
-      "sha": "060b407f937024e1a0b67276f5e099fe54dcf988583d70e549b451dfe9e5250b"
+      "sha": "85da9dba10f501b937b37d1da3c10cae7d8899db230160832ffd4e83d0450ac6"
     },
     {
       "art": "aenderung",
@@ -596,8 +996,11 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/281/de",
-      "sha": "5e5d0447ce6b0badbaabb3c26830e76ca23590b37d128d88fddcef3716302943"
+      "sha": "0d62956751c8b53c5b95fde76c48c1de95bd7210528c8bd17320b108d03c2ee9"
     },
     {
       "art": "aenderung",
@@ -608,20 +1011,72 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV)",
       "titelFr": "Ordonnance concernant l'admission des personnnes et des véhicules à la circulation routière (OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/194/de",
-      "sha": "3550df5aacb333c875842cf4fa8f0278ff24d7b3db426c44fef018bf31ba7746"
+      "sha": "2d9c87fa2448bc5991d637daaecd3a1c43ca7c93087a5af42d56e97d69e5b145"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "d033ac4f8953fa48a1daee367479f7276dbb9f3151ec92032b817a0774bd5c32"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/192",
+      "dateDocument": "2000-03-06",
+      "roFundstelle": "AS 2000 1170",
+      "titelDe": "Verordnung über eine leistungsabhängige Schwerverkehrsabgabe (Schwerverkehrsabgabeverordnung, SVAV)",
+      "titelFr": "Ordonnance concernant une redevance sur le trafic des poids lourds liée aux prestations (Ordonnance relative à une redevance sur le trafic des poids lourds, ORPL)",
+      "titelIt": "Ordinanza concernente una tassa sul traffico pesante commisurata alle prestazioni (Ordinanza sul traffico pesante, OTTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/192/de",
+      "sha": "f25f0226ae1318c1202a57a5df7a5c317a6485cb70ec924cc1f44733d6f9aad5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/474",
+      "dateDocument": "2000-10-18",
+      "roFundstelle": "AS 2000 2800",
+      "titelDe": "Verordnung über das automatisierte Administrativmassnahmen-Register (ADMAS-Register-Verordnung)",
+      "titelFr": "Ordonnance sur le registre automatisé des mesures administratives (Ordonnance sur le registre ADMAS)",
+      "titelIt": "Ordinanza concernente il registro automatizzato delle misure amministrative (Ordinanza sul registro ADMAS)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/474/de",
+      "sha": "499bce319f2c0f244ea9144ae9e5034d2c5d4fae982cc51cf628f3dc06f3a66f"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.51",
-      "sha": "d3f42102523ec8fe92f205124a474dccb595e8c2a66dc8d5b45716cd1fd89f08"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/495",
+      "dateDocument": "1999-12-01",
+      "roFundstelle": "AS 1999 3509",
+      "titelDe": "Verordnung über das automatisierte Strafregister",
+      "titelFr": "Ordonnance sur le casier judiciaire informatisé",
+      "titelIt": "Ordinanza sul casellario giudiziale informatizzato",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/495/de",
+      "sha": "725af1415fb652c4d29ffe7e653471ec78704aa92ad47b8db23068f7306d324f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/44",
+      "dateDocument": "1999-12-06",
+      "roFundstelle": "AS 2000 243",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/44/de",
+      "sha": "c917027a41f7a85d74dec8a0678223b0752e09ba0152402a5ba9d04e70bf54f2"
     },
     {
       "art": "aenderung",
@@ -632,33 +1087,456 @@
       "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV)",
       "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC)",
       "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/156/de",
-      "sha": "84b259d34132b8a7b8a3cf4b9db324e9cd344a21212caff429c79b6ab6be5c0b"
+      "sha": "a1ffe64acc483adf18494ee7515fdec3fa891f37b6f7e0ee7e7fdc8ecf61194b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2352_2352_2352",
+      "dateDocument": "1998-09-02",
+      "roFundstelle": "AS 1998 2352",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2352_2352_2352/de",
+      "sha": "9b3b870aaa325ba5e81672128f3a226e6e3fafdada029bc673093d10f89b5d15"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1188_1188_1188",
+      "dateDocument": "1998-03-25",
+      "roFundstelle": "AS 1998 1188",
+      "titelDe": "Verordnung über die Arbeits- und Ruhezeit der Führer von leichten Motorwagen zum gewerbsmässigen Personentransport (ARV 2), Änderung",
+      "titelFr": "Ordonnance sur la durée du travail et du repos des conducteurs de voitures automobiles légères affectées au transport professionnel de personnes (OTR 2), Modification",
+      "titelIt": "Ordinanza sulla durata del lavoro e di riposo dei conducenti di veicoli leggeri per il trasporto professionale di persone (OLR2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1188_1188_1188/de",
+      "sha": "13f77a89140bbb72ad49b2c9341f836abf0d816e9838c07dc1c7f50e2a89dd0e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+      "dateDocument": "1997-12-01",
+      "roFundstelle": "AS 1997 2779",
+      "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+      "titelFr": "Ordonnance du 1er décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+      "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2779_2779_2779/de",
+      "sha": "8c82ad789eb881f2709a96996131caef459a4be76042349064b95578ba64faa9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1796_1796_1796",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1796",
+      "titelDe": "Verordnung vom 22. Juni 1998 über die Anpassung von Zuständigkeitsbestimmungen in Verordnungen und Bundesratsbeschlüssen im Bereich des Strassenverkehrs, Änderung",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant l'adaptation des règles de compétence dans les ordonnances et les arrêtés du Conseil fédéral relatifs à la circulation routière, Modification",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente l'adeguamento delle disposizioni attributive di competenza nelle ordinanze e nei decreti del Consiglio federale in materia di circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1796_1796_1796/de",
+      "sha": "34dafd443ac5ceffed37758c88ed29d610b20de87d517fa6e5e34bbdf7f3bbc7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3058_3058_3058",
+      "dateDocument": "1996-11-20",
+      "roFundstelle": "AS 1996 3058",
+      "titelDe": "Automobilsteuerverordnung vom 20. November 1996 (AStV)",
+      "titelFr": "Ordonnance du 20 novembre 1996 sur l'imposition des véhicules automobiles (Oimpauto)",
+      "titelIt": "Ordinanza del 20 novembre 1996 sull'imposizione degli autoveicoli (OIAut)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3058_3058_3058/de",
+      "sha": "7a3a5b7695d1070c24a40e9a71a4d48eaccdab226b9dcb0f864cff1e3b835dd5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465",
+      "dateDocument": "1995-11-22",
+      "roFundstelle": "AS 1995 5465",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza dsull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5465_5465_5465/de",
+      "sha": "16da9f0f478d09ebcb761463f3f11224d24d2ee57ecc5192e095028389f47688"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3997_3997_3997",
+      "dateDocument": "1995-06-19",
+      "roFundstelle": "AS 1995 3997",
+      "titelDe": "Verordnung vom 19. Juni 1995 über die Typengenehmigung von Strassenfahrzeugen (TGV)",
+      "titelFr": "Ordonnance du 19 juin 1995 sur la réception par type des véhicules routiers (ORT)",
+      "titelIt": "Ordinanza del 19 giugno 1995 concernente l'approvazione del tipo di veicoli stradali (OATV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3997_3997_3997/de",
+      "sha": "5af035abd4ca5e80741b6c880a69017b4384633454c8d81acc575b0e34064309"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425",
+      "dateDocument": "1995-06-19",
+      "roFundstelle": "AS 1995 4425",
+      "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4425_4425_4425/de",
+      "sha": "ae1ac59c320f119a06c15476fc461760d2213a9cd4ea0de1ab7315b2022425f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1342_1342_1342",
+      "dateDocument": "1994-06-06",
+      "roFundstelle": "AS 1994 1342",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhiclues à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1342_1342_1342/de",
+      "sha": "9d9167979fa33eca1732f9c29feee984e194c2452505edd4bc26461ddef1fd82"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/167_167_167",
+      "dateDocument": "1993-12-22",
+      "roFundstelle": "AS 1994 167",
+      "titelDe": "Verordnung vom 22. Dezember 1993 über die Änderung von Erlassen des Strassenverkehrs (Wartung und Nachkontrolle von Motorwagen betreffend Abgas- und Rauchemissionen",
+      "titelFr": "Ordonnance du 22 décembre 1993 concernant la modification de textes légaux relatifs à la circulation routière (Entretien et contrôle subséquent des voitures automobiles quant aux émissions de gaz d'échapement et de fumées)",
+      "titelIt": "Ordinanza del 22 dicembre 1993 concernente la modifica di testi normativi in materia di circolazione stadale (Manutenzione e contollo successivo di autoveicoli per quanto concerne le emissioni di gas di scarico e di fumo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/167_167_167/de",
+      "sha": "2e12d68d278efb214a4e0492b15e2c179565779d376bd7cb033dfa57f454938a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/726_726_726",
+      "dateDocument": "1994-03-07",
+      "roFundstelle": "AS 1994 726",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/726_726_726/de",
+      "sha": "420bc4c32bc03c8c352634702776f9d696a3c014aa4deadbbecfcaa66400b8a7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/816_816_816",
+      "dateDocument": "1994-03-07",
+      "roFundstelle": "AS 1994 816",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/816_816_816/de",
+      "sha": "6c344130f2213a0d742e8f0da437f5e66eeb617658ad59337cebd778ddcb899e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2536_2536_2536",
+      "dateDocument": "1991-11-13",
+      "roFundstelle": "AS 1991 2536",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2536_2536_2536/de",
+      "sha": "24f0ad55e0310d458d947d50007920dfda3f6709bee7be4377d26207accad9c8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/982_982_982",
+      "dateDocument": "1991-02-13",
+      "roFundstelle": "AS 1991 982",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/982_982_982/de",
+      "sha": "d3a48c4aa972433f7d589b1deb2bf3595d6bceb069ba1dc77a5a7084bbb9bf8f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/370_370_370",
+      "dateDocument": "1991-01-30",
+      "roFundstelle": "AS 1991 370",
+      "titelDe": "Verordnung vom 30. Januar 1991 über die Genehmigung kantonaler Erlasse durch den Bund",
+      "titelFr": "Ordonnance du 30 janvier 1991 relative à l'approbation d'actes législatifs des cantons par la Confédération",
+      "titelIt": "Ordinanza del 30 gennaio 1991 sull'approvazione di atti legislativi dei Cantoni da parte della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/370_370_370/de",
+      "sha": "ef328d3088e3145621882611fffdd38630ec69a33d96b051d7ce9e0b7efe7b16"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78",
+      "dateDocument": "1990-12-03",
+      "roFundstelle": "AS 1991 78",
+      "titelDe": "Verordnung vom 3. Dezember 1990 über die Änderung und Aufhebung von Erlassen des Strassenverkehrs infolge der Revision vom 6. Oktober 1989 des Bundesgesetzes über die Strassenverkehr",
+      "titelFr": "Ordonnance du 3 décembre 1990 concernant la modification et l'abrogation d'actes législatifs portant sur la circulation routière, suite à la révision du 6 octobre 1989 de la loi fédérale sur la circulation routière",
+      "titelIt": "Ordinanza del 3 dicembre 1990 concernente la modifica e l'abrogazione di atti normativi della circolazione stradale, in seguito alla revisione dell 6 ottobre 1989 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/78_78_78/de",
+      "sha": "9c9834d89f20962d5c3a69fac682a8992cc39efb8bce10f7bb71fd33a991d538"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/1189_1189_1189",
+      "dateDocument": "1989-05-24",
+      "roFundstelle": "AS 1989 1189",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/1189_1189_1189/de",
+      "sha": "3760f75508ced50c66ddc7026345c1b4865996dab77ca5d9c228319872e6024c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/410_410_410",
+      "dateDocument": "1989-01-25",
+      "roFundstelle": "AS 1989 410",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/410_410_410/de",
+      "sha": "65a50ebce3e5ed8126ec9bd7c956e458aded86272fc71f4fa72886f3cf6ba8b5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/628_628_628",
+      "dateDocument": "1987-04-15",
+      "roFundstelle": "AS 1987 628",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/628_628_628/de",
+      "sha": "5b85784a052da0bd231b07bf0c12ce0d942bc283794f6767ea0c97cbe6f73930"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/__1388",
+      "dateDocument": "1987-10-05",
+      "titelIt": "Ordinanza sull'ammissione alla cirolazione di persone e veicoli (OAC), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/__1388/de",
+      "sha": "4c6aed3c529c2b8cc760898e0742d884d5e8fef54cdb1d14cc19824619f8ab04"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/1841_1841_1841",
+      "dateDocument": "1985-11-13",
+      "roFundstelle": "AS 1985 1841",
+      "titelDe": "Verordnung über die Änderungen von Erlassen des Strassenverkehrs (Wartung und Nachkontrolle leichter Motorwagen betreffend Abgasemissionen), Änderung",
+      "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circualtation routière (Entretien et contrôle périodique des voitures automobiles légères en ce qui concerne les émissions de gaz d'échappement), Modification",
+      "titelIt": "Ordinanza concernente la modifica di testi legali relativi alla circolazione stradale (Manutenzione e controllo periodico degli autoveicoli leggeri per quanto concerne le emissioni di gas di scarico), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/1841_1841_1841/de",
+      "sha": "e1401925dc390ff3473e798c1b05d85064c0b0c8bf5272cb2f54e6dd5c0678b0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/782_782_782",
+      "dateDocument": "1985-06-10",
+      "roFundstelle": "AS 1985 782",
+      "titelDe": "Verordnung über Ordnungsbussen im Strassenverkehr (OBV), Änderung",
+      "titelFr": "Ordonnance sur les amendes d'ordre infligées aux usagers de la route (OAO), Modification",
+      "titelIt": "Ordinanza concernente le multe disciplinari inflitte agli utenti della strada (OMD), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/782_782_782/de",
+      "sha": "da816edb88a6b81a5fcc72f4f00443646dbd1a4bfda24488da55c30c161a0b01"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/460_460_460",
+      "dateDocument": "1985-04-03",
+      "roFundstelle": "AS 1985 460",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/460_460_460/de",
+      "sha": "49006b1202da6aeb4d6a64aa18b0482ff5077585277020e7734ff51f42183387"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1146_1146_1146",
+      "dateDocument": "1982-06-14",
+      "roFundstelle": "AS 1982 1146",
+      "titelDe": "Verordnung über das Strafregister, Änderung",
+      "titelFr": "Ordonnance sur le casier judiciaire, Modification",
+      "titelIt": "Ordinanza sul casellario giudiziale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1146_1146_1146/de",
+      "sha": "b3673dae22b5dc1ed6c6e434ecbbf58d848a1a2cd0dccc6a9bf42793d77d8b10"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/535_535_535",
+      "dateDocument": "1982-04-07",
+      "roFundstelle": "AS 1982 535",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/535_535_535/de",
+      "sha": "904cad38a74fc6d1ed70f7f7066eb50af67996c847a3d5d8373a2d1de841a622"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/531_531_531",
+      "dateDocument": "1982-04-07",
+      "roFundstelle": "AS 1982 531",
+      "titelDe": "Verordnung vom 7. April 1982 über die Änderung von Erlassen des Strassenverkehrs",
+      "titelFr": "Ordonnance du 7 avril 1982 concernant la modification de plusieurs dispositions sur la circulation routière",
+      "titelIt": "Ordinanza del 7 aprile 1982 concernente la modifica di diverse disposizioni sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/531_531_531/de",
+      "sha": "63b40f7be63c2922f139f08191160493728cf705ad00d86f5ea7820ff2a7e57d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1753_1753_1753",
+      "dateDocument": "1979-10-17",
+      "roFundstelle": "AS 1979 1753",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1753_1753_1753/de",
+      "sha": "c5419bbe50a178012be74a59e00a0349d1fdab3cfccc20f5a6d2e3977634e180"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1805_1805_1805",
+      "dateDocument": "1978-11-15",
+      "roFundstelle": "AS 1978 1805",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1805_1805_1805/de",
+      "sha": "dfb0c048990d3f87e5e5f17500b44ae4bb8e5e77f64d4abd1022b0d1ed03fc8c"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1977-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2423_2423_2423",
-      "dateDocument": "1976-10-27",
-      "roFundstelle": "AS 1976 2423",
-      "titelDe": "Verordnung vom 27. Oktober 1976 über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
-      "titelFr": "Ordonnance du 27 octobre 1976 réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
-      "titelIt": "Ordinanza del 27 ottobre 1976 sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2423_2423_2423/de",
-      "sha": "b3c1739fc2ff9b90327c147c1049168a6833675a66c3287d00ab39436427cd79"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/_138_138",
+      "dateDocument": "1976-12-23",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Errata",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/_138_138/de",
+      "sha": "ba4fce9e8daae868cbfef045d655fb85a96be8f89f94c175645ae460645b57ca"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1969-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/158_170_170",
-      "dateDocument": "1969-01-22",
-      "roFundstelle": "AS 1969 158",
-      "titelDe": "Bundesratsbeschluss vom 22. Januar 1969 über Kontrollschilder für Motorfahrzeuge von Haltern mit diplomatischen und konsularischen Vorrechten und Immunitäten",
-      "titelFr": "Arrêté du Conseil fédéral du 22 janvier 1969 concernant les plaques de contrôle pour les véhicules automobiles des bénéfiaires de privilèges et immunités diplomatiques ou consulaires",
-      "titelIt": "Decreto del Consiglio federale del 22 gennaio 1969 concernente le targhe per i veicoli a motore dei beneficiari di privilegi o immunità diplomatiche o consolari",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/158_170_170/de",
-      "sha": "b4e30171c08caa7b8ed762958bc906b3737f016040c1d99aa07ce30356c28e55"
+      "dateEntryInForce": "1977-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/__20",
+      "dateDocument": "1978-01-03",
+      "titelIt": "Ordinanza del 27 ottobre 1976 sull'ammissione alla circolazione di persone e veicoli (OAC), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/__20/de",
+      "sha": "7532f0f058e13842e4be2b0c99587b6fca6b86814f4a85cb34e926aba8a59e6f"
     }
   ],
-  "sha": "5d0e5adbe297276078f909ff11e5c06bef55bb62b835b581636a6344d6123ee5"
+  "sha": "8e291fc3b1063550d94147d950fe9cd73db59e55d124a1041c225bacaa7f7a45"
 }

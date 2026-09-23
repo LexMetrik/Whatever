@@ -1,26 +1,273 @@
 {
   "erlassKey": "FMG",
   "sr": "784.10",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "fb2b4bbfa5528f60dbab552cafbd31b4d56409695dbcfd674be5dc1b1490e5a1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/164",
+      "dateDocument": "2025-12-19",
+      "roFundstelle": "AS 2026 164",
+      "titelDe": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG)",
+      "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
+      "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)",
+      "botschaftKey": "BOTSCHAFT-2025-960",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/164/de",
+      "sha": "d75d6d18d6a066ccaff5722c0867367021259092efe64e7846f5093e8c7ee3c9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "160dd892adc34d2abac6c16ceb4d547430c39063460349a2718e5ac48b25876f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "1b8ae6514c974b7e06fa544ae71b9f4d1b1099827e60a2fe5d78550425a5d896"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 4487",
+      "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+      "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+      "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
+      "sha": "18be9cad5d33c22107b7a3f2809d648b34dbf40ae4bf7c9f2d20217b0b039fe3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2007-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "c24714f7dce57bfd4750651e066b894d9d1ae1dd6df3fa9b07c5a9f644495718"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/150",
+      "dateDocument": "2006-03-24",
+      "roFundstelle": "AS 2007 737",
+      "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+      "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+      "titelIt": "Legge federale sulla radiotelevisione (LRTV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-04-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/150/de",
+      "sha": "0db92bee1c4612dfb38497d02349ea5469b0dffb3a34b03b9c9aa24caa3511ff"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/165",
+      "dateDocument": "2006-03-24",
+      "roFundstelle": "AS 2007 921",
+      "titelDe": "Fernmeldegesetz (FMG)",
+      "titelFr": "Loi sur les télécommunications (LTC)",
+      "titelIt": "Legge sulle telecomunicazioni (LTC)",
+      "botschaftKey": "BOTSCHAFT-2003-1351",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2007-04-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/165/de",
+      "sha": "3ca63ac96584922d9a1e48f09bd1c29536febf95614e2f0050f7a7c6fcd8230a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2008-08-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "ee2cc145b2e8a596e96922ec5658c0020305582855df1086ab5dfd3837526a2c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/349",
+      "dateDocument": "2009-06-12",
+      "roFundstelle": "AS 2010 2617",
+      "titelDe": "Bundesgesetz über die technischen Handelshemmnisse (THG)",
+      "titelFr": "Loi fédérale sur les entraves techniques au commerce (LETC)",
+      "titelIt": "Legge federale sugli ostacoli tecnici al commercio (LOTC)",
+      "botschaftKey": "BOTSCHAFT-2008-1231",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-07-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/349/de",
+      "sha": "dbf84aa048579c5c5d3ff424decd431e9a536590cac6a27f3bb4a286ae02a5a1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/345",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2016 2131",
+      "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+      "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+      "titelIt": "Legge federale sulla radiotelevisione (LRTV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/345/de",
+      "sha": "9b22dc93ba276a5ad39dd765ccb1c4c5019d4a0e11f551f76090b637e89f5750"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-09-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "0389d77b7b5333fa3ad988a1cea0d30c1926bfc11b4cd427ed98d54f3cc15541"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/605",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 5607",
+      "titelDe": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
+      "titelFr": "Loi fédérale sur l'aviation (LA)",
+      "titelIt": "Legge federale sulla navigazione aerea (LNA)",
+      "botschaftKey": "BOTSCHAFT-2016-1536",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/605/de",
+      "sha": "c3c8c12d5d014b90368f016f8474ce3e9e9a42050c3bab376d79a8fc526b60ff"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/648",
+      "dateDocument": "2017-10-25",
+      "roFundstelle": "AS 2017 5929",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 26. September 2014 des Bundesgesetzes über Radio und Fernsehen",
+      "titelFr": "Ordonnance portant dernière mise en vigueur de la modification du 26 septembre 2014 de la loi sur la radio et la télévision",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 26 settembre 2014 della legge federale sulla radiotelevisione",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "etappen": [
+        "2017-12-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/648/de",
+      "sha": "d0a9704892051d8b2a8aadbe0052199ae8e30aad09c883650b2490e81b0b3956"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/31",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2018 117",
+      "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+      "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+      "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-03-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/31/de",
+      "sha": "96856135767e9eaf92149b29cd288a51de018c71365645df9a0d3e036805fcfd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/1019",
+      "dateDocument": "2019-03-22",
+      "roFundstelle": "AS 2020 6159",
+      "titelDe": "Fernmeldegesetz (FMG)",
+      "titelFr": "Loi sur les télécommunications (LTC)",
+      "titelIt": "Legge sulle telecomunicazioni (LTC)",
+      "botschaftKey": "BOTSCHAFT-2017-1933",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/1019/de",
+      "sha": "7cb56d0f485664a8c5e8f297bd7668fd27e2260d5f056581f1b92432fb6d8a94"
     },
     {
       "art": "aenderung",
@@ -32,20 +279,55 @@
       "titelFr": "Loi sur les télécommunications (LTC)",
       "titelIt": "Legge sulle telecomunicazioni (LTC)",
       "botschaftKey": "BOTSCHAFT-2017-1933",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2021-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/1019/de",
-      "sha": "4f7b3eab716f567fe5929c2f17f568384fba42eabb2ed56b5a70752abcf4a706"
+      "sha": "1f45f78cffa701af074be0025f7c1e0635e91044d9a40d4f8cb7c37bc2f40a70"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "b30cbcfcde1ff98e88d06232299e3b23837f1820da3ae110fd0e1da60b91bccd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/31",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2018 117",
+      "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+      "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+      "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-03-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/31/de",
+      "sha": "25627a95118baad3ec325eff893c942c1bee0b462e0e3acffe8c2c689e32bf92"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "313f17658239619f8ef4c53b9b1d6b962004c75682c87efb7ccc539196448a3e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/605",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 5607",
+      "titelDe": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
+      "titelFr": "Loi fédérale sur l'aviation (LA)",
+      "titelIt": "Legge federale sulla navigazione aerea (LNA)",
+      "botschaftKey": "BOTSCHAFT-2016-1536",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/605/de",
+      "sha": "f205982da04a96765a1e7319bfd59249e9a2ad1dd02c15dfaf9afb31b039790b"
     },
     {
       "art": "aenderung",
@@ -56,26 +338,92 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 26. September 2014 des Bundesgesetzes über Radio und Fernsehen",
       "titelFr": "Ordonnance portant dernière mise en vigueur de la modification du 26 septembre 2014 de la loi sur la radio et la télévision",
       "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 26 settembre 2014 della legge federale sulla radiotelevisione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-12-01",
+        "2021-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/648/de",
-      "sha": "2b84e11a1a9ebefcbda3a5dfc642d0dc585912c6d8516a1e8956b25215be4078"
+      "sha": "93b5ee48ebfc6767761389290fe5b1e0dba558d33e718f84ffa284f3e92e9640"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "154b3904ef9ec1cbb7da441c3f221c96153022fa45829fb3f5594226ff30cb41"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-09-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "52b3f517c133172d8812aaa85c7a0bf447abb22f0ce9246a6480d0a50e309287"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "faca888ce3e569b647fdb9866d2a0fc75e3de72a084c8a77415cb9cee18d7e56"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/349",
+      "dateDocument": "2009-06-12",
+      "roFundstelle": "AS 2010 2617",
+      "titelDe": "Bundesgesetz über die technischen Handelshemmnisse (THG)",
+      "titelFr": "Loi fédérale sur les entraves techniques au commerce (LETC)",
+      "titelIt": "Legge federale sugli ostacoli tecnici al commercio (LOTC)",
+      "botschaftKey": "BOTSCHAFT-2008-1231",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-07-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/349/de",
+      "sha": "e9d62f6efaec26c50768a0a86551b0747cde0b33eb36f5ef8dd82f2f56c2b790"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "d007fbde61570261ec75fd8455d8922124eeee0a9f4b91cd91e334376d9be784"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-08-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "0c57bcc62aa5e8f20929d633e724b1640b6b05f2ee22a9812908f6f908c2abde"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/150",
+      "dateDocument": "2006-03-24",
+      "roFundstelle": "AS 2007 737",
+      "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+      "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+      "titelIt": "Legge federale sulla radiotelevisione (LRTV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-04-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/150/de",
+      "sha": "07f217d8d4a5236b05e17e9e002730988dc70c4a2437fe8a83ca5d07336c5489"
     },
     {
       "art": "aenderung",
@@ -87,63 +435,85 @@
       "titelFr": "Loi sur les télécommunications (LTC)",
       "titelIt": "Legge sulle telecomunicazioni (LTC)",
       "botschaftKey": "BOTSCHAFT-2003-1351",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-04-01",
+        "2021-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/165/de",
-      "sha": "da02bd72c40594f62b5f22f15a78faf13a4ae05385698c680c03d0d29176fb34"
+      "sha": "9bcb3053d21e8122f6ef847c3779b010e2faaab26f782d53c8f7b999b20d4fcb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "34e6d46e9c39ff5d06478b8f3d53d066774497785994deb35c8a3aa1257e7554"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "e5a6416d5c04b190d0f4ca801c38e4cd888be4ec666415208db4e9a06de0f8a9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "ab7002a944a67b399b20d488b37bdc0412162dd70b5e4cf35227169b1bfe2ef6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 4487",
+      "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+      "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+      "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
+      "sha": "69094742322984c96169a22c90d7cf2459af34f588ab50839c21917648d02aa5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/784.10",
-      "sha": "dbe0e3e1669b1382df381b4edb1639c24f541ea33cce617aa3ac1a1109115ca0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1997-10-20",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2187_2187_2187",
-      "dateDocument": "1997-04-30",
-      "roFundstelle": "AS 1997 2187",
-      "titelDe": "Fernmeldegesetz vom 30. April 1997 (FMG)",
-      "titelFr": "Loi du 30 avril 1997 sur les télécommunications (LTC)",
-      "titelIt": "Legge del 30 aprile 1997 sulle telecomunicazioni (LTC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2187_2187_2187/de",
-      "sha": "b76ca1aa10ec6b18be0b2a32cef8718c8eb8c388ac4b456bf3c2d049d2adac93"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1992-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/581_581_581",
-      "dateDocument": "1991-06-21",
-      "roFundstelle": "AS 1992 581",
-      "titelDe": "Fernmeldegesetz vom 21. Juni 1991 (FMG)",
-      "titelFr": "Loi du 21 juin 1991 sur les télécommunications (LTC)",
-      "titelIt": "Legge del 21 giugno 1991 sulle telecomunicazioni (LTC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/581_581_581/de",
-      "sha": "eebbe4507d1ec3e0b9810a6764986a2f9a87d24b8d05b9d3e328da2299bd94e2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1923-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/39/13_13_15",
-      "dateDocument": "1922-10-14",
-      "roFundstelle": "AS 39 13",
-      "titelDe": "Bundesgesetz betreffend den Telegrafen- und Telefonverkehr (Telegrafen- und Telefonverkehrsgesetz)",
-      "titelFr": "Loi fédérale réglant la correspondance télégraphique et téléphonique",
-      "titelIt": "Legge federale sulla corrispondenza telegrafica e telefonica (L sui telegrafi e sui telefoni)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/39/13_13_15/de",
-      "sha": "5ff21d76c3587795205e7ba83ba17424d5fc46b33dc8438f48aa19def62120f4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/467",
+      "dateDocument": "2000-10-06",
+      "roFundstelle": "AS 2001 3096",
+      "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+      "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+      "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/467/de",
+      "sha": "e6c3c55f2805b306c9e6fad9f680a33952edcf39f041b804dff3297209689c54"
     }
   ],
-  "sha": "7756518a5088b0bfbfd9e3fc318a8ba4477a12f54a61469b30b6fea64a651d21"
+  "sha": "a19e04151d124d21eaa9f1b498856f1270cfff26749e2931db3ec6ed6697e907"
 }

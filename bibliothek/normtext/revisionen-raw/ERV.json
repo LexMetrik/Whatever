@@ -2216,5 +2216,207 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2024/13",
       "zielFundstelle": "AS 2024 13"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2012/629",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2012/629",
+    "inkrafttreten": "2013-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/629",
+        "typ": 5,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/629",
+        "typ": 30,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/129",
+        "typ": 1,
+        "datum": "2013-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/273",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/72",
+        "typ": 1,
+        "datum": "2014-06-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/727",
+        "typ": 6,
+        "datum": "2015-11-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/267",
+        "typ": 6,
+        "datum": "2016-05-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/312",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/312",
+        "typ": 2,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/755",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/755",
+        "typ": 2,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/827",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/827",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/827",
+        "typ": 2,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/800",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/800",
+        "typ": 2,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/223",
+        "typ": 6,
+        "datum": "2019-04-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/761",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/197",
+        "typ": 1,
+        "datum": "2020-03-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/197",
+        "typ": 2,
+        "datum": "2020-03-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+        "typ": 1,
+        "datum": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/53",
+        "typ": 1,
+        "datum": "2022-09-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/804",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/725",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/13",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/13",
+        "typ": 2,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/81",
+        "typ": 6,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/61",
+        "typ": 6,
+        "datum": "2025-01-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/207",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/207",
+        "typ": 1,
+        "datum": "2029-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2014/273": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-04-30",
+        "roId": "RO 2014 1269",
+        "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+        "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+        "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/727": {
+        "dateForce": "2015-11-10",
+        "dateDoc": "2015-11-10",
+        "roId": "RO 2015 4297",
+        "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV) (Betrifft nur den französischen Text)",
+        "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+        "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR) (Concerne soltanto il testo francese)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/763": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4633",
+        "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+        "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+        "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/400": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/804": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-23",
+        "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+        "titelFr": "Ordonnance sur les banques et les caisses d’épargne (Ordonnance sur les banques, OB)",
+        "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)"
+      }
+    }
   }
 }

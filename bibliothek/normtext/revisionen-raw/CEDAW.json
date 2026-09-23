@@ -1164,5 +1164,124 @@
     "2023-04-19"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1999/239",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1999/239",
+    "inkrafttreten": "1997-04-26",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/238",
+        "typ": 3
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/239",
+        "typ": 5,
+        "datum": "1997-04-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/330",
+        "typ": 1,
+        "datum": "2003-11-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/330",
+        "typ": 9,
+        "datum": "2003-11-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/497",
+        "typ": 1,
+        "datum": "1997-04-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/497",
+        "typ": 9
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/203",
+        "typ": 1,
+        "datum": "2006-01-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/203",
+        "typ": 9,
+        "datum": "2006-01-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/190",
+        "typ": 1,
+        "datum": "2007-02-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/190",
+        "typ": 9,
+        "datum": "2007-02-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/155",
+        "typ": 1,
+        "datum": "2008-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/155",
+        "typ": 9,
+        "datum": "2008-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/202",
+        "typ": 1,
+        "datum": "2012-03-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/202",
+        "typ": 9,
+        "datum": "2012-03-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/770",
+        "typ": 1,
+        "datum": "2013-10-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/770",
+        "typ": 9,
+        "datum": "2013-10-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/365",
+        "typ": 1,
+        "datum": "2016-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/365",
+        "typ": 9,
+        "datum": "2016-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/312",
+        "typ": 1,
+        "datum": "2020-04-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/312",
+        "typ": 9,
+        "datum": "2020-04-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/201",
+        "typ": 9,
+        "datum": "2023-04-19"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1999/238": {
+        "dateDoc": "1996-10-04",
+        "roId": "RO 1999 1577",
+        "titelDe": "Bundesbeschluss betreffend das Übereinkommen zur Beseitigung jeder Form von Diskriminierung der Frau",
+        "titelFr": "Arrêté fédéral portant sur la Convention sur l'élimination de toutes les formes de discrimination à l'égard des femmes",
+        "titelIt": "Decreto federale concernente la Convenzione sull'eliminazione di ogni forma di discriminazione nei confronti della donna"
+      }
+    }
+  }
 }

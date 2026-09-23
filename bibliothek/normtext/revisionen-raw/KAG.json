@@ -840,5 +840,251 @@
     "2026-10-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2006/822",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+    "inkrafttreten": "2007-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+        "typ": 5,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/407",
+        "typ": 6,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 2,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/559",
+        "typ": 1,
+        "datum": "2011-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+        "typ": 1,
+        "datum": "2013-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+        "typ": 1,
+        "datum": "2013-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+        "typ": 2,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+        "typ": 1,
+        "datum": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/304",
+        "typ": 1,
+        "datum": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 2,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/289",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 1,
+        "datum": "2018-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 2,
+        "datum": "2018-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+        "typ": 2,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 5,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+        "typ": 5,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+        "typ": 1,
+        "datum": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+        "typ": 1,
+        "datum": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+        "typ": 2,
+        "datum": "2026-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2008/736": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 5207",
+        "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+        "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+        "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/559": {
+        "dateForce": "2011-09-01",
+        "dateDoc": "2011-03-18",
+        "roId": "RO 2011 3919",
+        "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Sicherung der Einlagen)",
+        "titelFr": "Loi fédérale sur les banques et les caisses d'épargne (Loi sur les banques, LB) (Garantie des dépôts)",
+        "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Garanzia dei depositi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/685": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2014 4073",
+        "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+        "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+        "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/289": {
+        "dateForce": "2015-07-01",
+        "dateDoc": "2014-12-12",
+        "roId": "RO 2015 1389",
+        "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+        "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+        "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/853": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2015 5339",
+        "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+        "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+        "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/289": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2016 1507",
+        "titelDe": "Obligationenrecht (Firmenrecht)",
+        "titelFr": "Code des obligations (Droit des raisons de commerce)",
+        "titelIt": "Codice delle obbligazioni (Diritto delle ditte commerciali)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/801": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5247",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/807": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5343",
+        "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+        "titelFr": "Code des obligations (Révision du droit de la prescription)",
+        "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/758": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2019 4417",
+        "titelDe": "Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)",
+        "titelFr": "Loi fédérale sur les services financiers (LSFin)",
+        "titelIt": "Legge federale sui servizi finanziari (Legge sui servizi finanziari, LSerFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/762": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4631",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/746": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4005",
+        "titelDe": "Obligationenrecht (Aktienrecht)",
+        "titelFr": "Code des obligations (Droit de la société anonyme)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società anonima)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/109": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-02-02",
+        "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+        "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+        "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/323": {
+        "dateForce": "2026-10-01",
+        "dateDoc": "2025-09-26",
+        "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+        "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+        "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)"
+      }
+    }
+  }
 }

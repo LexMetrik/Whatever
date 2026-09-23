@@ -1,8 +1,8 @@
 {
   "erlassKey": "BGERR",
   "sr": "173.110.131",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR )",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/856/de",
-      "sha": "a41db326e77bb94db5adb7e54e9cdf23f38909410ab74ec08f1090e635752eda"
+      "sha": "36b7ac826638251981e2486da01e13231536c1236bfec945644db2b2715f96e4"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR). Berichtigung",
       "titelFr": "Règlement du Tribunal fédéral (RTF). Erratum",
       "titelIt": "Regolamento del Tribunale federale (RTF). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/66/de",
-      "sha": "2175ff0b7b68c3512de6f1857a04e8f88e2a76ab5b40bddc49c7534c52abbb8e"
+      "sha": "d41c11033b992c0b08b16e02669a0e58bc10131d1f060c6a343094a81f41c56e"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,12 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/770/de",
-      "sha": "7cb9ca65d34bf0f86e7fbc27ae2b79f84f4a0120f28c01f4175bff4c7607cd59"
+      "sha": "569b01da7913a7f8f32bb46a9a1cdcc292fbfec46820800e85866e802c587f6a"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/268/de",
-      "sha": "2a8529307b9fcdf5df9292adb37a0744b26ced75ee2f8b83585f791e3c835d2d"
+      "sha": "b4a0c38a9b071b4d35cc21f04e3f8f3d7e3cb38d5a726f4b0fc751858ec13d31"
     },
     {
       "art": "aenderung",
@@ -61,8 +74,12 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/65/de",
-      "sha": "55490c5064f77d9782536212a0b2bfdfd672591d79787f70ba417907aeff9299"
+      "sha": "93a202c4964a345a65a674f9a6247c896377443674534a71d861258a6705bda6"
     },
     {
       "art": "aenderung",
@@ -73,8 +90,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/799/de",
-      "sha": "bec7291ed23174b8409787b64dc27c1d166d9a27ed14e1ae8e7ec1b46c7d65eb"
+      "sha": "f170696b949a9897b7e6664814f86e8d532846e3e59af3fd7d2281a980af9e3a"
     },
     {
       "art": "aenderung",
@@ -85,8 +105,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/327/de",
-      "sha": "4937b807f333a8c7ce6b1e41fa041e2f77aee71de2d66e7e91b729d53e5e9ab1"
+      "sha": "007813963bbd2f3c14ea7f398edb04d3e0f960b363eb8036e9c02659b4eca068"
     },
     {
       "art": "aenderung",
@@ -97,8 +120,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/883/de",
-      "sha": "84f548bd5d3df9188a6637f21bd1305e25f12bef3a897ea82f125587846ba49c"
+      "sha": "c4481229b45a82a1e1a0731d0e8c5111c434a667f07c0d4fa4b86b0d555f5984"
     },
     {
       "art": "aenderung",
@@ -109,8 +135,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/19/de",
-      "sha": "7e8368eb2142d7240f38dd81b34dec362178df5001bbe8a5a232056a89dc38f4"
+      "sha": "77b452ec8c6e652bbb619170a3b7790b77a49b929098c2f81bf79dae456d6e3f"
     },
     {
       "art": "aenderung",
@@ -121,8 +150,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/211/de",
-      "sha": "d08f078018b7b533424e51801fabc72fe8c5a5c086b2d57b991ccf93b49ca7d7"
+      "sha": "f043c89489fae4314ab193e83ed22b59188ed4d9b6bafa4ddbb7abfe07dcbf0e"
     },
     {
       "art": "aenderung",
@@ -133,8 +165,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/516/de",
-      "sha": "8f053d29ce644896fb92401c5364fde1131322309bc9485381f830e2bd4a438f"
+      "sha": "a982b34f170e1bb059a63f2cee0341d38758fcbe7f485f12ec63ff7275305470"
     },
     {
       "art": "aenderung",
@@ -145,8 +180,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/228/de",
-      "sha": "ea98c8e5cb650aa34b5a65bea849d819fbdd8a7cc975813048d0738d2c73f831"
+      "sha": "bf243228f92d8bbc1f706822d080abd998470b531ebea61dc7180f961ea09415"
     },
     {
       "art": "aenderung",
@@ -157,8 +195,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/849/de",
-      "sha": "e17e9ed96ba8f797c65b717599420cdc2e07ea5952d96c5162d0291b0f105d89"
+      "sha": "841bff849ed1dab064fb73b6dfac37866c455cc56d18248b705d7d9ab90e1fe0"
     },
     {
       "art": "aenderung",
@@ -169,8 +210,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/458/de",
-      "sha": "a9fe3452dcc58dc858b5b9930939a88bf55347c8409c4dfbb28f5cd21ab1e554"
+      "sha": "b864094716aac501ad8e8a0511be34faf196b95d0fdfb5f7716d69d2b7e4d5f9"
     },
     {
       "art": "aenderung",
@@ -181,8 +225,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/895/de",
-      "sha": "4836386807d5c9fc81114c1066f9aacc8490e682e60baac7f2667747d4245af6"
+      "sha": "5fbda42c20235a4b92d2e60b263e23aed3433bd6101a0bc6d97774f587603001"
     },
     {
       "art": "aenderung",
@@ -193,20 +240,11 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/863/de",
-      "sha": "32507e5b0cc3da7bfcdefaf7e38c8afc00cd90242ff031ea4d8492917fb4f35d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/834",
-      "dateDocument": "2006-11-20",
-      "roFundstelle": "AS 2006 5635",
-      "titelDe": "Reglement für das Bundesgericht (BGerR)",
-      "titelFr": "Règlement du Tribunal fédéral (RTF)",
-      "titelIt": "Regolamento del Tribunale federale (RTF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/834/de",
-      "sha": "c8e1c6f861168924d43698264c951faae9acefe6480ff6ea73ad49bb483f57b8"
+      "sha": "68a48b1d8608b8c40b163f2251883b6fbb0fa5ed9ee93443953bdf9e2f119021"
     },
     {
       "art": "aenderung",
@@ -217,9 +255,12 @@
       "titelDe": "Reglement für das Bundesgericht (BGerR)",
       "titelFr": "Règlement du Tribunal fédéral (RTF)",
       "titelIt": "Regolamento del Tribunale federale (RTF) (Concerne solo il testo francese e tedesco)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/11/de",
-      "sha": "376aac093bc5df170ccfbda7cf3e3c4b23d2b93cdace493b3848fbc023dda0f5"
+      "sha": "6e23c2d506556f0af865413127fd3b5d86833fc547ac5c2e519725a77982a660"
     }
   ],
-  "sha": "1ec162da87e30f7c7b6f4b6dfddb58298005095f4e197656d97d3c0e679ef5d8"
+  "sha": "b653fff58d2b0114ee94767fd0ff57b87d00ce9e1231f1a6be1e8f767763af68"
 }

@@ -502,5 +502,497 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2006/352",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+    "inkrafttreten": "2007-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/188",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/188",
+        "typ": 5,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 5,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/634",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/794",
+        "typ": 6,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/291",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/291",
+        "typ": 2,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/68",
+        "typ": 1,
+        "datum": "2008-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/72",
+        "typ": 1,
+        "datum": "2010-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/306",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/306",
+        "typ": 5,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/38",
+        "typ": 1,
+        "datum": "2011-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 1,
+        "datum": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 2,
+        "datum": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/902",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/902",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/159",
+        "typ": 1,
+        "datum": "2012-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/428",
+        "typ": 1,
+        "datum": "2012-07-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/656",
+        "typ": 1,
+        "datum": "2012-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/657",
+        "typ": 1,
+        "datum": "2012-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/375",
+        "typ": 1,
+        "datum": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/375",
+        "typ": 5,
+        "datum": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/691",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/651",
+        "typ": 1,
+        "datum": "2015-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/322",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/345",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/280",
+        "typ": 1,
+        "datum": "2016-03-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+        "typ": 1,
+        "datum": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+        "typ": 1,
+        "datum": "2017-06-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+        "typ": 5,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/586",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/393",
+        "typ": 1,
+        "datum": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/68",
+        "typ": 1,
+        "datum": "2021-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/269",
+        "typ": 1,
+        "datum": "2025-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/349",
+        "typ": 1,
+        "datum": "2025-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/229",
+        "typ": 1,
+        "datum": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/232",
+        "typ": 1,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/188": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-03-01",
+        "roId": "RO 2006 1069",
+        "titelDe": "Verordnung über die Inkraftsetzung des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes sowie über die vollständige Inkraftsetzung des Bundesgesetzes über den Sitz des Bundesstrafgerichts und des Bundesverwaltungsgerichts",
+        "titelFr": "Ordonnance sur l'entrée en vigueur de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral et sur l'entrée en vigueur intégrale de la loi fédérale sur le siège du Tribunal pénal fédéral et celui du Tribunal administratif fédéral",
+        "titelIt": "Ordinanza sull'entrata in vigore della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale nonché sull'entrata in vigore integrale della legge federale sulle sedi del Tribunale penale federale e del Tribunale amministrativo federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/634": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-06-23",
+        "roId": "RO 2006 4213",
+        "titelDe": "Bundesgesetz über die Bereinigung und Aktualisierung der Totalrevision der Bundesrechtspflege",
+        "titelFr": "Loi fédérale concernant la mise à jour de la révision totale de l'organisation judiciaire fédérale",
+        "titelIt": "Legge federale che integra e attualizza la revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/291": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-12-21",
+        "roId": "RO 2008 2049",
+        "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Spitalfinanzierung) ",
+        "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Financement hospitalier)",
+        "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Finanziamento ospedaliero)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/68": {
+        "dateForce": "2008-02-01",
+        "dateDoc": "2008-01-16",
+        "roId": "RO 2008 269",
+        "titelDe": "Verordnung über die vorzeitige Inkraftsetzung von organisatorischen Bestimmungen des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007",
+        "titelFr": "Ordonnance sur la mise en vigueur anticipée de dispositions organisationnelles de la loi du 22 juin 2007 sur la surveillance des marchés financiers",
+        "titelIt": "Ordinanza concernente l'entrata in vigore anticipata di disposizioni organizzative della legge del 22 giugno 2007 sulla vigilanza dei mercati finanziari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/736": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 5207",
+        "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+        "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+        "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/444": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2010 3267",
+        "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+        "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+        "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/72": {
+        "dateForce": "2010-03-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2010 513",
+        "titelDe": "Bundesgesetz über das Bundespatentgericht (Patentgerichtsgesetz, PatGG)",
+        "titelFr": "Loi sur le Tribunal fédéral des brevets (LTFB)",
+        "titelIt": "Legge sul Tribunale federale dei brevetti (LTFB)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/306": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-05-11",
+        "roId": "RO 2011 2241",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Patentgerichtsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi sur le Tribunal fédéral des brevets",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della legge sul Tribunale federale dei brevetti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/38": {
+        "dateForce": "2011-02-01",
+        "dateDoc": "2010-10-01",
+        "roId": "RO 2011 275",
+        "titelDe": "Bundesgesetz über die Rückerstattung unrechtmässig erworbener Vermögenswerte politisch exponierter Personen (RuVG)",
+        "titelFr": "Loi fédérale sur la restitution des valeurs patrimoniales d'origine illicite de personnes politiquement exposées (Loi sur la restitution des avoirs illicites, LRAI)",
+        "titelIt": "Legge federale sulla restituzione dei valori patrimoniali di provenienza illecita di persone politicamente esposte (Legge sulla restituzione degli averi di provenienza illecita, LRAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/663": {
+        "dateForce": "2011-12-05",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2011 4627",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/902": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2011 6515",
+        "titelDe": "Bundesgesetz über das Eidgenössische Institut für Metrologie (EIMG)",
+        "titelFr": "Loi sur l'Institut fédéral de métrologie (LIFM)",
+        "titelIt": "Legge federale sull'Istituto federale di metrologia (LIFM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/159": {
+        "dateForce": "2012-04-01",
+        "dateDoc": "2010-10-01",
+        "roId": "RO 2012 941",
+        "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
+        "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA) (Protection des données lors de l'utilisation de l'infrastructure électronique)",
+        "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Protezione dei dati derivanti dall'utilizzazione dell'infrastruttura elettronica)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/428": {
+        "dateForce": "2012-07-16",
+        "dateDoc": "2011-12-23",
+        "roId": "RO 2012 3745",
+        "titelDe": "Bundesgesetz über Massnahmen zur Wahrung der inneren Sicherheit (BWIS)",
+        "titelFr": "Loi fédérale instituant des mesures visant au maintien de la sûreté intérieure (LMSI)",
+        "titelIt": "Legge federale sulle misure per la salvaguardia della sicurezza interna (LMSI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/656": {
+        "dateForce": "2012-12-01",
+        "dateDoc": "2012-03-16",
+        "roId": "RO 2012 5619",
+        "titelDe": "Bundesgesetz über den zweiten Schritt der Bahnreform 2",
+        "titelFr": "Loi fédérale sur la deuxième partie de la réforme des chemins de fer 2",
+        "titelIt": "Legge federale sulla seconda fase della Riforma delle ferrovie 2"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/375": {
+        "dateForce": "2013-07-01",
+        "dateDoc": "2013-05-29",
+        "roId": "RO 2013 1603",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes vom 16. März 2012 über den zweiten Schritt der Bahnreform 2",
+        "titelFr": "Ordonnance concernant l'entrée en vigueur définitive de la loi fédérale du 16 mars 2012 sur la deuxième partie de la réforme des chemins de fer 2",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della legge federale del 16 marzo 2012 sulla seconda fase della Riforma delle ferrovie 2"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/685": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2014 4073",
+        "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+        "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+        "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/691": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2011-09-30",
+        "roId": "RO 2014 4103",
+        "titelDe": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
+        "titelFr": "Loi fédérale sur l'encouragement des hautes écoles et la coordination dans le domaine suisse des hautes écoles (Loi sur l'encouragement et la coordination des hautes écoles, LEHE)",
+        "titelIt": "Legge federale sulla promozione e sul coordinamento del settore universitario svizzero (LPSU)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/322": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-12-18",
+        "roId": "RO 2016 1803",
+        "titelDe": "Bundesgesetz über die Sperrung und die Rückerstattung unrechtmässig erworbener Vermögenswerte ausländischer politisch exponierter Personen (SRVG)",
+        "titelFr": "Loi fédérale sur le blocage et la restitution des valeurs patrimoniales d'origine illicite de personnes politiquement exposées à l'étranger (Loi sur les valeurs patrimoniales d'origine illicite, LVP)",
+        "titelIt": "Legge federale concernente il blocco e la restituzione dei valori patrimoniali di provenienza illecita di persone politicamente esposte all'estero (Legge sui valori patrimoniali di provenienza illecita, LVP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/345": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2016 2131",
+        "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+        "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+        "titelIt": "Legge federale sulla radiotelevisione (LRTV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/280": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2017 2745",
+        "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+        "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+        "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/494": {
+        "dateForce": "2017-09-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2017 4095",
+        "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG) ",
+        "titelFr": "Loi fédérale sur le renseignement (LRens)",
+        "titelIt": "Legge federale sulle attività informative (LAIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/820": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-06-16",
+        "roId": "RO 2017 7563",
+        "titelDe": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+        "titelFr": "Loi fédérale sur l'établissement chargé de l'administration des fonds de compensation de l'AVS, de l'AI et du régime des APG (Loi sur les fonds de compensation)",
+        "titelIt": "Legge federale sull'istituto amministratore dei fondi di compensazione AVS, AI e IPG (Legge sui fondi di compensazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/587": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-09-21",
+        "roId": "RO 2018 3575",
+        "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
+        "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
+        "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/586": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-09-28",
+        "roId": "RO 2019 3199",
+        "titelDe": "Bundesgesetz über das Schweizerische Institut für Rechtsvergleichung (SIRG)",
+        "titelFr": "Loi fédérale sur l'Institut suisse de droit comparé (LISDC)",
+        "titelIt": "Legge federale sull'Istituto svizzero di diritto comparato (LISDC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/393": {
+        "dateForce": "2020-07-01",
+        "dateDoc": "2018-09-28",
+        "roId": "RO 2020 1889",
+        "titelDe": "Bundesgesetz über die Organisation der Bahninfrastruktur",
+        "titelFr": "Loi fédérale sur l'organisation de l'infrastructure ferroviaire",
+        "titelIt": "Legge federale sull'organizzazione dell'infrastruttura ferroviaria"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/748": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4085",
+        "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+        "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+        "titelIt": "Legge federale sull'espropriazione (LEspr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/68": {
+        "dateForce": "2021-03-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
+        "titelFr": "Loi fédérale sur l’encouragement des hautes écoles et la coordination dans le domaine suisse des hautes écoles (Loi sur l’encouragement et la coordination des hautes écoles, LEHE)",
+        "titelIt": "Legge federale sulla promozione e sul coordinamento del settore universitario svizzero (LPSU)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/269": {
+        "dateForce": "2025-05-15",
+        "dateDoc": "2024-12-20",
+        "titelDe": "Bundesgesetz vom 20. Dezember 2024 über das Verbot der Hamas sowie verwandter Organisationen",
+        "titelFr": "Loi fédérale du 20 décembre 2024 interdisant le Hamas et les organisations apparentées",
+        "titelIt": "Legge federale del 20 dicembre 2024 che vieta Hamas e le organizzazioni associate"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/349": {
+        "dateForce": "2025-06-15",
+        "dateDoc": "2022-12-16",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2021/1150 und 2021/1152 zur Festlegung der Bedingungen für den Zugang zu anderen EU Informationssystemen für die Zwecke des Europäischen Reiseinformations- und ‑genehmigungssystems (ETIAS) (Weiterentwicklungen des Schengen-Besitzstands)",
+        "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des règlements (UE) 2021/1150 et (UE) 2021/1152 en ce qui concerne l’établissement des conditions d’accès aux autres systèmes d’information de l’UE aux fins du système européen d’information et d’autorisation concernant les voyages (ETIAS) (Développements de l’acquis de Schengen)",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2021/1150 e (UE) 2021/1152 che definiscono le condizioni di accesso agli altri sistemi di informazione UE ai fini del sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppi dell’acquis di Schengen)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/229": {
+        "dateForce": "2026-06-12",
+        "dateDoc": "2025-09-26",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2024/1351 über das Asyl- und Migrationsmanagement und der Verordnung (EU) 2024/1359 über die Bewältigung von Krisensituationen und Situationen höherer Gewalt im Bereich Migration und Asyl (Weiterentwicklungen des Dublin/Eurodac-Besitzstands)",
+        "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise du règlement (UE) 2024/1351 relatif à la gestion de l’asile et de la migration et du règlement (UE) 2024/1359 visant à faire face aux situations de crise et aux cas de force majeure dans le domaine de la migration et de l’asile (Développements de l’acquis de Dublin/Eurodac)",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento del regolamento (UE) 2024/1351 sulla gestione dell’asilo e della migrazione e del regolamento (UE) 2024/1359 concernente le situazioni di crisi e di forza maggiore nel settore della migrazione e dell’asilo (Sviluppi dell’acquis di Dublino/Eurodac)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/232": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2024-03-15",
+        "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+        "titelFr": "Loi fédérale sur les brevets d’invention (Loi sur les brevets, LBI)",
+        "titelIt": "Legge federale sui brevetti d’invenzione (Legge sui brevetti, LBI)"
+      }
+    }
+  }
 }

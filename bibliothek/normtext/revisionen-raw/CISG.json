@@ -1091,5 +1091,156 @@
     "2026-05-22"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1991/307_307_307",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1991/307_307_307",
+    "inkrafttreten": "1991-03-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/306_306_306",
+        "typ": 3
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/307_307_307",
+        "typ": 5,
+        "datum": "1991-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2057_2057_2057",
+        "typ": 1,
+        "datum": "1993-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2057_2057_2057",
+        "typ": 9,
+        "datum": "1993-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1215_1215_1215",
+        "typ": 1,
+        "datum": "1995-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1215_1215_1215",
+        "typ": 9,
+        "datum": "1995-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/462",
+        "typ": 1,
+        "datum": "2004-03-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/462",
+        "typ": 9,
+        "datum": "2004-03-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/317",
+        "typ": 1,
+        "datum": "2006-04-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/317",
+        "typ": 9,
+        "datum": "2006-04-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/242",
+        "typ": 1,
+        "datum": "2009-03-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/242",
+        "typ": 9,
+        "datum": "2009-03-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/303",
+        "typ": 1,
+        "datum": "2012-04-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/303",
+        "typ": 9,
+        "datum": "2012-04-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/361",
+        "typ": 1,
+        "datum": "2014-06-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/361",
+        "typ": 9,
+        "datum": "2014-06-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/478",
+        "typ": 1,
+        "datum": "2016-08-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/478",
+        "typ": 9,
+        "datum": "2016-08-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/119",
+        "typ": 1,
+        "datum": "2018-02-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/119",
+        "typ": 9,
+        "datum": "2018-02-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/85",
+        "typ": 1,
+        "datum": "2020-02-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/85",
+        "typ": 9,
+        "datum": "2020-02-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/624",
+        "typ": 9,
+        "datum": "2022-10-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/274",
+        "typ": 9,
+        "datum": "2026-05-22"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1991/306_306_306": {
+        "dateDoc": "1989-10-06",
+        "roId": "RO 1991 306",
+        "titelDe": "Bundesbeschluss vom 6. Oktober 1989 betreffend das Übereinkommen der Vereinten Nationen über Verträge über den internationalen Warenkauf",
+        "titelFr": "Arrêté fédéral du 6 octobre 1989 concernant la Conventions des Nations Unies sur les contrats de vente internationale de marchandises",
+        "titelIt": "Decreto federale del 6 ottobre 1989 concernente la Convenzione delle Nazioni Unite sui contratti di compravendita internazionale di merci"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/2057_2057_2057": {
+        "dateForce": "1993-06-15",
+        "dateDoc": "1993-06-15",
+        "roId": "RO 1993 2057",
+        "titelDe": "Übereinkommen der Vereinten Nationen über Verträge über den internationalen Warenkauf vom 11. April 1980",
+        "titelFr": "Convention des Nations unies du 11 avril 1980 sur les contrats de vente internationale de marchandises",
+        "titelIt": "Convenzione delle Nazioni Unite dell'11 aprile 1980 sui contratti di compravendita internazionale di merci"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1215_1215_1215": {
+        "dateForce": "1995-03-15",
+        "dateDoc": "1995-03-15",
+        "roId": "RO 1995 1215",
+        "titelDe": "Übereinkommen der Vereinten Nationen über Verträge über den internationalen Warenkauf vom 11. April 1980",
+        "titelFr": "Convention des Nations unies du 11 avril 1980 sur les contrats de vente internationale de marchandises",
+        "titelIt": "Convenzione delle Nazioni Unite dell'11 aprile 1980 sui contratti di compravendita internazionale di merci"
+      }
+    }
+  }
 }

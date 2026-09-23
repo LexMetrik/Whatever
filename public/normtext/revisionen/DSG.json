@@ -1,8 +1,8 @@
 {
   "erlassKey": "DSG",
   "sr": "235.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,27 +13,56 @@
       "titelDe": "Bundesgesetz über den Datenschutz (Datenschutzgesetz, DSG). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur la protection des données (LPD). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla protezione dei dati (LPD). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/444/de",
-      "sha": "e78f17704662ce70675638397a6f70e8a1c0a60347e4f6f951fdaa217c4a8d8e"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2025-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/235.1",
-      "sha": "3d035f27ef67cda0d0eb4923aaf8e6acd69e82fcad3d151e3fd0c84e5372cf6e"
+      "sha": "c91f8e8b8ecd93d23e1dd9a346d77a0938ccb9261f3632cffdab97c4d1929e6c"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2023-09-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
-      "dateDocument": "2020-09-25",
-      "roFundstelle": "AS 2022 491",
-      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
-      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
-      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
-      "botschaftKey": "BOTSCHAFT-2017-2057",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
-      "sha": "78b12504b60f12341a6c0c59bab78ca55de407d17c577bb79088524a91b49d43"
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/257",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2024 257",
+      "titelDe": "Bundesgesetz über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG) (Einführung einer Meldepflicht für Cyberangriffe auf kritische Infrastrukturen)",
+      "titelFr": "Loi fédérale sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI) (Mise en place d’une obligation de signaler les cyberattaques contre les infrastructures critiques)",
+      "titelIt": "Legge federale sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn) (Introduzione dell’obbligo di segnalare ciberattacchi a infrastrutture critiche)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/257/de",
+      "sha": "a1c3a7efca393b197712bebbc3dfa61e9fbdd32fe1506fe658a6eabd08a4ba2e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/168",
+      "dateDocument": "2025-03-07",
+      "roFundstelle": "AS 2025 168",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung des Nationalen Zentrums für Cybersicherheit (NCSC) in Bundesamt für Cybersicherheit (BACS)",
+      "titelFr": "Ordonnance concernant l’adaptation de dispositions légales à la suite du changement de nom du Centre national pour la cybersécurité (NCSC) en Office fédéral de la cybersécurité (OFCS)",
+      "titelIt": "Ordinanza sull’adeguamento di leggi in seguito al cambiamento della designazione del Centro nazionale per la cibersicurezza (NCSC) in Ufficio federale della cibersicurezza (UFCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/168/de",
+      "sha": "1839ff020ed14c4caaa05b3856969fde5f0b0cd80736b1a62326edc7298de4eb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/173",
+      "dateDocument": "2025-03-18",
+      "roFundstelle": "AS 2025 173",
+      "titelDe": "Mitteilung über die Inkraftsetzung der Änderung vom 29. September 2023 des Informationssicherheitsgesetzes",
+      "titelFr": "Communication concernant la mise en vigueur de la modification du 29 septembre 2023 de la loi sur la sécurité de l’information",
+      "titelIt": "Comunicazione sull’entrata in vigore della modifica del 29 settembre 2023 della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/173/de",
+      "sha": "dc0a36d3bf337ebf063dc476b03450f4f2b090a8e2aa8f6dde25673d2314012b"
     },
     {
       "art": "aenderung",
@@ -44,59 +73,12 @@
       "titelDe": "Bundesgesetz über den Datenschutz (Datenschutzgesetz, DSG) (Arbeitsverhältnis der Leiterin oder des Leiters des Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten)",
       "titelFr": "Loi fédérale sur la protection des données (LPD) (Rapports de travail du chef du Préposé fédéral à la protection des données et à la transparence)",
       "titelIt": "Legge federale sulla protezione dei dati (LPD) (Rapporto di lavoro del capo dell’Incaricato federale della protezione dei dati e della trasparenza)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/231/de",
-      "sha": "c5b530c88f87793a8d6d7d84ded15b94cafec8b3eec009e3412d4023c2188fe0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2019-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/111",
-      "dateDocument": "2018-09-28",
-      "roFundstelle": "AS 2019 625",
-      "titelDe": "Bundesgesetz über die Umsetzung der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
-      "titelFr": "Loi fédérale mettant en uvre la directive (UE) 2016/680 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel à des fins de prévention et de détection des infractions pénales, d'enquêtes et de poursuites en la matière ou d'exécution de sanctions pénales (Développement de l'acquis de Schengen)",
-      "titelIt": "Legge federale che attua la direttiva (UE) 2016/680 relativa alla protezione delle persone fisiche con riguardo al trattamento dei dati personali a fini di prevenzione, indagine, accertamento e perseguimento di reati o esecuzione di sanzioni penali (Sviluppo dell'acquis di Schengen)",
-      "botschaftKey": "BOTSCHAFT-2017-2057",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/111/de",
-      "sha": "5540cb44a1fb09ff0f8c9993b91044d5cd60aec622530e977393dd43d582d5e0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/699",
-      "dateDocument": "2006-03-24",
-      "roFundstelle": "AS 2007 4983",
-      "titelDe": "Bundesgesetz über den Datenschutz (DSG)",
-      "titelFr": "Loi fédérale sur la protection des données (LPD)",
-      "titelIt": "Legge federale sulla protezione dei dati (LPD)",
-      "botschaftKey": "BOTSCHAFT-2003-267",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/699/de",
-      "sha": "3f71d20aa10e981695b6359e511a7467913f6f2a872fa8ebbb1101a360e2f1bf"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-12-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/756",
-      "dateDocument": "2006-11-22",
-      "roFundstelle": "AS 2006 4873",
-      "titelDe": "Verordnung über die vorzeitige Inkraftsetzung von Artikel 17a der Änderung vom 24. März 2006 des Bundesgesetzes über den Datenschutz",
-      "titelFr": "Ordonnance sur la mise en vigueur anticipée de l'art. 17a de la modification du 24 mars 2006 de la loi fédérale sur la protection des données",
-      "titelIt": "Ordinanza che mette anticipatamente in vigore l'articolo 17a della modifica del 24 marzo 2006 della legge federale sulla protezione dei dati",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/756/de",
-      "sha": "0e50b4b09e8174cf44855e0d6f83ca219d9c17a5f6dda9a814b8366afe65603a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1993-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1945_1945_1945",
-      "dateDocument": "1992-06-19",
-      "roFundstelle": "AS 1993 1945",
-      "titelDe": "Bundesgesetz vom 19. Juni 1992 über den Datenschutz (DSG)",
-      "titelFr": "Loi fédérale du 19 juin 1992 sur la protection des données (LPD)",
-      "titelIt": "Legge federale del 19 giugno 1992 sulla protezione dei dati (LPD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1945_1945_1945/de",
-      "sha": "b2fca7d9513018a9a63892f23851e03c55a127f6f6f64bac2646ea6db89571cb"
+      "sha": "b64d2277f9ebb50c2328c930a99c72040b6640806a185cb65005766146ee53ea"
     }
   ],
-  "sha": "be25ac159a49774e1e666b9f73721df7ff674995d12705e9a6df7e2be5c1244d"
+  "sha": "067b6a1a1c89c6b43ca7f59f31bbbe80348160e1f9f3a4a76c953f8b49e11df3"
 }

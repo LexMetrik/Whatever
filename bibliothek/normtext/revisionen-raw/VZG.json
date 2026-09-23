@@ -156,5 +156,135 @@
     "2012-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/36/425_433_469",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/36/425_433_469",
+    "inkrafttreten": "1921-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164",
+        "typ": 1,
+        "datum": "1976-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2420_2420_",
+        "typ": 6
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/606_606_606",
+        "typ": 6,
+        "datum": "1976-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/__884",
+        "typ": 6,
+        "datum": "1976-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3183_3183_3183",
+        "typ": 1,
+        "datum": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900",
+        "typ": 2,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3493_3493_3493",
+        "typ": 6,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/667",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/36/425_433_469",
+        "typ": 5,
+        "datum": "1921-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/40/25_25_27",
+        "typ": 1,
+        "datum": "1923-12-19"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164": {
+        "dateForce": "1976-04-01",
+        "dateDoc": "1975-12-04",
+        "roId": "RO 1976 164",
+        "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung  von Grundstücken, Änderung",
+        "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Modification",
+        "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata di fondi, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/2420_2420_": {
+        "dateForce": "1976-04-01",
+        "dateDoc": "1976-11-15",
+        "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Berichtigung",
+        "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Erratum"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/606_606_606": {
+        "dateForce": "1976-04-01",
+        "dateDoc": "1976-02-27",
+        "roId": "RO 1976 606",
+        "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Berichtigung",
+        "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Errata (seulement en allemand)",
+        "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Correzione (solamente in tedesco)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/__884": {
+        "dateForce": "1976-04-01",
+        "dateDoc": "1976-04-21",
+        "titelIt": "Correzioni: Regolamento del Tribunale federale concernente la realizzazione forzata di fondi, Decreto del Consiglio federale sull'acquisto di fondi in luoghi turistici da parte di persone all'estero e Ordinanza sull'acquisto di fondi da parte di persone all'estero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/3183_3183_3183": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1993-09-07",
+        "roId": "RO 1993 3183",
+        "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Änderung",
+        "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Modification",
+        "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-06-05",
+        "roId": "RO 1996 2900",
+        "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Änderung",
+        "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Modification",
+        "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3493_3493_3493": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-12-24",
+        "roId": "RO 1996 3493",
+        "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Errata (seulement en italien)",
+        "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/667": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-09-23",
+        "roId": "RO 2011 4659",
+        "titelDe": "Grundbuchverordnung (GBV)",
+        "titelFr": "Ordonnance sur le registre foncier (ORF)",
+        "titelIt": "Ordinanza sul registro fondiario (ORF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/40/25_25_27": {
+        "dateForce": "1923-12-19",
+        "dateDoc": "1923-12-19",
+        "roId": "RO 40 25",
+        "titelDe": "Verordnung des Bundesgerichts betreffend die Ergänzung der Art. 92 und 93 der Verordnung über die Zwangsverwertung  von Grundstücken vom 23. April 1920, Änderung",
+        "titelFr": "Ordonnance du TF sur la réalisation forcée des  immeubles (ORFI), Modification",
+        "titelIt": "Regolamento del TF concernente la realizzazione forzata dei fondi (RFF), Modifiche"
+      }
+    }
+  }
 }

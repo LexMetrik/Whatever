@@ -264,6 +264,31 @@ export interface RevisionsKontext {
   ocStamm: Readonly<Record<string, OcStamm>>;
 }
 
+/**
+ * Inkrafttretensdatum einer Auswirkung (Pfad c). Fedlex' Alt-Bestand (Informationsquelle
+ * «data-from-geschaeftsstaende») trägt als `legalResourceImpactHasDateEntryInForce` teils das
+ * BESCHLUSSDATUM des ändernden Erlasses. Messung 23.9.2026 über alle 7509 Einträge: 131
+ * Auswirkungsdaten liegen VOR dem eigenen `dateEntryInForce` des ändernden Erlasses, 81 davon
+ * sind exakt dessen `dateDocument` — z. B. ZPO ← AS 2010 281 (oc/2010/37): Auswirkung
+ * «2009-09-25» = Beschluss, der Erlass trat am 2010-02-01 in Kraft; AHVG ← AS 2019 2395
+ * (STAF): «2018-09-28» = Schlussabstimmung. Ein Beschlussdatum ist kein Inkrafttreten (§1).
+ * Regel (deterministisch, eng): NUR wenn Auswirkungsdatum == `dateDocument` UND <
+ * `dateEntryInForce` des ändernden Erlasses UND das Abstract an diesem Datum KEINE Fassung
+ * hat (Pfad a), gilt dessen `dateEntryInForce`. Die Fassungs-Bedingung ist gemessen, nicht
+ * vorsorglich: an 4 Fällen besteht am Beschlussdatum eine amtliche Fassung, das Datum ist
+ * dort also echt (AVG ← AS 2018 223 Berichtigung, Fassung 2018-04-17; AVIV ← oc/2020/524,
+ * Fassung 2020-07-01; KLV ← oc/2018/432; KVV ← oc/2012/61) — ohne sie wurden daraus 4
+ * falsche Marker. Die übrigen 50 frühen Daten (z. B. rückwirkende Inkraftsetzung AVIG ←
+ * AS 2021 153, 2021-01-01 vor 2021-03-20) bleiben unangetastet — Fedlex bleibt Quelle (§7).
+ */
+export function inkrafttretenDerAuswirkung(
+  datum: string, oc?: { dateForce?: string; dateDoc?: string }, fassungsDaten: ReadonlySet<string> = new Set(),
+): string {
+  const beschluss = oc?.dateDoc?.slice(0, 10);
+  const eigen = oc?.dateForce?.slice(0, 10);
+  return beschluss && eigen && datum === beschluss && datum < eigen && !fassungsDaten.has(datum) ? eigen : datum;
+}
+
 /** Fedlex-Web-Adresse der Fassung eines Abstracts an einem Datum (Repo-Form, s.
  *  `fassungsLink` in src/pages/gesetz-leser/zukunftsfassungen.ts; AE-2). */
 export function fassungsUrl(abstractEli: string, datumIso: string): string {
@@ -505,15 +530,17 @@ export function baueRevisionen(
   const zeilen = new Map<string, Map<string, Set<Wirkung>>>();
   const basicAct = kontext?.basicAct;
   if (kontext) {
+    const fassungsDaten = new Set(aStaende);
     const datiert = new Map<string, Map<string, Set<Wirkung>>>();
     const undatiert = new Map<string, Set<Wirkung>>();
     for (const a of kontext.auswirkungen) {
       if (a.oc === basicAct) continue;
       const w = wirkungAusTyp(a.typ);
       if (a.datum) {
+        const datum = inkrafttretenDerAuswirkung(a.datum, proOc.get(a.oc) ?? kontext.ocStamm[a.oc], fassungsDaten);
         const proDatum = datiert.get(a.oc) ?? new Map<string, Set<Wirkung>>();
-        const s = proDatum.get(a.datum) ?? new Set<Wirkung>();
-        s.add(w); proDatum.set(a.datum, s); datiert.set(a.oc, proDatum);
+        const s = proDatum.get(datum) ?? new Set<Wirkung>();
+        s.add(w); proDatum.set(datum, s); datiert.set(a.oc, proDatum);
       } else {
         const s = undatiert.get(a.oc) ?? new Set<Wirkung>();
         s.add(w); undatiert.set(a.oc, s);
@@ -608,6 +635,11 @@ export function baueRevisionen(
   for (const stand of [...new Set(aStaende)].sort()) {
     if (bStaende.has(stand)) continue;
     if (aeltesterB && stand < aeltesterB) continue;
+    // Seit der Stammerlass kein Eintrag mehr ist (AE-3), trägt `aeltesterB` die Erstfassung
+    // nicht mehr: die Fassung zum Inkrafttreten des Abstracts ist die Erstpublikation, keine
+    // Änderung (Rot-Beleg 23.9.2026: GebV-HReg, einziger Stand 2021-01-01 = Inkrafttreten,
+    // wurde ohne diese Zeile zum Marker).
+    if (kontext?.inkrafttreten && stand <= kontext.inkrafttreten) continue;
     if (stand < MARKER_CUTOFF) continue; // unterhalb der Verlässlichkeits-Schwelle (§8)
     if (belegteFruehereDaten.has(stand)) continue; // bereits als dateInKraftFuerCh gezeigt
     if (!kontext?.abstractEli) {

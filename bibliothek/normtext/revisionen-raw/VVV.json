@@ -2178,5 +2178,591 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2025/645",
       "zielFundstelle": "AS 2025 645"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1959/1271_1321_1317",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317",
+    "inkrafttreten": "1959-11-20",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317",
+        "typ": 5,
+        "datum": "1959-11-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317",
+        "typ": 30,
+        "datum": "1960-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1967/1295_1336_1329",
+        "typ": 1,
+        "datum": "1968-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1967/1588_1636_",
+        "typ": 6,
+        "datum": "1968-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1967/_1532_",
+        "typ": 6,
+        "datum": "1968-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/__1360",
+        "typ": 6,
+        "datum": "1968-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/_648_",
+        "typ": 6,
+        "datum": "1968-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/__532",
+        "typ": 6,
+        "datum": "1968-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857",
+        "typ": 1,
+        "datum": "1976-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2423_2423_2423",
+        "typ": 1,
+        "datum": "1977-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/1511_1511_1511",
+        "typ": 1,
+        "datum": "1981-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/535_535_535",
+        "typ": 1,
+        "datum": "1982-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1655_1655_1655",
+        "typ": 1,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1655_1655_1655",
+        "typ": 2,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/1832_1832_1832",
+        "typ": 1,
+        "datum": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1350_1350_",
+        "typ": 6,
+        "datum": "1987-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/628_628_628",
+        "typ": 1,
+        "datum": "1987-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/1189_1189_1189",
+        "typ": 1,
+        "datum": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1338_1338_1338",
+        "typ": 1,
+        "datum": "1992-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/536_536_536",
+        "typ": 1,
+        "datum": "1992-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425",
+        "typ": 1,
+        "datum": "1995-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465",
+        "typ": 1,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3058_3058_3058",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/_1022_",
+        "typ": 6,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/112_112_112",
+        "typ": 6,
+        "datum": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1188_1188_1188",
+        "typ": 1,
+        "datum": "1998-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1796_1796_1796",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2352_2352_2352",
+        "typ": 1,
+        "datum": "1998-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/44",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/473",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/193",
+        "typ": 1,
+        "datum": "2001-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/483",
+        "typ": 1,
+        "datum": "2003-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/685",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/79",
+        "typ": 6,
+        "datum": "1992-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/15",
+        "typ": 1,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/15",
+        "typ": 2,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/199",
+        "typ": 6,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/57",
+        "typ": 1,
+        "datum": "2004-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/57",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/163",
+        "typ": 1,
+        "datum": "2005-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/21",
+        "typ": 1,
+        "datum": "2007-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/21",
+        "typ": 2,
+        "datum": "2007-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/299",
+        "typ": 1,
+        "datum": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/299",
+        "typ": 2,
+        "datum": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/694",
+        "typ": 1,
+        "datum": "2008-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/704",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/713",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/713",
+        "typ": 2,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/725",
+        "typ": 6,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/826",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/276",
+        "typ": 1,
+        "datum": "2015-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/66",
+        "typ": 1,
+        "datum": "2015-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/643",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/643",
+        "typ": 2,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/783",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/43",
+        "typ": 1,
+        "datum": "2019-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/578",
+        "typ": 6,
+        "datum": "2021-09-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/150",
+        "typ": 1,
+        "datum": "2024-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/29",
+        "typ": 1,
+        "datum": "2024-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/645",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/687",
+        "typ": 6,
+        "datum": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1967/1295_1336_1329": {
+        "dateForce": "1968-01-01",
+        "dateDoc": "1967-09-05",
+        "roId": "RO 1967 1336",
+        "titelDe": "Bundesratsbeschluss betreffend die Änderung der Verordnung über die Haftpflicht und Versicherungen im Strassenverkehr",
+        "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière",
+        "titelIt": "Decreto del Consiglio fedrale che modifica l'ordinanza concernente la repsonsibiltà civile e l'assicurazione in materia di circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1967/1588_1636_": {
+        "dateForce": "1968-01-01",
+        "dateDoc": "1967-11-06",
+        "roId": "RO 1967 1636",
+        "titelDe": "Bundesratsbeschluss betreffend die Änderung der Verordnung über die Haftpflicht und Versicherungen im Strassenverkehr, Berichtigung",
+        "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Errata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1967/_1532_": {
+        "dateForce": "1968-01-01",
+        "dateDoc": "1967-10-18",
+        "roId": "RO 1967 1532",
+        "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Errata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1971/__1360": {
+        "dateForce": "1969-09-01",
+        "dateDoc": "1971-09-24",
+        "roId": "RO 1971 ---",
+        "titelIt": "Decreto del Consiglio federale concernente i maestri conducenti e le scuole di guida, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1972/_648_": {
+        "dateForce": "1968-01-01",
+        "dateDoc": "1972-03-07",
+        "roId": "RO 1972 648",
+        "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Errata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1972/__532": {
+        "dateForce": "1960-01-15",
+        "dateDoc": "1972-03-10",
+        "roId": "RO 1972 ---",
+        "titelIt": "Ordinanza d'esecuzione II della legge federale sul servizio delle poste, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857": {
+        "dateForce": "1976-01-01",
+        "dateDoc": "1975-10-15",
+        "roId": "RO 1975 1857",
+        "titelDe": "Verordnung über Haftpflicht und Versicherungen im Strassenverkehr, Änderung",
+        "titelFr": "Ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Modification",
+        "titelIt": "Ordinanza concernente la responsabilità civile e l'assicurazione in materia di circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/2423_2423_2423": {
+        "dateForce": "1977-01-01",
+        "dateDoc": "1976-10-27",
+        "roId": "RO 1976 2423",
+        "titelDe": "Verordnung vom 27. Oktober 1976 über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+        "titelFr": "Ordonnance du 27 octobre 1976 réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
+        "titelIt": "Ordinanza del 27 ottobre 1976 sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1980/1511_1511_1511": {
+        "dateForce": "1981-01-01",
+        "dateDoc": "1980-10-06",
+        "roId": "RO 1980 1511",
+        "titelDe": "Verordnung über Haftpflicht und Versicherungen im Strassenverkehr, Änderung",
+        "titelFr": "Ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Modification",
+        "titelIt": "Ordinanza concernente la responsabilità civile e l'assicurazione in materia di circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/535_535_535": {
+        "dateForce": "1982-06-01",
+        "dateDoc": "1982-04-07",
+        "roId": "RO 1982 535",
+        "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+        "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/1655_1655_1655": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1983-10-19",
+        "roId": "RO 1983 1655",
+        "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+        "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/1832_1832_1832": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1986-09-17",
+        "roId": "RO 1986 1832",
+        "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+        "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/1350_1350_": {
+        "dateForce": "1987-05-01",
+        "dateDoc": "1987-10-05",
+        "roId": "RO 1987 1350",
+        "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Berichtigung",
+        "titelFr": "Ordonnance sur l'admission des personnes et des véhicules à la circulation routière (OAC), Errata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/628_628_628": {
+        "dateForce": "1987-05-01",
+        "dateDoc": "1987-04-15",
+        "roId": "RO 1987 628",
+        "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+        "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+        "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/1189_1189_1189": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1989-05-24",
+        "roId": "RO 1989 1189",
+        "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+        "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/1338_1338_1338": {
+        "dateForce": "1992-08-01",
+        "dateDoc": "1992-07-01",
+        "roId": "RO 1992 1338",
+        "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+        "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/536_536_536": {
+        "dateForce": "1992-04-01",
+        "dateDoc": "1992-02-19",
+        "roId": "RO 1992 536",
+        "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+        "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+        "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425": {
+        "dateForce": "1995-10-01",
+        "dateDoc": "1995-06-19",
+        "roId": "RO 1995 4425",
+        "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+        "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+        "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-11-22",
+        "roId": "RO 1995 5465",
+        "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+        "titelIt": "Ordinanza dsull'assicurazione dei veicoli (OAV), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3058_3058_3058": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-11-20",
+        "roId": "RO 1996 3058",
+        "titelDe": "Automobilsteuerverordnung vom 20. November 1996 (AStV)",
+        "titelFr": "Ordonnance du 20 novembre 1996 sur l'imposition des véhicules automobiles (Oimpauto)",
+        "titelIt": "Ordinanza del 20 novembre 1996 sull'imposizione degli autoveicoli (OIAut)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/_1022_": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1996-02-12",
+        "roId": "RO 1996 1022",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Errata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/112_112_112": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1997-01-06",
+        "roId": "RO 1997 112",
+        "titelDe": "Verkehrsversicherungsverordnung (VVV), Berichtigung",
+        "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Errata",
+        "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-12-01",
+        "roId": "RO 1997 2779",
+        "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+        "titelFr": "Ordonnance du 1<sup>er</sup> décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+        "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1188_1188_1188": {
+        "dateForce": "1998-05-01",
+        "dateDoc": "1998-03-25",
+        "roId": "RO 1998 1188",
+        "titelDe": "Verordnung über die Arbeits- und Ruhezeit der Führer von leichten Motorwagen zum gewerbsmässigen Personentransport (ARV 2), Änderung",
+        "titelFr": "Ordonnance sur la durée du travail et du repos des conducteurs de voitures automobiles légères affectées au transport professionnel de personnes (OTR 2), Modification",
+        "titelIt": "Ordinanza sulla durata del lavoro e di riposo dei conducenti di veicoli leggeri per il trasporto professionale di persone (OLR2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1796_1796_1796": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1998-06-22",
+        "roId": "RO 1998 1796",
+        "titelDe": "Verordnung vom 22. Juni 1998 über die Anpassung von Zuständigkeitsbestimmungen in Verordnungen und Bundesratsbeschlüssen im Bereich des Strassenverkehrs, Änderung",
+        "titelFr": "Ordonnance du 22 juin 1998 concernant l'adaptation des règles de compétence dans les ordonnances et les arrêtés du Conseil fédéral relatifs à la circulation routière, Modification",
+        "titelIt": "Ordinanza del 22 giugno 1998 concernente l'adeguamento delle disposizioni attributive di competenza nelle ordinanze e nei decreti del Consiglio federale in materia di circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/2352_2352_2352": {
+        "dateForce": "1998-10-01",
+        "dateDoc": "1998-09-02",
+        "roId": "RO 1998 2352",
+        "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+        "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+        "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/44": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-12-06",
+        "roId": "RO 2000 243",
+        "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+        "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+        "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/685": {
+        "dateForce": "2003-01-01",
+        "dateDoc": "2002-11-29",
+        "roId": "RO 2002 4212",
+        "titelDe": "Verordnung über die Beförderung gefährlicher Güter auf der Strasse (SDR)",
+        "titelFr": "Ordonnance relative au transport des marchandises dangereuses par route (SDR)",
+        "titelIt": "Ordinanza concernente il trasporto di merci pericolose su strada (SDR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/163": {
+        "dateForce": "2005-03-01",
+        "dateDoc": "2005-02-23",
+        "roId": "RO 2005 1167",
+        "titelDe": "Verordnung über die Fahrzeuge des Bundes und ihre Führer und Führerinnen (VFBF)",
+        "titelFr": "Ordonnance concernant les véhicules automobiles de la Confédération et leurs conducteurs (OVCC)",
+        "titelIt": "Ordinanza concernente i veicoli della Confederazione e i loro conducenti (OVCC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/694": {
+        "dateForce": "2008-12-05",
+        "dateDoc": "2008-10-15",
+        "roId": "RO 2008 4943",
+        "titelDe": "Verordnung über die Anpassungen an das Bundesgesetz über die polizeilichen Informationssysteme des Bundes",
+        "titelFr": "Ordonnance sur les adaptations découlant de la loi fédérale sur les systèmes d'information de police de la Confédération",
+        "titelIt": "Ordinanza sugli adeguamenti alla legge federale sui sistemi d'informazione di polizia della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/783": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-11-30",
+        "roId": "RO 2018 4997",
+        "titelDe": "Verordnung über das Informationssystem Verkehrszulassung (IVZV)",
+        "titelFr": "Ordonnance sur le système d'information relatif à l'admission à la circulation (OSIAC)",
+        "titelIt": "Ordinanza concernente il sistema d'informazione sull'ammissione alla circolazione (OSIAC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/356": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-06-02",
+        "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
+        "titelFr": "Ordonnance sur la surveillance des entreprises d’assurance privées (Ordonnance sur la surveillance, OS)",
+        "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/150": {
+        "dateForce": "2024-05-01",
+        "dateDoc": "2024-03-27",
+        "titelDe": "Verordnung vom 27. März 2024 über die Schwerverkehrsabgabe (Schwerverkehrsabgabeverordnung, SVAV)",
+        "titelFr": "Ordonnance du 27 mars 2024 concernant la redevance sur le trafic des poids lourds (ORPL)",
+        "titelIt": "Ordinanza del 27 marzo 2024 concernente la tassa sul traffico pesante (Ordinanza sul traffico pesante, OTTP)"
+      }
+    }
   }
 }

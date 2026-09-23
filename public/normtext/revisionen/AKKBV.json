@@ -1,14 +1,23 @@
 {
   "erlassKey": "AKKBV",
   "sr": "946.512",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/946.512",
-      "sha": "e4bf2ba117e8cf75105666f8e42d2d1331dfba0ffa23ba7697ebb61108ef5d24"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/649",
+      "dateDocument": "2024-10-23",
+      "roFundstelle": "AS 2024 649",
+      "titelDe": "Verordnung über die Gebühren des Staatssekretariats für Wirtschaft im Bereich der Akkreditierung (GebV-Akk)",
+      "titelFr": "Ordonnance sur les émoluments du Secrétariat d’État à l’économie dans le domaine de l’accréditation (Oem-Acc)",
+      "titelIt": "Ordinanza sugli emolumenti della Segreteria di Stato dell’economia nel campo dell’accreditamento (Oemo-Acc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/649/de",
+      "sha": "6eb8d4aa6f29a1b9f4694ef408e64eed8a8cd1835544ef4029ccca49f100f936"
     },
     {
       "art": "aenderung",
@@ -19,8 +28,11 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
       "titelFr": "Ordonnance sur le système suisse d’accréditation et la désignation de laboratoires d’essais et d’organismes d’évaluation de la conformité, d’enregistrement et d’homologation (Ordonnance sur l’accréditation et la désignation, OAccD)",
       "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d’omologazione (Ordinanza sull’accreditamento e sulla designazione, OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/418/de",
-      "sha": "b7635f574ffdf519a3e40f7fa024d308f5916e037251a5f6eee5648fc66b6fc5"
+      "sha": "fd640721aea0234fcc5c1da161444fa2a7b3381bf9964d8f0c8b22f6561e2be6"
     },
     {
       "art": "aenderung",
@@ -31,8 +43,11 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
       "titelFr": "Ordonnance sur le système suisse d’accréditation et la désignation de laboratoires d’essais et d’organismes d’évaluation de la conformité, d’enregistrement et d’homologation (Ordonnance sur l’accréditation et la désignation, OAccD)",
       "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d’omologazione (Ordinanza sull’accreditamento e sulla designazione, OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/767/de",
-      "sha": "e424273102d3074e3bd9f8c06a6bdaff4fa6227604fa19ed2e18ef02a5510f1e"
+      "sha": "4351d7fe8808211b2049c61f770cad918a847205325e7165f1ac48fd62b94537"
     },
     {
       "art": "aenderung",
@@ -43,8 +58,11 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
       "titelFr": "Ordonnance sur le système suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistrement et d'homologation (Ordonnance sur l'accréditation et la désignation, OAccD)",
       "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione (Ordinanza sull'accreditamento e sulla designazione, OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/32/de",
-      "sha": "ed6bd727934812814a469445b1b3eba4683491d40f0783cf8c17d68bf5bf4ea3"
+      "sha": "e5031992bbece894df15e83afae3ec675a2948b49e59d8265413897c82f051ea"
     },
     {
       "art": "aenderung",
@@ -55,14 +73,26 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
       "titelFr": "Ordonnance sur le système suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistrement et d'homologation (Ordonnance sur l'accréditation et la désignation, OAccD)",
       "titelIt": "Ordinanza sul sistema svizzero d'accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione (Ordinanza sull'accreditamento e sulla designazione, OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/301/de",
-      "sha": "e22642500d1dc0140b49c24707a6ba7a2955e18a98b05f5f92aa9147a4d7d27a"
+      "sha": "6c72ff6374ad072908ce602e18f58d0df53b06a64c66a3f86aa2ab46f79a3010"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/946.512",
-      "sha": "923437c4a2a87df41bc2ebc44d28a8c57186ca22145166191ed9847d50db178a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "cc366b052f45678f6292fa3ed75ee05d752a3862952f1b32edfc0aaf66630b2f"
     },
     {
       "art": "aenderung",
@@ -73,20 +103,41 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
       "titelFr": "Ordonnance sur le système suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistrement et d'homologation (Ordonnance sur l'accréditation et la désignation, OAccD)",
       "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione (Ordinanza sull'accreditamento e sulla designazione, OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/343/de",
-      "sha": "478d2aee1f4586233d48c13304ea032c84271e732773efc2529ffe83acd09dc8"
+      "sha": "b5e878fc75bc72b8ee990df61f7790d86a35a07664e3f025b0bcd6cf7f595ea3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/946.512",
-      "sha": "58a12a880ea16e7c97a35270cc9ef466f4d771ecf3f37b96c41edf95740be1d4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/752",
+      "dateDocument": "2011-11-09",
+      "roFundstelle": "AS 2011 5227",
+      "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
+      "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
+      "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/752/de",
+      "sha": "2a27525b0bbf89719987df34bfb8d18072175c302c6f9ebe2d5ddf7f20c37dcf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/946.512",
-      "sha": "65265a366229a986313337d28b3fa525f836d2502e1d2d7ba22ad86a108bc5cb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/782",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5757",
+      "titelDe": "Verordnung über die Gebühren des Staatssekretariats für Wirtschaft im Bereich der Akkreditierung (GebV-Akk)",
+      "titelFr": "Ordonnance sur les émoluments du Secrétariat d'Etat à l'économie dans le domaine de l'accréditation (Oem-Acc)",
+      "titelIt": "Ordinanza sugli emolumenti della Segreteria di Stato dell'economia nel campo dell'accreditamento (Oemo-Acc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/782/de",
+      "sha": "17bb5dbb262ad7da05b8f0abddfd2aeb04bd9697ec9b79532980ec64458b01cc"
     },
     {
       "art": "aenderung",
@@ -97,8 +148,11 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
       "titelFr": "Ordonnance sur le système suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistrement et d'homologation (Ordonnance sur l'accréditation et la désignation, OAccD)",
       "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione (Ordinanza sull'accreditamento e sulla designazione, OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/194/de",
-      "sha": "672b793ca7c912cac662eb39d12f9f59abe757cc373c5d2b8e2b1722c588bbf7"
+      "sha": "494e4d2a7bfd56e33efa95df720a899b457867579e3d2764c1544a5e26d66f12"
     },
     {
       "art": "aenderung",
@@ -109,8 +163,11 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung; AkkBV)",
       "titelFr": "Ordonnance sur le système suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistrement et d'homologation (Ordonnance sur l'accréditation et la désignation; OAccD)",
       "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione (Ordinanza sull'accreditamento e sulla designazione; OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/644/de",
-      "sha": "81dd006ed046e00612d198d88fbfbbeae8052b5f49f5af7e1cb2a151ec8bfd16"
+      "sha": "b72417e8931c15b3bff3d934fd057788bba17283fca484e390a3b23d971f28ca"
     },
     {
       "art": "aenderung",
@@ -121,21 +178,28 @@
       "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen",
       "titelFr": "Ordonnance sur le sysème suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistremt et d'homologation",
       "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/322/de",
-      "sha": "1a76ce99b6e858bd49fae08420a5ad3089cba5452c7987cf9998ff83453bec96"
+      "sha": "9eb0aa0c7cc7a3b0214c1a0556e82094a87271e01301dbdbad0b1b015087a332"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1996-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1904_1904_1904",
-      "dateDocument": "1996-06-17",
-      "roFundstelle": "AS 1996 1904",
-      "titelDe": "Verordnung vom 17. Juni 1996 über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
-      "titelFr": "Ordonnance du 17 juin 1996 sur le système suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistrement et d'homologation (Ordonnance sur l'accréditation et la désignation, OAccD)",
-      "titelIt": "Ordinanza del 17 giugno 1996 sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione (Ordinanza sull'accreditamento e sulla designazione, OAccD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1904_1904_1904/de",
-      "sha": "18139efc3bc43432e1c5ebf2f9a0bb753beec2771da76d5e51530f9c71508086"
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 187",
+      "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+      "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+      "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/34/de",
+      "sha": "e6acc34193bb4bee07ea794009d2498f6e17971d8d8245651291c75bd15ea05f"
     }
   ],
-  "sha": "dfcde5df8f99ae7e45d4f99c8a63fb27ed9785f62d9d603f59a8bb798cf6f976"
+  "sha": "c6ee0a81da58847d22ab585d2a53b796d1eea17dea0fa8395510bf37f1414029"
 }

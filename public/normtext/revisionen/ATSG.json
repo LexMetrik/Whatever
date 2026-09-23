@@ -1,38 +1,55 @@
 {
   "erlassKey": "ATSG",
   "sr": "830.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "32b3b16b0827856bf2781aacb1bf6f4a2f7e1c89e23e0151a1aa735fdf5604fa"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "a13503a189db9626f91994d269a5dbc2dacb42314c1cd11bff679144f2e4312d"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2021-11-10",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "9cefce58ae9e72409cbce8c9b14b29bb98d46f039a68f7b23701358f8f5806ce"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/688",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 688",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Modernisierung der Aufsicht)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Modernisation de la surveillance)",
+      "titelIt": "Legge federale su l’assicurazione per la vecchiaia e per i superstiti (LAVS) (Modernizzazione della vigilanza)",
+      "botschaftKey": "BOTSCHAFT-2020-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/688/de",
+      "sha": "d9051c28aae4ac3b412b130c837e95e4500f0571df44855b65aff804b4a16360"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2021-11-03",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/705",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2021 705",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG) (Weiterentwicklung der IV)",
+      "titelFr": "Loi fédérale sur l’assurance-invalidité (LAI) (Développement continu de l’AI)",
+      "titelIt": "Legge federale su l’assicurazione per l’invalidità (LAI) (Ulteriore sviluppo dell’AI)",
+      "botschaftKey": "BOTSCHAFT-2017-544",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/705/de",
+      "sha": "2f6f56193c31d9d9bf2c16450e3eddd8e69c98fa43bdfe6c9444e15154a7338b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-11-10",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/658",
       "dateDocument": "2021-11-03",
       "roFundstelle": "AS 2021 658",
       "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/658/de",
-      "sha": "09e201ddd381761262f3264249b8acdd8f168b04787ece0e5b61ab0a074c485a"
+      "sha": "84db135f2d2ea54b656892a8e82f257a1bd88afbb99d143d620d82fbe0da8760"
     },
     {
       "art": "aenderung",
@@ -43,8 +60,11 @@
       "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG). Berichtigung",
       "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA). Erratum",
       "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/358/de",
-      "sha": "d8161a423b8837c2bff04ff637ba8b8c728f80423244f992642fe4d27385a60d"
+      "sha": "975ccdeeacc8ad8105cc1ab34c7a7353ccd301712f7e29ada9669da0607a63e6"
     },
     {
       "art": "aenderung",
@@ -56,8 +76,11 @@
       "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
       "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
       "botschaftKey": "BOTSCHAFT-2018-671",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/892/de",
-      "sha": "7967d304ce71c43d5f87f7d67f98106249a3bcfd0d2f9b8f58f30d034df66cfa"
+      "sha": "38cbac33c69962fff073dc6eec2959b44b5f08600c33cc650d52c19bbe769505"
     },
     {
       "art": "aenderung",
@@ -68,56 +91,152 @@
       "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) (Gesetzliche Grundlage für die Überwachung von Versicherten)",
       "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA) (Base légale pour la surveillance des assurés)",
       "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA) (Base legale per la sorveglianza degli assicurati)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/519/de",
-      "sha": "475473db13b077d44c6697c981545b20610bd0f2c173929b7e7be1d016560829"
+      "sha": "723c9160b60adfed10589dfc68203f503457c4ee170d65094be98bf043056180"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "64de724819de8340f097e4b614a110396b5c3b99439c261c2148a5cc75688d08"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/799",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2011 5659",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, erstes Massnahmenpaket)",
+      "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI) (6e révision de l'AI, premier volet)",
+      "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI) (6a revisione AI, primo pacchetto di misure)",
+      "botschaftKey": "BOTSCHAFT-2010-340",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/799/de",
+      "sha": "9ecadd81ba60268e9daffb6be086403993ddb1cb58d408b6ccc5d0aea02ee330"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "cdb00aff20dd5a1bcc5feb5428bb85114db093c9dd27265d5176a6fdeddadf03"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "3707b28383e7c1ebdeb3e6f8960161400cb923a77818c96dcc4bb2fdb152dd89"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "97185f3aaa958bbb9c50e27939565e22f5b30d2072cde105a7652dc03adc120c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/722",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5129",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG)",
+      "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI)",
+      "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI)",
+      "botschaftKey": "BOTSCHAFT-2005-719",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/722/de",
+      "sha": "fd9249537cbfaa5e1d2e908654a9111336fe751ea9c1d0c4233b83c6b910f448"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "7598b146092240b7241706d6c8e821c9b456b461e591991a39952ad72370b6c6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.1",
-      "sha": "0f36aabcc60ab8ee93aab37087b3cff56ec0682cdc78ba97cf3a0b7b1647f1f1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/560",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 3837",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG)",
+      "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI)",
+      "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI)",
+      "botschaftKey": "BOTSCHAFT-2001-617",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/560/de",
+      "sha": "cddfba32e7564b256b2a1a6e40e48fd187c9a6618dd4c7f9f14b84bd35d8aa47"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2003-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/510",
-      "dateDocument": "2000-10-06",
-      "roFundstelle": "AS 2002 3371",
-      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
-      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
-      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/510/de",
-      "sha": "1376681a17aae94bd2e454f9d7f0cfed1342175096eeca86b00231219528a483"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/511",
+      "dateDocument": "2002-06-21",
+      "roFundstelle": "AS 2002 3453",
+      "titelDe": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (Revision 1 des Anhangs zum ATSG)",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales (Révision 1 de l'annexe de la LPGA)",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente la modifica dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (Revisione 1 dell'allegato alla LPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/511/de",
+      "sha": "c0927a5c37ab1e526bc7d37dde229bc79bf766dd34c04e78b02cbacd841f73a7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/512",
+      "dateDocument": "2002-06-21",
+      "roFundstelle": "AS 2002 3472",
+      "titelDe": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts im Zusammenhang mit der Inkraftsetzung des Bundesgesetzes zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit (Revision 2 des Anhangs zum ATSG)",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales en relation avec l'entrée en vigueur de la loi fédérale sur l'Accord entre, d'une part, la Confédération suisse et, d'autre part, la Communauté européenne et ses Etats membres sur la libre circulation des personnes (Révision 2 de l'annexe de la LPGA)",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente la modifica dell'allegato alla legge sulla parte generale del diritto delle assicurazioni sociali in relazione all'entrata in vigore della legge federale concernente l'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone (Revisione 2 dell'allegato alla LPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/512/de",
+      "sha": "5a34c657a7a1dbb999da5df4c778c59447e24481dea985fb89ad847e13fc7a68"
     },
     {
       "art": "aenderung",
@@ -129,8 +248,11 @@
       "titelFr": "Loi fédérale sur la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales (Révision 3 de l'annexe de la LPGA)",
       "titelIt": "Legge federale sulla modifica dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (Revisione 3 dell'allegato alla LPGA)",
       "botschaftKey": "BOTSCHAFT-2002-114",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/513/de",
-      "sha": "38964635c486075a0980deba3a115fefb53eb82d1f33ab5e096c6e77afff295a"
+      "sha": "07cb1ab47a1b758d2b9b78d73d5b91abb26b54868b00977985ea8a9d1c635f4b"
     },
     {
       "art": "aenderung",
@@ -141,8 +263,11 @@
       "titelDe": "Bundesgesetz vom 6. Oktober 2000 über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale du 6 octobre 2000 sur la partie générale du droit des assurances sociales (LPGA) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale del 6 ottobre 2000 sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/89/de",
-      "sha": "66ea63fba45c5e3e27efdc9eee58fc16dfbb2cde2c607caf6a6f714f7ef71720"
+      "sha": "3a6d6389f11a6a00361bbb83d399816736190431c7eaf39cf527e77b1ec951a5"
     },
     {
       "art": "aenderung",
@@ -153,8 +278,11 @@
       "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/326/de",
-      "sha": "908135bed14bbb790dec05034ee8f4ee67e5bff356fe0b1c7f6737653129879c"
+      "sha": "49fac281ea261b67d49255caa463eb29be552189708480477a3e20f046576061"
     },
     {
       "art": "aenderung",
@@ -169,5 +297,5 @@
       "sha": "38ff4dd277bbeea6dccf5c241ce34ddfcec42a9a8a44383e939a7c9625d7e63a"
     }
   ],
-  "sha": "b6acdf75d81c79d9d1d5a69f7f84a6f551659547613ca2b5afb295bc25045570"
+  "sha": "c8d8b01194a7eec0d75a6391909b9198706824803d886d6f59cb853eaa868f33"
 }

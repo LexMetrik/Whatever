@@ -1,14 +1,24 @@
 {
   "erlassKey": "KG",
   "sr": "251",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/251",
-      "sha": "6e11671c3a541ff6446bb44d19185952ee65d0c2e7a715b7a0e0f74e1a0d4d19"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/254",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 254",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’adaptation du droit pénal accessoire au droit des sanctions modifié",
+      "titelIt": "Legge federale del 17 dicembre 2021 che adegua il diritto penale accessorio alla nuova disciplina delle sanzioni",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/254/de",
+      "sha": "13932c199fa8eae4cb6c6fc6ca937831cf4e92b80a43430ce5738ac0582d8419"
     },
     {
       "art": "aenderung",
@@ -20,8 +30,11 @@
       "titelFr": "Loi fédérale sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
       "titelIt": "Legge federale sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)",
       "botschaftKey": "BOTSCHAFT-2019-1720",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/576/de",
-      "sha": "5d7344bab40e681a47e518d756add2750fc4b141769ff5cf2be4194361fd67e0"
+      "sha": "30f3d5dbbd0d4b93b0602ed0f79f20f2fdc7b36703ff5de1f463f59c504acd99"
     },
     {
       "art": "aenderung",
@@ -33,38 +46,90 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de l'accord entre la Suisse et l'UE concernant la coopération en matière d'application de leurs droits de la concurrence (modification de la loi sur les cartels)",
       "titelIt": "Decreto federale che approva l'Accordo tra la Svizzera e l'UE concernente la cooperazione in merito all'applicazione dei rispettivi diritti della concorrenza e lo traspone nel diritto svizzero (modifica della legge sui car-telli)",
       "botschaftKey": "BOTSCHAFT-2013-859",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/645/de",
-      "sha": "53247b1a3f8cc38fbe991182fe534db26798a4cac75a3c5d1a115c9f701ee5f0"
+      "sha": "fcd0176af1ccf17246785e87428eecfcc28295ae4532b827fc7905fd6070a6d0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/251",
-      "sha": "57bdd2e5d72401a55c49ddd92dbcecd41969a276029518a3928ca5f5ab36d245"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/177",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2013 847",
+      "titelDe": "Bundesgesetz über die Anpassung von verfahrensrechtlichen Bestimmungen zum anwaltlichen Berufsgeheimnis",
+      "titelFr": "Loi fédérale sur l'adaptation de dispositions de procédure relatives au secret professionnel des avocats",
+      "titelIt": "Legge federale che adegua disposizioni di diritto procedurale sul segreto professionale degli avvocati",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/177/de",
+      "sha": "41275b87a2cab8ca8e8c200a0a8ac0647a978b2a68069fcd5cca668599ac23ef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/251",
-      "sha": "b8b2e872dbbdefdb5f26a487578ff65b70557b5c5146ed446010f8784cfd8045"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3655",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "sha": "98d16fb59413c6c4baa7392dc8196897ed57422734e9dc5d05c78fdcf450a38c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/251",
-      "sha": "2dfa6e8f1d26a6bc3157776efa1a4d46cae8e9fee8c7a920638483e8dc719dd1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "a2f3404021afc248e0ad4014cc8fb9ed953c1501058b179835de293c00dad3ad"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/251",
-      "sha": "7e3d2a2a0d0c4391a70b3029f702d2740e5d5717f07ce821540db09519f5bfbd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "a49275dd1e695a08626c44f542a93882136ca75eb114782b1d3d566c8e97872c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/251",
-      "sha": "4b24cf252305dc31ce9cff10ab79376be7befd10f1cc243122b5b0f3ddf9269d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
     },
     {
       "art": "aenderung",
@@ -76,51 +141,44 @@
       "titelFr": "Loi fédérale sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
       "titelIt": "Legge federale sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)",
       "botschaftKey": "BOTSCHAFT-2002-265",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/172/de",
-      "sha": "9b7074611f7249dacd60f6bc0ba90c4fc6a0e098f387abe3f6fde3f8457de8f0"
+      "sha": "66b1ea1b1e5539b56574553fc5c87b448446d4b55742dc667574f017fee47645"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/251",
-      "sha": "e8573be6b2a1b879cac1b5d682fa56f2b4af3c42fcc1a4416a67b2185c30266c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1996-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/546_546_546",
-      "dateDocument": "1995-10-06",
-      "roFundstelle": "AS 1996 546",
-      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
-      "titelFr": "Loi fédérale du 6 octobre 1995 sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
-      "titelIt": "Legge federale del 6 ottobre 1995 sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/546_546_546/de",
-      "sha": "1745fc7fde6b8a5fcfdd3e9dac98a86b024d7a75c41c583c51c49923e283559b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1986-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/874_874_874",
-      "dateDocument": "1985-12-20",
-      "roFundstelle": "AS 1986 874",
-      "titelDe": "Bundesgesetz vom 20. Dezember 1985 über Kartelle und ähnliche Organisationen (Kartellgesetz, KG)",
-      "titelFr": "Loi fédérale du 20 décembre 1985 sur les cartels et organisations analogues (Loi sur les cartels, LCart)",
-      "titelIt": "Legge federale del 20 dicembre 1985 su i cartelli e le organizzazioni analoghe (Legge sui cartelli, LC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/874_874_874/de",
-      "sha": "2b504154764bc4c9586b81329a67ba85414bfb7ac6c99694075e2239b4fa97b3"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1964-02-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1964/53_49_49",
-      "dateDocument": "1962-12-20",
-      "roFundstelle": "AS 1964 53",
-      "titelDe": "Bundesgesetz vom 20. Dezember 1962 über Kartelle und ähnliche Organisationen",
-      "titelFr": "Loi fédérale du 20 décembre 1962 sur les cartels et organisations analogues",
-      "titelIt": "Legge federale del 20 dicembre 1962 sui cartelli e le organizzazioni analoghe",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1964/53_49_49/de",
-      "sha": "9fc8f567e3e24f93ea7a2e44a56268824adadf58159b17b34beeb6b36b41cad3"
+      "dateEntryInForce": "1996-06-17",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1805_1805_1805",
+      "dateDocument": "1996-06-17",
+      "roFundstelle": "AS 1996 1805",
+      "titelDe": "Verordnung vom 17. Juni 1996 über die vollständige Inkraftsetzung des Kartellgesetzes",
+      "titelFr": "Ordonnance du 17 juin 1996 sur l'entrée en vigueur complète de la loi sur les cartels et autres restrictions à la concurrence",
+      "titelIt": "Ordinanza del 17 giugno 1996 sull'entrata in vigore completa della legge sui cartelli e altre limitazioni della concorrenza",
+      "wirkungen": [
+        "inkrafttreten",
+        "teilinkraftsetzung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1805_1805_1805/de",
+      "sha": "da0b9461800be4b897c64049e83e43b310a98c7c6fa8edef150aea40dc3cb40e"
     }
   ],
-  "sha": "f9c3fc305458b97481f5a0e07e99255eaa16efd5413e8d4094498aac827928fc"
+  "sha": "264cd0a9eb3f8c3c423a9a9ffaead7a1f893e1cd8baa5a32446224513b479d58"
 }

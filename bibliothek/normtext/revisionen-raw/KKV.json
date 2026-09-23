@@ -1380,5 +1380,195 @@
     "2025-11-25"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2006/859",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2006/859",
+    "inkrafttreten": "2007-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/859",
+        "typ": 5,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/534",
+        "typ": 1,
+        "datum": "2007-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/128",
+        "typ": 1,
+        "datum": "2008-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/750",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/750",
+        "typ": 2,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/121",
+        "typ": 1,
+        "datum": "2009-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/401",
+        "typ": 1,
+        "datum": "2011-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/401",
+        "typ": 2,
+        "datum": "2011-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/629",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/117",
+        "typ": 1,
+        "datum": "2013-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/117",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/117",
+        "typ": 2,
+        "datum": "2013-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/273",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/394",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/759",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/759",
+        "typ": 2,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 2,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/835",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+        "typ": 1,
+        "datum": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/756",
+        "typ": 6,
+        "datum": "2025-11-25"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2007/534": {
+        "dateForce": "2007-09-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 3989",
+        "titelDe": "Verordnung über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsverordnung, RAV)",
+        "titelFr": "Ordonnance sur l'agrément et la surveillance des réviseurs (Ordonnance sur la surveillance de la révision, OSRev)",
+        "titelIt": "Ordinanza sull'abilitazione e la sorveglianza dei revisori (Ordinanza sui revisori, OSRev)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/750": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-10-15",
+        "roId": "RO 2008 5363",
+        "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+        "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+        "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/629": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-01",
+        "roId": "RO 2012 5441",
+        "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
+        "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
+        "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/273": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-04-30",
+        "roId": "RO 2014 1269",
+        "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+        "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+        "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/394": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-06-25",
+        "roId": "RO 2014 2321",
+        "titelDe": "Verordnung über die Liquidität der Banken (Liquiditätsverordnung, LiqV)",
+        "titelFr": "Ordonnance sur les liquidités des banques (Ordonnance sur les liquidités, OLiq)",
+        "titelIt": "Ordinanza sulla liquidità delle banche (Ordinanza sulla liquidità, OLiq)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/708": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-11-05",
+        "roId": "RO 2014 4295",
+        "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+        "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+        "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/759": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4459",
+        "titelDe": "Verordnung über die Finanzdienstleistungen (Finanzdienstleistungsverordnung, FIDLEV)",
+        "titelFr": "Ordonnance sur les services financiers (OSFin)",
+        "titelIt": "Ordinanza sui servizi finanziari (OSerFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/763": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4633",
+        "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+        "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+        "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/835": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-12-03",
+        "titelDe": "Verordnung über die Finanzdienstleistungen (Finanzdienstleistungsverordnung, FIDLEV)",
+        "titelFr": "Ordonnance sur les services financiers (OSFin)",
+        "titelIt": "Ordinanza sui servizi finanziari (OSerFi)"
+      }
+    }
+  }
 }

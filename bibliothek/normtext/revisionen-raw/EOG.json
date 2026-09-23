@@ -990,5 +990,765 @@
       "fremdeSr": "834.1",
       "zielOc": "https://fedlex.data.admin.ch/eli/cc/1952/1021_1046_1050"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1952/1021_1046_1050",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1952/1021_1046_1050",
+    "inkrafttreten": "1953-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1952/1021_1046_1050",
+        "typ": 5,
+        "datum": "1953-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1954/559_573_455",
+        "typ": 1,
+        "datum": "1954-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/567_589_565",
+        "typ": 1,
+        "datum": "1960-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/567_589_565",
+        "typ": 2,
+        "datum": "1960-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1962/1089_1127_1131",
+        "typ": 1,
+        "datum": "1962-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1964/294_286_286",
+        "typ": 1,
+        "datum": "1964-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1969/111_120_120",
+        "typ": 1,
+        "datum": "1969-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1969/310_318_319",
+        "typ": 1,
+        "datum": "1969-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1969/310_318_319",
+        "typ": 2,
+        "datum": "1969-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+        "typ": 1,
+        "datum": "1972-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+        "typ": 2,
+        "datum": "1972-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/2483_2537_2314",
+        "typ": 1,
+        "datum": "1973-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/897_909_1069",
+        "typ": 1,
+        "datum": "1972-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/166_166_166",
+        "typ": 1,
+        "datum": "1974-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/57_57_57",
+        "typ": 1,
+        "datum": "1976-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/391_391_391",
+        "typ": 1,
+        "datum": "1979-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
+        "typ": 1,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1393_1393_1393",
+        "typ": 1,
+        "datum": "1988-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1882_1882_1882",
+        "typ": 1,
+        "datum": "1991-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+        "typ": 1,
+        "datum": "1996-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/237",
+        "typ": 1,
+        "datum": "1999-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/237",
+        "typ": 2,
+        "datum": "1999-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/466",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/510",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/511",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/217",
+        "typ": 1,
+        "datum": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/217",
+        "typ": 2,
+        "datum": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+        "typ": 1,
+        "datum": "2006-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 2,
+        "datum": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/659",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/172",
+        "typ": 1,
+        "datum": "2009-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+        "typ": 1,
+        "datum": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/548",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/656",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/673",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/460",
+        "typ": 1,
+        "datum": "2012-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/576",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/576",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/24",
+        "typ": 1,
+        "datum": "2015-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/575",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/714",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/215",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/215",
+        "typ": 5,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/574",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/677",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/677",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/799",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/799",
+        "typ": 1,
+        "datum": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/819",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/842",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/844",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/887",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/892",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/288",
+        "typ": 1,
+        "datum": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/468",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/604",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/680",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/688",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/92",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/151",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/463",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/681",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/72",
+        "typ": 6,
+        "datum": "2025-01-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/164",
+        "typ": 1,
+        "datum": "2026-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/433",
+        "typ": 1,
+        "datum": "2027-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/433",
+        "typ": 2,
+        "datum": "2027-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1954/559_573_455": {
+        "dateForce": "1954-01-01",
+        "dateDoc": "1953-12-23",
+        "roId": "RO 1954 573",
+        "titelDe": "Bundesgesetzvom 23. Dezember 1953 über besondere Sparmassnahmen",
+        "titelFr": "Loi fédérale du 23 décembre 1953 instituant des mesures spéciales propres à réduire les dépenses de la Confédération",
+        "titelIt": "Legge federale du 23 décembre 1953 che istituisce misure speciali intese a ridurre le spese della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1959/567_589_565": {
+        "dateForce": "1960-01-01",
+        "dateDoc": "1959-03-06",
+        "roId": "RO 1959 589",
+        "titelDe": "Bundesgesetz betreffend die Änderung des Bundesgesetzes über die Erwerbsausfallentschädigungen an Wehrpflichtige (Erwerbsersatzordnung)",
+        "titelFr": "Loi fédérale modifiant la loi sur les allocations aux militaires pour perte de gain (Régime des allocations aux militaires)",
+        "titelIt": "Legge federale che modifica quella sulle indennità ai militari per perdita di guadagno"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1962/1089_1127_1131": {
+        "dateForce": "1962-10-01",
+        "dateDoc": "1962-03-23",
+        "roId": "RO 1962 1127",
+        "titelDe": "Bundesgesetz vom 23. März 1962 über den Zivilschutz (Zivilschutzgesetz)",
+        "titelFr": "Loi fédérale du 23 mars 1962 sur la protection civile (Loi sur la protection civile)",
+        "titelIt": "Legge federale del 23 marzo 1962 sulla protezione civile"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1964/294_286_286": {
+        "dateForce": "1964-01-01",
+        "dateDoc": "1963-12-19",
+        "roId": "RO 1964 286",
+        "titelDe": "Bundesgesetz betreffend die Änderung des Bundesgesetzes über die Erwerbsausfallentschädigungen an Wehrpflichtige (Erwerbsersatzordnung)",
+        "titelFr": "Loi fédérale modifiant celle sur les allocations aux militaires pour perte de gain (Régime des allocations pour perte de gain)",
+        "titelIt": "Legge federale che modifica quella sulle indennità ai militari per perdita di guadagno"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1969/111_120_120": {
+        "dateForce": "1969-01-01",
+        "dateDoc": "1968-10-04",
+        "roId": "RO 1969 120",
+        "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung",
+        "titelFr": "Loi fédérale modifiant la loi sur l'assurance-vieillesses et survivants",
+        "titelIt": "Legge federale che modifica quella su l'assiurazione per la vecchiaia e per i superstiti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1969/310_318_319": {
+        "dateForce": "1969-01-01",
+        "dateDoc": "1968-12-18",
+        "roId": "RO 1969 318",
+        "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über die Erwerbsausfallentschädigung an Wehrpflichtige (Erwerbsersatzordnung)",
+        "titelFr": "Loi fédérale modifiant la loi sur les allocations aux militaires pour perte de gain (Régime des allocations pour perte de gain)",
+        "titelIt": "Legge federale che modifica quella sulle indennità ai militari per perdita di guadagno (Ordinamento dell'indennità per perdita di guadagno)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461": {
+        "dateForce": "1972-01-01",
+        "dateDoc": "1971-06-25",
+        "roId": "RO 1971 1461",
+        "titelDe": "Bundesgesetz vom 25. Juni 1971 über die Revision des Zehnten Titels und des Zehnten Titels<sup>bis</sup> des Obligationenrechts (Der Arbeitsvertrag)",
+        "titelFr": "Loi fédérale du 25 juin 1971 revisant les titres dixième et dixième<sup>bis</sup> du code des obligations (Du contrat de travail)",
+        "titelIt": "Legge federale del 25 giugno 1971 sulla revisione dei titoli decimo e decimo<sup>bis</sup> del Codice delle obbligazioni (Contratto di lavoro)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1972/2483_2537_2314": {
+        "dateForce": "1973-01-01",
+        "dateDoc": "1972-06-30",
+        "roId": "RO 1972 2537",
+        "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung und damit im Zusammenhang stehender Gesetze (8. AHV-Revision)",
+        "titelFr": "Loi fédérale modifiant celle qui concerne l'assurance-vieillesse et survivants ainsi que les lois qui sont en rapport avec elle (8<sup>e</sup> revision de l'AVS)",
+        "titelIt": "Legge federael che modifica quella sull'assicurazione per la vecchiaia e i superstiti e le leggi in rapporto con essa (Ottavia revisione dell'AVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1972/897_909_1069": {
+        "dateForce": "1972-07-01",
+        "dateDoc": "1972-03-17",
+        "roId": "RO 1972 909",
+        "titelDe": "Bundesgesetz vom 17. März 1972 über die Förderung von Turnen und Sport",
+        "titelFr": "Loi fédérale du 17 mars 1972 encourageant la gymnastique et les sports",
+        "titelIt": "Legge federale del 17 marzo 1972 che promuove la ginnastica e lo sport"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1974/166_166_166": {
+        "dateForce": "1974-01-01",
+        "dateDoc": "1973-09-27",
+        "roId": "RO 1974 166",
+        "titelDe": "Bundesgesetz über die Erwerbsausfallentschädigungen an Wehr- und Zivilschutzpflichtige (Erwerbsersatzordnung), Änderung",
+        "titelFr": "Loi fédérale sur les allocations pour perte de gain aux militaires (Régime des allocations pour perte de gain). Modification",
+        "titelIt": "Legge federale sulle indennità di perdita di guadagno per gli obbligati al servizio militare e di protezione civile (Ordinameto delle indennità per perdita di guadagno), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/57_57_57": {
+        "dateForce": "1976-01-01",
+        "dateDoc": "1975-10-03",
+        "roId": "RO 1976 57",
+        "titelDe": "Bundesgesetz über die Erwerbsausfallentschädigungen an Wehr- und Zivilschutzpflichtige (Erwerbsersatzordnung), Änderung",
+        "titelFr": "Loi fédérale sur les allocations pour perte de gain en faveur des militaires et des personnes astreintes à la protection civile (Régime des allocations pour perte de gain), Modification",
+        "titelIt": "Legge federale sulle indennità di perdita di guadagno per gli obbligati al servizio militare e di protezione civile (Ordinamento delle indennità per perdita di guadagno), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/391_391_391": {
+        "dateForce": "1979-01-01",
+        "dateDoc": "1977-06-24",
+        "roId": "RO 1978 391",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (9. AHV-Revision), Änderung",
+        "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (9<sup>e</sup> revision de l'AVS), Modification",
+        "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i supersiti (9<sup>a </sup>revisione dell'AVS), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1981-03-20",
+        "roId": "RO 1982 1676",
+        "titelDe": "Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG)",
+        "titelFr": "Loi fédérale du 20 mars 1981 sur l'assurance-accidents (LAA)",
+        "titelIt": "Legge federale del 20 marzo 1981 sull'assicurazione contro gli infortuni (LAINF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/1393_1393_1393": {
+        "dateForce": "1988-01-01",
+        "dateDoc": "1987-06-19",
+        "roId": "RO 1987 1393",
+        "titelDe": "Bundesgesetz über die Erwerbsersatzordnung für Wehr- und Zivilschutzpflichtige (EOG) (5. EO-Revison), Änderung",
+        "titelFr": "Loi fédérale sur le régime des allocations pour perte de gain en faveur des personnes astreintes au service militaire ou à la protection civile (LAPG) (Cinquième revision), Modification",
+        "titelIt": "Legge federale sull'ordinamento delle indennità di perdita di guadagno per gli obbligati al servizio militare e di protezione civile (LIPG) (5<sup>a</sup> revisione IPG), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/1882_1882_1882": {
+        "dateForce": "1991-01-01",
+        "dateDoc": "1990-06-22",
+        "roId": "RO 1990 1882",
+        "titelDe": "Bundesgesetz über die Militärorganisation (Militärorganisation, MO), Änderung",
+        "titelFr": "Loi fédérale sur l'organisation militaire (Organisation militaire, OM), Modification",
+        "titelIt": "Legge federale sull'organizzazione militare (Organizzaione militare, OM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445": {
+        "dateForce": "1996-10-01",
+        "dateDoc": "1995-10-06",
+        "roId": "RO 1996 1445",
+        "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+        "titelFr": "Loi fédérale du 6 octobre 1995 sur le service civil (LSC)",
+        "titelIt": "Legge federale del 6 ottobre 1995 sul servizio civile sostitutivo (Legge sul servizio civile, LSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2466_2466_2466": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1994-10-07",
+        "roId": "RO 1996 2466",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (10. AHV-Revision), Änderung",
+        "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (10<sup>e</sup> révision de l'AVS), Modification",
+        "titelIt": "Legge federale su l'assicurazione per la vecchiaia e per i superstiti (LAVS) 10<sup>a</sup> revisione dell'AVS, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/510": {
+        "dateForce": "2003-01-01",
+        "dateDoc": "2000-10-06",
+        "roId": "RO 2002 3371",
+        "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+        "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+        "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/511": {
+        "dateForce": "2003-01-01",
+        "dateDoc": "2002-06-21",
+        "roId": "RO 2002 3453",
+        "titelDe": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (Revision 1 des Anhangs zum ATSG)",
+        "titelFr": "Ordonnance de l'Assemblée fédérale concernant la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales (Révision 1 de l'annexe de la LPGA)",
+        "titelIt": "Ordinanza dell'Assemblea federale concernente la modifica dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (Revisione 1 dell'allegato alla LPGA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/178": {
+        "dateForce": "2006-04-01",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2006 979",
+        "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/659": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-09-26",
+        "roId": "RO 2008 4715",
+        "titelDe": "Verordnung 09 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 09 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+        "titelIt": "Ordinanza 09 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/172": {
+        "dateForce": "2009-04-01",
+        "dateDoc": "2008-10-03",
+        "roId": "RO 2009 1093",
+        "titelDe": "Bundesgesetz über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+        "titelFr": "Loi fédérale sur le service civil (LSC)",
+        "titelIt": "Legge federale sul servizio civile sostitutivo (Legge sul servizio civile, LSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/296": {
+        "dateForce": "2009-06-01",
+        "dateDoc": "2008-06-13",
+        "roId": "RO 2009 2411",
+        "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+        "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+        "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/548": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-06-13",
+        "roId": "RO 2010 3835",
+        "titelDe": "Bundesgesetz über die Sanierung der Invalidenversicherung",
+        "titelFr": "Loi fédérale sur l'assainissement de l'assurance-invalidité",
+        "titelIt": "Legge federale sul risanamento dell'assicurazione invalidità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/656": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-09-24",
+        "roId": "RO 2010 4577",
+        "titelDe": "Verordnung 11 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 11 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+        "titelIt": "Ordinanza 11 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/673": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2011 4745",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)",
+        "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)",
+        "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramento dell'esecuzione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/460": {
+        "dateForce": "2012-10-01",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2012 3953",
+        "titelDe": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+        "titelFr": "Loi fédérale sur l'encouragement du sport et de l'activité physique (Loi sur l'encouragement du sport, LESp)",
+        "titelIt": "Legge federale sulla promozione dello sport e dell'attività fisica (Legge sulla promozione dello sport, LPSpo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/576": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-10-15",
+        "roId": "RO 2014 3335",
+        "titelDe": "Verordnung 15 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 15 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+        "titelIt": "Ordinanza 15 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/24": {
+        "dateForce": "2015-02-01",
+        "dateDoc": "2013-09-27",
+        "roId": "RO 2015 187",
+        "titelDe": "Bundesgesetz über den Bevölkerungsschutz und den Zivilschutz (Bevölkerungs- und Zivilschutzgesetz, BZG)",
+        "titelFr": "Loi fédérale sur la protection de la population et sur la protection civile (LPPCi)",
+        "titelIt": "Legge federale sulla protezione della popolazione e sulla protezione civile (LPPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/575": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-09-02",
+        "roId": "RO 2015 3079",
+        "titelDe": "Verordnung zum Erwerbsersatzgesetz (EOV)",
+        "titelFr": "Règlement sur les allocations pour perte de gain (RAPG)",
+        "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/714": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2016 4277",
+        "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG) ",
+        "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
+        "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/828": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2016 5233",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'accord sur la libre circulation des personnes entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, concernant l'extension à la République de Croatie",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Croazia dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/215": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-03-29",
+        "roId": "RO 2017 2297",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Militärgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur l'armée",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge militare"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/820": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-06-16",
+        "roId": "RO 2017 7563",
+        "titelDe": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+        "titelFr": "Loi fédérale sur l'établissement chargé de l'administration des fonds de compensation de l'AVS, de l'AI et du régime des APG (Loi sur les fonds de compensation)",
+        "titelIt": "Legge federale sull'istituto amministratore dei fondi di compensazione AVS, AI e IPG (Legge sui fondi di compensazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/574": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-09-21",
+        "roId": "RO 2018 3527",
+        "titelDe": "Verordnung 19 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 19 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+        "titelIt": "Ordinanza 19 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/677": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-13",
+        "roId": "RO 2019 3753",
+        "titelDe": "Verordnung 20 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 20 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+        "titelIt": "Ordinanza 20 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/799": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2019-12-20",
+        "roId": "RO 2020 4525",
+        "titelDe": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+        "titelFr": "Loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches",
+        "titelIt": "Legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/819": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-10-14",
+        "roId": "RO 2020 4609",
+        "titelDe": "Verordnung 21 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 21 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+        "titelIt": "Ordinanza 21 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/842": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-10-21",
+        "roId": "RO 2020 4683",
+        "titelDe": "Verordnung 21 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 21 sur les adaptations à l'évolution des salaires et des prix dans le régime de l'AVS, de l'AI et des APG",
+        "titelIt": "Ordinanza 21 sugli adeguamenti all'evoluzione dei prezzi e dei salari nell'AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/887": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2019-12-20",
+        "roId": "RO 2020 4995",
+        "titelDe": "Bundesgesetz über den Bevölkerungsschutz und den Zivilschutz (Bevölkerungs- und Zivilschutzgesetz, BZG)",
+        "titelFr": "Loi fédérale sur la protection de la population et sur la protection civile (LPPCi)",
+        "titelIt": "Legge federale sulla protezione della popolazione e sulla protezione civile (LPPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/892": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2019-06-21",
+        "roId": "RO 2020 5137",
+        "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+        "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+        "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/758": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+        "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/604": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-10-12",
+        "titelDe": "Verordnung 23 vom 12. Oktober 2022 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO",
+        "titelFr": "Ordonnance 23 du 12 octobre 2022 sur les adaptations à l’évolution des salaires et des prix dans le régime de l’AVS, de l’AI et des APG",
+        "titelIt": "Ordinanza 23 del 12 ottobre 2022 sugli adeguamenti all’evoluzione dei prezzi e dei salari nell’AVS/AI/IPG"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/688": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Modernisierung der Aufsicht)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Modernisation de la surveillance)",
+        "titelIt": "Legge federale su l’assicurazione per la vecchiaia e per i superstiti (LAVS) (Modernizzazione della vigilanza)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/92": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (AHV 21)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (AVS 21)",
+        "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (AVS 21)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/463": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-08-28",
+        "titelDe": "Verordnung vom 28. August 2024 über Anpassungen an die Lohn- und Preisentwicklung bei der AHV/IV/EO ab dem Jahr 2025",
+        "titelFr": "Ordonnance du 28 août 2024 sur les adaptations à l’évolution des salaires et des prix dans le régime de l’AVS, de l’AI et des APG à partir de 2025",
+        "titelIt": "Ordinanza del 28 agosto 2024 sugli adeguamenti all’evoluzione dei prezzi e dei salari nell’AVS/AI/IPG dal 2025"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/164": {
+        "dateForce": "2026-06-01",
+        "dateDoc": "2025-12-19",
+        "titelDe": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG)",
+        "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
+        "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)"
+      }
+    }
   }
 }

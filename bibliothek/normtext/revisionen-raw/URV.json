@@ -625,5 +625,131 @@
     "2025-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/1821_1821_1821",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/1821_1821_1821",
+    "inkrafttreten": "1993-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1821_1821_1821",
+        "typ": 5,
+        "datum": "1993-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1778_1778_1778",
+        "typ": 1,
+        "datum": "1995-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5152_5152_5152",
+        "typ": 1,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5152_5152_5152",
+        "typ": 2,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/208_208_208",
+        "typ": 1,
+        "datum": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/668",
+        "typ": 1,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+        "typ": 1,
+        "datum": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/348",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/348",
+        "typ": 2,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/362",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/354",
+        "typ": 1,
+        "datum": "2014-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/690",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/376",
+        "typ": 1,
+        "datum": "2025-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1995/1778_1778_1778": {
+        "dateForce": "1995-07-01",
+        "dateDoc": "1995-05-17",
+        "roId": "RO 1995 1778",
+        "titelDe": "Verordnung über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV), Änderung",
+        "titelFr": "Ordonnance sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODAu), Modification",
+        "titelIt": "Ordinanza sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODA), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/5152_5152_5152": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-10-25",
+        "roId": "RO 1995 5152",
+        "titelDe": "Verordnung über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV), Änderung",
+        "titelFr": "Ordonnance sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODAu), Modification",
+        "titelIt": "Ordinanza sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODA), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/208_208_208": {
+        "dateForce": "1996-02-01",
+        "dateDoc": "1996-01-10",
+        "roId": "RO 1996 208",
+        "titelDe": "Verordnung vom 10. Januar 1996 die Bereinigung der Abkürzungen von Erlasstiteln",
+        "titelFr": "Ordonnance du 10 janvier 1996 modifiant les abréviations des titres de divers actes législatifs",
+        "titelIt": "Ordinanza del 10 gennaio 1996 che rettifica alcune abbreviazioni di titoli di atti normativi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/668": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-11-19",
+        "roId": "RO 2003 4501",
+        "titelDe": "Verordnung über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsverordnung, BehiV)",
+        "titelFr": "Ordonnance sur l'élimination des inégalités frappant les personnes handicapées (Ordonnance sur l'égalité pour les handicapés, OHand)",
+        "titelIt": "Ordinanza sull'eliminazione di svantaggi nei confronti dei disabili (Ordinanza sui disabili, ODis)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/250": {
+        "dateForce": "2007-05-01",
+        "dateDoc": "2006-11-01",
+        "roId": "RO 2007 1469",
+        "titelDe": "Zollverordnung (ZV)",
+        "titelFr": "Ordonnance sur les douanes (OD)",
+        "titelIt": "Ordinanza sulle dogane (OD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      }
+    }
+  }
 }

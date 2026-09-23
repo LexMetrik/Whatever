@@ -1,8 +1,8 @@
 {
   "erlassKey": "UVG",
   "sr": "832.20",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,62 +14,244 @@
       "titelFr": "Loi fédérale sur l’assurance-accidents (LAA) (Financement de la fondation Fonds d’indemnisation des victimes de l’amiante)",
       "titelIt": "Legge federale sull’assicurazione contro gli infortuni (LAINF) (Finanziamento della Fondazione Fondo per le vittime dell’amianto)",
       "botschaftKey": "BOTSCHAFT-2024-2479",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/685/de",
-      "sha": "337e7d0b24092ea51fcf152dbc09b5bc01ebdc13c69a5f0fdbee28327459b89f"
+      "sha": "387a3f1e2804d25bf65d2c36542f7769fd08963749aa52c753fae8d2f66cd901"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "cacfd78b81d493786e73d84b56fb140d200b41ec3c3358bca37cc4cde33ee9cf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/630",
+      "dateDocument": "2022-09-30",
+      "roFundstelle": "AS 2023 630",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 1b)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, volet 1b)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 1b)",
+      "botschaftKey": "BOTSCHAFT-2019-2216",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/630/de",
+      "sha": "ca3058631b5e8247630cceaf37f6a218ed59767a81927ec8a54cfa471cc263a6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/680",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 680",
+      "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Taggelder für den hinterlassenen Elternteil)",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Indemnités journalières pour le parent survivant)",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Indennità giornaliere per il genitore superstite)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/680/de",
+      "sha": "5cf537d67e50c98aa59b32313108d5433b586504373cdaf39910941c93d67819"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/92",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 92",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (AHV 21)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (AVS 21)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (AVS 21)",
+      "botschaftKey": "BOTSCHAFT-2019-2267",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/92/de",
+      "sha": "be5abf75dc966d36808e8c840961bdbca32ac150b669f9624bc2cb14338ebca2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "3867940740109bc04cf0088a87b1c0ef78946ca14a4d74f3ae2e5cdc6b8f6f6b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "c78b81810518538b0523c6f21a177b8e2d6e8309f600dd84b060b81fbcdfdcfc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/837",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 837",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 1a)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, volet 1a)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 1a)",
+      "botschaftKey": "BOTSCHAFT-2019-2216",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/837/de",
+      "sha": "88a5c7c7e3befabe123a329f89731a0139136544865c75e317ea8c281e1b0733"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/468",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2022 468",
+      "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG)",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG)",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/468/de",
+      "sha": "4bda8abe6c337b9e57d84dd29c95810fa3723a8591ec75b5a37cc68557670f76"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/808",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 808",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. Juni 2021 des Bundesgesetzes über die Krankenversicherung",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 juin 2021 de la loi fédérale sur l’assurance-maladie",
+      "titelIt": "Ordinanza concernente l’entrata in vigore integrale della modifica del 18 giugno 2021 della legge federale sull’assicurazione malattie",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/808/de",
+      "sha": "66b13f4e20020f4c96986ae8f9be70c9427f30499900ae67feed766caf62bca9"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "f1cbdfa8ea74629ddebca3db433a853a918f03590f07aa5333e559a6fe15639f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/705",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2021 705",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG) (Weiterentwicklung der IV)",
+      "titelFr": "Loi fédérale sur l’assurance-invalidité (LAI) (Développement continu de l’AI)",
+      "titelIt": "Legge federale su l’assicurazione per l’invalidità (LAI) (Ulteriore sviluppo dell’AI)",
+      "botschaftKey": "BOTSCHAFT-2017-544",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/705/de",
+      "sha": "2f6f56193c31d9d9bf2c16450e3eddd8e69c98fa43bdfe6c9444e15154a7338b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "147beb61259c2abbbe65a4d98eaebc33a7799881094f1e5875dbc2d20a11ee2f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/799",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 4525",
+      "titelDe": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "titelFr": "Loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches",
+      "titelIt": "Legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari",
+      "botschaftKey": "BOTSCHAFT-2019-1504",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/799/de",
+      "sha": "439817656e93b6cf44fa509e237275a6740feaa1a7de67f15be57ed7c8e87673"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "7df1481343732005886b2092fa3930b42c69b1d53ceb06f2cb3351d01bcf81e8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/799",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 4525",
+      "titelDe": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "titelFr": "Loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches",
+      "titelIt": "Legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari",
+      "botschaftKey": "BOTSCHAFT-2019-1504",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/799/de",
+      "sha": "db71a37fc03ba92e15836438e34c911630b9e028219e2f1ea9b69c508f387b2e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/844",
+      "dateDocument": "2019-09-27",
+      "roFundstelle": "AS 2020 4689",
+      "titelDe": "Bundesgesetz über den Erwerbsersatz für Dienstleistende und bei Mutterschaft (Erwerbsersatzgesetz, EOG)",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain en cas de service et de maternité (Loi sur les allocations pour perte de gain, LAPG)",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno per chi presta servizio e in caso di maternità (Legge sulle indennità di perdita di guadagno, LIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/844/de",
+      "sha": "5466b3249b3ffe701a95d1f91af3aad0b78924b4d65783e6eed31097214bae65"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "77cb56abe7f06134ef7721248a8d700d74940e3b8cc501be1be2ba09a4c3e9a3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2018-06-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "08cd357f54f8d4ad64e060c81285a668324a0d5ea2162884f5cc1a87d9c4d538"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1982/1676_1676_1676/20180615/de",
+      "sha": "04e5fe671e65df3de52e3e0792d6acea49d5dd5d60c784356b11896aca65df76"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "2fb32a31179ad43c8115f9f5e65cc061363a527e608f53ca7544c34a8b05724e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "203aa9b6f92a450dd04dddb9144f4d3490ab38dfa1ab0e6274c5bd1d0cc77027"
     },
     {
       "art": "aenderung",
@@ -93,8 +275,12 @@
       "titelFr": "Loi fédérale sur l'assurance-accidents (LAA) (Assurance-accidents et prévention des accidents)",
       "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF) (Assicurazione contro gli infortuni e prevenzione degli infortuni)",
       "botschaftKey": "BOTSCHAFT-2014-1712",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/723/de",
-      "sha": "6a5f667c945dfa46d9fc3310e00b505e4272478ef426a71be31e846723e3800a"
+      "sha": "2f5ec9376b86daa51434c3469240f96ec3fe5f8954c87561933fc905b6436885"
     },
     {
       "art": "aenderung",
@@ -106,56 +292,169 @@
       "titelFr": "Loi fédérale sur l'assurance-accidents (LAA) (Organisation et activités accessoires de la CNA)",
       "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF) (Organizzazione e attività accessorie dell'INSAI)",
       "botschaftKey": "BOTSCHAFT-2008-981",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/795/de",
-      "sha": "a3334ee04cb7f34671aa2b4ceed3b8240c9e9e7d3cdea63c8dc8f859905efcab"
+      "sha": "e5a5e8e20cb6ef14ee2cbaa3025fa2a79f9c1a0fc04797ca6a71c2ca24cc7fc7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 5233",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'accord sur la libre circulation des personnes entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, concernant l'extension à la République de Croatie",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Croazia dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2016-467",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/828/de",
+      "sha": "bb90556bcbac556ce4680f1e92fa83291e88f8600accc1894dc289b9650c8aa5"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "3deb69a5d8a8552208f584fc524c44fad6786ac503617b4596f897260edd631d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-07-16",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "15505a1d3594b1364ad1663c66f09e70379e20657a9129c375f888353f3d9685"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/428",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 3745",
+      "titelDe": "Bundesgesetz über Massnahmen zur Wahrung der inneren Sicherheit (BWIS)",
+      "titelFr": "Loi fédérale instituant des mesures visant au maintien de la sûreté intérieure (LMSI)",
+      "titelIt": "Legge federale sulle misure per la salvaguardia della sicurezza interna (LMSI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/428/de",
+      "sha": "2ce11e260eb2d12b647a45959b5c3265d6ca04a31ee39e6e12a6bb5601a6d2e3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "2531e6e327accf6863b530a0ff2ccaffc00af0fdcb665dd185390ea00b50892b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/673",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 4745",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Amélioration de la mise en uvre)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Miglioramento dell'esecuzione)",
+      "botschaftKey": "BOTSCHAFT-2011-61",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/673/de",
+      "sha": "d2034468173b6b387cdc98132b4839f40e08e7f9b5580215e67656d779c01ce3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "5d1e7435a9e2eda56d6ba5f844051a7f005866b145c4395ee6ca51938d08ff63"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 2411",
+      "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+      "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+      "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2008-472",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/296/de",
+      "sha": "e07086feffd5384b9382e60148cdf60e8e4f923f8b7078dfc66273593ff33371"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "49df3bcbecda3e9ba23499ac607e0bd0af12eed8bb0c80cf3b721b2edac7ef97"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/71",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2007 359",
+      "titelDe": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+      "titelFr": "Loi fédérale concernant des mesures en matière de lutte contre le travail au noir (Loi sur le travail au noir, LTN)",
+      "titelIt": "Legge federale concernente i provvedimenti in materia di lotta contro il lavoro nero (Legge contro il lavoro nero, LLN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/71/de",
+      "sha": "8c49b0cae192ecc05c30b72d4984d0a2891f2f707dabe9e4d1ab8ea72e302cf7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/860",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2007 6637",
+      "titelDe": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+      "titelFr": "Loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Loi sur l'Etat hôte, LEH)",
+      "titelIt": "Legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Legge sullo Stato ospite, LSO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/860/de",
+      "sha": "3d8170b90bb2b7b021cfd0503b559e780d73e04e78d0d454b491c30f9a6e1b74"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "4f50141ce8426a14539d527ca28bb47aeb606a877dc70dabb13a203a3d805d31"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2007 5259",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)",
+      "botschaftKey": "BOTSCHAFT-2006-52",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "sha": "c598ef37bb15cbed37724779fb3cdf4f7ee5459d0057f7498ef7d645fa90749b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "ec06e5d2cac777825024173644bc6984d765d09d099e2cd89e67256ce70993c8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "2417b47c25a46b83104bde8ba8c1111d4feb6282a8e75e09d9f8fc2b8d1ad22d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2006 979",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea",
+      "botschaftKey": "BOTSCHAFT-2004-1081",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/178/de",
+      "sha": "fb28e531ac518999edb18c74ef49b103f3639306177d1a467c84970b57cf997b"
     },
     {
       "art": "aenderung",
@@ -166,38 +465,153 @@
       "titelDe": "Bundesgesetz über die Unfallversicherung (UVG)",
       "titelFr": "Loi fédérale sur l'assurance-accidents (LAA)",
       "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/730/de",
-      "sha": "16ef3cb96513b80a19252ad03e2f131c9f2ddfb3391119c29a7bf09b89dfee35"
+      "sha": "c48925038a74ac7eb44c5d123a470f24ebc5547f47395c6b489890fbae503ba3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2006-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/734",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2005 5269",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "titelFr": "Loi fédérale sur la surveillance des entreprises d'assurance (Loi sur la surveillance des assurances, LSA)",
+      "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "botschaftKey": "BOTSCHAFT-2003-577",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/734/de",
+      "sha": "3bb19d6ce8ceccf5043121c9546b3c070bf0df00a9b1dd4126c8f2425ec230d9"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2005-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "b8b724765dd5bf38deb26bdfb0c3bbadb92842cca5ce47c3c2d9881f100e471c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/217",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2005 1429",
+      "titelDe": "Bundesgesetz über die Erwerbsersatzordnung für Dienstleistende in Armee, Zivildienst und Zivilschutz (Erwerbsersatzgesetz, EOG)",
+      "titelFr": "Loi fédérale du 25 septembre 1952 sur le régime des allocations pour perte de gain en faveur des personnes servant dans l'armée, dans le service civil ou dans la protection civile (Loi sur les allocations pour perte de gain, LAPG)",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno in caso di servizio militare, servizio civile o servizio di protezione civile (Legge sulle indennità di perdita di guadagno, LIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/217/de",
+      "sha": "ccf4cc25801c0e8843a9b592a393f89157ede227196b786fa76bef05c66ea502"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/472",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2005 2881",
+      "titelDe": "Bundesgesetz über die Übertragung der Führung der Militärversicherung an die SUVA",
+      "titelFr": "Loi fédérale sur le transfert à la CNA de la gestion de l'assurance militaire",
+      "titelIt": "Legge federale sul trasferimento della gestione dell'assicurazione militare all'INSAI",
+      "botschaftKey": "BOTSCHAFT-2004-552",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/472/de",
+      "sha": "f4dbb388e961f140c552f00d01fd0cecf62544c932d9524c291702e9f3aae563"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "6a31d8feac9a70e49304b1f41261f6f190e57d470998bdbead5832f73ea0121d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/13",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2004 297",
+      "titelDe": "Bundesgesetz über die Entlöhnung und weitere Vertragsbedingungen des obersten Kaders und der Mitglieder leitender Organe von Unternehmen und Anstalten des Bundes",
+      "titelFr": "Loi fédérale sur la rémunération et sur d'autres conditions contractuelles convenues avec les cadres du plus haut niveau hiérarchique et les membres des organes dirigeants des entreprises et établissements de la Confédération",
+      "titelIt": "Legge federale sulla rimunerazione e su altre condizioni contrattuali convenute con i quadri di grado più elevato e i membri degli organi dirigenti di aziende e di stabilimenti della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/13/de",
+      "sha": "401698c8b628c3623d3b7777804327d8d90513a50352aad03b6f106dc9afdc23"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "fa0ed2baa62b7edbcfea856af780afaa8bbd72288b5fec19c1777357d60e7d08"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/560",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 3837",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG)",
+      "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI)",
+      "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI)",
+      "botschaftKey": "BOTSCHAFT-2001-617",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/560/de",
+      "sha": "cddfba32e7564b256b2a1a6e40e48fd187c9a6618dd4c7f9f14b84bd35d8aa47"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "cf8bee30ca1f60fc7db709be8520f305502940ae08ee63a3037ccf172d2e565f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/510",
+      "dateDocument": "2000-10-06",
+      "roFundstelle": "AS 2002 3371",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/510/de",
+      "sha": "bf26edbafbe17107be2301a0822653d828883055d9c9db2a3bd39ba4f9d103c8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/511",
+      "dateDocument": "2002-06-21",
+      "roFundstelle": "AS 2002 3453",
+      "titelDe": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (Revision 1 des Anhangs zum ATSG)",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales (Révision 1 de l'annexe de la LPGA)",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente la modifica dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (Revisione 1 dell'allegato alla LPGA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/511/de",
+      "sha": "0dca73d715f13512d71df6bdc63a992dbe2a03128c5f32b4abee19185f367afa"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2002-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.20",
-      "sha": "a3c36a2ce25383def14e861bc111aaac7b970a190c96149d3b3ef70a29bb158c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/139",
+      "dateDocument": "2001-12-14",
+      "roFundstelle": "AS 2002 685",
+      "titelDe": "Bundesgesetz betreffend die Bestimmungen über die Personenfreizügigkeit im Abkommen vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
+      "titelFr": "Loi fédérale relative aux dispositions concernant la libre circulation des personnes de l'Accord du 21 juin 2001 amendant la Convention du 4 janvier 1960 instituant l'Association européenne de libre-échange (AELE)",
+      "titelIt": "Legge federale relativa alle disposizioni concernenti la libera circolazione delle persone dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS)",
+      "botschaftKey": "BOTSCHAFT-2001-845",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/139/de",
+      "sha": "9b1cb134a5494190b5b8d52140c0397ba4e22e4afb1b4de50ad6f6bd826dc012"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/140",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2002 701",
+      "titelDe": "Bundesgesetz zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit",
+      "titelFr": "Loi fédérale sur l'Accord entre, d'une part, la Confédération suisse et, d'autre part, la Communauté Européenne et ses Etats membres sur la libre circulation des personnes",
+      "titelIt": "Legge federale concernente l'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-1999-1_6128_5440_5092",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/140/de",
+      "sha": "e4ce2f0929fb8e04d07c4a4b0eb1633812a9b364fdeba53e410b4c9c86c8fc40"
     },
     {
       "art": "aenderung",
@@ -208,8 +622,11 @@
       "titelDe": "Bundesgesetz über die Unfallversicherung (UVG)",
       "titelFr": "Loi fédérale sur l'assurance-accidents (LAA)",
       "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/215/de",
-      "sha": "04346b9601ce8b03adabc7529e25f45fc753d3e193071f5cc232536023172666"
+      "sha": "ab9535b16796977bfcfaa667a3c1c4dc4612ff54d9a8b58ede3ae8378dafb204"
     },
     {
       "art": "aenderung",
@@ -221,8 +638,11 @@
       "titelFr": "Loi fédérale sur l'assurance-accidents (LAA)",
       "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF)",
       "botschaftKey": "BOTSCHAFT-2000-99",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/464/de",
-      "sha": "13bef94567857eda5db0409f7eb7749ebe29aa647b97b09cbe54fb158f4b7255"
+      "sha": "1a4df13db27980cbe57a13d9f87365f4e4cb6c084f90369e3d940a591eb2f104"
     },
     {
       "art": "aenderung",
@@ -233,21 +653,207 @@
       "titelDe": "Bundesgesetz über die Unfallversicherung (UVG)",
       "titelFr": "Loi fédérale sur l'assurance-accidents (LAA)",
       "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/181/de",
-      "sha": "7be8818708dc96284f4e27e3593237f79ea6487dbb070acde6c0147fb00141a1"
+      "sha": "7b68eaca95a42a830f82244c8392c176c9a5c2963998c922aca7661f15a47b62"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 1227",
+      "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+      "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+      "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1227_1227_1227/de",
+      "sha": "99e4d93f4bdf2021e12b8dc9c272ee41e3aeb4b1a8d60efe7ed30c1578478804"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1126_1126_1126",
+      "dateDocument": "1994-10-07",
+      "roFundstelle": "AS 1995 1126",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Herabsetzung des zivilrechtlichen Mündigkeits- und Ehefähigkeitsalters, Unterhaltspflicht der Eltern), Änderung",
+      "titelFr": "Code civil suisse (Abaissement de l'âge de la majorité civile et matrimoniale, obligation d'entretien des père et mère), Modification",
+      "titelIt": "Codice civile svizzero (Abbassamento della maggiore età civile e matrimomiale, obbligo di mantenimento da perte dei genitori) Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1126_1126_1126/de",
+      "sha": "09ce3596b5d5568d00b7e44c98a9398220f17ee409a642467927e61e8d43bac4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1328_1328_1328",
+      "dateDocument": "1994-03-18",
+      "roFundstelle": "AS 1995 1328",
+      "titelDe": "Bundesgesetz vom 18. März 1994 über die Krankenversicherung (KVG)",
+      "titelFr": "Loi fédérale du 18 mars 1994 sur l'assurance-maladie (LAMal)",
+      "titelIt": "Legge federale del 18 marzo 1994 sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1328_1328_1328/de",
+      "sha": "a4bd5afd3a10abd63bba27ed35d3fba5b80216ccaf695a1f178a9f8ab3847b96"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 288",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+      "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+      "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/288_288_288/de",
+      "sha": "06ed4605ada377a6fcdd3ec20188623be1ff353b4225569fd1f1df7ff5095aa8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3043_3043_3043",
+      "dateDocument": "1992-06-19",
+      "roFundstelle": "AS 1993 3043",
+      "titelDe": "Bundesgesetz vom 19. Juni 1992 über die Militärversicherung (MVG)",
+      "titelFr": "Loi fédérale du 19 juin 1992 sur l'assurance militaire (LAM)",
+      "titelIt": "Legge federale del 19 giugno 1992 sull'assicurazione militare (LAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3043_3043_3043/de",
+      "sha": "79c7f86d4ed26f5874b3a3e1addec77ba41aa9821115dbf3539937d335ecdaed"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3136_3136_3136",
+      "dateDocument": "1993-06-18",
+      "roFundstelle": "AS 1993 3136",
+      "titelDe": "Bundesgesetz über die Unfallversicherung (UVG), Änderung",
+      "titelFr": "Loi fédérale sur l'assurance-accidents (LAA), Modification",
+      "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3136_3136_3136/de",
+      "sha": "8ed8ac312dd2e451cb34f9586340914dd0bbde6f258728732515a6e6d9aa7a98"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/877_877_877",
+      "dateDocument": "1993-02-03",
+      "roFundstelle": "AS 1993 877",
+      "titelDe": "Verordnung vom 3. Februar 1993 über die vollständige Inkraftsetzung der Änderung des Bundesgesetzes über die Organisation der Bundesrechtspflege",
+      "titelFr": "Ordonnance du 3 février 1993 sur la mise en vigueur intégrale de la modification de la loi fédérale d'organisation judiciaire",
+      "titelIt": "Ordinanza del 3 febbraio 1993 sull'entrata in vigore integrale della modifica della legge federale sull'organizzazione giudiziaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/877_877_877/de",
+      "sha": "f3cf3edc752ef4cf165a1b6d3b6e645deebdbb8a944eac8e1a458defc1ef423b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/901_901_901",
+      "dateDocument": "1993-02-03",
+      "roFundstelle": "AS 1993 901",
+      "titelDe": "Verordnung vom 3. Februar 1993 über Vorinstanzen des Bundesgerichts und des Eidgenössischen Versicherungsgerichts",
+      "titelFr": "Ordonnance du 3 février 1993 sur les autorités dont les décisions peuvent être déférées au Tribunal fédéral ou au Tribunal fédéral des assurances",
+      "titelIt": "Ordinanza del 3 febbraio 1993 sulle autorità le cui decisioni possono essere deferite al Tribunale federale e al Tribunale federale delle assicurazioni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/901_901_901/de",
+      "sha": "93b2653dfea3f2d603c15bb916f14705277a42b022bd87710a0875188b52cb38"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1327_1327_1327",
+      "dateDocument": "1991-12-13",
+      "roFundstelle": "AS 1992 1327",
+      "titelDe": "Bundesgesetz über die Unfallversicherung (UVG), Änderung",
+      "titelFr": "Loi fédérale sur l'assurance-accidents (LAA), Modification",
+      "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1327_1327_1327/de",
+      "sha": "641ffc5df240565830881d2b8d56c8f4f88b0b914a7f9c785d8b6b25ab89f66c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/362_362_362",
+      "dateDocument": "1989-12-15",
+      "roFundstelle": "AS 1991 362",
+      "titelDe": "Bundesgesetz vom 15. Dezember 1989 über die Genehmigung kantonaler Erlasse durch den Bund",
+      "titelFr": "Loi fédérale du 15 décembre 1989 relative à l'approbation d'actes législatifs des cantons par la Confédération",
+      "titelIt": "Legge federale del 15 dicembre 1989 concernente l'approvazione di atti legislativi dei Cantoni da pare della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/362_362_362/de",
+      "sha": "2035b62181fd63cdb60d77fa6fc41da19e87c6dae7d8a52d28e08da6253eacc5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/797_797_797",
+      "dateDocument": "1982-06-25",
+      "roFundstelle": "AS 1983 797",
+      "titelDe": "Bundesgesetz vom 25. Juni 1982 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "titelFr": "Loi fédérale du 25 juin 1982 sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+      "titelIt": "Legge federale del 25 giugno 1982 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/797_797_797/de",
+      "sha": "0591938aa167b9298432f0d4653a6206d582353b3558b4f1a1e4ba3bc43d5f2e"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1984-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
-      "dateDocument": "1981-03-20",
-      "roFundstelle": "AS 1982 1676",
-      "titelDe": "Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG)",
-      "titelFr": "Loi fédérale du 20 mars 1981 sur l'assurance-accidents (LAA)",
-      "titelIt": "Legge federale del 20 marzo 1981 sull'assicurazione contro gli infortuni (LAINF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1676_1676_1676/de",
-      "sha": "8d83a93e081012658ebe6c2856c8524398e2487cc36b4815fffdfe108eab55f3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/2096_2096_2096",
+      "dateDocument": "1982-12-07",
+      "roFundstelle": "AS 1982 2096",
+      "titelDe": "Bundesgesetz über die Unfallversicherung (UVG), Berichtigung (nur ital.)",
+      "titelFr": "Loi fédérale sur l'assurance-accidents (LAA), Errata (seulement en italien)",
+      "titelIt": "Legge federale sull'assicurazione contro gli infortuni (LAINF), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/2096_2096_2096/de",
+      "sha": "53ef79efcfe9266fd8ca774d1d52a7230729cca65088061a7411b384cf1143c7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1724_1724_1724",
+      "dateDocument": "1982-09-20",
+      "roFundstelle": "AS 1982 1724",
+      "titelDe": "Verordnung vom 20. September 1982 über die Inkraftsetzung und Einführung des Bundesgesetzes über die Unfallversicherung",
+      "titelFr": "Ordonnance du 20 septembre 1982 sur la mise en vigueur et l'introduction de la loi sur l'assurance-accidents",
+      "titelIt": "Ordinanza del 20 settembre 1982 concernente l'entrata in vigore e l'attuazione della legge federale sull'assicurazione contro gli infortuni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1724_1724_1724/de",
+      "sha": "5ef6a1c7d8e1953a803d03fb1c91ba11df964582c93fb425dc0d4fff4758cf8c"
     }
   ],
-  "sha": "7a01a8e49f972ffaf3f033b405b86280e5b7bd9c05efe1c7be15feb3b542b075"
+  "sha": "f5b7a5444bba5c706e9dc56d48bc2d8615760de872acdb8d739702b0c62ce618"
 }

@@ -1,8 +1,8 @@
 {
   "erlassKey": "BPR",
   "sr": "161.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,31 @@
       "titelDe": "Bundesgesetz über die politischen Rechte (BPR) (Transparenz bei der Politikfinanzierung)",
       "titelFr": "Loi fédérale sur les droits politiques (LDP) (Transparence du financement de la vie politique)",
       "titelIt": "Legge federale sui diritti politici (LDP) (Trasparenza nel finanziamento della politica)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/466/de",
-      "sha": "a937fbcab706aacffd0f0f47575c77f3e3d17a9c69c0bda0785f90332e15d480"
+      "sha": "bb14b8f96c497242b80b763a8bb0ad0273cd2574a752bd64f55e0c25b7cc50e9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "672588eda7a3ea2c17c6c2e701905a20c838abcddfaec6dba6b1d7c0e87477dd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/79",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 543",
+      "titelDe": "Bundesgesetz über die politischen Rechte (Nationalratswahlen)",
+      "titelFr": "Loi fédérale sur les droits politiques (Election du Conseil national)",
+      "titelIt": "Legge federale sui diritti politici (Elezione del Consiglio nazionale)",
+      "botschaftKey": "BOTSCHAFT-2013-1844",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-03-01",
+        "2015-11-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/79/de",
+      "sha": "d38d886d518343f611d723fc3c52b0b7ad8a8db27e59fd582b789ec3ed68e473"
     },
     {
       "art": "aenderung",
@@ -32,14 +49,31 @@
       "titelFr": "Loi fédérale sur les droits politiques (Election du Conseil national)",
       "titelIt": "Legge federale sui diritti politici (Elezione del Consiglio nazionale)",
       "botschaftKey": "BOTSCHAFT-2013-1844",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-03-01",
+        "2015-11-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/79/de",
-      "sha": "e1034140f1fa61b622d275d9c0614baaa17247074a472e1a39472618329cd5df"
+      "sha": "fb94efab7950bd37220387fd66e9ad75f1b8bff5f8b555ad1d88f78a431b6f94"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "81e00e22cc42dbcc8be1b1a6d0952705b961b089b9b910658ecbe4cc440117cd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
       "art": "aenderung",
@@ -50,8 +84,12 @@
       "titelDe": "Bundesgesetz über die politischen Rechte (Bedingter Rückzug einer Volksinitiative)",
       "titelFr": "Loi fédérale sur les droits politiques (Retrait conditionnel d'une initiative populaire)",
       "titelIt": "Legge federale sui diritti politici (Ritiro condizionato di un'iniziativa popolare)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/35/de",
-      "sha": "6b2c58ac7517eeab746a32793173b8b4d1948679a29db2ba5ab151ed8943baf0"
+      "sha": "d9e9268444032d754814f3321107fc0bc5f281135e6076de2373e902138c585d"
     },
     {
       "art": "aenderung",
@@ -62,14 +100,27 @@
       "titelDe": "Bundesgesetz über die politischen Rechte",
       "titelFr": "Loi fédérale sur les droits politiques",
       "titelIt": "Legge federale sui diritti politici",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/1/de",
-      "sha": "11876e4b1420eb6ffa221076221615fd7dddb6dcf3cfd64a21181c824f80990b"
+      "sha": "6b0fe10e7826f754ea7d30d7a6e240f08be64928895d57fe0f3603b4ec5d381c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "6a28263c8a38803e82d29c21bf98c0129cfea9d08cd097895eb821d201aea960"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "39818a52f3d1b0d46ce5d43f4f769f3161e686721e6147b36164552748bcf45d"
     },
     {
       "art": "aenderung",
@@ -81,32 +132,98 @@
       "titelFr": "Loi fédérale sur la révision de la législation sur les droits politiques",
       "titelIt": "Legge federale che modifica la legislazione federale in materia di diritti politici",
       "botschaftKey": "BOTSCHAFT-2006-639",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/649/de",
-      "sha": "b941513ccfb1fa38feefa5502da8677e9832f9bef6668f055da2c42598992b83"
+      "sha": "fbc90e426bbabcc84fb7b7bb7ef401c3e3859fc6eb099cb0475382e3cf82d3e0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/869",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2007 6743",
+      "titelDe": "Bundesgesetz über die eidgenössische Volkszählung (Volkszählungsgesetz)",
+      "titelFr": "Loi sur le recensement fédéral de la population (Loi sur le recensement)",
+      "titelIt": "Legge sul censimento federale della popolazione (Legge sul censimento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/869/de",
+      "sha": "46ba34b6908977eaf79e2c48dca52da7359fea0aa75fa85d28d118c2366bf82b"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "bebc54e753e2d3e060bed48acbcfaea9f852276a3489a060582cab0773606723"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 3543",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2003-12-01",
+        "2007-12-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/510/de",
+      "sha": "88050eeb7c53fa0b831d1aaaf891bd646d7cf2d58ce73a6b209225c6b60e4374"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "3b0d761ae24daf6496e7ff0c1e6de49233d5fafa7eaa8c23f75192bdc50033ef"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 1205",
+      "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+      "titelIt": "Legge sul Tribunale federale (LTF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
+      "sha": "98cfb234a9f87b0ed57ba6f7b06416cbec409da41436ddb72a688384571defa0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "85eca6fc66072043ea3fbb8f59129303bb9f6562f6c8542808c8e59d25a397b6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/745",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2004 4929",
+      "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
+      "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubb)",
+      "botschaftKey": "BOTSCHAFT-2003-1274",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/745/de",
+      "sha": "cbe15406d65c5a11088817014e2522ad6ed789fcfd1d63d7cd595f23c0600345"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "5ed312321023ae6aefbf1cf5b7330a70933d93c2af285711a3c374fbd8710345"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 3543",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2003-12-01",
+        "2007-12-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/510/de",
+      "sha": "ed0d5097b6dcb4e0b24c76d522c8ae9cb5703293e4acf1181051e8eaa4c9fbba"
     },
     {
       "art": "aenderung",
@@ -118,14 +235,18 @@
       "titelFr": "Loi fédérale sur les droits politiques",
       "titelIt": "Legge federale sui diritti politici",
       "botschaftKey": "BOTSCHAFT-2001-1111",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/478/de",
-      "sha": "e7b80e91b75fac8571936a45ea12bd4c2fede7b9201fab8ca077dfc359820266"
+      "sha": "cabf8cbff3e34f22bd26d99258f7781f9140257f16198b70f920068f7a28211f"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2002-06-21",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/161.1",
-      "sha": "c1b2925e4d747810cdaaa5b1fa15ba6b1cede6d803483cd2029ec6e541a0c02b"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1978/688_688_688/20020621/de",
+      "sha": "c908cfab10d4acc8e4bcae1f4db29c211e9452d78ced6c8c328cf828b2b47d9a"
     },
     {
       "art": "aenderung",
@@ -137,8 +258,58 @@
       "titelFr": "Loi fédérale sur les droits politiques (LDP)",
       "titelIt": "Legge federale sui diritti politici (LDP)",
       "botschaftKey": "BOTSCHAFT-1999-1_7922_7145_6784",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/90/de",
-      "sha": "f7adb6bce63aae716bd192e4049825e70031b3065054d161ea323c07082d6809"
+      "sha": "a94973ac2bec5dc4c5b0528368864699d98731767d55147f35b4f448c7a61cda"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753",
+      "dateDocument": "1996-06-21",
+      "roFundstelle": "AS 1997 753",
+      "titelDe": "Bundesgesetz über die politischen Rechte, Änderung",
+      "titelFr": "Loi fédérale sur les droits politiques, Modification",
+      "titelIt": "Legge federale sui diritti politici, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/753_753_753/de",
+      "sha": "c518c6cff7a25317243661c59485ecb2f037197b38b84225416c0f97987387c9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/760_760_760",
+      "dateDocument": "1997-02-26",
+      "roFundstelle": "AS 1997 760",
+      "titelDe": "Verordnung vom 26. Februar 1997 über die Inkraftsetzung der Änderung des Bundesgesetzes über die politischen Rechte",
+      "titelFr": "Ordonnance du 26 février 1997 sur l'entrée en vigueur de la modification de la loi fédérale sur les droits politiques",
+      "titelIt": "Ordinanza del 26 febbraio 1997 concernente l'entrata in vigore della modifica della legge federale sui diritti politici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/760_760_760/de",
+      "sha": "386a78edf125b7503a4fd7f4afe888864235f0e68edb9e408070a40213e68923"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-11-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2414_2414_2414",
+      "dateDocument": "1994-03-18",
+      "roFundstelle": "AS 1994 2414",
+      "titelDe": "Bundesgesetz über die politischen Rechte (Nationalratswahlverfahren), Änderung",
+      "titelFr": "Loi fédérale sur les droits politiques (Procédure pour l'élection au Conseil national), Modification",
+      "titelIt": "Legge federale sui diritti politici (Procedura d'elezione del Consiglio nazionale), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2414_2414_2414/de",
+      "sha": "acb023a305004234b001806b6c4f88ab1fd95dbde09befe0394ec0e1a12aed0e"
     },
     {
       "art": "aenderung",
@@ -149,21 +320,126 @@
       "titelDe": "Bundesgesetz über die politischen Rechte (Betrifft nur den französischen Text)",
       "titelFr": "Loi fédérale sur les droits politiques",
       "titelIt": "Legge federale sui diritti politici (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/331/de",
-      "sha": "03c94c051cca0596f106edfd18a41c960055cb9da32709aa45b3b7e8faf320c6"
+      "sha": "36776da5425ddc1e7dbf819557a1a72c2c8761aaae327bf98124d6f755e1b7ab"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2388_2388_2388",
+      "dateDocument": "1991-03-22",
+      "roFundstelle": "AS 1991 2388",
+      "titelDe": "Bundesgesetz über die politischen Rechte der Auslandschweizer, Änderung",
+      "titelFr": "Loi fédérale sur les droits politiques des Suisses de l'étranger, Modification",
+      "titelIt": "Legge federale sui diritti politici degli Svizeri all'estero, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2388_2388_2388/de",
+      "sha": "b8df6b300b50e20443d521fe9adbeeb056b17070cb0b8cf2ebe58bcb5b3160cd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/260_260_260",
+      "dateDocument": "1988-10-07",
+      "roFundstelle": "AS 1989 260",
+      "titelDe": "Geschäftsverkehrsgesetz, Änderung",
+      "titelFr": "Loi sur les rapports entre les conseils, Modification",
+      "titelIt": "Legge sui rapporti fra i Consigli, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/260_260_260/de",
+      "sha": "d20e88b5ae43b3c1e3f003ce820c6705fda9f66f8bcec54f2bed4bcb0cc50fa2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-05-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/600_600_600",
+      "dateDocument": "1986-03-21",
+      "roFundstelle": "AS 1987 600",
+      "titelDe": "Bundesgesetz vom 21. März 1986 über die Gesetzessammlungen und das Bundesblatt (Publikationsgesetz)",
+      "titelFr": "Loi fédérale du 21 mars 1986 sur les recueils de lois et la Feuille fédérale (Loi sur les publications officielles)",
+      "titelIt": "Legge federale del 21 marzo 1986 sulle raccolte delle leggi e sul Foglio federale (Legge sulle pubblicazioni ufficiali)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/600_600_600/de",
+      "sha": "f1937d27ddcf5e3f7da273a866dc0942747519d93e1cb41042be4bbb6b4d5a55"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1694_1694_1694",
+      "dateDocument": "1978-03-09",
+      "roFundstelle": "AS 1978 1694",
+      "titelDe": "Bundesgesetz vom 9. März 1978 über die Änderung von Bundesgesetzen im Anschluss an die Gründung des Kantons Jura",
+      "titelFr": "Loi fédérale du 9 mars 1978 concernant la revision des lois fédérales à la suite de la création du canton du Jura",
+      "titelIt": "Legge federale del 9 marzo 1978 concernente la revisione di leggi federali in seguito alla creazione del Cantone Giura",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1694_1694_1694/de",
+      "sha": "ea2bffb33c141f486a78b1a0df52626ed1c2b145b1c88ee458c965ed3c27f807"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1978-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/688_688_688",
-      "dateDocument": "1976-12-17",
-      "roFundstelle": "AS 1978 688",
-      "titelDe": "Bundesgesetz vom 17. Dezember 1976 über die politischen Rechte (BPR)",
-      "titelFr": "Loi fédérale du 17 décembre 1976 sur les droits politiques (LDP)",
-      "titelIt": "Legge federale del 17 dicembre 1976 sui diritti politici (LDP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/688_688_688/de",
-      "sha": "6ebd831a1b4db1a3af4153351d728e90694227b76fdf7cd127a7b245c11cc4cb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1400_1400_1400",
+      "dateDocument": "1978-09-12",
+      "roFundstelle": "AS 1978 1400",
+      "titelDe": "Bundesgesetz über die politischen Rechte, Berichtigung (nur ital.)",
+      "titelFr": "Loi fédérale sur les droits politiques, Errata (seulement en italien)",
+      "titelIt": "Legge federale sui diritti politici, Correzioni",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1400_1400_1400/de",
+      "sha": "eb88a4c74b652a8a96a34be9a11e78d9b46410d833f5b226c6a519ffba73cfce"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1552_1552_1552",
+      "dateDocument": "1978-10-17",
+      "roFundstelle": "AS 1978 1552",
+      "titelDe": "Bundesgesetz über die politischen Rechte, Berichtigung (nur ital.)",
+      "titelFr": "Loi fédérale sur les droits politiques, Errata (seulement en italien)",
+      "titelIt": "Legge federale sui diritti politici, Correzioni",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1552_1552_1552/de",
+      "sha": "af889a6835f281f2dc01da13de61d1aaf73acb0729f9dc39257d6306150b2972"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/__1384",
+      "dateDocument": "1978-09-05",
+      "titelIt": "Correzioni: Legge federale sui diritti politici; Ordinanza sull'assicurazione per la vecchiaia e per i superstiti",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/__1384/de",
+      "sha": "981ec71e6af293927af4afbd89974ca08a3777de0b487f3de3279416b01cf22c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/__1146",
+      "dateDocument": "1979-08-21",
+      "titelIt": "Correzione: Legge federale sui diritti politici",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/__1146/de",
+      "sha": "08e5fdda5e060f0c64e4af870d9d09f1f3555db52f7ec956b42898b5f39545e5"
     }
   ],
-  "sha": "77b41f92a1073357d3f5b2e75a751ec28aca4605e139e0539ba77364a759e331"
+  "sha": "0ee471f54b67e46dc668f2e67a14fec5afe99d697f6121286d1bfc1f98ace025"
 }

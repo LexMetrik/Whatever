@@ -155,5 +155,72 @@
     "2026-10-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2019/758",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+    "inkrafttreten": "2020-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+        "typ": 5,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+        "typ": 1,
+        "datum": "2021-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+        "typ": 1,
+        "datum": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/399",
+        "typ": 5,
+        "datum": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+        "typ": 1,
+        "datum": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+        "typ": 1,
+        "datum": "2026-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2021/33": {
+        "dateForce": "2021-02-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/399": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Verordnung vom 18. Juni 2021 über die abschliessende Inkraftsetzung des Bundesgesetzes zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Ordonnance du 18 juin 2021 portant dernière mise en vigueur partielle de la loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Ordinanza del 18 giugno 2021 concernente l’entrata in vigore integrale della legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/53": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/323": {
+        "dateForce": "2026-10-01",
+        "dateDoc": "2025-09-26",
+        "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+        "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+        "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)"
+      }
+    }
+  }
 }

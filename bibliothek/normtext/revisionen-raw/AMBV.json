@@ -1193,5 +1193,104 @@
     "2025-03-15"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2018/786",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2018/786",
+    "inkrafttreten": "2019-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/786",
+        "typ": 5,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/786",
+        "typ": 30,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/308",
+        "typ": 6,
+        "datum": "2019-05-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/409",
+        "typ": 6,
+        "datum": "2019-07-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/16",
+        "typ": 1,
+        "datum": "2022-01-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/349",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+        "typ": 1,
+        "datum": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/723",
+        "typ": 2,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/322",
+        "typ": 1,
+        "datum": "2024-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/109",
+        "typ": 1,
+        "datum": "2025-03-15"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2022/349": {
+        "dateForce": "2022-07-01",
+        "dateDoc": "2022-06-03",
+        "titelDe": "Verordnung über die Tierarzneimittel (Tierarzneimittelverordnung, TAMV)",
+        "titelFr": "Ordonnance sur les médicaments vétérinaires (OMédV)",
+        "titelIt": "Ordinanza sui medicamenti per uso veterinario (Ordinanza sui medicamenti veterinari, OMVet)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/698": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2022-10-19",
+        "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+        "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+        "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/723": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-23",
+        "titelDe": "Organisationsverordnung für das Eidgenössische Departement des Innern (OV-EDI)",
+        "titelFr": "Ordonnance sur l’organisation du Département fédéral de l’intérieur (Org DFI)",
+        "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale dell’interno (OOrg-DFI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/322": {
+        "dateForce": "2024-11-01",
+        "dateDoc": "2024-06-07",
+        "titelDe": "Verordnung über klinische Versuche mit Ausnahme klinischer Versuche mit Medizinprodukten (Verordnung über klinische Versuche, KlinV)",
+        "titelFr": "Ordonnance sur les essais cliniques hors essais cliniques de dispositifs médicaux (Ordonnance sur les essais cliniques, OClin)",
+        "titelIt": "Ordinanza sulle sperimentazioni cliniche ad eccezione delle sperimentazioni cliniche con dispositivi medici (Ordinanza sulle sperimentazioni cliniche, OSRUm)"
+      }
+    }
+  }
 }

@@ -1,8 +1,8 @@
 {
   "erlassKey": "ENTG",
   "sr": "711",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,45 +14,137 @@
       "titelFr": "Loi fédérale sur l'expropriation (LEx)",
       "titelIt": "Legge federale sull'espropriazione (LEspr)",
       "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
-      "sha": "fc8d5ccb4bb71af16c03432928c365260893dfcffa9f8f172b76e0788a130f54"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/711",
-      "sha": "d6aaa02a15f488679c8c406a224302272f590518d2d647b52f5844bdb7e1f5a7"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/711",
-      "sha": "05f52d216b40dc403799ca9f35e5c97243f47a7ee83fcd8a0929576144b4d10e"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/711",
-      "sha": "2ed48e3777449b0eb222fe338c50fa2e57084cdb43d7f71aff0d4418861a8be1"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/711",
-      "sha": "013b2112915b487995947a40e3e97b28023a681acc68717b073f38d46714ac3b"
+      "sha": "5d2fe40ec35fb6880b8e7211ecb9cf76c90b7e2beb54ef058df0ac62aba90834"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1932-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/47/689_701_723",
-      "dateDocument": "1930-06-20",
-      "roFundstelle": "AS 47 689",
-      "titelDe": "Bundesgesetz vom 20. Juni 1930 über die Enteignung (EntG)",
-      "titelFr": "Loi fédérale du 20 juin 1930 sur l'expropriation (LEx)",
-      "titelIt": "Legge federale del 20 giugno 1930 sull'espropriazione (LEspr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/47/689_701_723/de",
-      "sha": "a21a2dcd4efd1731a7e24a2a1a1044ccd6d1f50ab3037688c544e8976b9e1b89"
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/666",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2011 4637",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+      "titelFr": "Code civil suisse (Cédule hypothécaire de registre et autres modifications des droits réels)",
+      "titelIt": "Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali)",
+      "botschaftKey": "BOTSCHAFT-2007-756",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/666/de",
+      "sha": "157c14bd6c7086190980387f2d916f3d2d7f4b1c71431242e556a278b49a8d56"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/214_214_214",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1996 214",
+      "titelDe": "Bundesgesetz über den Natur- und Heimatschutz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de la nature et du paysage, Modification",
+      "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/214_214_214/de",
+      "sha": "c1a1798ec1b42e400473b942d85db2c9ac58635d291e68be837104da313c11e9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/904_916_1076",
+      "dateDocument": "1971-03-18",
+      "roFundstelle": "AS 1972 904",
+      "titelDe": "Bundesgesetz vom 18. März 1971 betreffend Änderung des Bundesgesetzes über die Enteignung",
+      "titelFr": "Loi fédérale du 18 mars 1971 modifiant la loi sur l'expropriation",
+      "titelIt": "Legge federale del 18 marzo 1971 che modifica quella sulla espropriazione",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/904_916_1076/de",
+      "sha": "e942449b8a9fd4f6b8bd5e09ae06b1dbcc0986e1762afebc4f6874f28df4c446"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1969-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/767_787_784",
+      "dateDocument": "1968-12-20",
+      "roFundstelle": "AS 1969 767",
+      "titelDe": "Bundesgesetz über die Änderung des Bundesgesetzes über die Organisation der Bundesrechtspflege",
+      "titelFr": "Loi fédérale modifiant la loi fédérale d'organisation judiciaire",
+      "titelIt": "Legge federale che modifica quella sulla organizzazione giudiziaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/767_787_784/de",
+      "sha": "68aeaae5c47c58d5b5dc247f25ffc093aabc0d620c2814930a3f56e8506833a3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1945-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/60/271_269_275",
+      "dateDocument": "1943-12-16",
+      "roFundstelle": "AS 60 271",
+      "titelDe": "Bundesgesetz vom 16. Dezember 1943 über die Organisation der Bundesrechtspflege (Bundesrechtspflegegesetz, OG)",
+      "titelFr": "Loi fédérale du 16 décembre 1943 d'organisation judiciaire (Organisation judiciaire, OJ)",
+      "titelIt": "Legge federale del 16 dicembre 1943 sull'organizzazione giudiziaria (Organizzazione giudiziaria, OG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/60/271_269_275/de",
+      "sha": "e238831ed6cb8ce86d1c7ba4ba2d66c6d0b0be894984c263866f608c15537104"
     }
   ],
-  "sha": "d4cb705e5dd56b124a45b0519d50a265edafdb02af489a53eda887b1270c5524"
+  "sha": "b5e70be4cec25876f9868127e00717b14f7ea8203cb03d87fd98c6e3f0204a96"
 }

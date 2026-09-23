@@ -973,5 +973,80 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2020/552",
       "zielFundstelle": "AS 2020 2977"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2020/552",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2020/552",
+    "inkrafttreten": "2021-05-26",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/552",
+        "typ": 5,
+        "datum": "2021-05-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/260",
+        "typ": 6,
+        "datum": "2021-05-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/281",
+        "typ": 1,
+        "datum": "2021-05-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/281",
+        "typ": 2,
+        "datum": "2021-05-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/291",
+        "typ": 1,
+        "datum": "2022-05-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/291",
+        "typ": 2,
+        "datum": "2022-05-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/576",
+        "typ": 1,
+        "datum": "2023-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/742",
+        "typ": 1,
+        "datum": "2026-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2022/291": {
+        "dateForce": "2022-05-26",
+        "dateDoc": "2022-05-04",
+        "titelDe": "Verordnung vom 4. Mai 2022 über In-vitro-Diagnostika (IvDV)",
+        "titelFr": "Ordonnance du 4 mai 2022 sur les dispositifs médicaux de diagnostic in vitro (ODiv)",
+        "titelIt": "Ordinanza del 4 maggio 2022 relativa ai dispositivi medico-diagnostici in vitro (ODIV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/742": {
+        "dateForce": "2026-07-01",
+        "dateDoc": "2024-11-20",
+        "titelDe": "Verordnung über In-vitro-Diagnostika (IvDV) (Produkteregistrierungspflicht)",
+        "titelFr": "Ordonnance sur les dispositifs médicaux de diagnostic in vitro (ODiv) (Obligation d’enregistrement des dispositifs)",
+        "titelIt": "Ordinanza relativa ai dispositivi medico-diagnostici in vitro (ODIV) (Obbligo di registrazione dei dispositivi)"
+      }
+    }
   }
 }

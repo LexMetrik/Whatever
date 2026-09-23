@@ -2763,5 +2763,1164 @@
     "2026-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1959/679_705_685",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1959/679_705_685",
+    "inkrafttreten": "1959-10-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317",
+        "typ": 1,
+        "datum": "1959-11-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317",
+        "typ": 5,
+        "datum": "1959-11-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/679_705_685",
+        "typ": 5,
+        "datum": "1959-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/679_705_685",
+        "typ": 30,
+        "datum": "1960-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/679_705_685",
+        "typ": 30,
+        "datum": "1960-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/679_705_685",
+        "typ": 30,
+        "datum": "1960-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/679_705_685",
+        "typ": 30,
+        "datum": "1963-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1959/858_888_876",
+        "typ": 1,
+        "datum": "1960-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1960/1157_1209_1205",
+        "typ": 1,
+        "datum": "1960-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1960/1157_1209_1205",
+        "typ": 5,
+        "datum": "1960-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1960/1308_1365_1365",
+        "typ": 1,
+        "datum": "1960-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1960/1308_1365_1365",
+        "typ": 5,
+        "datum": "1960-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1960/525_569_555",
+        "typ": 1,
+        "datum": "1960-06-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1962/1362_1407_1417",
+        "typ": 1,
+        "datum": "1963-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1962/1364_1409_1420",
+        "typ": 1,
+        "datum": "1963-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1962/1364_1409_1420",
+        "typ": 5,
+        "datum": "1963-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1966/1493_1543_1531",
+        "typ": 1,
+        "datum": "1967-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1966/1493_1543_1531",
+        "typ": 5,
+        "datum": "1967-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1967/1114_1154_1147",
+        "typ": 1,
+        "datum": "1967-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/1605_1636_1809",
+        "typ": 1,
+        "datum": "1972-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1257_1257_1257",
+        "typ": 1,
+        "datum": "1975-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1268_1268_1268",
+        "typ": 1,
+        "datum": "1975-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1268_1268_1268",
+        "typ": 5,
+        "datum": "1975-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857",
+        "typ": 1,
+        "datum": "1976-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857",
+        "typ": 5,
+        "datum": "1976-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2810_2810_2810",
+        "typ": 1,
+        "datum": "1977-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2810_2810_2810",
+        "typ": 5,
+        "datum": "1977-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/1583_1583_1583",
+        "typ": 1,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/1583_1583_1583",
+        "typ": 5,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/1509_1509_1509",
+        "typ": 1,
+        "datum": "1981-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1981/505_505_505",
+        "typ": 1,
+        "datum": "1981-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
+        "typ": 1,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
+        "typ": 2,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/808_808_808",
+        "typ": 1,
+        "datum": "1984-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/1974_1974_1974",
+        "typ": 1,
+        "datum": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+        "typ": 1,
+        "datum": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+        "typ": 2,
+        "datum": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/71_71_71",
+        "typ": 1,
+        "datum": "1991-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78",
+        "typ": 1,
+        "datum": "1991-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78",
+        "typ": 5,
+        "datum": "1991-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/534_534_534",
+        "typ": 1,
+        "datum": "1992-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3043_3043_3043",
+        "typ": 1,
+        "datum": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/325_325_325",
+        "typ": 1,
+        "datum": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3330_3330_3330",
+        "typ": 1,
+        "datum": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/815_815_815",
+        "typ": 1,
+        "datum": "1994-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/815_815_815",
+        "typ": 5,
+        "datum": "1994-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5462_5462_5462",
+        "typ": 1,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1075_1075_1075",
+        "typ": 1,
+        "datum": "1996-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3045_3045_3045",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1438_1438_1438",
+        "typ": 1,
+        "datum": "1998-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1794_1794_1794",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 2,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/472",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/495",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/497",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/566",
+        "typ": 6,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/408",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/408",
+        "typ": 1,
+        "datum": "2003-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/510",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/30",
+        "typ": 1,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/30",
+        "typ": 2,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/468",
+        "typ": 1,
+        "datum": "2003-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/468",
+        "typ": 5,
+        "datum": "2003-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+        "typ": 1,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/350",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/350",
+        "typ": 5,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/56",
+        "typ": 1,
+        "datum": "2004-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/56",
+        "typ": 5,
+        "datum": "2004-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/778",
+        "typ": 1,
+        "datum": "2005-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/778",
+        "typ": 1,
+        "datum": "2005-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/778",
+        "typ": 5,
+        "datum": "2005-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/249",
+        "typ": 1,
+        "datum": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/189",
+        "typ": 1,
+        "datum": "2008-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/530",
+        "typ": 1,
+        "datum": "2008-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/853",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/846",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/347",
+        "typ": 1,
+        "datum": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/428",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/710",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/23",
+        "typ": 1,
+        "datum": "2012-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/744",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/744",
+        "typ": 1,
+        "datum": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/744",
+        "typ": 2,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/821",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/821",
+        "typ": 1,
+        "datum": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/821",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/821",
+        "typ": 5,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/891",
+        "typ": 6,
+        "datum": "2013-12-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/242",
+        "typ": 1,
+        "datum": "2014-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/293",
+        "typ": 6,
+        "datum": "2014-06-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/288",
+        "typ": 6,
+        "datum": "2015-05-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/488",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/488",
+        "typ": 5,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/489",
+        "typ": 1,
+        "datum": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/489",
+        "typ": 5,
+        "datum": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/328",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/376",
+        "typ": 6,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/391",
+        "typ": 1,
+        "datum": "2016-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+        "typ": 1,
+        "datum": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/271",
+        "typ": 1,
+        "datum": "2018-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/271",
+        "typ": 5,
+        "datum": "2018-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/271",
+        "typ": 6,
+        "datum": "2018-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/425",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/781",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/781",
+        "typ": 5,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+        "typ": 1,
+        "datum": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/355",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+        "typ": 1,
+        "datum": "2023-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+        "typ": 1,
+        "datum": "2024-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+        "typ": 1,
+        "datum": "2025-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+        "typ": 1,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+        "typ": 2,
+        "datum": "2023-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/131",
+        "typ": 1,
+        "datum": "2024-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/548",
+        "typ": 5,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/49",
+        "typ": 5,
+        "datum": "2025-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/225",
+        "typ": 5,
+        "datum": "2026-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317": {
+        "dateForce": "1959-11-20",
+        "dateDoc": "1959-11-20",
+        "roId": "RO 1959 1321",
+        "titelDe": "Verkehrsversicherungsverordnung vom 20. November 1959 (VVV)",
+        "titelFr": "Ordonnance du 20 novembre 1959 sur l'assurance des véhicules (OAV)",
+        "titelIt": "Ordinanza del 20 novembre 1959 sull'assicurazione dei veicoli (OAV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1959/858_888_876": {
+        "dateForce": "1960-01-01",
+        "dateDoc": "1959-06-19",
+        "roId": "RO 1959 888",
+        "titelDe": "Bundesgesetz betreffend Änderung verschiedener Bestimmungen auf dem Gebiete der Unfallversicherung",
+        "titelFr": "Loi fédérale modifiant diverses dispositions en matière d'assurance-accidents",
+        "titelIt": "Legge federale che modifica alcune disposizioni sull'assicurazione contro gli infortuni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1960/1157_1209_1205": {
+        "dateForce": "1960-11-01",
+        "dateDoc": "1960-10-21",
+        "roId": "RO 1960 1209",
+        "titelDe": "Bundesratsbeschluss vom 21. Oktober 1960 über Masse und Gewichte der Motorwagen und Anhänger sowie über Sattelmotorfahrzeuge",
+        "titelFr": "Arrêté du Conseil fédéral du 21 octobre 1960 concernant les dimensions et le poids des voitures automobiles et des remorques ainsi que les véhicules articulés",
+        "titelIt": "Decreto del Consiglio federale del 21 ottobre 1960 concernente le dimensioni e il peso degli autoveicoli e dei rimorchi e gli autoveicoli articolati"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1960/1308_1365_1365": {
+        "dateForce": "1960-12-01",
+        "dateDoc": "1960-11-08",
+        "roId": "RO 1960 1365",
+        "titelDe": "Bundesratsbeschluss vom 8. November 1960 über die Gestaltung der Ausweise für Motorfahrzeuge und ihre Führer",
+        "titelFr": "Arrêté du Conseil fédéral du 8 novembre 1960 concernant la forme des permis pour véhicules automobiles et pour leurs conducteurs",
+        "titelIt": "Decreto del Consiglio federale del 8 novembre 1960 concernente la forma delle licenze per i veicoli a motore e per i loro conducenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1960/525_569_555": {
+        "dateForce": "1960-06-21",
+        "dateDoc": "1960-03-08",
+        "roId": "RO 1960 569",
+        "titelDe": "Bundesgesetz vom 8. März 1960 über die Nationalstrassen (NSG)",
+        "titelFr": "Loi fédérale du 8 mars 1960 sur les routes nationales (LRN)",
+        "titelIt": "Legge federale dell'8 marzo 1960 sulle strade nazionali (LSN)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1962/1362_1407_1417": {
+        "dateForce": "1963-01-01",
+        "dateDoc": "1961-06-23",
+        "roId": "RO 1962 1407",
+        "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über den Strassenverkehr",
+        "titelFr": "Loi fédérale modifiant la loi sur la circulation routière",
+        "titelIt": "Legge federale che modifica quella sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1962/1364_1409_1420": {
+        "dateForce": "1963-01-01",
+        "dateDoc": "1962-11-13",
+        "roId": "RO 1962 1409",
+        "titelDe": "Verkehrsregelnverordnung vom 13. November 1962 (VRV)",
+        "titelFr": "Ordonnance du 13 novembre 1962 sur les règles de la circulation routière (OCR)",
+        "titelIt": "Ordinanza del 13 novembre 1962 sulle norme della circolazione stradale (ONC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1966/1493_1543_1531": {
+        "dateForce": "1967-03-01",
+        "dateDoc": "1966-11-22",
+        "roId": "RO 1966 1543",
+        "titelDe": "Bundesratsbeschluss vom 22. November 1966 über die Typenprüfung von Fahrzeugen und Fahrzeugteilen sowie die Nachprüfung von Fahrzeugen",
+        "titelFr": "Arrêté du Conseil fédéral du 22 novembre 1966 concernant l'expertise des types de véhicules et de leurs accessoires, ainsi que le contrôle subséquent des véhicules",
+        "titelIt": "Decreto del Consiglio federale del 22 novembre 1966 concernente l'esame del tipo per i veicoli e le parti di veicolo e l'esame successivo dei veicoli"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1967/1114_1154_1147": {
+        "dateForce": "1967-09-01",
+        "dateDoc": "1967-03-16",
+        "roId": "RO 1967 1154",
+        "titelDe": "Bundesgesetz betreffend die Änderung des Bundesgesetzes über den Strassenverkehr",
+        "titelFr": "Loi fédérale complétant la loi sur la circulation routière",
+        "titelIt": "Legge federale che modifica quella sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1972/1605_1636_1809": {
+        "dateForce": "1972-08-01",
+        "dateDoc": "1972-03-09",
+        "roId": "RO 1972 1636",
+        "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über den Strassenverkehr",
+        "titelFr": "Loi fédérale modifiant la loi sur la circulation routière",
+        "titelIt": "Legge federale che modifica quella sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/1257_1257_1257": {
+        "dateForce": "1975-08-01",
+        "dateDoc": "1975-03-20",
+        "roId": "RO 1975 1257",
+        "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+        "titelFr": "Loi fédérale sur la circulation routière, Modification",
+        "titelIt": "Legge federale sulla circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/1268_1268_1268": {
+        "dateForce": "1975-08-01",
+        "dateDoc": "1975-07-02",
+        "roId": "RO 1975 1268",
+        "titelDe": "Bundesratsbeschluss vom 2. Juli 1975 über die Inkraftsetzung von geänderten Bestimmungen des Strassenverkehrsgesetzes",
+        "titelFr": "Arrêté du Conseil fédéral du 2 juillet 1975 concernant l'entrée en vigueur de dispositions modifiées de la loi sur la circulation routière",
+        "titelIt": "Decreto del Consiglio federale del 2 luglio 1975 concernente l'entrata in vigore delle disposizioni modificate della legge sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857": {
+        "dateForce": "1976-01-01",
+        "dateDoc": "1975-10-15",
+        "roId": "RO 1975 1857",
+        "titelDe": "Verordnung über Haftpflicht und Versicherungen im Strassenverkehr, Änderung",
+        "titelFr": "Ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Modification",
+        "titelIt": "Ordinanza concernente la responsabilità civile e l'assicurazione in materia di circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/2810_2810_2810": {
+        "dateForce": "1977-01-01",
+        "dateDoc": "1976-12-22",
+        "roId": "RO 1976 2810",
+        "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+        "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+        "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1979/1583_1583_1583": {
+        "dateForce": "1980-01-01",
+        "dateDoc": "1979-11-14",
+        "roId": "RO 1979 1583",
+        "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+        "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+        "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1980/1509_1509_1509": {
+        "dateForce": "1981-01-01",
+        "dateDoc": "1980-06-20",
+        "roId": "RO 1980 1509",
+        "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+        "titelFr": "Loi sur la circulation routière, Modification",
+        "titelIt": "Legge federale sulla circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1981/505_505_505": {
+        "dateForce": "1981-07-01",
+        "dateDoc": "1980-03-21",
+        "roId": "RO 1981 505",
+        "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+        "titelFr": "Loi fédérale sur la circulation routière, Modification",
+        "titelIt": "Legge federale sulla circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1981-03-20",
+        "roId": "RO 1982 1676",
+        "titelDe": "Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG)",
+        "titelFr": "Loi fédérale du 20 mars 1981 sur l'assurance-accidents (LAA)",
+        "titelIt": "Legge federale del 20 marzo 1981 sull'assicurazione contro gli infortuni (LAINF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/808_808_808": {
+        "dateForce": "1984-08-01",
+        "dateDoc": "1984-03-23",
+        "roId": "RO 1984 808",
+        "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+        "titelFr": "Loi fédérale sur la circulation routière, Modification",
+        "titelIt": "Legge federale sulla circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/1974_1974_1974": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1985-10-04",
+        "roId": "RO 1986 1974",
+        "titelDe": "Bundesgesetz vom 4. Oktober 1985 über den Transport im öffentlichen Verkehr (Transportgesetz, TG)",
+        "titelFr": "Loi fédérale du 4 octobre 1985 sur les transports publics (LTP)",
+        "titelIt": "Legge federale del 4 ottobre 1985 sul trasporto pubblico (LTP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776": {
+        "dateForce": "1989-01-01",
+        "dateDoc": "1987-12-18",
+        "roId": "RO 1988 1776",
+        "titelDe": "Bundesgesetz vom 18. Dezember 1987 über das Internationale Privatrecht (IPRG)",
+        "titelFr": "Loi fédérale du 18 décembre 1987 sur le droit international privé (LDIP)",
+        "titelIt": "Legge federale del 18 dicembre 1987 sul diritto internazionale privato (LDIP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/71_71_71": {
+        "dateForce": "1991-02-01",
+        "dateDoc": "1989-10-06",
+        "roId": "RO 1991 71",
+        "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+        "titelFr": "Loi fédérale sur la circulation routière (LCR), Modification",
+        "titelIt": "Legge federale sulla circolazione stradale (LCS), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78": {
+        "dateForce": "1991-02-01",
+        "dateDoc": "1990-12-03",
+        "roId": "RO 1991 78",
+        "titelDe": "Verordnung vom 3. Dezember 1990 über die Änderung und Aufhebung von Erlassen des Strassenverkehrs infolge der Revision vom 6. Oktober 1989 des Bundesgesetzes über die Strassenverkehr",
+        "titelFr": "Ordonnance du 3 décembre 1990 concernant la modification et l'abrogation d'actes législatifs portant sur la circulation routière, suite à la révision du 6 octobre 1989 de la loi fédérale sur la circulation routière",
+        "titelIt": "Ordinanza del 3 dicembre 1990 concernente la modifica e l'abrogazione di atti normativi della circolazione stradale, in seguito alla revisione dell 6 ottobre 1989 della legge federale sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/534_534_534": {
+        "dateForce": "1992-03-15",
+        "dateDoc": "1991-03-22",
+        "roId": "RO 1992 534",
+        "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+        "titelFr": "Loi fédérale sur la circulation routière, Modification",
+        "titelIt": "Legge federale sulla circolazione stradale (LCStr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/3043_3043_3043": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1992-06-19",
+        "roId": "RO 1993 3043",
+        "titelDe": "Bundesgesetz vom 19. Juni 1992 über die Militärversicherung (MVG)",
+        "titelFr": "Loi fédérale du 19 juin 1992 sur l'assurance militaire (LAM)",
+        "titelIt": "Legge federale del 19 giugno 1992 sull'assicurazione militare (LAM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/325_325_325": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1992-10-09",
+        "roId": "RO 1993 325",
+        "titelDe": "Bundesgesetz vom 9. Oktober 1992 über den Abbau von Finanzhilfen und Abgeltungen",
+        "titelFr": "Loi fédérale du 9 octobre 1992 sur la réduction d'aides financières et d'indemnités",
+        "titelIt": "Legge federale del 9 ottobre 1992 concernente la riduzione di aiuti finanziari e di indennità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/3330_3330_3330": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1993-06-18",
+        "roId": "RO 1993 3330",
+        "titelDe": "Strassenverkehrsgesetz (SVG), Änderung",
+        "titelFr": "Loi fédérale sur la circulation routière (LCR), Modification",
+        "titelIt": "Legge federale sulla circolazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/815_815_815": {
+        "dateForce": "1994-04-01",
+        "dateDoc": "1994-03-07",
+        "roId": "RO 1994 815",
+        "titelDe": "Verordnung vom 7. März 1994 über die vollständige Inkraftsetzung der Änderung des Strassenverkehrsgesetzes",
+        "titelFr": "Ordonnance du 7 mars 1994 sur la mise en vigeur intégrale de la modification de la loi sur la circulation routière",
+        "titelIt": "Ordinanza del 7 marzo 1994 sull'entrata in vigore integrale della modifica della legge sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/5462_5462_5462": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-06-23",
+        "roId": "RO 1995 5462",
+        "titelDe": "Strassenverkehrsgesetz (SVG), Änderung",
+        "titelFr": "Loi sur la circulation routière (LCR), Modification",
+        "titelIt": "Legge federale sulla circolazione stradale (LCStr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1075_1075_1075": {
+        "dateForce": "1996-09-01",
+        "dateDoc": "1995-10-06",
+        "roId": "RO 1996 1075",
+        "titelDe": "Bundesgesetz über Ordnungsbussen im Strassenverkehr, Änderung",
+        "titelFr": "Loi fédérale sur les amendes d'ordre infligées aux usagers de la route, Modification",
+        "titelIt": "Legge federale concernente le multe disciplinari inflitte agli utenti della strada, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3045_3045_3045": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-06-21",
+        "roId": "RO 1996 3045",
+        "titelDe": "Automobilsteuergesetz vom 21. Juni 1996 (AStG)",
+        "titelFr": "Loi fédérale du 21 juin 1996 sur l'imposition des véhicules automobiles (Limpauto)",
+        "titelIt": "Legge federale del 21 giugno 1996 sull'imposizione degli autoveicoli (LIAut)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-04-30",
+        "roId": "RO 1997 2465",
+        "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Postunternehmung des Bundes (Postorganisationsgesetz, POG)",
+        "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de la poste (Loi sur l'organisation de la Poste, LOP)",
+        "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle poste della Confederazione (Legge sull'organizzazione delle poste, LOP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1438_1438_1438": {
+        "dateForce": "1998-05-15",
+        "dateDoc": "1997-12-19",
+        "roId": "RO 1998 1438",
+        "titelDe": "Strassenverkehrsgesetz (SVG), Änderung",
+        "titelFr": "Loi fédérale sur la circulation routière (LCR), Modification",
+        "titelIt": "Legge federale sulla circolazione stradale (LCStr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1794_1794_1794": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1998-06-22",
+        "roId": "RO 1998 1794",
+        "titelDe": "Verordnung über die Anpassung von Zuständigkeitsbestimmungen in Bundesgesetzen im Bereich des Strassenverkehrs, Änderung",
+        "titelFr": "Ordonnance concernant l'adaption des règles de compétences dans les lois fédérales relatives à la circulation routières, Modification",
+        "titelIt": "Ordinanza concernente l'adeguamento delle disposizioni attributive di competenza nelle leggi federali in materia di circulazione stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/495": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2000 2864",
+        "titelDe": "Bundesgesetz zur Verlagerung von alpenquerendem Güterschwerverkehr auf die Schiene (Verkehrsverlagerungsgesetz)",
+        "titelFr": "Loi fédérale visant à transférer sur le rail le trafic de marchandises à travers les Alpes (Loi sur le transfert du trafic)",
+        "titelIt": "Legge federale concernente il trasferimento su ferrovia del traffico merci pesante attraverso le Alpi (Legge sul trasferimento del traffico)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/510": {
+        "dateForce": "2003-01-01",
+        "dateDoc": "2000-10-06",
+        "roId": "RO 2002 3371",
+        "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+        "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+        "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/667": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2003 4487",
+        "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+        "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+        "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/249": {
+        "dateForce": "2007-05-01",
+        "dateDoc": "2005-03-18",
+        "roId": "RO 2007 1411",
+        "titelDe": "Zollgesetz (ZG)",
+        "titelFr": "Loi sur les douanes (LD)",
+        "titelIt": "Legge sulle dogane (LD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/787": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2006-10-06",
+        "roId": "RO 2007 5779",
+        "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+        "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+        "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/189": {
+        "dateForce": "2008-04-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2008 765",
+        "titelDe": "Bundesgesetz über Massnahmen zur Verbesserung der Verfahren im Bereich der leistungsabhängigen Schwerverkehrsabgabe",
+        "titelFr": "Loi fédérale sur des mesures visant à améliorer les procédures liées à une redevance sur le trafic des poids lourds liée aux prestations",
+        "titelIt": "Legge federale concernente misure atte a migliorare le procedure nell'ambito della tassa sul traffico pesante commisurata alle prestazioni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/736": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 5207",
+        "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+        "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+        "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/853": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-12-12",
+        "roId": "RO 2008 6261",
+        "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge Überführung der nachrichtendienstlichen Teile des Dienstes für Analyse und Prävention zum VBS",
+        "titelFr": "Ordonnance sur l'adaptation des dispositions légales suite au transfert des unités de renseignements du Service d'analyse et de prévention au DDPS",
+        "titelIt": "Ordinanza sull'adeguamento delle disposizioni legali in seguito al trasferimento delle unità di informazioni del Servizio di analisi e prevenzione nel DDPS"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/679": {
+        "dateForce": "2010-01-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2009 5597",
+        "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+        "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+        "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/846": {
+        "dateForce": "2010-01-01",
+        "dateDoc": "2009-12-04",
+        "roId": "RO 2009 6921",
+        "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge der Schaffung des Nachrichtendienstes des Bundes",
+        "titelFr": "Ordonnance concernant l'adaptation de dispositions légales à la suite de la création du Service de renseignement de la Confédération",
+        "titelIt": "Ordinanza sull'adeguamento di disposizioni legali in seguito all'istituzione del Servizio delle attività informative della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/267": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2010 1881",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/347": {
+        "dateForce": "2010-07-01",
+        "dateDoc": "2009-06-12",
+        "roId": "RO 2010 2573",
+        "titelDe": "Bundesgesetz über die Produktesicherheit (PrSG)",
+        "titelFr": "Loi fédérale sur la sécurité des produits (LSPro)",
+        "titelIt": "Legge federale sulla sicurezza dei prodotti (LSPro)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/23": {
+        "dateForce": "2012-05-01",
+        "dateDoc": "2011-03-18",
+        "roId": "RO 2012 351",
+        "titelDe": "Bundesgesetz über die Reduktion der CO<sub>2</sub>-Emissionen (CO<sub>2</sub>-Gesetz)",
+        "titelFr": "Loi fédérale sur la réduction des émissions de CO<sub>2</sub> (Loi sur le CO<sub>2</sub>)",
+        "titelIt": "Legge federale sulla riduzione delle emissioni di CO<sub>2</sub> (Legge sul CO<sub>2</sub>)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/242": {
+        "dateForce": "2014-06-01",
+        "dateDoc": "2013-12-13",
+        "roId": "RO 2014 1111",
+        "titelDe": "Bundesgesetz über den Bau und die Finanzierung eines 4-Meter-Korridors auf den Zulaufstrecken zur NEAT (4-Meter-Korridor-Gesetz)",
+        "titelFr": "Loi fédérale sur la construction et le financement d'un corridor de 4 m sur les tronçons d'accès aux NLFA (Loi sur le corridor de 4 m)",
+        "titelIt": "Legge federale sulla realizzazione e il finanziamento di un corridoio di quattro metri sulle tratte di accesso alla NFTA (Legge sul corridoio di quattro metri)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/328": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2016 1845",
+        "titelDe": "Bundesgesetz über den Gütertransport durch Bahn- und Schifffahrtsunternehmen (Gütertransportgesetz, GüTG)",
+        "titelFr": "Loi fédérale sur le transport de marchandises par des entreprises de chemin de fer ou de navigation (Loi sur le transport de marchandises, LTM)",
+        "titelIt": "Legge federale sul trasporto di merci da parte di imprese ferroviarie e di navigazione (Legge sul trasporto di merci, LTM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/391": {
+        "dateForce": "2016-08-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2016 2429",
+        "titelDe": "Zollgesetz (ZG)",
+        "titelFr": "Loi sur les douanes (LD)",
+        "titelIt": "Legge sulle dogane (LD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/494": {
+        "dateForce": "2017-09-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2017 4095",
+        "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG) ",
+        "titelFr": "Loi fédérale sur le renseignement (LRens)",
+        "titelIt": "Legge federale sulle attività informative (LAIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/762": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-09-30",
+        "roId": "RO 2017 6839",
+        "titelDe": "Energiegesetz (EnG)",
+        "titelFr": "Loi sur l'énergie (LEne)",
+        "titelIt": "Legge federale sull'energia (LEne)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/271": {
+        "dateForce": "2018-05-15",
+        "dateDoc": "2018-04-06",
+        "roId": "RO 2018 1811",
+        "titelDe": "Mitteilung über die Änderung der Teilinkraftsetzung des Energiegesetzes",
+        "titelFr": "Communication concernant la modification de la mise en vigueur partielle de la loi sur l'énergie",
+        "titelIt": "Comunicazione sulla modifica dell'entrata in vigore parziale della legge federale sull'energia"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/807": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5343",
+        "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+        "titelFr": "Code des obligations (Révision du droit de la prescription)",
+        "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/259": {
+        "dateForce": "2023-07-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+        "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+        "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/355": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-03-18",
+        "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+        "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
+        "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/131": {
+        "dateForce": "2024-05-01",
+        "dateDoc": "2023-03-17",
+        "titelDe": "Bundesgesetz über eine leistungsabhängige Schwerverkehrsabgabe (Schwerverkehrsabgabegesetz, SVAG)",
+        "titelFr": "Loi fédérale concernant une redevance sur le trafic des poids lourds liée aux prestations (Loi relative à une redevance sur le trafic des poids lourds, LRPL)",
+        "titelIt": "Legge federale concernente una tassa sul traffico pesante commisurata alle prestazioni (Legge sul traffico pesante, LTTP)"
+      }
+    }
+  }
 }

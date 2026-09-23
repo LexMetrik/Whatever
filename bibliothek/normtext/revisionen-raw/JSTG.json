@@ -302,5 +302,183 @@
     "2025-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2006/551",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2006/551",
+    "inkrafttreten": "2007-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/551",
+        "typ": 5,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/555",
+        "typ": 6,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/748",
+        "typ": 6,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/226",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/226",
+        "typ": 2,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/696",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/355",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/321",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/336",
+        "typ": 1,
+        "datum": "2019-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+        "typ": 1,
+        "datum": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/27",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/490",
+        "typ": 5,
+        "datum": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/224",
+        "typ": 1,
+        "datum": "2025-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/555": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-07-06",
+        "roId": "RO 2006 3583",
+        "titelDe": "Strafgesetzbuch (StGB)",
+        "titelFr": "Code pénal (CP)",
+        "titelIt": "Codice penale (CP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/226": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2010 1573",
+        "titelDe": "Schweizerische Jugendstrafprozessordnung (Jugendstrafprozessordnung, JStPO)",
+        "titelFr": "Loi fédérale sur la procédure pénale applicable aux mineurs (Procédure pénale applicable aux mineurs, PPMin)",
+        "titelIt": "Legge federale di diritto processuale penale minorile (Procedura penale minorile, PPMin)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/696": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 5951",
+        "titelDe": "Bundesgesetz zur Umsetzung von Artikel 123<i>b</i> der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+        "titelFr": "Loi fédérale portant mise en uvre de l'art. 123<i>b</i> de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+        "titelIt": "Legge federale che attua l'articolo 123<i>b</i> della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/355": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2013-12-13",
+        "roId": "RO 2014 2055",
+        "titelDe": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+        "titelFr": "Loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+        "titelIt": "Legge federale sull&#700;interdizione di esercitare un&#700;attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/321": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2015 1623",
+        "titelDe": "Bundesgesetz über das Informationsrecht des Opfers (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes, der Strafprozessordnung und des Militärstrafprozesses)",
+        "titelFr": "Loi fédérale sur le droit de la victime à être informée (Modification du code pénal, du droit pénal des mineurs, du code de procédure pénale et de la procédure pénale militaire)",
+        "titelIt": "Legge federale sul diritto d'informazione delle vittime di reati (Modifica del Codice penale, del Diritto penale minorile, del Codice di procedura penale e della Procedura penale militare)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/249": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2016 1249",
+        "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+        "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+        "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/336": {
+        "dateForce": "2019-07-01",
+        "dateDoc": "2018-12-14",
+        "roId": "RO 2019 1809",
+        "titelDe": "Bundesgesetz über die Änderung der Wiedergutmachungsregelung (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes und des Militärstrafgesetzes)",
+        "titelFr": "Loi fédérale modifiant la disposition sur la réparation (Modification du code pénal, du droit pénal des mineurs et du code pénal militaire)",
+        "titelIt": "Legge federale che modifica la disciplina della riparazione (Modifica del Codice penale, del diritto penale minorile e del Codice penale militare)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/600": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2016-06-17",
+        "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+        "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+        "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/468": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/27": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2023-06-16",
+        "titelDe": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+        "titelFr": "Loi fédérale portant révision du droit pénal en matière sexuelle",
+        "titelIt": "Legge federale sulla revisione del diritto penale in materia sessuale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/490": {
+        "dateForce": "2025-07-01",
+        "dateDoc": "2024-09-04",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 17. Juni 2022 der Strafprozessordnung",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 17 juin 2022 du code de procédure pénale",
+        "titelIt": "Ordinanza sull’entrata in vigore integrale della modifica del 17 giugno 2022 del Codice di procedura penale"
+      }
+    }
+  }
 }

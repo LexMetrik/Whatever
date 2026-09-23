@@ -1155,5 +1155,130 @@
     "2026-05-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2014/245",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2014/245",
+    "inkrafttreten": "2014-05-15",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/244",
+        "typ": 3
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/245",
+        "typ": 5,
+        "datum": "2014-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/562",
+        "typ": 1,
+        "datum": "2014-09-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/562",
+        "typ": 9,
+        "datum": "2014-09-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/632",
+        "typ": 1,
+        "datum": "2015-09-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/632",
+        "typ": 9,
+        "datum": "2015-09-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/211",
+        "typ": 1,
+        "datum": "2016-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/211",
+        "typ": 9,
+        "datum": "2016-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/572",
+        "typ": 1,
+        "datum": "2016-09-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/572",
+        "typ": 9,
+        "datum": "2016-09-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/11",
+        "typ": 1,
+        "datum": "2016-12-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/11",
+        "typ": 9,
+        "datum": "2016-12-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/383",
+        "typ": 1,
+        "datum": "2017-06-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/383",
+        "typ": 9,
+        "datum": "2017-06-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/329",
+        "typ": 1,
+        "datum": "2019-06-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/329",
+        "typ": 9,
+        "datum": "2019-06-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/655",
+        "typ": 1,
+        "datum": "2020-08-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/655",
+        "typ": 9,
+        "datum": "2020-08-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/566",
+        "typ": 9,
+        "datum": "2022-10-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/89",
+        "typ": 9,
+        "datum": "2024-02-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/208",
+        "typ": 9,
+        "datum": "2025-03-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/190",
+        "typ": 9,
+        "datum": "2026-05-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2014/244": {
+        "dateDoc": "2013-12-13",
+        "roId": "RO 2014 1117",
+        "titelDe": "Bundesbeschluss über die Genehmigung des Übereinkommens über die Rechte von Menschen mit Behinderungen",
+        "titelFr": "Arrêté fédéral portant approbation de la Convention relative aux droits des personnes handicapées",
+        "titelIt": "Decreto federale che approva la Convenzione sui diritti delle persone con disabilità"
+      }
+    }
+  }
 }

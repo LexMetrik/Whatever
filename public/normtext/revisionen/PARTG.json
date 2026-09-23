@@ -1,69 +1,166 @@
 {
   "erlassKey": "PARTG",
   "sr": "211.231",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "f0a13de80f44b5763279fe5c5a34294aea12b25530555b2d56c23659275a3c26"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "8172ea3ecd80a72bc6eadb15dff1761f5787f1f28f338e611ac1cb7f5189f417"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2022-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "c68dc1c0af870efa1745afae5dd4bb66c3dcd735b0adfddadc96d160c144f0a9"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "45f8fe2fac1c8eb97ba2d6b9d446715b5d933c77ff9e89a3c2bbf0cc3d98dbb7"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "f4afb471784d39049af5b8b3926e8ec854850d61f888dd363ab4c5be7aa7d4b7"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "7afe4b66437bfe0bd674a37c3f0b06d75df3d046dcff9df45ecf3e1e6493dca8"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "0758b61703cb44a8a7ea8e3d9f87ed4bcf746206a09ea3d38ba91fb9d8ee0079"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.231",
-      "sha": "cf4e5650a42f3c315c957b636aed1e3a6528bd983525fd77e1989fc769f83dbd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/590",
+      "dateDocument": "2024-06-14",
+      "roFundstelle": "AS 2024 590",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Massnahmen gegen Minderjährigenheiraten)",
+      "titelFr": "Code civil suisse (Mesures de lutte contre les mariages avec un mineur)",
+      "titelIt": "Codice civile svizzero (Misure contro i matrimoni con minorenni)",
+      "botschaftKey": "BOTSCHAFT-2023-2127",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/590/de",
+      "sha": "70f7c2cd259d525f73a86f0ed5be0d27439dd9ce3f8634f95c8124e962748f5d"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
-      "dateDocument": "2004-06-18",
-      "roFundstelle": "AS 2005 5685",
-      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
-      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
-      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
-      "botschaftKey": "BOTSCHAFT-2003-194",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
-      "sha": "c2c4ebe6fbca6169cd53d25aeb64edb56251956cbd432a9763b88512f086bca3"
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/312",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 312",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erbrecht)",
+      "titelFr": "Code civil suisse (Droit des successions)",
+      "titelIt": "Codice civile svizzero (Diritto successorio)",
+      "botschaftKey": "BOTSCHAFT-2018-2131",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/312/de",
+      "sha": "f14ddc32f2792c43f9ab47198917fed71ea0cbf82052480ef4b50cd1282468a9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/747",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 747",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Ehe für alle)",
+      "titelFr": "Code civil suisse (Mariage pour tous)",
+      "titelIt": "Codice civile svizzero (Matrimonio per tutti)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/747/de",
+      "sha": "82cd079f48a39f042024725eccda634b63dd23b4558e1434eb609fcd3b7c870e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/425",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2017 3699",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Adoption)",
+      "titelFr": "Code civil suisse (Droit de l'adoption)",
+      "titelIt": "Codice civile svizzero (Adozione)",
+      "botschaftKey": "BOTSCHAFT-2015-94",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/425/de",
+      "sha": "12214447015a3177a464e06e7f635d2e45e9b0d98d635e2e163388bdcfc4d421"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/226",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2013 1035",
+      "titelDe": "Bundesgesetz über Massnahmen gegen Zwangsheiraten",
+      "titelFr": "Loi fédérale concernant les mesures de lutte contre les mariages forcés",
+      "titelIt": "Legge federale sulle misure contro i matrimoni forzati",
+      "botschaftKey": "BOTSCHAFT-2011-292",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/226/de",
+      "sha": "00a2aa22d687f23430ffec4deb4e8b1b771aca8d6e5248876375d098ca779415"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/309",
+      "dateDocument": "2011-09-30",
+      "roFundstelle": "AS 2012 2569",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Name und Bürgerrecht)",
+      "titelFr": "Code civil suisse (Nom et droit de cité)",
+      "titelIt": "Codice civile svizzero (Cognome e cittadinanza)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/309/de",
+      "sha": "95ba19526a28673144b506a0c20a6ad9a1455eaece5b18855bbd93684198149f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "a2f3404021afc248e0ad4014cc8fb9ed953c1501058b179835de293c00dad3ad"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/411",
+      "dateDocument": "2009-06-12",
+      "roFundstelle": "AS 2010 3057",
+      "titelDe": "Zivilgesetzbuch (ZGB) (Unterbindung von Ehen bei rechtswidrigem Aufenthalt)",
+      "titelFr": "Code civil (CC) (Empêcher les mariages en cas de séjour irrégulier)",
+      "titelIt": "Codice civile (CC) (Impedire la conclusione di matrimoni in caso di soggiorno irregolare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/411/de",
+      "sha": "2f09edbafc2e10b4a89e939b2490eb587329d0b14f41144c15c5bd6a754c29b0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/758",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 5437",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+      "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI)",
+      "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI)",
+      "botschaftKey": "BOTSCHAFT-2002-541",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/758/de",
+      "sha": "ecf671b8870bafb50a69129fea89ddcaf571ae9d168a8b5d9a103686195cc76c"
     },
     {
       "art": "aenderung",
@@ -74,9 +171,12 @@
       "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
       "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
       "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/6/de",
-      "sha": "017dc434388128bd9570f5a13653889e0997dc7c04d270e6b35c53257ffb3011"
+      "sha": "8303606e73cc231d080715ed6eee1effb09fce971619cc8ce72289f142e0f83f"
     }
   ],
-  "sha": "469568c6af742c60bf2adb9a650df122be3952709a372f644decbba80ca3e616"
+  "sha": "46a724fb201627b5c86134263f9a82474cff16faffd6d8f12360f3114c79dbbc"
 }

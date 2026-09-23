@@ -1,8 +1,8 @@
 {
   "erlassKey": "BKV",
   "sr": "642.118.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)",
       "titelFr": "Ordonnance du DFF sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d’impôt fédéral direct (Ordonnance sur les frais professionnels)",
       "titelIt": "Ordinanza del DFF sulla deduzione delle spese professionali delle persone esercitanti un’attività lucrativa dipendente ai fini dell’imposta federale diretta (Ordinanza sulle spese professionali)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/578/de",
-      "sha": "05791b28e338c9efa4b39c2d2a5049e7c0a6565220647286920afdc35e109d12"
+      "sha": "11827287cc1526c060c3a9b4ee4a2cae541b82d8b7606e7f2412498ba05e8d00"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)",
       "titelFr": "Ordonnance du DFF sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct (Ordonnance sur les frais professionnels)",
       "titelIt": "Ordinanza del DFF sulla deduzione delle spese professionali delle persone esercitanti un’attività lucrativa dipendente ai fini dell’imposta federale diretta (Ordinanza sulle spese professionali)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/573/de",
-      "sha": "912983bafff2fd9e60d210ccaa4e8ab3bc0be9ee1685deaa553ef358a26fea0c"
+      "sha": "ed6e640972e49779f874f4f6788d228c08279f9444fcbfd789368333bfebdd7e"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Verordnung des EFD über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)",
       "titelFr": "Ordonnance du DFF sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d’impôtfédéral direct (Ordonnance sur les frais professionnels)",
       "titelIt": "Ordinanza del DFF sulla deduzione delle spese professionali delle persone esercitanti un’attività lucrativa dipendente ai fini dell’imposta federale diretta (Ordinanza sulle spese professionali)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/165/de",
-      "sha": "b55fbf5991006ececd0bce44204949e71e230ace13d8794affb6d5ed7363991c"
+      "sha": "af3b9d24d8bb856f6a501c6c6e12f60f39a1ae3421c00aedec68ec9f94946a97"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,12 @@
       "titelDe": "Verordnung des EFD über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer (Berufskostenverordnung)",
       "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct (Ordonnance sur les frais professionnels)",
       "titelIt": "Ordinanza del DFF sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta (Ordinanza sulle spese professionali)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/241/de",
-      "sha": "1aac39a861d2facb71964f95a6f0a5d541acbe309bbbb8c5e6d697c5cf36a7e0"
+      "sha": "9e962534e177ca627bc82aa2c08b47da710126448421818bc7105597a2af7d05"
     },
     {
       "art": "aenderung",
@@ -61,8 +74,11 @@
       "titelDe": "Verordnung des EFD über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundesteuer (Berufskostenverordnung)",
       "titelFr": "Ordonnance du DFF sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct (Ordonnance sur les frais professionnels)",
       "titelIt": "Ordinanza del DFF sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta (Ordinanza sulle spese professionali)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/163/de",
-      "sha": "4dd0840012e97e8f9a5fc8a80d3987f4d498c44e427b53f4202460f8d7beece8"
+      "sha": "72744c92bcfc8861b2d85c29fc03eca941f08bd9dfd2a763baa2f528bcd8abb7"
     },
     {
       "art": "aenderung",
@@ -73,8 +89,11 @@
       "titelDe": "Verordnung des EFD über den Abzug von Berufskosten der unselbstständigen Erwerbstätigkeit bei der direkten Bundessteuer (Berufskostenverordnung)",
       "titelFr": "Ordonnance du DFF sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct (Ordonnance sur les frais professionnels)",
       "titelIt": "Ordinanza del DFF sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta (Ordinanza sulle spese professionali)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/567/de",
-      "sha": "d1df90472a939ec0971fea06719279673e12ac50dff726b370aa61d5dda02fa2"
+      "sha": "7053747e9b2bad86d3069225feb107c6a0e0a7d6806f122c2f099d817ab0d510"
     },
     {
       "art": "aenderung",
@@ -85,8 +104,11 @@
       "titelDe": "Verordnung über den Abzug von Berufskosten der unselbstständigen Erwerbstätigkeit bei der direkten Bundessteuer",
       "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct",
       "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/491/de",
-      "sha": "d61f93a79f442f6d5d8fabeb931fbe5d1b80b65e48e73c8d76fc2d49e0635154"
+      "sha": "59b9978d8170b522b21201b7e99afd33ada08626b86457332cf8a6f579117da1"
     },
     {
       "art": "aenderung",
@@ -97,8 +119,11 @@
       "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer",
       "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct",
       "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/761/de",
-      "sha": "1d51e4d70ec07b3e8b3a8571ff0cbd4a4aad1cfc3863d11b11af3038beb794b5"
+      "sha": "c0b10d971a8b3ba9b0c635e15362e18d4185c287dea24242c95a45406222c296"
     },
     {
       "art": "aenderung",
@@ -109,8 +134,11 @@
       "titelDe": "Verordnung über den Abzug von Berufskosten der unselbstständigen Erwerbstätigkeit bei der direkten Bundessteuer",
       "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct",
       "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/648/de",
-      "sha": "9e0e5b4808bb59f898e5b79bd6575bd9a3b5dc1fb0d750f6acfcf9b889c7800c"
+      "sha": "439edd59a4f3b9c1d6e2c12615a3d5b5d46d36f6fad039fd64719819edc30713"
     },
     {
       "art": "aenderung",
@@ -121,8 +149,11 @@
       "titelDe": "Verordnung des EFD über den Abzug von Berufskosten der unselbstständigen Erwerbstätigkeit bei der direkten Bundessteuer",
       "titelFr": "Ordonnance du DFF sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct",
       "titelIt": "Ordinanza del DFF sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/483/de",
-      "sha": "7394f3271f0c2bdd42094df2219bad064cbb9250f012751f48e208358d78520a"
+      "sha": "71b94c3a1201fac2b10728d1ec1bb1dcf737878b0543e0bf34749ffbba482faf"
     },
     {
       "art": "aenderung",
@@ -133,8 +164,11 @@
       "titelDe": "Verordnung über den Abzug von Berufskosten der unselbstständigen Erwerbstätigkeit bei der direkten Bundessteuer",
       "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct",
       "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/458/de",
-      "sha": "1251241c60877a163ef1ade2d4a893957fd9ec3b39d214ad7e24f03a2e26afe4"
+      "sha": "f543249cf3980a0e9525b20e93bf315ea178b845db32ff65226d1349158406c2"
     },
     {
       "art": "aenderung",
@@ -145,8 +179,11 @@
       "titelDe": "Verordnung über den Abzug von Berufskosten der unselbstständigen Erwerbstätigkeit bei der direkten Bundessteuer",
       "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct",
       "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/328/de",
-      "sha": "c04676a21cb7493d1ffb61d3a537d0f231ddfe572df42c9ee03a4fd103f0307c"
+      "sha": "8e134fd2bbc4bab8ce8b7cd830ed961a38ab0c036bbe12e50549d7dcdcc6103a"
     },
     {
       "art": "aenderung",
@@ -157,21 +194,57 @@
       "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer",
       "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct",
       "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/240/de",
-      "sha": "93e09a1a221bfd05f8b57154e385c26b2525c541c78e8bd7892652356b25aaee"
+      "sha": "56b1c5ed5aa817cfdc70a1d8cf9bec43169ac07d4cb307433d490ed5dff9e7a6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1805_1805_1805",
+      "dateDocument": "1998-06-10",
+      "roFundstelle": "AS 1998 1805",
+      "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer, Änderung",
+      "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct, Modification",
+      "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1805_1805_1805/de",
+      "sha": "be2a3cf86bf60b72a35b2d86741058646c30c542d48595424ecd7595e717b040"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1976_1976_1976",
+      "dateDocument": "1996-05-31",
+      "roFundstelle": "AS 1996 1976",
+      "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer, Änderung",
+      "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct, Modification",
+      "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1976_1976_1976/de",
+      "sha": "f3be2aad9649ca6f2350c9bf6d5c68b9b23ae1cf053113286e82ad9b110f118a"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1363_1363_1363",
-      "dateDocument": "1993-02-10",
-      "roFundstelle": "AS 1993 1363",
-      "titelDe": "Verordnung des EFD vom 10. Februar 1993 über den Abzug der Berufskosten unselbstständig Erwerbstätiger bei der direkten Bundessteuer (Berufskostenverordnung)",
-      "titelFr": "Ordonnance du DFF du 10 février 1993 sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct (Ordonnance sur les frais professionnels)",
-      "titelIt": "Ordinanza del DFF del 10 febbraio 1993 sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta (Ordinanza sulle spese professionali)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1363_1363_1363/de",
-      "sha": "d17ddee9b08cc46d36ab33d11cfbb98db6eac4f0ead9ca88d59d245954b40340"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1673_1673_1673",
+      "dateDocument": "1994-06-29",
+      "roFundstelle": "AS 1994 1673",
+      "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer, Änderung",
+      "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct, Modification",
+      "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1673_1673_1673/de",
+      "sha": "2e193167706d0c7707b23c2a567d60b53ca14e30c897672678a893318b21bcd2"
     }
   ],
-  "sha": "e01e5ceec68f6f8a0f894b7eb9d4acbd1032c9e121db92540c3e531191075a7b"
+  "sha": "1a8aa8e08b2261f8d90628abd0574e14f1f916148f0da2002ecd01074cf22440"
 }

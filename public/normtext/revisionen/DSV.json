@@ -1,8 +1,8 @@
 {
   "erlassKey": "DSV",
   "sr": "235.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,26 @@
       "titelDe": "Verordnung über den Datenschutz (Datenschutzverordnung, DSV)",
       "titelFr": "Ordonnance sur la protection des données (OPDo)",
       "titelIt": "Ordinanza sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/694/de",
-      "sha": "a87d040b9f554a587304756c5effc5c128b498b4adeec2be9de52841445e96e0"
+      "sha": "7db85a31d2decf18c5c34fed318f717dac039436dbfbf0d15e73509413e942f9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/235.11",
-      "sha": "e87b6d61e9828207c26e1d8eb7a3e8fe11d6c3539600a6229d41122b054b414f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/169",
+      "dateDocument": "2025-03-07",
+      "roFundstelle": "AS 2025 169",
+      "titelDe": "Verordnung vom 7. März 2025 über die Cybersicherheit (Cybersicherheitsverordnung, CSV)",
+      "titelFr": "Ordonnance du 7 mars 2025 sur la cybersécurité (OCyS)",
+      "titelIt": "Ordinanza del 7 marzo 2025 sulla cibersicurezza (OCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/169/de",
+      "sha": "a001994ae79c1a1e3e43e5c6c1912d16ca7ac89a6f84f556728559dab7d6a0fc"
     },
     {
       "art": "aenderung",
@@ -31,87 +43,42 @@
       "titelDe": "Verordnung über den Datenschutz (Datenschutzverordnung, DSV)",
       "titelFr": "Ordonnance sur la protection des données (OPDo)",
       "titelIt": "Ordinanza sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/435/de",
-      "sha": "c473b3f2b7933cc2a9e8aa28e796dd2091dba64265d2b44329f82f48995ca639"
+      "sha": "b6d5664b1f2ea1c573df6eb1515c9e3a95e25e777052be0c2ff06b127f98068f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/235.11",
-      "sha": "e4cb6c553df3dffcce5579540162d9b0e53411d4dd37d1398ff33bcbe4b1fea1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/746",
+      "dateDocument": "2023-11-22",
+      "roFundstelle": "AS 2023 746",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l’organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/746/de",
+      "sha": "70a58b055c7482d62cddf7ea7fb30be11a5c75103bc32f0ee20fcf14d63d6048"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
-      "dateDocument": "2022-08-31",
-      "roFundstelle": "AS 2022 568",
-      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
-      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
-      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
-      "sha": "65d62795a0cf658f84d32d7a69bf24ea0f1d5ae27f12d570beafc25f7512784d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-10-16",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/635",
-      "dateDocument": "2012-10-16",
-      "roFundstelle": "AS 2012 5521",
-      "titelDe": "Verordnung zum Bundesgesetz über den Datenschutz (VDSG) (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance relative à la loi fédérale sur la protection des données (OLPD) (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza relativa alla legge federale sulla protezione dei dati (OLPD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/635/de",
-      "sha": "3ddedb1d6932afe0cf3b75f890a9c758966c695ee66c78eaaf777a354d8e1c0a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/465",
-      "dateDocument": "2010-06-04",
-      "roFundstelle": "AS 2010 3399",
-      "titelDe": "Verordnung zum Bundesgesetz über den Datenschutz (VDSG)",
-      "titelFr": "Ordonnance relative à la loi fédérale sur la protection des données (OLPD)",
-      "titelIt": "Ordinanza relativa alla legge federale sulla protezione dei dati (OLPD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/465/de",
-      "sha": "e43b52aec6be0261c40088e97127911000479185d7fb98e6566449051053f0cf"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/700",
-      "dateDocument": "2007-09-28",
-      "roFundstelle": "AS 2007 4993",
-      "titelDe": "Verordnung zum Bundesgesetz über den Datenschutz (VDSG)",
-      "titelFr": "Ordonnance relative à la loi fédérale sur la protection des données (OLPD)",
-      "titelIt": "Ordinanza relativa alla legge federale sulla protezione dei dati (OLPD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/700/de",
-      "sha": "192d5219fdf450fe2db3ca1a55bdbb8b737e04eb72504629f2575a453baa3cda"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/58",
-      "dateDocument": "2008-01-22",
-      "roFundstelle": "AS 2008 189",
-      "titelDe": "Verordnung zum Bundesgesetz über den Datenschutz (VDSG)",
-      "titelFr": "Ordonnance relative à la loi fédérale sur la protection des données (OLPD)",
-      "titelIt": "Ordinanza relativa alla legge federale sulla protezione dei dati (OLPD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/58/de",
-      "sha": "d08d0338bf2c1f43071f6c5a2885f1322aca3d8df82a7d84f1922f1cef34f137"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1993-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1962_1962_1962",
-      "dateDocument": "1993-06-14",
-      "roFundstelle": "AS 1993 1962",
-      "titelDe": "Verordnung vom 14. Juni 1993 zum Bundesgesetz über den Datenschutz (VDSG)",
-      "titelFr": "Ordonnance du 14 juin 1993 relative à la loi fédérale sur la protection des données (OLPD)",
-      "titelIt": "Ordinanza del 14 giugno 1993 relativa alla legge federale sulla protezione dei dati (OLPD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1962_1962_1962/de",
-      "sha": "53a3e7a39c68723b98f08a85b0dc1f7db2bb78e70b55b3060c96a8076439aee7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/585",
+      "dateDocument": "2022-09-23",
+      "roFundstelle": "AS 2022 585",
+      "titelDe": "Verordnung vom 23. September 2022 über genetische Untersuchungen beim Menschen (GUMV)",
+      "titelFr": "Ordonnance du 23 septembre 2022 sur l’analyse génétique humaine (OAGH)",
+      "titelIt": "Ordinanza del 23 settembre 2022 concernente gli esami genetici sull’essere umano (OEGU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/585/de",
+      "sha": "c093d53176bc1787484cce602500f22389c1c289037d536fb6d29e7838b9961b"
     }
   ],
-  "sha": "47d8b7319246ec68eb8651cd7207a66f02243ced4b5df4ea6095735f52c28fb4"
+  "sha": "e19efc1770f80eec45bd76aa79b190f0360b23232d23a7d823706dcf94bc8a39"
 }

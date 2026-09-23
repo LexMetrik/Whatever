@@ -1,15 +1,91 @@
 {
   "erlassKey": "GLG",
   "sr": "151.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2032-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/123",
+      "dateDocument": "2004-10-08",
+      "roFundstelle": "AS 2005 1023",
+      "titelDe": "Bundesgesetz über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GlG)",
+      "titelFr": "Loi fédérale sur l'égalité entre femmes et hommes (Loi sur l'égalité, LEg)",
+      "titelIt": "Legge federale sulla parità dei sessi (LPar)",
+      "botschaftKey": "BOTSCHAFT-2003-1299",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/151.1",
-      "sha": "1b839499e6cf7b82f1492aef0d2e86603b7125aa1aa08a1ba88b86c325600428"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-03-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/123/de",
+      "sha": "63bde0e252a746ae0ed3572a8d0da9d5029d7da1200f5cee68d515586f63e979"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2032-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 1205",
+      "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+      "titelIt": "Legge sul Tribunale federale (LTF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-01-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
+      "sha": "858e122023f0bfedbf1dd2cb671017526974f1951d4621171829b497f03dfc9f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2032-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-01-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "5589d55930e898c095052878d8c63c1c209b693cb77b1be88fdaf60a0d151e63"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2032-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/515",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 2815",
+      "titelDe": "Bundesgesetz über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GlG)",
+      "titelFr": "Loi fédérale sur l'égalité entre femmes et hommes (Loi sur l'égalité, LEg)",
+      "titelIt": "Legge federale sulla parità dei sessi (LPar)",
+      "botschaftKey": "BOTSCHAFT-2017-1455",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/515/de",
+      "sha": "4edabdadd3473bf88469d6115f1c2cd18226944083dc9a40807c7ff220920501"
     },
     {
       "art": "aenderung",
@@ -21,26 +97,70 @@
       "titelFr": "Loi fédérale sur l'égalité entre femmes et hommes (Loi sur l'égalité, LEg)",
       "titelIt": "Legge federale sulla parità dei sessi (LPar)",
       "botschaftKey": "BOTSCHAFT-2017-1455",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2032-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/515/de",
-      "sha": "f8668508fe081efc533417bd45e85862c7434b64ac126e9249dd66ca329df9fe"
+      "sha": "f58207d35738386762d840e6e78ee86115455a1669901d915ccbfcb006116f7d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/151.1",
-      "sha": "debfbfe0e08281f345663c248e6a7dfa967b9b93201e8b3f1f024a09569f1e99"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-01-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "8c4d63b2e70405ed819417dd7a44d95121f1997c342c397f526126aff2b82a82"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/151.1",
-      "sha": "8d69a96687e5fa6f47e611a3cf1acc5905c6ba85afda6402af373d8030f740f7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "a2f3404021afc248e0ad4014cc8fb9ed953c1501058b179835de293c00dad3ad"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/151.1",
-      "sha": "61f4de94129501bd9e08fcf1e980dcb24c52d4dcbadf0f0806722ebba634cc9f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 1205",
+      "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+      "titelIt": "Legge sul Tribunale federale (LTF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-01-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
+      "sha": "ccbb826d03837ee0a8bce63c2661e1cdc014095041e0a4ebc96dc714a362e1bb"
     },
     {
       "art": "aenderung",
@@ -52,21 +172,16 @@
       "titelFr": "Loi fédérale sur l'égalité entre femmes et hommes (Loi sur l'égalité, LEg)",
       "titelIt": "Legge federale sulla parità dei sessi (LPar)",
       "botschaftKey": "BOTSCHAFT-2003-1299",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-03-01",
+        "2032-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/123/de",
-      "sha": "bfa844b45965fcbf7c14c80da4e556ffe2cfd01170fbd3ffb34851643c4f852c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1996-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1498_1498_1498",
-      "dateDocument": "1995-03-24",
-      "roFundstelle": "AS 1996 1498",
-      "titelDe": "Bundesgesetz vom 24. März 1995 über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GlG)",
-      "titelFr": "Loi fédérale du 24 mars 1995 sur l'égalité entre femmes et hommes (Loi sur l'égalité, LEg)",
-      "titelIt": "Legge federale del 24 marzo 1995 sulla parità dei sessi (LPar)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1498_1498_1498/de",
-      "sha": "f1c357bc258c02940fb093c4778b041909c55ea1beb96b363b11684c6c0d1fd5"
+      "sha": "b5289d5869d8c59771029edc71437e82cbeb498755097078cc8263f4c784abd8"
     }
   ],
-  "sha": "eab3c26fd160644c54b9b634350b88dab9d52d0ae22875b0e787239e5e631f62"
+  "sha": "4dfde77dd127ba13f03a4c7a053750413cfc0edefe4464d11a8bd916198a451a"
 }

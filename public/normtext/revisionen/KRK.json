@@ -1,8 +1,8 @@
 {
   "erlassKey": "KRK",
   "sr": "0.107",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes. Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l’enfant. Erratum",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo. Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/314/de",
-      "sha": "a368b1baaa2a314cff6d2dd30fb31b3acdc7ae4133cdf08349b3a9f47264f997"
+      "sha": "63dd9176541ec09ced06e5748ffcd8ffff14f2c0c3c54ee554e725640fb01608"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l’enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/214/de",
-      "sha": "463cddc68b31a5d435f6343350c35b6a9d8c77f91dfc9af071aed38c8041a278"
+      "sha": "139d90f58fd9f640126984433527814d221912a0df14d84107cc1fce7c145741"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l’enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/102/de",
-      "sha": "45f4d030a7edda35d8fb80c287a90ab680fcfcb1231a26afaa1a380260e8059e"
+      "sha": "7ed8e9afabc6a9a2803938c48b978199c1ddcd4213810639e08d871b8be713ce"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/635/de",
-      "sha": "3606b1b6dc00f0b13925a0fafe66b573cbe61564cff004845dee5f41da3b7679"
+      "sha": "25697dcf2de6e34d54fd7f6cf52465d5c4db1b41069326357b6facfb15f6f1a9"
     },
     {
       "art": "aenderung",
@@ -61,8 +74,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/222/de",
-      "sha": "294d8602282cce519f31c823b3a2b1bef3bad17d1bb3b26309ebaff95c219da5"
+      "sha": "59f2130091029064106285088893795f52017778e6a93d09442f7a7f29029ce5"
     },
     {
       "art": "aenderung",
@@ -73,8 +90,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/302/de",
-      "sha": "239abbba19ae3d23105463c2c8ae3938e09a1985ff46295728130ad2abda5f54"
+      "sha": "7768735c442a843f601c1f3b54e4e0887dab08051c15091d0e65c37091a65228"
     },
     {
       "art": "aenderung",
@@ -85,8 +106,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/275/de",
-      "sha": "47fa3cbc7b8102a9ec89f507594610717f6efb228ef0ac4605911d96512a97c6"
+      "sha": "1c45bec2e6c54b6c7f4c126ea0ab385f310c61f875fd9d97f05804fea469947e"
     },
     {
       "art": "aenderung",
@@ -97,8 +122,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/233/de",
-      "sha": "13bb531b5c3f4cd6e616e589b82a7cd7eca6f14b04d36e54238215101d16e07b"
+      "sha": "10244b6a8bdd69de3cd1a07cba58763255cad1c9030053870db25b36b2d0b1af"
     },
     {
       "art": "aenderung",
@@ -109,8 +138,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/497/de",
-      "sha": "41e6cdf637c915ab9d5d3461b5b617419c3921305cffceb1ab246e2b05245935"
+      "sha": "e63f62df701f99e66f07a125b88cbe7e32f1111950b4f07f13d1cede56bf18d8"
     },
     {
       "art": "aenderung",
@@ -121,8 +154,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/83/de",
-      "sha": "5552af0e628801cf1e9efd3bbeb35046d18eea7e1879a7adb03cc55b9f019c90"
+      "sha": "28eeeb54e084d53abf1871748f9cd0696fd8fcc2fb469308cba11b1df43fec5b"
     },
     {
       "art": "aenderung",
@@ -133,8 +170,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/537/de",
-      "sha": "0eb8a7392ff09c8c248e3e9dc7fa4d4d4d45e7b0690c33d2b18dbf378684dfd5"
+      "sha": "4ad28e639cb395e61cd8e99065f1f801f09ebe2191a852bb7872d8eaf270e36b"
     },
     {
       "art": "aenderung",
@@ -145,8 +186,11 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/90/de",
-      "sha": "2446e3cb3e284a91ddb90df338c0a1b7b782bdc0a437835a569ea4764eb5ef54"
+      "sha": "a17da16b77f77bffd05d64a28c7133c44a9d948044f7c13fae7aaf3e9244cac6"
     },
     {
       "art": "aenderung",
@@ -157,8 +201,12 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 20 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/22/de",
-      "sha": "42f1ca4050e5ef73d4c84e5a4b3142f465e1f4547c88a41377dbd9ae9a346286"
+      "sha": "8ba79c1bbdeb23d16a00ca7e5fe1d30c25677f0afe2eb80df6deffa1021fe2f6"
     },
     {
       "art": "aenderung",
@@ -169,21 +217,13 @@
       "titelDe": "Übereinkommen vom 20. November 1989 über die Rechte des Kindes",
       "titelFr": "Convention du 21 novembre 1989 relative aux droits de l'enfant",
       "titelIt": "Convenzione del 20 novembre 1989 sui diritti del fanciullo",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/544/de",
-      "sha": "f08fb562acddce19d740d05e75800cb4c3e4ed82b8f9993a0a065b717e777a4a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1997-03-26",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2055_2055_2055",
-      "dateDocument": "1989-11-20",
-      "roFundstelle": "AS 1998 2055",
-      "titelDe": "Übereinkommen über die Rechte des Kindes",
-      "titelFr": "Convention relative aux droits de l'enfant",
-      "titelIt": "Convenzione sui diritti del fanciullo",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2055_2055_2055/de",
-      "sha": "0283241535afb7e4cf65a1e66406d77c3f62228acc3d176c996ba3caf3661fd5"
+      "sha": "f3be0a3fb9454fb67258eebc9c226b1ff7ea683edc55967c9b8f0842bf3f0e4a"
     }
   ],
-  "sha": "056624d550fc6962be4398bba6d1956c0c4ef1019f228b3068cff2d6ebf3b157"
+  "sha": "2c50e61dda832fca814e0e38a70daef4ba175e0e0dc47bd415db77819d1ce4de"
 }

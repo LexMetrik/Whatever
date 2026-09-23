@@ -695,5 +695,62 @@
     "2016-04-08"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2010/801",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2010/801",
+    "inkrafttreten": "2011-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/800",
+        "typ": 3,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/801",
+        "typ": 5,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/179",
+        "typ": 1,
+        "datum": "2011-03-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/179",
+        "typ": 9,
+        "datum": "2011-03-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/830",
+        "typ": 1,
+        "datum": "2011-04-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/114",
+        "typ": 6,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/792",
+        "typ": 1,
+        "datum": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/32",
+        "typ": 1,
+        "datum": "2016-04-08"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2010/800": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2009-12-11",
+        "roId": "RO 2010 5601",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano)",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano)"
+      }
+    }
+  }
 }

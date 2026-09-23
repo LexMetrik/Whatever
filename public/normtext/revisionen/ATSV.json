@@ -1,32 +1,68 @@
 {
   "erlassKey": "ATSV",
   "sr": "830.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.11",
-      "sha": "3835f9155cb34bc11f676d00b10cf426e4282fd8e200341aaebbc860a1b8659f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/750",
+      "dateDocument": "2023-11-22",
+      "roFundstelle": "AS 2023 750",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/750/de",
+      "sha": "61a149520d485be0e576d49232e79572721aebd6123202be854e54238059d46c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.11",
-      "sha": "67fbbd083aa6d935701ec4ddf811d43296765fc8db64a329d2fae5b763bdacf5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.11",
-      "sha": "ba1a2c784c45f92d615f0bd91787b29c7dd535537176baf37e0a00f6f562b0ff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.11",
-      "sha": "3e0349250eac70af35a7f8d4dec455f22bf6da928f95f0ee9f2a3e335feda240"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/706",
+      "dateDocument": "2021-11-03",
+      "roFundstelle": "AS 2021 706",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l’assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/706/de",
+      "sha": "99d19a3437028d4e9fec4f5578c808e95ae052f8bf9e6566d9c4a27114c63265"
     },
     {
       "art": "aenderung",
@@ -37,8 +73,11 @@
       "titelDe": "Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts",
       "titelFr": "Ordonnance sur la partie générale du droit des assurances sociales",
       "titelIt": "Ordinanza sulla parte generale del diritto delle assicurazioni sociali",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/893/de",
-      "sha": "6e2d1dd9a84f68f2570689c627aba81579787599098e47d7c1a178a6f31a2d5d"
+      "sha": "a0989ee36eb1006d96b991532f49391e8c559fbb723a4ac21a2668d649e5cef8"
     },
     {
       "art": "aenderung",
@@ -49,26 +88,72 @@
       "titelDe": "Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts (ATSV)",
       "titelFr": "Ordonnance sur la partie générale du droit des assurances sociales (OPGA)",
       "titelIt": "Ordinanza sulla parte generale del diritto delle assicurazioni sociali (OPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/520/de",
-      "sha": "1b66e6844f3b1cd223a44aae36e3cdb6e0458c8b002a1a8796ce1fb34bd4a550"
+      "sha": "640265150458897db12cc514e7c442396d9f22cc11404adff3046af2f8462454"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.11",
-      "sha": "2a09342b863cc1408223800e67d3cb8355aeb08c34cd6eafe8832431098d5655"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/537",
+      "dateDocument": "2014-09-19",
+      "roFundstelle": "AS 2014 3177",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/537/de",
+      "sha": "727d9ef16a2c75e376123eb2508403b67d167008e7927cde0032327446c00ab3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.11",
-      "sha": "21205ef59d02c65f59ed5a36216e147558d8719768be7a8e21ae2a556b6be57d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/723",
+      "dateDocument": "2007-09-28",
+      "roFundstelle": "AS 2007 5155",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/723/de",
+      "sha": "87388b071685aaedb85b7b1aa5b4978c42fc4051d7334823de9fde5a5a337f23"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5823",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+      "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+      "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
+      "sha": "9cd737a7642fa729a8d54b717b8c49459a3002a64f32d5088a08e6713cae5308"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/830.11",
-      "sha": "f771e64488052a0bd7a8a480c958ea9f6697e4b7facd00ac9680ed5be743c6e6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/184",
+      "dateDocument": "2007-02-21",
+      "roFundstelle": "AS 2007 1075",
+      "titelDe": "Verordnung über Kosten und Entschädigungen im Verwaltungsverfahren",
+      "titelFr": "Ordonnance sur les frais et indemnités en procédure administrative",
+      "titelIt": "Ordinanza sulle tasse e spese nella procedura amministrativa",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/184/de",
+      "sha": "66b6358c4856c37ffbd6b69f0908646418d4a9ee5312d0f4a9cc398419de7b66"
     },
     {
       "art": "aenderung",
@@ -79,21 +164,12 @@
       "titelDe": "Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts (ATSV)",
       "titelFr": "Ordonnance sur la partie générale du droit des assurances sociales (OPGA)",
       "titelIt": "Ordinanza sulla parte generale del diritto delle assicurazioni sociali (OPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/609/de",
-      "sha": "89dc2de5fa4fb3194bcd1990e787cdbcefcb1ae05afafeccdd9b98962d6d2448"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/569",
-      "dateDocument": "2002-09-11",
-      "roFundstelle": "AS 2002 3703",
-      "titelDe": "Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts (ATSV)",
-      "titelFr": "Ordonnance sur la partie générale du droit des assurances sociales (OPGA)",
-      "titelIt": "Ordinanza sulla parte generale del diritto delle assicurazioni sociali (OPGA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/569/de",
-      "sha": "0574bd0f142669ceba6534007940ae12c905f01aa9cddaafff244763313fa47e"
+      "sha": "e407c2653f5260ea3df117607dedc1c226c80e14463435d1ccaf2ec4f3c2b53a"
     }
   ],
-  "sha": "fe9558bb1ea74c3e6cbf37d35c9fb2b6e1885d1c7ccf341290085e021c923aa0"
+  "sha": "7040ff479905545197d8dae17d27f1a8168269c906378823e1a83d290f66e881"
 }

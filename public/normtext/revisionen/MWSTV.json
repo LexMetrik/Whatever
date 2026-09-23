@@ -1,15 +1,28 @@
 {
   "erlassKey": "MWSTV",
   "sr": "641.201",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/485",
+      "dateDocument": "2024-08-21",
+      "roFundstelle": "AS 2024 485",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l’imposta sul valore aggiunto (Ordinanza sull’IVA, OIVA)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "e1381ee2fdbd3d2bae09721c02397ee15466f1c83d7500cb4fe0bacb41b64ef3"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-01-01",
+        "2027-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/485/de",
+      "sha": "217f0b985955588f70b562edc55d91d805fae4fb949ff479ecf11a6c6498585d"
     },
     {
       "art": "aenderung",
@@ -20,14 +33,54 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l’imposta sul valore aggiunto (Ordinanza sull’IVA, OIVA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2025-01-01",
+        "2027-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/485/de",
-      "sha": "afd97cc4aabad6fa0d318e5e87f5dbf7dedb0b851a87d6b157c155677ec2411c"
+      "sha": "ebc439faa98c23b4eccdd2a15752fdf6510478119d50f40786f3411a301e1224"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "9034026581bfeacb92325bc896589f9f4c55c6f218a6aded54ca763746506ddc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/838",
+      "dateDocument": "2022-12-21",
+      "roFundstelle": "AS 2022 838",
+      "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3)",
+      "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19)",
+      "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/838/de",
+      "sha": "e1c19869326960d3b4a5d85852d0c40b0b26bdcc7ed5060804343607e85ade29"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/835",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2022 835",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/835/de",
+      "sha": "6c978df8f1b085b3a71aca73423a64348096958d799a5a2b90f8b2d94af4684d"
     },
     {
       "art": "aenderung",
@@ -38,26 +91,491 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l’imposta sul valore aggiunto (Ordinanza sull’IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/312/de",
-      "sha": "faed78beccd15c0cc5ad1e8282242ba03f6c794cfd39960a1071412d727798a2"
+      "sha": "6d3f960881d50ae092f6056a349b70212408ffcdd450a11cede1748025cf928a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/86",
+      "dateDocument": "2023-02-15",
+      "roFundstelle": "AS 2023 86",
+      "titelDe": "Verordnung über die Änderung des Zolltarifs in den Anhängen 1 und 2 zum Zolltarifgesetz und über die Anpassung von Erlassen im Zusammenhang mit dieser Änderung",
+      "titelFr": "Ordonnance modifiant le tarif des douanes dans les annexes 1 et 2 de la loi sur le tarif des douanes et adaptant des actes législatifs découlant de cette modification",
+      "titelIt": "Ordinanza concernente la modifica della tariffa doganale negli allegati 1 e 2 della legge sulla tariffa delle dogane e concernente l’adeguamento di atti normativi connessi a tale modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/86/de",
+      "sha": "2ed9417e80bb7a9374973fd543384ce95491259d6f25c354c1988d723ea8497c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "443d78f12c088e72749fbf329857fd2b734a3156816331767396f30c0edf3c88"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "3c4c138558720008036b8a89ccc9eab7723b090cc101233c0a3085df46f4166d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/825",
+      "dateDocument": "2021-12-03",
+      "roFundstelle": "AS 2021 825",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/825/de",
+      "sha": "d01e83b559162671b3e9b2a7e1a4848c3a4595668576bad19e3d2f468940b9b9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/891",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2021 891",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l’imposta sul valore aggiunto (Ordinanza sull’IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/891/de",
+      "sha": "46f1d52e414d39cae67e3c4485f48920f8f7cbb1e6692a964410226f45d6d77d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/835",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2022 835",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/835/de",
+      "sha": "42edf0f6858cd3e7aad9223bd35c91237f734295d2d72c3074ff6436e1fc974b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/838",
+      "dateDocument": "2022-12-21",
+      "roFundstelle": "AS 2022 838",
+      "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3)",
+      "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19)",
+      "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/838/de",
+      "sha": "b7674b60c40b4c94b06ea021b3279b2e8e1b4fa00a6cb077ef979980b3f16877"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "80e93075540ce94f7b7a0f09d924230a38cadf98664da4280c425940df94a9ec"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/349",
+      "dateDocument": "2022-06-03",
+      "roFundstelle": "AS 2022 349",
+      "titelDe": "Verordnung über die Tierarzneimittel (Tierarzneimittelverordnung, TAMV)",
+      "titelFr": "Ordonnance sur les médicaments vétérinaires (OMédV)",
+      "titelIt": "Ordinanza sui medicamenti per uso veterinario (Ordinanza sui medicamenti veterinari, OMVet)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/349/de",
+      "sha": "40d41ed906dbb524a2f3a8444c098bea3d4a96929679de222ce637ff2a72b95f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/371",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 2833",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-01-01",
+        "2010-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/371/de",
+      "sha": "ab8916efad07b35528b407f6fd6d30b99ff574bc83da81c2cf8e60a6e3110865"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/671",
+      "dateDocument": "2011-10-12",
+      "roFundstelle": "AS 2011 4739",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/671/de",
+      "sha": "7ec80ac621aeec8abcbb5b26eda051cfda3a9420f25775659dbe490d3b549845"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/910",
+      "dateDocument": "2011-12-28",
+      "roFundstelle": "AS 2011 6545",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV) (Betrifft nur den italienischen Text)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA) (Ne concerne que le texte italien)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/910/de",
+      "sha": "61b5d5c33fad3f3d1532eedffa759035d477721f71081ea9344913a1a533d2f6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/704",
+      "dateDocument": "2013-10-30",
+      "roFundstelle": "AS 2013 3839",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/704/de",
+      "sha": "91e5922f64632c9587649977c5249c61034017df9e6f32c98156148027df48f8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/659",
+      "dateDocument": "2014-11-12",
+      "roFundstelle": "AS 2014 3847",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/659/de",
+      "sha": "a012a2b27baff080cc847c139f6ff85df52de5a693a15bf68f00ec08b37329b8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/804",
+      "dateDocument": "2015-11-18",
+      "roFundstelle": "AS 2015 4917",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/804/de",
+      "sha": "3cfc50717f5a417572b62bf8482b729a12d45b908408824fb75fff17ebfa5544"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/63",
+      "dateDocument": "2016-12-16",
+      "roFundstelle": "AS 2017 283",
+      "titelDe": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV)",
+      "titelFr": "Ordonnance sur les denrées alimentaires et les objets usuels (ODAlOUs)",
+      "titelIt": "Ordinanza sulle derrate alimentari e gli oggetti d'uso",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-05-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/63/de",
+      "sha": "af7c1b3b8ca8999c65e68bcc268482c6a8418fd0cc47a9353e3570725cba3271"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/696",
+      "dateDocument": "2017-10-18",
+      "roFundstelle": "AS 2017 6307",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/696/de",
+      "sha": "fd2a55ac90539c915e3ee1d549965c25a43db38cfd8b200b77102dda431fd699"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/789",
+      "dateDocument": "2017-12-12",
+      "roFundstelle": "AS 2017 7263",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV) (Betrifft nur den französischen Text)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2017-12-12",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/789/de",
+      "sha": "8b16c8971e3923fb48571dddbc95ae43ab481e13e1d063198e8c7f91f76a803f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/499",
+      "dateDocument": "2018-08-15",
+      "roFundstelle": "AS 2018 3143",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/499/de",
+      "sha": "badd51a0842eb73b96ac3459b353ee491994ddf86ba7d743179072650ca22f5b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/56",
+      "dateDocument": "2018-01-30",
+      "roFundstelle": "AS 2018 521",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV). (Betrifft nur den italienischen Text)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA). (Ne concerne que le texte italien)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2018-01-30",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/56/de",
+      "sha": "12e1b17a51156381f515f34f804250c9888f243d8770da7bd95884b1975bd5a7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/786",
+      "dateDocument": "2018-11-14",
+      "roFundstelle": "AS 2018 5029",
+      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung; AMBV)",
+      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
+      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/786/de",
+      "sha": "4c3cc248ab6483b211e2267083d6932961b3ee00955331e17f82e5d74b105a65"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/796",
+      "dateDocument": "2018-11-07",
+      "roFundstelle": "AS 2018 5155",
+      "titelDe": "Verordnung über Geldspiele (Geldspielverordnung, VGS)",
+      "titelFr": "Ordonnance sur les jeux d'argent (OJAr)",
+      "titelIt": "Ordinanza sui giochi in denaro (OGD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/796/de",
+      "sha": "0f35d11137c35bea703d6d35895bc3b7ec1c5b220b7b4402703a8ca01f925f49"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/162",
+      "dateDocument": "2019-03-08",
+      "roFundstelle": "AS 2019 911",
+      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
+      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
+      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-04-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/162/de",
+      "sha": "c0a7e31dbf2b5f84d3822fbd196ce30c9795fe97781405f3e41c432cef404410"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/977",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2020 5801",
+      "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3) (Sars-CoV-2-Schnelltests)",
+      "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19) (Tests rapides SARS-CoV-2)",
+      "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19) (Test rapidi SARS-CoV-2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-06-22",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/977/de",
+      "sha": "f0028d057fb1b1c0b949367f08245ce766e72f643fac783b6a136a66c9398d53"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/145",
+      "dateDocument": "2021-03-12",
+      "roFundstelle": "AS 2021 145",
+      "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3)",
+      "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19)",
+      "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-28",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/145/de",
+      "sha": "26d62dc8f785c05ba16b375145520cbf66f7216dbe82158b6ecd6fa16f0d1b23"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/53",
+      "dateDocument": "2021-01-27",
+      "roFundstelle": "AS 2021 53",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell'essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/53/de",
+      "sha": "d75eecb2a114821368e4652e602ffb611e30d7215675553a84680c77379a3e1f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+      "dateDocument": "2021-11-17",
+      "roFundstelle": "AS 2021 800",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "sha": "01821c1c4afbc3a6add1f457b75e1324bd1fd6dd6525736c7991ab85f093a8fb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/825",
+      "dateDocument": "2021-12-03",
+      "roFundstelle": "AS 2021 825",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/825/de",
+      "sha": "2ea13d66bc04c138b799b585e6c7893b1d53fe09f74d730972b85b40891524ec"
     },
     {
       "art": "aenderung",
@@ -68,8 +586,15 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l’imposta sul valore aggiunto (Ordinanza sull’IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/891/de",
-      "sha": "389eee9ccd100766ec605c373e792bdcb9dd7867162e3cf5cd04f60dec747f9e"
+      "sha": "ce022765951b7af9d17d676f2374cc6c280e6ae1ecfa1ca2ade1e3367331150a"
     },
     {
       "art": "aenderung",
@@ -82,20 +607,49 @@
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2021 53, das unter SR 818.101.1 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/122/de",
-      "sha": "8f23a1c4d87e56a27d9b9492ad9012d37b86c3d2f203d2d307b083156b6f5a54"
+      "sha": "593438e3efa508ff7a12a4d7b8b58987751bf367b3c33897e89a03ae968fe6ff"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "1f3ad02650412146d3c9f82ea55df10f84c1293bc34aa826988b7af4df77cd6a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/53",
+      "dateDocument": "2021-01-27",
+      "roFundstelle": "AS 2021 53",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell'essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/53/de",
+      "sha": "3814881577bd5539ab9954ab95d26421fca66001abe92c379e5a3a7cf440dfad"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-28",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "e334bd0fe37816ea11f086e7be29941fac18eeb2a46a3e648faff7330f48384f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/145",
+      "dateDocument": "2021-03-12",
+      "roFundstelle": "AS 2021 145",
+      "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3)",
+      "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19)",
+      "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-28",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/145/de",
+      "sha": "6c317a39c863dcbba966e57b61be22620de0d12048329fb7c81f0793f3ad1d98"
     },
     {
       "art": "aenderung",
@@ -108,14 +662,30 @@
       "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19) (Test rapidi SARS-CoV-2). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2020 5801, das unter SR 818.101.24 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/11/de",
-      "sha": "39a9a500dab26b8f9619eb81caeeb3f2ed7c356e7b18d1760594a9a29dc0703c"
+      "sha": "9151aae2c8bed286855eaee122bafa285491a72a67766e4391bb88e9eb2b8d4a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-06-22",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "47266f0d6e38f647f420ba4934a31d6d311fa89cb0c9525dde97f69a7275c1cc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/977",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2020 5801",
+      "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3) (Sars-CoV-2-Schnelltests)",
+      "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19) (Tests rapides SARS-CoV-2)",
+      "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19) (Test rapidi SARS-CoV-2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-06-22",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/977/de",
+      "sha": "394056f17c2ec00d56e91404dd41076c49c1084d99c20fa227cc4c7cce376192"
     },
     {
       "art": "aenderung",
@@ -126,8 +696,15 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-04-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/162/de",
-      "sha": "5ebf0788370c3401d22d66eab9601daf52191444725517ed5058f586c4a7b976"
+      "sha": "6429913b27a171ecc7afbe06a35221475748d5759735a073059e9fa780abd412"
     },
     {
       "art": "aenderung",
@@ -138,8 +715,53 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/499/de",
-      "sha": "4e389beca08adc7747c8491a70882c632b4e32253da5091eb451f9e834d1b727"
+      "sha": "6a17b309ccdab78a8dce90bde98536509bb586e13776518217563e312ad80263"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/786",
+      "dateDocument": "2018-11-14",
+      "roFundstelle": "AS 2018 5029",
+      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung; AMBV)",
+      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
+      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/786/de",
+      "sha": "82cb58389e34b926e809bccbff0e76912a81fa72709850d02352055a261ceaa7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/796",
+      "dateDocument": "2018-11-07",
+      "roFundstelle": "AS 2018 5155",
+      "titelDe": "Verordnung über Geldspiele (Geldspielverordnung, VGS)",
+      "titelFr": "Ordonnance sur les jeux d'argent (OJAr)",
+      "titelIt": "Ordinanza sui giochi in denaro (OGD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/796/de",
+      "sha": "9efa6b018a36097aa2976ca73157caf302d4fd9e94ec3aef25c26ed00518d8ad"
     },
     {
       "art": "aenderung",
@@ -150,8 +772,15 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV). (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA). (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2018-01-30",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/56/de",
-      "sha": "0ef831a6b7f330bf355ec07203e58b0b794b1598ba8df0398a0e95d39d9bb36b"
+      "sha": "cfc927887b658c62c64d109acde37f787bf9cd8ffeec42422ea122f70b8d7b12"
     },
     {
       "art": "aenderung",
@@ -162,8 +791,15 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/696/de",
-      "sha": "30f66166239be4eddde6965c2986dabbc2fc57881b88a7bbb2d54b910677815c"
+      "sha": "688ae062c0c2e016bcee915950724d3eb97b5c4169ebdbb647ff92e3cd5b6afb"
     },
     {
       "art": "aenderung",
@@ -174,20 +810,53 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2017-12-12",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/789/de",
-      "sha": "6f6d3330f47592a165511b6bd9ab8c2e74d89280913e5a4f35b8aa3f10d8dd67"
+      "sha": "5da03659f10f6ec529e487e7f7dd21a09a6c2a20be3d927f69afbe886b53143d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "edbf0049a5dd34a0a05a050a2b6fe3667fc781e427d176894f43f9a8a0db8dbd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/63",
+      "dateDocument": "2016-12-16",
+      "roFundstelle": "AS 2017 283",
+      "titelDe": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV)",
+      "titelFr": "Ordonnance sur les denrées alimentaires et les objets usuels (ODAlOUs)",
+      "titelIt": "Ordinanza sulle derrate alimentari e gli oggetti d'uso",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-05-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/63/de",
+      "sha": "050461ff44384320e7f41a70cd88e8f631d6a7671b14e376b5356786056bd3c3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "e9cca835a95cdc09da495d4bfdd353ae9c8386737231c66f80eb2b82ec77292f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/804",
+      "dateDocument": "2015-11-18",
+      "roFundstelle": "AS 2015 4917",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/804/de",
+      "sha": "f6d4c9f939b6067a43513c1b5becb0a9122dd59eaa4db73542b74133a1355baf"
     },
     {
       "art": "aenderung",
@@ -198,8 +867,15 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/659/de",
-      "sha": "01bbf7d46a507ea8ba3e9f09c41d7d2211811366c5a651e5eefc9014b8d7f2af"
+      "sha": "102da6a3135cb8adf5c34b39904560f18cb19a954d29705a2f5740eebeb8c0c2"
     },
     {
       "art": "aenderung",
@@ -210,8 +886,15 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/704/de",
-      "sha": "aea0e288d834593fc76ef2f01cddf61858610c524428150d5a136edfb25c6551"
+      "sha": "cdd11e976e407ec89cbd5dee152653eeec1b603a9271e9456b17e64a1738cdd5"
     },
     {
       "art": "aenderung",
@@ -222,8 +905,15 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/671/de",
-      "sha": "18dcb322e5b52a25263723493e427f33e9ca410387d39798e9d24866400ae907"
+      "sha": "706f1fc88bbab690b9ce05ebd59b4beed020c7c15d82f5b09464e9ebda376b40"
     },
     {
       "art": "aenderung",
@@ -234,26 +924,35 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/910/de",
-      "sha": "6bc2765008c6001818e76f818f086e940e53386d3575c4a044c747859f72230f"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2010-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.201",
-      "sha": "6a6c0e73b7ade71fe11d922e79f4bccc354901a2494cc664482ea3e8ddd3689f"
+      "sha": "11ee25a69ffd92e59cc6b2177041e09b5a51858d308d95b420b5af17377cf00a"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2010-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/828",
-      "dateDocument": "2009-11-27",
-      "roFundstelle": "AS 2009 6743",
+      "dateEntryInForce": "2010-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/371",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 2833",
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/828/de",
-      "sha": "7f53b538597e171a6e5d87afdd541b7e902575d2a8c3412fd428c18d3fce6e75"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-01-01",
+        "2010-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/371/de",
+      "sha": "216872aea0211f2d9e20cd9fffb67351df7a6689b1d92c74cf093073a771e181"
     },
     {
       "art": "aenderung",
@@ -264,81 +963,17 @@
       "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
       "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
       "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-01-01",
+        "2010-07-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/371/de",
-      "sha": "c860f187564377ecc4f433a81168f31f82f99da3b8614d80a782a0afefbfd2bc"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/360",
-      "dateDocument": "2006-05-24",
-      "roFundstelle": "AS 2006 2353",
-      "titelDe": "Verordnung zum Bundesgesetz über die Mehrwertsteuer (MWSTGV)",
-      "titelFr": "Ordonnance relative à la loi sur la TVA (OLTVA)",
-      "titelIt": "Ordinanza relativa alla legge federale concernente l'imposta sul valore aggiunto (OLIVA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/360/de",
-      "sha": "fece70cb3c21eda5f1700d3f7d0d5d32583375e2263cd4fe8276dfcfc0c44869"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2005-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/820",
-      "dateDocument": "2004-12-10",
-      "roFundstelle": "AS 2004 5387",
-      "titelDe": "Verordnung zum Bundesgesetz über die Mehrwertsteuer (MWSTGV)",
-      "titelFr": "Ordonnance relative à la loi fédérale régissant la taxe sur la valeur ajoutée (OLTVA)",
-      "titelIt": "Ordinanza relativa alla legge federale concernente l'imposta sul valore aggiunto (OLIVA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/820/de",
-      "sha": "8531ba4d304c53d6d98101a4f460f5a522d392484d3051151120b03f841ad40f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/654",
-      "dateDocument": "2003-11-19",
-      "roFundstelle": "AS 2003 4353",
-      "titelDe": "Verordnung zum Bundesgesetz über die Mehrwertsteuer (MWSTGV)",
-      "titelFr": "Ordonnance relative à la loi fédérale régissant la taxe sur la valeur ajoutée (OLTVA)",
-      "titelIt": "Ordinanza relativa alla legge federale concernente l'imposta sul valore aggiunto (OLIVA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/654/de",
-      "sha": "7e3b8908f60da889c6fcb223f39595d4de6ae3279735a4c774dd3dc60bf7531e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2001-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/213",
-      "dateDocument": "2000-03-29",
-      "roFundstelle": "AS 2000 1347",
-      "titelDe": "Verordnung zum Bundesgesetz über die Mehrwertsteuer (MWSTGV)",
-      "titelFr": "Ordonnance relative à la loi fédérale régissant la taxe sur la valeur ajoutée (OLTVA)",
-      "titelIt": "Ordinanza relativa alla legge federale concernente l'imposta sul valore aggiunto (OLIVA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/213/de",
-      "sha": "094f750ce8c1603eb790a6c508d07fbb2c41ff9792cb6f50803b8c185bc56dc7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1464_1464_1464",
-      "dateDocument": "1994-06-22",
-      "roFundstelle": "AS 1994 1464",
-      "titelDe": "Verordnung vom 22. Juni 1994 über die Mehrwertsteuer (MWSTV)",
-      "titelFr": "Ordonnance du 22 juin 1994 régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza del 22 giugno 1994 concernente l'imposta sul valore aggiunto (OIVA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1464_1464_1464/de",
-      "sha": "c5b08a11d96ea977566269d3c16a057e057ad5e033532a3fe1aec8429216ad21"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1973-07-04",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/1058_1058_1056",
-      "dateDocument": "1973-03-21",
-      "roFundstelle": "AS 1973 1058",
-      "titelDe": "Bundesgesetz vom 21. März 1973 über die Erhöhung der Warenumsatzsteuer und der Wehrsteuer und den Ausgleich der Folgen der kalten Progression",
-      "titelFr": "Loi fédérale du 21 mars 1973 concernant l'augmentation de l'impôt sur le chiffre d'affaires et de l'impôt pour la défense nationale et compensation des effets de la progression à froid",
-      "titelIt": "Legge federale del 21 marzo 1973 concernente l'aumento delle imposte sulla cifra d'affari e per la difesa nazionale e la compensazione degli effetti della progressione a freddo",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/1058_1058_1056/de",
-      "sha": "4918b33462473dcd741db693bd76077c67e45b0a38e7e536e9a0840f027c6f91"
+      "sha": "aead8b5cb8e0bb1a33c519d80af4ed35ce68895d2e0a00944b992d1512ecf4e2"
     }
   ],
-  "sha": "8ca338f866b3dcf83bb77ff534df08a3783cbc44d9d66b697a5b41f0e6a7caee"
+  "sha": "a13460e7249b6b10e3db1ea6c9c85709bfd728cd46d39cd679bf53609e012671"
 }

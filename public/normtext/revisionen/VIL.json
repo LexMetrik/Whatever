@@ -1,20 +1,38 @@
 {
   "erlassKey": "VIL",
   "sr": "748.131.1",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "98b4673c6029e5c6d7490d49d62a6172820470b429d499a75da80c26b085554c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/659",
+      "dateDocument": "2025-10-15",
+      "roFundstelle": "AS 2025 659",
+      "titelDe": "Raumplanungsverordnung (RPV)",
+      "titelFr": "Ordonnance sur l’aménagement du territoire (OAT)",
+      "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/659/de",
+      "sha": "0bbff891feb790f3cebc6d6c151419d47e30ca51357549cb226b4653ff39537f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "28049ff7cfd649f1c6c309d9fc7914997532c59af12aff34c06715c95c25abf3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/529",
+      "dateDocument": "2023-08-23",
+      "roFundstelle": "AS 2023 529",
+      "titelDe": "Verordnung über die amtliche Vermessung (VAV)",
+      "titelFr": "Ordonnance sur la mensuration officielle (OMO)",
+      "titelIt": "Ordinanza concernente la misurazione ufficiale (OMU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/529/de",
+      "sha": "ec105526f72533815f0c7c56c4c37ced3ece798f1e710bbb40d6b3dbb3997241"
     },
     {
       "art": "aenderung",
@@ -25,14 +43,26 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
       "titelFr": "Ordonnance sur l’infrastructure aéronautique (OSIA)",
       "titelIt": "Ordinanza sull’infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/207/de",
-      "sha": "8b49913930f76a84ce514a1e787ebf24ce2b6d217798a9030aec7b78cb7e4fa6"
+      "sha": "e69b57ad24541434406f5f969015afa0d732092315b1026117b7e2b39ef2c092"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "31d27182b71d41511fe601954b6e6123346869f040a12bc1f7279c196b0cc158"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/230",
+      "dateDocument": "2022-02-16",
+      "roFundstelle": "AS 2022 230",
+      "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+      "titelFr": "Ordonnance sur l’aviation (OSAv)",
+      "titelIt": "Ordinanza sulla navigazione aerea (ONA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/230/de",
+      "sha": "47f95836df228d6e42ff5d427b36b3c9d2541cc8b94b368f26a01ca1f5ecd980"
     },
     {
       "art": "aenderung",
@@ -45,20 +75,45 @@
       "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d’approvazione dei piani. Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2000 703, das unter SR 451.1 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/269/de",
-      "sha": "87aba187e59b5eaa38e5068266333d902c41fcb37e4a3b63566ef9e67bc6b910"
+      "sha": "07f8adde7a651df1b5925cf0f6607840b7ecee3a081cf828309c86bb7db7fc7d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "df07e2f5a43ef3c22c7b7c5e3038eb87a74fffadc5ae78dbc983a9f2e39712c3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/744",
+      "dateDocument": "2020-08-19",
+      "roFundstelle": "AS 2020 3995",
+      "titelDe": "Verordnung über die Anpassung des Verordnungsrechts infolge der Änderung des Bundesgesetzes über die Enteignung",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances en raison de la modification de la loi fédérale sur l'expropriation",
+      "titelIt": "Ordinanza che adegua ordinanze a seguito della modifica della legge federale sull'espropriazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/744/de",
+      "sha": "063ceac8644033de26164546a0c9de345aa81d62860260ccfbae3ec8a2d3a4b0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-10-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "bebe229590769d4157cd1874072c087faaf56df9eb82a719e5b16b8940f13243"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/251",
+      "dateDocument": "2020-04-22",
+      "roFundstelle": "AS 2020 1331",
+      "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
+      "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
+      "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-04-23",
+        "2020-10-23"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/251/de",
+      "sha": "df13e92204bc9757b85c212590c45f13defaf38793b647ad876a41314ea23897"
     },
     {
       "art": "aenderung",
@@ -69,14 +124,30 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
       "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
       "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-04-23",
+        "2020-10-23"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/251/de",
-      "sha": "832f698e7ec16f06f68ba75126a78ddf80da61968e3e0dab3566ea1ec621ac64"
+      "sha": "08509b95fc250d1a4d0edf6168b3195555a44f08cb14512fabc64719006650b9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-14",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "8855ad329ab553cb0189534e3dc1aa81153f5b86a1bffcc5db3817e56a135e55"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/25",
+      "dateDocument": "2020-01-14",
+      "roFundstelle": "AS 2020 145",
+      "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
+      "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
+      "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/25/de",
+      "sha": "ee288d136b060c8672d7b8077f2ccc978dd28aa9a55fa1d6565080f328e0cd53"
     },
     {
       "art": "aenderung",
@@ -87,8 +158,12 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
       "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
       "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/611/de",
-      "sha": "411c8c55141514485703ee69a50fe3b125fcac0a2ccff9b3bb085f63ff403078"
+      "sha": "1b607ddba4a916a7f0f53192151c2980069541eb35cf0a97edfc7c0e50c51b60"
     },
     {
       "art": "aenderung",
@@ -99,26 +174,59 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
       "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
       "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/733/de",
-      "sha": "f16ba17f7dc73f296e7fb200156adc18c8d3fef2168a209b48f35c68932b42cc"
+      "sha": "bac35893711e0aca2eede0e3e11cf3d9a9f3dcd5f20bc022ba1799af6ab25b63"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "abf40e3ef08697c8fa578d53bcf39aa279ff045c969710c3b10956f5dd3a71a3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/286",
+      "dateDocument": "2014-05-14",
+      "roFundstelle": "AS 2014 1339",
+      "titelDe": "Verordnung über das Abfliegen und Landen mit Luftfahrzeugen ausserhalb von Flugplätzen (Aussenlandeverordnung, AuLaV)",
+      "titelFr": "Ordonnance sur le décollage et l'atterrissage d'aéronefs en dehors des aérodromes (Ordonnance sur les atterrissages en campagne, OSAC)",
+      "titelIt": "Ordinanza sui decolli e gli atterraggi di aeromobili fuori degli aerodromi (Ordinanza sugli atterraggi esterni, OAEs)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/286/de",
+      "sha": "d9c748b1d6d8d250b5e0a4b8fa6a5d95bb9153bd9380a8c8a9b3c1b0f81caa7c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "816076aaca9aefbbd07c7e3e8a08643038b3636acb2a8188fbab32d672b424ac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/328",
+      "dateDocument": "2012-04-25",
+      "roFundstelle": "AS 2012 2753",
+      "titelDe": "Verordnung über die Flughafengebühren",
+      "titelFr": "Ordonnance sur les redevances aéroportuaires",
+      "titelIt": "Ordinanza sulle tasse aeroportuali",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/328/de",
+      "sha": "3666d47ce71d0aeb089b1938a9ce6f56b163b8df3a04793e5b3934aa92c79d55"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "5461769ed69e48d57d93d9d77edad0cbf22a4b92e62fe7f3e2fe0799599882d7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/166",
+      "dateDocument": "2011-03-04",
+      "roFundstelle": "AS 2011 1139",
+      "titelDe": "Verordnung über die Änderung von Bundesratsverordnungen in Ausführung der Änderung vom 1. Oktober 2010 des Luftfahrtgesetzes",
+      "titelFr": "Ordonnance portant modification d'ordonnances du Conseil fédéral en exécution de la loi fédérale sur l'aviation modifiée le 1er octobre 2010",
+      "titelIt": "Ordinanza concernente la modifica di ordinanze del Consiglio federale in esecuzione della modifica del 1o ottobre 2010 della legge sulla navigazione aerea",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/166/de",
+      "sha": "488d30718ed6a2489089bfa37edca512d40285a8159ab4ccead68fa91f4cd2d5"
     },
     {
       "art": "aenderung",
@@ -129,8 +237,12 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
       "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
       "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/135/de",
-      "sha": "6d831952f5bc082a3bb6f89d891b0a75626f37182c723f5c2414506ad9ca7ca2"
+      "sha": "4f6e4ad064db535d53f400592b15014723c1950c1e0c40b46490d32fe3e4d9cb"
     },
     {
       "art": "aenderung",
@@ -141,8 +253,11 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
       "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA) (Concerne solo il testo francese.)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/231/de",
-      "sha": "854b53df824e0edf9fb62b07f91c745f35513f4111440ca5f9e077af38ccee47"
+      "sha": "3108a3d3691d4431e22dfd4fffa14dfd5b8bdb99791d7f57bddb9ebd8cd91edb"
     },
     {
       "art": "aenderung",
@@ -153,32 +268,43 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
       "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
       "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/197/de",
-      "sha": "bf43cbc65dd251aa0b78215d21ce551f4682e5bb46997ad6c563eeb7d078984c"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "51ba4b817277155c942c0052b187849c492dab60a3028a101c6afd23bb75433c"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/748.131.1",
-      "sha": "11681a2f73ce82603a623b20b4c06d9ec8aaa8834be1b55ac8a3f2131e4fb680"
+      "sha": "ca7b517f4eef3e3454351cdf3488d127af74c190039105b5eeb9ddd99d89dbeb"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/3050_3050_3050",
-      "dateDocument": "1994-11-23",
-      "roFundstelle": "AS 1994 3050",
-      "titelDe": "Verordnung vom 23. November 1994 über die Infrastruktur der Luftfahrt (VIL)",
-      "titelFr": "Ordonnance du 23 novembre 1994 sur l'infrastructure aéronautique (OSIA)",
-      "titelIt": "Ordinanza del 23 novembre 1994 sull'infrastruttura aeronautica (OSIA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/3050_3050_3050/de",
-      "sha": "ec04018ed1bd39b5cf3511097c364b2ecbac8e23131a5b2ae85a59ddfca52867"
+      "dateEntryInForce": "2000-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/218",
+      "dateDocument": "2000-04-12",
+      "roFundstelle": "AS 2000 1388",
+      "titelDe": "Lärmschutz-Verordnung (LSV)",
+      "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
+      "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/218/de",
+      "sha": "e39dfe2ae484cabaa14ed85790684c394f811eb1ef79e6b6dcb074b8b3a01cf4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+      "dateDocument": "2000-02-02",
+      "roFundstelle": "AS 2000 703",
+      "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/121/de",
+      "sha": "0b8fbfddadce476bfa646734128e77e92e618559f01d6aaa6e1718ef4985b37d"
     },
     {
       "art": "aenderung",
@@ -189,9 +315,12 @@
       "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL) (nur ital.)",
       "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA) (seulement en italien)",
       "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/33/de",
-      "sha": "df0310a38dc2fc3a6d5da62c0f31f7ae833a5f851c35238007adf1c45c407f87"
+      "sha": "ed7011e91ed2675baf761ee81188eb9f24fefe2bff8fa17991b800a0015f1ea9"
     }
   ],
-  "sha": "0cf0785ee4ecc5a51ef1011a3e728c8f105ddda47bd38f9885bdb1f7ab369ae1"
+  "sha": "2fcb71fb4beba55c31db64f9ebc890ad24b8e357a1d9bd7a7b6fa3e54eccd6c7"
 }

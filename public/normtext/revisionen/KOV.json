@@ -1,27 +1,146 @@
 {
   "erlassKey": "KOV",
   "sr": "281.32",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.32",
-      "sha": "6380b33f106b5e9dbd18d9b7c78a166da72dad015946339dca4c68f88524c069"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 400",
+      "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "sha": "241432cdc34c60de045ff37da331f7d2c830b3de29ed7a8b10df68028651b15a"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1912-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/27/751_749_771",
-      "dateDocument": "1911-07-13",
-      "roFundstelle": "AS 27 751",
-      "titelDe": "Verordnung vom 13. Juli 1911 über die Geschäftsführung der Konkursämter (KOV)",
-      "titelFr": "Ordonnance du 13 juillet 1911 sur l'administration des offices de faillite (OAOF)",
-      "titelIt": "Regolamento del 13 luglio 1911 concernente l'amministrazione degli uffici dei fallimenti (RUF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/27/751_749_771/de",
-      "sha": "5900b64aa0fe68367690fa032af474e587230f9c8c5fe9cdb10e2d168962647a"
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2884_2884_2884",
+      "dateDocument": "1996-06-05",
+      "roFundstelle": "AS 1996 2884",
+      "titelDe": "Verordnung über die Geschäftsführung der Konkursämter, Änderung",
+      "titelFr": "Ordonnance sur l'administration des offices de faillite, Modification",
+      "titelIt": "Regolamento concernente l'amministrazione degli uffici dei fallimenti, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2884_2884_2884/de",
+      "sha": "6d3bd4c70f7a611b702cc0f3d4ce22d4998a7e2332391d2f73279ebcef005c6d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3491_3491_3491",
+      "dateDocument": "1996-12-24",
+      "roFundstelle": "AS 1996 3491",
+      "titelDe": "Verordnung über die Geschäftsführung der Konkursämter, Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur l'administration des offices de faillite, Errata (seuelement en italien)",
+      "titelIt": "Regolamento concernente l'amministrazione degli uffici dei fallimenti, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3491_3491_3491/de",
+      "sha": "9cc551ce2ab468a64ea6f04389a3b99d1a9b8a322590daf873f637ca8296686d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-12-16",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/262_262_262",
+      "dateDocument": "1988-12-16",
+      "roFundstelle": "AS 1989 262",
+      "titelDe": "Verordnung über die Geschäftsführung der Konkursämter, Änderung",
+      "titelFr": "Ordonnance sur l'administration des offices de faillite, Modification",
+      "titelIt": "Regolamento concernente l'amministrazione degli uffici dei fallimenti, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/262_262_262/de",
+      "sha": "e09fc15a14a02b37b71c1ee7a0998f08d1d77ae2e97653c9dd306cdc42a0e1c9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/813_813_813",
+      "dateDocument": "1979-05-18",
+      "roFundstelle": "AS 1979 813",
+      "titelDe": "Verordnung des über die Geschäftsführung der Konkursämter, Änderung",
+      "titelFr": "Ordonnance sur l'administration des offices de faillite, Modification",
+      "titelIt": "Regolamento concernente l'amministrazione degli uffici dei fallimenti, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/813_813_813/de",
+      "sha": "55c8cacfce9829ba84162b475761083321e45f5e9396f56033d462973fde83d6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1961-05-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1961/385_395_405",
+      "dateDocument": "1961-06-24",
+      "roFundstelle": "AS 1961 385",
+      "titelDe": "Beschluss des Bundesgerichts betreffend die Änderung der Verordnung über die Geschäftsführung der Konkursämter",
+      "titelFr": "Arrêté du Tribunal fédéral modifiant l'ordonnance sur l'administration des offices de faillite",
+      "titelIt": "Decreto del Tribunale federale che modifica il regolamento concernente l'amministrazione degli uffici dei fallimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1961/385_395_405/de",
+      "sha": "4c10eabd6ca639e4514f6b71fc8915f8fd48cf800111b63802dc00a2aa90a049"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1938-03-30",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/54/131_131_123",
+      "dateDocument": "1938-03-14",
+      "roFundstelle": "AS 54 131",
+      "titelDe": "Verordnung des Bundesgerichts über die Aufbewahrung der Betreibungs- und Konkursakten",
+      "titelFr": "Ordonnance du Tribunal fédéral sur la conservation des pièces relatives aux poursuites et aux faillites",
+      "titelIt": "Ordinanza del Tribulanle federale sulla conservazione dei documenti relativi alle esecuzioni e ai fallimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/54/131_131_123/de",
+      "sha": "40634994660ab5a02a950bceb7c95548e58bcde919d433e4c7cef4951988c169"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1926-04-23",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/42/252_272_266",
+      "dateDocument": "1926-04-23",
+      "roFundstelle": "AS 42 252",
+      "titelDe": "Verordnung des BGer betreffend Aufhebung des Art.91 der V über die Geschäftsführung der Konkursämter vom 13. Juli 1911 (BS 3 187)",
+      "titelFr": "Ordonnance du TF abrogeant l'art.91 de l'O du 13 juillet 1911 sur l'administration des offices de faillite (RS 3 178)",
+      "titelIt": "Decreto del TF che abroga l'art.91 del R 13 lug. 1911 sull'amministrazione degli Uffici dei fallimenti (CS 3 171)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/42/252_272_266/de",
+      "sha": "cd315fd353e96a4126f1979fc18377ce7bad1a19a39c05311371e7dba1703181"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1921-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/36/425_433_469",
+      "dateDocument": "1920-04-23",
+      "roFundstelle": "AS 36 425",
+      "titelDe": "Verordnung des Bundesgerichts vom 23. April 1920 über die Zwangsverwertung von Grundstücken (VZG)",
+      "titelFr": "Ordonnance du Tribunal fédéral du 23 avril 1920 sur la réalisation forcée des immeubles (ORFI)",
+      "titelIt": "Regolamento del Tribunale federale del 23 aprile 1920 concernente la realizzazione forzata dei fondi (RFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/36/425_433_469/de",
+      "sha": "b68f9d9a42dcb059d90eb816aaf5208cab4882c7885bb526c591965fd0d41e01"
     }
   ],
-  "sha": "dd54612e556f2ee3a9e0ca9a15b62b670ed652725a9d0d159fefffc7af7686ca"
+  "sha": "b50966b81f0f8e316c21f6f40b241ea2f2c10ec0491773d0e19aa279ad0a128e"
 }

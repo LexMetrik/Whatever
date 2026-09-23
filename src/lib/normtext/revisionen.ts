@@ -43,8 +43,26 @@ export interface RevisionBezug {
    *  Whitelist auf den einen live verifizierten Fall (FZA/AS 2021 12), s.
    *  `scripts/normtext/revisionen-generieren.ts` (`IN_KRAFT_FUER_CH_WHITELIST`). */
   dateInKraftFuerCh?: string;
-  /** Fedlex-Live-Link auf den AS-Text bzw. die amtliche Sammlung (§7c). */
+  /** Pfad (c), S6-D1 23.9.2026: amtliche Auswirkungs-Typen an diesem Datum (Fedlex
+   *  `impact-type`; fehlt bei Einträgen nur aus der SR-Klassierung). Werte und Reihenfolge:
+   *  `WIRKUNGEN` in `scripts/normtext/revisionen-generieren.ts`. */
+  wirkungen?: string[];
+  /** Pfad (c): alle Inkrafttretensdaten desselben Änderungserlasses für diesen Erlass
+   *  (aufsteigend), nur bei gestaffeltem Inkrafttreten — jede Etappe ist ein eigener
+   *  Eintrag mit demselben `ocUri` (Schlüssel darum `revisionSchluessel`, nie `ocUri`). */
+  etappen?: string[];
+  /** Fedlex-Live-Link auf den AS-Text bzw. — beim Marker — auf die Fassung dieses Datums (§7c). */
   quelleUrl: string;
+}
+
+/**
+ * Eindeutiger Schlüssel eines Timeline-Eintrags (Dedupe, React-`key`). Seit Pfad (c)
+ * (S6-D1, 23.9.2026) trägt ein gestaffelt in Kraft gesetzter Erlass je Etappe einen eigenen
+ * Eintrag mit DEMSELBEN `ocUri` (OR ← AS 2020 4005: 2021-01-01 und 2023-01-01) — ein
+ * Schlüssel nur aus `ocUri` verschluckte die zweite Etappe still.
+ */
+export function revisionSchluessel(r: Pick<RevisionBezug, 'art' | 'ocUri' | 'dateEntryInForce'>): string {
+  return `${r.ocUri ?? r.art}@${r.dateEntryInForce}`;
 }
 
 interface RevisionSidecar {
@@ -85,7 +103,7 @@ export interface RevisionAnsicht {
 
 /**
  * Revisions-Timeline zu EINER oder mehreren Normen (lazy). Mehrere normKeys werden über
- * die ocUri (bzw. das Datum bei Markern) dedupliziert und nach Datum absteigend gemischt.
+ * `revisionSchluessel` (ocUri bzw. art + Inkrafttretensdatum) dedupliziert und nach Datum absteigend gemischt.
  * `null` = ALLE Sidecars konnten nicht geladen werden (Fetch-Fehler, §8) → ehrlicher
  * Fehlerzustand; leeres `revisionen` = keine erfasste Änderung (Verordnung o. Ä.).
  */
@@ -100,7 +118,7 @@ export async function revisionenFuerNorm(normKeys: readonly string[]): Promise<R
     if (!s) continue;
     reichweite ??= s.reichweite;
     for (const r of s.revisionen) {
-      const id = r.ocUri ?? `${r.art}:${r.dateEntryInForce}`;
+      const id = revisionSchluessel(r);
       if (seen.has(id)) continue;
       seen.add(id);
       out.push(r);

@@ -700,5 +700,101 @@
     "2015-05-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/2564_2564_2564",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/2564_2564_2564",
+    "inkrafttreten": "1993-10-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2564_2564_2564",
+        "typ": 5,
+        "datum": "1993-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+        "typ": 1,
+        "datum": "1998-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/445",
+        "typ": 1,
+        "datum": "1999-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/245",
+        "typ": 1,
+        "datum": "2000-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/245",
+        "typ": 2,
+        "datum": "2000-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+        "typ": 1,
+        "datum": "1999-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/200",
+        "typ": 1,
+        "datum": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/622",
+        "typ": 1,
+        "datum": "2006-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/726",
+        "typ": 1,
+        "datum": "2008-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/293",
+        "typ": 1,
+        "datum": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/215",
+        "typ": 1,
+        "datum": "2015-05-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822": {
+        "dateForce": "1998-08-01",
+        "dateDoc": "1998-06-22",
+        "roId": "RO 1998 1822",
+        "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+        "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+        "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/445": {
+        "dateForce": "1999-11-01",
+        "dateDoc": "1999-08-25",
+        "roId": "RO 1999 2826",
+        "titelDe": "Verordnung über den Schutz der Arbeitnehmerinnen und Arbeitnehmer vor Gefährdung durch Mikroorganismen (SAMV)",
+        "titelFr": "Ordonnance sur la protection des travailleurs contre les risques liés aux microorganismes (OPTM)",
+        "titelIt": "Ordinanza sulla protezione dei lavoratori dal pericolo derivante da microrganismi (OPLM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/34": {
+        "dateForce": "1999-07-01",
+        "dateDoc": "1999-11-17",
+        "roId": "RO 2000 187",
+        "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+        "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+        "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/200": {
+        "dateForce": "2002-06-01",
+        "dateDoc": "2002-04-24",
+        "roId": "RO 2002 1347",
+        "titelDe": "Verordnung 1 zum Arbeitsgesetz (ArGV 1)",
+        "titelFr": "Ordonnance 1 relative à la loi sur le travail (OLT 1)",
+        "titelIt": "Ordinanza 1 concernente la legge sul lavoro (OLL 1)"
+      }
+    }
+  }
 }

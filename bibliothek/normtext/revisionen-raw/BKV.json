@@ -1404,5 +1404,128 @@
     "2026-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/1363_1363_1363",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/1363_1363_1363",
+    "inkrafttreten": "1995-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1363_1363_1363",
+        "typ": 5,
+        "datum": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/1673_1673_1673",
+        "typ": 1,
+        "datum": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1976_1976_1976",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1805_1805_1805",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/240",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/328",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/458",
+        "typ": 1,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/483",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/648",
+        "typ": 1,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/491",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/761",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/567",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/241",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/241",
+        "typ": 2,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/163",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/165",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/573",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/578",
+        "typ": 1,
+        "datum": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1994/1673_1673_1673": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-06-29",
+        "roId": "RO 1994 1673",
+        "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer, Änderung",
+        "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct, Modification",
+        "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1976_1976_1976": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-05-31",
+        "roId": "RO 1996 1976",
+        "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer, Änderung",
+        "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct, Modification",
+        "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1805_1805_1805": {
+        "dateForce": "1999-01-01",
+        "dateDoc": "1998-06-10",
+        "roId": "RO 1998 1805",
+        "titelDe": "Verordnung über den Abzug von Berufskosten der unselbständigen Erwerbstätigkeit bei der direkten Bundessteuer, Änderung",
+        "titelFr": "Ordonnance sur la déduction des frais professionnels des personnes exerçant une activité lucrative dépendante en matière d'impôt fédéral direct, Modification",
+        "titelIt": "Ordinanza sulla deduzione delle spese professionali delle persone esercitanti un'attività lucrativa dipendente ai fini dell'imposta federale diretta, Modifica"
+      }
+    }
+  }
 }

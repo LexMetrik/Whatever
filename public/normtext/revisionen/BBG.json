@@ -1,15 +1,25 @@
 {
   "erlassKey": "BBG",
   "sr": "412.10",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+      "dateDocument": "2026-03-20",
+      "roFundstelle": "AS 2026 393",
+      "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+      "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+      "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali",
+      "botschaftKey": "BOTSCHAFT-2025-3067",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "637e2a79ee383ee1817535ddf72567f9fc59b6b76a0c22fc8768d6a4433f99b4"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/393/de",
+      "sha": "580296923072e950580671257683fa5db3fedbc7765d70afb43b4e68e49a6694"
     },
     {
       "art": "aenderung",
@@ -21,8 +31,11 @@
       "titelFr": "Loi fédérale sur la formation professionnelle (LFPr)",
       "titelIt": "Legge federale sulla formazione professionale (Legge sulla formazione professionale, LFPr)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/342/de",
-      "sha": "171392a79bd554803584b7a6c845256a9bb1e932585d1cae6d56e1ac25f9a1f5"
+      "sha": "0211e3f26a3664b6f99db3330a26131fb1c5595bb55a86e9e44c7e09c03db5bb"
     },
     {
       "art": "aenderung",
@@ -34,38 +47,90 @@
       "titelFr": "Loi fédérale sur la formation professionnelle (LFPr)",
       "titelIt": "Legge federale sulla formazione professionale (Legge sulla formazione professionale, LFPr)",
       "botschaftKey": "BOTSCHAFT-2024-900",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/75/de",
-      "sha": "ba060ab6017b51a34d0f6214bffe414edcce187d20163c34f65112ca7220f50a"
+      "sha": "25178df05610a5070b35307d40445a1c6e5ca06ac18d88240ab22131d6e12e20"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "af1144124b5ac1cb0af139912e22cf3c60d68e97c1e003079bfb67addd0c4a5b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/212",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2024 212",
+      "titelDe": "Bundesgesetz vom 16. Dezember 2022 über die Förderung der Ausbildung im Bereich der Pflege",
+      "titelFr": "Loi fédérale du 16 décembre 2022 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+      "titelIt": "Legge federale del 16 dicembre 2022 sulla promozione della formazione in cure infermieristiche",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/212/de",
+      "sha": "56f4e347150cb8a6b4f199b3fd0f7a1403718f7abaa8850238980c873a351a39"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "620e2597deb0cbb25c4a550b5926f4aa10934b0d4aa60e677385621917a8e2f3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/164",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 164",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über die internationale Zusammenarbeit und Mobilität in der Bildung (BIZMB)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la coopération et la mobilité internationales en matière de formation (LCMIF)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla cooperazione e la mobilità internazionali in materia di formazione (LCMIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/164/de",
+      "sha": "e6a08550632fd6aef258f5b1cd24986f81fe9b862696a8386f7948659e587bb8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "bd7b0892740f5f260ea9bb413c617e7eaaa8662b39fcd39e67033280c89f8f9f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "4144829227568e72a3f36d01a86b7f4285bd4982afd8a9e6a6563e485f93a7da"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/414",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 414",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über die Eidgenössische Hochschule für Berufsbildung (EHB-Gesetz)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la Haute école fédérale en formation professionnelle (Loi sur la HEFP)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla Scuola universitaria federale per la formazione professionale (Legge sulla SUFFP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/414/de",
+      "sha": "7d449d96f1f2dcf2abd1880dc898054cb246348f6ecbe781f36b27c0cecd5c3b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "e84150e684fd305b37bcc793ff51e8542786db67f5170229111352853e6dd2a0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/509",
+      "dateDocument": "2018-08-15",
+      "roFundstelle": "AS 2018 3171",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 16. Dezember 2016 des Ausländergesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 16 décembre 2016 de la loi fédérale sur les étrangers",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 16 dicembre 2016 della legge federale sugli stranieri",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/509/de",
+      "sha": "53bd8e69c538a2e12dd8565a88674d953e019dd70616f9ae589f61b084997791"
     },
     {
       "art": "aenderung",
@@ -77,112 +142,197 @@
       "titelFr": "Loi fédérale sur la formation professionnelle (LFPr)",
       "titelIt": "Legge federale sulla formazione professionale (Legge sulla formazione professionale, LFPr)",
       "botschaftKey": "BOTSCHAFT-2016-576",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/564/de",
-      "sha": "cab3c4c973649c87cc970b4512fa4dfe24d2bb7a9c9c2b2276bdaa9e792b92e6"
+      "sha": "f105649666b480ba27e014d51d7e172de2940f2dc32b04f11c61a8e10b8b9867"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/718",
+      "dateDocument": "2016-12-16",
+      "roFundstelle": "AS 2017 6521",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG) (Integration)",
+      "titelFr": "Loi fédérale sur les étrangers (LEtr) (Intégration)",
+      "titelIt": "Legge federale sugli stranieri (LStr) (Integrazione)",
+      "botschaftKey": "BOTSCHAFT-2013-416",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/718/de",
+      "sha": "da2b0473782827f5054a33e7d0deafb783e9488b158eee4435552aa91ef85c69"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "582e742c3665560ee92159a70b605457f5828ed00896aa365847c65c38dd3614"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "224e73624baa6f2eaeacd2cee0a2c4565fa3be4ad047530f45440acd52fb5428"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/669",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 3977",
+      "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
+      "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubl)",
+      "botschaftKey": "BOTSCHAFT-2013-1331",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/669/de",
+      "sha": "31dfe571e90208f76d0f78f1e348f9a435e1c17b588006d53cad0bfaa450c685"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "18210eda3b377b36c10b2d56f03c3436a5c2b5e93233eb6e661770bdbdb5ab4c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/691",
+      "dateDocument": "2011-09-30",
+      "roFundstelle": "AS 2014 4103",
+      "titelDe": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
+      "titelFr": "Loi fédérale sur l'encouragement des hautes écoles et la coordination dans le domaine suisse des hautes écoles (Loi sur l'encouragement et la coordination des hautes écoles, LEHE)",
+      "titelIt": "Legge federale sulla promozione e sul coordinamento del settore universitario svizzero (LPSU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/691/de",
+      "sha": "c753fdd808a88ae3ec6d3fe42a14bfe855751f659b8104c0092254da5a7b6c83"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "be53c041c57c7d27b0eb5751aa03854bba2bb92781ae32dba40c86e1142eb7b9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3655",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "sha": "98d16fb59413c6c4baa7392dc8196897ed57422734e9dc5d05c78fdcf450a38c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "fc6d2d7fb359f98a10c284b594e918eafb672c913d3980dcaf23898a00ad1f7b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/460",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2012 3953",
+      "titelDe": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+      "titelFr": "Loi fédérale sur l'encouragement du sport et de l'activité physique (Loi sur l'encouragement du sport, LESp)",
+      "titelIt": "Legge federale sulla promozione dello sport e dell'attività fisica (Legge sulla promozione dello sport, LPSpo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/460/de",
+      "sha": "2c93ec6501807c64da4271aa95ec5004f7eb6c3ce3bfe65ca2cc71ac2ebc4f86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "eebae4f85e46c81cad72903e47b56ff065cf9c5967b99511dfceb185a9cc3509"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/752",
+      "dateDocument": "2011-11-09",
+      "roFundstelle": "AS 2011 5227",
+      "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
+      "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
+      "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/752/de",
+      "sha": "2a27525b0bbf89719987df34bfb8d18072175c302c6f9ebe2d5ddf7f20c37dcf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "a3431b3ed90f1dea7847214928a841b808fdb961ba77da28bc01de6a995bf5c0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/708",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 5003",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/708/de",
+      "sha": "6c03ff2f747a2a7e94c53378f0e954f06dbeca7385235fbf4389c1a0ee6afbc2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "e4b74a3510de810eaee0c0d426e83df23e0945f9e97ac81487f377ca9cfd9265"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "e3528f17bbefa82d7e0c266f99fa1de8bb33f9b6fc0e07b05f0c1f8ad5928845"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-10-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "59cd062a413343fbdd70f637f7422f5c226b0856c887d34ea403ad1341d53225"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/607",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2005 4635",
+      "titelDe": "Bundesgesetz über die Fachhochschulen (Fachhochschulgesetz, FHSG)",
+      "titelFr": "Loi fédérale sur les hautes écoles spécialisées (LHES)",
+      "titelIt": "Legge federale sulle scuole universitarie professionali (LSUP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/607/de",
+      "sha": "e507d1e464e3119816b200acf1079d0c4f22057b2bf1dbc1c6282b79d6cd880c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.10",
-      "sha": "3f8fecada38013a0aada4f0820830a70f2db7c1f1bff80b18ac2864723234346"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/674",
-      "dateDocument": "2002-12-13",
-      "roFundstelle": "AS 2003 4557",
-      "titelDe": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
-      "titelFr": "Loi fédérale sur la formation professionnelle (LFPr)",
-      "titelIt": "Legge federale sulla formazione professionale (Legge sulla formazione professionale, LFPr)",
-      "botschaftKey": "BOTSCHAFT-2000-1232",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/674/de",
-      "sha": "f2a567a899c5632d58dcf97d1073d8af3885f7a9a1f3a788eef50fb6074e23dd"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1980-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1687_1687_1687",
-      "dateDocument": "1978-04-19",
-      "roFundstelle": "AS 1979 1687",
-      "titelDe": "Bundesgesetz vom 19. April 1978 über die Berufsbildung (BBG)",
-      "titelFr": "Loi fédérale du 19 avril 1978 sur la formation professionnelle (LFPr)",
-      "titelIt": "Legge federale del 19 aprile 1978 sulla formazione professionale (LFPr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1687_1687_1687/de",
-      "sha": "803e460f0bef3a735f105115b82597ddc6f48590a2072cc76355d5591a4b8a93"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1965-04-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1965/321_325_321",
-      "dateDocument": "1963-09-20",
-      "roFundstelle": "AS 1965 321",
-      "titelDe": "Bundesgesetz vom 20. September 1963 über die Berufsbildung",
-      "titelFr": "Loi fédérale du 20 septembre 1963 sur la formation professionnelle",
-      "titelIt": "Legge federale del 20 settembre 1963 sulla formazione professionale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1965/321_325_321/de",
-      "sha": "3a378561d6fb932e2c2e198349e2a90487366898675e886fb3bbd6ff0fcbfb53"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/745",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2004 4929",
+      "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
+      "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubb)",
+      "botschaftKey": "BOTSCHAFT-2003-1274",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/745/de",
+      "sha": "cbe15406d65c5a11088817014e2522ad6ed789fcfd1d63d7cd595f23c0600345"
     }
   ],
-  "sha": "12a7f7146c45f3b7890f722b7bfab74905d8c51c58130967252d7577f115ef70"
+  "sha": "9ea439fcecf656aed3f6793c85c1e86a5dbccde943050daede01371403181b50"
 }

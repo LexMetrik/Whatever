@@ -1382,5 +1382,245 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/296_296_296",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/296_296_296",
+    "inkrafttreten": "1993-04-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/296_296_296",
+        "typ": 5,
+        "datum": "1993-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/__1050",
+        "typ": 6,
+        "datum": "1993-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1783_1783_1783",
+        "typ": 1,
+        "datum": "1995-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5158_5158_5158",
+        "typ": 1,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5158_5158_5158",
+        "typ": 2,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2170_2170_2170",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865",
+        "typ": 1,
+        "datum": "1997-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/216",
+        "typ": 1,
+        "datum": "1999-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/182",
+        "typ": 1,
+        "datum": "2002-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/182",
+        "typ": 2,
+        "datum": "2002-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/768",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/768",
+        "typ": 2,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/356",
+        "typ": 1,
+        "datum": "2006-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/689",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/689",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+        "typ": 1,
+        "datum": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/276",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/364",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/144",
+        "typ": 1,
+        "datum": "2009-03-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/307",
+        "typ": 1,
+        "datum": "2011-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/354",
+        "typ": 1,
+        "datum": "2014-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/610",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/773",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/774",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/510",
+        "typ": 1,
+        "datum": "2021-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/376",
+        "typ": 1,
+        "datum": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/289",
+        "typ": 1,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1993/__1050": {
+        "dateForce": "1993-04-01",
+        "dateDoc": "1993-03-23",
+        "titelIt": "Ordinanza sulla protezione dei marchi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1783_1783_1783": {
+        "dateForce": "1995-07-01",
+        "dateDoc": "1995-05-17",
+        "roId": "RO 1995 1783",
+        "titelDe": "Markenschutzverordnung (MSchV), Änderung",
+        "titelFr": "Ordonnance sur la protection des marques (OPM), Modification",
+        "titelIt": "Ordinanza sulla protezione dei marchi (OPM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/5158_5158_5158": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-10-25",
+        "roId": "RO 1995 5158",
+        "titelDe": "Markenschutzverordnung (MSchV), Änderung",
+        "titelFr": "Ordonnance sur la protection des marques (OMP), Modification",
+        "titelIt": "Ordinanza sulla protezione dei marchi (OPM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2170_2170_2170": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-09-17",
+        "roId": "RO 1997 2170",
+        "titelDe": "Markenschutzverordnung (MSchV), Änderung",
+        "titelFr": "Ordonnance sur la protection des marques (OPM), Modification",
+        "titelIt": "Ordinanza sulla protezione dei marchi (OPM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/865_865_865": {
+        "dateForce": "1997-05-01",
+        "dateDoc": "1997-01-22",
+        "roId": "RO 1997 865",
+        "titelDe": "Markenschutzverordnung (MSchV), Änderung",
+        "titelFr": "Ordonnance sur la protection des marques (OPM), Modification",
+        "titelIt": "Ordinanza sulla protezione dei marchi (OPM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/216": {
+        "dateForce": "1999-05-01",
+        "dateDoc": "1999-03-31",
+        "roId": "RO 1999 1443",
+        "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
+        "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/356": {
+        "dateForce": "2006-07-01",
+        "dateDoc": "2006-05-24",
+        "roId": "RO 2006 2331",
+        "titelDe": "Verordnung über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsverordnung, VBGÖ)",
+        "titelFr": "Ordonnance sur le principe de la transparence dans l'administration (Ordonnance sur la transparence, OTrans)",
+        "titelIt": "Ordinanza sul principio di trasparenza dell'amministrazione (Ordinanza sulla trasparenza, OTras)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/250": {
+        "dateForce": "2007-05-01",
+        "dateDoc": "2006-11-01",
+        "roId": "RO 2007 1469",
+        "titelDe": "Zollverordnung (ZV)",
+        "titelFr": "Ordonnance sur les douanes (OD)",
+        "titelIt": "Ordinanza sulle dogane (OD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/354": {
+        "dateForce": "2014-09-01",
+        "dateDoc": "2014-06-06",
+        "roId": "RO 2014 2051",
+        "titelDe": "Verordnung über die Ordnungsfristen im Zuständigkeitsbereich der Eidgenössischen Zollverwaltung",
+        "titelFr": "Ordonnance sur la fixation de délais d'ordre dans le domaine de l'Administration fédérale des douanes",
+        "titelIt": "Ordinanza sui termini ordinatori nell'ambito di competenza dell'Amministrazione federale delle dogane"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/773": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-12-02",
+        "roId": "RO 2016 4827",
+        "titelDe": "Verordnung über den Schutz von Topographien von Halbleitererzeugnissen (Topographienverordnung, ToV)",
+        "titelFr": "Ordonnance sur la protection des topographies de produits semi-conducteurs (Ordonnance sur les topographies, OTo)",
+        "titelIt": "Ordinanza sulla protezione delle topografie di prodotti a semiconduttori (Ordinanza sulle topografie, OTo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/376": {
+        "dateForce": "2025-07-01",
+        "dateDoc": "2025-05-14",
+        "titelDe": "Verordnung über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+        "titelFr": "Ordonnance sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+        "titelIt": "Ordinanza che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale"
+      }
+    }
+  }
 }

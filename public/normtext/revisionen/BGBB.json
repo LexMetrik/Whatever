@@ -1,32 +1,86 @@
 {
   "erlassKey": "BGBB",
   "sr": "211.412.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "b119f52a0e95a869016d948333a3c0883e719002e45728cc57ee5ca4eda316b9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/710",
+      "dateDocument": "2013-11-06",
+      "roFundstelle": "AS 2013 3863",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 22. März 2013 des Landwirtschaftsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 22 mars 2013 de la loi sur l'agriculture",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della la modifica del 22 marzo 2013 della legge sull'agricoltura",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/710/de",
+      "sha": "2727ab0a1ae101b690215ca19d1d5420c8ab097c9a3c41324afe9c42a1253459"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2013-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/646",
+      "dateDocument": "2013-03-22",
+      "roFundstelle": "AS 2013 3463",
+      "titelDe": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+      "titelFr": "Loi fédérale sur l'agriculture (Loi sur l'agriculture, LAgr)",
+      "titelIt": "Legge federale sull'agricoltura (Legge sull'agricoltura, LAgr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/646/de",
+      "sha": "9797aeb3e3656b9c130353fbca3adf50ede5624f1e38960d6af1ae14b4f7d0fd"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "7653bc5e4a135c15b65f50f4c2c07e38197b6f9f83d7a398aa9f6b3925a7d4b8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "795acaf4d8deb75722c1a466665b6d733a30d0a23fddfea41e895121e6dd4b1e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/666",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2011 4637",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+      "titelFr": "Code civil suisse (Cédule hypothécaire de registre et autres modifications des droits réels)",
+      "titelIt": "Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali)",
+      "botschaftKey": "BOTSCHAFT-2007-756",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/666/de",
+      "sha": "157c14bd6c7086190980387f2d916f3d2d7f4b1c71431242e556a278b49a8d56"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "e6d092ecb404863631ceeae6cf3758c32ca7ff50e6d462ee92078078e57f28f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/620",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2010 4285",
+      "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG) (Renaturierung)",
+      "titelFr": "Loi fédérale sur la protection des eaux (LEaux) (Renaturation)",
+      "titelIt": "Legge federale sulla protezione delle acque (LPAc) (Rinaturazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/620/de",
+      "sha": "fbcf4912b5a0c8bba32b9b1aa0c5709d0bc25c8fb43956e453267e8cbae9e6a7"
     },
     {
       "art": "aenderung",
@@ -38,20 +92,76 @@
       "titelFr": "Loi fédérale sur le droit foncier rural (LDFR)",
       "titelIt": "Legge federale sul diritto fondiario rurale (LDFR)",
       "botschaftKey": "BOTSCHAFT-2006-775",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/462/de",
-      "sha": "604bf06c1a05189a4401d4e4df3874f99be4168d502fa829b008e3c7ba7f9d12"
+      "sha": "1d5270f87ebbfe8b0c7635101b4fdc37f5a223d57add7dd982492ee015b88b90"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "40f6eb873c1e8c03a0b32ddb9ce348b4ff42c5cd129b6aee77205be488735856"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2006 5599",
+      "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+      "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale",
+      "botschaftKey": "BOTSCHAFT-2006-974",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "sha": "f8efab27150606776e1e890d218b11ad4a3ad6b19bd73001581d65d65c26cb7d"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "7913ed145d8e081ea24c2af571622478d8ee3a556b3efc43c956fed5d7010326"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 2617",
+      "titelDe": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+      "titelFr": "Loi fédérale sur la fusion, la scission, la transformation et le transfert de patrimoine (Loi sur la fusion, LFus)",
+      "titelIt": "Legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione, LFus)",
+      "botschaftKey": "BOTSCHAFT-2000-921",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/320/de",
+      "sha": "a311043931adce9bc99decf57454d37cae3b7f03a1214dd52cb62594d11df64a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/613",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2003 4121",
+      "titelDe": "Zivilgesetzbuch",
+      "titelFr": "Code civil",
+      "titelIt": "Codice civile",
+      "botschaftKey": "BOTSCHAFT-2002-780",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/613/de",
+      "sha": "d0720a18ac19242be72fea3ffc98617df19ad7faa67f9b9960cd4395f18d79e5"
     },
     {
       "art": "aenderung",
@@ -63,20 +173,43 @@
       "titelFr": "Loi fédérale sur le droit foncier rural (LDFR)",
       "titelIt": "Legge federale sul diritto fondiario rurale (LDFR)",
       "botschaftKey": "BOTSCHAFT-2002-780",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/614/de",
-      "sha": "f5043ae15addd766a2847a06793e4a7c3b099122cd93c10a92797a9089f57563"
+      "sha": "b30e9120b6d5a84d666b55f2592850b3add7f37516c6a1acbe31dfb0558c17b2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "c47ae972a05480546d9fcc1f0153ec46e2438901100d342bc3cc228c9dbbde27"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "0315f070905114e706498f35ffee0312d3de77a82d0be616c329cf3cff07dee4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.11",
-      "sha": "1b2d8f5764901162e2e19af8b0cf125285ebcdb9811d7b48b2aa1614c4a742ac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/309",
+      "dateDocument": "1998-03-20",
+      "roFundstelle": "AS 2000 2042",
+      "titelDe": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)",
+      "titelFr": "Loi fédérale sur l'aménagement du territoire (LAT)",
+      "titelIt": "Legge federale sulla pianificazione del territorio (LPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/309/de",
+      "sha": "7a5d37641233c2fe7ae62189c0f94faa4f8c464919c47aa1fe873d3be4631bce"
     },
     {
       "art": "aenderung",
@@ -87,33 +220,13 @@
       "titelDe": "Bundesgesetz über das bäuerliche Bodenrecht (BGBB)",
       "titelFr": "Loi fédérale sur le droit foncier rural (LDFR)",
       "titelIt": "Legge federale sul diritto fondiario rurale (LDFR)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/3009_3009_3009/de",
-      "sha": "52a37702672f79eda8a43e7215b2a5c83648d03e4fbd89c5dc4bfd5b7b861946"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1994-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1410_1410_1410",
-      "dateDocument": "1991-10-04",
-      "roFundstelle": "AS 1993 1410",
-      "titelDe": "Bundesgesetz vom 4. Oktober 1991 über das bäuerliche Bodenrecht (BGBB)",
-      "titelFr": "Loi fédérale du 4 octobre 1991 sur le droit foncier rural (LDFR)",
-      "titelIt": "Legge federale del 4 ottobre 1991 sul diritto fondiario rurale (LDFR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1410_1410_1410/de",
-      "sha": "8d058ecba99f14d76375dfc530f2d9334a23d99d5860911dc1baeb2c1329beca"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1953-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/403_415_419",
-      "dateDocument": "1951-06-12",
-      "roFundstelle": "AS 1952 403",
-      "titelDe": "Bundesgesetz vom 12. Juni 1951 über die Erhaltung des bäuerlichen Grundbesitzes",
-      "titelFr": "Loi fédérale du 12 juin 1951 sur le maintien de la propriété foncière rurale",
-      "titelIt": "Legge federale del 12 giugno 1951 sulla conservazione della proprietà fondiaria agricola",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/403_415_419/de",
-      "sha": "addcb1f21ce73b9a071fef09df5aaef17f86e151a0a097f37a92742f40f977b9"
+      "sha": "7d9b3901464a9eaa806174a11540beaafcbc185d8eeb9aa9032850e342246686"
     }
   ],
-  "sha": "363954458ee65ca5986e67d5dfe9aa6b7ced4d921dc795de7112a4193c598b18"
+  "sha": "bd3d7ea32a83919f1792d02b3bd2a6ea612ec5486f10e17c9f4d1a4f861bcb46"
 }

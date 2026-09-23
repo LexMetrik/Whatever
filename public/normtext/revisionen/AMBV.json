@@ -1,8 +1,8 @@
 {
   "erlassKey": "AMBV",
   "sr": "812.212.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,38 +13,86 @@
       "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung, AMBV)",
       "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
       "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull’autorizzazione dei medicamenti, OAMed)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/109/de",
-      "sha": "e4a9b8ce91478221b99dd2d263bf8ee23467bfe88bbc1616695e3fa72b1f6ea4"
+      "sha": "1a92a1047ae230fd6928a1ca009fd360e1e4def571004acc6ac43b64c4ba3b7b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.212.1",
-      "sha": "d746bb5248d68bf454ea1e7ebd67b720234adbfb464a7e6e0437b53317ec3011"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/322",
+      "dateDocument": "2024-06-07",
+      "roFundstelle": "AS 2024 322",
+      "titelDe": "Verordnung über klinische Versuche mit Ausnahme klinischer Versuche mit Medizinprodukten (Verordnung über klinische Versuche, KlinV)",
+      "titelFr": "Ordonnance sur les essais cliniques hors essais cliniques de dispositifs médicaux (Ordonnance sur les essais cliniques, OClin)",
+      "titelIt": "Ordinanza sulle sperimentazioni cliniche ad eccezione delle sperimentazioni cliniche con dispositivi medici (Ordinanza sulle sperimentazioni cliniche, OSRUm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/322/de",
+      "sha": "8304dd3988c71c12d24d8759ea4e623faeb66db4e54baaf9994e1ef7b3d45933"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.212.1",
-      "sha": "5e459f97be0110e84b2c6172d21eba54d8cb7b0c7b3b01ff9508dd734391366a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.212.1",
-      "sha": "a5ca0d8bd5242788f2ffc2988a1b7efd66b15c7653170d9f0e5597b77a2767e0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.212.1",
-      "sha": "546b04a1749a414523846701ad453f27db09a24d8e0e26b1b4d5864c55ce1eb5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/723",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 723",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement des Innern (OV-EDI)",
+      "titelFr": "Ordonnance sur l’organisation du Département fédéral de l’intérieur (Org DFI)",
+      "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale dell’interno (OOrg-DFI)",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/723/de",
+      "sha": "87e1b9cdb6ecfcca67a15c5b9470598a20ea158424f7c872fcfb4c6b9c97dad2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.212.1",
-      "sha": "460aee19e06d877d7355eb484b7d6661a475b09fb86c4452537630d5fdf3ad6d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/349",
+      "dateDocument": "2022-06-03",
+      "roFundstelle": "AS 2022 349",
+      "titelDe": "Verordnung über die Tierarzneimittel (Tierarzneimittelverordnung, TAMV)",
+      "titelFr": "Ordonnance sur les médicaments vétérinaires (OMédV)",
+      "titelIt": "Ordinanza sui medicamenti per uso veterinario (Ordinanza sui medicamenti veterinari, OMVet)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/349/de",
+      "sha": "40d41ed906dbb524a2f3a8444c098bea3d4a96929679de222ce637ff2a72b95f"
     },
     {
       "art": "aenderung",
@@ -55,14 +103,17 @@
       "titelDe": "Verordnung vom 12. Januar 2022 über Anpassungen an das neue Tierarzneimittelrecht der EU",
       "titelFr": "Ordonnance du 12 janvier 2022 portant adaptation d’ordonnances au nouveau droit européen sur les médicaments vétérinaires",
       "titelIt": "Ordinanza del 12 gennaio 2022 concernente gli adeguamenti al nuovo diritto UE sui medicamenti veterinari",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/16/de",
-      "sha": "9b1c4ad87e9d9b61ea76eb61ce9bcc17be3b3f00d0d5079d8460df52d13217a9"
+      "sha": "bcad81bff894b2edab5b20d40cfa6ca0f24df649a115fbef51bde0b87a0df3c6"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.212.1",
-      "sha": "083b1f96a02e133dc98933339b11ddb4ff5f46a431ac7a86dca904a18074973a"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/786/20200101/de",
+      "sha": "c93b54d2b0fdf40f0b4a47003edfd1e79f0794e3910bfc7215a59f0be3d49ee0"
     },
     {
       "art": "aenderung",
@@ -73,8 +124,11 @@
       "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung; AMBV)",
       "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
       "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/409/de",
-      "sha": "83ecaca352bfe3d4b8c4f152dc96e2cf15a843aca55e22010dd7d6acaa41e84f"
+      "sha": "857aacd9e23604c9d4bb18bc4eeb23eabe33044afb9ee342c04e59143619e288"
     },
     {
       "art": "aenderung",
@@ -85,93 +139,12 @@
       "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung; AMBV)",
       "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
       "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/308/de",
-      "sha": "518412db043cff49cb75352d24d10c1b6069316ee139567486b98a81a3dfcab2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2019-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/786",
-      "dateDocument": "2018-11-14",
-      "roFundstelle": "AS 2018 5029",
-      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung; AMBV)",
-      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
-      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/786/de",
-      "sha": "233e50e95d1b8b126f32b07a98665b7f9ea54eb3039be090f41656d43aa337a0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2018-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/281",
-      "dateDocument": "2017-04-05",
-      "roFundstelle": "AS 2017 2785",
-      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung, AMBV)",
-      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
-      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/281/de",
-      "sha": "b22672f3289944fbc97ac94ea93db45396495dfa9b38ffc8dda88271cfc5d5ef"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/365",
-      "dateDocument": "2015-06-10",
-      "roFundstelle": "AS 2015 1901",
-      "titelDe": "Verordnung über Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung, AMBV)",
-      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
-      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/365/de",
-      "sha": "45e22c452c1ddeabde0069ba7a0589f6739ae81f558d8addcea2de8499b53249"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/584",
-      "dateDocument": "2010-09-08",
-      "roFundstelle": "AS 2010 4031",
-      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung, AMBV)",
-      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
-      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/584/de",
-      "sha": "94014e7c55769f9fe404d46af63690be37a2acd7994f2ea01512398f97860375"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/449",
-      "dateDocument": "2006-07-07",
-      "roFundstelle": "AS 2006 2945",
-      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung, AMBV)",
-      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
-      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/449/de",
-      "sha": "f097cbb03dc9af5be379f3bc596a5024ce461952d2f8b63eecc66339aa3d767a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/515",
-      "dateDocument": "2001-10-17",
-      "roFundstelle": "AS 2001 3399",
-      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung, AMBV)",
-      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
-      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/515/de",
-      "sha": "ccb2ad34bb68586240bc9aff24c487fe9ffb3bc3a7ef18745807b74eb4d74f6b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1968-03-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1968/361_385_385",
-      "dateDocument": "1968-03-04",
-      "roFundstelle": "AS 1968 361",
-      "titelDe": "Bundesratsbeschluss vom 4. März 1968 über die Änderung der schweizerischen Landespharmakopöe",
-      "titelFr": "Arrêté du Conseil fédéral du 4 mars 1968 modifiant la pharmacopée nationale suisse",
-      "titelIt": "Decreto del Consiglio federale del 4 marzo 1968 che modifica quello concernente la Farmacopea nazionale svizzera",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1968/361_385_385/de",
-      "sha": "b35f29c4b3831698a9dbd92808359ae17996106a37dc1ba1a9cf5860463181e6"
+      "sha": "8556323581f40a3a2ed379819315ff0cd5719cdb7259818746928450b6543c6c"
     }
   ],
-  "sha": "6469d03f25e8a0399028d79c6bfe8aa85c4330c823c049eb48902c361fbe6d5e"
+  "sha": "3162dc42a606f7043065e08571adcdf86be148730c30437b4baab8e1c8ff1a0a"
 }

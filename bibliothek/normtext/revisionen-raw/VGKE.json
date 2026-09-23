@@ -404,5 +404,23 @@
     "2010-04-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2008/321",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2008/321",
+    "inkrafttreten": "2008-06-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/321",
+        "typ": 5,
+        "datum": "2008-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/150",
+        "typ": 1,
+        "datum": "2010-04-01"
+      }
+    ],
+    "ocStamm": {}
+  }
 }

@@ -403,5 +403,47 @@
     "2026-08-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2016/405",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2016/405",
+    "inkrafttreten": "2018-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/405",
+        "typ": 5,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/510",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/62",
+        "typ": 1,
+        "datum": "2018-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/388",
+        "typ": 6,
+        "datum": "2019-07-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/344",
+        "typ": 1,
+        "datum": "2026-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2018/510": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-08-15",
+        "roId": "RO 2018 3173",
+        "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
+        "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
+        "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)"
+      }
+    }
+  }
 }

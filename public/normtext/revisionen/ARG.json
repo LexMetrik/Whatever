@@ -1,26 +1,71 @@
 {
   "erlassKey": "ARG",
   "sr": "822.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "589b0ec23361768ff492cceb21dbf095c7fbc0e1f059bd9769237e450b8487d9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "dc7acd1c75d05f58f815a558736d7ad60db7ec620b7dfe4f2e6af00ebe956074"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/799",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 4525",
+      "titelDe": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "titelFr": "Loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches",
+      "titelIt": "Legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari",
+      "botschaftKey": "BOTSCHAFT-2019-1504",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/799/de",
+      "sha": "4b7f94c5a6327198588a1711348d8fe35fb955fd62c5e2352b88304374db92fe"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-12-09",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "ba7946402528acce0ebd22cc45e985f774a224732941171817e847a47795be6a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/531",
+      "dateDocument": "2018-08-29",
+      "roFundstelle": "AS 2018 3285",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 17. Juni 2016 des Arbeitszeitgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 17 juin 2016 de la loi sur la durée du travail",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 17 giugno 2016 della legge sulla durata del lavoro",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/531/de",
+      "sha": "51c15203a80bea0374d9fe67123edfa12b8a5e5f8ff8f542c576e77d5c361c32"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/397",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2017 3595",
+      "titelDe": "Bundesgesetz über die Arbeit in Unternehmen des öffentlichen Verkehrs (Arbeitszeitgesetz, AZG)",
+      "titelFr": "Loi fédérale sur le travail dans les entreprises de transports publics (Loi sur la durée du travail, LDT)",
+      "titelIt": "Legge federale sul lavoro nelle imprese di trasporti pubblici (Legge sulla durata del lavoro, LDL)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/397/de",
+      "sha": "cc56a614f355c0b20d2ee7d65a8b01c48ce823b50ca3bda4f96d0c338e0937ce"
     },
     {
       "art": "aenderung",
@@ -31,20 +76,57 @@
       "titelDe": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz, ArG)",
       "titelFr": "Loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail, LTr)",
       "titelIt": "Legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro, LL)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/746/de",
-      "sha": "326f8deb10eafb0e90cd1a7312a7a4b6741936ea3775e82d76b6562bd2497538"
+      "sha": "287865bab091ddec88c605739e511eb7eac06fc4af3403f4c2f3e3db498054c3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "5497ccaa4c494410299b5e54a16a4fb650b3c39bccac3d0bb10180cdb8b83063"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3655",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "sha": "98d16fb59413c6c4baa7392dc8196897ed57422734e9dc5d05c78fdcf450a38c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "818870e08a0b544cc37fb1d005039fcb723e23fe98b2d620e4f3be603054ce50"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
     },
     {
       "art": "aenderung",
@@ -55,14 +137,26 @@
       "titelDe": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "titelFr": "Loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail)",
       "titelIt": "Legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/398/de",
-      "sha": "82b60b837dd71c52e31f9df983e62587a64f9a7898d13f2d1eee39104c49ea6f"
+      "sha": "f3297026174b61a151fa03983ef0e0fedab5a6201c6014c7dace7bc0c8e78c48"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "3d8f5d5248903f5b678a3f1db81af2fcb4c69fcc299406860ba7403f2718912e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/327",
+      "dateDocument": "2007-12-21",
+      "roFundstelle": "AS 2008 2265",
+      "titelDe": "Bundesgesetz über die Aufhebung und die Vereinfachung von Bewilligungsverfahren",
+      "titelFr": "Loi fédérale sur la suppression et la simplification de procédures d'autorisation",
+      "titelIt": "Legge federale sulla soppressione e la semplificazione delle procedure d'autorizzazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/327/de",
+      "sha": "87bda8080dcbbfd8b81fbf37d7bd4301842b789b272502f77bd69f41d1cb50d5"
     },
     {
       "art": "aenderung",
@@ -74,14 +168,59 @@
       "titelFr": "Loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail)",
       "titelIt": "Legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro)",
       "botschaftKey": "BOTSCHAFT-2004-1177",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/691/de",
-      "sha": "770a15d26fb5a84d74e544dda96e5019c7e4874e934b8f763bca6ce9876f8796"
+      "sha": "58a8fd9f5f7bd7aa701f8b5358faa1f4b4ba80246300209adfd3a7356704e59c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "e14635ab819da9e8e0430356356fcbcea62f1d96ad18cea1a8cbdcb9746ce4bd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -92,8 +231,11 @@
       "titelDe": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "titelFr": "Loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail)",
       "titelIt": "Legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/173/de",
-      "sha": "2bd9fe490f6bb3bb6e112bfe60dce7495258fff87bc1b62ef9f87f82245d733a"
+      "sha": "0fff39f353393143a9e6f8b63a12db409765c2abcdb411d589e6860703b5cd78"
     },
     {
       "art": "aenderung",
@@ -104,14 +246,27 @@
       "titelDe": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "titelFr": "Loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail)",
       "titelIt": "Legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/346/de",
-      "sha": "c37afb459c46b756a2781415954fa58be262fbe9fe76fdb090793741ade02f19"
+      "sha": "ca1baac208348fafa5fcb9f9b873662652efcd2662105103c592f04036488f8e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "2ca18f93e6bfa24bbce86bc28a0d39483e39030218f165ffa342c8aae3769c78"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/293",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 1891",
+      "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
+      "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali",
+      "botschaftKey": "BOTSCHAFT-1999-1_9005_8381_7979",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/293/de",
+      "sha": "ae30ef945d2254069bf01059d72440b99fb1ff98b57b429a9c56f864a83dc501"
     },
     {
       "art": "aenderung",
@@ -122,8 +277,11 @@
       "titelDe": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "titelFr": "Loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail)",
       "titelIt": "Legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/241/de",
-      "sha": "b860b3ba92bdf0e8e54b908d6448834fbc7c0affcbd8157664c91486f8aef4ed"
+      "sha": "6ee245b7fd668c57657b131d86cf47e9e593787f264644205c9985ba5b5f67e5"
     },
     {
       "art": "aenderung",
@@ -134,27 +292,218 @@
       "titelDe": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "titelFr": "Loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail)",
       "titelIt": "Legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/242/de",
-      "sha": "e75cad270fd347a790af04879883085eff6b786dae145341874fedfc6a7c2b3a"
+      "sha": "e155a7f72773a7727210a8f563a699237085ab9be043a0628bbc193b909894bb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.11",
-      "sha": "2570fd057df9b236aa0c2a412d53faf323f8b9cc3a4a95bc50db08e21a938d51"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 187",
+      "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+      "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+      "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/34/de",
+      "sha": "e6acc34193bb4bee07ea794009d2498f6e17971d8d8245651291c75bd15ea05f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1822",
+      "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1822_1822_1822/de",
+      "sha": "4baedead3f5cb917b4b2e6639d0bcdefab4cd5d37379c5604b9231d24788dcd1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/3010_3010_3010",
+      "dateDocument": "1993-06-18",
+      "roFundstelle": "AS 1994 3010",
+      "titelDe": "Luftfahrtgesetz (LFG), Änderung",
+      "titelFr": "Loi sur la navigation aérienne (LNA), Modification",
+      "titelIt": "Legge federale sulla navigazione aerea (LNA), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/3010_3010_3010/de",
+      "sha": "547d3f0cae25fe1019a0adbafd64a3506e24ab968facdedf437274a66ed9e677"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1035_1035_1035",
+      "dateDocument": "1993-10-08",
+      "roFundstelle": "AS 1994 1035",
+      "titelDe": "Arbeitsgesetz, Änderung",
+      "titelFr": "Loi fédérale sur le travail, Modification",
+      "titelIt": "Legge sul lavoro, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1035_1035_1035/de",
+      "sha": "2e7aa2da619efe0ef10c7874af0511030d729fe48c2bdcd8c6cc5e82b643ff15"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 288",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+      "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+      "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/288_288_288/de",
+      "sha": "0c5574a100dad5b72cbeba99589bf267f0999e850fb4637d013b4edba523c554"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/362_362_362",
+      "dateDocument": "1989-12-15",
+      "roFundstelle": "AS 1991 362",
+      "titelDe": "Bundesgesetz vom 15. Dezember 1989 über die Genehmigung kantonaler Erlasse durch den Bund",
+      "titelFr": "Loi fédérale du 15 décembre 1989 relative à l'approbation d'actes législatifs des cantons par la Confédération",
+      "titelIt": "Legge federale del 15 dicembre 1989 concernente l'approvazione di atti legislativi dei Cantoni da pare della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/362_362_362/de",
+      "sha": "2035b62181fd63cdb60d77fa6fc41da19e87c6dae7d8a52d28e08da6253eacc5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1122_1122_1122",
+      "dateDocument": "1983-10-07",
+      "roFundstelle": "AS 1984 1122",
+      "titelDe": "Bundesgesetz vom 7. Oktober 1983 über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale du 7 octobre 1983 sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
+      "titelIt": "Legge federale del 7 ottobre 1983 sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1122_1122_1122/de",
+      "sha": "f7812c004b68a780f8e56d6d808899bf050b7796429e022bcae44aa8f985393a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
+      "dateDocument": "1981-03-20",
+      "roFundstelle": "AS 1982 1676",
+      "titelDe": "Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG)",
+      "titelFr": "Loi fédérale du 20 mars 1981 sur l'assurance-accidents (LAA)",
+      "titelIt": "Legge federale del 20 marzo 1981 sull'assicurazione contro gli infortuni (LAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1676_1676_1676/de",
+      "sha": "7b21d4631f6c1ad5991578a582c676a2b5711dcdd1e22e9786cec15ce5fdc27b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/108_108_108",
+      "dateDocument": "1981-03-20",
+      "roFundstelle": "AS 1983 108",
+      "titelDe": "Bundesgesetz vom 20. März 1981 über die Heimarbeit (Heimarbeitsgesetz, HArG)",
+      "titelFr": "Loi fédérale du 20 mars 1981 sur le travail à domicile (Loi sur le travail à domicile, LTrD)",
+      "titelIt": "Legge federale del 20 marzo 1981 sul lavoro a domicilio (LLD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/108_108_108/de",
+      "sha": "b1e90c0368eb20142a996a153b260616ec3217cee02078a0a938c0e614397711"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-05-28",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/604_612_536",
+      "dateDocument": "1971-10-08",
+      "roFundstelle": "AS 1972 604",
+      "titelDe": "Bundesgesetz vom 8. Oktober 1971 über die Arbeit in Unternehmen des öffentlichen Verkehrs (Arbeitszeitgesetz, AZG)",
+      "titelFr": "Loi fédérale du 8 octobre 1971 sur le travail dans les entreprises de transports publics (Loi sur la durée du travail, LDT)",
+      "titelIt": "Legge federale dell'8 ottobre 1971 sul lavoro nelle imprese di trasporti pubblici (Legge sulla durata del lavoro, LDL)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/604_612_536/de",
+      "sha": "7e81031ef9a7506c760748acd9d9ce37b24738b7dba5e4849794fe4f30fe9e9f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+      "dateDocument": "1971-06-25",
+      "roFundstelle": "AS 1971 1465",
+      "titelDe": "Bundesgesetz vom 25. Juni 1971 über die Revision des Zehnten Titels und des Zehnten Titelsbis des Obligationenrechts (Der Arbeitsvertrag)",
+      "titelFr": "Loi fédérale du 25 juin 1971 revisant les titres dixième et dixièmebis du code des obligations (Du contrat de travail)",
+      "titelIt": "Legge federale del 25 giugno 1971 sulla revisione dei titoli decimo e decimobis del Codice delle obbligazioni (Contratto di lavoro)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1465_1461_1461/de",
+      "sha": "3af2682210bd729060af6e195f8dec10419579d24e6e081a91e51ff8fb599045"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1966-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/57_57_57",
-      "dateDocument": "1964-03-13",
-      "roFundstelle": "AS 1966 57",
-      "titelDe": "Bundesgesetz vom 13. März 1964 über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz, ArG)",
-      "titelFr": "Loi fédérale du 13 mars 1964 sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail, LTr)",
-      "titelIt": "Legge federale del 13 marzo 1964 sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro, LL)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/57_57_57/de",
-      "sha": "0776b65ac889828811a53345d26c11b39661586f62445ec69b78e1edbbb00f54"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/_1587_",
+      "dateDocument": "1966-11-28",
+      "titelFr": "Arrêté du Conseil fédéral du 28 novembre 1966 rectifiant certaines errurs dans le texte français de la loi sur le travail et de ses deux ordonnances d'exécution, Errata",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/_1587_/de",
+      "sha": "dbd0cc214dafe276f0b9b7e3f7d4be3ac644aa956c3b430572070c7cb174e415"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1966-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1968/__980",
+      "dateDocument": "1968-08-23",
+      "titelIt": "Legge sul lavoro, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1968/__980/de",
+      "sha": "dc049cade24a021b281fd4378174a031c39cad3ecc78b3e37178d35f5722567b"
     }
   ],
-  "sha": "fcadeadeadc276e3580e160ef5054818ee00221cd9a1860eebe25480439b4823"
+  "sha": "0df86cbddc516b757fb1a6c05daebf9f00c6588d830b0e4004e2fbd717d760bd"
 }

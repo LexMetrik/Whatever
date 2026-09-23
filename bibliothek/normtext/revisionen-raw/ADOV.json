@@ -548,5 +548,48 @@
     "2023-01-23"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2011/505",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2011/505",
+    "inkrafttreten": "2012-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/505",
+        "typ": 5,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/598",
+        "typ": 6
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/601",
+        "typ": 6,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+        "typ": 1,
+        "datum": "2023-01-23"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2011/598": {
+        "dateForce": "2011-10-01",
+        "dateDoc": "2009-08-20",
+        "roId": "RO 2011 4367",
+        "titelDe": "Abkommen zwischen der Schweizerischen Eidgenossenschaft und der Bundesrepublik Deutschland über die Wehrpflicht der Doppelbürger/Doppelstaater (mit Anlagen und Prot.)",
+        "titelFr": "Convention entre la Confédération suisse et la République fédérale d'Allemagne relative au service militaire des double nationaux (avec annexes et prot.)",
+        "titelIt": "Convenzione tra la Confederazione Svizzera e la Repubblica federale di Germania concernente l'obbligo di prestare servizio militare delle persone con doppia cittadinanza (con all. e prot.)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/698": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2022-10-19",
+        "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+        "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+        "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)"
+      }
+    }
+  }
 }

@@ -1,22 +1,86 @@
 {
   "erlassKey": "AVIV",
   "sr": "837.02",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/258",
+      "dateDocument": "2026-05-27",
+      "roFundstelle": "AS 2026 258",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "6a5bd4b8448ca7d8f9c8f60fb87d9512738f5280f5d65c931ef5e17d0b00e46e"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-08-01",
+        "2027-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/258/de",
+      "sha": "292d7b3696ca1fd0a2c731ef467a32687f9851fad1a9b28a477bb01860da9af9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/814",
+      "dateDocument": "2025-11-26",
+      "roFundstelle": "AS 2025 814",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "32dbe5648d702a7a5a207eea2c942af8bb07979658a810cf3aeec212374ceb4c"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-01-01",
+        "2027-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/814/de",
+      "sha": "41d7ca5151448db5369bc3b580226ce87ec2c53596fcfa96572f2078fd6cfb9b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/337",
+      "dateDocument": "2025-05-14",
+      "roFundstelle": "AS 2025 337",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-08-01",
+        "2026-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/337/de",
+      "sha": "8de1b5762262bcc3ebbb64f2e4bc28a1d31ff43497118fcf713bb631c81d8353"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/617",
+      "dateDocument": "2025-10-08",
+      "roFundstelle": "AS 2025 617",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-11-01",
+        "2026-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/617/de",
+      "sha": "db264343dca320222a19371e2cd84bc7e5fcc2ff89e4b9891cda56edbc942935"
     },
     {
       "art": "aenderung",
@@ -27,8 +91,15 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-08-01",
+        "2027-02-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/258/de",
-      "sha": "9a4d8dafc896dbc9860589fa4db8326bc15f29239d9d564b73938fc9eebbddcf"
+      "sha": "5d00d147040f58ebeb87140d8a7d3fe83f009968b66023007f741445953724f8"
     },
     {
       "art": "aenderung",
@@ -39,8 +110,15 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-01-01",
+        "2027-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/814/de",
-      "sha": "b300f607bb107e475e0c5c307ff2b03cddd21c25c905df0717dd52df90b0160d"
+      "sha": "ce2c7e18cf4fdde120aded387ac36068b9133266441ad735a8a474bafd23ebc5"
     },
     {
       "art": "aenderung",
@@ -51,8 +129,34 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-11-01",
+        "2026-08-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/617/de",
-      "sha": "1f805094579b253f4b2e83d0da164ae5e8c72742583e550397725b23d9f91b5e"
+      "sha": "010598ce0201fa88d7ab2272aa3c4f6491e71c009ed11611f08bfb46608bd65f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/306",
+      "dateDocument": "2024-06-19",
+      "roFundstelle": "AS 2024 306",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-08-01",
+        "2025-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/306/de",
+      "sha": "f4d5d19caec55e2d7b4654f40d1b3964ee5ce7dd153ba3479ef17511643a7614"
     },
     {
       "art": "aenderung",
@@ -63,8 +167,15 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-08-01",
+        "2026-08-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/337/de",
-      "sha": "5bdc6c43e1850476d383d070e96e682a0db7796f8c04a0292833377795112679"
+      "sha": "fd9ffa54aea2cde567ecc9c7c01627a6031809c7be5da570ea9de24e9a01a2cd"
     },
     {
       "art": "aenderung",
@@ -75,8 +186,31 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-08-01",
+        "2025-08-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/306/de",
-      "sha": "01e0d1e201970860a7a0c9c8655221bc9c3c559cc6ec8b2baaa8c2f8fa458e39"
+      "sha": "7b825bcdeb90b3052577270ac6c74290347ea8d7aefd15dbc2aed16867e8ec57"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "d401db506674c2082aad993fe09baa4be8cf5bef66fbde3c8beb8c278d7aca3d"
     },
     {
       "art": "aenderung",
@@ -87,38 +221,187 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/62/de",
-      "sha": "7736e67ab9b87721677f7ab2cfc4f94035b9c90d75d7b76cd25f36d11087c606"
+      "sha": "f34a4ccc65886765aa64cb269c0dfdac237235a596d9e4239fa6203970689448"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "e131371f8ae333d54a5eadb0b926cc905f0ba6b789f27613ff4824dcb3276d42"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-02-07",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "41fad2be7ee904607e84370c4ca36f27a526dd3a8f3623c74ce98fd9f344f624"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/53",
+      "dateDocument": "2023-02-07",
+      "roFundstelle": "AS 2023 53",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV). Berichtigung",
+      "titelFr": "Règlement sur l’assurance-invalidité (RAI). Erratum",
+      "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/53/de",
+      "sha": "b86af92ddd3bdccb1f3b1537f54a5aefc92379b24ba5be09b25ccf88b22d31d7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "3482601822d11c6ed24e863df0eaf2b75ebf81643fb58d657a96206a0e6706ce"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/39",
+      "dateDocument": "2022-01-26",
+      "roFundstelle": "AS 2022 39",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung) (Verlängerung des summarischen Abrechnungsverfahrens und Wiedereinführung weiterer Massnahmen)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage) (Prolongation de la procédure de décompte sommaire et reconduction d’autres mesures)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione) (Proroga della procedura di conteggio sommaria e reintroduzione di altre misure)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2022-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/39/de",
+      "sha": "7920c69e7286ceefa1941864cde54710280aad765e8474909f0db891ae75d264"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "6dc16aef9da5378609cc88ba869deb0e1a02bf822376c490ea7fbd80f21e19fd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/524",
+      "dateDocument": "2020-07-01",
+      "roFundstelle": "AS 2020 2875",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2020-09-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/524/de",
+      "sha": "14db7283e51edb824f5ce837056e9ac655683ed886ce7c8246e18291e204b2c6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/593",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 593",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung) (Verlängerung des summarischen Abrechnungsverfahrens)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage) (Prolongation de la procédure de décompte sommaire)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione) (Proroga della procedura di conteggio sommaria)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2021-10-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/593/de",
+      "sha": "6e44506736d9b17127412efcfa4a2684afd6f541a87ec9f826971ea55558c82f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/706",
+      "dateDocument": "2021-11-03",
+      "roFundstelle": "AS 2021 706",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l’assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/706/de",
+      "sha": "99d19a3437028d4e9fec4f5578c808e95ae052f8bf9e6566d9c4a27114c63265"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+      "dateDocument": "2021-11-17",
+      "roFundstelle": "AS 2021 800",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "sha": "01821c1c4afbc3a6add1f457b75e1324bd1fd6dd6525736c7991ab85f093a8fb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/39",
+      "dateDocument": "2022-01-26",
+      "roFundstelle": "AS 2022 39",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung) (Verlängerung des summarischen Abrechnungsverfahrens und Wiedereinführung weiterer Massnahmen)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage) (Prolongation de la procédure de décompte sommaire et reconduction d’autres mesures)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione) (Proroga della procedura di conteggio sommaria e reintroduzione di altre misure)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2022-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/39/de",
+      "sha": "be847cf43fca1277f9e82a8fa0dda0ca3ff824265adc1c2c375b5299e376fa6e"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "279feca27f07d22ef5bafa154c4929c7e9766804349ee28709d5a5d0d888c87d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/593",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 593",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung) (Verlängerung des summarischen Abrechnungsverfahrens)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage) (Prolongation de la procédure de décompte sommaire)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione) (Proroga della procedura di conteggio sommaria)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2021-10-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/593/de",
+      "sha": "10184426d017d29030c9badb6df1489ca46c4d1693ec0b43f0f2e539a6a47d1f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/169",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 169",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung) (Verlängerung des vereinfachten Verfahrens und der Aufhebung der Karenzzeit)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage) (Prolongation de la procédure simplifiée et de la suppression du délai d’attente)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione) (Prolungamento della procedura semplificata e dell’abolizione del periodo d’attesta)",
+      "wirkungen": [
+        "aenderung",
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2021-04-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/169/de",
+      "sha": "caadcb920959b1dd45b869132f8cc90b90fc641511324cc59c05e47ab5e4405b"
     },
     {
       "art": "aenderung",
@@ -129,26 +412,119 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Ordonnance sur l’assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Ordinanza sull’assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/339/de",
-      "sha": "e1bfd36403b3b92d2d619d152d01e9d6fdcac3f3e9467bf2c052ee3d55191ede"
+      "sha": "70354b28b1e3be4ab6227423980adb0101bd15da1b096dcfe953479b4acb3eff"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/382",
+      "dateDocument": "2021-06-23",
+      "roFundstelle": "AS 2021 382",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung) (Erhöhung der Höchstdauer für den Bezug von Kurzarbeits¬entschädigung und Verlängerung der Geltungsdauer weiterer Massnahmen)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage) (Hausse de la durée maximale de perception de l’indemnité en cas de réduction de l’horaire de travail et prolongation de la durée de validité d’autres mesures)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione) (Aumento della durata massima di riscossione dell’indennità per lavoro ridotto e proroga della durata di validità di altre misure)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/382/de",
+      "sha": "8c5b80cef71bedeeee4a8fc9584fd3f5e611f3a432a46369a9fbdc02e7d18ae4"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "8a0d32f880f72c6b213ff7659cc3584981e1ea6a7986dd385bcb9771c99c3601"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/16",
+      "dateDocument": "2021-01-20",
+      "roFundstelle": "AS 2021 16",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-09-01",
+        "2021-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/16/de",
+      "sha": "7739a7f654e3027ab379c1a54bad8df7e45a8545fe5dd9aae2b4bf0ff4308dc3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/169",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 169",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung) (Verlängerung des vereinfachten Verfahrens und der Aufhebung der Karenzzeit)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage) (Prolongation de la procédure simplifiée et de la suppression du délai d’attente)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione) (Prolungamento della procedura semplificata e dell’abolizione del periodo d’attesta)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2021-04-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/169/de",
+      "sha": "ae0f8a8e65f38ec966953331d59ec964fe1e96d66035f96fa9b4559fffa83332"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "c5806cc300f2bb959cd79cbee3d41a00f78f7b434873ff0674a6e1c4bcad5931"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/1058",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2020 6449",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l'assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage)",
+      "titelIt": "Ordinanza sulle misure nel settore dell'assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione)",
+      "wirkungen": [
+        "aenderung",
+        "verlaengerung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/1058/de",
+      "sha": "b3f82ed6fd3129f1b1a1407ec8c9a9fdd96ffd21f87e535e07a0cccc6d93cdff"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/651",
+      "dateDocument": "2020-08-26",
+      "roFundstelle": "AS 2020 3611",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-09-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/651/de",
+      "sha": "4e179fae1a06e296ffe106b0af6336a38775617693aa2226abdde49998ea0a3c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "b3fe92e02a1ed8d4d60169a0ffe3aa91b430a3639c6b12aeaa1da190ecd9a22d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/142",
+      "dateDocument": "2020-03-13",
+      "roFundstelle": "AS 2020 779",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-03-13",
+        "2020-10-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/142/de",
+      "sha": "ab618909b6a6fb09a59780e2cd3082bdf2393af1d7fbfa2a1dc2b4b823731b7d"
     },
     {
       "art": "aenderung",
@@ -159,8 +535,16 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2020-09-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/524/de",
-      "sha": "68cf74f600f63a72ea48709a0d140392d37f44ef4764a15cd5b1d44cf03ee985"
+      "sha": "62e357312dac8353e253013bf7aa374c76719333f3298c8af1937f24f728e6bf"
     },
     {
       "art": "aenderung",
@@ -171,26 +555,85 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-09-01",
+        "2021-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/651/de",
-      "sha": "eba10ef407d4253ac912c8820b84e98ebf6d9b3590873cb15215685903a00e1d"
+      "sha": "a3ace839b6c14d2ea748ae801e8397dd8c23acb7cf67b891e619eb673c0948d7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2020-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/16",
+      "dateDocument": "2021-01-20",
+      "roFundstelle": "AS 2021 16",
+      "titelDe": "Verordnung über Massnahmen im Bereich der Arbeitslosenversicherung im Zusammenhang mit dem Coronavirus (Covid-19) (Covid-19-Verordnung Arbeitslosenversicherung)",
+      "titelFr": "Ordonnance sur les mesures dans le domaine de l’assurance-chômage en lien avec le coronavirus (COVID-19) (Ordonnance COVID-19 assurance-chômage)",
+      "titelIt": "Ordinanza sulle misure nel settore dell’assicurazione contro la disoccupazione riguardo al coronavirus (COVID-19) (Ordinanza COVID-19 assicurazione contro la disoccupazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-09-01",
+        "2021-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/16/de",
+      "sha": "fb7aa13ef1f5f0b5ad49f2ab6f15ade2b831882f8ff659c93bdb8f711e7f75f3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "d043bef37ec2bba0c4819615dfd020b4bb08398941ee13d2fb1e4c03cc11e8aa"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/524",
+      "dateDocument": "2020-07-01",
+      "roFundstelle": "AS 2020 2875",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2020-09-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/524/de",
+      "sha": "00f58e7625e36e84c044b4785c64d1fe459ce1ca019d045960c126265d0794a5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-04-09",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "fab0ce5811f1d1af74d056cadc33ddf1d082c0c82b6e49a15a08fc7d16e57e9d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/226",
+      "dateDocument": "2020-04-08",
+      "roFundstelle": "AS 2020 1201",
+      "titelDe": "Verordnung über ergänzende Massnahmen im Zusammenhang mit dem Coronavirus im Bereich der Arbeitslosenversicherung",
+      "titelFr": "Ordonnance sur des mesures complémentaires dans le domaine de l'assurance-chômage en lien avec le coronavirus",
+      "titelIt": "Ordinanza sui provvedimenti complementari nel settore dell'assicurazione contro la disoccupazione in relazione al coronavirus",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/226/de",
+      "sha": "6cd20b89a2b5a860dbcfa12b50ea3d89e700732bfe8580727632dd742c2056b1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-03-21",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "30f614e6d4b055d79471b13c2dc470a2e324d48f42e7247977a50b9cf76c9839"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/168",
+      "dateDocument": "2020-03-20",
+      "roFundstelle": "AS 2020 875",
+      "titelDe": "Verordnung über Massnahmen im Zusammenhang mit dem Coronavirus (COVID-19) zur Kurzarbeitsentschädigung und zur Abrechnung der Sozialversicherungsbeiträge",
+      "titelFr": "Ordonnance sur les mesures en lien avec le coronavirus (COVID-19) concernant l'indemnité en cas de réduction de l'horaire de travail et le décompte des cotisations aux assurances sociales",
+      "titelIt": "Ordinanza sui provvedimenti riguardo al coronavirus concernenti l'indennità per lavoro ridotto e il conteggio dei contributi alle assicurazioni sociali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/168/de",
+      "sha": "6165ac63c536f965e02dd63e412688f3aa0090b55485a84d460bda2f3c787c0c"
     },
     {
       "art": "aenderung",
@@ -201,14 +644,34 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-03-13",
+        "2020-10-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/142/de",
-      "sha": "74d10ed77661a4ff517f359951460599c3be8ed429bc98fb53ee955c5ffd5592"
+      "sha": "7f337c788ac035a35b342c5da1561c1536d164897368305c6e9b8ab350d954aa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "b3c4d4de20da917ce47512c7fc84c5857a2a3142acd7a714745dcd2622b916d7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/422",
+      "dateDocument": "2017-06-28",
+      "roFundstelle": "AS 2017 3693",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-08-01",
+        "2019-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/422/de",
+      "sha": "fa32388599ddd86bb3b638d90bd53e2f9048eaea5feb04d624e4363bfb365759"
     },
     {
       "art": "aenderung",
@@ -219,8 +682,30 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/108/de",
-      "sha": "a2e7871845e4ac40b8c7d1c28edc96edc1a0b91ac33a0792e73c771c0fd9e722"
+      "sha": "cd9c9138b979d7db219174024a0540d8d4d82147091743fbb346878853ca7b66"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/47",
+      "dateDocument": "2016-01-13",
+      "roFundstelle": "AS 2016 351",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-02-01",
+        "2017-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/47/de",
+      "sha": "73986fe3bdb610fc9887efbbeff1df89fd8d88c1d8b57c1de64c7be15f433f76"
     },
     {
       "art": "aenderung",
@@ -231,14 +716,30 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-08-01",
+        "2019-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/422/de",
-      "sha": "240357a5199a572dbfe4eb0e5ea9c02c24fb15396d080b1d2122dc512cc62a6b"
+      "sha": "d4604eb166fcb0df2f0638a30886083dace4c7432bba9b0e315dc09c8cac3b83"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "b2d1040f7cd21aab0f6b87450c5213442e335949e907e09ee0c007b8db5886bc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/724",
+      "dateDocument": "2016-11-09",
+      "roFundstelle": "AS 2016 4393",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV)",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
+      "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/724/de",
+      "sha": "28ffab58f2c09849765890afa4a3ff7d852d47a29dadfe285da96e52261e47bc"
     },
     {
       "art": "aenderung",
@@ -249,14 +750,30 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-02-01",
+        "2017-08-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/47/de",
-      "sha": "a29c32ffffc9d4a129721f8a909bc9a14b123dae9f9cd8239edb2c8b23227f75"
+      "sha": "7fff72da1a3091c544d4934f23556f6868d5141515b5ce83bf528c32eb281a42"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "bd6b98d290ffd8a9a956b15e31e6a5112c163dda2e4cf41e91cb4520560b4181"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "cc366b052f45678f6292fa3ed75ee05d752a3862952f1b32edfc0aaf66630b2f"
     },
     {
       "art": "aenderung",
@@ -267,8 +784,12 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/179/de",
-      "sha": "ab7cdfe6bf9ee043d823836dce55b8664076beed90021984854ffd2574cab136"
+      "sha": "81d36ce778355bad4aa7eef12d0bd8f33b084255bdfa5897e50317d5e1447ac7"
     },
     {
       "art": "aenderung",
@@ -279,8 +800,30 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/677/de",
-      "sha": "48221b4ff952c3dd54b622522ed7d4300feae1c93933858869968b864bcbc04a"
+      "sha": "6a838fd87ad12974a3c44bc4b013d3f519f3414b40979fb0a8a783795c2da9be"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/791",
+      "dateDocument": "2010-11-24",
+      "roFundstelle": "AS 2010 5529",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2011-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/791/de",
+      "sha": "28632aa47c5c51cd87f959bd942cb73f7507d2a542e2f79793659f18b349bad1"
     },
     {
       "art": "aenderung",
@@ -291,8 +834,12 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/172/de",
-      "sha": "d27cb0460430a45f5604687d25fa36a3e7acd7cc4458606b60989b414fc6300f"
+      "sha": "b348adc7ccb77d1c308f83b3533592043284373b842684ae4f1c636a03b1cfae"
     },
     {
       "art": "aenderung",
@@ -303,8 +850,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/184/de",
-      "sha": "7a4cdf7cacf3dea6deb63f5b21c126bab456512b305433dd8395503198bf3d0e"
+      "sha": "2144beced23b86771037e7abc01a5a3ebb11dd4cb43993bdaa6da78ad725ec2c"
     },
     {
       "art": "aenderung",
@@ -315,8 +865,15 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2011-04-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/791/de",
-      "sha": "276ad30706556049809ef5f6ecbd02e90ef2631637da551ce9189489e822624e"
+      "sha": "d33fbde443aea8bdcd92730992732da8bfd9f9b88c8849cd31ae1bc47ed2773e"
     },
     {
       "art": "aenderung",
@@ -327,8 +884,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/881/de",
-      "sha": "e5067c6d50acdd0887ce897bc61a6815a687c1127125264250f85a79a198fe88"
+      "sha": "91eb1817fe7789e27ecd37d92204591b21982385400af413200caecc1349e5b8"
     },
     {
       "art": "aenderung",
@@ -339,8 +899,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/751/de",
-      "sha": "380ac234d0e3fad1f6a70d21bad076834341eaa7612cb9dba8d878da093f970c"
+      "sha": "4b74175cee96d62323b8f80d714b4a4431fe8f6d8172a0d7dd4f7fd792d76d24"
     },
     {
       "art": "aenderung",
@@ -351,8 +914,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/682/de",
-      "sha": "22759aaa0da6f046ecb3eaf89e7515f8b7327cbaea677fe4381accb2d53f36dc"
+      "sha": "734a61be8b79aa27b32b357b37c85e2650910b8eb0e6f63ec009e272579e191b"
     },
     {
       "art": "aenderung",
@@ -363,8 +929,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/601/de",
-      "sha": "29b28e4ac5faa40ee77e97fd20833b70105e0e62d42e5773f1411db94c401cd1"
+      "sha": "a73feb5b55f9f1d73945d1da1c59ee7f3bceba1ef45f999f74422d1ce0aeffdb"
     },
     {
       "art": "aenderung",
@@ -375,8 +944,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/514/de",
-      "sha": "474d25c7a18aceb6219a5e26dad250c532c11df65763969352221c7ad58864b4"
+      "sha": "927a6a333e341922711516c34e3f0561f951713aad3d77f9a8b52568e29effdd"
     },
     {
       "art": "aenderung",
@@ -387,8 +959,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/276/de",
-      "sha": "1700b403b080cee6c20c59848b0e91fa314a1c08b0f1ccfecbd57bec4367dcbc"
+      "sha": "a9e1d66f6c8cbcfaac3923822bf440393ffff04754d00738a7f3e3a4eb75f016"
     },
     {
       "art": "aenderung",
@@ -399,8 +974,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/212/de",
-      "sha": "9295e0c4f8e8a4b8dc531daf87eac46911e7f3dc80973a162e08176b48cf59d5"
+      "sha": "1f7a4e9f06e60b0fdb4ecd8c56df62a7e1f1092630784d356e13642e94e195dc"
     },
     {
       "art": "aenderung",
@@ -411,8 +989,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/141/de",
-      "sha": "cc440cdd92a6045b8ae2fea2f6fd3831eb8635ee896912fb626ea6df45542c09"
+      "sha": "6fb9bf51a0c9581bb6297239514f9b8edc113bfc8ddbeca054ff0ce0b38d4cea"
     },
     {
       "art": "aenderung",
@@ -423,8 +1004,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/161/de",
-      "sha": "b8b202a4faa96fed86b84b6a14a1f338f2c1c459765fd94c58027ae48231b9d5"
+      "sha": "20ad90944b4077165b3f99d06e5f0b2fee0abe691e3513fcc3464ae28c2cbb4d"
     },
     {
       "art": "aenderung",
@@ -435,8 +1019,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/103/de",
-      "sha": "193745746b9c8d96287dbce43a03cc23eb606c03d3da241ed7291e8ce6e4ff41"
+      "sha": "8cd39d41b9bf00bad3aef671b6377e2c32efe0c105ecdff083649d250c731ae4"
     },
     {
       "art": "aenderung",
@@ -447,8 +1034,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/807/de",
-      "sha": "99b54c93f1b34d3ec4486aa4d939036b5e532dfef02780038a6d3d43cfe9370f"
+      "sha": "ba9c4672acd48965c6ed595076a2b2e09187de92c083fc0cbbe5fa61be2e8617"
     },
     {
       "art": "aenderung",
@@ -459,8 +1049,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/714/de",
-      "sha": "ca1ebbc0a04d301be5e7119cc8d7ae24add2eaa69934f620f1a059cf6f9c9262"
+      "sha": "d5b237397021a1afb49f38c4a58750677299ebf857f5b372b7a35f9c4ec6b8c4"
     },
     {
       "art": "aenderung",
@@ -471,8 +1064,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/619/de",
-      "sha": "bdc40cc072eedbc16ecbf17ac9b571cd7f3db9c17670df760f904df7384629fe"
+      "sha": "20a72663dc4928304211c2cc5d1a3920a6f2ec7b8e58bfe07d06b0a194951f55"
     },
     {
       "art": "aenderung",
@@ -483,8 +1079,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/516/de",
-      "sha": "6a2e496859bfd143c777a68fdd03ad2afb597e000daffec180a7084da2d73514"
+      "sha": "b238160da8751025fd5c944d9f803c4f15db25f93955a109006987c1c5f0fca2"
     },
     {
       "art": "aenderung",
@@ -495,14 +1094,43 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/158/de",
-      "sha": "1d465d6f78675292756a3330b97413e9693435d7c88085bc6fcbdbb2b305b002"
+      "sha": "da517a22959565bbbd39a89ab4f3ddd2db761c106cf04e42135b6045461981f5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "de4af6cc0670798ed7d5ee701d19be7422c86fea37b19fafc68b89918a98dd3c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "46881dae06fda414f35308af21fa0ff79f00208d5a08263331f675df982db42f"
     },
     {
       "art": "aenderung",
@@ -513,8 +1141,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/819/de",
-      "sha": "8ae7a75c03341f774c2af3daadc4e8a40116bbcfc6335cf710154427f10caba4"
+      "sha": "cc4eec91416e39cf4b6b97312aa5cb4ddb705ca6311af539fe1423ff22208d25"
     },
     {
       "art": "aenderung",
@@ -525,8 +1156,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/593/de",
-      "sha": "005ff54612cd448c52740210a97cb93197ae8aacdea89e9018beb0b6e59afcc2"
+      "sha": "0680433980786a76f70add218f4908669585a93840106a349b8b9bb867f3b6d0"
     },
     {
       "art": "aenderung",
@@ -537,8 +1171,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza del 31 agosto 1983 su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/382/de",
-      "sha": "9b51614ecd260b37deac8d51a702c14db69b9b4c68d4306196f52abd46fc0a0f"
+      "sha": "54708267810c89137f25865e1c34757387f8b90c16d61d5d85f0e0a46c0c4c79"
     },
     {
       "art": "aenderung",
@@ -549,8 +1186,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/425/de",
-      "sha": "cf760444680587798987ad72697e4bef0eac346f0a7c2c526e2f4c8b84251620"
+      "sha": "642154b439fcf39f955fff14d0a97bb07b6f46ab7dfb4f3d242598412830c9fd"
     },
     {
       "art": "aenderung",
@@ -561,8 +1201,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/524/de",
-      "sha": "2a21dc03d9cd711e7e67997e13c89db94444091bd291837ed58a5045c231b4f4"
+      "sha": "18678ab379dfbe58cfd6546fceb91fa0528111065081991b9ec427d0d3a94d89"
     },
     {
       "art": "aenderung",
@@ -573,8 +1216,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/820/de",
-      "sha": "7618ea37aa1e1101f8600b6244b63eefa935217c0b2c7033d703f8fa13917de2"
+      "sha": "af4034ab8198e0b3e9769c4165c7059dbf7a53a46aebd85e7ba238b58f15f006"
     },
     {
       "art": "aenderung",
@@ -585,8 +1231,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/829/de",
-      "sha": "b67ed3e3a056272ec4d24eadec71257aa739b2acc4c43b861de9448d2df8570d"
+      "sha": "1f991193257677ce77b93cadfa1f095a7800d78371beed56cd81c2594276249f"
     },
     {
       "art": "aenderung",
@@ -597,14 +1246,30 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/435/de",
-      "sha": "52e80884947a8d68c8da974acd3f02e1eaa0f0740a001dea778f12cb57c7c013"
+      "sha": "7b07f489ccafad919bc5424f0f8a69e2d0b9e0e6e58aab481019a317cf9e88c1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/837.02",
-      "sha": "39cde5d54003ebb107ef22f40e3bba160a42090c791a40a480284a2dfa2a2c08"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/210",
+      "dateDocument": "2004-03-24",
+      "roFundstelle": "AS 2004 1715",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-04-01",
+        "2004-05-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/210/de",
+      "sha": "20a66df42e9db17e1a94d4d00722fd62267e2e54dac7dd5e102c3338e9fee8dd"
     },
     {
       "art": "aenderung",
@@ -615,8 +1280,15 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-04-01",
+        "2004-05-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/210/de",
-      "sha": "517181449a60ea829ce23a9b15bfde02338d54d0b531fdf5739a52d4615eb972"
+      "sha": "8533d6481f04effac8f3da6c611c55ac01e5330f74d5e8c78dff22e92d8c10aa"
     },
     {
       "art": "aenderung",
@@ -627,8 +1299,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/714/de",
-      "sha": "a7923a6f1555b63d4d556b6a571d1d72ce8f01ddfd52bc0f851897eec269afa0"
+      "sha": "4ec359a7235c4d54958f2a113a24b0c8cb18484f87bead63c9774280a35e2d52"
     },
     {
       "art": "aenderung",
@@ -639,8 +1314,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/494/de",
-      "sha": "2b05a207cb6c9fda9d82f3d35c15f64a2ae68b35956d3844e22fd3227bc02be3"
+      "sha": "9fc18a1df9632b5eba538d4fab2f64a663a4bcc5c0b732b190f134d6dda7c22e"
     },
     {
       "art": "aenderung",
@@ -651,8 +1329,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/262/de",
-      "sha": "dba436326c9eb25370a718a6c741ed78e99d20105cdf8283be200f7250dd7533"
+      "sha": "cd75f0f2145000d5b924dd94eea92ecc5e281a82c6491238d9df1a15361e1f14"
     },
     {
       "art": "aenderung",
@@ -663,8 +1344,28 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage [OACI])",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione [OADI])",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/274/de",
-      "sha": "42a5d762a418068d9651cc0beafdfde06e22ba09421a722ab1853eaa58c8e8e6"
+      "sha": "af117f173e808733b7aa274e43de0981f7af4678fcd7878c547f1bcc19ecbfcb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/715",
+      "dateDocument": "2003-11-19",
+      "roFundstelle": "AS 2003 4863",
+      "titelDe": "Verordnung über die Finanzierung der Arbeitslosenversicherung (AVFV)",
+      "titelFr": "Ordonnance sur le financement de l'assurance-chômage (OFAC)",
+      "titelIt": "Ordinanza sul finanziamento dell'assicurazione contro la disoccupazione (OFAD)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/715/de",
+      "sha": "a93a78bd46b3968870e14f22edb7cf8b33f7c1c86f7fed7526ef6184c553632b"
     },
     {
       "art": "aenderung",
@@ -675,8 +1376,12 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/620/de",
-      "sha": "28e12bd77e0c7d8a0b93defee5d3bcb1817f1b6e9b574713a92a9281cffa5d8f"
+      "sha": "806716eff2530f3f9d2bed2f1ef3e7e64a4804084ac3ad6c7e778bbf51591acb"
     },
     {
       "art": "aenderung",
@@ -687,8 +1392,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/507/de",
-      "sha": "a3dbd88581e67d2d785c52e272bf309dea9d1555b3ecd42a259b303df41e4820"
+      "sha": "6e5c03cbc280bea3ce61ab5e53a1978a19d766ee4c7e039a20d7a12c485f254e"
     },
     {
       "art": "aenderung",
@@ -699,8 +1407,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/174/de",
-      "sha": "c357031a19069cfd300e646794e20ce3fee2069de35a8c28f595e643b506eb1c"
+      "sha": "05d2cc9fca5e0b99bc40b284d6d96815bfebb43adfb6367c0a9df7ffd9a826c9"
     },
     {
       "art": "aenderung",
@@ -711,8 +1422,41 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/202/de",
-      "sha": "0ca464a005285ea62a6d475734d12b9fd3ed18262c279e9a7b72a9ddfd8e3a43"
+      "sha": "5e2fd20d74b2215bfc593cdf8f8c5a18f63e1a2f0a3ec31cab370ff6d0c3effb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/260",
+      "dateDocument": "2001-05-23",
+      "roFundstelle": "AS 2002 1729",
+      "titelDe": "Verordnung über die schrittweise Einführung des freien Personenverkehrs zwischen der Schweizerischen Eidgenossenschaft und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten (Verordnung über die Einführung des freien Personenverkehrs, VEP)",
+      "titelFr": "Ordonnance sur l'introduction progressive de la libre circulation des personnes entre la Confédération suisse et la Communauté européenne ainsi que ses Etats membres (Ordonnance sur l'introduction de la libre circulation des personnes; OLCP)",
+      "titelIt": "Ordinanza concernente l'introduzione graduale della libera circolazione delle persone tra la Confederazione Svizzera e la Comunità europea nonché i suoi Stati membri (Ordinanza sull'introduzione della libera circolazione delle persone, OLCP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/260/de",
+      "sha": "03b52f5706211a138cf0b46228194ba83f89509079404785193e47548323a342"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/261",
+      "dateDocument": "2002-05-22",
+      "roFundstelle": "AS 2002 1741",
+      "titelDe": "Verordnung über den freien Personenverkehr zwischen der Schweiz und der Europäischen Union und deren Mitgliedstaaten, zwischen der Schweiz und dem Vereinigten Königreich sowie unter den Mitgliedstaaten der Europäischen Freihandelsassoziation (Verordnung über den freien Personenverkehr, VFP)",
+      "titelFr": "Ordonnance sur la libre circulation des personnes entre la Suisse et l'Union européenne et ses États membres, entre la Suisse et le Royaume-Uni, ainsi qu'entre les États membres de l'Association européenne de libre-échange (Ordonnance sur la libre circulation des personnes, OLCP)",
+      "titelIt": "Ordinanza concernente la libera circolazione delle persone tra la Svizzera e l'Unione europea e i suoi Stati membri, tra la Svizzera e il Regno Unito e tra gli Stati membri dell'Associazione europea di libero scambio (Ordinanza sulla libera circolazione delle persone, OLCP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/261/de",
+      "sha": "3b18c2eae8507044bc9b1ac0dbefe559cff4b6ef34eaafc13455232971284d2c"
     },
     {
       "art": "aenderung",
@@ -723,8 +1467,12 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/515/de",
-      "sha": "c93cc6190361e4ccc42366fd0c56a07da889bead3b1ad7159ca08caaa54babd8"
+      "sha": "8977b4444b9d391095d0c7f5ef85b1db18bf8bce2bde24b73ad2fcafa6a6070e"
     },
     {
       "art": "aenderung",
@@ -735,8 +1483,12 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/563/de",
-      "sha": "0d9ea9d684a5030aa29ac49bc94245e4667130ff4b65b8000f18dc7e8856c250"
+      "sha": "9bf5c08545ed832e598f9d362db8410ebd0289e0c6c9ebbda5875ef2f165a177"
     },
     {
       "art": "aenderung",
@@ -747,8 +1499,11 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/523/de",
-      "sha": "64d05bce67ccddd52e26be358fe7e8793bc53c3cc741093398c0e92d9bfedb44"
+      "sha": "bfdb684cd80631e933e96b2d444832bda3230e020af192088b3b6a302102f365"
     },
     {
       "art": "aenderung",
@@ -759,21 +1514,312 @@
       "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
       "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/28/de",
-      "sha": "962442e2dd9378a009494d64a43327139d9522283671dfd4cffb703d94b65792"
+      "sha": "4e1fc5406f3a5a8e9d96a0616bdb48b47ade0f2fde42db2f5879b99b495ba527"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 187",
+      "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+      "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+      "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/34/de",
+      "sha": "e6acc34193bb4bee07ea794009d2498f6e17971d8d8245651291c75bd15ea05f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1670_1670_1670",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1670",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assu rance-chômage, OACI), Modification",
+      "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1670_1670_1670/de",
+      "sha": "59c422b13f5a6fad38a15712b89c2c34bff93e0533f0170dc6921efef9e63cc8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/364",
+      "dateDocument": "1999-08-11",
+      "roFundstelle": "AS 1999 2387",
+      "titelDe": "Verordnung über das Stabilisierungsprogramm 1998",
+      "titelFr": "Ordonnance sur le programme de stabilisation 1998",
+      "titelIt": "Ordinanza sul programma di stabilizzazione 1998",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/364/de",
+      "sha": "8498b019cc10377b11fe98101edaab98e6b3005b86740fcbcfb8ef3eceecddd7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1822",
+      "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1822_1822_1822/de",
+      "sha": "4baedead3f5cb917b4b2e6639d0bcdefab4cd5d37379c5604b9231d24788dcd1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2415_2415_2415",
+      "dateDocument": "1997-10-22",
+      "roFundstelle": "AS 1997 2415",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI), Modification",
+      "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2415_2415_2415/de",
+      "sha": "0c7a52e7285c59e7f038116d0d19477aec29d0bea900fe8b1a3241bb3714c66e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2446_2446_2446",
+      "dateDocument": "1997-11-12",
+      "roFundstelle": "AS 1997 2446",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI), Modification",
+      "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2446_2446_2446/de",
+      "sha": "66f4a6b81dbdaa04aaa9f6719027b2afe83363ee822e49ca198ac4e7fe7054b2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1547_1547_1547",
+      "dateDocument": "1997-06-25",
+      "roFundstelle": "AS 1997 1547",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI), Modification",
+      "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1547_1547_1547/de",
+      "sha": "6174ecba891e59b5231c49be7bb19d741b25ca24d12f5b4cd39372c205e6c56e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3071_3071_3071",
+      "dateDocument": "1996-11-06",
+      "roFundstelle": "AS 1996 3071",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI), Modification",
+      "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3071_3071_3071/de",
+      "sha": "82ba90b1210c1805b9c1b934b391fea2c269eb9e9eb4de941850ca09fd5212c4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/295__",
+      "dateDocument": "1997-01-13",
+      "roFundstelle": "AS 1997 295",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Berichtigung",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/295__/de",
+      "sha": "165e1a812545fb30b1b53c61addce8ab6d9a0fac6dc99a71f81b593a05d34233"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/60_60_60",
+      "dateDocument": "1996-12-18",
+      "roFundstelle": "AS 1997 60",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI), Modification",
+      "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/60_60_60/de",
+      "sha": "36c2988db649da3da8dd9b168fbb80678e3822544570d72dd20b2a2b114e534e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/806_806_806",
+      "dateDocument": "1997-03-07",
+      "roFundstelle": "AS 1997 806",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Berichtigung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI), Errata",
+      "titelIt": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/806_806_806/de",
+      "sha": "dee327f99506d5a3c3e3444db6cbc208ea260f16933abaef2c8a6624ce01c25e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/295_295_295",
+      "dateDocument": "1995-12-11",
+      "roFundstelle": "AS 1996 295",
+      "titelDe": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI), Modification",
+      "titelIt": "Ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/295_295_295/de",
+      "sha": "ab6d85aa8d8b555a9114ea34425ca9d8faaf9972913d863338fd5e0aaed7ac73"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/__1647",
+      "dateDocument": "1997-06-18",
+      "titelIt": "Correzioni: Ordinanza sull'assicurazione contro la disoccupazione et Ordinanza sulle concessioni per automobili",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/__1647/de",
+      "sha": "4432404779875ac8d3ff986383bf87cfaa2938b8cb7371629ad1574dfe910000"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/471_471_471",
+      "dateDocument": "1995-01-11",
+      "roFundstelle": "AS 1995 471",
+      "titelDe": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage (OACI), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro la disoccupazione (OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/471_471_471/de",
+      "sha": "7384cfcc241b2ff550c956be5af4c61d7db357b80f399035cd7695fc430f5c46"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2580_2580_2580",
+      "dateDocument": "1993-06-30",
+      "roFundstelle": "AS 1993 2580",
+      "titelDe": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage (OACI), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro la disoccupazione (OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2580_2580_2580/de",
+      "sha": "27888fa14aef5b06fa02a53677ad37af8b9328f0183954fce8b6e18fac71c76e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1268_1268_1268",
+      "dateDocument": "1993-03-24",
+      "roFundstelle": "AS 1993 1268",
+      "titelDe": "Verordnung vom 24. März 1993 zum Bundesbeschluss über Massnahmen in der Arbeitslosenversicherung",
+      "titelFr": "Ordonnance du 24 mars 1993 concernant l'arrêté fédéral sur les mesures en matière d'assurance-chômage",
+      "titelIt": "Ordinanza del 24 marzo 1993 concernente il decreto federale sui provvedimenti in materia di assicurazione contro la disoccupazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1268_1268_1268/de",
+      "sha": "d84d1ef08daac05095eb1ceda7fc14060f9adc28f2ee9a901e0bc09d681cf6bf"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2409_2409_2409",
+      "dateDocument": "1992-11-11",
+      "roFundstelle": "AS 1992 2409",
+      "titelDe": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage (OACI), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro la disoccupazione (OADI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2409_2409_2409/de",
+      "sha": "4739040f61c497b537323e05004774d045a9852c12bfddfa4a1cb0fd5e814a40"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2132_2132_2132",
+      "dateDocument": "1991-08-28",
+      "roFundstelle": "AS 1991 2132",
+      "titelDe": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage [OACI), Modification",
+      "titelIt": "Ordinanza concernente l'assicurazione contro la disoccupazione (OADI), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2132_2132_2132/de",
+      "sha": "b4f85551a5776ac51bb18f68e6f2d4b5fec5a1a89ed06b2860814086e9f9c129"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/648_648_648",
+      "dateDocument": "1985-04-25",
+      "roFundstelle": "AS 1985 648",
+      "titelDe": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage (OACI), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro la disoccupazione (OAD), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/648_648_648/de",
+      "sha": "b670ae7cceb0dc2d5cc9019241c2c7a0e633d71257264de1ae919a6138342683"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1984-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1205_1205_1205",
-      "dateDocument": "1983-08-31",
-      "roFundstelle": "AS 1983 1205",
-      "titelDe": "Verordnung vom 31. August 1983 über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
-      "titelFr": "Ordonnance du 31 août 1983 sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)",
-      "titelIt": "Ordinanza del 31 agosto 1983 sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1205_1205_1205/de",
-      "sha": "37d87ebb84feea6d048f21000a0e132e7e157ecfd1329af32f97416aac3f6fe7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/2001_2001_2001",
+      "dateDocument": "1983-12-12",
+      "roFundstelle": "AS 1983 2001",
+      "titelDe": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance-chômage (OACI), Modification",
+      "titelIt": "Ordinanza sull'assicurazione contro la disoccupazione (OAD), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/2001_2001_2001/de",
+      "sha": "bfaee86539575ba45f9785356371c2a5803dc933aac040fa457c9c771368a1ae"
     }
   ],
-  "sha": "165296fa74e3ff6b0c2aaf826c998f8866b6ed7382cad3603329a49826cd418e"
+  "sha": "8bb7d6cf4e958742ca5d0fbee6653f6467144ee068ffcd69eaca417c64dd894e"
 }

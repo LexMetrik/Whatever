@@ -521,5 +521,130 @@
     "2023-09-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2002/29",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2002/29",
+    "inkrafttreten": "2002-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/29",
+        "typ": 5,
+        "datum": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/426",
+        "typ": 1,
+        "datum": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/345",
+        "typ": 1,
+        "datum": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/694",
+        "typ": 1,
+        "datum": "2008-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/858",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/738",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/495",
+        "typ": 1,
+        "datum": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/301",
+        "typ": 1,
+        "datum": "2022-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2008/694": {
+        "dateForce": "2008-12-05",
+        "dateDoc": "2008-10-15",
+        "roId": "RO 2008 4943",
+        "titelDe": "Verordnung über die Anpassungen an das Bundesgesetz über die polizeilichen Informationssysteme des Bundes",
+        "titelFr": "Ordonnance sur les adaptations découlant de la loi fédérale sur les systèmes d'information de police de la Confédération",
+        "titelIt": "Ordinanza sugli adeguamenti alla legge federale sui sistemi d'informazione di polizia della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/858": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-12-12",
+        "roId": "RO 2008 6305",
+        "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+        "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+        "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/854": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-11-25",
+        "roId": "RO 2015 5413",
+        "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+        "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+        "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/738": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-11-23",
+        "roId": "RO 2016 4525",
+        "titelDe": "Verordnung über die gegenseitige Wahrnehmung von Aufgaben durch Polizeiverbindungsleute und Verbindungsleute der Eidgenössischen Zollverwaltung",
+        "titelFr": "Ordonnance concernant l'exécution mutuelle de tâches par des agents de liaison de l'Office fédéral de la police d'une part, par des agents de liaison de l'Administration fédérale des douanes d'autre part",
+        "titelIt": "Ordinanza sull'adempimento reciproco di compiti da parte di agenti di collegamento dell'Ufficio federale di polizia e agenti di collegamento dell'Amministrazione federale delle dogane"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/495": {
+        "dateForce": "2017-09-01",
+        "dateDoc": "2017-08-16",
+        "roId": "RO 2017 4151",
+        "titelDe": "Verordnung über den Nachrichtendienst (Nachrichtendienstverordnung, NDV)",
+        "titelFr": "Ordonnance sur le service de renseignement (Ordonnance sur le renseignement, ORens)",
+        "titelIt": "Ordinanza sulle attività informative (OAIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/301": {
+        "dateForce": "2022-06-01",
+        "dateDoc": "2022-05-04",
+        "titelDe": "Verordnung vom 4. Mai 2022 über polizeiliche Massnahmen zur Bekämpfung von Terrorismus (VPMT)",
+        "titelFr": "Ordonnance du 4 mai 2022 sur les mesures policières de lutte contre le terrorisme (OMPT)",
+        "titelIt": "Ordinanza del 4 maggio 2022 sulle misure di polizia per la lotta al terrorismo (OMPT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      }
+    }
+  }
 }

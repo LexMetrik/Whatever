@@ -1186,5 +1186,33 @@
     "2025-12-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2018/511",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2018/511",
+    "inkrafttreten": "2019-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/511",
+        "typ": 5,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/234",
+        "typ": 1,
+        "datum": "2019-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/46",
+        "typ": 1,
+        "datum": "2023-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/670",
+        "typ": 1,
+        "datum": "2025-12-01"
+      }
+    ],
+    "ocStamm": {}
+  }
 }

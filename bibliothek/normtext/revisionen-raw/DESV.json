@@ -1029,5 +1029,119 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2016/775",
       "zielFundstelle": "AS 2016 4833"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2002/183",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2002/183",
+    "inkrafttreten": "2002-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/183",
+        "typ": 5,
+        "datum": "2002-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/769",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/690",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/690",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+        "typ": 1,
+        "datum": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/277",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/277",
+        "typ": 2,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/365",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/308",
+        "typ": 1,
+        "datum": "2011-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/354",
+        "typ": 1,
+        "datum": "2014-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/775",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/230",
+        "typ": 6,
+        "datum": "2025-04-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/376",
+        "typ": 1,
+        "datum": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/290",
+        "typ": 1,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2007/250": {
+        "dateForce": "2007-05-01",
+        "dateDoc": "2006-11-01",
+        "roId": "RO 2007 1469",
+        "titelDe": "Zollverordnung (ZV)",
+        "titelFr": "Ordonnance sur les douanes (OD)",
+        "titelIt": "Ordinanza sulle dogane (OD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/354": {
+        "dateForce": "2014-09-01",
+        "dateDoc": "2014-06-06",
+        "roId": "RO 2014 2051",
+        "titelDe": "Verordnung über die Ordnungsfristen im Zuständigkeitsbereich der Eidgenössischen Zollverwaltung",
+        "titelFr": "Ordonnance sur la fixation de délais d'ordre dans le domaine de l'Administration fédérale des douanes",
+        "titelIt": "Ordinanza sui termini ordinatori nell'ambito di competenza dell'Amministrazione federale delle dogane"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/376": {
+        "dateForce": "2025-07-01",
+        "dateDoc": "2025-05-14",
+        "titelDe": "Verordnung über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+        "titelFr": "Ordonnance sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+        "titelIt": "Ordinanza che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale"
+      }
+    }
   }
 }

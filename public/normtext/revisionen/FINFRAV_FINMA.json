@@ -1,8 +1,8 @@
 {
   "erlassKey": "FINFRAV_FINMA",
   "sr": "958.111",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung-FINMA, FinfraV-FINMA)",
       "titelFr": "Ordonnance de l’Autorité fédérale de surveillance des marchés financiers sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance de la FINMA sur l’infrastructure des marchés financiers, OIMF-FINMA)",
       "titelIt": "Ordinanza dell’Autorità federale di vigilanza sui mercati finanziari sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza FINMA sull’infrastruttura finanziaria, OInFi-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/845/de",
-      "sha": "68a672e25d18ef5d6b93c2c5f191ce2e267104f83223a70cdadd950fee2258a8"
+      "sha": "eb3a1c5d99712a0ef32e3a7c582334cfa1620fed4598c1cb94165f3777820942"
     },
     {
       "art": "aenderung",
@@ -25,14 +28,26 @@
       "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung-FINMA, FinfraV-FINMA). Berichtigung",
       "titelFr": "Ordonnance de l’Autorité fédérale de surveillance des marchés financiers sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance de la FINMA sur l’infrastructure des marchés financiers, OIMF-FINMA). Erratum",
       "titelIt": "Ordinanza dell’Autorità federale di vigilanza sui mercati finanziari sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza FINMA sull’infrastruttura finanziaria, OInFi-FINMA). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/775/de",
-      "sha": "bd1ffa04c319b8ae7e757a53d1b959ffdacb9ac6c5c20ddeb84d813497b204dc"
+      "sha": "be2e4313fed558193f73eba84929d20675abf630cec839eae004ca7d31462225"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/958.111",
-      "sha": "c57500f28a47b9129dc56fa89041c19684aad8e23f1323302fd2ecc0e19e693f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/922",
+      "dateDocument": "2020-11-04",
+      "roFundstelle": "AS 2020 5327",
+      "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzinstitute (Finanzinstitutsverordnung-FINMA, FINIV-FINMA)",
+      "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les établissements financiers (Ordonnance de la FINMA sur les établissements financiers, OEFin-FINMA)",
+      "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sugli istituti finanziari (Ordinanza FINMA sugli istituti finanziari, OIsFi-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/922/de",
+      "sha": "21de315f2116c5250fe654a2794021b8614facd0c78af36791c891d28a869b81"
     },
     {
       "art": "aenderung",
@@ -43,8 +58,11 @@
       "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung-FINMA, FinfraV-FINMA)",
       "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance de la FINMA sur l'infrastructure des marchés financiers, OIMF-FINMA)",
       "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza FINMA sull'infrastruttura finanziaria, OInFi-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/343/de",
-      "sha": "984e4a9b89184cd4e03fa4e3a98dca2c660b624ec5850bc7004400416a389748"
+      "sha": "dea41fd4ec1e65b5892f506cbc340b99f00ff08a650b7f1c2f6338120e05a364"
     },
     {
       "art": "aenderung",
@@ -55,21 +73,12 @@
       "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung-FINMA, FinfraV-FINMA)",
       "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance de la FINMA sur l'infrastructure des marchés financiers, OIMF-FINMA)",
       "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza FINMA sull'infrastruttura finanziaria, OInFi-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/96/de",
-      "sha": "cd9f0719d0099e43ba9e6b7063cd947df8975ff9a6d1e6a15a02c7383e942cb2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/855",
-      "dateDocument": "2015-12-03",
-      "roFundstelle": "AS 2015 5509",
-      "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung-FINMA, FinfraV-FINMA)",
-      "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance de la FINMA sur l'infrastructure des marchés financiers, OIMF-FINMA)",
-      "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza FINMA sull'infrastruttura finanziaria, OInFi-FINMA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/855/de",
-      "sha": "79a10e5436150331a2d9b494bb9cbf51302037be383c8ef5cd0295c5fd64a1fb"
+      "sha": "7e070658be46892668d91ddb04fcb49c2a919dac95ed037421dc1f37a98c6349"
     }
   ],
-  "sha": "fc8e5135564ce6a361ecaf09b1c8db8773fb6e4ebbb0bcd719708e34550916db"
+  "sha": "bee79f8cb37db943b323dcd244a0abff5612eec3fff07de0f5aaac18da00a1ac"
 }

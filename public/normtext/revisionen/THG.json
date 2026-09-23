@@ -1,20 +1,40 @@
 {
   "erlassKey": "THG",
   "sr": "946.51",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/946.51",
-      "sha": "3e3264dec3b04ac96ce105b050bb6d23b0cb50d18d5b6c182e60c9c9d6f155fe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/946.51",
-      "sha": "1b633b4ec7a80d88db5ee0e2666d03a871f3a1a5d1e9bd8c21d94c92d23fba6b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/62",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2017 249",
+      "titelDe": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
+      "titelFr": "Loi fédérale sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAl)",
+      "titelIt": "Legge federale sulle derrate alimentari e gli oggetti d'uso (Legge sulle derrate alimentari, LDerr)",
+      "botschaftKey": "BOTSCHAFT-2011-853",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/62/de",
+      "sha": "5a8d9454dbf11252371a091a6f9f9a7fd5d2078d1b7d4c92e473e96fc7a66dbe"
     },
     {
       "art": "aenderung",
@@ -26,14 +46,26 @@
       "titelFr": "Loi fédérale sur les entraves techniques au commerce (LETC)",
       "titelIt": "Legge federale sugli ostacoli tecnici al commercio (LOTC)",
       "botschaftKey": "BOTSCHAFT-2008-1231",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/349/de",
-      "sha": "c2c300fcb3381fbdba987c79d100ac2b8bd72e17ef8c68c4bb2849ce76d452d6"
+      "sha": "c08fd83f4800026930d3746ac00cf2f1a053c04b1346a56780a98fb73a967ad6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/946.51",
-      "sha": "e6dadddacac80994b3be8573af2a4b40cb420e0bf63faee2646eb901fb6cb5e1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -45,21 +77,27 @@
       "titelFr": "Loi fédérale sur les entraves techniques au commerce (LETC)",
       "titelIt": "Legge federale sugli ostacoli tecnici al commercio (LOTC)",
       "botschaftKey": "BOTSCHAFT-2001-845",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/155/de",
-      "sha": "bf361091fb12fda446612e9d1151bcc868e52c3fb95e762c7486ed30e937f1b2"
+      "sha": "4dacd7469fbb0d4402263af145e4383ef4bf2669ebfdc21ec7d00bf2035bf48e"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1996-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1725_1725_1725",
-      "dateDocument": "1995-10-06",
-      "roFundstelle": "AS 1996 1725",
-      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über die technischen Handelshemmnisse (THG)",
-      "titelFr": "Loi fédérale du 6 octobre 1995 sur les entraves techniques au commerce (LETC)",
-      "titelIt": "Legge federale del 6 ottobre 1995 sugli ostacoli tecnici al commercio (LOTC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1725_1725_1725/de",
-      "sha": "929bc494447599b6f8119bda91dd7c3949ce92ebd9c73a04a8ed6f59bb22f85a"
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 187",
+      "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+      "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+      "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/34/de",
+      "sha": "e6acc34193bb4bee07ea794009d2498f6e17971d8d8245651291c75bd15ea05f"
     }
   ],
-  "sha": "90abe8f2e4aaa3992afa586e6fe0d8d7d15b3b11b2ad26d02da2aa258727b50c"
+  "sha": "f1ec4f40943cd094e3889f31956a3368f40f1c4d49f4e8fc26ddb7d4c133b53b"
 }

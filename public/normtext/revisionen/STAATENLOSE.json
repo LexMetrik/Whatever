@@ -1,8 +1,8 @@
 {
   "erlassKey": "STAATENLOSE",
   "sr": "0.142.40",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/248/de",
-      "sha": "b3094beac2e702bb2b85af65193b28e5fac5423ff9a54f85ce074de4f0f8ccef"
+      "sha": "7b1bb16f90b6b8260214cc8b77b30086d3664c66d1646addf8c36d6331de0f3c"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/294/de",
-      "sha": "d449e224b880ad74cf60973d7baf4e7b7734b14b2b0c9ec6f625730c7033e670"
+      "sha": "75d0dbcd3cf044d87a7e76a53294253f38e3609071b35c0e9a6b9e2e85177ca2"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/335/de",
-      "sha": "0845fc368f2dc1b742ff4c7edf15532d54c947c6075164e49f5bcb664c622b0b"
+      "sha": "bf6761498c65489bac645abedd694613e831e21be9e264cc46f465d4822c0ae2"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/128/de",
-      "sha": "22651d4284c1dcc95084c6959bdcda77dfd5698711a7c919dfe5a40714c12737"
+      "sha": "526faae0b5019d0754615a34789e6c4665a9f4bc271d927ccfda55754e056096"
     },
     {
       "art": "aenderung",
@@ -61,8 +75,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/354/de",
-      "sha": "6a9a1331ee29c4dd60f9d3d458888a438d3d85335fcb46d33b7569660b1e78c0"
+      "sha": "f5278c66adad32b3dd0cc46126806b8ae97c03ebebff895021e8c88ecd29df72"
     },
     {
       "art": "aenderung",
@@ -73,8 +91,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/563/de",
-      "sha": "568180694e5ca6e0a9eac6399c0f01fdfdc5bc3a8bae0d32638045a7e033caf1"
+      "sha": "4d1647e46945c116d26dfd023fa0dcfefd9496aa0660a4809f47b139fa072df4"
     },
     {
       "art": "aenderung",
@@ -85,8 +107,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/36/de",
-      "sha": "2d2f7e82bec4989e05c1097ed6c0f5c7ecae2fa4808d8fa7da75168e6d82d0d7"
+      "sha": "12c69cf123e37ae4b4a7e25a375e7860b8b26cc459ed1c38e707624bdd050959"
     },
     {
       "art": "aenderung",
@@ -97,8 +123,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/215/de",
-      "sha": "39f2c258a02c14f86c5a5b0d90064dde26a69a99a1ffe3adff0dd9600ce61716"
+      "sha": "2b8d02fd4c69897babea16224ecce895cce0a8eac0349030ae0fbb2ab603f625"
     },
     {
       "art": "aenderung",
@@ -109,8 +139,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/433/de",
-      "sha": "9386c9547febf32ed46628c537f9beb9b772c386748720409769c7d937cb0de8"
+      "sha": "fe4a1be683394d58177aebb789f81eed39226bcf3bbdc12297f87875a5046da2"
     },
     {
       "art": "aenderung",
@@ -121,8 +155,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/404/de",
-      "sha": "dcde71c0652f637191f310617e2d25592e0c3f96b09b65403a0e5f2efceb527f"
+      "sha": "544d323000273ca1eb226adf19da2ffa79d4c8379dcf63d70f0995f68298e6c3"
     },
     {
       "art": "aenderung",
@@ -133,8 +171,12 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/664/de",
-      "sha": "dbd0d1695595d7ca951d004e199f118a89092528032e97fa8ff80cb05562ca8c"
+      "sha": "b44ba3ef2a57ab7fc54bb7e94939851a6e75ed0c4484b13fdf4e7d1c743f8530"
     },
     {
       "art": "aenderung",
@@ -145,21 +187,124 @@
       "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen (mit Anhang und Muster)",
       "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides (avec annexe et modèle)",
       "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi (con Allegato e Modello)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/414/de",
-      "sha": "c91ee0da961614a5325975aa0e587832b47ea7d837fa1079fa17c8f5930de86b"
+      "sha": "dcc93e767f9527e5d3a292d5c7fd7b10413b86cb7007e583960a2d4ef11b0480"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1972-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/2320_2374_2150",
-      "dateDocument": "1954-09-28",
-      "roFundstelle": "AS 1972 2320",
-      "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen (mit Anhang und Muster)",
-      "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides (avec annexe et modèle)",
-      "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi (con. All. e Modello)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/2320_2374_2150/de",
-      "sha": "5ab7dc30f779bb2da33575c24841039ecdd1b3c9d8c47c77aceb348101cc8ae3"
+      "dateEntryInForce": "1993-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2266_2266_2266",
+      "dateDocument": "1993-06-01",
+      "roFundstelle": "AS 1993 2266",
+      "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+      "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+      "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2266_2266_2266/de",
+      "sha": "dc06cb565ea794d15745986fb0e905d2d258cc64a4a63dcde68ec963f28b452c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/322_322_322",
+      "dateDocument": "1990-02-01",
+      "roFundstelle": "AS 1990 322",
+      "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+      "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+      "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/322_322_322/de",
+      "sha": "6663f6e4979a50dc58e8b433af24cf23b64377a5c67f1da8b4c68cd107ecfb76"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/976_976_976",
+      "dateDocument": "1984-09-01",
+      "roFundstelle": "AS 1984 976",
+      "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+      "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+      "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/976_976_976/de",
+      "sha": "fc64c8138f319d59096b7759d192ca6960a541150522757d7e2090eeb4eb28af"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/2072_2072_2072",
+      "dateDocument": "1982-12-01",
+      "roFundstelle": "AS 1982 2072",
+      "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+      "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+      "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/2072_2072_2072/de",
+      "sha": "36c976a5c80134469c2332a3725182df9485ac2b332419b933b43f1f01e9d872"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2856_2856_2856",
+      "dateDocument": "1977-01-01",
+      "roFundstelle": "AS 1976 2856",
+      "titelDe": "Übereinkommen vom 28. September 1954 über die Rechtsstellung der Staatenlosen",
+      "titelFr": "Convention du 28 septembre 1954 relative au statut des apatrides",
+      "titelIt": "Convenzione del 28 settembre 1954 sullo statuto degli apolidi",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2856_2856_2856/de",
+      "sha": "ffb0eb1cb1b2e5a3e699be940129a507b5cd35046e87aa2e72a24892be0435b9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1742_1742_1742",
+      "dateDocument": "1975-09-01",
+      "roFundstelle": "AS 1975 1742",
+      "titelDe": "Übereinkommen über die Rechtsstellung der Staatenlosen vom 28. September 1954",
+      "titelFr": "Convention relative au statut des apatrides du 28 septembre 1954",
+      "titelIt": "Convenzione sullo statuto degli apolidi del 28 settembre 1954",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1742_1742_1742/de",
+      "sha": "0a2e0f435c68932cc5e12b3339bcd61de3fb426a8d388e85f282691e702b1cd7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-04-27",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/2317_2371_2147",
+      "dateDocument": "1972-04-27",
+      "roFundstelle": "AS 1972 2317",
+      "titelDe": "Bundesbeschluss vom 27. April 1972 betreffend die Genehmigung des Übereinkommens über die Rechtsstellung der Staatenlosen",
+      "titelFr": "Arrêté fédéral du 27 avril 1972 approuvant la convention relative au statut des apatrides",
+      "titelIt": "Decreto federale del 27 aprile 1972 che approva la convenzione sullo statuto degli apolidi",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/2317_2371_2147/de",
+      "sha": "d53aceb952b61ece2b3815f81d3f45c2505e801be3ccb369480f461b01644294"
     }
   ],
-  "sha": "ecc75a02bbb5319f378b3dd2710bf72857325fe7d582b85b38c061271563309e"
+  "sha": "763e5290ab96db225c365cb194e91bd25b139e4e90f5663c92c06a467fdfc4c2"
 }

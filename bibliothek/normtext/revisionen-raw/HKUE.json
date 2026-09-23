@@ -1500,5 +1500,262 @@
     "2024-06-13"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1983/1694_1694_1694",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1983/1694_1694_1694",
+    "inkrafttreten": "1984-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1680_1680_1680",
+        "typ": 3
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1694_1694_1694",
+        "typ": 5,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/75_75_75",
+        "typ": 1,
+        "datum": "1985-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/1900_1900_1900",
+        "typ": 1,
+        "datum": "1986-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/494_494_494",
+        "typ": 1,
+        "datum": "1987-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/2021_2021_2021",
+        "typ": 1,
+        "datum": "1988-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/687_687_687",
+        "typ": 1,
+        "datum": "1990-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/939_939_939",
+        "typ": 1,
+        "datum": "1991-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1609_1609_1609",
+        "typ": 1,
+        "datum": "1992-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/635_635_635",
+        "typ": 1,
+        "datum": "1992-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2269_2269_2269",
+        "typ": 1,
+        "datum": "1994-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/543",
+        "typ": 1,
+        "datum": "2003-10-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/539",
+        "typ": 1,
+        "datum": "2004-04-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/539",
+        "typ": 9,
+        "datum": "2004-04-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/497",
+        "typ": 1,
+        "datum": "2006-06-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/497",
+        "typ": 9,
+        "datum": "2006-06-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/236",
+        "typ": 1,
+        "datum": "2008-02-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/236",
+        "typ": 9,
+        "datum": "2008-02-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/380",
+        "typ": 6,
+        "datum": "2006-06-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/642",
+        "typ": 1,
+        "datum": "2009-09-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/642",
+        "typ": 9,
+        "datum": "2009-09-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/9",
+        "typ": 1,
+        "datum": "2011-11-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/9",
+        "typ": 9,
+        "datum": "2011-11-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/213",
+        "typ": 1,
+        "datum": "2014-04-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/213",
+        "typ": 9,
+        "datum": "2014-04-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/211",
+        "typ": 1,
+        "datum": "2015-03-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/211",
+        "typ": 9,
+        "datum": "2015-03-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/181",
+        "typ": 1,
+        "datum": "2018-03-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/181",
+        "typ": 9,
+        "datum": "2018-03-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/197",
+        "typ": 1,
+        "datum": "2019-03-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/197",
+        "typ": 9,
+        "datum": "2019-03-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/685",
+        "typ": 1,
+        "datum": "2020-09-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/685",
+        "typ": 9,
+        "datum": "2020-09-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/287",
+        "typ": 9,
+        "datum": "2024-06-13"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1983/1680_1680_1680": {
+        "dateDoc": "1983-06-21",
+        "roId": "RO 1983 1680",
+        "titelDe": "Bundesbeschluss vom 21. Juni 1983 betreffend die Genehmigung von zwei internationalen Übereinkommen über die internationale Entführung von Kindern durch einen Elternteil oder eine dem Kind nahestehende Person",
+        "titelFr": "Arrêt fédéral du 21 jun 1983 approuvant deux conventions internationales relatives à l'enlèvement international d'enfants, par un de leurs parents ou de leurs proches",
+        "titelIt": "Decreto federale del 21 giugno 1983 che approva du convenzioni sui rapimenti internazionali di minori, ad opera di un genitore o di un parente"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1985/75_75_75": {
+        "dateForce": "1985-02-01",
+        "dateDoc": "1985-02-01",
+        "roId": "RO 1985 75",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/1900_1900_1900": {
+        "dateForce": "1986-11-01",
+        "dateDoc": "1986-11-01",
+        "roId": "RO 1986 1900",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/494_494_494": {
+        "dateForce": "1987-04-01",
+        "dateDoc": "1987-04-01",
+        "roId": "RO 1987 494",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/2021_2021_2021": {
+        "dateForce": "1988-12-01",
+        "dateDoc": "1988-12-01",
+        "roId": "RO 1988 2021",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/687_687_687": {
+        "dateForce": "1990-05-01",
+        "dateDoc": "1990-05-01",
+        "roId": "RO 1990 687",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/939_939_939": {
+        "dateForce": "1991-04-01",
+        "dateDoc": "1991-04-01",
+        "roId": "RO 1991 939",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/1609_1609_1609": {
+        "dateForce": "1992-09-01",
+        "dateDoc": "1992-09-01",
+        "roId": "RO 1992 1609",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/635_635_635": {
+        "dateForce": "1992-03-15",
+        "dateDoc": "1992-03-15",
+        "roId": "RO 1992 635",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2269_2269_2269": {
+        "dateForce": "1994-10-01",
+        "dateDoc": "1994-10-01",
+        "roId": "RO 1994 2269",
+        "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+        "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+        "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori"
+      }
+    }
+  }
 }

@@ -416,5 +416,231 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2008/736",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+    "inkrafttreten": "2009-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/735",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/735",
+        "typ": 5,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 5,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 30,
+        "datum": "2008-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/352",
+        "typ": 1,
+        "datum": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/6",
+        "typ": 1,
+        "datum": "2012-12-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+        "typ": 2,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 5,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/656",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/355",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/257",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+        "typ": 1,
+        "datum": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/168",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/173",
+        "typ": 5,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/96",
+        "typ": 1,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2013/352": {
+        "dateForce": "2013-07-01",
+        "dateDoc": "2012-12-14",
+        "roId": "RO 2013 1493",
+        "titelDe": "Bundespersonalgesetz (BPG)",
+        "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+        "titelIt": "Legge sul personale federale (LPers)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/6": {
+        "dateForce": "2012-12-20",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2013 27",
+        "titelDe": "Bundesgesetz über die internationale Quellenbesteuerung (IQG)",
+        "titelFr": "Loi fédérale sur l'imposition internationale à la source (LISint)",
+        "titelIt": "Legge federale sull'imposizione alla fonte in ambito internazionale (LIFI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/685": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2014 4073",
+        "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+        "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+        "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/853": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2015 5339",
+        "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+        "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+        "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/801": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5247",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/758": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2019 4417",
+        "titelDe": "Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)",
+        "titelFr": "Loi fédérale sur les services financiers (LSFin)",
+        "titelIt": "Legge federale sui servizi finanziari (Legge sui servizi finanziari, LSerFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/762": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4631",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/656": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-03-19",
+        "titelDe": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)",
+        "titelFr": "Loi fédérale concernant la lutte contre le blanchiment d’argent et le financement du terrorisme (Loi sur le blanchiment d’argent, LBA)",
+        "titelIt": "Legge federale relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Legge sul riciclaggio di denaro, LRD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/355": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-03-18",
+        "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+        "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
+        "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/257": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2023-09-29",
+        "titelDe": "Bundesgesetz über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG) (Einführung einer Meldepflicht für Cyberangriffe auf kritische Infrastrukturen)",
+        "titelFr": "Loi fédérale sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI) (Mise en place d’une obligation de signaler les cyberattaques contre les infrastructures critiques)",
+        "titelIt": "Legge federale sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn) (Introduzione dell’obbligo di segnalare ciberattacchi a infrastrutture critiche)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/53": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/168": {
+        "dateForce": "2025-04-01",
+        "dateDoc": "2025-03-07",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung des Nationalen Zentrums für Cybersicherheit (NCSC) in Bundesamt für Cybersicherheit (BACS)",
+        "titelFr": "Ordonnance concernant l’adaptation de dispositions légales à la suite du changement de nom du Centre national pour la cybersécurité (NCSC) en Office fédéral de la cybersécurité (OFCS)",
+        "titelIt": "Ordinanza sull’adeguamento di leggi in seguito al cambiamento della designazione del Centro nazionale per la cibersicurezza (NCSC) in Ufficio federale della cibersicurezza (UFCS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/173": {
+        "dateForce": "2025-04-01",
+        "dateDoc": "2025-03-18",
+        "titelDe": "Mitteilung über die Inkraftsetzung der Änderung vom 29. September 2023 des  Informationssicherheitsgesetzes",
+        "titelFr": "Communication concernant la mise en vigueur de la modification du 29 septembre 2023 de la loi sur la sécurité de l’information",
+        "titelIt": "Comunicazione sull’entrata in vigore della modifica del 29 settembre 2023 della legge sulla sicurezza delle informazioni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/96": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2025-06-20",
+        "titelDe": "Bundespersonalgesetz (BPG)",
+        "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+        "titelIt": "Legge sul personale federale (LPers)"
+      }
+    }
+  }
 }

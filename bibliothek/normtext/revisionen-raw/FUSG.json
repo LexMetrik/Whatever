@@ -266,5 +266,119 @@
     "2023-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2004/320",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+    "inkrafttreten": "2004-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+        "typ": 5,
+        "datum": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/457",
+        "typ": 1,
+        "datum": "2010-12-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/457",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/563",
+        "typ": 6,
+        "datum": "2012-09-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/810",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+        "typ": 5,
+        "datum": "2023-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/822": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-06-23",
+        "roId": "RO 2006 5379",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/685": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2005-12-16",
+        "roId": "RO 2007 4791",
+        "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+        "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/679": {
+        "dateForce": "2010-01-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2009 5597",
+        "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+        "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+        "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/457": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2010-12-17",
+        "roId": "RO 2011 3385",
+        "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften)",
+        "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Financement des institutions de prévoyance de corporations de droit public)",
+        "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Finanziamento degli istituti di previdenza degli enti di diritto pubblico)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/810": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2011-12-23",
+        "roId": "RO 2012 6679",
+        "titelDe": "Obligationenrecht (Rechnungslegungsrecht)",
+        "titelFr": "Code des obligations (Droit comptable)",
+        "titelIt": "Codice delle obbligazioni (Diritto contabile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/746": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4005",
+        "titelDe": "Obligationenrecht (Aktienrecht)",
+        "titelFr": "Code des obligations (Droit de la société anonyme)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società anonima)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/109": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-02-02",
+        "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+        "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+        "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)"
+      }
+    }
+  }
 }

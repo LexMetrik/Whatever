@@ -1,20 +1,39 @@
 {
   "erlassKey": "UWG",
   "sr": "241",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "f0137c34f4906d7ffeeff255e116eb114af33872f5fb8addad1adcc6ac53c621"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2024 376",
+      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/376/de",
+      "sha": "f4471d737e662604575d347aee9039fca75f788855fa60d472fa23f2f2a43df1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "ddc925add3d4ae252d15ef35fab35599c7cc4bd42efa373a3b72008af8c9e420"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
       "art": "aenderung",
@@ -25,26 +44,59 @@
       "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG)",
       "titelFr": "Loi fédérale contre la concurrence déloyale (LCD)",
       "titelIt": "Legge federale contro la concorrenza sleale (LCSl)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/690/de",
-      "sha": "ae6794cd0b1da947fd040fd70b65f6d67fd02ea1f8c2de8be0b3143b37b56dc2"
+      "sha": "e91084c51cf1f333fbfcef1bbc5176e75989ec3d8c0354789bfd2c6a1416e26d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "f3c3b050395f5b6f6e95e5e16630c47eca8d15450f6e85a5f2d54c598c9a4698"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/576",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 576",
+      "titelDe": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+      "titelFr": "Loi fédérale sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
+      "titelIt": "Legge federale sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)",
+      "botschaftKey": "BOTSCHAFT-2019-1720",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/576/de",
+      "sha": "30f3d5dbbd0d4b93b0602ed0f79f20f2fdc7b36703ff5de1f463f59c504acd99"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "3a2968c0fea243b0f9adca51f1934f7e4a1a052821676cb6ab8d76f6a3eed2ef"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/1019",
+      "dateDocument": "2019-03-22",
+      "roFundstelle": "AS 2020 6159",
+      "titelDe": "Fernmeldegesetz (FMG)",
+      "titelFr": "Loi sur les télécommunications (LTC)",
+      "titelIt": "Legge sulle telecomunicazioni (LTC)",
+      "botschaftKey": "BOTSCHAFT-2017-1933",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/1019/de",
+      "sha": "473baecc498eb4c39ada39419fbfe3e1b0dc51686f8561aea758c07990c61edb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "aa47a3653932382b4c6cc15d937a6248f21bf37548606dc1df60c765c89a68a7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/257",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2016 1287",
+      "titelDe": "Schweizerisches Strafgesetzbuch (Korruptionsstrafrecht)",
+      "titelFr": "Code pénal suisse (Dispositions pénales incriminant la corruption)",
+      "titelIt": "Codice penale svizzero (Disposizioni penali sulla corruzione)",
+      "botschaftKey": "BOTSCHAFT-2014-787",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/257/de",
+      "sha": "9784b43bde076f4167126aab1d61589f0dd99cad47c8d854d41716f7668035eb"
     },
     {
       "art": "aenderung",
@@ -55,26 +107,76 @@
       "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Strafrechtsübereinkommens und des Zusatzprotokolls des Europarates über Korruption (Betrifft nur den italienischen Text)",
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention pénale du Conseil de l'Europe sur la corruption et du Protocole additionnel à ladite convention (Ne concerne que le texte italien)",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione penale del Consiglio d'Europa sulla corruzione e il relativo Protocollo aggiuntivo",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/933/de",
-      "sha": "6be6285ab376f62531e8ad698a641c24d71396f3e3052a74131c1a7ae1c25eff"
+      "sha": "6a93a54f1906042eda8c069bd5d936daa0c54ba9f51c9a5d2d1f20e1a24b2b17"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "4e698637c9b4ecea4dc3c57d5258f44ad2feb2c6e0bce732118226d15f0a607d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/184",
+      "dateDocument": "2013-12-13",
+      "roFundstelle": "AS 2014 869",
+      "titelDe": "Obligationenrecht (Aufhebung der Bestimmungen zum Vorauszahlungsvertrag)",
+      "titelFr": "Code des obligations (Abrogation des dispositions sur la vente avec paiements préalables)",
+      "titelIt": "Codice delle obbligazioni (Abrogazione delle disposizioni concernenti il contratto di vendita a rate anticipate)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/184/de",
+      "sha": "459c2b1caa99c951176701c890c9cbb248ea5523c4b265e1550a8bad457a218f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "18991982ba32430124bef1f5a3fc24a4d0b637ea76e55fd280622ecd3651c96e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3655",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "sha": "98d16fb59413c6c4baa7392dc8196897ed57422734e9dc5d05c78fdcf450a38c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/734",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2012 6235",
+      "titelDe": "Bundesgesetz über das Messwesen (Messgesetz, MessG)",
+      "titelFr": "Loi fédérale sur la métrologie (LMétr)",
+      "titelIt": "Legge federale sulla metrologia (LMetr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/734/de",
+      "sha": "427f968a7d8d8694f2f5bb77973d2f1241f6c56e2dae652e5040f0bb92f75f67"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2012-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "360d9b4b7baae2f848015e77d8c215300a7fca40eaab1a0d341a755a2544c7a0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/703",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 4909",
+      "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG)",
+      "titelFr": "Loi fédérale contre la concurrence déloyale (LCD)",
+      "titelIt": "Legge federale contro la concorrenza sleale (LCSl)",
+      "botschaftKey": "BOTSCHAFT-2009-1106",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-04-01",
+        "2012-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/703/de",
+      "sha": "a7f5a94fa0a5d2f90624d7d194804cbcaab6b71e053a8e5fc78439e442f8e1ca"
     },
     {
       "art": "aenderung",
@@ -86,26 +188,79 @@
       "titelFr": "Loi fédérale contre la concurrence déloyale (LCD)",
       "titelIt": "Legge federale contro la concorrenza sleale (LCSl)",
       "botschaftKey": "BOTSCHAFT-2009-1106",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-04-01",
+        "2012-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/703/de",
-      "sha": "b0922956442b36f8c7241a477faffd3b42001e7f3868d6c5ba2e04be62c20048"
+      "sha": "e7124b781fa8762af8749fe1afb83d0ea56801dcf5c1553b0ff4ee8a9c9df6c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "83b607eb9e2094ee0d46c60ed2e51bd3c17bc9f61a2aab0819487e9007841fb0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4680b94aca04870448f933a54c75b33319b3d325b89428dcf20b5c0518e9c6aa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "07d587773223dd41d8d9b4d9f457ee602ef805690cab017c06080d71b250ff2c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/165",
+      "dateDocument": "2006-03-24",
+      "roFundstelle": "AS 2007 921",
+      "titelDe": "Fernmeldegesetz (FMG)",
+      "titelFr": "Loi sur les télécommunications (LTC)",
+      "titelIt": "Legge sulle telecomunicazioni (LTC)",
+      "botschaftKey": "BOTSCHAFT-2003-1351",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/165/de",
+      "sha": "4744ad1114f0a9a6efd1a3ef0181e3d807ba83cb4c34b73ebe47d4ddefa74803"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "672cb11bfac04c67820554fc905b2de1326b09c1932218e00ed4b3a309495a73"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -117,45 +272,88 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention pénale du Conseil de l'Europe sur la corruption et du Protocole additionnel à ladite convention",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione penale del Consiglio d'Europa sulla corruzione e il relativo Protocollo aggiuntivo",
       "botschaftKey": "BOTSCHAFT-2004-1217",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/366/de",
-      "sha": "ac0693a4bccb0170249aaa56361a9d46936ba73908d7b39d8e6367084a81b7e7"
+      "sha": "48384d59d9e5cd74f7af80f155f651a7b406e47f1354d6dbbb17ad88b6f1a301"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "f10d3a43e75a1904a672ea35a3850e14712ab701d0f49f5e339b36140425c35f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/593",
+      "dateDocument": "2001-03-23",
+      "roFundstelle": "AS 2002 3846",
+      "titelDe": "Bundesgesetz über den Konsumkredit (KKG)",
+      "titelFr": "Loi fédérale sur le crédit à la consommation (LCC)",
+      "titelIt": "Legge federale sul credito al consumo (LCC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/593/de",
+      "sha": "e6df9908b223d73e8f1d7742039f4d22d4d2675f91dbcb4e0ba7738a4ec999f7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/241",
-      "sha": "e1967f82444efa917c68a67dc81ac824a5291dfebd2886265c2ea0871db71bf0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1988-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/223_223_223",
-      "dateDocument": "1986-12-19",
-      "roFundstelle": "AS 1988 223",
-      "titelDe": "Bundesgesetz vom 19. Dezember 1986 gegen den unlauteren Wettbewerb (UWG)",
-      "titelFr": "Loi fédérale du 19 décembre 1986 contre la concurrence déloyale (LCD)",
-      "titelIt": "Legge federale del 19 dicembre 1986 contro la concorrenza sleale (LCSl)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/223_223_223/de",
-      "sha": "861fe871552560721f9bb3e9e3a2ecfc59c4f3db7627ce88a9a84714958a7ea3"
+      "dateEntryInForce": "1995-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4086_4086_4086",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1995 4086",
+      "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Änderung",
+      "titelFr": "Loi fédérale contre la concurrence déloyale (LCD), Modification",
+      "titelIt": "Legge federale contro la concorrenza sleale (LCSl), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4086_4086_4086/de",
+      "sha": "b6935ee461d70c6917e82fb9e9a690fe8e4b9f85b90fdef6021c38da4ba9c20a"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1945-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/61/1_1_1",
-      "dateDocument": "1943-09-30",
-      "roFundstelle": "AS 61 1",
-      "titelDe": "Bundesgesetz vom 30. September 1943 über den unlauteren Wettbewerb",
-      "titelFr": "Loi fédérale du 30 septembre 1943 sur la concurrence déloyale",
-      "titelIt": "Legge federale del 30 settembre 1943 sulla concorrenza sleale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/61/1_1_1/de",
-      "sha": "2511f139bd24f9d33c5ab5d7070588940c4f3e6c9d8c01e48d6889b44fbccfc5"
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/375_375_375",
+      "dateDocument": "1993-06-18",
+      "roFundstelle": "AS 1994 375",
+      "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Änderung",
+      "titelFr": "Loi fédérale contre la concurrence déloyale (LCD), Modification",
+      "titelIt": "Legge federale sulla concorrenza sleale (LCSl), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/375_375_375/de",
+      "sha": "f48d5ac7098a4f4d40b4f520aaaf0d45e61ad9f56afcca5a09c1f38e6a89300f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1514_1514_1514",
+      "dateDocument": "1992-03-20",
+      "roFundstelle": "AS 1992 1514",
+      "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb, Änderung",
+      "titelFr": "Loi fédérale contre la concurrence déloyale, Modification",
+      "titelIt": "Legge federale contro la concorrenza sleale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1514_1514_1514/de",
+      "sha": "246cb4ec715f3e93abe5db5847e52ed49e7f0def82a843f35ce1e15c287d1af3"
     }
   ],
-  "sha": "128826e05fc0102b165090d180880320f07af97cd703a3f70b3a9df60c76ac07"
+  "sha": "06456bdf9066fb85bc5fc691b7346dfcd29860873c33b56000b79e3424dc6633"
 }

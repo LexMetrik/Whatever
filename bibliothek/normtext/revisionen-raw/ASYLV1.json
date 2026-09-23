@@ -3081,5 +3081,326 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/1999/359",
       "zielFundstelle": "AS 1999 2302"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1999/359",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1999/359",
+    "inkrafttreten": "1999-10-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/359",
+        "typ": 5,
+        "datum": "1999-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/359",
+        "typ": 30,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/12",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/273",
+        "typ": 1,
+        "datum": "2001-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/302",
+        "typ": 1,
+        "datum": "2002-08-02"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/202",
+        "typ": 1,
+        "datum": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/165",
+        "typ": 1,
+        "datum": "2006-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/726",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/726",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/755",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/767",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/767",
+        "typ": 2,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/694",
+        "typ": 1,
+        "datum": "2008-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/757",
+        "typ": 1,
+        "datum": "2008-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/757",
+        "typ": 2,
+        "datum": "2008-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/818",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/595",
+        "typ": 1,
+        "datum": "2013-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/595",
+        "typ": 1,
+        "datum": "2015-09-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/853",
+        "typ": 1,
+        "datum": "2014-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/853",
+        "typ": 2,
+        "datum": "2014-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+        "typ": 1,
+        "datum": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/361",
+        "typ": 1,
+        "datum": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/380",
+        "typ": 1,
+        "datum": "2015-09-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/100",
+        "typ": 1,
+        "datum": "2017-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/323",
+        "typ": 2,
+        "datum": "2018-06-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/439",
+        "typ": 1,
+        "datum": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/439",
+        "typ": 2,
+        "datum": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/309",
+        "typ": 1,
+        "datum": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/514",
+        "typ": 1,
+        "datum": "2019-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/555",
+        "typ": 1,
+        "datum": "2019-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/716",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/173",
+        "typ": 1,
+        "datum": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/880",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/205",
+        "typ": 1,
+        "datum": "2021-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/676",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/460",
+        "typ": 1,
+        "datum": "2022-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/655",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/645",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/809",
+        "typ": 1,
+        "datum": "2024-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/296",
+        "typ": 6,
+        "datum": "2024-06-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/674",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/143",
+        "typ": 6,
+        "datum": "2025-03-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/164",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/751",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/199",
+        "typ": 1,
+        "datum": "2026-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/199",
+        "typ": 2,
+        "datum": "2026-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/264",
+        "typ": 1,
+        "datum": "2026-06-12"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/726": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4739",
+        "titelDe": "Verordnung über die Änderung von Verordnungen im Zusammenhang mit der teilweisen Inkraftsetzung der Änderungen vom 16. Dezember 2005 des Asylgesetzes sowie des Bundesgesetzes über die Krankenversicherung und des Bundesgesetzes über die Alters- und Hinterlassenenversicherung",
+        "titelFr": "Ordonnance sur la modification d'ordonnances liée à l'entrée en vigueur partielle des modifications du 16 décembre 2005 de la loi sur l'asile, de la loi fédérale sur l'assurance-maladie et de la loi fédérale sur l'assurance-vieillesse et survivants",
+        "titelIt": "Ordinanza concernente la modifica di ordinanze nel contesto della messa in vigore parziale delle modifiche del 16 dicembre 2005 della legge sull'asilo, della legge sull'assicurazione malattie e della legge sull'assicurazione per la vecchiaia e per i superstiti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/755": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-15",
+        "roId": "RO 2006 4869",
+        "titelDe": "Verordnung über Anpassungen im Migrationsbereich im Zusammenhang mit dem Partnerschaftsgesetz",
+        "titelFr": "Ordonnance sur les modifications dans le domaine des migrations en relation avec la loi sur le partenariat",
+        "titelIt": "Ordinanza sugli adeguamenti nel settore della migrazione in relazione alla legge sull'unione domestica registrata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/694": {
+        "dateForce": "2008-12-05",
+        "dateDoc": "2008-10-15",
+        "roId": "RO 2008 4943",
+        "titelDe": "Verordnung über die Anpassungen an das Bundesgesetz über die polizeilichen Informationssysteme des Bundes",
+        "titelFr": "Ordonnance sur les adaptations découlant de la loi fédérale sur les systèmes d'information de police de la Confédération",
+        "titelIt": "Ordinanza sugli adeguamenti alla legge federale sui sistemi d'informazione di polizia della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/757": {
+        "dateForce": "2008-12-12",
+        "dateDoc": "2008-10-22",
+        "roId": "RO 2008 5421",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen im Ausländer- und Asylbereich zur Inkraftsetzung der Schengen- und Dublin-Assoziierungsabkommen",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du domaine des étrangers et de l'asile en raison de la mise en vigueur des accords d'association à Schengen et à Dublin",
+        "titelIt": "Ordinanza che adegua ordinanze del settore degli stranieri e dell'asilo a seguito della messa in vigore degli Accordi di associazione alla normativa di Schengen e di Dublino"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/358": {
+        "dateForce": "2015-07-01",
+        "dateDoc": "2015-06-12",
+        "roId": "RO 2015 1849",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen aufgrund von Neuerungen bezüglich des Dublin/Eurodac-Besitzstands",
+        "titelFr": "Ordonnance portant adaptation d'actes en raison de nouveautés en lien avec l'acquis de Dublin/Eurodac",
+        "titelIt": "Ordinanza sull'adeguamento di ordinanze in seguito a innovazioni concernenti l'acquis di Dublino/Eurodac"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/100": {
+        "dateForce": "2017-03-01",
+        "dateDoc": "2017-02-01",
+        "roId": "RO 2017 563",
+        "titelDe": "Verordnung über die Einführung der Landesverweisung",
+        "titelFr": "Ordonnance sur la mise en uvre de l'expulsion pénale",
+        "titelIt": "Ordinanza sull'attuazione dell'espulsione giudiziaria"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/323": {
+        "dateForce": "2018-07-01",
+        "dateDoc": "2018-05-23",
+        "roId": "RO 2018 2285",
+        "titelDe": "Verordnung über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsverordnung, AVV)",
+        "titelFr": "Ordonnance sur le service de l'emploi et la location de services (Ordonnance sur le service de l'emploi, OSE)",
+        "titelIt": "Ordinanza sul collocamento e il personale a prestito (Ordinanza sul collocamento, OC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/555": {
+        "dateForce": "2019-11-01",
+        "dateDoc": "2019-09-20",
+        "roId": "RO 2019 3041",
+        "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
+        "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
+        "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)"
+      }
+    }
   }
 }

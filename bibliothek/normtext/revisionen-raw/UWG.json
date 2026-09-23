@@ -703,5 +703,272 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1988/223_223_223",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1988/223_223_223",
+    "inkrafttreten": "1988-03-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/223_223_223",
+        "typ": 5,
+        "datum": "1988-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1514_1514_1514",
+        "typ": 1,
+        "datum": "1992-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/375_375_375",
+        "typ": 1,
+        "datum": "1994-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4086_4086_4086",
+        "typ": 1,
+        "datum": "1995-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4086_4086_4086",
+        "typ": 2,
+        "datum": "1995-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/593",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/366",
+        "typ": 1,
+        "datum": "2006-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/165",
+        "typ": 1,
+        "datum": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/703",
+        "typ": 1,
+        "datum": "2012-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/703",
+        "typ": 1,
+        "datum": "2012-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/734",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/184",
+        "typ": 1,
+        "datum": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/933",
+        "typ": 6,
+        "datum": "2015-12-31"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/257",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1019",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/576",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/690",
+        "typ": 1,
+        "datum": "2022-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+        "typ": 1,
+        "datum": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1992/1514_1514_1514": {
+        "dateForce": "1992-08-01",
+        "dateDoc": "1992-03-20",
+        "roId": "RO 1992 1514",
+        "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb, Änderung",
+        "titelFr": "Loi fédérale contre la concurrence déloyale, Modification",
+        "titelIt": "Legge federale contro la concorrenza sleale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/375_375_375": {
+        "dateForce": "1994-04-01",
+        "dateDoc": "1993-06-18",
+        "roId": "RO 1994 375",
+        "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Änderung",
+        "titelFr": "Loi fédérale contre la concurrence déloyale (LCD), Modification",
+        "titelIt": "Legge federale sulla concorrenza sleale (LCSl), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/4086_4086_4086": {
+        "dateForce": "1995-11-01",
+        "dateDoc": "1995-03-24",
+        "roId": "RO 1995 4086",
+        "titelDe": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Änderung",
+        "titelFr": "Loi fédérale contre la concurrence déloyale (LCD), Modification",
+        "titelIt": "Legge federale contro la concorrenza sleale (LCSl), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/593": {
+        "dateForce": "2003-01-01",
+        "dateDoc": "2001-03-23",
+        "roId": "RO 2002 3846",
+        "titelDe": "Bundesgesetz über den Konsumkredit (KKG)",
+        "titelFr": "Loi fédérale sur le crédit à la consommation (LCC)",
+        "titelIt": "Legge federale sul credito al consumo (LCC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/165": {
+        "dateForce": "2007-04-01",
+        "dateDoc": "2006-03-24",
+        "roId": "RO 2007 921",
+        "titelDe": "Fernmeldegesetz (FMG)",
+        "titelFr": "Loi sur les télécommunications (LTC)",
+        "titelIt": "Legge sulle telecomunicazioni (LTC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/267": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2010 1881",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/419": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3655",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/734": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2012 6235",
+        "titelDe": "Bundesgesetz über das Messwesen (Messgesetz, MessG)",
+        "titelFr": "Loi fédérale sur la métrologie (LMétr)",
+        "titelIt": "Legge federale sulla metrologia (LMetr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/184": {
+        "dateForce": "2014-07-01",
+        "dateDoc": "2013-12-13",
+        "roId": "RO 2014 869",
+        "titelDe": "Obligationenrecht (Aufhebung der Bestimmungen zum Vorauszahlungsvertrag)",
+        "titelFr": "Code des obligations (Abrogation des dispositions sur la vente avec paiements préalables)",
+        "titelIt": "Codice delle obbligazioni (Abrogazione delle disposizioni concernenti il contratto di vendita a rate anticipate)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/257": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2016 1287",
+        "titelDe": "Schweizerisches Strafgesetzbuch (Korruptionsstrafrecht)",
+        "titelFr": "Code pénal suisse (Dispositions pénales incriminant la corruption)",
+        "titelIt": "Codice penale svizzero (Disposizioni penali sulla corruzione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/1019": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2019-03-22",
+        "roId": "RO 2020 6159",
+        "titelDe": "Fernmeldegesetz\t(FMG) ",
+        "titelFr": "Loi sur les télécommunications (LTC)",
+        "titelIt": "Legge sulle telecomunicazioni (LTC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/576": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-03-19",
+        "titelDe": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+        "titelFr": "Loi fédérale sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
+        "titelIt": "Legge federale sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/376": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-03-15",
+        "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+        "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+        "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)"
+      }
+    }
+  }
 }

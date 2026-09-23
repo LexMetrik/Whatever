@@ -1,8 +1,8 @@
 {
   "erlassKey": "SCHKG",
   "sr": "281.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,32 +13,160 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Nichtbekanntgabe von Betreibungseinträgen)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP) (Possibilité de ne pas communiquer les inscriptions dans le registre des poursuites)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF) (Possibilità di non comunicare le iscrizioni presenti nei registri delle esecuzioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/522/de",
-      "sha": "0e00203f86836c65c24a468784028aa3fea55502a7f11b66000bf4e45aec5414"
+      "sha": "2f8c85fd6c89847672e01bb5338184503760f3bfff2c991ed124d6c9b6a257bf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "2d4b2e03618558e36b8af4f0a837341f48ade0f0ca4dc4c6ab3681956a1b6bd3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/491",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 491",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO) (Verbesserung der Praxistauglichkeit und der Rechtsdurchsetzung)",
+      "titelFr": "Code de procédure civile (CPC) (Amélioration de la praticabilité et de l’application du droit)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC) (Migliorare la praticabilità e l’applicazione del diritto)",
+      "botschaftKey": "BOTSCHAFT-2020-653",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/491/de",
+      "sha": "39b01ba541036e6def4718159e9f78be79da7983a80b351738c6063e0d3d81bb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/628",
+      "dateDocument": "2022-03-18",
+      "roFundstelle": "AS 2023 628",
+      "titelDe": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Obligationenrechts, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Strafgesetzbuches, des Militärstrafgesetzes, des Strafregistergesetzes und des Bundesgesetzes über die direkte Bundessteuer)",
+      "titelFr": "Loi fédérale sur la lutte contre l’usage abusif de la faillite (Modification du code des obligations, de la loi fédérale sur la poursuite pour dettes et la faillite, du code pénal, du code pénal militaire, de la loi sur le casier judiciaire et de la loi fédérale sur l’impôt fédéral direct)",
+      "titelIt": "Legge federale sulla lotta contro l’abuso del fallimento (Modifica del Codice delle obbligazioni, della legge federale sulla esecuzione e sul fallimento, del Codice penale, del Codice penale militare, della legge sul casellario giudiziale e della legge federale sull’imposta federale diretta)",
+      "botschaftKey": "BOTSCHAFT-2019-1847",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/628/de",
+      "sha": "e8199dc9309029d9ac64576ff4fbb45514fe6584be8b77e1e8bd662822b7742c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "eb1f9784307b580d2f30350bd6f24eb987d74690ec8bee99d71d88829a2d96c4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/678",
+      "dateDocument": "2021-03-18",
+      "roFundstelle": "AS 2023 678",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Vollstreckung der Prämienzahlungspflicht)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Exécution de l’obligation de payer les primes)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Esecuzione dell’obbligo di pagare i premi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/678/de",
+      "sha": "081729f41bd525d0202d7bd7ed7aabd2422a1eb254ee8f7aede67cbf21e3dabb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "5085b85abc65b7541967270c6daf04b2c6690f7383e138c790f4f610c664efad"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4005",
+      "titelDe": "Obligationenrecht (Aktienrecht)",
+      "titelFr": "Code des obligations (Droit de la société anonyme)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-10-20",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "sha": "18d961c5f80c395207af29b0177d07ddda84e3e54b6caefcc122db08bde7af67"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+      "dateDocument": "2022-02-02",
+      "roFundstelle": "AS 2022 109",
+      "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+      "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+      "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/109/de",
+      "sha": "13fdf620366c4fecc055ce85a455020b4ee2fe53b0794a23840ade356bb5d1f8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/732",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 732",
+      "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+      "titelFr": "Loi fédérale sur les banques et les caisses d’épargne (Loi sur les banques, LB) (Insolvabilité et garantie des dépôts)",
+      "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Insolvenza e garanzia dei depositi)",
+      "botschaftKey": "BOTSCHAFT-2020-1555",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/732/de",
+      "sha": "b68746dc8126c761b2658e081bb018e172fa7ec61877a1377cf4c77dda65aa74"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "a44cbcc698654f9698762cf27d493cf0bbf334cdc03a1f660403fbe6ebe6c47d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 33",
+      "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "botschaftKey": "BOTSCHAFT-2020-16",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/33/de",
+      "sha": "2a7c081bcd7ce85eb2718782f8a8f814eb8c4fa49a113b5f9f613a47d2d1ab35"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/399",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 399",
+      "titelDe": "Verordnung vom 18. Juni 2021 über die abschliessende Inkraftsetzung des Bundesgesetzes zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 portant dernière mise en vigueur partielle de la loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 concernente l’entrata in vigore integrale della legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/399/de",
+      "sha": "d635cf3e3e57e31d0a1a09020d91e3c13d85ecc18480aaa5b04fc3331bdec893"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-10-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4005",
+      "titelDe": "Obligationenrecht (Aktienrecht)",
+      "titelFr": "Code des obligations (Droit de la société anonyme)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-10-20",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "sha": "c348ace7c462aa0235edeb7e79ff9334ea359b3eadfa3b17ac21746943463f76"
     },
     {
       "art": "aenderung",
@@ -49,14 +177,60 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht) (Art. 293a des Bundesgesetzes über Schuldbetreibung und Konkurs)",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme) (Art. 293a de la loi fédérale sur la poursuite pour dettes et la faillite)",
       "titelIt": "Ordinanza concernente un'entrata in vigore parziale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima) (Art. 293a della legge federale sulla esecuzione e sul fallimento)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/758/de",
-      "sha": "a613c86eb82fcbff088150009a852de8aa257e709ae4b05ce54f61f3948cfe86"
+      "sha": "e49b355c83525f41039e8f75ac49dc8bb48d4d90a6ff30bb956ca01f05d01380"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "d1b8a870c250ca01d6fe9b5c3fdf93ab9a694e39de7e54d25cb57435eeaee6a8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4631",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/762/de",
+      "sha": "f5b929fddfb67e28bdb23ec97a2a84df7d4320d67c499a432b94fd25cc350b46"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/527",
+      "dateDocument": "2018-03-16",
+      "roFundstelle": "AS 2018 3263",
+      "titelDe": "Bundesgesetz über das Internationale Privatrecht (IPRG)",
+      "titelFr": "Loi fédérale sur le droit international privé (LDIP)",
+      "titelIt": "Legge federale sul diritto internazionale privato (LDIP)",
+      "botschaftKey": "BOTSCHAFT-2017-1054",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/527/de",
+      "sha": "3fe5be825a8146b50aa962fa018c8715fef8897f818dc8c7b78ac7b37547697c"
     },
     {
       "art": "aenderung",
@@ -67,14 +241,33 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/721/de",
-      "sha": "dd2f3b9ca157aa2097bbc39ae9a473a44cfc4126ca55325e6584526655da84ec"
+      "sha": "376bbdbc2dfb732838f015575129f5c5184aa95a186421d1df78631708fcf03e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5247",
+      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "sha": "8e1ca7ab79864d0b7ecc9088fb3a512427c930bafc4af6e66884c4ca1d39c2d5"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2018-03-16",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "895309afc63fa4b81dbc291aa49a2c0b48b7573a97b4a632015183bdf4da9e8e"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/20180316/de",
+      "sha": "7632cebfaaca48f4dc1f3533f69d3ea204e6dce09d3867c81df449a4fb7dd81d"
     },
     {
       "art": "aenderung",
@@ -86,8 +279,27 @@
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP) (Représentation professionnelle dans une procédure d'exécution forcée)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF) (Rappresentanza professionale nel procedimento esecutivo)",
       "botschaftKey": "BOTSCHAFT-2014-1878",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/612/de",
-      "sha": "507efed38b6129df0e3dec56dd408a32c96887b593afad89c16fd08cd6c2555e"
+      "sha": "b7e39fc5856132ed3c4e0630301e02b49babb3aebeae9f14ad0b0a9628ae5137"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/396",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2017 3575",
+      "titelDe": "Bundesgesetzes über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)",
+      "titelFr": "Loi fédérale régissant la taxe sur la valeur ajoutée (Loi sur la TVA, LTVA)",
+      "titelIt": "Legge federale concernente l'imposta sul valore aggiunto (Legge sull'IVA, LIVA)",
+      "botschaftKey": "BOTSCHAFT-2015-540",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/396/de",
+      "sha": "04a32b3b0382cd188b563bfd557f20f0f8fd0e9c663cfe0c1b9e0a033a2912a2"
     },
     {
       "art": "aenderung",
@@ -98,26 +310,81 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/196/de",
-      "sha": "ee303bea3648ac527f9579d0925b1ea0de0cbf830ccfce6985e8c43212ea9de7"
+      "sha": "4d3d84b7c3c1bb618f3325dacd5dae46a40589b87a9bf90f258b3cf9879d2aba"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "5e9a576c1a8d964eeb88d2ada62bfbd936d641ca81cc9ca6971ac8779e2ee99b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/752",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2016 4651",
+      "titelDe": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+      "titelFr": "Loi fédérale sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (Loi sur la signature électronique)",
+      "titelIt": "Legge federale sui servizi di certificazione nel campo della firma elettronica e di altre applicazioni di certificati digitali (Legge sulla firma elettronica)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/752/de",
+      "sha": "88e70fad0ee801cf044117153574601115ebc01420a759a1edd3b782af4a04d1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "becde9bc2cdebf5cd7002e4822ab05899a95bb84085b1932330c48c51cc38b65"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/322",
+      "dateDocument": "2015-12-18",
+      "roFundstelle": "AS 2016 1803",
+      "titelDe": "Bundesgesetz über die Sperrung und die Rückerstattung unrechtmässig erworbener Vermögenswerte ausländischer politisch exponierter Personen (SRVG)",
+      "titelFr": "Loi fédérale sur le blocage et la restitution des valeurs patrimoniales d'origine illicite de personnes politiquement exposées à l'étranger (Loi sur les valeurs patrimoniales d'origine illicite, LVP)",
+      "titelIt": "Legge federale concernente il blocco e la restituzione dei valori patrimoniali di provenienza illecita di persone politicamente esposte all'estero (Legge sui valori patrimoniali di provenienza illecita, LVP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/322/de",
+      "sha": "3bb59d8a549f0befcb660826c3bc5462c27ed08f0fb25e21cb334166821252ab"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "0b9d036d73db3294a6d26796f28c8a0dde59da5190eb47e0c1531ae940efa1f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+      "dateDocument": "2014-12-12",
+      "roFundstelle": "AS 2015 1389",
+      "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+      "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012",
+      "botschaftKey": "BOTSCHAFT-2014-100",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
+      "sha": "6a9d39b94458fd837d50b0046831ff9668d7555898f53bc8b1dafaee94349a82"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+      "dateDocument": "2014-12-12",
+      "roFundstelle": "AS 2015 1389",
+      "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+      "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012",
+      "botschaftKey": "BOTSCHAFT-2014-100",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
+      "sha": "81db4e7e5f99ae3a41c173ffd95426ea7ed820ceab0b23046008541a863104ad"
     },
     {
       "art": "aenderung",
@@ -129,38 +396,108 @@
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF)",
       "botschaftKey": "BOTSCHAFT-2010-1144",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/757/de",
-      "sha": "15bd7d7c4164b4571472a9168c117c780813a92e33a58a0e85df8f6448b2b6af"
+      "sha": "ddcc6e8f4417110233b44c6712d7bdbf916c509b58ffc5d3729c2257e47532c4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "2a1343dbd0f6831ac96327938730ab9be5cf95b4b28c0f2af07b682b8f68af17"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "67ed464f3c5a02a33ff4882a8fad75f32efa590bbae8b2fef8e01f0020d8a62f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/666",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2011 4637",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+      "titelFr": "Code civil suisse (Cédule hypothécaire de registre et autres modifications des droits réels)",
+      "titelIt": "Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali)",
+      "botschaftKey": "BOTSCHAFT-2007-756",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/666/de",
+      "sha": "157c14bd6c7086190980387f2d916f3d2d7f4b1c71431242e556a278b49a8d56"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "de9e02efa371e7ace00c805f56ab037fe7fd2f028aff3add51ec230a071f5049"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/559",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2011 3919",
+      "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Sicherung der Einlagen)",
+      "titelFr": "Loi fédérale sur les banques et les caisses d'épargne (Loi sur les banques, LB) (Garantie des dépôts)",
+      "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Garanzia dei depositi)",
+      "botschaftKey": "BOTSCHAFT-2010-655",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/559/de",
+      "sha": "b8cfa6af171cedc4c73b85886ec2bc9387e2f96bb6d5c48310ff98b623057d8e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "11419424fe0d2187381d7de198c3e756513b122641725a11350673346271baea"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/38",
+      "dateDocument": "2010-10-01",
+      "roFundstelle": "AS 2011 275",
+      "titelDe": "Bundesgesetz über die Rückerstattung unrechtmässig erworbener Vermögenswerte politisch exponierter Personen (RuVG)",
+      "titelFr": "Loi fédérale sur la restitution des valeurs patrimoniales d'origine illicite de personnes politiquement exposées (Loi sur la restitution des avoirs illicites, LRAI)",
+      "titelIt": "Legge federale sulla restituzione dei valori patrimoniali di provenienza illecita di persone politicamente esposte (Legge sulla restituzione degli averi di provenienza illecita, LRAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/38/de",
+      "sha": "71914cc3659775e1da9775c0b8b0021b9abf82f953a1ea3eeece730328bec80d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "16571fa2212382faea8d2a9dc1d5504b53375c12498c51ba668217af5f27f027"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4680b94aca04870448f933a54c75b33319b3d325b89428dcf20b5c0518e9c6aa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/800",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2010 5601",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano)",
+      "botschaftKey": "BOTSCHAFT-2009-402",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/800/de",
+      "sha": "2802e1103eb1be687dd1d53b4862301a95b9d4c2d511657469afb9b3ad5c2afa"
     },
     {
       "art": "aenderung",
@@ -171,20 +508,98 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/688/de",
-      "sha": "5ee60b952c6533eec32078839f2003707d9d5e3ff7718e5d61ba05e356448924"
+      "sha": "b0258fda2521bf659cd7a4e7e30a17c6311cbfc6f44bcbd981fc7225dde53a20"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "75922701136e5d1510181af7833a88273abb4157ed30c376a8aae9633902e5d6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/450",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 3577",
+      "titelDe": "Bundesgesetz über Bucheffekten (Bucheffektengesetz, BEG)",
+      "titelFr": "Loi fédérale sur les titres intermédiés (LTI)",
+      "titelIt": "Legge federale sui titoli contabili (Legge sui titoli contabili, LTCo)",
+      "botschaftKey": "BOTSCHAFT-2006-1228",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2009-10-01",
+        "2010-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/450/de",
+      "sha": "3394cda27919c72bff0703979e60187b60a4df214aa9f652eaa6f9bef75ccac3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/615",
+      "dateDocument": "2009-06-12",
+      "roFundstelle": "AS 2009 5203",
+      "titelDe": "Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)",
+      "titelFr": "Loi fédérale régissant la taxe sur la valeur ajoutée (Loi sur la TVA, LTVA)",
+      "titelIt": "Legge federale concernente l'imposta sul valore aggiunto (Legge sull'IVA, LIVA)",
+      "botschaftKey": "BOTSCHAFT-2008-1202",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/615/de",
+      "sha": "164f24cc2d2e3b5a7403e42e18bf84d492f24b05238d8961e561d6cd62db4b75"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/450",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 3577",
+      "titelDe": "Bundesgesetz über Bucheffekten (Bucheffektengesetz, BEG)",
+      "titelFr": "Loi fédérale sur les titres intermédiés (LTI)",
+      "titelIt": "Legge federale sui titoli contabili (Legge sui titoli contabili, LTCo)",
+      "botschaftKey": "BOTSCHAFT-2006-1228",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2009-10-01",
+        "2010-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/450/de",
+      "sha": "92dbf3f76c3353a23cc65316ae49b25426442aa6941f4f4565211f61bf6d20bf"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "e2faa4f0ab0379aed167c838132c5f4d81312bbd6ee5487eb607489ff21d7d90"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 4791",
+      "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+      "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)",
+      "botschaftKey": "BOTSCHAFT-2002-443",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/685/de",
+      "sha": "de3c6a1ea7514fef33cc892f7a018611c900f2aa8de2190235371b9e9d01ae00"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/71",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2007 359",
+      "titelDe": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+      "titelFr": "Loi fédérale concernant des mesures en matière de lutte contre le travail au noir (Loi sur le travail au noir, LTN)",
+      "titelIt": "Legge federale concernente i provvedimenti in materia di lotta contro il lavoro nero (Legge contro il lavoro nero, LLN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/71/de",
+      "sha": "8c49b0cae192ecc05c30b72d4984d0a2891f2f707dabe9e4d1ab8ea72e302cf7"
     },
     {
       "art": "aenderung",
@@ -196,14 +611,75 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention de La Haye relative à la loi applicable au trust et à sa reconnaissance",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione dell'Aia relativa alla legge applicabile ai trust ed al loro riconoscimento",
       "botschaftKey": "BOTSCHAFT-2006-54",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/374/de",
-      "sha": "3d116441b492eeca7beb1b2e0361c0dd78e4c429064e54ae393cfed06199e0fb"
+      "sha": "f56527522c51da250161a3040e967cb974a38bd3ae8d9dfcdc6c757451fa38fe"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "d98fc241b0fb8d8f8a73e12ac8654dc96a131be92d0e1ce92d319f6c41cf4e53"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 1205",
+      "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+      "titelIt": "Legge sul Tribunale federale (LTF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
+      "sha": "ae2b54b73191bd93986b3de4eb3e461a6561d9ab0201419344b139dd12e72de6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2006 5379",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2005-1000",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/822/de",
+      "sha": "ebed309a18575e8239fc8aac6a01ca32172658536b1111686d5badd894f16588"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2006 5599",
+      "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+      "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale",
+      "botschaftKey": "BOTSCHAFT-2006-974",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "sha": "450c89b58e25b153fef21bbfa6cf58a9b6d2d6b97ee639ee311773152c7fc266"
     },
     {
       "art": "aenderung",
@@ -214,8 +690,11 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (Arbeitnehmerforderungen)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (Créances salariales)",
       "titelIt": "Legge federale sull'esecuzione e sul fallimento (Crediti dei lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/588/de",
-      "sha": "5d56a13cccc0883ae6b89906f346f84a65bb5e3b11a67d1f7b1d2933546895dc"
+      "sha": "93108b05810c778d0ec191398cfeaa93cf9a6ad0593efa3d547de38461ea549d"
     },
     {
       "art": "aenderung",
@@ -226,8 +705,11 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (Anmerkung des Konkurses im Grundbuch)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (Mention de la faillite au registre foncier)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (Menzione del fallimento nel registro fondiario)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/589/de",
-      "sha": "559d5904b8969b4cb53529d484243b5563f517ca81db6d7439ca8e7ce6c1e9f7"
+      "sha": "a1e76debe0d905d9c801bcf21e1436ca66c938bcdec2a2454ee0d9f7b1e517da"
     },
     {
       "art": "aenderung",
@@ -238,14 +720,42 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Ausnahmen von der Konkursbetreibung)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP) (Exceptions à la poursuite par voie de faillite)",
       "titelIt": "Legge federale sull'esecuzione e sul fallimento (LEF) (Eccezioni all'esecuzione in via di fallimento)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/336/de",
-      "sha": "a8b359ac9a4a9a7e872cee90bf36fcbfc0a92bfdbcc56451aac106faf5d73068"
+      "sha": "2786b6ef958512a071189a3c1bff56facaf2ac7c07043381ffea4127f6d93659"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2004-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/340",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 2767",
+      "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG)",
+      "titelFr": "Loi fédérale sur les banques et les caisses d'épargne (Loi sur les banques, LB)",
+      "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR)",
+      "botschaftKey": "BOTSCHAFT-2002-1290",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/340/de",
+      "sha": "1828149dfcc92ec05405534ac9daaf9238843a68df9f2984b8ffe428e97bef1e"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2003-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.1",
-      "sha": "a91347efab212ff992ccf2f6ca0d8d3b184ef722ae2c174aca01ead845c03e6b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/100",
+      "dateDocument": "2002-10-04",
+      "roFundstelle": "AS 2003 463",
+      "titelDe": "Zivilgesetzbuch, Obligationenrecht, Strafgesetzbuch, Bundesgesetz über Schuldbetreibung und Konkurs (Grundsatzartikel Tiere)",
+      "titelFr": "Code civil, Code des obligations, Code pénal, Loi fédérale sur la poursuite pour dettes et la faillite (Animaux)",
+      "titelIt": "Codice civile, Codice delle obbligazioni, Codice penale, Legge federale sulla esecuzione e sul fallimento (Articolo di principio sugli animali)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/100/de",
+      "sha": "e2d26460263957125774e6bd9fb9bffacc8966f10856fbc88df8fc5e7e2e1b8e"
     },
     {
       "art": "aenderung",
@@ -256,8 +766,27 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/401/de",
-      "sha": "ce350a7fe01622ed9b6630bd33d75a11de88ce4e0237687e3f8791052a62c195"
+      "sha": "36275466c705ef83470cb2c4beae47ffbabfcc98b1bde53f7ff2cbeb2092c600"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 1227",
+      "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+      "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+      "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1227_1227_1227/de",
+      "sha": "9e838c7ba495fa79c9bd3582a2580fb3efe4e362a4cd4a358479972ac70521ca"
     },
     {
       "art": "aenderung",
@@ -268,8 +797,11 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale du 11 avril 1889 sur la poursuite pour dettes et la faillite (LP) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/161/de",
-      "sha": "c622e5ebe20d3110afcab66acfc4c00c90a2ff053fb4f63fd52f051b5760402e"
+      "sha": "bd1d6378b2eb22dc05a63462c3b030ca42a17c8e0b7153709f7896bf845ff676"
     },
     {
       "art": "aenderung",
@@ -280,8 +812,11 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/15/de",
-      "sha": "da0f20313ddcf6e509013873fa17f4ff4ec25fd055368171e066c89f83369959"
+      "sha": "ab305e87bdf288494d1bab7ec4b30d461ceefc2ba8897dff22c97e0683eb0b5b"
     },
     {
       "art": "aenderung",
@@ -292,21 +827,686 @@
       "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite (LP) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla esecuzione e sul fallimento (LEF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/40/de",
-      "sha": "d857b349b624e8f43e022f52fc25f1621e37424995d410a68732f80ba46e0fec"
+      "sha": "81686910c2a1795ecfa1f029a9f96052cb620bfebc41739754ffe6b1a811a534"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1892-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/11/529_488_529",
-      "dateDocument": "1889-04-11",
-      "roFundstelle": "AS 11 529",
-      "titelDe": "Bundesgesetz vom 11. April 1889 über Schuldbetreibung und Konkurs (SchKG)",
-      "titelFr": "Loi fédérale du 11 avril 1889 sur la poursuite pour dettes et la faillite (LP)",
-      "titelIt": "Legge federale dell'11 aprile 1889 sulla esecuzione e sul fallimento (LEF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/11/529_488_529/de",
-      "sha": "a98adc9840b38edbe7fd02436ad0df5dc221e4633ab8f59f1b3c47b859e6aa19"
+      "dateEntryInForce": "1996-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 1445",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale du 6 octobre 1995 sur le service civil (LSC)",
+      "titelIt": "Legge federale del 6 ottobre 1995 sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1445_1445_1445/de",
+      "sha": "9366c55e276536bca375f6011fd10e590471fc41d55a4ec6c3114b50c9e6b9f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2523_2523_2523",
+      "dateDocument": "1994-03-18",
+      "roFundstelle": "AS 1994 2523",
+      "titelDe": "Bundesgesetz vom 18. März 1994 über die Anlagefonds (Anlagefondsgesetz, AFG)",
+      "titelFr": "Loi fédérale du 18 mars 1994 sur les fonds de placement (LFP)",
+      "titelIt": "Legge federale del 18 marzo 1994 sui fondi d'investimento (LFI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2523_2523_2523/de",
+      "sha": "47f6c31acb1cfae76c8f52d27dec458251ff1473882f191aef780dcc8b1d2a57"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/802_802_802",
+      "dateDocument": "1989-12-15",
+      "roFundstelle": "AS 1990 802",
+      "titelDe": "Obligationenrecht (Miete und Pacht), Änderung",
+      "titelFr": "Code des obligations (Bail à loyer et bail à ferme), Modification",
+      "titelIt": "Codice delle obbligazioni (Locazione e affitto), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/802_802_802/de",
+      "sha": "52e90824d06fb3a691564dbc0e3cdb9621bdf7e29f2a42792844354ac2819714"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/122_122_122",
+      "dateDocument": "1984-10-05",
+      "roFundstelle": "AS 1986 122",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Wirkungen der Ehe im allgemeinen, Ehegüterrecht und Erbrecht), Änderung",
+      "titelFr": "Code civil suisse (Effets généraux du mariage, régime matrimonial et successions), Modification",
+      "titelIt": "Codice civile svizzero (Effetti del matrimonio in generale, regime dei beni fra i coniugi e diritto successorio), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/122_122_122/de",
+      "sha": "e33a2b940708f7efb42054d7cd191f196849fbce491033e75c882f3fcae82090"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/797_797_797",
+      "dateDocument": "1982-06-25",
+      "roFundstelle": "AS 1983 797",
+      "titelDe": "Bundesgesetz vom 25. Juni 1982 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "titelFr": "Loi fédérale du 25 juin 1982 sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+      "titelIt": "Legge federale del 25 giugno 1982 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/797_797_797/de",
+      "sha": "0591938aa167b9298432f0d4653a6206d582353b3558b4f1a1e4ba3bc43d5f2e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
+      "dateDocument": "1981-03-20",
+      "roFundstelle": "AS 1982 1676",
+      "titelDe": "Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG)",
+      "titelFr": "Loi fédérale du 20 mars 1981 sur l'assurance-accidents (LAA)",
+      "titelIt": "Legge federale del 20 marzo 1981 sull'assicurazione contro gli infortuni (LAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1676_1676_1676/de",
+      "sha": "7b21d4631f6c1ad5991578a582c676a2b5711dcdd1e22e9786cec15ce5fdc27b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/237_237_237",
+      "dateDocument": "1976-06-25",
+      "roFundstelle": "AS 1977 237",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesverhältnis), Änderung",
+      "titelFr": "Code civil suisse (Filiation), Modification",
+      "titelIt": "Codice civile svizzero (Filiazione), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/237_237_237/de",
+      "sha": "28d02ed7deb0d653c7886c85746eac3bd0d0d2bdc1f3a152e68b33687e672fd2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/862_862_862",
+      "dateDocument": "1975-03-20",
+      "roFundstelle": "AS 1977 862",
+      "titelDe": "Bundesgesetz vom 20. März 1975 über den Schutz von Pflanzenzüchtungen (Sortenschutzgesetz)",
+      "titelFr": "Loi fédérale du 20 mars 1975 sur la protection des obtentions végétales",
+      "titelIt": "Legge federale del 20 marzo 1975 sulla protezione delle novità vegetali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/862_862_862/de",
+      "sha": "785421b94739fe4414020e0df92ce8395438e1d3906e715a505e2ed1bae27d02"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/208_208_208",
+      "dateDocument": "1976-10-08",
+      "roFundstelle": "AS 1977 208",
+      "titelDe": "Bundesbeschluss vom 8. Oktober 1976 über die Einführung der obligatorischen Arbeitslosenversicherung (Übergangsordnung)",
+      "titelFr": "Arrêté fédéral du 8 octobre 1976 instituant l'assurance-chômage obligatoire (Régime transitoire)",
+      "titelIt": "Decreto federale dell'8 ottobre 1976 sull'istituzione dell'assicurazione obbligatoria contro la disoccupazione (Ordinamento transitorio)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/208_208_208/de",
+      "sha": "8536d5d650be96cebc3e3fcb9376958663d14dca3279a507892146eb7a5b623d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/57_57_57",
+      "dateDocument": "1975-10-03",
+      "roFundstelle": "AS 1976 57",
+      "titelDe": "Bundesgesetz über die Erwerbsausfallentschädigungen an Wehr- und Zivilschutzpflichtige (Erwerbsersatzordnung), Änderung",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain en faveur des militaires et des personnes astreintes à la protection civile (Régime des allocations pour perte de gain), Modification",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno per gli obbligati al servizio militare e di protezione civile (Ordinamento delle indennità per perdita di guadagno), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/57_57_57/de",
+      "sha": "e9f7b665eaca84cd7213bf53c0031153964985490205e4cb706cdc5d02ba4363"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1971-07-09",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/__1052",
+      "dateDocument": "1971-07-09",
+      "titelIt": "Ordinanza concernente la misurazione catastale, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/__1052/de",
+      "sha": "1a7280efc876862ba78923df6dea14d16ac936384273611bed9f3e1457b4cef6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1971-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/808_808_809",
+      "dateDocument": "1971-03-11",
+      "roFundstelle": "AS 1971 808",
+      "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über die Banken und Sparkassen",
+      "titelFr": "Loi fédérale modifiant la loi sur les banques et les caisses d'épargne",
+      "titelIt": "Legge federale che modifica su le banche e le casse di risparmio",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/808_808_809/de",
+      "sha": "e11929786597225d27c96874dd58b5edb72b891ffcab878bf23a7de70e059301"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1967-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/371_385_384",
+      "dateDocument": "1965-10-13",
+      "roFundstelle": "AS 1966 371",
+      "titelDe": "Bundesgesetz vom 13. Oktober 1965 über die Verrechnungssteuer (Verrechnungssteuergesetz, VStG)",
+      "titelFr": "Loi fédérale du 13 octobre 1965 sur l'impôt anticipé (LIA)",
+      "titelIt": "Legge federale del 13 ottobre 1965 su l'imposta preventiva (LIP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/371_385_384/de",
+      "sha": "477d4d24a216dbc30964d286c4baf415e8ef8ef71412da22c10e6cfc5dbe8e1a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1966-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/57_57_57",
+      "dateDocument": "1964-03-13",
+      "roFundstelle": "AS 1966 57",
+      "titelDe": "Bundesgesetz vom 13. März 1964 über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz, ArG)",
+      "titelFr": "Loi fédérale du 13 mars 1964 sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail, LTr)",
+      "titelIt": "Legge federale del 13 marzo 1964 sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro, LL)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/57_57_57/de",
+      "sha": "42ba08bbcaf0bff1e3f11a84002873a0247ff406faa7ecf027d3afdf6c7efd1d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1965-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1964/965_961_981",
+      "dateDocument": "1964-03-13",
+      "roFundstelle": "AS 1964 965",
+      "titelDe": "Bundesgesetz betreffend die Änderung des ersten Titels über die Kranken- und Unfallversicherung",
+      "titelFr": "Loi fédérale modifiant le premier titre de la loi sur l'assurance en cas de maladie et d'accidents",
+      "titelIt": "Legge federale che modifica il titolo primo della legge sull'assicurazione contro le malattie e gli infortuni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1964/965_961_981/de",
+      "sha": "0e24d0ecb2a1c967620675e8b3c42e13f4d737b34e20c4d05968a725669409af"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1963-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1962/1047_1082_1085",
+      "dateDocument": "1962-03-23",
+      "roFundstelle": "AS 1962 1047",
+      "titelDe": "Bundesgesetz vom 23. März 1962 über den Abzahlungs- und den Vorauszahlungsvertrag",
+      "titelFr": "Loi fédérale du 23 mars 1962 sur la vente par acomptes et la vente avec paiements préalables",
+      "titelIt": "Legge Federale del 23 marzo 1962 sulle vendite a rate",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1962/1047_1082_1085/de",
+      "sha": "83547920c3f026c5887d84006503adcdfa12c4c5d8abaf250b8ce2bb76d66f8d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1959-10-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/827_857_845",
+      "dateDocument": "1959-06-19",
+      "roFundstelle": "AS 1959 827",
+      "titelDe": "Bundesgesetz vom 19. Juni 1959 über die Invalidenversicherung (IVG)",
+      "titelFr": "Loi fédérale du 19 juin 1959 sur l'assurance-invalidité (LAI)",
+      "titelIt": "Legge federale del 19 giugno 1959 su l'assicurazione per l'invalidità (LAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/827_857_845/de",
+      "sha": "f044b405bfadc096865ce71c48b7e6405eaedebefd5806a4952260b38643fa68"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1954-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1953/1073_1095_1133",
+      "dateDocument": "1951-10-03",
+      "roFundstelle": "AS 1953 1073",
+      "titelDe": "Bundesgesetz vom 3. Oktober 1951 über die Förderung der Landwirtschaft und die Erhaltung des Bauernstandes (Landwirtschaftsgesetz)",
+      "titelFr": "Loi fédérale du 3 octobre 1951 sur l'amélioration de l'agriculture et le maintien de la population paysanne (Loi sur l'agriculture)",
+      "titelIt": "Legge federale del 3 ottobre 1951concernente il promovimento dell'agricoltura e la conservazione del ceto rurale (Legge sull'agricoltura)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1953/1073_1095_1133/de",
+      "sha": "282a9f73ecb92b2af82100633e5d2699da5851247e97265a7c0b8266f9a9cc81"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1953-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/1021_1046_1050",
+      "dateDocument": "1952-09-25",
+      "roFundstelle": "AS 1952 1021",
+      "titelDe": "Bundesgesetz vom 25. September 1952 über den Erwerbsersatz (Erwerbsersatzgesetz, EOG)",
+      "titelFr": "Loi fédérale du 25 septembre 1952 sur les allocations pour perte de gain (Loi sur les allocations pour perte de gain, LAPG)",
+      "titelIt": "Legge federale del 25 settembre 1952 sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/1021_1046_1050/de",
+      "sha": "c67b8591018baa652ea7906e858d740a579fdc701e5c9cafb50e72a32e8339a2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1952-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1951/1163_1167_1197",
+      "dateDocument": "1951-06-22",
+      "roFundstelle": "AS 1951 1163",
+      "titelDe": "Bundesgesetz vom 22. Juni 1951 über die Arbeitslosenversicherung (AlVG)",
+      "titelFr": "Loi fédérale du 22 juin 1951 sur l'assurance-chômage (LAC)",
+      "titelIt": "Legge federale del 22 giugno 1951 sull'assicurazione contro la disoccupazione (LAD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1951/1163_1167_1197/de",
+      "sha": "87477ebe42c9d5eeb1697f71cf65a73c40410ed14650813314b9c7bf65ab994d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1950-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1950/57_57_57",
+      "dateDocument": "1949-09-28",
+      "roFundstelle": "AS 1950 57",
+      "titelDe": "Bundesgesetz betreffend Revision des Bundesgesetzes über Schuldbetreibung und Konkurs",
+      "titelFr": "Loi fédérale revisant la loi sur la poursuite pour dettes et la faillite",
+      "titelIt": "Legge federale che modifica la legge sulla esecuzione e sur fallimento",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1950/57_57_57/de",
+      "sha": "635e631ce02bef8c9d75f4db3a59fd446a2c3158de11f43feced5b337b595ec0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1950-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1949/802_813_815",
+      "dateDocument": "1949-02-04",
+      "roFundstelle": "AS 1949 802",
+      "titelDe": "Bundesgesetz über den Agenturvertrag",
+      "titelFr": "Loi fédérale sur le contrat d'agence",
+      "titelIt": "Legge federale sul contratto d'agenzia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1949/802_813_815/de",
+      "sha": "6972cbf695fd90c83ed7499b212ad33d5c5fb4a623c41e7052c4ab17f8b6168c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1948-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/63/837_843_843",
+      "dateDocument": "1946-12-20",
+      "roFundstelle": "AS 63 837",
+      "titelDe": "Bundesgesetz vom 20. Dezember 1946 über die Alters- und Hinterlassenenversicherung (AHVG)",
+      "titelFr": "Loi fédérale du 20 décembre 1946 sur l'assurance-vieillesse et survivants (LAVS)",
+      "titelIt": "Legge federale del 20 dicembre 1946 sull'assicurazione per la vecchiaia e per i superstiti (LAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/63/837_843_843/de",
+      "sha": "04f2547f660bc371dc2fa12233a627eb8c6d1c6bcf1e6c18f22f172eaa234146"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1945-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/60/271_269_275",
+      "dateDocument": "1943-12-16",
+      "roFundstelle": "AS 60 271",
+      "titelDe": "Bundesgesetz vom 16. Dezember 1943 über die Organisation der Bundesrechtspflege (Bundesrechtspflegegesetz, OG)",
+      "titelFr": "Loi fédérale du 16 décembre 1943 d'organisation judiciaire (Organisation judiciaire, OJ)",
+      "titelIt": "Legge federale del 16 dicembre 1943 sull'organizzazione giudiziaria (Organizzazione giudiziaria, OG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/60/271_269_275/de",
+      "sha": "e238831ed6cb8ce86d1c7ba4ba2d66c6d0b0be894984c263866f608c15537104"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1942-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/54/757_781_799",
+      "dateDocument": "1937-12-21",
+      "roFundstelle": "AS 54 757",
+      "titelDe": "Schweizerisches Strafgesetzbuch vom 21. Dezember 1937",
+      "titelFr": "Code pénal suisse du 21 décembre 1937",
+      "titelIt": "Codice penale svizzero del 21 dicembre 1937",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/54/757_781_799/de",
+      "sha": "2b535368ed12cebcc3981adfbc5f6d10155403b7ebba4db11e9684430070a4b1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1942-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/57/1049_1085_1113",
+      "dateDocument": "1941-06-13",
+      "roFundstelle": "AS 57 1049",
+      "titelDe": "Bundesgesetz über das Anstellungsverhältnis der Handelsreisenden",
+      "titelFr": "Loi fédérale sur les conditions d'engagement des voyageurs de commerce",
+      "titelIt": "Legge federale sulle condizioni d'impiego dei commessi viaggiatori",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/57/1049_1085_1113/de",
+      "sha": "fd1d5d21533adc37f23cc51db3d47df334c02a98b43a89f66af736744aeeb3c1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1941-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/57/61_65_65",
+      "dateDocument": "1941-01-24",
+      "roFundstelle": "AS 57 61",
+      "titelDe": "Verordnung über vorübergehende Milderungen der Zwangsvollstreckung",
+      "titelFr": "Ordonnance atténuant à titre temporaire le régime de l'exécution forcée",
+      "titelIt": "Ordinanza che mitiga temporaneamente le disposizioni sull'esecuzione forzata",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/57/61_65_65/de",
+      "sha": "f735803f5dcbac6cc9e7284114b9e4c5e3d6b4a67fe1257c669685caf0a9c174"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1939-10-24",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/55/1296_1340_1246",
+      "dateDocument": "1939-10-24",
+      "roFundstelle": "AS 55 1296",
+      "titelDe": "Bundesratsbeschluss vom 24. Oktober 1939 über Arrest und Zwangsvollstreckungsmassnahmen gegenüber Vermögen ausländischer Schuldner",
+      "titelFr": "Arrêté du Conseil fédéral du 24 octobre 1939 concernant le séquestre et les mesures d'exécution forcée à l'égard des biens appartenant à des débiteurs établis à l'étranger",
+      "titelIt": "Decreto del Consiglio federale del 24 ottobre 1939 concernente il sequestro e le misure di esecuzione forzata riguardo ai beni di debitori domiciliati all'estero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/55/1296_1340_1246/de",
+      "sha": "df2dacc4b4f3f51fcdf5ba37f7c729c8eee244987746286c16546897e2247380"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1937-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/53/185_185_189",
+      "dateDocument": "1936-12-18",
+      "roFundstelle": "AS 53 185",
+      "titelDe": "Bundesgesetz über die Revision der Titel XXIV bis XXXIII des Obligationenrechts",
+      "titelFr": "Loi fédérale revisant les titres XXIV à XXXIII du code des obligations",
+      "titelIt": "Legge federale che riforma i titoli XXIV a XXXIII del Codice delle Obbligazioni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/53/185_185_189/de",
+      "sha": "ddc5c3586036c2bdedfdfa99de5a737e3ad4022be004388efa7e8e3f1a6d805c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1936-06-29",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/52/517_537_556",
+      "dateDocument": "1936-06-29",
+      "roFundstelle": "AS 52 517",
+      "titelDe": "Verordnung des Bundesgerichts betreffend die Zusatzakte vom 4. Oktober 1935 zum Gerichtsstandsvertrag mit Frankreich",
+      "titelFr": "Ordonnance du Tribunal fédéral concernant l'acte additionnel du 4 octobre 1935 à la convention entre la Suisse et la France sur la compétence judiciaire et l'exécution des jugements en matière civile",
+      "titelIt": "Ordinanza del Tribunale federale concernente l'atto addizionale del 4 ottobre 1935 alla Convenzione tra la Svizzera e la Francia su la competenza di foro e l'esecuzione delle sentenze in materia civile",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/52/517_537_556/de",
+      "sha": "9e851f8838546e317c527ee070655377af524fe082ba0560d36697f1bdc5d96f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1935-10-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/51/705_717_887",
+      "dateDocument": "1935-11-05",
+      "roFundstelle": "AS 51 705",
+      "titelDe": "Bundesratsbeschluss betreffend vom Schuldbetreibungs- und Konkursgesetz abweichende Vorschriften für den Fall der Liquidation von Kreditkassen mit Wartezeit",
+      "titelFr": "Arrêté du Conseil fédéral édictant des prescriptions qui dérogent, en cas de liquidation de caisses de crédit à terme différé, à la loi sur la poursuite pour dettes et la faillite",
+      "titelIt": "Decreto del Consiglio federale che stabilisce norme deroganti alla legge sull'esecuzione e sul fallimento, da applicarsi in caso di liquidazione di casse di credito a termine differito",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/51/705_717_887/de",
+      "sha": "ea93f85074dabbbf106fc3deac8d531a657a9e9262d45ea39257d72ab5dca3b4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1935-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/51/117_121_129",
+      "dateDocument": "1934-11-08",
+      "roFundstelle": "AS 51 117",
+      "titelDe": "Bundesgesetz vom 8. November 1934 über die Banken und Sparkassen (Bankengesetz, BankG)",
+      "titelFr": "Loi fédérale du 8 novembre 1934 sur les banques et les caisses d'épargne (Loi sur les banques, LB)",
+      "titelIt": "Legge federale dell'8 novembre 1934 sulle banche e le casse di risparmio (Legge sulle banche, LBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/51/117_121_129/de",
+      "sha": "9b0fe2fa259216284fd322caf86b4f2ee68bb312cdddc9651b4ffec47edd13cc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1932-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/47/617_629_643",
+      "dateDocument": "1930-06-25",
+      "roFundstelle": "AS 47 617",
+      "titelDe": "Bundesgesetz vom 25. Juni 1930 über die Sicherstellung von Ansprüchen aus Lebensversicherungen (Sicherstellungsgesetz)",
+      "titelFr": "Loi fédérale du 25 juin 1930 sur la garantie des obligations découlant d'assurances sur la vie",
+      "titelIt": "Legge federale del 25 giugno 1930 sulla garanzia degli obblighi derivanti da assicurazione sulla vita",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/47/617_629_643/de",
+      "sha": "2fea69677600989324424d4144188e508e3d7985c9fbd9811c3f1dd47cf0f9d6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1931-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/47/109_113_57",
+      "dateDocument": "1930-06-25",
+      "roFundstelle": "AS 47 109",
+      "titelDe": "Pfandbriefgesetz vom 25. Juni 1930 (PfG)",
+      "titelFr": "Loi du 25 juin 1930 sur l'émission de lettres de gage (LLG)",
+      "titelIt": "Legge del 25 giugno 1930 sulle obbligazioni fondiarie (LOF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/47/109_113_57/de",
+      "sha": "7138db5b780c83b2d29df6d5e3a6bd976aba5c0ed69f2991cae052ee3937077c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1921-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/36/636_649_612",
+      "dateDocument": "1920-04-29",
+      "roFundstelle": "AS 36 636",
+      "titelDe": "Bundesgesetz betreffend die öffentlich-rechtlichen Folgen der fruchtlosen Pfändung und des Konkurses",
+      "titelFr": "Loi fédérale sur les conséquences de droit public de la saisie infructueuse et de la faillite",
+      "titelIt": "Legge federale sugli effetti di diritto pubblico del pignoramento infruttuoso e del fallimento",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/36/636_649_612/de",
+      "sha": "7494305381a540577e3de05c249e1fa69bc62321ba9be3ee20f5426f96d0e9e9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1921-04-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/37/221_221_239",
+      "dateDocument": "1921-04-04",
+      "roFundstelle": "AS 37 221",
+      "titelDe": "Verordnung betreffend Abänderung und Ergänzung des SchKG",
+      "titelFr": "Ordonnance complétant et modifiant la LP",
+      "titelIt": "Ordinanze che completa e modifica la LEF",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/37/221_221_239/de",
+      "sha": "bf5b72b2a895f19de6e5c218d46772f4c0d9fb19cc1122a1ea8ffbafd05833c4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1919-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/35/351_356_462",
+      "dateDocument": "1919-02-04",
+      "roFundstelle": "AS 35 351",
+      "titelDe": "Bundesgesetz vom 4. Februar 1919 über die Kautionen der ausländischen Versicherungsgesellschaften (Kautionsgesetz)",
+      "titelFr": "Loi fédérale du 4 février 1919 sur les cautionnements des sociétés d'assurances étrangères (Loi sur les cautionnements)",
+      "titelIt": "Legge federale del 4 febbraio 1919 sulle cauzioni delle società estere d'assicurazione (Legge sulle cauzioni, LC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/35/351_356_462/de",
+      "sha": "f960d4e36418d05f531931de680bc53c1951aef64cf85dd534a57d92d03131cb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1918-01-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/34/19_20_22",
+      "dateDocument": "1917-09-25",
+      "roFundstelle": "AS 34 19",
+      "titelDe": "Bundesgesetz vom 25. September 1917 über Verpfändung und Zwangsliquidation von Eisenbahn- und Schifffahrtsunternehmungen",
+      "titelFr": "Loi fédérale du 25 septembre 1917 concernant la constitution de gages sur les entreprises de chemin de fer et de navigation et la liquidation forcée de ces entreprises",
+      "titelIt": "Legge federale del 25 settembre 1917 concernente la costituzione di pegni sulle imprese di strade ferrate e di navigazione e la liquidazione forzata di queste imprese",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/34/19_20_22/de",
+      "sha": "032e71adcbfedd63208912d586d01c8b00ec24fe0becffcb129655f30196fc1f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1917-11-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/33/905_935_953",
+      "dateDocument": "1917-10-27",
+      "roFundstelle": "AS 33 905",
+      "titelDe": "Verordnung betreffend Ergänzung und Abänderung der Bestimmungen des SchKG betreffend den Nachlassvertrag",
+      "titelFr": "Ordonnance complétant et modifiant les dispositions de la LP relativement au concordat",
+      "titelIt": "Ordinanze che completa e modifica, per la durata della guerre, la disposizioni della LEF in materia di concordato",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/33/905_935_953/de",
+      "sha": "93d69caaf14877982faf5b785386b9064b79790829b9e1d399c14c178786c747"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1916-12-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/32/607_613_615",
+      "dateDocument": "1916-12-16",
+      "roFundstelle": "AS 32 607",
+      "titelDe": "Verordnung betreffend die allgemeine Betreibungsstundung",
+      "titelFr": "Ordonnance concernant le sursis général aux poursuites",
+      "titelIt": "Ordinanze concernente la proroga generale delle esecuzioni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/32/607_613_615/de",
+      "sha": "4dd9d7390690d1bf8169fc8041995edff162bb92d0a1856c8305e50174d5d73b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1915-11-09",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/31/381_353_373",
+      "dateDocument": "1915-06-18",
+      "roFundstelle": "AS 31 381",
+      "titelDe": "Bundesgesetz betreffend die Ergänzung des BG vom 13. Juni 1911 über die Kranken- und Unfallversicherung",
+      "titelFr": "Loi fédérale complétant la LF du 13 juin 1911 sur l'assurance en cas de maladie et d'accidents",
+      "titelIt": "Legge federale di complemento della LF del 13 giugno 1911 sull'assicurazione contro le malattie e gli infortuni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/31/381_353_373/de",
+      "sha": "b160e55502d50461bb5b0ece3b3d1f1102adaf83fb6d6b8f8f12f34483778236"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1914-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/30/495_499_478",
+      "dateDocument": "1914-09-28",
+      "roFundstelle": "AS 30 495",
+      "titelDe": "Verordnung betreffend Ergänzung und Abänderung des SchKG für die Zeit der Kriegswirren",
+      "titelFr": "Ordonnance complétant et modifiant, pour la durée de la guerre la LP",
+      "titelIt": "Ordinanza che completa e modific, per la durata della guerra, la LEF",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/30/495_499_478/de",
+      "sha": "e9d6f5df904392a0a751c64a216710fd5d17e6261eef36eba604586dcdf65b60"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1912-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/27/317_321_377",
+      "dateDocument": "1911-03-30",
+      "roFundstelle": "AS 27 317",
+      "titelDe": "Bundesgesetz vom 30. März 1911 betreffend die Ergänzung des Schweizerischen Zivilgesetzbuches (Fünfter Teil: Obligationenrecht)",
+      "titelFr": "Loi fédérale du 30 mars 1911 complétant le Code civil suisse (Livre cinquième: Droit des obligations)",
+      "titelIt": "Legge federale del 30 marzo 1911 di complemento del Codice civile svizzero (Libro quinto: Diritto delle obbligazioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/27/317_321_377/de",
+      "sha": "4d398beb1b999406855a4f86ca82b095850e8154c67e0e2cd15db224ea56e110"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1896-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/15/289_297_293",
+      "dateDocument": "1895-06-28",
+      "roFundstelle": "AS 15 289",
+      "titelDe": "Bundesgesetz betreffend die Uebertragung der Oberaufsicht über das Schuldbetreibungs- und Konkurswesen an das Bundesgericht (BS 3 5)",
+      "titelFr": "Loi fédérale transférant au tribunal fédéral la haute surveillance en matière de poursuite pour dettes et de faillite (RS 3 5)",
+      "titelIt": "Legge federale che trasferisce al Tribunale federale l'alta sorveglianza in materia di esecuzione e di fallimento (CS 3 5)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/15/289_297_293/de",
+      "sha": "e880c06cd92e84e48168547ca166ef4c8cde14684b378d937e19a8f3e3426d8d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1876-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2/3_3_3",
+      "dateDocument": "1875-05-20",
+      "roFundstelle": "AS 2 3",
+      "titelDe": "Vertrag vom 20. Mai 1875 betreffend die Errichtung eines internationalen Mass- und Gewichtsbüros",
+      "titelFr": "Convention du 20 mai 1875 relative à l'établissement d'un bureau international des poids et mesures",
+      "titelIt": "Trattato del 20 maggio 1875 sullo stabilimento di un Ufficio internazionale di pesi e misure",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2/3_3_3/de",
+      "sha": "9b69cfc71a9326dd539f100189dd270a2f12ca90d18b4998003f21338a8b4306"
     }
   ],
-  "sha": "33fe066821dcdf81a122484e03bbd5f6af55e269cf93c849cb5b1a8ddeb79e19"
+  "sha": "d0ef9287108df5224bf2cee47e7eadad8b287534c395eee7a13061c8837ac9a0"
 }

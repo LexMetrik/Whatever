@@ -438,5 +438,91 @@
     "2021-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2002/594",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2002/594",
+    "inkrafttreten": "2003-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/594",
+        "typ": 5,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/26",
+        "typ": 1,
+        "datum": "2006-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/37",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/79",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/796",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/720",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/799",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/799",
+        "typ": 1,
+        "datum": "2019-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/319",
+        "typ": 1,
+        "datum": "2021-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2017/79": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-12-22",
+        "roId": "RO 2017 477",
+        "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+        "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+        "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/796": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-11-29",
+        "roId": "RO 2017 7317",
+        "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+        "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+        "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/720": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-11-07",
+        "roId": "RO 2018 4581",
+        "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+        "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+        "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/799": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-11-30",
+        "roId": "RO 2018 5229",
+        "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+        "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+        "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)"
+      }
+    }
+  }
 }

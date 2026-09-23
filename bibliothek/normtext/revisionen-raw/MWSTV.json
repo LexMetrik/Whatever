@@ -2222,5 +2222,392 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2021/53",
       "zielFundstelle": "AS 2021 53"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2009/828",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2009/828",
+    "inkrafttreten": "2010-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/828",
+        "typ": 5,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/371",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/371",
+        "typ": 1,
+        "datum": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/371",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/671",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/671",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/910",
+        "typ": 6,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/910",
+        "typ": 6,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/704",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/704",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/659",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/659",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/804",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/804",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/63",
+        "typ": 1,
+        "datum": "2017-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/63",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/696",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/696",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/696",
+        "typ": 2,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/789",
+        "typ": 6,
+        "datum": "2017-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/789",
+        "typ": 6,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/499",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/499",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/56",
+        "typ": 6,
+        "datum": "2018-01-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/56",
+        "typ": 6,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/786",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/786",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/796",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/796",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/162",
+        "typ": 1,
+        "datum": "2019-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/162",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/977",
+        "typ": 1,
+        "datum": "2020-06-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/977",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/11",
+        "typ": 6,
+        "datum": "2021-01-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/122",
+        "typ": 6,
+        "datum": "2021-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/145",
+        "typ": 1,
+        "datum": "2021-01-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/145",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/53",
+        "typ": 1,
+        "datum": "2021-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/53",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/825",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/825",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/891",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/891",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/349",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/835",
+        "typ": 7,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/835",
+        "typ": 7,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/838",
+        "typ": 7,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/838",
+        "typ": 7,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/312",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/86",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/485",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/485",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/485",
+        "typ": 2,
+        "datum": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2015/804": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-11-18",
+        "roId": "RO 2015 4917",
+        "titelDe": "Zollverordnung (ZV)",
+        "titelFr": "Ordonnance sur les douanes (OD)",
+        "titelIt": "Ordinanza sulle dogane (OD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/63": {
+        "dateForce": "2017-05-01",
+        "dateDoc": "2016-12-16",
+        "roId": "RO 2017 283",
+        "titelDe": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV)",
+        "titelFr": "Ordonnance sur les denrées alimentaires et les objets usuels (ODAlOUs)",
+        "titelIt": "Ordinanza sulle derrate alimentari e gli oggetti d'uso"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/786": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-11-14",
+        "roId": "RO 2018 5029",
+        "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung; AMBV)",
+        "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
+        "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/796": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-11-07",
+        "roId": "RO 2018 5155",
+        "titelDe": "Verordnung über Geldspiele (Geldspielverordnung, VGS)",
+        "titelFr": "Ordonnance sur les jeux d'argent (OJAr)",
+        "titelIt": "Ordinanza sui giochi in denaro (OGD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/977": {
+        "dateForce": "2020-12-21",
+        "dateDoc": "2020-12-18",
+        "roId": "RO 2020 5801",
+        "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3) (Sars-CoV-2-Schnelltests)",
+        "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19) (Tests rapides SARS-CoV-2)",
+        "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19) (Test rapidi SARS-CoV-2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/145": {
+        "dateForce": "2021-03-15",
+        "dateDoc": "2021-03-12",
+        "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3)",
+        "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19)",
+        "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/53": {
+        "dateForce": "2021-02-01",
+        "dateDoc": "2021-01-27",
+        "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+        "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+        "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell'essere umano (Ordinanza sulle epidemie, OEp)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/800": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-17",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/825": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-12-03",
+        "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+        "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+        "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/349": {
+        "dateForce": "2022-07-01",
+        "dateDoc": "2022-06-03",
+        "titelDe": "Verordnung über die Tierarzneimittel (Tierarzneimittelverordnung, TAMV)",
+        "titelFr": "Ordonnance sur les médicaments vétérinaires (OMédV)",
+        "titelIt": "Ordinanza sui medicamenti per uso veterinario (Ordinanza sui medicamenti veterinari, OMVet)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/835": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-12-16",
+        "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+        "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+        "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/838": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-12-21",
+        "titelDe": "Verordnung 3 über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) (Covid-19-Verordnung 3)",
+        "titelFr": "Ordonnance 3 sur les mesures destinées à lutter contre le coronavirus (COVID-19) (Ordonnance 3 COVID-19)",
+        "titelIt": "Ordinanza 3 sui provvedimenti per combattere il coronavirus (COVID-19) (Ordinanza 3 COVID-19)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/86": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-02-15",
+        "titelDe": "Verordnung über die Änderung des Zolltarifs in den Anhängen 1 und 2 zum Zolltarifgesetz und über die Anpassung von Erlassen im Zusammenhang mit dieser Änderung",
+        "titelFr": "Ordonnance modifiant le tarif des douanes dans les annexes 1 et 2 de la loi sur le tarif des douanes et adaptant des actes législatifs découlant de cette modification",
+        "titelIt": "Ordinanza concernente la modifica della tariffa doganale negli allegati 1 e 2 della legge sulla tariffa delle dogane e concernente l’adeguamento di atti normativi connessi a tale modifica"
+      }
+    }
   }
 }

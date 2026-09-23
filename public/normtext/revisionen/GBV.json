@@ -1,14 +1,23 @@
 {
   "erlassKey": "GBV",
   "sr": "211.432.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.432.1",
-      "sha": "3e772670ca6b1f4eef8af2036c35bcef1a5b050486741b25b1fb0c0d9bad1447"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/529",
+      "dateDocument": "2023-08-23",
+      "roFundstelle": "AS 2023 529",
+      "titelDe": "Verordnung über die amtliche Vermessung (VAV)",
+      "titelFr": "Ordonnance sur la mensuration officielle (OMO)",
+      "titelIt": "Ordinanza concernente la misurazione ufficiale (OMU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/529/de",
+      "sha": "ec105526f72533815f0c7c56c4c37ced3ece798f1e710bbb40d6b3dbb3997241"
     },
     {
       "art": "aenderung",
@@ -19,8 +28,11 @@
       "titelDe": "Grundbuchverordnung (GBV)",
       "titelFr": "Ordonnance sur le registre foncier (ORF)",
       "titelIt": "Ordinanza sul registro fondiario (ORF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/918/de",
-      "sha": "58c3db2ecd0a350b094b17303f0565e14fc3db5ff27d29b8e8499000c89b397a"
+      "sha": "25dd148b2dba8809877c1bff912bf09df8f1ae3bf245b7e1408cebeccf51ea4f"
     },
     {
       "art": "aenderung",
@@ -31,8 +43,11 @@
       "titelDe": "Grundbuchverordnung (GBV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur le registre foncier (ORF). Erratum",
       "titelIt": "Ordinanza sul registro fondiario (ORF). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/148/de",
-      "sha": "db079661e120375f407f79526a6eccf92d5642244a0b727778930a58ffa540c2"
+      "sha": "25a5c53425057863222641f2f956aa6761e8c874102f91237dac1f7a92d90429"
     },
     {
       "art": "aenderung",
@@ -43,57 +58,42 @@
       "titelDe": "Grundbuchverordnung (GBV)",
       "titelFr": "Ordonnance sur le registre foncier (ORF)",
       "titelIt": "Ordinanza sul registro fondiario (ORF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/556/de",
-      "sha": "7ba28bd40bfe986f56c8fe62cd7790420bf904d778725471d4ebde82657fd9fb"
+      "sha": "03ec25ddd9036582671282a7facab396a09ae95a30c273878c0df8fd4bc88df5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.432.1",
-      "sha": "24edc9cf55e08b4fa39cffe6ed5ccfd9baad6ddd6c18f3aaf30c33843d69966c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+      "dateDocument": "2017-12-08",
+      "roFundstelle": "AS 2018 89",
+      "titelDe": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "titelFr": "Ordonnance sur l'établissement d'actes authentiques électroniques et la légalisation électronique (OAAE)",
+      "titelIt": "Ordinanza sulla realizzazione di atti pubblici e autenticazioni in forma elettronica (OAPuE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/29/de",
+      "sha": "3bca324f0b39f9588c1f3d662d2c1494bd24df1003956d59f44855b40c6d49cd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.432.1",
-      "sha": "31167d4c4fc9166a47cd756acb9bc70eadd4a368bb44430da964d565fbe2ad30"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/667",
-      "dateDocument": "2011-09-23",
-      "roFundstelle": "AS 2011 4659",
-      "titelDe": "Grundbuchverordnung (GBV)",
-      "titelFr": "Ordonnance sur le registre foncier (ORF)",
-      "titelIt": "Ordinanza sul registro fondiario (ORF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/667/de",
-      "sha": "62dd762a8b02b35ba3793908ac68d34500a51aba4593abe770d43e3b65c03bf4"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2005-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/206",
-      "dateDocument": "2005-03-11",
-      "roFundstelle": "AS 2005 1343",
-      "titelDe": "Verordnung betreffend das Grundbuch (GBV)",
-      "titelFr": "Ordonnance sur le registre foncier (ORF)",
-      "titelIt": "Regolamento per il registro fondiario (RRF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/206/de",
-      "sha": "86035b7660376e8ec53773b9b8ed002a7c4f90e3a21757b49d6e0723e476a09c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1912-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/26/167_163_163",
-      "dateDocument": "1910-02-22",
-      "roFundstelle": "AS 26 167",
-      "titelDe": "Verordnung vom 22. Februar 1910 betreffend das Grundbuch (GBV)",
-      "titelFr": "Ordonnance du 22 février 1910 sur le registre foncier (ORF)",
-      "titelIt": "Regolamento del 22 febbraio 1910 per il registro fondiario (RRF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/26/167_163_163/de",
-      "sha": "9172ebb28ab8d4e131db38f9eec5bcd01c0bf52eb7eb5c53afb6c0c94d53b2f0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/753",
+      "dateDocument": "2016-11-23",
+      "roFundstelle": "AS 2016 4667",
+      "titelDe": "Verordnung über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Verordnung über die elektronische Signatur, VZertES)",
+      "titelFr": "Ordonnance sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (Ordonnance sur la signature électronique, OSCSE)",
+      "titelIt": "Ordinanza sui servizi di certificazione nel campo della firma elettronica e di altre applicazioni di certificati digitali (Ordinanza sulla firma elettronica, OFiEle)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/753/de",
+      "sha": "2833c337150970c755894cd485d7b5f7f6a92b1f9e8753f14b630873fd80e881"
     }
   ],
-  "sha": "ba5293c1b3e28d1d0c39a9968c958652382dfff7b3ef4cdd10d99981b8ca0522"
+  "sha": "a19b5261db76901d3b689c6a2bd70a68e84ea81b9faac47690f115a249a4c46c"
 }

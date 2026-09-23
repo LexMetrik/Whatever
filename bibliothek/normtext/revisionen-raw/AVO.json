@@ -845,5 +845,168 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2023/356",
       "zielFundstelle": "AS 2023 356"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2005/735",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2005/735",
+    "inkrafttreten": "2006-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/735",
+        "typ": 5,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/671",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/671",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/534",
+        "typ": 1,
+        "datum": "2007-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/749",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/749",
+        "typ": 2,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/750",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/750",
+        "typ": 2,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/884",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/21",
+        "typ": 6,
+        "datum": "2014-01-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/233",
+        "typ": 1,
+        "datum": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/233",
+        "typ": 2,
+        "datum": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/840",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+        "typ": 1,
+        "datum": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+        "typ": 2,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/425",
+        "typ": 1,
+        "datum": "2024-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/95",
+        "typ": 6,
+        "datum": "2026-02-26"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2007/534": {
+        "dateForce": "2007-09-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 3989",
+        "titelDe": "Verordnung über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsverordnung, RAV)",
+        "titelFr": "Ordonnance sur l'agrément et la surveillance des réviseurs (Ordonnance sur la surveillance de la révision, OSRev)",
+        "titelIt": "Ordinanza sull'abilitazione e la sorveglianza dei revisori (Ordinanza sui revisori, OSRev)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/749": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-10-15",
+        "roId": "RO 2008 5343",
+        "titelDe": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht (FINMA-Gebühren- und Abgabenverordnung, FINMA-GebV)",
+        "titelFr": "Ordonnance réglant la perception d'émoluments et de taxes par l'Autorité fédérale de surveillance des marchés financiers (Ordonnance sur les émoluments et les taxes de la FINMA, Oém-FINMA)",
+        "titelIt": "Ordinanza sulla riscossione di emolumenti e tasse da parte dell'Autorità federale di vigilanza sui mercati finanziari (Ordinanza sugli emolumenti e sulle tasse della FINMA, Oem-FINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/750": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-10-15",
+        "roId": "RO 2008 5363",
+        "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+        "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+        "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/840": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-11-18",
+        "roId": "RO 2015 5165",
+        "titelDe": "Verordnung betreffend die Aufsicht über die soziale Krankenversicherung (Krankenversicherungsaufsichtsverordnung, KVAV)",
+        "titelFr": "Ordonnance sur la surveillance de l'assurance-maladie sociale (Ordonnance sur la surveillance de l'assurance-maladie, OSAMal)",
+        "titelIt": "Ordinanza concernente la vigilanza sull'assicurazione sociale contro le malattie (Ordinanza sulla vigilanza sull'assicurazione malattie, OVAMal)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/854": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-11-25",
+        "roId": "RO 2015 5413",
+        "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+        "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+        "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/698": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2022-10-19",
+        "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+        "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+        "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/425": {
+        "dateForce": "2024-09-01",
+        "dateDoc": "2024-08-14",
+        "titelDe": "Verordnung über die Regulierung der Versicherungsvermittlertätigkeit",
+        "titelFr": "Ordonnance sur la réglementation de l’activité des intermédiaires d’assurance",
+        "titelIt": "Ordinanza che disciplina l’attività degli intermediari assicurativi"
+      }
+    }
   }
 }

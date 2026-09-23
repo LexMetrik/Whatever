@@ -1,27 +1,54 @@
 {
   "erlassKey": "BANKV",
   "sr": "952.02",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/207",
+      "dateDocument": "2026-04-22",
+      "roFundstelle": "AS 2026 207",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "fbd38e2050aea6ad8a997ef0a1da4a5575ae5554f79ffafb7d3e46f3e34eb049"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/207/de",
+      "sha": "1beb820840e50180edfde52f85339e406c25a9421464e8f0c62b28e8f91b423b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "2471958e1afc529dc581661b0f8324b060a388065160e0c6e5b8ca89fdfc90bb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/13",
+      "dateDocument": "2023-11-29",
+      "roFundstelle": "AS 2024 13",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/13/de",
+      "sha": "8b74daf799c33acaf9b0a9d951d5ae29a8956f3752822a3b16940cc3b4421880"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "9a44e04327a90a3f332acb1cda129897f9d652dc8c8e722c6121ccb87bd5bdda"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
       "art": "aenderung",
@@ -32,26 +59,60 @@
       "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
       "titelFr": "Ordonnance sur les banques et les caisses d’épargne (Ordonnance sur les banques, OB)",
       "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/804/de",
-      "sha": "0f5b87590eb0fd1ee267f8a64f55ac74ebc620a6576901517d8f22a2deac5e6c"
+      "sha": "61a9a59e3eb86d6fe0cd1784ca9fef3ee95cb598c5f14ba23cddb4572d1c6599"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "7728f4bb35a8a3aa01160a311ddf726dedc4549ed3738a8107235c2fc854112c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 400",
+      "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "sha": "cbaa09b474cb03fa4335cbbe4d0eb3cd22f479df7c6b4dafb89f95ae9cca1d03"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "0ba94004572e6313d037543ebbdf3c7dc9226bad90e88b5f43e1635b0ee3de1f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/759",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4459",
+      "titelDe": "Verordnung über die Finanzdienstleistungen (Finanzdienstleistungsverordnung, FIDLEV)",
+      "titelFr": "Ordonnance sur les services financiers (OSFin)",
+      "titelIt": "Ordinanza sui servizi finanziari (OSerFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/759/de",
+      "sha": "b872598e576135a08a7385d6bd27731c4a4c2c13089fe67e6f2e540679b14ab6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "5a3602d7acc8a23578be25aff0ed855729cfcf7671b3982176576924e7f7ccff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/799",
+      "dateDocument": "2018-11-30",
+      "roFundstelle": "AS 2018 5229",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2019-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/799/de",
+      "sha": "43113149e5cea471ee0024b7e49f33f496dc0596966ce33672467bca4a56af58"
     },
     {
       "art": "aenderung",
@@ -62,8 +123,30 @@
       "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
       "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
       "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2019-04-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/799/de",
-      "sha": "4fdb0326c7efa6ec537a3eb9d5913f4d0d2d8d0a2e9f8c9a686d8befc95cb86a"
+      "sha": "e7fc9c31eb3218e55cc45e0520d488c6f7afffcd2cc32b83ac44ba7f1fb57c34"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/800",
+      "dateDocument": "2018-11-21",
+      "roFundstelle": "AS 2018 5241",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/800/de",
+      "sha": "c4ae0ee774fbe5992c354915f9f03b71df0cac1c7979a2ce7e138ac390f6c902"
     },
     {
       "art": "aenderung",
@@ -74,20 +157,41 @@
       "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
       "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
       "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/454/de",
-      "sha": "e42cff588bca89e91f84f048253e64089a637680e0bcc8997e3197fff54bf121"
+      "sha": "27cf35538da03d1757d8f04d11f303165565c64f3a907130900454fbe26f3873"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "92480680cdafbf4de807994e7f4329df267cd92da2edc74c4432809180b1baba"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/312",
+      "dateDocument": "2016-05-11",
+      "roFundstelle": "AS 2016 1725",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/312/de",
+      "sha": "330658d750d3524e7f5f2d787e00136c152b9e29f13b3f7116e017d569685f06"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.02",
-      "sha": "b3c7cd9009f7a20a61c8388c7c7526982cf06404de87272896c2b05ad9954d1a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5413",
+      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "sha": "1dafdd859641fa404d58133e5b4a5fbffc90cf3b941d5b67377c0ecbd1b63527"
     },
     {
       "art": "aenderung",
@@ -100,164 +204,7 @@
       "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR) (Concerne soltanto il testo francese)",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/727/de",
       "sha": "a0c5c72ebec674ad6ca83efebfdb860dec75ad769feea9d261c9fa6d8eea223a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/273",
-      "dateDocument": "2014-04-30",
-      "roFundstelle": "AS 2014 1269",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/273/de",
-      "sha": "c7e9d535ab1a2fb1002fc3fe7e2c7f1964b7c3532db06c5ebd70c670c98c0a69"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/628",
-      "dateDocument": "2012-06-01",
-      "roFundstelle": "AS 2012 5435",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "botschaftKey": "BOTSCHAFT-2012-993",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/628/de",
-      "sha": "7679a330f5d9707f0dfb0e9637471c522679fa46d61999ea409edf32182ea5df"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-09-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/560",
-      "dateDocument": "2011-08-24",
-      "roFundstelle": "AS 2011 3931",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/560/de",
-      "sha": "cb47f51cc23c0d0c0fc6345352da05ab12f238d6f249793eb5d0b241b38c664c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/623",
-      "dateDocument": "2009-10-14",
-      "roFundstelle": "AS 2009 5279",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza su le banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/623/de",
-      "sha": "247e2983533e323b5bc0c74624d69036bfd8194c720e729e4cb22ed53eee8cb3"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/304",
-      "dateDocument": "2009-05-13",
-      "roFundstelle": "AS 2009 2465",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung; BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza su le banche e le casse di risparmio (Ordinanza sulle banche; OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/304/de",
-      "sha": "2ee202bfd1d0fffec112098542318885dccf9bb0a9d1e4782f3814a0ff615655"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/215",
-      "dateDocument": "2008-03-14",
-      "roFundstelle": "AS 2008 1199",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/215/de",
-      "sha": "f2869c7fe54278238c45ed258a81c04caa22d2dc7050da1d0dc9103c5bac9eb2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/656",
-      "dateDocument": "2005-09-30",
-      "roFundstelle": "AS 2005 4849",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza su le banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/656/de",
-      "sha": "d336c3e07597537e1e21e5bf6e63149cc423242ea5ff1b5f23e03de2144b9ae4"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2005-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/355",
-      "dateDocument": "2004-03-24",
-      "roFundstelle": "AS 2004 2875",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza su le banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/355/de",
-      "sha": "abb875c72e0d09cf40bd2dc04607ea8986bc352b3fd0441996a2338368034301"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/341",
-      "dateDocument": "2004-03-31",
-      "roFundstelle": "AS 2004 2777",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza su le banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/341/de",
-      "sha": "5563b4c331687039d1234e5a7364ca017180c74b4cb395d167389cc44504c83c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/603",
-      "dateDocument": "2003-11-12",
-      "roFundstelle": "AS 2003 4077",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza su le banche e le casse di risparmio (O sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/603/de",
-      "sha": "fe28a87611c1b9d8c6a19d3faf76e9e2079aafe934a5367002227aa319954249"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1999-11-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/456",
-      "dateDocument": "1999-10-04",
-      "roFundstelle": "AS 1999 2891",
-      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza sulle banche e le casse di risparmio(Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/456/de",
-      "sha": "f5f47a26f81ac5a6fc5fd6bc98e64c70364dce73159f980e7d45d89186220de5"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1998-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2646_2646_2646",
-      "dateDocument": "1998-10-21",
-      "roFundstelle": "AS 1998 2646",
-      "titelDe": "Verordnung über Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2646_2646_2646/de",
-      "sha": "3e3b6b223426df960a9a0acaf562168fb2d70c80854a14aea57bfd681347924e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1972-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/821_832_752",
-      "dateDocument": "1972-05-17",
-      "roFundstelle": "AS 1972 821",
-      "titelDe": "Verordnung vom 17. Mai 1972 über die Banken und Sparkassen (Bankenverordnung, BankV)",
-      "titelFr": "Ordonnance du 17 mai 1972 sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
-      "titelIt": "Ordinanza del 17 maggio 1972 sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/821_832_752/de",
-      "sha": "565b3729cbc5d91f72a3c81e25bb9b80bfa93d9f191c85c591fdb2c5815ba6eb"
     }
   ],
-  "sha": "0399a067f1460aa9329e0e96d5a3063ebff5fdec2b3b2aa4afe0ee3104ffb036"
+  "sha": "55ddc8581befe9c468538e0692f5edb08fb8bf548cdc75734de547f8c4b24218"
 }

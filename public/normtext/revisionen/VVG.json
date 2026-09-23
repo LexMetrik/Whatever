@@ -1,20 +1,40 @@
 {
   "erlassKey": "VVG",
   "sr": "221.229.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.229.1",
-      "sha": "3d1f9e2d6cc84823c2098a9022a0c9689ad4904f8df26de9816247f9c97abbfe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/355",
+      "dateDocument": "2022-03-18",
+      "roFundstelle": "AS 2023 355",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
+      "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "botschaftKey": "BOTSCHAFT-2020-2421",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/355/de",
+      "sha": "660772b412724c638603fef7239599c520acd86291b6e3297f373af5c03143f2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.229.1",
-      "sha": "beca4a17768af3d6809e6d394376bc3a46a437520f6901f23733aa44f33fa1a6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
       "art": "aenderung",
@@ -26,8 +46,12 @@
       "titelFr": "Loi fédérale sur le contrat d'assurance (Loi sur le contrat d'assurance, LCA)",
       "titelIt": "Legge federale sul contratto d'assicurazione (Legge sul contratto d'assicurazione, LCA)",
       "botschaftKey": "BOTSCHAFT-2017-1303",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/884/de",
-      "sha": "160b35af5647487ee9e579c00d7b2edbc99cab63887971da790bbcc1705100bf"
+      "sha": "9e8acb691d830f02cf31c5cb47fe7d52b47eec8f3b1d7a5795cca09f8a507b81"
     },
     {
       "art": "aenderung",
@@ -38,14 +62,43 @@
       "titelDe": "Bundesgesetz über den Versicherungsvertrag (Versicherungsvertragsgesetz, VVG). Berichtigung",
       "titelFr": "Loi fédérale sur le contrat d’assurance (Loi sur le contrat d’assurance, LCA). Erratum",
       "titelIt": "Legge federale sul contratto d’assicurazione (Legge sul contratto d’assicurazione, LCA). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/357/de",
-      "sha": "7ae3755a318c3a382cf2fd9e49991334619276264dce90abcc40201dd15c2ecf"
+      "sha": "b47bf8b4e9c374ca54e476bf68e3064f7ce97a3cf6b88c5a40cb17bc9cad221f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.229.1",
-      "sha": "97e3872907303e5ae897eea6c1f84523c9a98ed1ba85b0b9a0e7bc44e8de417f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4e049f3ec1d7b48f85303a681b41203371425d289e3653e8f2647c00a4aff76d"
     },
     {
       "art": "aenderung",
@@ -56,26 +109,95 @@
       "titelDe": "Bundesgesetz über den Versicherungsvertrag (Versicherungsvertragsgesetz, VVG)",
       "titelFr": "Loi fédérale sur le contrat d'assurance (Loi sur le contrat d'assurance, LCA)",
       "titelIt": "Legge federale sul contratto d'assicurazione (Legge sul contratto d'assicurazione, LCA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/365/de",
-      "sha": "7998d2aade2b56356415e4e62b2e342bffad089bd97ccc3627571554235a973a"
+      "sha": "17b030ed8f84e6ef0feff09afe7cb92d3b887135771d413e25f801f0838c65d6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.229.1",
-      "sha": "f8b0b0416fb362105503a26c30ffa18f6d74908fff66732bfae8097df098e070"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "a49275dd1e695a08626c44f542a93882136ca75eb114782b1d3d566c8e97872c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.229.1",
-      "sha": "3fe0db3178ae717a5eb44da33b2380f2c15bd92610b81dffdb3923bebcc5103e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/722",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5129",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG)",
+      "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI)",
+      "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI)",
+      "botschaftKey": "BOTSCHAFT-2005-719",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/722/de",
+      "sha": "fd9249537cbfaa5e1d2e908654a9111336fe751ea9c1d0c4233b83c6b910f448"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.229.1",
-      "sha": "3490d0d677b8374d1ac4508a1b244c4043e035250404e8fd309f2a252672b286"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2007 5259",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)",
+      "botschaftKey": "BOTSCHAFT-2006-52",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "sha": "c598ef37bb15cbed37724779fb3cdf4f7ee5459d0057f7498ef7d645fa90749b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/726",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2005 5245",
+      "titelDe": "Bundesgesetz über den Versicherungsvertrag",
+      "titelFr": "Loi fédérale sur le contrat d'assurance",
+      "titelIt": "Legge federale sul contratto d'assicurazione",
+      "botschaftKey": "BOTSCHAFT-2003-577",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-01-01",
+        "2007-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/726/de",
+      "sha": "d101d86dd502434ac0ebe9d3915171d84c914b77b1787900b12ac07f74e729f9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
     },
     {
       "art": "aenderung",
@@ -86,8 +208,11 @@
       "titelDe": "Bundesgesetz über den Versicherungsvertrag (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur le contrat d'assurance (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sul contratto d'assicurazione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/633/de",
-      "sha": "bce9be5328ad4a8ad24fe85704fdd8bac5941086940fbcdd6144662670ae07e9"
+      "sha": "5a73f47a40328e8e309072ad99138c504b5daa62fb0788506407ac190ff5596f"
     },
     {
       "art": "aenderung",
@@ -99,27 +224,122 @@
       "titelFr": "Loi fédérale sur le contrat d'assurance",
       "titelIt": "Legge federale sul contratto d'assicurazione",
       "botschaftKey": "BOTSCHAFT-2003-577",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2006-01-01",
+        "2007-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/726/de",
-      "sha": "86c6a89eb690708af081c667ef1c118f705506c9fcfb9c580253ca7c9ef541f6"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.229.1",
-      "sha": "6420b5e19c25327717a3ea6489758452bd152033fa9532191cb1ac93cae4c7cf"
+      "sha": "1db06e8955aa273e57873b93272abde95f562391f20b264fee0672145e6c66e2"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1910-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/24/719_735_717",
-      "dateDocument": "1908-04-02",
-      "roFundstelle": "AS 24 719",
-      "titelDe": "Bundesgesetz vom 2. April 1908 über den Versicherungsvertrag (Versicherungsvertragsgesetz, VVG)",
-      "titelFr": "Loi fédérale du 2 avril 1908 sur le contrat d'assurance (Loi sur le contrat d'assurance, LCA)",
-      "titelIt": "Legge federale del 2 aprile 1908 sul contratto d'assicurazione (Legge sul contratto d'assicurazione, LCA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/24/719_735_717/de",
-      "sha": "f96b70b72e4e5f42dbe18b1b5fef8075337f29e2abb53c04278ef886223dad72"
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1328_1328_1328",
+      "dateDocument": "1994-03-18",
+      "roFundstelle": "AS 1995 1328",
+      "titelDe": "Bundesgesetz vom 18. März 1994 über die Krankenversicherung (KVG)",
+      "titelFr": "Loi fédérale du 18 mars 1994 sur l'assurance-maladie (LAMal)",
+      "titelIt": "Legge federale del 18 marzo 1994 sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1328_1328_1328/de",
+      "sha": "a4bd5afd3a10abd63bba27ed35d3fba5b80216ccaf695a1f178a9f8ab3847b96"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3175_3175_3175",
+      "dateDocument": "1993-06-18",
+      "roFundstelle": "AS 1993 3175",
+      "titelDe": "Bundesgesetz über den Versicherungsvertrag, Änderung",
+      "titelFr": "Loi fédérale sur le contrat d'assurance, Modification",
+      "titelIt": "Legge federale sul contratto d'assicurazione, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3175_3175_3175/de",
+      "sha": "6b14b7c701bfc34585416c06566a130567fcca72972f82109c21ebf9deaa8276"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/797_797_797",
+      "dateDocument": "1982-06-25",
+      "roFundstelle": "AS 1983 797",
+      "titelDe": "Bundesgesetz vom 25. Juni 1982 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "titelFr": "Loi fédérale du 25 juin 1982 sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+      "titelIt": "Legge federale del 25 giugno 1982 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/797_797_797/de",
+      "sha": "0591938aa167b9298432f0d4653a6206d582353b3558b4f1a1e4ba3bc43d5f2e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/2184_2184_2184",
+      "dateDocument": "1982-06-25",
+      "roFundstelle": "AS 1982 2184",
+      "titelDe": "Bundesgesetz vom 25. Juni 1982 über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "titelFr": "Loi fédérale du 25 juin 1982 sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Loi sur l'assurance-chômage, LACI)",
+      "titelIt": "Legge federale del 25 giugno 1982 sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Legge sull'assicurazione contro la disoccupazione, LADI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/2184_2184_2184/de",
+      "sha": "f5b20a4ac893a1ea916ffd039d62b7cfbf3d35317d10725f954cf14e6a426683"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1836_1836_1836",
+      "dateDocument": "1978-06-23",
+      "roFundstelle": "AS 1978 1836",
+      "titelDe": "Bundesgesetz vom 23. Juni 1978 betreffend die Aufsicht über die privaten Versicherungseinrichtungen (Versicherungsaufsichtsgesetz, VAG)",
+      "titelFr": "Loi fédérale du 23 juin 1978 sur la surveillance des institutions d'assurance privées (Loi sur la surveillance des assurances, LSA)",
+      "titelIt": "Legge federale del 23 giugno 1978 sulla sorveglianza degli istituti d'assicurazione privati (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1836_1836_1836/de",
+      "sha": "a7b351a5b2220af17d144fe2668f3fe7abf4debdfb70a6029681d5603b905100"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+      "dateDocument": "1971-06-25",
+      "roFundstelle": "AS 1971 1465",
+      "titelDe": "Bundesgesetz vom 25. Juni 1971 über die Revision des Zehnten Titels und des Zehnten Titelsbis des Obligationenrechts (Der Arbeitsvertrag)",
+      "titelFr": "Loi fédérale du 25 juin 1971 revisant les titres dixième et dixièmebis du code des obligations (Du contrat de travail)",
+      "titelIt": "Legge federale del 25 giugno 1971 sulla revisione dei titoli decimo e decimobis del Codice delle obbligazioni (Contratto di lavoro)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1465_1461_1461/de",
+      "sha": "3af2682210bd729060af6e195f8dec10419579d24e6e081a91e51ff8fb599045"
     }
   ],
-  "sha": "8228dddcdf0cde5a6e8841a21bab5b80e491bda82dcd9d7bfbc96d1dab1facf7"
+  "sha": "a1a9cfb76442a7764f92bb1d4a4f5acce6da0fcb7124c9e6b07912813033416b"
 }

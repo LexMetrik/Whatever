@@ -1501,5 +1501,263 @@
     "2026-06-12"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1999/361",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1999/361",
+    "inkrafttreten": "1999-10-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/361",
+        "typ": 5,
+        "datum": "1999-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/274",
+        "typ": 1,
+        "datum": "2001-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/728",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/303",
+        "typ": 1,
+        "datum": "2006-05-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/303",
+        "typ": 2,
+        "datum": "2006-05-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/769",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/757",
+        "typ": 1,
+        "datum": "2008-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/819",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/347",
+        "typ": 1,
+        "datum": "2012-06-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/842",
+        "typ": 1,
+        "datum": "2013-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+        "typ": 1,
+        "datum": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+        "typ": 1,
+        "datum": "2015-07-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+        "typ": 1,
+        "datum": "2015-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/414",
+        "typ": 6,
+        "datum": "2015-07-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/627",
+        "typ": 1,
+        "datum": "2015-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/627",
+        "typ": 2,
+        "datum": "2015-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/100",
+        "typ": 1,
+        "datum": "2017-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/200",
+        "typ": 1,
+        "datum": "2017-04-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/200",
+        "typ": 2,
+        "datum": "2017-04-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/441",
+        "typ": 1,
+        "datum": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/281",
+        "typ": 1,
+        "datum": "2019-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/132",
+        "typ": 1,
+        "datum": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/72",
+        "typ": 1,
+        "datum": "2022-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/245",
+        "typ": 1,
+        "datum": "2023-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/550",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/735",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/208",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/223",
+        "typ": 1,
+        "datum": "2024-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/165",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/266",
+        "typ": 1,
+        "datum": "2026-06-12"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2004/728": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-11-03",
+        "roId": "RO 2004 4813",
+        "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+        "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+        "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/303": {
+        "dateForce": "2006-05-29",
+        "dateDoc": "2006-04-12",
+        "roId": "RO 2006 1945",
+        "titelDe": "Verordnung über das Zentrale Migrationsinformationssystem (ZEMIS-Verordnung)",
+        "titelFr": "Ordonnance sur le système d'information central sur la migration (Ordonnance SYMIC)",
+        "titelIt": "Ordinanza concernente il sistema d'informazione centrale sulla migrazione (Ordinanza SIMIC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/757": {
+        "dateForce": "2008-12-12",
+        "dateDoc": "2008-10-22",
+        "roId": "RO 2008 5421",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen im Ausländer- und Asylbereich zur Inkraftsetzung der Schengen- und Dublin-Assoziierungsabkommen",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du domaine des étrangers et de l'asile en raison de la mise en vigueur des accords d'association à Schengen et à Dublin",
+        "titelIt": "Ordinanza che adegua ordinanze del settore degli stranieri e dell'asilo a seguito della messa in vigore degli Accordi di associazione alla normativa di Schengen e di Dublino"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/842": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-12-07",
+        "roId": "RO 2012 6951",
+        "titelDe": "Asylverordnung 2 über Finanzierungsfragen (Asylverordnung 2, AsylV 2)",
+        "titelFr": "Ordonnance 2 sur l'asile relative au financement (Ordonnance 2 sur l'asile, OA 2)",
+        "titelIt": "Ordinanza 2 sull'asilo relativa alle questioni finanziarie (Ordinanza 2 sull'asilo, OAsi 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/358": {
+        "dateForce": "2015-07-01",
+        "dateDoc": "2015-06-12",
+        "roId": "RO 2015 1849",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen aufgrund von Neuerungen bezüglich des Dublin/Eurodac-Besitzstands",
+        "titelFr": "Ordonnance portant adaptation d'actes en raison de nouveautés en lien avec l'acquis de Dublin/Eurodac",
+        "titelIt": "Ordinanza sull'adeguamento di ordinanze in seguito a innovazioni concernenti l'acquis di Dublino/Eurodac"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/100": {
+        "dateForce": "2017-03-01",
+        "dateDoc": "2017-02-01",
+        "roId": "RO 2017 563",
+        "titelDe": "Verordnung über die Einführung der Landesverweisung",
+        "titelFr": "Ordonnance sur la mise en uvre de l'expulsion pénale",
+        "titelIt": "Ordinanza sull'attuazione dell'espulsione giudiziaria"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/132": {
+        "dateForce": "2021-04-01",
+        "dateDoc": "2021-02-24",
+        "titelDe": "Verordnung über den Schutz vor Cyberrisiken in der Bundesverwaltung (Cyberrisikenverordnung, CyRV)",
+        "titelFr": "Ordonnance sur la protection contre les cyberrisques dans l’administration fédérale (Ordonnance sur les cyberrisques, OPCy)",
+        "titelIt": "Ordinanza sulla protezione contro i ciber-rischi nell’Amministrazione federale (Ordinanza sui ciber-rischi, OCiber)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/800": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-17",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/735": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-08",
+        "titelDe": "Verordnung vom 8. November 2023 über die Informationssicherheit in der Bundesverwaltung und der Armee (Informationssicherheitsverordnung, ISV)",
+        "titelFr": "Ordonnance du 8 novembre 2023 sur la sécurité de l’information dans l’administration fédérale et l’armée (Ordonnance sur la sécurité de l’information, OSI)",
+        "titelIt": "Ordinanza dell’8 novembre 2023 sulla sicurezza delle informazioni in seno all’Amministrazione federale e all’esercito (Ordinanza sulla sicurezza delle informazioni, OSIn)"
+      }
+    }
+  }
 }

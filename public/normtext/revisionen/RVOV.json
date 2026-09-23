@@ -1,15 +1,24 @@
 {
   "erlassKey": "RVOV",
   "sr": "172.010.1",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/101",
+      "dateDocument": "2026-02-25",
+      "roFundstelle": "AS 2026 101",
+      "titelDe": "Bundespersonalverordnung (BPV)",
+      "titelFr": "Ordonnance sur le personnel de la Confédération (OPers)",
+      "titelIt": "Ordinanza sul personale federale (OPers)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "64e6740a082a27a698eee0a7f2960dc72a2e0996620c0fdf664fca7fee37d59b"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/101/de",
+      "sha": "42dce1075c695ce102b5395f4ad00400047eb33e6788ea079c194f303b8180ef"
     },
     {
       "art": "aenderung",
@@ -21,20 +30,41 @@
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/420/de",
-      "sha": "4bd5d77916d25486b27cc427747e337a06f469efb5e417defa65993272ea73c4"
+      "sha": "62f9b248ef7440205306316b74ab3145b4a6dc17e247361a0cf19d417bb9b730"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "471d6d9e79e938ca20123a8a6a46ef117edbdcd2489d8a6249a2e3205a3cf427"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/51",
+      "dateDocument": "2026-01-28",
+      "roFundstelle": "AS 2026 51",
+      "titelDe": "Verordnung vom 28. Januar 2026 über die Kommission für historisch belastetes Kulturerbe (VKHBK)",
+      "titelFr": "Ordonnance du 28 janvier 2026 sur la Commission pour le patrimoine culturel au passé problématique (OCPCP)",
+      "titelIt": "Ordinanza del 28 gennaio 2026 sulla Commissione per il patrimonio culturale storicamente problematico (OCPSP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/51/de",
+      "sha": "03fa32d3a765163b41fa954256054acf85b52b7eb7e03f26368863ef45a7c1fe"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "dd3718837fc29eec30b28208aa28e987cbd55ea1a77e6dc87d18be210b7a323e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/834",
+      "dateDocument": "2025-11-26",
+      "roFundstelle": "AS 2025 834",
+      "titelDe": "Verordnung über die Krankenversicherung (KVV) (Kosten- und Qualitätsziele)",
+      "titelFr": "Ordonnance sur l’assurance-maladie (OAMal) (Objectifs en matière de coûts et de qualité)",
+      "titelIt": "Ordinanza sull’assicurazione malattie (OAMal) (Obiettivi in materia di costi e di qualità)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/834/de",
+      "sha": "93e690fa7a2f390a37764208c05df1dd1f8a6ae12e9d22abccd205bd9387db31"
     },
     {
       "art": "aenderung",
@@ -45,8 +75,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/411/de",
-      "sha": "7eecf9cd261e8235f0642734bed625723fc7c1f001b4835ca76bd996c753fad4"
+      "sha": "7af5ede48771e9214b866c63e170db9ec38fa54b84af34fa7c492ccf4d071e9c"
     },
     {
       "art": "aenderung",
@@ -57,8 +90,12 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/206/de",
-      "sha": "17f7ac35111164815a13245b3eeea6188e64578f8a8080f1096acfb79b5243d8"
+      "sha": "10c566b57f1b857622d7fb209ef473e3069396ad10709ce3365fafb5d1adf652"
     },
     {
       "art": "aenderung",
@@ -69,14 +106,45 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/313/de",
-      "sha": "a52b938bff17cef5bc7983199d1bb17e5cc3f9626b392f434504505e4b94a466"
+      "sha": "587d32b91ea69b2b8c3db3a7a263bfe767e1c8ced03674fffc9c8d73cc0fdf74"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "ef2203c74f07df3eb764015911974ee24c7a6d777f45424321da4e533c0868c5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/823",
+      "dateDocument": "2023-12-08",
+      "roFundstelle": "AS 2023 823",
+      "titelDe": "Tierschutzverordnung (TSchV)",
+      "titelFr": "Ordonnance sur la protection des animaux (OPAn)",
+      "titelIt": "Ordinanza sulla protezione degli animali (OPAn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/823/de",
+      "sha": "e8864211be21cc285e29175bdafea955531401225e4db45ac4b4aa9fc6992bbe"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/842",
+      "dateDocument": "2022-12-09",
+      "roFundstelle": "AS 2022 842",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Überprüfung 2022 der ausserparlamentarischen Kommissionen",
+      "titelFr": "Ordonnance portant adaptation d’ordonnances à la suite du réexamen de 2022 des commissions extraparlementaires",
+      "titelIt": "Ordinanza sull’adeguamento di ordinanze in seguito alla verifica del 2022 delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/842/de",
+      "sha": "f714560b1f7ef1981b3cc1a73ac2df5db23eaa7b73a32769b008911fd5cef8c6"
     },
     {
       "art": "aenderung",
@@ -87,14 +155,41 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/729/de",
-      "sha": "b1f31687a585c527cd38e882b8ac4b15f4adce756e0c0d68b970b2d9ae509a42"
+      "sha": "93bcb5d8302176506aa8bb5f60e8eb2a7c725415d50ded5b7dbdb1d4eb0b48d1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/746",
+      "dateDocument": "2023-11-22",
+      "roFundstelle": "AS 2023 746",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l’organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/746/de",
+      "sha": "70a58b055c7482d62cddf7ea7fb30be11a5c75103bc32f0ee20fcf14d63d6048"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "c83364dd644516b72ac6e4dce70b1a2784a869a83605321a1cfaf62e32245b82"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
       "art": "aenderung",
@@ -105,8 +200,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/249/de",
-      "sha": "f1df3b5595a482f2f9c032c7837c2110579e430bdc6604fc24cb24b97419a027"
+      "sha": "b64c7783d9c5659f9a201906933701a4fdaf7ea4dbdcdfd6d3eef8623b5927d4"
     },
     {
       "art": "aenderung",
@@ -117,8 +215,15 @@
       "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Überprüfung 2022 der ausserparlamentarischen Kommissionen",
       "titelFr": "Ordonnance portant adaptation d’ordonnances à la suite du réexamen de 2022 des commissions extraparlementaires",
       "titelIt": "Ordinanza sull’adeguamento di ordinanze in seguito alla verifica del 2022 delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/842/de",
-      "sha": "89075988bbe7b95ced9afe70aae4f220a2b83263af776be2d55986da98f69809"
+      "sha": "dceeff28e9209b5712f479f949bb175d28a9f8cc9489827849aae244f7cbc09c"
     },
     {
       "art": "aenderung",
@@ -129,8 +234,1305 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/179/de",
-      "sha": "cfc475492647705159dd389b7c28955b3a27e36c9d8bfab78385128458c084cc"
+      "sha": "0a554ba01cc74ee277eac08f9f18a388bb8aeae1466dc1711f28e882aa5a98d7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/416",
+      "dateDocument": "2002-08-21",
+      "roFundstelle": "AS 2002 2827",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2002-10-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/416/de",
+      "sha": "2937ad5826cc2d5dbbdb816f5458f2bfdbedd8707b77de527d36424afa40a959"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/611",
+      "dateDocument": "2003-11-19",
+      "roFundstelle": "AS 2003 4117",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2003-12-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/611/de",
+      "sha": "b1232e76a94c24c93ace6f309b9ed7378d3971652fc062a92ef51451da0bbf0d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/29",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 433",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/29/de",
+      "sha": "134856bb16265ea2efdb7d1cdbdfabbb52baa6ca0538b073df3c21af262b7286"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/805",
+      "dateDocument": "2004-12-10",
+      "roFundstelle": "AS 2004 5251",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/805/de",
+      "sha": "d703b9812c74075c8f7f6bc6a4665436383745a3dcca5c20cbd4bac97e2dcbe7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/225",
+      "dateDocument": "2006-04-05",
+      "roFundstelle": "AS 2006 1269",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-06-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/225/de",
+      "sha": "0df6f57e33f75bbf8faf18e3c29e343188223a71cfa329c8485c641d4d4d3a62"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/356",
+      "dateDocument": "2006-05-24",
+      "roFundstelle": "AS 2006 2331",
+      "titelDe": "Verordnung über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsverordnung, VBGÖ)",
+      "titelFr": "Ordonnance sur le principe de la transparence dans l'administration (Ordonnance sur la transparence, OTrans)",
+      "titelIt": "Ordinanza sul principio di trasparenza dell'amministrazione (Ordinanza sulla trasparenza, OTras)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/356/de",
+      "sha": "4d177fd15d72e8185ea9453d8ac6e1c1b53bd4c9e0a08b02faf91e4d687b3b95"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/59",
+      "dateDocument": "2008-01-16",
+      "roFundstelle": "AS 2008 191",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "etappen": [
+        "2008-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/59/de",
+      "sha": "48001e43ac3066dbd5ea7e4a15852fa69ccc70ab10b64de4bce2024106c5fa46"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/819",
+      "dateDocument": "2008-11-26",
+      "roFundstelle": "AS 2008 5949",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2009-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/819/de",
+      "sha": "b96e3f24ecbd8968d525ef1db01c593d27765f512124d986b18e630b8a63762c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/751",
+      "dateDocument": "2009-11-27",
+      "roFundstelle": "AS 2009 6137",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/751/de",
+      "sha": "341f73d65e54f0199a74fb4ef2db7d0740351385304f86d027bd205e5093b1f6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/355",
+      "dateDocument": "2010-06-04",
+      "roFundstelle": "AS 2010 2653",
+      "titelDe": "Verordnung über die Landessprachen und die Verständigung zwischen den Sprachgemeinschaften (Sprachenverordnung, SpV)",
+      "titelFr": "Ordonnance sur les langues nationales et la compréhension entre les communautés linguistiques (Ordonnance sur les langues, OLang)",
+      "titelIt": "Ordinanza sulle lingue nazionali e la comprensione tra le comunità linguistiche (Ordinanza sulle lingue, OLing)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/355/de",
+      "sha": "bf61fc89d4dbd0fc12686c62235e4357ce3be79591bf55c1feb44c3ac20feaf8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/427",
+      "dateDocument": "2010-06-30",
+      "roFundstelle": "AS 2010 3175",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2010-08-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/427/de",
+      "sha": "a08680061f1bf3299a3aa4257f1af1ac05dff5caed20ae6f9b4ef80c60ff63f6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/721",
+      "dateDocument": "2010-10-27",
+      "roFundstelle": "AS 2010 5047",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/721/de",
+      "sha": "1b2d85d3545eee53ab5c2ab57e6105591320f89e5342308553b28e5a3e68680e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/784",
+      "dateDocument": "2010-11-24",
+      "roFundstelle": "AS 2010 5461",
+      "titelDe": "Verordnung zum Forschungsgesetz (Forschungsverordnung)",
+      "titelFr": "Ordonnance relative à la loi sur la recherche (Ordonnance sur la recherche)",
+      "titelIt": "Ordinanza della legge sulla ricerca (Ordinanza sulla ricerca)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/784/de",
+      "sha": "f4418ef8b92d6b140881d0e494376e1ab490863dbaf9a02e382f098d0b1af6e7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/248",
+      "dateDocument": "2011-04-20",
+      "roFundstelle": "AS 2011 1631",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für auswärtige Angelegenheiten (OV-EDA)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des affaires étrangères (Org DFAE)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale degli affari esteri (OOrg-DFAE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-05-15",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/248/de",
+      "sha": "4c82eb26db5e1824583b486d115ee7c991a051d16bfad81c8fbcb8af7d084125"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/535",
+      "dateDocument": "2011-08-17",
+      "roFundstelle": "AS 2011 3787",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Finanzdepartement (OV-EFD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des finances (Org DFF)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale delle finanze (Org-DFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-09-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/535/de",
+      "sha": "5005ec246a19e6ecc6d5980ff3b49a9e4fedc2ff9b347cc7bccfeb09a4a1a86a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/652",
+      "dateDocument": "2011-03-23",
+      "roFundstelle": "AS 2011 4589",
+      "titelDe": "Verordnung über die Organisation der Schweizerischen Unfalluntersuchungsstelle (Organisationsverordnung SUST, OV-SUST)",
+      "titelFr": "Ordonnance sur l'organisation du Service d'enquête suisse sur les accidents (Ordonnance sur l'organisation du SESA, Org SESA)",
+      "titelIt": "Ordinanza sull'organizzazione del Servizio d'inchiesta svizzero sugli infortuni (Ordinanza sull'organizzazione del SISI, Org-SISI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-11-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/652/de",
+      "sha": "5718cccef505891ed7b14b6ceb64863eba329ca3989fe420799aa08bf66ef081"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/752",
+      "dateDocument": "2011-11-09",
+      "roFundstelle": "AS 2011 5227",
+      "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
+      "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
+      "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/752/de",
+      "sha": "df6b83d868c4a011c504619bc5937d76e4a2fcb1a7524de200c644fc448e4e38"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/843",
+      "dateDocument": "2011-11-30",
+      "roFundstelle": "AS 2011 6091",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/843/de",
+      "sha": "b7cfe23c5633742ee9d3dc94d84b727d302d437e1ae52adca2091988a1ff0405"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/844",
+      "dateDocument": "2011-12-09",
+      "roFundstelle": "AS 2011 6093",
+      "titelDe": "Verordnung über die Informatik und Telekommunikation in der Bundesverwaltung (Bundesinformatikverordnung, BinfV)",
+      "titelFr": "Ordonnance sur l'informatique et la télécommunication dans l'administration fédérale (Ordonnance sur l'informatique dans l'administration fédérale, OIAF)",
+      "titelIt": "Ordinanza concernente l'informatica e la telecomunicazione nell'Amministrazione federale (Ordinanza sull'informatica nell'Amministrazione federale, OIAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/844/de",
+      "sha": "3b273d85fe103bb5b7e90b5334206a5e988263ef322f0fcd69b2c4b4045f2a39"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "7610632cfd6fca1de816fb3be9d9870363fad811ceea2c7719239de04cee1e30"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/445",
+      "dateDocument": "2012-06-27",
+      "roFundstelle": "AS 2012 3819",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-08-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/445/de",
+      "sha": "62e761787900aa74c9fc39c55308ca51eb5090f504420e313e9af87a0035a344"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/832",
+      "dateDocument": "2012-11-21",
+      "roFundstelle": "AS 2012 6887",
+      "titelDe": "Verordnung über das Eidgenössische Institut für Metrologie (EIMV)",
+      "titelFr": "Ordonnance sur l'Institut fédéral de métrologie (OIFM)",
+      "titelIt": "Ordinanza sull'Istituto federale di metrologia (OIFM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/832/de",
+      "sha": "4c5ad6bb2c25be73a1c8dddeebb75fd0da83e1d51ecbb5ec25080437c8cf3fe2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/843",
+      "dateDocument": "2012-11-21",
+      "roFundstelle": "AS 2012 6959",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/843/de",
+      "sha": "fcd5b3c436201368bb78ca6f5269dfbcde7d9754ded1c4ff10fe54664e2b433a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/844",
+      "dateDocument": "2012-11-30",
+      "roFundstelle": "AS 2012 6961",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/844/de",
+      "sha": "4b850458d29c5557aafefedb5f99914330b99f95ecc51a79d39651212eb76936"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/900",
+      "dateDocument": "2012-12-28",
+      "roFundstelle": "AS 2012 7499",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/900/de",
+      "sha": "31cf0456c634e74622c5804e88645d51567869f590cc248eac3f122ac536a609"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/2",
+      "dateDocument": "2012-12-19",
+      "roFundstelle": "AS 2013 7",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/2/de",
+      "sha": "d27d876038ec91194cd26d44b022711827a7fa1233172a8ee5748067b0080cd0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/22",
+      "dateDocument": "2013-01-15",
+      "roFundstelle": "AS 2013 199",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-01-15",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/22/de",
+      "sha": "ca58eb60499f0b962f042a9c8d71363cec3c6b11b7f9e0fa485f7964fef0405a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/25",
+      "dateDocument": "2012-12-19",
+      "roFundstelle": "AS 2013 205",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/25/de",
+      "sha": "ee84fbf23876126f758a3116e7c7967555bea9211efa58a2f2bb3511d2f58127"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/301",
+      "dateDocument": "2013-05-01",
+      "roFundstelle": "AS 2013 1313",
+      "titelDe": "Verordnung über die Organisation des Nationalen Kontaktpunktes für die OECD-Leitsätze für multinationale Unternehmen und über seinen Beirat (NKPV-OECD)",
+      "titelFr": "Ordonnance sur l'organisation du Point de contact national pour les Principes directeurs de l'OCDE à l'intention des entreprises multinationales et sur sa commission consultative (OPCN-OCDE)",
+      "titelIt": "Ordinanza concernente l'organizzazione del Punto di contatto nazionale per le Linee guida dell'OCSE destinate alle imprese multinazionali e la sua commissione consultiva (OPCN-OCSE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-06-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/301/de",
+      "sha": "0dc70c6868db4212cb467769a384cebcb95d64e3ae8c599ce61f8c195061b00a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/333",
+      "dateDocument": "2013-05-08",
+      "roFundstelle": "AS 2013 1447",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement des Innern (OV-EDI)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'intérieur (Org DFI)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'interno (OOrg-DFI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/333/de",
+      "sha": "efce9856c5ea90df76072eeccfaa1c636ba05ea39fc37657984d3f30b8420a38"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/447",
+      "dateDocument": "2013-06-26",
+      "roFundstelle": "AS 2013 2109",
+      "titelDe": "Verordnung über die Eidgenössische Fachkommission zur Beurteilung der Behandelbarkeit lebenslänglich verwahrter Straftäter",
+      "titelFr": "Ordonnance sur la Commission fédérale chargée de juger les possibilités de traiter les personnes internées à vie",
+      "titelIt": "Ordinanza sulla commissione peritale federale incaricata di valutare l'idoneità alla terapia dei criminali internati a vita",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/447/de",
+      "sha": "4282ea1b6b802a63a3563d3b1d56d73803af83eea5cfd80c001bee8b336c40a3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/692",
+      "dateDocument": "2013-10-23",
+      "roFundstelle": "AS 2013 3697",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/692/de",
+      "sha": "541ae3dde3583a0023200132173484a792e52f78beac8997e3c694ab96ae8e23"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/80",
+      "dateDocument": "2013-02-05",
+      "roFundstelle": "AS 2013 425",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-02-05",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/80/de",
+      "sha": "9256d94663539fc908ff83d8ea7e22ea52d6f714fffd04702f72d2aa02bae3db"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/81",
+      "dateDocument": "2013-02-05",
+      "roFundstelle": "AS 2013 427",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/81/de",
+      "sha": "b48fd8cc0fa3a62b4ebf34e51ecb3ae390c4aa68e28e1a6ccdc860b313c773c7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/812",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4561",
+      "titelDe": "Organisationsverordnung für den Bundesrat (OV-BR)",
+      "titelFr": "Ordonnance sur l'organisation du Conseil fédéral (Org CF)",
+      "titelIt": "Ordinanza sull'organizzazione del Consiglio federale (OOrg-CF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/812/de",
+      "sha": "d265fbd49d57e41544e0f220d419cb89a4177fb784c1fd3aaebc37452738b993"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/814",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4593",
+      "titelDe": "Verordnung zum Bundesgesetz über die Förderung der Forschung und der Innovation (Forschungs- und Innovationsförderungsverordnung, V-FIFG)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur l'encouragement de la recherche et de l'innovation (Ordonnance sur l'encouragement de la recherche et de l'innovation, O-LERI)",
+      "titelIt": "Ordinanza relativa alla legge federale sulla promozione della ricerca e dell'innovazione (Ordinanza sulla promozione della ricerca e dell'innovazione, O-LPRI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/814/de",
+      "sha": "6a69e4540a62a56628c6b59484e02ee66a1151c650e08d66aaf449d00b597a19"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/692",
+      "dateDocument": "2014-11-12",
+      "roFundstelle": "AS 2014 4137",
+      "titelDe": "Verordnung zum Hochschulförderungs- und -koordinationsgesetz (V-HFKG)",
+      "titelFr": "Ordonnance relative à la loi sur l'encouragement et la coordination des hautes écoles (O-LEHE)",
+      "titelIt": "Ordinanza concernente la legge sulla promozione e sul coordinamento del settore universitario svizzero (O-LPSU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/692/de",
+      "sha": "d54f5aee6038e3f98610be4600f8cc9c738c84e4d8ae6a68bc4ebb43306b5ad3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/739",
+      "dateDocument": "2014-12-05",
+      "roFundstelle": "AS 2014 4445",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/739/de",
+      "sha": "22503070520b2f5d753af34462a4d7091d464a102d69e7ec5fce1d831343e28a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/741",
+      "dateDocument": "2014-11-28",
+      "roFundstelle": "AS 2014 4451",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/741/de",
+      "sha": "03edf48b37394df6464a904c131b39346c6a5ed61b55ce2d2a03d98dcd8e14b0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/772",
+      "dateDocument": "2014-11-28",
+      "roFundstelle": "AS 2014 4605",
+      "titelDe": "Verordnung über die Vermittlung schweizerischer Bildung im Ausland (Schweizerschulenverordnung, SSchV)",
+      "titelFr": "Ordonnance sur la diffusion de la formation suisse à l'étranger (Ordonnance sur les écoles suisses à l'étranger, OESE)",
+      "titelIt": "Ordinanza sulla diffusione della formazione svizzera all'estero (Ordinanza sulle scuole svizzere all'estero, OSSE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/772/de",
+      "sha": "e5537f4096925f555be0a0e24141585f11970770b2b112a979ffa270c931ece9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/415",
+      "dateDocument": "2015-07-01",
+      "roFundstelle": "AS 2015 2239",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/415/de",
+      "sha": "517c7b52c6298e222ca75f856119c79c67c5fbf297db293f084caaa9266e6d7c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/62",
+      "dateDocument": "2015-01-28",
+      "roFundstelle": "AS 2015 423",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-03-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/62/de",
+      "sha": "d6971b90e731c8c02d832e11bc60f58a1a7a61f9919d99798f36cdf9d1f47c44"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/670",
+      "dateDocument": "2015-10-07",
+      "roFundstelle": "AS 2015 3989",
+      "titelDe": "Verordnung über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsverordnung, PublV)",
+      "titelFr": "Ordonnance sur les recueils du droit fédéral et la Feuille fédérale (Ordonnance sur les publications officielles, OPubl)",
+      "titelIt": "Ordinanza sulle raccolte del diritto federale e sul Foglio federale (Ordinanza sulle pubblicazioni ufficiali, OPubb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/670/de",
+      "sha": "89e7bd3ebc627e8dd6ad1d35fda56529d9dae5d666a903d079d99a98df9a09ea"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/673",
+      "dateDocument": "2015-10-14",
+      "roFundstelle": "AS 2015 4019",
+      "titelDe": "Finanzhaushaltverordnung (FHV) (Optimierung Neues Rechnungsmodell und Neues Führungsmodell für die Bundesverwaltung, NFB)",
+      "titelFr": "Ordonnance sur les finances de la Confédération (OFC) (Optimisation du nouveau modèle comptable de la Confédération et nouveau modèle de gestion de l'administration fédérale, NMG)",
+      "titelIt": "Ordinanza sulle finanze della Confederazione (OFC) (Ottimizzazione del Nuovo modello contabile e del Nuovo modello di gestione dell'Amministrazione federale, NMG)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/673/de",
+      "sha": "13a7621a483b9457f2a94cf05d1a892d2da743cc4874af76d544328e7fdf4024"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/675",
+      "dateDocument": "2015-10-07",
+      "roFundstelle": "AS 2015 4043",
+      "titelDe": "Verordnung über den Stilllegungsfonds und den Entsorgungsfonds für Kernanlagen (Stilllegungs- und Entsorgungsfondsverordnung, SEFV)",
+      "titelFr": "Ordonnance sur le fonds de désaffectation et sur le fonds de gestion des déchets radioactifs pour les installations nucléaires (Ordonnance sur le fonds de désaffectation et sur le fonds de gestion, OFDG)",
+      "titelIt": "Ordinanza sul Fondo di disattivazione e sul Fondo di smaltimento per gli impianti nucleari (Ordinanza sul Fondo di disattivazione e sul Fondo di smaltimento, OFDS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/675/de",
+      "sha": "8060ec5071df76d8b09084eea2ce18e9d346c578ce5abb788bca813e4cc7725c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/823",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5019",
+      "titelDe": "Verordnung über eine Karenzfrist für Leitungsfunktionen der Bundesverwaltung, für Mitglieder von Leitungsorganen von Anstalten des Bundes sowie für Mitglieder usserparlamentarischer Kommissionen (Karenzfristverordnung)",
+      "titelFr": "Ordonnance sur le délai de carence applicable aux cadres du plus haut niveau hiérarchique de l'administration fédérale, aux membres des organes de direction des établissements de la Confédération et aux membres des commissions extraparlementaires (Ordonnance sur le délai de carence)",
+      "titelIt": "Ordinanza concernente un periodo di attesa per le funzioni direttive dell'Amministrazione federale, per i membri di organi direttivi di stabilimenti della Confederazione e per i membri di commissioni extraparlamentari (Ordinanza sul periodo di attesa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/823/de",
+      "sha": "f4ae8ba6ca37de93f7e7c6bfb5b29475ffcd7c05fa63caf0531687640b364e81"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/162",
+      "dateDocument": "2016-03-11",
+      "roFundstelle": "AS 2016 929",
+      "titelDe": "Verordnung über das Vernehmlassungsverfahren (Vernehmlassungsverordnung, VlV)",
+      "titelFr": "Ordonnance sur la procédure de consultation (Ordonnance sur la consultation, OCo)",
+      "titelIt": "Ordinanza sulla procedura di consultazione (Ordinanza sulla consultazione, OCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-04-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/162/de",
+      "sha": "1a1868c7770e6cffa7b0dd186e1839bd539bcb5e0ef8586113f0e343458fe32e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/421",
+      "dateDocument": "2016-07-06",
+      "roFundstelle": "AS 2016 2641",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-08-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/421/de",
+      "sha": "015a2a0bccc82316ac019885b5d26aab4483581089c6c1c91b2070961c6b5b5d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/767",
+      "dateDocument": "2016-12-09",
+      "roFundstelle": "AS 2016 4813",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/767/de",
+      "sha": "987d18f165d139c9101e0051e84ac82c14fe0732822932956a9246c40db0e167"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/218",
+      "dateDocument": "2017-03-29",
+      "roFundstelle": "AS 2017 2307",
+      "titelDe": "Verordnung über die Strukturen der Armee (VSA)",
+      "titelFr": "Ordonnance sur les structures de l'armée (OStrA)",
+      "titelIt": "Ordinanza sulle strutture dell'esercito (OStrE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/218/de",
+      "sha": "b3f2c002580465e3d47fbcad78741e8dc7581661f18be021ca8fa3232cb69602"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/340",
+      "dateDocument": "2017-05-17",
+      "roFundstelle": "AS 2017 3275",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/340/de",
+      "sha": "5235f068bce463fd6a7e27f0499b4fa248f7ae7cf58bf89f70b7d13ddbcc180e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/497",
+      "dateDocument": "2017-08-16",
+      "roFundstelle": "AS 2017 4231",
+      "titelDe": "Verordnung über die Aufsicht über die nachrichtendienstlichen Tätigkeiten (VAND)",
+      "titelFr": "Ordonnance sur la surveillance des activités de renseignement (OSRens)",
+      "titelIt": "Ordinanza concernente la vigilanza sulle attività informative (OVAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-09-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/497/de",
+      "sha": "8df78b1bde498b653deb75df8c2160ebfe81b6444cbfb2422044ccf64317a7a7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/568",
+      "dateDocument": "2017-09-15",
+      "roFundstelle": "AS 2017 5161",
+      "titelDe": "Alkoholverordnung (AlkV)",
+      "titelFr": "Ordonnance sur l'alcool (OAlc)",
+      "titelIt": "Ordinanza sull'alcol (OAlc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/568/de",
+      "sha": "6166775426cdcd11976314a11163d1d0feb8da0de4430b0089f1467f365109be"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/733",
+      "dateDocument": "2017-11-15",
+      "roFundstelle": "AS 2017 6607",
+      "titelDe": "Verordnung zum Bundesgesetz über die Förderung der Forschung und der Innovation (Forschungs- und Innovationsförderungsverordnung, V-FIFG)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur l'encouragement de la recherche et de l'innovation (Ordonnance sur l'encouragement de la recherche et de l'innovation, O-LERI)",
+      "titelIt": "Ordinanza relativa alla legge federale sulla promozione della ricerca e dell'innovazione (Ordinanza sulla promozione della ricerca e dell'innovazione, O-LPRI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/733/de",
+      "sha": "f576aa45ec271e3f85623d2460956be0f23667793b305b6c083b60d472eb7db2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/756",
+      "dateDocument": "2017-11-22",
+      "roFundstelle": "AS 2017 6747",
+      "titelDe": "Finanzhaushaltverordnung (FHV)",
+      "titelFr": "Ordonnance sur les finances de la Confédération (OFC)",
+      "titelIt": "Ordinanza sulle finanze della Confederazione (OFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/756/de",
+      "sha": "e46fae15aca1769dd17d8c24831835584864ffe53cfc329ba52aa0d752a59be6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/565",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3475",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-11-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/565/de",
+      "sha": "08e651ab459efecbc3a88c5937092fab37865e168d84f28d4e7ef148804aefce"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/588",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3577",
+      "titelDe": "Verordnung über die Arzneimittel (Arzneimittelverordnung, VAM)",
+      "titelFr": "Ordonnance sur les médicaments (OMéd)",
+      "titelIt": "Ordinanza sui medicamenti (OM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/588/de",
+      "sha": "0b1f7f515cd3d51355658914e2cda3ef283a7836ec49689bb87bdd7f1ff0f470"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/609",
+      "dateDocument": "2018-10-17",
+      "roFundstelle": "AS 2018 3843",
+      "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+      "titelFr": "Ordonnance sur l'aviation (OSAv)",
+      "titelIt": "Ordinanza sulla navigazione aerea (ONA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/609/de",
+      "sha": "d5b8e8c040799d708160956c18deff664704ecf1cdb590b8b591353d162ba6c2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/717",
+      "dateDocument": "2018-11-07",
+      "roFundstelle": "AS 2018 4573",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Wirtschaft, Bildung und Forschung (OV-WBF)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'économie, de la formation et de la recherche (Org DEFR)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'economia, della formazione e della ricerca (Org-DEFR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/717/de",
+      "sha": "9e1b5182d2a52d4e0893b79cb02d72e96509ca127fd873bc1bee0a548be1919c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/751",
+      "dateDocument": "2018-11-30",
+      "roFundstelle": "AS 2018 4737",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/751/de",
+      "sha": "45c8358e63c92fdcba47e3e387224bd2258783344e8736c9dc7e193f4059efa1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/23",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 155",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2020-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/23/de",
+      "sha": "263d9d1176d26dabf3a63958d882dd962fb68b15e5494dafd45ab46b39ccc6d5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/253",
+      "dateDocument": "2019-04-03",
+      "roFundstelle": "AS 2019 1311",
+      "titelDe": "Verordnung über die elektronische Geschäftsverwaltung in der Bundesverwaltung (GEVER-Verordnung)",
+      "titelFr": "Ordonnance sur la gestion électronique des affaires dans l'administration fédérale (Ordonnance GEVER)",
+      "titelIt": "Ordinanza sulla gestione elettronica degli affari nell'Amministrazione federale (Ordinanza GEVER)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-04-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/253/de",
+      "sha": "fa11f65fd919ef5a8c60724b194a6988ffd048a7a1b73e5976c5b7db48c5efb1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/394",
+      "dateDocument": "2020-05-13",
+      "roFundstelle": "AS 2020 1915",
+      "titelDe": "Verordnung über die Organisation der Bahninfrastruktur (OBI-Verordnung)",
+      "titelFr": "Ordonnance sur l'organisation de l'infrastructure ferroviaire",
+      "titelIt": "Ordinanza sull'organizzazione dell'infrastruttura ferroviaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/394/de",
+      "sha": "4cc70e4c048f2caf8ff0e8fdcb050f01a989cf49e8b925afc77a245cc5e742a8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/460",
+      "dateDocument": "2020-05-27",
+      "roFundstelle": "AS 2020 2465",
+      "titelDe": "Verordnung über den Vollzug der Lebensmittelgesetzgebung (LMVV)",
+      "titelFr": "Ordonnance sur l'exécution de la législation sur les denrées alimentaires (OELDAl)",
+      "titelIt": "Ordinanza sull'esecuzione della legislazione sulle derrate alimentari (OELDerr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/460/de",
+      "sha": "9e700e1d1947ad83d534fa56001c16e86f68f797c9bce13390fb0d50b02b7f62"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/497",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2741",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Finanzdepartement (OV-EFD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des finances (Org DFF)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale delle finanze (Org-DFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/497/de",
+      "sha": "147905e301c3eb0c60e91817ccd71784f0472dbb2540d77f3a05b697f004ef64"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/939",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5405",
+      "titelDe": "Verordnung zum Bundesgesetz über die Aufarbeitung der fürsorgerischen Zwangsmassnahmen und Fremdplatzierungen vor 1981 (AFZFV)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur les mesures de coercition à des fins d'assistance et les placements extrafamiliaux antérieurs à 1981 (OMCFA)",
+      "titelIt": "Ordinanza relativa alla legge federale sulle misure coercitive a scopo assistenziale e i collocamenti extrafamiliari prima del 1981 (OMCCE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/939/de",
+      "sha": "a06e7811413c6f229e4a26459a9ae9736bdd868aa971614b2fb7219e5a564585"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/988",
+      "dateDocument": "2020-11-25",
+      "roFundstelle": "AS 2020 5871",
+      "titelDe": "Verordnung über die Koordination der digitalen Transformation und die IKT-Lenkung in der Bundesverwaltung (Verordnung über die digitale Transformation und die Informatik, VDTI)",
+      "titelFr": "Ordonnance sur la coordination de la transformation numérique et la gouvernance de l'informatique dans l'administration fédérale (Ordonnance sur la transformation numérique et l'informatique, OTNI)",
+      "titelIt": "Ordinanza sul coordinamento della trasformazione digitale e la governance delle TIC in seno all'Amministrazione federale (Ordinanza sulla trasformazione digitale e l'informatica, OTDI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/988/de",
+      "sha": "289a6e4c88db96917b24b3a0ddfa9ad62a2503b3003daed705ce10ec2fbe9d10"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/989",
+      "dateDocument": "2020-11-25",
+      "roFundstelle": "AS 2020 5893",
+      "titelDe": "Organisationsverordnung für die Bundeskanzlei (OV-BK)",
+      "titelFr": "Ordonnance sur l'organisation de la Chancellerie fédérale (Org ChF)",
+      "titelIt": "Ordinanza sull'organizzazione della Cancelleria federale (OrgCaF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/989/de",
+      "sha": "09869627c2a05a650f1696444506e49c912ea287c269639658424d3cf81505cd"
     },
     {
       "art": "aenderung",
@@ -141,12 +1543,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l’organisation du gouvernement et de l’administration (OLOGA)",
       "titelIt": "Ordinanza sull’organizzazione del Governo e dell’Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/776/de",
-      "sha": "bd1a4d286fdc42a8972ef67cfbc5fb14b30941978af4fc7132075622930711ce"
+      "sha": "41c8b24c51da36455731ef8cf3ea81519a39ed9e5b7da5a535a59a44956f7b02"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2021-07-09",
+      "dateEntryInForce": "2021-07-08",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/429",
       "dateDocument": "2021-07-09",
       "roFundstelle": "AS 2021 429",
@@ -155,26 +1560,83 @@
       "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale degli affari esteri (OOrg-DFAE). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2020 5899, das unter SR 172.211.1 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/429/de",
-      "sha": "e26513134b2be9877744b0e809600213e37dcf0fd0e47a1b6149e6548e2d4d81"
+      "sha": "3824f101acdeffbd611c2cd51dd7e19ea1d23dbf62c5cacf221670124e58ec3b"
     },
     {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2021-07-08",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "64a6794048498e32202147acafdb6e12e81f7350980836e1de1ca76f221e3012"
-    },
-    {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "a7e9e4edef8e303da174415b794e728fdbd9ec80596cead850ac4fdb696df0f2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/152",
+      "dateDocument": "2021-02-24",
+      "roFundstelle": "AS 2021 152",
+      "titelDe": "Verordnung über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance sur l’assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza sull’assicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/152/de",
+      "sha": "0ab4c5f830fc1c09856cce984f428fa62c03545b091b9a0ba41c52ec5494fbe4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "db82d52edcd48553d5fe113f3edd568f61c9022d854c46b3bdee7b2731bc2e27"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/939",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5405",
+      "titelDe": "Verordnung zum Bundesgesetz über die Aufarbeitung der fürsorgerischen Zwangsmassnahmen und Fremdplatzierungen vor 1981 (AFZFV)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur les mesures de coercition à des fins d'assistance et les placements extrafamiliaux antérieurs à 1981 (OMCFA)",
+      "titelIt": "Ordinanza relativa alla legge federale sulle misure coercitive a scopo assistenziale e i collocamenti extrafamiliari prima del 1981 (OMCCE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/939/de",
+      "sha": "996f7133df438eae5bbc390a57ff319daf99fe19a81950383ffbe7846993cde8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/988",
+      "dateDocument": "2020-11-25",
+      "roFundstelle": "AS 2020 5871",
+      "titelDe": "Verordnung über die Koordination der digitalen Transformation und die IKT-Lenkung in der Bundesverwaltung (Verordnung über die digitale Transformation und die Informatik, VDTI)",
+      "titelFr": "Ordonnance sur la coordination de la transformation numérique et la gouvernance de l'informatique dans l'administration fédérale (Ordonnance sur la transformation numérique et l'informatique, OTNI)",
+      "titelIt": "Ordinanza sul coordinamento della trasformazione digitale e la governance delle TIC in seno all'Amministrazione federale (Ordinanza sulla trasformazione digitale e l'informatica, OTDI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/988/de",
+      "sha": "5c2202f84d49795c0b021220be7e64651d00338b87fafe64c033c25f05771c81"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/989",
+      "dateDocument": "2020-11-25",
+      "roFundstelle": "AS 2020 5893",
+      "titelDe": "Organisationsverordnung für die Bundeskanzlei (OV-BK)",
+      "titelFr": "Ordonnance sur l'organisation de la Chancellerie fédérale (Org ChF)",
+      "titelIt": "Ordinanza sull'organizzazione della Cancelleria federale (OrgCaF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/989/de",
+      "sha": "21316bd6d933609af71153db297b1c0fba42e9c7384039f50d977178b83da31f"
     },
     {
       "art": "aenderung",
@@ -185,20 +1647,73 @@
       "titelDe": "Verordnung über die Organisation der Bahninfrastruktur (OBI-Verordnung)",
       "titelFr": "Ordonnance sur l'organisation de l'infrastructure ferroviaire",
       "titelIt": "Ordinanza sull'organizzazione dell'infrastruttura ferroviaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/394/de",
-      "sha": "f5ce2f3e31cfd6147bb98234247efe06e4e925bc72eb072874967acf1eba4819"
+      "sha": "a510c7384575a1587dabdffa7271ec4c62c06c3b2ac744e9bb3e692d1af6b403"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2020-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/460",
+      "dateDocument": "2020-05-27",
+      "roFundstelle": "AS 2020 2465",
+      "titelDe": "Verordnung über den Vollzug der Lebensmittelgesetzgebung (LMVV)",
+      "titelFr": "Ordonnance sur l'exécution de la législation sur les denrées alimentaires (OELDAl)",
+      "titelIt": "Ordinanza sull'esecuzione della legislazione sulle derrate alimentari (OELDerr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/460/de",
+      "sha": "6982c3d9107ae534113a1fd33840d5be19ff460db374268b3a9a3399ec1b51d0"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "41b729e160b42f856b735555c4c276bb6d47a23d5f3f07d590326ace53fc2703"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/253",
+      "dateDocument": "2019-04-03",
+      "roFundstelle": "AS 2019 1311",
+      "titelDe": "Verordnung über die elektronische Geschäftsverwaltung in der Bundesverwaltung (GEVER-Verordnung)",
+      "titelFr": "Ordonnance sur la gestion électronique des affaires dans l'administration fédérale (Ordonnance GEVER)",
+      "titelIt": "Ordinanza sulla gestione elettronica degli affari nell'Amministrazione federale (Ordinanza GEVER)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-04-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/253/de",
+      "sha": "0e57a5f082996d384fbac199af64c600c22c8be4868550c353e236cae4e35604"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "4de5861827b3c431ee5ad6718f827dfe9dfff7316d5f942635630fc6126e7c1c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/23",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 155",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2020-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/23/de",
+      "sha": "20840bed34e805d21fa3b4a4b2810da2a74c599620388ce993561d11aafcc19e"
     },
     {
       "art": "aenderung",
@@ -209,8 +1724,73 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2020-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/23/de",
-      "sha": "855cd138e90cf92faa7e992ea353eb9d420e86daeaf1221102b6284717712574"
+      "sha": "4bb31ae78418adcb1c905ad5705113b0a44ff104ee4b6886a9b7a45ddd9818b7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/588",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3577",
+      "titelDe": "Verordnung über die Arzneimittel (Arzneimittelverordnung, VAM)",
+      "titelFr": "Ordonnance sur les médicaments (OMéd)",
+      "titelIt": "Ordinanza sui medicamenti (OM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/588/de",
+      "sha": "3c0be16a67f38421de24c0bd68e27ab9b13fa33e648819484e9d6cd027353f70"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/609",
+      "dateDocument": "2018-10-17",
+      "roFundstelle": "AS 2018 3843",
+      "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+      "titelFr": "Ordonnance sur l'aviation (OSAv)",
+      "titelIt": "Ordinanza sulla navigazione aerea (ONA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/609/de",
+      "sha": "e06bfbd60145118e2df7cf143dfc545a906bb5a14ef1c36182d3728a16854d30"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/717",
+      "dateDocument": "2018-11-07",
+      "roFundstelle": "AS 2018 4573",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Wirtschaft, Bildung und Forschung (OV-WBF)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'économie, de la formation et de la recherche (Org DEFR)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'economia, della formazione e della ricerca (Org-DEFR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/717/de",
+      "sha": "863793ab57face5cf543239e891d9e2e6fda98aa3ee5704fb7d844941eeb40ec"
     },
     {
       "art": "aenderung",
@@ -221,8 +1801,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/751/de",
-      "sha": "dfe16e4ec79b68f2f7d53bc9a1ff3137ca950de4201d47dcc2f2621fb753e6e1"
+      "sha": "723b285be6be6c859d0511045f1c3c3a562b8a1c10dc05ff972c224343b63a42"
     },
     {
       "art": "aenderung",
@@ -233,20 +1820,110 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-11-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/565/de",
-      "sha": "fcbbdb5689507aa6bab3938cd04cb5bb06e4534389c7ba08f986f1091012c2af"
+      "sha": "28eee83ecaf2e44cfa278fa4b7823e1c529f0f404e556c124c22ea1e394e3ffd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "48c9f21be60faac8750f86d172425684dc2d45891d794e997f264349285a9b33"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/218",
+      "dateDocument": "2017-03-29",
+      "roFundstelle": "AS 2017 2307",
+      "titelDe": "Verordnung über die Strukturen der Armee (VSA)",
+      "titelFr": "Ordonnance sur les structures de l'armée (OStrA)",
+      "titelIt": "Ordinanza sulle strutture dell'esercito (OStrE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/218/de",
+      "sha": "d41b755cf5de6da10605c4c603077b737b879d13e78fc0719ca648796304fb5c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/568",
+      "dateDocument": "2017-09-15",
+      "roFundstelle": "AS 2017 5161",
+      "titelDe": "Alkoholverordnung (AlkV)",
+      "titelFr": "Ordonnance sur l'alcool (OAlc)",
+      "titelIt": "Ordinanza sull'alcol (OAlc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/568/de",
+      "sha": "e56ec75c8dcc6eaad3fff2e181168c01119ac5b520ac121649ccbb85eedd8bc5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/733",
+      "dateDocument": "2017-11-15",
+      "roFundstelle": "AS 2017 6607",
+      "titelDe": "Verordnung zum Bundesgesetz über die Förderung der Forschung und der Innovation (Forschungs- und Innovationsförderungsverordnung, V-FIFG)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur l'encouragement de la recherche et de l'innovation (Ordonnance sur l'encouragement de la recherche et de l'innovation, O-LERI)",
+      "titelIt": "Ordinanza relativa alla legge federale sulla promozione della ricerca e dell'innovazione (Ordinanza sulla promozione della ricerca e dell'innovazione, O-LPRI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/733/de",
+      "sha": "22024a324cf8139b26f2b7818553c93266f6d44631a12a42fdd8a206dfd28153"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/756",
+      "dateDocument": "2017-11-22",
+      "roFundstelle": "AS 2017 6747",
+      "titelDe": "Finanzhaushaltverordnung (FHV)",
+      "titelFr": "Ordonnance sur les finances de la Confédération (OFC)",
+      "titelIt": "Ordinanza sulle finanze della Confederazione (OFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/756/de",
+      "sha": "0046ad75a48071af7beb57f360a88fde44f4a90ca6ac76594b43fa9b6398fb48"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "ab80664f268d67f95f561f766c904a1d9f86a4fedb2a331fd528be56912b2bc7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/497",
+      "dateDocument": "2017-08-16",
+      "roFundstelle": "AS 2017 4231",
+      "titelDe": "Verordnung über die Aufsicht über die nachrichtendienstlichen Tätigkeiten (VAND)",
+      "titelFr": "Ordonnance sur la surveillance des activités de renseignement (OSRens)",
+      "titelIt": "Ordinanza concernente la vigilanza sulle attività informative (OVAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-09-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/497/de",
+      "sha": "e4821b35ebae196fa6c27c886ec7b84fbb99ebdd13ac4520d323e8d310c8897d"
     },
     {
       "art": "aenderung",
@@ -257,8 +1934,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-07-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/340/de",
-      "sha": "4561b3461421ecc03fd0fe2e0b2b4aad28ad6bd24834cb13306240d849a7e61f"
+      "sha": "37fc3d5eea1664c0df36d71705e0f0ec3ea89d1a6dda48abbfdcfbeb1eb2f3e3"
     },
     {
       "art": "aenderung",
@@ -269,8 +1953,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/767/de",
-      "sha": "e97c9a9dcfcea9d7292e6a27d20e5a9911d86859b13699e2d85ae73aebc41a6e"
+      "sha": "c8b348a4d15375d252051481424a51f54ccb12980fd8647dbc89f4ff0b60a046"
     },
     {
       "art": "aenderung",
@@ -281,14 +1972,54 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-08-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/421/de",
-      "sha": "f3c96124ea8d56a61346354e26f2b97c4f25615712e669606cd1effc0a194e8b"
+      "sha": "95ccc1e069735c827c5170f32ee897e9f9720ca7dd1c2e4a01db26a8b6465177"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "e18f72a4649d8dc024ba535c4dccc6fb31b0be57a460a85f845b8ef41131a2f6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/162",
+      "dateDocument": "2016-03-11",
+      "roFundstelle": "AS 2016 929",
+      "titelDe": "Verordnung über das Vernehmlassungsverfahren (Vernehmlassungsverordnung, VlV)",
+      "titelFr": "Ordonnance sur la procédure de consultation (Ordonnance sur la consultation, OCo)",
+      "titelIt": "Ordinanza sulla procedura di consultazione (Ordinanza sulla consultazione, OCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-04-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/162/de",
+      "sha": "ce5573670a9e302cd74c252f8ec1d047a460722de42f4224989da2f99c492d90"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/739",
+      "dateDocument": "2014-12-05",
+      "roFundstelle": "AS 2014 4445",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/739/de",
+      "sha": "1fc90317e32c87a047ab2f1af6b2d0c6bd69e6ccb2c10db194a5834664b1d25e"
     },
     {
       "art": "aenderung",
@@ -299,8 +2030,72 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/415/de",
-      "sha": "288f8951f7ea8fbe289c68a743472105ddaf937c68ea7528669cb9c68751022b"
+      "sha": "d972a482b34b6b597c4a94f3f17fcc2b5bbee26bedd0b11983b9bcb2a3061c0b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/670",
+      "dateDocument": "2015-10-07",
+      "roFundstelle": "AS 2015 3989",
+      "titelDe": "Verordnung über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsverordnung, PublV)",
+      "titelFr": "Ordonnance sur les recueils du droit fédéral et la Feuille fédérale (Ordonnance sur les publications officielles, OPubl)",
+      "titelIt": "Ordinanza sulle raccolte del diritto federale e sul Foglio federale (Ordinanza sulle pubblicazioni ufficiali, OPubb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/670/de",
+      "sha": "14c98962223a9d80f406eaefeeb4b74ac48b09420f85e851e88c330d9d87c328"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/673",
+      "dateDocument": "2015-10-14",
+      "roFundstelle": "AS 2015 4019",
+      "titelDe": "Finanzhaushaltverordnung (FHV) (Optimierung Neues Rechnungsmodell und Neues Führungsmodell für die Bundesverwaltung, NFB)",
+      "titelFr": "Ordonnance sur les finances de la Confédération (OFC) (Optimisation du nouveau modèle comptable de la Confédération et nouveau modèle de gestion de l'administration fédérale, NMG)",
+      "titelIt": "Ordinanza sulle finanze della Confederazione (OFC) (Ottimizzazione del Nuovo modello contabile e del Nuovo modello di gestione dell'Amministrazione federale, NMG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/673/de",
+      "sha": "0b32b53f10b212ded0db2f6ba8f2ab5fe7a2ae51711ef6cd9579dc621710d2a0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/675",
+      "dateDocument": "2015-10-07",
+      "roFundstelle": "AS 2015 4043",
+      "titelDe": "Verordnung über den Stilllegungsfonds und den Entsorgungsfonds für Kernanlagen (Stilllegungs- und Entsorgungsfondsverordnung, SEFV)",
+      "titelFr": "Ordonnance sur le fonds de désaffectation et sur le fonds de gestion des déchets radioactifs pour les installations nucléaires (Ordonnance sur le fonds de désaffectation et sur le fonds de gestion, OFDG)",
+      "titelIt": "Ordinanza sul Fondo di disattivazione e sul Fondo di smaltimento per gli impianti nucleari (Ordinanza sul Fondo di disattivazione e sul Fondo di smaltimento, OFDS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/675/de",
+      "sha": "b682815ee17585af163bc5614a4e450ba31c904682c6e0babf262babbf02fd86"
     },
     {
       "art": "aenderung",
@@ -311,20 +2106,68 @@
       "titelDe": "Verordnung über eine Karenzfrist für Leitungsfunktionen der Bundesverwaltung, für Mitglieder von Leitungsorganen von Anstalten des Bundes sowie für Mitglieder usserparlamentarischer Kommissionen (Karenzfristverordnung)",
       "titelFr": "Ordonnance sur le délai de carence applicable aux cadres du plus haut niveau hiérarchique de l'administration fédérale, aux membres des organes de direction des établissements de la Confédération et aux membres des commissions extraparlementaires (Ordonnance sur le délai de carence)",
       "titelIt": "Ordinanza concernente un periodo di attesa per le funzioni direttive dell'Amministrazione federale, per i membri di organi direttivi di stabilimenti della Confederazione e per i membri di commissioni extraparlamentari (Ordinanza sul periodo di attesa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/823/de",
-      "sha": "0642f6d4727a935791cfa9eb4db64439ca2ded83f36dabc131500b9e9dfd326e"
+      "sha": "8459a2464216e386f8fd3a08aa915770a87c2e9bd4a42f3ed8cf8d38721d9096"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "1c9bc942367d0141e2b66de385305e7c657e1dd3d0d12ca7afcfc372973c8465"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/62",
+      "dateDocument": "2015-01-28",
+      "roFundstelle": "AS 2015 423",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-03-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/62/de",
+      "sha": "c96392063b0ecbc988c2b5f3ffe7569f858800f7f7b154c470814952e86ac2e9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "06792e2452864496fcce88639dd23ae7f406898c3a9de560e6d378977d8dfa67"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/26",
+      "dateDocument": "2014-12-17",
+      "roFundstelle": "AS 2015 215",
+      "titelDe": "Verordnung über die Sicherheitsuntersuchung von Zwischenfällen im Verkehrswesen (VSZV)",
+      "titelFr": "Ordonnance sur les enquêtes de sécurité en cas d'incident dans le domaine des transports (OEIT)",
+      "titelIt": "Ordinanza concernente le inchieste sulla sicurezza in caso di eventi imprevisti nei trasporti (OIET)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/26/de",
+      "sha": "dbdda60c3e880d916c10150e3c6f2c5cd69de65ffd5d972728d778a394bc33dd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/692",
+      "dateDocument": "2014-11-12",
+      "roFundstelle": "AS 2014 4137",
+      "titelDe": "Verordnung zum Hochschulförderungs- und -koordinationsgesetz (V-HFKG)",
+      "titelFr": "Ordonnance relative à la loi sur l'encouragement et la coordination des hautes écoles (O-LEHE)",
+      "titelIt": "Ordinanza concernente la legge sulla promozione e sul coordinamento del settore universitario svizzero (O-LPSU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/692/de",
+      "sha": "531330d84c3534fe1b00b7323b68d20e2772d999b5b368344885f0d79dceacac"
     },
     {
       "art": "aenderung",
@@ -335,8 +2178,92 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2016-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/739/de",
-      "sha": "19b754daf336bca67566fa461d6ad9e0c1030cdad009398f203f13b3a8fb290c"
+      "sha": "21d8e03670334e3eab54829ff318683cda1637bafaa73aac13c5c9e854683951"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/741",
+      "dateDocument": "2014-11-28",
+      "roFundstelle": "AS 2014 4451",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/741/de",
+      "sha": "adf1a3574ecb523c89018e5bd4e368bfe66bce4a1738c9caab204371b746d92b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/772",
+      "dateDocument": "2014-11-28",
+      "roFundstelle": "AS 2014 4605",
+      "titelDe": "Verordnung über die Vermittlung schweizerischer Bildung im Ausland (Schweizerschulenverordnung, SSchV)",
+      "titelFr": "Ordonnance sur la diffusion de la formation suisse à l'étranger (Ordonnance sur les écoles suisses à l'étranger, OESE)",
+      "titelIt": "Ordinanza sulla diffusione della formazione svizzera all'estero (Ordinanza sulle scuole svizzere all'estero, OSSE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/772/de",
+      "sha": "d3cca1f4a3ba5c724f2a0aae1b1af3ab67c5fba2d0991a41df5406e153c2ad7b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/333",
+      "dateDocument": "2013-05-08",
+      "roFundstelle": "AS 2013 1447",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement des Innern (OV-EDI)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'intérieur (Org DFI)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'interno (OOrg-DFI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/333/de",
+      "sha": "faafbe5d0ee54660b634f5a210c687a13d09eee01449f12f3dc764f89b097e79"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/447",
+      "dateDocument": "2013-06-26",
+      "roFundstelle": "AS 2013 2109",
+      "titelDe": "Verordnung über die Eidgenössische Fachkommission zur Beurteilung der Behandelbarkeit lebenslänglich verwahrter Straftäter",
+      "titelFr": "Ordonnance sur la Commission fédérale chargée de juger les possibilités de traiter les personnes internées à vie",
+      "titelIt": "Ordinanza sulla commissione peritale federale incaricata di valutare l'idoneità alla terapia dei criminali internati a vita",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/447/de",
+      "sha": "8b86f0ae188db50be2c53e5deef4bc9f2a73b50261e2c228e74369609c226016"
     },
     {
       "art": "aenderung",
@@ -347,14 +2274,72 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/692/de",
-      "sha": "12389fd0971697819050376f6036fad218eb7009026fcdca6f83507d185b2634"
+      "sha": "6bb1d9b2b5bb44e95633b5d3bb9e073d40a5476a62f6ffa7a5939e9f03c0508d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/812",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4561",
+      "titelDe": "Organisationsverordnung für den Bundesrat (OV-BR)",
+      "titelFr": "Ordonnance sur l'organisation du Conseil fédéral (Org CF)",
+      "titelIt": "Ordinanza sull'organizzazione del Consiglio federale (OOrg-CF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/812/de",
+      "sha": "fb522f6318c2e8e072db96f0d24ccabf6342b89e0f38dd4228a8e091cdd62279"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/814",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4593",
+      "titelDe": "Verordnung zum Bundesgesetz über die Förderung der Forschung und der Innovation (Forschungs- und Innovationsförderungsverordnung, V-FIFG)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur l'encouragement de la recherche et de l'innovation (Ordonnance sur l'encouragement de la recherche et de l'innovation, O-LERI)",
+      "titelIt": "Ordinanza relativa alla legge federale sulla promozione della ricerca e dell'innovazione (Ordinanza sulla promozione della ricerca e dell'innovazione, O-LPRI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/814/de",
+      "sha": "c3efc702ca11dcf2a805258852b90924cd2e9fd6e4858e29dfc064ffe44aacb0"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2013-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "43ff37af2075f8918ce6a3826bb2a55b2715150a635500fc3a5ece88a5e1cdaf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/301",
+      "dateDocument": "2013-05-01",
+      "roFundstelle": "AS 2013 1313",
+      "titelDe": "Verordnung über die Organisation des Nationalen Kontaktpunktes für die OECD-Leitsätze für multinationale Unternehmen und über seinen Beirat (NKPV-OECD)",
+      "titelFr": "Ordonnance sur l'organisation du Point de contact national pour les Principes directeurs de l'OCDE à l'intention des entreprises multinationales et sur sa commission consultative (OPCN-OCDE)",
+      "titelIt": "Ordinanza concernente l'organizzazione del Punto di contatto nazionale per le Linee guida dell'OCSE destinate alle imprese multinazionali e la sua commissione consultiva (OPCN-OCSE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-06-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/301/de",
+      "sha": "38eadf4ec5fb6bac2f19df29d566f0135226d9b278f2614a066947ec6dc1f91a"
     },
     {
       "art": "aenderung",
@@ -365,8 +2350,15 @@
       "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
       "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
       "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-02-05",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/80/de",
-      "sha": "24db15d25a78690762baa75c665d7dd0037ef1525a318333ce2972902b719496"
+      "sha": "3c60d090c671d9103bc6bc25b9b867fcd573ac60e8d88c4d32fd029f7c880628"
     },
     {
       "art": "aenderung",
@@ -377,8 +2369,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-02-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/2/de",
-      "sha": "a4aed493a203d3a1547edd271b02e2e3799f848c6fa03c5e8ff53c20220961ee"
+      "sha": "db09766588757bbca96a8bc38fedf0aec561d54fe44078a6f6915e82a6c25df3"
     },
     {
       "art": "aenderung",
@@ -389,8 +2388,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-02-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/25/de",
-      "sha": "a23274c3be5cbcf9be23a9a25f9e12916446d06d51b6ca7667d800e2180364fa"
+      "sha": "60bd4fcb90ebc057e08652c3cbaf4a03f849fcef44207765fbaac186944a7406"
     },
     {
       "art": "aenderung",
@@ -401,8 +2407,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-02-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/81/de",
-      "sha": "12dc46efefa3962a7b71895d90e95c17e426b5ca863a1e3a531e071f7ae53fa2"
+      "sha": "35376bf8c2cf5f84ee648c78e86ec1deb573f11105ce813f4f3974b4a1459b3f"
     },
     {
       "art": "aenderung",
@@ -413,8 +2426,68 @@
       "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
       "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
       "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-01-15",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/22/de",
-      "sha": "c0183baccd63856b1754bcf1f9927ec14d1eb1e0963552d846b6b7b357e3f542"
+      "sha": "3bc52eee6b8e98573de5e3f0b7db2de542e2585a9072f6647eefdcc9438cb8f7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "fc7b2997151e45faaf66040f75062c5e98e588cd2241ed8c87bbf8d4cdc3cc51"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/808",
+      "dateDocument": "2012-11-30",
+      "roFundstelle": "AS 2012 6669",
+      "titelDe": "Verordnung über die elektronische Geschäftsverwaltung in der Bundesverwaltung (GEVER-Verordnung)",
+      "titelFr": "Ordonnance sur la gestion électronique des affaires dans l'administration fédérale (Ordonnance GEVER)",
+      "titelIt": "Ordinanza sulla gestione elettronica degli affari nell'Amministrazione federale (Ordinanza GEVER)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/808/de",
+      "sha": "32830b876b19ec3a447c7098b596c6c40115a65e028053a1bf899c5c2e4bad89"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/832",
+      "dateDocument": "2012-11-21",
+      "roFundstelle": "AS 2012 6887",
+      "titelDe": "Verordnung über das Eidgenössische Institut für Metrologie (EIMV)",
+      "titelFr": "Ordonnance sur l'Institut fédéral de métrologie (OIFM)",
+      "titelIt": "Ordinanza sull'Istituto federale di metrologia (OIFM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/832/de",
+      "sha": "dde5f6455f2baf67a6fc25dd1f1782eccbb6370088195edee01aca5c78f53107"
     },
     {
       "art": "aenderung",
@@ -425,8 +2498,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/843/de",
-      "sha": "114093ea0899cb5873acc03e6f2222ab3d0033484c0f8c8f4eeee8cea64d598a"
+      "sha": "9bebfe62e7b99ab19e0ee886b8d75ec0e6e6dbc285dc60ee49d2ddfc8ac9b70f"
     },
     {
       "art": "aenderung",
@@ -437,8 +2517,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/844/de",
-      "sha": "4a13e627f24c6c4bb7824bb2a42dbd459929fdaac114d960ed805ef6bcb0b84e"
+      "sha": "424961cc3b15e2670f53fd4abf4a6f4007e77de72d4219a8f366de664abd068b"
     },
     {
       "art": "aenderung",
@@ -449,14 +2536,30 @@
       "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
       "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
       "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/900/de",
-      "sha": "cecdd6b5dd16415b85aeb0330f09f79b6efcaa262248cb17cdbb51ecd223ffee"
+      "sha": "5cb3ccb505bc8dc30110f6180ba731ce3c9a2b4250b3a79931646ffaadf5b28b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "a45f29658bab2fc5ee3fbf3f5ce66ee0057844032638227e3ecfd02f8eea4340"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/586",
+      "dateDocument": "2012-08-29",
+      "roFundstelle": "AS 2012 5009",
+      "titelDe": "Postverordnung (VPG)",
+      "titelFr": "Ordonnance sur la poste (OPO)",
+      "titelIt": "Ordinanza sulle poste (OPO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/586/de",
+      "sha": "5a9cc636cc6ec66ac9a35e74ce92b6bbd07cae5814e6c8e1f47ff981492f94f8"
     },
     {
       "art": "aenderung",
@@ -467,8 +2570,15 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-08-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/445/de",
-      "sha": "4a3585563b05dbe44f6baf6df5684b2539c1942ecdb3fad6c67381a34cdf0113"
+      "sha": "0a8e8fed295c47e6a9533d5b8ac2e29c10f5b8f25a82091f9f9e0aaba32593c6"
     },
     {
       "art": "aenderung",
@@ -479,8 +2589,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/250/de",
-      "sha": "589184bc27123f8ea2996e4341e85603a7a04debdeb54ddbe5aafee422a36a78"
+      "sha": "08d87cfdd1d9f5767c5f0403624a30a3a65c48f5751f7a3e25b195f11f5bde5f"
     },
     {
       "art": "aenderung",
@@ -491,8 +2604,30 @@
       "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
       "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
       "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/752/de",
-      "sha": "69158b3989e5cfb709772a9f95f3cb43f5f520d3bb30087bc17ab9d05d097eaf"
+      "sha": "8999dc431f9bf138b2e52ecd471fe200b5c751398e787bce6f297b9b9900c984"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/803",
+      "dateDocument": "2011-11-16",
+      "roFundstelle": "AS 2011 5803",
+      "titelDe": "Verordnung über die Aus-, Weiter- und Fortbildung der Personen im öffentlichen Veterinärwesen",
+      "titelFr": "Ordonnance concernant la formation de base, la formation qualifiante et la formation continue des personnes travaillant dans le secteur vétérinaire public",
+      "titelIt": "Ordinanza concernente la formazione, il perfezionamento e l'aggiornamento delle persone impiegate nel settore veterinario pubblico",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/803/de",
+      "sha": "f42989f0a929f335971121ff15de356259e2448f4c5d2e80f1fe17432a60b19c"
     },
     {
       "art": "aenderung",
@@ -503,8 +2638,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/842/de",
-      "sha": "01347492956c55c74b68970a8c8be4d7a97f9aecfb2e93a9617e1c0d95de9249"
+      "sha": "0006f438ccdcf692a7eba543ffb9b6ee6ca6b26bf1960282b56466c550a79a24"
     },
     {
       "art": "aenderung",
@@ -515,20 +2653,72 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/843/de",
-      "sha": "82f9c4536fe4a86420b31b31d2c18e545979c4c12d2f72e088ea949b0222f647"
+      "sha": "f83de9ccbcd86a8f1b60942dc04aa575efbb3412c1fe65dff8e9ab1e63367f4b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/844",
+      "dateDocument": "2011-12-09",
+      "roFundstelle": "AS 2011 6093",
+      "titelDe": "Verordnung über die Informatik und Telekommunikation in der Bundesverwaltung (Bundesinformatikverordnung, BinfV)",
+      "titelFr": "Ordonnance sur l'informatique et la télécommunication dans l'administration fédérale (Ordonnance sur l'informatique dans l'administration fédérale, OIAF)",
+      "titelIt": "Ordinanza concernente l'informatica e la telecomunicazione nell'Amministrazione federale (Ordinanza sull'informatica nell'Amministrazione federale, OIAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/844/de",
+      "sha": "392eb8faf2f183e82e9003c02d2f9502cbb7f3e806d94a8a58404430686ded9e"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2011-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "4101e5f6bc7d03ab372eeac9a0fb933664e18d903cba6f3f633efb66b120feef"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/652",
+      "dateDocument": "2011-03-23",
+      "roFundstelle": "AS 2011 4589",
+      "titelDe": "Verordnung über die Organisation der Schweizerischen Unfalluntersuchungsstelle (Organisationsverordnung SUST, OV-SUST)",
+      "titelFr": "Ordonnance sur l'organisation du Service d'enquête suisse sur les accidents (Ordonnance sur l'organisation du SESA, Org SESA)",
+      "titelIt": "Ordinanza sull'organizzazione del Servizio d'inchiesta svizzero sugli infortuni (Ordinanza sull'organizzazione del SISI, Org-SISI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-11-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/652/de",
+      "sha": "6488331a971090a56dfc59fc4d7e3525f5697112cc7a222f92211de6f3566f3a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "6bf38ed071118619bda2360e00069bc4765aad8fe268033c7c0977833bd218aa"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/535",
+      "dateDocument": "2011-08-17",
+      "roFundstelle": "AS 2011 3787",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Finanzdepartement (OV-EFD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des finances (Org DFF)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale delle finanze (Org-DFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-09-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/535/de",
+      "sha": "c6e61378283ad14bd27045f799e0835af144902a964f61f6732479ee94ceff1e"
     },
     {
       "art": "aenderung",
@@ -539,8 +2729,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/447/de",
-      "sha": "8e717624d44dd3cb22320de001cd3bf34dc2276e6c2b0f2cdbb3f33f18ede26c"
+      "sha": "423fb5043b51ef06b168877e2d18c2bc316529c9012f26070842021f97cba2de"
     },
     {
       "art": "aenderung",
@@ -551,14 +2744,30 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/285/de",
-      "sha": "46351dd2683342f705246075a919927c9895257f55c3d1b7783202d1b7a625da"
+      "sha": "bcc20c059a7bc58e299c66e614286c1c3733568d1febb5a9a376860c3b0ce76b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-05-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "84dcc4f21c1c1c2440d80bbf8c48fc2283ceabb3f4b18714549081022eee7c10"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/248",
+      "dateDocument": "2011-04-20",
+      "roFundstelle": "AS 2011 1631",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für auswärtige Angelegenheiten (OV-EDA)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des affaires étrangères (Org DFAE)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale degli affari esteri (OOrg-DFAE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-05-15",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/248/de",
+      "sha": "9157b6eca1ecd45a54922b3cf3cdbee77bd60c930cdbe94d42286bdb59714d6e"
     },
     {
       "art": "aenderung",
@@ -569,8 +2778,34 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/721/de",
-      "sha": "685caf79a2792b656456c818a1432c23c7e077c5e89b0d8c363c97e02d0fea19"
+      "sha": "6742a370bc7d808c79be10428783f082dc895bae153f6d0c815ae8bb33fc20b4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/784",
+      "dateDocument": "2010-11-24",
+      "roFundstelle": "AS 2010 5461",
+      "titelDe": "Verordnung zum Forschungsgesetz (Forschungsverordnung)",
+      "titelFr": "Ordonnance relative à la loi sur la recherche (Ordonnance sur la recherche)",
+      "titelIt": "Ordinanza della legge sulla ricerca (Ordinanza sulla ricerca)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/784/de",
+      "sha": "6ee08cf392ceaa5b2a4bdf9bf30a28ce0ad90f497bd5f161f39b37f6216f7223"
     },
     {
       "art": "aenderung",
@@ -581,8 +2816,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/703/de",
-      "sha": "c340a527140a1de589a832a4182933ffc1b9e91a5ce85864809502f9a59993cf"
+      "sha": "c8e41caf06d1e782682d8bdc8437b28f74b9d465b059c3ca69b1b4f7df123bc0"
     },
     {
       "art": "aenderung",
@@ -593,20 +2831,49 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-08-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/427/de",
-      "sha": "1494fa0596f9160d5cbefdb9e520646d00af53174a794af2b6fdb7d98a1af314"
+      "sha": "1ca7dbd51ff8afb5a287a550f75ba06ddee4b794ab7ebb04cf8fc8eb42d849cd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "1162d3ed6836b81bd683beecbdf6cc7a840bdd6e91de92cddd6f7d78e5be4500"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/355",
+      "dateDocument": "2010-06-04",
+      "roFundstelle": "AS 2010 2653",
+      "titelDe": "Verordnung über die Landessprachen und die Verständigung zwischen den Sprachgemeinschaften (Sprachenverordnung, SpV)",
+      "titelFr": "Ordonnance sur les langues nationales et la compréhension entre les communautés linguistiques (Ordonnance sur les langues, OLang)",
+      "titelIt": "Ordinanza sulle lingue nazionali e la comprensione tra le comunità linguistiche (Ordinanza sulle lingue, OLing)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/355/de",
+      "sha": "39180c01b957f652b997c504f309945db18523ca93015ad56685067b6278839b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "2a9c502b6fea26d0b543d9a6896838092c9ff47fbc2f017c15160af79257a90d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/98",
+      "dateDocument": "2010-02-17",
+      "roFundstelle": "AS 2010 635",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Finanzdepartement (OV-EFD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des finances (Org DFF)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale delle finanze (Org-DFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/98/de",
+      "sha": "31902c88c794c08059184d4ae3e25aa041ed53d053621cbb232ae98f1684948a"
     },
     {
       "art": "aenderung",
@@ -617,14 +2884,75 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/751/de",
-      "sha": "677f3aa355e5ef31278880bd8715b9d5839eca2225fa6e428009792cbb601ddc"
+      "sha": "798b5630c9cb283d166930cb17348988f8ab40a31ebad53a2891d29ecae615f7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/848",
+      "dateDocument": "2009-12-04",
+      "roFundstelle": "AS 2009 6937",
+      "titelDe": "Verordnung über den Nachrichtendienst des Bundes (V-NDB)",
+      "titelFr": "Ordonnance sur le Service de renseignement de la Confédération (OSRC)",
+      "titelIt": "Ordinanza sul Servizio delle attività informative della Confederazione (O-SIC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/848/de",
+      "sha": "4c4d6ad50d174b16ab67decd9f3b623e7b58ffb9e9947f5cd7a988b9b2260077"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2009-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "d4944cb1425ac716436d540155f09449053262e10ba68f4514da927ad55a02ea"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/383",
+      "dateDocument": "2009-06-24",
+      "roFundstelle": "AS 2009 3131",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/383/de",
+      "sha": "fb7911ef6a9fcde81f8980ac56a4bd98ef094d62060734555c701c5613f10568"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/750",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 5363",
+      "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+      "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+      "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/750/de",
+      "sha": "433ebfc7a733324ac50b91d30848a49770da44709435701136e7bbc21f7e14ef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/794",
+      "dateDocument": "2008-11-12",
+      "roFundstelle": "AS 2008 5747",
+      "titelDe": "Verordnung über das Eidgenössische Nuklearsicherheitsinspektorat (ENSIV)",
+      "titelFr": "Ordonnance sur l'Inspection fédérale de la sécurité nucléaire (OIFSN)",
+      "titelIt": "Ordinanza sull'Ispettorato federale della sicurezza nucleare (OIFSN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/794/de",
+      "sha": "1116a5360d809638456ddf960db785901e587e3b2d18c85a9a5d67d74054b62a"
     },
     {
       "art": "aenderung",
@@ -635,8 +2963,60 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2009-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/819/de",
-      "sha": "678cfa785a4e1b4f54f73e97d2dca4e335769453aea6fea362d2d82d88d61b3d"
+      "sha": "9c4a5587c89e7f96346c15e4838ba42619c613816748b62fab93ef5d3306b7ce"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/859",
+      "dateDocument": "2008-12-12",
+      "roFundstelle": "AS 2008 6401",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/859/de",
+      "sha": "ba3ad148d1cbac5749f1ab0d35982453e327e8bffa1c6ea0111de2f1acc53983"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/860",
+      "dateDocument": "2008-12-12",
+      "roFundstelle": "AS 2008 6405",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/860/de",
+      "sha": "5fc9519e789cd8218ef93bd474c36f551e660d44b09a7cdd32b93664775c9b22"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/864",
+      "dateDocument": "2008-12-12",
+      "roFundstelle": "AS 2008 6419",
+      "titelDe": "Verordnung über die Pflege des schweizerischen Erscheinungsbildes im Ausland (Landeskommunikationsverordnung)",
+      "titelFr": "Ordonnance sur la promotion de l'image de la Suisse à l'étranger (Ordonnance sur la communication internationale)",
+      "titelIt": "Ordinanza concernente la promozione dell'immagine della Svizzera all'estero (Ordinanza sulla comunicazione dell'immagine nazionale)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/864/de",
+      "sha": "2e76bb740285a8b45f2a0f84adcdad6ef7084f69105d0e5b5f9e6e96fb445527"
     },
     {
       "art": "aenderung",
@@ -647,26 +3027,79 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-02-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/59/de",
-      "sha": "50bf0dbd62050d7ffd913da4812bc7bb0bd6a4fff3f27aeae1ba3e2deb058058"
+      "sha": "e88f5798b8ec20b187db0877bb3ce97d056f6e063001b45357ec733ae6444748"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "654bfe46d72ac2cf8509d72ae7ccb728e20fbfccdc0e778d3929050eaf604972"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "2c5ac94c95d54792d20aa35f2fad47c31052ee4233948fb1b05d9876531d69d9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "ab01539797ce9d8ffc8ab61c6be5777db5143c21fad2198264386488b06fec71"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/531",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 3967",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/531/de",
+      "sha": "af7bf40ccb9ee507a35e3ce2d57b505c8af3c8fbcf89ddc32886f6c777d0dffa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/534",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 3989",
+      "titelDe": "Verordnung über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsverordnung, RAV)",
+      "titelFr": "Ordonnance sur l'agrément et la surveillance des réviseurs (Ordonnance sur la surveillance de la révision, OSRev)",
+      "titelIt": "Ordinanza sull'abilitazione e la sorveglianza dei revisori (Ordinanza sui revisori, OSRev)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/534/de",
+      "sha": "63564c19588a1e82ddbe9a7b1a789ee4312c8f47f594d1e827db92fa5bbb0af3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2006-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "08c726959663c2fec3ee9132ed9b5d913fd87f5a48349f93e0d2babe46afe3c9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/356",
+      "dateDocument": "2006-05-24",
+      "roFundstelle": "AS 2006 2331",
+      "titelDe": "Verordnung über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsverordnung, VBGÖ)",
+      "titelFr": "Ordonnance sur le principe de la transparence dans l'administration (Ordonnance sur la transparence, OTrans)",
+      "titelIt": "Ordinanza sul principio di trasparenza dell'amministrazione (Ordinanza sulla trasparenza, OTras)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/356/de",
+      "sha": "ffe9121da16362320ee18aff08eba70d6139e27d7f3eb30f3f3d2dde3e61a2b0"
     },
     {
       "art": "aenderung",
@@ -677,32 +3110,105 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-06-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/225/de",
-      "sha": "a929033348ade3f8c06402c5b09dc1f773842faa702cd94e59c33f46e89f940d"
+      "sha": "d7302d3189a4c736aafe071ed48f71a2aa4f628f541267f54431f0899cbd722e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "41f48e7a30dc8a129ff6cc8d9659700522a7d33b13f4a3496aea989549968269"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/228",
+      "dateDocument": "2006-04-05",
+      "roFundstelle": "AS 2006 1295",
+      "titelDe": "Finanzhaushaltverordnung (FHV)",
+      "titelFr": "Ordonnance sur les finances de la Confédération (OFC)",
+      "titelIt": "Ordinanza sulle finanze della Confederazione (OFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/228/de",
+      "sha": "0bfaf5da13262747c835813e9d74b874b88615d7255e65c256ce8197be8eacb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "357226ed8a0af3589efb819ccb95d62d4ce60a72f615884d36db21f455a6e633"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/194",
+      "dateDocument": "2006-03-10",
+      "roFundstelle": "AS 2006 1089",
+      "titelDe": "Verordnung über das schweizerische Akkreditierungssystem und die Bezeichnung von Prüf-, Konformitätsbewertungs-, Anmelde- und Zulassungsstellen (Akkreditierungs- und Bezeichnungsverordnung, AkkBV)",
+      "titelFr": "Ordonnance sur le système suisse d'accréditation et la désignation de laboratoires d'essais et d'organismes d'évaluation de la conformité, d'enregistrement et d'homologation (Ordonnance sur l'accréditation et la désignation, OAccD)",
+      "titelIt": "Ordinanza sul sistema svizzero di accreditamento e la designazione di laboratori di prova e di organismi di valutazione della conformità, di registrazione e d'omologazione (Ordinanza sull'accreditamento e sulla designazione, OAccD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/194/de",
+      "sha": "494e4d2a7bfd56e33efa95df720a899b457867579e3d2764c1544a5e26d66f12"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "f758a62b6856d92b769c4ff145cdcdd7b617420715fc05d5db7c03be629b344a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/742",
+      "dateDocument": "2005-10-26",
+      "roFundstelle": "AS 2005 5441",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/742/de",
+      "sha": "e374b5f0d825109db8d0724886f55fa92ab3530ce186dfcd0a42a1e13a4fac5f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "0cdb53c6af9ba1816ee333ea5dcb79b0f9f1b04cbb8cffe2cb2a81c4025e32c8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/473",
+      "dateDocument": "2005-04-27",
+      "roFundstelle": "AS 2005 2885",
+      "titelDe": "Verordnung über die Militärversicherung (MVV)",
+      "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
+      "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/473/de",
+      "sha": "e0be1561f559b11c144fafc00add1cecc73e6f7b1dc1d6eb32f20b6c6be63e78"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/606",
+      "dateDocument": "2004-08-18",
+      "roFundstelle": "AS 2004 4123",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement des Innern (OV-EDI)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'intérieur (Org DFI)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'interno (OOrg-DFI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/606/de",
+      "sha": "938ea6639602edf1baf2b7824c7f78d411c13c6a9cb1f7345ae5371b93273e0f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/728",
+      "dateDocument": "2004-11-03",
+      "roFundstelle": "AS 2004 4813",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/728/de",
+      "sha": "b28f745d2fa3070ca7a700952c03801d44aac5c7c11ba23431c5d5c93eeaa874"
     },
     {
       "art": "aenderung",
@@ -713,20 +3219,79 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-01-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/805/de",
-      "sha": "bba01576e00f073e5449957aaa41a8083e0e66eaa5fa4b712199a38f10162dab"
+      "sha": "fd1ad9ed5b9b9796f2884cf6778bb1028ee2e1079e707c2081097fc92214f1e5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/807",
+      "dateDocument": "2004-12-10",
+      "roFundstelle": "AS 2004 5257",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/807/de",
+      "sha": "e1f744587cce9ea2c1cbbd9c732d5dc11e8f6b5b8a90045e3b75b56dbe468846"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "6deedaccf2891e63c26cf7015059a9be0923ecf00bee142f535e1cbe6b2c12f9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/29",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 433",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/29/de",
+      "sha": "8dd527431fbb1e8b3e0bcf7c637f15bffd747caa75c9c175a4ec8155a09def29"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "bffcce049634e0ffaf63575cd82570e808ec286b3f0aac3aa3c1a762e3a375a8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/270",
+      "dateDocument": "2003-03-07",
+      "roFundstelle": "AS 2003 1808",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/270/de",
+      "sha": "19a8529dcb9ead119fb9dc1a179ac4ee2e656df576a500e2afff91699ca173de"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/16",
+      "dateDocument": "2003-11-19",
+      "roFundstelle": "AS 2004 305",
+      "titelDe": "Verordnung über den Bereich der Eidgenössischen Technischen Hochschulen (Verordnung ETH-Bereich)",
+      "titelFr": "Ordonnance sur le domaine des écoles polytechniques fédérales (Ordonnance sur le domaine des EPF)",
+      "titelIt": "Ordinanza sul settore dei politecnici federali (Ordinanza sul settore dei PF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/16/de",
+      "sha": "21685260ecec29d1c8c2b8d99a1516abb7a183106b6f66bf3796c8176ad99996"
     },
     {
       "art": "aenderung",
@@ -737,20 +3302,45 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2003-12-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/611/de",
-      "sha": "c02d1e478551b5c7235c1980c46acd75720de8983eb9ccbb74f91e6a2d83ce72"
+      "sha": "528a05423319ee569eb80f4de925d04dcf9a2ed5114510934bf8e6ce3b1d6704"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "6d2a9852995745f7e4016df8945ef0fec9f4fb8a8f537e944bfb39ca1aecccdd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/311",
+      "dateDocument": "2003-06-25",
+      "roFundstelle": "AS 2003 2122",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Finanzdepartement (OV-EFD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des finances (Org DFF)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale delle finanze (Org-DFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/311/de",
+      "sha": "c6f300dfecb812dde5293593d6d20d0e5fdbb29f6e9f32cefb9a511d3b93a129"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "46c3fbcbda01cf4da35dd251a822380c3ac7a6b2e427aae879ed9042491351f5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/14",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 301",
+      "titelDe": "Verordnung über die Pensionskasse des Bundes (PKB-Statuten)",
+      "titelFr": "Ordonnance régissant la Caisse fédérale de pensions (Statuts de la CFP)",
+      "titelIt": "Ordinanza concernente la Cassa pensioni della Confederazione (Statuti della CPC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/14/de",
+      "sha": "060fe54aeb4010a2463e7cea83f4d1594514f5429f2cb8f8ce28735804a22900"
     },
     {
       "art": "aenderung",
@@ -761,81 +3351,226 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
       "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
       "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2002-10-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/416/de",
-      "sha": "ef8cd3f2aa4d8bea99e528b7630e4692158066a3324a2b8a1b5b2191868de669"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2002-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "2fc5c6e91d0a2fa210b09965d70ac0821a430b9e644c1f7d77de49563db0dd48"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2002-05-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "d138e080c7d6a74c7582c95564e89994f03b55ffda09e87622e35d25dfbf9bc2"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "f0fbb631e613661b7cc9796ee72608a33d33a0749da110b20964ac7a5dfb56d5"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2001-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "31b2c05297e98d89ec3fc5127bc86df3b9505c70e70cbbce46cbf314716b06a6"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "3afeb7b98a32973ea4d9e8cd60bea71b6dece8c28c1f369cad9abd7ffae2c6f8"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-11-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "f656b9176782cd921efdb98353d8059d3d7da8eb845970ea55279590bbad7239"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "e263770ab66f89136136dd104d3073c687593675a7085083e1f6c2bc441c3eac"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "14daf8ae77941b73ab80a5e3b0e466794e3aa67caceaa3a49c16688c5632a845"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "2ccc713ead6e909d99861d8a66204d0d6aa345b57ad9ad9b17f81dc334600bfb"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010.1",
-      "sha": "3a6140812c2b6e63defc161d08f7a9a7b79773cdc6d94dcd49d485d8f2ff6632"
+      "sha": "98ed71669d747c0dbf07d63310d801b87355e2d14f3eca713943381e23a67e7a"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1999-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/170",
-      "dateDocument": "1998-11-25",
-      "roFundstelle": "AS 1999 1258",
-      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
-      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
-      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/170/de",
-      "sha": "dd4b8f5946b7dc0cb90652e4e09272505b885f30427ea81a6bb56485caa3518d"
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/191",
+      "dateDocument": "2002-04-10",
+      "roFundstelle": "AS 2002 1155",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für auswärtige Angelegenheiten (OV-EDA)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des affaires étrangères (Org DFAE)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale degli affari esteri (OOrg DFAE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/191/de",
+      "sha": "f038a50cfe5c0a250a43d3558e886569bef4e04b8f8d9258bb5171131a52a7de"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-05-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/225",
+      "dateDocument": "2002-05-01",
+      "roFundstelle": "AS 2002 1453",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa,della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/225/de",
+      "sha": "76224236c539f4294c29aa0b6dcb959e379aa4f1064a533403de40612f43447a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/445",
+      "dateDocument": "2001-09-28",
+      "roFundstelle": "AS 2001 3025",
+      "titelDe": "Organisationsverordnung für das Schweizerische Heilmittelinstitut",
+      "titelFr": "Ordonnance sur l'organisation de l'Institut suisse des produits thérapeutiques",
+      "titelIt": "Ordinanza concernente l'organizzazione dell'Istituto svizzero degli agenti terapeutici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/445/de",
+      "sha": "45704a51cb6ce1dcd28e70384f64d7fd0d4436493c70a0843d6801df765a0d5c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/56",
+      "dateDocument": "2000-12-11",
+      "roFundstelle": "AS 2001 267",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Finanzdepartement (OV-EFD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral des finances (Org DFF)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale delle finanze (Org-DFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/56/de",
+      "sha": "30ffc13621fbc2b4128667492c6d9de6a86a978843f7e3953a3110e014fab46c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/25",
+      "dateDocument": "2000-12-04",
+      "roFundstelle": "AS 2001 124",
+      "titelDe": "Verordnung über den Nachrichtendienst im Eidgenössischen Departement für Verteidigung, Bevölkerungsschutz und Sport (Nachrichtendienstverordnung, VND)",
+      "titelFr": "Ordonnance sur le renseignement du Département fédéral de la défense, de la protection de la population et des sports (Ordonnance sur le renseignement, ORens)",
+      "titelIt": "Ordinanza sul servizio informazioni del Dipartimento federale della difesa, della protezione della popolazione e dello sport (Ordinanza sul servizio informazioni, OSINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/25/de",
+      "sha": "707bb6023a8cda16329b2b64be8f06c0afb9ad221cd84f8f65105b985d5b37ef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/55",
+      "dateDocument": "2000-12-04",
+      "roFundstelle": "AS 2001 265",
+      "titelDe": "Organisationsverordnung für das Eidgenösssische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédérale de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/55/de",
+      "sha": "23887804c0e279150abb3bebad6996b5528050dd4cb1fabbb3e70a41faa63942"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-11-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/417",
+      "dateDocument": "2000-10-25",
+      "roFundstelle": "AS 2000 2613",
+      "titelDe": "Verordnung über die Pflege des schweizerischen Erscheinungsbildes im Ausland",
+      "titelFr": "Ordonnance sur la promotion de l'image de la Suisse à l'étranger",
+      "titelIt": "Ordinanza concernente la promozione dell'immagine della Svizzera all'estero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/417/de",
+      "sha": "797a6e7c35a3df9dec79375311346364bb39ece5a9f302d5fd4e7cce9ea54665"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/282",
+      "dateDocument": "2000-06-28",
+      "roFundstelle": "AS 2000 1837",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement des Innern (OV-EDI)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'intérieur (Org DFI)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'interno (OOrg-DFI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/282/de",
+      "sha": "57a06f70372acbf2b322c92d2cc761486a885a14b3253007fc2d70da67354337"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/283",
+      "dateDocument": "2000-06-28",
+      "roFundstelle": "AS 2000 1849",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/283/de",
+      "sha": "f8440f515c67e0dce830c41faee514497830568a61f04c7eec78c5b44272d8ca"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/190",
+      "dateDocument": "2000-02-23",
+      "roFundstelle": "AS 2000 1163",
+      "titelDe": "Verordnung über die Meteorologie und Klimatologie (MetV)",
+      "titelFr": "Ordonnance sur la météorologie et la climatologie (OMét)",
+      "titelIt": "Ordinanza sulla meteorologia e la climatologia (OMet)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/190/de",
+      "sha": "b4906f97b6b121baa4dca737885692f3bcef1c3e5e085846bc60ac2aeff93c6a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/44",
+      "dateDocument": "1999-12-06",
+      "roFundstelle": "AS 2000 243",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/44/de",
+      "sha": "c917027a41f7a85d74dec8a0678223b0752e09ba0152402a5ba9d04e70bf54f2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/57",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 291",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/57/de",
+      "sha": "9dc3c7187771ab153c5a2f6d7b296610a45a8ec3c1b3bbe2a191828e61c4cb70"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/66",
+      "dateDocument": "1999-12-13",
+      "roFundstelle": "AS 2000 330",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de la défense, de la protection de la population et des sports (Org DDPS)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale della difesa della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/66/de",
+      "sha": "98d003b2a1cfabb7e3cd787d26350c49f708315be028784159da617a01a3390e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/344",
+      "dateDocument": "1999-06-14",
+      "roFundstelle": "AS 1999 2179",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Wirtschaft, Bildung und Forschung (OV-WBF)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'économie, de la formation et de la recherche (Org DEFR)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'economia, della formazione e della ricerca (Org-DEFR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/344/de",
+      "sha": "38449fdecc8f71d1b00cf2fd6d41f4acec28a56d455041df5a7009ba4b67b110"
     }
   ],
-  "sha": "71aadc41afb7114743863ba699b12795591f93c3abdde5881ba99214ff1b70fc"
+  "sha": "4926ad739b0af40cddf3f322a26c6df1009066571999f6d1f201d547c7a7ab8a"
 }

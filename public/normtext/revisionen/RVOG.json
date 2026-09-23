@@ -1,8 +1,8 @@
 {
   "erlassKey": "RVOG",
   "sr": "172.010",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,20 +14,42 @@
       "titelFr": "Loi fédérale sur des mesures d’allègement financier et administratif à partir de 2025",
       "titelIt": "Legge federale concernente le misure di sgravio finanziario e amministrativo applicabili dal 2025",
       "botschaftKey": "BOTSCHAFT-2024-558",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/196/de",
-      "sha": "a2217e304e584ab6b9cfe78185998d6465822a431f74070ae2d717e34693a89f"
+      "sha": "fe3cee5d690f0ef2294f2670c7734ee1031f9f05a4050b19d85d09e1d373ef17"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "7a0710a2d7a403d1efa2667123b3e43886feb59ecaa4933e971cf0dafa8e0382"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-12-02",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "acdc420643ca3a73f4f72997aa52cf621ed4dc698b81906f7b2c3b6eb2f0c0c0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/575",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2019 3119",
+      "titelDe": "Bundesgesetz über die Zuständigkeiten für den Abschluss, die Änderung und die Kündigung völkerrechtlicher Verträge",
+      "titelFr": "Loi fédérale sur les compétences en matière de conclusion, de modification et de dénonciation des traités internationaux",
+      "titelIt": "Legge federale sulle competenze di concludere, modificare e denunciare trattati internazionali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/575/de",
+      "sha": "b2f1f7ac9b9caa678f712199d3df115d020536a080365b2d257aef1bc00ffd6c"
     },
     {
       "art": "aenderung",
@@ -39,8 +61,11 @@
       "titelFr": "Loi fédérale sur le programme de stabilisation 20172019",
       "titelIt": "Legge federale sul programma di stabilizzazione 20172019",
       "botschaftKey": "BOTSCHAFT-2016-1047",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/573/de",
-      "sha": "c42d0779cfb1d3512ec6a61651e91a5438ad84ff89e802ab3aa256dade4c8bc7"
+      "sha": "ffd8c0fcb5002f60a673f4449bdf2ca42b05a3df6ae3b479e26da773793c5b33"
     },
     {
       "art": "aenderung",
@@ -51,14 +76,27 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Betrifft nur den französischen Text)",
       "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA)",
       "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/333/de",
-      "sha": "df049ee91dd9c9d9202c5d41a11bb80be7965c996317b46009753381c076440c"
+      "sha": "5069d7b00f0ad3e8ef21dc49907b28b9ed176d2bf06f5cda25c2a33014206dac"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "1231607fd177a611ffcd25888e912d64fa9d647c7f204af5970bca1ed1b6ddb1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/312",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 1583",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG) (Neues Führungsmodell für die Bundesverwaltung, NFB)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC) (Nouveau modèle de gestion de l'administration fédérale, NMG)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC) (Nuovo modello di gestione dell'Amministrazione federale, NMG)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/312/de",
+      "sha": "ea45460014d65a34d18833a6125d24bf4b828c8d8585d87a8b0d31c349746d21"
     },
     {
       "art": "aenderung",
@@ -70,14 +108,31 @@
       "titelFr": "Loi fédérale sur la compétence de conclure des traités internationaux de portée mineure et sur l'application provisoire des traités internationaux (Modification de la loi sur l'organisation du gouvernement et de l'administration et de la loi sur le Parlement)",
       "titelIt": "Legge federale sulla competenza di concludere trattati internazionali di portata limitata e sull'applicazione provvisoria dei trattati internazionali (Modifica della legge sull'organizzazione del Governo e dell'Amministrazione e della legge sul Parlamento)",
       "botschaftKey": "BOTSCHAFT-2012-1138",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/177/de",
-      "sha": "bb297904618eccc9dd319eefa25ca2d9902083b9915648b829b45d6a4aea9239"
+      "sha": "4c24a9c41be3ae0b8afe8378d37a2f0420a256bb61b18212719a5ba04884157d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "cf02695b0f9401c10a2f29e57dec0858d5ef16af66ce5048a41b27ea7e18c2b3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/810",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2013 4549",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG)",
+      "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA)",
+      "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA)",
+      "botschaftKey": "BOTSCHAFT-2010-1440",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2015-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/810/de",
+      "sha": "22f63473ea794bc9e459e00d072ed1cee56ec9b174a2411577d0aa06fbd5540f"
     },
     {
       "art": "aenderung",
@@ -89,8 +144,15 @@
       "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA)",
       "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA)",
       "botschaftKey": "BOTSCHAFT-2010-1440",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2015-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/810/de",
-      "sha": "37d851f2b26777ac1f6d69c015f1ac5ddb17fe2c2ce468826e884fa931eb6e29"
+      "sha": "954d6cddd6a1941629f7809a90b8c382d84a73aaa0da0cc695474513d04e762e"
     },
     {
       "art": "aenderung",
@@ -102,32 +164,63 @@
       "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA) (Protection des données lors de l'utilisation de l'infrastructure électronique)",
       "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Protezione dei dati derivanti dall'utilizzazione dell'infrastruttura elettronica)",
       "botschaftKey": "BOTSCHAFT-2009-1469",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/159/de",
-      "sha": "44a585478711a814c7d5dd6ae5c484cb4fe49a64f174b5be12a83279755162df"
+      "sha": "371d70c1a1f408bc29bc2ea6c6aa638beb52700e295ce60e42a57224504082ac"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "b8656702bd26ef7b53d719e663206d680273f3645873ee714cebc675aff0a6a9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/807",
+      "dateDocument": "2010-12-17",
+      "roFundstelle": "AS 2011 5859",
+      "titelDe": "Bundesgesetz über die Mitwirkung der Bundesversammlung bei der Steuerung der verselbstständigten Einheiten",
+      "titelFr": "Loi fédérale relative à la participation de l'Assemblée fédérale au pilotage des entités devenues autonomes",
+      "titelIt": "Legge federale sulla partecipazione dell'Assemblea federale alla determinazione dell'orientamento strategico delle unità rese autonome",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/807/de",
+      "sha": "75fea0f758ad76d5cb5d146aa54cccac48ad3d134d46ded710fc1d7519b4d2d0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "7d0ca8614ea3237bece344c78582f19f3f665eccfaded493c4ac246c952751f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 4627",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/663/de",
+      "sha": "b26cdc6f0848bcc22ec99424d2396696f82a0c68e79c2fe8d5c2ccb6d5acb653"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "5d7429d6a4c02c7820cee00e7af41e61670d1cb7d660de6c75b0ae8033b5826f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/210",
+      "dateDocument": "2010-12-17",
+      "roFundstelle": "AS 2011 1381",
+      "titelDe": "Bundesgesetz über die Wahrung von Demokratie, Rechtsstaat und Handlungsfähigkeit in ausserordentlichen Lagen",
+      "titelFr": "Loi fédérale sur la sauvegarde de la démocratie, de l'Etat de droit et de la capacité d'action dans les situations extraordinaires",
+      "titelIt": "Legge federale concernente la salvaguardia della democrazia, dello Stato di diritto e della capacità di agire in situazioni straordinarie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/210/de",
+      "sha": "5a230797dee6c1a5c5018510d55757687f096955ae822880cf71bb8b298db12c"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2010-12-17",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "9ad0cc33105c137f1b27a881bfd0ceacb33fd8b520e84e52c1ce7c219588ff56"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1997/2022_2022_2022/20101217/de",
+      "sha": "6d366cc1a2a6049405fe540b06964db8384f0cf959f114fb4f44e9eca223d5df"
     },
     {
       "art": "aenderung",
@@ -138,8 +231,12 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 20. März 2008 des Regierungs- und Verwaltungsorganisationsgesetzes",
       "titelFr": "Ordonnance sur l'entrée en vigueur complète de la modification du 20 mars 2008 de la loi sur l'organisation du gouvernement et de l'administration",
       "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 20 marzo 2008 della legge sull'organizzazione del Governo e dell'Amministrazione",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/750/de",
-      "sha": "4531b0c122656007bb3c637b683030b0c36ef47e6a68344d548eb991cc73aec4"
+      "sha": "614a6798e5186dfdc2fb0fc1c68c11ffeea2366e6a2db9d53d44d83d238e5c93"
     },
     {
       "art": "aenderung",
@@ -151,20 +248,58 @@
       "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA) (Réorganisation des commissions extraparlementaires)",
       "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Riordinamento delle commissioni extraparlamentari)",
       "botschaftKey": "BOTSCHAFT-2007-1016",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/818/de",
-      "sha": "139188cc41be4a661107d0a6ae876014d62323e1c04314559ba5b35626c6a2fb"
+      "sha": "945bb604a38817b64279f01ec9b59f4ef643d3df7c453806e0573b1137448b64"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "ce27e4c08b92aa557e781935b5fc7580ad03b9d385d8dab1a02b4752c72f74a3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "71f05964e58a16d527676ca7fdf448d695cdd5c74f6438a31537bd577982b616"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
       "art": "aenderung",
@@ -176,38 +311,89 @@
       "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA)",
       "titelIt": "Legge federale sull'organizzazione del Governo e dell'Amministrazione (LOGA)",
       "botschaftKey": "BOTSCHAFT-2004-1239",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/224/de",
-      "sha": "a7a0fa6886a9e650b6359985529250e844d197c0807f85b7ecc5b593236b6282"
+      "sha": "541f8295068dbe956bb01e47040043f79624cb7c17a449da8c942de587723843"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "a9af2086a0fb0e6875036fea3ca3c2aac04987fa41e2f3450928fb445fe71fab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/227",
+      "dateDocument": "2005-10-07",
+      "roFundstelle": "AS 2006 1275",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/227/de",
+      "sha": "c7ca3c62f5fef5c1760d8dab0158dbd8d08a09618ca7ca26f93913fecb2952e1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "a4f700783b29506b559642246bb5ea1505b450a1e00236eb91fb6cdaaee5fda3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/184",
+      "dateDocument": "2004-10-08",
+      "roFundstelle": "AS 2005 1245",
+      "titelDe": "Bundesgesetz über die vorläufige Anwendung von völkerrechtlichen Verträgen",
+      "titelFr": "Loi fédérale sur l'application à titre provisoire de traités internationaux",
+      "titelIt": "Legge federale sull'applicazione provvisoria di trattati internazionali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/184/de",
+      "sha": "1bf1e2429fc114a083c38e7626d6ae75bcf06c0fca71eb017895eefb31dca72f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "4fb172a9fd2962c6cbcbadcc66d7c692a69b7d6e55c7f65f83d88b54c5e15960"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 1633",
+      "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+      "titelIt": "Legge federale sul programma di sgravio 2003",
+      "botschaftKey": "BOTSCHAFT-2003-887",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/200/de",
+      "sha": "15626724d1c5c67b2ebd7840b853b7472dae4cd91e652f4b223aba221dc9703c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "671fe6ca85bedb8d40cd62121be2b8c8602f25153ee29f5921b6aa4149fe3a02"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 3543",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/510/de",
+      "sha": "29936f5adbf1777cd0c7bededab6a5081b3e349945cd1b6367d9dfb43bd56128"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.010",
-      "sha": "69913b0a21a44b439f8afac5b95e75f1c5e77fca16a262b62d26c13d19730e43"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/24",
+      "dateDocument": "2002-03-22",
+      "roFundstelle": "AS 2003 187",
+      "titelDe": "Bundesgesetz über die Anpassung von Organisationsbestimmungen des Bundesrechts",
+      "titelFr": "Loi fédérale sur l'adaptation de dispositions du droit fédéral en matière d'organisation",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente l'adeguamento di disposizioni organizzative del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/24/de",
+      "sha": "882e84afb1b809ec5b37c98b0e275677e4575a1a97d60712055e135ca6dd2a5d"
     },
     {
       "art": "aenderung",
@@ -219,8 +405,27 @@
       "titelFr": "Loi fédérale sur les titres et les décorations octroyés par des autorités étrangères",
       "titelIt": "Legge federale concernente le liberalità e le onorificenze di Governi esteri",
       "botschaftKey": "BOTSCHAFT-1999-1_7922_7145_6784",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/21/de",
-      "sha": "4989dab9341c39f54d4fbde4687f09c1d15bbf86c1c85d4b51117ac43676f0bd"
+      "sha": "6e178a71d7921f95c40ae95fb916a169c7e96646a9860c2cb2669a9c51755a59"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/293",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 1891",
+      "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
+      "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali",
+      "botschaftKey": "BOTSCHAFT-1999-1_9005_8381_7979",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/293/de",
+      "sha": "ae30ef945d2254069bf01059d72440b99fb1ff98b57b429a9c56f864a83dc501"
     },
     {
       "art": "aenderung",
@@ -231,8 +436,11 @@
       "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG)",
       "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA)",
       "titelIt": "Legge federale sull'organizzazione del Governo e dell'Amministrazione (LOGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/318/de",
-      "sha": "18c5adabaa2ddd0a43ddc06f231343e78669d418dff4220c7cfefe59f20e63ac"
+      "sha": "5cfedeed045e3397b1ee1aa7f743beaf706aa3502a7a8d3558585243943cc1c5"
     },
     {
       "art": "aenderung",
@@ -243,8 +451,26 @@
       "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
       "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
       "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
-      "sha": "42fbcc35c913366e5ad5333b2cd77ee629f54148df471003de5912b9882c4489"
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/54",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2000 273",
+      "titelDe": "Bundesgesetz über den Geschäftsverkehr der Bundesversammlung sowie über die Form, die Bekanntmachung und das Inkrafttreten ihrer Erlasse (Geschäftsverkehrsgesetz) (Anpassungen an die neue Bundesverfassung)",
+      "titelFr": "Loi fédérale sur la procédure de l'Assemblée fédérale ainsi que sur la forme, la publication et l'entrée en vigueur des actes législatifs (Loi sur les rapports entre les conseils) (Adaptations à la nouvelle Constitution)",
+      "titelIt": "Legge federale concernente la procedura dell'Assemblea federale e la forma, la pubblicazione, l'entrata in vigore dei suoi atti (Legge sui rapporti fra i Consigli) (Adeguamento alla nuova Costituzione federale)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/54/de",
+      "sha": "fdb082af134ac76436dc136571f0bcf094471effd3ddb4397eb882fd3c2eedd9"
     },
     {
       "art": "aenderung",
@@ -256,45 +482,27 @@
       "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA)",
       "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA)",
       "botschaftKey": "BOTSCHAFT-1999-1_7922_7145_6784",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/56/de",
-      "sha": "614d094b08eeabf4e2392cd4698b1427a01032e2cb23b43d4b21bae3533e1de9"
+      "sha": "52d5b04a898410896ae62fe7fa7901f962d601dbec8a076d202f553ef959fe99"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1997-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2022_2022_2022",
-      "dateDocument": "1997-03-21",
-      "roFundstelle": "AS 1997 2022",
-      "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz vom 21. März 1997 (RVOG)",
-      "titelFr": "Loi du 21 mars 1997 sur l'organisation du gouvernement et de l'administration (LOGA)",
-      "titelIt": "Legge del 21 marzo 1997 sull'organizzazione del Governo e dell'Amministrazione (LOGA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2022_2022_2022/de",
-      "sha": "1c49f13b15252c341c35096ae0c9d9668283f42e4ae1fca63a67b22056bfc8c8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1979-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/114_114_114",
-      "dateDocument": "1978-09-19",
-      "roFundstelle": "AS 1979 114",
-      "titelDe": "Bundesgesetz vom 19. September 1978 über die Organisation und die Geschäftsführung des Bundesrates und der Bundesverwaltung (Verwaltungsorganisationsgesetz, VwOG)",
-      "titelFr": "Loi fédérale du 19 septembre 1978 sur l'organisation et la gestion du Conseil fédéral et de l'administration fédérale (Loi sur l'organisation de l'administration, LOA)",
-      "titelIt": "Legge federale del 19 settembre 1978 sull'organizzazione e la gestione del Consiglio federale e dell'Amministrazione federale (Legge sull'organizzazione dell'ammininistrazione, LOA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/114_114_114/de",
-      "sha": "82661d9c5b3c64295938f18ee4e2ee141ac9c1b0191f1f917f4f4c518dc45103"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1915-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/30/292_292_278",
-      "dateDocument": "1914-03-26",
-      "roFundstelle": "AS 30 292",
-      "titelDe": "Bundesgesetz vom 30. März 1914 über die Organisation der Bundesverwaltung",
-      "titelFr": "Loi fédérale del 30 mars 1914 sur l'organisation de l'administration fédérale",
-      "titelIt": "Legge federale del 30 marzo 1914 sull'organizzazione dell'Amministrazione federale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/30/292_292_278/de",
-      "sha": "f840a8b37589f1fff1f28f80b64f1790f83a2605e7f2c80cb5ac0c46ad8b3984"
+      "dateEntryInForce": "1998-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1202_1202_1202",
+      "dateDocument": "1997-10-10",
+      "roFundstelle": "AS 1998 1202",
+      "titelDe": "Bundesgesetz vom 10. Oktober 1997 über die Rüstungsunternehmen des Bundes (BGRB)",
+      "titelFr": "Loi fédérale du 10 octobre 1997 sur les entreprises d'armement de la Confédération (LEAC)",
+      "titelIt": "Legge federale del 10 ottobre 1997 concernente le imprese d'armamento della Confederazione (LIAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1202_1202_1202/de",
+      "sha": "041b70a5a2579fb3e118b210c9de150b7316ca04185081fb613da535f92a6a7b"
     }
   ],
-  "sha": "c6e6a0a995dc4fcfd2546d8f65ba4bfc71260830e2a65691ae6a280c789a265e"
+  "sha": "b49c52f012b3b565230d4b54972db3743659bcf87c9955651fc6176a4aba2629"
 }

@@ -1,8 +1,8 @@
 {
   "erlassKey": "ARGV2",
   "sr": "822.112",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d’entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/848/de",
-      "sha": "33e89f5708cc696d2c981b4d977242496b21f05d54792f7456cced12281ba855"
+      "sha": "1afcb2515e51aeaed7e57dcec119ce42739b3d121a83ca324b1d617774208857"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/692/de",
-      "sha": "f06b8fb33ccbe55a53ad86839580076a1fe86b670410b5d380f9c552ef47d512"
+      "sha": "60856f7bd80cacc3485ea275276de9d6bce4e6a8e96d9bce7d5e3cd56eadbf95"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d’entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/489/de",
-      "sha": "cf8e15a60fd1459298602e52407daf6475a072aa1dbfb1370bc740545e71b6d3"
+      "sha": "d3cebac9881a84d31839c768b08e2638fa6e45c0bd9a8050dce828f8287ab3a8"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d’entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/260/de",
-      "sha": "1b3b478e2188925a21fcffbbd2b4efc5844c99ed748b2e5fb0b49d30db608da4"
+      "sha": "e76b988a79fa2278ee1258f8d3f5e4fc37ee62117ea2d14d67ad51b34a57c23e"
     },
     {
       "art": "aenderung",
@@ -61,8 +73,12 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d’entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/101/de",
-      "sha": "05c91483820bbef3d427f0489239c9d30435a4aa682af194a3ce390622b2138f"
+      "sha": "658252bc8e56a098f653ee317e4146a3616b991d37308edcd696816782930193"
     },
     {
       "art": "aenderung",
@@ -73,8 +89,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d’entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/543/de",
-      "sha": "5faec1290c1a9e22bd155f6bf89b38e92213c17affebc4c047d7232384d9d41f"
+      "sha": "9311bba689520e2466ef66062a317f6786e0c52a6349397800562201cc7a4f5b"
     },
     {
       "art": "aenderung",
@@ -85,8 +104,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/168/de",
-      "sha": "46b7ec5036459dfd1686a4f11e18efae803fd4610a1e6564e668592fc0318e3f"
+      "sha": "b5fc99182a9792963f050b1bde8627fbe560938c35bc4d0780c9b4cb8b9b5103"
     },
     {
       "art": "aenderung",
@@ -97,8 +119,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/6/de",
-      "sha": "85a748d3b7b8cae12122314a1032921b88a11353dd4a80444129c1403499ec74"
+      "sha": "648b64b9dde64cefe4fd5ed6a2da099450034257724a8934c2f96d370d96ad17"
     },
     {
       "art": "aenderung",
@@ -109,14 +134,26 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/490/de",
-      "sha": "d388ed02bbd5f8a9e75cc9efa308745ddc84664f1417023e01bbeb02e570a21c"
+      "sha": "90d0c1d7041bd15e5797691745cc3e9777a7b6904cd9aa40baaf3031f0c50a1e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.112",
-      "sha": "b55cacdcc10f3bd292f868033f1f19f9b683cbefbac3d9ba353d9693ff0291a9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5413",
+      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "sha": "1dafdd859641fa404d58133e5b4a5fbffc90cf3b941d5b67377c0ecbd1b63527"
     },
     {
       "art": "aenderung",
@@ -127,8 +164,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/179/de",
-      "sha": "f6dac5774868fb8d2d19b44f946e075ea96eed48bb990dacd2d6ccf48d83d32b"
+      "sha": "e9bdae01794ee285e48b76b764726737f0cef3acfaab3ac949855cc9110df2a8"
     },
     {
       "art": "aenderung",
@@ -139,8 +179,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/109/de",
-      "sha": "4832bc21ea468eeb5c73d980f40caee2db799ac420f49b407eee1d2be7fd9e68"
+      "sha": "5a87edb3071dfb367276eb86ce96f86f9ca7f87d0053df6825ecfb32e7de48d2"
     },
     {
       "art": "aenderung",
@@ -151,8 +194,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/474/de",
-      "sha": "36c6799adec12a5a2d609fb50b33a97bb2168212ff6dc39fb860244c75a1c1c2"
+      "sha": "26816ab74b9bf834dfa04e71eb5d4ff7d149ad46e288c69699fca05441d63b08"
     },
     {
       "art": "aenderung",
@@ -163,8 +209,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/747/de",
-      "sha": "c00e953e9f3a5fafd8cfe7875edd071075967fa48c21639904e857e20607601c"
+      "sha": "d341e3cf083a3a75260add88b71f45ce2f1f579c222519df11f50084d5cc7608"
     },
     {
       "art": "aenderung",
@@ -175,14 +224,26 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/449/de",
-      "sha": "c368311edd20294c0a494d7f9e0221aaa856f3c84e9ffc1b5ec8354197b0c8ec"
+      "sha": "a87795156339b6e0ac0172f0111078ad653941e99f748b1954a2c0140a6dfcf1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.112",
-      "sha": "833f0f255bd2b1367a2794faf005465f9676d05cfc8e0a85d63af8fa9511493a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "cc366b052f45678f6292fa3ed75ee05d752a3862952f1b32edfc0aaf66630b2f"
     },
     {
       "art": "aenderung",
@@ -193,8 +254,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/705/de",
-      "sha": "09ed9d0b3f451c6ed1fc1b6079e133d7eee2e3c6e3268b85b0de2d418620cbd6"
+      "sha": "e32ec4d962453db4d27fa6a08584f8543e8a6bbe8daf433a0beb486231f53716"
     },
     {
       "art": "aenderung",
@@ -205,14 +269,27 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/803/de",
-      "sha": "516fa6687642931fe761411336aa75fcb93e2928ad8cf02bd71760c8c6809a64"
+      "sha": "c6a117558e97c1ff0271b872c43db7063fe9ef29b4b7b47b18c76bd7731c27a8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.112",
-      "sha": "aef73e91db91d64ea6b9536187d7666ab54342ffa72d55f5c0985898b9073b32"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
     },
     {
       "art": "aenderung",
@@ -223,8 +300,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV2)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/174/de",
-      "sha": "3c58a751ffa1592c5d32afa86d1b530f3d0c38066b6edb018aad89681adb5bfe"
+      "sha": "e760c3e39caf6593da138a77458264184a3de7e9b1be839cadf9c2e927b039af"
     },
     {
       "art": "aenderung",
@@ -235,8 +315,11 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2)",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/433/de",
-      "sha": "e138a6eb489d1ea26862883064f0b00275ad6e9c47663dc0bf83039f29e6416d"
+      "sha": "2ca291e884e74bdebfe224a847f929262a8e7712b16c84cedb7b179ff41e966a"
     },
     {
       "art": "aenderung",
@@ -247,33 +330,12 @@
       "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
       "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises) ou de travailleurs",
       "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/393/de",
-      "sha": "e66371e3ecbd7397dad7203019efafefe25eb8aaa7505650f290f051d161449d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2000-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/244",
-      "dateDocument": "2000-05-10",
-      "roFundstelle": "AS 2000 1623",
-      "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
-      "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
-      "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/244/de",
-      "sha": "40b0fdfcdde3dbfaaedf938f42202e3f23695dea768b6db927c973b7486fdc75"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1966-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/119_119_119",
-      "dateDocument": "1966-01-14",
-      "roFundstelle": "AS 1966 119",
-      "titelDe": "Verordnung II vom 14. Januar 1966 zum Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern)",
-      "titelFr": "Ordonnance II du 14 janvier 1966 concernant l'exécution de la loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (loi sur le travail) (Dispositions spéciales pour certaines catégories d'entreprises ou de travailleurs)",
-      "titelIt": "Ordinanza II del 14 gennaio 1966 per l'esecuzione della legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (legge sul lavoro) (Disposizioni speciali per determinate categorie di aziende o di lavoratori)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/119_119_119/de",
-      "sha": "eb15bc7c707b02ff8ae67331a47f29d82a134d1bc4253429b663aecfddb10a88"
+      "sha": "e35435d6c3c9d18304413ee6ffc48286df46c92e5de23ba2af3d971674611faa"
     }
   ],
-  "sha": "85a1274627220ed04f173048ba14a872662f61c4adeb17b7ce2b968a41045bc7"
+  "sha": "f6fa2f8c14b4786771199fce654dbdd7225c8e38360fcb6ffdfc8dd1def8642d"
 }

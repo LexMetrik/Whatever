@@ -1,15 +1,28 @@
 {
   "erlassKey": "BVV_2",
   "sr": "831.441.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2030-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/325",
+      "dateDocument": "2026-06-12",
+      "roFundstelle": "AS 2026 325",
+      "titelDe": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026",
+      "titelFr": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026",
+      "titelIt": "Ordinanza concernente la modifica di ordinanze nell’ambito della previdenza professionale nel 2026",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.441.1",
-      "sha": "22d7aa350deaf0e6c3122aa3635b953507d8d4a10107c392d1ae389a95ef45cd"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-08-01",
+        "2030-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/325/de",
+      "sha": "0c4926d607e1a62df7ef94ded36ff6f9e7a91cdc5dcb741c402056986440f7e1"
     },
     {
       "art": "aenderung",
@@ -20,8 +33,15 @@
       "titelDe": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026",
       "titelFr": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026",
       "titelIt": "Ordinanza concernente la modifica di ordinanze nell’ambito della previdenza professionale nel 2026",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-08-01",
+        "2030-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/325/de",
-      "sha": "73d63a5733a08d7bc3bcd8982c980e5f320bbf718fbf9430c340ca56397ac751"
+      "sha": "c92ab4305bb2346782ac9ed795dad0f8100a73917a2bbc3c3b0d42019fbbb510"
     },
     {
       "art": "aenderung",
@@ -32,8 +52,26 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/469/de",
-      "sha": "64bb878d956925f045877478cf3756de868372ce6497aca1fc64e7a8c478cc84"
+      "sha": "933d88ec65133edf24df26a5fd017d9e35f89bfa4819e82548088469376e647a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "5c7dddebd3667bd2e5e37e0414d505dec30f1f7afa17760d0578b07c3cc6f54c"
     },
     {
       "art": "aenderung",
@@ -44,8 +82,26 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/652/de",
-      "sha": "a9eece0e6404d7bf6e3c9b1170df9faf178b338960c097fe6192ad891a02a98c"
+      "sha": "f06323a0e0f4717877442f615bf193efe82779c8585f3a6881a6372b0cff5771"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/750",
+      "dateDocument": "2023-11-22",
+      "roFundstelle": "AS 2023 750",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/750/de",
+      "sha": "61a149520d485be0e576d49232e79572721aebd6123202be854e54238059d46c"
     },
     {
       "art": "aenderung",
@@ -56,8 +112,26 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/609/de",
-      "sha": "7fb5bc73d86a86afb30f77378ed68c74b2c462729b8b854f31cef600927c4cf3"
+      "sha": "e68a6ee900bfc414e6999ea92e7eb55bf28df24d2e32b94d0075e6a4b2e9a4fb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/706",
+      "dateDocument": "2021-11-03",
+      "roFundstelle": "AS 2021 706",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l’assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/706/de",
+      "sha": "99d19a3437028d4e9fec4f5578c808e95ae052f8bf9e6566d9c4a27114c63265"
     },
     {
       "art": "aenderung",
@@ -68,8 +142,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionelle viellesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/794/de",
-      "sha": "b1a36eb86adcde49b569322917dd161a8de569760d84cc9d9364f48b4a1c7d40"
+      "sha": "bdd23956f988e8e32dc95d985d598ed4c19f24262ea1555182fb4e20728348dc"
     },
     {
       "art": "aenderung",
@@ -80,20 +157,56 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/824/de",
-      "sha": "fdd2bd5aef9c0ea8833a6542f415aa7de9afabbba338887ad0c47fb387909b66"
+      "sha": "44e3c40900f0f5559c9d7ff8cf2cbdbfebea3a94f48805bf050d6e31a38f91a0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/893",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5149",
+      "titelDe": "Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts",
+      "titelFr": "Ordonnance sur la partie générale du droit des assurances sociales",
+      "titelIt": "Ordinanza sulla parte generale del diritto delle assicurazioni sociali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/893/de",
+      "sha": "a0989ee36eb1006d96b991532f49391e8c559fbb723a4ac21a2668d649e5cef8"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.441.1",
-      "sha": "b91aaf9e3f523a8b8d3b1f667e7613ee2a7b6b4c99963bde6e6285a99d552b6a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/681",
+      "dateDocument": "2020-08-26",
+      "roFundstelle": "AS 2020 3755",
+      "titelDe": "Verordnung über Änderungen in der beruflichen Vorsorge",
+      "titelFr": "Ordonnance portant modification de dispositions dans la prévoyance professionnelle",
+      "titelIt": "Ordinanza concernente modifiche nell'ambito della previdenza professionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/681/de",
+      "sha": "30885a467cd53824d3f97f80b827c0f27ce81559af2e5a36f42343629ddc1d5d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.441.1",
-      "sha": "d3d0500e8fd5afbaf1c6adb1b20d41c4a6795ce1c0421ae64937d112871ffa78"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "c51fd587d9ec14868e8f4aeab014c00a2b53aa599ae0c4aaa8d690d968c4c771"
     },
     {
       "art": "aenderung",
@@ -104,8 +217,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/578/de",
-      "sha": "f657a18aeaf89aaf2f74ace5079d344fb711935baf618c5d72df03307b07a1d4"
+      "sha": "02c56b8eb69ed32408263b1bca4b5c2d37beb0d1b03c12fc197a9181a11d2b7b"
     },
     {
       "art": "aenderung",
@@ -116,8 +232,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/543/de",
-      "sha": "b9aae5c37f50f59e40134516661e9fc1cfdaffe13faec43583e7577b4e4f9624"
+      "sha": "eff29db329a6bd2bcacf2003615774e44a93b63d70502a333b9e53eb96d11eff"
     },
     {
       "art": "aenderung",
@@ -128,8 +247,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/381/de",
-      "sha": "e6fb39fa449ffbe99682950f25e20a52bc6da0092fc55fd9f8d7efb8f5d271d6"
+      "sha": "9d58cf89b5b48de97fe44f0882f66261cfe29ed847845fd3cb6edf474cd44ee8"
     },
     {
       "art": "aenderung",
@@ -140,8 +262,26 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/698/de",
-      "sha": "dbba1c81901d8935e4ceb691b5021a390c7f9d6837b980d57bb3259a23d0eb91"
+      "sha": "e26793c857b19db328d5368140c944534f3031a142f9a14d145d0f2b639eefb8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/724",
+      "dateDocument": "2016-11-09",
+      "roFundstelle": "AS 2016 4393",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV)",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
+      "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/724/de",
+      "sha": "28ffab58f2c09849765890afa4a3ff7d852d47a29dadfe285da96e52261e47bc"
     },
     {
       "art": "aenderung",
@@ -152,8 +292,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/171/de",
-      "sha": "b51934d344942f4ed283e7cd036f251c054ee9164c83ed82ff2f4f307093acbf"
+      "sha": "73b42fec897b52639c46c12cf908d66631b22b6bc6bd2aa226e54e19d7649d13"
     },
     {
       "art": "aenderung",
@@ -164,8 +307,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/737/de",
-      "sha": "48ed2715b80c5455922b968d955f025566638b31509a572e7427e101581030c0"
+      "sha": "8edfac50b610ac0ed162025bc6291c360efdb1c313542e6748575404a7ec5875"
     },
     {
       "art": "aenderung",
@@ -176,8 +322,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/579/de",
-      "sha": "9d3aa06e64c696a786da909f78463309b3fa38f1c0133a4cfe1caa2b19d798a7"
+      "sha": "0455ca32820b2efb6387cc3f6d7db2d2ed813e1b83934afea6fd52b550c9dd89"
     },
     {
       "art": "aenderung",
@@ -188,8 +337,31 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/316/de",
-      "sha": "973e1c9ac70065032e6fdf2f7dc5c4125eccf61240a83d97a9dd5f01c775d202"
+      "sha": "808e5c54c41e3bfab09b5ac9fe57ebd6e0b1dc6b31af789920d6f790546123ca"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+      "dateDocument": "2011-06-22",
+      "roFundstelle": "AS 2011 3435",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-08-01",
+        "2012-01-01",
+        "2014-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/461/de",
+      "sha": "386d3ccee394bc526580d6b8a13227695d79e67254eee79347260c19178bef98"
     },
     {
       "art": "aenderung",
@@ -200,8 +372,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/317/de",
-      "sha": "c3a62b048c22a71e0c0530b6e0dea569a9f24341fe98c9a5d029e36a71aa1ea6"
+      "sha": "808707d72b1bd92679c88044fd23bcba26adbb177a593f9478e2a8ee55d63d78"
     },
     {
       "art": "aenderung",
@@ -212,8 +387,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/763/de",
-      "sha": "332ab2a4b70ac3937ade2bcbea566ac54ece611f18b2e2b3cffc781586143be4"
+      "sha": "d689df850bd8a898e80fc294b6726c8a7a02937ceeafe7ebb5cb34db263ce8a9"
     },
     {
       "art": "aenderung",
@@ -224,8 +402,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/764/de",
-      "sha": "7c75ba198bdd0c82158b10b036f037064eab77a77919051260d606b890c15f26"
+      "sha": "bc3d7b62775916c133dd3d639a7eb4ace4d77931b9bcdfe54758c0bdc696c831"
     },
     {
       "art": "aenderung",
@@ -236,8 +417,31 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/753/de",
-      "sha": "362c6fcf3ff091a77c4a74753964c8eb298c8496b04dbdc751694ed41a9c29cd"
+      "sha": "bb6d653e5fd631f1905c2d3998431955ae2767a132a42175a249f8a3769d035c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+      "dateDocument": "2011-06-22",
+      "roFundstelle": "AS 2011 3435",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-08-01",
+        "2012-01-01",
+        "2014-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/461/de",
+      "sha": "b973589e8cc0f17d73db711de1287887c37905b78419e87834ed0d5e201a17fb"
     },
     {
       "art": "aenderung",
@@ -248,8 +452,26 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/737/de",
-      "sha": "3db5d433aedda8a5771c145ee697cfd916a4ce2ec72987c1d261f7eb8d103dcc"
+      "sha": "4aed4c7dfb96d632c3a79d0da1a3909164599d8fb20225a1d3539d7e7fdf2aa6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/800",
+      "dateDocument": "2011-11-16",
+      "roFundstelle": "AS 2011 5679",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/800/de",
+      "sha": "7a0f1c42e267b94f85796687a1d7b9ac46c4298af049b6d18252720c1c15c3d1"
     },
     {
       "art": "aenderung",
@@ -260,8 +482,17 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2011-08-01",
+        "2012-01-01",
+        "2014-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/461/de",
-      "sha": "4a90bccbb76d2fc06141f7ff00d525687c636ab1a2caab3aae1bb08007e68a1b"
+      "sha": "2bdc7c01a6b48a68c8230a0e3140d447241d44283d56b6b6d83cd3754821e23e"
     },
     {
       "art": "aenderung",
@@ -272,8 +503,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/660/de",
-      "sha": "515de8fa6c5ececc2bf1a366b8969177ede05654dff53a07b31b4bd9b3405a13"
+      "sha": "9cb31f850eddf11700ff64546d7b9c5181608a3b3a970519eabe40bcea0e092b"
     },
     {
       "art": "aenderung",
@@ -284,8 +518,12 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/245/de",
-      "sha": "188f6d2d63cacce83128b603972ee4a66873dc087103f94ce89e04751f1d1b47"
+      "sha": "ed8d2d56157df3cb8770560fae16046a17d0d6c878062dfb0a3eeb4380d275a6"
     },
     {
       "art": "aenderung",
@@ -296,8 +534,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/457/de",
-      "sha": "805ab003e5e7bda2c0845bf02b71dcb5a51154fbcd6539ead723625d6b4dcd79"
+      "sha": "a41582526afc1ed8c3f6cf3577c6c81a457fbf73e06b0bd85d340639b1c704f6"
     },
     {
       "art": "aenderung",
@@ -308,8 +549,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/650/de",
-      "sha": "063ddfb7d22c32c9e08340f1caed37016203a766358f342d0e03971bd917b2ff"
+      "sha": "ba8a28b910dacfaf77702785029db63d2248f360c3c393094c8117e0bd831fa1"
     },
     {
       "art": "aenderung",
@@ -320,8 +564,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/663/de",
-      "sha": "a30e17e3306458a84cb719ba3302fcfab1094884713e91ff402252e4360eb8f5"
+      "sha": "4ac107dca0c7d945ec9ec1bfad28424d9992a68ede6afe492dad01b594b0684c"
     },
     {
       "art": "aenderung",
@@ -332,8 +579,26 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/728/de",
-      "sha": "d54f0cab4985bd40d88c1fb0c434982c034beb24f38e36644ae4cc323231b9cf"
+      "sha": "ee8eb47014d38dc0070be38b9a8c704b0744ce0d7786998ba783de3f46ca3d78"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/534",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 3989",
+      "titelDe": "Verordnung über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsverordnung, RAV)",
+      "titelFr": "Ordonnance sur l'agrément et la surveillance des réviseurs (Ordonnance sur la surveillance de la révision, OSRev)",
+      "titelIt": "Ordinanza sull'abilitazione e la sorveglianza dei revisori (Ordinanza sui revisori, OSRev)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/534/de",
+      "sha": "2d4562afb9f2cde5b548544cbbdaaec44cad635c0bf01c6819710d71942b4315"
     },
     {
       "art": "aenderung",
@@ -344,8 +609,57 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/617/de",
-      "sha": "133815b0d7721541f0b15edbc062667b844c86460d6be9303042ce712e069bfa"
+      "sha": "96ea416f88057b83f866203f402d1ce88a4eefdd45aaa79b5af1abe8bd78b79a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/723",
+      "dateDocument": "2007-09-28",
+      "roFundstelle": "AS 2007 5155",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/723/de",
+      "sha": "30014f45785d2cf1a0ebb0d6b64e229766e8537374945e23eebf614e9c2bb19e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/615",
+      "dateDocument": "2006-09-29",
+      "roFundstelle": "AS 2006 4155",
+      "titelDe": "Verordnung über die Umsetzung des Partnerschaftsgesetzes vom 18. Juni 2004 in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
+      "titelFr": "Ordonnance sur la mise en uvre de la loi du 18 juin 2004 sur le partenariat dans la prévoyance professionnelle vieillesse, survivants et invalidité",
+      "titelIt": "Ordinanza concernente l'attuazione della legge del 18 giugno 2004 sull'unione domestica registrata nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/615/de",
+      "sha": "4b68c2cc0b8aa146ffb84c9e623a6c76e464ff26e95cb85dd1b3fceb98cf9bbb"
     },
     {
       "art": "aenderung",
@@ -356,8 +670,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/616/de",
-      "sha": "9228708346807ff88aeeb51e8604952d4b2f91101d23b9416c09aa4744a6dc4f"
+      "sha": "e7ab5288ecfc772515ff44bdedeb2d890285dcf3c81c16fe469bec2f5bca6db3"
     },
     {
       "art": "aenderung",
@@ -368,8 +685,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/209/de",
-      "sha": "24ae3eaf87f9598c4dea4399a6571c9705217621d5010c9dc54779393cc74f7d"
+      "sha": "0275bd5619bd5e7bd4015de95db342aea5d48fc97cc11c04964b3d05818239bd"
     },
     {
       "art": "aenderung",
@@ -380,8 +700,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/559/de",
-      "sha": "051d7c33058a3e7a5b0fc82334d0453888e791086928f1408631721c2e73ba88"
+      "sha": "55283b7df8c122c54c2a72bacf27cb827c8f7330b339679aca43cb28f231448b"
     },
     {
       "art": "aenderung",
@@ -392,8 +715,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/729/de",
-      "sha": "23511fdde88637c871a9bdb54eae9ad6ea7cf2b4ed3daafc2c8a77ca0a5ce2de"
+      "sha": "6719846d75e48f28df39f48ac17cd963c4919799585200b17c843cc10bcefd96"
     },
     {
       "art": "aenderung",
@@ -404,8 +730,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/633/de",
-      "sha": "909dde5ef6851dd6c5a19609037a800fffcd6d0a5ef791025bfd224146ea904f"
+      "sha": "4118caaafff8e724c5389e176229360dc15c6bb9e40b341edc89573e03a7f95e"
     },
     {
       "art": "aenderung",
@@ -416,8 +745,12 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/644/de",
-      "sha": "cc25fad1c838b3d9c8d108b344d22e43a08ef4ed30af6b5c22aa0c83f6386548"
+      "sha": "33d0490e992881e16fc535bf8492f64759b5fb2d23492611ae369ae1f9849bde"
     },
     {
       "art": "aenderung",
@@ -428,8 +761,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/712/de",
-      "sha": "de3644ffcb38df2687fdb096a2f8403c407c825f37dcb09f8a7fe43152ad098c"
+      "sha": "9d52997751b6c22224ee5a3317080da6f722770272bb77e4f89626e330ba1053"
     },
     {
       "art": "aenderung",
@@ -440,8 +776,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/714/de",
-      "sha": "5f0dc5f464c8d10c5adc4dbd408637395c5ea70eb0e817f43aa6ee650a225bad"
+      "sha": "18aceb7144d16147d4047202c4ddcd088daeda2747a8e8cb012d31545b542d48"
     },
     {
       "art": "aenderung",
@@ -452,8 +791,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/208/de",
-      "sha": "c67421d4a31f0a516839399e11aaa0635ad469f3ad36bcead8a394bf2b9cccdd"
+      "sha": "3a6d847b04fd343c5ad662e8649601f59272dc4047db6ecb1b50612dccdcd9c5"
     },
     {
       "art": "aenderung",
@@ -464,8 +806,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/501/de",
-      "sha": "9e7818d22047c9affa3403c741720986b21109dec936cfb267c0cb70eb2c0467"
+      "sha": "dea34c96af5235d12a748cc249e419c6fbc28cf0b3ec202f78ce5c6907a6035a"
     },
     {
       "art": "aenderung",
@@ -476,8 +821,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/259/de",
-      "sha": "d65f8d306ac8226480d8927c79d985d3a812497faa481b9165ac69d1a3d2aeaf"
+      "sha": "4498b6207e5b1635f5d221a5605a278ed3c2e919c45bc6ab456dad92af7b6e59"
     },
     {
       "art": "aenderung",
@@ -488,8 +836,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/579/de",
-      "sha": "d2902f49ed9157acbc9b5c87c0171ba2c1065dcf101a1e15e7846c00500dfded"
+      "sha": "85673914d0f8db1c0d3b33c011e9edd1c672e41abba2b61a0cdd0c5512df35fa"
     },
     {
       "art": "aenderung",
@@ -500,8 +851,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/603/de",
-      "sha": "8a3c643c08133f94b11ea222ecb63771813c4691c5c5c3620864c579cdf45c4a"
+      "sha": "d01794384365caa454ec343c931e1c6527d1892d4ff9b63d645e3691a1a53383"
     },
     {
       "art": "aenderung",
@@ -512,8 +866,11 @@
       "titelDe": "Verordnung 03 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge",
       "titelFr": "Ordonnance 03 sur l'adaptation des montants-limites de la prévoyance professionnelle",
       "titelIt": "Ordinanza 03 sull'adeguamento degli importi limite della previdenza professionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/604/de",
-      "sha": "aa0ba1b2ccd0f43d3d059bc6370e9c610b30c96996a092c91ef0b8fb400f65a5"
+      "sha": "b69a45f8f2889a97bddb5b2b5608218ec114c0d4e2685866a4a84083900f6cb2"
     },
     {
       "art": "aenderung",
@@ -524,8 +881,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/478/de",
-      "sha": "7e834fd41d7cd228dce264752bd56c29f5d355c886ed78e9a2cd1731bcfee856"
+      "sha": "23bd3cf31bb73a9ca73eec0c58cf6cbea96e2aee9c8faa625f506878d8250c5a"
     },
     {
       "art": "aenderung",
@@ -536,8 +896,11 @@
       "titelDe": "Verordnung 01 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge",
       "titelFr": "Ordonnance 01 sur l'adaption des montants-limites de la prévoyance professionnelle",
       "titelIt": "Ordinanza 01 sull'adeguamento dei limiti di reddito nella previdenza professionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/480/de",
-      "sha": "4971ed74bfdec695c236c2d19d075a71ebd60e202fb09e0b7fc284948a2c55ae"
+      "sha": "1797e9ebccff2ea0116c77923360f83b9388b7c0e3a3915020aa8f98f91513c0"
     },
     {
       "art": "aenderung",
@@ -548,8 +911,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/509/de",
-      "sha": "21626facf405fe816686534a66cfdc32ad8b9fbb233ef775a19b8fe460b4c928"
+      "sha": "e97059f5500c360e69b0aa4c5a8fc45a133d464838d9e793665862fac92e0e5f"
     },
     {
       "art": "aenderung",
@@ -560,8 +926,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/559/de",
-      "sha": "a9f2c6263d07b51f72831a5582755475ba13e1b40a164cca5cbf75f50040bef6"
+      "sha": "7ab9c8b4c7309999a1d25eacbf0f69dca4a716562e44b23c7041cafb1448b081"
     },
     {
       "art": "aenderung",
@@ -572,8 +941,11 @@
       "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Ivalidenvorsorge (BVV 2)",
       "titelFr": "Ordonnance pour la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
       "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/204/de",
-      "sha": "fc10d80fb7c64f3cf49a68c946ac125cf3c49fb7bf001da772a15d8e5ec089cd"
+      "sha": "75e50fda470f556f5d22a99ceca7753b00b6b4ad72131c8cd48f09b867c5bebe"
     },
     {
       "art": "aenderung",
@@ -584,21 +956,231 @@
       "titelDe": "Verordnung 99 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge",
       "titelFr": "Ordonnance 99 sur l'adaption des montants-limites de la prévoyance professionnelle",
       "titelIt": "Ordinanza 99 sull'adeguamento dei limiti di reddito nella previdenza professionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/3026_3026_3026/de",
-      "sha": "5faa8ae747271fb945686fbf9569dc53a23dbdce3885680312fc8aae09479b45"
+      "sha": "e48335190dcd572033dd3943735e6bfafaf4a76721c00a38b5b09b30b9a269d2"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1985-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/543_543_543",
-      "dateDocument": "1984-04-18",
-      "roFundstelle": "AS 1984 543",
-      "titelDe": "Verordnung vom 18. April 1984 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
-      "titelFr": "Ordonnance du 18 avril 1984 sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
-      "titelIt": "Ordinanza del 18 aprile 1984 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/543_543_543/de",
-      "sha": "23a1428fe64690b7be04935182bde710bf047e8b494a517c9f8a72bad2052d41"
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3037_3037_3037",
+      "dateDocument": "1996-11-13",
+      "roFundstelle": "AS 1996 3037",
+      "titelDe": "Verordnung 97 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+      "titelFr": "Ordonnance 97 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3037_3037_3037/de",
+      "sha": "13e98a8e67c04e0aae5471f1201d046f9f2da3a7c5648e49c22a8ac089a73649"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3452_3452_3452",
+      "dateDocument": "1996-12-09",
+      "roFundstelle": "AS 1996 3452",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3452_3452_3452/de",
+      "sha": "877530f76011da7bfbab864a3b4d742a83d7b6fec4930a7f4bf8399dfc759b2f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1494_1494_1494",
+      "dateDocument": "1996-04-24",
+      "roFundstelle": "AS 1996 1494",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP), Modification",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1494_1494_1494/de",
+      "sha": "eda23abb5eacfc4f607fbd93401d5ad87e7dfa4ade5544b8ee7a37455745549e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2399_2399_2399",
+      "dateDocument": "1994-10-03",
+      "roFundstelle": "AS 1994 2399",
+      "titelDe": "Verordnung vom 3. Oktober 1994 über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
+      "titelFr": "Ordonnance du 3 octobre 1994 sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
+      "titelIt": "Ordinanza del 3 ottobre 1994 sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2399_2399_2399/de",
+      "sha": "330fa73a7409c60a0dba2f11244f3b283d7df376c18ab69633d5a82f9c40108c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/3095_3095_3095",
+      "dateDocument": "1994-11-23",
+      "roFundstelle": "AS 1994 3095",
+      "titelDe": "Verordnung 95 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+      "titelFr": "Ordonnance 95 sur l'adaption des montants-limites de la prévoyance professionnelle, Modification",
+      "titelIt": "Ordinanza 95 sull'adattamento degli importi limite della previdenza professionale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/3095_3095_3095/de",
+      "sha": "4f4f308b2e7b15d92fc21ed1d0906fe12cc9e67d7d73d49c536cc3e1d4a8b24e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/_872_",
+      "dateDocument": "1995-01-16",
+      "titelFr": "Erratum: Ordonnance 95 sur l'adaptation des montants-limites de la prévoyance professionnelle",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/_872_/de",
+      "sha": "30d63c0fcd37c886791e8a3daf390dfa8a2f2b906efdce94a6944131b3c331d8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/906_906_906",
+      "dateDocument": "1994-01-26",
+      "roFundstelle": "AS 1994 906",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i supersiti e l'invalidità (OPP 2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/906_906_906/de",
+      "sha": "d79de4cd3953b775605ac4b5101b5d115477785a0f00f087070ea08fde108457"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1881_1881_1881",
+      "dateDocument": "1993-06-01",
+      "roFundstelle": "AS 1993 1881",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1881_1881_1881/de",
+      "sha": "c89a31a0c992fdf61d1d0a65031666110c0572209239c11150f9c8670c727195"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2045_2045_2045",
+      "dateDocument": "1992-10-05",
+      "roFundstelle": "AS 1992 2045",
+      "titelDe": "Verordnung 93 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+      "titelFr": "Ordonnance 93 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+      "titelIt": "Ordinanza 93 sull'adattamento degli importi limiti della previdenza professionale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2045_2045_2045/de",
+      "sha": "bfca099c8c7e59088b94baa599632e8670eae19d264eb3f081d381656452ed7a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2234_2234_2234",
+      "dateDocument": "1992-10-28",
+      "roFundstelle": "AS 1992 2234",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2234_2234_2234/de",
+      "sha": "1136088468eb94a0aa3116cd21fafea8fe2688fc66b427fb9badb0dd47d9888e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2382_2382_2382",
+      "dateDocument": "1991-10-23",
+      "roFundstelle": "AS 1991 2382",
+      "titelDe": "Verordnung 92 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+      "titelFr": "Ordonnance 92 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+      "titelIt": "Ordinanza 92 sull'adattamento degli importi limite della previdenza professionale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2382_2382_2382/de",
+      "sha": "8a976da427933463337ae328a3a7e4bd0b5feca44afe21823c294e1804f31a03"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/1901_1901_1901",
+      "dateDocument": "1989-09-25",
+      "roFundstelle": "AS 1989 1901",
+      "titelDe": "Verordnung 90 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+      "titelFr": "Ordonnance 90 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+      "titelIt": "Ordinanza 90 sull'adattamento degli importi limite della previdenza professionale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/1901_1901_1901/de",
+      "sha": "99543a9f44ed9e58afe85d981f0fbc57c65d70459104b796f8839ec1a0e2405e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/1345_1345_1345",
+      "dateDocument": "1985-09-11",
+      "roFundstelle": "AS 1985 1345",
+      "titelDe": "Verordnung 86 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+      "titelFr": "Ordonnance 86 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+      "titelIt": "Ordinanza 86 concernente gli importi limite della previdenza professionale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/1345_1345_1345/de",
+      "sha": "4911dc66b19b839b7130f3d897275bda5f2f28b20576c0ce9f46744f08d2a30a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-06-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/710_710_710",
+      "dateDocument": "1985-05-29",
+      "roFundstelle": "AS 1985 710",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/710_710_710/de",
+      "sha": "76f6944d425d219275d87f8838c44e8c38c79349ddb54e1c4372464bc0d604f1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-06-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/__1894",
+      "dateDocument": "1989-09-19",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/__1894/de",
+      "sha": "469fa21645f174c70ae5eb1efdbecf70692763c0f306e69e5578b3f2a656c9fd"
     }
   ],
-  "sha": "b649ae22128b7a292d55c85610592c4b8facd2edc20b182eff2d3106db36f0f9"
+  "sha": "b456c9e139d5b620da95f883f45253299a8d13d69f069b5190301da6a46c831e"
 }

@@ -1,8 +1,8 @@
 {
   "erlassKey": "KKV",
   "sr": "951.311",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC). Erratum",
       "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/756/de",
-      "sha": "16b3df6d0dbe9a439f04d8ecc4b7b06c11ac0abd56d128e9713ee6e9a7205217"
+      "sha": "0e633eb27e8a6310cf24110863a335d2186eb783134fa693b6f4c25a8eac5232"
     },
     {
       "art": "aenderung",
@@ -25,32 +28,122 @@
       "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
       "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
       "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
-      "sha": "0ca265331886fd91ae3676d212ecd12e7114c450bb160116d321938c8da8b500"
+      "sha": "35de68fc5b4d08d65bee8ad1e2323255996dd65893a7b39f9cad25ab7b258877"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.311",
-      "sha": "a63b2e04570af57dddf73b6c3a99a99b96ac938e1baf47aa3af44ca433515485"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/835",
+      "dateDocument": "2021-12-03",
+      "roFundstelle": "AS 2021 835",
+      "titelDe": "Verordnung über die Finanzdienstleistungen (Finanzdienstleistungsverordnung, FIDLEV)",
+      "titelFr": "Ordonnance sur les services financiers (OSFin)",
+      "titelIt": "Ordinanza sui servizi finanziari (OSerFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/835/de",
+      "sha": "32891375cea4ff8af4d8b98623b91e759e8b67a66be6377e2198620cc92b7265"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.311",
-      "sha": "a029dc7dfd326615e9c95b5900700052019ee60599300a4771318959a94b09b7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/759",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4459",
+      "titelDe": "Verordnung über die Finanzdienstleistungen (Finanzdienstleistungsverordnung, FIDLEV)",
+      "titelFr": "Ordonnance sur les services financiers (OSFin)",
+      "titelIt": "Ordinanza sui servizi finanziari (OSerFi)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/759/de",
+      "sha": "c86787bcc0be3c8ac23c6933ab8dc824c9799e47304613d807c441957e7771ce"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "78622120bffa36e289220d609d5ea877824ef86698b217752bebc15e0f161914"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.311",
-      "sha": "fd30b1dfa8f7659dfc696288eff010ab480453fc00b33220d172caaa7fcc75f6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/273",
+      "dateDocument": "2014-04-30",
+      "roFundstelle": "AS 2014 1269",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/273/de",
+      "sha": "0d97d7497dfc9ee5e730be94f14db8020e01450df774e7a7438ba3db1d689376"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/394",
+      "dateDocument": "2014-06-25",
+      "roFundstelle": "AS 2014 2321",
+      "titelDe": "Verordnung über die Liquidität der Banken (Liquiditätsverordnung, LiqV)",
+      "titelFr": "Ordonnance sur les liquidités des banques (Ordonnance sur les liquidités, OLiq)",
+      "titelIt": "Ordinanza sulla liquidità delle banche (Ordinanza sulla liquidità, OLiq)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/394/de",
+      "sha": "b979277b369c954d7b8e37e81e6e766075d7d41a829d05593ce2d19d5ef65980"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+      "dateDocument": "2014-11-05",
+      "roFundstelle": "AS 2014 4295",
+      "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+      "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+      "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/708/de",
+      "sha": "979fc81920fd0c2f8d0ac5e1ba9ef94c952f8719ee01b0bee83df1f42c5734c8"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.311",
-      "sha": "0e290f76a8554645de709cad949e3dcef920da89a77300a1188c6fdf09c60f10"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/117",
+      "dateDocument": "2013-02-13",
+      "roFundstelle": "AS 2013 607",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-03-01",
+        "2014-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/117/de",
+      "sha": "a353b9c2dcd06888610d8451b60d5e5e04f317a40f59a0ab04a8d602ebddc787"
     },
     {
       "art": "aenderung",
@@ -61,14 +154,32 @@
       "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
       "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
       "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2013-03-01",
+        "2014-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/117/de",
-      "sha": "454ef909d9e8035ad83b324a16d29e7a62c3133a11b4d4bed409082ddbf03d18"
+      "sha": "04c5445a204675efd917df5fd847d1b6106e54f49215ccad3d4735d5d97b42b8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.311",
-      "sha": "32d654770021db77d6d760e2908e237c676fd4fad174899b657d9d6233ca0689"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/629",
+      "dateDocument": "2012-06-01",
+      "roFundstelle": "AS 2012 5441",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "botschaftKey": "BOTSCHAFT-2012-993",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/629/de",
+      "sha": "5676578f4073705ab39521e394095f7f382357437cd9edba0999ed281a01af82"
     },
     {
       "art": "aenderung",
@@ -79,8 +190,12 @@
       "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
       "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
       "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/401/de",
-      "sha": "c9ee6be660a8a8732b675c47b0dfb56a80977c0eca1e65793afc85e8a2eb0694"
+      "sha": "20e2123aa91ca05fb8b85fd8c897585125890e76d460fc21ca3e76b5c1829348"
     },
     {
       "art": "aenderung",
@@ -91,14 +206,27 @@
       "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
       "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
       "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/121/de",
-      "sha": "46b3986fde2ebbee5ef698c31407c4d15a8fda96f54a1517b1b42cf92f4e35db"
+      "sha": "52b463c7d9d183c981f15c5608398d2e4aa9619da162caf4c4724e4f8c3a5be4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.311",
-      "sha": "7da4380c9df6064eca6542ca8c9502d79851e218bf88b321636c54db4360b1ef"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/750",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 5363",
+      "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+      "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+      "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/750/de",
+      "sha": "f897ea3eddc6735d483fcebae527eb153235ce9d64615acb89f3de78ed87d7b8"
     },
     {
       "art": "aenderung",
@@ -109,99 +237,27 @@
       "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung; KKV)",
       "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
       "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/128/de",
-      "sha": "003ffb0113d344976008f2b5ff62a9eb3e8f87763a742903727120d95b3136ab"
+      "sha": "51a5bd2f1ffbb967019faf5831a92de24c7e03103d4a0c2ed7dbb82532f0be85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.311",
-      "sha": "bb3a2241c239677708040178ff9de73eb20a83f3416afb046234eaabba4bfdbe"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/859",
-      "dateDocument": "2006-11-22",
-      "roFundstelle": "AS 2006 5787",
-      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
-      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
-      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/859/de",
-      "sha": "d7e6a37b6f8a31da728f40136c3c317e007351949c36af0ab0c9b903ca426e32"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/478",
-      "dateDocument": "2004-06-23",
-      "roFundstelle": "AS 2004 3535",
-      "titelDe": "Verordnung über die Anlagefonds (Anlagefondsverordnung, AFV)",
-      "titelFr": "Ordonnance sur les fonds de placement (OFP)",
-      "titelIt": "Ordinanza sui fondi d'investimento (OFI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/478/de",
-      "sha": "6201fbb2f7997a44ae9adb07cfe94a8330bb2444d54068be2f66f7dbd63471a8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/531",
-      "dateDocument": "2004-08-17",
-      "roFundstelle": "AS 2004 3855",
-      "titelDe": "Verordnung über die Anlagefonds (Anlagefondsverordnung, AFV) (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance sur les fonds de placement (OFP) (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza sui fondi d'investimento (OFI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/531/de",
-      "sha": "7b10a34f60f779279a4b3df9c3ec4580cf56b4d42215dff5fa63637254a054b7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/234",
-      "dateDocument": "2004-03-24",
-      "roFundstelle": "AS 2004 2073",
-      "titelDe": "Verordnung über die Anlagefonds (Anlagefondsverordnung, AFV)",
-      "titelFr": "Ordonnance sur les fonds de placement (OFP)",
-      "titelIt": "Ordinanza sui fondi d'investimento (OFI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/234/de",
-      "sha": "f4c138dcc3bdc6ad0a1b1e0ace3fdbb940225bef384bb64a77f6b7da8942910c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2001-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/452",
-      "dateDocument": "2000-10-25",
-      "roFundstelle": "AS 2000 2713",
-      "titelDe": "Verordnung über die Anlagefonds (Anlagefondsverordnung, AFV)",
-      "titelFr": "Ordonnance sur les fonds de placement (OFP)",
-      "titelIt": "Ordinanza sui fondi d'investimento (OFI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/452/de",
-      "sha": "03aaba607138660bbe141487fd94374e08f23fdfa45aeca38a6b1decf2128b85"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2547_2547_2547",
-      "dateDocument": "1994-10-19",
-      "roFundstelle": "AS 1994 2547",
-      "titelDe": "Verordnung vom 19. Oktober 1994 über die Anlagefonds (Anlagefondsverordnung, AFV)",
-      "titelFr": "Ordonnance du 19 octobre 1994 sur les fonds de placement (OFP)",
-      "titelIt": "Ordinanza del 19 ottobre 1994 sui fondi d'investimento (OFI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2547_2547_2547/de",
-      "sha": "40cfd0b9707810aeea64309eb16ac8dbb528271122be16c62ad4f21abafa7994"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1967-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/135_145_139",
-      "dateDocument": "1967-01-20",
-      "roFundstelle": "AS 1967 135",
-      "titelDe": "Verordnung vom 20. Januar 1967 über die Anlagefonds (AFV)",
-      "titelFr": "Ordonnance du 20 janvier 1967 sur les fonds de placement (OFP)",
-      "titelIt": "Ordinanza del 20 gennaio 1967 sui fondi d'investimento (OFI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/135_145_139/de",
-      "sha": "02114d5ecbf3ba927f6539460f4d2283f7ecd68af03ea7d6bbd2f66e0422f936"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/534",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 3989",
+      "titelDe": "Verordnung über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsverordnung, RAV)",
+      "titelFr": "Ordonnance sur l'agrément et la surveillance des réviseurs (Ordonnance sur la surveillance de la révision, OSRev)",
+      "titelIt": "Ordinanza sull'abilitazione e la sorveglianza dei revisori (Ordinanza sui revisori, OSRev)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/534/de",
+      "sha": "63564c19588a1e82ddbe9a7b1a789ee4312c8f47f594d1e827db92fa5bbb0af3"
     }
   ],
-  "sha": "74a80ed57540a64f94d05f7fabf9451143fbc006ecdf4f7728be0d17f1f00d06"
+  "sha": "6dd472bbbd50fe62bd7f0642f29bf8a3e97e7423fcc94d6f45bc60d9bfee71a1"
 }

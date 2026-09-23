@@ -1,8 +1,8 @@
 {
   "erlassKey": "FIDLEV",
   "sr": "950.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,27 +13,27 @@
       "titelDe": "Verordnung über die Finanzdienstleistungen (Finanzdienstleistungsverordnung, FIDLEV)",
       "titelFr": "Ordonnance sur les services financiers (OSFin)",
       "titelIt": "Ordinanza sui servizi finanziari (OSerFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/835/de",
-      "sha": "2954594fa5b144782079cbba0ea22b60abaec1f66a51f171be1083eaa71850ba"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/950.11",
-      "sha": "950314729a8add1ee70b6fa664c50dcf61cdcaf75d577174f0ab0b63282b1f17"
+      "sha": "32891375cea4ff8af4d8b98623b91e759e8b67a66be6377e2198620cc92b7265"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2020-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/759",
-      "dateDocument": "2019-11-06",
-      "roFundstelle": "AS 2019 4459",
-      "titelDe": "Verordnung über die Finanzdienstleistungen (Finanzdienstleistungsverordnung, FIDLEV)",
-      "titelFr": "Ordonnance sur les services financiers (OSFin)",
-      "titelIt": "Ordinanza sui servizi finanziari (OSerFi)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/759/de",
-      "sha": "dab8cea1617181d9d783e7aaf168a8d9c860265e4e29fb30632b07542f386386"
+      "dateEntryInForce": "2021-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 400",
+      "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "sha": "cbaa09b474cb03fa4335cbbe4d0eb3cd22f479df7c6b4dafb89f95ae9cca1d03"
     }
   ],
-  "sha": "250b0aac3a85a72e034d53e203a074f679619cb76ab8dcf467ee18c44fa9c32e"
+  "sha": "0c4a4c14ec23a87674197d18a395eb9dbec5893e8f987cff7bc9534f10243925"
 }

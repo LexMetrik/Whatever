@@ -1,15 +1,29 @@
 {
   "erlassKey": "ENG",
   "sr": "730.0",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2028-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+      "dateDocument": "2026-03-20",
+      "roFundstelle": "AS 2026 393",
+      "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+      "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+      "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali",
+      "botschaftKey": "BOTSCHAFT-2025-3067",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/730.0",
-      "sha": "08950fe5bff7a38e0ca7063b71b99c8ff19fe8df85c31d9ac3718ca59fedf115"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2027-01-01",
+        "2028-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/393/de",
+      "sha": "a759d5d182a9b23dc4b980d0c8374b714fa6e63130514236b399f8bd889af40c"
     },
     {
       "art": "aenderung",
@@ -22,8 +36,53 @@
       "titelIt": "Comunicazione relativa all’entrata in vigore integrale della modifica della Legge federale sull’energia",
       "botschaftKey": "BOTSCHAFT-2023-1602",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/297/de",
-      "sha": "fac7d77259516084d789f89250f73b69c85e21ec028558982aa27bff8fcf68b7"
+      "sha": "f86da4929d57d3e5ec55b80497eec00277a10d18943ab97884085aac43a2b915"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+      "dateDocument": "2026-03-20",
+      "roFundstelle": "AS 2026 393",
+      "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+      "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+      "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali",
+      "botschaftKey": "BOTSCHAFT-2025-3067",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2027-01-01",
+        "2028-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/393/de",
+      "sha": "88e98d98a6fa38c4576fa0b828cca5cf1de06811d0dd3ce5e9661dfa576f4431"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/99",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 99",
+      "titelDe": "Energiegesetz (EnG)",
+      "titelFr": "Loi sur l’énergie (LEne)",
+      "titelIt": "Legge federale sull’energia (LEne)",
+      "botschaftKey": "BOTSCHAFT-2023-1602",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-04-01",
+        "2027-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/99/de",
+      "sha": "40cb3205e4c942398dbcc31b700b882cab2a5cd19d44aff8022940d8c07bd302"
     },
     {
       "art": "aenderung",
@@ -35,8 +94,54 @@
       "titelFr": "Loi sur l’énergie (LEne)",
       "titelIt": "Legge federale sull’energia (LEne)",
       "botschaftKey": "BOTSCHAFT-2023-1602",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-04-01",
+        "2027-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/99/de",
-      "sha": "38b47a7b60e97220ba89e6451ba19a4286ff3ada3cf1600f96af95e1a9723a42"
+      "sha": "f7d0af4930371c5cdb004c323e5ff429c18f10b02ce289907bf8323d177668ab"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/543",
+      "dateDocument": "2022-09-30",
+      "roFundstelle": "AS 2022 543",
+      "titelDe": "Energiegesetz (EnG) (Dringliche Massnahmen zur kurzfristigen Bereitstellung einer sicheren Stromversorgung im Winter)",
+      "titelFr": "Loi sur l’énergie (LEne) (Mesures urgentes visant à assurer rapidement l’approvisionnement en électricité pendant l’hiver)",
+      "titelIt": "Legge federale sull’energia (LEne) (Misure urgenti volte a garantire a breve termine l’approvvigionamento elettrico durante l’inverno)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-10-01",
+        "2026-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/543/de",
+      "sha": "c999b8c150b85700959b7061c698bdb48fe2e5327049c492ae04415d8b1a5a7d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/679",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2024 679",
+      "titelDe": "Bundesgesetz über eine sichere Stromversorgung mit erneuerbaren Energien (Änderung des Energiegesetzes und des Stromversorgungsgesetzes)",
+      "titelFr": "Loi fédérale relative à un approvisionnement en électricité sûr reposant sur des énergies renouvelables (Modification de la loi sur l’énergie et de la loi sur l’approvisionnement en électricité)",
+      "titelIt": "Legge federale su un approvvigionamento elettrico sicuro con le energie rinnovabili (Modifica della legge federale sull’energia e della legge sull’approvvigionamento elettrico)",
+      "botschaftKey": "BOTSCHAFT-2021-1666",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-01-01",
+        "2026-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/679/de",
+      "sha": "c3cf0975ae5b6a72270e10648f0c142fd214e453f89c6ad24976813f1147add7"
     },
     {
       "art": "aenderung",
@@ -47,8 +152,11 @@
       "titelDe": "Energiegesetz (EnG) (Realisierung von geplanten alpinen Photovoltaikanlagen)",
       "titelFr": "Loi sur l’énergie (LEne) (Réalisation d’installations photovoltaïques alpines prévues)",
       "titelIt": "Legge federale sull’energia (LEne) (Realizzazione di impianti fotovoltaici alpini pianificati)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/505/de",
-      "sha": "605490a0eebf474db4329ed72c54a36bb4ec31384dd5ac9edd6b6fb372f907d4"
+      "sha": "fb9148d1ed53b231fd3889e8bb7164b5f599d11438fb3f66e02c5be9bd007c1e"
     },
     {
       "art": "aenderung",
@@ -60,8 +168,45 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de l’accord entre la Suisse, l’Allemagne et l’Italie concernant des mesures de solidarité visant à assurer la sécurité de l’approvisionnement en gaz",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero l’Accordo tra la Svizzera, la Germania e l’Italia concernente misure di solidarietà volte a garantire la sicurezza dell’approvvigionamento di gas",
       "botschaftKey": "BOTSCHAFT-2024-2318",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/589/de",
-      "sha": "7f015541936c5462c59827b11a8ed3e51c518089c8f1452954ad50c64260c5cd"
+      "sha": "c64c1c9f6628d45b26b92a2dd8d46ee65225016df966ee8d5e46c184067ce485"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/655",
+      "dateDocument": "2022-09-30",
+      "roFundstelle": "AS 2023 655",
+      "titelDe": "Bundesgesetz vom 30. September 2022 über die Ziele im Klimaschutz, die Innovation und die Stärkung der Energiesicherheit (KlG)",
+      "titelFr": "Loi fédérale du 30 septembre 2022 sur les objectifs en matière de protection du climat, sur l’innovation et sur le renforcement de la sécurité énergétique (LCl)",
+      "titelIt": "Legge federale del 30 settembre 2022 sugli obiettivi in materia di protezione del clima, l’innovazione e il rafforzamento della sicurezza energetica (LOCli)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/655/de",
+      "sha": "a7d7d0c5a6271d1fe776b130febf2c48b953adf5f8a82d532713ca55a841175e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/648",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2024 648",
+      "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
+      "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/648/de",
+      "sha": "02406e4541fcf7c37a4b82a19c24bd60201c2e36c52a56e4cf3891ca96a40304"
     },
     {
       "art": "aenderung",
@@ -73,8 +218,15 @@
       "titelFr": "Loi fédérale relative à un approvisionnement en électricité sûr reposant sur des énergies renouvelables (Modification de la loi sur l’énergie et de la loi sur l’approvisionnement en électricité)",
       "titelIt": "Legge federale su un approvvigionamento elettrico sicuro con le energie rinnovabili (Modifica della legge federale sull’energia e della legge sull’approvvigionamento elettrico)",
       "botschaftKey": "BOTSCHAFT-2021-1666",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-01-01",
+        "2026-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/679/de",
-      "sha": "92041cea79e4952f4f9643b88cd100ddff744beac709180107a422a97504146f"
+      "sha": "5e055502370fbe63f8fe5396dc9079c1d24e86b977c954e6570f64470c2a138b"
     },
     {
       "art": "aenderung",
@@ -85,8 +237,11 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes über die Ziele im Klimaschutz, die Innovation und die Stärkung der Energiesicherheit",
       "titelFr": "Ordonnance portant dernière mise en vigueur de la loi fédérale sur les objectifs en matière de protection du climat, sur l’innovation et sur le renforcement de la sécurité énergétique",
       "titelIt": "Ordinanza concernente l’entrata in vigore integrale della legge federale sugli obiettivi in materia di protezione del clima, l’innovazione e il rafforzamento della sicurezza energetica",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/771/de",
-      "sha": "a5ad4fbccbb04bacf95fa4030d8901335f783da4a5acf1111e52460c8972c262"
+      "sha": "6707319bb7848896b3b8ad8dc33c9452591b73905b05dd1fbf5e3eca89cb463d"
     },
     {
       "art": "aenderung",
@@ -97,20 +252,46 @@
       "titelDe": "Bundesgesetz über die Beschleunigung der Bewilligungsverfahren für Windenergieanlagen (Änderung des Energiegesetzes und des Bundesgerichtsgesetzes)",
       "titelFr": "Loi fédérale sur l’accélération des procédures d’autorisation pour les installations éoliennes (Modification de la loi sur l’énergie et de la loi sur le Tribunal fédéral)",
       "titelIt": "Legge federale concernente l’accelerazione della procedura di autorizzazione degli impianti eolici (Modifica della legge federale sull’energia e della legge sul Tribunale federale)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/804/de",
-      "sha": "a800b4d319b9dcb2a0fb85b8ca369b2a51a3b869925c98f9fb368e3fa63a2348"
+      "sha": "3c38042ac303085c8db69107cab22fbd5b6d4ad9f79cfbc04f9d0436e6c8d3c1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/730.0",
-      "sha": "4a6360a25c15acc6aa83a779b84f4c194cbc064066606094ea4dfaa658668240"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/655",
+      "dateDocument": "2022-09-30",
+      "roFundstelle": "AS 2023 655",
+      "titelDe": "Bundesgesetz vom 30. September 2022 über die Ziele im Klimaschutz, die Innovation und die Stärkung der Energiesicherheit (KlG)",
+      "titelFr": "Loi fédérale du 30 septembre 2022 sur les objectifs en matière de protection du climat, sur l’innovation et sur le renforcement de la sécurité énergétique (LCl)",
+      "titelIt": "Legge federale del 30 settembre 2022 sugli obiettivi in materia di protezione del clima, l’innovazione e il rafforzamento della sicurezza energetica (LOCli)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/655/de",
+      "sha": "0c7f6a50f1f04c2207c30f7a5418b6c2f038d047f7255a22fcb5b9fd5c1f01bf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/730.0",
-      "sha": "3a7109a7c21a36610cb5d4889f6e1200a43b3688ba149778e4ea911674585ee9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
       "art": "aenderung",
@@ -121,8 +302,11 @@
       "titelDe": "Energiegesetz. Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Loi sur l’énergie. Erratum (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sull’energia. Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/129/de",
-      "sha": "cf344b52a09efdf90c0b74571796bd5dbd6cef26bfbf018c99f7ab90766c214a"
+      "sha": "322f3ca80a59dbc18ce6512ce4bcb7da1633f3be7219f618f84b73617df82178"
     },
     {
       "art": "aenderung",
@@ -133,8 +317,11 @@
       "titelDe": "Energiegesetz (EnG)",
       "titelFr": "Loi sur l’énergie (LEne)",
       "titelIt": "Legge federale sull’energia (LEne)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/729/de",
-      "sha": "3321e37bc86105cfbba6719b8cabc9af3a3a55fd9b72ca7ac29a94817cb8e104"
+      "sha": "55cde4c8daea737d5359e90acdc7069bd49f3c5e66654fae7515cede609d1f8a"
     },
     {
       "art": "aenderung",
@@ -145,96 +332,48 @@
       "titelDe": "Energiegesetz (EnG) (Dringliche Massnahmen zur kurzfristigen Bereitstellung einer sicheren Stromversorgung im Winter)",
       "titelFr": "Loi sur l’énergie (LEne) (Mesures urgentes visant à assurer rapidement l’approvisionnement en électricité pendant l’hiver)",
       "titelIt": "Legge federale sull’energia (LEne) (Misure urgenti volte a garantire a breve termine l’approvvigionamento elettrico durante l’inverno)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-10-01",
+        "2026-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/543/de",
-      "sha": "505b5ff87c51d6ef37be5861102540c60313a1a734cec0f718e77fa2fa9b9c8e"
+      "sha": "947a6b3d11137be424d1b1bbd326b7508749bebd6749a225a4eb880be335f95d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/730.0",
-      "sha": "9b400368a277fe192b92dd0f6addfcbbb6fd532e570bd09105fcf3a01c73a7b9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "755d7ab8f701a74d9c35734df95434bb6a7726c3a351394536cd36bbc06c639a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-05-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/730.0",
-      "sha": "2ad20e899c441069cec3d3afe0a11158d848fbff1ec7a471fad03f0f9b8e5e54"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2018-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/762",
-      "dateDocument": "2016-09-30",
-      "roFundstelle": "AS 2017 6839",
-      "titelDe": "Energiegesetz (EnG)",
-      "titelFr": "Loi sur l'énergie (LEne)",
-      "titelIt": "Legge federale sull'energia (LEne)",
-      "botschaftKey": "BOTSCHAFT-2013-1476",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/762/de",
-      "sha": "58f059fe2082bba23d8eed88b69901e708a3226d536ad8b7be5f5f73ae71f61c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2014-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/794",
-      "dateDocument": "2013-06-21",
-      "roFundstelle": "AS 2013 4505",
-      "titelDe": "Energiegesetz (EnG)",
-      "titelFr": "Loi sur l'énergie (LEne)",
-      "titelIt": "Legge sull'energia (LEne)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/794/de",
-      "sha": "7720b06863820ef75a1d5a0c3b6800a1af0d004b797cd459c14dea04f9819d29"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/370",
-      "dateDocument": "2011-12-23",
-      "roFundstelle": "AS 2012 3231",
-      "titelDe": "Energiegesetz (EnG)",
-      "titelFr": "Loi sur l'énergie (LEne)",
-      "titelIt": "Legge sull'energia (LEne)",
-      "botschaftKey": "BOTSCHAFT-2011-337",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/370/de",
-      "sha": "410882af1505cc80476336d741526a0db1d040b50a29a19e57adda940e52adbe"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/728",
-      "dateDocument": "2010-06-18",
-      "roFundstelle": "AS 2010 5065",
-      "titelDe": "Energiegesetz (EnG)",
-      "titelFr": "Loi sur l'énergie (LEne)",
-      "titelIt": "Legge sull'energia (LEne)",
-      "botschaftKey": "BOTSCHAFT-2009-921",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/728/de",
-      "sha": "e3404198f51ba401754b14ac69e542029baaea7192a8d1c5fb305d6e7869697c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1999-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/27",
-      "dateDocument": "1998-06-26",
-      "roFundstelle": "AS 1999 197",
-      "titelDe": "Energiegesetz (EnG)",
-      "titelFr": "Loi sur l'énergie (LEne)",
-      "titelIt": "Legge sull'energia (LEne)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/27/de",
-      "sha": "82528d7da0b4a686072bcd91be966874ec0ee66560b915439a6b74993f28decf"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1991-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/1018_1018_1018",
-      "dateDocument": "1990-12-14",
-      "roFundstelle": "AS 1991 1018",
-      "titelDe": "Bundesbeschluss vom 14. Dezember 1990 für eine sparsame und rationelle Energienutzung (Energienutzungsbeschluss, ENB)",
-      "titelFr": "Arrêté fédéral du 14 décembre 1990 pour une utilisation économe et rationelle de l'énergie (Arrêté sur l'énergie, AE)",
-      "titelIt": "Decreto federale del 14 dicembre 1990 sull'impiego parsimonioso e razionale dell'energia (Decreto sull'energia)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/1018_1018_1018/de",
-      "sha": "0562c2845935c224b5750141a30328dedb658dd3f39fb47d40522ddeb33f5480"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/271",
+      "dateDocument": "2018-04-06",
+      "roFundstelle": "AS 2018 1811",
+      "titelDe": "Mitteilung über die Änderung der Teilinkraftsetzung des Energiegesetzes",
+      "titelFr": "Communication concernant la modification de la mise en vigueur partielle de la loi sur l'énergie",
+      "titelIt": "Comunicazione sulla modifica dell'entrata in vigore parziale della legge federale sull'energia",
+      "wirkungen": [
+        "aenderung",
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/271/de",
+      "sha": "e573f2b9402bb81bd5804e02dd1f5ea7c99722defe9c062f7463d9d16028b9ec"
     }
   ],
-  "sha": "98df1aee3fbab02cba0ac34631b9ca0096bc8df2664d327c2991b034504e8e0e"
+  "sha": "97e3fd224df43f4dc6533b9127a44fe4275676b2b54c979e921a2ae54b1a9462"
 }

@@ -730,5 +730,152 @@
     "2023-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1996/546_546_546",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1996/546_546_546",
+    "inkrafttreten": "1996-02-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1805_1805_1805",
+        "typ": 5,
+        "datum": "1996-06-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1805_1805_1805",
+        "typ": 30,
+        "datum": "1996-06-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/546_546_546",
+        "typ": 5,
+        "datum": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/172",
+        "typ": 1,
+        "datum": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/172",
+        "typ": 2,
+        "datum": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/177",
+        "typ": 1,
+        "datum": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/645",
+        "typ": 1,
+        "datum": "2014-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/576",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/254",
+        "typ": 1,
+        "datum": "2023-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1996/1805_1805_1805": {
+        "dateForce": "1996-07-01",
+        "dateDoc": "1996-06-17",
+        "roId": "RO 1996 1805",
+        "titelDe": "Verordnung vom 17. Juni 1996 über die vollständige Inkraftsetzung des Kartellgesetzes",
+        "titelFr": "Ordonnance du 17 juin 1996 sur l'entrée en vigueur complète de la loi sur les cartels et autres restrictions à la concurrence",
+        "titelIt": "Ordinanza del 17 giugno 1996 sull'entrata in vigore completa della legge sui cartelli e altre limitazioni della concorrenza"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/736": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 5207",
+        "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+        "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+        "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/419": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3655",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/177": {
+        "dateForce": "2013-05-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 847",
+        "titelDe": "Bundesgesetz über die Anpassung von verfahrensrechtlichen Bestimmungen zum anwaltlichen Berufsgeheimnis",
+        "titelFr": "Loi fédérale sur l'adaptation de dispositions de procédure relatives au secret professionnel des avocats",
+        "titelIt": "Legge federale che adegua disposizioni di diritto procedurale sul segreto professionale degli avvocati"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/254": {
+        "dateForce": "2023-07-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+        "titelFr": "Loi fédérale du 17 décembre 2021 sur l’adaptation du droit pénal accessoire au droit des sanctions modifié",
+        "titelIt": "Legge federale del 17 dicembre 2021 che adegua il diritto penale accessorio alla nuova disciplina delle sanzioni"
+      }
+    }
+  }
 }

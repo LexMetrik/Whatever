@@ -171,5 +171,295 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1958/1413_1483_1489",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1958/1413_1483_1489",
+    "inkrafttreten": "1959-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1958/1413_1483_1489",
+        "typ": 5,
+        "datum": "1959-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/925_925_925",
+        "typ": 1,
+        "datum": "1973-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/778_778_778",
+        "typ": 1,
+        "datum": "1985-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/932_932_932",
+        "typ": 1,
+        "datum": "1987-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+        "typ": 1,
+        "datum": "1992-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/901_901_901",
+        "typ": 1,
+        "datum": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2868_2868_2868",
+        "typ": 1,
+        "datum": "1996-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2452_2452_2452",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/453",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/54",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/314",
+        "typ": 1,
+        "datum": "2003-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+        "typ": 1,
+        "datum": "2003-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+        "typ": 1,
+        "datum": "2004-12-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+        "typ": 1,
+        "datum": "2008-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/755",
+        "typ": 1,
+        "datum": "2008-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 1,
+        "datum": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/347",
+        "typ": 1,
+        "datum": "2025-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/96",
+        "typ": 1,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1973/925_925_925": {
+        "dateForce": "1973-07-01",
+        "dateDoc": "1972-10-06",
+        "roId": "RO 1973 925",
+        "titelDe": "Bundesgesetz vom 6. Oktober 1972 über die Änderung von Bestimmungen betreffend das Post-, Telefon- und Telegrafengeheimnis und die Immunität",
+        "titelFr": "Loi fédérale du 6 octobre 1972 modifiant des dispositions relatives au secret postal, téléphonique et télégraphique, ainsi qu'à l'immunité",
+        "titelIt": "Legge federale del 6 ottobre 1972 che modifica disposizioni concernenti il segreto postale, telefonico e telegrafico come anche l'immunità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/778_778_778": {
+        "dateForce": "1985-06-01",
+        "dateDoc": "1983-12-16",
+        "roId": "RO 1984 778",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Persönlichkeitsschutz: Art. 28 ZGB und Art. 49 OR), Änderung",
+        "titelFr": "Code civil suisse (Protection de la personnalité: art. 28 CC et 49 CO), Modification",
+        "titelIt": "Codice civile svizzero (Protezione della personalità: art 28 CC e 49 CO, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/932_932_932": {
+        "dateForce": "1987-07-01",
+        "dateDoc": "1986-12-19",
+        "roId": "RO 1987 932",
+        "titelDe": "Bundesgesetz über das Dienstverhältnis der Bundesbeamten, Änderung",
+        "titelFr": "Loi fédérale sur le statut des fonctionnaires, Modification",
+        "titelIt": "Legge federale  sull'ordinamento dei funzionari federali, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288": {
+        "dateForce": "1992-02-15",
+        "dateDoc": "1991-10-04",
+        "roId": "RO 1992 288",
+        "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+        "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+        "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/901_901_901": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1993-02-03",
+        "roId": "RO 1993 901",
+        "titelDe": "Verordnung vom 3. Februar 1993 über Vorinstanzen des Bundesgerichts und des Eidgenössischen Versicherungsgerichts",
+        "titelFr": "Ordonnance du 3 février 1993 sur les autorités dont les décisions peuvent être déférées au Tribunal fédéral ou au Tribunal fédéral des assurances",
+        "titelIt": "Ordinanza del 3 febbraio 1993 sulle autorità le cui decisioni possono essere deferite al Tribunale federale e al Tribunale federale delle assicurazioni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2868_2868_2868": {
+        "dateForce": "1996-03-01",
+        "dateDoc": "1995-10-06",
+        "roId": "RO 1996 2868",
+        "titelDe": "Geschäftsverkehrsgesetz, Änderung",
+        "titelFr": "Loi sur les rapports entre les conseils, Modification",
+        "titelIt": "Legge sui rapporti fra i Consigli, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2452_2452_2452": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-04-30",
+        "roId": "RO 1997 2452",
+        "titelDe": "Postgesetz vom 30. April 1997 (PG)",
+        "titelFr": "Loi fédérale du 30 avril 1997 sur la poste (LPO)",
+        "titelIt": "Legge del 30 aprile 1997 sulle poste (LPO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/453": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-06-23",
+        "roId": "RO 2000 2719",
+        "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege (Bundesrechtspflegegesetz, OG)",
+        "titelFr": "Loi fédérale d'organisation judiciaire (Organisation judiciaire, OJ)",
+        "titelIt": "Legge federale sull'organizzazione giudiziaria (Organizzazione giudiziaria, OG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/54": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2000 273",
+        "titelDe": "Bundesgesetz über den Geschäftsverkehr der Bundesversammlung sowie über die Form, die Bekanntmachung und das Inkrafttreten ihrer Erlasse (Geschäftsverkehrsgesetz) (Anpassungen an die neue Bundesverfassung)",
+        "titelFr": "Loi fédérale sur la procédure de l'Assemblée fédérale ainsi que sur la forme, la publication et l'entrée en vigueur des actes législatifs (Loi sur les rapports entre les conseils) (Adaptations à la nouvelle Constitution)",
+        "titelIt": "Legge federale concernente la procedura dell'Assemblea federale e la forma, la pubblicazione, l'entrata in vigore dei suoi atti (Legge sui rapporti fra i Consigli) (Adeguamento alla nuova Costituzione federale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/314": {
+        "dateForce": "2003-08-01",
+        "dateDoc": "2002-10-04",
+        "roId": "RO 2003 2133",
+        "titelDe": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
+        "titelFr": "Loi fédérale sur le Tribunal pénal fédéral (LTPF)",
+        "titelIt": "Legge sul Tribunale penale federale (LTPF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/510": {
+        "dateForce": "2003-12-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2003 3543",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/112": {
+        "dateForce": "2008-03-01",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2008 447",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/755": {
+        "dateForce": "2008-12-12",
+        "dateDoc": "2008-11-26",
+        "roId": "RO 2008 5405",
+        "titelDe": "Verordnung über die vollständige Inkraftsetzung des Bundesbeschlusses über die Genehmigung und die Umsetzung der bilateralen Abkommen über die Assoziierung an Schengen und an Dublin sowie die Inkraftsetzung weiterer in Umsetzung von Schengen/Dublin erlassener Bundesgesetze",
+        "titelFr": "Ordonnance sur l'entrée en vigueur totale de l'arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin et sur l'entrée en vigueur d'autres lois fédérales mettant en uvre Schengen et Dublin",
+        "titelIt": "Ordinanza sull'entrata in vigore completa del decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino nonché sull'entrata in vigore di altre leggi federali adottate in attuazione di Schengen/Dublino"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/679": {
+        "dateForce": "2010-01-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2009 5597",
+        "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+        "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+        "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/267": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2010 1881",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/444": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2010 3267",
+        "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+        "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+        "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/663": {
+        "dateForce": "2011-12-05",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2011 4627",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/807": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5343",
+        "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+        "titelFr": "Code des obligations (Révision du droit de la prescription)",
+        "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/347": {
+        "dateForce": "2025-06-15",
+        "dateDoc": "2021-03-19",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2019/817 und (EU) 2019/818 zur Errichtung eines Rahmens für die Interoperabilität zwischen EU Informationssystemen (Weiterentwicklungen des Schengen-Besitzstands)",
+        "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des règlements (UE) 2019/817 et (UE) 2019/818 relatifs à l’établissement d’un cadre pour l’interopérabilité des systèmes d’information de l’UE\n(Développements de l’acquis de Schengen)",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2019/817 e (UE) 2019/818 che istituiscono un quadro per l’interoperabilità tra i sistemi di informazione dell’UE\n(Sviluppi dell’acquis di Schengen)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/96": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2025-06-20",
+        "titelDe": "Bundespersonalgesetz (BPG)",
+        "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+        "titelIt": "Legge sul personale federale (LPers)"
+      }
+    }
+  }
 }

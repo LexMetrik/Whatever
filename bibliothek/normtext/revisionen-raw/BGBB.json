@@ -630,5 +630,202 @@
     "2014-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/1410_1410_1410",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/1410_1410_1410",
+    "inkrafttreten": "1994-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1410_1410_1410",
+        "typ": 5,
+        "datum": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/3009_3009_3009",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/3009_3009_3009",
+        "typ": 2,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/309",
+        "typ": 1,
+        "datum": "2000-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 2,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/613",
+        "typ": 1,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/614",
+        "typ": 1,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/614",
+        "typ": 2,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+        "typ": 1,
+        "datum": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/462",
+        "typ": 1,
+        "datum": "2008-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/620",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/666",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/646",
+        "typ": 1,
+        "datum": "2013-03-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/710",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/710",
+        "typ": 5,
+        "datum": "2014-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2000/309": {
+        "dateForce": "2000-09-01",
+        "dateDoc": "1998-03-20",
+        "roId": "RO 2000 2042",
+        "titelDe": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)",
+        "titelFr": "Loi fédérale sur l'aménagement du territoire (LAT)",
+        "titelIt": "Legge federale sulla pianificazione del territorio (LPT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/613": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-06-20",
+        "roId": "RO 2003 4121",
+        "titelDe": "Zivilgesetzbuch",
+        "titelFr": "Code civil",
+        "titelIt": "Codice civile"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/320": {
+        "dateForce": "2004-07-01",
+        "dateDoc": "2003-10-03",
+        "roId": "RO 2004 2617",
+        "titelDe": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+        "titelFr": "Loi fédérale sur la fusion, la scission, la transformation et le transfert de patrimoine (Loi sur la fusion, LFus)",
+        "titelIt": "Legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione, LFus)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/826": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-12-20",
+        "roId": "RO 2006 5599",
+        "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+        "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+        "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/620": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2009-12-11",
+        "roId": "RO 2010 4285",
+        "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG) (Renaturierung)",
+        "titelFr": "Loi fédérale sur la protection des eaux (LEaux) (Renaturation)",
+        "titelIt": "Legge federale sulla protezione delle acque (LPAc) (Rinaturazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/666": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2009-12-11",
+        "roId": "RO 2011 4637",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+        "titelFr": "Code civil suisse (Cédule hypothécaire de registre et autres modifications des droits réels)",
+        "titelIt": "Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/646": {
+        "dateForce": "2013-11-01",
+        "dateDoc": "2013-03-22",
+        "roId": "RO 2013 3463",
+        "titelDe": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+        "titelFr": "Loi fédérale sur l'agriculture (Loi sur l'agriculture, LAgr)",
+        "titelIt": "Legge federale sull'agricoltura (Legge sull'agricoltura, LAgr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/710": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2013-11-06",
+        "roId": "RO 2013 3863",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 22. März 2013 des Landwirtschaftsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 22 mars 2013 de la loi sur l'agriculture",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della la modifica del 22 marzo 2013 della legge sull'agricoltura"
+      }
+    }
+  }
 }

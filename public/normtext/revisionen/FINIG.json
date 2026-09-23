@@ -1,33 +1,95 @@
 {
   "erlassKey": "FINIG",
   "sr": "954.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 323",
+      "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+      "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+      "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.1",
-      "sha": "a3147ceb1415bcc209d951fd426f6af72c5feb2735b777aa7ed79746b9f6de52"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/323/de",
+      "sha": "b13429eb8b11a94d7291a6c05f42fb5a00e97d550d21e64db7273758b511e1cf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.1",
-      "sha": "2f76ee7c9ee8218682b269f021d594a9886c09f8dc9a7e5cef422b7b336f3d27"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2024 53",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2020-1852",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/53/de",
+      "sha": "2db0e6aeb1ce8c2a1ecd7eba393e53c410763dc1f166a3ee59dd19f8b2792718"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.1",
-      "sha": "d8f2f16d60a3c80e59ebabf36cf90014209aa4310d8517644efa7f27df8d5923"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 33",
+      "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "botschaftKey": "BOTSCHAFT-2020-16",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2021-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/33/de",
+      "sha": "914393ba899c12c84d2c51beb68cf8a0bb7f5ffd6f1344ef250672aa8b1ab1ba"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/399",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 399",
+      "titelDe": "Verordnung vom 18. Juni 2021 über die abschliessende Inkraftsetzung des Bundesgesetzes zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 portant dernière mise en vigueur partielle de la loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 concernente l’entrata in vigore integrale della legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/399/de",
+      "sha": "d635cf3e3e57e31d0a1a09020d91e3c13d85ecc18480aaa5b04fc3331bdec893"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.1",
-      "sha": "9fa68bab0912dea8718ae317a76cb84103d8c31f5f25582e5808f3886e5d1f0c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 33",
+      "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "botschaftKey": "BOTSCHAFT-2020-16",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2021-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/33/de",
+      "sha": "098311bd40408bbb9c966bc028a749e2d5a277dd62099f14d1fdb0516c015a9a"
     },
     {
       "art": "aenderung",
@@ -38,8 +100,11 @@
       "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
       "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
       "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/91/de",
-      "sha": "dc7f51a9d29045f601e03c8ac0a1170237e63f8aac2ed790f3bd50a07516ddf5"
+      "sha": "2db1c8735869cf5d31bd315a2338f1f0b17fc1373fb426859023e858df7e1a99"
     },
     {
       "art": "aenderung",
@@ -50,8 +115,12 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
       "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
       "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/762/de",
-      "sha": "7b572760dc607c6134e614cc043ac601d154346c7ed7fcfabf7a44f5809e89af"
+      "sha": "f5b929fddfb67e28bdb23ec97a2a84df7d4320d67c499a432b94fd25cc350b46"
     },
     {
       "art": "aenderung",
@@ -62,97 +131,13 @@
       "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
       "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
       "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "wirkungen": [
+        "aenderung",
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/803/de",
-      "sha": "550646c692ab2cc91142b589c6990014268045b9229e8f92846bc0920448a2bf"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2019-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
-      "dateDocument": "2018-06-15",
-      "roFundstelle": "AS 2018 5247",
-      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
-      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
-      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
-      "botschaftKey": "BOTSCHAFT-2015-2141",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
-      "sha": "2828e35ec97372da9e527c5b19ecf5ebee0f17d414767d012973757b21451213"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/250",
-      "dateDocument": "2012-09-28",
-      "roFundstelle": "AS 2013 1103",
-      "titelDe": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
-      "titelFr": "Loi fédérale sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM)",
-      "titelIt": "Legge federale sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)",
-      "botschaftKey": "BOTSCHAFT-2011-1111",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/250/de",
-      "sha": "90cb66384029727563905fae2672384c5950f073b24ebb30fc810d6791d3d3f8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/752",
-      "dateDocument": "2007-06-22",
-      "roFundstelle": "AS 2007 5291",
-      "titelDe": "Bundesgesetz über die Börsen und den Effektenhandel",
-      "titelFr": "Loi fédérale sur les bourses et le commerce des valeurs mobilières",
-      "titelIt": "Legge federale sulle borse e il commercio di valori mobiliari",
-      "botschaftKey": "BOTSCHAFT-2006-303",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/752/de",
-      "sha": "1ef4a2a4721636824ef8d09f5e234614015a985d92759ae44e5cb62c909cb2d1"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/34",
-      "dateDocument": "2005-10-07",
-      "roFundstelle": "AS 2006 197",
-      "titelDe": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
-      "titelFr": "Loi fédérale sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM)",
-      "titelIt": "Legge federale sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)",
-      "botschaftKey": "BOTSCHAFT-2004-1175",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/34/de",
-      "sha": "c2e83834256c64b90ae0dfa5308856e306f0a359560e90b19f9b468520175505"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1997-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/68_68_68",
-      "dateDocument": "1995-03-24",
-      "roFundstelle": "AS 1997 68",
-      "titelDe": "Bundesgesetz vom 24. März 1995 über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
-      "titelFr": "Loi fédérale du 24 mars 1995 sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM)",
-      "titelIt": "Legge federale del 24 marzo 1995 sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/68_68_68/de",
-      "sha": "bf6916e7740a1884d8e6b37df157d7ad992ecddc722321fed5f48e4c4c5a6120"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1997-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/851",
-      "dateDocument": "2008-12-16",
-      "roFundstelle": "AS 2008 6257",
-      "titelDe": "Börsengesetz (BEHG) (Betrifft nur den französischen Text)",
-      "titelFr": "Loi sur les bourses (LBVM)",
-      "titelIt": "Legge sulle borse (LBVM) (Concerne solo il testo francese)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/851/de",
-      "sha": "edcea989f9bbe5c210aa2b900b6ab5c82f4dcb66489c0dad0b7184db28a086ce"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1997-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/199",
-      "dateDocument": "2009-03-31",
-      "roFundstelle": "AS 2009 1267",
-      "titelDe": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG) (Betrifft nur den italienischen Text)",
-      "titelFr": "Loi fédérale sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM) (Ne concerne que le texte italien)",
-      "titelIt": "Legge federale sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/199/de",
-      "sha": "791e220d7297f0b1d5dce5b64d785caecadffc3023ae52549eb3e3fb61fa6629"
+      "sha": "049fa09a8b4c8dbd210b33fb6f21e301677b4ac7d833fb81577bb03245e47287"
     }
   ],
-  "sha": "73c617d2889f91d1bdcf08efcc42679c4a7b4b53626401a967aaf58f35a1d8ab"
+  "sha": "9fdb41e01ff0d3729190ce5c240d147dc22bb50d518804faeb892acf6e515592"
 }

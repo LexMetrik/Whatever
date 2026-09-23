@@ -1,8 +1,8 @@
 {
   "erlassKey": "ICAO",
   "sr": "0.748.0",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l’aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all’aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/349/de",
-      "sha": "5ebac99bc09e5faaef78f46018a4dfc9ead545b8eab14b1bf4cbbc5a8d0ea83a"
+      "sha": "1e279a70e45043f4835d5084842b77e553d31bfbd5f40ba0c432cba55f976a9f"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l’aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all’aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/350/de",
-      "sha": "67be57a17bee8942a6abd48af0ff80f8c51b94eb40f80f484e10363ff887d8b0"
+      "sha": "11449ddf45b33c26e7990ba086de46bbb7ad1b0df9158514385849bdab56850e"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l’aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all’aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/40/de",
-      "sha": "d2ee69c93849acfac79d42158a6459a46cc9eea9b85346b9d1f0f077af69638f"
+      "sha": "f9d07c3a84f7d0b5863b9fbdcb4899e3184a6837e1d1a50b83f0e159f1a63956"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l’aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all’aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/768/de",
-      "sha": "207dc07e0a3a87fe69bd781d43557e0d31806af9796190518415d342f962cd62"
+      "sha": "70d046b6360d0a97936fe3cf30b1ec1cf661adcf121be9da485b9f242ee8521e"
     },
     {
       "art": "aenderung",
@@ -61,8 +73,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l’aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all’aviazione civile internazionale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/244/de",
-      "sha": "3e0b7d90bcd8772f045d87777d33c8db3e650531f48b4ab4d61075ecae358657"
+      "sha": "99739f7055285bfdeafef7d0253d6605e4c3785763c0cbb0dbb0a4a9504d3b33"
     },
     {
       "art": "aenderung",
@@ -73,8 +88,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l’aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all’aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/112/de",
-      "sha": "65b1359092bbd2bb8b0a7d4c70ab33307e1c34c90d60c556e239f801e9e4a717"
+      "sha": "dc1b832e5ffc0766dea6e0610157ce2a74fbd881018785c6c5b214a4742222b2"
     },
     {
       "art": "aenderung",
@@ -85,8 +103,12 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/443/de",
-      "sha": "d200de24e34197c4a75c1b38084932dae3eb3f12af93e448b361e21394ba1d14"
+      "sha": "300f93fada2bd89f95a427add7dddbdd90170c23ebb57a3a55f5c74e6ed875c3"
     },
     {
       "art": "aenderung",
@@ -97,8 +119,11 @@
       "titelDe": "Abkommen über die internationale Zivilluftfahrt vom 7. Dezember 1944",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/624/de",
-      "sha": "f0bdb7b0c8a391e226215bf234b2f7e046299faa41fb0b3e8d84f1f4850e1df0"
+      "sha": "3f233f7731fd82da64ae03e4d54ccc861558c29cfab962e919d87ea9f2426a93"
     },
     {
       "art": "aenderung",
@@ -109,26 +134,26 @@
       "titelDe": "Abkommen über die internationale Zivilluftfahrt vom 7. Dezember 1944",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/813/de",
-      "sha": "1928eab69645b2996c99cb9be831bbd439746c26535d2691d44d55d7231322da"
+      "sha": "98d0af31fd18e3185681be62e0bc5d1fff4b94cf49a0ff41a4b4caac3cc5ca02"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2018-01-01",
+      "dateEntryInForce": "2017-08-03",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/712",
       "dateDocument": "2018-01-01",
       "roFundstelle": "AS 2017 6503",
       "titelDe": "Abkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/712/de",
-      "sha": "d0d90b3d51b53778191ca0e118e1a2cd2d8d295045b23f2f8c1ba0ef43266cd8"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2017-08-03",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.748.0",
-      "sha": "4a357b93bc11f918dcc771c340ed13690c25221ea4e00b8027fcb1b057a6b3ab"
+      "sha": "78731afc2edeba467b7789ec92c90fb2ec4e5f79a828be015d343f406ebad951"
     },
     {
       "art": "aenderung",
@@ -139,8 +164,11 @@
       "titelDe": "Abkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/404/de",
-      "sha": "61da552c6f216c6f084a24b4644cd80d3cb1109b9732bc4de986f352fca386e9"
+      "sha": "9d3f6cd3362146a8b4f47de8563074f33fdf9a9085f1302a1671e6b8c0c6464b"
     },
     {
       "art": "aenderung",
@@ -151,8 +179,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/764/de",
-      "sha": "96c9fcfee98a725ef666debcb572ff6a78765dc870fa82bbefd3fbc90c1c50b5"
+      "sha": "b62b099ba91684739008267737737ffa40fbaed8f7aa982f0295264831b7fff7"
     },
     {
       "art": "aenderung",
@@ -163,8 +194,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/264/de",
-      "sha": "f27c2913d3dbf0134b494eaeead577f7874d9162c429d2046b0eddd6aa09d310"
+      "sha": "a2f44417ae71cf34bd26da4f416904ba238c56dc465a52bb1627b7e5188005c7"
     },
     {
       "art": "aenderung",
@@ -175,8 +209,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/637/de",
-      "sha": "4ee2e52a181035f3b3c0ebf20a4af64d518273752fbec8126c4bfebd53879e43"
+      "sha": "67b66beb26391c2a2983e3d65fe2bd4808588eb16d6afd0d4bf09e9a91f84415"
     },
     {
       "art": "aenderung",
@@ -187,8 +224,12 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/459/de",
-      "sha": "960244dcee3d2f0ab00ff5bc8d4ed2801b15ea2f0d50a3ab91709c8478495f80"
+      "sha": "59e3ee79d76038c1eeee26de053d2c902b14f14e166a522532868bfc3a94662d"
     },
     {
       "art": "aenderung",
@@ -199,8 +240,11 @@
       "titelDe": "Übereinkommens vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/501/de",
-      "sha": "9184d275a199112812b7a7e17c92c2d3e1aca4a3972607db3b77566c9fa5e0b2"
+      "sha": "4240204572570350252b9b1e5bce68d73186227a344ada00b383fc028fe7869b"
     },
     {
       "art": "aenderung",
@@ -211,8 +255,12 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/238/de",
-      "sha": "196065550adf5e1232e8b07e24865b96442b5bd31c3dc3ea6fbb7c8a4fc22c14"
+      "sha": "e920d6769b5f66cce09e8255d6fb31de558016b6f79f005b8575f329bb3b4fa6"
     },
     {
       "art": "aenderung",
@@ -223,8 +271,11 @@
       "titelDe": "Änderung von Anhang 9 des Übereinkommens vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Modification de l'annexe 9 de la Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Modifica dell'allegato 9 della Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/22/de",
-      "sha": "54a0bde3a43fa3a8e9948cf20d12bc41cd8e40725051f9d6c2bd6420b9b309f1"
+      "sha": "51c420331fb0e683de3e2b0fd87e2922b413ef9ed578dff7064c5f661c65ade4"
     },
     {
       "art": "aenderung",
@@ -235,8 +286,11 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/410/de",
-      "sha": "fc2b7e523579f1e166bc3955b60249963202d99e06d2c95ed9086fb61a03bf13"
+      "sha": "a44693b4a7de85488cc33d18a7c5fd90a1cbbf16ad707645455b6472f13aa858"
     },
     {
       "art": "aenderung",
@@ -247,32 +301,85 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/484/de",
-      "sha": "d54776ac8cdeb4e7b700bb108828757cadaafc84f01ddc75ad9056a192d5ee65"
+      "sha": "a977a674f93679f8eb14e211c0ca1a502d521fd42a51030d5fd8473cdd95d74c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-03-26",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.748.0",
-      "sha": "2bfdd0b9b77bfa9e5e378cb24105eb001c3f27b2565d08d9dc82a9e359e9e9e3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+      "dateDocument": "1990-10-26",
+      "roFundstelle": "AS 2004 3999",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1997-06-20",
+        "1998-10-01",
+        "1999-08-17",
+        "2002-11-28",
+        "2004-03-26"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/580/de",
+      "sha": "f3338d08e4448a0b8421dc028d26c1895c26a6a4fe324f5e774732a6d6255fb6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-11-28",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.748.0",
-      "sha": "b8827b7ebc65a1ebead13be7c4cbd0ed40ba9b6776f1c1884436e1319eeabe87"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+      "dateDocument": "1990-10-26",
+      "roFundstelle": "AS 2004 3999",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1997-06-20",
+        "1998-10-01",
+        "1999-08-17",
+        "2002-11-28",
+        "2004-03-26"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/580/de",
+      "sha": "abdb3128ca0a950d9b094cdab0a9064a8425e31f707d9c5e71ad788e94d46667"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-07-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.748.0",
-      "sha": "252e71b8248b50de06795d268509d30e6198441c8c9337e90306c0c0b20bb263"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/356",
+      "dateDocument": "2002-03-01",
+      "roFundstelle": "AS 2002 2604",
+      "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+      "titelFr": "Ordonnance sur l'aviation (OSAv)",
+      "titelIt": "Ordinanza sulla navigazione aerea (ONA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/356/de",
+      "sha": "22333c04a9534f4968767a2357999db7781d5e530cf6a001e05cee0e499d0914"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-04-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.748.0",
-      "sha": "45c93f114fb7cec36f067d6ef7c3377f27726fdd225247ba4f987a9a08b3cb63"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/396",
+      "dateDocument": "2002-09-03",
+      "roFundstelle": "AS 2002 2726",
+      "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+      "titelFr": "Ordonnance sur l'aviation (OSAv)",
+      "titelIt": "Ordinanza sulla navigazione aerea (ONA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/396/de",
+      "sha": "c7ee2104b389fa7c27630b3caf460a3ba10b0388f5bf3c4069b184732ee6cca0"
     },
     {
       "art": "aenderung",
@@ -283,8 +390,11 @@
       "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
       "titelFr": "Ordonnance sur l'aviation (OSAv)",
       "titelIt": "Ordinanza sulla navigazione aerea (ONA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/424/de",
-      "sha": "ab67987154ef52905c5e3e1308df4732e4c263180307843713b68a61b168f22f"
+      "sha": "5fa9b352ff7c0cb3b6de9fc92f9e48f6bfa970f2786ff39ea393e9e51d19f7e8"
     },
     {
       "art": "aenderung",
@@ -295,8 +405,55 @@
       "titelDe": "Lufttransportreglement (LTrR)",
       "titelFr": "Règlement de transport aérien (RTA)",
       "titelIt": "Regolamento di trasporto aereo (RTrA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/425/de",
-      "sha": "e87258ab07354e1a954fff77e49abe895f1aae5789199c09bb5778b581a376a7"
+      "sha": "2a80f13b9b4a6288fb55eb6e8def98c1299accfb10b68f24e28ff9474f5d6e0d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-08-17",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+      "dateDocument": "1990-10-26",
+      "roFundstelle": "AS 2004 3999",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1997-06-20",
+        "1998-10-01",
+        "1999-08-17",
+        "2002-11-28",
+        "2004-03-26"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/580/de",
+      "sha": "4c2e1ce92e6bdb13307ab762d43a7acf674ed7c4d4d5752e1a94921deac491f3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+      "dateDocument": "1990-10-26",
+      "roFundstelle": "AS 2004 3999",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1997-06-20",
+        "1998-10-01",
+        "1999-08-17",
+        "2002-11-28",
+        "2004-03-26"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/580/de",
+      "sha": "044ab1fee9d75ad29228850e607a24260c0b295f24d5019accc33502b39e1084"
     },
     {
       "art": "aenderung",
@@ -307,21 +464,316 @@
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "etappen": [
+        "1997-06-20",
+        "1998-10-01",
+        "1999-08-17",
+        "2002-11-28",
+        "2004-03-26"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/580/de",
-      "sha": "4df8f1cd21e43e86ebdcb5834cc31819d0749673c344798b08593ec7cee4287e"
+      "sha": "19f1fd4d47665c9b276ee98984d59ea5a9ec3181c31c83aa587af9c076c0e2cc"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1947-04-04",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/63/1377_1378_1381",
-      "dateDocument": "1944-12-07",
-      "roFundstelle": "AS 63 1377",
+      "dateEntryInForce": "1990-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/1566_1566_1566",
+      "dateDocument": "1990-09-01",
+      "roFundstelle": "AS 1990 1566",
       "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
       "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
       "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/63/1377_1378_1381/de",
-      "sha": "38b738aa26519b3f8015f71c81d9128996e93dc468baa2ad9ca0ab94c37f66ea"
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/1566_1566_1566/de",
+      "sha": "1ce70adde3191b7d3fdc6ecac6c29d373a487944980ba735ddfc926424078378"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/859_859_859",
+      "dateDocument": "1989-05-16",
+      "roFundstelle": "AS 1989 859",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/859_859_859/de",
+      "sha": "45cfb81f54ae80c5aba4c1a72e4043fac685ab4513fac775f41140845f111352"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1073_1073_1073",
+      "dateDocument": "1987-09-01",
+      "roFundstelle": "AS 1987 1073",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1073_1073_1073/de",
+      "sha": "ecc8c87e27c374a199f4b4c445c29cdd7b344a283bad54f25bca40966fe98f6e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-12-02",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/579",
+      "dateDocument": "1985-12-02",
+      "roFundstelle": "AS 2004 3997",
+      "titelDe": "Bundesbeschluss zur Änderung des Übereinkommens über die internationale Zivilluftfahrt",
+      "titelFr": "Arrêté fédéral portant approbation d'un amendement à la Convention relative à l'aviation civile internationale",
+      "titelIt": "Decreto federale concernente un emendamento della Convenzione relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/579/de",
+      "sha": "3f5962b8a45a95cd36b8355fc539d265910f8d5028f968720837deaacc8e8d6a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/771_771_771",
+      "dateDocument": "1985-06-01",
+      "roFundstelle": "AS 1985 771",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/771_771_771/de",
+      "sha": "d16649d368c7cc784943a508129e2adcef1be332b266aad99c9428f10a16fc2f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-11-26",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/578",
+      "dateDocument": "1984-11-26",
+      "roFundstelle": "AS 2004 3995",
+      "titelDe": "Bundesbeschluss zur Änderung des Übereinkommens über die internationale Zivilluftfahrt",
+      "titelFr": "Arrêté fédéral approuvant un protocole qui porte amendement de la Convention relative à l'aviation civile internationale",
+      "titelIt": "Decreto federale che approva un protocollo di emendamento della Convenzione relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/578/de",
+      "sha": "ecbe92256d03fe9f9fccd433238466cb2b16356b8ff8334629659c8dc6b766f7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/1438_1438_1438",
+      "dateDocument": "1981-09-01",
+      "roFundstelle": "AS 1981 1438",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/1438_1438_1438/de",
+      "sha": "b452ca5839a88948cdbec6515abef66f52c27aa48402699d3dc11b609285f77b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/418_418_418",
+      "dateDocument": "1975-12-17",
+      "roFundstelle": "AS 1980 418",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt, Änderung",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale, Modification",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/418_418_418/de",
+      "sha": "78de398aa170448ce6ad7b3f3ce59daff655eeb6b71f8826d439d2d92f9dee3c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-12-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/577",
+      "dateDocument": "1979-12-12",
+      "roFundstelle": "AS 2004 3993",
+      "titelDe": "Bundesbeschluss betreffend ein Protokoll zur Änderung des Übereinkommens über die internationale Zivilluftfahrt",
+      "titelFr": "Arrêté fédéral approuvant un protocole qui porte amendement de la Convention relative à l'aviation civile internationale",
+      "titelIt": "Decreto federale che approva un protocollo emendante la Convenzione relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/577/de",
+      "sha": "8b1e9d7bc4b31975b05174617d27947bccfd0b783eebff296401d198071ac46d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-12-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/190_190_190",
+      "dateDocument": "1977-12-15",
+      "roFundstelle": "AS 1978 190",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/190_190_190/de",
+      "sha": "80816636e73fa495dfe1c37de03484dca79c5ab6f0148c050ba284568cef0d61"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/1299_1299_1299",
+      "dateDocument": "1977-06-01",
+      "roFundstelle": "AS 1977 1299",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/1299_1299_1299/de",
+      "sha": "fb19b35f82be886fd960dbfc67a31a221796730351c960febf7d57910194e4f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-14",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/496_496_496",
+      "dateDocument": "1962-09-15",
+      "roFundstelle": "AS 1976 496",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt, Änderung",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale, Modification",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/496_496_496/de",
+      "sha": "5bac50dbe78817653480655d7a912428554cc0445da575f6ead8583920881a3b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-12-17",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/417_417_417",
+      "dateDocument": "1975-12-17",
+      "roFundstelle": "AS 1980 417",
+      "titelDe": "Bundesbeschluss vom 17. Dezember 1975 über ein Protokoll betreffend Änderung des Übereinkommens über die internationale Zvillulftfahrt",
+      "titelFr": "Arrêté fédéral du 17 décembre 1975 approuvant un protocole qui porte amendement de la Convention relative à l'aviation civile internationale",
+      "titelIt": "Decreto federale del 17 dicembre 1975 che approva un protocollo emendante la Convenzione relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/417_417_417/de",
+      "sha": "8142c0fe6b8c613ffd0f052889b14fb6374004f4a7fc42168905a14e242bfa05"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1974-12-19",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1552_1551_1551",
+      "dateDocument": "1971-07-07",
+      "roFundstelle": "AS 1975 1552",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt, Änderung",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale, Modification",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1552_1551_1551/de",
+      "sha": "406efc10fa91e0817870ef806168cb264729859974e59bd870be67bfe8c02542"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/1616_1616_1616",
+      "dateDocument": "1973-08-01",
+      "roFundstelle": "AS 1973 1616",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'Aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'Aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/1616_1616_1616/de",
+      "sha": "66ac4485f08b5482585e6ef4f13bf95c66f5180ba892f299c54971ed333722c4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-01-16",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/2254_2254_2254",
+      "dateDocument": "1971-03-12",
+      "roFundstelle": "AS 1973 2254",
+      "titelDe": "Protokoll betreffend eine Änderung des Übereinkommens über die internationale Zivilluftfahrt vom 7. Dezember 1944, Änderung",
+      "titelFr": "Protocole portant amendement à la Convention relative à l'Aviation civile internationale du 7 décembre 1944, Modification",
+      "titelIt": "Protocollo emendante l'articolo 50 della convenzione relativa alla navigazione aerea civile internazionale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/2254_2254_2254/de",
+      "sha": "501146dfdfb7af5d6fcd554ce8601b17a037aab9cacaf9153060f17b24845039"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-06-29",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/2253_2253_2253",
+      "dateDocument": "1972-06-29",
+      "roFundstelle": "AS 1973 2253",
+      "titelDe": "Bundesbeschluss vom 29. Juni 1972 über die Genehmigung von zwei Protokollen betreffen Änderung des Übereinkommens über die internationale ZivilLuftfahrt",
+      "titelFr": "Arrêté fédéral du 29 juin 1972 approuvant deux protocoles qui portent amendement de la Convention relative à l'aviation civile internationale",
+      "titelIt": "Decreto federale del 29 giugno 1972 che approva due protocolli emendanti la convenzione relativa alla navigazione aerea civile internazionale",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/2253_2253_2253/de",
+      "sha": "256dce957b8d8b61d1d122a9b5e13bb5e9c4fe4832c4fcfdc8f947eb5c280c7d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-04-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/860_872_791",
+      "dateDocument": "1972-04-20",
+      "roFundstelle": "AS 1972 860",
+      "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+      "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+      "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/860_872_791/de",
+      "sha": "c1775774f7138d4caaa507b2962801e345bfbc3bd456a2658642c45b71f1902d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1969-01-22",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1301_1296_1296",
+      "dateDocument": "1968-09-24",
+      "roFundstelle": "AS 1971 1301",
+      "titelDe": "Protokoll vom 24. September 1968 betreffend den authentischen dreisprachigen Wortlaut des Übereinkommens über die internationale Zivilluftfahrt (Chicago, 1944)",
+      "titelFr": "Protocole du 24 septembre 1968 concernant le texte authentique trilingue de la Convention relative à l'Aviation civile internationale (Chicago, 1944)",
+      "titelIt": "Protocollo del 24 settembre 1968 concernente il testo autentico trilingue della Convenzione relativa all'aviazione civile internazionale (Chicago, 1944)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1301_1296_1296/de",
+      "sha": "c4cb3b2b3a44174c0fcd0c66d1a470bcac51d4be6cfa0f1dc261cb39febda4a7"
     }
   ],
-  "sha": "523a23ef2df0b4abe8bd0928e05004581a53e5fa1ee874281da48c741b30bc73"
+  "sha": "2fa47d4c4a81a866177c7580a28cf9c3b04956537f709bdcc70b58c03c9c548d"
 }

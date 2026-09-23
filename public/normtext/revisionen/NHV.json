@@ -1,8 +1,8 @@
 {
   "erlassKey": "NHV",
   "sr": "451.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,32 +13,71 @@
       "titelDe": "Verordnung über den Natur- und Heimatschutz (NHV)",
       "titelFr": "Ordonnance sur la protection de la nature et du paysage (OPN)",
       "titelIt": "Ordinanza sulla protezione della natura e del paesaggio (OPN)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/449/de",
-      "sha": "c11e2e2168e29ad67994543000d8078ed68c84d45726771058cb9015181f773d"
+      "sha": "01444ec6c4aafc03941f25f0fa5d0273596330607b88e28c863295ac2dd39738"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451.1",
-      "sha": "71262391d6eae72e718416c50f08c94bd1b8b661e86f13be3088af4746d9841d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/290",
+      "dateDocument": "2017-03-29",
+      "roFundstelle": "AS 2017 2815",
+      "titelDe": "Verordnung über das Bundesinventar der Landschaften und Naturdenkmäler (VBLN)",
+      "titelFr": "Ordonnance concernant l'inventaire fédéral des paysages, sites et monuments naturels (OIFP)",
+      "titelIt": "Ordinanza riguardante l'inventario federale dei paesaggi, siti e monumenti naturali (OIFP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/290/de",
+      "sha": "9814d95cf8a25a65459cb2a734f323da308b560ff9d00c1aaa7b53eb41216caa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451.1",
-      "sha": "64f8087b80d41ce2a0270be794ebe3b0ce0482873afd97d412fe478c76bc51c3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/63",
+      "dateDocument": "2015-01-28",
+      "roFundstelle": "AS 2015 427",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts im Umweltbereich, insbesondere hinsichtlich der Programmvereinbarungen für die Programmperiode 20162019",
+      "titelFr": "Ordonnance sur les adaptations d'ordonnances dans le domaine de l'environnement, liées en particulier aux conventions-programmes à conclure pour la période allant de 2016 à 2019",
+      "titelIt": "Ordinanza che adegua ordinanze nel settore ambientale, legate in particolare agli accordi programmatici per il periodo 20162019",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/63/de",
+      "sha": "836e7fbc257d0069b2649e45c833049e7c3d2e6d8a9115c9b5820bc38f352392"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451.1",
-      "sha": "6f8ebaa322a9f93d75208235aa0d1615640b02e65f5b22e823485419c19ce89d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/199",
+      "dateDocument": "2014-04-02",
+      "roFundstelle": "AS 2014 909",
+      "titelDe": "Raumplanungsverordnung (RPV)",
+      "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
+      "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/199/de",
+      "sha": "4c3f56cee95bf80f98afe85794013a2dd2d536a62cb589bbe0d93244be20bd2e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451.1",
-      "sha": "b93115601a15d91bcddf11bff60bfcb4dce97404d3b5623c06475ac89bb2cd22"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/765",
+      "dateDocument": "2013-10-23",
+      "roFundstelle": "AS 2013 4145",
+      "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+      "titelIt": "Ordinanza concernente i pagamenti diretti all'agricolt ura (Ordinanza sui pagamenti diretti, OPD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/765/de",
+      "sha": "43c9e803093fbed2769f48d498b09b87bcd8d43c3756eb83ea9886574e3e538c"
     },
     {
       "art": "aenderung",
@@ -49,26 +88,56 @@
       "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Weiterentwicklung der Programmvereinbarungen im Umweltbereich",
       "titelFr": "Ordonnance concernant l'adaptation des ordonnances d'exécution au développement des conventions-programmes dans le domaine de l'environnement",
       "titelIt": "Ordinanza che adegua ordinanze allo sviluppo degli accordi programmatici nel settore ambientale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/103/de",
-      "sha": "e5f66e9b08cdb9fad75060e8947b2c32ffc6fb60c450a626d89217cd37dc212d"
+      "sha": "00030b5d43bd7eb5c0a39749211940e7e34a6674ae523b57f47aabc8f826bd19"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451.1",
-      "sha": "da35a86904060800d4e92f47c90d14f59dff1b7eefb9d12aa11ff17c57490b31"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/389",
+      "dateDocument": "2008-05-21",
+      "roFundstelle": "AS 2008 2809",
+      "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+      "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+      "titelIt": "Ordinanza sulla geoinformazione (OGI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/389/de",
+      "sha": "0cd321bc4ba035b495919b638851aad81963b022cf57136842a6fa84d94b9bdc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451.1",
-      "sha": "b8e09f486c413a7bc10dc8250a5dbd9205cfddeba72015daf974efd747bc5e04"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5823",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+      "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+      "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
+      "sha": "9cd737a7642fa729a8d54b717b8c49459a3002a64f32d5088a08e6713cae5308"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451.1",
-      "sha": "f03589392440473d1bc2b6c01043184d4ebefe404c63839ac224446f62e1f487"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/179",
+      "dateDocument": "2001-04-04",
+      "roFundstelle": "AS 2001 1310",
+      "titelDe": "Verordnung über die regionale Förderung der Qualität und der Vernetzung von ökologischen Ausgleichsflächen in der Landwirtschaft (Öko-Qualitätsverordnung, ÖQV)",
+      "titelFr": "Ordonnance sur la promotion régionale de la qualité et de la mise en réseau des surfaces de compensation écologique dans l'agriculture (Ordonnance sur la qualité écologique, OQE)",
+      "titelIt": "Ordinanza sul promovimento regionale della qualità e dell'interconnessione delle superfici di compensazione ecologica nell'agricoltura (Ordinanza sulla qualità ecologica, OQE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/179/de",
+      "sha": "387e216f474b2ff71555a0b6ffd6a964ce4da47495f0b3a8ea4bc901a45c8599"
     },
     {
       "art": "aenderung",
@@ -79,8 +148,11 @@
       "titelDe": "Verordnung über den Natur- und Heimatschutz (NHV)",
       "titelFr": "Ordonnance sur la protection de la nature et du paysage (OPN)",
       "titelIt": "Ordinanza sulla protezione della natura e del paesaggio (OPN)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/288/de",
-      "sha": "f59e06d78cfe3821dd39823106a951669dfa5c9163a31a180ee03740e88f54b0"
+      "sha": "02efe0e6942296b3dc9587dc02a1a4b7f96c8e430a307318ce1146803117c2fd"
     },
     {
       "art": "aenderung",
@@ -91,8 +163,11 @@
       "titelDe": "Verordnung über den Natur- und Heimatschutz (NHV)",
       "titelFr": "Ordonnance sur la protection de la nature et du paysage (OPN)",
       "titelIt": "Ordinanza sulla protezione della natura e del paesaggio (OPN)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/251/de",
-      "sha": "965dec5073ad07cae0d7716d8be027ab8f391a5c378d40b778e1f825d86dba61"
+      "sha": "6473c3e4f7b386549716a2195bceda4ff587accc1dcb9f0a595a838a174cf1fa"
     },
     {
       "art": "aenderung",
@@ -103,33 +178,28 @@
       "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
       "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
       "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/121/de",
-      "sha": "e52d58b58c88c715f1b892b1520eb0916fc7e5c5f39543406ea2b5e85da91019"
+      "sha": "0d6e05e1d781b007b6d107972500e52bb445f632a3259654e73aee5aed0538f9"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1991-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/249_249_249",
-      "dateDocument": "1991-01-16",
-      "roFundstelle": "AS 1991 249",
-      "titelDe": "Verordnung vom 16. Januar 1991 über den Natur- und Heimatschutz (NHV)",
-      "titelFr": "Ordonnance du 16 janvier 1991 sur la protection de la nature et du paysage (OPN)",
-      "titelIt": "Ordinanza del 16 gennaio 1991 sulla protezione della natura e del paesaggio (OPN)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/249_249_249/de",
-      "sha": "8b1a5ab67f01f2a43f29f7b49c79dc01739decc1b47e2bde5124c1adafc92880"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1967-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/1646_1703_1688",
-      "dateDocument": "1966-12-27",
-      "roFundstelle": "AS 1966 1646",
-      "titelDe": "Vollziehungsverordnung vom 27. Dezember 1966 zum Bundesgesetz über den Natur- und Heimatschutz",
-      "titelFr": "Ordonnance d'exécution du 27 décembre 1966 de la loi fédérale sur la protection de la nature et du paysage",
-      "titelIt": "Ordinanza d'esecuzione del 27 dicembre 1966 della legge federale sulla protezione della natura e del paesaggio",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/1646_1703_1688/de",
-      "sha": "8ef373c1cd870410d9e87701dee63d54ee69412f70dc3a4f3cb8be9d9853c866"
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/225_225_225",
+      "dateDocument": "1995-12-18",
+      "roFundstelle": "AS 1996 225",
+      "titelDe": "Verordnung über den Natur- und Heimatschutz (NHV), Änderung",
+      "titelFr": "Ordonnance sur la protection de la nature et du paysage (OPN), Modification",
+      "titelIt": "Ordinanza sulla protezione della natura e del paesaggio (OPN), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/225_225_225/de",
+      "sha": "ec66ae3096ef79f54dfc44c4d37dadbcb056c262678c0bcaae5661caa8a8de2a"
     }
   ],
-  "sha": "d9200b5438ad069d09fe9e822f6b9b2941c2938ee5abc8a3678a0b0ce3a0d4f4"
+  "sha": "8d40a3e46cc894e8bcf7172c924212dcecbe5b3459053727e7384d4299c79a6d"
 }

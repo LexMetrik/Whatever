@@ -2297,5 +2297,561 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2026/24",
       "zielFundstelle": "AS 2026 24"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1979/1961_1961_1961",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1979/1961_1961_1961",
+    "inkrafttreten": "1980-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/1961_1961_1961",
+        "typ": 5,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/248_248_248",
+        "typ": 6
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/248_248_248",
+        "typ": 6,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/316_316_316",
+        "typ": 6,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/449_449_447",
+        "typ": 6,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1981/1862_1862_1862",
+        "typ": 1,
+        "datum": "1982-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1981/232_232_232",
+        "typ": 6
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1981/232_232_232",
+        "typ": 6,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/531_531_531",
+        "typ": 1,
+        "datum": "1982-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1055_1055_1055",
+        "typ": 1,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1651_1651_1651",
+        "typ": 1,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/1119_1119_1119",
+        "typ": 1,
+        "datum": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/1338_1338_1338",
+        "typ": 1,
+        "datum": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/176_176_176",
+        "typ": 6,
+        "datum": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1392_1392_1392",
+        "typ": 1,
+        "datum": "1987-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/438_438_438",
+        "typ": 1,
+        "datum": "1989-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/438_438_438",
+        "typ": 2,
+        "datum": "1989-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/66_66_66",
+        "typ": 1,
+        "datum": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78",
+        "typ": 1,
+        "datum": "1991-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/514_514_514",
+        "typ": 1,
+        "datum": "1992-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/820_820_820",
+        "typ": 1,
+        "datum": "1993-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/1103_1103_1103",
+        "typ": 1,
+        "datum": "1994-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/816_816_816",
+        "typ": 1,
+        "datum": "1994-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425",
+        "typ": 1,
+        "datum": "1995-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1440_1440_1440",
+        "typ": 1,
+        "datum": "1998-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1440_1440_1440",
+        "typ": 2,
+        "datum": "1998-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/104",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/44",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/406",
+        "typ": 1,
+        "datum": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/406",
+        "typ": 2,
+        "datum": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/289",
+        "typ": 1,
+        "datum": "2002-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/470",
+        "typ": 1,
+        "datum": "2002-09-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/482",
+        "typ": 1,
+        "datum": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/637",
+        "typ": 1,
+        "datum": "2003-12-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/108",
+        "typ": 1,
+        "datum": "2004-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/582",
+        "typ": 1,
+        "datum": "2006-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/298",
+        "typ": 1,
+        "datum": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/796",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/518",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/730",
+        "typ": 1,
+        "datum": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/578",
+        "typ": 1,
+        "datum": "2011-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/260",
+        "typ": 1,
+        "datum": "2012-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/775",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/275",
+        "typ": 1,
+        "datum": "2015-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/461",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/461",
+        "typ": 2,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/818",
+        "typ": 1,
+        "datum": "2017-01-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/412",
+        "typ": 6,
+        "datum": "2020-06-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/424",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/498",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/144",
+        "typ": 6,
+        "datum": "2024-04-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/481",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/27",
+        "typ": 1,
+        "datum": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/50",
+        "typ": 1,
+        "datum": "2025-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/24",
+        "typ": 1,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/24",
+        "typ": 2,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/343",
+        "typ": 6,
+        "datum": "2026-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/438",
+        "typ": 1,
+        "datum": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/453",
+        "typ": 1,
+        "datum": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/458",
+        "typ": 1,
+        "datum": "2026-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1980/248_248_248": {
+        "dateForce": "1980-01-01",
+        "dateDoc": "1980-03-11",
+        "roId": "RO 1980 248",
+        "titelDe": "Signalisationsverordnung (SSV), Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur la signalisation routière (OSR), Errata (seulemente en italien)",
+        "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1980/316_316_316": {
+        "dateForce": "1980-01-01",
+        "dateDoc": "1980-03-31",
+        "roId": "RO 1980 316",
+        "titelDe": "Signalisationsverordnung (SSV), Berichtigung (nur franz.)",
+        "titelFr": "Ordonnance sur la signalisation routière (OSR), Errata",
+        "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Correzione (solamente in francese)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1980/449_449_447": {
+        "dateForce": "1980-01-01",
+        "dateDoc": "1980-04-24",
+        "roId": "RO 1980 449",
+        "titelDe": "Verordnung über die Stassensignalisation (SSV), Berichtigung",
+        "titelFr": "Ordonnance sur la signalisation routière (OSR), Errata",
+        "titelIt": "Ordinanza sulla segnaletica stradale, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1981/1862_1862_1862": {
+        "dateForce": "1982-01-01",
+        "dateDoc": "1981-11-30",
+        "roId": "RO 1981 1862",
+        "titelDe": "Signalisationsverordnung (SSV), Änderung",
+        "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+        "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1981/232_232_232": {
+        "dateForce": "1981-03-15",
+        "dateDoc": "1981-03-18",
+        "roId": "RO 1981 232",
+        "titelDe": "Verordnung über das Dienstverhältnis der persönlichen Mitarbeiter der Departementsvorsteher, Berichtigung",
+        "titelFr": "Ordonnance sur le statut des collaborateurs personnels des chefs de département, Errata (seulement en allemand)",
+        "titelIt": "Ordinanza sui rapporti d'impiego dei collaboratori personali dei capi di dipartimento, Correzione (solamente in tedesco)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/531_531_531": {
+        "dateForce": "1982-05-01",
+        "dateDoc": "1982-04-07",
+        "roId": "RO 1982 531",
+        "titelDe": "Verordnung vom 7. April 1982 über die Änderung von Erlassen des Strassenverkehrs",
+        "titelFr": "Ordonnance du 7 avril 1982 concernant la modification de plusieurs dispositions sur la circulation routière",
+        "titelIt": "Ordinanza del 7 aprile 1982 concernente la modifica di diverse disposizioni sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/1055_1055_1055": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1983-02-16",
+        "roId": "RO 1983 1055",
+        "titelDe": "Verordnung vom 16. Februar 1983 über Änderungen von Erlassen im Zusammenhang mit der Neugliederung der Bundesverwaltung",
+        "titelFr": "Ordonnance du 16 février 1983 concernant les modifications d'actes législatifs en rapport avec la réorganisation de l'administration fédérale",
+        "titelIt": "Ordinanza del 16 febbraio 1983 concernente la modifica di normative connesse con la riorganizzazione dell'amministrazione federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/1651_1651_1651": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1983-10-19",
+        "roId": "RO 1983 1651",
+        "titelDe": "Verordnung vom 19. Oktober 1983 über die Änderung von Erlassen des Strassenverkehrs (Tempo 50 innerorts)",
+        "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circulation routière (50 à l'heure dans les localités)",
+        "titelIt": "Ordinanza concernente la modifica di norme della circolazione stradale (50 all'ora nelle località)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/1119_1119_1119": {
+        "dateForce": "1985-01-01",
+        "dateDoc": "1984-10-01",
+        "roId": "RO 1984 1119",
+        "titelDe": "Verordnung vom 1. Oktober 1984 über die Änderung von Erlassen des Strassenverkehrs (Beschränkung 80/120)",
+        "titelFr": "Ordonnance du 1<sup>er</sup> octobre 1984 concernant la modification de textes légaux relatifs à la circulation routière (Limitation 80/120)",
+        "titelIt": "Ordinanza del 1<sup>o</sup> ottobre 1984 riguardante la modifica di testi giuridici sulla circolazione stradale (Tempo 80/120)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/1338_1338_1338": {
+        "dateForce": "1985-01-01",
+        "dateDoc": "1984-11-07",
+        "roId": "RO 1984 1338",
+        "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+        "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+        "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1985/176_176_176": {
+        "dateForce": "1985-01-01",
+        "dateDoc": "1985-01-25",
+        "roId": "RO 1985 176",
+        "titelDe": "Verordnung betreffend die Änderung der gesetzlichenTexte des Strassenverkehrs (Beschränkung 80/120), Berichtigung (nur franz und ital.)",
+        "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circulation routière (Limitation 80/120), Errata",
+        "titelIt": "Ordinanza riguardante la modifica di testi giuridici sulla circolazione stradale (Tempo 80/120), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/1392_1392_1392": {
+        "dateForce": "1987-11-01",
+        "dateDoc": "1987-10-21",
+        "roId": "RO 1987 1392",
+        "titelDe": "Verordnung über die Änderung von Erlassen des Strassenverkehrs (Tempo 80/120), Änderung",
+        "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circulation routière (Limitation 80/120), Modification",
+        "titelIt": "Ordinanza riguardante la modifica di testi giuridici sulla circolazione stradale (Tempo 80/120), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/438_438_438": {
+        "dateForce": "1989-05-01",
+        "dateDoc": "1989-01-25",
+        "roId": "RO 1989 438",
+        "titelDe": "Signalisationsverordnung (SSV), Änderung",
+        "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+        "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/66_66_66": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1989-12-20",
+        "roId": "RO 1990 66",
+        "titelDe": "Verordnung vom 20. Dezember 1989 über die Änderung von Erlassen des Strassenverkehrs (Tempo 120/80)",
+        "titelFr": "Ordonnance du 20 décembre 1989 concernant la modification de testes légaux relatifs à la circulation routière (Limitation 120/80)",
+        "titelIt": "Ordinanza del 20 dicembre 1989 riguardante la modifica di testi giuridici sulla circolazione stradale (Velocità 120/80)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78": {
+        "dateForce": "1991-02-01",
+        "dateDoc": "1990-12-03",
+        "roId": "RO 1991 78",
+        "titelDe": "Verordnung vom 3. Dezember 1990 über die Änderung und Aufhebung von Erlassen des Strassenverkehrs infolge der Revision vom 6. Oktober 1989 des Bundesgesetzes über die Strassenverkehr",
+        "titelFr": "Ordonnance du 3 décembre 1990 concernant la modification et l'abrogation d'actes législatifs portant sur la circulation routière, suite à la révision du 6 octobre 1989 de la loi fédérale sur la circulation routière",
+        "titelIt": "Ordinanza del 3 dicembre 1990 concernente la modifica e l'abrogazione di atti normativi della circolazione stradale, in seguito alla revisione dell 6 ottobre 1989 della legge federale sulla circolazione stradale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/514_514_514": {
+        "dateForce": "1992-03-15",
+        "dateDoc": "1992-02-12",
+        "roId": "RO 1992 514",
+        "titelDe": "Verordnung über die Strassensignalisation (Signalisationsverordnung [SSV]), Änderung",
+        "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+        "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/820_820_820": {
+        "dateForce": "1993-02-01",
+        "dateDoc": "1993-01-13",
+        "roId": "RO 1993 820",
+        "titelDe": "Verordnung vom 13. Januar 1993 über den Bereich der Eidgenössischen Technischen Hochschulen (Verordnung ETH-Bereich)",
+        "titelFr": "Ordonnance du 13 janvier 1993 sur le domaine des écoles polytechniques fédérales (Ordonnance sur le domaine des EPF)",
+        "titelIt": "Ordinanza del 13 gennaio 1993 sul settore dei Politecnici federali (Ordinanza sul settore dei PF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/1103_1103_1103": {
+        "dateForce": "1994-04-01",
+        "dateDoc": "1994-03-07",
+        "roId": "RO 1994 1103",
+        "titelDe": "Signalisationsverordnung, Änderung",
+        "titelFr": "Ordonnance sur la signalisation routière, Modification",
+        "titelIt": "Ordinanza sulla segnaletica stradale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/816_816_816": {
+        "dateForce": "1994-04-01",
+        "dateDoc": "1994-03-07",
+        "roId": "RO 1994 816",
+        "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+        "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+        "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425": {
+        "dateForce": "1995-10-01",
+        "dateDoc": "1995-06-19",
+        "roId": "RO 1995 4425",
+        "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+        "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+        "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-12-01",
+        "roId": "RO 1997 2779",
+        "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+        "titelFr": "Ordonnance du 1<sup>er</sup> décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+        "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1440_1440_1440": {
+        "dateForce": "1998-06-01",
+        "dateDoc": "1998-04-01",
+        "roId": "RO 1998 1440",
+        "titelDe": "Signalisationsverordnung (SSV), Änderung",
+        "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+        "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/104": {
+        "dateForce": "1999-01-01",
+        "dateDoc": "1998-11-25",
+        "roId": "RO 1999 704",
+        "titelDe": "Verordnung über die Aufhebung und die Änderung von Verordnungen aufgrund der Bahnreform",
+        "titelFr": "Ordonnance abrogeant et modifiant les ordonnances sur la base de la réforme des chemins de fer",
+        "titelIt": "Ordinanza concernente l'abrogazione e la modifica di ordinanze in seguito alla riforma delle ferrovie"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/44": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-12-06",
+        "roId": "RO 2000 243",
+        "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+        "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+        "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/637": {
+        "dateForce": "2003-12-14",
+        "dateDoc": "2003-11-12",
+        "roId": "RO 2003 4289",
+        "titelDe": "Verordnung über Bau und Betrieb der Eisenbahnen (Eisenbahnverordnung, EBV)",
+        "titelFr": "Ordonnance sur la construction et l'exploitation des chemins de fer (Ordonnance sur les chemins de fer, OCF)",
+        "titelIt": "Ordinanza sulla costruzione e l'esercizio delle ferrovie (O sulle ferrovie, Oferr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/108": {
+        "dateForce": "2004-03-01",
+        "dateDoc": "2004-02-11",
+        "roId": "RO 2004 945",
+        "titelDe": "Verordnung über den militärischen Strassenverkehr (VMSV)",
+        "titelFr": "Ordonnance sur la circulation militaire (OCM) ",
+        "titelIt": "Ordinanza sulla circolazione stradale militare (OCSM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/796": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5957",
+        "titelDe": "Nationalstrassenverordnung (NSV)",
+        "titelFr": "Ordonnance sur les routes nationales (ORN)",
+        "titelIt": "Ordinanza sulle strade nazionali (OSN)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/578": {
+        "dateForce": "2011-12-01",
+        "dateDoc": "2011-08-24",
+        "roId": "RO 2011 4111",
+        "titelDe": "Verordnung über die Abgabe für die Benützung von Nationalstrassen (Nationalstrassenabgabeverordnung, NSAV)",
+        "titelFr": "Ordonnance concernant la redevance pour l'utilisation des routes nationales (Ordonnance sur la vignette autoroutière, OVA)",
+        "titelIt": "Ordinanza concernente la tassa per l'utilizzazione delle strade nazionali (Ordinanza sul contrassegno stradale, OUSN)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/50": {
+        "dateForce": "2025-03-01",
+        "dateDoc": "2024-12-13",
+        "titelDe": "Verordnung vom 13. Dezember 2024 über das automatisierte Fahren (VAF)",
+        "titelFr": "Ordonnance du 13 décembre 2024 sur la conduite automatisée (OCA)",
+        "titelIt": "Ordinanza del 13 dicembre 2024 sulla guida automatizzata (OGA)"
+      }
+    }
   }
 }

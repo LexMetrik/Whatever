@@ -1,8 +1,8 @@
 {
   "erlassKey": "SKV",
   "sr": "741.013",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/644/de",
-      "sha": "34c861b2cb78423d1c8255d0300e0842fbe7a3cd8c853a25940e71a9b9384454"
+      "sha": "2900fbbb98ba7907510fc74eb612dbb2c62288035730eb634cb293fe194afae1"
     },
     {
       "art": "aenderung",
@@ -27,8 +30,11 @@
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2025 648, das unter SR 741.413 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/686/de",
-      "sha": "840c69379b2cf4931b8a2cf1f9e9b17d6836bd005e87c127cfc64dc20c545256"
+      "sha": "0e433a3eb1f17d865e193b8b87e12ef0aced1ea81c31f48ca452963d545771c4"
     },
     {
       "art": "aenderung",
@@ -39,20 +45,41 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/406/de",
-      "sha": "7531c39148d834bac190dee35e32b17948f1477ead781497920cc5646c22245c"
+      "sha": "574bc0ef8d7dd5cd8c624a8d93d8f4141d2c6dadeb428b50ed7fd9189ba436a1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.013",
-      "sha": "2eb9c2ec79d26fce0dafe35ded0eba0b431394978a6adc5dd190dfc1fd8ecb06"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.013",
-      "sha": "d31a031a95108485bf03a1c8ab3ac964c9c618291d2ef1212e5ed2429d3f44a8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/93",
+      "dateDocument": "2019-01-16",
+      "roFundstelle": "AS 2019 529",
+      "titelDe": "Ordnungsbussenverordnung (OBV)",
+      "titelFr": "Ordonnance sur les amendes d'ordre (OAO)",
+      "titelIt": "Ordinanza concernente le multe disciplinari (OMD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/93/de",
+      "sha": "d700f47fd3dbed502ecc64745080fb59ffcf5cadaf7926be68a2182ab23265f7"
     },
     {
       "art": "aenderung",
@@ -63,8 +90,11 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/40/de",
-      "sha": "09bdd1f456e113a0f5bbe200fde03ca318d3dffc3db5a4d0c260074b6473c449"
+      "sha": "00286b80a444ef4842483514f438818ab9980a20aef4c443174d84b77b945777"
     },
     {
       "art": "aenderung",
@@ -75,8 +105,12 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/490/de",
-      "sha": "f614d4c23570f2e8209a50839f01b5bef49491a5b25cc4715585be6588a9994c"
+      "sha": "53d051a9782c5b880f2e9b0e06d2fc914c14feb499e67d412eca77e03a82b199"
     },
     {
       "art": "aenderung",
@@ -87,14 +121,27 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/822/de",
-      "sha": "a0d9b3dc48d9469027e6f0f73303d6da0f986461bbe71e4fc1d6ceda48ff017d"
+      "sha": "7ef2b0e3790c9fb0576738ac768ce2c40f353a501afac51b3ec0ec9a9d37b5c7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.013",
-      "sha": "dd799ac18ca685c4c7c249ad041ccebddc69c00300ed5eeaaecbd45a3330cef4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/857",
+      "dateDocument": "2012-12-07",
+      "roFundstelle": "AS 2012 7065",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen an die neuen gesetzlichen Grundlagen im Messwesen",
+      "titelFr": "Ordonnance relative à l'adaptation d'ordonnances aux nouvelles bases légales en métrologie",
+      "titelIt": "Ordinanza che adegua ordinanze alle nuove basi legali in materia di metrologia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/857/de",
+      "sha": "a033fb13a33d2fe7309dfba61e05373c5e2af23330a8bf5e8aa3ca01f026593e"
     },
     {
       "art": "aenderung",
@@ -105,8 +152,11 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/334/de",
-      "sha": "dc916e5438e2de2ecd4280369791c095b689c16393a9860651ccb088cab98f43"
+      "sha": "4573697afa0eb0a56841a4773ac38a33c414508938ee9db8577d6cb2e3e1f99e"
     },
     {
       "art": "aenderung",
@@ -117,8 +167,11 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/711/de",
-      "sha": "c158eaa4fe690b79a0bc817256420b7008d3483993d1925985d953c6be653dea"
+      "sha": "2f45fdf78b4cd0c110b44ad7dcafc6fa7a1d241d78c89c80c7372f6e89c2edec"
     },
     {
       "art": "aenderung",
@@ -129,8 +182,11 @@
       "titelDe": "Verordnung zur Anpassung von Verordnungen im Rahmen der ersten Phase der Bahnreform 2",
       "titelFr": "Ordonnance portant adaptation d'ordonnances dans le cadre de la première phase de la réforme des chemins de fer 2",
       "titelIt": "Ordinanza che adegua ordinanze nell'ambito della prima fase della Riforma delle ferrovia 2",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/729/de",
-      "sha": "416ac12183dc2ce160230f9b24316887cce5c8b6ee732a6514b5e5cca0bf0a88"
+      "sha": "b1fa2434cbe039b40b14793bd5aa57b1cbc066931afa2d06cbcdd58d99395f3e"
     },
     {
       "art": "aenderung",
@@ -141,21 +197,12 @@
       "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
       "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
       "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/386/de",
-      "sha": "a826abc73c501a9dabe64d08c0a17c5ee839f7bcd9e8d18200e2fdcee3823265"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/296",
-      "dateDocument": "2007-03-28",
-      "roFundstelle": "AS 2007 2081",
-      "titelDe": "Verordnung über die Kontrolle des Strassenverkehrs (Strassenverkehrskontrollverordnung, SKV)",
-      "titelFr": "Ordonnance sur le contrôle de la circulation routière (OCCR)",
-      "titelIt": "Ordinanza sul controllo della circolazione stradale (OCCS)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/296/de",
-      "sha": "4687c174992c0c9cb934abadf17780cd9e1d15bab37854b16dfbef46c7361699"
+      "sha": "e7d73413bbccb8297ef731bec08d9265e524e055f6d815c9e6cbfb45c294e72f"
     }
   ],
-  "sha": "19318e8679012d64c415a66325f8fc5e68d7c09a1e7f9f3ddd4d56308aef1474"
+  "sha": "a8692bf52c64d9bd185a392ed7bb89c962161dcafd7615e3e0a15d94eee0097b"
 }

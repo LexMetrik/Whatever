@@ -1,20 +1,94 @@
 {
   "erlassKey": "KKG",
   "sr": "221.214.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.214.1",
-      "sha": "7cdadc945fc8dfc69af5b39603cd65d187d14b3b1d625215b01458f20376f521"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.214.1",
-      "sha": "b174d6b59b9b0f40c92482247d9bed4b3f0cd31a4dc5f8d2d4537036dcc39da4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5247",
+      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2019-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "sha": "64f37ebe74a76e6e0c2f2c9db9f84288b36fd8be85def51a4378cb2f9cee50a4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5247",
+      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2019-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "sha": "c8d4cd5e3e5495957791e7782a4e7bd428c302053d53709aae439359b87f26a5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/796",
+      "dateDocument": "2017-11-29",
+      "roFundstelle": "AS 2017 7317",
+      "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+      "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+      "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/796/de",
+      "sha": "60762e62f04696614a6f27ab686088faa780df82329c952a59e19dfbfbf83bcb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/689",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2015 4107",
+      "titelDe": "Obligationenrecht (Revision des Widerrufsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de révocation)",
+      "titelIt": "Codice delle obbligazioni (Revisione del diritto di revoca)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/689/de",
+      "sha": "78a0cf83a2ad4f402491e8a88de61f10ce56314b41bbf10882fb422d5bc72906"
     },
     {
       "art": "aenderung",
@@ -25,33 +99,12 @@
       "titelDe": "Bundesgesetz über den Konsumkredit (KKG)",
       "titelFr": "Loi fédérale sur le crédit à la consommation (LCC)",
       "titelIt": "Legge federale sul credito al consumo (LCC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/690/de",
-      "sha": "bc5d4104182ebd1f1f81fdca3b9e8623c01d6a1c79ef3588d4788b878b90a918"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/593",
-      "dateDocument": "2001-03-23",
-      "roFundstelle": "AS 2002 3846",
-      "titelDe": "Bundesgesetz über den Konsumkredit (KKG)",
-      "titelFr": "Loi fédérale sur le crédit à la consommation (LCC)",
-      "titelIt": "Legge federale sul credito al consumo (LCC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/593/de",
-      "sha": "e6dc7c6876a83f02c8350cc4149cfaf9ff8b2eaa7611b8b4939d75261c5fc407"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1994-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/367_367_367",
-      "dateDocument": "1993-10-08",
-      "roFundstelle": "AS 1994 367",
-      "titelDe": "Bundesgesetz vom 8. Oktober 1993 über den Konsumkredit (KKG)",
-      "titelFr": "Loi fédérale du 8 octobre 1993 sur le crédit à la consommation (LCC)",
-      "titelIt": "Legge federale dell'8 ottobre 1993 sul credito al consumo (LCC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/367_367_367/de",
-      "sha": "2efdfa03d9df578eac19a884af68c4f342da9c28d812c077d6ff76e0e5041064"
+      "sha": "90b8064f7c8dbbd0c9dca527f1db6546a53cffa8988ef0dc9f95f626aef9167f"
     }
   ],
-  "sha": "733012b9ef7b79f1c466604bbb8960f9dadf11256e735a264438e953915a5e9e"
+  "sha": "d1b5362845162282f1215f1b38e9ee4d686fc3fed9bb1be8415055aba1c33242"
 }

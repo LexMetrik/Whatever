@@ -620,5 +620,77 @@
     "2023-05-09"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2009/381",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2009/381",
+    "inkrafttreten": "2009-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/379",
+        "typ": 3,
+        "datum": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/381",
+        "typ": 5,
+        "datum": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/217",
+        "typ": 1,
+        "datum": "2012-02-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/217",
+        "typ": 9,
+        "datum": "2012-02-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/247",
+        "typ": 1,
+        "datum": "2014-05-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/247",
+        "typ": 9,
+        "datum": "2014-05-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/579",
+        "typ": 1,
+        "datum": "2017-09-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/579",
+        "typ": 9,
+        "datum": "2017-09-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/698",
+        "typ": 1,
+        "datum": "2020-09-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/698",
+        "typ": 9,
+        "datum": "2020-09-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/228",
+        "typ": 9,
+        "datum": "2023-05-09"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2009/379": {
+        "dateForce": "2009-07-01",
+        "dateDoc": "2007-12-21",
+        "roId": "RO 2009 3077",
+        "titelDe": "Bundesbeschluss über die Umsetzung der Übereinkommen über internationale Kindesentführung sowie die Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
+        "titelFr": "Arrêté fédéral portant mise en uvre des conventions sur l'enlèvement international d'enfants et portant approbation et mise en uvre des Conventions de La Haye sur la protection des enfants et des adultes",
+        "titelIt": "Decreto federale che attua le convenzioni sul rapimento internazionale dei minori e che approva e attua le Convenzioni dell'Aia sulla protezione dei minori e degli adulti"
+      }
+    }
+  }
 }

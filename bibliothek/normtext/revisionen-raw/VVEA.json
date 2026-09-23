@@ -1440,5 +1440,144 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2023/711",
       "zielFundstelle": "AS 2023 711"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2015/891",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+    "inkrafttreten": "2016-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+        "typ": 5,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/417",
+        "typ": 6,
+        "datum": "2016-07-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/561",
+        "typ": 6,
+        "datum": "2017-10-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/653",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/571",
+        "typ": 1,
+        "datum": "2018-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/681",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1029",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/147",
+        "typ": 1,
+        "datum": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/632",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/161",
+        "typ": 1,
+        "datum": "2022-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/778",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/543",
+        "typ": 6,
+        "datum": "2023-09-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/711",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/744",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/256",
+        "typ": 6,
+        "datum": "2025-04-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/453",
+        "typ": 1,
+        "datum": "2025-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/745",
+        "typ": 1,
+        "datum": "2025-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/745",
+        "typ": 2,
+        "datum": "2025-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/799",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/357",
+        "typ": 1,
+        "datum": "2026-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2017/653": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-10-25",
+        "roId": "RO 2017 5963",
+        "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+        "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+        "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/681": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-10-31",
+        "roId": "RO 2018 4205",
+        "titelDe": "Verordnung über das Inverkehrbringen von Düngern (Dünger-Verordnung, DüV)",
+        "titelFr": "Ordonnance sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+        "titelIt": "Ordinanza sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/632": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-20",
+        "titelDe": "Luftreinhalte-Verordnung (LRV)",
+        "titelFr": "Ordonnance sur la protection de l’air (OPair)",
+        "titelIt": "Ordinanza contro l’inquinamento atmosferico (OIAt)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/711": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-01",
+        "titelDe": "Verordnung vom 1. November 2023 über das Inverkehrbringen von Düngern (Düngerverordnung, DüV)",
+        "titelFr": "Ordonnance du 1er novembre 2023 sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+        "titelIt": "Ordinanza del 1° novembre 2023 sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)"
+      }
+    }
   }
 }

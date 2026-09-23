@@ -829,5 +829,113 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2012/855",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2012/855",
+    "inkrafttreten": "2013-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/855",
+        "typ": 5,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/761",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/752",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/752",
+        "typ": 2,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/243",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/262",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+        "typ": 2,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+        "typ": 1,
+        "datum": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+        "typ": 2,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2017/761": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-09-30",
+        "roId": "RO 2017 6825",
+        "titelDe": "Bundesgesetz über den Fonds für die Nationalstrassen und den Agglomerationsverkehr (NAFG)",
+        "titelFr": "Loi fédérale sur le fonds pour les routes nationales et pour le trafic d'agglomération (LFORTA)",
+        "titelIt": "Legge federale concernente il Fondo per le strade nazionali e il traffico d'agglomerato (LFOSTRA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/762": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-09-30",
+        "roId": "RO 2017 6839",
+        "titelDe": "Energiegesetz (EnG)",
+        "titelFr": "Loi sur l'énergie (LEne)",
+        "titelIt": "Legge federale sull'energia (LEne)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/243": {
+        "dateForce": "2019-07-01",
+        "dateDoc": "2019-12-20",
+        "roId": "RO 2020 1269",
+        "titelDe": "Bundesgesetz über die Verlängerung der Befristung der Steuererleichterungen für Erdgas, Flüssiggas und biogene Treibstoffe und über die Änderung des Bundesgesetzes über die Reduktion der CO<sub>2</sub>-Emissionen",
+        "titelFr": "Loi fédérale sur la reconduction des allégements fiscaux accordés pour le gaz naturel, le gaz liquide et les biocarburants et sur la modification de la loi sur le CO<sub>2</sub>",
+        "titelIt": "Legge federale che proroga i termini delle agevolazioni fiscali per il gas naturale, il gas liquido e i biocarburanti e che modifica la legge sul CO<sub>2</sub>"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/498": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-06-12",
+        "roId": "RO 2020 2743",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/393": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2026-03-20",
+        "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+        "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+        "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali"
+      }
+    }
+  }
 }

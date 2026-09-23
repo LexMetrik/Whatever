@@ -1103,5 +1103,231 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2000/121",
       "zielFundstelle": "AS 2000 703"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1994/3050_3050_3050",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1994/3050_3050_3050",
+    "inkrafttreten": "1995-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/3050_3050_3050",
+        "typ": 5,
+        "datum": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+        "typ": 1,
+        "datum": "2000-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+        "typ": 2,
+        "datum": "2000-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/218",
+        "typ": 1,
+        "datum": "2000-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/218",
+        "typ": 2,
+        "datum": "2000-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/33",
+        "typ": 6,
+        "datum": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/197",
+        "typ": 1,
+        "datum": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/135",
+        "typ": 1,
+        "datum": "2008-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/135",
+        "typ": 2,
+        "datum": "2008-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/231",
+        "typ": 6,
+        "datum": "2008-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/166",
+        "typ": 1,
+        "datum": "2011-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/166",
+        "typ": 2,
+        "datum": "2011-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/328",
+        "typ": 1,
+        "datum": "2012-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/328",
+        "typ": 2,
+        "datum": "2012-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/286",
+        "typ": 1,
+        "datum": "2014-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/286",
+        "typ": 2,
+        "datum": "2014-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/733",
+        "typ": 1,
+        "datum": "2015-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/611",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/611",
+        "typ": 2,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/25",
+        "typ": 6,
+        "datum": "2020-01-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/251",
+        "typ": 1,
+        "datum": "2020-04-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/251",
+        "typ": 1,
+        "datum": "2020-10-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/744",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/269",
+        "typ": 6,
+        "datum": "2021-05-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/230",
+        "typ": 1,
+        "datum": "2022-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/207",
+        "typ": 1,
+        "datum": "2023-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/529",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/659",
+        "typ": 1,
+        "datum": "2026-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2000/121": {
+        "dateForce": "2000-03-01",
+        "dateDoc": "2000-02-02",
+        "roId": "RO 2000 703",
+        "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+        "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+        "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/218": {
+        "dateForce": "2000-05-01",
+        "dateDoc": "2000-04-12",
+        "roId": "RO 2000 1388",
+        "titelDe": "Lärmschutz-Verordnung (LSV)",
+        "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
+        "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/166": {
+        "dateForce": "2011-04-01",
+        "dateDoc": "2011-03-04",
+        "roId": "RO 2011 1139",
+        "titelDe": "Verordnung über die Änderung von Bundesratsverordnungen in Ausführung der Änderung vom 1. Oktober 2010 des Luftfahrtgesetzes",
+        "titelFr": "Ordonnance portant modification d'ordonnances du Conseil fédéral en exécution de la loi fédérale sur l'aviation modifiée le 1<sup>er</sup> octobre 2010",
+        "titelIt": "Ordinanza concernente la modifica di ordinanze del Consiglio federale in esecuzione della modifica del 1<sup>o</sup> ottobre 2010 della legge sulla navigazione aerea"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/328": {
+        "dateForce": "2012-06-01",
+        "dateDoc": "2012-04-25",
+        "roId": "RO 2012 2753",
+        "titelDe": "Verordnung über die Flughafengebühren",
+        "titelFr": "Ordonnance sur les redevances aéroportuaires",
+        "titelIt": "Ordinanza sulle tasse aeroportuali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/286": {
+        "dateForce": "2014-09-01",
+        "dateDoc": "2014-05-14",
+        "roId": "RO 2014 1339",
+        "titelDe": "Verordnung über das Abfliegen und Landen mit Luftfahrzeugen ausserhalb von Flugplätzen (Aussenlandeverordnung, AuLaV)",
+        "titelFr": "Ordonnance sur le décollage et l'atterrissage d'aéronefs en dehors des aérodromes (Ordonnance sur les atterrissages en campagne, OSAC)",
+        "titelIt": "Ordinanza sui decolli e gli atterraggi di aeromobili fuori degli aerodromi (Ordinanza sugli atterraggi esterni, OAEs)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/25": {
+        "dateForce": "2020-01-14",
+        "dateDoc": "2020-01-14",
+        "roId": "RO 2020 145",
+        "titelDe": "Verordnung über die Infrastruktur der Luftfahrt (VIL)",
+        "titelFr": "Ordonnance sur l'infrastructure aéronautique (OSIA)",
+        "titelIt": "Ordinanza sull'infrastruttura aeronautica (OSIA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/744": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-08-19",
+        "roId": "RO 2020 3995",
+        "titelDe": "Verordnung über die Anpassung des Verordnungsrechts infolge der Änderung des Bundesgesetzes über die Enteignung",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances en raison de la modification de la loi fédérale sur l'expropriation",
+        "titelIt": "Ordinanza che adegua ordinanze a seguito della modifica della legge federale sull'espropriazione "
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/230": {
+        "dateForce": "2022-05-01",
+        "dateDoc": "2022-02-16",
+        "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+        "titelFr": "Ordonnance sur l’aviation (OSAv)",
+        "titelIt": "Ordinanza sulla navigazione aerea (ONA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/529": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-08-23",
+        "titelDe": "Verordnung über die amtliche Vermessung (VAV)",
+        "titelFr": "Ordonnance sur la mensuration officielle (OMO)",
+        "titelIt": "Ordinanza concernente la misurazione ufficiale (OMU)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/659": {
+        "dateForce": "2026-01-01",
+        "dateDoc": "2025-10-15",
+        "titelDe": "Raumplanungsverordnung (RPV)",
+        "titelFr": "Ordonnance sur l’aménagement du territoire (OAT)",
+        "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)"
+      }
+    }
   }
 }

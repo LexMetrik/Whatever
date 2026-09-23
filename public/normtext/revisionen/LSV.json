@@ -1,8 +1,8 @@
 {
   "erlassKey": "LSV",
   "sr": "814.41",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,20 +13,50 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l’inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/114/de",
-      "sha": "fa3e8b88d54f5153f094d8b4488fab49be68ef713a08cbb192a5791475fc0341"
+      "sha": "bd9b916b5a9f10c89c7c2d596d7b6154c0b4a819c41aef606e0ca80c1494b9fb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.41",
-      "sha": "ae0a5e7f81c04e4b048e719afc765bb0d3b410247be61021635c0fcf6b13a4b3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/293",
+      "dateDocument": "2021-05-12",
+      "roFundstelle": "AS 2021 293",
+      "titelDe": "Lärmschutz-Verordnung (LSV)",
+      "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
+      "titelIt": "Ordinanza contro l’inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-07-01",
+        "2025-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/293/de",
+      "sha": "66ae0a19d3bab25b8ef4be7e504902bdbc539ca644e7b00f542749c14bd65be8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.41",
-      "sha": "0b7ad0234c1be7fbc4e84a6457a433e935333c0185e8f6df9d15634ebaa06965"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/582",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2023 582",
+      "titelDe": "Lärmschutz-Verordnung (LSV)",
+      "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
+      "titelIt": "Ordinanza contro l’inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-11-01",
+        "2024-11-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/582/de",
+      "sha": "0854fad102555d97f675046f7ba58cb6a2336ecf0e7d599de71dc022b9e1d934"
     },
     {
       "art": "aenderung",
@@ -37,8 +67,15 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l’inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-11-01",
+        "2024-11-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/582/de",
-      "sha": "7b552557a96216addb01656435bb13400e69b6e4f91021cb13d65fbf0ba06798"
+      "sha": "791b3c21e911c22d957a303278d2c31cf6ba724027e800c6a2cda44e40b21b98"
     },
     {
       "art": "aenderung",
@@ -49,8 +86,15 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l’inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-07-01",
+        "2025-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/293/de",
-      "sha": "2deb96bfbcecbf8e3eabdc7b046880e83673f16d48e67e3f4d135838a427bc34"
+      "sha": "1d7ef6515f6317cd072ba6983d276d829c74c86155b6b4881d6ed1f896bfa928"
     },
     {
       "art": "aenderung",
@@ -61,8 +105,11 @@
       "titelDe": "Lärmschutz-Verordnung (LSV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/259/de",
-      "sha": "93fea51442e9d0cd5c943b04a84bdb13034557304cd54469ca281e776d8d158a"
+      "sha": "b5d6357c19e2859d8f3c45cb0c49ff2e987bde314ef43a402faa7dc9c8c678a7"
     },
     {
       "art": "aenderung",
@@ -73,14 +120,27 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/137/de",
-      "sha": "ac936034beab93995144a1103ad9ab54f951578bf6ad436eeb809c90875b4643"
+      "sha": "481221499c67612b408ed36dbf36d546e7efb0b911b65add682329e160d5886a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.41",
-      "sha": "ddbaa23269bb368e6e703ad112111673040db59626c4b3eefdcb9c866280d9c7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/890",
+      "dateDocument": "2015-12-04",
+      "roFundstelle": "AS 2015 5691",
+      "titelDe": "Verordnung über die Lärmsanierung der Eisenbahnen (VLE)",
+      "titelFr": "Ordonnance sur la réduction du bruit émis par les chemins de fer (OBCF)",
+      "titelIt": "Ordinanza concernente il risanamento fonico delle ferrovie (ORFF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/890/de",
+      "sha": "87c531e2794a5e0a9535e567843aff2c26fee6fe1ce787c3399dca73e231d569"
     },
     {
       "art": "aenderung",
@@ -91,8 +151,11 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/751/de",
-      "sha": "1d02e6bd79e276293cf15f7a6794e0d8120fee4ef46102bf795b97171de97358"
+      "sha": "57349003b70115d367d18df5d06046649b99c3861ccd9ba87047111a1e01df69"
     },
     {
       "art": "aenderung",
@@ -103,8 +166,11 @@
       "titelDe": "Lärmschutz-Verordnung vom 15. Dezember 1986 (LSV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/904/de",
-      "sha": "96c54912b7caaf7c6715ca5f746df1754a1c29712e03d881c3076e4d2a4fb707"
+      "sha": "1228ee0f149ef6d70cec4e13987d116da6314420dd68517f9326e1ae33da4780"
     },
     {
       "art": "aenderung",
@@ -115,20 +181,59 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/433/de",
-      "sha": "3e0bbbba236b53fabec65b5c104919312c286ca65d214e92c379912931a8f465"
+      "sha": "4e0da3fa8a458b8d951335f1bad8367100b4b3fae5382a0cfb8512c8288f6f04"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.41",
-      "sha": "f36002f7706e53db5b1ff81cbb1ca6ca0a79c494bc0cac957ba6101c3c03a7f1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/389",
+      "dateDocument": "2008-05-21",
+      "roFundstelle": "AS 2008 2809",
+      "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+      "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+      "titelIt": "Ordinanza sulla geoinformazione (OGI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/389/de",
+      "sha": "0cd321bc4ba035b495919b638851aad81963b022cf57136842a6fa84d94b9bdc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.41",
-      "sha": "86b0781ea461dc598a6ac9bf1a9c1cef02ba9f867fd62297e339d0129fd2020e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5823",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+      "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+      "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
+      "sha": "301a1df7beaaadef2a1ce8b016873f62092e2642d9dd3c553226cf63ccc2680a"
     },
     {
       "art": "aenderung",
@@ -139,8 +244,11 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/562/de",
-      "sha": "06c9ffaa106dda1cfca001f9af26dfb6ec363998d851a9275821fb6c4ce7071e"
+      "sha": "6945e89275d12e7dc736bc70da30e9f3e634dfda91a9a60a572f5a4e29805a6a"
     },
     {
       "art": "aenderung",
@@ -151,8 +259,12 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/623/de",
-      "sha": "c105cb066a7a2b29efe202308e03eec31624937da2ddf954ca8f45f1fcf0480a"
+      "sha": "26c7f62a6facd1b57ab855fa21e0bc2cde1d4c4eeb0509e61c9f8f7865bacdbd"
     },
     {
       "art": "aenderung",
@@ -163,8 +275,11 @@
       "titelDe": "Lärmschutz-Verordnung vom 15. Dezember 1986 (LSV)",
       "titelFr": "Ordonnance du 15 décembre 1986 sur la protection contre le bruit (OPB) (Ne concerne que les textes allemand et italien)",
       "titelIt": "Ordinanza del 15 dicembre 1986 contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/649/de",
-      "sha": "58cfa74f04f8b8de04f32510a52031514aaacda02eeed3b8cbed2f236a1451bc"
+      "sha": "fc5fc92fc7f29999100d44828843626ff47c073ca5f8b14b50e261a444c94b12"
     },
     {
       "art": "aenderung",
@@ -175,8 +290,11 @@
       "titelDe": "Lärmschutz-Verordnung (LSV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/279/de",
-      "sha": "faac1c97eddb1ddd9d4339811f3c24870d331ce1ef5aded36a7ebe31d9856996"
+      "sha": "cab505c36cc7671a1744bb2332fc86a01c9f33cbfcb4d34436e3273917389b49"
     },
     {
       "art": "aenderung",
@@ -187,8 +305,11 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/237/de",
-      "sha": "1e41fabb2242e68db9876ba40d41d8207bd0d9b462ddb081ace4513dc4ed5a97"
+      "sha": "1675e92c3b2aafcd24c0bf029eb9d0bd951b07bee0d6415c8d29d98e12d45845"
     },
     {
       "art": "aenderung",
@@ -199,27 +320,87 @@
       "titelDe": "Lärmschutz-Verordnung (LSV)",
       "titelFr": "Ordonnance sur la protection contre le bruit (OPB)",
       "titelIt": "Ordinanza contro l'inquinamento fonico (OIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/218/de",
-      "sha": "f76e86fffba6cf76bd80ad43d4fd40f62d0f5e445acd051249a9cba7ecc299c6"
+      "sha": "521aa0bd56fa01d3eb746986fd9276ef8a5536d037828c548d98050a332a3d5b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.41",
-      "sha": "fdeb8eb70d1cf81d69204b4d9188c8f11315d412330e3d6e9d701607afce8069"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+      "dateDocument": "2000-02-02",
+      "roFundstelle": "AS 2000 703",
+      "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/121/de",
+      "sha": "0d6e05e1d781b007b6d107972500e52bb445f632a3259654e73aee5aed0538f9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1588_1588_1588",
+      "dateDocument": "1997-06-16",
+      "roFundstelle": "AS 1997 1588",
+      "titelDe": "Lärmschutz-Verordnung (LSV), Änderung",
+      "titelFr": "Ordonnance sur la protection contre le bruit (OPB), Modification",
+      "titelIt": "Ordinanza contro l'inquinamento fonico (OIF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1588_1588_1588/de",
+      "sha": "17f73e54b858c260f0053fd58db566a580a6a57fd6bb86f15e79f5f98d5def05"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/759_759_759",
+      "dateDocument": "1996-01-24",
+      "roFundstelle": "AS 1996 759",
+      "titelDe": "Verordnung über das Schiesswesen ausser Dienst (Schiessordnung), Änderung",
+      "titelFr": "Ordonnance sur le tir hors du service (Ordonnance sur le tir), Modification",
+      "titelIt": "Ordinanza sul tiro fuori del servizio (Ordinanza sul tiro, Otir), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/759_759_759/de",
+      "sha": "6cd6159717a77c50f9a83f1f72e0942feac3417e3c4b3f34d17f6b6d5df01671"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3694_3694_3694",
+      "dateDocument": "1995-06-27",
+      "roFundstelle": "AS 1995 3694",
+      "titelDe": "Lärmschutzverordnung (LSV), Änderung",
+      "titelFr": "Ordonnance sur la protection contre le bruit (OPB), Modification",
+      "titelIt": "Ordinanza contro l'inquinamento fonico (OIF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3694_3694_3694/de",
+      "sha": "e01076067f904f441d1f86fa82efb3f415c4e544bb208a19f8fc0d5fdda85043"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1987-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/338_338_338",
-      "dateDocument": "1986-12-15",
-      "roFundstelle": "AS 1987 338",
-      "titelDe": "Lärmschutz-Verordnung vom 15. Dezember 1986 (LSV)",
-      "titelFr": "Ordonnance du 15 décembre 1986 sur la protection contre le bruit (OPB)",
-      "titelIt": "Ordinanza del 15 dicembre 1986 contro l'inquinamento fonico (OIF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/338_338_338/de",
-      "sha": "92e814678cc0296324dcb388bea709e0445b42d97afd2cb876d99efebe1013fe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/874_874_874",
+      "dateDocument": "1987-07-14",
+      "roFundstelle": "AS 1987 874",
+      "titelDe": "Verordnung über die Festsetzung der Einfuhrmengen von Importpferden, Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance fixant le nombre de chevaux admis à l'importation, Errata (seuelement en italien)",
+      "titelIt": "Ordinanza che stabilisce il numero di cavalli ammessi all'importazione, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/874_874_874/de",
+      "sha": "7b99e0e9ff4b7e0a1304d6b448ab4e4a8c99faa32f09cb6bc91a1d27f85cefa1"
     }
   ],
-  "sha": "e2867c06b1cdf662abb815735238edb5af41849a4c4c791fb8264ba075eff435"
+  "sha": "f301e3996c85cbc5b5ecbc17f71250a1941ab6f25647d8c81996f49250cf6ef3"
 }

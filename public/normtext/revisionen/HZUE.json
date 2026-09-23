@@ -1,8 +1,8 @@
 {
   "erlassKey": "HZUE",
   "sr": "0.274.131",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l’étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all’estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/295/de",
-      "sha": "c08379d05fe3d7bbea83e085ed0970f5332b15a443b7d7c866b557093f492e51"
+      "sha": "fc52355346649fe15c83b48e1862fd6eee0b97a4b8c22bb7a92b06ad14c160e2"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,12 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/600/de",
-      "sha": "22bf2ece8b44dd1c56b24144ed819a2f87cdfc213452256edb9630fa4f3a77c9"
+      "sha": "35198949e660aff2159e4ad19229fb71db30bba76f8db0f838d8ba3528b503d1"
     },
     {
       "art": "aenderung",
@@ -37,8 +44,12 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/216/de",
-      "sha": "496e94f229745b4e43715aad0a915cba4a62f026214d0226b12a64f8c7f03596"
+      "sha": "d3fd8bea9911a0a3671df5219787a603d2c44cad50f297c342ea4529dbddec19"
     },
     {
       "art": "aenderung",
@@ -49,8 +60,12 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/123/de",
-      "sha": "b900c99c5432217f115d4161cdeb26e359b278964f95aff0f882771296db4611"
+      "sha": "c27b2710e6fec7a30d398bc61592770ae248acac57231d19aafca9ce393b8843"
     },
     {
       "art": "aenderung",
@@ -61,8 +76,12 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/61/de",
-      "sha": "59a5dc3d0fe97119990ff3c85239649628746b1b6a977f234894bd126707c43b"
+      "sha": "09ae79933aec4b5e73481cd62854514e1868e86c8418a2058fabe766f752397c"
     },
     {
       "art": "aenderung",
@@ -73,8 +92,12 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/317/de",
-      "sha": "167bf5e73bc3ce3493650e2397964b23bb44109aa7b7883b9441064c986d8b52"
+      "sha": "ddb260ebae1b9711c145a65394e75ecd6330e611a050b3d14217c445dd38e637"
     },
     {
       "art": "aenderung",
@@ -85,8 +108,12 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/455/de",
-      "sha": "a796b63d017f675933ba3365163eb7cbf2f15f8f5d17e9e123be118c02ba6c00"
+      "sha": "7c4b05ab8dcc929b470db4b4004cdbbc96a2fcd525813426e3f462b79b36d09f"
     },
     {
       "art": "aenderung",
@@ -97,8 +124,12 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/341/de",
-      "sha": "fb33b97c677ae5a83c9ec5b76e5bfb401cdb09f2dfb887799e151216b3b9d911"
+      "sha": "ff5e8704c6fcc3191fa43f28e26d97c1d0514653bd440f8a162fc462dc34b106"
     },
     {
       "art": "aenderung",
@@ -109,21 +140,44 @@
       "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/143/de",
-      "sha": "7844f27ccc505c2750bd0cf943e154ee33346e775a459b379781e4e81b5b3cc4"
+      "sha": "f3a29cf2feb8d4cb93bb6809692d6f358ee778dc07fbbd6642326ad1c9b0c6be"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2809_2809_2809",
-      "dateDocument": "1965-11-15",
-      "roFundstelle": "AS 1994 2809",
-      "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen (mit Anhang)",
-      "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale (avec annexe)",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/934_934_934",
+      "dateDocument": "1995-01-01",
+      "roFundstelle": "AS 1995 934",
+      "titelDe": "Übereinkommen vom 15. November 1965 über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen",
+      "titelFr": "Convention du 15 novembre 1965 relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale",
       "titelIt": "Convenzione del 15 novembre 1965 relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2809_2809_2809/de",
-      "sha": "30a05f09ed492698e706c856d669deb7a7a4f8f7e870a246f31ce774af3cae0a"
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/934_934_934/de",
+      "sha": "cd8f6155d8a949ebde6dbe35cb8b61fecdb8a2f0dac83f1cbe19c333b1656acb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1378_1378_1378",
+      "dateDocument": "1997-06-17",
+      "roFundstelle": "AS 1997 1378",
+      "titelDe": "Übereinkommen über die Zustellung gerichtlicher und aussergerichtlicher Schriftstücke im Ausland in Zivil- oder Handelssachen, Berichtigung (nur ital.)",
+      "titelFr": "Convention relative à la signification et la notification à l'étranger des actes judiciaires et extrajudiciaires en matière civile ou commerciale, Errata (seulement en italien)",
+      "titelIt": "Convenzione relativa alla notificazione e alla comunicazione all'estero degli atti giudiziari e extragiudiziari in materia civile o commerciale, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1378_1378_1378/de",
+      "sha": "82031f420fd87cc1a78a2f2bc562fe36a4f9635c3d607ffa604dba30b66040bf"
     }
   ],
-  "sha": "f7617e6cded202850d9386847834dcff2ff137d5e1a4aab6abc4b1010f66c223"
+  "sha": "b51d347653b4da9fed1c1c4681792f145bc2aef896fcaca81ff38c50c756582c"
 }

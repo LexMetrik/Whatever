@@ -1583,5 +1583,370 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2026/291",
       "zielFundstelle": "AS 2026 291"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1977/2027_2027_2027",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1977/2027_2027_2027",
+    "inkrafttreten": "1978-01-01",
+    "aufhebung": "2027-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/2027_2027_2027",
+        "typ": 5,
+        "datum": "1978-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/2027_2027_2027",
+        "typ": 30,
+        "datum": "1978-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/__208",
+        "typ": 6,
+        "datum": "1978-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/__74",
+        "typ": 6
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/__74",
+        "typ": 6,
+        "datum": "1978-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1478_1478_1478",
+        "typ": 1,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/899_899_899",
+        "typ": 1,
+        "datum": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/1448_1448_1448",
+        "typ": 1,
+        "datum": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/1448_1448_1448",
+        "typ": 2,
+        "datum": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/__2535",
+        "typ": 6,
+        "datum": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2565_2565_2565",
+        "typ": 1,
+        "datum": "1992-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2565_2565_2565",
+        "typ": 1,
+        "datum": "1992-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/879_879_879",
+        "typ": 1,
+        "datum": "1993-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/3660_3660_3660",
+        "typ": 1,
+        "datum": "1995-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5164_5164_5164",
+        "typ": 1,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/5164_5164_5164",
+        "typ": 2,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1532_1532_1532",
+        "typ": 6
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/__1532",
+        "typ": 6,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2171_2171_2171",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/216",
+        "typ": 1,
+        "datum": "1999-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/413",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/413",
+        "typ": 2,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/183",
+        "typ": 1,
+        "datum": "2002-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/770",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/770",
+        "typ": 2,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/691",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/810",
+        "typ": 1,
+        "datum": "2007-12-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/243",
+        "typ": 1,
+        "datum": "2008-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/243",
+        "typ": 2,
+        "datum": "2008-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/367",
+        "typ": 1,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/367",
+        "typ": 2,
+        "datum": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/466",
+        "typ": 1,
+        "datum": "2008-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/309",
+        "typ": 1,
+        "datum": "2011-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/309",
+        "typ": 2,
+        "datum": "2011-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/875",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/298",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/354",
+        "typ": 1,
+        "datum": "2014-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/776",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/776",
+        "typ": 2,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/584",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/376",
+        "typ": 1,
+        "datum": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/291",
+        "typ": 27,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1978/__208": {
+        "dateForce": "1978-01-01",
+        "dateDoc": "1978-02-21",
+        "roId": "RO 1978 ---",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/__74": {
+        "dateForce": "1978-01-01",
+        "dateDoc": "1978-01-31",
+        "roId": "RO 1978 ---",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/1478_1478_1478": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1983-09-14",
+        "roId": "RO 1983 1478",
+        "titelDe": "Verordnung über Gebühren des Eidgenössischen Amtes für geisitges Eigentum (Gebührenordnung), Änderung",
+        "titelFr": "Ordonnance sur les taxes du Bureau fédéral de la propriété intellectuelle (Ordonnance sur les taxes), Modification",
+        "titelIt": "Ordinanza sulle tasse dell'Ufficio federale della proprietà intellettuale (Ordinanza sulle tasse), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/899_899_899": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1983-04-27",
+        "roId": "RO 1983 899",
+        "titelDe": "Verordnung über die Erfindungspatente, Änderung",
+        "titelFr": "Ordonnance relative aux brevets d'invention, Modification",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/1448_1448_1448": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1986-08-12",
+        "roId": "RO 1986 1448",
+        "titelDe": "Patentverordnung, Änderung",
+        "titelFr": "Ordonnance sur les brevets, Modification",
+        "titelIt": "Ordinanza sui brevetti, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/__2535": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1986-12-23",
+        "roId": "RO 1986 ---",
+        "titelIt": "Ordinanza sui brevetti, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/2565_2565_2565": {
+        "dateForce": "1992-01-01",
+        "dateDoc": "1991-12-02",
+        "roId": "RO 1991 2565",
+        "titelDe": "Patentverordnung, Änderung",
+        "titelFr": "Ordonnance sur les brevets, Modification",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/879_879_879": {
+        "dateForce": "1993-03-01",
+        "dateDoc": "1993-02-03",
+        "roId": "RO 1993 879",
+        "titelDe": "Verordnung vom 3. Februar 1993 über Organisation und Verfahren eidgenössischer Rekurs- und Schiedskommissionen",
+        "titelFr": "Ordonnance du 3 février 1993 concernant l'organisation et la procédure des commissions fédérales de recours et d'arbitrage",
+        "titelIt": "Ordinanza del 3 febbraio 1993 concernente l'organizzazione e la procedura delle commissioni federali di ricorso e di arbitrato"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/3660_3660_3660": {
+        "dateForce": "1995-09-01",
+        "dateDoc": "1995-05-17",
+        "roId": "RO 1995 3660",
+        "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung), Änderung",
+        "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets), Modification",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/5164_5164_5164": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-10-25",
+        "roId": "RO 1995 5164",
+        "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung), Änderung",
+        "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets), Modification",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1532_1532_1532": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-06-11",
+        "roId": "RO 1996 1532",
+        "titelDe": "Verordnung über die Rückvergütung der von Ausländern an die Alters- und Hinterlassenenversicherung bezahlten Beiträge, Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur le remboursement aux étrangers des cotisations versées à l'assurance-vieillesse et survivants, Errata (seulement en italien)",
+        "titelIt": "Ordinanza sul rimborso dei contributi pagati da stranieri all'assicurazione per la vecchiaia e i superstiti, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/__1532": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1996-06-11",
+        "roId": "RO 1996 ---",
+        "titelIt": "Ordinanza sui brevetti, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2171_2171_2171": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-09-17",
+        "roId": "RO 1997 2171",
+        "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV), Änderung",
+        "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI), Modification",
+        "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/183": {
+        "dateForce": "2002-07-01",
+        "dateDoc": "2002-03-08",
+        "roId": "RO 2002 1122",
+        "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
+        "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
+        "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes) "
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/466": {
+        "dateForce": "2008-09-01",
+        "dateDoc": "2008-06-25",
+        "roId": "RO 2008 3595",
+        "titelDe": "Verordnung über den Schutz von Pflanzenzüchtungen (Sortenschutzverordnung)",
+        "titelFr": "Ordonnance sur la protection des obtentions végétales (Ordonnance sur la protection des variétés)",
+        "titelIt": "Ordinanza sulla protezione delle novità vegetali (Ordinanza sulla protezione delle varietà)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/875": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-12-07",
+        "roId": "RO 2012 7193",
+        "titelDe": "Einheiten-Verordnung",
+        "titelFr": "Ordonnance sur les unités",
+        "titelIt": "Ordinanza sulle unità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/354": {
+        "dateForce": "2014-09-01",
+        "dateDoc": "2014-06-06",
+        "roId": "RO 2014 2051",
+        "titelDe": "Verordnung über die Ordnungsfristen im Zuständigkeitsbereich der Eidgenössischen Zollverwaltung",
+        "titelFr": "Ordonnance sur la fixation de délais d'ordre dans le domaine de l'Administration fédérale des douanes",
+        "titelIt": "Ordinanza sui termini ordinatori nell'ambito di competenza dell'Amministrazione federale delle dogane"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/376": {
+        "dateForce": "2025-07-01",
+        "dateDoc": "2025-05-14",
+        "titelDe": "Verordnung über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+        "titelFr": "Ordonnance sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+        "titelIt": "Ordinanza che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale"
+      }
+    }
   }
 }

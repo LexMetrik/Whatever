@@ -1,8 +1,8 @@
 {
   "erlassKey": "VRK",
   "sr": "0.111",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,12 @@
       "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge",
       "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités",
       "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/355/de",
-      "sha": "d0151985392a6f9dace3ca556e0971fc6ad343cc907f9c66c77ed3da8dfe8801"
+      "sha": "99ab33ee0570ecf587c4eddaf113f13775d1ae193610871fd23c86ba6b7c94b3"
     },
     {
       "art": "aenderung",
@@ -25,8 +29,12 @@
       "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge",
       "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités",
       "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/127/de",
-      "sha": "0c45ac0ace86e003984c23a116cb9a37654514ef0b95844a6ecc3ad11266f669"
+      "sha": "c35acb363758256a77dd5fac1107ce21eb31c82cdeee63304841c0090f73f76c"
     },
     {
       "art": "aenderung",
@@ -37,8 +45,12 @@
       "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge",
       "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités",
       "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/408/de",
-      "sha": "63d69aa1ea2d7d9646d6c5cd24bcdff38a7ddac4a33b8b80b7bec591b7bae9e2"
+      "sha": "317c2f19a14f6a52b33cd0ac8c14716485a3bc221e08d37f6fc70333b7037feb"
     },
     {
       "art": "aenderung",
@@ -49,8 +61,12 @@
       "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge",
       "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités",
       "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/208/de",
-      "sha": "c78119edce53381bf6914eea92ad6c226b67e1b2c7c01540b7b10f661064d84f"
+      "sha": "4deef9bd3012f9145bc9a172c5b30e118b2259ee601cd20a1f7e43ec5d4b0eb1"
     },
     {
       "art": "aenderung",
@@ -61,8 +77,12 @@
       "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge",
       "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités",
       "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/204/de",
-      "sha": "5152affbde41db6c0d442e917eff1e9d8de1ddf651c850a1c44e83be295165b8"
+      "sha": "9a4897127394c822acc6d930be8b2ebd7cbeebf8c889bb9cc42a218974dc14c5"
     },
     {
       "art": "aenderung",
@@ -73,20 +93,59 @@
       "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge (mit Anhang)",
       "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités (avec annexe)",
       "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati (con allegato)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/605/de",
-      "sha": "4330c6feeef71b77ac090cdf1dc75af0141c255b54b8da1d4d0e7d5125fb8629"
+      "sha": "6cc459db078e972b02d20da9f24616f542326e46775791f1c06991d870592c53"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1902_1902_1902",
+      "dateDocument": "1993-06-01",
+      "roFundstelle": "AS 1993 1902",
+      "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge, Änderung",
+      "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités, Modification",
+      "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1902_1902_1902/de",
+      "sha": "ad5aaf7ce90e0d6ff7ba86ff1cb4af71ee70feb17fdbb8f460b5395797df0452"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/815_815_815",
+      "dateDocument": "1991-04-01",
+      "roFundstelle": "AS 1991 815",
+      "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge",
+      "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités",
+      "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/815_815_815/de",
+      "sha": "945cb47b8f52b5db59f6a911d29d012021e329aeee56511e15dfb22ffc6e3899"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1990-06-06",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/1112_1112_1112",
-      "dateDocument": "1969-05-23",
-      "roFundstelle": "AS 1990 1112",
-      "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge (mit Anhang)",
-      "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités (avec annexe)",
-      "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati (con. All.)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/1112_1112_1112/de",
-      "sha": "e7d2c7f9354fe038a1fb4440666ee6438914b095e6cc69f7845a18b4cd7e4330"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/1111_1111_1111",
+      "dateDocument": "1989-12-15",
+      "roFundstelle": "AS 1990 1111",
+      "titelDe": "Bundesbeschluss vom 15. Dezember 1989 betreffend die Wiener Konvention über das Recht der Verträge",
+      "titelFr": "Arrêté fédéral du 15 décembre 1989 relatif à l'approbation de la Convention de Vienne sur le droit des traités",
+      "titelIt": "Decreto federale del 15 dicembre 1989 che approva la Convenzione di Vienna sul diritto dei trattati",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/1111_1111_1111/de",
+      "sha": "c89ee6d0e952986bdbb90e560b686446fb1fdcf458371d4b716d6e7d8e4bc475"
     },
     {
       "art": "aenderung",
@@ -97,9 +156,12 @@
       "titelDe": "Wiener Übereinkommen über das Recht der Verträge (Betrifft nur den italienischen Text)",
       "titelFr": "Convention de Vienne sur le droit des traités (Ne concerne que le texte italien)",
       "titelIt": "Convenzione di Vienna sul diritto dei trattati",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/533/de",
-      "sha": "a10e20042a0ef5cdba4acbc69b50c22c75aa7d427200b5e4cb569abeaa74a2ab"
+      "sha": "3c56ce96455313f75efacff0146fb20935dd8574d92056ce165d923e41ec2879"
     }
   ],
-  "sha": "7c316b3fa65d49b48f15919878322d584fe0fbf02cead26a2dec737b0889de44"
+  "sha": "428bc30798d43646bdbff419e176e55c40bac76edff3d7808c5ccd2bc2aaed44"
 }

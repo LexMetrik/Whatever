@@ -1,47 +1,96 @@
 {
   "erlassKey": "FIDLEG",
   "sr": "950.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 323",
+      "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+      "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+      "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/950.1",
-      "sha": "4835b3e6e0a69a3b3105409d37af01818658a787e640ecd8797e9ad56153dcbe"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/950.1",
-      "sha": "97b20e7c5acd7e216340ac02a04a0afa97f6d92c9ff04e54022943b76be1201d"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/950.1",
-      "sha": "26acceb62b802377eedaa8ac1fa466ecd0741fa7d2f97e8aad002e0e561656dc"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2021-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/950.1",
-      "sha": "47f72bffea26604b7ffcb302950c93142ef2d2c0d9a04a369bfa39535b0222ea"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/323/de",
+      "sha": "b13429eb8b11a94d7291a6c05f42fb5a00e97d550d21e64db7273758b511e1cf"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2020-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/758",
-      "dateDocument": "2018-06-15",
-      "roFundstelle": "AS 2019 4417",
-      "titelDe": "Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)",
-      "titelFr": "Loi fédérale sur les services financiers (LSFin)",
-      "titelIt": "Legge federale sui servizi finanziari (Legge sui servizi finanziari, LSerFi)",
-      "botschaftKey": "BOTSCHAFT-2015-2141",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/758/de",
-      "sha": "fdb2b9dbe10ede04f4b8615ce13facd5f1b23aaa5446f592d14da2bb9c099c93"
+      "dateEntryInForce": "2024-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2024 53",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2020-1852",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/53/de",
+      "sha": "2db0e6aeb1ce8c2a1ecd7eba393e53c410763dc1f166a3ee59dd19f8b2792718"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 33",
+      "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "botschaftKey": "BOTSCHAFT-2020-16",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2021-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/33/de",
+      "sha": "914393ba899c12c84d2c51beb68cf8a0bb7f5ffd6f1344ef250672aa8b1ab1ba"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/399",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 399",
+      "titelDe": "Verordnung vom 18. Juni 2021 über die abschliessende Inkraftsetzung des Bundesgesetzes zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 portant dernière mise en vigueur partielle de la loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 concernente l’entrata in vigore integrale della legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/399/de",
+      "sha": "d635cf3e3e57e31d0a1a09020d91e3c13d85ecc18480aaa5b04fc3331bdec893"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 33",
+      "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "botschaftKey": "BOTSCHAFT-2020-16",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2021-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/33/de",
+      "sha": "098311bd40408bbb9c966bc028a749e2d5a277dd62099f14d1fdb0516c015a9a"
     }
   ],
-  "sha": "e0677bb9afee8be3b05a0587eeacbdfe4fd6ff26374585a5e1c4cbea9c209521"
+  "sha": "e73422142df8072a9caeee26d210167f74bd18b556024b158ba2fe62d18e0bf7"
 }

@@ -263,5 +263,80 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1996/1738_1738_1738",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1996/1738_1738_1738",
+    "inkrafttreten": "1996-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1738_1738_1738",
+        "typ": 5,
+        "datum": "1996-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/364",
+        "typ": 1,
+        "datum": "2006-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/364",
+        "typ": 2,
+        "datum": "2006-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/126",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+        "typ": 1,
+        "datum": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/126": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2019-06-21",
+        "roId": "RO 2020 641",
+        "titelDe": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
+        "titelFr": "Loi fédérale sur les marchés publics (LMP)",
+        "titelIt": "Legge federale sugli appalti pubblici (LAPub)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/376": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-03-15",
+        "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+        "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+        "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)"
+      }
+    }
+  }
 }

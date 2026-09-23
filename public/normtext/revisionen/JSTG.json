@@ -1,9 +1,44 @@
 {
   "erlassKey": "JSTG",
   "sr": "311.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "6f29ffddb0cbb8d623679e2ddb3c5ec1bc7c95fccf088208a6ad3a129aa7c91b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/490",
+      "dateDocument": "2024-09-04",
+      "roFundstelle": "AS 2024 490",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 17. Juni 2022 der Strafprozessordnung",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 17 juin 2022 du code de procédure pénale",
+      "titelIt": "Ordinanza sull’entrata in vigore integrale della modifica del 17 giugno 2022 del Codice di procedura penale",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/490/de",
+      "sha": "93925fe50caec166851f1138f8fa1761ca6607a06c8cd510cc891a7f39d6e518"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
@@ -14,80 +49,195 @@
       "titelFr": "Loi fédérale régissant la condition pénale des mineurs (Droit pénal des mineurs, DPMin) (Train de mesures. Exécution des sanctions)",
       "titelIt": "Legge federale sul diritto penale minorile (Diritto penale minorile, DPMin) (Pacchetto di misure: esecuzione delle sanzioni)",
       "botschaftKey": "BOTSCHAFT-2022-2991",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/224/de",
-      "sha": "bb8582254e8a58c24a902c510e182697e44da9666aa062607f621a323ae5d278"
+      "sha": "ecc3adca36e412a7380e8ba725ab5f36c8ff064442662b6d5a7b5d49bec02d3c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "eb846e8a37adfaba6282af98ed1b00c3694bb1479d4426fc6c723e0d451255c6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/27",
+      "dateDocument": "2023-06-16",
+      "roFundstelle": "AS 2024 27",
+      "titelDe": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+      "titelFr": "Loi fédérale portant révision du droit pénal en matière sexuelle",
+      "titelIt": "Legge federale sulla revisione del diritto penale in materia sessuale",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/27/de",
+      "sha": "338e80c8a9d7bde37b08f9a047eb946e1656b405c6e75640441d7c3bbc8497bb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "efac3e71741de898e8e305bb3db1c3f72307b5f5129167aac2888f875f5788b2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "e2feb44044915bad432a884f36634bd7f5c15db69fe8c1b812dc3fc6aa9de86c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "6122739c341c13738919a00f9f856e12053fbac96c8e3cecfac7bfd47f9d9bbe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2022 600",
+      "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+      "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "sha": "cd12ddde437ec2a9b67ddf99aadb862609576fec0fa815a643700a241b6e81d1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "2a0c56f94341ba44b4f657b3559d9128ae57e7d527efd6bd3f58e37afdd329f3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/336",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 1809",
+      "titelDe": "Bundesgesetz über die Änderung der Wiedergutmachungsregelung (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes und des Militärstrafgesetzes)",
+      "titelFr": "Loi fédérale modifiant la disposition sur la réparation (Modification du code pénal, du droit pénal des mineurs et du code pénal militaire)",
+      "titelIt": "Legge federale che modifica la disciplina della riparazione (Modifica del Codice penale, del diritto penale minorile e del Codice penale militare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/336/de",
+      "sha": "d12c4d37ae7a9f06842a450514abea562eafebe29a3f48a731bd4c3ac5ee866c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "671cf353a01377f76da6fbb44e3a76c172fa43daf0332800269ed703ae1e8814"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2016 1249",
+      "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+      "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)",
+      "botschaftKey": "BOTSCHAFT-2012-670",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2018-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "sha": "a5433df95058874e97fdc2011015a2c75140bf5be4fbfe38b17bff53889bbed5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "786ce984d5a77bca1e2716d35558c539a7fd24e10cf7f20b43790a03fb6c2644"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2016 1249",
+      "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+      "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)",
+      "botschaftKey": "BOTSCHAFT-2012-670",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2018-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "sha": "8cab18ac0a24a37f13851d1d211f361c7a725530f6ed553359b0a6a1ac9c2639"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "407cb10fbea736eac5f3d7b0b6486129afc421e680d6df0e5beafc686cee56b2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/321",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 1623",
+      "titelDe": "Bundesgesetz über das Informationsrecht des Opfers (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes, der Strafprozessordnung und des Militärstrafprozesses)",
+      "titelFr": "Loi fédérale sur le droit de la victime à être informée (Modification du code pénal, du droit pénal des mineurs, du code de procédure pénale et de la procédure pénale militaire)",
+      "titelIt": "Legge federale sul diritto d'informazione delle vittime di reati (Modifica del Codice penale, del Diritto penale minorile, del Codice di procedura penale e della Procedura penale militare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/321/de",
+      "sha": "860aff8c860f6bb0f822de11d30ec2ac285bedc65cf58c28c58a28a46e1ffdae"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "733ea0e20d6f32c57e58397f62ba35fd1a2f8a38b8665dfc08f6c4e51cd7a725"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/355",
+      "dateDocument": "2013-12-13",
+      "roFundstelle": "AS 2014 2055",
+      "titelDe": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "titelFr": "Loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+      "titelIt": "Legge federale sull&#700;interdizione di esercitare un&#700;attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)",
+      "botschaftKey": "BOTSCHAFT-2012-1575",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/355/de",
+      "sha": "5582fbd33f88730ebe435d724b7ae4d7044302e779c322f18912b1c0f6228c90"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "8b7057a3bd20acfec6e1d3055946592920b4febc356764ed93d19d26a0a9afe7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/696",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 5951",
+      "titelDe": "Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "titelFr": "Loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+      "titelIt": "Legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)",
+      "botschaftKey": "BOTSCHAFT-2011-883",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/696/de",
+      "sha": "ff08f4b0944893b4d8835c5d8ef5af7a535973ee66dd03c42905df237634328b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.1",
-      "sha": "1e8a34ab5ca61e13e604d4a8b9e2f4b6395b3280fdb151d3966fbf485c941c4d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/226",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2010 1573",
+      "titelDe": "Schweizerische Jugendstrafprozessordnung (Jugendstrafprozessordnung, JStPO)",
+      "titelFr": "Loi fédérale sur la procédure pénale applicable aux mineurs (Procédure pénale applicable aux mineurs, PPMin)",
+      "titelIt": "Legge federale di diritto processuale penale minorile (Procedura penale minorile, PPMin)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/226/de",
+      "sha": "7f0a60aa008b7bbea5554c4565989e3c9dae3cd603ade951847b8d5a12911879"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/551",
-      "dateDocument": "2003-06-20",
-      "roFundstelle": "AS 2006 3545",
-      "titelDe": "Bundesgesetz über das Jugendstrafrecht (Jugendstrafgesetz, JStG)",
-      "titelFr": "Loi fédérale régissant la condition pénale des mineurs (Droit pénal des mineurs, DPMin)",
-      "titelIt": "Legge federale sul diritto penale minorile (Diritto penale minorile, DPMin)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/551/de",
-      "sha": "8d28d26bd6b16e9c7a643a3927242d57140860378f4d23d25058ee8961ce5c64"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/555",
+      "dateDocument": "2006-07-06",
+      "roFundstelle": "AS 2006 3583",
+      "titelDe": "Strafgesetzbuch (StGB)",
+      "titelFr": "Code pénal (CP)",
+      "titelIt": "Codice penale (CP)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/555/de",
+      "sha": "ffd80464343f08f079862de11b900c362cc412247b0ec93f8a1f55710633ed9b"
     },
     {
       "art": "aenderung",
@@ -98,9 +248,12 @@
       "titelDe": "Bundesgesetz über das Jugendstrafrecht (Jugendstrafgesetz, JStG)",
       "titelFr": "Loi fédérale régissant la condition pénale des mineurs (Droit pénal des mineurs, DPMin)",
       "titelIt": "Legge federale sul diritto penale minorile (Diritto penale minorile, DPMin)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/748/de",
-      "sha": "dcc8b9896fc05c26f17f377a36c2f133626e2111aae8b653bf853af64df55b7f"
+      "sha": "9f82dcbdbec6cef9eee21f216fd1f0f93e84996e054c1da141874b9ecff5f194"
     }
   ],
-  "sha": "991703d62491bf1e616fe8429efc41dde09770e4a062abec81326822b113f682"
+  "sha": "d710d16ff0a8744f82e34ff14b12275b979273e8af7f5c66a05e418f2d02d6ee"
 }

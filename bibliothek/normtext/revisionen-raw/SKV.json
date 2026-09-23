@@ -1056,5 +1056,117 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2025/648",
       "zielFundstelle": "AS 2025 648"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2007/296",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2007/296",
+    "inkrafttreten": "2008-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/296",
+        "typ": 5,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/386",
+        "typ": 1,
+        "datum": "2009-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/729",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/334",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/711",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/857",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/822",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/822",
+        "typ": 2,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/490",
+        "typ": 1,
+        "datum": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/490",
+        "typ": 2,
+        "datum": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/40",
+        "typ": 1,
+        "datum": "2019-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/93",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/406",
+        "typ": 1,
+        "datum": "2023-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/644",
+        "typ": 1,
+        "datum": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/686",
+        "typ": 6,
+        "datum": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2012/857": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-12-07",
+        "roId": "RO 2012 7065",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen an die neuen gesetzlichen Grundlagen im Messwesen",
+        "titelFr": "Ordonnance relative à l'adaptation d'ordonnances aux nouvelles bases légales en métrologie",
+        "titelIt": "Ordinanza che adegua ordinanze alle nuove basi legali in materia di metrologia"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/93": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-01-16",
+        "roId": "RO 2019 529",
+        "titelDe": "Ordnungsbussenverordnung (OBV)",
+        "titelFr": "Ordonnance sur les amendes d'ordre (OAO)",
+        "titelIt": "Ordinanza concernente le multe disciplinari (OMD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      }
+    }
   }
 }

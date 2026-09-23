@@ -268,5 +268,143 @@
     "2021-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/47/689_701_723",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/47/689_701_723",
+    "inkrafttreten": "1932-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1969/767_787_784",
+        "typ": 1,
+        "datum": "1969-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/904_916_1076",
+        "typ": 1,
+        "datum": "1972-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/904_916_1076",
+        "typ": 2,
+        "datum": "1972-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/214_214_214",
+        "typ": 1,
+        "datum": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/666",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+        "typ": 2,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/47/689_701_723",
+        "typ": 5,
+        "datum": "1932-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/60/271_269_275",
+        "typ": 1,
+        "datum": "1945-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1969/767_787_784": {
+        "dateForce": "1969-10-01",
+        "dateDoc": "1968-12-20",
+        "roId": "RO 1969 787",
+        "titelDe": "Bundesgesetz über die Änderung des Bundesgesetzes über die Organisation der Bundesrechtspflege",
+        "titelFr": "Loi fédérale modifiant la loi fédérale d'organisation judiciaire",
+        "titelIt": "Legge federale che modifica quella sulla organizzazione giudiziaria"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1972/904_916_1076": {
+        "dateForce": "1972-08-01",
+        "dateDoc": "1971-03-18",
+        "roId": "RO 1972 916",
+        "titelDe": "Bundesgesetz vom 18. März 1971 betreffend Änderung des Bundesgesetzes über die Enteignung",
+        "titelFr": "Loi fédérale du 18 mars 1971 modifiant la loi sur l'expropriation",
+        "titelIt": "Legge federale del 18 marzo 1971 che modifica quella sulla espropriazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/214_214_214": {
+        "dateForce": "1996-02-01",
+        "dateDoc": "1995-03-24",
+        "roId": "RO 1996 214",
+        "titelDe": "Bundesgesetz über den Natur- und Heimatschutz, Änderung",
+        "titelFr": "Loi fédérale sur la protection de la nature et du paysage, Modification",
+        "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/472": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-06-18",
+        "roId": "RO 1999 3071",
+        "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+        "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+        "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/666": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2009-12-11",
+        "roId": "RO 2011 4637",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+        "titelFr": "Code civil suisse (Cédule hypothécaire de registre et autres modifications des droits réels)",
+        "titelIt": "Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/60/271_269_275": {
+        "dateForce": "1945-01-01",
+        "dateDoc": "1943-12-16",
+        "roId": "RO 60 269",
+        "titelDe": "Bundesgesetz vom 16. Dezember 1943 über die Organisation der Bundesrechtspflege (Bundesrechtspflegegesetz, OG)",
+        "titelFr": "Loi fédérale du 16 décembre 1943 d'organisation judiciaire (Organisation judiciaire, OJ)",
+        "titelIt": "Legge federale del 16 dicembre 1943 sull'organizzazione giudiziaria (Organizzazione giudiziaria, OG)"
+      }
+    }
+  }
 }

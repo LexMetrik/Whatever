@@ -1,57 +1,129 @@
 {
   "erlassKey": "FAMZV",
   "sr": "836.21",
-  "abgerufen": "2026-09-14",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/457",
+      "dateDocument": "2026-08-26",
+      "roFundstelle": "AS 2026 457",
+      "titelDe": "Erwerbsersatzverordnung (EOV)",
+      "titelFr": "Ordonnance sur les allocations pour perte de gain (OAPG)",
+      "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "a8a70e0b2687d28ef9aa74df9ef932d275e8de27dc938e473b1a5da053b3d4c2"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/457/de",
+      "sha": "57da8ec50b81e6e75b352610d8c73b44dc317ec0391cd655cc2f47fc03f6fa12"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "dabc9edc1dc8d9db4bb5f2793277d596cb788dc465308597c6c3a79dc7cef6c2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/719",
+      "dateDocument": "2024-11-20",
+      "roFundstelle": "AS 2024 719",
+      "titelDe": "Erwerbsersatzverordnung (EOV) (Digitalisierung in der Erwerbsersatzordnung: Einführungsphase des Informationssystems)",
+      "titelFr": "Ordonnance sur les allocations pour perte de gain (OAPG) (Numérisation dans le régime des APG: phase d’introduction du système d’information)",
+      "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG) (Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno: fase d’introduzione del sistema d’informazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/719/de",
+      "sha": "38710867bcf52fb3452ed2887dbe045190900a646e12d9cd719d7f767bf9aba6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "a860b18fa02165244c4b6d489f346818670f9814ea05829dcab7c2bacfc9feab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/735",
+      "dateDocument": "2023-11-08",
+      "roFundstelle": "AS 2023 735",
+      "titelDe": "Verordnung vom 8. November 2023 über die Informationssicherheit in der Bundesverwaltung und der Armee (Informationssicherheitsverordnung, ISV)",
+      "titelFr": "Ordonnance du 8 novembre 2023 sur la sécurité de l’information dans l’administration fédérale et l’armée (Ordonnance sur la sécurité de l’information, OSI)",
+      "titelIt": "Ordinanza dell’8 novembre 2023 sulla sicurezza delle informazioni in seno all’Amministrazione federale e all’esercito (Ordinanza sulla sicurezza delle informazioni, OSIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/735/de",
+      "sha": "81486acd288dead643df38f87da1157fae1089a178a0fe024eb43c7258233850"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "c90cdb426ac06f23aab240ad68e76283978268f0e174804819e7e6df003ee990"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "74d50a1989fcd9e0503f563b2f8485d20fbc13b28decc1944cc4fc6a7d8697c1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/497",
+      "dateDocument": "2022-08-24",
+      "roFundstelle": "AS 2022 497",
+      "titelDe": "Erwerbsersatzverordnung (EOV)",
+      "titelFr": "Règlement sur les allocations pour perte de gain (RAPG)",
+      "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/497/de",
+      "sha": "b0a26bef9e15c71dd34a64f61836e60aa955ac35fed428a37ee902a3b80f3424"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "522b1a74c37d5f07ba66e782aa255bb8adb27b642ab69d0a9b4df1141f37e616"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+      "dateDocument": "2021-11-17",
+      "roFundstelle": "AS 2021 800",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "sha": "01821c1c4afbc3a6add1f457b75e1324bd1fd6dd6525736c7991ab85f093a8fb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "ea4c346b12cdf820cf85d01ec8071bd524f930cd86b2d1f34adecc31d831380c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/132",
+      "dateDocument": "2021-02-24",
+      "roFundstelle": "AS 2021 132",
+      "titelDe": "Verordnung über den Schutz vor Cyberrisiken in der Bundesverwaltung (Cyberrisikenverordnung, CyRV)",
+      "titelFr": "Ordonnance sur la protection contre les cyberrisques dans l’administration fédérale (Ordonnance sur les cyberrisques, OPCy)",
+      "titelIt": "Ordinanza sulla protezione contro i ciber-rischi nell’Amministrazione federale (Ordinanza sui ciber-rischi, OCiber)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/132/de",
+      "sha": "d446be1d9fdcfcf9870102adf3066dc8453683cad3acc106d4bb7c92f95892da"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "363e3b8d943808e7ae72355a080242c2b77121a9a21c6e5bd69ca989f84fbf5e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/988",
+      "dateDocument": "2020-11-25",
+      "roFundstelle": "AS 2020 5871",
+      "titelDe": "Verordnung über die Koordination der digitalen Transformation und die IKT-Lenkung in der Bundesverwaltung (Verordnung über die digitale Transformation und die Informatik, VDTI)",
+      "titelFr": "Ordonnance sur la coordination de la transformation numérique et la gouvernance de l'informatique dans l'administration fédérale (Ordonnance sur la transformation numérique et l'informatique, OTNI)",
+      "titelIt": "Ordinanza sul coordinamento della trasformazione digitale e la governance delle TIC in seno all'Amministrazione federale (Ordinanza sulla trasformazione digitale e l'informatica, OTDI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/988/de",
+      "sha": "3bdf66fcf0f8111c3f6780e4ed025208b889e0478c3ad541259d5bd9dba07a76"
     },
     {
       "art": "aenderung",
@@ -62,14 +134,30 @@
       "titelDe": "Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)",
       "titelFr": "Ordonnance sur les allocations familiales (OAFam)",
       "titelIt": "Ordinanza sugli assegni familiari (OAFami)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/503/de",
-      "sha": "9816644fbfe8d75292d8cf5df8c11ffb1931b8cdaa808db1f04a00edb25ff583"
+      "sha": "535fdab1c3cc28713bf0bd0c2eff27ac2cae0a8a578094d3a38bcf22dbf12ead"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
-      "sha": "275909186941fd7cb19a8f5250a8ecec3998a4c371b2ba8afc030f614eed2e7e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/719",
+      "dateDocument": "2011-10-26",
+      "roFundstelle": "AS 2011 4951",
+      "titelDe": "Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)",
+      "titelFr": "Ordonnance sur les allocations familiales (OAFam)",
+      "titelIt": "Ordinanza sugli assegni familiari (OAFami)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2013-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/719/de",
+      "sha": "1a47bea4281f4957352e8f8189b41f2c0929766cb879c165f732ce5935bf09c5"
     },
     {
       "art": "aenderung",
@@ -80,8 +168,15 @@
       "titelDe": "Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)",
       "titelFr": "Ordonnance sur les allocations familiales (OAFam)",
       "titelIt": "Ordinanza sugli assegni familiari (OAFami)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2013-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/719/de",
-      "sha": "c475b9b0585564257f8dd009363a7cc0db32b3068832e37190081b5e36e900ca"
+      "sha": "4cd408290e65c415a8ecdea823767839da64b258550bd20eb458d85dbdda1a39"
     },
     {
       "art": "aenderung",
@@ -92,8 +187,11 @@
       "titelDe": "Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)",
       "titelFr": "Ordonnance sur les allocations familiales (OAFam)",
       "titelIt": "Ordinanza sugli assegni familiari (OAFami)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/662/de",
-      "sha": "dd1e2fd5c55b320f355f42326bbfb5151a329b50c09c986edb9ce22970870e1e"
+      "sha": "b494d77e520c413b4c48d6abf63be75a7752881d65ef8fd5f4b43cd778a361bb"
     },
     {
       "art": "aenderung",
@@ -104,8 +202,11 @@
       "titelDe": "Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)",
       "titelFr": "Ordonnance sur les allocations familiales (OAFam)",
       "titelIt": "Ordinanza sugli assegni familiari (OAFami)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/637/de",
-      "sha": "002b062abb057b5ed0565b4da3cdd6dc3b931e608d0d6643f13f8cd3f8aa2495"
+      "sha": "f92ce69ee0315d09720c5fb9bed14100cf414ce721392c395b3206c1030d4c1a"
     },
     {
       "art": "aenderung",
@@ -116,21 +217,12 @@
       "titelDe": "Verordnung über die Familienzulagen (Familienzulagenverordnung, FamZV)",
       "titelFr": "Ordonnance sur les allocations familiales (OAFam)",
       "titelIt": "Ordinanza sugli assegni familiari (OAFami)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/639/de",
-      "sha": "224d2b426e917e60a13a1aa40ce47ab8d5e4810199a15fb7529eb410e5319716"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/52",
-      "dateDocument": "2007-10-31",
-      "roFundstelle": "AS 2008 145",
-      "titelDe": "Verordnung über die Familienzulagen (Familienzulagenverordnung; FamZV)",
-      "titelFr": "Ordonnance sur les allocations familiales (OAFam)",
-      "titelIt": "Ordinanza sugli assegni familiari (OAFami)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/52/de",
-      "sha": "ce41ad8aaf77367160eb178414d2e17e8ab762f8ea573d1b03b6beac4243a473"
+      "sha": "110ccc2de016a1ef69faad90bf3611118bf46eb2c1a6bb05635c9900906ad879"
     }
   ],
-  "sha": "fce0382672bcf7445014ab15ee90409234e40997e96c790d835cd781614d0eec"
+  "sha": "cbf2b1a71c38a2c186fd2f03005dd1e384abe4eab6cf5ead615f0066ec0634c3"
 }

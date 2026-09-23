@@ -5415,5 +5415,221 @@
     "2026-10-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2018/493",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2018/493",
+    "inkrafttreten": "2018-09-15",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/493",
+        "typ": 5,
+        "datum": "2018-09-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/711",
+        "typ": 6,
+        "datum": "2018-12-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/161",
+        "typ": 1,
+        "datum": "2019-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/22",
+        "typ": 1,
+        "datum": "2019-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/280",
+        "typ": 1,
+        "datum": "2019-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/491",
+        "typ": 1,
+        "datum": "2020-02-02"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/75",
+        "typ": 1,
+        "datum": "2019-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1052",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/372",
+        "typ": 1,
+        "datum": "2020-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/988",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/503",
+        "typ": 1,
+        "datum": "2021-09-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/602",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/733",
+        "typ": 1,
+        "datum": "2022-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/733",
+        "typ": 2,
+        "datum": "2022-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/913",
+        "typ": 1,
+        "datum": "2022-01-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/344",
+        "typ": 1,
+        "datum": "2022-06-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/368",
+        "typ": 1,
+        "datum": "2022-06-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/262",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/44",
+        "typ": 1,
+        "datum": "2023-02-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/549",
+        "typ": 1,
+        "datum": "2023-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/549",
+        "typ": 2,
+        "datum": "2023-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/808",
+        "typ": 1,
+        "datum": "2024-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/168",
+        "typ": 1,
+        "datum": "2024-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/258",
+        "typ": 1,
+        "datum": "2024-06-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/345",
+        "typ": 1,
+        "datum": "2024-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/434",
+        "typ": 1,
+        "datum": "2024-08-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/555",
+        "typ": 1,
+        "datum": "2024-10-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/75",
+        "typ": 1,
+        "datum": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/163",
+        "typ": 1,
+        "datum": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/431",
+        "typ": 1,
+        "datum": "2025-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/45",
+        "typ": 1,
+        "datum": "2025-02-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/804",
+        "typ": 1,
+        "datum": "2025-12-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/860",
+        "typ": 1,
+        "datum": "2026-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/136",
+        "typ": 1,
+        "datum": "2026-04-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/240",
+        "typ": 1,
+        "datum": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/261",
+        "typ": 1,
+        "datum": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/474",
+        "typ": 1,
+        "datum": "2026-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2020/988": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-11-25",
+        "roId": "RO 2020 5871",
+        "titelDe": "Verordnung über die Koordination der digitalen Transformation und die IKT-Lenkung in der Bundesverwaltung (Verordnung über die digitale Transformation und die Informatik, VDTI) ",
+        "titelFr": "Ordonnance sur la coordination de la transformation numérique et la gouvernance de l'informatique dans l'administration fédérale (Ordonnance sur la transformation numérique et l'informatique, OTNI)",
+        "titelIt": "Ordinanza sul coordinamento della trasformazione digitale e la governance delle TIC in seno all'Amministrazione federale (Ordinanza sulla trasformazione digitale e l'informatica, OTDI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/258": {
+        "dateForce": "2024-06-11",
+        "dateDoc": "2024-06-07",
+        "titelDe": "Verordnung über die Gebühren zum Ausländer- und Integrationsgesetz (Gebührenverordnung AIG, GebV-AIG)",
+        "titelFr": "Ordonnance sur les émoluments perçus en application de la loi sur les étrangers et l’intégration (Tarif des émoluments LEI, Oem-LEI)",
+        "titelIt": "Ordinanza sugli emolumenti della legge federale sugli stranieri e la loro integrazione (Ordinanza sugli emolumenti LStrI, OEmol-LStrI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/474": {
+        "dateForce": "2026-10-01",
+        "dateDoc": "2026-08-26",
+        "titelDe": "Verordnung vom 26. August 2026 über das europäische und das nationale Reiseinformations- und -genehmigungssystem (ETIASV)",
+        "titelFr": "Ordonnance du 26 août 2026 sur les systèmes européen et national d’information et d’autorisation concernant les voyages (OETIAS)",
+        "titelIt": "Ordinanza del 26 agosto 2026 sui sistemi europeo e nazionale di informazione e autorizzazione ai viaggi (OETIAS)"
+      }
+    }
+  }
 }

@@ -395,5 +395,137 @@
     "2029-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2015/853",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+    "inkrafttreten": "2016-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 5,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/428",
+        "typ": 1,
+        "datum": "2017-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/428",
+        "typ": 5,
+        "datum": "2017-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/527",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 5,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+        "typ": 1,
+        "datum": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/399",
+        "typ": 5,
+        "datum": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/732",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/731",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/731",
+        "typ": 1,
+        "datum": "2029-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/33",
+        "typ": 1,
+        "datum": "2024-02-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2018/527": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-03-16",
+        "roId": "RO 2018 3263",
+        "titelDe": "Bundesgesetz über das Internationale Privatrecht (IPRG)",
+        "titelFr": "Loi fédérale sur le droit international privé (LDIP)",
+        "titelIt": "Legge federale sul diritto internazionale privato (LDIP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/801": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5247",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/758": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2019 4417",
+        "titelDe": "Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)",
+        "titelFr": "Loi fédérale sur les services financiers (LSFin)",
+        "titelIt": "Legge federale sui servizi finanziari (Legge sui servizi finanziari, LSerFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/762": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4631",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/33": {
+        "dateForce": "2021-02-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/399": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Verordnung vom 18. Juni 2021 über die abschliessende Inkraftsetzung des Bundesgesetzes zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Ordonnance du 18 juin 2021 portant dernière mise en vigueur partielle de la loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Ordinanza del 18 giugno 2021 concernente l’entrata in vigore integrale della legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/732": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+        "titelFr": "Loi fédérale sur les banques et les caisses d’épargne (Loi sur les banques, LB) (Insolvabilité et garantie des dépôts)",
+        "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Insolvenza e garanzia dei depositi)"
+      }
+    }
+  }
 }

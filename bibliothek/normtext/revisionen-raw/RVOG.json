@@ -1795,5 +1795,334 @@
     "2025-05-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1997/2022_2022_2022",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1997/2022_2022_2022",
+    "inkrafttreten": "1997-10-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2022_2022_2022",
+        "typ": 5,
+        "datum": "1997-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1202_1202_1202",
+        "typ": 1,
+        "datum": "1998-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/293",
+        "typ": 1,
+        "datum": "2000-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/318",
+        "typ": 1,
+        "datum": "2000-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/54",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/56",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/21",
+        "typ": 1,
+        "datum": "2001-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/24",
+        "typ": 1,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/24",
+        "typ": 2,
+        "datum": "2003-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+        "typ": 1,
+        "datum": "2003-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/184",
+        "typ": 1,
+        "datum": "2005-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/224",
+        "typ": 1,
+        "datum": "2006-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/227",
+        "typ": 1,
+        "datum": "2006-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/227",
+        "typ": 2,
+        "datum": "2006-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/818",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/750",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/750",
+        "typ": 5,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/210",
+        "typ": 1,
+        "datum": "2011-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 1,
+        "datum": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 2,
+        "datum": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/807",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/159",
+        "typ": 1,
+        "datum": "2012-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/810",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/810",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/177",
+        "typ": 1,
+        "datum": "2015-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/312",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/312",
+        "typ": 2,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/333",
+        "typ": 6,
+        "datum": "2017-05-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/573",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/575",
+        "typ": 1,
+        "datum": "2019-12-02"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/196",
+        "typ": 1,
+        "datum": "2025-05-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1998/1202_1202_1202": {
+        "dateForce": "1998-05-01",
+        "dateDoc": "1997-10-10",
+        "roId": "RO 1998 1202",
+        "titelDe": "Bundesgesetz vom 10. Oktober 1997 über die Rüstungsunternehmen des Bundes (BGRB)",
+        "titelFr": "Loi fédérale du 10 octobre 1997 sur les entreprises d'armement de la Confédération (LEAC)",
+        "titelIt": "Legge federale del 10 ottobre 1997 concernente le imprese d'armamento della Confederazione (LIAC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/293": {
+        "dateForce": "2000-09-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 1891",
+        "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+        "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
+        "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/54": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2000 273",
+        "titelDe": "Bundesgesetz über den Geschäftsverkehr der Bundesversammlung sowie über die Form, die Bekanntmachung und das Inkrafttreten ihrer Erlasse (Geschäftsverkehrsgesetz) (Anpassungen an die neue Bundesverfassung)",
+        "titelFr": "Loi fédérale sur la procédure de l'Assemblée fédérale ainsi que sur la forme, la publication et l'entrée en vigueur des actes législatifs (Loi sur les rapports entre les conseils) (Adaptations à la nouvelle Constitution)",
+        "titelIt": "Legge federale concernente la procedura dell'Assemblea federale e la forma, la pubblicazione, l'entrata in vigore dei suoi atti (Legge sui rapporti fra i Consigli) (Adeguamento alla nuova Costituzione federale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/24": {
+        "dateForce": "2003-02-01",
+        "dateDoc": "2002-03-22",
+        "roId": "RO 2003 187",
+        "titelDe": "Bundesgesetz über die Anpassung von Organisationsbestimmungen des Bundesrechts",
+        "titelFr": "Loi fédérale sur l'adaptation de dispositions du droit fédéral en matière d'organisation",
+        "titelIt": "Ordinanza dell'Assemblea federale concernente l'adeguamento di disposizioni organizzative del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/510": {
+        "dateForce": "2003-12-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2003 3543",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/200": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2003-12-19",
+        "roId": "RO 2004 1633",
+        "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+        "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+        "titelIt": "Legge federale sul programma di sgravio 2003"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/184": {
+        "dateForce": "2005-04-01",
+        "dateDoc": "2004-10-08",
+        "roId": "RO 2005 1245",
+        "titelDe": "Bundesgesetz über die vorläufige Anwendung von völkerrechtlichen Verträgen",
+        "titelFr": "Loi fédérale sur l'application à titre provisoire de traités internationaux",
+        "titelIt": "Legge federale sull'applicazione provvisoria di trattati internazionali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/227": {
+        "dateForce": "2006-05-01",
+        "dateDoc": "2005-10-07",
+        "roId": "RO 2006 1275",
+        "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+        "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+        "titelIt": "Legge federale sulle finanze della Confederazione (LFC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/210": {
+        "dateForce": "2011-05-01",
+        "dateDoc": "2010-12-17",
+        "roId": "RO 2011 1381",
+        "titelDe": "Bundesgesetz über die Wahrung von Demokratie, Rechtsstaat und Handlungsfähigkeit in ausserordentlichen Lagen",
+        "titelFr": "Loi fédérale sur la sauvegarde de la démocratie, de l'Etat de droit et de la capacité d'action dans les situations extraordinaires",
+        "titelIt": "Legge federale concernente la salvaguardia della democrazia, dello Stato di diritto e della capacità di agire in situazioni straordinarie"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/663": {
+        "dateForce": "2011-12-05",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2011 4627",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/807": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2010-12-17",
+        "roId": "RO 2011 5859",
+        "titelDe": "Bundesgesetz über die Mitwirkung der Bundesversammlung bei der Steuerung der verselbstständigten Einheiten",
+        "titelFr": "Loi fédérale relative à la participation de l'Assemblée fédérale au pilotage des entités devenues autonomes",
+        "titelIt": "Legge federale sulla partecipazione dell'Assemblea federale alla determinazione dell'orientamento strategico delle unità rese autonome"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/312": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2015 1583",
+        "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG) (Neues Führungsmodell für die Bundesverwaltung, NFB)",
+        "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC) (Nouveau modèle de gestion de l'administration fédérale, NMG)",
+        "titelIt": "Legge federale sulle finanze della Confederazione (LFC) (Nuovo modello di gestione dell'Amministrazione federale, NMG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/575": {
+        "dateForce": "2019-12-02",
+        "dateDoc": "2019-06-21",
+        "roId": "RO 2019 3119",
+        "titelDe": "Bundesgesetz über die Zuständigkeiten für den Abschluss, die Änderung und die Kündigung völkerrechtlicher Verträge",
+        "titelFr": "Loi fédérale sur les compétences en matière de conclusion, de modification et de dénonciation des traités internationaux",
+        "titelIt": "Legge federale sulle competenze di concludere, modificare e denunciare trattati internazionali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      }
+    }
+  }
 }

@@ -775,5 +775,259 @@
     "2024-01-09"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1970/620_620_620",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1970/620_620_620",
+    "inkrafttreten": "1970-04-26",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1970/600_601_601",
+        "typ": 3
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1970/620_620_620",
+        "typ": 5,
+        "datum": "1970-04-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/1952_1959_1958",
+        "typ": 1,
+        "datum": "1971-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/1711_1711_1711",
+        "typ": 1,
+        "datum": "1973-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/921_921_921",
+        "typ": 1,
+        "datum": "1976-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/222_222_222",
+        "typ": 1,
+        "datum": "1977-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/292_292_292",
+        "typ": 1,
+        "datum": "1979-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/256_256_256",
+        "typ": 1,
+        "datum": "1982-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/392_392_392",
+        "typ": 1,
+        "datum": "1984-04-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/824_824_824",
+        "typ": 1,
+        "datum": "1984-06-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/284_284_284",
+        "typ": 1,
+        "datum": "1985-03-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/280_280_280",
+        "typ": 1,
+        "datum": "1986-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/646_646_646",
+        "typ": 1,
+        "datum": "1987-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/2069_2069_2069",
+        "typ": 1,
+        "datum": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/965_965_965",
+        "typ": 1,
+        "datum": "1991-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/349",
+        "typ": 1,
+        "datum": "2003-07-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/349",
+        "typ": 9,
+        "datum": "2003-07-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/107",
+        "typ": 1,
+        "datum": "2005-11-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/107",
+        "typ": 9,
+        "datum": "2005-11-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/321",
+        "typ": 1,
+        "datum": "2009-04-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/321",
+        "typ": 9,
+        "datum": "2009-04-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/191",
+        "typ": 1,
+        "datum": "2014-03-31"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/191",
+        "typ": 9,
+        "datum": "2014-03-31"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/432",
+        "typ": 1,
+        "datum": "2017-07-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/432",
+        "typ": 9,
+        "datum": "2017-07-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/608",
+        "typ": 9,
+        "datum": "2021-10-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/14",
+        "typ": 9,
+        "datum": "2024-01-09"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1970/600_601_601": {
+        "dateDoc": "1969-12-02",
+        "roId": "RO 1970 601",
+        "titelDe": "Bundesbeschluss vom 2. Dezember 1969 betreffend Genehmigung eines Teils der von der Stockholmer Konferenz für geistiges Eigentum angenommenen Übereinkommen",
+        "titelFr": "Arrêté fédéral du 2 décembre 1969 approuvant une partie des actes adoptés par la Conférence de Stockholm de la propriété intellectuelle",
+        "titelIt": "Decreto federale del 2 dicembre 1969 che approva una parte degli atti addottati dalla Conferenza di Stoccolma sulla proprietà intellettuale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1971/1952_1959_1958": {
+        "dateForce": "1971-12-01",
+        "dateDoc": "1971-12-01",
+        "roId": "RO 1971 1959",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1973/1711_1711_1711": {
+        "dateForce": "1973-10-01",
+        "dateDoc": "1973-10-01",
+        "roId": "RO 1973 1711",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/921_921_921": {
+        "dateForce": "1976-04-01",
+        "dateDoc": "1976-04-01",
+        "roId": "RO 1976 921",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1977/222_222_222": {
+        "dateForce": "1977-02-01",
+        "dateDoc": "1977-02-01",
+        "roId": "RO 1977 222",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1979/292_292_292": {
+        "dateForce": "1979-03-01",
+        "dateDoc": "1979-03-01",
+        "roId": "RO 1979 292",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/256_256_256": {
+        "dateForce": "1982-02-15",
+        "dateDoc": "1982-02-15",
+        "roId": "RO 1982 256",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/392_392_392": {
+        "dateForce": "1984-04-16",
+        "dateDoc": "1984-04-16",
+        "roId": "RO 1984 392",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/824_824_824": {
+        "dateForce": "1984-06-03",
+        "dateDoc": "1984-07-31",
+        "roId": "RO 1984 824",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967, Änderung",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, revisée à Stockholm le 14 juillet 1967, Modification",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1985/284_284_284": {
+        "dateForce": "1985-03-20",
+        "dateDoc": "1985-03-20",
+        "roId": "RO 1985 284",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/280_280_280": {
+        "dateForce": "1986-02-01",
+        "dateDoc": "1986-02-01",
+        "roId": "RO 1986 280",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/646_646_646": {
+        "dateForce": "1987-05-01",
+        "dateDoc": "1987-05-01",
+        "roId": "RO 1987 646",
+        "titelDe": "Pariser Verbandsübereinkunft vom 20 März 183 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/2069_2069_2069": {
+        "dateForce": "1989-01-01",
+        "dateDoc": "1989-01-01",
+        "roId": "RO 1988 2069",
+        "titelDe": "Pariser Verbandsübereinkunft zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/965_965_965": {
+        "dateForce": "1991-04-01",
+        "dateDoc": "1991-04-01",
+        "roId": "RO 1991 965",
+        "titelDe": "Pariser Verbandsübereinkunft zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+        "titelFr": "Convention de Paris pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+        "titelIt": "Convenzione di Parigi per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967"
+      }
+    }
+  }
 }

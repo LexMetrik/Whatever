@@ -409,5 +409,98 @@
     "2024-09-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/2553_2553_2553",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/2553_2553_2553",
+    "inkrafttreten": "1993-10-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2553_2553_2553",
+        "typ": 5,
+        "datum": "1993-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+        "typ": 1,
+        "datum": "1998-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+        "typ": 1,
+        "datum": "1999-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 2,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/767",
+        "typ": 1,
+        "datum": "2010-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/767",
+        "typ": 2,
+        "datum": "2010-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/214",
+        "typ": 1,
+        "datum": "2015-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/316",
+        "typ": 1,
+        "datum": "2024-09-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822": {
+        "dateForce": "1998-08-01",
+        "dateDoc": "1998-06-22",
+        "roId": "RO 1998 1822",
+        "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+        "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+        "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/34": {
+        "dateForce": "1999-07-01",
+        "dateDoc": "1999-11-17",
+        "roId": "RO 2000 187",
+        "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+        "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+        "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/767": {
+        "dateForce": "2010-05-01",
+        "dateDoc": "2009-10-28",
+        "roId": "RO 2009 6289",
+        "titelDe": "Verordnung zum Schutz vor Passivrauchen (Passivrauchschutzverordnung, PaRV)",
+        "titelFr": "Ordonnance sur la protection contre le tabagisme passif (Ordonnance concernant le tabagisme passif, OPTP)",
+        "titelIt": "Ordinanza concernente la protezione contro il fumo passivo (Ordinanza concernente il fumo passivo, OPFP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/316": {
+        "dateForce": "2024-09-01",
+        "dateDoc": "2024-06-19",
+        "titelDe": "Verordnung 1 zum Arbeitsgesetz (ArGV 1)",
+        "titelFr": "Ordonnance 1 relative à la loi sur le travail (OLT 1)",
+        "titelIt": "Ordinanza 1 concernente la legge sul lavoro (OLL 1)"
+      }
+    }
+  }
 }

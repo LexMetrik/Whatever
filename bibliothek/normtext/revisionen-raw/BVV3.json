@@ -415,5 +415,267 @@
     "2027-06-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1985/1778_1778_1778",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1985/1778_1778_1778",
+    "inkrafttreten": "1987-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/1778_1778_1778",
+        "typ": 5,
+        "datum": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/1778_1778_1778",
+        "typ": 30,
+        "datum": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/326_326_326",
+        "typ": 6,
+        "datum": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/1903_1903_1903",
+        "typ": 1,
+        "datum": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2379_2379_2379",
+        "typ": 1,
+        "datum": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2399_2399_2399",
+        "typ": 1,
+        "datum": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3454_3454_3454",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3455_3455_3455",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/857_857_857",
+        "typ": 6,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/162",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/644",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/712",
+        "typ": 1,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/714",
+        "typ": 6,
+        "datum": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/559",
+        "typ": 1,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/615",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/725",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/650",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/650",
+        "typ": 2,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/681",
+        "typ": 1,
+        "datum": "2020-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/681",
+        "typ": 1,
+        "datum": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/622",
+        "typ": 1,
+        "datum": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+        "typ": 1,
+        "datum": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/325",
+        "typ": 1,
+        "datum": "2027-06-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1986/326_326_326": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1986-02-03",
+        "roId": "RO 1986 326",
+        "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge anerkannte Vorsorgeformen (BVV 3), Berichtigung",
+        "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Errata",
+        "titelIt": "Ordinanza sulla legittimazione alle dedu zioni fiscali per i contributi a forme di previdenza ri conosciute (OPP 3), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/1903_1903_1903": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1989-09-18",
+        "roId": "RO 1989 1903",
+        "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Änderung",
+        "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Modification",
+        "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2379_2379_2379": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-10-03",
+        "roId": "RO 1994 2379",
+        "titelDe": "Verordnung vom 3. Oktober 1994 über die Wohneigentumsförderung mit Mitteln der beruflichen Vorsorge (WEFV)",
+        "titelFr": "Ordonnance du 3 octobre 1994 sur l'encouragement à la propriété du logement au moyen de la prévoyance professionnelle (OEPL)",
+        "titelIt": "Ordinanza del 3 ottobre 1994 sulla promozione della proprietà d'abitazioni mediante i fondi della previdenza professionale (OPPA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2399_2399_2399": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-10-03",
+        "roId": "RO 1994 2399",
+        "titelDe": "Verordnung vom 3. Oktober 1994 über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
+        "titelFr": "Ordonnance du 3 octobre 1994 sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
+        "titelIt": "Ordinanza del 3 ottobre 1994 sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3454_3454_3454": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-12-09",
+        "roId": "RO 1996 3454",
+        "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Änderung",
+        "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Modification",
+        "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3455_3455_3455": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-12-09",
+        "roId": "RO 1996 3455",
+        "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Änderung",
+        "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Modification",
+        "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/857_857_857": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1997-03-25",
+        "roId": "RO 1997 857",
+        "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Errata  (seulement en italien)",
+        "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/644": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-08-18",
+        "roId": "RO 2004 4279",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/712": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-10-27",
+        "roId": "RO 2004 4643",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/714": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-11-23",
+        "roId": "RO 2004 4653",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/559": {
+        "dateForce": "2006-01-01",
+        "dateDoc": "2005-06-10",
+        "roId": "RO 2005 4279",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/615": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-09-29",
+        "roId": "RO 2006 4155",
+        "titelDe": "Verordnung über die Umsetzung des Partnerschaftsgesetzes vom 18. Juni 2004 in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
+        "titelFr": "Ordonnance sur la mise en uvre de la loi du 18 juin 2004 sur le partenariat dans la prévoyance professionnelle vieillesse, survivants et invalidité",
+        "titelIt": "Ordinanza concernente l'attuazione della legge del 18 giugno 2004 sull'unione domestica registrata nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/650": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-09-19",
+        "roId": "RO 2008 4651",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/681": {
+        "dateForce": "2020-10-01",
+        "dateDoc": "2020-08-26",
+        "roId": "RO 2020 3755",
+        "titelDe": "Verordnung über Änderungen in der beruflichen Vorsorge ",
+        "titelFr": "Ordonnance portant modification de dispositions dans la prévoyance professionnelle",
+        "titelIt": "Ordinanza concernente modifiche nell'ambito della previdenza professionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/506": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-08-30",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/73": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2024-01-31",
+        "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+        "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+        "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/325": {
+        "dateForce": "2026-08-01",
+        "dateDoc": "2026-06-12",
+        "titelDe": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026",
+        "titelFr": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026",
+        "titelIt": "Ordinanza concernente la modifica di ordinanze nell’ambito della previdenza professionale nel 2026"
+      }
+    }
+  }
 }

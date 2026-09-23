@@ -1,8 +1,8 @@
 {
   "erlassKey": "VMWG",
   "sr": "221.213.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,26 @@
       "titelDe": "Verordnung über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG)",
       "titelFr": "Ordonnance sur le bail à loyer et le bail à ferme d’habitations et de locaux commerciaux (OBLF)",
       "titelIt": "Ordinanza concernente la locazione e l’affitto di locali d’abitazione o commerciali (OLAL)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/191/de",
-      "sha": "c93ca19ac456242f3e308d8a3dbb7160348e15b8a2fcf86f7f9d057beb513b16"
+      "sha": "57038f6068e5f71b4adb39475997ca03f943de22d667515edefe54bb50571263"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.213.11",
-      "sha": "727b67247e09f99a3f32ef15873e172472bf7f7d86e7136f92df81dc78e5c465"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/702",
+      "dateDocument": "2024-11-20",
+      "roFundstelle": "AS 2024 702",
+      "titelDe": "Energieverordnung (EnV)",
+      "titelFr": "Ordonnance sur l’énergie (OEne)",
+      "titelIt": "Ordinanza sull’energia (OEn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/702/de",
+      "sha": "d5118f1a51c05d627392ff30afd481c1ad21f2dfb147ad1b4f8de2a55cf01bb2"
     },
     {
       "art": "aenderung",
@@ -31,14 +43,26 @@
       "titelDe": "Verordnung über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG)",
       "titelFr": "Ordonnance sur le bail à loyer et le bail à ferme d'habitations et de locaux commerciaux (OBLF)",
       "titelIt": "Ordinanza concernente la locazione e l'affitto di locali d'abitazione o commerciali (OLAL)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/302/de",
-      "sha": "6b4e789b3ef1880c236e823e1e1b3114b693d4dde1a10ec895766bacc4165c8c"
+      "sha": "4d2c4ef6abda588e3990b75a01b3ba1915bed142da8baf98d3f0aecaecfff578"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.213.11",
-      "sha": "40016ad60f3a1bd49ed5e12b16496a790f2798ef39dae2c7743e38237631ca8c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/763",
+      "dateDocument": "2017-11-01",
+      "roFundstelle": "AS 2017 6889",
+      "titelDe": "Energieverordnung (EnV)",
+      "titelFr": "Ordonnance sur l'énergie (OEne)",
+      "titelIt": "Ordinanza sull'energia (OEn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/763/de",
+      "sha": "d5e86c6538d387a9b56111060e9bad5f04618f06b3c9fbcdc39b85f3eb132e26"
     },
     {
       "art": "aenderung",
@@ -49,14 +73,26 @@
       "titelDe": "Verordnung über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG)",
       "titelFr": "Ordonnance sur le bail à loyer et le bail à ferme d'habitations et de locaux commerciaux (OBFL)",
       "titelIt": "Ordinanza concernente la locazione e l'affitto di locali d'abitazione o commerciali (OLAL)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/68/de",
-      "sha": "9bebb5bebab3910dabcaa2c8993aef7d47c20ec22b717fbcf2853747cc98fa66"
+      "sha": "0fbc882bf006ec04ae3fca9b1b060f617ecf2dc390e344699337fd367eefe476"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.213.11",
-      "sha": "b93a9a6a6c3b1d83a38263b29eeca31732005f614a7ad9b0b7f6dfa889080792"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "cc366b052f45678f6292fa3ed75ee05d752a3862952f1b32edfc0aaf66630b2f"
     },
     {
       "art": "aenderung",
@@ -67,14 +103,26 @@
       "titelDe": "Verordnung über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG)",
       "titelFr": "Ordonnance sur le bail à loyer et le bail à ferme d'habitations et de locaux commerciaux (OBLF)",
       "titelIt": "Ordinanza concernente la locazione e l'affitto di locali d'abitazione o commerciali (OLAL)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/702/de",
-      "sha": "4247eadeaae3ae949b92c25f1bfbf909e481c6058c08efefe00f02a52b7bda31"
+      "sha": "e5a6332729ed7d7dfa3eb673dd8ae501ea4919db8b8f42577f306234e3872a78"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.213.11",
-      "sha": "3d9c5184db2e1d9613ed40e4c37ebbca4c13c8fbadd1129ab7473f5131f28da4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/410",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 3053",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen an die Schweizerische Zivilprozessordnung",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances au code de procédure civile",
+      "titelIt": "Ordinanza che adegua ordinanze al Codice di procedura civile",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/410/de",
+      "sha": "59678f7f825cd722b1fdf88487118ec8641c0fdb95e291da8a3a09ff408830e1"
     },
     {
       "art": "aenderung",
@@ -85,33 +133,39 @@
       "titelDe": "Verordnung über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG)",
       "titelFr": "Ordonnance sur le bail à loyer et le bail à ferme d'habitations et de locaux commerciaux (OBLF)",
       "titelIt": "Ordinanza concernente la locazione e l'affitto di locali d'abitazione o commerciali (OLAL)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/909/de",
-      "sha": "6490dcdf724b48f9da2f1c4ff99dc694be26fdae5f9041e0a711bde764562c1f"
+      "sha": "a87878ca93108c0216204648280688ac806671a28d593672420f26b7a4fa8799"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2120_2120_2120",
+      "dateDocument": "1996-06-26",
+      "roFundstelle": "AS 1996 2120",
+      "titelDe": "Verordnung über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG), Änderung",
+      "titelFr": "Ordonnance sur le bail à loyer et le bail à ferme d'habitations et de locaux commerciaux (OBLF), Modification",
+      "titelIt": "Ordinanza concernente la locazione e l'affitto di locali d'abitazione o commerciali (OLAL), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2120_2120_2120/de",
+      "sha": "d5bb72451e6554784dbfd03518a375ccad9407283ad230c3aa46af60172b136c"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1990-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/835_835_835",
-      "dateDocument": "1990-05-09",
-      "roFundstelle": "AS 1990 835",
-      "titelDe": "Verordnung vom 9. Mai 1990 über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG)",
-      "titelFr": "Ordonnance du 9 mai 1990 sur le bail à loyer et le bail à ferme d'habitations et de locaux commerciaux (OBLF)",
-      "titelIt": "Ordinanza del 9 maggio 1990 concernente la locazione e l'affitto di locali d'abitazione o commerciali (OLAL)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/835_835_835/de",
-      "sha": "ee4f520d97dcbcf14f8f286f79d9e17fb397cb0fdb84881dfccb2efe64ca7f30"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1972-07-14",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/1559_1590_1762",
-      "dateDocument": "1972-07-10",
-      "roFundstelle": "AS 1972 1559",
-      "titelDe": "Verordnung vom 10. Juli 1972 über Massnahmen gegen Missbräuche im Mietwesen",
-      "titelFr": "Ordonnance du 10 juillet 1972 concernant des mesures contre les abus dans le secteur locatif",
-      "titelIt": "Ordinanza del 10 luglio 1972 concernente provvedimenti contro gli abusi in materia di locazione",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/1559_1590_1762/de",
-      "sha": "ca1007d631ea0d3eabe3600f6ef39a651070eb4bd6bc2650318302ead80d34c1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/__2623",
+      "dateDocument": "1994-12-06",
+      "titelIt": "Correzione: Ordinanza concernente la locazione l'affitto di locali d'abitazione commerciali (OLAL)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/__2623/de",
+      "sha": "b3ecb9eb0af1e1df34ad16074d508f8c329bfdd282c25bcd31345f33f66c104b"
     }
   ],
-  "sha": "8bdd9c6d75cb46ef10d1044021ed1a82924ac9e52f9fbc35ed29ae7ed8484067"
+  "sha": "94447bb9afb31411ab34bb5c7557d3ed25f79fbbe4ca3ac959185e8955e9e199"
 }

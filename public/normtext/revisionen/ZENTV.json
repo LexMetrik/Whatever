@@ -1,56 +1,128 @@
 {
   "erlassKey": "ZENTV",
   "sr": "360.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "854c6158fcf565099bfbeb06a9cea0b041fda19a399320011ccb7b1a6901b3d4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "cb8d3e3c8bb59bd5c8bac6390ce62286d95475cc0854d61a69cb7fffd6492550"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/301",
+      "dateDocument": "2022-05-04",
+      "roFundstelle": "AS 2022 301",
+      "titelDe": "Verordnung vom 4. Mai 2022 über polizeiliche Massnahmen zur Bekämpfung von Terrorismus (VPMT)",
+      "titelFr": "Ordonnance du 4 mai 2022 sur les mesures policières de lutte contre le terrorisme (OMPT)",
+      "titelIt": "Ordinanza del 4 maggio 2022 sulle misure di polizia per la lotta al terrorismo (OMPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/301/de",
+      "sha": "6b6d061d9d4d730c8062e957de28c3243eb25ad3cb62b08c1cb25b9f7074090e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "a065179942d73b725cbe9d9e52a0a4f024c029ccaab0b4966de98aacb71a7e93"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "047dea5e677ce13c34944d8596a245ebf881f51a7aa155004b0aaa63c7ae7000"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/495",
+      "dateDocument": "2017-08-16",
+      "roFundstelle": "AS 2017 4151",
+      "titelDe": "Verordnung über den Nachrichtendienst (Nachrichtendienstverordnung, NDV)",
+      "titelFr": "Ordonnance sur le service de renseignement (Ordonnance sur le renseignement, ORens)",
+      "titelIt": "Ordinanza sulle attività informative (OAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/495/de",
+      "sha": "7695fb836341ffbe1b7dda48ae993cdaa4c1bf785e4c17be0ef41a7b79189ba0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "8ca107b580bfe497e32bf6e5022d090afc2b5afddc06ca9ffb6982330665c394"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/738",
+      "dateDocument": "2016-11-23",
+      "roFundstelle": "AS 2016 4525",
+      "titelDe": "Verordnung über die gegenseitige Wahrnehmung von Aufgaben durch Polizeiverbindungsleute und Verbindungsleute der Eidgenössischen Zollverwaltung",
+      "titelFr": "Ordonnance concernant l'exécution mutuelle de tâches par des agents de liaison de l'Office fédéral de la police d'une part, par des agents de liaison de l'Administration fédérale des douanes d'autre part",
+      "titelIt": "Ordinanza sull'adempimento reciproco di compiti da parte di agenti di collegamento dell'Ufficio federale di polizia e agenti di collegamento dell'Amministrazione federale delle dogane",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/738/de",
+      "sha": "e0be97b0ebfb67b38f9d23dc72d201168c34835e412290ff399d9fe03c3caf92"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "3d797f9b5a4bcf4a83058cbad367a6f174a8c7f2e9d912389f662b24d0448899"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5413",
+      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "sha": "1dafdd859641fa404d58133e5b4a5fbffc90cf3b941d5b67377c0ecbd1b63527"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "f5dea9cb9c17e3bbc9bf0f053b7b106cf2e61dfa2de1bb36860e4d40637fd494"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/858",
+      "dateDocument": "2008-12-12",
+      "roFundstelle": "AS 2008 6305",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Justiz- und Polizeidepartement (OV-EJPD)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de justice et police (Org DFJP)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale di giustizia e polizia (Org-DFGP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/858/de",
+      "sha": "54631ce7e4d6cd6ce1e2756d926cf81544b76d9f1868ab75b31964abbf9b6a86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/360.1",
-      "sha": "cd3db32827dfca655dfb79a79ba56022711ac4ceea66614252b54895c46b7dff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/694",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 4943",
+      "titelDe": "Verordnung über die Anpassungen an das Bundesgesetz über die polizeilichen Informationssysteme des Bundes",
+      "titelFr": "Ordonnance sur les adaptations découlant de la loi fédérale sur les systèmes d'information de police de la Confédération",
+      "titelIt": "Ordinanza sugli adeguamenti alla legge federale sui sistemi d'informazione di polizia della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/694/de",
+      "sha": "fd3c4faefc694cc551cd718ddc685f1c630c0e6e5330d9947609877d81520e98"
     },
     {
       "art": "aenderung",
@@ -61,8 +133,11 @@
       "titelDe": "Verordnung über die Wahrnehmung kriminalpolizeilicher Aufgaben im Bundesamt für Polizei",
       "titelFr": "Ordonnance concernant l'exécution de tâches de police judiciaire au sein de l'Office fédéral de la police",
       "titelIt": "Ordinanza sull'adempimento di compiti di polizia giudiziaria in seno all'Ufficio federale di polizia",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/345/de",
-      "sha": "4aac85d552f04a070d9e32edf37a050e0fd7141e704fffbb3cb612d455cd698b"
+      "sha": "6ad007467977acdfd8b453d7d09608da8c648f7afa5dac5cfbd40eaf301b8c6a"
     },
     {
       "art": "aenderung",
@@ -73,33 +148,12 @@
       "titelDe": "Verordnung über die Wahrnehmung kriminalpolizeilicher Aufgaben im Bundesamt für Polizei",
       "titelFr": "Ordonnance concernant l'exécution de tâches de police judiciaire au sein de l'Office fédéral de la police",
       "titelIt": "Ordinanza sull'adempimento di compiti di polizia giudiziaria in seno all'Ufficio federale di polizia",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/426/de",
-      "sha": "0411c3bb22ca6574e4ac37c79042dd11c40b05ab5ca58f47be6b87b996aaf549"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/29",
-      "dateDocument": "2001-11-30",
-      "roFundstelle": "AS 2002 163",
-      "titelDe": "Verordnung über die Wahrnehmung kriminalpolizeilicher Aufgaben im Bundesamt für Polizei",
-      "titelFr": "Ordonnance concernant l'exécution de tâches de police judiciaire au sein de l'Office fédéral de la police",
-      "titelIt": "Ordinanza sull'adempimento di compiti di polizia giudiziaria in seno all'Ufficio federale di polizia",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/29/de",
-      "sha": "0085ddc2d557623f762330050d3c49cf47356fd8ab2ae54f8975e203fe065630"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1998-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/34_34_34",
-      "dateDocument": "1997-11-19",
-      "roFundstelle": "AS 1998 34",
-      "titelDe": "Verordnung vom 19. November 1997 über kriminalpolizeiliche Zentralstellen im Bundesamt für Polizeiwesen (ZentV)",
-      "titelFr": "Ordonnance du 19 novembre 1997 sur les Offices centraux de police criminelle près l'Office fédéral de la police (OOC)",
-      "titelIt": "Ordinanza del 19 novembre 1997 sugli Uffici centrali di polizia giudiziaria in seno all'Ufficio federale di polizia (OUC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/34_34_34/de",
-      "sha": "28486458e1ddcc190e82b0c27a2b5c813bebd0f743dc08a02673283608fc8049"
+      "sha": "f8b7c5e27457a087e32c542988c1f19993099e657d3a37426a00b0943ba64174"
     }
   ],
-  "sha": "fdd6d7990cd30d2f023795fa17d760a5006099a6c56837cd33ff54de8a2806db"
+  "sha": "17048aa8cbd640dcf2dec17ac97eabc0fb67f9091b99061ad131642e94d19ae1"
 }

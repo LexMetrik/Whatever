@@ -1,8 +1,8 @@
 {
   "erlassKey": "LUGUE",
   "sr": "0.275.12",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 30. Oktober 2007 über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen, LugÜ)",
       "titelFr": "Convention du 30 octobre 2007 concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano, CL)",
       "titelIt": "Convenzione del 30 ottobre 2007 concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano, CLug)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/32/de",
-      "sha": "2cf676b65caee57a973ece81ca9d732f5559ac16cc7797339a78218817ad0b65"
+      "sha": "8daa8a35dadde659b3e5a8c927adb49a02b3818d3f976d6e628cfe3a7141ca2c"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 30. Oktober 2007 über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen, LugÜ)",
       "titelFr": "Convention du 30 octobre 2007 concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano, CL)",
       "titelIt": "Convenzione del 30 ottobre 2007 concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano, CLug)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/792/de",
-      "sha": "45904315479bc4642c73b6dc56831e97f00bfd69e3c9109fec946aec46e6ed61"
+      "sha": "23c84cddbff15056e984d41c3e7f68a377839ea176c82dc6a164a720616350d3"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Übereinkommen vom 30. Oktober 2007 über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen, LugÜ)",
       "titelFr": "Convention du 30 octobre 2007 concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano, CL)",
       "titelIt": "Convenzione del 30 ottobre 2007 concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano, CLug)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/830/de",
-      "sha": "46ddf1b74751c8a47a9f932df7406a3e85c264b6a350337e3206b9ebe74d04c4"
+      "sha": "14ceaafce58cda5d77c732c713311f2ae4c65804b556a0041f4cffda8e4a656e"
     },
     {
       "art": "aenderung",
@@ -49,21 +58,28 @@
       "titelDe": "Übereinkommen vom 30. Oktober 2007 über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen, LugÜ)",
       "titelFr": "Convention du 30 octobre 2007 concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano, CL)",
       "titelIt": "Convenzione del 30 ottobre 2007 concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano, CLug)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/179/de",
-      "sha": "bbb118e99c95fa518e491d6af1ca3df0542cade183453c79eba3dcd270027575"
+      "sha": "45a1a2d71fff9e06549dd668e1372d7c83cf2c4d8965842ab4166dc44617ff9a"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/801",
-      "dateDocument": "2007-10-30",
-      "roFundstelle": "AS 2010 5609",
-      "titelDe": "Übereinkommen über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen, LugÜ) (mit Prot. und Anhängen)",
-      "titelFr": "Convention concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano, CL) (avec prot. et annexes)",
-      "titelIt": "Convenzione concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano, CLug) (con prot. e all.)",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/800",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2010 5601",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano)",
       "botschaftKey": "BOTSCHAFT-2009-402",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/801/de",
-      "sha": "373e6cda2e7d177f76028c205248c60d8198bd15e43ef53b37510ed28886d056"
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/800/de",
+      "sha": "10cedf269a1aa5cb9049bbe087c61c24f92e882f35671c413e6c2395a6615e3b"
     },
     {
       "art": "aenderung",
@@ -74,9 +90,12 @@
       "titelDe": "Übereinkommen über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen, LugÜ) (Betrifft nur den französischen Text)",
       "titelFr": "Convention concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano, CL)",
       "titelIt": "Convenzione concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano, CLug) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/114/de",
-      "sha": "315ff2be145b1e965257c1e9d521c82775ac76043a58668feac2c04b12282f06"
+      "sha": "1b7be9997c20dffc76c044c9f31f063c8453183c080028618967aeb5f2e8a597"
     }
   ],
-  "sha": "f866e8a7750f14b0a6d1de990c8e45a8d6b16c144b7157136cfd7df6bae0459e"
+  "sha": "e66d91e8afb2fdf5b011fa9b2aab44b8569124938aac4900a02c180b857674ec"
 }

@@ -1277,5 +1277,249 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2003/748",
       "zielFundstelle": "AS 2003 5047"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2003/748",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2003/748",
+    "inkrafttreten": "2004-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/748",
+        "typ": 5,
+        "datum": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/608",
+        "typ": 1,
+        "datum": "2005-10-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/404",
+        "typ": 1,
+        "datum": "2006-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/778",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/423",
+        "typ": 1,
+        "datum": "2009-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/864",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/752",
+        "typ": 1,
+        "datum": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/461",
+        "typ": 1,
+        "datum": "2012-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/773",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/334",
+        "typ": 1,
+        "datum": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/692",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/692",
+        "typ": 2,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/637",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/812",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/812",
+        "typ": 2,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/502",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/565",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/23",
+        "typ": 1,
+        "datum": "2019-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/23",
+        "typ": 2,
+        "datum": "2019-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/74",
+        "typ": 6,
+        "datum": "2021-02-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/165",
+        "typ": 1,
+        "datum": "2022-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/217",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/82",
+        "typ": 1,
+        "datum": "2025-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/359",
+        "typ": 1,
+        "datum": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/359",
+        "typ": 2,
+        "datum": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/471",
+        "typ": 1,
+        "datum": "2026-11-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2005/608": {
+        "dateForce": "2005-10-05",
+        "dateDoc": "2005-09-14",
+        "roId": "RO 2005 4645",
+        "titelDe": "Verordnung über Aufbau und Führung von Fachhochschulen (Fachhochschulverordnung, FHSV)",
+        "titelFr": "Ordonnance relative à la création et à la gestion des hautes écoles spécialisées (Ordonnance sur les hautes écoles spécialisées, OHES)",
+        "titelIt": "Ordinanza sull'istituzione e la gestione delle scuole universitarie professionali (Ordinanza sulle scuole universitarie professionali, OSUP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/404": {
+        "dateForce": "2006-08-01",
+        "dateDoc": "2006-06-16",
+        "roId": "RO 2006 2639",
+        "titelDe": "Verordnung über die Gebühren im Aufgabenbereich des Staatssekretariates für Bildung, Forschung und Innovation (Gebührenverordnung SBFI, GebV-SBFI)",
+        "titelFr": "Ordonnance sur les émoluments perçus dans le domaine du Secrétariat d'Etat à la formation, à la recherche et à l'innovation (Ordonnance sur les émoluments du SEFRI, OEmol-SEFRI)",
+        "titelIt": "Ordinanza sugli emolumenti riguardanti il campo d'attività della Segreteria di Stato per la formazione, la ricerca e l'innovazione (Ordinanza sugli emolumenti SEFRI, OEm-SEFRI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/778": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-10-24",
+        "roId": "RO 2007 5651",
+        "titelDe": "Strahlenschutzverordnung (StSV)",
+        "titelFr": "Ordonnance sur la radioprotection (ORaP)",
+        "titelIt": "Ordinanza sulla radioprotezione (ORaP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/423": {
+        "dateForce": "2009-08-01",
+        "dateDoc": "2009-06-24",
+        "roId": "RO 2009 3447",
+        "titelDe": "Verordnung über die eidgenössische Berufsmaturität (Berufsmaturitätsverordnung, BMV)",
+        "titelFr": "Ordonnance sur la maturité professionnelle fédérale (OMPr)",
+        "titelIt": "Ordinanza sulla maturità professionale federale (Ordinanza sulla maturità professionale, OMPr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/752": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-11-09",
+        "roId": "RO 2011 5227",
+        "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
+        "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
+        "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/418": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3631",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/461": {
+        "dateForce": "2012-10-01",
+        "dateDoc": "2012-05-23",
+        "roId": "RO 2012 3967",
+        "titelDe": "Verordnung über die Förderung von Sport und Bewegung (Sportförderungsverordnung, SpoFöV)",
+        "titelFr": "Ordonnance sur l'encouragement du sport et de l'activité physique (Ordonnance sur l'encouragement du sport, OESp)",
+        "titelIt": "Ordinanza sulla promozione dello sport e dell'attività fisica (Ordinanza sulla promozione dello sport, OPSpo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/692": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-11-12",
+        "roId": "RO 2014 4137",
+        "titelDe": "Verordnung zum Hochschulförderungs- und -koordinationsgesetz (V-HFKG)",
+        "titelFr": "Ordonnance relative à la loi sur l'encouragement et la coordination des hautes écoles (O-LEHE)",
+        "titelIt": "Ordinanza concernente la legge sulla promozione e sul coordinamento del settore universitario svizzero (O-LPSU)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/812": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-12-21",
+        "roId": "RO 2016 5113",
+        "titelDe": "Verordnung über die schrittweise Einführung des freien Personenverkehrs zwischen der Schweizerischen Eidgenossenschaft und der Europäischen Union und deren Mitgliedstaaten sowie unter den Mitgliedstaaten der Europäischen Freihandelsassoziation",
+        "titelFr": "Ordonnance sur l'introduction progressive de la libre circulation des personnes entre, d'une part, la Confédération suisse et, d'autre part, l'Union européenne et ses Etats membres, ainsi qu'entre les Etats membres de l'Association européenne de libre-échange",
+        "titelIt": "Ordinanza concernente l'introduzione graduale della libera circolazione delle persone tra la Confederazione Svizzera e l'Unione europea e i suoi Stati membri nonché gli Stati membri dell'Associazione europea di libero scambio"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/502": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-04-26",
+        "roId": "RO 2017 4261",
+        "titelDe": "Strahlenschutzverordnung (StSV)",
+        "titelFr": "Ordonnance sur la radioprotection (ORaP)",
+        "titelIt": "Ordinanza sulla radioprotezione (ORaP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/23": {
+        "dateForce": "2019-02-01",
+        "dateDoc": "2018-12-14",
+        "roId": "RO 2019 155",
+        "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+        "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+        "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/165": {
+        "dateForce": "2022-04-01",
+        "dateDoc": "2022-02-23",
+        "titelDe": "Verordnung vom 23. Februar 2022 über die internationale Zusammenarbeit und Mobilität in der Bildung (VIZMB)",
+        "titelFr": "Ordonnance du 23 février 2022 sur la coopération et la mobilité internationales en matière de formation (OCMIF)",
+        "titelIt": "Ordinanza del 23 febbraio 2022 sulla cooperazione e la mobilità internazionali in materia di formazione (OCMIF)"
+      }
+    }
   }
 }

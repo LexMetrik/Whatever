@@ -391,5 +391,336 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1988/1931_1931_1931",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1988/1931_1931_1931",
+    "inkrafttreten": "1989-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1931_1931_1931",
+        "typ": 5,
+        "datum": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/169_169_169",
+        "typ": 1,
+        "datum": "1991-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2538_2538_2538",
+        "typ": 1,
+        "datum": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/573_573_573",
+        "typ": 1,
+        "datum": "1992-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3022_3022_3022",
+        "typ": 1,
+        "datum": "1993-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/3050_3050_3050",
+        "typ": 1,
+        "datum": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4261_4261_4261",
+        "typ": 1,
+        "datum": "1995-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4784_4784_4784",
+        "typ": 1,
+        "datum": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/104",
+        "typ": 1,
+        "datum": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/443",
+        "typ": 1,
+        "datum": "1999-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+        "typ": 1,
+        "datum": "2000-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/68",
+        "typ": 1,
+        "datum": "2005-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/14",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/646",
+        "typ": 1,
+        "datum": "2008-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/646",
+        "typ": 2,
+        "datum": "2008-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/319",
+        "typ": 1,
+        "datum": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/329",
+        "typ": 1,
+        "datum": "2012-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/653",
+        "typ": 1,
+        "datum": "2013-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/280",
+        "typ": 1,
+        "datum": "2015-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/545",
+        "typ": 1,
+        "datum": "2015-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/24",
+        "typ": 1,
+        "datum": "2016-06-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/539",
+        "typ": 1,
+        "datum": "2016-08-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/539",
+        "typ": 1,
+        "datum": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/395",
+        "typ": 1,
+        "datum": "2022-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/702",
+        "typ": 1,
+        "datum": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1991/169_169_169": {
+        "dateForce": "1991-02-01",
+        "dateDoc": "1990-12-10",
+        "roId": "RO 1991 169",
+        "titelDe": "Technische Verordnung vom 10. Dezember 1990 über Abfälle (TVA)",
+        "titelFr": "Ordonnance du 10 décembre 1990 sur le traitement des déchets (OTD)",
+        "titelIt": "Ordinanza tecnica del 10 dicembre 1990 sui rifiuti  (OTR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/2538_2538_2538": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1992-11-30",
+        "roId": "RO 1992 2538",
+        "titelDe": "Verordnung vom 30. November 1992 über den Wald (Waldverordnung, WaV)",
+        "titelFr": "Ordonnance du 30 novembre 1992 sur les forêts (OFo)",
+        "titelIt": "Ordinanza del 30 novembre 1992 sulle foreste (Ofo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/573_573_573": {
+        "dateForce": "1992-03-15",
+        "dateDoc": "1992-02-26",
+        "roId": "RO 1992 573",
+        "titelDe": "Verordnung vom 26. Februar 1992 über die Anschlussgleise (AnGV)",
+        "titelFr": "Ordonnance du 26 février 1992 sur les voies de raccordement (OVR)",
+        "titelIt": "Ordinanza del 26 febbraio 1992 sui binari di raccordo (OBR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/3022_3022_3022": {
+        "dateForce": "1993-12-01",
+        "dateDoc": "1993-10-27",
+        "roId": "RO 1993 3022",
+        "titelDe": "Allgemeine Gewässerschutzverordnung, Änderung",
+        "titelFr": "Ordonnance générale sur la protectiondes des eaux, Modification",
+        "titelIt": "Ordinanza generale sulla protezione delle acque, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/3050_3050_3050": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-11-23",
+        "roId": "RO 1994 3050",
+        "titelDe": "Verordnung vom 23. November 1994 über die Infrastruktur der Luftfahrt (VIL)",
+        "titelFr": "Ordonnance du 23 novembre 1994 sur l'infrastructure aéronautique (OSIA)",
+        "titelIt": "Ordinanza del 23 novembre 1994 sull'infrastruttura aeronautica (OSIA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/4261_4261_4261": {
+        "dateForce": "1995-10-01",
+        "dateDoc": "1995-09-05",
+        "roId": "RO 1995 4261",
+        "titelDe": "Verordnung über die Umweltverträglichkeitsprüfung (UVPV), Änderung",
+        "titelFr": "Ordonnance relative à l'étude de l'impact sur l'environnement (OEIE), Modification",
+        "titelIt": "Ordinanza concernente l'esame dell'impatto sull'ambiente (OEIA), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/4784_4784_4784": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-09-25",
+        "roId": "RO 1995 4784",
+        "titelDe": "Verordnung vom 25. September 1995 über das Bewilligungsverfahren für militärische Bauten und Anlagen (Militärische Baubewilligungsverordnung, MBV)",
+        "titelFr": "Ordonnance du 25 septembre 1995 concernant la procédure d'octroi des permis de construire militaires (Ordonnance concernant les permis de construire militaires, OPCM)",
+        "titelIt": "Ordinanza del 25 settembre 1995 concernente la procedura d'autorizzazione per costruzioni e impianti militari (Ordinanza concernente le autorizzazioni militari di costruzione, OAMC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/104": {
+        "dateForce": "1999-01-01",
+        "dateDoc": "1998-11-25",
+        "roId": "RO 1999 704",
+        "titelDe": "Verordnung über die Aufhebung und die Änderung von Verordnungen aufgrund der Bahnreform",
+        "titelFr": "Ordonnance abrogeant et modifiant les ordonnances sur la base de la réforme des chemins de fer",
+        "titelIt": "Ordinanza concernente l'abrogazione e la modifica di ordinanze in seguito alla riforma delle ferrovie"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/443": {
+        "dateForce": "1999-11-01",
+        "dateDoc": "1999-08-25",
+        "roId": "RO 1999 2783",
+        "titelDe": "Verordnung über den Umgang mit Organismen in geschlossenen Systemen (Einschliessungsverordnung, ESV)",
+        "titelFr": "Ordonnance sur l'utilisation des organismes en milieu confiné (Ordonnance sur l'utilisation confinée, OUC)",
+        "titelIt": "Ordinanza sull'utilizzazione di organismi in sistemi chiusi (Ordinanza sull'impiego confinato, OIConf)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/121": {
+        "dateForce": "2000-03-01",
+        "dateDoc": "2000-02-02",
+        "roId": "RO 2000 703",
+        "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+        "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+        "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/68": {
+        "dateForce": "2005-02-01",
+        "dateDoc": "2004-12-10",
+        "roId": "RO 2005 601",
+        "titelDe": "Kernenergieverordnung (KEV)",
+        "titelFr": "Ordonnance sur l'énergie nucléaire (OENu)",
+        "titelIt": "Ordinanza sull'energia nucleare (OENu)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/14": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-12-21",
+        "roId": "RO 2007 39",
+        "titelDe": "Verordnung über Seilbahnen zur Personenbeförderung (Seilbahnverordnung, SebV)",
+        "titelFr": "Ordonnance sur les installations à câbles transportant des personnes (Ordonnance sur les installations à câbles, OICa)",
+        "titelIt": "Ordinanza sugli impianti a fune adibiti al trasporto di persone (Ordinanza sugli impianti a fune; OIFT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/789": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5823",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+        "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+        "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/319": {
+        "dateForce": "2009-07-01",
+        "dateDoc": "2009-05-13",
+        "roId": "RO 2009 2525",
+        "titelDe": "Verordnung über die Wasser- und Zugvogelreservate von internationaler und nationaler Bedeutung (WZVV)",
+        "titelFr": "Ordonnance sur les réserves d'oiseaux d'eau et de migrateurs d'importance internationale et nationale (OROEM)",
+        "titelIt": "Ordinanza sulle riserve d'importanza internazionale e nazionale d'uccelli acquatici e migratori (ORUAM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/329": {
+        "dateForce": "2012-06-01",
+        "dateDoc": "2012-05-09",
+        "roId": "RO 2012 2777",
+        "titelDe": "Verordnung über den Umgang mit Organismen in geschlossenen Systemen (Einschliessungsverordnung, ESV)",
+        "titelFr": "Ordonnance sur l'utilisation des organismes en milieu confiné (Ordonnance sur l'utilisation confinée, OUC)",
+        "titelIt": "Ordinanza sull'utilizzazione di organismi in sistemi chiusi (Ordinanza sull'impiego confinato, OIConf)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/653": {
+        "dateForce": "2013-12-01",
+        "dateDoc": "2013-10-09",
+        "roId": "RO 2013 3509",
+        "titelDe": "Verordnung über das Plangenehmigungsverfahren für elektrische Anlagen",
+        "titelFr": "Ordonnance sur la procédure d'approbation des plans des installations électriques",
+        "titelIt": "Ordinanza sulla procedura d'approvazione dei piani di impianti elettrici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/280": {
+        "dateForce": "2015-06-01",
+        "dateDoc": "2015-04-29",
+        "roId": "RO 2015 1337",
+        "titelDe": "Verordnung über den Schutz vor Störfällen (Störfallverordnung, StFV)",
+        "titelFr": "Ordonnance sur la protection contre les accidents majeurs (Ordonnance sur les accidents majeurs, OPAM)",
+        "titelIt": "Ordinanza sulla protezione contro gli incidenti rilevanti (OPIR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/891": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-12-04",
+        "roId": "RO 2015 5699",
+        "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+        "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+        "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/24": {
+        "dateForce": "2016-06-13",
+        "dateDoc": "2015-11-25",
+        "roId": "RO 2016 179",
+        "titelDe": "Verordnung über Fernmeldeanlagen (FAV)",
+        "titelFr": "Ordonnance sur les installations de télécommunication (OIT)",
+        "titelIt": "Ordinanza sugli impianti di telecomunicazione (OIT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/539": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-08-17",
+        "roId": "RO 2016 3215",
+        "titelDe": "Verordnung über den Wald (Waldverordnung, WaV)",
+        "titelFr": "Ordonnance sur les forêts (OFo)",
+        "titelIt": "Ordinanza sulle foreste (OFo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/395": {
+        "dateForce": "2022-08-01",
+        "dateDoc": "2022-06-22",
+        "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+        "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+        "titelIt": "Ordinanza sulla geoinformazione (OGI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/702": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-11-20",
+        "titelDe": "Energieverordnung (EnV)",
+        "titelFr": "Ordonnance sur l’énergie (OEne)",
+        "titelIt": "Ordinanza sull’energia (OEn)"
+      }
+    }
+  }
 }

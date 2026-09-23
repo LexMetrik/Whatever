@@ -1,27 +1,84 @@
 {
   "erlassKey": "BETMG",
   "sr": "812.121",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2029-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/385",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2022 385",
+      "titelDe": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG)",
+      "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
+      "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
+      "botschaftKey": "BOTSCHAFT-2020-1492",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "05977334c5f2686405d1d91eeabc0118ae572b85f692769087dff8100a934243"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-08-01",
+        "2023-09-01",
+        "2029-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/385/de",
+      "sha": "ee4a7bd250817f1cfa58825bd3859eaaa6847e1ac7b3887b807a19e4fb060ddf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "da6c02cfdd8dbb6d6b9ac6231a8f567665b7fc0a37dd803481459de3a4f70f9c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/385",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2022 385",
+      "titelDe": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG)",
+      "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
+      "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
+      "botschaftKey": "BOTSCHAFT-2020-1492",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2022-08-01",
+        "2023-09-01",
+        "2029-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/385/de",
+      "sha": "a99cad8e0f4c0a7d4e9214b121bd1f2a21ccc853e969be613f81adf57a1c20d3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "ab460dbbb0cb9731ece370aa386ecc760f03f600cd9d2441a64a66cb611c62ff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 259",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+      "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "sha": "64e1e609ccf5d5a5532e3f42aec1fd1e1c0d6c9345913a92606b4f68339c0b0d"
     },
     {
       "art": "aenderung",
@@ -33,14 +90,31 @@
       "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
       "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
       "botschaftKey": "BOTSCHAFT-2020-1492",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-08-01",
+        "2023-09-01",
+        "2029-08-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/385/de",
-      "sha": "2c38b394cc00a692584d5d73f331ad1600f70e7650ff70abd299df5fa72e9050"
+      "sha": "bdc5615bb47519b4240143ca2b82e7b403b447f54116080ee8d2c14b235b2d7c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "4abcbe974ddb334615e8912ed5e77ae5b616d4527fcac24a61723f5540e2796f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
       "art": "aenderung",
@@ -52,32 +126,104 @@
       "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
       "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
       "botschaftKey": "BOTSCHAFT-2019-721",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/216/de",
-      "sha": "80108097710d36f5826474c9e01c67d6561c48cedc1af68a040dc77b103e4f49"
+      "sha": "18a635308ef4d87ef8ce59d923bbbfe3052ad27c23a73cd9cf44a34a5b6fed68"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "47d60a44fd24d25ef6c3da12ada8c3e9b949e196ed29e7c854ddfc24873f1c4a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/16",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2020 57",
+      "titelDe": "Bundesgesetz über die Gesundheitsberufe (Gesundheitsberufegesetz, GesBG)",
+      "titelFr": "Loi fédérale sur les professions de la santé (LPSan)",
+      "titelIt": "Legge federale sulle professioni sanitarie (LPSan)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/16/de",
+      "sha": "6b3d9c94729ef33cce241d239bbbd8e5e67992d845732f4ba86e8e141dea97f5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "acd5e838f7b5a60e731775eeaaa7e9326a118892806166baea95dd668a39d6ab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/92",
+      "dateDocument": "2019-01-16",
+      "roFundstelle": "AS 2019 527",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Ordnungsbussengesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur de la loi sur les amendes d'ordre",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sulle multe disciplinari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/92/de",
+      "sha": "3be4ca0ab51e43b397a501c28b0621f10347db22f522e4b547221ce1d4abe5a4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "92987328684fb42ea18285e9f92c4fe573a6c320f5996a27792beee406519578"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/275",
+      "dateDocument": "2017-04-05",
+      "roFundstelle": "AS 2017 2703",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 20. März 2015 des Medizinalberufegesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 20 mars 2015 de la loi sur les professions médicales",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 20 marzo 2015 della legge sulle professioni mediche",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/275/de",
+      "sha": "b700e1a87353a7252b1400fbd185140c508a291287f6e027fad81c59f7d5b8c6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/725",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2017 6559",
+      "titelDe": "Ordnungsbussengesetz (OBG)",
+      "titelFr": "Loi sur les amendes d'ordre (LAO)",
+      "titelIt": "Legge sulle multe disciplinari (LMD)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/725/de",
+      "sha": "0472173e9fd8fee3e107df6c857b7b1313b8effd5c3955ac157c4cfc4dc3e19f"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "3130536fc634d76bc10ef304122f8253da6da895903cf74f6e0f6f113723cf20"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/62",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2017 249",
+      "titelDe": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
+      "titelFr": "Loi fédérale sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAl)",
+      "titelIt": "Legge federale sulle derrate alimentari e gli oggetti d'uso (Legge sulle derrate alimentari, LDerr)",
+      "botschaftKey": "BOTSCHAFT-2011-853",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/62/de",
+      "sha": "5a8d9454dbf11252371a091a6f9f9a7fd5d2078d1b7d4c92e473e96fc7a66dbe"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/833",
+      "dateDocument": "2015-03-20",
+      "roFundstelle": "AS 2015 5081",
+      "titelDe": "Bundesgesetz über die universitären Medizinalberufe (Medizinalberufegesetz, MedBG)",
+      "titelFr": "Loi fédérale sur les professions médicales universitaires (Loi sur les professions médicales, LPMéd)",
+      "titelIt": "Legge federale sulle professioni mediche universitarie (Legge sulle professioni mediche, LPMed)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/833/de",
+      "sha": "cb5f84b657975de622d49fc7e1a706e6fa163a8280485c5e42fb97639bbe19b5"
     },
     {
       "art": "aenderung",
@@ -88,8 +234,11 @@
       "titelDe": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG)",
       "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
       "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/334/de",
-      "sha": "926aba9679434d60541c70305cdc691727640e10486fb69fd6b8540e920497a0"
+      "sha": "65169919af24b09e812d1edf757220199c0dd07884f7931c7698a353827bc1b3"
     },
     {
       "art": "aenderung",
@@ -100,20 +249,42 @@
       "titelDe": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG)",
       "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
       "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti; LStup)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/205/de",
-      "sha": "6bcdaca18f48fdcafd64749270cc71b9ba4cca10fb6ccac146a564b304676e25"
+      "sha": "718448b78d57f068ffc29a15091ba44b34b4ae1625771d79a0fa6f6ea0048966"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "0a24edfc8f997c8105239e3e3c8947c958a1d6971fee8b76ff3d04ef5b022182"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "df8ecc27df8a3b1a7024a82e2bc5cb9814e8dfe644565b7e63e0e4585e1e0a12"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/585",
+      "dateDocument": "2010-12-17",
+      "roFundstelle": "AS 2012 4993",
+      "titelDe": "Postgesetz (PG)",
+      "titelFr": "Loi sur la poste (LPO)",
+      "titelIt": "Legge sulle poste (LPO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/585/de",
+      "sha": "f93587c7b8ada3b289fa0400a62243759fee1014040f39461dc692e1b0fec6b0"
     },
     {
       "art": "aenderung",
@@ -124,8 +295,12 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 20. März 2008 des Betäubungsmittelgesetzes vom 3. Oktober 1951",
       "titelFr": "Ordonnance sur la mise en vigueur complète de la modification du 20 mars 2008 de la loi du 3 octobre 1951 sur les stupéfiants",
       "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 20 marzo 2008 della legge del 3 ottobre 1951 sugli stupefacenti",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/361/de",
-      "sha": "927aa7922432db1fb7ad30e20ffec7ccff460c05669f9fa8ed07d115aebbe52d"
+      "sha": "c35b6b91b79e32e14205851a8eac86ccb8400d4a494010f01f197bf0bcee36e7"
     },
     {
       "art": "aenderung",
@@ -136,20 +311,44 @@
       "titelDe": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG) (Betrifft nur den französischen Text)",
       "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
       "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/395/de",
-      "sha": "01d3baa9230c79b14709abb19ca8aa5ebfc57ef286c71b7397b7f8b7ff8c17d3"
+      "sha": "891f15f59852ab73184761535b5f2ee0aeb86a1dba171168bd7512ddac10478a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "e07c7583099ff2b60ed652b999e128fb897f5378af99def5c4d69eee68a3e0a3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "4135d4053ab632ab4a02c0dd3ac9e9af4de2c1aea9dadaa599f187fcb6a6c8de"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/464",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3387",
+      "titelDe": "Bundesgesetz über die Umsetzung des Rahmenbeschlusses 2008/977/JI über den Schutz von Personendaten im Rahmen der polizeilichen und justiziellen Zusammenarbeit in Strafsachen",
+      "titelFr": "Loi fédérale portant mise en uvre de la décision-cadre 2008/977/JAI relative à la protection des données à caractère personnel traitées dans le cadre de la coopération policière et judiciaire en matière pénale",
+      "titelIt": "Legge federale che traspone nel diritto svizzero la decisione quadro 2008/977/GAI sulla protezione dei dati personali trattati nell'ambito della cooperazione giudiziaria e di polizia in materia penale",
+      "botschaftKey": "BOTSCHAFT-2009-1207",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/464/de",
+      "sha": "f0eaa58b3877c5257574527ca1ad5d30fc46f6f71e8c23858a1ed795a45436ec"
     },
     {
       "art": "aenderung",
@@ -160,26 +359,110 @@
       "titelDe": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG)",
       "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
       "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/352/de",
-      "sha": "0f3f7eda3f3f27587cd836a99926527cefe8465e85c1f4bd78a470827e273f70"
+      "sha": "8cacb701ea1912859c7a95b74909a37afd7bdf6cf882f1bd2f5f4f2e3a6dc220"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "6e8cc37340749e7ec220fc877ae199df72a4441477abfc46b208ea8ca230f2ad"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "12878a857233b54f8f22f27f0ecfcccae92ee7a1431f31159984bc4ca62d890e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-12-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/755",
+      "dateDocument": "2008-11-26",
+      "roFundstelle": "AS 2008 5405",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des Bundesbeschlusses über die Genehmigung und die Umsetzung der bilateralen Abkommen über die Assoziierung an Schengen und an Dublin sowie die Inkraftsetzung weiterer in Umsetzung von Schengen/Dublin erlassener Bundesgesetze",
+      "titelFr": "Ordonnance sur l'entrée en vigueur totale de l'arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin et sur l'entrée en vigueur d'autres lois fédérales mettant en uvre Schengen et Dublin",
+      "titelIt": "Ordinanza sull'entrata in vigore completa del decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino nonché sull'entrata in vigore di altre leggi federali adottate in attuazione di Schengen/Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/755/de",
+      "sha": "c236283509c7d23c2b70cda8a086fe890379084985d52deaa5b5292a47bd295a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "b20eb70838927647ebf6a50c74f9eaf857fab743c192a0b85e846f6f68eeb6e4"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "35a802a87f3bf34a2dc7eed9df1b3cee29b8788b90fb181dd4d7d6f0565b997a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/249",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2007 1411",
+      "titelDe": "Zollgesetz (ZG)",
+      "titelFr": "Loi sur les douanes (LD)",
+      "titelIt": "Legge sulle dogane (LD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/249/de",
+      "sha": "fb5f4289cf5ed36ff858bd8d2b43c519ebb3ca440b0262ef02fa8829058a0658"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "6159189a96daf5b9dcf390e81b43862e080814733205bcbf8c06308e01e84b4c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/177",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2004 1409",
+      "titelDe": "Bundesgesetz über die verdeckte Ermittlung (BVE)",
+      "titelFr": "Loi fédérale sur l'investigation secrète (LFIS)",
+      "titelIt": "Legge federale sull'inchiesta mascherata (LFIM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/177/de",
+      "sha": "5d2c04bcf57c9f870ae7dc9ce1dd2e179d0b307893240fddba3de46f3dc2e8d6"
     },
     {
       "art": "aenderung",
@@ -191,14 +474,26 @@
       "titelFr": "Loi fédérale sur la prorogation de l'arrêté fédéral sur la prescription médicale d'héroïne",
       "titelIt": "Legge federale che proroga il decreto federale concernente la prescrizione medica di eroina",
       "botschaftKey": "BOTSCHAFT-2002-912",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/670/de",
-      "sha": "f7d7741e1af5cf7056adf0f4026cf3bf4195c6db1cabbc30dde3d2515bca68fe"
+      "sha": "8eca73c3aa625a44b7145ed4229253a42f84b623797f4d214f07939cb566531d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.121",
-      "sha": "6aeaae3356dd7647742c1d90b0a6841e0f8f4223024ee564112710a8e8f62919"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/422",
+      "dateDocument": "2000-12-15",
+      "roFundstelle": "AS 2001 2790",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/422/de",
+      "sha": "7b9bfc47320bec2e031a569a48d5a9122962f6f67c362fe56c0810a675363c6d"
     },
     {
       "art": "aenderung",
@@ -209,21 +504,160 @@
       "titelDe": "Bundesbeschluss über die ärztliche Verschreibung von Heroin",
       "titelFr": "Arrêté fédéral sur la prescription médicale d'héroïne",
       "titelIt": "Decreto federale concernente la prescrizione medica di eroina",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2293_2293_2293/de",
-      "sha": "097e54c7f575a7331c58bf8b484fc1b2c9be27bdb8122f4c5d0c8e10e9af27f9"
+      "sha": "bf6f32725bdf9010a4774c99f0653b3d9a7966ac194484da4d3cc0fea9a823ba"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2465",
+      "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Postunternehmung des Bundes (Postorganisationsgesetz, POG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de la poste (Loi sur l'organisation de la Poste, LOP)",
+      "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle poste della Confederazione (Legge sull'organizzazione delle poste, LOP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2465_2465_2465/de",
+      "sha": "1c531c943780a259f85322fd1b6d710c0de36b4b65ceb60d2d1cbcc39ff37272"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1677_1677_1677",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1996 1677",
+      "titelDe": "Bundesgesetz über die Betäubungsmittel, Änderung",
+      "titelFr": "Loi fédérale sur les stupéfiants, Modification",
+      "titelIt": "Legge federale sugli stupefacenti, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1677_1677_1677/de",
+      "sha": "2eb8c98f8391cf6fe300adec105d172397920f56c97de65a71f31e17b09cf937"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1618_1618_1618",
+      "dateDocument": "1992-08-19",
+      "roFundstelle": "AS 1992 1618",
+      "titelDe": "Verordnung vom 19. Augutst 1992 über die Eingliederung des Zentralpolizeibüros in das Bundesamt für Polizeiwesen",
+      "titelFr": "Ordonnance de 19 août 1992 relative à l'incorportation du Bureau central de police dans l'Office fédéral de la police",
+      "titelIt": "Ordinanza del 19 agosto 1992 sull'incorporazione dell'Ufficio centrale di polizia nell'Ufficio federale di polizia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1618_1618_1618/de",
+      "sha": "d1d59f23f8294a911a5d9804c2cf781baf5c5c0c53919ee7ef6d98930a430d66"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/362_362_362",
+      "dateDocument": "1989-12-15",
+      "roFundstelle": "AS 1991 362",
+      "titelDe": "Bundesgesetz vom 15. Dezember 1989 über die Genehmigung kantonaler Erlasse durch den Bund",
+      "titelFr": "Loi fédérale du 15 décembre 1989 relative à l'approbation d'actes législatifs des cantons par la Confédération",
+      "titelIt": "Legge federale del 15 dicembre 1989 concernente l'approvazione di atti legislativi dei Cantoni da pare della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/362_362_362/de",
+      "sha": "2035b62181fd63cdb60d77fa6fc41da19e87c6dae7d8a52d28e08da6253eacc5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/412_412_412",
+      "dateDocument": "1984-12-14",
+      "roFundstelle": "AS 1985 412",
+      "titelDe": "Bundesgesetz über die Betäubungsmittel, Änderung",
+      "titelFr": "Loi fédérale sur les stupéfiants, Modification",
+      "titelIt": "Legge federale sugli stupefacenti, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/412_412_412/de",
+      "sha": "0e7b43f489597d9465f8504e09c30959e821acfac926538ba1540c35b3104dea"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/31_31_31",
+      "dateDocument": "1978-10-06",
+      "roFundstelle": "AS 1980 31",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Fürsorgerische Freiheitsentziehung), Änderung",
+      "titelFr": "Code civil suisse (Privation de liberté à des fins d'assistance), Modification",
+      "titelIt": "Codice civile svizzero (Privazione della libertà a scopo d'assistenza), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/31_31_31/de",
+      "sha": "a21f2cfeb762f41829b926631c828f706eb3cff384c95ef41b19ef9a434b6ca2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1220_1220_1220",
+      "dateDocument": "1975-03-20",
+      "roFundstelle": "AS 1975 1220",
+      "titelDe": "Bundesgesetz über die Betäubungsmittel, Aenderung",
+      "titelFr": "Loi fédérale sur les stupéfiants. Modification",
+      "titelIt": "Legge sugli stupefacenti, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1220_1220_1220/de",
+      "sha": "ea265058b910c9fd2dead40cd052de573ca174adfc93be0db0eaf5c00a0de0d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1970-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1970/9_9_9",
+      "dateDocument": "1968-12-18",
+      "roFundstelle": "AS 1970 9",
+      "titelDe": "Bundesgesetz über die Änderung des Bundesgesetzes über die Betäubungsmittel",
+      "titelFr": "Loi fédérale modifiant la loi fédérale sur les stupéfiants",
+      "titelIt": "Legge federale che modifica quella sui prodotti stupefacenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1970/9_9_9/de",
+      "sha": "af1f3b0b1744a5573e27b55fe67ada84261ce666e18d32db59623e557df38003"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1970-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/__1951",
+      "dateDocument": "1972-08-25",
+      "titelIt": "Legge federale sui prodotti stupefacenti, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/__1951/de",
+      "sha": "769ac3915966cf17140e0ae3b563f22f78bf25a5bd1f608f3194ca468845e560"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1952-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/241_241_245",
-      "dateDocument": "1951-10-03",
-      "roFundstelle": "AS 1952 241",
-      "titelDe": "Bundesgesetz vom 3. Oktober 1951 über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG)",
-      "titelFr": "Loi fédérale du 3 octobre 1951 sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
-      "titelIt": "Legge federale del 3 ottobre 1951 sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/241_241_245/de",
-      "sha": "567664606cb1e453ab10afbe860a682b7c202a1eeafeafb61619e9cbdab47819"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/558_558_562",
+      "dateDocument": "1952-06-27",
+      "roFundstelle": "AS 1952 558",
+      "titelDe": "Bundesgesetz über die Betäubungsmittel, Berichtigung (nur ital.)",
+      "titelFr": "Loi sur les stupéfiants, Errata (seulement en italien)",
+      "titelIt": "Legge federale sui prodotti stupefacenti, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/558_558_562/de",
+      "sha": "ba03d09d2355e182faf64f5c784077dd18c160b70c718b2f14555c5aab07cd58"
     }
   ],
-  "sha": "be7f464b41d686e37f5776abe6f5db03f16dc89a6c7d7344983649bb4f2ab044"
+  "sha": "99d56ac134958a8673d84b280f556a6c42c6b5a383c06847b20b700480bb0cc0"
 }

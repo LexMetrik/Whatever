@@ -1,14 +1,23 @@
 {
   "erlassKey": "BEWV",
   "sr": "211.412.411",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.411",
-      "sha": "3d490c47b726783c88c00f59a8cd5e95b5a934b481b5cb67ec5754d0eff3eb11"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+      "dateDocument": "2024-01-31",
+      "roFundstelle": "AS 2024 73",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
+      "sha": "35de68fc5b4d08d65bee8ad1e2323255996dd65893a7b39f9cad25ab7b258877"
     },
     {
       "art": "aenderung",
@@ -19,8 +28,11 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV). Berichtigung",
       "titelFr": "Ordonnance sur l’acquisition d’immeubles par des personnes à l’étranger (OAIE). Erratum",
       "titelIt": "Ordinanza sull’acquisto di fondi da parte di persone all’estero (OAFE). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/656/de",
-      "sha": "5157cd2175268fac08a96edc711861b5bc89b954d11f02f1bfcfadbd19948112"
+      "sha": "9ee8142e02531db8366673f0677b2b5cd9d936eb994a2b0523e101af335814ec"
     },
     {
       "art": "aenderung",
@@ -31,14 +43,41 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l’acquisition d’immeubles par des personnes à l’étranger (OAIE)",
       "titelIt": "Ordinanza sull’acquisto di fondi da parte di persone all’estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/87/de",
-      "sha": "0ff79906cf28061287e420ff04cec5fa91fbb92bd050b3299c9012b89eb0c70c"
+      "sha": "bed33bacfd88a86fe0fe116d1565a9993b1e27ec16185613545a1dcbf527396c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.411",
-      "sha": "5694ad8d75977c52ba4193f575976f803d77f51626e97de0c8792dc12bfaa4e7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/773",
+      "dateDocument": "2007-10-24",
+      "roFundstelle": "AS 2007 5627",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen an das Bundesgesetz vom 16. Dezember 2005 über die Ausländerinnen und Ausländer",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances à la loi fédérale du 16 décembre 2005 sur les étrangers",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze alla legge federale del 16 dicembre 2005 sugli stranieri",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/773/de",
+      "sha": "175b6e32ed55ecb4dc4820bb277d1501df5c4ee82bce44afb1259e41a60a278c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/861",
+      "dateDocument": "2007-12-07",
+      "roFundstelle": "AS 2007 6657",
+      "titelDe": "Verordnung zum Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatverordnung, V-GSG)",
+      "titelFr": "Ordonnance relative à la loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Ordonnance sur l'Etat hôte, OLEH)",
+      "titelIt": "Ordinanza relativa alla legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Ordinanza sullo Stato ospite, OSOsp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/861/de",
+      "sha": "c578a4ca8dd7595111b9b14c9dac58d721b1b9ef422202efbb2856eb45540563"
     },
     {
       "art": "aenderung",
@@ -49,14 +88,26 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/741/de",
-      "sha": "a72761a38ca37fe2c97bb83d688b2774e73b41a2404786362578a90104343b4e"
+      "sha": "78de77b8709a2ef43822c8c5230903769fe40866a176a0692563ac86811a9c57"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.411",
-      "sha": "04a60aef21aed5b0d14271c41ca08d80928593938dd6b4a7846e329584200208"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/446",
+      "dateDocument": "2006-06-28",
+      "roFundstelle": "AS 2006 2923",
+      "titelDe": "Zivilstandsverordnung (ZStV)",
+      "titelFr": "Ordonnance sur l'état civil (OEC)",
+      "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/446/de",
+      "sha": "64d5bff5c16d6fc769c5ac1527ee1825d46f0badc63ef6a19d96ce7fd32a43b5"
     },
     {
       "art": "aenderung",
@@ -67,8 +118,11 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/25/de",
-      "sha": "6861e39c1f1e13300e3e7fc00eaf54b6edd94a55cc98e0ec023962c209834e11"
+      "sha": "2ba7564881af8d22205b1357fbd260388d30bfb49db32c6b8256c5f8b58bb458"
     },
     {
       "art": "aenderung",
@@ -79,14 +133,26 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/205/de",
-      "sha": "099c2464218dd58739144007a96a2824e9c954a80ac35bfc38371ac997c82eeb"
+      "sha": "21589678ac72519aa8958933cbe6c4458aa534c24c866e7de3caf05ee9613328"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.411",
-      "sha": "552a53e7edadf32d24fa617ed3cd05eee8b4f09468b773e01ff6a5fedc3a9f0d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/321",
+      "dateDocument": "2004-04-21",
+      "roFundstelle": "AS 2004 2669",
+      "titelDe": "Handelsregisterverordnung (HRegV)",
+      "titelFr": "Ordonnance sur le registre du commerce (ORC)",
+      "titelIt": "Ordinanza sul registro di commercio (ORC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/321/de",
+      "sha": "4ef80911571aacdf53d084edf317abd86cf02661b3dec4a18ad084f8fb5c3600"
     },
     {
       "art": "aenderung",
@@ -97,8 +163,11 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAIE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/255/de",
-      "sha": "5c15fbeb96d5bc7dac2fea6b1e43d710814b4dc456800f7f9130f64ebe986f60"
+      "sha": "d7fb50091bf28835ad7847a2af14f5bd743550a162324ebff1bfa838275d9887"
     },
     {
       "art": "aenderung",
@@ -109,8 +178,11 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/326/de",
-      "sha": "b07afa7c2d98adb34df6eb30fe7cb22a6cf64c92438bd69385d1d0273b3643f6"
+      "sha": "d2066b21bbd6283429097579b97c0a22937396adc362c0efc8ba19114408e32a"
     },
     {
       "art": "aenderung",
@@ -121,8 +193,11 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/181/de",
-      "sha": "515e7a147a370244c8b87769b891a551f682d93d5d1e742e63a6f91c4ee1f0b3"
+      "sha": "b69c934b9dd52d6688fd190b4cadbde4ddf4c80d0d5160a8ffc56b0f8b98c422"
     },
     {
       "art": "aenderung",
@@ -133,8 +208,11 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/488/de",
-      "sha": "096ce07d8c2e1ac7771502f733229ee3a8a05127d62884ba05ab896a22217b50"
+      "sha": "cbb3b9b3cb5db855d1e6f84ffe3b1502ae2bab67de37052fca55f051d9a8f1f5"
     },
     {
       "art": "aenderung",
@@ -145,45 +223,133 @@
       "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
       "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
       "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2616_2616_2616/de",
-      "sha": "39827c9da469b33357db4a6595bda3d04dd6270d89272bfc42612606894e6e6d"
+      "sha": "7b3105d0be3c54602065eaf1cb95bf2d53844d18fa199ccd71d39213c102e2ea"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2122_2122_2122",
+      "dateDocument": "1997-09-10",
+      "roFundstelle": "AS 1997 2122",
+      "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2122_2122_2122/de",
+      "sha": "ff70c76d74976162d0b105330d3263c980e53cb45a27ac3c765aba4438d67b62"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2117_2117_2117",
+      "dateDocument": "1996-06-10",
+      "roFundstelle": "AS 1996 2117",
+      "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2117_2117_2117/de",
+      "sha": "dbc25010b4a61f2cc32e459e21da389baa348fe8cd432b2134d9d247f9a97d86"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/90_90_90",
+      "dateDocument": "1994-12-21",
+      "roFundstelle": "AS 1995 90",
+      "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/90_90_90/de",
+      "sha": "38ffaea06e1e0f97ee140c5591021be78b96da41eb0f7d00cb614a7688428afa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/5_5_5",
+      "dateDocument": "1992-12-23",
+      "roFundstelle": "AS 1993 5",
+      "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/5_5_5/de",
+      "sha": "829648493ad47fb4c304b3adcb705466f0d09a7e244bb8f1644edfee37c9af4f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/1880_1880_1880",
+      "dateDocument": "1990-11-21",
+      "roFundstelle": "AS 1990 1880",
+      "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/1880_1880_1880/de",
+      "sha": "14c35d9d58adf214bd9f6c1b9e6e021c1043ce0643f18c763eb79ad6403da397"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1998_1998_1998",
+      "dateDocument": "1988-11-23",
+      "roFundstelle": "AS 1988 1998",
+      "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1998_1998_1998/de",
+      "sha": "08268968c99e7a972caaebcdb5929daa8fe46f186d0634184f1f8a33c5c1bce2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1566_1566_1566",
+      "dateDocument": "1986-09-17",
+      "roFundstelle": "AS 1986 1566",
+      "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAEF), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1566_1566_1566/de",
+      "sha": "3e8b3a8174c13cfce2a5e2d7cdab54d85f2f8c246ec2eadcc690e5006f97c6e0"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1985-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1164_1164_1164",
-      "dateDocument": "1984-10-01",
-      "roFundstelle": "AS 1984 1164",
-      "titelDe": "Verordnung vom 1. Oktober 1984 über den Erwerb von Grundstücken durch Personen im Ausland (BewV)",
-      "titelFr": "Ordonnance du 1er octobre 1984 sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE)",
-      "titelIt": "Ordinanza del 1o ottobre 1984 sull'acquisto di fondi da parte di persone all'estero (OAFE)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1164_1164_1164/de",
-      "sha": "f63e27c4e9ed23e18be932e728b4c614b438ea8ee4a96f01e473d221fba8b8db"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1974-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/94_94_95",
-      "dateDocument": "1973-12-21",
-      "roFundstelle": "AS 1974 94",
-      "titelDe": "Verordnung vom 21. Dezember 1973 über den Erwerb von Grundstücken durch Personen im Ausland",
-      "titelFr": "Ordonnance du 21 décembre 1973 sur l'acquisition d'immeubles par des personnes domiciliées à l'étranger",
-      "titelIt": "Ordinanza del 21 dicembre 1973 sull'acquisto di fondi da parte di persone all'estero",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/94_94_95/de",
-      "sha": "25a50b0df10f1e5b608877ec4c3e81da054d3f57484d11e0181284c985fad0fe"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1961-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1961/427_437_447",
-      "dateDocument": "1961-05-30",
-      "roFundstelle": "AS 1961 427",
-      "titelDe": "Vollziehungsverordnung vom 30. Mai 1961 zum Bundesbeschluss über die Bewilligungspflicht für den Erwerb von Grundstücken durch Personen im Ausland",
-      "titelFr": "Ordonnance d'exécution du 30 mai 1961 de l'arrêté fédéral instituant le régime de l'autorisation pour l'acquisition d'immeubles par des personnes domiciliées à l'étranger",
-      "titelIt": "Ordinanza di esecuzione del 30 maggio 1961 del decreto federale concernente l'autorizzazione per l'acquisto di fondi da parte di persone all'estero",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1961/427_437_447/de",
-      "sha": "46676f30257a83dc295d50deb5ca39a80b86c9b64f8a1d4504a4bd74e1f11ef3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/28_28_28",
+      "dateDocument": "1985-01-22",
+      "roFundstelle": "AS 1985 28",
+      "titelDe": "Verordnung vom über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Errata (seulement en italien)",
+      "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/28_28_28/de",
+      "sha": "79616df769fe6c7a6f62a140e70e8b60ed45e77e64448956981d34a80ac1a583"
     }
   ],
-  "sha": "7dffe09506add14087dc57b54214613b2c52739a6831ade70339371236a1e6b8"
+  "sha": "f2893149c96d6fad7c8d27530ed94c1944650d67eeb6844c990ee09840af757f"
 }

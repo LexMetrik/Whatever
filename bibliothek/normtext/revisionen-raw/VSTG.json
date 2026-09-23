@@ -896,5 +896,549 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1966/371_385_384",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1966/371_385_384",
+    "inkrafttreten": "1967-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1966/371_385_384",
+        "typ": 5,
+        "datum": "1967-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/345_344_346",
+        "typ": 1,
+        "datum": "1972-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/11_11_11",
+        "typ": 1,
+        "datum": "1974-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/1857_1857_1857",
+        "typ": 1,
+        "datum": "1975-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/1857_1857_1857",
+        "typ": 2,
+        "datum": "1975-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/932_932_932",
+        "typ": 1,
+        "datum": "1976-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/499_499_499",
+        "typ": 1,
+        "datum": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1420_1420_1420",
+        "typ": 1,
+        "datum": "1988-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+        "typ": 1,
+        "datum": "1992-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/733_733_733",
+        "typ": 1,
+        "datum": "1992-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+        "typ": 1,
+        "datum": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/669_669_669",
+        "typ": 1,
+        "datum": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/293",
+        "typ": 1,
+        "datum": "2000-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/458",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/63",
+        "typ": 1,
+        "datum": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/155",
+        "typ": 1,
+        "datum": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+        "typ": 1,
+        "datum": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/591",
+        "typ": 1,
+        "datum": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+        "typ": 1,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+        "typ": 2,
+        "datum": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/860",
+        "typ": 1,
+        "datum": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/397",
+        "typ": 1,
+        "datum": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/397",
+        "typ": 1,
+        "datum": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/700",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/701",
+        "typ": 1,
+        "datum": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/504",
+        "typ": 1,
+        "datum": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/583",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/83",
+        "typ": 1,
+        "datum": "2017-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/795",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/370",
+        "typ": 6,
+        "datum": "2019-07-02"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/447",
+        "typ": 1,
+        "datum": "2018-09-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/448",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/448",
+        "typ": 5,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/76",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 1,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+        "typ": 5,
+        "datum": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/673",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/673",
+        "typ": 1,
+        "datum": "2022-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/673",
+        "typ": 1,
+        "datum": "2023-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/673",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/719",
+        "typ": 1,
+        "datum": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+        "typ": 5,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/112",
+        "typ": 6,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/732",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/38",
+        "typ": 1,
+        "datum": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1973/345_344_346": {
+        "dateForce": "1972-01-01",
+        "dateDoc": "1972-10-06",
+        "roId": "RO 1973 344",
+        "titelDe": "Bundesgesetz vom 6. Oktober 1972 betreffend die Änderung des Bundesgesetzes über die Verrechnungssteuer",
+        "titelFr": "Loi fédérale du 6 octobre 1972 modifiant la loi sur l'impôt anticipé",
+        "titelIt": "Legge federale del 6 ottobre 1972 che modifica quella sull'imposta preventiva"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1974/11_11_11": {
+        "dateForce": "1974-07-01",
+        "dateDoc": "1973-06-27",
+        "roId": "RO 1974 11",
+        "titelDe": "Bundesgesetz vom 27. Juni 1973 über die Stempelabgaben (StG)",
+        "titelFr": "Loi fédérale du 27 juin 1973 sur les droits de timbre (LT)",
+        "titelIt": "Legge federale del 27 giugno 1973 sulle tasse di bollo (LTB)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1974/1857_1857_1857": {
+        "dateForce": "1975-01-01",
+        "dateDoc": "1974-03-22",
+        "roId": "RO 1974 1857",
+        "titelDe": "Bundesgesetz vom 22. März 1974 über das Verwaltungsstrafrecht (VStrR)",
+        "titelFr": "Loi fédérale du 22 mars 1974 sur le droit pénal administratif (DPA)",
+        "titelIt": "Legge federale del 22 marzo 1974 sul diritto penale amministrativo (DPA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/932_932_932": {
+        "dateForce": "1976-01-01",
+        "dateDoc": "1975-01-31",
+        "roId": "RO 1975 932",
+        "titelDe": "Bundesgesetz über die Verrechnungssteuer, Änderung",
+        "titelFr": "Loi fédérale sur l'impôt anticipé, Modification",
+        "titelIt": "Legge federale sull'imposta preventiva, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1979/499_499_499": {
+        "dateForce": "1980-01-01",
+        "dateDoc": "1978-12-15",
+        "roId": "RO 1979 499",
+        "titelDe": "Bundesgesetz über die Verrechnungssteuer, Änderung",
+        "titelFr": "Loi fédérale sur l'impôt anticipé, Modification",
+        "titelIt": "Legge federale su l'imposta preventiva, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/1420_1420_1420": {
+        "dateForce": "1988-10-01",
+        "dateDoc": "1985-12-20",
+        "roId": "RO 1988 1420",
+        "titelDe": "Bundesgesetz vom 20. Dezember 1985 über die Bildung steuerbegünstigter Arbeitsbeschaffungsreserven (ABRG)",
+        "titelFr": "Loi fédérale du 20 décembre 1985 sur la constitution de réserves de crise bénéficiant d'allégements fiscaux (LCRC)",
+        "titelIt": "Legge federale del 20 dicembre 1985 sulla costituzione di riserve di crisi beneficianti di sgravi fiscali (LCRC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288": {
+        "dateForce": "1992-02-15",
+        "dateDoc": "1991-10-04",
+        "roId": "RO 1992 288",
+        "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+        "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+        "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/733_733_733": {
+        "dateForce": "1992-07-01",
+        "dateDoc": "1991-10-04",
+        "roId": "RO 1992 733",
+        "titelDe": "Obligationenrecht (Die Aktiengesellschaft), Änderung",
+        "titelFr": "Code des obligations (Société anonyme), Modification",
+        "titelIt": "Codice delle obbligaioni (Società anonima), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1994-12-16",
+        "roId": "RO 1995 1227",
+        "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+        "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+        "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/669_669_669": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-10-10",
+        "roId": "RO 1998 669",
+        "titelDe": "Bundesgesetz vom 10. Oktober 1997 über die Reform der Unternehmensbesteuerung 1997",
+        "titelFr": "Loi fédérale du 10 octobre 1997 sur la réforme 1997 de l'imposition des sociétés",
+        "titelIt": "Legge federale del 10 ottobre 1997 sulla riforma 1997 dell'imposizione delle imprese"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/293": {
+        "dateForce": "2000-09-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 1891",
+        "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+        "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
+        "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/63": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2000 324",
+        "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG)",
+        "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD)",
+        "titelIt": "Legge federale sull'imposta federale diretta (LIFD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2001/155": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-12-15",
+        "roId": "RO 2001 1050",
+        "titelDe": "Bundesgesetz zur Koordination und Vereinfachung der Veranlagungsverfahren für die direkten Steuern im interkantonalen Verhältnis",
+        "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de taxation des impôts directs dans les rapports intercantonaux",
+        "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure di imposizione delle imposte dirette nei rapporti intercantonali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/320": {
+        "dateForce": "2004-07-01",
+        "dateDoc": "2003-10-03",
+        "roId": "RO 2004 2617",
+        "titelDe": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+        "titelFr": "Loi fédérale sur la fusion, la scission, la transformation et le transfert de patrimoine (Loi sur la fusion, LFus)",
+        "titelIt": "Legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione, LFus)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/591": {
+        "dateForce": "2006-01-01",
+        "dateDoc": "2004-10-08",
+        "roId": "RO 2005 4545",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Stiftungsrecht)",
+        "titelFr": "Code civil suisse (Droit des fondations)",
+        "titelIt": "Codice civile svizzero (Diritto delle fondazioni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/822": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-06-23",
+        "roId": "RO 2006 5379",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/685": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2005-12-16",
+        "roId": "RO 2007 4791",
+        "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+        "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/787": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2006-10-06",
+        "roId": "RO 2007 5779",
+        "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+        "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+        "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/860": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2007 6637",
+        "titelDe": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+        "titelFr": "Loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Loi sur l'Etat hôte, LEH)",
+        "titelIt": "Legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Legge sullo Stato ospite, LSO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/397": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-03-23",
+        "roId": "RO 2008 2893",
+        "titelDe": "Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+        "titelFr": "Loi fédérale sur l'amélioration des conditions fiscales applicables aux activités entrepreneuriales et aux investissements (Loi sur la réforme de l'imposition des entreprises II)",
+        "titelIt": "Legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/700": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 5977",
+        "titelDe": "Bundesgesetz über Vereinfachungen bei der Besteuerung von Lotteriegewinnen",
+        "titelFr": "Loi fédérale sur les simplifications de l'imposition des gains faits dans les loteries",
+        "titelIt": "Legge federale concernente le semplificazioni nell'imposizione delle vincite alle lotterie"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/504": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2013-03-22",
+        "roId": "RO 2013 2397",
+        "titelDe": "Bundesgesetz über die formelle Bereinigung der zeitlichen Bemessung der direkten Steuern bei den natürlichen Personen",
+        "titelFr": "Loi fédérale sur la mise à jour formelle du calcul dans le temps de l'impôt direct dû par les personnes physiques",
+        "titelIt": "Legge federale sull'adeguamento formale delle basi temporali per l'imposizione diretta delle persone fisiche"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/853": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2015 5339",
+        "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+        "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+        "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/795": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-09-29",
+        "roId": "RO 2018 5103",
+        "titelDe": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+        "titelFr": "Loi fédérale sur les jeux d'argent (LJAr)",
+        "titelIt": "Legge federale sui giochi in denaro (LGD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/801": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5247",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/447": {
+        "dateForce": "2019-07-09",
+        "dateDoc": "2018-09-28",
+        "roId": "RO 2019 2395",
+        "titelDe": "Bundesgesetz über die Steuerreform und die AHV-Finanzierung (STAF)",
+        "titelFr": "Loi fédérale relative à la réforme fiscale et au financement de l'AVS (RFFA)",
+        "titelIt": "Legge federale concernente la riforma fiscale e il finanziamento dell'AVS (RFFA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/448": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-06-14",
+        "roId": "RO 2019 2413",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes vom 28. September 2018 über die Steuerreform und die AHV-Finanzierung",
+        "titelFr": "Ordonnance portant dernière mise en œuvre partielle de la loi fédérale du 28 septembre 2018 relative à la réforme fiscale et au financement de l'AVS",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della legge federale del 28 settembre 2018 concernente la riforma fiscale e il finanziamento dell'AVS "
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/762": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4631",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/746": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4005",
+        "titelDe": "Obligationenrecht (Aktienrecht)",
+        "titelFr": "Code des obligations (Droit de la société anonyme)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società anonima)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/673": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Bundesgesetz vom 18. Juni 2021 über elektronische Verfahren im Steuerbereich",
+        "titelFr": "Loi fédérale du 18 juin 2021 sur les procédures électroniques en matière d’impôts",
+        "titelIt": "Legge federale del 18 giugno 2021 sulle procedure elettroniche in ambito fiscale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/109": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-02-02",
+        "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+        "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+        "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/112": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2020-11-18",
+        "titelDe": "Obligationenrecht (Aktienrecht). Berichtigung",
+        "titelFr": "Code des obligations (Droit de la société anonyme). Erratum",
+        "titelIt": "Codice delle obbligazioni (Diritto della società anonima). Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/732": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+        "titelFr": "Loi fédérale sur les banques et les caisses d’épargne (Loi sur les banques, LB) (Insolvabilité et garantie des dépôts)",
+        "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Insolvenza e garanzia dei depositi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/38": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Bundesgesetz über die Besteuerung von Leibrenten und ähnlichen Vorsorgeformen",
+        "titelFr": "Loi fédérale sur l’imposition des rentes viagères et des formes de prévoyance similaires",
+        "titelIt": "Legge federale sull’imposizione delle rendite vitalizie e delle forme di previdenza simili"
+      }
+    }
+  }
 }

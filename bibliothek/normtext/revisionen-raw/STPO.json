@@ -1458,5 +1458,597 @@
     "2025-04-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2010/267",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+    "inkrafttreten": "2011-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/698",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 5,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/704",
+        "typ": 1,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/312",
+        "typ": 1,
+        "datum": "2011-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/619",
+        "typ": 6,
+        "datum": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/310",
+        "typ": 1,
+        "datum": "2012-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/460",
+        "typ": 1,
+        "datum": "2012-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/164",
+        "typ": 6,
+        "datum": "2013-03-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/177",
+        "typ": 1,
+        "datum": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/178",
+        "typ": 1,
+        "datum": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/185",
+        "typ": 1,
+        "datum": "2013-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/206",
+        "typ": 6,
+        "datum": "2013-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/230",
+        "typ": 1,
+        "datum": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/230",
+        "typ": 2,
+        "datum": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/250",
+        "typ": 1,
+        "datum": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/48",
+        "typ": 1,
+        "datum": "2013-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/248",
+        "typ": 1,
+        "datum": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/355",
+        "typ": 1,
+        "datum": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/38",
+        "typ": 6,
+        "datum": "2014-01-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/684",
+        "typ": 6,
+        "datum": "2014-11-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/321",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 1,
+        "datum": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/326",
+        "typ": 1,
+        "datum": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/380",
+        "typ": 1,
+        "datum": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/714",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/752",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/756",
+        "typ": 1,
+        "datum": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/215",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/215",
+        "typ": 5,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+        "typ": 1,
+        "datum": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/624",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/725",
+        "typ": 1,
+        "datum": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/31",
+        "typ": 1,
+        "datum": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/450",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/765",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/795",
+        "typ": 1,
+        "datum": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/111",
+        "typ": 1,
+        "datum": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/16",
+        "typ": 1,
+        "datum": "2020-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/360",
+        "typ": 1,
+        "datum": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/75",
+        "typ": 1,
+        "datum": "2021-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/232",
+        "typ": 1,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/289",
+        "typ": 1,
+        "datum": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+        "typ": 1,
+        "datum": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/750",
+        "typ": 5,
+        "datum": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+        "typ": 1,
+        "datum": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/309",
+        "typ": 1,
+        "datum": "2023-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/212",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/27",
+        "typ": 1,
+        "datum": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/178",
+        "typ": 1,
+        "datum": "2025-04-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2008/698": {
+        "dateForce": "2008-12-05",
+        "dateDoc": "2008-06-13",
+        "roId": "RO 2008 4989",
+        "titelDe": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
+        "titelFr": "Loi fédérale sur les systèmes d'information de police de la Confédération (LSIP)",
+        "titelIt": "Legge federale sui sistemi d'informazione di polizia della Confederazione (LSIP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/444": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2010 3267",
+        "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+        "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+        "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/704": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-06-18",
+        "roId": "RO 2010 4963",
+        "titelDe": "Bundesgesetz über die Änderung von Bundesgesetzen zur Umsetzung des Römer Statuts des Internationalen Strafgerichtshofs",
+        "titelFr": "Loi fédérale portant modification de lois fédérales en vue de la mise en uvre du Statut de Rome de la Cour pénale internationale",
+        "titelIt": "Legge federale sulla modifica di leggi federali per l'attuazione dello Statuto di Roma della Corte penale internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/312": {
+        "dateForce": "2011-07-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2011 2259",
+        "titelDe": "Bundesgesetz über die Patentanwältinnen und Patentanwälte (Patentanwaltsgesetz, PAG)",
+        "titelFr": "Loi sur les conseils en brevets (LCBr)",
+        "titelIt": "Legge federale sui consulenti in brevetti (Legge sui consulenti in brevetti, LCB)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/310": {
+        "dateForce": "2012-07-01",
+        "dateDoc": "2011-09-30",
+        "roId": "RO 2012 2575",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/460": {
+        "dateForce": "2012-10-01",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2012 3953",
+        "titelDe": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+        "titelFr": "Loi fédérale sur l'encouragement du sport et de l'activité physique (Loi sur l'encouragement du sport, LESp)",
+        "titelIt": "Legge federale sulla promozione dello sport e dell'attività fisica (Legge sulla promozione dello sport, LPSpo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/177": {
+        "dateForce": "2013-05-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 847",
+        "titelDe": "Bundesgesetz über die Anpassung von verfahrensrechtlichen Bestimmungen zum anwaltlichen Berufsgeheimnis",
+        "titelFr": "Loi fédérale sur l'adaptation de dispositions de procédure relatives au secret professionnel des avocats",
+        "titelIt": "Legge federale che adegua disposizioni di diritto procedurale sul segreto professionale degli avvocati"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/178": {
+        "dateForce": "2013-05-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 851",
+        "titelDe": "Schweizerische Zivilprozessordnung und Schweizerische Strafprozessordnung (Protokollierungsvorschriften)",
+        "titelFr": "Code de procédure civile suisse et code de procédure pénale suisse (Dispositions relatives à la rédaction des procès-verbaux)",
+        "titelIt": "Codice di diritto processuale civile svizzero e Codice di diritto processuale penale svizzero (Disposizioni sulla verbalizzazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/185": {
+        "dateForce": "2013-04-01",
+        "dateDoc": "2013-03-15",
+        "roId": "RO 2013 915",
+        "titelDe": "Verordnung über eine weitere Teilinkraftsetzung des Bundesgesetzes über die Psychologieberufe",
+        "titelFr": "Ordonnance portant nouvelle mise en vigueur partielle de la loi fédérale sur les professions relevant du domaine de la psychologie",
+        "titelIt": "Ordinanza su un'ulteriore entrata in vigore parziale della legge sulle professioni psicologiche"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/206": {
+        "dateForce": "2013-04-01",
+        "dateDoc": "2013-03-25",
+        "roId": "RO 2013 975",
+        "titelDe": "Bundesgesetz über die Psychologieberufe (Psychologieberufegesetz, PsyG)",
+        "titelFr": "Loi fédérale sur les professions relevant du domaine de la psychologie (Loi sur les professions de la psychologie, LPsy)",
+        "titelIt": "Legge federale sulle professioni psicologiche (LPPsi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/250": {
+        "dateForce": "2013-05-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 1103",
+        "titelDe": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
+        "titelFr": "Loi fédérale sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM)",
+        "titelIt": "Legge federale sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/48": {
+        "dateForce": "2013-02-01",
+        "dateDoc": "2012-03-16",
+        "roId": "RO 2013 295",
+        "titelDe": "Bundesgesetz über das Kriegsmaterial (Kriegsmaterialgesetz, KMG)",
+        "titelFr": "Loi fédérale sur le matériel de guerre (LFMG)",
+        "titelIt": "Legge federale sul materiale bellico (LMB)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/248": {
+        "dateForce": "2014-07-01",
+        "dateDoc": "2013-09-27",
+        "roId": "RO 2014 1159",
+        "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Übereinkommens des Europarats zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention)",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote)",
+        "titelIt": "Decreto federale che approva la Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la traspone nel diritto svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/355": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2013-12-13",
+        "roId": "RO 2014 2055",
+        "titelDe": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+        "titelFr": "Loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+        "titelIt": "Legge federale sull&#700;interdizione di esercitare un&#700;attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/321": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2015 1623",
+        "titelDe": "Bundesgesetz über das Informationsrecht des Opfers (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes, der Strafprozessordnung und des Militärstrafprozesses)",
+        "titelFr": "Loi fédérale sur le droit de la victime à être informée (Modification du code pénal, du droit pénal des mineurs, du code de procédure pénale et de la procédure pénale militaire)",
+        "titelIt": "Legge federale sul diritto d'informazione delle vittime di reati (Modifica del Codice penale, del Diritto penale minorile, del Codice di procedura penale e della Procedura penale militare)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/853": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2015 5339",
+        "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+        "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+        "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/249": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2016 1249",
+        "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+        "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+        "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/326": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2016 1831",
+        "titelDe": "Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen",
+        "titelFr": "Loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes",
+        "titelIt": "Legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/380": {
+        "dateForce": "2016-10-01",
+        "dateDoc": "2015-03-20",
+        "roId": "RO 2016 2329",
+        "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+        "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
+        "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/714": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2016 4277",
+        "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG) ",
+        "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
+        "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/752": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2016 4651",
+        "titelDe": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+        "titelFr": "Loi fédérale sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (Loi sur la signature électronique)",
+        "titelIt": "Legge federale sui servizi di certificazione nel campo della firma elettronica e di altre applicazioni di certificati digitali (Legge sulla firma elettronica)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/756": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2015-12-18",
+        "roId": "RO 2016 4687",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Internationalen Übereinkommens zum Schutz aller Personen vor dem Verschwindenlassen",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention internationale pour la protection de toutes les personnes contre les disparitions forcées",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione internazionale per la protezione di tutte le persone dalla sparizione forzata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/215": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-03-29",
+        "roId": "RO 2017 2297",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Militärgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur l'armée",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge militare"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/494": {
+        "dateForce": "2017-09-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2017 4095",
+        "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG) ",
+        "titelFr": "Loi fédérale sur le renseignement (LRens)",
+        "titelIt": "Legge federale sulle attività informative (LAIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/624": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-03-17",
+        "roId": "RO 2017 5769",
+        "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG) (Schaffung einer Berufungskammer am Bundesstrafgericht)",
+        "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP) (Création d'une cour d'appel au Tribunal pénal fédéral)",
+        "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP) (Istituzione di una corte d'appello in seno al Tribunale penale federale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/725": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2017 6559",
+        "titelDe": "Ordnungsbussengesetz (OBG)",
+        "titelFr": "Loi sur les amendes d'ordre (LAO)",
+        "titelIt": "Legge sulle multe disciplinari (LMD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/31": {
+        "dateForce": "2018-03-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2018 117",
+        "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+        "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+        "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/450": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-12-15",
+        "roId": "RO 2018 2947",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesschutz)",
+        "titelFr": "Code civil suisse (Protection de l'enfant)",
+        "titelIt": "Codice civile svizzero (Protezione dei minorenni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/795": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-09-29",
+        "roId": "RO 2018 5103",
+        "titelDe": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+        "titelFr": "Loi fédérale sur les jeux d'argent (LJAr)",
+        "titelIt": "Legge federale sui giochi in denaro (LGD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/111": {
+        "dateForce": "2019-03-01",
+        "dateDoc": "2018-09-28",
+        "roId": "RO 2019 625",
+        "titelDe": "Bundesgesetz über die Umsetzung der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
+        "titelFr": "Loi fédérale mettant en uvre la directive (UE) 2016/680 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel à des fins de prévention et de détection des infractions pénales, d'enquêtes et de poursuites en la matière ou d'exécution de sanctions pénales (Développement de l'acquis de Schengen)",
+        "titelIt": "Legge federale che attua la direttiva (UE) 2016/680 relativa alla protezione delle persone fisiche con riguardo al trattamento dei dati personali a fini di prevenzione, indagine, accertamento e perseguimento di reati o esecuzione di sanzioni penali (Sviluppo dell'acquis di Schengen)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/16": {
+        "dateForce": "2020-02-01",
+        "dateDoc": "2016-09-30",
+        "roId": "RO 2020 57",
+        "titelDe": "Bundesgesetz über die Gesundheitsberufe (Gesundheitsberufegesetz, GesBG)",
+        "titelFr": "Loi fédérale sur les professions de la santé (LPSan)",
+        "titelIt": "Legge federale sulle professioni sanitarie (LPSan)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/360": {
+        "dateForce": "2021-07-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität",
+        "titelFr": "Arrêté fédéral du 25 septembre 2020 portant approbation et mise en œuvre de la Convention du Conseil de l’Europe pour la prévention du terrorisme et de son Protocole additionnel et concernant le renforcement des normes pénales contre le terrorisme et le crime organisé",
+        "titelIt": "Decreto federale del 25 settembre 2020 che approva e traspone nel diritto svizzero la Convenzione del Consiglio d’Europa per la prevenzione del terrorismo e il relativo Protocollo addizionale e potenzia il dispositivo penale contro il terrorismo e la criminalità organizzata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/232": {
+        "dateForce": "2022-05-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+        "titelFr": "Loi fédérale du 18 décembre 2020 sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI)",
+        "titelIt": "Legge federale del 18 dicembre 2020 sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/289": {
+        "dateForce": "2022-07-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+        "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+        "titelIt": "Legge sul Tribunale federale (LTF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/600": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2016-06-17",
+        "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+        "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+        "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/750": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-23",
+        "titelDe": "Verordnung über eine Teilinkraftsetzung des Informationssicherheitsgesetzes",
+        "titelFr": "Ordonnance portant mise en vigueur partielle de la loi sur la sécurité de l’information",
+        "titelIt": "Ordinanza concernente un’entrata in vigore parziale della legge sulla sicurezza delle informazioni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/259": {
+        "dateForce": "2023-07-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+        "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+        "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/309": {
+        "dateForce": "2023-08-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die Verwendung von DNA-Profilen im Strafverfahren und zur Identifizierung von unbekannten oder vermissten Personen\n(DNA-Profil-Gesetz)",
+        "titelFr": "Loi fédérale sur l’utilisation de profils d’ADN dans les procédures pénales et sur l’identification de personnes inconnues ou disparues\n(Loi sur les profils d’ADN)",
+        "titelIt": "Legge federale sull’utilizzo di profili del DNA nel procedimento penale e per l’identificazione di persone sconosciute o scomparse\n(Legge sui profili del DNA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/212": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2022-12-16",
+        "titelDe": "Bundesgesetz vom 16. Dezember 2022 über die Förderung der Ausbildung im Bereich der Pflege",
+        "titelFr": "Loi fédérale du 16 décembre 2022 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+        "titelIt": "Legge federale del 16 dicembre 2022 sulla promozione della formazione in cure infermieristiche"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/27": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2023-06-16",
+        "titelDe": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+        "titelFr": "Loi fédérale portant révision du droit pénal en matière sexuelle",
+        "titelIt": "Legge federale sulla revisione del diritto penale in materia sessuale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/178": {
+        "dateForce": "2025-04-01",
+        "dateDoc": "2024-09-27",
+        "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+        "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
+        "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)"
+      }
+    }
+  }
 }

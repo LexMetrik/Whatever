@@ -1,8 +1,8 @@
 {
   "erlassKey": "NHG",
   "sr": "451",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,41 @@
       "titelDe": "Bundesgesetz über den Natur- und Heimatschutz (NHG)",
       "titelFr": "Loi fédérale sur la protection de la nature et du paysage (LPN)",
       "titelIt": "Legge federale sulla protezione della natura e del paesaggio (LPN)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/429/de",
-      "sha": "ac21058cd38a18efa24754584b85ee18e37b8e9d5ac9d2969c8e6e8e4191caef"
+      "sha": "99aaefbea4bd3f522f17a47c11e6858262e1d62a86a6b3dbf9d272bf028f6dc2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/430",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2025 430",
+      "titelDe": "Bundesgesetz über den Wasserbau",
+      "titelFr": "Loi fédérale sur l’aménagement des cours d’eau",
+      "titelIt": "Legge federale sulla sistemazione dei corsi d’acqua",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/430/de",
+      "sha": "d091179b84cfa1b38952ff1e584917b6470645872ad8d9b1eb5b3e9de75696bc"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "6a5e4c1d18583c326a8c8903f05b1544c6932fdc78ec50f5d771d7399981750e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/662",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 662",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/662/de",
+      "sha": "7160dec4d79768b2f37296cac23ffe991093e795e97707cf9d9ab43380c69631"
     },
     {
       "art": "aenderung",
@@ -31,20 +58,46 @@
       "titelDe": "Bundesgesetz über den Natur- und Heimatschutz (NHG)",
       "titelFr": "Loi fédérale sur la protection de la nature et du paysage (LPN)",
       "titelIt": "Legge federale sulla protezione della natura e del paesaggio (LPN)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/229/de",
-      "sha": "b055d8f2262aa0756973f5790687590180ce5b52edfefe771307302037fa1020"
+      "sha": "a96557a1fe28d6bc37e356e1c702dd5004ed2cea5aeb9b2c7700c029ab1506b8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "3109fe3ca3fbad00659af1e184479f7a0109056a4dc9fa0fee6a7100940526f5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-10-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "eef158babfc41f14dbb393d86cf3a4da50dc49407e0d914b789e5fa3d9f967ca"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/467",
+      "dateDocument": "2014-03-21",
+      "roFundstelle": "AS 2014 2629",
+      "titelDe": "Bundesbeschluss über die Genehmigung des Protokolls von Nagoya über den Zugang zu genetischen Ressourcen und die ausgewogene und gerechte Aufteilung der sich aus ihrer Nutzung ergebenden Vorteile (Nagoya-Protokoll) und dessen Umsetzung (Bundesgesetz über den Natur- und Heimatschutz)",
+      "titelFr": "Arrêté fédéral portant approbation du Protocole de Nagoya sur l'accès aux ressources génétiques et le partage juste et équitable des avantages découlant de leur utilisation Protocole de Nagoya) et sa mise en uvre (loi fédérale sur la protection de la nature et du paysage)",
+      "titelIt": "Decreto federale che approva il Protocollo di Nagoya sull'accesso alle risorse genetiche e la giusta ed equa condivisione dei benefici derivanti dalla loro utilizzazione (Protocollo di Nagoya) e lo traspone nel diritto svizzero (legge federale sulla protezione della natura e del paesaggio)",
+      "botschaftKey": "BOTSCHAFT-2013-611",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-09-01",
+        "2014-10-12"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/467/de",
+      "sha": "858cc886b40cf3f7f901b1fa6fd2097743d8049f59031dcc59178168175fa912"
     },
     {
       "art": "aenderung",
@@ -56,26 +109,61 @@
       "titelFr": "Arrêté fédéral portant approbation du Protocole de Nagoya sur l'accès aux ressources génétiques et le partage juste et équitable des avantages découlant de leur utilisation Protocole de Nagoya) et sa mise en uvre (loi fédérale sur la protection de la nature et du paysage)",
       "titelIt": "Decreto federale che approva il Protocollo di Nagoya sull'accesso alle risorse genetiche e la giusta ed equa condivisione dei benefici derivanti dalla loro utilizzazione (Protocollo di Nagoya) e lo traspone nel diritto svizzero (legge federale sulla protezione della natura e del paesaggio)",
       "botschaftKey": "BOTSCHAFT-2013-611",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-09-01",
+        "2014-10-12"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/467/de",
-      "sha": "4af4c601d83115403c8fcd42dfa142392e64a7a0bc433c92c08728543eb08028"
+      "sha": "2a392f1accb8dcad43778cda1bc27b184463253649b24b01634245959e1e7375"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "0258267cfa3d1581683ada4c58fbdea815c9e97b1bef54d05c762e3eb411aa3b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/600",
+      "dateDocument": "2012-03-16",
+      "roFundstelle": "AS 2013 3095",
+      "titelDe": "Bundesgesetz über den Verkehr mit Tieren und Pflanzen geschützter Arten (BGCITES)",
+      "titelFr": "Loi fédérale sur la circulation des espèces de faune et de flore protégées (Loi sur les espèces protégées, LCITES)",
+      "titelIt": "Legge federale sulla circolazione delle specie di fauna e di flora protette (LF-CITES)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/600/de",
+      "sha": "cf71a8fa6b7892a304c926effbd1322271396304b384bc5f5fb1e1e4ca16070e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "0a6363e7a98abf9e35c1fbb338dd886b5a462483bfd5a03568f1a521d8152e50"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/854",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2011 6127",
+      "titelDe": "Bundesgesetz über die Kulturförderung (Kulturförderungsgesetz, KFG)",
+      "titelFr": "Loi fédérale sur l'encouragement de la culture (Loi sur l'encouragement de la culture, LEC)",
+      "titelIt": "Legge federale sulla promozione della cultura (Legge sulla promozione della cultura, LPCu)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/854/de",
+      "sha": "fa87b7a2c6d8a6c5787391cec966775a41db7c41d71d05aa35feb5455a14bda8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "c94456be9a575391af4c587e9bea2bad3278abbce403ffea3ac9b3beca805491"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
       "art": "aenderung",
@@ -87,51 +175,311 @@
       "titelFr": "Loi fédérale sur la protection de la nature et du paysage (LPN)",
       "titelIt": "Legge federale sulla protezione della natura e del paesaggio (LPN)",
       "botschaftKey": "BOTSCHAFT-2005-263",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/742/de",
-      "sha": "045c1b3cd0330b0222d42c046d4105e03bf35dd1f44872088be9866b9246b128"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "7b51ad4b3d7d0fe5b3ebf80eb31c6e683ed8f3e42ccc0ac04996056ec297cfe0"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "2547547d1166340c80c67b5219b591aa953554d4cb890b0343f61a1e79bfb68a"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2005-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "c3e92214c7bc97d785177e707698a1e717f4ea39b8a4fd58f809efd2b9ce4cd1"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "d65051071622f7153e8e8c1711ad95ba22d7b88bd47c4a382203ca1481b24710"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/451",
-      "sha": "dc10819edec0cef7ad8ffe70bc8d9018f288ce8f440c43a116f63299b1fef9c1"
+      "sha": "70d8062cf97af53a6271bf28624afe3377973e3acf45eb6329ab8161606f966e"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1967-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/1637_1694_1679",
-      "dateDocument": "1966-07-01",
-      "roFundstelle": "AS 1966 1637",
-      "titelDe": "Bundesgesetz vom 1. Juli 1966 über den Natur- und Heimatschutz (NHG)",
-      "titelFr": "Loi fédérale du 1er juillet 1966 sur la protection de la nature et du paysage (LPN)",
-      "titelIt": "Legge federale del 1o luglio 1966 sulla protezione della natura e del paesaggio (LPN)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/1637_1694_1679/de",
-      "sha": "d2a4d25988fee734c409321e922c4c8601e515b4ff9be8dd0ec4ad2e73ef5fd1"
+      "dateEntryInForce": "2007-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/357",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2007 2701",
+      "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
+      "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/357/de",
+      "sha": "4c89faaf16062ba056e6b227dec8550b93c0d082a05ec8ca15006161e330fc41"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/317",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2005 1869",
+      "titelDe": "Bundesgesetz über den internationalen Kulturgütertransfer (Kulturgütertransfergesetz, KGTG)",
+      "titelFr": "Loi fédérale sur le transfert international des biens culturels (Loi sur le transfert des biens culturels, LTBC)",
+      "titelIt": "Legge federale sul trasferimento internazionale dei beni culturali (Legge sul trasferimento dei beni culturali, LTBC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/317/de",
+      "sha": "28282e59ce11fcc485a3aa41dc28c313574f300fb688ef07dd28289c7fd60afc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 4803",
+      "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+      "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/705/de",
+      "sha": "ce7d34c3a0df76c4571ca13f3fa046795e3e6eebd517c544fde526b363059797"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1822",
+      "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1822_1822_1822/de",
+      "sha": "4baedead3f5cb917b4b2e6639d0bcdefab4cd5d37379c5604b9231d24788dcd1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2480_2480_2480",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2480",
+      "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Telekommunikationsunternehmung des Bundes (Telekommunikationsunternehmungsgesetz, TUG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de télécommunications (Loi sur l'entreprise de télécommunications, LET)",
+      "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle telecomunicazioni della Confederazione (Legge sull'azienda delle telecomunicazioni, LATC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2480_2480_2480/de",
+      "sha": "a00633136809cde3f9e02b1079669dbe780f9ed7a53611eff276a26cbae06f31"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1152_1152_1152",
+      "dateDocument": "1996-06-21",
+      "roFundstelle": "AS 1997 1152",
+      "titelDe": "Bundesgesetz über den Natur- und Heimatschutz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de la nature et du paysage, Modification",
+      "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1152_1152_1152/de",
+      "sha": "03ead761998d55424a8549e48b82a180368db6adbe729b60dd408915ef3b1e4b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155",
+      "dateDocument": "1995-12-21",
+      "roFundstelle": "AS 1997 1155",
+      "titelDe": "Umweltschutzgesetz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de l'environnement, Modification",
+      "titelIt": "Legge sulla protezione dell'ambiente, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1155_1155_1155/de",
+      "sha": "7c28c89ca15ffa20f66597fda16d3d213c9cbfda123cac7f3f9602fdcd521afb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/214_214_214",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1996 214",
+      "titelDe": "Bundesgesetz über den Natur- und Heimatschutz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de la nature et du paysage, Modification",
+      "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/214_214_214/de",
+      "sha": "c1a1798ec1b42e400473b942d85db2c9ac58635d291e68be837104da313c11e9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/__960",
+      "dateDocument": "1996-03-12",
+      "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/__960/de",
+      "sha": "86261bfdf6a5f41391d57bc8e64c93506a1f9d446477e2971757316129ddda0e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4093_4093_4093",
+      "dateDocument": "1995-02-03",
+      "roFundstelle": "AS 1995 4093",
+      "titelDe": "Bundesgesetz vom 3. Februar 1995 über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "titelFr": "Loi fédérale du 3 février 1995 sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
+      "titelIt": "Legge federale del 3 febbraio 1995 sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4093_4093_4093/de",
+      "sha": "8248c29dedd3f8dfd8be6cfd6e07ab1bcc6cd7bda4d5e293982379b53cbc5245"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1860_1860_1860",
+      "dateDocument": "1991-01-24",
+      "roFundstelle": "AS 1992 1860",
+      "titelDe": "Bundesgesetz vom 24. Januar 1991 über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
+      "titelFr": "Loi fédérale du 24 janvier 1991 sur la protection des eaux (LEaux)",
+      "titelIt": "Legge federale del 24 gennaio 1991 sulla protezione delle acque (LPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1860_1860_1860/de",
+      "sha": "91141247ec612a55806a39d2a98b0ba3d2213a2649aef0259f468f96fe26a7d7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/857_857_857",
+      "dateDocument": "1990-10-05",
+      "roFundstelle": "AS 1991 857",
+      "titelDe": "Bundesgesetz vom 5. Oktober 1990 über Finanzhilfen und Abgeltungen (Subventionsgesetz, SuG)",
+      "titelFr": "Loi fédérale du 5 octobre 1990 sur les aides financières et les indemnités (Loi sur les subventions, LSu)",
+      "titelIt": "Legge federale del 5 ottobre 1990 sugli aiuti finanziari e le indennità (Legge sui sussidi, LSu)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/857_857_857/de",
+      "sha": "a22514f69bf61125bc291c91569f6fd4a0215ca3a135ab2823eebd1dad2e48d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/506_506_506",
+      "dateDocument": "1986-06-20",
+      "roFundstelle": "AS 1988 506",
+      "titelDe": "Bundesgesetz vom 20. Juni 1986 über die Jagd und den Schutz wildlebender Säugetiere und Vögel (Jagdgesetz, JSG)",
+      "titelFr": "Loi fédérale du 20 juin 1986 sur la chasse et la protection des mammifères et oiseaux sauvages (Loi sur la chasse, LChP)",
+      "titelIt": "Legge federale del 20 giugno 1986 su la caccia e la protezione dei mammiferi e degli uccelli selvatici (Legge sulla caccia, LCP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/506_506_506/de",
+      "sha": "a0bd7cd1f9df869d9fb71aa7d911971353e4711e06287ca24d5d0198e0bb94b0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/254_254_254",
+      "dateDocument": "1987-06-19",
+      "roFundstelle": "AS 1988 254",
+      "titelDe": "Bundesgesetz über den Natur- und Heimatschutz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de la nature et du paysage, Modification",
+      "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/254_254_254/de",
+      "sha": "1c24a5c7edaa4b9a19b4ad4da18a791380a03fe5e2c7bc6c5e1f60e25b3897a8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/660_660_660",
+      "dateDocument": "1984-12-14",
+      "roFundstelle": "AS 1985 660",
+      "titelDe": "Bundesgesetz vom 14. Dezember 1984 über die Sparmassnahmen 1984 (Anschlussprogramm)",
+      "titelFr": "Loi fédérale du 14 décembre 1984 relative aux mesures d'économie 1984 (Programme complémentaire)",
+      "titelIt": "Legge federale del 14 dicembre 1984 sui provvedimenti di risparmio 1984 (Programma complementare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/660_660_660/de",
+      "sha": "edfd183218e4cc77b84c7f484ea4c3f53124797b62ab0f2379c4385ea2434ae4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1122_1122_1122",
+      "dateDocument": "1983-10-07",
+      "roFundstelle": "AS 1984 1122",
+      "titelDe": "Bundesgesetz vom 7. Oktober 1983 über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale du 7 octobre 1983 sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
+      "titelIt": "Legge federale del 7 ottobre 1983 sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1122_1122_1122/de",
+      "sha": "f7812c004b68a780f8e56d6d808899bf050b7796429e022bcae44aa8f985393a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/2249_2249_2249",
+      "dateDocument": "1977-05-05",
+      "roFundstelle": "AS 1977 2249",
+      "titelDe": "Bundesgesetz vom 5. Mai 1977 über Massnahmen zum Ausgleich des Bundeshaushaltes",
+      "titelFr": "Loi fédérale du 5 mars 1977 instituant des mesures propres à équilibrer les finances fédérales",
+      "titelIt": "Legge federale del 5 marzo 1977 su provvedimenti per equilibrare le finanze federali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/2249_2249_2249/de",
+      "sha": "95a818d7d9ec5db2b4c4f6ea2b35f1488fe4d4c2c1d6e8bb4522ff6847ac1b24"
     }
   ],
-  "sha": "ba190cc30a8f378499bc3fd07eb762f02d88ebed78838e3ed00783f561a041ca"
+  "sha": "b8927ee1d2f3b4efb3079136669035e284858664ba9f91d58674b8f1d6c9cc17"
 }

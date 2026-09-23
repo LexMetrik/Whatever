@@ -1,14 +1,38 @@
 {
   "erlassKey": "GSCHG",
   "sr": "814.20",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "7e6dc469617d4b16d6ea27aea88b52875c751496c5af726a89bdaf59a2b0b260"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/430",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2025 430",
+      "titelDe": "Bundesgesetz über den Wasserbau",
+      "titelFr": "Loi fédérale sur l’aménagement des cours d’eau",
+      "titelIt": "Legge federale sulla sistemazione dei corsi d’acqua",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/430/de",
+      "sha": "d091179b84cfa1b38952ff1e584917b6470645872ad8d9b1eb5b3e9de75696bc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/263",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2022 263",
+      "titelDe": "Bundesgesetz vom 19. März 2021 über die Verminderung der Risiken durch den Einsatz von Pestiziden (Änderung des Chemikaliengesetzes, des Gewässerschutzgesetzes und des Landwirtschaftsgesetzes)",
+      "titelFr": "Loi fédérale du 19 mars 2021 sur la réduction des risques liés à l’utilisation de pesticides (Modification de la loi sur les produits chimiques, de la loi sur la protection des eaux et de la loi sur l’agriculture)",
+      "titelIt": "Legge federale del 19 marzo 2021 sulla riduzione dei rischi associati all’impiego di pesticidi (Modifica della legge sui prodotti chimici, della legge federale sulla protezione delle acque e della legge sull’agricoltura)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/263/de",
+      "sha": "b6b57774868196e12317a1450885d86af4ec6de4ae0f1608b1cb82ca8cbbb3d0"
     },
     {
       "art": "aenderung",
@@ -19,32 +43,73 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung des Bundesgesetzes über die Verminderung der Risiken durch den Einsatz von Pestiziden",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la loi fédérale du 19 mars 2021 sur la réduction des risques liés à l’utilisation de pesticides",
       "titelIt": "Ordinanza concernente un’entrata in vigore parziale della legge federale sulla riduzione dei rischi associati all’impiego di pesticidi",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/2/de",
-      "sha": "fa2a298042632714355995420dfe63fba1b7028a248576200a3dc463e871266b"
+      "sha": "9c69329329be3e63ed5ecd5f469e54b36db7fcd43792beeb7ca483f98b0265c1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "2221eac456e679326658c3bd7825cad4aaace21d42e8ca705cc918a492b54650"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/662",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 662",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/662/de",
+      "sha": "7160dec4d79768b2f37296cac23ffe991093e795e97707cf9d9ab43380c69631"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "48561909ab2220fb14e6f2277ee7c2b6a4df25508cfc2a38c1e501975343b715"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "755d7ab8f701a74d9c35734df95434bb6a7726c3a351394536cd36bbc06c639a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "876ba8a38b06b97a52ac577f69cff48649378562b54bb65cf169548128dcd530"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "85bf071709a0ed5df865920f63c7188405c23af8d14823eecf4c645ef5174467"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
       "art": "aenderung",
@@ -56,8 +121,12 @@
       "titelFr": "Loi fédérale sur la protection des eaux (LEaux)",
       "titelIt": "Legge federale sulla protezione delle acque (LPAc)",
       "botschaftKey": "BOTSCHAFT-2013-1031",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/574/de",
-      "sha": "8e7ea3fb329cb77df08b641d03311ff7c78b15bdee2e404ac6faac0d81f7cb93"
+      "sha": "70c7c02061b872be12171514937c87a647561d8fefe294dd4c9b43fbad3f488b"
     },
     {
       "art": "aenderung",
@@ -68,20 +137,58 @@
       "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG) (Betrifft nur den französischen Text)",
       "titelFr": "Loi fédérale sur la protection des eaux (LEaux)",
       "titelIt": "Legge federale sulla protezione delle acque (LPAc) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/569/de",
-      "sha": "24d8ffd6df20df907faa8312314c742527abbb46bf0a40e053798ded0c6514a0"
+      "sha": "232bba2e413a5d591a8850c36683341217fdc8cee4f24dec4c140dfd59e8c485"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "3e5c01a349851307573af68139e0de462af18850f1a0501ea410fd3c4067f655"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/234",
+      "dateDocument": "2013-09-27",
+      "roFundstelle": "AS 2014 1021",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Aarhus-Konvention und von deren Änderung",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention d'Aarhus et de son amendement",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione di Aarhus e il suo emendamento",
+      "botschaftKey": "BOTSCHAFT-2012-596",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/234/de",
+      "sha": "fa1c87fcd9a0c2edd04b60d2fcaba42e8287299b9c2694c79c0966da1d6942f1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "5fb5b1bb22160edbf0c58f97e2f2a467241cf51021663da9cb7e598c092cad0b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/710",
+      "dateDocument": "2013-11-06",
+      "roFundstelle": "AS 2013 3863",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 22. März 2013 des Landwirtschaftsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 22 mars 2013 de la loi sur l'agriculture",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della la modifica del 22 marzo 2013 della legge sull'agricoltura",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/710/de",
+      "sha": "2727ab0a1ae101b690215ca19d1d5420c8ab097c9a3c41324afe9c42a1253459"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/646",
+      "dateDocument": "2013-03-22",
+      "roFundstelle": "AS 2013 3463",
+      "titelDe": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+      "titelFr": "Loi fédérale sur l'agriculture (Loi sur l'agriculture, LAgr)",
+      "titelIt": "Legge federale sull'agricoltura (Legge sull'agricoltura, LAgr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/646/de",
+      "sha": "9797aeb3e3656b9c130353fbca3adf50ede5624f1e38960d6af1ae14b4f7d0fd"
     },
     {
       "art": "aenderung",
@@ -92,8 +199,11 @@
       "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
       "titelFr": "Loi fédérale sur la protection des eaux (LEaux)",
       "titelIt": "Legge federale sulla protezione delle acque (LPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/491/de",
-      "sha": "52a67ddc2e2c18726415cfa0a5b4f0c85e68d8b18fcdcc5e71b98bb200224154"
+      "sha": "9cced04afec4e61a26213b5784a588c5231995fb001a9694383b4eb1c41026fc"
     },
     {
       "art": "aenderung",
@@ -104,32 +214,90 @@
       "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG) (Renaturierung)",
       "titelFr": "Loi fédérale sur la protection des eaux (LEaux) (Renaturation)",
       "titelIt": "Legge federale sulla protezione delle acque (LPAc) (Rinaturazione)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/620/de",
-      "sha": "3b24a0d25801a1199bef9ca3c352c629c802290a92dc418e677cedf3bc769980"
+      "sha": "da44e43d95d6a9e992a7976bb012d150cd4d6d7b86cda69f460bf5a15d83a6de"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "c0714cd5d81ecfaed94d915bfc7dd3464b12b8b3422804dddeada73b34b742ff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/434",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3233",
+      "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+      "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/434/de",
+      "sha": "fdfacdc3afb7ebe0d2b5cf44c06ed044c5e10e8b67dd04af209d0025282aaa80"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "89a80455429ccec52da68f5f3d786aa00cfc2a5e1aab3e50dd13295210b7c590"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "39818a52f3d1b0d46ce5d43f4f769f3161e686721e6147b36164552748bcf45d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "e55f3566ed6a126dbdaf4d18ff4b8ef3d534dd83d266d360f700bdf77f773a60"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/327",
+      "dateDocument": "2007-12-21",
+      "roFundstelle": "AS 2008 2265",
+      "titelDe": "Bundesgesetz über die Aufhebung und die Vereinfachung von Bewilligungsverfahren",
+      "titelFr": "Loi fédérale sur la suppression et la simplification de procédures d'autorisation",
+      "titelIt": "Legge federale sulla soppressione e la semplificazione delle procedure d'autorizzazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/327/de",
+      "sha": "87bda8080dcbbfd8b81fbf37d7bd4301842b789b272502f77bd69f41d1cb50d5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "bf95ceeace4b3ec9b398dc55f314b027434f645df662a20efa88b069083534bf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
       "art": "aenderung",
@@ -141,8 +309,12 @@
       "titelFr": "Loi fédérale sur la protection des eaux (LEaux)",
       "titelIt": "Legge federale sulla protezione delle acque (LPAc)",
       "botschaftKey": "BOTSCHAFT-2005-114",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/656/de",
-      "sha": "b49c53570df83ace1fa6afa7f23e4c96625864251d9b405a54fe4b6a76276c9a"
+      "sha": "b9e8c4cce3f0870c229d361afd914d653ec9c033a77cac32912f4eaec141bd5d"
     },
     {
       "art": "aenderung",
@@ -153,57 +325,135 @@
       "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
       "titelFr": "Loi fédérale sur la protection des eaux (LEaux)",
       "titelIt": "Legge federale sulla protezione delle acque (LPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/575/de",
-      "sha": "b488386963f43a5c7b04d71f82878d1f9b82a1e20e8080ef44c9a6d60272a0a6"
+      "sha": "b4adbfaa443ef2db1279493a85af88e74bd1f663d8b2ce61b3b6abd05383a30a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "925dab30f176bf963733ca9d69ea9e839c315e1f12b072cc3f5ca5c926d13803"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/542",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2005 4099",
+      "titelDe": "Bundesgesetz über das Vernehmlassungsverfahren (Vernehmlassungsgesetz, VlG)",
+      "titelFr": "Loi fédérale sur la procédure de consultation (Loi sur la consultation, LCo)",
+      "titelIt": "Legge federale sulla procedura di consultazione (Legge sulla consultazione, LCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/542/de",
+      "sha": "1c6b3aa9a50cdddd534d4beb4252f9ca45c0a5a0f598d244af0934a2323f6f40"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "b12965da2b446c0946634d6687dada2046d9aa865ea85c7ec1fd3e5faad6c3c1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 1633",
+      "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+      "titelIt": "Legge federale sul programma di sgravio 2003",
+      "botschaftKey": "BOTSCHAFT-2003-887",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/200/de",
+      "sha": "15626724d1c5c67b2ebd7840b853b7472dae4cd91e652f4b223aba221dc9703c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "9fd25d142968ef1b7c1ef804d9491f73e55b329d04c1d6b17ef19282f87b275a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 4803",
+      "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+      "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/705/de",
+      "sha": "ce7d34c3a0df76c4571ca13f3fa046795e3e6eebd517c544fde526b363059797"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.20",
-      "sha": "29f914c2713c7003751281da60f205e219264a8ca326386f0122a26ddc36bf6a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1992-11-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1860_1860_1860",
-      "dateDocument": "1991-01-24",
-      "roFundstelle": "AS 1992 1860",
-      "titelDe": "Bundesgesetz vom 24. Januar 1991 über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
-      "titelFr": "Loi fédérale du 24 janvier 1991 sur la protection des eaux (LEaux)",
-      "titelIt": "Legge federale del 24 gennaio 1991 sulla protezione delle acque (LPAc)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1860_1860_1860/de",
-      "sha": "34ecf156ff94984a36c1f23fc25f8dabbf1f3f6521498dfb88f88576d97e0a38"
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/3033_3033_3033",
+      "dateDocument": "1998-04-29",
+      "roFundstelle": "AS 1998 3033",
+      "titelDe": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+      "titelFr": "Loi fédérale sur l'agriculture (Loi sur l'agriculture, LAgr)",
+      "titelIt": "Legge federale sull'agricoltura (Legge sull'agricoltura, LAgr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/3033_3033_3033/de",
+      "sha": "c27fc92e23d567d09f90a2db3b247e4fad0a6a8ccdf3cb37709a9fad9e8dc837"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1972-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/950_958_1120",
-      "dateDocument": "1971-10-08",
-      "roFundstelle": "AS 1972 950",
-      "titelDe": "Bundesgesetz vom 8. Oktober 1971 über den Schutz der Gewässer gegen Verunreinigung (Gewässerschutzgesetz)",
-      "titelFr": "Loi fédérale du 8 octobre 1971 sur la protection des eaux contre la pollution (Loi sur la protection des eaux)",
-      "titelIt": "Legge federale del 8 ottobre 1971 contro l'inquinamento delle acque",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/950_958_1120/de",
-      "sha": "d02db2a072143f74fa7ec0b7c285a0e8690198883fb42ff99746ef637f457ec9"
+      "dateEntryInForce": "1997-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243",
+      "dateDocument": "1997-06-20",
+      "roFundstelle": "AS 1997 2243",
+      "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG), Änderung",
+      "titelFr": "Loi fédérale sur la protection des eaux (LEaux), Modification",
+      "titelIt": "Legge federale sulla protezione delle acque (LPAc), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2243_2243_2243/de",
+      "sha": "90e827b9a7f38258a25c43af398c5d8e1cb86771059b972c8fbbb1520a34455f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155",
+      "dateDocument": "1995-12-21",
+      "roFundstelle": "AS 1997 1155",
+      "titelDe": "Umweltschutzgesetz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de l'environnement, Modification",
+      "titelIt": "Legge sulla protezione dell'ambiente, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1155_1155_1155/de",
+      "sha": "484bff67e9158184661a4ee8d00e5730aa8446ad91a05b9e3c284a5ea9cb3a2c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1634_1634_1634",
+      "dateDocument": "1994-03-18",
+      "roFundstelle": "AS 1994 1634",
+      "titelDe": "Bundesgesetz vom 18. März 1994 über die Sanierungsmassnahmen 1993",
+      "titelFr": "Loi fédérale du 18 mars 1994 sur les mesures d'assainissement 1993",
+      "titelIt": "Legge federale del 18 marzo 1994 sulle misure di risanamento 1993",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1634_1634_1634/de",
+      "sha": "d714b9c720cfe2867fd71dc9ab88d559102312f7ff9d82cdcbcfa0500940f5c5"
     }
   ],
-  "sha": "d09b7a7f09d9cbad96fe0f2807b2f7c587b38d562c2a00658d841e4af8a5ef51"
+  "sha": "07e99fb4a16bfd2c61b41fc12ee32e7641722949002f83d641ccb84894005501"
 }
