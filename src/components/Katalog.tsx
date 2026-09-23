@@ -413,7 +413,9 @@ export function KategorieSektion({ kat, karten, ohneKopf, alleOffen }: { kat: Ob
           </select>
           <p id={`vorlagen-filter-scope-${kat.id}`} className="ub-filter-fuss min-h-5">
             <span>Rechtsgebiet dieser Vorlagen · Gesetzes- und Entscheidtext über die Suche oben</span>
-            <span className="num"><span className="text-ink-900">{verfuegbar.length}</span> verfügbar</span>
+            {/* K5 (23.9.2026): zählt, was das VorlagenRegister zeigt — nur echte
+                Vorlagen; vorher 27 inkl. `gerichtszitat` gegen «26 Vorlagen» im Kopf. */}
+            <span className="num"><span className="text-ink-900">{verfuegbar.filter(istVorlage).length}</span> verfügbar</span>
           </p>
         </div>
       )}

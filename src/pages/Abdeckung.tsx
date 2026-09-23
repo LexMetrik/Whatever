@@ -1,9 +1,7 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
-import { ladeBrowseManifest } from '../lib/normtext/browse';
-import { ladeEntscheidManifest } from '../lib/rechtsprechung/browse';
-import { ladeMaterialManifest } from '../lib/materialien/browse';
+import { STARTSEITE_ZAEHLER as Z } from '../data/startseiteZaehler.generated';
 
 // ─── Seite «Was ist durchsuchbar» — Korpus-Abdeckung (UI-NAV S3/E1) ─────────
 //
@@ -18,14 +16,16 @@ import { ladeMaterialManifest } from '../lib/materialien/browse';
 // je Bestand EINE Zeile mit Haarlinie — links Registerstrich, Titel und Zahl,
 // rechts die Prosa; die Grenzen der Suche als abgesetzte Zeile auf `--well`
 // statt Hinweis-Kasten. Links in Tinte mit Registerkante statt Messing (F0.2).
+//
+// K5 · EINE ZÄHLQUELLE (§5/§8, deklariert): bis hierher zählte die Seite zur
+// Laufzeit aus drei Manifesten mit eigener Regel — gemessen 23.9.2026 6'345
+// «Entscheide» (inkl. 1'252 Verweis-Einträge), wo /rechtsprechung und die
+// Startseite 5'093 sagen. Jetzt stehen hier dieselben Zahlen wie überall
+// (`STARTSEITE_ZAEHLER`, `gen:zaehler`, Drift-Tor `check:zaehler`); die
+// Verweise sind eine eigene, benannte Zahl aus derselben Quelle, nie addiert.
+// Beweis: `src/tests/zaehler-eine-quelle.test.tsx`.
 
-interface Zahlen {
-  bundVolltext: number;
-  kantonTitel: number;
-  bge: number;
-  entscheideGesamt: number;
-  materialien: number;
-}
+const nf = (n: number) => n.toLocaleString('de-CH');
 
 /** Eine Bestandszeile: Registerstrich · Titel · Zahl | Prosa. */
 function Bestand({ reg, titel, zahl, einheit, children }: {
@@ -45,25 +45,6 @@ function Bestand({ reg, titel, zahl, einheit, children }: {
 }
 
 export function Abdeckung() {
-  const [z, setZ] = useState<Zahlen | null>(null);
-
-  useEffect(() => {
-    let abgebrochen = false;
-    Promise.all([ladeBrowseManifest(), ladeEntscheidManifest(), ladeMaterialManifest()]).then(([g, e, m]) => {
-      if (abgebrochen) return;
-      const erlasse = g?.erlasse ?? [];
-      const entscheide = e?.entscheide ?? [];
-      setZ({
-        bundVolltext: erlasse.filter((x) => x.ebene === 'bund' && x.status === 'snapshot').length,
-        kantonTitel: erlasse.filter((x) => x.ebene === 'kanton').length,
-        bge: entscheide.filter((x) => x.bgeReferenz).length,
-        entscheideGesamt: entscheide.length,
-        materialien: m?.materialien?.length ?? 0,
-      });
-    });
-    return () => { abgebrochen = true; };
-  }, []);
-
   return (
     <div className="space-y-6">
       <SeitenKopf overline="Suche" titel="Was ist durchsuchbar" />
@@ -75,12 +56,12 @@ export function Abdeckung() {
       </p>
 
       <div className="space-y-6">
-        <Bestand reg="g" titel="Gesetze" zahl={z ? `${z.bundVolltext} / ${z.kantonTitel}` : '…'}
-          einheit="Bundeserlasse im Volltext / kantonale Erlasse">
+        <Bestand reg="g" titel="Gesetze" zahl={nf(Z.gesetzeVolltext)} einheit="Erlasse im Volltext">
           <p>
-            <strong className="font-semibold text-ink-900">{z ? z.bundVolltext : '…'} Bundeserlasse</strong> sind im
+            <strong className="font-semibold text-ink-900">{nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse</strong> und{' '}
+            <strong className="font-semibold text-ink-900">{nf(Z.gesetzeInternationalVolltext)} Staatsverträge</strong> sind im
             Volltext durchsuchbar — die Suche findet einzelne Artikel nach Wortlaut. Die{' '}
-            <strong className="font-semibold text-ink-900">{z ? z.kantonTitel : '…'} kantonalen Erlasse</strong> liegen im
+            <strong className="font-semibold text-ink-900">{nf(Z.gesetzeKantonVolltext)} kantonalen Erlasse</strong> liegen im
             Reader ebenfalls im Volltext vor. In der Suche sind sie <em>nach Titel</em> immer auffindbar,
             im <em>Wortlaut</em> nur über die Online-Suche: der ausgelieferte Artikel-Volltextindex ist
             seit dem 1.9.2026 wieder Bund-only, kantonale Artikel kommen von unserem Suchdienst. Ohne
@@ -90,23 +71,28 @@ export function Abdeckung() {
           </p>
         </Bestand>
 
-        <Bestand reg="r" titel="Rechtsprechung" zahl={z ? z.entscheideGesamt : '…'}
-          einheit={`Entscheide, davon ${z ? z.bge : '…'} BGE`}>
+        <Bestand reg="r" titel="Rechtsprechung" zahl={nf(Z.rechtsprechungVolltext)}
+          einheit={`Entscheide im Volltext, davon ${nf(Z.rechtsprechungLeitentscheide)} BGE`}>
           <p>
-            Im Bestand sind <strong className="font-semibold text-ink-900">{z ? z.entscheideGesamt : '…'} Entscheide</strong>,
-            davon <strong className="font-semibold text-ink-900">{z ? z.bge : '…'} amtliche Leitentscheide (BGE)</strong> mit
+            Im Bestand sind <strong className="font-semibold text-ink-900">{nf(Z.rechtsprechungVolltext)} Entscheide</strong>,
+            davon <strong className="font-semibold text-ink-900">{nf(Z.rechtsprechungLeitentscheide)} amtliche Leitentscheide (BGE)</strong> mit
             Regeste. Ein BGE-Zitat («BGE 152 I 65») springt aus der Suche direkt in den Entscheid; ist es
             nicht im Bestand, verweist die Suche ehrlich auf die amtliche Fassung beim Bundesgericht.
             Daten: OpenCaseLaw — massgeblich bleibt die amtliche Fassung. Keine Rechtsberatung.
+          </p>
+          <p>
+            Nicht mitgezählt sind <strong className="font-semibold text-ink-900">{nf(Z.rechtsprechungVollurteilVerweise)} Verweis-Einträge</strong>:
+            das vollständige Urteil des Bundesgerichts zu einem BGE steht als eigener Eintrag in der
+            Liste und führt in den Leitentscheid — es ist kein weiterer Entscheid.
           </p>
           <p className="font-sans text-body-s">
             <Link to="/rechtsprechung" className="ab-link">Zur Rechtsprechung →</Link>
           </p>
         </Bestand>
 
-        <Bestand reg="m" titel="Materialien" zahl={z ? z.materialien : '…'} einheit="amtliche Ressourcen">
+        <Bestand reg="m" titel="Materialien" zahl={nf(Z.materialien)} einheit="amtliche Ressourcen">
           <p>
-            <strong className="font-semibold text-ink-900">{z ? z.materialien : '…'} amtliche Ressourcen</strong>{' '}
+            <strong className="font-semibold text-ink-900">{nf(Z.materialien)} amtliche Ressourcen</strong>{' '}
             (Kreisschreiben, Leitfäden, Wegleitungen, Rundschreiben) — faktisches Soft-Law ohne
             Gesetzesrang, je mit Live-Link zur amtlichen Fassung.
           </p>

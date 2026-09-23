@@ -137,12 +137,21 @@ function zaehle() {
   // (systematik.ts, Kommentar am Listenende) — sie steht als eigene Zeile, mit
   // ihrer eigenen Zahl aus derselben Regel.
   const international = bundVolltext.filter((e) => e.rechtsgebiet === 'international');
+  // K5 (W2·29-WERKBANK-KATALOGE, 23.9.2026): die Säule «Bundesrecht» — Bund OHNE
+  // International, dieselbe Menge wie Kachel und Tab «Bundesrecht» in /gesetze.
+  // Der /gesetze-Kopf zählte die 28 Staatsverträge sonst in den Bundeserlassen
+  // UND daneben (231 + 28). Bundesrecht + International = gesetzeBundVolltext.
+  const bundesrecht = bundVolltext.length - international.length;
 
   // Rechtsprechung: Nicht-Verweis-Entscheide = echte Volltext-Snapshots (Verweise
   // sind Redirect-Stubs auf ein anderes Urteil, s. NewsHeader/Rechtsprechung.tsx).
   const r = JSON.parse(readFileSync(RSPR_REGISTER, 'utf8')) as { erzeugt: string; entscheide: EntscheidEintrag[] };
   const echteEntscheide = r.entscheide.filter((e) => !e.verweis);
   const entscheide = echteEntscheide.length;
+  // K5: Verweis-Einträge (das vollständige Urteil zu einem BGE, eigener Eintrag
+  // mit Deep-Link in den Leitentscheid) — getrennt ausgewiesen, nie in die
+  // Entscheid-Zahl gemischt (/abdeckung zählte bis K5 beides zusammen).
+  const vollurteilVerweise = r.entscheide.length - entscheide;
   // D26 · je Sachgebiet + Leitentscheide. Sachgebiete ohne Entscheid fallen weg
   // (nie eine 0-Zeile behaupten, §8 — dieselbe Regel wie bei den Behörden und
   // wie in `zaehleSachgebiete`, das die Kacheln der Übersicht speist).
@@ -208,9 +217,11 @@ function zaehle() {
     gesetzeVolltext: bund + kanton,
     kantonErlassZahlen,
     bundSystematik,
+    gesetzeBundesrechtVolltext: bundesrecht,
     gesetzeInternationalVolltext: international.length,
     internationalKuerzel: international.slice(0, KUERZEL_PRO_ZEILE).map((e) => e.kuerzel),
     rechtsprechungVolltext: entscheide,
+    rechtsprechungVollurteilVerweise: vollurteilVerweise,
     rechtsprechungSachgebiete,
     rechtsprechungLeitentscheide,
     materialien,
@@ -248,12 +259,18 @@ function baue(): string {
     '   *  `lib/normtext/systematik.ts`, Anker `/gesetze?ebene=bund#sys-<id>`),\n' +
     '   *  je Kategorie die Zahl der VOLLTEXT-Erlasse und bis zu vier Kürzel. */\n' +
     '  bundSystematik: Array<{ nr: string; id: string; titel: string; kuerzel: string[]; anzahl: number }>;\n' +
+    '  /** K5: Bundeserlasse der Säule «Bundesrecht» im Volltext (ohne International) —\n' +
+    '   *  Bundesrecht + International = gesetzeBundVolltext. */\n' +
+    '  gesetzeBundesrechtVolltext: number;\n' +
     '  /** Bundeserlasse der Säule «International» im Volltext (rechtsgebiet international). */\n' +
     '  gesetzeInternationalVolltext: number;\n' +
     '  /** Bis zu vier Kürzel der Säule «International» (Register-Reihenfolge). */\n' +
     '  internationalKuerzel: string[];\n' +
     '  /** Gerichtsentscheide im Volltext (Nicht-Verweise). */\n' +
     '  rechtsprechungVolltext: number;\n' +
+    '  /** K5: Verweis-Einträge (vollständiges Urteil zu einem BGE, Deep-Link in den\n' +
+    '   *  Leitentscheid) — getrennt von `rechtsprechungVolltext`, nie addiert. */\n' +
+    '  rechtsprechungVollurteilVerweise: number;\n' +
     '  /** W2·24-D26: Entscheide je Sachgebiet (Ordnung/Label aus `GEBIETE`),\n' +
     '   *  Zählregel identisch zu `zaehleSachgebiete` (Verweise raus); Sachgebiete\n' +
     '   *  ohne Entscheid fehlen (§8). Ziel je Zeile: `/rechtsprechung?rg=<id>`. */\n' +
