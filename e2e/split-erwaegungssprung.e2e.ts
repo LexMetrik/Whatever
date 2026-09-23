@@ -27,8 +27,17 @@
 // Viewport — die Zusage wäre dann scheinbar gehalten, ohne dass gesprungen
 // wurde. Der Referenzfall (ZGB Art. 684 → BGE 151 III 377, E. 2.3.1) scrollt
 // gemessen ~3700 px.
+//
+// FLACKER-WURZEL (23.9.2026, CI-Lauf 35868822283 Shard 4, Queue-Lauf 35815367580):
+// Das Pane stand 20 s auf «Der Entscheid wird abgerufen …». Nicht die App war
+// langsam, sondern die Wartung: `expect(…).toBeVisible()` auf ein fehlendes
+// Element rendert je Poll einen Aria-Snapshot des ganzen Body — mit dem ZGB im
+// DOM Sekunden pro Poll, im Hauptthread der Seite. Darum warten die Schritte,
+// deren Ziel erst NACH dem Erlass erscheint, über `warteSichtbar` (Messung und
+// Begründung dort). Schranken und Aussagen unverändert (§6.3).
 import { test, expect, type Page, type Locator } from '@playwright/test'
 import { panelAufziehen } from './helpers/panelOeffnen'
+import { warteSichtbar, warteImViewport } from './helpers/warteSichtbar'
 
 const ZIEL = '#e-2-3-1'
 const CHIP = 'a[href*="bge_151_III_377"]'
@@ -47,13 +56,13 @@ async function gesetzImHauptfenster(page: Page) {
 test('⧉ öffnet den Entscheid als Pane — und das Pane steht auf der Erwägung', async ({ page }) => {
   await gesetzImHauptfenster(page)
   const chip = page.locator('[data-v3-panel]').locator(CHIP).first()
-  await expect(chip).toBeVisible({ timeout: 20_000 })
+  await warteSichtbar(chip, 20_000)
   // (a) Die Fundstellen-Absicht hängt am Link, den der ⧉ weiterreicht.
   await expect(chip).toHaveAttribute('href', /norm=Art\.(%20|\+| )684(%20|\+| )ZGB/)
   await chip.locator('xpath=ancestor::span[1]').locator('button[title*="nebeneinander"]').click()
 
   const pane = page.locator('[data-pane="sekundaer"]')
-  await expect(pane.locator(ZIEL)).toBeVisible({ timeout: 20_000 })
+  await warteSichtbar(pane.locator(ZIEL), 20_000)
   await expect(pane.locator(ZIEL)).toBeInViewport({ timeout: 15_000 })
   // (c) Der Sprung hat den PANE-Container bewegt, nicht bloss zufällig gepasst.
   expect(await paneScroll(pane)).toBeGreaterThan(500)
@@ -69,10 +78,10 @@ test('Gesetz IM Pane: Chip-Klick navigiert pane-lokal auf die Erwägung', async 
   // Das Panel portaliert AUS dem Pane heraus (H2-Befund) — darum an `page`.
   await panelAufziehen(page, pane)
   const chip = page.locator('[data-v3-panel]').locator(CHIP).first()
-  await expect(chip).toBeVisible({ timeout: 20_000 })
+  await warteSichtbar(chip, 20_000)
   await chip.click()
 
-  await expect(pane.locator(ZIEL)).toBeVisible({ timeout: 20_000 })
+  await warteSichtbar(pane.locator(ZIEL), 20_000)
   await expect(pane.locator(ZIEL)).toBeInViewport({ timeout: 15_000 })
   expect(await paneScroll(pane)).toBeGreaterThan(500)
 
@@ -86,9 +95,9 @@ test('Gesetz IM Pane: Chip-Klick navigiert pane-lokal auf die Erwägung', async 
 test('Rückweg (F7): «zurück» führt aus dem Entscheid ins Gesetz an den Artikel', async ({ page }) => {
   await gesetzImHauptfenster(page)
   const chip = page.locator('[data-v3-panel]').locator(CHIP).first()
-  await expect(chip).toBeVisible({ timeout: 20_000 })
+  await warteSichtbar(chip, 20_000)
   await chip.click()                                    // Hauptfenster-Navigation
-  await expect(page.locator(ZIEL)).toBeInViewport({ timeout: 20_000 })
+  await warteImViewport(page.locator(ZIEL), 20_000)
   await expect(page).toHaveURL(/norm=/)
 
   await page.goBack()
