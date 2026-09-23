@@ -70,7 +70,7 @@ type Optionen = { timeout?: number } & Record<string, unknown>
 /** Globaler Schlüssel des Stolperdrahts — die Wächter-Spec liest ihn, OHNE diese
  *  Datei zu importieren (ein Import würde die Registrierung selbst auslösen und
  *  den Draht blind machen). */
-export const VORWARTEN_MARKE = Symbol.for('lexmetrik.e2e.expectVorwarten')
+const VORWARTEN_MARKE = Symbol.for('lexmetrik.e2e.expectVorwarten')
 type Marke = { registriert: true; aufrufe: number }
 
 const GLOBAL = globalThis as unknown as Record<symbol, Marke | undefined>
