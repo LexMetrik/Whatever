@@ -1944,6 +1944,13 @@
        (§17) — gemessen ändert es das Druckbild von genau diesen Elementen,
        kein anderes `lc-btn*` überlebte den Druck ohnehin. */
     header.lc-glass, footer, nav, button, [class*='lc-btn'], .lc-live { display: none !important; }
+    /* A-2 (S6-W1a, 23.9.2026): das Erlass-Blatt samt Scrim ist Bedienfläche,
+       keine Fundstelle. Gemessen (Audit A): offen gedruckt lag es über dem
+       Erlasstitel der ersten Seite, der Scrim graute @390 die ganze Seite ein.
+       Über die Daten-Anker (`v3/LeserPanelZone`), nicht über Klassen — die
+       Gestalt wechselt je Breite, die Anker nicht. Bewacht:
+       `e2e/leser-v3-scrim-b7n1.e2e.ts` (Druck) und `druck-fundstellen.test.ts`. */
+    [data-v3-panel-spur], [data-v3-panel-scrim] { display: none !important; }
     body { background: #fff; }
     .lc-card, [class*='shadow'] { box-shadow: none !important; }
     .lc-reveal { animation: none !important; }
@@ -3029,6 +3036,27 @@
     content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     width: 100%; height: 100%;
     min-width: var(--tap-ziel-komfort); min-height: var(--tap-ziel-komfort);
+  }
+  /* ── D-7 (S6-W1a, 23.9.2026) · TREFFERFLÄCHEN IM UNTEN ANGESCHLAGENEN BLATT ──
+     Gemessen @390 am lokalen Build (Audit D-7 bestätigt): Reiter 35 px,
+     Filterknöpfe 28 px, Listen-Links 24 px — unter dem Komfortmass der
+     Finger-Zone (`--tap-ziel-komfort`, WCAG 2.2 SC 2.5.5). Reiter und Filter
+     wachsen WIRKLICH: sie stehen in Zeilen, deren Nachbarn eine überlappende
+     Fläche träfen. Die Links der Listen wachsen wie das ✕ nur in der
+     TREFFERFLÄCHE (`::after`, Technik von `.lc-schliessknopf-komfort`): zwei
+     Links trennt immer Nicht-Bedien-Text (Regeste, Titel), und die knappe
+     Liste verlöre sonst je Eintrag 20 px. Nur die Gestalt `'unten'` — am
+     Desktop zielt eine Maus. Über die Daten-Anker der Hülle, damit die
+     Tafeln (eigene Bau-Einheiten) nichts davon wissen müssen. Bewacht:
+     `e2e/leser-v3-scrim-b7n1.e2e.ts` (D-7). */
+  [data-v3-panel-form='unten'] [role='tab'],
+  [data-v3-panel-form='unten'] [data-v3-panel-filter] button {
+    min-height: var(--tap-ziel-komfort);
+  }
+  [data-v3-panel-form='unten'] [role='tabpanel'] a[href] { position: relative; }
+  [data-v3-panel-form='unten'] [role='tabpanel'] a[href]::after {
+    content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 100%; min-height: var(--tap-ziel-komfort);
   }
   /* Senkrechte Rand-SCHIENE der eingeklappten Gliederung (C5b, v3/leisteAufbau).
      W2·29 S3: kein Kasten mehr (F0.6 Trennung über Linien) — die 2-px-Tintenlinie

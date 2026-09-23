@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { normArtEingabe, loeseArtikelEingabe, pfadLabels } from '../pages/gesetz-leser/suchTreffer';
+import { kanonischerAnkerToken, normArtEingabe, loeseArtikelEingabe, pfadLabels } from '../pages/gesetz-leser/suchTreffer';
 import type { Sektion } from '../lib/normtext/browse';
 
 // W2·10-UI-NAV/R1+R2: die reinen Ableitungen der Reader-Navigation. Die DOM-
@@ -97,5 +97,25 @@ describe('pfadLabels — «Sie sind hier» aus dem Scroll-Spy-Zustand', () => {
   it('kein aktiver Pfad ⇒ leere Liste', () => {
     expect(pfadLabels(BAUM, [])).toEqual([]);
     expect(pfadLabels([], ['sek-1'])).toEqual([]);
+  });
+});
+
+// Nebenfund S6 (Audit E, 23.9.2026): `/gesetze/bund/OR#art-336c` sprang nicht,
+// weil der Token `336_c` heisst. Rot zu bekommen: in `kanonischerAnkerToken`
+// den unscharfen Zweig streichen.
+describe('kanonischerAnkerToken — Anker der Adresse auf den Erlass-Token', () => {
+  const TOKENS = ['1', '336', '336_a', '336_c', '257_d', '6a', '6_a_bis'];
+  it('exakter Token bleibt, wie er ist', () => {
+    expect(kanonischerAnkerToken('336_c', TOKENS)).toBe('336_c');
+  });
+  it('#art-336c → 336_c, #art-257D → 257_d (Schreibung ohne Unterstrich/Gross)', () => {
+    expect(kanonischerAnkerToken('336c', TOKENS)).toBe('336_c');
+    expect(kanonischerAnkerToken('257D', TOKENS)).toBe('257_d');
+  });
+  it('mehrdeutige Normalform ⇒ kein Rate-Sprung, der rohe Token bleibt (§8)', () => {
+    // «6a» ist exakt vorhanden; «6_a» träfe unscharf nur «6a» — eindeutig.
+    expect(kanonischerAnkerToken('6_a', TOKENS)).toBe('6a');
+    expect(kanonischerAnkerToken('9z', TOKENS)).toBe('9z');
+    expect(kanonischerAnkerToken('1a', ['1_a', '1a_'])).toBe('1a');
   });
 });

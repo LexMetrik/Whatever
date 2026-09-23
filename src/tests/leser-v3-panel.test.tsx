@@ -46,8 +46,10 @@ function kante(key: string, status: BezugStatus, datum = '2022-03-14'): Bezug {
 // die wir nicht haben» lebt unverändert an der Funktionszeile weiter
 // (`parts/Funktionszeile.tsx`: `anzahl > 0` filtert die Rubrik heraus).
 describe('OEFFNER_WORT / OEFFNER_NAME — der Kopf-Griff nennt den ERLASS', () => {
-  it('das Wort am Knopf ist unveränderlich und heisst «Erlass»', () => {
-    expect(OEFFNER_WORT).toBe('Erlass');
+  // §6.3-DEKLARATION (S6-W1a, 23.9.2026): «Erlass» → «Erlass-Blatt» — EIN Name
+  // für Öffner, Kopf, Tastenhilfe und Funktionszeile (C-1/D-5, gewollt).
+  it('das Wort am Knopf ist unveränderlich und heisst «Erlass-Blatt»', () => {
+    expect(OEFFNER_WORT).toBe('Erlass-Blatt');
   });
 
   it('der Accessible Name nennt die vier Reiter des Blattes', () => {
@@ -219,7 +221,9 @@ describe('Tastatur-Belegung — die Hilfe zeigt nur, was auch wirkt', () => {
 
   it('mit Panel steht «r» drin, mit seiner Wirkung', () => {
     const r = belegung(true).find((b) => b.taste === 'r');
-    expect(r?.wirkung).toMatch(/Rechtsprechung/);
+    // §6.3-DEKLARATION (S6-W1a, 23.9.2026): EIN Name (D-5) und Umschalten (D-8)
+    // — bis dahin «Rechtsprechung und Kontext öffnen».
+    expect(r?.wirkung).toBe('Erlass-Blatt öffnen oder schliessen');
   });
 
   it('die bestehenden Tasten bleiben unverändert und in ihrer Reihenfolge', () => {

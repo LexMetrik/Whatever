@@ -105,7 +105,18 @@ export const OEFFNER_SELEKTOR = '[data-v3-panel-oeffner]';
  * klappt etwas auf. F0.9 («jeder Kopf-Griff trägt ein Wort», G14) bleibt damit
  * auf JEDER Breite eingelöst, und zwar mit demselben Wort auf allen.
  */
-export const OEFFNER_WORT = 'Erlass';
+/**
+ * ── C-1/D-5/E-10 (S6-W1a, 23.9.2026) · EIN NAME: «ERLASS-BLATT» ─────────────
+ * Gemessen am Stand 8a4d74c96 trug dieselbe Fläche FÜNF Namen: «Erlass ▾» am
+ * Öffner, «Erlass-Blatt öffnen …» als dessen Accessible Name, «Rechtsprechung
+ * & Kontext» im eigenen Kopf, «Rechtsprechung und Kontext öffnen» in der
+ * Tastenhilfe und «im Blatt öffnen» an der Funktionszeile. Seither heisst sie
+ * überall «Erlass-Blatt» (Kopf `./LeserPanel`, Tastenhilfe
+ * `../parts/leserTastaturBelegung`, Griff `../parts/ArtikelLeser.bezuegeFuss`).
+ * Das ▾ ist gefallen: es sagte «Menü», der Griff öffnet aber eine Fläche mit
+ * eigenem Kopf und ✕ (Audit D-5); den Zustand trägt `aria-expanded`.
+ */
+export const OEFFNER_WORT = 'Erlass-Blatt';
 
 /**
  * Voller Accessible-Name des Öffners — er sagt, WAS sich öffnet.
@@ -117,7 +128,14 @@ export const OEFFNER_WORT = 'Erlass';
  * und keine Zahl — die Zahl steht an genau einem Ort, und das ist die
  * Funktionszeile des Artikels.
  */
-export const OEFFNER_NAME = 'Erlass-Blatt öffnen — Entscheide, Änderungen, Materialien und Anwendung';
+export const OEFFNER_NAME = `${OEFFNER_WORT} — ${aufzaehlung(PANEL_REITER.map((r) => r.label))}`;
+
+/** «a, b und c» — der Name folgt der Reiter-Tabelle, statt sie abzuschreiben
+ *  (§5; S6-W1a: bis 23.9.2026 stand die Liste als Literal). Das «öffnen» fiel
+ *  mit D-8: der Griff schaltet um, den Zustand sagt `aria-expanded`. */
+function aufzaehlung(teile: readonly string[]): string {
+  return teile.length < 2 ? teile.join('') : `${teile.slice(0, -1).join(', ')} und ${teile[teile.length - 1]}`;
+}
 
 /**
  * ── N1/D33 (7.9.2026) · HIER STANDEN DIE ZAHL-MARKE UND IHR ATTRIBUT ────────

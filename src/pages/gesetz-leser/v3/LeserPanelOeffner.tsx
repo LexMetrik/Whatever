@@ -75,7 +75,8 @@ import { kopfGriffKlassen } from './kopfStufen';
 // eine zweite Ableitung derselben Frage wäre eine zweite Wahrheit.
 
 /**
- * Der Kopf-Griff «Erlass ▾» — EINER je Zuschnitt.
+ * Der Kopf-Griff «Erlass-Blatt» — EINER je Zuschnitt (bis S6-W1a 23.9.2026
+ * «Erlass ▾»; Umbenennung und Wegfall des ▾: `OEFFNER_WORT` in `./panelModell`).
  *
  * ── D35-F2 (Entscheid David 7.9.2026, Variante A) · HIER STAND EIN ZÄHLER ───
  * Bis hierher hiess dieses Bauteil `PanelZaehler` und trug «⚖ Rechtsprechung
@@ -125,6 +126,8 @@ export function ErlassGriff({ offen, panelId, kompakt, onKlick }: {
       aria-controls={offen ? panelId : undefined}
       aria-label={OEFFNER_NAME}
       title={OEFFNER_NAME}
+      // D-8 (S6-W1a): «r» schaltet dasselbe um wie dieser Klick (`../parts/LeserTastatur`).
+      aria-keyshortcuts="r"
       data-v3-panel-zaehler
       // A3: der Öffner ist für die Aussenklick-Regel des Panels kein «Aussen».
       // Sammel-Marker statt Aufzählung zweier Selektoren (`OEFFNER_SELEKTOR` in
@@ -145,7 +148,6 @@ export function ErlassGriff({ offen, panelId, kompakt, onKlick }: {
           Griff, die Zeile wird also nicht enger — die Ort-Zone (`min-w-0
           truncate`) kann ohnehin auf keiner Breite überlaufen. */}
       <span className="whitespace-nowrap">{OEFFNER_WORT}</span>
-      <span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span>
     </button>
   );
 }

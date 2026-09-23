@@ -41,8 +41,16 @@ import { expect, type Locator, type Page } from '@playwright/test'
  */
 export async function panelAufziehen(page: Page, bereich: Page | Locator = page): Promise<void> {
   const zaehler = bereich.locator('[data-v3-panel-zaehler]')
+  // ── S6-W1a (23.9.2026) · D-6: DAS BLATT KANN SCHON OFFEN STEHEN ────────────
+  // Seit D-6 merkt sich das Blatt offen/zu je Erlass (`v3/blattGedaechtnis`);
+  // nach `reload()` oder Zurück steht es wieder offen — und der Griff ist ein
+  // UMSCHALTER, ein Klick schlösse es. Die Geste dieses Helfers heisst «aufziehen», also: nur
+  // klicken, wenn es zu ist. Zwei Frames abwarten, damit das Wiederherstellen
+  // (ein Effekt im selben Commit wie der erste Griff) sicher gelaufen ist.
   if (await zaehler.count() > 0) {
-    await zaehler.first().click()
+    await expect(zaehler.first()).toBeVisible({ timeout: 20_000 })
+    await zaehler.first().evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))))
+    if (await zaehler.first().getAttribute('aria-expanded') !== 'true') await zaehler.first().click()
   } else {
     // Der Weg, den es auf JEDEM Zuschnitt gibt: «Ansicht ▾» bzw. «···».
     await bereich.locator('[data-v3-ansicht]').first().click()

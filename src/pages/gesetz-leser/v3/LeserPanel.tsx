@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from 'react';
 import type { BestimmungsWort } from './erlassAnsicht';
-import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
+import { OEFFNER_WORT, PANEL_REITER, normZitat, reiterTitel, type PanelReiter } from './panelModell';
 import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
 
 /** Register je Reiter (W2·29 S5): Entscheide = Rechtsprechung, Änderungen =
@@ -123,15 +123,18 @@ export function LeserPanel({
       {/* ── Kopf: WAS ist das, WORAUF bezieht es sich, WEG damit ─────────────── */}
       <div className="flex shrink-0 items-baseline justify-between gap-2 border-b-2 border-ink-900 px-3 py-2">
         <p id={titelId} className="lc-overline min-w-0 truncate">
-          Rechtsprechung &amp; Kontext
+          {/* C-1/E-10 (S6-W1a, 23.9.2026): EIN Name — «Erlass-Blatt» wie am
+              Öffner (`OEFFNER_WORT`); bis dahin «Rechtsprechung & Kontext». */}
+          {OEFFNER_WORT}
           {/* Befund 34: nur «Entscheide» bezieht sich auf den Artikel — die
               anderen Reiter gelten dem Erlass, darum dessen Kürzel statt der
-              (dort irreführenden) Artikel-Angabe. */}
-          {reiter === 'entscheide'
-            ? artikelLabel && <span className="num ml-1 font-normal normal-case text-ink-600">· {artikelLabel}</span>
-            : <span className="ml-1 font-normal normal-case text-ink-600">· {erlassKuerzel}</span>}
+              (dort irreführenden) Artikel-Angabe. E-10: der Artikel steht als
+              Zitat MIT Kürzel («Art. 41 OR», `normZitat`, §5). */}
+          <span className="num ml-1 font-normal normal-case text-ink-600">
+            · {reiter === 'entscheide' ? normZitat(artikelLabel, erlassKuerzel) : erlassKuerzel}
+          </span>
         </p>
-        <SchliessKnopf name="Rechtsprechung und Kontext schliessen" onClick={onSchliessen}
+        <SchliessKnopf name={`${OEFFNER_WORT} schliessen`} onClick={onSchliessen}
           data-v3-panel-zu klasse="-mr-1 px-1.5 py-0.5" />
       </div>
 
@@ -156,18 +159,26 @@ export function LeserPanel({
           das Einzelfach, das breiter ist als die Zeile (200-%-Schriftskala).
           `px-1` statt `px-2` (gemessen 23.9.2026, OR @1440/1280/1024, Blatt
           380 px): mit `px-2` brach «Anwendung» allein in eine zweite Zeile.
-          BEWACHT: `e2e/leser-w224-g.e2e.ts` (G11); rot: `flex-wrap` entfernen. */}
-      <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
+          BEWACHT: `e2e/leser-w224-g.e2e.ts` (G11); rot: `flex-wrap` entfernen.
+          S6-W1a (23.9.2026, Entscheid David: künftig FÜNF Reiter): gemessen am
+          380-px-Blatt mit den Etiketten «Entscheide · Änderungen · Materialien ·
+          Erläuterungen · Werkzeuge» — Schriftbreite 376 px in `text-body-s`
+          gegen 354 px Zeile, also nie einzeilig; in `text-xs` 322 px, mit
+          `px-0.5` 342 px ≤ 354 (@390 unten: ≤ 364). Darum `text-xs`/`px-0.5`;
+          `grow` verteilt den Rest. @320 bricht die Leiste weiter um (G11). */}
+      <div ref={leisteRef} role="tablist" aria-label={`Reiter des ${OEFFNER_WORT}s`} onKeyDown={taste}
         className="lc-scrollrand-x flex flex-wrap shrink-0 gap-y-0.5 overflow-x-auto overflow-y-hidden px-3 pt-2 [scrollbar-width:none]">
         {PANEL_REITER.map((r) => {
           const aktiv = r.id === reiter;
           return (
             <button key={r.id} type="button" role="tab" id={`${panelId}-tab-${r.id}`}
               data-v3-panel-reiter={r.id}
-              aria-selected={aktiv} aria-controls={`${panelId}-tafel-${r.id}`}
+              // D-11 (S6-W1a): nur die AKTIVE Tafel ist im DOM (s. Scroller unten) —
+              // `aria-controls` auf eine fehlende Id wäre eine tote Referenz.
+              aria-selected={aktiv} aria-controls={aktiv ? `${panelId}-tafel-${r.id}` : undefined}
               tabIndex={aktiv ? 0 : -1} title={reiterTitel(r.id, bestimmungsWort)}
               onClick={() => setReiter(r.id)}
-              className={`grow shrink-0 whitespace-nowrap border-b-2 px-1 py-1.5 text-body-s transition-colors ${
+              className={`inline-flex grow shrink-0 items-center justify-center whitespace-nowrap border-b-2 px-0.5 py-1.5 text-xs transition-colors ${
                 aktiv ? `${REITER_REGISTER[r.id]} font-semibold text-ink-900` : 'border-line text-ink-600 lc-hover-flaeche hover:text-ink-900'
               }`}>
               {r.label}

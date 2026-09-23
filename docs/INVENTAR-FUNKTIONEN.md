@@ -855,6 +855,9 @@ auf Fussnoten-Marker · Klick auf die Rubrik-Griffe der Funktionszeile ·
 lm.leser.optionen`, vor dem ersten Zeichnen angewandt (kein Flackern) · Leseposition
 und «Weiterlesen»-Chip · Schriftgrössen-Stufe (100/108/118/130 %) · die URL trägt
 Erlass, Anker `#art-<token>`, Suchbegriff und den Zustand der geteilten Ansicht.
+Eine Adresse in anderer Gross-/Kleinschreibung (`/gesetze/bund/or#art-41`) leitet
+auf die kanonische um und behält Anker und Query; ein Anker ohne Unterstrich
+(`#art-336c`) findet den Artikel `336_c`, wenn die Zuordnung eindeutig ist.
 
 **Quelle:** `src/pages/GesetzLeser.tsx`, `src/pages/gesetz-leser/v3/LeserRahmenV3.tsx`,
 `src/pages/gesetz-leser/**`, `src/components/normtext/*`, `src/lib/normtext/*`,
@@ -976,8 +979,9 @@ Zwei Ebenen:
    Ansicht-Aufklappliste unter «Entscheide» abschaltbar (Vorgabe: AN), mit
    Zeitraum-Filter «alle · 20 · 10 · 5 J.».
 2. **Rubrik «Entscheide»** der Funktionszeile am Artikelende: Zahl gezählter
-   Entscheide, aufklappbar; ein Sekundär-Griff «im Blatt öffnen ›» öffnet das
-   Beiwerk-Blatt auf dem Reiter «Entscheide».
+   Entscheide, aufklappbar; ein Sekundär-Griff «im Erlass-Blatt öffnen ›» öffnet das
+   Erlass-Blatt auf dem Reiter «Entscheide» und klappt die Rubrik dabei zu (dieselbe
+   Liste steht nie zweimal da).
 
 **Quelle:** `ArtikelLeser.leitfaelle.tsx`, `PanelEntscheide.tsx`,
 `src/components/RechtsprechungLink.tsx`, `bezuegeLaden.ts`, `bezuegeZaehler.ts`.
@@ -998,7 +1002,7 @@ Erlass-Ebene» in einem Klappelement.
 | Buchstabe | Rubrik (Einzahl/Mehrzahl) | Register | Inhalt beim Aufklappen |
 |---|---|---|---|
 | f | Fassung / Fassungen | Gesetze | Fassungs-Zeitleiste (2.3.6); zugeklappt «Gilt seit …» statt einer Zahl |
-| r | Entscheid / Entscheide | Rechtsprechung | Leitfall- und Entscheid-Liste plus «im Blatt öffnen ›» |
+| r | Entscheid / Entscheide | Rechtsprechung | Leitfall- und Entscheid-Liste plus «im Erlass-Blatt öffnen ›» |
 | m | Materialie / Materialien | Materialien | Materialien-Liste |
 | g | Verweis / Verweise | Gesetze | aufgelöste Normverweise dieses Artikels |
 | w | Rechner / Rechner | Werkzeuge | Werkzeuge an diesem Artikel; Leerzustand: «Zu dieser Bestimmung führen wir bisher keinen Rechner und keine Vorlage.» |
@@ -1076,7 +1080,7 @@ Die **«Ansicht»**-Aufklappliste im Kopf trägt zwei dauerhafte, rein visuelle 
 
 #### 2.3.13 Druck
 
-Funktionszeile, Suchzone und weitere Bedienelemente sind im Druck ausgeblendet. Im
+Funktionszeile, Suchzone, das Erlass-Blatt samt Abdunklung und weitere Bedienelemente sind im Druck ausgeblendet. Im
 Druck trägt der Artikelkopf den Randtitel, die Funktionszeile fällt weg. Fussnoten
 folgen dem Schalter — AUS heisst: auch im Druck weggelassen.
 
@@ -1091,17 +1095,27 @@ Spalte. Die Artikelform bleibt in der schmalen Variante `zeile` (Randtitel als Z
 
 #### 2.3.15 Erlass-Blatt und Einzel-Artikel
 
-**Erlass-Blatt** («Rechtsprechung & Kontext», Öffner im Kopf, Taste `r`): ab dem
-grossen Breakpoint ein rechtes Blatt von 380 px über der Lesespalte (nicht modal,
-der Lesetext bleibt bedienbar), auf dem Handy und in jedem Fenster der geteilten
-Ansicht ein Bottom-Sheet. Kopf nennt beim Reiter «Entscheide» den Artikel, sonst das
-Erlass-Kürzel, und trägt den Schliessen-Knopf (`Esc`). Darunter die optionale
-Steckbrief-Zeile, dann vier Reiter als Registerfläche — **Entscheide** (Register r),
+**Erlass-Blatt** (überall dieser eine Name: Öffner «Erlass-Blatt» im Kopf ohne
+Menü-Pfeil, Kopf des Blatts, Tastenhilfe, Griff «im Erlass-Blatt öffnen ›»; Taste
+`r` schaltet auf und zu und lässt den Reiter stehen): ab dem grossen Breakpoint ein
+rechtes Blatt von 380 px, das am **rechten Fensterrand** anschlägt (seit 23.9.2026,
+vorher an der Lesespalte) und die Lesespalte überlagert, ohne sie zu verschieben
+(nicht modal, der Lesetext bleibt bedienbar); auf dem Handy und in jedem Fenster der
+geteilten Ansicht ein Bottom-Sheet. Das Handy-Sheet schliesst auch mit der
+Zurück-Geste und mit Wischen nach unten an der Griffleiste; seine Bedienelemente
+treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» beim Reiter «Entscheide», sonst
+«Erlass-Blatt · OR», mit Schliessen-Knopf (`Esc`). Darunter die optionale
+Steckbrief-Zeile, dann die Reiter als Registerfläche — **Entscheide** (Register r),
 **Änderungen** (g), **Materialien** (m), **Anwendung** (w); der aktive steht auf
-der getönten Registerfläche mit Registerkante, alle vier passen in eine Zeile
-(Umbruch nur bei grosser Schriftstufe, nie abgeschnitten). Pfeiltasten wechseln
-den Reiter; nur die aktive Tafel wird geladen. Inhalte, Filterzeile und Zähler der
-Tafeln wie 2.3.6–2.3.8 und 2.4.
+der getönten Registerfläche mit Registerkante; die Leiste trägt bis zu fünf Reiter
+in einer Zeile (Umbruch nur bei grosser Schriftstufe oder unter 390 px, nie
+abgeschnitten). Pfeiltasten wechseln den Reiter; nur die aktive Tafel wird geladen.
+Inhalte, Filterzeile und Zähler der Tafeln wie 2.3.6–2.3.8 und 2.4. Im Druck fällt
+das Blatt weg (2.3.13).
+
+**Persistenz:** offen/zu und aktiver Reiter je Erlass in `sessionStorage`
+(Schlüssel `lm-erlass-blatt:<Erlass>`), nur im Hauptfenster — nach Zurück oder
+Neuladen steht das Blatt wieder so da, wie man es verliess.
 
 **Einzel-Artikel** (`?ansicht=artikel`; «Ganzer Erlass» ist Vorgabe und steht nie
 in der Adresse): genau eine Bestimmung. Darüber der Gliederungspfad — jede Stufe
@@ -1125,7 +1139,7 @@ zugeklappten Übersicht.
 
 | Ziel | Mechanik | Quelle |
 |---|---|---|
-| Rechtsprechung | Rubrik «Entscheide» (Zahl + Liste); Sekundär-Griff «im Blatt öffnen ›» öffnet das Beiwerk-Blatt auf dem Reiter «Entscheide»; inline die Leitfall-Zeile mit BGE-Chips | `ArtikelLeser.leitfaelle.tsx`, `PanelEntscheide.tsx`, `RechtsprechungLink.tsx` |
+| Rechtsprechung | Rubrik «Entscheide» (Zahl + Liste); Sekundär-Griff «im Erlass-Blatt öffnen ›» öffnet das Erlass-Blatt auf dem Reiter «Entscheide» und klappt die Rubrik zu; inline die Leitfall-Zeile mit BGE-Chips | `ArtikelLeser.leitfaelle.tsx`, `PanelEntscheide.tsx`, `RechtsprechungLink.tsx` |
 | Materialien | Rubrik «Materialien» | `PanelMaterialien.tsx`, `artikelMaterialienLaden.ts` |
 | andere Normen (Bund→Bund, Bund→Kanton) | Inline-Verweis-Linker im Fliesstext und in Fussnoten. Ein Klick öffnet das **Norm-Popover** (Wortlaut des Zielartikels, Stand, Live-Link, «Wird zitiert von» / «Legt aus») oder springt bei internem Bestand direkt in den Leser. Fehlt der Zielerlass im Haus, bleibt der Fedlex-Link als Rückfall. | `src/components/NormText.tsx`, `NormPopover.tsx`, `KantonNormText.tsx`, `src/lib/fedlex*.ts` |
 | Rechner / Vorlagen | Rubrik «Rechner»; Leerzustand-Satz, wenn kein Werkzeug hinterlegt ist | `ArtikelLeser.bezuegeFuss.tsx`, `randNotizWerkzeuge.ts` |

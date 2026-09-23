@@ -50,7 +50,10 @@ test.describe('G11 — die Kontext-Reiter des Panels passen ins Blatt', () => {
       await page.locator('[data-v3-panel-oeffner]').first().click()
       await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 30_000 })
       const m = await page.evaluate(() => {
-        const tl = document.querySelector<HTMLElement>('[role="tablist"][aria-label="Kontext-Reiter"]')!
+        // §6.3-DEKLARATION (S6-W1a, 23.9.2026): die Leiste heisst seit C-1/D-5
+        // «Reiter des Erlass-Blatts» (bis dahin «Kontext-Reiter») — gewollte
+        // Umbenennung, die Zusage des Falls ist unverändert.
+        const tl = document.querySelector<HTMLElement>('[role="tablist"][aria-label="Reiter des Erlass-Blatts"]')!
         const kante = tl.getBoundingClientRect().right
         return {
           sw: tl.scrollWidth,
@@ -69,6 +72,42 @@ test.describe('G11 — die Kontext-Reiter des Panels passen ins Blatt', () => {
         expect(f.r, `«${f.l}» endet bei ${f.r}, die Zeile bei ${m.kante}`)
           .toBeLessThanOrEqual(m.kante + 1)
       }
+    })
+  }
+})
+
+// ═══ G11b (S6-W1a, 23.9.2026) · FÜNF REITER IN EINER ZEILE ════════════════
+//
+// Entscheid David 23.9.2026: künftig fünf Reiter (Entscheide · Änderungen ·
+// Materialien · Erläuterungen · Werkzeuge; gebaut in S6-W1cd). Die HÜLLE muss
+// sie vorher tragen: einzeilig im 380-px-Blatt (@1440) und im Bottom-Sheet
+// (@390). Gemessen am Vorstand (`text-body-s`): Schriftbreite allein 376 px
+// gegen 354 px Zeile — zwei Zeilen. Die Sonde setzt die fünf Etiketten in die
+// echte Leiste (fünftes Fach geklont) und zählt die Zeilen.
+// Rot zu bekommen: in `LeserPanel.tsx` `text-xs` wieder zu `text-body-s`.
+test.describe('G11b — fünf Reiter-Etiketten stehen einzeilig', () => {
+  for (const [w, h] of [[1440, 900], [390, 844]] as const) {
+    test(`@${w}: eine Zeile, kein Überlauf`, async ({ page }) => {
+      await leser(page, w, h)
+      await page.locator('[data-v3-panel-oeffner]').first().click()
+      await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 30_000 })
+      const m = await page.evaluate(() => {
+        const etiketten = ['Entscheide', 'Änderungen', 'Materialien', 'Erläuterungen', 'Werkzeuge']
+        const tl = document.querySelector<HTMLElement>('[data-v3-panel] [role="tablist"]')!
+        const faecher = [...tl.querySelectorAll<HTMLElement>('[role="tab"]')]
+        while (faecher.length < etiketten.length) {
+          const kopie = faecher[faecher.length - 1].cloneNode(true) as HTMLElement
+          tl.appendChild(kopie)
+          faecher.push(kopie)
+        }
+        faecher.forEach((f, i) => { f.textContent = etiketten[i] })
+        return {
+          zeilen: new Set(faecher.map((f) => Math.round(f.getBoundingClientRect().top))).size,
+          sw: tl.scrollWidth, cw: tl.clientWidth,
+        }
+      })
+      expect(m.zeilen, `@${w}: fünf Reiter brechen in ${m.zeilen} Zeilen um`).toBe(1)
+      expect(m.sw, `@${w}: Reiterzeile läuft über`).toBeLessThanOrEqual(m.cw + 1)
     })
   }
 })

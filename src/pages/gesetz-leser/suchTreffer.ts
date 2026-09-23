@@ -44,6 +44,22 @@ export function loeseArtikelEingabe(eingabe: string, tokenMap: ReadonlyMap<strin
 }
 
 /**
+ * Anker-Token einer Adresse auf den Token des Erlasses abbilden (Nebenfund S6,
+ * Audit E 23.9.2026: `/gesetze/bund/OR#art-336c` sprang nicht, weil der Token
+ * `336_c` heisst). EXAKT vor unscharf; unscharf nur über dieselbe Normalform
+ * wie der Quickjump (`normArtEingabe`, §5) und nur bei EINDEUTIGEM Treffer —
+ * sonst bleibt der rohe Token und der Sprung unterbleibt wie bisher (§8: kein
+ * Rate-Sprung).
+ */
+export function kanonischerAnkerToken(roh: string, tokens: readonly string[]): string {
+  if (tokens.includes(roh)) return roh;
+  const n = normArtEingabe(roh);
+  if (n === '') return roh;
+  const treffer = tokens.filter((t) => normArtEingabe(t) === n);
+  return treffer.length === 1 ? treffer[0] : roh;
+}
+
+/**
  * Labels der aktiven Gliederungs-IDs, in Pfad-Reihenfolge («Sie sind hier»).
  * IDs ohne Knoten im Baum werden übersprungen (kuratierter TOC-Baum ist eine
  * Teilmenge — nie einen Platzhalter erfinden, §8).
