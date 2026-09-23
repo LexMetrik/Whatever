@@ -34,6 +34,19 @@ function flagge(argv: string[], name: string): string | null {
   return i >= 0 && i + 1 < argv.length ? argv[i + 1] : null;
 }
 
+/** Posten-Text aus stdin — leer, wenn keins anliegt. Agent-Shells reichen ein
+ *  nicht-blockierendes stdin ohne Daten durch; readFileSync(0) warf dort EAGAIN
+ *  (Beleg 23.9.2026, Session Werkbank-Umbau). */
+function stdinText(): string {
+  if (process.stdin.isTTY) return '';
+  try {
+    return readFileSync(0, 'utf8').trim();
+  } catch (e) {
+    if ((e as NodeJS.ErrnoException).code === 'EAGAIN') return '';
+    throw e;
+  }
+}
+
 function schreibe(pfad: string, inhalt: string): void {
   mkdirSync(dirname(pfad), { recursive: true });
   writeFileSync(pfad, inhalt);
@@ -73,7 +86,7 @@ if (!process.env.VITEST) {
       process.exit(2);
     }
     lebendePruefen(dach);
-    const text = flagge(argv, 'text') ?? (process.stdin.isTTY ? '' : readFileSync(0, 'utf8').trim());
+    const text = flagge(argv, 'text') ?? stdinText();
     const datum = flagge(argv, 'datum') ?? heuteIso();
     const belegt = new Set(postenScan().map((d) => d.pfad));
     const pfad = postenPfad(datum, titel, belegt);
