@@ -23,19 +23,14 @@ export function VariantenKopf<T extends string>({
   detailgrad: Detailgrad;
   onDetailgrad: (v: Detailgrad) => void;
 }) {
-  // R5-F2 (6.9.2026): Kasten (Rahmen rundum + Radius + eigene Füllung) →
-  // Linien-Block. Der Kopf-Schalter ist kein Objekt auf dem Papier, sondern
-  // ein Abschnitt: eine weiche Linie oben und unten, sonst Weissraum
-  // (§5 «Linien statt Flächen»).
+  // Kein Kasten, ein Abschnitt zwischen zwei weichen Linien (R5-F2, §5
+  // «Linien statt Flächen»); die Kacheln tragen den Registerstrich (`reg`).
   return (
-    <div className="border-y border-rule-soft py-4 space-y-3">
+    <div className="border-y border-rule-soft py-3 space-y-3">
       {untertypOptionen && untertypOptionen.length > 0 && (
         <fieldset className="space-y-1.5">
           <legend className="lc-overline">{untertypLabel ?? 'Untertyp'}</legend>
-          {/* B3-4 (R3-α, 31.8.2026): eigene Kachel-Anatomie → der EINE
-              Baustein. Die ink-600-Messung des Unterlabels ist mit dorthin
-              gewandert, `min-h-11` kommt neu dazu. */}
-          <SelectionGrid<T>
+          <SelectionGrid<T> reg="w"
             className="flex flex-wrap gap-2"
             items={untertypOptionen.map((o) => ({ code: o.id, label: o.label, sub: o.sub }))}
             value={untertyp ?? ''} onSelect={(c) => onUntertyp?.(c)} />
@@ -43,8 +38,7 @@ export function VariantenKopf<T extends string>({
       )}
       <fieldset className="space-y-1.5">
         <legend className="lc-overline">Detailgrad</legend>
-        {/* dito B3-4 */}
-        <SelectionGrid
+        <SelectionGrid reg="w"
           className="grid grid-cols-3 gap-2 max-w-xl"
           items={DETAILGRAD_OPTIONEN.map((o) => ({ code: o.id, label: o.label, sub: o.sub }))}
           value={detailgrad} onSelect={onDetailgrad} />

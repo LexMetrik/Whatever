@@ -4058,6 +4058,11 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
 /* Der Band-Strich IST die Registermarke dieser Route — die 3.5-rem-Marke am
    Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber. */
 .lc-route[data-reg]:has(.ub-kopf)::before { content: none; }
+/* W2·29-WERKBANK-VORLAGEN V1 · `layout/WerkzeugKopf`: dasselbe Band, das
+   Register fest auf «Werkzeuge» — auch im Pane und auf Routen ohne `data-reg`.
+   Kontrast (gemessen, V1): Overline ink-600 und H1 ink-900 auf reg-w-flaeche,
+   Werte im PR-Body W2·29-WERKBANK-VORLAGEN V1. */
+.wk-kopf { --reg-marke: var(--reg-w); --reg-marke-flaeche: var(--reg-w-flaeche); }
 
 /* Ausgabe-Zeile unter der H1: Archivo 13 px, Tinte auf der Fläche. */
 .ub-ausgabe {
@@ -4446,6 +4451,13 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
    dort ist die geschlossene Form die Aussage «ich bin ein Knopf». */
 .lc-wahl-kachel:hover { border-top-color: var(--reg-w); }
 .lc-wahl-kachel[aria-pressed="true"] { border-top-color: var(--reg-w); }
+/* W2·29-WERKBANK-VORLAGEN V1 · SEGMENT-KACHEL (`SelectionGrid reg="w"`,
+   VariantenKopf): der obere Strich wird der 3-px-REGISTERSTRICH (ruhend im
+   Haarlinien-Ton, Hover/gewählt `--reg-w` aus den zwei Regeln darüber) und
+   ersetzt den Innenstrich links — ein Zustand, ein Strich. Die Kante lag schon
+   in der Box, sie wird nur dicker: der Satz rückt beim Wählen nicht. */
+.lc-wahl-kachel[data-reg="w"] { border-top-width: 3px; }
+.lc-wahl-kachel[data-reg="w"][aria-pressed="true"] { box-shadow: none; }
 
 /* ─── GB-1b · DIE DREI WEITEREN TRÄGER JE ROUTE ─────────────────────────────
    NACHGEMESSEN 7.9.2026 nach dem ersten Wurf (Sonde `e2e/w224-gb-register.e2e.ts`):

@@ -56,10 +56,14 @@ describe('A-1 — SeitenTitel: EINE Grössen-Kaskade, kontextabhängig gemessen'
 // Befund A-2/A-5/B-5). Seit BAU-4 (31.8.2026) steht er mit — und zwar mit ZWEI
 // H1: dem Kopf-Titel und seinem Zwilling im Lesemodus-Overlay, beide in der
 // Mono-Stimme (`num`), weil der Titel dort die Zitierung selbst ist.
+// DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-VORLAGEN V1, 23.9.2026, §6.3): der
+// Vorlagen-Kopf ist aus `vorlagen/wizard.tsx` in den geteilten
+// `layout/WerkzeugKopf` gezogen — der Konsument des Bausteins ist jetzt dieser
+// Kopf (die Rechner folgen). Umfang und Assertion unverändert.
 const KONSUMENTEN = [
   'src/components/layout/SeitenKopf.tsx',
   'src/components/layout/RechnerKopf.tsx',
-  'src/components/vorlagen/wizard.tsx',
+  'src/components/layout/WerkzeugKopf.tsx',
   'src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
   'src/pages/EntscheidLeser.tsx',
   'src/components/rechtsprechung/LesemodusOverlay.tsx',
