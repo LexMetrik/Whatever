@@ -112,6 +112,13 @@ test.describe('Kanton BS — Register-Facette und Reader', () => {
     await bs.click()
     // Gefilterte Liste zeigt BS-Entscheide (Key-Präfix bs_…).
     await expect(page.locator('a[href^="/rechtsprechung/bs_"]').first()).toBeVisible()
+    // WURZEL des Flackerns (gemessen 23.9.2026, W2·29-WERKBANK-KATALOGE K0): ein
+    // bs_-Link steht AUCH in der ungefilterten Ansicht — die Zeile oben beweist den
+    // Filter-Commit nicht. Unter CPU-Drossel (CDP x4/x8) zählte die Sonde darum
+    // noch die ungefilterte Sektions-Ansicht (339 Links) und nach «Weitere
+    // anzeigen» nur 200 → `nachher > gerendert` rot. Gerendertes Merkmal des
+    // gefilterten Stands: im Hauptinhalt steht KEIN Nicht-BS-Entscheid mehr.
+    await expect(page.locator('#inhalt a[href^="/rechtsprechung/"]:not([href^="/rechtsprechung/bs_"])')).toHaveCount(0)
     // DOM-Deckel (§7.1, axe-Timeout-Lektion): trotz Tausender BS-Treffer werden je
     // Sektion max. 100 Zeilen GERENDERT; der Rest hängt am «Weitere anzeigen»-Knopf.
     const gerendert = await page.locator('a[href^="/rechtsprechung/"]').count()
@@ -119,8 +126,8 @@ test.describe('Kanton BS — Register-Facette und Reader', () => {
     const mehr = page.getByRole('button', { name: /Weitere anzeigen/ }).first()
     await expect(mehr).toBeVisible()
     await mehr.click()
-    const nachher = await page.locator('a[href^="/rechtsprechung/"]').count()
-    expect(nachher).toBeGreaterThan(gerendert)
+    // Auf den Commit des Batches warten statt einmalig zu zählen.
+    await expect.poll(() => page.locator('a[href^="/rechtsprechung/"]').count()).toBeGreaterThan(gerendert)
     await page.screenshot({ path: '.scratch/bs-uebersicht-facette.png', fullPage: false })
     expect(fehler).toEqual([])
   })

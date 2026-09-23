@@ -35,6 +35,17 @@ async function trefferZahl(page: Page): Promise<number> {
   return Number(txt.replace(/\D+/g, ''))
 }
 
+/** Zeitbudget der beiden Vollseiten-axe-Fälle (§6.3 INFRASTRUKTUR, kein
+ *  Prüfschritt berührt; Muster `a11y-flaeche.e2e.ts`). GEMESSEN 23.9.2026
+ *  (W2·29-WERKBANK-KATALOGE K0): /rechtsprechung trägt ~5250 DOM-Knoten, ein
+ *  axe-Lauf kostet seriell 8–12 s (ohne color-contrast 3–7 s), der ganze Fall
+ *  unter 4 Workern 10–19 s; im gemischten Lauf mit rechtsprechung.e2e.ts rissen
+ *  2/20 das lokale 30-s-Budget in `AxeBuilder.analyze`. Nie UNTER das
+ *  Projekt-Budget (CI 90 s) — nur lokal angehoben. */
+function axeBudget(testInfo: TestInfo) {
+  testInfo.setTimeout(Math.max(testInfo.timeout, 60_000))
+}
+
 async function waehleRichter(page: Page, name = RICHTER_NAME) {
   await feld(page).click()
   await feld(page).fill(name)
@@ -95,10 +106,16 @@ test.describe('/rechtsprechung — Richter-Facette', () => {
     // Richter-Filter entfernen → «Bund» ist wieder wählbar, die Menge wächst.
     await page.getByRole('button', { name: new RegExp(`Richter-Filter .*${RICHTER_NAME}.* entfernen`) }).click()
     await expect(page).not.toHaveURL(/richter=/)
-    expect(await trefferZahl(page)).toBeGreaterThan(nurRichter)
+    // WURZEL des Flackerns (gemessen 23.9.2026, W2·29-WERKBANK-KATALOGE K0): die
+    // Adresse eilt dem Render voraus (react-router schreibt die URL vor dem
+    // React-Commit). Unter CPU-Drossel x6 las die einmalige Zählung direkt nach
+    // der URL-Zusicherung 5/5 noch den alten Zähler (692 statt 5093); unter
+    // 4-Worker-Last lokal 3/20 rot. Darum auf den gerenderten Zähler warten.
+    await expect.poll(() => trefferZahl(page)).toBeGreaterThan(nurRichter)
   })
 
-  test('zeigt einen ehrlichen Leerzustand statt eines Fehlers', async ({ page }) => {
+  test('zeigt einen ehrlichen Leerzustand statt eines Fehlers', async ({ page }, testInfo: TestInfo) => {
+    axeBudget(testInfo)
     await page.goto('/rechtsprechung')
     await feld(page).click()
     // Vor der ersten Eingabe steht kein Fehler (§13/C2) — nur Vorschläge.
@@ -181,6 +198,7 @@ test.describe('/rechtsprechung — Richter-Facette', () => {
   })
 
   test('a11y: keine critical/serious-Verstösse mit geöffneter Listbox', async ({ page }, testInfo: TestInfo) => {
+    axeBudget(testInfo)
     // Theme deterministisch pinnen (sonst misst axe je nach Uhrzeit hell/dunkel).
     await page.addInitScript(() => {
       try { localStorage.setItem('lexmetrik-thema', 'hell') } catch { /* privater Modus */ }

@@ -19,10 +19,20 @@
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 
+/** Entscheid-Zeilen der LISTE — nur im Hauptinhalt (`#inhalt`, Shell.tsx).
+ *  WURZEL «201 statt 200» (gemessen 23.9.2026, W2·29-WERKBANK-KATALOGE K0):
+ *  der nackte Selektor `a[href^="/rechtsprechung/"]` zählte auch den REITER des
+ *  besuchten Entscheids mit (`nav[aria-label="Offene Reiter"]` >
+ *  `[data-reiter-streifen]`). Ob der Reiter im Streifen steht oder im Überlauf,
+ *  hängt an Reiterbreiten zum Ladezeitpunkt — darum flackerte die Zählung.
+ *  Vorher lokal 15/20 rot (`--repeat-each=20 --workers=4 --trace=off`),
+ *  Diagnose-Sonde 6/8 mit genau diesem Reiter-Link ausserhalb `#inhalt`. */
+const LISTEN_ZEILE = '#inhalt a[href^="/rechtsprechung/"]'
+
 /** Übersicht öffnen und warten, bis das Manifest da ist (Zeilen gerendert). */
 async function uebersicht(page: Page, query = '') {
   await page.goto(`/rechtsprechung${query}`)
-  await expect(page.locator('a[href^="/rechtsprechung/"]').first()).toBeVisible()
+  await expect(page.locator(LISTEN_ZEILE).first()).toBeVisible()
 }
 
 test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
@@ -34,7 +44,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     await uebersicht(page, '?kanton=BS')
     await page.getByLabel('Sortierung').selectOption('neu')
 
-    const zeilen = page.locator('a[href^="/rechtsprechung/"]')
+    const zeilen = page.locator(LISTEN_ZEILE)
     const vorher = await zeilen.count()
 
     // Einen Batch nachladen — erst dadurch entsteht der Fall, den der Fahrplan
@@ -42,8 +52,11 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     const mehr = page.getByRole('button', { name: /Weitere anzeigen/ })
     await expect(mehr).toBeVisible()
     await mehr.click()
+    // Auf den COMMIT des Batches warten (gleiche Timing-Regel wie oben): eine
+    // einmalige Zählung direkt nach dem Klick kann den alten Stand lesen.
+    await expect.poll(() => zeilen.count(), { message: 'der Batch muss die Liste wirklich verlängern' })
+      .toBeGreaterThan(vorher)
     const nachgeladen = await zeilen.count()
-    expect(nachgeladen, 'der Batch muss die Liste wirklich verlängern').toBeGreaterThan(vorher)
 
     // Tief scrollen und einen Treffer JENSEITS des Grundfensters öffnen.
     const ziel = zeilen.nth(nachgeladen - 5)
@@ -124,7 +137,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     const jahr = /Jahrgang (\d{4})/.exec(label)?.[1]
     expect(jahr, `Jahr aus «${label}»`).toBeTruthy()
 
-    const vorher = await page.locator('a[href^="/rechtsprechung/"]').count()
+    const vorher = await page.locator(LISTEN_ZEILE).count()
     await letzter.click()
 
     // ── B2 · DAS FENSTER SPRINGT MIT, es wächst nicht auf ────────────────────
@@ -134,7 +147,7 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     // nicht «mehr geladen», sondern «gleich viel geladen wie vorher»: der
     // Sprung an das Listenende kostet dasselbe DOM wie jeder andere.
     await expect
-      .poll(() => page.locator('a[href^="/rechtsprechung/"]').count(), { message: 'gerenderte Einträge' })
+      .poll(() => page.locator(LISTEN_ZEILE).count(), { message: 'gerenderte Einträge' })
       .toBeLessThanOrEqual(vorher)
 
     // Der Weg zurück nach oben bleibt offen — sonst wäre der Teil der Liste
