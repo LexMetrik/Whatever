@@ -154,6 +154,8 @@ export function LeserPanel({
           passen — weder Kürzen (Kanon-Etikett, Ä114) noch stummes Scrollen;
           darum `flex-wrap`. `overflow-x-auto` + `lc-scrollrand-x` bleiben für
           das Einzelfach, das breiter ist als die Zeile (200-%-Schriftskala).
+          `px-1` statt `px-2` (gemessen 23.9.2026, OR @1440/1280/1024, Blatt
+          380 px): mit `px-2` brach «Anwendung» allein in eine zweite Zeile.
           BEWACHT: `e2e/leser-w224-g.e2e.ts` (G11); rot: `flex-wrap` entfernen. */}
       <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
         className="lc-scrollrand-x flex flex-wrap shrink-0 gap-y-0.5 overflow-x-auto overflow-y-hidden px-3 pt-2 [scrollbar-width:none]">
@@ -165,7 +167,7 @@ export function LeserPanel({
               aria-selected={aktiv} aria-controls={`${panelId}-tafel-${r.id}`}
               tabIndex={aktiv ? 0 : -1} title={reiterTitel(r.id, bestimmungsWort)}
               onClick={() => setReiter(r.id)}
-              className={`grow shrink-0 whitespace-nowrap border-b-2 px-2 py-1.5 text-body-s transition-colors ${
+              className={`grow shrink-0 whitespace-nowrap border-b-2 px-1 py-1.5 text-body-s transition-colors ${
                 aktiv ? `${REITER_REGISTER[r.id]} font-semibold text-ink-900` : 'border-line text-ink-600 lc-hover-flaeche hover:text-ink-900'
               }`}>
               {r.label}
