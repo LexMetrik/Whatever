@@ -146,7 +146,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
           Vorschau-Kasten ohne Ziel wäre eine Einladung ins Leere. */}
       {(vorschau.vor?.marginalie || vorschau.nach?.marginalie) && (
         <nav aria-label={`Benachbarte ${bestimmungsWort}`} data-einzel-vorschau
-          className="grid gap-3 border-t border-line pt-3.5 min-[30rem]:grid-cols-2">
+          className="grid gap-3 border-t border-line pt-3.5 min-[480px]:grid-cols-2">
           <VorschauKarte ziel={vorschau.vor} richtung="vor" adresse={adresse} eigen={label} />
           <VorschauKarte ziel={vorschau.nach} richtung="nach" adresse={adresse} eigen={label} />
         </nav>
@@ -177,7 +177,7 @@ function VorschauKarte({ ziel, richtung, adresse, eigen }: {
   const zustandsWort = leerstellenWort(ziel.zustand);
   return (
     <Link to={adresse(ziel.token)} data-vorschau={richtung}
-      className={`group grid min-h-[var(--tap-ziel-komfort)] content-center gap-0.5 no-underline ${richtung === 'nach' ? 'min-[30rem]:text-right' : ''}`}
+      className={`group grid min-h-[var(--tap-ziel-komfort)] content-center gap-0.5 no-underline ${richtung === 'nach' ? 'min-[480px]:text-right' : ''}`}
       aria-label={`${richtung === 'vor' ? 'Davor' : 'Danach'} — ${eigen} zu ${ziel.label}${ziel.marginalie ? `: ${ziel.marginalie}` : ''}${zustandsWort ? ` (${zustandsWort})` : ''}`}>
       <span className="num text-body-s text-ink-800 group-hover:text-ink-900">
         {richtung === 'vor' && <span aria-hidden>‹ </span>}

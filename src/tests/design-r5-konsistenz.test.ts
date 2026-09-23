@@ -303,3 +303,25 @@ describe('R5-E · der Reiter trägt den Unterstrich, nicht den Kasten', () => {
       .toBeNull();
   });
 });
+
+// ─── R5-F · Breiten-Varianten in der Einheit der Breakpoints ────────────────
+// Tailwind erzeugt `min-[…]:`/`max-[…]:` nur in der Einheit der `screens`
+// (hier die px-Vorgabe) und verwirft andere STUMM: `min-[30rem]:grid-cols-2`
+// stand in S5-A (W2·29, 23.9.2026) im Code und fehlte im CSS — die
+// Nachbarn-Vorschau des Einzel-Artikels war einspaltig.
+const REM_BREITE = /\b(?:min|max)-\[[\d.]+(?:rem|em)\]:/;
+
+describe('R5-F · Breiten-Varianten stehen in px', () => {
+  it('keine App-Datei schreibt eine `min-[…rem]:`/`max-[…em]:`-Variante', () => {
+    const funde = alleQuellen()
+      .filter((p) => REM_BREITE.test(ohneKommentare(liesRoh(p))))
+      .map(rel);
+    expect(funde, 'Tailwind verwirft rem/em-Breitenvarianten ohne Meldung — px schreiben').toEqual([]);
+  });
+
+  it('ROT-BEWEIS: der Ausdruck erkennt die Form aus S5-A, nicht die px-Form', () => {
+    expect(REM_BREITE.test('className="grid gap-3 min-[30rem]:grid-cols-2"')).toBe(true);
+    expect(REM_BREITE.test('className="grid gap-3 min-[480px]:grid-cols-2"')).toBe(false);
+    expect(REM_BREITE.test('className="min-h-[var(--tap)] min-w-[9rem]"')).toBe(false);
+  });
+});
