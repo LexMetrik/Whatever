@@ -14,11 +14,13 @@
 // ROBUST STATT STRENG: Speicher kann fehlen oder werfen (privates Fenster,
 // Quote, gesperrte Website-Daten) — dann gilt schlicht der Ausgangszustand. Ein
 // Reiter, den es nicht mehr gibt (die Reiter-Tabelle wandert, S6-W1cd), wird
-// verworfen statt eingesetzt.
+// verworfen statt eingesetzt. Seit S6-W1cd (23.9.2026) mit einer Ausnahme:
+// «anwendung» geht an seinen Nachfolger «erlaeuterungen» (`alsPanelReiter`,
+// die eine Stelle für gespeicherte Reiter-Werte).
 
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
-import { PANEL_REITER, type PanelReiter, type PanelZustand } from './panelModell';
+import { alsPanelReiter, type PanelReiter, type PanelZustand } from './panelModell';
 
 export interface BlattGedaechtnis {
   offen: boolean;
@@ -33,7 +35,7 @@ export function liesBlatt(erlassKey: string, speicher: Pick<Storage, 'getItem'> 
     const roh = speicher?.getItem(PRAEFIX + erlassKey);
     if (!roh) return null;
     const wert = JSON.parse(roh) as Partial<BlattGedaechtnis>;
-    const reiter = PANEL_REITER.find((r) => r.id === wert.reiter)?.id;
+    const reiter = alsPanelReiter(wert.reiter);
     if (typeof wert.offen !== 'boolean' || !reiter) return null;
     return { offen: wert.offen, reiter };
   } catch {

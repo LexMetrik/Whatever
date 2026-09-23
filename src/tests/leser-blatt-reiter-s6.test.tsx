@@ -12,6 +12,7 @@ import { renderToString as rohRender } from 'react-dom/server';
 import type { ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { PANEL_REITER, alsPanelReiter, reiterTitel } from '../pages/gesetz-leser/v3/panelModell';
+import { liesBlatt } from '../pages/gesetz-leser/v3/blattGedaechtnis';
 import { VERNEHMLASSUNG_STATUS_LABEL, vernehmlassungInArbeit, type VernehmlassungBezug } from '../lib/materialien/vernehmlassungen';
 import { PanelMaterialien } from '../pages/gesetz-leser/v3/PanelMaterialien';
 import { PanelErlaeuterungen } from '../pages/gesetz-leser/v3/PanelErlaeuterungen';
@@ -41,6 +42,13 @@ describe('PANEL_REITER — fünf Reiter, «Anwendung» geteilt', () => {
     expect(alsPanelReiter('werkzeuge')).toBe('werkzeuge');
     expect(alsPanelReiter('gibtsnicht')).toBeNull();
     expect(alsPanelReiter(undefined)).toBeNull();
+  });
+  // Zusammenführung mit S6-W1a (#1002): das Blatt-Gedächtnis ist der Leser
+  // gespeicherter Reiter-Werte — ein vor S6 gemerktes «anwendung» öffnet den
+  // Nachfolger, statt verworfen zu werden (rot vor dem Anschluss: `null`).
+  it('das Blatt-Gedächtnis liest einen gemerkten «anwendung» als «erlaeuterungen»', () => {
+    const s = { getItem: (k: string) => (k === 'lm-erlass-blatt:OR' ? JSON.stringify({ offen: true, reiter: 'anwendung' }) : null) };
+    expect(liesBlatt('OR', s)).toEqual({ offen: true, reiter: 'erlaeuterungen' });
   });
   it('«Materialien» heisst Gesetzgebung, «Erläuterungen» Behörden', () => {
     expect(reiterTitel('materialien', 'Artikel')).toBe('Gesetzgebungsmaterialien zu diesem Erlass');

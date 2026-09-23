@@ -1,12 +1,12 @@
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { fedlexLokalisiert, type Locale } from '../../../components/locale';
-import { revisionTitel, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
+import { revisionSchluessel, revisionTitel, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
 import { IN_KRAFT_FUER_CH_LABEL } from '../../../lib/normtext/erlassKopfText';
 import type { ErlassAufhebung } from '../../../lib/normtext/aufhebungen';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
 import { aenderungZeitbezug, type AenderungZeitbezug } from '../zukunftsfassungen';
-import { aufhebungsBezug, trifftArtikel, wirkungsMarken, zeilenSchluessel, type RevisionZeile } from './aenderungModell';
+import { aufhebungsBezug, trifftArtikel, wirkungsMarken, type RevisionZeile } from './aenderungModell';
 import type { Geladen } from './panelKontextLaden';
 
 // ─── Reiter «Änderungen» (H3) ────────────────────────────────────────────────
@@ -151,14 +151,14 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
   if (artikel) {
     const gleicheAs = zeilen.filter((z) => trifftArtikel(z.r, artikel.revision));
     const gleichesDatum = gleicheAs.filter((z) => z.r.dateEntryInForce === artikel.revision.iso);
-    for (const z of gleichesDatum.length > 0 ? gleichesDatum : gleicheAs) amArtikel.add(zeilenSchluessel(z.r));
+    for (const z of gleichesDatum.length > 0 ? gleichesDatum : gleicheAs) amArtikel.add(revisionSchluessel(z.r));
   }
   const kuenftig = zeilen.filter((z) => z.bezug === 'kuenftig')
     .sort((a, b) => (a.r.dateEntryInForce < b.r.dateEntryInForce ? -1 : a.r.dateEntryInForce > b.r.dateEntryInForce ? 1 : 0));
   const uebrige = zeilen.filter((z) => z.bezug !== 'kuenftig');
   const zeile = (r: RevisionZeile, bezug: AenderungZeitbezug) => (
-    <AenderungZeile key={zeilenSchluessel(r)} r={r} bezug={bezug} locale={locale}
-      amArtikel={artikel && amArtikel.has(zeilenSchluessel(r)) ? artikel.label : null}
+    <AenderungZeile key={revisionSchluessel(r)} r={r} bezug={bezug} locale={locale}
+      amArtikel={artikel && amArtikel.has(revisionSchluessel(r)) ? artikel.label : null}
       botschaft={r.botschaftKey ? botschaftNachKey?.get(r.botschaftKey) : undefined} />
   );
   return (
@@ -201,7 +201,7 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
           </p>
           <ul>
             {nachAufhebung.map((r) => (
-              <li key={zeilenSchluessel(r)} data-v3-panel-aenderung data-v3-panel-aenderung-bezug="nach-aufhebung"
+              <li key={revisionSchluessel(r)} data-v3-panel-aenderung data-v3-panel-aenderung-bezug="nach-aufhebung"
                 className="border-l-2 border-t border-line border-l-line py-2 pl-2.5">
                 <span className="text-body-s font-medium text-ink-700">
                   {AUFHEBUNGS_TEXT[aufhebungsBezug(r, aufhebung) ?? 'nach-aufhebung']}

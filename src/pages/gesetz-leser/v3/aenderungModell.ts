@@ -6,19 +6,17 @@ import type { RevisionBezug } from '../../../lib/normtext/revisionen';
  * (Landereihenfolge egal). Semantik: `scripts/normtext/revisionen-generieren.ts`
  * (`RevisionEintrag`) auf dem #1001-Stand. Entfällt, sobald `RevisionBezug`
  * die Felder selbst trägt.
+ * Ergänzung (Rebase auf #1001, 23.9.2026): `RevisionBezug` trägt die drei
+ * Felder seither selbst (ohne `null`); der Typ bleibt nur als Lese-Toleranz.
+ * Der Zeilen-Schlüssel ist seither `revisionSchluessel` aus
+ * `lib/normtext/revisionen` — die hier bis dahin wörtlich kopierte Regel
+ * (`zeilenSchluessel`) ist entfallen (§5, eine Regel an einem Ort).
  */
 export type RevisionZeile = RevisionBezug & {
   wirkungen?: string[] | null;
   etappen?: string[] | null;
   datumAusErlass?: boolean | null;
 };
-
-/** React-/Dedupe-Schlüssel — wörtlich die Regel von `revisionSchluessel`
- *  (#1001): gestaffelt in Kraft gesetzte Erlasse stehen je Etappe mit
- *  DEMSELBEN `ocUri`; ein Schlüssel nur aus `ocUri` kollidierte. */
-export function zeilenSchluessel(r: Pick<RevisionBezug, 'art' | 'ocUri' | 'dateEntryInForce'>): string {
-  return `${r.ocUri ?? r.art}@${r.dateEntryInForce}`;
-}
 
 /** Amtliche Bezeichnungen der Fedlex-Auswirkungs-Typen (`vocabulary/impact-type`,
  *  `skos:prefLabel`@de — Zuordnung wie `WIRKUNG_NACH_TYP` in
