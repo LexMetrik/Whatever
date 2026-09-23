@@ -48,6 +48,10 @@ Belege: `referenz-ci.md` §Merge-Queue.
 - **Die Queue stapelt spekulativ** (Eintrag 2 = main + Eintrag 1): gleiche
   Datei wie ein Vordermann ⇒ UNMERGEABLE, auch wenn der PR für sich CLEAN ist
   (Ziff. 3.2).
+- **PR-Titel = Squash-Betreff:** der Commit auf main trägt den PR-Titel. Ändert
+  der PR Test-Dateien, darf der Titel-Typ nicht `refactor` sein (§6.3) — sonst
+  fällt er im `merge_group`-Lauf an `check:testtreue` (Beleg #1023, 23.9.2026;
+  seither meldet das Tor es schon im PR-Lauf).
 - **Queue-Abfrage** (QUEUED · AWAITING_CHECKS · MERGEABLE · UNMERGEABLE ·
   LOCKED):
   `gh api graphql -f query='{repository(owner:"LexMetrik",name:"Whatever"){mergeQueue(branch:"main"){entries(first:10){nodes{state position pullRequest{number}}}}}}'`
