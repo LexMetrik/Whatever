@@ -140,6 +140,22 @@ describe('baueProjektion — Zuschnitt, Ehrlichkeit, Determinismus', () => {
     const p = baueProjektion('OR', h, doppelt, BOTSCHAFTEN, new Set())!;
     expect(p.aenderungen['oc/2018/807'].titel).toBe('Aktienrecht');
   });
+
+  it('gestaffelter Erlass: «inkraft» ist die erste Etappe, nicht die zuerst gelistete (S6-D1, AE-5)', () => {
+    // Seit 23.9.2026 steht ein gestaffelt in Kraft gesetzter Erlass je Etappe im Sidecar,
+    // absteigend — die zuerst gelesene Zeile ist die SPÄTESTE Etappe (OR ← AS 2020 4005:
+    // 2023-01-01 vor 2021-01-01). «inkraft» behält die Bedeutung «erstes Inkrafttreten».
+    const oc = 'https://fedlex.data.admin.ch/eli/oc/2018/807';
+    const gestaffelt: RevisionsQuelle = {
+      abgerufen: '2026-09-23',
+      revisionen: [
+        { art: 'aenderung', ocUri: oc, titelDe: 'Aktienrecht', dateEntryInForce: '2023-01-01', etappen: ['2021-01-01', '2023-01-01'] },
+        { art: 'aenderung', ocUri: oc, titelDe: 'Aktienrecht', dateEntryInForce: '2021-01-01', etappen: ['2021-01-01', '2023-01-01'] },
+      ],
+    };
+    const p = baueProjektion('OR', h, gestaffelt, BOTSCHAFTEN, new Set())!;
+    expect(p.aenderungen['oc/2018/807'].inkraft).toBe('2021-01-01');
+  });
 });
 
 describe('aenderungFuer — die Brücke vom Historie-Ereignis zur Karte', () => {
