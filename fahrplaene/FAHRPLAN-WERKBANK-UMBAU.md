@@ -140,7 +140,7 @@ Reihenfolge nach Produktwert, Dep-Kette
 |---|---|---|---|---|
 | **`W2·29-WERKBANK-LESER`** — Gesetzes-Leser, grösster Korpus | `leser` | Abschnitt 2 (ganz) | Gesetz (ein Artikel) · Fliesstext, Erlass-Blatt offen/zu | **Normtext-Körper bleibt golden byte-gleich**; Fassungen, Revisionen, Verknüpfungen ziehen mit, werden nicht umgebaut |
 | **`W2·29-WERKBANK-KATALOGE`** — die vier Kataloge | `design` | 2.2 · 3.2 · 4.2 · 5.2 · 1.2 Startseite (seit 23.9.) | vier Katalog-Boards + Suche · Abdeckung · Einstellungen · Main | Status-Modell sichtbar (§8); Kantons-Auswahl mit Schweizkarte hat kein Board — Session entscheidet |
-| **`W2·29-WERKBANK-VORLAGEN`** — ein Assistenten-Rahmen, dann die 30 | `werkzeuge` | 5.3 · 5.4 · 5.5 | Vorlage Arbeitsvertrag (Schritt 4 von 7) | Rahmen **aus den bestehenden** `src/lib/vorlagen/*Schemas.ts`, kein zweites Schema-Modell; PDF und DOCX aus demselben Assemble-Ergebnis (§5); die 42 geplanten fallen danach aus demselben Rahmen |
+| **`W2·29-WERKBANK-VORLAGEN`** — ein Assistenten-Rahmen, dann die 30 | `werkzeuge` | 5.3 · 5.4 · 5.5 | Vorlage Arbeitsvertrag (Schritt 4 von 7) | Rahmen **aus den bestehenden** Vorlagen-Modulen in `src/lib/vorlagen/` samt `registry.ts` (korr. 23.9.2026: `*Schemas.ts` trifft nur die Gründungen), kein zweites Schema-Modell; PDF und DOCX aus demselben Assemble-Ergebnis (§5); die 42 geplanten fallen danach aus demselben Rahmen |
 | **`W2·29-WERKBANK-RECHNER`** — die 20 einzeln | `werkzeuge` | 4.3 · 4.4 | Fristenrechner ZPO | Gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock, Exportleiste. **Rechenfälle nie abstrahiert (§1)** — 20 Rechner bleiben 20 Handgriffe |
 | **`W2·29-WERKBANK-REST`** — Rest und Rückbau | `design` | 1.5 (ohne `/abdeckung`) · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
 
@@ -341,6 +341,29 @@ reichen `.fc-*`/`ui/FacettenGruppe`, `ui/GruppenKopf`, `ui/SchriftgroessenRegler
 K5 #999 (eine Zählquelle: /abdeckung 5'093 statt 6'345, /gesetze-Kopf 203 statt 231, /vorlagen-Fuss 26) ·
 K6 #1000 · K7 #1004 (Startseite vier Kacheln) · K8 #1005 (Amtlicher Zitierer auf /rechner, Entscheid
 David 23.9.2026) · K9 #1008 (Gruss-Flackern: Render-Sperre `rel=expect` bis nach dem Wahl-Skript). Nebenfunde als Posten unter VORLAGEN/RECHNER/REST/`W2·18`/`QS-EFFIZIENZ`.
+
+## §5c · VORLAGEN — Bauplan in Scheiben (Planung 23.9.2026)
+
+**Kernbefunde** (lex-recherche Opus, 23.9.2026): (1) Der Rahmen existiert: `vorlagen/wizard.tsx`
+(Rahmen, Vorschau, ExportLeiste) + `VorlagenSeite` — nur 11 der 30 nutzen die Orchestrierung, 18
+rufen den Rahmen direkt (6'952 Z., 38 Inline-DOCX-Gates statt `docxAktiv`) → die Löschbilanz kommt
+aus der Migration, nicht aus CSS. (2) Kein Eingriff in `src/lib/vorlagen`; PDF/DOCX laufen schon aus
+demselben `ergebnis`. (3) `vorlagen/ui.tsx`, `NormChip`, `ui/SelectionGrid` sind mit RECHNER/LESER
+geteilt → Änderung nur per Prop.
+
+**Scheiben** (kein Risikopfad; Sichtprüfung 1280/390 hell/dunkel im PR-Body):
+- **V0 Prüfstrasse:** SSR-Ratsche über die 30 Routen (Schrittnamen 5.4, Badge, DOCX-Knopf ⇔
+  `docxAktiv`) als Fixture; Rot-Beweis.
+- **V1 Rahmen-Optik:** wizard.tsx, Stepper (Reiterzeile, `--reg-w`), VariantenKopf (SelectionGrid-
+  Prop `reg`), PruefBefund, Papier-Vorschau; Kopf als `layout/WerkzeugKopf` (RECHNER übernimmt).
+- **V2a–d Migration** auf `VorlagenSeite` (Kündigungen · Familie/Klagen · Verträge ·
+  Vorsorge/Vollmacht; Schlichtungsgesuch zuletzt), je PR Löschbilanz ≥ 50 %, Slots statt Fachlogik
+  im Rahmen; Gegenprüfung Verhaltensgleichheit. Dep V1, untereinander ‖.
+- **V3 Mappen** ‖ V2: Dokumentmappe, GmbH-/AG-Gründung, Kapitalerhöhung (Reiter `--reg-w-flaeche`).
+- **V4 Checkliste + Rückbau:** KuendigungVermieter; Inventar 5.3 datiert nachführen; Posten schliessen.
+
+**Nicht bauen:** «44», Status-Zeile «Ausgabe als PDF und Word» (Testament: kein DOCX),
+Seitenleisten-Baum, Board-Hex (Token gilt), gemeinsame Exportleiste (erst RECHNER).
 
 ## §6 · Prüfen und Frühsignale
 
