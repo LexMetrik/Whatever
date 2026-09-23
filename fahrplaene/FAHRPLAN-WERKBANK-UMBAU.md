@@ -142,7 +142,7 @@ Reihenfolge nach Produktwert, Dep-Kette
 | **`W2·29-WERKBANK-KATALOGE`** — die vier Kataloge | `design` | 2.2 · 3.2 · 4.2 · 5.2 · 1.2 Startseite (seit 23.9.) | vier Katalog-Boards + Suche · Abdeckung · Einstellungen · Main | Status-Modell sichtbar (§8); Kantons-Auswahl mit Schweizkarte hat kein Board — Session entscheidet |
 | **`W2·29-WERKBANK-VORLAGEN`** — ein Assistenten-Rahmen, dann die 30 | `werkzeuge` | 5.3 · 5.4 · 5.5 | Vorlage Arbeitsvertrag (Schritt 4 von 7) | Rahmen **aus den bestehenden** `src/lib/vorlagen/*Schemas.ts`, kein zweites Schema-Modell; PDF und DOCX aus demselben Assemble-Ergebnis (§5); die 42 geplanten fallen danach aus demselben Rahmen |
 | **`W2·29-WERKBANK-RECHNER`** — die 20 einzeln | `werkzeuge` | 4.3 · 4.4 | Fristenrechner ZPO | Gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock, Exportleiste. **Rechenfälle nie abstrahiert (§1)** — 20 Rechner bleiben 20 Handgriffe |
-| **`W2·29-WERKBANK-REST`** — Rest und Rückbau | `design` | 1.5 · 1.6 · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
+| **`W2·29-WERKBANK-REST`** — Rest und Rückbau | `design` | 1.5 (ohne `/abdeckung`) · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
 
 **Nachtrag 23.9.2026 (Entscheid David, Chat, Option A):** Startseite aus REST in KATALOGE geholt
 (vier Kacheln mit denselben Karten-Bauteilen wie die Kataloge, als letzte Scheibe), KATALOGE parallel
@@ -310,6 +310,33 @@ leser-ruecksprung-r5-r7, verweis-u — gleiche Wettlauf-Familie; S0/S4/S5. 3 420
 leserV3Modell.ts 419, uebersichtAngaben.ts 417. 4 index.css ~71 % Kommentare → QS-DOKU-DIAET.
 5 Board #EEF1F6 ≠ `--reg-g-flaeche` #D9DEE4 — Token gilt.
 
+## §5b · KATALOGE — Bauplan in Scheiben (Planung 23.9.2026)
+
+**Kernbefunde** (lex-recherche Opus, 23.9.2026): (1) EINE Kachel = `ui/RubrikKachel` + Prop `reg`
+(Registerstrich, `--reg-*-flaeche`); `start/BereichsReihe` (fünf Kacheln) fällt. Katalog-Kopf =
+`layout/SeitenKopf` + `.ub-*` (färbt Materialien/statische Seiten mit — gewollt). Zeilen bleiben je
+Rubrik (ErlassKarte · EntscheidZeile · TrefferZeile), nur Stil (§1). (2) In gesperrte Leser-Flächen
+reichen `.fc-*`/`ui/FacettenGruppe`, `ui/GruppenKopf`, `ui/SchriftgroessenRegler` — unberührt bzw. K6.
+(3) Nicht bauen (Board > Produkt): Schnellwerkzeug, feste H1, Linklisten in Kacheln, «44».
+
+**Scheiben** (‖ = parallel nach K1; Sichtprüfung 1280/390 hell/dunkel im PR-Body):
+- **K0 Prüfstrasse** ‖ K1: §8-Ratsche in `katalog.test.tsx` (39/42 «In Vorbereitung»); Flacker-Wurzeln
+  `rechtsprechung`, `uinav-j-rechtsprechung` (201/200 Links), `rechtsprechung-richter`.
+- **K1 Rahmen:** SeitenKopf, `.ub-*`, RubrikKachel(`reg`), TrefferZeile.
+- **K2 Gesetze** ‖: Gesetze.tsx (60 Z. unter Deckel, netto ≤ 0), gesetze-teile/*, normtext-Katalogteile,
+  ListenTabelle, `.tb-*`; Kantons-Auswahl/Schweizkarte: Aufbau bleibt, nur Stil (Entscheid Session).
+- **K3 Rechtsprechung** ‖: Seite + rechtsprechung/* ohne FacettenGruppe; LM-117 nicht (§1-nah).
+- **K4 Rechner-/Vorlagen-Katalog** ‖: Katalog, Übersichten, Legende/Hinweis/Einstieg;
+  `start/Zeiterfassung` zum einzigen Verwender.
+- **K5 Abdeckung + Einstellungen** ‖: Abdeckung zählt aus `STARTSEITE_ZAEHLER` (heute drei Manifeste,
+  eigene Regel — zweite Quelle §5; Zahlwechsel deklarieren); Einstellungen nur Seitenebene.
+- **K6 Suche + Facetten:** dep **LESER-S4 gelandet**.
+- **K7 Startseite (zuletzt):** vier RubrikKachel (Werkzeuge → `/rechner`, Unterzeile «N Rechner · M
+  Vorlagen» aus dem Zähler); Begrüssung, Zuletzt, Module, Anpassen-Blatt bleiben (1.2.1–1.2.3).
+  Deklariert: `startseite-pult-r10.e2e.ts:80` (fünf → vier), `katalog.test.tsx:252` (Titel).
+
+**Abbruch-Zählung (§2 Ziff. 4)** läuft je Rubrik getrennt (LESER und KATALOGE parallel).
+
 ## §6 · Prüfen und Frühsignale
 
 1. **Rot-Beweis (§6.7)** beim Tor: Ausgabe rot *und* grün im PR. Ein Baseline-Eintrag macht es
@@ -345,8 +372,8 @@ Rechtslogik, Korpus oder Prüfstrasse betrifft, bleibt. Datierte Belege altern n
 | `FAHRPLAN-SPLIT-VIEW.md` · `FAHRPLAN-GESETZES-UX.md` (beide ohne lebenden Schritt) | LESER | prüfen, was noch Referenz ist (`DESIGN-REGLEMENT.md` §N zeigt auf GESETZES-UX), Rest ins Archiv | LESER |
 | `FAHRPLAN-UI-BEFUNDE.md` (210 Befunde an der alten Hülle) + `W2·17-UI-BEFUNDE` | jede Rubrik löst ihre Befunde ab | je Rubrik abhaken oder als gegenstandslos in die Chronik; Rest ins Archiv | je Rubrik, Schluss REST |
 | `FAHRPLAN-UI-QUALITAET.md` + `QS-UI` · `FAHRPLAN-DESIGN-KONSISTENZ.md` + `W2·19-DESIGN-KONSISTENZ` | der Umbau stellt gleiche Dinge gleich dar — das **ist** die Konsistenz-Arbeit | absorbieren, Schritte in die Chronik, Fahrpläne ins Archiv | REST |
-| `FAHRPLAN-DESIGN-IDENTITAET.md` §8-Reste + `W2·24-C` | KATALOGE / REST | Posten unter die Rubrik, Rest ins Archiv. **`W2·24-PERF-REST` bleibt** — CLS/Mount ist §15, keine Hülle | KATALOGE / REST |
-| `W2·9` (a) Kachel-Höhen | KATALOGE | mitziehen. **(b) Schalter «aufgehobene Normen ausblenden» bleibt** — Funktion, nicht Hülle | KATALOGE |
+| `FAHRPLAN-DESIGN-IDENTITAET.md` §8-Reste + `W2·24-C` | REST (Planung 23.9.: kein Posten betrifft Kataloge) | Posten unter die Rubrik, Rest ins Archiv. **`W2·24-PERF-REST` bleibt** — CLS/Mount ist §15, keine Hülle | KATALOGE / REST |
+| `W2·9` (a) Kachel-Höhen | RECHNER (Gegenstand `GebvKostenForm.tsx:97`, Planung 23.9.) | mitziehen. **(b) Schalter «aufgehobene Normen ausblenden» bleibt** — Funktion, nicht Hülle | KATALOGE |
 | `abnahme/**`, `docs/ui-befunde-2026-07/**` | — | **bleiben** (datierte Belege); nur das Kontrast-Protokoll zieht als lebende Referenz mit den Tokens um | — |
 | `FAHRPLAN-GESETZESDARSTELLUNG-V2.md` (`W2·5g-ZEIT`) · `FAHRPLAN-NORMTEXT-DARSTELLUNG.md` (`W2·5l-NORMTEXT-B2`) | — | **bleiben** — Gegenstand ist Fassungs-/Textdaten (Korpus) | — |
 
