@@ -111,9 +111,12 @@ function Ingress({ kopf, intern }: { kopf: ErlassKopf; intern?: InternRefs }) {
 export function ErlassLeserKopf({
   erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', kennzahlen = null,
   aktionen, hinweis, currency, nichtKonsolidiert = false, nichtKonsolidiertSeit = null,
-  kennung = null, luecken, zukunft, ingress = null, intern,
+  kennung = null, luecken, teilerfassung, zukunft, ingress = null, intern,
 }: {
   erlass: BrowseErlass;
+  /** §8 · belegte Fehl-/Teilerfassung (`erlassUebersichtDaten.teilerfassung`),
+   *  OHNE Klick sichtbar (Entscheid David 8.8.2026). `undefined` = kein Beleg. */
+  teilerfassung?: string;
   /** §8-Nachzug (PR #614): vom §-Parser bewusst ausgelassene Teile dieses
    *  (kantonalen) Erlasses. `undefined` = keine ausgewiesene Lücke → kein Hinweis. */
   luecken?: KantonLueckeEintrag;
@@ -311,6 +314,9 @@ export function ErlassLeserKopf({
               </ul>
             )}
           </div>
+        )}
+        {teilerfassung && (
+          <p role="note" data-v3-teilerfassung className="lc-notice text-body-s leading-snug">{teilerfassung}</p>
         )}
       </LeserKopfGeruest>
       {ingress && <Ingress kopf={ingress} intern={intern} />}

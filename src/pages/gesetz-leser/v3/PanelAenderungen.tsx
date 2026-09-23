@@ -30,7 +30,7 @@ export function PanelAenderungen({ stand, quelleUrl }: {
   quelleUrl: string;
 }) {
   if (!stand.fertig) {
-    return <p data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-3 text-body-s text-ink-500">Änderungen werden geladen …</p>;
+    return <p data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-3 text-body-s text-ink-600">Änderungen werden geladen …</p>;
   }
   // ── B6 (Klick-Test 18.8.2026) · EIN FEHLER, DER KEINER WAR ────────────────
   // BEFUND: an einem Kantonserlass meldete der Reiter «Änderungsverlauf konnte
@@ -59,7 +59,7 @@ export function PanelAenderungen({ stand, quelleUrl }: {
   // falsch wie «konnte nicht geladen werden» im häufigen Normalfall.
   if (stand.wert === null) {
     return (
-      <p data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-3 text-body-s text-ink-500">
+      <p data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-3 text-body-s text-ink-600">
         Kein Änderungsverlauf verfügbar — für diesen Erlass ist keiner erfasst,
         oder die Quelle war nicht erreichbar. Amtliche Quelle:{' '}
         <a href={quelleUrl} rel="nofollow noopener noreferrer" target="_blank" className="text-brass-700">Amtliche Fassung ↗</a>
@@ -69,7 +69,7 @@ export function PanelAenderungen({ stand, quelleUrl }: {
   const { revisionen, reichweite } = stand.wert;
   if (revisionen.length === 0) {
     return (
-      <p data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-3 text-body-s text-ink-500">
+      <p data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-3 text-body-s text-ink-600">
         Für diesen Erlass ist keine Änderung erfasst.
       </p>
     );
@@ -86,7 +86,7 @@ export function PanelAenderungen({ stand, quelleUrl }: {
   // nicht mehr wiederholt.
   const hatSammelerlass = revisionen.some((r) => r.art === 'sammelerlass-marker');
   return (
-    <div data-v3-panel-reiter-inhalt="aenderungen" className="px-2.5 py-1">
+    <div data-v3-panel-reiter-inhalt="aenderungen" className="px-3 py-1">
       {/* Ä121: `pt-1.5` — der Erklärtext klebte an der Reiterlinie darüber
           (gemessen 0 px Luft). Eine Zeile, die eine Liste einleitet, gehört
           näher an die Liste als an die Kante des Behälters (4-px-Raster). */}
@@ -97,7 +97,7 @@ export function PanelAenderungen({ stand, quelleUrl }: {
           const marker = r.art === 'sammelerlass-marker';
           return (
             <li key={r.ocUri ?? `${r.art}:${r.dateEntryInForce}`} data-v3-panel-aenderung
-              className="border-t border-line/60 py-1.5 first:border-t-0">
+              className="border-l-2 border-t border-line border-l-reg-g py-2 pl-2.5">
               <span className="flex items-baseline gap-2">
                 <span className="num shrink-0 text-body-s font-medium text-ink-800">{datumAnzeige(r.dateEntryInForce)}</span>
                 {r.roFundstelle && <span className="num shrink-0 text-micro text-ink-500">{r.roFundstelle}</span>}
@@ -130,7 +130,7 @@ export function PanelAenderungen({ stand, quelleUrl }: {
         })}
       </ul>
       {hatSammelerlass && (
-        <p data-v3-panel-sammelerlass-hinweis className="border-t border-line/60 pt-1.5 text-micro leading-snug text-ink-500">
+        <p data-v3-panel-sammelerlass-hinweis className="border-t border-line pt-1.5 text-micro leading-snug text-ink-600">
           «Sammelerlass» heisst: die Änderung kam über einen Erlass, der mehrere
           Gesetze zugleich ändert — erfasst ist davon nur das Datum.
         </p>

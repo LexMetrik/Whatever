@@ -45,7 +45,7 @@ export function PanelMaterialien({ stand, quelleUrl, ebene }: {
   ebene?: 'bund' | 'kanton';
 }) {
   if (!stand.fertig) {
-    return <p data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-3 text-body-s text-ink-500">Materialien werden geladen …</p>;
+    return <p data-v3-panel-reiter-inhalt="materialien" className="px-3 py-3 text-body-s text-ink-600">Materialien werden geladen …</p>;
   }
   const { botschaften, vernehmlassungen } = stand.wert ?? { botschaften: null, vernehmlassungen: null };
   // BEIDE null = Manifest unerreichbar (Fetch-Fehler), nicht «nichts erfasst» (§8).
@@ -59,23 +59,23 @@ export function PanelMaterialien({ stand, quelleUrl, ebene }: {
   if (botschaften === null && vernehmlassungen === null) {
     return (
       <AbrufFehler gegenstand="Materialien" mehrzahl href={quelleUrl}
-        className="px-2.5 py-3" daten={{ 'data-v3-panel-reiter-inhalt': 'materialien' }} />
+        className="px-3 py-3" daten={{ 'data-v3-panel-reiter-inhalt': 'materialien' }} />
     );
   }
   const hatBotschaften = (botschaften?.length ?? 0) > 0;
   const hatVernehmlassungen = (vernehmlassungen?.length ?? 0) > 0;
   if (!hatBotschaften && !hatVernehmlassungen) {
     return (
-      <p data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-3 text-body-s text-ink-500">
+      <p data-v3-panel-reiter-inhalt="materialien" className="px-3 py-3 text-body-s text-ink-600">
         Zu diesem Erlass ist kein amtliches Material erfasst.
         {ebene === 'kanton' && (
-          <span data-v3-panel-abdeckung="kanton" className="block text-ink-400">{KANTON_ABDECKUNG}</span>
+          <span data-v3-panel-abdeckung="kanton" className="block text-ink-600">{KANTON_ABDECKUNG}</span>
         )}
       </p>
     );
   }
   return (
-    <div data-v3-panel-reiter-inhalt="materialien" className="px-2.5 py-1">
+    <div data-v3-panel-reiter-inhalt="materialien" className="px-3 py-1">
       {hatBotschaften && (
         <section data-v3-panel-material="botschaften" className="pt-1">
           {/* B3-1 (R3-β): dichte Gestalt des EINEN Gruppenkopfs (`ui/GruppenKopf`)
@@ -83,7 +83,7 @@ export function PanelMaterialien({ stand, quelleUrl, ebene }: {
           <GruppenKopf als="p" dicht titel="Entstehung" zahl={botschaften?.length} />
           <ul className="mt-0.5">
             {botschaften?.map((b) => (
-              <li key={b.key} className="border-t border-line/60 py-1.5 first:border-t-0">
+              <li key={b.key} className="border-l-2 border-t border-line border-l-reg-m py-2 pl-2.5">
                 <span className="flex items-baseline gap-2">
                   <span className="num shrink-0 text-body-s font-medium text-ink-800">{b.nummer ?? 'Botschaft'}</span>
                   <span className="num shrink-0 text-micro text-ink-500">{datumAnzeige(b.stand)}</span>
@@ -115,7 +115,7 @@ export function PanelMaterialien({ stand, quelleUrl, ebene }: {
           <GruppenKopf als="p" dicht titel="In Arbeit" zahl={vernehmlassungen?.length} />
           <ul className="mt-0.5">
             {vernehmlassungen?.map((v) => (
-              <li key={v.key} className="border-t border-line/60 py-1.5 first:border-t-0">
+              <li key={v.key} className="border-l-2 border-t border-line border-l-reg-m py-2 pl-2.5">
                 <span className="flex items-baseline gap-2">
                   <span className="shrink-0 text-body-s font-medium text-ink-800">{VERNEHMLASSUNG_STATUS_LABEL[v.status]}</span>
                   {/* Frist nur, wenn sie das Sidecar trägt — bei «in Vorbereitung»

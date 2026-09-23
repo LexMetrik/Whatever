@@ -45,7 +45,7 @@ export function PanelSachgebiet({ gebiete, gewaehlt, onGebiete }: {
   const alle = gewaehlt.length === 0;
   return (
     <div role="group" aria-label="Sachgebiete der Entscheide" data-v3-panel-sachgebiet
-      className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5 px-2.5 pt-1.5 pb-0.5">
+      className="lc-chip-zeile flex flex-wrap items-center gap-x-2 gap-y-1.5 px-3 pt-1.5 pb-0.5">
       <span className="lc-overline mr-1">Sachgebiet</span>
       <button type="button" aria-pressed={alle} onClick={() => onGebiete([])}
         title="Entscheide aus allen erfassten Sachgebieten zeigen"

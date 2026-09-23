@@ -3,6 +3,16 @@ import type { BestimmungsWort } from './erlassAnsicht';
 import { PANEL_REITER, reiterTitel, type PanelReiter } from './panelModell';
 import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
 
+/** Register je Reiter (W2·29 S5): Entscheide = Rechtsprechung, Änderungen =
+ *  Gesetze, Materialien = Materialien, Anwendung = Werkzeuge. Volle
+ *  Klassen-Literale, damit Tailwind sie findet. */
+const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
+  entscheide: 'border-reg-r bg-reg-r-flaeche',
+  aenderungen: 'border-reg-g bg-reg-g-flaeche',
+  materialien: 'border-reg-m bg-reg-m-flaeche',
+  anwendung: 'border-reg-w bg-reg-w-flaeche',
+};
+
 // ─── Das Panel selbst: EIN Ort, VIER Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
 //
 // WAS DAS ERSETZT: das `KontextPanel` (765 Z.) mit sechs bedingten Sektionen, die
@@ -106,18 +116,12 @@ export function LeserPanel({
   }
 
   return (
-    // `rounded-xl` mit vollem Rahmen: die Zone gibt dem rechts angeschlagenen
-    // Blatt eine Polsterung (`p-2`), es steht dort also frei im Bild; das unten
-    // angeschlagene füllt die Breite und stösst an die Kante, wo die untere
-    // Rundung unsichtbar bleibt. EINE Kantenregel für beide Gestalten statt zwei
-    // Sonderfälle — die Gestalt entscheidet die Zone, nicht diese Datei (§3).
-    // A3-2 (R3-β): die übrige Kette (`--paper-raised` · Rahmen · shadow-lg) ist
-    // `.lc-schwebeflaeche` — nur der Radius weicht ab, aus dem Grund darüber.
+    // W2·29 S5 (Werkbank): eckig, flach (`.lc-schwebeflaeche` = Papier + Linie).
     <div ref={panelRef} tabIndex={-1} id={panelId} data-v3-panel
-      className="lc-schwebeflaeche flex min-h-0 flex-col overflow-hidden rounded-xl">
+      className="lc-schwebeflaeche flex min-h-0 flex-col overflow-hidden">
       {kopfExtra}
       {/* ── Kopf: WAS ist das, WORAUF bezieht es sich, WEG damit ─────────────── */}
-      <div className="flex shrink-0 items-baseline justify-between gap-2 border-b border-line px-2.5 py-1.5">
+      <div className="flex shrink-0 items-baseline justify-between gap-2 border-b-2 border-ink-900 px-3 py-2">
         <p id={titelId} className="lc-overline min-w-0 truncate">
           Rechtsprechung &amp; Kontext
           {/* Befund 34: nur «Entscheide» bezieht sich auf den Artikel — die
@@ -135,77 +139,24 @@ export function LeserPanel({
           Sie gehört dem PANEL, nicht einer seiner Tafeln: wer den Reiter
           wechselt, soll sie nicht verlieren — und der Screenreader soll sie
           nicht als Teil von «Entscheide» vorgelesen bekommen. Ohne Inhalt
-          rendert hier nichts: kein Rahmen, keine Höhe, kein CLS (dieselbe
-          Regel wie beim Fuss unten). */}
+          rendert hier nichts: kein Rahmen, keine Höhe, kein CLS. */}
       {steckbrief && (
-        <div data-v3-panel-steckbrief className="shrink-0 border-b border-line px-2.5 py-1">{steckbrief}</div>
+        <div data-v3-panel-steckbrief className="shrink-0 border-b border-line px-3 py-1">{steckbrief}</div>
       )}
 
-      {/* ── Reiter-Leiste ─────────────────────────────────────────────────────
-          `overflow-x-auto` mit `scrollbar-width:none` (Agent-U-Wunsch, H4-II):
-          gemessen 18.8.2026 @1440 füllen die drei Reiter 269 px von 334 px
-          Platz — ein VIERTER (Kap. 14 «Zitat-Export») passt nicht und wurde
-          bisher am Rand abgeschnitten (`scrollWidth` 369 gegen `clientWidth`
-          334, gebaut und verworfen). Eine Leiste, die ihr viertes Fach
-          verschluckt, ist die Falle; eine, die waagrecht scrollt, ist die
-          kleinste ehrliche Antwort. `shrink-0` an den Reitern, sonst quetscht
-          Flexbox sie in die vorhandene Breite statt zu scrollen.
-
-          DER VIERTE IST SEIT 31.8.2026 DA — «Anwendung», nicht «Zitat-Export»
-          (W2·7-VZUI). Die Vorsorge hat getragen: nachgemessen @1440 `scrollWidth`
-          385 gegen `clientWidth` 350, also 35 px Scrollweg und kein
-          abgeschnittenes Fach; @390 passt die Leiste ganz (388/388). Herleitung
-          samt Etiketten-Wahl im Kopf von `PanelAnwendung.tsx`. */}
-      {/* ── LM-063-Klasse, hier nachgemessen (B8, 31.8.2026) ──────────────────
-          Die Vorsorge oben stimmt, die Ehrlichkeit fehlte: 35 px Scrollweg
-          ohne Scrollbalken (`scrollbar-width:none`) heisst, dass «Anwendung»
-          rechts angeschnitten steht und NICHTS das sagt — derselbe Defekt, den
-          LM-063 an den Rechner-Phasenleisten meldet, nur eine Etage tiefer.
-          `lc-scrollrand-x` ist dieselbe geteilte Affordanz wie dort (§5); der
-          Deckel-Ton folgt der Panel-Fläche, nicht dem Seitengrund. */}
-      {/* ── G11 (Gesamtprüfung W2·24, 7.9.2026) · DIE AFFORDANZ WAR NICHT DIE
-             ANTWORT, SIE WAR DAS EINGESTÄNDNIS ────────────────────────────────
-          GEMESSEN am Vorstand `72b39d50c` (OR #art-336_c, hell, @1440 UND
-          @1024): das Panel steht als `'rechts'`-Blatt 336 px breit (Aussenmass
-          22 rem = 352, minus `p-2`), die Reiterzeile misst darin
-          `scrollWidth 379` gegen `clientWidth 334` — «Anwendung» endet bei
-          x 1286, die Zeile bei x 1247, also **39 px hinter der Kante**. Der
-          Scrollweg beträgt 45 px, und er ist der EINZIGE Weg zum vierten Fach:
-          ein Scrollbalken ist per `[scrollbar-width:none]` unsichtbar.
-          @390 (Bottom-Sheet, 390 px breit) passt dieselbe Zeile ganz: 388/388.
-          Der Defekt hängt also nicht an der Schriftgrösse, sondern an der
-          BREITE DES BLATTS — und die ist mit D33 (7.9.2026) bewusst 22 rem.
-
-          WARUM DAS TROTZ `lc-scrollrand-x` EIN BEFUND IST: die Affordanz sagt
-          ehrlich «hier geht es weiter», aber die Regel des Hauses für Reiter
-          ist strenger — R13-2 («kein Reiter wird stumm angeschnitten») ist an
-          der Arbeitsleiste gerade zu «die Reiter passen ganz ins Bild, der Rest
-          steht im Blatt» ausgebaut worden. Vier feste Fächer haben kein Blatt,
-          in das ein Rest ausweichen könnte; sie müssen also passen.
-
-          DIE DREI WEGE, GEGENEINANDER GEMESSEN:
-           (a) Blatt verbreitern — 25 rem (400 px) trägt die 379 px. Kostet auf
-               @1024 weitere 48 px verdeckten Lesetext (D33 nennt die Deckung
-               ausdrücklich als Preis der Gestalt) und rührt an die eine Zahl,
-               die David am 7.9.2026 entschieden hat. Verworfen.
-           (b) Etiketten kürzen — «Anwendung» ist der Kanon aus `panelModell`
-               und steht auch im Reiter-Tooltip. Ein zweites Wort für dieselbe
-               Tafel wäre der Ä114-Fehler. Verworfen.
-           (c) UMBRECHEN. Die vier Fächer stehen dann @1440/@1024 als 3 + 1 in
-               zwei Reihen (Kosten: ~26 px Tafelhöhe von 389) und @390
-               unverändert in einer. Nichts ist verborgen, nichts ist gekürzt.
-          GEWÄHLT: (c).
-
-          `overflow-x-auto` und `lc-scrollrand-x` BLEIBEN und sind kein toter
-          Rest: die Fächer tragen `shrink-0`, ein einzelnes Fach kann also
-          breiter sein als die Zeile (schmales Pane, 200-%-Schriftskala) — dann
-          scrollt sie weiter und sagt es. Beim Vier-Fach-Normalfall greift der
-          Umbruch VORHER, und `scrollWidth` bleibt gleich `clientWidth`.
-          BEWACHT: `e2e/leser-w224-g.e2e.ts` (G11) misst @1440/@1024/@390
-          `scrollWidth ≤ clientWidth` UND die rechte Kante jedes Fachs gegen die
-          Kante der Zeile. Rot zu bekommen: `flex-wrap` hier entfernen. */}
+      {/* ── Reiter-Leiste · Registerfläche (W2·29 S5, Board «Erlass-Blatt») ──
+          Jedes Fach trägt sein Register (`REITER_REGISTER`): der aktive Reiter
+          steht auf der getönten Fläche `reg-*-flaeche` mit der Registerkante
+          unten, Tinte darauf (F0.2 i. d. F. 22.9.2026: Fläche nur über diese
+          Token, nie die Registerfarbe als Text). Die Fächer wachsen (`grow`)
+          auf die Zeilenbreite und schrumpfen nie (`shrink-0`).
+          G11 (7.9.2026, gemessen am 22-rem-Blatt): vier Fächer müssen GANZ
+          passen — weder Kürzen (Kanon-Etikett, Ä114) noch stummes Scrollen;
+          darum `flex-wrap`. `overflow-x-auto` + `lc-scrollrand-x` bleiben für
+          das Einzelfach, das breiter ist als die Zeile (200-%-Schriftskala).
+          BEWACHT: `e2e/leser-w224-g.e2e.ts` (G11); rot: `flex-wrap` entfernen. */}
       <div ref={leisteRef} role="tablist" aria-label="Kontext-Reiter" onKeyDown={taste}
-        className="lc-scrollrand-x lc-scrollrand-grund-raised flex flex-wrap shrink-0 gap-x-1 gap-y-0.5 overflow-x-auto overflow-y-hidden border-b border-line px-1.5 pt-1.5 [scrollbar-width:none]">
+        className="lc-scrollrand-x flex flex-wrap shrink-0 gap-y-0.5 overflow-x-auto overflow-y-hidden px-3 pt-2 [scrollbar-width:none]">
         {PANEL_REITER.map((r) => {
           const aktiv = r.id === reiter;
           return (
@@ -214,8 +165,8 @@ export function LeserPanel({
               aria-selected={aktiv} aria-controls={`${panelId}-tafel-${r.id}`}
               tabIndex={aktiv ? 0 : -1} title={reiterTitel(r.id, bestimmungsWort)}
               onClick={() => setReiter(r.id)}
-              className={`-mb-px shrink-0 whitespace-nowrap rounded-t-md border-b-2 px-2 py-1 text-body-s transition-colors ${
-                aktiv ? 'border-brass-500 font-medium text-ink-900' : 'border-transparent text-ink-500 hover:text-brass-700'
+              className={`grow shrink-0 whitespace-nowrap border-b-2 px-2 py-1.5 text-body-s transition-colors ${
+                aktiv ? `${REITER_REGISTER[r.id]} font-semibold text-ink-900` : 'border-line text-ink-600 lc-hover-flaeche hover:text-ink-900'
               }`}>
               {r.label}
             </button>
@@ -234,7 +185,7 @@ export function LeserPanel({
         </div>
       </div>
 
-      {fuss && <div className="shrink-0 border-t border-line px-2.5 py-1.5">{fuss}</div>}
+      {fuss && <div className="shrink-0 border-t border-line px-3 py-1.5">{fuss}</div>}
     </div>
   );
 }
