@@ -21,7 +21,7 @@ innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
 4. Registerfarben `--reg-g/r/m/w` Strich/Kante/Marke; Fläche nur `--reg-*-flaeche`, Tinte darauf → F0.2
 5. Status bleibt `sage/slate/warn/danger`, keine Ad-hoc-Farbe → B3
 6. `--accent-*`/`--brass-*` sind **neutral = Tinte**; der Klassenname lügt, die Werte gelten → F0.3
-7. Alle Radien 0 (`rounded-full` ausgenommen); ein Schatten, nur `.lc-schwebeflaeche` → F0.5
+7. Radien 4 · 8 · 10 · 14 (Marke · Knopf/Zeile · Karte/Schwebefläche · Fläche/Kachel), Pille `rounded-full`; gerade bleiben Linien, Registerstriche, Tabellen, Normtext (GRUNDTON 23.9.2026); ein Schatten, nur `.lc-schwebeflaeche` → F0.5
 8. Trennung über Linien: 1 px `--rule-soft`, 2 px `--rule` — nicht über Kästen → F0.6
 9. Etiketten ohne Versalien und ohne Sperrsatz (Regel sitzt an `.lc-overline`) → F0.7
 10. Inline-Links unterstrichen; Navigation/Listen/Chips dürfen ohne, sagen es im Markup → F0.8
@@ -31,5 +31,5 @@ innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
 Normtext hat eigene Regeln: `DESIGN-REGLEMENT.md` §N-4b (Linien-Kanon,
 Lese-Typografie) und §N-4b-B (Farb-Wörterbuch) — §N-4b-B ist **gegatet**,
 `check:farbwelt` vergleicht seine Zahlen gegen die Messung. Aufgehobene Regeln
-(Brass als Marke, Wärme-Dramaturgie, Geist/Source Serif 4, Versal-Overlines,
-gerundete Kanten): je eine Zeile in der §-Konkordanz, Wortlaut im Archiv (F0.10).
+(Brass als Marke, Wärme-Dramaturgie, Geist/Source Serif 4, Versal-Overlines;
+«Kanten statt Kissen» seit 23.9.2026 durch F0.5 «Rundung mit Mass» abgelöst): je eine Zeile in der §-Konkordanz, Wortlaut im Archiv (F0.10).

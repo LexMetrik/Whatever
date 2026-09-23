@@ -1,0 +1,244 @@
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import type { Register } from '../layout/bereiche';
+import { RubrikKachel } from '../ui/RubrikKachel';
+import { SchliessKnopf } from '../ui/SchliessKnopf';
+import { AUFKLAPPBAR, gleicherOrt, type BlattOrt, type BlattRubrik } from '../../lib/startBlatt';
+import { useBlattOrt } from './useBlattOrt';
+import { GesetzeBlatt, gesetzeKrumen } from './GesetzeBlatt';
+
+// ─── Startseite · das 2×2-Kachelfeld, das vor Ort aufklappt (W2·29-WERKBANK-START S1)
+//
+// David 23.9.2026 am Prototyp: «kacheln sollen nebeneinander also jeweils 2 oben
+// 2 unten sein» · «es soll nur die fläche einnehmen die für die vier kacheln zur
+// verfügung stehen» · «es soll wirklich schön animiert sein und sich natürlich
+// anfühlen und nicht ruckeln» · Handy: Vollbild-Blatt.
+//
+// DIE BEWEGUNG (Container-Transform, nur Compositor-Eigenschaften):
+//   · Das Blatt liegt in voller Feldgrösse über den Kacheln und wird per
+//     `clip-path: inset(… round 14px)` von der Kontur der angeklickten Kachel
+//     auf das ganze Feld aufgedeckt. Keine Grössen-/Positions-Animation: die
+//     erste Prototyp-Fassung animierte top/left/width/height — Layout je Bild und
+//     Text-Umbruch mitten in der Bewegung, darum verworfen.
+//   · Eine Farbschicht in der Registerfläche trägt das Kachel-Gesicht (Titel,
+//     Zahl, Einheit) an Ort und Stelle und blendet nach rund 30 % der Dauer auf
+//     den Inhalt über — das Auge sieht die Kachel wachsen, nicht ein Blatt
+//     erscheinen.
+//   · Kurve `cubic-bezier(.2,0,0,1)`, auf 450 ms, zu 350 ms (CSS, `.lc-start-*`).
+//   · `prefers-reduced-motion` ⇒ sofort (JS überspringt die Startphase, CSS
+//     schaltet die Übergänge ab).
+//   · Telefon (< 760 px Fensterbreite): Vollbild-Blatt, das von unten einfährt
+//     (gleiche Kurve). Gemessen am Fenster, nicht am Pane: im geteilten Fenster
+//     bleibt das Blatt im Feld.
+//
+// Die drei übrigen Kacheln treten während des Aufklappens zurück (Deckkraft,
+// Massstab), damit die Bewegung einen Ursprung hat.
+//
+// A11y: die Kachel ist ein Knopf mit `aria-expanded`/`aria-controls`; das
+// offene Blatt ist eine `region` und bekommt den Fokus; Escape und ✕ schliessen
+// ganz, der Fokus kehrt auf die Kachel zurück (§8).
+
+export interface KachelDef {
+  rubrik: BlattRubrik;
+  reg: Register;
+  /** Rubrikseite — Link-Ziel, solange die Kachel noch nicht aufklappt (S1). */
+  ziel: string;
+  titel: string;
+  zahl: string;
+  einheit: string;
+  nutzen: string;
+  teile?: string;
+}
+
+const BLATT_ID = 'lm-start-blatt';
+/** Fläche und Strich je Register — volle Klassennamen, damit Tailwind sie findet. */
+const FLAECHE: Record<Register, string> = {
+  g: 'bg-reg-g-flaeche border-reg-g', r: 'bg-reg-r-flaeche border-reg-r',
+  m: 'bg-reg-m-flaeche border-reg-m', w: 'bg-reg-w-flaeche border-reg-w',
+};
+const STRICH: Record<Register, string> = { g: 'border-reg-g', r: 'border-reg-r', m: 'border-reg-m', w: 'border-reg-w' };
+/** Schliess-Dauer — muss mit der CSS-Transition `[data-phase=schliesst]` übereinstimmen (Öffnen: 450 ms, nur CSS). */
+const DAUER_ZU = 350;
+const SCHMAL = '(max-width: 759.98px)';
+
+type Phase = 'zu' | 'start' | 'offen' | 'schliesst';
+/** Kachel-Kontur relativ zum Feld, in px. */
+interface Kontur { oben: number; rechts: number; unten: number; links: number; breite: number; hoehe: number }
+
+const medien = (q: string) => typeof window !== 'undefined' && !!window.matchMedia?.(q).matches;
+
+/** Zwei Bilder warten, damit der Startzustand gemalt ist, bevor die Transition
+ *  greift — mit Zeitgeber als Netz, weil ein verdecktes Fenster keine
+ *  Animationsbilder liefert (dort soll das Blatt trotzdem aufgehen). */
+function naechstesBild(f: () => void): () => void {
+  let fertig = false;
+  const los = () => { if (!fertig) { fertig = true; f(); } };
+  const a = requestAnimationFrame(() => requestAnimationFrame(los));
+  const t = window.setTimeout(los, 60);
+  return () => { fertig = true; cancelAnimationFrame(a); window.clearTimeout(t); };
+}
+
+export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) {
+  const { ort, hydriert, gehe, zurueck, schliessen } = useBlattOrt();
+  const feldRef = useRef<HTMLDivElement>(null);
+  const zellen = useRef(new Map<BlattRubrik, HTMLDivElement>());
+  const blattRef = useRef<HTMLElement>(null);
+
+  const [phase, setPhase] = useState<Phase>('zu');
+  const [sicht, setSicht] = useState<BlattOrt | null>(null);
+  const [kontur, setKontur] = useState<Kontur | null>(null);
+  const [richtung, setRichtung] = useState<'vor' | 'zurueck'>('vor');
+  const [schmal, setSchmal] = useState(false);
+  const vorher = useRef<BlattOrt | null>(null);
+  const erster = useRef(true);
+
+  useEffect(() => {
+    const mq = window.matchMedia?.(SCHMAL);
+    if (!mq) return;
+    const neu = () => setSchmal(mq.matches);
+    neu();
+    mq.addEventListener('change', neu);
+    return () => mq.removeEventListener('change', neu);
+  }, []);
+
+  const miss = (r: BlattRubrik): Kontur | null => {
+    const feld = feldRef.current, zelle = zellen.current.get(r);
+    if (!feld || !zelle) return null;
+    const f = feld.getBoundingClientRect(), z = zelle.getBoundingClientRect();
+    const oben = z.top - f.top, links = z.left - f.left;
+    return {
+      oben, links, breite: z.width, hoehe: z.height,
+      rechts: Math.max(0, f.width - links - z.width), unten: Math.max(0, f.height - oben - z.height),
+    };
+  };
+
+  // Ort → Phase. Layout-Effekt: die Startkontur muss VOR dem ersten Bild stehen.
+  useLayoutEffect(() => {
+    if (!hydriert) return;
+    const alt = vorher.current;
+    if (!erster.current && gleicherOrt(alt, ort)) return;
+    vorher.current = ort;
+    const tiefLink = erster.current;
+    erster.current = false;
+    const ruhig = medien('(prefers-reduced-motion: reduce)');
+
+    if (ort && !alt) {
+      setSicht(ort);
+      setRichtung('vor');
+      if (tiefLink || ruhig) { setKontur(null); setPhase('offen'); return; }
+      setKontur(medien(SCHMAL) ? null : miss(ort.rubrik));
+      setPhase('start');
+      return naechstesBild(() => setPhase('offen'));
+    }
+    if (!ort && alt) {
+      const r = alt.rubrik;
+      const fertig = () => {
+        setPhase('zu'); setSicht(null); setKontur(null);
+        zellen.current.get(r)?.querySelector<HTMLElement>('button, a')?.focus({ preventScroll: true });
+      };
+      if (ruhig) { fertig(); return; }
+      setKontur(medien(SCHMAL) ? null : miss(r));
+      setPhase('schliesst');
+      const t = window.setTimeout(fertig, DAUER_ZU + 30);
+      return () => window.clearTimeout(t);
+    }
+    if (ort && alt) {
+      setRichtung(ort.rubrik === alt.rubrik && ort.pfad.length < alt.pfad.length ? 'zurueck' : 'vor');
+      setSicht(ort);
+    }
+  }, [ort, hydriert]);
+
+  // Fokus ins Blatt, sobald es offen steht, und bei jeder Stufe neu (§8).
+  useEffect(() => {
+    if (phase === 'offen') blattRef.current?.focus({ preventScroll: true });
+  }, [phase, sicht]);
+
+  const offen = phase !== 'zu';
+  const kachel = sicht ? kacheln.find((k) => k.rubrik === sicht.rubrik) : undefined;
+  const bewegt = phase === 'start' || phase === 'schliesst';
+  const clip = bewegt && kontur
+    ? `inset(${kontur.oben}px ${kontur.rechts}px ${kontur.unten}px ${kontur.links}px round 14px)`
+    : 'inset(0px round 14px)';
+
+  return (
+    <div ref={feldRef} className="lc-start-feld" data-offen={offen ? '' : undefined}>
+      <nav aria-label="Bereiche der Sammlung" className="lc-start-raster">
+        {kacheln.map((k) => {
+          const klappt = AUFKLAPPBAR.has(k.rubrik);
+          const diese = offen && sicht?.rubrik === k.rubrik;
+          return (
+            <div key={k.rubrik} className="lc-start-zelle"
+              ref={(el) => { if (el) zellen.current.set(k.rubrik, el); else zellen.current.delete(k.rubrik); }}
+              data-zurueck={offen && !diese ? '' : undefined}>
+              <RubrikKachel reg={k.reg} titel={<span className="break-words">{k.titel}</span>}
+                zahl={k.zahl} einheit={k.einheit} nutzen={k.nutzen} kompakt={schmal}
+                extra={k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>}
+                {...(klappt
+                  ? { onWahl: () => gehe({ rubrik: k.rubrik, pfad: [] }), aufgeklappt: diese, steuert: BLATT_ID }
+                  : { ziel: k.ziel })} />
+            </div>
+          );
+        })}
+      </nav>
+
+      {offen && sicht && kachel && (
+        <section ref={blattRef} id={BLATT_ID} tabIndex={-1} role="region" aria-label={kachel.titel}
+          className="lc-start-blatt" data-phase={phase} data-schmal={schmal ? '' : undefined}
+          style={schmal ? undefined : { clipPath: clip, WebkitClipPath: clip }}
+          onKeyDown={(e) => { if (e.key === 'Escape') { e.stopPropagation(); schliessen(); } }}>
+          <BlattKopf reg={kachel.reg} titel={kachel.titel} ort={sicht} gehe={gehe}
+            zurueck={zurueck} schliessen={schliessen} />
+          <div className="lc-start-blatt-inhalt" data-sichtbar={phase === 'offen' ? '' : undefined}>
+            <div key={[sicht.rubrik, ...sicht.pfad].join('/')} className="lc-start-stufe" data-richtung={richtung}>
+              {sicht.rubrik === 'gesetze' && <GesetzeBlatt ort={sicht} gehe={gehe} />}
+            </div>
+          </div>
+          {!schmal && kontur && (
+            <div aria-hidden className={`lc-start-schicht ${FLAECHE[kachel.reg]}`} data-an={bewegt ? '' : undefined}>
+              <div className={`lc-start-gesicht ${STRICH[kachel.reg]}`}
+                style={{ top: kontur.oben, left: kontur.links, width: kontur.breite, height: kontur.hoehe }}>
+                <span className="font-sans text-h3 font-semibold tracking-tight text-ink-900">{kachel.titel}</span>
+                <span className="flex flex-wrap items-baseline gap-2">
+                  <span className="num font-serif text-h1 leading-none text-ink-900">{kachel.zahl}</span>
+                  <span className="text-body-s text-ink-700">{kachel.einheit}</span>
+                </span>
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+    </div>
+  );
+}
+
+/** Band oben im Blatt: Registerfläche + Strich, Pfad, «← Zurück», ✕. */
+function BlattKopf({ reg, titel, ort, gehe, zurueck, schliessen }: {
+  reg: Register; titel: string; ort: BlattOrt;
+  gehe: (o: BlattOrt) => void; zurueck: () => void; schliessen: () => void;
+}) {
+  const krumen: { label: string; ort: BlattOrt }[] = [
+    { label: titel, ort: { rubrik: ort.rubrik, pfad: [] } },
+    ...(ort.rubrik === 'gesetze' ? gesetzeKrumen(ort.pfad) : []),
+  ];
+  return (
+    <div className={`lc-start-band ${FLAECHE[reg]}`}>
+      <button type="button" onClick={zurueck} className="lc-btn-ghost lc-btn-sm shrink-0 px-2">← Zurück</button>
+      <nav aria-label="Pfad im Blatt" className="min-w-0 flex-1">
+        <ol className="flex flex-wrap items-baseline gap-x-1.5 font-sans text-body-s text-ink-700">
+          {krumen.map((k, i) => {
+            const letzte = i === krumen.length - 1;
+            return (
+              <li key={i} className="flex items-baseline gap-x-1.5">
+                {i > 0 && <span aria-hidden className="text-ink-500">›</span>}
+                {letzte
+                  ? <span aria-current="location" className="font-semibold text-ink-900">{k.label}</span>
+                  : <button type="button" onClick={() => gehe(k.ort)} className="lc-btn-ghost lc-btn-sm h-auto px-1 font-normal underline underline-offset-4">{k.label}</button>}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
+      <SchliessKnopf name={`${titel} schliessen`} onClick={schliessen} />
+    </div>
+  );
+}
+

@@ -336,7 +336,9 @@ ausdrücklich im Markup. Ein Link, den nur die Farbe ausweist, ist kein Link
 
 **F0.10 — Was AUFGEHOBEN ist.** Die Creme-Gold-/Messing-Welt (Brass als Marke,
 Wärme-Dramaturgie, Geist/Geist Mono/Source Serif 4, Versal-Overlines, gerundete
-Kanten) gilt seit dem 6.9.2026 nicht mehr. Betroffen sind **F5 · G a · G c · G d ·
+Kanten) gilt seit dem 6.9.2026 nicht mehr. *(23.9.2026: die Rundung kehrt mit Mass
+zurück — F0.5 «Rundung mit Mass», W2·29-WERKBANK-GRUNDTON; aufgehoben bleibt die
+Kissen-Anatomie der Creme-Welt, nicht jeder Radius.)* Betroffen sind **F5 · G a · G c · G d ·
 G e-Zusatz · G f · G g · G h**; am Ort steht nur noch die geltende Fassung, je eine
 Zeile «aufgehoben» in der §-Konkordanz, der Wortlaut im Archiv (konsolidiert
 23.9.2026). Dort stehen auch die datierten Messreihen der F2b-Nachträge
