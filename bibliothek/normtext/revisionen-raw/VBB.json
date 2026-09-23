@@ -485,22 +485,26 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2877_2877_2877",
         "typ": 5,
-        "datum": "1997-01-01"
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3490_3490_3490",
         "typ": 6,
-        "datum": "1997-01-01"
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/671",
         "typ": 1,
-        "datum": "2016-01-01"
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/726",
         "typ": 6,
-        "datum": "2016-01-01"
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
       }
     ],
     "ocStamm": {

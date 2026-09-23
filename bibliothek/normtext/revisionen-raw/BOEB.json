@@ -653,42 +653,50 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/126",
         "typ": 5,
-        "datum": "2021-01-01"
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/899",
         "typ": 1,
-        "datum": "2022-01-01"
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/786",
         "typ": 1,
-        "datum": "2024-01-01"
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/257",
         "typ": 1,
-        "datum": "2025-04-01"
+        "datum": "2025-04-01",
+        "fassung": "2025-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/648",
         "typ": 1,
-        "datum": "2025-01-01"
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2025/168",
         "typ": 1,
-        "datum": "2025-04-01"
+        "datum": "2025-04-01",
+        "fassung": "2025-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2025/173",
         "typ": 5,
-        "datum": "2025-04-01"
+        "datum": "2025-04-01",
+        "fassung": "2025-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2025/672",
         "typ": 1,
-        "datum": "2026-01-01"
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
       }
     ],
     "ocStamm": {

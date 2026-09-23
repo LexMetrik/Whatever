@@ -1172,106 +1172,127 @@
     "auswirkungen": [
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1999/238",
-        "typ": 3
+        "typ": 3,
+        "fassung": "2020-04-28"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1999/239",
         "typ": 5,
-        "datum": "1997-04-26"
+        "datum": "1997-04-26",
+        "fassung": "1997-04-26"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2004/330",
         "typ": 1,
-        "datum": "2003-11-20"
+        "datum": "2003-11-20",
+        "fassung": "2003-11-20"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2004/330",
         "typ": 9,
-        "datum": "2003-11-20"
+        "datum": "2003-11-20",
+        "fassung": "2003-11-20"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2004/497",
         "typ": 1,
-        "datum": "1997-04-26"
+        "datum": "1997-04-26",
+        "fassung": "1997-04-26"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2004/497",
-        "typ": 9
+        "typ": 9,
+        "fassung": "2020-04-28"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/203",
         "typ": 1,
-        "datum": "2006-01-25"
+        "datum": "2006-01-25",
+        "fassung": "2006-01-25"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/203",
         "typ": 9,
-        "datum": "2006-01-25"
+        "datum": "2006-01-25",
+        "fassung": "2006-01-25"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/190",
         "typ": 1,
-        "datum": "2007-02-19"
+        "datum": "2007-02-19",
+        "fassung": "2007-02-19"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/190",
         "typ": 9,
-        "datum": "2007-02-19"
+        "datum": "2007-02-19",
+        "fassung": "2007-02-19"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/155",
         "typ": 1,
-        "datum": "2008-02-15"
+        "datum": "2008-02-15",
+        "fassung": "2008-02-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/155",
         "typ": 9,
-        "datum": "2008-02-15"
+        "datum": "2008-02-15",
+        "fassung": "2008-02-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/202",
         "typ": 1,
-        "datum": "2012-03-06"
+        "datum": "2012-03-06",
+        "fassung": "2012-03-06"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/202",
         "typ": 9,
-        "datum": "2012-03-06"
+        "datum": "2012-03-06",
+        "fassung": "2012-03-06"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2013/770",
         "typ": 1,
-        "datum": "2013-10-30"
+        "datum": "2013-10-30",
+        "fassung": "2013-10-30"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2013/770",
         "typ": 9,
-        "datum": "2013-10-30"
+        "datum": "2013-10-30",
+        "fassung": "2013-10-30"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2016/365",
         "typ": 1,
-        "datum": "2016-06-15"
+        "datum": "2016-06-15",
+        "fassung": "2016-06-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2016/365",
         "typ": 9,
-        "datum": "2016-06-15"
+        "datum": "2016-06-15",
+        "fassung": "2016-06-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/312",
         "typ": 1,
-        "datum": "2020-04-28"
+        "datum": "2020-04-28",
+        "fassung": "2020-04-28"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/312",
         "typ": 9,
-        "datum": "2020-04-28"
+        "datum": "2020-04-28",
+        "fassung": "2020-04-28"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/201",
         "typ": 9,
-        "datum": "2023-04-19"
+        "datum": "2023-04-19",
+        "fassung": "2023-04-19"
       }
     ],
     "ocStamm": {

@@ -7,68 +7,6 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2032-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/123",
-      "dateDocument": "2004-10-08",
-      "roFundstelle": "AS 2005 1023",
-      "titelDe": "Bundesgesetz über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GlG)",
-      "titelFr": "Loi fédérale sur l'égalité entre femmes et hommes (Loi sur l'égalité, LEg)",
-      "titelIt": "Legge federale sulla parità dei sessi (LPar)",
-      "botschaftKey": "BOTSCHAFT-2003-1299",
-      "nichtKonsolidiert": true,
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2005-03-01",
-        "2032-07-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/123/de",
-      "sha": "63bde0e252a746ae0ed3572a8d0da9d5029d7da1200f5cee68d515586f63e979"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2032-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/218",
-      "dateDocument": "2005-06-17",
-      "roFundstelle": "AS 2006 1205",
-      "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
-      "titelFr": "Loi sur le Tribunal fédéral (LTF)",
-      "titelIt": "Legge sul Tribunale federale (LTF)",
-      "botschaftKey": "BOTSCHAFT-2001-731",
-      "nichtKonsolidiert": true,
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2007-01-01",
-        "2032-07-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
-      "sha": "858e122023f0bfedbf1dd2cb671017526974f1951d4621171829b497f03dfc9f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2032-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
-      "dateDocument": "2014-06-20",
-      "roFundstelle": "AS 2016 689",
-      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
-      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
-      "titelIt": "Legge federale sulla formazione continua (LFCo)",
-      "nichtKonsolidiert": true,
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2017-01-01",
-        "2032-07-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
-      "sha": "5589d55930e898c095052878d8c63c1c209b693cb77b1be88fdaf60a0d151e63"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2032-07-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/515",
       "dateDocument": "2018-12-14",
       "roFundstelle": "AS 2019 2815",
@@ -119,12 +57,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2017-01-01",
-        "2032-07-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
-      "sha": "8c4d63b2e70405ed819417dd7a44d95121f1997c342c397f526126aff2b82a82"
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
       "art": "aenderung",
@@ -155,12 +89,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2007-01-01",
-        "2032-07-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
-      "sha": "ccbb826d03837ee0a8bce63c2661e1cdc014095041e0a4ebc96dc714a362e1bb"
+      "sha": "ae2b54b73191bd93986b3de4eb3e461a6561d9ab0201419344b139dd12e72de6"
     },
     {
       "art": "aenderung",
@@ -175,13 +105,9 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2005-03-01",
-        "2032-07-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/123/de",
-      "sha": "b5289d5869d8c59771029edc71437e82cbeb498755097078cc8263f4c784abd8"
+      "sha": "e924dacab2a892c20c9d64571104af4b804a3b37267034d0b59200ba7e07fb9f"
     }
   ],
-  "sha": "4dfde77dd127ba13f03a4c7a053750413cfc0edefe4464d11a8bd916198a451a"
+  "sha": "8867adcb1aa527dee2b145a1f3ae92aa0b16b1af424ad53df63241f71b4a2419"
 }

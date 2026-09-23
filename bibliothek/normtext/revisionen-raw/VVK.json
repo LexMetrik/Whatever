@@ -380,42 +380,50 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/101",
         "typ": 5,
-        "datum": "2007-03-01"
+        "datum": "2007-03-01",
+        "fassung": "2007-03-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/101",
         "typ": 30,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/181",
         "typ": 6,
-        "datum": "2007-03-01"
+        "datum": "2007-03-01",
+        "fassung": "2007-03-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/748",
         "typ": 1,
-        "datum": "2007-12-01"
+        "datum": "2007-12-01",
+        "fassung": "2007-12-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/844",
         "typ": 1,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/844",
         "typ": 2,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/800",
         "typ": 1,
-        "datum": "2022-01-01"
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/658",
         "typ": 1,
-        "datum": "2023-01-01"
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
       }
     ],
     "ocStamm": {

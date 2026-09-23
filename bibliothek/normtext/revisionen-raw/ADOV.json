@@ -557,21 +557,25 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/505",
         "typ": 5,
-        "datum": "2012-01-01"
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/598",
-        "typ": 6
+        "typ": 6,
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/601",
         "typ": 6,
-        "datum": "2012-01-01"
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
         "typ": 1,
-        "datum": "2023-01-23"
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
       }
     ],
     "ocStamm": {

@@ -413,12 +413,14 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/321",
         "typ": 5,
-        "datum": "2008-06-01"
+        "datum": "2008-06-01",
+        "fassung": "2008-06-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2010/150",
         "typ": 1,
-        "datum": "2010-04-01"
+        "datum": "2010-04-01",
+        "fassung": "2010-04-01"
       }
     ],
     "ocStamm": {}

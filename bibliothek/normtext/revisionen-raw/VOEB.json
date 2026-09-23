@@ -1098,17 +1098,20 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/127",
         "typ": 5,
-        "datum": "2021-01-01"
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
         "typ": 1,
-        "datum": "2023-09-01"
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
         "typ": 1,
-        "datum": "2023-01-23"
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
       }
     ],
     "ocStamm": {

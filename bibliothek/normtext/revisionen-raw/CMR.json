@@ -525,106 +525,127 @@
     "auswirkungen": [
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1970/850_850_850",
-        "typ": 3
+        "typ": 3,
+        "fassung": "2011-08-30"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1970/851_851_851",
         "typ": 5,
-        "datum": "1970-05-28"
+        "datum": "1970-05-28",
+        "fassung": "1970-05-28"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1973/1776_1776_1776",
         "typ": 1,
-        "datum": "1973-12-01"
+        "datum": "1973-12-01",
+        "fassung": "1973-12-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1973/1776_1776_1776",
         "typ": 9,
-        "datum": "1973-12-01"
+        "datum": "1973-12-01",
+        "fassung": "1973-12-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1981/1012_1012_1012",
         "typ": 1,
-        "datum": "1981-07-15"
+        "datum": "1981-07-15",
+        "fassung": "1981-07-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1981/1012_1012_1012",
         "typ": 9,
-        "datum": "1981-07-15"
+        "datum": "1981-07-15",
+        "fassung": "1981-07-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1932_1932_1932",
         "typ": 1,
-        "datum": "1984-01-01"
+        "datum": "1984-01-01",
+        "fassung": "1984-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1932_1932_1932",
         "typ": 9,
-        "datum": "1984-01-01"
+        "datum": "1984-01-01",
+        "fassung": "1984-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1933_1933_1933",
         "typ": 1,
-        "datum": "1984-01-08"
+        "datum": "1984-01-08",
+        "fassung": "1984-01-08"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1770_1770_1770",
         "typ": 1,
-        "datum": "1990-10-01"
+        "datum": "1990-10-01",
+        "fassung": "1990-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1770_1770_1770",
         "typ": 9,
-        "datum": "1990-10-01"
+        "datum": "1990-10-01",
+        "fassung": "1990-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2270_2270_2270",
         "typ": 1,
-        "datum": "1991-10-01"
+        "datum": "1991-10-01",
+        "fassung": "1991-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2270_2270_2270",
         "typ": 9,
-        "datum": "1991-10-01"
+        "datum": "1991-10-01",
+        "fassung": "1991-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2005/360",
         "typ": 1,
-        "datum": "2005-04-20"
+        "datum": "2005-04-20",
+        "fassung": "2005-04-20"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2005/360",
         "typ": 9,
-        "datum": "2005-04-20"
+        "datum": "2005-04-20",
+        "fassung": "2005-04-20"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/604",
         "typ": 1,
-        "datum": "2007-03-27"
+        "datum": "2007-03-27",
+        "fassung": "2007-03-27"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/604",
         "typ": 9,
-        "datum": "2007-03-27"
+        "datum": "2007-03-27",
+        "fassung": "2007-03-27"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/584",
         "typ": 1,
-        "datum": "2011-08-30"
+        "datum": "2011-08-30",
+        "fassung": "2011-08-30"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/584",
         "typ": 9,
-        "datum": "2011-08-30"
+        "datum": "2011-08-30",
+        "fassung": "2011-08-30"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/705",
-        "typ": 9
+        "typ": 9,
+        "fassung": "2011-08-30"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/150",
         "typ": 9,
-        "datum": "2021-02-10"
+        "datum": "2021-02-10",
+        "fassung": "2021-02-10"
       }
     ],
     "ocStamm": {

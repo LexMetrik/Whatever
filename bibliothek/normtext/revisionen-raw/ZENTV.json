@@ -530,57 +530,68 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2002/29",
         "typ": 5,
-        "datum": "2002-01-01"
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2005/426",
         "typ": 1,
-        "datum": "2005-07-01"
+        "datum": "2005-07-01",
+        "fassung": "2005-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/345",
         "typ": 1,
-        "datum": "2007-07-01"
+        "datum": "2007-07-01",
+        "fassung": "2007-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/694",
         "typ": 1,
-        "datum": "2008-12-05"
+        "datum": "2008-12-05",
+        "fassung": "2008-12-05"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/858",
         "typ": 1,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/854",
         "typ": 1,
-        "datum": "2016-01-01"
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2016/738",
         "typ": 1,
-        "datum": "2017-01-01"
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/495",
         "typ": 1,
-        "datum": "2017-09-01"
+        "datum": "2017-09-01",
+        "fassung": "2017-09-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
         "typ": 1,
-        "datum": "2022-01-01"
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/301",
         "typ": 1,
-        "datum": "2022-06-01"
+        "datum": "2022-06-01",
+        "fassung": "2022-06-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
         "typ": 1,
-        "datum": "2023-09-01"
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
       }
     ],
     "ocStamm": {

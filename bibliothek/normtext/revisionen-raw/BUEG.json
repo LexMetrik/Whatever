@@ -955,22 +955,26 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2016/404",
         "typ": 5,
-        "datum": "2018-01-01"
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/61",
         "typ": 1,
-        "datum": "2018-02-15"
+        "datum": "2018-02-15",
+        "fassung": "2018-02-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2019/387",
         "typ": 6,
-        "datum": "2019-07-09"
+        "datum": "2019-07-09",
+        "fassung": "2019-07-09"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
         "typ": 1,
-        "datum": "2023-09-01"
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
       }
     ],
     "ocStamm": {

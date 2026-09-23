@@ -6,26 +6,6 @@
   "revisionen": [
     {
       "art": "aenderung",
-      "dateEntryInForce": "2066-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1965/537_541_535",
-      "dateDocument": "1965-03-19",
-      "roFundstelle": "AS 1965 537",
-      "titelDe": "Bundesgesetz vom 19. März 1965 über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG)",
-      "titelFr": "Loi fédérale du 19 mars 1965 sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (LPC)",
-      "titelIt": "Legge federale del 19 marzo 1965 sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (LPC)",
-      "nichtKonsolidiert": true,
-      "wirkungen": [
-        "aufhebung"
-      ],
-      "etappen": [
-        "1966-01-01",
-        "2066-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1965/537_541_535/de",
-      "sha": "8a02aca1b2bcb1524eb63312612b07470d63e86c11ab5f1d2c5cb87bc8c73ac5"
-    },
-    {
-      "art": "aenderung",
       "dateEntryInForce": "2034-01-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/92",
       "dateDocument": "2021-12-17",
@@ -1667,12 +1647,8 @@
         "aenderung",
         "aufhebung"
       ],
-      "etappen": [
-        "1966-01-01",
-        "2066-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1965/537_541_535/de",
-      "sha": "b3f8f2ba88b2bee8cab263f9fdf9821cfc4bceb4c25f5273a8feec462d4b6527"
+      "sha": "9e4370731f118deff8aa0b7343460b8111249e7be2cdfa3658a80d5e8468066c"
     },
     {
       "art": "aenderung",
@@ -1928,5 +1904,5 @@
       "sha": "76b941d757e90aeb35c0fdf8a636c2b55d70a6f3dff91b369662187f658b890b"
     }
   ],
-  "sha": "92cc5586b91e7f1a5d48fd812be1348600c11cb7fefe94561283d576919ed332"
+  "sha": "aa1f6af6203cbf94d2e40df737762c8e90cb2ca88e3d1cadeb0689272697ced9"
 }

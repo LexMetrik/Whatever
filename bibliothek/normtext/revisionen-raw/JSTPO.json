@@ -163,27 +163,32 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2010/226",
         "typ": 5,
-        "datum": "2011-01-01"
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2014/355",
         "typ": 1,
-        "datum": "2015-01-01"
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
         "typ": 1,
-        "datum": "2024-01-01"
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
         "typ": 1,
-        "datum": "2025-07-01"
+        "datum": "2025-07-01",
+        "fassung": "2025-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/490",
         "typ": 5,
-        "datum": "2025-07-01"
+        "datum": "2025-07-01",
+        "fassung": "2025-07-01"
       }
     ],
     "ocStamm": {

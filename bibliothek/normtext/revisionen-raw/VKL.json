@@ -272,22 +272,26 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2002/418",
         "typ": 5,
-        "datum": "2003-01-01"
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/709",
         "typ": 1,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/709",
         "typ": 2,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/219",
         "typ": 1,
-        "datum": "2024-07-01"
+        "datum": "2024-07-01",
+        "fassung": "2024-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/219",
@@ -297,7 +301,8 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2025/318",
         "typ": 1,
-        "datum": "2025-06-01"
+        "datum": "2025-06-01",
+        "fassung": "2025-06-01"
       }
     ],
     "ocStamm": {

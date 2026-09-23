@@ -557,17 +557,20 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2014/707",
         "typ": 5,
-        "datum": "2015-01-01"
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/922",
         "typ": 1,
-        "datum": "2021-01-01"
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/922",
         "typ": 2,
-        "datum": "2021-01-01"
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
       }
     ],
     "ocStamm": {

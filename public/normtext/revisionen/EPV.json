@@ -235,25 +235,6 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2022-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/439",
-      "dateDocument": "2018-06-08",
-      "roFundstelle": "AS 2018 2857",
-      "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
-      "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
-      "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2019-03-01",
-        "2022-07-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/439/de",
-      "sha": "0e813bc3244a8d550e24441561262546a8d75ebbc9aa71e92cff3fe6a86b0bb2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-07-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/852",
       "dateDocument": "2020-11-18",
       "roFundstelle": "AS 2020 4733",
@@ -692,13 +673,9 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2019-03-01",
-        "2022-07-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/439/de",
-      "sha": "66b024255292e34b833645714fce62fbaf37547bde3b275ef96f94de8e471b7e"
+      "sha": "0036d533e9bfc7cdc68a66164a6ee2d07c4865ebedd01c822ffdc34423f9d0de"
     }
   ],
-  "sha": "d2bc0852735297159880e12b1348acd75563752d6f12556cb93416a4366b51b0"
+  "sha": "6fb9d1abf07b1dba71dd79436b53df8613ff9cc81343e13e553449346a49ec02"
 }

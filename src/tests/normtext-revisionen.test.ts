@@ -504,7 +504,10 @@ describe('baueRevisionen — Pfad (c) Auswirkungen (S6-D1, AE-2..AE-5)', () => {
       ],
       ocStamm: { [OC('2099/1')]: { dateForce: '2029-01-01' } },
     };
-    const s = baueRevisionen({ key: 'AHVG', sr: '831.10' }, [], [], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    // Fedlex führt für AHVG tatsächlich eine Fassung 2066-01-01 — sie darf nicht als Marker
+    // «tritt am 01.01.2066 in Kraft» erscheinen (Artefakt-Datum, s. Generator).
+    const s = baueRevisionen({ key: 'AHVG', sr: '831.10' }, [], ['1966-01-01', '2066-01-01'], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.filter((r) => r.art === 'sammelerlass-marker')).toEqual([]);
     expect(s.revisionen.map((r) => [r.ocUri, r.dateEntryInForce, r.etappen])).toEqual([
       [OC('2099/1'), '2029-01-01', undefined],
       [OC('2020/713'), '2020-09-26', undefined],

@@ -164,32 +164,38 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2019/758",
         "typ": 5,
-        "datum": "2020-01-01"
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/33",
         "typ": 1,
-        "datum": "2021-02-01"
+        "datum": "2021-02-01",
+        "fassung": "2021-02-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/33",
         "typ": 1,
-        "datum": "2021-08-01"
+        "datum": "2021-08-01",
+        "fassung": "2021-08-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/399",
         "typ": 5,
-        "datum": "2021-08-01"
+        "datum": "2021-08-01",
+        "fassung": "2021-08-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/53",
         "typ": 1,
-        "datum": "2024-03-01"
+        "datum": "2024-03-01",
+        "fassung": "2024-03-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2026/323",
         "typ": 1,
-        "datum": "2026-10-01"
+        "datum": "2026-10-01",
+        "fassung": "2026-10-01"
       }
     ],
     "ocStamm": {

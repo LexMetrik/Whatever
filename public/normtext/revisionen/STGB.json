@@ -330,21 +330,6 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/352",
-      "dateDocument": "2020-09-25",
-      "roFundstelle": "AS 2022 352",
-      "titelDe": "Bundesgesetz vom 25. September 2020 über Vorläuferstoffe für explosionsfähige Stoffe (Vorläuferstoffgesetz, VSG)",
-      "titelFr": "Loi fédérale du 25 septembre 2020 sur les précurseurs de substances explosibles (LPSE)",
-      "titelIt": "Legge federale del 25 settembre 2020 sui precursori di sostanze esplodenti (LPre)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/352/de",
-      "sha": "09ba69601eb51c6e52c075618217f2a652086402b1b37f352c70f9553373dc93"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2023-01-23",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/600",
       "dateDocument": "2016-06-17",
       "roFundstelle": "AS 2022 600",
@@ -438,6 +423,21 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
       "sha": "bbe0635cbc6b33d3e8e6cfe85ea908c40ef7a183834357fa1a86ea9de63d5592"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/352",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 352",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über Vorläuferstoffe für explosionsfähige Stoffe (Vorläuferstoffgesetz, VSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur les précurseurs de substances explosibles (LPSE)",
+      "titelIt": "Legge federale del 25 settembre 2020 sui precursori di sostanze esplodenti (LPre)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/352/de",
+      "sha": "b233ccbb4698a4a00edbbdf4b974ca44154d391634805c7b136f058386b05191"
     },
     {
       "art": "aenderung",
@@ -3131,5 +3131,5 @@
       "sha": "d111fdcba23a1eefa1c540b98c66c8e8f1e2e80fdb1be45f36dcf565d0f99c1b"
     }
   ],
-  "sha": "4fbb5328c3c5deae5c7f255b0d2c64fce2ecdbc4cfc10ff1c1b87286e2107e13"
+  "sha": "2e911a5bb8c94d776772bf66447dd3a65d59163ad86aa2ae3c7babfba7b80059"
 }

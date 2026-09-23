@@ -418,47 +418,56 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2553_2553_2553",
         "typ": 5,
-        "datum": "1993-10-01"
+        "datum": "1993-10-01",
+        "fassung": "1993-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
         "typ": 1,
-        "datum": "1998-08-01"
+        "datum": "1998-08-01",
+        "fassung": "1998-08-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2000/34",
         "typ": 1,
-        "datum": "1999-07-01"
+        "datum": "1999-07-01",
+        "fassung": "1999-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
         "typ": 1,
-        "datum": "2008-01-01"
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
         "typ": 2,
-        "datum": "2008-01-01"
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2009/767",
         "typ": 1,
-        "datum": "2010-05-01"
+        "datum": "2010-05-01",
+        "fassung": "2010-05-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2009/767",
         "typ": 2,
-        "datum": "2010-05-01"
+        "datum": "2010-05-01",
+        "fassung": "2010-05-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/214",
         "typ": 1,
-        "datum": "2015-10-01"
+        "datum": "2015-10-01",
+        "fassung": "2015-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/316",
         "typ": 1,
-        "datum": "2024-09-01"
+        "datum": "2024-09-01",
+        "fassung": "2024-09-01"
       }
     ],
     "ocStamm": {

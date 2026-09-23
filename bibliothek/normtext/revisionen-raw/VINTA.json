@@ -1195,22 +1195,26 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/511",
         "typ": 5,
-        "datum": "2019-01-01"
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2019/234",
         "typ": 1,
-        "datum": "2019-05-01"
+        "datum": "2019-05-01",
+        "fassung": "2019-05-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/46",
         "typ": 1,
-        "datum": "2023-03-01"
+        "datum": "2023-03-01",
+        "fassung": "2023-03-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2025/670",
         "typ": 1,
-        "datum": "2025-12-01"
+        "datum": "2025-12-01",
+        "fassung": "2025-12-01"
       }
     ],
     "ocStamm": {}

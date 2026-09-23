@@ -412,32 +412,38 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/692",
         "typ": 5,
-        "datum": "2008-01-01"
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/418",
         "typ": 1,
-        "datum": "2013-01-01"
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2014/375",
         "typ": 1,
-        "datum": "2014-08-01"
+        "datum": "2014-08-01",
+        "fassung": "2014-08-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/275",
         "typ": 1,
-        "datum": "2018-07-01"
+        "datum": "2018-07-01",
+        "fassung": "2018-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/93",
         "typ": 1,
-        "datum": "2024-04-01"
+        "datum": "2024-04-01",
+        "fassung": "2024-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/93",
         "typ": 2,
-        "datum": "2024-04-01"
+        "datum": "2024-04-01",
+        "fassung": "2024-04-01"
       }
     ],
     "ocStamm": {

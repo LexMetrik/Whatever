@@ -382,37 +382,44 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1725_1725_1725",
         "typ": 5,
-        "datum": "1996-07-01"
+        "datum": "1996-07-01",
+        "fassung": "1996-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2000/34",
         "typ": 1,
-        "datum": "1999-07-01"
+        "datum": "1999-07-01",
+        "fassung": "1999-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2002/155",
         "typ": 1,
-        "datum": "2002-06-01"
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
         "typ": 1,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2010/349",
         "typ": 1,
-        "datum": "2010-07-01"
+        "datum": "2010-07-01",
+        "fassung": "2010-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/62",
         "typ": 1,
-        "datum": "2017-05-01"
+        "datum": "2017-05-01",
+        "fassung": "2017-05-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
         "typ": 1,
-        "datum": "2023-09-01"
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
       }
     ],
     "ocStamm": {

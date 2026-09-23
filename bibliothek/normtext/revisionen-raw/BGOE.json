@@ -337,32 +337,38 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
         "typ": 1,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/355",
         "typ": 5,
-        "datum": "2006-07-01"
+        "datum": "2006-07-01",
+        "fassung": "2006-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
         "typ": 1,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2014/453",
         "typ": 6,
-        "datum": "2014-08-19"
+        "datum": "2014-08-19",
+        "fassung": "2014-08-19"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
         "typ": 1,
-        "datum": "2023-09-01"
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/584",
         "typ": 1,
-        "datum": "2023-11-01"
+        "datum": "2023-11-01",
+        "fassung": "2023-11-01"
       }
     ],
     "ocStamm": {

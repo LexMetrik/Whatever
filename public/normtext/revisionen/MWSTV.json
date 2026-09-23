@@ -221,274 +221,6 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/371",
-      "dateDocument": "2010-06-18",
-      "roFundstelle": "AS 2010 2833",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2010-01-01",
-        "2010-07-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/371/de",
-      "sha": "ab8916efad07b35528b407f6fd6d30b99ff574bc83da81c2cf8e60a6e3110865"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/671",
-      "dateDocument": "2011-10-12",
-      "roFundstelle": "AS 2011 4739",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2012-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/671/de",
-      "sha": "7ec80ac621aeec8abcbb5b26eda051cfda3a9420f25775659dbe490d3b549845"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/910",
-      "dateDocument": "2011-12-28",
-      "roFundstelle": "AS 2011 6545",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV) (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA) (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "etappen": [
-        "2012-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/910/de",
-      "sha": "61b5d5c33fad3f3d1532eedffa759035d477721f71081ea9344913a1a533d2f6"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/704",
-      "dateDocument": "2013-10-30",
-      "roFundstelle": "AS 2013 3839",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2014-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/704/de",
-      "sha": "91e5922f64632c9587649977c5249c61034017df9e6f32c98156148027df48f8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/659",
-      "dateDocument": "2014-11-12",
-      "roFundstelle": "AS 2014 3847",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (OIVA)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2015-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/659/de",
-      "sha": "a012a2b27baff080cc847c139f6ff85df52de5a693a15bf68f00ec08b37329b8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/804",
-      "dateDocument": "2015-11-18",
-      "roFundstelle": "AS 2015 4917",
-      "titelDe": "Zollverordnung (ZV)",
-      "titelFr": "Ordonnance sur les douanes (OD)",
-      "titelIt": "Ordinanza sulle dogane (OD)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2016-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/804/de",
-      "sha": "3cfc50717f5a417572b62bf8482b729a12d45b908408824fb75fff17ebfa5544"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/63",
-      "dateDocument": "2016-12-16",
-      "roFundstelle": "AS 2017 283",
-      "titelDe": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV)",
-      "titelFr": "Ordonnance sur les denrées alimentaires et les objets usuels (ODAlOUs)",
-      "titelIt": "Ordinanza sulle derrate alimentari e gli oggetti d'uso",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2017-05-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/63/de",
-      "sha": "af7c1b3b8ca8999c65e68bcc268482c6a8418fd0cc47a9353e3570725cba3271"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/696",
-      "dateDocument": "2017-10-18",
-      "roFundstelle": "AS 2017 6307",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "aenderung",
-        "aufhebung"
-      ],
-      "etappen": [
-        "2018-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/696/de",
-      "sha": "fd2a55ac90539c915e3ee1d549965c25a43db38cfd8b200b77102dda431fd699"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/789",
-      "dateDocument": "2017-12-12",
-      "roFundstelle": "AS 2017 7263",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV) (Betrifft nur den französischen Text)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA) (Concerne soltanto il testo francese)",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "etappen": [
-        "2017-12-12",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/789/de",
-      "sha": "8b16c8971e3923fb48571dddbc95ae43ab481e13e1d063198e8c7f91f76a803f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/499",
-      "dateDocument": "2018-08-15",
-      "roFundstelle": "AS 2018 3143",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2019-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/499/de",
-      "sha": "badd51a0842eb73b96ac3459b353ee491994ddf86ba7d743179072650ca22f5b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/56",
-      "dateDocument": "2018-01-30",
-      "roFundstelle": "AS 2018 521",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV). (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA). (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "etappen": [
-        "2018-01-30",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/56/de",
-      "sha": "12e1b17a51156381f515f34f804250c9888f243d8770da7bd95884b1975bd5a7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/786",
-      "dateDocument": "2018-11-14",
-      "roFundstelle": "AS 2018 5029",
-      "titelDe": "Verordnung über die Bewilligungen im Arzneimittelbereich (Arzneimittel-Bewilligungsverordnung; AMBV)",
-      "titelFr": "Ordonnance sur les autorisations dans le domaine des médicaments (OAMéd)",
-      "titelIt": "Ordinanza sulle autorizzazioni nel settore dei medicamenti (Ordinanza sull'autorizzazione dei medicamenti, OAMed)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2019-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/786/de",
-      "sha": "4c3cc248ab6483b211e2267083d6932961b3ee00955331e17f82e5d74b105a65"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/796",
-      "dateDocument": "2018-11-07",
-      "roFundstelle": "AS 2018 5155",
-      "titelDe": "Verordnung über Geldspiele (Geldspielverordnung, VGS)",
-      "titelFr": "Ordonnance sur les jeux d'argent (OJAr)",
-      "titelIt": "Ordinanza sui giochi in denaro (OGD)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2019-01-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/796/de",
-      "sha": "0f35d11137c35bea703d6d35895bc3b7ec1c5b220b7b4402703a8ca01f925f49"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/162",
-      "dateDocument": "2019-03-08",
-      "roFundstelle": "AS 2019 911",
-      "titelDe": "Mehrwertsteuerverordnung (MWSTV)",
-      "titelFr": "Ordonnance régissant la taxe sur la valeur ajoutée (OTVA)",
-      "titelIt": "Ordinanza concernente l'imposta sul valore aggiunto (Ordinanza sull'IVA, OIVA)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2019-04-01",
-        "2022-01-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/162/de",
-      "sha": "c0a7e31dbf2b5f84d3822fbd196ce30c9795fe97781405f3e41c432cef404410"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-01-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/977",
       "dateDocument": "2020-12-18",
       "roFundstelle": "AS 2020 5801",
@@ -699,12 +431,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2019-04-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/162/de",
-      "sha": "6429913b27a171ecc7afbe06a35221475748d5759735a073059e9fa780abd412"
+      "sha": "f8eaf23e8ade74842f3fae53123b924ab7e0961f2c88cdd7565092a90ed4d344"
     },
     {
       "art": "aenderung",
@@ -718,12 +446,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2019-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/499/de",
-      "sha": "6a17b309ccdab78a8dce90bde98536509bb586e13776518217563e312ad80263"
+      "sha": "95d8f84da5eee4f286c70d5089b4823e6f51466dfd8891992374a5fafcce5b19"
     },
     {
       "art": "aenderung",
@@ -737,12 +461,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2019-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/786/de",
-      "sha": "82cb58389e34b926e809bccbff0e76912a81fa72709850d02352055a261ceaa7"
+      "sha": "806df6884eaeb0cda1e8f80adaf5afea856c7687577579c576387ae11e417780"
     },
     {
       "art": "aenderung",
@@ -756,12 +476,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2019-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/796/de",
-      "sha": "9efa6b018a36097aa2976ca73157caf302d4fd9e94ec3aef25c26ed00518d8ad"
+      "sha": "953b731210db511dad1c5c7c4cc83cc7b34b532f5014d58a3d471ccacd8a0032"
     },
     {
       "art": "aenderung",
@@ -775,12 +491,8 @@
       "wirkungen": [
         "berichtigung"
       ],
-      "etappen": [
-        "2018-01-30",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/56/de",
-      "sha": "cfc927887b658c62c64d109acde37f787bf9cd8ffeec42422ea122f70b8d7b12"
+      "sha": "67dc205486ae867b115ce0a6f04e3b63f356d92a4dee6e722bc9ea19482efd61"
     },
     {
       "art": "aenderung",
@@ -794,12 +506,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2018-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/696/de",
-      "sha": "688ae062c0c2e016bcee915950724d3eb97b5c4169ebdbb647ff92e3cd5b6afb"
+      "sha": "ca9f5d8b2625bc795405df83268cd937b31766c0c2ac53bc963e76ebc889bc2f"
     },
     {
       "art": "aenderung",
@@ -813,12 +521,8 @@
       "wirkungen": [
         "berichtigung"
       ],
-      "etappen": [
-        "2017-12-12",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/789/de",
-      "sha": "5da03659f10f6ec529e487e7f7dd21a09a6c2a20be3d927f69afbe886b53143d"
+      "sha": "3f74781fa4b31db1fdfa7e0c6d06186e58c9228b9059edf11160a2a8f757cdcc"
     },
     {
       "art": "aenderung",
@@ -832,12 +536,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2017-05-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/63/de",
-      "sha": "050461ff44384320e7f41a70cd88e8f631d6a7671b14e376b5356786056bd3c3"
+      "sha": "1be61aff1b0a10f4200c04cfe6478e8622596133e16c664d6b7dbb38a6e7ceba"
     },
     {
       "art": "aenderung",
@@ -851,12 +551,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2016-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/804/de",
-      "sha": "f6d4c9f939b6067a43513c1b5becb0a9122dd59eaa4db73542b74133a1355baf"
+      "sha": "1fa03917744051d7dcd7601d6975584a1fb7601d07c36468e667f5c7d00fe552"
     },
     {
       "art": "aenderung",
@@ -870,12 +566,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2015-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/659/de",
-      "sha": "102da6a3135cb8adf5c34b39904560f18cb19a954d29705a2f5740eebeb8c0c2"
+      "sha": "a477770b688553228e12b27679a3d0a2d053300611dc1fd0c85c423c58fbb671"
     },
     {
       "art": "aenderung",
@@ -889,12 +581,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2014-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/704/de",
-      "sha": "cdd11e976e407ec89cbd5dee152653eeec1b603a9271e9456b17e64a1738cdd5"
+      "sha": "465e5d45af009bb2f11d30cb95f62ac42590a34a9af9f8eb1b3e2b9c6f2d915d"
     },
     {
       "art": "aenderung",
@@ -908,12 +596,8 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2012-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/671/de",
-      "sha": "706f1fc88bbab690b9ce05ebd59b4beed020c7c15d82f5b09464e9ebda376b40"
+      "sha": "a744fe9b3379ecc0f27c4a0bf56b53a55f1ec7a657ea2a81d6136da8ca2c110d"
     },
     {
       "art": "aenderung",
@@ -927,12 +611,8 @@
       "wirkungen": [
         "berichtigung"
       ],
-      "etappen": [
-        "2012-01-01",
-        "2022-01-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/910/de",
-      "sha": "11ee25a69ffd92e59cc6b2177041e09b5a51858d308d95b420b5af17377cf00a"
+      "sha": "d7dad57e66e63ae9e0b66161b802f1d454363a982eff78d031c9a57b56751267"
     },
     {
       "art": "aenderung",
@@ -948,11 +628,10 @@
       ],
       "etappen": [
         "2010-01-01",
-        "2010-07-01",
-        "2022-01-01"
+        "2010-07-01"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/371/de",
-      "sha": "216872aea0211f2d9e20cd9fffb67351df7a6689b1d92c74cf093073a771e181"
+      "sha": "4b51cfbb86e934c02a15e13d3e1b834c542eb2f87c7348d0c3d8eede0e4d9f8d"
     },
     {
       "art": "aenderung",
@@ -968,12 +647,11 @@
       ],
       "etappen": [
         "2010-01-01",
-        "2010-07-01",
-        "2022-01-01"
+        "2010-07-01"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/371/de",
-      "sha": "aead8b5cb8e0bb1a33c519d80af4ed35ce68895d2e0a00944b992d1512ecf4e2"
+      "sha": "e195d680ab0988daa9a049f89f9b1eeb86b4303224fe1f948e210a4fb860b037"
     }
   ],
-  "sha": "a13460e7249b6b10e3db1ea6c9c85709bfd728cd46d39cd679bf53609e012671"
+  "sha": "a643856f49ceb690d2d19ad2a616b62a0cf6eea292834f16e47b5becb08caa1b"
 }

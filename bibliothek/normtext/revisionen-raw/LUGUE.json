@@ -704,42 +704,50 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2010/800",
         "typ": 3,
-        "datum": "2011-01-01"
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2010/801",
         "typ": 5,
-        "datum": "2011-01-01"
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/179",
         "typ": 1,
-        "datum": "2011-03-03"
+        "datum": "2011-03-03",
+        "fassung": "2011-03-03"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/179",
         "typ": 9,
-        "datum": "2011-03-03"
+        "datum": "2011-03-03",
+        "fassung": "2011-03-03"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/830",
         "typ": 1,
-        "datum": "2011-04-29"
+        "datum": "2011-04-29",
+        "fassung": "2011-04-29"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/114",
         "typ": 6,
-        "datum": "2011-01-01"
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2014/792",
         "typ": 1,
-        "datum": "2014-07-01"
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/32",
         "typ": 1,
-        "datum": "2016-04-08"
+        "datum": "2016-04-08",
+        "fassung": "2016-04-08"
       }
     ],
     "ocStamm": {

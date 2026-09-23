@@ -709,67 +709,80 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1977/1931_1931_1931",
         "typ": 5,
-        "datum": "1978-01-01"
+        "datum": "1978-01-01",
+        "fassung": "1978-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1989/54_54_54",
         "typ": 1,
-        "datum": "1989-01-01"
+        "datum": "1989-01-01",
+        "fassung": "1989-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2002/672",
         "typ": 1,
-        "datum": "2003-01-01"
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2002/672",
         "typ": 2,
-        "datum": "2003-01-01"
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2003/78",
         "typ": 6,
-        "datum": "2003-01-01"
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
         "typ": 1,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/773",
         "typ": 1,
-        "datum": "2008-01-01"
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/505",
         "typ": 1,
-        "datum": "2012-01-01"
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/505",
         "typ": 2,
-        "datum": "2012-01-01"
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/676",
         "typ": 1,
-        "datum": "2013-01-01"
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/676",
         "typ": 1,
-        "datum": "2014-01-01"
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/392",
         "typ": 6,
-        "datum": "2017-06-20"
+        "datum": "2017-06-20",
+        "fassung": "2017-06-20"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
         "typ": 1,
-        "datum": "2023-01-23"
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
       }
     ],
     "ocStamm": {

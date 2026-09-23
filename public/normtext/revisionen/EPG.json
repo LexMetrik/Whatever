@@ -95,25 +95,6 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2022-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
-      "dateDocument": "2014-06-20",
-      "roFundstelle": "AS 2016 689",
-      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
-      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
-      "titelIt": "Legge federale sulla formazione continua (LFCo)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "etappen": [
-        "2017-01-01",
-        "2022-07-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
-      "sha": "3866fb7007bc0567e316aa7eb2f23b586160b117bc74f2613b1111387c487be6"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-07-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/437",
       "dateDocument": "2020-06-19",
       "roFundstelle": "AS 2020 2191",
@@ -130,25 +111,6 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/437/de",
       "sha": "651bdf7ed1e90fcb7ea48f800b927c18ed47da0b91848ddae36c11c7221bf685"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2022-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/492",
-      "dateDocument": "2020-06-30",
-      "roFundstelle": "AS 2020 2727",
-      "titelDe": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
-      "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
-      "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "etappen": [
-        "2020-06-25",
-        "2022-07-01"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/492/de",
-      "sha": "ce71355531c1679a514db11f065ccb63f2f369e3079cf33b4a614529d45bf0e9"
     },
     {
       "art": "aenderung",
@@ -201,12 +163,8 @@
       "wirkungen": [
         "berichtigung"
       ],
-      "etappen": [
-        "2020-06-25",
-        "2022-07-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/492/de",
-      "sha": "9284451be933f7d59d8bba76d522bdac270cf898943564dbc114c8a693f06adc"
+      "sha": "c132c441dd53dade35774298785699dd80f849ebbb155e35bfead90559356cd5"
     },
     {
       "art": "aenderung",
@@ -220,13 +178,9 @@
       "wirkungen": [
         "aenderung"
       ],
-      "etappen": [
-        "2017-01-01",
-        "2022-07-01"
-      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
-      "sha": "12b2e75833fe6254bbc2ef51e6ca6febbdf22a1bc735f4ffe8c27eee9c7a505d"
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     }
   ],
-  "sha": "61237cc8ad60867f64016916894fdf08a2c67b35daf6eb0d12002182b981dc39"
+  "sha": "f30e23f4ecaaf6663cefda81181b712be84d5ed0b76a358ff116c75a5afee902"
 }

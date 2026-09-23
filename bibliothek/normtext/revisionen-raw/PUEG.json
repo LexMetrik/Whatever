@@ -630,42 +630,50 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895",
         "typ": 5,
-        "datum": "1986-07-01"
+        "datum": "1986-07-01",
+        "fassung": "1986-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2092_2092_2092",
         "typ": 1,
-        "datum": "1991-10-01"
+        "datum": "1991-10-01",
+        "fassung": "1991-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
         "typ": 1,
-        "datum": "1992-02-15"
+        "datum": "1992-02-15",
+        "fassung": "1992-02-15"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1996/546_546_546",
         "typ": 1,
-        "datum": "1996-02-01"
+        "datum": "1996-02-01",
+        "fassung": "1996-02-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
         "typ": 1,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
         "typ": 2,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/419",
         "typ": 1,
-        "datum": "2013-01-01"
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2026/206",
         "typ": 6,
-        "datum": "2026-05-08"
+        "datum": "2026-05-08",
+        "fassung": "2026-05-08"
       }
     ],
     "ocStamm": {

@@ -239,6 +239,9 @@ export interface AuswirkungZeile {
   typ: number;
   /** `legalResourceImpactHasDateEntryInForce` ISO; fehlt bei undatierten Auswirkungen. */
   datum?: string;
+  /** Datum der Fassung, die Fedlex als einarbeitend nennt (`jolux:impactConsolidatedBy`,
+   *  `…/<YYYYMMDD>`), ISO; fehlt bei noch nicht konsolidierten Auswirkungen. */
+  fassung?: string;
 }
 
 /** Stammdaten eines oc-Erlasses, den nur Pfad (c) kennt (Pfad (b) liefert sie selbst). */
@@ -528,6 +531,9 @@ export function baueRevisionen(
   // ── Zeilen bestimmen: je (oc, Datum) die Wirkungen ──────────────────────────────
   // Map oc → Map datum → Set<Wirkung> (leeres Set = Pfad (b) ohne Auswirkungs-Aussage).
   const zeilen = new Map<string, Map<string, Set<Wirkung>>>();
+  // Daten, die als Erfassungsartefakt erkannt sind (Auswirkungsdatum NACH der einarbeitenden
+  // Fassung, s. unten) — an ihnen entsteht auch kein Marker (s. Pfad-(a)-Cross-Check).
+  const artefaktDaten = new Set<string>();
   const basicAct = kontext?.basicAct;
   if (kontext) {
     const fassungsDaten = new Set(aStaende);
@@ -536,7 +542,18 @@ export function baueRevisionen(
     for (const a of kontext.auswirkungen) {
       if (a.oc === basicAct) continue;
       const w = wirkungAusTyp(a.typ);
-      if (a.datum) {
+      // Widerspruch Auswirkungsdatum ↔ einarbeitende Fassung (Messung 23.9.2026 über 15 515
+      // Roh-Auswirkungen: 14 643 gleich, 614 mit Fassung VOR dem Datum, 126 danach, 81 ohne
+      // Fassung, 51 undatiert). Eine Fassung kann keine Änderung enthalten, die erst NACH ihr
+      // in Kraft tritt — das Datum ist dann ein Erfassungsartefakt: AVIG ← AS 1991 2125 u. v. a.
+      // tragen eine zweite «Etappe» 2023-01-01, eingearbeitet aber in die Fassung 1992-01-01;
+      // AHVG ← AS 1965 537 (oc/1965/537_541_535, Auswirkung 12) «2066-01-01», eingearbeitet in
+      // 2021-01-01. Solche Daten erzeugen KEINE Etappe; die Auswirkung zählt wie eine
+      // undatierte (nie ein Datum erfinden, §7). Der umgekehrte Fall (Fassung NACH dem Datum)
+      // bleibt: rückwirkende Inkraftsetzung und Nachkonsolidierung sind echt.
+      const widerspruch = !!(a.datum && a.fassung && a.fassung < a.datum);
+      if (widerspruch) artefaktDaten.add(a.datum!);
+      if (a.datum && !widerspruch) {
         const datum = inkrafttretenDerAuswirkung(a.datum, proOc.get(a.oc) ?? kontext.ocStamm[a.oc], fassungsDaten);
         const proDatum = datiert.get(a.oc) ?? new Map<string, Set<Wirkung>>();
         const s = proDatum.get(datum) ?? new Set<Wirkung>();
@@ -642,6 +659,12 @@ export function baueRevisionen(
     if (kontext?.inkrafttreten && stand <= kontext.inkrafttreten) continue;
     if (stand < MARKER_CUTOFF) continue; // unterhalb der Verlässlichkeits-Schwelle (§8)
     if (belegteFruehereDaten.has(stand)) continue; // bereits als dateInKraftFuerCh gezeigt
+    // Eine Fassung an einem als Artefakt erkannten Auswirkungsdatum ist KEINE «Fassung ohne
+    // zugeordneten Änderungserlass» — Fedlex ordnet sie zu, nur mit widersprüchlichem Datum.
+    // Beleg 23.9.2026: AHVG trägt eine Fassung 2066-01-01 (dateApplicability), erzeugt von
+    // der Auswirkung oc/1965/537_541_535 «2066-01-01», eingearbeitet 2021-01-01; als Marker
+    // hiesse sie «tritt am 01.01.2066 in Kraft». Fedlex-Datenfehler, bleibt dort gemeldet (§8).
+    if (artefaktDaten.has(stand)) continue;
     if (!kontext?.abstractEli) {
       // AE-2: bis 22.9.2026 hier `https://www.fedlex.admin.ch/eli/cc/${erlass.sr}` — die SR-
       // Nummer ist kein ELI-Pfad (Fedlex «page-not-found», 1978 Links in 196 Sidecars).
@@ -900,10 +923,11 @@ export async function holeAuswirkungen(
   for (let i = 0; i < werte.length; i += 5) {
     const teil = werte.slice(i, i + 5);
     const bindings = await sparqlSelect(`PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
-SELECT ?abs ?ausw ?quelle ?typ ?datum WHERE { VALUES ?abs { ${teil.join(' ')} }
+SELECT ?abs ?ausw ?quelle ?typ ?datum ?fassung WHERE { VALUES ?abs { ${teil.join(' ')} }
   ?ziel jolux:legalResourceSubdivisionIsPartOf ?abs .
   ?ausw jolux:impactToLegalResource ?ziel ; jolux:impactFromLegalResource ?quelle ; jolux:legalResourceImpactHasType ?typ .
-  OPTIONAL { ?ausw jolux:legalResourceImpactHasDateEntryInForce ?datum . } }`, fetchImpl);
+  OPTIONAL { ?ausw jolux:legalResourceImpactHasDateEntryInForce ?datum . }
+  OPTIONAL { ?ausw jolux:impactConsolidatedBy ?fassung . } }`, fetchImpl);
     if (bindings.length >= KAPPUNG_VERDACHT) {
       throw new Error(`holeAuswirkungen: ${bindings.length} Zeilen in einem Batch — Kappungsverdacht, kleiner batchen.`);
     }
@@ -913,15 +937,19 @@ SELECT ?abs ?ausw ?quelle ?typ ?datum WHERE { VALUES ?abs { ${teil.join(' ')} }
       const typ = Number(/impact-type\/(\d+)$/.exec(b.typ?.value ?? '')?.[1]);
       if (!abs || !oc || !Number.isInteger(typ)) continue;
       const arr = out.get(abs) ?? [];
-      arr.push({ oc, typ, datum: b.datum?.value?.slice(0, 10) });
+      const f = /\/(\d{4})(\d{2})(\d{2})$/.exec(b.fassung?.value ?? '');
+      const zeile: AuswirkungZeile = { oc, typ, datum: b.datum?.value?.slice(0, 10) };
+      if (f) zeile.fassung = `${f[1]}-${f[2]}-${f[3]}`;
+      arr.push(zeile);
       out.set(abs, arr);
     }
   }
   // Deterministisch (§2): Duplikate (dieselbe Auswirkung je Sprache/Teil) weg, sortiert.
   for (const [abs, arr] of out) {
     const seen = new Set<string>();
-    const uniq = arr.filter((a) => { const k = `${a.oc}|${a.typ}|${a.datum ?? ''}`; if (seen.has(k)) return false; seen.add(k); return true; });
-    uniq.sort((x, y) => (x.oc < y.oc ? -1 : x.oc > y.oc ? 1 : x.typ - y.typ || ((x.datum ?? '') < (y.datum ?? '') ? -1 : (x.datum ?? '') > (y.datum ?? '') ? 1 : 0)));
+    const schluessel = (a: AuswirkungZeile) => `${a.oc}|${String(a.typ).padStart(3, '0')}|${a.datum ?? ''}|${a.fassung ?? ''}`;
+    const uniq = arr.filter((a) => { const k = schluessel(a); if (seen.has(k)) return false; seen.add(k); return true; });
+    uniq.sort((x, y) => (schluessel(x) < schluessel(y) ? -1 : schluessel(x) > schluessel(y) ? 1 : 0));
     out.set(abs, uniq);
   }
   return out;

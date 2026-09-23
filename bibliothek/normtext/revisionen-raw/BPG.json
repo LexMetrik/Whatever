@@ -537,172 +537,206 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2001/123",
         "typ": 5,
-        "datum": "2001-01-01"
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2001/125",
         "typ": 5,
-        "datum": "2001-01-01"
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2001/318",
         "typ": 1,
-        "datum": "2002-01-01"
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2001/318",
         "typ": 5,
-        "datum": "2002-01-01"
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2001/489",
         "typ": 1,
-        "datum": "2002-01-01"
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2001/489",
         "typ": 5,
-        "datum": "2002-01-01"
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2003/314",
         "typ": 1,
-        "datum": "2003-08-01"
+        "datum": "2003-08-01",
+        "fassung": "2003-08-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2004/13",
         "typ": 1,
-        "datum": "2004-02-01"
+        "datum": "2004-02-01",
+        "fassung": "2004-02-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
         "typ": 1,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
         "typ": 1,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/401",
         "typ": 1,
-        "datum": "2007-01-01"
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2007/313",
         "typ": 1,
-        "datum": "2007-05-01"
+        "datum": "2007-05-01",
+        "fassung": "2007-05-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/131",
         "typ": 1,
-        "datum": "2008-07-01"
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/131",
         "typ": 5,
-        "datum": "2008-07-01"
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2008/51",
         "typ": 1,
-        "datum": "2009-01-01"
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2010/444",
         "typ": 1,
-        "datum": "2011-01-01"
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2010/72",
         "typ": 1,
-        "datum": "2010-03-01"
+        "datum": "2010-03-01",
+        "fassung": "2010-03-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/785",
         "typ": 1,
-        "datum": "2012-01-01"
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2012/587",
         "typ": 1,
-        "datum": "2012-10-01"
+        "datum": "2012-10-01",
+        "fassung": "2012-10-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2013/352",
         "typ": 1,
-        "datum": "2013-07-01"
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2013/352",
         "typ": 2,
-        "datum": "2013-07-01"
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/197",
         "typ": 6,
-        "datum": "2015-04-09"
+        "datum": "2015-04-09",
+        "fassung": "2015-04-09"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/672",
         "typ": 1,
-        "datum": "2016-01-01"
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/672",
         "typ": 2,
-        "datum": "2016-01-01"
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
         "typ": 1,
-        "datum": "2017-01-01"
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/573",
         "typ": 1,
-        "datum": "2018-01-01"
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/820",
         "typ": 1,
-        "datum": "2018-01-01"
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/820",
         "typ": 2,
-        "datum": "2018-01-01"
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/748",
         "typ": 1,
-        "datum": "2021-01-01"
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/232",
         "typ": 1,
-        "datum": "2024-01-01"
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
         "typ": 1,
-        "datum": "2023-09-01"
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/600",
         "typ": 1,
-        "datum": "2023-01-23"
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/650",
         "typ": 5,
-        "datum": "2024-01-01"
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2026/96",
         "typ": 1,
-        "datum": "2027-01-01"
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
       }
     ],
     "ocStamm": {

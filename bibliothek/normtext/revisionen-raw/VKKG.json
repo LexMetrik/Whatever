@@ -447,47 +447,56 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2002/594",
         "typ": 5,
-        "datum": "2003-01-01"
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2006/26",
         "typ": 1,
-        "datum": "2006-03-01"
+        "datum": "2006-03-01",
+        "fassung": "2006-03-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2016/37",
         "typ": 1,
-        "datum": "2016-07-01"
-      },
-      {
-        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/79",
-        "typ": 1,
-        "datum": "2017-01-01"
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/796",
         "typ": 1,
-        "datum": "2018-01-01"
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/79",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/720",
         "typ": 1,
-        "datum": "2019-01-01"
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/799",
         "typ": 1,
-        "datum": "2019-01-01"
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/799",
         "typ": 1,
-        "datum": "2019-04-01"
+        "datum": "2019-04-01",
+        "fassung": "2019-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/319",
         "typ": 1,
-        "datum": "2021-07-01"
+        "datum": "2021-07-01",
+        "fassung": "2021-07-01"
       }
     ],
     "ocStamm": {

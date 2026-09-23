@@ -434,17 +434,20 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2013/3",
         "typ": 5,
-        "datum": "2013-02-01"
+        "datum": "2013-02-01",
+        "fassung": "2013-02-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/919",
         "typ": 1,
-        "datum": "2023-01-01"
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2023/528",
         "typ": 1,
-        "datum": "2024-01-01"
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
       }
     ],
     "ocStamm": {}

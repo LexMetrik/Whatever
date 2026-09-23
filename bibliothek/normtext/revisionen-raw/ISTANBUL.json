@@ -334,32 +334,38 @@
     "auswirkungen": [
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/167",
-        "typ": 3
+        "typ": 3,
+        "fassung": "2019-06-06"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/168",
         "typ": 5,
-        "datum": "2018-04-01"
+        "datum": "2018-04-01",
+        "fassung": "2018-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2019/343",
         "typ": 1,
-        "datum": "2019-06-06"
+        "datum": "2019-06-06",
+        "fassung": "2019-06-06"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2019/343",
         "typ": 9,
-        "datum": "2019-06-06"
+        "datum": "2019-06-06",
+        "fassung": "2019-06-06"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/639",
         "typ": 9,
-        "datum": "2022-10-28"
+        "datum": "2022-10-28",
+        "fassung": "2022-10-28"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2024/799",
         "typ": 9,
-        "datum": "2024-12-20"
+        "datum": "2024-12-20",
+        "fassung": "2024-12-20"
       }
     ],
     "ocStamm": {

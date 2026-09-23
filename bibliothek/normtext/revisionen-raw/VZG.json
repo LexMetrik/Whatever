@@ -165,56 +165,67 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164",
         "typ": 1,
-        "datum": "1976-04-01"
+        "datum": "1976-04-01",
+        "fassung": "1976-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2420_2420_",
-        "typ": 6
+        "typ": 6,
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1976/606_606_606",
         "typ": 6,
-        "datum": "1976-04-01"
+        "datum": "1976-04-01",
+        "fassung": "1976-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1976/__884",
         "typ": 6,
-        "datum": "1976-04-01"
+        "datum": "1976-04-01",
+        "fassung": "1976-04-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3183_3183_3183",
         "typ": 1,
-        "datum": "1994-01-01"
+        "datum": "1994-01-01",
+        "fassung": "1994-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900",
         "typ": 1,
-        "datum": "1997-01-01"
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900",
         "typ": 2,
-        "datum": "1997-01-01"
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3493_3493_3493",
         "typ": 6,
-        "datum": "1997-01-01"
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2011/667",
         "typ": 1,
-        "datum": "2012-01-01"
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/36/425_433_469",
         "typ": 5,
-        "datum": "1921-01-01"
+        "datum": "1921-01-01",
+        "fassung": "1921-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/40/25_25_27",
         "typ": 1,
-        "datum": "1923-12-19"
+        "datum": "1923-12-19",
+        "fassung": "1923-12-19"
       }
     ],
     "ocStamm": {

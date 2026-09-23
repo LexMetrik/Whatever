@@ -487,32 +487,38 @@
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2015/855",
         "typ": 5,
-        "datum": "2016-01-01"
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2017/96",
         "typ": 1,
-        "datum": "2017-03-01"
+        "datum": "2017-03-01",
+        "fassung": "2017-03-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2018/343",
         "typ": 1,
-        "datum": "2018-09-01"
+        "datum": "2018-09-01",
+        "fassung": "2018-09-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2020/922",
         "typ": 1,
-        "datum": "2021-01-01"
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2021/775",
         "typ": 6,
-        "datum": "2021-11-26"
+        "datum": "2021-11-26",
+        "fassung": "2021-11-26"
       },
       {
         "oc": "https://fedlex.data.admin.ch/eli/oc/2022/845",
         "typ": 1,
-        "datum": "2023-02-01"
+        "datum": "2023-02-01",
+        "fassung": "2023-02-01"
       }
     ],
     "ocStamm": {

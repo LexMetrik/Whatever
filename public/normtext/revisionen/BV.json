@@ -717,6 +717,21 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/418",
+      "dateDocument": "1999-10-26",
+      "roFundstelle": "AS 1999 2680",
+      "titelDe": "Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999 (nur ital.)",
+      "titelFr": "Constitution fédérale de la Confédération suisse du 18 avril 1999 (seulement en italien)",
+      "titelIt": "Costituzione federale della Confederazione Svizzera del 18 aprile 1999",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/418/de",
+      "sha": "0c523688de8c41bea3ef44aab44fb6943960e7e5c3651ebd1329a76b0407a414"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-09-28",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/403",
       "dateDocument": "1999-09-28",
       "roFundstelle": "AS 1999 2555",
@@ -729,23 +744,8 @@
         "inkrafttreten"
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/403/de",
-      "sha": "10cf9f7e08ca732e49f87b8bd956c877bc6f4fcf1db26fbc454493514c664dd1"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2000-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/418",
-      "dateDocument": "1999-10-26",
-      "roFundstelle": "AS 1999 2680",
-      "titelDe": "Bundesverfassung der Schweizerischen Eidgenossenschaft vom 18. April 1999 (nur ital.)",
-      "titelFr": "Constitution fédérale de la Confédération suisse du 18 avril 1999 (seulement en italien)",
-      "titelIt": "Costituzione federale della Confederazione Svizzera del 18 aprile 1999",
-      "wirkungen": [
-        "berichtigung"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/418/de",
-      "sha": "0c523688de8c41bea3ef44aab44fb6943960e7e5c3651ebd1329a76b0407a414"
+      "sha": "45e998cdfc5b94e2df136ee2b4b3ee12eeb17a5f770657f06ea4b14046f1358c"
     }
   ],
-  "sha": "abfcf6dc8f3bcae736f43b715c77ab405c4eb4ec6bbe12bcbd386d78d319445d"
+  "sha": "59b9dd434bd5516b1a5d853da0507e602d1a72e448d66fa5bb15a4f5079b5ae9"
 }

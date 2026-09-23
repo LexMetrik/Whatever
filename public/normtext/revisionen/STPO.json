@@ -739,21 +739,6 @@
     {
       "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/698",
-      "dateDocument": "2008-06-13",
-      "roFundstelle": "AS 2008 4989",
-      "titelDe": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
-      "titelFr": "Loi fédérale sur les systèmes d'information de police de la Confédération (LSIP)",
-      "titelIt": "Legge federale sui sistemi d'informazione di polizia della Confederazione (LSIP)",
-      "wirkungen": [
-        "aenderung"
-      ],
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/698/de",
-      "sha": "e6b7ce47aeeb67fb8791671284219656730cb8a096d0918d40580f930f0f5b66"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/444",
       "dateDocument": "2010-03-19",
       "roFundstelle": "AS 2010 3267",
@@ -797,7 +782,22 @@
       ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/619/de",
       "sha": "6564559a318809f779769f20b79db9d5ee66fdf18d41b83ca5c686b2f026a7e8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-12-05",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/698",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2008 4989",
+      "titelDe": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
+      "titelFr": "Loi fédérale sur les systèmes d'information de police de la Confédération (LSIP)",
+      "titelIt": "Legge federale sui sistemi d'informazione di polizia della Confederazione (LSIP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/698/de",
+      "sha": "25747b6228748480a29360b70a6528dbad5be970741c85fe061b14ca68ea10c1"
     }
   ],
-  "sha": "31c02a710ae652c343d5a6499f2ea6dcb5dbaaea6087a50bcde34c2435a047e9"
+  "sha": "623dcafd768c4105792807f57c14d707c4a7464d727fbc93c12f3241fc72e09b"
 }
