@@ -169,7 +169,7 @@ ausserhalb des Routen-Manifests deklariert.
 
 ### 1.2 Startseite («Pult»)
 
-**Zweck.** Einstieg der App: Begrüssung, Übersicht über die fünf Bereiche, zuletzt
+**Zweck.** Einstieg der App: Begrüssung, Übersicht über die vier Rubriken, zuletzt
 Besuchtes, darunter fünf ein-/ausblendbare, umsortierbare Inhaltsmodule.
 Referenzbild `abnahme/design-identitaet/pult-freigegeben.html`, von David am
 6.9.2026 freigegeben, seither mehrfach nachgezogen (zuletzt 7.9.2026).
@@ -180,12 +180,15 @@ Referenzbild `abnahme/design-identitaet/pult-freigegeben.html`, von David am
    o. ä., aus einem client-seitig gewählten Wortpool), darunter kleiner: Wochentag,
    Datum, Uhrzeit (minütlich nachgeführt). **Keine eigene Suchleiste auf `/`** — die
    einzige Suche der App ist die Kopf-Suche im Titelblatt (1.4).
-2. **Bereichs-Reihe** — fünf Kacheln in einem Navigationsblock mit der Beschriftung
-   «Bereiche der Sammlung», eine je Navigationsabschnitt: **Gesetze · Rechtsprechung ·
-   Materialien · Rechner · Vorlagen**. Jede Kachel zeigt einen 3-px-Registerstrich,
-   den Namen, eine **gemessene** Zahl (build-generiert, nie hartcodiert), eine
-   Einheit-Beschriftung («Erlasse im Volltext, Bund und Kantone» etc.) und einen
-   erklärenden Satz. Link führt auf die jeweilige Übersicht.
+2. **Rubrik-Kacheln** (seit W2·29-KATALOGE K7, Entscheid David 22.9.2026) — vier
+   `ui/RubrikKachel` in einem Navigationsblock mit der Beschriftung «Bereiche der
+   Sammlung»: **Gesetze · Rechtsprechung · Materialien · Werkzeuge** (Rechner und
+   Vorlagen zusammen, Ziel `/rechner`). Jede Kachel: Registerfläche mit Strich oben,
+   eine **gemessene** Zahl aus `STARTSEITE_ZAEHLER` (build-generiert, nie hartcodiert;
+   Werkzeuge = Rechner + Vorlagen), Einheit-Beschriftung, Name, erklärender Satz;
+   Gesetze und Werkzeuge zusätzlich die Aufschlüsselung («203 Bundeserlasse · 1'339
+   Kantonserlasse · 28 Staatsverträge», «23 Rechner · 26 Vorlagen», Stand 21.9.2026).
+   Die ganze Kachel ist der eine Link (kein Link im Link).
 3. **Zuletzt geöffnet** — Zeile mit Etikett «Zuletzt» und bis zu einigen Links
    (Registerstrich + Titel) auf zuletzt besuchte Inhaltsrouten. Leer, solange kein
    Verlauf existiert — kein Etikett ohne Inhalt.
@@ -211,7 +214,7 @@ Klick auf jeden Link navigiert. Keine eigenen Tastenkürzel für die Startseite
 - **Gespeichert/verändert:** Weichen Modul-Reihenfolge oder An/Aus-Zustand von der
   Werkseinstellung ab, wird die «Werkseinstellung»-Zeile im Blatt zum aktiven
   Rücksetz-Knopf.
-- **Mobil vs. Desktop:** Bereichs-Reihe 2 → 3 → 5 Spalten (390/640/1024 px),
+- **Mobil vs. Desktop:** Rubrik-Kacheln 2 → 4 Spalten (390/1024 px),
   Kantone-Raster 3 → 6 → 9 Spalten, Modul-Kopfspalte erst ab dem grossen
   Breakpoint zweispaltig (13 rem + Inhalt), darunter gestapelt.
 - **Server/Prerender:** Der Build hat kein `localStorage` — ausgeliefert wird immer
@@ -226,7 +229,7 @@ weiter — kein Absturz, kein wirkungsloser Schalter. Abgleich zwischen Browser-
 
 **Quelle:** `src/pages/Startseite.tsx`, `src/lib/startseiteModule.tsx`,
 `src/lib/startseiteModulTypen.ts`, `src/lib/startseiteEinstellung.ts`,
-`src/components/start/{SuchBlock,BereichsReihe,ZuletztVerwendet,PultModul,PultAbschluss,VertrauensFuss,SystematikListe,KantoneRaster,EntscheideListe,MaterialienListe,Werkzeuge}.tsx`,
+`src/components/ui/RubrikKachel.tsx`, `src/components/start/{SuchBlock,ZuletztVerwendet,PultModul,PultAbschluss,VertrauensFuss,SystematikListe,KantoneRaster,EntscheideListe,MaterialienListe,Werkzeuge}.tsx`,
 `src/lib/zuletztVerwendet.ts`, `src/components/ZuletztTracker.tsx`,
 `src/lib/verlaufGruppen.ts`, `src/data/startseiteZaehler.generated.ts`.
 
