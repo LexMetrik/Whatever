@@ -172,7 +172,8 @@ function Gruppe({ g, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revis
   const offen = g.liste.length - sichtbar;
   const statusLabel = STATUS_LABEL[g.status];
   return (
-    <section data-v3-panel-gruppe={g.status} data-v3-panel-gericht={g.gericht ?? undefined} className="pt-2 first:pt-1">
+    <section data-v3-panel-gruppe={g.status} data-v3-panel-gericht={g.gericht ?? undefined}
+      data-v3-panel-gruppe-zahl={g.liste.length} className="pt-2 first:pt-1">
       {/* B3-1 (R3-β): dichte Gestalt des EINEN Gruppenkopfs
           (`ui/GruppenKopf`). Der Weiterzugs-Hinweis ist die `marke` am
           ZEILENENDE — Befund 6b: EIN Hinweis je Gruppe, nicht je Zeile

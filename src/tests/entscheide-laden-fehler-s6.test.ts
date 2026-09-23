@@ -12,8 +12,11 @@ import { ladeBezugsShard } from '../lib/rechtsprechung/bezuege';
 
 const SHARD = { erzeugt: 'x', erlass: 'T', erlassEbene: 'bund', dokumente: {}, proArtikel: {}, gesamtProArtikel: {} };
 
-function antwort(status: number, body: unknown = SHARD): Response {
-  return { status, ok: status >= 200 && status < 300, json: async () => body } as Response;
+function antwort(status: number, body: unknown = SHARD, typ = 'application/json'): Response {
+  return {
+    status, ok: status >= 200 && status < 300, json: async () => body,
+    headers: new Headers({ 'content-type': typ }),
+  } as Response;
 }
 
 afterEach(() => { vi.unstubAllGlobals(); });
@@ -22,6 +25,19 @@ describe('ladeBezugsShard — Fehler und «kein Shard» sind zwei Lagen', () => 
   it('404 ⇒ null (kein Shard ist Wissen, kein Fehler)', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => antwort(404)));
     await expect(ladeBezugsShard('S6-404')).resolves.toBeNull();
+  });
+
+  it('SPA-Rückfall (200 mit HTML statt JSON) ⇒ null wie 404, kein Fehler', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => antwort(200, null, 'text/html')));
+    await expect(ladeBezugsShard('S6-SPA')).resolves.toBeNull();
+  });
+
+  it('kaputtes JSON bei JSON-Typ ⇒ Wurf', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      status: 200, ok: true, headers: new Headers({ 'content-type': 'application/json' }),
+      json: async () => { throw new SyntaxError('Unexpected token'); },
+    }) as unknown as Response));
+    await expect(ladeBezugsShard('S6-KAPUTT')).rejects.toBeInstanceOf(Error);
   });
 
   it('Netzfehler ⇒ Wurf, nicht null', async () => {

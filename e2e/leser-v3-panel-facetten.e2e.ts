@@ -55,11 +55,13 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     await expect(filter.locator('input[type="date"]').first()).toBeAttached()
     await filter.locator('[data-v3-panel-klappe]').first().click()
 
-    // Kantonale Klasse zuschalten ⇒ der Kanton-Feinschnitt erscheint (er ist
-    // ohne diese Klasse wirkungslos und darum gar nicht da, §13 F4).
-    await expect(filter.locator('[data-bezug-kanton]')).toHaveCount(0)
-    await filter.locator('[data-bezug-klasse="kantonal"]').click()
+    // Kantonale Klasse an ⇒ der Kanton-Feinschnitt steht da; ab ⇒ er ist weg
+    // (ohne diese Klasse wirkungslos und darum gar nicht da, §13 F4).
+    // §6.3-DEKLARATION (S6-W1b, Entscheid David 23.9.2026): «kantonal» ist im
+    // Grundzustand AN — die Richtung des Klicks ist umgedreht, die Zusage nicht.
     await expect(filter.locator('[data-bezug-kanton]').first()).toBeVisible({ timeout: 20_000 })
+    await filter.locator('[data-bezug-klasse="kantonal"]').click()
+    await expect(filter.locator('[data-bezug-kanton]')).toHaveCount(0)
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
@@ -142,7 +144,25 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   // ohnehin kam, und war blind gegen die Lage, die 79 % des Korpus betrifft: kein
   // Shard, 404, ewiges «wird geladen». Jetzt läuft er über beide Erlasse; die
   // Trennung «lädt» / «nichts erfasst» prüft zusätzlich `leser-v3-panel-nachzug` (a).
-  for (const erlass of ['BS-640.100', 'ZH-211.11']) {
+  //
+  // §6.3-DEKLARATION (S6-W1b, Entscheid David 23.9.2026 · Befunde B-3/E-4):
+  // BS-640.100 war nur «ohne Bezüge», weil der Grundzustand die kantonale Klasse
+  // ausblendete — an § 1 steht ein kantonaler Entscheid, den der Reiter jetzt
+  // zeigt. Genau das ist der behobene Befund (Blatt zeigte 0, obwohl kantonale
+  // Kanten da waren). Der «ohne Bezüge»-Fall läuft darum nur noch an ZH-211.11
+  // (kein Shard); BS-640.100 prüft die Gegenrichtung: der Eintrag steht da.
+  test('(d′) Kantonserlass MIT kantonalen Bezügen (BS-640.100): der Grundzustand zeigt sie', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await panelAuf(page, '/gesetze/kanton/BS-640.100')
+    const inhalt = page.locator('[data-v3-panel-reiter-inhalt="entscheide"]')
+    await expect(inhalt.locator('[data-v3-panel-gruppe="kantonal"]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(inhalt.locator('[data-v3-panel-entscheid]').first()).toBeVisible()
+    await expect(inhalt.locator('[data-v3-panel-lage="bestand"]')).toHaveCount(0)
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  for (const erlass of ['ZH-211.11']) {
   test(`(d) Kantonserlass ohne Bezüge (${erlass}): kein leerer Zähler, kein leeres Element`, async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
