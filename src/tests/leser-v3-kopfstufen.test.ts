@@ -90,8 +90,9 @@ describe('Overflow-Regel der V3-Kopfzeile (Kap. 4a)', () => {
   //
   // WAS BLEIBT: das Wort selbst ist eine Aussage über einen Rückgabewert und
   // steht darum weiter hier. Rot zu bekommen: `OEFFNER_WORT` ändern.
-  it('der Kopf-Griff heisst auf jeder Breite «Erlass» und nennt keine Zahl', () => {
-    expect(OEFFNER_WORT).toBe('Erlass');
+  // §6.3-DEKLARATION (S6-W1a, 23.9.2026): «Erlass» → «Erlass-Blatt» (C-1/D-5).
+  it('der Kopf-Griff heisst auf jeder Breite «Erlass-Blatt» und nennt keine Zahl', () => {
+    expect(OEFFNER_WORT).toBe('Erlass-Blatt');
     expect(OEFFNER_NAME).not.toMatch(/\d/);
   });
 

@@ -22,6 +22,7 @@ import { useEffect, useLayoutEffect, useRef, type Dispatch, type RefObject, type
 import { aktualisiereTabArtikel } from '../../lib/tabs';
 import { istHashVerbraucht } from './scrollAnker';
 import { pfadZu } from './helpers';
+import { kanonischerAnkerToken } from './suchTreffer';
 import { paneRoot, findeArt } from './berechnungen';
 import type { Sektion } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
@@ -99,7 +100,8 @@ export function useTieflinkSprung(opts: {
     // Deep-Link mit Artikel-Anker → aktiven Reiter darauf melden (Live-Label).
     // Sekundäres Pane treibt den globalen Reiter-Tracker NICHT (es ist nicht die URL).
     if (!istSekundaer) aktualisiereTabArtikel(window.location.pathname + window.location.search + window.location.hash);
-    const token = decodeURIComponent(m[1]);
+    // Nebenfund S6 (23.9.2026): «#art-336c» trifft den Token «336_c» (`./suchTreffer`).
+    const token = kanonischerAnkerToken(decodeURIComponent(m[1]), eintraege?.map((e) => e.artikel) ?? []);
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     // LM-157 (W2·17-UI-BEFUNDE-B4): der Seed-Sprung öffnete den TOC-Pfad
     // (`oeffnePfad`) und scrollte den Text, setzte aber nie `aktivIds`/`aktArtikel`

@@ -93,6 +93,7 @@ test.describe('D35-F2 · Kopf-Entlastung und Rubriken-Wahl', () => {
     }
   });
 
+  // S6-W1a: der Griff heisst seit D-5 «im Erlass-Blatt öffnen ›» (Selektor über `data-v3-bez-imblatt`, unverändert).
   test('(b) «im Blatt öffnen ›» in der aufgeklappten Rubrik führt zum Reiter Entscheide', async ({ page }) => {
     await oeffne(page);
     // Die Rubrik klappt weiterhin auf UND armiert (Entscheid: beides) …
@@ -105,6 +106,12 @@ test.describe('D35-F2 · Kopf-Entlastung und Rubriken-Wahl', () => {
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 });
     await expect(page.locator('[data-v3-panel-reiter="entscheide"]'))
       .toHaveAttribute('aria-selected', 'true');
+    // C-D1/E-9 (S6-W1a, 23.9.2026): dieselbe Liste steht nie zweimal — der
+    // Griff klappt die Rubrik am Artikelende zu, der Fokus bleibt am Rubrik-Griff.
+    // Rot zu bekommen: in `parts/Funktionszeile.tsx` den Klick-Träger um den
+    // Neben-Griff entfernen.
+    await expect(page.locator(`#art-${ART} .lr7-bez-block[data-reg="r"]`)).toHaveCount(0);
+    await expect(page.locator(`#art-${ART} .lr7-bez-marke[data-reg="r"]`)).toHaveAttribute('aria-expanded', 'false');
   });
 
   test('(b) eine einzeln abgewählte Rubrik verliert Zähler UND Inhalt', async ({ page }) => {

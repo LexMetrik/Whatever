@@ -18,6 +18,7 @@ import { LeserPanelZone } from './LeserPanelZone';
 import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
 import { normZitat, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
+import { useBlattGedaechtnis } from './blattGedaechtnis';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
 import { LandkarteZone } from './LandkarteZone';
@@ -90,6 +91,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // `usePanelBezuege` bekommt den Erlass-Key erst, wenn das Panel einmal offen
   // war, und ohne Key lädt die Bezugs-Hook nicht (Nachladen, Kap. 7).
   const rohPanel = usePanelZustand();
+  // D-6 (S6-W1a, `./blattGedaechtnis`): nur primär — das Zweit-Pane zeigt oft DENSELBEN Erlass (D42 (b)).
+  useBlattGedaechtnis(umgebung.istSekundaer ? undefined : m.erlass?.key, rohPanel);
   const bezuege = usePanelBezuege(m.erlass?.key, rohPanel.jeGeoeffnet);
   // ── D35-F2 (7.9.2026) · HIER STAND DER ZWEITE KONSUMENT DER ZÄHL-DATEI ───
   // N1 (7.9.2026) hatte den Kopf-Zähler auf `useBezuegeZaehler` umgestellt,
@@ -406,7 +409,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             Quelle (`../panePrioritaet`). */}
         {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert. */}
         <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
-          onPanel={imEinzel ? undefined : () => panel.oeffne('entscheide')}
+          onPanel={imEinzel ? undefined : panel.umschalten /* D-8 (S6-W1a): umschalten, Reiter bleibt */}
           onBlaettern={imEinzel ? einzel.blaettere : undefined}
           imSekundaerenPane={umgebung.istSekundaer} />
       </div>

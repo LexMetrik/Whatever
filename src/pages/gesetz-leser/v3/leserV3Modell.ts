@@ -218,7 +218,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   } = useLeserAnsichtZustand({ tocAuf, setTocAuf });
 
   useLeserDaten({
-    ebene: routenSegment, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf,
+    ebene: routenSegment, schluessel, navigate, erlass, istSekundaer, meldeInhaltsKopf, adresse: location,
     setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler,
   });
 

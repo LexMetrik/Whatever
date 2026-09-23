@@ -128,6 +128,18 @@ describe('Z2 — Druck der Fundstelle', () => {
     expect(block, 'die URL kommt aus attr(href), nicht aus einer Kopie').toContain('attr(href)')
   })
 
+  // A-2 (S6-W1a, 23.9.2026): das Erlass-Blatt und sein Scrim fallen im Druck.
+  // Beide Enden der Kopplung: die Regel nennt die Anker, und das Bauteil trägt
+  // sie noch (ein umbenannter Anker liesse die Regel still ins Leere greifen).
+  // Rot zu bekommen: die Zeile im Druckblock streichen.
+  it('blendet Erlass-Blatt und Scrim im Druck aus (A-2)', () => {
+    const block = druckBlock()
+    expect(block).toMatch(/\[data-v3-panel-spur\],\s*\[data-v3-panel-scrim\]\s*\{\s*display:\s*none !important;/)
+    const zone = readFileSync('src/pages/gesetz-leser/v3/LeserPanelZone.tsx', 'utf8')
+    expect(zone).toMatch(/data-v3-panel-spur=/)
+    expect(zone).toMatch(/data-v3-panel-scrim\b/)
+  })
+
   it('hebt content-visibility und Scroll-Clipping für den Ausdruck auf', () => {
     const block = druckBlock()
     expect(block, 'content-visibility darf im Druck nichts überspringen').toMatch(/content-visibility:\s*visible/)

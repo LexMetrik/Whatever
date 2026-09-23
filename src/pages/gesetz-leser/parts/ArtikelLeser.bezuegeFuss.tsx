@@ -237,7 +237,8 @@ export function ArtikelBezuegeFuss({
                Knopfliste eines Screenreaders nicht auffindbar. */
             aria-label={`Entscheide zu ${zitat} im Erlass-Blatt öffnen`}
             data-v3-bez-imblatt>
-            im Blatt öffnen<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span></button>
+            {/* D-5 (S6-W1a): EIN Name der Fläche — bis 23.9.2026 «im Blatt öffnen». */}
+            im Erlass-Blatt öffnen<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span></button>
         )
         : undefined,
     },

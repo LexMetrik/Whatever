@@ -316,3 +316,173 @@ test.describe('D42 · Split: das Gesetzes-Pane bleibt bedienbar', () => {
     })
   }
 })
+
+// ═══ S6-W1a (23.9.2026) · DIE HÜLLE DES ERLASS-BLATTS ════════════════════════
+//
+// Befunde der Audits A/D vom 23.9.2026: A-2 Druck, D-6 Gedächtnis, D-7 mobil,
+// D-8 Taste «r», D-11 `aria-controls`. Auf OR Art. 41 — dort stehen Entscheide
+// in der Liste (die 44-px-Messung braucht Listen-Links).
+const OR41 = '/gesetze/bund/OR#art-41'
+
+async function orBereit(page: Page, breite: number, hoehe: number) {
+  await page.setViewportSize({ width: breite, height: hoehe })
+  await page.goto(OR41)
+  await expect(page.locator('#art-41')).toBeVisible({ timeout: 30_000 })
+}
+const blattAuf = async (page: Page) => {
+  await page.locator('[data-v3-panel-oeffner]').first().click()
+  await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
+}
+
+test.describe('S6-W1a · Hülle des Erlass-Blatts', () => {
+  // A-2: offen gedruckt lag das Blatt über dem Erlasstitel (Audit A).
+  // Rot zu bekommen: die Druckregel `[data-v3-panel-spur], [data-v3-panel-scrim]` streichen.
+  for (const [w, h] of [[1440, 900], [390, 844]] as const) {
+    test(`A-2 @${w}: im Druck stehen weder Blatt noch Scrim`, async ({ page }) => {
+      await orBereit(page, w, h)
+      await blattAuf(page)
+      await page.emulateMedia({ media: 'print' })
+      await expect(page.locator('[data-v3-panel]')).toBeHidden()
+      await expect(page.locator('[data-v3-panel-scrim]')).toBeHidden()
+      await expect(page.locator('#art-41')).toBeVisible()
+    })
+  }
+
+  // D-7: Zurück schliesst das modale Blatt, ohne den Leser zu verlassen.
+  // Rot zu bekommen: in `LeserPanelZone` den Aufruf `useZurueckSchliesst` streichen.
+  test('D-7 @390: Browser-Zurück schliesst das Blatt zuerst, ✕ nimmt den Eintrag zurück', async ({ page }) => {
+    await orBereit(page, 390, 844)
+    await blattAuf(page)
+    await page.goBack()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+    expect(new URL(page.url()).pathname).toBe('/gesetze/bund/OR')
+    await expect(page.locator('#art-41')).toBeVisible()
+    // Wieder auf, dann per ✕ zu: der Eintrag wird zurückgenommen — oben im
+    // Verlauf steht danach kein «Blatt offen» mehr, das ein Zurück verbrauchte.
+    await blattAuf(page)
+    await page.locator('[data-v3-panel-zu]').click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+    await expect.poll(() => page.evaluate(() => (history.state as Record<string, unknown> | null)?.lmErlassBlatt ?? null)).toBeNull()
+  })
+
+  test('D-7 @1440: am Desktop kein History-Eintrag (kein Doppel-Zurück)', async ({ page }) => {
+    await orBereit(page, 1440, 900)
+    const vorher = await page.evaluate(() => history.length)
+    await blattAuf(page)
+    await page.waitForTimeout(300)
+    expect(await page.evaluate(() => history.length)).toBe(vorher)
+  })
+
+  // Rot zu bekommen: in `LeserPanelZone` die `{...wisch}`-Handler von der Griffleiste nehmen.
+  test('D-7 @390: Wischen nach unten an der Griffleiste schliesst', async ({ page }) => {
+    // FLACKER-WURZEL (23.9.2026, CI=1, 1 Worker, je 30 Läufe): 13/30 rot,
+    // unter 4× CPU-Drossel 30/30 — das Blatt blieb offen. Die Geste ist nicht
+    // schuld, der Test drückte daneben: das Blatt ist per `maxHeight` gedeckelt,
+    // nicht fest hoch (Ä55: «wächst nach oben, nur so weit es darf»). Es öffnet
+    // mit «Entscheide werden geladen …» (258 px @OR) und wächst mit der Liste
+    // auf 464 px; die Griffleiste oben wandert dabei y 587 → 381. Die alte
+    // Fassung mass den Griff gleich nach dem Öffnen und drückte auf die alte
+    // Stelle — `pointerdown` traf die Liste (SECTION), keine Geste begann
+    // (Sonde 9/20). Darum zwei Dinge:
+    //  1. Erst messen, wenn das Blatt seine Höhe HAT — Signal ist die geladene
+    //     Liste (wie beim 44-px-Fall unten), nicht eine Wartezeit.
+    //  2. Auf BGBM statt OR: die Geste ist erlass-neutral (sie hängt am Blatt,
+    //     nicht am Gesetzestext), und der OR hält unter 4×-Drossel den
+    //     Hauptfaden so lange besetzt, dass der Entscheid-Shard erst 9–10 s nach
+    //     dem Öffnen angefragt wird (Liste 12–15 s, gemessen 10×) — dieselbe
+    //     Wurzel und derselbe Erlasswechsel wie im Dateikopf (W2·24-R6c).
+    //     BGBM unter 4×-Drossel: Liste ~120 ms nach dem Öffnen (6×).
+    await page.setViewportSize({ width: 390, height: 844 })
+    await leserBereit(page)
+    await blattAuf(page)
+    await expect(page.locator('[data-v3-panel] [role="tabpanel"] a[href]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel] [data-v3-panel-lage="laedt"]')).toHaveCount(0)
+    const griff = await page.locator('[data-v3-panel-griff]').boundingBox()
+    expect(griff, 'Griffleiste fehlt').not.toBeNull()
+    const x = griff!.x + griff!.width / 2
+    const y = griff!.y + griff!.height / 2
+    // Unter der Schwelle: bleibt offen.
+    await page.mouse.move(x, y); await page.mouse.down(); await page.mouse.move(x, y + 20, { steps: 4 }); await page.mouse.up()
+    await expect(page.locator('[data-v3-panel]')).toBeVisible()
+    // Über der Schwelle: zu.
+    await page.mouse.move(x, y); await page.mouse.down(); await page.mouse.move(x, y + 120, { steps: 6 }); await page.mouse.up()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+  })
+
+  // D-7: Trefferflächen ≥ 44 px (`--tap-ziel-komfort`) im Bottom-Sheet.
+  // Rot zu bekommen: den D-7-Block in `src/index.css` streichen.
+  test('D-7 @390: Reiter, Filter, ✕ und Listen-Links treffen ab 44 px', async ({ page }) => {
+    await orBereit(page, 390, 844)
+    await blattAuf(page)
+    await expect(page.locator('[data-v3-panel] [role="tabpanel"] a[href]').first()).toBeVisible({ timeout: 20_000 })
+    const m = await page.evaluate(() => {
+      const hoehe = (e: Element) => Math.round(e.getBoundingClientRect().height)
+      // Trefferfläche senkrecht: vom Mittelpunkt aus je 21 px nach oben/unten
+      // muss `elementFromPoint` noch das Ziel (oder sein Inneres) treffen.
+      const trifft = (e: HTMLElement) => {
+        const r = e.getBoundingClientRect()
+        const x = r.left + Math.min(r.width / 2, 20); const y = r.top + r.height / 2
+        return [y - 21, y + 21].every((yy) => { const t = document.elementFromPoint(x, yy); return !!t && (t === e || e.contains(t)) })
+      }
+      const panel = document.querySelector('[data-v3-panel]')!
+      return {
+        reiter: [...panel.querySelectorAll('[role="tab"]')].map(hoehe),
+        filter: [...panel.querySelectorAll('[data-v3-panel-filter] button')].map(hoehe),
+        zu: trifft(panel.querySelector<HTMLElement>('[data-v3-panel-zu]')!),
+        link: trifft(panel.querySelector<HTMLElement>('[role="tabpanel"] a[href]')!),
+      }
+    })
+    for (const h of m.reiter) expect(h, 'Reiter unter 44 px').toBeGreaterThanOrEqual(44)
+    for (const h of m.filter) expect(h, 'Filterknopf unter 44 px').toBeGreaterThanOrEqual(44)
+    expect(m.zu, '✕: Trefferfläche unter 44 px').toBe(true)
+    expect(m.link, 'Listen-Link: Trefferfläche unter 44 px').toBe(true)
+  })
+
+  // D-6: offen/zu und Reiter je Erlass über den Reload.
+  // Rot zu bekommen: in `LeserRahmenV3` den Aufruf `useBlattGedaechtnis` streichen.
+  test('D-6 @1440: nach Reload steht das Blatt offen auf dem zuletzt gewählten Reiter', async ({ page }) => {
+    await orBereit(page, 1440, 900)
+    await blattAuf(page)
+    await page.locator('[data-v3-panel-reiter="materialien"]').click()
+    await page.reload()
+    await expect(page.locator('#art-41')).toBeVisible({ timeout: 30_000 })
+    await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel-reiter="materialien"]')).toHaveAttribute('aria-selected', 'true')
+    // Und zu bleibt zu.
+    await page.locator('[data-v3-panel-zu]').click()
+    await page.reload()
+    await expect(page.locator('#art-41')).toBeVisible({ timeout: 30_000 })
+    await page.waitForTimeout(500)
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+  })
+
+  // A-1: der Case-Redirect behält den Anker (bis 23.9.2026: `/or#art-41` → `/OR`,
+  // Leser und Blatt bei Art. 1); Nebenfund: `#art-257d` trifft `257_d`.
+  // Rot zu bekommen: in `inhalt-hooks.tsx` `navigate(erlassPfad(ziel), …)` ohne Anker.
+  test('A-1 @1440: /or#art-257d landet auf /OR#art-257d am Artikel 257d', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/or#art-257d')
+    await expect(page).toHaveURL(/\/gesetze\/bund\/OR#art-257d$/, { timeout: 30_000 })
+    await expect(page.locator('#art-257_d')).toBeInViewport({ timeout: 30_000 })
+    await blattAuf(page)
+    await expect(page.locator('[data-v3-panel] p[id]').first()).toContainText('Art. 257d OR')
+  })
+
+  // D-8: «r» schaltet um und lässt den Reiter stehen (bis 23.9.2026: nur auf,
+  // Reiter zurück auf «Entscheide»). D-11: `aria-controls` nur auf Vorhandenes.
+  test('D-8/D-11 @1440: «r» schaltet um, Reiter bleibt; aria-controls zeigt nur auf Vorhandenes', async ({ page }) => {
+    await orBereit(page, 1440, 900)
+    await expect(page.locator('[data-v3-panel-oeffner]').first()).toHaveAttribute('aria-keyshortcuts', 'r')
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-panel-reiter="aenderungen"]').click()
+    await page.locator('#art-41 p').first().click()
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel-reiter="aenderungen"]')).toHaveAttribute('aria-selected', 'true')
+    const tot = await page.evaluate(() => [...document.querySelectorAll('[data-v3-panel] [aria-controls]')]
+      .map((e) => e.getAttribute('aria-controls')!).filter((id) => !document.getElementById(id)))
+    expect(tot, 'aria-controls ohne Ziel').toEqual([])
+  })
+})

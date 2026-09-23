@@ -1,4 +1,4 @@
-import { useRef, type CSSProperties, type ReactNode } from 'react';
+import { useRef, type ReactNode, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import { setzeBezugKantone, setzeBezugKlassen, setzeBezugZeit, useBezugKantone, useBezugKlassen } from '../leserOptionen';
 import type { BestimmungsWort } from './erlassAnsicht';
@@ -10,6 +10,9 @@ import { PanelAnwendung } from './PanelAnwendung';
 import { useArtikelRevisionShard, useMaterialien, useRevisionen, useSoftLaw } from './panelKontextLaden';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
+import { useFensterRand } from './useFensterRand';
+import { blattFlaeche } from './blattFlaeche';
+import { useWischZu, useZurueckSchliesst } from './blattGesten';
 
 // ─── WO das Panel steht (H3, Kap. 4d) ────────────────────────────────────────
 //
@@ -75,22 +78,14 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 // jetzt genau einmal je Zuschnitt: im Kopf (`voll`/`kompakt`) bzw. im
 // «···»-Menü (`mini`) — dieses Bauteil rendert keinen Öffner mehr.
 
-/** Höhe des unten angeschlagenen Blatts: 55 % der Lesefläche (Ä55).
- *
- *  WARUM 55 UND NICHT 60 ODER 100: über dem Blatt müssen mindestens ein
- *  Artikel-Kopf und zwei Absätze stehen bleiben, sonst ist das Blatt ein
- *  Vollbild-Dialog mit Rundung. Gemessen @390 (StPO): Artikelhöhe ~348 px bei
- *  844 px Fläche — 45 % Restfläche = 380 px trägt genau das. Als CSS-Variable und
- *  nicht als Klassen-Literal, damit BEIDE Zweige (Pane und Einzelansicht) aus
- *  EINER Zahl rechnen; `dvh` bzw. `%`, weil der Pane-Zweig relativ zur
- *  Overlay-Schicht liegt und nicht zum Fenster. */
-const BLATT_ANTEIL = 55;
-
 /** Die 0-Höhen-Hülle der klebenden Gestalt (Herleitung bei `flaeche` unten);
- *  ohne Klassen reicht sie ihr Kind unverändert durch. */
-function Huelle({ klassen, children }: { klassen?: string; children: ReactNode }) {
+ *  ohne Klassen reicht sie ihr Kind unverändert durch. Sie trägt `--blatt-rand`
+ *  (D-1, `./useFensterRand`). */
+function Huelle({ klassen, huelleRef, children }: {
+  klassen?: string; huelleRef: RefObject<HTMLDivElement | null>; children: ReactNode;
+}) {
   if (!klassen) return <>{children}</>;
-  return <div className={klassen} style={{ top: 'var(--nt-stick)' }}>{children}</div>;
+  return <div ref={huelleRef} className={klassen} style={{ top: 'var(--nt-stick)' }}>{children}</div>;
 }
 
 export function LeserPanelZone({
@@ -197,11 +192,17 @@ export function LeserPanelZone({
   // genau wie auf D seit Ä52 gewollt (sonst wäre Textmarkieren unmöglich).
   const imPaneBlatt = paneZiel != null;
   const modal = !imPaneBlatt && form === 'unten';
+  const randBlatt = form === 'rechts' && !imPaneBlatt;
+  const huelleRef = useRef<HTMLDivElement>(null);
+  useFensterRand(huelleRef, offen && randBlatt);
+  useZurueckSchliesst(offen && modal, schliesse); // D-7: Zurück schliesst zuerst (`./blattGesten`)
+  const wisch = useWischZu(panelRef, schliesse);
 
   usePopoverAutoZu({
     offen, schliesse, wrapRef, panelRef,
     // Ä86/D33: das Blatt neben dem Text ist kein aufgezogenes Popover — es
-    // schliesst über ✕ · Esc · Zweitklick am Zähler · «r», NICHT bei jedem Klick
+    // schliesst über ✕ · Esc · Zweitklick am Öffner · «r» (das «r» zog bis
+    // S6-W1a nur AUF und setzte den Reiter zurück, D-8), NICHT bei jedem Klick
     // in die Lesespalte (sonst wäre Textmarkieren unmöglich, Klick-Test
     // 18.8.2026; Wächter `leser-v3-rahmen` (f)). Der Modus hiess bis 7.9.2026
     // `'spalte'` nach der Lage, die es nicht mehr gibt — die Regel bleibt.
@@ -289,44 +290,8 @@ export function LeserPanelZone({
     anwendung: <PanelAnwendung softLaw={softLaw} erlassKey={erlassKey ?? ''} ebene={ebene} />,
   } as const;
 
-  // ── Die Fläche ────────────────────────────────────────────────────────────
-  // Anschlag-Kante und Deckel je Gestalt. Alle drei Zweige sind `fixed` bzw.
-  // `absolute`, brauchen also keinen Platz im Fluss (§15/2, CLS 0).
-  const flaeche = form === 'rechts' && !imPaneBlatt
-    // ── D33 (7.9.2026) · DAS BLATT KLEBT AN DER LESE-ZELLE, NICHT AM FENSTER ──
-    // Bis hierher war diese Gestalt `fixed … right-0` mit `top: var(--nt-stick)`.
-    // GEMESSEN am ersten Bau von D33 (@1440, OR, Seite NICHT gescrollt): der
-    // klebende Kopf steht dann noch an seiner natürlichen Stelle (y 145–201),
-    // `--nt-stick` (154 px) meint aber die Stelle, an der er KLEBT. Das Blatt
-    // begann darum 47 px zu hoch und lag über dem ⚖-Knopf, der es aufgezogen
-    // hatte: `elementFromPoint` am Klickpunkt lieferte «Rechtsprechung &
-    // Kontext» statt des Knopfes, der zweite Klick traf das Blatt. Das ist
-    // wortgleich der Ä52-Befund von 17.8.2026 — nur die Ursache war neu.
-    // JETZT: `sticky` in der Lese-Zelle. Die natürliche Lage ist die Oberkante
-    // der Zelle (also unter dem Kopf, wo immer der gerade steht), und beim
-    // Scrollen klebt es bei `--nt-stick` — «tiefer von beiden», ohne zu messen.
-    // Die 0-Höhen-Hülle darum ist derselbe Kniff, mit dem die Scroll-Blende in
-    // `./LeserLeseZeile` aus dem Fluss bleibt: kein Platz, kein CLS, Δ = 0.
-    ? {
-      huelle: 'pointer-events-none sticky z-modal h-0 overflow-visible',
-      // W2·29 S5 (Board «Erlass-Blatt»): 380 px, bündig an der Zellenkante,
-      // ohne Polster (bis dahin 22 rem mit `p-2` — Gestalt nach D33 unverändert).
-      klassen: 'pointer-events-auto absolute right-0 top-0 w-[23.75rem] max-w-[calc(100vw-2rem)]',
-      stil: { maxHeight: 'calc(100vh - var(--nt-stick) - 1.5rem)' } as CSSProperties,
-    }
-    : imPaneBlatt
-      // Pane · unten angeschlagen in der Overlay-Schicht (die den Pane deckt).
-      ? {
-        huelle: undefined,
-        klassen: 'pointer-events-auto absolute inset-x-0 bottom-0 z-modal',
-        stil: { maxHeight: `${BLATT_ANTEIL}%` } as CSSProperties,
-      }
-      // H · echtes Bottom-Sheet: unten angeschlagen, gedeckelt, Artikel bleibt oben.
-      : {
-        huelle: undefined,
-        klassen: 'fixed inset-x-0 bottom-0 z-modal',
-        stil: { maxHeight: `${BLATT_ANTEIL}dvh` } as CSSProperties,
-      };
+  // ── Die Fläche: Anschlag-Kante und Deckel je Gestalt (`./blattFlaeche`) ─────
+  const flaeche = blattFlaeche(randBlatt, imPaneBlatt);
 
   const blatt = (
     <div ref={wrapRef} data-v3-panel-spur="blatt"
@@ -372,7 +337,7 @@ export function LeserPanelZone({
               className="lc-scrim fixed inset-0 z-overlay"
               onClick={schliesse} aria-hidden />
           )}
-          <Huelle klassen={flaeche.huelle}>
+          <Huelle klassen={flaeche.huelle} huelleRef={huelleRef}>
           <div
             // `role="dialog"` nur, wo es einer IST. Das Beiwerk ist eine benannte
             // REGION: ein Dialog ohne Fokus-Falle und ohne Modalität wäre die
@@ -389,12 +354,18 @@ export function LeserPanelZone({
               bestimmungsWort={bestimmungsWort} erlassKuerzel={erlassKuerzel}
               reiter={reiter} setReiter={setReiter} inhalt={inhalt}
               onSchliessen={schliesse} panelRef={panelRef}
-              // Griffleiste NUR am unten angeschlagenen Blatt: sie ist das Zeichen
-              // für «von unten wischbar» (dieselbe Geste und Optik wie im
-              // Gliederungs-Blatt, §5). Am rechten Rand wäre sie ein Versprechen
-              // ohne Geste (§8).
+              // Griffleiste NUR am unten angeschlagenen Blatt: das Zeichen für
+              // «nach unten wischbar» (§8: am rechten Rand ein Versprechen ohne
+              // Geste). D-7 (S6-W1a): bis 23.9.2026 war sie auch unten nur
+              // Zeichen — die Geste fehlte; seither trägt sie sie (`useWischZu`),
+              // auf einem 20-px-Streifen statt des 4-px-Strichs.
               kopfExtra={form === 'unten'
-                ? <div aria-hidden className="mx-auto mt-2 h-1 w-10 shrink-0 bg-line-strong" />
+                ? (
+                  <div aria-hidden data-v3-panel-griff {...wisch}
+                    className="flex shrink-0 cursor-grab touch-none justify-center py-2">
+                    <div className="h-1 w-10 bg-line-strong" />
+                  </div>
+                )
                 : undefined}
               // Ä89: die Steckbrief-Zeile gehört dem Panel, nicht seinen Tafeln.
               steckbrief={steckbrief} />

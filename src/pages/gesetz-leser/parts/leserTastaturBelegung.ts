@@ -34,7 +34,9 @@ export function belegung(hatPanel: boolean, hatBlaettern = false): readonly Tast
       ? [{ taste: '← →', wirkung: 'Zum vorigen/nächsten Artikel blättern' }]
       : []),
     { taste: 't', wirkung: 'Fokus in die Gliederung' },
-    ...(hatPanel ? [{ taste: 'r', wirkung: 'Rechtsprechung und Kontext öffnen' }] : []),
+    // S6-W1a (23.9.2026): EIN Name der Fläche (D-5) und «umschalten» statt
+    // «öffnen» (D-8) — bis dahin «Rechtsprechung und Kontext öffnen».
+    ...(hatPanel ? [{ taste: 'r', wirkung: 'Erlass-Blatt öffnen oder schliessen' }] : []),
     { taste: '?', wirkung: 'Diese Übersicht öffnen' },
     { taste: 'Esc', wirkung: 'Übersicht schliessen' },
   ];

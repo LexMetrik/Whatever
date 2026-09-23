@@ -511,7 +511,10 @@ test.describe('H4-II — ein Weg je Handlung aus der V3-Kopfzeile', () => {
         && !b.closest('[data-reiter-streifen], nav[aria-label="Offene Reiter"]'))
       .map((b) => ({ name: b.getAttribute('aria-label') ?? '?', y: Math.round(b.getBoundingClientRect().y) })))
     expect(kreuze.length, `✕ @1440 mit offenem Blatt: ${JSON.stringify(kreuze)}`).toBe(1)
-    expect(kreuze[0].name).toMatch(/Rechtsprechung und Kontext schliessen/)
+    // §6.3-DEKLARATION (S6-W1a, 23.9.2026): das Blatt heisst seit C-1/D-5
+    // überall «Erlass-Blatt» (bis dahin «Rechtsprechung und Kontext») — gewollte
+    // Umbenennung; die Aussage «das eine ✕ gehört dem Blatt» bleibt dieselbe.
+    expect(kreuze[0].name).toMatch(/^Erlass-Blatt schliessen$/)
     expect(fehler, fehler.join(' | ')).toEqual([])
   })
 

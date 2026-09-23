@@ -197,7 +197,18 @@ export function Funktionszeile({ marken, zitat, aktionen, onOeffnen, laedt = fal
                 </span>
               )
               : offeneMarke.inhalt}
-            {offeneMarke.nebenGriff}
+            {/* C-D1/E-9 (S6-W1a, 23.9.2026) · «im Erlass-Blatt öffnen» klappt die
+                Rubrik ZU: dieselbe Liste stand sonst zweimal gleichzeitig da —
+                hier und im Blatt (Audit C-D1). Der Klick des Griffs läuft
+                zuerst (Blatt auf), dann blubbert er hierher; der Fokus kehrt an
+                den Rubrik-Griff zurück, statt mit dem Knopf zu verschwinden. */}
+            {offeneMarke.nebenGriff && (
+              <div className="contents" onClick={() => {
+                const zurueck = griffe.current[offeneMarke.reg];
+                setOffen(null);
+                zurueck?.focus();
+              }}>{offeneMarke.nebenGriff}</div>
+            )}
           </div>
         </div>
       )}

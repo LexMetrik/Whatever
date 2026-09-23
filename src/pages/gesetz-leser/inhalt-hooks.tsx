@@ -79,9 +79,13 @@ export function useLeserDaten(opts: {
   setErlass: Dispatch<SetStateAction<BrowseErlass | null>>;
   setEintraege: Dispatch<SetStateAction<NormSnapshot[] | null>>;
   setFehler: Dispatch<SetStateAction<boolean>>;
+  /** A-1 (S6-W1a): Query und Anker der aufgerufenen Adresse — der Case-Redirect
+   *  unten trägt sie mit. Aus dem Router des Aufrufers (im Pane ein eigener
+   *  MemoryRouter), darum nicht `window.location`. */
+  adresse?: { search: string; hash: string };
 }): void {
   const {
-    ebene, schluessel, navigate, erlass, istSekundaer,
+    ebene, schluessel, navigate, erlass, istSekundaer, adresse,
     setManifest, setCurrency, setStruktur, setKopf, setKantonSys, setKantonLuecken, setErlass, setEintraege, setFehler,
   } = opts;
 
@@ -115,7 +119,11 @@ export function useLeserDaten(opts: {
         const kandidaten = m?.erlasse.filter((x) => x.key.toLowerCase() === roh) ?? [];
         if (kandidaten.length === 1) {
           const ziel = kandidaten[0];
-          navigate(erlassPfad(ziel), { replace: true });
+          // A-1 (Audit A, S6-W1a 23.9.2026): MIT Query und Anker — bis dahin
+          // landete `/gesetze/bund/or#art-41` auf `/OR` ohne `#art-41`, der
+          // Leser stand bei Art. 1 und das Blatt zeigte Art. 1. Dasselbe
+          // Muster wie der Adress-Umzug in `GesetzLeser.tsx` (④).
+          navigate({ pathname: erlassPfad(ziel), search: adresse?.search, hash: adresse?.hash }, { replace: true });
           return;
         }
         setFehler(true);
