@@ -208,7 +208,28 @@ const KEY = 'lm.leser.optionen';
  * gilt danach unveraendert so, wie sie im Menue steht — auch «f abgewaehlt».
  */
 const STAND_KEY = 'stand';
-const OPT_STAND = 2;
+/** Ab diesem Stand kennt der Speicher `f` (D40). */
+const STAND_D40 = 2;
+/**
+ * ── S6-W1b (23.9.2026) · STAND 3: DER BEZUGS-GRUNDZUSTAND IST ALLE KLASSEN ──
+ * Bis Stand 2 war der Grundzustand der Instanzen `{bge}` — und `speichere()`
+ * schreibt bei JEDER Optionsänderung alle Felder, also auch den unberührten
+ * Grundzustand. Ein gespeichertes `['bge']` aus Stand ≤ 2 ist darum nicht von
+ * einer echten Wahl «nur BGE» zu unterscheiden; die weit häufigere Lage ist der
+ * zurückgeschriebene Default. Nach Davids Entscheid vom 23.9.2026 (Grundzustand
+ * = alle Instanzen, Herleitung `bezugAuswahl.ts`) wird ein solches `['bge']`
+ * EINMAL auf den neuen Grundzustand gehoben. Die Richtung ist die ungefährliche:
+ * es wird mehr gezeigt, nie weniger, und die Filterzeile nennt den Stand
+ * sichtbar («Instanzen BGE +3»), ein Klick grenzt wieder ein. Jede ANDERE
+ * gespeicherte Menge ist eine erkennbare Nutzerwahl und bleibt unangetastet.
+ */
+const OPT_STAND = 3;
+
+/** Stand des Bestands-Speichers als Zahl; fehlt er, ist es Stand 0. */
+function speicherStand(roh: Readonly<Record<string, unknown>>): number {
+  const st = roh[STAND_KEY];
+  return typeof st === 'number' ? st : 0;
+}
 
 const DEFAULT_FUSS_RUBRIKEN: readonly FussRubrik[] = [...FUSS_RUBRIKEN];
 const DEFAULT: LeserOptionen = { vermerke: 'fassung', fussRubriken: DEFAULT_FUSS_RUBRIKEN };
@@ -282,8 +303,10 @@ export function migriereOptFelder(roh: Readonly<Record<string, unknown>>): Leser
 function leseFussRubriken(roh: Readonly<Record<string, unknown>>): readonly FussRubrik[] {
   if (!Array.isArray(roh.fussRubriken)) return DEFAULT_FUSS_RUBRIKEN;
   const gewaehlt = new Set(roh.fussRubriken as unknown[]);
-  // D40 · der Bestands-Speicher kann `f` gar nicht kennen (s. `OPT_STAND`).
-  if (roh[STAND_KEY] !== OPT_STAND) gewaehlt.add('f');
+  // D40 · der Bestands-Speicher kann `f` gar nicht kennen (s. `STAND_D40`).
+  // S6-W1b: «vor D40» heisst `< STAND_D40`, nicht «≠ aktueller Stand» — sonst
+  // fügte jeder spätere Stand-Sprung ein abgewähltes `f` wieder hinzu.
+  if (speicherStand(roh) < STAND_D40) gewaehlt.add('f');
   return FUSS_RUBRIKEN.filter((r) => gewaehlt.has(r));
 }
 
@@ -324,11 +347,22 @@ export const SCHRIFT_STUFEN: readonly LeserSchrift[] = ['normal', 'mittel', 'gro
 const DEFAULT_SCHRIFT: LeserSchrift = 'normal';
 
 // W2·7-BEZUG/B4: Grundzustand der Bezugs-Facetten = NUR Leitentscheide (§9 B4
-// «Default konservativ»). Die geteilte Konstanten-Referenz macht den häufigen
+// «Default konservativ»); seit S6-W1b (Entscheid David 23.9.2026) alle vier
+// Klassen — die Konstante kommt unverändert aus `DEFAULT_KLASSEN`.
+// Die geteilte Konstanten-Referenz macht den häufigen
 // Fall referenz-stabil: solange niemand umschaltet, liefert `getKlassenSnapshot`
 // IMMER dasselbe Array-Objekt ⇒ kein Re-Render der Abonnenten (Object.is, §15).
 const DEFAULT_BEZUG_KLASSEN: readonly BezugStatus[] = [...DEFAULT_KLASSEN];
 const KEINE_KANTONE: readonly string[] = [];
+
+/** S6-W1b · Stand-3-Hebung (Herleitung an `OPT_STAND`). Liefert für den
+ *  Grundzustand die geteilte Konstante (Referenz-Stabilität, §15). */
+function hebeAltenGrundzustand(klassen: readonly BezugStatus[], stand: number): readonly BezugStatus[] {
+  if (stand < 3 && klassen.length === 1 && klassen[0] === 'bge') return DEFAULT_BEZUG_KLASSEN;
+  const istDefault = klassen.length === DEFAULT_BEZUG_KLASSEN.length
+    && klassen.every((k, i) => k === DEFAULT_BEZUG_KLASSEN[i]);
+  return istDefault ? DEFAULT_BEZUG_KLASSEN : klassen;
+}
 
 interface GeladenerZustand {
   opt: LeserOptionen;
@@ -385,7 +419,7 @@ function lade(): GeladenerZustand {
     // Umstellung darf eine getroffene Nutzerwahl nicht stillschweigend kippen).
     // Greift NUR, solange keine Facetten-Wahl gespeichert ist, also genau einmal.
     const bezugKlassen = Array.isArray(o.bezugKlassen)
-      ? normalisiereKlassen(o.bezugKlassen)
+      ? hebeAltenGrundzustand(normalisiereKlassen(o.bezugKlassen), speicherStand(o))
       // D35-F2: gelesen wird der ROHE Bestands-Wert, nicht mehr ein Feld des
       // Zustands — den Schalter `leitfaelle` gibt es seit D35-F2 nicht mehr
       // (Herleitung am Typ oben). Die Migration selbst bleibt Wort für Wort

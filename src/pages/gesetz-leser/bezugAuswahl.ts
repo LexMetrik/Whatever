@@ -16,13 +16,27 @@
 // denen niemand gefragt hat. Der Grundzustand ist darum genau `{bge}`, und alles
 // Weitere ist zuschaltbar (§9/B4 «Default konservativ»).
 //
+// ── ABGELÖST: ENTSCHEID DAVID 23.9.2026 (S6-W1b) ────────────────────────────
+// Der Absatz darüber bleibt als Beleg seines Stands (§0 Ziff. 2b). Am 23.9.2026
+// hat der Audit des Erlass-Blatts die Kosten dieses Defaults gemessen: an
+// kantonalen Erlassen zeigte der Reiter «kein Entscheid erfasst», obwohl der
+// Shard 65 kantonale Kanten trug (BS-154.100 § 44, B-3/E-4), und «im Blatt
+// öffnen» zeigte an OR Art. 257d 2 statt der 10 Entscheide der Funktionszeile
+// (D-2). David hat entschieden (wörtlich): «zuerst bge aber nur die 5 neusten
+// und dann kantonal jeweils 5 und dann der rest». Der Grundzustand ist darum
+// ALLE bedienbaren Klassen; die Ordnung und die Fünfer-Portion leistet die
+// Anzeige (`v3/entscheideOrdnung.ts`), nicht das Filter. Das Filter bleibt zum
+// Eingrenzen. §15 ist davon nicht berührt: der Shard ist ohnehin EIN Fetch mit
+// allen Klassen, der Default entscheidet nur, was gerendert wird — und das
+// deckelt die Portion.
+//
 // ── WO DIE LADEWEICHE WIRKLICH STEHT (W2·7-VZUI, nachgemessen 31.8.2026) ────
 // Bis hierher behauptete dieser Kopf: «Grundzustand ⇒ heutiger Shard, heutige
 // Darstellung — byte-gleich, kein zusätzlicher Fetch», und: «`istErweitert` ist
 // die eine Stelle, die diese Weiche stellt». Beides trifft am Ist-Stand NICHT
 // zu, und die Zusage war damit eine zweite Wahrheit (§5) an einer §15-Stelle:
 //
-//   · `istErweitert` stellt KEINE Ladeweiche. Ihr einziger Konsument ist
+//   · `istErweitert` (seit S6-W1b `istEingegrenzt`) stellt KEINE Ladeweiche. Ihr einziger Konsument ist
 //     `BezugFacettenWahl.tsx:106` — sie wählt dort den Hinweistext unter den
 //     Schaltern, sonst nichts. Der Lader (`bezuegeLaden.ts`) fragt sie nie.
 //   · Die Weiche ist das PANEL-GATE: `panelModell.usePanelBezuege` reicht den
@@ -71,10 +85,11 @@ import { imBereich, istBereichOffen, type Zeitbereich } from './bezugZeit';
 export const BEDIENBARE_KLASSEN: readonly BezugStatus[] = ['bge', 'bger', 'eidg', 'kantonal'];
 
 /**
- * Grundeinstellung: NUR Leitentscheide (§9 B4 «Default konservativ»). Alles
- * Weitere ist zuschaltbar, nichts wird ungefragt dazugeladen.
+ * Grundeinstellung: ALLE bedienbaren Klassen (Entscheid David 23.9.2026,
+ * Herleitung im Dateikopf). Bis dahin: nur Leitentscheide (§9 B4 «Default
+ * konservativ»).
  */
-export const DEFAULT_KLASSEN: readonly BezugStatus[] = ['bge'];
+export const DEFAULT_KLASSEN: readonly BezugStatus[] = BEDIENBARE_KLASSEN;
 
 /**
  * Kurzlabel für die Chip-Gruppen und Schalter.
@@ -105,16 +120,19 @@ export const KLASSE_SCHALTER: Readonly<Record<BezugStatus, string>> = {
 
 /**
  * Ist die Auswahl vom Grundzustand abgewichen? «Abgewichen» heisst: die Menge
- * ist nicht GENAU `{bge}`. Auch das ABWÄHLEN von `bge` zählt dazu — wer nur
- * kantonale Entscheide sehen will, ist so weit vom Grundzustand entfernt wie
- * wer alles sehen will. Rein (§2).
+ * ist nicht GENAU `DEFAULT_KLASSEN` (bis S6-W1b: `{bge}`, seither alle vier).
+ * Jedes Abwählen zählt dazu — wer nur kantonale Entscheide sehen will, hat
+ * eingegrenzt. Rein (§2).
  *
  * ── WAS SIE NICHT (MEHR) TUT: LADEN ENTSCHEIDEN ────────────────────────────
  * Die frühere Zusage «nur dann tritt der grössere Bezugs-Shard an die Stelle des
  * schlanken» ist gestrichen, nicht umformuliert: sie beschrieb eine Weiche, die
  * hier nie stand (Herleitung im Dateikopf). Einziger Konsument ist der
  * Hinweistext unter den Instanz-Schaltern (`BezugFacettenWahl.tsx:106`) — er
- * sagt im Grundzustand etwas anderes als in der erweiterten Wahl.
+ * sagt im Grundzustand etwas anderes als in der eingegrenzten Wahl. (Bis
+ * S6-W1b hiess die Funktion `istErweitert` — der Grundzustand war `{bge}`, jede
+ * Abweichung also eine Erweiterung; seit der Grundzustand alle Klassen trägt, ist
+ * jede Abweichung eine Eingrenzung, und der Name sagt das.)
  *
  * BEHALTEN STATT GESTRICHEN (§17-Rückbau-Prüfung 31.8.2026): eine Funktion mit
  * genau einem Konsumenten ist ein Streich-Kandidat. Sie bleibt, weil der
@@ -123,8 +141,9 @@ export const KLASSE_SCHALTER: Readonly<Record<BezugStatus, string>> = {
  * (`src/tests/bezug-auswahl.test.ts`), während die Inline-Bedingung im JSX es
  * nicht wäre.
  */
-export function istErweitert(klassen: readonly BezugStatus[]): boolean {
-  return !(klassen.length === 1 && klassen[0] === 'bge');
+export function istEingegrenzt(klassen: readonly BezugStatus[]): boolean {
+  const norm = normalisiereKlassen(klassen);
+  return !(norm.length === DEFAULT_KLASSEN.length && norm.every((k, i) => k === DEFAULT_KLASSEN[i]));
 }
 
 /**

@@ -125,6 +125,11 @@ export function useBezuege(erlassKey: string | undefined): {
    * auch nichts: dort gilt der BEDIEN-Zustand, nicht der Wissens-Zustand.
    */
   geladen: boolean;
+  /** S6-W1b (E-3/D-3/B-8): der Ladeversuch ist GESCHEITERT (Netz/5xx) — nicht
+   *  dasselbe wie ein 404 («kein Shard», dann ist `geladen` wahr). */
+  fehler: boolean;
+  /** Einen neuen Ladeversuch anstossen (Knopf «erneut laden»). */
+  neuLaden: () => void;
   bezuegeFuer: (artikel: string) => ArtikelBezuege | undefined;
   /** D30 · dieselben Kanten OHNE die UI-Auswahl — die Bezugsgrösse, die die
    *  Kopfzahl der Bezüge-Zeile zählt (Herleitung an der Implementierung). */
@@ -149,21 +154,29 @@ export function useBezuege(erlassKey: string | undefined): {
   const bis = useBezugBis();
   const bereich = useMemo<Zeitbereich>(() => ({ von, bis }), [von, bis]);
   // Vorgabe David 28.7.2026 («nur auflistung wenn aktiviert»): geladen wird,
-  // sobald ÜBERHAUPT eine Facette aktiv ist — auch im Default (nur
-  // Leitentscheide). Das ist kein Rückschritt gegenüber dem Bestand: die alte
+  // sobald ÜBERHAUPT eine Facette aktiv ist — auch im Default (damals nur
+  // Leitentscheide, seit S6-W1b alle Instanzen). Das ist kein Rückschritt gegenüber dem Bestand: die alte
   // V1a-Chip-Reihe lud dort faktisch ebenfalls einen Shard, nur den schlanken.
   // Sind ALLE Facetten aus, wird nichts geladen und nichts gerendert — dann
   // kostet die Verzahnung null Byte und null Pixel.
   const aktiv = klassen.length > 0;
   const [shard, setShard] = useState<{ key: string; shard: BezugsShard | null } | null>(null);
+  // S6-W1b · Fehler-Lage und Neuversuch. `fehlerKey` bindet den Fehler an den
+  // Erlass (wie `shard.key`): ein Pane-/Erlass-Wechsel erbt keinen fremden
+  // Fehler. `versuch` ist der EINE Auslöser eines neuen Ladeversuchs — Knopf
+  // «erneut laden» und die Netz-Rückkehr (`online`) zählen ihn beide hoch.
+  const [fehlerKey, setFehlerKey] = useState<string | null>(null);
+  const [versuch, setVersuch] = useState(0);
+  const neuLaden = useCallback(() => { setFehlerKey(null); setVersuch((v) => v + 1); }, []);
 
   useEffect(() => {
     if (!erlassKey) return;
     let lebt = true;
     const abbrechen = beiLeerlauf(() => {
       // ALLE FACETTEN AUS ⇒ GAR NICHT LADEN — nicht «Grundzustand ⇒ gar nicht
-      // laden», wie hier bis 31.8.2026 stand. Der Grundzustand ist `{bge}` und
-      // hat damit die Länge 1; die Bedingung darunter greift erst, wenn der
+      // laden», wie hier bis 31.8.2026 stand. Der Grundzustand ist `{bge}` (seit
+      // S6-W1b, 23.9.2026: alle vier Klassen) und hat damit nie die Länge 0;
+      // die Bedingung darunter greift erst, wenn der
       // Nutzer die letzte Instanz abwählt. Der falsche Satz war die
       // Kommentar-Hälfte derselben zweiten Wahrheit, die der Kopf von
       // `bezugAuswahl.ts` aufräumt.
@@ -179,10 +192,16 @@ export function useBezuege(erlassKey: string | undefined): {
       // `holeBezugKlassen`). Der Effekt läuft trotzdem auf `erweitert` als
       // Abhängigkeit — er soll ja erneut anlaufen, wenn der Nutzer umschaltet.
       if (holeBezugKlassen().length === 0) return;
-      void ladeBezugsShard(erlassKey).then((s) => { if (lebt) setShard({ key: erlassKey, shard: s }); });
+      // S6-W1b (E-3/D-3/B-8): der zweite Zweig ist die FEHLER-Lage. Seit
+      // `ladeBezugsShard` bei Netzfehler/5xx wirft statt `null` zu liefern,
+      // landet ein Abbruch hier und nicht mehr als «kein Shard» im Zustand.
+      void ladeBezugsShard(erlassKey).then(
+        (s) => { if (lebt) { setShard({ key: erlassKey, shard: s }); setFehlerKey(null); } },
+        () => { if (lebt) setFehlerKey(erlassKey); },
+      );
     });
     return () => { lebt = false; abbrechen(); };
-  }, [erlassKey, aktiv]);
+  }, [erlassKey, aktiv, versuch]);
 
   const bezuegeFuer = useCallback((artikel: string): ArtikelBezuege | undefined => {
     if (!aktiv || !erlassKey || shard?.key !== erlassKey || !shard.shard) return undefined;
@@ -298,8 +317,19 @@ export function useBezuege(erlassKey: string | undefined): {
   // A1: das Lade-Ende. `shard` wird auch bei 404 gesetzt (`shard: null`) — genau
   // darin liegt die Auskunft, die aus `klassenImErlass` nicht zu holen ist.
   const geladen = aktiv && shard != null && shard.key === erlassKey;
+  // S6-W1b: der Fehler gilt nur, solange für DIESEN Erlass nichts geladen ist.
+  const fehler = aktiv && !geladen && erlassKey != null && fehlerKey === erlassKey;
 
-  return { aktiv, geladen, bezuegeFuer, alleFuer, kantoneVerfuegbar, klassenImErlass, histogramm, bereich };
+  // Nach Netz-Rückkehr von selbst neu laden (E-3: «lädt nach Netz-Rückkehr nie
+  // neu»). Der Hörer steht nur, solange ein Fehler vorliegt — sonst gäbe es
+  // nichts nachzuholen, und ein Dauer-Hörer wäre Last ohne Zweck (§15).
+  useEffect(() => {
+    if (!fehler) return;
+    window.addEventListener('online', neuLaden);
+    return () => window.removeEventListener('online', neuLaden);
+  }, [fehler, neuLaden]);
+
+  return { aktiv, geladen, fehler, neuLaden, bezuegeFuer, alleFuer, kantoneVerfuegbar, klassenImErlass, histogramm, bereich };
 }
 
 /** Geteilte Leer-Instanzen: halten die Referenz stabil, solange nichts geladen

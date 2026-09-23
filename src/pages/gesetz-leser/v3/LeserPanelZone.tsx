@@ -274,13 +274,16 @@ export function LeserPanelZone({
     entscheide: (
       <PanelEntscheide
         kanten={aktArtikel ? bezuege.bezuegeFuer(aktArtikel)?.kanten : undefined}
+        alleKanten={aktArtikel ? bezuege.alleFuer(aktArtikel)?.kanten : undefined}
         aktArtikel={aktArtikel} revisionShard={artikelRevisionen.wert}
         normZitat={normZitat} artikelLabel={artikelLabel} bestimmungsWort={bestimmungsWort}
         // A1: das Lade-ENDE kommt aus der Hook, die den Fetch kennt — nicht aus
         // dem Klassen-Zähler (der bei einem Erlass ohne Shard für immer leer ist).
         geladen={bezuege.geladen}
+        // S6-W1b (E-3/D-3/B-8): der Fehlschlag ist eine eigene Lage, nicht «geladen, leer».
+        fehler={bezuege.fehler} onNeuLaden={bezuege.neuLaden}
         klassen={klassen} kantone={kantone} kantoneVerfuegbar={bezuege.kantoneVerfuegbar}
-        klassenImErlass={bezuege.klassenImErlass} histogramm={bezuege.histogramm} bereich={bezuege.bereich}
+        histogramm={bezuege.histogramm} bereich={bezuege.bereich}
         onKlassen={setzeBezugKlassen} onKantone={setzeBezugKantone}
         onBereich={(von, bis) => setzeBezugZeit(von, bis)}
         ebene={ebene} />

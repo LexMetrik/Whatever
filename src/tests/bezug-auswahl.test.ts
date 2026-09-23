@@ -8,7 +8,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   BEDIENBARE_KLASSEN, DEFAULT_KLASSEN, KLASSE_KURZ, KLASSE_SCHALTER,
-  istErweitert, normalisiereKlassen, normalisiereKantone, schalteKlasse,
+  istEingegrenzt, normalisiereKlassen, normalisiereKantone, schalteKlasse,
   schalteKanton, waehleBezuege, bauePraedikate, type WaehlbareKante,
 } from '../pages/gesetz-leser/bezugAuswahl';
 import { STATUS_LABEL, type BezugStatus } from '../lib/verzahnung/facetten';
@@ -31,19 +31,26 @@ function kante(key: string, status: BezugStatus, kanton: string): Bezug {
   };
 }
 
+// FACHLICHE ÄNDERUNG (deklariert, §6.3): bis S6-W1b hielt dieser Block den
+// Grundzustand «nur Leitentscheide» fest. Entscheid David 23.9.2026 («zuerst bge
+// aber nur die 5 neusten und dann kantonal jeweils 5 und dann der rest»): der
+// Reiter zeigt ohne Filtereingriff ALLE Instanzen, die Ordnung und Portion
+// leistet die Anzeige. Die Aussage «Grundzustand ≠ Abweichung» bleibt geprüft.
 describe('B4 · Default und Weiche', () => {
-  it('Grundeinstellung ist genau «nur Leitentscheide» (§9 B4, konservativ)', () => {
-    expect([...DEFAULT_KLASSEN]).toEqual(['bge']);
+  it('Grundeinstellung ist ALLE bedienbaren Instanzen (Entscheid David 23.9.2026)', () => {
+    expect([...DEFAULT_KLASSEN]).toEqual(['bge', 'bger', 'eidg', 'kantonal']);
   });
 
-  it('Grundzustand ist NICHT erweitert — der grosse Shard bleibt ungeladen (§15)', () => {
-    expect(istErweitert(DEFAULT_KLASSEN)).toBe(false);
+  it('Grundzustand ist NICHT eingegrenzt — auch in anderer Reihenfolge', () => {
+    expect(istEingegrenzt(DEFAULT_KLASSEN)).toBe(false);
+    expect(istEingegrenzt(['kantonal', 'bge', 'eidg', 'bger'])).toBe(false);
   });
 
-  it('jede Abweichung vom Grundzustand ist erweitert — auch das ABWÄHLEN von bge', () => {
-    expect(istErweitert(['bge', 'kantonal'])).toBe(true);
-    expect(istErweitert(['kantonal'])).toBe(true);
-    expect(istErweitert([])).toBe(true);
+  it('jede Abweichung vom Grundzustand ist eingegrenzt — auch «nur bge»', () => {
+    expect(istEingegrenzt(['bge'])).toBe(true);
+    expect(istEingegrenzt(['bge', 'kantonal'])).toBe(true);
+    expect(istEingegrenzt(['kantonal'])).toBe(true);
+    expect(istEingegrenzt([])).toBe(true);
   });
 });
 

@@ -26,12 +26,13 @@
 // `aria-pressed`, KEIN `role=radiogroup`/`menu` — die versprächen eine
 // Pfeiltasten-Bedienung, die es nicht gibt (Ehrlichkeits-Lehre des Dropdowns).
 
-import { BEDIENBARE_KLASSEN, KLASSE_SCHALTER, istErweitert, schalteKlasse, schalteKanton } from '../../pages/gesetz-leser/bezugAuswahl';
+import { BEDIENBARE_KLASSEN, KLASSE_SCHALTER, istEingegrenzt, schalteKlasse, schalteKanton } from '../../pages/gesetz-leser/bezugAuswahl';
 import { STATUS_LABEL, type BezugStatus } from '../../lib/verzahnung/facetten';
 import type { BezugsBilanz, KlassenZahlen } from '../../lib/rechtsprechung/bezuege';
 import { ZeichenLegende } from './ZeichenLegende';
 
-/** Klasse ohne eine einzige Kante in DIESEM Erlass — bedienbar, aber sichtbar leer.
+/** Klasse ohne eine einzige Kante am gezählten Ort (seit S6-W1b: am ARTIKEL,
+ *  vorher im Erlass) — bedienbar, aber sichtbar leer.
  *
  *  ── W2·19-DESIGN-KONSISTENZ · D-2: DIE SCHALTER-OPTIK IST HIER WEG ──────────
  *  Bis hierher standen drei Konstanten (`KNOPF`/`AKTIV`/`RUHIG`) mit einer
@@ -80,21 +81,28 @@ const LEER = 'opacity-60';
  * Artikel dasselbe wie vorher — das ist kein Schaden, sondern die Bestätigung
  * der Auskunft.
  */
-function schalterTitel(k: BezugStatus, z: KlassenZahlen | undefined, bilanz: BezugsBilanz | null): string {
+/*
+ * ── S6-W1b (23.9.2026, D-9) · DIE ZAHL GILT DEM ARTIKEL ──────────────────
+ * Der Absatz darüber beschreibt den Stand, an dem der Schalter die Zahl des
+ * ERLASSES trug (§0 Ziff. 2b). Der Audit vom 23.9.2026 hat daran eine zweite
+ * Bezugsgrösse in derselben Zeile gemessen: Schalter erlassweit, Liste darunter
+ * artikelweise. Der einzige Mount-Punkt (`v3/PanelFilterZeile`) reicht seither
+ * die Zahlen AM ARTIKEL herein und nennt den Ort (`zahlOrt`, «an Art. 41»). Am
+ * Artikel steht jedes Dokument genau einmal — Entscheide und Fundstellen sind
+ * dort dieselbe Zahl, und der Titel nennt sie darum nur einmal.
+ */
+function schalterTitel(k: BezugStatus, z: KlassenZahlen | undefined, bilanz: BezugsBilanz | null, zahlOrt: string): string {
   const name = STATUS_LABEL[k];
   if (!z) return name;
-  if (z.dokumente > 0) {
-    return `${name} — ${z.dokumente} Entscheid(e) in diesem Erlass, `
-      + `${z.kanten} Fundstelle(n) an seinen Artikeln`;
-  }
+  if (z.dokumente > 0) return `${name} — ${z.dokumente} Entscheid(e) ${zahlOrt}`;
   const korpus = bilanz?.kantenJeStatus[k];
   const artikel = bilanz?.artikelJeStatus[k];
-  if (korpus === undefined) return `${name} — keine Entscheide dieser Instanz in diesem Erlass`;
-  return `${name} — keine in diesem Erlass. Korpusweit ${korpus} Fundstelle(n) an ${artikel ?? 0} von `
+  if (korpus === undefined) return `${name} — keine Entscheide dieser Instanz ${zahlOrt}`;
+  return `${name} — keine ${zahlOrt}. Korpusweit ${korpus} Fundstelle(n) an ${artikel ?? 0} von `
     + `${bilanz?.artikelGesamt ?? 0} Artikeln: diese Instanz trägt selten.`;
 }
 
-export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassenImErlass, bilanz = null, onKlassen, onKantone }: {
+export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassenZahlen, zahlOrt, bilanz = null, onKlassen, onKantone }: {
   /** Gewählte Instanz-Klassen (leer = nichts gewählt, siehe bezugAuswahl.ts). */
   klassen: readonly BezugStatus[];
   /** Gewählte Kantone; leer = keine Einschränkung. */
@@ -104,22 +112,24 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
    *  fände garantiert nichts (§13 F4) und behauptete, dort gäbe es Praxis, die
    *  wir bloss ausblenden (§8). Leer ⇒ kein Kanton-Streifen. */
   kantoneVerfuegbar: readonly string[];
-  /** B7/c: Entscheide UND Fundstellen je Klasse in DIESEM Erlass. Leeres Objekt
-   *  = Shard noch nicht geladen ⇒ es steht gar keine Zahl da, statt einer
-   *  erfundenen 0. */
-  klassenImErlass?: Partial<Record<BezugStatus, KlassenZahlen>>;
+  /** B7/c: Entscheide UND Fundstellen je Klasse am gezählten Ort (seit S6-W1b
+   *  der gelesene Artikel). Leeres Objekt = Shard noch nicht geladen ⇒ es steht
+   *  gar keine Zahl da, statt einer erfundenen 0. */
+  klassenZahlen?: Partial<Record<BezugStatus, KlassenZahlen>>;
+  /** Wo die Zahlen gelten, als Wortlaut für Titel und Hinweis («an Art. 41»). */
+  zahlOrt: string;
   /** B7/c: korpusweite Bilanz für die Erklärung leerer Klassen. Optional —
    *  fehlt sie, entfällt nur der Zusatzsatz, nie die Zahl des Erlasses. */
   bilanz?: BezugsBilanz | null;
   onKlassen: (neu: BezugStatus[]) => void;
   onKantone: (neu: string[]) => void;
 }) {
-  const erweitert = istErweitert(klassen);
+  const eingegrenzt = istEingegrenzt(klassen);
   const alleKantone = kantone.length === 0;
   // Solange kein Shard geladen ist, ist das Objekt leer und JEDE Klasse
   // `undefined` — dann steht keine Zahl da. Eine 0 zu zeigen, weil man noch
   // nichts weiss, wäre eine Behauptung über den Bestand (§8).
-  const gezaehlt = klassenImErlass && Object.keys(klassenImErlass).length > 0;
+  const gezaehlt = klassenZahlen && Object.keys(klassenZahlen).length > 0;
 
   return (
     <>
@@ -127,9 +137,9 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
         <span className="lc-overline mr-1">Instanzen</span>
         {BEDIENBARE_KLASSEN.map((k) => {
           const aktiv = klassen.includes(k);
-          const z = gezaehlt ? (klassenImErlass?.[k] ?? { dokumente: 0, kanten: 0 }) : undefined;
+          const z = gezaehlt ? (klassenZahlen?.[k] ?? { dokumente: 0, kanten: 0 }) : undefined;
           const n = z?.dokumente;
-          const titel = schalterTitel(k, z, bilanz);
+          const titel = schalterTitel(k, z, bilanz, zahlOrt);
           return (
             <button key={k} type="button" aria-pressed={aktiv} aria-label={titel}
               data-bezug-klasse={k} data-bezug-klasse-zahl={n} title={titel}
@@ -201,11 +211,18 @@ export function BezugFacettenWahl({ klassen, kantone, kantoneVerfuegbar, klassen
           Ein Hinweistext, der dem Nutzer eine Ladefolge und einen Anzeigeort
           verspricht, die es beide nicht gibt, ist genau die Unehrlichkeit, gegen
           die §8 steht. Was der Text NICHT tut: eine Zahl nennen, die wir nicht
-          haben — die Zahl am Schalter bleibt unverändert die des Erlasses. */}
+          haben — die Zahl am Schalter bleibt unverändert die des Erlasses.
+
+          S6-W1b (23.9.2026): beide Sätze beschrieben den Grundzustand «nur
+          Leitentscheide», die Vollliste «ohne Kappung» und die Erlass-Zahl —
+          alle drei sind seit Davids Entscheid vom 23.9.2026 abgelöst (alle
+          Instanzen, fünf je Gruppe, Zahl am Artikel). Neu gefasst, nicht
+          ergänzt: ein Hinweis, der die Bedienung falsch beschreibt, ist kein
+          Beleg, sondern ein Fehler im Produkt. */}
       <p className="px-2.5 pb-1 pt-1 text-micro leading-snug text-ink-500">
-        {erweitert
-          ? 'Jede zugeschaltete Instanz steht in der Liste als eigene Gruppe — nie unter die Leitentscheide gemischt, chronologisch vom neusten zum ältesten und ohne Kappung. Die Zahl am Schalter nennt die verschiedenen Entscheide dieser Instanz im ganzen Erlass; ein Entscheid kann an mehreren Artikeln stehen.'
-          : 'Grundeinstellung: nur amtlich publizierte Leitentscheide. Weitere Instanzen sind bereits geladen und lassen sich ohne Wartezeit zuschalten; die Zahl am Schalter sagt vorher, wie viele verschiedene Entscheide dieser Erlass davon führt.'}
+        {eingegrenzt
+          ? `Eingegrenzt: nur die eingeschalteten Instanzen stehen in der Liste, jede als eigene Gruppe. Die Zahl am Schalter nennt alle Entscheide dieser Instanz ${zahlOrt} — auch ausgeblendete.`
+          : `Grundeinstellung: alle Instanzen — zuerst die Leitentscheide, dann je kantonales Gericht, dann die übrigen; je Gruppe die fünf neusten, der Rest aufklappbar. Die Zahl am Schalter nennt die Entscheide dieser Instanz ${zahlOrt}.`}
       </p>
 
       {/* LM-050-Nachzug (W2·17-UI-BEFUNDE-B1, David-Entscheid 2.8.2026 «mach es

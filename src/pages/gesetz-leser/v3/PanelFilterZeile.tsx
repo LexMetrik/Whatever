@@ -79,13 +79,17 @@ function Klappe({ id, name, stand, offen, setOffen, kinder }: {
 }
 
 export function PanelFilterZeile({
-  klassen, kantone, kantoneVerfuegbar, klassenImErlass, histogramm, bereich,
+  klassen, kantone, kantoneVerfuegbar, klassenZahlen, zahlOrt, histogramm, bereich,
   onKlassen, onKantone, onBereich,
 }: {
   klassen: readonly BezugStatus[];
   kantone: readonly string[];
   kantoneVerfuegbar: readonly string[];
-  klassenImErlass: Partial<Record<BezugStatus, KlassenZahlen>>;
+  /** S6-W1b · D-9: Zahlen je Instanz am gelesenen ARTIKEL (nicht mehr am
+   *  Erlass) — dieselbe Bezugsgrösse wie die Liste darunter. */
+  klassenZahlen: Partial<Record<BezugStatus, KlassenZahlen>>;
+  /** Wo die Zahlen gelten, als Wortlaut («an Art. 41»). */
+  zahlOrt: string;
   histogramm: Histogramm;
   bereich: Zeitbereich;
   onKlassen: (neu: BezugStatus[]) => void;
@@ -101,7 +105,7 @@ export function PanelFilterZeile({
         offen={auf === 'instanzen'} setOffen={(o) => setAuf(o ? 'instanzen' : null)}
         kinder={(
           <BezugFacettenWahl klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
-            klassenImErlass={klassenImErlass} onKlassen={onKlassen} onKantone={onKantone} />
+            klassenZahlen={klassenZahlen} zahlOrt={zahlOrt} onKlassen={onKlassen} onKantone={onKantone} />
         )} />
       <Klappe id={`${basis}-zeit`} name="Zeitraum" stand={zeitStand(bereich)}
         offen={auf === 'zeit'} setOffen={(o) => setAuf(o ? 'zeit' : null)}

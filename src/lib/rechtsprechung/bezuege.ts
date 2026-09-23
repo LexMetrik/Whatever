@@ -86,6 +86,15 @@ const shardPromises = new Map<string, Promise<BezugsShard | null>>();
  * diesem Artikel gibt es keine Rechtsprechung» — das ist eine Aussage über die
  * Rechtslage, nicht ein fehlendes Feature. 404 bleibt gecacht: kein Shard heisst
  * belegbar «keine Kante zu diesem Erlass», das ist kein Fehler.
+ *
+ * ── S6-W1b (23.9.2026, Befunde E-3/D-3/B-8) · FEHLER WIRFT, 404 NICHT ──────
+ * Bis hierher lösten auch Netzfehler und 5xx zu `null` auf — dieselbe Rückgabe
+ * wie der 404. Der Absatz oben war damit nur halb eingelöst: der Fehlschlag
+ * wurde zwar nicht gecacht, aber der Aufrufer las ihn als «kein Shard» und der
+ * Reiter schrieb «kein Entscheid erfasst» (gemessen im Audit 23.9.2026, offline
+ * an OR Art. 41). Jetzt: 404 ⇒ `null`, jeder andere Fehlschlag ⇒ Wurf. Nur so
+ * kann die Oberfläche «konnte nicht geladen werden» von «nichts erfasst»
+ * trennen (§8).
  */
 export async function ladeBezugsShard(erlass: string): Promise<BezugsShard | null> {
   let p = shardPromises.get(erlass);
@@ -94,11 +103,11 @@ export async function ladeBezugsShard(erlass: string): Promise<BezugsShard | nul
       try {
         const res = await fetch(`/rechtsprechung/bezuege/${kodiereSchluessel(erlass)}.json`);
         if (res.status === 404) return null;
-        if (!res.ok) { shardPromises.delete(erlass); return null; }
+        if (!res.ok) throw new Error(`Bezugs-Shard ${erlass}: HTTP ${res.status}`);
         return (await res.json()) as BezugsShard;
-      } catch {
+      } catch (e) {
         shardPromises.delete(erlass);
-        return null;
+        throw e instanceof Error ? e : new Error(String(e));
       }
     })();
     shardPromises.set(erlass, p);
@@ -117,8 +126,11 @@ export async function ladeBezugsShard(erlass: string): Promise<BezugsShard | nul
 export { normArtikelToken } from './norm-index';
 
 /**
- * Kanten eines Artikels, aufgelöst und in Shard-Ordnung (Status-Rang, dann
- * Gewicht/Leitentscheid/Datum/key). Rein (§2). Ein Eintrag ohne Dokument-Kopf
+ * Kanten eines Artikels, aufgelöst und in Shard-Ordnung: Status-Rang, dann
+ * Datum neu → alt, Gleichstand über die Bestands-Ordnung
+ * (`scripts/normtext/bezuege-bauen.ts`, Sortierung seit B7; der frühere
+ * Wortlaut «Gewicht/Leitentscheid/Datum/key» beschrieb die Ordnung vor B7 —
+ * nachgeführt S6-W1b, Befund E-11 vom 23.9.2026). Rein (§2). Ein Eintrag ohne Dokument-Kopf
  * wird ÜBERSPRUNGEN statt halb gerendert — ein Chip ohne Zitierung wäre eine
  * Behauptung ohne Fundstelle (§7).
  */
