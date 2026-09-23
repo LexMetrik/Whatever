@@ -52,21 +52,19 @@ function Zeile({ z, aktiv, onSprung }: {
   return (
     <li>
       <div className="flex items-start">
-        {/* F5-Marke — dieselbe Messingkante wie im Gliederungsbaum
-            (SektionBaumTOC), immer im Markup (CLS 0, §15.2).
-            W2·18-FEHLERBUCH (15.9.2026): 3 px statt 2 px und über die ganze
-            Zeilenhöhe, Zug um Zug mit dem Baum. Der flache Index IST die
-            Gliederung der Erlasse ohne amtliche Struktur (b2/b4) — eine
-            Standort-Marke, die dort anders aussieht, behauptete einen
-            Unterschied, den es fachlich nicht gibt (§5). */}
-        <span aria-hidden className={`w-[3px] shrink-0 self-stretch ${aktiv ? 'bg-brass-600' : 'bg-transparent'}`} />
+        {/* F5-Marke — Zug um Zug mit dem Gliederungsbaum (SektionBaumTOC):
+            3-px-Registerstrich `reg-g`, Zeile auf `reg-g-flaeche` (W2·29 S3),
+            immer im Markup (CLS 0, §15.2). Der flache Index IST die Gliederung
+            der Erlasse ohne amtliche Struktur (b2/b4) — eine Marke, die dort
+            anders aussieht, behauptete einen Unterschied, den es nicht gibt (§5). */}
+        <span aria-hidden className={`w-[3px] shrink-0 self-stretch ${aktiv ? 'bg-reg-g' : 'bg-transparent'}`} />
         <button type="button"
           onClick={() => { merkeRuecksprungVonDom(); onSprung(z.token); }}
           data-toc-aktiv={aktiv ? '1' : undefined}
           aria-current={aktiv ? 'location' : undefined}
           title={voll} aria-label={voll}
-          className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors text-xs ${
-            aktiv ? 'text-ink-900 font-medium bg-brass-100' : 'text-ink-700 hover:text-ink-900 lc-hover-flaeche'
+          className={`flex-1 min-w-0 text-left px-1.5 py-0.5 leading-snug transition-colors text-xs ${
+            aktiv ? 'text-ink-900 font-medium bg-reg-g-flaeche' : 'text-ink-700 hover:text-ink-900 lc-hover-flaeche'
           }`}>
           {/* Zusatzpunkt David 9.8.2026: dieselbe Umbruch-Garantie wie im Baum
               (SektionBaumTOC) — kein horizontaler Overflow im [data-toc]. */}
@@ -88,11 +86,12 @@ export function ArtikelIndex({ gruppen, aktivToken, onSprung, anhang }: ArtikelI
       {gruppen.map((g, gi) => (
         // Zwischenkopf: nicht klappbar (§3.2 «vorhandene Abschnitte als
         // Zwischenköpfe») — nur eine ruhige Überschrift, kein Button/Chevron.
+        // W2·29 S3: Etikett-Rolle `lc-overline` statt Versalien + Sperrsatz (F0.7).
         // `kopf === null` (T4: NHG/VMWG, oder freie Zwischenartikel bei T3)
         // bleibt ohne Überschrift — nichts erfunden (§8).
         <div key={g.kopf ?? `frei-${gi}`}>
           {g.kopf && (
-            <p className="mb-0.5 text-micro font-semibold uppercase tracking-wide text-ink-500 [overflow-wrap:anywhere]">
+            <p className="lc-overline mb-0.5 font-semibold [overflow-wrap:anywhere]">
               {margLabel(g.kopf)}
             </p>
           )}

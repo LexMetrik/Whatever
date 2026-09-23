@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { LeserGliederungSchiene } from './LeserGliederungSchiene';
+import { LeserGliederungSchiene } from './leisteAufbau';
 import type { RahmenBild } from './rahmenSpalten';
 import { SatzspiegelKontext } from './satzspiegel';
 
@@ -67,7 +67,7 @@ export function LeserLeseZeile({
         : ''}
       style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
       {bild.schiene && (
-        // Optik und Herleitung in `./LeserGliederungSchiene` (C5b, §6.6).
+        // Optik und Herleitung in `./leisteAufbau` (C5b, §6.6).
         <LeserGliederungSchiene onAuf={onSchieneAuf} />
       )}
       {bild.gliederungSpalte && (
