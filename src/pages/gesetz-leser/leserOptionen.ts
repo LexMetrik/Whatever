@@ -212,22 +212,14 @@ const OPT_STAND = 2;
 
 /**
  * ── S6-W1b (23.9.2026) · EIGENER STAND DER BEZUGS-FACETTEN ────────────────
- * Bis S6-W1b war der Grundzustand der Instanzen `{bge}` — und `speichere()`
- * schreibt bei JEDER Optionsänderung alle Felder, also auch den unberührten
- * Grundzustand. Ein gespeichertes `['bge']` ohne diesen Stand ist darum nicht
- * von einer echten Wahl «nur BGE» zu unterscheiden; die weit häufigere Lage ist
- * der zurückgeschriebene Default. Nach Davids Entscheid vom 23.9.2026
- * (Grundzustand = alle Instanzen, Herleitung `bezugAuswahl.ts`) wird ein
- * solches `['bge']` EINMAL auf den neuen Grundzustand gehoben. Die Richtung ist
- * die ungefährliche: es wird mehr gezeigt, nie weniger, und die Filterzeile
- * nennt den Stand sichtbar («Instanzen BGE +3»), ein Klick grenzt wieder ein.
- * Jede ANDERE gespeicherte Menge ist eine erkennbare Nutzerwahl und bleibt.
- *
- * EIN EIGENER SCHLÜSSEL statt `OPT_STAND` hochzuzählen: `OPT_STAND` beantwortet
- * genau EINE Frage («konnte dieser Speicher `f` kennen?») und prüft auf
- * Gleichheit — ein Stand 3 hätte jedem Bestands-Speicher ein abgewähltes `f`
- * wieder eingefügt (der Test `leser-optionen-migration` (D40) hält 3 als
- * «kein Stand»). Eine Frage, ein Schlüssel.
+ * `speichere()` schreibt bei JEDER Optionsänderung alle Felder, auch den
+ * unberührten Instanz-Grundzustand `{bge}` von bis dahin. Ein gespeichertes
+ * `['bge']` ohne diesen Stand ist darum meist der zurückgeschriebene Default,
+ * keine Wahl; nach Davids Entscheid 23.9.2026 (Grundzustand = alle Instanzen,
+ * `bezugAuswahl.ts`) wird es EINMAL gehoben. Richtung ungefährlich: mehr statt
+ * weniger, der Stand steht sichtbar in der Filterzeile. Jede andere Menge bleibt.
+ * EIGENER Schlüssel, weil `OPT_STAND` auf Gleichheit prüft (D40: ein Stand 3
+ * hätte jedem Speicher ein abgewähltes `f` wieder eingefügt). Eine Frage, ein Schlüssel.
  */
 const BEZUG_STAND_KEY = 'bezugStand';
 const BEZUG_STAND = 1;
@@ -346,16 +338,13 @@ export const SCHRIFT_STUFEN: readonly LeserSchrift[] = ['normal', 'mittel', 'gro
 const DEFAULT_SCHRIFT: LeserSchrift = 'normal';
 
 // W2·7-BEZUG/B4: Grundzustand der Bezugs-Facetten = NUR Leitentscheide (§9 B4
-// «Default konservativ»); seit S6-W1b (Entscheid David 23.9.2026) alle vier
-// Klassen — die Konstante kommt unverändert aus `DEFAULT_KLASSEN`.
-// Die geteilte Konstanten-Referenz macht den häufigen
+// «Default konservativ»; seit S6-W1b alle vier). Die geteilte Konstanten-Referenz macht den häufigen
 // Fall referenz-stabil: solange niemand umschaltet, liefert `getKlassenSnapshot`
 // IMMER dasselbe Array-Objekt ⇒ kein Re-Render der Abonnenten (Object.is, §15).
 const DEFAULT_BEZUG_KLASSEN: readonly BezugStatus[] = [...DEFAULT_KLASSEN];
 const KEINE_KANTONE: readonly string[] = [];
 
-/** S6-W1b · Hebung des alten Grundzustands (Herleitung an `BEZUG_STAND`).
- *  Liefert für den Grundzustand die geteilte Konstante (Referenz-Stabilität, §15). */
+/** S6-W1b · Hebung (Herleitung an `BEZUG_STAND`); Grundzustand = geteilte Konstante (§15). */
 function hebeAltenGrundzustand(klassen: readonly BezugStatus[], aktuell: boolean): readonly BezugStatus[] {
   if (!aktuell && klassen.length === 1 && klassen[0] === 'bge') return DEFAULT_BEZUG_KLASSEN;
   const istDefault = klassen.length === DEFAULT_BEZUG_KLASSEN.length
