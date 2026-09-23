@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactElement } from 'react';
+import { createPortal } from 'react-dom';
 import type { Register } from '../layout/bereiche';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
@@ -180,7 +181,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
         })}
       </nav>
 
-      {offen && sicht && kachel && (
+      {offen && sicht && kachel && inEbene(schmal, (
         <section ref={blattRef} id={BLATT_ID} tabIndex={-1} role="region" aria-label={kachel.titel}
           className="lc-start-blatt" data-phase={phase} data-schmal={schmal ? '' : undefined}
           style={schmal ? undefined : { clipPath: clip, WebkitClipPath: clip }}
@@ -205,9 +206,17 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
             </div>
           )}
         </section>
-      )}
+      ))}
     </div>
   );
+}
+
+/** Telefon: das Vollbild-Blatt hängt am `body` — im Feld läge es in dessen
+ *  Stapelkontext (`isolation`) und würde von den folgenden Abschnitten der
+ *  Seite überdeckt (gemessen 23.9.2026 @390: Rechteck 0/0/390/844, aber
+ *  unsichtbar). Breit bleibt es im Feld, dort IST das Feld die Bühne. */
+function inEbene(schmal: boolean, knoten: ReactElement) {
+  return schmal && typeof document !== 'undefined' ? createPortal(knoten, document.body) : knoten;
 }
 
 /** Band oben im Blatt: Registerfläche + Strich, Pfad, «← Zurück», ✕. */

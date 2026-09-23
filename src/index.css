@@ -3352,6 +3352,61 @@
      PRODUKT-Weg (Deep-Link `#art-429`, TOC-Sprung) landet auf beiden Ständen
      exakt und bleibt stehen (gemessen Abstand −1 px über 4 s). */
 
+  /* ─── W2·29-WERKBANK-START · KACHELFELD, DAS VOR ORT AUFKLAPPT ────────────────
+     Mechanik und Wortlaut Davids: `components/start/StartKachelFeld.tsx`. Hier
+     nur Mass und Bewegung. Die Bewegung läuft ausschliesslich über
+     `clip-path`, `opacity` und `transform` (Compositor), Kurve
+     `cubic-bezier(.2,0,0,1)`, auf 450 ms, zu 350 ms (Prototyp 23.9.2026). Die
+     Kachelhöhe (13.75 rem = 220 px, Telefon 8.25 rem) ist die Prototyp-Höhe:
+     das offene Blatt nimmt NUR diese Fläche ein und scrollt in sich. */
+  .lc-start-feld { position: relative; isolation: isolate; }
+  .lc-start-raster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .lc-start-zelle { min-height: 13.75rem; display: flex;
+    transition: opacity 450ms cubic-bezier(.2,0,0,1), transform 450ms cubic-bezier(.2,0,0,1); }
+  .lc-start-zelle[data-zurueck] { opacity: .45; transform: scale(.985); }
+  .lc-start-blatt {
+    position: absolute; inset: 0; z-index: 1;
+    display: flex; flex-direction: column; overflow: hidden;
+    background: var(--paper); border: 1px solid var(--rule-soft); border-radius: var(--radius-xl);
+    outline: none; contain: layout paint;
+    transition: clip-path 450ms cubic-bezier(.2,0,0,1), -webkit-clip-path 450ms cubic-bezier(.2,0,0,1);
+  }
+  .lc-start-blatt[data-phase="start"], .lc-start-blatt[data-phase="schliesst"] { will-change: clip-path; }
+  .lc-start-blatt[data-phase="schliesst"] { transition-duration: 350ms; }
+  .lc-start-band { flex: none; display: flex; align-items: center; gap: .5rem;
+    padding: .5rem .75rem .5rem .5rem; border-top-width: 2px; border-top-style: solid; }
+  .lc-start-blatt-inhalt { flex: 1; min-height: 0; overflow: auto; padding: 1rem 1.25rem 1.75rem;
+    opacity: 0; transform: translateY(6px);
+    transition: opacity 105ms ease-out, transform 270ms cubic-bezier(.2,0,0,1); }
+  .lc-start-blatt-inhalt[data-sichtbar] { opacity: 1; transform: none;
+    transition: opacity 225ms ease-out 180ms, transform 270ms cubic-bezier(.2,0,0,1) 160ms; }
+  .lc-start-stufe { animation: lc-start-stufe-vor 280ms cubic-bezier(.2,0,0,1); }
+  .lc-start-stufe[data-richtung="zurueck"] { animation-name: lc-start-stufe-zurueck; }
+  @keyframes lc-start-stufe-vor { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+  @keyframes lc-start-stufe-zurueck { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+  /* Farbschicht mit Kachel-Gesicht: steht während der Bewegung, blendet danach
+     nach rund 30 % der Öffnungsdauer auf den Inhalt über. */
+  .lc-start-schicht { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
+    transition: opacity 200ms ease-out 135ms; }
+  .lc-start-schicht[data-an] { opacity: 1; transition: opacity 120ms ease-out; }
+  .lc-start-gesicht { position: absolute; display: flex; flex-direction: column; gap: .375rem;
+    padding: 1.25rem; border-top: 2px solid; border-radius: var(--radius-xl); }
+  /* Telefon: Vollbild-Blatt, das von unten einfährt (David 23.9.2026 «5 ja»). */
+  @media (max-width: 759.98px) {
+    .lc-start-zelle { min-height: 8.25rem; }
+    .lc-start-raster { gap: .625rem; }
+    .lc-start-blatt[data-schmal] { position: fixed; z-index: var(--z-modal); border: 0; border-radius: 0;
+      transform: translateY(100%); transition: transform 450ms cubic-bezier(.2,0,0,1); }
+    .lc-start-blatt[data-schmal][data-phase="offen"] { transform: none; }
+    .lc-start-blatt[data-schmal][data-phase="schliesst"] { transition-duration: 350ms; }
+    .lc-start-blatt[data-schmal][data-phase="start"], .lc-start-blatt[data-schmal][data-phase="schliesst"] { will-change: transform; }
+    .lc-start-blatt-inhalt { padding: 1rem .875rem 2.5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lc-start-zelle, .lc-start-blatt, .lc-start-blatt-inhalt, .lc-start-schicht { transition: none !important; }
+    .lc-start-stufe { animation: none; }
+  }
+
   /* ─── W2·29-WERKBANK-GRUNDTON · NORMTEXT-KÖRPER BLEIBT GERADE ──────────────
      David 23.9.2026: «runde Ecken nur für Kacheln/Flächen, Linien und Listen
      eckig»; Spec: gerade bleiben Tabellen und der Normtext-Körper. Die Radius-

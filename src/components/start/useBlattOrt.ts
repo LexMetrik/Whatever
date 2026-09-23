@@ -42,7 +42,9 @@ export function useBlattOrt() {
     const p = new URLSearchParams(loc.search);
     if (o) p.set(BLATT_PARAM, schreibeBlatt(o));
     else p.delete(BLATT_PARAM);
-    const qs = p.toString();
+    // Lesbare Adresse `?blatt=gesetze/bund/02`: der Schrägstrich ist in einer
+    // Query zulässig (RFC 3986 §3.4), `URLSearchParams` kodiert ihn nur vorsorglich.
+    const qs = p.toString().replace(/%2F/gi, '/');
     return { pathname: loc.pathname, search: qs ? `?${qs}` : '', hash: '' };
   };
 
