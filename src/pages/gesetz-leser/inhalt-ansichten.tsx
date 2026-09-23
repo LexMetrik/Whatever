@@ -151,7 +151,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
       <FruehUebersicht erlass={erlass} kopf={kopf} currency={currency} />
       {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
           diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
-      <KontextPanel typ="norm" normKeys={[erlass.key]} />
+      <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
         <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
         <a href={`/normtext/${erlass.pdfPfad}`} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:underline">Amtliches PDF in neuem Tab öffnen ↗</a>
@@ -202,7 +202,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
       <FruehUebersicht erlass={erlass} kopf={null} currency={currency} />
       {/* Einheitliches Kontext-Panel (B3) auch hier: Entscheide/Materialien/
           Werkzeuge zu diesem Erlass (Single Source, §5). */}
-      <KontextPanel typ="norm" normKeys={[erlass.key]} />
+      <KontextPanel typ="norm" normKeys={[erlass.key]} stichtag={currency?.[erlass.key]?.geprueftAm ?? null} />
       <nav className="mt-4 border-t border-line pt-5 flex flex-wrap justify-between gap-3 text-body-s" aria-label="Weitere Erlasse">
         <Link to="/gesetze" className="text-ink-500 hover:text-brass-700">← Übersicht</Link>
         {erlass.quelleUrl && <QuellLink href={erlass.quelleUrl} className="text-brass-700 hover:underline" />}

@@ -95,7 +95,7 @@ function Huelle({ klassen, children }: { klassen?: string; children: ReactNode }
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag,
 }: {
   /** ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WOHER DIE EBENE KOMMT ──────────
    *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die drei Tafeln
@@ -144,6 +144,8 @@ export function LeserPanelZone({
    *  Leiste steht. Die Weiche trifft der Rahmen (er kennt Spalte und Blatt),
    *  nicht diese Datei (§3): sie ordnet an, sie entscheidet nicht. */
   steckbrief?: ReactNode;
+  /** `currency.geprueftAm` — Stichtag «künftig / in Kraft» im Reiter Änderungen (S6). */
+  stichtag: string | null;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -282,7 +284,7 @@ export function LeserPanelZone({
         onBereich={(von, bis) => setzeBezugZeit(von, bis)}
         ebene={ebene} />
     ),
-    aenderungen: <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} />,
+    aenderungen: <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} />,
     materialien: <PanelMaterialien stand={materialien} quelleUrl={quelleUrl} ebene={ebene} />,
     anwendung: <PanelAnwendung softLaw={softLaw} erlassKey={erlassKey ?? ''} ebene={ebene} />,
   } as const;

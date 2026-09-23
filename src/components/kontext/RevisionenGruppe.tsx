@@ -2,7 +2,8 @@ import { AbrufFehler } from '../ui/AbrufFehler';
 import { Datum } from '../ui/Datum';
 import { fedlexLokalisiert, type Locale } from '../locale';
 import { revisionTitel, type RevisionBezug } from '../../lib/normtext/revisionen';
-import { IN_KRAFT_FUER_CH_LABEL } from '../../lib/normtext/erlassKopfText';
+import { IN_KRAFT_FUER_CH_LABEL, datumCh } from '../../lib/normtext/erlassKopfText';
+import { aenderungZeitbezug } from '../../pages/gesetz-leser/zukunftsfassungen';
 import type { BotschaftBezug } from '../../lib/materialien/botschaften';
 import { KontextGruppe } from './KontextGruppe';
 
@@ -24,7 +25,34 @@ import { KontextGruppe } from './KontextGruppe';
 
 const MAX_REVISIONEN = 10;
 
-export function RevisionenGruppe({ revFehler, revAenderungen, revMarker, botschaftNachKey, locale }: {
+// ─── S6 · Befund AE-1 (W2·29-WERKBANK-LESER, 23.9.2026) ─────────────────────
+// Der Marker `nichtKonsolidiert` umfasst KÜNFTIGE Änderungen; die Zeile sagte
+// trotzdem «In Kraft». Klassifikation und Stichtag (`currency.geprueftAm`) sind
+// dieselben wie im V3-Reiter «Änderungen» (`aenderungZeitbezug`, §5).
+function ZeitbezugZeile({ r, stichtag }: { r: RevisionBezug; stichtag: string | null }) {
+  const bezug = aenderungZeitbezug(r, stichtag);
+  const datum = datumCh(r.dateEntryInForce);
+  if (bezug === 'kuenftig') {
+    return <span className="block text-micro text-ink-600">{`Tritt am ${datum} in Kraft — noch nicht geltendes Recht.`}</span>;
+  }
+  if (bezug === 'inKraftOffen') {
+    return <span className="block text-micro text-warn-700">{`In Kraft seit ${datum}, im hier gezeigten Text noch nicht eingearbeitet.`}</span>;
+  }
+  if (bezug === 'unbestimmt') {
+    return <span className="block text-micro text-ink-600">Im hier gezeigten Text noch nicht eingearbeitet.</span>;
+  }
+  return null;
+}
+
+function markerZusatz(r: RevisionBezug, stichtag: string | null) {
+  const bezug = aenderungZeitbezug(r, stichtag);
+  if (bezug === 'kuenftig') return <span className="text-ink-600"> · noch nicht in Kraft</span>;
+  if (bezug === 'inKraftOffen') return <span className="text-warn-700"> · in Kraft, im hier gezeigten Text noch nicht eingearbeitet</span>;
+  if (bezug === 'unbestimmt') return <span className="text-ink-600"> · im hier gezeigten Text noch nicht eingearbeitet</span>;
+  return null;
+}
+
+export function RevisionenGruppe({ revFehler, revAenderungen, revMarker, botschaftNachKey, locale, stichtag = null }: {
   revFehler: boolean;
   revAenderungen: RevisionBezug[];
   revMarker: RevisionBezug[];
@@ -32,6 +60,9 @@ export function RevisionenGruppe({ revFehler, revAenderungen, revMarker, botscha
    *  Revisions-Verweis «Botschaft ansehen» ohne zweiten Fetch (§15). */
   botschaftNachKey: Map<string, BotschaftBezug>;
   locale: Locale;
+  /** `currency.geprueftAm` des Erlasses (§2: nie die Uhr); fehlt er, keine
+   *  Aussage «in Kraft» (S6). */
+  stichtag?: string | null;
 }) {
   return (
     <KontextGruppe titel="Änderungen / Revisionen" richtung="Amtliche Sammlung"
@@ -77,11 +108,10 @@ export function RevisionenGruppe({ revFehler, revAenderungen, revMarker, botscha
                         className="text-micro text-ink-500 hover:text-brass-700">· Botschaft ↗</a>
                     </>
                   )}
-                  {r.nichtKonsolidiert && (
-                    <span className="block text-micro text-warn-700">
-                      In Kraft, aber noch nicht in den geltenden Text konsolidiert.
-                    </span>
-                  )}
+                  {/* S6 · Befund AE-1 (23.9.2026): stand hier für JEDE markierte
+                      Zeile «In Kraft, aber noch nicht in den geltenden Text
+                      konsolidiert.» — auch für künftige (01.01.2029). */}
+                  <ZeitbezugZeile r={r} stichtag={stichtag} />
                   {/* §8-Marker (Gegenprüfung #703, Semantik zweimal korrigiert nach
                       Gegenprüfung PR #827 — Auflagen a+f): berichtet NUR, was das
                       jolux:rectifies-Tripel selbst trägt (Verknüpfung mit einem
@@ -117,7 +147,7 @@ export function RevisionenGruppe({ revFehler, revAenderungen, revMarker, botscha
                     <Datum iso={r.dateEntryInForce} />
                     {' — '}Änderung über einen Sammelerlass ·{' '}
                     <a href={r.quelleUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">amtliche Sammlung ↗</a>
-                    {r.nichtKonsolidiert && <span className="text-warn-700"> · noch nicht konsolidiert</span>}
+                    {markerZusatz(r, stichtag)}
                   </li>
                 ))}
               </ul>

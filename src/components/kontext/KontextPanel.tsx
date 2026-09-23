@@ -109,7 +109,7 @@ function DanebenKnopf({ ziel, label, oeffneDaneben, className = 'ml-1' }: {
   );
 }
 
-export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate, artikelKontext = null, variante = 'lesespalte' }: {
+export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false, artikelZitate, artikelKontext = null, variante = 'lesespalte', stichtag = null }: {
   typ: KontextTyp;
   normKeys: readonly string[];
   /** Reader-eigene Gruppen (KontextGruppe), VOR den Standard-Gruppen gerendert —
@@ -147,6 +147,8 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
    *  Gliederungsspalte). In der Lesespalte bleibt das bisherige gruppenweise
    *  Einwachsen (dort sitzt das Panel am Leseende, unterhalb des Folds). */
   variante?: 'lesespalte' | 'seitenleiste';
+  /** S6 (AE-1): `currency.geprueftAm` — Stichtag «künftig / in Kraft» der Revisionen. */
+  stichtag?: string | null;
 }) {
   // Synchron (in-Bundle) — billig + deterministisch, daher pro Render berechnet
   // statt memoisiert (kleine Register, kein O(n²); §6.4).
@@ -452,7 +454,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               speisen (§5, kein zweiter Zustands-Bus). */}
           {(revFehler || alleRevisionen.length > 0) && (
             <RevisionenGruppe revFehler={revFehler} revAenderungen={revAenderungen}
-              revMarker={revMarker} botschaftNachKey={botschaftNachKey} locale={locale} />
+              revMarker={revMarker} botschaftNachKey={botschaftNachKey} locale={locale} stichtag={stichtag} />
           )}
 
           {/* Gesetzgebung in Arbeit — Vernehmlassungen (Paket 3, W3·11, Moat-Hebel 1).
