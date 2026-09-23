@@ -3,7 +3,7 @@ import { NormText } from '../NormText';
 import { BetragsFeld } from '../BetragsFeld';
 import { DatumsFeld } from '../DatumsFeld';
 import { Checkbox, Field, inputCls, ListenEditor } from './ui';
-import { MappenAnsicht, MappenGates, NotariatsHinweis } from './Dokumentmappe';
+import { MappenAbschnitt, MappenAnsicht, MappenGates, NotariatsHinweis } from './Dokumentmappe';
 import type { PdfBanner } from '../../lib/vorlagen/banner';
 import type { GmbhGruendungEingaben } from '../../lib/gruendungsunterlagen';
 import {
@@ -34,9 +34,11 @@ const ZEICHNUNGS_OPTIONEN: { id: GmbhZeichnungsArt; label: string }[] = [
   { id: 'kollektivzuzweien', label: 'Kollektivunterschrift zu zweien' },
 ];
 
-export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
+export function GmbhDokumentmappe({ weichen, docxErlaubt, beruehrt }: {
   weichen: GmbhGruendungEingaben;
   docxErlaubt: boolean;
+  /** Seite schon bedient? Steuert nur den Ton der Blocker (MappenGates). */
+  beruehrt: boolean;
 }) {
   // Identität & Parameter (Weichen kommen als Props von der Checkliste)
   const [firma, setFirma] = useState('');
@@ -94,7 +96,7 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
   const k = antworten.statutKlauseln;
 
   return (
-    <section className="lc-card p-5 sm:p-6 space-y-5">
+    <MappenAbschnitt className="space-y-5">
       <div>
         <p className="lc-overline">Dokumentmappe – Volldokumente (Bargründung)</p>
         <p className="text-body-s text-ink-500 max-w-reading">
@@ -340,10 +342,10 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
         label="Statutarische Grundlage für virtuelle/hybride Gesellschafterversammlungen (Art. 805 Abs. 5 Ziff. 2bis OR)"
       />
 
-      <MappenGates gates={mappe.gates} />
+      <MappenGates gates={mappe.gates} beruehrt={beruehrt} />
 
       <MappenAnsicht dokumente={mappe.dokumente} docxErlaubt={docxErlaubt}
         startDokId="statuten" bannerEntwurf={BANNER_ENTWURF} />
-    </section>
+    </MappenAbschnitt>
   );
 }
