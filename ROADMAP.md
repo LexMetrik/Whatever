@@ -516,6 +516,60 @@ Umschichtung 20.9.2026 (2)):*
 
 ---
 
+## Rechtslogik — Befunde Prüfung 23.9.2026  *(`feld: rechtslogik`)*
+
+- [~] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W0 · status: wip · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+  RL-01 (dieser Schritt) · RL-02 (Risiko-Grenze, Gegenprüfungs-Pflicht auch für
+  Tor-Dateien selbst, W-02 entschieden) · RL-03 (Fachänderungs-Riegel für
+  Fixes ausserhalb der Risiko-Grenze). Muss vor jeder anderen RL-Welle gelandet
+  sein.
+  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1.
+
+- [ ] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W1 · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+  RL-11 (vorgezogen, «Aufgehoben seit») dann RL-04…RL-10, RL-12…RL-14:
+  Mietkündigung, SchKG-Weiterzug, Gewährleistung, Fristen-Anknüpfung,
+  Verjährung, Erbteilung, Mietvertrag, Katalog-Status, Sperrfrist-Rückfall,
+  Verjährungsverzicht.
+  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 1).
+
+- [ ] **Welle 2a — mittlere Befunde Fristen** *(`W2·30-RL-W2A`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W2A · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+  RL-15…RL-25: BGG-Stillstand, Probezeit, SchKG-Fristen, ZPO-/StPO-Presets,
+  Feiertags-Daten und -Hinweise, Tagerechner, Lohnfortzahlungs-Skalen.
+  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2a).
+
+- [ ] **Welle 2b — mittlere Befunde Beträge/Tarife** *(`W2·30-RL-W2B`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W2B · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+  RL-26…RL-38: UR-Verbandstarif (W-14 entschieden), Tarif-Primitiv,
+  Grundpfand-Kombiposten, Notariats-/Grundbuch-/Gerichtskosten-Staffeln,
+  Verfahrensart-Tarife, MWST Notariate, Emissionsabgabe, BGG-Kapitalisierung,
+  §5-Kopien Tarifdaten, ZPO-Kosten Bund, Erbteilung/Verzugszins/Teuerung Rest.
+  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2b).
+
+- [ ] **Welle 2c — mittlere Befunde Vorlagen/Zuständigkeit/Leser** *(`W2·30-RL-W2C`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W2C · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+  RL-39…RL-47: Werkvertrag, Familienrecht, Vorlagen Gesellschaft/Prozess,
+  Straf-/Zivilzuständigkeit, Leser-Fassungsstand Rest, Stammdaten-Adressen,
+  Formular-Eingaben, Logik aus UI, Datum-/Zitier-Helfer.
+  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2c).
+
+- [ ] **Welle 3 — Prüfsystem-Rest** *(`W2·30-RL-W3`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W3 · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+  RL-48…RL-54: Golden-Split werte/texte, quellbelegte Fallsammlung,
+  Gegenprüfung messbar, Testlücken + Test-Orakel, Stammdaten-/Tarif-Drift,
+  Befund-Buchhaltung Rest, Kleinhygiene.
+  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 3).
+
+- [ ] **Welle 4+5 — Verschlankung und Offenlegung Vorlagen-Reste** *(`W2·30-RL-W4`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W4 · status: ready · blocker: null · dep: [W2·30-RL-W2A] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+  RL-55…RL-58: Entdopplung verhaltensneutral (Risikopfad und ohne),
+  round2-Gleitkomma (W-22 offen), Vorlagen-Offenlegung Rest.
+  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 4/5).
+
+---
+
 ## Werkzeuge — Rechner & Vorlagen  *(`feld: werkzeuge`)*
 
 - [~] **Werkbank-Umbau Schritt 4: Vorlagen-Rahmen, dann die 30 Vorlagen** *(`W2·29-WERKBANK-VORLAGEN`, Go David 22.9.2026)*

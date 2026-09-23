@@ -73,8 +73,8 @@ describe('pruefe', () => {
     expect(p.some((x) => x.id === 'W1·1' && /kein Baufeld/.test(x.meldung) && /rechtsprechung/.test(x.meldung))).toBe(true);
   });
 
-  it('alle sieben Baufelder sind zulässig (Gegenprobe)', () => {
-    for (const feld of ['leser', 'korpus', 'rechtsprechung', 'suche', 'design', 'werkzeuge', 'betrieb']) {
+  it('alle acht Baufelder sind zulässig (Gegenprobe)', () => {
+    for (const feld of ['leser', 'korpus', 'rechtsprechung', 'suche', 'design', 'werkzeuge', 'betrieb', 'rechtslogik']) {
       const gut = OK.replace('feld: betrieb -->\n- [ ] **4 · D**', `feld: ${feld} -->\n- [ ] **4 · D**`);
       expect(pruefe(gut, ['FAHRPLAN-PLAN-STEUERUNG.md'], existiert)).toEqual([]);
     }
