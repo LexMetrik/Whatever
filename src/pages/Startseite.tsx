@@ -104,31 +104,46 @@ export function Startseite() {
     // liegt in `layout/`, das diese Runde nicht anfasst.
     <div className={`grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
       <SuchBlock />
-      {/* NAME «Bereiche der Sammlung», NICHT «Bereiche»: die Reiterleiste der
-          Krone trägt bereits `nav aria-label="Bereiche"` (R10, e2e-Anker). */}
-      <nav aria-label="Bereiche der Sammlung" className={`grid gap-3 ${pk(
-        'grid-cols-2 lg:grid-cols-4', 'grid-cols-2 @5xl/pane:grid-cols-4',
-      )}`}>
-        {RUBRIKEN.map((k) => (
-          <RubrikKachel key={k.ziel} reg={k.reg} ziel={k.ziel} zahl={nf(k.zahl)} einheit={k.einheit}
-            titel={<span className="lc-wortumbruch">{k.titel}</span>} nutzen={k.nutzen}
-            extra={k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>} />
-        ))}
-      </nav>
-      <ZuletztVerwendet />
+      {/* K7-NACHZUG (Sichtprüfung 23.9.2026): Kacheln, «Zuletzt» und Module
+          stehen in EINER Gruppe mit 6-px-Fuge. Vorher waren es drei Glieder
+          des `gap-y-9`-Rasters: 36 + 24 (leere `min-h-beiwerk`-Reserve der
+          Zuletzt-Zeile, §15) + 36 = 96 px Leerraum bis zur ersten Modul-Linie.
+          Jetzt 6 + 24 + 6 = 36 px = der Abschnittsabstand der Seite; die
+          Reserve bleibt (sie hält den Nachlade-Sprung der Zeile fern), sie
+          liegt nur nicht mehr zwischen zwei vollen Abständen. */}
+      <div className="grid gap-y-1.5">
+        {/* NAME «Bereiche der Sammlung», NICHT «Bereiche»: die Reiterleiste der
+            Krone trägt bereits `nav aria-label="Bereiche"` (R10, e2e-Anker).
+            SCHMAL EINSPALTIG (unter 480 px bzw. Pane unter `@lg`): zweispaltig
+            blieben bei 390 px je Kachel ~130 px Satzbreite — der Titel musste
+            getrennt werden, die Unterzeilen liefen in Ein-Wort-Zeilen. Der
+            Titel trennt nie (`break-words` nur als Überlauf-Netz, ohne
+            `hyphens`). */}
+        <nav aria-label="Bereiche der Sammlung" className={`grid gap-3 ${pk(
+          'grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-4',
+          'grid-cols-1 @lg/pane:grid-cols-2 @5xl/pane:grid-cols-4',
+        )}`}>
+          {RUBRIKEN.map((k) => (
+            <RubrikKachel key={k.ziel} reg={k.reg} ziel={k.ziel} zahl={nf(k.zahl)} einheit={k.einheit}
+              titel={<span className="break-words">{k.titel}</span>} nutzen={k.nutzen}
+              extra={k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>} />
+          ))}
+        </nav>
+        <ZuletztVerwendet />
 
-      <div className="grid border-t border-rule-soft">
-        {START_MODULE.map((modul) => {
-          const Komponente = modul.Komponente;
-          const an = zustand.get(modul.id) ?? modul.standard;
-          return (
-            <PultModul key={modul.id} id={modul.id} titel={modul.titel} reg={modul.reg} an={an}
-              position={platz.get(modul.id) ?? 0}
-              aufSchalten={() => schreibe(schalte(posten, modul.id))}>
-              <Komponente an={an} />
-            </PultModul>
-          );
-        })}
+        <div className="grid border-t border-rule-soft">
+          {START_MODULE.map((modul) => {
+            const Komponente = modul.Komponente;
+            const an = zustand.get(modul.id) ?? modul.standard;
+            return (
+              <PultModul key={modul.id} id={modul.id} titel={modul.titel} reg={modul.reg} an={an}
+                position={platz.get(modul.id) ?? 0}
+                aufSchalten={() => schreibe(schalte(posten, modul.id))}>
+                <Komponente an={an} />
+              </PultModul>
+            );
+          })}
+        </div>
       </div>
 
       <PultAbschluss
