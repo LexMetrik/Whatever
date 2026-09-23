@@ -15,7 +15,7 @@ import { pfadZu, tabTitel } from './helpers';
 import { useTieflinkSprung } from './inhalt-hooks-tieflink';
 import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
-import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
+import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, markeInsSichtband, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import { darfAutoAdoptieren } from './sprungAst';
 import { mitlaufenKarte } from './klappKarte';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
@@ -542,6 +542,13 @@ export function useLeserSprungSpy(opts: {
             // Flushes gelaufen sein kann.
             if (tocCont.scrollTop === vorher) {
               tocCont.scrollTop = Math.max(0, vorher - kompensation);
+              // Der Mitscroll-Effekt lief schon IM Flush, also VOR dieser
+              // Zeile, und maß eine Geometrie, die es jetzt nicht mehr gibt.
+              // Ging im selben Commit der neue Ast auf, schöbe die Kompensation
+              // die Marke aus dem Band, ohne dass je wieder nachgeführt würde
+              // (Flacker #988, Herleitung bei `markeInsSichtband`). Derselbe
+              // Nutzer-Guard wie im Effekt.
+              if (Date.now() - tocTouchRef.current >= 1500) markeInsSichtband(tocCont);
             }
           }
         } else {
@@ -655,39 +662,10 @@ export function useLeserSprungSpy(opts: {
     // Guards führt also erst der NÄCHSTE Artikelwechsel wieder nach — keine verspätete
     // Rückhol-Bewegung, die das Erkunden abbricht.
     if (Date.now() - tocTouchRef.current < 1500) return;
-    // W2·19-GLIEDERUNG/S4 (F5): bis hierher trugen ALLE Vorfahren des aktiven Pfads
-    // `data-toc-aktiv`, und diese Stelle nahm den LETZTEN Treffer in Dokumentordnung,
-    // also den tiefsten. Seit F5 gibt es nur noch EINE Marke (Bau-Spec §3.5) — die
-    // Auswahl entfällt. `querySelector` statt `[length-1]` ist dabei kein Stil,
-    // sondern die Probe auf die Invariante: gäbe es doch mehrere Treffer, wäre der
-    // erste der OBERSTE, das Sichtfenster spränge zum Wurzelknoten statt zur
-    // Leseposition — der Fehler fiele sofort auf, statt sich zu verstecken.
-    const el = cont.querySelector('[data-toc-aktiv]') as HTMLElement | null;
-    if (!el) return;
-    const cr = cont.getBoundingClientRect();
-    const er = el.getBoundingClientRect();
-    // Zone A (Standort-Pfad + Quickjump) klebt seit S4 INNERHALB dieses Scrollers und
-    // verdeckt dessen oberste Pixel. Rechnete der Nudge weiter gegen `cr.top`, schöbe
-    // er die aktive Zeile exakt unter diesen Sockel und meldete «sichtbar», was
-    // niemand sieht. Die Höhe wird GEMESSEN, nicht angenommen — sie hängt daran, ob
-    // der Erlass einen Quickjump hat (ohne `loeseArtikel` entfällt er).
-    // B6: die Höhe steht als `--toc-deckel` am Scroller (Zone A setzt sie selbst,
-    // inhalt-volltext.tsx) — EINE Messung für den Nudge hier UND den
-    // Trefferlisten-Kopf (§5); die eigene bleibt Rückfall.
-    const marke = parseFloat(getComputedStyle(cont).getPropertyValue('--toc-deckel'));
-    const zoneA = cont.querySelector('[data-toc-zone-a]') as HTMLElement | null;
-    const deckel = Number.isFinite(marke) && marke > 0 ? marke : (zoneA?.getBoundingClientRect().height ?? 0);
-    // F1 (RC1a): minimaler Rand-NUDGE statt Zentrieren, INSTANT statt smooth. Nur so
-    // weit scrollen, dass der aktive Eintrag knapp in das 8-px-Dead-Band am jeweiligen
-    // Rand rückt (Auslöseschwelle == Zielposition → kein Re-Trigger); Delta ≈ eine
-    // Zeilenhöhe statt ½ Container (früher `- cr.height/2` = Sprünge von 289–315 px).
-    // Bewusst KEIN scrollIntoView({block:'nearest'}): das kann Ancestor/Seite mitscrollen
-    // (E-Regression, Kommentar oben «nie die Seite scrollen»). Kein `smooth`: beseitigt
-    // den Klickziel-Hazard (Buttons wandern nicht mehr unter dem Cursor weg).
-    const dOben = er.top - (cr.top + deckel + 8);
-    const dUnten = er.bottom - (cr.bottom - 8);
-    if (dOben < 0) cont.scrollTo({ top: cont.scrollTop + dOben });
-    else if (dUnten > 0) cont.scrollTo({ top: cont.scrollTop + dUnten });
+    // Die Rechnung (F5-Marke, Zone-A-Deckel, F1-Rand-Nudge) steht in
+    // `markeInsSichtband` — der Zuklapp-Durchgang oben ruft sie nach seiner
+    // Kompensation ein zweites Mal (Flacker-Wurzel, Herleitung dort).
+    markeInsSichtband(cont);
     // tocTouchRef ist ein stabiler Ref; Deps byte-identisch zum früheren Inline-Effekt.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aktivIds, tocBaum, imPane, wurzel]);

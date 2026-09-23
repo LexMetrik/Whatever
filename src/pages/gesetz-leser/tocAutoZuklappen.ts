@@ -384,3 +384,56 @@ export function planeZuklappen(opts: {
     .reduce((n, a) => n + a.getBoundingClientRect().height, 0);
   return { schliessen, kompensation };
 }
+
+/**
+ * Mitscroll-Nudge: hält die EINE Marke (`[data-toc-aktiv]`, F5) im Sichtband des
+ * `[data-toc]`-Scrollers. Rein DOM-geometrisch, kein React — darum hier und
+ * nicht im Effekt: er hat ZWEI Aufrufer, und beide fahren dieselbe Rechnung (§5):
+ *  1. der Mitscroll-Effekt in `inhalt-hooks.tsx` (jeder Wechsel von `aktivIds`
+ *     oder `tocBaum`);
+ *  2. der Zuklapp-Durchgang dort, NACH seiner Scroll-Kompensation.
+ *
+ * WARUM (2) — Flacker `leser-marke-mitlaufen.e2e.ts:348` (PR #988, CI-Lauf
+ * 35814354752: Marke «b. Nach Gesetzesvorschrift» 154 px unter dem Sichtfeld).
+ * Der Zuklapp-Durchgang mutiert per `flushSync`; React räumt die passiven
+ * Effekte einer Sync-Lane noch IM Flush ab. Der Nudge misst also nach dem
+ * Aushängen, aber VOR der Kompensation. Klappt im selben Commit der neue Ast auf
+ * (Ruhe-Tor offen), steht die Marke dann im Band, der Nudge tut nichts — und die
+ * Kompensation (`scrollTop = vorher − K`) schiebt sie um K wieder hinaus. Es
+ * folgt kein Zustandswechsel, der Effekt läuft nicht erneut.
+ * Sonde 23.9.2026 (gebautes `dist/`, OR 1440×900, 6× CPU-Drossel, 6 Worker,
+ * Setter-Protokoll am Scroller): `scrollTop 602 → 362` bei Marke `unter −86`
+ * ⇒ `unter +154`, danach kein Nudge. Nullprobe main 906827a98: in 30 Läufen
+ * liessen 9 von 35 Kompensationen die Marke ausserhalb stehen — der Defekt ist
+ * älter als W2·29 S3 und wird nur sichtbar, wenn er der LETZTE Schritt ist.
+ *
+ * Rechnung (wörtlich aus dem Effekt übernommen): F1 (RC1a) minimaler Rand-NUDGE
+ * statt Zentrieren, INSTANT statt smooth — nur so weit, dass die Marke knapp in
+ * das 8-px-Dead-Band am jeweiligen Rand rückt (Auslöseschwelle == Zielposition
+ * → kein Re-Trigger; Delta ≈ eine Zeile statt ½ Container). Bewusst KEIN
+ * `scrollIntoView({block:'nearest'})`: das kann Vorfahren und die Seite
+ * mitscrollen (E-Regression); kein `smooth`: Klickziele wandern nicht unter dem
+ * Cursor weg. Zone A (Standort-Pfad + Quickjump) klebt INNERHALB des Scrollers
+ * und verdeckt dessen oberste Pixel — gegen `cr.top` gerechnet schöbe der Nudge
+ * die Marke exakt unter den Sockel und meldete «sichtbar». Ihre Höhe steht als
+ * `--toc-deckel` am Scroller (B6, EINE Messung für Nudge und Trefferlisten-Kopf),
+ * die eigene Messung bleibt Rückfall. `querySelector` statt `[length-1]` ist
+ * die Probe auf F5: gäbe es doch mehrere Marken, wäre die erste die OBERSTE und
+ * das Fenster spränge zum Wurzelknoten — der Fehler fiele sofort auf.
+ * Gibt zurück, ob gescrollt wurde.
+ */
+export function markeInsSichtband(cont: HTMLElement): boolean {
+  const el = cont.querySelector('[data-toc-aktiv]') as HTMLElement | null;
+  if (!el) return false;
+  const cr = cont.getBoundingClientRect();
+  const er = el.getBoundingClientRect();
+  const marke = parseFloat(getComputedStyle(cont).getPropertyValue('--toc-deckel'));
+  const zoneA = cont.querySelector('[data-toc-zone-a]') as HTMLElement | null;
+  const deckel = Number.isFinite(marke) && marke > 0 ? marke : (zoneA?.getBoundingClientRect().height ?? 0);
+  const dOben = er.top - (cr.top + deckel + 8);
+  const dUnten = er.bottom - (cr.bottom - 8);
+  if (dOben < 0) cont.scrollTo({ top: cont.scrollTop + dOben });
+  else if (dUnten > 0) cont.scrollTo({ top: cont.scrollTop + dUnten });
+  else return false;
+  return true;
+}
