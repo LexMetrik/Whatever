@@ -131,7 +131,7 @@ function ZeileInhalt({ t, gruppe, sprung, q, artStumm }: {
       </span>
       {/* Norm-Sprung (A5): «↵» sagt «Enter springt direkt» — keine Wiederholung
           des D9-Pfeilmusters, sondern eine andere Aussage. */}
-      {sprung && <span aria-hidden className="lc-griff-glyph shrink-0 text-brass-700">↵</span>}
+      {sprung && <span aria-hidden className="lc-griff-glyph shrink-0 text-ink-900">↵</span>}
       {/* Die ART als ruhiger Text rechts, ohne Kasten (F1) — und der
           Leitentscheid als WORT statt als ★ (F4). Herleitung: `trefferArt`. */}
       {art && <span className="shrink-0 text-xs text-ink-500">{art}</span>}
@@ -223,14 +223,18 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
     <div role={alsGruppe ? 'group' : undefined} aria-label={alsGruppe ? g.titel : undefined}
       className="lc-reveal border-t border-line first:border-t-0" style={{ animationDelay: `${index * 55}ms` }}>
       <div className="flex items-baseline gap-2 px-4 pt-3 pb-1">
-        <span className="lc-overline">{g.titel}</span>
+        {/* K6 (W2·29, 23.9.2026): auf `/suche` (`sektionsRollen`) ist der
+            Gruppentitel die Überschrift eines Abschnitts, nicht das Etikett
+            eines Aufklapp-Felds — Tinte und Gewicht statt Etiketten-Stufe
+            (Board «Unter-Suche»). Das Kopf-Dropdown (1.4.1) bleibt Etikett. */}
+        <span className={sektionsRollen ? 'text-body-s font-semibold text-ink-900' : 'lc-overline'}>{g.titel}</span>
         {/* Zähler je Gruppe (A6) — ausser beim einzeiligen Norm-Sprung («1» wäre Lärm). */}
         {!g.laedt && g.id !== 'sprung' && <span className="num text-xs text-ink-500">{g.gesamt}</span>}
         {/* Listbox-Modus: KEIN <a> im Gruppenkopf — ein Link ist als Listbox-Kind
             ein axe-critical aria-required-children-Verstoss. Der «alle N»-Sprung
             wird dort als echte role=option am Gruppenende gerendert (unten). */}
         {g.mehrHref && !listboxId && (
-          <Link to={g.mehrHref} onClick={onAuswahl} className="ml-auto text-body-s text-brass-700 underline hover:text-brass-600">
+          <Link to={g.mehrHref} onClick={onAuswahl} className="ml-auto text-body-s text-ink-700 underline hover:text-ink-900">
             alle {g.gesamt}
           </Link>
         )}
@@ -245,7 +249,7 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
           `<a target>` (kein Listbox-Option — External-Navigation), rel gesichert. */}
       {g.externLink && (
         <a href={g.externLink.href} target="_blank" rel="noopener noreferrer"
-          className="mx-4 mb-2 mt-1 inline-flex items-center gap-1.5 text-body-s text-brass-700 no-underline hover:text-brass-600">
+          className="mx-4 mb-2 mt-1 inline-flex items-center gap-1.5 text-body-s text-ink-700 no-underline hover:text-ink-900">
           {g.externLink.label} <span aria-hidden>↗</span>
         </a>
       )}
@@ -279,7 +283,7 @@ function Gruppe({ g, index, onAuswahl, onNavigate, listboxId, aktivId, q, sektio
                       D23: der (leere) Marken-Platz hält den Titel in der Flucht
                       der Trefferzeilen darüber. */}
                   <RegisterMarke route={g.mehrHref!} />
-                  <span className="min-w-0 flex-1 text-body-s font-medium text-brass-700 underline">alle {g.gesamt} Treffer anzeigen</span>
+                  <span className="min-w-0 flex-1 text-body-s font-medium text-ink-700 underline">alle {g.gesamt} Treffer anzeigen</span>
                 </li>
               );
             })()}
@@ -442,7 +446,7 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
         <p className="border-y border-rule-soft px-4 py-2 text-body-s text-ink-600">
           Meinten Sie{' '}
           <button type="button" onClick={() => onVorschlag?.(vorschlag)}
-            className="font-medium text-brass-700 underline decoration-dotted underline-offset-2 hover:text-brass-600">
+            className="font-medium text-ink-700 underline decoration-dotted underline-offset-2 hover:text-ink-900">
             {vorschlag}
           </button>
           ?
@@ -519,7 +523,7 @@ export function SuchResultate({ gruppen, allesGeladen, q, onAuswahl, onNavigate,
               mehr. §5 des Fahrplans: Links unterstrichen. */}
           {/* F3 · der Pfeil ist mit dem D9-Pfeilmuster gefallen; der Verweis bleibt als
               unterstrichener Text mitten in der Scope-Zeile (R3-Nachzug oben). */}
-          <Link to="/abdeckung" onClick={onAuswahl} className="text-brass-700 underline hover:text-brass-600">Was ist drin?</Link>
+          <Link to="/abdeckung" onClick={onAuswahl} className="text-ink-700 underline hover:text-ink-900">Was ist drin?</Link>
         </p>
       )}
     </>
