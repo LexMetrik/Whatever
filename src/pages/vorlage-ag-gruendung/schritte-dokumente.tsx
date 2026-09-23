@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { GruppenTitel, NormLink } from '../../components/vorlagen/ui';
-import { MappenAnsicht, MappenGates } from '../../components/vorlagen/Dokumentmappe';
+import { KostenBundZeilen, MappenAbschnitt, MappenAnsicht, MappenCheckliste, MappenGates } from '../../components/vorlagen/Dokumentmappe';
 import { notariatsGebuehrGruendung } from '../../lib/notariatsgebuehrenGruendung';
-import { PHASEN, ERSTELLER_LABEL, CHF, BANNER_ENTWURF } from '../vorlagenAgGruendungDaten';
+import { PHASEN, CHF, BANNER_ENTWURF } from '../vorlagenAgGruendungDaten';
 import type { AgSchrittCtx } from './ctx';
 
 // Verhaltensneutral ausgelagerter Dokumente-Schritt (§6 Ziff. 6): JSX-Body
@@ -41,44 +40,12 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
       )}
 
       {/* Checkliste (Art. 43/44 HRegV) */}
-      {PHASEN.map((ph) => {
-        const zeilen = checkliste.unterlagen.filter((x) => x.phase === ph.id);
-        if (zeilen.length === 0) return null;
-        return (
-          <section key={ph.id} className="rounded-xl border border-line p-4 space-y-3">
-            <div>
-              <GruppenTitel>{ph.titel}</GruppenTitel>
-              <p className="text-body-s text-ink-500">{ph.lead}</p>
-            </div>
-            <ul className="space-y-3">
-              {zeilen.map((z) => (
-                <li key={z.id} className="border-b border-line last:border-b-0 pb-3 last:pb-0">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-body-s font-medium text-ink-900">{z.titel}</span>
-                    <NormLink artikel={z.norm} />
-                    <span className="lc-chip">{ERSTELLER_LABEL[z.ersteller]}</span>
-                    {z.ausgeloestDurch && <span className="lc-chip">wegen: {z.ausgeloestDurch}</span>}
-                  </div>
-                  {z.hinweis && <p className="text-xs text-ink-500 mt-1 max-w-reading">{z.hinweis}</p>}
-                </li>
-              ))}
-            </ul>
-          </section>
-        );
-      })}
+      <MappenCheckliste phasen={PHASEN} unterlagen={checkliste.unterlagen} />
 
       {/* Kosten (Bund) */}
-      <section className="rounded-xl border border-line p-4 space-y-3">
-        <GruppenTitel>Kosten (Bund) und Hinweise</GruppenTitel>
+      <MappenAbschnitt titel="Kosten (Bund) und Hinweise">
         <ul className="lc-list space-y-2 text-body-s text-ink-700">
-          <li>
-            <span className="font-medium text-ink-900">Handelsregister-Gebühr: CHF 420</span> (GebV-HReg, SR 221.411.1, Anhang Ziff. 1.3 «Kapitalgesellschaften», Stand 1.1.2021) — zuzüglich allfälliger Zuschläge bis 50 % und Auslagen (Art. 3/4 GebV-HReg).
-          </li>
-          {checkliste.emissionsabgabeChf !== null && (
-            <li>
-              <span className="font-medium text-ink-900">Emissionsabgabe: {CHF.format(checkliste.emissionsabgabeChf)}</span> — 1 % des CHF 1 Mio. übersteigenden Teils der Leistungen (Art. 8 Abs. 1 und Art. 6 Abs. 1 lit. h StG); Bemessung mindestens zum Nennwert, Sachen zum Verkehrswert.
-            </li>
-          )}
+          <KostenBundZeilen emissionsabgabeChf={checkliste.emissionsabgabeChf} />
           {/* P11 (Perfektion): Notariatsgebühr kantonsabhängig aus der
               Tarif-Datenschicht (lib/notariatsgebuehrenGruendung.ts, §5);
               ehrliche Lücken für nicht erhobene Kantone (§8). */}
@@ -119,11 +86,10 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
             <li key={h.slice(0, 40)}>{h}</li>
           ))}
         </ul>
-      </section>
+      </MappenAbschnitt>
 
       {/* Etappe 5/D20+D21: Nach dem Eintrag — Pflichten und Warnung */}
-      <section className="rounded-xl border border-line p-4 space-y-3">
-        <GruppenTitel>Nach dem Eintrag: Pflichten des Verwaltungsrates</GruppenTitel>
+      <MappenAbschnitt titel="Nach dem Eintrag: Pflichten des Verwaltungsrates">
         <ul className="lc-list space-y-2 text-body-s text-ink-700">
           <li>
             <span className="font-medium text-ink-900">Buchführung ist persönliche Pflicht</span> jedes
@@ -147,7 +113,7 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
             bezahlen (Merkblatt HRegA ZH, 17.2.2026; zh.ch/falsche-rechnungen).
           </li>
         </ul>
-      </section>
+      </MappenAbschnitt>
 
       <p className="text-xs text-ink-500">
         Amtliche Vorlagen-Suite des HRegA Zürich: Musterstatuten (kurz/lang), VR-Protokoll, Wahlannahme-,
