@@ -973,18 +973,30 @@ Artikel-Revisionen sowie eine eigene Behandlung künftiger, angekündigter Fassu
 
 #### 2.3.7 Bezüge zu Entscheiden
 
-Zwei Ebenen:
+Zwei Orte (die frühere «Leitfälle»-Zeile im Artikeltext mit Zeitraum-Stufen
+«alle · 20 · 10 · 5 J.» ist seit H3 entfallen — Stand S6-W1b, 23.9.2026):
 
-1. **Inline im Artikeltext** — eine «Leitfälle»-Zeile mit BGE-Chips, über die
-   Ansicht-Aufklappliste unter «Entscheide» abschaltbar (Vorgabe: AN), mit
-   Zeitraum-Filter «alle · 20 · 10 · 5 J.».
-2. **Rubrik «Entscheide»** der Funktionszeile am Artikelende: Zahl gezählter
-   Entscheide, aufklappbar; ein Sekundär-Griff «im Erlass-Blatt öffnen ›» öffnet das
-   Erlass-Blatt auf dem Reiter «Entscheide» und klappt die Rubrik dabei zu (dieselbe
-   Liste steht nie zweimal da).
+1. **Rubrik «Entscheide»** der Funktionszeile am Artikelende: Zahl der
+   verknüpften Entscheide des Artikels (ungefiltert), aufklappbar; ein
+   Sekundär-Griff «im Erlass-Blatt öffnen ›» öffnet das Erlass-Blatt auf dem
+   Reiter «Entscheide» und klappt die Rubrik dabei zu (dieselbe Liste steht nie
+   zweimal da).
+2. **Reiter «Entscheide»** im Erlass-Blatt (2.3.15), artikelscharf. Grundzustand
+   **alle Instanzen** (Entscheid David 23.9.2026) in fester Ordnung: zuerst die
+   Leitentscheide (BGE), dann je kantonales Gericht eine Gruppe, dann der Rest
+   (übrige BGer-Urteile, eidg. Gerichte) — nie gemischt. Jede Gruppe zeigt die
+   fünf neusten, «weitere N» holt in Schritten zu 50 nach. Zeile = Zitierung ·
+   Datum (nur wenn die Zitierung keines trägt) · Regeste-Kurzzeile (ein führendes
+   Teil-Kennzeichen erscheint als «Regeste a:»). Darüber die Filterzeile
+   (Instanzen mit Zahlen **am Artikel**, Kantone, Zeitraum) und eine
+   Abdeckungs-Zeile mit Link auf `/abdeckung`. Eigene Lagen für «keine Instanz
+   eingeschaltet», «konnte nicht geladen werden» (mit «Erneut laden»; lädt nach
+   Netz-Rückkehr von selbst), «wird geladen» und «kein Entscheid erfasst».
 
-**Quelle:** `ArtikelLeser.leitfaelle.tsx`, `PanelEntscheide.tsx`,
-`src/components/RechtsprechungLink.tsx`, `bezuegeLaden.ts`, `bezuegeZaehler.ts`.
+**Quelle:** `ArtikelLeser.bezuegeFuss.tsx`, `ArtikelLeser.leitfaelle.tsx`,
+`PanelEntscheide.tsx`, `v3/entscheideOrdnung.ts`, `PanelFilterZeile.tsx`,
+`bezugAuswahl.ts`, `bezuegeLaden.ts`, `bezuegeZaehler.ts`,
+`lib/rechtsprechung/bezuege.ts`.
 
 #### 2.3.8 Materialien-Verknüpfung
 
