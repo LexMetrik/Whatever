@@ -4851,3 +4851,42 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
 }
 .kt-fuss > section { border-top: 1px solid var(--rule-soft); padding-top: 0.75rem; }
+
+/* ═══ W2·29-WERKBANK-KATALOGE K5 · ABDECKUNG (`.ab-`) + EINSTELLUNGEN (`.es-`) ═══
+   Boards «Unter-Abdeckung» / «Unter-Einstellungen» (Richtung, nicht
+   Pflichtenheft), Konsumenten `pages/Abdeckung.tsx`, `pages/Einstellungen.tsx`.
+   Beide Routen tragen kein eigenes Register (Meta-Seiten, `registerVonPfad`
+   → null); die Abdeckung färbt nur die Zeile eines Bestands in dessen
+   Register (Gesetze/Rechtsprechung/Materialien — kein geratener Ton, §8).
+   Nur Tinte, Haarlinie und Registerton, kein Messing (F0.2). */
+.ab-bestand[data-reg="g"] { --ab-reg: var(--reg-g); }
+.ab-bestand[data-reg="r"] { --ab-reg: var(--reg-r); }
+.ab-bestand[data-reg="m"] { --ab-reg: var(--reg-m); }
+.ab-bestand {
+  display: grid; gap: 0.75rem 1.75rem;
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 1.25rem;
+}
+@media (min-width: 768px) {
+  .ab-bestand { grid-template-columns: 204px minmax(0, 1fr); }
+}
+/* 3-px-Strich über dem Titel — im Register des Bestands, sonst Tinte. */
+.ab-strich { display: block; height: 3px; margin-bottom: 0.6875rem; background: var(--ab-reg, var(--ink-900)); }
+/* Grenzen der Suche: abgesetzte Zeile auf der versenkten Fläche statt Kasten. */
+.ab-grenzen { background: var(--well); border-bottom: 1px solid var(--rule-soft); padding: 1.25rem 1rem; }
+/* Link in Tinte, Registerkante als Unterstrich (Board); Hover im Registerton. */
+.ab-link {
+  color: var(--ink-900); text-decoration: none;
+  border-bottom: 1px solid var(--ab-reg, var(--rule));
+  transition: color .15s;
+}
+.ab-link:hover { color: var(--ab-reg, var(--ink-700)); }
+
+/* Einstellungen: Gruppen mit Tinten-Linie oben statt Karten, Zeilen mit
+   Haarlinie; ab 1100 px zwei Spalten (DOM- und Tab-Folge bleiben). */
+.es-raster { display: grid; gap: 1.75rem 3.5rem; align-items: start; }
+@media (min-width: 1100px) {
+  .es-raster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.es-gruppe { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+.es-zeile + .es-zeile { border-top: 1px solid var(--rule-soft); padding-top: 1.0625rem; margin-top: 1.125rem; }

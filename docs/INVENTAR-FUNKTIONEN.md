@@ -523,12 +523,15 @@ Platzhalter `[…]` für noch fehlende Angaben (verantwortliche Person, Vercel-A
 #### `/abdeckung` — Abdeckung
 
 **Zweck.** «Was ist durchsuchbar».
-**Elemente.** Live gezählte Zahlen (Bundeserlasse Volltext, kantonale Erlasse Titel,
-BGE, Entscheide gesamt, Materialien) aus drei lazy geladenen Manifesten; ein
-Grenzen-Hinweiskasten. Eigener Abschnitt «Gesetze» mit dem Hinweis, dass der
-Volltext-Artikelindex seit 1.9.2026 wieder Bund-only ist (kantonale Artikel kommen
-vom Suchdienst).
-**Zustände.** Zahlen zeigen «…», bis die Manifeste geladen sind.
+**Elemente.** Je Bestand eine Zeile (Gesetze · Rechtsprechung · Materialien) mit
+Zahlen aus dem generierten Zähler `STARTSEITE_ZAEHLER` — derselben Quelle wie
+Startseite und Übersichten (seit K5, 23.9.2026; vorher live aus drei Manifesten mit
+eigener Regel): Erlasse im Volltext (Bundesrecht, Staatsverträge, Kantone), Entscheide
+im Volltext, davon BGE, dazu getrennt die Verweis-Einträge (vollständiges Urteil zu
+einem BGE), Materialien; eine abgesetzte Zeile «Grenzen der Suche». Abschnitt
+«Gesetze» mit dem Hinweis, dass der Volltext-Artikelindex seit 1.9.2026 wieder
+Bund-only ist (kantonale Artikel kommen vom Suchdienst).
+**Zustände.** Keine Ladezustände — die Zahlen stehen beim Bau fest.
 **Quelle:** `src/pages/Abdeckung.tsx`.
 
 #### 404 — Seite nicht gefunden
@@ -552,7 +555,7 @@ Dokumentkopf beim Verlassen wieder auf.
 teils «gebrückt» in bereits bestehende Speicher (Thema, Vorlagen-Schriftbild,
 Rechtsprechungs-Ansicht), um keine zweite Wahrheit zu führen.
 
-**Elemente** (5 Karten):
+**Elemente** (5 Gruppen, ab 1100 px zweispaltig):
 
 1. **Standard-Kanton** (Auswahlliste, alle 26 Kantone) + **Profil** (Name, Adresse —
    füllt die Absenderfelder der Vorlagen vor).

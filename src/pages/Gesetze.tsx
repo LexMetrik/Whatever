@@ -111,9 +111,9 @@ function Einstieg({ bund, bundArtikel, kantone, kantonErlasse, international, on
 }) {
   const pk = usePaneKlasse();
   const kacheln: { id: Ebene; titel: string; zahl: number; einheit: string; sub: string; legende?: boolean }[] = [
-    { id: 'bund', titel: 'Bundesrecht', zahl: bund, einheit: 'Erlasse', sub: `Gesetze & Verordnungen · ${bundArtikel.toLocaleString('de-CH')} Artikel im Volltext` },
+    { id: 'bund', titel: 'Bundesrecht', zahl: bund, einheit: 'Erlasse erfasst', sub: `Gesetze & Verordnungen · ${bundArtikel.toLocaleString('de-CH')} Artikel im Volltext` },
     { id: 'kanton', titel: 'Kantone', zahl: kantone, einheit: 'Kantone', sub: `${kantonErlasse.toLocaleString('de-CH')} kantonale Erlasse`, legende: true },
-    { id: 'international', titel: 'International', zahl: international, einheit: 'Erlasse', sub: 'Staatsverträge & EU-Recht' },
+    { id: 'international', titel: 'International', zahl: international, einheit: 'Erlasse erfasst', sub: 'Staatsverträge & EU-Recht' },
   ];
   return (
     <div className="space-y-6">
@@ -303,10 +303,12 @@ export function Gesetze() {
           mehr zustellt.
           KEINE ZAHL OHNE DECKUNG: das Datum des jüngsten Inhalts (D8) hat im
           generierten Zähler noch kein Feld — die Zeile führt darum nur, was
-          gezählt ist, und nicht «jüngster Stand …» (§8). */}
+          gezählt ist, und nicht «jüngster Stand …» (§8).
+          K5 (23.9.2026): «Bundeserlasse» = Säule Bundesrecht ohne die Staatsverträge
+          (vorher 231 inkl. der 28 daneben genannten — doppelt); Kacheln: «erfasst». */}
       <SeitenKopf
         titel="Gesetze"
-        ausgabe={`${nf(STARTSEITE_ZAEHLER.gesetzeBundVolltext)} Bundeserlasse · ${nf(STARTSEITE_ZAEHLER.gesetzeKantonVolltext)} Kantonserlasse · ${nf(STARTSEITE_ZAEHLER.gesetzeInternationalVolltext)} Staatsverträge im Volltext`}
+        ausgabe={`${nf(STARTSEITE_ZAEHLER.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(STARTSEITE_ZAEHLER.gesetzeKantonVolltext)} Kantonserlasse · ${nf(STARTSEITE_ZAEHLER.gesetzeInternationalVolltext)} Staatsverträge im Volltext`}
       />
 
       {/* ── D22 Ziff. 2 · EIN FILTERFELD, VOLLE BREITE, MIT LABEL ─────────────

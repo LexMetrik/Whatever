@@ -18,12 +18,18 @@ export interface StartseiteZaehler {
    *  `lib/normtext/systematik.ts`, Anker `/gesetze?ebene=bund#sys-<id>`),
    *  je Kategorie die Zahl der VOLLTEXT-Erlasse und bis zu vier Kürzel. */
   bundSystematik: Array<{ nr: string; id: string; titel: string; kuerzel: string[]; anzahl: number }>;
+  /** K5: Bundeserlasse der Säule «Bundesrecht» im Volltext (ohne International) —
+   *  Bundesrecht + International = gesetzeBundVolltext. */
+  gesetzeBundesrechtVolltext: number;
   /** Bundeserlasse der Säule «International» im Volltext (rechtsgebiet international). */
   gesetzeInternationalVolltext: number;
   /** Bis zu vier Kürzel der Säule «International» (Register-Reihenfolge). */
   internationalKuerzel: string[];
   /** Gerichtsentscheide im Volltext (Nicht-Verweise). */
   rechtsprechungVolltext: number;
+  /** K5: Verweis-Einträge (vollständiges Urteil zu einem BGE, Deep-Link in den
+   *  Leitentscheid) — getrennt von `rechtsprechungVolltext`, nie addiert. */
+  rechtsprechungVollurteilVerweise: number;
   /** W2·24-D26: Entscheide je Sachgebiet (Ordnung/Label aus `GEBIETE`),
    *  Zählregel identisch zu `zaehleSachgebiete` (Verweise raus); Sachgebiete
    *  ohne Entscheid fehlen (§8). Ziel je Zeile: `/rechtsprechung?rg=<id>`. */
@@ -156,6 +162,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "anzahl": 141
     }
   ],
+  "gesetzeBundesrechtVolltext": 203,
   "gesetzeInternationalVolltext": 28,
   "internationalKuerzel": [
     "EMRK",
@@ -164,6 +171,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "HZÜ"
   ],
   "rechtsprechungVolltext": 5093,
+  "rechtsprechungVollurteilVerweise": 1252,
   "rechtsprechungSachgebiete": [
     {
       "id": "privat",
