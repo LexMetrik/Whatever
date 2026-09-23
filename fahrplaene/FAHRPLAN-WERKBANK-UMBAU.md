@@ -361,6 +361,22 @@ geteilt → Änderung nur per Prop.
   im Rahmen; Gegenprüfung Verhaltensgleichheit. Dep V1, untereinander ‖.
 - **V3 Mappen** ‖ V2: Dokumentmappe, GmbH-/AG-Gründung, Kapitalerhöhung (Reiter `--reg-w-flaeche`).
 - **V4 Checkliste + Rückbau:** KuendigungVermieter; Inventar 5.3 datiert nachführen; Posten schliessen.
+  *Stand 23.9.2026 (V4 gebaut):* Vermieter-Checkliste im `WerkzeugKopf`; Inventar 5.3/5.5
+  datiert korrigiert; Slot-Inventar im Kopf von `VorlagenSeite.tsx` (kein Slot tot,
+  Einzel-Nutzer bleiben bis zu einer deklarierten Angleichung); Verhaltens-Nebenfunde aus
+  V2b/V2e als Posten, nicht im Rückbau. **Auswahl-Karten, zwei Looks — bewusst vertagt:**
+  der Kopf-Segmentschalter (`VariantenKopf`, `SelectionGrid reg="w"`) trägt den Board-Strich
+  OBEN, die Auswahl-Kacheln in den Formular-Schritten die Haus-Zeile (Haarlinie oben +
+  Innenstrich LINKS) — dieselbe Klasse `.lc-wahl-kachel` mit ~60 Aufrufern, auch in den
+  Rechnern. Eine Vereinheitlichung ist eine globale CSS-Entscheidung beider Register und
+  gehört in W2·29-WERKBANK-RECHNER (Posten dort), nicht halb in VORLAGEN.
+- **V5 Musterdaten für alle Vorlagen** (David 23.9.2026: «ich möchte dass alle vorlagen
+  musterdaten möglich haben.»): Knopf «Mit Musterdaten füllen» im gemeinsamen Rahmen
+  (`VorlagenSeite`-Slot `musterdaten`), Daten aus EINER Quelle (die Golden-Eingaben,
+  Vorbild AG `musterdatenFuellen`), Nachfrage vor dem Überschreiben, kein Wasserzeichen.
+  Mappen: `#mappe-beispiel` angleichen. V0-Fixture = deklarierte Änderung (neuer Knopf).
+  Liegt der SSoT-Ort in `src/lib/vorlagen` oder berührt er `startseiteVorlagen*`:
+  Risikopfad → Gegenprüfung vor dem Einreihen.
 
 **Nicht bauen:** «44», Status-Zeile «Ausgabe als PDF und Word» (Testament: kein DOCX),
 Seitenleisten-Baum, Board-Hex (Token gilt), gemeinsame Exportleiste (erst RECHNER).

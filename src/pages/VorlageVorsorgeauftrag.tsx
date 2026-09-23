@@ -461,7 +461,7 @@ const CONFIG: VorlagenSeitenConfig<VaAntworten, VaZ> = {
   zusammenstellen: (a) => ({ ergebnis: vaZusammenstellen(a) }),
   pruefeGates: (a) => pruefeVaGates(a),
   schritte: SCHRITTE,
-  overlineFallback: 'Familie',
+  overlineFallback: 'Vorsorge & Erwachsenenschutz',
   titel: 'Vorsorgeauftrag',
   intro: 'Bestimmen Sie, wer im Fall Ihrer Urteilsunfähigkeit Personensorge, Vermögenssorge und Vertretung im Rechtsverkehr übernimmt – aus festen, strukturierten Bausteinen, ohne Sprachmodell. Mit der Form-Weiche eigenhändig ↔ öffentlich beurkundet.',
   badge: 'Eigenhändig ODER beurkundet (Art. 361 ZGB)',

@@ -426,8 +426,11 @@ const RSPR_BGE = '/rechtsprechung/bge_146_III_1'
 // Vorlagen-Flächen: 14 der 30 Routen, so gewählt, dass jede STRUKTURFAMILIE
 // einmal vorkommt — sonst prüft eine lange Liste vierzehnmal dasselbe Gerüst:
 //   • generischer `VorlagenSeite`-Rahmen: mahnung · rubrum · verjaehrungsverzicht
-//   • handgeschriebener Wizard: testament · vollmacht · nda · klage-vereinfacht
-//     · patientenverfuegung · arbeitsvertrag · schlichtungsgesuch-bs
+//     · testament · vollmacht · nda · klage-vereinfacht · patientenverfuegung
+//     · arbeitsvertrag · schlichtungsgesuch-bs (bis W2·29-WERKBANK-VORLAGEN
+//     V2a–V2e handgeschriebene Wizards; seither alle 29 Wizards auf dem Rahmen —
+//     die Auswahl bleibt, weil sie die Slot-Sonderformen abdeckt: Form-Weiche,
+//     Mängel-Listen, Stopp-Fall, Kopf-Schalter)
 //   • mehrstufiger Wizard mit Mappe am Ende: ag-gruendung
 //   • Dokumentmappe ohne Wizard-Rahmen: gmbh-gruendung · kapitalerhoehung
 //   • Checkliste OHNE Dokument-Ausgabe: kuendigung-vermieter (I8/I9 gelten dort

@@ -3832,7 +3832,7 @@
      Dokument-Reiter der Mappen): die Kante des aktiven Reiters im Register,
      wie die Reiterzeile des Wizards. `:where()` hält die Spezifität bei der
      Regel darüber, die Quellreihenfolge entscheidet. Kontrast (V3, culori):
-     reg-w auf reg-w-flaeche 4.30:1 hell · 7.52:1 dunkel (≥ 3:1, SC 1.4.11). */
+     reg-w auf reg-w-flaeche 4.46:1 hell (nach GRUNDTON #1021, #EEE5DA; V3: 4.30) · 7.52:1 dunkel (≥ 3:1, SC 1.4.11). */
   .lc-tab:where([data-reg="w"])[aria-selected="true"] { border-bottom-color: var(--reg-w); }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
