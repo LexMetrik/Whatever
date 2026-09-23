@@ -198,7 +198,7 @@
     "check:ci-laeufe": "vite-node scripts/check-ci-laeufe.ts",
     "bericht:automatik": "vite-node scripts/check-ci-laeufe.ts -- --bericht",
     "check:merge-schutz": "vite-node scripts/check-merge-schutz.ts",
-    "check:testtreue": "vite-node scripts/check-testtreue.ts",
+    "check:fachaenderung": "vite-node scripts/check-fachaenderung.ts",
     "dispatch": "vite-node scripts/dispatch-cli.ts --",
     "dispatch:agents": "vite-node scripts/dispatch-agents-cli.ts",
     "check:dispatch-klausel": "vite-node scripts/check-dispatch-klausel.ts",

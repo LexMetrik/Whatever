@@ -32,6 +32,8 @@
 //         der Vorgänger-Fassung Exit 0).
 //
 // Kein `echo` — jede Ausgabe geht über `process.stdout`/`process.stderr`.
+// Seit RL-03 (23.9.2026) auch Bibliothek für fachaenderung-kern.ts;
+// `.skip`/`.todo` zählt als eigener Name (⊘), Abschalten = Entfernen.
 
 import { execFileSync } from 'node:child_process';
 import ts from 'typescript';
@@ -71,7 +73,7 @@ function normalisiere(s: string): string {
   return s.replace(/\s+/g, '');
 }
 
-interface Mengen {
+export interface Mengen {
   describe: Map<string, number>;
   ittest: Map<string, number>;
   expect: Map<string, number>;
@@ -148,7 +150,8 @@ function verarbeiteDatei(text: string, dateiname: string, mengen: Mengen): void 
         const art = istTestArt(testName);
         if (art) {
           const name = ersteStringArg(node);
-          if (name !== null) zaehleHinein(mengen[art], normalisiere(name));
+          const aus = /^(describe|it|test)(\.\w+)*\.(skip|todo)\b/.test(node.expression.getText(quelle)) ? '⊘' : '';
+          if (name !== null) zaehleHinein(mengen[art], aus + normalisiere(name));
         }
       }
       const basis = basisAusdruck(node);
@@ -159,6 +162,13 @@ function verarbeiteDatei(text: string, dateiname: string, mengen: Mengen): void 
     ts.forEachChild(node, besuchen);
   };
   besuchen(quelle);
+}
+
+/** Drei Multimengen einer einzelnen Testdatei (Text + Dateiname). */
+export function assertionMengen(text: string, dateiname: string): Mengen {
+  const mengen = leereMengen();
+  verarbeiteDatei(text, dateiname, mengen);
+  return mengen;
 }
 
 function mengeFuerRef(ref: string, praefix: string): { mengen: Mengen; dateien: string[] } {
@@ -267,4 +277,4 @@ function main(): void {
   process.exit(status);
 }
 
-main();
+if (process.argv.some((a) => /test-assertion-diff\.ts$/.test(a))) main();
