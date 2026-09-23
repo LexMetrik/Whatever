@@ -15,7 +15,6 @@ import { baueNachbarn } from './nachbarArtikel';
 import { LeserEinzelAnsicht } from './LeserEinzelAnsicht';
 import { einzelAdresse } from './einzelModus';
 import { labelMitBereich } from '../../../lib/normtext/darstellung';
-import { useLeserBereit } from '../leserBereit';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
 //
@@ -90,7 +89,6 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   // steht HIER und nicht im Modell: die Lesespalte ist sein einziger Konsument,
   // und das Modell hält damit seine §6.6-Schwelle (`leser-v3-fundament`).
   const bezuegeZaehler = useBezuegeZaehler(erlass);
-  const bereit = useLeserBereit(erlass, eintraege !== null); // S0 · Sonden-Marker, Herleitung dort
   // D30 · die Materialien-LISTE zur bereits gezählten Materialien-ZAHL. Wie der
   // Zähler: EIN Fetch je Erlass, im Leerlauf, hier und nicht im Modell (die
   // Lesespalte ist der einzige Konsument, §6.6-Schwelle des Modells).
@@ -307,7 +305,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
     // A-7, V1 gegen V3) bei GLEICHER Artikelbreite mass, den Text-KERN also
     // unabhängig vom Satzspiegel bewies. Mit H5 (21.8.2026) gelöscht — V1, das
     // Vergleichsziel, gibt es nicht mehr.
-    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading" data-leser-bereit={bereit ? '' : undefined}
+    <div ref={leseRef} id="lc-lesespalte" className="mx-auto w-full max-w-reading"
       // ── W2·24-R6 · SPLIT-REGEL DER RANDNOTIZ (Auftrag David 6.9.2026) ──────
       // Ein Bezug am Rand öffnet in der ANDEREN Hälfte; der Artikel bleibt
       // stehen. Die Regel selbst (Modifikatoren, externe Ziele, Dedup) ist rein

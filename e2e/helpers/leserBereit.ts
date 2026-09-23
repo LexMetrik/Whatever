@@ -43,7 +43,6 @@
 // dominante Term ist weg, der Rest ist der Erst-Render des OR selbst und liegt
 // bei QS-PERF (Ä24-Übergabe). Wer hier eine Zahl senken will, senkt sie dort.
 import { expect, type Page } from '@playwright/test'
-import { OR_LESER_FRIST } from './orLeser'
 
 /** Der Öffner des Ansicht-Menüs (`v3/LeserAnsichtV3.tsx`) — reine
  *  Attribut-Abfrage (O(1) im Selektor-Engine), existiert nur im Client-Render.
@@ -56,23 +55,4 @@ export const ANSICHT_OEFFNER = '[data-v3-ansicht]'
  *  20 s — das ist die Schranke, gegen die die Specs seit je laufen. */
 export async function warteLeserBereit(page: Page, timeout = 20000): Promise<void> {
   await expect(page.locator(ANSICHT_OEFFNER).first()).toBeVisible({ timeout })
-}
-
-// ── NACHGELADEN (W2·29-WERKBANK-LESER S0, 23.9.2026) ──────────────────────────
-// `warteLeserBereit` oben beweist nur «Client-Hülle steht». Wer danach TIPPT
-// oder misst, braucht mehr: Einträge gerendert, Struktur-Sidecar beantwortet und
-// die erste Leerlauf-Welle danach vorbei — erst dann konkurriert die Aktion
-// nicht mehr mit der Nachlade-Kette. Das Produkt setzt dafür EIN Attribut
-// (`src/pages/gesetz-leser/leserBereit.ts`, Definition dort); dieser
-// Helfer ist die eine Stelle, die darauf wartet. Anlass und Messreihe:
-// Flackerer `leser-suche-a35-a40-a41.e2e.ts` Z. 89 (Lauf 35779952911).
-
-/** Die Lesespalte, sobald der Leser nachgeladen hat (Attribut-Abfrage, O(1)). */
-export const LESER_NACHGELADEN = '#lc-lesespalte[data-leser-bereit]'
-
-/** Wartet, bis der Leser NACHGELADEN ist (Definition in `src/pages/gesetz-leser/leserBereit.ts`).
- *  Budget = `OR_LESER_FRIST` — die Frist, gegen die OR-Wartepunkte ohnehin
- *  laufen (Herleitung `./orLeser.ts`). */
-export async function warteLeserNachgeladen(page: Page, timeout = OR_LESER_FRIST): Promise<void> {
-  await expect(page.locator(LESER_NACHGELADEN).first()).toBeAttached({ timeout })
 }

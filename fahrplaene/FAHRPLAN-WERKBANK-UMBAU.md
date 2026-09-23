@@ -219,8 +219,8 @@ NICHT bauen (Board > Produkt): «Entscheide zu den Artikeln auf dieser Seite» m
   nur Token-Tausch (geteilt); leserSuche.ts, suchHighlight.ts, inhalt-suchtreffer.tsx unberührt;
   CSS 3520–3700 löschen. Sonden 24 (leser-v3-suchfeld-ueberall, leser-d38-treffer-lesespalte,
   leser-suche-vertrag-b8, leser-w228-landkarte, leser-v3-fokusring-suchfeld,
-  leser-v3-highlight-split, entscheid*). Ausnahme leser-v3-suche-ohne-gliederung (19/20) mit
-  S0-Bereitschaftshelfer fixen und streichen. dep S3.
+  leser-v3-highlight-split, entscheid*). Ausnahme leser-v3-suche-ohne-gliederung (19/20) an der
+  gemessenen Wurzel fixen und streichen (kein S0-Helfer: ausgebaut 23.9.2026). dep S3.
 - **S5 Erlass-Blatt, Einzel-Artikel, Rückbau:** Blatt-Reiter Registerfläche; Panel*.tsx,
   ReiterAktion; LeserEinzelAnsicht, ArtikelNachbarn, ArtikelDossier; CSS lr7-einzel-*,
   lr7-dossier-* löschen; Rückbau Ziff. 5. Sonden 23 Blatt (leser-v3-blatt Ausnahme 7/20 abbauen,
@@ -255,9 +255,11 @@ norm-sprung **bestätigt** (10× CPU-Drossel, 8 Worker, n=20 je BGE-Fall: vorher
 nachher 0/60; Fix auch an Z. 96 und Z. 122). A35: Teil-Hypothese «`#art-1` im Prerender»
 **verworfen** (`grep -c 'id="art-' dist/gesetze/bund/OR.html` = 0); Warten auf
 `data-leser-bereit` ändert die Arbeit nach der Eingabe nicht (Longtask-Profil gleich); lokal 0 rot
-in 340 Läufen — Wurzel **unbestätigt**, der Wartepunkt entzieht der Eingabe nur das
-Kandidatenfenster (Tippen in der ~15-s-Nachlade-Kette). §15-Posten gemeldet: Eingabe→Trefferleiste
-bei CPU×4 med 1.34 s.
+in 340 Läufen — Wurzel **unbestätigt**. Der Wartepunkt wurde darum **wieder ausgebaut**
+(Entscheid Haupt-Session 23.9.2026, §17 Gegengewicht: ohne belegte Wirkung, +16 s Median je
+Lauf). CI-Bild: 1 von 20 Shard-3-Jobs, im selben Job flackerten binnen 2 min auch norm-sprung
+und rechtsprechung → Verdacht Runner-Einbruch; A35 bleibt Beobachtungsfall. §15-Posten:
+Eingabe→Trefferleiste bei CPU×4 med 1.34 s.
 
 ### 5 Rückbau (§7)
 
@@ -277,7 +279,7 @@ bei CPU×4 med 1.34 s.
 1 Hooks/Klassennamen nicht umbenennen (N8 bleibt) — ja. 2 Suchfeld bleibt im Kopf (2.3.11 vor
 Board). 3 Aktive Fundstelle nur mit bestehenden Tokens. 4 Kern-Probe erweitert
 ArtikelBody.test.tsx, kein neues Tor. 5 Je PR «netto ≤ 0» in src anstreben. 6 Bereitschaftsmarker
-als Produkt-Attribut — ja. **Wartet auf David:** nichts. (Funktionszeile im Einzelmodus nicht
+als Produkt-Attribut — nur mit gemessener Wirkung (S0: ohne Wirkung, ausgebaut 23.9.2026). **Wartet auf David:** nichts. (Funktionszeile im Einzelmodus nicht
 durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.)
 
 ### 7 Nebenfunde

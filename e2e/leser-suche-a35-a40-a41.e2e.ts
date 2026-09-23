@@ -2,7 +2,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 import { OR_LESER_FRIST } from './helpers/orLeser';
-import { warteLeserNachgeladen } from './helpers/leserBereit';
 
 // E5-Welle (David 16.7.2026, §10.10) — A35 · A40 · A41.
 //
@@ -71,17 +70,6 @@ test.describe('A35 — In-Gesetz-Suche in der Kopfzeile + Treffer-Highlight', ()
   test('«Vertrag» im OR wird im Treffertext gehighlighted (CSS Custom Highlight API)', async ({ page }) => {
     await page.goto('/gesetze/bund/OR');
     await expect(page.locator('#art-1')).toBeVisible({ timeout: OR_LESER_FRIST });
-    // ── W2·29-WERKBANK-LESER S0 (23.9.2026) · ERST NACHGELADEN, DANN TIPPEN ──
-    // DEKLARIERTE TEST-INFRASTRUKTUR, KEIN Assertion-Change (§6.3): ein
-    // zusätzlicher Wartepunkt VOR der Eingabe, alle Prüfungen unten wörtlich.
-    // Anlass: Lauf 35779952911 (Shard 3/8) riss Z. ~89 — Feld zeigte
-    // «Vertrag», die Trefferspalte stand 15 s auf «sucht …». `#art-1` steht
-    // schon beim ersten Client-Render (NICHT im Prerender-HTML, `grep -c
-    // 'id="art-' dist/gesetze/bund/OR.html` = 0), die Nachlade-Kette danach
-    // läuft gemessen noch ~15 s (6× CPU-Drossel, n=30). Getippt wurde also
-    // MITTEN in der Kette. Der Wartepunkt nimmt der Eingabe dieses Fenster;
-    // Messreihe und Grenzen des Belegs: Commit-Body S0-A1.
-    await warteLeserNachgeladen(page);
     const suche = inGesetzSuche(page);
     await expect(suche).toBeVisible({ timeout: OR_LESER_FRIST });
     await suche.fill('Vertrag');
