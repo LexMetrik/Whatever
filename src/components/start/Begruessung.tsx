@@ -95,6 +95,25 @@ const BUILD_SEED = (import.meta.env?.VITE_BUILD_ID as string | undefined) ?? 'de
 export const GRUSS_SKRIPT =
   `(function(){try{var s=document.currentScript,d=JSON.parse(s.previousElementSibling.textContent),h=s.parentNode.querySelector('h1'),p=d.t[d.s[new Date().getHours()]].concat(d.i),g=p[Math.min(p.length-1,Math.floor(Math.random()*p.length))];if(h&&g){h.textContent=g;window.__lexmetrikGruss=g}}catch(e){}})()`;
 
+// ─── Render-Sperre bis nach dem Wahl-Skript (K9, 23.9.2026) ─────────────────
+// «VOR dem ersten Paint» (oben) galt nur, solange das Stylesheet schon da war,
+// wenn der Parser die h1 erreicht. Ein klassisches Inline-Skript hinter einem
+// noch ladenden `<link rel="stylesheet">` wartet auf dieses Stylesheet
+// (HTML-Standard «style sheet that is blocking scripts»); trifft es ein, führt
+// Chromium das wartende Skript in einer EIGENEN, nachgereichten Aufgabe aus —
+// und davor kann schon ein Rendering-Durchgang laufen, der die h1 mit dem
+// Build-Gruss malt. Gemessen 23.9.2026 (lokal, Stylesheet +150 ms, CPU 4×,
+// je n=30): ein Frame mit dem Build-Gruss in 6/30 (main vor K7) und 4/30 (K7)
+// Ladevorgängen; CI-Befund Lauf 35877640481 (Skript-Gruss @190 ms, FCP
+// 188 ms). Wurzelfix: der Prerender setzt auf jeder Seite, die das Wahl-Skript
+// trägt, `<link rel="expect" href="#GRUSS_ANKER_ID" blocking="render">` in den
+// <head> (`scripts/prerender.ts`) — der Browser malt dann nichts, bevor das
+// Element mit dieser id geparst ist. `SuchBlock` gibt die id der Datumszeile
+// DIREKT HINTER dem Wahl-Skript; der Parser erreicht sie erst, wenn das Skript
+// gelaufen ist. Browser ohne `rel=expect` (heute Firefox, Safari) ignorieren
+// den Link — dort bleibt das bisherige Verhalten, nie ein schlechteres.
+export const GRUSS_ANKER_ID = 'gruss-gezogen';
+
 /** Pools als JSON für `<script type="application/json" data-gruss="pools">`;
  *  `<` maskiert, damit kein Eintrag den Datenblock je schliessen könnte. */
 export const GRUSS_DATEN_JSON = JSON.stringify(grussSkriptDaten()).replace(/</g, '\\u003c');
