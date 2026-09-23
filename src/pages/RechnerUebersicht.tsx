@@ -10,7 +10,7 @@ import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { EntwurfLegende } from '../components/EntwurfLegende';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { ZweiachsigerEinstieg } from '../components/ZweiachsigerEinstieg';
-import { Zeiterfassung } from '../components/start/Zeiterfassung';
+import { Zeiterfassung } from './rechner-teile/Zeiterfassung';
 import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 
 // ─── Rechner-Übersicht (/rechner) — UI-Welle, Ersatz für /recherche ─────────

@@ -164,7 +164,7 @@ const HOECHSTZAHL: Readonly<Record<string, number>> = {
   'components/rechtsprechung/SachgebietKacheln.tsx': 1,
   'components/start/PultAbschluss.tsx': 4,
   'components/start/PultModul.tsx': 1,
-  'components/start/Zeiterfassung.tsx': 1,
+  'pages/rechner-teile/Zeiterfassung.tsx': 1,
   'components/suche/SuchResultate.tsx': 1,
   'components/verzahnung/Begriff.tsx': 1,
   'components/verzahnung/BezugZeitWahl.tsx': 1,

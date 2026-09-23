@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from 'react';
 // die Tages-Einträge liegen in localStorage (kein Server, Berufsgeheimnis).
 // SSR-sicher: Lazy-Initializer fällt serverseitig auf [] zurück; die einzige
 // client-divergente Stelle (Einträge-Liste) trägt suppressHydrationWarning.
+// W2·29-WERKBANK-KATALOGE K4 (23.9.2026): aus `components/start/` zum einzigen
+// Verwender (`/rechner`, «Werkzeuge») gezogen; Hover-Ton Tinte statt Messing.
 
 interface Eintrag { label: string; ms: number }
 
@@ -134,7 +136,7 @@ export function Zeiterfassung() {
               </div>
             ))}
             <div className="flex items-baseline justify-between gap-3 pt-2.5">
-              <button type="button" onClick={loeschen} className="text-body-s text-ink-500 hover:text-brass-700 transition-colors">
+              <button type="button" onClick={loeschen} className="text-body-s text-ink-500 hover:text-ink-900 transition-colors">
                 Heute zurücksetzen
               </button>
               <span className="text-body-s text-ink-600">Heute erfasst <b className="num text-ink-900 font-medium">{dauer(summe)}</b></span>
