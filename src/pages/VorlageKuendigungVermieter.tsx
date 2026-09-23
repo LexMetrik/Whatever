@@ -6,13 +6,12 @@ import type { Mietobjekt } from '../types/mietrecht';
 import type { Kanton } from '../types/legal';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
-import { NormChip } from '../components/vorlagen/NormChip';
 import { KANTONE } from '../lib/kantone';
 import { PflichtDisclaimer } from '../components/PflichtDisclaimer';
 import { useLocale, fedlexLokalisiert } from '../components/locale';
 import { karte } from '../lib/startseiteConfig';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
-import { SeitenTitel } from '../components/ui/SeitenTitel';
+import { WerkzeugKopf } from '../components/layout/WerkzeugKopf';
 
 // ─── Maske 2b: Vermieter-Kündigung — CHECKLISTE, bewusst KEINE Vollvorlage ──
 // Bauspezifikation: bibliothek/recherche/kuendigungs-masken.md (§8-Grenze):
@@ -50,35 +49,26 @@ export function VorlageKuendigungVermieter() {
 
   return (
     <div className="space-y-6">
-      <Link to="/" className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">
-        <span aria-hidden className="inline-flex items-center justify-center w-7 h-7 border border-line bg-surface">←</span>
-        Zurück zum Katalog
-      </Link>
-      <div className="space-y-3">
-        <GruppenTitel>Miete · Checkliste</GruppenTitel>
-        {/* A-1/B3-6 (R3-α, 31.8.2026): war eine handgebaute H1 mit fester
-            `text-h1`. Sie ging am A-1-Wächter vorbei, weil der nur die
-            Kaskade `text-h2 …` kannte — und sie mass im Split-View den
-            Viewport statt der Pane-Breite. */}
-        <SeitenTitel>Kündigung durch Vermieter:in</SeitenTitel>
-        <p className="text-body-l text-ink-600 max-w-reading">
+      {/* W2·29-WERKBANK-VORLAGEN V4: derselbe Werkzeug-Kopf wie die Wizards
+          (`layout/WerkzeugKopf`, Titelblatt-Band im Register «Werkzeuge»). Das
+          Etikett trägt den Tor-Griff `data-formgate` (QS-UI 8b Teil 2) wie im
+          Wizard-Kopf; Rückweg, Einleitung und Norm-Chips wortgleich. */}
+      <WerkzeugKopf overline={`${card?.rechtsgebiet ?? 'Miete'} · Checkliste`}
+        titel="Kündigung durch Vermieter:in"
+        etikett={<span data-formgate className="lc-badge lc-badge-warn">Checkliste — kein Export</span>}
+        vorspann={(
+          <Link to="/" className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">
+            <span aria-hidden className="inline-flex items-center justify-center w-7 h-7 border border-line bg-surface">←</span>
+            Zurück zum Katalog
+          </Link>
+        )}
+        intro={<>
           Bewusst KEINE ausfüllbare Vorlage: Die Vermieter-Kündigung von Wohn- und Geschäftsräumen ist nur
           mit dem vom Kanton genehmigten amtlichen Formular gültig — ein frei formuliertes Schreiben wäre
           nichtig. Diese Checkliste führt durch die Gültigkeitsvoraussetzungen; Termin und Fristen liefert
           der Rechner als Auskunft.
-        </p>
-        {/* lc-chip-zeile (LM-044/N1): Norm-Chips sind <a> (unterstrichen); der
-            Status-Badge daneben liegt auf der lc-badge-Achse und bleibt unberührt. */}
-        <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
-          {(card?.norms ?? []).map((n) => (
-            <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
-          ))}
-          {/* `data-formgate` wie im geteilten Wizard-Kopf (QS-UI 8b Teil 2): drei
-              Vorlagen-Flächen bauen ihren Kopf von Hand und trugen darum keinen
-              Griff — dieselbe Aussage, drei Stellen. */}
-          <span data-formgate className="lc-badge lc-badge-warn">Checkliste — kein Export</span>
-        </div>
-      </div>
+        </>}
+        normen={(card?.norms ?? []).map((n) => ({ artikel: n.label, href: fedlexLokalisiert(n.url, locale) }))} />
 
       <PflichtDisclaimer />
 
