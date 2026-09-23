@@ -73,9 +73,10 @@ export function SuchBereichWahl({
     // vier Wörter kalibriert sind. Gefüllt wird der Stummel stattdessen von
     // «↑ Anfang» (62 px), das über dieser Zeile allein in einer eigenen
     // 34-px-Leiste stand: 288 + 8 Fuge + 62 = 358, exakt der Kasten. Ein Befund
-    // hat den anderen aufgelöst — Herleitung in `./anfangSlot`.
+    // hat den anderen aufgelöst — Herleitung in `./anfangSlot` (seit D38
+    // unbesetzt; der Knopf-Empfang hier ist mit W2·29 S4 zurückgebaut).
     <div data-v3-suchbereich role="radiogroup" aria-label="Suchbereich"
-      className="flex w-[min(100%,18rem)] flex-wrap items-center gap-0.5 rounded-md bg-paper-sunken/50 p-0.5">
+      className="flex w-[min(100%,18rem)] flex-wrap items-center gap-0.5 border border-line bg-well p-0.5">
       {REIHE.map((b) => {
         const aktiv = wert === b;
         return (
@@ -87,10 +88,9 @@ export function SuchBereichWahl({
             // Filter-Segment in einer Werkzeugzeile, kein Sprungziel im
             // Lesefluss — dieselbe Einordnung wie «alles auf/zu» daneben, das
             // ebenfalls auf Leisten-Höhe sitzt (`lc-leiste-griff`).
-            className={`min-h-8 flex-1 rounded px-1.5 py-1 text-micro transition-colors ${
-              aktiv
-                ? 'bg-paper font-medium text-ink-800 shadow-sm'
-                : 'text-ink-600 lc-hover-flaeche hover:text-brass-700'
+            // W2·29 S4 (Werkbank): eckiges Segment, gewählt = Papier + halbfett.
+            className={`min-h-8 flex-1 px-1.5 py-1 text-micro transition-colors ${
+              aktiv ? 'bg-paper font-semibold text-ink-900' : 'text-ink-600 hover:text-ink-900'
             }`}>
             {LABEL[b].kurz}
           </button>

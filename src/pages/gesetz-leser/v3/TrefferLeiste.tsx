@@ -9,7 +9,7 @@ import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 // BEDIENUNG (wo suche ich · wo bin ich · vor/zurück), die Liste darunter ist
 // ERGEBNIS. Fünf gemessene Befunde hängen ausschliesslich hier —
 // Ä15 (keine Ellipse an der Kernauskunft), Ä30 (wo die Zeile brechen darf),
-// Ä84 (Segment-Deckel 18 rem), Ä94 («↑ Anfang» füllt den Stummel),
+// Ä84 (Segment-Deckel 18 rem), Ä94 («↑ Anfang» im Stummel; seit W2·29 S4 weg),
 // Ä103 (die laufende Stelle) — und ihre Herleitungen gehören zu dem Bauteil,
 // das sie bewachen.
 //
@@ -21,9 +21,12 @@ import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 // feste Zeilenhöhen, ab dem ersten Render vorhanden — der Zähler ist
 // datenseitig und steht sofort, es wächst nichts nach.
 
+/** W2·29 S4 (Werkbank): eckige Griffe, Tinte statt Messing im Hover; 44 px (A9-DoD). */
+const GRIFF = 'inline-flex h-11 w-11 shrink-0 items-center justify-center text-ink-700 transition-colors lc-hover-flaeche hover:text-ink-900';
+
 export function TrefferLeiste({
   anzahl, fundstellen, bestimmungsWort, laufend, hatSprung,
-  bereich, setzeBereich, onAnfang, onZurueck, onVor,
+  bereich, setzeBereich, onZurueck, onVor,
 }: {
   /** Zahl der TREFFER-ARTIKEL (nicht der Fundstellen). */
   anzahl: number;
@@ -34,38 +37,14 @@ export function TrefferLeiste({
   hatSprung: boolean;
   bereich: SuchBereich;
   setzeBereich: (b: SuchBereich) => void;
-  /** Ä94 — «↑ Anfang», wenn die Leiste ihn abgegeben hat (`./anfangSlot`). */
-  onAnfang: (() => void) | null;
   onZurueck: () => void;
   onVor: () => void;
 }) {
   return (
     <div data-treffer-leiste
       style={{ top: 'var(--toc-deckel, 0px)' }}
-      className="sticky z-sticky space-y-1 bg-paper pb-1 pt-0.5 text-body-s text-ink-500">
-      {/* ── Ä94 (H4-Nachzug 18.8.2026) · DER STUMMEL NIMMT DEN KNOPF AUF ─────
-          Gemessen im Handy-Sheet (390, StPO/«Entschädigung»): das Segment stand
-          mit 288 px in einem 358-px-Kasten — 70 px Stummel rechts —, und genau
-          darüber klebte eine eigene 34-px-Zeile, die ausser «↑ Anfang» (62 px)
-          nichts trug. Zwei Fehler, eine Bewegung: die Leiste gibt den Knopf ab
-          (`./anfangSlot`), er füllt den Stummel, und die halbleere Zeile
-          entfällt. Das Segment behält seine Breite (288 = 18 rem, seine
-          Kalibrierung), verliert aber die Lücke.
-          NICHT in die Zähler-Zeile darunter: die trägt schon Zähler, Stand
-          «–/88» und die beiden 44-px-Sprungknöpfe und misst damit @390
-          rechnerisch 361 px in 358 — ein fünftes Element hätte den Zähler
-          umbrechen lassen, also die Kernauskunft verschlechtert, um eine
-          Kernauskunft zu retten (Ä15). */}
-      <div className="flex items-center gap-2">
-        <SuchBereichWahl wert={bereich} setzeWert={setzeBereich} />
-        {onAnfang && (
-          <button type="button" data-v3-anfang onClick={onAnfang}
-            title="Zum Anfang des Erlasses"
-            className="lc-leiste-griff ml-auto shrink-0 gap-1 px-1.5 text-micro">
-            <span aria-hidden>↑</span><span>Anfang</span>
-          </button>
-        )}
-      </div>
+      className="sticky z-sticky space-y-1 bg-paper pb-1 pt-0.5 text-body-s text-ink-600">
+      <SuchBereichWahl wert={bereich} setzeWert={setzeBereich} />
       <div className="flex items-start gap-1">
         {/* ── Ä15 (H2b) · KEINE ELLIPSE AN EINER KERNAUSKUNFT ────────────────
             Gemessen 17.8.2026 in der 280-px-Leiste: «49 Artikel · 110
@@ -137,7 +116,7 @@ export function TrefferLeiste({
             // damit die Live-Ansage für sich allein verständlich bleibt (wer
             // sie hört, sieht die Zählzeile darüber nicht).
             <p data-treffer-position role="status" aria-live="polite"
-              className="min-h-4 whitespace-nowrap text-micro lc-ziffern text-ink-500">
+              className="min-h-4 whitespace-nowrap text-micro lc-ziffern text-ink-600">
               {laufend > 0
                 ? <>Fundstelle <span className="num">{laufend}</span> von <span className="num">{fundstellen}</span></>
                 : <>keine gewählt <span aria-hidden className="text-ink-300">·</span> <span className="num">{fundstellen}</span> {fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</>}
@@ -149,12 +128,12 @@ export function TrefferLeiste({
             {/* A9-DoD: 44×44-px-Tap-Ziele, echte <button>, aria-label. */}
             <button type="button" onClick={onZurueck} data-treffer-zurueck
               aria-label="Vorherige Fundstelle" title="Vorherige Fundstelle (↑)"
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
+              className={GRIFF}>
               <span aria-hidden className="lc-griff-glyph">↑</span>
             </button>
             <button type="button" onClick={onVor} data-treffer-vor
               aria-label="Nächste Fundstelle" title="Nächste Fundstelle (↓)"
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
+              className={GRIFF}>
               <span aria-hidden className="lc-griff-glyph">↓</span>
             </button>
           </>

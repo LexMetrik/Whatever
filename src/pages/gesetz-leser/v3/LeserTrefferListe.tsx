@@ -2,7 +2,6 @@ import { Fragment, useState } from 'react';
 import { SUCH_META } from '../suchHighlight';
 import { badgesFuer, type ArtikelFundstelle, type Ausschnitt, type LeserTreffer, type SuchBereich } from '../leserSuche';
 import { TrefferLeiste } from './TrefferLeiste';
-import { useAnfangSlot } from './anfangSlot';
 import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 
 // ═══ Trefferliste V3 — Verzeichnis in Erlass-Reihenfolge (H2, Kap. 4b Pos. 5) ═
@@ -29,6 +28,13 @@ import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 // `data-such-meta` an der Wurzel (SUCH_META): diese Liste ist BEDIENUNG, kein
 // Gesetzestext. Der Highlight-Walker überspringt solche Teilbäume vollständig,
 // sonst zählte ein Begriff seine eigenen Ausschnitte mit (Bug-Check 4.8.2026).
+
+/** Begriff im Schnipsel wie `::highlight(lc-such-treffer)` (W2·29 S4: vorher CSS). */
+const MARKE = '[&_mark]:bg-brass-200 [&_mark]:px-px [&_mark]:text-ink-900';
+
+/** W2·29 S4: laufende Stelle = Registerfläche + Strich (Tokens); Strich immer da, CLS 0. */
+const zeile = (aktiv: boolean) =>
+  `border-l-2 text-left transition-colors ${aktiv ? 'border-reg-g bg-reg-g-flaeche' : 'border-transparent lc-hover-flaeche'}`;
 
 /** Wie viele ARTIKEL-Köpfe auf einmal gemalt werden (Erbe B10, Herleitung dort). */
 const TREFFER_DECKEL = 200;
@@ -87,7 +93,7 @@ function Schnipsel({ a, einzeilig = false }: { a: Ausschnitt; einzeilig?: boolea
     // `einzeilig` gilt am ARTIKELKOPF (Herleitung dort). In der aufgeklappten
     // Fundstellen-Liste NICHT: dort ist der Schnipsel die einzige Auskunft der
     // Zeile — was hier wegfiele, wäre nicht Kontext, sondern der Inhalt.
-    <span className={`lc-such-ausschnitt min-w-0 flex-1 text-micro leading-snug text-ink-600 [overflow-wrap:anywhere] ${
+    <span className={`lc-such-ausschnitt min-w-0 flex-1 text-micro leading-snug text-ink-700 [overflow-wrap:anywhere] ${MARKE} ${
       einzeilig ? 'line-clamp-1' : ''}`}>
       {a.vor}<mark>{a.treffer}</mark>{a.nach}
     </span>
@@ -98,10 +104,6 @@ export function LeserTrefferListe({
   treffer, begriff, fundstellen, bestimmungsWort, aenderungenAus, position, aktivStelle,
   bereich, setzeBereich, fundstellenFuer, onZurueck, onVor, onSprung, onSprungStelle,
 }: LeserTrefferListeProps) {
-  // Ä94: «↑ Anfang», wenn die Leiste ihn abgegeben hat — `null`, wo sie ihn
-  // selbst zeigt (Spalte) oder wo gar keine Leiste steht (Blatt am Feld).
-  // Herleitung, warum ein Slot und kein Prop: `./anfangSlot`.
-  const onAnfang = useAnfangSlot();
   const hatSprung = fundstellen > 0;
   // ── Ä103 (18.8.2026) · «–/88» IST KEINE AUSKUNFT ──────────────────────────
   // GEMESSEN (StPO/«Entschädigung», @390/@1440): vor dem ersten ↑↓-Sprung stand
@@ -136,14 +138,14 @@ export function LeserTrefferListe({
 
   return (
     <div {...{ [SUCH_META]: '' }} data-treffer-liste className="pb-2">
-      {/* Die klebende Werkzeugzeile (Segment · «↑ Anfang» · Zähler · ↑↓).
+      {/* Die klebende Werkzeugzeile (Segment · Zähler · ↑↓).
           Eigene Datei seit Ä103 (§6.6): sie trägt fünf gemessene Befunde
           (Ä15/Ä30/Ä84/Ä94/Ä103) mit ihren Herleitungen, und die Liste darunter
           hat mit keinem davon zu tun. */}
       <TrefferLeiste
         anzahl={treffer.length} fundstellen={fundstellen} bestimmungsWort={bestimmungsWort}
         laufend={laufend} hatSprung={hatSprung} bereich={bereich} setzeBereich={setzeBereich}
-        onAnfang={onAnfang} onZurueck={onZurueck} onVor={onVor} />
+        onZurueck={onZurueck} onVor={onVor} />
 
       {/* §8: ehrliche Leerzeile statt eines leeren Kastens — und sie nennt den
           Bereich mit, weil sonst «nichts gefunden» die halbe Wahrheit ist.
@@ -170,7 +172,7 @@ export function LeserTrefferListe({
         )}
       </p>
 
-      <ul className="space-y-0.5">
+      <ul>
         {zeilen.map(({ t, kopf }) => {
           const badges = badgesFuer(t, aenderungenAus);
           // Aufgeklappt ist ein Artikel, wenn die laufende Fundstelle in ihm
@@ -203,16 +205,16 @@ export function LeserTrefferListe({
                 // verbietet die H2-Lehre (`data-fn-ref`): ein Wächter sucht ein
                 // Element über seine Identität, sonst nimmt ihn die nächste
                 // Gestaltungsänderung mit.
-                <li data-treffer-gruppe aria-hidden className="px-1 pb-0.5 pt-3 text-micro font-medium leading-snug text-ink-500">
+                <li data-treffer-gruppe aria-hidden className="px-1 pb-1 pt-3 text-micro font-semibold leading-snug text-ink-600">
                   <span className="line-clamp-2">{kopf}</span>
                 </li>
               )}
-              <li data-treffer-artikel={t.token} data-fundstellen-zahl={t.fundstellen}>
+              <li data-treffer-artikel={t.token} data-fundstellen-zahl={t.fundstellen} className="border-t border-line">
                 <button type="button" onClick={() => { onSprung(t.token); klappe(t.token); }}
                   data-treffer-aktiv={aktiv ? '1' : undefined}
                   aria-current={aktiv ? 'location' : undefined}
                   aria-expanded={offen}
-                  className={`w-full rounded px-1.5 py-1.5 text-left transition-colors ${aktiv ? 'bg-paper-sunken/70' : 'lc-hover-flaeche'}`}>
+                  className={`w-full px-1.5 py-2 ${zeile(aktiv)}`}>
                   {/* ── Ä10/Ä26 (H2b-Nachzug) · DAS ETIKETT SPRENGT DIE LEISTE NICHT
                       Gemessen 17.8.2026 (LugÜ, Suche «Gericht»): `shrink-0` am
                       Etikett war für «Art. 47» richtig und für Anhänge falsch —
@@ -251,11 +253,11 @@ export function LeserTrefferListe({
                       bei vollständigem Titel. `title` bleibt als Ergänzung, nie
                       als Ersatz (S3 «KEIN title-ERSATZ»). */}
                   <span className="flex items-baseline gap-2">
-                    <span className="num min-w-0 truncate text-body-s font-semibold text-ink-800" title={t.label}>{t.label}</span>
+                    <span className="num min-w-0 truncate text-body-s font-semibold text-ink-900" title={t.label}>{t.label}</span>
                     {t.randtitel && (
-                      <span data-treffer-randtitel className="line-clamp-2 min-w-0 flex-1 font-serif text-xs text-ink-600" title={t.randtitel}>{t.randtitel}</span>
+                      <span data-treffer-randtitel className="line-clamp-2 min-w-0 flex-1 font-serif text-xs italic text-ink-600" title={t.randtitel}>{t.randtitel}</span>
                     )}
-                    <span className="ml-auto shrink-0 text-micro lc-ziffern text-ink-500">{t.fundstellen}</span>
+                    <span className="ml-auto shrink-0 text-micro lc-ziffern text-ink-600">{t.fundstellen}</span>
                   </span>
                   {/* ── Ä17 (H2b) · DER SCHNIPSEL IST ZURÜCK ────────────────────
                       Gemessen 17.8.2026: im Ruhezustand zeigte die Liste NULL
@@ -284,7 +286,7 @@ export function LeserTrefferListe({
                     <span className="mt-1 flex flex-wrap gap-1">
                       {badges.map((b) => (
                         <span key={b} data-treffer-badge
-                          className="rounded border border-line px-1 text-micro leading-4 text-ink-500">{b}</span>
+                          className="border border-line px-1 text-micro leading-4 text-ink-600">{b}</span>
                       ))}
                     </span>
                   )}
@@ -302,9 +304,8 @@ export function LeserTrefferListe({
                             data-treffer-stelle={f.rang}
                             data-treffer-stelle-aktiv={stelleAktiv ? '1' : undefined}
                             aria-current={stelleAktiv ? 'location' : undefined}
-                            className={`flex w-full items-baseline gap-1.5 rounded px-1.5 py-1 text-left transition-colors ${
-                              stelleAktiv ? 'bg-brass-100/60' : 'lc-hover-flaeche'}`}>
-                            <span aria-hidden className="shrink-0 text-micro lc-ziffern text-ink-400">{f.rang + 1}</span>
+                            className={`flex w-full items-baseline gap-1.5 px-1.5 py-1 ${zeile(stelleAktiv)}`}>
+                            <span aria-hidden className="shrink-0 text-micro lc-ziffern text-ink-600">{f.rang + 1}</span>
                             <Schnipsel a={f.ausschnitt} />
                           </button>
                         </li>
@@ -326,7 +327,7 @@ export function LeserTrefferListe({
             begriff, n: (g.begriff === begriff ? g.n : TREFFER_DECKEL) + TREFFER_DECKEL,
             auf: g.begriff === begriff ? g.auf : [],
           }))}
-          className="mt-2 flex min-h-11 w-full items-center justify-center rounded-md px-2 text-body-s text-ink-600 transition-colors lc-hover-flaeche hover:text-brass-700">
+          className="flex min-h-11 w-full items-center justify-center border-t border-line px-2 text-body-s text-ink-600 transition-colors lc-hover-flaeche hover:text-ink-900">
           {rest} weitere anzeigen
         </button>
       )}
