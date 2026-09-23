@@ -381,7 +381,9 @@ export default {
       // Reservierung 48 px. Ein Skelett, das MEHR reserviert, als der Inhalt
       // braucht, verlegt den Sprung nur (der Block schrumpfte beim Laden) —
       // dagegen misst `e2e/leser-d35-f1-funktionszeile` (e).
-      minHeight: { 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
+      // W2·29-WERKBANK-START: Kachelhöhe des 2×2-Feldes (Prototyp 23.9.2026: 220 px,
+      // Telefon 132 px) — das offene Blatt nimmt genau diese Fläche ein.
+      minHeight: { 'start-kachel': '13.75rem', 'start-kachel-s': '8.25rem', 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

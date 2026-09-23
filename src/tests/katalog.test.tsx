@@ -267,20 +267,22 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
   // mehr» — seit dem Entscheid David 22.9.2026 trägt «/» die vier
   // Rubrik-Kacheln. Die Zusicherung `not.toContain('lc-tile')` (das alte
   // Rezept) bleibt unverändert scharf; nur der Titel widersprach dem Entscheid.
-  it('die vier Bestände stehen als Listen mit Zahlen — kein altes lc-tile-Rezept', () => {
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START S1, Prototyp + Go David
+  // 23.9.2026, §6.3): die Listen-Module (Systematik, Kantone, Behörden) sind
+  // mit dem Baukasten gestrichen (Auswahlfrage «Streichen») — Systematik und
+  // Kantone sind Stufen der Gesetze-Kachel, die VOR ORT aufklappt und im
+  // Prerender zu ist. Geprüft wird jetzt, was «/» wirklich trägt: vier
+  // Kacheln (Gesetze als Knopf mit `aria-expanded`, die drei anderen bis S2/S3
+  // als Link), «Neueste Entscheide», das Schnellwerkzeug. Die Negativ-Zeilen
+  // bleiben unverändert.
+  it('die vier Bestände stehen als Kacheln, darunter Entscheide und Schnellwerkzeug — kein lc-tile-Rezept', () => {
     const html = startHtml('/');
-    // Die Zeilen-Titel des Satzspiegels.
-    expect(html).toContain('Systematische Ordnung');
-    expect(html).toContain('Kantone, erfasste Erlasse');
-    expect(html).toContain('Amtliche Materialien nach Behörde');
+    expect(html).toMatch(/<button[^>]*aria-expanded="false"[^>]*aria-controls="lm-start-blatt"/);
+    for (const ziel of ['/rechtsprechung', '/materialien', '/rechner']) expect(html).toContain(`href="${ziel}"`);
+    expect(html).toContain('Neueste Entscheide');
     expect(html).toContain('Frist berechnen');
-    // Bund: die Systematik-Ordnung der Gesetze-Übersicht mit ihren Ankern.
-    expect(html).toContain('href="/gesetze?ebene=bund#sys-privatrecht"');
-    // Kantone: Bestands-Ziel `?ebene=kanton&kt=<KT>` (nie erfunden).
-    expect(html).toContain('/gesetze?ebene=kanton&amp;kt=BS');
-    // Materialien: Behörden-Sprungmarke der Übersicht.
-    expect(html).toContain('href="/materialien#b-ESTV"');
-    // Kachel-Optik ist weg (RubrikKachel/lc-tile auf «/»), Landkarte ebenso.
+    // Das Blatt ist im Prerender ZU (Hydration, §15).
+    expect(html).not.toContain('id="lm-start-blatt"');
     expect(html).not.toContain('lc-tile');
     expect(html).not.toContain('Weitere Bereiche');
     expect(html).not.toContain('Alle Bereiche');
@@ -298,10 +300,11 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
     expect(html).not.toMatch(/role="tab"/);
     // Die Fristen-Zeile rechnet live (echte Engine, keine Kopie).
     expect(html).toContain('Live-Berechnung');
-    // Statt eingebetteter Zweit-Formulare Text-Verweise in die Voll-Rechner.
+    // Statt eingebetteter Zweit-Formulare der Verweis in den Voll-Rechner.
+    // W2·29-WERKBANK-START S1 (§6.3, deklariert): die Verweise auf Prozesskosten
+    // und Zuständigkeit standen im Fuss des gestrichenen Werkzeug-Moduls; alle
+    // Rechner führt die Werkzeuge-Kachel (S2: Rechner | Vorlagen → Liste).
     expect(html).toContain('href="/rechner/tagerechner"');
-    expect(html).toContain('href="/rechner/prozesskosten"');
-    expect(html).toContain('href="/rechner/zustaendigkeit"');
   });
 
   it('§8: die Vertrauens-Sätze und der Pflichthinweis stehen wörtlich im Schluss', () => {
