@@ -1,0 +1,1037 @@
+{
+  "/vorlagen/ag-gruendung": {
+    "titel": "AG-Gründungsunterlagen",
+    "badge": [
+      "Dokumentmappe (Urkunde als Entwurf)"
+    ],
+    "schritte": [
+      "Konstellation",
+      "Gesellschaft & Statuten",
+      "Kapital & Einlagen",
+      "Personen & Organe",
+      "Domizil & Optionen",
+      "Checkliste & Dokumente"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben verlassen den Browser nicht; lokale Zwischenspeicherung auf diesem Gerät — «Zurücksetzen» löscht sie."
+    ],
+    "knoepfeStart": [],
+    "docxKnopf": false,
+    "kopierKnopf": false,
+    "knoepfeLetzterSchritt": []
+  },
+  "/vorlagen/ag-gruendung#mappe-beispiel": {
+    "titel": "AG-Gründungsunterlagen",
+    "badge": [
+      "Dokumentmappe (Urkunde als Entwurf)"
+    ],
+    "schritte": [
+      "Konstellation",
+      "Gesellschaft & Statuten",
+      "Kapital & Einlagen",
+      "Personen & Organe",
+      "Domizil & Optionen",
+      "Checkliste & Dokumente"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben verlassen den Browser nicht; lokale Zwischenspeicherung auf diesem Gerät — «Zurücksetzen» löscht sie."
+    ],
+    "knoepfeStart": [],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Alle 6 Dokumente herunterladen (ZIP)",
+      "Entwurf als PDF",
+      "Entwurf als Word (DOCX)",
+      "Text kopieren"
+    ],
+    "reiter": [
+      "Statuten (Entwurf)",
+      "Errichtungsakt (Entwurf für die Urkundsperson)",
+      "Wahlannahmeerklärung – Anna Muster",
+      "VR-Protokoll (Konstituierung)",
+      "Unterschriftenblatt",
+      "Handelsregister-Anmeldung"
+    ]
+  },
+  "/vorlagen/arbeitsvertrag": {
+    "titel": "Einzelarbeitsvertrag",
+    "badge": [
+      "Beidseitig zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Stelle & Beginn",
+      "Lohn",
+      "Arbeitszeit & Ferien",
+      "Absicherung & Spesen",
+      "Besondere Klauseln",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Vertrag als PDF [gesperrt]",
+      "Vertrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/arbeitsvertrag#handelsreisendenvertrag": {
+    "titel": "Handelsreisendenvertrag",
+    "badge": [
+      "Schriftlich zu regeln"
+    ],
+    "schritte": [
+      "Parteien",
+      "Tätigkeit & Vollmacht",
+      "Lohn & Auslagen",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Vertrag als PDF [gesperrt]",
+      "Vertrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/arbeitsvertrag#heimarbeitsvertrag": {
+    "titel": "Heimarbeitsvertrag",
+    "badge": [
+      "Lohn/Material schriftlich anzugeben"
+    ],
+    "schritte": [
+      "Parteien",
+      "Arbeit & Material",
+      "Lohn & Dienst",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Vertrag als PDF [gesperrt]",
+      "Vertrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/arbeitsvertrag#lehrvertrag": {
+    "titel": "Lehrvertrag",
+    "badge": [
+      "Schriftform · behördlich zu genehmigen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Bildung & Dauer",
+      "Lohn, Zeit & Ferien",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Lehrvertrag als PDF [gesperrt]",
+      "Lehrvertrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/auftrag": {
+    "titel": "Auftrag (Dienstleistungsvertrag)",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Gegenstand & Vergütung",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Auftrag als PDF [gesperrt]",
+      "Auftrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/eheschutzgesuch": {
+    "titel": "Eheschutzgesuch",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Gericht",
+      "Parteien & Kinder",
+      "Massnahmen & Unterhalt",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Gesuch als PDF [gesperrt]",
+      "Gesuch als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ]
+  },
+  "/vorlagen/forderungsabtretung": {
+    "titel": "Abtretungserklärung (Zession)",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Forderung & Optionen",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Abtretungserklärung als PDF [gesperrt]",
+      "Abtretungserklärung als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/fristerstreckung": {
+    "titel": "Fristerstreckungsgesuch",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Verfahren & Gericht",
+      "Frist & Begründung",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Gesuch als PDF [gesperrt]",
+      "Gesuch als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/gmbh-gruendung": {
+    "titel": "GmbH-Gründungsunterlagen",
+    "badge": [
+      "Checkliste + Dokumentmappe (Urkunde als Entwurf)"
+    ],
+    "schritte": [],
+    "zuruecksetzen": false,
+    "speicherHinweis": [
+      "Erzeugt aus denselben Weichen wie die Checkliste: Statuten und Errichtungsakt als ENTWURF für die Urkundsperson (öffentliche Beurkundung bleibt zwingend, Art. 777 OR), die beurkundungsfreien Erklärungen und die Handelsregister-Anmeldung druckfertig. Eingaben verlassen den Browser nicht; keine Speicherung."
+    ],
+    "knoepfeStart": [],
+    "docxKnopf": false,
+    "kopierKnopf": false
+  },
+  "/vorlagen/gmbh-gruendung#mappe-beispiel": {
+    "titel": "GmbH-Gründungsunterlagen",
+    "badge": [
+      "Checkliste + Dokumentmappe (Urkunde als Entwurf)"
+    ],
+    "schritte": [],
+    "zuruecksetzen": false,
+    "speicherHinweis": [
+      "Erzeugt aus denselben Weichen wie die Checkliste: Statuten und Errichtungsakt als ENTWURF für die Urkundsperson (öffentliche Beurkundung bleibt zwingend, Art. 777 OR), die beurkundungsfreien Erklärungen und die Handelsregister-Anmeldung druckfertig. Eingaben verlassen den Browser nicht; keine Speicherung."
+    ],
+    "knoepfeStart": [
+      "Entwurf als PDF",
+      "Entwurf als Word (DOCX)",
+      "Text kopieren"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "reiter": [
+      "Statuten (Entwurf)",
+      "Errichtungsakt (Entwurf für die Urkundsperson)",
+      "Wahlannahmeerklärung – A",
+      "Handelsregister-Anmeldung"
+    ]
+  },
+  "/vorlagen/kapitalerhoehung": {
+    "titel": "Kapitalerhöhung (AG / GmbH)",
+    "badge": [
+      "Beschluss-Urkunden als Entwurf"
+    ],
+    "schritte": [],
+    "zuruecksetzen": false,
+    "speicherHinweis": [],
+    "knoepfeStart": [],
+    "docxKnopf": false,
+    "kopierKnopf": false
+  },
+  "/vorlagen/kapitalerhoehung#mappe-beispiel": {
+    "titel": "Kapitalerhöhung (AG / GmbH)",
+    "badge": [
+      "Beschluss-Urkunden als Entwurf"
+    ],
+    "schritte": [],
+    "zuruecksetzen": false,
+    "speicherHinweis": [],
+    "knoepfeStart": [
+      "Entwurf als PDF",
+      "Entwurf als Word (DOCX)",
+      "Text kopieren"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "reiter": [
+      "Generalversammlungs-Beschluss (Entwurf)",
+      "Zeichnungsschein – Anna Muster",
+      "Zeichnungsschein – Beat Beispiel",
+      "Kapitalerhöhungsbericht",
+      "VR-Urkunde: Statutenänderung + Feststellungen (Entwurf)",
+      "Handelsregister-Anmeldung"
+    ]
+  },
+  "/vorlagen/klage-ordentlich": {
+    "titel": "Klage im ordentlichen Verfahren",
+    "badge": [
+      "Papierform · unterschreiben · im Doppel"
+    ],
+    "schritte": [
+      "Gericht & Streitwert",
+      "Parteien",
+      "Rechtsbegehren",
+      "Begründung (Pflicht)",
+      "Klagebewilligung & Beilagen",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Klage als PDF [gesperrt]",
+      "Klage als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/klage-vereinfacht": {
+    "titel": "Klage im vereinfachten Verfahren",
+    "badge": [
+      "Papierform · unterschreiben · im Doppel"
+    ],
+    "schritte": [
+      "Materie & Streitwert",
+      "Parteien",
+      "Rechtsbegehren",
+      "Begründung (freiwillig)",
+      "Klagebewilligung & Beilagen",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Klage als PDF [gesperrt]",
+      "Klage als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/konkubinat": {
+    "titel": "Konkubinatsvertrag",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Kosten, Wohnen & Vermögen",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Konkubinatsvertrag als PDF [gesperrt]",
+      "Konkubinatsvertrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/kuendigung-arbeitgeber": {
+    "titel": "Kündigung durch Arbeitgeber:in",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Anstellung & Frist",
+      "Sperrfristen",
+      "Kündigungstermin",
+      "Begründung & Freistellung",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Kündigung als PDF [gesperrt]",
+      "Kündigung als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/kuendigung-arbeitnehmer": {
+    "titel": "Kündigung durch Arbeitnehmer:in",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Anstellung & Frist",
+      "Kündigungstermin",
+      "Zeugnis & Abrechnung",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Kündigung als PDF [gesperrt]",
+      "Kündigung als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/kuendigung-mieter": {
+    "titel": "Kündigung durch Mieter:in",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien & Objekt",
+      "Familienwohnung",
+      "Termin & Frist",
+      "Ausserterminlich?",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Kündigung als PDF [gesperrt]",
+      "Kündigung als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/kuendigung-vermieter": {
+    "titel": "Kündigung durch Vermieter:in",
+    "badge": [
+      "Checkliste — kein Export"
+    ],
+    "schritte": [],
+    "zuruecksetzen": false,
+    "speicherHinweis": [],
+    "knoepfeStart": [],
+    "docxKnopf": false,
+    "kopierKnopf": false,
+    "checkliste": [
+      "Amtliches Formular des Kantons verwenden (Art. 266l OR Abs. 2): das vom Kanton genehmigte Kündigungsformular mit Rechtsmittelbelehrung — erhältlich bei der kantonalen Schlichtungsbehörde. Ohne Formular ist die Kündigung NICHTIG (Art. 266o OR). Die zuständige Stelle Ihres Kantons finden Sie im Zuständigkeitsrechner.",
+      "Familienwohnung: separat an BEIDE zustellen (Art. 266n OR): Kündigung (und eine allfällige Zahlungsfrist-Androhung nach Art. 257d) der Mieterin/dem Mieter UND dem Ehegatten bzw. der eingetragenen Partnerin/dem Partner in separaten Sendungen zustellen — Verstoss führt zur Nichtigkeit (Art. 266o).",
+      "Termin und Frist einhalten — unten als Auskunft berechenbar; massgebend ist der ZUGANG bei den Empfänger:innen (eingeschrieben empfohlen).",
+      "Begründung: auf Verlangen anzugeben; die Kündigung ist anfechtbar, wenn sie gegen Treu und Glauben verstösst (Art. 271 OR ff.) — die Mieterschaft kann innert 30 Tagen anfechten und Erstreckung verlangen (Fristen unten in der Auskunft)."
+    ]
+  },
+  "/vorlagen/kuendigung-vertrag": {
+    "titel": "Vertrag kündigen (Versicherung · Krankenkasse · Darlehen · Auftrag · Abo)",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Vertragstyp",
+      "Parteien",
+      "Vertrag",
+      "Termin",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Kündigung als PDF [gesperrt]",
+      "Kündigung als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/mahnung": {
+    "titel": "Mahnung & Inverzugsetzung",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Was mahnen Sie an?",
+      "Parteien",
+      "Forderung & Frist",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Mahnung als PDF [gesperrt]",
+      "Mahnung als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/mietvertrag": {
+    "titel": "Mietvertrag",
+    "badge": [
+      "Beidseitig zu unterzeichnen"
+    ],
+    "schritte": [
+      "Mietobjekt",
+      "Parteien",
+      "Dauer & Kündigung",
+      "Mietzins & Nebenkosten",
+      "Kaution & Klauseln",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Vertrag als PDF [gesperrt]",
+      "Vertrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ]
+  },
+  "/vorlagen/nda": {
+    "titel": "Geheimhaltungsvereinbarung (NDA)",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien & Richtung",
+      "Inhalt & Strafe",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "NDA als PDF [gesperrt]",
+      "NDA als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/nichtbekanntgabe-betreibung": {
+    "titel": "Gesuch um Nichtbekanntgabe einer Betreibung",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Schuldner & Amt",
+      "Betreibung",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Gesuch als PDF [gesperrt]",
+      "Gesuch als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/patientenverfuegung": {
+    "titel": "Patientenverfügung",
+    "badge": [
+      "Handschriftlich datieren & unterschreiben"
+    ],
+    "schritte": [
+      "Person",
+      "Werte",
+      "Situationen & Ziel",
+      "Massnahmen",
+      "Vertretung",
+      "Weitere Wünsche",
+      "Prüfen & Unterschreiben"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Entwurf als PDF [gesperrt]",
+      "Entwurf als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/rubrum": {
+    "titel": "Rubrum (Entscheidkopf)",
+    "badge": [
+      "Entwurf"
+    ],
+    "schritte": [
+      "Gericht & Verfahren",
+      "Parteien",
+      "Streitgegenstand",
+      "Prüfen & Ausfüllen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Rubrum als PDF [gesperrt]",
+      "Rubrum als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/scheidungsbegehren-gemeinsam": {
+    "titel": "Gemeinsames Scheidungsbegehren",
+    "badge": [
+      "Beide unterzeichnen"
+    ],
+    "schritte": [
+      "Gericht & Einigung",
+      "Ehegatten & Kinder",
+      "Vereinbarung & Anträge",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Begehren als PDF [gesperrt]",
+      "Begehren als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ]
+  },
+  "/vorlagen/scheidungsklage": {
+    "titel": "Scheidungsklage (unbegründete Eingabe)",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Gericht & Scheidungsgrund",
+      "Parteien & Kinder",
+      "Scheidungsfolgen",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Scheidungsklage als PDF [gesperrt]",
+      "Scheidungsklage als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ]
+  },
+  "/vorlagen/schlichtungsgesuch-bs": {
+    "titel": "Schlichtungsgesuch (Basel-Stadt)",
+    "badge": [
+      "Papierform · eigenhändig unterzeichnen"
+    ],
+    "schritte": [
+      "Streitgegenstand & Vorprüfung",
+      "Klagende Partei",
+      "Beklagte Partei",
+      "Rechtsbegehren",
+      "Streitgegenstand",
+      "Anträge & Beilagen",
+      "Prüfen & Download"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Eingaben werden nicht gespeichert – sie bestehen nur, solange diese Seite geöffnet ist."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Gesuch als PDF [gesperrt]",
+      "Gesuch als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/testament": {
+    "titel": "Eigenhändiges Testament",
+    "badge": [
+      "Eigenhändig abzuschreiben"
+    ],
+    "schritte": [
+      "Person",
+      "Familie",
+      "Erbeinsetzung",
+      "Vermächtnisse",
+      "Willensvollstreckung",
+      "Ort & Datum",
+      "Prüfen & Abschreiben"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]"
+    ],
+    "docxKnopf": false,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Mustertext als PDF [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]"
+    ]
+  },
+  "/vorlagen/verjaehrungsverzicht": {
+    "titel": "Verjährungsverzichtserklärung",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Forderung & Dauer",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Verzichtserklärung als PDF [gesperrt]",
+      "Verzichtserklärung als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  },
+  "/vorlagen/vollmacht": {
+    "titel": "Vollmacht",
+    "badge": [
+      "Einfache Schriftform – drucken & unterschreiben"
+    ],
+    "schritte": [
+      "Vollmachtstyp",
+      "Vollmachtgeber/in",
+      "Bevollmächtigte",
+      "Umfang",
+      "Besondere Ermächtigungen",
+      "Dauer & Abschluss",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Generalvollmacht als PDF [gesperrt]",
+      "Generalvollmacht als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ]
+  },
+  "/vorlagen/vorsorgeauftrag": {
+    "titel": "Vorsorgeauftrag",
+    "badge": [
+      "Eigenhändig ODER beurkundet (Art. 361 ZGB)"
+    ],
+    "schritte": [
+      "Voraussetzungen & Form",
+      "Person",
+      "Beauftragte & Ersatz",
+      "Aufgaben",
+      "Vollmachten & Entschädigung",
+      "Abschluss",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]"
+    ],
+    "docxKnopf": false,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Mustertext als PDF [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]"
+    ]
+  },
+  "/vorlagen/vorsorgeauftrag#oeffentlich_beurkundet": {
+    "titel": "Vorsorgeauftrag",
+    "badge": [
+      "Eigenhändig ODER beurkundet (Art. 361 ZGB)"
+    ],
+    "schritte": [
+      "Voraussetzungen & Form",
+      "Person",
+      "Beauftragte & Ersatz",
+      "Aufgaben",
+      "Vollmachten & Entschädigung",
+      "Abschluss",
+      "Prüfen & Ausgabe"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [
+      "Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen»."
+    ],
+    "knoepfeStart": [
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Entwurf als PDF [gesperrt]",
+      "Entwurf als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF [gesperrt]",
+      "Word (DOCX) [gesperrt]"
+    ]
+  },
+  "/vorlagen/werkvertrag": {
+    "titel": "Werkvertrag",
+    "badge": [
+      "Zu unterzeichnen"
+    ],
+    "schritte": [
+      "Parteien",
+      "Werk & Vergütung",
+      "Prüfen & Unterzeichnen"
+    ],
+    "zuruecksetzen": true,
+    "speicherHinweis": [],
+    "knoepfeStart": [
+      "PDF",
+      "Word (DOCX)"
+    ],
+    "docxKnopf": true,
+    "kopierKnopf": true,
+    "knoepfeLetzterSchritt": [
+      "Werkvertrag als PDF [gesperrt]",
+      "Werkvertrag als Word (DOCX) [gesperrt]",
+      "Text kopieren [gesperrt]",
+      "PDF",
+      "Word (DOCX)"
+    ]
+  }
+}
