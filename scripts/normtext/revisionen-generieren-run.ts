@@ -10,7 +10,8 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import {
   grundmenge, holeBindingsB, holeStaendeA, baueRevisionen, serialisiere, botschaftIndex,
-  ermittleBelegteOcs, holeRectifiesSr, baueOcZuRectifiesSr, type ErlassMeta,
+  ermittleBelegteOcs, holeRectifiesSr, baueOcZuRectifiesSr, holeAbstractStamm, holeAuswirkungen,
+  holeOcStamm, type ErlassMeta, type OcStamm, type RevisionsKontext,
 } from './revisionen-generieren.ts';
 import type { SparqlBinding } from '../fedlex-sparql.ts';
 
@@ -98,6 +99,30 @@ const zielInfoProOc = await holeRectifiesSr(rectifiesZiele, fetch);
 if (rectifiesZiele.length) console.log(`  jolux:rectifies-Ziele ${rectifiesZiele.length} · SR aufgelöst ${zielInfoProOc.size}`);
 let fremdeAsDokumente = 0;
 
+// Pfad (c) (S6-D1, 23.9.2026): Geltungsfenster/Stammerlass je Abstract, Auswirkungen je
+// Abstract, Stammdaten der oc, die nur Pfad (c) kennt — je EINE globale Batch-Runde.
+const alleAbstracts = [...new Set(meta.map((m) => pinFuer(m.key, m.sr)?.abstractEli).filter((v): v is string => !!v))];
+const abstractStamm = await holeAbstractStamm(alleAbstracts, fetch);
+const auswirkungen = await holeAuswirkungen(alleAbstracts, fetch);
+const ocImGraphB = new Set(bindings.map((b) => b.oc?.value).filter((v): v is string => !!v));
+const ocNurC = [...new Set([...auswirkungen.values()].flat().map((a) => a.oc))].filter((oc) => !ocImGraphB.has(oc));
+const ocStammNurC = await holeOcStamm(ocNurC, fetch);
+console.log(`  Pfad (c): Abstracts ${alleAbstracts.length} · Auswirkungen ${[...auswirkungen.values()].reduce((n, a) => n + a.length, 0)} · oc nur aus (c) ${ocNurC.length} (Stammdaten ${ocStammNurC.size})`);
+/** Stammdaten eines oc: aus den (globalen) Pfad-(b)-Bindings, sonst aus der (c)-Abfrage. */
+const bindingsNachOc = new Map<string, SparqlBinding[]>();
+for (const b of bindings) { const oc = b.oc?.value; if (oc) bindingsNachOc.set(oc, [...(bindingsNachOc.get(oc) ?? []), b]); }
+function stammAusB(oc: string): OcStamm | undefined {
+  const bs = bindingsNachOc.get(oc) ?? [];
+  if (!bs.length) return undefined;
+  const min = (werte: (string | undefined)[]) => werte.filter((v): v is string => !!v).sort()[0];
+  return {
+    dateForce: min(bs.map((b) => b.dateForce?.value)), dateDoc: min(bs.map((b) => b.dateDoc?.value)),
+    roId: min(bs.map((b) => b.roId?.value)), titelDe: min(bs.map((b) => b.titleDe?.value)),
+    titelFr: min(bs.map((b) => b.titleFr?.value)), titelIt: min(bs.map((b) => b.titleIt?.value)),
+  };
+}
+let ohneKontext = 0;
+
 let mitAenderung = 0, gesamtEintraege = 0, mitBotschaft = 0, sammelMarker = 0, ohnePin = 0, kuenftig = 0;
 let belegtTrotzDatum = 0;
 // dateDocument (Beschluss-/Erlassdatum) darf NICHT in der Zukunft liegen — das wäre
@@ -116,9 +141,25 @@ for (const m of meta as ErlassMeta[]) {
   // Finding 4b (W2·18-FEHLERBUCH #19): Kandidaten für den Text-Beleg sind alle oc, deren
   // dateForce > korpusStand WÄRE (over-inclusive — baueRevisionen prüft die Bedingung
   // erneut). Nur mit Pin auflösbar (Konsolidierungs-ELI = abstractEli + Korpus-Stand-Datum).
-  const kandidatOcs = [...new Set(
-    bBindings.filter((b) => (b.dateForce?.value ?? '') > korpusStand).map((b) => b.oc?.value).filter((v): v is string => !!v),
-  )];
+  // Pfad-(c)-Kontext dieses Erlasses (nur mit Pin; ohne Pin bleibt der Alt-Pfad (b)).
+  let kontext: RevisionsKontext | undefined;
+  if (pin) {
+    const st = abstractStamm.get(pin.abstractEli) ?? {};
+    const ausw = auswirkungen.get(pin.abstractEli) ?? [];
+    const eigeneOcs = new Set(bBindings.map((b) => b.oc?.value));
+    const ocStamm: Record<string, OcStamm> = {};
+    for (const oc of [...new Set(ausw.map((a) => a.oc))].sort()) {
+      if (eigeneOcs.has(oc)) continue;
+      const s = stammAusB(oc) ?? ocStammNurC.get(oc);
+      if (s) ocStamm[oc] = Object.fromEntries(Object.entries(s).filter(([, v]) => v !== undefined)) as OcStamm;
+    }
+    kontext = { abstractEli: pin.abstractEli, basicAct: st.basicAct, inkrafttreten: st.inkrafttreten, aufhebung: st.aufhebung, auswirkungen: ausw, ocStamm };
+  } else ohneKontext++;
+
+  const kandidatOcs = [...new Set([
+    ...bBindings.filter((b) => (b.dateForce?.value ?? '') > korpusStand).map((b) => b.oc?.value),
+    ...(kontext?.auswirkungen ?? []).filter((a) => (a.datum ?? '') > korpusStand).map((a) => a.oc),
+  ].filter((v): v is string => !!v))].sort();
   const konsEli = pin ? `${pin.abstractEli}/${pin.konsKompakt}` : null;
   const belegteOcs = konsEli && kandidatOcs.length ? await ermittleBelegteOcs(konsEli, kandidatOcs, fetch) : new Set<string>();
   belegtTrotzDatum += belegteOcs.size;
@@ -136,9 +177,11 @@ for (const m of meta as ErlassMeta[]) {
       // check:revisionen (OFFLINE) erneut gegen Fedlex fragen. Trägt seit Auflage f
       // (Gegenprüfung PR #827) auch die Ziel-Fundstelle (RectifiesInfo), nicht mehr nur die SR.
       rectifiesInfoProOc: Object.fromEntries([...rectifiesInfoProOc.entries()].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))),
+      // Pfad (c), 23.9.2026: Re-Parse ohne Re-Crawl (§11) — check:revisionen baut offline nach.
+      kontext: kontext ?? null,
     }, null, 2) + '\n', 'utf8');
 
-  const sidecar = baueRevisionen(m, bBindings, aStaende, korpusStand, ocZuBotschaft, heute, belegteOcs, rectifiesInfoProOc);
+  const sidecar = baueRevisionen(m, bBindings, aStaende, korpusStand, ocZuBotschaft, heute, belegteOcs, rectifiesInfoProOc, kontext);
   writeFileSync(`${SIDECAR_DIR}/${m.key}.json`, serialisiere(sidecar), 'utf8');
 
   const ae = sidecar.revisionen.filter((r) => r.art === 'aenderung');
@@ -156,4 +199,4 @@ for (const m of meta as ErlassMeta[]) {
 if (datumsfehler.length) { console.error(`revisionen: ${datumsfehler.length} Eintrag(e) mit Beschluss-Datum > ${heute} (Datenfehler): ${datumsfehler.slice(0, 5).join(', ')} …`); process.exit(1); }
 
 console.log(`revisionen: ${meta.length} Sidecars → ${SIDECAR_DIR}/`);
-console.log(`  Erlasse mit ≥1 Änderung ${mitAenderung}/${meta.length} · Änderungs-Einträge ${gesamtEintraege} · Botschafts-Join ${mitBotschaft} · Sammelerlass-Marker ${sammelMarker} · künftig-in-Kraft ${kuenftig} · Finding-4b-Text-Beleg trotz Datum ${belegtTrotzDatum} · §8-Marker (Berichtigung fremdes AS-Dokument) ${fremdeAsDokumente}${ohnePin ? ` · ohne Pin ${ohnePin}` : ''}`);
+console.log(`  Erlasse mit ≥1 Änderung ${mitAenderung}/${meta.length} · Änderungs-Einträge ${gesamtEintraege} · Botschafts-Join ${mitBotschaft} · Sammelerlass-Marker ${sammelMarker} · künftig-in-Kraft ${kuenftig} · Finding-4b-Text-Beleg trotz Datum ${belegtTrotzDatum} · §8-Marker (Berichtigung fremdes AS-Dokument) ${fremdeAsDokumente}${ohnePin ? ` · ohne Pin ${ohnePin}` : ''}${ohneKontext ? ` · ohne Pfad-(c)-Kontext ${ohneKontext}` : ''}`);
