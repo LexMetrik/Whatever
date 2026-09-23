@@ -49,6 +49,12 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // V2c (Verträge) — drei weitere optionale Slots (detailgradAusEinstellungen,
 // vorauswahl, pruefenFuss) und zwei Erweiterungen (blockerKasten mit eigener
 // Überschrift, ortFehler optional), wieder je per Default deckungsgleich.
+// V2b (Familie/Klagen) — Slots für die Mängel-gesteuerten Eingaben ohne
+// Speicher: speicherKey/datumFehler optional, defaultsZusatz (Adress-Prefill,
+// je Render gelesen wie zuvor inline), fehlerEingabeImLetztenSchritt,
+// ortDatumFeld, overlineZusatz, weiterDeaktiviert, vorschauKompakt,
+// vorschauErsatz, direktExportBlocker, pruefenFuss als Funktion. Wieder je
+// per Default deckungsgleich mit dem bisherigen Verhalten der übrigen Nutzer.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
@@ -74,7 +80,12 @@ export interface VorlagenSeitenConfig<
   /** Katalog-Id (startseiteConfig) — liefert rechtsgebiet, norms, modus/output. */
   cardId: string;
   defaults: T;
-  speicherKey: string;
+  /** Fehlt er, bleibt der Zustand nur im Speicher (Parteidaten, «nicht gespeichert»). */
+  speicherKey?: string;
+  /** Zusatz-Defaults, bei JEDEM Render gelesen und über `defaults` gelegt
+   *  (z. B. Prefill-Brücke aus `?…`) — wirkt beim ersten Render und beim
+   *  Zurücksetzen, wie zuvor der Inline-Ausdruck am useWizardState-Aufruf. */
+  defaultsZusatz?: () => Partial<T>;
   /** Reine Engine-Referenzen (src/lib) — keine Logik in dieser Schicht. */
   zusammenstellen: (a: T) => Z;
   pruefeGates: (a: T, z: Z) => VorlagenGates;
@@ -109,6 +120,12 @@ export interface VorlagenSeitenConfig<
    *  `gates` für Seiten, die schon in einem Eingabe-Schritt einen fachlichen
    *  Blocker spiegeln (z. B. Nichtbekanntgabe: Rechtsvorschlag-Voraussetzung). */
   fehlerEingabe: (a: T, schritt: number, gates: VorlagenGates) => string[];
+  /** true = `fehlerEingabe` liefert auch die Fehler des letzten Schritts
+   *  (Mängel-Listen mit Schritt-Index); die Ort/Datum/Blocker-Regel entfällt
+   *  (Default false). */
+  fehlerEingabeImLetztenSchritt?: boolean;
+  /** Weiter-Sperre des Rahmens übersteuern (Default: Fehler des Schritts). */
+  weiterDeaktiviert?: (ctx: SeiteCtx<T, Z>, schritt: number) => boolean;
   // «pruefen»-Schritt
   /** «Export gesperrt»-Box (role=alert) mit den gates.blocker oben im
    *  Prüfen-Schritt (Default false). Ein String ersetzt die Überschrift. */
@@ -120,12 +137,17 @@ export interface VorlagenSeitenConfig<
    *  false z. B. bei Mahnung, deren Navigations-Fehler nur Ort/Datum prüft
    *  (Blocker sperren dort nur den Export, nicht die Fehlerbox). */
   blockerImLetztenSchritt?: boolean;
+  /** Ort/Datum-Raster im Prüfen-Schritt zeigen (Default true). false, wenn
+   *  die Seite Ort/Datum in einem Eingabe-Schritt erfasst. */
+  ortDatumFeld?: boolean;
   ortDatumLabel: string;
   ortPlaceholder: string;
   /** Fehlertext bei leerem Ort. Fehlt er, ist der Ort keine Pflichtangabe
    *  (kein Eintrag in Fehlerbox/Sammel-Befund, kein aria-invalid). */
   ortFehler?: string;
-  datumFehler: string;
+  /** Fehlertext bei unvollständigem Datum. Fehlt er, ist das Datum keine
+   *  Pflichtangabe dieses Schritts (analog `ortFehler`). */
+  datumFehler?: string;
   /** Inhalt der lc-highlight-Sektion ÜBER der Bestätigungs-Checkbox. Als
    *  Funktion, wenn ein Bullet von den Antworten abhängt. */
   bestaetigung: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
@@ -137,8 +159,19 @@ export interface VorlagenSeitenConfig<
    *  zu verkleinern (§6). Die Vereinheitlichung ist eine SICHTBARE Änderung und
    *  gehört in einen eigenen, deklarierten Schritt (W2·17-UI-BEFUNDE-B10). */
   bestaetigungLabelCls?: string;
-  /** Block UNTER der Export-Leiste (z. B. «Offene Verifikationen»). */
-  pruefenFuss?: ReactNode;
+  /** Block UNTER der Export-Leiste (z. B. «Offene Verifikationen»). Als
+   *  Funktion, wenn er von den Antworten abhängt. */
+  pruefenFuss?: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
+  /** Anhang an die Overline (` · <Zusatz>`), z. B. der gewählte Kanton. */
+  overlineZusatz?: (ctx: SeiteCtx<T, Z>) => string;
+  // Vorschau
+  /** VorschauPanel in kompakter Schrift (Default false). */
+  vorschauKompakt?: boolean;
+  /** Ersetzt das VorschauPanel, solange es einen Knoten liefert (z. B.
+   *  fachlicher Stopp: «Kein Dokument»). */
+  vorschauErsatz?: (ctx: SeiteCtx<T, Z>) => ReactNode;
+  /** Direkt-Export der Vorschau an gates.blocker binden (Default true). */
+  direktExportBlocker?: boolean;
   // Export
   banner: PdfBanner;
   dateiBasis: string;             // z. B. 'Abtretungserklaerung' → .pdf/.docx
@@ -165,9 +198,10 @@ export function VorlagenSeite<
   })();
   // Globaler Vorlagen-Detailgrad (Einstellungen) als Default, wenn die Vorlage das
   // Feld führt — ein gespeicherter Wizard-Stand oder eine Wizard-Wahl gewinnt weiter.
-  const defaults = config.detailgradAusEinstellungen !== false && 'detailgrad' in config.defaults
-    ? { ...config.defaults, detailgrad: getVorlagenDetailgrad() }
-    : config.defaults;
+  const basis = config.defaultsZusatz ? { ...config.defaults, ...config.defaultsZusatz() } : config.defaults;
+  const defaults = config.detailgradAusEinstellungen !== false && 'detailgrad' in basis
+    ? { ...basis, detailgrad: getVorlagenDetailgrad() }
+    : basis;
   const { a, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
     useWizardState<T>({ defaults, speicherKey: config.speicherKey, normalisieren: config.normalisieren, prefill });
 
@@ -187,10 +221,10 @@ export function VorlagenSeite<
   const letzter = config.schritte.length - 1;
 
   const fehlerImSchritt = (i: number): string[] => {
-    if (i !== letzter) return config.fehlerEingabe(a, i, gates);
+    if (i !== letzter || config.fehlerEingabeImLetztenSchritt) return config.fehlerEingabe(a, i, gates);
     const f: string[] = [];
     if (config.ortFehler && !a.ort.trim()) f.push(config.ortFehler);
-    if (!istIsoDatum(a.datum)) f.push(config.datumFehler);
+    if (config.datumFehler && !istIsoDatum(a.datum)) f.push(config.datumFehler);
     if (config.blockerImLetztenSchritt !== false) f.push(...gates.blocker);
     return f;
   };
@@ -200,7 +234,7 @@ export function VorlagenSeite<
     docxAktiv(card) ? { label, banner: config.banner, dateiName: `${config.dateiBasis}.docx` } : undefined;
 
   const ortFehlt = !config.ortFehler || a.ort.trim() ? '' : config.ortFehler;
-  const datumFehlt = istIsoDatum(a.datum) ? '' : config.datumFehler;
+  const datumFehlt = !config.datumFehler || istIsoDatum(a.datum) ? '' : config.datumFehler;
 
   const pruefenInhalt = (
     <div className="space-y-5">
@@ -234,13 +268,13 @@ export function VorlagenSeite<
           DatumsFeld trägt die Fehlerzeile, siehe Field-Kommentar). Alles
           Übrige liegt in früheren Schritten und wird oben im Sammel-Befund
           samt Sprung angezeigt. */}
-      <Field label={config.ortDatumLabel} fehlt={ortFehlt || datumFehlt ? [ortFehlt, datumFehlt].filter(Boolean).join(' · ') : undefined}>
+      {config.ortDatumFeld !== false && <Field label={config.ortDatumLabel} fehlt={ortFehlt || datumFehlt ? [ortFehlt, datumFehlt].filter(Boolean).join(' · ') : undefined}>
         <div className="grid grid-cols-[1fr_11rem] gap-3">
           <input className={inputCls} aria-invalid={ortFehlt ? true : undefined}
             value={a.ort} onChange={(e) => set('ort', e.target.value as T['ort'])} placeholder={config.ortPlaceholder} />
           <DatumsFeld value={a.datum} onChange={(v) => set('datum', v as T['datum'])} className={inputCls} />
         </div>
-      </Field>
+      </Field>}
 
       <section className="lc-highlight space-y-3">
         {typeof config.bestaetigung === 'function' ? config.bestaetigung(ctx) : config.bestaetigung}
@@ -256,7 +290,7 @@ export function VorlagenSeite<
         kopiert={kopiert} onKopieren={kopieren}
         pdf={{ label: config.pdfLabel, banner: config.banner, dateiName: `${config.dateiBasis}.pdf` }}
         docx={docxZiel(config.docxLabel)} />
-      {config.pruefenFuss}
+      {typeof config.pruefenFuss === 'function' ? config.pruefenFuss(ctx) : config.pruefenFuss}
     </div>
   );
 
@@ -264,7 +298,7 @@ export function VorlagenSeite<
 
   return (
     <VorlagenWizardRahmen
-      overline={`${card?.rechtsgebiet ?? config.overlineFallback} · Vorlage`}
+      overline={`${card?.rechtsgebiet ?? config.overlineFallback} · Vorlage${config.overlineZusatz ? ` · ${config.overlineZusatz(ctx)}` : ''}`}
       titel={config.titel}
       intro={config.intro}
       norms={card?.norms ?? []}
@@ -273,13 +307,14 @@ export function VorlagenSeite<
       schritte={config.schritte} schritt={schritt} setSchritt={setSchritt}
       fehler={fehler}
       fehlerJeSchritt={fehlerImSchritt}
+      weiterDeaktiviert={config.weiterDeaktiviert?.(ctx, schritt)}
       kopfSchalter={config.kopfSchalter?.(ctx)}
       inhalt={inhalt}
       fussnote={config.fussnote}
-      vorschau={<VorschauPanel ergebnis={ergebnis} direktExport={{
+      vorschau={config.vorschauErsatz?.(ctx) ?? <VorschauPanel ergebnis={ergebnis} kompakt={config.vorschauKompakt} direktExport={{
         pdf: { label: 'PDF', banner: config.banner, dateiName: `${config.dateiBasis}.pdf` },
         docx: docxZiel('DOCX'),
-        blocker: gates.blocker,
+        blocker: config.direktExportBlocker === false ? undefined : gates.blocker,
       }} />}
     />
   );
