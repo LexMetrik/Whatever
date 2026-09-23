@@ -358,7 +358,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
               paneZiel={overlayZiel} paneRolle={paneRolle}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
-              normZitat={normZitat(panelArtikel, erlass.kuerzel)}
+              normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel}
               bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
               steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />

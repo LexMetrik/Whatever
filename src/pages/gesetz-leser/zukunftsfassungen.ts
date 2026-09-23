@@ -143,3 +143,40 @@ export function zukunftsHinweis(
 
   return { art, ab, satz, weitere, link: fassungsLink(erlass.quelleUrl, ab) };
 }
+
+// ═══ W2·29-WERKBANK-LESER S6 · Befund AE-1 (23.9.2026) · ZEITBEZUG EINER ÄNDERUNG ═══
+//
+// BEFUND: Der Reiter «Änderungen» zeigte künftige Änderungen (OR 01.07.2027,
+// BV 01.01.2029) ganz oben, gleich gestaltet wie geltende, mit dem Tooltip «In
+// Kraft, im gepinnten Normtext aber noch nicht eingearbeitet». Der Marker
+// `nichtKonsolidiert` heisst aber nur «tritt später in Kraft als der
+// Korpus-Stand» (Herleitung `lib/normtext/revisionen.fruehestesInKraft`) — er
+// umfasst künftige Änderungen. Gemessen 23.9.2026 mit Stichtag 2026-09-21:
+// 109 markierte Zeilen, davon 105 künftig und 4 tatsächlich geltend.
+//
+// Der Stichtag ist DERSELBE wie oben im Kopf (`currency.geprueftAm`, §2/§5) und
+// dieselbe Grenze: `d <= stichtag` = am Stichtag in Kraft (Grenzfall
+// Inkrafttreten = Stichtag gilt als in Kraft, wie `ab <= stichtag` →
+// 'inzwischen'). Ohne Stichtag wird «in Kraft» nie behauptet ('unbestimmt').
+//
+//   'kuenftig'     Inkrafttreten nach dem Stichtag — auch ohne Marker, denn
+//                  «geltend» darf nie aus einem fehlenden Marker folgen
+//   'inKraftOffen' Marker + in Kraft am Stichtag: im gezeigten Text fehlt sie
+//   'unbestimmt'   Marker, aber kein Stichtag/kein ISO-Datum: nur «noch nicht
+//                  eingearbeitet», ohne Zeitaussage
+//   'normal'       alles übrige
+export type AenderungZeitbezug = 'kuenftig' | 'inKraftOffen' | 'unbestimmt' | 'normal';
+
+const ISO_TAG = /^\d{4}-\d{2}-\d{2}$/;
+
+export function aenderungZeitbezug(
+  r: { dateEntryInForce: string; nichtKonsolidiert?: boolean },
+  stichtag: string | null | undefined,
+): AenderungZeitbezug {
+  const d = r.dateEntryInForce;
+  const tag = stichtag && ISO_TAG.test(stichtag) && ISO_TAG.test(d) ? stichtag : null;
+  // ISO-Daten vergleichen lexikografisch = chronologisch (§2, keine Date-Arithmetik).
+  if (tag !== null && d > tag) return 'kuenftig';
+  if (!r.nichtKonsolidiert) return 'normal';
+  return tag !== null ? 'inKraftOffen' : 'unbestimmt';
+}
