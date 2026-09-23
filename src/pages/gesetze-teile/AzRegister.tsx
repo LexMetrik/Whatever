@@ -76,18 +76,18 @@ function AzZeile({ e }: { e: BrowseErlass }) {
   const zeigeKuerzel = e.kuerzel && e.kuerzel !== e.titel && !e.titel.includes(e.kuerzel);
   const inhalt = (
     <>
-      <span className="min-w-0 break-words text-ink-700 group-hover/az:text-brass-700 transition-colors">
+      <span className="min-w-0 break-words text-ink-700 group-hover/az:text-ink-900 group-hover/az:underline underline-offset-2">
         {e.titel}
         {zeigeKuerzel && <span className="ml-2 text-xs text-ink-500">({e.kuerzel})</span>}
       </span>
       <span className="shrink-0 flex items-baseline gap-2 text-xs text-ink-500">
         <span>{ebeneLabel(e)}</span>
         {/* 'nur-live-link' führt ehrlich nach aussen (§8) — wie ErlassZeile. */}
-        {!istLesbar(e) && <span aria-hidden className="text-brass-700">↗</span>}
+        {!istLesbar(e) && <span aria-hidden className="text-reg-g">↗</span>}
       </span>
     </>
   );
-  const cls = 'group/az grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-3 rounded px-2 py-1 text-body-s no-underline hover:bg-brass-100/30 transition-colors';
+  const cls = 'group/az grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-3 px-2 py-1 text-body-s no-underline lc-hover-flaeche';
   return istLesbar(e)
     ? <Link to={basePath} className={cls}>{inhalt}</Link>
     : <a href={e.quelleUrl} target="_blank" rel="noopener noreferrer" className={cls}>{inhalt}</a>;
@@ -136,7 +136,7 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
           onClick={() => { manuell.current = true; setOffen((o) => !o); }}
           className="group flex w-full flex-wrap items-baseline gap-x-3 gap-y-1 text-left"
         >
-          <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight group-hover:text-brass-700 transition-colors">
+          <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight group-hover:underline underline-offset-4">
             A–Z-Register
           </span>
           {/* Kein «Bund/Kantone/International» im Button-Namen: die Wörter
@@ -173,12 +173,12 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
                       aria-pressed={aktiv}
                       aria-label={`${k} — ${n === 0 ? 'keine Erlasse' : `${n} ${n === 1 ? 'Erlass' : 'Erlasse'}`}`}
                       onClick={() => setBuchstabe((b) => (b === k ? null : k))}
-                      className={`num min-w-9 rounded px-1.5 py-1 text-body-s font-medium transition-colors ${
+                      className={`num min-w-9 px-1.5 py-1 text-body-s font-medium border-b-2 transition-colors ${
                         aktiv
-                          ? 'bg-brass-100 text-brass-800'
+                          ? 'border-reg-g text-ink-900'
                           : n === 0
-                            ? 'cursor-default text-ink-300'
-                            : 'text-ink-700 lc-hover-flaeche hover:text-brass-700'
+                            ? 'border-transparent cursor-default text-ink-300'
+                            : 'border-transparent text-ink-700 lc-hover-flaeche hover:text-ink-900'
                       }`}
                     >
                       {k}
@@ -225,7 +225,7 @@ export function AzRegister({ erlasse }: { erlasse: BrowseErlass[] }) {
                 role="region"
                 aria-label="Register-Liste"
                 tabIndex={0}
-                className="max-h-96 overflow-y-auto overscroll-contain rounded border border-line/70 p-2"
+                className="max-h-96 overflow-y-auto overscroll-contain border-y border-rule-soft py-1"
               >
                 <ul
                   /* Remount je Klasse (CI-Befund PR #347, Rest-Shift): OHNE den

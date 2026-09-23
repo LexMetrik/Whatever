@@ -37,11 +37,11 @@ function ThemaMitgliedZeile({ e, m }: { e: BrowseErlass; m: ThemaMitglied }) {
     <Link
       to={mitgliedPfad(m)}
       title={m.beleg}
-      className="flex items-baseline gap-2 text-body-s no-underline rounded px-2 py-1 hover:bg-brass-100/30 transition-colors min-w-0"
+      className="flex items-baseline gap-2 text-body-s no-underline px-2 py-1 lc-hover-flaeche hover:[&>span:first-child]:underline min-w-0"
     >
       <span className="font-medium text-ink-700 shrink-0">{e.kuerzel}</span>
       {m.spanne
-        ? <span className="num text-xs text-brass-700 shrink-0">{m.spanne}</span>
+        ? <span className="num text-xs text-reg-g shrink-0">{m.spanne}</span>
         : <span className="text-ink-500 truncate">{e.titel}</span>}
       {m.spanne && <span className="text-ink-500 truncate">{e.titel}</span>}
     </Link>
@@ -91,12 +91,12 @@ function ThemaKarte({ t, proKey }: { t: RechtsgebietThema; proKey: Map<string, B
         <span className="lc-overline mr-1">Verzahnt</span>
         {werkzeuge.map((c) => (
           <Link key={c.slug} to={`/rechner/${c.slug}`}
-            className="lc-chip no-underline hover:border-brass-400 hover:text-brass-700 transition-colors">
+            className="lc-chip no-underline hover:text-ink-900">
             {c.titel}
           </Link>
         ))}
         <Link to={`/rechtsprechung?rg=${t.gebiet}`}
-          className="lc-chip no-underline hover:border-brass-400 hover:text-brass-700 transition-colors">
+          className="lc-chip no-underline hover:text-ink-900">
           Rechtsprechung · {GEBIET_LABEL[t.gebiet]}
         </Link>
       </div>
@@ -129,15 +129,14 @@ function Grundgeruest({ erlasse }: { erlasse: BrowseErlass[] }) {
         return (
           <details key={g.id} open={offen.has(g.id)}
             onToggle={(e) => { if ((e.currentTarget as HTMLDetailsElement).open !== offen.has(g.id)) toggle(g.id); }}
-            className="lc-card overflow-hidden">
-            <summary className="flex items-baseline gap-3 cursor-pointer select-none px-5 py-3 hover:bg-brass-100/30">
+            className="group border border-rule-soft">
+            <summary className="flex items-baseline gap-3 cursor-pointer select-none px-4 py-3 lc-hover-flaeche after:content-none">
+              <span aria-hidden className="text-ink-500 transition-transform group-open:rotate-90">›</span>
               <span className="font-sans font-semibold text-ink-900 text-body-l tracking-tight">{g.label}</span>
-              <span className="num text-body-s text-ink-500 ml-auto">{items.length}</span>
+              <span className="num text-body-s text-ink-600 ml-auto">{items.length}</span>
             </summary>
-            {/* D24: EIN Raster statt zweier verschieden hoch umbrechender
-                Spalten — Zeile i links und rechts auf derselben Höhe. */}
-            <div className="px-5 pb-4 pt-3 border-t border-line">
-              <ErlassTabelle erlasse={items} art="bund"
+            <div className="px-4 pb-4 pt-3 border-t border-rule-soft">
+              <ErlassTabelle erlasse={items}
                 beschriftung={`${g.label} — Kürzel, Titel, SR-Nummer`} />
             </div>
           </details>
