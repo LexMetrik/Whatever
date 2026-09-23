@@ -64,6 +64,10 @@ Rückbau der alten Hülle **erzwungen** wird (§2) statt gehofft. **Quellen:**
   und `QS-DOKU-DIAET` (Go David 22.9.2026 «einverstanden zu allem»).
 - **Löschbilanz je Rubrik-PR:** gelöschte Zeilen ≥ 50 % der hinzugefügten in `src/components`
   + `src/pages`. Wächst der Bestand netto, war es kein Umbau, sondern eine zweite Hülle.
+- **Flacker-Regel (David 23.9.2026, Chat: ‹können solche probleme gleich mitgefixt werden?› — ja):**
+  Jeder Rubrik-Schritt fixt die flackernden e2e-Specs seines Bereichs an der Wurzel statt
+  Ausnahmen zu sammeln; Nachweis `check:e2e-flake` grün ohne neuen Ausnahme-Eintrag, Wurzel im
+  Commit-Body.
 
 ## §3 · Schritt 0 — das Tor (`W2·29-WERKBANK-TOR`, `feld: betrieb`)
 
@@ -133,6 +137,156 @@ Reihenfolge nach Produktwert, Dep-Kette
 **Definition of Done jedes Rubrik-Schritts** (zusätzlich zu Skill `auftrag` Ziff. 4): **«Rückbau-
 Liste dieses Schritts abgearbeitet (Dateien gelöscht, Posten/Schritte in die Chronik, Fahrpläne
 ins Archiv), `check:sediment` grün.»** Ohne Rückbau ist der Schritt nicht `done`.
+
+## §5a · LESER — Bauplan in Scheiben (Planung 23.9.2026)
+
+**Kernbefunde** (Planung lex-recherche Opus, 23.9.2026): (1) Kein Leser-PR landet automatisch,
+solange die zwei Flackerer vom 22.9. nicht behoben sind — sie stehen nicht in
+`e2e/flake-ausnahmen.json`, der Wächter ist hart → **S0 zuerst**. (2) Für «Normtext-Körper golden
+byte-gleich» gab es kein Instrument (`golden/lexmetrik-golden.json` nur 256 Rechner-/Vorlagen-Fälle,
+Normtext-Snapshot nur Daten) → S0 baut die Kern-Probe. (3) `norm-sprung.e2e.ts` ist kein Leser-Test
+(`/gesetze`, globale Kopf-Suche) — S0 nimmt ihn trotzdem mit.
+
+### 1 Ist-Karte (gl/ = `src/pages/gesetz-leser/`; CSS-Zeilen im Tokens-Zweig)
+
+| Bauteil | Hauptdateien | Zeilen | CSS |
+|---|---|---|---|
+| Kopf+Titelblatt+Übersicht | v3/LeserKopf, LeserAnsichtV3, LeserModusWahl/RubrikenWahl/AenderungsWahl, kopfStufen.ts, parts/ErlassLeserKopf(489), ErlassKopfBlock, v3/LeserErlassKopfZone, LeserUebersicht, UebersichtBox, uebersichtAngaben.ts(417/420), WeiterlesenChip | 3380 | lc-v3-*, Ä1 1584ff, Fokusring 2335–2387, D5 2930ff, Chip-Metazeile 2636ff |
+| Seitenspalte/Gliederung | parts/SektionBaumTOC(602), v3/LeserGliederung, LeserSeitenleiste, LeserGliederungSchiene, parts/GliederungSheet, v3/LeserLeisteSheet, parts/ArtikelIndex, leisteAufbau | 1364 (+2103 Modell bleibt) | lc-leiste-*, 2388ff, 3828ff, 3842ff |
+| Lesespalten-Hülle | v3/LeserRahmenV3(418), LeserLeseZeile, LeserLesespalte, rahmenSpalten, leserGeometrie, satzspiegel, parts/SektionKopf | 1964 | lc-leser, Schriftskala 1609ff, Zeilenmass 1704ff, nt-art-cv/nt-anker 1880–1921 |
+| Artikel-Rahmen+Funktionszeile | parts/ArtikelLeser(777), .kopfteile, .bezuegeFuss, .leitfaelle, Funktionszeile, BezuegeZeile, ArtikelAktionen, ArtikelHistorie | 2603 | lr7-bez*/lr7-kopf* 4044–4396, 4080ff, D30 4240ff, lr-/lr6- 3998–4111 |
+| Such-Zone | v3/SuchZone, SuchSprungFeld, SuchBereichWahl, TrefferLeiste, LeserTrefferListe, LeserTrefferSpalte, LandkarteZone; `src/components/leser/*` (GETEILT mit EntscheidLeser) | 2151 (+1557 Suchlogik bleibt) | 3520–3700, ::highlight 3894 |
+| Erlass-Blatt/Beiwerk | v3/LeserPanel, LeserPanelZone, LeserPanelOeffner, Panel{Entscheide,Materialien,Aenderungen,Anwendung,Sachgebiet,FilterZeile}, ReiterAktion, panelModell | 2259 | Popover 3471ff, Reiter/Boden 3092–3295 (teils geteilt) |
+| Einzel-Artikel | v3/LeserEinzelAnsicht, einzelModus, useEinzelModus, parts/ArtikelDossier, ArtikelNachbarn | 1032 | lr7-einzel-*, lr7-dossier-* |
+| Normtext-Kern (**bleibt byte-gleich**) | `src/components/normtext/ArtikelBody*`, ArtikelTabellen, BildElemente, tarifText, wortverbinder | 1326 | [data-lese], Tabellen-Regeln |
+
+Nicht LESER: normtext/{ErlassKarte, GesetzeGliederung, RechtsgebietSicht, InternationalRubriken,
+Erfassungsgrad, MassgebendeGesetze} → KATALOGE. Geteilt: lr8-* und einzelne lr7-* an
+`src/components/entstehung/*` → bis REST. CSS: 189 Klassen mit Leser-Präfix, nur 50 exklusiv;
+~253 Regelzeilen in 100 Blöcken; index.css 3678/5206 Zeilen Kommentar.
+
+### 2 Soll (Board) → Bauteil
+
+- **Kopfzeile** «‹ Gesetze · OR Erlass ▾ · Gliederung ausblenden · ◧ · Ansicht ▾»: Werkbank-Typo,
+  2-px-Tintenlinie, Textknöpfe; bleiben: alle Griffe/Menüs (2.3.12), Stand-Zeile, `data-v3-*`.
+- **Titelblatt:** ein Block statt drei Bausteinen; alle Angaben 2.3.5 wörtlich (§8).
+- **Gliederung links 250 px:** aktiver Eintrag `--reg-g-flaeche` (Board #EEF1F6 ist kein Token;
+  Token gilt); Aufbau/Klapp/Spy/Sheet <1024 bleiben.
+- **Artikel:** Randtitel/«Art. N» Werkbank-Satz, Funktionszeile als Linienzeile; Kern byte-gleich;
+  2.3.9 vollständig.
+- **Blatt offen 380 px:** Reiter als Registerfläche reg-r/m/w/g-flaeche; Inhalte/Filter/Zähler
+  2.3.6–2.3.8, 2.4 bleiben.
+- **Blatt zu (52-px-Schiene), Suche oben:** Feld/Panel Werkbank-Stil; Feld IMMER im Kopf (2.3.11),
+  D38-Liste, Deterministik.
+- **Unter-Gesetze (ein Artikel):** Karten/Pfad Werkbank-Stil; ←/→, Nachbarn, Dossier bleiben.
+
+NICHT bauen (Board > Produkt): «Entscheide zu den Artikeln auf dieser Seite» mit Zählern,
+«Mappen»-Reiter, gelbe aktive Fundstelle #F3E3A6.
+
+### 3 Scheiben (Session 1: S0+S1 · 2: S2+S3 · 3: S4+S5; jede allein landbar)
+
+- **S0 Prüfstrasse vorab** (`feld: betrieb`, unsichtbar): Flacker-Fixes (Ziff. 4); Kern-Probe als
+  ERWEITERUNG `src/tests/ArtikelBody.test.tsx` (kein neues Tor): `renderToStaticMarkup` über feste
+  Stichprobe (OR 257d, je ein Fall T-A…T-F, Formelbild, «aufgehoben», «leer, ungeklärt»,
+  Kantonsartikel), zwei Hashes (mit/ohne class-Attribute). Zaunliste im PR-Body:
+  `git diff --stat origin/main -- src/components/normtext/{ArtikelBody*,ArtikelTabellen.tsx,BildElemente.tsx,tarifText.ts,wortverbinder.ts} src/lib/normtext/`
+  leer. Sonden `leser-suche-a35-a40-a41`, `norm-sprung`, `helpers/leserBereit.ts`. Rot-Beweis:
+  Kern-Probe rot (vertauschte p-Klasse); Flackerer rot→grün je n=20 unter Last. dep keine.
+- **S1 Artikel-Rahmen, Lesespalte, Funktionszeile:** Klassen-/Token-Tausch in
+  parts/ArtikelLeser.kopfteile, Funktionszeile, BezuegeZeile, ArtikelAktionen, .bezuegeFuss,
+  ArtikelHistorie, SektionKopf, v3/LeserLesespalte, LeserLeseZeile; ArtikelLeser.tsx nur Klassen
+  (Struktur-Hash gleich). Löschen lr7-bez*/lr7-kopf*, lr-/lr6-Reste samt Kommentarblöcken
+  4044–4396, 4080–4270. Sonden: leser-d35-f1-funktionszeile, w226-funktionszeile,
+  leser-bezuege-fuss-d34, leser-funktionszeile-zaehler (CLS), leser-marken-geometrie,
+  w224-d40-fassung, gesetze-historie-badge, leser-lesemass, druck-fundstellen-z2,
+  a31a-fussnote-inline. Risiko 2.3.9 (Akkordeon, Esc, Hover, Druck), Lesemass. dep S0.
+- **S2 Kopf, Titelblatt, Übersicht:** ErlassLeserKopf+LeserErlassKopfZone+ErlassKopfBlock → EIN
+  Titelblatt (ErlassLeserKopf bleibt für FruehAnsicht pdf-embed/nur-live-link); Kopf restylen;
+  uebersichtAngaben.ts zuerst schneiden (3 Zeilen Luft zum 420-Deckel leser-v3-fundament.test.ts).
+  Sonden 45 Kopf-Specs (leser-v3-kopfzeile, leser-v3-kopf, leser-kopf-v2, leser-kopf-cls-s3,
+  leser-v3-kontext-cls, w224-d35-f2-kopf, leser-v3-uebersicht, leser-v3-schriftskala,
+  leser-optionen, w224-d35-f4-menue). Ziel netto −150 src. Risiko CLS, `--nt-stick`/
+  useStickAusgleich. dep S1.
+- **S3 Seitenspalte/Gliederung:** Stil SektionBaumTOC, v3/LeserGliederung, LeserSeitenleiste,
+  LeserGliederungSchiene, GliederungSheet, LeserLeisteSheet, ArtikelIndex; aktiv
+  `--reg-g-flaeche`; wenn möglich Schiene+LeisteSheet in leisteAufbau aufgehen; Modell-Dateien
+  unberührt. Sonden 32 (leser-gliederung-a33, leser-spy-w25d, leser-marke-mitlaufen,
+  leser-klapp-sonde, leser-toc-sprung, gesetze-ux-9punkte); Vitest gliederung-sichtbarkeit/
+  -zustandsfolgen UNVERÄNDERT. Risiko Scroll-Spy/rAF — nur headless
+  (`.claude/rules/webseiten-pruefung.md`). dep S2.
+- **S4 Such-Zone, Trefferliste, Landkarte:** Stil v3/SuchZone, SuchSprungFeld, SuchBereichWahl,
+  TrefferLeiste, LeserTrefferListe, LeserTrefferSpalte, LandkarteZone; `src/components/leser/*`
+  nur Token-Tausch (geteilt); leserSuche.ts, suchHighlight.ts, inhalt-suchtreffer.tsx unberührt;
+  CSS 3520–3700 löschen. Sonden 24 (leser-v3-suchfeld-ueberall, leser-d38-treffer-lesespalte,
+  leser-suche-vertrag-b8, leser-w228-landkarte, leser-v3-fokusring-suchfeld,
+  leser-v3-highlight-split, entscheid*). Ausnahme leser-v3-suche-ohne-gliederung (19/20) mit
+  S0-Bereitschaftshelfer fixen und streichen. dep S3.
+- **S5 Erlass-Blatt, Einzel-Artikel, Rückbau:** Blatt-Reiter Registerfläche; Panel*.tsx,
+  ReiterAktion; LeserEinzelAnsicht, ArtikelNachbarn, ArtikelDossier; CSS lr7-einzel-*,
+  lr7-dossier-* löschen; Rückbau Ziff. 5. Sonden 23 Blatt (leser-v3-blatt Ausnahme 7/20 abbauen,
+  leser-v3-panel-*, leser-v3-scrim-b7n1, hist-ansicht-w25i, entstehung-synopse-leser) + 3 Einzel
+  (leser-einzelmodus, leser-nachbar-rohdaten, a11y). 2.4 zieht nur mit. dep S4.
+
+**Querschnitt:** `data-*`-Hooks unverändert (e2e greift fast nur darüber: data-v3-kopf 104 Treffer;
+.lc-leser 61, lr7-* 101). 78 Vitest-Dateien lesen Leser-/Normtext-/CSS-Quellen → vor Push greppen,
+deklariert mitziehen. 116/168 e2e-Specs mit gesetze/. Keine Screenshot-Tests → Sichtprüfung
+1280/390 hell/dunkel in den PR-Body.
+
+### 4 Flacker-Fixes (S0) — Beleg Lauf 35779952911, Job 106923708900, Shard 3/8, Artefakt 10717927859
+
+- **leser-suche-a35-a40-a41:** Z. 89 `[data-treffer-leiste]` 15 s nicht gefunden, Region «sucht …».
+  Hypothese: Wartestelle Z. 72 (`#art-1`) schon durch Prerender-HTML erfüllt
+  (`scripts/prerender.ts:210ff`); Z. 75 füllt Feld während die Nachlade-Kette den Main-Thread hält;
+  Commit nach 200-ms-Entprellung (gl/inhalt-zustand.tsx:106) kippt sucheAktiv
+  (gl/v3/leserV3Modell.ts:369 → LeserTrefferSpalte.tsx:121/143) → ganze Lesespalte rendert neu
+  (1686 Artikel), Beobachter neu (gl/inhalt-suchtreffer.tsx:250); auf 2 vCPU >15 s. Fix
+  testseitig: echter Bereitschaftsmarker `data-leser-bereit` (nach Einträgen, Struktur, erster
+  Leerlauf-Welle), zentral `helpers/leserBereit.ts`. Produktseitig nur wenn CPU×4-Messung
+  Eingabe→sucheAktiv >1 s: §15-Posten, useDeferredValue.
+- **norm-sprung** (Katalog `/gesetze`, globale Suche): Z. 117 sprungZeile 10 s nicht gefunden,
+  Gruppen «wird durchsucht …». Entscheid-Sprung braucht nachgeladenes Entscheid-Manifest
+  (`src/components/suche/useUniversalSuche.ts:131-132`, `src/lib/universalSuche.ts:114`) — Produkt
+  korrekt (§8). Schwester Z. 96 gleiche Abhängigkeit, verdeckt durch Z. 103–104. Fix: vor Z. 117
+  `warteAufSuchindex` (`e2e/helpers/warteAufSuchindex.ts`).
+
+Beide Hypothesen waren bei der Planung nicht reproduziert — Messung unter Last ist S0-Aufgabe.
+**Befund S0 (Bau 23.9.2026, Ergänzung; Messreihen in den Commit-Bodies S0-A1/A2):**
+norm-sprung **bestätigt** (10× CPU-Drossel, 8 Worker, n=20 je BGE-Fall: vorher 14/60 rot,
+nachher 0/60; Fix auch an Z. 96 und Z. 122). A35: Teil-Hypothese «`#art-1` im Prerender»
+**verworfen** (`grep -c 'id="art-' dist/gesetze/bund/OR.html` = 0); Warten auf
+`data-leser-bereit` ändert die Arbeit nach der Eingabe nicht (Longtask-Profil gleich); lokal 0 rot
+in 340 Läufen — Wurzel **unbestätigt**, der Wartepunkt entzieht der Eingabe nur das
+Kandidatenfenster (Tippen in der ~15-s-Nachlade-Kette). §15-Posten gemeldet: Eingabe→Trefferleiste
+bei CPU×4 med 1.34 s.
+
+### 5 Rückbau (§7)
+
+- FAHRPLAN-LESER-V3.md + `W2·5m-LESER-V3` → S5 Chronik/Archiv; dessen §16 «leserV3Modell/
+  uebersichtAngaben schneiden» → S2; §16 CLS-Flake leser-funktionszeile-zaehler:80 + ArtikelLeser
+  Z. 621 Kommentar → S1; §16 Bezugslinien-Orakel doppelt, Stop-and-go-Wächter → S3; §16
+  «Akkordeon nur bei Scroll-Ruhe», «8 Artikel ohne Zeile», Struktur-Extraktor (Risikopfad),
+  NormText.tsx 795/800 → UMBUCHEN, nicht im Umbau; E3 Druck → REST; Fassungs-Diff → eigener Schritt.
+- FAHRPLAN-SPLIT-VIEW.md → S5 Archiv; vorher `plan/posten/2026-06-29-multi-pane-split-view.md`
+  (B3 offen) umhängen, Beispiel in `scripts/fahrplan-slice.ts` nachziehen.
+- FAHRPLAN-GESETZES-UX.md → BLEIBT Referenz (erfassungsgrad.ts:20 «Änderung NUR per Spec-Änderung
+  an §11.2», DESIGN-REGLEMENT-NORMTEXT.md:10); nur Hülle-Abschnitte ins Archiv (S5).
+- UI-BEFUNDE Leser offen LM-163, LM-114 (S5), LM-183, LM-197 (S2).
+
+### 6 Entscheide (Bau darf, mit Empfehlung)
+
+1 Hooks/Klassennamen nicht umbenennen (N8 bleibt) — ja. 2 Suchfeld bleibt im Kopf (2.3.11 vor
+Board). 3 Aktive Fundstelle nur mit bestehenden Tokens. 4 Kern-Probe erweitert
+ArtikelBody.test.tsx, kein neues Tor. 5 Je PR «netto ≤ 0» in src anstreben. 6 Bereitschaftsmarker
+als Produkt-Attribut — ja. **Wartet auf David:** nichts. (Funktionszeile im Einzelmodus nicht
+durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.)
+
+### 7 Nebenfunde
+
+1 design.md Ziff. 4 sagt noch «nie Fläche» → T2 muss vor S3/S5 landen. 2 Weitere bis 20.10.
+geduldete Leser-Specs: leser-v3-suche-ohne-gliederung 19/20, leser-v3-blatt 7/20,
+leser-ruecksprung-r5-r7, verweis-u — gleiche Wettlauf-Familie; S0/S4/S5. 3 420-Deckel v3/:
+leserV3Modell.ts 419, uebersichtAngaben.ts 417. 4 index.css ~71 % Kommentare → QS-DOKU-DIAET.
+5 Board #EEF1F6 ≠ `--reg-g-flaeche` #D9DEE4 — Token gilt.
 
 ## §6 · Prüfen und Frühsignale
 
