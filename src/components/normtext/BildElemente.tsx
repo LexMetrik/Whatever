@@ -46,7 +46,7 @@ export function BildFigur({ bild }: { bild: BildDaten }) {
         decoding="async"
         width={bild.breite}
         height={bild.hoehe}
-        className="block h-auto max-w-full border border-line bg-paper-raised"
+        className="block h-auto max-w-full rounded-md border border-line bg-paper-raised"
       />
       <figcaption className="mt-1.5 text-xs text-ink-500">
         {bild.formel ? 'Amtliche Formel' : 'Amtliche Abbildung'}
@@ -71,7 +71,7 @@ export function BildKacheln({ kacheln }: { kacheln: BildKachel[] }) {
         <div
           key={i}
           role="listitem"
-          className="flex flex-col items-center border border-line bg-surface p-3 text-center"
+          className="flex flex-col items-center rounded-md border border-line bg-surface p-3 text-center"
         >
           {k.bild && (
             <span className="flex h-24 w-full items-center justify-center">

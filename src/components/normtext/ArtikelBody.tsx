@@ -618,9 +618,9 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                auf den Reader-Zweig gescopt, Vorschau/Popover sind byte-gleich. */
             className={`${zitierKontext ? '' : 'text-body-s leading-relaxed '}${
               blockStark
-                ? 'border-l-4 border-brass-500 bg-brass-100 px-3 py-2 text-ink-900'
+                ? 'rounded-md border-l-4 border-brass-500 bg-brass-100 px-3 py-2 text-ink-900'
                 : blockDezent
-                  ? 'border-l-2 border-brass-300 bg-brass-100 px-3 py-2 text-ink-800'
+                  ? 'rounded-md border-l-2 border-brass-300 bg-brass-100 px-3 py-2 text-ink-800'
                   : 'text-ink-700'
             }`}
           >
@@ -644,7 +644,7 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
             {/* Ä8 (LESER-V3 H2b): derselbe leise Hover wie an der lit.-Zeile
                 oben — Herleitung dort. Ein Absatz und eine Aufzählungszeile sind
                 dieselbe Geste und dürfen nicht zwei Farben tragen (§5). */}
-            <p className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
+            <p className={zk ? `[overflow-wrap:anywhere] hyphens-manual pl-9 rounded transition-colors lc-hover-flaeche ${absMarke != null ? '-indent-9' : '[text-indent:0]'}` : undefined}>
               {absMarke != null && (
                 zk
                   ? <ZitierMarke klasse="text-body-s inline-block w-9 text-left !font-medium !text-ink-500" zitat={`${zk.artikelLabel} Abs. ${absMarke} ${zk.kuerzel}`} ausweis={ausweisBasis}>{absMarke}</ZitierMarke>
