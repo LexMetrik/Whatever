@@ -9,15 +9,15 @@
 // Ortswechseln und dem Teilen (`lib/liveUrlSync`, LM-202); ein Blatt-Zustand ist
 // eine Bedien-Bequemlichkeit dieses Tabs, keine Fundstelle. Je Tab und je
 // Sitzung — ein neuer Tab beginnt geschlossen, wie ein frisch geöffneter Leser
-// (und ebenso ein frischer Aufruf im selben Tab, s. «Wann» unten).
+// (und ebenso ein frischer Aufruf oder Hash-Sprung im selben Tab, s. «Wann» unten).
 //
 // ROBUST STATT STRENG: Speicher kann fehlen oder werfen (privates Fenster,
 // Quote, gesperrte Website-Daten) — dann gilt schlicht der Ausgangszustand. Ein
 // Reiter, den es nicht mehr gibt (die Reiter-Tabelle wandert, S6-W1cd), wird
 // verworfen statt eingesetzt.
 
-import { useEffect } from 'react';
-import { useNavigationType } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigationType } from 'react-router-dom';
 import { PANEL_REITER, type PanelReiter, type PanelZustand } from './panelModell';
 
 export interface BlattGedaechtnis {
@@ -58,49 +58,112 @@ function sitzung(): Storage | null {
   }
 }
 
-// ── WANN WIEDERHERGESTELLT WIRD: NUR BEI RÜCKKEHR ─────────────────────────────
-// Der Befund lautet «bei Zurück/Reload verloren». Ein FRISCHER Aufruf desselben
-// Erlasses (Link, getippte Adresse) beginnt dagegen geschlossen wie jeder neu
-// geöffnete Leser — sonst spränge das Blatt auf, weil man es vor einer Stunde
-// im selben Tab einmal offen hatte. Rückkehr heisst: eine POP-Navigation des
-// Routers, und zwar entweder nach einem `popstate` in diesem Dokument (Zurück
-// innerhalb der App) oder beim ersten Aufbau, wenn der Browser die Seite per
-// Neuladen bzw. Zurück/Vorwärts geladen hat (Navigation Timing `type`). Der
-// erste Aufbau ist für den Router ebenfalls POP — darum die zweite Bedingung.
-let popstateGesehen = false;
-if (typeof window !== 'undefined') window.addEventListener('popstate', () => { popstateGesehen = true; });
+// ── WANN WIEDERHERGESTELLT WIRD: NUR BEI ECHTER RÜCKKEHR ─────────────────────
+// Der Befund lautet «bei Zurück/Reload verloren». Wiederhergestellt wird darum
+// genau dann, wenn die Navigation, die den Leser an seinen jetzigen Ort brachte,
+// (a) ein Browser-Zurück/Vor an einen ANDEREN Ort war (Router-POP mit Wechsel
+// von Pfad oder Suche — auch auf einen Verlaufseintrag, den ein roher Hash-Link
+// angelegt hat) oder (b) der erste Aufbau eines Dokuments, das der Browser per
+// Neuladen bzw. Zurück/Vor geladen hat (Navigation Timing `type`), solange
+// seither kein `popstate` kam. NICHT wiederhergestellt: frischer Aufruf (Link,
+// getippte Adresse: Timing `navigate`), In-App-Link (PUSH/REPLACE) und
+// Hash-Sprung (POP ohne Pfadwechsel — ein roher `<a href="#art-…">` oder ein
+// `goto` mit anderem Hash löst ein natives `popstate` aus; der Leser bleibt
+// dabei montiert und das Blatt, wie es war).
+//
+// NACHZUG 23.9.2026 (Auflage Gegenprüfung PR #1002): bis dahin setzte JEDES
+// `popstate` einen modul-globalen Merker dauerhaft auf «gesehen», und der
+// Timing-Typ `reload` galt für die ganze Lebensdauer des Dokuments — nach einem
+// Hash-Sprung oder einem Reload war damit JEDE spätere POP-Navigation, die den
+// Erlass-Key (neu) brachte, eine «Rückkehr». Seither ist die Rückkehr an die
+// konkrete Navigation gebunden (`ortGesehen` je Ort) und wird beim
+// Wiederherstellen genau einmal verbraucht. `popstateSeitLaden` bleibt
+// modul-global, entscheidet aber nur noch, ob ein POP beim ERSTEN Aufbau des
+// Rahmens der Dokument-Aufbau selbst ist (b) oder eine Rückkehr (a).
+let popstateSeitLaden = false;
+if (typeof window !== 'undefined') window.addEventListener('popstate', () => { popstateSeitLaden = true; });
 
-function istRueckkehr(navTyp: string): boolean {
+export type Ortsart = 'erstaufbau' | 'ortswechsel' | 'sprung';
+export interface Dokument { popstateSeitLaden: boolean; ladeTyp: string | undefined }
+interface Ort { key: string; pathname: string; search: string }
+
+/** Wie sich der Ort gegenüber dem zuletzt gesehenen geändert hat; der Hash zählt nicht. */
+export function ortsart(vorherPfad: string | null, ort: Pick<Ort, 'pathname' | 'search'>): Ortsart {
+  if (vorherPfad === null) return 'erstaufbau';
+  return vorherPfad === ort.pathname + ort.search ? 'sprung' : 'ortswechsel';
+}
+
+export function istRueckkehr(navTyp: string, art: Ortsart, dok: Dokument): boolean {
   if (navTyp !== 'POP') return false;
-  if (popstateGesehen) return true;
+  if (art === 'sprung') return false;
+  if (art === 'erstaufbau' && !dok.popstateSeitLaden) return dok.ladeTyp === 'reload' || dok.ladeTyp === 'back_forward';
+  return true;
+}
+
+/** Navigation-Timing-Typ des Dokuments (`navigate`/`reload`/`back_forward`) — robust gegen Fehlen und Werfen. */
+export function ladeTypVon(perf: Pick<Performance, 'getEntriesByType'> | undefined): string | undefined {
   try {
-    const eintrag = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
-    return eintrag?.type === 'reload' || eintrag?.type === 'back_forward';
+    return (perf?.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined)?.type;
   } catch {
-    return false;
+    return undefined;
   }
+}
+
+/**
+ * Bindet die Rückkehr an die konkrete Navigation: `ortGesehen` klassiert jeden
+ * neuen Ort (und überschreibt den vorigen Anlass), `wiederherstellen` sagt
+ * höchstens einmal «ja» und verbraucht den Anlass. Rein — Ort, Navigationstyp
+ * und Dokument-Zustand liefert die Hook.
+ */
+export function rueckkehrMerker(dokument: () => Dokument) {
+  let vorherPfad: string | null = null;
+  let anlass: { schluessel: string; rueckkehr: boolean } | null = null;
+  return {
+    ortGesehen(ort: Ort, navTyp: string): void {
+      anlass = { schluessel: ort.key, rueckkehr: istRueckkehr(navTyp, ortsart(vorherPfad, ort), dokument()) };
+      vorherPfad = ort.pathname + ort.search;
+    },
+    wiederherstellen(ortSchluessel: string): boolean {
+      if (!anlass || anlass.schluessel !== ortSchluessel || !anlass.rueckkehr) return false;
+      anlass = { ...anlass, rueckkehr: false };
+      return true;
+    },
+  };
+}
+
+function dokumentJetzt(): Dokument {
+  return { popstateSeitLaden, ladeTyp: typeof performance === 'undefined' ? undefined : ladeTypVon(performance) };
 }
 
 /**
  * Verbindet den Panel-Zustand mit dem Gedächtnis — EIN Aufruf im Rahmen.
  *
- * Wiederherstellen, sobald der Erlass-Key bekannt ist (er kommt erst mit den
- * Daten), dann jede Änderung mitschreiben. Die Reihenfolge der zwei Effekte ist
- * die Zusage: im selben Commit läuft das Lesen VOR dem Schreiben, das Schreiben
- * sieht dort noch den Ausgangszustand und überschreibt kurz — der nächste
- * Commit trägt den wiederhergestellten Wert nach. Über `oeffne` statt eines
- * nackten `setOffen`, damit das Nachladen (`jeGeoeffnet`) mitläuft.
+ * Jeden neuen Ort klassieren, wiederherstellen, sobald der Erlass-Key bekannt
+ * ist (er kommt erst mit den Daten), dann jede Änderung mitschreiben. Die
+ * Reihenfolge der drei Effekte ist die Zusage: im selben Commit läuft
+ * Klassieren vor Lesen vor Schreiben; das Schreiben sieht dort noch den
+ * Ausgangszustand und überschreibt kurz — der nächste Commit trägt den
+ * wiederhergestellten Wert nach. Über `oeffne` statt eines nackten `setOffen`,
+ * damit das Nachladen (`jeGeoeffnet`) mitläuft.
  */
 export function useBlattGedaechtnis(erlassKey: string | undefined, zustand: PanelZustand): void {
   const { offen, reiter, oeffne, setReiter } = zustand;
   const navTyp = useNavigationType();
+  const ort = useLocation();
+  const [merker] = useState(() => rueckkehrMerker(dokumentJetzt));
   useEffect(() => {
-    if (!erlassKey || !istRueckkehr(navTyp)) return;
+    merker.ortGesehen(ort, navTyp);
+    // Je Navigation genau einmal: `ort` ist je Navigation ein neues Objekt —
+    // auch beim Hash-Sprung, dessen Schlüssel («default») gleich bleiben kann.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ort]);
+  useEffect(() => {
+    if (!erlassKey || !merker.wiederherstellen(ort.key)) return;
     const g = liesBlatt(erlassKey);
     if (!g) return;
     if (g.offen) oeffne(g.reiter); else setReiter(g.reiter);
     // Läuft nur, wenn der Erlass-Key kommt: `oeffne`/`setReiter` sind stabil,
-    // und `navTyp` gilt für den Aufruf, der den Key gebracht hat.
+    // und `ort.key` gehört zu dem Aufruf, der den Key gebracht hat.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [erlassKey, oeffne, setReiter]);
   useEffect(() => {
