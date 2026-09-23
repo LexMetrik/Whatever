@@ -14,6 +14,7 @@
 //    * --no-renames → keine Zwei-Feld-Sätze; jede Änderung zerfällt in
 //               Einzel-Pfad add/modify/delete (stabiler, parsierbarer Hash).
 //  - Risiko-Menge = Pfad matcht ≥1 Risiko-Prädikat UND kein Prüflogik-Prädikat
+//    — ODER Tor-Pfad (seit RL-02, 23.9.2026: die Tore selbst, W-02 (b))
 //    (hand-gerollte String-Prädikate wie scripts/plan/check.ts — KEINE Glob-Lib,
 //     Linse 2: die Glob-Form der Spec über-/unter-matchte).
 //  - Pro Pfad die Working-Tree-Bytes von PLATTE binden (nicht Index): so bindet
@@ -112,7 +113,7 @@ export interface DiffErgebnis {
   bereich?: string;
   /** null = Git vorhanden, aber keine Risiko-Datei geändert (grün, «nichts zu beweisen»). */
   hash: string | null;
-  /** die behaltenen (Risiko ∖ Prüflogik) Pfade, byte-sortiert. */
+  /** die behaltenen ((Risiko ∖ Prüflogik) ∪ Tor-Pfad) Pfade, byte-sortiert. */
   dateien: string[];
 }
 
@@ -128,6 +129,113 @@ const basename = (p: string): string => p.split('/').pop() ?? p;
 // verhindert Rekursion in Unterordner (die separat als Präfix erfasst sind).
 const RECHNEN_RE =
   /(tarif|kosten|gebuehr|zustaendigkeit|frist|verjaehr|streitwert|beurkund|gruendung|schkg|straf|bger|zustellfiktion|zustellung)/i;
+
+// ─── RL-02: explizite Rechtslogik-Liste (Risiko-Grenze) ─────────────────────
+// ANLASS: Prüfung Rechtslogik 23.9.2026, Befund S1-01 (Bündel D1, RL-02,
+// W2·30-RL-W0). Gemessen: behalten()=false für genau die Engines, an denen die
+// schweren Rechtsfehler sitzen (mietrecht F4-01, gewaehrleistung F5-05,
+// erbteilung B3-01, verzugszins S3-a …) und für die Stammdaten, aus denen sie
+// rechnen (Feiertage, Berner Skala, LIK-Reihe, Mietkündigungstermine,
+// Zuständigkeitskosten). Ihre Fixes wären per Auto-Merge ohne Zweitblick
+// gelandet — und S2b zeigt die schwächsten Mutationswerte genau dort.
+//
+// WARUM eine Liste statt einer breiteren RECHNEN_RE: Stichwörter wie «erb»,
+// «miet», «datum» fingen künftige Nicht-Engines (Über-Triggerung, Linse 2).
+// Die Liste ist dafür an den Baum gebunden: der Existenz-Test in
+// src/tests/gegenpruefung.test.ts wird rot, wenn eine Datei umbenannt wird und
+// die Grenze sonst still ins Leere zeigte (§6.7).
+//
+// BEWUSST NICHT aufgenommen:
+//  - src/lib/pdf/** — rendert nur das Assemble-Ergebnis der Vorlagen (§5);
+//    der Fachinhalt ist über src/lib/vorlagen/ bereits gebunden.
+//  - Adress-/Behörden-Stammdaten (zivilgerichteErstinstanz, betreibungsaemter,
+//    handelsregisteraemter, obereInstanzen, strafgerichte, staatsanwaltschaften,
+//    schlichtungsstellen, handelsgerichte, schlichtung/**, betreibung/**,
+//    plz/**): Entscheid W-03 offen, gebaut ist Variante (c) = nur Dateien mit
+//    Zuständigkeits-REGELN. handelsgerichte.ts trägt zwar die Kantonsliste der
+//    Handelsgerichte, die Engine (vorlagen/klageOrdentlich.ts, bereits Risiko)
+//    führt aber ihre eigene HG-Liste; die Datei speist nur das Formular mit
+//    Adressen. schlichtungsstellen.ts enthält mit VD_JDP_ZU_TA eine
+//    Zuordnung Justice de paix → Tribunal; sie wird von vdSchlichtung.ts
+//    (unten, Risiko) verarbeitet — die Datei selbst bleibt als Adressbestand
+//    bei W-03.
+export const RECHTSLOGIK_DATEIEN: readonly string[] = [
+  // Engines (top-level src/lib, von RECHNEN_RE nicht getroffen)
+  'src/lib/verzugszins.ts',
+  'src/lib/lohnfortzahlung.ts',
+  'src/lib/erbteilung.ts',
+  'src/lib/mietrecht.ts',
+  'src/lib/gewaehrleistung.ts',
+  'src/lib/teuerung.ts',
+  'src/lib/datumsUtils.ts', // Fristen-Arithmetik, von allen Fristrechnern geteilt
+  'src/lib/emissionsabgabe.ts',
+  'src/lib/notariatGrundbuch.ts',
+  'src/lib/notariate.ts', // VS1-04: MWST / freie Notariate
+  'src/lib/vdSchlichtung.ts',
+  'src/lib/zpoPresets.ts', // R5: Frist-Presets
+  'src/lib/famStatusPresets.ts', // A-N6: Presets mit Frist-/Rechtsfolge-Vorgaben
+  'src/lib/presetIndex.ts', // Preset-Auswahl der Fristrechner
+  'src/lib/gerichtszitat.ts', // C-N2: formt die Zitierweise amtlicher Entscheide
+  // Rechen-Stammdaten
+  'src/data/zpoFeiertage.ts',
+  'src/data/schkgFeiertage.ts',
+  'src/data/lohnfortzahlungSkalen.ts', // S3b-b/Q6: Berner Skala
+  'src/data/likReihe.ts',
+  'src/data/mietTermine.ts',
+  // Zuständigkeits-REGELN (W-03 Variante c)
+  'src/data/zustaendigkeitKosten.ts', // VS1-01
+  'src/data/zustaendigkeitKantone.ts',
+  // Gemeinde → Regionalgericht/regionale Staatsanwaltschaft nach Art. 80/81/92
+  // GSOG (BSG 161.1): eine normative Sprengel-Zuordnung, keine Adressliste;
+  // die Engine src/lib/zustaendigkeit/beSprengel.ts (bereits Risiko) liest nur nach.
+  'src/data/zustaendigkeit/beSprengel.json',
+  // Zusatz LESER-Session 23.9.2026: entscheidet «kein Entscheid» vs.
+  // «Ladefehler» und die Artikel-Zuordnung der Rechtsprechungs-Bezüge.
+  'src/lib/rechtsprechung/bezuege.ts',
+  // C-N4: trägt Rechtshinweis-Text im Seitencode. KEIN Glob über src/pages/**.
+  'src/pages/VorlageVerjaehrungsverzicht.tsx',
+];
+const RECHTSLOGIK_MENGE = new Set(RECHTSLOGIK_DATEIEN);
+
+// Katalogtexte mit Status-/Prüfaussagen (§8, Befund R3-04/05, C-N1): bis RL-02
+// war nur startseiteKartenFristen.ts erfasst — zufällig über «frist». Die
+// Familie ist ein Muster statt einer Liste, weil sie per Split wächst
+// (Ausbau/BetraegeWerkzeuge/…); ein neuer Split darf nicht aus der Grenze fallen.
+const KATALOGTEXT_RE = /^src\/lib\/startseite(Karten|Vorlagen)[A-Za-z]*\.ts$/;
+
+// ─── RL-02: Tor-Pfad ────────────────────────────────────────────────────────
+// ANLASS: Prüfung Rechtslogik 23.9.2026, Entscheid David W-02 (b) «Ja, in
+// Welle 0 mitbauen». istPruefLogik() nimmt die Tore selbst aus — gemessen:
+// kern.ts, gate.sh, ci.yml, golden-outputs.ts, die Golden-Datei und der
+// Assertion-Diff waren alle behalten()=false. Eine Aufweichung eines Tors fiel
+// damit durch kein Tor. Tor-Pfade sind darum gegenprüfungspflichtig, OBWOHL
+// sie Prüflogik sind (behalten() unten kombiniert; istPruefLogik bleibt
+// unverändert, damit ihre übrigen Aufgaben — Tests/check-Skripte der
+// Risiko-Ordner auszunehmen — nicht kippen).
+//
+// Test-Dateien sind nie Tor-Pfad (sonst triggerte jede Test-Änderung); die
+// Test-Seite deckt RL-03 (Fachänderungs-Riegel) ab.
+//
+// SELBSTBEZUG (gewollt): der Commit, der diese Zeilen einführt, fällt selbst
+// unter die Regel und braucht ein Verdikt — die Orchestrierung ordnet es an.
+export const TOR_DATEIEN: readonly string[] = [
+  'scripts/gegenpruefung-ok.ts',
+  'scripts/check-gegenpruefung.ts',
+  'scripts/check-merge-schutz.ts',
+  '.github/workflows/ci.yml',
+  'scripts/gate.sh',
+  'scripts/golden-outputs.ts',
+  'golden/lexmetrik-golden.json',
+  'scripts/analyse/test-assertion-diff.ts',
+];
+// Vorausschauend: RL-03 baut diese Dateien parallel. Getrennt geführt, weil
+// der Existenz-Test sie heute noch nicht finden kann — nach der Landung von
+// RL-03 in TOR_DATEIEN verschieben (dann greift der Existenz-Test auch hier).
+export const TOR_DATEIEN_VORAUSSCHAUEND: readonly string[] = [
+  'scripts/check-fachaenderung.ts',
+  'scripts/analyse/fachaenderung-kern.ts',
+];
+const TOR_MENGE = new Set([...TOR_DATEIEN, ...TOR_DATEIEN_VORAUSSCHAUEND]);
 
 /** Risiko-Pfade: Extraktion · Rechnen · Norm/Tarif (real gegen den Baum verifiziert). */
 export function istRisikoPfad(p: string): boolean {
@@ -211,6 +319,13 @@ export function istRisikoPfad(p: string): boolean {
   if (p.startsWith('public/verzahnung/artikel-revisionen/')) return true;
   // Rechnen
   if (/^src\/lib\/[^/]+\.ts$/.test(p) && RECHNEN_RE.test(basename(p))) return true;
+  // RL-02 (S1-01): explizite Rechtslogik-Liste + Katalogtexte + Bezüge-Shards
+  // (Begründung je Datei oben bei RECHTSLOGIK_DATEIEN).
+  if (RECHTSLOGIK_MENGE.has(p)) return true;
+  if (KATALOGTEXT_RE.test(p)) return true;
+  // rekursiv wie public/normtext (Blocker Linse 2): ein späterer Unterordner
+  // darf nicht aus der Grenze fallen.
+  if (p.startsWith('public/rechtsprechung/bezuege/') && p.endsWith('.json')) return true;
   // Seit QS-CODE-SPLITS ist `zustaendigkeit.ts` eine reine Fassade; die tragende
   // Rechenlogik (erstinstanz/rechtsmittel/gemeinsam) liegt im gleichnamigen Ordner.
   // OHNE den Ordner-Zweig hätte der Split die Risiko-Klassifikation der eigentlichen
@@ -240,9 +355,24 @@ export function istPruefLogik(p: string): boolean {
   return false;
 }
 
-/** Behalten = Risiko UND keine Prüflogik (Set-Subtraktion NACH dem Risiko-Filter). */
+/**
+ * Tor-Pfad (RL-02, W-02 (b)): die Prüf-Tore selbst. Test-Dateien sind nie
+ * Tor-Pfad — auch nicht unter scripts/gegenpruefung/.
+ */
+export function istTorPfad(p: string): boolean {
+  const b = basename(p);
+  if (b.endsWith('.test.ts') || b.endsWith('.spec.ts')) return false;
+  if (p.startsWith('scripts/gegenpruefung/')) return true;
+  return TOR_MENGE.has(p);
+}
+
+/**
+ * Behalten = (Risiko UND keine Prüflogik) ODER Tor-Pfad.
+ * Bis RL-02 (23.9.2026) nur der erste Teil: die Set-Subtraktion nahm die Tore
+ * selbst aus. Der Tor-Pfad sticht die Prüflogik-Ausnahme (W-02 (b)).
+ */
 export function behalten(p: string): boolean {
-  return istRisikoPfad(p) && !istPruefLogik(p);
+  return (istRisikoPfad(p) && !istPruefLogik(p)) || istTorPfad(p);
 }
 
 // ─── git-Kanonik ────────────────────────────────────────────────────────────
