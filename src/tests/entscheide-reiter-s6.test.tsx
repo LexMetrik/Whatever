@@ -19,6 +19,7 @@ import {
   naechsteMenge, ordneEntscheide, regesteTeil, weitereText,
 } from '../pages/gesetz-leser/v3/entscheideOrdnung';
 import { PanelEntscheide } from '../pages/gesetz-leser/v3/PanelEntscheide';
+import { BezugFacettenWahl } from '../components/verzahnung/BezugFacettenWahl';
 
 function kante(key: string, status: BezugStatus, opt: {
   datum?: string; gericht?: string; kanton?: string; zitierung?: string; regeste?: string | null;
@@ -187,10 +188,14 @@ describe('PanelEntscheide — Portion, Ordnung, Darstellung', () => {
     }
   });
 
-  it('D-9: die Schalter-Zahlen sind die des Artikels (Instanzen-Klappe offen ⇒ geprüft über den Titel-Wortlaut)', () => {
-    // Die Klappe ist zu, die Zahlen stehen dann nicht im Markup — geprüft wird
-    // darum der Kurzstand, der ohne Klappe steht, und die reine Funktion oben.
-    const h = html({ kanten: alle, alleKanten: alle });
-    expect(h).toContain('BGE +3');
+  it('D-9: der Instanz-Schalter nennt die Zahl am ARTIKEL und sagt es im Titel', () => {
+    const h = renderToString(
+      <BezugFacettenWahl klassen={['bge', 'bger', 'eidg', 'kantonal']} kantone={[]} kantoneVerfuegbar={[]}
+        klassenZahlen={klassenZahlenAmArtikel(alle, true)} zahlOrt="an Art. 41"
+        onKlassen={() => {}} onKantone={() => {}} />,
+    );
+    expect(h).toContain('data-bezug-klasse-zahl="12"');
+    expect(h).toContain('Leitentscheid (BGE) — 12 Entscheid(e) an Art. 41');
+    expect(h).not.toContain('in diesem Erlass');
   });
 });
