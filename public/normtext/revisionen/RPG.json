@@ -214,8 +214,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/646/de",
-      "sha": "9797aeb3e3656b9c130353fbca3adf50ede5624f1e38960d6af1ae14b4f7d0fd"
+      "sha": "ebe88a470d22bf731219fb5a0c39233bbf479db51aaa2d58265d22da1e96d20d"
     },
     {
       "art": "aenderung",
@@ -403,5 +404,5 @@
       "sha": "a22514f69bf61125bc291c91569f6fd4a0215ca3a135ab2823eebd1dad2e48d3"
     }
   ],
-  "sha": "7cae51533685cc5068a5b032e677f6f68d1dc36afdea1f5edb932c632aa6ebab"
+  "sha": "5b486b816dbd474ad46b1d49541bc6809242af9468ed42d375a4bb5b6cf37ea7"
 }

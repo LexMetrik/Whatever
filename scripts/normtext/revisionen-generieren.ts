@@ -169,6 +169,14 @@ export interface RevisionEintrag {
    *  aufsteigend — nur gesetzt, wenn es mehr als eines sind (gestaffeltes Inkrafttreten,
    *  AE-5). Jede Etappe ist ein eigener Eintrag mit demselben `ocUri`. */
   etappen?: string[];
+  /** Pfad (c), §8: `true`, wenn `dateEntryInForce` NICHT das Inkrafttreten einer eigenen
+   *  Auswirkung auf dieses Erlass ist, sondern das (erste) Inkrafttreten des ändernden
+   *  Erlasses selbst — weil Fedlex der Auswirkung kein brauchbares Datum gibt (Beschluss-
+   *  datum, undatiert, widersprüchlich) oder der Eintrag nur aus Pfad (b) stammt. Das Datum
+   *  kann dann für DIESES Erlass abweichen (Beleg 23.9.2026: ZPO ← FINIG AS 2018 5247,
+   *  Auswirkung «2018-06-15» = Beschluss, FINIG in Kraft ab 2019-01-01, ZPO-Fassung erst
+   *  2020-01-01). Nur mit Pfad-(c)-Kontext gesetzt. */
+  datumAusErlass?: boolean;
   /** Fedlex-Live-Link auf den AS-Text (art='aenderung') bzw. — beim Marker — auf die
    *  Fassung dieses Datums (`/eli/cc/<abstract>/<YYYYMMDD>/de`, AE-2). */
   quelleUrl: string;
@@ -471,6 +479,7 @@ function shaEintrag(e: Omit<RevisionEintrag, 'sha'>): string {
   // Pfad (c), 23.9.2026 — ebenfalls nur additiv bei gesetztem Feld (gleiche Begründung).
   if (e.wirkungen) felder.push(`w:${e.wirkungen.join(',')}`);
   if (e.etappen) felder.push(`e:${e.etappen.join(',')}`);
+  if (e.datumAusErlass) felder.push('d:erlass');
   return createHash('sha256').update(felder.join('|'), 'utf8').digest('hex');
 }
 
@@ -534,11 +543,16 @@ export function baueRevisionen(
   // Daten, die als Erfassungsartefakt erkannt sind (Auswirkungsdatum NACH der einarbeitenden
   // Fassung, s. unten) — an ihnen entsteht auch kein Marker (s. Pfad-(a)-Cross-Check).
   const artefaktDaten = new Set<string>();
+  // (oc|datum)-Paare, deren Datum NICHT aus einer eigenen Auswirkung stammt, sondern aus dem
+  // Inkrafttreten des ändernden Erlasses (Ersatz für Beschluss-/undatierte/widersprüchliche
+  // Auswirkungsdaten, Pfad-(b)-Einträge) → `datumAusErlass` (§8, s. RevisionEintrag).
+  const ausErlass = new Set<string>();
   const basicAct = kontext?.basicAct;
   if (kontext) {
     const fassungsDaten = new Set(aStaende);
     const datiert = new Map<string, Map<string, Set<Wirkung>>>();
     const undatiert = new Map<string, Set<Wirkung>>();
+    const echt = new Set<string>(); // (oc|datum) mit eigener, widerspruchsfreier Auswirkung
     for (const a of kontext.auswirkungen) {
       if (a.oc === basicAct) continue;
       const w = wirkungAusTyp(a.typ);
@@ -555,6 +569,7 @@ export function baueRevisionen(
       if (widerspruch) artefaktDaten.add(a.datum!);
       if (a.datum && !widerspruch) {
         const datum = inkrafttretenDerAuswirkung(a.datum, proOc.get(a.oc) ?? kontext.ocStamm[a.oc], fassungsDaten);
+        if (datum !== a.datum) ausErlass.add(`${a.oc}|${datum}`); else echt.add(`${a.oc}|${datum}`);
         const proDatum = datiert.get(a.oc) ?? new Map<string, Set<Wirkung>>();
         const s = proDatum.get(datum) ?? new Set<Wirkung>();
         s.add(w); proDatum.set(datum, s); datiert.set(a.oc, proDatum);
@@ -569,13 +584,16 @@ export function baueRevisionen(
       const eigen = proOc.get(oc)?.dateForce ?? kontext.ocStamm[oc]?.dateForce;
       if (!eigen) continue; // kein amtliches Datum → kein Eintrag (nie erfinden, §7)
       zeilen.set(oc, new Map([[eigen, w]]));
+      ausErlass.add(`${oc}|${eigen}`);
     }
     for (const r of proOc.values()) {
       if (zeilen.has(r.oc) || r.oc === basicAct) continue;
       if (kontext.inkrafttreten && r.dateForce < kontext.inkrafttreten) continue; // Vorgänger gleicher SR (AE-3)
       if (kontext.aufhebung && r.dateForce > kontext.aufhebung) continue; // Nachfolger gleicher SR (AE-6)
       zeilen.set(r.oc, new Map([[r.dateForce, new Set<Wirkung>()]]));
+      ausErlass.add(`${r.oc}|${r.dateForce}`);
     }
+    for (const k of echt) ausErlass.delete(k); // eine echte Auswirkung am selben Datum geht vor
   } else {
     for (const r of proOc.values()) zeilen.set(r.oc, new Map([[r.dateForce, new Set<Wirkung>()]]));
   }
@@ -631,6 +649,7 @@ export function baueRevisionen(
         dateInKraftFuerCh,
         wirkungen: wirkungen.length ? wirkungen : undefined,
         etappen: daten.length > 1 ? daten : undefined,
+        datumAusErlass: ausErlass.has(`${oc}|${datum}`) ? true : undefined,
         quelleUrl: liveLink(oc),
       };
       eintraege.push({ ...roh, sha: shaEintrag(roh) });

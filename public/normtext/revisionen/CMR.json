@@ -31,8 +31,9 @@
       "wirkungen": [
         "geltungsbereich"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/705/de",
-      "sha": "1e5aa32cf745bacb288e856d9406554b80687e31e29601e493d03c8e14a98533"
+      "sha": "ffe9d53949cf38f249ae33d76bafa9cdca2f0fdb7cc1fa5984823d65501af64c"
     },
     {
       "art": "aenderung",
@@ -178,5 +179,5 @@
       "sha": "af1fc0e82e0df3f17ce8f41e391bcf277755258f2f10c154dfb73e6b14ffd9e7"
     }
   ],
-  "sha": "df637d0236698d87a7c0c41a7298c048d7d5d597b7738985f5ab2829607df29a"
+  "sha": "daa37a58007b3f3593880c05e5dce8cf879ab5915e53442cd85e85c41fe27f75"
 }

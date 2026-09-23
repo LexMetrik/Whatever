@@ -91,8 +91,9 @@
       "wirkungen": [
         "berichtigung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2420_2420_/de",
-      "sha": "2b6fdc0749f36cf6d1b7bdb43835ce644a2d5d25032d89bb4601bccce6787bb6"
+      "sha": "229410e547ccc8509142993867e3378e1f72a384bddc03b4710463d849c9b7f5"
     },
     {
       "art": "aenderung",
@@ -137,5 +138,5 @@
       "sha": "e83368b6c52eb8da9a148973cebe8bd13a23c77a73b32f4c9621a79ca86fdf12"
     }
   ],
-  "sha": "830be572a27437c4c65c45169a8daa9cc5a41565da6f539809b462dd6b9c6144"
+  "sha": "a73005089ad20b882844cb9ad3aea5ca2cbda0339a9ac22d40feccfbb67791c3"
 }

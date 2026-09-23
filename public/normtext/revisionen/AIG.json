@@ -908,8 +908,9 @@
         "2016-07-01",
         "2018-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
-      "sha": "8cab18ac0a24a37f13851d1d211f361c7a725530f6ed553359b0a6a1ac9c2639"
+      "sha": "9d342ffc93c50c8e588bc4f075a73509305b208c6c2c826e634d9aba2417ac0b"
     },
     {
       "art": "aenderung",
@@ -1509,8 +1510,9 @@
         "2007-01-01",
         "2008-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/727/de",
-      "sha": "7947b982cd9a1689ee851776599d593e64c53f8001c4839c2ff554d3b3f37f95"
+      "sha": "34d33b6bf9baed0c3b27cb05789d2569c1e634929312f04af87c8e3a9e5e70bb"
     },
     {
       "art": "aenderung",
@@ -1530,8 +1532,9 @@
         "2007-01-01",
         "2008-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
-      "sha": "136b49bd26b49f0a40108e0cb117f4e1f36272949f0b6e9be48a5572f37a9b4f"
+      "sha": "3c494f2228de839865a841735c313e509ae7de2d6c6facac9632e5bddc449065"
     },
     {
       "art": "aenderung",
@@ -1555,5 +1558,5 @@
       "sha": "450e85bc2efc005ef1fb3151d9f37d550666ae88d0a5d9c108461daa990f5466"
     }
   ],
-  "sha": "75436d28512047fe0f3131eeafc98892f1ff54478bdd06e2f9c2496a679e6506"
+  "sha": "281cb6ce8bbcccd83c1c2e2aabd38fcf9bf45650b705ee247cf184ebaab2f059"
 }

@@ -957,8 +957,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/379/de",
-      "sha": "fad8a90feafdc0f82b59ff78a3eee998fc051bc8ed4a5ed8ca6b7ddb6fab2bb0"
+      "sha": "1547085c16440771cbf64d5a1c3725d22a141a1fd20ce5a81059daab1a46daae"
     },
     {
       "art": "aenderung",
@@ -1096,5 +1097,5 @@
       "sha": "1b18a429c544303ec97ee78f6850e4d7f588f6f405da495771a86ec3530540d3"
     }
   ],
-  "sha": "d71b6d470ac2b79f41876549cd13df724f9e37025535f4e4fb3bf316b9c54b18"
+  "sha": "676f77bacba60b59bb6aed679519331e18525ecabbdbf0e553f116aa7b0cc2d9"
 }

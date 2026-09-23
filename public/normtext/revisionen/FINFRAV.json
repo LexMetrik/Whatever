@@ -91,8 +91,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/922/de",
-      "sha": "21de315f2116c5250fe654a2794021b8614facd0c78af36791c891d28a869b81"
+      "sha": "fb7be4b5bcc251d814fb1076a30cd2318a6e39b3338a593cbdb3f4d03b8eb4ab"
     },
     {
       "art": "aenderung",
@@ -215,5 +216,5 @@
       "sha": "330658d750d3524e7f5f2d787e00136c152b9e29f13b3f7116e017d569685f06"
     }
   ],
-  "sha": "6bc408cab3021f16e64f7c973a80b1128c12826e9d82a0a97c369956d297898b"
+  "sha": "6aae8fc8cbdd4c3efd683c3987d1bf6f539edcdaa5e20475157630b0ccb2806f"
 }

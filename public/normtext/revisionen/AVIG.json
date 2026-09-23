@@ -387,8 +387,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/718/de",
-      "sha": "da2b0473782827f5054a33e7d0deafb783e9488b158eee4435552aa91ef85c69"
+      "sha": "e7c8a084689c9d2274703c259a7f5b47baf8d989505d78f416f19c91703fb0d8"
     },
     {
       "art": "aenderung",
@@ -433,8 +434,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/714/de",
-      "sha": "0a58ab58c5f1cc12a3fcff653f447b47722ac9cf608451893ae4b93a3623be51"
+      "sha": "0c385910f0373b8207a493f20db813e4cbb0e61eb96859e069f5021fdebee2ee"
     },
     {
       "art": "aenderung",
@@ -604,8 +606,9 @@
       "wirkungen": [
         "berichtigung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/644/de",
-      "sha": "a9dde239350ffe8c59c20e40619ffc1c4017fba9086f400460b265096fabfdbb"
+      "sha": "1d175543fad70cae5d8e3fa74f4bae39b2243d1a604b9ea511940a8345ea3c77"
     },
     {
       "art": "aenderung",
@@ -804,8 +807,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/138/de",
-      "sha": "a4abdbb7ee78d0d68c8c43fe776cce39cbfb0c269a0304e4baaecb2fbdaa300e"
+      "sha": "7d07fe53f38b5640ed21b75935b6b8ddff8c1f0d2992ee116ed7df1a65b21d31"
     },
     {
       "art": "aenderung",
@@ -897,8 +901,9 @@
       "wirkungen": [
         "inkrafttreten"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/261/de",
-      "sha": "52ef6e5ef64657e25b657e114ad372e9d134c09c7c72bba2633974e8a978a10a"
+      "sha": "7f0ff2f5e68e23d983daa8c699f9ee0fa4a549005de0f81a039c0c24748d3139"
     },
     {
       "art": "aenderung",
@@ -1065,8 +1070,9 @@
       "titelDe": "Verordnung über die Aufhebung des Bundesbeschlusses über die Finanzierung der Arbeitslosenversicherung",
       "titelFr": "Ordonnance concernant l'abrogation de l'arrêté fédéral sur le financement de l'assurance-chômage",
       "titelIt": "Ordinanza che abroga il decreto federale sul finanziamento dell'assicurazione contro la disoccupazione",
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/522/de",
-      "sha": "e76eaf7a5439d6542a6102ffd85b123fbaf02aa8ded8300eb6bddbccd7856a27"
+      "sha": "67ffe25fb08dcc73e3b9cb677590c48a0e226cff14b781a372883ed96271b947"
     },
     {
       "art": "aenderung",
@@ -1362,5 +1368,5 @@
       "sha": "066257035a64bd1fd678b6bc5fa4067c16d57f46cb316599d8da92d8261f0a33"
     }
   ],
-  "sha": "4fedf4cb68e37894ce16dd65ebe844fd3ebabf73308a9d4964ac2f9ac58f8fa7"
+  "sha": "0f204d6cf0baeb693408f4149b7dd0ea37289a49ad5c9eff2032ac94c03f6497"
 }

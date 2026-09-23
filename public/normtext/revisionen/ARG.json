@@ -64,8 +64,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/397/de",
-      "sha": "cc56a614f355c0b20d2ee7d65a8b01c48ce823b50ca3bda4f96d0c338e0937ce"
+      "sha": "cfd4eda0da64fddd88521b260bd68c5d7f9d625faa3022bae6cc30b9fc41a8c6"
     },
     {
       "art": "aenderung",
@@ -505,5 +506,5 @@
       "sha": "dc049cade24a021b281fd4378174a031c39cad3ecc78b3e37178d35f5722567b"
     }
   ],
-  "sha": "0df86cbddc516b757fb1a6c05daebf9f00c6588d830b0e4004e2fbd717d760bd"
+  "sha": "87556eb02af2b2ef2a9f0d9e52dd3b36f48fc2d515a8ff8cec184f9c4f059c9e"
 }

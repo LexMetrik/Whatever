@@ -14,8 +14,9 @@
       "titelFr": "Loi fédérale sur la transplantation d’organes, de tissus et de cellules (Loi sur la transplantation)",
       "titelIt": "Legge federale sul trapianto di organi, tessuti e cellule (Legge sui trapianti)",
       "nichtKonsolidiert": true,
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/421/de",
-      "sha": "9f8ac435d12572c6f50538660317662a4bac441056b4fe85b71bde5224e2deda"
+      "sha": "f780b83630fbf5c3eee3600bca941fe9f430f51368624eb08e2978a61cbf4f4d"
     },
     {
       "art": "aenderung",
@@ -77,8 +78,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
-      "sha": "ea4787803f69be76c30c1a2a24d5407559e593f3b171f21b66df76a71faa9623"
+      "sha": "4aacedf68e18d9bccddc61c026aac66ad9069c471d5d065196c0055643d526bd"
     },
     {
       "art": "aenderung",
@@ -181,5 +183,5 @@
       "sha": "450c89b58e25b153fef21bbfa6cf58a9b6d2d6b97ee639ee311773152c7fc266"
     }
   ],
-  "sha": "10aa4c3acc192643f14bc8d08961d99ac1f5c7e6492cb8f2d7d945d92cef18fd"
+  "sha": "24d8dfe839dee42a0a0e1ef8fe55661ddf0bbd69dd7b6a77fac0b9dee1fb8042"
 }

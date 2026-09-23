@@ -794,8 +794,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/217/de",
-      "sha": "97efe6087c2b8e53042a544f86fca686249a079dae7b8bd40bf677a7b1a36dfb"
+      "sha": "35f1cf1f6e27bf28501419679e1fc5ad92bfe36080c036c25aa939cde130fd4d"
     },
     {
       "art": "aenderung",
@@ -1593,9 +1594,10 @@
       "wirkungen": [
         "inkrafttreten"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1367_1367_1367/de",
-      "sha": "cd10a31bb916df278827c9ebae16b1c664cf4182fe3db8aaaa6edb1d40061fdb"
+      "sha": "df70d9d8840c0807dfa2856232d22ef90ba468f08aea3d53ab216478fa9b64e8"
     }
   ],
-  "sha": "fe6cf14c5a3cc1f292cbfe79bfe677692c5c87c7ea56d9c73791cfee48e8d100"
+  "sha": "9e88eba577d68d65a14412342b80416ef53c87d247c0d5c81cb7a67bd590e59e"
 }

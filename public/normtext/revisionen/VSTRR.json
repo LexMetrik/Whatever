@@ -152,8 +152,9 @@
         "2015-07-01",
         "2016-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
-      "sha": "81db4e7e5f99ae3a41c173ffd95426ea7ed820ceab0b23046008541a863104ad"
+      "sha": "77c01372740567a07264a8b41abc8786fc4150a5c2fdc235c96c7ee8e0877673"
     },
     {
       "art": "aenderung",
@@ -364,8 +365,9 @@
         "2003-08-01",
         "2004-04-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
-      "sha": "30154977aa551242651e03da857dfa64553686bd6a607984a93932b82072fdea"
+      "sha": "23897f46e6e8099d19390271b82fbe0a8f40056e1281d34679c2dd95d97dcbd6"
     },
     {
       "art": "aenderung",
@@ -428,5 +430,5 @@
       "sha": "7a4ed63e4edc9fb827a576ef21be6245790ff9bc864987f5e1411527724f32bc"
     }
   ],
-  "sha": "d40c829db045d3361fdc21ac63751d969bbbb8e296852c8b2cb0abb12ee2609e"
+  "sha": "f8510209f1c79b6c5fa14b103f6e2a7131390812d6bd64bd326f4888bec3f374"
 }

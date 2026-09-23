@@ -50,8 +50,9 @@
         "2016-10-01",
         "2017-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/539/de",
-      "sha": "31046a358fea9db9ac2524f80304fb478bf10306115039a4236f9e085518204e"
+      "sha": "2e5c6d231d9543df892fd095ead0b75448aab774d23cc4ee36b350339edca69f"
     },
     {
       "art": "aenderung",
@@ -404,5 +405,5 @@
       "sha": "d762fb4a872c03efef6411a7b9bf0b5e435276f59c7ae7b74b3ec01312f8bbdc"
     }
   ],
-  "sha": "e5cb74132cd91146f3f8ee093aad23334bda673ad10ce0507f3d078aa178d24d"
+  "sha": "086ae4885e1be4f569018fd091c1be9243815acc2750509a02324065fcb5000e"
 }

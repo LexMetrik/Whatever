@@ -564,8 +564,9 @@
         "2003-06-01",
         "2004-06-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/231/de",
-      "sha": "3fc2af3b4b93d8bd5e0a99a7cd817776e74a14c66b521e18e4d025025f405e84"
+      "sha": "53ced2df7cff2f8a6a0534559e50d9e257fac32af98511b74979765ee21526cc"
     },
     {
       "art": "aenderung",
@@ -628,5 +629,5 @@
       "sha": "abafd3faef014c98014dacb49457170c19fc6bfcf69032a4569503dfd489f305"
     }
   ],
-  "sha": "1e5a35041da074b6cd0f6667f5f80e741a737581ad799f4733db4663f2a7f39c"
+  "sha": "1efa95ea2eee375152e17e18aa87c0a0d1de0c5dace0c70ac1384edc12daaa93"
 }

@@ -1109,8 +1109,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/619/de",
-      "sha": "a0bef50a881d37f6e987ce3a6e1ff071dc166b4bc4e425ad854a27c74b76a8bc"
+      "sha": "2a1308deafb0f4354bef23dd8f5c8f8465c24809527be9d951cec9de85512885"
     },
     {
       "art": "aenderung",
@@ -1896,5 +1897,5 @@
       "sha": "ed3a8aa1bd89e875d516bd2f2c1b9f584684e0be20c84daaf2d370b000269acc"
     }
   ],
-  "sha": "3b5dbaef05fec4bf5b1eceed4a7883bf6400ec185663d97d93f54a728a1e0c2f"
+  "sha": "0bd1b65034ae441b6323815ded129c8e87c6119c6aec717bf69b9efb0fe9b340"
 }

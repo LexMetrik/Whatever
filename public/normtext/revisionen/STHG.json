@@ -1023,8 +1023,9 @@
         "2004-01-01",
         "2005-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
-      "sha": "41e6e7f67d050b5e448868b6ef36e20129eabac4a5137fcaa7c97b8c140855d8"
+      "sha": "91f597f6e428f7c2cd2e222ca07bfd9b09befb43e6fb58af191b0f4c8689f0fe"
     },
     {
       "art": "aenderung",
@@ -1233,5 +1234,5 @@
       "sha": "d77c6e550f8039b4920f263256298dc5954d3df6077f18bcdd2654200bf9b4e3"
     }
   ],
-  "sha": "88832504f26c9143ba86043560a3606f0b529559bece8218c099bc3b733b25cf"
+  "sha": "59138bf787ee6d6fef4e9996c5cc684641c20fafc36cb29dedc4b8cd96a2e87e"
 }

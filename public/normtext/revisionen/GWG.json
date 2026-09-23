@@ -340,8 +340,9 @@
         "2015-07-01",
         "2016-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
-      "sha": "81db4e7e5f99ae3a41c173ffd95426ea7ed820ceab0b23046008541a863104ad"
+      "sha": "77c01372740567a07264a8b41abc8786fc4150a5c2fdc235c96c7ee8e0877673"
     },
     {
       "art": "aenderung",
@@ -550,5 +551,5 @@
       "sha": "365c3a6b2e75f5bd5a7fdb9d03e90d66fc28854ab4987e0275970037bacf19df"
     }
   ],
-  "sha": "939176d2dfa0572d2f7c27ff19d0cf51fe3357977a6932db7d02b08243996145"
+  "sha": "d97f3d1d173727aba72a959c666c7810035bac7a0dd53d047efc3084c8235d27"
 }

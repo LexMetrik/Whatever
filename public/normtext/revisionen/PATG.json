@@ -128,8 +128,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
-      "sha": "ea4787803f69be76c30c1a2a24d5407559e593f3b171f21b66df76a71faa9623"
+      "sha": "4aacedf68e18d9bccddc61c026aac66ad9069c471d5d065196c0055643d526bd"
     },
     {
       "art": "aenderung",
@@ -208,8 +209,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/72/de",
-      "sha": "a9a653118a54e1b32ef48ae060e91523f055cebfd46609c64519b936e778b803"
+      "sha": "027ee18c9fb7b2eee8890b4f962ae5d0c99c2dfed823500977aa9e36ab6d7d2d"
     },
     {
       "art": "aenderung",
@@ -614,5 +616,5 @@
       "sha": "8d0f332c15e1fb30bba4468fe0d2e00dd83f3048379c1a74da941138c0eb91a5"
     }
   ],
-  "sha": "41d4eb48f7e6b897682ee355fcc48121cb64e5f1b50956aeea84c8353dd7f18a"
+  "sha": "d6883f3d0ba4220b8110d62b1ef2445fea48d42bd604d20288f0aaf134038733"
 }

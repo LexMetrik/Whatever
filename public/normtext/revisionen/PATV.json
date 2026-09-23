@@ -30,8 +30,9 @@
       "titelFr": "Ordonnance sur les brevets et les certificats complémentaires de protection (Ordonnance sur les brevets, OBI). Erratum",
       "titelIt": "Ordinanza relativa ai brevetti e ai certificati protettivi complementari (Ordinanza sui brevetti, OBI). Correzione (Concerne soltanto il testo francese)",
       "nichtKonsolidiert": true,
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/338/de",
-      "sha": "0b94326fa9837e637a2ec3c443ed6f53828edb9cfce6db64637e93ea29a36e5a"
+      "sha": "823804643ce8ce00855fcd498a6b65ed4f4a6849498e9e3a6ba5a5394468990e"
     },
     {
       "art": "aenderung",
@@ -321,8 +322,9 @@
       "wirkungen": [
         "berichtigung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1532_1532_1532/de",
-      "sha": "3a6d708dc0365042ace233096f0b32063c9308c1c2ad1998eb106a7262f58361"
+      "sha": "0688687a4c0f8ca0dc252668f40cf29faf01cb47917fb11190c3b4bad06efd9a"
     },
     {
       "art": "aenderung",
@@ -503,5 +505,5 @@
       "sha": "3393446023344d94892bc842853341e4d6f420ddabeddf610c6b3ddba7011c25"
     }
   ],
-  "sha": "68e3f664bc5ab33f4dc1cc1c3d17bc38001ea5126e1a928867afc359d4d10754"
+  "sha": "7abf734612b7047cf22ba3de39ae6286b854e7a1f2be795b0dcd5b316b2e112b"
 }

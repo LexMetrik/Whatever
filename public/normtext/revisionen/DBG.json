@@ -463,8 +463,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/447/de",
-      "sha": "eb896080200e306258791f3db247cc802fb0f4abb1b2d28827367d8123cb1212"
+      "sha": "c140ac382def9c9ccd575fd0e905abc959a16271ab3eb6ccea74ddf86eb78571"
     },
     {
       "art": "aenderung",
@@ -506,8 +507,9 @@
       "titelDe": "Mitteilung über die Änderung der Teilinkraftsetzung des Energiegesetzes",
       "titelFr": "Communication concernant la modification de la mise en vigueur partielle de la loi sur l'énergie",
       "titelIt": "Comunicazione sulla modifica dell'entrata in vigore parziale della legge federale sull'energia",
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/271/de",
-      "sha": "e10bb39dbcc7618b7179eeae71df806d79f97319f62020ce5a2651a751b66fc0"
+      "sha": "b0602e3c708f315f0082cd427b886543318ce943691c60d84e63cf103f823da5"
     },
     {
       "art": "aenderung",
@@ -1336,8 +1338,9 @@
         "2004-01-01",
         "2005-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
-      "sha": "41e6e7f67d050b5e448868b6ef36e20129eabac4a5137fcaa7c97b8c140855d8"
+      "sha": "91f597f6e428f7c2cd2e222ca07bfd9b09befb43e6fb58af191b0f4c8689f0fe"
     },
     {
       "art": "aenderung",
@@ -1606,5 +1609,5 @@
       "sha": "6a87d733a81169b8e0a4343aa41f76c4f26217b5819cca3959e68f4698cbe636"
     }
   ],
-  "sha": "3a931d0482e8ceda902372ea218f995b350613c383f568fad1f3a2b1d5d4a912"
+  "sha": "4cc698e2a0afef6d0dde45218e91fe923f06b9f4e0db5321aabdc472ee223d2f"
 }

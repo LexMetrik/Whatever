@@ -196,8 +196,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/719_719_719/de",
-      "sha": "7938198986e26d54db648587cc24789aaabfbcab21b3d63210c65585ba89187c"
+      "sha": "72793127222c83b13673a554f99f690d0d3947c85fbff561238b06b48492edd7"
     },
     {
       "art": "aenderung",
@@ -374,5 +375,5 @@
       "sha": "01d9751554e7ab9fda94875972017fbf0640db19baf2dc15a95c9f887008dc95"
     }
   ],
-  "sha": "51133f4046e8192a13528eba50d1c34f23e191c76d22b8a97c023fcbd5cc1ae4"
+  "sha": "02fe870954a473b79526bd2f106da8e19f430120e42dbf930b2994738c1aa615"
 }

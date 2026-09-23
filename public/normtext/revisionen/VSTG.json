@@ -230,8 +230,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/447/de",
-      "sha": "eb896080200e306258791f3db247cc802fb0f4abb1b2d28827367d8123cb1212"
+      "sha": "c140ac382def9c9ccd575fd0e905abc959a16271ab3eb6ccea74ddf86eb78571"
     },
     {
       "art": "aenderung",
@@ -756,5 +757,5 @@
       "sha": "6e3c3969968488086dac1385876165e3322d3dbc839397e269472864b65b37f4"
     }
   ],
-  "sha": "66cb9b75385a743a8b885f37117166df33e24bc8bfb627e41046a86ac47325dd"
+  "sha": "f6e70666a22783f11dee60fa4ffd455e269b1951b4ef1a693a392b5db23dab4e"
 }

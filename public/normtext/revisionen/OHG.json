@@ -47,8 +47,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
-      "sha": "c51fd587d9ec14868e8f4aeab014c00a2b53aa599ae0c4aaa8d690d968c4c771"
+      "sha": "4d35a59da029c3424afde10db590c805270c1e84bb0e3182d686b5821a298a23"
     },
     {
       "art": "aenderung",
@@ -115,5 +116,5 @@
       "sha": "8f1b81fea42212c0c819323da84cedf0217dff0520d12d8b4c85559597f18555"
     }
   ],
-  "sha": "d35980379458e9714b4e607badc21f51919036d84c2cfd0266490bbdc017b0c4"
+  "sha": "2a1a861a456a94b2f1553a79c222ec0771b45c4602364eb065dcb7116a22af1b"
 }

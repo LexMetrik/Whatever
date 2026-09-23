@@ -295,8 +295,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/718/de",
-      "sha": "da2b0473782827f5054a33e7d0deafb783e9488b158eee4435552aa91ef85c69"
+      "sha": "e7c8a084689c9d2274703c259a7f5b47baf8d989505d78f416f19c91703fb0d8"
     },
     {
       "art": "aenderung",
@@ -501,5 +502,5 @@
       "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     }
   ],
-  "sha": "9096ef9784f9a9d50d93d476bd31f01430dc99806bc2c016fb72f1e166447983"
+  "sha": "33fab4ef7abe8ec06700eaa8402f162f3c8e85c47507f9912f1337f6e4221cf9"
 }

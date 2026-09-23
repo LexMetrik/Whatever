@@ -103,8 +103,9 @@
         "2012-01-01",
         "2014-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/457/de",
-      "sha": "4059cae404be5f0640d3e44c8f2ede352ed914701a90fbb20358013a74d89142"
+      "sha": "1506e26f7a716cd8f84ca6cd77cdb96436c65610da18c93dee0cbf6086550fa9"
     },
     {
       "art": "aenderung",
@@ -155,5 +156,5 @@
       "sha": "ebed309a18575e8239fc8aac6a01ca32172658536b1111686d5badd894f16588"
     }
   ],
-  "sha": "f081fdd5814531d99c504bb998c67509a57cdc0dd85ef0de031fbe8247e419ec"
+  "sha": "4adfe0650c97bd9328f7b18e3a0f1585462848a54ba077a8fe500325f126ee8c"
 }

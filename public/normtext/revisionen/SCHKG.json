@@ -383,8 +383,9 @@
         "2015-07-01",
         "2016-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
-      "sha": "81db4e7e5f99ae3a41c173ffd95426ea7ed820ceab0b23046008541a863104ad"
+      "sha": "77c01372740567a07264a8b41abc8786fc4150a5c2fdc235c96c7ee8e0877673"
     },
     {
       "art": "aenderung",
@@ -567,8 +568,9 @@
         "2009-10-01",
         "2010-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/450/de",
-      "sha": "92dbf3f76c3353a23cc65316ae49b25426442aa6941f4f4565211f61bf6d20bf"
+      "sha": "4bec73ebfc73c35b12f7184f694f8f375a3331f0ff4cd77698d2458302167b04"
     },
     {
       "art": "aenderung",
@@ -993,8 +995,9 @@
       "wirkungen": [
         "berichtigung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/__1052/de",
-      "sha": "1a7280efc876862ba78923df6dea14d16ac936384273611bed9f3e1457b4cef6"
+      "sha": "bd0015a2cde44cbb6aa3094a5237c3c6d7498b2204b0dba4d1243db1031f9667"
     },
     {
       "art": "aenderung",
@@ -1508,5 +1511,5 @@
       "sha": "9b69cfc71a9326dd539f100189dd270a2f12ca90d18b4998003f21338a8b4306"
     }
   ],
-  "sha": "d0ef9287108df5224bf2cee47e7eadad8b287534c395eee7a13061c8837ac9a0"
+  "sha": "5c6d3259eb80a5f9acb5565e68b355dd1bec2f2b99bd34ab4d4100d4e066eac9"
 }

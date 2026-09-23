@@ -436,8 +436,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/352/de",
-      "sha": "b233ccbb4698a4a00edbbdf4b974ca44154d391634805c7b136f058386b05191"
+      "sha": "2aece6be41ba6435b5819f6bc9b57302c9c40af96e330c437d788662564abaac"
     },
     {
       "art": "aenderung",
@@ -925,8 +926,9 @@
       "wirkungen": [
         "berichtigung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/272/de",
-      "sha": "193a61a4c6fce688f8f1b881aac0ccbb29452fa8ae4b92b37e98f09f8c311e9d"
+      "sha": "8a91350adbab960f3104fc2ef4aa733c4d2aee2f367c62bd4110e0acc0f296b9"
     },
     {
       "art": "aenderung",
@@ -1127,8 +1129,9 @@
         "2015-07-01",
         "2016-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
-      "sha": "81db4e7e5f99ae3a41c173ffd95426ea7ed820ceab0b23046008541a863104ad"
+      "sha": "77c01372740567a07264a8b41abc8786fc4150a5c2fdc235c96c7ee8e0877673"
     },
     {
       "art": "aenderung",
@@ -1834,8 +1837,9 @@
         "2008-03-01",
         "2008-12-12"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
-      "sha": "b20eb70838927647ebf6a50c74f9eaf857fab743c192a0b85e846f6f68eeb6e4"
+      "sha": "847ec228ee177bba279a2b74b54e5e8400baf384f0898e1f1cb4b30b76994eec"
     },
     {
       "art": "aenderung",
@@ -3131,5 +3135,5 @@
       "sha": "d111fdcba23a1eefa1c540b98c66c8e8f1e2e80fdb1be45f36dcf565d0f99c1b"
     }
   ],
-  "sha": "2e911a5bb8c94d776772bf66447dd3a65d59163ad86aa2ae3c7babfba7b80059"
+  "sha": "5e313abdb7d8c51b2383accc908910d8e61022e5038dcc91ef38efe99e03293e"
 }

@@ -242,8 +242,9 @@
       "wirkungen": [
         "geltungsbereich"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/657_657_657/de",
-      "sha": "2c1860ce92220e1e72d41d4dd004474ee31540bc7529355bae8d32e40a901c9a"
+      "sha": "85db73e2b73bc9efdf85ccebaaf2f95941603a7ea8d42dd91a2af72fa1f65d9f"
     },
     {
       "art": "aenderung",
@@ -563,5 +564,5 @@
       "sha": "947e54019b4318b3f30253d9e1bb75481d6b1ff488da56deca1dbfe25642c4ad"
     }
   ],
-  "sha": "ec97bd464f4ffdd0d25ae0e49793136b155e70188211ea04df5023ae57a1cb17"
+  "sha": "2a2fe9dc26cbdff5e29885fe75d7c1d3797a73d407007c380aa7e34454d0abd5"
 }

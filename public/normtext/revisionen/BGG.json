@@ -14,8 +14,9 @@
       "titelFr": "Loi fédérale sur les plateformes de communication électronique dans le domaine judiciaire (LPCJ). Erratum",
       "titelIt": "Legge federale concernente le piattaforme per la comunicazione elettronica in ambito giudiziario (LCEG). Correzione",
       "nichtKonsolidiert": true,
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/216/de",
-      "sha": "8f02608ad9eadeedd686af90ba44e9e5a18a8721a84cdc7119e978af88122ae4"
+      "sha": "abbb0fefcc4cb15b8ba313688826f049df97165698b2ca90b84394c9e2c52a9e"
     },
     {
       "art": "aenderung",
@@ -387,8 +388,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/646/de",
-      "sha": "9797aeb3e3656b9c130353fbca3adf50ede5624f1e38960d6af1ae14b4f7d0fd"
+      "sha": "ebe88a470d22bf731219fb5a0c39233bbf479db51aaa2d58265d22da1e96d20d"
     },
     {
       "art": "aenderung",
@@ -465,8 +467,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/656/de",
-      "sha": "1d068f31f9b0841584703aecf1d3a615acd344f17e6111ae980fdbd0f37cd6b7"
+      "sha": "b65ec598fe1749fa6956e7121e9589fa5461846b465e34c790e1c4b4496f6082"
     },
     {
       "art": "aenderung",
@@ -607,8 +610,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/72/de",
-      "sha": "a9a653118a54e1b32ef48ae060e91523f055cebfd46609c64519b936e778b803"
+      "sha": "027ee18c9fb7b2eee8890b4f962ae5d0c99c2dfed823500977aa9e36ab6d7d2d"
     },
     {
       "art": "aenderung",
@@ -741,9 +745,10 @@
         "2006-07-01",
         "2007-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/310/de",
-      "sha": "91f46b07e43346f66ff0914ed1d59c26422f9587889efdeb5acb1ee6d0a556a3"
+      "sha": "7c904b70ab21b76d3b671e24a59ad8f313f25185c8e46274f42780b14147db68"
     }
   ],
-  "sha": "aa51cf4d63a1a2d3c91e57eded5aff01df6c331115b254f4be2c96cbfa7e6b18"
+  "sha": "7546f96e9e456cb1ffc0643b7778f0e1fc3a27090c5a3299ff9dc629ca85f61b"
 }

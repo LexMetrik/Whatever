@@ -338,8 +338,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/428/de",
-      "sha": "2ce11e260eb2d12b647a45959b5c3265d6ca04a31ee39e6e12a6bb5601a6d2e3"
+      "sha": "b474b595bb86a7d8df2e30ac6d5875e114f751941af776779a3f122cfd0a0264"
     },
     {
       "art": "aenderung",
@@ -688,5 +689,5 @@
       "sha": "9657adfb9a0e616f5acb0151038d2e30240f93203051290ebba251d8f4d4ae13"
     }
   ],
-  "sha": "551ad1c2db6d17e76b697b7db9c4a0a2d832160d58129d0c2164ee2da2e88936"
+  "sha": "c1687070184a3b72de94b81b723a733c1df9ddce45b9a2a4cb73508f5b628cb9"
 }

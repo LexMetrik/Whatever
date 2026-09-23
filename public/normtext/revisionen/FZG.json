@@ -218,8 +218,9 @@
         "2011-08-01",
         "2012-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/458/de",
-      "sha": "05a8ca95445e75269523e6df0f8b35e73ac525fda772b0c2b399aca025b3c75a"
+      "sha": "12370a6d7b56b478f0630131104d2267e3dbbb3ec0b9b0f9d581f041c5806ab7"
     },
     {
       "art": "aenderung",
@@ -497,5 +498,5 @@
       "sha": "9619c80d7312317a08704fb2e7bfa275dc447760eecc309f1e2eadb20756fcb2"
     }
   ],
-  "sha": "b2818a9c86209a1ef1a98e7b544edd22baec212efa653e27b88b40a4bab2d651"
+  "sha": "7d7fb4f1b0f733770b9c654e3cf2f4491e289d921004cec3151b42845561f807"
 }

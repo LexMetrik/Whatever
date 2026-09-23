@@ -150,8 +150,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/345/de",
-      "sha": "560bd39d7f4078774254afa119b4934b7b64bb724e03094965968fab85a46502"
+      "sha": "5b5c65414284b0195ee32e286f5f5eb232ad6ca084bd2d2de0b50e03c0b09d1e"
     },
     {
       "art": "aenderung",
@@ -277,5 +278,5 @@
       "sha": "e6c3c55f2805b306c9e6fad9f680a33952edcf39f041b804dff3297209689c54"
     }
   ],
-  "sha": "f6a66ca49241bb02374aeb4b7a6d3d8453dcd649ee186eefbe853f58201f949c"
+  "sha": "bf93251d3b62a226d3148b253bf71bfa7acd10e5dab7483fac307ba64cd813bd"
 }

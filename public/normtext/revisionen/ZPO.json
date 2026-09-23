@@ -253,8 +253,9 @@
         "2020-04-01",
         "2021-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/178/de",
-      "sha": "d90897905af077c409d20892185492818e0b39d59f247ae8b5b8778493239290"
+      "sha": "2b65ea7ece8df9b5410340a3eb5ebac053b2afcaa0a2c051b505d82b27542b0d"
     },
     {
       "art": "aenderung",
@@ -285,8 +286,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
-      "sha": "8e1ca7ab79864d0b7ecc9088fb3a512427c930bafc4af6e66884c4ca1d39c2d5"
+      "sha": "ab6ba0ee85a0b52f9b10e1d10e1c10e63c1d04ded353f90cd19850601403a87c"
     },
     {
       "art": "aenderung",
@@ -538,9 +540,10 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/37/de",
-      "sha": "5c6d90e504480c9e339549a9dadb1224397511056f1931586cd3e98a02417f04"
+      "sha": "485b4c1bd7dc0796906022481fbe9eaca6f8877ec886f4bf6e7d63b44a2f01bf"
     }
   ],
-  "sha": "44b14cb0c2a49c247359e93ce6608d9e37957d406319b3aae9db50fd8f153e74"
+  "sha": "b718b2a9b90c7cab2ac8bfc4e0cd019f0ff2c4d4b4e8c4a8e3b68c142b887879"
 }

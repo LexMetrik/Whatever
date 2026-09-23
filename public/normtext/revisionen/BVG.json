@@ -558,8 +558,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/728/de",
-      "sha": "7e6024954beed8b6225f3f2ab8e2361b6a678d692adcce3b928dd3c7351174f5"
+      "sha": "084107bc1f51ed0b0ab500a1b9d9bd227300034c94d61e728892aded1020a089"
     },
     {
       "art": "aenderung",
@@ -1439,5 +1440,5 @@
       "sha": "b0c6c412de8770df85a02224bb5cc327094b1f7215303adc8e22267c734523fc"
     }
   ],
-  "sha": "dbdeb3bd993d9ea6de621d09c44b17b9636aa61e7345d4f2986121817962c651"
+  "sha": "fd86bb6fe133080c37d2b03e2ef88220d538b4e1630b53627d56f21e05038b32"
 }

@@ -2058,8 +2058,9 @@
       "wirkungen": [
         "berichtigung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/334_332_334/de",
-      "sha": "65b23f9056a8bc1c6756d440a71ff30e7e2ae3577c188eecb62d6c1168649bf8"
+      "sha": "ec1f1797776de36670dd689d7524046374dacb61171a0e6d8a87f1a7a22896bc"
     },
     {
       "art": "aenderung",
@@ -2384,5 +2385,5 @@
       "sha": "400c3914661b8be9b721e2e82d58aa33f8acd8979e03ffa2bb75e86beed15099"
     }
   ],
-  "sha": "19a69e6e5e1ca5e2bc45c1144eb90e1edccf4fda3b83d042b26b2fc3667b995e"
+  "sha": "4f22937513b0cd88f2c85f14932e7438a25fdd96d0b38478f0576b5d061c6af6"
 }

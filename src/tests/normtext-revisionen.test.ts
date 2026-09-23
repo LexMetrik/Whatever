@@ -515,6 +515,24 @@ describe('baueRevisionen — Pfad (c) Auswirkungen (S6-D1, AE-2..AE-5)', () => {
     ]);
   });
 
+  it('§8 datumAusErlass: markiert Daten, die nicht aus einer eigenen Auswirkung stammen (ZPO ← FINIG AS 2018 5247)', () => {
+    const k: RevisionsKontext = {
+      abstractEli: 'cc/2010/262', basicAct: OC('2010/262'), inkrafttreten: '2011-01-01',
+      auswirkungen: [
+        { oc: OC('2018/801'), typ: 1, datum: '2018-06-15', fassung: '2021-01-01' }, // Beschlussdatum
+        { oc: OC('2024/1'), typ: 1, datum: '2025-01-01', fassung: '2025-01-01' }, // echt
+      ],
+      ocStamm: { [OC('2018/801')]: { dateForce: '2019-01-01', dateDoc: '2018-06-15' }, [OC('2024/1')]: { dateForce: '2025-01-01' } },
+    };
+    const bindings = [bind({ oc: OC('2023/5'), dateForce: '2023-07-01', titleDe: 'nur Pfad (b)' })];
+    const s = baueRevisionen(ZPO, bindings, [], '2026-07-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.map((r) => [r.ocUri, r.dateEntryInForce, r.datumAusErlass])).toEqual([
+      [OC('2024/1'), '2025-01-01', undefined],
+      [OC('2023/5'), '2023-07-01', true],
+      [OC('2018/801'), '2019-01-01', true],
+    ]);
+  });
+
   it('unbekannter Auswirkungs-Typ bricht ab (nie still einsortieren)', () => {
     expect(wirkungAusTyp(1)).toBe('aenderung');
     expect(() => wirkungAusTyp(99)).toThrow(/impact-type.99/);

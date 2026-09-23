@@ -652,8 +652,9 @@
         "2003-08-01",
         "2004-04-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
-      "sha": "30154977aa551242651e03da857dfa64553686bd6a607984a93932b82072fdea"
+      "sha": "23897f46e6e8099d19390271b82fbe0a8f40056e1281d34679c2dd95d97dcbd6"
     },
     {
       "art": "aenderung",
@@ -729,8 +730,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/454/de",
-      "sha": "93121eb2a3807cea68a0a9073f60bb2716b03d5c1ca362b24b93ec79e0e0b632"
+      "sha": "87032451eb09ee1fb7df5e92a0a1c91ab83870289a14efe3787936dbc408961a"
     },
     {
       "art": "aenderung",
@@ -1148,5 +1150,5 @@
       "sha": "870394184b5f5b45b3194f3092327bc401196ad75b91b919964ff71763a7fa92"
     }
   ],
-  "sha": "75e6b42ea1f3985e5ba14c3639f97275b50cccb18574cc4908446bc7d0ec54a4"
+  "sha": "0b96d0c4cf0c8bf814478420c84c27245a70d53ab78627d6d55b7c60075362b4"
 }

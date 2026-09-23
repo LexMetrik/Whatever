@@ -51,6 +51,10 @@ export interface RevisionBezug {
    *  (aufsteigend), nur bei gestaffeltem Inkrafttreten — jede Etappe ist ein eigener
    *  Eintrag mit demselben `ocUri` (Schlüssel darum `revisionSchluessel`, nie `ocUri`). */
   etappen?: string[];
+  /** Pfad (c), §8: das Datum ist das Inkrafttreten des ÄNDERNDEN Erlasses, nicht einer
+   *  eigenen Auswirkung auf diesen Erlass (Fedlex gibt dafür kein brauchbares Datum) — es
+   *  kann für diesen Erlass abweichen. Herleitung: `RevisionEintrag.datumAusErlass`. */
+  datumAusErlass?: boolean;
   /** Fedlex-Live-Link auf den AS-Text bzw. — beim Marker — auf die Fassung dieses Datums (§7c). */
   quelleUrl: string;
 }

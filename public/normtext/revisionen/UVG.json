@@ -262,8 +262,9 @@
       "titelDe": "Verordnung über die Verhütung von Unfällen und Berufskrankheiten (Verordnung über die Unfallverhütung, VUV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la prévention des accidents et des maladies professionnelles (Ordonnance sur la prévention des accidents, OPA) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla prevenzione degli infortuni e delle malattie professionali (Ordinanza sulla prevenzione degli infortuni, OPI)",
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/214/de",
-      "sha": "a687721c0d92abdc70d1ab330a47d21b385c3d57f8121eb8b01b0558bbc0b458"
+      "sha": "e8cbee25c94ad688a28d890b59b051a8ee79a3797994d460b2186665d24a5310"
     },
     {
       "art": "aenderung",
@@ -851,9 +852,10 @@
       "wirkungen": [
         "inkrafttreten"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1724_1724_1724/de",
-      "sha": "5ef6a1c7d8e1953a803d03fb1c91ba11df964582c93fb425dc0d4fff4758cf8c"
+      "sha": "690210ed83d135e4c22a166c0130c26124178c8ed5bb934fd53d81951c0ad5c8"
     }
   ],
-  "sha": "f5b7a5444bba5c706e9dc56d48bc2d8615760de872acdb8d739702b0c62ce618"
+  "sha": "c7d6439339a72bca253bdabce20af515baf6ca37299ca6b68a261a0ab06ec34c"
 }

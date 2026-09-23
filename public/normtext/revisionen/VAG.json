@@ -97,8 +97,9 @@
         "aenderung",
         "aufhebung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
-      "sha": "f998fb387ad92fc45b61bd31f9281025e9256dcbe15cad17f513536faaf624e6"
+      "sha": "0b0591679ba6922abfddf11f586192ed7bbc2941ae8c07727d314ebd00d3c2be"
     },
     {
       "art": "aenderung",
@@ -259,5 +260,5 @@
       "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     }
   ],
-  "sha": "9f62b120e54a73b741c65413baf0f1798bbde7f405426aa16e7a87cb6b32099f"
+  "sha": "284a9dac69d0425c4d0de23adf1e597f282c0af77ee642f178d0a3b1d3fceb97"
 }

@@ -329,8 +329,9 @@
         "2009-10-01",
         "2010-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/450/de",
-      "sha": "7beb0f2a60005d6d6435da8759522b0f38107814843ca291fdd7df88e352de81"
+      "sha": "8f06b0d307163ec3b6f7cefb669d3241e857017bf4cbd4b995db1fd543d6394b"
     },
     {
       "art": "aenderung",
@@ -646,5 +647,5 @@
       "sha": "ddc5c3586036c2bdedfdfa99de5a737e3ad4022be004388efa7e8e3f1a6d805c"
     }
   ],
-  "sha": "2ca143d10afea06373573c435f42dd9acc731885f99abf7b044882d998ec3b85"
+  "sha": "94c5071be14eb85003a4b5b35aabd49231651936cb061b36f1b68533a383f007"
 }

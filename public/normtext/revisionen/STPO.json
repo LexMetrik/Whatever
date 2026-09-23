@@ -14,8 +14,9 @@
       "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 17 juin 2022 du code de procédure pénale",
       "titelIt": "Ordinanza sull’entrata in vigore integrale della modifica del 17 giugno 2022 del Codice di procedura penale",
       "nichtKonsolidiert": true,
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/490/de",
-      "sha": "a22a1543f05cb5f42742790fa90b1900b5f8141e6bb37619cee3c4d90ad37c80"
+      "sha": "ff25a0a1bcfdc7417cf0ce7fb36ce48b7e576805729d78ef8abec17f22c9db86"
     },
     {
       "art": "aenderung",
@@ -795,9 +796,10 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/698/de",
-      "sha": "25747b6228748480a29360b70a6528dbad5be970741c85fe061b14ca68ea10c1"
+      "sha": "7d1cf15839416d6802a921bb05bcff0d03d669a4bda2ad13ab157ba2fbb16ea6"
     }
   ],
-  "sha": "623dcafd768c4105792807f57c14d707c4a7464d727fbc93c12f3241fc72e09b"
+  "sha": "0da09a757f58fd727b13b968662a953ee32c04898b574f4d5883ecf0d3bb2835"
 }

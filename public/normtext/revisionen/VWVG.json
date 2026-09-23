@@ -586,8 +586,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/679_679_679/de",
-      "sha": "873fed3da734d0e5a614e8123a7fcf8f99185303d8c48470b87b07ad308a1beb"
+      "sha": "595eeb86cde59590cfe244c1ecfc467b62172b0ab9ef924c23714e6c1ff264e5"
     },
     {
       "art": "aenderung",
@@ -680,5 +681,5 @@
       "sha": "5013175dfaef4deadb40a52eb1cc7fb68c02fa8d306c24e68065402c4da26151"
     }
   ],
-  "sha": "40c2e09fc4ca0e059b36487ac7420646b73fac663a60ddb5b72bbb3a5ca816f0"
+  "sha": "3657a731b6eb4fbfd022d9446205925deba41caa3598e715819e15d53fd345a6"
 }

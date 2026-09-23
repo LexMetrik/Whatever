@@ -49,8 +49,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/278/de",
-      "sha": "64166ba4848a323eddd5b614d347c11bc608257c8360d3314ef2a0c88ee6c197"
+      "sha": "6f5bcbca6eec66d683fe18cc158f6f177e9bc76edc991002fbbaff02c85ce62f"
     },
     {
       "art": "aenderung",
@@ -202,5 +203,5 @@
       "sha": "fb28e531ac518999edb18c74ef49b103f3639306177d1a467c84970b57cf997b"
     }
   ],
-  "sha": "48f3750288ff03d7eac7ec306f10a2ace5030e664c9ea564e2cf74efeb023090"
+  "sha": "b99e6da0c31afdcb18e3641953fb75ef983a8f6b6d75aaa789a565db5510907f"
 }

@@ -300,8 +300,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/217/de",
-      "sha": "97efe6087c2b8e53042a544f86fca686249a079dae7b8bd40bf677a7b1a36dfb"
+      "sha": "35f1cf1f6e27bf28501419679e1fc5ad92bfe36080c036c25aa939cde130fd4d"
     },
     {
       "art": "aenderung",
@@ -617,5 +618,5 @@
       "sha": "a76a422d57d9ede0bb3958a7e3739a645a672f55ba965f92c0f6025c702bd3ff"
     }
   ],
-  "sha": "5f103859dcdb2d4ddc4f5bf6be91518f028175964c3d3da882e8a0c7d95951ea"
+  "sha": "733cdad9baae34c9d8d74da3f2d2a861dffd0b0bbbf83089cfba9b44bb16a7c3"
 }

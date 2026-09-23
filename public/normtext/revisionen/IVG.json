@@ -1151,8 +1151,9 @@
         "1979-01-01",
         "1984-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/391_391_391/de",
-      "sha": "73ccba89ee1f1b4ec69d08a6e85878728ff8176079eb0078df99b648a31c5e01"
+      "sha": "5727259246748c0581234dbba2cb40fb20571197b2ac24b2507fad0ed65ea981"
     },
     {
       "art": "aenderung",
@@ -1299,8 +1300,9 @@
       "wirkungen": [
         "berichtigung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1961/_336_344/de",
-      "sha": "6f4efb54170c6019d6a0675ec1b17d48559132565f8c14ea3f1c7903b69b2521"
+      "sha": "ae2b4b5c413a110fbec1880c240b5fc9370fbc977b831d92aecd09233fc46ab9"
     },
     {
       "art": "aenderung",
@@ -1315,5 +1317,5 @@
       "sha": "5bffa62342c296887248150fb5e26c8f1db3346dcd3ad2efdcbe847adbab3d8f"
     }
   ],
-  "sha": "374b351072b6bc1e4166d4a62cde7d097c48b105b969c566f25b054f0e0be2a5"
+  "sha": "713d021acf4cc9858c1cb80e75a96f6121c9987e5c3eb1af744ed2b8952f04fd"
 }

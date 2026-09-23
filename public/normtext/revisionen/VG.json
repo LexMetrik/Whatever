@@ -172,8 +172,9 @@
         "2008-03-01",
         "2008-12-12"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
-      "sha": "b20eb70838927647ebf6a50c74f9eaf857fab743c192a0b85e846f6f68eeb6e4"
+      "sha": "847ec228ee177bba279a2b74b54e5e8400baf384f0898e1f1cb4b30b76994eec"
     },
     {
       "art": "aenderung",
@@ -358,5 +359,5 @@
       "sha": "c3c144ec60e4ae55284808cbd5077eae53fa03334cc8f57fdd9c4a23bd4b1e00"
     }
   ],
-  "sha": "2ac1c8df0a08d7f0e529e4c2339223292f98da7cd42c91c66644effaa2a72e7f"
+  "sha": "f3efca7dd7a993fc45e4ae779b8401fb064f076d422c32c822494e1efdab4970"
 }

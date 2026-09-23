@@ -113,8 +113,9 @@
       "wirkungen": [
         "aenderung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
-      "sha": "8e1ca7ab79864d0b7ecc9088fb3a512427c930bafc4af6e66884c4ca1d39c2d5"
+      "sha": "ab6ba0ee85a0b52f9b10e1d10e1c10e63c1d04ded353f90cd19850601403a87c"
     },
     {
       "art": "aenderung",
@@ -149,5 +150,5 @@
       "sha": "8958d944e0febc909bf3cedb6fca405b476f35f9cc820f070786f41b04222e26"
     }
   ],
-  "sha": "e8f94536bdbe5eacbb69485c6eddfe1b70a4529c630344e4b04fb8e229d6cc18"
+  "sha": "868245e2aef0ca3f0da36f697d56215f8dcf883abcbcb99226248190b50b5231"
 }

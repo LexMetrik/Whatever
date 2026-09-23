@@ -183,8 +183,9 @@
         "2011-08-01",
         "2012-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/461/de",
-      "sha": "e513df346dd56520ba86cb8729c38195a017d3dc87fd36d28af6bfd0ed729cb2"
+      "sha": "a99a858fc78f05e4018c549d1c21f1df555cde755dcf75cc76133599d4873c54"
     },
     {
       "art": "aenderung",
@@ -355,5 +356,5 @@
       "sha": "7412d1ab51645c8d014d7885d593b81b077753db376ec30625ff905aaa7c2520"
     }
   ],
-  "sha": "cbce745f1a56c565ba3b9ffab3215f6fe6456608c62bd243d5405cc53b91dd48"
+  "sha": "6f4401159fb21cf4d02f4ee65756a34e41da514f139fd57ecd6ef334a0c1e294"
 }

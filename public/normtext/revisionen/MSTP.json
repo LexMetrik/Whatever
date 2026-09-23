@@ -331,8 +331,9 @@
         "2016-07-01",
         "2018-01-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
-      "sha": "8cab18ac0a24a37f13851d1d211f361c7a725530f6ed553359b0a6a1ac9c2639"
+      "sha": "9d342ffc93c50c8e588bc4f075a73509305b208c6c2c826e634d9aba2417ac0b"
     },
     {
       "art": "aenderung",
@@ -639,8 +640,9 @@
         "2003-08-01",
         "2004-04-01"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
-      "sha": "30154977aa551242651e03da857dfa64553686bd6a607984a93932b82072fdea"
+      "sha": "23897f46e6e8099d19390271b82fbe0a8f40056e1281d34679c2dd95d97dcbd6"
     },
     {
       "art": "aenderung",
@@ -778,9 +780,10 @@
         "aenderung",
         "aufhebung"
       ],
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1170_1170_1170/de",
-      "sha": "339ab12590f5eee5d9f8640d81dcc6bde7851f3cfc598dbe11de30b143b15fe0"
+      "sha": "4c17091bddc793d4d26fd64b0c4e8ca4bb55c5b11cc3cce9d7df539ce49d802d"
     }
   ],
-  "sha": "bce9e65b6ef70d063be0ccfcf078da0685ad6b5f33014926bf3473b1a7a0ed38"
+  "sha": "f31700b4ea6a6e0369f165aeca50f4cd2b4242c2bc6cfa389b63d8ed318794a6"
 }
