@@ -226,7 +226,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // ── H3 · Panel: WO es steht, WAS am Öffner steht ──────────────────────────
   // Die Overlay-Wurzel und die Pane-Rolle stehen hier EINMAL — Gliederungs-Blatt
   // und Panel-Blatt hängen in dieselbe Schicht und müssen dieselbe Rolle tragen
-  // (H2-Befund, `./LeserLeisteSheet`).
+  // (H2-Befund, `./leisteAufbau`).
   const overlayZiel = (umgebung.imPane && umgebung.overlayWurzel?.current) || null;
   const paneRolle = umgebung.istSekundaer ? 'sekundaer' as const : 'primaer' as const;
   // Ohne Leseposition gilt der ERSTE Artikel — benannt, nicht stillschweigend
@@ -241,7 +241,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Kopf nennt keine Artikel-Zahl mehr (Herleitung in `./LeserPanelOeffner`).
 
   // Ä79 (H4-II): steht die Schiene, ist SIE der eine Griff — die Herleitung samt
-  // Messreihe steht am Bauteil, das sie betrifft (`./LeserGliederungSchiene`).
+  // Messreihe steht am Bauteil, das sie betrifft (`./leisteAufbau`).
   const schieneSteht = bild.schiene;
   // D33 (7.9.2026): die Schiene steht nur noch AUS EINEM Grund — der Nutzer hat
   // die Gliederung eingeklappt. Der zweite Grund (das Beiwerk-Blatt hatte ihren

@@ -185,7 +185,8 @@ const TYPO_UTILITY = /\b(?:text-(?:xs|sm|base|lg|xl|micro|body-s|body|h1|h2|h3)|
  */
 const GRIFF_AUSNAHMEN: Record<string, string> = {
   'components/layout/Topbar.tsx · ☰': 'ENTSCHEID DAVIDS — Topbar-Anatomie gegen Leser-Griff',
-  'pages/gesetz-leser/v3/LeserGliederungSchiene.tsx · ☰': 'ENTSCHEID DAVIDS — dieselbe offene Frage',
+  // W2·29 S3: die Schiene lebt seit 23.9.2026 in `leisteAufbau.tsx` (Datei aufgegangen).
+  'pages/gesetz-leser/v3/leisteAufbau.tsx · ☰': 'ENTSCHEID DAVIDS — dieselbe offene Frage',
   'components/Katalog.tsx · →': 'BESCHRIFTET — Affordanz-Pfeil neben dem Karten-Titel',
   'components/normtext/ErlassKarte.tsx · ↗': 'BESCHRIFTET — Aussenlink-Pfeil neben dem Linktext',
   'components/suche/SuchResultate.tsx · →': 'BESCHRIFTET — Affordanz-Pfeil neben dem Treffer-Titel',

@@ -106,7 +106,7 @@ import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
 
 /** Breite der Gliederungsspalte (rem) — Ist-Wert des Rahmens, hier benannt. */
 const SPUR_GLIEDERUNG = 18;
-/** Breite der eingeklappten Gliederungs-Schiene (rem), `LeserGliederungSchiene`. */
+/** Breite der eingeklappten Gliederungs-Schiene (rem), `leisteAufbau.schieneAufbau`. */
 const SPUR_SCHIENE = 2.25;
 /** Abstand zwischen zwei Spuren (rem) = `gap-5` (LeserLeseZeile.tsx).
  *  2 → 1.25 rem am 29.8.2026 (Auftrag David: «weniger Abstand Gesetz ↔

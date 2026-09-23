@@ -2356,12 +2356,8 @@
     outline: 2px solid var(--focus);
     outline-offset: -2px;
   }
-  /* ── Ä5 (LESER-V3 H2b) · Fläche des klebenden Leisten-Sockels ───────────────
-     Der Sockel muss OPAK sein (sonst läuft der Gliederungsbaum beim Scrollen
-     sichtbar darunter durch), darf aber nicht seine eigene Fläche behaupten: in
-     der Spalte liegt er auf `--paper`, im Bottom-Sheet auf `--paper-raised`
-     (gemessen 17.8.2026 als sichtbare Tonkante). Der BEHÄLTER setzt
-     `--leser-leiste-flaeche`; ohne Angabe bleibt es beim Vorzustand `--paper`. */
+  /* Ä5 (H2b): der klebende Leisten-Sockel ist OPAK, trägt aber die Fläche seines
+     BEHÄLTERS (Spalte `--paper`, Sheet `--paper-raised`, v3/leisteAufbau). */
   .lc-leiste-sockel { background: var(--leser-leiste-flaeche, var(--paper)); }
   /* LM-160/LM-165 (W2·17-UI-BEFUNDE B6, K-15): das `aria-invalid`-Attribut trägt
      bereits die a11y-Semantik (mehrere Formulare setzen es), aber ohne sichtbare
@@ -2939,10 +2935,6 @@
     min-height: var(--tap-ziel-komfort);
     min-width: var(--tap-ziel-komfort);
   }
-  /* Senkrechte Rand-SCHIENE des Lesers V3 (H3-Nachzug C5b): der schmale,
-     senkrecht beschriftete Öffner, wenn die Gliederung eingeklappt ist. Bis zum
-     Nachzug stand die Wertekette als 13 Utilities im JSX — Design-Werte gehören
-     zu den anderen `lc-leiste-*`-Klassen (§13), nicht in eine Layout-Datei. */
   /* ─── Schliess-✕ (A3-1, R3-β 31.8.2026) ──────────────────────────────────
      Anatomie des EINEN Schliess-Knopfes (`components/ui/SchliessKnopf.tsx`,
      dort die Messreihe der sieben Fundstellen und die Kanon-Wahl). Hier steht
@@ -3046,10 +3038,14 @@
     width: 100%; height: 100%;
     min-width: var(--tap-ziel-komfort); min-height: var(--tap-ziel-komfort);
   }
+  /* Senkrechte Rand-SCHIENE der eingeklappten Gliederung (C5b, v3/leisteAufbau).
+     W2·29 S3: kein Kasten mehr (F0.6 Trennung über Linien) — die 2-px-Tintenlinie
+     oben wiederholt die Kopflinie der offenen Leiste, die Fläche erst im Hover. */
   .lc-leiste-schiene {
-    @apply flex min-h-11 w-9 flex-col items-center gap-2 rounded-md border border-line py-3 text-micro text-ink-600 transition-colors;
+    @apply flex min-h-11 w-9 flex-col items-center gap-2 py-3 text-micro text-ink-700 transition-colors;
+    border-top: 2px solid var(--rule);
   }
-  .lc-leiste-schiene:hover { border-color: var(--brass-300); background: var(--well); color: var(--brass-700); }
+  .lc-leiste-schiene:hover { background: var(--well); color: var(--ink-900); }
 
   /* Sticky-Chrome-Kopf (Topbar) — LM-001/LM-006 (W2·17-UI-BEFUNDE-B3, K-01):
      vormals ein «Glas»-Effekt (96 % Deckkraft + blur(12px)). FAHRPLAN-GESETZES-UX.md
@@ -4639,9 +4635,12 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
   letter-spacing: 0;
 }
 
-/* ③b Im Titelblatt-Band ink-600 statt ink-500 (5.38/5.25:1); ungeschichtet,
-   damit es die Utility schlägt — kein Umdefinieren des Tokens (tokens-drift). */
-.lc-titelblatt-band .text-ink-500 { color: var(--ink-600); }
+/* ③b Auf der Registerfläche `reg-g-flaeche` ink-600 statt ink-500 (5.38/5.25:1
+   gegen 4.22): Titelblatt-Band (S2) und die Marken-Zeile der Gliederung (S3,
+   `[data-toc-aktiv]`). Ungeschichtet, damit es die Utility schlägt — kein
+   Umdefinieren des Tokens (tokens-drift). */
+.lc-titelblatt-band .text-ink-500,
+[data-toc-aktiv] .text-ink-500 { color: var(--ink-600); }
 
 /* ─── GB-20 · DIE WAHL-ZEILE (Ferien/Stillstand des Fristenrechners) ────────
    Rezept zum Befund G20 (Herleitung am Aufrufer `forms/EinfacheFristForm`):

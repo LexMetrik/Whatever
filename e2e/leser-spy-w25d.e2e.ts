@@ -36,6 +36,7 @@
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
+import { linienOrakelInstallieren, type LinienOrakel } from './helpers/bezugslinie'
 
 interface Probe {
   y: number; bezug: number; soll: string | null; ist: string | null; ueber: number | null; kandidaten: number
@@ -43,11 +44,12 @@ interface Probe {
 
 // Eine Messung im Seitenkontext: Soll (aus dem DOM) gegen Ist (Reiter-Signal).
 async function messen(page: Page): Promise<Probe> {
+  await linienOrakelInstallieren(page)
   return page.evaluate(() => {
-    const rects = [...document.querySelectorAll('[id^="art-"]')].map((el) => {
-      const r = el.getBoundingClientRect()
-      return { token: el.id.replace(/^art-/, ''), top: r.top, bottom: r.bottom }
-    })
+    // W2·29 S3 (23.9.2026): Linie, Kandidatensatz und Wahl rechnet seither das
+    // EINE Orakel (`helpers/bezugslinie.ts`, FAHRPLAN-LESER-V3 §16) — die
+    // datierten Herleitungen unten gelten ihm unverändert (§2b).
+    const { bezug, token: soll, rects } = (window as unknown as { __lmLinie: () => LinienOrakel }).__lmLinie()
     // Bezugslinie EXAKT wie `scrollAnker.ts:bezugslinie(0, ankerLandepunkt(el))`
     // und wie der Spy sie in `inhalt-hooks.tsx` bildet.
     // GEÄNDERT 9.8.2026 (deklariert, zusammen mit dem Sprung-Fix): hier stand
@@ -57,10 +59,6 @@ async function messen(page: Page): Promise<Probe> {
     // er die 12-px-Fehlstellung, statt sie zu zeigen. Jetzt wird derselbe Wert
     // gelesen, den auch `scrollIntoView` benutzt: der `scroll-margin-top` des
     // `.nt-anker`. Damit ist die Sonde gegen jede künftige Kopfhöhe immun.
-    const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
-    const artEl = document.querySelector('[id^="art-"]')
-    const landepunkt = artEl ? (parseFloat(getComputedStyle(artEl).scrollMarginTop) || 5 * remPx) : 5 * remPx
-    const bezug = landepunkt + 8
     // Auswahl wie `aktiverArtikel` — hier bewusst über ALLE Artikel (das Soll),
     // während der Spy nur seine beobachtete Teilmenge sieht (das war H6-a).
     // GEÄNDERT 9.8.2026: davor die ZWISCHENRAUM-REGEL des Readers
@@ -78,8 +76,6 @@ async function messen(page: Page): Promise<Probe> {
     // die einzige ehrliche Antwort. Ohne diese Bedingung verlangte die Sonde einen
     // Artikel, den der Leser nachweislich nicht sieht (gemessen: 40_a, Oberkante
     // 149 px UNTER der Linie in einem 200 px hohen Sichtfeld).
-    const hoehe = document.documentElement.clientHeight
-    const kandidaten = rects.filter((e) => e.bottom > bezug && e.top < hoehe)
     // ── §6.3-DEKLARATION (W2·24, 6.9.2026) · DER RÜCKFALL BLEIBT IM BILD ────
     // Hier stand `: rects` — ALLE Artikel des Erlasses, auch die 1'600, die
     // gerade gar nicht auf dem Schirm sind. Damit konnte das Orakel einen
@@ -96,15 +92,6 @@ async function messen(page: Page): Promise<Probe> {
     // Bildes zeigt, wird ab jetzt gemeldet statt bestätigt — vorher war genau
     // das das «Soll». Die Zusage des Falls («der Artikel an der Linie bleibt
     // sichtbar») steht damit erstmals im Orakel selbst.
-    const sichtbar = rects.filter((e) => e.bottom > 0 && e.top < hoehe)
-    const wahl = kandidaten.length > 0 ? kandidaten : (sichtbar.length > 0 ? sichtbar : rects)
-    let soll: string | null = null
-    let besteDist = Infinity
-    for (const e of wahl) {
-      const dist = bezug < e.top ? e.top - bezug : bezug > e.bottom ? bezug - e.bottom : 0
-      if (dist === 0) { soll = e.token; break }
-      if (dist < besteDist) { besteDist = dist; soll = e.token }
-    }
     // ── §6.3-DEKLARATION D27 (David 6.9.2026) · DAS IST STEHT WOANDERS ──────
     // Bis 6.9. war das Ist der Live-Artikel der Inhalts-KOPFZEILE («· Art. 40d»),
     // gelesen aus `nav .num`. Die Kopfzeile trägt ihn nicht mehr — «diese

@@ -130,6 +130,38 @@ test.describe('A33 — Ruhige Gliederung (Scroll-Spy / TOC)', () => {
     expect(maxDelta, `max TOC-Eigenbewegung/Schritt ${maxDelta}px`).toBeLessThan(150)
     // Funktions-Treue: der Scroll-Spy lebt — der Highlight ist mehrfach gewandert.
     expect(labels.size, `distinkte Highlights ${labels.size}`).toBeGreaterThanOrEqual(3)
+
+    // ── PAUSENLOSE STRECKE (W2·29 S3, 23.9.2026 — FAHRPLAN-LESER-V3 §16) ──────
+    // Die Schritte oben warten je 260 ms und lassen damit genau den Timer feuern,
+    // der beim durchgehenden Lesen verhungert: F1 blieb am 18.9.2026 grün, während
+    // die Marke beim echten Lesen nie ansprang (`.claude/rules/webseiten-pruefung.md`
+    // «Stop-and-go ist kein Lesen»). Darum dieselbe Seite jetzt OHNE Pause: 60 Frames
+    // à 40 px, die Marke je Frame gelesen — gezählt wird nur, was WÄHREND der
+    // Bewegung zu sehen ist. `visibilityState` wird mitgeprüft: ohne sichtbare Seite
+    // läuft kein rAF, und die Strecke mässe nichts.
+    const strecke = await page.evaluate(async () => {
+      const c = document.querySelector('[data-toc]') as HTMLElement | null
+      const marke = () => {
+        const a = document.querySelectorAll('[data-toc] [data-toc-aktiv]')
+        const el = a[a.length - 1] as HTMLElement | undefined
+        return el ? (el.textContent ?? '').trim() : ''
+      }
+      const gesehen = new Set<string>()
+      let groessterSprung = 0
+      let vorher = c ? c.scrollTop : 0
+      for (let i = 0; i < 60; i++) {
+        window.scrollBy(0, 40)
+        await new Promise((r) => requestAnimationFrame(() => r(null)))
+        gesehen.add(marke())
+        const jetzt = c ? c.scrollTop : 0
+        groessterSprung = Math.max(groessterSprung, Math.abs(jetzt - vorher))
+        vorher = jetzt
+      }
+      return { marken: [...gesehen], groessterSprung, sichtbar: document.visibilityState }
+    })
+    expect(strecke.sichtbar, 'Seite nicht sichtbar — rAF steht, die Strecke misst nichts').toBe('visible')
+    expect(strecke.groessterSprung, `pausenlos: max TOC-Eigenbewegung/Frame ${strecke.groessterSprung}px`).toBeLessThan(150)
+    expect(strecke.marken.length, `pausenlos: distinkte Marken ${strecke.marken.join(' | ')}`).toBeGreaterThanOrEqual(3)
     expect(fehler).toEqual([])
   })
 

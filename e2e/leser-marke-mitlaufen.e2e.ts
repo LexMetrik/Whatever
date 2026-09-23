@@ -22,6 +22,7 @@
 // Artikelgrenzen kommen langsamer als 200 ms, und der Timer feuert).
 import { test, expect } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
+import { linienOrakelInstallieren } from './helpers/bezugslinie'
 
 /** Lese-Scrollen + Zeitreihe der Standort-Marke, page-seitig in EINER
  *  evaluate-Reise (unter Runner-Last keine CDP-Roundtrips pro Probe).
@@ -116,6 +117,8 @@ async function leseZeitreihe(
  *           der Linie liegt, entscheidet dasselbe Orakel wie in
  *           `e2e/leser-spy-w25d.e2e.ts` (`messen`); dort steht die Herleitung
  *           der Linie (`scroll-margin-top` + 8) und der Zwischenraum-Regel.
+ *           Seit W2·29 S3 (23.9.2026) ist es EINE Funktion für beide Sonden
+ *           (`helpers/bezugslinie.ts`, FAHRPLAN-LESER-V3 §16).
  *   IST   — der Eintrag, der `[data-toc-aktiv]` trägt.
  *  Rückstand = SOLL − IST, in Einträgen. Bei echter Sofort-Zuweisung ist er 0:
  *  die Marke zeigt den Abschnitt, in dem der Leser steht. JEDE Trailing-
@@ -173,35 +176,13 @@ async function leseZeitreihe(
 async function leseRueckstand(
   page: import('@playwright/test').Page, schritte: number, stoesse = 3,
 ) {
+  await linienOrakelInstallieren(page)
   return page.evaluate(async ({ schritte, stoesse }) => {
     const artEls = [...document.querySelectorAll('[id^="art-"]')]
     const artIdx = new Map(artEls.map((el, i) => [el.id.replace(/^art-/, ''), i] as const))
-    const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
-    const landepunkt = artEls[0]
-      ? (parseFloat(getComputedStyle(artEls[0]).scrollMarginTop) || 5 * remPx)
-      : 5 * remPx
-    const bezug = landepunkt + 8
-    // Artikel an der Bezugslinie — Auswahl wie `aktiverArtikel` über den
-    // Kandidatensatz des Readers (Zwischenraum-Regel; Rückfall auf den
-    // sichtbaren Satz). Herleitung: leser-spy-w25d.e2e.ts.
-    const linienArtikel = (): string | null => {
-      const hoehe = document.documentElement.clientHeight
-      const rects = artEls.map((el) => {
-        const r = el.getBoundingClientRect()
-        return { token: el.id.replace(/^art-/, ''), top: r.top, bottom: r.bottom }
-      })
-      const kandidaten = rects.filter((e) => e.bottom > bezug && e.top < hoehe)
-      const sichtbar = rects.filter((e) => e.bottom > 0 && e.top < hoehe)
-      const wahl = kandidaten.length > 0 ? kandidaten : (sichtbar.length > 0 ? sichtbar : rects)
-      let treffer: string | null = null
-      let beste = Infinity
-      for (const e of wahl) {
-        const d = bezug < e.top ? e.top - bezug : bezug > e.bottom ? bezug - e.bottom : 0
-        if (d === 0) return e.token
-        if (d < beste) { beste = d; treffer = e.token }
-      }
-      return treffer
-    }
+    // Artikel an der Bezugslinie — das EINE Orakel (`helpers/bezugslinie.ts`).
+    const orakel = (window as unknown as { __lmLinie: () => { token: string | null } }).__lmLinie
+    const linienArtikel = (): string | null => orakel().token
     const messung = () => {
       const eintraege = [...document.querySelectorAll('[data-toc] a[href^="#art-"]')]
       const token = linienArtikel()

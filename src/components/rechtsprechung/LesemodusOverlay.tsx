@@ -42,7 +42,7 @@ import type { EntscheidSnapshot } from '../../lib/rechtsprechung/typen';
 // das gewünschte Verhalten. Ein Overlay eines Panes gehört in dieses Pane.
 //
 // GEBAUT WIE DER V3-DRAWER (§5, dieselbe Mechanik statt einer zweiten):
-// `pages/gesetz-leser/parts/GliederungSheet` + `v3/LeserLeisteSheet` hängen
+// `pages/gesetz-leser/parts/GliederungSheet` + `v3/leisteAufbau` hängen
 // ihre Blätter in die Overlay-Schicht des Panes (`PaneKontext.overlayWurzel`,
 // ein nicht-scrollendes Geschwister im `relative`-Wrapper) und schalten dort
 // von `fixed` auf `absolute`. Drei Dinge folgen daraus, alle mit demselben

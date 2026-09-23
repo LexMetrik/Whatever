@@ -94,7 +94,6 @@ const HOECHSTZAHL: Readonly<Record<string, number>> = {
   'pages/gesetz-leser/parts/SektionBaumTOC.tsx': 2,
   'pages/gesetz-leser/parts/SektionKopf.tsx': 2,
   'pages/gesetz-leser/v3/LeserAnsichtV3.tsx': 1,
-  'pages/gesetz-leser/v3/LeserGliederungSchiene.tsx': 1,
   'pages/gesetz-leser/v3/LeserKopf.tsx': 1, // Gliederungs-Griff, D32 aus LeserLeseZeile verlegt
   'pages/gesetz-leser/v3/LeserPanelOeffner.tsx': 1,
   'pages/gesetz-leser/v3/LeserRahmenV3.tsx': 1,
@@ -105,6 +104,9 @@ const HOECHSTZAHL: Readonly<Record<string, number>> = {
   'pages/gesetz-leser/v3/SuchSprungFeld.tsx': 2,
   'pages/gesetz-leser/v3/SuchZone.tsx': 3,
   'pages/gesetz-leser/v3/TrefferLeiste.tsx': 3,
+  // W2·29 S3 (23.9.2026): die Schiene ist aus `LeserGliederungSchiene.tsx` in
+  // `leisteAufbau.tsx` aufgegangen — derselbe EINE Knopf, umgebucht, nicht neu.
+  'pages/gesetz-leser/v3/leisteAufbau.tsx': 1,
 
   // R9-2 (2 Dateien, 7 Knoepfe)
   'pages/RechnerTagerechner.tsx': 5,

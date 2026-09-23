@@ -75,6 +75,7 @@ function einzugFuerTiefe(tiefe: number): number {
  * gewinnen würden (nicht deterministisch, §2). `pre` hebt den Enumerator-Vorsatz
  * («Erster Titel:») nur dort, wo die Ebene selbst nicht schon hebt.
  * Tinten enden bei ink-800: ink-900 bleibt der EINEN Positionsmarke vorbehalten.
+ * W2·29 S3: ohne die H2-Dämpfung (Werkbank «gesättigt»); Randtitel ink-600.
  */
 /**
  * Stimme der Artikel-Zeile (W2·18-FEHLERBUCH, unterste Klapp-Ebene). Bewusst
@@ -87,7 +88,7 @@ function einzugFuerTiefe(tiefe: number): number {
 const ARTIKEL_STIMME = { form: 'text-xs font-normal', tinte: 'text-ink-700', pre: '' } as const;
 
 function ebenenStimme(randtitel: boolean, tiefe: number): { form: string; tinte: string; pre: string } {
-  if (randtitel) return { form: 'text-xs font-serif font-normal', tinte: 'text-ink-500', pre: 'font-medium' };
+  if (randtitel) return { form: 'text-xs font-serif font-normal', tinte: 'text-ink-600', pre: 'font-medium' };
   if (tiefe === 0) return { form: 'text-body-s font-semibold', tinte: 'text-ink-800', pre: '' };
   if (tiefe === 1) return { form: 'text-xs font-semibold', tinte: 'text-ink-700', pre: '' };
   if (tiefe === 2) return { form: 'text-xs font-medium', tinte: 'text-ink-700', pre: '' };
@@ -180,12 +181,6 @@ interface ZeilenProps {
   /** B3: die Sprungzeile gibt ALLE ihre Ids mit, nicht nur die äusserste. */
   onSprung: (ids: string[]) => void;
   onSprungArtikel: (token: string) => void;
-  /** H2 (David 16.8.2026): Klick auf den TITEL klappt zusätzlich auf.
-   *  Ungesetzt = false = das Verhalten der eingefrorenen Ist-Hülle (FL-4). */
-  titelKlapptAuf?: boolean;
-  /** H2 (David 16.8.2026): Baum in gedämpfter Chrome-Stimme, aktive Zeile im
-   *  Akzent. Ungesetzt = false = die Ist-Stimme, unverändert (FL-4). */
-  stimmeGedaempft?: boolean;
 }
 
 // ─── P8 · DIE GLIEDERUNGSZEILE IST EIN LINK, KEIN KNOPF ─────────────────────
@@ -252,7 +247,6 @@ function istSchlichterKlick(ev: MouseEvent<HTMLElement>): boolean {
 // darum steht hier ausdrücklich nur die Hälfte, und der Unmount folgt in S5.
 const Zeile = memo(function Zeile({
   k, erster, aktivPfad, markeId, klappKontext, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
-  titelKlapptAuf = false, stimmeGedaempft = false,
 }: ZeilenProps): ReactNode {
   // Was die Zeile zeigt und ob sie als offen gilt, entscheidet das Modell
   // (`zeilenAnsicht`, §3) — «offen» heisst seit W2·5m-LESER-V3: man sieht
@@ -265,28 +259,12 @@ const Zeile = memo(function Zeile({
   const istMarke = markeId !== null && k.id === markeId;
   const aufPfad = !istMarke && k.ids.some((id) => aktivPfad.includes(id));
   const stimme = k.art === 'artikel' ? ARTIKEL_STIMME : ebenenStimme(k.randtitel, k.tiefe);
-  // ─── H2 · Stimme der Gliederung (David 16.8.2026) ─────────────────────────
-  // Befund: der Baum sprach in DERSELBEN Tintenskala wie der Normtext
-  // (ink-800/700/600), die aktive Zeile war nur eine Stufe dunkler (ink-900).
-  // Navigation und Inhalt klangen damit gleich laut, obwohl das eine Chrome ist
-  // und das andere amtlicher Text.
-  // NEU: der ganze Baum sinkt um EINE Stufe in die gedämpfte Chrome-Lage, und
-  // die eine aktive Zeile trägt den Messing-Akzent — dieselbe Farbe, die schon
-  // die Positionsmarke daneben führt (§5: EIN Akzent, nicht zwei).
-  // Nicht tiefer als ink-500: ink-400/300 sind im Haus Haarlinien- und
-  // Deko-Töne ohne Textanspruch (DESIGN-REGLEMENT, ink-Skala) — ein Baum in
-  // ink-400 wäre ein AA-Fehlschlag, kein «ruhigeres» Bild.
-  const GEDAEMPFT: Record<string, string> = {
-    'text-ink-800': 'text-ink-700',
-    'text-ink-700': 'text-ink-600',
-    'text-ink-600': 'text-ink-500',
-    'text-ink-500': 'text-ink-500',
-  };
-  const grund = stimmeGedaempft ? (GEDAEMPFT[stimme.tinte] ?? stimme.tinte) : stimme.tinte;
-  // Das Gewicht der Marke steckt seit 15.9.2026 in `markenForm` (s. o.), NICHT
-  // mehr hier: zwei Gewichts-Utilities nebeneinander hoben sich still auf.
-  const markenTinte = stimmeGedaempft ? 'text-brass-700' : 'text-ink-900';
-  const tinte = istMarke ? markenTinte : aufPfad ? (AHNEN_TINTE[grund] ?? grund) : grund;
+  // W2·29 S3 (Werkbank, 23.9.2026): die H2-Dämpfung (16.8.2026, Baum eine
+  // Stufe leiser, Marke in Messing) ist aufgehoben — der Baum spricht seine
+  // Ebenen-Stimme, die Marke trägt Tinte `ink-900` auf der Registerfläche
+  // (F0.2: Fläche nur `--reg-*-flaeche`, darauf Tinte, nie Registerfarbe als
+  // Text). Ihr Gewicht steckt in `markenForm` (s. o.).
+  const tinte = istMarke ? 'text-ink-900' : aufPfad ? (AHNEN_TINTE[stimme.tinte] ?? stimme.tinte) : stimme.tinte;
   const form = istMarke ? markenForm(stimme.form) : stimme.form;
   // LM-155 Mittel 3: Rhythmus — die obersten Knoten bekommen einen Vorlauf. Der
   // jeweils ERSTE Knoten einer Liste bleibt bündig. Statisches margin ⇒ kein
@@ -390,30 +368,12 @@ const Zeile = memo(function Zeile({
             </button>
           )
           : <span className="shrink-0 w-6" aria-hidden />}
-        {/* F5-Positionsmarke (§3.5): 2-px-Messingkante, Muster layout/Sidebar.tsx.
-            Der Streifen steht IMMER im Markup und ist im Ruhezustand nur
-            transparent — so reserviert er seinen Platz und der Wechsel der
-            Leseposition bewegt nichts (§15.2, dieselbe Vorsichtsmassnahme wie in
-            der App-Seitenleiste).
-            §7-ABWEICHUNG VON DER SPEC, gemessen statt übernommen: die Spec nennt
-            `bg-brass-500`, ihre eigene Referenzstelle (layout/Sidebar.tsx:65–74)
-            benutzt aber `bg-brass-600`. Gegen den Leisten-Hintergrund gemessen
-            (Chromium, beide Themes): brass-500 = 2.98:1 hell / 6.55:1 dunkel,
-            brass-600 = 3.78:1 hell / 11.74:1 dunkel. Die Hausregel «beide Themes
-            ≥ 3:1» (Spec §9) reisst brass-500 im HELLEN Modus um zwei
-            Hundertstel — und eine Positionsmarke, die man nicht sieht, ist keine.
-            Darum brass-600, also genau der Ton des zitierten Musters. */}
-        {/* W2·18-FEHLERBUCH (David 15.9.2026): der Strich war 2 px hoch 14 px
-            und markierte damit eher einen Punkt als eine Zeile. Er misst jetzt
-            3 px — das Haus-Mass für den Registerstrich seit D23 (RegisterMarke,
-            ZuletztVerwendet, SuchResultate, PultModul, §5) — und läuft über die
-            GANZE Zeilenhöhe (`self-stretch`), auch wenn das Etikett auf zwei
-            Zeilen bricht. Farbe unverändert `brass-600` (gemessen 3.78:1 hell /
-            11.74:1 dunkel gegen den Leisten-Hintergrund, Herleitung unten);
-            KEIN neues Token, keine Änderung an der brass-Skala. Der transparente
-            Zwilling im Ruhezustand bleibt: er reserviert den Platz, der Wechsel
-            der Leseposition bewegt nichts (§15.2). */}
-        <span aria-hidden className={`w-[3px] shrink-0 self-stretch ${istMarke ? 'bg-brass-600' : 'bg-transparent'}`} />
+        {/* F5-Positionsmarke (§3.5): 3-px-Registerstrich über die GANZE
+            Zeilenhöhe (Haus-Mass seit D23), IMMER im Markup und im Ruhezustand
+            transparent — der Wechsel der Leseposition bewegt nichts (§15.2).
+            W2·29 S3: `reg-g` statt `brass-600` (Registerfarbe als Strich, F0.2;
+            gegatet `reg-g`/paper · /paper-raised · /reg-g-flaeche). */}
+        <span aria-hidden className={`w-[3px] shrink-0 self-stretch ${istMarke ? 'bg-reg-g' : 'bg-transparent'}`} />
         <TocZeile
           href={sprungZiel}
           // TASTATUR: `Enter` löst am Link `onClick` aus wie am Knopf; die
@@ -425,16 +385,10 @@ const Zeile = memo(function Zeile({
             ev.currentTarget.click();
           } : undefined}
           // H2 (David 16.8.2026): ein Klick auf den TITEL klappt den Ast auf UND
-          // springt. Befund am gebauten Stand: der Titel löste NUR den Sprung
-          // aus, aufklappen konnte man ausschliesslich über den 16-px-Pfeil
-          // daneben — wer den Titel traf, sah nichts geschehen und klickte
-          // danach ein zweites Mal. «Erst beim zweiten Klick» war also kein
-          // Timing-Problem, sondern zwei Ziele für eine Absicht.
-          // NUR AUFKLAPPEN, NIE ZUKLAPPEN: der Titel-Klick ist eine
-          // Hinbewegung. Klappte er einen offenen Ast zu, verschwände genau der
-          // Abschnitt, zu dem er eben gesprungen ist. Zuklappen bleibt beim
-          // Pfeil — der behält seine volle Umschaltfunktion.
-          aria-expanded={hatKinder && titelKlapptAuf ? auf : undefined}
+          // springt — «erst beim zweiten Klick» waren zwei Ziele für eine
+          // Absicht. NUR AUFKLAPPEN, NIE ZUKLAPPEN: sonst verschwände genau der
+          // Abschnitt, zu dem er eben gesprungen ist; Zuklappen bleibt beim Pfeil.
+          aria-expanded={hatKinder ? auf : undefined}
           onClick={(ev) => {
             // Modifikator-/Mittelklick gehört dem Browser (neuer Reiter, neues
             // Fenster) — nur der schlichte Linksklick ist der Sprung.
@@ -444,7 +398,7 @@ const Zeile = memo(function Zeile({
             // vormerken — der TOC-Sprung erzeugt bewusst keinen History-Eintrag
             // (LM-202), ohne diese Notiz gäbe es keinen Rückweg.
             merkeRuecksprungVonDom();
-            if (titelKlapptAuf && hatKinder && !auf) onToggle(k.ids, auf);
+            if (hatKinder && !auf) onToggle(k.ids, auf);
             if (k.art === 'sektion') onSprung(k.ids);
             else if (k.ersterArtikel) onSprungArtikel(k.ersterArtikel);
           }}
@@ -457,22 +411,14 @@ const Zeile = memo(function Zeile({
           aria-current={istMarke ? 'location' : undefined}
           title={voll}
           aria-label={voll}
-          // Hover-Stufe (W2·19-DESIGN-KONSISTENZ Runde 8, #692): `.lc-hover-flaeche`
-          // (--well) mass hier nur 1.055:1 auf --paper — kaum sichtbar. Übernommen
-          // statt neu erfunden: dieselbe Stufe wie die Trefferzeilen
-          // (SuchResultate.tsx `hover:bg-brass-100/40`), kein neuer Farbwert.
           // Gliederung ist NAVIGATION: kein Unterstrich (die P3-Regel in
-          // `index.css` unterstreicht Textlinks — hier steht die Ausnahme
-          // ausdrücklich im Markup, wie die Regel es verlangt).
-          // W2·18-FEHLERBUCH: die Marken-Zeile bekommt die FLÄCHE, die das Haus
-          // für «-selected/-aktuell» führt (`brass-100`, index.css §lc-chip:
-          // «GEFUELLT BLEIBEN die ZUSTAENDE -selected/-aktuell»). Sie ist die
-          // volle Stufe derselben Tönung, die der Hover zu 40 % zeigt — Hover
-          // heller als aktiv, kein neuer Farbwert, kein Radius-Bruch.
-          // EHRLICH GEMESSEN: die Fläche allein trägt wenig (1.03–1.12:1 gegen
-          // Leiste bzw. Blatt); die Auskunft geben der 3-px-Strich und das
-          // Gewicht. Sie ist die dritte, beiläufige Stufe — nicht das Signal.
-          className={`flex-1 min-w-0 text-left no-underline rounded px-1.5 py-0.5 leading-snug transition-colors ${form} ${tinte} ${istMarke ? 'bg-brass-100' : 'hover:text-ink-900 hover:bg-brass-100/40'}`}>
+          // `index.css` unterstreicht Textlinks — die Ausnahme steht im Markup).
+          // W2·29 S3: die Marken-Zeile trägt die Registerfläche `reg-g-flaeche`
+          // (vorher `brass-100`, W2·18-FEHLERBUCH); Hover `.lc-hover-flaeche`
+          // wie im Artikel-Index (§5). Gedämpfte Zusätze darin hebt index.css
+          // (`[data-toc-aktiv] .text-ink-500`) auf ink-600 — ink-500 misst auf
+          // der Fläche 4.22:1. Kein Radius (F0.5).
+          className={`flex-1 min-w-0 text-left no-underline px-1.5 py-0.5 leading-snug transition-colors ${form} ${tinte} ${istMarke ? 'bg-reg-g-flaeche' : 'hover:text-ink-900 lc-hover-flaeche'}`}>
           {/* line-clamp-2 (§3.3): Labels bis 280 Zeichen sind belegt — ohne
               Klammer wuchs eine einzige Zeile auf sechs und schob den ganzen
               Baum. Der volle Text bleibt über title/aria-label erreichbar.
@@ -540,8 +486,7 @@ const Zeile = memo(function Zeile({
                 <Zeile key={kind.id} k={kind} erster={i === 0}
                   aktivPfad={aktivPfad} markeId={markeId} klappKontext={klappKontext} offen={offen}
                   startOffeneTiefe={startOffeneTiefe}
-                  onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel}
-                  titelKlapptAuf={titelKlapptAuf} stimmeGedaempft={stimmeGedaempft} />
+                  onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel} />
               ))}
             </ul>
           </div>
@@ -559,7 +504,6 @@ const Zeile = memo(function Zeile({
  */
 export const SektionBaumTOC = memo(function SektionBaumTOC({
   knoten, aktivPfad, aktivToken, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
-  titelKlapptAuf = false, stimmeGedaempft = false,
 }: {
   knoten: GliederungsKnoten[];
   aktivPfad: string[]; // Sektions-Ids des aktiven Pfads, Wurzel → tiefster Knoten
@@ -575,9 +519,6 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
   onToggle: (ids: string[], istOffen: boolean) => void;
   onSprung: (ids: string[]) => void;
   onSprungArtikel: (token: string) => void;
-  /** H2 — s. ZeilenProps. */
-  titelKlapptAuf?: boolean;
-  stimmeGedaempft?: boolean;
 }) {
   // Genau EINE Marke je gerendertem Baum — die Invariante, auf die sich a9
   // (`[data-toc] [data-toc-aktiv]` als Sprungziel) und a33 (Ruhe-Messung)
@@ -594,8 +535,7 @@ export const SektionBaumTOC = memo(function SektionBaumTOC({
         <Zeile key={k.id} k={k} erster={i === 0}
           aktivPfad={aktivPfad} markeId={markeId} klappKontext={klappKontext} offen={offen}
           startOffeneTiefe={startOffeneTiefe}
-          onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel}
-          titelKlapptAuf={titelKlapptAuf} stimmeGedaempft={stimmeGedaempft} />
+          onToggle={onToggle} onSprung={onSprung} onSprungArtikel={onSprungArtikel} />
       ))}
     </ul>
   );
