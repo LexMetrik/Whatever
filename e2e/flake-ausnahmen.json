@@ -12,12 +12,6 @@
     "ablauf": "2026-10-20"
   },
   {
-    "spec": "leser-v3-blatt.e2e.ts",
-    "seit": "2026-09-20",
-    "grund": "Familie ⌘K-Vorlauf im Split — Fehlerbuch FAHRPLAN-OFFENE-BEFUNDE §4 (CI #711/#844). Flackert in 7/20 eigens gemessenen Code-Läufen mit ausgeführten Playwright-Shards (Stichprobe 18.–20.9.2026) bzw. 6/7 in der Vormessung 20.9.2026. Wurzel ungemessen. Entscheid David 20.9.2026.",
-    "ablauf": "2026-10-20"
-  },
-  {
     "spec": "verweis-u.e2e.ts",
     "seit": "2026-09-20",
     "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",

@@ -65,9 +65,18 @@ export function useSuchSprungKuerzel({ feldRef, onKuerzel, imSekundaerenPane = f
       // Öffnen der Fläche wirft oder nichts zu tun hat.
       e.preventDefault();
       onKuerzel?.();
-      // Nach dem Öffnen existiert das Feld erst nach dem React-Commit —
-      // der Fokus wird darum nachgereicht statt sofort versucht.
-      requestAnimationFrame(() => feldRef.current?.focus());
+      // W2·29 S5 (Flacker-Wurzel leser-v3-blatt (a)/(c), gemessen 23.9.2026):
+      // das Feld steht seit Ä19/A2 in JEDER Lage im DOM — der Fokus kommt darum
+      // SOFORT, im selben Tastendruck. Bis hierher kam er immer einen Frame
+      // später (rAF); unter Last fiel dieser Frame hinter den nächsten Schritt
+      // (Lesen des Fokus, Fokus in ein anderes Pane) und zog den Fokus dort
+      // nachträglich weg. Nur wenn das Feld (noch) fehlt oder nicht fokussierbar
+      // ist — `onKuerzel` baut es erst —, wird einen Frame später nachgereicht.
+      const feld = feldRef.current;
+      feld?.focus();
+      if (!feld || document.activeElement !== feld) {
+        requestAnimationFrame(() => feldRef.current?.focus());
+      }
     };
     window.addEventListener('keydown', taste, { capture: true });
     return () => window.removeEventListener('keydown', taste, { capture: true });
