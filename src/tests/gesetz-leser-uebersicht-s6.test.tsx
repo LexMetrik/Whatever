@@ -5,21 +5,19 @@
  * Erlass-Übersicht», «§15.2-CLS-Reservierung», «Promotion in den Erlass-
  * Kopf») rendersten `LeserVolltextInhalt` (die Ist-Hülle) direkt und prüften
  * deren STRUKTURELLE Platzierung der Übersicht relativ zu Baum/Kontext-Panel
- * im `[data-toc]`-Fluss — eine Anordnung, die V3 architektonisch nicht teilt
- * (`v3/LeserUebersicht.tsx` trägt seither die eigene `UebersichtBox`, nicht
- * mehr den geteilten `parts/ErlassUebersicht`-Platzierungscode). Mit
- * `inhalt-volltext.tsx` fällt der geprüfte Gegenstand ersatzlos.
+ * im `[data-toc]`-Fluss — eine Anordnung, die V3 architektonisch nicht teilt.
+ * Mit `inhalt-volltext.tsx` fällt der geprüfte Gegenstand ersatzlos.
  *
- * Was hier BLEIBT, weil `parts/ErlassUebersicht.tsx` weiterhin lebt (geteilter
- * Baustein, u. a. von `inhalt-ansichten.tsx`s `PdfEmbedAnsicht`/
- * `LiveVerweisAnsicht` gebraucht, die auch V3s `FruehAnsicht`-Randwege
- * bedienen — §5, keine zweite Wahrheit):
- *  (1) B8/B9-Bug-Checks direkt am Baustein `ErlassUebersicht`.
- *  (2) reine Ableitungen (`nurErlassdatum`/`erlassOrgan`/`istDatumsToken`),
- *      hüllenneutral.
- *  (3) §8-BELEG: der Teilerfassungs-Befund zu SG-3849 (Entscheid David
- *      8.8.2026, Bau-Spec §11 Ziff. 2), gegen den committeten Snapshot
- *      GEMESSEN, damit er nicht still veralten kann.
+ * §6.3-DEKLARATION (W2·29-WERKBANK-LESER S2, 23.9.2026): `parts/ErlassUebersicht`
+ * ist gelöscht — die Früh-Ansichten (`inhalt-ansichten.tsx`, pdf-embed /
+ * nur-live-link) zeigen seither dieselbe Übersicht wie der Volltext-Leser
+ * (`v3/UebersichtBox` aus `v3/uebersichtAngaben`, §5). Die Bug-Check-Zusagen
+ * B8/B9 und «ohne Klick» ziehen mit auf den überlebenden Baustein, jede in
+ * seiner Gestalt: B8 — ohne Stand entfällt die Stand-ZEILE (V3-Regel, statt
+ * «Stand: nicht erfasst»; beides ist «kein leeres Versprechen»); B9 und der
+ * Teilerfassungs-Beleg unverändert. «Ohne Klick» gilt für die Früh-Ansichten,
+ * die die Box offen zeigen (`offen`), wie der gelöschte Baustein es tat.
+ * Die reinen Ableitungen (2) und der §8-Beleg (3) bleiben Zeichen für Zeichen.
  */
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
@@ -27,7 +25,8 @@ import { MemoryRouter } from 'react-router-dom';
 import {
   nurErlassdatum, erlassOrgan, istDatumsToken, teilerfassung, TEILERFASSUNG_BELEGE,
 } from '../pages/gesetz-leser/erlassUebersichtDaten';
-import { ErlassUebersicht } from '../pages/gesetz-leser/parts/ErlassUebersicht';
+import { UebersichtBox } from '../pages/gesetz-leser/v3/UebersichtBox';
+import { uebersichtsAngaben } from '../pages/gesetz-leser/v3/uebersichtAngaben';
 import { ladeNormFixture } from './fixtures/normtext-fixture';
 import type { ErlassKopf } from '../lib/normtext/browse';
 import type { KantonSystematik } from '../lib/normtext/systematik';
@@ -45,52 +44,50 @@ const kopf: ErlassKopf = {
   praeambel: [{ rolle: 'autor', text: 'Die Bundesversammlung der Schweizerischen Eidgenossenschaft,' }],
 };
 
+/** Die Übersicht, wie die Früh-Ansichten sie bauen (`inhalt-ansichten.tsx`). */
+function uebersicht(e: BrowseErlass, kantonSys: Record<string, KantonSystematik> = {}, offen = false): string {
+  return renderToString(
+    <MemoryRouter>
+      <UebersichtBox offen={offen} angaben={uebersichtsAngaben({
+        erlass: e, kopf: null, currency: undefined, erlassTyp: undefined, anzahl: 3,
+        bestimmungsWort: 'Artikel', bestimmungsEtikettStatus: undefined, gliederungsTiefe: 0,
+        kennzahlen: null, kantonSys, kantonErlassAnzahl: null,
+        nichtKonsolidiert: false, nichtKonsolidiertSeit: null,
+      })} />
+    </MemoryRouter>,
+  );
+}
+
 // ── Bug-Check 9.8.2026 · B8/B9 ─────────────────────────────────────────────
 describe('S6/Bug-Check — B8: kein leeres Stand-Versprechen', () => {
-  it('Ohne erfassten Stand steht «nicht erfasst» statt «Stand:» ins Leere', () => {
-    const html = renderToString(
-      <MemoryRouter>
-        <ErlassUebersicht erlass={{ ...erlass, stand: '' }} kopf={null} artikelAnzahl={3} />
-      </MemoryRouter>,
-    );
-    expect(html).toContain('Stand:');
-    expect(html).toContain('nicht erfasst');
+  it('Ohne erfassten Stand entfällt die Stand-Zeile, statt «Stand» ins Leere zu setzen', () => {
+    const html = uebersicht({ ...erlass, stand: '' });
+    expect(html).not.toContain('data-v3-uebersicht-zeile-id="stand"');
   });
 
   it('Mit Stand bleibt der Wert unverändert', () => {
-    const html = renderToString(
-      <MemoryRouter>
-        <ErlassUebersicht erlass={erlass} kopf={null} artikelAnzahl={3} />
-      </MemoryRouter>,
-    );
+    const html = uebersicht(erlass);
+    expect(html).toContain('data-v3-uebersicht-zeile-id="stand"');
     expect(html).toContain('01.01.2026');
   });
 });
 
 describe('S6/Bug-Check — B9: Systematik-Platzhalter ist keine Aussage (§8)', () => {
   const kantonal = { ...erlass, ebene: 'kanton' as const, kanton: 'AG', sr: 'SAR 152.110' };
-  const uebersicht = (kantonSys: Record<string, KantonSystematik>, e = kantonal) => renderToString(
-    <MemoryRouter>
-      <ErlassUebersicht erlass={e} kopf={null} artikelAnzahl={3} kantonSys={kantonSys} />
-    </MemoryRouter>,
-  );
-
   it('«Bereich SAR» erscheint NICHT — die Overline derselben Seite filtert ihn auch', () => {
     // Leere Systematik ⇒ die Auflösung fällt auf den neutralen Platzhalter
     // zurück. Vorher stand er als Sachgebiet im Mehr-Block (~80 Kantonserlasse).
-    const html = uebersicht({ AG: { roots: [], index: {} } });
+    const html = uebersicht(kantonal, { AG: { roots: [], index: {} } });
     expect(html).not.toContain('Bereich SAR');
-    expect(html).not.toContain('Sachgebiet:');
+    expect(html).not.toContain('data-v3-uebersicht-zeile-id="gebiet"');
   });
 
   it('Ein VERIFIZIERTES Sachgebiet erscheint weiterhin — der Filter schneidet nicht zu viel', () => {
     const html = uebersicht(
-      { AG: { roots: [{ nummer: '6', name: 'Finanzrecht', kinder: [{ nummer: '64', name: 'Steuern' }] }], index: { '640100': ['6', '64'] } } },
       { ...kantonal, sr: '640.100' },
+      { AG: { roots: [{ nummer: '6', name: 'Finanzrecht', kinder: [{ nummer: '64', name: 'Steuern' }] }], index: { '640100': ['6', '64'] } } },
     );
-    // (SSR setzt zwischen statischem Text und Interpolation einen Kommentar-
-            //  Marker — darum die zwei Teile statt der zusammengesetzten Zeile.)
-    expect(html).toContain('Sachgebiet:');
+    expect(html).toContain('data-v3-uebersicht-zeile-id="gebiet"');
     expect(html).toContain('Finanzrecht › Steuern');
   });
 });
@@ -193,15 +190,9 @@ describe('S6 — §8-Teilerfassungs-Beleg (Entscheid David 8.8.2026, Bau-Spec §
     expect(Object.keys(TEILERFASSUNG_BELEGE)).toEqual(['SG-3849']);
   });
 
-  it('Der Hinweis steht OHNE Klick da (nicht hinter «Mehr»)', () => {
-    const html = renderToString(
-      <MemoryRouter>
-        <ErlassUebersicht
-          erlass={{ ...erlass, key: 'SG-3849', ebene: 'kanton', kanton: 'SG' }}
-          kopf={null} artikelAnzahl={607} />
-      </MemoryRouter>,
-    );
-    const vorDetails = html.slice(0, html.indexOf('<details'));
-    expect(vorDetails).toContain('Fehlerhaft erfasst');
+  it('Der Hinweis steht OHNE Klick da (offene Box der Früh-Ansichten)', () => {
+    const html = uebersicht({ ...erlass, key: 'SG-3849', ebene: 'kanton', kanton: 'SG' }, {}, true);
+    expect(html).toMatch(/<details[^>]*\sopen=""/);
+    expect(html).toContain('Fehlerhaft erfasst');
   });
 });

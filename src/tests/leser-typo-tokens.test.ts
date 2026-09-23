@@ -49,7 +49,10 @@ const WORTLAUT_DATEIEN = [
   // bewusst NICHT: sie ist Referenzschicht, kein Wortlaut (wie
   // `ArtikelLeser.leitfaelle`, die hier ebenfalls nie stand).
   '../pages/gesetz-leser/parts/ArtikelLeser.kopfteile.tsx',
-  '../pages/gesetz-leser/parts/ErlassKopfBlock.tsx',
+  // §6.3-DEKLARATION (W2·29-WERKBANK-LESER S2, 23.9.2026): der Ingress stand
+  // bis S2 in `parts/ErlassKopfBlock.tsx` und ist mit der Datei in das
+  // Titelblatt gezogen — der Geltungsbereich folgt dem Wortlaut dorthin.
+  '../pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
   '../pages/gesetz-leser/parts/SektionKopf.tsx',
   '../pages/gesetz-leser/helpers.tsx',
   ...ARTIKELBODY_DATEIEN,
