@@ -6,6 +6,7 @@ import { LocaleProvider } from '../components/locale';
 import { Abdeckung } from '../pages/Abdeckung';
 import { Gesetze } from '../pages/Gesetze';
 import { VorlagenUebersicht } from '../pages/VorlagenUebersicht';
+import { Startseite } from '../pages/Startseite';
 import { STARTSEITE_ZAEHLER as Z } from '../data/startseiteZaehler.generated';
 
 // ─── W2·29-WERKBANK-KATALOGE K5 · EINE ZÄHLQUELLE (§5/§8) ───────────────────
@@ -64,5 +65,44 @@ describe('K5 · eine Zählquelle', () => {
     const zeilen = new Set([...document.querySelectorAll('#register-vorlagen a[href^="/vorlagen/"]')]
       .map((a) => a.getAttribute('href')));
     expect(zeilen.size).toBe(Z.vorlagen);
+  });
+});
+
+// ─── K7 · Startseite: vier Rubrik-Kacheln aus derselben Zählquelle ──────────
+//
+// Gemessen 23.9.2026 (K5-Nebenfund): der Fuss des Moduls «Bundesrecht,
+// systematische Ordnung» sagte «erfasste Volltext (231 Erlasse)» — die 231
+// schliessen die 28 SR-0-Staatsverträge ein (sechste Zeile «Internationales
+// Recht»), die Überschrift sagt «Bundesrecht» (203). Dieselbe Mischung, die K5
+// im /gesetze-Kopf behoben hat. ROT ZU BEKOMMEN: im Fuss von
+// `start/SystematikListe.tsx` wieder `gesetzeBundVolltext` allein nennen, oder
+// eine Kachel ihre Zahl anders als aus `STARTSEITE_ZAEHLER` beziehen.
+describe('K7 · Startseite zählt aus derselben Quelle', () => {
+  const h = html('/', <Startseite />);
+  const { document } = parseHTML(`<!doctype html><html><body>${h}</body></html>`);
+
+  it('d · vier Rubrik-Kacheln, Zahl und Unterzeile aus dem Zähler', () => {
+    const nav = document.querySelector('nav[aria-label="Bereiche der Sammlung"]');
+    const kacheln = [...(nav?.querySelectorAll('a') ?? [])];
+    expect(kacheln.map((a) => a.getAttribute('href')))
+      .toEqual(['/gesetze', '/rechtsprechung', '/materialien', '/rechner']);
+    const [g, r, m, w] = kacheln.map((a) => a.textContent ?? '');
+    expect(g).toContain(nf(Z.gesetzeVolltext));
+    expect(g).toContain(`${nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(Z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge`);
+    expect(r).toContain(`${nf(Z.rechtsprechungVolltext)}Entscheide im Volltext`);
+    expect(m).toContain(`${nf(Z.materialien)}amtliche Materialien erfasst`);
+    expect(w).toContain(nf(Z.rechner + Z.vorlagen));
+    expect(w).toContain(`${nf(Z.rechner)} Rechner · ${nf(Z.vorlagen)} Vorlagen`);
+    // Kein Link im Link: die Kachel ist selbst der eine Link.
+    for (const a of kacheln) expect(a.querySelector('a')).toBeNull();
+  });
+
+  it('e · Systematik-Fuss: Bundesrecht und Staatsverträge getrennt, Summe = Zeilen', () => {
+    // Die fünf Kategorien summieren sich zur Säule «Bundesrecht»; die sechste
+    // Zeile (International) trägt die Staatsverträge.
+    expect(Z.bundSystematik.reduce((s, k) => s + k.anzahl, 0)).toBe(Z.gesetzeBundesrechtVolltext);
+    const t = text(h);
+    expect(t).toContain(`erfasste Volltext (${nf(Z.gesetzeBundesrechtVolltext)} Erlasse des Bundesrechts und ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge)`);
+    expect(t).not.toContain(`(${nf(Z.gesetzeBundVolltext)} Erlasse)`);
   });
 });

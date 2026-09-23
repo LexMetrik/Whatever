@@ -24,14 +24,17 @@ import { systematikZeilen, kuerzelZiel, type SystematikZeile } from './modulZiel
 // (`vorschlag-freigegeben.html`) trägt an dieser Stelle ausdrücklich
 // Beispielwerte und sagt es in seiner Fussnote. Ausgeliefert wird so etwas nie:
 // gezählt ist je Kategorie der ERFASSTE VOLLTEXT (status `snapshot`), ein
-// gelisteter Erlass ohne Snapshot zählt nicht mit. Die Summe der Zeilen ergibt
-// darum genau `gesetzeBundVolltext` — die Fusszeile sagt den Scope dazu.
+// gelisteter Erlass ohne Snapshot zählt nicht mit. Die fünf Kategorien ergeben
+// `gesetzeBundesrechtVolltext`, die Zeile «Internationales Recht»
+// `gesetzeInternationalVolltext`; die Fusszeile nennt beide getrennt (K7,
+// 23.9.2026 — bis dahin «231 Erlasse» unter der Überschrift «Bundesrecht»,
+// dieselbe Mischung, die K5 im /gesetze-Kopf behoben hat).
 // Reine Darstellung (§3).
 // W2·24-R10 (Referenzbild `pult-freigegeben.html`): das Modul rendert nur noch
 // seinen INHALT. Kopfzeile, Registerstrich und der Schalter «Anzeigen/Ausblenden»
 // kommen aus dem EINEN Rahmen `start/PultModul`, Titel und Register aus dem
 // Registry (`lib/startseiteModule`) — die frühere Marginalie mit Bereich und
-// Bestandszahl ist gestrichen, die Zahl steht einmal in der Bereichs-Reihe.
+// Bestandszahl ist gestrichen, die Zahl steht einmal in den Rubrik-Kacheln.
 
 
 const z = STARTSEITE_ZAEHLER;
@@ -71,8 +74,9 @@ export function SystematikListe() {
         {systematikZeilen().map((zl) => <Zeile key={zl.ziel} {...zl} />)}
       </div>
       <ModulFuss>
-        Die Zahl je Zeile ist der bei uns erfasste Volltext ({nf(z.gesetzeBundVolltext)} Erlasse),
-        nicht der Umfang der Systematischen Rechtssammlung des Bundes.
+        Die Zahl je Zeile ist der bei uns erfasste Volltext ({nf(z.gesetzeBundesrechtVolltext)} Erlasse
+        des Bundesrechts und {nf(z.gesetzeInternationalVolltext)} Staatsverträge), nicht der Umfang der
+        Systematischen Rechtssammlung des Bundes.
       </ModulFuss>
     </>
   );

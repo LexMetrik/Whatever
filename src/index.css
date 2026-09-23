@@ -3931,21 +3931,6 @@
    damit es die Utility text-brass-700 schlägt (Layer-Reihenfolge sonst Utility). */
 .lc-highlight .lc-overline { color: var(--brass-800); }
 
-/* ─── GRABSTEIN · Suchzeile der Startseite (W2·24-R3/R10) ────────────────────
-   W2·29-WERKBANK-TOR (22.9.2026): hier standen 85 Zeilen für die
-   Startseiten-Suchzeile — `.st-frage`, `.st-frage-feld`, `.st-frage-lupe`,
-   `.pult-suche-feld` und der Grössen-Token `--pult-suche-gross`. Ihr einziger
-   Konsument war `src/components/start/UniversalSuche.tsx`; die Datei ist mit
-   dem R10-Umbau derselben Runde verschwunden (e2ac7def9, #739), die Regeln
-   blieben liegen. `check:sediment` (a) hat alle vier Klassen als tot gemessen
-   (Wortgrenzen-Treffer in src/** ohne src/tests/**, scripts/**, index.html);
-   der Token war weder in dieser Datei noch sonstwo referenziert und geht als
-   Teil derselben Einheit mit.
-   Die Gestaltungs-ENTSCHEIDE der Zeile sind damit nicht verworfen: die heutige
-   Startseiten-Suche (`start/SuchBlock.tsx`) trägt sie über `.lc-input`, das
-   seit dem R3-F3-Nachzug selbst ein Unterstrich-Feld mit Fokus-Strich ist.
-   Der gelöschte Wortlaut steht vollständig in der Historie dieses Commits. */
-
 /* ═══ LESER · ARTIKELFUSS — WAS CSS TRAGEN MUSS (W2·29-WERKBANK-LESER S1) ═════
    Die FORM von Artikelkopf, Funktionszeile, Aktionen und Rubrik-Listen steht
    seit S1 (23.9.2026) als Token-Utility am Bauteil (`parts/Funktionszeile.tsx`,

@@ -222,7 +222,10 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
     // sie wird nur einmal statt zweimal gemacht — die fünf Bereiche werden
     // unten geprüft, und die Konstante selbst trägt unverändert der Seitenfuss
     // (`layout/Footer`, auf jeder Seite).
-    for (const bereich of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Rechner', 'Vorlagen']) {
+    // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-KATALOGE K7, Entscheid David
+    // 22.9.2026, §6.3): fünf Bereiche → VIER Rubrik-Kacheln; «Rechner» und
+    // «Vorlagen» stehen als EINE Kachel «Werkzeuge» (ein Register `w`).
+    for (const bereich of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Werkzeuge']) {
       expect(html, `Bereichs-Reihe: ${bereich}`).toContain(`>${bereich}</span>`);
     }
     expect(html, 'Bereichs-Reihe trägt die Navigations-Ziele').toContain('href="/rechtsprechung"');
@@ -253,7 +256,11 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
     expect(html).not.toContain('type="search"');
   });
 
-  it('die vier Bestände stehen als Listen mit Zahlen — keine Kachel-Optik mehr', () => {
+  // DEKLARIERTE ANPASSUNG (K7, §6.3): der Titel sagte «keine Kachel-Optik
+  // mehr» — seit dem Entscheid David 22.9.2026 trägt «/» die vier
+  // Rubrik-Kacheln. Die Zusicherung `not.toContain('lc-tile')` (das alte
+  // Rezept) bleibt unverändert scharf; nur der Titel widersprach dem Entscheid.
+  it('die vier Bestände stehen als Listen mit Zahlen — kein altes lc-tile-Rezept', () => {
     const html = startHtml('/');
     // Die Zeilen-Titel des Satzspiegels.
     expect(html).toContain('Systematische Ordnung');

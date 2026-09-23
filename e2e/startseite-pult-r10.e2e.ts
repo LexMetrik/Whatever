@@ -61,7 +61,8 @@ const bereiche = (page: Page) => page.getByRole('navigation', { name: 'Bereiche 
  *  `page.evaluate`-Messungen braucht es diesen Riegel. */
 async function pultBereit(page: Page): Promise<void> {
   await expect(page.locator('[data-pult-modul]')).toHaveCount(5)
-  await expect(bereiche(page).getByRole('link')).toHaveCount(5)
+  // K7 (§6.3, deklariert, Entscheid David 22.9.2026): vier Rubrik-Kacheln statt fünf Bereiche.
+  await expect(bereiche(page).getByRole('link')).toHaveCount(4)
 }
 
 test.describe('R10 · Werkseinstellung und Bereichs-Reihe', () => {
@@ -77,17 +78,19 @@ test.describe('R10 · Werkseinstellung und Bereichs-Reihe', () => {
     }
   })
 
-  test('die fünf Bereiche stehen in einer Reihe und tragen gemessene Zahlen (§8)', async ({ page }) => {
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-KATALOGE K7, §6.3): fünf Bereiche →
+  // vier Rubrik-Kacheln; «Rechner» und «Vorlagen» sind EINE Kachel «Werkzeuge».
+  test('die vier Rubriken stehen in einer Reihe und tragen gemessene Zahlen (§8)', async ({ page }) => {
     await page.goto('/')
     await pultBereit(page)
     const felder = bereiche(page).getByRole('link')
-    for (const [i, name] of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Rechner', 'Vorlagen'].entries()) {
+    for (const [i, name] of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Werkzeuge'].entries()) {
       await expect(felder.nth(i)).toContainText(name)
       // Jede Zahl ist eine echte, positive Zahl — kein Platzhalter, kein «—».
       const text = (await felder.nth(i).innerText()).replace(/’|'/g, '')
       expect(text, `${name}: Zahl`).toMatch(/\d/)
     }
-    // Alle fünf auf derselben Zeile (eine Reihe, @1440) — geprüft an der
+    // Alle vier auf derselben Zeile (eine Reihe, @1440) — geprüft an der
     // Oberkante, nicht an der Spaltenzahl der CSS-Klasse.
     const oben = await felder.evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)))
     expect(new Set(oben).size, `Oberkanten: ${oben.join(', ')}`).toBe(1)

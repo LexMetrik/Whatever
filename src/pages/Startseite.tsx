@@ -4,9 +4,11 @@ import {
   abonniere, istWerkseinstellung, schalte, schnappschuss, setzeZurueck,
   speichere, verschiebe, werkSchnappschuss, type StartPosten,
 } from '../lib/startseiteEinstellung';
+import { STARTSEITE_ZAEHLER as z } from '../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
+import type { Register } from '../components/layout/bereiche';
+import { RubrikKachel } from '../components/ui/RubrikKachel';
 import { SuchBlock } from '../components/start/SuchBlock';
-import { BereichsReihe } from '../components/start/BereichsReihe';
 import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
 import { PultModul } from '../components/start/PultModul';
 import { PultAbschluss } from '../components/start/PultAbschluss';
@@ -17,12 +19,22 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 // Referenzbild `abnahme/design-identitaet/pult-freigegeben.html`, von David am
 // 6.9.2026 freigegeben («ja das gefällt mir, nimm das als vorgabe für runde
 // 10»). EIN Bildschirm in drei festen Ebenen — (1) Suche mit Begrüssung,
-// (2) die fünf Bereiche in einer Reihe, (3) «Zuletzt» — und darunter die
+// (2) die vier Rubriken als Kacheln, (3) «Zuletzt» — und darunter die
 // MODULE, die der Nutzer selbst ein- und ausschaltet und umordnet.
+//
+// W2·29-WERKBANK-KATALOGE K7 (Entscheid David 22.9.2026, Board «Main»): die
+// frühere Bereichs-Reihe (`start/BereichsReihe`, fünf Einträge mit Strich)
+// ist durch VIER `ui/RubrikKachel` ersetzt — Gesetze · Rechtsprechung ·
+// Materialien · Werkzeuge (Rechner + Vorlagen, ein Register `w`), derselbe
+// Baustein wie der /gesetze-Einstieg. §8: jede Zahl und jede Zahl-Unterzeile
+// kommt aus `STARTSEITE_ZAEHLER` (`gen:zaehler`, Drift-Tor `check:zaehler`),
+// die Werkzeug-Summe wird hier gebildet, nie von Hand geschrieben. Nicht
+// gebaut (Board > Produkt): Linklisten in den Kacheln (kein Link im Link),
+// Schnellwerkzeug-Auswahl, feste H1.
 //
 // WAS R3 HIER HATTE UND R10 NICHT MEHR HAT (§17-Gegengewicht):
 //   · die MARGINALIENSPALTE (150 px + 36 px Rinne). Sie trug je Zeile Bereich
-//     und Bestandszahl; beides steht jetzt EINMAL in der Bereichs-Reihe. Der
+//     und Bestandszahl; beides steht jetzt EINMAL in den Rubrik-Kacheln. Der
 //     Baustein `start/Satzspiegel` ist damit ersatzlos gestrichen — David
 //     6.9.2026: «zu viel text und linien».
 //   · das Modul «Titelblatt» (`start/Hero`) — der Kopf ist keine Registry-Zeile
@@ -51,6 +63,27 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 // A11y (§8): genau EINE <h1> (die Begrüssung im Suchblock, seit D39 —
 // David 7.9.2026, s. `start/SuchBlock.tsx`), je Modul eine <h2> in einer
 // `<section aria-labelledby>` — keine Heading-Sprünge. Reine Darstellung (§3).
+const nf = (n: number) => n.toLocaleString('de-CH');
+
+/** Die vier Rubrik-Kacheln (K7) — Einheit sagt, WAS gezählt wurde (§8:
+ *  «im Volltext» nur, wo Volltext erfasst ist; Materialien sind «erfasst»).
+ *  `teile`: die Zahl aufgeschlüsselt, aus denselben Zählerfeldern (Summe =
+ *  Kachelzahl, Wächter `zaehler-eine-quelle.test.tsx`). */
+const RUBRIKEN: Array<{ reg: Register; ziel: string; titel: string; zahl: number; einheit: string; nutzen: string; teile?: string }> = [
+  { reg: 'g', ziel: '/gesetze', titel: 'Gesetze', zahl: z.gesetzeVolltext,
+    einheit: 'Erlasse im Volltext, Bund und Kantone',
+    nutzen: 'Systematische Ordnung, 26 Kantone, internationales Recht',
+    teile: `${nf(z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(z.gesetzeInternationalVolltext)} Staatsverträge` },
+  { reg: 'r', ziel: '/rechtsprechung', titel: 'Rechtsprechung', zahl: z.rechtsprechungVolltext,
+    einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet' },
+  { reg: 'm', ziel: '/materialien', titel: 'Materialien', zahl: z.materialien,
+    einheit: 'amtliche Materialien erfasst', nutzen: 'Kreisschreiben, Wegleitungen und Leitfäden nach Behörde' },
+  // Ziel `/rechner`: der Werkzeug-Katalog (K4) führt Rechner und Vorlagen.
+  { reg: 'w', ziel: '/rechner', titel: 'Werkzeuge', zahl: z.rechner + z.vorlagen,
+    einheit: 'Rechner und Vorlagen', nutzen: 'Fristen, Gebühren und Beträge, Zuständigkeiten · Verträge, Klagen und Gesuche',
+    teile: `${nf(z.rechner)} Rechner · ${nf(z.vorlagen)} Vorlagen` },
+];
+
 export function Startseite() {
   const pk = usePaneKlasse();
   const posten = useSyncExternalStore(
@@ -71,7 +104,17 @@ export function Startseite() {
     // liegt in `layout/`, das diese Runde nicht anfasst.
     <div className={`grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
       <SuchBlock />
-      <BereichsReihe />
+      {/* NAME «Bereiche der Sammlung», NICHT «Bereiche»: die Reiterleiste der
+          Krone trägt bereits `nav aria-label="Bereiche"` (R10, e2e-Anker). */}
+      <nav aria-label="Bereiche der Sammlung" className={`grid gap-3 ${pk(
+        'grid-cols-2 lg:grid-cols-4', 'grid-cols-2 @5xl/pane:grid-cols-4',
+      )}`}>
+        {RUBRIKEN.map((k) => (
+          <RubrikKachel key={k.ziel} reg={k.reg} ziel={k.ziel} zahl={nf(k.zahl)} einheit={k.einheit}
+            titel={<span className="lc-wortumbruch">{k.titel}</span>} nutzen={k.nutzen}
+            extra={k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>} />
+        ))}
+      </nav>
       <ZuletztVerwendet />
 
       <div className="grid border-t border-rule-soft">
