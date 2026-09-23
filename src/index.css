@@ -4797,7 +4797,7 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
   border-bottom: 1px solid var(--rule-soft);
 }
 .kt-zeile {
-  min-height: 44px;
+  min-height: var(--tap-ziel-komfort);
   padding: 0.5rem 0.25rem 0.5rem 0;
   border-top: 1px solid var(--rule-soft);
   text-align: left;
@@ -4845,7 +4845,7 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 .kt-gebiete { display: grid; column-gap: 1.625rem; border-bottom: 1px solid var(--rule-soft); }
 .kt-gebiete > details { border-top: 1px solid var(--rule-soft); padding: 0.5rem 0; }
 /* Klapp-Zeile als Ziel ≥ 24 px (WCAG 2.5.8, `--tap-ziel`), Board: min-height 24. */
-.kt-gebiete > details > summary { min-height: var(--tap-ziel, 24px); }
+.kt-gebiete > details > summary { min-height: var(--tap-ziel); }
 @media (min-width: 640px) and (max-width: 1099px) {
   .kt-gebiete { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
