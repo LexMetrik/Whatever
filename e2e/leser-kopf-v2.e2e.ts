@@ -160,19 +160,25 @@ test('B-1: die Facetten-Wahl blendet die Entscheid-Auflistung aus und wieder ein
   const panel = page.locator('[data-v3-panel]');
   await expect(panel).toBeVisible({ timeout: 20000 });
 
-  // Grundzustand: eine Facette aktiv (Leitentscheide) ⇒ die Auflistung steht da.
+  // Grundzustand: Facetten aktiv ⇒ die Auflistung steht da.
+  // §6.3-DEKLARATION (S6-W1b, Entscheid David 23.9.2026): der Grundzustand ist
+  // seither ALLE Instanzen, nicht nur BGE. «Letzte Facette abwählen» heisst
+  // darum alle vier abwählen; der geprüfte Sachverhalt (aus ⇒ keine Auflistung,
+  // an ⇒ wieder da) bleibt.
   const gruppe = panel.locator('[data-v3-panel-gruppe="bge"]');
   await expect(gruppe).toBeVisible({ timeout: 20000 });
   await expect(panel.locator('[data-v3-panel-entscheid]').first()).toBeVisible();
 
-  // AUS: letzte Facette abwählen ⇒ KEINE Auflistung mehr. Anders als der frühere
+  // AUS: alle Facetten abwählen ⇒ KEINE Auflistung mehr. Anders als der frühere
   // CSS-Schalter versteckt das nicht bloss — es wird auch nichts geladen.
   const filter = panel.locator('[data-v3-panel-filter]');
   await filter.locator('[data-v3-panel-klappe]').first().click();
   const bge = filter.locator('[data-bezug-klasse="bge"]');
   await expect(bge).toHaveAttribute('aria-pressed', 'true'); // Default an
-  await bge.click();
-  await expect(panel.locator('[data-v3-panel-gruppe="bge"]')).toHaveCount(0);
+  for (const k of ['bge', 'bger', 'eidg', 'kantonal']) {
+    await filter.locator(`[data-bezug-klasse="${k}"]`).click();
+  }
+  await expect(panel.locator('[data-v3-panel-gruppe]')).toHaveCount(0);
   await expect(panel.locator('[data-v3-panel-entscheid]')).toHaveCount(0);
 
   // AN zurück: Auflistung wieder da.

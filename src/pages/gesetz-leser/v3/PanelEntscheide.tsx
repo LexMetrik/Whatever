@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { KanteMitVorschau } from '../../../components/verzahnung/KanteMitVorschau';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
@@ -6,11 +8,13 @@ import {
   type ArtikelRevision, type RevisionShard,
 } from '../../../lib/verzahnung/artikel-revisionen';
 import { STATUS_LABEL, type BezugStatus } from '../../../lib/verzahnung/facetten';
-import type { Bezug, KlassenZahlen } from '../../../lib/rechtsprechung/bezuege';
-import { KLASSE_KURZ } from '../bezugAuswahl';
+import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 import type { Histogramm, Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
-import { gruppiereKanten } from './panelModell';
+import {
+  ERSTE_PORTION, datumInZitierung, klassenZahlenAmArtikel, naechsteMenge, ordneEntscheide, regesteTeil,
+  weitereText, type EntscheidGruppe,
+} from './entscheideOrdnung';
 import { PanelFilterZeile } from './PanelFilterZeile';
 import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideKontext';
 
@@ -45,6 +49,11 @@ import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideK
 // behauptet stillschweigend Gleichrang.» Die Gruppierung ist darum dieselbe
 // (`gruppiereKanten`, `STATUS_RANG`) — sie ist eine fachliche Aussage über
 // Rangordnung, keine Layout-Vorliebe (§1).
+//
+// S6-W1b (Entscheid David 23.9.2026): die Gruppen sind seither feiner und
+// anders gereiht — BGE, dann JE kantonales Gericht, dann der Rest (übrige BGer,
+// eidg. Gerichte); gemischt wird weiterhin nie. Ordnung und Portion:
+// `./entscheideOrdnung`.
 //
 // ── DIE FILTER STEHEN, WO IHR ERGEBNIS STEHT (Kap. 4d) ──────────────────────
 // `BezugFacettenWahl` und `BezugZeitWahl` sind UNVERÄNDERT dieselben
@@ -113,19 +122,91 @@ import { WEITERZUG_ERKLAERUNG, traegtWeiterzugHinweis } from './PanelEntscheideK
 function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
   b: Bezug; normZitat: string; statusLabel: string; revidiert: ArtikelRevision | null;
 }) {
+  // S6-W1b · E-8: trägt die Zitierung ihr Datum schon («… vom 12.12.2025»),
+  // steht es nicht noch einmal als Unterzeile. B-2/E-6: ein führendes
+  // Teil-Kennzeichen wird benannt statt nackt gesetzt (Herleitung an den
+  // Funktionen in `./entscheideOrdnung`).
+  const regeste = b.regesteKurz ? regesteTeil(b.regesteKurz) : null;
   return (
     <li data-v3-panel-entscheid={b.key} className="border-l-2 border-t border-line border-l-reg-r py-2 pl-2.5">
       <KanteMitVorschau
         ziel={`/rechtsprechung/${encodeURIComponent(b.key)}?norm=${encodeURIComponent(normZitat)}`}
         zitierung={b.zitierung}
-        sublabel={datumAnzeige(b.datum)}
+        sublabel={datumInZitierung(b.zitierung) ? undefined : datumAnzeige(b.datum)}
         kurztext={b.regesteKurz}
         statusLabel={statusLabel}
         revidiert={revidiert} />
-      {b.regesteKurz && (
-        <p className="mt-1 text-body-s leading-snug text-ink-700 line-clamp-2">{b.regesteKurz}</p>
+      {regeste && (
+        <p className="mt-1 text-body-s leading-snug text-ink-700 line-clamp-2">
+          {regeste.teil && <span data-v3-panel-regeste-teil={regeste.teil} className="text-ink-600">{`Regeste ${regeste.teil}: `}</span>}
+          {regeste.rest}
+        </p>
       )}
     </li>
+  );
+}
+
+/**
+ * EINE Gruppe des Reiters mit ihrer Portion (S6-W1b, Entscheid David 23.9.2026
+ * und D-4). Der Stand «wie viele sichtbar» ist Blick-Zustand, kein gemerkter
+ * (Begründung in `bezugPortion.ts`, «WARUM DER STAND NICHT PERSISTIERT WIRD»);
+ * der Aufrufer setzt ihn per `key` beim Artikelwechsel zurück.
+ *
+ * FOKUS (WCAG 2.4.3): nach dem Klick springt der Fokus auf den ersten neu
+ * sichtbaren Eintrag — beim letzten Schritt verschwindet der Knopf, und der
+ * Fokus fiele sonst ins Nichts.
+ */
+function Gruppe({ g, artikelLabel, bestimmungsWort, normZitat, aktArtikel, revisionShard }: {
+  g: EntscheidGruppe; artikelLabel: string | null; bestimmungsWort: BestimmungsWort; normZitat: string;
+  aktArtikel: string | null; revisionShard: RevisionShard | null;
+}) {
+  const [sichtbar, setSichtbar] = useState(Math.min(ERSTE_PORTION, g.liste.length));
+  const listeRef = useRef<HTMLUListElement>(null);
+  const fokusAb = useRef<number | null>(null);
+  useEffect(() => {
+    const ab = fokusAb.current;
+    if (ab == null) return;
+    fokusAb.current = null;
+    listeRef.current?.children[ab]?.querySelector<HTMLElement>('a[href]')?.focus();
+  }, [sichtbar]);
+  const offen = g.liste.length - sichtbar;
+  const statusLabel = STATUS_LABEL[g.status];
+  return (
+    <section data-v3-panel-gruppe={g.status} data-v3-panel-gericht={g.gericht ?? undefined}
+      data-v3-panel-gruppe-zahl={g.liste.length} className="pt-2 first:pt-1">
+      {/* B3-1 (R3-β): dichte Gestalt des EINEN Gruppenkopfs
+          (`ui/GruppenKopf`). Der Weiterzugs-Hinweis ist die `marke` am
+          ZEILENENDE — Befund 6b: EIN Hinweis je Gruppe, nicht je Zeile
+          (Ä106). Sein `normal-case` bleibt (anders als am Zähler ist es
+          dort NICHT tot: `text-transform: uppercase` bildet «ⓘ»
+          U+24D8 auf «Ⓘ» U+24BE ab). Die Zahl ist die GANZE Gruppe — was
+          davon noch aussteht, sagt der Knopf am Ende (eine Zahl je Aussage). */}
+      <GruppenKopf
+        als="p" dicht
+        title={`${g.gericht ? g.titel : statusLabel} — ${g.liste.length} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}
+        titel={g.titel}
+        zahl={g.liste.length}
+        markeStellung="rechts"
+        marke={traegtWeiterzugHinweis(g.liste) ? (
+          <span aria-label={WEITERZUG_ERKLAERUNG} title={WEITERZUG_ERKLAERUNG}
+            className="ml-1 normal-case font-normal text-ink-400">ⓘ</span>
+        ) : undefined}
+      />
+      <ul ref={listeRef} className="mt-0.5">
+        {g.liste.slice(0, sichtbar).map((b) => (
+          <Fundstelle key={b.key} b={b} normZitat={normZitat} statusLabel={statusLabel}
+            revidiert={revidiertFuer(b, aktArtikel, revisionShard)} />
+        ))}
+      </ul>
+      {offen > 0 && (
+        <button type="button" data-v3-panel-weitere={g.id}
+          onClick={() => { fokusAb.current = sichtbar; setSichtbar(naechsteMenge(sichtbar, g.liste.length)); }}
+          aria-label={`${weitereText(sichtbar, g.liste.length)} — ${g.titel} anzeigen`}
+          className="lc-btn-ghost lc-btn-sm mt-1 min-h-11 text-ink-700">
+          {weitereText(sichtbar, g.liste.length)}
+        </button>
+      )}
+    </section>
   );
 }
 
@@ -161,9 +242,24 @@ function revidiertFuer(b: Bezug, artikel: string | null, shard: RevisionShard | 
 const KANTON_ABDECKUNG = 'Kantonale Erlasse sind erst teilweise verknüpft — das Fehlen'
   + ' belegt nicht, dass es keinen Entscheid gibt.';
 
+// ── S6-W1b · E-5 (Audit 23.9.2026) · WAS ERFASST IST, STEHT UNTER DEM FILTER ──
+// Die Liste sagt nie, aus welchem Bestand sie schöpft: BGE nur jüngere Bände,
+// übrige Bundesgerichtsurteile vereinzelt, kantonal erst wenige Gerichte. Wer
+// eine lange Liste sieht, hält sie leicht für vollständig (§8). Die Zeile steht
+// darum in JEDER Lage, nicht nur im Leerzustand.
+//
+// OHNE ZAHLEN, mit Absicht: der Leser lädt keine Korpus-Bilanz, die Bände,
+// Gerichte und Kantone nennt (das Register ist 9,4 MB, die Bezugs-Bilanz führt
+// nur Kanten je Status). Eine hier eingetippte Zahl wäre eine zweite Wahrheit
+// neben `/abdeckung` (§5), die beim nächsten Korpus-Lauf still veraltet. Die
+// Zahlen stehen auf der verlinkten Seite; hier steht, was in jeder Lage wahr ist.
+const ABDECKUNG_SATZ = 'Erfasst sind die Leitentscheide (BGE) der jüngeren Bände; übrige'
+  + ' Urteile des Bundesgerichts und der eidgenössischen Gerichte nur vereinzelt, kantonale'
+  + ' Entscheide erst aus einzelnen Gerichten.';
+
 export function PanelEntscheide({
-  kanten, aktArtikel, revisionShard, normZitat, artikelLabel, geladen, bestimmungsWort, klassen, kantone, kantoneVerfuegbar,
-  klassenImErlass, histogramm, bereich, onKlassen, onKantone, onBereich, ebene,
+  kanten, alleKanten, aktArtikel, revisionShard, normZitat, artikelLabel, geladen, fehler = false, onNeuLaden,
+  bestimmungsWort, klassen, kantone, kantoneVerfuegbar, histogramm, bereich, onKlassen, onKantone, onBereich, ebene,
 }: {
   /** Ebene des gelesenen Erlasses — DURCHGEREICHT aus dem Modell
    *  (`leserV3Modell` → `LeserRahmenV3` → `LeserPanelZone`), nicht hier neu
@@ -173,6 +269,9 @@ export function PanelEntscheide({
   ebene?: 'bund' | 'kanton';
   /** Kanten des GELESENEN Artikels nach Facetten-Filter; `undefined` = keine. */
   kanten?: readonly Bezug[];
+  /** S6-W1b · D-9: dieselben Kanten OHNE Filter — die Bezugsgrösse der Zahlen
+   *  am Instanz-Schalter (`klassenZahlenAmArtikel`). `undefined` = keine. */
+  alleKanten?: readonly Bezug[];
   /** Artikel-Token des Panels (§7b: Grundlage der ↻-Klassifikation, s. o.). */
   aktArtikel: string | null;
   /** Erlass-lokaler Revisions-Shard, oder `null` = kein Beleg/noch nicht
@@ -183,41 +282,69 @@ export function PanelEntscheide({
   /** Ist der Lade-VERSUCH durch? Trennt «lädt noch» von «nichts erfasst» (§8).
    *  A1: kommt aus `useBezuege().geladen` — nach einem 404 ebenfalls `true`. */
   geladen: boolean;
+  /** S6-W1b · E-3/D-3/B-8: der Ladeversuch ist gescheitert (Netz/5xx). Eigene
+   *  Lage mit eigenem Satz — nie «kein Entscheid erfasst» (§8). */
+  fehler?: boolean;
+  /** Knopf «erneut laden» in der Fehler-Lage. */
+  onNeuLaden?: () => void;
   /** Zähl-Substantiv des Erlasses (C1) — «zu diesem Artikel» bzw. «zu diesem
    *  Paragraphen». Nie ein Bund-Vorgabewert, nie hier abgeleitet (§5). */
   bestimmungsWort: BestimmungsWort;
   klassen: readonly BezugStatus[];
   kantone: readonly string[];
   kantoneVerfuegbar: readonly string[];
-  klassenImErlass: Partial<Record<BezugStatus, KlassenZahlen>>;
   histogramm: Histogramm;
   bereich: Zeitbereich;
   onKlassen: (neu: BezugStatus[]) => void;
   onKantone: (neu: string[]) => void;
   onBereich: (von: string, bis: string) => void;
 }) {
-  const gruppen = gruppiereKanten(kanten ?? []);
+  const gruppen = ordneEntscheide(kanten ?? []);
+  const zahlOrt = artikelLabel ? `an ${artikelLabel}` : `an ${bestimmungDativ(bestimmungsWort)}`;
 
   return (
     <div data-v3-panel-reiter-inhalt="entscheide">
-      {/* ── EINE Filterzeile (Ä54) · Herleitung in `./PanelFilterZeile` ──────── */}
+      {/* ── EINE Filterzeile (Ä54) · Herleitung in `./PanelFilterZeile` ────────
+          S6-W1b · D-9: die Zahlen am Instanz-Schalter gelten dem ARTIKEL, wie
+          die Liste darunter — nicht mehr dem ganzen Erlass. */}
       <PanelFilterZeile klassen={klassen} kantone={kantone} kantoneVerfuegbar={kantoneVerfuegbar}
-        klassenImErlass={klassenImErlass} histogramm={histogramm} bereich={bereich}
+        klassenZahlen={klassenZahlenAmArtikel(alleKanten, geladen)} zahlOrt={zahlOrt}
+        histogramm={histogramm} bereich={bereich}
         onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />
+      <p data-v3-panel-abdeckung-zeile className="border-b border-line px-3 py-1.5 text-micro leading-snug text-ink-600">
+        {ABDECKUNG_SATZ}{' '}
+        <Link to="/abdeckung" className="text-brass-700">Abdeckung ›</Link>
+      </p>
 
       {/* ── Fundstellen des gelesenen Artikels ────────────────────────────────
-          §8, DREI ZUSTÄNDE, DREI SÄTZE — nie derselbe für zwei Lagen:
+          §8, VIER ZUSTÄNDE, VIER SÄTZE — nie derselbe für zwei Lagen:
            · Facetten alle aus  → «Keine Instanz eingeschaltet» (Bedien-Zustand)
+           · Laden gescheitert  → «konnte nicht geladen werden» (Leitungs-Zustand, S6-W1b)
            · lädt              → «wird geladen» (Wissens-Zustand)
            · geladen und leer  → «keine erfasst» (Bestands-Zustand)
           Ein gemeinsames «keine Entscheide» hätte den Bedien- und den
           Bestands-Zustand vermischt: der Nutzer läse eine Aussage über den
-          Korpus, wo eine über seinen eigenen Schalter stünde. */}
+          Korpus, wo eine über seinen eigenen Schalter stünde. Dasselbe galt
+          bis S6-W1b für den Netzfehler, der als «kein Entscheid erfasst»
+          erschien (Audit 23.9.2026, E-3/D-3/B-8). */}
       {klassen.length === 0 ? (
         <p data-v3-panel-lage="bedienung" className="px-3 py-3 text-body-s text-ink-600">
           Keine Instanz eingeschaltet — oben zuschalten, dann erscheinen die Entscheide
           zu {bestimmungDativ(bestimmungsWort)}.
         </p>
+      ) : fehler ? (
+        <div data-v3-panel-lage="fehler" role="status" className="px-3 py-3 text-body-s text-ink-600">
+          <p>
+            Die Entscheide konnten nicht geladen werden. Das sagt nichts über den Bestand —
+            bei bestehender Verbindung wird es von selbst erneut versucht.
+          </p>
+          {onNeuLaden && (
+            <button type="button" data-v3-panel-neu-laden onClick={onNeuLaden}
+              className="lc-btn-outline lc-btn-sm mt-2 min-h-11">
+              Erneut laden
+            </button>
+          )}
+        </div>
       ) : !geladen ? (
         <p data-v3-panel-lage="laedt" className="px-3 py-3 text-body-s text-ink-600">Entscheide werden geladen …</p>
       ) : gruppen.length === 0 ? (
@@ -233,37 +360,15 @@ export function PanelEntscheide({
         </p>
       ) : (
         <div className="px-3 py-1">
-          {gruppen.map(([status, liste]) => (
-            <section key={status} data-v3-panel-gruppe={status} className="pt-2 first:pt-1">
-              {/* B3-1 (R3-β): dichte Gestalt des EINEN Gruppenkopfs
-                  (`ui/GruppenKopf`). Der Weiterzugs-Hinweis ist die `marke` am
-                  ZEILENENDE — Befund 6b: EIN Hinweis je Gruppe, nicht je Zeile
-                  (Ä106). Sein `normal-case` bleibt (anders als am Zähler ist es
-                  dort NICHT tot: `text-transform: uppercase` bildet «ⓘ»
-                  U+24D8 auf «Ⓘ» U+24BE ab). */}
-              <GruppenKopf
-                als="p" dicht
-                title={`${STATUS_LABEL[status]} — ${liste.length} Fundstelle(n) an ${artikelLabel ?? bestimmungDativ(bestimmungsWort)}`}
-                titel={KLASSE_KURZ[status]}
-                zahl={liste.length}
-                markeStellung="rechts"
-                marke={traegtWeiterzugHinweis(liste) ? (
-                  <span aria-label={WEITERZUG_ERKLAERUNG} title={WEITERZUG_ERKLAERUNG}
-                    className="ml-1 normal-case font-normal text-ink-400">ⓘ</span>
-                ) : undefined}
-              />
-              {/* KEINE Portionierung, kein «weitere 5»: die Liste im Panel darf
-                  senkrecht wachsen, das Panel scrollt ohnehin. Die Kappung am
-                  Artikelfuss war eine Folge der festen Zeilenhöhe (CLS), nicht
-                  eine Aussage über die Daten — sie mitzuschleppen hiesse, eine
-                  Einschränkung ohne ihren Grund zu übernehmen. */}
-              <ul className="mt-0.5">
-                {liste.map((b) => (
-                  <Fundstelle key={b.key} b={b} normZitat={normZitat} statusLabel={STATUS_LABEL[status]}
-                    revidiert={revidiertFuer(b, aktArtikel, revisionShard)} />
-                ))}
-              </ul>
-            </section>
+          {/* S6-W1b · Davids Ordnung (23.9.2026): BGE · je kantonales Gericht ·
+              Rest — je Gruppe die fünf neusten, dann «weitere N». Ersetzt die
+              frühere Vollliste ohne Portion («das Panel scrollt ohnehin»), die
+              an BGG Art. 42 4144 Zeilen auf einmal baute (D-4). Der `key` mit
+              Artikel setzt die Portion beim Artikelwechsel zurück. */}
+          {gruppen.map((g) => (
+            <Gruppe key={`${aktArtikel ?? ''}|${g.id}`} g={g} artikelLabel={artikelLabel}
+              bestimmungsWort={bestimmungsWort} normZitat={normZitat}
+              aktArtikel={aktArtikel} revisionShard={revisionShard} />
           ))}
         </div>
       )}

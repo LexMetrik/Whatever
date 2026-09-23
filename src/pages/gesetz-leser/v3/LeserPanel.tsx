@@ -64,6 +64,11 @@ export function LeserPanel({
    * eine irreführende Ortsangabe ist keine ehrliche). Nur der Reiter
    * «Entscheide» zeigt darum weiter `artikelLabel`; die anderen beiden zeigen
    * stattdessen das Erlass-Kürzel.
+   *
+   * S6-W1b (Audit 23.9.2026, E-10): «· Art. 41» allein sagte nicht, WELCHES
+   * Art. 41 — in einem Split mit zwei Erlassen ist das die offene Frage. Der
+   * Entscheide-Reiter nennt seither Artikel UND Kürzel («· Art. 41 OR»), in
+   * derselben Form wie das Kurz-Zitat des Fundstellen-Sprungs (`normZitat`).
    */
   erlassKuerzel: string;
   reiter: PanelReiter;

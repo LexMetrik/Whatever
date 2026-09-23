@@ -43,9 +43,13 @@ test.describe('V3-Panel · Normrevisions-Badge am Entscheid-Chip (AIG)', () => {
     // 2C_1060/2020 liegt hinter der Facette «übrige BGer» (kein amtlich
     // publizierter BGE) — im Panel steht der Schalter IM Filter, nicht im
     // Kopf-Dropdown (Kap. 4d, `leser-v3-panel-facetten` (a)).
+    //
+    // §6.3-DEKLARATION (S6-W1b, Entscheid David 23.9.2026): seither ist «übrige
+    // BGer» im Grundzustand AN — der frühere Klick hätte die Facette ABgeschaltet.
+    // Geprüft wird darum, dass sie an ist, statt sie anzuschalten.
     const filter = panel.locator('[data-v3-panel-filter]')
     await filter.locator('[data-v3-panel-klappe]').first().click()
-    await filter.locator('[data-bezug-klasse="bger"]').click()
+    await expect(filter.locator('[data-bezug-klasse="bger"]')).toHaveAttribute('aria-pressed', 'true')
     await filter.locator('[data-v3-panel-klappe]').first().click()
 
     await expect(panel.getByRole('link', { name: /2C_1060\/2020/ })).toBeVisible({ timeout: 20_000 })

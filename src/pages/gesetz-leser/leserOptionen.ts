@@ -210,6 +210,20 @@ const KEY = 'lm.leser.optionen';
 const STAND_KEY = 'stand';
 const OPT_STAND = 2;
 
+/**
+ * ── S6-W1b (23.9.2026) · EIGENER STAND DER BEZUGS-FACETTEN ────────────────
+ * `speichere()` schreibt bei JEDER Optionsänderung alle Felder, auch den
+ * unberührten Instanz-Grundzustand `{bge}` von bis dahin. Ein gespeichertes
+ * `['bge']` ohne diesen Stand ist darum meist der zurückgeschriebene Default,
+ * keine Wahl; nach Davids Entscheid 23.9.2026 (Grundzustand = alle Instanzen,
+ * `bezugAuswahl.ts`) wird es EINMAL gehoben. Richtung ungefährlich: mehr statt
+ * weniger, der Stand steht sichtbar in der Filterzeile. Jede andere Menge bleibt.
+ * EIGENER Schlüssel, weil `OPT_STAND` auf Gleichheit prüft (D40: ein Stand 3
+ * hätte jedem Speicher ein abgewähltes `f` wieder eingefügt). Eine Frage, ein Schlüssel.
+ */
+const BEZUG_STAND_KEY = 'bezugStand';
+const BEZUG_STAND = 1;
+
 const DEFAULT_FUSS_RUBRIKEN: readonly FussRubrik[] = [...FUSS_RUBRIKEN];
 const DEFAULT: LeserOptionen = { vermerke: 'fassung', fussRubriken: DEFAULT_FUSS_RUBRIKEN };
 
@@ -324,11 +338,19 @@ export const SCHRIFT_STUFEN: readonly LeserSchrift[] = ['normal', 'mittel', 'gro
 const DEFAULT_SCHRIFT: LeserSchrift = 'normal';
 
 // W2·7-BEZUG/B4: Grundzustand der Bezugs-Facetten = NUR Leitentscheide (§9 B4
-// «Default konservativ»). Die geteilte Konstanten-Referenz macht den häufigen
+// «Default konservativ»; seit S6-W1b alle vier). Die geteilte Konstanten-Referenz macht den häufigen
 // Fall referenz-stabil: solange niemand umschaltet, liefert `getKlassenSnapshot`
 // IMMER dasselbe Array-Objekt ⇒ kein Re-Render der Abonnenten (Object.is, §15).
 const DEFAULT_BEZUG_KLASSEN: readonly BezugStatus[] = [...DEFAULT_KLASSEN];
 const KEINE_KANTONE: readonly string[] = [];
+
+/** S6-W1b · Hebung (Herleitung an `BEZUG_STAND`); Grundzustand = geteilte Konstante (§15). */
+function hebeAltenGrundzustand(klassen: readonly BezugStatus[], aktuell: boolean): readonly BezugStatus[] {
+  if (!aktuell && klassen.length === 1 && klassen[0] === 'bge') return DEFAULT_BEZUG_KLASSEN;
+  const istDefault = klassen.length === DEFAULT_BEZUG_KLASSEN.length
+    && klassen.every((k, i) => k === DEFAULT_BEZUG_KLASSEN[i]);
+  return istDefault ? DEFAULT_BEZUG_KLASSEN : klassen;
+}
 
 interface GeladenerZustand {
   opt: LeserOptionen;
@@ -385,7 +407,7 @@ function lade(): GeladenerZustand {
     // Umstellung darf eine getroffene Nutzerwahl nicht stillschweigend kippen).
     // Greift NUR, solange keine Facetten-Wahl gespeichert ist, also genau einmal.
     const bezugKlassen = Array.isArray(o.bezugKlassen)
-      ? normalisiereKlassen(o.bezugKlassen)
+      ? hebeAltenGrundzustand(normalisiereKlassen(o.bezugKlassen), o[BEZUG_STAND_KEY] === BEZUG_STAND)
       // D35-F2: gelesen wird der ROHE Bestands-Wert, nicht mehr ein Feld des
       // Zustands — den Schalter `leitfaelle` gibt es seit D35-F2 nicht mehr
       // (Herleitung am Typ oben). Die Migration selbst bleibt Wort für Wort
@@ -427,7 +449,7 @@ function speichere(): void {
     // Die gestrichenen Schlüssel (`zeitraum`, `hist`, `verweise`, `linien`)
     // stehen bewusst NICHT im Objekt — Begründung im Datei-Kopf.
     localStorage.setItem(KEY, JSON.stringify({
-      ...aktuell, [STAND_KEY]: OPT_STAND, schrift: aktuellSchrift,
+      ...aktuell, [STAND_KEY]: OPT_STAND, [BEZUG_STAND_KEY]: BEZUG_STAND, schrift: aktuellSchrift,
       ansicht: aktuellAnsicht,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
       bezugVon: aktuellVon, bezugBis: aktuellBis,
