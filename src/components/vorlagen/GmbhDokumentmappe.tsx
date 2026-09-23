@@ -34,40 +34,43 @@ const ZEICHNUNGS_OPTIONEN: { id: GmbhZeichnungsArt; label: string }[] = [
   { id: 'kollektivzuzweien', label: 'Kollektivunterschrift zu zweien' },
 ];
 
-export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
+export function GmbhDokumentmappe({ weichen, docxErlaubt, start }: {
   weichen: GmbhGruendungEingaben;
   docxErlaubt: boolean;
+  /** V5 (W2·29-WERKBANK-VORLAGEN): Anfangswerte (Musterdaten). Die Seite
+   *  remountet die Mappe per `key`, damit der neue Stand greift. */
+  start?: GmbhDokAntworten;
 }) {
-  // Identität & Parameter (Weichen kommen als Props von der Checkliste)
-  const [firma, setFirma] = useState('');
-  const [sitz, setSitz] = useState('');
-  const [kanton, setKanton] = useState<string>(getStandardKanton);
-  const [zweck, setZweck] = useState('');
-  const [zweckErweiterung, setZweckErweiterung] = useState(true);
-  const [stammkapital, setStammkapital] = useState(GMBH_DOK_DEFAULTS.stammkapitalChf);
-  const [anzahl, setAnzahl] = useState(GMBH_DOK_DEFAULTS.anzahlAnteile);
-  const [nennwert, setNennwert] = useState(GMBH_DOK_DEFAULTS.nennwertChf);
-  const [gruender, setGruender] = useState<(GmbhGruenderZeile & { key: number })[]>([]);
-  const [gfs, setGfs] = useState<(GmbhGfZeile & { key: number })[]>([]);
-  const [vertretungen, setVertretungen] = useState<(GmbhVertretungsZeile & { key: number })[]>([]);
-  const [bankName, setBankName] = useState('');
-  const [bankOrt, setBankOrt] = useState('');
-  const [rechtsdomizil, setRechtsdomizil] = useState('');
-  const [domizilhalterName, setDomizilhalterName] = useState('');
-  const [domizilhalterAdresse, setDomizilhalterAdresse] = useState('');
-  const [rsName, setRsName] = useState('');
-  const [rsSitz, setRsSitz] = useState('');
-  const [nachschussBetrag, setNachschussBetrag] = useState('');
-  const [nebenleistung, setNebenleistung] = useState('');
-  const [konkurrenzBefreiung, setKonkurrenzBefreiung] = useState<'alleGesellschafter' | 'gv'>('alleGesellschafter');
-  const [vetoBeschluesse, setVetoBeschluesse] = useState('');
-  const [virtuelleGv, setVirtuelleGv] = useState(false);
-  const [ort, setOrt] = useState('');
-  const [datum, setDatum] = useState('');
-
   // Stabile Listen-Keys (Voll-Audit 5.6.: keine Index-Keys in Editoren)
   const naechsterKey = useRef(1);
   const neuerKey = () => naechsterKey.current++;
+  // Identität & Parameter (Weichen kommen als Props von der Checkliste)
+  const [firma, setFirma] = useState(start?.firma ?? '');
+  const [sitz, setSitz] = useState(start?.sitz ?? '');
+  const [kanton, setKanton] = useState<string>(start?.kanton ?? getStandardKanton);
+  const [zweck, setZweck] = useState(start?.zweck ?? '');
+  const [zweckErweiterung, setZweckErweiterung] = useState(start?.zweckErweiterung ?? true);
+  const [stammkapital, setStammkapital] = useState(start?.stammkapitalChf ?? GMBH_DOK_DEFAULTS.stammkapitalChf);
+  const [anzahl, setAnzahl] = useState(start?.anzahlAnteile ?? GMBH_DOK_DEFAULTS.anzahlAnteile);
+  const [nennwert, setNennwert] = useState(start?.nennwertChf ?? GMBH_DOK_DEFAULTS.nennwertChf);
+  const [gruender, setGruender] = useState<(GmbhGruenderZeile & { key: number })[]>(() => (start?.gruender ?? []).map((z) => ({ ...z, key: neuerKey() })));
+  const [gfs, setGfs] = useState<(GmbhGfZeile & { key: number })[]>(() => (start?.geschaeftsfuehrer ?? []).map((z) => ({ ...z, key: neuerKey() })));
+  const [vertretungen, setVertretungen] = useState<(GmbhVertretungsZeile & { key: number })[]>(() => (start?.weitereVertretungen ?? []).map((z) => ({ ...z, key: neuerKey() })));
+  const [bankName, setBankName] = useState(start?.bankName ?? '');
+  const [bankOrt, setBankOrt] = useState(start?.bankOrt ?? '');
+  const [rechtsdomizil, setRechtsdomizil] = useState(start?.rechtsdomizilAdresse ?? '');
+  const [domizilhalterName, setDomizilhalterName] = useState(start?.domizilhalterName ?? '');
+  const [domizilhalterAdresse, setDomizilhalterAdresse] = useState(start?.domizilhalterAdresse ?? '');
+  const [rsName, setRsName] = useState(start?.revisionsstelleName ?? '');
+  const [rsSitz, setRsSitz] = useState(start?.revisionsstelleSitz ?? '');
+  const [nachschussBetrag, setNachschussBetrag] = useState(start?.nachschussBetragChf ?? '');
+  const [nebenleistung, setNebenleistung] = useState(start?.nebenleistungText ?? '');
+  const [konkurrenzBefreiung, setKonkurrenzBefreiung] = useState<'alleGesellschafter' | 'gv'>(start?.konkurrenzBefreiung ?? 'alleGesellschafter');
+  const [vetoBeschluesse, setVetoBeschluesse] = useState(start?.vetoBeschluesse ?? '');
+  const [virtuelleGv, setVirtuelleGv] = useState(start?.virtuelleGv ?? false);
+  const [ort, setOrt] = useState(start?.ort ?? '');
+  const [datum, setDatum] = useState(start?.datum ?? '');
+
   const pk = usePaneKlasse();
 
   const antworten: GmbhDokAntworten = useMemo(() => ({

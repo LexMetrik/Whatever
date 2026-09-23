@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../components/NormText';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { Checkbox, Field, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
@@ -74,6 +75,20 @@ export function VorlageKapitalerhoehung() {
   const naechsterKey = useRef(1);
   const neuerKey = () => naechsterKey.current++;
 
+  // V5 (W2·29-WERKBANK-VORLAGEN): «Mit Musterdaten füllen» — Beispiel aus
+  // components/vorlagen/musterdaten.ts (eine Quelle, §5), vollständiger Ersatz.
+  const musterdatenFuellen = () => {
+    const d = MUSTER.kapitalerhoehung();
+    setRechtsform(d.rechtsform); setEinlageArt(d.einlageArt); setFirma(d.firma); setSitz(d.sitz); setKanton(d.kanton);
+    setBisher(d.bisherigesKapitalChf); setBisherAnzahl(d.bisherigeAnzahl); setNennwert(d.nennwertChf);
+    setAnzahlNeue(d.anzahlNeue); setAusgabebetrag(d.ausgabebetragChf); setStatutenArtikel(d.statutenArtikelNr);
+    setGvDatum(d.gvDatum); setZeichner(d.zeichner.map((z) => ({ ...z, key: neuerKey() })));
+    setBezugsrechtGewahrt(d.bezugsrechtGewahrt); setBankInUrkunde(d.bankInUrkundeGenannt);
+    setBankName(d.bankName); setBankOrt(d.bankOrt); setBefristung(d.befristungsKlausel);
+    setBerichtUnterzeichner(d.berichtUnterzeichner); setVorsitz(d.vorsitzName);
+    setKlauseln([...d.statutKlauseln]); setOrt(d.ort); setDatum(d.datum);
+  };
+
   const antworten: KeAntworten = useMemo(() => ({
     ...KE_DEFAULTS,
     rechtsform, einlageArt, firma, sitz, kanton,
@@ -97,7 +112,7 @@ export function VorlageKapitalerhoehung() {
   const pk = usePaneKlasse();
 
   return (
-    <MappenSeite karte={card} titel="Kapitalerhöhung (AG / GmbH)" badge="Beschluss-Urkunden als Entwurf"
+    <MappenSeite karte={card} titel="Kapitalerhöhung (AG / GmbH)" musterdaten={musterdatenFuellen} badge="Beschluss-Urkunden als Entwurf"
         intro={<>
           Ordentliche Kapitalerhöhung gegen Bareinlage: Erhöhungsbeschluss und Feststellungs-Urkunde
           mit Statutenänderung entstehen als ENTWURF für die Urkundsperson (öffentliche Beurkundung

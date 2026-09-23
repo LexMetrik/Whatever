@@ -20,7 +20,7 @@ export { SchrittPersonen } from './schritte-eingabe.personen';
 
 export function SchrittKonstellation({ ctx }: { ctx: AgSchrittCtx }) {
   const {
-    musterdatenFuellen, einlageArt, setEinlageArt, optingOut, setOptingOut,
+    einlageArt, setEinlageArt, optingOut, setOptingOut,
     leistungen, setLeistungen, besondereVorteile, setBesondereVorteile,
     inhaberaktien, setInhaberaktien, eigeneBueros, setEigeneBueros,
     immobilienHauptzweck, setImmobilienHauptzweck, fremdwaehrung, setFremdwaehrung,
@@ -30,10 +30,6 @@ export function SchrittKonstellation({ ctx }: { ctx: AgSchrittCtx }) {
   return (
     <div className="space-y-4">
       <PflichtDisclaimer />
-      <button type="button" className="lc-btn-outline lc-btn-sm" onClick={musterdatenFuellen}
-        title="Füllt alle Schritte mit einem vollständigen Demo-Datensatz (gemischte qualifizierte Gründung) — zum Ausprobieren; eigene Eingaben werden überschrieben.">
-        Mit Musterdaten füllen (Demo)
-      </button>
       <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-4')}>
         <Field label="Liberierung">
           <select className={inputCls} value={einlageArt} onChange={(e) => setEinlageArt(e.target.value as EinlageArt)}>

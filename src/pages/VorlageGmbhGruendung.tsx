@@ -1,4 +1,6 @@
 import { useMemo, useState } from 'react';
+import { MUSTER } from '../components/vorlagen/musterdaten';
+import type { GmbhDokAntworten } from '../lib/vorlagen/gruendungGmbhDokumente';
 import {
   gmbhGruendungsunterlagen,
   type EinlageArt,
@@ -55,6 +57,19 @@ export function VorlageGmbhGruendung() {
   const [chVertretung, setChVertretung] = useState(true);
   const [klauseln, setKlauseln] = useState<GmbhStatutKlausel[]>([]);
   const [leistungen, setLeistungen] = useState('');
+  // V5 (W2·29-WERKBANK-VORLAGEN): Musterdaten — Weichen hier setzen, die
+  // Dokumentmappe per `key` mit dem Beispiel als Start-Stand remounten.
+  const [muster, setMuster] = useState<{ n: number; daten: GmbhDokAntworten } | null>(null);
+  const musterdatenFuellen = () => {
+    const d = MUSTER['gmbh-gruendung']();
+    setEinlageArt(d.einlageArt); setBesondereVorteile(d.besondereVorteile); setGfGewaehlt(d.gfGewaehlt);
+    setMehrereGf(d.mehrereGeschaeftsfuehrer); setWeitereVertretung(d.weitereVertretungsberechtigte);
+    setOptingOut(d.optingOut); setEigeneBueros(d.eigeneBueros); setImmobilienHauptzweck(d.immobilienHauptzweck);
+    setAuslJurPerson(d.auslJurPersonGesellschafter); setFremdwaehrung(d.fremdwaehrung);
+    setBankInUrkunde(d.bankInUrkundeGenannt); setChVertretung(d.chWohnsitzVertretung);
+    setKlauseln([...d.statutKlauseln]); setLeistungen(d.leistungenChf == null ? '' : String(d.leistungenChf));
+    setMuster((alt) => ({ n: (alt?.n ?? 0) + 1, daten: d }));
+  };
 
   const eingaben = useMemo(() => {
     const betrag = Number(leistungen.replace(/['’\s]/g, ''));
@@ -82,7 +97,7 @@ export function VorlageGmbhGruendung() {
     setKlauseln((alt) => (alt.includes(k) ? alt.filter((x) => x !== k) : [...alt, k]));
 
   return (
-    <MappenSeite karte={card} titel="GmbH-Gründungsunterlagen"
+    <MappenSeite karte={card} titel="GmbH-Gründungsunterlagen" musterdaten={musterdatenFuellen}
         badge="Checkliste + Dokumentmappe (Urkunde als Entwurf)"
         intro={<>
           Checkliste UND Dokumentmappe: Die Checkliste leitet die registerrechtlich verlangten
@@ -178,7 +193,7 @@ export function VorlageGmbhGruendung() {
       </MappenAbschnitt>
 
       {/* Ausbaustufe 9b (7.6.2026): Volldokumente aus denselben Weichen */}
-      <GmbhDokumentmappe weichen={eingaben}
+      <GmbhDokumentmappe key={muster?.n ?? 0} start={muster?.daten} weichen={eingaben}
         docxErlaubt={card?.modus === 'vorlage' && (card.output?.includes('docx') ?? false)} />
     </MappenSeite>
   );
