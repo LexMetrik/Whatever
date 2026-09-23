@@ -5459,7 +5459,7 @@ Schritt; der offene Rest lebt als Posten `plan/posten/2026-06-29-multi-pane-spli
 | Zeile / Posten | Verbleib |
 |---|---|
 | `leserV3Modell.ts` 420/420 + `uebersichtAngaben.ts` schneiden | `uebersichtAngaben.ts` erledigt (S2, 417 → 223); Rest (Adapter 419/420 verhaltenstragend, Satz «inzwischen in Kraft» nach `erlassKopfText.ts`) → Posten `2026-09-23-adapter-leserv3modell-ts-schneiden-…` unter `W2·29-WERKBANK-REST` |
-| `ArtikelLeser.tsx` ca. Z. 621, Kommentar `data-such-meta` | erledigt S5 (Ergänzungs-Satz im Kommentar, §2b) |
+| `ArtikelLeser.tsx` ca. Z. 621, Kommentar `data-such-meta` | erledigt S5 (Ergänzungs-Satz im Kommentar, §2b) — *Ergänzung 23.9.2026 (Rebase auf S3): erledigt war es schon in S1 (PR #985, Nachtrag «KEIN `data-such-meta` mehr» am `data-hist-druck`-Block); der alte Kommentarblock ist dort gefallen, der S5-Satz entfiel beim Rebase* |
 | `NormText.tsx` 795/800 | Posten `2026-09-23-normtext-tsx-795-800-…` unter `W2·29-WERKBANK-REST` |
 | 8 Artikel ohne eigene Gliederungszeile | Posten `2026-09-23-8-artikel-ohne-…` unter `W2·27-BUND-FERTIG` |
 | Struktur-Extraktor HTML statt XML (Risikopfad) | Posten `2026-09-23-struktur-extraktor-…` unter `W2·27-BUND-FERTIG` |
