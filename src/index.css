@@ -3362,8 +3362,11 @@
      `[data-lese]` setzt ArtikelBody im Leser selbst, `.lc-normtext-koerper`
      reicht die Norm-Vorschau (NormPopover) als className herein.
      `:is()` (Spezifität 0,2,0) statt `:where()`: die Utilities kommen in
-     Tailwind 3 NACH den Komponenten und hätten bei gleicher Spezifität gesiegt. */
-  :is([data-lese], .lc-normtext-koerper) :is(.rounded, .rounded-sm, .rounded-md, .rounded-lg, .rounded-xl, .rounded-2xl) {
+     Tailwind 3 NACH den Komponenten und hätten bei gleicher Spezifität gesiegt.
+     Nur die Stufen, die der Normtext-Körper HEUTE trägt (`rounded`, `rounded-md`,
+     gemessen 23.9.2026) — eine vorsorglich gelistete Stufe ohne Verwender ist für
+     `check:sediment` eine tote Klasse (Queue-Rauswurf #1021, Lauf 35906072767). */
+  :is([data-lese], .lc-normtext-koerper) :is(.rounded, .rounded-md) {
     border-radius: 0;
   }
 
