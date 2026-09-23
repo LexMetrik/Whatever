@@ -337,6 +337,11 @@ reichen `.fc-*`/`ui/FacettenGruppe`, `ui/GruppenKopf`, `ui/SchriftgroessenRegler
 
 **Abbruch-Zählung (§2 Ziff. 4)** läuft je Rubrik getrennt (LESER und KATALOGE parallel).
 
+**Stand 23.9.2026 — Schritt gebaut in einer Session:** K0 #994 · K1 #993 · K2 #995 · K3 #998 · K4 #997 ·
+K5 #999 (eine Zählquelle: /abdeckung 5'093 statt 6'345, /gesetze-Kopf 203 statt 231, /vorlagen-Fuss 26) ·
+K6 #1000 · K7 #1004 (Startseite vier Kacheln) · K8 #1005 (Amtlicher Zitierer auf /rechner, Entscheid
+David 23.9.2026) · K9 d39-Flacker-Wurzel. Nebenfunde als Posten unter VORLAGEN/RECHNER/REST/`W2·18`/`QS-EFFIZIENZ`.
+
 ## §6 · Prüfen und Frühsignale
 
 1. **Rot-Beweis (§6.7)** beim Tor: Ausgabe rot *und* grün im PR. Ein Baseline-Eintrag macht es
