@@ -31,15 +31,6 @@ import type { PdfBanner } from '../../lib/vorlagen/banner';
 // Default 0 = «nichts bekannt» (ExportLeisten ausserhalb eines Wizards).
 const OffeneAngabenContext = createContext(0);
 
-/** V5 (W2·29-WERKBANK-VORLAGEN): EINE Nachfrage-Regel für alle
- *  Musterdaten-Knöpfe (Wizard-Seiten, AG-Wizard, Mappen). Hat die Person
- *  schon etwas eingegeben, wird vor dem Ersetzen gefragt; sonst wird sofort
- *  gefüllt. Reine Zustands-Hygiene, keine Fachlogik (§3). */
-export function musterdatenAnwenden(eigeneEingaben: boolean, anwenden: () => void): void {
-  if (eigeneEingaben && !window.confirm('Eigene Eingaben durch Musterdaten ersetzen?')) return;
-  anwenden();
-}
-
 export function VorlagenWizardRahmen({
   // N0a: der Rückweg zeigt auf die Übersicht, die sein Label nennt.
   zurueckHref = '/vorlagen', overline, titel, intro, norms, badge,
@@ -74,7 +65,7 @@ export function VorlagenWizardRahmen({
   kopfSchalter?: ReactNode;
   /** V5 (W2·29-WERKBANK-VORLAGEN): «Mit Musterdaten füllen» neben
    *  «Eingaben zurücksetzen». Die Seite liefert den Füller samt Nachfrage
-   *  (`musterdatenAnwenden`); der Rahmen rendert nur den Knopf (§3). */
+   *  (`musterdaten.musterdatenAnwenden`); der Rahmen rendert nur den Knopf (§3). */
   musterdaten?: () => void;
 }) {
   const { locale } = useLocale();

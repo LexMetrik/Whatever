@@ -55,7 +55,7 @@ import { LocaleProvider } from '../components/locale';
 import { ALLE_KARTEN, type CatalogItem } from '../lib/startseiteConfig';
 import { ROUTEN_MANIFEST } from '../routesManifest';
 import { docxAktiv } from '../components/vorlagen/seiteHelfer';
-import { GMBH_BEISPIEL, KE_BEISPIEL } from '../components/vorlagen/musterdaten';
+import { GMBH_BEISPIEL, KE_BEISPIEL } from '../components/vorlagen/musterdaten-mappen';
 import { BASIS as AG_BEISPIEL } from './gruendungAgDokumente.helfer';
 
 // ── Schritt-Zwang: Hülle um den echten Hook ─────────────────────────────────
@@ -108,7 +108,7 @@ type Variante = { name: string; href: string; speicher: Record<string, string>; 
 
 // Beispiel-Eingaben der Mappen (Wortlaut aus formGate.test.ts übernommen) —
 // seit V5 (W2·29-WERKBANK-VORLAGEN) EINE Quelle mit dem Musterdaten-Knopf:
-// src/components/vorlagen/musterdaten.ts (Werte byte-gleich umgezogen).
+// src/components/vorlagen/musterdaten-mappen.ts (Werte byte-gleich umgezogen).
 const MAPPEN: Record<string, Mappe> = {
   '/vorlagen/gmbh-gruendung': { gmbh: GMBH_BEISPIEL },
   '/vorlagen/kapitalerhoehung': { ke: KE_BEISPIEL },

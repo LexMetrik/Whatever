@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../components/NormText';
-import { MUSTER } from '../components/vorlagen/musterdaten';
+import { MAPPEN_MUSTER } from '../components/vorlagen/musterdaten-mappen';
 import { Checkbox, Field, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
@@ -76,9 +76,9 @@ export function VorlageKapitalerhoehung() {
   const neuerKey = () => naechsterKey.current++;
 
   // V5 (W2·29-WERKBANK-VORLAGEN): «Mit Musterdaten füllen» — Beispiel aus
-  // components/vorlagen/musterdaten.ts (eine Quelle, §5), vollständiger Ersatz.
+  // components/vorlagen/musterdaten-mappen.ts (eine Quelle, §5), vollständiger Ersatz.
   const musterdatenFuellen = () => {
-    const d = MUSTER.kapitalerhoehung();
+    const d = MAPPEN_MUSTER.kapitalerhoehung();
     setRechtsform(d.rechtsform); setEinlageArt(d.einlageArt); setFirma(d.firma); setSitz(d.sitz); setKanton(d.kanton);
     setBisher(d.bisherigesKapitalChf); setBisherAnzahl(d.bisherigeAnzahl); setNennwert(d.nennwertChf);
     setAnzahlNeue(d.anzahlNeue); setAusgabebetrag(d.ausgabebetragChf); setStatutenArtikel(d.statutenArtikelNr);

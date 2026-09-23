@@ -20,6 +20,9 @@
 // Schlüssel = Karten-Id des Katalogs (startseiteConfig) plus die drei
 // Arbeitsvertrag-Untertypen (eigene Schemas unter /vorlagen/arbeitsvertrag).
 // Die Checkliste `kuendigung-vermieter` erzeugt kein Dokument — kein Eintrag.
+// Die Mappen GmbH/Kapitalerhöhung: `./musterdaten-mappen.ts` (eigene Datei,
+// weil ihre Beispiele Engine-Defaults ausbreiten — die sollen nicht in jede
+// Vorlagen-Seite geladen werden, §15).
 
 import type { AfAntworten } from '../../lib/vorlagen/auftrag';
 import type { AvAntworten } from '../../lib/vorlagen/arbeitsvertrag';
@@ -40,7 +43,7 @@ import type { MaAntworten } from '../../lib/vorlagen/mahnung';
 import type { MvAntworten } from '../../lib/vorlagen/mietvertrag';
 import type { NbAntworten } from '../../lib/vorlagen/nichtbekanntgabe';
 import type { NdaAntworten } from '../../lib/vorlagen/nda';
-import { PV_DEFAULT_MASSNAHMEN, zielDefaults, type PvAntworten } from '../../lib/vorlagen/patientenverfuegung';
+import type { PvAntworten, PvEntscheid, PvMassnahmeId } from '../../lib/vorlagen/patientenverfuegung';
 import type { RubrumAntworten } from '../../lib/vorlagen/rubrum';
 import type { SbAntworten } from '../../lib/vorlagen/scheidungsbegehren';
 import type { SkAntworten } from '../../lib/vorlagen/scheidungsklage';
@@ -50,10 +53,16 @@ import type { VaAntworten } from '../../lib/vorlagen/vorsorgeauftrag';
 import type { VvAntworten } from '../../lib/vorlagen/verjaehrungsverzicht';
 import type { VollmachtAntworten } from '../../lib/vorlagen/vollmacht';
 import type { WvAntworten } from '../../lib/vorlagen/werkvertrag';
-import { GMBH_DOK_DEFAULTS, type GmbhDokAntworten } from '../../lib/vorlagen/gruendungGmbhDokumente';
-import { KE_DEFAULTS, type KeAntworten } from '../../lib/vorlagen/kapitalerhoehung';
-import { AG_DOK_DEFAULTS } from '../../lib/vorlagen/gruendungAgDokumente';
 import type { AgStand } from '../../pages/vorlagenAgGruendungDaten';
+
+/** V5 (W2·29-WERKBANK-VORLAGEN): EINE Nachfrage-Regel für alle
+ *  Musterdaten-Knöpfe (Wizard-Seiten, AG-Wizard, Mappen). Hat die Person
+ *  schon etwas eingegeben, wird vor dem Ersetzen gefragt; sonst wird sofort
+ *  gefüllt. Reine Zustands-Hygiene, keine Fachlogik (§3). */
+export function musterdatenAnwenden(eigeneEingaben: boolean, anwenden: () => void): void {
+  if (eigeneEingaben && !window.confirm('Eigene Eingaben durch Musterdaten ersetzen?')) return;
+  anwenden();
+}
 
 // ── Wiederkehrende fiktive Parteien ─────────────────────────────────────────
 const ANNA = { name: 'Anna Muster', adresse: 'Beispielstrasse 1, 4051 Basel' } as const;
@@ -62,47 +71,15 @@ const FIRMA = { name: 'Beispiel Bau AG', adresse: 'Musterplatz 3, 4053 Basel' } 
 const ANNA_PERSON = { typ: 'natuerlich' as const, vorname: 'Anna', name: 'Muster', strasse: 'Beispielstrasse 1', plz: '4051', ort: 'Basel' };
 const BEAT_PERSON = { typ: 'natuerlich' as const, vorname: 'Beat', name: 'Muster', strasse: 'Beispielstrasse 1', plz: '4051', ort: 'Basel' };
 
-// ── Mappen-Beispiele (byte-gleich aus dem V0-Ratschen-Test übernommen, dort
-// «Wortlaut aus formGate.test.ts»; der Test importiert sie jetzt von hier) ──
-export const KE_BEISPIEL: KeAntworten = {
-  ...KE_DEFAULTS,
-  rechtsform: 'ag', firma: 'Muster Holding AG', sitz: 'Zürich', kanton: 'ZH',
-  bisherigesKapitalChf: "100'000", bisherigeAnzahl: '100', nennwertChf: "1'000",
-  anzahlNeue: '50', ausgabebetragChf: "1'200", statutenArtikelNr: '3',
-  gvDatum: '2026-06-01',
-  zeichner: [
-    { name: 'Anna Muster', angaben: 'von Basel, in Zürich', anzahl: '30', bereitsBeteiligt: true },
-    { name: 'Beat Beispiel', angaben: 'von Bern, in Bern', anzahl: '20', bereitsBeteiligt: true },
-  ],
-  bankName: 'Zürcher Kantonalbank', bankOrt: 'Zürich',
-  berichtUnterzeichner: 'Anna Muster', vorsitzName: 'Anna Muster',
-  ort: 'Zürich', datum: '2026-06-07',
-};
-export const GMBH_BEISPIEL: GmbhDokAntworten = {
-  einlageArt: 'bar', besondereVorteile: false, gfGewaehlt: true,
-  mehrereGeschaeftsfuehrer: false, weitereVertretungsberechtigte: false,
-  optingOut: false, eigeneBueros: true, immobilienHauptzweck: false,
-  auslJurPersonGesellschafter: false, fremdwaehrung: false,
-  bankInUrkundeGenannt: false, chWohnsitzVertretung: true,
-  statutKlauseln: [], leistungenChf: undefined,
-  ...GMBH_DOK_DEFAULTS,
-  firma: 'Muster GmbH', sitz: 'Zürich', kanton: 'ZH', zweck: 'Treuhand',
-  stammkapitalChf: "20'000", anzahlAnteile: '20', nennwertChf: "1'000",
-  gruender: [{ name: 'A', angaben: 'von Basel, in Zürich', anzahl: '20' }],
-  geschaeftsfuehrer: [
-    { name: 'A', herkunft: 'Basel', wohnort: 'Zürich', adresse: 'W 1', vorsitz: true, zeichnungsArt: 'einzelunterschrift' },
-  ],
-  revisionsstelleName: 'R AG', revisionsstelleSitz: 'Zürich',
-  ort: 'Zürich', datum: '2026-06-15',
-};
-
 /** AG-Gründung: kompletter Demo-Datensatz, Werte unverändert aus
  *  VorlageAgGruendung.tsx übernommen (dort seit P9 «Perfektion») — aus
  *  Golden-Fall ag:gemischt-qualifiziert (scripts/golden-outputs.ts):
  *  gemischte qualifizierte Gründung mit Sacheinlage (Geschäft, Grundstück),
  *  Verrechnung, besonderen Vorteilen, c/o-Domizil, Revisionsstelle und Lex
  *  Koller. `neuerKey` vergibt die Zeilen-Keys (die Seite reicht ihren
- *  Zähler durch, damit spätere Zeilen kollisionsfrei bleiben). */
+ *  Zähler durch, damit spätere Zeilen kollisionsfrei bleiben). Die Seite legt
+ *  den Datensatz über `agStandDefaults()` — daher stammen gjBeginn/gjEnde
+ *  (AG_DOK_DEFAULTS, wie zuvor explizit gesetzt). */
 export function agMusterdaten(neuerKey: () => number): Partial<AgStand> {
   return {
     einlageArt: 'gemischt', besondereVorteile: true, optingOut: false,
@@ -112,7 +89,7 @@ export function agMusterdaten(neuerKey: () => number): Partial<AgStand> {
     zweckErweiterung: true, statutenUmfang: 'kurz', vinkulierung: false, virtuelleGv: false,
     inhaberKotiert: false, verwahrungsstelle: '',
     schiedsklausel: false, schiedsOrt: '', kapitalband: false, bedingtesKapital: false,
-    gjBeginn: AG_DOK_DEFAULTS.gjBeginn, gjEnde: AG_DOK_DEFAULTS.gjEnde, gjErstesEnde: '',
+    gjErstesEnde: '', // gjBeginn/gjEnde: unverändert die AG_DOK_DEFAULTS aus agStandDefaults()
     ak: "400'000", anzahl: '400', nennwert: "1'000", liberierung: '100', ausgabebetrag: '',
     bankName: 'Zürcher Kantonalbank', bankOrt: 'Zürich',
     gruender: [
@@ -143,7 +120,18 @@ export function agMusterdaten(neuerKey: () => number): Partial<AgStand> {
   };
 }
 
-/** Musterdaten der Wizard-Vorlagen (VorlagenSeite), je Karten-Id. */
+/** Palliativ-Ziel: die lebensverlängernden Massnahmen (CPR, Beatmung,
+ *  Dialyse) abgelehnt, der Rest offen — derselbe Stand, den die Zielwahl
+ *  «palliativ» per zielDefaults (R1) aus den Defaults erzeugt. Als Literal,
+ *  damit dieses Modul keine Engine in jede Vorlagen-Seite zieht (§15). */
+const PV_MUSTER_MASSNAHMEN: Record<PvMassnahmeId, PvEntscheid> = {
+  cpr: 'ablehnen', beatmung: 'ablehnen', ernaehrungTemporaer: 'keine_angabe',
+  ernaehrungDauerhaft: 'keine_angabe', fluessigkeit: 'keine_angabe', dialyse: 'ablehnen',
+  antibiotika: 'keine_angabe', spitaleinweisung: 'keine_angabe',
+};
+
+/** Musterdaten der Wizard-Vorlagen (VorlagenSeite), je Karten-Id. Nur
+ *  `import type` aus src/lib: das Modul hängt an jeder Vorlagen-Seite. */
 export const MUSTER = {
   mahnung: (): Partial<MaAntworten> => ({
     absenderName: ANNA.name, absenderAdresse: ANNA.adresse,
@@ -319,7 +307,7 @@ export const MUSTER = {
   patientenverfuegung: (): Partial<PvAntworten> => ({
     vorname: 'Anna', name: 'Muster', geburtsdatum: '1958-04-12', wohnort: 'Basel',
     ziel: 'palliativ', situationen: ['terminal'],
-    massnahmen: zielDefaults('palliativ', { ...PV_DEFAULT_MASSNAHMEN }),
+    massnahmen: { ...PV_MUSTER_MASSNAHMEN },
     organspende: 'ja',
   }),
   vorsorgeauftrag: (): Partial<VaAntworten> => ({
@@ -364,7 +352,4 @@ export const MUSTER = {
     mietzinsNettoCHF: '2000', nebenkostenCHF: '250', nkPositionen: ['Heizung', 'Warmwasser'],
     ort: 'Basel', datum: '2026-06-15',
   }),
-  /** Mappen (eigene Seiten, kein VorlagenSeite-Rahmen). */
-  'gmbh-gruendung': (): GmbhDokAntworten => ({ ...GMBH_BEISPIEL }),
-  kapitalerhoehung: (): KeAntworten => ({ ...KE_BEISPIEL }),
 };

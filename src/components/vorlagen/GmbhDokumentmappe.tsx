@@ -41,9 +41,13 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt, start }: {
    *  remountet die Mappe per `key`, damit der neue Stand greift. */
   start?: GmbhDokAntworten;
 }) {
-  // Stabile Listen-Keys (Voll-Audit 5.6.: keine Index-Keys in Editoren)
-  const naechsterKey = useRef(1);
+  // Stabile Listen-Keys (Voll-Audit 5.6.: keine Index-Keys in Editoren).
+  // Start-Zeilen tragen je Liste 1…n; der Zähler beginnt oberhalb der
+  // längsten Start-Liste (Muster wie der AG-Wizard) — kollisionsfrei.
+  const naechsterKey = useRef(1 + Math.max(0,
+    ...[start?.gruender, start?.geschaeftsfuehrer, start?.weitereVertretungen].map((l) => l?.length ?? 0)));
   const neuerKey = () => naechsterKey.current++;
+  const mitKeys = <Z,>(l: Z[] | undefined) => (l ?? []).map((z, i) => ({ ...z, key: i + 1 }));
   // Identität & Parameter (Weichen kommen als Props von der Checkliste)
   const [firma, setFirma] = useState(start?.firma ?? '');
   const [sitz, setSitz] = useState(start?.sitz ?? '');
@@ -53,9 +57,9 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt, start }: {
   const [stammkapital, setStammkapital] = useState(start?.stammkapitalChf ?? GMBH_DOK_DEFAULTS.stammkapitalChf);
   const [anzahl, setAnzahl] = useState(start?.anzahlAnteile ?? GMBH_DOK_DEFAULTS.anzahlAnteile);
   const [nennwert, setNennwert] = useState(start?.nennwertChf ?? GMBH_DOK_DEFAULTS.nennwertChf);
-  const [gruender, setGruender] = useState<(GmbhGruenderZeile & { key: number })[]>(() => (start?.gruender ?? []).map((z) => ({ ...z, key: neuerKey() })));
-  const [gfs, setGfs] = useState<(GmbhGfZeile & { key: number })[]>(() => (start?.geschaeftsfuehrer ?? []).map((z) => ({ ...z, key: neuerKey() })));
-  const [vertretungen, setVertretungen] = useState<(GmbhVertretungsZeile & { key: number })[]>(() => (start?.weitereVertretungen ?? []).map((z) => ({ ...z, key: neuerKey() })));
+  const [gruender, setGruender] = useState<(GmbhGruenderZeile & { key: number })[]>(() => mitKeys(start?.gruender));
+  const [gfs, setGfs] = useState<(GmbhGfZeile & { key: number })[]>(() => mitKeys(start?.geschaeftsfuehrer));
+  const [vertretungen, setVertretungen] = useState<(GmbhVertretungsZeile & { key: number })[]>(() => mitKeys(start?.weitereVertretungen));
   const [bankName, setBankName] = useState(start?.bankName ?? '');
   const [bankOrt, setBankOrt] = useState(start?.bankOrt ?? '');
   const [rechtsdomizil, setRechtsdomizil] = useState(start?.rechtsdomizilAdresse ?? '');

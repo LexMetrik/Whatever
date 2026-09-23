@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { MUSTER } from '../components/vorlagen/musterdaten';
+import { MAPPEN_MUSTER } from '../components/vorlagen/musterdaten-mappen';
 import type { GmbhDokAntworten } from '../lib/vorlagen/gruendungGmbhDokumente';
 import {
   gmbhGruendungsunterlagen,
@@ -61,7 +61,7 @@ export function VorlageGmbhGruendung() {
   // Dokumentmappe per `key` mit dem Beispiel als Start-Stand remounten.
   const [muster, setMuster] = useState<{ n: number; daten: GmbhDokAntworten } | null>(null);
   const musterdatenFuellen = () => {
-    const d = MUSTER['gmbh-gruendung']();
+    const d = MAPPEN_MUSTER['gmbh-gruendung']();
     setEinlageArt(d.einlageArt); setBesondereVorteile(d.besondereVorteile); setGfGewaehlt(d.gfGewaehlt);
     setMehrereGf(d.mehrereGeschaeftsfuehrer); setWeitereVertretung(d.weitereVertretungsberechtigte);
     setOptingOut(d.optingOut); setEigeneBueros(d.eigeneBueros); setImmobilienHauptzweck(d.immobilienHauptzweck);

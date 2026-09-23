@@ -28,8 +28,10 @@ import { LocaleProvider } from '../components/locale';
 import { ALLE_KARTEN } from '../lib/startseiteConfig';
 import { ROUTEN_MANIFEST } from '../routesManifest';
 import { MUSTER, agMusterdaten } from '../components/vorlagen/musterdaten';
+import { MAPPEN_MUSTER } from '../components/vorlagen/musterdaten-mappen';
 import { gmbhDokumentmappe } from '../lib/vorlagen/gruendungGmbhDokumente';
 import { keDokumentmappe } from '../lib/vorlagen/kapitalerhoehung';
+import { PV_DEFAULT_MASSNAHMEN, zielDefaults } from '../lib/vorlagen/patientenverfuegung';
 
 // ── Hülle um den echten Hook: Musterdaten als Stand, Schritt erzwingen ─────
 const zwang = vi.hoisted(() => ({ schritt: null as number | null, muster: null as null | object }));
@@ -135,7 +137,7 @@ describe('V5 · Musterdaten für alle Vorlagen (W2·29-WERKBANK-VORLAGEN)', () =
       ...vorlagenKarten().map((k) => k.id).filter((id) => !OHNE_MUSTER.has(id)),
       ...AV_UNTERTYPEN,
     ].sort();
-    const vorhanden = [...Object.keys(MUSTER), 'ag-gruendung'].sort();
+    const vorhanden = [...Object.keys(MUSTER), ...Object.keys(MAPPEN_MUSTER), 'ag-gruendung'].sort();
     expect(vorhanden).toEqual(soll);
   });
 
@@ -177,6 +179,10 @@ describe('V5 · Musterdaten für alle Vorlagen (W2·29-WERKBANK-VORLAGEN)', () =
     `);
   });
 
+  it('Patientenverfügung: Massnahmen-Literal = Zielwahl «palliativ» (zielDefaults, R1)', () => {
+    expect(MUSTER.patientenverfuegung().massnahmen).toEqual(zielDefaults('palliativ', { ...PV_DEFAULT_MASSNAHMEN }));
+  });
+
   it('Mappen GmbH/Kapitalerhöhung: Knopf im Kopf', async () => {
     for (const k of vorlagenKarten().filter((x) => MAPPEN.has(x.id))) {
       const doc = await rendere({ schluessel: k.id, href: k.href!, speicher: {}, muster: () => ({}) }, null, false);
@@ -185,8 +191,8 @@ describe('V5 · Musterdaten für alle Vorlagen (W2·29-WERKBANK-VORLAGEN)', () =
   });
 
   it('Mappen GmbH/Kapitalerhöhung: Engine ohne Blocker, Dokumente vorhanden', () => {
-    const g = gmbhDokumentmappe(MUSTER['gmbh-gruendung']());
-    const ke = keDokumentmappe(MUSTER.kapitalerhoehung());
+    const g = gmbhDokumentmappe(MAPPEN_MUSTER['gmbh-gruendung']());
+    const ke = keDokumentmappe(MAPPEN_MUSTER.kapitalerhoehung());
     expect(g.gates.blocker).toEqual([]);
     expect(ke.gates.blocker).toEqual([]);
     expect(g.dokumente.length).toBeGreaterThan(0);

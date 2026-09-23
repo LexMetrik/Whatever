@@ -2,8 +2,8 @@ import { useMemo, useRef, useState, type Dispatch, type SetStateAction } from 'r
 import { agGruendungsunterlagen, finmaBegriffsTreffer } from '../lib/gruendungsunterlagen';
 import { Field, inputCls } from '../components/vorlagen/ui';
 import { NormText } from '../components/NormText';
-import { VorlagenWizardRahmen, VorschauPanel, musterdatenAnwenden } from '../components/vorlagen/wizard';
-import { agMusterdaten } from '../components/vorlagen/musterdaten';
+import { VorlagenWizardRahmen, VorschauPanel } from '../components/vorlagen/wizard';
+import { agMusterdaten, musterdatenAnwenden } from '../components/vorlagen/musterdaten';
 import { useWizardState } from '../components/vorlagen/useWizardState';
 import { karte } from '../lib/startseiteConfig';
 import { BANNER_MAPPE_FERTIG } from '../lib/vorlagen/banner';

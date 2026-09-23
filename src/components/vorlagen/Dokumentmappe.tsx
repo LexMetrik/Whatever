@@ -1,6 +1,7 @@
 import { createContext, useContext, useId, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { VorschauPanel, ExportLeiste, musterdatenAnwenden } from './wizard';
+import { VorschauPanel, ExportLeiste } from './wizard';
+import { musterdatenAnwenden } from './musterdaten';
 import { ErgebnisPlatzhalter, ErgebnisSprung, GruppenTitel, NormLink } from './ui';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { WerkzeugKopf } from '../layout/WerkzeugKopf';
