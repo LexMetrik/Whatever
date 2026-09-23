@@ -10,6 +10,7 @@ import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Lehrvertrag (Art. 344–346a OR) ────────────────────────
@@ -170,6 +171,7 @@ function fehlerEingabe(a: LvAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<LvAntworten, LvZ> = {
   cardId: 'arbeitsvertrag',
+  musterdaten: MUSTER.lehrvertrag,
   defaults: LV_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   normalisieren: lvNormalisieren,

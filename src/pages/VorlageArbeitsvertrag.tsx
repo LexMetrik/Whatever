@@ -14,6 +14,7 @@ import { Checkbox, Field, GruppenTitel, inputCls, NormLink } from '../components
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { KANTONE } from '../lib/kantone';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
@@ -451,6 +452,7 @@ function fehlerEingabe(a: AvAntworten, schritt: number): string[] {
 // EinzelKaderWizard.
 const CONFIG: Omit<VorlagenSeitenConfig<AvAntworten, AvZ>, 'zusammenstellen'> = {
   cardId: 'arbeitsvertrag',
+  musterdaten: MUSTER.arbeitsvertrag,
   defaults: AV_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Ist-Zustand vor dem Umzug (§6): kein Profil-Prefill, Detailgrad-Default

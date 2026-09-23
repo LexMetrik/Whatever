@@ -13,6 +13,7 @@ import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Scheidungsklage — unbegründete Eingabe (Art. 290 ZPO) ──
 // Erste Musterklagen-Maske Familienrecht (Auftrag David 12.6.2026; Bauspez.
@@ -197,6 +198,7 @@ const fehlerEingabe = (a: SkAntworten, schritt: number): string[] =>
 // Vollmacht-Schalter (pruefenZusatz), Ort/Datum ohne Feld-Fehler, kompakte Vorschau.
 const CONFIG: VorlagenSeitenConfig<SkAntworten> = {
   cardId: 'scheidungsklage',
+  musterdaten: MUSTER.scheidungsklage,
   defaults: SK_DEFAULTS,
   zusammenstellen: (a) => ({ ergebnis: skZusammenstellen(a) }),
   pruefeGates: (a) => ({ blocker: skMaengel(a).map((m) => m.text), warnungen: [], hinweise: [] }),

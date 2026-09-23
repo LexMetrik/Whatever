@@ -55,8 +55,7 @@ import { LocaleProvider } from '../components/locale';
 import { ALLE_KARTEN, type CatalogItem } from '../lib/startseiteConfig';
 import { ROUTEN_MANIFEST } from '../routesManifest';
 import { docxAktiv } from '../components/vorlagen/seiteHelfer';
-import { GMBH_DOK_DEFAULTS, type GmbhDokAntworten } from '../lib/vorlagen/gruendungGmbhDokumente';
-import { KE_DEFAULTS, type KeAntworten } from '../lib/vorlagen/kapitalerhoehung';
+import { GMBH_BEISPIEL, KE_BEISPIEL } from '../components/vorlagen/musterdaten-mappen';
 import { BASIS as AG_BEISPIEL } from './gruendungAgDokumente.helfer';
 
 // ── Schritt-Zwang: Hülle um den echten Hook ─────────────────────────────────
@@ -107,38 +106,9 @@ const VA_KEY = 'lexmetrik.vorlage.vorsorgeauftrag.v1';
 type Mappe = NonNullable<typeof mappenZwang.beispiel>;
 type Variante = { name: string; href: string; speicher: Record<string, string>; mappe?: Mappe };
 
-// Beispiel-Eingaben der Mappen (Wortlaut aus formGate.test.ts übernommen).
-const KE_BEISPIEL: KeAntworten = {
-  ...KE_DEFAULTS,
-  rechtsform: 'ag', firma: 'Muster Holding AG', sitz: 'Zürich', kanton: 'ZH',
-  bisherigesKapitalChf: "100'000", bisherigeAnzahl: '100', nennwertChf: "1'000",
-  anzahlNeue: '50', ausgabebetragChf: "1'200", statutenArtikelNr: '3',
-  gvDatum: '2026-06-01',
-  zeichner: [
-    { name: 'Anna Muster', angaben: 'von Basel, in Zürich', anzahl: '30', bereitsBeteiligt: true },
-    { name: 'Beat Beispiel', angaben: 'von Bern, in Bern', anzahl: '20', bereitsBeteiligt: true },
-  ],
-  bankName: 'Zürcher Kantonalbank', bankOrt: 'Zürich',
-  berichtUnterzeichner: 'Anna Muster', vorsitzName: 'Anna Muster',
-  ort: 'Zürich', datum: '2026-06-07',
-};
-const GMBH_BEISPIEL: GmbhDokAntworten = {
-  einlageArt: 'bar', besondereVorteile: false, gfGewaehlt: true,
-  mehrereGeschaeftsfuehrer: false, weitereVertretungsberechtigte: false,
-  optingOut: false, eigeneBueros: true, immobilienHauptzweck: false,
-  auslJurPersonGesellschafter: false, fremdwaehrung: false,
-  bankInUrkundeGenannt: false, chWohnsitzVertretung: true,
-  statutKlauseln: [], leistungenChf: undefined,
-  ...GMBH_DOK_DEFAULTS,
-  firma: 'Muster GmbH', sitz: 'Zürich', kanton: 'ZH', zweck: 'Treuhand',
-  stammkapitalChf: "20'000", anzahlAnteile: '20', nennwertChf: "1'000",
-  gruender: [{ name: 'A', angaben: 'von Basel, in Zürich', anzahl: '20' }],
-  geschaeftsfuehrer: [
-    { name: 'A', herkunft: 'Basel', wohnort: 'Zürich', adresse: 'W 1', vorsitz: true, zeichnungsArt: 'einzelunterschrift' },
-  ],
-  revisionsstelleName: 'R AG', revisionsstelleSitz: 'Zürich',
-  ort: 'Zürich', datum: '2026-06-15',
-};
+// Beispiel-Eingaben der Mappen (Wortlaut aus formGate.test.ts übernommen) —
+// seit V5 (W2·29-WERKBANK-VORLAGEN) EINE Quelle mit dem Musterdaten-Knopf:
+// src/components/vorlagen/musterdaten-mappen.ts (Werte byte-gleich umgezogen).
 const MAPPEN: Record<string, Mappe> = {
   '/vorlagen/gmbh-gruendung': { gmbh: GMBH_BEISPIEL },
   '/vorlagen/kapitalerhoehung': { ke: KE_BEISPIEL },

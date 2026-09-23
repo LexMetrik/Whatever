@@ -8,6 +8,7 @@ import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 
 // ─── Vorlagen-Wizard: Konkubinatsvertrag ────────────────────────────────────
@@ -136,6 +137,7 @@ function fehlerEingabe(a: KkAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<KkAntworten> = {
   cardId: 'konkubinat',
+  musterdaten: MUSTER.konkubinat,
   defaults: KK_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: kkZusammenstellen,

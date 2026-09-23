@@ -584,8 +584,8 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Werkzeuge — Rechner & Vorlagen  *(`feld: werkzeuge`)*
 
-- [~] **Werkbank-Umbau Schritt 4: Vorlagen-Rahmen, dann die 30 Vorlagen** *(`W2·29-WERKBANK-VORLAGEN`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-VORLAGEN · status: wip · blocker: null · dep: [W2·29-WERKBANK-KATALOGE] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau Schritt 4: Vorlagen-Rahmen, dann die 30 Vorlagen** *(`W2·29-WERKBANK-VORLAGEN`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-VORLAGEN · status: done · blocker: null · dep: [W2·29-WERKBANK-KATALOGE] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: **ein** gemeinsamer Assistenten-Rahmen aus den bestehenden Vorlagen-Modulen in `src/lib/vorlagen/`,
   darauf die 30 Vorlagen; die 42 geplanten fallen danach aus demselben Rahmen. Grenzen: kein
   zweites Schema-Modell (§5), PDF und DOCX aus demselben Assemble-Ergebnis, Golden byte-gleich.

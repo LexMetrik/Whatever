@@ -9,6 +9,7 @@ import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Allgemeine Vertragskündigung (Maske 3, Presets) ───────
 // Bauspezifikation: bibliothek/recherche/kuendigungs-masken.md (6.6.2026).
@@ -186,6 +187,7 @@ function fehlerEingabe(a: KvAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<KvAntworten, KvZusammenstellung> = {
   cardId: 'kuendigung-vertrag',
+  musterdaten: MUSTER['kuendigung-vertrag'],
   defaults: KV_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Ist-Zustand vor dem Umzug: kein Profil-Prefill (§6).

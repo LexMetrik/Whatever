@@ -1,6 +1,7 @@
 import { createContext, useContext, useId, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { VorschauPanel, ExportLeiste } from './wizard';
+import { musterdatenAnwenden } from './musterdaten';
 import { ErgebnisPlatzhalter, ErgebnisSprung, GruppenTitel, NormLink } from './ui';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { WerkzeugKopf } from '../layout/WerkzeugKopf';
@@ -40,11 +41,14 @@ const BeruehrtKontext = createContext(true);
  *  (GmbH, die höchste Fläche der Rubrik, als einzige Dokument-Fläche ohne Marke)
  *  und 2'501 / 4'511 px (Kapitalerhöhung, über KEINE Marke erreichbar) —
  *  dieselbe `ErgebnisSprung`-Marke wie auf den Rechnern (§10). */
-export function MappenSeite({ karte: card, titel, badge, intro, children }: {
+export function MappenSeite({ karte: card, titel, badge, intro, musterdaten, children }: {
   karte: ReturnType<typeof karte> | undefined;
   titel: string;
   badge: string;
   intro: ReactNode;
+  /** V5 (W2·29-WERKBANK-VORLAGEN): «Mit Musterdaten füllen» im Kopf, wie im
+   *  Wizard-Rahmen. Nachfrage, wenn schon eingegeben wurde (`beruehrt`). */
+  musterdaten?: () => void;
   children: ReactNode;
 }) {
   const { locale } = useLocale();
@@ -62,7 +66,15 @@ export function MappenSeite({ karte: card, titel, badge, intro, children }: {
             </Link>
           )}
           intro={intro}
-          normen={(card?.norms ?? []).map((n) => ({ artikel: n.label, href: fedlexLokalisiert(n.url, locale) }))} />
+          normen={(card?.norms ?? []).map((n) => ({ artikel: n.label, href: fedlexLokalisiert(n.url, locale) }))}>
+          {musterdaten && (
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
+              <button type="button" onClick={() => musterdatenAnwenden(beruehrt, musterdaten)} className="lc-btn-outline lc-btn-sm">
+                Mit Musterdaten füllen
+              </button>
+            </div>
+          )}
+        </WerkzeugKopf>
         <PflichtDisclaimer />
         {children}
         <ErgebnisSprung zielId="vorlagen-dokumente" label="↓ Dokumente" />

@@ -7,6 +7,7 @@ import type { PdfBanner } from '../lib/vorlagen/banner';
 import { Field, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Rubrum (Art. 238 ZPO / Art. 112 BGG) ──────────────────
 // Gerichts-Baustein-Set (ROADMAP W2·7). Reiner Nutzer-Eingabe-Builder für den
@@ -99,6 +100,7 @@ function fehlerEingabe(a: RubrumAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<RubrumAntworten> = {
   cardId: 'rubrum',
+  musterdaten: MUSTER.rubrum,
   defaults: RUBRUM_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: rubrumZusammenstellen,

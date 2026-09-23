@@ -9,6 +9,7 @@ import { Datum } from '../components/ui/Datum';
 import { Checkbox, Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Kündigung durch Arbeitnehmer:in (Maske 1a, free) ──────
 // Bauspezifikation: bibliothek/recherche/kuendigungs-masken.md (6.6.2026).
@@ -166,6 +167,7 @@ function fehlerEingabe(a: KanAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<KanAntworten, KanZusammenstellung> = {
   cardId: 'kuendigung-arbeitnehmer',
+  musterdaten: MUSTER['kuendigung-arbeitnehmer'],
   defaults: KAN_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: kanZusammenstellen,

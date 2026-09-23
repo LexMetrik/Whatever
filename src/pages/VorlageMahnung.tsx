@@ -11,6 +11,7 @@ import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 
 // ─── Vorlagen-Wizard: Mahnung & Inverzugsetzung (Art. 102/104/107 OR) ───────
@@ -185,6 +186,7 @@ function fehlerEingabe(a: MaAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<MaAntworten> = {
   cardId: 'mahnung',
+  musterdaten: MUSTER.mahnung,
   defaults: MA_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: maZusammenstellen,

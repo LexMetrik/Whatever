@@ -11,6 +11,7 @@ import { Checkbox, Field, GruppenTitel, inputCls, NormLink } from '../components
 import { KANTONE } from '../lib/kantone';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Kündigung des Mietverhältnisses durch Mieter:in (2a) ──
@@ -241,6 +242,7 @@ function fehlerEingabe(a: KmAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<KmAntworten, KmZusammenstellung> = {
   cardId: 'kuendigung-mieter',
+  musterdaten: MUSTER['kuendigung-mieter'],
   defaults: KM_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Array-Hydration absichern (Wizard-Konvention; vgl. Bug-Check A zu 1b).

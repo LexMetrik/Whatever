@@ -10,6 +10,7 @@ import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Handelsreisendenvertrag (Art. 347–350a OR) ────────────
@@ -168,6 +169,7 @@ function fehlerEingabe(a: HrAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<HrAntworten, HrZ> = {
   cardId: 'arbeitsvertrag',
+  musterdaten: MUSTER.handelsreisendenvertrag,
   defaults: HR_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Ist-Zustand vor dem Umzug (§6): kein Profil-Prefill, Detailgrad-Default

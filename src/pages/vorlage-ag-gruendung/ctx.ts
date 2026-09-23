@@ -111,7 +111,6 @@ export interface AgSchrittCtx {
   mappe: ReturnType<typeof agDokumentmappe>;
   card: ReturnType<typeof karte>;
   neuerKey: () => number;
-  musterdatenFuellen: () => void;
   blockerKlickbar: (titel: string) => ReactNode;
   alleHerunterladen: () => Promise<void>;
   batchLaeuft: boolean;

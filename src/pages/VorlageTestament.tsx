@@ -9,6 +9,7 @@ import { berechneErbteilung } from '../lib/erbteilung';
 import { fmtB, zahl, istNull } from '../lib/bruch';
 import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { DatumsFeld } from '../components/DatumsFeld';
 
 // ─── Vorlagen-Wizard: Eigenhändiges Testament (Pilot) ───────────────────────
@@ -277,6 +278,7 @@ function PflichtteilePanel({ a, pflichtteile }: { a: TestamentAntworten; pflicht
 
 const CONFIG: VorlagenSeitenConfig<TestamentAntworten, TestamentZ> = {
   cardId: 'eigenhaendiges-testament',
+  musterdaten: MUSTER['eigenhaendiges-testament'],
   defaults: TESTAMENT_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Hydration absichern: Array-Felder aus älteren Speicherständen normalisieren

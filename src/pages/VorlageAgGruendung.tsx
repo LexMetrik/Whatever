@@ -3,6 +3,7 @@ import { agGruendungsunterlagen, finmaBegriffsTreffer } from '../lib/gruendungsu
 import { Field, inputCls } from '../components/vorlagen/ui';
 import { NormText } from '../components/NormText';
 import { VorlagenWizardRahmen, VorschauPanel } from '../components/vorlagen/wizard';
+import { agMusterdaten, musterdatenAnwenden } from '../components/vorlagen/musterdaten';
 import { useWizardState } from '../components/vorlagen/useWizardState';
 import { karte } from '../lib/startseiteConfig';
 import { BANNER_MAPPE_FERTIG } from '../lib/vorlagen/banner';
@@ -215,53 +216,16 @@ export function VorlageAgGruendung() {
     window.location.reload();
   };
 
-  // P9 (Perfektion): «Mit Musterdaten füllen» — kompletter Demo-Datensatz,
-  // Werte aus dem Golden-Fall ag:gemischt-qualifiziert (scripts/golden-
-  // outputs.ts): gemischte qualifizierte Gründung mit Sacheinlage
-  // (Geschäft, Grundstück), Verrechnung, besonderen Vorteilen, c/o-Domizil,
-  // Revisionsstelle und Lex Koller. Teil-Update wie zuvor: nicht genannte
-  // Felder (z. B. kb*/bk*/nt*, Währungsangaben) behalten ihren Wert.
-  const musterdatenFuellen = () => {
-    // Zeilen-Keys VOR dem Updater vergeben (Updater bleiben pur).
-    const muster: Partial<AgStand> = {
-      einlageArt: 'gemischt', besondereVorteile: true, optingOut: false,
-    eigeneBueros: false, immobilienHauptzweck: true, inhaberaktien: false,
-    fremdwaehrung: false, bankInUrkunde: true, chVertretung: true, leistungen: '',
-    firma: 'Golden Muster AG', sitz: 'Zürich', kanton: 'ZH', zweck: 'Beteiligungen',
-    zweckErweiterung: true, statutenUmfang: 'kurz', vinkulierung: false, virtuelleGv: false,
-    inhaberKotiert: false, verwahrungsstelle: '',
-    schiedsklausel: false, schiedsOrt: '', kapitalband: false, bedingtesKapital: false,
-    gjBeginn: AG_DOK_DEFAULTS.gjBeginn, gjEnde: AG_DOK_DEFAULTS.gjEnde, gjErstesEnde: '',
-    ak: "400'000", anzahl: '400', nennwert: "1'000", liberierung: '100', ausgabebetrag: '',
-    bankName: 'Zürcher Kantonalbank', bankOrt: 'Zürich',
-    gruender: [
-      { key: neuerKey(), name: 'Anna Muster', angaben: 'von Basel, in Zürich', anzahl: '300', liberierung: '' },
-      { key: neuerKey(), name: 'Beat Beispiel', angaben: 'von Bern, in Bern', anzahl: '100', liberierung: '' },
-    ],
-    vr: [
-      { key: neuerKey(), name: 'Anna Muster', herkunft: 'Basel', wohnort: 'Zürich', adresse: 'W 1', praesident: true, zeichnungsArt: 'einzelunterschrift' },
-      { key: neuerKey(), name: 'Beat Beispiel', herkunft: 'Bern', wohnort: 'Bern', adresse: 'W 2', praesident: false, zeichnungsArt: 'kollektivzuzweien' },
-    ],
-    vertretungen: [],
-    sacheinlagen: [{
-      key: neuerKey(), typ: 'geschaeft', bezeichnung: 'Werkbau Muster', belegDatum: '2025-12-31',
-      wertChf: "110'000", grundstueck: true, einlegerName: 'Anna Muster', aktienAnzahl: '100',
-      gutschriftChf: "10'000", zustand: 'Liegenschaft zum Fortführungswert; Maschinenpark gemäss Anlagespiegel.',
-      imHrEingetragen: true, cheNr: 'CHE-111.222.333', aktivenChf: "260'000", passivenChf: "150'000",
-      rueckwirkungDatum: '2026-01-01',
-    }],
-    verrechnungen: [{ key: neuerKey(), glaeubigerName: 'Beat Beispiel', forderungChf: "50'000", aktienAnzahl: '50', begruendungTxt: 'Darlehen vom 01.02.2025, valutiert und fällig.' }],
-    vorteile: [{ key: neuerKey(), beguenstigter: 'Anna Muster', inhalt: 'Vorkaufsrecht an der Werkhalle zum Verkehrswert', wertChf: "5'000", begruendungTxt: 'Abgeltung der Aufbauarbeit.' }],
-    revisorName: 'Revisia AG', rsName: 'Revisia AG', rsSitz: 'Zürich',
-    protokollfuehrer: '', sitzungBeginn: '11.00', sitzungEnde: '11.30',
-    rechtsdomizil: '', domizilhalterName: 'Treuhand Muster AG', domizilhalterAdresse: 'Bahnhofstrasse 10, 8001 Zürich',
-    konstituierungInUrkunde: false, domizilNurAnmeldung: false, nachtragsbevollmaechtigter: '',
-    lkAusland: false, lkNeuerwerb: false, lkGrundstueck: true,
-    nachtragAktiv: false,
-    ort: 'Zürich', datum: '2026-06-15',
-    };
-    setA((alt) => ({ ...alt, ...muster }));
-  };
+  // P9 (Perfektion) → V5 (W2·29-WERKBANK-VORLAGEN): «Mit Musterdaten füllen»
+  // sitzt jetzt im Rahmen-Kopf wie bei allen Vorlagen; der Datensatz (Golden-
+  // Fall ag:gemischt-qualifiziert) liegt in components/vorlagen/musterdaten.ts
+  // (eine Quelle, §5). Vollständiger Ersatz des Stands (Defaults + Muster),
+  // Nachfrage, wenn schon etwas eingegeben ist. Zeilen-Keys aus dem Zähler
+  // der Seite (Updater bleiben pur).
+  const musterdatenFuellen = () => musterdatenAnwenden(
+    JSON.stringify(a) !== JSON.stringify(agStandDefaults()),
+    () => { const muster = agMusterdaten(neuerKey); setA({ ...agStandDefaults(), ...muster }); },
+  );
 
   // ── Schritt-Inhalte ──
   // §6-Datei-Split (Ziff. 6): die Schritt-Renderer liegen in Geschwister-
@@ -345,7 +309,7 @@ export function VorlageAgGruendung() {
     ort: a.ort, setOrt: setzer('ort'),
     datum: a.datum, setDatum: setzer('datum'),
     wc, finmaTreffer, checkliste, mappe, card, neuerKey,
-    musterdatenFuellen, blockerKlickbar, alleHerunterladen, batchLaeuft, batchMeldung,
+    blockerKlickbar, alleHerunterladen, batchLaeuft, batchMeldung,
   };
   const inhalteRoh = [
     <SchrittKonstellation ctx={ctx} />,
@@ -443,6 +407,7 @@ export function VorlageAgGruendung() {
       badge="Dokumentmappe (Urkunde als Entwurf)"
       fussnote="Eingaben verlassen den Browser nicht; lokale Zwischenspeicherung auf diesem Gerät — «Zurücksetzen» löscht sie."
       zuruecksetzen={zuruecksetzen}
+      musterdaten={musterdatenFuellen}
       schritte={SCHRITTE}
       schritt={schritt}
       setSchritt={setSchritt}

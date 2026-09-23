@@ -11,6 +11,7 @@ import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Vollmacht (Art. 32 ff. OR) ────────────────────────────
 // EINE Maske mit Typ-Schalter (Anwalts-/General-/Spezialvollmacht). Einfache
@@ -305,6 +306,7 @@ function fehlerEingabe(a: VollmachtAntworten, i: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<VollmachtAntworten, VmZ> = {
   cardId: 'vollmacht',
+  musterdaten: MUSTER.vollmacht,
   defaults: VOLLMACHT_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Hydration-Härtung (Review 5.6.2026): alte/korrupte Speicherstände

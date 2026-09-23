@@ -16,6 +16,7 @@ import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Vorsorgeauftrag (Art. 360–369 ZGB) ────────────────────
 // Zentrale Weiche: formMode – eigenhändig (Abschreib-Mustertext) oder
@@ -432,6 +433,7 @@ const istEigenhaendig = (a: VaAntworten) => a.formMode === 'eigenhaendig';
 
 const CONFIG: VorlagenSeitenConfig<VaAntworten, VaZ> = {
   cardId: 'vorsorgeauftrag',
+  musterdaten: MUSTER.vorsorgeauftrag,
   defaults: VA_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   normalisieren: (g) => ({

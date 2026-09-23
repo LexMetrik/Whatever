@@ -11,6 +11,7 @@ import { BetragsFeld } from '../components/BetragsFeld';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Eheschutzgesuch (Art. 175 ff. ZGB, summarisch) ────────
@@ -230,6 +231,7 @@ const fehlerEingabe = (a: EgAntworten, schritt: number): string[] =>
 // Schalter (pruefenZusatz), Ort/Datum ohne Feld-Fehler, kompakte Vorschau.
 const CONFIG: VorlagenSeitenConfig<EgAntworten> = {
   cardId: 'eheschutzgesuch',
+  musterdaten: MUSTER.eheschutzgesuch,
   defaults: EG_DEFAULTS,
   zusammenstellen: (a) => ({ ergebnis: egZusammenstellen(a) }),
   pruefeGates: (a) => ({ blocker: egMaengel(a).map((m) => m.text), warnungen: [], hinweise: [] }),

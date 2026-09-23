@@ -13,6 +13,7 @@ import { Checkbox, Field, GruppenTitel, ListenEditor, NICHT_GESPEICHERT_HINWEIS,
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { SgAdressatKachel, SgBehoerdenWahl } from '../components/vorlagen/SgBehoerdenWahl';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { ZefixSuche } from '../components/vorlagen/ZefixSuche';
 import { uidGueltig, uidNormalisieren } from '../lib/uid';
 import { GerichtsGrundlageZeile } from '../components/vorlagen/GerichtsWahlBlock';
@@ -512,6 +513,7 @@ function EingabeSchritt({ ctx, schritt }: { ctx: Ctx; schritt: number }) {
 
 const CONFIG: VorlagenSeitenConfig<SgAnswers, SgZ> = {
   cardId: 'schlichtungsgesuch',
+  musterdaten: MUSTER.schlichtungsgesuch,
   defaults: SG_DEFAULTS,
   // KEIN speicherKey: Anweisung «keine Browser-Storage-APIs» – Zustand nur im
   // Speicher; zuruecksetzen leert entsprechend nur den Speicher-Zustand.

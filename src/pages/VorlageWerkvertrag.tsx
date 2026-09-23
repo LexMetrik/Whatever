@@ -11,6 +11,7 @@ import { ThemenEinstieg } from '../components/ThemenEinstieg';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 
 // ─── Vorlagen-Wizard: Werkvertrag (Art. 363 ff. OR) ─────────────────────────
@@ -143,6 +144,7 @@ function fehlerEingabe(a: WvAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<WvAntworten> = {
   cardId: 'werkvertrag',
+  musterdaten: MUSTER.werkvertrag,
   defaults: WV_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: wvZusammenstellen,

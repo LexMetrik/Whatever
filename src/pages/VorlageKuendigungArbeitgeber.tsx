@@ -10,6 +10,7 @@ import { SperrereignisseEditor } from '../components/forms/SperrereignisseEditor
 import { SperrtageZaehler } from '../components/SperrtageZaehler';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { Link } from 'react-router-dom';
 import { sperrfristenLink } from '../lib/rechnerPermalinks';
 
@@ -237,6 +238,7 @@ function fehlerEingabe(a: KagAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<KagAntworten, KagZusammenstellung> = {
   cardId: 'kuendigung-arbeitgeber',
+  musterdaten: MUSTER['kuendigung-arbeitgeber'],
   defaults: KAG_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Array-Hydration absichern (Konvention der übrigen Wizards; Bug-Check
