@@ -28,6 +28,9 @@ describe('Oberkategorien (Register-Primärachse)', () => {
     expect(kat('mietvertrag-wohnen')).toBe('vorlagen');
     expect(kat('ag-gruendung')).toBe('vorlagen');
     expect(kat('mandatsaufnahme')).toBe('vorlagen');
+    // K8 (W2·29-WERKBANK-KATALOGE, deklariert §6.3): Entscheid David 23.9.2026
+    // «zitierer auf /rechner zeigen» — vorher 'vorlagen' (auf keiner Seite sichtbar).
+    expect(kat('gerichtszitat')).toBe('zustaendigkeiten');
   });
 
   it('jede Kategorie ist nicht leer und enthält mindestens ein verfügbares Werkzeug — ausser sie ist ehrlich leer', () => {
