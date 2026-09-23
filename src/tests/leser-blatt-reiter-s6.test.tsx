@@ -19,7 +19,7 @@ import { PanelWerkzeuge } from '../pages/gesetz-leser/v3/PanelWerkzeuge';
 import { PanelAenderungen } from '../pages/gesetz-leser/v3/PanelAenderungen';
 import { ordneErlaeuterungen, natuerlich } from '../pages/gesetz-leser/v3/erlaeuterungModell';
 import { werkzeugAnsicht } from '../pages/gesetz-leser/v3/werkzeugModell';
-import { aufhebungsBezug, trifftArtikel } from '../pages/gesetz-leser/v3/aenderungModell';
+import { aufhebungsBezug, trifftArtikel, type RevisionZeile } from '../pages/gesetz-leser/v3/aenderungModell';
 import { ARTIKEL_WERKZEUGE, ERLASS_WERKZEUGE, type MaterialBezug } from '../lib/normtext/werkzeuge';
 import type { BotschaftBezug } from '../lib/materialien/botschaften';
 import type { RevisionBezug } from '../lib/normtext/revisionen';
@@ -188,7 +188,7 @@ describe('Reiter «Werkzeuge» — je Werkzeug EINE Zeile', () => {
 function rev(p: Partial<RevisionBezug>): RevisionBezug {
   return { art: 'aenderung', dateEntryInForce: '2020-01-01', titelDe: 'Änderung', quelleUrl: 'https://www.fedlex.admin.ch/eli/oc/2020/1/de', ...p };
 }
-function aenderungen(revisionen: RevisionBezug[], extra: Partial<Parameters<typeof PanelAenderungen>[0]> = {}) {
+function aenderungen(revisionen: RevisionZeile[], extra: Partial<Parameters<typeof PanelAenderungen>[0]> = {}) {
   return renderToString(<PanelAenderungen stand={{ fertig: true, wert: { revisionen, reichweite: null } }}
     quelleUrl="https://www.fedlex.admin.ch/eli/cc/x/de" stichtag="2026-09-21" {...extra} />);
 }

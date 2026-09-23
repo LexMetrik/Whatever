@@ -24,7 +24,7 @@ export function zeilenSchluessel(r: Pick<RevisionBezug, 'art' | 'ocUri' | 'dateE
  *  `skos:prefLabel`@de — Zuordnung wie `WIRKUNG_NACH_TYP` in
  *  `scripts/normtext/revisionen-auswirkungen.ts` auf dem #1001-Stand). Ein
  *  unbekannter Schlüssel wird NICHT angezeigt (keine erfundene Bezeichnung). */
-export const WIRKUNG_LABEL: Readonly<Record<string, string>> = {
+const WIRKUNG_LABEL: Readonly<Record<string, string>> = {
   aenderung: 'Änderung',
   aufhebung: 'Aufhebung',
   'vollstaendige-aufhebung': 'Vollständige Aufhebung',
