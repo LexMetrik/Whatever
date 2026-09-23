@@ -3,22 +3,22 @@
 "erlass":"KKG",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_150_IV_188":{"zitierung":"BGE 150 IV 188","regesteKurz":"Art. 1 ff. und 184 Abs. 1 OR; Art. 146 Abs. 1 und Art. 147 Abs. 1 StGB; Online-Bestellung von Waren auf Rechnung; Täuschung über den Zahlungswillen; Abgrenzung des Betrugs zum betrügerischen Missbrauch einer Datenverarbeitungsanlage.…","datum":"2024-04-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_IV_188__voll":{"zitierung":"Urteil 6B_831/2023 (nicht publ. in BGE 150 IV 188)","regesteKurz":null,"datum":"2024-04-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"150 IV 188","urteil":"6B_831/2023"}},
 "bs_appellationsgericht_SB.2022.131":{"zitierung":"Appellationsgericht BS SB.2022.131 vom 18.01.2024","regesteKurz":"Strafzumessung (BGer 6B_239/2024)","datum":"2024-01-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2022.24":{"zitierung":"Appellationsgericht BS SB.2022.24 vom 17.05.2024","regesteKurz":"mehrfacher Betrug und Strafzumessung (noch nicht rechtskräftig)","datum":"2024-05-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"2":[{"key":"bge_150_IV_188","gewicht":0}],
+"2":[{"key":"bge_150_IV_188__voll","gewicht":0,"erwaegungen":["E. 2.7.2"]}],
 "22":[{"key":"bs_appellationsgericht_SB.2022.131","gewicht":null}],
-"28":[{"key":"bge_150_IV_188","gewicht":0},{"key":"bs_appellationsgericht_SB.2022.24","gewicht":null}],
-"30":[{"key":"bge_150_IV_188","gewicht":0}],
-"31":[{"key":"bge_150_IV_188","gewicht":0},{"key":"bs_appellationsgericht_SB.2022.24","gewicht":null}]
+"28":[{"key":"bge_150_IV_188__voll","gewicht":0,"erwaegungen":["E. 2.7.2"]},{"key":"bs_appellationsgericht_SB.2022.24","gewicht":null}],
+"30":[{"key":"bge_150_IV_188__voll","gewicht":0,"erwaegungen":["E. 2.7.2","E. 2.7.3"]}],
+"31":[{"key":"bge_150_IV_188__voll","gewicht":0,"erwaegungen":["E. 2.7.2"]},{"key":"bs_appellationsgericht_SB.2022.24","gewicht":null}]
 },
 "gesamtProArtikel":{
-"2":{"bge":1},
+"2":{"bger":1},
 "22":{"kantonal":1},
-"28":{"bge":1,"kantonal":1},
-"30":{"bge":1},
-"31":{"bge":1,"kantonal":1}
+"28":{"bger":1,"kantonal":1},
+"30":{"bger":1},
+"31":{"bger":1,"kantonal":1}
 }
 }

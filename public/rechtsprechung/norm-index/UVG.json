@@ -195,16 +195,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_152_V_52",
-        "zitierung": "BGE 152 V 52",
-        "regesteKurz": "Art. 28 Abs. 2 UVV; Invalidenrente; Valideneinkommen; Invalideneinkommen. Wirkt sich die Behinderung sowohl auf die unselbstständige unfallversicherte wie auch auf die selbstständige nicht unfallversicherte Tätigkeit aus, bleibt der aus…",
-        "datum": "2026-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_151_V_244",
         "zitierung": "BGE 151 V 244",
         "regesteKurz": "Art. 6 Abs. 2 UVG; unfallähnliche Körperschädigung. Risse im Muskelgewebe von Hohlorganen (glatte Muskulatur) sind nicht von Art. 6 Abs. 2 lit. d UVG erfasst. Der im Rahmen einer Geburt per Kaiserschnitt aufgetretene Riss in der Hinterwand…",
@@ -225,16 +215,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_V_354",
-        "zitierung": "BGE 150 V 354",
-        "regesteKurz": "Art. 16 ATSG; Invaliditätsgrad; Berücksichtigung einer lohnmässigen Weiterentwicklung bei der Bestimmung des Valideneinkommens; Abgrenzung zwischen Kompetenzniveau 2 und 3 bei der Bemessung des Invalideneinkommens gestützt auf die…",
-        "datum": "2024-06-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_V_229",
         "zitierung": "BGE 150 V 229",
         "regesteKurz": "Art. 4 ATSG; Art. 6 Abs. 1 UVG; Begriff der \"unfallbedingten\" Infektion. Erfolgt die Ansteckung mit dem HI-Virus durch ungeschützten Geschlechtsverkehr und damit in typischer Weise, liegt mangels Ungewöhnlichkeit des äusseren Faktors kein…",
@@ -249,6 +229,26 @@
         "zitierung": "BGE 149 V 203",
         "regesteKurz": "Art. 4, 5 und 18 Abs. 1 UVG; Art. 134-140 UVV; Art. 27 ATSG; Art. 9 BV; freiwillige Unfallversicherung; Anspruch auf eine Invalidenrente bei einem Unfall nach Eintritt des ordentlichen Rentenalters; Auslegung eines verwaltungsrechtlichen…",
         "datum": "2023-08-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_218",
+        "zitierung": "BGE 149 V 218",
+        "regesteKurz": "Art. 4 ATSG; Art. 6 Abs. 1 UVG; Zahnschaden beim Beissen auf einen Stein, der sich in einem abgepackten verzehrfertigen Salat befand; Kausalzusammenhang; krankhafter Vorzustand; Gelegenheits- und Zufallsursache. Hält ein bereits…",
+        "datum": "2023-08-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_419",
+        "zitierung": "BGE 148 V 419",
+        "regesteKurz": "Art. 16 ATSG; Art. 18 Abs. 2 UVG; Art. 28 Abs. 4 UVV; Anwendungsfall von Art. 28 Abs. 4 UVV; Verhältnis zum Abzug vom Tabellenlohn wegen des Alters. Bei Anwendungsfällen von Art. 28 Abs. 4 UVV fällt ein Abzug zufolge fortgeschrittenen…",
+        "datum": "2022-10-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -289,12 +289,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_V_268",
-        "zitierung": "BGE 147 V 268",
-        "regesteKurz": "Art. 1a Abs. 1, Art. 7, Art. 59 Abs. 2 und Art. 73 Abs. 2 UVG; Art. 1 und Art. 99 Abs. 1 UVV; Arbeitnehmereigenschaft eines (Amateur-)Eishockeyspielers und -trainers; Arbeitgebereigenschaft; Zuständigkeit des Unfallversicherers. Ist…",
+        "key": "bge_147_V_268__voll",
+        "zitierung": "Urteil 8C_538/2020 (nicht publ. in BGE 147 V 268)",
+        "regesteKurz": null,
         "datum": "2021-04-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -467,12 +467,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_V_138",
-        "zitierung": "BGE 148 V 138",
-        "regesteKurz": "Art. 6 UVG; Art. 4 ATSG; Beurteilung des adäquaten Kausalzusammenhangs zwischen einem Unfall und psychischen Beschwerden, wenn die Frage des natürlichen Kausalzusammenhangs offengelassen wurde. Erweist sich die vorinstanzliche Beurteilung…",
+        "key": "bge_148_V_138__voll",
+        "zitierung": "Urteil 8C_421/2021 (nicht publ. in BGE 148 V 138)",
+        "regesteKurz": null,
         "datum": "2022-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -563,16 +563,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_V_354",
-        "zitierung": "BGE 150 V 354",
-        "regesteKurz": "Art. 16 ATSG; Invaliditätsgrad; Berücksichtigung einer lohnmässigen Weiterentwicklung bei der Bestimmung des Valideneinkommens; Abgrenzung zwischen Kompetenzniveau 2 und 3 bei der Bemessung des Invalideneinkommens gestützt auf die…",
-        "datum": "2024-06-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_V_224",
         "zitierung": "BGE 149 V 224",
         "regesteKurz": "Art. 21 Abs. 1 lit. c UVG; Art. 17 Abs. 2 ATSG; Anspruch auf Heilbehandlung bei Teilrentenbeziehenden nach Eintritt ins AHV-Rentenalter. Aus Art. 21 Abs. 1 lit. c UVG ergibt sich keine Leistungsbefristung auf den Eintritt ins…",
@@ -593,20 +583,30 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_V_129",
-        "zitierung": "BGE 149 V 129",
-        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
-        "datum": "2023-03-27",
+        "key": "bge_148_V_397",
+        "zitierung": "BGE 148 V 397",
+        "regesteKurz": "Art. 6, Art. 7, Art. 8 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 8 Abs. 1 und Abs. 3, Art. 12 Abs. 1, Art. 22 Abs. 1, Art. 28 Abs. 1 lit. b und lit. c, Art. 28 Abs. 2 IVG; medizinische Massnahmen, Arbeitsunfähigkeit, Erwerbsunfähigkeit,…",
+        "datum": "2022-10-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_148_V_397",
-        "zitierung": "BGE 148 V 397",
-        "regesteKurz": "Art. 6, Art. 7, Art. 8 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 8 Abs. 1 und Abs. 3, Art. 12 Abs. 1, Art. 22 Abs. 1, Art. 28 Abs. 1 lit. b und lit. c, Art. 28 Abs. 2 IVG; medizinische Massnahmen, Arbeitsunfähigkeit, Erwerbsunfähigkeit,…",
-        "datum": "2022-10-13",
+        "key": "bge_148_V_419",
+        "zitierung": "BGE 148 V 419",
+        "regesteKurz": "Art. 16 ATSG; Art. 18 Abs. 2 UVG; Art. 28 Abs. 4 UVV; Anwendungsfall von Art. 28 Abs. 4 UVV; Verhältnis zum Abzug vom Tabellenlohn wegen des Alters. Bei Anwendungsfällen von Art. 28 Abs. 4 UVV fällt ein Abzug zufolge fortgeschrittenen…",
+        "datum": "2022-10-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_195",
+        "zitierung": "BGE 148 V 195",
+        "regesteKurz": "Art. 17 Abs. 1, Art. 21 Abs. 1 und Art. 53 Abs. 2 ATSG; Art. 37 Abs. 3 UVG; Art. 54 StGB; Art. 90 Abs. 2 SVG; Leistungskürzung bei einem Unfall, der bei Ausübung eines Verbrechens oder Vergehens herbeigeführt wurde; Wiedererwägung;…",
+        "datum": "2022-03-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -619,16 +619,6 @@
         "zitierung": "BGE 149 V 224",
         "regesteKurz": "Art. 21 Abs. 1 lit. c UVG; Art. 17 Abs. 2 ATSG; Anspruch auf Heilbehandlung bei Teilrentenbeziehenden nach Eintritt ins AHV-Rentenalter. Aus Art. 21 Abs. 1 lit. c UVG ergibt sich keine Leistungsbefristung auf den Eintritt ins…",
         "datum": "2023-09-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_V_91",
-        "zitierung": "BGE 149 V 91",
-        "regesteKurz": "Art. 22 UVG; Art. 17 Abs. 1 und Art. 53 Abs. 2 ATSG; Rentenaufhebung nach Erreichen des AHV-Rentenalters. Art. 22 UVG, der die revisionsweise Aufhebung einer Invalidenrente der Unfallversicherung nach Bezug einer Altersrente der AHV resp.…",
-        "datum": "2023-03-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -663,6 +653,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_91__voll",
+        "zitierung": "Urteil 8C_616/2022 (nicht publ. in BGE 149 V 91)",
+        "regesteKurz": null,
+        "datum": "2023-03-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "20": [
@@ -675,16 +675,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_152_V_52",
-        "zitierung": "BGE 152 V 52",
-        "regesteKurz": "Art. 28 Abs. 2 UVV; Invalidenrente; Valideneinkommen; Invalideneinkommen. Wirkt sich die Behinderung sowohl auf die unselbstständige unfallversicherte wie auch auf die selbstständige nicht unfallversicherte Tätigkeit aus, bleibt der aus…",
-        "datum": "2026-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_149_V_129",
@@ -743,6 +733,16 @@
         "datum": "2020-08-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_52__voll",
+        "zitierung": "Urteil 8C_162/2025 (nicht publ. in BGE 152 V 52)",
+        "regesteKurz": null,
+        "datum": "2026-01-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -917,16 +917,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_V_1",
-        "zitierung": "BGE 151 V 1",
-        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der…",
-        "datum": "2024-08-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_V_334",
         "zitierung": "BGE 150 V 334",
         "regesteKurz": "Art. 26 f. UVG i.V.m. Art. 38 Abs. 2 UVV; Art. 42 Abs. 3 IVG (in der seit Januar 2022 geltenden Fassung) i.V.m. Art. 38 Abs. 1 IVV; Art. 66 Abs. 3 ATSG; Leistungskoordination zwischen der Invalidenversicherung und der Unfallversicherung;…",
@@ -953,6 +943,16 @@
         "datum": "2022-03-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1__voll",
+        "zitierung": "Urteil 9C_480/2022 (nicht publ. in BGE 151 V 1)",
+        "regesteKurz": null,
+        "datum": "2024-08-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1093,12 +1093,12 @@
     ],
     "39": [
       {
-        "key": "bge_147_V_268",
-        "zitierung": "BGE 147 V 268",
-        "regesteKurz": "Art. 1a Abs. 1, Art. 7, Art. 59 Abs. 2 und Art. 73 Abs. 2 UVG; Art. 1 und Art. 99 Abs. 1 UVV; Arbeitnehmereigenschaft eines (Amateur-)Eishockeyspielers und -trainers; Arbeitgebereigenschaft; Zuständigkeit des Unfallversicherers. Ist…",
+        "key": "bge_147_V_268__voll",
+        "zitierung": "Urteil 8C_538/2020 (nicht publ. in BGE 147 V 268)",
+        "regesteKurz": null,
         "datum": "2021-04-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1495,22 +1495,22 @@
     ],
     "118": [
       {
-        "key": "bge_150_V_33",
-        "zitierung": "BGE 150 V 33",
-        "regesteKurz": "Art. 15 UVG; Art. 13 Abs. 1, aArt. 22 Abs. 4, aArt. 23 Abs. 5, Art. 24 und aArt. 99 UVV; Berechnung des für die Invalidenrente massgeblichen versicherten Verdienstes bei Mehrfachbeschäftigung. In der UVV wird der versicherte Verdienst bei…",
-        "datum": "2023-11-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_V_224",
         "zitierung": "BGE 149 V 224",
         "regesteKurz": "Art. 21 Abs. 1 lit. c UVG; Art. 17 Abs. 2 ATSG; Anspruch auf Heilbehandlung bei Teilrentenbeziehenden nach Eintritt ins AHV-Rentenalter. Aus Art. 21 Abs. 1 lit. c UVG ergibt sich keine Leistungsbefristung auf den Eintritt ins…",
         "datum": "2023-09-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_33__voll",
+        "zitierung": "Urteil 8C_196/2023 (nicht publ. in BGE 150 V 33)",
+        "regesteKurz": null,
+        "datum": "2023-11-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1615,12 +1615,12 @@
     ],
     "78a": [
       {
-        "key": "bge_150_V_188",
-        "zitierung": "BGE 150 V 188",
-        "regesteKurz": "Art. 3 Abs. 2, 3 und 5, Art. 77 UVG; Art. 7 Abs. 1 lit. b, Art. 100 Abs. 1 UVV; mehrere Unfallereignisse; Ende der Versicherungsdeckung bei rückwirkender Leistungseinstellung. Durch die rückwirkende Einstellung der vorübergehenden…",
+        "key": "bge_150_V_188__voll",
+        "zitierung": "Urteil 8C_434/2023 (nicht publ. in BGE 150 V 188)",
+        "regesteKurz": null,
         "datum": "2024-04-10",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

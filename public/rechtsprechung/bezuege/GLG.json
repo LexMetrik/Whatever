@@ -4,21 +4,21 @@
 "erlassEbene":"bund",
 "dokumente":{
 "bge_146_V_210":{"zitierung":"BGE 146 V 210","regesteKurz":"Art. 8 Abs. 2 und 3 BV; Art. 8 Abs. 1 lit. f und Art. 15 AVIG; Art. 3 Abs. 1 und 2 GlG. Bei einer schwangeren Frau, die sich auf unbefristete Stellen bewirbt, kann für die Frage der Vermittlungsfähigkeit grundsätzlich nicht nur der…","datum":"2020-02-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_149_V_106":{"zitierung":"BGE 149 V 106","regesteKurz":"Art. 26 Abs. 1 BVG, Art. 15 Abs. 2 BVG i.V.m. Art. 12 lit. j BVV 2; Art. 104 OR; reglementarische Regelung des Verzugszinssatzes. Eine reglementarische Regelung des Verzugszinssatzes darf den BVG-Mindestzinssatz nicht unterschreiten (E.…","datum":"2023-03-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_150_I_195":{"zitierung":"BGE 150 I 195","regesteKurz":"Art. 10 Abs. 2 BehiG; Art. 30 und 29a BV; Art. 37a Abs. 1 ETH-Gesetz; Kostenpflicht bei mutwilligem oder leichtsinnigem Verhalten im Verfahren nach BehiG; materielle Rechtskraft im öffentlichen Recht; Anforderungen an ein Gericht nach Art.…","datum":"2024-04-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_V_106__voll":{"zitierung":"Urteil 9C_165/2022 (nicht publ. in BGE 149 V 106)","regesteKurz":null,"datum":"2023-03-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"149 V 106","urteil":"9C_165/2022"}},
+"bge_150_I_195__voll":{"zitierung":"Urteil 2C_313/2023 (nicht publ. in BGE 150 I 195)","regesteKurz":null,"datum":"2024-04-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"150 I 195","urteil":"2C_313/2023"}},
 "bs_appellationsgericht_VD.2020.24":{"zitierung":"Appellationsgericht BS VD.2020.24 vom 04.03.2022","regesteKurz":"Überführung der Stelle \"Lehrperson Primarstufe 1.-2. KL VS (Kindergarten) alle Themenbereiche\" im Rahmen der…","datum":"2022-03-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.134":{"zitierung":"Appellationsgericht BS VD.2023.134 vom 27.09.2024","regesteKurz":"Änderung des Aufgabengebietes","datum":"2024-09-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"2":[{"key":"bge_149_V_106","gewicht":0}],
+"2":[{"key":"bge_149_V_106__voll","gewicht":0,"erwaegungen":["E. 5.3"]}],
 "3":[{"key":"bge_146_V_210","gewicht":0}],
 "4":[{"key":"bs_appellationsgericht_VD.2023.134","gewicht":null}],
-"13":[{"key":"bge_150_I_195","gewicht":0},{"key":"bs_appellationsgericht_VD.2020.24","gewicht":null}]
+"13":[{"key":"bge_150_I_195__voll","gewicht":0,"erwaegungen":["E. 5.4"]},{"key":"bs_appellationsgericht_VD.2020.24","gewicht":null}]
 },
 "gesamtProArtikel":{
-"2":{"bge":1},
+"2":{"bger":1},
 "3":{"bge":1},
 "4":{"kantonal":1},
-"13":{"bge":1,"kantonal":1}
+"13":{"bger":1,"kantonal":1}
 }
 }

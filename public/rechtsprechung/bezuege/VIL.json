@@ -4,16 +4,17 @@
 "erlassEbene":"bund",
 "dokumente":{
 "bge_146_II_36":{"zitierung":"BGE 146 II 36","regesteKurz":"Umfang der Umweltverträglichkeitsprüfung (UVP; Art. 8 und 10a USG, Art. 37 und 37m LFG). Pflicht, bei einer UVP alle Einzelanlagen zu beurteilen, die aufgrund ihres räumlichen, funktionalen und zeitlichen Zusammenhangs als Gesamtanlage im…","datum":"2019-10-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_II_36__voll":{"zitierung":"Urteil 1C_308/2018 (nicht publ. in BGE 146 II 36)","regesteKurz":null,"datum":"2019-10-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 II 36","urteil":"1C_308/2018"}},
 "bge_148_II_139":{"zitierung":"BGE 148 II 139","regesteKurz":"Art. 9 BV, Art. 13, 14, 16 und 22 RPG, Art. 32 Abs. 1 lit. a FIFG, Art. 126 Abs. 3 MG, Art. 37 Abs. 4 und Art. 37m Abs. 1 LFG, Art. 30a VIL; Zulässigkeit eines kantonalen Gestaltungsplans für den Innovationspark Zürich (IPZ) auf dem…","datum":"2021-11-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
 "2":[{"key":"bge_146_II_36","gewicht":0}],
-"27d":[{"key":"bge_146_II_36","gewicht":0}],
+"27d":[{"key":"bge_146_II_36__voll","gewicht":0,"erwaegungen":["E. 6","E. 7"]}],
 "30a":[{"key":"bge_148_II_139","gewicht":0}]
 },
 "gesamtProArtikel":{
 "2":{"bge":1},
-"27d":{"bge":1},
+"27d":{"bger":1},
 "30a":{"bge":1}
 }
 }

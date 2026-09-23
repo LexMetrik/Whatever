@@ -3,9 +3,10 @@
 "erlass":"VRK",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_146_II_145":{"zitierung":"BGE 146 II 145","regesteKurz":"Art. 4 Anhang I FZA; Art. 2 Abs. 1 Bst. a Richtlinie 75/34/EWG; Aufenthaltsanspruch nach Beendigung einer selbständigen Erwerbstätigkeit, sofern die betroffene Person bereits bei der Einreise in die Schweiz das ordentliche Rentenalter…","datum":"2020-02-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_II_145__voll":{"zitierung":"Urteil 2C_534/2019 (nicht publ. in BGE 146 II 145)","regesteKurz":null,"datum":"2020-02-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 II 145","urteil":"2C_534/2019"}},
 "bge_146_II_150":{"zitierung":"BGE 146 II 150","regesteKurz":"a Art. 28 Abs. 1 DBA CH-FR; Ziff. XI Abs. 3 Bst. a Zusatzprotokoll DBA CH-FR; Art. 2 der Vereinbarung vom 25. Juni 2014 über die Änderung des Zusatzprotokolls zum revidierten DBA CH-FR; Art. 3 lit. c StAhiG; Unterscheidung zwischen…","datum":"2019-07-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_146_I_105":{"zitierung":"BGE 146 I 105","regesteKurz":"Art. 10 Abs. 2 Bst. a DBA CH-LU; Art. 31 f. VRK; Art. 8 und 9 BV; Verwaltungsverordnungen (Kreisschreiben etc.); Auslegung; Vertrauensschutz; Anforderungen an Praxisänderungen; Gleichbehandlung im Unrecht. Bedeutung von…","datum":"2019-12-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_I_105__voll":{"zitierung":"Urteil 2C_209/2017 (nicht publ. in BGE 146 I 105)","regesteKurz":null,"datum":"2019-12-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 I 105","urteil":"2C_209/2017"}},
 "bge_147_II_116":{"zitierung":"BGE 147 II 116","regesteKurz":"Art. 26 VRK; Art. 27 Abs. 1 DBA CH-SE; Ziff. 4 lit. b und d des Protokolls zum DBA CH-SE; internationale Amtshilfe in Steuersachen; spontaner Informationsaustausch; Begriff des Haltens eines Bankkontos. Die Eidgenössische Steuerverwaltung…","datum":"2020-08-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_II_13":{"zitierung":"BGE 147 II 13","regesteKurz":"aArt. 26 Abs. 1 DBA CH-US; Art. 84a BGG; Steueramtshilfe; personelles Spezialitätsprinzip; Rechtsfrage grundsätzlicher Bedeutung. Ob dem Spezialitätsprinzip eine persönliche Dimension zukommt, ist eine Rechtsfrage grundsätzlicher Bedeutung…","datum":"2020-07-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_II_35":{"zitierung":"BGE 147 II 35","regesteKurz":"Art. 4 Anhang I FZA; Art. 2 Abs. 1 Bst. b der Verordnung (EWG) Nr. 1251/70; Verbleiberecht des Wanderarbeitnehmers (Auslegung des Begriffs der \"dauernden Arbeitsunfähigkeit\"). Der Begriff der \"dauernden Arbeitsunfähigkeit\" ist nicht…","datum":"2020-07-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -22,16 +23,16 @@
 "26":[{"key":"bge_151_II_494","gewicht":0},{"key":"bge_149_II_129","gewicht":0},{"key":"bge_147_II_116","gewicht":0},{"key":"bge_147_II_13","gewicht":1},{"key":"bge_146_II_150","gewicht":1}],
 "27":[{"key":"bge_147_IV_182","gewicht":0}],
 "28":[{"key":"bge_146_II_150","gewicht":0}],
-"31":[{"key":"bge_151_II_475","gewicht":0},{"key":"bge_151_II_494","gewicht":0},{"key":"bge_150_III_89","gewicht":0},{"key":"bge_149_II_400","gewicht":1},{"key":"bge_149_II_129","gewicht":0},{"key":"bge_148_II_491","gewicht":1},{"key":"bge_147_V_387","gewicht":1},{"key":"bge_147_II_13","gewicht":2},{"key":"bge_147_II_35","gewicht":0},{"key":"bge_146_II_145","gewicht":1},{"key":"bge_146_I_105","gewicht":1},{"key":"bge_146_II_150","gewicht":4}],
-"32":[{"key":"bge_151_II_475","gewicht":0},{"key":"bge_151_II_494","gewicht":0},{"key":"bge_150_III_89","gewicht":0},{"key":"bge_149_II_400","gewicht":1},{"key":"bge_149_II_129","gewicht":0},{"key":"bge_148_II_491","gewicht":1},{"key":"bge_147_V_387","gewicht":1},{"key":"bge_147_II_13","gewicht":2},{"key":"bge_146_I_105","gewicht":1},{"key":"bge_146_II_150","gewicht":3}],
+"31":[{"key":"bge_151_II_475","gewicht":0},{"key":"bge_151_II_494","gewicht":0},{"key":"bge_150_III_89","gewicht":0},{"key":"bge_149_II_400","gewicht":1},{"key":"bge_149_II_129","gewicht":0},{"key":"bge_148_II_491","gewicht":1},{"key":"bge_147_V_387","gewicht":1},{"key":"bge_147_II_13","gewicht":2},{"key":"bge_147_II_35","gewicht":0},{"key":"bge_146_I_105","gewicht":1},{"key":"bge_146_II_150","gewicht":4},{"key":"bge_146_II_145__voll","gewicht":1,"erwaegungen":["E. 3.2.5"]}],
+"32":[{"key":"bge_151_II_475","gewicht":0},{"key":"bge_151_II_494","gewicht":0},{"key":"bge_150_III_89","gewicht":0},{"key":"bge_149_II_400","gewicht":1},{"key":"bge_149_II_129","gewicht":0},{"key":"bge_148_II_491","gewicht":1},{"key":"bge_147_V_387","gewicht":1},{"key":"bge_147_II_13","gewicht":2},{"key":"bge_146_II_150","gewicht":3},{"key":"bge_146_I_105__voll","gewicht":1,"erwaegungen":["E. 3.1.1"]}],
 "33":[{"key":"bge_151_II_494","gewicht":0},{"key":"bge_149_II_400","gewicht":1}]
 },
 "gesamtProArtikel":{
 "26":{"bge":5},
 "27":{"bge":1},
 "28":{"bge":1},
-"31":{"bge":12},
-"32":{"bge":10},
+"31":{"bge":11,"bger":1},
+"32":{"bge":9,"bger":1},
 "33":{"bge":2}
 }
 }

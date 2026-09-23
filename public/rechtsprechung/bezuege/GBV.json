@@ -3,12 +3,13 @@
 "erlass":"GBV",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_147_III_1":{"zitierung":"BGE 147 III 1","regesteKurz":"Art. 655 Abs. 2 Ziff. 2 und Abs. 3 ZGB; Teilung eines in das Grundbuch aufgenommenen selbständigen und dauernden Baurechts. Zulässigkeit und Voraussetzungen der flächenmässigen Aufteilung eines in das Grundbuch aufgenommenen selbständigen…","datum":"2020-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_147_III_1":{"zitierung":"BGE 147 III 1","regesteKurz":"Art. 655 Abs. 2 Ziff. 2 und Abs. 3 ZGB; Teilung eines in das Grundbuch aufgenommenen selbständigen und dauernden Baurechts. Zulässigkeit und Voraussetzungen der flächenmässigen Aufteilung eines in das Grundbuch aufgenommenen selbständigen…","datum":"2020-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_III_1__voll":{"zitierung":"Urteil 5A_341/2019 (nicht publ. in BGE 147 III 1)","regesteKurz":null,"datum":"2020-10-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"147 III 1","urteil":"5A_341/2019"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_147_III_1","gewicht":0}],
-"6":[{"key":"bge_147_III_1","gewicht":0}],
-"7":[{"key":"bge_147_III_1","gewicht":0}],
+"6":[{"key":"bge_147_III_1__voll","gewicht":0}],
+"7":[{"key":"bge_147_III_1__voll","gewicht":0,"erwaegungen":["E. 6.2"]}],
 "22":[{"key":"bge_147_III_1","gewicht":0}],
 "98":[{"key":"bge_147_III_1","gewicht":0}],
 "122":[{"key":"bge_147_III_1","gewicht":0}],
@@ -20,8 +21,8 @@
 },
 "gesamtProArtikel":{
 "1":{"bge":1},
-"6":{"bge":1},
-"7":{"bge":1},
+"6":{"bger":1},
+"7":{"bger":1},
 "22":{"bge":1},
 "98":{"bge":1},
 "122":{"bge":1},

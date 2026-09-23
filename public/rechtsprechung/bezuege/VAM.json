@@ -4,7 +4,8 @@
 "erlassEbene":"bund",
 "dokumente":{
 "bge_147_V_470":{"zitierung":"BGE 147 V 470","regesteKurz":"Art. 32 Abs. 1 und Art. 43 Abs. 6 KVG; Art. 65b Abs. 1, Abs. 2 lit. b und Abs. 4 bis , Art. 65d Abs. 1 und 3 KVV; Art. 34d und 34f KLV; Vergleichsgruppenbildung im Rahmen des therapeutischen Quervergleichs (TQV); Ermittlung der mittleren…","datum":"2021-09-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_323":{"zitierung":"BGE 151 II 323","regesteKurz":"Art. 23 und 23a HMG; Art. 42 lit. f, Art. 45 Abs. 1 lit. c Ziff. 3 VAM; Einteilung der \"Pille danach\" in Abgabekategorie B (verschreibungspflichtige Arzneimittel), da deren Abgabe weiterhin ein vorgängiges Fachgespräch mit einer…","datum":"2024-10-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_II_323":{"zitierung":"BGE 151 II 323","regesteKurz":"Art. 23 und 23a HMG; Art. 42 lit. f, Art. 45 Abs. 1 lit. c Ziff. 3 VAM; Einteilung der \"Pille danach\" in Abgabekategorie B (verschreibungspflichtige Arzneimittel), da deren Abgabe weiterhin ein vorgängiges Fachgespräch mit einer…","datum":"2024-10-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_II_323__voll":{"zitierung":"Urteil 2C_69/2023 (nicht publ. in BGE 151 II 323)","regesteKurz":null,"datum":"2024-10-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 323","urteil":"2C_69/2023"}}
 },
 "proArtikel":{
 "28":[{"key":"bge_147_V_470","gewicht":0}],
@@ -13,7 +14,7 @@
 "43":[{"key":"bge_151_II_323","gewicht":0}],
 "45":[{"key":"bge_151_II_323","gewicht":0}],
 "48":[{"key":"bge_151_II_323","gewicht":0}],
-"88":[{"key":"bge_151_II_323","gewicht":0}]
+"88":[{"key":"bge_151_II_323__voll","gewicht":0}]
 },
 "gesamtProArtikel":{
 "28":{"bge":1},
@@ -22,6 +23,6 @@
 "43":{"bge":1},
 "45":{"bge":1},
 "48":{"bge":1},
-"88":{"bge":1}
+"88":{"bger":1}
 }
 }

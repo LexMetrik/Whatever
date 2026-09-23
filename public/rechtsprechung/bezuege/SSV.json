@@ -3,7 +3,7 @@
 "erlass":"SSV",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_148_IV_30":{"zitierung":"BGE 148 IV 30","regesteKurz":"§ 229 aZPO/LU; § 20 UeStG/LU, Art. 258 ZPO, Art. 1 SVG, Art. 1 Abs. 2 VRV; allgemeines bzw. gerichtliches Verbot; öffentliche Strasse. Im Rahmen des Strafverfahrens wegen kantonaler Übertretung eines allgemeinen bzw. gerichtlichen Verbots…","datum":"2021-08-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_IV_30__voll":{"zitierung":"Urteil 6B_384/2020 (nicht publ. in BGE 148 IV 30)","regesteKurz":null,"datum":"2021-08-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 IV 30","urteil":"6B_384/2020"}},
 "bge_149_IV_153":{"zitierung":"BGE 149 IV 153","regesteKurz":"Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht.…","datum":"2023-02-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_II_444":{"zitierung":"BGE 150 II 444","regesteKurz":"Art. 82 BV; Art. 3 Abs. 1-4, Art. 32 Abs. 2 und 3 SVG; Art. 1 Abs. 9 und Art. 108 SSV; Anforderungen an ein Gutachten für die Einführung von Tempo 30 auf einem Strassenabschnitt in der Stadt Bern. Ob die Herabsetzung der…","datum":"2024-03-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_IV_237":{"zitierung":"BGE 151 IV 237","regesteKurz":"Art. 7 Abs. 5 OBG i.V.m. Art. 90 Abs. 1 SVG, Art. 6 Ziff. 2 EMRK; Verurteilung des Fahrzeughalters zur Bezahlung einer Ordnungsbusse wegen einer einfachen Verletzung der Verkehrsregeln, die er nicht persönlich begangen hat; Schuldprinzip.…","datum":"2024-12-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -24,10 +24,10 @@
 "proArtikel":{
 "1":[{"key":"bge_150_II_444","gewicht":0}],
 "16":[{"key":"bge_150_II_444","gewicht":0}],
-"19":[{"key":"bge_148_IV_30","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null}],
+"19":[{"key":"bge_148_IV_30__voll","gewicht":0,"erwaegungen":["E. 1.2"]},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null}],
 "22":[{"key":"bge_151_IV_237","gewicht":0},{"key":"bge_149_IV_153","gewicht":0},{"key":"bs_appellationsgericht_SB.2023.56","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.38","gewicht":null}],
-"30":[{"key":"bge_148_IV_30","gewicht":0},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null}],
-"48":[{"key":"bge_148_IV_30","gewicht":0},{"key":"bs_appellationsgericht_BES.2024.107","gewicht":null}],
+"30":[{"key":"bge_148_IV_30__voll","gewicht":0,"erwaegungen":["E. 1.2"]},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null}],
+"48":[{"key":"bge_148_IV_30__voll","gewicht":0,"erwaegungen":["E. 1.1","E. 1.2"]},{"key":"bs_appellationsgericht_BES.2024.107","gewicht":null}],
 "68":[{"key":"bge_149_IV_153","gewicht":0}],
 "75":[{"key":"bs_appellationsgericht_SB.2024.91","gewicht":null}],
 "76":[{"key":"bs_appellationsgericht_SB.2024.91","gewicht":null}],
@@ -37,17 +37,17 @@
 "103":[{"key":"bs_appellationsgericht_SB.2024.33","gewicht":null}],
 "107":[{"key":"bge_150_II_444","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.52","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.13","gewicht":null}],
 "108":[{"key":"bge_150_II_444","gewicht":0},{"key":"bs_appellationsgericht_SB.2024.56","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.275","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.92","gewicht":null}],
-"113":[{"key":"bge_148_IV_30","gewicht":0}],
+"113":[{"key":"bge_148_IV_30__voll","gewicht":0,"erwaegungen":["E. 1.2"]}],
 "22a":[{"key":"bs_appellationsgericht_VD.2021.92","gewicht":null}],
 "2a":[{"key":"bge_150_II_444","gewicht":0}]
 },
 "gesamtProArtikel":{
 "1":{"bge":1},
 "16":{"bge":1},
-"19":{"bge":1,"kantonal":1},
+"19":{"bger":1,"kantonal":1},
 "22":{"bge":2,"kantonal":2},
-"30":{"bge":1,"kantonal":1},
-"48":{"bge":1,"kantonal":1},
+"30":{"bger":1,"kantonal":1},
+"48":{"bger":1,"kantonal":1},
 "68":{"bge":1},
 "75":{"kantonal":1},
 "76":{"kantonal":1},
@@ -57,7 +57,7 @@
 "103":{"kantonal":1},
 "107":{"bge":1,"kantonal":2},
 "108":{"bge":1,"kantonal":3},
-"113":{"bge":1},
+"113":{"bger":1},
 "22a":{"kantonal":1},
 "2a":{"bge":1}
 }

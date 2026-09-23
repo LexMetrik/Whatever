@@ -3,22 +3,23 @@
 "erlass":"KOV",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_149_III_422":{"zitierung":"BGE 149 III 422","regesteKurz":"Art. 260 SchKG; bedingte Abtretung. Prozessführungsbefugnis des Abtretungsgläubigers bei einer bedingten Abtretung (E. 3). Regeste Art. 260 LP; cession conditionnelle. Faculté du créancier cessionnaire de conduire le procès comme partie en…","datum":"2023-05-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_III_422__voll":{"zitierung":"Urteil 4A_465/2022 (nicht publ. in BGE 149 III 422)","regesteKurz":null,"datum":"2023-05-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"149 III 422","urteil":"4A_465/2022"}},
 "bge_150_III_268":{"zitierung":"BGE 150 III 268","regesteKurz":"Art. 22, 260, 268 SchKG; Art. 95 KOV; Art. 166 IPRG; Übereinkunft vom 11. Mai 1834 mit dem Königreich Bayern über gleichmässige Behandlung der gegenseitigen Staatsangehörigen in Konkursfällen; Konkursschluss und Abtretungsverfügung nach…","datum":"2024-04-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_III_190":{"zitierung":"BGE 151 III 190","regesteKurz":"Art. 230 Abs. 2, Art. 262 Abs. 2 SchKG; Art. 39 und 85 KOV; Sicherheit für die Durchführung des Konkursverfahrens. Die Kosten für die Verwertung von Pfandgegenständen sind bei der Festlegung der Höhe der Sicherheitsleistung gemäss Art. 230…","datum":"2024-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_III_348":{"zitierung":"BGE 151 III 348","regesteKurz":"Art. 72 ff., 113 ff. BGG; Art. 250 Abs. 2 SchKG; Art. 32d USG; Entscheide über die Kollokation öffentlich-rechtlicher Forderungen. Entscheide über die Kollokation fallen unter die Schuldbetreibungs- und Konkurssachen im Sinn von Art. 72…","datum":"2024-12-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_III_190__voll":{"zitierung":"Urteil 5A_376/2024 (nicht publ. in BGE 151 III 190)","regesteKurz":null,"datum":"2024-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 III 190","urteil":"5A_376/2024"}},
+"bge_151_III_348__voll":{"zitierung":"Urteil 5A_137/2024 (nicht publ. in BGE 151 III 348)","regesteKurz":null,"datum":"2024-12-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 III 348","urteil":"5A_137/2024"}}
 },
 "proArtikel":{
-"27":[{"key":"bge_151_III_190","gewicht":0}],
+"27":[{"key":"bge_151_III_190__voll","gewicht":0,"erwaegungen":["E. 5.3"]}],
 "39":[{"key":"bge_151_III_190","gewicht":0}],
-"63":[{"key":"bge_151_III_348","gewicht":0},{"key":"bge_149_III_422","gewicht":0}],
+"63":[{"key":"bge_151_III_348__voll","gewicht":0,"erwaegungen":["E. 3.1.1","E. 3.1.3","E. 3.4.3"]},{"key":"bge_149_III_422__voll","gewicht":0,"erwaegungen":["E. 3.4.3"]}],
 "85":[{"key":"bge_151_III_190","gewicht":0}],
 "95":[{"key":"bge_150_III_268","gewicht":0}]
 },
 "gesamtProArtikel":{
-"27":{"bge":1},
+"27":{"bger":1},
 "39":{"bge":1},
-"63":{"bge":2},
+"63":{"bger":2},
 "85":{"bge":1},
 "95":{"bge":1}
 }

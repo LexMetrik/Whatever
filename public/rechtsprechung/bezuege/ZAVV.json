@@ -3,12 +3,12 @@
 "erlass":"ZAVV",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_151_II_245":{"zitierung":"BGE 151 II 245","regesteKurz":"Art. 6 Abs. 1 und 2 VG; Genugtuungsanspruch des Ehemanns in Zusammenhang mit der Verweigerung des Schweizer Grenzwachtkorps, medizinische Hilfe für seine schwangere Frau beizuziehen. Anwendbare Bestimmungen des Verantwortlichkeitsgesetzes…","datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_II_245__voll":{"zitierung":"Urteil 2C_1016/2022 (nicht publ. in BGE 151 II 245)","regesteKurz":null,"datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 245","urteil":"2C_1016/2022"}}
 },
 "proArtikel":{
-"18":[{"key":"bge_151_II_245","gewicht":0}]
+"18":[{"key":"bge_151_II_245__voll","gewicht":0,"erwaegungen":["E. 6.3.2","E. 6.3.4"]}]
 },
 "gesamtProArtikel":{
-"18":{"bge":1}
+"18":{"bger":1}
 }
 }

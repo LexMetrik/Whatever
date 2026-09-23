@@ -3,7 +3,7 @@
 "erlass":"BUEG",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_146_III_136":{"zitierung":"BGE 146 III 136","regesteKurz":"Art. 69 Abs. 1 und 2 IPRG; bei einer Klage auf Anfechtung des Kindesverhältnisses anwendbares Recht, alternative Anknüpfung an den Ort der Geburt oder der Klage, Begriff des \"überwiegenden Interesses\". Die Anknüpfung an den Ort der…","datum":"2019-11-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_III_136__voll":{"zitierung":"Urteil 5A_222/2018 (nicht publ. in BGE 146 III 136)","regesteKurz":null,"datum":"2019-11-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 III 136","urteil":"5A_222/2018"}},
 "bge_146_I_49":{"zitierung":"BGE 146 I 49","regesteKurz":"Art. 8 Abs. 1, Art. 9 und 38 Abs. 2 BV, Art. 14 und 15 BüG (1952); Einbürgerungsvoraussetzungen des Bundes- und kantonalen Rechts bei der ordentlichen Einbürgerung. Bundesstaatliche Kompetenzaufteilung bei der ordentlichen Einbürgerung.…","datum":"2019-12-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_146_I_83":{"zitierung":"BGE 146 I 83","regesteKurz":"Art. 37, 38 Abs. 2, Art. 50 Abs. 1 BV, §§ 39, 59 und 64 KV/BS, Art. 11-13 BüG; abstrakte Normenkontrolle: verletzt eine kantonale Vermutungsregel bei der Prüfung eines Kriteriums der ordentlichen Einbürgerung die Autonomie der…","datum":"2019-11-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_I_271":{"zitierung":"BGE 148 I 271","regesteKurz":"Art. 8 Abs. 1, Art. 9, Art. 29 Abs. 1, Art. 37 Abs. 1, Art. 38 Abs. 2, Art. 49 und 61a ff. BV, Art. 11 und 12 BüG, Art. 6 Abs. 2 und 3 BüV, Art. 2, 3 und 5 MAV; verfassungskonforme Anwendung der gesetzlichen Anforderungen an die…","datum":"2022-03-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -11,7 +11,7 @@
 "bge_150_I_93":{"zitierung":"BGE 150 I 93","regesteKurz":"Art. 8 Ziff. 1 EMRK; Art. 13 BV; Art. 3 KRK; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Die Nachteile, die mit dem Status der vorläufigen Aufnahme im Vergleich zur Aufenthaltsbewilligung für Kinder im…","datum":"2024-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
-"5":[{"key":"bge_146_III_136","gewicht":0}],
+"5":[{"key":"bge_146_III_136__voll","gewicht":0,"erwaegungen":["E. 4.3"]}],
 "11":[{"key":"bge_148_I_271","gewicht":0},{"key":"bge_146_I_83","gewicht":0}],
 "12":[{"key":"bge_148_I_271","gewicht":0}],
 "14":[{"key":"bge_146_I_49","gewicht":0}],
@@ -21,7 +21,7 @@
 "36":[{"key":"bge_150_II_513","gewicht":0}]
 },
 "gesamtProArtikel":{
-"5":{"bge":1},
+"5":{"bger":1},
 "11":{"bge":2},
 "12":{"bge":1},
 "14":{"bge":1},

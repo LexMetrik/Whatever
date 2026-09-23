@@ -3,18 +3,19 @@
 "erlass":"FINFRAV",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_148_II_444":{"zitierung":"BGE 148 II 444","regesteKurz":"Art. 120 Abs. 1 und 3, Art. 123 Abs. 1 lit. a FinfraG und Art. 10 und 18 FinfraV-FINMA (in der bis am 31. Dezember 2020 in Kraft stehenden Fassung); Meldepflicht für Beteiligungen; Kollektive Kapitalanlagen. Art. 120 Abs. 1 FinfraG ist…","datum":"2022-08-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_148_II_444":{"zitierung":"BGE 148 II 444","regesteKurz":"Art. 120 Abs. 1 und 3, Art. 123 Abs. 1 lit. a FinfraG und Art. 10 und 18 FinfraV-FINMA (in der bis am 31. Dezember 2020 in Kraft stehenden Fassung); Meldepflicht für Beteiligungen; Kollektive Kapitalanlagen. Art. 120 Abs. 1 FinfraG ist…","datum":"2022-08-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_444__voll":{"zitierung":"Urteil 2C_546/2020 (nicht publ. in BGE 148 II 444)","regesteKurz":null,"datum":"2022-08-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 444","urteil":"2C_546/2020"}}
 },
 "proArtikel":{
 "10":[{"key":"bge_148_II_444","gewicht":0}],
 "15":[{"key":"bge_148_II_444","gewicht":0}],
 "18":[{"key":"bge_148_II_444","gewicht":0}],
-"21":[{"key":"bge_148_II_444","gewicht":0}]
+"21":[{"key":"bge_148_II_444__voll","gewicht":0,"erwaegungen":["E. 7.2"]}]
 },
 "gesamtProArtikel":{
 "10":{"bge":1},
 "15":{"bge":1},
 "18":{"bge":1},
-"21":{"bge":1}
+"21":{"bger":1}
 }
 }

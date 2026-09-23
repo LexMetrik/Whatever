@@ -5,6 +5,7 @@
 "dokumente":{
 "bge_148_II_16":{"zitierung":"BGE 148 II 16","regesteKurz":"Art. 86 BVG; Art. 4 lit. a BGÖ; Art. 26 Abs. 4 des Genfer Öffentlichkeits- und Datenschutzgesetzes vom 5. Oktober 2001 (LIPAD/GE); Gesuch um Zugang zum Sitzungsprotokoll der Verwaltungskommission der Personalvorsorgekasse des Kantons Genf…","datum":"2022-03-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_II_203":{"zitierung":"BGE 148 II 203","regesteKurz":"Art. 1 Abs. 2 und Art. 2 Abs. 1 lit. g ArG; Art. 12 AVG; Art. 26 AVV; 24-Stunden-Seniorenbetreuung; Anwendbarkeit von Art. 2 Abs. 1 lit. g ArG auf Dreiparteienverhältnisse. Abgrenzung zwischen Personalverleih und anderen…","datum":"2021-12-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_203__voll":{"zitierung":"Urteil 2C_470/2020 (nicht publ. in BGE 148 II 203)","regesteKurz":null,"datum":"2021-12-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 203","urteil":"2C_470/2020"}},
 "bge_148_I_198":{"zitierung":"BGE 148 I 198","regesteKurz":"Art. 49 Abs. 1 BV; Art. 23 Abs. 1 des Tessiner Ladenöffnungsgesetzes (LAN/ TI); Prinzip des Vorrangs des Bundesrechts; Bestimmung, welche den Schutz des Arbeitnehmers bezweckt. Kognition des Bundesgerichts im Rahmen der abstrakten…","datum":"2021-12-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_V_14":{"zitierung":"BGE 149 V 14","regesteKurz":"Art. 15 Abs. 1 des Bundesgesetzes vom 25. September 2020 über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (rückwirkend in Kraft getreten am 17. September 2020; in der vom 1. April 2021…","datum":"2023-01-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_699":{"zitierung":"BGE 151 II 699","regesteKurz":"Art. 39 Abs. 1 und 3 EBG; Art. 18 Abs. 1 und Art. 27 Abs. 1 ArG; Art. 26 Abs. 2 und 4 ArGV 2; koordinierte Auslegung von Art. 39 Abs. 1 und 3 EBG sowie von Art. 26 Abs. 2 und 4 ArGV 2 betreffend die Sonntagsarbeit an Bahnhöfen. Bei…","datum":"2025-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -21,7 +22,7 @@
 "27":[{"key":"bge_151_II_699","gewicht":0}],
 "41":[{"key":"bge_148_II_203","gewicht":0}],
 "44":[{"key":"bge_148_II_16","gewicht":0}],
-"58":[{"key":"bge_148_II_203","gewicht":0},{"key":"bs_appellationsgericht_BES.2022.93","gewicht":null}],
+"58":[{"key":"bge_148_II_203__voll","gewicht":0,"erwaegungen":["E. 1.2"]},{"key":"bs_appellationsgericht_BES.2022.93","gewicht":null}],
 "71":[{"key":"bge_148_I_198","gewicht":0}],
 "35a":[{"key":"bs_appellationsgericht_VD.2024.163","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.20","gewicht":null}]
 },
@@ -34,7 +35,7 @@
 "27":{"bge":1},
 "41":{"bge":1},
 "44":{"bge":1},
-"58":{"bge":1,"kantonal":1},
+"58":{"bger":1,"kantonal":1},
 "71":{"bge":1},
 "35a":{"kantonal":2}
 }

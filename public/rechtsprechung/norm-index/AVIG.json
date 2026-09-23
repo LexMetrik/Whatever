@@ -83,16 +83,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_V_296",
-        "zitierung": "BGE 151 V 296",
-        "regesteKurz": "Art. 15 Abs. 2 AVIG; Art. 40b AVIV; Vermittlungsfähigkeit und versicherter Verdienst von behinderten Arbeitslosen. Nach der Regelung von Art. 15 Abs. 2 AVIG schliesst auch ein Invaliditätsgrad von mehr als 80 % die Vermittlungsfähigkeit…",
-        "datum": "2025-04-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_V_235",
         "zitierung": "BGE 150 V 235",
         "regesteKurz": "Art. 8 Abs. 1, Art. 24 Abs. 1 und 3 AVIG; Höhe des anzurechnenden Zwischenverdienstes. Unter dem erzielten Zwischenverdienst gemäss Art. 24 Abs. 1 und 3 AVIG ist nicht der arbeitgeberseitig ausbezahlte Geldbetrag, sondern der…",
@@ -147,6 +137,16 @@
         "zitierung": "BGE 147 V 322",
         "regesteKurz": "Art. 2 Abs. 3, Art. 10 Abs. 1 und Art. 23 lit. a BVG; Art. 1 Abs. 1 der Verordnung vom 3. März 1997 über die obligatorische berufliche Vorsorge von arbeitslosen Personen; Versicherungsschutz bei Eintritt der Arbeitsunfähigkeit nach der…",
         "datum": "2021-07-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_V_342",
+        "zitierung": "BGE 147 V 342",
+        "regesteKurz": "Art. 8 Abs. 1 lit. e, Art. 13 Abs. 1 und 3 AVIG; Art. 12 Abs. 2 lit. a AVIV; Beitragszeit vorzeitig Pensionierter. Die Rechtsprechung zur Beitragszeit bei einer vorzeitigen Pensionierung ist dahingehend zu ändern, dass neben den im…",
+        "datum": "2021-06-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -325,16 +325,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_V_219",
-        "zitierung": "BGE 151 V 219",
-        "regesteKurz": "a Art. 15 Abs. 2 BVG i.V.m. Art. 12 lit. j und k BVV 2; Art. 104 f. OR; Verzugszinssatz. Ist dem Vorsorgereglement in Bezug auf die in zeitlicher Hinsicht massgebliche Höhe des Verzugszinssatzes keine Regelung zu entnehmen, gelangen die…",
-        "datum": "2024-10-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_V_342",
         "zitierung": "BGE 147 V 342",
         "regesteKurz": "Art. 8 Abs. 1 lit. e, Art. 13 Abs. 1 und 3 AVIG; Art. 12 Abs. 2 lit. a AVIV; Beitragszeit vorzeitig Pensionierter. Die Rechtsprechung zur Beitragszeit bei einer vorzeitigen Pensionierung ist dahingehend zu ändern, dass neben den im…",
@@ -343,19 +333,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_219__voll",
+        "zitierung": "Urteil 9C_325/2024 (nicht publ. in BGE 151 V 219)",
+        "regesteKurz": null,
+        "datum": "2024-10-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "16": [
-      {
-        "key": "bge_151_V_296",
-        "zitierung": "BGE 151 V 296",
-        "regesteKurz": "Art. 15 Abs. 2 AVIG; Art. 40b AVIV; Vermittlungsfähigkeit und versicherter Verdienst von behinderten Arbeitslosen. Nach der Regelung von Art. 15 Abs. 2 AVIG schliesst auch ein Invaliditätsgrad von mehr als 80 % die Vermittlungsfähigkeit…",
-        "datum": "2025-04-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_150_V_44",
         "zitierung": "BGE 150 V 44",
@@ -363,6 +353,16 @@
         "datum": "2023-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_296__voll",
+        "zitierung": "Urteil 8C_296/2024 (nicht publ. in BGE 151 V 296)",
+        "regesteKurz": null,
+        "datum": "2025-04-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -629,16 +629,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_III_22",
-        "zitierung": "BGE 150 III 22",
-        "regesteKurz": "Art. 324 und 91 OR; Annahmeverzug des Arbeitgebers; ungerechtfertigte Verweigerung der gehörig angebotenen Leistung; Betriebsschliessungen zur Bekämpfung des Coronavirus. Die Arbeitsverhinderung als Folge von Massnahmen zur Bekämpfung des…",
-        "datum": "2023-08-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_V_265",
         "zitierung": "BGE 148 V 265",
         "regesteKurz": "Art. 2 Abs. 3 bis und 3 ter (\"Stand am 6. Juli 2020\"), Art. 7 Abs. 2 Covid-19-Verordnung Erwerbsausfall; Art. 59 ATSG und Art. 89 Abs. 1 BGG; Corona-Erwerbsersatz, Anmelde- und Beschwerdelegitimation der Arbeitgeberin. Die Anmelde- und…",
@@ -665,6 +655,16 @@
         "datum": "2021-04-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_22__voll",
+        "zitierung": "Urteil 4A_53/2023 (nicht publ. in BGE 150 III 22)",
+        "regesteKurz": null,
+        "datum": "2023-08-30",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -705,22 +705,22 @@
     ],
     "34": [
       {
-        "key": "bge_150_III_22",
-        "zitierung": "BGE 150 III 22",
-        "regesteKurz": "Art. 324 und 91 OR; Annahmeverzug des Arbeitgebers; ungerechtfertigte Verweigerung der gehörig angebotenen Leistung; Betriebsschliessungen zur Bekämpfung des Coronavirus. Die Arbeitsverhinderung als Folge von Massnahmen zur Bekämpfung des…",
-        "datum": "2023-08-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_V_144",
         "zitierung": "BGE 148 V 144",
         "regesteKurz": "Art. 34 Abs. 2 AVIG; Art. 17 Abs. 1 lit. d des Bundesgesetzes vom 25. September 2020 über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie; Art. 8i der Verordnung vom 20. März 2020 über…",
         "datum": "2021-11-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_22__voll",
+        "zitierung": "Urteil 4A_53/2023 (nicht publ. in BGE 150 III 22)",
+        "regesteKurz": null,
+        "datum": "2023-08-30",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -805,12 +805,12 @@
     ],
     "110": [
       {
-        "key": "bge_146_V_104",
-        "zitierung": "BGE 146 V 104",
-        "regesteKurz": "Art. 3 und Art. 90c Abs. 1 AVIG; Beitragspflicht bei nachträglicher Lohnzahlung. Die Bestimmung des Beitragssatzes einer Lohnnachzahlung (Art. 5 Abs. 1 AHVG) ist nicht oder nicht ausschliesslich auf der Ebene des Beitragsbezugs…",
+        "key": "bge_146_V_104__voll",
+        "zitierung": "Urteil 8C_589/2019 (nicht publ. in BGE 146 V 104)",
+        "regesteKurz": null,
         "datum": "2020-04-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

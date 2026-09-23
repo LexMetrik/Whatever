@@ -4,27 +4,29 @@
 "erlassEbene":"bund",
 "dokumente":{
 "bge_147_II_319":{"zitierung":"BGE 147 II 319","regesteKurz":"Art. 18 NHG, Art. 14 NHV, Art. 12 EnG und Art. 9 EnV; Art. 11 und 25 USG, Art. 7 LSV; Windpark Sainte-Croix; Begriff des nationalen Interesses; Lärmschutz. Art. 9 Abs. 2 EnV, der für die jährliche Energieproduktion einen Schwellenwert von…","datum":"2021-03-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_II_319__voll":{"zitierung":"Urteil 1C_657/2018 (nicht publ. in BGE 147 II 319)","regesteKurz":null,"datum":"2021-03-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"147 II 319","urteil":"1C_657/2018"}},
 "bge_148_II_36":{"zitierung":"BGE 148 II 36","regesteKurz":"a Windpark Grenchenberg; Richtplanpflicht (Art. 8 Abs. 2 RPG). Anforderungen an die auf Stufe Richtplan nötigen Abklärungen. Dazu gehört das Vorkommen gefährdeter und national prioritärer Arten, die ein Konfliktpotenzial mit…","datum":"2021-11-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_II_86":{"zitierung":"BGE 149 II 86","regesteKurz":"Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…","datum":"2023-01-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_I_213":{"zitierung":"BGE 150 I 213","regesteKurz":"Art. 49 Abs. 1 und Art. 77 BV; Art. 699 ZGB; Art. 14 WaG; Art. 19 Abs. 1 WaldG/GE; Art. 23 Abs. 3 WaldV/GE; Grundsatz des Vorrangs des Bundesrechts; Unterstellung von Lasergame-Spielen im Wald unter eine vorherige punktuelle…","datum":"2024-05-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_304":{"zitierung":"BGE 151 II 304","regesteKurz":"Art. 18 Abs. 1 ter NHG; Art. 14 Abs. 6 NHV; Art. 7 Abs. 4 JSG; Fuss- und Wanderwegprojekt in einem der letzten nicht erschlossenen Tobel der Region; Autonomiebeschwerde der Gemeinden gegen die teilweise Aufhebung dieses Projekts durch das…","datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_II_304":{"zitierung":"BGE 151 II 304","regesteKurz":"Art. 18 Abs. 1 ter NHG; Art. 14 Abs. 6 NHV; Art. 7 Abs. 4 JSG; Fuss- und Wanderwegprojekt in einem der letzten nicht erschlossenen Tobel der Region; Autonomiebeschwerde der Gemeinden gegen die teilweise Aufhebung dieses Projekts durch das…","datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_II_304__voll":{"zitierung":"Urteil 1C_217/2023 (nicht publ. in BGE 151 II 304)","regesteKurz":null,"datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 304","urteil":"1C_217/2023"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_150_I_213","gewicht":0}],
 "5":[{"key":"bge_149_II_86","gewicht":0},{"key":"bge_148_II_36","gewicht":1},{"key":"bge_147_II_319","gewicht":2}],
-"6":[{"key":"bge_147_II_319","gewicht":0}],
+"6":[{"key":"bge_147_II_319__voll","gewicht":0,"erwaegungen":["E. 7","E. 7.1","E. 7.2"]}],
 "14":[{"key":"bge_151_II_304","gewicht":0},{"key":"bge_150_I_213","gewicht":0}],
-"15":[{"key":"bge_147_II_319","gewicht":0}],
-"16":[{"key":"bge_151_II_304","gewicht":0}],
+"15":[{"key":"bge_147_II_319__voll","gewicht":0,"erwaegungen":["E. 9.4"]}],
+"16":[{"key":"bge_151_II_304__voll","gewicht":0,"erwaegungen":["E. 3"]}],
 "50":[{"key":"bge_150_I_213","gewicht":0}]
 },
 "gesamtProArtikel":{
 "1":{"bge":1},
 "5":{"bge":3},
-"6":{"bge":1},
+"6":{"bger":1},
 "14":{"bge":2},
-"15":{"bge":1},
-"16":{"bge":1},
+"15":{"bger":1},
+"16":{"bger":1},
 "50":{"bge":1}
 }
 }

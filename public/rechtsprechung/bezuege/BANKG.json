@@ -5,14 +5,15 @@
 "dokumente":{
 "bge_147_II_432":{"zitierung":"BGE 147 II 432","regesteKurz":"Art. 2 Abs. 1 und Art. 23 AVUS; Art. 8 und 35 Abs. 1 IRSG; Art. 154 FinfraG; Auslieferung an die USA; beidseitige Strafbarkeit; Insidertatbestand; Günstigkeitsprinzip. Art. 154 Abs. 3 FinfraG ermöglicht a priori wie seine…","datum":"2021-05-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_I_57":{"zitierung":"BGE 147 I 57","regesteKurz":"Art. 34 FINMAG; Art. 6, Art. 7 EMRK; Art. 14 Abs. 3 lit. g UNO-Pakt II; Art. 32 Abs. 1 BV. Die finanzmarktrechtliche Publikationsanordnung qualifiziert nicht als eine strafrechtliche Anklage bzw. eine Strafe im Sinne der Art. 6 und 7 EMRK.…","datum":"2020-01-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_I_57__voll":{"zitierung":"Urteil 2C_92/2019 (nicht publ. in BGE 147 I 57)","regesteKurz":null,"datum":"2020-01-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"147 I 57","urteil":"2C_92/2019"}},
 "bge_148_IV_170":{"zitierung":"BGE 148 IV 170","regesteKurz":"a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…","datum":"2022-04-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_391":{"zitierung":"BGE 151 II 391","regesteKurz":"Art. 32 Abs. 1 PG; Art. 3 Abs. 1 lit. b und Abs. 3 Satz 1 sowie Art. 14 POG; Art. 21 Abs. 1 sowie Art. 24 Abs. 1 und 2 FINMAG; Art. 4 Abs. 1-3 und Art. 7 ff. BankG; Art. 1 Abs. 1, Art. 41-45 und 131b ERV; Rundschreiben 2019/2 \"Zinsrisiken…","datum":"2024-11-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_IV_30":{"zitierung":"BGE 151 IV 30","regesteKurz":"Art. 197 Abs. 1 lit. b und c sowie Art. 248 Abs. 1 und Art. 264 StPO in der am 1. Januar 2024 in Kraft getretenen revidierten Fassung; Entsiegelung; Geschäftsgeheimnisse; Bankkundengeheimnis; Rechtsweg. In der neuen Fassung von Art. 248…","datum":"2024-09-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_IV_30__voll":{"zitierung":"Urteil 7B_313/2024 (nicht publ. in BGE 151 IV 30)","regesteKurz":null,"datum":"2024-09-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 IV 30","urteil":"7B_313/2024"}},
 "bs_appellationsgericht_BEZ.2022.81":{"zitierung":"Appellationsgericht BS BEZ.2022.81 vom 26.04.2023","regesteKurz":"Betreibung auf Pfändung (Auskunftspflicht) (BGer-Nr. 5A_360/2023 vom 23. Oktober 2023)","datum":"2023-04-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2023.30":{"zitierung":"Appellationsgericht BS SB.2023.30 vom 24.01.2025","regesteKurz":"Ungehorsam gegen amtliche Verfügungen","datum":"2025-01-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_147_I_57","gewicht":0}],
+"1":[{"key":"bge_147_I_57__voll","gewicht":0,"erwaegungen":["E. 2"]}],
 "3":[{"key":"bge_147_I_57","gewicht":0}],
 "4":[{"key":"bge_151_II_391","gewicht":0}],
 "7":[{"key":"bge_151_II_391","gewicht":0}],
@@ -21,11 +22,11 @@
 "33":[{"key":"bge_148_IV_170","gewicht":0}],
 "34":[{"key":"bge_148_IV_170","gewicht":0}],
 "40":[{"key":"bge_147_II_432","gewicht":0}],
-"47":[{"key":"bge_151_IV_30","gewicht":0},{"key":"bge_147_II_432","gewicht":0},{"key":"bs_appellationsgericht_SB.2023.30","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2022.81","gewicht":null}],
+"47":[{"key":"bge_147_II_432","gewicht":0},{"key":"bge_151_IV_30__voll","gewicht":0,"erwaegungen":["E. 2.4.1"]},{"key":"bs_appellationsgericht_SB.2023.30","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2022.81","gewicht":null}],
 "23quinquies":[{"key":"bge_148_IV_170","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1},
+"1":{"bger":1},
 "3":{"bge":1},
 "4":{"bge":1},
 "7":{"bge":1},
@@ -34,7 +35,7 @@
 "33":{"bge":1},
 "34":{"bge":1},
 "40":{"bge":1},
-"47":{"bge":2,"kantonal":2},
+"47":{"bge":1,"bger":1,"kantonal":2},
 "23quinquies":{"bge":1}
 }
 }

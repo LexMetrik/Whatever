@@ -6,12 +6,14 @@
 "bge_147_II_357":{"zitierung":"BGE 147 II 357","regesteKurz":"Art. 17 Abs. 1 USG; Art. 14 und Anhang 7 LSV; Art. 125 Abs. 2 und Art. 133 Abs. 3 MG; Art. 4 Abs. 1 Schiessverordnung; lärmschutzrechtliche Sanierung einer zivilen Schiessanlage; Erleichterungen für die Durchführung von ausserdienstlichen…","datum":"2021-04-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_II_139":{"zitierung":"BGE 148 II 139","regesteKurz":"Art. 9 BV, Art. 13, 14, 16 und 22 RPG, Art. 32 Abs. 1 lit. a FIFG, Art. 126 Abs. 3 MG, Art. 37 Abs. 4 und Art. 37m Abs. 1 LFG, Art. 30a VIL; Zulässigkeit eines kantonalen Gestaltungsplans für den Innovationspark Zürich (IPZ) auf dem…","datum":"2021-11-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_I_129":{"zitierung":"BGE 149 I 129","regesteKurz":"Art. 10 Abs. 2 und Art. 36 BV; Art. 47 MG; Art. 20 Abs. 1, Art. 10 Abs. 3 und Art. 37 Abs. 1 BPG; Art. 7 Abs. 1 PVSPA; Auflösung des Arbeitsverhältnisses eines Angehörigen der Spezialkräfte der Armee wegen der Weigerung, sich der für…","datum":"2023-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_I_129__voll":{"zitierung":"Urteil 8C_351/2022 (nicht publ. in BGE 149 I 129)","regesteKurz":null,"datum":"2023-02-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"149 I 129","urteil":"8C_351/2022"}},
 "bge_150_I_144":{"zitierung":"BGE 150 I 144","regesteKurz":"Art. 8 und 59 Abs. 3 BV; Art. 8 und 14 EMRK; Art. 3 WPEG; Wehrpflichtersatzabgabe (WPE); keine rückwirkende Anwendung des Gesetzes. Darstellung der alten und der neuen gesetzlichen Bestimmungen (in Kraft seit dem 1. Januar 2019), welche…","datum":"2024-01-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_150_I_144__voll":{"zitierung":"Urteil 9C_648/2022 (nicht publ. in BGE 150 I 144)","regesteKurz":null,"datum":"2024-01-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"150 I 144","urteil":"9C_648/2022"}},
 "bs_appellationsgericht_VD.2023.144":{"zitierung":"Appellationsgericht BS VD.2023.144 vom 15.04.2024","regesteKurz":"Wehrpflichtersatzabgabe pro 2018 und 2019","datum":"2024-04-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "9":[{"key":"bge_150_I_144","gewicht":0}],
-"13":[{"key":"bge_150_I_144","gewicht":0}],
+"13":[{"key":"bge_150_I_144__voll","gewicht":0,"erwaegungen":["E. 4.1"]}],
 "32":[{"key":"bge_149_I_129","gewicht":0}],
 "35":[{"key":"bge_149_I_129","gewicht":0}],
 "47":[{"key":"bge_149_I_129","gewicht":0}],
@@ -21,11 +23,11 @@
 "125":[{"key":"bge_147_II_357","gewicht":0}],
 "126":[{"key":"bge_148_II_139","gewicht":0}],
 "133":[{"key":"bge_147_II_357","gewicht":0}],
-"150":[{"key":"bge_149_I_129","gewicht":0}]
+"150":[{"key":"bge_149_I_129__voll","gewicht":0,"erwaegungen":["E. 4.2.1"]}]
 },
 "gesamtProArtikel":{
 "9":{"bge":1},
-"13":{"bge":1},
+"13":{"bger":1},
 "32":{"bge":1},
 "35":{"bge":1},
 "47":{"bge":1},
@@ -35,6 +37,6 @@
 "125":{"bge":1},
 "126":{"bge":1},
 "133":{"bge":1},
-"150":{"bge":1}
+"150":{"bger":1}
 }
 }
