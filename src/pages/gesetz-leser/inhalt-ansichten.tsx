@@ -6,9 +6,11 @@ import type { CurrencyMap, ErlassKopf } from '../../lib/normtext/browse';
 import { KontextPanel } from '../../components/kontext/KontextPanel';
 import { QuellLink } from '../../components/ui/QuellLink';
 import { Datum } from '../../components/ui/Datum';
-import { ErlassKopfBlock, ErlassLeserKopf } from './parts';
+import { ErlassLeserKopf } from './parts';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
-import { ErlassUebersicht } from './parts/ErlassUebersicht';
+import { UebersichtBox } from './v3/UebersichtBox';
+import { uebersichtsAngaben } from './v3/uebersichtAngaben';
+import { grundartMeta } from './helpers';
 import { GesetzFehlSeite } from './FehlSeite';
 import { ebeneAngabe } from './v3/erlassAnsicht';
 import { routenEbene } from '../../lib/normtext/erlassAdresse';
@@ -30,6 +32,29 @@ export function LadeAnzeige() {
       <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
       <p className="text-body-s text-ink-500">Der Erlass wird abgerufen …</p>
     </div>
+  );
+}
+
+// ── Übersicht der Früh-Ansichten (pdf-embed / nur-live-link) ────────────────
+// W2·29-WERKBANK-LESER S2 (23.9.2026): dieselbe Übersicht wie im Volltext-
+// Leser (`v3/UebersichtBox` aus der reinen `v3/uebersichtAngaben`, §5) statt
+// der zweiten Hülle `parts/ErlassUebersicht` (gelöscht). Ohne Snapshot keine
+// Zahl, keine Gliederung (`anzahl: null`, Tiefe 0) — ehrlich statt erfunden (§8);
+// «wie aktuell» sagt das Titelblatt darüber (Arbeitsteilung Ä81/Ä97). Offen,
+// wie die gelöschte Hülle: hier ist sie die einzige Metadaten-Fläche.
+function FruehUebersicht({ erlass, kopf, currency }: {
+  erlass: BrowseErlass;
+  kopf: ErlassKopf | null;
+  currency: CurrencyMap | null;
+}) {
+  const meta = grundartMeta(erlass.key);
+  return (
+    <UebersichtBox offen angaben={uebersichtsAngaben({
+      erlass, kopf, currency: currency?.[erlass.key], erlassTyp: meta.erlassTyp,
+      anzahl: null, bestimmungsWort: 'Artikel', bestimmungsEtikettStatus: undefined,
+      gliederungsTiefe: 0, kennzahlen: null, kantonSys: {}, kantonErlassAnzahl: null,
+      nichtKonsolidiert: false, nichtKonsolidiertSeit: null,
+    })} />
   );
 }
 
@@ -74,10 +99,9 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
         hinweis="Amtliches PDF — massgeblich ist die amtliche Fassung"
         aktionen={
           <AmtlichesPdf href={`/normtext/${erlass.pdfPfad}`} stand={erlass.stand} extern={false} dateiname={`${erlass.kuerzel}.pdf`} />
-        } />
-      {/* M5: Erlass-Kopf-Slot auch im pdf-embed-Pfad (für PDF-Erlasse ohne
-          Struktur-Sidecar bleibt kopf=null → nichts gerendert). */}
-      {kopf && <ErlassKopfBlock kopf={kopf} intern={internRefs} />}
+        }
+        // M5: der Ingress auch im pdf-embed-Pfad (ohne Struktur-Sidecar `null`).
+        ingress={kopf} intern={internRefs} />
       {/* LM-167 (B6/K-15, Hoch): am eingebetteten PDF fehlen «Im Gesetz suchen»,
           «§ Rechtsprechung» und «Ansicht» aus der Volltext-Werkzeugleiste ganz —
           bewusst (G2b: keine toten Steuerelemente, §13 F4, s. o.). Ohne einen Hinweis
@@ -124,7 +148,7 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
           wie im Volltext-Reader (S6), OBERHALB des Panels (§5-Reihenfolge).
           `artikelAnzahl={null}` — pdf-embed hat keinen Snapshot, «Umfang»
           entfällt ehrlich statt eine erfundene Zahl zu zeigen. */}
-      <ErlassUebersicht erlass={erlass} kopf={kopf} currency={currency?.[erlass.key]} artikelAnzahl={null} />
+      <FruehUebersicht erlass={erlass} kopf={kopf} currency={currency} />
       {/* Einheitliches Kontext-Panel (B3): Entscheide/Materialien/Werkzeuge zu
           diesem Erlass am Leseende (Single Source mit dem Volltext-Reader). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} />
@@ -175,7 +199,7 @@ function LiveVerweisAnsicht({ erlass, currency }: {
       {/* W2·19-GLIEDERUNG/S9: dieselbe Übersicht wie im pdf-embed-Pfad (s. o.),
           OBERHALB des Panels — kein Kopf-Sidecar in diesem Pfad, `kopf={null}`
           ist der ehrliche, bereits vom Typ getragene Fall. */}
-      <ErlassUebersicht erlass={erlass} kopf={null} currency={currency?.[erlass.key]} artikelAnzahl={null} />
+      <FruehUebersicht erlass={erlass} kopf={null} currency={currency} />
       {/* Einheitliches Kontext-Panel (B3) auch hier: Entscheide/Materialien/
           Werkzeuge zu diesem Erlass (Single Source, §5). */}
       <KontextPanel typ="norm" normKeys={[erlass.key]} />

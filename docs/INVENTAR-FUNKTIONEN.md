@@ -815,9 +815,8 @@ praxistauglicher».
 ```
 Leser-Kopf   klebt · Kürzel · ⚖ · ☰ · Ansicht · Such-Zone
 ┌ Seitenspalte ─────┬ Zelle ───────────────────────────┐
-│ Übersicht (zu)    │ Erlass-Leser-Kopf                │
-│ Gliederung klebt  │ Erlass-Kopfblock (Ingress)        │
-│                   │ Lesespalte ← KERN                 │
+│ Übersicht (zu)    │ Titelblatt (Kopf + Ingress)      │
+│ Gliederung klebt  │ Lesespalte ← KERN                │
 └───────────────────┴──────────────────────────────────┘
 ```
 

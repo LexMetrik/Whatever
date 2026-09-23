@@ -169,7 +169,7 @@ export function LeserKopf({
     // `z-modal`: Ansicht-Panel, Sheet, Toast).
     <div
       data-v3-kopf
-      className="sticky z-reader-kopf -mx-1 mb-4 border-b border-line bg-paper px-1"
+      className="lc-leser-kopfzeile sticky z-reader-kopf -mx-1 mb-4 bg-paper px-1"
       // ── Ä1 (H2b) · KEINE LEERZONE UNTER DER KRUMEN-LEISTE ──────────────────
       // Gemessen 17.8.2026 @1440: die Krumen-Leiste endet bei y = 102, der
       // V3-Kopf begann bei y = 150 — 48 px Leerzone im Ruhezustand, die beim
@@ -243,7 +243,7 @@ export function LeserKopf({
               Regel NICHT auf: `el.volltitel` entscheidet weiterhin, und die
               Sonde `e2e/leser-v3-kopf-buendig.ts` (d) misst dieselben Erlasse. */}
           <span data-v3-kopf-kuerzel
-            className={`font-medium text-ink-800 ${
+            className={`font-semibold text-ink-900 ${
               el.volltitel && zeigeVolltitel(erlass) && !suchInZeile ? 'shrink-0' : 'min-w-0 truncate'}`}
             // D32, offengelegt (§7/§8): im Zeilen-Bild ist der Streifen nur so
             // breit wie die Spur — bei EINGEKLAPPTER Gliederung sind das 56 px,

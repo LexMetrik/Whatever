@@ -109,8 +109,12 @@ export function KopfOverline({ glieder }: {
 
 export function LeserKopfGeruest({
   overline, titel, nachTitel, fakten = [], stand = [], standReserve = false,
-  ehrlichkeit, aktionen, children,
+  ehrlichkeit, aktionen, children, form = 'kopf',
 }: {
+  /** W2·29-WERKBANK-LESER S2 · `titelblatt` legt die Identität (Overline · Titel
+   *  · Fakten) auf die Registerfläche `.lc-titelblatt-band` (index.css); Stand,
+   *  Aktionen und Banner bleiben auf dem Papier. Vorgabe `kopf` = unverändert. */
+  form?: 'kopf' | 'titelblatt';
   /** Band 1 — in aller Regel ein `<KopfOverline>`. */
   overline: ReactNode;
   /** Band 2 — die H1. Als Knoten, weil Stimme (Serif/Display), Umbruch-Regel und
@@ -143,8 +147,8 @@ export function LeserKopfGeruest({
   /** Nach den Bändern: Banner/Notizen am Kopfende (Aufhebungs-Banner, URL-Abdruck). */
   children?: ReactNode;
 }) {
-  return (
-    <header className="space-y-2 border-b border-line pb-5">
+  const identitaet = (
+    <>
       <p className="lc-overline">{overline}</p>
       {titel}
       {nachTitel}
@@ -152,6 +156,13 @@ export function LeserKopfGeruest({
       {fakten.length > 0 && (
         <p className="text-xs text-ink-500"><Segmente teile={fakten} /></p>
       )}
+    </>
+  );
+  return (
+    <header className="space-y-2 border-b border-line pb-5">
+      {form === 'titelblatt'
+        ? <div data-titelblatt-band className="lc-titelblatt-band space-y-2">{identitaet}</div>
+        : identitaet}
 
       {(stand.length > 0 || ehrlichkeit) && (
         <div className={`${standReserve ? 'min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md ' : ''}space-y-1`}>

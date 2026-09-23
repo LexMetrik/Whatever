@@ -60,11 +60,12 @@ if (!ARTIKELBODY_DATEIEN.length) {
 // Marker-Träger müssen gescannt werden, sonst prüft das Tor sie nicht mehr.
 // `inhalt.tsx` (Ist-Hülle) gelöscht 21.8.2026 (H5) — aus der Liste entfernt;
 // die markierten Struktur-Elemente leben in den geteilten `parts/`-Dateien,
-// die V3 (wie zuvor V1) rendert.
+// die V3 (wie zuvor V1) rendert. `parts/ErlassKopfBlock.tsx` gelöscht 23.9.2026
+// (W2·29-WERKBANK-LESER S2) — der Ingress lebt seither im Titelblatt
+// `parts/ErlassLeserKopf.tsx`, das hier schon steht.
 const READER = [
   'src/pages/gesetz-leser/parts.tsx',
   'src/pages/gesetz-leser/parts/ArtikelLeser.tsx',
-  'src/pages/gesetz-leser/parts/ErlassKopfBlock.tsx',
   'src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
   'src/pages/gesetz-leser/parts/SektionKopf.tsx',
   'src/pages/gesetz-leser/parts/SektionBaumTOC.tsx',

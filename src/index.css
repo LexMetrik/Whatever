@@ -2089,27 +2089,6 @@
      lc-overline mit normal-case + Inline-letter-spacing zweckzuentfremden. */
   .lc-fineprint { font-family: var(--font-sans), system-ui, sans-serif; font-size: .6875rem; line-height: 1.5; letter-spacing: .01em; color: var(--ink-600); } /* ink-500→ink-600 (Auftrag David 25.6.2026): 11px-Feinschrift 4.85:1→7.2:1 */
 
-  /* W2·19-GLIEDERUNG/S6 · Konsolidierungs-Hinweis der Erlass-Übersicht
-     (parts/ErlassUebersicht.tsx). §15.2 CLS 0 KONSTRUKTIV statt beobachtet: die
-     Zeile steht IMMER (im Normalfall mit der Aussage, die stets gilt) und ist
-     auf EXAKT zwei Zeilenhöhen festgenagelt — `min-height` hebt den kurzen
-     Normalfall auf zwei Zeilen, `line-clamp: 2` deckelt den Warn-Fall auf
-     dieselben zwei. Ihre Höhe hängt damit nicht am Text, und der asynchron
-     eintreffende Revisions-Sidecar kann nichts mehr in den Fluss schieben
-     (e2e/leser-kontext-e4 hält ihn bis NACH dem Start des CLS-Beobachters
-     zurück — ein wachsender Hinweis wäre dort ein garantierter Shift).
-     2 × 1.375 = 2.75em; `em` bindet an die eigene Schriftgrösse, die Reservierung
-     stimmt darum in beiden Einbau-Orten (18rem-Leiste und Lesespalte).
-     `height` statt `min-height`: das ist hier die ANATOMIE der Zeile (feste
-     Zwei-Zeilen-Höhe in beiden Zuständen), keine Trefferflächen-Untergrenze —
-     genau die Abgrenzung, die der F9-Wächter zieht (src/tests/tap-ziel-token.test.ts).
-     Und für CLS ist die feste Höhe ohnehin das schärfere Mittel als eine
-     Untergrenze: sie kann in KEINE Richtung wandern. */
-  .lc-uebersicht-hinweis {
-    line-height: 1.375; height: 2.75em;
-    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
-  }
-
   /* W2·19-GLIEDERUNG/S7 · Artikel-Kontext-Block im KontextPanel
      (components/kontext/KontextPanel.tsx, Bau-Spec §5.2 «höhenfester Block»).
      Vier einzeilige Rollen-Zeilen (Praxis · Verweise · Änderung · Werkzeuge) zu
@@ -2598,6 +2577,20 @@
   }
   .lc-kopf-aktionen .lc-chip:hover,
   .lc-kopf-aktionen .lc-chip:focus-visible { text-decoration: underline; }
+  /* W2·29 S2 · 2-px-Tintenlinie der Leser-Kopfzeile als `::after` IN der Box:
+     die Höhe bleibt `--leser-v3-kopf-block-h` (daraus `--nt-stick`). */
+  .lc-leser-kopfzeile::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+    height: 2px; background: var(--rule); pointer-events: none;
+  }
+  /* W2·29 S2 · Titelblatt-Band: Identität auf der Registerfläche (Farbe als
+     Fläche, David 22.9.2026). Nur Tinte mit 4.5:1 darauf (ink-500 4.22 → ③b);
+     Stand/Warnung/Aktionen bleiben auf dem Papier (warn-700 hier 4.45). */
+  .lc-titelblatt-band {
+    background: var(--reg-g-flaeche);
+    border-top: 2px solid var(--reg-g);
+    padding: 0.875rem 1rem 1rem;
+  }
   /* Selected-Zustand für Toggle-Chips (W2·17-UI-BEFUNDE-B1, LM-040 · F4
      «selected»): der gewählte Chip einer Facetten-Reihe muss OHNE Farbvergleich
      erkennbar sein — vorher trug er nur eine Rahmen-/Textfarbnuance auf
@@ -2929,8 +2922,9 @@
      die 1-px-Unterkante, die im Referenzbild jeden Textknopf trägt. Der
      Ruhezustand ist damit eine Linie statt einer Fläche; der HOVER behält seine
      eingespielte Grammatik (Fläche `--well` + wärmere Tinte, §G-j) — dort ist
-     die Fläche eine Zustandsauskunft und keine Dauer-Anatomie. */
-  .lc-leiste-griff-fest { color: var(--ink-700); padding: 0 6px; border-bottom: 1px solid var(--rule-soft); border-radius: 0; }
+     die Fläche eine Zustandsauskunft und keine Dauer-Anatomie.
+     W2·29 S2: Ruhe-Tinte ink-900 (Werkbank); Masse unverändert (@390). */
+  .lc-leiste-griff-fest { color: var(--ink-900); padding: 0 6px; border-bottom: 1px solid var(--rule-soft); border-radius: 0; }
   .lc-leiste-griff-fest:hover { background: var(--well); color: var(--brass-700); border-bottom-color: var(--brass-500); }
   /* KOMFORT-Stufe des Griffs (F2-6): auf dem Handy-Zuschnitt, wo der Finger das
      einzige Werkzeug ist, hebt sie die Untergrenze vom WCAG-2.5.8-Minimum
@@ -4679,6 +4673,10 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
   font-style: italic;
   letter-spacing: 0;
 }
+
+/* ③b Im Titelblatt-Band ink-600 statt ink-500 (5.38/5.25:1); ungeschichtet,
+   damit es die Utility schlägt — kein Umdefinieren des Tokens (tokens-drift). */
+.lc-titelblatt-band .text-ink-500 { color: var(--ink-600); }
 
 /* ④ Die Zähler-Marke der Rubrik-Kacheln (`ui/RubrikKachel`, Herleitung dort). */
 .lc-route[data-reg] .lc-zaehler-marke { color: var(--reg-marke); }

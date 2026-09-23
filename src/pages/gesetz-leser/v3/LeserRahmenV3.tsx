@@ -1,7 +1,6 @@
 import { isValidElement, useId, useRef } from 'react';
 import { grundartMeta } from '../helpers';
 import { paneRoot } from '../berechnungen';
-import { ErlassKopfBlock } from '../parts';
 // Geteilte ANSICHTS-ZUSTÄNDE (Fehlseite · Currency-Pin · pdf-embed · Laden).
 // Der zweite verbleibende Berührungspunkt zur `inhalt-*`-Familie neben dem
 // Daten-Adapter — und ein bewusster: das sind Zustände des LESERS, nicht der
@@ -327,12 +326,10 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         onSchieneAuf={schieneAuf}
         leiste={leisteAufbau(m, bestimmungsWort, false)}
         zelle={<>
-          {/* Der geteilte Erlass-Kopf (Kap. 4e) — Prop-Weitergabe in
-              `./LeserErlassKopfZone` (H3-Auslagerung, §6.6). */}
+          {/* Das Titelblatt samt Ingress (S2) — Verdrahtung in `./LeserErlassKopfZone`;
+              der Ingress entfällt im Einzelmodus (W2·5m). */}
           <LeserErlassKopfZone m={m} erlass={erlass} artikelAnzahl={eintraege.length}
-            bestimmungsWort={bestimmungsWort} />
-          {/* W2·5m · der Ingress entfällt im Einzelmodus (`./LeserEinzelAnsicht.tsx`). */}
-          {!imEinzel && m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
+            bestimmungsWort={bestimmungsWort} ingress={imEinzel ? null : m.kopf} />
           {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich darüber (`./LeserTrefferSpalte`). */}
           {/* W2·5m · im Einzelmodus EINE Bestimmung, dieselbe Prop-Kette (§5). */}
           <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten}

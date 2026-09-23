@@ -70,7 +70,10 @@ const GETEILTE_BAUSTEINE = [
   // jede Zusage darüber sind unverändert.
   'parts/ArtikelLeser.bezuegeFuss.tsx',
   'parts/SektionKopf.tsx',
-  'parts/ErlassKopfBlock.tsx',
+  // §6.3-DEKLARATION (W2·29-WERKBANK-LESER S2, 23.9.2026): hier stand
+  // `parts/ErlassKopfBlock.tsx`. Der Ingress ist in das Titelblatt
+  // `parts/ErlassLeserKopf.tsx` gezogen (oben gelistet) und die Datei
+  // gelöscht — dieselben Wörter, derselbe Geltungsbereich.
 ];
 
 const DATEIEN: string[] = [
