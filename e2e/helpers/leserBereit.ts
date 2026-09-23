@@ -63,14 +63,14 @@ export async function warteLeserBereit(page: Page, timeout = 20000): Promise<voi
 // oder misst, braucht mehr: Einträge gerendert, Struktur-Sidecar beantwortet und
 // die erste Leerlauf-Welle danach vorbei — erst dann konkurriert die Aktion
 // nicht mehr mit der Nachlade-Kette. Das Produkt setzt dafür EIN Attribut
-// (`src/pages/gesetz-leser/v3/useLeserBereit.ts`, Definition dort); dieser
+// (`src/pages/gesetz-leser/leserBereit.ts`, Definition dort); dieser
 // Helfer ist die eine Stelle, die darauf wartet. Anlass und Messreihe:
 // Flackerer `leser-suche-a35-a40-a41.e2e.ts` Z. 89 (Lauf 35779952911).
 
 /** Die Lesespalte, sobald der Leser nachgeladen hat (Attribut-Abfrage, O(1)). */
 export const LESER_NACHGELADEN = '#lc-lesespalte[data-leser-bereit]'
 
-/** Wartet, bis der Leser NACHGELADEN ist (Definition in `useLeserBereit.ts`).
+/** Wartet, bis der Leser NACHGELADEN ist (Definition in `src/pages/gesetz-leser/leserBereit.ts`).
  *  Budget = `OR_LESER_FRIST` — die Frist, gegen die OR-Wartepunkte ohnehin
  *  laufen (Herleitung `./orLeser.ts`). */
 export async function warteLeserNachgeladen(page: Page, timeout = OR_LESER_FRIST): Promise<void> {

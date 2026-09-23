@@ -15,7 +15,7 @@ import { baueNachbarn } from './nachbarArtikel';
 import { LeserEinzelAnsicht } from './LeserEinzelAnsicht';
 import { einzelAdresse } from './einzelModus';
 import { labelMitBereich } from '../../../lib/normtext/darstellung';
-import { useLeserBereit } from './useLeserBereit';
+import { useLeserBereit } from '../leserBereit';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
 //

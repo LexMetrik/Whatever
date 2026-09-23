@@ -1,4 +1,4 @@
-// v3/useLeserBereit.ts — der EINE Bereitschaftsmarker des Lesers
+// gesetz-leser/leserBereit.ts — der EINE Bereitschaftsmarker des Lesers
 // (W2·29-WERKBANK-LESER S0, Flacker-Regel David 23.9.2026).
 //
 // ── WOFÜR ─────────────────────────────────────────────────────────────────────
@@ -16,7 +16,7 @@
 //   1. `eintraegeDa` — der Snapshot ist im Zustand (`m.eintraege !== null`);
 //   2. die Struktur-Promise ist ERLEDIGT — dieselbe gecachte Promise, die
 //      `inhalt-hooks` für Gliederung und Kopf abonniert (kein zweiter Fetch:
-//      gleiche Daten-Ebene `erlass.ebene`, s. Falle in `../bezuegeZaehler`);
+//      gleiche Daten-Ebene `erlass.ebene`, s. Falle in `./bezuegeZaehler`);
 //      `null` (404) zählt als erledigt — ein Erlass ohne Sidecar ist bereit;
 //   3. danach die ERSTE Leerlauf-Welle (`requestIdleCallback` OHNE Timeout —
 //      der Rückruf läuft erst, wenn der Browser tatsächlich nichts zu tun hat).
@@ -27,8 +27,12 @@
 // Kein Einfluss auf Darstellung oder Verhalten: der Marker ist ein reines
 // Daten-Attribut für Sonden (`data-leser-bereit` an `#lc-lesespalte`). Er
 // wechselt mit dem Erlass-Schlüssel zurück auf «nicht bereit».
+//
+// WARUM NICHT IN v3/: der Hook liest `erlass.ebene` (Daten-Ebene des Sidecars),
+// und `.ebene` darf in v3/ nur `erlassAnsicht.ts` lesen (`leser-v3-fundament`)
+// — derselbe Grund, aus dem `./bezuegeZaehler` hier liegt.
 import { useEffect, useState } from 'react';
-import { ladeStruktur } from '../../../lib/normtext/browse';
+import { ladeStruktur } from '../../lib/normtext/browse';
 
 type LeerlaufFenster = typeof window & {
   requestIdleCallback?: (cb: () => void) => number;
