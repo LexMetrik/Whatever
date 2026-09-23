@@ -7,9 +7,9 @@ paths:
 # §13 Design → `DESIGN-REGLEMENT.md`
 <!-- @wiedervorlage: 2027-03-15 -->
 
-Jede sichtbare Änderung folgt `DESIGN-REGLEMENT.md` als Dach-Schicht; darunter
-konkretisieren die Domänen-Reglemente ihren Bereich. Bei Konflikt gewinnt das
-speziellere innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
+Jede sichtbare Änderung folgt `DESIGN-REGLEMENT.md`: Teil I ist das Dach, Teil II
+konkretisiert je Domäne (§N/§R/§J/§V). Bei Konflikt gewinnt das speziellere
+innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
 **jeder Rechtswert mit Norm, Link und Stand** (D1) — ist mit §7 verzahnt.
 
 ## Handschrift «Sammlung» (6.9.2026) — zwölf Zeilen, Detail in §F0
