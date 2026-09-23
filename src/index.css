@@ -1777,28 +1777,6 @@
     max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass, 45rem));
   }
 
-  /* ═══ ZEILENFORM: DIE ZWEI REGELN, DIE DEN ARTIKEL TRAGEN ════════════════
-     W2·24-R6c, RÜCKBAU (§17-Gegengewicht). Bis R6b stand hier der R4-Block
-     «SATZSPIEGEL: MARGINALIE · NORMTEXT · RANDNOTIZEN»: 118 Zeilen Regeln auf
-     `[data-lr-spiegel="marg"]` und `[data-lr-spiegel="voll"]`, dazu `.lr-notiz`,
-     `.lr-notiz-titel`, `.lr-notiz-block`, die vier Register-Varianten und die
-     Variablen `--lr-marg` / `--lr-notiz` / `--lr-rinne` / `--lr-textmass`.
-     R6b hat die beiden Randspuren gestrichen (D20 (a)/(b)); seither kennt
-     `pages/gesetz-leser/v3/satzspiegel.ts` nur noch die Werte `'zeile'` und
-     `'breit'` (`Satzspiegel`-Typ, `satzspiegelFuer`) — KEIN Selektor des Blocks
-     konnte danach je wieder greifen, und keine der vier Variablen wurde
-     ausserhalb davon gelesen. R6b durfte ihn nicht räumen (`index.css`-Bestand
-     war dort TABU) und hat den toten Bestand stattdessen im `.lr7-`-Block am
-     Dateiende vermerkt; dieser Nachzug räumt ihn ersatzlos.
-     Was BLEIBT, sind die zwei formunabhängigen Regeln, die auch die Zeilenform
-     braucht — sie standen im alten Block ohne Spiegel-Scope: */
-  /* Die Textspalte des Artikels darf schrumpfen (sonst sprengt ein langes Wort
-     das Raster; `ArtikelLeser` setzt `.lr-text`). */
-  .lr-text { min-width: 0; }
-  /* Der Registerstrich am Artikelkopf ist in der Zeilenform 0 px hoch und ohne
-     Aussenrand — er darf die Ist-Form nicht um eine Zeile verschieben (§6). */
-  .lr-reg { display: block; height: 0; }
-
   /* ═══ P3 · TEXTLINKS IM LESER TRAGEN EINEN UNTERSTRICH ═══════════════════
      Prüfer-Befund R6 (6.9.2026): von 6'291 Links im Gesetzesleser trugen 3'673
      keinen Unterstrich — darunter «Amtliche Fassung ↗», «⬇ Amtliches PDF» und
@@ -3986,181 +3964,27 @@
    seit dem R3-F3-Nachzug selbst ein Unterstrich-Feld mit Fokus-Strich ist.
    Der gelöschte Wortlaut steht vollständig in der Historie dieses Commits. */
 
-/* ═══ W2·24-R6 · ZUSATZ AM DATEIENDE (Bau-Fläche R6, Präfix `.lr6-`) ══════════
-   Additiv und ohne Berührung des Bestands: an `index.css` bauen in derselben
-   Runde drei Agenten, und ein `.lr6-`-Präfix am Dateiende kollidiert mit keinem
-   von ihnen. Fällt der Block weg, sieht der Leser dieselbe Liste ohne Feinsatz —
-   keine der Regeln trägt Bedeutung, nur Form. */
+/* ═══ LESER · ARTIKELFUSS — WAS CSS TRAGEN MUSS (W2·29-WERKBANK-LESER S1) ═════
+   Die FORM von Artikelkopf, Funktionszeile, Aktionen und Rubrik-Listen steht
+   seit S1 (23.9.2026) als Token-Utility am Bauteil (`parts/Funktionszeile.tsx`,
+   `ArtikelAktionen.tsx`, `ArtikelLeser.bezuegeFuss.tsx`, `BezuegeZeile.tsx`,
+   `ArtikelLeser.tsx`); die gelöschten `.lr6-`/`.lr7-kopf*`/`.lr7-bez*`-Regeln
+   und ihre Herleitungen stehen im Git-Verlauf dieser Datei. Hier bleibt, was an
+   einem Zustand AUSSERHALB des Bauteils hängt oder geteilt ist. Die
+   Klassennamen `.lr7-bez*` bleiben als Sonden-Anker (Inventar N8). */
 
-/* «Rechnen» in der Randnotiz (ArtikelLeser). Die 210-px-Spalte trägt keine
-   Chips (Herleitung am Konsumenten): Textzeilen in derselben Grotesk-Feinschrift
-   wie die übrigen Rand-Rubriken, eingerückt auf die Fluchtlinie, die
-   `.lr-notiz-titel` mit seinem 3-px-Registerstrich vorgibt. */
-.lr6-notiz-liste {
-  margin: 0;
-  padding-left: 0.625rem;
-  list-style: none;
-  display: grid;
-  gap: 0.25rem;
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.35;
-}
-.lr6-notiz-liste > li { display: grid; }
-.lr6-notiz-art { font-size: 0.6875rem; line-height: 1.3; color: var(--ink-500); }
-
-/* W2·24-R6/L1 · Die Lesespalte wird nicht gemalt, solange der Tieflink-Sprung
-   einschwingt (Herleitung samt Messreihe am Konsumenten, `inhalt-hooks.tsx`).
-   `visibility` und NICHT `display`/`opacity`: die Spalte behält ihren Platz
-   (keine Höhenänderung, also selbst kein Sprung), wird aber nicht gemalt — und
-   was nicht gemalt wird, zählt der Browser nicht als Verschiebung. Sie ist
-   Millisekunden aktiv und hat drei Klammern gegen ein Steckenbleiben. */
+/* (a) W2·24-R6/L1 · Die Lesespalte wird nicht gemalt, solange der Tieflink-
+   Sprung einschwingt (`inhalt-hooks-tieflink.tsx`). `visibility`, nicht
+   `display`: der Platz bleibt, also selbst kein Sprung. */
 html[data-lr6-anker-warten] #lc-lesespalte,
 html[data-lr6-anker-warten] footer { visibility: hidden; }
 
-/* ═══ W2·24-R6b · ZUSATZ AM DATEIENDE (Bau-Fläche R6-Nachzug, Präfix `.lr7-`) ══
-   Auftrag David 6.9.2026, wörtlich: «der platz rechts und links neben dem gesetz
-   für bspw. rechner oder fassung nimmt viel platz vom gesetzestext weg. kannst du
-   das besser gestalten.»
-
-   Die beiden Randspuren des Satzspiegels (Marginalie 150 px links, Randnotizen
-   210 px rechts) sind gefallen; ihr Inhalt steht jetzt im Artikelkopf. Diese
-   Regeln geben ihm dort seine Form. Additiv und ohne Berührung des Bestands: an
-   `index.css` bauen in derselben Runde mehrere Agenten, und ein `.lr7-`-Präfix am
-   Dateiende kollidiert mit keinem von ihnen.
-
-   ERLEDIGT IN R6c: der Hinweis, der hier stand («der R4-Block SATZSPIEGEL ist
-   tot, räume ihn»), ist eingelöst — der Block und seine vier `@media print`-
-   Regeln sind ersatzlos gestrichen (Suchwort «ZEILENFORM: DIE ZWEI REGELN»).
-   Stehen geblieben sind nur `.lr-text` und `.lr-reg`, die auch die Zeilenform
-   braucht.
-
-   ── (a) DER ARTIKELKOPF: RANDTITEL LINKS, FASSUNG KLEIN DANEBEN ────────────── */
-/* D40 (7.9.2026): der Kopf trägt nur noch den Randtitel — die Fassung steht in
-   der Funktionszeile am Artikelende. `justify-content: space-between` und
-   `gap: 1rem` sind damit gegenstandslos (sie verteilten ZWEI Kinder) und
-   gestrichen statt stehengelassen (§17-Gegengewicht); `display:flex` und die
-   Baseline bleiben, damit die Kopfzeile ihre gemessene Höhe behält. */
-.lr7-kopf {
-  display: flex;
-  align-items: baseline;
-  margin-bottom: 0.125rem;
-}
-.lr7-kopf-titel { min-width: 0; }
-/* Der Randtitel des Artikels (die Sachüberschrift) in der Lese-Serife und
-   kursiv — dieselbe Auszeichnung, die bis R6 die Marginalie trug (Referenzbild
-   `.artikel .rand .rt`). Die Vorfahren-Stufen bleiben in der Grotesk: zwei
-   Stimmen, wie bisher (Design-Grundlage Kap. 2.1). */
-.lr7-kopf-titel .lr-blatt {
-  font-family: var(--font-serif), Georgia, serif;
-  font-style: italic;
-  /* KEIN eigenes `font-weight`. Das Referenzbild setzt die 150-px-Marginalie auf
-     500; im Artikelkopf steht dieselbe Sachüberschrift aber auf voller Breite und
-     unter der Ä7-Stufe (13 px semibold ink-800, `e2e/gesetze-marginalie`). Zwei
-     Gewichte für EINE Rolle wären eine zweite Wahrheit (§5) — Familie und Schnitt
-     kommen von hier, das Gewicht bleibt, wo es abgenommen ist. */
-}
-/* ── W2·24-D40 (David 7.9.2026) · HIER STAND `.lr7-fassung` ────────────────
-   Wörtlich: «und wieso ist fassung nicht auch unten am artikel?». Der kleine
-   rechte Kopf-Slot mit «Gilt seit …» (Archivo 12, ink-500, `flex: 0 0 auto`)
-   und die dazugehörige W2·24-CI-Reserve
-   (`.lr7-fassung [data-hist-slot]:empty::before`, das nicht-brechende
-   Leerzeichen gegen die Baseline-Falle) sind ERSATZLOS gestrichen, nicht
-   bewacht (§17-Gegengewicht). Beide hatten genau EINEN Gegenstand — den Slot im
-   Artikelkopf —, und den gibt es seit D40 nicht mehr: die Fassung ist eine
-   Rubrik der Funktionszeile am Artikelende.
-
-   DIE BELEGE ALTERN NICHT (§0 Ziff. 2b). Die CI-Messung vom 6.9.2026 (BGBM
-   Art. 2, `.lr7-kopf` 31.55 px leer gegen 24.00 px gefüllt, Artikel 3 sprang
-   3'077 → 3'069 px) bleibt richtig für ihren Stand; sie steht unverändert im
-   Commit e2ac7def9 und im Vollzugsvermerk. Sie wird hier nicht nachgeführt,
-   sondern gegenstandslos: ohne zweites Kind gibt es im Kopf keine
-   Baseline-Verteilung mehr, gegen die eine Zeilenbox zu reservieren wäre. */
-
-/* ── (b) DIE BEZÜGE-ZEILE: EINGEKLAPPT EINE ZEILE ─────────────────────────── */
-/* W2·24-D34 (David 7.9.2026): die Zeile steht am ARTIKELENDE, unter dem letzten
-   Absatz und dem Fussnoten-Apparat — nicht mehr direkt unter der Artikelnummer.
-   Dort braucht sie eine eigene Grenze nach oben, sonst klebt sie am Fliesstext,
-   den sie nicht mehr fortsetzt. Es ist die LEISESTE Rolle des Linien-Kanons
-   (`--rule-soft`, dieselbe wie am Rubrik-Strich darunter), nicht der
-   Artikel-Trenner: der trennt ZWEI Artikel, diese hier trennt den Wortlaut von
-   seinem Apparat. Eine Linie, kein Kasten und keine Fläche (F0.6). Der Abstand
-   davor ist grösser als der dahinter — die Zeile gehört nach unten zu dem, was
-   sie aufklappt, nicht nach oben zum Wortlaut. */
-.lr7-bez {
-  margin: 1rem 0 0;
-  border-top: 1px solid var(--rule-soft);
-  padding-top: 0.5rem;
-}
-/* D35-F1: die Zeile war bis D34 ein `<summary>` mit EINEM Zustand für alle
-   Rubriken. Sie ist jetzt eine Reihe: links das Wort «Bezüge» und je Rubrik ein
-   eigener Griff, rechts die Artikel-Aktionen. Cursor, Fokusring und Hover
-   sitzen darum an den GRIFFEN (`.lc-btn-mini`), nicht mehr an der Zeile — sie
-   selbst ist kein Bedienelement mehr. */
-.lr7-bez-zeile {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.75rem;
-  line-height: 1.5rem; /* = min-h-beiwerk: die Zeile ist so hoch wie eine Chip-Zeile */
-  color: var(--ink-500);
-}
-/* Registerfarben-Marke je Rubrik: derselbe 3-px-Strich, der bis R6 am
-   `.lr-notiz-titel` stand — die einzige Farbe am Artikel. Er sitzt seit D35-F1
-   auf der linken Kante des Mini-Knopfes: die Haarlinie ringsum ist die
-   Affordanz («das hier klappt auf»), die kräftigere linke Kante bleibt die
-   Registerauskunft. Zwei Aufgaben, eine Linie, kein Kasten (F0.6). */
-.lr7-bez-marke {
-  gap: 0.25rem;
-  border-left-width: 3px;
-  border-left-color: var(--ink-900);
-  white-space: nowrap;
-  color: var(--ink-600);
-}
-.lr7-bez-marke[aria-expanded="true"] { color: var(--ink-900); }
-/* Die Aktionen des Artikels stehen am rechten Ende derselben Zeile; @390 (oder
-   sobald die Rubriken die Breite füllen) rutschen sie auf die nächste Zeile —
-   `margin-left: auto` schiebt sie dort nicht aus dem Bild, weil der Umbruch
-   vorher greift. Dauerhaft sichtbar: keine Deckkraft, keine Hover-Kette. */
-.lr7-bez-aktionen {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: auto;
-}
-/* ══ W2·24-D35-F2 (Nachtrag David 7.9.2026) · «alles einzelne abwählen» ══════
-   Davids Wortlaut: «man soll mittels ansicht alles einzelne abwählen können».
-   Die Wahl steht im Ansicht-Menü (`v3/LeserRubrikenWahl.tsx`) und landet als EIN
-   Attribut am <html> (`leserOptionen.ts`, `data-fuss-aus`).
-
-   WARUM CSS UND NICHT REACT (§15): der Erlass OR trägt 1686 Artikel. Ein Abo je
-   Artikel wären 1686 Neu-Renderings je Klick — dieselbe Rechnung, an der schon
-   der gemerkte Aufklapp-Zustand der Zeile gefallen ist (D35-F1). Der Umschalter
-   rendert so nur die fünf Menüzeilen neu.
-
-   WARUM DAS ATTRIBUT DIE ABGEWÄHLTEN TRÄGT: der Grundzustand ist «alles steht»
-   und damit die LEERE Zeichenkette; `[data-fuss-aus*="r"]` trifft dann nichts.
-   Mit den GEWÄHLTEN hätte die Regel `html:not([data-fuss-an*="r"])` lauten
-   müssen — und die greift auch, solange es das Attribut noch gar nicht gibt,
-   also am prerenderten HTML VOR dem Bündel: der Leser sähe für einen Moment
-   einen Artikel ganz ohne Funktionszeile. So bleibt der Grundzustand ohne jede
-   Regel und das ausgelieferte Markup byte-gleich (R6/§6).
-
-   ZÄHLER UND INHALT FALLEN GEMEINSAM. Eine Rubrik, deren Griff verschwindet und
-   deren Block bliebe, wäre ein Block ohne Weg zurück; ein Griff ohne Block wäre
-   die Zusage einer Liste, die nicht kommt (§8, derselbe Mangel wie M-6 der
-   D35-Untersuchung). `display:none` nimmt den Griff zugleich aus Tab-Reihenfolge
-   und Screenreader-Baum — abgewählt heisst abgewählt, nicht «unsichtbar da».
-
-   CLS: klick-getrieben (Reflow binnen 500 ms nach der Eingabe, input-exkludiert),
-   nichts wird nachgeladen und kein Artikel neu gerendert (§15). */
-/* D40 · `f` = Fassung, die sechste Rubrik. Sie steht in derselben Liste, weil
-   sie dieselbe Frage beantwortet («steht das an meinem Artikel?»). Was sie NICHT
-   ersetzt: die Dreier-Wahl `data-vermerke` weiter oben — die entscheidet, ob es
-   überhaupt eine Fassungs-Auskunft gibt; `f` wählt innerhalb davon. */
+/* (b) W2·24-D35-F2/D40 · Rubriken-Wahl im Ansicht-Menü (`data-fuss-aus`,
+   `leserOptionen.ts`). CSS statt React (§15): 1686 Artikel im OR, ein Abo je
+   Artikel wären 1686 Neu-Renderings je Klick. Das Attribut trägt die
+   ABGEWÄHLTEN — der Grundzustand ist leer, braucht keine Regel, und das
+   prerenderte Markup bleibt byte-gleich. Griff und Block fallen gemeinsam
+   (§8: kein Griff ohne Liste, kein Block ohne Rückweg). */
 html[data-fuss-aus*="f"] .lc-leser .lr7-bez-marke[data-reg="f"],
 html[data-fuss-aus*="f"] .lc-leser .lr7-bez-block[data-reg="f"],
 html[data-fuss-aus*="r"] .lc-leser .lr7-bez-marke[data-reg="r"],
@@ -4174,54 +3998,18 @@ html[data-fuss-aus*="w"] .lc-leser .lr7-bez-block[data-reg="w"],
 html[data-fuss-aus*="a"] .lc-leser .lr7-bez-aktionen {
   display: none;
 }
-/* ══ W2·26/Z1 (Mandat David 11.9.2026) · DAS WORT «BEZÜGE» IST GEFALLEN ═════
-   Hier standen fünf Regeln, die EIN Wort in der Zeile ein- und ausblendeten:
-   `.lc-leser .lr7-bez-wort { display: none }` plus vier Anschalt-Zeilen über
-   `html:not([data-fuss-aus*="…"]) … [data-bez-marken*="…"]`. Ihre Herleitung
-   (Anschalt- statt Ausschalt-Liste, kein `:has()` über 1686 Artikel, der Befund
-   `d35-f2-c` an ZPO Art. 272) bleibt als datierter Beleg im Git-Verlauf dieser
-   Datei und in `abnahme/design-identitaet/D35-F2-KOPF.md` stehen — sie war für
-   ihren Stand richtig (§0 Ziff. 2b, nicht nachgeführt).
-
-   DAS WORT SELBST GIBT ES NICHT MEHR (`parts/Funktionszeile.tsx`, Z1): es war
-   eine Überschrift über vier Marken, die ihren Gegenstand bereits im Wort
-   tragen («11 Entscheide», «6 Verweise»). Mit dem Wort fallen die Regeln, die
-   es davor bewahren mussten, über einer leeren Liste zu lügen — nicht das Wort
-   wird bewacht, es wird gestrichen (§17-Gegengewicht).
-
-   `data-bez-marken` BLEIBT am Wurzel-Element: es ist seit D35-F2 die
-   maschinenlesbare Auskunft «welche Rubriken führt dieser Artikel» und wird von
-   den Sonden gelesen. Nur sein CSS-Leser ist weg. ════════════════════════════ */
-/* Alles abgewählt ⇒ die Zeile selbst geht, samt ihrer Trennlinie und ihrem
-   Abstand. Eine leere Linie unter jedem Artikel wäre ein Rahmen ohne Inhalt
-   (F0.6). Der Vergleich ist EXAKT, nicht `*=`: die Buchstaben stehen immer in
-   der kanonischen Reihenfolge (`setzeFussRubriken` normalisiert, §2).
-   D40: die Kette heisst seither `frmgwa` — `f` steht vorn, weil die Rubrik
-   «Fassung» vorn in der Zeile steht (`../leserOptionen`, `FUSS_RUBRIKEN`). */
+/* Alles abgewählt ⇒ die Zeile geht samt Linie (eine leere Linie unter jedem
+   Artikel wäre ein Rahmen ohne Inhalt, F0.6). EXAKTER Vergleich: die Buchstaben
+   stehen kanonisch geordnet (`setzeFussRubriken`, §2). */
 html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
   display: none;
 }
-/* D35-F2 · «im Blatt öffnen ›» am Fuss der aufgeklappten Rubrik «Entscheide».
-   Eine eigene Zeile unter der Liste, nicht ein Anhängsel an ihre letzte —
-   sonst läse er sich als Teil des letzten Entscheids. */
-.lr7-bez-nebengriff { display: inline-flex; margin-top: 0.5rem; }
-.lr7-bez-marke[data-reg="r"] { border-left-color: var(--reg-r); }
-/* W2·24-R6c: die Rubrik «Materialien» hat mit der Zähl-Datei eine echte Zahl
-   bekommen und darum auch ihre Registerfarbe (dieselbe Farbe wie überall sonst;
-   die Vierer-Leiter r/m/g/w ist die eine Landkarte, §5). */
-.lr7-bez-marke[data-reg="m"] { border-left-color: var(--reg-m); }
-.lr7-bez-marke[data-reg="g"] { border-left-color: var(--reg-g); }
-/* D40 · «Fassung» trägt den Registerstrich der GESETZE: die Fassungshistorie ist
-   Auskunft über den Erlass selbst, nicht über eine fremde Gattung. Eine sechste
-   Farbe für dieselbe Vierer-Leiter wäre eine zweite Legende (§5). */
-.lr7-bez-marke[data-reg="f"] { border-left-color: var(--reg-g); }
-.lr7-bez-marke[data-reg="w"] { border-left-color: var(--reg-w); }
-/* Der Pfeil steht direkt hinter der letzten Marke, nicht am Zeilenende: er
-   gehört zur Aufzählung («… · Rechner ›»), nicht an den rechten Rand — dort
-   löste er sich optisch von dem, was er aufklappt (gesehen am Bild r6b-1440,
-   6.9.2026). */
+
+/* (c) GETEILT mit `src/components/entstehung/*` (Pfeil, Klammer) und mit
+   `parts/ArtikelDossier.tsx`/`ArtikelNachbarn.tsx` (Block, Skelett) — sie
+   ziehen mit W2·29 S5 bzw. REST um. Die Klammer links (`--rule-artikel`) sagt
+   «gehört zu diesem Artikel», der Registerstrich am Block «welche Rubrik». */
 .lr7-bez-pfeil { display: inline-block; transition: transform var(--dur-fast, 120ms) var(--ease, ease); }
-.lr7-bez-marke[aria-expanded="true"] .lr7-bez-pfeil { transform: rotate(90deg); }
 .lr7-bez-inhalt {
   display: grid;
   gap: 0.75rem;
@@ -4229,31 +4017,14 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
   padding-left: 0.5rem;
   border-left: 3px solid var(--rule-artikel);
 }
-.lr7-bez-block[data-reg] { min-width: 0; }
-/* D35-F1 · das Skelett der wartenden Rubrik. Die reservierte HÖHE steht als
-   `min-h-bez-skelett` in `tailwind.config.js` — Hausform für Höhen-
-   Reservierungen (`beiwerk`, `titel-2z`), und index.css bleibt frei von rohen
-   min-height-Zahlen (F9, `tap-ziel-token.test.ts`). Hier steht nur, dass das
-   Skelett eine eigene Zeile ist. */
-.lr7-bez-skelett { display: block; }
-
-/* ── D30 (David 6.9.2026) · DER AUFGEKLAPPTE APPARAT ────────────────────────
-   Befund: die Zeile zählte «11 Entscheide» und zeigte beim Aufklappen nur den
-   Rechnen-Block. Der Bau dazu steht in `parts/Funktionszeile.tsx` und
-   `v3/panelModell.ts`; hier steht nur, wie das Aufgeklappte AUSSIEHT.
-
-   REGISTERSTRICH JE RUBRIK statt einem für alle: die Klammer links
-   (`.lr7-bez-inhalt`, `--rule-artikel`) sagt «das gehört zu diesem Artikel».
-   Welcher ART ein Block ist, sagt seither nur das Wort darüber. Der Strich am
-   Block trägt die Registerfarbe, die die Marke in der Zeile schon führt
-   (`--reg-r/m/g/w`, dieselben Token, §5) — die Rubrik in der Kopfzeile und ihr
-   Block darunter sind damit sichtbar dasselbe Ding. Kein Kasten, kein
-   Hintergrund: eine Linie, wie überall im Haus. */
-.lr7-bez-block[data-reg] { padding-left: 0.625rem; border-left: 2px solid var(--rule-soft); }
+.lr7-bez-block[data-reg] { min-width: 0; padding-left: 0.625rem; border-left: 2px solid var(--rule-soft); }
 .lr7-bez-block[data-reg="r"] { border-left-color: var(--reg-r); }
 .lr7-bez-block[data-reg="m"] { border-left-color: var(--reg-m); }
 .lr7-bez-block[data-reg="g"] { border-left-color: var(--reg-g); }
 .lr7-bez-block[data-reg="w"] { border-left-color: var(--reg-w); }
+/* Die reservierte HÖHE des Skeletts steht als `min-h-bez-skelett` in
+   `tailwind.config.js` (F9); hier nur, dass es eine eigene Zeile ist. */
+.lr7-bez-skelett { display: block; }
 
 /* ═══ W2·5m · DIE EINZELARTIKEL-ANSICHT (FAHRPLAN-LESER-V3 Kap. 15) ═════════
    Auftrag David 14.9.2026, D-E5 wörtlich: «achte darauf dass wir eine gute und
@@ -4383,26 +4154,6 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
 /* Die Registerfarbe wandert an die Titelzeile, sobald sie offen ist: der Griff
    und sein Block sind dann sichtbar dasselbe Ding. */
 .lr7-dossier-block .lr7-bez-block { margin: 0 0 0.5rem 0.75rem; }
-
-/* D30 · Ein Entscheid-Eintrag der aufgeklappten Liste: Zitierung (Chip) und
-   darunter die amtliche Kurzregeste. Der Chip bleibt, was er ist — die Regeste
-   hängt an ihm, nicht neben ihm, darum `display: grid` mit `justify-items:
-   start` statt einer Flex-Zeile (sonst zöge der Chip die Regeste auf seine
-   Höhe). Zwei Zeilen sind der Deckel: die Kurzregeste des Shards läuft
-   gelegentlich über 300 Zeichen, und eine Liste, in der ein Eintrag acht Zeilen
-   hoch ist, ist keine Liste mehr. Wer mehr will, öffnet den Entscheid (Klick)
-   oder den Hover-Kasten, der sie vollständig führt. */
-.lr7-bez-eintrag { display: grid; justify-items: start; gap: 0.125rem; min-width: 0; }
-.lr7-bez-regeste {
-  font-family: var(--font-serif), Georgia, serif;
-  font-size: 0.8125rem;
-  line-height: 1.45;
-  color: var(--ink-600);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 
 /* ═══ W2·24-R12A · ÜBERSICHTS-KÖPFE (Präfix `.ub-`, additiv am Dateiende) ═════
    D22 (David 6.9.2026, Bild /gesetze @~1160): «hier hat es wieder komische

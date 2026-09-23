@@ -4,38 +4,16 @@ import { NEUER_TAB } from '../../../lib/benennung';
 import { zitatMitAusweis, heuteIso } from '../../../lib/format';
 import { urlMitHash } from '../../../lib/liveUrlSync';
 
-// ═══ W2·24-D35-F1 · DIE AKTIONEN DES ARTIKELS ═══════════════════════════════
+// ═══ DIE AKTIONEN DES ARTIKELS (Inventar 2.3.10) ═════════════════════════════
 //
-// Entscheid David 7.9.2026 (Variante A des D35-Vorschlags): was für GENAU
-// DIESEN Artikel gilt, steht am Artikelende in EINER Funktionszeile — links die
-// Rubriken mit ihren Zahlen, rechts diese Aktionen. Der Erlass-Kopf behält, was
-// für den ganzen Erlass gilt.
-//
-// ── ZWEI BEFUNDE, DIE HIER ZUSAMMENFALLEN ──────────────────────────────────
-// (1) UNSICHTBAR BIS ZUM HOVER. Bis D35 standen «Zitat · Link · Amtliche
-//     Fassung ↗» in der Artikel-KOPFZEILE unter `opacity-0`, sichtbar erst bei
-//     Hover/Fokus/Touch (gemessen 7.9.2026, D35-Untersuchung Teil 1b: Deckkraft
-//     0). Eine Aktion, die man nur findet, wenn man mit der Maus zufällig
-//     darüberfährt, gibt es auf dem Telefon praktisch nicht. In der Fusszeile
-//     stehen sie DAUERHAFT — kein `opacity-0`, keine Hover-Kette.
-// (2) EIN ORT. Die Kopf-Variante ist mit D35-F1 ERSATZLOS gelöscht, nicht
-//     zusätzlich gebaut (§5, §17-Gegengewicht): zwei Orte für dieselbe Aktion
-//     wären genau die Dopplung, die dieser Schritt abräumt.
-//
-// ── D44 (David 7.9.2026) · «⧉ ARTIKEL DANEBEN» IST ERSATZLOS GESTRICHEN ────
-// Die Zeile trug testweise eine vierte Aktion, die diesen Artikel per
-// `usePaneSteuerung`/`naechsteInstanz` in ein zweites Fenster stellte
-// (Herleitung, Messung `bb99937aa` und Nachfix: Git-Historie dieser Datei
-// sowie `abnahme/design-identitaet/D35-F1-FUSSZEILE.md` §Nachzug). David
-// wollte sie nicht — ersatzlos entfernt, kein zweiter Mechanismus dafür
-// gebaut (§17-Gegengewicht). Die Zeile trägt seither nur noch die drei
-// Aktionen, die es schon vor D35-F1 gab.
-//
-// FUNKTION, aria und title der drei bestehenden Knöpfe sind WORT FÜR WORT
-// unverändert übernommen (§6: der Schritt verschiebt und macht sichtbar, er
-// ändert keine Wirkung). Auch die LM-202-Regel wandert unverändert mit: der
-// «Link»-Knopf schreibt den Anker in die Adresse, der «Zitat»-Knopf nicht, und
-// im SEKUNDÄREN Pane schreibt keiner von beiden.
+// «Zitat · Link · Amtliche Fassung ↗» am rechten Ende der Funktionszeile
+// (`./Funktionszeile.tsx`, D35-F1, David 7.9.2026) — EIN Ort; die frühere
+// Kopf-Variante unter `opacity-0` ist ersatzlos gelöscht (§5). D44: die
+// vierte Aktion «⧉ Artikel daneben» ist gestrichen. Funktion, aria und title
+// sind seit D35-F1 unverändert, ebenso die LM-202-Regel: nur «Link» schreibt
+// den Anker in die Adresse, und im SEKUNDÄREN Pane keiner von beiden.
+// @390 (oder sobald die Rubriken die Breite füllen) rutscht die Gruppe auf die
+// nächste Zeile; `ml-auto` schiebt sie dort nicht aus dem Bild.
 
 export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich }: {
   /** Artikel-Token (`e.artikel`) — der Anker `#art-<token>`. */
@@ -91,19 +69,19 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich 
   };
 
   return (
-    <span className="lr7-bez-aktionen">
+    <span className="lr7-bez-aktionen ml-auto inline-flex flex-wrap items-center gap-2">
       <button type="button" onClick={() => kopiere('zitat')}
-        className="lc-btn-mini text-micro text-ink-500 hover:text-brass-700"
+        className="lc-btn-mini text-micro text-ink-500 hover:text-ink-900"
         aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>
       <button type="button" onClick={() => kopiere('link')}
-        className="lc-btn-mini text-micro text-ink-500 hover:text-brass-700"
+        className="lc-btn-mini text-micro text-ink-500 hover:text-ink-900"
         aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
       {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
           target/rel wie die übrigen amtlichen Links, §12.4). Ä110: EINE
           Schreibung für EIN Ziel — sichtbarer Text = aria-label = title. */}
       {amtlich && (
         <a href={amtlich} target="_blank" rel="noopener noreferrer"
-          className="lc-btn-mini text-micro text-ink-500 hover:text-brass-700 no-underline whitespace-nowrap"
+          className="lc-btn-mini text-micro text-ink-500 hover:text-ink-900 no-underline whitespace-nowrap"
           aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen ${NEUER_TAB}`}
           title="Amtliche Fassung an genau dieser Stelle (Fedlex)">Amtliche Fassung ↗</a>
       )}

@@ -170,7 +170,7 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
       <GruppenKopf dicht als="span" titel={KLASSE_KURZ[status]} zahl={zahlZeile}
         title={kopfTitel}
         className={form === 'rand'
-          ? 'lr-notiz-kopf shrink-0'
+          ? 'shrink-0'
           : 'shrink-0 whitespace-nowrap sm:min-w-[11rem]'} />
       <div
         data-bezug-linie={status}
@@ -220,12 +220,17 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
           // `title` und im Hover-Kasten, war also für Tastatur und Touch
           // unsichtbar. Sie ist die amtliche Kurzregeste aus dem Shard, wörtlich
           // übernommen (§7) — hier nur angezeigt, nicht gekürzt oder gebildet;
-          // die optische Begrenzung auf zwei Zeilen macht `.lr7-bez-regeste`.
+          // die optische Begrenzung auf zwei Zeilen macht `line-clamp-2`: eine
+          // Liste, in der ein Eintrag acht Zeilen hoch ist, ist keine Liste
+          // mehr (Kurzregesten laufen über 300 Zeichen). Das Grid mit
+          // `justify-items-start` hängt die Regeste UNTER den Chip, statt dass
+          // eine Flex-Zeile den Chip auf ihre Höhe zöge. `.lr7-bez-eintrag`/
+          // `-regeste` sind Sonden-Anker (`leser-bezuege-inhalt-d30`).
           if (form !== 'rand') return kante;
           return (
-            <span key={b.key} className="lr7-bez-eintrag">
+            <span key={b.key} className="lr7-bez-eintrag grid min-w-0 justify-items-start gap-0.5">
               {kante}
-              {b.regesteKurz && <span className="lr7-bez-regeste">{b.regesteKurz}</span>}
+              {b.regesteKurz && <span className="lr7-bez-regeste line-clamp-2 font-serif text-leser-rand leading-snug text-ink-600">{b.regesteKurz}</span>}
             </span>
           );
         })}
@@ -251,7 +256,7 @@ const StatusGruppe = memo(function StatusGruppe({ status, kanten, gesamtRoh, fil
             onClick={weitere}
             title={`${zahl(rest)} weitere ${STATUS_LABEL[status]} laden`}
             aria-label={`${zahl(Math.min(PRO_SCHRITT, rest))} weitere laden — ${zahlZeile} gezeigt, ${STATUS_LABEL[status]}`}
-            className="lc-overline shrink-0 whitespace-nowrap rounded px-1.5 py-0.5 transition-colors hover:bg-brass-100/40 hover:text-brass-700"
+            className="lc-overline shrink-0 whitespace-nowrap rounded px-1.5 py-0.5 transition-colors hover:bg-brass-100/40 hover:text-ink-900"
           >
             weitere <span className="num">{Math.min(PRO_SCHRITT, rest)}</span>
           </button>

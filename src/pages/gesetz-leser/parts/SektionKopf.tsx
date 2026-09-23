@@ -94,7 +94,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
     <div ref={refCb} data-sek={s.id} data-normtext-linie className={`group/sekkopf nt-anker ${mt} ${regel}`}>
       {pre && (
         <button type="button" onClick={onToggle} aria-expanded={offen} className="group/sek block text-left">
-          <span className="lc-overline group-hover/sek:text-brass-700">{pre}</span>
+          <span className="lc-overline group-hover/sek:text-ink-900">{pre}</span>
         </button>
       )}
       <span className="mt-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
@@ -103,10 +103,10 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
             darum wirkte es, als ginge es nicht. Messing-Akzent macht es als
             Steuerelement erkennbar. */}
         <button type="button" onClick={onToggle} aria-expanded={offen} className="group/sek flex min-w-0 items-baseline gap-x-2 text-left">
-          <span className={`shrink-0 w-4 text-body-s transition-colors ${offen ? 'text-brass-600' : 'text-ink-500'} group-hover/sek:text-brass-700`}>{offen ? '▾' : '▸'}</span>
+          <span className={`shrink-0 w-4 text-body-s transition-colors ${offen ? 'text-brass-600' : 'text-ink-500'} group-hover/sek:text-ink-900`}>{offen ? '▾' : '▸'}</span>
           {/* A30: bis/ter-Suffix des Randtitel-Enumerators hochgestellt (margLabel);
               No-op bei Sachtiteln ohne Enumerator-Suffix. */}
-          <span className={`lc-wortumbruch ${titelFont} ${titelStil} group-hover/sek:text-brass-700`}>{margLabel(rest || s.label)}</span>
+          <span className={`lc-wortumbruch ${titelFont} ${titelStil} group-hover/sek:text-ink-900`}>{margLabel(rest || s.label)}</span>
         </button>
         {sekFn && (
           <span className="shrink-0" data-fn-marker>
@@ -137,7 +137,7 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
             bestehenden Titelzeile; target/rel wie bestehende amtliche Links. */}
         {amtlichUrl && (
           <a href={amtlichUrl} target="_blank" rel="noopener noreferrer"
-            className="shrink-0 text-micro text-ink-500 no-underline opacity-0 transition-opacity group-hover/sekkopf:opacity-100 focus-visible:opacity-100 hover:text-brass-700 [@media(hover:none)]:opacity-100"
+            className="shrink-0 text-micro text-ink-500 no-underline opacity-0 transition-opacity group-hover/sekkopf:opacity-100 focus-visible:opacity-100 hover:text-ink-900 [@media(hover:none)]:opacity-100"
             aria-label={`Amtliche Fassung von «${s.label}» auf Fedlex öffnen ${NEUER_TAB}`}
             // Ä110 (18.8.2026): EINE Schreibung für EIN Ziel (s. ArtikelLeser).
             title="Amtliche Fassung an genau dieser Stelle (Fedlex)">Amtliche Fassung ↗</a>
