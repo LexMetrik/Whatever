@@ -71,7 +71,7 @@ export function AbrufFehler({ gegenstand, mehrzahl = false, href, linkName, onEr
         : `${gegenstand} ${verb} nicht geladen werden.`}
       {onErneut && (
         <>{' '}<button type="button" onClick={onErneut} data-abruf-erneut
-          className="lc-link text-brass-700 hover:text-brass-800">Erneut laden</button></>
+          className="lc-btn-mini text-body-s">Erneut laden</button></>
       )}
     </p>
   );

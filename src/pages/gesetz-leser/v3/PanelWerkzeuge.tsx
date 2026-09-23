@@ -19,7 +19,7 @@ import { werkzeugAnsicht, type WerkzeugZeile } from './werkzeugModell';
 // Finger nicht. Er steht jetzt in einem `<details>` je Zeile («Zuordnung»):
 // fokussierbar, antippbar, und zugeklappt kostet er eine Zeile.
 
-function Artikel({ z }: { z: WerkzeugZeile }) {
+function Zuordnung({ z }: { z: WerkzeugZeile }) {
   if (z.artikel.length === 0) return null;
   return (
     <details data-v3-werkzeug-beleg className="mt-0.5">
@@ -77,7 +77,7 @@ export function PanelWerkzeuge({ erlassKey }: { erlassKey: string }) {
                   <Link to={z.href ?? '#'} className="text-body-s font-medium text-ink-800 no-underline hover:text-ink-900">{z.titel}</Link>
                   <Art z={z} />
                 </span>
-                <Artikel z={z} />
+                <Zuordnung z={z} />
               </li>
             ))}
           </ul>
@@ -95,7 +95,7 @@ export function PanelWerkzeuge({ erlassKey }: { erlassKey: string }) {
                     <span className="text-body-s text-ink-700">{z.titel}</span>
                     <span className="lc-badge-geplant">In Vorbereitung</span>
                   </span>
-                  <Artikel z={z} />
+                  <Zuordnung z={z} />
                 </li>
               ))}
             </ul>

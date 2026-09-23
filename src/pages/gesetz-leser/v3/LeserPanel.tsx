@@ -179,9 +179,25 @@ export function LeserPanel({
           Erläuterungen · Werkzeuge» — Schriftbreite 376 px in `text-body-s`
           gegen 354 px Zeile, also nie einzeilig; in `text-xs` 322 px, mit
           `px-0.5` 342 px ≤ 354 (@390 unten: ≤ 364). Darum `text-xs`/`px-0.5`;
-          `grow` verteilt den Rest. @320 bricht die Leiste weiter um (G11). */}
+          `grow` verteilt den Rest. @320 bricht die Leiste weiter um (G11).
+          ── S6 · FÜNF REITER IN EINER ZEILE (Auftrag 23.9.2026, gemessen) ──
+          Gemessen 23.9.2026 am gebauten Stand (OR, Blatt offen; Etiketten
+          halbfett, also die breiteste Lage): Leisten-Breite 378 px (@1440 und
+          @380) bzw. 388 px (@390), davon 24 px Innenabstand. Summe der fünf
+          Etiketten in `text-body-s` 389 px (73·80·72·92·72) — passt selbst
+          OHNE jeden Abstand nicht; in `text-xs` 335 px (63·69·62·79·62).
+          Darum Stufe `xs` (12 px) mit `px-0.5` je Fach und `px-2` an der
+          Leiste: 335 + 20 = 355 ≤ 362 (@380/@1440) bzw. 372 (@390); `grow`
+          verteilt den Rest. Kürzen (Kanon-Etikett, Ä114) und stummes Scrollen
+          bleiben ausgeschlossen, `flex-wrap` bleibt der Rückfall für grosse
+          Schriftstufen. Ein kleineres Wort gibt es nicht: die Namen sind
+          Davids Entscheid vom 23.9.2026. BEWACHT: G11 prüft seit S6 zusätzlich
+          dieselbe Oberkante aller fünf Fächer @1440/@1024/@390/@380.
+          Zusammenführung (Rebase #1006 auf #1002, 23.9.2026): Name der Leiste aus
+          S6-W1a (`OEFFNER_WORT`), Leisten-Abstand `px-2` aus der halbfetten
+          Messung oben (die breitere Lage). */}
       <div ref={leisteRef} role="tablist" aria-label={`Reiter des ${OEFFNER_WORT}s`} onKeyDown={taste}
-        className="lc-scrollrand-x flex flex-wrap shrink-0 gap-y-0.5 overflow-x-auto overflow-y-hidden px-3 pt-2 [scrollbar-width:none]">
+        className="lc-scrollrand-x flex flex-wrap shrink-0 gap-y-0.5 overflow-x-auto overflow-y-hidden px-2 pt-2 [scrollbar-width:none]">
         {PANEL_REITER.map((r) => {
           const aktiv = r.id === reiter;
           return (

@@ -72,13 +72,17 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
   // seine Erwartung aus der geprüften Quelle zieht, kann nicht scheitern (§6.7).
   // Der bestehende Pfeiltasten-Weg bleibt unverändert (der Vierte steht hinten),
   // ergänzt um den Schritt bis ans neue Ende.
-  test('(b) vier Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
+  // §6.3-DEKLARATION (S6, 23.9.2026): Entscheid David AN-11 — «Anwendung» ist
+  // in «Erläuterungen» und «Werkzeuge» geteilt. FÜNF Reiter (weiterhin ein
+  // Literal); der Weg der ersten drei ist unverändert, der Pfeil läuft jetzt
+  // über «Erläuterungen» bis «Werkzeuge», das neue Ende.
+  test('(b) fünf Reiter, mit Maus und mit Pfeiltasten', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await panelAuf(page, '/gesetze/bund/STPO')
 
     const reiter = page.locator('[data-v3-panel] [role="tab"]')
-    await expect(reiter).toHaveCount(4)
+    await expect(reiter).toHaveCount(5)
     await expect(page.locator('[data-v3-panel-reiter-inhalt="entscheide"]')).toBeVisible()
 
     await page.locator('[data-v3-panel-reiter="aenderungen"]').click()
@@ -89,12 +93,15 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     await page.locator('[data-v3-panel-reiter="aenderungen"]').press('ArrowRight')
     await expect(page.locator('[data-v3-panel-reiter="materialien"]')).toHaveAttribute('aria-selected', 'true')
     await expect(page.locator('[data-v3-panel-reiter-inhalt="materialien"]')).toBeVisible({ timeout: 20_000 })
-    // Und ein Schritt weiter ⇒ «Anwendung», der neue letzte.
+    // Und weiter ⇒ «Erläuterungen», dann «Werkzeuge», der neue letzte.
     await page.locator('[data-v3-panel-reiter="materialien"]').press('ArrowRight')
-    await expect(page.locator('[data-v3-panel-reiter="anwendung"]')).toHaveAttribute('aria-selected', 'true')
-    await expect(page.locator('[data-v3-panel-reiter-inhalt="anwendung"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel-reiter="erlaeuterungen"]')).toHaveAttribute('aria-selected', 'true')
+    await expect(page.locator('[data-v3-panel-reiter-inhalt="erlaeuterungen"]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-panel-reiter="erlaeuterungen"]').press('ArrowRight')
+    await expect(page.locator('[data-v3-panel-reiter="werkzeuge"]')).toHaveAttribute('aria-selected', 'true')
+    await expect(page.locator('[data-v3-panel-reiter-inhalt="werkzeuge"]')).toBeVisible({ timeout: 20_000 })
     // Home springt zurück auf den ersten.
-    await page.locator('[data-v3-panel-reiter="anwendung"]').press('Home')
+    await page.locator('[data-v3-panel-reiter="werkzeuge"]').press('Home')
     await expect(page.locator('[data-v3-panel-reiter="entscheide"]')).toHaveAttribute('aria-selected', 'true')
     expect(fehler, fehler.join('\n')).toEqual([])
   })

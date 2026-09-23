@@ -896,6 +896,14 @@ dem erlass-lokalen Historie-Shard. Zugeklappt zeigt die Marke den Stand («Gilt 
 Zeitleiste mit den Ereignissen. Daneben gibt es ein separates Modul für
 Artikel-Revisionen sowie eine eigene Behandlung künftiger, angekündigter Fassungen.
 
+Im Erlass-Blatt (2.3.15) zeigt der Reiter **«Änderungen»** die Änderungserlasse des
+Erlasses: künftige in eigener Gruppe («tritt am … in Kraft»), sonst «in Kraft seit …»;
+«in Kraft für die Schweiz seit» wo belegt, Berichtigungs-Hinweis, Link auf die
+belegte Botschaft; die letzte Änderung des gelesenen Artikels ist markiert und oben
+genannt. Bei einem aufgehobenen Erlass steht der Nachfolger unter «Nach der
+Aufhebung», nicht als Änderung. Kantonale Erlasse: «Änderungsverläufe sind für
+kantonale Erlasse bisher nicht erfasst» (S6, 23.9.2026).
+
 **Quelle:** `public/normtext/historie/<KEY>.json`,
 `src/lib/normtext/historie-laden.ts`, `src/pages/gesetz-leser/parts/ArtikelHistorie.tsx`,
 `src/lib/verzahnung/artikel-revisionen.ts`, `public/verzahnung/artikel-revisionen/`,
@@ -929,16 +937,29 @@ Zwei Orte (die frühere «Leitfälle»-Zeile im Artikeltext mit Zeitraum-Stufen
 `bezugAuswahl.ts`, `bezuegeLaden.ts`, `bezuegeZaehler.ts`,
 `lib/rechtsprechung/bezuege.ts`.
 
-#### 2.3.8 Materialien-Verknüpfung
+#### 2.3.8 Materialien und behördliche Erläuterungen
 
-Rubrik **«Materialien»** der Funktionszeile (Entstehungsgeschichte, Botschaften,
-Vernehmlassungen, amtliche Materialien). **Dichte-Regel:** artikelscharfe Kanten
-stehen prominent (mit Fundstellen-Unterzeile, Behörden-Kürzel, Dokument-Stand),
-reine Erlass-Ebene-Kanten verschwinden hinter einem Zähler «n Dokumente auf
-Erlass-Ebene» in einem Klappelement.
+Seit S6 (Entscheid David 23.9.2026) zwei getrennte Bestände mit zwei Namen:
 
-**Quelle:** `PanelMaterialien.tsx`, `artikelMaterialienLaden.ts`,
-`src/lib/normtext/werkzeuge.ts`.
+- **Materialien = Gesetzgebung** — Reiter «Materialien» im Erlass-Blatt:
+  Botschaften des Bundesrates (Fedlex, mit Curia-Link; «führte zur Änderung AS …»
+  nur, wo ein Änderungserlass die Botschaft belegt nennt), kantonale Ratschläge und
+  Berichte an den Grossen Rat (bisher nur Basel-Stadt), Vernehmlassungen «In Arbeit»
+  (nur laufend/geplant/in Vorbereitung) und «Vernehmlassungen (abgeschlossen)» mit
+  den amtlichen Status-Etiketten (Fedlex consultation-status). §8-Zeile: maschinell
+  zugeordnet, nicht geprüft, Abdeckung, Datenstand.
+- **Erläuterungen = Behördenpraxis** — Rubrik «Erläuterungen» der Funktionszeile
+  (artikelscharf) und Reiter «Erläuterungen» im Blatt (Titel «Behördliche
+  Erläuterungen», erlass-weit): Kreisschreiben, Wegleitungen, Leitfäden,
+  Merkblätter aus den Kanten-Shards und dem kuratierten Register gemischt, ohne
+  Dubletten. Anhänge hängen an ihrem Kreisschreiben, artikelweise Wegleitungen sind
+  ein aufklappbarer Posten, Nummern natürlich sortiert. Je Dokument «Stand der
+  Veröffentlichung», Marke «maschinell», Hinweis «Dokument-Stand vor der letzten
+  Änderung von Art. N»; Ladefehler mit «Erneut laden» statt «nichts erfasst».
+
+**Quelle:** `v3/{PanelMaterialien,PanelErlaeuterungen,erlaeuterungModell,panelKontextLaden}.ts(x)`,
+`src/lib/materialien/{botschaften,vernehmlassungen,ratschlaege}.ts`,
+`artikelMaterialienLaden.ts`, `src/lib/kontext.ts`.
 
 #### 2.3.9 Funktionszeile am Artikelende — die fünf Rubriken
 
@@ -946,9 +967,9 @@ Erlass-Ebene» in einem Klappelement.
 |---|---|---|---|
 | f | Fassung / Fassungen | Gesetze | Fassungs-Zeitleiste (2.3.6); zugeklappt «Gilt seit …» statt einer Zahl |
 | r | Entscheid / Entscheide | Rechtsprechung | Leitfall- und Entscheid-Liste plus «im Erlass-Blatt öffnen ›» |
-| m | Materialie / Materialien | Materialien | Materialien-Liste |
+| m | Erläuterung / Erläuterungen | Materialien | Behördliche Erläuterungen zu diesem Artikel plus «im Erlass-Blatt öffnen ›» (Reiter «Erläuterungen») |
 | g | Verweis / Verweise | Gesetze | aufgelöste Normverweise dieses Artikels |
-| w | Rechner / Rechner | Werkzeuge | Werkzeuge an diesem Artikel; Leerzustand: «Zu dieser Bestimmung führen wir bisher keinen Rechner und keine Vorlage.» |
+| w | Werkzeug / Werkzeuge | Werkzeuge | Rechner und Vorlagen an diesem Artikel plus «im Erlass-Blatt öffnen ›» (Reiter «Werkzeuge»); Leerzustand: «Zu dieser Bestimmung führen wir bisher keinen Rechner und keine Vorlage.» |
 
 Rechts in derselben Zeile stehen die Aktionen (2.3.10). **Regeln:**
 
@@ -1048,17 +1069,20 @@ geteilten Ansicht ein Bottom-Sheet. Das Handy-Sheet schliesst auch mit der
 Zurück-Geste und mit Wischen nach unten an der Griffleiste; seine Bedienelemente
 treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» beim Reiter «Entscheide», sonst
 «Erlass-Blatt · OR», mit Schliessen-Knopf (`Esc`). Darunter die optionale
-Steckbrief-Zeile, dann die Reiter als Registerfläche — **Entscheide** (Register r),
-**Änderungen** (g), **Materialien** (m), **Anwendung** (w); der aktive steht auf
-der getönten Registerfläche mit Registerkante; die Leiste trägt bis zu fünf Reiter
-in einer Zeile (Umbruch nur bei grosser Schriftstufe oder unter 390 px, nie
-abgeschnitten). Pfeiltasten wechseln den Reiter; nur die aktive Tafel wird geladen.
-Inhalte, Filterzeile und Zähler der Tafeln wie 2.3.6–2.3.8 und 2.4. Im Druck fällt
-das Blatt weg (2.3.13).
+Steckbrief-Zeile, dann fünf Reiter als Registerfläche — **Entscheide** (Register r),
+**Änderungen** (g), **Materialien** (m, nur Gesetzgebung), **Erläuterungen** (m,
+Behördenpraxis), **Werkzeuge** (w; eine Zeile je Rechner/Vorlage mit den Artikeln
+und aufklappbarer Zuordnung, geplante unter «In Vorbereitung» ohne Link); der aktive
+steht auf der getönten Registerfläche mit Registerkante; alle fünf passen in eine
+Zeile (Umbruch nur bei grosser Schriftstufe oder unter 380 px, nie abgeschnitten).
+Pfeiltasten wechseln den Reiter; nur die aktive Tafel wird geladen. Inhalte,
+Filterzeile und Zähler der Tafeln wie 2.3.6–2.3.8 und 2.4. Im Druck fällt das Blatt
+weg (2.3.13).
 
 **Persistenz:** offen/zu und aktiver Reiter je Erlass in `sessionStorage`
 (Schlüssel `lm-erlass-blatt:<Erlass>`), nur im Hauptfenster — nach Zurück oder
-Neuladen steht das Blatt wieder so da, wie man es verliess.
+Neuladen steht das Blatt wieder so da, wie man es verliess. Ein gemerkter Reiter
+«Anwendung» (vor S6) öffnet dessen Nachfolger «Erläuterungen».
 
 **Einzel-Artikel** (`?ansicht=artikel`; «Ganzer Erlass» ist Vorgabe und steht nie
 in der Adresse): genau eine Bestimmung. Darüber der Gliederungspfad — jede Stufe
@@ -1083,9 +1107,9 @@ zugeklappten Übersicht.
 | Ziel | Mechanik | Quelle |
 |---|---|---|
 | Rechtsprechung | Rubrik «Entscheide» (Zahl + Liste); Sekundär-Griff «im Erlass-Blatt öffnen ›» öffnet das Erlass-Blatt auf dem Reiter «Entscheide» und klappt die Rubrik zu; inline die Leitfall-Zeile mit BGE-Chips | `ArtikelLeser.leitfaelle.tsx`, `PanelEntscheide.tsx`, `RechtsprechungLink.tsx` |
-| Materialien | Rubrik «Materialien» | `PanelMaterialien.tsx`, `artikelMaterialienLaden.ts` |
+| Materialien / Erläuterungen | Rubrik «Erläuterungen» (Behördenpraxis) mit «im Erlass-Blatt öffnen ›»; die Gesetzgebung (Botschaften, Vernehmlassungen) im Blatt-Reiter «Materialien» | `PanelMaterialien.tsx`, `PanelErlaeuterungen.tsx`, `artikelMaterialienLaden.ts` |
 | andere Normen (Bund→Bund, Bund→Kanton) | Inline-Verweis-Linker im Fliesstext und in Fussnoten. Ein Klick öffnet das **Norm-Popover** (Wortlaut des Zielartikels, Stand, Live-Link, «Wird zitiert von» / «Legt aus») oder springt bei internem Bestand direkt in den Leser. Fehlt der Zielerlass im Haus, bleibt der Fedlex-Link als Rückfall. | `src/components/NormText.tsx`, `NormPopover.tsx`, `KantonNormText.tsx`, `src/lib/fedlex*.ts` |
-| Rechner / Vorlagen | Rubrik «Rechner»; Leerzustand-Satz, wenn kein Werkzeug hinterlegt ist | `ArtikelLeser.bezuegeFuss.tsx`, `randNotizWerkzeuge.ts` |
+| Rechner / Vorlagen | Rubrik «Werkzeuge» mit «im Erlass-Blatt öffnen ›»; Leerzustand-Satz, wenn kein Werkzeug hinterlegt ist | `ArtikelLeser.bezuegeFuss.tsx`, `PanelWerkzeuge.tsx`, `randNotizWerkzeuge.ts` |
 | Geteilte Ansicht («⧉ Daneben öffnen») | Öffnet denselben oder einen anderen Erlass im zweiten Fenster; nur ab dem grossen Breakpoint und bei freier Kapazität | `LeserPanelOeffner.tsx`, `ReiterAktion.tsx` |
 | Kantonale Quellenangabe | Link auf die amtliche kantonale Gesetzessammlung; Wappen-Icon je Kanton | `src/components/KantonQuelleLink.tsx`, `KantonWappen.tsx` |
 

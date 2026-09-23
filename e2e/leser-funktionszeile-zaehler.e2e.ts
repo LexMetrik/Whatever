@@ -146,7 +146,9 @@ test.describe('W2·26 · Funktionszeile zählt aus dem Struktur-Sidecar', () => 
     await expect(page.locator('#art-1')).toBeVisible({ timeout: 30_000 });
     const marke = page.locator('#art-15_a .lr7-bez-marke[data-reg="m"]');
     expect(await marke.count(), 'Materialien-Marke an ARG 15a in der ersten Runde').toBe(1);
-    expect((await marke.first().innerText()).replace(/\s+/g, ' ')).toMatch(/1\s*Materialie/);
+    // S6 (23.9.2026, deklariert §6.3): die Rubrik heisst wie ihr Blatt-Reiter
+    // «Erläuterungen» (Entscheid David AN-10/AN-11); Zahl und Quelle unverändert.
+    expect((await marke.first().innerText()).replace(/\s+/g, ' ')).toMatch(/1\s*Erläuterung/);
     await page.waitForTimeout(1_500);
     expect(schwer, `schwere Shards geladen: ${schwer.join(', ')}`).toEqual([]);
     expect(zaehl, `Zähl-Fetches: ${zaehl.join(', ')}`).toEqual([]);
