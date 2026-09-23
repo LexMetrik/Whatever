@@ -140,9 +140,18 @@ export function baueProjektion(
   };
 }
 
-/** Serialisierung = die ausgelieferte Byte-Folge (Determinismus-Vergleich). */
+/**
+ * Serialisierung = die ausgelieferte Byte-Folge (Determinismus-Vergleich).
+ *
+ * KOMPAKT seit 23.9.2026 (S6-D1, W2·29-WERKBANK-LESER): die Revisions-Sidecars führen seit
+ * Pfad (c) auch Sammel-/Mantelerlasse anderer SR; damit lösen 3899 statt ~1660 Fussnoten-oc
+ * auf, und die Projektion wuchs eingerückt auf 1920,8 KB über den Deckel 1536 KB
+ * (check:entstehung). Gemessen: dieselben Daten kompakt 1426,5 KB. Nutzlast statt Deckel
+ * (§15); Logikverlust-Bewertung: keiner — nur Leerraum, Inhalt und Schlüsselreihenfolge
+ * byte-identisch geparst.
+ */
 export function serialisiereProjektion(p: EntstehungProjektion): string {
-  return JSON.stringify(p, null, 2) + '\n';
+  return JSON.stringify(p) + '\n';
 }
 
 /** Verzeichnis der ausgelieferten Projektionen. */
