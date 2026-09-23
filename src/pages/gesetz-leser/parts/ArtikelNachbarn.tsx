@@ -54,7 +54,7 @@ import { leerstellenWort } from '../../../lib/normtext/darstellung';
 // `<Link to>`; beides sind ECHTE Links, beide lassen sich im neuen Reiter
 // öffnen und kopieren — der Grund, aus dem hier von Anfang an kein `<button>`
 // steht (Block oben).
-const PFEIL_KLASSEN = 'num inline-flex items-baseline gap-1 whitespace-nowrap text-micro text-ink-500 no-underline hover:text-ink-900 hover:underline';
+const PFEIL_KLASSEN = 'num inline-flex items-baseline gap-1 whitespace-nowrap text-micro text-ink-500 no-underline hover:text-ink-900';
 
 function Pfeil({ ziel, richtung, adresse }: {
   ziel: NachbarZiel;

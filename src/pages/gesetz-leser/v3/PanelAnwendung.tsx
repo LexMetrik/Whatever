@@ -138,7 +138,7 @@ export function PanelAnwendung({ softLaw, erlassKey, ebene }: {
           <ul className="mt-0.5">
             {ressourcen.map((m) => (
               <li key={m.key} className="border-l-2 border-t border-line border-l-reg-w py-2 pl-2.5">
-                <Link to={m.pfad} className="no-underline hover:text-ink-900 hover:underline">
+                <Link to={m.pfad} className="no-underline hover:text-ink-900">
                   <span className="flex items-baseline gap-2">
                     <span className="shrink-0 text-body-s font-medium text-ink-800">
                       {m.behoerdeKuerzel} · {m.doktypLabel}{m.nummer ? ` ${m.nummer}` : ''}

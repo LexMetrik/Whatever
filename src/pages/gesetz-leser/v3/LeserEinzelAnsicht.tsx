@@ -104,7 +104,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
               {i > 0 && <span aria-hidden className="mr-1.5 text-ink-500">›</span>}
               {stufe.ersterArtikel
                 ? (
-                  <Link to={rueckweg(stufe.ersterArtikel)} className="text-inherit no-underline hover:text-ink-900 hover:underline"
+                  <Link to={rueckweg(stufe.ersterArtikel)} className="text-inherit no-underline hover:text-ink-900"
                     title={`«${stufe.label}» im ganzen Erlass lesen`}>{stufe.label}</Link>
                 )
                 : <span>{stufe.label}</span>}
@@ -179,7 +179,7 @@ function VorschauKarte({ ziel, richtung, adresse, eigen }: {
     <Link to={adresse(ziel.token)} data-vorschau={richtung}
       className={`group grid min-h-[var(--tap-ziel-komfort)] content-center gap-0.5 no-underline ${richtung === 'nach' ? 'min-[30rem]:text-right' : ''}`}
       aria-label={`${richtung === 'vor' ? 'Davor' : 'Danach'} — ${eigen} zu ${ziel.label}${ziel.marginalie ? `: ${ziel.marginalie}` : ''}${zustandsWort ? ` (${zustandsWort})` : ''}`}>
-      <span className="num text-body-s text-ink-800 group-hover:text-ink-900 group-hover:underline">
+      <span className="num text-body-s text-ink-800 group-hover:text-ink-900">
         {richtung === 'vor' && <span aria-hidden>‹ </span>}
         {ziel.label}
         {richtung === 'nach' && <span aria-hidden> ›</span>}
