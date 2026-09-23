@@ -4844,6 +4844,8 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
    Strich (F0.8, Listen-Link), Hover in Tinte. */
 .kt-gebiete { display: grid; column-gap: 1.625rem; border-bottom: 1px solid var(--rule-soft); }
 .kt-gebiete > details { border-top: 1px solid var(--rule-soft); padding: 0.5rem 0; }
+/* Klapp-Zeile als Ziel ≥ 24 px (WCAG 2.5.8, `--tap-ziel`), Board: min-height 24. */
+.kt-gebiete > details > summary { min-height: var(--tap-ziel, 24px); }
 @media (min-width: 640px) and (max-width: 1099px) {
   .kt-gebiete { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
