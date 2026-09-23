@@ -27,8 +27,6 @@ export const PHASEN: { id: Phase; titel: string; lead: string }[] = [
   { id: 'nachEintrag', titel: '4 · Nach dem Eintrag', lead: 'Pflichten ab Rechtspersönlichkeit (Art. 643 OR).' },
 ];
 
-export const ERSTELLER_LABEL = { gruender: 'Gründer:innen', notariat: 'Notariat', bank: 'Bank', revisor: 'Revisor:in' } as const;
-
 export const CHF = new Intl.NumberFormat('de-CH', { style: 'currency', currency: 'CHF', maximumFractionDigits: 0 });
 
 // Praxis-Runde (Auftrag David): Blocker sind klickbar und führen zum

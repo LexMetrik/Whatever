@@ -1,11 +1,9 @@
 import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../components/NormText';
-import { Link } from 'react-router-dom';
-import { ErgebnisSprung, Field, GruppenTitel, inputCls, ListenEditor } from '../components/vorlagen/ui';
+import { Checkbox, Field, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
-import { NormChip } from '../components/vorlagen/NormChip';
-import { MappenAnsicht, MappenGates, NotariatsHinweis, HrAmtHinweis } from '../components/vorlagen/Dokumentmappe';
+import { MappenAbschnitt, MappenAnsicht, MappenGates, MappenSeite, NotariatsHinweis, HrAmtHinweis } from '../components/vorlagen/Dokumentmappe';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import {
   keDokumentmappe,
@@ -18,11 +16,8 @@ import {
   type KeKlausel,
 } from '../lib/vorlagen/kapitalerhoehung';
 import { KANTONE } from '../lib/kantone';
-import { PflichtDisclaimer } from '../components/PflichtDisclaimer';
-import { useLocale, fedlexLokalisiert } from '../components/locale';
 import { karte } from '../lib/startseiteConfig';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
-import { SeitenTitel } from '../components/ui/SeitenTitel';
 
 // ─── Maske: Kapitalerhöhung AG/GmbH (Plan 9c, Auftrag David 7.6.2026) ────────
 // Rechtslogik in lib/vorlagen/kapitalerhoehung.ts (§3); Wortlaut-Grundlage
@@ -51,7 +46,6 @@ const KLAUSELN: { id: KeKlausel; label: string }[] = [
 
 export function VorlageKapitalerhoehung() {
   const card = karte('kapitalerhoehung');
-  const { locale } = useLocale();
 
   const [rechtsform, setRechtsform] = useState<KeRechtsform>('ag');
   const [einlageArt, setEinlageArt] = useState<KeEinlageArt>('bar');
@@ -103,37 +97,14 @@ export function VorlageKapitalerhoehung() {
   const pk = usePaneKlasse();
 
   return (
-    <div className="space-y-6">
-      <Link to="/" className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">
-        <span aria-hidden className="inline-flex items-center justify-center w-7 h-7 border border-line bg-surface">←</span>
-        Zurück zum Katalog
-      </Link>
-      <div className="space-y-3">
-        <GruppenTitel>Gesellschaftsrecht · Dokumentmappe</GruppenTitel>
-        {/* A-1/B3-6 (R3-α, 31.8.2026): war eine handgebaute H1 mit fester
-            `text-h1`. Sie ging am A-1-Wächter vorbei, weil der nur die
-            Kaskade `text-h2 …` kannte — und sie mass im Split-View den
-            Viewport statt der Pane-Breite. */}
-        <SeitenTitel>Kapitalerhöhung (AG / GmbH)</SeitenTitel>
-        <p className="text-body-l text-ink-600 max-w-reading">
+    <MappenSeite karte={card} titel="Kapitalerhöhung (AG / GmbH)" badge="Beschluss-Urkunden als Entwurf"
+        intro={<>
           Ordentliche Kapitalerhöhung gegen Bareinlage: Erhöhungsbeschluss und Feststellungs-Urkunde
           mit Statutenänderung entstehen als ENTWURF für die Urkundsperson (öffentliche Beurkundung
           bleibt zwingend); Zeichnungsscheine, Kapitalerhöhungsbericht und Handelsregister-Anmeldung
           druckfertig. Achtung Verfall: Anmeldung innert sechs Monaten nach dem Beschluss.
-        </p>
-        {/* lc-chip-zeile (LM-044/N1): Norm-Chips sind <a> (unterstrichen); der
-            Status-Badge daneben liegt auf der lc-badge-Achse und bleibt unberührt. */}
-        <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
-          {(card?.norms ?? []).map((n) => (
-            <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
-          ))}
-          <span data-formgate className="lc-badge lc-badge-warn">Beschluss-Urkunden als Entwurf</span>
-        </div>
-      </div>
-
-      <PflichtDisclaimer />
-
-      <section className="lc-card p-5 sm:p-6 space-y-5">
+        </>}>
+      <MappenAbschnitt className="space-y-5">
         <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
           <Field label="Rechtsform">
             <select className={inputCls} value={rechtsform} onChange={(e) => setRechtsform(e.target.value as KeRechtsform)}>
@@ -157,7 +128,7 @@ export function VorlageKapitalerhoehung() {
         </div>
 
         <NotariatsHinweis kanton={kanton} />
-      <HrAmtHinweis kanton={kanton} />
+        <HrAmtHinweis kanton={kanton} />
 
         <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-4')}>
           <Field label={`Firma (mit Zusatz «${ag ? 'AG' : 'GmbH'}»)`}>
@@ -236,11 +207,8 @@ export function VorlageKapitalerhoehung() {
                     onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, anzahl: e.target.value } : x))} />
                 </Field>
                 {!ag && (
-                  <label className="flex items-center gap-1.5 text-body-s text-ink-700 pb-2">
-                    <input type="checkbox" checked={z.bereitsBeteiligt}
-                      onChange={(e) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, bereitsBeteiligt: e.target.checked } : x))} />
-                    bereits Gesellschafter:in
-                  </label>
+                  <Checkbox checked={z.bereitsBeteiligt} className="pb-2" label="bereits Gesellschafter:in"
+                    onChange={(v) => setZeichner((alt) => alt.map((x) => x.key === z.key ? { ...x, bereitsBeteiligt: v } : x))} />
                 )}
               </div>
             )}
@@ -253,29 +221,18 @@ export function VorlageKapitalerhoehung() {
             <p className="text-body-s font-medium text-ink-900 mb-1.5">
               Statutarische Klauseln (Hinweispflicht im Zeichnungsschein für NEUE Gesellschafter, Art. 777a Abs. 2 OR)
             </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-body-s text-ink-700">
+            <div className="flex flex-wrap gap-x-6">
               {KLAUSELN.map((k) => (
-                <label key={k.id} className="flex items-center gap-2">
-                  <input type="checkbox" checked={klauseln.includes(k.id)} onChange={() => toggleKlausel(k.id)} /> {k.label}
-                </label>
+                <Checkbox key={k.id} checked={klauseln.includes(k.id)} onChange={() => toggleKlausel(k.id)} label={k.label} />
               ))}
             </div>
           </div>
         )}
 
-        <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-body-s text-ink-700', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-6 gap-y-2 text-body-s text-ink-700')}>
-          <label className="flex items-center gap-2">
-            <input type="checkbox" checked={bezugsrechtGewahrt} onChange={(e) => setBezugsrechtGewahrt(e.target.checked)} />
-            Bezugsrecht weder eingeschränkt noch aufgehoben (Art. 652b OR)
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="checkbox" checked={!bankInUrkunde} onChange={(e) => setBankInUrkunde(!e.target.checked)} />
-            Bank wird in der Urkunde NICHT genannt (separate Bescheinigung)
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="checkbox" checked={befristung} onChange={(e) => setBefristung(e.target.checked)} />
-            Zeichnungsschein-Befristung 3 Monate (Usanz, kein Gesetzesinhalt)
-          </label>
+        <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-6', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-6')}>
+          <Checkbox checked={bezugsrechtGewahrt} onChange={setBezugsrechtGewahrt} label="Bezugsrecht weder eingeschränkt noch aufgehoben (Art. 652b OR)" />
+          <Checkbox checked={!bankInUrkunde} onChange={(v) => setBankInUrkunde(!v)} label="Bank wird in der Urkunde NICHT genannt (separate Bescheinigung)" />
+          <Checkbox checked={befristung} onChange={setBefristung} label="Zeichnungsschein-Befristung 3 Monate (Usanz, kein Gesetzesinhalt)" />
         </div>
         {bankInUrkunde && (
           <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-4', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-4')}>
@@ -301,15 +258,7 @@ export function VorlageKapitalerhoehung() {
         <MappenAnsicht dokumente={mappe.dokumente} docxErlaubt={docxErlaubt}
           startDokId="gv-beschluss" bannerEntwurf={BANNER_ENTWURF}
           bannerFertig={BANNER_FERTIG} />
-      </section>
-
-      {/* Abkürzung zum Verdikt (QS-UI 8b Teil 2). Diese Fläche misst 2'501 px
-          Desktop / 4'511 px mobil; der Dokumentblock liegt an ihrem Fuss und war
-          über KEINE Marke erreichbar — anders als jede Wizard-Vorlage, die den
-          «Vorschau ↓»-Knopf trägt. Gleiche Fehlerklasse wie das `sm:hidden` der
-          Rechner-Sprungmarke in Teil 1: die Abkürzung existierte, nur nicht hier.
-          Es ist DIESELBE `ErgebnisSprung`-Marke (§10), nicht eine zweite. */}
-      <ErgebnisSprung zielId="vorlagen-dokumente" label="↓ Dokumente" />
-    </div>
+      </MappenAbschnitt>
+    </MappenSeite>
   );
 }
