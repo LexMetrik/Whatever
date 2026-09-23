@@ -355,7 +355,7 @@ export function EntscheidFilter({
               `--tap-ziel` als Mindesthöhe, ohne die Chip-Zeile zu sprengen;
               die leise Stimme (text-xs, Messing) bleibt. */}
           <button type="button" onClick={zuruecksetzen}
-            className="lc-btn-mini text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-well hover:text-ink-900">
+            className="lc-btn-mini text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-transparent hover:text-ink-900">
             zurücksetzen
           </button>
         </div>

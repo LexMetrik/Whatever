@@ -156,7 +156,7 @@ export function EntscheidKarte({ e, onNorm }: {
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
         </div>
         <a href={e.quelleUrl} target="_blank" rel="noopener noreferrer"
-          className="shrink-0 text-xs text-ink-500 no-underline hover:text-ink-900 hover:underline"
+          className="shrink-0 text-xs text-ink-500 no-underline hover:text-ink-900"
           title="Amtliche Fassung beim Gericht öffnen">
           ↗ amtlich
         </a>

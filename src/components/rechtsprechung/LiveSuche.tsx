@@ -116,7 +116,7 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
           ))}
         </div>
         <button type="submit" disabled={!q.trim() || laden}
-          className="lc-btn-mini px-3 text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-well hover:text-ink-900 disabled:opacity-40">
+          className="lc-btn-mini px-3 text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-transparent hover:text-ink-900 disabled:opacity-40">
           {laden ? 'sucht …' : 'Suchen'}
         </button>
       </form>

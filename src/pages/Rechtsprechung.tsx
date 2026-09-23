@@ -59,8 +59,8 @@ const LISTE_DECKEL = 100;
 const FENSTER_MAX = LISTE_DECKEL * 20;
 
 // Werkbank K3 (23.9.2026, Board «Unter-Rechtsprechung-Register»): «Weitere/
-// Frühere anzeigen» als Haarlinien-Knopf ohne Messing, Hover `--well`.
-const MEHR_KNOPF = 'mx-auto flex w-fit px-3 text-xs text-ink-600 hover:border-line-strong hover:bg-well hover:text-ink-900';
+// Frühere anzeigen» als Haarlinien-Knopf; Hover = Linie + Tinte, ohne Messing-Fläche.
+const MEHR_KNOPF = 'mx-auto flex w-fit px-3 text-xs text-ink-600 hover:border-line-strong hover:bg-transparent hover:text-ink-900';
 
 // Eine Treffer-Liste je Dichte rendern (geteilte Datenquelle, nur Darstellung).
 //

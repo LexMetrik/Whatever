@@ -124,7 +124,7 @@ export function FilterSheet({ anzahl, children }: {
             daten="data-filter-sheet"
             sockel={(
               <button type="button" onClick={() => setOffen(false)}
-                className="lc-chip h-11 w-full justify-center border-l-reg-r font-medium text-ink-900 hover:bg-well">
+                className="lc-chip h-11 w-full justify-center border-l-reg-r font-medium text-ink-900 lc-hover-flaeche">
                 Treffer anzeigen
               </button>
             )}>
