@@ -161,6 +161,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
     raum, spaltenLage: hatLeiste && umgebung.istXl, tocOffen: m.tocOffen, ruheForm,
     // Entscheid A (24.9.2026): Blatt-Spur nur, wo auch die Gliederung Spalte sein kann.
     blattLage: umgebung.istXl && ruheForm === 'rechts', blattOffen: panel.offen,
+    // D-E4 · im Einzelmodus kein Blatt — Spur, Schiene, Streifen UND Griffe
+    // entscheidet `rahmenBild` an EINER Stelle (Gegenprüfung #1040, 24.9.2026).
+    einzelModus: imEinzel,
   });
   const zweiSpalten = bild.gliederungSpalte;
   // ── P3 (3b) · DREI NAMEN FÜR DREI DINGE (H4-Nachzug 18.8.2026) ────────────
@@ -303,7 +306,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // D35-F2: EIN Öffner je Breite (Ä92). Entscheid A (24.9.2026): wo das
         // Blatt eine Spur hat, ist er die Schiene (zu) bzw. «Erlass-Blatt
         // ausblenden ›» im rechten Streifen (offen) — der Kopf-Griff entfällt.
-        panelOeffner={bild.blattForm === 'spalte' ? undefined : (
+        panelOeffner={!bild.blattGriff ? undefined : (
           <ErlassGriff offen={panel.offen} kompakt={stufe === 'mini'}
             // A3: dieselbe Id wie die Fläche — sonst ist `aria-controls` null.
             panelId={panel.offen ? panelId : undefined}
@@ -342,7 +345,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich darüber (`./LeserTrefferSpalte`). */}
           {/* W2·5m · im Einzelmodus EINE Bestimmung, dieselbe Prop-Kette (§5). */}
           <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten}
-            oeffneBlatt={rohPanel.oeffne} bezuegeGeweckt={rohPanel.jeGeoeffnet}
+            oeffneBlatt={bild.blatt ? rohPanel.oeffne : undefined} bezuegeGeweckt={rohPanel.jeGeoeffnet}
             einzelToken={imEinzel ? einzel.token : null} search={einzel.search} />
         </>}
         // D38 · Trefferliste über der Lesespalte — `absolute`, ohne Platz im
@@ -363,7 +366,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // und liegt ausserhalb des Flusses.
         // W2·5m (D-E4) · «panel im einzelmodus weg» — NICHT GEMOUNTET, nicht versteckt:
         // sonst blieben Reiter im Fokusbaum, ←/→ belegt und Shards geladen (§17: die Datei bleibt).
-        panelZone={imEinzel ? null : (
+        panelZone={!bild.blatt ? null : (
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
               paneZiel={overlayZiel} paneRolle={paneRolle}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
@@ -408,7 +411,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             mit dem Fokus in SEINEM Pane (`../panePrioritaet`, wie ⌘K). */}
         {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert. */}
         <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
-          onPanel={imEinzel ? undefined : panel.umschalten /* D-8 (S6-W1a): umschalten, Reiter bleibt */}
+          onPanel={!bild.blatt ? undefined : panel.umschalten /* D-8 (S6-W1a): umschalten, Reiter bleibt */}
           onBlaettern={imEinzel ? einzel.blaettere : undefined}
           imSekundaerenPane={umgebung.istSekundaer} />
       </div>

@@ -40,6 +40,7 @@ const LAGE: RahmenLage = {
   ruheForm: 'rechts',
   blattLage: true,
   blattOffen: false,
+  einzelModus: false,
 };
 
 /** Breite des aufgeweiteten Rahmens (px) — ohne Aufweitung die Ruhebreite. */
@@ -132,6 +133,47 @@ describe('Entscheid A · das Erlass-Blatt ist eine Spur rechts — zu eine Schie
     expect(b.schiene).toBe(true);
     expect(b.schieneHoltPlatz, 'Nutzerwahl «zu» — der Klick blendet ein').toBe(false);
     expect(b.spalten).toBe('2.25rem minmax(0,1fr) 23.75rem');
+  });
+});
+
+// ── D-E4 · IM EINZELMODUS GIBT ES KEIN BLATT (Gegenprüfung #1040, 24.9.2026)
+// David 14.9.2026: «blöcke unter dem artikel, panel im einzelmodus weg». Auf
+// 681a65472 (@1440 OR) war nur die Panel-Zone gegated: die Schiene «‹ Erlass-
+// Blatt» stand, ihr Klick reservierte eine tote 380-px-Spur (Spalten `288px
+// 708px 36px` → `288px 684px 380px`, Rahmen 1072 → 1392 px), und der Kopf
+// zeigte «Erlass-Blatt ausblenden ›» mit `aria-controls` ins Leere.
+// ROT ZU BEKOMMEN (§6.7, gesehen 24.9.2026): diese Fälle gegen `rahmenSpalten.ts`
+// auf 681a65472 ⇒ `blatt` undefined, `blattSchiene` true, Spalten dreispurig.
+describe('D-E4 · Einzelmodus: kein Blatt — keine Spur, keine Schiene, kein Griff', () => {
+  it('@1440 zu wie offen (gemerkter Zustand): zweispurig, Ruherahmen, kein Griff', () => {
+    for (const blattOffen of [false, true]) {
+      const lage = { ...LAGE, einzelModus: true, blattOffen };
+      const b = rahmenBild(lage);
+      expect(b.blattSchiene, `offen=${blattOffen}: keine Schiene`).toBe(false);
+      expect(b.blattSpur, `offen=${blattOffen}: keine Spur`).toBe(false);
+      expect(b.spalten, `offen=${blattOffen}: zweispurig`).toBe('18rem minmax(0,1fr)');
+      expect(b.breite, 'Ruherahmen 1072 px, keine Aufweitung').toBeUndefined();
+      expect(rahmenPx(lage)).toBe(1072);
+      expect(b.blattForm).toBe('unten');
+      expect(b.spurVersatzRechtsRem, 'kein rechter Streifen').toBe(0);
+      expect(b.blatt, `offen=${blattOffen}`).toBe(false);
+      expect(b.blattGriff, `offen=${blattOffen}: kein Kopf-Griff`).toBe(false);
+    }
+  });
+
+  it('unter 1024 / im Pane: auch der Kopf-Griff (ErlassGriff) entfällt', () => {
+    const b = rahmenBild({ ...LAGE, einzelModus: true, spaltenLage: false, blattLage: false, raum: raumFuer(1000) });
+    expect(b.blatt).toBe(false);
+    expect(b.blattGriff).toBe(false);
+    expect(b.spalten).toBeUndefined();
+  });
+
+  it('zurück in der Gesamtansicht gilt der gemerkte Zustand wieder', () => {
+    expect(rahmenBild({ ...LAGE, blattOffen: true }).blattSpur).toBe(true);
+    expect(rahmenBild(LAGE).blattSchiene).toBe(true);
+    expect(rahmenBild(LAGE).blattGriff, '≥1024: Schiene statt Kopf-Griff').toBe(false);
+    expect(rahmenBild({ ...LAGE, blattLage: false }).blattGriff, 'Sheet unten: Kopf-Griff').toBe(true);
+    expect(rahmenBild(LAGE).blatt).toBe(true);
   });
 });
 

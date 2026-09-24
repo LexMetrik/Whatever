@@ -212,9 +212,26 @@ export interface RahmenLage {
   /** Ist das Blatt offen? D33 hatte die Eingabe gestrichen («das Bild hängt
    *  nicht am Panel-Zustand»); Entscheid A hebt genau diese Zusage auf. */
   blattOffen: boolean;
+  /** Einzelmodus («Einzelne Bestimmung», W2·5m)? Entscheid David D-E4
+   *  (14.9.2026): «blöcke unter dem artikel, panel im einzelmodus weg» — dort
+   *  gibt es KEIN Blatt: keine Spur, keine Schiene, keinen rechten Streifen,
+   *  keinen Kopf-Griff. Die Frage steht HIER (eine Stelle der Wahrheit), weil
+   *  sonst jeder Verwender einzeln gaten müsste — gesehen 24.9.2026 @1440 OR
+   *  auf 681a65472: nur die Panel-Zone war gegated, die Schiene «‹ Erlass-Blatt»
+   *  reservierte beim Klick eine tote 380-px-Spur (Rahmen 1072 → 1392 px), der
+   *  Kopf zeigte «Erlass-Blatt ausblenden ›» mit `aria-controls` ins Leere.
+   *  `blattOffen` bleibt dabei unberührt (Blatt-Gedächtnis): zurück in der
+   *  Gesamtansicht gilt der gemerkte Zustand wieder. */
+  einzelModus: boolean;
 }
 
 export interface RahmenBild {
+  /** Gibt es das Erlass-Blatt auf dieser Fläche überhaupt (nicht im
+   *  Einzelmodus, D-E4)? Gatet Panel-Zone, Taste «r» und die «im Blatt»-Griffe. */
+  blatt: boolean;
+  /** Steht der Kopf-Griff (`ErlassGriff`)? Nur wo es ein Blatt gibt und es
+   *  KEINE eigene Spur hat (Sheet unten) — sonst sind Schiene/Streifen der Griff. */
+  blattGriff: boolean;
   /** Gestalt des Erlass-Blatts: eigene Spur rechts (`'spalte'`, Entscheid A
    *  24.9.2026 — D33 hatte sie gestrichen) oder das Sheet unten. Die
    *  Überlagerung `'rechts'` (D33/D-1) gibt es nicht mehr. */
@@ -268,7 +285,10 @@ export interface RahmenBild {
  * Entscheid A (24.9.2026): `blattOffen` ist wieder Eingabe (Dateikopf).
  */
 export function rahmenBild(lage: RahmenLage): RahmenBild {
-  const { raum, spaltenLage, tocOffen, ruheForm, blattLage, blattOffen } = lage;
+  const { raum, spaltenLage, tocOffen, ruheForm, blattOffen, einzelModus } = lage;
+  // D-E4: im Einzelmodus gibt es kein Blatt — also auch keine Blatt-Lage.
+  const blatt = !einzelModus;
+  const blattLage = blatt && lage.blattLage;
   const rem = raum?.remPx ?? 16;
   // Ohne Messung (erster Render) gilt der Raum als ausreichend — gemessen wird
   // im selben Commit (Callback-Ref in `useRahmenRaum`), vor dem ersten Bild.
@@ -298,6 +318,8 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
   const spuren = [spaltenLage ? `${spurRem}rem` : '', 'minmax(0,1fr)', blattSpalte ? `${rechtsRem}rem` : '']
     .filter((x) => x !== '').join(' ');
   return {
+    blatt,
+    blattGriff: blatt && !blattSpalte,
     blattForm: blattSpalte ? 'spalte' : 'unten',
     blattSpur,
     blattSchiene: blattSpalte && !blattOffen,
