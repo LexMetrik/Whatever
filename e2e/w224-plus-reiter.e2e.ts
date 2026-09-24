@@ -28,6 +28,27 @@
 //       `components/TabTracker.tsx` das `|| pathname === '/'` aus dem
 //       `merkeTab`-Zweig nehmen ⇒ die Suche aus der Sammlung ERSETZT nicht,
 //       sondern der Fall «zweiter Klick auf «+»» legt einen zweiten Reiter an.
+//
+// ── DEKLARIERTE TEST-ÄNDERUNG (§6.3) · R15, Entscheid David 24.9.2026 ───────
+// Die Absätze darüber bleiben als datierte Belege (§0 Ziff. 2b). David
+// 24.9.2026: «tabliste soll so funktionieren, dass wenn man auf plus klickt
+// sich eine neue startseite öffnet und es nicht automatisch in suchen landet»
+// und, zur Höchstens-einer-Regel: «nein heb diesen entscheid auf und mach es
+// wie ich es sage». GEWOLLT GEÄNDERT sind damit zwei Zusagen:
+//   · «schickt den Fokus in die Kopf-Suche» → die Kopf-Suche ist NICHT
+//     fokussiert, das Such-Blatt NICHT offen; der Fokus steht auf dem neuen
+//     Reiter, die Startseite (Begrüssung h1) ist sichtbar.
+//   · «höchstens EINER» → ein zweites «+» legt «Sammlung (2)» an (`/?r=2`,
+//     Instanz-Rahmen `lib/tabs.naechsteInstanz`), der neue ist aktiv.
+// Unverändert: «+» ohne Reiter legt GENAU einen «/» an, Alt+T tut dasselbe,
+// der Reiter übersteht den Reload, und eine Suche aus der Sammlung FÜLLT
+// deren Reiter, statt einen zweiten anzulegen (§5a Ziff. 3).
+//
+// ROT ZU BEKOMMEN (§6.7, R15-Fassung 24.9.2026):
+//   (c) in `Reiterleiste.neuerReiter` die Instanz-Wahl durch `'/'` ersetzen
+//       ⇒ der Fall «zweites «+»» sieht `['/']` statt `['/', '/?r=2']`.
+//   (d) den `lm:suche-fokus`-Versand zurücknehmen (samt Lauscher) ⇒ der
+//       Fall «Klick» sieht die Kopf-Suche fokussiert.
 import { test, expect, type Page } from '@playwright/test'
 import { warteAufSuchindex } from './helpers/warteAufSuchindex'
 
@@ -67,18 +88,28 @@ test.beforeEach(async ({ page }) => {
   await expect(plusKnopf(page)).toBeVisible()
 })
 
-test('Klick auf «+» legt einen aktiven Sammlungs-Reiter an und schickt den Fokus in die Kopf-Suche', async ({ page }) => {
+/** Die Startseite steht: Begrüssung als h1, kein offenes Such-Blatt, die
+ *  Kopf-Suche NICHT fokussiert, und der Fokus liegt auf dem aktiven Reiter. */
+async function startseiteOhneSuchSprung(page: Page) {
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+  await expect(kopfFeld(page)).not.toBeFocused()
+  await expect(page.getByRole('listbox', { name: 'Suchtreffer' })).toHaveCount(0)
+  await expect.poll(() => page.evaluate(() =>
+    document.activeElement?.closest('[data-reiter-aktiv="true"]') !== null)).toBe(true)
+}
+
+test('Klick auf «+» legt einen aktiven Sammlungs-Reiter an — ohne Sprung in die Suche', async ({ page }) => {
   await plusKnopf(page).click()
   await expect(page).toHaveURL(/\/$/)
   expect(await tabs(page)).toEqual(['/'])
   await expect(aktiv(page)).toContainText('Sammlung')
-  await expect(kopfFeld(page)).toBeFocused()
+  await startseiteOhneSuchSprung(page)
 })
 
-test('Suche füllt DENSELBEN Reiter — kein zweiter, die Zahl bleibt', async ({ page }) => {
+test('Suche aus der Sammlung füllt DENSELBEN Reiter — kein zweiter, die Zahl bleibt', async ({ page }) => {
   await plusKnopf(page).click()
   const feld = kopfFeld(page)
-  await expect(feld).toBeFocused()
+  await feld.click()
   await feld.fill('OR 257d')
   await expect(page.getByRole('listbox', { name: 'Suchtreffer' })).toBeVisible()
   // §17-Wurzelfix (Fixer 1h, offener Punkt «Aus Fixer 1e»): `aufTaste` in
@@ -95,20 +126,26 @@ test('Suche füllt DENSELBEN Reiter — kein zweiter, die Zahl bleibt', async ({
   await expect(aktiv(page)).toContainText('257d OR')
 })
 
-test('zweiter Klick auf «+» aktiviert den bestehenden Sammlungs-Reiter statt einen zweiten anzulegen', async ({ page }) => {
+test('zweiter Klick auf «+» legt einen ZWEITEN Sammlungs-Reiter an, der neue ist aktiv (R15)', async ({ page }) => {
   await plusKnopf(page).click()
   expect(await tabs(page)).toEqual(['/'])
-  // Das Suchvorschlags-Blatt fängt sonst den Zeiger ab (R14-Prüfung §1.3 e).
-  await page.keyboard.press('Escape')
   await plusKnopf(page).click()
-  expect(await tabs(page)).toEqual(['/'])
+  await expect(page).toHaveURL(/\/\?r=2$/)
+  await expect.poll(() => tabs(page)).toEqual(['/', '/?r=2'])
+  await expect(aktiv(page)).toHaveCount(1)
+  await expect(aktiv(page)).toContainText('Sammlung')
+  await expect(aktiv(page)).toContainText('(2)')
+  await startseiteOhneSuchSprung(page)
 })
 
-test('Alt+T legt denselben Sammlungs-Reiter an wie der Klick', async ({ page }) => {
+test('Alt+T legt denselben Sammlungs-Reiter an wie der Klick — und beim zweiten Mal einen neuen', async ({ page }) => {
   await page.keyboard.press('Alt+T')
   await expect(page).toHaveURL(/\/$/)
   expect(await tabs(page)).toEqual(['/'])
-  await expect(kopfFeld(page)).toBeFocused()
+  await startseiteOhneSuchSprung(page)
+  await page.keyboard.press('Alt+T')
+  await expect(page).toHaveURL(/\/\?r=2$/)
+  await expect.poll(() => tabs(page)).toEqual(['/', '/?r=2'])
 })
 
 test('Reload: der Sammlungs-Reiter übersteht den Neustart', async ({ page }) => {
@@ -117,4 +154,26 @@ test('Reload: der Sammlungs-Reiter übersteht den Neustart', async ({ page }) =>
   await expect(plusKnopf(page)).toBeVisible()
   await expect(aktiv(page)).toContainText('Sammlung')
   expect(await tabs(page)).toEqual(['/'])
+})
+
+test('Reload auf `/?r=2` zeigt die Startseite, beide Sammlungs-Reiter bleiben (R15)', async ({ page }) => {
+  await plusKnopf(page).click()
+  await plusKnopf(page).click()
+  await expect(page).toHaveURL(/\/\?r=2$/)
+  await page.reload()
+  await expect(page).toHaveURL(/\/\?r=2$/)
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+  await expect(aktiv(page)).toContainText('(2)')
+  expect(await tabs(page)).toEqual(['/', '/?r=2'])
+})
+
+test('«Alle schliessen» lässt genau EINE Sammlung übrig, keine Instanzen (R15)', async ({ page }) => {
+  await plusKnopf(page).click()
+  await plusKnopf(page).click()
+  await plusKnopf(page).click()
+  await expect.poll(() => tabs(page)).toEqual(['/', '/?r=2', '/?r=3'])
+  await page.locator(`${REITER} [data-reiter-aktiv="true"]`).click({ button: 'right' })
+  await page.getByRole('menuitem', { name: 'Alle schliessen' }).click()
+  await expect.poll(() => tabs(page)).toEqual(['/'])
+  await expect(page).toHaveURL(/\/$/)
 })

@@ -66,6 +66,17 @@ describe('tabs.ts — offene Reiter', () => {
     expect(naechsteInstanz('/gesetze/bund/OR')).toBe('/gesetze/bund/OR?r=3');
   });
 
+  // R15 (Entscheid David 24.9.2026): jedes «+» legt eine neue Startseiten-
+  // Instanz an — die Buchführung ist dieselbe wie beim Gesetz, «/» ist ein
+  // Pfad wie jeder andere.
+  it('naechsteInstanz(\'/\'): bei offener Sammlung /?r=2, dann /?r=3 (R15)', () => {
+    merkeTab('/');
+    expect(naechsteInstanz('/')).toBe('/?r=2');
+    merkeTab('/?r=2');
+    expect(naechsteInstanz('/')).toBe('/?r=3');
+    expect(ladeTabs().map((t) => t.path)).toEqual(['/', '/?r=2']);
+  });
+
   it('aktualisiereTabArtikel ändert nur den Anker des passenden Reiters', () => {
     merkeTab('/gesetze/bund/OR?r=2');
     aktualisiereTabArtikel('/gesetze/bund/OR?r=2#art-97');
