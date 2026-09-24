@@ -219,9 +219,16 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
   // … vor einem Gericht» unter Art. 56 Abs. 2 SchKG fällt (dann ausschliesslich
   // ZPO, summarisch → kein Stillstand, früheres Ende) — §8-Offenlegung im
   // Hinweis, Default unverändert (Produktentscheid, kein Rechtsbeleg).
+  // Nachzug Gegenprüfung RL-17 (24.9.2026, deklarierte fachliche Änderung):
+  // bei dieser offenen Frage stellt der Rechner auf das FRÜHERE, sichere Datum
+  // ein (wie W-09 bei Art. 17) — modus 'kein' statt 'schkg_betreibungsferien'
+  // (ZH, Kenntnis 10.7.2026: 20.07. statt 05.08.2026). Die kantonale Lesart zum
+  // Recht bis 2024 bleibt über den Override (modusUmstritten) wählbar.
+  // Wortlaut geprüft: Art. 278 Abs. 1, Art. 56 Abs. 2 SchKG (Fassung 1.1.2026),
+  // Art. 145 Abs. 2 lit. b ZPO (Fassung 1.7.2026), amtliche Fedlex-Kopien.
   { key: 'arresteinsprache', phase: 'arrest', label: 'Arresteinsprache – 10 Tage', norm: 'Art. 278 Abs. 1 SchKG',
-    einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', modusUmstritten: true, fristnatur: 'frist', ausloeser: 'Kenntnis der Arrestanordnung',
-    hinweis: 'Frist ab Kenntnis der Arrestanordnung (Art. 278 Abs. 1 SchKG) — für Dritte nicht zwingend die Zustellung der Arresturkunde. Betreibungsrechtliche Summarsache (Art. 251 ZPO): Voreinstellung Betreibungsferien mit Verlängerung nach Art. 63 SchKG (kantonale Praxis zum Recht bis 2024). Offen ist, ob die Einsprache seit 1.1.2025 als Klage vor Gericht unter Art. 56 Abs. 2 SchKG fällt — dann gilt ausschliesslich die ZPO, im summarischen Verfahren ohne Stillstand (Art. 145 Abs. 2 lit. b ZPO), und die Frist endet früher. Sicherer Weg: Override «Kein Stillstand». Nur Einsprache nötig; Begründung kann nachgereicht werden.', verweise: ['BGer_5A_545_2017'] },
+    einheit: 'tage', laenge: 10, modus: 'kein', modusUmstritten: true, fristnatur: 'frist', ausloeser: 'Kenntnis der Arrestanordnung',
+    hinweis: 'Frist ab Kenntnis der Arrestanordnung (Art. 278 Abs. 1 SchKG) — für Dritte nicht zwingend die Zustellung der Arresturkunde. Seit 1.1.2025 ist offen, ob die Einsprache als Klage vor Gericht unter Art. 56 Abs. 2 SchKG fällt; dann gilt die ZPO, im summarischen Verfahren ohne Stillstand (Art. 145 Abs. 2 lit. b ZPO). Voreinstellung darum ohne Stillstand (früheres, sicheres Datum). Die kantonale Praxis zum Recht bis 2024 (Betreibungsferien, Verlängerung nach Art. 63 SchKG, späteres Datum) ist über den Override wählbar. Nur Einsprache nötig; Begründung kann nachgereicht werden.', verweise: ['BGer_5A_545_2017'] },
   // RL-17 / Befund R5-02 (V14): Art. 279 Abs. 1 SchKG kennt zwei Wege — Betreibung
   // einleiten ODER Klage einreichen. Dieses Preset ist der Betreibungsweg: Das
   // Betreibungsbegehren ist keine Klage vor Gericht, Art. 56/63 SchKG gelten;
