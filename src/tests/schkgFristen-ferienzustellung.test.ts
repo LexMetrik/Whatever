@@ -89,6 +89,12 @@ describe('RL-18 / F2-03 — Zustellung in den Betreibungsferien wirkt erst am er
     expect(e.zeilen.find((z) => z.key === 'rechtsvorschlag')!.endeISO).toBe('2026-04-22');
     expect(e.zeilen.find((z) => z.key === 'fortsetzung_warte')!.endeISO).toBe('2026-05-04');
     expect(e.zeilen.find((z) => z.key === 'fortsetzung_verwirkung')!.endeISO).toBe('2027-04-12');
+    // Die drei Zählweise-Offenlegungen müssen je ihrer Frist zuordenbar sein.
+    const offen = e.warnungen.filter((w) => w.startsWith('Zählweise'));
+    expect(offen).toHaveLength(3);
+    expect(offen.some((w) => w.includes('(10 Tage)') && w.includes('23.04.2026'))).toBe(true);
+    expect(offen.some((w) => w.includes('(20 Tage)') && w.includes('04.05.2026'))).toBe(true);
+    expect(offen.some((w) => w.includes('(1 Jahr)') && w.includes('13.04.2027'))).toBe(true);
   });
 });
 
