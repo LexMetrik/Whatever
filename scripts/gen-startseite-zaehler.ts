@@ -27,6 +27,8 @@ import { istVorlage } from '../src/lib/vorlagenKategorie.ts';
 // nicht in den Startseiten-Chunk (§15, `check:perf-budget`).
 import { SYSTEMATIK } from '../src/lib/normtext/systematik.ts';
 import { BEHOERDEN } from '../src/lib/materialien/register.ts';
+import { gattungVon } from '../src/lib/materialien/gattung.ts';
+import type { DoktypId } from '../src/lib/materialien/typen.ts';
 // W2·24-D26: die Seitenleiste zeigt die Sachgebiete der Rechtsprechung mit Zahl.
 // Ordnung + Beschriftung bleiben `GEBIETE` (SSoT der Sach-Achse); gezählt wird
 // hier gegen das Entscheid-Register, nach DERSELBEN Regel wie `zaehleSachgebiete`
@@ -56,6 +58,8 @@ interface ErlassEintrag {
 // statt einer von Hand gepflegten Teilmenge.
 interface MaterialEintrag {
   key: string; behoerde: string;
+  /** U12 (24.9.2026): Doktyp — trägt die Gattung (`lib/materialien/gattung.ts`). */
+  doktyp: DoktypId;
   /** Publikations-/Fassungsstand der Materialie (ISO) — D8. */
   stand?: string | null;
 }
@@ -173,6 +177,14 @@ function zaehle() {
   const materialienBehoerden = BEHOERDEN
     .filter((b) => (proBehoerde[b.id] ?? 0) > 0)
     .map((b) => ({ id: b.id, kuerzel: b.kuerzel, name: b.name, anzahl: proBehoerde[b.id] }));
+  // U12 (David 24.9.2026: «materialien soll erläuterungen und materialien
+  // enthalten»): die Summe aufgeteilt nach Gattung — Gesetzgebung vs.
+  // Verwaltungspraxis. Zuordnung aus DERSELBEN Funktion wie der Leser (§5,
+  // `gattungVon`). Beide Teile werden EIGENS gezählt, nicht einer als Rest —
+  // sonst könnte der Summen-Wächter (`zaehler-eine-quelle.test.tsx`: Teile =
+  // `materialien`) nie rot werden (§6.7).
+  const materialienGesetzgebung = m.materialien.filter((x) => gattungVon(x.doktyp) === 'materialien').length;
+  const materialienErlaeuterungen = m.materialien.filter((x) => gattungVon(x.doktyp) === 'erlaeuterungen').length;
 
   // D8: das Alter der INHALTE je Sammlung (nicht des Builds).
   //  · Gesetze — jüngster Konsolidierungsstand über die Volltext-Snapshots.
@@ -216,6 +228,8 @@ function zaehle() {
     rechtsprechungSachgebiete,
     rechtsprechungLeitentscheide,
     materialien,
+    materialienGesetzgebung,
+    materialienErlaeuterungen,
     materialienBehoerden,
     rechner,
     vorlagen,
@@ -271,6 +285,12 @@ function baue(): string {
     '  rechtsprechungLeitentscheide: number;\n' +
     '  /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */\n' +
     '  materialien: number;\n' +
+    '  /** U12: davon Materialien im Hausbegriff — Gesetzgebung (Botschaften,\n' +
+    '   *  Vernehmlassungen, kantonale Parlamentsgeschäfte; `gattungVon`). */\n' +
+    '  materialienGesetzgebung: number;\n' +
+    '  /** U12: davon Erläuterungen — Verwaltungspraxis ohne Gesetzesrang.\n' +
+    '   *  materialienGesetzgebung + materialienErlaeuterungen = materialien. */\n' +
+    '  materialienErlaeuterungen: number;\n' +
     '  /** W2·24-R3: erfasste Materialien je Behörde, Reihenfolge BEHOERDEN (rang);\n' +
     '   *  Behörden ohne Eintrag fehlen (nie eine 0-Zeile behaupten, §8). */\n' +
     '  materialienBehoerden: Array<{ id: string; kuerzel: string; name: string; anzahl: number }>;\n' +
