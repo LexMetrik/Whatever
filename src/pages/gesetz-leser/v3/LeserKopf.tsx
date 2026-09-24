@@ -90,8 +90,18 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 export function LeserKopf({
   erlass, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, stufe, gliederungKnopf, modus, onModusWahl,
-  panelOeffner, suchZone, suchInZeile, tocOffen, onGliederungZu,
+  panelOeffner, suchZone, suchInZeile, tocOffen, onGliederungZu, rechterStreifen, onBlattZu, blattPanelId,
 }: {
+  /** ── ENTSCHEID A (David 24.9.2026) · DER RECHTE STREIFEN ──────────────────
+   *  Spiegel des linken (D32): steht das Erlass-Blatt als Spur zur Wahl, trägt
+   *  die Zeile rechts einen Streifen genau der rechten Spurbreite
+   *  (`--leser-spur-versatz-rechts`) — die Griffe davor enden damit an der
+   *  Kante der Lese-Zelle. Offen steht darin «Erlass-Blatt ausblenden ›»
+   *  (`onBlattZu`), zu nichts: dann ist die Schiene der eine Griff (wie Ä79). */
+  rechterStreifen?: boolean;
+  onBlattZu?: () => void;
+  /** Id der Blatt-Fläche für `aria-controls` (nur offen, B3). */
+  blattPanelId?: string;
   erlass: BrowseErlass;
   // D27: `aktArtikel` ist hier ersatzlos gestrichen. Die Lesestellung ist damit
   // nicht verloren — sie fliesst unverändert aus demselben Scroll-Spy in den
@@ -308,6 +318,23 @@ export function LeserKopf({
             hatAenderungsvermerke={hatAenderungsvermerke}
             bestimmungsWort={bestimmungsWort} modus={modus} onModusWahl={onModusWahl} />
         </div>
+        {rechterStreifen && (
+          // Spiegel von «‹ Gliederung ausblenden»: der Griff beginnt über der
+          // linken Kante des Blatts (Spur-Lücke als linkes Polster).
+          <div className="flex h-full shrink-0 items-center"
+            style={{ width: 'var(--leser-spur-versatz-rechts)', paddingInlineStart: 'var(--leser-spur-abstand)' }}>
+            {onBlattZu && (
+              <button type="button" data-v3-blatt-zu onClick={onBlattZu}
+                // Sonden-Anker und Aussenklick-Ausnahme wie am Kopf-Griff
+                // `./LeserPanelOeffner` — offen ist DIESER der eine Griff.
+                data-v3-panel-zaehler data-v3-panel-oeffner aria-keyshortcuts="r"
+                aria-expanded aria-controls={blattPanelId} title="Erlass-Blatt ausblenden"
+                className="lc-leiste-griff gap-1 px-1.5 text-micro">
+                <span className="whitespace-nowrap">Erlass-Blatt ausblenden</span><span aria-hidden>›</span>
+              </button>
+            )}
+          </div>
+        )}
       </div>
       {/* Ä19: die Such-Zone als zweite Zeile DESSELBEN klebenden Blocks — nicht
           als eigenes `sticky`-Element darunter. Zwei gestapelte Sticky-Blöcke

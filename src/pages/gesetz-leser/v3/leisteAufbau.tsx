@@ -87,15 +87,30 @@ export function gliederungsSheetAufbau(a: {
 // vorlesbar und durchsuchbar (Design-Grundlage Kap. 6).
 // Eine Funktion statt einer Komponente wie die beiden Schwestern oben — die
 // Datei exportiert nur Aufbau-Funktionen (`react-refresh/only-export-components`).
-export function schieneAufbau(onAuf: () => void): ReactNode {
+//
+// ── ENTSCHEID A (David 24.9.2026) · DIESELBE SCHIENE AUCH RECHTS ────────────
+// Das Erlass-Blatt ist eingeklappt die Schiene RECHTS, als Spiegel dieser hier
+// («analog gliederung», Weisung 23.9.2026). EIN Bauteil mit Seite und Wort
+// statt einer Kopie (§10); die Merkmale (`data-*`, `aria-*`) bringt der Aufrufer
+// mit, weil nur er weiss, welche Sonden und Ausnahmen den Griff greifen.
+export function schieneAufbau(a: {
+  /** Text senkrecht in der Schiene — zugleich der zugängliche Name. */
+  wort: string;
+  /** Kurzzeichen über dem Wort (vorlesefrei). */
+  glyphe: string;
+  titel: string;
+  onAuf: () => void;
+  /** Zusätzliche Attribute am Knopf (Sonden-Anker, `aria-label`, Kürzel). */
+  merkmale: Record<string, string | boolean | undefined>;
+}): ReactNode {
   return (
     <div className="sticky self-start" style={{ top: 'var(--nt-stick)' }}>
-      <button type="button" data-v3-gliederung-schiene
-        onClick={onAuf}
-        aria-expanded={false} title="Gliederung einblenden"
+      <button type="button" {...a.merkmale}
+        onClick={a.onAuf}
+        aria-expanded={false} title={a.titel}
         className="lc-leiste-schiene">
-        <span aria-hidden className="text-base leading-none">☰</span>
-        <span className="[writing-mode:vertical-rl] [text-orientation:mixed]">Gliederung</span>
+        <span aria-hidden className="text-base leading-none">{a.glyphe}</span>
+        <span className="[writing-mode:vertical-rl] [text-orientation:mixed]">{a.wort}</span>
       </button>
     </div>
   );

@@ -15,6 +15,7 @@ import {
   fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
 } from '../../lib/normtext/revisionen';
 import { klappZeile, oeffneSprungZiel } from './klappKarte';
+import { gliederungGemerktZu } from './v3/gliederungGedaechtnis';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
 // Aus GesetzLeserInhalt ausgelagerte Zustands-Hooks: Daten-/Shard-/Such-Zustand,
@@ -337,7 +338,9 @@ export function useLeserAnsichtZustand({ tocAuf, setTocAuf }: {
   tocAuf: boolean;
   setTocAuf: (auf: boolean) => void;
 }) {
-  const [tocOffen, setTocOffen] = useState(true); // ab lg: Gliederungsspalte ein-/ausklappen
+  // ab lg: Gliederungsspalte ein-/ausklappen — Start aus der gemerkten Nutzerwahl
+  // (Entscheid David 24.9.2026, `v3/gliederungGedaechtnis`), schon im ersten Render.
+  const [tocOffen, setTocOffen] = useState(() => !gliederungGemerktZu());
   // 2-Spalten-Erkennung. R2 (Auftrag David 30.6.2026): Schwelle von 1280px auf
   // 1024px (Tailwind lg) gesenkt → die linke Gliederungsspalte erscheint schon auf
   // kleineren Laptops «grundsätzlich», nicht erst ab 1280px. 1024px deckt sich mit

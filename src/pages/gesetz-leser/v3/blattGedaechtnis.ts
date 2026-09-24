@@ -18,7 +18,7 @@
 // «anwendung» geht an seinen Nachfolger «erlaeuterungen» (`alsPanelReiter`,
 // die eine Stelle für gespeicherte Reiter-Werte).
 
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
 import { alsPanelReiter, type PanelReiter, type PanelZustand } from './panelModell';
 
@@ -153,13 +153,20 @@ export function useBlattGedaechtnis(erlassKey: string | undefined, zustand: Pane
   const navTyp = useNavigationType();
   const ort = useLocation();
   const [merker] = useState(() => rueckkehrMerker(dokumentJetzt));
-  useEffect(() => {
+  // ── ENTSCHEID A (24.9.2026) · KLASSIEREN UND WIEDERHERSTELLEN VOR DEM MALEN ─
+  // Seit das offene Blatt eine Spur ist, bricht sein Öffnen den Text neu um.
+  // Nach Nutzer-Geste ist das erlaubt; beim Wiederherstellen (Reload/Zurück)
+  // gäbe es keine Geste — ein Frame mit zugeklapptem, dann offenem Blatt wäre
+  // ein unangekündigter Sprung (CLS). Darum laufen die ersten zwei Effekte als
+  // Layout-Effekte (in Deklarationsreihenfolge, vor dem ersten Bild); das
+  // Schreiben darf danach kommen. Bewacht: `leser-v3-kontext-cls` (c).
+  useLayoutEffect(() => {
     merker.ortGesehen(ort, navTyp);
     // Je Navigation genau einmal: `ort` ist je Navigation ein neues Objekt —
     // auch beim Hash-Sprung, dessen Schlüssel («default») gleich bleiben kann.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ort]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!erlassKey || !merker.wiederherstellen(ort.key)) return;
     const g = liesBlatt(erlassKey);
     if (!g) return;

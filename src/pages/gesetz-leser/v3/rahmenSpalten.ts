@@ -1,7 +1,36 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type CSSProperties } from 'react';
 import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
 
+// ═══ ENTSCHEID A (David 24.9.2026) · DAS ERLASS-BLATT IST WIEDER EINE SPUR ══
+//
+// Weisung Chat 23.9.2026 abends: «… das ui bei verschiedenen bildschirmgrössen
+// so ist dass es nahe am relevanten artikel ist und einklappbar ist und nicht
+// mit dem knopf erlass. analog gliederung.» Entscheid 24.9.2026, Variante A
+// «Echte dritte Spalte»: «Das Blatt wird eine eigene Spalte wie die Gliederung
+// und deckt nie Text ab. Nachteil: Der Text rutscht beim Öffnen zur Seite und
+// bricht auf kleineren Bildschirmen neu um. Das hebt D33 (‹nichts verschiebt
+// sich›) auf.» Verworfen: B (Schiene + Überlagerung), C (Reiter in der
+// Gliederung). D33 unten bleibt als Beleg seines Datums stehen (§0 Ziff. 2b).
+// BEFUND (Analyse 24.9.2026, Stand 150d5a9a3): das überlagernde Blatt (D33 + D-1
+// Fensterrand) deckte @1024/1280/1440 343/215/135 px Zeilenenden ab und stand
+// @1920 105 px vom Text weg.
+// DAS BILD ab 1024 px in der Einzelansicht — drei Spuren, rechts gespiegelt:
+//   Gliederung 18 rem | Schiene 2.25 · Text · Blatt 23.75 rem | Schiene 2.25
+// Der Rahmen wächst (Ä60 (c), `aufweitung` aus der Historie zurück) auf «linke
+// Spur + Lesemass-Deckel + rechte Spur», nie über den Raum, und hält seine
+// linke Kante, solange rechts Raum ist — @1920 sitzt das Blatt bündig am Text.
+// ZWEI SCHWELLEN, beide aus `LESE_MIN` gerechnet (Messtabelle: Fahrplan §5a):
+//   · Raum < Gliederung + LESE_MIN + Blatt (+ 2 Abstände) = 72.25 rem (1156 px,
+//     Fenster ≈ 1204): offenes Blatt ⇒ die Gliederung weicht TRANSIENT auf ihre
+//     Schiene — abgeleitet, nie gemerkt; schliesst das Blatt, steht sie wieder.
+//   · Raum < Schiene + LESE_MIN + Blatt (+ 2 Abstände) = 56.5 rem (904 px, etwa
+//     1024 mit ausgeklappter App-Seitenleiste): keine Blatt-Spur, das Blatt ist
+//     das Sheet unten wie unter 1024.
+
 // ═══ D33 (David 7.9.2026) · DAS BEIWERK-BLATT BEKOMMT KEINE SPUR MEHR ════════
+// (Aufgehoben durch Entscheid A, 24.9.2026 — s. o. Befund und Deklaration im
+// Wortlaut; die Abwägung A/B/C und der «Preis» von D33 stehen in der Historie
+// dieser Datei vor 24.9.2026 und in `abnahme/design-identitaet/R6E-LESER.md`.)
 //
 // DEKLARIERTE FACHLICHE ÄNDERUNG (§6.3), nicht Refactoring: die dritte Spur des
 // Rahmens — die eigene 22-rem-Spalte für das Rechtsprechungs-Blatt, gebaut als
@@ -21,22 +50,10 @@ import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
 // Das verstiess gegen D9 («nichts verschiebt sich») und gegen die Zusage von
 // M3 («zeig es mir daneben, der Artikel bleibt»).
 //
-// WARUM VARIANTE A UND NICHT «SPUR DAUERHAFT RESERVIEREN» (B): eine ständig
-// reservierte Spur nähme dem Text auf JEDER Breite 22 rem — gegen D20 («mehr
-// Breite für den Gesetzestext»). Variante C (der Zähler öffnet die Entscheide
-// im zweiten Fenster, wie die Randnotiz) ist die sauberere Produktlogik, aber
-// ein eigener Fahrplan-Schritt: die Reiter Änderungen/Materialien/Anwendung
-// brauchen dann eine eigene Heimat. A kostet Δ = 0 und keinen Umbau.
-//
-// PREIS, offengelegt (§8): das Blatt verdeckt im geöffneten Zustand die rechten
-// ~352 px. Im Ruhezustand verdeckt es nichts, und es schliesst auf Esc, auf
-// den ✕-Griff, auf einen zweiten Klick am Zähler und auf einen Klick daneben.
-//
-// ── ALLES AB HIER IST DIE HERLEITUNG DES ZURÜCKGEBAUTEN ZUSTANDS ────────────
-// Sie bleibt im Wortlaut stehen (Belege altern nicht): die Messreihen erklären,
-// warum die Spur damals richtig gerechnet war — der Mangel lag nicht in ihrer
-// Arithmetik, sondern darin, dass sie am Panel-Zustand hing. Was von ihr im
-// Code weiterlebt, sind die zwei Spuren und ihre Schwellen.
+// ── AB HIER DIE HERLEITUNG VON Ä60 (c) (17./18.8.2026) ──────────────────────
+// Im Wortlaut (Belege altern nicht). Seit Entscheid A trägt sie wieder: die
+// Aufweitung und `LESE_MIN` sind zurück; die Deckel-Zahl `LESER_MAX_REM` nicht
+// (der Rahmen rechnet «Spuren + LESEMASS_MAX», s. Dateikopf).
 //
 // ═══ Ä60 (c) · WIE BREIT DER LESER IST UND WELCHE SPUREN ER TRÄGT ════════════
 //
@@ -104,8 +121,15 @@ import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
 // ein unbeschriftetes 24-px-☰ an der GEGENÜBERLIEGENDEN Fensterkante (x = 1101).
 // Darum bleibt die linke Spur immer stehen und wird zur Schiene (Ä79).
 
-/** Breite der Gliederungsspalte (rem) — Ist-Wert des Rahmens, hier benannt. */
+/** Breite der Gliederungsspalte (rem) — Ist-Wert des Rahmens, hier benannt.
+ *  (Das Fahrplan-Soll §5a nannte 250 px; gebaut sind seit W2·19 S2 288 px.) */
 const SPUR_GLIEDERUNG = 18;
+/** Breite der Blatt-Spur (rem) = 380 px, Board «Erlass-Blatt» (W2·29 S5). */
+const SPUR_BLATT = 23.75;
+/** Kleinste Lesespalte (rem, ≈ 46 ch), unter der eine Spur weicht — dieselbe
+ *  Zahl wie Ä60 (c) und `satzspiegel.SPIEGEL_MIN_BREIT` (dort eigenständig
+ *  hergeleitet): so kippt das offene Blatt die Artikelform nie in die Zeile. */
+const LESE_MIN = 28;
 /** Breite der eingeklappten Gliederungs-Schiene (rem), `leisteAufbau.schieneAufbau`. */
 const SPUR_SCHIENE = 2.25;
 /** Abstand zwischen zwei Spuren (rem) = `gap-5` (LeserLeseZeile.tsx).
@@ -162,19 +186,12 @@ export const SPUR_ABSTAND = 1.25;
 // gescoped, das V1 nie trägt.
 export const LESEMASS_MAX = 45;
 
-/**
- * D33 (7.9.2026): `LESER_MAX_REM`, `LESE_MIN` und `RAUM_MIN_BLATT` sind mit der
- * dritten Spur gestrichen — der Rahmen wächst nicht mehr, also braucht er
- * keinen Deckel, und «passt das Blatt neben den Text» ist keine Frage mehr.
- * Die Herleitung dieser drei Zahlen (82.5 rem = 18 + 1.25 + 40 + 1.25 + 22;
- * 28 rem Lesespalten-Boden; 54.75 rem Mindestraum) steht im Deklarations-Block
- * am Dateikopf und in `abnahme/design-identitaet/R6E-LESER.md`.
- */
+// D33 strich `LESER_MAX_REM`/`LESE_MIN`/`RAUM_MIN_BLATT` (R6E-LESER.md);
+// Entscheid A bringt `LESE_MIN` zurück, der Deckel rechnet «Spuren + LESEMASS_MAX».
 
 export interface RahmenRaum {
-  /** Breite (px), die dem Leser im `<main>` zur Verfügung steht. Seit D33
-   *  liest `rahmenBild` sie nicht mehr (der Rahmen wächst nicht); gemessen
-   *  wird sie weiter, weil sie den `ResizeObserver` am `<main>` mitträgt. */
+  /** Breite (px), die dem Leser im `<main>` zur Verfügung steht — der Deckel
+   *  der Aufweitung (Entscheid A, 24.9.2026; D33 hatte sie ungelesen gelassen). */
   raumPx: number;
   /** Breite (px) des Rahmens = Inhaltsbreite seines Elternkastens. */
   ruhePx: number;
@@ -189,22 +206,39 @@ export interface RahmenLage {
   spaltenLage: boolean;
   /** Hat der Nutzer die Gliederung offen? */
   tocOffen: boolean;
-  /** D33 (7.9.2026): `blattOffen` ist als Eingabe GESTRICHEN, nicht nur
-   *  ungenutzt. «Das Bild hängt nicht am Panel-Zustand» ist damit strukturell
-   *  wahr statt bewacht — wer es wieder einführt, muss diese Zeile löschen.
-   *  Gestalt des Blatts (`kopfStufen.panelForm`) — sie entscheidet mit über die
-   *  Artikelform (`./satzspiegel`), nicht mehr über die Spuren. */
+  /** Kante des Blatts (`kopfStufen.panelForm`) — entscheidet mit über die
+   *  Artikelform (`./satzspiegel`). */
   ruheForm: 'rechts' | 'unten';
+  /** Entscheid A (24.9.2026): Steht das Erlass-Blatt auf dieser Fläche als
+   *  Spur zur Wahl (Einzelansicht ab 1024 px, Kante `'rechts'`)? */
+  blattLage: boolean;
+  /** Ist das Blatt offen? D33 hatte die Eingabe gestrichen («das Bild hängt
+   *  nicht am Panel-Zustand»); Entscheid A hebt genau diese Zusage auf. */
+  blattOffen: boolean;
 }
 
 export interface RahmenBild {
-  /** Gestalt des Beiwerk-Blatts. D33 (7.9.2026): die dritte Gestalt `'spalte'`
-   *  ist gestrichen — das Blatt überlagert (`'rechts'`) bzw. liegt unten. */
-  blattForm: 'rechts' | 'unten';
+  /** Gestalt des Erlass-Blatts: eigene Spur rechts (`'spalte'`, Entscheid A
+   *  24.9.2026 — D33 hatte sie gestrichen) oder das Sheet unten. Die
+   *  Überlagerung `'rechts'` (D33/D-1) gibt es nicht mehr. */
+  blattForm: 'spalte' | 'unten';
+  /** Steht das offene Blatt als 23.75-rem-Spur? */
+  blattSpur: boolean;
+  /** Steht statt seiner die Schiene rechts (Blatt zu)? */
+  blattSchiene: boolean;
   /** Steht die Gliederung als 18-rem-Spalte? */
   gliederungSpalte: boolean;
   /** Steht statt ihrer die schmale Schiene? */
   schiene: boolean;
+  /** Steht die Gliederungs-Schiene nur, weil das offene Blatt ihren Platz hat?
+   *  Dann holt ihr Klick den Platz zurück (schliesst das Blatt), statt eine
+   *  Gliederung «einzublenden», die ohnehin offen gewählt ist (Ä60 (c) P1-1). */
+  schieneHoltPlatz: boolean;
+  /** Breite der rechten Spur SAMT Abstand (rem), 0 ohne Blatt-Spalte — die
+   *  Kopfzeile stellt ihren rechten Streifen so breit (Spiegel von D32). */
+  spurVersatzRechtsRem: number;
+  /** Aufweitung des Rahmens (Breite + Ränder) oder `undefined`. */
+  breite: CSSProperties | undefined;
   /**
    * Waagrechter Versatz der Lese-Zelle gegenüber der linken Rahmenkante (rem)
    * — also die Breite der linken Spur SAMT ihrem Abstand, oder 0, wo keine
@@ -234,29 +268,65 @@ export interface RahmenBild {
 /**
  * Die eine Entscheidung über die Spuren des Rahmens — rein, an jeder Breite
  * nachrechenbar (§2), Beweis in `src/tests/leser-v3-rahmenspalten.test.ts`.
- *
- * D33 (7.9.2026): `blattOffen` ist aus der Lage GESTRICHEN. Das ist die ganze
- * Zusage der Variante A — dieselbe Eingabe, dasselbe Bild, ob das Blatt offen
- * ist oder nicht.
+ * Entscheid A (24.9.2026): `blattOffen` ist wieder Eingabe (Dateikopf).
  */
 export function rahmenBild(lage: RahmenLage): RahmenBild {
-  const { raum, spaltenLage, tocOffen, ruheForm } = lage;
+  const { raum, spaltenLage, tocOffen, ruheForm, blattLage, blattOffen } = lage;
   const rem = raum?.remPx ?? 16;
-  const gliederungSpalte = spaltenLage && tocOffen;
+  // Ohne Messung (erster Render) gilt der Raum als ausreichend — gemessen wird
+  // im selben Commit (Callback-Ref in `useRahmenRaum`), vor dem ersten Bild.
+  const raumRem = raum == null ? Infinity : raum.raumPx / rem;
+  const linksSchieneRem = spaltenLage ? SPUR_SCHIENE + SPUR_ABSTAND : 0;
+  const blattSpalte = blattLage && raumRem >= linksSchieneRem + LESE_MIN + SPUR_ABSTAND + SPUR_BLATT;
+  const blattSpur = blattSpalte && blattOffen;
+  const weicht = blattSpur && spaltenLage && tocOffen
+    && raumRem < SPUR_GLIEDERUNG + SPUR_ABSTAND + LESE_MIN + SPUR_ABSTAND + SPUR_BLATT;
+  const gliederungSpalte = spaltenLage && tocOffen && !weicht;
   const schiene = spaltenLage && !gliederungSpalte;
 
   const spurRem = gliederungSpalte ? SPUR_GLIEDERUNG : SPUR_SCHIENE;
   const spurVersatzRem = spaltenLage ? spurRem + SPUR_ABSTAND : 0;
-  const zellePx = raum == null ? null : raum.ruhePx - spurVersatzRem * rem;
+  const rechtsRem = blattSpur ? SPUR_BLATT : SPUR_SCHIENE;
+  const spurVersatzRechtsRem = blattSpalte ? rechtsRem + SPUR_ABSTAND : 0;
+  // Ziel: die Spuren und keinen Schritt mehr (Ä60 (c): ein breiterer Rahmen gäbe
+  // dem Fliesstext Fensterbreite) — nie schmaler als ohne Aufweitung.
+  const breitePx = raum == null ? null
+    : Math.min(raum.raumPx, Math.max(raum.ruhePx, (spurVersatzRem + LESEMASS_MAX + spurVersatzRechtsRem) * rem));
+  const zellePx = breitePx == null ? null : breitePx - (spurVersatzRem + spurVersatzRechtsRem) * rem;
   const satzspiegel = satzspiegelFuer(zellePx, rem, spaltenLage && ruheForm === 'rechts');
+  const spuren = [spaltenLage ? `${spurRem}rem` : '', 'minmax(0,1fr)', blattSpalte ? `${rechtsRem}rem` : '']
+    .filter((x) => x !== '').join(' ');
   return {
-    blattForm: ruheForm,
+    blattForm: blattSpalte ? 'spalte' : 'unten',
+    blattSpur,
+    blattSchiene: blattSpalte && !blattOffen,
     gliederungSpalte,
     schiene,
+    schieneHoltPlatz: weicht,
     spurVersatzRem,
-    spalten: spaltenLage ? `${spurRem}rem minmax(0,1fr)` : undefined,
+    spurVersatzRechtsRem,
+    spalten: spaltenLage || blattSpalte ? spuren : undefined,
+    breite: raum != null && breitePx != null ? aufweitung(raum, breitePx) : undefined,
     satzspiegel,
   };
+}
+
+/**
+ * Ä60 (c) (17.8.2026), mit Entscheid A zurück: der Rahmen wird `breitePx` breit
+ * und behält seine linke Kante, solange rechts im Raum Platz ist; erst dann
+ * rückt er nach links. `undefined`, wo nichts zu gewinnen ist.
+ */
+function aufweitung(raum: RahmenRaum, breitePx: number): CSSProperties | undefined {
+  if (breitePx <= raum.ruhePx) return undefined;
+  const linksHeute = (raum.raumPx - raum.ruhePx) / 2;
+  const dx = Math.min(linksHeute, raum.raumPx - breitePx) - linksHeute; // ≤ 0
+  return {
+    '--leser-max-w': `${breitePx}px`,
+    width: 'var(--leser-max-w)',
+    marginInlineStart: `${dx}px`,
+    // Der Kasten muss aufgehen: dx + Breite + Ende = Elternbreite.
+    marginInlineEnd: `${raum.ruhePx - breitePx - dx}px`,
+  } as CSSProperties;
 }
 
 
