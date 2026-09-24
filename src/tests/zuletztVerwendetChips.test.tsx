@@ -38,6 +38,18 @@ import { merkeBesuch } from '../lib/zuletztVerwendet';
 //     (zugleich der Name der Region, wie zuvor das aria-label).
 // Umbruch statt Scroll-Achse und Registerstrich je Eintrag bleiben wörtlich.
 //
+// DEKLARIERTE ANPASSUNG (U9, Nachtrag David 24.9.2026 abends, §5d-bis, §6.3):
+// «zuletzt geöffnet auf startseite soll nicht extra platz einnehmen sonder
+// schnellwerkzeug soll kleiner werden». Die Fläche steht in derselben
+// Rasterzeile wie das Kachelfeld und ist darum begrenzt:
+//   · höchstens FÜNF Einträge (die neuesten, Reihenfolge unverändert) statt
+//     aller gespeicherten — die volle Liste bleibt im Such-Leerzustand;
+//   · je Eintrag EINE Zeile: statt umzubrechen (`flex-wrap`) wird der Titel
+//     gekürzt (`truncate`), der volle Titel steht im Tooltip (`title`) und im
+//     Text des Verweises (zugänglicher Name).
+// Die tragende Invariante (keine waagrechte Scroll-Achse, §6.7) und der
+// Registerstrich je Eintrag bleiben wörtlich.
+//
 // jsdom/SSR kennt kein Layout — geprüft wird darum, was am Markup messbar ist.
 beforeEach(() => {
   const speicher = new Map<string, string>();
@@ -63,9 +75,9 @@ describe('ZuletztVerwendet — Marken-Zeile des Pults', () => {
     expect(render()).toBe('');
   });
 
-  it('gefüllt: Etikett + je ein Verweis mit Registerstrich, ohne waagrechte Scroll-Achse', () => {
-    // Mehr Einträge mit langen Titeln als in 390 px passen — die Zeile bricht
-    // um, statt die Seite zu weiten.
+  it('gefüllt: Etikett + höchstens fünf einzeilige Verweise mit Registerstrich, ohne waagrechte Scroll-Achse', () => {
+    // Mehr Einträge mit langen Titeln als in 390 px passen. `merkeBesuch`
+    // stellt voran: der neueste (Nummer 5) steht oben, Nummer 0 fällt weg (U9).
     for (let i = 0; i < 6; i++) {
       merkeBesuch({ route: `/rechner/langer-titel-nummer-${i}`, titel: `Sehr langer Rechnername Nummer ${i}` });
     }
@@ -73,15 +85,23 @@ describe('ZuletztVerwendet — Marken-Zeile des Pults', () => {
 
     expect(html).toContain('>Zuletzt geöffnet</h2>');
     const verweise = html.match(/<a /g) ?? [];
-    expect(verweise.length, 'ein Verweis je Eintrag').toBe(6);
-    for (let i = 0; i < 6; i++) {
-      expect(html, `Eintrag ${i} verlinkt`).toContain(`/rechner/langer-titel-nummer-${i}`);
+    expect(verweise.length, 'höchstens fünf Verweise (U9)').toBe(5);
+    for (let i = 1; i < 6; i++) {
+      expect(html, `Eintrag ${i} verlinkt`).toContain(`/rechner/langer-titel-nummer-${i}"`);
     }
+    expect(html, 'ältester Eintrag nicht auf der Startseite').not.toContain('/rechner/langer-titel-nummer-0"');
+    const reihenfolge = [...html.matchAll(/langer-titel-nummer-(\d)"/g)].map((m) => m[1]);
+    expect(reihenfolge, 'Reihenfolge der Quelle, neuester zuerst').toEqual(['5', '4', '3', '2', '1']);
     // Registerstrich: Rechner-Routen tragen das Werkzeug-Register (`--reg-w`).
-    expect((html.match(/bg-reg-w/g) ?? []).length, 'je Eintrag ein Registerstrich').toBe(6);
+    expect((html.match(/bg-reg-w/g) ?? []).length, 'je Eintrag ein Registerstrich').toBe(5);
 
-    // Keine Scroll-Achse: die Zeile umbricht (flex-wrap), sie scrollt nicht.
-    expect(html).toContain('flex-wrap');
+    // Eine Zeile je Eintrag: der Titel wird gekürzt, voll bleibt er im Tooltip (U9).
+    expect((html.match(/class="truncate"/g) ?? []).length, 'je Eintrag gekürzt statt umbrochen').toBe(5);
+    for (let i = 1; i < 6; i++) {
+      expect(html, `Tooltip Eintrag ${i}`).toContain(`title="Sehr langer Rechnername Nummer ${i}"`);
+    }
+    // Keine Scroll-Achse: gekürzt wird je Zeile, gescrollt nie.
+    expect(html).not.toContain('flex-wrap');
     for (const klasse of ['overflow-x-auto', 'flex-nowrap', 'w-max']) {
       expect(html, `Scroll-Streifen-Klasse «${klasse}» ist zurück`).not.toContain(klasse);
     }
