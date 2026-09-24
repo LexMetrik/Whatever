@@ -21,13 +21,20 @@ import {
 //
 // Fachliche Festlegungen:
 // - ABSENDER ist die SCHULDNERSEITE (nur der Schuldner kann verzichten).
-// - Die Höchstdauer läuft ab BEGINN DER VERJÄHRUNG, nicht ab der Erklärung.
-//   Weil der Verjährungsbeginn oft nicht sicher feststeht, trägt der
-//   Verzichts-Baustein IMMER die salvatorische Begrenzung «längstens für
-//   die nach Art. 141 Abs. 1 OR zulässige Höchstdauer» — das Dokument kann
-//   die gesetzliche Grenze damit nie überschreiten. Liegt das gewählte
-//   Enddatum mehr als zehn Jahre nach dem ERKLÄRUNGSDATUM, ist es SICHER
-//   übermässig (Beginn liegt zwingend davor) → Blocker.
+// - «Ab Beginn der Verjährung» in Art. 141 Abs. 1 OR regelt, AB WANN
+//   verzichtet werden DARF (Zulässigkeit), nicht den Lauf der zehn Jahre.
+//   Die Höchstdauer gilt je Verzicht; ob sie ab der Erklärung oder ab dem
+//   Verjährungseintritt läuft, lässt das Gesetz bewusst offen (Botschaft
+//   BBl 2014 235, S. 262: Auslegung der Erklärung). Die Vorlage schliesst
+//   diese Frage durch die Erklärung selbst (Entscheid David 24.9.2026, W-06
+//   «Vorlage B»; Befund VB-01 Prüfung Rechtslogik 23.9.2026): «mit Wirkung
+//   ab dem Datum dieser Erklärung bis …, längstens jedoch für zehn Jahre ab
+//   dem Datum dieser Erklärung». Die frühere Klausel «zehn Jahre ab Beginn
+//   der Verjährung» hatte keine amtliche Stütze und hob bei zehnjähriger
+//   Frist (Art. 127 OR) den Verzicht wörtlich auf (Fall V6).
+// - Blocker: Enddatum mehr als zehn Jahre nach dem ERKLÄRUNGSDATUM — mit der
+//   Formulierung ab Erklärung ist die Grenze damit exakt (Fristende nach
+//   Art. 77 Abs. 1 Ziff. 3 i.V.m. Abs. 2 OR: Tag gleicher Zahl).
 // - Der Standard-Vorbehalt «soweit nicht bereits eingetreten» und die
 //   Klarstellung «keine Anerkennung» (Abregrenzung zu Art. 135 Ziff. 1 OR)
 //   sind Praxis-Standard und abwählbar.
@@ -72,15 +79,19 @@ export function pruefeVvGates(a: VvAntworten): VvGateErgebnis {
   }
   if (vvUeberHoechstdauer(a.datum, a.verzichtBis)) {
     blocker.push(
-      'Das gewählte Ende liegt mehr als zehn Jahre nach dem Erklärungsdatum – die Höchstdauer '
-      + 'läuft aber schon ab BEGINN der Verjährung (Art. 141 Abs. 1 OR) und wäre damit sicher '
-      + 'überschritten. Enddatum kürzen; ein späterer ERNEUTER Verzicht bleibt möglich («jeweils»).',
+      'Das gewählte Ende liegt mehr als zehn Jahre nach dem Erklärungsdatum – ein Verzicht ist '
+      + 'jeweils für höchstens zehn Jahre zulässig (Art. 141 Abs. 1 OR), und diese Erklärung '
+      + 'rechnet sie ab ihrem Datum. Enddatum kürzen; ein späterer ERNEUTER Verzicht bleibt '
+      + 'möglich («jeweils»).',
     );
   }
   hinweise.push(
-    'Die Höchstdauer von zehn Jahren läuft ab BEGINN der Verjährung, nicht ab dieser Erklärung '
-    + '(Art. 141 Abs. 1 OR). Die Erklärung enthält darum die ausdrückliche Begrenzung auf die '
-    + 'gesetzlich zulässige Höchstdauer. Der Verzicht kann später erneuert werden («jeweils»).',
+    'Ein Verzicht ist erst ab Beginn der Verjährung zulässig; die Höchstdauer von zehn Jahren '
+    + 'gilt je Verzicht (Art. 141 Abs. 1 OR). Ob sie ab der Erklärung oder ab dem '
+    + 'Verjährungseintritt zu rechnen ist, lässt das Gesetz bewusst offen (Botschaft BBl 2014 235, '
+    + 'S. 262) – die Erklärung legt den Beginn darum selbst fest: mit Wirkung ab dem Datum dieser '
+    + 'Erklärung, längstens zehn Jahre ab diesem Datum. Der Verzicht kann später erneuert werden '
+    + '(«jeweils»).',
   );
   hinweise.push(
     'SCHRIFTFORM ist Gültigkeitsvoraussetzung (Art. 141 Abs. 1bis OR) – drucken und von der '
@@ -119,12 +130,12 @@ export const VV_SCHEMA: VorlageSchema = {
   id: 'verjaehrungsverzicht',
   format: 'eingabe',
   ausgabeArt: 'fertig',
-  version: '1.0.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101)',
+  version: '1.1.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101; VB-01 Laufbeginn ab Erklärung)',
   titel: 'Verjährungsverzichtserklärung',
   disclaimer:
-    'Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens für die '
-    + 'gesetzlich zulässige Höchstdauer (Art. 141 Abs. 1 OR); massgebend sind Gesetz und '
-    + 'konkreter Sachverhalt.',
+    'Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens zehn Jahre ab '
+    + 'dem Datum der Erklärung (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter '
+    + 'Sachverhalt.',
   bausteine: [
     vvAbsender,
     vvAdressat,
@@ -136,11 +147,11 @@ export const VV_SCHEMA: VorlageSchema = {
       begruendung: 'Anrede – immer enthalten.' },
     { id: 'VV_verzicht',
       text: 'Hinsichtlich Ihrer Forderung ({{forderungBeschrieb}}{{betragSatz}}) verzichte ich '
-        + 'hiermit bis zum {{verzichtBisFmt}} auf die Erhebung der Einrede der Verjährung – '
-        + 'längstens jedoch für die nach Art. 141 Abs. 1 OR zulässige Höchstdauer von zehn '
-        + 'Jahren ab Beginn der Verjährung.',
+        + 'hiermit mit Wirkung ab dem Datum dieser Erklärung bis zum {{verzichtBisFmt}} auf die '
+        + 'Erhebung der Einrede der Verjährung, längstens jedoch für zehn Jahre ab dem Datum '
+        + 'dieser Erklärung (Art. 141 Abs. 1 OR).',
       norm: 'Art. 141 Abs. 1 OR',
-      begruendung: 'Kern der Erklärung: befristeter Einredeverzicht mit salvatorischer Begrenzung auf die gesetzliche Höchstdauer – das Dokument kann die Grenze des Art. 141 Abs. 1 OR damit nie überschreiten.' },
+      begruendung: 'Kern der Erklärung: befristeter Einredeverzicht; die Erklärung legt den Beginn selbst auf ihr Datum fest (das Gesetz lässt ihn offen, BBl 2014 235, S. 262) und begrenzt sich auf zehn Jahre ab diesem Datum – das Dokument hält die Höchstdauer des Art. 141 Abs. 1 OR damit unter jeder Lesart ein.' },
     { id: 'VV_vorbehalt',
       text: 'Dieser Verzicht gilt nur, soweit die Verjährung im Zeitpunkt des Zugangs dieser Erklärung nicht bereits eingetreten ist.',
       includeIf: { feld: 'vorbehaltEingetreten', eq: true },
