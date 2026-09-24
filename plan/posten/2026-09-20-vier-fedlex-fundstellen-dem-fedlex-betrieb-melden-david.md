@@ -1,5 +1,5 @@
 <!-- @posten
-dach: QS-FRIT-DRIFT
+dach: W2·5g-ZEIT
 titel: Vier Fedlex-Fundstellen dem Fedlex-Betrieb melden (Handschritt David)
 -->
 
@@ -11,3 +11,5 @@ titel: Vier Fedlex-Fundstellen dem Fedlex-Betrieb melden (Handschritt David)
 **Der Posten bleibt trotzdem offen**, weil die Meldung selbst eine **ausgehende Nachricht** ist und
 damit Davids Handschritt: eine Session sendet sie nie selbst; einen Entwurf schreibt sie nur auf
 sein ausdrückliches Wort. Abhaken, sobald David gemeldet hat.
+
+Umgehängt 24.9.2026 von `QS-FRIT-DRIFT` (aufgegangen in `W2·5g-ZEIT`, Fusionen 2026-09-24, QS-DOKU-DIAET).

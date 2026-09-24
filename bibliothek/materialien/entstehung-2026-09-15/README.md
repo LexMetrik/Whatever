@@ -31,7 +31,7 @@ kopiert. Planungs-Session ohne Bau. **Bau-Spec:** `fahrplaene/FAHRPLAN-MATERIALI
   Erläuternde Berichte (Art. 6a VlG) ⇒ ein Extraktionsschema für drei Dokumenttypen. Lücken: kein
   Fedlex-Code für den Anstoss (Motion/Pa.Iv./Kt.Iv./Legislaturplanung), keiner je Lesung,
   Botschaft/Zusatzbotschaft teilen Code 200. Status: **Entwurf**, fachliche Abnahme David offen
-  (Zeitsperre); Vertiefung = Roadmap `W2·6d-VERFAHREN-RECHERCHE`.
+  (Zeitsperre); Vertiefung = Roadmap `W2·6d-VERFAHREN-RECHERCHE` (seit 24.9.2026 Etappe EA0 im Dach `W2·6d-ENTSTEHUNG`).
 
 ## Ergänzung zur Runde 6.9.2026 (keine Korrektur, §2b)
 

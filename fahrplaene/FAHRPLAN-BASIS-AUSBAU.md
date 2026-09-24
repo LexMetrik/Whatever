@@ -189,24 +189,25 @@ Datenhaltungs-Optimierung — Suche-Edge-Umzug Kanton», der in `ROADMAP.md` ste
 Auflagen (eigene Messung am Edge, eigene Gegenprüfung, linguistische Sorgfalt) gelten
 unverändert.
 
-  - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot`** — prerendertes DOM wird 27–78 ms nach `load` verworfen (Nullprobe auf main bestätigt); Wurzel der «flaky» Tastatur-/Skip-Link-Specs und ein CLS-/TTI-Posten. Fix mit Hydrations-Fehler-Wächter, Vorher/Nachher-Messung, Gegenprüfung, eigener PR.
-  - [ ] **Geparkter Stand `hydrateRoot` (9 Commits, still seit 15.9.) — Tag `archiv/qs-basis-hydrate-2026-09-18` (ae04f6caf), Branch + Worktree am 18.9.2026 abgeräumt; kollidiert nach #899 mit `Begruessung.tsx`/`SuchBlock.tsx`/`prerender.ts`** *(17.9.2026)* — Wiederaufnahme aus dem Tag (`git switch -c feat/qs-basis-hydrate archiv/qs-basis-hydrate-2026-09-18`), dabei `anfangsGruss()` in `useHeute` übernehmen.
-  - [ ] **`linkedom`-`window` ist Proxy auf `globalThis`: Werte lecken in Folgetests** (`begruessung-strictmode.test.tsx`, 17.9.2026).
-  - [ ] **E2E-Flake Shard 2/8 — Wurzel messen statt neu starten** *(Befund QS-FREMDAGENTEN, Session 4.9.2026)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
-  - [ ] **§17 Doku-PR macht offene PRs nicht nur BEHIND, sondern DIRTY** *(Vorfall 14.9.2026, #870 gegen #869)* — BEHIND kostet einen CI-Lauf, DIRTY eine fremde Session. Befund, Regel und Wurzel-Kandidat: FAHRPLAN-OFFENE-BEFUNDE §4 («Doku-PR gegen offenen Bau-PR»).
+  - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
+  - → Posten `plan/posten/2026-09-24-main-tsx-nutzt-createroot-statt-hydrateroot.md` (main.tsx nutzt createRoot statt hydrateRoot)
+  - → Posten `plan/posten/2026-09-24-main-tsx-nutzt-createroot-statt-hydrateroot.md` (main.tsx nutzt createRoot statt hydrateRoot)
+  - → Posten `plan/posten/2026-09-24-linkedom-window-ist-proxy-auf-globalthis-werte-lecken-in-fol.md` (linkedom-window ist Proxy auf globalThis: Werte lecken in Folgetests)
+  - → Posten `plan/posten/2026-09-20-flake-wurzeln-reparieren-bevor-die-ausnahmen-am-20-10-2026-a.md` (Punkt 18: E2E-Flake Shard 2/8 — Wurzel messen statt neu starten)
+  - → Posten `plan/posten/2026-09-24-17-doku-pr-gegen-offenen-bau-pr-nicht-behind-sondern-dirty.md` (§17 · Doku-PR gegen offenen Bau-PR: nicht BEHIND, sondern DIRTY)
   - [x] **§17 BEHIND-Schleife durch Plan-Buchung** *(2.9.2026)* — ✅ 19.9.2026, Wurzel-Kandidat «Merge-Queue» gezogen; Rest (Plan-Buchung selbst) unter `QS-CI-MINUTEN`. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 19.9.2026.
-  - [ ] **§17 F13 klären: Warum wurde der main-Lauf 1123b1974 (#629) «cancelled»?** *(2.9.2026)* — `cancel-in-progress` ist für main seit 26.7. aus; trotzdem endete der Merge-Lauf ~30 s nach dem Folge-Push 9cdbb6a55 als cancelled, der Deploy fehlte (Sidecar 404, Heilung per `gh run rerun`). Kandidaten: Selbst-Cancel-Schritt («BEHIND-PR … nachziehen»/«Geplante Workflows»), GitHub-seitig. Rot-Beweis mit zwei schnellen main-Pushes, dann Wurzel-Fix; bis dahin Skill `landung` Nachkontrolle 0.
-  - [ ] **§17 Notizen-Datei: Haupt-Checkout aus einem Worktree nur per Bash schreibbar** *(19.9.2026)* — das Write-Werkzeug sperrt aus einem Worktree Schreibzugriffe auf `<Haupt-Checkout>/.claude/`; die Regel (`bauschritt` Station A 4, globale CLAUDE.md) ist nur per `Bash` erfüllbar. Umgekehrt sehen Kompaktierungs-Hook und `plan:next` eine im Worktree abgelegte Datei nicht. Wurzel offen.
-  - [ ] **`README.md` ist ein Fossil** *(19.9.2026)* — «Swiss Legal Calc – Modul 1: Arbeitsrecht» plus ein Architektur-Baum, den es nicht mehr gibt — für eine übernehmende Person die erste und irreführendste Datei (Zweck `BETRIEB.md`). Auf Ist-Stand bringen oder dorthin verweisen.
-  - [ ] **Vercel Deployment Storage nachmessen — überfällig** *(Auftrag 8.9.2026, «48 h nach der ersten Landung»)* — war 261.91 GB gegen 10 GB Hobby-Grenze (ein Stand = 738 MB); über 10 GB ⇒ die 455 MB Korpus-Dateien je Stand auslagern. Wortlaut: `landung/referenz-ci.md` Ziff. 1b.
-  - [ ] **`shellcheck` fehlt lokal** *(19.9.2026)* — `landung-kette.sh` und `scripts/ci/*.sh` prüft nur `bash -n` (Syntax), nicht Quoting/Wort-Trennung. Als Voraussetzung dokumentieren oder ein Tor bauen, das ohne shellcheck übersprungen wird — aber eines, das scheitern kann (§6.7).
-  - [ ] **§17 · Steuerdeckel-Glob umgehbar durch Dateinamen-Wahl** *(Prüfer/Fixer #856, 14.9.2026)* — der 204-KB-Deckel auf `scripts/check-*.ts` steht bei 203,8 KB, sieht aber die Seitenwagen der gleichen Steuerungsfläche nicht: `scripts/verweis-inventar-messung.ts`, `scripts/ui-normzitate-kommentare.ts`, `scripts/tor-paritaet-sonden.ts` u. a. = 75,4 KB ausserhalb des Globs. Wer den Deckel reissen würde, benennt die Datei anders — das ist kein Budget, das ist eine Namenskonvention. Wurzel-Fix: Glob auf die Steuerungsfläche erweitern **oder** ein zweites, deklariertes Flächenbudget; einmal rot zeigen (§6.7).
-  - [ ] Totcode-Meldung wird echtes Tor `check:tot` — blockierend bei NEUEN Meldungen (Basis: 1). §3.2.
-  - [ ] Dependency-Frische: `npm audit` + Majors + knip-Unlisted als Meldung, nie Stopper. **Lockfile nur über `npx npm@10`.** §3.3.
-  - [ ] tailwind 3→4-Migration (PR #503; ~249 className-Dateien visuelle Regression — kein Dependabot-Merge).
-  - [ ] Dependabot-Lock-Wurzelfix: npm-Major-Mismatch erzeugt fehlende genestete Einträge (H-8-Muster) — Weg finden, der den Lock automatisch mit npm@10 nachzieht.
-    - [ ] **Präfix-Parität des Edge-Weges** — der Client findet «Verjähr» (FlexSearch `tokenize: 'forward'`), der DB-Weg nicht. FTS5 könnte es (`"Verjähr"*`), aber Angleichen ist eine Recall-, RANG- und Latenz-Änderung auf jeder Query (GP-Messung 31.8.: Präfix hebt z. B. bei «Eigentum» OR 261/ZGB 200 via Marginalien-startsWith auf Stufe 0/Seite 1 — Rang-/Golden-Prüfung MIT budgetieren): lokal, warm, n=3 Median «Eigentum» 15,6 → 107,1 ms bei 658 → 1502 Treffern (6,9x), über Turso-HTTP ungemessen obendrauf. Braucht eigene Messung am Edge und eigene Gegenprüfung.
-    - [ ] **Umlaut-Faltung ae/oe/ue** — «Verjaehrung» findet nichts, «Verjahrung» findet alle 259. `remove_diacritics 2` faltet ä→a, aber niemand faltet ae→ä. Betrifft **beide** Wege gleich (der Client strippt NFKD-Diakritika), ist also keine Edge-Lücke, sondern eine gemeinsame; ein Fix müsste beide Indizes zusammen ändern und braucht linguistische Sorgfalt («Aeroplan», «Israel», «Praesidium»).
+  - → Posten `plan/posten/2026-09-24-17-f13-klaeren-warum-wurde-der-main-lauf-1123b1974-629-cance.md` (§17 F13 klären: Warum wurde der main-Lauf 1123b1974 (#629) «cancelled»?)
+  - → Posten `plan/posten/2026-09-17-check-lizenzen-in-agent-worktrees-ohne-node-modules-immer-ro.md` (Punkt 10: §17 Notizen-Datei: Haupt-Checkout aus einem Worktree nur per Bash schreibbar)
+  - → Posten `plan/posten/2026-09-24-readme-md-ist-ein-fossil.md` (README.md ist ein Fossil)
+  - → Posten `plan/posten/2026-09-24-vercel-deployment-storage-nachmessen-ueberfaellig.md` (Vercel Deployment Storage nachmessen — überfällig)
+  - → Posten `plan/posten/2026-09-24-shellcheck-fehlt-lokal.md` (shellcheck fehlt lokal)
+  - → Posten `plan/posten/2026-09-21-sperrklinke-neue-top-level-helfer-rutschen-an-der-liste-vorbei.md` (Punkt 1: §17 · Steuerdeckel-Glob umgehbar durch Dateinamen-Wahl)
+  - → Posten `plan/posten/2026-09-24-totcode-meldung-wird-echtes-tor-check-tot-blockierend-bei-ne.md` (Totcode-Meldung wird echtes Tor check:tot (blockierend bei neuen Meldungen))
+  - → Posten `plan/posten/2026-09-24-dependency-frische-npm-audit-majors-und-knip-unlisted-als-me.md` (Dependency-Frische: npm audit, Majors und knip-Unlisted als Meldung, nie Stopper)
+  - → Posten `plan/posten/2026-09-24-tailwind-3-4-migration-pr-503-249-classname-dateien.md` (tailwind 3→4-Migration (PR #503, ~249 className-Dateien))
+  - → Posten `plan/posten/2026-09-24-dependabot-lock-wurzelfix-npm-major-mismatch-erzeugt-fehlend.md` (Dependabot-Lock-Wurzelfix: npm-Major-Mismatch erzeugt fehlende genestete Einträge)
+    - → Posten `plan/posten/2026-09-20-d-datenhaltungs-optimierung-suche-edge-umzug-kanton.md` (Punkt 1: Präfix-Parität des Edge-Weges)
+    - → Posten `plan/posten/2026-09-20-d-datenhaltungs-optimierung-suche-edge-umzug-kanton.md` (Punkt 2: Umlaut-Faltung ae/oe/ue)
 ---
 
 

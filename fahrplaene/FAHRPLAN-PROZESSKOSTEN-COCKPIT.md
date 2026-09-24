@@ -2,6 +2,7 @@
 <!-- @lagebild name: Prozesskosten-Cockpit · zweck: Der Haupt-Rechner: Restbau plus Verzahnung Frist und Kosten. -->
 
 **Heimat: ROADMAP-Schritte `W1·4` und `W1·5-PRAXIS`.**
+*24.9.2026: `W1·5-PRAXIS` ist in `W3-AUSBAU` aufgegangen — Posten dort (ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
 
 ## §0 · Zweck und Disziplin
 

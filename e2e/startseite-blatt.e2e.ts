@@ -578,12 +578,18 @@ const unten = async (l: ReturnType<Page['locator']>) => { const b = (await l.bou
 // «Häufig gebraucht» mindestens bis unter das Schnellwerkzeug und bis zur
 // Unterkante der Spalte. ROT ZU BEKOMMEN (U9): in `pages/Startseite.tsx` die
 // `aside` zurück auf `row-span-2 grid-rows-subgrid` stellen.
+// DEKLARIERTE ANPASSUNG (U13, Nachtrag David 24.9.2026 abends, §6.3): «es soll
+// nicht zu scrollen kommen wenn man kachel aufmacht» / «also bei gesetz» — das
+// Token `start-kachel-breit` sinkt von 18rem (288 px) auf 17.5rem (280 px),
+// damit das offene Blatt ab 1280×800 ganz im Fenster steht (Herleitung im
+// Token-Kommentar, `tailwind.config.js`). Erwartung 288 → 280; die Bündigkeit
+// unten ist unverändert geprüft.
 const zuletztFl = (page: Page) => page.locator('section').filter({ has: page.getByRole('heading', { name: 'Zuletzt geöffnet' }) })
 const INHALT = { Frist: 'Fristende', Verzugszins: 'Verzugszins (gesamt)', 'Verjährung': 'Verjährungseintritt' } as const
 
 test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
   for (const breite of [1024, 1440]) {
-    test(`@${breite}: Kacheln 288 px, «Häufig gebraucht» endet bündig mit der Spalte — alle Varianten`, async ({ page }) => {
+    test(`@${breite}: Kacheln 280 px, «Häufig gebraucht» endet bündig mit der Spalte — alle Varianten`, async ({ page }) => {
       await page.setViewportSize({ width: breite, height: 900 })
       await page.goto('/')
       const aside = page.locator('aside[aria-label="Arbeitsplatz"]')
@@ -591,7 +597,7 @@ test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
         await page.getByRole('tab', { name: wahl, exact: true }).click()
         await expect(page.getByRole('tabpanel')).toContainText(INHALT[wahl])
         const kacheln = await page.locator('.lc-start-zelle').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().height)))
-        expect(kacheln, `${wahl}: Kachelhöhen`).toEqual([288, 288, 288, 288])
+        expect(kacheln, `${wahl}: Kachelhöhen`).toEqual([280, 280, 280, 280])
         expect(await unten(haeufig(page)), `${wahl}: ohne «Zuletzt» nicht über dem Schnellwerkzeug`).toBeGreaterThanOrEqual(await unten(schnell(page)) - 1)
         expect(Math.abs(await unten(haeufig(page)) - await unten(aside)), `${wahl}: eine Zeile`).toBeLessThanOrEqual(1)
       }
@@ -648,4 +654,46 @@ test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
       }
     }
   })
+})
+
+// ─── U13 · kein Scroll beim Aufklappen (Nachtrag David 24.9.2026 abends) ─────
+// «es soll nicht zu scrollen kommen wenn man kachel aufmacht» / «also bei
+// gesetz». PFLICHT: die erste Stufe der Gesetze (Suchfeld + drei Spalten) passt
+// ganz ins Blatt (kein Überlauf in `.lc-start-blatt-inhalt`) UND das Blatt
+// steht ganz im Fenster (die Seite muss nicht scrollen). Für die drei anderen
+// Kacheln gilt nur Letzteres — ihre erste Stufe trägt Listen (Treffer,
+// Vorlagen-Gebiete), die im Blatt scrollen dürfen (Auftrag U13: «dort kein
+// Zwang»); ihr Überlauf wird als Messwert mitgeschrieben. Rot-Beweis
+// 25.9.2026: vor U13 Gesetze @1440×900 577/536 (41 px), Blatt-Unterkante 819
+// @1280×800.
+// Breiten (Gegenprüfung U13 25.9.2026): 1680×1050 und 1920×1080 sind bewusst
+// nicht eigens geprüft — ab 1280 ist der Inhalt auf `max-w-content` gedeckelt
+// (gleiche Blattbreite, gleiche Umbrüche) und beide haben mehr Höhe; 1280×800
+// ist damit der strengste Fall. Gemessen im U13-Bau: 528/528 an allen vier Grössen.
+test.describe('Startseite · U13 kein Scroll beim Aufklappen', () => {
+  for (const [breite, hoehe] of [[1440, 900], [1280, 800]] as const) {
+    test(`@${breite}×${hoehe}: Gesetze-Wahl ohne Scroll, alle Blätter ganz im Fenster`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      for (const [name, kachel] of [['Gesetze', gesetzeKachel], ['Rechtsprechung', rechtsprechungKachel],
+        ['Materialien', materialienKachel], ['Werkzeuge', werkzeugeKachel]] as const) {
+        await page.goto('/')
+        await kachel(page).click()
+        await expect(blatt(page)).toHaveAttribute('data-phase', 'offen')
+        // Die erste Stufe ist gerendert (Gesetze: das Suchfeld über den Spalten).
+        if (name === 'Gesetze') {
+          await expect(blatt(page).getByRole('searchbox', { name: 'Gesetze durchsuchen' })).toBeVisible()
+          await expect(blatt(page).getByRole('button', { name: 'Alle 26 Kantone' })).toBeVisible()
+        }
+        const m = await page.evaluate(() => {
+          const i = document.querySelector('.lc-start-blatt-inhalt')!
+          const b = document.querySelector('#lm-start-blatt')!.getBoundingClientRect()
+          return { ueber: i.scrollHeight - i.clientHeight, unten: Math.round(b.bottom), vh: innerHeight, sy: Math.round(scrollY) }
+        })
+        test.info().annotations.push({ type: `U13 ${name} @${breite}×${hoehe}`, description: JSON.stringify(m) })
+        expect(m.unten, `${name}: Blatt-Unterkante im Fenster (${JSON.stringify(m)})`).toBeLessThanOrEqual(m.vh)
+        expect(m.sy, `${name}: Seite unverschoben`).toBe(0)
+        if (name === 'Gesetze') expect(m.ueber, `Gesetze-Wahl ohne Überlauf (${JSON.stringify(m)})`).toBeLessThanOrEqual(1)
+      }
+    })
+  }
 })

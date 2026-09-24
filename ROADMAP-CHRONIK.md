@@ -5486,3 +5486,350 @@ Wortlaut des gestrichenen Schrittes:
   **Offene Unterpunkte im Wortlaut** (verlagert 20.9.2026, Entscheid David): [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) §16 — die drei Deckel-/Schnitt-Posten und die Gliederungs-Nebenfunde.
   **Wird durch `W2·29-WERKBANK-LESER` abgelöst** (gleiches Ziel, anderer Weg) — Posten dort
   abarbeiten (Fahrplan Werkbank-Umbau §7); bis dahin unverändert baubar.
+
+
+# Umschichtung 2026-09-24 (1) — Bauplan-Konsolidierung: erledigte Schritte, Teilerfolge, Streichungen, David-Fragen, Queue
+
+Anlass: Auftrag David 24.9.2026 («prüfe auch noch den gesamten bauplan indem du inventarisierst und
+gleich die befunde einbaust und auch sonst zusammenlegst was es zu zusammenlegen gibt»), Schritt
+`QS-DOKU-DIAET`. Grundlage: Bauplan-Inventar Phase 1 (Projektordner
+`pruefung-herz-nieren-2026-09-24/bauplan-inventar.md`, Massnahmen M-01, M-03 … M-07, M-30, Frage
+F-1), freigegeben vom Orchestrator 24.9.2026. Alles wörtlich (aufraeumen.md §2), je Streichung eine
+Begründungszeile (§3). Kein `@meta` eines lebenden Schritts wurde verändert — ausser der
+freigegebenen Buchung `QS-DOKU-DIAET` (wip, `dep: []`, Commit davor).
+
+## W2·28-TREFFER-LANDKARTE — Treffer-Landkarte: wo im Dokument liegen die Treffer *(done, verschoben 2026-09-24)*
+
+- [x] **Treffer-Landkarte: wo im Dokument liegen die Treffer** *(`W2·28-TREFFER-LANDKARTE`, David 18.9.2026; reine UI)*
+  <!-- @meta id: W2·28-TREFFER-LANDKARTE · status: done · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md -->
+  Streifen neben dem Scrollbalken mit einer Marke je Suchtreffer (Gesetz + Entscheid), Klick springt; dieselbe Trefferquelle wie die Hervorhebung (§5).
+  **Detail:** [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §1.
+
+*`fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md` bleibt über die offenen Posten verlinkt (check:plan Regel 7).*
+
+## W2·29-MARKE — Marke: Logo A2 «Registerbuch» und Reiterleiste «Echte Registerreiter» *(done, verschoben 2026-09-24)*
+
+- [x] **Marke: Logo A2 «Registerbuch» und Reiterleiste «Echte Registerreiter»** *(`W2·29-MARKE`, Auftrag David 24.9.2026)*
+  <!-- @meta id: W2·29-MARKE · status: done · blocker: null · dep: [] · feld: design -->
+  Name und Wortmarke bleiben. Siegel → A2 (Buch, Rücken, §, vier Registerreiter), Favicon aus dem
+  Designsystem; offene-Reiter-Leiste als Blätter mit Registerstrich oben, aktiver Reiter verschmilzt mit der Seite.
+
+## QS-CI-MINUTEN — Teilerfolgs-Prosa *(✅-Teilerfolg, verschoben 2026-09-24)*
+
+Die Zeile stand bis 24.9.2026 im offenen Schritt; im Plan bleibt ein ✅-Einzeiler mit Termin
+(Nachmessung 8.10.2026) und dem offenen Punkt. Nachgeführt dort: der Stichtag «bis 22.9.» ist
+verstrichen — `scripts/check-e2e-flake.ts:162` schaltet ab `hart_ab` (`e2e/flake-modus.json`:
+2026-09-22) auf hart.
+
+  Gebaut 8.9.2026: M1–M5, Flacker-Wächter (Melde-Modus bis 22.9.2026, dann hart), Ergebnis-Job, Playwright-Install-Retry — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** **Merge Queue erledigt 19.9.2026:** Repo `LexMetrik/Whatever`, Ruleset 23699779 (SQUASH, ALLGREEN, max 3, Timeout 60 min, keine Bypass-Akteure), `strict` AUS; erster Durchlauf #922 + #917 gemeinsam gelandet 15:05:00Z. Herleitung (#914/#892), `QS-ORG-UMZUG` im Wortlaut, Entscheide David 8.9.2026 (Weg A, M2): Chronik, Umschichtung 19.9.2026 bzw. 14.9.2026 (3). Offen: Wurzel der flackernden Specs (Fehlerbuch §4, bis 22.9.) — unter der Queue schwerer.
+
+## QS-PERF — Teilerfolgs-Prosa *(✅-Teilerfolg, verschoben 2026-09-24)*
+
+  Leser-Tempo gebaut 1.9.2026 (A/B n=5): OR **10 368 → 7 899 ms @4×+4G**, **38 296 → 27 432 ms @6×+3G**,
+  ungedrosselt 780 ms — Wortlaut samt Bestands-Fix `InhaltsKopf`: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3).
+
+## Streichungen 2026-09-24
+
+- **`QS-BEWAEHRUNG`** (Residuen-Stub ohne `@meta`) — gestrichen 2026-09-24: der Schritt ist seit
+  15.9.2026 erledigt und steht samt `@meta` im Wortlaut in der Umschichtung 17.9.2026; der Stub
+  steuerte nichts mehr (keine `dep`, keine Queue). Wortlaut des Stubs:
+
+  ```
+  - [x] **Bewährungs-Messung für Tore, Hooks und Regeln** *(`QS-BEWAEHRUNG`)* — ✅ 15.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 17.9.2026.
+  ```
+- **`W2·9`** — gestrichen 2026-09-24: (a) A3 Kachel-Höhen ist gegenstandslos
+  (`fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md` §20, «Stand 24.9.2026 (W2·29-WERKBANK-RECHNER R2):
+  gegenstandslos»; die Rest-Befunde LM-066/LM-032 laufen im Posten
+  `plan/posten/2026-09-23-w2-9-a-kachel-hoehen-gebvkostenform-tsx-97-samt-lm-032-066-0.md` unter
+  `W2·29-WERKBANK-REST`); (b) «aufgehobene Normen ausblenden» ist eine Entscheidfrage («Abhaken
+  bleibt David-Entscheid») und steht seit 24.9.2026 als Zeile `aufgehobene-normen-schalter` im
+  Block `@david-fragen` der ROADMAP. *Abweichung offengelegt:* `FAHRPLAN-WERKBANK-UMBAU.md` §5f
+  plante für (b) «als Posten umbuchen»; freigegeben war `@david-fragen`, weil erst David
+  entscheidet, ob gebaut wird — ein Posten würde eine Bau-Einheit vortäuschen. Wortlaut:
+
+- [ ] **Aufräum-Item — zwei Restpunkte** *(`W2·9`)*
+  <!-- @meta id: W2·9 · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md -->
+  (a) A3 Kachel-Höhen (zur David-Abnahme geflaggt); (b) globaler Schalter «aufgehobene Normen
+  ausblenden» nie gebaut. Abhaken bleibt David-Entscheid.
+  **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §20.
+  **(a) fällt mit `W2·29-WERKBANK-RECHNER`** (Gegenstand Betreibungskosten-Formular, Planung
+  23.9.2026); (b) ist eine Funktion und bleibt hier.
+
+- **Blocker `david-go-entstehung`** — gestrichen 2026-09-24: ERTEILT seit 11.9.2026, kein `@meta`
+  referenziert ihn mehr (`npm run plan:dump`). Wortlaut der Register-Zeile:
+
+  ```
+  david-go-entstehung: ERTEILT — Go David 11.9.2026 («führe alles durch»); die drei W2·6c-ENTSTEHUNG-*-Schritte stehen auf `status: ready`, Blocker entfernt. Design freigegeben 6.9.2026; §11.9 der Materialien-Spec bucht die Entscheide 1–6 als entschieden 11.9.2026 (Mandat), Nr. 7 (fachliche Abnahme) bleibt bei David.
+  ```
+- **Blocker `david-design-entscheide`** — gestrichen 2026-09-24: ENTSCHIEDEN 22.9.2026, kein `@meta`
+  referenziert ihn mehr; der Entscheid im Wortlaut steht zusätzlich in
+  `fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md` §4. Wortlaut der Register-Zeile:
+
+  ```
+  david-design-entscheide: ENTSCHIEDEN — David 22.9.2026 (Chat): (1) Seitenleiste-Aufbau bleibt wie im Produkt; (2) Startseite vier Kacheln, Zahl aus dem generierten Zähler; (3) Farbe als Fläche JA (F0.2 und `check:farbwelt` im Tokens-Schritt ändern). `W2·29-WERKBANK-TOKENS` steht auf `ready`, Blocker entfernt; Wortlaut in FAHRPLAN-WERKBANK-UMBAU.md §4.
+  ```
+
+## Geparkt «Offene David-Grundsatzfragen» → `@david-fragen` (Abgleich gegen W-01 … W-22)
+
+Die Zeile stand seit 28.6.2026 im Block «Geparkt»; das Lagebild liest offene Fragen aber allein aus
+`@david-fragen` (`davidFragen`, `scripts/plan/bildDaten.ts`) — David hat sie dort nie gesehen.
+Abgleich 24.9.2026 gegen `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01 … W-22, Stand `main`
+e92e7ba1d): **keine der vier Fragen ist dort beantwortet** — W-13 betrifft die Berner Skala der
+Lohnfortzahlung (nicht den Dienstjahr-Stichtag der Kündigungsfrist), W-22 die Gleitkomma-Rundung
+`round2` (nicht die Frage, ob die GebV-SchKG 0.05 verlangt). Alle vier ziehen darum als offene
+Fragen nach `@david-fragen` (Schlüssel `dienstjahr-stichtag`, `sperrtage-anzeige`,
+`export-antworten`, `gebv-schkg-rundung`); ausführlicher Ursprung: `archiv/HANDLUNGSPLAN.md`
+Z.211–218 (7.6.2026). Wortlaut der Geparkt-Zeile:
+
+- **Offene David-Grundsatzfragen** (gebündelt mitführen): Dienstjahr-Stichtag Kündigungsfrist ·
+  Sperrtage-Konvention · 3 Export-Antworten · GebV-SchKG-Promille-Rundung (0.01 vs. amtlich 0.05).
+
+## `@queue` nachgeführt 2026-09-24 (Frage F-1)
+
+Befund Phase 1: von 106 `Roadmap:`-Trailern seit 17.9.2026 zeigten 2 auf Queue-IDs; gebaut wurde
+`W2·29-WERKBANK-*` (63) und `W2·30-RL-*` (7) — die Go-Entscheide 22.9. (Werkbank) und 23./24.9.
+(Rechtslogik parallel) standen nicht in der Queue. Nachgeführt (Entscheid Orchestrator, David hat
+Veto): `W2·30-RL-W2A, W2·29-WERKBANK-REST, W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS`. Aus der
+Queue gefallen (bleiben `ready`, ordnen sich per Dokumentreihenfolge): `W2·20-VERWEIS-SCHAERFE`,
+`W2·22-VERWEIS-FEDLEX`. Das Phasen-Dekret 14.9.2026 im ROADMAP-Kopf bleibt unverändert stehen.
+
+Queue und Marker bis 24.9.2026 im Wortlaut:
+
+`<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX -->`
+
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Sollbild «Was ist ein Gesetz bei LexMetrik», am Bund
+> festgeschrieben und dort eingelöst — Restposten als Zeilen im Schritt; seit 18.9.2026 wieder
+> `ready`, weil `wip` ohne Bau-Spur stand). Danach `W2·5l-NORMTEXT-B2` (Text-Treue M13/M14).
+
+
+# Fusionen 2026-09-24 — Bauplan-Konsolidierung (aufgegangene Schritte)
+
+Anlass und Grundlage wie «Umschichtung 2026-09-24 (1)» (Bauplan-Inventar Phase 1, Massnahmen M-08 …
+M-15, freigegeben vom Orchestrator 24.9.2026; Schritt `QS-DOKU-DIAET`). **17 Schritte aufgegangen,
+nicht gestrichen** — Muster der Etiketten-Konsolidierung 15.8.2026 (oben), angepasst an das
+Posten-Modell (20.9.2026): was an einem aufgegangenen Schritt noch steuert, lebt als Posten-Datei
+bzw. Etappen-Zeile unter dem Dach weiter; eingehende `dep` und Posten-Dächer sind umgehängt, die
+Fahrplan-Abschnitte nennen das Dach (Nachzug an den Rändern). Kein Risikomix: jede Fusion bleibt
+im selben `feld` und in derselben Risikoklasse, ausser M-13 (design → betrieb, beide
+§15-Geräte-Last, Posten unverändert sortenrein).
+
+**Die acht Fusionen mit Begründung:**
+
+1. Sieben `W2·6d-*` → **`W2·6d-ENTSTEHUNG`** (neu, `feld: korpus`, Risikopfad) — Etappen 0/2/3–5/
+   6/7/8/9 derselben Spec (FAHRPLAN-MATERIALIEN-VERZAHNUNG §12.3); jede bildete in `plan:next` eine
+   eigene Lane. Im Dach als Etappen-Zeilen `EA0` … `EA9`; die bisherige `dep` von
+   `W2·6d-BULLETIN-VOTEN` auf `W2·6d-PARLAMENT-ARTIKEL` ist Prosa an der Zeile `EA6` («erst nach
+   EA2»). *Kennung EA statt E (Abweichung vom Vorschlag, offengelegt):* derselbe Fahrplan führt
+   **E0**–**E4** mit ✅ für die Stufe `W2·6c-ENTSTEHUNG`; `check:plan` Regel 14 läse eine offene
+   `E0`-Zeile gegen dieses ✅ als Widerspruch.
+2. `QS-CURRENCY-KANON` → **`QS-KORPUS`** — Bestandsdefekt der Pins ist «fehlerhafte amtliche
+   Substanz» (Dach der Fusion 15.8.2026); Schritt-Text als Posten, sechs Posten umgehängt.
+3. `QS-FRIT-DRIFT` → **`W2·5g-ZEIT`** — nach dem Phasen-Entscheid 14.9.2026 («fr/it später»,
+   Titel von `W2·5g-ZEIT`) gehört der fr/it-Datenanteil dorthin; zwei Posten umgehängt, die
+   Posten-Stufe-2 trägt den Bau.
+4. `W2·13-KANTONE-DRIFT` · `W3·12` → **`W2·13-KANTONE-DATEN`** — dieselbe Fläche (kantonale
+   Daten, Phase 2), beide ohne Posten und nie mit Trailer; je ein Posten. `W2·6-DATA` trägt die
+   `dep` jetzt auf dem Dach (Leitprinzip 4). `FAHRPLAN-GESETZE-IMPORT-3TIER.md` → `archiv/`
+   (verify-then-archive: kein lebender Zeiger ausser `W3·12`; drei `bibliothek/recherche/`-Stellen
+   ergänzt; Kommentare in `scripts/normtext*` bewusst NICHT angefasst — Risikopfad).
+5. `W2·24-C` · `QS-UI` → **`W2·19-DESIGN-KONSISTENZ`** — alle drei «durch `W2·29-WERKBANK-*`
+   abgelöst», die Posten beider liegen seit #1047 unter REST/NACHLAUF.
+6. `W2·24-PERF-REST` → **`QS-PERF`** — Teilmenge («Reader-Kopf-Reflow» führt `QS-PERF` selbst);
+   sieben Posten umgehängt. Die Chronik führt `W2·24-PERF-REST` damit zweimal (done 20.9.2026 und
+   aufgegangen hier) — kein `dep` zeigt darauf (check:plan Regel 4 unberührt).
+7. `W1·5-PRAXIS` · `W2·8` → **`W3-AUSBAU`** (parked → parked) — Horizont-Dach der Fusion 15.8.2026;
+   je ein Posten, drei `W2·8`-Posten umgehängt.
+8. `W2·16-INVENTAR` → **`W2·16-ANLEITUNG`** — Anlass weitgehend entfallen (`docs/INVENTAR-FUNKTIONEN.md`,
+   #975); Rest als Posten. `W2·16-ANLEITUNG`: `dep: []`, `status: parked`, `blocker:
+   zielbild-gesetzesleser` (freigegebene Status-Setzung; ohne `dep` wäre der «bewusst späte» Schritt
+   sofort baubar gewesen).
+
+**Umgehängte Posten (18)** — je mit Zeile «Umgehängt 24.9.2026 …» im Rumpf:
+
+  - `plan/posten/2026-09-20-aufgehoben-flag-ist-golden-neutral-blinder-fleck.md` (QS-CURRENCY-KANON → QS-KORPUS)
+  - `plan/posten/2026-09-20-fedlex-frische-yml-auf-nur-bund-umstellen.md` (QS-CURRENCY-KANON → QS-KORPUS)
+  - `plan/posten/2026-09-20-gen-pdf-quellen-nur-kanton-nachfahren-check-pdf-quellen-in-d.md` (QS-CURRENCY-KANON → QS-KORPUS)
+  - `plan/posten/2026-09-20-leser-mount-auf-langsamem-netz-messen.md` (W2·24-PERF-REST → QS-PERF)
+  - `plan/posten/2026-09-20-public-normtext-pdf-quellen-json-in-eine-paritaets-klasse-au.md` (QS-CURRENCY-KANON → QS-KORPUS)
+  - `plan/posten/2026-09-20-rest-cls-0-0003-im-leser-kopf.md` (W2·24-PERF-REST → QS-PERF)
+  - `plan/posten/2026-09-20-stufe-2-abgleich-ueber-artikelnummer-statt-eid.md` (QS-FRIT-DRIFT → W2·5g-ZEIT)
+  - `plan/posten/2026-09-20-vier-fedlex-fundstellen-dem-fedlex-betrieb-melden-david.md` (QS-FRIT-DRIFT → W2·5g-ZEIT)
+  - `plan/posten/2026-09-20-vorbestand-drei-skripte-lesen-tmp-caches-ohne-pin-pruefung.md` (QS-CURRENCY-KANON → QS-KORPUS)
+  - `plan/posten/2026-09-20-zitat-export-fussnoten-ausgabe.md` (W2·8 → W3-AUSBAU)
+  - `plan/posten/2026-09-20-zitierstil-amtlich-gtr-anhang-3-bk-stand-5-6-2026-bger-zitie.md` (W2·8 → W3-AUSBAU)
+  - `plan/posten/2026-09-20-zotero-translator-fedlex-admin-ch-bger-ch-eigenbau-klein.md` (W2·8 → W3-AUSBAU)
+  - `plan/posten/2026-09-21-frische-rennen-automatik-chip-aus-einer-momentaufnahme-kann.md` (QS-CURRENCY-KANON → QS-KORPUS)
+  - `plan/posten/2026-09-23-cls-flake-leser-funktionszeile-zaehler-e2e-ts-80-an-der-wurz.md` (W2·24-PERF-REST → QS-PERF)
+  - `plan/posten/2026-09-23-firefox-safari-kennen-rel-expect-nicht-seltener-gruss-tausch.md` (W2·24-PERF-REST → QS-PERF)
+  - `plan/posten/2026-09-23-stylesheet-im-head-hinter-23-modulepreload-anweisungen-unter.md` (W2·24-PERF-REST → QS-PERF)
+  - `plan/posten/2026-09-24-schlanker-such-index-fuer-das-rechtsprechung-blatt-der-start.md` (W2·24-PERF-REST → QS-PERF)
+  - `plan/posten/2026-09-24-suche-eingabe-sucheaktiv-1-34-s-bei-cpu-4-usedeferredvalue-m.md` (W2·24-PERF-REST → QS-PERF)
+
+**Neue Posten aus aufgegangenen Schritten (6):**
+
+  - `plan/posten/2026-09-24-fza-cmr-nicht-kanonisch-klaeren-und-kanonisch-nachfuehren-vo.md`
+  - `plan/posten/2026-09-24-kantonale-snapshots-gegen-die-quellen-nachfuehren-28-mit-inh.md`
+  - `plan/posten/2026-09-24-kantons-massenimport-kanton-gesetze-buendel-vormals-w3-12.md`
+  - `plan/posten/2026-09-24-frist-kosten-verzahnen-ein-praxis-weg-vormals-w1-5-praxis.md`
+  - `plan/posten/2026-09-24-schriften-baukasten-berufung-bgg-beschwerde-sistierung-bewei.md`
+  - `plan/posten/2026-09-24-funktions-inventar-rest-status-abgleich-8-von-docs-inventar.md`
+
+*Wortlaut der aufgegangenen Schritte, wie er bis 24.9.2026 in `ROADMAP.md` stand:*
+
+## W2·6d-VERFAHREN-RECHERCHE — Entstehung am Artikel — Deep Research Gesetzgebungsprozess *(aufgegangen in W2·6d-ENTSTEHUNG 2026-09-24)*
+
+- [ ] **Entstehung am Artikel — Deep Research Gesetzgebungsprozess** *(`W2·6d-VERFAHREN-RECHERCHE`, §14-Intake 15.9.2026)*
+  <!-- @meta id: W2·6d-VERFAHREN-RECHERCHE · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Verfahrensmodell «Wie entsteht ein Bundeserlass» aus amtlichen Quellen, je Schritt Norm · Akteur ·
+  Dokument · Publikationsort · Datenspur; Vorlage = Entwurf 15.9.2026. Recherche, kein Bau; Bund
+  zuerst; Gegenprüfung zweites Modell; Abnahme David `[D]` blockiert die Daten-Etappen nicht.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 0.
+
+## W2·6d-PARLAMENT-ARTIKEL — Entstehung am Artikel — Nationalrats-Abstimmungen je Artikel + Vehikel der Vorlage *(aufgegangen in W2·6d-ENTSTEHUNG 2026-09-24)*
+
+- [ ] **Entstehung am Artikel — Nationalrats-Abstimmungen je Artikel + Vehikel der Vorlage** *(`W2·6d-PARLAMENT-ARTIKEL`, 15.9.2026)*
+  <!-- @meta id: W2·6d-PARLAMENT-ARTIKEL · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Curia-Vista-`Vote` je Detailberatungs-Abstimmung strukturiert am Artikel (Chip «im Rat
+  umstritten») + `BusinessType` im Verfahrens-Block. Grenzen: keine Personendaten, Auflagen der
+  Parlamentsdienste am Block, Monatslauf; Risikopfad ⇒ Gegenprüfung.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 2.
+
+## W2·6d-BOTSCHAFT-TEXT — Entstehung am Artikel — Botschaftstext je Artikel (Erläuterung als §7-Zitat) *(aufgegangen in W2·6d-ENTSTEHUNG 2026-09-24)*
+
+- [ ] **Entstehung am Artikel — Botschaftstext je Artikel (Erläuterung als §7-Zitat)** *(`W2·6d-BOTSCHAFT-TEXT`, 15.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-BOTSCHAFT-TEXT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Stufe A: XML ab 2022 + DOCX 2020/21 (kapitelscharf deterministisch, artikelscharf nur wo
+  strukturell); B: PDF/A 1999–2019 auf dem PDF-Kern (K-7); C: Kommissionsberichte + Stellungnahmen
+  BR. **Auflagen:** erst nach Synopse E5/E6 (#794); Erläuterung an die Fassung gebunden, die aus der Botschaft hervorging;
+  Mantel über Eltern-Level; URLs nur aus `isExemplifiedBy`; nichts vor 1999; Gegenprüfung.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappen 3–5.
+
+## W2·6d-BULLETIN-VOTEN — Entstehung am Artikel — Bulletin-Voten Bundesrat/Kommission: Metadaten + Deep-Link *(aufgegangen in W2·6d-ENTSTEHUNG 2026-09-24)*
+
+- [ ] **Entstehung am Artikel — Bulletin-Voten Bundesrat/Kommission: Metadaten + Deep-Link** *(`W2·6d-BULLETIN-VOTEN`, 15.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-BULLETIN-VOTEN · status: ready · blocker: null · dep: [W2·6d-PARLAMENT-ARTIKEL] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Voten nach Funktion, Rat, Datum, Lesung mit Deep-Link ins Amtliche Bulletin und AB-Fundstelle «AB Jahr S/N Seite» (19.9.2026); Artikel-Zuordnung
+  «maschinell» mit ausgewiesener Präzision; SR-Stimmenzahlen aus dem Text. **Kein Redetext, kein Name.**
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 6.
+
+## W2·6d-URSPRUNG — Entstehung am Artikel — Ursprung der Bestimmung (Bundesratsentwurf oder Parlament) *(aufgegangen in W2·6d-ENTSTEHUNG 2026-09-24)*
+
+- [ ] **Entstehung am Artikel — Ursprung der Bestimmung (Bundesratsentwurf oder Parlament)** *(`W2·6d-URSPRUNG`, 19.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-URSPRUNG · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  «Nicht im BR-Entwurf, von Kommission SR/NR eingefügt» auch vor 2021 + Kante «Botschaft zu anderem
+  Geschäft als Material». Weg zuerst messen; nicht deterministisch ⇒ nur über die Entstehungsnotiz.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 8, §12.6.
+
+## W2·6d-ENTSTEHUNGSNOTIZ — Entstehung am Artikel — kuratierte Entstehungsnotiz mit Bulletin-Kurzzitat *(aufgegangen in W2·6d-ENTSTEHUNG 2026-09-24)*
+
+- [ ] **Entstehung am Artikel — kuratierte Entstehungsnotiz mit Bulletin-Kurzzitat** *(`W2·6d-ENTSTEHUNGSNOTIZ`, 19.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-ENTSTEHUNGSNOTIZ · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Von David verfasste/freigegebene Notiz je Artikel: nur Entstehungsfakten mit Fundstelle, Kurzzitate
+  nur kuratiert, Namen von BR-Mitgliedern zulässig. Referenzfall Art. 90 Abs. 3/4 SVG; Abgrenzung vor Bau bestätigen.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 9, §12.6.
+
+## W2·6d-VERNEHMLASSUNG-DOKUMENTE — Entstehung am Artikel — Vernehmlassungs-Dokumente als Verweise *(aufgegangen in W2·6d-ENTSTEHUNG 2026-09-24)*
+
+- [ ] **Entstehung am Artikel — Vernehmlassungs-Dokumente als Verweise** *(`W2·6d-VERNEHMLASSUNG-DOKUMENTE`, 15.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-VERNEHMLASSUNG-DOKUMENTE · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Vorentwurf, Erläuternder Bericht, Ergebnisbericht je Verfahren (für Verordnungen die einzige
+  Entstehungsquelle). Grenzen: Weg zuerst erheben, nur Verweis-Klasse.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 7.
+
+## QS-CURRENCY-KANON — `fza`/`cmr` NICHT-KANONISCH klären und kanonisch nachführen *(aufgegangen in QS-KORPUS 2026-09-24)*
+
+- [ ] **`fza`/`cmr` NICHT-KANONISCH klären und kanonisch nachführen** *(`QS-CURRENCY-KANON`)*
+  **Nachtrag 4.9.2026 (Gegenprüfung PR #658):** `check:fedlex-versionen` rot mit geänderter Menge — `dbg` überholt (Pin 2026-01-01, geltend 2026-09-02), `fmg` + `fdv` nicht-kanonisch; FMG-Snapshot nach Re-Pin regenerieren (liegt unter den 43 von #658).
+  <!-- @meta id: QS-CURRENCY-KANON · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  Bestandsdefekt auf `main`; erst Ursache klären, dann re-pinnen + regenerieren + §7-Verifikation.
+  **Nullprobe zuerst** — `fedlex-cache.sh:368` pinnt `fza` bereits auf html-9, der Befund vom 2.8.
+  könnte dafür erledigt sein. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17.
+
+## QS-FRIT-DRIFT — FR/IT-Drift-Wächter Stufe 2 *(aufgegangen in W2·5g-ZEIT 2026-09-24)*
+
+- [ ] **FR/IT-Drift-Wächter Stufe 2** *(`QS-FRIT-DRIFT`, Stufe 1 gebaut 15.8.2026)*
+  <!-- @meta id: QS-FRIT-DRIFT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md -->
+  Erstlauf-Befund: OR, PatG und BewG weichen in fr/it real ab ⇒ **`eId` trägt nicht sprachübergreifend**.
+  Dossier: [frit-drift-2026-08-15.md](bibliothek/register/frit-drift-2026-08-15.md).
+  **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §18.1.
+
+## W2·13-KANTONE-DRIFT — Kantonale Snapshots gegen die Quellen nachführen *(aufgegangen in W2·13-KANTONE-DATEN 2026-09-24)*
+
+- [ ] **Kantonale Snapshots gegen die Quellen nachführen** *(`W2·13-KANTONE-DRIFT`, Befund 2.8.2026; Phase 2, Entscheid 14.9.2026)*
+  <!-- @meta id: W2·13-KANTONE-DRIFT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
+  Der Bundes-Durchgang vom 2.8.2026 meldete **~28 kantonale Snapshots mit echter Inhaltsdrift** —
+  bewusst ausgeklammert und **unverifiziert**. **Reihenfolge gegen `K-7`** beachten.
+  **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §3.
+
+## W3·12 — Kanton-Gesetze-Bündel *(aufgegangen in W2·13-KANTONE-DATEN 2026-09-24)*
+
+- [ ] **Kanton-Gesetze-Bündel** *(`W3·12`, GESETZE-IMPORT-3TIER + BS-VORBILDKANTON + RECHTSSAMMLUNG P6; Phase 2, Entscheid 14.9.2026)*
+  <!-- @meta id: W3·12 · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-GESETZE-IMPORT-3TIER.md -->
+  Grosser Kantons-Massenimport. Nach Leitprinzip 4 die nächste zu führende Datensäule (Davids
+  Reihenfolge-Entscheid 2.7.2026); erst öffnen, wenn keine andere Bulk-Tranche läuft.
+  **Reihenfolge (Entscheid David 1.9.2026):** ZH → BS (Perfektionierung des vollständigen
+  Bestands) → BE → AG → SG → LU; VD/GE/TI und alle fr/it-Fassungen zuletzt (Zielbild Deutschschweiz).
+  **Methode (1.9.2026):** Texte weiterhin selbst von den amtlichen Portalen (§7); Quellenlisten,
+  Portalpfade und Eigenheiten aus `opencaselaw/scrapers/cantonal_laws/*.py` (MIT) als Vorlage,
+  deren Artikelzahlen je Erlass als unabhängige Zweitlesung unserer Extraktion.
+  **Detail:** [FAHRPLAN-GESETZE-IMPORT-3TIER.md](fahrplaene/FAHRPLAN-GESETZE-IMPORT-3TIER.md) §6.
+
+## W2·24-C — Design-Identität: offene Nachzüge nach der Landung *(aufgegangen in W2·19-DESIGN-KONSISTENZ 2026-09-24)*
+
+- [ ] **Design-Identität: offene Nachzüge nach der Landung** *(`W2·24-C`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W2·24-DESIGN-IDENTITAET`)*
+  <!-- @meta id: W2·24-C · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Die vier offenen UI-Nachzüge der Handschrift «Sammlung» — reine Darstellungsschicht (§13), kein
+  Risikopfad; Normtext-Körper farbfrei, golden byte-gleich (§6). Der erledigte Kopf samt Prosa und
+  den erledigten Unterposten steht in [ROADMAP-CHRONIK.md](ROADMAP-CHRONIK.md), Umschichtung
+  2026-09-20 (2) — dort auch die Begründung der Herauslösung.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §8.
+  **Wird durch `W2·29-WERKBANK-KATALOGE`/`-REST` abgelöst** — Posten dort abarbeiten (§7).
+
+## QS-UI — Oberflächen-Qualität app-weit *(aufgegangen in W2·19-DESIGN-KONSISTENZ 2026-09-24)*
+
+- [ ] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
+  <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+  Kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
+  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
+  **Wird durch `W2·29-WERKBANK-REST` abgelöst** — Posten dort abarbeiten (§7).
+
+## W2·24-PERF-REST — Leser-Kopf: Rest-CLS und Mount-Messung *(aufgegangen in QS-PERF 2026-09-24)*
+
+- [ ] **Leser-Kopf: Rest-CLS und Mount-Messung** *(`W2·24-PERF-REST`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W2·24-DESIGN-IDENTITAET`)*
+  <!-- @meta id: W2·24-PERF-REST · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Die zwei offenen §15-Posten der Handschrift: der letzte CLS-Sprung im Leser-Kopf und die
+  ausstehende Mount-Messung auf langsamem Netz. Messung vor Fix; jede Massnahme trägt eine
+  Logikverlust-Bewertung (§15), bei Konflikt gewinnt die Treue.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §8.
+
+## W1·5-PRAXIS — Frist × Kosten verzahnen *(aufgegangen in W3-AUSBAU 2026-09-24)*
+
+- [ ] **Frist × Kosten verzahnen** *(`W1·5-PRAXIS`, Ideen-Intake 20.7.2026, UI-Orchestrierung)*
+  <!-- @meta id: W1·5-PRAXIS · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md -->
+  Die heute isoliert nebeneinander stehenden Rechner zu **einem Praxis-Weg** verketten
+  (Frist → Kosten → Vorlage), reine UI-Orchestrierung ohne neue Rechtsregel (§3).
+  **Detail:** [FAHRPLAN-PROZESSKOSTEN-COCKPIT.md](fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md) §1.
+
+## W2·8 — Schriften-Baukasten *(aufgegangen in W3-AUSBAU 2026-09-24)*
+
+- [ ] **Schriften-Baukasten** *(`W2·8`, VORLAGEN)*
+  <!-- @meta id: W2·8 · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-VORLAGEN-AUSBAU.md -->
+  Berufung/BGG-Beschwerde/Sistierung/Beweisverzeichnis über `vorlagen/engine.ts`; Zulässigkeit nur
+  Hinweis, Status «entwurf».
+  **Detail:** [FAHRPLAN-VORLAGEN-AUSBAU.md](fahrplaene/FAHRPLAN-VORLAGEN-AUSBAU.md) §1.
+
+## W2·16-INVENTAR — Funktions-Inventar (Vorstufe der Bedienungsanleitung) *(aufgegangen in W2·16-ANLEITUNG 2026-09-24)*
+
+- [ ] **Funktions-Inventar (Vorstufe der Bedienungsanleitung)** *(`W2·16-INVENTAR`, §14-Intake 20.7.2026)*
+  <!-- @meta id: W2·16-INVENTAR · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
+  Ehrliche Aufnahme dessen, was LexMetrik heute kann — Quelle `startseiteConfig.ts` (§5),
+  Status-Modell ungeschönt (§8).
+  **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §9.
+
+*Die Dach-Blöcke selbst sind nur ergänzt (je eine Zeile «Seit 24.9.2026 aufgegangen …»); ihr
+Wortlaut vorher steht im Git-Verlauf dieses Commits und wird hier bewusst NICHT samt `@meta`
+kopiert — ein zweiter, älterer `@meta`-Anker eines lebenden Schritts machte ihn in der Chronik
+«mehrdeutig», sobald er später erledigt hierher zieht (check:plan Regel 4, dep-Auflösung). Zwei
+`@meta`-Änderungen an lebenden Schritten, beide freigegeben: `W2·6-DATA` `dep: [W3·12]` →
+`dep: [W2·13-KANTONE-DATEN]`; `W2·16-ANLEITUNG` `status: ready · blocker: null · dep:
+[W2·16-INVENTAR]` → `status: parked · blocker: zielbild-gesetzesleser · dep: []`.*
