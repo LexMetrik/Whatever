@@ -9,7 +9,7 @@ import { PanelErlaeuterungen } from './PanelErlaeuterungen';
 import { PanelWerkzeuge } from './PanelWerkzeuge';
 import { useArtikelRevisionShard, useErlaeuterungen, useMaterialien, useRevisionen, type Geladen } from './panelKontextLaden';
 import type { PanelReiter } from './panelModell';
-import type { BestimmungsWort } from './erlassWortlaut';
+import { bestimmungDativ, type BestimmungsWort } from './erlassWortlaut';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
 import { werkzeugeAmArtikel } from '../randNotizWerkzeuge';
 import { ArtikelErlaeuterung, ArtikelWerkzeug, BlattArtikelGruppe, BlattFassung, type BlattArtikel } from './BlattArtikel';
@@ -85,7 +85,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   const token = blatt?.eintrag.artikel ?? null;
   const artMat = token ? artikelMaterialien(token) ?? [] : [];
   const artWz = token ? werkzeugeAmArtikel(erlassKey, token) : [];
-  const zu = artikelLabel ? `Zu ${artikelLabel}` : 'Zu diesem Artikel';
+  const zu = `Zu ${artikelLabel ?? bestimmungDativ(wort)}`;
 
   return {
     artikelRevisionen,

@@ -76,7 +76,7 @@ import { setzeVermerke, type VermerkeWahl } from '../leserOptionen';
 // Sonden-Anker — der Schalter IST die frühere Stellung «Fussnoten».
 
 const TITEL = 'Zeigt den vollständigen amtlichen Fussnoten-Apparat samt Marken im '
-  + 'Text unter jedem Artikel. Im Ausdruck bleibt der Apparat in jeder Stellung vollständig.';
+  + 'Gesetzestext. Im Ausdruck bleibt der Apparat in jeder Stellung vollständig.';
 
 export function LeserAenderungsWahl({ wahl, fussnotenAnzahl }: {
   /** Die gesetzte Stellung aus dem geteilten Store. */
@@ -93,10 +93,12 @@ export function LeserAenderungsWahl({ wahl, fussnotenAnzahl }: {
   return (
     <MenueGruppe attrs={{
       role: 'group',
-      'aria-label': 'Am Artikel',
+      'aria-label': 'Im Gesetzestext',
       'data-v3-vermerke-wahl': '',
     }}>
-      <MenueTitel>Am Artikel</MenueTitel>
+      {/* «Im Gesetzestext», nicht «Am Artikel»: an einem §-Erlass wäre das
+          Wort falsch (B8/C1), und der Schalter gilt dem ganzen Lesetext. */}
+      <MenueTitel>Im Gesetzestext</MenueTitel>
       <MenueSchalter
         an={an}
         label="Fussnoten"

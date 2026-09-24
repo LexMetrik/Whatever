@@ -91,6 +91,13 @@ export function bestimmungDativ(wort: BestimmungsWort): string {
   return wort === 'Paragraphen' ? 'diesem Paragraphen' : 'diesem Artikel';
 }
 
+/** «dieses Artikels» / «dieses Paragraphen» — die GENITIV-Einzahl (S6 W1f,
+ *  Klappzeilen des Erlass-Blatts «Verweise dieses Artikels»). Eigene Ableitung
+ *  aus demselben Grund wie der Dativ: «dieses Paragraph» wäre falsch (§8). */
+export function bestimmungGenitiv(wort: BestimmungsWort): string {
+  return wort === 'Paragraphen' ? 'dieses Paragraphen' : 'dieses Artikels';
+}
+
 /**
  * Ä20 (H2b) — Platzhalter des Such-/Sprungfelds, aus dem Erlass abgeleitet.
  *

@@ -159,7 +159,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
         // Rubriken-Gruppe ist drin — der Tooltip zählt weiterhin genau die Gruppen auf,
         // die das Menü wirklich trägt (§8).
         // S6 W1f (24.9.2026): Rubriken-Wahl und Stellung «Fassung» sind gefallen.
-        title={`Ansicht: ${hatAenderungsvermerke ? 'Fussnoten am Artikel · ' : ''}Grösse nur des Gesetzestexts`}
+        title={`Ansicht: ${hatAenderungsvermerke ? 'Fussnoten im Gesetzestext · ' : ''}Grösse nur des Gesetzestexts`}
       >
         {/* ── Ä91 (H4-Nachzug 18.8.2026) · ZWEI GESICHTER, NICHT DREI ────────
             Gemessen 18.8.2026 trug dieser Öffner DREI verschiedene Gestalten:

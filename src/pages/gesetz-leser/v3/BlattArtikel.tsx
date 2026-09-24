@@ -8,11 +8,7 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 import type { MaterialBezug, Werkzeug } from '../../../lib/normtext/werkzeuge';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
-import type { BestimmungsWort } from './erlassWortlaut';
-
-/** «dieses Artikels» / «dieses Paragraphen» — Genitiv zur EINEN Ableitung des
- *  Bestimmungsworts (`./erlassWortlaut`, B8/C1: nie «Artikel» an einem §-Erlass). */
-const dieses = (wort: BestimmungsWort) => (wort === 'Paragraphen' ? 'dieses Paragraphen' : 'dieses Artikels');
+import { bestimmungGenitiv as dieses, type BestimmungsWort } from './erlassWortlaut';
 
 // ═══ W2·29-WERKBANK-LESER S6 W1f · WAS AM ARTIKEL STAND, STEHT IM BLATT ══════
 //
@@ -99,8 +95,10 @@ function Klappzeile({ titel, rechts, name, daten, children }: {
     <section {...daten} className="shrink-0 px-3 pt-2">
       <button type="button" aria-expanded={auf} aria-controls={auf ? id : undefined} aria-label={name}
         onClick={() => setAuf((v) => !v)}
-        className="flex min-h-[var(--tap-ziel)] w-full items-baseline gap-1.5 border-t-2 border-reg-g pb-1 pt-2 text-left hover:text-ink-900">
-        <span aria-hidden className="w-2.5 shrink-0 text-micro text-ink-600">{auf ? '▾' : '▸'}</span>
+        // `.lc-btn-mini` ist der Knopf-Baustein (Höhe `--tap-ziel`, WCAG 2.5.8);
+        // Rahmen und Rundung weichen der Registerlinie oben (Board-Anatomie).
+        className="lc-btn-mini w-full justify-start gap-1.5 rounded-none border-0 border-t-2 border-reg-g px-0 pb-1 pt-2 text-left hover:text-ink-900">
+        <span aria-hidden className="w-2.5 shrink-0 text-ink-600">{auf ? '▾' : '▸'}</span>
         <span className="lc-overline">{titel}</span>
         <span className="num ml-auto text-xs text-ink-600">{rechts}</span>
       </button>
