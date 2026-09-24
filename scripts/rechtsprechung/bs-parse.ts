@@ -289,7 +289,7 @@ const KOPF_TITEL_RE = /^(?:ENTSCHEID|URTEIL|BESCHLUSS|VERFÜGUNG|(?:Entscheid|Ur
 const KOPF_DATUM_RE = new RegExp(`^vom (\\d{1,2})\\. (${Object.keys(MONATE).join('|')}) (\\d{4})$`);
 
 /** Ganzabsatz-Text für den Kopf-Vergleich: NBSP/U+202F → Leerzeichen, kollabiert. */
-const kopfText = (s: string): string => s.replace(/[  ]/g, ' ').replace(/\s+/g, ' ').trim();
+const kopfText = (s: string): string => s.replace(/[\u00a0\u202f]/g, ' ').replace(/\s+/g, ' ').trim();
 
 /**
  * Entscheiddatum aus dem Deckblatt (ISO) oder null. Rein (§2). Exportiert für den
