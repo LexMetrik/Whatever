@@ -579,6 +579,10 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   **Höhe (Auswahl David 24.9.):** Die Fläche Schnellwerkzeug ist in allen drei Varianten gleich hoch (so hoch
   wie Verzugszins, kein Springen); die Kacheln behalten ihre bisherige Höhe, «Häufig gebraucht» darunter
   füllt den Rest der linken Spalte — Kacheln + Zeile enden bündig mit der Fläche (löst «A bündig» 24.9. ab).
+- **U6 Begrüssung als ruhige Kopfzeile** (David 24.9. «ort und darstellung der begrüssung verschönern», Auswahl
+  mit Skizze «Kopfzeile ruhig»): Gruss links, Datum rechts auf derselben Grundlinie, etwas kleiner als heute;
+  darunter eine feine Linie über die volle Breite (Kacheln + Schnellwerkzeug; heute endet sie über den Kacheln),
+  weniger Leerraum über den Kacheln. Inhalt, Zufallswahl und Inline-Skript (CSP-Hash) bleiben.
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
