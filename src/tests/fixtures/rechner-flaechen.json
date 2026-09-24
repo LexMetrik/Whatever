@@ -1,0 +1,930 @@
+{
+  "/rechner/kuendigung": {
+    "overline": "Arbeit",
+    "titel": "Kündigung & Fristen im Arbeitsverhältnis",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 335c OR → /gesetze/bund/OR#art-335_c",
+      "Art. 336c OR → /gesetze/bund/OR#art-336_c",
+      "Art. 324a Abs. 1 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 324a Abs. 2 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 324a Abs. 3 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 324a Abs. 4 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 362 OR → /gesetze/bund/OR#art-362"
+    ],
+    "knoepfe": [
+      "A – LohnfortzahlungArt. 324a OR",
+      "B+C – KündigungArt. 335c / 336c OR",
+      "KombiniertA + B + C",
+      "Krankheit 3. DJ (BS)",
+      "Teil-AUF 50 %",
+      "DJ-übergreifend",
+      "KTG vorhanden",
+      "Erweiterte Eingaben (Anspruch, DJ-übergreifend, Lohnbasis)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (7)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Lohnfortzahlung (Art. 324a OR)",
+      "h2 Ereignis-Fristen – ein Anlass, mehrere Fristen"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 1,
+    "links": [
+      "Art. 335c OR → /gesetze/bund/OR#art-335_c",
+      "Art. 336c OR → /gesetze/bund/OR#art-336_c",
+      "Zum Fristenrechner → → /rechner/tagerechner",
+      "Art. 324a Abs. 1 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 324a Abs. 2 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 324a Abs. 3 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 324a Abs. 4 OR → /gesetze/bund/OR#art-324_a",
+      "Art. 362 OR → /gesetze/bund/OR#art-362",
+      "durch Arbeitnehmer:in → /vorlagen/kuendigung-arbeitnehmer",
+      "durch Arbeitgeber:in (mit Sperrfristen-Gate) → /vorlagen/kuendigung-arbeitgeber"
+    ]
+  },
+  "/rechner/zpo-fristen": {
+    "overline": "Zivilprozess (ZPO) & Bundesgericht",
+    "titel": "Verfahrens- & Rechtsmittelfristen",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 142–147 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 142 Abs. 1 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 142 Abs. 3 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 145 Abs. 1 ZPO → /gesetze/bund/ZPO#art-145",
+      "Art. 143 ZPO → /gesetze/bund/ZPO#art-143",
+      "Art. 144 Abs. 1 ZPO → /gesetze/bund/ZPO#art-144",
+      "Art. 148 ZPO → /gesetze/bund/ZPO#art-148"
+    ],
+    "knoepfe": [
+      "Rechtsmittel",
+      "Schlichtung",
+      "Erstinstanz",
+      "Besondere Verfahren",
+      "Schiedsverfahren",
+      "Materielle Frist",
+      "Optionale Funktionen (Berechnungsmodus, Erstreckung, Zustellfiktion)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (6 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 ZPO-Fristberechnung (Art. 142 ff. ZPO)",
+      "h2 Ereignis-Fristen – ein Anlass, mehrere Fristen"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis-zpo"
+    ],
+    "platzhalter": 1,
+    "links": [
+      "Art. 142–147 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 142 Abs. 1 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 142 Abs. 3 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 145 Abs. 1 ZPO → /gesetze/bund/ZPO#art-145",
+      "Art. 143 ZPO → /gesetze/bund/ZPO#art-143",
+      "Art. 144 Abs. 1 ZPO → /gesetze/bund/ZPO#art-144",
+      "Art. 148 ZPO → /gesetze/bund/ZPO#art-148",
+      "Fristerstreckungsgesuch (Art. 144 ZPO) → /vorlagen/fristerstreckung"
+    ]
+  },
+  "/rechner/verzugszins": {
+    "overline": "Vertrag & Forderung (OR)",
+    "titel": "Verzugszins",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 104 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 1 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 2 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 3 OR → /gesetze/bund/OR#art-104",
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Art. 85 OR → /gesetze/bund/OR#art-85",
+      "Art. 105 Abs. 3 OR → /gesetze/bund/OR#art-105",
+      "Art. 106 OR → /gesetze/bund/OR#art-106"
+    ],
+    "knoepfe": [
+      "Rechnung offen, 5 %",
+      "Mit Teilzahlung",
+      "Vertraglich 8 %",
+      "Satzwechsel",
+      "heute",
+      "+ Teilzahlung",
+      "+ Satzänderung",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (6)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Verzugszins (Art. 104 OR)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 104 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 1 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 2 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 3 OR → /gesetze/bund/OR#art-104",
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Art. 85 OR → /gesetze/bund/OR#art-85",
+      "Art. 105 Abs. 3 OR → /gesetze/bund/OR#art-105",
+      "Art. 106 OR → /gesetze/bund/OR#art-106"
+    ]
+  },
+  "/rechner/gerichtszitat": {
+    "overline": "Übergreifende Werkzeuge",
+    "titel": "Amtlicher Zitierer (BGE/BGer)",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 112 BGG → /gesetze/bund/BGG#art-112"
+    ],
+    "knoepfe": [
+      "BGE (amtliche Sammlung)Leitentscheid: Band · Teil · Seite",
+      "BGer (Geschäftsnummer)Nicht publiziert: Nummer · Datum"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung"
+    ],
+    "titelZwischen": [],
+    "ergebnisAnker": [],
+    "platzhalter": 1,
+    "links": [
+      "Art. 112 BGG → /gesetze/bund/BGG#art-112"
+    ]
+  },
+  "/rechner/verjaehrung-board": {
+    "overline": "Vertrag & Forderung (OR)",
+    "titel": "Verjährungs- & Gewährleistungs-Board",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 127 OR → /gesetze/bund/OR#art-127",
+      "Art. 128 OR → /gesetze/bund/OR#art-128",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 371 OR → /gesetze/bund/OR#art-371",
+      "Art. 197 OR → /gesetze/bund/OR#art-197",
+      "Art. 201 OR → /gesetze/bund/OR#art-201",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 132 OR → /gesetze/bund/OR#art-132",
+      "Art. 142 OR → /gesetze/bund/OR#art-142"
+    ],
+    "knoepfe": [
+      "offen erkennbar",
+      "versteckt",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (1)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Verjährungs-Regime im OR",
+      "h2 Gewährleistung & Mängelrüge",
+      "h2 Gewährleistung & Mängelrüge (Art. 197 ff., 367 ff. OR)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 127 OR → /gesetze/bund/OR#art-127",
+      "Art. 128 OR → /gesetze/bund/OR#art-128",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 371 OR → /gesetze/bund/OR#art-371",
+      "Verjährungsrechner → /rechner/verjaehrung",
+      "Art. 127 OR · Auffangnorm: 10 Jahre → /gesetze/bund/OR#art-127",
+      "Art. 130 Abs. 1 OR · Beginn mit Fälligkeit → /gesetze/bund/OR#art-130",
+      "Art. 128 OR · Katalogforderungen: 5 Jahre → /gesetze/bund/OR#art-128",
+      "Art. 130 Abs. 1 OR · Beginn mit Fälligkeit → /gesetze/bund/OR#art-130",
+      "Art. 60 Abs. 1 OR · relativ 3 Jahre / absolut 10 Jahre → /gesetze/bund/OR#art-60",
+      "Art. 60 Abs. 1bis OR · Tötung/Körperverletzung: absolut 20 Jahre → /gesetze/bund/OR#art-60",
+      "Art. 128a OR · Körperverletzung/Tötung aus Vertrag: 3 / 20 Jahre → /gesetze/bund/OR#art-128_a",
+      "Art. 67 Abs. 1 OR · relativ 3 Jahre / absolut 10 Jahre → /gesetze/bund/OR#art-67",
+      "Verjährungsrechner → /rechner/verjaehrung",
+      "Verjährungsrechner → → /rechner/verjaehrung",
+      "Art. 197 OR → /gesetze/bund/OR#art-197",
+      "Art. 201 OR → /gesetze/bund/OR#art-201",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 132 OR → /gesetze/bund/OR#art-132",
+      "Art. 142 OR → /gesetze/bund/OR#art-142"
+    ]
+  },
+  "/rechner/inkasso-strecke": {
+    "overline": "Vertrag & Forderung (OR)",
+    "titel": "Forderungs- & Inkasso-Strecke",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Art. 104 OR → /gesetze/bund/OR#art-104",
+      "Art. 67 SchKG → /gesetze/bund/SCHKG#art-67",
+      "Art. 104 Abs. 1 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 2 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 3 OR → /gesetze/bund/OR#art-104",
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Art. 85 OR → /gesetze/bund/OR#art-85",
+      "Art. 105 Abs. 3 OR → /gesetze/bund/OR#art-105",
+      "Art. 106 OR → /gesetze/bund/OR#art-106"
+    ],
+    "knoepfe": [
+      "Rechnung offen, 5 %",
+      "Mit Teilzahlung",
+      "Vertraglich 8 %",
+      "Satzwechsel",
+      "heute",
+      "+ Teilzahlung",
+      "+ Satzänderung",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (6)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Von der offenen Forderung zur Betreibung",
+      "h3 Fälligkeit & Verzug",
+      "h3 Verzugszins berechnen",
+      "h3 Mahnung / Inverzugsetzung schreiben",
+      "h3 Betreibung einleiten",
+      "h3 Fristen im Betreibungsverfahren",
+      "h2 Verzugszins berechnen",
+      "h2 Verzugszins (Art. 104 OR)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Art. 104 OR → /gesetze/bund/OR#art-104",
+      "Art. 67 SchKG → /gesetze/bund/SCHKG#art-67",
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Art. 104 OR → /gesetze/bund/OR#art-104",
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Mahnung erstellen → → /vorlagen/mahnung",
+      "Art. 67 SchKG → /gesetze/bund/SCHKG#art-67",
+      "Betreibungskosten → → /rechner/betreibungskosten",
+      "Art. 74 SchKG → /gesetze/bund/SCHKG#art-74",
+      "Betreibungs- & Konkursfristen → → /rechner/schkg-fristen",
+      "Art. 104 Abs. 1 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 2 OR → /gesetze/bund/OR#art-104",
+      "Art. 104 Abs. 3 OR → /gesetze/bund/OR#art-104",
+      "Art. 102 OR → /gesetze/bund/OR#art-102",
+      "Art. 85 OR → /gesetze/bund/OR#art-85",
+      "Art. 105 Abs. 3 OR → /gesetze/bund/OR#art-105",
+      "Art. 106 OR → /gesetze/bund/OR#art-106"
+    ]
+  },
+  "/rechner/schkg-fristen": {
+    "overline": "Betreibung & Konkurs (SchKG)",
+    "titel": "Betreibungs- & Konkursfristen",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 56 SchKG → /gesetze/bund/SCHKG#art-56",
+      "Art. 63 SchKG → /gesetze/bund/SCHKG#art-63",
+      "Art. 145 ZPO → /gesetze/bund/ZPO#art-145",
+      "Art. 31 SchKG → /gesetze/bund/SCHKG#art-31",
+      "Art. 142 Abs. 1 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 142 Abs. 3 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 56 Abs. 1 SchKG → /gesetze/bund/SCHKG#art-56",
+      "Art. 63 SchKG → /gesetze/bund/SCHKG#art-63"
+    ],
+    "knoepfe": [
+      "Einleitung",
+      "Rechtsöffnung & Klagen",
+      "Fortsetzung / Pfändung",
+      "Verwertung",
+      "Konkurs",
+      "Nachlass",
+      "Arrest",
+      "Anfechtung (Pauliana)",
+      "Rechtsbehelfe/Rechtsmittel",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (3 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "In Kalender (.ics)",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h3 SchKG-Fristberechnung",
+      "h2 SchKG-Fristberechnung",
+      "h2 Ereignis-Fristen – ein Anlass, mehrere Fristen"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis-schkg"
+    ],
+    "platzhalter": 1,
+    "links": [
+      "Art. 56 SchKG → /gesetze/bund/SCHKG#art-56",
+      "Art. 63 SchKG → /gesetze/bund/SCHKG#art-63",
+      "Art. 145 ZPO → /gesetze/bund/ZPO#art-145",
+      "Art. 31 SchKG → /gesetze/bund/SCHKG#art-31",
+      "Art. 142 Abs. 1 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 142 Abs. 3 ZPO → /gesetze/bund/ZPO#art-142",
+      "Art. 56 Abs. 1 SchKG → /gesetze/bund/SCHKG#art-56",
+      "Art. 63 SchKG → /gesetze/bund/SCHKG#art-63",
+      "Gesuch um Nichtbekanntgabe der Betreibung (Art. 8a SchKG) → /vorlagen/nichtbekanntgabe-betreibung"
+    ]
+  },
+  "/rechner/erbteilung": {
+    "overline": "Erbrecht",
+    "titel": "Pflichtteil & verfügbare Quote",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 457 ff. ZGB → /gesetze/bund/ZGB#art-457",
+      "Art. 470 f. ZGB → /gesetze/bund/ZGB#art-470",
+      "Art. 457 ZGB → /gesetze/bund/ZGB#art-457",
+      "Art. 462 ZGB → /gesetze/bund/ZGB#art-462",
+      "Art. 470 ZGB → /gesetze/bund/ZGB#art-470",
+      "Art. 471 ZGB → /gesetze/bund/ZGB#art-471",
+      "Art. 15 SchlT ZGB → /gesetze/bund/ZGB#art-15"
+    ],
+    "knoepfe": [
+      "+ Stamm",
+      "Güterrechtliche Vorstufe – Nachlass herleiten (optional)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (5)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Erbteilung & Pflichtteil (Art. 457 ff., 462, 470 ff. ZGB)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 457 ff. ZGB → /gesetze/bund/ZGB#art-457",
+      "Art. 470 f. ZGB → /gesetze/bund/ZGB#art-470",
+      "Art. 457 ZGB → /gesetze/bund/ZGB#art-457",
+      "Art. 462 ZGB → /gesetze/bund/ZGB#art-462",
+      "Art. 470 ZGB → /gesetze/bund/ZGB#art-470",
+      "Art. 471 ZGB → /gesetze/bund/ZGB#art-471",
+      "Art. 15 SchlT ZGB → /gesetze/bund/ZGB#art-15"
+    ]
+  },
+  "/rechner/erb-fristen": {
+    "overline": "Erbrecht",
+    "titel": "Erbrecht – Fristen",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 567 ZGB → /gesetze/bund/ZGB#art-567",
+      "Art. 580 ZGB → /gesetze/bund/ZGB#art-580",
+      "Art. 521 ZGB → /gesetze/bund/ZGB#art-521",
+      "Art. 533 ZGB → /gesetze/bund/ZGB#art-533",
+      "Art. 600 ZGB → /gesetze/bund/ZGB#art-600",
+      "Art. 567 Abs. 1 und 2 ZGB → /gesetze/bund/ZGB#art-567",
+      "Art. 570 ZGB → /gesetze/bund/ZGB#art-570",
+      "Art. 576 ZGB → /gesetze/bund/ZGB#art-576"
+    ],
+    "knoepfe": [
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (4)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Erb-Frist: Ausschlagung – gesetzliche Erbin/gesetzlicher Erbe (3 Monate)",
+      "h2 Ereignis-Fristen – ein Anlass, mehrere Fristen"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 1,
+    "links": [
+      "Art. 567 ZGB → /gesetze/bund/ZGB#art-567",
+      "Art. 580 ZGB → /gesetze/bund/ZGB#art-580",
+      "Art. 521 ZGB → /gesetze/bund/ZGB#art-521",
+      "Art. 533 ZGB → /gesetze/bund/ZGB#art-533",
+      "Art. 600 ZGB → /gesetze/bund/ZGB#art-600",
+      "Zum Fristenrechner → → /rechner/tagerechner",
+      "Art. 567 Abs. 1 und 2 ZGB → /gesetze/bund/ZGB#art-567",
+      "Art. 570 ZGB → /gesetze/bund/ZGB#art-570",
+      "Art. 576 ZGB → /gesetze/bund/ZGB#art-576"
+    ]
+  },
+  "/rechner/mietrecht": {
+    "overline": "Miete",
+    "titel": "Kündigung & Fristen im Mietverhältnis",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 266a–o OR → /gesetze/bund/OR#art-266_a",
+      "Art. 257d OR → /gesetze/bund/OR#art-257_d",
+      "Art. 257f OR → /gesetze/bund/OR#art-257_f",
+      "Art. 266c OR → /gesetze/bund/OR#art-266_c",
+      "Art. 266a OR → /gesetze/bund/OR#art-266_a",
+      "Art. 77 OR → /gesetze/bund/OR#art-77",
+      "Art. 78 OR → /gesetze/bund/OR#art-78"
+    ],
+    "knoepfe": [
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Kündigungstermine und -fristen (Art. 253 ff. OR)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 266a–o OR → /gesetze/bund/OR#art-266_a",
+      "Art. 257d OR → /gesetze/bund/OR#art-257_d",
+      "Art. 257f OR → /gesetze/bund/OR#art-257_f",
+      "Zum Fristenrechner → → /rechner/tagerechner",
+      "Art. 266c OR → /gesetze/bund/OR#art-266_c",
+      "Art. 266a OR → /gesetze/bund/OR#art-266_a",
+      "Art. 77 OR → /gesetze/bund/OR#art-77",
+      "Art. 78 OR → /gesetze/bund/OR#art-78",
+      "Kündigungsschreiben Mieter:in → /vorlagen/kuendigung-mieter",
+      "Vermieter:innen: Checkliste (amtliches Formular) → /vorlagen/kuendigung-vermieter"
+    ]
+  },
+  "/rechner/verjaehrung": {
+    "overline": "Vertrag & Forderung (OR)",
+    "titel": "Verjährung",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 60 OR → /gesetze/bund/OR#art-60",
+      "Art. 67 OR → /gesetze/bund/OR#art-67",
+      "Art. 127–142 OR → /gesetze/bund/OR#art-127",
+      "Art. 127 OR → /gesetze/bund/OR#art-127",
+      "Art. 130 Abs. 1 OR → /gesetze/bund/OR#art-130",
+      "Art. 132 OR → /gesetze/bund/OR#art-132",
+      "Art. 78 OR → /gesetze/bund/OR#art-78",
+      "Art. 142 OR → /gesetze/bund/OR#art-142"
+    ],
+    "knoepfe": [
+      "Offene Rechnung (10 J.)",
+      "Mietzins (5 J.)",
+      "Delikt (3/10 J.)",
+      "+ Unterbrechung",
+      "+ Stillstandsperiode",
+      "Ergebnis kopieren",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (1)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Verjährung (Art. 60, 67, 127 ff. OR)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 60 OR → /gesetze/bund/OR#art-60",
+      "Art. 67 OR → /gesetze/bund/OR#art-67",
+      "Art. 127–142 OR → /gesetze/bund/OR#art-127",
+      "Zum Fristenrechner → → /rechner/tagerechner",
+      "Art. 127 OR → /gesetze/bund/OR#art-127",
+      "Art. 130 Abs. 1 OR → /gesetze/bund/OR#art-130",
+      "Art. 132 OR → /gesetze/bund/OR#art-132",
+      "Art. 78 OR → /gesetze/bund/OR#art-78",
+      "Art. 142 OR → /gesetze/bund/OR#art-142",
+      "Verjährungsverzichtserklärung (Art. 141 OR) → /vorlagen/verjaehrungsverzicht"
+    ]
+  },
+  "/rechner/gewaehrleistung": {
+    "overline": "Vertrag & Forderung (OR)",
+    "titel": "Gewährleistung & Mängelrüge",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 201 OR → /gesetze/bund/OR#art-201",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 219a OR → /gesetze/bund/OR#art-219_a",
+      "Art. 367 OR → /gesetze/bund/OR#art-367",
+      "Art. 371 OR → /gesetze/bund/OR#art-371",
+      "Art. 197 OR → /gesetze/bund/OR#art-197",
+      "Art. 201 OR → /gesetze/bund/OR#art-201",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 132 OR → /gesetze/bund/OR#art-132",
+      "Art. 142 OR → /gesetze/bund/OR#art-142"
+    ],
+    "knoepfe": [
+      "offen erkennbar",
+      "versteckt",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (1)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Gewährleistung & Mängelrüge (Art. 197 ff., 367 ff. OR)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 201 OR → /gesetze/bund/OR#art-201",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 219a OR → /gesetze/bund/OR#art-219_a",
+      "Art. 367 OR → /gesetze/bund/OR#art-367",
+      "Art. 371 OR → /gesetze/bund/OR#art-371",
+      "Zum Fristenrechner → → /rechner/tagerechner",
+      "Verjährungsrechner → → /rechner/verjaehrung",
+      "Art. 197 OR → /gesetze/bund/OR#art-197",
+      "Art. 201 OR → /gesetze/bund/OR#art-201",
+      "Art. 210 OR → /gesetze/bund/OR#art-210",
+      "Art. 132 OR → /gesetze/bund/OR#art-132",
+      "Art. 142 OR → /gesetze/bund/OR#art-142"
+    ]
+  },
+  "/rechner/tagerechner": {
+    "overline": "Übergreifende Werkzeuge",
+    "titel": "Fristenrechner (Tage · ZPO · SchKG)",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 77 OR → /gesetze/bund/OR#art-77",
+      "Art. 78 OR → /gesetze/bund/OR#art-78",
+      "Art. 145 ZPO → /gesetze/bund/ZPO#art-145",
+      "Art. 56 SchKG → /gesetze/bund/SCHKG#art-56",
+      "Art. 77 OR → /gesetze/bund/OR#art-77",
+      "Art. 78 OR → /gesetze/bund/OR#art-78"
+    ],
+    "knoepfe": [
+      "In Kalender (.ics)",
+      "Allgemein (Vertrag/OR)",
+      "Zivilprozess (ZPO)",
+      "Betreibung (SchKG)",
+      "Weiss nicht?",
+      "Fristende berechnen",
+      "Rückwärts (spätester Tag)",
+      "Tage zwischen zwei Daten",
+      "Tagesfrist (Kalendertage)",
+      "Monatsfrist nach OR",
+      "Kalendertage ohne Verschiebung",
+      "Vaterschaftsklage der Mutter – 1 Jahr",
+      "Anfechtung der Vaterschaft – relativ 1 Jahr",
+      "Anfechtung der Vaterschaft – absolut 5 Jahre",
+      "Status-Klagen des Kindes – 1 Jahr ab Volljährigkeit",
+      "Wiedererteilung entzogener Sorge – Sperrfrist 1 Jahr",
+      "Kündigung einfache Gesellschaft – 6 Monate",
+      "KESB-Beschwerde – 30 Tage",
+      "KESB-Beschwerde gegen vorsorgliche Massnahmen – 10 Tage",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Wie wurde die Frist ausgelöst? (optionaler Hinweis-Helfer – keine verbindliche Zustellberechnung)",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Einfacher Fristenrechner",
+      "h2 Mit Vorauswahl (Presets · ZPO · SchKG · Rückwärts)",
+      "h2 Allgemeine Frist (Art. 77/78 OR)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis-einfach",
+      "lc-ergebnis-allgemein"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 77 OR → /gesetze/bund/OR#art-77",
+      "Art. 78 OR → /gesetze/bund/OR#art-78",
+      "Art. 145 ZPO → /gesetze/bund/ZPO#art-145",
+      "Art. 56 SchKG → /gesetze/bund/SCHKG#art-56",
+      "Im ZPO-Rechner verfeinern (Verfahren, Zustellart, Hemmung …) → → /rechner/zpo-fristen?e=2026-03-01&u=tage&l=10&v=ordentlich&k=ZH&n=gesetzlich",
+      "Art. 77 OR → /gesetze/bund/OR#art-77",
+      "Art. 78 OR → /gesetze/bund/OR#art-78",
+      "ZPO-Fristen → → /rechner/zpo-fristen",
+      "SchKG-Fristen → → /rechner/schkg-fristen"
+    ]
+  },
+  "/rechner/teuerung": {
+    "overline": "Übergreifende Werkzeuge",
+    "titel": "Teuerungsrechner (LIK-Indexierung)",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 269b OR → /gesetze/bund/OR#art-269_b",
+      "Art. 17 VMWG → /gesetze/bund/VMWG#art-17",
+      "Art. 286 ZGB → /gesetze/bund/ZGB#art-286",
+      "Art. 128 ZGB → /gesetze/bund/ZGB#art-128"
+    ],
+    "knoepfe": [
+      "Wertsicherung (generisch)Renten, Pacht, Lizenzen – BFS-Dreisatz",
+      "Indexmiete100 %-Weitergabe (Art. 269b OR / Art. 17 VMWG)",
+      "UnterhaltsbeitragArt. 286 / 128 ZGB – Index gemäss Urteil",
+      "Ergebnis kopieren",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 LIK-Indexierung (Basis Dezember 2020 = 100)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 269b OR → /gesetze/bund/OR#art-269_b",
+      "Art. 17 VMWG → /gesetze/bund/VMWG#art-17",
+      "Art. 286 ZGB → /gesetze/bund/ZGB#art-286",
+      "Art. 128 ZGB → /gesetze/bund/ZGB#art-128"
+    ]
+  },
+  "/rechner/zustaendigkeit": {
+    "overline": "Zivilprozess (ZPO) & Bundesgericht",
+    "titel": "Zuständigkeit Zivilprozess",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 197 ZPO → /gesetze/bund/ZPO#art-197",
+      "Art. 199 ZPO → /gesetze/bund/ZPO#art-199",
+      "Art. 200 ZPO → /gesetze/bund/ZPO#art-200",
+      "Art. 210 ZPO → /gesetze/bund/ZPO#art-210",
+      "Art. 243 ZPO → /gesetze/bund/ZPO#art-243"
+    ],
+    "knoepfe": [
+      "1Was möchten Sie tun?",
+      "2Worum geht es?",
+      "3Örtliche Anknüpfung",
+      "4Streitwert",
+      "5Sonderfälle",
+      "6Fahrplan",
+      "ZivilForderungen, Miete, Arbeit, Familie (ZPO)",
+      "Betreibung (SchKG)Betreibungsort, Rechtsöffnung, Aberkennung u. a.",
+      "StrafAnzeige, Gerichtsstand, Strafantrag (StPO)",
+      "VerwaltungIn VorbereitungBeschwerdeinstanzen (VwVG/kantonal)",
+      "Verfahren einleitenZuständige Schlichtungsbehörde bzw. erstes Gericht finden",
+      "Rechtsmittel ergreifenBerufung/Beschwerde — zuständige obere Instanz",
+      "← Zurück",
+      "Weiter →"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung"
+    ],
+    "titelZwischen": [],
+    "ergebnisAnker": [],
+    "platzhalter": 0,
+    "links": [
+      "Art. 197 ZPO → /gesetze/bund/ZPO#art-197",
+      "Art. 199 ZPO → /gesetze/bund/ZPO#art-199",
+      "Art. 200 ZPO → /gesetze/bund/ZPO#art-200",
+      "Art. 210 ZPO → /gesetze/bund/ZPO#art-210",
+      "Art. 243 ZPO → /gesetze/bund/ZPO#art-243"
+    ]
+  },
+  "/rechner/streitwert": {
+    "overline": "Zivilprozess (ZPO) & Bundesgericht",
+    "titel": "Streitwert (ZPO)",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 91 ZPO → /gesetze/bund/ZPO#art-91",
+      "Art. 92 ZPO → /gesetze/bund/ZPO#art-92",
+      "Art. 93 ZPO → /gesetze/bund/ZPO#art-93",
+      "Art. 94 ZPO → /gesetze/bund/ZPO#art-94"
+    ],
+    "knoepfe": [
+      "+ Begehren"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung"
+    ],
+    "titelZwischen": [],
+    "ergebnisAnker": [],
+    "platzhalter": 1,
+    "links": [
+      "Art. 91 ZPO → /gesetze/bund/ZPO#art-91",
+      "Art. 92 ZPO → /gesetze/bund/ZPO#art-92",
+      "Art. 93 ZPO → /gesetze/bund/ZPO#art-93",
+      "Art. 94 ZPO → /gesetze/bund/ZPO#art-94"
+    ]
+  },
+  "/rechner/betreibungskosten": {
+    "overline": "Betreibung & Konkurs (SchKG)",
+    "titel": "Betreibungskosten (GebV SchKG)",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 16 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-16",
+      "Art. 20 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-20",
+      "Art. 30 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-30",
+      "Art. 48 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-48",
+      "Art. 68 SchKG → /gesetze/bund/SCHKG#art-68"
+    ],
+    "knoepfe": [],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung"
+    ],
+    "titelZwischen": [],
+    "ergebnisAnker": [],
+    "platzhalter": 1,
+    "links": [
+      "Art. 16 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-16",
+      "Art. 20 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-20",
+      "Art. 30 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-30",
+      "Art. 48 GebV SchKG → /gesetze/bund/GEBV_SCHKG#art-48",
+      "Art. 68 SchKG → /gesetze/bund/SCHKG#art-68"
+    ]
+  },
+  "/rechner/prozesskosten": {
+    "overline": "Zivilprozess (ZPO) & Bundesgericht",
+    "titel": "Prozesskosten (Gerichts- & Parteikosten)",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 95 ZPO → /gesetze/bund/ZPO#art-95",
+      "Art. 96 ZPO → /gesetze/bund/ZPO#art-96",
+      "Art. 98 ZPO → /gesetze/bund/ZPO#art-98",
+      "Art. 113 ZPO → /gesetze/bund/ZPO#art-113",
+      "Art. 114 ZPO → /gesetze/bund/ZPO#art-114"
+    ],
+    "knoepfe": [],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung"
+    ],
+    "titelZwischen": [],
+    "ergebnisAnker": [],
+    "platzhalter": 1,
+    "links": [
+      "Art. 95 ZPO → /gesetze/bund/ZPO#art-95",
+      "Art. 96 ZPO → /gesetze/bund/ZPO#art-96",
+      "Art. 98 ZPO → /gesetze/bund/ZPO#art-98",
+      "Art. 113 ZPO → /gesetze/bund/ZPO#art-113",
+      "Art. 114 ZPO → /gesetze/bund/ZPO#art-114"
+    ]
+  },
+  "/rechner/notariat-grundbuch": {
+    "overline": "Immobilien & Beurkundung",
+    "titel": "Notariats- & Grundbuchkosten",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 216 OR → /gesetze/bund/OR#art-216",
+      "Art. 499 ZGB → /gesetze/bund/ZGB#art-499",
+      "Art. 629 OR → /gesetze/bund/OR#art-629"
+    ],
+    "knoepfe": [
+      "Grundstückkauf",
+      "Beurkundung (Notariat)",
+      "Grundbuch (Eintragung)"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung"
+    ],
+    "titelZwischen": [],
+    "ergebnisAnker": [],
+    "platzhalter": 1,
+    "links": [
+      "Art. 216 OR → /gesetze/bund/OR#art-216",
+      "Art. 499 ZGB → /gesetze/bund/ZGB#art-499",
+      "Art. 629 OR → /gesetze/bund/OR#art-629"
+    ]
+  },
+  "/rechner/bgg-fristen": {
+    "overline": "Zivilprozess (ZPO) & Bundesgericht",
+    "titel": "Beschwerde ans Bundesgericht (BGG)",
+    "kurzbeschrieb": true,
+    "normen": [
+      "Art. 74 BGG → /gesetze/bund/BGG#art-74",
+      "Art. 100 BGG → /gesetze/bund/BGG#art-100",
+      "Art. 46 BGG → /gesetze/bund/BGG#art-46",
+      "Art. 113 BGG → /gesetze/bund/BGG#art-113",
+      "Art. 33 BGerR → /gesetze/bund/BGERR#art-33",
+      "Art. 33 BGerR → /gesetze/bund/BGERR#art-33",
+      "Art. 90 BGG → /gesetze/bund/BGG#art-90",
+      "Art. 74 Abs. 1 BGG → /gesetze/bund/BGG#art-74",
+      "Art. 51 BGG → /gesetze/bund/BGG#art-51",
+      "Art. 100 Abs. 1 BGG → /gesetze/bund/BGG#art-100",
+      "Art. 46 BGG → /gesetze/bund/BGG#art-46"
+    ],
+    "knoepfe": [
+      "ZivilsacheBeschwerde in Zivilsachen (Art. 72 ff. BGG) – inkl. SchKG-Entscheide der Gerichte",
+      "SchKG-AufsichtsentscheidAufsichtsbehörde in Betreibungs-/Konkurssachen (Art. 19 SchKG) – 10 Tage",
+      "StrafsacheBeschwerde in Strafsachen (Art. 78 ff. BGG)",
+      "Öffentlich-rechtliche SacheBeschwerde nach Art. 82 ff. BGG – Ausnahmekatalog Art. 83 beachten",
+      "Ergebnis kopieren",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ],
+    "klappen": [
+      "Rechtlicher Hinweis – keine Rechtsberatung",
+      "Für die Rechtsschrift — kopierfertiger Begründungs-Absatz"
+    ],
+    "titelZwischen": [
+      "h2 Weiterzug ans Bundesgericht (BGG)"
+    ],
+    "ergebnisAnker": [
+      "lc-ergebnis"
+    ],
+    "platzhalter": 0,
+    "links": [
+      "Art. 74 BGG → /gesetze/bund/BGG#art-74",
+      "Art. 100 BGG → /gesetze/bund/BGG#art-100",
+      "Art. 46 BGG → /gesetze/bund/BGG#art-46",
+      "Art. 113 BGG → /gesetze/bund/BGG#art-113",
+      "Art. 33 BGerR → /gesetze/bund/BGERR#art-33",
+      "Art. 33 BGerR → /gesetze/bund/BGERR#art-33",
+      "Art. 90 BGG → /gesetze/bund/BGG#art-90",
+      "Art. 74 Abs. 1 BGG → /gesetze/bund/BGG#art-74",
+      "Art. 51 BGG → /gesetze/bund/BGG#art-51",
+      "Art. 100 Abs. 1 BGG → /gesetze/bund/BGG#art-100",
+      "Art. 46 BGG → /gesetze/bund/BGG#art-46",
+      "Zuständigkeit & Rechtsmittel (ZPO) → /rechner/zustaendigkeit",
+      "Streitwert (ZPO) → /rechner/streitwert",
+      "Fristenrechner → /rechner/tagerechner"
+    ]
+  }
+}
