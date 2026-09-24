@@ -1,4 +1,5 @@
 # FAHRPLAN — Effizienz-Checkliste (`QS-EFFIZIENZ`)
+<!-- @lagebild name: Effizienz-Dauerauftrag · zweck: Laufend Token und Prozess sparen — Skills, Hooks, Tore und Steuer-Doku schlanker, ohne Prüftiefe zu verlieren. -->
 
 **Zweck.** Stehender Auftrag David 14.8.2026 (Chat, «bau immer weiter an dingen die bei zukünftigem
 bau token sparen … volle erlaubnis … bis ich stop sage»; Wortlaut: Memory
