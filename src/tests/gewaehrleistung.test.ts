@@ -197,12 +197,20 @@ describe('Gewährleistung – Übergangsrecht und SIA 118 (RL-06)', () => {
     expect(r.verjaehrung.endeISO).toBe('2026-06-22'); // 20.6.2026 = Sa → Mo
   });
 
-  it('F5-06: Grundstückkauf (alt) – Hinweis, dass die 5 Jahre nur für Mängel eines Gebäudes gelten', () => {
+  // F5-06 (Gegenprüfung 24.9.2026 widerlegt die Einschränkung auf Gebäude): Art. 219 Abs. 3 OR a.F.
+  // gilt nach BGE 104 II 265 E. 3 für alle Grundstücksmängel, auch unüberbauter Grundstücke;
+  // die Botschaft BBl 2022 2743 S. 35 Fn. 88 bestätigt das. Keine Unsicherheits-Warnung (§8).
+  it('F5-06: Grundstückkauf (alt) – 5 Jahre für alle Grundstücksmängel, kein «nur Gebäude»-Vorbehalt (BGE 104 II 265 E. 3)', () => {
     const r = berechneGewaehrleistung(base({
       vertragstyp: 'grundstueckkauf', vertragsdatum: '2025-03-01',
       uebergabe: '2025-04-01', eigentumserwerb: '2025-04-15',
     }));
-    expect(r.warnungen.some((w) => w.includes('Mängel eines Gebäudes') && w.includes('Art. 221') && w.includes('Art. 210 Abs. 1'))).toBe(true);
+    expect(r.rechtsstand).toBe('alt');
+    expect(r.verjaehrung.jahre).toBe(5);
+    expect(r.verjaehrung.endeISO).toBe('2030-04-15'); // Mo
+    expect(r.warnungen.some((w) => /Gebäude|Art\. 221\b|strittig/.test(w))).toBe(false);
+    const schritt3 = r.rechenweg.find((s) => s.beschreibung.startsWith('Schritt 3'));
+    expect(schritt3?.normen?.some((n) => n.artikel === 'Art. 219 Abs. 3 OR' && /BGE 104 II 265\b/.test(n.bemerkung ?? '') && !/Gebäude/.test(n.bemerkung ?? ''))).toBe(true);
   });
 
   it('S3-b: SIA 118 schaltet die teilzwingende 5-Jahres-Frist nicht aus (Werk unbeweglich, neues Recht)', () => {

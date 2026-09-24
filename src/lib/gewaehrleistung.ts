@@ -244,7 +244,7 @@ export function berechneGewaehrleistung(input: GewaehrleistungInput): Gewaehrlei
   } else if (istGrundstueck) {
     jahre = 5;
     teilzwingend = neu;
-    dauerNorm = neu ? N('Art. 219a Abs. 3 OR', '5 Jahre ab Eigentumserwerb, teilzwingend') : N('Art. 219 Abs. 3 OR', '5 Jahre ab Eigentumserwerb für Mängel eines Gebäudes (aufgehoben per 1.1.2026)');
+    dauerNorm = neu ? N('Art. 219a Abs. 3 OR', '5 Jahre ab Eigentumserwerb, teilzwingend') : N('Art. 219 Abs. 3 OR', '5 Jahre ab Eigentumserwerb für sämtliche Grundstücksmängel, BGE 104 II 265 E. 3 (aufgehoben per 1.1.2026)');
   } else if (istWerk) {
     jahre = sia ? 5 : objekt === 'beweglich' ? 2 : 5;
     // S3-b (RL-06): Teilzwingend ist die GESETZLICHE 5-Jahres-Frist (Art. 371 Abs. 1
@@ -334,13 +334,14 @@ export function berechneGewaehrleistung(input: GewaehrleistungInput): Gewaehrlei
   if (entdeckung && isAfter(entdeckung, verjEnde) && !input.arglist) {
     warnungen.push(`Der Mangel wurde erst nach Eintritt der Verjährung entdeckt (${fmt(entdeckung)} > ${fmt(verjEnde)}) – die Mängelrechte sind verjährt, «selbst wenn der Käufer die Mängel erst später entdeckt» (Art. 210 Abs. 1 OR).`);
   }
-  // F5-06 (RL-06): Art. 219 Abs. 3 OR a.F. (Fassung 1.1.2025) erfasst nur «die Mängel eines
-  // Gebäudes»; für übrige Grundstücksmängel verweist Art. 221 OR auf den Fahrniskauf
-  // (Art. 210 Abs. 1 OR in der Fassung 1.1.2025: zwei Jahre). Ohne Eingabe zur Mangelart
-  // nicht berechenbar und in der Lehre strittig → nur Hinweis; gerechnet sind 5 Jahre.
-  if (istGrundstueck && !neu && !input.arglist) {
-    warnungen.push('Grundstückkauf nach altem Recht: Die gerechneten 5 Jahre (Art. 219 Abs. 3 OR, Fassung bis 31.12.2025) gelten nur für Mängel eines Gebäudes. Für andere Mängel des Grundstücks (z. B. des Bodens) verweist Art. 221 OR auf den Fahrniskauf – Art. 210 Abs. 1 OR sah zwei Jahre vor; Beginn und Abgrenzung sind im Einzelfall zu prüfen.');
-  }
+  // F5-06 (RL-06): Art. 219 Abs. 3 OR a.F. nennt zwar nur «die Mängel eines Gebäudes», gilt aber
+  // nach BGE 104 II 265 E. 3 (1978) für alle Grundstücksmängel, auch unüberbauter Grundstücke:
+  // «rien ne justifie des prescriptions différentes selon l'objet des défauts». Die Botschaft zur
+  // Baumängel-Revision (BBl 2022 2743, S. 35 mit Fn. 88) übernimmt diese Praxis ausdrücklich für
+  // Art. 219a Abs. 3 OR. Geklärte Frage → keine Unsicherheits-Warnung (§8); Fundstelle steht in
+  // dauerNorm. Quellen: https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F104-II-265%3Ade&lang=de&type=show_document
+  // · https://www.fedlex.admin.ch/eli/fga/2022/2743/de (beide abgerufen 24.9.2026). Die bis
+  // 74eba7e7b hier ausgegebene «nur Gebäude / Art. 221 → 2 Jahre»-Warnung war falsch (Gegenprüfung 24.9.2026).
   if (input.konsumentenkauf) {
     annahmen.push('Konsumentenkauf: Es wird unterstellt, dass alle drei Merkmale von Art. 210 Abs. 4 OR kumulativ erfüllt sind (persönlicher/familiärer Gebrauch, gewerblicher Verkäufer, Verkürzungsabrede).');
   }
