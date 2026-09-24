@@ -61,6 +61,11 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     `start-schnell`), «Zuletzt» zeigt höchstens fünf einzeilige Einträge
 //     (`ZuletztVerwendet`). Die Zeilenhöhe ist das Maximum beider Spalten;
 //     «Häufig gebraucht» füllt links weiter bis zur Unterkante der Spalte.
+//     `grid-rows-[auto_1fr]`: «Zuletzt» (zweite Fläche, nur mit Einträgen)
+//     reicht bis zur Zeilen-Unterkante — die Unterkanten links und rechts
+//     bleiben bündig wie seit U4. Ohne Einträge bleibt das Schnellwerkzeug in
+//     seiner natürlichen Höhe (keine leere Mulde); erscheint «Zuletzt» nach dem
+//     Laden, wächst nur die neue Fläche, nichts verschiebt sich (§15).
 //     Einspaltig bleibt die Reihenfolge Kacheln · Häufig · Schnellwerkzeug ·
 //     Zuletzt. Messwerte: Token-Kommentar in `tailwind.config.js`.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
@@ -104,7 +109,7 @@ export function Startseite() {
           <StartKachelFeld kacheln={KACHELN} />
           <HaeufigGebraucht />
         </div>
-        <aside aria-label="Arbeitsplatz" className="grid content-start gap-y-4">
+        <aside aria-label="Arbeitsplatz" className={`grid content-start gap-y-4 ${pk('lg:row-span-2 lg:grid-rows-subgrid', '@5xl/pane:row-span-2 @5xl/pane:grid-rows-subgrid')}`}>
           <Schnellwerkzeug />
           <ZuletztVerwendet />
         </aside>

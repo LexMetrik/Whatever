@@ -566,16 +566,41 @@ const haeufig = (page: Page) => page.locator('section').filter({ has: page.getBy
 const schnell = (page: Page) => page.locator('section:has([role=tabpanel])')
 const unten = async (l: ReturnType<Page['locator']>) => { const b = (await l.boundingBox())!; return Math.round(b.y + b.height) }
 
+// DEKLARIERTE ANPASSUNG (U9, Nachtrag David 24.9.2026 abends, §6.3): «zuletzt
+// geöffnet auf startseite soll nicht extra platz einnehmen sonder
+// schnellwerkzeug soll kleiner werden». Die Bühne ist nur noch so hoch wie die
+// Frist-Variante, «Zuletzt geöffnet» steht in derselben Zeile unter dem
+// Schnellwerkzeug. Bündig ist darum jetzt «Häufig gebraucht» mit der LETZTEN
+// Fläche der Spalte: mit Einträgen «Zuletzt» (gestreckt), ohne Einträge reicht
+// «Häufig gebraucht» mindestens bis unter das Schnellwerkzeug und bis zur
+// Unterkante der Spalte. ROT ZU BEKOMMEN (U9): in `pages/Startseite.tsx` die
+// `aside` zurück auf `row-span-2 grid-rows-subgrid` stellen.
+const zuletztFl = (page: Page) => page.locator('section').filter({ has: page.getByRole('heading', { name: 'Zuletzt geöffnet' }) })
+const INHALT = { Frist: 'Fristende', Verzugszins: 'Verzugszins (gesamt)', 'Verjährung': 'Verjährungseintritt' } as const
+
 test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
   for (const breite of [1024, 1440]) {
-    test(`@${breite}: Kacheln 288 px, «Häufig gebraucht» endet bündig mit dem Schnellwerkzeug — alle Varianten`, async ({ page }) => {
+    test(`@${breite}: Kacheln 288 px, «Häufig gebraucht» endet bündig mit der Spalte — alle Varianten`, async ({ page }) => {
       await page.setViewportSize({ width: breite, height: 900 })
       await page.goto('/')
-      for (const wahl of ['Frist', 'Verzugszins', 'Verjährung']) {
+      const aside = page.locator('aside[aria-label="Arbeitsplatz"]')
+      for (const wahl of ['Frist', 'Verzugszins', 'Verjährung'] as const) {
         await page.getByRole('tab', { name: wahl, exact: true }).click()
+        await expect(page.getByRole('tabpanel')).toContainText(INHALT[wahl])
         const kacheln = await page.locator('.lc-start-zelle').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().height)))
         expect(kacheln, `${wahl}: Kachelhöhen`).toEqual([288, 288, 288, 288])
-        expect(Math.abs(await unten(haeufig(page)) - await unten(schnell(page))), `${wahl}: Unterkanten`).toBeLessThanOrEqual(1)
+        expect(await unten(haeufig(page)), `${wahl}: ohne «Zuletzt» nicht über dem Schnellwerkzeug`).toBeGreaterThanOrEqual(await unten(schnell(page)) - 1)
+        expect(Math.abs(await unten(haeufig(page)) - await unten(aside)), `${wahl}: eine Zeile`).toBeLessThanOrEqual(1)
+      }
+      // Mit Einträgen: «Zuletzt» ist die letzte Fläche und endet bündig mit «Häufig gebraucht».
+      await page.evaluate(() => localStorage.setItem('lexmetrik-zuletzt', JSON.stringify(
+        [0, 1, 2, 3, 4, 5, 6].map((i) => ({ route: `/gesetze/bund/U9-${i}`, titel: `Erlass ${i}`, typ: 'gesetz', zeit: 7 - i })))))
+      for (const wahl of ['Frist', 'Verzugszins', 'Verjährung'] as const) {
+        await page.goto('/')
+        await page.getByRole('tab', { name: wahl, exact: true }).click()
+        await expect(page.getByRole('tabpanel')).toContainText(INHALT[wahl])
+        await expect(zuletztFl(page).getByRole('link')).toHaveCount(5)
+        expect(Math.abs(await unten(haeufig(page)) - await unten(zuletztFl(page))), `${wahl}: Unterkanten mit «Zuletzt»`).toBeLessThanOrEqual(1)
       }
     })
   }
