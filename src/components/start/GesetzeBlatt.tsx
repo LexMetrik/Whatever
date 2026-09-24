@@ -1,14 +1,14 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { STARTSEITE_ZAEHLER as z } from '../../data/startseiteZaehler.generated';
 import { KANTONE, KANTON_NAMEN } from '../../data/tarif/typen';
 import { SYSTEMATIK, type KantonSystematik as KantonSystematikBaum } from '../../lib/normtext/systematik';
-import { ladeBrowseManifest, ladeKantonSystematik, filtern } from '../../lib/normtext/browse';
+import { ladeKantonSystematik, filtern } from '../../lib/normtext/browse';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { erfassungsgrad, STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import type { BlattOrt } from '../../lib/startBlatt';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
-import { useBlattRuhe } from './blattRuhe';
+import { Laedt, StufenSuche, useRegister } from './GesetzeSuche';
 import { SchweizKarte } from '../SchweizKarte';
 import { InternationalRubriken } from '../normtext/InternationalRubriken';
 import { INTERNATIONAL_GRUPPEN } from '../../lib/normtext/international-rubriken';
@@ -30,6 +30,11 @@ import { KantonSystematik } from '../../pages/gesetze-teile/KantonSystematik';
 // §15: Gebiete, Kantonsliste und Karte kommen aus dem Bündel; das Register
 // (`/normtext/register.json`) wird erst geladen, wenn eine Erlassliste gebraucht
 // wird, die Kantons-Systematik erst in einem Kanton.
+//
+// U11 (David 24.9.2026: «bei gesetze soll auf allenen ebenen eine suche möglich
+// sien»): auch Wahl, Gebiete und Kantonsliste tragen oben ein Suchfeld
+// (`StufenSuche`, GesetzeSuche.tsx) — dort lädt das Register erst beim Fokus
+// ins Feld, nicht beim Öffnen der Stufe.
 
 const nf = (n: number) => n.toLocaleString('de-CH');
 const kantonName = (k: string) => KANTON_NAMEN[k as keyof typeof KANTON_NAMEN] ?? k;
@@ -88,126 +93,119 @@ const kantonGrad = (k: string) => {
 };
 
 function Wahl({ zu }: { zu: Zu }) {
+  // U11: das Suchfeld liegt in voller Breite über den Spalten. `.lc-start-fuellt`
+  // bleibt direktes Kind der Stufe (index.css `:has(> .lc-start-fuellt)`) und
+  // wird ein Zwei-Zeilen-Raster: Feld `auto`, darunter die Spalten (bzw. die
+  // Treffer) auf der Resthöhe — die Spalten füllen weiter bis unten.
   return (
-    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.25fr_1fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0">
-      <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('bund')} titel="Bund" zahl={nf(z.gesetzeBundesrechtVolltext)} einheit="Bundeserlasse" />}>
-        <ul aria-label="Rechtsgebiete des Bundes" className="px-2">
-          {z.bundSystematik.map((g) => (
-            <li key={g.id} className="border-t border-rule-soft">
-              <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline whitespace-normal px-2">
-                <span aria-hidden className="num w-5 shrink-0 text-xs text-ink-600">{g.nr}</span>
-                <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{g.titel}</span>
-                <span className="num shrink-0 text-xs text-ink-700">{nf(g.anzahl)}</span>
+    <StufenSuche bereich="alle" label="Gesetze durchsuchen"
+      className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-rows-[auto_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.25fr_1fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0">
+        <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('bund')} titel="Bund" zahl={nf(z.gesetzeBundesrechtVolltext)} einheit="Bundeserlasse" />}>
+          <ul aria-label="Rechtsgebiete des Bundes" className="px-2">
+            {z.bundSystematik.map((g) => (
+              <li key={g.id} className="border-t border-rule-soft">
+                <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline whitespace-normal px-2">
+                  <span aria-hidden className="num w-5 shrink-0 text-xs text-ink-600">{g.nr}</span>
+                  <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{g.titel}</span>
+                  <span className="num shrink-0 text-xs text-ink-700">{nf(g.anzahl)}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </WahlSpalte>
+        <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)} einheit="kantonale Erlasse" />}>
+          {/* `max-w-xs` untereinander: die Karte in voller Telefonbreite schob
+              die International-Spalte unnötig weit nach unten. */}
+          <div className="mx-auto max-w-xs px-4 lg:max-w-none">
+            {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
+                U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
+            <SchweizKarte className="w-full" kompakt onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
+              verfuegbar={(k) => nKanton(k) > 0} gradFuer={kantonGrad} />
+          </div>
+          <ul aria-label="Kantone als Liste" className="mt-2 px-2">
+            <li className="border-t border-rule-soft">
+              <button type="button" onClick={zu('kantone')} className="lc-menu-zeile whitespace-normal px-2 text-ink-900">
+                <span className="min-w-0 flex-1">Alle 26 Kantone</span>
+                <span aria-hidden className="shrink-0 text-ink-600">›</span>
               </button>
             </li>
-          ))}
-        </ul>
-      </WahlSpalte>
-      <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)} einheit="kantonale Erlasse" />}>
-        {/* `max-w-xs` untereinander: die Karte in voller Telefonbreite schob
-            die International-Spalte unnötig weit nach unten. */}
-        <div className="mx-auto max-w-xs px-4 lg:max-w-none">
-          {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
-              U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
-          <SchweizKarte className="w-full" kompakt onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
-            verfuegbar={(k) => nKanton(k) > 0} gradFuer={kantonGrad} />
-        </div>
-        <ul aria-label="Kantone als Liste" className="mt-2 px-2">
-          <li className="border-t border-rule-soft">
-            <button type="button" onClick={zu('kantone')} className="lc-menu-zeile whitespace-normal px-2 text-ink-900">
-              <span className="min-w-0 flex-1">Alle 26 Kantone</span>
-              <span aria-hidden className="shrink-0 text-ink-600">›</span>
-            </button>
-          </li>
-        </ul>
-      </WahlSpalte>
-      <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('international')} titel="International" zahl={nf(z.gesetzeInternationalVolltext)} einheit="Staatsverträge" />}>
-        <ul aria-label="Rubriken des internationalen Rechts" className="px-2">
-          {INTERNATIONAL_GRUPPEN.map((g) => (
-            <li key={g.id} className="border-t border-rule-soft">
-              <button type="button" onClick={zu('international', g.id)} title={INTL_KURZ[g.id] ? g.titel : undefined}
-                className="lc-menu-zeile whitespace-normal px-2">
-                <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{INTL_KURZ[g.id] ?? g.titel}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-      </WahlSpalte>
-    </div>
+          </ul>
+        </WahlSpalte>
+        <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('international')} titel="International" zahl={nf(z.gesetzeInternationalVolltext)} einheit="Staatsverträge" />}>
+          <ul aria-label="Rubriken des internationalen Rechts" className="px-2">
+            {INTERNATIONAL_GRUPPEN.map((g) => (
+              <li key={g.id} className="border-t border-rule-soft">
+                <button type="button" onClick={zu('international', g.id)} title={INTL_KURZ[g.id] ? g.titel : undefined}
+                  className="lc-menu-zeile whitespace-normal px-2">
+                  <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{INTL_KURZ[g.id] ?? g.titel}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </WahlSpalte>
+      </div>
+    </StufenSuche>
   );
 }
 
 function Gebiete({ zu }: { zu: Zu }) {
   return (
-    <div className="space-y-3">
-      {/* `grid-cols-1`: ohne Spaltenvorgabe wuchs die Spalte @320 auf das längste
-          Einzelwort («Zwangsvollstreckungsrecht»), R8 a +8 px (FEINSCHLIFF). */}
-      <ul className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
-        {z.bundSystematik.map((g) => (
-          <li key={g.id} className="border-t border-rule-soft">
-            {/* `whitespace-normal`: die Menüzeile ist sonst einzeilig — «Zivilprozess- und
-                Zwangsvollstreckungsrecht» lief bei jeder Breite über die Spalte und
-                in den Nachbarn (gemessen 24.9.2026, FEINSCHLIFF). */}
-            <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline whitespace-normal">
-              <span aria-hidden className="num w-6 shrink-0 font-sans text-xs text-ink-500">{g.nr}</span>
-              <span className="min-w-0 flex-1">
-                <span className="block hyphens-auto break-words font-serif text-body-l leading-snug text-ink-900">{g.titel}</span>
-                <span className="block truncate font-sans text-xs text-ink-500" title={g.kuerzel.join(' · ')}>{g.kuerzel.join(' · ')}</span>
-              </span>
-              <span className="num shrink-0 font-sans text-xs text-ink-700">{nf(g.anzahl)}</span>
-            </button>
-          </li>
-        ))}
-      </ul>
-      <p className="max-w-reading font-sans text-xs leading-relaxed text-ink-500">
-        Die Zahl je Zeile ist der bei uns erfasste Volltext ({nf(z.gesetzeBundesrechtVolltext)} Erlasse
-        des Bundesrechts), nicht der Umfang der Systematischen Rechtssammlung des Bundes.
-      </p>
-    </div>
+    <StufenSuche bereich="bund" label="Bundesrecht durchsuchen" schmal className="space-y-3">
+      <div className="space-y-3">
+        {/* `grid-cols-1`: ohne Spaltenvorgabe wuchs die Spalte @320 auf das längste
+            Einzelwort («Zwangsvollstreckungsrecht»), R8 a +8 px (FEINSCHLIFF). */}
+        <ul className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+          {z.bundSystematik.map((g) => (
+            <li key={g.id} className="border-t border-rule-soft">
+              {/* `whitespace-normal`: die Menüzeile ist sonst einzeilig — «Zivilprozess- und
+                  Zwangsvollstreckungsrecht» lief bei jeder Breite über die Spalte und
+                  in den Nachbarn (gemessen 24.9.2026, FEINSCHLIFF). */}
+              <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline whitespace-normal">
+                <span aria-hidden className="num w-6 shrink-0 font-sans text-xs text-ink-500">{g.nr}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block hyphens-auto break-words font-serif text-body-l leading-snug text-ink-900">{g.titel}</span>
+                  <span className="block truncate font-sans text-xs text-ink-500" title={g.kuerzel.join(' · ')}>{g.kuerzel.join(' · ')}</span>
+                </span>
+                <span className="num shrink-0 font-sans text-xs text-ink-700">{nf(g.anzahl)}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+        <p className="max-w-reading font-sans text-xs leading-relaxed text-ink-500">
+          Die Zahl je Zeile ist der bei uns erfasste Volltext ({nf(z.gesetzeBundesrechtVolltext)} Erlasse
+          des Bundesrechts), nicht der Umfang der Systematischen Rechtssammlung des Bundes.
+        </p>
+      </div>
+    </StufenSuche>
   );
 }
 
 function Kantone({ zu }: { zu: Zu }) {
   const n = nKanton;
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-      <SchweizKarte className="w-full" onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
-        verfuegbar={(k) => n(k) > 0} gradFuer={kantonGrad} />
-      <ul aria-label="Kantone" className="grid grid-cols-2 gap-x-4 self-start">
-        {KANTONE.map((k) => (
-          <li key={k} className="border-t border-rule-soft">
-            {/* Kantonsname bricht um statt «Basel-Lan…» (FEINSCHLIFF 24.9.2026). */}
-            <button type="button" onClick={zu('kantone', k)} className="lc-menu-zeile whitespace-normal" disabled={!n(k)}>
-              <span className="min-w-0 flex-1 break-words leading-snug">{kantonName(k)}</span>
-              <span className="num shrink-0 text-xs text-ink-500">{n(k)}</span>
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <StufenSuche bereich="kantone" label="Kantonales Recht durchsuchen" schmal className="space-y-3">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+        <SchweizKarte className="w-full" onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
+          verfuegbar={(k) => n(k) > 0} gradFuer={kantonGrad} />
+        <ul aria-label="Kantone" className="grid grid-cols-2 gap-x-4 self-start">
+          {KANTONE.map((k) => (
+            <li key={k} className="border-t border-rule-soft">
+              {/* Kantonsname bricht um statt «Basel-Lan…» (FEINSCHLIFF 24.9.2026). */}
+              <button type="button" onClick={zu('kantone', k)} className="lc-menu-zeile whitespace-normal" disabled={!n(k)}>
+                <span className="min-w-0 flex-1 break-words leading-snug">{kantonName(k)}</span>
+                <span className="num shrink-0 text-xs text-ink-500">{n(k)}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </StufenSuche>
   );
 }
 
-/** Register erst bei Bedarf (§15); `null` = lädt, `[]` = nicht erreichbar. */
-function useRegister(): BrowseErlass[] | null {
-  const [erlasse, setErlasse] = useState<BrowseErlass[] | null>(null);
-  const ruhe = useBlattRuhe();
-  useEffect(() => {
-    if (!ruhe) return; // erst nach der Öffnungsbewegung (blattRuhe.ts)
-    let lebt = true;
-    ladeBrowseManifest().then((m) => { if (lebt) setErlasse(m?.erlasse ?? []); });
-    return () => { lebt = false; };
-  }, [ruhe]);
-  return erlasse;
-}
-
-function Laedt({ erlasse, children }: { erlasse: BrowseErlass[] | null; children: () => ReactNode }) {
-  if (erlasse === null) return <p className="font-sans text-body-s text-ink-500" role="status">Erlasse werden geladen …</p>;
-  if (erlasse.length === 0) {
-    return <p className="font-sans text-body-s text-ink-700" role="alert">Die Gesetzessammlung konnte nicht geladen werden. Bitte die Seite neu laden.</p>;
-  }
-  return <>{children()}</>;
-}
+// `useRegister` und `Laedt`: seit U11 in GesetzeSuche.tsx (eine Quelle für
+// Erlass-Stufen und Stufen-Suche).
 
 const istIntl = (e: BrowseErlass) => e.rechtsgebiet === 'international';
 

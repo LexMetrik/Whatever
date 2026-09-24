@@ -126,6 +126,24 @@ run() {
 }
 
 echo "Gates (${mode}):"
+# Vorprüfung Abhängigkeiten (Lehre 24.9.2026, W2·30-RL-W1): ein App-Worktree
+# brachte ein veraltetes node_modules mit (Stand 3.9.) — fehlende Pakete lösten
+# über den Elternordner in den Haupt-Checkout auf, zwei React-Kopien, ~60 rote
+# Tests ohne Code-Fehler, ein Gate-Lauf (5 min) verloren. `npm ls` erkennt den
+# Drift (gemessen: frisch nach npm ci Exit 0, drei veraltete Worktrees Exit 1).
+# `--all` statt `--depth=0` (Gegenprüfung 24.9.2026): --depth=0 übersah einen
+# verschachtelten Versionskonflikt (Paket verlangt react@^19, lokal 18) — genau
+# das Zwei-Kopien-Muster; Laufzeit gleich (~0.25 s). AUSNAHME Symlink: ist
+# node_modules ein Verweis (Prüf-/Bau-Worktrees der Orchestrierung), meldet
+# --all Dev-Abhängigkeiten der Pakete fälschlich als UNMET (gemessen 24.9.2026:
+# frischer Baum, echt Exit 0, als Symlink Exit 1) — dort --depth=0.
+# Abbruch statt `run`: die Folge-Tore wären nur Rauschen.
+ls_tiefe="--all"; [ -L node_modules ] && ls_tiefe="--depth=0"
+if ! npm ls "$ls_tiefe" >/dev/null 2>&1; then
+  printf '  ROT  node_modules passt nicht zu package-lock.json — zuerst «npm ci» (kein Code-Fehler; Details: npm ls %s)\n' "$ls_tiefe"
+  ereignis "gate:npm-ls" false
+  exit 1
+fi
 run "tsc -b"            npx tsc -b
 run "vitest"            npm test
 run "golden:vergleich"  npm run golden:vergleich

@@ -35,7 +35,7 @@ export const VJ_BEGINN_DEFAULT = '2024-03-01';
 export type VjLink = {
   regime: string; beginnRelativ: string; beginnAbsolut?: string; stichtag: string;
   kanton: string; strafbar?: boolean; stillstaende?: Stillstand[];
-  unterbrechungen?: Unterbrechung[]; verzichtAn?: boolean; verzichtDatum?: string; verzichtJahre?: string;
+  unterbrechungen?: Unterbrechung[]; verzichtAn?: boolean; verzichtDatum?: string; verzichtJahre?: string; verzichtBis?: string;
 };
 export const VJ_LINK_SPEC: PermalinkSpec<VjLink & Record<string, unknown>> = {
   regime: { p: 're', typ: 'str', gueltig: einerVon('ordentlich', 'kurz', 'delikt', 'delikt_person', 'vertrag_person', 'bereicherung') },
@@ -49,4 +49,5 @@ export const VJ_LINK_SPEC: PermalinkSpec<VjLink & Record<string, unknown>> = {
   verzichtAn: { p: 'va', typ: 'bool' },
   verzichtDatum: { p: 'vd', typ: 'str', gueltig: istISO },
   verzichtJahre: { p: 'vj', typ: 'str', gueltig: (v) => /^\d{1,2}$/.test(v) },
+  verzichtBis: { p: 'vb', typ: 'str', gueltig: istISO },
 };

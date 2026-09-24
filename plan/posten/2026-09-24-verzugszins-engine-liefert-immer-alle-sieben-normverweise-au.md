@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W1
+dach: W2·30-RL-W2A
 titel: Verzugszins-Engine liefert immer alle sieben Normverweise, auch Art. 104 Abs. 2/3 bei gesetzlichem Zins
 anlass: Session-Notizen 2026-09-24
 -->

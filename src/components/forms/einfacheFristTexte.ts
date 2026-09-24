@@ -60,6 +60,28 @@ export const FERIEN_OPTIONEN: { code: Ferien; label: string; sub: string }[] = [
   { code: 'bgg', label: 'BGG-Stillstand (Bundesgericht)', sub: 'Art. 46 BGG – Stillstand (gleiche drei Perioden) nur für nach Tagen bestimmte Fristen; Ausnahmen nach Abs. 2 (vorsorgliche Massnahmen, Wechselbetreibung, Stimmrecht …)' },
 ];
 
+// RL-07/Q8-01 (Prüfung Rechtslogik 23.9.2026): «Kanton (Feiertage)» sagte nicht,
+// WESSEN Kanton — die naheliegende Fehlbedienung (Gerichtskanton) verschiebt
+// ein StPO-/BGG-Fristende um 1–3 Tage nach hinten. Drei GETRENNTE Regeln (§1/§4):
+// Art. 142 Abs. 3 ZPO (Gerichtsort) · Art. 45 Abs. 2 BGG / Art. 20 Abs. 3 VwVG
+// (Partei oder Vertretung) · Art. 78 OR (Erfüllungsort) bzw. Art. 90 Abs. 2 StPO
+// (Partei oder Rechtsbeistand) für «Keine Ferien». Der Präfix «Kanton
+// (Feiertage)» bleibt (e2e-Selektor getByLabel). SchKG unverändert: die Engine
+// verweist auf Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO, die Anknüpfung beim
+// Betreibungsamt ist nicht Gegenstand von RL-07. Reine Beschriftung (§3).
+const KANTON_ANKNUEPFUNG: Record<Ferien, string> = {
+  keine: 'Erfüllungsort; StPO: Wohnsitz/Sitz der Partei oder ihres Rechtsbeistands',
+  zpo: 'Gerichtsort',
+  schkg: '',
+  vwvg: 'Wohnsitz/Sitz der Partei oder ihrer Vertretung',
+  bgg: 'Wohnsitz/Sitz der Partei oder ihrer Vertretung',
+};
+
+export function kantonFeldLabel(ferien: Ferien): string {
+  const a = KANTON_ANKNUEPFUNG[ferien];
+  return a ? `Kanton (Feiertage) – ${a}` : 'Kanton (Feiertage)';
+}
+
 export const EINHEITEN: { code: Einheit; label: string }[] = [
   { code: 'tage', label: 'Tage' },
   { code: 'wochen', label: 'Wochen' },

@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FehlerBox, KopierButton, NormLink, Stepper } from './ui';
 import { PruefBefund } from './PruefBefund';
 import { befundZahl, sammleBefunde } from './seiteHelfer';
@@ -10,6 +10,7 @@ import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { WerkzeugKopf } from '../layout/WerkzeugKopf';
 import { dokumentAlsText } from '../../lib/vorlagen/vorlagenText';
+import { karteFuerPfad } from '../../lib/seo';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
 import { AUSGABE_LABEL, MUSTER, rolleLabel, type AusgabeStil } from '../../lib/vorlagen/formatvorlagen';
 import { VORSCHAU } from './vorschauStil';
@@ -93,6 +94,12 @@ export function VorlagenWizardRahmen({
   };
   // Split-View E: Formular‖Vorschau-Split nach PANE-Breite (md→@3xl/pane).
   const pk = usePaneKlasse();
+  // RL-12 PR 2 (R3-06): Prüfstand der Karte zum Pfad — der Rahmen kennt seine
+  // Karte nicht (Props von ~27 Seiten), der Pfad ist der gemeinsame Schlüssel
+  // (Muster `PassendeRechner`); im Pane liefert `<Routes location>` den
+  // Pane-Pfad. Dieselbe Zuordnung wie Titel/Canonical (`seo.karteFuerPfad`).
+  const { pathname } = useLocation();
+  const kartenStatus = karteFuerPfad(pathname)?.status;
 
   // Mobile Live-Vorschau (Redesign E6): steuerbar und automatisch offen im
   // Prüfen-Schritt (Render-Phasen-Abgleich statt Effect).
@@ -125,7 +132,7 @@ export function VorlagenWizardRahmen({
       {/* Kopf: Titelblatt-Band (`layout/WerkzeugKopf`). Die Formvorschrift
           steht als Etikett im Band — Tor-Griff `data-formgate`, warn-gefüllt
           und im ersten Viewport (§8, qsui-hierarchie I10). */}
-      <WerkzeugKopf overline={overline} titel={titel}
+      <WerkzeugKopf overline={overline} titel={titel} status={kartenStatus}
         // Lange Komposita («Geheimhaltungsvereinbarung») sprengten bei 360 px
         // den Titel (12 px Seiten-Overflow, Befund David 25.6.2026): brechen.
         titelKlasse="[overflow-wrap:anywhere] hyphens-auto"
