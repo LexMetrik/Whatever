@@ -224,7 +224,8 @@ Anpassungssätze auf 0,01 % (zwei Dezimalstellen) ausweisen.
 - **Kostensteigerung (Eingabefeld):** **S**.
 - **Mehrleistungen / Nettorendite:** **L** — separater Ausbau, nicht Phase 1.
 - **Fristen/Termine der Erhöhungsmitteilung:** Wiederverwendung
-  `mietrecht.ts` (Terminsuche, Art. 78-Verschiebung) + `mietTermine`.
+  `mietrecht.ts` (Terminsuche; seit RL-04 24.9.2026 ohne Art.-78-Verschiebung
+  des spätesten Zugangs, F4-01) + `mietTermine`.
 
 ---
 
