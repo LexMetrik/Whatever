@@ -37,6 +37,10 @@ const ALLE_KANTONE: Kanton[] = [
   'SH', 'AR', 'AI', 'SG', 'GR', 'AG', 'TG', 'TI', 'VD', 'VS', 'NE', 'GE', 'JU',
 ];
 const JAHRE = [2024, 2025, 2026, 2027];
+// Feiertags-Kontext der Gegenprobe (RL-22-Nachzug 25.9.2026): Die Matrix wird als
+// Art.-142-Abs.-3-ZPO-Matrix geprüft (Kopfkommentar zpoFeiertage.ts) — damit sind
+// die bedingten kantonalen Tage (NE-Schliesstage, SO 1. Mai) eingeschlossen.
+const KONTEXT = 'zpo' as const;
 
 function iso(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -126,14 +130,9 @@ const AUSNAHMEN_FEST: FesteAusnahme[] = [
 // Kantonsliste ohne NE) ─────────────────────────────────────────────────
 type OsterAusnahme = { kanton: Kanton; offset: number; grund: string };
 const AUSNAHMEN_OSTERN: OsterAusnahme[] = [
-  {
-    kanton: 'NE', offset: 1,
-    grund: 'Ostermontag ist in zpoFeiertage.ts FEIERTAGE ausdrücklich `kantone: ausser(\'NE\')` ' +
-      '— NE ist bewusst ausgenommen (RSN 941.02 Art. 3); die Bibliothek führt «Lundi de Pâques» ' +
-      'für NE dennoch als public. Seit RL-22 (24.9.2026) ist der NE-Ostermontag in Jahren mit ' +
-      'amtlich publizierter Schliesstagsliste (LI-CPC Art. 10a, bisher 2026) Feiertag — dort ' +
-      'stimmen beide Quellen überein, die Ausnahme greift nur noch für die übrigen Jahre.',
-  },
+  // NE Ostermontag (offset 1): Ausnahme mit dem RL-22-Nachzug (25.9.2026) gestrichen —
+  // im ZPO-Kontext ist er seit 1.4.2015 jedes Jahr Feiertag (Schliesstag nach RDF
+  // Art. 11 Abs. 1 i.V.m. LI-CPC Art. 10a); LexMetrik und Bibliothek stimmen überein.
   {
     kanton: 'NE', offset: 60,
     grund: 'Fronleichnam («la Fête-Dieu») ist in zpoFeiertage.ts FEIERTAGE nicht in der ' +
@@ -189,14 +188,21 @@ function istNaefelserFahrt2027Ungeklaert(kanton: Kanton, datum: string): boolean
 
 // ─── Ausnahme: NE-Schliesstage (RL-22, 24.9.2026, R1-04, Entscheid W-10 a) ──
 // LI-CPC NE Art. 10a (RSN 251.1): Tage, an denen die Kantonsverwaltung mind.
-// halbtags geschlossen ist, gelten als Feiertag für Art. 142 ZPO. zpoFeiertage.ts
-// führt sie je Jahr mit amtlich publizierter Liste (NE_SCHLIESSTAGE, bisher 2026;
-// Quelle ne.ch «Jours fériés officiels», laut Zweitprüfung V8 abgerufen
-// 23.9.2026). date-holidays kennt keine Verwaltungsschliesstage — Abweichung
-// NUR_LEXMETRIK ist daher begründet; nur die hier gelisteten Einzeldaten.
-const NE_SCHLIESSTAG_AUSNAHMEN = new Set(['NE|2026-05-15', 'NE|2026-12-24', 'NE|2026-12-31']);
+// halbtags geschlossen ist, gelten als Feiertag für Art. 142 ZPO. Seit dem
+// RL-22-Nachzug (25.9.2026) als stehende Regel nach RDF Art. 11 Abs. 1 (RSN
+// 152.512, amtlich geöffnet 25.9.2026) — nicht mehr als Jahrestabelle 2026.
+// date-holidays kennt keine Verwaltungsschliesstage — Abweichung NUR_LEXMETRIK
+// ist begründet, aber nur für die Schliesstage, die NICHT schon gesetzliche
+// Feiertage nach RSN 941.02 Art. 3 sind und die die Bibliothek nicht führt:
+// Freitag nach Auffahrt, 24.12., 31.12. (hier unabhängig aus dem RDF-Wortlaut
+// hergeleitet, nicht aus zpoFeiertage.ts — R1-06).
 function istNeSchliesstagAusnahme(kanton: Kanton, datum: string): boolean {
-  return NE_SCHLIESSTAG_AUSNAHMEN.has(`${kanton}|${datum}`);
+  if (kanton !== 'NE') return false;
+  const [y, m, d] = datum.split('-').map(Number);
+  if (m === 12 && (d === 24 || d === 31)) return true;
+  const o = ostersonntag(y);
+  const freitagNachAuffahrt = new Date(o.getFullYear(), o.getMonth(), o.getDate() + 40);
+  return iso(freitagNachAuffahrt) === datum;
 }
 
 function findeFesteAusnahme(kanton: Kanton, monat: number, tag: number): FesteAusnahme | undefined {
@@ -239,7 +245,7 @@ for (const kanton of ALLE_KANTONE) {
     for (const [key, name] of bibPublicTage) {
       const [y, m, d] = key.split('-').map(Number);
       const datum = new Date(y, m - 1, d);
-      if (istFeiertag(datum, kanton)) continue; // Übereinstimmung
+      if (istFeiertag(datum, kanton, KONTEXT)) continue; // Übereinstimmung
 
       // Generische Regel: Sonntags-Duplikat — ein Sonntag ist über Art. 142
       // Abs. 1 ZPO / isWeekend ohnehin arbeitsfrei; die BJ-Liste (Art. 142
@@ -270,7 +276,7 @@ for (const kanton of ALLE_KANTONE) {
 
     // Richtung 2: LexMetrik → Bibliothek
     for (const datum of tageDesJahres(jahr)) {
-      if (!istFeiertag(datum, kanton)) continue;
+      if (!istFeiertag(datum, kanton, KONTEXT)) continue;
       const key = iso(datum);
       if (bibPublicTage.has(key)) continue; // Übereinstimmung
 

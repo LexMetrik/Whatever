@@ -6,6 +6,9 @@
 // Ausnahmen mit dem Code selbst). Summarisches Verfahren: kein Stillstand
 // (Art. 145 Abs. 2 lit. b ZPO), das Fristende hängt allein an Art. 142 Abs. 3
 // ZPO und dem Feiertagsrecht am Gerichtsort.
+// RL-22-Nachzug (25.9.2026): istFeiertag kennt einen Feiertags-Kontext; die
+// SO-/NE-Sonderregeln gelten nur für bestimmte Verfahren, daher hier 'zpo'
+// (Geltungsbereich je Engine: rl22-geltungsbereich.test.ts).
 
 import { describe, expect, it } from 'vitest';
 import { berechneFrist } from '../lib/zpoFristen';
@@ -23,14 +26,14 @@ const summarisch10 = (ereignis: string, kanton: Kanton): ZpoInput => ({
 });
 
 describe('SO: 1. Mai ist Feiertag für Art. 142 ZPO (EG ZPO SO § 22 Abs. 2, BGS 221.2) — R1-02', () => {
-  it('istFeiertag(1.5.2026, SO) = true', () => {
-    expect(istFeiertag(new Date(2026, 4, 1), 'SO')).toBe(true);
+  it('istFeiertag(1.5.2026, SO, zpo) = true', () => {
+    expect(istFeiertag(new Date(2026, 4, 1), 'SO', 'zpo')).toBe(true);
   });
   it('Zustellung 21.4.2026 + 10 Tage → Fr 1.5. Feiertag, Sa/So → Mo 4.5.2026', () => {
     expect(berechneFrist(summarisch10('2026-04-21', 'SO')).diesAdQuem).toBe('04.05.2026');
   });
   it('Kontrolle: 8.12. bleibt in SO kein Feiertag (§ 22 Abs. 2 nennt ihn nicht)', () => {
-    expect(istFeiertag(new Date(2026, 11, 8), 'SO')).toBe(false);
+    expect(istFeiertag(new Date(2026, 11, 8), 'SO', 'zpo')).toBe(false);
   });
 });
 
@@ -51,8 +54,8 @@ describe('NE: Schliesstage der Kantonsverwaltung gelten als Feiertag (LI-CPC Art
   it('Zustellung 21.12.2026 + 10 Tage → Do 31.12. geschlossen, 1.1. Neujahr, Sa/So → Mo 4.1.2027', () => {
     expect(berechneFrist(summarisch10('2026-12-21', 'NE')).diesAdQuem).toBe('04.01.2027');
   });
-  it('istFeiertag(31.12.2026, NE) = true', () => {
-    expect(istFeiertag(new Date(2026, 11, 31), 'NE')).toBe(true);
+  it('istFeiertag(31.12.2026, NE, zpo) = true', () => {
+    expect(istFeiertag(new Date(2026, 11, 31), 'NE', 'zpo')).toBe(true);
   });
 });
 
@@ -64,8 +67,8 @@ describe('NE 2026: weitere amtlich publizierte Schliesstage (LI-CPC Art. 10a) �
     expect(berechneFrist(summarisch10('2026-12-14', 'NE')).diesAdQuem).toBe('28.12.2026');
   });
   it('Ostermontag, Pfingstmontag, Lundi du Jeûne 2026 in NE Feiertag', () => {
-    expect(istFeiertag(new Date(2026, 3, 6), 'NE')).toBe(true);
-    expect(istFeiertag(new Date(2026, 4, 25), 'NE')).toBe(true);
-    expect(istFeiertag(new Date(2026, 8, 21), 'NE')).toBe(true);
+    expect(istFeiertag(new Date(2026, 3, 6), 'NE', 'zpo')).toBe(true);
+    expect(istFeiertag(new Date(2026, 4, 25), 'NE', 'zpo')).toBe(true);
+    expect(istFeiertag(new Date(2026, 8, 21), 'NE', 'zpo')).toBe(true);
   });
 });
