@@ -218,11 +218,17 @@ const GLOSSAR: GlossarEintrag[] = [
     // Beschriftung steht darum als Tabellen-Eintrag statt als JSX-Attribut
     // (`v3/LeserAenderungsWahl.tsx`). Das GLOSSAR-WORT ist unverändert
     // «Fassung» — Ä116 gilt Wort für Wort weiter, nur die Fundstelle wandert.
-    sache: 'Fassungs-Zeile ↔ ihre Stellung in der Änderungs-Wahl (Ä116)',
-    gewaehlt: /label: 'Fassung'/,
+    // §6.3-DEKLARATION (S6 W1f, Entscheid David 24.9.2026): die Stellung
+    // «Fassung» ist mit der Funktionszeile gefallen; die Fassungs-Auskunft
+    // steht als Klappzeile im Erlass-Blatt (`v3/BlattArtikel.tsx`). Das
+    // GLOSSAR-WORT bleibt «Fassung» (Ä116) — nur die Fundstelle wandert erneut,
+    // und das verworfene «Änderungsvermerke» bleibt verworfen.
+    sache: 'Fassungs-Zeile ↔ ihre Klappzeile im Erlass-Blatt (Ä116)',
+    gewaehlt: /titel=\{`Fassung \$\{dieses\(wort\)\}`\}/,
     verworfen: [
-      { wort: /label="Änderungsvermerke"/, statt: "label: 'Fassung'" },
-      { wort: /label: 'Änderungsvermerke'/, statt: "label: 'Fassung'" },
+      { wort: /label="Änderungsvermerke"/, statt: "«Fassung»" },
+      { wort: /label: 'Änderungsvermerke'/, statt: "«Fassung»" },
+      { wort: /titel=\{?["'`]Änderungsvermerke/, statt: "«Fassung»" },
     ],
   },
   {
