@@ -214,6 +214,9 @@ const BLATT_STUFEN = [
   // U1 (24.9.2026): Rubrik-Stufe aus der Wahl; «rechtshilfe» = der längste Titel.
   'gesetze/international/menschenrechte', 'gesetze/international/rechtshilfe',
   'werkzeuge', 'werkzeuge/rechner', 'werkzeuge/vorlagen', 'materialien', 'rechtsprechung',
+  // U8 (24.9.2026): Gebiets-Stufen aus der Werkzeuge-Wahl; «zpo-bundesgericht» =
+  // der längste Gebietsname, «gebuehren» die längste Rechner-Kategorie.
+  'werkzeuge/rechner/gebuehren', 'werkzeuge/vorlagen/zpo-bundesgericht', 'werkzeuge/vorlagen/vertrag-or',
 ] as const
 test.describe('R8 — Startseiten-Blätter (a, b, c, f, g, h)', () => {
   for (const stufe of BLATT_STUFEN) {
