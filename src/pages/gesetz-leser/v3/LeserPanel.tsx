@@ -160,12 +160,13 @@ export function LeserPanel({
           {/* C-1/E-10 (S6-W1a, 23.9.2026): EIN Name — «Erlass-Blatt» wie am
               Öffner (`OEFFNER_WORT`); bis dahin «Rechtsprechung & Kontext». */}
           {OEFFNER_WORT}
-          {/* Befund 34: nur «Entscheide» bezieht sich auf den Artikel — die
-              anderen Reiter gelten dem Erlass, darum dessen Kürzel statt der
-              (dort irreführenden) Artikel-Angabe. E-10: der Artikel steht als
-              Zitat MIT Kürzel («Art. 41 OR», `normZitat`, §5). */}
+          {/* Befund 34 (18.8.2026): damals bezog sich nur «Entscheide» auf den
+              Artikel, die anderen Reiter nannten darum das Kürzel. Seit S6 W1f
+              (Auftrag 24.9.2026) trägt JEDER Reiter oben den Teil zum Artikel —
+              der Kopf nennt ihn darum überall. E-10: als Zitat MIT Kürzel
+              («Art. 41 OR», `normZitat`, §5). */}
           <span className="num ml-1 font-normal normal-case text-ink-600">
-            · {reiter === 'entscheide' ? normZitat(artikelLabel, erlassKuerzel) : erlassKuerzel}
+            · {normZitat(artikelLabel, erlassKuerzel)}
           </span>
         </p>
         <SchliessKnopf name={`${OEFFNER_WORT} schliessen`} onClick={onSchliessen}
