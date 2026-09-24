@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { berechneAllgemeineFrist, type Einheit } from '../../lib/allgemeineFrist';
+import { berechneAllgemeineFrist, STPO_FRIST_HINWEIS, type Einheit } from '../../lib/allgemeineFrist';
 import { berechneFrist } from '../../lib/zpoFristen';
 import { berechneSchkgFrist } from '../../lib/schkgFristen';
 import { berechneBggVwvgFrist, bvAusnahmenSatz } from '../../lib/bggVwvgFristen';
@@ -16,7 +16,7 @@ import { IcsExportButton } from '../IcsExportButton';
 import type { FristMarkierung } from './FristKalenderKompakt';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import { EINHEITEN, FERIEN_OPTIONEN, icsTitelSchnellrechner, type EinfacheFristEingaben, type EinfacheFristMeldung, type Ferien } from './einfacheFristTexte';
+import { EINHEITEN, FERIEN_OPTIONEN, icsTitelSchnellrechner, kantonFeldLabel, type EinfacheFristEingaben, type EinfacheFristMeldung, type Ferien } from './einfacheFristTexte';
 
 // ─── Einfacher Fristenrechner (S-5a FAHRPLAN-STRUKTUR-UMBAU) ────────────────
 //
@@ -137,7 +137,10 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
         });
         ende = `${r.endWochentag}, ${r.endDatum}`;
         endeZusatz = r.verschoben ? `verschoben: ${r.verschiebeGruende.join(' · ')}` : '';
-        zeilen = r.hinweise;
+        // RL-07/Q8-02: «Keine Ferien» ist auch der empfohlene StPO-Pfad (Hinweis
+        // unter der Ferien-Wahl) — der Grundtext schickt gerichtliche Fristen zum
+        // ZPO-Rechner, darum hier der StPO-Zusatz (Art. 89 Abs. 2 / 90 Abs. 2 StPO).
+        zeilen = [...r.hinweise, STPO_FRIST_HINWEIS];
       } else if (ferien === 'zpo') {
         const r = berechneFrist({
           ereignis: start, einheit: einheitEffektiv, laenge,
@@ -280,7 +283,10 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
             {einheiten.map((e) => <option key={e.code} value={e.code}>{e.label}</option>)}
           </select>
         </Field>
-        <Field label="Kanton (Feiertage)">
+        {/* RL-07/Q8-01: Beschriftung nennt die Anknüpfung je Regime (Text aus
+            einfacheFristTexte). Knappe Varianten (Startseite/Zeile) behalten den
+            kurzen Titel — ihre Spalten sind gemessen (s. o.), kein Layout-Eingriff. */}
+        <Field label={knapp ? 'Kanton (Feiertage)' : kantonFeldLabel(ferien)}>
           <select value={kanton} onChange={(e) => setKanton(e.target.value as Kanton)}
             className={inputCls + ' w-full'}>
             {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
@@ -357,7 +363,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           </div>
           <p className="text-micro text-ink-500 max-w-reading">
             Strafprozessuale Fristen kennen KEINE Gerichtsferien (Art. 89 Abs. 2 StPO) –
-            «Keine Ferien» wählen. Der Verwaltungs-Stillstand (Art. 22a VwVG) und der
+            «Keine Ferien» wählen; als Kanton den Wohnsitz/Sitz der Partei oder ihres
+            Rechtsbeistands (Art. 90 Abs. 2 StPO) angeben – massgebend ist nicht der Gerichtsort. Der Verwaltungs-Stillstand (Art. 22a VwVG) und der
             BGG-Stillstand (Art. 46 BGG) gelten nur für nach Tagen bestimmte Fristen; in
             den Ausnahmeverfahren nach Abs. 2 (vorsorgliche Massnahmen u. a.) «Keine Ferien»
             wählen.

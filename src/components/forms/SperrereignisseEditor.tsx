@@ -3,7 +3,7 @@ import { NormText } from '../NormText';
 import { DatumsFeld } from '../DatumsFeld';
 import { Field, inputCls, ListenEditor } from '../vorlagen/ui';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import { SPERREREIGNIS_TYPEN, MIT_NIEDERKUNFT, sperrereignisEntfernen } from './sperrereignisseShared';
+import { SPERREREIGNIS_TYPEN, MIT_NIEDERKUNFT, sperrereignisEntfernen, sperrereignisTypSetzen } from './sperrereignisseShared';
 
 // ─── Geteilter Sperrereignis-Listen-Editor (Art. 336c OR) ───────────────────
 //
@@ -54,11 +54,14 @@ export function SperrereignisseEditor({ wert, onChange, hinweis }: {
         <>
           <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
             <Field label="Typ">
-              <select value={e.typ} onChange={(ev) => update(i, { typ: ev.target.value as SperrereignisTyp })} className={inputCls + ' text-xs'}>
+              <select value={e.typ} onChange={(ev) => onChange(sperrereignisTypSetzen(wert, i, ev.target.value as SperrereignisTyp))} className={inputCls + ' text-xs'}>
                 {SPERREREIGNIS_TYPEN.map((t) => <option key={t.code} value={t.code}>{t.label}</option>)}
               </select>
             </Field>
-            <Field label="Von">
+            {/* B5-Fix 10.6.2026 (SHK-Abgleich), aus KombinierteAnsicht übernommen:
+                die 6-Monats-Kappung des Art. 329i OR läuft ab Beginn der
+                RAHMENFRIST, nicht zwingend ab Urlaubsbeginn. */}
+            <Field label={e.typ === 'betreuungsurlaub' ? 'Von (Beginn der Rahmenfrist)' : 'Von'}>
               <DatumsFeld value={e.von} onChange={(v) => update(i, { von: v })} className={inputCls + ' text-xs'} />
             </Field>
             <Field label="Bis">
@@ -92,7 +95,10 @@ export function SperrereignisseEditor({ wert, onChange, hinweis }: {
           {e.typ === 'militaer_zivil' && (
             <p className="text-xs text-brass-700">Bei Dauer &gt; 11 Tage wird die Sperrfrist automatisch je 4 Wochen davor und danach erweitert (Art. 336c Abs. 1 lit. a OR).</p>
           )}
-          {e.typ === 'krankheit_unfall' && i > 0 && (
+          {/* RL-13 PR 2 (UI-05/W-04): Bezug nur auf FRÜHERE Krankheit/Unfall-
+              Ereignisse; ein Rückfall zehrt vom Rest des ursprünglichen
+              Kontingents (gerechnet in lib/sperrfristen.ts). */}
+          {e.typ === 'krankheit_unfall' && wert.slice(0, i).some((f) => f.typ === 'krankheit_unfall') && (
             <Field label="Rückfall derselben Ursache wie … (§1.3)">
               <select
                 className={inputCls + ' text-xs'}
@@ -100,8 +106,8 @@ export function SperrereignisseEditor({ wert, onChange, hinweis }: {
                 onChange={(ev) => update(i, { gleicheUrsacheWieEreignis: ev.target.value === '' ? null : Number(ev.target.value) })}
               >
                 <option value="">Eigenständige Ursache (eigene Sperrfrist)</option>
-                {wert.slice(0, i).map((_, j) => (
-                  <option key={j} value={j}>Rückfall wie Ereignis {j + 1} (keine neue Sperrfrist)</option>
+                {wert.slice(0, i).map((f, j) => f.typ === 'krankheit_unfall' && (
+                  <option key={j} value={j}>Rückfall wie Ereignis {j + 1} (Rest des Kontingents)</option>
                 ))}
               </select>
             </Field>

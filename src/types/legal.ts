@@ -119,7 +119,10 @@ export type Sperrereignis = {
   von: string; // yyyy-MM-dd
   bis: string; // yyyy-MM-dd
   // §1.3 Rückfall: Index (0-basiert) eines früheren krankheit_unfall-Ereignisses mit
-  // DERSELBEN Ursache. Gesetzt → keine eigene Sperrfrist (BGE 120 II 124 «aucun lien»).
+  // DERSELBEN Ursache. Gesetzt → kein neues Kontingent; Schutz aus dem REST des
+  // Kontingents des Ursprungsereignisses (RL-13/W-04, 24.9.2026; BGE 120 II 124
+  // «aucun lien» betrifft nur unabhängige Ereignisse — Lesart offengelegt).
+  // Nur bei typ 'krankheit_unfall' wirksam (lib/sperrfristen.ts).
   gleicheUrsacheWieEreignis?: number | null;
   // Niederkunftsdatum (optional, Audit-Befund B10): bei 'schwangerschaft' rechnet
   // die Engine das Sperrfristende deterministisch (Niederkunft + 112 Tage, lit. c)

@@ -46,4 +46,6 @@ RÜCKGABE: Befund je Fundstelle (Datei:Zeile) · Beleg · Schweregrad · was du 
 
 UNABHÄNGIGKEIT: Lief der Bau selbst auf der Spitzen-Stufe, weicht die Prüfung per model-Override auf die Stark-Stufe aus — Bau- und Prüf-Modell sind NIE identisch. Eine Prüfung ist ein frischer Agent, nie die Fortsetzung des Bau-Agenten (Common-Mode).
 
+AMTSQUELLE (Lehre 24.9.2026): Fedlex nur per Filestore-URL (…/filestore/fedlex.data.admin.ch/eli/cc/…), nie Drittspiegel. Downloads nur in den Scratch-Ordner des Auftrags, nie /tmp/<erlass>.html (pinlose Datei → check:p-klassen rot).
+
 Standard-Routing: Stufe spitze (aktuell model=opus), effort=high — Abweichungen setzt der Orchestrator im Call.

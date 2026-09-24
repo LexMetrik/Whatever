@@ -3,9 +3,11 @@ import { BeruehrtRahmen, Checkbox, EckdatenKachel, FehlerBox, Field, GruppenTite
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { Tabs } from '../ui/Tabs';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { Kanton } from '../../types/legal';
 import type { ZpoInput, ZpoEinheit, ZpoVerfahren, ZpoFristnatur, ZpoZustellart, ZpoModus, ZpoErgebnis } from '../../types/zpo';
 import { berechneFrist, zustellfiktion } from '../../lib/zpoFristen';
+import { berechneBggVwvgFrist, type BvFristResult } from '../../lib/bggVwvgFristen';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { zpoPdfCitations, zpoPdfErgebnis } from '../../lib/pdf/zpoPdf';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
@@ -55,6 +57,12 @@ const DISCLAIMER_TEIL2 =
   'nicht die Rechtsfolgen einer Säumnis. Eine verpasste Frist kann nur unter den Voraussetzungen von Art. 148 ZPO ' +
   'wiederhergestellt werden. Für die Fristwahrung im Einzelfall ist allein die nutzende Person verantwortlich.';
 const DISCLAIMER = DISCLAIMER_TEIL1 + DISCLAIMER_PRAXIS + DISCLAIMER_TEIL2;
+
+// RL-07/F1-01: Offenlegung (§8) — die ZPO-Eingaben dieses Formulars wirken auf
+// eine nach BGG gerechnete Frist nicht.
+const BGG_PRESET_ZPO_FELDER =
+  'Verfahrensart, Fristnatur, Zustellart und Berechnungsmodus dieses ZPO-Rechners wirken auf diese '
+  + 'BGG-Frist nicht; Fristbeginn am Folgetag der Eröffnung (Art. 44 Abs. 1 BGG).';
 
 const DEFAULTS: ZpoInput = {
   ereignis: '2025-01-15',
@@ -159,9 +167,26 @@ export function ZpoFristenForm({ live }: {
   const fehler: string[] = [];
   if (!Number.isInteger(form.laenge) || form.laenge <= 0) fehler.push('Fristlänge muss eine ganze Zahl > 0 sein.');
   if (!form.ereignis) fehler.push('Bitte ein auslösendes Ereignis (Datum) angeben.');
+  // RL-07/F1-01 (Prüfung Rechtslogik 23.9.2026): Presets mit `engine: 'bgg'`
+  // (BGer-Beschwerde in Schiedssachen) rechnen nach Art. 44–46 BGG über die
+  // BGG-Engine — Feiertage am Wohnsitz/Sitz der Partei oder ihrer Vertretung
+  // (Art. 45 Abs. 2 BGG), nicht am Gerichtsort (Art. 142 Abs. 3 ZPO). Die
+  // ZPO-Engine bleibt unberührt (§1/§4: getrennte Regeln). Massgeblich ist das
+  // GEWÄHLTE Preset (nicht nur `presetPasst`): auch mit geänderter Länge bleibt
+  // es eine BGG-Frist; ein Phasen-/Presetwechsel oder die Live-Brücke setzt
+  // presetKey zurück und damit auf die ZPO-Rechnung.
+  const aktPreset = PRESETS.find((p) => p.key === presetKey);
+  const bggPreset = aktPreset?.engine === 'bgg';
   let ergebnis: ZpoErgebnis | null = null;
+  let bggErgebnis: BvFristResult | null = null;
   if (fehler.length === 0) {
-    try { ergebnis = berechneFrist(eingabe); } catch (err) { fehler.push((err as Error).message); }
+    try {
+      if (bggPreset) {
+        bggErgebnis = berechneBggVwvgFrist({ regime: 'bgg', ereignis: form.ereignis, einheit: form.einheit, laenge: form.laenge, kanton: form.kanton });
+      } else {
+        ergebnis = berechneFrist(eingabe);
+      }
+    } catch (err) { fehler.push((err as Error).message); }
   }
 
   const aktVerfahren = VERFAHREN.find((v) => v.code === form.verfahren)!;
@@ -178,7 +203,6 @@ export function ZpoFristenForm({ live }: {
   // ── Kalender-Titel (.ics): Preset-Label nur, solange die Form-Werte dem
   //    Preset noch entsprechen — presetKey überlebt manuelle Änderungen, der
   //    Eintrag darf dann nicht mehr «Berufung» heissen (§8). Reine Beschriftung (§3).
-  const aktPreset = PRESETS.find((p) => p.key === presetKey);
   const presetPasst = !!aktPreset && form.einheit === aktPreset.einheit
     && form.verfahren === aktPreset.verfahren
     && form.fristnatur === aktPreset.fristnatur
@@ -292,7 +316,8 @@ export function ZpoFristenForm({ live }: {
           </Field>
         )}
 
-        <Field label="Gerichtsort (Kanton)" hint="Sitz des Gerichts – massgeblich für Feiertage (Art. 142 Abs. 3)">
+        <Field label={bggPreset ? 'Wohnsitz/Sitz der Partei oder ihrer Vertretung (Kanton)' : 'Gerichtsort (Kanton)'}
+          hint={bggPreset ? 'Massgeblich für Feiertage (Art. 45 Abs. 2 BGG) – nicht der Gerichtsort' : 'Sitz des Gerichts – massgeblich für Feiertage (Art. 142 Abs. 3)'}>
           <select value={form.kanton} onChange={(e) => set('kanton', e.target.value as Kanton)} className={inputCls}>
             {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
           </select>
@@ -367,6 +392,27 @@ export function ZpoFristenForm({ live }: {
 
       <FehlerBox fehler={fehler} />
 
+      {/* RL-07/F1-01: Ergebnis der BGG-Engine für BGG-Presets — dieselbe
+          Ergebnis-Anatomie wie der Schnellrechner (lc-notice), keine neuen
+          Bausteine. PDF/Kalender des ZPO-Rechenwegs entfallen hier bewusst:
+          sie tragen ZPO-Normen (Art. 142 ff. ZPO) und wären für diese Frist
+          falsch beschriftet (§8). */}
+      {bggErgebnis && (
+        <ErgebnisBlock id="lc-ergebnis-zpo">
+          <div className="lc-notice space-y-1.5">
+            <p className="lc-overline">Fristende nach BGG (Art. 44–46 BGG)</p>
+            <p className="text-h3 font-semibold text-ink-900 num">{bggErgebnis.diesAdQuem} · 24.00 Uhr</p>
+            <ul className="text-body-s text-ink-500 leading-relaxed list-disc pl-5 space-y-0.5">
+              {[...bggErgebnis.annahmen, ...bggErgebnis.warnungen, BGG_PRESET_ZPO_FELDER].map((z) => <li key={z}>{z}</li>)}
+            </ul>
+            <p className="text-body-s">
+              <Link to="/rechner/bgg-fristen" className="font-medium text-brass-700 hover:text-brass-600 no-underline">
+                Zulässigkeit, Rügen und Frist im BGer-Rechtsweg-Rechner prüfen →
+              </Link>
+            </p>
+          </div>
+        </ErgebnisBlock>
+      )}
       {ergebnis && (
         <ErgebnisBlock id="lc-ergebnis-zpo">
           {/* Prominente Eckdaten */}

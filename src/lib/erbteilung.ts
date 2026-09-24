@@ -32,6 +32,7 @@ const N_472: Normverweis = { artikel: 'Art. 472 ZGB', bemerkung: 'Verlust des Pf
 const N_473: Normverweis = { artikel: 'Art. 473 ZGB', bemerkung: 'Nutzniessungslösung gegenüber gemeinsamen Nachkommen' };
 const N_215: Normverweis = { artikel: 'Art. 215 ZGB', bemerkung: 'Hälftige Vorschlagsbeteiligung (Errungenschaftsbeteiligung)' };
 const N_210_2: Normverweis = { artikel: 'Art. 210 Abs. 2 ZGB', bemerkung: 'Rückschlag wird nicht geteilt' };
+const N_209_2: Normverweis = { artikel: 'Art. 209 Abs. 2 ZGB', bemerkung: 'Schuld belastet die zugehörige Masse, im Zweifel die Errungenschaft' };
 const N_247: Normverweis = { artikel: 'Art. 247 ZGB', bemerkung: 'Gütertrennung: keine Vorschlagsteilung' };
 const N_221: Normverweis = { artikel: 'Art. 221 ZGB', bemerkung: 'Gütergemeinschaft: Umfang des Gesamtguts' };
 // Audit-Fix 6.6.2026: Die HÄLFTIGE Teilung des Gesamtguts trägt Art. 241 Abs. 1
@@ -137,22 +138,36 @@ function gueterrecht(input: ErbteilungInput): { nachlass?: number; schritt?: Rec
   if (input.gueterstand === 'errungenschaftsbeteiligung') {
     if (input.eigengutErblasser == null && input.vorschlagErblasser == null && input.vorschlagUeberlebender == null) return {};
     const eigengut = input.eigengutErblasser ?? 0;
-    // Rückschlag wird nicht geteilt (Art. 210 Abs. 2 ZGB) → negativer Vorschlag zählt 0.
-    const vsE = Math.max(0, input.vorschlagErblasser ?? 0);
+    // B3-01 (Prüfung Rechtslogik 23.9.2026): Art. 210 Abs. 2 ZGB heisst nur, dass
+    // der ANDERE Ehegatte keine Hälfte eines Rückschlags trägt. Der Rückschlag des
+    // Erblassers bleibt seine Schuld (Art. 202, 209 Abs. 2 ZGB) und mindert den
+    // Nachlass voll (Art. 474 Abs. 2, 560 Abs. 2 ZGB); nur ein positiver Vorschlag
+    // wird hälftig geteilt (Art. 215 Abs. 1 ZGB). Der Rückschlag des Überlebenden
+    // wird nicht übernommen → dort 0.
+    const vsERoh = input.vorschlagErblasser ?? 0;
+    const rueckschlagE = vsERoh < 0;
+    const rueckschlagU = (input.vorschlagUeberlebender ?? 0) < 0;
+    const anteilE = rueckschlagE ? vsERoh : vsERoh / 2;
     const vsU = Math.max(0, input.vorschlagUeberlebender ?? 0);
-    const nachlass = eigengut + vsE / 2 + vsU / 2;
+    const nachlass = eigengut + anteilE + vsU / 2;
     return {
       nachlass,
       schritt: {
         beschreibung: 'Schritt 1 – Güterrecht (Errungenschaftsbeteiligung)',
         zwischenergebnis:
-          `Nachlass = Eigengut (CHF ${fmtCHF(eigengut)}) + 1/2 eigener Vorschlag (CHF ${fmtCHF(vsE / 2)}) ` +
+          `Nachlass = Eigengut (CHF ${fmtCHF(eigengut)}) ` +
+          (rueckschlagE
+            ? `− Rückschlag des Erblassers (CHF ${fmtCHF(-vsERoh)}) `
+            : `+ 1/2 eigener Vorschlag (CHF ${fmtCHF(anteilE)}) `) +
           `+ güterrechtliche Forderung = 1/2 Vorschlag des Überlebenden (CHF ${fmtCHF(vsU / 2)}) ` +
           `= CHF ${fmtCHF(nachlass)}.` +
-          ((input.vorschlagErblasser ?? 0) < 0 || (input.vorschlagUeberlebender ?? 0) < 0
-            ? ' Ein Rückschlag wird nicht geteilt (Art. 210 Abs. 2 ZGB) und zählt 0.'
+          (rueckschlagE
+            ? ' Der Rückschlag des Erblassers wird nicht geteilt (Art. 210 Abs. 2 ZGB), bleibt aber seine Schuld und mindert den Nachlass voll (Art. 209 Abs. 2, 474 Abs. 2 ZGB).'
+            : '') +
+          (rueckschlagU
+            ? ' Der Rückschlag des Überlebenden wird nicht berücksichtigt (Art. 210 Abs. 2 ZGB): keine Beteiligungsforderung, der Nachlass übernimmt ihn nicht.'
             : ''),
-        normen: [N_215, N_210_2],
+        normen: rueckschlagE ? [N_215, N_210_2, N_209_2] : [N_215, N_210_2],
       },
     };
   }

@@ -1,5 +1,13 @@
 {
-  "grenze_bytes": 1320960,
+  "grenze_bytes": 1326080,
   "gesetzt": "2026-09-20",
-  "anhebungen": []
+  "anhebungen": [
+    {
+      "datum": "2026-09-24",
+      "von": 1320960,
+      "auf": 1326080,
+      "grund": "Rechtslogik-Paket B (+1.4 KB: gate.sh-Vorprüfung npm ls, Amtsquellen-Regel der Prüf-Agenten) und #1061 (+1.5 KB lex-bau §0) passten zusammen nicht mehr unter 1290 KB; Rückbau als Posten QS-EFFIZIENZ «Steuerdeckel fast voll»",
+      "entscheid": "David 24.9.2026 (Chat, Auswahl «Deckel +5 KB anheben (Empfohlen)»)"
+    }
+  ]
 }

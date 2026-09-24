@@ -630,6 +630,10 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   7.9.2026): «nein heb diesen entscheid auf und mach es wie ich es sage» → R15: jedes «+» (Klick, Alt+T,
   Leerraum, Blatt) legt einen neuen Startseiten-Reiter an (`/`, sonst `naechsteInstanz('/')` → `/?r=2`,
   «Sammlung (2)»), Fokus auf den neuen Reiter statt in die Kopf-Suche; `lm:suche-fokus` samt Lauscher gestrichen.
+- **U11 (Nachtrag David 24.9.2026 abends):** «bei gesetze soll auf allenen ebenen eine suche möglich sien» →
+  Suchfeld auch auf Wahl (alle Erlasse), Gebiete (Bundesrecht) und Kantone (kantonales Recht), `StufenSuche`
+  in `start/GesetzeSuche.tsx`: Treffer mit `filtern` und `GruppenInhalt`, Herkunft als Gruppenkopf, 30er-Portion;
+  Register erst beim Fokus ins Feld (§15).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 

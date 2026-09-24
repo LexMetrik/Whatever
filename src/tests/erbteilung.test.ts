@@ -179,13 +179,14 @@ describe('Güterrechtliche Vorstufe', () => {
     expect(r.nachlassChf).toBe(280_000);
   });
 
-  it('Rückschlag wird nicht geteilt (Art. 210 Abs. 2 ZGB)', () => {
+  it('Rückschlag wird nicht geteilt, aber vom Erblasser selbst getragen (Art. 210 Abs. 2, 209 Abs. 2, 474 Abs. 2 ZGB)', () => {
+    // B3-01 (Fachänderung, Freigabe David Q7 Nr. 6): 100k − 50k + 1/2 × 40k = 70k.
     const r = berechneErbteilung(base({
       zivilstand: 'verheiratet', kinderLebend: 1,
       gueterstand: 'errungenschaftsbeteiligung',
       eigengutErblasser: 100_000, vorschlagErblasser: -50_000, vorschlagUeberlebender: 40_000,
     }));
-    expect(r.nachlassChf).toBe(120_000);
+    expect(r.nachlassChf).toBe(70_000);
   });
 
   it('Gütertrennung: ganzes Vermögen; Gütergemeinschaft: Eigengut + halbes Gesamtgut', () => {
