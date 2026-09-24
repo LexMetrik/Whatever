@@ -416,6 +416,32 @@ Flächen/Kacheln/Blätter). Gerade per Regel: `.lc-chip`, `.lc-notice` (Register
 (Unterstrich-Anatomie), Linien-Karten `.lc-card/.lc-tile/.lc-panel`, und der Normtext-Körper per
 CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBody.test` Kern-Probe).
 
+**START in Scheiben (Planung 23.9.2026, GRUNDTON-Session).** Entscheide David 23.9.2026 (Auswahlfragen):
+**Begrüssung bleibt** (SuchBlock mit Begrüssung, Datum, Suchfeld — NICHT «Ihr Tag, Ihre Akten.») ·
+**Modul-Baukasten fällt** (Ein-/Aus-/Umordnen samt gespeicherter Einstellung). Jede Scheibe allein landbar,
+`check:sediment` je Scheibe grün (was nicht mehr gebraucht wird, geht im selben PR).
+- **S1 Seite + Blatt + Gesetze.** Unter dem SuchBlock ab `lg` zweispaltig: links 2×2-Kachelfeld
+  (`RubrikKachel` als Knopf, `rounded-xl`, Flächenton, Zahl aus dem Zähler, keine Links) und «Neueste
+  Entscheide»; rechts «Zuletzt» (nach Rubrik) und «Schnellwerkzeug» (`EinfacheFristForm`, echte Engine).
+  Blatt über dem Feld: `clip-path`-Aufdeckung von der Kachel-Kontur, Farbschicht mit Kachel-Gesicht,
+  `cubic-bezier(.2,0,0,1)` 450/350 ms, nur Compositor, `prefers-reduced-motion` sofort; Handy (< 760 px)
+  Vollbild-Blatt von unten. Adresse `/?blatt=<rubrik>/<stufe…>` (Router-Query; `tabSchluessel` ignoriert
+  sie, der Reiter «/» bleibt einer), Browser-Zurück = eine Stufe, Deep-Link öffnet ohne Animation erst
+  nach der Hydration (Prerender = zu), ✕/Escape schliesst ganz, Fokus zurück auf die Kachel. Gesetze:
+  **Bund · Kantone · International** → Bund: Gebiete 01–05 (`SYSTEMATIK` + `ERLASS_REGISTER`, im Bündel)
+  → Erlassliste mit Filterfeld → Leser; Kantone: Landeskarte + Tastatur-Liste der 26 → Erlassliste
+  (`register.json` erst beim Betreten, §15) → Leser; International → Staatsverträge → Leser. R/M/W-Kacheln
+  führen in S1 noch auf ihre Rubrikseite (Zwischenstand, sichtbar ehrlich). Löschen: `PultModul`,
+  `PultAbschluss`, `startseiteModule`/`-ModulTypen`/`-Einstellung` samt Tests, `MaterialienListe`,
+  `start/Werkzeuge`, nicht wiederverwendete Modul-Bausteine.
+- **S2 Werkzeuge.** Rechner | Vorlagen → Liste nach Rechtsgebiet aus `KATALOG_KARTEN` (gebaute zuerst,
+  «In Vorbereitung» sichtbar, §8) → Werkzeug-Seite.
+- **S3 Rechtsprechung + Materialien.** Blatt öffnet mit Suchfeld (Fokus drin), Filter, Trefferliste;
+  Daten erst beim Öffnen — `public/rechtsprechung/register.json` (9.4 MB) nie, kleineren Index messen und
+  nutzen → Entscheid- bzw. Material-Seite.
+- **S4 Abschluss.** e2e (Aufklappen, Stufe zurück, Deep-Link, Escape, Tastatur), Sichtprüfung 1280/390
+  hell/dunkel, Löschbilanz, `status=done`.
+
 ## §6 · Prüfen und Frühsignale
 
 1. **Rot-Beweis (§6.7)** beim Tor: Ausgabe rot *und* grün im PR. Ein Baseline-Eintrag macht es

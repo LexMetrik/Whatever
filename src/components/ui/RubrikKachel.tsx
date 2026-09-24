@@ -30,7 +30,12 @@ const REGISTER_KLASSE: Record<Register, string> = {
   w: 'bg-reg-w-flaeche border-reg-w',
 };
 
-export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, extra }: {
+// W2·29-WERKBANK-START S1 (23.9.2026): Rundung `rounded-xl` = 14 px (GRUNDTON:
+// «Flächen, Kacheln, Blätter»), dazu `aufgeklappt` für die Startseiten-Kachel,
+// die VOR ORT aufklappt (`aria-expanded` + `aria-controls` am Knopf), und
+// `kompakt` für das 2×2-Feld am Telefon (Prototyp: Titel 16 px, Zahl ohne
+// Einheit, ohne Unterzeile — sonst passt «Rechtsprechung» nicht in 170 px).
+export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, extra, aufgeklappt, steuert, kompakt = false }: {
   /** Register der Rubrik: Fläche und Strich (`g` Gesetze · `r` Rechtsprechung
    *  · `m` Materialien · `w` Werkzeuge). */
   reg: Register;
@@ -47,26 +52,33 @@ export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, 
   nutzen?: ReactNode;
   /** Zusatz unter der Unterzeile (z. B. Erfassungsgrad-Legende). */
   extra?: ReactNode;
+  /** Nur mit `onWahl`: die Kachel öffnet ein Blatt an Ort (`aria-expanded`). */
+  aufgeklappt?: boolean;
+  /** Nur mit `aufgeklappt`: id des Blatts (`aria-controls`). */
+  steuert?: string;
+  /** Telefon-Form im 2×2-Feld: kleiner Satz, ohne Einheit, Unterzeile, Zusatz. */
+  kompakt?: boolean;
 }) {
   // `[&_.text-ink-500]:text-ink-600`: Zusatz-Tinte im `extra`-Slot hebt auf der
   // Fläche eine Stufe (ink-500 4.22:1 auf `reg-g-flaeche` < AA; S2 ③b).
-  const klasse = `group flex flex-col gap-1.5 border-t-2 p-5 text-left no-underline [&_.text-ink-500]:text-ink-600 ${REGISTER_KLASSE[reg]}`;
+  const klasse = `group flex h-full w-full flex-col gap-1.5 rounded-xl border-t-2 text-left no-underline [&_.text-ink-500]:text-ink-600 ${kompakt ? 'p-3.5' : 'p-5'} ${REGISTER_KLASSE[reg]}`;
   const inhalt = (
     <>
       {zahl !== undefined && (
         // `flex-wrap`: lange Einheiten rutschen unter die Zahl, statt die
         // Kachel zu sprengen — kurze bleiben daneben.
         <span className="flex flex-wrap items-baseline gap-2">
-          <span className="num font-serif text-h1 leading-none text-ink-900">{zahl}</span>
-          {einheit && <span className="text-body-s text-ink-700">{einheit}</span>}
+          <span className={`num font-serif leading-none text-ink-900 ${kompakt ? 'text-h2' : 'text-h1'}`}>{zahl}</span>
+          {einheit && !kompakt && <span className="text-body-s text-ink-700">{einheit}</span>}
         </span>
       )}
-      <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight underline-offset-4 group-hover:underline">{titel}</span>
-      {nutzen && <span className="text-body-s leading-snug text-ink-700">{nutzen}</span>}
-      {extra}
+      <span className={`font-sans font-semibold text-ink-900 tracking-tight underline-offset-4 group-hover:underline ${kompakt ? 'text-base' : 'text-h3'}`}>{titel}</span>
+      {nutzen && !kompakt && <span className="text-body-s leading-snug text-ink-700">{nutzen}</span>}
+      {!kompakt && extra}
     </>
   );
   return ziel !== undefined
     ? <Link to={ziel} className={klasse}>{inhalt}</Link>
-    : <button type="button" onClick={onWahl} className={klasse}>{inhalt}</button>;
+    : <button type="button" onClick={onWahl} className={klasse}
+        aria-expanded={aufgeklappt} aria-controls={aufgeklappt !== undefined ? steuert : undefined}>{inhalt}</button>;
 }

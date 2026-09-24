@@ -52,7 +52,10 @@ async function spalte(page: Page): Promise<{ x: number; breite: number }> {
 // Vorher-Nachher im selben Layout). Angeklickt werden die Bereichs-Kacheln der
 // Startseite; sie sind mit eingeklappter Leiste der einzige Klick-Weg zwischen
 // den Rubriken, und genau auf ihnen ist David der Sprung aufgefallen.
-const rubrikLink = (page: Page, pfad: string) => page.locator(`a[href="${pfad}"]`).first()
+// Seit W2·29-WERKBANK-START auf den Inhalt (`main#inhalt`) begrenzt: geklickt
+// werden Links der Startseite selbst, nie ein gleichnamiges Ziel in Kopf oder
+// Seitenleiste (Anlass: Klick-Timeout auf `a[href="/gesetze"]`, CI #1025).
+const rubrikLink = (page: Page, pfad: string) => page.locator(`main#inhalt a[href="${pfad}"]`).first()
 
 test.describe('D21 · Kein Layoutsprung beim Routenwechsel', () => {
   test('Sidebar-Nachbar: Kante und Breite bleiben über den Routenwechsel identisch', async ({ page }) => {
@@ -77,9 +80,15 @@ test.describe('D21 · Kein Layoutsprung beim Routenwechsel', () => {
     await expect(page).toHaveURL(/\/$/)
     await messe('beim Zurückgehen /rechtsprechung → /')
 
-    await rubrikLink(page, '/gesetze').click()
-    await expect(page).toHaveURL(/\/gesetze$/)
-    await messe('beim Wechsel / → /gesetze')
+    // DEKLARIERTE ANPASSUNG (§6.3, W2·29-WERKBANK-START, 24.9.2026): die
+    // Gesetze-Kachel ist kein Link mehr — sie klappt vor Ort auf (Auftrag David
+    // 23.9.2026 «wenn man eines davon anklickt [soll] es aufspringt»). Der
+    // zweite Wechsel von «/» läuft darum über den Inhalts-Link zum
+    // Fristenrechner unter dem Schnellwerkzeug; gemessen wird dieselbe
+    // Zusicherung (Kante/Breite bleiben), nur auf einer anderen Zielseite.
+    await rubrikLink(page, '/rechner/tagerechner').click()
+    await expect(page).toHaveURL(/\/rechner\/tagerechner$/)
+    await messe('beim Wechsel / → /rechner/tagerechner')
 
     expect(fehler, fehler.join('\n')).toEqual([])
   })

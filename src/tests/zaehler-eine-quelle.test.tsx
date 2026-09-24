@@ -7,6 +7,7 @@ import { Abdeckung } from '../pages/Abdeckung';
 import { Gesetze } from '../pages/Gesetze';
 import { VorlagenUebersicht } from '../pages/VorlagenUebersicht';
 import { Startseite } from '../pages/Startseite';
+import { GesetzeBlatt } from '../components/start/GesetzeBlatt';
 import { STARTSEITE_ZAEHLER as Z } from '../data/startseiteZaehler.generated';
 
 // ─── W2·29-WERKBANK-KATALOGE K5 · EINE ZÄHLQUELLE (§5/§8) ───────────────────
@@ -81,11 +82,15 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
   const h = html('/', <Startseite />);
   const { document } = parseHTML(`<!doctype html><html><body>${h}</body></html>`);
 
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START S1, §6.3): die Gesetze-Kachel
+  // klappt vor Ort auf und ist darum ein KNOPF (`aria-controls` aufs Blatt),
+  // die drei anderen bleiben bis S2/S3 Links. Zahl und Unterzeile werden
+  // unverändert an allen vier geprüft.
   it('d · vier Rubrik-Kacheln, Zahl und Unterzeile aus dem Zähler', () => {
     const nav = document.querySelector('nav[aria-label="Bereiche der Sammlung"]');
-    const kacheln = [...(nav?.querySelectorAll('a') ?? [])];
-    expect(kacheln.map((a) => a.getAttribute('href')))
-      .toEqual(['/gesetze', '/rechtsprechung', '/materialien', '/rechner']);
+    const kacheln = [...(nav?.querySelectorAll('a, button') ?? [])];
+    expect(kacheln.map((a) => a.getAttribute('href') ?? a.getAttribute('aria-controls')))
+      .toEqual(['lm-start-blatt', '/rechtsprechung', '/materialien', '/rechner']);
     const [g, r, m, w] = kacheln.map((a) => a.textContent ?? '');
     expect(g).toContain(nf(Z.gesetzeVolltext));
     expect(g).toContain(`${nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(Z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge`);
@@ -93,16 +98,20 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
     expect(m).toContain(`${nf(Z.materialien)}amtliche Materialien erfasst`);
     expect(w).toContain(nf(Z.rechner + Z.vorlagen));
     expect(w).toContain(`${nf(Z.rechner)} Rechner · ${nf(Z.vorlagen)} Vorlagen`);
-    // Kein Link im Link: die Kachel ist selbst der eine Link.
-    for (const a of kacheln) expect(a.querySelector('a')).toBeNull();
+    // Kein Link im Link: die Kachel ist selbst der eine Link bzw. Knopf.
+    for (const a of kacheln) expect(a.querySelector('a, button')).toBeNull();
   });
 
-  it('e · Systematik-Fuss: Bundesrecht und Staatsverträge getrennt, Summe = Zeilen', () => {
-    // Die fünf Kategorien summieren sich zur Säule «Bundesrecht»; die sechste
-    // Zeile (International) trägt die Staatsverträge.
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START S1, §6.3): der Systematik-Fuss
+  // steht jetzt in der Stufe «Bund» der Gesetze-Kachel. Das internationale
+  // Recht ist dort keine sechste Zeile mehr, sondern die dritte Wahl neben
+  // Bund und Kantone (Auswahlfrage David 23.9.2026) — der Fuss nennt darum NUR
+  // das Bundesrecht. Der Prüfpunkt (keine Mischzahl 231) bleibt scharf.
+  it('e · Bund-Stufe: Fuss nennt das Bundesrecht, Summe = Zeilen, keine Mischzahl', () => {
     expect(Z.bundSystematik.reduce((s, k) => s + k.anzahl, 0)).toBe(Z.gesetzeBundesrechtVolltext);
-    const t = text(h);
-    expect(t).toContain(`erfasste Volltext (${nf(Z.gesetzeBundesrechtVolltext)} Erlasse des Bundesrechts und ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge)`);
+    const t = text(html('/', <GesetzeBlatt ort={{ rubrik: 'gesetze', pfad: ['bund'] }} gehe={() => {}} />));
+    expect(t).toContain(`erfasste Volltext (${nf(Z.gesetzeBundesrechtVolltext)} Erlasse des Bundesrechts)`);
     expect(t).not.toContain(`(${nf(Z.gesetzeBundVolltext)} Erlasse)`);
+    for (const k of Z.bundSystematik) expect(t).toContain(k.titel);
   });
 });

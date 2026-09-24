@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import { ModulFuss } from './PultModul';
-import type { StartModulProps } from '../../lib/startseiteModulTypen';
 import { ohneDatumsSuffix } from './entscheidZitierung';
 import { Datum } from '../ui/Datum';
 
@@ -80,18 +78,14 @@ function nachDatumGruppiert(liste: Eintrag[]): { datum: string; eintraege: Eintr
   return gruppen;
 }
 
-export function EntscheideListe({ an }: StartModulProps) {
+export function EntscheideListe() {
   const [news, setNews] = useState<Eintrag[] | null>(null);
   const pk = usePaneKlasse();
 
-  // NICHTS NACHLADEN, SOLANGE DAS MODUL ZU IST (§15, W2·24-R10): der Rahmen
-  // versteckt zugeklappte Module mit `hidden`, statt sie aus dem Baum zu nehmen
-  // (sonst verwürfe React 19 die Hydration). Genau darum muss der Ladepfad
-  // selbst fragen — ein Register-Chunk für einen Kasten, den niemand sieht,
-  // wäre Verkehr ohne Nutzen. Beim Aufklappen läuft der Effekt nach (`an` in
-  // den Abhängigkeiten); die Höhe ist bis dahin reserviert, also ohne Sprung.
+  // W2·29-WERKBANK-START S1: das Modul ist fest auf der Seite (David 23.9.2026
+  // «neuste entscheide sollen nicht weg»; der Modul-Baukasten mit `an` ist
+  // gestrichen). Geladen wird nach der Hydration, die Höhe ist reserviert (§15).
   useEffect(() => {
-    if (!an) return;
     let lebt = true;
     import('../../lib/rechtsprechung/browse')
       .then(async (m) => {
@@ -118,7 +112,7 @@ export function EntscheideListe({ an }: StartModulProps) {
       })
       .catch(() => { if (lebt) setNews([]); });
     return () => { lebt = false; };
-  }, [an]);
+  }, []);
 
   // Leerzustand-Invariante (S3-Fix, §3 #6): drei Zustände, sauber getrennt.
   // (1) LADEN: Platz reservieren, damit die Liste die Seite beim Eintreffen
@@ -191,7 +185,7 @@ export function EntscheideListe({ an }: StartModulProps) {
           </li>
         ))}
       </ul>
-      <ModulFuss>
+      <p className="mt-3 max-w-reading font-sans text-xs leading-relaxed text-ink-500">
         {/* «Alle Entscheide →» stand bis R10 als Kopf-Zusatz neben dem Titel; die
             Kopfzeile des Pults trägt nur noch den Schalter, der Verweis wandert
             in die Fuss-Zeile. Ziel und Wortlaut unverändert. */}
@@ -199,7 +193,7 @@ export function EntscheideListe({ an }: StartModulProps) {
         <Link to="/rechtsprechung" className="underline hover:text-reg-r">alle Entscheide</Link>.
         Ein Artikel zeigt die Entscheide und Materialien, die ihn anwenden — ein Entscheid
         die Normen, auf denen er beruht; soweit die Bezüge im Korpus erfasst sind.
-      </ModulFuss>
+      </p>
     </>
   );
 }

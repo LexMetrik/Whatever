@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { holeZuletzt, type ZuletztTyp } from '../../lib/zuletztVerwendet';
-import type { Register } from '../../lib/startseiteModulTypen';
+import type { Register } from '../layout/bereiche';
 
 // ─── «Zuletzt» — dritte Ebene des Pults (W2·24-R10) ─────────────────────────
 //

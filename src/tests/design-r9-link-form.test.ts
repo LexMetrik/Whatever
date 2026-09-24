@@ -59,10 +59,6 @@ const HOVER_ONLY_AUSNAHMEN = [
     begruendung: 'hover:text-reg-r hover:underline',
   },
   {
-    datei: 'components/start/SystematikListe.tsx',
-    begruendung: 'hover:text-reg-g hover:underline',
-  },
-  {
     datei: 'components/layout/OrtsAngabe.tsx',
     begruendung: 'hover:text-brass-700 hover:underline',
   },

@@ -162,8 +162,6 @@ const HOECHSTZAHL: Readonly<Record<string, number>> = {
   'components/rechtsprechung/LesemodusOverlay.tsx': 2,
   'components/rechtsprechung/LiveSuche.tsx': 3,
   'components/rechtsprechung/SachgebietKacheln.tsx': 1,
-  'components/start/PultAbschluss.tsx': 4,
-  'components/start/PultModul.tsx': 1,
   'pages/rechner-teile/Zeiterfassung.tsx': 1,
   'components/suche/SuchResultate.tsx': 1,
   'components/verzahnung/Begriff.tsx': 1,
@@ -216,9 +214,14 @@ describe('B-K1 · jeder Knopf traegt einen Baustein — oder steht mit Zahl in d
   // (§6.3): die Ratsche zeigte auf zwei nicht mehr existierende Dateien, das
   // war keine fachliche Änderung an der Ratsche selbst, sondern das Nachziehen
   // eines Löschungs-Falls. Die Datei ging, nicht ein Knopf wurde umgebucht.
-  it('die Ratsche kennt ihren eigenen Stand (22.9.2026: 134 in 79 Dateien)', () => {
-    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(79);
-    expect(SUMME_IST, 'Summe der Hoechstzahlen — sie darf nur sinken').toBeLessThanOrEqual(140);
+  // W2·29-WERKBANK-START S1 (23.9.2026): 79 → 77 Dateien, Summe −5.
+  // `start/PultAbschluss.tsx` (4) und `start/PultModul.tsx` (1) sind mit dem
+  // Modul-Baukasten gelöscht (Auswahlfrage David «Streichen») — deklarierte
+  // Test-Änderung (§6.3) nach demselben Muster wie oben: die Datei ging, kein
+  // Knopf wurde umgebucht; die neuen Start-Knöpfe tragen Bausteine.
+  it('die Ratsche kennt ihren eigenen Stand (23.9.2026: 129 in 77 Dateien)', () => {
+    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(77);
+    expect(SUMME_IST, 'Summe der Hoechstzahlen — sie darf nur sinken').toBeLessThanOrEqual(135);
   });
 
   it('ROT-BEWEIS: der Zaehler erkennt den rohen Knopf und uebersieht den Baustein nicht', () => {

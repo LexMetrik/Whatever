@@ -167,73 +167,47 @@ ausserhalb des Routen-Manifests deklariert.
 
 **Quelle:** `src/App.tsx`, `src/RouteSwitch.tsx`, `src/routesManifest.ts`.
 
-### 1.2 Startseite («Pult»)
+### 1.2 Startseite (Werkbank mit aufklappenden Kacheln)
 
-**Zweck.** Einstieg der App: Begrüssung, Übersicht über die vier Rubriken, zuletzt
-Besuchtes, darunter fünf ein-/ausblendbare, umsortierbare Inhaltsmodule.
-Referenzbild `abnahme/design-identitaet/pult-freigegeben.html`, von David am
-6.9.2026 freigegeben, seither mehrfach nachgezogen (zuletzt 7.9.2026).
+**Zweck.** Einstieg der App: Begrüssung, die vier Rubriken als Kacheln, die vor Ort
+aufklappen und bis zum Erlass führen, daneben zuletzt Besuchtes und ein
+Schnellwerkzeug. Stand W2·29-WERKBANK-START S1 (Prototyp + Go David 23.9.2026,
+FAHRPLAN-WERKBANK-UMBAU §5d); der frühere Modul-Baukasten («Pult», R10) ist
+gestrichen (Auswahlfrage David 23.9.2026).
 
-**Elemente** (Leserichtung, feste Ebenen zuerst):
+**Elemente** (Leserichtung):
 
-1. **Begrüssung** — grosse Überschrift mit tageszeitabhängigem Gruss («Guten Morgen»
-   o. ä., aus einem client-seitig gewählten Wortpool), darunter kleiner: Wochentag,
-   Datum, Uhrzeit (minütlich nachgeführt). **Keine eigene Suchleiste auf `/`** — die
-   einzige Suche der App ist die Kopf-Suche im Titelblatt (1.4).
-2. **Rubrik-Kacheln** (seit W2·29-KATALOGE K7, Entscheid David 22.9.2026) — vier
-   `ui/RubrikKachel` in einem Navigationsblock mit der Beschriftung «Bereiche der
-   Sammlung»: **Gesetze · Rechtsprechung · Materialien · Werkzeuge** (Rechner und
-   Vorlagen zusammen, Ziel `/rechner`). Jede Kachel: Registerfläche mit Strich oben,
-   eine **gemessene** Zahl aus `STARTSEITE_ZAEHLER` (build-generiert, nie hartcodiert;
-   Werkzeuge = Rechner + Vorlagen), Einheit-Beschriftung, Name, erklärender Satz;
-   Gesetze und Werkzeuge zusätzlich die Aufschlüsselung («203 Bundeserlasse · 1'339
-   Kantonserlasse · 28 Staatsverträge», «23 Rechner · 26 Vorlagen», Stand 21.9.2026).
-   Die ganze Kachel ist der eine Link (kein Link im Link).
-3. **Zuletzt geöffnet** — Zeile mit Etikett «Zuletzt» und bis zu einigen Links
-   (Registerstrich + Titel) auf zuletzt besuchte Inhaltsrouten. Leer, solange kein
-   Verlauf existiert — kein Etikett ohne Inhalt.
-4. **Fünf Module** (1.2.2), je in einer Modul-Zeile: 3-px-Registerstrich +
-   Modul-Titel links, Schalter «Anzeigen»/«Ausblenden» rechts, Inhalt darunter.
-   Zugeklappt bleibt der Inhalt im DOM (nur versteckt).
-5. **Abschluss-Zeile** — links der Korpus-Stand (Datum des letzten Registerbaus),
-   rechts der Textknopf «Startseite anpassen» → öffnet ein Bottom-Sheet (1.2.3).
-6. **Vertrauens-Fuss** — zwei Spalten Feinschrift: Anti-KI-Satz + Status-Satz und
-   ein Rechtlicher-Hinweis-Absatz («keine Rechtsberatung»).
+1. **Begrüssung** — grosse Überschrift mit tageszeitabhängigem Gruss, darunter
+   Wochentag, Datum, Uhrzeit (1.2.1). Keine eigene Suchleiste auf `/` — die Suche ist
+   die Kopf-Suche (1.4).
+2. **Kachelfeld 2×2** («Bereiche der Sammlung») — vier `ui/RubrikKachel` (Fläche
+   `--reg-*-flaeche`, 2-px-Strich, 14 px Rundung): Gesetze · Rechtsprechung ·
+   Materialien · Werkzeuge; Zahl, Einheit und Satz aus `STARTSEITE_ZAEHLER`
+   (Werkzeuge = Rechner + Vorlagen). Telefon: gleiche 2×2, kompakte Kachel.
+3. **Aufklappen vor Ort** (S1: Gesetze; Rechtsprechung, Materialien, Werkzeuge
+   führen bis S2/S3 auf ihre Rubrikseite) — das Blatt deckt NUR das Kachelfeld auf
+   (`clip-path` von der Kachel-Kontur, Farbschicht mit Kachel-Gesicht, 450/350 ms,
+   `prefers-reduced-motion` sofort); Telefon: Vollbild-Blatt von unten, App dahinter
+   `inert`. Band oben: «← Zurück», Pfad, ✕. Stufen: Bund · Kantone · International →
+   Bund: Rechtsgebiete 01–05 → Erlassliste mit Filter → Leser; Kantone: Landeskarte +
+   Liste der 26 → Erlassliste mit Filter → Leser; International: Staatsverträge mit
+   Filter → Leser. Das Register (`/normtext/register.json`) lädt erst in einer
+   Erlassliste, die Kantons-Systematik erst im Kanton.
+4. **Adresse** — jede Stufe `/?blatt=<rubrik>/<stufe…>`; Browser-Zurück = eine
+   Stufe, Pfad-Klick geht über den Verlauf hinauf, Deep-Link öffnet die Stufe direkt
+   (nach der Hydration, ohne Animation), Escape/✕ schliesst ganz, Fokus zurück auf
+   die Kachel. Der Reiter «/» bleibt einer (`tabSchluessel` ignoriert die Query).
+5. **Neueste Entscheide** — unter dem Kachelfeld: bis zu 6 jüngste
+   Bundesgerichtsentscheide, nach der Hydration nachgeladen, nach Datum gruppiert.
+6. **Rechte Spalte** (ab `lg`) — «Zuletzt» (zuletzt geöffnete Inhalte) und
+   «Schnellwerkzeug · Frist berechnen» (das echte Fristformular, Link in den
+   Fristenrechner).
+7. **Vertrauensfuss** — Pflichthinweis und Vertrauens-Sätze.
 
-**Eingaben & Interaktionen.** Klick auf Modul-Schalter (an/aus), Klick bzw.
-Pfeiltasten im Anpassen-Blatt, `Esc` oder Klick auf den Scrim schliesst das Blatt,
-Klick auf jeden Link navigiert. Keine eigenen Tastenkürzel für die Startseite
-(⌘K und `/` fokussieren die globale Kopf-Suche, 1.4).
-
-**Zustände.**
-
-- **Lädt:** Entscheide-Modul zeigt eine höhenreservierte leere Fläche, bis das
-  Manifest geladen ist (kein Sprung).
-- **Leer:** «Zuletzt»-Zeile rendert nichts (kein leeres Etikett); das Entscheide-Modul
-  kollabiert bei leerem Register vollständig.
-- **Gespeichert/verändert:** Weichen Modul-Reihenfolge oder An/Aus-Zustand von der
-  Werkseinstellung ab, wird die «Werkseinstellung»-Zeile im Blatt zum aktiven
-  Rücksetz-Knopf.
-- **Mobil vs. Desktop:** Rubrik-Kacheln 1 → 2 → 4 Spalten (unter 480 px
-  einspaltig, ab 480 / 1024 px; Titel nie silbengetrennt — K7-Nachzug
-  23.9.2026),
-  Kantone-Raster 3 → 6 → 9 Spalten, Modul-Kopfspalte erst ab dem grossen
-  Breakpoint zweispaltig (13 rem + Inhalt), darunter gestapelt.
-- **Server/Prerender:** Der Build hat kein `localStorage` — ausgeliefert wird immer
-  die Werkseinstellung; der Client liest beim ersten Render synchron nach und zieht
-  Attribute nach der Hydration nach.
-
-**Persistenz.** `localStorage['lexmetrik-startseite']` — JSON `{reihenfolge: string[],
-an: string[]}` (nur Modul-Kürzel, nie Formularinhalte). Fällt `localStorage` aus
-(privater Modus, Quota), lebt die Wahl nur noch im Arbeitsspeicher der Sitzung
-weiter — kein Absturz, kein wirkungsloser Schalter. Abgleich zwischen Browser-Tabs
-über das `storage`-Ereignis plus ein eigenes App-Ereignis.
-
-**Quelle:** `src/pages/Startseite.tsx`, `src/lib/startseiteModule.tsx`,
-`src/lib/startseiteModulTypen.ts`, `src/lib/startseiteEinstellung.ts`,
-`src/components/ui/RubrikKachel.tsx`, `src/components/start/{SuchBlock,ZuletztVerwendet,PultModul,PultAbschluss,VertrauensFuss,SystematikListe,KantoneRaster,EntscheideListe,MaterialienListe,Werkzeuge}.tsx`,
-`src/lib/zuletztVerwendet.ts`, `src/components/ZuletztTracker.tsx`,
-`src/lib/verlaufGruppen.ts`, `src/data/startseiteZaehler.generated.ts`.
+**Quelle:** `src/pages/Startseite.tsx`, `src/components/start/{StartKachelFeld,
+GesetzeBlatt,useBlattOrt,SuchBlock,ZuletztVerwendet,EntscheideListe,VertrauensFuss}`,
+`src/lib/startBlatt.ts`, `src/components/ui/RubrikKachel.tsx`,
+`src/lib/zuletztVerwendet.ts`, `src/data/startseiteZaehler.generated.ts`.
 
 #### 1.2.1 Begrüssungs-Mechanik
 
@@ -243,49 +217,6 @@ aus einem Wortpool. Die Uhrzeit ist vor der Hydration leer, ihr Platz wird per
 `visibility:hidden` reserviert — kein Layout-Sprung.
 
 **Quelle:** `src/components/start/Begruessung.tsx`.
-
-#### 1.2.2 Die fünf Module
-
-Feste Werks-Reihenfolge:
-
-| Kürzel | Titel (wörtlich) | Register | Werkseinstellung |
-|---|---|---|---|
-| `systematik` | «Bundesrecht, systematische Ordnung» | g (Gesetze) | offen |
-| `kantone` | «Kantone, erfasste Erlasse» | g (Gesetze) | zu |
-| `frist` | «Frist berechnen» | w (Werkzeuge) | offen |
-| `entscheide` | «Jüngste Entscheide im Korpus» | r (Rechtsprechung) | offen |
-| `behoerden` | «Amtliche Materialien nach Behörde» | m (Materialien) | zu |
-
-Modul-Inhalte im Detail:
-
-- **Bundesrecht, systematische Ordnung** — zweispaltige Liste der
-  Bund-Systematikkategorien: Nummer, Titel als Link auf `/gesetze?ebene=bund#sys-<id>`,
-  bis zu vier Erlass-Kürzel als eigene Links, Anzahl Volltext-Erlasse rechts.
-- **Kantone, erfasste Erlasse** — Raster aller 26 Kantone (3/6/9 Spalten responsiv),
-  je Kürzel + Zahl erfasster Erlasse, punktierte Linie; die Vorlesehilfe nennt
-  zusätzlich das Zustands-Wort («erfasst» / «Auswahl» / «dünn»).
-- **Frist berechnen** — hostet das **echte** Fristformular in der Zeilen-Variante
-  (derselbe Schnellrechner wie auf `/rechner/tagerechner`, siehe 4.4 Block 13),
-  darunter Fliesstext mit Links zu Tagerechner, Prozesskosten, Zuständigkeit, allen
-  Rechnern, Arbeitsvertrag, allen Vorlagen.
-- **Jüngste Entscheide im Korpus** — bis zu 6 jüngste Bundesgerichtsentscheide, lazy
-  nachgeladen **nur wenn das Modul offen ist**, nach Datum gruppiert (Datum einmal je
-  Gruppe), je Zeile Zitierung (Link), Gebiet, Leitentscheid-Badge, Regeste oder
-  angewandte Normen. Fuss verlinkt «alle Entscheide».
-- **Amtliche Materialien nach Behörde** — Raster der Behörden mit Kürzel + Zahl,
-  Link «Alle Behörden →».
-
-#### 1.2.3 Blatt «Startseite anpassen»
-
-Bottom-Sheet im gleichen Rahmen wie die Leser- und Rechtsprechungs-Filter. Zeigt alle
-5 Module mit Ankreuzfeld (an/aus) und zwei Pfeil-Knöpfen (↑/↓, am Rand deaktiviert)
-zum Umsortieren — **bewusst kein Drag & Drop** (Vorgabe David 6.9.2026: Tastatur-
-und Screenreader-Parität ohne zweite Mechanik). Zeigt «Werkseinstellung» als Label,
-solange die Werkseinstellung gilt, sonst als Rücksetz-Knopf; dieser **löscht** den
-Speicher-Eintrag, statt ihn zu überschreiben — damit künftige Werksänderungen
-automatisch greifen.
-
-**Quelle:** `src/components/start/PultAbschluss.tsx`.
 
 ### 1.3 Layout und Rahmen
 

@@ -135,16 +135,26 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
   // «Kachel-Anatomie genau einmal» wird dadurch SCHÄRFER geprüft (zweiter
   // Konsument), nicht schwächer: die Start-Bausteine und das Modul-Registry
   // dürfen weiterhin keine eigene Kachel und kein `lc-tile` führen.
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START S1, Prototyp + Go David
+  // 23.9.2026, §6.3): die Kacheln klappen jetzt VOR ORT auf — der Baustein wird
+  // im Kachelfeld (`start/StartKachelFeld`) und in der Wahl-Stufe der
+  // Gesetze-Kachel (`start/GesetzeBlatt`, Bund · Kantone · International wie
+  // auf /gesetze) konsumiert, nicht mehr direkt in der Seite; das
+  // Modul-Registry ist gelöscht. Der PRÜFPUNKT bleibt: wer eine Kachel zeigt,
+  // nimmt DEN Baustein; kein Start-Baustein baut `lc-tile` oder eine eigene
+  // Kachel-Anatomie (Fläche + Strich + Zahl), die übrigen führen gar keine.
   it('die Startseite konsumiert `ui/RubrikKachel`, die Start-Bausteine keine eigene Kachel', () => {
-    expect(lies('pages/Startseite.tsx'), 'Startseite: rendert den Baustein').toContain('<RubrikKachel');
+    const konsumenten = ['components/start/StartKachelFeld.tsx', 'components/start/GesetzeBlatt.tsx'];
+    for (const d of konsumenten) expect(lies(d), `${d}: rendert den Baustein`).toContain('<RubrikKachel');
     expect(lies('pages/Startseite.tsx'), 'Startseite: kein lc-tile').not.toContain('lc-tile');
-    expect(lies('lib/startseiteModule.tsx'), 'Modul-Registry: keine RubrikKachel').not.toContain('<RubrikKachel');
     const startDateien = alleQuellen().filter((d) => d.includes('/components/start/'));
     expect(startDateien.length, 'Startseiten-Bausteine gefunden').toBeGreaterThan(0);
     for (const d of startDateien) {
+      const rel = d.slice(WURZEL.length + 1);
       const q = ohneKommentare(liesRoh(d));
-      expect(q, `${d.slice(WURZEL.length + 1)}: keine Kachel`).not.toContain('<RubrikKachel');
-      expect(q, `${d.slice(WURZEL.length + 1)}: kein lc-tile`).not.toContain('lc-tile');
+      if (!konsumenten.some((k) => rel.endsWith(k))) expect(q, `${rel}: keine Kachel`).not.toContain('<RubrikKachel');
+      expect(q, `${rel}: kein lc-tile`).not.toContain('lc-tile');
+      expect(q, `${rel}: keine eigene Kachel-Fläche mit Zahl`).not.toMatch(/bg-reg-[grmw]-flaeche[^'"`]*text-h1/);
     }
   });
 
@@ -172,11 +182,16 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     // Abschwächung.
     // K7 (§6.3, deklariert): die Bereichs-Reihe ist in die vier Rubrik-Kacheln
     // von `pages/Startseite.tsx` gewandert — gleicher Prüfpunkt, neuer Ort.
+    // W2·29-WERKBANK-START S1 (§6.3, deklariert): Systematik und Kantone sind
+    // Stufen der Gesetze-Kachel (`start/GesetzeBlatt`), das Behörden-Modul ist
+    // mit dem Baukasten gestrichen (Auswahlfrage David 23.9.2026) — der
+    // Materialien-Scope wird an der Kachel geprüft. Die Bund-Stufe nennt NUR
+    // das Bundesrecht: das internationale Recht ist die dritte Wahl daneben.
     const bereiche = lies('pages/Startseite.tsx');
-    const bund = lies('components/start/SystematikListe.tsx');
-    const kantone = lies('components/start/KantoneRaster.tsx');
+    const bund = lies('components/start/GesetzeBlatt.tsx');
+    const kantone = bund;
     const entscheide = lies('components/start/EntscheideListe.tsx');
-    const materialien = lies('components/start/MaterialienListe.tsx');
+    const materialien = bereiche;
     expect(bereiche, 'Bereich Gesetze: Zähler mit Scope')
       .toMatch(/Erlasse im Volltext, Bund und Kantone/);
     expect(bereiche, 'Bereich Rechtsprechung: Zähler mit Scope')
@@ -185,11 +200,11 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
       .toMatch(/amtliche Materialien erfasst/);
     // K7 (§6.3, deklariert): der Fuss nennt Bundesrecht und Staatsverträge
     // getrennt statt der Mischzahl — der Ausdruck ist schärfer, nicht weicher.
-    expect(bund, 'Bund-Modul: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundesrechtVolltext\)} Erlasse\s+des Bundesrechts und {nf\(z\.gesetzeInternationalVolltext\)} Staatsverträge\)/);
-    expect(kantone, 'Kanton-Modul: Zähler mit Scope').toMatch(/Erlasse im Volltext/);
+    expect(bund, 'Bund-Stufe: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundesrechtVolltext\)} Erlasse\s+des Bundesrechts\)/);
+    expect(kantone, 'Kanton-Stufe: Zähler mit Scope').toMatch(/kantonale Erlasse/);
     expect(entscheide, 'Entscheide-Modul: Zähler mit Scope').toMatch(/Entscheide im Volltext/);
     expect(materialien, 'Materialien: «erfasst», nie «Volltext»').toMatch(/Materialien erfasst/);
-    expect(materialien, 'Materialien behaupten keinen Volltext').not.toContain('im Volltext');
+    expect(materialien, 'Materialien behaupten keinen Volltext').not.toMatch(/amtliche Materialien[^'"]*im Volltext/);
     // §8 am Kantons-Eintrag: Zustands-Wort im Accessible Name, nie
     // «vollständig» aus eigener Kraft (erfassungsgrad.ts bleibt die Quelle).
     expect(kantone).toContain('STUFE_WORT');

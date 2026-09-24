@@ -448,8 +448,8 @@ Umschichtung 20.9.2026 (2)):*
   Grenzen: Kontrast-Tore grün, Normtext gerade, Golden byte-gleich.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
 
-- [ ] **Werkbank-Umbau: neue Startseite mit aufklappenden Kacheln** *(`W2·29-WERKBANK-START`, Prototyp + Go David 23.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-START · status: ready · blocker: null · dep: [W2·29-WERKBANK-GRUNDTON] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [~] **Werkbank-Umbau: neue Startseite mit aufklappenden Kacheln** *(`W2·29-WERKBANK-START`, Prototyp + Go David 23.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-START · status: wip · blocker: null · dep: [W2·29-WERKBANK-GRUNDTON] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: vier Kacheln, die vor Ort aufklappen und bis zum Erlass bzw. Werkzeug führen.
   Grenzen: Zahlen nur aus dem Zähler (§8), Suchdaten erst beim Öffnen (§15), Löschpflicht.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
