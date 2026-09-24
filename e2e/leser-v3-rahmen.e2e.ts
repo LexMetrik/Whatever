@@ -1,6 +1,32 @@
 // @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test'
 
+// ═══ §6.3-DEKLARATION (Entscheid A, David 24.9.2026) · DIE DRITTE SPUR IST ZURÜCK
+//
+// Davids Entscheid 24.9.2026, Variante A «Echte dritte Spalte»: «Das Blatt wird
+// eine eigene Spalte wie die Gliederung und deckt nie Text ab. Nachteil: Der
+// Text rutscht beim Öffnen zur Seite und bricht auf kleineren Bildschirmen neu
+// um. Das hebt D33 (‹nichts verschiebt sich›) auf.» (Weisung 23.9. abends:
+// «… nahe am relevanten artikel … einklappbar … analog gliederung.»)
+//
+// WAS SICH AN DEN FÄLLEN ÄNDERT: (a)/(b) prüften «Δ = 0, das Blatt überlagert»
+// — jetzt prüfen sie das Gegenteil SCHÄRFER: das Blatt steht als Spur (`spalte`),
+// überlappt die Lesespalte NIE (Blatt-x ≥ rechte Kante der Lese-Zelle + Abstand),
+// der Rahmen wächst nie über den Raum, und Schliessen stellt Rahmen und Text
+// byte-genau wieder her. (c) @1023: das Blatt ist dort das Sheet (`unten`) — bis
+// hierher überlagerte es als `rechts` (Abweichung offengelegt im PR). (e2) prüft
+// die Lesestelle weiter, jetzt auch dort, wo die Gliederung dem Blatt weicht;
+// (g) prüft, dass der Schienen-Griff bei Nutzerwahl «zu» NUR einblendet, (g2)
+// neu, dass er beim transienten Weichen den Platz vom Blatt zurückholt (Ä60 (c)
+// P1-1, von D33 gestrichen, mit A zurück). (h) ist neu: «nie über Text» über
+// vier Breiten. (d), (e), (f), (f2) stehen unverändert.
+//
+// ROT ZU BEKOMMEN (§6.7, gesehen 24.9.2026): in `v3/rahmenSpalten.rahmenBild`
+// die Aufweitung weglassen (`breite: undefined`) ⇒ (h) @1920 und (a) rot (Rahmen
+// wächst nicht, das Blatt drückt die Zelle unter den Boden bzw. steht nicht am
+// Text); `weicht` fest `false` ⇒ (b)/(g2) rot.
+//
+// ── HISTORIE (Belege altern nicht) ──────────────────────────────────────────
 // ═══ §6.3-DEKLARATION (D33, David 7.9.2026) · DIE DRITTE SPUR IST WEG ═══════
 //
 // Diese Datei bewachte die Ä60-(c)-Bauform: Rahmen wächst auf 1320 px, das
@@ -99,6 +125,8 @@ interface Masse {
   text: { x: number; r: number; b: number } | null
   blatt: { x: number; r: number; b: number } | null
   titel: { x: number; r: number; b: number } | null
+  /** Die Lese-Zelle (Entscheid A): ihre rechte Kante ist die Grenze des Blatts. */
+  zelle: { x: number; r: number; b: number } | null
   aside: number
   schiene: number
   form: string | null
@@ -140,6 +168,7 @@ function messen(page: Page): Promise<Masse> {
       text: text ?? kasten('#lc-lesespalte'),
       blatt: kasten('[data-v3-panel-form]'),
       titel: kasten('[data-v3-erlass-kopf] h1') ?? kasten('h1'),
+      zelle: kasten('[data-lr-spiegel]'),
       aside: document.querySelectorAll('[data-v3-aside]').length,
       schiene: document.querySelectorAll('[data-v3-gliederung-schiene]').length,
       form: document.querySelector('[data-v3-panel-form]')?.getAttribute('data-v3-panel-form') ?? null,
@@ -157,35 +186,25 @@ function messen(page: Page): Promise<Masse> {
 
 test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => {
   // ── (a) @1440: das Blatt überlagert — und bewegt nichts ───────────────────
-  test('(a) @1440: Δ = 0 an Rahmen, Gliederung und Lesespalte, Lesemass ≤ 80 ch', async ({ page }) => {
+  test('(a) @1440: das Blatt ist eine Spur neben der Lese-Zelle, Gliederung bleibt, Rundlauf verlustfrei', async ({ page }) => {
     await leserLaden(page, 1440)
     const zu = await messen(page)
-    // Der Rahmen ist wieder der der übrigen Seiten — er wächst für nichts mehr.
-    expect(zu.rahmen, '@1440 ist der Rahmen breiter als der Seitenrahmen (1072 px)').toBe(1072)
+    // Zu: Gliederung 288 + 20 + Lesemass 720 + 20 + Schiene 36 = 1084 px (Entscheid A).
+    expect(zu.rahmen, '@1440 zu: Rahmen = Gliederung + Lesemass + Schiene').toBe(1084)
+    await expect(page.locator('[data-v3-blatt-schiene]'), '@1440 zu: die Blatt-Schiene fehlt').toBeVisible()
 
     await panelAufziehen(page)
     const auf = await messen(page)
 
-    expect(auf.form, '@1440 hat das Blatt wieder eine eigene Spur bekommen').toBe('rechts')
+    expect(auf.form, '@1440 steht das Blatt nicht als eigene Spur').toBe('spalte')
     expect(auf.aside, '@1440 darf das Öffnen die Gliederungsspalte nicht kosten').toBe(1)
-    expect(auf.rahmen, `@1440 wächst der Rahmen beim Öffnen (${zu.rahmen} → ${auf.rahmen})`).toBe(zu.rahmen)
-    // DAS ist die Zusage der Variante A: der Wortlaut bricht nicht neu um.
-    expect(auf.text!.b, `@1440 verliert die Lesespalte beim Öffnen Breite (${zu.text!.b} → ${auf.text!.b})`)
-      .toBe(zu.text!.b)
-    expect(auf.text!.x, `@1440 wandert die Lesespalte beim Öffnen (${zu.text!.x} → ${auf.text!.x})`)
-      .toBe(zu.text!.x)
-    // ── §6.3-DEKLARATION (D33) · Ä59 WIRD ANDERS GEMESSEN ────────────────────
-    // Hier stand `deckung(auf.titel, auf.blatt) === 0` — eine WAAGRECHTE
-    // Überschneidung. Für eine eigene Spur war das die richtige Frage; für ein
-    // überlagerndes Blatt ist sie unbeantwortbar: die Überlagerung IST der Preis
-    // der Variante A (offengelegt, David-Entscheid 7.9.2026). Der Kern von Ä59
-    // bleibt und wird jetzt an der Sache gemessen — es muss so viel Text frei
-    // bleiben, dass man ihn lesen kann. Gemessen @1440: Lesespalte 492…1256,
-    // Blatt 904…1256 ⇒ 412 px frei. Der Deckel ist die halbe Spaltenbreite;
-    // ein Blatt, das die Spalte überwiegend deckt, wäre rot.
-    expect(auf.blatt!.x - auf.text!.x,
-      `das Blatt lässt nur ${auf.blatt!.x - auf.text!.x} px Lesetext frei (Spalte ${auf.text!.b} px)`)
-      .toBeGreaterThanOrEqual(Math.round(auf.text!.b / 2))
+    await expect(page.locator('[data-v3-blatt-schiene]')).toHaveCount(0)
+    // DIE Zusage der Variante A: das Blatt deckt nie Text — seine linke Kante
+    // liegt genau einen Spur-Abstand (20 px) rechts der Lese-Zelle.
+    expect(auf.blatt!.x - auf.zelle!.r, `Blatt ${auf.blatt!.x} gegen Zelle ${auf.zelle!.r}`).toBe(20)
+    expect(auf.blatt!.x, 'das Blatt überlappt den Lesetext').toBeGreaterThanOrEqual(auf.text!.r)
+    expect(auf.rahmen, 'der Rahmen wächst über das Fenster').toBeLessThanOrEqual(1440 - 48)
+    expect(auf.text!.b, `Lesespalte @1440 nur ${auf.text!.b} px`).toBeGreaterThanOrEqual(448)
     // Und senkrecht: es beginnt UNTER dem klebenden Kopf-Block, nie darüber —
     // das war der Ä52-Befund (das Blatt deckte die Griffe, die es aufziehen).
     const oben = await page.evaluate(() => {
@@ -197,26 +216,37 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
       .toBeGreaterThanOrEqual(-1)
     expect(auf.ch!, `Lesemass ${auf.ch} ch (WCAG SC 1.4.8)`).toBeLessThanOrEqual(80)
     expect(auf.overflow, 'waagrechter Überlauf des Dokuments').toBeLessThanOrEqual(1)
+
+    // Rundlauf: Schliessen stellt Rahmen, Lesespalte und Schiene byte-genau her.
+    await page.locator('[data-v3-blatt-zu]').click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
+    const wieder = await messen(page)
+    expect(wieder.rahmen).toBe(zu.rahmen)
+    expect(wieder.text, 'die Lesespalte steht nach dem Schliessen woanders').toEqual(zu.text)
+    await expect(page.locator('[data-v3-blatt-schiene]')).toBeVisible()
   })
 
-  // ── (b) @1150: der enge Fall — auch hier bleibt die Gliederung stehen ─────
-  // Genau hier war der Mangel am grössten: zwischen 1024 und 1391 px reichte der
-  // Raum nicht für Spalte UND Blatt-Spur, also fiel die Gliederung beim Öffnen
-  // weg (gemessen @1024: `[data-v3-aside]` 1 → 0, Text x 332 → 80). Ohne Spur
-  // gibt es dafür keinen Grund mehr.
-  test('(b) @1150: das Öffnen kostet weder Gliederung noch Textbreite', async ({ page }) => {
+  // ── (b) @1150: der enge Fall — die Gliederung weicht, TRANSIENT ───────────
+  // Raum 1102 px < 72.25 rem (1156): Gliederung + 448 px Lesespalte + Blatt
+  // passen nicht nebeneinander. Die Gliederung weicht beim Öffnen auf ihre
+  // Schiene und steht nach dem Schliessen wieder — ohne dass «zu» gemerkt wird.
+  test('(b) @1150: die Gliederung weicht dem offenen Blatt und kehrt zurück', async ({ page }) => {
     await leserLaden(page, 1150)
-    const zu = await messen(page)
     await panelAufziehen(page)
     const auf = await messen(page)
 
-    expect(auf.form, '@1150 hat das Blatt eine eigene Spur bekommen').toBe('rechts')
-    expect(auf.aside, '@1150 verschwindet die Gliederungsspalte beim Öffnen').toBe(1)
-    expect(auf.schiene, '@1150 steht eine Schiene, obwohl die Spalte steht').toBe(0)
-    expect(auf.text!.b, `@1150 verliert die Lesespalte Breite (${zu.text!.b} → ${auf.text!.b})`).toBe(zu.text!.b)
+    expect(auf.form).toBe('spalte')
+    expect(auf.aside, '@1150 steht die Gliederung trotz Platzmangel').toBe(0)
+    expect(auf.schiene, '@1150 fehlt die Gliederungs-Schiene').toBe(1)
+    expect(auf.blatt!.x, 'das Blatt überlappt den Lesetext').toBeGreaterThanOrEqual(auf.text!.r)
     // 28 rem = 448 px ist der Boden, den die Design-Grundlage der Lesespalte setzt.
     expect(auf.text!.b, `Lesespalte @1150 nur ${auf.text!.b} px`).toBeGreaterThanOrEqual(448)
     expect(auf.overflow, 'waagrechter Überlauf des Dokuments @1150').toBeLessThanOrEqual(1)
+
+    await page.locator('[data-v3-blatt-zu]').click()
+    await expect(page.locator('[data-v3-aside]'), 'nach dem Schliessen fehlt die Gliederung').toBeVisible()
+    expect(await page.evaluate(() => localStorage.getItem('lm-leser-gliederung')),
+      'das Weichen wurde als Nutzerwahl gemerkt').toBeNull()
   })
 
   // ── (c) die Spaltengrenze 1024 ist UNVERÄNDERT ────────────────────────────
@@ -230,11 +260,14 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
     await leserLaden(page, 1023)
     const schmal = await messen(page)
     expect(schmal.aside, '@1023 steht eine Gliederungsspalte — die Grenze ist gewandert').toBe(0)
-    // Und unter 1024 bleibt ALLES wie bisher (David: «unter 1024 bleibt alles wie
-    // heute»): das Blatt bekommt dort KEINE Spur, der Rahmen wächst nicht.
+    // Und unter 1024 bekommt das Blatt KEINE Spur, der Rahmen wächst nicht.
+    // §6.3 (Entscheid A, 24.9.2026): hier stand `'rechts'` — die Überlagerung,
+    // die es seither nicht mehr gibt. Unter 1024 ist das Blatt wie die
+    // Gliederung das Sheet (Auftrag: «Sheet + Knopf im Kopf»).
+    await expect(page.locator('[data-v3-blatt-schiene]'), '@1023 steht eine Blatt-Schiene').toHaveCount(0)
     await panelAufziehen(page)
     const auf = await messen(page)
-    expect(auf.form, '@1023 hat das Blatt eine eigene Spur bekommen — unter 1024 sollte nichts anders sein').toBe('rechts')
+    expect(auf.form, '@1023 hat das Blatt eine eigene Spur bekommen').toBe('unten')
     expect(auf.rahmen, '@1023 ist der Rahmen gewachsen').toBe(schmal.rahmen)
   })
 
@@ -358,7 +391,7 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
   // läuft das Öffnen am Ausgleich vorbei) oder in `v3/useStickAusgleich.ts` die
   // `lage` wieder nur aus `tocOffen` bilden.
   for (const breite of [1024, 1150, 1280]) {
-    test(`(e2) @${breite}: das Blatt faltet NICHTS, die Lesestelle bleibt stehen`, async ({ page }) => {
+    test(`(e2) @${breite}: die Lesestelle bleibt stehen — auch wo die Gliederung weicht`, async ({ page }) => {
       await leserLaden(page, breite)
       const abstand = () => page.evaluate(() => {
         const kopf = document.querySelector('[data-v3-kopf]')!.getBoundingClientRect()
@@ -367,14 +400,14 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
       })
       const vorher = await abstand()
       await panelAufziehen(page)
-      // §6.3-DEKLARATION (D33): hier stand die Gegenprobe «die Faltung muss
-      // WIRKLICH stattfinden» — Schiene statt Spalte, Kopf 44 px höher. Genau
-      // diese Faltung ist der behobene Mangel; die Gegenprobe ist ihr Gegenteil
-      // geworden und misst dieselbe Sache schärfer: der Kopf bleibt, die
-      // Gliederung bleibt, und die Lesestelle bleibt damit erst recht.
+      // §6.3-DEKLARATION (Entscheid A, 24.9.2026): D33 verlangte hier «die
+      // Gliederung bleibt». Seit A weicht sie @1024/@1150 dem offenen Blatt
+      // (Raum < 1156 px), @1280 bleibt sie — die Gegenprobe prüft beides, und
+      // die Kernaussage (Lesestelle bleibt) steht unverändert darunter.
+      const weicht = breite < 1204
       await expect(page.locator('[data-v3-aside]'),
-        `@${breite}: das Blatt hat die Gliederungsspalte gefaltet`).toBeVisible()
-      await expect(page.locator('[data-v3-gliederung-schiene]')).toHaveCount(0)
+        `@${breite}: Gliederungsspalte ${weicht ? 'steht trotz Platzmangel' : 'fehlt'}`).toHaveCount(weicht ? 0 : 1)
+      await expect(page.locator('[data-v3-gliederung-schiene]')).toHaveCount(weicht ? 1 : 0)
       const nachher = await abstand()
       expect(Math.abs(nachher - vorher),
         `@${breite}: der Abstand Kopf→Artikel wandert um ${nachher - vorher} px (${vorher} → ${nachher})`)
@@ -412,8 +445,8 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
     await page.locator('[data-v3-gliederung-zu]').click()
     await expect(page.locator('[data-v3-gliederung-schiene]')).toBeVisible()
     await panelAufziehen(page)
-    // Ausgangslage: Schiene UND offenes Blatt — seit D33 als Überlagerung.
-    await expect(page.locator('[data-v3-panel-form="rechts"]')).toBeVisible()
+    // Ausgangslage: Schiene UND offenes Blatt — seit Entscheid A als Spur.
+    await expect(page.locator('[data-v3-panel-form="spalte"]')).toBeVisible()
     await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
 
     await page.locator('[data-v3-gliederung-schiene]').click()
@@ -429,4 +462,60 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
       'der Schienen-Griff hat das Blatt zugemacht, obwohl es ihm nicht im Weg steht').toHaveCount(1)
     expect(fehler, fehler.join(' | ')).toEqual([])
   })
+
+  // ── (g2) Entscheid A · die Schiene holt den Platz vom Blatt zurück ────────
+  // @1150 weicht die OFFEN gewählte Gliederung dem Blatt. «Einblenden» wäre dort
+  // ein Knopf ohne Wirkung (sie ist ja offen gewählt) — der Klick schliesst das
+  // Blatt, und die Gliederung steht (Ä60 (c) P1-1, `schieneHoltPlatz`).
+  test('(g2) @1150: ein Klick auf die gewichene Schiene schliesst das Blatt, die Gliederung steht', async ({ page }) => {
+    await leserLaden(page, 1150)
+    await panelAufziehen(page)
+    await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+    await page.locator('[data-v3-gliederung-schiene]').click()
+    await expect(page.locator('[data-v3-panel]'), 'das Blatt blieb offen').toHaveCount(0)
+    await expect(page.locator('[data-v3-aside]'), 'die Gliederung steht nicht').toBeVisible()
+    await expect(page.locator('[data-v3-blatt-schiene]')).toBeVisible()
+  })
+
+  // ── (i) Entscheid David 24.9.2026 · «eingeklappt bleibt eingeklappt» ──────
+  // Auch beim nächsten Gesetz (erlassübergreifend, `localStorage`). Öffnen
+  // löscht die Wahl wieder. ROT ZU BEKOMMEN: `merkeGliederung` im Rahmen
+  // weglassen ⇒ ZGB steht wieder mit Gliederungsspalte.
+  test('(i) @1440: die eingeklappte Gliederung bleibt eingeklappt, auch im nächsten Gesetz', async ({ page }) => {
+    await leserLaden(page, 1440)
+    await page.locator('[data-v3-gliederung-zu]').click()
+    await expect(page.locator('[data-v3-gliederung-schiene]')).toBeVisible()
+    await page.goto('/gesetze/bund/ZGB')
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-gliederung-schiene]'), 'ZGB: die Wahl «zu» ging verloren').toBeVisible()
+    await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
+    await page.locator('[data-v3-gliederung-schiene]').click()
+    await expect(page.locator('[data-v3-aside]')).toBeVisible()
+    await page.reload()
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-aside]'), 'nach dem Wieder-Öffnen blieb «zu» gemerkt').toBeVisible()
+  })
+
+  // ── (h) Entscheid A · «deckt nie Text ab» über vier Breiten ───────────────
+  // Die Kernzusage des Entscheids, an jeder Prüfbreite des Auftrags gemessen.
+  // @1920 zusätzlich «direkt am Text»: der Rahmen wächst nach rechts, der Text
+  // bleibt stehen (x vor = x nach), und das Blatt steht einen Spur-Abstand
+  // neben der Lese-Zelle, die genau das Lesemass (720 px) breit ist.
+  for (const breite of [1024, 1280, 1440, 1920]) {
+    test(`(h) @${breite}: das offene Blatt überlappt den Lesetext nie`, async ({ page }) => {
+      await leserLaden(page, breite)
+      const zu = await messen(page)
+      await panelAufziehen(page)
+      const auf = await messen(page)
+      expect(auf.form).toBe('spalte')
+      expect(auf.blatt!.x, `@${breite}: Blatt ${auf.blatt!.x} < Text ${auf.text!.r}`).toBeGreaterThanOrEqual(auf.text!.r)
+      expect(auf.blatt!.x - auf.zelle!.r, `@${breite}: Abstand Zelle→Blatt`).toBe(20)
+      expect(auf.blatt!.r, `@${breite}: Blatt ragt aus dem Fenster`).toBeLessThanOrEqual(breite)
+      expect(auf.overflow, `@${breite}: waagrechter Überlauf`).toBeLessThanOrEqual(1)
+      if (breite === 1920) {
+        expect(auf.zelle!.b, '@1920: Zelle ≠ Lesemass — das Blatt steht nicht am Text').toBe(720)
+        expect(auf.text!.x, '@1920: der Text ist beim Öffnen gerutscht').toBe(zu.text!.x)
+      }
+    })
+  }
 })
