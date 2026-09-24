@@ -208,7 +208,7 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
 //
 // `rohesEnde` = letzter Tag der Frist vor jeder Endverschiebung (fristendeTage),
 // `diesAdQuem` = Ergebnis der Endverschiebung mit Stillstand.
-export function bggStillstandsnaeheWarnung(rohesEnde: Date, diesAdQuem: Date, kanton: Kanton): string | null {
+function bggStillstandsnaeheWarnung(rohesEnde: Date, diesAdQuem: Date, kanton: Kanton): string | null {
   const sicher = normalisiereEnde(rohesEnde, kanton, OHNE_STILLSTAND).tag;
   if (+sicher === +diesAdQuem) return null;
   if (stillstandsperiodeFuer(sicher) === null) return null;
