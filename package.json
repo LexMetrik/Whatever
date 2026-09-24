@@ -93,6 +93,7 @@
     "check:vernehmlassungen-alter": "vite-node scripts/materialien/check-vernehmlassungen-alter.ts",
     "check:bs-materialien": "vite-node scripts/materialien/check-bs-materialien.ts",
     "materialien": "vite-node scripts/materialien/soft-law-projektion-run.ts --",
+    "materialien:kanten-erlasse": "vite-node scripts/materialien/kanten-erlasse-run.ts",
     "materialien:kaskade": "vite-node scripts/materialien/kaskade-run.ts --",
     "materialien:botschaften": "vite-node scripts/materialien/botschaften-generieren-run.ts --",
     "materialien:bs": "vite-node scripts/materialien/bs-materialien-run.ts --",
