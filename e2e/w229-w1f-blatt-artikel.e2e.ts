@@ -27,7 +27,9 @@
 //      Verweise-Zeile.
 //  (f) EINZELMODUS UNVERÄNDERT: das Dossier steht, samt Knopf-Aktionen.
 //
-// ROT ZU BEKOMMEN (§6.7), je einmal gefahren (Protokoll im PR):
+// ROT ZU BEKOMMEN (§6.7) — die drei Eingriffe GEMEINSAM gefahren 24.9.2026
+// gegen den gebauten Stand: (a), (b), (c), (e) rot; (d), (f) grün (nicht
+// getroffen, wie erwartet):
 //  · in `parts/ArtikelLeser.tsx` die Weiche auf `fussForm === 'dossier'`
 //    entfernen (= Bezüge-Fuss wieder in der Gesamtansicht)     ⇒ (a) rot
 //  · in `v3/LeserPanel.tsx` `{verweise}` nicht rendern          ⇒ (b), (e) rot
