@@ -4,7 +4,7 @@
 // KEINE Engine-Änderung; eine real rote Property ist ein BEFUND (§1).
 import { describe, expect, it } from 'vitest';
 import fc from 'fast-check';
-import { parseISO, addDays, isAfter } from 'date-fns';
+import { parseISO, addDays, addYears, isAfter } from 'date-fns';
 import {
   berechneVerjaehrung, REGIME, werktagsEnde,
   type VerjaehrungRegime, type VerjaehrungInput,
@@ -144,17 +144,23 @@ describe('verjaehrung — Ein- und Zwei-Fristen-Regimes kollabieren nicht (§4)'
 });
 
 // ─── VJ-7 · Einredeverzicht (Art. 141 OR): Deckel 10 Jahre, nie rückwärts ───
+// Fachänderung RL-14 (W-05 §5 Nr. 12, 24.9.2026): Art. 141 Abs. 1 OR —
+// «jeweils für höchstens zehn Jahre»; ab wann, lässt das Gesetz bewusst offen
+// (BBl 2014 235 S. 262). Bisher Deckel «nach Verjährungseintritt» als
+// Gesetzesregel; nach W-06 a läuft die Dauer ab der Erklärung (offengelegte
+// Lesart). Grenze nach Art. 77 Abs. 1 Ziff. 3 OR (date-fns addYears: fehlt
+// der zahlengleiche Tag, letzter Tag des Monats).
 describe('verjaehrung — Einredeverzicht wirkt nur vorwärts und höchstens 10 Jahre', () => {
-  it('verzichtBisISO liegt nach dem Verjährungseintritt und höchstens 10 Jahre danach', () => {
+  it('verzichtBisISO liegt nach der Erklärung und höchstens 10 Jahre danach', () => {
     fc.assert(fc.property(eingabeArb, fc.integer({ min: 0, max: 3000 }), fc.integer({ min: 1, max: 40 }),
       (e, versatz, jahre) => {
         const datum = formatISO(addDays(parseISO(e.beginnRelativ), versatz));
         const r = berechneVerjaehrung({ ...e, verzicht: { datum, jahre } });
-        if (r.status !== 'ok' || !r.verzichtBisISO || !r.verjaehrungISO) return;
-        const ende = parseISO(r.verjaehrungISO);
+        if (r.status !== 'ok' || !r.verzichtBisISO) return;
+        const erklaerung = parseISO(datum);
         const bis = parseISO(r.verzichtBisISO);
-        expect(+bis > +ende, `Verzicht bis ${r.verzichtBisISO} liegt nicht nach dem Eintritt ${r.verjaehrungISO}`).toBe(true);
-        const maxBis = new Date(ende.getFullYear() + 10, ende.getMonth(), ende.getDate());
+        expect(+bis > +erklaerung, `Verzicht bis ${r.verzichtBisISO} liegt nicht nach der Erklärung ${datum}`).toBe(true);
+        const maxBis = addYears(erklaerung, 10);
         expect(+bis <= +maxBis, `Verzicht bis ${r.verzichtBisISO} überschreitet die Höchstdauer von 10 Jahren (Art. 141 Abs. 1 OR)`).toBe(true);
       }));
   });
