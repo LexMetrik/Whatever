@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState, type ReactElement } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { Register } from '../layout/bereiche';
 import { RubrikKachel } from '../ui/RubrikKachel';
@@ -186,6 +186,14 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
     fokusZurueck.current = null;
   }, [phase]);
 
+  // Fokus ins Blatt schon beim ÖFFNEN, nicht erst nach der Bewegung: sonst
+  // stand er 450 ms lang auf der Kachel unter dem Blatt, und Escape verpuffte
+  // (Posten FEINSCHLIFF 24.9.2026, Gegenprüfung S3). Den Rahmen, nicht das
+  // Suchfeld — das bekommt ihn, sobald das Blatt steht (unten).
+  useEffect(() => {
+    if (phase === 'start') blattRef.current?.focus({ preventScroll: true });
+  }, [phase]);
+
   // Fokus ins Blatt, sobald es offen steht, und bei jeder Stufe neu (§8).
   // Ausnahme S3 (Spec «Fokus drin»): Rubriken ohne Unterstufen — die Suche IST
   // die Stufe — bekommen den Fokus direkt im Suchfeld, nicht auf dem Rahmen.
@@ -199,6 +207,37 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
     }
     blattRef.current?.focus({ preventScroll: true });
   }, [phase, sicht]);
+
+  // DIE BÜHNE des Blatts: ein fester Knoten, in den das Blatt IMMER per Portal
+  // rendert — nur der Knoten selbst wandert. Telefon: an den `body` (im Feld
+  // läge das Vollbild-Blatt in dessen Stapelkontext `isolation` und würde von
+  // den folgenden Abschnitten überdeckt, gemessen 23.9.2026 @390: Rechteck
+  // 0/0/390/844, aber unsichtbar). Breit: ins Feld, dort IST das Feld die
+  // Bühne (`position:absolute` bezieht sich auf `.lc-start-feld`).
+  // Vorher wechselte der PORTAL-ZIEL-Knoten mit der Breite, und React baute
+  // den ganzen Blatt-Teilbaum neu auf — Filter, Suchwort und geladene Liste
+  // weg, sobald das Fenster die 760-px-Grenze kreuzte (Posten FEINSCHLIFF,
+  // Gegenprüfung S1 23.9.2026). Ein umgehängter DOM-Knoten behält seinen
+  // React-Zustand; nur Fokus und Scrollstand setzt der Browser zurück, die
+  // werden hier nachgetragen.
+  const [buehne] = useState(() => {
+    if (typeof document === 'undefined') return null;
+    const el = document.createElement('div');
+    el.style.display = 'contents';
+    return el;
+  });
+  useLayoutEffect(() => {
+    const ziel = schmal ? document.body : feldRef.current;
+    if (!buehne || !ziel || buehne.parentNode === ziel) return;
+    const aktiv = document.activeElement;
+    const fokusDrin = aktiv instanceof HTMLElement && buehne.contains(aktiv);
+    const scroller = buehne.querySelector<HTMLElement>('.lc-start-blatt-inhalt');
+    const stand = scroller?.scrollTop ?? 0;
+    ziel.appendChild(buehne);
+    if (scroller) scroller.scrollTop = stand;
+    if (fokusDrin) aktiv.focus({ preventScroll: true });
+  }, [buehne, schmal]);
+  useEffect(() => () => buehne?.remove(), [buehne]);
 
   const offen = phase !== 'zu';
   const kachel = sicht ? kacheln.find((k) => k.rubrik === sicht.rubrik) : undefined;
@@ -228,7 +267,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
         })}
       </nav>
 
-      {offen && sicht && kachel && inEbene(schmal, (
+      {offen && sicht && kachel && buehne && createPortal((
         <section ref={blattRef} id={BLATT_ID} tabIndex={-1} role="region" aria-label={kachel.titel}
           className="lc-start-blatt" data-phase={phase} data-schmal={schmal ? '' : undefined}
           style={schmal ? undefined : { clipPath: clip, WebkitClipPath: clip }}
@@ -256,17 +295,9 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
             </div>
           )}
         </section>
-      ))}
+      ), buehne)}
     </div>
   );
-}
-
-/** Telefon: das Vollbild-Blatt hängt am `body` — im Feld läge es in dessen
- *  Stapelkontext (`isolation`) und würde von den folgenden Abschnitten der
- *  Seite überdeckt (gemessen 23.9.2026 @390: Rechteck 0/0/390/844, aber
- *  unsichtbar). Breit bleibt es im Feld, dort IST das Feld die Bühne. */
-function inEbene(schmal: boolean, knoten: ReactElement) {
-  return schmal && typeof document !== 'undefined' ? createPortal(knoten, document.body) : knoten;
 }
 
 /** Band oben im Blatt: Registerfläche + Strich, Pfad, «← Zurück», ✕. */
