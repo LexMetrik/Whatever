@@ -460,6 +460,11 @@ Umschichtung 20.9.2026 (2)):*
   Grenzen: Entscheide 23.9. bleiben; R8-Tor deckt offene Blätter ab.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
 
+- [x] **Werkbank-Umbau: Startseite neu gegliedert — Kacheln füllen die Fläche** *(`W2·29-WERKBANK-START-LAYOUT`, David 24.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-START-LAYOUT · status: done · blocker: null · dep: [W2·29-WERKBANK-START-FEINSCHLIFF] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: Entscheid-Liste weg, rechte Spalte als zwei eigene Flächen, Kachelfeld bündig mit dem Schnellwerkzeug.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
+
 - [ ] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
   <!-- @meta id: W2·29-WERKBANK-REST · status: ready · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —

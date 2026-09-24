@@ -340,16 +340,22 @@ test.describe('Startseite · Blatt der Rechtsprechung-Kachel', () => {
 // `STARTSEITE_ZAEHLER.neuesteEntscheide`. ROT ZU BEKOMMEN: den `useEffect`-
 // Fetch in `EntscheideListe.tsx` wiederherstellen — dann meldet dieser Test
 // die geladene Register-URL (§6.7).
+// DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START-LAYOUT, David 24.9.2026
+// «entscheide sollen weg», §6.3): die Liste und ihre Projektion
+// `neuesteEntscheide` sind gestrichen. Der §15-Beleg BLEIBT — er gilt jetzt
+// dem Rechtsprechungs-Blatt, das sein Register erst beim Öffnen holt
+// (`blattRuhe.ts`); gewartet wird auf die Kacheln statt auf die Überschrift.
+// ROT ZU BEKOMMEN: in `RechtsprechungBlatt.tsx`/`StartKachelFeld.tsx` das
+// Register schon beim Mount der Seite laden.
 test('«/» lädt nie das 9,4-MB-Rechtsprechungs-Register (§15)', async ({ page }) => {
   const angefragt: string[] = []
   page.on('request', (r) => { if (r.url().includes('/rechtsprechung/register.json')) angefragt.push(r.url()) })
   await page.goto('/')
-  // Die Entscheid-Liste («Jüngste Entscheide im Korpus», §8-Wortlaut) steht
-  // sofort im HTML (Buildzeit-Projektion) — kein
-  // Nachlade-Fenster, auf das gewartet werden müsste; trotzdem eine kurze,
-  // grosszügige Frist, damit ein eventueller (fehlerhafter) Nachlade-Fetch
-  // Zeit hätte, VOR der Zusicherung einzutreffen.
-  await expect(page.getByText('Jüngste Entscheide im Korpus')).toBeVisible()
+  // Die Kacheln stehen sofort im HTML — kein Nachlade-Fenster, auf das
+  // gewartet werden müsste; trotzdem eine kurze, grosszügige Frist, damit ein
+  // eventueller (fehlerhafter) Nachlade-Fetch Zeit hätte, VOR der Zusicherung
+  // einzutreffen.
+  await expect(rechtsprechungKachel(page)).toBeVisible()
   await page.waitForTimeout(1000)
   expect(angefragt, `angefragte Register-URLs: ${JSON.stringify(angefragt)}`).toEqual([])
 })

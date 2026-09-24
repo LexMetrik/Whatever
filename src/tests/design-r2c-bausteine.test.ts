@@ -193,7 +193,6 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     const bereiche = lies('pages/Startseite.tsx');
     const bund = lies('components/start/GesetzeBlatt.tsx');
     const kantone = bund;
-    const entscheide = lies('components/start/EntscheideListe.tsx');
     const materialien = bereiche;
     expect(bereiche, 'Bereich Gesetze: Zähler mit Scope')
       .toMatch(/Erlasse im Volltext, Bund und Kantone/);
@@ -205,7 +204,9 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     // getrennt statt der Mischzahl — der Ausdruck ist schärfer, nicht weicher.
     expect(bund, 'Bund-Stufe: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundesrechtVolltext\)} Erlasse\s+des Bundesrechts\)/);
     expect(kantone, 'Kanton-Stufe: Zähler mit Scope').toMatch(/kantonale Erlasse/);
-    expect(entscheide, 'Entscheide-Modul: Zähler mit Scope').toMatch(/Entscheide im Volltext/);
+    // W2·29-WERKBANK-START-LAYOUT (§6.3, deklariert, David 24.9.2026 «entscheide
+    // sollen weg»): das Entscheide-Modul ist gestrichen; «Entscheide im
+    // Volltext» prüft die Zeile «Bereich Rechtsprechung» oben an der Kachel.
     expect(materialien, 'Materialien: «erfasst», nie «Volltext»').toMatch(/Materialien erfasst/);
     expect(materialien, 'Materialien behaupten keinen Volltext').not.toMatch(/amtliche Materialien[^'"]*im Volltext/);
     // §8 am Kantons-Eintrag: Zustands-Wort im Accessible Name, nie

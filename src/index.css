@@ -3367,9 +3367,17 @@
      `clip-path`, `opacity` und `transform` (Compositor), Kurve
      `cubic-bezier(.2,0,0,1)`, auf 450 ms, zu 350 ms (Prototyp 23.9.2026). Die
      Kachelhöhe (Token `minHeight.start-kachel`, 220 px / Telefon 132 px) ist die Prototyp-Höhe:
-     das offene Blatt nimmt NUR diese Fläche ein und scrollt in sich. */
-  .lc-start-feld { position: relative; isolation: isolate; }
-  .lc-start-raster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+     das offene Blatt nimmt NUR diese Fläche ein und scrollt in sich.
+     LAYOUT (David 24.9.2026, Auswahl «A bündig»): ab `lg` streckt die Seite das
+     Feld auf die Höhe der Fläche Schnellwerkzeug (`pages/Startseite.tsx`); das
+     Token ist seither die UNTERGRENZE je Kachel. Das Feld ist darum ein Raster,
+     dessen einziges Kind (die Kachel-Navigation) mitwächst; deren zwei Zeilen
+     sind gleich hoch (`1fr`) — mit `auto` bekam die Zeile mit mehr Text @1024
+     mehr Höhe (gemessen 300 zu 278 px). Ohne Streckung (Telefon, Tablett) ist
+     jede Zeile so hoch wie die höchste Kachel. Das Blatt (`inset: 0`) wächst
+     mit — mehr Treffer sichtbar. */
+  .lc-start-feld { position: relative; isolation: isolate; display: grid; }
+  .lc-start-raster { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 1rem; }
   .lc-start-zelle { min-height: theme('minHeight.start-kachel'); display: flex;
     transition: opacity 450ms cubic-bezier(.2,0,0,1), transform 450ms cubic-bezier(.2,0,0,1); }
   .lc-start-zelle[data-zurueck] { opacity: .45; transform: scale(.985); }

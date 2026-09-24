@@ -27,6 +27,17 @@ import { merkeBesuch } from '../lib/zuletztVerwendet';
 // (`min-h-beiwerk`). Beim Prerender gibt es kein localStorage; ohne Reservierung
 // schöbe die Zeile beim ersten Client-Render alles darunter nach unten (§15).
 //
+// DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START-LAYOUT, David 24.9.2026, §6.3):
+// «Zuletzt» ist eine eigene Fläche mit Überschrift «Zuletzt geöffnet» unter dem
+// Schnellwerkzeug (Auswahl «Schnellwerkzeug oben»). Zwei Prüfpunkte ändern sich:
+//   · leer → GAR NICHTS (keine Fläche über Leerraum, §8). Die reservierte Hülle
+//     (`min-h-beiwerk`) fällt weg, weil unter der Fläche in der Spalte nichts
+//     mehr liegt, das sie verschieben könnte; die Feldhöhe hängt nur am
+//     Schnellwerkzeug (Kopf von `pages/Startseite.tsx`).
+//   · das sichtbare Etikett «Zuletzt» ist die Überschrift «Zuletzt geöffnet»
+//     (zugleich der Name der Region, wie zuvor das aria-label).
+// Umbruch statt Scroll-Achse und Registerstrich je Eintrag bleiben wörtlich.
+//
 // jsdom/SSR kennt kein Layout — geprüft wird darum, was am Markup messbar ist.
 beforeEach(() => {
   const speicher = new Map<string, string>();
@@ -48,13 +59,8 @@ const render = () =>
   );
 
 describe('ZuletztVerwendet — Marken-Zeile des Pults', () => {
-  it('leerer Speicher → kein Etikett, kein Verweis, aber reservierte Höhe (§8/§15)', () => {
-    const html = render();
-    expect(html).not.toContain('>Zuletzt<');
-    expect(html).not.toContain('<a ');
-    // Die Hülle steht trotzdem und hält Platz frei — sonst springt die Seite,
-    // sobald der Client den Verlauf nachliest.
-    expect(html).toContain('min-h-beiwerk');
+  it('leerer Speicher → keine Fläche, keine Überschrift, kein Verweis (§8)', () => {
+    expect(render()).toBe('');
   });
 
   it('gefüllt: Etikett + je ein Verweis mit Registerstrich, ohne waagrechte Scroll-Achse', () => {
@@ -65,7 +71,7 @@ describe('ZuletztVerwendet — Marken-Zeile des Pults', () => {
     }
     const html = render();
 
-    expect(html).toContain('>Zuletzt<');
+    expect(html).toContain('>Zuletzt geöffnet</h2>');
     const verweise = html.match(/<a /g) ?? [];
     expect(verweise.length, 'ein Verweis je Eintrag').toBe(6);
     for (let i = 0; i < 6; i++) {

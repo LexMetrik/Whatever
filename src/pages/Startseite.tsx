@@ -1,11 +1,10 @@
-import { useId, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { STARTSEITE_ZAEHLER as z } from '../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { SuchBlock } from '../components/start/SuchBlock';
 import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
-import { EntscheideListe } from '../components/start/EntscheideListe';
 import { StartKachelFeld, type KachelDef } from '../components/start/StartKachelFeld';
+import { StartFlaeche } from '../components/start/StartFlaeche';
 import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
 import { VertrauensFuss } from '../components/start/VertrauensFuss';
 
@@ -17,16 +16,29 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 // funktionen haben wie die werkbank … aber die kacheln sollen bedienbar sein».
 //   · Kopf: die Begrüssung mit Suchfeld BLEIBT (Auswahlfrage 23.9.2026
 //     «Begrüssung behalten»; D39 vom 7.9.2026 gilt weiter).
-//   · Links: 2×2-Kachelfeld (Flächenton, Zahl aus dem Zähler, keine Linkzeilen)
-//     und darunter die Entscheid-Liste («neuste entscheide sollen nicht weg»);
-//     ihre Überschrift bleibt «Jüngste Entscheide im Korpus» — der §8-Wortlaut
-//     vom 5.9.2026 (W2·23-STARTSEITE-V4 §3 #6: der Korpus endet ggf. Monate
-//     zurück, «neu» verspräche Aktualität), bewacht von uinav-j-rechtsprechung.
-//   · Rechts: «Zuletzt» und «Schnellwerkzeug» (Fristenrechner mit der echten
-//     Engine) — «1 ja … 4 ja» am Prototyp. Die Spalte ist 20rem schmal, darum
+//   · Links: 2×2-Kachelfeld (Flächenton, Zahl aus dem Zähler, keine Linkzeilen).
+//   · Rechts: «Schnellwerkzeug» (Fristenrechner mit der echten Engine) und
+//     «Zuletzt» — «1 ja … 4 ja» am Prototyp. Die Spalte ist 20rem schmal, darum
 //     `EinfacheFristForm minimal` (zwei Spalten, Ferien als Auswahlfeld): die
 //     Vollform setzte vier Felder in 320 px, das Datum wurde gekappt
 //     (e2e kein-abschnitt, CI #1025 24.9.2026).
+//   · NEU GEGLIEDERT (W2·29-WERKBANK-START-LAYOUT, David 24.9.2026, FAHRPLAN-
+//     WERKBANK-UMBAU §5d): «entscheide sollen weg» — die Liste «Jüngste
+//     Entscheide im Korpus» ist gestrichen; das KEHRT Davids Entscheid vom
+//     23.9.2026 um («neuste entscheide sollen nicht weg»). Die Rubrik
+//     /rechtsprechung bleibt unberührt, die Kachel führt dorthin. «klarer
+//     abgegrenzt» / «klarer unterteilt · auch die spalte selbst» → je Teil der
+//     Spalte eine eigene Fläche (`StartFlaeche`). «gesetze rechtsprechung
+//     materialien werkzeuge [sollen] diese fläche einnehmen» → Auswahl «A
+//     bündig»: das Kachelfeld ist so hoch wie die Fläche Schnellwerkzeug.
+//     Auswahl «Schnellwerkzeug oben»: «Zuletzt» steht darunter.
+//   · DAS RASTER dafür: ab `lg` zwei Spalten × zwei Zeilen. Zeile 1 = Feld |
+//     Schnellwerkzeug, Zeile 2 = leer | Zuletzt. Die Spalte (`aside`) läuft über
+//     beide Zeilen und reicht sie per `subgrid` an ihre zwei Flächen weiter. So
+//     bestimmt NUR das Schnellwerkzeug die Höhe von Zeile 1 und damit des
+//     Felds; «Zuletzt» füllt sich erst im Browser (localStorage) und kann das
+//     Feld nie verschieben (§15). Das Token `minHeight.start-kachel` bleibt die
+//     Untergrenze je Kachel.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -56,35 +68,23 @@ const KACHELN: readonly KachelDef[] = [
     teile: `${nf(z.rechner)} Rechner · ${nf(z.vorlagen)} Vorlagen` },
 ];
 
-function Abschnitt({ titel, children }: { titel: string; children: ReactNode }) {
-  const id = useId();
-  return (
-    <section aria-labelledby={id} className="grid content-start gap-y-3">
-      <h2 id={id} className="border-b border-rule pb-1.5 font-sans text-body-s font-semibold text-ink-900">{titel}</h2>
-      {children}
-    </section>
-  );
-}
-
 export function Startseite() {
   const pk = usePaneKlasse();
   return (
     <div className={`grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
       <SuchBlock />
-      <div className={`grid gap-x-10 gap-y-9 ${pk('lg:grid-cols-[minmax(0,1fr)_20rem]', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem]')}`}>
-        <div className="grid min-w-0 content-start gap-y-9">
-          <StartKachelFeld kacheln={KACHELN} />
-          <Abschnitt titel="Jüngste Entscheide im Korpus"><EntscheideListe /></Abschnitt>
-        </div>
-        <aside aria-label="Arbeitsplatz" className="grid content-start gap-y-9">
-          <ZuletztVerwendet />
-          <Abschnitt titel="Schnellwerkzeug · Frist berechnen">
+      <div className={`grid gap-x-10 gap-y-9 ${pk('lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
+        <StartKachelFeld kacheln={KACHELN} />
+        <aside aria-label="Arbeitsplatz"
+          className={`grid content-start gap-y-4 ${pk('lg:row-span-2 lg:grid-rows-subgrid', '@5xl/pane:row-span-2 @5xl/pane:grid-rows-subgrid')}`}>
+          <StartFlaeche titel="Schnellwerkzeug · Frist berechnen">
             <EinfacheFristForm minimal />
             <p className="font-sans text-xs leading-relaxed text-ink-500">
               Rückwärtsrechnung, Zustellart, Hemmung und Kalender im{' '}
               <Link to="/rechner/tagerechner" className="underline hover:text-reg-w">Fristenrechner</Link>.
             </p>
-          </Abschnitt>
+          </StartFlaeche>
+          <ZuletztVerwendet />
         </aside>
       </div>
       <VertrauensFuss />

@@ -52,12 +52,12 @@ const HOVER_ONLY = /(?:no-underline[^"'`]*hover:underline|hover:underline[^"'`]*
  *
  * Jeder Eintrag zitiert einen Satz vom Fundort: verschwindet die Stelle oder
  * ihr Kontext, fällt die Ausnahme (`pruefeAusnahmen`).
+ *
+ * W2·29-WERKBANK-START-LAYOUT (24.9.2026): die Ausnahme
+ * `start/EntscheideListe.tsx` ist mit der Datei gefallen (David «entscheide
+ * sollen weg») — genau der vorgesehene Weg, keine Lockerung.
  */
 const HOVER_ONLY_AUSNAHMEN = [
-  {
-    datei: 'components/start/EntscheideListe.tsx',
-    begruendung: 'hover:text-reg-r hover:underline',
-  },
   {
     datei: 'components/layout/OrtsAngabe.tsx',
     begruendung: 'hover:text-brass-700 hover:underline',

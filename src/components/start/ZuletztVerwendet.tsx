@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { holeZuletzt, type ZuletztTyp } from '../../lib/zuletztVerwendet';
 import type { Register } from '../layout/bereiche';
+import { StartFlaeche } from './StartFlaeche';
 
 // ─── «Zuletzt» — dritte Ebene des Pults (W2·24-R10) ─────────────────────────
 //
@@ -21,11 +22,21 @@ import type { Register } from '../layout/bereiche';
 // `lib/zuletztVerwendet.typVonRoute` deterministisch aus der Route ableitet —
 // hier wird nur übersetzt, nicht neu entschieden.
 //
-// HÖHE RESERVIERT (§15, R10-Nachzug): die Zeile ist beim Prerender leer (kein
-// localStorage im Build) und füllt sich beim ersten Client-Render. Ohne
-// Reservierung schöbe sie beim Eintreffen alles darunter nach unten. Die Hülle
-// steht darum IMMER und hält `min-h-beiwerk` (1.5 rem) frei — sichtbar wird
-// trotzdem nur, was es gibt (§8: kein Etikett über Leerraum).
+// EIGENE FLÄCHE (W2·29-WERKBANK-START-LAYOUT, David 24.9.2026 «klarer
+// unterteilt · also auch die spalte selbst»): aus der Marken-Zeile mit
+// Etikett ist eine Mulde mit Überschrift «Zuletzt geöffnet» geworden
+// (`StartFlaeche`, dieselbe wie das Schnellwerkzeug). Die Zeile darin — Marke
+// je Eintrag, Umbruch statt Scroll-Achse, Ziele, Reihenfolge, Kappung — ist
+// unverändert.
+//
+// OHNE EINTRÄGE KEINE FLÄCHE (§8: keine Überschrift über Leerraum). Die frühere
+// Platzreservierung (`min-h-beiwerk`, R10-Nachzug) fällt weg: sie hielt Platz
+// frei, weil die Zeile ÜBER dem Schnellwerkzeug stand und es beim Nachlesen
+// nach unten schob (§15). Seit Davids Auswahl «Schnellwerkzeug oben»
+// (24.9.2026) steht die Fläche am Ende der Spalte — in der Spalte liegt nichts
+// darunter, das springen könnte, und die Höhe des Kachelfelds hängt nur am
+// Schnellwerkzeug (`pages/Startseite.tsx`). Reservieren liesse sie sich auch
+// nicht: bis zu zwölf Einträge brechen in einer 20-rem-Spalte beliebig um.
 // SSR/Prerender: serverseitig leer; der Client liest beim Mount synchron nach.
 
 /** Inhalts-Typ → Register. `seite` gehört keinem Bestand an und bleibt Tinte. */
@@ -40,22 +51,19 @@ const MARKE: Record<Register | 'ink', string> = {
 
 export function ZuletztVerwendet() {
   const [eintraege] = useState(holeZuletzt); // lazy, synchron — kein Effect-Nachwachsen
+  if (eintraege.length === 0) return null;
   return (
-    <section aria-label="Zuletzt geöffnet" suppressHydrationWarning
-      className="flex min-h-beiwerk flex-wrap items-baseline gap-x-5 gap-y-2 font-sans text-body-s">
-      {eintraege.length > 0 && (
-        <>
-          <span className="font-sans text-xs text-ink-500">Zuletzt</span>
-          {eintraege.map((e) => (
-            <Link key={e.route} to={e.route}
-              className="border-b border-rule-soft pb-px no-underline hover:border-ink-900 hover:text-ink-900">
-              <span aria-hidden
-                className={`mr-1.5 inline-block h-2.5 w-[3px] align-[-1px] ${MARKE[REGISTER[e.typ]]}`} />
-              {e.titel}
-            </Link>
-          ))}
-        </>
-      )}
-    </section>
+    <StartFlaeche titel="Zuletzt geöffnet">
+      <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 font-sans text-body-s">
+        {eintraege.map((e) => (
+          <Link key={e.route} to={e.route}
+            className="border-b border-rule-soft pb-px no-underline hover:border-ink-900 hover:text-ink-900">
+            <span aria-hidden
+              className={`mr-1.5 inline-block h-2.5 w-[3px] align-[-1px] ${MARKE[REGISTER[e.typ]]}`} />
+            {e.titel}
+          </Link>
+        ))}
+      </div>
+    </StartFlaeche>
   );
 }
