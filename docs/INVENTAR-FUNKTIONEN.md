@@ -1749,7 +1749,7 @@ vorliegt). Beispiel-Chips stehen, wo vorhanden, zwischen Preset und Eingaben.
 #### R4 — Ergebnisblock-Skelett (fix)
 
 1. **Eckdaten-Kacheln** (höchstens 3; die Kachel des massgeblichen Werts trägt die
-   Messing-Oberkante, ein Sperr- oder Nichtig-Fall die Gefahr-Oberkante).
+   Werkzeug-Oberkante mit Fläche (seit 24.9.2026), ein Sperr- oder Nichtig-Fall die Gefahr-Oberkante).
 2. **Ergebnis-Anzeige**: Status-Badge → Hauptsatz → Vorbehalte/Warnungen → Rechenweg →
    Annahmen → Normverweise → Volltext-Disclaimer.
 3. **Visualisierung** (Fristenkalender · Kündigungs-Zeitstrahl · Verzugszins-Zeitstrahl ·

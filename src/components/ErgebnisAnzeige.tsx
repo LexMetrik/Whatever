@@ -89,10 +89,13 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
     // Einblendung + aria-live trägt der umgebende ErgebnisBlock (R4) — eine
     // Live-Region pro Ergebnis statt zwei verschachtelter (D3, 11.6.2026);
     // Screenreader erfahren von Live-Neuberechnungen weiterhin (UX C7).
+    // W2·29-WERKBANK-RECHNER R2 (24.9.2026): Abschnitt statt Kasten wie
+    // «Rechenweg» im Board «Unter-Rechner» — Registerstrich oben, Haarlinie
+    // unten (`.lc-werkzeug-karte`), kein Rahmen, keine Füllung, kein Schatten
+    // (F0.5/F0.6). Die Messing-Ablesekante `scale-rule` darüber entfällt: der
+    // Strich IST die Ablesekante.
     <div>
-      {/* Messing-Akzentlinie als Ablesekante über dem Readout */}
-      <div className="scale-rule" aria-hidden />
-      <div className="bg-surface border border-line rounded-b-lg rounded-t-none shadow-md overflow-hidden">
+      <div className="lc-werkzeug-karte">
       {/* Header */}
       {/* R5-F2 (6.9.2026): GEMESSEN @390 auf 8 der 20 Rechner-Routen lief diese
           Kopfzeile über ihre Spalte hinaus (`/rechner/mietrecht` 355 px in einer
@@ -104,7 +107,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           Kopier-Knopf (`shrink-0`, breite Beschriftung) auf einer engen Zelle in
           die zweite Zeile, statt dem Titel 95 px zu lassen. Anatomie und
           Reihenfolge unverändert (§3). */}
-      <div className="border-b border-line px-6 py-4 flex flex-wrap items-start justify-between gap-3">
+      <div className="border-b border-rule-soft py-4 flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="lc-overline">Ergebnis</p>
           {/* R5-F2 (6.9.2026, Befund R-3): der Ergebnis-Titel war ein `h3`
@@ -126,7 +129,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           className="lc-btn-outline lc-btn-sm shrink-0" />
       </div>
 
-      <div className="p-6 space-y-5">
+      <div className="py-6 space-y-5">
         {/* Status + Hauptergebnis — das Verdikt ist der typografische Peak
             des Blocks (Display-Schnitt statt Mono-Zeile, Design-Review
             6.6.2026); Tabellenziffern bleiben für Daten im Satz erhalten. */}
@@ -197,10 +200,10 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
         {/* Rechenweg (5.6.1) — geöffnet trägt der Block einen Messing-Tick
             (FAHRPLAN-DESIGN 5.7: Marken-Element am täglichsten Interaktionspunkt) */}
         {/* D-18: `rounded-md` entfernt — Radius-Token = 0 (F0.5), die Utility log. */}
-        <div className={`border border-line overflow-hidden ${rechenWegOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
+        <div className={`border-y border-rule-soft ${rechenWegOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
           <button type="button"
             onClick={() => setRechenWegOffen(!rechenWegOffen)}
-            className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
+            className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 hover:bg-brass-100 text-left transition-colors"
           >
             <span className="text-body-s font-medium text-ink-700">Rechenweg ({ergebnis.rechenweg.length} Schritte)</span>
             <span aria-hidden className={`lc-druck-chevron shrink-0 text-ink-400 transition-transform motion-reduce:transition-none ${rechenWegOffen ? 'rotate-90' : ''}`}>▸</span>
@@ -241,10 +244,10 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
 
         {/* Annahmen */}
         {ergebnis.annahmen.length > 0 && (
-          <div className={`border border-line overflow-hidden ${annahmenOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
+          <div className={`border-y border-rule-soft ${annahmenOffen ? 'border-l-2 border-l-brass-500' : ''}`}>
             <button type="button"
               onClick={() => setAnnahmenOffen(!annahmenOffen)}
-              className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 bg-surface hover:bg-brass-100 text-left transition-colors"
+              className="lc-druck-kopf w-full flex items-center justify-between px-4 py-3 hover:bg-brass-100 text-left transition-colors"
             >
               <span className="text-body-s font-medium text-ink-700">Annahmen ({ergebnis.annahmen.length})</span>
               <span aria-hidden className={`lc-druck-chevron shrink-0 text-ink-400 transition-transform motion-reduce:transition-none ${annahmenOffen ? 'rotate-90' : ''}`}>▸</span>

@@ -76,7 +76,7 @@ function PostenAnzeige({ ergebnis }: { ergebnis: BeurkundungErgebnis }) {
   const p = ergebnis.posten;
   const q = p.quelle;
   return (
-    <div className="lc-tile lc-akzent-brass">
+    <div className="lc-tile lc-akzent-w">
       <p className="text-xs text-ink-500 mb-1">Beurkundungsgebühr ({art.label})</p>
       <p key={ngPostenText(p)} className="lc-wert-puls text-body-l font-semibold text-ink-900 num">{ngPostenText(p)}</p>
       {!p.ergebnis.deterministisch && <p className="mt-1 text-body-s text-ink-600">Rahmen/aufwandabhängig – konkrete Festsetzung im Einzelfall.</p>}
@@ -187,7 +187,7 @@ function AllgemeineBeurkundung({ art, startKanton, startWert }: { art: Geschaeft
           )}
 
           {total && (
-            <div className="mt-3 lc-tile lc-akzent-brass">
+            <div className="mt-3 lc-tile lc-akzent-w">
               <div className="flex items-baseline justify-between gap-3 flex-wrap">
                 <p className="text-xs text-ink-500">Total Notariat + Zusatzkosten (Schätzung)</p>
                 <p className="num text-body-l font-semibold text-ink-900">{total.von === total.bis ? chf(total.von) : `${chf(total.von)} – ${chf(total.bis)}`}</p>

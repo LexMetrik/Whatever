@@ -123,7 +123,7 @@ Sektionen weiter oben.
   Höhen; der Commit `3ccfd9d7e` deklariert das selbst offen («Felder bereits zeilen-aligned an
   Desktop/Tablet verifiziert — zur Abnahme geflaggt»). Entweder David nimmt die abweichende Lösung
   ab oder `auto-rows-fr`/`h-full` nachziehen. Reine Darstellung (§3), kein Risiko-Pfad. Detail
-  `archiv/FAHRPLAN-UX-PUNKTELISTE.md` A3.
+  `archiv/FAHRPLAN-UX-PUNKTELISTE.md` A3. **Stand 24.9.2026 (W2·29-WERKBANK-RECHNER R2): gegenstandslos** — seit U2 (6.9.2026) tragen die Felder keinen Rahmen mehr, es gibt keine sichtbaren «Kacheln», deren Höhe abweichen könnte; gemessen @1280 `/rechner/betreibungskosten`: Feld-Oberkanten je Reihe gleich (0/0 · 193/193 · 305/305 px), `items-start` hält Label und Eingabe bündig. Rest-Befunde LM-066 (Bedienhöhen 36/50 px) → RECHNER R4, LM-032 (Normzeile) bleibt fachlich.
 - **UX-PUNKTELISTE E-Optional · globaler Schalter «aufgehobene Normen ausblenden» nie gebaut**
   *(Batch E «Optional», verzahnt mit C2)*: das Ansicht-Menü des Lesers kennt nur
   `linien|fussnoten|verweise|leitfaelle` (`src/pages/gesetz-leser/leserOptionen.ts:65`,

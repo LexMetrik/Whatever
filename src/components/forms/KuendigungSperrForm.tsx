@@ -241,12 +241,12 @@ export function KuendigungSperrForm({ onBeendigung }: {
                 <p className="text-body-l font-semibold text-ok-text">Gültig</p>
               </div>
               {/* QS-UI 8b (R4 Ziff. 1): Die Kachel des MASSGEBLICHEN Werts trägt die
-                  Messing-Oberkante. Von den sechs Kacheln dieses Rechners trug bis
+                  Akzent-Oberkante (`.lc-akzent-w`). Von den sechs Kacheln dieses Rechners trug bis
                   4.8.2026 keine sie — im Nichtigkeits-Fall markiert die Danger-Kante
                   oben den Status (bewusst, bleibt), im gültigen Fall war der Hauptwert
                   «Beendigungsdatum» unmarkiert und optisch gleichrangig mit «Status»
                   und «Hemmung». Reine Kantenmarkierung: kein Wert, kein Text. */}
-              <div className="lc-tile lc-akzent-brass">
+              <div className="lc-tile lc-akzent-w">
                 <p className="lc-overline mb-1">Beendigungsdatum</p>
                 <p className="num text-h2 leading-none font-medium text-ink-900">{datumOderStrich(gesamt.beendigungISO)}</p>
               </div>
