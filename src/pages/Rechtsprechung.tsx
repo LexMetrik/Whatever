@@ -23,6 +23,7 @@ import {
 } from '../components/rechtsprechung/zustand';
 import { zaehleBaender, istChronologisch, type BandGruppe } from '../components/rechtsprechung/baender';
 import { FilterSheet } from '../components/rechtsprechung/FilterSheet';
+import { MEHR_KNOPF_KLASSEN } from '../components/ui/mehrKnopfKlassen';
 import type { BrowseEntscheid, RichterRegister } from '../lib/rechtsprechung/register';
 import type { Rechtsgebiet } from '../lib/normtext/register';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
@@ -60,7 +61,11 @@ const FENSTER_MAX = LISTE_DECKEL * 20;
 
 // Werkbank K3 (23.9.2026, Board «Unter-Rechtsprechung-Register»): «Weitere/
 // Frühere anzeigen» als Haarlinien-Knopf; Hover = Linie + Tinte, ohne Messing-Fläche.
-const MEHR_KNOPF = 'mx-auto flex w-fit px-3 text-xs text-ink-600 hover:border-line-strong hover:bg-transparent hover:text-ink-900';
+// S3-Nachzug (24.9.2026): die Klassenkette ist auf `ui/mehrKnopfKlassen.ts`
+// gezogen (dritter Konsument `start/RechtsprechungBlatt.tsx`, §5/§10) — der
+// Name blieb lokal als `MEHR_KNOPF`, damit die beiden Aufrufer unten
+// unverändert bleiben (Golden byte-gleich).
+const MEHR_KNOPF = MEHR_KNOPF_KLASSEN;
 
 // Eine Treffer-Liste je Dichte rendern (geteilte Datenquelle, nur Darstellung).
 //

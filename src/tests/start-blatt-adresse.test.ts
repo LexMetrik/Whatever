@@ -30,15 +30,31 @@ describe('Startseite · Blatt-Adresse', () => {
     expect(leseBlatt('werkzeuge/rechner/zu/tief')?.pfad).toEqual(['rechner']);
   });
 
-  it('Rubriken, die noch nicht aufklappen, und Leeres ergeben «zu»', () => {
-    for (const w of [null, undefined, '', '/', 'rechtsprechung', 'materialien', 'unsinn']) {
+  // S3 (23.9.2026): Materialien klappt jetzt auf — sofort Suche, KEINE
+  // Unterstufen («die Suche IST die Stufe», Fahrplan §5d). Ein Pfad dahinter
+  // wird darum immer auf [] gekürzt, nicht auf einen (nicht existenten) Anfang.
+  it('Materialien: sofort aufklappbar, ohne Unterstufen', () => {
+    expect(leseBlatt('materialien')).toEqual({ rubrik: 'materialien', pfad: [] });
+    expect(leseBlatt('materialien/irgendwas')).toEqual({ rubrik: 'materialien', pfad: [] });
+  });
+
+  // S3-Nachzug (24.9.2026, Entscheid David «Beim Öffnen laden»): Rechtsprechung
+  // klappt jetzt ebenfalls auf — dieselbe Regel wie Materialien (sofort Suche,
+  // keine Unterstufen, ein Pfad dahinter wird auf [] gekürzt).
+  it('Rechtsprechung: sofort aufklappbar, ohne Unterstufen', () => {
+    expect(leseBlatt('rechtsprechung')).toEqual({ rubrik: 'rechtsprechung', pfad: [] });
+    expect(leseBlatt('rechtsprechung/irgendwas')).toEqual({ rubrik: 'rechtsprechung', pfad: [] });
+  });
+
+  it('Unbekanntes und Leeres ergeben «zu» (seit S3 klappen alle vier Rubriken auf)', () => {
+    for (const w of [null, undefined, '', '/', 'unsinn']) {
       expect(leseBlatt(w), String(w)).toBeNull();
     }
   });
 
   it('Rundlauf lesen → schreiben ist die Identität auf gültigen Orten', () => {
     for (const w of ['gesetze', 'gesetze/bund', 'gesetze/bund/05', 'gesetze/kantone', 'gesetze/kantone/ZH',
-      'gesetze/international', 'werkzeuge', 'werkzeuge/rechner', 'werkzeuge/vorlagen']) {
+      'gesetze/international', 'werkzeuge', 'werkzeuge/rechner', 'werkzeuge/vorlagen', 'materialien', 'rechtsprechung']) {
       expect(schreibeBlatt(leseBlatt(w)!)).toBe(w);
     }
   });

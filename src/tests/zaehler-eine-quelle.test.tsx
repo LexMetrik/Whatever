@@ -82,16 +82,16 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
   const h = html('/', <Startseite />);
   const { document } = parseHTML(`<!doctype html><html><body>${h}</body></html>`);
 
-  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START S1, §6.3; nachgezogen S2
-  // 23.9.2026): Gesetze UND Werkzeuge klappen vor Ort auf und sind darum
-  // KNÖPFE (`aria-controls` aufs selbe Blatt) — Rechtsprechung/Materialien
-  // bleiben bis S3 Links. Zahl und Unterzeile werden unverändert an allen
-  // vier geprüft.
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START S1–S3, §6.3): die Kacheln
+  // klappen vor Ort auf und sind darum KNÖPFE (`aria-controls` aufs selbe
+  // Blatt) — S1 Gesetze, S2 Werkzeuge (23.9.2026), S3 Materialien und
+  // Rechtsprechung (23./24.9.2026, Entscheid David «Beim Öffnen laden»).
+  // Zahl und Unterzeile werden unverändert an allen vier geprüft.
   it('d · vier Rubrik-Kacheln, Zahl und Unterzeile aus dem Zähler', () => {
     const nav = document.querySelector('nav[aria-label="Bereiche der Sammlung"]');
     const kacheln = [...(nav?.querySelectorAll('a, button') ?? [])];
     expect(kacheln.map((a) => a.getAttribute('href') ?? a.getAttribute('aria-controls')))
-      .toEqual(['lm-start-blatt', '/rechtsprechung', '/materialien', 'lm-start-blatt']);
+      .toEqual(['lm-start-blatt', 'lm-start-blatt', 'lm-start-blatt', 'lm-start-blatt']);
     const [g, r, m, w] = kacheln.map((a) => a.textContent ?? '');
     expect(g).toContain(nf(Z.gesetzeVolltext));
     expect(g).toContain(`${nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(Z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge`);
