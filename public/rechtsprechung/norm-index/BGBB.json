@@ -1,19 +1,9 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "BGBB",
   "gewichtQuelle": "alt",
   "proArtikel": {
     "1": [
-      {
-        "key": "bge_149_II_237",
-        "zitierung": "BGE 149 II 237",
-        "regesteKurz": "Art. 2 Abs. 1 und Art. 6 Abs. 1 BGBB; landwirtschaftliches Grundstück, das in einem Kiesabbauplan einbezogen ist; Anwendungsbereich des BGBB. Die Schaffung einer Kiesabbauzone schliesst das darin befindliche landwirtschaftliche Grundstück…",
-        "datum": "2023-02-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_147_II_385",
         "zitierung": "BGE 147 II 385",
@@ -21,6 +11,16 @@
         "datum": "2021-10-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_237__voll",
+        "zitierung": "Urteil 2C_255/2022 (nicht publ. in BGE 149 II 237)",
+        "regesteKurz": null,
+        "datum": "2023-02-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -81,16 +81,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_II_168",
         "zitierung": "BGE 150 II 168",
         "regesteKurz": "Art. 9 BGBB; Bewilligung zum Erwerb eines landwirtschaftlichen Grundstücks; Begriff des Selbstbewirtschafters. Einschlägige Bestimmungen und Rechtsprechung zum Begriff des Selbstbewirtschafters (E. 4.1). Die Grundsätze, die zur Anerkennung…",
@@ -109,26 +99,36 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_346__voll",
+        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
+        "regesteKurz": null,
+        "datum": "2024-05-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "7": [
       {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "key": "bge_150_II_346__voll",
+        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
+        "regesteKurz": null,
         "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_148_II_299",
-        "zitierung": "BGE 148 II 299",
-        "regesteKurz": "Art. 18a Abs. 1 DBG; Art. 8 Abs. 2 bis StHG; Begriff der \"Veräusserung\"; Schenkung. Der Begriff \"Veräusserung\" gemäss Art. 18a Abs. 1 DBG und Art. 8 Abs. 2 bis StHG umfasst die Schenkung (E. 5, 7, 9 und 13). Regeste Art. 18a al. 1 LIFD;…",
+        "key": "bge_148_II_299__voll",
+        "zitierung": "Urteil 2C_284/2021 (nicht publ. in BGE 148 II 299)",
+        "regesteKurz": null,
         "datum": "2022-04-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -145,22 +145,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_237",
-        "zitierung": "BGE 149 II 237",
-        "regesteKurz": "Art. 2 Abs. 1 und Art. 6 Abs. 1 BGBB; landwirtschaftliches Grundstück, das in einem Kiesabbauplan einbezogen ist; Anwendungsbereich des BGBB. Die Schaffung einer Kiesabbauzone schliesst das darin befindliche landwirtschaftliche Grundstück…",
-        "datum": "2023-02-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_III_217",
         "zitierung": "BGE 146 III 217",
         "regesteKurz": "Art. 681 Abs. 2 ZGB; Entfallen des Vorkaufsrechts; massgebender Zeitpunkt. Zum massgebenden Zeitpunkt für die Bestimmung, ob ein gleich- oder vorrangiges Vorkaufsrecht besteht, welches das gesetzliche Vorkaufsrecht entfallen lässt (E. 4.1,…",
         "datum": "2020-05-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_237__voll",
+        "zitierung": "Urteil 2C_255/2022 (nicht publ. in BGE 149 II 237)",
+        "regesteKurz": null,
+        "datum": "2023-02-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -237,24 +237,24 @@
     ],
     "59": [
       {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "key": "bge_150_II_346__voll",
+        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
+        "regesteKurz": null,
         "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "60": [
       {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "key": "bge_150_II_346__voll",
+        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
+        "regesteKurz": null,
         "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -269,16 +269,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_150_II_168",
@@ -297,6 +287,16 @@
         "datum": "2023-09-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_346__voll",
+        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
+        "regesteKurz": null,
+        "datum": "2024-05-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -345,12 +345,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_237",
-        "zitierung": "BGE 149 II 237",
-        "regesteKurz": "Art. 2 Abs. 1 und Art. 6 Abs. 1 BGBB; landwirtschaftliches Grundstück, das in einem Kiesabbauplan einbezogen ist; Anwendungsbereich des BGBB. Die Schaffung einer Kiesabbauzone schliesst das darin befindliche landwirtschaftliche Grundstück…",
+        "key": "bge_149_II_237__voll",
+        "zitierung": "Urteil 2C_255/2022 (nicht publ. in BGE 149 II 237)",
+        "regesteKurz": null,
         "datum": "2023-02-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -463,44 +463,44 @@
     ],
     "86": [
       {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "key": "bge_150_II_346__voll",
+        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
+        "regesteKurz": null,
         "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "89": [
       {
-        "key": "bge_150_II_168",
-        "zitierung": "BGE 150 II 168",
-        "regesteKurz": "Art. 9 BGBB; Bewilligung zum Erwerb eines landwirtschaftlichen Grundstücks; Begriff des Selbstbewirtschafters. Einschlägige Bestimmungen und Rechtsprechung zum Begriff des Selbstbewirtschafters (E. 4.1). Die Grundsätze, die zur Anerkennung…",
+        "key": "bge_150_II_168__voll",
+        "zitierung": "Urteil 2C_317/2023 (nicht publ. in BGE 150 II 168)",
+        "regesteKurz": null,
         "datum": "2024-03-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_237",
-        "zitierung": "BGE 149 II 237",
-        "regesteKurz": "Art. 2 Abs. 1 und Art. 6 Abs. 1 BGBB; landwirtschaftliches Grundstück, das in einem Kiesabbauplan einbezogen ist; Anwendungsbereich des BGBB. Die Schaffung einer Kiesabbauzone schliesst das darin befindliche landwirtschaftliche Grundstück…",
+        "key": "bge_149_II_237__voll",
+        "zitierung": "Urteil 2C_255/2022 (nicht publ. in BGE 149 II 237)",
+        "regesteKurz": null,
         "datum": "2023-02-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_147_II_385",
-        "zitierung": "BGE 147 II 385",
-        "regesteKurz": "Art. 64 Abs. 1 lit. e BGBB; Bewilligung zum Erwerb eines landwirtschaftlichen Grundstücks, um darauf ein \"Objekt des Naturschutzes\" zu erhalten; Auslegung. Art. 64 Abs. 1 lit. e BGBB ermöglicht es, eine Bewilligung für den Erwerb eines…",
+        "key": "bge_147_II_385__voll",
+        "zitierung": "Urteil 2C_1069/2020 (nicht publ. in BGE 147 II 385)",
+        "regesteKurz": null,
         "datum": "2021-10-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

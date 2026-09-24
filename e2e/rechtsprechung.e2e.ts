@@ -166,7 +166,43 @@ test.describe('Kanton BS — Register-Facette und Reader', () => {
     expect(fehler).toEqual([])
   })
 
+  // §6.3-DEKLARATION (W2·29-WERKBANK-LESER D2/B-1, 25.9.2026 — fachliche
+  // Änderung, kein Refactoring): BES.2025.17 war bis D2 das Fixture für den
+  // datumlosen BS-Entscheid (Platzhalter 2025-01-01 + datumUnbekannt). Die
+  // amtliche Quelle (gerichte.bs.ch, nF30_KEY=78708, abgerufen 25.9.2026) lässt
+  // das Metadatenfeld «Entscheiddatum:» leer, das Deckblatt trägt aber
+  // «ENTSCHEID / vom 8. August 2025»; B-1 liest es seither aus. Gemessen
+  // 25.9.2026: im ganzen Bestand `public/rechtsprechung` trägt KEIN Entscheid
+  // mehr `datumUnbekannt: true` (main: 42 im Register, Branch: 0) — es gibt
+  // kein echtes datumloses Fixture mehr. Darum zwei Tests statt einem:
+  // (1) derselbe Entscheid zeigt jetzt das echte Datum und nie den Platzhalter;
+  // (2) der §7.2-Pfad der Darstellung (DatumMeta, «Entscheiddatum nicht
+  //     publiziert» + Erstpublikation) bleibt geprüft, an demselben Entscheid,
+  //     dessen Snapshot im Test auf den datumlosen Zustand zurückgesetzt wird
+  //     (so wie ihn der Generator ohne Deckblatt-Datum weiterhin erzeugt,
+  //     `bs-rechtsprechung.test.ts` «ohne Deckblatt-Datum»).
+  test('BS-Entscheid mit Deckblatt-Datum: echtes Datum statt Platzhalter; Sekundärnummer im Kopf (B-1)', async ({ page }) => {
+    await page.goto('/rechtsprechung/bs_appellationsgericht_BES.2025.17')
+    await expect(page.getByRole('heading', { level: 1, name: /BES\.2025\.17/ })).toBeVisible()
+    await expect(page.getByText('(AG.2025.474)').first()).toBeVisible()
+    await expect(page.getByText(/08\.08\.2025/).first()).toBeVisible()
+    await expect(page.getByText('Entscheiddatum nicht publiziert')).toHaveCount(0)
+    // Der frühere Platzhalter erscheint nirgends im Kopf.
+    await expect(page.locator('header').getByText(/01\.01\.2025/)).toHaveCount(0)
+  })
+
   test('datumloser BS-Entscheid: Platzhalter nie als Datum; Erstpublikation + Sekundärnummer im Kopf (§7.2)', async ({ page }) => {
+    await page.route('**/rechtsprechung/kanton/BS/bs_appellationsgericht/BES.2025.17.json', async (route) => {
+      const res = await route.fetch()
+      const d = await res.json()
+      d.eintraege[0] = {
+        ...d.eintraege[0],
+        datum: '2025-01-01',
+        datumUnbekannt: true,
+        zitierung: 'Appellationsgericht BS BES.2025.17',
+      }
+      await route.fulfill({ response: res, json: d })
+    })
     await page.goto('/rechtsprechung/bs_appellationsgericht_BES.2025.17')
     await expect(page.getByRole('heading', { level: 1, name: /BES\.2025\.17/ })).toBeVisible()
     await expect(page.getByText('Entscheiddatum nicht publiziert').first()).toBeVisible()
@@ -175,6 +211,7 @@ test.describe('Kanton BS — Register-Facette und Reader', () => {
     await expect(page.getByText('(AG.2025.474)').first()).toBeVisible()
     // Kein fingiertes «Urteil vom 01.01.2025» im Kopf (Body-Text bleibt aussen vor).
     await expect(page.locator('header').getByText(/Urteil vom/)).toHaveCount(0)
+    await expect(page.locator('header').getByText(/01\.01\.2025/)).toHaveCount(0)
     await page.screenshot({ path: '.scratch/bs-reader-datumlos.png', fullPage: false })
   })
 

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "UVV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -13,16 +13,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_150_V_454",
-        "zitierung": "BGE 150 V 454",
-        "regesteKurz": "Art. 1a Abs. 1 lit. a UVG; Versicherteneigenschaft. Sinn und Zweck dieser Bestimmung ist es, sämtliche in der Schweiz tätigen Arbeitnehmer obligatorisch gegen Unfallfolgen zu versichern. Dem Territorialitätsprinzip folgend ist dabei die…",
-        "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_150_V_391",
@@ -41,6 +31,16 @@
         "datum": "2021-11-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_454__voll",
+        "zitierung": "Urteil 8C_75/2024 (nicht publ. in BGE 150 V 454)",
+        "regesteKurz": null,
+        "datum": "2024-08-12",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -203,16 +203,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_V_1",
-        "zitierung": "BGE 151 V 1",
-        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der…",
-        "datum": "2024-08-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_V_334",
         "zitierung": "BGE 150 V 334",
         "regesteKurz": "Art. 26 f. UVG i.V.m. Art. 38 Abs. 2 UVV; Art. 42 Abs. 3 IVG (in der seit Januar 2022 geltenden Fassung) i.V.m. Art. 38 Abs. 1 IVV; Art. 66 Abs. 3 ATSG; Leistungskoordination zwischen der Invalidenversicherung und der Unfallversicherung;…",
@@ -229,6 +219,16 @@
         "datum": "2022-05-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1__voll",
+        "zitierung": "Urteil 9C_480/2022 (nicht publ. in BGE 151 V 1)",
+        "regesteKurz": null,
+        "datum": "2024-08-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -317,10 +317,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_V_138",
-        "zitierung": "BGE 148 V 138",
-        "regesteKurz": "Art. 6 UVG; Art. 4 ATSG; Beurteilung des adäquaten Kausalzusammenhangs zwischen einem Unfall und psychischen Beschwerden, wenn die Frage des natürlichen Kausalzusammenhangs offengelassen wurde. Erweist sich die vorinstanzliche Beurteilung…",
-        "datum": "2022-01-27",
+        "key": "bge_146_V_104",
+        "zitierung": "BGE 146 V 104",
+        "regesteKurz": "Art. 3 und Art. 90c Abs. 1 AVIG; Beitragspflicht bei nachträglicher Lohnzahlung. Die Bestimmung des Beitragssatzes einer Lohnnachzahlung (Art. 5 Abs. 1 AHVG) ist nicht oder nicht ausschliesslich auf der Ebene des Beitragsbezugs…",
+        "datum": "2020-04-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -403,27 +403,17 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_V_195",
-        "zitierung": "BGE 148 V 195",
-        "regesteKurz": "Art. 17 Abs. 1, Art. 21 Abs. 1 und Art. 53 Abs. 2 ATSG; Art. 37 Abs. 3 UVG; Art. 54 StGB; Art. 90 Abs. 2 SVG; Leistungskürzung bei einem Unfall, der bei Ausübung eines Verbrechens oder Vergehens herbeigeführt wurde; Wiedererwägung;…",
+        "key": "bge_148_V_195__voll",
+        "zitierung": "Urteil 8C_466/2021 (nicht publ. in BGE 148 V 195)",
+        "regesteKurz": null,
         "datum": "2022-03-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "31": [
-      {
-        "key": "bge_149_V_129",
-        "zitierung": "BGE 149 V 129",
-        "regesteKurz": "Art. 20 Abs. 2 UVG; Art. 69 Abs. 2 ATSG; Komplementärrente; Anrechnung von Anwaltskosten. Das Komplementärrentensystem der Unfallversicherung geht der Überentschädigungsregel des Art. 69 Abs. 2 ATSG vor. Im Unterschied zu Letzterer lässt…",
-        "datum": "2023-03-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_147_V_213",
         "zitierung": "BGE 147 V 213",
@@ -431,6 +421,16 @@
         "datum": "2021-01-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_V_129__voll",
+        "zitierung": "Urteil 8C_382/2022 (nicht publ. in BGE 149 V 129)",
+        "regesteKurz": null,
+        "datum": "2023-03-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -525,12 +525,12 @@
     ],
     "49": [
       {
-        "key": "bge_147_V_268",
-        "zitierung": "BGE 147 V 268",
-        "regesteKurz": "Art. 1a Abs. 1, Art. 7, Art. 59 Abs. 2 und Art. 73 Abs. 2 UVG; Art. 1 und Art. 99 Abs. 1 UVV; Arbeitnehmereigenschaft eines (Amateur-)Eishockeyspielers und -trainers; Arbeitgebereigenschaft; Zuständigkeit des Unfallversicherers. Ist…",
+        "key": "bge_147_V_268__voll",
+        "zitierung": "Urteil 8C_538/2020 (nicht publ. in BGE 147 V 268)",
+        "regesteKurz": null,
         "datum": "2021-04-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

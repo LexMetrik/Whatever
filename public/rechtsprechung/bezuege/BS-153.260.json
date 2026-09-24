@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"BS-153.260",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -12,7 +12,7 @@
 "bs_appellationsgericht_VD.2022.144":{"zitierung":"Appellationsgericht BS VD.2022.144 vom 23.09.2022","regesteKurz":"Informationszugang und Akteneinsicht","datum":"2022-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.160":{"zitierung":"Appellationsgericht BS VD.2022.160 vom 20.10.2022","regesteKurz":"Abweisung des Antrags auf Einsicht in das ausführliche Protokoll der Gemeindeversammlung vom 26. April 2022","datum":"2022-10-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.6":{"zitierung":"Appellationsgericht BS VD.2022.6 vom 30.06.2022","regesteKurz":"Bewertung des Grundstücks C____ (BGer 2C_737/2022 vom 16.1.2023)","datum":"2022-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2022.7":{"zitierung":"Appellationsgericht BS VD.2022.7","regesteKurz":"Bewertung Grundstück C____","datum":"2022-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2022.7":{"zitierung":"Appellationsgericht BS VD.2022.7 vom 30.06.2022","regesteKurz":"Bewertung Grundstück C____","datum":"2022-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.17":{"zitierung":"Appellationsgericht BS VD.2023.17 vom 31.08.2023","regesteKurz":"Informationszugang","datum":"2023-08-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.51":{"zitierung":"Appellationsgericht BS VD.2024.51 vom 13.09.2024","regesteKurz":"Zugang zu nicht publizierten Informationen (BGer 1C_637/2024 vom 30. Oktober 2025)","datum":"2024-09-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.98":{"zitierung":"Appellationsgericht BS VD.2024.98 vom 27.02.2025","regesteKurz":"Ablehnung des Informationszugangs","datum":"2025-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -23,9 +23,9 @@
 "2":[{"key":"bs_appellationsgericht_ZB.2023.47","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.144","gewicht":null}],
 "3":[{"key":"bs_appellationsgericht_VD.2024.51","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null}],
 "6":[{"key":"bs_appellationsgericht_VD.2024.51","gewicht":null}],
-"9":[{"key":"bs_appellationsgericht_VD.2021.224","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.7","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_VD.2021.224","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.7","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null}],
 "20":[{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null}],
-"21":[{"key":"bs_appellationsgericht_VD.2021.224","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.7","gewicht":null}],
+"21":[{"key":"bs_appellationsgericht_VD.2021.224","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.7","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null}],
 "25":[{"key":"bs_appellationsgericht_VD.2024.98","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.51","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.17","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.148","gewicht":null}],
 "26":[{"key":"bs_appellationsgericht_VD.2023.17","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.144","gewicht":null}],
 "27":[{"key":"bs_appellationsgericht_BES.2022.130","gewicht":null}],

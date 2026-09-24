@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-23",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.32",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "UV.2025.32",
       "bgeReferenz": null,
-      "zitierung": "Sozialversicherungsgericht BS UV.2025.32",
-      "datum": "2025-01-01",
+      "zitierung": "Sozialversicherungsgericht BS UV.2025.32 vom 25.11.2025",
+      "datum": "2025-11-25",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "sozialversicherung",
@@ -285,10 +285,9 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79555&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-09-23",
       "fassungsToken": "2026-05-22",
       "sha": "8a80b57f31ab1bc327a6f1275adea808f44687aa9bffd250563bd67829035ed1",
-      "datumUnbekannt": true,
       "erstpublikation": "2026-05-08",
       "aktualisiert": "2026-05-22",
       "nummerSekundaer": "SVG.2026.69",

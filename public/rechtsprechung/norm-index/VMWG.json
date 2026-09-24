@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "VMWG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -47,22 +47,22 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_III_201",
-        "zitierung": "BGE 151 III 201",
-        "regesteKurz": "Art. 269a lit. c OR; Art. 58 ZPO; Anfechtung des Anfangsmietzinses; Dispositionsmaxime; Berechnung der Bruttorendite. Berechnung des zulässigen Mietzinses gemäss der Bruttorenditemethode; Grundsätze (E. 4). Das Gericht, das zur Festlegung…",
-        "datum": "2024-10-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_III_123",
         "zitierung": "BGE 150 III 123",
         "regesteKurz": "Art. 269a und 270 OR; Miete; Anfechtung des Anfangsmietzinses für Wohnräume in einer Altbaute; Orts- oder Quartierüblichkeit; massive Erhöhung des Anfangsmietzinses. Missachtung des bundesgerichtlichen Rückweisungsentscheids (BGE 147 III…",
         "datum": "2023-11-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_III_201__voll",
+        "zitierung": "Urteil 4A_339/2022 (nicht publ. in BGE 151 III 201)",
+        "regesteKurz": null,
+        "datum": "2024-10-31",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -139,12 +139,12 @@
     ],
     "19": [
       {
-        "key": "bge_146_III_82",
-        "zitierung": "BGE 146 III 82",
-        "regesteKurz": "Art. 67 Abs. 1 und 130 Abs. 1 OR; Nichtigkeit des Anfangsmietzinses; Beginn der absoluten Verjährungsfrist für die Rückerstattungsforderung. Ist die Festsetzung des Anfangsmietzinses nichtig, beginnt die absolute Verjährungsfrist für den…",
+        "key": "bge_146_III_82__voll",
+        "zitierung": "Urteil 4A_495/2019 (nicht publ. in BGE 146 III 82)",
+        "regesteKurz": null,
         "datum": "2020-02-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -159,12 +159,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_III_63",
-        "zitierung": "BGE 148 III 63",
-        "regesteKurz": "Art. 67 und 270 Abs. 2 OR; Verjährung der Klage auf Feststellung der Nichtigkeit des Anfangsmietzinses; Beginn der Verjährungsfrist (Präzisierung der Rechtsprechung). Interesse des Mieters, den Anfangsmietzins anzufechten, je nachdem ob…",
+        "key": "bge_148_III_63__voll",
+        "zitierung": "Urteil 4A_302/2021 (nicht publ. in BGE 148 III 63)",
+        "regesteKurz": null,
         "datum": "2022-01-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

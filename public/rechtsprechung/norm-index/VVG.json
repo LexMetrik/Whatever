@@ -1,16 +1,16 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "VVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
     "1": [
       {
-        "key": "bge_151_III_591",
-        "zitierung": "BGE 151 III 591",
-        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "key": "bge_151_III_591__voll",
+        "zitierung": "Urteil 4A_301/2024 (nicht publ. in BGE 151 III 591)",
+        "regesteKurz": null,
         "datum": "2025-06-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -39,12 +39,12 @@
     ],
     "4": [
       {
-        "key": "bge_151_III_591",
-        "zitierung": "BGE 151 III 591",
-        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
+        "key": "bge_151_III_591__voll",
+        "zitierung": "Urteil 4A_301/2024 (nicht publ. in BGE 151 III 591)",
+        "regesteKurz": null,
         "datum": "2025-06-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -87,22 +87,22 @@
     ],
     "39": [
       {
-        "key": "bge_148_III_134",
-        "zitierung": "BGE 148 III 134",
-        "regesteKurz": "Art. 40 VVG; betrügerische Begründung des Versicherungsanspruchs; Beweismass. Für den der Versicherung obliegenden Beweis der Täuschungsabsicht gilt das Beweismass der überwiegenden Wahrscheinlichkeit. Für den ihr obliegenden Nachweis der…",
-        "datum": "2022-01-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_148_III_105",
         "zitierung": "BGE 148 III 105",
         "regesteKurz": "Art. 8 ZGB; Art. 39 VVG; Beweis des Eintritts des Versicherungsfalls, Beweislast des Anspruchsberechtigten; Beweislastverteilung. Gemäss der auch im Bereich des Versicherungsvertrags geltenden Grundregel von Art. 8 ZGB hat der…",
         "datum": "2021-08-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_III_134__voll",
+        "zitierung": "Urteil 4A_394/2021 (nicht publ. in BGE 148 III 134)",
+        "regesteKurz": null,
+        "datum": "2022-01-11",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -161,24 +161,14 @@
         "gewicht": 1
       },
       {
-        "key": "bge_146_III_25",
-        "zitierung": "BGE 146 III 25",
-        "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Art. 6 Ziff. 1 EMRK; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche; Bedeutung des EGMR-Urteils…",
+        "key": "bge_146_III_25__voll",
+        "zitierung": "Urteil 4A_554/2013 (nicht publ. in BGE 146 III 25)",
+        "regesteKurz": null,
         "datum": "2019-11-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_III_591",
-        "zitierung": "BGE 151 III 591",
-        "regesteKurz": "Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…",
-        "datum": "2025-06-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_149_III_242",
@@ -199,6 +189,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_III_591__voll",
+        "zitierung": "Urteil 4A_301/2024 (nicht publ. in BGE 151 III 591)",
+        "regesteKurz": null,
+        "datum": "2025-06-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "60": [
@@ -213,12 +213,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_III_348",
-        "zitierung": "BGE 151 III 348",
-        "regesteKurz": "Art. 72 ff., 113 ff. BGG; Art. 250 Abs. 2 SchKG; Art. 32d USG; Entscheide über die Kollokation öffentlich-rechtlicher Forderungen. Entscheide über die Kollokation fallen unter die Schuldbetreibungs- und Konkurssachen im Sinn von Art. 72…",
+        "key": "bge_151_III_348__voll",
+        "zitierung": "Urteil 5A_137/2024 (nicht publ. in BGE 151 III 348)",
+        "regesteKurz": null,
         "datum": "2024-12-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -235,12 +235,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_III_362",
-        "zitierung": "BGE 146 III 362",
-        "regesteKurz": "Regressprivileg gegenüber einem Sozialversicherer (Art. 75 ATSG); Regressordnung nach Art. 51 Abs. 2 OR. Die von einem Teil der Lehre an BGE 143 III 79 geübte Kritik bildet keinen Anlass für eine Änderung der Rechtsprechung, wonach sich…",
+        "key": "bge_146_III_362__voll",
+        "zitierung": "Urteil 4A_397/2019 (nicht publ. in BGE 146 III 362)",
+        "regesteKurz": null,
         "datum": "2020-07-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -327,36 +327,36 @@
     ],
     "35a": [
       {
-        "key": "bge_151_III_35",
-        "zitierung": "BGE 151 III 35",
-        "regesteKurz": "Art. 60 Abs. 1 bis und Art. 103a VVG; direktes Forderungsrecht des geschädigten Dritten; Übergangsrecht. Auf vor Inkrafttreten der Änderung vom 19. Juni 2020 abgeschlossene Versicherungsverträge sind einzig die in Art. 103a VVG…",
+        "key": "bge_151_III_35__voll",
+        "zitierung": "Urteil 4A_189/2024 (nicht publ. in BGE 151 III 35)",
+        "regesteKurz": null,
         "datum": "2025-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "35b": [
       {
-        "key": "bge_151_III_35",
-        "zitierung": "BGE 151 III 35",
-        "regesteKurz": "Art. 60 Abs. 1 bis und Art. 103a VVG; direktes Forderungsrecht des geschädigten Dritten; Übergangsrecht. Auf vor Inkrafttreten der Änderung vom 19. Juni 2020 abgeschlossene Versicherungsverträge sind einzig die in Art. 103a VVG…",
+        "key": "bge_151_III_35__voll",
+        "zitierung": "Urteil 4A_189/2024 (nicht publ. in BGE 151 III 35)",
+        "regesteKurz": null,
         "datum": "2025-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "95c": [
       {
-        "key": "bge_151_III_35",
-        "zitierung": "BGE 151 III 35",
-        "regesteKurz": "Art. 60 Abs. 1 bis und Art. 103a VVG; direktes Forderungsrecht des geschädigten Dritten; Übergangsrecht. Auf vor Inkrafttreten der Änderung vom 19. Juni 2020 abgeschlossene Versicherungsverträge sind einzig die in Art. 103a VVG…",
+        "key": "bge_151_III_35__voll",
+        "zitierung": "Urteil 4A_189/2024 (nicht publ. in BGE 151 III 35)",
+        "regesteKurz": null,
         "datum": "2025-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

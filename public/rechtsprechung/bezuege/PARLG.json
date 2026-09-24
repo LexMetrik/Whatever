@@ -1,14 +1,14 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"PARLG",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_151_IV_338":{"zitierung":"BGE 151 IV 338","regesteKurz":"Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des…","datum":"2025-07-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_IV_338__voll":{"zitierung":"Urteil 7B_454/2025 (nicht publ. in BGE 151 IV 338)","regesteKurz":null,"datum":"2025-07-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 IV 338","urteil":"7B_454/2025"}}
 },
 "proArtikel":{
-"89":[{"key":"bge_151_IV_338","gewicht":0}]
+"89":[{"key":"bge_151_IV_338__voll","gewicht":0,"erwaegungen":["E. 2.3.4"]}]
 },
 "gesamtProArtikel":{
-"89":{"bge":1}
+"89":{"bger":1}
 }
 }

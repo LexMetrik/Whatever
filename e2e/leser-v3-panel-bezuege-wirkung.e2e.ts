@@ -21,7 +21,7 @@
 //   dass die einmalige Alt-Stufen-Migration («5 J.» → Von-Datum) unabhängig
 //   von der Hülle greift (der Store `lm.leser.optionen` ist hüllenneutral).
 //
-// Träger: StPO Art. 5 (wie B4/B5) — 16 Leitentscheide, Shard verifiziert
+// Träger: StPO Art. 5 (wie B4/B5) — 16 Leitentscheide (seit D2/E-1: 8, siehe unten), Shard verifiziert
 // 29.7.2026 nach B7 (Kopf von `bezuege-facetten-b4.e2e.ts`).
 //
 // §6.3-DEKLARATION (S6-W1b, Entscheid David 23.9.2026 — fachliche Änderung,
@@ -34,6 +34,18 @@
 // Gruppenkopf). Der geprüfte Sachverhalt — die Wahl schneidet die Menge
 // korrekt — bleibt unverändert, gemessen an der BGE-Gruppe mit denselben
 // Erwartungswerten (16 / 5 / 3 / 2).
+//
+// §6.3-DEKLARATION (W2·29-WERKBANK-LESER D2/E-1, 25.9.2026 — fachliche
+// Änderung, kein Refactoring): acht der 16 BGE nennen Art. 5 StPO nur in einer
+// nicht publizierten Erwägung ihres Volltext-Urteils; die Kante zeigt seither
+// aufs Urteil (Klasse bger). Die BGE-Gruppe zählt darum 8 statt 16
+// (Vorbefund `bezuege-zeile-b4.test.tsx`: bge 8, bger 10). Die acht Daten
+// (Shard `public/rechtsprechung/bezuege/STPO.json`, gemessen 25.9.2026):
+// 2020-03-23, 2020-07-06, 2020-10-14, 2021-04-27, 2022-09-09, 2023-02-17,
+// 2024-04-25, 2024-09-04. Die alten Grenzen trügen nicht mehr (ab 2024 und
+// «nur 2024» ergäben beide 2 — «bis grenzt weiter ein» wäre unprüfbar; ab
+// 2025 ergäbe 0 und die Gruppe verschwände). Neue Grenzen mit derselben
+// Zählkette: ab 2021-01-01 → 5, bis 2023-12-31 → 3, ab 2024-01-01 → 2.
 import { test, expect, type Page } from '@playwright/test'
 import { panelAufziehen } from './helpers/panelOeffnen'
 
@@ -122,44 +134,44 @@ test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () 
 
   test('Datumsfeld «von» schneidet die Liste, «bis» grenzt weiter ein', async ({ page }) => {
     await panelMitFilterOeffnen(page)
-    await erwarteBge(page, 16)
+    await erwarteBge(page, 8)
     await zeitKlappeOeffnen(page)
-    await panel(page).locator('[data-zeit-feld="von"]').fill('2024-01-01')
-    // 5 der 16 Leitentscheide zu Art. 5 sind von 2024 oder jünger (wie B5).
+    await panel(page).locator('[data-zeit-feld="von"]').fill('2021-01-01')
+    // 5 der 8 Leitentscheide zu Art. 5 sind von 2021 oder jünger (D2/E-1).
     await erwarteBge(page, 5)
-    await panel(page).locator('[data-zeit-feld="bis"]').fill('2024-12-31')
+    await panel(page).locator('[data-zeit-feld="bis"]').fill('2023-12-31')
     await erwarteBge(page, 3)
   })
 
   test('verdrehte Eingabe wird getauscht, nicht als leere Menge gedeutet', async ({ page }) => {
     await panelMitFilterOeffnen(page)
     await zeitKlappeOeffnen(page)
-    await panel(page).locator('[data-zeit-feld="bis"]').fill('2024-01-01')
-    await panel(page).locator('[data-zeit-feld="von"]').fill('2024-12-31')
+    await panel(page).locator('[data-zeit-feld="bis"]').fill('2021-01-01')
+    await panel(page).locator('[data-zeit-feld="von"]').fill('2023-12-31')
     await erwarteBge(page, 3)
   })
 
   test('Zurücksetzen hebt den Zeitraum auf', async ({ page }) => {
     await panelMitFilterOeffnen(page)
     await zeitKlappeOeffnen(page)
-    await panel(page).locator('[data-zeit-feld="von"]').fill('2025-01-01')
+    await panel(page).locator('[data-zeit-feld="von"]').fill('2024-01-01')
     await erwarteBge(page, 2)
     await page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen').click()
-    await erwarteBge(page, 16)
+    await erwarteBge(page, 8)
     await expect(panel(page).locator('[data-zeit-feld="von"]')).toHaveValue('')
   })
 
   test('der Zeitraum übersteht einen Neuladen', async ({ page }) => {
     await panelMitFilterOeffnen(page)
     await zeitKlappeOeffnen(page)
-    await panel(page).locator('[data-zeit-feld="von"]').fill('2024-01-01')
+    await panel(page).locator('[data-zeit-feld="von"]').fill('2021-01-01')
     await erwarteBge(page, 5)
     await page.reload()
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
     await erwarteBge(page, 5)
     await zeitKlappeOeffnen(page)
-    await expect(panel(page).locator('[data-zeit-feld="von"]')).toHaveValue('2024-01-01')
+    await expect(panel(page).locator('[data-zeit-feld="von"]')).toHaveValue('2021-01-01')
   })
 
   test('MIGRATION: eine gespeicherte Alt-Stufe «5 J.» wird EINMALIG zum Von-Datum', async ({ page }) => {
@@ -200,7 +212,7 @@ test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () 
     await page.reload()
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
-    await erwarteBge(page, 16)
+    await erwarteBge(page, 8)
     await zeitKlappeOeffnen(page)
     await expect(panel(page).locator('[data-zeit-feld="von"]')).toHaveValue('')
     await expect(page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen')).toHaveCount(0)

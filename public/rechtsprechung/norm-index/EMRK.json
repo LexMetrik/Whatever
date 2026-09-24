@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-09-23",
   "erlass": "EMRK",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -36,26 +36,6 @@
       }
     ],
     "2": [
-      {
-        "key": "bge_152_IV_64",
-        "zitierung": "BGE 152 IV 64",
-        "regesteKurz": "Art. 133 f. StGB; Abgrenzung des Angriffs zum Raufhandel. Ein die Tatbestandsvoraussetzungen des Angriffs im Sinne von Art. 134 StGB erfüllendes Verhalten wird in Bezug auf die Angreifer nicht zu einem blossen Raufhandel, weil die…",
-        "datum": "2025-09-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_237",
-        "zitierung": "BGE 151 II 237",
-        "regesteKurz": "Art. 42 Abs. 1, Art. 51 Abs. 1 lit. b und Art. 83 Abs. 2 AIG; Art. 97 Abs. 1 BGG; Gesuch um Wiedererwägung der Verweigerung des Familiennachzugs wegen des Vorliegens von Widerrufsgründen; Pflicht zur Ermittlung des entscheiderheblichen…",
-        "datum": "2024-09-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_149_II_302",
         "zitierung": "BGE 149 II 302",
@@ -95,6 +75,26 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_64__voll",
+        "zitierung": "Urteil 6B_1297/2023 (nicht publ. in BGE 152 IV 64)",
+        "regesteKurz": null,
+        "datum": "2025-09-12",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_237__voll",
+        "zitierung": "Urteil 2C_150/2024 (nicht publ. in BGE 151 II 237)",
+        "regesteKurz": null,
+        "datum": "2024-09-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "3": [
@@ -109,24 +109,14 @@
         "gewicht": 2
       },
       {
-        "key": "bge_147_IV_453",
-        "zitierung": "BGE 147 IV 453",
-        "regesteKurz": "Art. 66a und 66d StGB; Art. 42 Abs. 2, Art. 78 Abs. 2 lit. b und Art. 81 Abs. 1 lit. b BGG; Zulässigkeit der Beschwerde in Strafsachen gegen einen Entscheid, in dem der Aufschub des Vollzugs der obligatorischen Landesverweisung abgewiesen…",
+        "key": "bge_147_IV_453__voll",
+        "zitierung": "Urteil 6B_422/2021 (nicht publ. in BGE 147 IV 453)",
+        "regesteKurz": null,
         "datum": "2021-09-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_149_I_66",
-        "zitierung": "BGE 149 I 66",
-        "regesteKurz": "Art. 8 EMRK; Art. 30 Abs. 1 lit. k und Art. 61 Abs. 2 AIG; Umfang des Aufenthaltsrechts gestützt auf das Privatleben nach Erlöschen der Aufenthaltsbewilligung. Hinweis auf die Rechtsprechung, wonach sich ein Ausländer nach einem…",
-        "datum": "2022-06-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
       },
       {
         "key": "bge_148_IV_234",
@@ -139,24 +129,14 @@
         "gewicht": 1
       },
       {
-        "key": "bge_152_I_105",
-        "zitierung": "BGE 152 I 105",
-        "regesteKurz": "Art. 8 EMRK; Art. 67 Abs. 3 lit. d StGB; Verbot einer Tätigkeit mit Minderjährigen nach Verurteilung wegen Pornografie, die sexuelle Handlungen mit Minderjährigen zum Gegenstand hatte. Beschränkungen des Zugangs zu einem oder mehreren…",
-        "datum": "2025-10-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_149_I_66__voll",
+        "zitierung": "Urteil 2C_528/2021 (nicht publ. in BGE 149 I 66)",
+        "regesteKurz": null,
+        "datum": "2022-06-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_152_IV_64",
-        "zitierung": "BGE 152 IV 64",
-        "regesteKurz": "Art. 133 f. StGB; Abgrenzung des Angriffs zum Raufhandel. Ein die Tatbestandsvoraussetzungen des Angriffs im Sinne von Art. 134 StGB erfüllendes Verhalten wird in Bezug auf die Angreifer nicht zu einem blossen Raufhandel, weil die…",
-        "datum": "2025-09-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
       },
       {
         "key": "bge_151_IV_1",
@@ -169,10 +149,30 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_237",
-        "zitierung": "BGE 151 II 237",
-        "regesteKurz": "Art. 42 Abs. 1, Art. 51 Abs. 1 lit. b und Art. 83 Abs. 2 AIG; Art. 97 Abs. 1 BGG; Gesuch um Wiedererwägung der Verweigerung des Familiennachzugs wegen des Vorliegens von Widerrufsgründen; Pflicht zur Ermittlung des entscheiderheblichen…",
-        "datum": "2024-09-25",
+        "key": "bge_150_IV_201",
+        "zitierung": "BGE 150 IV 201",
+        "regesteKurz": "Art. 2 IRSG; Art. 26 BV; Rechtshilfe an Russland, Aufrechterhaltung einer Kontosperre. Wer lediglich von einer rechtshilfeweisen Kontosperre in der Schweiz betroffen ist, kann sich nicht auf Art. 2 IRSG (Rechsthilfeausschlussgrund des…",
+        "datum": "2024-03-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_302",
+        "zitierung": "BGE 149 II 302",
+        "regesteKurz": "Multilaterale Vereinbarung vom 29. Oktober 2014 der zuständigen Behörden über den automatischen Informationsaustausch über Finanzkonten; Art. 8 und 13 EMRK; Art. 19 Abs. 2 Satz 2 AIAG; automatischer Informationsaustausch; Recht auf eine…",
+        "datum": "2023-06-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_I_207",
+        "zitierung": "BGE 149 I 207",
+        "regesteKurz": "Art. 8 EMRK; mögliche Anrufung des Rechts auf Achtung des Privatlebens, um nach einem längeren illegalen Aufenthalt in der Schweiz eine Aufenthaltsbewilligung zu erhalten. Präzisierung der Rechtsprechung. Es ist nicht ausgeschlossen, nach…",
+        "datum": "2023-05-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -201,12 +201,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_IV_267",
-        "zitierung": "BGE 146 IV 267",
-        "regesteKurz": "Art. 5 Ziff. 1 EMRK; Art. 11 BV; Art. 3 Abs. 1 und Art. 4 KRK; Art. 372 Abs. 1 und 3 StGB; Art. 439 Abs. 2 StPO; Strafvollzug, Vollzugsbefehl, Kindeswohl. Der Strafvollzug ist die zwingende gesetzliche Rechtsfolge der Straftat (E. 3.2.1).…",
+        "key": "bge_146_IV_267__voll",
+        "zitierung": "Urteil 6B_40/2020 (nicht publ. in BGE 146 IV 267)",
+        "regesteKurz": null,
         "datum": "2020-08-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -325,16 +325,6 @@
         "gewicht": 4
       },
       {
-        "key": "bge_147_IV_439",
-        "zitierung": "BGE 147 IV 439",
-        "regesteKurz": "Art. 91 Abs. 2 lit. b, Art. 31 Abs. 2 und Art. 55 Abs. 7 lit. a SVG, Art. 2 Abs. 2 lit. a VRV, Art. 34 lit. a VSKV-ASTRA, Art. 12 Abs. 2 StGB; Fahren in fahrunfähigem Zustand nach Cannabiskonsum, Zulässigkeit der auf Verordnungsebene…",
-        "datum": "2021-06-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 4
-      },
-      {
         "key": "bge_147_I_280",
         "zitierung": "BGE 147 I 280",
         "regesteKurz": "Unterlassungs- und Feststellungsgesuche betreffend Funk- und Kabelaufklärung (Art. 38 ff. NDG); Anspruch auf materielle Beurteilung der Gesuche (Art. 25 Abs. 1 DSG; Art. 13 EMRK). Bei der Funk- und Kabelaufklärung werden Personendaten…",
@@ -351,6 +341,16 @@
         "datum": "2020-11-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_147_IV_439__voll",
+        "zitierung": "Urteil 6B_282/2021 (nicht publ. in BGE 147 IV 439)",
+        "regesteKurz": null,
+        "datum": "2021-06-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 4
       },
@@ -529,10 +529,10 @@
         "gewicht": 3
       },
       {
-        "key": "bge_147_IV_340",
-        "zitierung": "BGE 147 IV 340",
-        "regesteKurz": "Art. 21 und 24 der Verordnung (EG) Nr. 1987/2006 (SIS-II-Verordnung) und der Verordnung (EU) 2018/1861; Voraussetzungen für die Ausschreibung von Einreiseverboten im Schengener Informationssystem (SIS). Art. 24 Abs. 2 Bst. a…",
-        "datum": "2021-03-10",
+        "key": "bge_147_I_280",
+        "zitierung": "BGE 147 I 280",
+        "regesteKurz": "Unterlassungs- und Feststellungsgesuche betreffend Funk- und Kabelaufklärung (Art. 38 ff. NDG); Anspruch auf materielle Beurteilung der Gesuche (Art. 25 Abs. 1 DSG; Art. 13 EMRK). Bei der Funk- und Kabelaufklärung werden Personendaten…",
+        "datum": "2020-12-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -603,12 +603,12 @@
         "gewicht": 2
       },
       {
-        "key": "bge_147_IV_65",
-        "zitierung": "BGE 147 IV 65",
-        "regesteKurz": "Art. 28 Abs. 1 StGB; Strafbarkeit der Medien; keine Anwendbarkeit von Art. 28 Abs. 1 StGB beim \"Teilen\" und Kommentieren eines fremden Beitrags auf Facebook. Grundsatz der exklusiven Strafbarkeit des Autors bei Mediendelikten (E. 5.1-5.3).…",
+        "key": "bge_147_IV_65__voll",
+        "zitierung": "Urteil 6B_440/2019 (nicht publ. in BGE 147 IV 65)",
+        "regesteKurz": null,
         "datum": "2020-11-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 2
       },
@@ -633,22 +633,22 @@
         "gewicht": 1
       },
       {
-        "key": "bge_147_I_463",
-        "zitierung": "BGE 147 I 463",
-        "regesteKurz": "Art. 30 Abs. 3 BV, Art. 6 Ziff. 1 EMRK und Art. 14 Abs. 1 UNO-Pakt II; Art. 29 Abs. 2 BV, Art. 99 Abs. 1 StPO und Art. 35 Abs. 2 lit. g des Einführungsgesetzes des Kantons St. Gallen vom 3. August 2010 zur Schweizerischen Straf- und…",
-        "datum": "2021-05-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_147_IV_145",
         "zitierung": "BGE 147 IV 145",
         "regesteKurz": "a Art. 292 StGB, Art. 70 Abs. 1 und Abs. 3, Art. 80 Abs. 3 StPO; formelle Gültigkeitsvoraussetzungen und Tragweite eines Beschlusses, welcher den Zugang von Gerichtsberichterstattern zu einer unter Ausschluss der Öffentlichkeit geführten…",
         "datum": "2021-01-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_I_463__voll",
+        "zitierung": "Urteil 1C_33/2020 (nicht publ. in BGE 147 I 463)",
+        "regesteKurz": null,
+        "datum": "2021-05-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       }
@@ -705,30 +705,30 @@
         "gewicht": 1
       },
       {
-        "key": "bge_152_IV_14",
-        "zitierung": "BGE 152 IV 14",
-        "regesteKurz": "a Art. 259 StGB; öffentliche Aufforderung zu Verbrechen oder zur Gewalttätigkeit; Rechtsgut, Aufforderung zu einer im Ausland zu verübenden Straftat. Der Straftatbestand der öffentlichen Aufforderung zu Verbrechen oder zur Gewalttätigkeit…",
-        "datum": "2025-08-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_I_219",
-        "zitierung": "BGE 151 I 219",
-        "regesteKurz": "Art. 31 Abs. 4 BV; Art. 5 Ziff. 4 EMRK; nachträgliche gerichtliche Kontrolle eines Polizeigewahrsams. Art. 31 Abs. 4 BV garantiert, im Gegensatz zu Art. 5 Ziff. 4 EMRK, dass zur Prüfung der Rechtmässigkeit eines Freiheitsentzugs…",
-        "datum": "2025-03-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_151_I_257",
         "zitierung": "BGE 151 I 257",
         "regesteKurz": "a Art. 16, 22 und 36 BV; Art. 10 und 11 EMRK; Bewilligung einer Marschkundgebung anlässlich des WEF-Jahrestreffens 2023 auf Nebenstrassen und Wanderwegen statt wie beantragt auf der Kantonsstrasse. Meinungs- und Versammlungsfreiheit bei…",
         "datum": "2024-10-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_I_154",
+        "zitierung": "BGE 150 I 154",
+        "regesteKurz": "Art. 8 Abs. 2, Art. 15, 36 und 72 Abs. 1 BV; Art. 9 EMRK; Art. 3 KV/GE; Art. 4 und 6 des Genfer Gesetzes vom 26. April 2018 über die Laizität des Staates (LLE); Art. 3 und 4 der Vollzugsverordnung zu diesem Gesetz (RLE); gesteigerter…",
+        "datum": "2024-02-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_IV_297",
+        "zitierung": "BGE 147 IV 297",
+        "regesteKurz": "a Art. 6 Ziff. 1 EMRK, Art. 14 UNO Pakt II, Art. 30 Abs. 3 BV, Art. 69 und 70 StPO; Grundsatz der Justizöffentlichkeit, teilweiser Ausschluss der Öffentlichkeit, Anwesenheit von Vertrauenspersonen. Der Entscheid über den teilweisen…",
+        "datum": "2021-05-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -747,12 +747,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_I_50",
-        "zitierung": "BGE 150 I 50",
-        "regesteKurz": "Art. 10 Abs. 2, Art. 13 und 36 BV, Art. 8 EMRK, Art. 236 StPO, Art. 74 und 84 StGB sowie Art. 82 des Reglements des Kantons Waadt über den Status verurteilter Personen, die sich im Straf- oder Massnahmenvollzug befinden (RSPC); Prüfung, ob…",
+        "key": "bge_150_I_50__voll",
+        "zitierung": "Urteil 7B_471/2023 (nicht publ. in BGE 150 I 50)",
+        "regesteKurz": null,
         "datum": "2024-01-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -809,16 +809,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_149_I_248",
-        "zitierung": "BGE 149 I 248",
-        "regesteKurz": "Art. 8 Abs. 2, Art. 10 Abs. 2, Art. 16, 27 und 36 BV; Art. 8, 10 und 14 EMRK; Grund- und Menschenrechtskonformität eines partiellen Bettelverbots; abstrakte Normenkontrolle. Bettelei fällt in den Schutzbereich des Grundrechts der…",
-        "datum": "2023-03-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_149_I_218",
         "zitierung": "BGE 149 I 218",
         "regesteKurz": "a Rechtsschutz gegen die präventive verdeckte Fahndung (§ 36 septies Abs. 4 und 5 Gesetz des Kantons Solothurn über die Kantonspolizei - KapoG/SO). Die vorgesehene nachträgliche Beschwerde an das Obergericht (E. 6.3.1) setzt voraus, dass…",
@@ -829,12 +819,22 @@
         "gewicht": 1
       },
       {
-        "key": "bge_146_I_145",
-        "zitierung": "BGE 146 I 145",
-        "regesteKurz": "Art. 25a VwVG; Art. 6 Ziff. 1 EMRK; Gesuch um Erlass einer Verfügung über Realakte im Zusammenhang mit dem Klimaschutz; Zulässigkeit des Nichteintretens der Gesuchsadressaten. Der Begriff der Handlungen im Sinne von Art. 25a VwVG ist weit…",
+        "key": "bge_149_I_248__voll",
+        "zitierung": "Urteil 1C_537/2021 (nicht publ. in BGE 149 I 248)",
+        "regesteKurz": null,
+        "datum": "2023-03-13",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_I_145__voll",
+        "zitierung": "Urteil 1C_37/2019 (nicht publ. in BGE 146 I 145)",
+        "regesteKurz": null,
         "datum": "2020-05-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       }
@@ -901,20 +901,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_V_257",
-        "zitierung": "BGE 150 V 257",
-        "regesteKurz": "Art. 39 Abs. 1 AHVG; Art. 55 bis lit. b AHVV (je in der vom 1. Januar 1997 bis Ende 2023 geltenden Fassung); Aufschub der Altersrente, die eine Invalidenrente ablöst. Laut Art. 55 bis lit. b AHVV sind Altersrenten, die eine Invalidenrente…",
-        "datum": "2024-06-04",
+        "key": "bge_150_III_160",
+        "zitierung": "BGE 150 III 160",
+        "regesteKurz": "Art. 457 und 522 ZGB, Art. 13a Abs. 1 SchlT ZGB; Art. 8 i.V.m. Art. 14 EMRK; Zahlvaterschaft und Aktivlegitimation zur Erhebung einer Herabsetzungsklage. Die Frage, wer Nachkomme ist, entscheidet das Familienrecht. Vorausgesetzt ist ein…",
+        "datum": "2024-03-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_150_III_160",
-        "zitierung": "BGE 150 III 160",
-        "regesteKurz": "Art. 457 und 522 ZGB, Art. 13a Abs. 1 SchlT ZGB; Art. 8 i.V.m. Art. 14 EMRK; Zahlvaterschaft und Aktivlegitimation zur Erhebung einer Herabsetzungsklage. Die Frage, wer Nachkomme ist, entscheidet das Familienrecht. Vorausgesetzt ist ein…",
-        "datum": "2024-03-18",
+        "key": "bge_150_I_154",
+        "zitierung": "BGE 150 I 154",
+        "regesteKurz": "Art. 8 Abs. 2, Art. 15, 36 und 72 Abs. 1 BV; Art. 9 EMRK; Art. 3 KV/GE; Art. 4 und 6 des Genfer Gesetzes vom 26. April 2018 über die Laizität des Staates (LLE); Art. 3 und 4 der Vollzugsverordnung zu diesem Gesetz (RLE); gesteigerter…",
+        "datum": "2024-02-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -977,12 +977,12 @@
     ],
     "18": [
       {
-        "key": "bge_146_III_89",
-        "zitierung": "BGE 146 III 89",
-        "regesteKurz": "Art. 13 Abs. 2 bis und Art. 55 MSchG; Einfuhr gewerblich hergestellter Waren zu privaten Zwecken; Leistungsklage. Auch bei einer Handlung, die unter Art. 13 Abs. 2 bis MSchG fällt, weil die Einfuhr von gewerblich hergestellten Waren zu…",
+        "key": "bge_146_III_89__voll",
+        "zitierung": "Urteil 4A_379/2019 (nicht publ. in BGE 146 III 89)",
+        "regesteKurz": null,
         "datum": "2019-12-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1013,12 +1013,12 @@
     ],
     "29": [
       {
-        "key": "bge_148_II_321",
-        "zitierung": "BGE 148 II 321",
-        "regesteKurz": "Art. 2 Abs. 1, Art. 4 Abs. 1 und Art. 5 Abs. 4 KG; Wettbewerbsabrede; Konzernprivileg; Handelsvertretervertrag und Handelsvertreterprivileg; Aleinvertriebsvertrag; Zurechnung von Verhaltensweisen im Konzern; doppelter Vertrieb. Begriffe…",
+        "key": "bge_148_II_321__voll",
+        "zitierung": "Urteil 2C_44/2020 (nicht publ. in BGE 148 II 321)",
+        "regesteKurz": null,
         "datum": "2022-03-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1129,12 +1129,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_III_89",
-        "zitierung": "BGE 146 III 89",
-        "regesteKurz": "Art. 13 Abs. 2 bis und Art. 55 MSchG; Einfuhr gewerblich hergestellter Waren zu privaten Zwecken; Leistungsklage. Auch bei einer Handlung, die unter Art. 13 Abs. 2 bis MSchG fällt, weil die Einfuhr von gewerblich hergestellten Waren zu…",
+        "key": "bge_146_III_89__voll",
+        "zitierung": "Urteil 4A_379/2019 (nicht publ. in BGE 146 III 89)",
+        "regesteKurz": null,
         "datum": "2019-12-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

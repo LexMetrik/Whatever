@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"KAG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -8,7 +8,8 @@
 "bge_150_II_98":{"zitierung":"BGE 150 II 98","regesteKurz":"Art. 49 BV; Art. 38 und 39 FINIG; Art. 37 KKV; Handänderungssteuer, die anlässlich des Wechsels der Leitung eines Immobilien-Anlagefonds erhoben wird; Überwälzung der Steuer auf die Anleger. Sofern der Wechsel der Fondsleitung - nach…","datum":"2023-12-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_418":{"zitierung":"BGE 151 II 418","regesteKurz":"Art. 10 Abs. 2 und Art. 20 Abs. 1 lit. e DBG; ausländische kollektive Kapitalanlagen; Besteuerung der Einkünfte aus Thesaurierungsfonds. Ausländische kollektive Kapitalanlagen im Sinne von Art. 119 KAG fallen in den Anwendungsbereich von…","datum":"2024-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_860":{"zitierung":"BGE 151 II 860","regesteKurz":"Art. 87, 90 Abs. 2 KAG; Art. 957 ff. OR; Buchführungspflichten für Immobilienfonds mit direktem Grundbesitz; Niederstwertprinzip; Erst- und Folgebewertung; Periodizitätsprinzip und Nachholung von Aufwandbuchungen. Erstmals in eine Bilanz…","datum":"2025-06-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_V_270":{"zitierung":"BGE 151 V 270","regesteKurz":"Art. 16b ELG in Verbindung mit Art. 16a Abs. 1 ELG und Art. 27a Abs. 1 ELV; Rückerstattung rechtmässig bezogener Ergänzungsleistungen; Beginn der Verwirkungsfrist. Die einjährige relative Frist kann nicht zu laufen beginnen, solange das…","datum":"2025-05-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_II_860__voll":{"zitierung":"Urteil 9C_664/2024 (nicht publ. in BGE 151 II 860)","regesteKurz":null,"datum":"2025-06-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 860","urteil":"9C_664/2024"}},
+"bge_151_V_270__voll":{"zitierung":"Urteil 8C_593/2024 (nicht publ. in BGE 151 V 270)","regesteKurz":null,"datum":"2025-05-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 V 270","urteil":"8C_593/2024"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_151_II_418","gewicht":0},{"key":"bge_150_II_98","gewicht":0},{"key":"bge_148_II_121","gewicht":0}],
@@ -24,8 +25,8 @@
 "30":[{"key":"bge_148_II_121","gewicht":0}],
 "34":[{"key":"bge_148_II_121","gewicht":0}],
 "35":[{"key":"bge_148_II_121","gewicht":0}],
-"39":[{"key":"bge_151_V_270","gewicht":0}],
-"58":[{"key":"bge_151_II_860","gewicht":0},{"key":"bge_150_II_98","gewicht":1},{"key":"bge_148_II_121","gewicht":1}],
+"39":[{"key":"bge_151_V_270__voll","gewicht":0,"erwaegungen":["E. 5.3"]}],
+"58":[{"key":"bge_150_II_98","gewicht":1},{"key":"bge_148_II_121","gewicht":1},{"key":"bge_151_II_860__voll","gewicht":0,"erwaegungen":["E. 1.3"]}],
 "78":[{"key":"bge_148_II_121","gewicht":0}],
 "87":[{"key":"bge_151_II_860","gewicht":0}],
 "90":[{"key":"bge_151_II_860","gewicht":0}],
@@ -46,8 +47,8 @@
 "30":{"bge":1},
 "34":{"bge":1},
 "35":{"bge":1},
-"39":{"bge":1},
-"58":{"bge":3},
+"39":{"bger":1},
+"58":{"bge":2,"bger":1},
 "78":{"bge":1},
 "87":{"bge":1},
 "90":{"bge":1},

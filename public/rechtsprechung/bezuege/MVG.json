@@ -1,9 +1,10 @@
 {
-"erzeugt":"2026-09-12",
+"erzeugt":"2026-09-23",
 "erlass":"MVG",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_146_V_121":{"zitierung":"BGE 146 V 121","regesteKurz":"Art. 89 BGG; Art. 62 Abs. 1 bis ATSG; Beschwerdelegitimation der Suva, Abteilung Militärversicherung. Die Beschwerdelegitimation der Suva, Abteilung Militärversicherung, ergibt sich weder aus der allgemeinen Legitimationsklausel noch aus…","datum":"2020-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_V_121__voll":{"zitierung":"Urteil 8C_641/2019 (nicht publ. in BGE 146 V 121)","regesteKurz":null,"datum":"2020-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 V 121","urteil":"8C_641/2019"}},
 "bge_146_V_74":{"zitierung":"BGE 146 V 74","regesteKurz":"Art. 69 Abs. 2 ATSG; zum Begriff des Erwerbsausfalls nach Art. 69 Abs. 2 ATSG. Ein Erwerbsausfall von Angehörigen der verunfallten Person kann nur dann im Rahmen von Art. 69 Abs. 2 ATSG als Mehrkosten berücksichtigt werden, wenn er darauf…","datum":"2020-01-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_V_297":{"zitierung":"BGE 147 V 297","regesteKurz":"Art. 23 Abs. 4 lit. a und Abs. 5 AHVG; Art. 46 Abs. 3 AHVV; Wiederaufleben des Anspruchs auf eine Witwen- oder Witwerrente. Der Anspruch auf eine Witwen- oder Witwerrente, der zufolge Wiederverheiratung erloschen ist (Art. 23 Abs. 4 lit. a…","datum":"2021-07-02","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_V_58":{"zitierung":"BGE 148 V 58","regesteKurz":"Art. 34a BVG (je in der vom 1. Januar 2003 bis 31. Dezember 2016 in Kraft gestandenen und in der ab 1. Januar 2017 geltenden Fassung); Art. 24 (in der vom 1. Januar 2011 bis 31. Dezember 2016 in Kraft gestandenen Fassung), Art. 24a BVV 2…","datum":"2022-01-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -18,7 +19,7 @@
 "30":[{"key":"bge_147_V_297","gewicht":0}],
 "47":[{"key":"bge_148_V_58","gewicht":0}],
 "72":[{"key":"bge_146_V_74","gewicht":0}],
-"81":[{"key":"bge_146_V_121","gewicht":0}],
+"81":[{"key":"bge_146_V_121__voll","gewicht":0,"erwaegungen":["E. 2.3.2"]}],
 "82":[{"key":"bge_146_V_121","gewicht":0}],
 "107":[{"key":"bge_146_V_121","gewicht":0}]
 },
@@ -30,7 +31,7 @@
 "30":{"bge":1},
 "47":{"bge":1},
 "72":{"bge":1},
-"81":{"bge":1},
+"81":{"bger":1},
 "82":{"bge":1},
 "107":{"bge":1}
 }

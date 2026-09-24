@@ -78,7 +78,7 @@ import {
   STATUS_RANG, facettenFuerEntscheid, vergleicheDatumAbsteigend,
   type BezugStatus, type BezugsFacetten,
 } from '../../src/lib/verzahnung/facetten';
-import { artikelSchluesselMitBefund, fliesstextOhneApparat, fremdDefinierteKeys } from './entscheide-mapping';
+import { artikelSchluesselMitBefund, artikelSchluesselVonSnapshot, fliesstextOhneApparat, fremdDefinierteKeys } from './entscheide-mapping';
 import { keyVon, kanonZitat, selbstTokens } from './entscheide-identitaet';
 import { baueNummernDominanz, ladeKantonBestand, ladeKantonTitel, loeseKantonZitate, type KantonBestand } from './kanton-norm-resolver';
 
@@ -111,6 +111,21 @@ export interface BezugsKante {
    */
   gewicht: number | null;
   facetten: BezugsFacetten;
+  /**
+   * B-1 (W2·29-WERKBANK-LESER D2): das Datum ist ein Platzhalter (<Jahr>-01-01),
+   * die Quelle nennt kein Entscheiddatum. Nur gesetzt, wenn wahr — sonst fehlt
+   * das Feld (Bestand byte-gleich). Ordnet die Kante ans ENDE ihrer Klasse.
+   */
+  datumUnbekannt?: true;
+  /**
+   * E-1: der Artikel steht NUR in einer nicht in der amtlichen Sammlung
+   * publizierten Erwägung des Urteils. Die Kante zeigt dann nicht auf den BGE,
+   * sondern auf das vollständige Urteil (`<bge-key>__voll`, Register-Verweis mit
+   * Voll-Ansicht) — siehe `unpublizierteSchluessel`.
+   */
+  unpubliziert?: { bge: string; urteil: string };
+  /** E-1: Erwägungs-Marken des Volltexts, in denen der Artikel steht («E. 3.2»). */
+  erwaegungen?: string[];
 }
 
 /** Dokument-Kopf im Shard — EINMAL je Dokument, nicht je Artikel (§15). */
@@ -119,6 +134,10 @@ export interface BezugsDokument {
   regesteKurz: string | null;
   datum: string;
   facetten: BezugsFacetten;
+  /** Nur gesetzt, wenn wahr (B-1): Platzhalter-Datum, Quelle ohne Entscheiddatum. */
+  datumUnbekannt?: true;
+  /** Nur gesetzt bei E-1-Kanten: BGE-Fundstelle und Aktenzeichen des Volltext-Urteils. */
+  unpubliziert?: { bge: string; urteil: string };
 }
 
 /**
@@ -129,6 +148,8 @@ export interface BezugsDokument {
 export interface BezugsEintrag {
   key: string;
   gewicht: number | null;
+  /** Nur bei E-1-Kanten: die Erwägungen des Volltexts, in denen DIESER Artikel steht. */
+  erwaegungen?: string[];
 }
 
 /**
@@ -215,6 +236,10 @@ export interface BezugsBefund {
   fremdVerworfen: string[];
   /** Literatur-Verwurf über die NICHT-bundesgerichtlichen Snapshots (Ergänzung zu §6.7). */
   literaturVerwurfUebrige: { paare: number; nennungen: number; spannen: number };
+  /** E-7: als textgleiche Dublette verworfene Snapshots («verworfen ← behalten»). */
+  dublettenVerworfen: string[];
+  /** E-1: (Artikel-Schlüssel, BGE)-Paare, die auf das Volltext-Urteil umgelenkt wurden. */
+  unpubliziertUmgelenkt: number;
 }
 
 /**
@@ -257,6 +282,112 @@ function gewichtMessbar(gruppe: string): boolean {
  * (Zyklus, check:zyklen).
  */
 export type KantenOrdnung = (a: LeitfallRef, b: LeitfallRef) => number;
+
+// ── E-7: TEXTGLEICHE DUBLETTEN (W2·29-WERKBANK-LESER D2, gemessen 23.9.2026) ──
+//
+// BEFUND: das BS-Portal publiziert einzelne Entscheide ZWEIMAL — zwei Dokumente
+// (eigener nF30_KEY, eigene AG-Nummer), gleiche Geschäftsnummer, gleiches Datum,
+// derselbe Text bis auf Weissraum. Beleg: VD.2025.54, nF30_KEY 78498 (AG.2025.342)
+// und 78499 (AG.2025.343). Der Import führt beide korrekt (ein Snapshot je
+// Portal-Dokument, Count-Gate check:bs-entscheide), die Bezugs-Linie am Artikel
+// zeigte denselben Entscheid aber doppelt.
+//
+// DIE REGEL (Identität, keine Ähnlichkeit, §1): gleiches Gericht, gleiche
+// Nummer, gleiches Datum UND derselbe Text nach Weissraum-Normalisierung (NBSP,
+// U+202F, Soft-Hyphen, Zeilenumbruch → ein Leerzeichen). Behalten wird der
+// Snapshot mit der kleinsten id (bei BS das Dokument mit der blanken GN nach der
+// Kollisionsregel §3.2), die übrigen tragen keine Artikel-Kante. Ihre eigene
+// Seite, ihr Register-Eintrag und ihre Kantons-Erlass-Liste bleiben — nur die
+// Bezugs-Linie zeigt den Entscheid einmal.
+//
+// BEWUSST NICHT ZUSAMMENGEFÜHRT: Dokumente gleicher Nummer und gleichen Datums
+// mit ABWEICHENDEM Text (gemessen: BEZ.2023.46, HB.2023.48, SB.2024.12 —
+// Fassungen mit geändertem Dispositiv bzw. Ziffern; SB.2022.97 — verschiedene
+// Beschuldigte). Welche Fassung gilt, ist eine fachliche Frage, keine
+// Identitätsfrage; beide bleiben sichtbar (§8).
+const weissraum = (t: string): string => t.replace(/[\s\u00a0\u202f\u00ad]+/g, ' ').trim();
+
+function textIdentitaet(s: EntscheidSnapshot): string {
+  const bl = [...(s.abschnitte ?? []), ...(s.auszugAbschnitte ?? [])]
+    .flatMap((a) => a.bloecke.map((b) => weissraum(b.text)));
+  return `${s.gericht}\u0000${s.nummer}\u0000${s.datum}\u0000${bl.join('\u0001')}`;
+}
+
+/** Snapshot-id → id des behaltenen Zwillings, nur für verworfene Dubletten. Rein (§2). */
+export function textgleicheDubletten(auswahl: readonly EntscheidSnapshot[]): Map<string, string> {
+  const gruppen = new Map<string, string[]>();
+  for (const s of auswahl) {
+    const k = textIdentitaet(s);
+    const g = gruppen.get(k) ?? (gruppen.set(k, []), gruppen.get(k)!);
+    g.push(s.id);
+  }
+  const out = new Map<string, string>();
+  for (const ids of gruppen.values()) {
+    if (ids.length < 2) continue;
+    const sortiert = [...ids].sort();
+    for (const id of sortiert.slice(1)) out.set(id, sortiert[0]);
+  }
+  return out;
+}
+
+// ── E-1: ARTIKEL NUR IN EINER NICHT PUBLIZIERTEN ERWÄGUNG ────────────────────
+//
+// BEFUND (Prüfrunde 1, reproduziert 23.9.2026): BGE 152 III 23 stand als
+// «Leitentscheid» an Art. 336c OR. Art. 336c steht aber weder in der Regeste
+// noch im publizierten Auszug (E. 2), sondern nur in E. 3 des vollständigen
+// Urteils 4A_221/2025 — einer Erwägung, die NICHT in die amtliche Sammlung
+// aufgenommen wurde. Die Extraktion las bisher Volltext und Auszug gemeinsam.
+//
+// DIE REGEL: für einen BGE mit getrenntem Volltext (`azaUrteil` + `auszugAbschnitte`
+// — genau die BGE, für die das Register einen `<key>__voll`-Verweis führt) gilt
+// ein Artikel als PUBLIZIERT, wenn ihn Regeste oder Auszug nennen, und als
+// NUR-UNPUBLIZIERT, wenn ihn ausschliesslich der Volltext nennt. Nur-unpublizierte
+// Kanten zeigen auf das vollständige Urteil: key `<bge-key>__voll` (der Register-
+// Verweis leitet mit Voll-Ansicht und ?norm= auf die Detailseite), Klasse 'bger',
+// Zitierung «Urteil <Aktenzeichen> (nicht publ. in BGE <Fundstelle>)», keine
+// BGE-Regeste als Kurzzeile (die gehört zum publizierten Teil). Die
+// Erwägungs-Marken stehen je Artikel an der Kante (`erwaegungen`).
+// Ein Artikel, den `zitierteNormen` trägt, der aber in KEINEM Text steht, bleibt
+// unverändert am BGE — dort ist nicht belegbar, wo er steht (§7).
+//
+// GEWICHT: die In-degree wird für das Urteil als Ganzes gemessen (der Zitier-Graph
+// führt BGE-Fundstelle und Aktenzeichen auf denselben Snapshot); sie gilt für
+// beide Kanten. Eine Trennung nach Zitierform ist ein eigener Schritt.
+export function unpublizierteSchluessel(
+  s: EntscheidSnapshot,
+  schluessel: ReadonlySet<string>,
+): Map<string, string[]> {
+  const out = new Map<string, string[]>();
+  if (s.gericht !== 'bge' || !s.azaUrteil || !s.auszugAbschnitte?.length || !s.bgeReferenz) return out;
+  // Nur wenn der Auszug überhaupt Erwägungen trägt. GEMESSEN 23.9.2026: bei 32
+  // der 1'252 BGE mit getrenntem Volltext enthält `auszugAbschnitte` nur den
+  // Sachverhalt (z. B. 151 II 312: 1'620 Zeichen, keine Erwägung) — der Auszug
+  // ist dort unvollständig erfasst, nicht der BGE ohne Erwägungen. «Nicht im
+  // Auszug» wäre dann keine Aussage über die Publikation; die Kanten bleiben am
+  // BGE (§7: nur umlenken, was belegt ist).
+  if (!s.auszugAbschnitte.some((a) => a.typ === 'erwaegung')) return out;
+  const publiziert = artikelSchluesselVonSnapshot({ ...s, zitierteNormen: [], abschnitte: [] });
+  const volltext = artikelSchluesselVonSnapshot({ ...s, zitierteNormen: [], regeste: null, auszugAbschnitte: [] });
+  const kandidaten = [...schluessel].filter((k) => !publiziert.has(k) && volltext.has(k)).sort();
+  if (!kandidaten.length) return out;
+  for (const k of kandidaten) out.set(k, []);
+  // Erwägungs-Marken: je Block des Volltexts dieselbe Extraktion (§5), nur auf
+  // diesen einen Block beschränkt.
+  for (const a of s.abschnitte) {
+    if (a.typ !== 'erwaegung') continue;
+    for (const b of a.bloecke) {
+      if (!b.marke) continue;
+      const imBlock = artikelSchluesselVonSnapshot({
+        ...s, zitierteNormen: [], regeste: null, auszugAbschnitte: [], abschnitte: [{ typ: a.typ, bloecke: [b] }],
+      });
+      for (const k of kandidaten) {
+        const liste = out.get(k)!;
+        if (imBlock.has(k) && !liste.includes(b.marke)) liste.push(b.marke);
+      }
+    }
+  }
+  return out;
+}
 
 /**
  * Der EINE Bau. Rein und deterministisch (§2): gleiche Snapshot-Folge + gleicher
@@ -305,12 +436,19 @@ export function baueBezugsIndex(
   // ── Durchgang 1: je Snapshot Facetten, Artikel-Schlüssel und Selbst-Tokens ──
   interface Eintrag {
     key: string;
-    ref: Omit<BezugsKante, 'gewicht'>;
+    /** Snapshot-key, unter dem die In-degree gezählt wird (bei `__voll` der BGE). */
+    gewichtKey: string;
+    ref: Omit<BezugsKante, 'gewicht' | 'erwaegungen'>;
     gruppe: string;
     status: BezugStatus;
     schluessel: Set<string>;
+    /** E-1: Erwägungs-Marken je Artikel-Schlüssel (nur `__voll`-Einträge). */
+    erwaegungen?: Map<string, string[]>;
   }
   const eintraege: Eintrag[] = [];
+  const dubletten = textgleicheDubletten(auswahl);
+  const dublettenVerworfen: string[] = [];
+  let unpubliziertUmgelenkt = 0;
   for (const s of auswahl) {
     const facetten = facettenFuerEntscheid(s);
     const status = facetten.status;
@@ -400,19 +538,56 @@ export function baueBezugsIndex(
 
     const { key } = keyVon(s);
     if (kantonErlasse.size) kantonNormKeys.set(key, [...kantonErlasse].sort());
+    // E-7: eine textgleiche Dublette trägt keine Artikel-Kante (ihre Kantons-
+    // Erlass-Liste oben bleibt — die gehört zur eigenen Entscheid-Seite).
+    const zwilling = dubletten.get(s.id);
+    if (zwilling) {
+      dublettenVerworfen.push(`${s.id} ← ${zwilling}`);
+      continue;
+    }
+    // E-1: nur-unpublizierte Artikel wandern auf das Volltext-Urteil.
+    const unpubl = unpublizierteSchluessel(s, schluessel);
+    for (const k of unpubl.keys()) schluessel.delete(k);
     eintraege.push({
       key,
+      gewichtKey: key,
       ref: {
         key,
         zitierung: s.zitierung,
         regesteKurz: kurzzeile(s),
         datum: s.datum,
         facetten,
+        ...(s.datumUnbekannt ? { datumUnbekannt: true as const } : {}),
       },
       gruppe: gewichtsGruppe(s),
       status,
       schluessel,
     });
+    if (unpubl.size) {
+      unpubliziertUmgelenkt += unpubl.size;
+      const vollKey = `${key}__voll`;
+      // Facetten wie der Register-Verweis `__voll` (entscheide-schreiben.ts):
+      // Bundesgericht, gericht 'bger', leitcharakter 'routine' → Klasse 'bger'.
+      const vollFacetten = facettenFuerEntscheid({
+        gericht: 'bger', gerichtstyp: 'bundesgericht', leitcharakter: 'routine', kanton: s.kanton,
+      });
+      eintraege.push({
+        key: vollKey,
+        gewichtKey: key,
+        ref: {
+          key: vollKey,
+          zitierung: `Urteil ${s.azaUrteil!.aktenzeichen} (nicht publ. in BGE ${s.bgeReferenz})`,
+          regesteKurz: null,
+          datum: s.datum,
+          facetten: vollFacetten,
+          unpubliziert: { bge: s.bgeReferenz!, urteil: s.azaUrteil!.aktenzeichen },
+        },
+        gruppe: gewichtsGruppe(s),
+        status: vollFacetten.status,
+        schluessel: new Set(unpubl.keys()),
+        erwaegungen: unpubl,
+      });
+    }
   }
 
   // ── Durchgang 2: Zitier-Graph JE GEWICHTS-GRUPPE ───────────────────────────
@@ -451,29 +626,39 @@ export function baueBezugsIndex(
   for (const artikel of [...proArtikelRoh.keys()].sort()) {
     const liste = proArtikelRoh.get(artikel)!;
     // Gewicht je Gruppe: nur Zitierungen von d' ∈ S_A∩Gruppe auf d ∈ S_A∩Gruppe.
+    // Gewichte über `gewichtKey` (= Snapshot-key): eine `__voll`-Kante zählt als
+    // das Urteil, zu dem sie gehört (E-1, Begründung bei `unpublizierteSchluessel`).
     const inGruppe = new Map<string, Set<string>>();
     for (const e of liste) {
       const set = inGruppe.get(e.gruppe) ?? (inGruppe.set(e.gruppe, new Set()), inGruppe.get(e.gruppe)!);
-      set.add(e.key);
+      set.add(e.gewichtKey);
     }
-    const gewicht = new Map<string, number>(liste.map((e) => [e.key, 0]));
+    const gewicht = new Map<string, number>(liste.map((e) => [e.gewichtKey, 0]));
     for (const e of liste) {
       const set = inGruppe.get(e.gruppe)!;
-      for (const c of zitiertKeys.get(e.key) ?? []) {
+      for (const c of zitiertKeys.get(e.gewichtKey) ?? []) {
         if (set.has(c)) gewicht.set(c, (gewicht.get(c) ?? 0) + 1);
       }
     }
-    const kanten: BezugsKante[] = liste.map((e) => ({
-      ...e.ref,
-      gewicht: gewichtMessbar(e.gruppe) ? (gewicht.get(e.key) ?? 0) : null,
-    }));
+    const kanten: BezugsKante[] = liste.map((e) => {
+      const erw = e.erwaegungen?.get(artikel);
+      return {
+        ...e.ref,
+        gewicht: gewichtMessbar(e.gruppe) ? (gewicht.get(e.gewichtKey) ?? 0) : null,
+        ...(erw && erw.length ? { erwaegungen: erw } : {}),
+      };
+    });
     // Erst Status-Klasse (deklarierte Rangordnung), dann CHRONOLOGISCH neu→alt
     // INNERHALB der Klasse (B7), Gleichstand über die bestehende Bestands-Ordnung
     // — so bleibt die Ordnung total (§2) und der Tiebreak hat genau EINE Stelle
     // (§5: `vergleicheLeitfaelle`, hereingereicht als `ordnung`).
     // Nie über Klassen hinweg sortieren (§8) — die Klassentrennung ist der Punkt.
+    // B-1: eine Kante mit Platzhalter-Datum (`datumUnbekannt`) hat KEINEN Ort auf
+    // der Zeitachse — sie steht am Ende ihrer Klasse, statt mit einem erfundenen
+    // 1. Januar mitten in der Linie (Befund B-1, 23.9.2026).
     kanten.sort((a, b) =>
       STATUS_RANG[a.facetten.status] - STATUS_RANG[b.facetten.status]
+      || (a.datumUnbekannt ? 1 : 0) - (b.datumUnbekannt ? 1 : 0)
       || vergleicheDatumAbsteigend(a.datum, b.datum)
       || ordnung(alsLeitfall(a), alsLeitfall(b)));
     for (const k of kanten) kantenJeStatus[k.facetten.status] = (kantenJeStatus[k.facetten.status] ?? 0) + 1;
@@ -491,6 +676,8 @@ export function baueBezugsIndex(
       nummerMinderheit: [...nummerMinderheit].sort(),
       fremdVerworfen: [...fremdVerworfen].sort(),
       literaturVerwurfUebrige,
+      dublettenVerworfen: dublettenVerworfen.sort(),
+      unpubliziertUmgelenkt,
     },
   };
 }
@@ -567,9 +754,11 @@ export function baueBezugsShards(index: BezugsIndex, datum: string): Map<string,
           koepfe.set(k.key, {
             zitierung: k.zitierung, regesteKurz: k.regesteKurz,
             datum: k.datum, facetten: k.facetten,
+            ...(k.datumUnbekannt ? { datumUnbekannt: true as const } : {}),
+            ...(k.unpubliziert ? { unpubliziert: k.unpubliziert } : {}),
           });
         }
-        alle.push({ key: k.key, gewicht: k.gewicht });
+        alle.push({ key: k.key, gewicht: k.gewicht, ...(k.erwaegungen ? { erwaegungen: k.erwaegungen } : {}) });
       }
       proArtikel[token] = alle;
       gesamtProArtikel[token] = gesamt;

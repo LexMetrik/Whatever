@@ -1,25 +1,25 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"RVOG",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_146_II_384":{"zitierung":"BGE 146 II 384","regesteKurz":"Art. 87 BV; Art. 9a und Art. 9b EBG; Art. 19-19d KPFV; Art. 9a und Art. 9b NZV; Netzzugang, Netznutzung und Trassenzuteilung; Netznutzungskonzept und Netznutzungspläne; Interessenabwägung im Rahmen der Verteilung der Trassen zwischen dem…","datum":"2020-06-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_148_II_92":{"zitierung":"BGE 148 II 92","regesteKurz":"Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und…","datum":"2021-10-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_II_384__voll":{"zitierung":"Urteil 2C_614/2019 (nicht publ. in BGE 146 II 384)","regesteKurz":null,"datum":"2020-06-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 II 384","urteil":"2C_614/2019"}},
+"bge_148_II_92__voll":{"zitierung":"Urteil 1C_333/2020 (nicht publ. in BGE 148 II 92)","regesteKurz":null,"datum":"2021-10-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 92","urteil":"1C_333/2020"}},
 "bge_148_IV_298":{"zitierung":"BGE 148 IV 298","regesteKurz":"Anwendungsbereich von aArt. 260 ter Ziff. 1 bzw. Art. 260 ter Abs. 1 StGB, von Art. 2 Abs. 1 des \"Al-Qaïda/IS-Gesetzes\" vom 12. Dezember 2014 und von Art. 74 Abs. 4 NDG; Vereinbarkeit von Art. 2 Abs. 1 des Al-Qaïda/ IS-Gesetzes mit dem…","datum":"2022-04-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_IV_228":{"zitierung":"BGE 151 IV 228","regesteKurz":"Art. 14 Abs. 1 VStrR; Verordnung über die Verbürgung von Darlehen zur Finanzierung schweizerischer Hochseeschiffe; Leistungsbetrug in der Tatbestandsvariante des Erfüllungsbetrugs. Aus einer bundesrechtskonformen Auslegung des geltenden…","datum":"2025-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_IV_228__voll":{"zitierung":"Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)","regesteKurz":null,"datum":"2025-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 IV 228","urteil":"7B_540/2023"}}
 },
 "proArtikel":{
-"2":[{"key":"bge_148_II_92","gewicht":0}],
-"38":[{"key":"bge_151_IV_228","gewicht":0}],
-"43":[{"key":"bge_146_II_384","gewicht":0}],
-"47":[{"key":"bge_151_IV_228","gewicht":0}],
+"2":[{"key":"bge_148_II_92__voll","gewicht":0,"erwaegungen":["E. 5.1.1"]}],
+"38":[{"key":"bge_151_IV_228__voll","gewicht":0,"erwaegungen":["E. 6.3.3"]}],
+"43":[{"key":"bge_146_II_384__voll","gewicht":0,"erwaegungen":["E. 1.2"]}],
+"47":[{"key":"bge_151_IV_228__voll","gewicht":0,"erwaegungen":["E. 6.3.3"]}],
 "7d":[{"key":"bge_148_IV_298","gewicht":0}]
 },
 "gesamtProArtikel":{
-"2":{"bge":1},
-"38":{"bge":1},
-"43":{"bge":1},
-"47":{"bge":1},
+"2":{"bger":1},
+"38":{"bger":1},
+"43":{"bger":1},
+"47":{"bger":1},
 "7d":{"bge":1}
 }
 }

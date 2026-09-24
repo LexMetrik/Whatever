@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-23",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2023.4",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "UV.2023.4",
       "bgeReferenz": null,
-      "zitierung": "Sozialversicherungsgericht BS UV.2023.4",
-      "datum": "2023-01-01",
+      "zitierung": "Sozialversicherungsgericht BS UV.2023.4 vom 24.11.2023",
+      "datum": "2023-11-24",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "sozialversicherung",
@@ -270,10 +270,9 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=76185&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-09-23",
       "fassungsToken": "2023-12-21",
       "sha": "228b6620c9843195938add0ba0425f2318b405897edae7301fc8a65f0d4c78c8",
-      "datumUnbekannt": true,
       "erstpublikation": "2023-12-21",
       "aktualisiert": "2023-12-21",
       "nummerSekundaer": "SVG.2023.253",

@@ -29,6 +29,14 @@ interface BezugsDokument {
   regesteKurz: string | null;
   datum: string;
   facetten: BezugsFacetten;
+  /** Nur gesetzt, wenn wahr: `datum` ist ein Platzhalter, die Quelle nennt kein Entscheiddatum (B-1). */
+  datumUnbekannt?: true;
+  /**
+   * Nur an Kanten auf das VOLLSTÄNDIGE Urteil (`<bge-key>__voll`): der Artikel
+   * steht ausschliesslich in einer nicht in der amtlichen Sammlung publizierten
+   * Erwägung (E-1). `bge` = Fundstelle, `urteil` = Aktenzeichen.
+   */
+  unpubliziert?: { bge: string; urteil: string };
 }
 
 /**
@@ -44,6 +52,8 @@ interface BezugsDokument {
 interface BezugsEintrag {
   key: string;
   gewicht: number | null;
+  /** E-1: Erwägungs-Marken des Volltexts, in denen DIESER Artikel steht («E. 3»). */
+  erwaegungen?: string[];
 }
 
 export interface BezugsShard {
@@ -63,6 +73,7 @@ export interface BezugsShard {
 export interface Bezug extends BezugsDokument {
   key: string;
   gewicht: number | null;
+  erwaegungen?: string[];
 }
 
 /** Was ein Filter auswählen kann. Leere/fehlende Achse = keine Einschränkung. */
@@ -145,7 +156,7 @@ export function bezuegeFuerArtikel(shard: BezugsShard, artikelToken: string): Be
   for (const e of shard.proArtikel[artikelToken] ?? []) {
     const kopf = shard.dokumente[e.key];
     if (!kopf) continue;
-    out.push({ key: e.key, gewicht: e.gewicht, ...kopf });
+    out.push({ key: e.key, gewicht: e.gewicht, ...kopf, ...(e.erwaegungen ? { erwaegungen: e.erwaegungen } : {}) });
   }
   return out;
 }

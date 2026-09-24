@@ -1,16 +1,17 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"EBG",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_146_II_347":{"zitierung":"BGE 146 II 347","regesteKurz":"Art. 18, 18a NHG, Art. 3, 4, 5 Auenverordnung, Art. 17 RPG, Art. 18, 19, 21 EBG, Art. 2, 5, 7 JSG, Art. 4 FWG; Schutz eines Auengebiets von nationaler Bedeutung. Schutz der Biotop-Inventargebiete von nationaler Bedeutung durch die vom…","datum":"2020-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_146_II_384":{"zitierung":"BGE 146 II 384","regesteKurz":"Art. 87 BV; Art. 9a und Art. 9b EBG; Art. 19-19d KPFV; Art. 9a und Art. 9b NZV; Netzzugang, Netznutzung und Trassenzuteilung; Netznutzungskonzept und Netznutzungspläne; Interessenabwägung im Rahmen der Verteilung der Trassen zwischen dem…","datum":"2020-06-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_II_384__voll":{"zitierung":"Urteil 2C_614/2019 (nicht publ. in BGE 146 II 384)","regesteKurz":null,"datum":"2020-06-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 II 384","urteil":"2C_614/2019"}},
 "bge_148_III_343":{"zitierung":"BGE 148 III 343","regesteKurz":"Art. 40b Abs. 1 EBG; Gefährdungshaftung nach Eisenbahngesetz; Art. 40c EBG; Entlastungsgründe. Nach Art. 40c EBG wird der Inhaber eines Eisenbahnunternehmens von der Haftpflicht für den Schaden aus dem Betrieb der Eisenbahn entlastet, wenn…","datum":"2022-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_699":{"zitierung":"BGE 151 II 699","regesteKurz":"Art. 39 Abs. 1 und 3 EBG; Art. 18 Abs. 1 und Art. 27 Abs. 1 ArG; Art. 26 Abs. 2 und 4 ArGV 2; koordinierte Auslegung von Art. 39 Abs. 1 und 3 EBG sowie von Art. 26 Abs. 2 und 4 ArGV 2 betreffend die Sonntagsarbeit an Bahnhöfen. Bei…","datum":"2025-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VG.2024.1":{"zitierung":"Appellationsgericht BS VG.2024.1 vom 18.08.2025","regesteKurz":"Rechtliche Zulässigkeit der Gemeindeinitiative für eine vernünftige und verhältnismässige Umsetzung des…","datum":"2025-08-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_146_II_384","gewicht":0},{"key":"bs_appellationsgericht_VG.2024.1","gewicht":null}],
+"1":[{"key":"bge_146_II_384__voll","gewicht":0,"erwaegungen":["E. 4"]},{"key":"bs_appellationsgericht_VG.2024.1","gewicht":null}],
 "18":[{"key":"bge_146_II_347","gewicht":0}],
 "19":[{"key":"bge_146_II_347","gewicht":0}],
 "21":[{"key":"bge_146_II_347","gewicht":0}],
@@ -21,7 +22,7 @@
 "9b":[{"key":"bge_146_II_384","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1,"kantonal":1},
+"1":{"bger":1,"kantonal":1},
 "18":{"bge":1},
 "19":{"bge":1},
 "21":{"bge":1},
