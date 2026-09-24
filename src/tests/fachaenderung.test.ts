@@ -18,7 +18,7 @@ import {
   pruefeFachaenderungForm,
   squashVerstoss,
 } from '../../scripts/analyse/fachaenderung-kern';
-import { assertionMengen } from '../../scripts/analyse/test-assertion-diff';
+import { assertionMengen } from '../../scripts/analyse/assertion-mengen';
 
 const RISIKO = 'src/lib/verjaehrung.ts';
 const NEUTRAL = 'src/lib/startseiteConfig.ts';

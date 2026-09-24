@@ -232,6 +232,7 @@ export const TOR_DATEIEN: readonly string[] = [
   'scripts/golden-outputs.ts',
   'golden/lexmetrik-golden.json',
   'scripts/analyse/test-assertion-diff.ts',
+  'scripts/analyse/assertion-mengen.ts', // Bibliothek des Assertion-Diffs (24.9.2026)
   // Fachänderungs-Riegel (RL-03). Bis 24.9.2026 getrennt als
   // TOR_DATEIEN_VORAUSSCHAUEND geführt, weil RL-03 parallel baute und der
   // Existenz-Test sie noch nicht fand; seit RL-03 im selben Zweig auf RL-02

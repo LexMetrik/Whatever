@@ -46,7 +46,7 @@
 import { posix } from 'node:path';
 import ts from 'typescript';
 import { behalten } from '../gegenpruefung/kern';
-import { assertionMengen, type Mengen } from './test-assertion-diff';
+import { assertionMengen, type Mengen } from './assertion-mengen';
 
 export const GOLDEN = 'golden/lexmetrik-golden.json';
 
