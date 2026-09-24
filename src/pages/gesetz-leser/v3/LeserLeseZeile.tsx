@@ -19,8 +19,12 @@ import { SatzspiegelKontext } from './satzspiegel';
 // Inhalte kommen als Slots herein, sie kennt weder Modell noch Erlass.
 
 export function LeserLeseZeile({
-  bild, vollflaechig, onSchieneAuf, leiste, zelle, panelZone, trefferSpalte,
+  bild, vollflaechig, onSchieneAuf, blattSchiene, leiste, zelle, panelZone, trefferSpalte,
 }: {
+  /** Entscheid A (24.9.2026): die Schiene RECHTS, solange das Blatt als Spur
+   *  zur Wahl steht und zu ist (`bild.blattSchiene`) — fertig gebaut vom
+   *  Rahmen (`leisteAufbau.schieneAufbau`), hier nur angeordnet. */
+  blattSchiene: ReactNode;
   /** Die Breiten-Entscheidung. `bild.spalten === undefined` = kein Grid, alles
    *  steht untereinander wie vor Ä60 (c). */
   bild: RahmenBild;
@@ -31,9 +35,10 @@ export function LeserLeseZeile({
    *  Datei, die den Hüllen-Zustand selbst liest, verzweigt auf ihn. Diese Datei
    *  verzweigt auf eine EIGENSCHAFT DER FLÄCHE, die ihr der Rahmen mitteilt. */
   vollflaechig: boolean;
-  /** Klick auf die Schiene — läuft im Rahmen durch den Stick-Ausgleich.
-   *  D33 (7.9.2026): er holt keinen Platz mehr vom Blatt zurück, weil das Blatt
-   *  keine Spur mehr belegt (`bild.schieneHoltPlatz` ist mit ihr gefallen). */
+  /** Klick auf die Gliederungs-Schiene — läuft im Rahmen durch den
+   *  Stick-Ausgleich. Seit Entscheid A (24.9.2026) holt er wieder Platz vom
+   *  offenen Blatt zurück, wo die Gliederung ihm gewichen ist
+   *  (`bild.schieneHoltPlatz`; D33 hatte das mit der Spur gestrichen). */
   onSchieneAuf: () => void;
   /** Inhalt der Gliederungsspalte (Übersicht · Feld · Baum). */
   leiste: ReactNode;
@@ -63,12 +68,24 @@ export function LeserLeseZeile({
           //
           // E-4 (31.8.2026): Dauer und Kurve kommen aus den Motion-Token
           // (`duration-slow`, Default-Kurve = `var(--ease)`), nie roh.
-          'grid gap-5 motion-safe:transition-[grid-template-columns] motion-safe:duration-slow'
+          // ENTSCHEID A (24.9.2026): KEIN Übergang, wo das Blatt eine Spur hat.
+          // Gemessen @1280 (StPO Art. 5): mit Übergang lag der gelesene Artikel
+          // nach dem Öffnen 29 px tiefer (154 → 183), das Blatt zeigte Art. 4;
+          // mit `reducedMotion` 0 px. Der Grund: `useStickAusgleich` hält die
+          // Lesestelle im Layout-Effekt fest — die 300 ms Spalten-Animation
+          // brechen den Text DANACH weiter um. Ohne Übergang ist das erste Bild
+          // schon das Endbild, und die Lesestelle bleibt, wo sie war.
+          `grid gap-5${bild.blattForm === 'spalte' ? '' : ' motion-safe:transition-[grid-template-columns] motion-safe:duration-slow'}`
         : ''}
       style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
       {bild.schiene && (
         // Optik und Herleitung in `./leisteAufbau` (C5b, §6.6).
-        schieneAufbau(onSchieneAuf)
+        schieneAufbau({
+          wort: 'Gliederung', glyphe: '☰', onAuf: onSchieneAuf,
+          // Holt die Schiene nur Platz vom offenen Blatt zurück, sagt sie es.
+          titel: bild.schieneHoltPlatz ? 'Gliederung einblenden (schliesst das Erlass-Blatt)' : 'Gliederung einblenden',
+          merkmale: { 'data-v3-gliederung-schiene': true },
+        })
       )}
       {bild.gliederungSpalte && (
         <aside role="navigation" aria-label="Gliederung" data-v3-aside
@@ -111,13 +128,9 @@ export function LeserLeseZeile({
           (`leser-klapp-sonde`, `leser-v3-kontext-cls`, `w224-leser-d32-d33`). */}
       <SatzspiegelKontext.Provider value={bild.satzspiegel}>
       <div className="relative min-w-0" data-lr-spiegel={bild.satzspiegel}>
-        {/* D33 (7.9.2026): die Panel-Zone steht IN der Lese-Zelle, nicht neben
-            ihr. Ihre klebende Gestalt braucht einen `relative`-Bezug und eine
-            natürliche Lage unter dem Kopf-Block — beides gibt genau diese Zelle
-            her (Herleitung in `./LeserPanelZone`). Sie nimmt keinen Platz: im
-            Ruhezustand ist sie `display: contents` ohne Kinder, offen eine
-            0-Höhen-Hülle mit absolut gesetztem Blatt. */}
-        {panelZone}
+        {/* D33 (7.9.2026) stellte die Panel-Zone IN diese Zelle (klebende
+            Überlagerung). Entscheid A (24.9.2026): sie steht wieder NEBEN ihr,
+            als letztes Kind der Zeile — s. u. */}
         <div aria-hidden data-v3-blur="oben" className="pointer-events-none sticky z-sticky h-0 overflow-visible print:hidden"
           style={{ top: 'var(--nt-stick)' }}>
           <div className="h-4 bg-gradient-to-b from-paper/70 to-transparent" />
@@ -136,6 +149,14 @@ export function LeserLeseZeile({
         {trefferSpalte}
       </div>
       </SatzspiegelKontext.Provider>
+      {/* Entscheid A (24.9.2026) · DIE RECHTE SPUR: zu die Schiene, offen die
+          Panel-Zone. Die Zone steht IMMER hier (auch zu und als Sheet) — an
+          derselben Stelle im Baum, damit Öffnen und Schliessen sie nicht neu
+          einhängen. Zu ist sie `display: contents` ohne Kinder (keine Box,
+          keine Grid-Zelle); offen als Spur ist SIE die dritte Grid-Zelle;
+          als Sheet sind ihre Kinder `fixed` bzw. portiert. */}
+      {bild.blattSchiene && blattSchiene}
+      {panelZone}
     </div>
   );
 }

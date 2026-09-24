@@ -145,6 +145,68 @@ test.describe('W2·5m/E1 — der Umschalter und das Blättern', () => {
     await expect(page.locator('[data-v3-panel]')).toHaveCount(0)
   })
 
+  // ── D-E4 × Entscheid A (Gegenprüfung #1040, 24.9.2026) ────────────────────
+  // Auf 681a65472 (@1440 OR) war nur die Panel-Zone gegated: die Schiene
+  // «‹ Erlass-Blatt» stand im Einzelmodus, ihr Klick reservierte eine tote
+  // 380-px-Spur (Spalten `288px 708px 36px` → `288px 684px 380px`, Rahmen
+  // 1072 → 1392 px), der Kopf zeigte «Erlass-Blatt ausblenden ›» mit
+  // `aria-controls` ins Leere. ROT ZU BEKOMMEN (§6.7): in `v3/LeserRahmenV3.tsx`
+  // `einzelModus: imEinzel` → `einzelModus: false` ⇒ «keine Blatt-Schiene» rot.
+  test('D-E4 · @1440 im Einzelmodus: keine Blatt-Schiene, kein Griff, «r» öffnet nichts — zurück gilt der gemerkte Zustand', async ({ page }) => {
+    const spurenUndRahmen = () => page.evaluate(() => {
+      const rahmen = document.querySelector('[data-leser-v3="rahmen"]')!
+      const zeile = [...rahmen.querySelectorAll<HTMLElement>('div')].find((d) => d.style.gridTemplateColumns)
+      return {
+        spuren: zeile ? getComputedStyle(zeile).gridTemplateColumns.split(' ').length : 0,
+        rahmen: Math.round(rahmen.getBoundingClientRect().width),
+      }
+    })
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(`${OR}#art-337_c`)
+    await rahmenBereit(page)
+    // Gesamtansicht: die Schiene steht; das Blatt wird geöffnet (gemerkter Zustand).
+    await expect(page.locator('[data-v3-blatt-schiene]')).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-blatt-schiene]').click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await expect.poll(async () => (await spurenUndRahmen()).spuren).toBe(3)
+
+    await waehleLesart(page, 'artikel')
+    await expect(page.locator('[data-einzel-artikel]')).toBeVisible({ timeout: 20_000 })
+    const pruefeKeinBlatt = async (wann: string) => {
+      await expect(page.locator('[data-v3-blatt-schiene]'), `${wann}: Blatt-Schiene steht`).toHaveCount(0)
+      await expect(page.locator('[data-v3-blatt-zu]'), `${wann}: Kopf-Griff «Erlass-Blatt ausblenden»`).toHaveCount(0)
+      await expect(page.locator('[data-v3-panel-oeffner]'), `${wann}: ein Blatt-Öffner steht`).toHaveCount(0)
+      await expect(page.locator('[data-v3-panel]'), `${wann}: Panel gemountet`).toHaveCount(0)
+      expect(await spurenUndRahmen(), `${wann}: tote Blatt-Spur oder geweiteter Rahmen`).toEqual({ spuren: 2, rahmen: 1072 })
+    }
+    await pruefeKeinBlatt('Einzelmodus mit gemerkt offenem Blatt')
+    // Menü zu, Fokus aus jedem Feld — sonst schluckte das Menü die Taste.
+    await page.locator('body').click({ position: { x: 5, y: 5 } })
+    await expect(page.locator('[data-v3-modus="artikel"]')).toBeHidden()
+    await page.keyboard.press('r')
+    await page.waitForTimeout(300)
+    await pruefeKeinBlatt('nach «r»')
+
+    // Zurück in der Gesamtansicht gilt der gemerkte Zustand wieder.
+    await waehleLesart(page, 'erlass')
+    await expect(page.locator('[data-einzel-artikel]')).toHaveCount(0, { timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await expect.poll(async () => (await spurenUndRahmen()).spuren).toBe(3)
+    await page.locator('[data-v3-blatt-zu]').click()
+    await expect(page.locator('[data-v3-blatt-schiene]')).toBeVisible()
+  })
+
+  test('D-E4 · @1000 im Einzelmodus: auch der Kopf-Griff (ErlassGriff) fehlt — kein toter Klick', async ({ page }) => {
+    await page.setViewportSize({ width: 1000, height: 900 })
+    await page.goto(OR)
+    await rahmenBereit(page)
+    await expect(page.locator('[data-v3-panel-oeffner]').first()).toBeVisible({ timeout: 20_000 })
+    await page.goto(einzel(OR, '337_c'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel-oeffner]')).toHaveCount(0)
+  })
+
   test('D-E1 · in der GESAMTANSICHT steht kein Nachbar-Pfeil mehr (Rückbau #854)', async ({ page }) => {
     await page.goto(`${OR}#art-337_c`)
     await rahmenBereit(page)

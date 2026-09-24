@@ -52,7 +52,7 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
   // Was der Fall unverändert prüft: der Öffner führt wirklich ins Panel, und
   // die Entscheide stehen darin. Dass die Zahl genau einmal vorkommt, misst
   // `e2e/w224-d35-f2-kopf.e2e.ts` (a) mit eigener Rot-Probe.
-  test('(a) D @1440 StPO: der Kopf-Griff führt ins Panel — ohne eine Zahl zu nennen', async ({ page }) => {
+  test('(a) D @1440 StPO: der Griff führt ins Panel — ohne eine Zahl zu nennen', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/STPO')
@@ -88,10 +88,18 @@ test.describe('H3 — Zähler, Lasche, F8-Regel', () => {
     await expect(page.locator('[data-v3-panel]')).toBeVisible()
     await expect(zaehler).toHaveAttribute('aria-expanded', 'true')
 
-    // Das Öffnen ändert die Beschriftung nicht — die N1-Falle («zwei Namen für
-    // denselben Knopf») bleibt geschlossen, jetzt baulich statt durch Rechnung.
+    // ── §6.3-DEKLARATION (Entscheid A, David 24.9.2026) ────────────────────
+    // Hier stand «das Öffnen ändert die Beschriftung nicht» (N1/D33: ein Knopf,
+    // der unter dem Cursor umbenennt). Seit Entscheid A («Echte dritte Spalte …
+    // analog Gliederung») ist der Griff ab 1024 ZWEI Orte wie bei der
+    // Gliederung: zu die Schiene «‹ Erlass-Blatt», offen «Erlass-Blatt
+    // ausblenden ›» im Kopf — je Lage GENAU EINER (Zählung unten). Die N1-Falle
+    // bleibt geschlossen, weil beide denselben Gegenstand nennen und die
+    // Handlung dazu sagen; geprüft wird das jetzt am Wortlaut beider Lagen.
+    expect(textVor, 'die Schiene nennt das Erlass-Blatt nicht').toContain('Erlass-Blatt')
+    await expect(zaehler, 'offen steht mehr oder weniger als EIN Griff').toHaveCount(1)
     expect(((await zaehler.textContent()) ?? '').trim(),
-      'die Beschriftung wechselt beim Öffnen').toBe(textVor)
+      'offen sagt der Griff nicht, was er tut').toMatch(/^Erlass-Blatt ausblenden\s*›$/)
 
     // Und die Entscheide stehen wirklich im Panel, nicht bloss der Reiter.
     await expect(page.locator('[data-v3-panel] [data-v3-panel-gruppe]').first()).toBeVisible({ timeout: 20_000 })

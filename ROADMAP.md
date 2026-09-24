@@ -470,7 +470,13 @@ Umschichtung 20.9.2026 (2)):*
   Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —
   und die letzten Alt-Stylesheet-Reste samt abgelösten Reglementen und Fahrplänen löschen.
   Grenzen: `check:sediment` grün ohne Ausnahme; datierte Belege (`abnahme/**`) bleiben.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5 + §7.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f (Scheiben S0–S5) + §7.
+
+- [ ] **Werkbank-Umbau Nachlauf: Design-Feinpaket und Leser-Nachlauf** *(`W2·29-WERKBANK-NACHLAUF`, Entscheid David 24.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-NACHLAUF · status: ready · blocker: null · dep: [W2·29-WERKBANK-REST, W2·29-WERKBANK-LESER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: N1 Dunkel-Paket, Mono-Diät, Motiv-Katalog, 14-px-Radius der Flächen, CSS-Querschnitt; N2 was
+  LESER bewusst umgebucht hat (NormText schneiden, NormChip-Ort, Akkordeon, E3 u. a.). Aus REST gelöst,
+  damit REST im Abbruchkriterium bleibt (§2 Ziff. 4). **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f.
 
 - [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
   <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
@@ -541,16 +547,16 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Rechtslogik — Befunde Prüfung 23.9.2026  *(`feld: rechtslogik`)*
 
-- [~] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W0 · status: wip · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [x] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W0 · status: done · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-01 (dieser Schritt) · RL-02 (Risiko-Grenze, Gegenprüfungs-Pflicht auch für
   Tor-Dateien selbst, W-02 entschieden) · RL-03 (Fachänderungs-Riegel für
   Fixes ausserhalb der Risiko-Grenze). Muss vor jeder anderen RL-Welle gelandet
   sein.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1.
 
-- [ ] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W1 · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [~] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W1 · status: wip · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-11 (vorgezogen, «Aufgehoben seit») dann RL-04…RL-10, RL-12…RL-14:
   Mietkündigung, SchKG-Weiterzug, Gewährleistung, Fristen-Anknüpfung,
   Verjährung, Erbteilung, Mietvertrag, Katalog-Status, Sperrfrist-Rückfall,
@@ -602,8 +608,8 @@ Umschichtung 20.9.2026 (2)):*
   zweites Schema-Modell (§5), PDF und DOCX aus demselben Assemble-Ergebnis, Golden byte-gleich.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
-- [~] **Werkbank-Umbau Schritt 5: die 20 Rechner, einzeln** *(`W2·29-WERKBANK-RECHNER`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-RECHNER · status: wip · blocker: null · dep: [W2·29-WERKBANK-VORLAGEN] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau Schritt 5: die 20 Rechner, einzeln** *(`W2·29-WERKBANK-RECHNER`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-RECHNER · status: done · blocker: null · dep: [W2·29-WERKBANK-VORLAGEN] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock und Exportleiste; die 20 Rechner
   ziehen einzeln um. Grenzen: **Rechenfälle werden nie abstrahiert (§1)** — lieber 20 Handgriffe
   als eine Fabrik, die zwei rechtlich verschiedene Fälle gleich behandelt; Engine-Tests

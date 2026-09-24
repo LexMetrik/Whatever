@@ -98,12 +98,14 @@ export const RECHTSSCHUTZ: Record<string, string> = {
   // Normen-Überwachung). Byte-Druck darauf träfe die Rechtsdaten-Kette — im
   // Zweifel ausgenommen.
   'scripts/check-ci-laeufe.ts': 'Wächter-Motor über die Normen-/Korpus-Läufe',
-  // Paar check-testtreue.ts ↔ testtreue-kern.ts: das Tor schützt §6.3 — die
-  // Integrität der Rechtslogik-Tests (Tests werden bei Refactorings nicht
-  // angepasst). Byte-Druck darauf träfe genau die Prüftiefe, die §6.3 sichert
-  // — im Zweifel ausgenommen (Nachzug-Entscheid 20.9.2026).
-  'scripts/check-testtreue.ts': 'Testtreue-Wächter (§6.3) — Integrität der Rechtslogik-Tests',
-  'scripts/testtreue-kern.ts': 'Helfer von check-testtreue.ts — dieselbe Ausnahme',
+  // Paar check-fachaenderung.ts ↔ fachaenderung-kern.ts (RL-03, Nachfolger
+  // von check-testtreue, Nachzug-Entscheid 20.9.2026): schützt §6.3 — die
+  // Integrität der Rechtslogik-Tests; im Zweifel ausgenommen.
+  'scripts/check-fachaenderung.ts': 'Fachänderungs-Riegel (§6.3) — Integrität der Rechtslogik-Tests',
+  'scripts/analyse/fachaenderung-kern.ts': 'Helfer von check-fachaenderung.ts — dieselbe Ausnahme',
+  // 24.9.2026: die R2-Erkennung (Assertion-Multimengen) aus test-assertion-diff.ts
+  // herausgelöst (vite-node-CLI-Fix, Gegenprüfung RL-03) — Kern des Riegels.
+  'scripts/analyse/assertion-mengen.ts': 'Assertion-Erkennung von check-fachaenderung.ts — dieselbe Ausnahme',
   '.github/workflows/waechter.yml': 'Wächter über die Normen-/Korpus-Läufe',
   '.github/workflows/fedlex-frische.yml': 'Fedlex-Frische',
   '.github/workflows/normen-monitor.yml': 'Normen-/Verfall-Überwachung',
