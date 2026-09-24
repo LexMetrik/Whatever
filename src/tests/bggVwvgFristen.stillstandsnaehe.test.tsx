@@ -82,13 +82,16 @@ describe('A16 · BGG-Tagesfrist endet Sa/So/Feiertag unmittelbar vor dem Stillst
   });
 
   it('Anzeige: ZPO-Preset «Beschwerde ans Bundesgericht» (BGG-Engine) zeigt die Warnung', () => {
-    const search = '?p=schied_bger&e=2026-03-18&u=tage&l=10&v=ordentlich&n=gesetzlich&k=ZH';
+    // Preset ist auf 30 Tage fixiert (linkPreset prüft l=30): 26.2.2026 + 30 T
+    // → Tag 30 = Sa 28.3.2026, gleiche Konstellation wie A16.
+    const search = '?p=schied_bger&e=2026-02-26&u=tage&l=30&v=ordentlich&n=gesetzlich&k=ZH';
     vi.stubGlobal('window', { location: { search, hash: '', pathname: '/rechner/zpo-fristen', origin: 'https://lexmetrik.ch' } });
     const html = renderToString(
       <MemoryRouter initialEntries={['/rechner/zpo-fristen' + search]}>
         <LocaleProvider><ZpoFristenForm /></LocaleProvider>
       </MemoryRouter>,
     ).replace(/<!-- -->/g, '');
+    expect(html).toMatch(/Fristende nach BGG/);
     expect(html).toMatch(datumRe('13.04.2026'));
     expect(html).toMatch(/Fristende kurz vor dem Stillstand/);
     expect(html).toMatch(datumRe('30.03.2026'));
