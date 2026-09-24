@@ -14594,7 +14594,7 @@
      },
      {
       "bausteinId": "VV_verzicht",
-      "text": "Hinsichtlich Ihrer Forderung (Werklohnforderung aus Werkvertrag vom 1. Februar 2026) verzichte ich hiermit bis zum 31.12.2027 auf die Erhebung der Einrede der Verjährung – längstens jedoch für die nach Art. 141 Abs. 1 OR zulässige Höchstdauer von zehn Jahren ab Beginn der Verjährung."
+      "text": "Hinsichtlich Ihrer Forderung (Werklohnforderung aus Werkvertrag vom 1. Februar 2026) verzichte ich hiermit mit Wirkung ab dem Datum dieser Erklärung bis zum 31.12.2027 auf die Erhebung der Einrede der Verjährung, längstens jedoch für zehn Jahre ab dem Datum dieser Erklärung (Art. 141 Abs. 1 OR)."
      },
      {
       "bausteinId": "VV_vorbehalt",
@@ -14616,8 +14616,8 @@
       "stricheErlaubt": true
      }
     ],
-    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens für die gesetzlich zulässige Höchstdauer (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.",
-    "version": "1.0.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101)"
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens zehn Jahre ab dem Datum der Erklärung (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.",
+    "version": "1.1.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101; VB-01 Laufbeginn ab Erklärung)"
    },
    "aufgenommen": [
     "VV_absender",
@@ -14654,7 +14654,7 @@
     },
     {
      "bausteinId": "VV_verzicht",
-     "begruendung": "Kern der Erklärung: befristeter Einredeverzicht mit salvatorischer Begrenzung auf die gesetzliche Höchstdauer – das Dokument kann die Grenze des Art. 141 Abs. 1 OR damit nie überschreiten.",
+     "begruendung": "Kern der Erklärung: befristeter Einredeverzicht; die Erklärung legt den Beginn selbst auf ihr Datum fest (das Gesetz lässt ihn offen, BBl 2014 235, S. 262) und begrenzt sich auf zehn Jahre ab diesem Datum – das Dokument hält die Höchstdauer des Art. 141 Abs. 1 OR damit unter jeder Lesart ein.",
      "norm": "Art. 141 Abs. 1 OR"
     },
     {
@@ -14711,7 +14711,7 @@
      },
      {
       "bausteinId": "VV_verzicht",
-      "text": "Hinsichtlich Ihrer Forderung (Werklohnforderung aus Werkvertrag vom 1. Februar 2026, CHF 25'000.00) verzichte ich hiermit bis zum 31.12.2027 auf die Erhebung der Einrede der Verjährung – längstens jedoch für die nach Art. 141 Abs. 1 OR zulässige Höchstdauer von zehn Jahren ab Beginn der Verjährung."
+      "text": "Hinsichtlich Ihrer Forderung (Werklohnforderung aus Werkvertrag vom 1. Februar 2026, CHF 25'000.00) verzichte ich hiermit mit Wirkung ab dem Datum dieser Erklärung bis zum 31.12.2027 auf die Erhebung der Einrede der Verjährung, längstens jedoch für zehn Jahre ab dem Datum dieser Erklärung (Art. 141 Abs. 1 OR)."
      },
      {
       "bausteinId": "VV_schluss",
@@ -14725,8 +14725,8 @@
       "stricheErlaubt": true
      }
     ],
-    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens für die gesetzlich zulässige Höchstdauer (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.",
-    "version": "1.0.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101)"
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens zehn Jahre ab dem Datum der Erklärung (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.",
+    "version": "1.1.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101; VB-01 Laufbeginn ab Erklärung)"
    },
    "aufgenommen": [
     "VV_absender",
@@ -14761,7 +14761,7 @@
     },
     {
      "bausteinId": "VV_verzicht",
-     "begruendung": "Kern der Erklärung: befristeter Einredeverzicht mit salvatorischer Begrenzung auf die gesetzliche Höchstdauer – das Dokument kann die Grenze des Art. 141 Abs. 1 OR damit nie überschreiten.",
+     "begruendung": "Kern der Erklärung: befristeter Einredeverzicht; die Erklärung legt den Beginn selbst auf ihr Datum fest (das Gesetz lässt ihn offen, BBl 2014 235, S. 262) und begrenzt sich auf zehn Jahre ab diesem Datum – das Dokument hält die Höchstdauer des Art. 141 Abs. 1 OR damit unter jeder Lesart ein.",
      "norm": "Art. 141 Abs. 1 OR"
     },
     {
@@ -14809,7 +14809,7 @@
      },
      {
       "bausteinId": "VV_verzicht",
-      "text": "Hinsichtlich Ihrer Forderung (________) verzichte ich hiermit bis zum ________ auf die Erhebung der Einrede der Verjährung – längstens jedoch für die nach Art. 141 Abs. 1 OR zulässige Höchstdauer von zehn Jahren ab Beginn der Verjährung."
+      "text": "Hinsichtlich Ihrer Forderung (________) verzichte ich hiermit mit Wirkung ab dem Datum dieser Erklärung bis zum ________ auf die Erhebung der Einrede der Verjährung, längstens jedoch für zehn Jahre ab dem Datum dieser Erklärung (Art. 141 Abs. 1 OR)."
      },
      {
       "bausteinId": "VV_vorbehalt",
@@ -14831,8 +14831,8 @@
       "stricheErlaubt": true
      }
     ],
-    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens für die gesetzlich zulässige Höchstdauer (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.",
-    "version": "1.0.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101)"
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens zehn Jahre ab dem Datum der Erklärung (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.",
+    "version": "1.1.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101; VB-01 Laufbeginn ab Erklärung)"
    },
    "aufgenommen": [
     "VV_absender",
@@ -14869,7 +14869,7 @@
     },
     {
      "bausteinId": "VV_verzicht",
-     "begruendung": "Kern der Erklärung: befristeter Einredeverzicht mit salvatorischer Begrenzung auf die gesetzliche Höchstdauer – das Dokument kann die Grenze des Art. 141 Abs. 1 OR damit nie überschreiten.",
+     "begruendung": "Kern der Erklärung: befristeter Einredeverzicht; die Erklärung legt den Beginn selbst auf ihr Datum fest (das Gesetz lässt ihn offen, BBl 2014 235, S. 262) und begrenzt sich auf zehn Jahre ab diesem Datum – das Dokument hält die Höchstdauer des Art. 141 Abs. 1 OR damit unter jeder Lesart ein.",
      "norm": "Art. 141 Abs. 1 OR"
     },
     {
@@ -14894,11 +14894,11 @@
  },
  "vorl:vv-gates-hoechstdauer": {
   "blocker": [
-   "Das gewählte Ende liegt mehr als zehn Jahre nach dem Erklärungsdatum – die Höchstdauer läuft aber schon ab BEGINN der Verjährung (Art. 141 Abs. 1 OR) und wäre damit sicher überschritten. Enddatum kürzen; ein späterer ERNEUTER Verzicht bleibt möglich («jeweils»)."
+   "Das gewählte Ende liegt mehr als zehn Jahre nach dem Erklärungsdatum – ein Verzicht ist jeweils für höchstens zehn Jahre zulässig (Art. 141 Abs. 1 OR), und diese Erklärung rechnet sie ab ihrem Datum. Enddatum kürzen; ein späterer ERNEUTER Verzicht bleibt möglich («jeweils»)."
   ],
   "warnungen": [],
   "hinweise": [
-   "Die Höchstdauer von zehn Jahren läuft ab BEGINN der Verjährung, nicht ab dieser Erklärung (Art. 141 Abs. 1 OR). Die Erklärung enthält darum die ausdrückliche Begrenzung auf die gesetzlich zulässige Höchstdauer. Der Verzicht kann später erneuert werden («jeweils»).",
+   "Ein Verzicht ist erst ab Beginn der Verjährung zulässig; die Höchstdauer von zehn Jahren gilt je Verzicht (Art. 141 Abs. 1 OR). Ob sie ab der Erklärung oder ab dem Verjährungseintritt zu rechnen ist, lässt das Gesetz bewusst offen (Botschaft BBl 2014 235, S. 262) – die Erklärung legt den Beginn darum selbst fest: mit Wirkung ab dem Datum dieser Erklärung, längstens zehn Jahre ab diesem Datum. Der Verzicht kann später erneuert werden («jeweils»).",
    "SCHRIFTFORM ist Gültigkeitsvoraussetzung (Art. 141 Abs. 1bis OR) – drucken und von der Schuldnerseite unterschreiben lassen. In allgemeinen Geschäftsbedingungen kann nur der VERWENDER der AGB verzichten.",
    "Wirkungsgrenzen: Der Verzicht eines Solidarschuldners kann den übrigen Solidarschuldnern nicht entgegengehalten werden (Art. 141 Abs. 2 OR); dasselbe gilt unter Schuldnern einer unteilbaren Leistung und für den Bürgen beim Verzicht des Hauptschuldners (Abs. 3). Bei direktem Forderungsrecht gegen einen Versicherer wirkt der Verzicht auch ihm gegenüber und umgekehrt (Abs. 4)."
   ]
