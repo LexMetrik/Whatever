@@ -10,14 +10,15 @@ import { LadeAnzeige, FruehAnsicht } from '../inhalt-ansichten';
 import { WeiterlesenChip } from '../parts/WeiterlesenChip';
 import { LeserTastatur } from '../parts/LeserTastatur';
 import { LeserKopf } from './LeserKopf';
-import { gliederungsSheetAufbau, leisteAufbau } from './leisteAufbau';
+import { gliederungsSheetAufbau, leisteAufbau, schieneAufbau } from './leisteAufbau';
+import { merkeGliederung } from './gliederungGedaechtnis';
 import { LeserLesespalte } from './LeserLesespalte';
 import { LeserLeseZeile } from './LeserLeseZeile';
 import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
 import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
-import { normZitat, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
+import { normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
 import { useBlattGedaechtnis } from './blattGedaechtnis';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
@@ -28,7 +29,8 @@ import { LeserTrefferSpalte } from './LeserTrefferSpalte';
 import { useKopfAnspruch } from './useKopfAnspruch';
 import { useStickAusgleich } from './useStickAusgleich';
 import { leserCssVariablen } from './leserGeometrie';
-import { rahmenBild, useRahmenRaum } from './rahmenSpalten';
+import { rahmenBild } from './rahmenSpalten';
+import { useRahmenRaum } from './rahmenRaum';
 import { kopfGlypheKlassen, kopfGriffKlassen, panelForm, useKopfStufe } from './kopfStufen';
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, panelEbene, suchFeldName, suchPlatzhalter } from './erlassAnsicht';
@@ -53,16 +55,9 @@ import { useLeserV3Modell } from './leserV3Modell';
 // (`./SuchZone`); ohne Spalte wandert nur die Gliederung in ein Bottom-Sheet
 // hinter ☰.
 //
-// ── DIE ERWEITERUNGS-SLOTS SIND GESTRICHEN (C4/H3, ein Eintrag statt zwei) ──
-// `beiwerkSlot` · `fassungsWahl` · `leisteExtra` (H1, Fundament-Auflage 3) und
-// `panelOeffner`/`panelSlot` (H3): null Aufrufer über drei Etappen, und die
-// beiden Panel-Slots waren von aussen gar nicht füllbar (sie brauchen
-// `useLeserV3Modell`, das erst HIER läuft — §5-Bruch). §17 in der Fassung vom
-// 13.8.2026: was nicht scheitern kann, wird gestrichen statt bewacht; sie sind
-// in der Historie greifbar, wenn ein echter Konsument auftritt. Vollständige
-// Herleitung samt Befundliste: Vollzugsvermerk H3 im Fahrplan Kap. 7.
-// (Gestrafft H4-II 18.8.2026 — der Absatz stand hier in voller Länge und die
-// Datei klemmte an der 420-Zeilen-Sonde; §6.6.)
+// ── DIE ERWEITERUNGS-SLOTS SIND GESTRICHEN (C4/H3): null Aufrufer, von aussen
+// nicht füllbar (§17). Herleitung: Vollzugsvermerk H3, Fahrplan Kap. 7.
+// (Gestrafft H4-II 18.8. und Entscheid A 24.9.2026 — 420-Zeilen-Sonde, §6.6.)
 //
 // ── EINE WURZEL FÜR PANE UND BREITE (Kap. 10) ───────────────────────────────
 // `imPane`/`istSekundaer`/`istXl` kommen als `umgebung` aus dem Modell und
@@ -104,12 +99,14 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // V6/Ä88: Höhenausgleich, wenn der klebende Kopf-Block wächst — Befund,
   // Messreihe und der Vertrag von `mitAusgleich`/`wurzelRef`:
   // `./useStickAusgleich`. Scroller aus derselben `paneRoot`-Auflösung wie
-  // «↑ Anfang» (§5). Seit D33 faltet nur noch die Gliederung den Kopf; das
-  // Beiwerk-Blatt verschiebt nichts mehr (`./rahmenSpalten`).
+  // «↑ Anfang» (§5). Seit Entscheid A (24.9.2026) verschiebt auch das Blatt
+  // wieder Spuren (`./rahmenSpalten`) — beide Zustände stehen im Schlüssel.
   const { wurzelRef, mitAusgleich } = useStickAusgleich(
     `${m.tocOffen}·${rohPanel.offen}`,
     paneRoot(umgebung.imPane, umgebung.wurzel), m.aktivToken);
-  const setzeTocOffen = (auf: boolean) => mitAusgleich(() => m.setTocOffen(auf));
+  // Die NUTZERWAHL wird gemerkt, erlassübergreifend (`./gliederungGedaechtnis`,
+  // Entscheid David 24.9.2026) — nicht das Weichen vor dem Blatt, nicht `leisteStartetZu`.
+  const setzeTocOffen = (auf: boolean) => mitAusgleich(() => { m.setTocOffen(auf); merkeGliederung(auf); });
   // Ä88: JEDER Weg, der das Blatt auf- oder zumacht, läuft durch den Ausgleich —
   // Kopf-Zähler, Menü-Eintrag, Taste «r», das ✕ und Esc des Blattes selbst.
   // Gewickelt wird darum der ZUSTAND, nicht jeder Aufrufpunkt: ein vergessener
@@ -160,9 +157,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const meta = grundartMeta(erlass.key);
   const bestimmungsWort = bestimmungsWortVon(erlass.key); // B8: EINE Ableitung
   const hatLeiste = eintraege.length > 0;
+  const ruheForm = panelForm(stufe, !umgebung.imPane);
   const bild = rahmenBild({
-    raum, spaltenLage: hatLeiste && umgebung.istXl, tocOffen: m.tocOffen,
-    ruheForm: panelForm(stufe, !umgebung.imPane),
+    raum, spaltenLage: hatLeiste && umgebung.istXl, tocOffen: m.tocOffen, ruheForm,
+    // Entscheid A (24.9.2026): Blatt-Spur nur, wo auch die Gliederung Spalte sein kann. D-E4 (#1040): im Einzelmodus kein Blatt.
+    blattLage: umgebung.istXl && ruheForm === 'rechts', blattOffen: panel.offen, einzelModus: imEinzel,
   });
   const zweiSpalten = bild.gliederungSpalte;
   // ── P3 (3b) · DREI NAMEN FÜR DREI DINGE (H4-Nachzug 18.8.2026) ────────────
@@ -246,11 +245,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // Ä79 (H4-II): steht die Schiene, ist SIE der eine Griff — die Herleitung samt
   // Messreihe steht am Bauteil, das sie betrifft (`./leisteAufbau`).
   const schieneSteht = bild.schiene;
-  // D33 (7.9.2026): die Schiene steht nur noch AUS EINEM Grund — der Nutzer hat
-  // die Gliederung eingeklappt. Der zweite Grund (das Beiwerk-Blatt hatte ihren
-  // Platz, Ä60 (c)) ist mit der Blatt-Spur gefallen; der Griff blendet darum
-  // wieder nur ein und schliesst nichts mehr (`schieneHoltPlatz` gestrichen).
-  const schieneAuf = () => setzeTocOffen(true);
+  // Entscheid A (24.9.2026): die Schiene steht wieder aus ZWEI Gründen — der
+  // Nutzer hat eingeklappt, oder das offene Blatt hat ihren Platz (transient).
+  // Im zweiten Fall holt ihr Klick den Platz zurück (Ä60 (c) P1-1; D33 hatte das
+  // gestrichen): die Gliederung ist ja offen gewählt, «einblenden» täte nichts.
+  const schieneAuf = bild.schieneHoltPlatz ? panel.schliesse : () => setzeTocOffen(true);
   // ☰ nur, wenn die Gliederung gerade NICHT als Spalte steht — sonst ein Knopf
   // ohne Wirkung (Kap. 6, Icon-Flut-Verbot). Ä90: dieselbe Bauform wie ⚖ und
   // «Ansicht»; bis 17.8. der einzige NACKTE Griff der Zeile, bis G14 (7.9.2026)
@@ -290,10 +289,10 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           // Zähler-Zeile schweigt, weil die Liste dasteht. RESERVIERT statt
           // gefüllt, sonst spränge `--nt-stick` bei jedem Wechsel um 24 px.
           zoneHoch: feldGefuellt,
-          suchInZeile, spurVersatzRem: bild.spurVersatzRem,
+          suchInZeile, spurVersatzRem: bild.spurVersatzRem, spurVersatzRechtsRem: bild.spurVersatzRechtsRem,
         }),
-        // D33: Rahmen-Aufweitung und dynamischer Lesemass-Deckel sind mit der
-        // Blatt-Spur gefallen (`./rahmenSpalten`).
+        // Entscheid A (24.9.2026): die Aufweitung ist zurück (`./rahmenSpalten`).
+        ...bild.breite,
       }}>
 
       {/* D27: kein `aktArtikel` mehr — Herleitung in `./LeserKopf`. */}
@@ -302,15 +301,17 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         bestimmungsWort={bestimmungsWort} stufe={stufe} gliederungKnopf={gliederungKnopf}
         suchInZeile={suchInZeile} tocOffen={m.tocOffen}
         onGliederungZu={zweiSpalten ? () => setzeTocOffen(false) : undefined}
-        // D35-F2: der Griff steht UNBEDINGT — «ein Öffner je Breite» (Ä92) ist
-        // damit trivial erfüllt, und der Menü-Eintrag «Entscheide & Kontext …»,
-        // der ihn in der F8-Lage vertrat, ist mit ihr gefallen.
-        panelOeffner={(
+        // D35-F2: EIN Öffner je Breite (Ä92). Entscheid A (24.9.2026): wo das
+        // Blatt eine Spur hat, ist er die Schiene (zu) bzw. «Erlass-Blatt
+        // ausblenden ›» im rechten Streifen (offen) — der Kopf-Griff entfällt.
+        panelOeffner={!bild.blattGriff ? undefined : (
           <ErlassGriff offen={panel.offen} kompakt={stufe === 'mini'}
             // A3: dieselbe Id wie die Fläche — sonst ist `aria-controls` null.
             panelId={panel.offen ? panelId : undefined}
             onKlick={panel.umschalten} />
         )}
+        rechterStreifen={bild.blattForm === 'spalte'}
+        onBlattZu={bild.blattSpur ? panel.schliesse : undefined} blattPanelId={panelId}
         suchZone={suchZone} />
 
       {/* Handy/schmales Pane: die GANZE Seitenleiste als Bottom-Sheet hinter ☰
@@ -327,6 +328,12 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           Spuren stehen, steht dort. */}
       <LeserLeseZeile bild={bild} vollflaechig={!umgebung.imPane}
         onSchieneAuf={schieneAuf}
+        // Entscheid A: der Spiegel der Gliederungs-Schiene; Anker wie `ErlassGriff`.
+        blattSchiene={schieneAufbau({
+          wort: OEFFNER_WORT, glyphe: '‹', titel: 'Erlass-Blatt einblenden', onAuf: () => panel.oeffne(),
+          merkmale: { 'data-v3-blatt-schiene': true, 'data-v3-panel-zaehler': true, 'data-v3-panel-oeffner': true,
+            'aria-label': OEFFNER_NAME, 'aria-keyshortcuts': 'r' },
+        })}
         leiste={leisteAufbau(m, bestimmungsWort, false)}
         zelle={<>
           {/* Das Titelblatt samt Ingress (S2) — Verdrahtung in `./LeserErlassKopfZone`;
@@ -336,7 +343,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich darüber (`./LeserTrefferSpalte`). */}
           {/* W2·5m · im Einzelmodus EINE Bestimmung, dieselbe Prop-Kette (§5). */}
           <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten}
-            oeffneBlatt={rohPanel.oeffne} bezuegeGeweckt={rohPanel.jeGeoeffnet}
+            oeffneBlatt={bild.blatt ? rohPanel.oeffne : undefined} bezuegeGeweckt={rohPanel.jeGeoeffnet}
             einzelToken={imEinzel ? einzel.token : null} search={einzel.search} />
         </>}
         // D38 · Trefferliste über der Lesespalte — `absolute`, ohne Platz im
@@ -357,7 +364,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // und liegt ausserhalb des Flusses.
         // W2·5m (D-E4) · «panel im einzelmodus weg» — NICHT GEMOUNTET, nicht versteckt:
         // sonst blieben Reiter im Fokusbaum, ←/→ belegt und Shards geladen (§17: die Datei bleibt).
-        panelZone={imEinzel ? null : (
+        panelZone={!bild.blatt ? null : (
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
               paneZiel={overlayZiel} paneRolle={paneRolle}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
@@ -397,19 +404,12 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           <WeiterlesenChip label={m.weiterlesen.label}
             onWeiterlesen={m.weiterlesenSprung} onVerwerfen={m.weiterlesenVerwerfen} />
         )}
-        {/* H3 · «r» zieht das Panel auf (KEINE zweite Tastaturebene, Kap. 4h) —
-            der zweite Weg neben dem Kopf-Griff; bis D35-F2 war er der einzige,
-            wenn die F8-Regel den Zähler wegnahm (Herleitung in `./panelModell`).
-            A2 (Nachzug): der Listener läuft jetzt in BEIDEN Panes. Vorher stand er
-            unter `!istSekundaer` — mit der Folge, dass «r» aus dem sekundären Pane
-            das PRIMÄRE Panel aufzog (gemessen 17.8.2026). Doppelte j/k-Sprünge
-            verhindert nicht mehr die Abwesenheit des Listeners, sondern seine
-            Zuständigkeitsprüfung: er beansprucht den Tastendruck nur, wenn der
-            Fokus in SEINEM Pane steht — dieselbe Regel wie bei ⌘K, aus derselben
-            Quelle (`../panePrioritaet`). */}
+        {/* H3 · «r» schaltet das Blatt (KEINE zweite Tastaturebene, Kap. 4h).
+            A2: der Listener läuft in BEIDEN Panes und beansprucht die Taste nur
+            mit dem Fokus in SEINEM Pane (`../panePrioritaet`, wie ⌘K). */}
         {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert. */}
         <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
-          onPanel={imEinzel ? undefined : panel.umschalten /* D-8 (S6-W1a): umschalten, Reiter bleibt */}
+          onPanel={!bild.blatt ? undefined : panel.umschalten /* D-8 (S6-W1a): umschalten, Reiter bleibt */}
           onBlaettern={imEinzel ? einzel.blaettere : undefined}
           imSekundaerenPane={umgebung.istSekundaer} />
       </div>

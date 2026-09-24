@@ -46,7 +46,7 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   sie, die Message verliert Woerter, und --amend ist gesperrt (2 Vorfaelle
   16.8.2026, PR #530/#531).
   Commit-Typ ehrlich: ein Commit mit Praefix `refactor(` darf KEINE Testdatei
-  aendern oder anlegen (Tor check:testtreue, §6.3) — neue/geaenderte Tests
+  aendern oder anlegen (Tor check:fachaenderung, §6.3) — neue/geaenderte Tests
   gehoeren in einen `test(`/`feat(`/`fix(`-Commit (Vorfall PR #536, 16.8.2026).
   Typpruefung im Bau IMMER mit `npx tsc -b` (= npm run build), nie mit
   `tsc --noEmit -p tsconfig.json`: der Root-tsconfig prueft nicht dasselbe

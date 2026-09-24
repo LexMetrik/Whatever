@@ -232,15 +232,15 @@ export const TOR_DATEIEN: readonly string[] = [
   'scripts/golden-outputs.ts',
   'golden/lexmetrik-golden.json',
   'scripts/analyse/test-assertion-diff.ts',
-];
-// Vorausschauend: RL-03 baut diese Dateien parallel. Getrennt geführt, weil
-// der Existenz-Test sie heute noch nicht finden kann — nach der Landung von
-// RL-03 in TOR_DATEIEN verschieben (dann greift der Existenz-Test auch hier).
-export const TOR_DATEIEN_VORAUSSCHAUEND: readonly string[] = [
+  'scripts/analyse/assertion-mengen.ts', // Bibliothek des Assertion-Diffs (24.9.2026)
+  // Fachänderungs-Riegel (RL-03). Bis 24.9.2026 getrennt als
+  // TOR_DATEIEN_VORAUSSCHAUEND geführt, weil RL-03 parallel baute und der
+  // Existenz-Test sie noch nicht fand; seit RL-03 im selben Zweig auf RL-02
+  // aufsetzt, existieren sie und stehen hier (Existenz-Test deckt sie mit).
   'scripts/check-fachaenderung.ts',
   'scripts/analyse/fachaenderung-kern.ts',
 ];
-const TOR_MENGE = new Set([...TOR_DATEIEN, ...TOR_DATEIEN_VORAUSSCHAUEND]);
+const TOR_MENGE = new Set(TOR_DATEIEN);
 
 /** Risiko-Pfade: Extraktion · Rechnen · Norm/Tarif (real gegen den Baum verifiziert). */
 export function istRisikoPfad(p: string): boolean {

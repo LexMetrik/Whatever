@@ -808,13 +808,17 @@ Ab 1024 px steht die Gliederung als **zweite Spalte**, darunter als **Bottom-She
 hinter dem «☰»-Griff im klebenden Kopf — inklusive eigenem Such-/Sprungfeld, weil der
 Fokus den Dialog nicht verlassen darf. Ein Griff «‹ Gliederung ausblenden» bzw.
 «einblenden» steht im linken Streifen der Kopfzeile, sobald die Spalte steht.
+Eingeklappt bleibt eingeklappt — auch beim nächsten Gesetz und nach Neuladen
+(`localStorage`, Schlüssel `lm-leser-gliederung`; seit 24.9.2026); das
+vorübergehende Weichen vor dem offenen Erlass-Blatt (2.3.15) wird nicht gemerkt.
 
 Keine vertikale Führungslinie mehr (aufgehoben 16.8.2026) und kein Tiefen-Einzug mehr
 (aufgehoben 29.8.2026) — die Tiefe trägt ausschliesslich die Typografie.
 
 **Quelle:** `src/pages/gesetz-leser/parts/SektionBaumTOC.tsx`,
 `gliederungsArtikel.ts`, `gliederungsModell.ts`, `gliederungsTypen.ts`,
-`GliederungSheet.tsx`, `LeserKopf.tsx`, `klappKarte.ts`.
+`GliederungSheet.tsx`, `LeserKopf.tsx`, `klappKarte.ts`, `v3/leisteAufbau.tsx`
+(Spalte · Sheet · Schiene), `v3/gliederungGedaechtnis.ts`.
 
 #### 2.3.2 Artikelansicht
 
@@ -1051,21 +1055,33 @@ folgen dem Schalter — AUS heisst: auch im Druck weggelassen.
 #### 2.3.14 Mobil
 
 Unter der Spaltenschwelle (< 1024 px bzw. schmales Fenster): Gliederung als
-Bottom-Sheet hinter «☰», Suchfeld bleibt im klebenden Kopf. Das Beiwerk-Blatt
-(Entscheide, Materialien, Verweise, Rechner, Fassung) öffnet als Sheet statt als
-Spalte. Die Artikelform bleibt in der schmalen Variante `zeile` (Randtitel als Zeile
+Bottom-Sheet hinter «☰», Suchfeld bleibt im klebenden Kopf. Das Erlass-Blatt
+(2.3.15) öffnet als Sheet hinter dem Knopf «Erlass-Blatt» im Kopf statt als dritte
+Spalte mit Schiene. Die Artikelform bleibt in der schmalen Variante `zeile` (Randtitel als Zeile
 über der Artikelnummer). Mobil-Boden des Zeilenmasses: mindestens 31 Zeichen bei
 390 px.
 
 #### 2.3.15 Erlass-Blatt und Einzel-Artikel
 
-**Erlass-Blatt** (überall dieser eine Name: Öffner «Erlass-Blatt» im Kopf ohne
-Menü-Pfeil, Kopf des Blatts, Tastenhilfe, Griff «im Erlass-Blatt öffnen ›»; Taste
-`r` schaltet auf und zu und lässt den Reiter stehen): ab dem grossen Breakpoint ein
-rechtes Blatt von 380 px, das am **rechten Fensterrand** anschlägt (seit 23.9.2026,
-vorher an der Lesespalte) und die Lesespalte überlagert, ohne sie zu verschieben
-(nicht modal, der Lesetext bleibt bedienbar); auf dem Handy und in jedem Fenster der
-geteilten Ansicht ein Bottom-Sheet. Das Handy-Sheet schliesst auch mit der
+**Erlass-Blatt** (überall dieser eine Name: Öffner «Erlass-Blatt», Kopf des Blatts,
+Tastenhilfe, Griff «im Erlass-Blatt öffnen ›»; Taste `r` schaltet auf und zu und
+lässt den Reiter stehen): ab 1024 px (Einzelansicht) eine **eigene dritte Spalte**
+rechts der Lesespalte, 380 px breit, wie die Gliederung gebaut — sie klebt unter dem
+Kopf, scrollt für sich, reicht bis zur Fensterunterkante und deckt nie Text ab
+(Entscheid David 24.9.2026, Variante A; vorher überlagerte das Blatt die Lesespalte,
+zuletzt am rechten Fensterrand). **Zu** steht rechts eine 36-px-Schiene
+«‹ Erlass-Blatt» als Spiegel der Gliederungs-Schiene (ein Klick öffnet), **offen**
+im Kopf rechts der Griff «Erlass-Blatt ausblenden ›» als Spiegel von
+«‹ Gliederung ausblenden»; ein eigener Knopf «Erlass-Blatt» im Kopf entfällt dann.
+Beim Öffnen rückt der Text zur Seite und bricht auf kleineren Bildschirmen neu um
+(bewusst in Kauf genommen): der Rahmen wird um die Blatt-Spalte breiter, solange
+das Fenster Raum hat — ab 1920 px bleibt der Text stehen und das Blatt sitzt direkt
+daneben. Reicht der Platz für Gliederung, eine Lesespalte von mindestens 448 px und
+Blatt nicht (unter etwa 1204 px Fenster), weicht die Gliederung für die Dauer des
+offenen Blatts auf ihre Schiene und kehrt beim Schliessen zurück (ein Klick auf ihre
+Schiene schliesst in dieser Lage das Blatt). Unter 1024 px, bei sehr engem Raum und
+in jedem Fenster der geteilten Ansicht bleibt das Blatt ein Bottom-Sheet hinter dem
+Knopf «Erlass-Blatt» im Kopf. Das Handy-Sheet schliesst auch mit der
 Zurück-Geste und mit Wischen nach unten an der Griffleiste; seine Bedienelemente
 treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» beim Reiter «Entscheide», sonst
 «Erlass-Blatt · OR», mit Schliessen-Knopf (`Esc`). Darunter die optionale

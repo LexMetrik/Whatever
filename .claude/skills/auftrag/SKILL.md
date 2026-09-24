@@ -106,6 +106,10 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
   Ziff. 9.
 - Risiko-Pfad zusätzlich: `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) —
   <Befunde>` bzw. `Gegenpruefung: n/a — reine Prüflogik`.
+- Geänderte/entfernte Assertion in Risiko-Engine-Tests oder Golden-Diff
+  (§6.3, `check:fachaenderung`; heilt keinen `refactor`-Commit):
+  `Fachaenderung: <Norm> — <Befund-ID/Begründung, ≥ 15 Zeichen>`, z. B.
+  `Fachaenderung: Art. 266a OR — F4-01 Mietkündigung Zustelltag`.
 - **Block-Form (vier Vorfälle 26.7./31.7.2026, aus Memory hierher überführt
   14.8.):** git liest Trailer nur im LETZTEN Absatz — genau EINE Leerzeile
   VOR dem Trailer-Block (sonst klebt er am Fliesstext und parst nicht),

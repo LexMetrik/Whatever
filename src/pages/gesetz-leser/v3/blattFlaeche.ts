@@ -16,59 +16,47 @@ import type { CSSProperties } from 'react';
 const BLATT_ANTEIL = 55;
 
 export interface BlattFlaeche {
-  /** Klassen der 0-Höhen-Hülle (nur die klebende Gestalt `'rechts'`). */
-  huelle: string | undefined;
+  /** Klassen und Stil des Trägers — nur die Spur (`spalte`) hat eine Box. */
+  traeger: { klassen: string; stil: CSSProperties | undefined };
   klassen: string;
   stil: CSSProperties;
 }
 
-/** `randBlatt` = Gestalt `'rechts'` ausserhalb eines Panes; `imPaneBlatt` =
- *  das Blatt hängt in der Overlay-Schicht eines Panes. */
-export function blattFlaeche(randBlatt: boolean, imPaneBlatt: boolean): BlattFlaeche {
-  // ── Die Fläche ────────────────────────────────────────────────────────────
-  // Anschlag-Kante und Deckel je Gestalt. Alle drei Zweige sind `fixed` bzw.
-  // `absolute`, brauchen also keinen Platz im Fluss (§15/2, CLS 0).
-  return randBlatt
-    // ── D33 (7.9.2026) · DAS BLATT KLEBT AN DER LESE-ZELLE, NICHT AM FENSTER ──
-    // Bis hierher war diese Gestalt `fixed … right-0` mit `top: var(--nt-stick)`.
-    // GEMESSEN am ersten Bau von D33 (@1440, OR, Seite NICHT gescrollt): der
-    // klebende Kopf steht dann noch an seiner natürlichen Stelle (y 145–201),
-    // `--nt-stick` (154 px) meint aber die Stelle, an der er KLEBT. Das Blatt
-    // begann darum 47 px zu hoch und lag über dem ⚖-Knopf, der es aufgezogen
-    // hatte: `elementFromPoint` am Klickpunkt lieferte «Rechtsprechung &
-    // Kontext» statt des Knopfes, der zweite Klick traf das Blatt. Das ist
-    // wortgleich der Ä52-Befund von 17.8.2026 — nur die Ursache war neu.
-    // JETZT: `sticky` in der Lese-Zelle. Die natürliche Lage ist die Oberkante
-    // der Zelle (also unter dem Kopf, wo immer der gerade steht), und beim
-    // Scrollen klebt es bei `--nt-stick` — «tiefer von beiden», ohne zu messen.
-    // Die 0-Höhen-Hülle darum ist derselbe Kniff, mit dem die Scroll-Blende in
-    // `./LeserLeseZeile` aus dem Fluss bleibt: kein Platz, kein CLS, Δ = 0.
-    // ── D-1 (Entscheid David 23.9.2026) · SENKRECHT BLEIBT D33, WAAGRECHT NICHT ─
-    // Die Kante «bündig an der Zelle» (D33) ist aufgehoben: das Blatt schliesst
-    // am FENSTERRAND an (`right: -var(--blatt-rand)`, Herleitung und Messreihe
-    // in `./useFensterRand`). Die Oberkante ist unverändert die von D33 —
-    // bewacht von `leser-v3-rahmen` (a) und `leser-v3-panel-nachzug`.
+/** `spalte` = offenes Blatt als eigene Spur (Entscheid A, 24.9.2026);
+ *  `imPaneBlatt` = das Blatt hängt in der Overlay-Schicht eines Panes. */
+export function blattFlaeche(spalte: boolean, imPaneBlatt: boolean): BlattFlaeche {
+  // ── Der Träger ────────────────────────────────────────────────────────────
+  // Ohne Spur `display: contents`: die Kinder sind `fixed` bzw. `absolute` und
+  // brauchen keinen Platz im Fluss (§15/2, CLS 0) — ein Kasten erzeugte im Grid
+  // eine implizite Spalte samt Abstand, die niemand angefordert hat.
+  const ohneBox = { klassen: 'contents', stil: undefined };
+  return spalte
+    // ── ENTSCHEID A (David 24.9.2026) · DAS BLATT IST EINE SPUR ────────────
+    // D33 (7.9.2026) hatte es als 0-Höhen-Hülle über die Lese-Zelle gelegt, D-1
+    // (23.9.2026) an den Fensterrand gerückt (`useFensterRand`, zurückgebaut).
+    // Beides deckte Zeilenenden ab (Analyse 24.9.2026: @1024/1280/1440 343/215/
+    // 135 px). Jetzt ist der Träger selbst die dritte Grid-Zelle — Geometrie
+    // WÖRTLICH wie das Gliederungs-`aside` (`./LeserLeseZeile`): klebt bei
+    // `--nt-stick`, eigene Scrollfläche, reicht bis zur Fensterunterkante (feste
+    // Höhe statt Deckel, damit ein Reiterwechsel die Spalte nicht springen lässt).
     ? {
-      huelle: 'pointer-events-none sticky z-modal h-0 overflow-visible',
-      // W2·29 S5 (Board «Erlass-Blatt»): 380 px, bündig an der Zellenkante,
-      // ohne Polster (bis dahin 22 rem mit `p-2` — Gestalt nach D33 unverändert).
-      // D-1 (23.9.2026): «an der Zellenkante» → am Fensterrand, `right` im Stil.
-      klassen: 'pointer-events-auto absolute top-0 w-[23.75rem] max-w-[calc(100vw-2rem)]',
-      stil: {
-        right: 'calc(-1 * var(--blatt-rand, 0px))',
-        maxHeight: 'calc(100vh - var(--nt-stick) - 1.5rem)',
-      } as CSSProperties,
+      traeger: {
+        klassen: 'sticky flex min-h-0 flex-col self-start',
+        stil: { top: 'var(--nt-stick)', height: 'calc(100vh - var(--nt-stick) - 1.5rem)' },
+      },
+      klassen: 'flex min-h-0 flex-1 flex-col [&>*]:flex-1',
+      stil: {},
     }
     : imPaneBlatt
       // Pane · unten angeschlagen in der Overlay-Schicht (die den Pane deckt).
       ? {
-        huelle: undefined,
+        traeger: ohneBox,
         klassen: 'pointer-events-auto absolute inset-x-0 bottom-0 z-modal',
         stil: { maxHeight: `${BLATT_ANTEIL}%` } as CSSProperties,
       }
       // H · echtes Bottom-Sheet: unten angeschlagen, gedeckelt, Artikel bleibt oben.
       : {
-        huelle: undefined,
+        traeger: ohneBox,
         klassen: 'fixed inset-x-0 bottom-0 z-modal',
         stil: { maxHeight: `${BLATT_ANTEIL}dvh` } as CSSProperties,
       };
