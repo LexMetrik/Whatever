@@ -501,7 +501,8 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   eigene Gegenprüfung) — die 9,4-MB-Last bleibt bis dahin bestehen, sie ist nur nicht mehr grösser als
   der bestehende Weg über `/rechtsprechung`.
 - **S4 Abschluss.** e2e (Aufklappen, Stufe zurück, Deep-Link, Escape, Tastatur), Sichtprüfung 1280/390
-  hell/dunkel, Löschbilanz, `status=done`.
+  hell/dunkel, Löschbilanz, `status=done`. **Erledigt 24.9.2026** im S3-PR: e2e voll, Sichtprüfung
+  1280/390 hell/dunkel, Nebenfunde als Posten unter `W2·29-WERKBANK-REST`.
 
 ## §6 · Prüfen und Frühsignale
 
