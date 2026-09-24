@@ -18,9 +18,15 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //   · Kopf: die Begrüssung mit Suchfeld BLEIBT (Auswahlfrage 23.9.2026
 //     «Begrüssung behalten»; D39 vom 7.9.2026 gilt weiter).
 //   · Links: 2×2-Kachelfeld (Flächenton, Zahl aus dem Zähler, keine Linkzeilen)
-//     und darunter «Neueste Entscheide» («neuste entscheide sollen nicht weg»).
+//     und darunter die Entscheid-Liste («neuste entscheide sollen nicht weg»);
+//     ihre Überschrift bleibt «Jüngste Entscheide im Korpus» — der §8-Wortlaut
+//     vom 5.9.2026 (W2·23-STARTSEITE-V4 §3 #6: der Korpus endet ggf. Monate
+//     zurück, «neu» verspräche Aktualität), bewacht von uinav-j-rechtsprechung.
 //   · Rechts: «Zuletzt» und «Schnellwerkzeug» (Fristenrechner mit der echten
-//     Engine) — «1 ja … 4 ja» am Prototyp.
+//     Engine) — «1 ja … 4 ja» am Prototyp. Die Spalte ist 20rem schmal, darum
+//     `EinfacheFristForm minimal` (zwei Spalten, Ferien als Auswahlfeld): die
+//     Vollform setzte vier Felder in 320 px, das Datum wurde gekappt
+//     (e2e kein-abschnitt, CI #1025 24.9.2026).
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -68,12 +74,12 @@ export function Startseite() {
       <div className={`grid gap-x-10 gap-y-9 ${pk('lg:grid-cols-[minmax(0,1fr)_20rem]', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem]')}`}>
         <div className="grid min-w-0 content-start gap-y-9">
           <StartKachelFeld kacheln={KACHELN} />
-          <Abschnitt titel="Neueste Entscheide"><EntscheideListe /></Abschnitt>
+          <Abschnitt titel="Jüngste Entscheide im Korpus"><EntscheideListe /></Abschnitt>
         </div>
         <aside aria-label="Arbeitsplatz" className="grid content-start gap-y-9">
           <ZuletztVerwendet />
           <Abschnitt titel="Schnellwerkzeug · Frist berechnen">
-            <EinfacheFristForm />
+            <EinfacheFristForm minimal />
             <p className="font-sans text-xs leading-relaxed text-ink-500">
               Rückwärtsrechnung, Zustellart, Hemmung und Kalender im{' '}
               <Link to="/rechner/tagerechner" className="underline hover:text-reg-w">Fristenrechner</Link>.
