@@ -1,5 +1,5 @@
 <!-- @posten
-dach: QS-EFFIZIENZ
+dach: QS-TORE-DIAET
 titel: Einmalige Streich-Runde: nie fündige Tore löschen (Council 22.9.2026)
 anlass: Council-Verdikt 22.9.2026, von David freigegeben («ja zu beidem»)
 -->
@@ -14,3 +14,5 @@ wirksames Tor — genau der Schaden, den die Ausnahmeliste verhindern soll. Der 
 Postens (Historie muss ≥ 90 Tage tragen) gilt für die einmalige Runde **nicht** in derselben Schärfe,
 weil hier je gestrichenem Tor ein eigener Beleg im PR-Body steht statt eines pauschalen
 Monats-Vorschlags; die Reihenlänge ist aber im Beleg zu nennen.
+
+Umgehängt 24.9.2026 von `QS-EFFIZIENZ` nach `QS-TORE-DIAET` (M-16: Tor-/Deckel-Thema; Bauplan-Konsolidierung, QS-DOKU-DIAET).
