@@ -483,6 +483,11 @@ Umschichtung 20.9.2026 (2)):*
   LESER bewusst umgebucht hat (NormText schneiden, NormChip-Ort, Akkordeon, E3 u. a.). Aus REST gelöst,
   damit REST im Abbruchkriterium bleibt (§2 Ziff. 4). **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f.
 
+- [x] **Marke: Logo A2 «Registerbuch» und Reiterleiste «Echte Registerreiter»** *(`W2·29-MARKE`, Auftrag David 24.9.2026)*
+  <!-- @meta id: W2·29-MARKE · status: done · blocker: null · dep: [] · feld: design -->
+  Name und Wortmarke bleiben. Siegel → A2 (Buch, Rücken, §, vier Registerreiter), Favicon aus dem
+  Designsystem; offene-Reiter-Leiste als Blätter mit Registerstrich oben, aktiver Reiter verschmilzt mit der Seite.
+
 - [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
   <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
   Dieselbe Inhaltsklasse site-weit im selben Muster (Split-View vs. Vollansicht, Leser-Köpfe,

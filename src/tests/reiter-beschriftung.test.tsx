@@ -24,7 +24,9 @@ import { reiterKurzformTeile, reiterKurzformText, type TabEintrag } from '../lib
 // ROT ZU BEKOMMEN (§6.7, so gefahren): in `lib/tabs.reiterKurzformTeile` die
 // Nummer wieder an den Kern hängen (`kern: nr > 1 ? \`${kern} (${nr})\` : kern`,
 // ohne `instanz`) und in `reiterleiste/Reiter.tsx` die Aufschrift auf
-// `min-w-0` und den Knopf auf `flex min-w-0` zurückstellen.
+// `min-w-0` und den Knopf auf `flex min-w-0` zurückstellen. W2·29-MARKE: den
+// Boden `kernBoden` in `Reiter.tsx` wieder auf festes `6ch` setzen (→ rot im
+// 12ch-Fall).
 
 beforeEach(() => {
   const speicher = new Map<string, string>();
@@ -81,8 +83,15 @@ describe('Reiter-Beschriftung — nichts Unterscheidendes fällt weg (W2·18 Pun
   it('die Aufschrift hat einen Boden, der Knopf gibt ihn weiter', () => {
     const m = html(['/gesetze/bund/OR', '/rechner/zpo-fristen']);
     // Der kürzbare Name darf nicht mehr auf Breite 0 fallen …
-    expect(m).toContain('min-w-[6ch] truncate max-w-[15rem]');
+    // FACHLICH GEÄNDERT (§6.3, W2·29-MARKE, Auftrag David 24.9.2026 «Breite
+    // nach Inhalt, damit Kurzformen lesbar bleiben»): der Boden war die feste
+    // Klasse `min-w-[6ch]`; er wächst jetzt mit dem Namen (Zeichen + 1, 6–14ch)
+    // und steht darum inline. Gepinnt: kurzer Name → alter Boden 6ch, langer
+    // Name («ZPO-Fristen», 11 Zeichen) → 12ch.
+    expect(m).toContain('truncate max-w-[15rem]');
     expect(m).not.toContain('min-w-0 truncate max-w-[15rem]');
+    expect(m).toMatch(/data-reiter-teil="kern" class="truncate max-w-\[15rem\]" style="min-width:6ch"/);
+    expect(m).toMatch(/data-reiter-teil="kern" class="truncate max-w-\[15rem\]" style="min-width:12ch"/);
     // … und der Knopf darf den Boden nicht verschlucken.
     expect(m).not.toContain('flex min-w-0 items-baseline');
     // Der KOPF (das ohnehin gekürzte Gericht) behält sein `min-w-0` und darf

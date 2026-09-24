@@ -302,8 +302,11 @@ test.describe('M6 — Mausrad rollt, Doppelklick öffnet', () => {
     expect(m.letzteKante).toBeLessThanOrEqual(m.clientW + 1)
     expect(m.sichtbar).toBeGreaterThan(0)
     expect(m.sichtbar).toBeLessThan(tabs.length)
+    // FACHLICH GEÄNDERT (§6.3, W2·29-MARKE, Auftrag David 24.9.2026): der Überlauf
+    // heisst ab sm «N weitere ▾», darunter weiter «+N ▾» — gemessen wird der
+    // SICHTBARE Text (innerText), die Zahl bleibt dieselbe Prüfung.
     await expect(page.locator(REITER).getByRole('button', { name: /Alle \d+ offenen Reiter/ }))
-      .toHaveText(`+${tabs.length - m.sichtbar}`)
+      .toHaveText(new RegExp(`^(\\+${tabs.length - m.sichtbar}|${tabs.length - m.sichtbar} weitere) ▾$`), { useInnerText: true })
   })
 
   test('ohne Überlauf bleibt das Rad beim Dokument — die Seite scrollt weiter', async ({ page }) => {
@@ -419,7 +422,11 @@ test.describe('R2 — die Geometrie der Leiste', () => {
 })
 
 test.describe('R1 — die Leiste ist nicht trist', () => {
-  test('auch inaktive Reiter tragen ihre Registerfarbe (60 %), nicht Grau', async ({ page }) => {
+  // FACHLICH GEÄNDERT (§6.3, W2·29-MARKE, Auftrag David 24.9.2026, Variante 1
+  // «Echte Registerreiter»): der Strich sitzt oben und steht bei JEDEM Reiter
+  // in voller Farbe — die 60 % fielen für Materialien/Werkzeuge unter 3:1
+  // (WCAG 1.4.11). Aktiv/inaktiv trennen jetzt Fläche, Höhe und Gewicht.
+  test('auch inaktive Reiter tragen ihre Registerfarbe (voll), nicht Grau', async ({ page }) => {
     // GEMESSEN: alle inaktiven Reiter standen auf `bg-ink-400 opacity-30` —
     // die Registerfarbe erschien erst beim Überfahren.
     await page.setViewportSize({ width: 1440, height: 900 })
@@ -446,7 +453,7 @@ test.describe('R1 — die Leiste ist nicht trist', () => {
     expect(new Set(striche.map((s) => s.farbe)).size,
       `Strich-Farben: ${striche.map((s) => s.farbe).join(' | ')}`).toBeGreaterThan(1)
     for (const s of inaktiv) {
-      expect(Number(s.deckkraft), `inaktive Deckkraft ${s.deckkraft}`).toBeCloseTo(0.6, 2)
+      expect(Number(s.deckkraft), `inaktive Deckkraft ${s.deckkraft}`).toBeCloseTo(1, 2)
     }
   })
 })

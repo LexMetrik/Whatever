@@ -143,8 +143,14 @@ export const ARTIKEL_WERKZEUGE: readonly ArtikelWerkzeugKante[] = [
     beleg: 'Art. 127–142 OR — allgemeine Verjährung: 10 J. (Art. 127), 5 J. (Art. 128), 20 J. (Art. 128a), Beginn (Art. 130), Stillstand (Art. 134), Unterbrechung (Art. 135). Verjährungsrechner.' },
   { erlass: 'OR', von: 197, bis: 210, werkzeuge: ['gewaehrleistung'],
     beleg: 'Art. 197–210 OR — Sachgewährleistung im Kaufrecht: Mängelrüge (Art. 201), Verjährung der Gewährleistung (Art. 210).' },
+  { erlass: 'OR', von: 219, bis: 219, vonArtikel: '219a', bisArtikel: '219a', werkzeuge: ['gewaehrleistung'],
+    beleg: 'Art. 219a OR — Grundstückkauf: Mängelrüge 60 Tage (Abs. 1), unentgeltliche Verbesserung (Abs. 2), Verjährung 5 J. ab Eigentumserwerb (Abs. 3). Gewährleistungs-Rechner (Vertragstyp Grundstückkauf).' },
   { erlass: 'OR', von: 253, bis: 253, werkzeuge: ['mietvertrag-wohnen'],
     beleg: 'Art. 253 OR — Begriff des Mietvertrags. Wohnungsmietvertrag-Vorlage.' },
+  { erlass: 'OR', von: 257, bis: 257, vonArtikel: '257d', bisArtikel: '257d', werkzeuge: ['mietrecht'],
+    beleg: 'Art. 257d OR — Zahlungsrückstand des Mieters: Zahlungsfrist ≥ 30 Tage, dann Kündigung ≥ 30 Tage auf Monatsende (Wohn-/Geschäftsräume). Mietrecht-Rechner, Kündigungsart Zahlungsverzug.' },
+  { erlass: 'OR', von: 257, bis: 257, vonArtikel: '257f', bisArtikel: '257f', werkzeuge: ['mietrecht'],
+    beleg: 'Art. 257f OR — Sorgfalt und Rücksichtnahme: Kündigung nach schriftlicher Mahnung ≥ 30 Tage auf Monatsende (Abs. 3), fristlos bei vorsätzlich schwerer Schädigung (Abs. 4). Mietrecht-Rechner.' },
   { erlass: 'OR', von: 266, bis: 266, bisArtikel: '266o', werkzeuge: ['mietrecht'],
     beleg: 'Art. 266–266o OR — Beendigung des Mietverhältnisses: Kündigungsfristen und -termine (Art. 266a–266f), ausserordentliche Kündigung (Art. 266g–266k), Form (Art. 266l–266o).' },
   { erlass: 'OR', von: 269, bis: 270, bisArtikel: '270e', werkzeuge: ['mietzinsanpassung'],
@@ -303,6 +309,14 @@ export const ARTIKEL_WERKZEUGE: readonly ArtikelWerkzeugKante[] = [
 // pages/gesetz-leser/randNotizWerkzeuge.ts): mietrecht an Art. 257d/257f OR und
 // gewaehrleistung an Art. 219a OR — beide in Karte und Engine belegt, aber ihre
 // Hauptnummer träfe dort auch 257–257c/257e bzw. 219/219b ff. (Rauschen, AN-5).
+// [Ergänzt 24.9.2026: der Funktionszeilen-Leser vergleicht seit Nachzug #1016
+// suffix-exakt (`trifftArtikel`); die drei Kanten stehen jetzt oben. Tor:
+// src/tests/werkzeuge-buchstaben-kanten.test.ts.]
+// Bewusst ohne Werkzeug (24.9.2026, Posten «273a hängt nach #1016 an keinem
+// Werkzeug»): Art. 273a–273c OR (Wohnung der Familie, Untermiete, zwingende
+// Bestimmungen) — der Mietrecht-Rechner führt keine dieser Normen; Kante erst,
+// wenn die Engine Art. 273a selbst zitiert (Zweifelsfall im Register
+// bibliothek/normtext/werkzeug-kanten-2026-09-23.md, wartet auf David).
 
 /** Lateinische Ordnungszahl-Suffixe in amtlicher Reihenfolge (bis = 2. …). */
 const LATEIN_SUFFIXE = [
