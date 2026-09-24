@@ -286,7 +286,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
       // höhe (überschreibt den flachen 320px-Default der .nt-art-cv-Klasse) → der
       // Scrollbalken wird proportional. `content-visibility:auto` (Klasse) bleibt;
       // reiner Platzhalter-Schätzwert, kein DOM-/Inhalts-Eingriff (§15/1).
-      style={{ containIntrinsicSize: `auto ${schaetzeArtikelHoehe(e)}px` }}
+      // S6 W1g: in der Breitform steht der Randtitel in der «Art. N»-Zeile (s. u.).
+      style={{ containIntrinsicSize: `auto ${schaetzeArtikelHoehe(e, !kopfForm)}px` }}
       // W2·19-GLIEDERUNG/F1: das Hover-Spotlight («andere Artikel dimmen») ist
       // ersatzlos entfernt (Entscheid David 8.8.2026; Messung
       // `bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md`: 1686
@@ -299,6 +300,9 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           Randtitel als Zeile über der Artikelnummer (Fedlex-Stil, David
           26.6.2026; auch bei eingeklapptem/aufgehobenem Artikel sichtbar),
           Beiwerk unter dem Wortlaut. */}
+      {/* S6 W1g (24.9.2026): in der Breitform steht der Randtitel in der
+          Artikelnummer-Zeile (s. u.); die Zeilenform (Handy, Pane, Treffer-
+          liste) behält die Zeile darüber (Fedlex-Stil, David 26.6.2026). */}
       {!kopfForm && <div>{randTitel}</div>}
       {/* `.lr-text` ist Sonden-Anker (Textspalte, `leser-marken-geometrie`);
           `min-w-0`: ein langes Wort sprengt sonst das Raster. */}

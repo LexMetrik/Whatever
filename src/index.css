@@ -5119,6 +5119,14 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   width: 1px;
   background: var(--rule-soft);
   pointer-events: none;
+  /* PFLICHT, nicht Kosmetik — GEMESSEN 24.9.2026 @1440 am gebauten Stand
+     (BV#art-8, Tieflink): ohne diese Zeile wählte die Scroll-Verankerung des
+     Browsers die erlasshohe Linie als Anker; sie bewegt sich nicht, wenn
+     Artikel über dem Ziel beim Rendern ihre Platzhalterhöhe verlieren, also
+     glich der Browser nichts aus — das Ziel stand bei −26 statt 154 px
+     (`leser-ruecksprung-r5-r7` R7, `leser-toc-sprung` rot). Mit `none` ist die
+     Linie vom Anker ausgenommen: 154 px, wie ohne Linie. */
+  overflow-anchor: none;
 }
 [data-lr-linie-links]::before { left: calc(var(--leser-spur-abstand, 1.25rem) / -2); }
 [data-lr-linie-rechts]::after { right: calc(var(--leser-spur-abstand, 1.25rem) / -2); }
