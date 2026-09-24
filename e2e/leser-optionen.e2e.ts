@@ -1,9 +1,7 @@
 // @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
-import { F_MARKE } from './helpers/fassungsRubrik';
 import {
-  ANSICHT_PANEL, AUS_WAHL_NAME, RECHTSPRECHUNG_SCHALTER_NAME, SCHALTER_ROLLE,
-  VERMERKE_SCHALTER_NAME, WAHL_ROLLE,
+  ANSICHT_PANEL, FUSSNOTEN_WAHL_NAME, RECHTSPRECHUNG_SCHALTER_NAME, SCHALTER_ROLLE, WAHL_ROLLE,
 } from './helpers/leserBeschriftung';
 
 // W2·5d G2a — Leser-Options-Leiste: reine data-*-/CSS-Toggles am <html>,
@@ -91,7 +89,7 @@ async function ansichtOeffnen(page: Page): Promise<void> {
 // D4 (7.9.2026): die drei hiessen bis dahin `role=switch`. Seit das Menü
 // `role="menu"` trägt, verlangt ARIA dort `menuitemcheckbox` — dieselbe
 // Auskunft, derselbe `aria-checked`, derselbe Name (`SCHALTER_ROLLE`).
-test('Options-Leiste: die Änderungs-Wahl + sechs Rubriken-Schalter — «Linien» und «Verweise» entfallen', async ({ page }) => {
+test('Options-Leiste: EIN Fussnoten-Schalter — Rubriken-Wahl, «Linien» und «Verweise» entfallen', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator(ANSICHT_PANEL).first();
@@ -137,18 +135,17 @@ test('Options-Leiste: die Änderungs-Wahl + sechs Rubriken-Schalter — «Linien
   // Wegleitungen, Leitfäden; «Materialien» ist seit S6 der Reiter für
   // Gesetzgebung) und «Rechner» → «Werkzeuge». Zahl und Reihenfolge der sechs
   // Rubriken unverändert; Herleitung: `v3/LeserRubrikenWahl.tsx` (RUBRIKEN).
+  // §6.3-DEKLARATION (S6 W1f, Entscheid David 24.9.2026, «die zeile soll ganz
+  // weg»): die sechs Rubriken-Schalter sind mit der Funktionszeile gefallen,
+  // die Dreier-Wahl ist EIN Schalter «Fussnoten» (`menuitemcheckbox`). Der
+  // Deckel bleibt die Aussage: genau diese Bedienung, keine mehr, keine weniger.
   for (const name of [/^Fassung$/, /^Entscheide$/, /^Erläuterungen$/, /^Verweise$/, /^Werkzeuge$/, /^Aktionen$/]) {
-    await expect(gruppe.getByRole(SCHALTER_ROLLE, { name })).toHaveAttribute('aria-checked', 'true');
+    await expect(gruppe.getByRole(SCHALTER_ROLLE, { name })).toHaveCount(0);
   }
-  await expect(gruppe.getByRole(SCHALTER_ROLLE)).toHaveCount(6);
-  for (const name of [/^Fussnoten/, VERMERKE_SCHALTER_NAME, AUS_WAHL_NAME]) {
-    await expect(gruppe.getByRole(WAHL_ROLLE, { name })).toHaveCount(1);
-  }
-  // W2·5m (14.9.2026): in der EIGENEN Gruppe gezählt — seit der Lesart-Wahl
-  // (Kap. 15.3) trägt das Menü zwei Radiogruppen, und `gruppe` ist hier das
-  // ganze Panel. Schärfung, kein Nachgeben: die Zeile misst jetzt die Wahl,
-  // über die sie spricht.
-  await expect(gruppe.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(3);
+  await expect(gruppe.getByRole(SCHALTER_ROLLE)).toHaveCount(1);
+  await expect(gruppe.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME })).toHaveCount(1);
+  await expect(gruppe.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(1);
+  await expect(gruppe.locator('[data-v3-vermerke-wahl] [role="menuitemradio"]')).toHaveCount(0);
   await expect(gruppe.getByRole(SCHALTER_ROLLE, { name: 'Linien' })).toHaveCount(0);
   // Negativ-Sonde gegen die Rückkehr: eine entfernte Steuerung, die niemand
   // vermisst, schleicht sich beim nächsten Merge sonst wieder ein.
@@ -167,13 +164,15 @@ test('Options-Leiste: die Änderungs-Wahl + sechs Rubriken-Schalter — «Linien
   // D35-F3: EIN Attribut für die eine Frage; die zwei alten sind weg — ein
   // zurückgelassenes Attribut wäre der stille Rest, an dem eine CSS-Regel später
   // wieder anwachsen könnte (dieselbe Sorge wie bei `data-verweise` oben).
-  await expect(html).toHaveAttribute('data-vermerke', 'fassung');
+  // S6 W1f: Vorgabe «aus» (dieselbe Fussnoten-Sicht wie das frühere «fassung»).
+  await expect(html).toHaveAttribute('data-vermerke', 'aus');
   await expect(html).not.toHaveAttribute('data-fussnoten', /.*/);
   await expect(html).not.toHaveAttribute('data-histansicht', /.*/);
   // D35-F2: dieselbe Sorge am gestrichenen `leitfaelle` — und das eine neue
   // Attribut steht im Grundzustand LEER, emittiert also keine Regel (R6/§6).
   await expect(html).not.toHaveAttribute('data-leitfaelle', /.*/);
-  await expect(html).toHaveAttribute('data-fuss-aus', '');
+  // S6 W1f: auch `data-fuss-aus` (Rubriken-Wahl) ist weg — kein stiller Rest.
+  await expect(html).not.toHaveAttribute('data-fuss-aus', /.*/);
 });
 
 // ── S1-NACHZUG B3 · GELÖSCHT IN H4 (Flip 18.8.2026) ─────────────────────────
@@ -218,8 +217,9 @@ test('Ä69/D35-F3: keine Hinweiszeile an einem Erlass MIT klassifizierter Histor
   await warteReader(page, '/gesetze/bund/BGBM', 'art-1');
   await ansichtOeffnen(page);
   const gruppe = page.locator(ANSICHT_PANEL).first();
-  const fassung = gruppe.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME });
-  await expect(fassung).toHaveCount(1);
+  // S6 W1f (§6.3): die Bedienung ist der Fussnoten-Schalter.
+  const schalter = gruppe.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME });
+  await expect(schalter).toHaveCount(1);
   await expect(gruppe.getByText(ALT_HINWEIS)).toHaveCount(0);
   await expect(gruppe.getByText('keine klassifizierten Änderungs-Fussnoten')).toHaveCount(0);
   // Die Wahl-Gruppe trägt an einem klassifizierten Erlass keine Beschreibung —
@@ -229,15 +229,18 @@ test('Ä69/D35-F3: keine Hinweiszeile an einem Erlass MIT klassifizierter Histor
     'die Wahl trägt an BGBM noch eine Beschreibung',
   ).toBeNull();
 
-  // Und die Stellung WIRKT: «Fassung» zeigt den Slot, «aus» nimmt ihn.
-  await expect(fassung).toHaveAttribute('aria-checked', 'true');
-  // §6.3-DEKLARATION (D40, 7.9.2026): der Kopf-Slot ist gefallen; die Wirkung
-  // der Stellung zeigt sich an der Rubrik-Marke der Funktionszeile.
-  const slot = page.locator(`.lc-leser ${F_MARKE}`).first();
-  await expect(slot).toBeVisible({ timeout: 15000 });
-  await gruppe.getByRole(WAHL_ROLLE, { name: AUS_WAHL_NAME }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'aus');
-  await expect(slot, '«aus» nimmt die Fassungs-Rubrik nicht').toBeHidden();
+  // Und der Schalter WIRKT (positive Hälfte, §6.7). §6.3 · S6 W1f: bis hierher
+  // an der Fassungs-Rubrik gemessen («Fassung zeigt den Slot, aus nimmt ihn») —
+  // die Rubrik ist gefallen; gemessen wird am Apparat, dem einzigen, was am
+  // Artikel noch schaltet.
+  await expect(schalter).toHaveAttribute('aria-checked', 'false');
+  const apparat = page.locator('.lc-leser [data-fn-apparat]').first();
+  await expect(apparat).toBeAttached({ timeout: 15000 });
+  await expect(apparat).toBeHidden();
+  await schalter.click();
+  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'fussnoten');
+  await apparat.scrollIntoViewIfNeeded();
+  await expect(apparat, '«Fussnoten» zeigt den Apparat nicht').toBeVisible();
 });
 
 test('A1-Mechanik: die Wahl VERSCHWINDET die A-Spur (display:none), der Text bleibt im DOM, kein CLS', async ({ page }) => {
@@ -287,9 +290,10 @@ test('A1-Mechanik: die Wahl VERSCHWINDET die A-Spur (display:none), der Text ble
   // behauptet, prüfte weniger, §6.7).
   // WAS DIESER FALL PRÜFT, BLEIBT: die A1-MECHANIK (David 5.7.2026) —
   // `display:none`, nie gelöscht, vollständige Wiederherstellung, CLS 0.
+  // S6 W1f (§6.3): «Fassung» ist gefallen — ausgeschaltet heisst «aus».
   await ansichtOeffnen(page);
-  await page.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME }).click();
-  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'fassung');
+  await page.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'aus');
   await expect(aMarker).toBeHidden();
   // §6.3-DEKLARATION (W2·26/Z8): bis hierher sass `display:none` am
   // KLASSEN-Wrapper (`[data-fn-klasse]`), weil die Regel nach Klasse griff.

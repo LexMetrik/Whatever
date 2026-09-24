@@ -766,8 +766,8 @@ vollständig abgelöst, es gibt keine zwei Code-Pfade mehr.
 («OR 257d» über die globale Kopf-Suche, `⌘K` oder `/`) · Klick auf Einträge des
 Inhaltsverzeichnisses · Klick auf Randtitel-Gruppen · Tastatur `j`/`k` (Artikel vor
 bzw. zurück) · `←`/`→` (Blättern im Einzelmodus) · `r` (Beiwerk-Blatt öffnen) · Klick
-auf Fussnoten-Marker · Klick auf die Rubrik-Griffe der Funktionszeile ·
-«Ansicht»-Aufklappliste (Fussnoten und Verweise an/aus) · «⧉ Daneben öffnen»
+auf Fussnoten-Marker · Klappzeilen im Erlass-Blatt (Verweise, Fassung) ·
+«Ansicht»-Aufklappliste (Schalter «Fussnoten») · «⧉ Daneben öffnen»
 (geteilte Ansicht) · Gliederung ein-/ausklappen.
 
 **Zustände auf Erlass-Ebene:**
@@ -782,7 +782,7 @@ auf Fussnoten-Marker · Klick auf die Rubrik-Griffe der Funktionszeile ·
 | Adress-Umzug | Alt-Adresse eines Staatsvertrags | ersetzender Sprung auf die kanonische Adresse samt Anker und Query |
 | Geladen | Snapshot + Sidecar da | vollständiger Leser |
 
-**Persistenz.** Ansichts-Schalter (Fussnoten, Verweise) in `localStorage
+**Persistenz.** Ansichts-Schalter «Fussnoten» (seit S6 W1f, 24.9.2026, zweiwertig) in `localStorage
 lm.leser.optionen`, vor dem ersten Zeichnen angewandt (kein Flackern) · Leseposition
 und «Weiterlesen»-Chip · Schriftgrössen-Stufe (100/108/118/130 %) · die URL trägt
 Erlass, Anker `#art-<token>`, Suchbegriff und den Zustand der geteilten Ansicht.
@@ -808,13 +808,17 @@ Ab 1024 px steht die Gliederung als **zweite Spalte**, darunter als **Bottom-She
 hinter dem «☰»-Griff im klebenden Kopf — inklusive eigenem Such-/Sprungfeld, weil der
 Fokus den Dialog nicht verlassen darf. Ein Griff «‹ Gliederung ausblenden» bzw.
 «einblenden» steht im linken Streifen der Kopfzeile, sobald die Spalte steht.
+Eingeklappt bleibt eingeklappt — auch beim nächsten Gesetz und nach Neuladen
+(`localStorage`, Schlüssel `lm-leser-gliederung`; seit 24.9.2026); das
+vorübergehende Weichen vor dem offenen Erlass-Blatt (2.3.15) wird nicht gemerkt.
 
 Keine vertikale Führungslinie mehr (aufgehoben 16.8.2026) und kein Tiefen-Einzug mehr
 (aufgehoben 29.8.2026) — die Tiefe trägt ausschliesslich die Typografie.
 
 **Quelle:** `src/pages/gesetz-leser/parts/SektionBaumTOC.tsx`,
 `gliederungsArtikel.ts`, `gliederungsModell.ts`, `gliederungsTypen.ts`,
-`GliederungSheet.tsx`, `LeserKopf.tsx`, `klappKarte.ts`.
+`GliederungSheet.tsx`, `LeserKopf.tsx`, `klappKarte.ts`, `v3/leisteAufbau.tsx`
+(Spalte · Sheet · Schiene), `v3/gliederungGedaechtnis.ts`.
 
 #### 2.3.2 Artikelansicht
 
@@ -890,10 +894,13 @@ Vorbehalt-Satz: «massgeblich bleibt stets die amtliche Fassung».
 
 #### 2.3.6 Fassungen und Revisionen
 
-Je Artikel gibt es die Rubrik **«Fassung»** in der Funktionszeile (2.3.9), gespeist aus
-dem erlass-lokalen Historie-Shard. Zugeklappt zeigt die Marke den Stand («Gilt seit
-1.1.2023 ›»), aufgeklappt die Zahl der Änderungsstände («3 Fassungen») plus eine
-Zeitleiste mit den Ereignissen. Daneben gibt es ein separates Modul für
+Je Artikel steht die **Fassung** seit S6 W1f (Entscheid David 24.9.2026) als
+Klappzeile «Fassung dieses Artikels» oben im Reiter «Änderungen» des Erlass-Blatts
+(2.3.15), gespeist aus dem erlass-lokalen Historie-Shard — für den Artikel, dem das
+Blatt gerade folgt. Zugeklappt zeigt die Zeile den Stand («Gilt seit 01.01.2023»),
+aufgeklappt die Zeitleiste mit den Ereignissen samt Entstehung und «Alt/Neu». Ohne
+Historie-Eintrag steht keine Zeile. Am Artikel selbst steht die Fassung nur noch im
+Druck. Daneben gibt es ein separates Modul für
 Artikel-Revisionen sowie eine eigene Behandlung künftiger, angekündigter Fassungen.
 
 Im Erlass-Blatt (2.3.15) zeigt der Reiter **«Änderungen»** die Änderungserlasse des
@@ -915,11 +922,9 @@ kantonale Erlasse bisher nicht erfasst» (S6, 23.9.2026).
 Zwei Orte (die frühere «Leitfälle»-Zeile im Artikeltext mit Zeitraum-Stufen
 «alle · 20 · 10 · 5 J.» ist seit H3 entfallen — Stand S6-W1b, 23.9.2026):
 
-1. **Rubrik «Entscheide»** der Funktionszeile am Artikelende: Zahl der
-   verknüpften Entscheide des Artikels (ungefiltert), aufklappbar; ein
-   Sekundär-Griff «im Erlass-Blatt öffnen ›» öffnet das Erlass-Blatt auf dem
-   Reiter «Entscheide» und klappt die Rubrik dabei zu (dieselbe Liste steht nie
-   zweimal da).
+1. ~~Rubrik «Entscheide» der Funktionszeile~~ — seit S6 W1f (24.9.2026)
+   aufgelöst; die Entscheide des Artikels stehen allein im Reiter unten. Im
+   Einzelmodus bleibt der Dossier-Block (2.3.15).
 2. **Reiter «Entscheide»** im Erlass-Blatt (2.3.15), artikelscharf. Grundzustand
    **alle Instanzen** (Entscheid David 23.9.2026) in fester Ordnung: zuerst die
    Leitentscheide (BGE), dann je kantonales Gericht eine Gruppe, dann der Rest
@@ -948,9 +953,9 @@ Seit S6 (Entscheid David 23.9.2026) zwei getrennte Bestände mit zwei Namen:
   (nur laufend/geplant/in Vorbereitung) und «Vernehmlassungen (abgeschlossen)» mit
   den amtlichen Status-Etiketten (Fedlex consultation-status). §8-Zeile: maschinell
   zugeordnet, nicht geprüft, Abdeckung, Datenstand.
-- **Erläuterungen = Behördenpraxis** — Rubrik «Erläuterungen» der Funktionszeile
-  (artikelscharf) und Reiter «Erläuterungen» im Blatt (Titel «Behördliche
-  Erläuterungen», erlass-weit): Kreisschreiben, Wegleitungen, Leitfäden,
+- **Erläuterungen = Behördenpraxis** — Reiter «Erläuterungen» im Blatt: oben die
+  Gruppe «Zu Art. N» mit den Erläuterungen DIESES Artikels (bis S6 W1f die Rubrik
+  der Funktionszeile), darunter «Behördliche Erläuterungen» erlass-weit: Kreisschreiben, Wegleitungen, Leitfäden,
   Merkblätter aus den Kanten-Shards und dem kuratierten Register gemischt, ohne
   Dubletten. Anhänge hängen an ihrem Kreisschreiben, artikelweise Wegleitungen sind
   ein aufklappbarer Posten, Nummern natürlich sortiert. Je Dokument «Stand der
@@ -961,31 +966,27 @@ Seit S6 (Entscheid David 23.9.2026) zwei getrennte Bestände mit zwei Namen:
 `src/lib/materialien/{botschaften,vernehmlassungen,ratschlaege}.ts`,
 `artikelMaterialienLaden.ts`, `src/lib/kontext.ts`.
 
-#### 2.3.9 Funktionszeile am Artikelende — die fünf Rubriken
+#### 2.3.9 Funktionszeile am Artikelende — aufgelöst (S6 W1f, 24.9.2026)
 
-| Buchstabe | Rubrik (Einzahl/Mehrzahl) | Register | Inhalt beim Aufklappen |
-|---|---|---|---|
-| f | Fassung / Fassungen | Gesetze | Fassungs-Zeitleiste (2.3.6); zugeklappt «Gilt seit …» statt einer Zahl |
-| r | Entscheid / Entscheide | Rechtsprechung | Leitfall- und Entscheid-Liste plus «im Erlass-Blatt öffnen ›» |
-| m | Erläuterung / Erläuterungen | Materialien | Behördliche Erläuterungen zu diesem Artikel plus «im Erlass-Blatt öffnen ›» (Reiter «Erläuterungen») |
-| g | Verweis / Verweise | Gesetze | aufgelöste Normverweise dieses Artikels |
-| w | Werkzeug / Werkzeuge | Werkzeuge | Rechner und Vorlagen an diesem Artikel plus «im Erlass-Blatt öffnen ›» (Reiter «Werkzeuge»); Leerzustand: «Zu dieser Bestimmung führen wir bisher keinen Rechner und keine Vorlage.» |
+Entscheid David 24.9.2026, wörtlich: «die zeile soll ganz weg. infos sollen alle
+im blatt erscheinen. einzige ausnahme sind wenn fussnoten aktiviert sind die
+sollen unten am artikel erschienen». Die fünf Rubriken sind umgezogen:
 
-Rechts in derselben Zeile stehen die Aktionen (2.3.10). **Regeln:**
+| Rubrik bis 24.9.2026 | jetzt |
+|---|---|
+| f · Fassung | Reiter «Änderungen», Klappzeile «Fassung dieses Artikels» (2.3.6) |
+| r · Entscheide | Reiter «Entscheide» (war schon artikelscharf, 2.3.7) |
+| m · Erläuterungen | Reiter «Erläuterungen», Gruppe «Zu Art. N» oben (2.3.8) |
+| g · Verweise | Klappzeile «Verweise dieses Artikels» oben im Blatt, über jedem Reiter (2.3.15) |
+| w · Werkzeuge | Reiter «Werkzeuge», Gruppe «Zu Art. N» oben (2.3.15) |
 
-- Genau **eine** Rubrik gleichzeitig offen (Akkordeon); `Escape` schliesst und gibt den
-  Fokus zurück.
-- Beim Laden ist alles zu — **kein** Speicher-Merker mehr.
-- Eine Rubrik mit Zahl 0 erscheint gar nicht.
-- Die Zeile selbst erscheint nur, wenn mindestens eine Rubrik oder die Aktionen etwas
-  zu zeigen haben.
-- Aktionen sind im DOM nur bei Hover oder Fokus an der Zeile — **oder**, auf Geräten
-  ohne Hover (Telefon, Tablet), immer sichtbar.
-- Im Ausdruck ausgeblendet.
+Am Artikel bleiben der Fussnoten-Apparat (Schalter «Fussnoten» im Menü «Ansicht»)
+und die Aktionen (2.3.10) als ruhige Textzeile. Das Dossier des Einzelmodus behält
+seine Blöcke (2.3.15). Die Rubriken-Wahl im Menü «Ansicht» ist gefallen.
 
-**Quelle:** `src/pages/gesetz-leser/parts/Funktionszeile.tsx`. **Umbau-Hinweis:** die
-Datei trägt noch die CSS-Klassen `.lr7-bez*` aus ihrem alten Namen `BezuegeKopf.tsx`
-und behält sie bewusst — siehe Nebenfund N8.
+**Quelle:** `src/pages/gesetz-leser/v3/BlattArtikel.tsx`, `v3/PanelTafeln.tsx`,
+`parts/ArtikelLeser.tsx`. (`parts/Funktionszeile.tsx` gelöscht; Typ `BezugsMarke`
+jetzt in `parts/ArtikelDossier.tsx`.)
 
 #### 2.3.10 Kopieren, Zitieren, Teilen
 
@@ -1000,6 +1001,11 @@ Drei Aktionen je Artikel:
 - **«Amtliche Fassung ↗»** — Link zur amtlichen Fassung an genau dieser Stelle
   (Fedlex-ELI-Form), öffnet in neuem Tab. Erscheint **nur**, wenn ein verifizierter
   Link existiert — nie ein geratener.
+
+Seit S6 W1f (24.9.2026, Entscheid «Klein am Artikel») stehen die drei Aktionen in der
+Gesamtansicht **immer** als ruhige Textzeile «Zitat · Link · Amtliche Fassung ↗» am
+Artikelende (Knopf-Baustein ohne sichtbare Haarlinie, Tap-Höhe 24 px) — nicht mehr erst
+bei Hover; im Einzelmodus als Knöpfe über dem Dossier.
 
 **Kein Export einzelner Artikel** (weder PDF noch DOCX). «In neuem Reiter» und
 «Daneben öffnen» öffnen den **ganzen** Erlass in einem zweiten Fenster.
@@ -1033,49 +1039,76 @@ Vier Stufen: **100 / 108 / 118 / 130 %**, vor dem ersten Zeichnen angewandt (kei
 Flackern). Basis-Fliesstext 18 px Serif (Literata), Zeilenhöhe 1.62, Zeilenmass-Deckel
 65–72 Zeichen, skaliert mit der Schriftstufe.
 
-Die **«Ansicht»**-Aufklappliste im Kopf trägt zwei dauerhafte, rein visuelle Schalter:
+Die **«Ansicht»**-Aufklappliste im Kopf trägt (Stand S6 W1f, 24.9.2026) neben Lesart
+und Schriftgrösse EINEN rein visuellen Schalter:
 
-- **Fussnoten** — Marker und Apparat sichtbar bzw. verschwunden; der Normtext bleibt
-  stets durchsuchbar.
-- **Verweise** — Unterstreichung an/aus; Farbe und Funktion bleiben.
+- **Fussnoten** (Gruppe «Im Gesetzestext», `menuitemcheckbox`) — Marker und Apparat
+  sichtbar bzw. verschwunden; Vorgabe aus; der Normtext bleibt stets durchsuchbar.
+  Gespeicherte Dreier-Wahl migriert: «Fassung» → aus (dieselbe Fussnoten-Sicht),
+  «Fussnoten» → an, «aus» → aus. Die Rubriken-Wahl ist gefallen.
 
 **Quelle:** `src/pages/gesetz-leser/leserSchrift.ts`, `LeserAnsichtV3.tsx`,
 `tailwind.config.js`, `src/index.css`.
 
 #### 2.3.13 Druck
 
-Funktionszeile, Suchzone, das Erlass-Blatt samt Abdunklung und weitere Bedienelemente sind im Druck ausgeblendet. Im
+Aktionszeile, Suchzone, das Erlass-Blatt samt Abdunklung und weitere Bedienelemente sind im Druck ausgeblendet. Die Fassung («Gilt seit …») steht im Druck an jedem Artikel mit Historie-Eintrag, unabhängig vom Fussnoten-Schalter (seit S6 W1f). Im
 Druck trägt der Artikelkopf den Randtitel, die Funktionszeile fällt weg. Fussnoten
 folgen dem Schalter — AUS heisst: auch im Druck weggelassen.
 
 #### 2.3.14 Mobil
 
 Unter der Spaltenschwelle (< 1024 px bzw. schmales Fenster): Gliederung als
-Bottom-Sheet hinter «☰», Suchfeld bleibt im klebenden Kopf. Das Beiwerk-Blatt
-(Entscheide, Materialien, Verweise, Rechner, Fassung) öffnet als Sheet statt als
-Spalte. Die Artikelform bleibt in der schmalen Variante `zeile` (Randtitel als Zeile
+Bottom-Sheet hinter «☰», Suchfeld bleibt im klebenden Kopf. Das Erlass-Blatt
+(2.3.15) öffnet als Sheet hinter dem Knopf «Erlass-Blatt» im Kopf statt als dritte
+Spalte mit Schiene. Die Artikelform bleibt in der schmalen Variante `zeile` (Randtitel als Zeile
 über der Artikelnummer). Mobil-Boden des Zeilenmasses: mindestens 31 Zeichen bei
 390 px.
 
 #### 2.3.15 Erlass-Blatt und Einzel-Artikel
 
-**Erlass-Blatt** (überall dieser eine Name: Öffner «Erlass-Blatt» im Kopf ohne
-Menü-Pfeil, Kopf des Blatts, Tastenhilfe, Griff «im Erlass-Blatt öffnen ›»; Taste
-`r` schaltet auf und zu und lässt den Reiter stehen): ab dem grossen Breakpoint ein
-rechtes Blatt von 380 px, das am **rechten Fensterrand** anschlägt (seit 23.9.2026,
-vorher an der Lesespalte) und die Lesespalte überlagert, ohne sie zu verschieben
-(nicht modal, der Lesetext bleibt bedienbar); auf dem Handy und in jedem Fenster der
-geteilten Ansicht ein Bottom-Sheet. Das Handy-Sheet schliesst auch mit der
+**Erlass-Blatt** (überall dieser eine Name: Öffner «Erlass-Blatt», Kopf des Blatts,
+Tastenhilfe, Griff «im Erlass-Blatt öffnen ›»; Taste `r` schaltet auf und zu und
+lässt den Reiter stehen): ab 1024 px (Einzelansicht) eine **eigene dritte Spalte**
+rechts der Lesespalte, 380 px breit, wie die Gliederung gebaut — sie klebt unter dem
+Kopf, scrollt für sich, reicht bis zur Fensterunterkante und deckt nie Text ab
+(Entscheid David 24.9.2026, Variante A; vorher überlagerte das Blatt die Lesespalte,
+zuletzt am rechten Fensterrand). **Zu** steht rechts eine 36-px-Schiene
+«‹ Erlass-Blatt» als Spiegel der Gliederungs-Schiene (ein Klick öffnet), **offen**
+im Kopf rechts der Griff «Erlass-Blatt ausblenden ›» als Spiegel von
+«‹ Gliederung ausblenden»; ein eigener Knopf «Erlass-Blatt» im Kopf entfällt dann.
+Beim Öffnen rückt der Text zur Seite und bricht auf kleineren Bildschirmen neu um
+(bewusst in Kauf genommen): der Rahmen wird um die Blatt-Spalte breiter, solange
+das Fenster Raum hat — ab 1920 px bleibt der Text stehen und das Blatt sitzt direkt
+daneben. Reicht der Platz für Gliederung, eine Lesespalte von mindestens 448 px und
+Blatt nicht (unter etwa 1204 px Fenster), weicht die Gliederung für die Dauer des
+offenen Blatts auf ihre Schiene und kehrt beim Schliessen zurück (ein Klick auf ihre
+Schiene schliesst in dieser Lage das Blatt). Unter 1024 px, bei sehr engem Raum und
+in jedem Fenster der geteilten Ansicht bleibt das Blatt ein Bottom-Sheet hinter dem
+Knopf «Erlass-Blatt» im Kopf. Das Handy-Sheet schliesst auch mit der
 Zurück-Geste und mit Wischen nach unten an der Griffleiste; seine Bedienelemente
-treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» beim Reiter «Entscheide», sonst
-«Erlass-Blatt · OR», mit Schliessen-Knopf (`Esc`). Darunter die optionale
+treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» in jedem Reiter (seit S6 W1f,
+vorher nur bei «Entscheide»), mit Schliessen-Knopf (`Esc`). Darunter die optionale
 Steckbrief-Zeile, dann fünf Reiter als Registerfläche — **Entscheide** (Register r),
 **Änderungen** (g), **Materialien** (m, nur Gesetzgebung), **Erläuterungen** (m,
 Behördenpraxis), **Werkzeuge** (w; eine Zeile je Rechner/Vorlage mit den Artikeln
 und aufklappbarer Zuordnung, geplante unter «In Vorbereitung» ohne Link); der aktive
 steht auf der getönten Registerfläche mit Registerkante; alle fünf passen in eine
 Zeile (Umbruch nur bei grosser Schriftstufe oder unter 380 px, nie abgeschnitten).
-Pfeiltasten wechseln den Reiter; nur die aktive Tafel wird geladen. Inhalte,
+Pfeiltasten wechseln den Reiter; nur die aktive Tafel wird geladen. Seit S6 W1f
+(24.9.2026) folgt das Blatt dem Artikel am Kopf der Lesespalte und trägt dessen
+Auskunft: über den Reitern die Klappzeile «Verweise dieses Artikels · N» (nur wenn
+N > 0; zugeklappt eine Zeile, aufgeklappt die Norm-Chips), im Reiter «Änderungen»
+oben «Fassung dieses Artikels», in «Materialien» oben die Botschaften, auf die eine
+Änderung des Artikels verweist (Abgleich über die ELI im Bundesblatt), in
+«Erläuterungen» und «Werkzeuge» oben die Gruppe «Zu Art. N». Jeder dieser vier
+Reiter zeigt zuerst den Artikelteil; ohne Bezug steht «Zu Art. N nichts erfasst.»,
+darunter der erlassweite Teil **zugeklappt** («Alle Änderungen des Erlasses · N»;
+bei null im ganzen Erlass ohne Klappzeile, die Tafel sagt es in einer Zeile).
+Wechselt der Artikel am Kopf oder der Reiter, springt die Scrollfläche des Blatts
+ohne Animation an den Anfang (Meldung David 24.9.2026). Klappzeilen nach dem Board
+«Fliesstext-Blatt»: Registerlinie oben, ▸, Überzeile, Zahl bzw. Stand rechts;
+Inhalt erst aufgeklappt, `Esc` klappt zu. Inhalte,
 Filterzeile und Zähler der Tafeln wie 2.3.6–2.3.8 und 2.4. Im Druck fällt das Blatt
 weg (2.3.13).
 
@@ -1091,8 +1124,8 @@ Darunter das Pfeilpaar «davor / danach» in voller Tap-Höhe, die Zeile
 «← → blättert vor und zurück» (auf Geräten ohne Tastatur ausgeblendet), die
 Nachbarn-Vorschau mit Nummer und Randtitel (am ersten/letzten Artikel entfällt
 die leere Seite) und das Dossier: dieselben Rubriken wie die Funktionszeile
-(2.3.9), gestapelt und einzeln aufklappbar. Die Funktionszeile am Artikel bleibt
-auch im Einzelmodus.
+(2.3.9), gestapelt und einzeln aufklappbar. Die Funktionszeile der Gesamtansicht
+ist seit S6 W1f gefallen; das Dossier bleibt unverändert (Entscheid David 24.9.2026).
 
 **Teilerfassung ohne Klick** (§8): ein belegter Fehl- oder Teilerfassungs-Befund
 (z. B. SG-3849) steht als Hinweis direkt im Titelblatt, nicht nur in der
@@ -1106,10 +1139,10 @@ zugeklappten Übersicht.
 
 | Ziel | Mechanik | Quelle |
 |---|---|---|
-| Rechtsprechung | Rubrik «Entscheide» (Zahl + Liste); Sekundär-Griff «im Erlass-Blatt öffnen ›» öffnet das Erlass-Blatt auf dem Reiter «Entscheide» und klappt die Rubrik zu; inline die Leitfall-Zeile mit BGE-Chips | `ArtikelLeser.leitfaelle.tsx`, `PanelEntscheide.tsx`, `RechtsprechungLink.tsx` |
-| Materialien / Erläuterungen | Rubrik «Erläuterungen» (Behördenpraxis) mit «im Erlass-Blatt öffnen ›»; die Gesetzgebung (Botschaften, Vernehmlassungen) im Blatt-Reiter «Materialien» | `PanelMaterialien.tsx`, `PanelErlaeuterungen.tsx`, `artikelMaterialienLaden.ts` |
+| Rechtsprechung | Reiter «Entscheide» im Erlass-Blatt (artikelscharf); im Einzelmodus der Dossier-Block; inline die Leitfall-Zeile mit BGE-Chips (Rubrik der Funktionszeile bis S6 W1f) | `ArtikelLeser.leitfaelle.tsx`, `PanelEntscheide.tsx`, `RechtsprechungLink.tsx` |
+| Materialien / Erläuterungen | Reiter «Erläuterungen» (Behördenpraxis, oben «Zu Art. N»); die Gesetzgebung (Botschaften, Vernehmlassungen) im Blatt-Reiter «Materialien» | `PanelMaterialien.tsx`, `PanelErlaeuterungen.tsx`, `artikelMaterialienLaden.ts` |
 | andere Normen (Bund→Bund, Bund→Kanton) | Inline-Verweis-Linker im Fliesstext und in Fussnoten. Ein Klick öffnet das **Norm-Popover** (Wortlaut des Zielartikels, Stand, Live-Link, «Wird zitiert von» / «Legt aus») oder springt bei internem Bestand direkt in den Leser. Fehlt der Zielerlass im Haus, bleibt der Fedlex-Link als Rückfall. | `src/components/NormText.tsx`, `NormPopover.tsx`, `KantonNormText.tsx`, `src/lib/fedlex*.ts` |
-| Rechner / Vorlagen | Rubrik «Werkzeuge» mit «im Erlass-Blatt öffnen ›»; Leerzustand-Satz, wenn kein Werkzeug hinterlegt ist | `ArtikelLeser.bezuegeFuss.tsx`, `PanelWerkzeuge.tsx`, `randNotizWerkzeuge.ts` |
+| Rechner / Vorlagen | Reiter «Werkzeuge» (oben «Zu Art. N» für den gelesenen Artikel); im Einzelmodus der Dossier-Block mit Leerzustand-Satz | `ArtikelLeser.bezuegeFuss.tsx`, `PanelWerkzeuge.tsx`, `randNotizWerkzeuge.ts` |
 | Geteilte Ansicht («⧉ Daneben öffnen») | Öffnet denselben oder einen anderen Erlass im zweiten Fenster; nur ab dem grossen Breakpoint und bei freier Kapazität | `LeserPanelOeffner.tsx`, `ReiterAktion.tsx` |
 | Kantonale Quellenangabe | Link auf die amtliche kantonale Gesetzessammlung; Wappen-Icon je Kanton | `src/components/KantonQuelleLink.tsx`, `KantonWappen.tsx` |
 
@@ -4431,7 +4464,9 @@ berührt.
    dagegen einen Knopf «↺ Eingaben zurücksetzen» im Wizard-Kopf.)
    *Quelle: Grep über `src/components/forms/**`.*
 
-8. **N8 · Die Funktionszeile trägt die Altnamen ihrer Vorgänger-Datei.** Die Datei
+8. **N8 · Die Funktionszeile trägt die Altnamen ihrer Vorgänger-Datei.** *(Erledigt
+   24.9.2026, S6 W1f: `Funktionszeile.tsx` gelöscht; `.lr7-bez-block/-pfeil/-skelett`
+   und `BezugsMarke` leben im Dossier weiter, `.lr7-bez-aktionen` an der Aktionszeile.)* Die Datei
    `src/pages/gesetz-leser/parts/Funktionszeile.tsx` hiess bis zu einem Umbau
    `parts/BezuegeKopf.tsx`; der Kommentar dokumentiert das. Die CSS-Klassen `.lr7-bez*`
    und der Typ `BezugsMarke` **bleiben bewusst** — sie sind der Anker, an dem Stil und

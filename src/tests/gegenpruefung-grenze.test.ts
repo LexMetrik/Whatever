@@ -113,6 +113,7 @@ describe('Risiko-Grenze RL-02', () => {
       'scripts/golden-outputs.ts',
       'golden/lexmetrik-golden.json',
       'scripts/analyse/test-assertion-diff.ts',
+      'scripts/analyse/assertion-mengen.ts',
       'scripts/check-fachaenderung.ts',
       'scripts/analyse/fachaenderung-kern.ts',
     ]) {

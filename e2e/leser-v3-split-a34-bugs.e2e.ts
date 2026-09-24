@@ -121,10 +121,13 @@ test('V3/A34/Bug2 (≥lg): «Ansicht»-Menü im Split-View bleibt beim Scrollen 
   // Öffner im Pane bedient wirklich den geteilten Store») ist unverändert.
   await ansicht.click()
   await expect(primaer.locator('[data-v3-ansicht-panel]')).toBeVisible()
-  const vorher = await page.evaluate(() => document.documentElement.getAttribute('data-vermerke') ?? 'fassung')
+  // S6 W1f (§6.3): die Wahl ist EIN Schalter «Fussnoten» (Vorgabe «aus»); ein
+  // Klick schaltet um — der Sachverhalt «der Öffner im Pane bedient den
+  // geteilten Store» bleibt.
+  const vorher = await page.evaluate(() => document.documentElement.getAttribute('data-vermerke') ?? 'aus')
   const ziel = vorher === 'fussnoten' ? 'aus' : 'fussnoten'
-  await primaer.getByRole(WAHL_ROLLE, { name: ziel === 'aus' ? /^aus$/ : /^Fussnoten/ }).first().click()
-  await expect.poll(() => page.evaluate(() => document.documentElement.getAttribute('data-vermerke') ?? 'fassung'))
+  await primaer.getByRole(WAHL_ROLLE, { name: /^Fussnoten/ }).first().click()
+  await expect.poll(() => page.evaluate(() => document.documentElement.getAttribute('data-vermerke') ?? 'aus'))
     .toBe(ziel)
   expect(fehler).toEqual([])
 })

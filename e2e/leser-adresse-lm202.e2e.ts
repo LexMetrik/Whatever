@@ -8,6 +8,9 @@
 // LOGIKVERLUST: keiner — nur der Render-Zeitpunkt ändert sich.
 // Die Zusagen dieser Datei sind unverändert; die Sonden sprechen die
 // Vorbedingung jetzt aus (`.lr7-bez` hovern), statt sie stillschweigend
+// [S6 W1f, 24.9.2026, §6.3: die Aktionen stehen seither IMMER als ruhige
+//  Textzeile `[data-artikel-aktionen]` am Artikel; gehovert wird sie, der
+//  Hover ist damit keine Bedingung mehr, nur noch die Geste des Lesers.]
 // vorauszusetzen.
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
 // W2·10-UI-NAV-URL — Adress-Modell des Gesetzes-Lesers (LM-202).
@@ -155,7 +158,7 @@ test.describe('LM-202 — Teilen-Aktion: kopierte URL == Adresse', () => {
     await expect(page).toHaveURL(/#art-5$/)
 
     const verlaufVorher = await page.evaluate(() => history.length)
-    await art31.locator('.lr7-bez').hover()
+    await art31.locator('[data-artikel-aktionen]').hover()
     await art31.getByRole('button', { name: 'Permalink kopieren' }).click()
 
     const clip = await page.evaluate(() => navigator.clipboard.readText())
@@ -205,7 +208,7 @@ test.describe('LM-202 — Teilen im Split-View (B1)', () => {
     await expect(art31).toBeAttached({ timeout: BOOT_MS })
     await art31.scrollIntoViewIfNeeded()
     await page.waitForTimeout(400)
-    await art31.locator('.lr7-bez').hover()
+    await art31.locator('[data-artikel-aktionen]').hover()
     await art31.getByRole('button', { name: 'Permalink kopieren' }).click()
 
     // Der Kern von B1 — vor dem Fix blieb die Adresse auf «#art-5» stehen.
@@ -231,7 +234,7 @@ test.describe('LM-202 — Teilen im Split-View (B1)', () => {
     await zgbArt.scrollIntoViewIfNeeded()
     await page.waitForTimeout(400)
     const adresseVorher = page.url()
-    await zgbArt.locator('.lr7-bez').hover()
+    await zgbArt.locator('[data-artikel-aktionen]').hover()
     await zgbArt.getByRole('button', { name: 'Permalink kopieren' }).click()
 
     const clip = await page.evaluate(() => navigator.clipboard.readText())
@@ -262,7 +265,7 @@ test('LM-202/B2 — Leerzeichen-Token: kopierter Permalink ist zeichengleich mit
   await art.scrollIntoViewIfNeeded()
   await page.waitForTimeout(400)
 
-  await art.locator('.lr7-bez').hover()
+  await art.locator('[data-artikel-aktionen]').hover()
   await art.getByRole('button', { name: 'Permalink kopieren' }).click()
   await expect(page).toHaveURL(/#art-22%20a$/, { timeout: 10000 })
   const clip = await page.evaluate(() => navigator.clipboard.readText())
@@ -305,8 +308,8 @@ test('A9 — Teilen-Knopf: Tastatur/aria/Tap-Ziel, Scroll + Teilen unter 6× Dro
   for (let i = 0; i < 5; i++) { await page.mouse.wheel(0, 1200); await page.waitForTimeout(150) }
   expect(page.url(), 'Adresse unter Drossel gewandert').toBe(adresseVorScroll)
 
-  await art31.locator('.lr7-bez').scrollIntoViewIfNeeded()
-  await art31.locator('.lr7-bez').hover()
+  await art31.locator('[data-artikel-aktionen]').scrollIntoViewIfNeeded()
+  await art31.locator('[data-artikel-aktionen]').hover()
   const knopf = art31.getByRole('button', { name: 'Permalink kopieren' })
   await knopf.scrollIntoViewIfNeeded()
   const gemessen = await knopf.evaluate((el) => {

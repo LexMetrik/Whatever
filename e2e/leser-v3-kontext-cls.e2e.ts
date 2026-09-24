@@ -15,6 +15,12 @@
 //      §1 zufolge nie zulässig als Nebenwirkung eines Beiwerk-Fensters. Diese
 //      Zusage muss gemessen bleiben, auch wenn die angedockte Spalte später
 //      kommt: sie ist dann die Stelle, an der sie brechen würde.
+//      ERGÄNZUNG Entscheid A (24.9.2026, §0 Ziff. 2b — der Satz oben bleibt
+//      Beleg seines Datums): das Blatt IST seither eine Spalte, und unter
+//      ~1400 px bricht der Text beim Öffnen neu um — von David ausdrücklich in
+//      Kauf genommen und input-verursacht, also kein CLS. @1440 hält (a) die
+//      Breite trotzdem (Zelle 684 ≥ Wortlaut 641 px, gemessen 24.9.2026); das
+//      Laden mit gemerkten Spuren prüft (c).
 //
 //  (3) LAYOUT-SHIFT OHNE EINGABE, IM LESEKÖRPER. Die `layout-shift`-Einträge
 //      mit `hadRecentInput === false`, deren Quelle im Lesekörper liegt, bleiben
@@ -187,6 +193,70 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
 
     const shift = await shiftLesen(page)
     expect(shift, `unangekündigter Layout-Shift ${shift} (Schwelle 0.01)`).toBeLessThan(0.01)
+    expect(fehler, fehler.join('\n')).toEqual([])
+  })
+
+  // ── (c) Entscheid A (24.9.2026) · GEMERKTE LAGEN SPRINGEN BEIM LADEN NICHT ──
+  // Seit das offene Blatt eine Spur ist und die eingeklappte Gliederung gemerkt
+  // wird, hängen die Spuren beim LADEN an gespeichertem Zustand. Ein Frame mit
+  // Ausgangs-Spuren, dann den gemerkten, wäre ein Sprung ohne Eingabe — genau
+  // die CLS-Falle des Auftrags. Gemessen wird darum das ERSTE Bild, in dem der
+  // Lesekörper steht (rAF läuft vor dem Malen): schon dort müssen Gliederung
+  // (Schiene) und Blatt (offen, nach Neuladen wiederhergestellt) stehen. Dazu
+  // der Shift-Deckel wie in (a), gezählt ab dem Neuladen.
+  // ROT GESEHEN (§6.7, 24.9.2026): die gemerkte Wahl erst NACH dem ersten Bild
+  // anwenden (`useState(true)` + verzögertes `setTocOffen(false)` in
+  // `inhalt-zustand.tsx`) ⇒ erstes Bild `{ aside: 1, schiene: 0 }`, rot;
+  // `merkeGliederung` im Rahmen weglassen ⇒ ebenso. NICHT rot wurde der Blatt-
+  // Teil mit dem Wiederherstellen als gewöhnlichem `useEffect` (Ist-Stand von
+  // `v3/blattGedaechtnis`): der Erlass-Key kommt vor dem Lesekörper, also steht
+  // das Blatt schon im ersten Bild offen — auch nach In-App-Zurück (5/5,
+  // `scratchpad/zurueck.cjs`). Der Fall bewacht es trotzdem, damit ein späterer
+  // Umbau des Ladens (Key und Lesekörper im selben Commit) auffällt.
+  test('(c) D @1440: gemerkte Gliederung «zu» und wiederhergestelltes Blatt stehen ab dem ersten Bild', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/STPO#art-5')
+    await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+    await page.locator('[data-v3-gliederung-zu]').click()
+    await panelAufziehen(page)
+    await page.waitForTimeout(300)
+
+    await page.addInitScript(() => {
+      const w = window as unknown as { __erstesBild: unknown; __shift: number }
+      w.__erstesBild = null
+      w.__shift = 0
+      new PerformanceObserver((liste) => {
+        for (const e of liste.getEntries() as unknown as { value: number; hadRecentInput: boolean; sources?: { node?: Node | null }[] }[]) {
+          if (e.hadRecentInput) continue
+          const spalte = document.querySelector('#lc-lesespalte')
+          if (!(e.sources ?? []).some((q) => !!spalte && !!q.node && spalte.contains(q.node))) continue
+          w.__shift += e.value
+        }
+      }).observe({ type: 'layout-shift', buffered: true })
+      const pruefe = () => {
+        if (document.querySelector('#lc-lesespalte article')) {
+          w.__erstesBild = {
+            aside: document.querySelectorAll('[data-v3-aside]').length,
+            schiene: document.querySelectorAll('[data-v3-gliederung-schiene]').length,
+            blatt: document.querySelectorAll('[data-v3-panel]').length,
+          }
+          return
+        }
+        requestAnimationFrame(pruefe)
+      }
+      requestAnimationFrame(pruefe)
+    })
+    await page.reload()
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(600)
+
+    const erstes = await page.evaluate(() => (window as unknown as { __erstesBild: unknown }).__erstesBild)
+    expect(erstes, 'erstes Bild mit Lesekörper: Gliederung als Schiene, Blatt offen').toEqual({ aside: 0, schiene: 1, blatt: 1 })
+    const shift = await page.evaluate(() => (window as unknown as { __shift: number }).__shift)
+    expect(shift, `unangekündigter Layout-Shift im Lesekörper beim Laden: ${shift}`).toBeLessThan(0.01)
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 

@@ -48,25 +48,33 @@
 //  · in `synopse-run.ts` die Umbuchung auf `quelle_unvollstaendig`
 //    auslassen (Shards neu erzeugen)                               ⇒ (f) rot
 import { test, expect, type Page } from '@playwright/test';
-import { F_BLOCK, F_MARKE } from './helpers/fassungsRubrik';
+import { fassungsMarke } from './helpers/fassungsRubrik';
+
+// ── §6.3-DEKLARATION · S6 W1f (Entscheid David 24.9.2026, «die zeile soll ganz
+// weg. infos sollen alle im blatt erscheinen») ────────────────────────────────
+// Der Fassungsvergleich steht seither in der Klappzeile «Fassung dieses
+// Artikels» im Reiter «Änderungen» des Erlass-Blatts. Die Sonde folgt dem Ort
+// (`helpers/fassungsRubrik.ts`, Block `[data-v3-blatt-fassung="<token>"]`); ihre
+// Zusagen bleiben Wort für Wort — nur das Register zählt (a) als ZUWACHS ab dem
+// ersten Klick, weil das offene Blatt es für seine Reiter ohnehin holt.
+/** Der Fassungs-Block eines Artikels im Blatt. */
+const blockVon = (art: string) => `[data-v3-blatt-fassung="${art}"]`;
 
 // DBG 5 ist der einzige Artikel im Bestand, der alle drei Schichten an EINEM
 // Punkt trägt (gemessen 11.9.2026): Alt-Fassung ab 2021, erfasste Botschaft UND
 // einen Entwurfs-Shard der Vorlage. Dazu ein Punkt von 2013 vor dem Fenster.
 const ORT = '/gesetze/bund/DBG';
 const ART = '5';
-const BLOCK = `#art-${ART} ${F_BLOCK}`;
+const BLOCK = blockVon(ART);
 const GRIFF = `${BLOCK} [data-synopse-griff]`;
 const KARTE = `${BLOCK} [data-synopse-karte]`;
 
 async function oeffneRubrik(page: Page, ort = ORT, art = ART): Promise<void> {
   await page.goto(ort);
   await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
-  await page.locator(`#art-${art}`).scrollIntoViewIfNeeded();
-  const marke = page.locator(`#art-${art} ${F_MARKE}`);
-  await expect(marke).toBeVisible({ timeout: 20_000 });
+  const marke = await fassungsMarke(page.locator(`#art-${art}`), 20_000);
   await marke.click();
-  await expect(page.locator(`#art-${art} ${F_BLOCK}`)).toBeVisible();
+  await expect(page.locator(`${blockVon(art)} [data-historie-zeile]`)).toBeVisible();
 }
 
 /** Alle Abrufe zählen, die dieser Griff auslösen könnte. */
@@ -92,6 +100,7 @@ test.describe('W2·6c-SYNOPSE-LESER · Fassungsvergleich am Artikel', () => {
     await page.waitForTimeout(1200);
     expect(gezaehlt.synopse, `vor dem Klick geladen: ${gezaehlt.synopse.join(' · ')}`).toHaveLength(0);
     expect(gezaehlt.entwurf, `Entwurf vor dem Klick geladen: ${gezaehlt.entwurf.join(' · ')}`).toHaveLength(0);
+    const registerVorher = gezaehlt.register.length;
 
     // Playwright-Falle (Auflage): den Griff EINMAL auflösen und festhalten.
     const griffe = page.locator(GRIFF);
@@ -105,15 +114,14 @@ test.describe('W2·6c-SYNOPSE-LESER · Fassungsvergleich am Artikel', () => {
     await page.waitForTimeout(600);
     expect(gezaehlt.synopse).toHaveLength(1);
     expect(gezaehlt.synopse[0]).toContain('/materialien/synopse/DBG.json');
-    expect(gezaehlt.register, 'das 2,1-MB-Register ist nicht der Kanal dieser Karte').toHaveLength(0);
+    expect(gezaehlt.register.length - registerVorher, 'das 2,1-MB-Register ist nicht der Kanal dieser Karte').toBe(0);
 
     // Ein zweiter Punkt und ein zweiter Artikel holen NICHTS nach (gecachte
     // Promise). DBG 9 ist der nächste Artikel mit Fassungs-Rubrik — sie steht
     // nur, wo der Historie-Shard einen Eintrag führt (§8), nicht an jedem Artikel.
     await griffe.nth(1).click();
-    await page.locator('#art-9').scrollIntoViewIfNeeded();
-    await page.locator(`#art-9 ${F_MARKE}`).click();
-    const zweiterGriff = page.locator(`#art-9 ${F_BLOCK} [data-synopse-griff]`).nth(0);
+    await (await fassungsMarke(page.locator('#art-9'))).click();
+    const zweiterGriff = page.locator(`${blockVon('9')} [data-synopse-griff]`).nth(0);
     await expect(zweiterGriff).toBeVisible({ timeout: 10_000 });
     await zweiterGriff.click();
     await page.waitForTimeout(800);
@@ -178,7 +186,7 @@ test.describe('W2·6c-SYNOPSE-LESER · Fassungsvergleich am Artikel', () => {
     // Wortlaut-Unterschied, den der amtliche Fussnoten-Apparat nicht führt. Er hängt an
     // keinem Punkt der Leiste und steht darum eigens da (§8).
     await oeffneRubrik(page, ORT, '26');
-    const block = page.locator(`#art-26 ${F_BLOCK}`);
+    const block = page.locator(blockVon('26'));
     const dbg26Griffe = block.locator('[data-synopse-griff]');
     await expect(dbg26Griffe.first()).toBeVisible({ timeout: 10_000 });
     await dbg26Griffe.nth(0).click();
@@ -194,7 +202,7 @@ test.describe('W2·6c-SYNOPSE-LESER · Fassungsvergleich am Artikel', () => {
     // CHEMRRV Art. 9 ist einer von 22 Blöcken, die der Generator bis 12.9.2026 als
     // «entfallen» + «neu eingefügt» buchte, obwohl der Artikel nie aufgehoben war.
     await oeffneRubrik(page, '/gesetze/bund/CHEMRRV', '9');
-    const block = page.locator(`#art-9 ${F_BLOCK}`);
+    const block = page.locator(blockVon('9'));
     // Der Shard lädt erst auf Klick (Zusage (a)) — und damit auch diese Liste. Also
     // zuerst den Griff am Fassungspunkt, dann steht der Abschnitt da.
     const punktGriff = block.locator('[data-synopse-griff]').nth(0);

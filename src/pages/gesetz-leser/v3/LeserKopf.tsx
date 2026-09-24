@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
 import type { LeserModus } from './einzelModus';
-import { zeigeVolltitel, type BestimmungsWort } from './erlassAnsicht';
+import { zeigeVolltitel } from './erlassAnsicht';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
@@ -88,10 +88,37 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // Elementbreite ohnehin auf ein Wort zusammenfiel. Die Auflage «höchstens ein ✕
 // je Kopfzeile» in `./kopfStufen` ist unberührt.
 
+/** Die Streifen-Griffe links («‹ Gliederung ausblenden», D32) und rechts
+ *  («Erlass-Blatt ausblenden ›», Entscheid A 24.9.2026) — EIN Bau für beide
+ *  Spiegelseiten (§10; Knopf-Ratsche `design-r9-knopf-baustein`). */
+function streifenGriff(a: {
+  seite: 'links' | 'rechts'; wort: string; onKlick: () => void;
+  merkmale: Record<string, string | boolean | undefined>;
+}): ReactNode {
+  return (
+    <button type="button" {...a.merkmale} onClick={a.onKlick} title={a.wort}
+      className="lc-leiste-griff gap-1 px-1.5 text-micro">
+      {a.seite === 'links' && <span aria-hidden>‹</span>}
+      <span>{a.wort}</span>
+      {a.seite === 'rechts' && <span aria-hidden>›</span>}
+    </button>
+  );
+}
+
 export function LeserKopf({
-  erlass, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, stufe, gliederungKnopf, modus, onModusWahl,
-  panelOeffner, suchZone, suchInZeile, tocOffen, onGliederungZu,
+  erlass, fussnotenAnzahl, hatAenderungsvermerke, stufe, gliederungKnopf, modus, onModusWahl,
+  panelOeffner, suchZone, suchInZeile, tocOffen, onGliederungZu, rechterStreifen, onBlattZu, blattPanelId,
 }: {
+  /** ── ENTSCHEID A (David 24.9.2026) · DER RECHTE STREIFEN ──────────────────
+   *  Spiegel des linken (D32): steht das Erlass-Blatt als Spur zur Wahl, trägt
+   *  die Zeile rechts einen Streifen genau der rechten Spurbreite
+   *  (`--leser-spur-versatz-rechts`) — die Griffe davor enden damit an der
+   *  Kante der Lese-Zelle. Offen steht darin «Erlass-Blatt ausblenden ›»
+   *  (`onBlattZu`), zu nichts: dann ist die Schiene der eine Griff (wie Ä79). */
+  rechterStreifen?: boolean;
+  onBlattZu?: () => void;
+  /** Id der Blatt-Fläche für `aria-controls` (nur offen, B3). */
+  blattPanelId?: string;
   erlass: BrowseErlass;
   // D27: `aktArtikel` ist hier ersatzlos gestrichen. Die Lesestellung ist damit
   // nicht verloren — sie fliesst unverändert aus demselben Scroll-Spy in den
@@ -102,9 +129,6 @@ export function LeserKopf({
   hatAenderungsvermerke: boolean;
   /** D35-F3 · durchgereicht ans Ansicht-Menü (§8-Hinweis auf unklassifizierten
    *  Erlassen). Der Kopf wertet sie nicht aus — er ist die Leitung, nicht der Ort. */
-  /** D35-F2 · durchgereicht ans Ansicht-Menü (Kopf der Rubriken-Gruppe). Der
-   *  Kopf leitet nichts ab — er ist die Leitung, nicht der Ort (§5/B8). */
-  bestimmungsWort: BestimmungsWort;
   /** W2·5m · durchgereicht an `./LeserAnsichtV3` — die Lesart-Gruppe des
    *  Ansicht-Menüs (Kap. 15.3). Der Kopf wertet sie nicht aus (§3). */
   modus?: LeserModus;
@@ -264,17 +288,14 @@ export function LeserKopf({
               dieselbe Zahl wie das `gap-5` der Lese-Zeile). */}
           {onGliederungZu && (
             <span className="ml-auto shrink-0" style={{ paddingInlineEnd: 'var(--leser-spur-abstand)' }}>
-              <button type="button" data-v3-gliederung-zu onClick={onGliederungZu}
-                aria-expanded={tocOffen} title="Gliederung ausblenden"
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur «ausblenden»
-                    — Wort für Wort dasselbe wie «Seitenleiste ausblenden» der
-                    App-Leiste zwei Zentimeter weiter oben, aber mit anderer
-                    Wirkung. Zwei gleich beschriftete Knöpfe, die Verschiedenes
-                    tun, sind eine Falle (§8). Der Knopf sagt, WAS er
-                    ausblendet. Wortlaut mit dem Umzug unverändert. */}
-                <span aria-hidden>‹</span><span>Gliederung ausblenden</span>
-              </button>
+              {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur «ausblenden»
+                  — Wort für Wort dasselbe wie «Seitenleiste ausblenden» der
+                  App-Leiste zwei Zentimeter weiter oben, aber mit anderer
+                  Wirkung. Zwei gleich beschriftete Knöpfe, die Verschiedenes
+                  tun, sind eine Falle (§8). Der Knopf sagt, WAS er
+                  ausblendet. Wortlaut mit dem Umzug unverändert. */}
+              {streifenGriff({ seite: 'links', wort: 'Gliederung ausblenden', onKlick: onGliederungZu,
+                merkmale: { 'data-v3-gliederung-zu': true, 'aria-expanded': tocOffen } })}
             </span>
           )}
         </div>
@@ -306,8 +327,20 @@ export function LeserKopf({
           {gliederungKnopf}
           <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl}
             hatAenderungsvermerke={hatAenderungsvermerke}
-            bestimmungsWort={bestimmungsWort} modus={modus} onModusWahl={onModusWahl} />
+            modus={modus} onModusWahl={onModusWahl} />
         </div>
+        {rechterStreifen && (
+          // Spiegel von «‹ Gliederung ausblenden»: der Griff beginnt über der
+          // linken Kante des Blatts (Spur-Lücke als linkes Polster).
+          <div className="flex h-full shrink-0 items-center"
+            style={{ width: 'var(--leser-spur-versatz-rechts)', paddingInlineStart: 'var(--leser-spur-abstand)' }}>
+            {onBlattZu && streifenGriff({ seite: 'rechts', wort: 'Erlass-Blatt ausblenden', onKlick: onBlattZu,
+              // Sonden-Anker und Aussenklick-Ausnahme wie am Kopf-Griff
+              // `./LeserPanelOeffner` — offen ist DIESER der eine Griff.
+              merkmale: { 'data-v3-blatt-zu': true, 'data-v3-panel-zaehler': true, 'data-v3-panel-oeffner': true,
+                'aria-keyshortcuts': 'r', 'aria-expanded': true, 'aria-controls': blattPanelId } })}
+          </div>
+        )}
       </div>
       {/* Ä19: die Such-Zone als zweite Zeile DESSELBEN klebenden Blocks — nicht
           als eigenes `sticky`-Element darunter. Zwei gestapelte Sticky-Blöcke

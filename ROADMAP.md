@@ -547,16 +547,16 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Rechtslogik — Befunde Prüfung 23.9.2026  *(`feld: rechtslogik`)*
 
-- [~] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W0 · status: wip · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [x] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W0 · status: done · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-01 (dieser Schritt) · RL-02 (Risiko-Grenze, Gegenprüfungs-Pflicht auch für
   Tor-Dateien selbst, W-02 entschieden) · RL-03 (Fachänderungs-Riegel für
   Fixes ausserhalb der Risiko-Grenze). Muss vor jeder anderen RL-Welle gelandet
   sein.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1.
 
-- [ ] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W1 · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [~] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W1 · status: wip · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-11 (vorgezogen, «Aufgehoben seit») dann RL-04…RL-10, RL-12…RL-14:
   Mietkündigung, SchKG-Weiterzug, Gewährleistung, Fristen-Anknüpfung,
   Verjährung, Erbteilung, Mietvertrag, Katalog-Status, Sperrfrist-Rückfall,

@@ -94,7 +94,7 @@ function VernehmlassungZeile({ v, locale }: { v: VernehmlassungBezug; locale: Lo
   );
 }
 
-function BotschaftZeile({ b, aenderung, locale }: { b: BotschaftBezug; aenderung?: string; locale: Locale }) {
+export function BotschaftZeile({ b, aenderung, locale }: { b: BotschaftBezug; aenderung?: string; locale: Locale }) {
   return (
     <li className="border-l-2 border-t border-line border-l-reg-m py-2 pl-2.5">
       <span className="flex flex-wrap items-baseline gap-x-2">

@@ -55,15 +55,18 @@ describe('S6-W1b · Bezugs-Grundzustand im Bestands-Speicher', () => {
     expect([...holeBezugKlassen()]).toEqual(['bge']);
   });
 
-  it('die D40-Frage bleibt unberührt: `stand: 2` hält ein abgewähltes `f`', async () => {
-    const { migriereOptFelder } = await frischerStore();
-    expect(migriereOptFelder({ fussRubriken: ['r'], stand: 2, bezugStand: 1 }).fussRubriken).toEqual(['r']);
-    expect(migriereOptFelder({ fussRubriken: ['r'] }).fussRubriken).toEqual(['f', 'r']);
-  });
-
+  // §6.3-DEKLARATION (S6 W1f, 24.9.2026): hier stand der Fall «die D40-Frage
+  // bleibt unberührt: `stand: 2` hält ein abgewähltes `f`». Mit der
+  // Funktionszeile fielen die Rubriken-Wahl und ihr Speicher-Stand `stand`
+  // (Entscheid David 24.9.2026, «die zeile soll ganz weg»). Die Aussage, die
+  // von ihm bleibt — die beiden Stände sind getrennte Fragen —, prüft jetzt:
+  // der Bezugs-Stand wird geschrieben, `stand` NICHT mehr.
   it('Speichern schreibt den Bezugs-Stand — danach ist [bge] eine Wahl', async () => {
     const { setzeBezugKlassen } = await frischerStore({ bezugKlassen: ['bge'], stand: 2 });
     setzeBezugKlassen(['bge']);
-    expect(JSON.parse(speicher.get(KEY) ?? '{}')).toMatchObject({ stand: 2, bezugStand: 1, bezugKlassen: ['bge'] });
+    const roh = JSON.parse(speicher.get(KEY) ?? '{}');
+    expect(roh).toMatchObject({ bezugStand: 1, bezugKlassen: ['bge'] });
+    // S6 W1f: der Rubriken-Stand `stand` ist gestrichen und fällt beim Schreiben weg.
+    expect(roh).not.toHaveProperty('stand');
   });
 });

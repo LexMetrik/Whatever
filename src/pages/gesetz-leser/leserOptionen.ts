@@ -40,6 +40,15 @@
 // nicht Kosmetik: bliebe er stehen, rechnete die Migration bei jedem Laden gegen
 // ein neues «heute», und «letzte 5 Jahre» rutschte täglich weiter.
 //
+// S6 W1f (Entscheid David 24.9.2026, «die zeile soll ganz weg … einzige
+// ausnahme sind wenn fussnoten aktiviert sind die sollen unten am artikel
+// erschienen»): mit der Funktionszeile fallen die Mehrfachwahl `fussRubriken`
+// (samt Attribut `data-fuss-aus` und Speicher-Stand `stand`) und die Stellung
+// «Fassung» der Dreier-Wahl. `vermerke` ist seither ZWEIwertig — der
+// Fussnoten-Schalter am Artikel (`fussnoten` | `aus`). Die Absätze oben, die
+// von drei Stellungen und einer Mehrfachwahl sprechen, sind Belege ihres
+// Datums (§0 Ziff. 2b). Migration: `migriereOptFelder`.
+//
 // Ä25 (S1-Nachzug 17.8.2026, §7): der gestrichene Schalter `verweise` wirkte auf
 // eine DAUERHAFTE gepunktete Unterstreichung, nicht — wie hier und an vier
 // weiteren Stellen behauptet — auf eine Hover-Zierde (`NormText.tsx:38` setzt
@@ -80,53 +89,12 @@ import { heuteIso } from '../../lib/format';
  */
 type ZweiWert = 'an' | 'aus';
 
-/**
- * ── D35-F2 · WAS AM ARTIKEL STEHT, WAEHLT DER NUTZER ────────────────────────
- * Davids Nachtrag zum Variante-A-Entscheid, woertlich: «man soll mittels ansicht
- * alles einzelne abwählen können».
- *
- * Die Buchstaben sind DIESELBEN wie das `data-reg` der Funktionszeile
- * (`parts/Funktionszeile.tsx`, Registerfarben r/m/g/w) — eine Rubrik, ein
- * Buchstabe, an beiden Enden derselbe (§5). `a` ist die Aktionsgruppe rechts
- * («Zitat · Link · Amtliche Fassung ↗», `parts/ArtikelAktionen.tsx` — eine
- * vierte Aktion «⧉ Artikel daneben» ist mit D44, David 7.9.2026, ersatzlos
- * gestrichen); sie hat keine Registerfarbe, aber dieselbe Frage «steht das
- * an meinem Artikel?».
- *
- * EIN Attribut statt fuenf: `data-fuss-aus` traegt die ABGEWAEHLTEN Buchstaben,
- * und weil jeder Buchstabe genau einmal vorkommt, ist `[data-fuss-aus*="r"]`
- * eine eindeutige Frage. Fuenf Attribute waeren fuenf Wahrheiten ueber eine
- * Wahl (§5).
- *
- * DAS ATTRIBUT TRAEGT DIE ABGEWAEHLTEN, DAS FELD DIE GEWAEHLTEN — Absicht, keine
- * Nachlaessigkeit. Das FELD spiegelt das Menue (fuenf Haekchen, gesetzt = steht).
- * Das ATTRIBUT muss im Grundzustand die LEERE Zeichenkette sein: nur dann
- * trifft keine CSS-Regel, und nur dann bleibt das prerenderte HTML unberuehrt,
- * das VOR dem Buendel im Bild steht (R6/§6). Mit den Gewaehlten haette die Regel
- * `html:not([data-fuss-an*="r"])` lauten muessen — die greift auch, solange es
- * das Attribut noch gar nicht gibt, und der Leser saehe fuer einen Moment einen
- * Artikel ganz ohne Funktionszeile.
- *
- * ── W2·24-D40 (David 7.9.2026) · `f` = FASSUNG ist die sechste Rubrik ─────
- * Woertlich: «und wieso ist fassung nicht auch unten am artikel?». Der
- * Fassungs-Slot («Gilt seit … ▸» + Zeitleiste) stand bis D40 am ARTIKELKOPF und
- * war als einzige artikelbezogene Auskunft nicht Teil der Funktionszeile. Er ist
- * jetzt eine Rubrik wie die anderen — also braucht er auch deren Frage «steht das
- * an meinem Artikel?» und damit einen eigenen Buchstaben.
- *
- * `f` STEHT VORN, weil die Rubrik vorn steht: sie ist die Auskunft ueber den
- * Artikel SELBST, die vier danach zeigen von ihm weg (darum traegt sie das Wort
- * «Bezuege» auch nicht mit, `parts/Funktionszeile.tsx`). Die Reihenfolge dieser
- * Konstante IST die Reihenfolge in der Zeile und im Menue (§5).
- *
- * WAS `f` NICHT ENTSCHEIDET: ob die Fassungs-Auskunft ueberhaupt gilt. Das
- * bleibt die Dreier-Wahl `vermerke` (D35-F3) — «Fussnoten» und «aus» nehmen die
- * Rubrik weg, `f` waehlt innerhalb der Stellung «Fassung». Zwei Fragen, zwei
- * Schalter, keine zweite Wahrheit (§5).
- */
-export type FussRubrik = 'f' | 'r' | 'm' | 'g' | 'w' | 'a';
-/** Kanonische Reihenfolge — sie ist zugleich die Reihenfolge im Menue (§5). */
-export const FUSS_RUBRIKEN: readonly FussRubrik[] = ['f', 'r', 'm', 'g', 'w', 'a'];
+// ── HIER STAND `FussRubrik` (D35-F2/D40, 7.9.2026) — gestrichen mit S6 W1f ──
+// Die Buchstaben f/r/m/g/w/a waehlten die Rubriken der Funktionszeile am
+// Artikelende und die Aktionsgruppe. Die Zeile ist gefallen (Entscheid David
+// 24.9.2026), ihre Auskunft steht im Erlass-Blatt, die Aktionen stehen immer —
+// eine Wahl ohne Gegenstand (§17-Gegengewicht: gestrichen statt bewacht). Die
+// Herleitung (Komplement-Attribut, R6-Byte-Gleichheit) steht im Git-Verlauf.
 
 /**
  * D35-F3 (Entscheid David 7.9.2026, «A und verlustfrei») · DIE EINE WAHL.
@@ -151,21 +119,16 @@ export const FUSS_RUBRIKEN: readonly FussRubrik[] = ['f', 'r', 'm', 'g', 'w', 'a
  * verbarg. Wer ihn je wieder will, bekommt einen eigenen, klar benannten
  * Schalter («Fussnoten-Apparat»), keine Nebenwirkung dieser Wahl.
  */
-export type VermerkeWahl = 'fassung' | 'fussnoten' | 'aus';
-const VERMERKE_WAHLEN: readonly VermerkeWahl[] = ['fassung', 'fussnoten', 'aus'];
+// ── S6 W1f (24.9.2026) · DIE WAHL IST ZWEIWERTIG ──────────────────────────────
+// «Fassung» zeigte die Rubrik «Gilt seit …» am Artikelende; die steht seither im
+// Erlass-Blatt (Reiter «Änderungen»). Übrig bleibt die Frage, die David als
+// einzige Ausnahme am Artikel belassen hat: stehen die Fussnoten da? Der
+// Attributname `data-vermerke` bleibt (EIN Attribut, dieselbe CSS-Weiche).
+export type VermerkeWahl = 'fussnoten' | 'aus';
 
 export interface LeserOptionen {
-  /** D35-F3 · die dreiwertige Aenderungs-Wahl → `html[data-vermerke]`. */
+  /** S6 W1f · der Fussnoten-Schalter am Artikel → `html[data-vermerke]`. */
   vermerke: VermerkeWahl;
-  /**
-   * D35-F2 · die am Artikel gezeigten Rubriken → `html[data-fuss-aus]` (das
-   * Attribut traegt das Komplement, Herleitung am Typ `FussRubrik`).
-   *
-   * Die Referenz wird NUR im Setter ersetzt (wie `bezugKlassen`), damit
-   * `getSnapshot` stabil bleibt und ein fremder Toggle die Abonnenten nicht
-   * re-rendern laesst (§15, Datei-Kopf).
-   */
-  fussRubriken: readonly FussRubrik[];
 }
 
 /**
@@ -183,32 +146,10 @@ export interface LeserOptionen {
 export type LeserSchrift = 'normal' | 'mittel' | 'gross' | 'sehr-gross';
 
 const KEY = 'lm.leser.optionen';
-/** D35-F2 · Grundzustand: alles steht. Geteilte Konstante, damit der
- *  unveraenderte Leser dieselbe Array-Referenz sieht (Object.is, §15). */
-/**
- * ── W2·24-D40 · DER STAND DES GESPEICHERTEN OBJEKTS ─────────────────────────
- *
- * WOZU eine Zahl im Speicher, wo bisher keine noetig war: `fussRubriken` traegt
- * die GEWAEHLTEN. Ein Buchstabe, der neu hinzukommt, fehlt darum in JEDEM
- * Bestands-Speicher — und «fehlt» heisst in diesem Feld «abgewaehlt». Ohne
- * Unterscheidung saehe jeder Leser, der die Rubriken je angefasst hat, die
- * Fassungs-Rubrik ab D40 als abgewaehlt: eine Auskunft, die er nie abbestellt
- * hat, waere still verschwunden (§8). Die Zahl beantwortet genau eine Frage —
- * «konnte dieser Speicher `f` ueberhaupt kennen?» — und sonst keine.
- *
- * WARUM `f` DABEI HINZUGEFUEGT WIRD, AUCH ZUM LEEREN ARRAY: bis D40 hing die
- * Fassungs-Auskunft ALLEIN an `vermerke` und stand am Artikelkopf. Wer im Menue
- * «Alles ausblenden» waehlte, blendete die FUENF Rubriken der Zeile aus; die
- * Fassung stand danach weiter da. Das getreue Bild dieses Willens ist «die
- * fuenf aus, `f` an» — nicht «alle sechs aus» (§8: eine Umstellung darf eine
- * getroffene Nutzerwahl nicht stillschweigend ausweiten).
- *
- * IDEMPOTENT und ohne Uhr (§2): solange der Speicher alt ist, ergaenzt jedes
- * Laden dasselbe `f`; der erste Schreibvorgang setzt `OPT_STAND` und die Wahl
- * gilt danach unveraendert so, wie sie im Menue steht — auch «f abgewaehlt».
- */
-const STAND_KEY = 'stand';
-const OPT_STAND = 2;
+// ── HIER STAND `OPT_STAND` (W2·24-D40) — gestrichen mit S6 W1f ────────────────
+// Die Zahl beantwortete nur «konnte dieser Speicher die Rubrik `f` kennen?» —
+// die Rubriken-Wahl gibt es nicht mehr. Ein gespeichertes `stand` wird nicht
+// mehr gelesen und fällt beim nächsten `speichere()` weg (wie `hist`, `leitfaelle`).
 
 /**
  * ── S6-W1b (23.9.2026) · EIGENER STAND DER BEZUGS-FACETTEN ────────────────
@@ -224,8 +165,9 @@ const OPT_STAND = 2;
 const BEZUG_STAND_KEY = 'bezugStand';
 const BEZUG_STAND = 1;
 
-const DEFAULT_FUSS_RUBRIKEN: readonly FussRubrik[] = [...FUSS_RUBRIKEN];
-const DEFAULT: LeserOptionen = { vermerke: 'fassung', fussRubriken: DEFAULT_FUSS_RUBRIKEN };
+/** S6 W1f · Vorgabe «aus»: dieselbe SICHTBARKEIT wie die bisherige Vorgabe
+ *  «Fassung», die den Apparat am Bildschirm seit W2·26/Z8 ebenfalls verbarg. */
+const DEFAULT: LeserOptionen = { vermerke: 'aus' };
 
 /** Alt-Schlüssel des dreiwertigen Historie-Felds (vor S1). */
 const ALT_HIST_KEY = 'hist';
@@ -267,42 +209,43 @@ const ALT_HIST_AN: readonly string[] = ['fussnoten', 'chronologie'];
  * Schriftskala).
  */
 export function migriereOptFelder(roh: Readonly<Record<string, unknown>>): LeserOptionen {
-  return {
-    vermerke: VERMERKE_WAHLEN.includes(roh.vermerke as VermerkeWahl)
-      ? (roh.vermerke as VermerkeWahl)
-      : ausAltenSchaltern(roh),
-    fussRubriken: leseFussRubriken(roh),
-  };
+  return { vermerke: aufZweiwertig(dreiwertig(roh)) };
+}
+
+/** Die Dreier-Wahl, wie sie bis S6 W1f galt (D35-F3, Tabelle oben) — unbekannte
+ *  Werte fallen auf die Bestands-Booleans bzw. deren Vorgabe. */
+function dreiwertig(roh: Readonly<Record<string, unknown>>): 'fassung' | VermerkeWahl {
+  const v = roh.vermerke;
+  if (v === 'fassung' || v === 'fussnoten' || v === 'aus') return v;
+  return ausAltenSchaltern(roh);
 }
 
 /**
- * D35-F2 · die Rubriken-Wahl aus dem Speicher.
+ * ── S6 W1f (24.9.2026) · DREI STELLUNGEN AUF ZWEI — REGEL UND HERLEITUNG ──────
  *
- * FEHLT der Schluessel ganz (jeder Bestands-Speicher vor D35-F2), gilt der
- * Grundzustand «alles steht» — und zwar als DIESELBE Referenz, damit ein
- * unveraenderter Leser gar keinen Re-Render sieht (§15).
+ *   fassung    → aus        fussnoten → fussnoten        aus → aus
  *
- * STEHT ein leeres Array da, ist das eine bewusste Nutzerwahl («alles
- * abgewaehlt», Menue-Zeile «Nur Gesetzestext lesen») und bleibt erhalten — sie
- * wird NICHT still auf den Grundzustand zurueckgesetzt (§8, dieselbe Regel wie
- * bei `bezugKlassen`).
+ * Massgeblich ist, was der Nutzer AM ARTIKEL sah, und zwar beim Fussnoten-
+ * Apparat — dem einzigen, was am Artikel bleibt (§8: eine Umstellung darf eine
+ * getroffene Wahl nicht still kippen). Seit W2·26/Z8 (11.9.2026) verbarg
+ * «Fassung» den Apparat samt Markern am Bildschirm VOLLSTÄNDIG
+ * (`src/index.css`, `@media screen`-Block zu Z8). Wer «Fassung» gespeichert hat,
+ * sah also KEINE Fussnoten; ihn auf `fussnoten` zu heben, blendete ihm
+ * ungefragt den ganzen Apparat ein. ABWEICHUNG vom Auftrags-Hinweis, offengelegt
+ * (§7): der Hinweis «'fassung' zeigte Slot UND Apparat ⇒ 'fussnoten'» beschreibt
+ * den Stand D35-F3 vom 7.9.2026, nicht den seit Z8 geltenden. Was «Fassung»
+ * darüber hinaus zeigte («Gilt seit …»), steht jetzt immer im Blatt — es geht
+ * nichts verloren, es wandert.
  *
- * Ein unbekannter Buchstabe darf nie durchrutschen: er landete als
- * `data-fuss-aus="…x…"` am <html>, wo keine Regel ihn kennt — dieselbe
- * Whitelist-Sicherung wie bei Schriftstufe und `vermerke`. Die Reihenfolge ist
- * immer die kanonische, damit derselbe Zustand immer dieselbe Zeichenkette
- * ergibt (deterministisch, §2).
+ * REIN, ohne Uhr und ohne Speicher-Stand (§2): dieselbe Eingabe ergibt bei
+ * jedem Laden dieselbe Wahl, bis der erste Schreibvorgang sie zweiwertig ablegt.
  */
-function leseFussRubriken(roh: Readonly<Record<string, unknown>>): readonly FussRubrik[] {
-  if (!Array.isArray(roh.fussRubriken)) return DEFAULT_FUSS_RUBRIKEN;
-  const gewaehlt = new Set(roh.fussRubriken as unknown[]);
-  // D40 · der Bestands-Speicher kann `f` gar nicht kennen (s. `OPT_STAND`).
-  if (roh[STAND_KEY] !== OPT_STAND) gewaehlt.add('f');
-  return FUSS_RUBRIKEN.filter((r) => gewaehlt.has(r));
+function aufZweiwertig(w: 'fassung' | VermerkeWahl): VermerkeWahl {
+  return w === 'fassung' ? 'aus' : w;
 }
 
-/** D35-F3 · die zwei Bestands-Booleans auf die Dreier-Wahl abbilden (Tabelle oben). */
-function ausAltenSchaltern(roh: Readonly<Record<string, unknown>>): VermerkeWahl {
+/** D35-F3 · die zwei Bestands-Booleans auf die (damalige) Dreier-Wahl abbilden. */
+function ausAltenSchaltern(roh: Readonly<Record<string, unknown>>): 'fassung' | VermerkeWahl {
   const hist = leseAltHist(roh);
   if (hist === 'an') return 'fassung';
   return roh.fussnoten === 'aus' ? 'aus' : 'fussnoten';
@@ -449,7 +392,7 @@ function speichere(): void {
     // Die gestrichenen Schlüssel (`zeitraum`, `hist`, `verweise`, `linien`)
     // stehen bewusst NICHT im Objekt — Begründung im Datei-Kopf.
     localStorage.setItem(KEY, JSON.stringify({
-      ...aktuell, [STAND_KEY]: OPT_STAND, [BEZUG_STAND_KEY]: BEZUG_STAND, schrift: aktuellSchrift,
+      ...aktuell, [BEZUG_STAND_KEY]: BEZUG_STAND, schrift: aktuellSchrift,
       ansicht: aktuellAnsicht,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
       bezugVon: aktuellVon, bezugBis: aktuellBis,
@@ -466,7 +409,7 @@ function speichere(): void {
 if (start.migriert) speichere();
 
 /** Wendet die gespeicherten Toggle-Optionen VOR dem ersten Render an (Aufruf in
- *  main.tsx, analog `wendeThemaAn`). Setzt `data-vermerke` und `data-fuss-aus`
+ *  main.tsx, analog `wendeThemaAn`). Setzt `data-vermerke` (bis S6 W1f auch `data-fuss-aus`)
  *  am <html>. Der Zeit-Bereich ist JS-konsumiert (kein
  *  data-*-Attribut).
  *
@@ -500,7 +443,6 @@ export function wendeLeserOptionenAn(): void {
   // auswertete, ist schon mit D35-F1 gefallen (`src/index.css`, Block
   // «HIER STAND EINE REGEL, DIE GELOGEN HAT»). Ein Attribut ohne Regel wäre
   // eine Leiche am <html> (§17-Gegengewicht).
-  el.setAttribute('data-fuss-aus', fussAusWert(aktuell.fussRubriken));
   // D35-F3: die eine Änderungs-Wahl. Ein ATTRIBUT statt zweier — die Stellungen
   // schliessen einander aus, und zwei Attribute für eine Frage wären genau die
   // zweite Wahrheit (§5), die David am Menü gesehen hat.
@@ -515,38 +457,6 @@ export function wendeLeserOptionenAn(): void {
 }
 
 const hoerer = new Set<() => void>();
-
-/** D35-F2 · das KOMPLEMENT als Attributwert (Herleitung am Typ `FussRubrik`).
- *  Grundzustand «alles steht» ⇒ leere Zeichenkette ⇒ keine CSS-Regel greift. */
-function fussAusWert(gewaehlt: readonly FussRubrik[]): string {
-  const menge = new Set(gewaehlt);
-  return FUSS_RUBRIKEN.filter((r) => !menge.has(r)).join('');
-}
-
-/**
- * D35-F2 · die am Artikel gezeigten Rubriken setzen.
- *
- * Mechanik zeichengleich `setzeVermerke`: persistieren, EIN Attribut direkt ans
- * <html>, Hörer wecken — KEIN Artikel-Re-Render (§15). Die 1686 Artikel eines
- * Erlasses abonnieren den Store nicht; sichtbar wird die Wahl über CSS
- * (`html[data-fuss-aus]`, `src/index.css`). Genau das ist der Grund, aus
- * dem die Wahl ein Attribut ist und kein React-State: ein Abo je Artikel wären
- * 1686 Neu-Renderings je Klick.
- *
- * NORMALISIERT auf die kanonische Reihenfolge, damit derselbe Zustand immer
- * dieselbe Zeichenkette ergibt (§2) — die Sonden vergleichen das Attribut.
- */
-export function setzeFussRubriken(gewaehlt: readonly FussRubrik[]): void {
-  const menge = new Set(gewaehlt);
-  const neu = FUSS_RUBRIKEN.filter((r) => menge.has(r));
-  if (neu.join('') === aktuell.fussRubriken.join('')) return;
-  aktuell = { ...aktuell, fussRubriken: neu };
-  speichere();
-  if (typeof document !== 'undefined') {
-    document.documentElement.setAttribute('data-fuss-aus', fussAusWert(neu));
-  }
-  hoerer.forEach((f) => f());
-}
 
 /**
  * D35-F3 · die Änderungs-Wahl setzen. Mechanik zeichengleich `setzeOption`:

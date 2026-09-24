@@ -2,8 +2,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { SUCH_META } from '../suchHighlight';
-import { Funktionszeile, type BezugsMarke } from './Funktionszeile';
-import { ArtikelDossier } from './ArtikelDossier';
+import { ArtikelDossier, type BezugsMarke } from './ArtikelDossier';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
 import { entscheidZahl } from '../entscheidZahl';
 import { BezuegeZeile } from './BezuegeZeile';
@@ -72,7 +71,6 @@ const ART = 'text-micro text-ink-500';
 export function ArtikelBezuegeFuss({
   bezuege, bezuegeImFuss, historie, leitfaelle, materialien, verweise, werkzeuge, zaehler,
   zitat, revision, onOeffnen, laedt, aktionen, onImBlatt, erlassKey, artikel, snapshot,
-  form = 'zeile',
 }: {
   bezuege?: ArtikelBezuege;
   bezuegeImFuss?: ArtikelBezuege;
@@ -137,17 +135,6 @@ export function ArtikelBezuegeFuss({
    * Wortlaut wäre die zweite Wahrheit, die §5 verbietet.
    */
   snapshot?: NormSnapshot;
-  /**
-   * W2·5m (Kap. 15.5) · die GESTALT der Rubriken — `'zeile'` ist die
-   * Funktionszeile am Artikelende (Gesamtansicht, unverändert), `'dossier'` die
-   * gestapelten Blöcke unter dem Einzelartikel.
-   *
-   * EINE Prop und kein zweites Modul: die Marken darüber werden in beiden
-   * Fällen aus derselben Rechnung gebaut (§5). Wer hier eine zweite
-   * Marken-Liste anlegt, hat den Schritt verfehlt — Wächter
-   * `src/tests/leser-einzel-dossier-quelle.test.ts`.
-   */
-  form?: 'zeile' | 'dossier';
 }) {
   /** Die Zahlen der Funktionszeile — ausschliesslich aus Daten, die der Artikel
    *  ohnehin führt (§8: keine Rubrik ohne echte Zahl, keine neue Ladelogik). */
@@ -362,25 +349,16 @@ export function ArtikelBezuegeFuss({
       ),
     },
   ];
-  // W2·5m · ZWEI GESTALTEN, EINE RECHNUNG (§5). Oberhalb dieser Zeile steht
-  // kein einziges `if (form …)`: die Marken sind in beiden Fällen dieselben,
-  // nur ihr Bild ist ein anderes.
-  if (form === 'dossier') {
-    return (
-      <div {...{ [SUCH_META]: '' }}>
-        {/* Die Fusszeile der Artikel-Karte (Kap. 15.3): die Aktionen stehen im
-            Einzelmodus DAUERHAFT, nicht erst bei Hover — der Artikel ist hier
-            der Gegenstand der Seite, nicht einer von 1686 (Z6 gilt für die
-            Zeile, wo 1686 × 3 Knöpfe im DOM stünden; hier sind es drei). */}
-        <div className="mt-3 flex flex-wrap justify-end gap-3">{aktionen}</div>
-        <ArtikelDossier marken={bezugsMarken} zitat={zitat}
-          onOeffnen={onOeffnen} laedt={laedt} />
-      </div>
-    );
-  }
+  // W2·5m · ZWEI GESTALTEN, EINE RECHNUNG (§5) — seit S6 W1f (24.9.2026) nur
+  // noch die eine, das Dossier; die Zeile ist gefallen (Kopf der Datei).
   return (
     <div {...{ [SUCH_META]: '' }}>
-      <Funktionszeile marken={bezugsMarken} zitat={zitat} aktionen={aktionen}
+      {/* Die Fusszeile der Artikel-Karte (Kap. 15.3): die Aktionen stehen im
+          Einzelmodus DAUERHAFT, nicht erst bei Hover — der Artikel ist hier
+          der Gegenstand der Seite, nicht einer von 1686 (Z6 gilt für die
+          Zeile, wo 1686 × 3 Knöpfe im DOM stünden; hier sind es drei). */}
+      <div className="mt-3 flex flex-wrap justify-end gap-3">{aktionen}</div>
+      <ArtikelDossier marken={bezugsMarken} zitat={zitat}
         onOeffnen={onOeffnen} laedt={laedt} />
     </div>
   );

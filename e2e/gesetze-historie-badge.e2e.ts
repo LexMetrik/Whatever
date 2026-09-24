@@ -1,7 +1,17 @@
 // @shard-gruppe: 1
 import { test, expect, type Page } from '@playwright/test';
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls';
-import { F_BLOCK, F_MARKE, fassungAufklappen, fassungsMarke } from './helpers/fassungsRubrik';
+import { F_BLOCK, blattFuerArtikel, blattReiter, fassungAufklappen, fassungsMarke } from './helpers/fassungsRubrik';
+
+// ── §6.3-DEKLARATION · S6 W1f (Entscheid David 24.9.2026) · DER ORT WECHSELT ──
+// Wörtlich: «die zeile soll ganz weg. infos sollen alle im blatt erscheinen».
+// Die Fassung steht seither als Klappzeile «Fassung dieses Artikels» oben im
+// Reiter «Änderungen» des Erlass-Blatts (`v3/BlattArtikel.tsx`). Diese Sonde
+// folgt dem Ort ein zweites Mal; die Zusagen bleiben: Stand-Text, Zeitleiste,
+// kein Eintrag ohne Historie, keiner ohne Shard, kein CLS beim Aufklappen,
+// kein Sprung am Artikel beim Eintreffen des Shards. Der Positiv-Beleg des
+// Einwuchs-Falls ist jetzt die Druck-Projektion `[data-hist-druck]` — das
+// einzige, was am Artikel noch mit dem Shard einwächst.
 
 // ── §6.3-DEKLARATION · W2·24-D40 (David 7.9.2026) · DER ORT HAT GEWECHSELT ──
 // Wörtlich: «und wieso ist fassung nicht auch unten am artikel?». Die Auskunft
@@ -130,10 +140,12 @@ test('Badge zeigt das In-Kraft-Datum der aktuellen Fassung (BGBM Art. 2)', async
   // Marke liest zugeklappt darum den STAND, aufgeklappt die ZAHL. Die Zusage
   // dieses Falls — das In-Kraft-Datum der aktuellen Fassung steht am Artikel —
   // ist unverändert und wird jetzt an BEIDEN Zuständen geprüft, also strenger.
+  // S6 W1f: zugeklappt nennt die Klappzeile den Stand, aufgeklappt steht die
+  // Zeile «Fassung · Gilt seit …» samt Zeitleiste darunter.
   const marke = await fassungsMarke(art);
-  await expect(marke).toHaveText(/^Gilt seit\s+01\.01\.2025\s*›$/);
+  await expect(marke).toContainText(/Gilt seit\s+01\.01\.2025/);
   const zeile = await fassungAufklappen(art);
-  await expect(marke).toHaveText(/^\d+\s*Fassung(en)?\s*›$/);
+  await expect(marke).toHaveAttribute('aria-expanded', 'true');
   await expect(zeile.getByText('Fassung', { exact: true })).toBeVisible();
   await expect(zeile.getByText(/Gilt seit\s+01\.01\.2025/)).toBeVisible();
 });
@@ -144,8 +156,8 @@ test('Timeline klappt auf und listet Fassungs-Ereignisse; Aufklappen ohne CLS', 
   await art.scrollIntoViewIfNeeded();
   // D40: der Griff ist die Rubrik-Marke, nicht mehr ein Knopf IN der Zeile —
   // ein zweiter Knopf im aufgeklappten Block täte dasselbe noch einmal (§5).
-  const badge = art.locator(F_MARKE);
-  await expect(badge).toBeVisible({ timeout: 15000 });
+  // S6 W1f: der Griff ist die Klappzeile im Blatt (Helfer), der Block ihr Inhalt.
+  const badge = await fassungsMarke(art);
   await expect(badge).toHaveAttribute('aria-expanded', 'false');
 
   // CLS-Beobachter NUR für den Toggle (input-exkludiert → muss 0 bleiben, wie K-2).
@@ -163,7 +175,7 @@ test('Timeline klappt auf und listet Fassungs-Ereignisse; Aufklappen ohne CLS', 
   await badge.click();
   await expect(badge).toHaveAttribute('aria-expanded', 'true');
   // Aufgeklappte Timeline: die Ereignis-Liste ist da und trägt ≥1 datierten Eintrag.
-  const liste = art.locator(`${F_BLOCK} ol`);
+  const liste = page.locator(`${F_BLOCK}[data-v3-blatt-fassung="2"] ol`);
   await expect(liste).toBeVisible();
   await expect(liste.locator('li').first()).toBeVisible();
   await expect(liste.getByText(/in Kraft seit\s+01\.01\.2025/).first()).toBeVisible();
@@ -184,12 +196,13 @@ test('Artikel ohne Historie-Eintrag zeigt kein Badge (BGBM Art. 6)', async ({ pa
   await warteReader(page, '/gesetze/bund/BGBM', 'art-6');
   const art = page.locator('#art-6');
   await art.scrollIntoViewIfNeeded();
-  // Shard ist geladen (Art. 2 trägt seine Marke), aber Art. 6 hat keinen Eintrag.
+  // Shard ist geladen (Art. 2 trägt seine Klappzeile), aber Art. 6 hat keinen Eintrag.
   await fassungsMarke(page.locator('#art-2'));
-  // D40: WEDER eine Rubrik in der Zeile (§8 — keine Rubrik ohne echte Zahl)
-  // NOCH eine Druck-Projektion. Beides zusammen ist die Zusage: ein Artikel
-  // ohne Eintrag zeigt die Fassung nirgends, auch nicht auf dem Papier.
-  await expect(art.locator(F_MARKE)).toHaveCount(0);
+  // S6 W1f: WEDER eine Klappzeile im Blatt (§8 — keine Auskunft ohne echten
+  // Eintrag) NOCH eine Druck-Projektion am Artikel.
+  await blattFuerArtikel(art);
+  await blattReiter(page, 'aenderungen');
+  await expect(page.locator(F_BLOCK)).toHaveCount(0);
   await expect(art.locator('[data-historie-zeile]')).toHaveCount(0);
 });
 
@@ -229,7 +242,9 @@ test('Marken-Einwuchs verschiebt nichts (§15.2)', async ({ page }) => {
 
   // Die Marke ist NOCH NICHT da — sonst prüfte der Test einen bereits
   // abgeschlossenen Einwuchs (§6.7: ein Tor, das nicht scheitern kann).
-  await expect(page.locator(F_MARKE)).toHaveCount(0);
+  // S6 W1f: Positiv-Anker ist die Druck-Projektion am Artikel (s. Kopf).
+  const druck = page.locator('#art-2 [data-hist-druck] [data-historie-zeile]');
+  await expect(druck).toHaveCount(0);
 
   // Referenzgeometrie: die y-Position zweier FOLGENDER Artikel und die Seitenhöhe.
   // Genau sie darf der Einwuchs nicht bewegen — exakt prüfbar statt budgetiert.
@@ -256,7 +271,7 @@ test('Marken-Einwuchs verschiebt nichts (§15.2)', async ({ page }) => {
 
   freigabe();
   // POSITIV: der Einwuchs hat wirklich stattgefunden (sonst messen wir Stillstand).
-  await fassungsMarke(page.locator('#art-2'));
+  await expect(druck).toHaveCount(1, { timeout: 15000 });
   await page.waitForTimeout(600);
 
   const nachher = await geometrie();

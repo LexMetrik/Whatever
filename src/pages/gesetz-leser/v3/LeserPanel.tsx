@@ -1,4 +1,4 @@
-import { useRef, type ReactNode } from 'react';
+import { useLayoutEffect, useRef, type ReactNode } from 'react';
 import type { BestimmungsWort } from './erlassAnsicht';
 import { OEFFNER_WORT, PANEL_REITER, normZitat, reiterTitel, type PanelReiter } from './panelModell';
 import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
@@ -52,7 +52,7 @@ const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
 
 export function LeserPanel({
   panelId, titelId, artikelLabel, bestimmungsWort, erlassKuerzel, reiter, setReiter, inhalt, onSchliessen,
-  fuss, panelRef, kopfExtra, steckbrief,
+  fuss, panelRef, kopfExtra, steckbrief, verweise, bezug = null,
 }: {
   panelId: string;
   /** Id der Überschrift — der Aufrufer setzt sie als `aria-labelledby` an die
@@ -107,8 +107,28 @@ export function LeserPanel({
    * nur die aktive Tafel gemountet ist.
    */
   steckbrief?: ReactNode;
+  /** S6 W1f (Entscheid David 24.9.2026, «Oben im Blatt») · «Verweise in diesem
+   *  Artikel» — wie der Steckbrief über den Reitern, damit er in jedem Reiter
+   *  steht und nicht als Teil einer Tafel vorgelesen wird (`./BlattArtikel`). */
+  verweise?: ReactNode;
+  /** Token des Bezugsartikels (`panelBezug`) — wechselt er, springt die
+   *  Scrollfläche an den Anfang (Meldung David 24.9.2026). */
+  bezug?: string | null;
 }) {
   const leisteRef = useRef<HTMLDivElement>(null);
+  // ── SCROLL-RESET JE ARTIKEL UND REITER (Meldung David 24.9.2026) ──────────
+  // Wörtlich: «erlass blatt scrollt nicht mit wenn sich artikel verändert».
+  // Gemessen auf Prod (OR @1440, Stand #1040): Kopf und Inhalt folgten dem
+  // Scroll-Spy (Art. 41 → 44), die Scrollfläche aber behielt ihre Lage — innen
+  // auf 600 gescrollt, an Art. 44 dann 153 (am Anschlag): die Liste des neuen
+  // Artikels begann mitten drin. Wechselt Bezugsartikel ODER Reiter, steht die
+  // Fläche wieder oben — ohne Animation (`behavior: 'instant'`), im Layout-
+  // Effekt vor dem Malen. Nachladen oder «weitere N» ändern keins von beiden
+  // und lassen die Lage stehen.
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    scrollerRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+  }, [bezug, reiter]);
 
   function taste(e: React.KeyboardEvent<HTMLDivElement>): void {
     const i = PANEL_REITER.findIndex((r) => r.id === reiter);
@@ -140,12 +160,13 @@ export function LeserPanel({
           {/* C-1/E-10 (S6-W1a, 23.9.2026): EIN Name — «Erlass-Blatt» wie am
               Öffner (`OEFFNER_WORT`); bis dahin «Rechtsprechung & Kontext». */}
           {OEFFNER_WORT}
-          {/* Befund 34: nur «Entscheide» bezieht sich auf den Artikel — die
-              anderen Reiter gelten dem Erlass, darum dessen Kürzel statt der
-              (dort irreführenden) Artikel-Angabe. E-10: der Artikel steht als
-              Zitat MIT Kürzel («Art. 41 OR», `normZitat`, §5). */}
+          {/* Befund 34 (18.8.2026): damals bezog sich nur «Entscheide» auf den
+              Artikel, die anderen Reiter nannten darum das Kürzel. Seit S6 W1f
+              (Auftrag 24.9.2026) trägt JEDER Reiter oben den Teil zum Artikel —
+              der Kopf nennt ihn darum überall. E-10: als Zitat MIT Kürzel
+              («Art. 41 OR», `normZitat`, §5). */}
           <span className="num ml-1 font-normal normal-case text-ink-600">
-            · {reiter === 'entscheide' ? normZitat(artikelLabel, erlassKuerzel) : erlassKuerzel}
+            · {normZitat(artikelLabel, erlassKuerzel)}
           </span>
         </p>
         <SchliessKnopf name={`${OEFFNER_WORT} schliessen`} onClick={onSchliessen}
@@ -160,6 +181,7 @@ export function LeserPanel({
       {steckbrief && (
         <div data-v3-panel-steckbrief className="shrink-0 border-b border-line px-3 py-1">{steckbrief}</div>
       )}
+      {verweise}
 
       {/* ── Reiter-Leiste · Registerfläche (W2·29 S5, Board «Erlass-Blatt») ──
           Jedes Fach trägt sein Register (`REITER_REGISTER`): der aktive Reiter
@@ -222,7 +244,7 @@ export function LeserPanel({
           mit (dieselbe Zusage wie im Gliederungs-Blatt). Nur die AKTIVE Tafel
           ist im DOM — drei gemountete Tafeln hätten alle drei Ladepfade
           gleichzeitig angestossen und damit das Nachladen ausgehebelt. */}
-      <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
+      <div ref={scrollerRef} data-v3-panel-scroller className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
         <div role="tabpanel" id={`${panelId}-tafel-${reiter}`} aria-labelledby={`${panelId}-tab-${reiter}`}>
           {inhalt[reiter]}
         </div>

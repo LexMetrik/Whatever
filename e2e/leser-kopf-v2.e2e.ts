@@ -1,6 +1,6 @@
 // @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
-import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME, WAHL_ROLLE } from './helpers/leserBeschriftung';
+import { ANSICHT_PANEL, FUSSNOTEN_WAHL_NAME, WAHL_ROLLE } from './helpers/leserBeschriftung';
 
 // ⚠ DER DATEINAME MEINT NICHT DEN LESER V2 (Vermerk 31.8.2026, Runde 2 / Batch A).
 // «V2» ist hier die FAHRPLAN-Etappe GESETZESDARSTELLUNG-V2, nicht die alte
@@ -104,6 +104,8 @@ test('K-2 (A26): Fussnoten-Eintrag im «Ansicht»-Dropdown — Zähler + Toggle 
   const fn = gruppe.getByRole(WAHL_ROLLE, { name: /^Fussnoten \(\d+ im Erlass\)$/ });
   await expect(fn).toBeVisible({ timeout: 15000 });
   // Vorgabe ist «Fassung» — der Zähler-Eintrag steht also NICHT gewählt da.
+  // §6.3 · S6 W1f (Entscheid David 24.9.2026): seither ist «Fussnoten» EIN
+  // Schalter (`menuitemcheckbox`), die Vorgabe heisst «aus» — dieselbe Sicht.
   await expect(fn).toHaveAttribute('aria-checked', 'false');
 
   const marker = page.locator('.lc-leser [data-fn-klasse="A"] [data-fn-ref]').first();
@@ -127,11 +129,12 @@ test('K-2 (A26): Fussnoten-Eintrag im «Ansicht»-Dropdown — Zähler + Toggle 
   await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'fussnoten');
   await expect(marker).toBeVisible();
 
-  // Zurück auf «Fassung»: der A-Marker verschwindet wieder (display:none).
+  // Zurück auf «aus» (S6 W1f: bis dahin «Fassung»): der A-Marker verschwindet
+  // wieder (display:none).
   await ansichtOeffnen(page);
-  await gruppe.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME }).click();
+  await fn.click();
   await expect(fn).toHaveAttribute('aria-checked', 'false');
-  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'fassung');
+  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'aus');
   await expect(marker).toBeHidden();
 
   const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls);
@@ -221,5 +224,6 @@ test('B-2: die Alt-Zeitraum-Wahl ist aus dem Ansicht-Menü ENTFERNT (B5)', async
   // D35-F3 (§6.3): aus dem zweiwertigen `switch` ist eine Stellung der
   // Dreier-Wahl geworden (`menuitemradio`). Die AUSSAGE der Zeile ist
   // unverändert — «das Menü trägt weiter seine Historie-Bedienung».
-  await expect(panel.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME })).toBeVisible();
+  // S6 W1f (§6.3): die Historie-Bedienung ist der Fussnoten-Schalter.
+  await expect(panel.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME })).toBeVisible();
 });

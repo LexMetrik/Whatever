@@ -85,21 +85,24 @@ test.describe('H3 — Panel: Facetten, Reiter, Platzhalter', () => {
     await expect(reiter).toHaveCount(5)
     await expect(page.locator('[data-v3-panel-reiter-inhalt="entscheide"]')).toBeVisible()
 
+    // §6.3-SETUP S6 W1f (Auftrag 24.9.2026): die Erlass-Tafeln der vier Reiter
+    // stehen seither unter dem Artikelteil ZUGEKLAPPT — der Fall prüft den
+    // Reiterwechsel, also das Tabpanel des Reiters, nicht die Erlass-Liste darin.
     await page.locator('[data-v3-panel-reiter="aenderungen"]').click()
-    await expect(page.locator('[data-v3-panel-reiter-inhalt="aenderungen"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[role="tabpanel"][id$="-tafel-aenderungen"]')).toBeVisible({ timeout: 20_000 })
     await expect(page.locator('[data-v3-panel-reiter="aenderungen"]')).toHaveAttribute('aria-selected', 'true')
 
     // Pfeil rechts ⇒ «Materialien». Das Versprechen der Rolle `tablist`.
     await page.locator('[data-v3-panel-reiter="aenderungen"]').press('ArrowRight')
     await expect(page.locator('[data-v3-panel-reiter="materialien"]')).toHaveAttribute('aria-selected', 'true')
-    await expect(page.locator('[data-v3-panel-reiter-inhalt="materialien"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[role="tabpanel"][id$="-tafel-materialien"]')).toBeVisible({ timeout: 20_000 })
     // Und weiter ⇒ «Erläuterungen», dann «Werkzeuge», der neue letzte.
     await page.locator('[data-v3-panel-reiter="materialien"]').press('ArrowRight')
     await expect(page.locator('[data-v3-panel-reiter="erlaeuterungen"]')).toHaveAttribute('aria-selected', 'true')
-    await expect(page.locator('[data-v3-panel-reiter-inhalt="erlaeuterungen"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[role="tabpanel"][id$="-tafel-erlaeuterungen"]')).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-panel-reiter="erlaeuterungen"]').press('ArrowRight')
     await expect(page.locator('[data-v3-panel-reiter="werkzeuge"]')).toHaveAttribute('aria-selected', 'true')
-    await expect(page.locator('[data-v3-panel-reiter-inhalt="werkzeuge"]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[role="tabpanel"][id$="-tafel-werkzeuge"]')).toBeVisible({ timeout: 20_000 })
     // Home springt zurück auf den ersten.
     await page.locator('[data-v3-panel-reiter="werkzeuge"]').press('Home')
     await expect(page.locator('[data-v3-panel-reiter="entscheide"]')).toHaveAttribute('aria-selected', 'true')
