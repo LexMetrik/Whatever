@@ -364,7 +364,12 @@ test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
     await zufallFest(page, [0])
     await geheMitFixierterUhr(page, new Date('2026-09-07T08:15:00'))
     await expect(page.locator('main h1')).toHaveText(morgens)
-    await page.getByRole('navigation', { name: 'Bereiche der Sammlung' }).getByRole('link').first().click()
+    // DEKLARIERTE ANPASSUNG (§6.3, W2·29-WERKBANK-START S3, 24.9.2026): die
+    // vier Kacheln unter «Bereiche der Sammlung» sind seit S3 alle Knöpfe, die
+    // vor Ort aufklappen — keiner verlässt «/». Der SPA-Weg weg von «/» läuft
+    // darum über den Inhalts-Link zum Fristenrechner; geprüft wird dieselbe
+    // Zusicherung (frischer Gruss nach der Rückkehr).
+    await page.locator('main#inhalt a[href="/rechner/tagerechner"]').first().click()
     await expect(page).not.toHaveURL(/\/$/)
     await page.clock.setSystemTime(new Date('2026-09-07T23:40:00'))
     await page.getByRole('link', { name: 'LexMetrik – Startseite' }).first().click()
