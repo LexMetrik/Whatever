@@ -631,6 +631,10 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   je eine Zeile (gekürzt, voller Titel als Tooltip; volle Liste bleibt im Such-Leerzustand). Die Bühne reserviert nur
   noch die Frist-Höhe (Token `start-schnell` 32.25rem / `-eng` 44.5rem, neu gemessen); Verzugszins/Verjährung
   wachsen (löst die U4-Höhenregel «gleich hoch wie Verzugszins» ab). Schnellformen `gap-3` statt `gap-4`.
+- **U11 (Nachtrag David 24.9.2026 abends):** «bei gesetze soll auf allenen ebenen eine suche möglich sien» →
+  Suchfeld auch auf Wahl (alle Erlasse), Gebiete (Bundesrecht) und Kantone (kantonales Recht), `StufenSuche`
+  in `start/GesetzeSuche.tsx`: Treffer mit `filtern` und `GruppenInhalt`, Herkunft als Gruppenkopf, 30er-Portion;
+  Register erst beim Fokus ins Feld (§15).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 

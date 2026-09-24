@@ -79,7 +79,7 @@ export const KARTEN_BETRAEGE_WERKZEUGE: Record<string, CalculatorCard> = {
     id: 'prozesskosten', modus: 'rechner', art: 'betrag', rechtsgebiet: 'Zivilprozess (ZPO) & Bundesgericht',
     rechtsbereich: 'privat',
     title: 'Prozesskosten (Gerichts- & Parteikosten)',
-    description: 'Gerichtskosten (Entscheidgebühr) und Parteientschädigung im erstinstanzlichen Zivilprozess nach Streitwert – amtlich verifizierte Tarife aller 26 Kantone, mit interkantonaler Vergleichstabelle. Kostenlose Verfahren (Art. 113/114 ZPO) und Schlichtung/Entscheid berücksichtigt; Ermessenstarife als Spanne.',
+    description: 'Gerichtskosten (Entscheidgebühr) und Parteientschädigung im erstinstanzlichen Zivilprozess nach Streitwert – Tarife aller 26 Kantone mit amtlicher Quelle, doppelt verifiziert (drei Parteientschädigungs-Tarife erst recherchiert), nicht abgenommen; mit interkantonaler Vergleichstabelle. Kostenlose Verfahren (Art. 113/114 ZPO) und Schlichtung/Entscheid berücksichtigt; Ermessenstarife als Spanne.',
     status: 'entwurf',
     norms: [
       { label: 'Art. 95 ZPO', url: fedlexUrl('ZPO', '95'), verified: false },
@@ -307,7 +307,7 @@ export const KARTEN_BETRAEGE_WERKZEUGE: Record<string, CalculatorCard> = {
   gerichtszitat: {
     id: 'gerichtszitat', modus: 'rechner', art: 'werkzeug', rechtsgebiet: 'Übergreifende Werkzeuge',
     rechtsbereich: 'uebergreifend',
-    title: 'Amtlicher Zitierer (BGE/BGer)',
+    title: 'Gerichts-Zitierer (BGE/BGer)',
     description: 'Fundstellen bundesgerichtlicher Entscheide nach der Zitierkonvention formatieren: BGE (Band · Teil · Seite) und nicht publizierte Urteile (Geschäftsnummer · Datum), mit Erwägungsangabe. Reine Zitierhilfe – prüft nicht, ob der Entscheid existiert.',
     status: 'entwurf',
     norms: [

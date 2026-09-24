@@ -18,9 +18,9 @@ ersatzlos.
 
 ## Verjährungsverzichtserklärung
 
-Schema `verjaehrungsverzicht` · Version 1.0.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101) · Format eingabe · Ausgabe fertig
+Schema `verjaehrungsverzicht` · Version 1.1.0 (Wettbewerbsanalyse V2; Art. 141 OR verifiziert 20260101; VB-01 Laufbeginn ab Erklärung) · Format eingabe · Ausgabe fertig
 
-> **Disclaimer (Fusszeile):** Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens für die gesetzlich zulässige Höchstdauer (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.
+> **Disclaimer (Fusszeile):** Erstellt mit LexMetrik. Keine Rechtsberatung. Der Verzicht gilt längstens zehn Jahre ab dem Datum der Erklärung (Art. 141 Abs. 1 OR); massgebend sind Gesetz und konkreter Sachverhalt.
 
 
 ### 1. `VV_absender`
@@ -83,11 +83,11 @@ Schema `verjaehrungsverzicht` · Version 1.0.0 (Wettbewerbsanalyse V2; Art. 141 
 - [ ] **abgenommen** (David)
 - **Norm:** Art. 141 Abs. 1 OR
 - **Aufnahme:** immer
-- **Begründung (Protokoll):** Kern der Erklärung: befristeter Einredeverzicht mit salvatorischer Begrenzung auf die gesetzliche Höchstdauer – das Dokument kann die Grenze des Art. 141 Abs. 1 OR damit nie überschreiten.
+- **Begründung (Protokoll):** Kern der Erklärung: befristeter Einredeverzicht; die Erklärung legt den Beginn selbst auf ihr Datum fest (das Gesetz lässt ihn offen, BBl 2014 235, S. 262) und begrenzt sich auf zehn Jahre ab diesem Datum – das Dokument hält die Höchstdauer des Art. 141 Abs. 1 OR damit unter jeder Lesart ein.
 
 **Wortlaut:**
 
-> Hinsichtlich Ihrer Forderung ({{forderungBeschrieb}}{{betragSatz}}) verzichte ich hiermit bis zum {{verzichtBisFmt}} auf die Erhebung der Einrede der Verjährung – längstens jedoch für die nach Art. 141 Abs. 1 OR zulässige Höchstdauer von zehn Jahren ab Beginn der Verjährung.
+> Hinsichtlich Ihrer Forderung ({{forderungBeschrieb}}{{betragSatz}}) verzichte ich hiermit mit Wirkung ab dem Datum dieser Erklärung bis zum {{verzichtBisFmt}} auf die Erhebung der Einrede der Verjährung, längstens jedoch für zehn Jahre ab dem Datum dieser Erklärung (Art. 141 Abs. 1 OR).
 
 ### 7. `VV_vorbehalt`
 

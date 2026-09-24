@@ -131,7 +131,10 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     const [i, w] = await Promise.all([inhalt.boundingBox(), wahl.boundingBox()])
     // Vorher (gemessen 24.9.2026 @1280): Wahl 179 px in 538 px Inhalt.
     expect(w!.height).toBeGreaterThan(i!.height - 60)
-    const spalten = await wahl.evaluate((el) => [...el.children].map((c) => Math.round(c.getBoundingClientRect().left)))
+    // Seit U11 (24.9.2026, Suchfeld über den Spalten) trägt `.lc-start-fuellt`
+    // zwei Zeilen: Feld, darunter das Spalten-Raster (letztes Kind).
+    await expect(wahl.getByRole('searchbox', { name: 'Gesetze durchsuchen' })).toBeVisible()
+    const spalten = await wahl.evaluate((el) => [...el.lastElementChild!.children].map((c) => Math.round(c.getBoundingClientRect().left)))
     expect(new Set(spalten).size).toBe(3)
   })
 

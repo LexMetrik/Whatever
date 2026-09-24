@@ -58,8 +58,10 @@ describe('Sperrfristen P1/P2 (Art. 336c OR)', () => {
     expect(r.ergebnis).toContain('um 46 Tage'); // Union [01.05–15.06] ∩ Fenster = 46 (nicht 31+32)
   });
 
-  // §7.4 – Rückfall gleiche Ursache → nur eine Sperrfrist
-  it('§7.4: Rückfall derselben Ursache → keine zweite Sperrfrist', () => {
+  // §7.4 – Rückfall gleiche Ursache → keine NEUE Sperrfrist, aber Schutz aus dem
+  // Restkontingent (Art. 336c Abs. 1 lit. b OR; UI-06/W-04, Fachänderung W-05 24.9.2026):
+  // 6. DJ → 180 Tage; E1 1.–10.5. beansprucht 9 → Rest 171; Rückfall 1.–10.6. hemmt 10.
+  it('§7.4: Rückfall derselben Ursache → keine zweite Sperrfrist, Schutz aus dem Restkontingent', () => {
     const r = berechneSperrfristen({
       ...BASE,
       zugangKuendigung: '2025-04-20',
@@ -69,7 +71,8 @@ describe('Sperrfristen P1/P2 (Art. 336c OR)', () => {
       ],
     });
     expect(r.status).toBe('ok');
-    expect(r.ergebnis).toContain('um 10 Tage'); // nur Ereignis 0 zählt
+    expect(r.ergebnis).toContain('um 20 Tage'); // E1 10 + Rückfall 10 (aus dem Rest von 171)
+    expect(r.beendigungISO).toBe('2025-07-31'); // 30.06. + 20 = 20.07. → Monatsende
     expect(rechenwegText(r)).toContain('Rückfall');
   });
 
@@ -203,7 +206,9 @@ describe('Sperrtage-Zähler (Art. 336c Abs. 1 OR)', () => {
     expect(z.verbleibend).toBe(0);
   });
 
-  it('Rückfall gleicher Ursache: kein neues Kontingent, 0 beansprucht', () => {
+  // Fachänderung W-05 24.9.2026 (UI-06): Rückfall zehrt vom Rest des ursprünglichen
+  // Kontingents (2. DJ → 90; E1 beansprucht 19; Rückfall 1.–10.5. = 10 Tage → Rest 61).
+  it('Rückfall gleicher Ursache: kein neues Kontingent, beansprucht aus dem Rest', () => {
     const e = berechneSperrfristen({
       vertragsbeginn: '2023-01-01', zugangKuendigung: '2024-09-01', kuendigendePartei: 'arbeitgeber',
       probezeitMonate: 1, kuendigungsterminMonatsende: true,
@@ -214,7 +219,9 @@ describe('Sperrtage-Zähler (Art. 336c Abs. 1 OR)', () => {
     });
     expect(e.sperrtage).toHaveLength(2);
     expect(e.sperrtage![1].rueckfall).toBe(true);
-    expect(e.sperrtage![1].beansprucht).toBe(0);
+    expect(e.sperrtage![1].beansprucht).toBe(10);
+    expect(e.sperrtage![1].kontingent).toBe(90);
+    expect(e.sperrtage![1].verbleibend).toBe(61);
   });
 
   it('Militärdienst > 11 Tage: Kalendertage inkl. ±4 Wochen, kein Kontingent', () => {

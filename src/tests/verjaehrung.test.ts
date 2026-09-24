@@ -151,19 +151,27 @@ describe('Verjährung – Modifikatoren (Art. 134/135/137/138/141 OR)', () => {
     expect(r.ergebnis).toContain('still');
   });
 
-  it('Verzicht (Art. 141): wirkt max. 10 Jahre ab Verjährungseintritt', () => {
+  // Fachänderung RL-14 (W-05 §5 Nr. 12, 24.9.2026): Art. 141 Abs. 1 OR regelt
+  // «höchstens zehn Jahre» je Verzicht, nicht deren Laufbeginn (BBl 2014 235
+  // S. 262: bewusst offen). W-06 a: gerechnet ab Erklärung, offengelegt.
+  // Bisher «ab Verjährungseintritt» als Gesetzesregel (15.1.2030 + 10 = 2040).
+  it('Verzicht (Art. 141): «für 12 Jahre» → auf 10 Jahre ab Erklärung gekürzt (W-06 a)', () => {
     const r = berechneVerjaehrung(base({
       verzicht: { datum: '2029-12-01', jahre: 12 },
     }));
-    expect(r.verzichtBisISO).toBe('2040-01-15');
+    expect(r.verzichtBisISO).toBe('2039-12-01');
     expect(r.warnungen.some((w) => w.includes('gekürzt'))).toBe(true);
   });
 
-  it('Verzicht mit NaN-/negativer Dauer → Default 10 Jahre, kein Absturz', () => {
+  // Fachänderung RL-14 (W-05 §5 Nr. 12, UI-04): keine stille 10-J.-Vorgabe —
+  // die Botschaft verwirft eine gesetzliche Ersatzdauer (BBl 2014 235 S. 262).
+  it('Verzicht mit NaN-/negativer Dauer → ungültig, unberücksichtigt, Warnung, kein Absturz', () => {
     const r1 = berechneVerjaehrung(base({ verzicht: { datum: '2029-12-01', jahre: NaN } }));
-    expect(r1.verzichtBisISO).toBe('2040-01-15');
+    expect(r1.verzichtBisISO).toBeUndefined();
+    expect(r1.warnungen.some((w) => w.includes('ungültig'))).toBe(true);
     const r2 = berechneVerjaehrung(base({ verzicht: { datum: '2029-12-01', jahre: -5 } }));
-    expect(r2.verzichtBisISO).toBe('2040-01-15');
+    expect(r2.verzichtBisISO).toBeUndefined();
+    expect(r2.warnungen.some((w) => w.includes('ungültig'))).toBe(true);
   });
 
   it('Klage mit Abschlussdatum vor der Unterbrechung wird verworfen (Warnung)', () => {
