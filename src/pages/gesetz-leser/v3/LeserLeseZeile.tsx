@@ -68,7 +68,14 @@ export function LeserLeseZeile({
           //
           // E-4 (31.8.2026): Dauer und Kurve kommen aus den Motion-Token
           // (`duration-slow`, Default-Kurve = `var(--ease)`), nie roh.
-          'grid gap-5 motion-safe:transition-[grid-template-columns] motion-safe:duration-slow'
+          // ENTSCHEID A (24.9.2026): KEIN Übergang, wo das Blatt eine Spur hat.
+          // Gemessen @1280 (StPO Art. 5): mit Übergang lag der gelesene Artikel
+          // nach dem Öffnen 29 px tiefer (154 → 183), das Blatt zeigte Art. 4;
+          // mit `reducedMotion` 0 px. Der Grund: `useStickAusgleich` hält die
+          // Lesestelle im Layout-Effekt fest — die 300 ms Spalten-Animation
+          // brechen den Text DANACH weiter um. Ohne Übergang ist das erste Bild
+          // schon das Endbild, und die Lesestelle bleibt, wo sie war.
+          `grid gap-5${bild.blattForm === 'spalte' ? '' : ' motion-safe:transition-[grid-template-columns] motion-safe:duration-slow'}`
         : ''}
       style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
       {bild.schiene && (

@@ -186,9 +186,6 @@ export const SPUR_ABSTAND = 1.25;
 // gescoped, das V1 nie trägt.
 export const LESEMASS_MAX = 45;
 
-// D33 strich `LESER_MAX_REM`/`LESE_MIN`/`RAUM_MIN_BLATT` (R6E-LESER.md);
-// Entscheid A bringt `LESE_MIN` zurück, der Deckel rechnet «Spuren + LESEMASS_MAX».
-
 export interface RahmenRaum {
   /** Breite (px), die dem Leser im `<main>` zur Verfügung steht — der Deckel
    *  der Aufweitung (Entscheid A, 24.9.2026; D33 hatte sie ungelesen gelassen). */
@@ -289,9 +286,13 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
   const rechtsRem = blattSpur ? SPUR_BLATT : SPUR_SCHIENE;
   const spurVersatzRechtsRem = blattSpalte ? rechtsRem + SPUR_ABSTAND : 0;
   // Ziel: die Spuren und keinen Schritt mehr (Ä60 (c): ein breiterer Rahmen gäbe
-  // dem Fliesstext Fensterbreite) — nie schmaler als ohne Aufweitung.
+  // dem Fliesstext Fensterbreite) — nie schmaler als ohne Aufweitung. Bei ZU-
+  // Blatt rechnet es mit der Gliederungsspalte, auch wenn sie eingeklappt ist:
+  // ihr Klappen verstellt den Rahmen sonst um 12 px, und die Kopf-Griffe rechts
+  // wanderten mit (D28, `leser-klapp-sonde` (a), gesehen 24.9.2026).
+  const linksZielRem = blattSpur || !spaltenLage ? spurVersatzRem : SPUR_GLIEDERUNG + SPUR_ABSTAND;
   const breitePx = raum == null ? null
-    : Math.min(raum.raumPx, Math.max(raum.ruhePx, (spurVersatzRem + LESEMASS_MAX + spurVersatzRechtsRem) * rem));
+    : Math.min(raum.raumPx, Math.max(raum.ruhePx, (linksZielRem + LESEMASS_MAX + spurVersatzRechtsRem) * rem));
   const zellePx = breitePx == null ? null : breitePx - (spurVersatzRem + spurVersatzRechtsRem) * rem;
   const satzspiegel = satzspiegelFuer(zellePx, rem, spaltenLage && ruheForm === 'rechts');
   const spuren = [spaltenLage ? `${spurRem}rem` : '', 'minmax(0,1fr)', blattSpalte ? `${rechtsRem}rem` : '']
