@@ -165,3 +165,69 @@ describe('Gewährleistung – Rüge-Beurteilung und Hinweise', () => {
     expect(r.verjaehrung.jahre).toBe(5); // Art. 180 SIA 118
   });
 });
+
+// RL-06 (W2·30-RL-W1): Übergangsrecht der Teilrevision «Baumängel» (AS 2025 270,
+// in Kraft 1.1.2026, ohne eigene Übergangsbestimmung) und SIA 118.
+// Normen geprüft 24.9.2026 gegen Fedlex SR 220 (Fassungen 1.1.2025 und 1.1.2026),
+// SR 210 (Fassung 1.7.2026), AS 2025 270 und BBl 2022 2743 Ziff. 4.2.
+describe('Gewährleistung – Übergangsrecht und SIA 118 (RL-06)', () => {
+  it('F5-05: Altvertrag (2025), Abnahme nach dem 1.1.2026 – vereinbarte 2 Jahre bleiben wirksam (Art. 1 Abs. 2 SchlT ZGB)', () => {
+    const r = berechneGewaehrleistung(base({
+      vertragstyp: 'werkvertrag', vertragsdatum: '2025-06-01', objekt: 'unbeweglich',
+      uebergabe: '2026-03-02', vereinbarteVerjaehrungJahre: 2,
+    }));
+    expect(r.rechtsstand).toBe('alt');
+    expect(r.verjaehrung.teilzwingend).toBe(false);
+    expect(r.verjaehrung.vereinbartUnwirksam).toBe(false);
+    expect(r.verjaehrung.jahre).toBe(2);
+    expect(r.verjaehrung.endeISO).toBe('2028-03-02'); // Do
+    expect(r.warnungen.some((w) => w.includes('Art. 1 Abs. 2 SchlT ZGB'))).toBe(true);
+  });
+
+  it('F5-05: Grundstückkauf (alt) – vereinbarte Verkürzung auf 1 Jahr bleibt wirksam (Art. 219 Abs. 3 aOR dispositiv)', () => {
+    const r = berechneGewaehrleistung(base({
+      vertragstyp: 'grundstueckkauf', vertragsdatum: '2025-06-01',
+      uebergabe: '2025-06-20', eigentumserwerb: '2025-06-20', vereinbarteVerjaehrungJahre: 1,
+    }));
+    expect(r.verjaehrung.vereinbartUnwirksam).toBe(false);
+    expect(r.verjaehrung.jahre).toBe(1);
+    expect(r.verjaehrung.endeISO).toBe('2026-06-22'); // 20.6.2026 = Sa → Mo
+  });
+
+  it('F5-06: Grundstückkauf (alt) – Hinweis, dass die 5 Jahre nur für Mängel eines Gebäudes gelten', () => {
+    const r = berechneGewaehrleistung(base({
+      vertragstyp: 'grundstueckkauf', vertragsdatum: '2025-03-01',
+      uebergabe: '2025-04-01', eigentumserwerb: '2025-04-15',
+    }));
+    expect(r.warnungen.some((w) => w.includes('Mängel eines Gebäudes') && w.includes('Art. 221') && w.includes('Art. 210 Abs. 1'))).toBe(true);
+  });
+
+  it('S3-b: SIA 118 schaltet die teilzwingende 5-Jahres-Frist nicht aus (Werk unbeweglich, neues Recht)', () => {
+    const r = berechneGewaehrleistung(base({
+      vertragstyp: 'werkvertrag', vertragsdatum: '2026-02-01', objekt: 'unbeweglich',
+      uebergabe: '2026-04-01', sia118: true, vereinbarteVerjaehrungJahre: 2,
+    }));
+    expect(r.verjaehrung.teilzwingend).toBe(true);
+    expect(r.verjaehrung.vereinbartUnwirksam).toBe(true);
+    expect(r.verjaehrung.jahre).toBe(5);
+    expect(r.verjaehrung.endeISO).toBe('2031-04-01'); // Di
+  });
+
+  it('S3-b Gegenprobe: SIA 118 bei beweglichem Werk – 5 Jahre nur vertraglich, nicht teilzwingend', () => {
+    const r = berechneGewaehrleistung(base({
+      vertragstyp: 'werkvertrag', vertragsdatum: '2026-02-01', objekt: 'beweglich',
+      uebergabe: '2026-04-01', sia118: true,
+    }));
+    expect(r.verjaehrung.jahre).toBe(5);
+    expect(r.verjaehrung.teilzwingend).toBe(false);
+  });
+
+  it('F5-08: SIA 118 bei unbeweglichem Werk (neu) – 60-Tage-Rüge gerechnet, längere SIA-Rügefrist nur als Hinweis', () => {
+    const r = berechneGewaehrleistung(base({
+      vertragstyp: 'werkvertrag', vertragsdatum: '2026-02-01', objekt: 'unbeweglich',
+      uebergabe: '2026-04-01', sia118: true,
+    }));
+    expect(r.ruege.art).toBe('tage60');
+    expect(r.warnungen.some((w) => w.includes('SIA-Norm 118') && w.includes('längere Rügefrist'))).toBe(true);
+  });
+});
