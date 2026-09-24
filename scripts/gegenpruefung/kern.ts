@@ -159,6 +159,11 @@ const RECHNEN_RE =
 //    Zuordnung Justice de paix → Tribunal; sie wird von vdSchlichtung.ts
 //    (unten, Risiko) verarbeitet — die Datei selbst bleibt als Adressbestand
 //    bei W-03.
+//  - src/data/verfallTermine.generated.ts — Anzeige-Projektion aus
+//    bibliothek/register/parameter-verfall.md für die «Aktualität & Pflege»-
+//    Fläche; keine Rechen-Engine liest sie (einziger Leser
+//    src/components/VerfallUebersicht.tsx, gemessen 24.9.2026), eigener
+//    Drift-Wächter check:verfall-ui.
 export const RECHTSLOGIK_DATEIEN: readonly string[] = [
   // Engines (top-level src/lib, von RECHNEN_RE nicht getroffen)
   'src/lib/verzugszins.ts',
@@ -286,6 +291,18 @@ export function istRisikoPfad(p: string): boolean {
   if (p.startsWith('scripts/materialien/')) return true;
   if (/^public\/materialien\/[^/]+\.json$/.test(p)) return true;
   if (p.startsWith('public/materialien/kanten/')) return true;
+  // ANLASS: Gegenprüfung RL-02 24.9.2026 — die committeten Generator-Artefakte
+  // src/lib/materialien/*.generated.ts tragen Amtsdaten (stand/quelleUrl/normKeys)
+  // aus scripts/materialien/** und speisen die register.json-Projektion; analog den
+  // public/materialien-Shards sind sie Extraktions-Risiko. Ein Muster statt einer
+  // Liste, weil neue Generatoren dort hinzukommen. BEWUSST NICHT die übrigen
+  // Dateien des Ordners: browse, botschaften, vernehmlassungen, ratschlaege,
+  // kanten-shard sind reine Ladeschichten (§3, «keine Rechtslogik» laut
+  // Kopfkommentar), typen/deckung reine Typ-Formen. register.ts (handkuratierte
+  // Live-Link-Metadaten) und verfahren.ts (amtliche Vokabular-Tabelle) tragen
+  // zwar Amtsdaten, sind aber keine Generator-Artefakte — ihre Aufnahme ist am
+  // 24.9.2026 als offene Frage an die Orchestrierung gemeldet, nicht entschieden.
+  if (/^src\/lib\/materialien\/[^/]+\.generated\.ts$/.test(p)) return true;
   // Entstehung am Artikel (W2·6c, §11.6, Kritik A8/C1-C4): die Anker-Sidecars behaupten
   // «diese Stelle der Botschaft erläutert Art. N» und die Curia-Shards geben amtliche
   // Parlaments-Beschlüsse wieder — beides Extraktion aus amtlichen Quellen, beides
