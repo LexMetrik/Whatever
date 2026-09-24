@@ -295,7 +295,7 @@ for (const kanton of ALLE_KANTONE) {
       const neSchliesstag = istNeSchliesstagAusnahme(kanton, key);
 
       const grund = fest?.grund ?? oster?.grund ??
-        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : '') ||
+        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : null) ??
         (neSchliesstag ? 'NE-Schliesstag nach LI-CPC Art. 10a (RSN 251.1) — siehe Kommentar oben.' : '');
       const begruendet = Boolean(fest || oster || stephanstag || neSchliesstag);
 
