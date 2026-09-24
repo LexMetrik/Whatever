@@ -986,8 +986,7 @@ jobs:
       # Das Tor-Wirksamkeits-Audit (bibliothek/, PR #318) hat die 20 Allowlist-
       # Begruendungen per Sabotage geprueft: 17 halten NICHT, 2 sind gar keine
       # Begruendung, 1 haelt. Sechs Proben, sechsmal dasselbe Bild — zustaendiges
-      # Tor ROT, behaupteter Ersatz GRUEN (bei "vom lint mitabgedeckt" war die
-      # lint-Ausgabe sogar byte-identisch zur Baseline). Die 9x behauptete
+      # Tor ROT, behaupteter Ersatz GRUEN. Die 9x behauptete
       # Delegation an fedlex-frische.yml scheitert dreifach: der Workflow faehrt
       # diese Tore nicht, faengt die Fehlerklasse nicht, und lief genau einmal —
       # mit failure.
@@ -1002,7 +1001,7 @@ jobs:
       # ausserhalb der Marker ein zweites Mal definiert sein (§5). Offline, ~1 s.
       - name: Darstellungs-Kanon (Tokens · Drift · Farbwelt · Linien · p-Klassen)
         if: needs.diff.outputs.art != 'doku'
-        run: npm run check:design-tokens && npm run check:tokens-drift && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen
+        run: npm run check:design-tokens && npm run check:tokens-drift && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen && npm run check:segmente
       # UI-Normzitate gegen den Korpus (QS-CODE-AUSSENKANTEN, 4.8.2026): die
       # ~740 hart kodierten Art.-Zitate der Darstellungsschicht sind eine
       # zweite Norm-Quelle — jedes muss im committeten Snapshot des zitierten

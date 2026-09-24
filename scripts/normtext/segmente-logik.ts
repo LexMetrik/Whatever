@@ -1,0 +1,420 @@
+/**
+ * scripts/normtext/segmente-logik.ts — reine Logik für `check:segmente` (QS-KORPUS).
+ *
+ * Anlass: Herz-und-Nieren-Prüfung 24.9.2026, Befund normtext-treue-11 — kein Tor
+ * prüfte segmentgenaue Vollständigkeit des Bund-Normtexts gegen die amtliche
+ * Fedlex-HTML. 69 amtliche Segmente in 24 Artikeln fehlten still im Leser.
+ *
+ * UNABHÄNGIGKEIT (§ Architektur Ziff. 3): Zerlegung per DOM (`linkedom`), KEIN
+ * Import von Parse-Funktionen aus `extrahiere-fedlex.ts`/`fussnoten-extrahiere.ts`
+ * — sonst teilte dieses Tor genau die blinden Flecken, die es aufdecken soll.
+ *
+ * NACHTRAG 25.9.2026 (Orchestrator, Architektur-Korrektur «eingefrorenes Soll»):
+ * ein Tor, das nur mit /tmp-Cache prüft, ist in PR-CI und Merge-Queue wirkungslos
+ * (dort liegt nie ein Cache). Enthaltensein wird darum NIE per Klartext-Suche
+ * geprüft, sondern per Fingerabdruck [Länge, Doppel-Rolling-Hash] und
+ * Rabin-Karp-Fensterabgleich im normalisierten Projektions-Blob — EINE Funktion
+ * (`fehlendeIndizes`) für Modus B (nur committetes Soll, kein Cache: die
+ * Fingerabdrücke kommen aus der committeten Soll-Datei) und Modus C (Cache da:
+ * dieselben Fingerabdrücke frisch aus der HTML abgeleitet). Kein Klartext
+ * amtlichen Normtexts wird dauerhaft gespeichert (§5/§7 — sonst eine zweite,
+ * unbelegte Wahrheit).
+ */
+import { parseHTML } from 'linkedom';
+
+// ── Normalisierung (§ Architektur Ziff. 5, so knapp wie möglich) ───────────
+// Entity-Dekodierung passiert bereits beim Parsen (linkedom decodiert `&nbsp;`,
+// `&amp;` usw. in echte Unicode-Zeichen) und Hochstellungs-Reduktion beim Bau
+// des Segment-Texts (`blockText` unten: ein <sup> ohne Fussnoten-Link bleibt
+// inline, sein Text zählt normal mit) — hier bleiben nur zwei Schritte:
+//  (a) NFC — defensiv gegen Codepoint-Varianten (kombinierte vs. zerlegte
+//      Akzente) zwischen den ZWEI unabhängigen Ablesepfaden (rohe HTML via
+//      DOM hier, committetes JSON dort); ein no-op für bereits-NFC-Text.
+//  (b) jeden Leerraum entfernen (§5: «alle Leerräume … inkl. NBSP») — JS'
+//      `\s` deckt U+00A0 (NBSP) bereits ab (empirisch geprüft), keine
+//      Sonderbehandlung nötig. Ganze Wörter/Ziffern/Satzzeichen bleiben
+//      erhalten (§5-Vorgabe: keine Normalisierung darf sie verschlucken).
+export function normalisiere(text: string): string {
+  return text.normalize('NFC').replace(/\s+/g, '');
+}
+
+// Mindestlänge nach Normalisierung, ab der ein Segment geprüft wird (§ Architektur
+// Ziff. 5). Begründung: empirisch aus der Herz-und-Nieren-Referenzprüfung
+// (contain.py) übernommen — unterhalb von 8 Zeichen sind Fragmente (Listenmarken,
+// blosse Ziffern, Interpunktion) nicht mehr verlässlich einem echten Verlust
+// zuordenbar, UND kein einziger der 69 real fehlenden Segmente im heutigen
+// Korpus ist kürzer. Kurze Fragmente ungeprüft zu lassen ist die sichere
+// Richtung: ein zu kurzes Segment würde ohnehin fast überall zufällig
+// "gefunden", eine Prüfung darauf wäre Rauschen, keine Aussage.
+export const SEGMENT_MINDESTLAENGE = 8;
+
+// Version DIESER Segmentier-/Normalisierungslogik. Eine committete Soll-Datei,
+// deren `segmenterVersion` von der hier exportierten abweicht, gilt als
+// veraltet (wie ein Pin-Mismatch) — ihre Fingerabdrücke wurden mit einer
+// ANDEREN Zerlegung erzeugt und sind gegen die heutige nicht mehr aussagekräftig.
+export const SEGMENTER_VERSION = 1;
+
+// ── Rolling-Hash / Fingerabdruck (NACHTRAG: Rabin-Karp, BigInt-frei) ───────
+// Zwei unabhängige Polynom-Hashes mod 2^31−1 (Mersenne-Primzahl, gängige Wahl
+// für Rolling-Hashes) mit verschiedenen Basen — kombiniert ~62 Bit Entropie,
+// komfortabel über der geforderten Schwelle von ≥48 Bit. Alle Zwischenprodukte
+// bleiben unter 2^53 (Number.MAX_SAFE_INTEGER): der grösste Faktor ist
+// `Zeichencode(≤ 0x10FFFF) × MOD(< 2^31)` ≈ 2.4·10^15, sicher innerhalb der
+// doppelt-genauen Ganzzahl-Grenze — kein BigInt nötig (Vorgabe NACHTRAG A).
+const MOD = 2147483647; // 2^31 - 1
+const BASIS_A = 131;
+const BASIS_B = 137;
+
+export interface Fingerabdruck {
+  laenge: number;
+  hash: string; // "hashA.hashB", beide Werte base36
+}
+
+/** Fingerabdruck eines VOLLSTÄNDIG normalisierten Segments (ganze Zeichenkette als ein Fenster). */
+export function fingerabdruck(normalisiertesSegment: string): Fingerabdruck {
+  let a = 0;
+  let b = 0;
+  for (let i = 0; i < normalisiertesSegment.length; i++) {
+    const c = normalisiertesSegment.charCodeAt(i);
+    a = (a * BASIS_A + c) % MOD;
+    b = (b * BASIS_B + c) % MOD;
+  }
+  return { laenge: normalisiertesSegment.length, hash: `${a.toString(36)}.${b.toString(36)}` };
+}
+
+/** Menge aller Fenster-Hashes gegebener Länge im (bereits normalisierten) Blob. */
+function fensterHashes(blobNormalisiert: string, laenge: number): Set<string> {
+  const n = blobNormalisiert.length;
+  const treffer = new Set<string>();
+  if (laenge <= 0 || laenge > n) return treffer; // Länge > Blob-Länge: kann nie enthalten sein.
+  let potenzA = 1;
+  let potenzB = 1;
+  for (let i = 0; i < laenge - 1; i++) {
+    potenzA = (potenzA * BASIS_A) % MOD;
+    potenzB = (potenzB * BASIS_B) % MOD;
+  }
+  let a = 0;
+  let b = 0;
+  for (let i = 0; i < laenge; i++) {
+    const c = blobNormalisiert.charCodeAt(i);
+    a = (a * BASIS_A + c) % MOD;
+    b = (b * BASIS_B + c) % MOD;
+  }
+  treffer.add(`${a.toString(36)}.${b.toString(36)}`);
+  for (let i = laenge; i < n; i++) {
+    const raus = blobNormalisiert.charCodeAt(i - laenge);
+    const rein = blobNormalisiert.charCodeAt(i);
+    // Rabin-Karp-Rollschritt: H(start+1) = (H(start) − raus·B^(L−1))·B + rein.
+    // Zwischensumme vor dem Modulo kann negativ werden (JS `%` ist vorzeichen-
+    // behaftet) — zweifach normalisiert, s. Unit-Test gegen naive String-Suche.
+    a = ((((a - raus * potenzA) % MOD) + MOD) % MOD * BASIS_A + rein) % MOD;
+    b = ((((b - raus * potenzB) % MOD) + MOD) % MOD * BASIS_B + rein) % MOD;
+    treffer.add(`${a.toString(36)}.${b.toString(36)}`);
+  }
+  return treffer;
+}
+
+/**
+ * Enthaltensein-Kern — EINE Logik für Modus B (Fingerabdrücke aus committetem
+ * Soll) und Modus C (Fingerabdrücke frisch aus HTML): liefert die Indizes der
+ * NICHT im Blob enthaltenen Fingerabdrücke (parallel zu `fps`), gruppiert nach
+ * Länge, damit jede Blob-Länge nur einmal abgefahren wird.
+ */
+export function fehlendeIndizes(blobNormalisiert: string, fps: readonly Fingerabdruck[]): number[] {
+  const nachLaenge = new Map<number, number[]>();
+  fps.forEach((fp, i) => {
+    const liste = nachLaenge.get(fp.laenge);
+    if (liste) liste.push(i);
+    else nachLaenge.set(fp.laenge, [i]);
+  });
+  const fehlt = new Set<number>(fps.map((_, i) => i));
+  for (const [laenge, indizes] of nachLaenge) {
+    const fenster = fensterHashes(blobNormalisiert, laenge);
+    for (const i of indizes) if (fenster.has(fps[i].hash)) fehlt.delete(i);
+  }
+  return [...fehlt].sort((x, y) => x - y);
+}
+
+// ── HTML-Segmentierung (Modus C: frische Ableitung) ────────────────────────
+
+export type SegmentArt = 'p' | 'dd' | 'td' | 'th';
+
+export interface RohSegment {
+  art: SegmentArt;
+  text: string; // roh (noch NICHT normalisiert) — Aufrufer normalisiert + filtert Mindestlänge.
+}
+
+// Absatznummer-Muster (Fedlex-Konvention: <sup>1</sup>, <sup>1bis</sup>, …) —
+// ganze Zeichenkette muss passen (§7 CLAUDE.md: kein Teilstring-Treffer).
+const ABSATZNUMMER_MUSTER =
+  /^\d+(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)?[a-z]?\.?$/;
+
+/** Entfernt Fussnoten-Verweismarken (<sup> MIT <a>) aus einem (bereits geklonten) Teilbaum. */
+function ohneFussnotenmarken(klon: any): any {
+  for (const sup of [...klon.querySelectorAll('sup')]) {
+    if (sup.querySelector('a')) sup.remove();
+  }
+  return klon;
+}
+
+/**
+ * Entfernt `<style>`/`<script>` aus einem (bereits geklonten) Teilbaum. Fedlex
+ * bettet Signalisations-Icons als Inline-SVG in `<p class="bild">` ein
+ * (`<svg><defs><style>.cls-1{fill:#…}</style></defs><path .../></svg>`) —
+ * `textContent` liest den `<style>`-Inhalt wörtlich mit (DOM-Eigenheit: anders
+ * als `innerText` unterscheidet `textContent` nicht zwischen sichtbarem Text
+ * und Stylesheet-Text). Ohne diese Bereinigung würde jedes so eingebettete
+ * Icon CSS-Quelltext als "Segment" ausgeben — ein Zerlegungs-Artefakt, kein
+ * amtlicher Normtext (empirisch an SSV annex_2 gefunden).
+ */
+function ohneStyleUndScript(klon: any): any {
+  for (const el of [...klon.querySelectorAll('style, script')]) el.remove();
+  return klon;
+}
+
+/**
+ * Text eines Blatt-Blocks (p/dd/td/th): Fussnoten-Verweismarken raus, JEDES
+ * `<dt>` raus (reine Listenmarke, § Architektur Ziff. 4 — auch verschachtelt:
+ * Fedlex simuliert Zellen-Einrückung in `<td>`/`<th>` mit
+ * `<dl><dt><span data-message="…-TAB">[tab]</span></dt><dd>…</dd></dl>`;
+ * empirisch an KRK/CEDAW scope_u1 gefunden — ohne diese Regel würde jede so
+ * eingerückte Zelle das literale Wort "[tab]" ins Segment ziehen, das die
+ * Projektion nie enthält: ein Zerlegungs-Artefakt, kein echter Verlust),
+ * dann eine FÜHRENDE freistehende Absatznummer (`<sup>1bis</sup>` ohne Link,
+ * GENAU das Absatznummer-Muster, nichts als Leerraum davor) raus — die liegt
+ * im separaten `absatz`-Feld der Projektion, nicht im `text`-Feld. Ein <sup>
+ * OHNE Link, das NICHT führt oder nicht dem Muster entspricht (z.B. «Absatz
+ * 1<sup>bis</sup>» mitten im Satz), bleibt stehen — sein Text zählt normal mit
+ * (Hochstellungs-Reduktion auf den Text, § Architektur Ziff. 5).
+ */
+function blockText(element: any): string {
+  const klon = ohneStyleUndScript(ohneFussnotenmarken(element.cloneNode(true)));
+  for (const dt of [...klon.querySelectorAll('dt')]) dt.remove();
+  const erstesElement = klon.firstElementChild;
+  if (erstesElement && erstesElement.tagName === 'SUP') {
+    let vorlauf = '';
+    for (const kind of klon.childNodes) {
+      if (kind === erstesElement) break;
+      vorlauf += kind.textContent ?? '';
+    }
+    if (vorlauf.trim() === '' && ABSATZNUMMER_MUSTER.test((erstesElement.textContent ?? '').trim())) {
+      erstesElement.remove();
+    }
+  }
+  return klon.textContent ?? '';
+}
+
+/**
+ * Parst eine Erlass-HTML EINMAL (linkedom). Getrennt von `segmentiereAnker`,
+ * damit die CLI bei tausenden Artikeln je Erlass-Datei nicht tausendmal neu
+ * parst — das Parsen ist der teure Schritt, `getElementById` je Anker billig.
+ */
+export function parseErlassHtml(html: string): { getElementById: (id: string) => any } {
+  const { document } = parseHTML(html);
+  return document;
+}
+
+/**
+ * Zerlegt den Körper eines Artikels/Anhang-Abschnitts (per `ankerId` im
+ * bereits geparsten Dokument per DOM-`id` lokalisiert) in rohe Blatt-Segmente.
+ * `null`, wenn der Anker in der HTML nicht existiert — eigener Befundtyp,
+ * s. `check-segmente.ts` (§ Architektur Ziff. 6: Artikel-PRÄSENZ ist nicht
+ * diese Prüfung, das deckt `check:vollstaendigkeit`; hier nicht still
+ * übersprungen, sondern gezählt).
+ */
+/**
+ * Zerlegt einen Bereich (Artikelkörper ODER — rekursiv — eine einzelne
+ * Tabellenzelle) in Listen- und Fliesstext-Segmente: Listen rekursiv (<dd>
+ * ohne den eigenen, ggf. verschachtelten <dl>-Inhalt — der wird bei der
+ * Rekursion als EIGENE Segmente erfasst, empirisch belegt: STHG hat <dd>-Text
+ * gefolgt von einem verschachtelten <dl>; <dt> nie, reine Listenmarke, §
+ * Architektur Ziff. 4), danach der restliche Fliesstext (jeder <p>, JEDER
+ * Klasse — die Extraktor-Klassenliste [absatz09pt, man-template-tab-utit, …]
+ * ist für dieses Tor irrelevant: es prüft Enthaltensein, nicht
+ * Klassenzugehörigkeit, s. Architektur-Abweichung im Bericht). Mutiert `bereich`
+ * (entfernt die verarbeiteten <dl>), damit ein äusserer <p>-Scan sie nicht
+ * doppelt sieht — der Aufrufer übergibt darum stets einen Klon.
+ */
+function segmentiereBereich(bereich: any, segmente: RohSegment[]): void {
+  const sammleDl = (dl: any): void => {
+    for (const dd of [...dl.children].filter((k: any) => k.tagName === 'DD')) {
+      const eigenerKlon = dd.cloneNode(true);
+      for (const verschachtelt of [...eigenerKlon.querySelectorAll('dl')]) verschachtelt.remove();
+      segmente.push({ art: 'dd', text: blockText(eigenerKlon) });
+      for (const kindDl of [...dd.querySelectorAll(':scope > dl')]) sammleDl(kindDl);
+    }
+  };
+  const topLevelDls = [...bereich.querySelectorAll('dl')].filter(
+    (dl: any) => !dl.parentElement?.closest('dl'),
+  );
+  for (const dl of topLevelDls) {
+    sammleDl(dl);
+    dl.remove();
+  }
+  for (const p of [...bereich.querySelectorAll('p')]) {
+    segmente.push({ art: 'p', text: blockText(p) });
+  }
+}
+
+export function segmentiereAnker(dokument: { getElementById: (id: string) => any }, ankerId: string): RohSegment[] | null {
+  const wurzel = dokument.getElementById(ankerId);
+  if (!wurzel) return null;
+  const klon = wurzel.cloneNode(true);
+
+  // Fussnoten-Apparat und die Artikel-Kopfzeile (Nummer + Sachüberschrift,
+  // § Architektur Ziff. 4 — liegen in anderen Projektionsfeldern) nie scannen.
+  for (const raus of [...klon.querySelectorAll('div.footnotes'), ...klon.querySelectorAll('h6')]) {
+    raus.remove();
+  }
+
+  const segmente: RohSegment[] = [];
+
+  // Tabellen ZELLWEISE (§ Architektur Ziff. 4 — der Referenz-Prüfer tolerierte
+  // abweichende Zeilen-Zerlegung; zellweise ist die feinere, dem JSON-Schema
+  // `mehrspaltig.zeilen[i][j]` entsprechende Granularität): jede Zelle ist
+  // selbst ein Mini-Bereich — Fedlex bettet in Zellen teils EIGENE <p>+<dl>-
+  // Struktur ein (empirisch an GSCHV annex_2 gefunden: `<td><p>Bei
+  // Temperaturen:</p><dl><dt>–</dt><dd>über 10 °C: …</dd><dt>–</dt>
+  // <dd>unter 10 °C: …</dd></dl></td>` — als EIN Blob gelesen verklebte das
+  // zu "…Nunter 10…", ein Zerlegungs-Artefakt). Enthält die Zelle KEINE
+  // solche innere Struktur, bleibt sie EIN Segment (Fallback: `blockText`).
+  // Danach aus dem Baum lösen, sonst erschienen ihre <p> nochmals unten.
+  for (const tabelle of [...klon.querySelectorAll('table')]) {
+    for (const zelle of [...tabelle.querySelectorAll('td, th')]) {
+      const innereSegmente: RohSegment[] = [];
+      segmentiereBereich(zelle.cloneNode(true), innereSegmente);
+      if (innereSegmente.length > 0) {
+        segmente.push(...innereSegmente);
+      } else {
+        const art: SegmentArt = zelle.tagName.toLowerCase() === 'th' ? 'th' : 'td';
+        segmente.push({ art, text: blockText(zelle) });
+      }
+    }
+    tabelle.remove();
+  }
+
+  segmentiereBereich(klon, segmente);
+  return segmente;
+}
+
+/** Komfort-Wrapper (Fixtures/Tests): parst UND zerlegt in einem Schritt. Die
+ * CLI nutzt `parseErlassHtml`+`segmentiereAnker` getrennt (Performance). */
+export function segmentiereArtikel(html: string, ankerId: string): RohSegment[] | null {
+  return segmentiereAnker(parseErlassHtml(html), ankerId);
+}
+
+// ── Projektions-Blob (aus dem committeten public/normtext/bund/<KEY>.json) ──
+
+// Generisch statt feldweise aufgezählt (§ Architektur Ziff. 6: «prüfe das
+// tatsächliche Schema der JSON, nimm nichts an») — sammelt JEDEN String-Leaf
+// rekursiv unter `bloecke` (text, items[].text/marke, mehrspaltig.kopf/
+// spalten[].titel/zeilen[][], bild.alt, bildKacheln[].bild.alt/name/nummer …).
+// Nicht-String-Werte (Zahlen, bool, null) werden strukturell übersprungen —
+// das schliesst insbesondere `bloecke[].titel` (NUMERISCHE Gliederungstiefe,
+// z.B. 2) automatisch aus, OHNE den Schlüsselnamen "titel" zu sperren (der
+// bedeutet bei `mehrspaltig.spalten[].titel` etwas anderes: dort ein ECHTER
+// String-Spaltenkopf, z.B. "EU"/"Schweiz" — eine Schlüsselnamen-Sperre hätte
+// diesen fälschlich mitgesperrt; empirisch an MEPV/SSV geprüft).
+function sammleStrings(wert: unknown, ziel: string[]): void {
+  if (typeof wert === 'string') {
+    ziel.push(wert);
+    return;
+  }
+  if (Array.isArray(wert)) {
+    for (const v of wert) sammleStrings(v, ziel);
+    return;
+  }
+  if (wert && typeof wert === 'object') {
+    for (const v of Object.values(wert)) sammleStrings(v, ziel);
+  }
+}
+
+export interface ProjektionsEintrag {
+  id: string;
+  bloecke: unknown;
+  grundlage?: unknown;
+  [weitere: string]: unknown;
+}
+
+/**
+ * Normalisierter Such-Blob eines Projektions-Eintrags. Enthält zusätzlich das
+ * Feld `grundlage` (Kurzverweis unter der Randtitel-Klasse "referenz", z.B.
+ * VOEB "(Art. 6 Abs. 2 und 3 sowie 52 Abs. 2 BöB)") — OHNE dieses Feld wäre
+ * JEDES referenz-Vorkommen ein Tor-Artefakt gewesen (empirisch an VOEB
+ * geprüft: 19 Artikel tragen `grundlage`, keines davon in `bloecke`).
+ */
+export function projektionsBlob(eintrag: Pick<ProjektionsEintrag, 'bloecke' | 'grundlage'>): string {
+  const teile: string[] = [];
+  sammleStrings(eintrag.bloecke, teile);
+  if (typeof eintrag.grundlage === 'string') teile.push(eintrag.grundlage);
+  return normalisiere(teile.join(''));
+}
+
+// ── Soll-Datei (NACHTRAG: committetes, klartextfreies Ist-Soll je Erlass) ──
+
+export interface SollPin {
+  eli: string;
+  konsolidierung: string;
+  htmlN: number;
+}
+
+export interface SollDatei {
+  pin: SollPin;
+  segmenterVersion: number;
+  artikel: Record<string, [number, string][]>; // eId -> [[laenge, hash], …] (kompakt statt Objekt je Eintrag)
+}
+
+export function fingerabdrueckeZuSoll(fps: Fingerabdruck[]): [number, string][] {
+  return fps.map((fp) => [fp.laenge, fp.hash]);
+}
+
+export function sollZuFingerabdruecke(paare: [number, string][]): Fingerabdruck[] {
+  return paare.map(([laenge, hash]) => ({ laenge, hash }));
+}
+
+export function pinIdentGleich(a: SollPin, b: SollPin): boolean {
+  return a.eli === b.eli && a.konsolidierung === b.konsolidierung && a.htmlN === b.htmlN;
+}
+
+// ── Basislinie (§ Architektur Ziff. 7 / NACHTRAG Punkt E) ──────────────────
+
+export interface BasislinienEintrag {
+  erlass: string; // Projektions-KEY, z.B. "STHG"
+  eId: string; // z.B. "art_56"
+  hash: string; // Fingerabdruck.hash — DER Schlüssel-Teil (NACHTRAG E: "Segment-Hash")
+  laenge: number; // Fingerabdruck.laenge — Zusatzangabe für Lesbarkeit/Kollisionsschutz
+  auszug: string; // ≤ 80 Zeichen Klartext, NUR hier erlaubt (kurzer Bug-Beleg, keine Korpus-Kopie)
+  befund: string; // 'normtext-treue-01' | '02' | '03' | '10' | 'unklassiert-…'
+}
+
+export interface BasislinienAbgleich<T> {
+  bekannt: BasislinienEintrag[]; // heute noch gefunden, grandfathered (kein Rot)
+  neu: T[]; // NICHT in Basislinie ⇒ rot (behält alle Felder des Aufrufers, z.B. `auszug`)
+  veraltet: BasislinienEintrag[]; // in Basislinie, aber heute NICHT mehr gefunden ⇒ rot (Eintrag entfernen)
+}
+
+/**
+ * Gleicht die HEUTE gefundenen fehlenden Segmente (Schlüssel erlass+eId+hash)
+ * gegen die committete Basislinie ab. Rein — keine I/O, keine Exit-Codes.
+ * Generisch über `T`, damit Aufrufer-Zusatzfelder (z.B. ein Modus-C-`auszug`)
+ * in `neu` erhalten bleiben, ohne sie hier zu kennen.
+ */
+export function gleicheBasislinieAb<T extends { erlass: string; eId: string; hash: string }>(
+  heutigeFunde: readonly T[],
+  basislinie: readonly BasislinienEintrag[],
+): BasislinienAbgleich<T> {
+  const schluessel = (e: { erlass: string; eId: string; hash: string }): string =>
+    `${e.erlass}\u0000${e.eId}\u0000${e.hash}`;
+  const basisMap = new Map(basislinie.map((e) => [schluessel(e), e]));
+  const fundSchluessel = new Set(heutigeFunde.map(schluessel));
+
+  const bekannt: BasislinienEintrag[] = [];
+  const neu: T[] = [];
+  for (const fund of heutigeFunde) {
+    const eintrag = basisMap.get(schluessel(fund));
+    if (eintrag) bekannt.push(eintrag);
+    else neu.push(fund);
+  }
+  const veraltet = basislinie.filter((e) => !fundSchluessel.has(schluessel(e)));
+  return { bekannt, neu, veraltet };
+}
