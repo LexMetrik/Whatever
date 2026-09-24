@@ -253,9 +253,14 @@ const KANTON_ABDECKUNG = 'Kantonale Erlasse sind erst teilweise verknüpft — d
 // nur Kanten je Status). Eine hier eingetippte Zahl wäre eine zweite Wahrheit
 // neben `/abdeckung` (§5), die beim nächsten Korpus-Lauf still veraltet. Die
 // Zahlen stehen auf der verlinkten Seite; hier steht, was in jeder Lage wahr ist.
-const ABDECKUNG_SATZ = 'Erfasst sind die Leitentscheide (BGE) der jüngeren Bände; übrige'
-  + ' Urteile des Bundesgerichts und der eidgenössischen Gerichte nur vereinzelt, kantonale'
-  + ' Entscheide erst aus einzelnen Gerichten.';
+// S6 W1g (Wunsch David 24.9.2026 «nicht zu viele infos»): EIN kurzer Satz statt
+// drei Zeilen; das Detail (eidgenössische Gerichte, einzelne Kantone) steht
+// hinter «Abdeckung ›» (`/abdeckung`) — §8 bleibt gewahrt: die Lücke ist
+// benannt, nur nicht mehr aufgezählt. Bis 24.9.2026: «Erfasst sind die
+// Leitentscheide (BGE) der jüngeren Bände; übrige Urteile des Bundesgerichts
+// und der eidgenössischen Gerichte nur vereinzelt, kantonale Entscheide erst
+// aus einzelnen Gerichten.»
+const ABDECKUNG_SATZ = 'Erfasst: BGE neuerer Bände, übrige Urteile vereinzelt.';
 
 export function PanelEntscheide({
   kanten, alleKanten, aktArtikel, revisionShard, normZitat, artikelLabel, geladen, fehler = false, onNeuLaden,
@@ -311,7 +316,9 @@ export function PanelEntscheide({
         klassenZahlen={klassenZahlenAmArtikel(alleKanten, geladen)} zahlOrt={zahlOrt}
         histogramm={histogramm} bereich={bereich}
         onKlassen={onKlassen} onKantone={onKantone} onBereich={onBereich} />
-      <p data-v3-panel-abdeckung-zeile className="border-b border-line px-3 py-1.5 text-micro leading-snug text-ink-600">
+      {/* S6 W1g: ohne eigene Unterlinie — die 2-px-Kante des Gruppenkopfs
+          darunter trennt (sonst zwei Linien 8 px übereinander, gemessen @1440). */}
+      <p data-v3-panel-abdeckung-zeile className="px-3 py-1.5 text-micro leading-snug text-ink-600">
         {ABDECKUNG_SATZ}{' '}
         <Link to="/abdeckung" className="text-brass-700">Abdeckung ›</Link>
       </p>

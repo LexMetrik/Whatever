@@ -308,11 +308,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             Familie und Schnitt kommen von hier, das Gewicht bleibt beim
             Randtitel (`margStufeStil`, eine Rolle, ein Gewicht, §5). Die
             Baseline-Zeile hält die gemessene Kopfhöhe. */}
-        {kopfForm && randInhalt && (
-          <div className="mb-0.5 flex items-baseline">
-            <div className="min-w-0 [&_.lr-blatt]:font-serif [&_.lr-blatt]:italic">{randTitel}</div>
-          </div>
-        )}
+        {/* S6 W1g (Wunsch David 24.9.2026, Board «Fliesstext-Blatt»): der
+            Randtitel steht nicht mehr als eigene Zeile ÜBER «Art. N», sondern
+            IN der Artikelnummer-Zeile dahinter («Art. 257d  4. Zahlungsrückstand
+            des Mieters») — eine Zeile weniger je Artikel. Markup und Stimme
+            unverändert (`RandTitel`, kursive Lese-Serife); nur der Ort. */}
         {/* Kopfzeile des Artikels: «Art. N» als Anker über dem Fliesstext. */}
         <div className="mb-1.5">
           {/* Artikelnummer-Zeile: «Art. N» als Anker; Zitat/Link rechtsbündig INLINE
@@ -371,6 +371,9 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             {/* aufgehoben gedämpft, aber ink-500 (WCAG 4.5:1 hell+dunkel) statt
                 ink-400 (3.2–3.6:1) — essentieller Link-Text, kein incidental. */}
             {ganzAufgehoben && <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500">· aufgehoben</span>}
+            {kopfForm && randInhalt && (
+              <div data-lr-randtitel-zeile className="min-w-0 [&_.lr-blatt]:font-serif [&_.lr-blatt]:italic [&>div]:mb-0">{randTitel}</div>
+            )}
             {/* W2·27 (15.9.2026) · §8: NUR die Text-Heuristik greift — der
                 Korpus weiss nicht, warum hier kein Wortlaut steht. Dieselbe
                 Dämpfung (text-xs italic ink-500) wie «· aufgehoben»: es ist

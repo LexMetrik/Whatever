@@ -2636,10 +2636,14 @@
   .lc-kopf-aktionen .lc-chip:hover,
   .lc-kopf-aktionen .lc-chip:focus-visible { text-decoration: underline; }
   /* W2·29 S2 · 2-px-Tintenlinie der Leser-Kopfzeile als `::after` IN der Box:
-     die Höhe bleibt `--leser-v3-kopf-block-h` (daraus `--nt-stick`). */
+     die Höhe bleibt `--leser-v3-kopf-block-h` (daraus `--nt-stick`).
+     S6 W1g (24.9.2026, Wunsch David «Board-Angleichung»): 1 px `--rule-soft`
+     wie die Werkzeugzeile im Board «Fliesstext-Blatt» — die Kopfzeile ist
+     eine Werkzeugzeile, keine Titelblatt-Kante. Weicht vom Fahrplan-Soll
+     «2-px-Tintenlinie» ab (FAHRPLAN-WERKBANK-UMBAU §2, dort datiert nachgeführt). */
   .lc-leser-kopfzeile::after {
     content: ''; position: absolute; left: 0; right: 0; bottom: 0;
-    height: 2px; background: var(--rule); pointer-events: none;
+    height: 1px; background: var(--rule-soft); pointer-events: none;
   }
   /* W2·29 S2 · Titelblatt-Band: Identität auf der Registerfläche (Farbe als
      Fläche, David 22.9.2026). Nur Tinte mit 4.5:1 darauf (ink-500 4.22 → ③b);
@@ -5083,3 +5087,97 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 }
 .es-gruppe { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
 .es-zeile + .es-zeile { border-top: 1px solid var(--rule-soft); padding-top: 1.0625rem; margin-top: 1.125rem; }
+
+/* ═══ S6 W1g (W2·29-WERKBANK-LESER, Wunsch David 24.9.2026) · LESER AN DAS
+   WERKBANK-BOARD ANGLEICHEN ═════════════════════════════════════════════════
+   Wörtlich: «kannst du dich noch mehr am werkbank entwurd orientieren sodass
+   klarer unterteilt ist» und «nicht zu viele infos resp. darauf achten dass es
+   übersichtlich erscheint». Vorlage: Board «Fliesstext-Blatt» (Leinwand
+   Werkbank). Alle Regeln hier stehen ungeschichtet am Dateiende, damit sie
+   die geschichteten Grundrezepte (`.lc-schwebeflaeche`, `.lc-chip`) und die
+   Routen-Registerfarbe (`.lc-route[data-reg] .lc-randtitel`, GB-2) ohne
+   Spezifitäts-Wettlauf ablösen — und NUR im Leser-Blatt bzw. in der
+   Lese-Zeile: die geteilten Bausteine (`KantenChip`, `GruppenKopf`,
+   `KanteMitVorschau`) bleiben ausserhalb von `[data-v3-panel]` unberührt. */
+
+/* (1) Das offene Blatt ist ab 1024 px eine SPALTE, keine Karte: kein Rahmen,
+   kein Radius. Die Trennung zum Text trägt die Haarlinie (2). */
+[data-v3-panel-form='spalte'] > [data-v3-panel] {
+  border: 0;
+  border-radius: 0;
+}
+
+/* (2) Senkrechte Haarlinien Gliederung | Text | Blatt, in der Mitte der
+   Spur-Lücke (`--leser-spur-abstand` = `gap-5`). Träger: die Lese-Zelle
+   (`v3/LeserLeseZeile`, `data-lr-linie-*`). Im Druck still. */
+[data-lr-linie-links]::before,
+[data-lr-linie-rechts]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--rule-soft);
+  pointer-events: none;
+}
+[data-lr-linie-links]::before { left: calc(var(--leser-spur-abstand, 1.25rem) / -2); }
+[data-lr-linie-rechts]::after { right: calc(var(--leser-spur-abstand, 1.25rem) / -2); }
+@media print {
+  [data-lr-linie-links]::before,
+  [data-lr-linie-rechts]::after { content: none; }
+}
+
+/* (5) Randtitel-Abschnitte tragen 1 px `--rule-soft` (`parts/SektionKopf`) —
+   ausser der Kopf folgt UNMITTELBAR auf einen anderen Kopf (erste Unter-
+   Sektion direkt unter ihrem Eltern-Kopf, DOM: Kopf + div > section >
+   Kopf). Gemessen 24.9.2026 @1440 OR Art. 257a: «2. Nebenkosten» und
+   «a. Im Allgemeinen» standen sonst mit zwei Linien 48 px übereinander —
+   das Gleisbett, das §N-4b Regel 2 verbietet. */
+[data-sek] + div > section:first-child > [data-sek-linie]:first-child {
+  border-top-width: 0;
+  padding-top: 0;
+}
+
+/* (3) Blatt-Einträge entschlackt.
+   (a) EINE Kante je Eintrag: die Registerkante des Listeneintrags (`li`,
+   `PanelEntscheide`) trägt; der Chip darin verliert seinen eigenen Tick
+   (vorher zwei parallele Striche 25 px auseinander, gemessen @1024). */
+[data-v3-panel] [data-v3-panel-entscheid] .lc-chip {
+  border-left: 0;
+  padding-left: 0;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+/* (b) ⧉ «nebeneinander öffnen» nur bei Hover/Fokus des Eintrags — mit feinem
+   Zeiger. Auf Touch (kein Hover) bleibt er sichtbar, sonst wäre er dort
+   unerreichbar. `opacity`, nicht `display`: der Knopf bleibt in der
+   Tab-Folge und erscheint mit dem Fokus (`:focus-within`). */
+@media (hover: hover) and (pointer: fine) {
+  [data-v3-panel] [data-v3-panel-entscheid] button:has(> .lc-griff-glyph) {
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  [data-v3-panel] [data-v3-panel-entscheid]:hover button:has(> .lc-griff-glyph),
+  [data-v3-panel] [data-v3-panel-entscheid]:focus-within button:has(> .lc-griff-glyph) {
+    opacity: 1;
+  }
+}
+/* (c) Gruppenkopf: Archivo, halbfett, ink-600, darüber 2 px in der Farbe des
+   FACHS (nicht der Route): bis hier stand im Fach «Entscheide» der Kopf im
+   Gesetze-Blau der Route (`.lc-randtitel` via `--reg-marke`), die Einträge
+   darunter weinrot — zwei Registerfarben in einem Fach (Befund 24.9.2026).
+   Jetzt gilt in jedem Fach dessen eine Farbe (`data-v3-panel-tafel`,
+   `v3/LeserPanel`; Zuordnung wie `REITER_REGISTER`). Keine Versalien (F0.7). */
+[data-v3-panel-tafel='entscheide'] { --tafel-reg: var(--reg-r); }
+[data-v3-panel-tafel='aenderungen'] { --tafel-reg: var(--reg-g); }
+[data-v3-panel-tafel='materialien'],
+[data-v3-panel-tafel='erlaeuterungen'] { --tafel-reg: var(--reg-m); }
+[data-v3-panel-tafel='werkzeuge'] { --tafel-reg: var(--reg-w); }
+[data-v3-panel] [data-v3-panel-tafel] .lc-randtitel {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink-600);
+  border-top: 2px solid var(--tafel-reg, var(--rule-soft));
+  padding-top: .5rem;
+}

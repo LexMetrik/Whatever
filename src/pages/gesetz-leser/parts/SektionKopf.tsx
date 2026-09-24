@@ -44,7 +44,15 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
   // ihre Tiefe trägt Typo (titelStil) + Einzug (renderSektion), nicht eine
   // zweite Linie (Gegen-Lehre «Barcode/Gleisbett», DESIGN-REGLEMENT §Linien-Kanon
   // Regel 2). Die frühere feine ebene-2-Linie (`border-line/50`) entfällt.
-  const regel = s.randtitel ? '' : s.ebene <= 1 ? 'border-t border-rule-struktur pt-4' : '';
+  //
+  // S6 W1g (Wunsch David 24.9.2026 «klarer unterteilt», Board «Fliesstext-Blatt»):
+  // Randtitel-Abschnitte («II. Sicherheiten durch den Mieter») tragen jetzt die
+  // leiseste der zwei Trennlinien, 1 px `--rule-soft` — sie gliedern den Fluss,
+  // wo bis hier nur der Weissraum trennte. Innere amtliche Stufen (ebene ≥ 2)
+  // bleiben ohne Linie; eine Randtitel-Stufe, die UNMITTELBAR auf einen anderen
+  // Kopf folgt, verliert sie wieder (index.css `[data-sek-linie]`), damit
+  // «E. / I. / 1.» kein Gleisbett wird (§N-4b Regel 2).
+  const regel = s.randtitel ? 'border-t border-rule-soft pt-3' : s.ebene <= 1 ? 'border-t border-rule-struktur pt-4' : '';
   // Titelgrösse nach Tiefe (E, Auftrag David 26.6.2026): Fedlex-artig abgestuft —
   // oberste Stufe prominent (h2), dann h3, body-l, sonst base. font-semibold liegt
   // am Titel-Span (unten). Nur existierende Tokens (§13).
@@ -91,7 +99,8 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
   // am alten fussnotenAuf-Schalter; Prominenz via data-fussnoten-CSS (R9).
   const sekFn = offen && s.fussnoten && s.fussnoten.length > 0 ? s.fussnoten : null;
   return (
-    <div ref={refCb} data-sek={s.id} data-normtext-linie className={`group/sekkopf nt-anker ${mt} ${regel}`}>
+    <div ref={refCb} data-sek={s.id} data-normtext-linie data-sek-linie={s.randtitel ? 'rand' : undefined}
+      className={`group/sekkopf nt-anker ${mt} ${regel}`}>
       {pre && (
         <button type="button" onClick={onToggle} aria-expanded={offen} className="group/sek block text-left">
           <span className="lc-overline group-hover/sek:text-ink-900">{pre}</span>
@@ -103,7 +112,11 @@ export function SektionKopf({ s, refCb, offen, onToggle, bereich, bereichEinzel,
             darum wirkte es, als ginge es nicht. Messing-Akzent macht es als
             Steuerelement erkennbar. */}
         <button type="button" onClick={onToggle} aria-expanded={offen} className="group/sek flex min-w-0 items-baseline gap-x-2 text-left">
-          <span className={`shrink-0 w-4 text-body-s transition-colors ${offen ? 'text-brass-600' : 'text-ink-500'} group-hover/sek:text-ink-900`}>{offen ? '▾' : '▸'}</span>
+          {/* S6 W1g (Entscheid David 24.9.2026): derselbe Klapp-Pfeil wie vor
+              «Art. N» (`./ArtikelLeser`) — gleiche Spalte `w-4`, mittig, gleiche
+              Grösse `text-micro`; bis hier stand er hier links bündig in
+              `text-body-s` und damit gegen den des Artikels versetzt. */}
+          <span className={`inline-flex w-4 shrink-0 justify-center text-micro transition-colors ${offen ? 'text-brass-600' : 'text-ink-500'} group-hover/sek:text-ink-900`}>{offen ? '▾' : '▸'}</span>
           {/* A30: bis/ter-Suffix des Randtitel-Enumerators hochgestellt (margLabel);
               No-op bei Sachtiteln ohne Enumerator-Suffix. */}
           <span className={`lc-wortumbruch ${titelFont} ${titelStil} group-hover/sek:text-ink-900`}>{margLabel(rest || s.label)}</span>
