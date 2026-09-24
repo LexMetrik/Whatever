@@ -194,3 +194,49 @@ describe('Bug-Check-Fixes 10.6.2026 (deklarierte fachliche Änderungen)', () => 
     expect(r.diesAdQuemISO).toBe('2029-01-10');
   });
 });
+
+// RL-05 / Befund F2-01 (Prüfung Rechtslogik 23.9.2026, W2·30-RL-W1):
+// Weiterzug an die obere Aufsichtsbehörde, Art. 18 Abs. 1 SchKG — «innert zehn
+// Tagen nach der Eröffnung» (Fedlex SR 281.1, Fassung 1.1.2026,
+// https://fedlex.data.admin.ch/eli/cc/11/529_488_529/20260101). Der Entscheid
+// der unteren Aufsichtsbehörde ist i.d.R. KEINE Betreibungshandlung (Art. 56
+// SchKG) → keine Verlängerung nach Art. 63 SchKG (BGer 5A_730/2023 vom
+// 21.11.2023 E. 3.2–3.4). Werktagsregel bleibt: Art. 31 SchKG i.V.m. Art. 142
+// Abs. 3 ZPO. Vorher: modus 'schkg_betreibungsferien' → 5.8.2026 statt 20.7.2026.
+describe('RL-05 – Weiterzug Art. 18 SchKG ohne Art.-63-Verlängerung', () => {
+  const p = PRESETS_SCHKG.find((x) => x.key === 'weiterzug_ab')!;
+  const rechne = (ereignis: string) => berechneSchkgFrist({
+    ereignis, einheit: p.einheit!, laenge: p.laenge!, modus: p.modus, fristnatur: p.fristnatur, kanton: 'ZH',
+  });
+
+  it('Preset steht auf modus \'kein\' und nennt die Ausnahme (Betreibungshandlung angeordnet → Art. 63)', () => {
+    expect(p.norm).toBe('Art. 18 Abs. 1 SchKG');
+    expect(p.laenge).toBe(10);
+    expect(p.modus).toBe('kein');
+    expect(p.hinweis).toContain('Ausnahme');
+    expect(p.hinweis).toContain('Art. 63 SchKG');
+    expect(p.hinweis).toContain('5A_730/2023 E. 3.2–3.4');
+  });
+
+  it('Eröffnung Fr 10.7.2026, ZH → Fristende Mo 20.7.2026 (in den Betreibungsferien 15.–31.7., ohne Verlängerung)', () => {
+    const r = rechne('2026-07-10');
+    expect(r.diesAQuo).toBe('11.07.2026');
+    expect(r.diesAdQuemISO).toBe('2026-07-20');
+    expect(r.modusAktiv).toBe('kein');
+  });
+
+  it('Gegenprobe: mit Betreibungsferien-Modus wäre es der 5.8.2026 (3. Werktag nach 31.7.; 1.8. Sa) — genau der Befund', () => {
+    const falsch = berechneSchkgFrist({
+      ereignis: '2026-07-10', einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', fristnatur: 'beschwerdefrist', kanton: 'ZH',
+    });
+    expect(falsch.diesAdQuemISO).toBe('2026-08-05');
+    expect(rechne('2026-07-10').diesAdQuemISO).not.toBe(falsch.diesAdQuemISO);
+  });
+
+  it('Ende auf Samstag → nächster Werktag (Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO)', () => {
+    // Mi 4.3.2026 + 10 Tage = Sa 14.3.2026 → Mo 16.3.2026
+    expect(rechne('2026-03-04').diesAdQuemISO).toBe('2026-03-16');
+    // Mi 15.7.2026 + 10 Tage = Sa 25.7.2026 (in den Betreibungsferien) → Mo 27.7.2026, nicht 5.8.
+    expect(rechne('2026-07-15').diesAdQuemISO).toBe('2026-07-27');
+  });
+});
