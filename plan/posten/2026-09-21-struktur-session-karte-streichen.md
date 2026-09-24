@@ -2,6 +2,7 @@
 dach: QS-DOKU-DIAET
 titel: STRUKTUR-Session-Karte streichen
 anlass: Entscheid David 20.9.2026 («mach alle 4 wie empfohlen», Punkt 2) — nie umgesetzt
+wartet-auf: david
 -->
 
 **Entscheid (Notiz `.claude/notizen/2026-09-20-roadmap-deckel-landestrecke.md` Z. 53,
@@ -46,3 +47,5 @@ selbst sind bereits vollständig im Archiv nachvollziehbar, `archiv/STRUKTUR-SES
 Diff für David vorbereiten, übrige Fundstellen einzeln prüfen.
 
 Umgehängt 24.9.2026 von `QS-EFFIZIENZ` nach `QS-DOKU-DIAET` (M-16: Doku-/Chronik-Thema; Bauplan-Konsolidierung, QS-DOKU-DIAET).
+
+**Ergänzung 25.9.2026 (Bauplan-Inventar M-25; Herz-und-Nieren-Prüfung HN-13) — wartet auf David:** Der Rückbau liegt als fertiger Patch vor: `~/Documents/David/03_Projekte/LexMetrik/pruefung-herz-nieren-2026-09-24/patches/m25-session-karten-rueckbau.patch` (vorbereitet 25.9.2026 auf docs/qs-doku-diaet @ aa38550d4, Anleitung im Patch-Kopf). Hook-Edits blockt der Klassifizierer, darum Handgriff David. Wirkung ≈ −15…18 KB Steuerfläche. Vor dem Anwenden `git apply --check`. HN-13 will im selben Handgriff den doppelten Flächen-Deckel `FLAECHEN_BUDGET` (`.claude/hooks/struktur-rotieren.py` ~69–76) streichen, weil `check:steuerflaeche` dieselbe Sorge trägt; diese Streichung ist noch NICHT im Patch. HN-00-Verdikt 25.9.2026 zu PS-07: BESTÄTIGT, kein datierter Vorfall, den nur dieser Deckel verhindert. ABER (Zusatzbefund HN-00): `FLAECHEN_BUDGET` ist heute das einzige LOKALE Flächen-Signal — `.claude/settings.json` ruft `struktur-rotieren.py --hook` als SessionStart-Hook, `waechter_meldungen()` wertet den Deckel aus —, während `check:steuerflaeche` nur im CI-Job «Tore» läuft (weder in `scripts/gate.sh` noch in den Hooks). Der M-25-Patch entfernt den SessionStart-Hook ganz; beim Anwenden darum `npm run check:steuerflaeche` in `scripts/gate.sh` verdrahten, sonst entsteht ein Feedback-Loch zwischen Session- und CI-Zeit. Folgestellen ausserhalb des Patches nennt der Patch-Kopf.
