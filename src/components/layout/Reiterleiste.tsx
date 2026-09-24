@@ -406,11 +406,42 @@ export function Reiterleiste({ paneSchluessel = [] }: {
    *  DOM — vorher zu fokussieren hiesse, ein Element zu greifen, das gleich
    *  verschwindet. */
   const fokusNach = useRef<string | null>(null);
+  // ── R15 (24.9.2026) · DER WUNSCH GILT BIS ZUR NÄCHSTEN EINGABE ────────────
+  // Bis R15 wurde der Wunsch im ersten Render danach verbraucht. GEMESSEN
+  // (Vite-Dev, @1440 zweimal «+», @390 «Neuer Reiter» im Blatt, Mutation-
+  // Observer + Fokus-Protokoll): der neue Reiter steht in diesem Render noch
+  // nicht im Fenster, und `useReiterFenster` VERSCHIEBT die Reiter-Knoten in
+  // den folgenden Nachzügen bis zum Commit der Navigation (removed/added
+  // derselben Schlüssel) — ein verschobener Knoten verliert den Fokus, er fiel
+  // auf `<body>`. Darum: der ERSTE Zugriff darf den Fokus holen (von «+»,
+  // Blatt-Auslöser, Delete-Reiter); danach wird nur noch nachgefasst, wenn er
+  // wirklich verloren ist (`<body>`), nie gegen ein Ziel, das inzwischen
+  // jemand gewählt hat. Der Wunsch verfällt mit der nächsten Eingabe
+  // (Zeiger/Taste, Capture) oder wenn sein Reiter nicht mehr offen ist.
+  const fokusGeholt = useRef(false);
+  useEffect(() => {
+    const verfallen = () => { fokusNach.current = null; fokusGeholt.current = false; };
+    window.addEventListener('pointerdown', verfallen, true);
+    window.addEventListener('keydown', verfallen, true);
+    return () => {
+      window.removeEventListener('pointerdown', verfallen, true);
+      window.removeEventListener('keydown', verfallen, true);
+    };
+  }, []);
   useEffect(() => {
     const k = fokusNach.current;
     if (!k) return;
-    fokusNach.current = null;
-    knopfVon(k)?.focus();
+    if (!ordnung.some((t) => tabSchluessel(t.path) === k)) {
+      fokusNach.current = null;
+      fokusGeholt.current = false;
+      return;
+    }
+    const knopf = knopfVon(k);
+    if (!knopf) return;
+    const a = document.activeElement;
+    if (a === knopf || (fokusGeholt.current && a && a !== document.body)) return;
+    fokusGeholt.current = true;
+    knopf.focus();
   });
 
   const zumReiter = (k: string) => { setFokusWunsch(k); knopfVon(k)?.focus(); };
@@ -434,7 +465,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     if (ev.key === 'Delete') {
       const naechster = sichtbareSchluessel[i + 1] ?? sichtbareSchluessel[i - 1] ?? null;
       ev.preventDefault();
-      fokusNach.current = naechster;
+      fokusNach.current = naechster; fokusGeholt.current = false;
       if (naechster) setFokusWunsch(naechster);
       schliessen(sichtbar[i].path);
       return;
@@ -480,7 +511,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     const ziel = ladeTabs().some((t) => tabSchluessel(t.path) === '/') ? naechsteInstanz('/') : '/';
     merkeTab(ziel);
     navigate(ziel);
-    fokusNach.current = ziel;
+    fokusNach.current = ziel; fokusGeholt.current = false;
     setFokusWunsch(ziel);
   };
 

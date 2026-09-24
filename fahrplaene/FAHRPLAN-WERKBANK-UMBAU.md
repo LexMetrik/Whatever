@@ -625,6 +625,11 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   nach #1053): Wahl als zwei hohe Spalten Rechner · Vorlagen (`WahlSpalte` geteilt in `BlattBausteine.tsx`),
   darunter Kategorien bzw. Rechtsgebiete mit Anzahl aus `KATALOG_KARTEN`; Stufen `werkzeuge/rechner/<kategorie>`
   und `werkzeuge/vorlagen/<gebiet>`, unbekannte ID → Liste.
+- **U10 (Nachtrag David 24.9.2026 abends):** «tabliste soll so funktionieren, dass wenn man auf plus klickt sich
+  eine neue startseite öffnet und es nicht automatisch in suchen landet»; zur Höchstens-einer-Regel (R13/R14,
+  7.9.2026): «nein heb diesen entscheid auf und mach es wie ich es sage» → R15: jedes «+» (Klick, Alt+T,
+  Leerraum, Blatt) legt einen neuen Startseiten-Reiter an (`/`, sonst `naechsteInstanz('/')` → `/?r=2`,
+  «Sammlung (2)»), Fokus auf den neuen Reiter statt in die Kopf-Suche; `lm:suche-fokus` samt Lauscher gestrichen.
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
