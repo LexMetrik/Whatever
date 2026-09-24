@@ -35,7 +35,7 @@ const REGISTER_KLASSE: Record<Register, string> = {
 // die VOR ORT aufklappt (`aria-expanded` + `aria-controls` am Knopf), und
 // `kompakt` für das 2×2-Feld am Telefon (Prototyp: Titel 16 px, Zahl ohne
 // Einheit, ohne Unterzeile — sonst passt «Rechtsprechung» nicht in 170 px).
-export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, extra, aufgeklappt, steuert, kompakt = false }: {
+export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, extra, aufgeklappt, steuert, kompakt = false, alsBild = false }: {
   /** Register der Rubrik: Fläche und Strich (`g` Gesetze · `r` Rechtsprechung
    *  · `m` Materialien · `w` Werkzeuge). */
   reg: Register;
@@ -58,6 +58,12 @@ export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, 
   steuert?: string;
   /** Telefon-Form im 2×2-Feld: kleiner Satz, ohne Einheit, Unterzeile, Zusatz. */
   kompakt?: boolean;
+  /** Nur das BILD der Kachel (`div`, `aria-hidden`, nicht bedienbar): das
+   *  Gesicht der Farbschicht, die beim Auf- und Zuklappen des Startseiten-
+   *  Blatts über der Kachel steht. Dieselbe Anatomie statt einer Nachbildung —
+   *  die frühere eigene Fassung stellte den Titel ÜBER die Zahl und liess die
+   *  Unterzeile weg, das Gesicht sprang beim Klick (FEINSCHLIFF 24.9.2026). */
+  alsBild?: boolean;
 }) {
   // `[&_.text-ink-500]:text-ink-600`: Zusatz-Tinte im `extra`-Slot hebt auf der
   // Fläche eine Stufe (ink-500 4.22:1 auf `reg-g-flaeche` < AA; S2 ③b).
@@ -77,6 +83,7 @@ export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, 
       {!kompakt && extra}
     </>
   );
+  if (alsBild) return <div aria-hidden className={klasse}>{inhalt}</div>;
   return ziel !== undefined
     ? <Link to={ziel} className={klasse}>{inhalt}</Link>
     : <button type="button" onClick={onWahl} className={klasse}

@@ -5,6 +5,7 @@ import { RubrikKachel } from '../ui/RubrikKachel';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { AUFKLAPPBAR, blattKrumen, gleicherOrt, type BlattOrt, type BlattRubrik } from '../../lib/startBlatt';
 import { useBlattOrt } from './useBlattOrt';
+import { BlattRuheKontext } from './blattRuhe';
 import { GesetzeBlatt } from './GesetzeBlatt';
 import { WerkzeugeBlatt } from './WerkzeugeBlatt';
 import { MaterialienBlatt } from './MaterialienBlatt';
@@ -59,11 +60,12 @@ const FLAECHE: Record<Register, string> = {
   g: 'bg-reg-g-flaeche border-reg-g', r: 'bg-reg-r-flaeche border-reg-r',
   m: 'bg-reg-m-flaeche border-reg-m', w: 'bg-reg-w-flaeche border-reg-w',
 };
-const STRICH: Record<Register, string> = { g: 'border-reg-g', r: 'border-reg-r', m: 'border-reg-m', w: 'border-reg-w' };
 /** Rubriken ohne Unterstufen — die Suche IST die Stufe (Spec «Fokus drin»,
  *  S3-Nachzug 24.9.2026: Rechtsprechung teilt die Ausnahme mit Materialien). */
 const FOKUS_SUCHFELD_RUBRIKEN: ReadonlySet<BlattRubrik> = new Set<BlattRubrik>(['materialien', 'rechtsprechung']);
-/** Schliess-Dauer — muss mit der CSS-Transition `[data-phase=schliesst]` übereinstimmen (Öffnen: 450 ms, nur CSS). */
+/** Dauern — müssen mit den CSS-Transitionen `.lc-start-blatt` (450 ms) und
+ *  `[data-phase=schliesst]` (350 ms) übereinstimmen. */
+const DAUER_AUF = 450;
 const DAUER_ZU = 350;
 const SCHMAL = '(max-width: 759.98px)';
 
@@ -95,6 +97,11 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
   const [kontur, setKontur] = useState<Kontur | null>(null);
   const [richtung, setRichtung] = useState<'vor' | 'zurueck'>('vor');
   const [schmal, setSchmal] = useState(false);
+  // RUHE: die Öffnungsbewegung ist durch. Erst dann holen die Blätter ihre
+  // Daten (`blattRuhe.ts`) — gemessen 24.9.2026 @1280: das Rechtsprechungs-
+  // Register (9,4 MB) kam mitten in der Bewegung an, sein Parsen hielt EIN Bild
+  // 83 ms fest (Soll ≤ 17 ms), das sichtbare Ruckeln.
+  const [ruhe, setRuhe] = useState(true);
   const vorher = useRef<BlattOrt | null>(null);
   const erster = useRef(true);
   // Der laufende Übergang (Öffnen-Bild oder Schliessen-Zeitgeber). NICHT als
@@ -140,10 +147,16 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
     if (ort && !alt) {
       setSicht(ort);
       setRichtung('vor');
-      if (tiefLink || ruhig) { beginne(null); setKontur(null); setPhase('offen'); return; }
+      if (tiefLink || ruhig) { beginne(null); setKontur(null); setPhase('offen'); setRuhe(true); return; }
       setKontur(medien(SCHMAL) ? null : miss(ort.rubrik));
       setPhase('start');
-      beginne(naechstesBild(() => setPhase('offen')));
+      setRuhe(false);
+      let t = 0;
+      const bild = naechstesBild(() => {
+        setPhase('offen');
+        t = window.setTimeout(() => setRuhe(true), DAUER_AUF);
+      });
+      beginne(() => { bild(); window.clearTimeout(t); });
       return;
     }
     if (!ort && alt) {
@@ -152,6 +165,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
         fokusZurueck.current = r;
         setPhase('zu'); setSicht(null); setKontur(null);
       };
+      setRuhe(true);
       if (ruhig) { beginne(null); fertig(); return; }
       setKontur(medien(SCHMAL) ? null : miss(r));
       setPhase('schliesst');
@@ -240,6 +254,10 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
   useEffect(() => () => buehne?.remove(), [buehne]);
 
   const offen = phase !== 'zu';
+  // Die übrigen Kacheln treten nur zurück, solange das Blatt aufgeht oder
+  // steht — beim Schliessen kehren sie GLEICHZEITIG zurück, nicht erst danach
+  // (gemessen 24.9.2026: Rückkehr erst nach dem Abbau, gesamt ~850 ms statt 350).
+  const zurueckgetreten = phase === 'start' || phase === 'offen';
   const kachel = sicht ? kacheln.find((k) => k.rubrik === sicht.rubrik) : undefined;
   const bewegt = phase === 'start' || phase === 'schliesst';
   const clip = bewegt && kontur
@@ -255,10 +273,8 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           return (
             <div key={k.rubrik} className="lc-start-zelle"
               ref={(el) => { if (el) zellen.current.set(k.rubrik, el); else zellen.current.delete(k.rubrik); }}
-              data-zurueck={offen && !diese ? '' : undefined}>
-              <RubrikKachel reg={k.reg} titel={<span className="break-words">{k.titel}</span>}
-                zahl={k.zahl} einheit={k.einheit} nutzen={k.nutzen} kompakt={schmal}
-                extra={k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>}
+              data-zurueck={zurueckgetreten && !diese ? '' : undefined}>
+              <RubrikKachel {...gesicht(k)} kompakt={schmal}
                 {...(klappt
                   ? { onWahl: () => gehe({ rubrik: k.rubrik, pfad: [] }), aufgeklappt: diese, steuert: BLATT_ID }
                   : { ziel: k.ziel })} />
@@ -275,22 +291,20 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           <BlattKopf reg={kachel.reg} titel={kachel.titel} ort={sicht} hoch={hoch}
             zurueck={zurueck} schliessen={schliessen} />
           <div className="lc-start-blatt-inhalt" data-sichtbar={phase === 'offen' ? '' : undefined}>
+            <BlattRuheKontext.Provider value={ruhe}>
             <div key={[sicht.rubrik, ...sicht.pfad].join('/')} className="lc-start-stufe" data-richtung={richtung}>
               {sicht.rubrik === 'gesetze' && <GesetzeBlatt ort={sicht} gehe={gehe} />}
               {sicht.rubrik === 'werkzeuge' && <WerkzeugeBlatt ort={sicht} gehe={gehe} />}
               {sicht.rubrik === 'materialien' && <MaterialienBlatt />}
               {sicht.rubrik === 'rechtsprechung' && <RechtsprechungBlatt />}
             </div>
+            </BlattRuheKontext.Provider>
           </div>
           {!schmal && kontur && (
             <div aria-hidden className={`lc-start-schicht ${FLAECHE[kachel.reg]}`} data-an={bewegt ? '' : undefined}>
-              <div className={`lc-start-gesicht ${STRICH[kachel.reg]}`}
+              <div className="lc-start-gesicht"
                 style={{ top: kontur.oben, left: kontur.links, width: kontur.breite, height: kontur.hoehe }}>
-                <span className="font-sans text-h3 font-semibold tracking-tight text-ink-900">{kachel.titel}</span>
-                <span className="flex flex-wrap items-baseline gap-2">
-                  <span className="num font-serif text-h1 leading-none text-ink-900">{kachel.zahl}</span>
-                  <span className="text-body-s text-ink-700">{kachel.einheit}</span>
-                </span>
+                <RubrikKachel {...gesicht(kachel)} alsBild />
               </div>
             </div>
           )}
@@ -298,6 +312,15 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
       ), buehne)}
     </div>
   );
+}
+
+/** Das Gesicht einer Kachel — EINE Quelle für die bedienbare Kachel im Feld
+ *  und ihr Bild in der Farbschicht (sonst springt das Gesicht beim Klick). */
+function gesicht(k: KachelDef) {
+  return {
+    reg: k.reg, titel: <span className="break-words">{k.titel}</span>, zahl: k.zahl, einheit: k.einheit, nutzen: k.nutzen,
+    extra: k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>,
+  };
 }
 
 /** Band oben im Blatt: Registerfläche + Strich, Pfad, «← Zurück», ✕. */
@@ -327,7 +350,10 @@ function BlattKopf({ reg, titel, ort, hoch, zurueck, schliessen }: {
           })}
         </ol>
       </nav>
-      <SchliessKnopf name={`${titel} schliessen`} onClick={schliessen} />
+      {/* 44-px-Box wie im Bottom-Sheet (`SheetRahmen`): die Komfort-Trefferfläche
+          ragte sonst aus dem 24-px-Kasten (R8 a, alle Blätter, FEINSCHLIFF);
+          die negativen Ränder halten das Band so niedrig wie zuvor. */}
+      <SchliessKnopf name={`${titel} schliessen`} onClick={schliessen} klasse="-my-2.5 -mr-1 h-11 w-11" />
     </div>
   );
 }

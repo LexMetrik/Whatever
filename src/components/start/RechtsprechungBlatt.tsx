@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ladeEntscheidManifest, filterEntscheide, sortiere, hauptIdentitaet, themaText } from '../../lib/rechtsprechung/browse';
+import { ladeEntscheidManifest, filterEntscheide, sortiere, hauptIdentitaet, themaText, istVolltextVerweis } from '../../lib/rechtsprechung/browse';
 import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 import { datumAnzeige } from '../rechtsprechung/format';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
-import { MEHR_KNOPF_KLASSEN } from '../ui/mehrKnopfKlassen';
+import { BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · die Rechtsprechung-Kachel: sofort Suche (W2·29-WERKBANK-START S3-Nachzug)
 //
@@ -56,8 +57,10 @@ export function RechtsprechungBlatt() {
   const [nurLeit, setNurLeit] = useState(false);
   const [ebene, setEbene] = useState<Ebene>(null);
   const [portion, setPortion] = useState(PORTION);
+  const ruhe = useBlattRuhe();
 
   useEffect(() => {
+    if (!ruhe) return; // erst nach der Öffnungsbewegung (blattRuhe.ts)
     let lebt = true;
     ladeEntscheidManifest().then((m) => {
       if (!lebt) return;
@@ -65,12 +68,21 @@ export function RechtsprechungBlatt() {
       setAlle(m.entscheide);
     });
     return () => { lebt = false; };
-  }, []);
+  }, [ruhe]);
 
+  // OHNE Verweis-Einträge (FEINSCHLIFF 24.9.2026, §8): ein Verweis ist das
+  // vollständige Urteil zu einem BGE, kein eigener Entscheid — die Rubrikseite
+  // zählt ihn nicht mit (`echtAnzahl`) und zeigt ihn in eigener Sektion, die
+  // Entscheid-Liste auf «/» lässt ihn weg. Hier standen 1'252 davon als
+  // gewöhnliche Treffer (14 gleichlautende Zeilen, «Weitere» zählte sie mit),
+  // und ihr Link zeigte auf den Verweis-Schlüssel statt auf das Urteil
+  // (`EntscheidZeile`: `verweis.zielKey?ansicht=voll`). Das Urteil selbst ist
+  // vom Leitentscheid aus erreichbar.
   const gefiltert = useMemo(() => {
     if (!alle) return [];
     return sortiere(
-      filterEntscheide(alle, { q: suche || undefined, nurLeitentscheide: nurLeit || undefined, ebene }),
+      filterEntscheide(alle, { q: suche || undefined, nurLeitentscheide: nurLeit || undefined, ebene })
+        .filter((e) => !istVolltextVerweis(e)),
       'relevanz',
     );
   }, [alle, suche, nurLeit, ebene]);
@@ -84,11 +96,8 @@ export function RechtsprechungBlatt() {
 
   return (
     <div className="space-y-4">
-      <label className="block">
-        <span className="sr-only">Rechtsprechung durchsuchen</span>
-        <input type="search" value={suche} onChange={(e) => setSuche(e.target.value)}
-          placeholder="Thema, Aktenzeichen oder BGE-Nummer …" className="lc-input" />
-      </label>
+      <BlattSuchFeld wert={suche} setze={setSuche} label="Rechtsprechung durchsuchen"
+        platzhalter="Thema, Aktenzeichen oder BGE-Nummer …" />
       <div className="flex flex-wrap items-center gap-2">
         <button type="button" onClick={() => setNurLeit((v) => !v)} aria-pressed={nurLeit} className="ub-schalter">
           Leitentscheide
@@ -105,9 +114,10 @@ export function RechtsprechungBlatt() {
 
       <Laedt alle={alle} fehler={fehler}>
         {() => (gefiltert.length === 0 ? (
-          <p className="font-sans text-body-s text-ink-700">Kein Entscheid gefunden.</p>
+          <p className="font-sans text-body-s text-ink-700" role="status">Kein Entscheid gefunden.</p>
         ) : (
           <div className="space-y-3">
+            <TrefferZahl n={gefiltert.length} einzahl="Entscheid" mehrzahl="Entscheide" />
             <div className="divide-y divide-rule-soft border-y border-rule-soft">
               {gefiltert.slice(0, portion).map((e) => (
                 <Link key={e.key} to={`/rechtsprechung/${encodeURIComponent(e.key)}`}
@@ -121,10 +131,7 @@ export function RechtsprechungBlatt() {
               ))}
             </div>
             {gefiltert.length > portion && (
-              <button type="button" onClick={() => setPortion((p) => p + PORTION)}
-                className={`lc-btn-mini ${MEHR_KNOPF_KLASSEN}`}>
-                Weitere anzeigen (<span className="num">{gefiltert.length - portion}</span> weitere)
-              </button>
+              <WeitereKnopf rest={gefiltert.length - portion} mehr={() => setPortion((p) => p + PORTION)} />
             )}
           </div>
         ))}

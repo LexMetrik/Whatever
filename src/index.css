@@ -3398,8 +3398,8 @@
   .lc-start-schicht { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
     transition: opacity 200ms ease-out 135ms; }
   .lc-start-schicht[data-an] { opacity: 1; transition: opacity 120ms ease-out; }
-  .lc-start-gesicht { position: absolute; display: flex; flex-direction: column; gap: .375rem;
-    padding: 1.25rem; border-top: 2px solid; border-radius: var(--radius-xl); }
+  /* Das Gesicht IST die Kachel (`RubrikKachel alsBild`) — hier nur der Ort. */
+  .lc-start-gesicht { position: absolute; display: flex; }
   /* Telefon: Vollbild-Blatt, das von unten einfährt (David 23.9.2026 «5 ja»). */
   @media (max-width: 759.98px) {
     .lc-start-zelle { min-height: theme('minHeight.start-kachel-s'); }
