@@ -205,8 +205,18 @@ export function Reiter({
   // ohnehin keine Fläche kostet.
   const fest = !!t.fest;
   const stelleReserviert = !fest && stelle !== null && (stelle !== '' || liest);
+  // ── W2·29-MARKE (David 24.9.2026) · BREITE NACH INHALT, NICHT «Geset…» ──
+  // Der Boden der Aufschrift war fest 6ch: bei vollem Streifen schrumpften
+  // ALLE Reiter bis dorthin, und die Leiste zeigte zehn Stümpfe («Rech…»,
+  // «Gese…») statt fünf lesbarer Namen. Neu wächst der Boden mit dem Namen —
+  // Zeichenzahl + 1 (Versalien sind breiter als `ch`), mindestens die alten
+  // 6ch, höchstens 14ch. Ein kurzer Name steht damit ganz, ein langer bleibt
+  // bis 14ch lesbar und kürzt erst darüber; was dann nicht mehr passt, zieht
+  // wie bisher ins Blatt (`useReiterFenster`). Die Rechnung ist rein
+  // (Zeichenzahl), die Messung der Kanten bleibt die des Streifens.
+  const kernBoden = `${Math.min(Math.max(kern.length + 1, 6), 14)}ch`;
   const reiterBoden = fest || kopf ? undefined
-    : `calc(6ch + 1.75rem + 0.875rem${stelleReserviert ? ' + var(--app-reiter-stelle-b) + 0.25rem' : ''})`;
+    : `calc(${kernBoden} + 1.75rem + 0.875rem${stelleReserviert ? ' + var(--app-reiter-stelle-b) + 0.25rem' : ''})`;
   return (
     <div
       data-reiter-aktiv={aktiv}
@@ -648,7 +658,8 @@ export function Reiter({
             drei Zeichen den Reiter noch unterscheidbar machen. */}
         <span data-reiter-teil="kern"
           className={fest ? 'min-w-[3ch] truncate max-w-[7rem]'
-            : kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
+            : kopf ? 'shrink-0' : 'truncate max-w-[15rem]'}
+          style={fest || kopf ? undefined : { minWidth: kernBoden }}>{kern}</span>
         {/* ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER WIRD NIE GEKÜRZT ──────────
             Sie hing bis hierher hinten am Kern und fiel darum als erstes weg:
             GEMESSEN 13.9.2026 standen «ZPO-Fristen (2)» und «(3)» beide als
