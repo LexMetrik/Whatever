@@ -142,24 +142,32 @@ test.describe('N4 — Feld und Griffe stehen in EINER Kopfzeile', () => {
   })
 })
 
-test.describe('D33 — «Rechtsprechung» öffnet ein Blatt und verschiebt nichts', () => {
-  test('(f) @1440: Text und Knopf bleiben Pixel für Pixel stehen, der zweite Klick schliesst', async ({ page }) => {
+// ── §6.3-DEKLARATION (Entscheid A, David 24.9.2026) · D33 IST AUFGEHOBEN ────
+// Der Block hiess «D33 — ‹Rechtsprechung› öffnet ein Blatt und verschiebt
+// nichts» und verlangte Δ = 0 an Text UND Knopf. Davids Entscheid 24.9.2026,
+// Variante A «Echte dritte Spalte»: «Das Blatt wird eine eigene Spalte wie die
+// Gliederung und deckt nie Text ab. Nachteil: Der Text rutscht beim Öffnen zur
+// Seite und bricht auf kleineren Bildschirmen neu um. Das hebt D33 (‹nichts
+// verschiebt sich›) auf.» Die D33-Messung vom 7.9.2026 im Dateikopf bleibt
+// Beleg ihres Datums (§0 Ziff. 2b).
+//
+// WAS BLEIBT UND SCHÄRFER GEPRÜFT WIRD: (f) die Wege auf und zu sind je EIN
+// benannter Griff (Schiene rechts · «Erlass-Blatt ausblenden ›» im Kopf), die
+// Bewegung beim Öffnen ist eine ANGEKÜNDIGTE (Klick, kein unerwarteter Shift),
+// und «r» schaltet dasselbe; (i) @1024 weicht die Gliederung dem Blatt nur
+// VORÜBERGEHEND — nach dem Schliessen stehen Gliederung und Gesetzesspalte
+// Pixel für Pixel wie vorher (der Kern der alten (i)-Zusage, «das Öffnen löscht
+// die Gliederung nicht», gilt damit über den Rundlauf).
+test.describe('Entscheid A — das Erlass-Blatt ist eine Spalte mit Schiene, wie die Gliederung', () => {
+  test('(f) @1440: Schiene öffnet, «Erlass-Blatt ausblenden ›» schliesst, «r» schaltet — ohne unangekündigten Shift', async ({ page }) => {
     test.slow()
     const fehler = await oeffne(page, '/gesetze/bund/OR', 1440)
-    const zaehler = page.locator(ZAEHLER).first()
-    await expect(zaehler).toBeVisible({ timeout: 20_000 })
+    const schiene = page.locator('[data-v3-blatt-schiene]')
+    await expect(schiene).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator(ZAEHLER), 'mehr als ein Öffner je Lage').toHaveCount(1)
+    // Der Kopf trägt ab 1024 KEINEN eigenen «Erlass-Blatt»-Knopf mehr.
+    await expect(page.locator('[data-v3-kopf-griffe] [data-v3-panel-zaehler]')).toHaveCount(0)
 
-    const spalteVor = await kasten(page, SPALTE)
-    const knopfVor = await kasten(page, ZAEHLER)
-    const textVor = (await zaehler.textContent())?.trim() ?? ''
-    expect(knopfVor, 'Zähler nicht messbar').not.toBe(null)
-
-    // Der Klickpunkt wird EINMAL bestimmt und beide Male benutzt — genau das
-    // war der Mangel: der Knopf floh unter dem Cursor weg.
-    const punkt = { x: knopfVor!.x + Math.round(knopfVor!.b / 2), y: knopfVor!.y + Math.round(knopfVor!.h / 2) }
-
-    // Layout-Shift-Messung um den Klick herum (§15.2: ein Klick auf ein
-    // Beiwerk-Element darf keinen Shift erzeugen).
     await page.evaluate(() => {
       const w = window as unknown as { __cls: number }
       w.__cls = 0
@@ -170,56 +178,57 @@ test.describe('D33 — «Rechtsprechung» öffnet ein Blatt und verschiebt nicht
       }).observe({ type: 'layout-shift', buffered: false })
     })
 
-    await page.mouse.click(punkt.x, punkt.y)
+    await schiene.click()
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(600)
-
-    const spalteNach = await kasten(page, SPALTE)
-    const knopfNach = await kasten(page, ZAEHLER)
-    expect(spalteNach, `Gesetzesspalte vor ${JSON.stringify(spalteVor)} / nach ${JSON.stringify(spalteNach)}`)
-      .toEqual(spalteVor)
-    expect(knopfNach, `Knopf vor ${JSON.stringify(knopfVor)} / nach ${JSON.stringify(knopfNach)}`)
-      .toEqual(knopfVor)
+    await expect(schiene).toHaveCount(0)
+    const zu = page.locator('[data-v3-blatt-zu]')
+    await expect(zu, 'der Griff «Erlass-Blatt ausblenden ›» fehlt im Kopf').toBeVisible()
+    await expect(zu).toHaveAttribute('aria-expanded', 'true')
+    await expect(page.locator(ZAEHLER), 'mehr als ein Öffner je Lage').toHaveCount(1)
+    // Der Griff steht über der linken Kante des Blatts (Spiegel von D32).
+    const griff = await kasten(page, '[data-v3-blatt-zu]')
+    const blatt = await kasten(page, '[data-v3-panel-form]')
+    expect(Math.abs(griff!.x - blatt!.x), `Griff x ${griff!.x} gegen Blatt x ${blatt!.x}`).toBeLessThanOrEqual(8)
 
     const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls)
-    expect(cls, `Layout-Shift beim Öffnen: ${cls}`).toBeLessThanOrEqual(0.001)
+    expect(cls, `unangekündigter Layout-Shift beim Öffnen: ${cls}`).toBeLessThanOrEqual(0.001)
 
-    // (g) An der geklickten Stelle liegt danach WIEDER der Knopf.
-    const getroffen = await page.evaluate((p) => {
-      const el = document.elementFromPoint(p.x, p.y)
-      const knopf = el?.closest('[data-v3-panel-zaehler]')
-      return { knopf: knopf != null, tag: el?.tagName ?? '—', text: (el?.textContent ?? '').slice(0, 24) }
-    }, punkt)
-    expect(getroffen.knopf,
-      `an der Klickstelle liegt ${getroffen.tag} «${getroffen.text}» statt des Knopfes`).toBe(true)
-
-    // (j) Die Beschriftung hat sich durch das Öffnen nicht geändert.
-    const textNach = (await zaehler.textContent())?.trim() ?? ''
-    expect(textNach, `Zählertext «${textVor}» → «${textNach}»`).toBe(textVor)
-
-    // (h) Zweiter Klick an derselben Stelle schliesst.
-    await page.mouse.click(punkt.x, punkt.y)
+    await zu.click()
     await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
-    await expect(zaehler).toHaveAttribute('aria-expanded', 'false')
+    await expect(schiene).toBeVisible()
+    await expect(schiene).toHaveAttribute('aria-expanded', 'false')
+
+    // «r» schaltet dasselbe Blatt auf und wieder zu (D-8).
+    await page.locator('body').click({ position: { x: 5, y: 400 } })
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
-  test('(i) @1024: das Öffnen löscht die Gliederung nicht', async ({ page }) => {
+  test('(i) @1024: die Gliederung weicht dem Blatt nur vorübergehend', async ({ page }) => {
     test.slow()
     await oeffne(page, '/gesetze/bund/ZGB', 1024)
     await expect(page.locator('[data-v3-aside]')).toBeVisible({ timeout: 20_000 })
     const spalteVor = await kasten(page, SPALTE)
+    const asideVor = await kasten(page, '[data-v3-aside]')
 
     await page.locator(ZAEHLER).first().click()
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
-    await page.waitForTimeout(500)
+    await expect(page.locator('[data-v3-aside]'), '@1024 steht die Gliederung neben offenem Blatt').toHaveCount(0)
+    await expect(page.locator('[data-v3-gliederung-schiene]')).toBeVisible()
 
-    await expect(page.locator('[data-v3-aside]'),
-      '@1024 verschwand die ganze Gliederungsspalte beim Öffnen (Ist-Stand)').toBeVisible()
-    expect(await kasten(page, SPALTE), 'die Gesetzesspalte ist beim Öffnen gewandert').toEqual(spalteVor)
+    await page.locator('[data-v3-blatt-zu]').click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(page.locator('[data-v3-aside]'), '@1024 kehrt die Gliederung nicht zurück').toBeVisible()
+    expect(await kasten(page, '[data-v3-aside]'), 'die Gliederung steht woanders').toEqual(asideVor)
+    expect(await kasten(page, SPALTE), 'die Gesetzesspalte steht nach dem Rundlauf woanders').toEqual(spalteVor)
   })
 })
+
 
 // ── §6.3-DEKLARATION (D35-F2, Entscheid David 7.9.2026) ─────────────────────
 // Der Block hiess «N1 — der Kopf-Zähler nennt dieselbe Zahl wie die Bezüge-Zeile»

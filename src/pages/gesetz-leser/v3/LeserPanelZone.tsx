@@ -1,4 +1,4 @@
-import { useRef, type ReactNode, type RefObject } from 'react';
+import { useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { setzeBezugKantone, setzeBezugKlassen, setzeBezugZeit, useBezugKantone, useBezugKlassen } from '../leserOptionen';
 import type { BestimmungsWort } from './erlassAnsicht';
@@ -7,11 +7,18 @@ import { PanelEntscheide } from './PanelEntscheide';
 import { usePanelTafeln } from './PanelTafeln';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
-import { useFensterRand } from './useFensterRand';
 import { blattFlaeche } from './blattFlaeche';
 import { useWischZu, useZurueckSchliesst } from './blattGesten';
 
 // ─── WO das Panel steht (H3, Kap. 4d) ────────────────────────────────────────
+//
+// ═══ ENTSCHEID A (David 24.9.2026) · `'spalte'` IST ZURÜCK, `'rechts'` FÄLLT ═
+// Ab 1024 px (Einzelansicht) ist das offene Blatt eine eigene Spur rechts der
+// Lese-Zelle, zu eine Schiene (`./rahmenSpalten`, Dateikopf). Die Überlagerung
+// `'rechts'` (D33) samt Fensterrand-Kante (D-1, `useFensterRand`) ist
+// zurückgebaut; darunter bleibt `'unten'` wie beschrieben. Die Blöcke D33, Ä52
+// und D42 unten sind Belege ihres Datums (§0 Ziff. 2b); was sie über `'rechts'`
+// sagen, gilt seither für `'spalte'` (nicht modal, kein Scrim, keine Falle).
 //
 // ═══ D33 (David 7.9.2026) · DIE DRITTE GESTALT `'spalte'` IST GESTRICHEN ═════
 // Sie war die eigene 22-rem-Spur neben dem Text (Ä60 (c), 17.8.2026) und hat
@@ -75,16 +82,6 @@ import { useWischZu, useZurueckSchliesst } from './blattGesten';
 // jetzt genau einmal je Zuschnitt: im Kopf (`voll`/`kompakt`) bzw. im
 // «···»-Menü (`mini`) — dieses Bauteil rendert keinen Öffner mehr.
 
-/** Die 0-Höhen-Hülle der klebenden Gestalt (Herleitung bei `flaeche` unten);
- *  ohne Klassen reicht sie ihr Kind unverändert durch. Sie trägt `--blatt-rand`
- *  (D-1, `./useFensterRand`). */
-function Huelle({ klassen, huelleRef, children }: {
-  klassen?: string; huelleRef: RefObject<HTMLDivElement | null>; children: ReactNode;
-}) {
-  if (!klassen) return <>{children}</>;
-  return <div ref={huelleRef} className={klassen} style={{ top: 'var(--nt-stick)' }}>{children}</div>;
-}
-
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
   artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag,
@@ -110,9 +107,9 @@ export function LeserPanelZone({
    *  ADRESS-Angabe und seit Befund 45 nicht mehr deckungsgleich mit der
    *  fachlichen Ebene (`/gesetze/international/…`). */
   ebene: 'bund' | 'kanton';
-  /** Gestalt des Blatts — `rahmenBild(...)` im Rahmen entscheidet; sie folgt
-   *  seit D33 (7.9.2026) ausnahmslos `panelForm`. */
-  form: 'rechts' | 'unten';
+  /** Gestalt des Blatts — `rahmenBild(...)` im Rahmen entscheidet (seit
+   *  Entscheid A, 24.9.2026, wieder mit der Spur `'spalte'`). */
+  form: 'spalte' | 'unten';
   /** Id der Fläche. Kommt vom RAHMEN, nicht aus einem lokalen `useId` (A3): die
    *  Öffner stehen ausserhalb dieser Datei und brauchen dieselbe Id für ihr
    *  `aria-controls` — zwei `useId` hätten zwei Ids ergeben, und eine davon
@@ -190,9 +187,7 @@ export function LeserPanelZone({
   // genau wie auf D seit Ä52 gewollt (sonst wäre Textmarkieren unmöglich).
   const imPaneBlatt = paneZiel != null;
   const modal = !imPaneBlatt && form === 'unten';
-  const randBlatt = form === 'rechts' && !imPaneBlatt;
-  const huelleRef = useRef<HTMLDivElement>(null);
-  useFensterRand(huelleRef, offen && randBlatt);
+  const spalte = form === 'spalte' && !imPaneBlatt;
   useZurueckSchliesst(offen && modal, schliesse); // D-7: Zurück schliesst zuerst (`./blattGesten`)
   const wisch = useWischZu(panelRef, schliesse);
 
@@ -288,24 +283,19 @@ export function LeserPanelZone({
   } as const;
 
   // ── Die Fläche: Anschlag-Kante und Deckel je Gestalt (`./blattFlaeche`) ─────
-  const flaeche = blattFlaeche(randBlatt, imPaneBlatt);
+  const flaeche = blattFlaeche(spalte && offen, imPaneBlatt);
 
   const blatt = (
     <div ref={wrapRef} data-v3-panel-spur="blatt"
       data-v3-pane={paneRolle}
-      // `display: contents` — KEIN Zierrat, sondern der Grund, warum das Blatt
-      // im Grid des Rahmens keine Spur erzeugt: alle Kinder sind `fixed` bzw.
-      // `absolute`, der Träger selbst darf darum keine Box haben. Ein
-      // gewöhnliches `div` als Grid-Kind hätte eine implizite dritte Spalte samt
-      // `gap-5` daneben aufgezogen — Leerraum, den niemand angefordert hat
-      // (derselbe Mechanismus, den der Rahmen für Toast/Weiterlesen beschreibt).
-      // Die DOM-Vorfahrenkette bleibt unberührt: `data-v3-pane` trägt weiter
-      // (H2-Befund), und die CSS-Variable unten erbt an die Kinder.
-      // D33: seit die eigene Spur weg ist, gilt `contents` in JEDER Lage — es
-      // gibt keine Gestalt mehr, die eine Box im Grid braucht.
-      // Ä5 (Fläche des Behälters für klebende Sockel) entfällt seit W2·29 S5:
-      // das Blatt ist `paper` wie der Sockel-Vorgabewert.
-      className="contents">
+      // Der Träger: offen als Spur die dritte Grid-Zelle, sonst `display:
+      // contents` ohne Box (Herleitung in `./blattFlaeche`). Dasselbe Element in
+      // beiden Lagen, damit Öffnen und Schliessen nichts neu einhängen. Die
+      // DOM-Vorfahrenkette bleibt unberührt: `data-v3-pane` trägt weiter
+      // (H2-Befund). Ä5 (Fläche des Behälters für klebende Sockel) entfällt seit
+      // W2·29 S5: das Blatt ist `paper` wie der Sockel-Vorgabewert.
+      // Im Druck fällt er über `[data-v3-panel-spur]` (index.css, A-2).
+      className={flaeche.traeger.klassen} style={flaeche.traeger.stil}>
       {offen && (
         <>
           {/* Der Scrim gehört zum MODALEN Blatt. Auf D gibt es keinen — dort ist
@@ -334,7 +324,6 @@ export function LeserPanelZone({
               className="lc-scrim fixed inset-0 z-overlay"
               onClick={schliesse} aria-hidden />
           )}
-          <Huelle klassen={flaeche.huelle} huelleRef={huelleRef}>
           <div
             // `role="dialog"` nur, wo es einer IST. Das Beiwerk ist eine benannte
             // REGION: ein Dialog ohne Fokus-Falle und ohne Modalität wäre die
@@ -367,7 +356,6 @@ export function LeserPanelZone({
               // Ä89: die Steckbrief-Zeile gehört dem Panel, nicht seinen Tafeln.
               steckbrief={steckbrief} />
           </div>
-          </Huelle>
         </>
       )}
     </div>
