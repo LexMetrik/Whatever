@@ -30,7 +30,7 @@ export function VariantenKopf<T extends string>({
       {untertypOptionen && untertypOptionen.length > 0 && (
         <fieldset className="space-y-1.5">
           <legend className="lc-overline">{untertypLabel ?? 'Untertyp'}</legend>
-          <SelectionGrid<T> reg="w"
+          <SelectionGrid<T>
             className="flex flex-wrap gap-2"
             items={untertypOptionen.map((o) => ({ code: o.id, label: o.label, sub: o.sub }))}
             value={untertyp ?? ''} onSelect={(c) => onUntertyp?.(c)} />
@@ -38,7 +38,7 @@ export function VariantenKopf<T extends string>({
       )}
       <fieldset className="space-y-1.5">
         <legend className="lc-overline">Detailgrad</legend>
-        <SelectionGrid reg="w"
+        <SelectionGrid
           className="grid grid-cols-3 gap-2 max-w-xl"
           items={DETAILGRAD_OPTIONEN.map((o) => ({ code: o.id, label: o.label, sub: o.sub }))}
           value={detailgrad} onSelect={onDetailgrad} />

@@ -96,7 +96,7 @@ const PILLE_HITBOX =
   + 'after:h-[var(--tap-ziel-komfort)] after:min-w-[var(--tap-ziel-komfort)] after:w-full after:content-[""]';
 
 export function SelectionGrid<T extends string>({
-  items, value, onSelect, className, variant = 'kachel', gruppenLabel, reg,
+  items, value, onSelect, className, variant = 'kachel', gruppenLabel,
 }: {
   items: readonly SelectionItem<T>[];
   /** Aktueller Wert; darf breiter sein als die Item-Codes (z. B. ein
@@ -110,12 +110,6 @@ export function SelectionGrid<T extends string>({
   variant?: 'kachel' | 'pille';
   /** Setzt `role="group"` + `aria-label` am Container (Pillen-Reihen tragen das). */
   gruppenLabel?: string;
-  /** W2·29-WERKBANK-VORLAGEN V1 (nur `kachel`): Segment-Kachel des Werkbank-
-      Boards — 3-px-REGISTERSTRICH oben (ruhend Haarlinien-Ton, gewählt
-      `--reg-w`) statt Haarlinie + Innenstrich links. Ohne Prop: unverändert.
-      Heute nur das Werkzeug-Register; ein weiteres bekommt seine Zeile in
-      `index.css`, wenn ein Konsument es braucht. */
-  reg?: 'w';
 }) {
   const pille = variant === 'pille';
   return (
@@ -132,7 +126,6 @@ export function SelectionGrid<T extends string>({
             disabled={it.disabled}
             title={it.titel}
             data-selection-pille={pille ? '' : undefined}
-            data-reg={pille ? undefined : reg}
             onClick={() => !it.disabled && onSelect(it.code)}
             aria-pressed={aktiv}
             className={pille
@@ -148,8 +141,9 @@ export function SelectionGrid<T extends string>({
               //    Raster zur Zeilenliste, ohne dass die 60 Aufrufer ihre
               //    Spaltenzahl ändern müssen (§10 — der Rahmen wird gebaut, nicht
               //    60 Aufrufe umgeschrieben). Der 3-px-Strich in `--reg-w` am
-              //    gewählten Zustand, das Häkchen, `pr-6` und `min-h-11` bleiben
-              //    Wort für Wort (index.css `.lc-wahl-kachel`).
+              //    gewählten Zustand (seit W2·29-WERKBANK-RECHNER R4 OBEN, ein
+              //    Look für Formular und Segmentschalter), das Häkchen, `pr-6`
+              //    und `min-h-11` bleiben (index.css `.lc-wahl-kachel`).
               //    DIE PILLE BLEIBT GESCHLOSSEN: sie steht in einer Reihe kurzer
               //    Antworten («ja»/«nein»), wo die geschlossene Form die Aussage
               //    «ich bin ein Knopf» ist — eine offene Zeile wäre dort keine
