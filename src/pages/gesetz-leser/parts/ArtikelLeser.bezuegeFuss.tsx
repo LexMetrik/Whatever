@@ -32,9 +32,40 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 // W2·29-WERKBANK-LESER S1 (23.9.2026): die Listenform der Rubriken
 // «Materialien» und «Rechnen» steht als Token-Utility hier (`LISTE`, `ART`),
 // nicht mehr als `.lr6-notiz-*` in `src/index.css`.
+//
+// S6 (Entscheid David 23.9.2026, AN-10/AN-11): die Rubriken heissen wie die
+// Reiter des Erlass-Blatts, in die ihr «im Erlass-Blatt öffnen ›» führt. «Materialien»
+// zeigte hier Kreisschreiben und Wegleitungen, im Blatt hiess derselbe Bestand
+// «Anwendung → Behörden-Praxis» und der Blatt-Reiter «Materialien» hielt die
+// Botschaften — drei Namen für eine Sache, ein Name für zwei. Seither:
+// «Erläuterungen» (Behördenpublikationen, Register `m`) und «Werkzeuge»
+// (Rechner/Vorlagen, Register `w`), je mit dem Griff in ihren Reiter.
+
+/** Reiter des Erlass-Blatts, in die eine Rubrik «im Erlass-Blatt öffnen ›» führt —
+ *  eine Teilmenge von `../v3/panelModell.PanelReiter` (hier als Literal, weil
+ *  `parts/` nicht in `v3/` hinaufimportiert). */
+export type ImBlattReiter = 'entscheide' | 'erlaeuterungen' | 'werkzeuge';
+
+/** «im Erlass-Blatt öffnen ›» — EIN Griff für alle Rubriken, die einen Reiter haben. */
+function ImBlattGriff({ reiter, name, onImBlatt }: {
+  reiter: ImBlattReiter; name: string; onImBlatt: (r: ImBlattReiter) => void;
+}) {
+  return (
+    <button type="button" onClick={() => onImBlatt(reiter)}
+      className="lc-btn-mini mt-2 text-micro text-ink-500 hover:text-ink-900"
+      /* WCAG 4.1.2 · derselbe Massstab wie an den Rubrik-Griffen: auf
+         einer Seite mit 1686 Artikeln ist «im Blatt öffnen» allein in der
+         Knopfliste eines Screenreaders nicht auffindbar. */
+      aria-label={name}
+      data-v3-bez-imblatt={reiter === 'entscheide' ? '' : reiter}>
+      {/* D-5 (S6-W1a): EIN Name der Fläche — bis 23.9.2026 «im Blatt öffnen». */}
+      im Erlass-Blatt öffnen<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span></button>
+  );
+}
 
 /** Eine Rubrik-Liste: ein Titel je Zeile, darunter leise seine Art (D30 —
- *  «Materialien» und «Rechnen» sind EINE Anatomie, §5). */
+ *  «Erläuterungen» und «Werkzeuge», bis S6 «Materialien» und «Rechnen», sind
+ *  EINE Anatomie, §5). */
 const LISTE = 'm-0 grid list-none gap-1 pl-2.5 font-sans text-leser-rand [&>li]:grid';
 const ART = 'text-micro text-ink-500';
 
@@ -81,8 +112,15 @@ export function ArtikelBezuegeFuss({
    * hätten dort nur ihre ERLASS-weiten Nachbarn — ein Griff, der woandershin
    * führt als er verspricht, wäre die Scope-Verwechslung D-3/D-4, die dieser
    * Schritt gerade abräumt (§8).
+   *
+   * ERGÄNZT S6 (23.9.2026, AN-10): «Erläuterungen» und «Werkzeuge» tragen den
+   * Griff seither ebenfalls — Auftrag «im Blatt öffnen öffnet den passenden
+   * Reiter». Die Scope-Sorge oben bleibt richtig und wird im NAMEN eingelöst,
+   * nicht verschwiegen: der Accessible-Name sagt «… zum Erlass», der Reiter-Kopf
+   * zeigt das Erlass-Kürzel (Befund 34). Wer den Griff nimmt, erfährt also,
+   * dass er vom Artikel zum ganzen Erlass wechselt.
    */
-  onImBlatt?: () => void;
+  onImBlatt?: (reiter: ImBlattReiter) => void;
   /**
    * W2·6c-E3 · Kanonischer Erlass-Key — die Adresse der Entstehungs-Projektion
    * (`/materialien/entstehung/<KEY>.json`). Fehlt er, zeigt die Rubrik «Fassung»
@@ -229,17 +267,7 @@ export function ArtikelBezuegeFuss({
             ? <LeitfallZeile refs={leitfaelle} normZitat={zitat} revision={revision} />
             : null),
       nebenGriff: onImBlatt
-        ? (
-          <button type="button" onClick={onImBlatt}
-            className="lc-btn-mini mt-2 text-micro text-ink-500 hover:text-ink-900"
-            /* WCAG 4.1.2 · derselbe Massstab wie an den Rubrik-Griffen: auf
-               einer Seite mit 1686 Artikeln ist «im Blatt öffnen» allein in der
-               Knopfliste eines Screenreaders nicht auffindbar. */
-            aria-label={`Entscheide zu ${zitat} im Erlass-Blatt öffnen`}
-            data-v3-bez-imblatt>
-            {/* D-5 (S6-W1a): EIN Name der Fläche — bis 23.9.2026 «im Blatt öffnen». */}
-            im Erlass-Blatt öffnen<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span></button>
-        )
+        ? <ImBlattGriff reiter="entscheide" name={`Entscheide zu ${zitat} im Erlass-Blatt öffnen`} onImBlatt={onImBlatt} />
         : undefined,
     },
     // Die Rubrik erscheint NUR mit echter Zahl (`anzahl > 0` filtert sie sonst
@@ -253,15 +281,21 @@ export function ArtikelBezuegeFuss({
     // EINE Liste sind und nicht drei Gestalten. `sublabel` ist die
     // amtliche Fundstelle-Ziffer im Dokument; sie steht nur, wenn der
     // Kanten-Shard sie führt.
+    // S6: seit dem Entscheid 23.9.2026 «Erläuterungen» (Herleitung im Kopf).
+    // Die Zahl und die Liste sind unverändert dieselben Kreisschreiben,
+    // Wegleitungen und Leitfäden — nur der Name folgt dem Reiter.
     {
       reg: 'm',
       anzahl: zaehler?.materialien ?? (materialien?.length ?? 0),
-      wort: ['Materialie', 'Materialien'],
+      wort: ['Erläuterung', 'Erläuterungen'],
       brauchtDaten: true,
+      nebenGriff: onImBlatt
+        ? <ImBlattGriff reiter="erlaeuterungen" name={`Behördliche Erläuterungen zum Erlass im Erlass-Blatt öffnen`} onImBlatt={onImBlatt} />
+        : undefined,
       inhalt: materialien && materialien.length > 0
         ? (
           <>
-            <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Materialien</span>
+            <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Erläuterungen</span>
             <ul className={LISTE}>
               {materialien.map((mat) => (
                 <li key={mat.key} data-bez-material>
@@ -296,10 +330,15 @@ export function ArtikelBezuegeFuss({
         </>
       ),
     },
+    // S6: «Werkzeuge» wie der Reiter (bis hierher «Rechner» am Griff und
+    // «Rechnen» über der Liste — zwei Namen in einer Rubrik).
     {
       reg: 'w',
       anzahl: werkzeuge.length,
-      wort: ['Rechner', 'Rechner'],
+      wort: ['Werkzeug', 'Werkzeuge'],
+      nebenGriff: onImBlatt
+        ? <ImBlattGriff reiter="werkzeuge" name={`Werkzeuge zum Erlass im Erlass-Blatt öffnen`} onImBlatt={onImBlatt} />
+        : undefined,
       /* W2·5m · Ebenfalls gesichert: die Norm-Werkzeug-Kanten stehen fest im
          Code (`lib/normtext/werkzeuge.ts`), jede mit fachlichem Beleg (§7),
          Zweifelsfälle bewusst ausgelassen (§8). «Bisher» ist kein Füllwort: es
@@ -308,7 +347,7 @@ export function ArtikelBezuegeFuss({
       leer: 'Zu dieser Bestimmung führen wir bisher keinen Rechner und keine Vorlage.',
       inhalt: (
         <>
-          <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Rechnen</span>
+          <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Werkzeuge</span>
           <ul className={LISTE}>
             {werkzeuge.map((w) => (
               <li key={w.id}>

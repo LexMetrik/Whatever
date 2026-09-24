@@ -74,7 +74,12 @@ const DICHT_REZEPT = /className="[^"]*\blc-overline\b[^"]*"[^>]*>[\s\S]{0,80}?<s
 
 describe('B3-1/B3-2 · dichte Gruppenköpfe laufen über `ui/GruppenKopf`', () => {
   const migriert = [
-    'pages/gesetz-leser/v3/PanelAnwendung.tsx',
+    // S6 (23.9.2026, deklariert): `PanelAnwendung.tsx` ist in
+    // `PanelErlaeuterungen.tsx` und `PanelWerkzeuge.tsx` aufgegangen — beide
+    // konsumieren den Baustein; die Negativ-Kontrolle unten zitiert den
+    // Vorher-Wortlaut weiterhin als Beleg ihres Datums (§0 Ziff. 2b).
+    'pages/gesetz-leser/v3/PanelErlaeuterungen.tsx',
+    'pages/gesetz-leser/v3/PanelWerkzeuge.tsx',
     'pages/gesetz-leser/v3/PanelMaterialien.tsx',
     'pages/gesetz-leser/v3/PanelEntscheide.tsx',
     'components/kontext/KontextGruppe.tsx',

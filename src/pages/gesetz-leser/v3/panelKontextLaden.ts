@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { revisionenFuerNorm, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
 import { botschaftenFuer, type BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { vernehmlassungenFuer, type VernehmlassungBezug } from '../../../lib/materialien/vernehmlassungen';
+import { kantonaleGesetzgebungFuer, type KantonalesGeschaeft } from '../../../lib/materialien/ratschlaege';
+import { ladeMaterialManifest } from '../../../lib/materialien/browse';
 import { ladeRevisionShard, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
-import { kontextSoftLaw } from '../../../lib/kontext';
+import { kontextSoftLaw, materialienFuer, mischeMaterialien } from '../../../lib/kontext';
 import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
 
 // ─── Nachladen der Reiter «Änderungen» und «Materialien» (H3, Kap. 7) ────────
@@ -33,20 +35,41 @@ import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
 export interface Geladen<T> {
   wert: T | null;
   fertig: boolean;
+  /** S6 · Befund M-8/AN-4: erneut versuchen (nach einem Ladefehler). Die
+   *  Lade-Funktionen cachen einen Fehlschlag nicht (`lib/materialien/browse`),
+   *  der Griff stösst den Effekt nur noch einmal an. Fehlt er, gibt es keinen
+   *  Wiederholungsweg (Tests, reine Anzeige). */
+  erneut?: () => void;
 }
 
 const NICHT_FERTIG = { wert: null, fertig: false } as const;
 
-export function useRevisionen(erlassKey: string | undefined, laden: boolean): Geladen<RevisionAnsicht> {
-  const [stand, setStand] = useState<{ key: string; wert: RevisionAnsicht | null } | null>(null);
+/**
+ * S6 · DER EINE Lade-/Gate-Rhythmus aller Reiter-Quellen (vorher viermal
+ * wortgleich als eigene Hook). An den Erlass-Key gebunden, erst nach dem
+ * ersten Öffnen (`laden`), mit Wiederholung: `erneut` zählt `versuch` hoch und
+ * lässt den Effekt ein zweites Mal laufen. `lade` MUSS modul-stabil sein (eine
+ * Funktion auf Modul-Ebene oder `useCallback`), sonst lädt der Effekt bei
+ * jedem Render.
+ */
+function useNachladen<T>(erlassKey: string | undefined, laden: boolean, lade: (key: string) => Promise<T | null>): Geladen<T> {
+  const [stand, setStand] = useState<{ key: string; wert: T | null; versuch: number } | null>(null);
+  const [versuch, setVersuch] = useState(0);
   useEffect(() => {
     if (!laden || !erlassKey) return;
     let lebt = true;
-    void revisionenFuerNorm([erlassKey]).then((a) => { if (lebt) setStand({ key: erlassKey, wert: a }); });
+    void lade(erlassKey).then((w) => { if (lebt) setStand({ key: erlassKey, wert: w, versuch }); });
     return () => { lebt = false; };
-  }, [erlassKey, laden]);
-  if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;
-  return { wert: stand.wert, fertig: true };
+  }, [erlassKey, laden, lade, versuch]);
+  const erneut = useCallback(() => setVersuch((v) => v + 1), []);
+  if (!erlassKey || stand?.key !== erlassKey || stand.versuch !== versuch) return NICHT_FERTIG;
+  return { wert: stand.wert, fertig: true, erneut };
+}
+
+const ladeRevisionen = (key: string) => revisionenFuerNorm([key]);
+
+export function useRevisionen(erlassKey: string | undefined, laden: boolean): Geladen<RevisionAnsicht> {
+  return useNachladen(erlassKey, laden, ladeRevisionen);
 }
 
 // ── §7b-DECKUNGSLÜCKE GESCHLOSSEN (21.8.2026, normrevision-badge.e2e.ts) ─────
@@ -57,15 +80,7 @@ export function useRevisionen(erlassKey: string | undefined, laden: boolean): Ge
 // bereits vom Fetch-Fehler, der dort ebenfalls `null` liefert und dafür den
 // Promise-Cache NICHT setzt, also beim nächsten Aufruf erneut versucht).
 export function useArtikelRevisionShard(erlassKey: string | undefined, laden: boolean): Geladen<RevisionShard | null> {
-  const [stand, setStand] = useState<{ key: string; wert: RevisionShard | null } | null>(null);
-  useEffect(() => {
-    if (!laden || !erlassKey) return;
-    let lebt = true;
-    void ladeRevisionShard(erlassKey).then((s) => { if (lebt) setStand({ key: erlassKey, wert: s }); });
-    return () => { lebt = false; };
-  }, [erlassKey, laden]);
-  if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;
-  return { wert: stand.wert, fertig: true };
+  return useNachladen(erlassKey, laden, ladeRevisionShard);
 }
 
 // ── W2·7-VZUI (31.8.2026) · Behörden-Ressourcen für den Reiter «Anwendung» ───
@@ -81,38 +96,60 @@ export function useArtikelRevisionShard(erlassKey: string | undefined, laden: bo
 // löst beides zur leeren Liste auf (`ladeMaterialManifest` → `null` ⇒ `return []`).
 // Der Reiter darf darum «keine erfasst» NICHT behaupten, wo er in Wahrheit
 // nichts weiss — er sagt es so, wie es ist (§8, Wortlaut in `PanelAnwendung`).
-export function useSoftLaw(erlassKey: string | undefined, laden: boolean): Geladen<MaterialBezug[]> {
-  const [stand, setStand] = useState<{ key: string; wert: MaterialBezug[] } | null>(null);
-  useEffect(() => {
-    if (!laden || !erlassKey) return;
-    let lebt = true;
-    void kontextSoftLaw('norm', [erlassKey]).then((r) => { if (lebt) setStand({ key: erlassKey, wert: r }); });
-    return () => { lebt = false; };
-  }, [erlassKey, laden]);
-  if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;
-  return { wert: stand.wert, fertig: true };
+//
+// ── S6 (23.9.2026) · REITER «ERLÄUTERUNGEN», ZWEI BEFUNDE AN DIESER STELLE ──
+// AN-3: die V3-Hülle las NUR `kontextSoftLaw` — die kuratierten Einträge des
+// `MATERIAL_REGISTER` (im Bundle, `materialienFuer`) fehlten: gezählt 28
+// Dokumente, darunter die BSV-Wegleitungen am AHVG (Reiter leer) und EHRA
+// 1/25, 1/26 am OR. Das `KontextPanel` mischte beide (`mischeMaterialien`) —
+// jetzt dieselbe Mischung, dieselbe Funktion (§5), Dubletten per key weg.
+// AN-4: der Satz oben («nicht unterscheidbar») ist für `kontextSoftLaw` wahr
+// und bleibt stehen; unterscheidbar wird es HIER: das Manifest wird parallel
+// gefragt — es ist dieselbe memoisierte Promise, die `kontextSoftLaw` ohnehin
+// zieht (kein zweiter Fetch). Ist es `null`, ist die Quelle unerreichbar, und
+// der Reiter sagt das statt «nichts erfasst» (`wert: null`).
+/** Behördliche Erläuterungen eines Erlasses + Datenstand des Registers (ISO). */
+export interface ErlaeuterungStand {
+  liste: MaterialBezug[];
+  erzeugt: string;
 }
 
+async function ladeErlaeuterungen(key: string): Promise<ErlaeuterungStand | null> {
+  const [manifest, weich] = await Promise.all([ladeMaterialManifest(), kontextSoftLaw('norm', [key])]);
+  if (!manifest) return null;
+  return { liste: mischeMaterialien(materialienFuer([key]), weich), erzeugt: manifest.erzeugt };
+}
+
+export function useErlaeuterungen(erlassKey: string | undefined, laden: boolean): Geladen<ErlaeuterungStand> {
+  return useNachladen(erlassKey, laden, ladeErlaeuterungen);
+}
+
+/** Gesetzgebungsmaterialien eines Erlasses (Reiter «Materialien»). Je Liste
+ *  `null` = Manifest unerreichbar; `erzeugt` = Datenstand des Registers. */
 export interface MaterialStand {
   botschaften: BotschaftBezug[] | null;
   vernehmlassungen: VernehmlassungBezug[] | null;
+  /** S6 · M-3: kantonale Ratschläge/Berichte (bisher gar nicht geladen). */
+  kanton: KantonalesGeschaeft[] | null;
+  /** S6 · M-6/B-12: Erzeugungsdatum des Registers (ISO) oder `null`. */
+  erzeugt: string | null;
 }
 
-export function useMaterialien(erlassKey: string | undefined, laden: boolean): Geladen<MaterialStand> {
-  const [stand, setStand] = useState<{ key: string; wert: MaterialStand } | null>(null);
-  useEffect(() => {
-    if (!laden || !erlassKey) return;
-    let lebt = true;
-    // EIN Promise.all, nicht zwei Effekte: beide ziehen dasselbe
-    // Material-Manifest (`ladeMaterialManifest`, dort memoisiert), und der Reiter
-    // soll in EINEM Schritt fertig werden statt in zwei sichtbaren Sprüngen
-    // (§15/2 — jeder Teil-Resolve wäre ein eigenes Einwachsen).
-    void Promise.all([botschaftenFuer([erlassKey]), vernehmlassungenFuer([erlassKey])])
-      .then(([botschaften, vernehmlassungen]) => {
-        if (lebt) setStand({ key: erlassKey, wert: { botschaften, vernehmlassungen } });
-      });
-    return () => { lebt = false; };
-  }, [erlassKey, laden]);
-  if (!erlassKey || stand?.key !== erlassKey) return NICHT_FERTIG;
-  return { wert: stand.wert, fertig: true };
+// EIN Promise.all, nicht mehrere Effekte: alle ziehen dasselbe Material-Manifest
+// (`ladeMaterialManifest`, dort memoisiert), und der Reiter soll in EINEM
+// Schritt fertig werden statt in mehreren sichtbaren Sprüngen (§15/2 — jeder
+// Teil-Resolve wäre ein eigenes Einwachsen).
+async function ladeGesetzgebung(key: string, locale: string): Promise<MaterialStand> {
+  const [botschaften, vernehmlassungen, kanton, manifest] = await Promise.all([
+    botschaftenFuer([key], locale), vernehmlassungenFuer([key], locale),
+    kantonaleGesetzgebungFuer([key]), ladeMaterialManifest(),
+  ]);
+  return { botschaften, vernehmlassungen, kanton, erzeugt: manifest?.erzeugt ?? null };
+}
+
+/** S6 · M-11: die Sprache wird durchgereicht (vorher fest `de`) — fr/it holen
+ *  die übersetzten Titel, `titelRueckfall` sagt, wo keiner vorliegt. */
+export function useMaterialien(erlassKey: string | undefined, laden: boolean, locale = 'de'): Geladen<MaterialStand> {
+  const lade = useCallback((key: string) => ladeGesetzgebung(key, locale), [locale]);
+  return useNachladen(erlassKey, laden, lade);
 }

@@ -17,7 +17,7 @@ let manifestPromise: Promise<MaterialManifest | null> | null = null;
 
 export async function ladeMaterialManifest(): Promise<MaterialManifest | null> {
   if (!manifestPromise) {
-    manifestPromise = (async () => {
+    const versuch = (async () => {
       try {
         const res = await fetch('/materialien/register.json');
         if (!res.ok) return null;
@@ -27,6 +27,14 @@ export async function ladeMaterialManifest(): Promise<MaterialManifest | null> {
         return null;
       }
     })();
+    manifestPromise = versuch;
+    // S6 · Befund M-8 (23.9.2026): ein EINMALIGER Fehlschlag klebte bis zum
+    // Neuladen der Seite — der Cache hielt die `null`-Promise, jeder spätere
+    // Aufrufer bekam denselben Fehler, auch nach Rückkehr des Netzes. Ein
+    // Fehlschlag wird darum NICHT gecacht (dasselbe Muster wie
+    // `lib/verzahnung/artikel-revisionen.ladeRevisionShard`): der nächste
+    // Aufruf versucht es erneut. Nur der Erfolg bleibt für die Sitzung stehen.
+    void versuch.then((m) => { if (m === null && manifestPromise === versuch) manifestPromise = null; });
   }
   return manifestPromise;
 }

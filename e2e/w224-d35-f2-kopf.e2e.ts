@@ -88,7 +88,8 @@ test.describe('D35-F2 · Kopf-Entlastung und Rubriken-Wahl', () => {
     await page.locator('[data-v3-panel-zaehler]').click();
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 });
     // Die drei ERLASS-weiten Reiter stehen, und «Entscheide» bleibt als Ziel.
-    for (const reiter of ['entscheide', 'aenderungen', 'materialien', 'anwendung']) {
+    // S6 (23.9.2026, deklariert §6.3): fünf Reiter nach Entscheid David AN-11.
+    for (const reiter of ['entscheide', 'aenderungen', 'materialien', 'erlaeuterungen', 'werkzeuge']) {
       await expect(page.locator(`[data-v3-panel-reiter="${reiter}"]`)).toHaveCount(1);
     }
   });

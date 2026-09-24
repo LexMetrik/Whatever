@@ -4,10 +4,7 @@ import { setzeBezugKantone, setzeBezugKlassen, setzeBezugZeit, useBezugKantone, 
 import type { BestimmungsWort } from './erlassAnsicht';
 import { LeserPanel } from './LeserPanel';
 import { PanelEntscheide } from './PanelEntscheide';
-import { PanelAenderungen } from './PanelAenderungen';
-import { PanelMaterialien } from './PanelMaterialien';
-import { PanelAnwendung } from './PanelAnwendung';
-import { useArtikelRevisionShard, useMaterialien, useRevisionen, useSoftLaw } from './panelKontextLaden';
+import { usePanelTafeln } from './PanelTafeln';
 import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelModell';
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { useFensterRand } from './useFensterRand';
@@ -93,8 +90,9 @@ export function LeserPanelZone({
   artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag,
 }: {
   /** ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WOHER DIE EBENE KOMMT ──────────
-   *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die drei Tafeln
-   *  mit ebenen-abhängigem Leerzustand (Entscheide, Materialien, Anwendung).
+   *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die Tafeln
+   *  mit ebenen-abhängigem Leerzustand (Entscheide, Materialien, Anwendung;
+   *  seit S6 Entscheide, Änderungen, Materialien, Erläuterungen).
    *  Diese Datei ordnet nur an — sie entscheidet nichts daran (§3) und lädt
    *  nichts nach (§5: der Wert steht im Erlass-Datensatz, den der Rahmen hält).
    *
@@ -216,14 +214,12 @@ export function LeserPanelZone({
   // Nachladen: erst wenn das Panel einmal offen war (Begründung in
   // `panelKontextLaden`). Die Hooks laufen unbedingt — das GATE ist ihr Argument,
   // nicht ein `if` um den Aufruf.
-  const revisionen = useRevisionen(erlassKey, zustand.jeGeoeffnet);
-  // §7b-Deckungslücke (normrevision-badge.e2e.ts): derselbe Nachlade-Rhythmus,
-  // andere Quelle (Herleitung in `panelKontextLaden.ts`).
-  const artikelRevisionen = useArtikelRevisionShard(erlassKey, zustand.jeGeoeffnet);
-  const materialien = useMaterialien(erlassKey, zustand.jeGeoeffnet);
-  // W2·7-VZUI: vierte Quelle, gleiches Gate. Die Werkzeuge des Reiters kommen
-  // synchron aus der Karten-Tabelle und brauchen keine Hook.
-  const softLaw = useSoftLaw(erlassKey, zustand.jeGeoeffnet);
+  // S6: die vier erlass-weiten Tafeln laden und verdrahten sich in
+  // `./PanelTafeln` (dieselben Hooks, dasselbe Gate); der Artikel-Revisions-
+  // Shard (§7b-Deckungslücke, normrevision-badge.e2e.ts) kommt von dort mit.
+  const { tafeln, artikelRevisionen } = usePanelTafeln({
+    erlassKey, laden: zustand.jeGeoeffnet, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel,
+  });
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
   //
@@ -288,9 +284,7 @@ export function LeserPanelZone({
         onBereich={(von, bis) => setzeBezugZeit(von, bis)}
         ebene={ebene} />
     ),
-    aenderungen: <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} />,
-    materialien: <PanelMaterialien stand={materialien} quelleUrl={quelleUrl} ebene={ebene} />,
-    anwendung: <PanelAnwendung softLaw={softLaw} erlassKey={erlassKey ?? ''} ebene={ebene} />,
+    ...tafeln,
   } as const;
 
   // ── Die Fläche: Anschlag-Kante und Deckel je Gestalt (`./blattFlaeche`) ─────

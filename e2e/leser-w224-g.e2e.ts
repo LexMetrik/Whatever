@@ -44,7 +44,7 @@ async function leser(page: Page, w: number, h: number, url = ERLASS): Promise<vo
 // Scrollbalken ist per `[scrollbar-width:none]` unsichtbar. @390 (Bottom-Sheet)
 // passte dieselbe Zeile ganz: 388/388.
 test.describe('G11 — die Kontext-Reiter des Panels passen ins Blatt', () => {
-  for (const [w, h] of [[1440, 900], [1024, 800], [390, 844]] as const) {
+  for (const [w, h] of [[1440, 900], [1024, 800], [390, 844], [380, 800]] as const) {
     test(`@${w}: kein Fach steht hinter der Kante`, async ({ page }) => {
       await leser(page, w, h)
       await page.locator('[data-v3-panel-oeffner]').first().click()
@@ -62,10 +62,16 @@ test.describe('G11 — die Kontext-Reiter des Panels passen ins Blatt', () => {
           faecher: [...tl.querySelectorAll<HTMLElement>('[role="tab"]')].map((t) => ({
             l: (t.textContent ?? '').trim(),
             r: Math.round(t.getBoundingClientRect().right),
+            o: Math.round(t.getBoundingClientRect().top),
           })),
         }
       })
-      expect(m.faecher.length, 'vier Kontext-Reiter').toBe(4)
+      // S6 (23.9.2026, deklariert §6.3): fünf Reiter (Entscheid David AN-11)
+      // — und sie stehen in EINER Zeile (Auftrag S6 «fünf Reiter in einer
+      // Zeile bei 380/390 px»): gleiche Oberkante aller Fächer.
+      expect(m.faecher.length, 'fünf Kontext-Reiter').toBe(5)
+      const oben = new Set(m.faecher.map((f) => f.o))
+      expect(oben.size, `@${w} Reiter brechen um: ${JSON.stringify(m.faecher)}`).toBe(1)
       expect(m.sw, `@${w} Reiterzeile läuft über (Vorstand @1440: 379 > 334)`)
         .toBeLessThanOrEqual(m.cw + 1)
       for (const f of m.faecher) {

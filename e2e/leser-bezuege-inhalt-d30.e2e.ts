@@ -149,11 +149,14 @@ test.describe('D30 · Bezüge-Zeile: was gezählt wird, wird auch gezeigt', () =
     expect(vollZahl, `Kopfzahl ${kopfZahl} gegen ${vollZahl} ausgeklappte Entscheid-Zeilen`).toBe(kopfZahl);
   });
 
-  test('(c) ARG 15a: die Materialien-Rubrik zeigt ihre Dokumente', async ({ page }) => {
+  // §6.3-DEKLARATION (S6, 23.9.2026): die Rubrik `m` heisst seit dem Entscheid
+  // David (AN-10/AN-11) «Erläuterungen» wie ihr Blatt-Reiter; Register, Zahl,
+  // Liste und `data-bez-material` sind unverändert — nur das Wort am Griff.
+  test('(c) ARG 15a: die Erläuterungen-Rubrik zeigt ihre Dokumente', async ({ page }) => {
     await page.goto('/gesetze/bund/ARG#art-15_a');
     await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
     await expect(page.locator('#art-15_a .lr7-bez-marke[data-reg="m"]'))
-      .toHaveText(/\d+\s*Materiali/, { timeout: 20_000 });
+      .toHaveText(/\d+\s*Erläuterung/, { timeout: 20_000 });
     const details = await klappeAuf(page, '15_a', 'm');
     const mat = details.locator('.lr7-bez-block[data-reg="m"] li[data-bez-material]');
     await expect(mat.first(), 'Materialien-Rubrik zählt, zeigt aber nichts').toBeVisible({ timeout: 25_000 });

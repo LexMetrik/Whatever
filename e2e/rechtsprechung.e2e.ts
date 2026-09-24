@@ -50,6 +50,8 @@ test.describe('Verzahnung im Gesetzes-Reader', () => {
   // 21.8.2026 (H5) — prüfte das Ist-Hüllen-Kontextpanel (`KontextPanel.tsx`).
   // V3-Deckung: `leser-v3-panel-facetten` (b), die Reiter des V3-Panels (seit
   // W2·7-VZUI vier; der vierte hat mit `leser-v3-panel-anwendung` eine eigene).
+  // Ergänzt S6 (23.9.2026): fünf Reiter; die Spec heisst seither
+  // `leser-v3-panel-erlaeuterungen` (Erläuterungen + Werkzeuge).
 })
 
 test.describe('Reader (über Klick aus der Übersicht)', () => {
