@@ -96,4 +96,6 @@ TABU: kein Merge, kein Deploy, keine Änderung an .claude/ oder CLAUDE.md.
 QUITTUNG: Ein Bauer quittiert NIE seine eigene Arbeit — kein gegenpruefung:ok, keine Zeile im Gegenprüfungs-Register, kein Gegenpruefung:-Trailer (F10, PR #616 2.9.2026); Verdikt kommt vom Prüf-Agenten, Quittung setzt der Orchestrator.
 RÜCKGABE: geänderte Dateien (absolute Pfade) · Tor-Ergebnisse mit Exit-Code · offene Punkte.
 
+RATSCHEN (Lehre 24.9.2026): ohne vollen Testlauf trotzdem src/tests/{rechner-flaechen,rechner-export,vorlagen-flaechen}-ratsche.test.tsx einzeln fahren — sonst erst im Gate rot.
+
 Standard-Routing: Stufe stark (aktuell model=opus), effort=high — Abweichungen setzt der Orchestrator im Call.
