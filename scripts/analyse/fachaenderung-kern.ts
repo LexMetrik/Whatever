@@ -8,6 +8,7 @@
 //       deklarierter Commit, der IRGENDEINE Test-Datei berührt (src/tests/**,
 //       *.test.ts(x), e2e/*.e2e.ts — auch bloss hinzugefügt), ist ROT. Kein
 //       Trailer heilt das: Tests werden bei Refactorings nicht angepasst.
+//       Dazu der künftige Queue-Squash (PR-Titel als Betreff, PR #1026).
 //  (R2) Neu: eine GEÄNDERTE oder ENTFERNTE Assertion (expect-Ausdruck,
 //       it/test-/describe-Name, Abschalten per .skip/.todo) in einem Test einer
 //       Risiko-Engine — oder jeder Diff an golden/lexmetrik-golden.json —
@@ -66,6 +67,31 @@ export function findeVerstoesse(commits: CommitInfo[]): Verstoss[] {
     if (tests.length > 0) verstoesse.push({ sha: c.sha, betreff: c.betreff, testDateien: tests });
   }
   return verstoesse;
+}
+
+/** R1-Squash (aus testtreue-kern.ts, PR #1026; Queue-Rauswurf #1023,
+ *  merge_group 35912532181, 23.9.2026): Die Merge-Queue landet SQUASH — der
+ *  eine Commit auf main trägt den PR-TITEL als Betreff und ALLE Dateien des
+ *  PRs. Heisst der Titel `refactor(…)`, ist der Squash-Commit ein Verstoss,
+ *  auch wenn jeder Einzel-Commit sauber `test(…)` deklariert. Bildet den
+ *  künftigen Squash-Commit schon im PR-Lauf nach. */
+export function squashVerstoss(prTitel: string, commits: CommitInfo[]): Verstoss | null {
+  const dateien = [...new Set(commits.flatMap((c) => c.dateien))];
+  const [v] = findeVerstoesse([{ sha: 'PR-Titel', betreff: prTitel, dateien }]);
+  return v ?? null;
+}
+
+/** PR-Titel aus dem `pull_request`-Ereignis (GITHUB_EVENT_PATH); lokal und im
+ *  `merge_group`-Lauf (dort IST HEAD der Squash-Commit) undefined. */
+export function prTitelAusEreignis(
+  env: Record<string, string | undefined>, lies: (pfad: string) => string,
+): string | undefined {
+  if (!env.GITHUB_EVENT_PATH || env.GITHUB_EVENT_NAME !== 'pull_request') return undefined;
+  try {
+    return (JSON.parse(lies(env.GITHUB_EVENT_PATH)) as { pull_request?: { title?: string } }).pull_request?.title;
+  } catch {
+    return undefined;
+  }
 }
 
 // ── R2: Test → Engine ───────────────────────────────────────────────────────
@@ -177,6 +203,8 @@ export interface Eingabe {
   trailer: string[];
   /** Woher die Trailer stammen — nur für die Meldung. */
   quelle: string;
+  /** PR-Titel = Betreff des künftigen Queue-Squash (nur im pull_request-Lauf). */
+  prTitel?: string;
 }
 
 export interface Urteil { rot: boolean; text: string }
@@ -206,6 +234,20 @@ export function bewerte(e: Eingabe): Urteil {
       `  Fachaenderung-Trailer heilt das nicht. Muss ein Test geändert werden, ist es\n` +
       `  eine fachliche Änderung: eigener Commit, eigener Typ (fix/feat/test) mit\n` +
       `  Begründung (CLAUDE.md §6.3, Skill refactoring).`);
+  }
+
+  // R1-Squash: nur wenn kein Einzel-Commit schon rot ist (Verhalten wie #1026).
+  const squash = verstoesse.length === 0 && e.prTitel ? squashVerstoss(e.prTitel, e.commits) : null;
+  if (squash && e.prTitel) {
+    rot = true;
+    teile.push(
+      `check:fachaenderung ROT — §6.3 (Squash): der PR-Titel «${e.prTitel.slice(0, 70)}» ist als 'refactor'\n` +
+      `  deklariert, der PR ändert aber Test-Dateien:\n` +
+      squash.testDateien.slice(0, 6).map((t) => `      ${t}`).join('\n') + '\n\n' +
+      `  Die Merge-Queue landet SQUASH mit dem PR-Titel als Betreff — der Commit auf main\n` +
+      `  wäre ein 'refactor', der Tests ändert, und fiele im merge_group-Lauf durch.\n` +
+      `  PR-Titel-Typ ändern (feat/fix/test), dann den PR-Lauf neu starten (Titel-Änderung\n` +
+      `  allein startet ihn nicht). Beleg: Queue-Rauswurf #1023, 23.9.2026.`);
   }
 
   const pflicht = e.engineBefunde.length > 0 || e.goldenGeaendert;
