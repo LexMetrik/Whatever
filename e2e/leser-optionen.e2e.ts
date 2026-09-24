@@ -131,7 +131,13 @@ test('Options-Leiste: die Änderungs-Wahl + sechs Rubriken-Schalter — «Linien
   // §6.3-DEKLARATION (D40, 7.9.2026): «Fassung» ist die sechste Rubrik — sie
   // steht ZUERST, weil sie in der Zeile zuerst steht (§5). Der Deckel selbst
   // ist die unveränderte Aussage: genau diese Bedienungen, keine mehr.
-  for (const name of [/^Fassung$/, /^Entscheide$/, /^Materialien$/, /^Verweise$/, /^Rechner$/, /^Aktionen$/]) {
+  // §6.3-DEKLARATION (S6 W1cd AN-10, Entscheid David 23.9.2026, PR #1006): die
+  // Rubriken `m` und `w` heissen wie die Blatt-Reiter, die sie öffnen —
+  // «Materialien» → «Erläuterungen» (die Rubrik zeigt Kreisschreiben,
+  // Wegleitungen, Leitfäden; «Materialien» ist seit S6 der Reiter für
+  // Gesetzgebung) und «Rechner» → «Werkzeuge». Zahl und Reihenfolge der sechs
+  // Rubriken unverändert; Herleitung: `v3/LeserRubrikenWahl.tsx` (RUBRIKEN).
+  for (const name of [/^Fassung$/, /^Entscheide$/, /^Erläuterungen$/, /^Verweise$/, /^Werkzeuge$/, /^Aktionen$/]) {
     await expect(gruppe.getByRole(SCHALTER_ROLLE, { name })).toHaveAttribute('aria-checked', 'true');
   }
   await expect(gruppe.getByRole(SCHALTER_ROLLE)).toHaveCount(6);
