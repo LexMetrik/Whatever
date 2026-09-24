@@ -39,7 +39,8 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     bestimmt NUR das Schnellwerkzeug die Höhe von Zeile 1 und damit des
 //     Felds; «Zuletzt» füllt sich erst im Browser (localStorage) und kann das
 //     Feld nie verschieben (§15). Das Token `minHeight.start-kachel` bleibt die
-//     Untergrenze je Kachel.
+//     Untergrenze je Kachel. [Seit U9, 24.9.2026 abends, abgelöst: EINE Zeile,
+//     «Zuletzt» steht in der Spalte unter dem Schnellwerkzeug — s. unten.]
 //   · U4/U6 (START-UEBERARBEITUNG, David 24.9.2026, §5d-bis) — löst «A bündig»
 //     ab: Zeile 1 links ist jetzt eine eigene Spalte «Kachelfeld + Häufig
 //     gebraucht» (`auto minmax(0,1fr)`). Die Kacheln behalten ab `lg` ihre
@@ -50,6 +51,23 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     Direktlinks gehören zu den Kacheln (beides Wege IN den Bestand), das
 //     Werkzeug folgt als eigenes Arbeitsgerät. `-mt-3`: weniger Leerraum unter
 //     der Kopfzeile (U6 «weniger Leerraum über den Kacheln»).
+//   · U9 (START-UEBERARBEITUNG, Nachtrag David 24.9.2026 abends, §5d-bis):
+//     «zuletzt geöffnet auf startseite soll nicht extra platz einnehmen sonder
+//     schnellwerkzeug soll kleiner werden» — die zweite Rasterzeile (leer |
+//     Zuletzt, `row-span-2` + `subgrid`) entfällt. Ab `lg` gibt es EINE Zeile:
+//     links Kachelfeld + Häufig gebraucht, rechts die Spalte mit Schnellwerkzeug
+//     UND darunter «Zuletzt geöffnet». Möglich, weil beide kleiner wurden: die
+//     Bühne des Schnellwerkzeugs reserviert nur noch die Frist-Variante (Token
+//     `start-schnell`), «Zuletzt» zeigt höchstens fünf einzeilige Einträge
+//     (`ZuletztVerwendet`). Die Zeilenhöhe ist das Maximum beider Spalten;
+//     «Häufig gebraucht» füllt links weiter bis zur Unterkante der Spalte.
+//     `grid-rows-[auto_1fr]`: «Zuletzt» (zweite Fläche, nur mit Einträgen)
+//     reicht bis zur Zeilen-Unterkante — die Unterkanten links und rechts
+//     bleiben bündig wie seit U4. Ohne Einträge bleibt das Schnellwerkzeug in
+//     seiner natürlichen Höhe (keine leere Mulde); erscheint «Zuletzt» nach dem
+//     Laden, wächst nur die neue Fläche, nichts verschiebt sich (§15).
+//     Einspaltig bleibt die Reihenfolge Kacheln · Häufig · Schnellwerkzeug ·
+//     Zuletzt. Messwerte: Token-Kommentar in `tailwind.config.js`.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -91,8 +109,7 @@ export function Startseite() {
           <StartKachelFeld kacheln={KACHELN} />
           <HaeufigGebraucht />
         </div>
-        <aside aria-label="Arbeitsplatz"
-          className={`grid content-start gap-y-4 ${pk('lg:row-span-2 lg:grid-rows-subgrid', '@5xl/pane:row-span-2 @5xl/pane:grid-rows-subgrid')}`}>
+        <aside aria-label="Arbeitsplatz" className={`grid content-start gap-y-4 ${pk('lg:grid-rows-[auto_1fr]', '@5xl/pane:grid-rows-[auto_1fr]')}`}>
           <Schnellwerkzeug />
           <ZuletztVerwendet />
         </aside>
