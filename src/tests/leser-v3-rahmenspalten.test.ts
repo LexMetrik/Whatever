@@ -116,6 +116,14 @@ describe('Entscheid A · das Erlass-Blatt ist eine Spur rechts — zu eine Schie
     expect(b.spurVersatzRechtsRem).toBe(0);
   });
 
+  it('Blatt zu: Gliederung klappen verstellt den Rahmen NICHT (D28, Kopf-Griffe bleiben stehen)', () => {
+    for (const fenster of [1024, 1280, 1440, 1920]) {
+      const auf = rahmenPx({ ...LAGE, raum: raumFuer(fenster) });
+      const zu = rahmenPx({ ...LAGE, raum: raumFuer(fenster), tocOffen: false });
+      expect(zu, `@${fenster}`).toBe(auf);
+    }
+  });
+
   it('eingeklappte Gliederung: Schiene links, bei offenem Blatt holt ihr Klick NICHTS', () => {
     const b = rahmenBild({ ...LAGE, tocOffen: false, blattOffen: true });
     expect(b.gliederungSpalte).toBe(false);
