@@ -61,7 +61,6 @@ const urteil = bewerte({
   goldenGeaendert: geaendert.includes(GOLDEN),
   trailer,
   quelle: pr ? `PR #${pr.nummer}, Queue-Squash aus Titel+Body` : `Commits ${basis.slice(0, 8)}..${KOPF}`,
-  // R1-Squash (#1026/#1023): nur im pull_request-Lauf aus dem Ereignis.
   prTitel: prTitelAusEreignis(process.env, (p) => readFileSync(p, 'utf8')),
 });
 console.log(urteil.text);
