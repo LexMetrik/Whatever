@@ -535,7 +535,8 @@ test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/')
     const links = haeufig(page).getByRole('link')
-    await expect(links).toHaveText(['BV', 'ZGB', 'OR', 'StGB', 'ZPO', 'StPO', 'SchKG'])
+    // U7: Zeile = Kürzel · SR · Titel — das Kürzel steht vorn (deklarierte Design-Änderung).
+    await expect(links).toHaveText([/^BV/, /^ZGB/, /^OR/, /^StGB/, /^ZPO/, /^StPO/, /^SchKG/])
     await expect(haeufig(page).getByRole('link', { name: /^StGB – Schweizerisches Strafgesetzbuch$/ })).toHaveAttribute('href', '/gesetze/bund/STGB')
     await links.nth(1).focus()
     await page.keyboard.press('Enter')
