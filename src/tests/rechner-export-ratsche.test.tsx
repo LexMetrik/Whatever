@@ -35,9 +35,12 @@ import { ROUTEN_MANIFEST } from '../routesManifest';
 
 vi.mock('../components/IcsExportButton', async (orig) => {
   const m = await orig<typeof import('../components/IcsExportButton')>();
-  const Ics = (p: Parameters<typeof m.IcsExportButton>[0]) => (
-    <><i data-probe="ICS" data-props={JSON.stringify({ ...p, query: p.query?.() })} /><m.IcsExportButton {...p} /></>
-  );
+  // Schlüssel sortiert: die Reihenfolge der JSX-Attribute ist kein Verhalten.
+  const Ics = (p: Parameters<typeof m.IcsExportButton>[0]) => {
+    const props: Record<string, unknown> = { ...p, query: p.query?.() };
+    const sortiert = Object.fromEntries(Object.keys(props).sort().map((k) => [k, props[k]]));
+    return <><i data-probe="ICS" data-props={JSON.stringify(sortiert)} /><m.IcsExportButton {...p} /></>;
+  };
   return { ...m, IcsExportButton: Ics };
 });
 vi.mock('../components/PdfExport', async (orig) => {
