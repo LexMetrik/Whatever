@@ -18,7 +18,7 @@ import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
 import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
-import { normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
+import { blattArtikel, normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
 import { useBlattGedaechtnis } from './blattGedaechtnis';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
@@ -35,7 +35,6 @@ import { kopfGlypheKlassen, kopfGriffKlassen, panelForm, useKopfStufe } from './
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, panelEbene, suchFeldName, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
-import { blattArtikel } from './BlattArtikel';
 import { useLeserV3Modell } from './leserV3Modell';
 
 // ═══ LESER V3 · Rahmen (FAHRPLAN-LESER-V3, Etappe H1) ═══════════════════════

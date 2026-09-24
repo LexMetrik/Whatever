@@ -4,8 +4,7 @@ import { NormChip } from '../../../components/vorlagen/NormChip';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
 import { EntstehungsBlock } from '../../../components/entstehung/EntstehungsBlock';
 import { sammleVerweise } from '../parts/ArtikelLeser.fussnoten';
-import type { NormSnapshot } from '../../../lib/normtext/typen';
-import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
+import type { BlattArtikel } from './panelModell';
 import type { MaterialBezug, Werkzeug } from '../../../lib/normtext/werkzeuge';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
 import { bestimmungGenitiv as dieses, type BestimmungsWort } from './erlassWortlaut';
@@ -52,28 +51,10 @@ import { bestimmungGenitiv as dieses, type BestimmungsWort } from './erlassWortl
 // David 6.9.2026, «nur auf Wunsch sichtbar»). Farben ausschliesslich über die
 // Register-Token (`border-reg-g`), nie über Board-Hexwerte (§13).
 
-/** Der Artikel, auf den sich das Blatt gerade bezieht — Eintrag und Historie. */
-export interface BlattArtikel {
-  eintrag: NormSnapshot;
-  /** `undefined` = kein Historie-Eintrag (oder Shard noch unterwegs). */
-  historie?: ArtikelHistorie;
-}
-
-/**
- * Löst den Blatt-Artikel aus dem Token auf, über die Positions-Map, die der
- * Leser ohnehin hält (`artIndex`, keine Suche über 1686 Einträge je Render).
- */
-export function blattArtikel(
-  eintraege: readonly NormSnapshot[],
-  artIndex: ReadonlyMap<string, number>,
-  historieFuer: (token: string) => ArtikelHistorie | undefined,
-  token: string | null,
-): BlattArtikel | null {
-  const i = token ? artIndex.get(token) : undefined;
-  const eintrag = i === undefined ? undefined : eintraege[i];
-  if (!eintrag || !token) return null;
-  return { eintrag, historie: historieFuer(token) };
-}
+// Der Blatt-Artikel selbst (Typ + Auflösung) steht als Modell-Funktion neben
+// `panelBezug` in `./panelModell` — er ist dieselbe Frage «worauf bezieht sich
+// das Blatt?», und der Rahmen importiert ihn von dort (v3-Grenze 420 Zeilen).
+export type { BlattArtikel } from './panelModell';
 
 /**
  * Eine Klappzeile des Blatts (Board-Anatomie, s. Kopf). `<button>` mit

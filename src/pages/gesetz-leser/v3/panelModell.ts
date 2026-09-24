@@ -6,6 +6,8 @@ import { bereichLabel, type Zeitbereich } from '../bezugZeit';
 import { bestimmungDativ, type BestimmungsWort } from './erlassAnsicht';
 import { STATUS_RANG, type BezugStatus } from '../../../lib/verzahnung/facetten';
 import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
+import type { NormSnapshot } from '../../../lib/normtext/typen';
+import type { ArtikelHistorie } from '../../../lib/normtext/historie-laden';
 
 // ─── Modell des Rechtsprechungs-/Kontext-Panels (FAHRPLAN-LESER-V3 Kap. 4d, H3) ─
 //
@@ -347,6 +349,30 @@ export function panelBezug(
   if (aktArtikel && aktivToken) return { label: aktArtikel, token: aktivToken };
   if (!erster) return { label: null, token: null };
   return { label: labelMitBereich(erster.artikelLabel, erster.artikel), token: erster.artikel };
+}
+
+/**
+ * S6 W1f (Entscheid David 24.9.2026) · der Artikel des Blatts mit Eintrag und
+ * Historie — für die Auskunft der gefallenen Funktionszeile im Blatt
+ * (`./BlattArtikel`). Löst über die Positions-Map auf, die der Leser ohnehin
+ * hält (`artIndex`), keine Suche über 1686 Einträge je Render.
+ */
+export interface BlattArtikel {
+  eintrag: NormSnapshot;
+  /** `undefined` = kein Historie-Eintrag (oder Shard noch unterwegs). */
+  historie?: ArtikelHistorie;
+}
+
+export function blattArtikel(
+  eintraege: readonly NormSnapshot[],
+  artIndex: ReadonlyMap<string, number>,
+  historieFuer: (token: string) => ArtikelHistorie | undefined,
+  token: string | null,
+): BlattArtikel | null {
+  const i = token ? artIndex.get(token) : undefined;
+  const eintrag = i === undefined ? undefined : eintraege[i];
+  if (!eintrag || !token) return null;
+  return { eintrag, historie: historieFuer(token) };
 }
 
 /**
