@@ -576,6 +576,9 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
 - **U4 «Häufig gebraucht» unter den vier Kacheln** (David 24.9. «was kommt unter der kacheln?», Auswahl mit
   Skizze): eine ruhige Zeile mit direkten Links BV · ZGB · OR · StGB · ZPO · StPO · SchKG in den Leser; lädt
   nichts nach, Ziele aus dem bestehenden Erlass-Register (keine handgeschriebenen URLs, §5).
+  **Höhe (Auswahl David 24.9.):** Die Fläche Schnellwerkzeug ist in allen drei Varianten gleich hoch (so hoch
+  wie Verzugszins, kein Springen); die Kacheln behalten ihre bisherige Höhe, «Häufig gebraucht» darunter
+  füllt den Rest der linken Spalte — Kacheln + Zeile enden bündig mit der Fläche (löst «A bündig» 24.9. ab).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
