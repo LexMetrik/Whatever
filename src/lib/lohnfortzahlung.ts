@@ -10,7 +10,7 @@ import {
   skaliereSkalaDauer,
   dauerUeberDreiMonate,
 } from './datumsUtils';
-import { skaleFuerKanton, dauerAusSkala } from '../data/lohnfortzahlungSkalen';
+import { skaleFuerKanton, dauerAusSkala, skalaHinweise } from '../data/lohnfortzahlungSkalen';
 import { rechtsprechung } from '../data/verifikation';
 
 // ─── Feste Normverweise (Art. 324a OR) ────────────────────────────────────
@@ -209,7 +209,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
     normen: [N_324a_2],
   });
 
-  // ─── Schritt 4: Skala ablesen (§2.4 «mindestens», §2.5 DJ>11) ────────
+  // ─── Schritt 4: Skala ablesen (§2.4 «mindestens», §2.5 Beleggrenze) ──
 
   const skalaEintrag = dauerAusSkala(skala, dienstjahr);
   if (!skalaEintrag) {
@@ -224,11 +224,10 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   }
 
   const basisdauer = skalaEintrag.dauer;
-  if (dienstjahr > 11) {
-    warnungen.push(
-      `Skala-Fortschreibung für das ${dienstjahr}. Dienstjahr ist in der vorliegenden SECO-/SHK-Tabelle (nur bis 11. DJ abgedruckt) nicht belegt (verifiziert: false). Insufficient data – kantonale Praxis prüfen.`,
-    );
-  }
+  // RL-25 (F4-05, W-13): Beleggrenze je Skala (Basel/Zürich SHK bis 11. DJ,
+  // Bern Obergericht BE bis 19. DJ), Fortschreibungen und NW-Widerspruch offenlegen.
+  const hinweise = skalaHinweise(kanton, skala, dienstjahr);
+  warnungen.push(...hinweise.warnungen);
 
   rechenweg.push({
     beschreibung: `Schritt 4 – Skala-Dauer ablesen (${skala.name}, ${dienstjahr}. DJ)`,
@@ -237,7 +236,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
         ? `1. Dienstjahr: mindestens ${formatSkalaDauer(basisdauer)} (Art. 324a Abs. 2 OR – «mindestens drei Wochen»). `
         : `Regelmass laut Gerichtspraxis: ${formatSkalaDauer(basisdauer)}. `) +
       `Orientierungswert, nicht gerichtsverbindlich (SHK Art. 324a N 50)` +
-      (dienstjahr > 11 ? ` – Fortschreibung > 11. DJ aus der Quelle nicht belegt.` : '') + '.',
+      hinweise.rechenwegZusatz + '.',
     normen: [N_324a_2],
   });
 
