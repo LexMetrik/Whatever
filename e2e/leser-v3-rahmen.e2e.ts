@@ -189,8 +189,9 @@ test.describe('Ä60 (c) — Text und Beiwerk-Blatt stehen nebeneinander', () => 
   test('(a) @1440: das Blatt ist eine Spur neben der Lese-Zelle, Gliederung bleibt, Rundlauf verlustfrei', async ({ page }) => {
     await leserLaden(page, 1440)
     const zu = await messen(page)
-    // Zu: Gliederung 288 + 20 + Lesemass 720 + 20 + Schiene 36 = 1084 px (Entscheid A).
-    expect(zu.rahmen, '@1440 zu: Rahmen = Gliederung + Lesemass + Schiene').toBe(1084)
+    // Zu bleibt der Rahmen der Seitenrahmen (1072 px) — die Schiene weitet ihn
+    // nicht (R8 `kein-abschnitt`: 1084 px liefen über `div.lc-route`).
+    expect(zu.rahmen, '@1440 zu: der Rahmen ist breiter als der Seitenrahmen').toBe(1072)
     await expect(page.locator('[data-v3-blatt-schiene]'), '@1440 zu: die Blatt-Schiene fehlt').toBeVisible()
 
     await panelAufziehen(page)

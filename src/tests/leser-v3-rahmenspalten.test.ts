@@ -116,11 +116,13 @@ describe('Entscheid A · das Erlass-Blatt ist eine Spur rechts — zu eine Schie
     expect(b.spurVersatzRechtsRem).toBe(0);
   });
 
-  it('Blatt zu: Gliederung klappen verstellt den Rahmen NICHT (D28, Kopf-Griffe bleiben stehen)', () => {
+  it('Blatt zu: der Rahmen bleibt der Ruherahmen — auch beim Gliederung-Klappen (D28, R8)', () => {
     for (const fenster of [1024, 1280, 1440, 1920]) {
       const auf = rahmenPx({ ...LAGE, raum: raumFuer(fenster) });
       const zu = rahmenPx({ ...LAGE, raum: raumFuer(fenster), tocOffen: false });
       expect(zu, `@${fenster}`).toBe(auf);
+      // R8 (`kein-abschnitt`, 24.9.2026): 1084 px liefen über `div.lc-route` (1072).
+      expect(auf, `@${fenster}: die Schiene weitet den Rahmen`).toBe(raumFuer(fenster).ruhePx);
     }
   });
 
