@@ -25,8 +25,9 @@ Risiko-Datei, bis genau für diesen Diff ein `bestanden`-Nachweis vorliegt.
    erzeugt hat.
 2. **Amtliche Quelle vor sich.** Immer gegen die **amtliche** Fassung prüfen
    (Fedlex-Filestore-HTML für Bund, LexWork/amtlicher Erlass für Kanton), nicht
-   gegen den Code, nicht gegen eine zweite Ableitung. Bei Unsicherheit zur
-   Quell-Wahl den Skill `scraping-swiss-official-sources` heranziehen.
+   gegen den Code, nicht gegen eine zweite Ableitung — nie ein Snippet
+   (25.9.2026 BGer 9C_396/2018). Bei Unsicherheit zur Quell-Wahl den Skill
+   `scraping-swiss-official-sources` heranziehen.
 3. **Widerlegen, nicht abnicken.** Aktiv nach dem Fehler suchen. Erst wenn ein
    ernsthafter Widerlegungsversuch scheitert, ist das Verdikt `bestanden`.
 4. **Belegpflicht.** Jeder Befund UND jedes `bestanden` mit konkreter Norm
