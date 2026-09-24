@@ -625,6 +625,10 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   nach #1053): Wahl als zwei hohe Spalten Rechner · Vorlagen (`WahlSpalte` geteilt in `BlattBausteine.tsx`),
   darunter Kategorien bzw. Rechtsgebiete mit Anzahl aus `KATALOG_KARTEN`; Stufen `werkzeuge/rechner/<kategorie>`
   und `werkzeuge/vorlagen/<gebiet>`, unbekannte ID → Liste.
+- **U12 (Nachtrag David 24.9.2026 abends):** «materialien soll erläuterungen und materialien enthalten» → Kachel
+  «Materialien» nennt beide Gattungen (Teile 1'356 Materialien · 327 Erläuterungen, Zähler-Felder
+  `materialienGesetzgebung`/`materialienErlaeuterungen`), Blatt mit Schalter Alle · Materialien · Erläuterungen;
+  Zuordnung aus `lib/materialien/gattung.ts` = Leser-Reiter-Regel (§5).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
