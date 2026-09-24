@@ -37,15 +37,6 @@ export interface StartseiteZaehler {
   /** W2·24-D26: amtliche Leitentscheide (Nicht-Verweise, leitcharakter
    *  `leitentscheid`) — Ziel `/rechtsprechung?leit=1`. */
   rechtsprechungLeitentscheide: number;
-  /** S3-Nebenfund (23.9.2026): die bis zu sechs neuesten Bundesgerichts-
-   *  Entscheide (Nicht-Verweise, neueste zuerst — dieselbe Auswahl wie zuvor
-   *  `start/EntscheideListe.tsx` zur Laufzeit traf), als Mini-Projektion für
-   *  die Startseite. Ersetzt den Client-Fetch des vollen Registers (§15).
-   *  `normen` = bis zu drei aufgelöste Norm-Kürzel der angewandten Normen. */
-  neuesteEntscheide: Array<{
-    key: string; datum: string; zitierung: string; leitentscheid: boolean;
-    gebiet: string; regesteKurz: string | null; normen: string[];
-  }>;
   /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */
   materialien: number;
   /** W2·24-R3: erfasste Materialien je Behörde, Reihenfolge BEHOERDEN (rang);
@@ -214,84 +205,6 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     }
   ],
   "rechtsprechungLeitentscheide": 1259,
-  "neuesteEntscheide": [
-    {
-      "key": "bger_1C_733_2025",
-      "datum": "2026-06-17",
-      "zitierung": "BGer 1C_733/2025 vom 17. Juni 2026",
-      "leitentscheid": false,
-      "gebiet": "Öffentliches Recht",
-      "regesteKurz": null,
-      "normen": [
-        "BGG",
-        "BV"
-      ]
-    },
-    {
-      "key": "bger_7B_651_2026",
-      "datum": "2026-06-16",
-      "zitierung": "BGer 7B_651/2026 vom 16. Juni 2026",
-      "leitentscheid": false,
-      "gebiet": "Verfahrensrecht",
-      "regesteKurz": null,
-      "normen": [
-        "AIG",
-        "BGG",
-        "BV"
-      ]
-    },
-    {
-      "key": "bger_12T_3_2025",
-      "datum": "2026-06-15",
-      "zitierung": "BGer 12T_3/2025 vom 15. Juni 2026",
-      "leitentscheid": false,
-      "gebiet": "Öffentliches Recht",
-      "regesteKurz": null,
-      "normen": [
-        "AsylG",
-        "BGG",
-        "VGG"
-      ]
-    },
-    {
-      "key": "bger_12T_4_2025",
-      "datum": "2026-06-15",
-      "zitierung": "BGer 12T_4/2025 vom 15. Juni 2026",
-      "leitentscheid": false,
-      "gebiet": "Öffentliches Recht",
-      "regesteKurz": null,
-      "normen": [
-        "AsylG",
-        "BGG",
-        "VGG"
-      ]
-    },
-    {
-      "key": "bger_1C_329_2026",
-      "datum": "2026-06-12",
-      "zitierung": "BGer 1C_329/2026 vom 12. Juni 2026",
-      "leitentscheid": false,
-      "gebiet": "Öffentliches Recht",
-      "regesteKurz": null,
-      "normen": [
-        "BGG",
-        "BV"
-      ]
-    },
-    {
-      "key": "bger_8C_559_2025",
-      "datum": "2026-06-12",
-      "zitierung": "BGer 8C_559/2025 vom 12. Juni 2026",
-      "leitentscheid": false,
-      "gebiet": "Sozialversicherung",
-      "regesteKurz": null,
-      "normen": [
-        "ATSG",
-        "BGG",
-        "IVG"
-      ]
-    }
-  ],
   "materialien": 1683,
   "materialienBehoerden": [
     {

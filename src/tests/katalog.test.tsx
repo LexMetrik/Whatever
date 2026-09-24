@@ -235,7 +235,11 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
     for (const bereich of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Werkzeuge']) {
       expect(html, `Bereichs-Reihe: ${bereich}`).toContain(`>${bereich}</span>`);
     }
-    expect(html, 'Bereichs-Reihe trägt die Navigations-Ziele').toContain('href="/rechtsprechung"');
+    // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START-LAYOUT, David 24.9.2026
+    // «entscheide sollen weg», §6.3): `href="/rechtsprechung"` stand zuletzt nur
+    // noch im Link «alle Entscheide» der gestrichenen Entscheid-Liste — die
+    // Kacheln sind seit S3 Knöpfe, die das Blatt vor Ort öffnen (oben: vier
+    // `aria-controls="lm-start-blatt"`). Der Weg zur Rubrik führt über das Blatt.
     // Sprach-Diät (§6 (h)): die beiden getilgten Wendungen stehen nirgends mehr.
     expect(html).not.toContain('an einem Ort');
     expect(html).not.toContain('miteinander verzahnt');
@@ -283,12 +287,17 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
   // «/» und werden als fehlend geprüft; `/rechtsprechung` bleibt als Link
   // «alle Entscheide» in `EntscheideListe.tsx` bestehen — darum dort kein
   // `not.toContain`.
-  it('die vier Bestände stehen als Kacheln, darunter Entscheide und Schnellwerkzeug — kein lc-tile-Rezept', () => {
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START-LAYOUT, David 24.9.2026
+  // «entscheide sollen weg», §6.3): die Entscheid-Liste ist gestrichen — ihre
+  // Überschrift wird jetzt als FEHLEND geprüft (kehrt den Entscheid vom
+  // 23.9.2026 «neuste entscheide sollen nicht weg» um). Der Link «alle
+  // Entscheide» fiel mit ihr; /rechtsprechung erreicht man über die Kachel.
+  it('die vier Bestände stehen als Kacheln, daneben das Schnellwerkzeug — keine Entscheid-Liste, kein lc-tile-Rezept', () => {
     const html = startHtml('/');
     expect(html.match(/<button[^>]*aria-expanded="false"[^>]*aria-controls="lm-start-blatt"/g) ?? []).toHaveLength(4);
     expect(html).not.toContain('href="/rechner"');
     expect(html).not.toContain('href="/materialien"');
-    expect(html).toContain('Jüngste Entscheide im Korpus');
+    expect(html).not.toContain('Jüngste Entscheide im Korpus');
     expect(html).toContain('Frist berechnen');
     // Das Blatt ist im Prerender ZU (Hydration, §15).
     expect(html).not.toContain('id="lm-start-blatt"');

@@ -204,55 +204,12 @@ test.describe('W2·10-UI-NAV-J · Rechtsprechungs-Seiten', () => {
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  // ── J4 · Entscheid-Liste der Startseite ───────────────────────────────────
-  test('Entscheid-Liste: Gebiet je Zeile, Datum einmal je Gruppe, keine Gericht-Fusszeile', async ({ page }) => {
-    const fehler = fehlerSammeln(page)
-    await page.goto('/')
-    // DEKLARIERTE ANPASSUNG (W2·23-STARTSEITE-V4 §3 #6, 5.9.2026, §6.3): die
-    // Sektion heisst nicht mehr «Neue Bundesgerichtsentscheide» (aria-label),
-    // sondern trägt eine echte <h2> «Jüngste Entscheide im Korpus» — ein
-    // §8-Wortlaut-Fix (der Korpus endet ggf. Monate zurück, «neu» versprach
-    // Aktualität, die die Daten nicht tragen).
-    // DEKLARIERTE ANPASSUNG (W2·24-DESIGN-IDENTITAET R3, 6.9.2026, §6.3): aus
-    // dem waagrechten KARTENSTREIFEN ist die LISTE des Referenzbildes geworden
-    // (Datum · Zitierung · Gebiet/Regeste). Geprüft werden dieselben drei
-    // Zusicherungen an ihrer neuen Form — (a) Datum-Dedupe, (b) jede Zeile
-    // nennt ihr Rechtsgebiet, (c) keine «Bundesgericht»-Fusszeile. Der
-    // Gebiets-Träger ist nicht mehr ein `.lc-overline`-Badge IM Link, sondern
-    // die dritte Spalte der Zeile; sie trägt dafür ein stabiles `data-gebiet`.
-    const liste = page.getByRole('region', { name: 'Jüngste Entscheide im Korpus' })
-    await expect(liste).toBeVisible()
-    await expect(liste.getByRole('listitem').first()).toBeVisible()
-
-    // (a) Datum-Dedupe: jedes Datum steht in der Liste GENAU EINMAL.
-    // §6.3-DEKLARATION (W2·24-DESIGN-IDENTITAET, Runde FC, 7.9.2026): der Griff
-    // war `li > p` — das Gruppen-Datum stand als eigener `<p class="num">` direkt
-    // im `<li>` (R3, 4dd675fd3). R9-2/A-3 (55acbf45d) hat genau diesen SECHSTEN
-    // byte-gleichen Datums-Formatierer eingesammelt: die Gruppe trägt ihr Datum
-    // seither über den geteilten Baustein `ui/Datum` (§5), also als
-    // `span.lc-ziffern` statt als `<p>`. NULLPROBE: `EntscheideListe.tsx` und
-    // `ui/Datum.tsx` sind byte-gleich zur Zweig-Basis `018b41a37` — der Griff war
-    // schon dort tot, die Wurzel liegt VOR diesem Zweig, nicht in ihm.
-    // Die drei Zusagen bleiben wörtlich; nur der Griff folgt dem Baustein:
-    // `.lc-ziffern` ist die Ziffernrolle, die `ui/Datum` setzt und ausdrücklich
-    // nicht verhandelt (Herleitung im Kopf des Bausteins).
-    const daten = await liste.locator('li > .lc-ziffern').allTextContents()
-    expect(daten.length, 'mindestens eine Datums-Gruppe').toBeGreaterThan(0)
-    expect(new Set(daten).size, `Daten doppelt: ${daten.join(', ')}`).toBe(daten.length)
-
-    // (b) Jede Zeile trägt genau ein Rechtsgebiet, und das ist nicht leer.
-    const zeilen = liste.locator('a[href^="/rechtsprechung/"]')
-    const anzahl = await zeilen.count()
-    expect(anzahl).toBeGreaterThan(0)
-    const gebiete = liste.locator('[data-gebiet]')
-    expect(await gebiete.count(), 'ein Gebiet je Entscheid-Zeile').toBe(anzahl)
-    for (let i = 0; i < anzahl; i++) {
-      expect((await gebiete.nth(i).textContent())?.trim()).toBeTruthy()
-    }
-
-    // (c) Die «Bundesgericht»-Fusszeile ist weg — sie wiederholte den Titel.
-    expect(await liste.textContent()).not.toContain('Bundesgericht')
-
-    expect(fehler, fehler.join('\n')).toEqual([])
-  })
+  // ── J4 · Entscheid-Liste der Startseite — GESTRICHEN ─────────────────────
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START-LAYOUT, David 24.9.2026
+  // «entscheide sollen weg», §6.3): die Liste «Jüngste Entscheide im Korpus»
+  // steht nicht mehr auf «/» (kehrt «neuste entscheide sollen nicht weg» vom
+  // 23.9.2026 um). Ihre drei Zusagen (Datum-Dedupe, Gebiet je Zeile, keine
+  // Gericht-Fusszeile) hatten nur diese Liste zum Gegenstand; ein Test ohne
+  // Gegenstand prüft nichts (§6.7). Das Fehlen der Überschrift bewacht
+  // `src/tests/katalog.test.tsx`; die Rubrik /rechtsprechung bleibt unberührt.
 })
