@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { NormChip } from '../vorlagen/NormChip';
 import { SeitenTitel } from '../ui/SeitenTitel';
+import { EntwurfHinweis } from '../EntwurfLegende';
+import type { Status } from '../../lib/startseiteConfigTypen';
 
 // ─── WerkzeugKopf: der Kopf der Werkzeuge (W2·29-WERKBANK-VORLAGEN V1) ───────
 //
@@ -13,6 +15,13 @@ import { SeitenTitel } from '../ui/SeitenTitel';
 // das Haus erlaubt als Fläche nur `--reg-w-flaeche` mit Tinte (F0.2).
 // Heute nutzen ihn die Vorlagen; die Rechner ziehen in W2·29-WERKBANK-RECHNER
 // nach. Reine Darstellung (§3).
+//
+// STATUS (RL-12 PR 2, Befund R3-06): rechts im Band steht vor dem Etikett der
+// Prüfstand der Karte, die die Seite vertritt — «Entwurf» im Wortlaut der
+// Katalog-Legende (`EntwurfHinweis`). Wer per Direktlink kommt, sieht ihn so
+// wie im Katalog (§8). «geprüft» zeigt keinen Warnhinweis; ohne `status`
+// (Seite ohne Karte) bleibt das Band wie bisher — der Kopf rät keinen Status.
+// Etikett und Status stehen NEBENEINANDER, keiner verdrängt den anderen.
 
 /** Ein Norm-Chip des Kopfes — dieselben Angaben, die `NormChip` nimmt. */
 interface WerkzeugNorm {
@@ -22,12 +31,14 @@ interface WerkzeugNorm {
   titel?: string;
 }
 
-export function WerkzeugKopf({ overline, titel, titelKlasse, etikett, vorspann, intro, normen, children }: {
+export function WerkzeugKopf({ overline, titel, titelKlasse, status, etikett, vorspann, intro, normen, children }: {
   /** Einordnung über dem Titel («Arbeit · Vorlage»). */
   overline: string;
   titel: string;
   /** Zusatzklassen am Titel (z. B. Umbruchregeln für lange Komposita). */
   titelKlasse?: string;
+  /** Prüfstand der Katalog-Karte der Seite (RL-12); «entwurf» → Marke im Band. */
+  status?: Status;
   /** Rechts im Band: das Etikett des Werkzeugs (Formvorschrift der Vorlage). */
   etikett?: ReactNode;
   /** Direkt unter dem Band, vor der Einleitung (Rückweg der Vorlagen). */
@@ -44,7 +55,14 @@ export function WerkzeugKopf({ overline, titel, titelKlasse, etikett, vorspann, 
           <p className="lc-overline">{overline}</p>
           <SeitenTitel stimme="serif" className={titelKlasse}>{titel}</SeitenTitel>
         </div>
-        {etikett}
+        {(status === 'entwurf' || etikett) && (
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            {status === 'entwurf' && (
+              <span data-werkzeug-status="entwurf" className="min-w-0"><EntwurfHinweis /></span>
+            )}
+            {etikett}
+          </div>
+        )}
       </div>
       {vorspann}
       {intro && <p className="font-serif text-body-l text-ink-600 max-w-reading">{intro}</p>}

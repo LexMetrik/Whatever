@@ -70,7 +70,7 @@ function eingabeInhalt({ a, set }: SeiteCtx<VvAntworten>, schritt: number) {
             <BetragsFeld className={inputCls + ' sm:max-w-[12rem]'} value={a.betrag} onChange={(v) => set('betrag', v)} placeholder="z. B. 25'000.00" />
           </Field>
         )}
-        <Field label="Verzicht bis (Enddatum)" hint="höchstens zehn Jahre ab BEGINN der Verjährung (Art. 141 Abs. 1 OR) – die Erklärung begrenzt sich zusätzlich selbst auf die gesetzliche Höchstdauer">
+        <Field label="Verzicht bis (Enddatum)" hint="höchstens zehn Jahre ab Datum dieser Erklärung (Art. 141 Abs. 1 OR) – das Gesetz lässt den Beginn offen, die Erklärung legt ihn darum selbst fest">
           <DatumsFeld value={a.verzichtBis} onChange={(v) => set('verzichtBis', v)} className={inputCls} />
         </Field>
         <Checkbox

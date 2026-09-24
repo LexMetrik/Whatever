@@ -58,6 +58,7 @@ export function MappenSeite({ karte: card, titel, badge, intro, musterdaten, chi
     <BeruehrtKontext.Provider value={beruehrt}>
       <div className="space-y-6" onInput={merke} onChange={merke}>
         <WerkzeugKopf overline={`${card?.rechtsgebiet ?? 'Gesellschaftsrecht'} · Vorlage`} titel={titel}
+          status={card?.status}
           etikett={<span data-formgate className="lc-badge lc-badge-warn">{badge}</span>}
           vorspann={(
             <Link to="/" className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">

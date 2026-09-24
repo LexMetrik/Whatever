@@ -13,7 +13,7 @@ export const VORLAGEN_EINGABEN_GESELLSCHAFT: Record<string, VorlageCard> = {
     formGate: 'fertig',
     rechtsbereich: 'privat',
     title: 'Schlichtungsgesuch (alle Kantone)',
-    description: 'Stellt ein Schlichtungsgesuch nach Art. 202 ZPO zusammen – Parteien, Rechtsbegehren, Streitgegenstand, Beilagen. Behördenadresse automatisch für alle 26 Kantone (PLZ/Gemeinde-genau in ZH/AG/SG/TG/FR/ZG/AI); sachliches Spezial-Routing amtlich abgenommen für Basel-Stadt.',
+    description: 'Stellt ein Schlichtungsgesuch nach Art. 202 ZPO zusammen – Parteien, Rechtsbegehren, Streitgegenstand, Beilagen. Behördenadresse automatisch für alle 26 Kantone (PLZ/Gemeinde-genau in ZH/AG/SG/TG/FR/ZG/AI); sachliches Spezial-Routing für Basel-Stadt (Adressen nach Staatskalender BS; fachliche Abnahme ausstehend).',
     // Abweichung von der Auftrags-Anweisung (status: 'geplant') offengelegt:
     // Nach dem neueren Status-Modell-Auftrag erhalten GEBAUTE, fachlich noch
     // nicht geprüfte Einträge 'entwurf' (orange, verified: false) – als
@@ -42,7 +42,7 @@ export const VORLAGEN_EINGABEN_GESELLSCHAFT: Record<string, VorlageCard> = {
     formGate: 'fertig',
     rechtsbereich: 'privat',
     title: 'Klage (vereinfachtes Verfahren)',
-    description: 'Klage nach Art. 244 ZPO aus festen Bausteinen: Rechtsbegehren (beziffert/unbeziffert), Streitgegenstand, freiwillige strukturierte Begründung mit Beweismitteln, Beilagen mit Klagebewilligung – Gerichts-Adressat für alle 26 Kantone (Spruchkörper-Routing amtlich abgenommen für Basel-Stadt), Kostenfreiheits-Prüfung und Klagefrist mit Gerichtsferien.',
+    description: 'Klage nach Art. 244 ZPO aus festen Bausteinen: Rechtsbegehren (beziffert/unbeziffert), Streitgegenstand, freiwillige strukturierte Begründung mit Beweismitteln, Beilagen mit Klagebewilligung – Gerichts-Adressat für alle 26 Kantone (Spruchkörper-Routing für Basel-Stadt nach GOG BS, fachliche Abnahme ausstehend), Kostenfreiheits-Prüfung und Klagefrist mit Gerichtsferien.',
     status: 'entwurf',
     norms: [
       // Geltungsbereich vereinfachtes Verfahren
