@@ -29,8 +29,9 @@
 // Kosten-Rechner (Prozesskosten, Notariat/Grundstückkauf, Beurkundung,
 // Grundbuch-Eintragung) nutzen ErgebnisExport. «Teilen» wandert aus der
 // Schalterzeile hinter Aktenzeichen und PDF (§R-5); Props (Query, PDF-SHA)
-// byte-gleich; bei Beurkundung Baurecht BS (Tarif offen, kein PDF) kommt das
-// Aktenzeichen-Feld hinzu. Fixture neu erzeugt, Diff im Commit-Body.
+// byte-gleich. Das Aktenzeichen-Feld steht nur, wenn PDF oder Kalender es
+// tragen (Beurkundung Baurecht BS, Tarif offen: weiter nur «Teilen», wie vor
+// R5a). Fixture neu erzeugt, Diff im Commit-Body.
 import { describe, it, expect, vi, beforeAll, afterAll, afterEach } from 'vitest';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
