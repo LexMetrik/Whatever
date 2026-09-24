@@ -4183,6 +4183,30 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    `tailwind.config.js` (F9); hier nur, dass es eine eigene Zeile ist. */
 .lr7-bez-skelett { display: block; }
 
+/* (d) ARTIKEL-AKTIONEN «Zitat · Link · Amtliche Fassung ↗» (Inventar 2.3.10;
+   Wunsch David 24.9.2026, «vorallem diese leiste muss überarbeitet werden»).
+   Die ruhige Textzeile der Gesamtansicht (`parts/ArtikelAktionen.tsx`,
+   `[data-aktionen-ruhig]`) stand unter JEDEM Artikel sichtbar — ~1'700-mal im
+   OR dieselbe Zeile, die den Linienstapel Apparat-Haarlinie · Zeile ·
+   Artikel-Trenner verdichtete. Auf Geräten MIT Hover ruht sie jetzt
+   unsichtbar und erscheint am Artikel, der Hover, Fokus (Tastatur: die Knöpfe
+   bleiben im Fokus-Weg, `opacity` statt `display`) oder das Sprungziel hat.
+   Ohne Hover (Touch) gilt die Regel nicht: dort steht sie immer. Der Platz
+   bleibt reserviert — kein Layout-Sprung beim Überfahren (CLS, §15). Das
+   Dossier des Einzelmodus (Knopf-Gestalt, D-E4) ist nicht betroffen. */
+@media (hover: hover) and (pointer: fine) {
+  [data-aktionen-ruhig] {
+    opacity: 0;
+    transition: opacity var(--dur-fast, 120ms) var(--ease, ease);
+  }
+  article:hover [data-aktionen-ruhig],
+  article:focus-within [data-aktionen-ruhig],
+  article:target [data-aktionen-ruhig] { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-aktionen-ruhig] { transition: none; }
+}
+
 /* ═══ W2·24-R12A · ÜBERSICHTS-KÖPFE (Präfix `.ub-`, additiv am Dateiende) ═════
    D22 (David 6.9.2026, Bild /gesetze @~1160): «hier hat es wieder komische
    lücken». Drei Ursachen, alle in der Kopf-Zone der fünf Übersichten:
