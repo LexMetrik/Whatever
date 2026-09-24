@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Berechnungsergebnis, BerechnungsStatus } from '../types/legal';
-import { sansAmp } from './typografie';
 import { RechtsprechungAnker } from './RechtsprechungLink';
 import { NormText } from './NormText';
+import { AbschnittKopf } from './layout/AbschnittKopf';
 // FAHRPLAN-DESIGN 2.6: lokaler NormChip entfernt — NormLink (vorlagen/ui)
 // ist die EINE Fedlex-Chip-Komponente (deckt «bemerkung» jetzt mit ab).
 import { KopierButton, NormLink } from './vorlagen/ui';
@@ -108,18 +108,10 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
           die zweite Zeile, statt dem Titel 95 px zu lassen. Anatomie und
           Reihenfolge unverändert (§3). */}
       <div className="border-b border-rule-soft py-4 flex flex-wrap items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="lc-overline">Ergebnis</p>
-          {/* R5-F2 (6.9.2026, Befund R-3): der Ergebnis-Titel war ein `h3`
-              direkt unter dem Seiten-`h1` — axe `heading-order`, gemessen auf
-              `/rechner/verjaehrung` («Verjährung (Art. 60, 67, 127 ff. OR)») und
-              `/rechner/kuendigung` («Lohnfortzahlung (Art. 324a OR)»). Der
-              Ergebnisblock IST die zweite Ebene der Seite (auf /rechner/kuendigung
-              steht die Schwester-Sektion «Ereignis-Fristen» längst als `h2`), also
-              wird die Stufe richtiggestellt. Die GRÖSSE bleibt `text-h3` — es
-              ändert sich die Gliederung, nicht das Bild (§3). */}
-          <h2 className="text-h3 font-display font-semibold text-ink-900 mt-0.5">{sansAmp(titel)}</h2>
-        </div>
+        {/* Titel als `h2` (R5-F2 6.9.2026, axe `heading-order`: der Ergebnisblock
+            IST die zweite Ebene unter dem Seiten-`h1`); Kopf seit R5b aus
+            `AbschnittKopf` wie die Abschnitte der Sonderseiten. */}
+        <AbschnittKopf overline="Ergebnis" titel={titel} />
         {/* R2-E/F1-10: der geteilte KopierButton — vorher eine dritte Optik
             (`lc-btn-ghost`) mit dem nackten «Kopieren», das offenliess, WAS in
             der Zwischenablage landet. Die eigene Clipboard-Mechanik ist damit

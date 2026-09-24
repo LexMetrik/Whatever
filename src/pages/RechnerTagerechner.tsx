@@ -7,6 +7,7 @@ import { AllgemeineFristForm } from '../components/forms/AllgemeineFristForm';
 import { ZpoFristenForm } from '../components/forms/ZpoFristenForm';
 import { SchkgFristenForm } from '../components/forms/SchkgFristenForm';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
+import { AbschnittKopf } from '../components/layout/AbschnittKopf';
 import { Tabs } from '../components/ui/Tabs';
 import { Card } from '../components/ui/Card';
 import { Leerzustand } from '../components/ui/Leerzustand';
@@ -148,14 +149,11 @@ export function RechnerTagerechner() {
           (keine/ZPO/SchKG); die Vorauswahl-Rechner (Presets, Voll-Tabs)
           erscheinen DARUNTER. */}
       <Card className="space-y-4">
-        <div className="space-y-1">
-          <h2 className="lc-overline text-brass-700">Einfacher Fristenrechner</h2>
-          <p className="text-body-s text-ink-500 max-w-reading">
-            Datum, Dauer und Ferien-Behandlung – das Fristende sofort. Für
-            Zustellarten, gerichtliche Fristen, Hemmung oder Presets die
-            Rechner mit Vorauswahl darunter verwenden.
-          </p>
-        </div>
+        <AbschnittKopf titel="Einfacher Fristenrechner">
+          Datum, Dauer und Ferien-Behandlung – das Fristende sofort. Für
+          Zustellarten, gerichtliche Fristen, Hemmung oder Presets die
+          Rechner mit Vorauswahl darunter verwenden.
+        </AbschnittKopf>
         <EinfacheFristForm onEingaben={uebernehmeEingaben} onErgebnis={setFristErgebnis} />
         <div className="space-y-2 border-t border-line pt-4">
           <span className="lc-overline">Kalender-Ansicht</span>
@@ -164,9 +162,7 @@ export function RechnerTagerechner() {
         </div>
       </Card>
       <Card>
-        <div className="space-y-1 mb-5">
-          <h2 className="lc-overline text-brass-700">Mit Vorauswahl (Presets · ZPO · SchKG · Rückwärts)</h2>
-        </div>
+        <AbschnittKopf titel="Mit Vorauswahl (Presets · ZPO · SchKG · Rückwärts)" className="mb-5" />
         {/* FE-3: Preset-Suche über alle Regimes */}
         <div className="space-y-1.5 mb-5">
           <label htmlFor="preset-suche" className="lc-overline block">

@@ -403,8 +403,11 @@ neu sind nur Kopf und eine gemeinsame Exportzeile (heute 25× inline). Kein Risi
 - **R3** `ErgebnisExport` (Aktenzeichen → PDF → ICS → Teilen → children): 21 Stellen in 20 Formularen; Ratsche
   `rechner-export-ratsche` (20 Routen + 19 Beispiel-Queries). R5a: auch die 4 Kosten-Rechner (Teilen hinter PDF; Aktenzeichen nur mit PDF/ICS).
   EreignisFristen/Schnellrechner bewusst eigen. *Gebaut 24.9.*
-- **R4** Auswahl-Kacheln ein Look (*gebaut 24.9.*: Strich oben für alle, `reg`-Prop weg) · `vorlagen/ui.tsx` an neutralen Ort · `Card`. **R5** Sonderseiten
-  (Tagerechner, Board, Inkasso, Zuständigkeit), Inventar 4.3/4.4 nachführen.
+- **R4** Auswahl-Kacheln ein Look (*gebaut 24.9.*: Strich oben für alle, `reg`-Prop weg) · `vorlagen/ui.tsx` bleibt geteilter
+  Formular-Baukasten (Entscheid 24.9., kein Umzug) · `Card`. **R5** Sonderseiten: `layout/AbschnittKopf` (Overline + h2 +
+  Einleitung) für Ergebnis-Kopf, Tagerechner, Board, Inkasso; Ereignis-Fristen-Sektion ohne Kasten; Zuständigkeit ohne Bedarf
+  (Karte + Kopf-Overrides tragen schon). Inventar 4.3 datiert (4.4 stimmte); §7-Rückbau UI-Befunde: nur LM-032/066/083
+  rechner-relevant — 083 überholt abgehakt, 066 (app-weit) nach REST. *Gebaut 24.9., Schritt done.*
 - **Nicht bauen:** rechte Normen-/Annahmen-Spalte des Boards, Streichung von PDF/Teilen/Aktenzeichen
   (Board ist Richtung; Inventar 4.3 R3–R5 gilt).
 

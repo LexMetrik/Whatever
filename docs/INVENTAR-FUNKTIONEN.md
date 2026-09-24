@@ -1747,6 +1747,17 @@ Trefferlogik `src/lib/katalogSuche.ts`; Kategorie-Filter `src/lib/katalogKategor
 Verbindliche Reihenfolge und Bausteine laut `DESIGN-REGLEMENT.md` §R (§R-1–§R-14).
 Jeder der 20 Rechner folgt diesem Schema oder ist eine **deklarierte** Ausnahme (R12).
 
+**Stand 24.9.2026 (Werkbank-Umbau, `W2·29-WERKBANK-RECHNER` R0–R5).** Die Bauteile
+kommen je aus einer Quelle: Kopf = `layout/RechnerKopf` als Aufsatz auf den
+Werkzeug-Kopf der Vorlagen (Band im Register «Werkzeuge», Titel und Kurzbeschrieb
+serif, Overline ohne «· Rechner»); Werkzeug-Karte und Ereignis-Fristen-Sektion =
+Abschnitt mit Registerstrich oben, **kein Kasten**; Abschnitts- und Ergebnis-Titel =
+`layout/AbschnittKopf` (Overline + `h2` + Einleitung, auch auf den Sonderseiten
+Tagerechner, Verjährungs-Board, Inkasso-Strecke); Export = `ErgebnisExport`
+(R5); Auswahl-Kacheln tragen den Registerstrich **oben** (Formular wie Kopf-Segment).
+Wächter: `src/tests/rechner-flaechen-ratsche.test.tsx` (Erst-Render aller 20 Routen)
+und `src/tests/rechner-export-ratsche.test.tsx` (Export-Zeile).
+
 #### R1 — Seiten-Skelett (fix)
 
 1. **Rechner-Kopf** (Überschrift, Kategorie-Overline, Kurzbeschrieb, Norm-Chips) —
@@ -1779,14 +1790,18 @@ vorliegt). Beispiel-Chips stehen, wo vorhanden, zwischen Preset und Eingaben.
 3. **Visualisierung** (Fristenkalender · Kündigungs-Zeitstrahl · Verzugszins-Zeitstrahl ·
    Erben-Tabelle/Quoten-Balken u. a.) — falls vorhanden.
 4. **Begründungs-Absatz** — zitierfähiger Fliesstext.
-5. **Aktenzeichen-Feld**.
+5. **Aktenzeichen-Feld** — nur wenn PDF oder ICS es tragen (seit 24.9.2026).
 6. **Export-Zeile** (R5).
 7. **Quellen-Mikrozeile** — nur bei amtlicher Datenquelle (z. B. BFS/LIK).
 
 #### R5 — Export-Zeile
 
-Feste Reihenfolge **PDF → ICS → Teilen** in einer Zeile. Jeder Rechner mit
-PDF-Export hat ein Aktenzeichen-Feld.
+Feste Reihenfolge **Aktenzeichen → PDF → ICS → Teilen** aus der einen Komponente
+`ErgebnisExport` (seit 24.9.2026 in allen Formularen einschliesslich der vier
+Kosten-Rechner Beurkundung, Grundbuch-Eintrag, Notariat/Grundbuch, Prozesskosten;
+dort stand «Teilen» vorher vor dem PDF). Jeder Rechner mit PDF-Export hat ein
+Aktenzeichen-Feld; ohne PDF und ohne ICS entfällt es. Bewusst eigen bleiben die
+Ereignis-Fristen-Tabelle (ICS je Zeile) und der Schnellrechner des Tagerechners.
 
 #### R6 — Hierarchie der Rechtsinformation
 
