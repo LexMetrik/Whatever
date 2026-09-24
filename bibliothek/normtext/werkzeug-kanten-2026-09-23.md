@@ -64,6 +64,9 @@ rechnet oder abbildet, UND das Werkzeug diese Norm selbst führt.
 - Zurückgestellt bis zu diesem Nachzug (sonst neues Hauptnummern-Rauschen in der
   Funktionszeile): mietrecht an Art. 257d/257f OR, gewaehrleistung an Art. 219a OR — beide
   von Karte und Engine getragen.
+- *[Ergänzt 24.9.2026: der Nachzug ist erfolgt (`randNotizWerkzeuge.ts` nutzt
+  `trifftArtikel`, Nachzug #1016); die drei zurückgestellten Kanten sind nachgetragen —
+  Abschnitt «Nachtrag 24.9.2026» unten.]*
 - Ohne Suffix-Grenze, aber mit neuer Wirkung (Sub-Artikel nach blanker Obergrenze fallen
   weg): OR 253 (253a/253b nicht mehr Mietvertrag-Vorlage), SchKG 68 (68a–68e nicht mehr
   Betreibungskosten), SchKG 31–33 (33a elektronische Übermittlung nicht mehr Fristen).
@@ -154,10 +157,85 @@ Im ersten Lauf 14/17: drei Suchmuster waren aus dem Gedächtnis formuliert («80
 «10 Tage», «Frist von einem Monat») und trafen den amtlichen Wortlaut («vier Fünftel»,
 «je zehn Tage», «binnen Monatsfrist») nicht — Muster korrigiert, Kanten unverändert.
 
+## Nachtrag 24.9.2026 — Buchstaben-Artikel nach blanker Obergrenze, Art. 273a OR
+
+Anlass: Posten `plan/posten/2026-09-24-art-273a-or-anfechtung-durch-ehegatten-haengt-nach-1016-an-k.md`
+(Nebenfund Gegenprüfung #1016: «Art. 273a OR hängt an keinem Werkzeug»).
+
+**Quelle:** Fedlex SPARQL, OR SR 220, geltende Konsolidierung `dateApplicability` 1.1.2026
+(https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de), DE-AKN
+`…/20260101/de/xml/…-de-xml-12.xml` (Content-Type `application/xml`), abgerufen 24.9.2026.
+Die künftige Fassung 1.10.2026 (`…/20261001/…-de-xml-2.xml`) ist für alle unten genannten
+Artikel textgleich (Diff leer).
+
+**Vollständige Liste der Buchstaben-Artikel, die eine Kante per Hauptnummer, aber nicht per
+`trifftArtikel` treffen** — per Skript über alle Kanten × lokale Snapshots
+(`public/normtext/bund/<KEY>.json`), Kommando `npx vite-node <scratch>/verlust.ts`
+(filtert `von ≤ Hauptnummer ≤ bis && !trifftArtikel`), Stand Branch vor dem Nachtrag:
+
+| Kante | Herausfallend | Einordnung |
+|---|---|---|
+| OR 253 (mietvertrag-wohnen) | 253a, 253b | bewusst (oben «Geltung/Ausnahmen») |
+| OR 271–273 (mietrecht) | **273a, 273b, 273c** | bewusst — siehe unten |
+| OR 321c, 324a–324b, 329a–329d, 335–335c, 336c | 321/321a/b/d/e, 324, 329/329e–j, 335d–k, 336/336a/b/d | bewusst (Kanten-Tabelle oben) |
+| OR 620–635a · ZGB 457–466 | 627_628 · 463_464 | Doppelnummern (Regel 4) |
+| SchKG 8a · 31–33 · 68 | 8 · 33a · 68a–68e | bewusst (oben) |
+
+Art. 266l–266o und 271a liegen INNERHALB ihrer Bereiche (266–266o, 271–273) und treffen;
+274–274g ist im Snapshot die Doppelnummer `274_274_g` (aufgehoben) und trifft nie (Regel 4).
+Kein weiterer Buchstaben-Artikel fällt unbeabsichtigt heraus.
+
+**Art. 273a–273c OR — Entscheid: bleiben ohne Werkzeug (Ausschluss bestätigt).**
+Randtitel 273a «Wohnung der Familie» (Abs. 1: auch der Ehegatte kann die Kündigung
+anfechten, die Erstreckung verlangen oder die übrigen Rechte des Mieters ausüben; Abs. 2
+Erstreckungsvereinbarungen nur mit beiden Ehegatten; Abs. 3 eingetragene Partnerschaft
+sinngemäss), 273b «Untermiete», 273c «Zwingende Bestimmungen». Nach der Kanten-Regel oben
+(Artikel trägt die Regel UND das Werkzeug führt die Norm) fehlt der zweite Teil: die Engine
+`lib/mietrecht.ts` zitiert 266–266o, 257d, 257f, 272a, 272b, 273 — nicht 273a–c; die Karte
+führt «Anfechtung & Erstreckung» als *geplant*. Der Ausschluss vom 23.9.2026 («273a–273c
+ohne Engine-Bezug») war also bewusst, der Posten beschreibt den gewollten Zustand.
+**Zweifelsfall 273a (wartet auf David):** Der Rechner berechnet die 30-Tage-Anfechtungsfrist
+(Art. 273) und kennt die Familienwohnung (266m/266n); Art. 273a gibt genau dieses
+Anfechtungsrecht auch dem Ehegatten. Eine Kante 273a → mietrecht wäre fachlich vertretbar,
+sobald die Engine im Familienwohnungs-Zweig selbst auf Art. 273a verweist (Rechtslogik-
+Änderung, eigener Schritt mit Gegenprüfung). Ohne diesen Verweis keine Kante (§8).
+
+**Nachgetragene Kanten** (Grund der Zurückstellung entfallen; Karte `startseiteKartenFristen.ts`
+und Engine führen die Norm):
+
+| Erlass | Werkzeug | Artikel | Randtitel (AKN) | Engine-Zitat |
+|---|---|---|---|---|
+| OR | mietrecht | 257d | «Zahlungsrückstand des Mieters» | `N_257d`, `lib/mietrecht.ts` |
+| OR | mietrecht | 257f | «Sorgfalt und Rücksichtnahme» | `N_257f`, `lib/mietrecht.ts` |
+| OR | gewaehrleistung | 219a | «Mängelrüge, unentgeltliche Verbesserung und Verjährung» | Art. 219a Abs. 1/3, `lib/gewaehrleistung.ts` |
+
+Links: [art_257_d](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_257_d) ·
+[art_257_f](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_257_f) ·
+[art_219_a](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_219_a) ·
+[art_273_a](https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_273_a) (je Fassung 1.1.2026).
+
+Das Überlappungs-Tor (`src/tests/werkzeuge.test.ts`) verglich nur Hauptnummern und meldete
+die disjunkten Einzel-Kanten 257d und 257f als Doppel; es vergleicht jetzt mit
+`vergleicheArtikel` (dieselbe Ordnung wie die Zuordnung). Rot gezeigt mit einer künstlich
+überlappenden Grenze 257d–257f. Tor der Kanten: `src/tests/werkzeuge-buchstaben-kanten.test.ts`.
+
+**Stichprobe (Identitätsbeleg mit Wortgrenze gegen das AKN, 24.9.2026): 14/14** — 273a
+«Wohnung der Familie», «Ehegatte des Mieters die Kündigung anfechten», «eingetragenen
+Partnerschaften»; 273b «Untermiete»; 273c «Zwingende Bestimmungen»; 273 «innert 30 Tagen
+nach Empfang der Kündigung»; 257d «Zahlungsrückstand des Mieters», «mit einer Frist von
+mindestens 30 Tagen auf Ende eines Monats»; 257f «trotz schriftlicher Mahnung»,
+«vorsätzlich der Sache schweren Schaden»; 219a «beim Grundstückkauf 60 Tage», «mit Ablauf
+von fünf Jahren nach dem Erwerb des Eigentums»; 266n «separat zuzustellen»; Gegenprobe 257e
+«Sicherheiten» (keine Kündigungsnorm, trägt kein Werkzeug).
+
+Abnahme-Status des Nachtrags: Erstrecherche — Gegenprüfung ausstehend, fachliche Abnahme
+David offen.
+
 ## Pflegebedarf
 
 - Nachzug Funktionszeile (`randNotizWerkzeuge.ts` → `trifftArtikel`), danach 257d/257f/219a
-  nachtragen.
+  nachtragen. *[Erledigt 24.9.2026, siehe Nachtrag.]*
+- Kante 273a → mietrecht, falls die Engine Art. 273a selbst führt (Zweifelsfall, David).
 - Bei jeder neuen Fassung eines der Erlasse: Tor D6 (3) prüft die Suffix-Grenzen gegen den
   Snapshot; ein umnummerierter oder aufgehobener Grenz-Artikel wird dort rot.
 
