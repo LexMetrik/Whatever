@@ -55,3 +55,17 @@ describe('NE: Schliesstage der Kantonsverwaltung gelten als Feiertag (LI-CPC Art
     expect(istFeiertag(new Date(2026, 11, 31), 'NE')).toBe(true);
   });
 });
+
+describe('NE 2026: weitere amtlich publizierte Schliesstage (LI-CPC Art. 10a) — R1-04', () => {
+  it('Zustellung 5.5.2026 + 10 Tage → Fr 15.5. (Freitag nach Auffahrt, Verwaltung zu) → Mo 18.5.2026', () => {
+    expect(berechneFrist(summarisch10('2026-05-05', 'NE')).diesAdQuem).toBe('18.05.2026');
+  });
+  it('Zustellung 14.12.2026 + 10 Tage → Do 24.12. zu, 25.12. Weihnachten, Sa/So → Mo 28.12.2026', () => {
+    expect(berechneFrist(summarisch10('2026-12-14', 'NE')).diesAdQuem).toBe('28.12.2026');
+  });
+  it('Ostermontag, Pfingstmontag, Lundi du Jeûne 2026 in NE Feiertag', () => {
+    expect(istFeiertag(new Date(2026, 3, 6), 'NE')).toBe(true);
+    expect(istFeiertag(new Date(2026, 4, 25), 'NE')).toBe(true);
+    expect(istFeiertag(new Date(2026, 8, 21), 'NE')).toBe(true);
+  });
+});
