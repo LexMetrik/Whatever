@@ -93,11 +93,10 @@ const AUSNAHMEN_FEST: FesteAusnahme[] = [
       '(nur einzelne Gemeinden)» — kein kantonsweiter gesetzlicher Feiertag nach Art. 142 ' +
       'Abs. 3 ZPO.',
   },
-  {
-    kanton: 'SO', monat: 5, tag: 1,
-    grund: 'Bewusst weggelassen laut Kopfkommentar zpoFeiertage.ts: «SO-1.-Mai (Feiertag erst ' +
-      'ab 12.00 Uhr – halber Tag macht den Tag nicht arbeitsfrei)».',
-  },
+  // SO 1.5.: Ausnahme bis 24.9.2026 («bewusst weggelassen, erst ab 12.00 Uhr»)
+  // gestrichen — EG ZPO SO § 22 Abs. 2 (BGS 221.2) nennt den 1. Mai ganztags als
+  // Feiertag für Art. 142 ZPO; LexMetrik und Bibliothek stimmen seit RL-22 überein
+  // (R1-02, Sammelfreigabe W-05).
   {
     kanton: 'VS', monat: 5, tag: 1,
     grund: '1. Mai («Tag der Arbeit») gilt nach der FEIERTAGE-Kantonsliste in zpoFeiertage.ts ' +
@@ -141,16 +140,18 @@ const AUSNAHMEN_OSTERN: OsterAusnahme[] = [
   },
 ];
 
-// ─── Ausnahme: Stephanstag UR/AR — beide Quellen bilden dieselbe Rechtsidee
-// (BJ Fn. 1/7/9: Stephanstag entfällt in bestimmten Konstellationen) ab,
-// beziehen sich aber auf unterschiedliche Bezugstage: LexMetrik prüft den
-// Wochentag von Weihnachten selbst (25.12., zpoFeiertage.ts: `giltImJahr:
-// (j) => ![1, 5].includes(wochentag(j, 12, 25))`, Kommentar «UR/AR/AI:
-// Stephanstag entfällt, wenn Weihnachten auf Montag oder Freitag fällt»);
-// date-holidays prüft stattdessen den Wochentag des 26.12. selbst, und mit
-// kantonal unterschiedlichen Ausschlusstagen (Rule laut Bibliotheksdaten:
-// UR «12-26 not on monday, friday», AR «12-26 not on monday»). Dadurch
-// weichen die beiden Formeln in einzelnen Jahren voneinander ab.
+// ─── Ausnahme: Stephanstag UR/AR — die Bibliothek date-holidays prüft den
+// Wochentag des 26.12. selbst, mit kantonal unterschiedlichen Ausschlusstagen
+// (Rule laut Bibliotheksdaten: UR «12-26 not on monday, friday», AR «12-26
+// not on monday»).
+//  - AR: LexMetrik prüft den Wochentag von Weihnachten (25.12.) nach V ArG AR
+//    822.11 Art. 7 («nicht gefeiert, wenn der 1. Weihnachtstag auf einen Montag
+//    oder Freitag fällt», Stand 1.1.2016) — gleiche Rechtsidee, anderer Bezugstag.
+//  - UR: seit RL-22 (24.9.2026, R1-03, Sammelfreigabe W-05) führt LexMetrik den
+//    Stephanstag UNBEDINGT (Ruhetagsgesetz UR Art. 9 lit. b, RB 70.1421: «…
+//    Weihnachten und Sankt-Stefans-Tag» ohne Vorbehalt). Die Bibliotheksregel
+//    hat dafür keine Rechtsgrundlage; Abweichung z.B. UR 26.12.2025 (Fr).
+//    Vorher (bis 24.9.2026) begründet mit dem BJ-Fn.-1-Vorbehalt im Code.
 function istStephanstagBezugstagAusnahme(kanton: Kanton, monat: number, tag: number): boolean {
   return (kanton === 'UR' || kanton === 'AR') && monat === 12 && tag === 26;
 }
@@ -240,7 +241,7 @@ for (const kanton of ALLE_KANTONE) {
       const istNaefelserFahrt2027 = istNaefelserFahrt2027Ungeklaert(kanton, key);
 
       const grund = fest?.grund ?? oster?.grund ??
-        (stephanstag ? 'Stephanstag UR/AR: unterschiedliche Bezugstage der beiden Formeln (siehe Kommentar oben).' : '');
+        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : '');
       const begruendet = Boolean(fest || oster || stephanstag);
 
       const eintrag: Abweichung = {
@@ -279,7 +280,7 @@ for (const kanton of ALLE_KANTONE) {
       const istNaefelserFahrt2027 = istNaefelserFahrt2027Ungeklaert(kanton, key);
 
       const grund = fest?.grund ?? oster?.grund ??
-        (stephanstag ? 'Stephanstag UR/AR: unterschiedliche Bezugstage der beiden Formeln (siehe Kommentar oben).' : '');
+        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : '');
       const begruendet = Boolean(fest || oster || stephanstag);
 
       const eintrag: Abweichung = {
