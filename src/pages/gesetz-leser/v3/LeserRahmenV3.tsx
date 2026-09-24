@@ -160,11 +160,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   const ruheForm = panelForm(stufe, !umgebung.imPane);
   const bild = rahmenBild({
     raum, spaltenLage: hatLeiste && umgebung.istXl, tocOffen: m.tocOffen, ruheForm,
-    // Entscheid A (24.9.2026): Blatt-Spur nur, wo auch die Gliederung Spalte sein kann.
-    blattLage: umgebung.istXl && ruheForm === 'rechts', blattOffen: panel.offen,
-    // D-E4 · im Einzelmodus kein Blatt — Spur, Schiene, Streifen UND Griffe
-    // entscheidet `rahmenBild` an EINER Stelle (Gegenprüfung #1040, 24.9.2026).
-    einzelModus: imEinzel,
+    // Entscheid A (24.9.2026): Blatt-Spur nur, wo auch die Gliederung Spalte sein kann. D-E4 (#1040): im Einzelmodus kein Blatt.
+    blattLage: umgebung.istXl && ruheForm === 'rechts', blattOffen: panel.offen, einzelModus: imEinzel,
   });
   const zweiSpalten = bild.gliederungSpalte;
   // ── P3 (3b) · DREI NAMEN FÜR DREI DINGE (H4-Nachzug 18.8.2026) ────────────
