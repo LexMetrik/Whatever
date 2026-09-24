@@ -127,7 +127,6 @@
    "leser-marke-mitlaufen.e2e.ts",
    "leser-suche-vertrag-b8.e2e.ts",
    "leser-v3-kopfzeile.e2e.ts",
-   "leser-v3-panel-anwendung.e2e.ts",
    "leser-v3-panel-bezuege-wirkung.e2e.ts",
    "leser-v3-prerender-bezuege.e2e.ts",
    "leser-w224-g.e2e.ts",
@@ -137,7 +136,8 @@
    "w224-d35-f4-menue.e2e.ts",
    "w224-r6i-vorschau-schrift.e2e.ts",
    "leser-lesemass.e2e.ts",
-   "leser-v3-panel-entscheide-s6.e2e.ts"
+   "leser-v3-panel-entscheide-s6.e2e.ts",
+   "leser-v3-panel-erlaeuterungen.e2e.ts"
   ],
   "7": [
    "d21-seitenleiste-kein-sprung.e2e.ts",
