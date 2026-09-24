@@ -1,11 +1,9 @@
-import { Link } from 'react-router-dom';
 import { STARTSEITE_ZAEHLER as z } from '../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { SuchBlock } from '../components/start/SuchBlock';
 import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
 import { StartKachelFeld, type KachelDef } from '../components/start/StartKachelFeld';
-import { StartFlaeche } from '../components/start/StartFlaeche';
-import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
+import { Schnellwerkzeug } from '../components/start/Schnellwerkzeug';
 import { VertrauensFuss } from '../components/start/VertrauensFuss';
 
 // ─── Startseite — Werkbank mit aufklappenden Kacheln (W2·29-WERKBANK-START) ──
@@ -17,7 +15,9 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //   · Kopf: die Begrüssung mit Suchfeld BLEIBT (Auswahlfrage 23.9.2026
 //     «Begrüssung behalten»; D39 vom 7.9.2026 gilt weiter).
 //   · Links: 2×2-Kachelfeld (Flächenton, Zahl aus dem Zähler, keine Linkzeilen).
-//   · Rechts: «Schnellwerkzeug» (Fristenrechner mit der echten Engine) und
+//   · Rechts: «Schnellwerkzeug» (Fristenrechner mit der echten Engine; seit
+//     U2 24.9.2026 wählbar Frist · Verzugszins · Verjährung, `start/
+//     Schnellwerkzeug.tsx`) und
 //     «Zuletzt» — «1 ja … 4 ja» am Prototyp. Die Spalte ist 20rem schmal, darum
 //     `EinfacheFristForm minimal` (zwei Spalten, Ferien als Auswahlfeld): die
 //     Vollform setzte vier Felder in 320 px, das Datum wurde gekappt
@@ -77,13 +77,7 @@ export function Startseite() {
         <StartKachelFeld kacheln={KACHELN} />
         <aside aria-label="Arbeitsplatz"
           className={`grid content-start gap-y-4 ${pk('lg:row-span-2 lg:grid-rows-subgrid', '@5xl/pane:row-span-2 @5xl/pane:grid-rows-subgrid')}`}>
-          <StartFlaeche titel="Schnellwerkzeug · Frist berechnen">
-            <EinfacheFristForm minimal />
-            <p className="font-sans text-xs leading-relaxed text-ink-500">
-              Rückwärtsrechnung, Zustellart, Hemmung und Kalender im{' '}
-              <Link to="/rechner/tagerechner" className="underline hover:text-reg-w">Fristenrechner</Link>.
-            </p>
-          </StartFlaeche>
+          <Schnellwerkzeug />
           <ZuletztVerwendet />
         </aside>
       </div>
