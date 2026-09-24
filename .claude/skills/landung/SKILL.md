@@ -50,7 +50,7 @@ Belege: `referenz-ci.md` §Merge-Queue.
   (Ziff. 3.2).
 - **PR-Titel = Squash-Betreff:** der Commit auf main trägt den PR-Titel. Ändert
   der PR Test-Dateien, darf der Titel-Typ nicht `refactor` sein (§6.3) — sonst
-  fällt er im `merge_group`-Lauf an `check:testtreue` (Beleg #1023, 23.9.2026;
+  fällt er im `merge_group`-Lauf an `check:fachaenderung` R1 (Beleg #1023, 23.9.2026;
   seither meldet das Tor es schon im PR-Lauf).
 - **Queue-Abfrage** (QUEUED · AWAITING_CHECKS · MERGEABLE · UNMERGEABLE ·
   LOCKED):
