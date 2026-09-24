@@ -510,7 +510,7 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   umgehängt (Escape in der Öffnung, Resize-Remount, Verweis-Einträge, geteilte Bausteine/aria-live).
   **Erledigt 24.9.2026:** Messung 234 R8-Funde in 11 Blatt-Zuständen → 0 (Rechtsgebiete überlappten, Kantone
   gekappt, ✕-Box); Bewegung: Gesicht = `RubrikKachel alsBild` (sprang), Laden erst nach der Öffnung
-  (`blattRuhe.ts`, 83-ms-Bild weg), Kacheln kehren beim Schliessen gleichzeitig zurück; feste Portal-Bühne.
+  (`blattRuhe.ts`, 83-ms-Bild weg), Kacheln kehren beim Schliessen gleichzeitig zurück; feste Portal-Bühne; unterer Rand blendet aus (David «verläufe in ordnung»).
 
 ## §6 · Prüfen und Frühsignale
 
