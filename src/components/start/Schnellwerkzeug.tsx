@@ -81,9 +81,8 @@ export function Schnellwerkzeug() {
               data-schnell={w.code}
               onClick={() => waehle(w.code)}
               onPointerEnter={() => vorabruf(w.code)} onFocus={() => vorabruf(w.code)}
-              className={`flex-auto whitespace-nowrap rounded-md px-1.5 py-1.5 font-sans text-xs @[16.5rem]:px-2 @[16.5rem]:text-body-s ${gewaehlt
-                ? 'bg-surface font-semibold text-ink-900'
-                : 'text-ink-600 hover:text-ink-900'}`}>
+              // Reiter-Anatomie EINMAL als `.lc-tab` (B-R1/F0.9, Tor design-r5-konsistenz) — nur Grössen hier.
+              className="lc-tab flex-auto whitespace-nowrap px-1.5 py-1.5 text-xs @[16.5rem]:px-2 @[16.5rem]:text-body-s">
               {w.label}
             </button>
           );
