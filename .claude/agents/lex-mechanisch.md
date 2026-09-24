@@ -73,6 +73,10 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand Â
   --workers=2; die volle e2e-Suite nur EINMAL am Schluss, dazwischen gezielte
   Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
   zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
+  Wer aus RAM-Gruenden `npm run gate` auslaesst, faehrt trotzdem die schnellen
+  Konsistenz-Tore `npx vitest run src/tests/design-` (Sekunden, kein Browser)
+  â€” Beleg #1053 (24.9.2026): Schnellwerkzeug-Reiter mit eigener Kasten-Optik
+  (design-r5, B-R1) fiel erst im Orchestrator-Gate auf, ein Umlauf verloren.
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.

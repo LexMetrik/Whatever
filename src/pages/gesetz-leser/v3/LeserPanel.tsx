@@ -12,12 +12,16 @@ import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
  *  Rubrik am Artikelende (`data-reg="m"`). Ein fünftes Register gibt
  *  `design/tokens.json` nicht her, und eines zu erfinden wäre ein Token
  *  ausserhalb der Quelle. */
+//  S6 W1g (Entscheid David 24.9.2026, «aktiver Blatt-Reiter nur Linie»): die
+//  getönte Registerfläche `bg-reg-*-flaeche` unter dem aktiven Reiter ist
+//  gestrichen — die Registerkante unten und das Gewicht tragen die Auswahl
+//  allein (Board «Fliesstext-Blatt»: Kante 2 px, keine Fläche).
 const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
-  entscheide: 'border-reg-r bg-reg-r-flaeche',
-  aenderungen: 'border-reg-g bg-reg-g-flaeche',
-  materialien: 'border-reg-m bg-reg-m-flaeche',
-  erlaeuterungen: 'border-reg-m bg-reg-m-flaeche',
-  werkzeuge: 'border-reg-w bg-reg-w-flaeche',
+  entscheide: 'border-reg-r',
+  aenderungen: 'border-reg-g',
+  materialien: 'border-reg-m',
+  erlaeuterungen: 'border-reg-m',
+  werkzeuge: 'border-reg-w',
 };
 
 // ─── Das Panel selbst: EIN Ort, VIER Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
@@ -187,7 +191,8 @@ export function LeserPanel({
           Jedes Fach trägt sein Register (`REITER_REGISTER`): der aktive Reiter
           steht auf der getönten Fläche `reg-*-flaeche` mit der Registerkante
           unten, Tinte darauf (F0.2 i. d. F. 22.9.2026: Fläche nur über diese
-          Token, nie die Registerfarbe als Text). Die Fächer wachsen (`grow`)
+          Token, nie die Registerfarbe als Text). Seit S6 W1g (24.9.2026) NUR
+          noch die Kante — die Fläche ist gestrichen (Entscheid David). Die Fächer wachsen (`grow`)
           auf die Zeilenbreite und schrumpfen nie (`shrink-0`).
           G11 (7.9.2026, gemessen am 22-rem-Blatt): vier Fächer müssen GANZ
           passen — weder Kürzen (Kanon-Etikett, Ä114) noch stummes Scrollen;
@@ -245,7 +250,11 @@ export function LeserPanel({
           ist im DOM — drei gemountete Tafeln hätten alle drei Ladepfade
           gleichzeitig angestossen und damit das Nachladen ausgehebelt. */}
       <div ref={scrollerRef} data-v3-panel-scroller className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
-        <div role="tabpanel" id={`${panelId}-tafel-${reiter}`} aria-labelledby={`${panelId}-tab-${reiter}`}>
+        {/* S6 W1g: `data-v3-panel-tafel` trägt das Fach als CSS-Anker — die
+            Gruppenköpfe nehmen daraus die Registerfarbe DES FACHS (index.css,
+            «S6 W1g (3c)»), nicht die der Route. */}
+        <div role="tabpanel" id={`${panelId}-tafel-${reiter}`} aria-labelledby={`${panelId}-tab-${reiter}`}
+          data-v3-panel-tafel={reiter}>
           {inhalt[reiter]}
         </div>
       </div>

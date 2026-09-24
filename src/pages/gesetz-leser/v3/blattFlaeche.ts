@@ -42,7 +42,10 @@ export function blattFlaeche(spalte: boolean, imPaneBlatt: boolean): BlattFlaech
     ? {
       traeger: {
         klassen: 'sticky flex min-h-0 flex-col self-start',
-        stil: { top: 'var(--nt-stick)', height: 'calc(100vh - var(--nt-stick) - 1.5rem)' },
+        // S6 W1g (24.9.2026, Board «Fliesstext-Blatt»): bis zur Fensterunterkante
+        // — die 1.5 rem Luft unten gehörten zur Karte (Rahmen, Radius), die das
+        // Blatt als Spalte nicht mehr trägt (index.css `[data-v3-panel-form='spalte']`).
+        stil: { top: 'var(--nt-stick)', height: 'calc(100vh - var(--nt-stick))' },
       },
       klassen: 'flex min-h-0 flex-1 flex-col [&>*]:flex-1',
       stil: {},
