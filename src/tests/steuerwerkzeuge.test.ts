@@ -1,5 +1,6 @@
-// src/tests/steuerwerkzeuge.test.ts — die drei Nicht-Plan-Steuerwerkzeuge. scripts/dispatch(-agents) · scripts/testtreue-kern · scripts/ci/diff-klassieren.
-// Seit 23.9.2026 (RL-03) ist der testtreue-Block nach src/tests/fachaenderung.test.ts umgezogen.
+// src/tests/steuerwerkzeuge.test.ts — die Nicht-Plan-Steuerwerkzeuge. scripts/dispatch(-agents) · scripts/ci/diff-klassieren
+// (bis 23.9.2026 auch scripts/testtreue-kern). Seit RL-03 (23.9.2026) steht der testtreue-Block in
+// src/tests/fachaenderung.test.ts; die Squash-Fälle aus PR #1026 folgten beim Rebase am 24.9.2026.
 // Zusammengelegt 31.8.2026 (QS-EFFIZIENZ, Ent-Regulierung Runde 2 Batch B; Beleg:
 // bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md §3 Kandidat 1). Die
 // Fälle stehen WÖRTLICH unter dem Banner ihrer Herkunftsdatei; gestrichen wurde

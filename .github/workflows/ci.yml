@@ -798,6 +798,8 @@ jobs:
       - name: Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)
         run: npm run check:merge-schutz
       # RL-03 (ersetzt check:testtreue); im PR zählt der PR-Body (Queue-Squash).
+      # R1 prüft im pull_request-Lauf zusätzlich den PR-Titel als künftigen
+      # Squash-Betreff (GITHUB_EVENT_PATH, PR #1026, Beleg Queue-Rauswurf #1023).
       - name: Fachänderungs-Riegel (§6.3 + Fachaenderung-Trailer)
         env:
           GH_TOKEN: ${{ github.token }}
