@@ -198,8 +198,11 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
       .toMatch(/Erlasse im Volltext, Bund und Kantone/);
     expect(bereiche, 'Bereich Rechtsprechung: Zähler mit Scope')
       .toMatch(/Entscheide im Volltext/);
+    // U12 (§6.3, deklariert, David 24.9.2026 «materialien soll erläuterungen
+    // und materialien enthalten»): die Einheit nennt beide Gattungen — der
+    // Prüfpunkt («erfasst», nie «Volltext») bleibt derselbe, nur der Wortlaut.
     expect(bereiche, 'Bereich Materialien: «erfasst», nie «Volltext»')
-      .toMatch(/amtliche Materialien erfasst/);
+      .toMatch(/Materialien und Erläuterungen erfasst/);
     // K7 (§6.3, deklariert): der Fuss nennt Bundesrecht und Staatsverträge
     // getrennt statt der Mischzahl — der Ausdruck ist schärfer, nicht weicher.
     expect(bund, 'Bund-Stufe: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundesrechtVolltext\)} Erlasse\s+des Bundesrechts\)/);
@@ -207,8 +210,8 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     // W2·29-WERKBANK-START-LAYOUT (§6.3, deklariert, David 24.9.2026 «entscheide
     // sollen weg»): das Entscheide-Modul ist gestrichen; «Entscheide im
     // Volltext» prüft die Zeile «Bereich Rechtsprechung» oben an der Kachel.
-    expect(materialien, 'Materialien: «erfasst», nie «Volltext»').toMatch(/Materialien erfasst/);
-    expect(materialien, 'Materialien behaupten keinen Volltext').not.toMatch(/amtliche Materialien[^'"]*im Volltext/);
+    expect(materialien, 'Materialien: «erfasst», nie «Volltext»').toMatch(/Materialien und Erläuterungen erfasst/);
+    expect(materialien, 'Materialien behaupten keinen Volltext').not.toMatch(/Materialien und Erläuterungen[^'"]*im Volltext/);
     // §8 am Kantons-Eintrag: Zustands-Wort im Accessible Name, nie
     // «vollständig» aus eigener Kraft (erfassungsgrad.ts bleibt die Quelle).
     expect(kantone).toContain('STUFE_WORT');

@@ -635,6 +635,10 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   Suchfeld auch auf Wahl (alle Erlasse), Gebiete (Bundesrecht) und Kantone (kantonales Recht), `StufenSuche`
   in `start/GesetzeSuche.tsx`: Treffer mit `filtern` und `GruppenInhalt`, Herkunft als Gruppenkopf, 30er-Portion;
   Register erst beim Fokus ins Feld (§15).
+- **U12 (Nachtrag David 24.9.2026 abends):** «materialien soll erläuterungen und materialien enthalten» → Kachel
+  «Materialien» nennt beide Gattungen (Teile 1'356 Materialien · 327 Erläuterungen, Zähler-Felder
+  `materialienGesetzgebung`/`materialienErlaeuterungen`), Blatt mit Schalter Alle · Materialien · Erläuterungen;
+  Zuordnung aus `lib/materialien/gattung.ts` = Leser-Reiter-Regel (§5).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
