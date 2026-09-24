@@ -99,9 +99,8 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/ZH$/)
     await page.goBack()
     await expect(page).toHaveURL(/\?blatt=gesetze$/)
-    // Kleine Kantone auf der schmalen Karte: per Tastatur (Fokus + Enter) —
-    // ein Zeigerklick auf die wenige Pixel grosse Fläche von BS ist kein
-    // verlässlicher Weg; dafür steht «Alle 26 Kantone» darunter.
+    // Kleine Kantone auch per Tastatur (Fokus + Enter). Den Mausklick auf BS/ZG
+    // belegt seit U5 (24.9.2026, `SchweizKarte kompakt`) der Test weiter unten.
     await blatt(page).getByRole('button', { name: 'Basel-Stadt', exact: true }).focus()
     await page.keyboard.press('Enter')
     await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/BS$/)
