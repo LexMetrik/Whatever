@@ -115,7 +115,9 @@ export function stillstandsperiodeFuer(date: Date): Stillstandsperiode | null {
 //    Art. 59 Abs. 1 + KG SG FS.2012.1 vom 29.3.2012; SH Personalverordnung
 //    SHR 180.111 § 33 Abs. 1 + OGE 40/2018/1/K E. 2.1.4; GL Personalverordnung
 //    GS II A/6/2 Art. 19 Abs. 2 lit. a — für GL keine Gerichtspraxis gefunden
-//    (Hinweis an Nutzer: RL-23, Entscheid W-11).
+//    (Hinweis an Nutzer: RL-23, Entscheid W-11). Seit RL-23 (25.9.2026) ist der
+//    GL-2.1. ein BEDINGTER, unsicher gezählter Tag (Block «Bedingte kantonale
+//    Feiertage», Ziff. 3); SG/SH bleiben in der Grundmatrix.
 //  - Schliesstage der Kantonsverwaltung: NE — s. Block «Bedingte kantonale
 //    Feiertage» unten (Entscheid W-10 a, Geltungsbereich RL-22-Nachzug). BL GOG § 46 Abs. 2 (SGS 170; Geltung für ZPO-Fristen
 //    offen) und VD LVLP Art. 73 Abs. 2 (BLV 280.05; nur SchKG): NICHT als
@@ -136,8 +138,9 @@ const wochentag = (jahr: number, monat: number, tag: number) => new Date(jahr, m
 const FEIERTAGE: FeiertagDef[] = [
   // Fixe Feiertage
   { art: 'fix', monat: 1, tag: 1, kantone: 'alle', name: 'Neujahr' },
-  // LU ergänzt (BJ Ziff. 3 lit. a – Doppelcheck 6.6.2026).
-  { art: 'fix', monat: 1, tag: 2, kantone: ['ZH', 'BE', 'LU', 'OW', 'NW', 'GL', 'ZG', 'FR', 'SO', 'SH', 'SG', 'AG', 'TG', 'VD', 'VS', 'JU'], name: 'Berchtoldstag' },
+  // LU ergänzt (BJ Ziff. 3 lit. a – Doppelcheck 6.6.2026). GL NICHT hier (RL-23):
+  // unsicher gezählter bedingter Tag, s. Block «Bedingte kantonale Feiertage» Ziff. 3.
+  { art: 'fix', monat: 1, tag: 2, kantone: ['ZH', 'BE', 'LU', 'OW', 'NW', 'ZG', 'FR', 'SO', 'SH', 'SG', 'AG', 'TG', 'VD', 'VS', 'JU'], name: 'Berchtoldstag' },
   // NE: 2.1. nur, wenn der 1.1. ein Sonntag ist (BJ Ziff. 24 Fn. 10) — zusätzlich
   // als bedingter Schliesstag (Block «Bedingte kantonale Feiertage», RDF Art. 11).
   { art: 'fix', monat: 1, tag: 2, kantone: ['NE'], name: 'Berchtoldstag', giltImJahr: (j) => wochentag(j, 1, 1) === 0 },
@@ -250,6 +253,28 @@ function lundiJeuneFederal(jahr: number): Date {     // VD: Montag nach 3. Sonnt
 //     (BGS 512.41, Stand 1.9.2014): «1. Mai ab 12.00 Uhr»
 //     (https://bgs.so.ch/app/de/texts_of_law/512.41). Zählt nur im ZPO-Kontext,
 //     ab 1.3.2015 (ältere Fassungen nicht geprüft; sichere Richtung).
+// (3) GL 2. Januar (RL-23, Befund Q5, Entscheid W-11 a «zählen + Warnung»,
+//     David 24.9.2026). Amtlich selbst geöffnet am 25.9.2026:
+//       · Ruhetagsgesetz GL (GS IX B/21/1, Version 1.7.2019) Art. 2 Abs. 1 lit. b/c
+//         zählt die allgemeinen und hohen Feiertage auf — der 2.1. fehlt.
+//         https://gesetze.gl.ch/app/de/texts_of_law/IX%20B%2F21%2F1
+//       · Personalverordnung GL (GS II A/6/2, Fassung 1.7.2026) Art. 19 Abs. 2
+//         lit. a: Berchtoldstag nur «bezahlter arbeitsfreier Tag» (mit Heiligabend,
+//         Silvester), NICHT Feiertag nach Abs. 1; gilt auch für das Gerichts-
+//         personal (Art. 1 Abs. 3). https://gesetze.gl.ch/app/de/texts_of_law/II%20A%2F6%2F2
+//       · BJ-Verzeichnis (Stand 1.1.2011) Ziff. 8 lit. b: «Tage, die wie gesetzliche
+//         Feiertage behandelt werden – Berchtoldstag, 2. Januar» = Notifikation nach
+//         Art. 11 EuFrÜb (SR 0.221.122.3, Stand 1.1.2011); Art. 5 verlängert auch
+//         bei solchen Tagen. Das Übereinkommen gilt nach Art. 1 Abs. 1 NUR «auf dem
+//         Gebiet des Zivil-, Handels- und Verwaltungsrechts einschliesslich des
+//         diese Gebiete betreffenden Verfahrensrechts» — nicht im Strafverfahren.
+//     Zählt deshalb in zpo/schkg/bgg/vwvg/allgemein (+ weitest) mit Warnung
+//     (unsicherer Tag, BEDINGT_UNSICHER), im Kontext stpo NICHT (Art. 90 Abs. 2
+//     StPO: nur kantonales Recht, und das GL-Recht nennt den Tag nicht; sichere
+//     Richtung, ebenfalls mit Warnung). Unterschied zu SG/SH: dort trägt der
+//     kantonale Normwortlaut den 2.1. («Ruhetag» sGS 143.11 Art. 59 Abs. 1,
+//     «Feiertag» SHR 180.111 § 33 Abs. 1) und Gerichtspraxis bestätigt ihn
+//     (KG SG FS.2012.1, OGE SH 40/2018/1/K) → Grundmatrix, keine Warnung.
 
 /**
  * Feiertags-Kontext = Verfahrensrecht, dessen Feiertagsbegriff gilt.
@@ -264,12 +289,17 @@ function lundiJeuneFederal(jahr: number): Date {     // VD: Montag nach 3. Sonnt
  */
 export type FeiertagsKontext = 'zpo' | 'stpo' | 'bgg' | 'vwvg' | 'schkg' | 'allgemein' | 'weitest';
 
-type BedingteArt = 'ne_schliesstag' | 'so_1_mai';
+type BedingteArt = 'ne_schliesstag' | 'so_1_mai' | 'gl_berchtoldstag';
 
 const BEDINGT_GILT_IN: Record<BedingteArt, readonly FeiertagsKontext[]> = {
   ne_schliesstag: ['zpo', 'stpo', 'bgg', 'vwvg', 'weitest'],
   so_1_mai: ['zpo', 'weitest'],
+  gl_berchtoldstag: ['zpo', 'schkg', 'bgg', 'vwvg', 'allgemein', 'weitest'],
 };
+
+/** Bedingte Tage, die im Kontext zwar ZÄHLEN, deren Anerkennung aber unsicher
+ *  ist (RL-23): die Engine warnt dann mit dem früheren, strengen Ende. */
+const BEDINGT_UNSICHER: ReadonlySet<BedingteArt> = new Set<BedingteArt>(['gl_berchtoldstag']);
 
 const BEDINGT_BESCHREIBUNG: Record<BedingteArt, string> = {
   ne_schliesstag:
@@ -280,6 +310,13 @@ const BEDINGT_BESCHREIBUNG: Record<BedingteArt, string> = {
   so_1_mai:
     'der 1. Mai im Kanton SO: ganztags Feiertag nur für Fristen nach Art. 142 ZPO (EG ZPO SO § 22 Abs. 2, '
     + 'BGS 221.2); allgemein ist er erst ab 12.00 Uhr Ruhetag (Ruhetagsgesetz SO § 2 Abs. 1 lit. b, BGS 512.41)',
+  gl_berchtoldstag:
+    'der Berchtoldstag im Kanton Glarus. Das Ruhetagsgesetz GL (GS IX B/21/1 Art. 2 Abs. 1) nennt ihn nicht '
+    + 'als Feiertag; die Personalverordnung GL (GS II A/6/2 Art. 19 Abs. 2 lit. a) führt ihn nur als '
+    + 'arbeitsfreien Tag der Verwaltung, die Feiertagsliste des Bundesamts für Justiz (Stand 1.1.2011, '
+    + 'Ziff. 8 lit. b) nur als Tag, der «wie ein gesetzlicher Feiertag behandelt» wird (Art. 5 EuFrÜb, '
+    + 'SR 0.221.122.3, anwendbar nur im Zivil-, Handels- und Verwaltungsrecht, Art. 1 Abs. 1); ein '
+    + 'Glarner Urteil dazu ist nicht bekannt',
 };
 
 const NE_SCHLIESSTAGE_AB = new Date(2015, 3, 1);   // LI-CPC Art. 10a / LI-CPP Art. 9a in Kraft
@@ -301,8 +338,23 @@ function istNeSchliesstag(date: Date): boolean {
 
 function bedingteArt(date: Date, kanton: Kanton): BedingteArt | null {
   if (kanton === 'NE' && istNeSchliesstag(date)) return 'ne_schliesstag';
+  if (kanton === 'GL' && date.getMonth() === 0 && date.getDate() === 2) return 'gl_berchtoldstag';
   if (kanton === 'SO' && date.getMonth() === 4 && date.getDate() === 1 && !isBefore(date, SO_1_MAI_AB)) return 'so_1_mai';
   return null;
+}
+
+/**
+ * Strenge Lesart (RL-23): der Kontext OHNE die unsicher gezählten bedingten
+ * Tage (BEDINGT_UNSICHER, heute GL 2.1.). Nur für den Warnvergleich — nie
+ * für das ausgewiesene Ergebnis (Entscheid W-11 a: der Tag zählt).
+ */
+export interface StrengeLesart { readonly kontext: FeiertagsKontext; readonly ohneUnsichere: true }
+export type FeiertagsLesart = FeiertagsKontext | StrengeLesart;
+export const strengeLesart = (kontext: FeiertagsKontext): StrengeLesart => ({ kontext, ohneUnsichere: true });
+
+function zaehltBedingt(art: BedingteArt, lesart: FeiertagsLesart): boolean {
+  if (typeof lesart === 'string') return BEDINGT_GILT_IN[art].includes(lesart);
+  return !BEDINGT_UNSICHER.has(art) && BEDINGT_GILT_IN[art].includes(lesart.kontext);
 }
 
 function giltImKanton(kantone: 'alle' | Kanton[], kanton: Kanton): boolean {
@@ -336,21 +388,21 @@ function istGrundFeiertag(date: Date, kanton: Kanton): boolean {
  * SchKG, Art. 78 OR). Voreinstellung 'allgemein' = bedingte kantonale Tage
  * zählen NICHT (sichere Richtung für jede Stelle ohne eigenen Kontext).
  */
-export function istFeiertag(date: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): boolean {
+export function istFeiertag(date: Date, kanton: Kanton, kontext: FeiertagsLesart = 'allgemein'): boolean {
   if (istGrundFeiertag(date, kanton)) return true;
   const art = bedingteArt(date, kanton);
-  return art !== null && BEDINGT_GILT_IN[art].includes(kontext);
+  return art !== null && zaehltBedingt(art, kontext);
 }
 
 /** Arbeitsfreier Tag = Samstag/Sonntag oder anerkannter Feiertag im Kontext. */
-export function istArbeitsfreierTag(date: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): boolean {
+export function istArbeitsfreierTag(date: Date, kanton: Kanton, kontext: FeiertagsLesart = 'allgemein'): boolean {
   return isWeekend(date) || istFeiertag(date, kanton, kontext);
 }
 
 /** Vorwärtsschiebung auf den nächsten Werktag (Sa/So/anerkannter Feiertag
  *  am massgebenden Ort) – kanonische Stelle; zuvor als while-Schleife in
  *  fristenEngine, verjaehrung und mietrecht je eigens ausgeschrieben. */
-export function naechsterWerktag(d: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): Date {
+export function naechsterWerktag(d: Date, kanton: Kanton, kontext: FeiertagsLesart = 'allgemein'): Date {
   let t = d;
   while (istArbeitsfreierTag(t, kanton, kontext)) t = addDays(t, 1);
   return t;
@@ -393,9 +445,51 @@ export function bedingteFeiertageSatz(
       + `Verfahren nicht als Feiertag, wäre bereits der ${formatDatum(eng)} massgeblich.`;
 }
 
-/** Hinweis für Vorwärtsfristen ohne Stillstand (Art. 78 OR u. ä.): `null` oder Warnsatz. */
+/** Unsicher gezählter bedingter Tag im Kontext (RL-23: GL 2.1.). */
+function istGezaehlterUnsichererTag(date: Date, kanton: Kanton, kontext: FeiertagsKontext): BedingteArt | null {
+  if (isWeekend(date) || istGrundFeiertag(date, kanton)) return null;
+  const art = bedingteArt(date, kanton);
+  return art !== null && BEDINGT_UNSICHER.has(art) && BEDINGT_GILT_IN[art].includes(kontext) ? art : null;
+}
+
+/**
+ * Warnsatz (RL-23, Q5/W-11 a): Das im `kontext` berechnete Ende `gezaehlt`
+ * zählt einen unsicheren bedingten Tag (GL 2.1.) als Feiertag; ohne ihn wäre
+ * es `streng` (streng ≤ gezaehlt). Ursache-Tage werden nur in `bereiche`
+ * gesucht (je [von, bis) — die Stellen, an denen die Engine verschoben hat:
+ * Art. 142 Abs. 1bis ZPO, Endverschiebung, Art. 63 SchKG). `null`, wenn gleich.
+ * `richtung` 'frueher' = Handlungsfrist (gezählt = spätere, unsichere Seite),
+ * 'spaeter' = frühestes Datum (gezählt = spätere, sichere Seite).
+ */
+export function unsichereFeiertageSatz(
+  bereiche: ReadonlyArray<readonly [von: Date, bis: Date]>, gezaehlt: Date, streng: Date,
+  kanton: Kanton, kontext: FeiertagsKontext, richtung: 'frueher' | 'spaeter',
+): string | null {
+  if (+gezaehlt === +streng) return null;
+  const tage: string[] = [];
+  let art: BedingteArt | null = null;
+  for (const [von, bis] of bereiche) {
+    for (let t = von, g = 0; isBefore(t, bis) && g < 400; t = addDays(t, 1), g++) {
+      const a = istGezaehlterUnsichererTag(t, kanton, kontext);
+      if (a) { tage.push(formatDatum(t)); art = art ?? a; }
+    }
+  }
+  if (!art) return null;
+  const kopf = `Kantonaler Sonderfall: Der ${tage.join(', ')} ist ${BEDINGT_BESCHREIBUNG[art]}. `
+    + 'Er ist hier als Feiertag mitgezählt; ob das Gericht ihn als Feiertag anerkennt, ist nicht gesichert. ';
+  return richtung === 'frueher'
+    ? kopf + `Berechnet ist das Fristende ${formatDatum(gezaehlt)}; zählt der Tag nicht als Feiertag, endet die `
+      + `Frist bereits am ${formatDatum(streng)}. Sicherheitshalber bis ${formatDatum(streng)} handeln.`
+    : kopf + `Berechnet ist das spätere, sichere Datum (${formatDatum(gezaehlt)}); zählt der Tag nicht als `
+      + `Feiertag, wäre bereits der ${formatDatum(streng)} massgeblich.`;
+}
+
+/** Hinweis für Vorwärtsfristen ohne Stillstand (Art. 78 OR u. ä.): `null` oder Warnsatz.
+ *  RL-23: auch für unsicher gezählte Tage (GL 2.1.). */
 export function hinweisBedingteFeiertage(rohesEnde: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): string | null {
   const eng = naechsterWerktag(rohesEnde, kanton, kontext);
   const weit = naechsterWerktag(rohesEnde, kanton, 'weitest');
-  return bedingteFeiertageSatz(rohesEnde, eng, weit, kanton, kontext, 'frueher');
+  const streng = naechsterWerktag(rohesEnde, kanton, strengeLesart(kontext));
+  return bedingteFeiertageSatz(rohesEnde, eng, weit, kanton, kontext, 'frueher')
+    ?? unsichereFeiertageSatz([[rohesEnde, eng]], eng, streng, kanton, kontext, 'frueher');
 }

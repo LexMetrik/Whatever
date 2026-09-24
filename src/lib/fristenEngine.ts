@@ -2,7 +2,10 @@
 import { addDays, addMonths, addYears, isAfter, isBefore } from 'date-fns';
 import type { Kanton } from '../types/legal';
 import { dauerTageInklusiv } from './datumsUtils';
-import { bedingteFeiertageSatz, istArbeitsfreierTag, naechsterWerktag, type FeiertagsKontext } from '../data/zpoFeiertage';
+import {
+  bedingteFeiertageSatz, istArbeitsfreierTag, naechsterWerktag, strengeLesart, unsichereFeiertageSatz,
+  type FeiertagsKontext, type FeiertagsLesart,
+} from '../data/zpoFeiertage';
 
 // ─── Generische Fristen-Engine ────────────────────────────────────────────
 //
@@ -57,7 +60,7 @@ function dauerTage(p: Periode): number {
  * `kontext`: Feiertags-Kontext (RL-22-Nachzug, zpoFeiertage.ts «Bedingte
  * kantonale Feiertage»); Voreinstellung 'allgemein' = sichere Richtung.
  */
-export function nthWerktagNach(d: Date, n: number, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): Date {
+export function nthWerktagNach(d: Date, n: number, kanton: Kanton, kontext: FeiertagsLesart = 'allgemein'): Date {
   let c = d;
   let gezaehlt = 0;
   for (let guard = 0; guard < 100 && gezaehlt < n; guard++) {
@@ -161,7 +164,7 @@ export function normalisiereEnde(
   ende: Date,
   kanton: Kanton,
   st: Stillstand,
-  kontext: FeiertagsKontext = 'allgemein',
+  kontext: FeiertagsLesart = 'allgemein',
 ): { tag: Date; verschoben: boolean } {
   // SchKG Art. 63: Ende IN geschlossener Zeit → 3. Werktag danach. Liegt das
   // Ende nur auf einem Sa/So/Feiertag (nicht in der Periode), gilt nicht die
@@ -204,6 +207,9 @@ export function normalisiereEnde(
  * RL-22-Nachzug: Warnsatz, wenn ein bedingter kantonaler Feiertag (NE-Schliess-
  * tag, SO 1. Mai), der im `kontext` NICHT zählt, das Fristende verändern würde.
  * Vergleicht die Endnormalisierung im Kontext mit der weitesten Lesart.
+ * RL-23 (Q5, W-11 a): sonst Warnsatz, wenn ein im Kontext GEZÄHLTER, aber
+ * unsicherer Tag (GL 2.1.) das Ende verschoben hat (Vergleich mit der
+ * strengen Lesart ohne diesen Tag).
  * `richtung` 'frueher' = Handlungsfrist (Engine wählt das frühere Ende),
  * 'spaeter' = frühestes zulässiges Datum (Engine wählt das spätere).
  */
@@ -216,5 +222,7 @@ export function hinweisBedingteFeiertageEnde(
 ): string | null {
   const eng = normalisiereEnde(ende, kanton, st, kontext).tag;
   const weit = normalisiereEnde(ende, kanton, st, 'weitest').tag;
-  return bedingteFeiertageSatz(ende, eng, weit, kanton, kontext, richtung);
+  const streng = normalisiereEnde(ende, kanton, st, strengeLesart(kontext)).tag;
+  return bedingteFeiertageSatz(ende, eng, weit, kanton, kontext, richtung)
+    ?? unsichereFeiertageSatz([[ende, eng]], eng, streng, kanton, kontext, richtung);
 }

@@ -217,6 +217,7 @@ export function berechneMietkuendigung(input: MietInput): MietErgebnis {
       warnungen.push('Bei anderen Objekten als Wohn-/Geschäftsräumen ist die Kündigung nach Art. 257d Abs. 2 / 257f OR fristlos möglich – dieser Rechner berechnet hier kein Datum.');
     }
     let zahlungsfristEnde: Date | undefined;
+    let zahlungsfristRoh: Date | undefined;
     if (input.kuendigungsart === 'zahlungsverzug' && input.zahlungsaufforderungZugang) {
       const za = parseISO(input.zahlungsaufforderungZugang);
       // Bug-Audit 19.6.2026 (H4): Art. 257d Abs. 1 OR — «mindestens zehn Tage, bei
@@ -225,6 +226,7 @@ export function berechneMietkuendigung(input: MietInput): MietErgebnis {
       const zfRoh = addDays(za, zfTage);
       const zf = werktagOderNaechster(zfRoh, input.kanton);
       zahlungsfristEnde = zf.tag;
+      zahlungsfristRoh = zfRoh;
       rechenweg.push({
         beschreibung: 'Stufe 1 – Zahlungsfrist (Art. 257d Abs. 1 OR)',
         zwischenergebnis:
@@ -249,7 +251,7 @@ export function berechneMietkuendigung(input: MietInput): MietErgebnis {
       normen: [norm, N_77],
     });
     warnungen.push('Die Erstreckung des Mietverhältnisses ist bei Kündigung nach Art. 257d/257f OR ausgeschlossen (Art. 272a OR).');
-    return abschluss(input, zugang, istRaum ? ende : undefined, undefined, zahlungsfristEnde, rechenweg, annahmen, warnungen, [norm, N_272a, N_77], true);
+    return abschluss(input, zugang, istRaum ? ende : undefined, undefined, zahlungsfristEnde, rechenweg, annahmen, warnungen, [norm, N_272a, N_77], true, undefined, zahlungsfristRoh);
   }
 
   if (input.kuendigungsart === 'konsumgueter') {
@@ -395,13 +397,16 @@ function abschluss(
   normverweise: Normverweis[],
   erstreckungAusgeschlossen = false,
   verfehlter?: Date,
+  zahlungsfristRoh?: Date,
 ): MietErgebnis {
   const istRaum = input.objekt === 'wohnung' || input.objekt === 'geschaeftsraum';
   let anfechtungBis: Date | undefined;
+  let anfechtungRoh: Date | undefined;
   let erstreckungBis: Date | undefined;
 
   if (istRaum && input.partei === 'vermieter') {
-    const grenze = werktagOderNaechster(addDays(zugang, 30), input.kanton).tag;
+    anfechtungRoh = addDays(zugang, 30);
+    const grenze = werktagOderNaechster(anfechtungRoh, input.kanton).tag;
     anfechtungBis = grenze;
     if (!erstreckungAusgeschlossen) erstreckungBis = grenze;
     rechenweg.push({
@@ -428,7 +433,9 @@ function abschluss(
   // RL-22-Nachzug: Art. 78 OR («staatlich anerkannter Feiertag») — kantonale
   // Sonderfeiertage nur für bestimmte Verfahren (NE-Schliesstage, SO 1. Mai)
   // zählen nicht; Warnung, wenn einer ein berechnetes Fristende verschieben würde.
-  for (const ende of [zahlungsfristEnde, anfechtungBis]) {
+  // RL-23 (Q5): ab dem ROHEN Ende gerechnet — nur so ist auch ein gezählter, aber
+  // unsicherer Tag (GL 2.1.) erkennbar, über den Art. 78 OR schon verschoben hat.
+  for (const ende of [zahlungsfristRoh ?? zahlungsfristEnde, anfechtungRoh ?? anfechtungBis]) {
     const h = ende ? hinweisBedingteFeiertage(ende, input.kanton) : null;
     if (h && !warnungen.includes(h)) warnungen.push(h);
   }

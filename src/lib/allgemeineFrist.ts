@@ -93,11 +93,17 @@ export const ALLG_FRIST_HINWEIS =
 // Tagerechner für StPO-Fristen empfiehlt («Keine Ferien»). Offen (Q8 §d):
 // Partei und Rechtsbeistand in verschiedenen Kantonen — keine amtliche Stelle
 // gefunden, darum nur der Hinweis auf den früheren Termin (sichere Seite).
+// RL-23/Q8-04: BGer 6B_730/2013 E. 1.2 (10.12.2013) prüft auch kommunale
+// Ruhetage am Wohnsitz (SO: Gemeinden können zusätzliche Ruhetage bezeichnen,
+// heute Ruhetagsgesetz SO § 2 Abs. 2, BGS 512.41); die Feiertagsmatrix führt
+// nur kantonale Tage → Fristende allenfalls zu früh (sichere Richtung), offengelegt.
 export const STPO_FRIST_HINWEIS =
   'Strafverfahren: Es gibt keine Gerichtsferien (Art. 89 Abs. 2 StPO) – das Fristende oben gilt ohne '
   + 'Stillstand. Massgebend für Feiertage ist der Kanton, in dem die Partei oder ihr Rechtsbeistand '
   + 'Wohnsitz oder Sitz hat (Art. 90 Abs. 2 StPO), nicht der Gerichtsort; liegen beide in verschiedenen '
-  + 'Kantonen, im Zweifel den früheren Termin einhalten.';
+  + 'Kantonen, im Zweifel den früheren Termin einhalten. Allfällige kommunale Ruhetage am Wohnsitz oder Sitz, '
+  + 'die das Bundesgericht mitberücksichtigt (BGer 6B_730/2013 E. 1.2), sind nicht abgebildet – das Fristende '
+  + 'liegt deshalb allenfalls früher als nötig, nie wegen solcher Tage später.';
 
 // RL-24/F1-02: Offenlegung des Vertragsfrist-Regimes (§8). Modul-intern: erreicht
 // das UI über `hinweise` → `warnungen` (ErgebnisAnzeige), kein Export (check:sediment d).

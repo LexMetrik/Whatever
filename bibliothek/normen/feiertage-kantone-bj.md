@@ -118,7 +118,7 @@ siehe Spalte «RL-22».
 | ZH | GOG § 122 (LS 211.1) | 1.1.2026 (Fassung 131) | deckungsgleich | Snapshot `ZH-211.1.json` (abgerufen 1.9.2026) |
 | BS | RLG § 2 (SG 811.100) | 1.7.2020 | deckungsgleich | Snapshot `BS-811.100.json` (abgerufen 23.6.2026) |
 | AG · OW · ZG · VS · NW · BE | EG ZPO § 21 (SAR 221.200) · GOG Art. 28 Abs. 2 (GDB 134.1) · GOG § 10 (BGS 161.1) · RPflG Art. 37 (SGS 173.1) · GerG Art. 69 (**NG 261.1**, nicht «262.1», R1-09) · FRG Art. 2 (BSG 555.1) | s. R1/V8 | deckungsgleich | Beleg R1/V8 |
-| SG · SH · GL (2.1.) | sGS 143.11 Art. 59 Abs. 1 + KG SG FS.2012.1 · SHR 180.111 § 33 Abs. 1 + OGE 40/2018/1/K · GS II A/6/2 Art. 19 Abs. 2 lit. a (GL ohne Gerichtspraxis) | 1.1.2026 / 1.1.2026 / 1.7.2026 | 2.1. bleibt (R1-01 durch V8 widerlegt); GL-Hinweis folgt RL-23 (W-11) | Beleg V8 |
+| SG · SH · GL (2.1.) | sGS 143.11 Art. 59 Abs. 1 + KG SG FS.2012.1 · SHR 180.111 § 33 Abs. 1 + OGE 40/2018/1/K · GS II A/6/2 Art. 19 Abs. 2 lit. a (GL ohne Gerichtspraxis) | 1.1.2026 / 1.1.2026 / 1.7.2026 | 2.1. bleibt (R1-01 durch V8 widerlegt); *RL-23 (25.9.2026):* GL-2.1. als unsicher gezählter bedingter Tag mit Warnung, s. Abschnitt «Glarus 2. Januar» | Beleg V8; GL **amtlich selbst geöffnet 25.9.2026** (s. unten) |
 | NE | LI-CPC Art. 10a (RSN 251.1) https://rsn.ne.ch/DATA/program/books/rsne/pdf/2511.pdf — Schliesstage der Kantonsverwaltung (mind. halbtags) = Feiertag für Art. 142 ZPO | Etat 1.7.2019 (in Kraft 1.4.2015) | **neu geführt** je Jahr mit amtlicher Liste (`NE_SCHLIESSTAGE`): 2026 = 2.1., Ostermontag, Fr n. Auffahrt, Pfingstmontag, Lundi du Jeûne, 24.12., 26.12., 31.12. (ne.ch «Jours fériés officiels»); andere Jahre nur RSN 941.02 Art. 3 (W-10 a). *Nachzug 25.9.2026:* stehende Regel RDF Art. 11 Abs. 1 für alle Jahre ab 1.4.2015 statt Jahrestabelle; zählt in `zpo`/`stpo`/`bgg`/`vwvg`, nicht in `schkg`/`allgemein` (Warnung) | Beleg V8; Eigenabruf 24.9.2026 durch Netzsperre verhindert; **amtlich selbst geöffnet 25.9.2026** (PDF Etat 1.7.2019, Randtitel «Jours fériés (art. 142 CPC)») |
 | BL | GOG § 46 Abs. 2 (SGS 170) — Schliesstage | 1.1.2020 | **nicht geführt**, nur Hinweis (W-10; Geltung für ZPO offen) | Beleg V8 |
 | VD | LVLP Art. 73 Abs. 2 (BLV 280.05) — nur SchKG | 1.1.2018 | **nicht geführt**, nur Hinweis (W-10) | Beleg V8 (via LexFind) |
@@ -153,6 +153,8 @@ RDF Art. 11 Abs. 1 (2027 zusätzlich: 2.1., 29.3., 7.5., 17.5., 20.9., 24.12., 2
 belegt und zitierte RDF als «jours désignés par le Conseil d'Etat»; RDF Art. 11
 Abs. 1 enthält eine feste Liste. Daher jetzt Regel statt Jahrestabelle.
 
+| GL 2. Januar (RL-23) | nur BJ-Liste Ziff. 8 lit. b (Art. 11 EuFrÜb) + PV GL Art. 19 Abs. 2 lit. a («arbeitsfreier Tag»); Ruhetagsgesetz GL Art. 2 Abs. 1 nennt ihn nicht | ZPO, SchKG, BGG, VwVG, OR 78 — **zählt, aber unsicher** (W-11 a) → Warnung mit strengem Ende | Art. 5 EuFrÜb (Zivil-, Handels-, Verwaltungsrecht, Art. 1 Abs. 1); kein Glarner Urteil | StPO (EuFrÜb gilt nicht; Art. 90 Abs. 2 StPO nur kantonales Recht) → nicht gezählt + Warnung |
+
 **Engines (Stand 25.9.2026):** zpoFristen `zpo` · bggVwvgFristen `bgg`/`vwvg` ·
 bgerRechtsweg `bgg` · schkgFristen `schkg` (Wartefrist-Folgetag `weitest`) ·
 allgemeineFrist `allgemein` (Rückwärts-Vorverlegung `weitest`) · mietrecht,
@@ -162,6 +164,42 @@ verjaehrung `allgemein` · FristenKalender (Anzeige) Voreinstellung `allgemein`.
 Sa/So fallen) — ob die Büros dann geschlossen sind, ist nicht belegt; nicht
 abgebildet. SchKG-Geltung über Art. 31 SchKG (Wortlaut LI-CPC «dans le canton»
 spricht eher dafür) — Entscheid/Rechtsprechung fehlt.
+
+## Glarus 2. Januar (RL-23, 25.9.2026)
+
+Befund Q5 (Prüfung Rechtslogik 23.9.2026), Entscheid **W-11 (a)** (David 24.9.2026
+«nach Empfehlung»): zählen + Warnung. Eigener Abruf aller Belege am 25.9.2026:
+
+- **Ruhetagsgesetz GL** (GS IX B/21/1, Version 1.7.2019) Art. 2 Abs. 1 lit. b:
+  «die allgemeinen Feiertage: Neujahr, Fahrtsfest, Ostermontag, Auffahrt,
+  Pfingstmontag, 1. August, Allerheiligen und Stephanstag»; lit. c hohe Feiertage —
+  **kein 2. Januar**. API https://gesetze.gl.ch/api/de/texts_of_law/IX%20B%2F21%2F1
+- **Personalverordnung GL** (GS II A/6/2, Fassung 1.7.2026) Art. 19 Abs. 2: «bezahlten
+  arbeitsfreien Tage: a. Berchtoldstag; b. Heiligabend; c. Silvester» — ausdrücklich
+  getrennt von den «Feiertagen» nach Abs. 1. API https://gesetze.gl.ch/api/de/texts_of_law/II%20A%2F6%2F2
+- **BJ-Verzeichnis** (Stand 1.1.2011) Ziff. 8 lit. b «Tage, die wie gesetzliche
+  Feiertage behandelt werden – Berchtoldstag, 2. Januar» (PDF oben, HTTP 200 am 25.9.2026).
+- **EuFrÜb** SR 0.221.122.3 (Fedlex-Filestore eli/cc/1983/500_500_500, Stand 1.1.2011):
+  Art. 1 Abs. 1 — anwendbar «auf dem Gebiet des Zivil-, Handels- und Verwaltungsrechts
+  einschliesslich des diese Gebiete betreffenden Verfahrensrechts»; Art. 5 verlängert
+  auch bei einem Tag, «der wie ein gesetzlicher Feiertag behandelt wird».
+
+**Regel (deterministisch):** GL-2.1. zählt in den Kontexten `zpo`, `schkg`, `bgg`,
+`vwvg`, `allgemein` (und `weitest`); jede Frist-Engine vergleicht mit der strengen
+Lesart ohne den Tag und warnt mit dem früheren Ende («sicherheitshalber bis …»).
+Im Kontext `stpo` zählt der Tag NICHT (EuFrÜb nicht anwendbar, GL-Recht nennt ihn
+nicht) — Warnung wie bei den übrigen bedingten Tagen. **SG/SH** unverändert ohne
+Warnung (kantonaler Normwortlaut «Ruhetag»/«Feiertag» + Gerichtspraxis).
+
+**Kommunale Ruhetage (Q8-04):** BGer 6B_730/2013 vom 10.12.2013 E. 1.2 prüft für
+Art. 90 Abs. 2 StPO auch einen kommunalen Ruhetag am Wohnsitz (SO: Gemeinden können
+zusätzliche Ruhetage bezeichnen, heute Ruhetagsgesetz SO § 2 Abs. 2, BGS 512.41).
+Die Matrix führt nur kantonale Tage → Fristende allenfalls zu früh (sichere
+Richtung); offengelegt im StPO-Hinweis des allgemeinen Rechners.
+
+**Offen:** Glarner Gerichtspraxis (keine publizierte gefunden, Q5); ob der Kontext
+`bgg` bei Beschwerden in Strafsachen wie `stpo` zu behandeln wäre (EuFrÜb gilt
+dort nicht) — heute zählt `bgg` einheitlich, mit Warnung.
 
 ## Pflegebedarf / Verifikations-TODO
 
