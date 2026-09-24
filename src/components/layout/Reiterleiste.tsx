@@ -459,9 +459,29 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // einfach neuer reiter». Die Höchstens-einer-Regel (R13-Entscheid, für W2·25
   // bindend) braucht dafür keinen Sonderfall mehr: `merkeTab` erkennt die
   // bereits offene Sammlung an ihrer Identität und aktiviert sie.
+  //
+  // ── R15 (Entscheid David 24.9.2026) · JEDES «+» IST EIN NEUER REITER ─────
+  // Der Absatz darüber bleibt als datierter Beleg (§0 Ziff. 2b) — er galt bis
+  // `406b435ad`. David 24.9.2026: «tabliste soll so funktionieren, dass wenn
+  // man auf plus klickt sich eine neue startseite öffnet und es nicht
+  // automatisch in suchen landet»; auf den Hinweis, die Höchstens-einer-Regel
+  // stehe dem entgegen: «nein heb diesen entscheid auf und mach es wie ich es
+  // sage». Beides ist damit weg: der Sprung in die Kopf-Suche und die Regel.
+  // Ist die Sammlung «/» noch nicht offen, entsteht sie; sonst die nächste
+  // INSTANZ (`naechsteInstanz('/')` → `/?r=2`, «Sammlung (2)») — derselbe
+  // Rahmen wie «Duplizieren» am Gesetzes-Reiter (§10), kein zweiter Weg.
+  // Gelesen wird der Speicher, nicht `ordnung`: zwei schnelle Klicks im
+  // selben Frame sähen sonst beide denselben Stand (dieselbe Wahl wie der
+  // Rand-Schub, W2·18 Welle 3 Punkt 2). Der Fokus geht auf den neuen Reiter
+  // (Browser-Analogie; A11y: er darf nicht verschwinden) — über `fokusNach`,
+  // denselben Weg wie Delete, weil der Knopf erst nach dem Render existiert.
+  // Aufrufer: «+», Alt+T, Leerraum-Doppelklick, Leerraum-Menü, Blatt.
   const neuerReiter = () => {
-    zurSammlung();
-    window.dispatchEvent(new CustomEvent('lm:suche-fokus'));
+    const ziel = ladeTabs().some((t) => tabSchluessel(t.path) === '/') ? naechsteInstanz('/') : '/';
+    merkeTab(ziel);
+    navigate(ziel);
+    fokusNach.current = ziel;
+    setFokusWunsch(ziel);
   };
 
   // ── R13-6 · «ALLE SCHLIESSEN» AN EINER STELLE GERECHNET ───────────────────

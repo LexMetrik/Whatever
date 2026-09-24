@@ -126,6 +126,12 @@ export function TabTracker() {
     // trägt (Dublette behält ihre Position, Neues hängt hinten an). Damit ist
     // die «Höchstens EINE Sammlung»-Regel des «+» dieselbe Regel, kein zweiter
     // Ort (§5) — und der Weg zurück ins Gesetz kostet keinen Reiter.
+    // R15 (Entscheid David 24.9.2026): die Höchstens-einer-Regel ist
+    // aufgehoben — jedes «+» legt eine neue Instanz `/?r=N` an
+    // (`Reiterleiste.neuerReiter`). Der Satz «wer auf «/» geht, ersetzt nichts»
+    // gilt für ALLE Instanzen: verglichen wird `pathname` (ohne `?r`), also
+    // aktiviert/legt `merkeTab` jede Instanz an, statt den aktiven Reiter zu
+    // überschreiben. Die Zeile darunter ist dafür unverändert richtig.
     if ((state as NeuerReiterState | null)?.lmNeuerReiter || pathname === '/') merkeTab(ziel, label);
     else ersetzeTab(aktiv.current, ziel, label, navTyp !== 'POP');
     aktiv.current = ziel;
