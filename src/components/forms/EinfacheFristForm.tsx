@@ -241,9 +241,29 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   // BEWUSST kein `ErgebnisBlock`: vor der Wahl gibt es kein Ergebnis, also
   // weder `id="lc-ergebnis-einfach"` noch `aria-live` (W-12 c, rl24 UI-07).
   // Voll-Rechner (Tagerechner) unverändert: gestrichelte Kachel.
+  //
+  // Nachzug Paket 3 (W2·30-RL-W2A, 25.9.2026): die Bühne (`start-schnell`/-`eng`)
+  // reserviert wieder die Höhe des GERECHNETEN Zustands (Revert b6804ec97 — die
+  // Startseiten-Session widersprach der abgesenkten Bühne, s. Commit-Historie).
+  // Damit fehlt dem Leerzustand VOR der Wahl selbst noch die Höhe: sein eigener
+  // Inhalt (Kopfzeile + eine Notizzeile) ist ~56–77 px niedriger als das
+  // Fristende (Kopfzeile + grosser Wert + ICS-Knopf), das an seine Stelle
+  // tritt. Gemessen 25.9.2026 (vite preview, Chromium, `lc-ergebnis-einfach`
+  // nach Wahl «Gerichtsferien (ZPO)», dieselbe Anatomie wie hier):
+  // zweispaltig (@1024–1440 und @390) 138→194 px (+56), einspaltig (@320)
+  // 138→215 px (+77, dort ist die Karte insgesamt schmaler). Die Mindesthöhe
+  // hier geht NICHT auf die gemessenen Werte selbst, sondern auf denselben
+  // Ausgangspunkt wie die Bühne-Tokens (32.25rem/44.5rem, s. tailwind.config.js
+  // §start-schnell): 12.25rem einspaltig-Eingabeanteil 320 px zweispaltig
+  // ergibt exakt 12.25rem (196 px), 44.5rem abzüglich 494 px einspaltig ergibt
+  // exakt 13.625rem (218 px) — die Bühne braucht dadurch VOR der Wahl kein
+  // eigenes Reserve-Polster mehr (Reserve 0 statt 58/66/77 px, e2e
+  // startseite-schnellwerkzeug.e2e.ts «Bühne = Frist-Höhe (U9)»). Derselbe
+  // Container-Bruch (`@[16.5rem]:`) wie im Eingabe-Raster oben (Z. 278) und im
+  // Bühne-Token selbst (`start/Schnellwerkzeug.tsx`) — kein neuer Breakpoint.
   const leer = (was: string) => knapp
     ? (
-      <div className="space-y-4">
+      <div className="space-y-4 min-h-[13.625rem] @[16.5rem]:min-h-[12.25rem]">
         <LiveHeader />
         <ErgebnisPlatzhalter rahmen="notiz" was={was} />
       </div>
