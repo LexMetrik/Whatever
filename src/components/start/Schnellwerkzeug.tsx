@@ -26,6 +26,17 @@ import { SCHNELL_WAHLEN, leseSchnellWahl, speichereSchnellWahl, type SchnellWahl
 // das ganze Feld, und jeder Reiterwechsel zöge die Kacheln mit. Die Bühne ist
 // darum so hoch wie die HÖCHSTE Variante (gemessen, siehe Token) — alle drei
 // Varianten und der Ladeplatzhalter nehmen gleich viel Platz ein.
+// U9 (Nachtrag David 24.9.2026 abends, §5d-bis): «zuletzt geöffnet auf
+// startseite soll nicht extra platz einnehmen sonder schnellwerkzeug soll
+// kleiner werden» — die Bühne reserviert jetzt nur noch die Höhe der FRIST-
+// Variante (die des Prerenders), gemessen, siehe Token. Frist und der
+// Ladeplatzhalter stehen damit ohne Leerfläche; Verzugszins (+~170 px) und
+// Verjährung (+~20 px) lassen die Fläche wachsen. Trade-off bewusst in Kauf
+// genommen (Wortlaut oben): beim Reiterwechsel und beim Stammnutzer mit
+// gespeicherter Wahl bewegt sich die Spalte — und bei Verzugszins die
+// Unterkante der Rasterzeile. Die Kacheln springen nicht mehr mit: sie hängen
+// seit U4 nicht mehr per `subgrid` an dieser Fläche, nur «Häufig gebraucht»
+// wächst nach unten. Logikverlust: keiner (Engines und Felder unverändert).
 //
 // A11y: `tablist` mit wanderndem tabindex (Pfeil links/rechts, Pos1/Ende),
 // automatische Aktivierung wie ein Segment-Schalter; der Inhalt ist ein
