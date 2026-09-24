@@ -723,7 +723,11 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     : tabs;
 
   const ueberlaufZahl = versteckt.length;
+  // W2·29-MARKE (David 24.9.2026): der Überlauf ist ruhiger Text «9 weitere ▾»
+  // statt eines Kastens «+9». Die schmale Ansicht (< sm) behält die Kurzform —
+  // der Knopf steht dort auf seiner alten festen Breite (R13-1, unten).
   const blattTitel = ueberlaufZahl > 0 ? `+${ueberlaufZahl}` : `${tabs.length} offen`;
+  const blattTitelLang = ueberlaufZahl > 0 ? `${ueberlaufZahl} weitere` : blattTitel;
 
   // ── M4 · WAS IM KONTEXTMENÜ EINES REITERS STEHT ───────────────────────────
   //
@@ -1006,7 +1010,9 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // reserviert (`h-[var(--app-reiter-h)]`, box-border: der 1-px-Rahmen
       // liegt INNEN), damit der Inhalt beim ersten Reiter nicht springt —
       // CLS 0, bewacht in `e2e/w224-r11-reiterleiste.e2e.ts`.
-      className="print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] bg-paper">
+      // W2·29-MARKE: Leistengrund `well` (paper-sunken), sobald Reiter da sind —
+      // die Reiter-Blätter stehen darauf, der aktive trägt `paper` wie die Seite.
+      className={`print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] ${tabs.length ? 'bg-well' : 'bg-paper'}`}>
       {/* ── R13B (7.9.2026) · DER UNTERSTRICH LIEGT AUF, NICHT IM FLUSS ──────
           R2 wollte «kein Strich unter dem Nichts» und hat ihn als `border-b`
           an-/abgeschaltet. Ein Rahmen ist aber Geometrie: box-border zieht er
@@ -1061,7 +1067,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             ev.preventDefault();
             oeffneMenue({ path: null, x: ev.clientX, y: ev.clientY });
           }}
-          className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
+          className="relative flex min-w-0 flex-1 items-stretch gap-1 overflow-x-auto lc-reiter-scroll border-l border-rule-soft pl-1">
           {sichtbar.map((t) => {
             const k = tabSchluessel(t.path);
             const nr = ordnung.findIndex((x) => tabSchluessel(x.path) === k) + 1;
@@ -1169,9 +1175,18 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             gezogen.current = null; setZieht(null); setUeber(null);
           }}
           data-reiter-ablage={ueberAblage ? 'aktiv' : undefined}
-          className={`shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border px-1 py-1 text-center text-body-s hover:text-ink-900 ${
-            ueberAblage ? 'border-ink-900 text-ink-900' : 'border-rule-soft text-ink-600'}`}>
-          <span className="num">{blattTitel}</span>
+          // W2·29-MARKE: kein Kasten mehr — der Rahmen erscheint nur noch als
+          // Ablage-Rückmeldung (oben). Die Breite bleibt FEST (R13-1), ab sm
+          // breiter, damit «12 weitere ▾» ganz steht; der Pfeil ist Zierde.
+          className={`shrink-0 self-center ml-2 w-[4.5rem] sm:w-[6.5rem] overflow-hidden whitespace-nowrap border px-1 py-1 text-right text-body-s hover:text-ink-900 ${
+            ueberAblage ? 'border-ink-900 text-ink-900' : 'border-transparent text-ink-600'}`}>
+          {blattTitelLang === blattTitel
+            ? <span className="num">{blattTitel}</span>
+            : <>
+              <span className="num sm:hidden">{blattTitel}</span>
+              <span className="num hidden sm:inline">{blattTitelLang}</span>
+            </>}
+          <span aria-hidden> ▾</span>
         </button>
       </div>
 

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type RefObject } from 'react';
 import { Link } from 'react-router-dom';
 import { tabSchluessel, reiterKurzformTeile, reiterKurzformText, reiterTitel, type TabEintrag } from '../../../lib/tabs';
 import type { VerlaufManifeste } from '../../../lib/verlaufLabel';
-import { registerVonPfad, REG_FLAECHE, REG_TON } from '../bereiche';
+import { registerVonPfad, REG_FLAECHE } from '../bereiche';
 import { SchliessKnopf } from '../../ui/SchliessKnopf';
 import { REITER_MIME } from './ueberlauf';
 
@@ -414,9 +414,19 @@ export function Reiter({
         //    `--app-reiter-min-b` (5rem) und kannte den Inhalt nicht; er ist
         //    jetzt `min-content` und kommt aus den Teilen unten (Herleitung
         //    und Messreihe: index.css bei `.rl-reiter`).
-        className={`group/reiter rl-reiter relative flex cursor-grab items-center border-r border-rule-soft active:cursor-grabbing ${
+        // ── W2·29-MARKE (David 24.9.2026, Variante 1 «Echte Registerreiter») ─
+        //    Jeder Reiter ist ein BLATT: Kanten links/rechts, oben der Strich
+        //    seines Registers. Der inaktive sitzt 4 px tiefer auf dem
+        //    Leistengrund (`well`) und hat eine Unterkante; der aktive trägt die
+        //    Seitenfläche (`paper`) OHNE Unterkante und verschmilzt so mit der
+        //    Seite darunter — der aufgeschlagene Ordner. Die 1-px-Linie der
+        //    Leiste (`Reiterleiste.tsx`) liegt absolut UNTER den Reitern: als
+        //    späteres positioniertes Geschwister deckt ihn der aktive Reiter
+        //    zu, der inaktive zeichnet dieselbe Linie als eigene Unterkante.
+        //    Vorher: Strich UNTEN, aktiver Reiter in Registerton getönt.
+        className={`group/reiter rl-reiter relative flex cursor-grab items-center border-x border-rule-soft active:cursor-grabbing ${
         zieht === t.path ? 'opacity-40' : ''
-      } ${aktiv ? (reg ? REG_TON[reg] : 'bg-paper-raised') : ''}`}
+      } ${aktiv ? 'bg-paper' : 'mt-1 border-b bg-well'}`}
         style={reiterBoden ? { minWidth: reiterBoden } : undefined}>
       {/* EINFÜGEMARKE (D15): 2 px in der Registerfarbe des GEZOGENEN Reiters,
           über die volle Reiterhöhe, auf der Seite, auf der er landen wird.
@@ -447,11 +457,17 @@ export function Reiter({
           nicht nur in der Deckkraft. Der Hover hebt auf 100 % — dieselbe
           Auskunft wie vorher, nur nicht mehr die einzige.
           Ohne Register (Meta-Route) bleibt es bei Tinte: geraten wird keine
-          Farbe (§8). */}
-      <span aria-hidden className={`absolute inset-x-0 bottom-0 h-0.5 ${
-        aktiv
-          ? (reg ? REG_FLAECHE[reg] : 'bg-ink-900')
-          : `${reg ? REG_FLAECHE[reg] : 'bg-ink-400'} opacity-60 group-hover/reiter:opacity-100`}`} />
+          Farbe (§8).
+          ABGELÖST 24.9.2026 (W2·29-MARKE): Tönung und 60 % sind weg, der
+          Strich steht oben in voller Farbe (Herleitung direkt darunter). */}
+      {/* W2·29-MARKE: der Strich sitzt OBEN (3 px, die Registerkante des
+          Blatts) und steht bei jedem Reiter in voller Farbe — aktiv und
+          inaktiv unterscheiden sich jetzt in Fläche, Höhe, Unterkante und
+          Gewicht, nicht mehr in der Deckkraft. Damit fällt auch der
+          60-%-Strich weg, der für Materialien/Werkzeuge unter 3:1 lag
+          (WCAG 1.4.11, Posten W2·29-WERKBANK-NACHLAUF 24.9.2026). */}
+      <span aria-hidden className={`absolute -inset-x-px top-0 h-[3px] ${
+        reg ? REG_FLAECHE[reg] : aktiv ? 'bg-ink-900' : 'bg-ink-400'}`} />
       {/* ── W2·18 WELLE 3 PUNKT 3 · WER ZU EINER ADRESSE FÜHRT, IST EIN LINK ─
           Hier stand ein `<button type="button">` mit `onClick={navigate}`.
           GEMESSEN am Vorstand (13.9.2026): Screenreader meldeten
@@ -529,7 +545,7 @@ export function Reiter({
         // `no-underline`: die Rolle ändert sich, das Bild nicht — ein Reiter
         // ist eine Fläche, kein Fliesstext-Verweis (D13/Design-Reglement).
         className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s no-underline ${
-          aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
+          aktiv ? 'font-semibold text-ink-900' : 'font-normal text-ink-600 hover:text-ink-900'}`}>
         {/* W2·25: «angeheftet» steht im Accessible Name, nicht als Glyphe im
             Reiter — eine Nadel neben dem Kürzel kostete genau die Breite, die
             das Anheften gewinnt, und sagt einer Sprachausgabe nichts. Für den
