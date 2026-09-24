@@ -345,7 +345,7 @@ export function LeserPanelZone({
             style={flaeche.stil}>
             <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}
               bestimmungsWort={bestimmungsWort} erlassKuerzel={erlassKuerzel}
-              reiter={reiter} setReiter={setReiter} inhalt={inhalt}
+              reiter={reiter} setReiter={setReiter} inhalt={inhalt} bezug={aktArtikel}
               onSchliessen={schliesse} panelRef={panelRef}
               // Griffleiste NUR am unten angeschlagenen Blatt: das Zeichen für
               // «nach unten wischbar» (§8: am rechten Rand ein Versprechen ohne

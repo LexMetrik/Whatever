@@ -1,4 +1,4 @@
-import { useRef, type ReactNode } from 'react';
+import { useLayoutEffect, useRef, type ReactNode } from 'react';
 import type { BestimmungsWort } from './erlassAnsicht';
 import { OEFFNER_WORT, PANEL_REITER, normZitat, reiterTitel, type PanelReiter } from './panelModell';
 import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
@@ -52,7 +52,7 @@ const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
 
 export function LeserPanel({
   panelId, titelId, artikelLabel, bestimmungsWort, erlassKuerzel, reiter, setReiter, inhalt, onSchliessen,
-  fuss, panelRef, kopfExtra, steckbrief, verweise,
+  fuss, panelRef, kopfExtra, steckbrief, verweise, bezug = null,
 }: {
   panelId: string;
   /** Id der Überschrift — der Aufrufer setzt sie als `aria-labelledby` an die
@@ -111,8 +111,24 @@ export function LeserPanel({
    *  Artikel» — wie der Steckbrief über den Reitern, damit er in jedem Reiter
    *  steht und nicht als Teil einer Tafel vorgelesen wird (`./BlattArtikel`). */
   verweise?: ReactNode;
+  /** Token des Bezugsartikels (`panelBezug`) — wechselt er, springt die
+   *  Scrollfläche an den Anfang (Meldung David 24.9.2026). */
+  bezug?: string | null;
 }) {
   const leisteRef = useRef<HTMLDivElement>(null);
+  // ── SCROLL-RESET JE ARTIKEL UND REITER (Meldung David 24.9.2026) ──────────
+  // Wörtlich: «erlass blatt scrollt nicht mit wenn sich artikel verändert».
+  // Gemessen auf Prod (OR @1440, Stand #1040): Kopf und Inhalt folgten dem
+  // Scroll-Spy (Art. 41 → 44), die Scrollfläche aber behielt ihre Lage — innen
+  // auf 600 gescrollt, an Art. 44 dann 153 (am Anschlag): die Liste des neuen
+  // Artikels begann mitten drin. Wechselt Bezugsartikel ODER Reiter, steht die
+  // Fläche wieder oben — ohne Animation (`behavior: 'instant'`), im Layout-
+  // Effekt vor dem Malen. Nachladen oder «weitere N» ändern keins von beiden
+  // und lassen die Lage stehen.
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    scrollerRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+  }, [bezug, reiter]);
 
   function taste(e: React.KeyboardEvent<HTMLDivElement>): void {
     const i = PANEL_REITER.findIndex((r) => r.id === reiter);
@@ -227,7 +243,7 @@ export function LeserPanel({
           mit (dieselbe Zusage wie im Gliederungs-Blatt). Nur die AKTIVE Tafel
           ist im DOM — drei gemountete Tafeln hätten alle drei Ladepfade
           gleichzeitig angestossen und damit das Nachladen ausgehebelt. */}
-      <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
+      <div ref={scrollerRef} data-v3-panel-scroller className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:thin]">
         <div role="tabpanel" id={`${panelId}-tafel-${reiter}`} aria-labelledby={`${panelId}-tab-${reiter}`}>
           {inhalt[reiter]}
         </div>
