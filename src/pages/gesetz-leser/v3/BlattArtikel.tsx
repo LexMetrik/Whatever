@@ -198,6 +198,9 @@ export function ErlassTeil({ was, zahl, daten, children }: {
   daten: string;
   children: ReactNode;
 }) {
+  // Null im ganzen Erlass: keine Klappzeile «… · 0» — die Tafel sagt dann in
+  // EINER Zeile selbst, dass nichts erfasst ist (§8), und das ist kürzer.
+  if (zahl === 0) return <>{children}</>;
   return (
     <Klappzeile titel={`Alle ${was} des Erlasses`} rechts={zahl === null ? '' : String(zahl)}
       name={`Alle ${was} des Erlasses${zahl === null ? '' : ` (${zahl})`}`}

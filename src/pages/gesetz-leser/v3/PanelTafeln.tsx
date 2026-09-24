@@ -104,6 +104,10 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // «Änderungen» ohne jeden Beleg am Artikel: weder Fassungshistorie noch ein
   // Eintrag im Artikel-Revisions-Shard — erst dann ist «nichts» eine Antwort.
   const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && !artRev;
+  // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N
+  // nichts erfasst.» darüber wäre dieselbe Auskunft zweimal (Artikel ⊂ Erlass).
+  const erlZahl = erlaeuterungen.wert?.liste.length ?? null;
+  const wzZahl = erlassKey ? werkzeugAnsicht(erlassKey).verfuegbar.length : null;
 
   return {
     artikelRevisionen,
@@ -120,7 +124,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       ),
       materialien: (
         <>
-          <BlattArtikelGruppe titel={zu} zahl={artBot.length} daten="materialien" token={token} geladen={materialien.fertig}>
+          <BlattArtikelGruppe titel={zu} zahl={artBot.length} daten="materialien" token={token} geladen={materialien.fertig && matZahl !== 0}>
             {artBot.map((b) => <BotschaftZeile key={b.key} b={b} aenderung={aenderungNachBotschaft.get(b.key)} locale={locale} />)}
           </BlattArtikelGruppe>
           <ErlassTeil was="Materialien" zahl={matZahl} daten="materialien">
@@ -130,20 +134,20 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       ),
       erlaeuterungen: (
         <>
-          <BlattArtikelGruppe titel={zu} zahl={artMat?.length ?? 0} daten="erlaeuterungen" token={token} geladen={artMat !== undefined}>
+          <BlattArtikelGruppe titel={zu} zahl={artMat?.length ?? 0} daten="erlaeuterungen" token={token} geladen={artMat !== undefined && erlZahl !== 0}>
             {(artMat ?? []).map((m) => <ArtikelErlaeuterung key={m.key} m={m} />)}
           </BlattArtikelGruppe>
-          <ErlassTeil was="Erläuterungen" zahl={erlaeuterungen.wert?.liste.length ?? null} daten="erlaeuterungen">
+          <ErlassTeil was="Erläuterungen" zahl={erlZahl} daten="erlaeuterungen">
             <PanelErlaeuterungen stand={erlaeuterungen} revisionShard={artikelRevisionen.wert} ebene={ebene} />
           </ErlassTeil>
         </>
       ),
       werkzeuge: (
         <>
-          <BlattArtikelGruppe titel={zu} zahl={artWz.length} daten="werkzeuge" token={token}>
+          <BlattArtikelGruppe titel={zu} zahl={artWz.length} daten="werkzeuge" token={token} geladen={wzZahl !== 0}>
             {artWz.map((w) => <ArtikelWerkzeug key={w.id} w={w} />)}
           </BlattArtikelGruppe>
-          <ErlassTeil was="Werkzeuge" zahl={erlassKey ? werkzeugAnsicht(erlassKey).verfuegbar.length : null} daten="werkzeuge">
+          <ErlassTeil was="Werkzeuge" zahl={wzZahl} daten="werkzeuge">
             <PanelWerkzeuge erlassKey={erlassKey ?? ''} />
           </ErlassTeil>
         </>
