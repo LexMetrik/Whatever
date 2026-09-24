@@ -43,9 +43,13 @@ describe('istFeiertag: Kontext entscheidet über bedingte kantonale Tage', () =>
     expect(feiertagIm(d(2026, 5, 15), 'NE', 'allgemein')).toBe(false);
     expect(istFeiertag(d(2026, 5, 15), 'NE')).toBe(false);
   });
-  it('SO 1.5.2026: nur zpo ja (EG ZPO SO § 22 Abs. 2); bgg/stpo/schkg/allgemein nein', () => {
+  // RL-22c (25.9.2026, Fachänderung): stpo ja — EG StPO SO § 10bis (BGS 321.3,
+  // seit 1.3.2015) nennt «den 1. Mai» für Art. 90 Abs. 2 StPO; im RL-22-Nachzug
+  // war nur EG ZPO § 22 Abs. 2 geprüft.
+  it('SO 1.5.2026: zpo und stpo ja (EG ZPO SO § 22 Abs. 2, EG StPO SO § 10bis); bgg/schkg/allgemein nein', () => {
     expect(feiertagIm(d(2026, 5, 1), 'SO', 'zpo')).toBe(true);
-    for (const k of ['bgg', 'vwvg', 'stpo', 'schkg', 'allgemein']) expect(feiertagIm(d(2026, 5, 1), 'SO', k), k).toBe(false);
+    expect(feiertagIm(d(2026, 5, 1), 'SO', 'stpo')).toBe(true);
+    for (const k of ['bgg', 'vwvg', 'schkg', 'allgemein']) expect(feiertagIm(d(2026, 5, 1), 'SO', k), k).toBe(false);
     expect(istFeiertag(d(2026, 5, 1), 'SO')).toBe(false);
   });
   it('Grund-Feiertage bleiben kontextunabhängig (NE 1.3., SO Auffahrt, UR 26.12.2028)', () => {
