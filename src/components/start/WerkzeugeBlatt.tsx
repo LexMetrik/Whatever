@@ -84,7 +84,10 @@ function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
         </ul>
       </WahlSpalte>
       <WahlSpalte reg="w" kopf={<RubrikKachel reg="w" onWahl={zu('vorlagen')} titel="Vorlagen" zahl={nf(z.vorlagen)} einheit="Vorlagen" />}>
-        <ul aria-label="Vorlagen nach Rechtsgebiet" className="grid grid-cols-1 gap-x-4 px-2 xl:grid-cols-2">
+        {/* Eine Spalte, auch ab `xl`: zwei Unterspalten zerrissen @1440
+            («Strafpro-zess», «in Vorbereitung» gequetscht — Screenshot U8-Bau);
+            das Blatt scrollt stattdessen. */}
+        <ul aria-label="Vorlagen nach Rechtsgebiet" className="px-2">
           {WERKZEUGE_VORLAGEN_GEBIETE.map((g) => {
             const n = vorlagenZahl(g.name);
             return (
