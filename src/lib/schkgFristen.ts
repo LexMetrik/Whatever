@@ -321,8 +321,11 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   // RL-18 / Q-10: Offenlegung der Gegenlesart zur Zählweise mit ihrem Datum.
   if (ferienBeiZustellung) {
     const gegen = berechneSchkgFrist({ ...input, ereignis: iso(wirkungstag), ausloeser: undefined, modusOverride: undefined, modus });
+    const einheit = input.laenge === 1
+      ? { tage: 'Tag', monate: 'Monat', jahre: 'Jahr' }[input.einheit]
+      : { tage: 'Tage', monate: 'Monate', jahre: 'Jahre' }[input.einheit];
     warnungen.push(
-      `Zählweise bei Zustellung in den Betreibungsferien: Gerechnet ist nach BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${fmt(wirkungstag)}) zu laufen. ` +
+      `Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): Gerechnet ist nach BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${fmt(wirkungstag)}) zu laufen. ` +
         `Nach der Gegenlesart (Zustellung gilt erst am ${fmt(wirkungstag)} als erfolgt, Fristbeginn am Folgetag nach Art. 142 Abs. 1 ZPO) ergäbe sich: ${gegen.diesAdQuem}. ` +
         'Vorsichtig ist bei Handlungs- und Verwirkungsfristen das frühere, bei Wartefristen das spätere Datum.',
     );
