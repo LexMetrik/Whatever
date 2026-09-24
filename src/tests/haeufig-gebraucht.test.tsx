@@ -37,7 +37,12 @@ describe('Häufig gebraucht', () => {
     const zgb = ERLASS_REGISTER.find((e) => e.key === 'ZGB')!;
     expect(s).toContain(`title="${zgb.titel}"`);
     expect(s).toContain(`aria-label="ZGB – ${zgb.titel}"`);
-    expect(s).toMatch(/>ZGB<\/a>/);
+    // U7 (David 24.9.2026, «Kürzel + voller Titel»): Kürzel vorn als eigenes
+    // Element, dann Titel und SR-Nummer — deklarierte Design-Änderung (vorher Chip `>ZGB</a>`).
+    expect(s).toMatch(/>ZGB<\/span>/);
+    expect(s).toContain('Schweizerisches Zivilgesetzbuch</span>');
+    expect(s).toContain('>Obligationenrecht</span>'); // gebräuchliche Bezeichnung aus der Klammer des amtlichen Titels
+    expect(s.replaceAll('<!-- -->', '')).toContain('SR 220');
     expect(s).toContain('Häufig gebraucht</h2>');
   });
 });

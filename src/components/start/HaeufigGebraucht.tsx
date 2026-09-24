@@ -30,15 +30,27 @@ import { haeufigeErlasse } from './haeufigAuswahl';
 
 const ERLASSE = haeufigeErlasse();
 
+/** Anzeige-Titel: steht die gebräuchliche Bezeichnung in Klammern am Ende
+ *  («… (Obligationenrecht)»), dann diese — sonst der amtliche Titel. Nur
+ *  Darstellung; der volle Titel bleibt Tooltip und zugänglicher Name. */
+const anzeigeTitel = (titel: string) => /\(([^()]+)\)$/.exec(titel)?.[1] ?? titel;
+
+// U7 (David 24.9.2026 «häufig gesucht ist sehr leer» → Auswahl «Kürzel + voller
+// Titel»): je Erlass eine Zeile Kürzel · Titel · SR-Nummer, zweispaltig; der
+// SR-Nummer unter dem Kürzel, der Titel darf zweizeilig umbrechen (höchstens zwei Zeilen).
 export function HaeufigGebraucht() {
   return (
     <StartFlaeche titel="Häufig gebraucht" fuellt>
-      <ul className="flex flex-wrap content-center gap-2">
+      <ul className="grid grid-cols-1 content-center gap-x-6 @[34rem]:grid-cols-2">
         {ERLASSE.map((e) => (
-          <li key={e.key}>
+          <li key={e.key} className="border-t border-rule-soft first:border-t-0 @[34rem]:[&:nth-child(2)]:border-t-0">
             <Link to={erlassPfad(e)} title={e.titel} aria-label={`${e.kuerzel} – ${e.titel}`}
-              className="lc-chip no-underline border-l-reg-g px-3 text-body-s text-ink-900 hover:bg-reg-g-flaeche">
-              {e.kuerzel}
+              className="lc-menu-zeile items-start gap-3 whitespace-normal no-underline">
+              <span className="w-14 shrink-0 font-sans leading-tight">
+                <span className="block text-body-s font-semibold text-ink-900">{e.kuerzel}</span>
+                {e.sr && <span className="num block text-xs text-ink-500">SR {e.sr}</span>}
+              </span>
+              <span className="line-clamp-2 min-w-0 flex-1 font-sans text-xs leading-snug text-ink-600">{anzeigeTitel(e.titel)}</span>
             </Link>
           </li>
         ))}
