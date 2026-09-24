@@ -27,28 +27,12 @@ Token (Rückbau 5.9.2026, QS-EFFIZIENZ Runde 2).
 
 Offen (Altbestand):
 
-- [ ] **Prozess-Kleinfunde Session QS-MONITOR-ROT (18.9.2026)** — (a) `check:suchindex` läuft in keinem
-  Workflow und keiner Tor-Kette (§6.7: Tor, das nie läuft) — einhängen oder streichen; (b) `plan:next`
-  meldet eine Notizen-/Übergabe-Datei OHNE `- [ ]`-Zeilen als «abgearbeitet, löschen», obwohl sie offen
-  ist (Anzeige liest nur Checkboxen) — Übergabe-Vorlage mit Pflicht-Checkbox oder Sonde auf Inhalt;
-  (c) das Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/notizen/` aus Worktree-Sessions — Notizen
-  gehen nur per Shell-Heredoc; Skill `bauschritt` Station A Ziff. 4 sagt das nicht; (d) Skill `auftrag`
-  Ziff. 6 (g) ist ein ~4500-Zeichen-Absatz — als Liste «Kaskade je Korpus-Art» gliedern; (e) Prüfer-
-  Hinweis in den `lex-pruefung`-Auftrag: vite-node-Prüfskripte mit relativen Imports müssen im
-  Repo-Wurzelverzeichnis liegen (Scratchpad-Skripte brauchen absolute Imports) und werden danach
-  gelöscht; (f) Rot-Beweis mit Vorzustand: Backup per `git show <ref>:<pfad>` in den Scratchpad, nie
-  Redirect auf eine getrackte Datei (Auto-Modus blockt).
-- [ ] **LSP** — Befund 30.8.2026: `typescript-language-server` ist keine devDependency mehr
-  (`npx` lädt remote nach). Rest-Auftrag: `WERKZEUG-VERDRAHTUNG.md`-Pflicht zurückbauen oder
-  devDependency bewusst neu setzen — Entscheid in einer Session mit LSP-Bedarf.
-- [ ] **Runner-Kontentions-Ausreisser beobachten** (14–15 Min bei identischem Inhalt; 2
-  unabhängige Beobachtungen 14./15.8.2026 — Zuschreibung erst nach Verteilungsregel, dann ggf.
-  eigener Schritt).
-- [ ] **ENTREGULIERUNG RUNDE 2** — Startbedingung Token-Zeitreihe ≥ 5 Sessions (Stand 5.9.2026:
-  17 Snapshots, Bedingung erfüllt); Prompt-Wortlaut: `bibliothek/betrieb/entregulierung-2026-08-07.md`
-  § Runde 2.
-- [ ] **subagent-wache Live-Beweis** (trägt `agent_type` zur Laufzeit «lex-…»? Beobachtung 30.8.:
-  3 lex-Dispatches ohne Block, Berichte trugen Artefakte — beweisbar erst am echten Block-Fall).
+- *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
+- → Posten `plan/posten/2026-09-24-prozess-kleinfunde-session-qs-monitor-rot-18-9-2026.md` (Prozess-Kleinfunde Session QS-MONITOR-ROT (18.9.2026))
+- → Posten `plan/posten/2026-09-24-lsp-typescript-language-server-ist-keine-devdependency-mehr.md` (LSP: typescript-language-server ist keine devDependency mehr)
+- → Posten `plan/posten/2026-09-24-runner-kontentions-ausreisser-beobachten.md` (Runner-Kontentions-Ausreisser beobachten)
+- → Posten `plan/posten/2026-09-24-entregulierung-runde-2.md` (ENTREGULIERUNG RUNDE 2)
+- → Posten `plan/posten/2026-09-24-subagent-wache-live-beweis.md` (subagent-wache Live-Beweis)
 
 Geschlossen 5.9.2026 (Belege):
 
@@ -76,21 +60,12 @@ je Punkt ein eigener Commit/PR):
   F17-Erweiterung im Lehren-Register). Anlass: 15 Posten wochenlang unsichtbar, darunter eine
   offene §7-Fachfrage an David. Geburtsbeweis §6.7: rot 14/14 auf `0e4999b48`, grün 0 auf
   `8f6fe6971`, beide vom Orchestrator unabhängig nachgemessen. PR #942.
-- [ ] **Tor «verwaister Posten ohne Kopf»** — eine eingerückte `- [ ]`-Zeile hinter einem `---`
-  gehört zu keinem Schritt: Regel 10 sieht sie nicht (sucht `@meta`), Regel 15 per deklarierter
-  Grenze auch nicht. Belegter Fall: Altstand `0e4999b48` Z. 734. Eigene Klasse, eigenes Tor.
-- [ ] **Tor «Prosa-Verweis auf Schritt-ID ohne `@meta`»** — `ROADMAP.md` verwies auf einen nie
-  angelegten Schritt `W3-TARIF-NACHVERIFIKATION` (angekündigt 6.9.2026, 0 Treffer am 20.9.2026).
-  Regel 8.1 prüft nur `@queue`-IDs, nicht Fliesstext. Dritte Klasse derselben Familie.
-- [ ] **`check:regel-wiedervorlage` härten** — bei zwei `@wiedervorlage`-Markern im selben Eintrag
-  gilt still der letzte; der Leser sieht das nicht. Besser: zweiten Marker melden statt überschreiben.
-- [ ] **`QS-CI-MINUTEN` widerspricht sich selbst** (§5, zwei Wahrheiten): Kopf sagt «Gebaut
-  8.9.2026: M1–M5», führt M1–M5 aber weiter als offene Checkboxen. Im Schritt selbst auflösen.
-- [ ] **Nachlass-Wache meldet Fehlalarm bei inhaltsgleichem Commit** — der SessionStart-Hook misst
-  `ahead`, nicht Inhalts-Identität. Am 20.9.2026 gemeldeter «ungepushter Commit» war bereits
-  upstream (andere SHA, von Parallel-Session gelandet), `git pull --rebase` verwarf ihn.
-  Fix: Meldung um «patch evtl. schon upstream — erst rebasen» ergänzen.
-- [ ] **Antigravity-Drift** agy 1.1.26 → 1.2.7 (Kontingent-Lauf 20.9.2026, kein Alarm).
+- → Posten `plan/posten/2026-09-24-tor-verwaister-posten-ohne-kopf.md` (Tor «verwaister Posten ohne Kopf»)
+- → Posten `plan/posten/2026-09-24-tor-prosa-verweis-auf-schritt-id-ohne-meta.md` (Tor «Prosa-Verweis auf Schritt-ID ohne @meta»)
+- → Posten `plan/posten/2026-09-24-check-regel-wiedervorlage-haerten.md` (check:regel-wiedervorlage härten)
+- → Posten `plan/posten/2026-09-24-qs-ci-minuten-widerspricht-sich-selbst-m1-m5-gebaut-aber-als.md` (QS-CI-MINUTEN widerspricht sich selbst — M1–M5 gebaut, aber als offen geführt (M4 im Fahrplan, M5- und M2-Posten))
+- → Posten `plan/posten/2026-09-24-nachlass-wache-meldet-fehlalarm-bei-inhaltsgleichem-commit.md` (Nachlass-Wache meldet Fehlalarm bei inhaltsgleichem Commit)
+- → Posten `plan/posten/2026-09-24-antigravity-drift.md` (Antigravity-Drift)
 
 **WARTET AUF DAVID (Planungsentscheid, kein Bau):** Der 120-KB-Deckel auf `ROADMAP.md` ist durch
 die Verlagerung vom 20.9.2026 **entlastet, nicht stabilisiert**. Masse wandert in Fahrpläne, die

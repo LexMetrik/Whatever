@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-EFFIZIENZ
-titel: Worktree-/Parallel-Agenten-Umgebung — 9 Punkte gebündelt (node_modules, Fedlex-Cache, Messreihe, Scratchpad, Last, Obergrenze, Rückstände)
+titel: Worktree-/Parallel-Agenten-Umgebung — 11 Punkte gebündelt (node_modules, Fedlex-Cache, Messreihe, Scratchpad, Last, Obergrenze, Rückstände, Browser-Pane, Notizen-Schreibweg)
 anlass: 17.9.2026
 -->
 
@@ -90,3 +90,15 @@ Umgehängt 24.9.2026 (REST-Planung §5f, Entscheid David): gehört nicht in REST
 ### 8 · Worktree-Obergrenze: Warnung in plan:next/SessionStart ab N Worktrees mit node_modules (§17, Absturz 23.9.) *(Anlass: Verwaiste Session-Notiz, triagiert 24.9.2026 auf main a3d27e47c (2026-09-23-lage-nach-absturz:38); vormals Dach `QS-EFFIZIENZ`, `plan/posten/2026-09-24-worktree-obergrenze-warnung-in-plan-next-sessionstart-ab-n-w.md`)*
 
 Am 23.9.2026 stürzte der Rechner bei rund 45 Worktrees (je mit node_modules) ab. aufraeumen:git existiert, aber keine Schwelle warnt vorher. Heute 19 Worktrees, 15 mit node_modules. Schwelle messen, Warnung in plan:next (Zeile Git-Flächen) und im SessionStart-Hook.
+
+**Nachzug 24.9.2026** (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): 2 Fahrplan-Einträge derselben Sorge sind hier im Wortlaut aufgenommen; im Fahrplan steht an ihrer Stelle je ein Zeiger hierher. Nichts gekürzt.
+
+### 9 · Browser-Pane ist nicht Worktree-isoliert (§17-Werkzeugbefund 21.8.2026, zwei Agenten unabhängig) *(aus `fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md`, §4, vormals Z. 200)*
+
+- [ ] **Browser-Pane ist nicht Worktree-isoliert (§17-Werkzeugbefund 21.8.2026, zwei Agenten unabhängig)** — fremde Tabs/Navigationen zwischen parallelen Worktree-Sessions, `preview_start` mit launch.json-Name serviert den HAUPT-Checkout statt des Worktrees, resize wirkungslos. Wurzel-Fix: Worktree-bewusste launch.json-Auflösung bzw. je-Session-Pane; bis dahin Workaround eigener Playwright-Lauf (in Dispatch-Berichten dokumentiert).
+
+### 10 · §17 Notizen-Datei: Haupt-Checkout aus einem Worktree nur per Bash schreibbar *(aus `fahrplaene/FAHRPLAN-BASIS-AUSBAU.md`, §2, Restposten aus ROADMAP.md, vormals Z. 199)*
+
+  - [ ] **§17 Notizen-Datei: Haupt-Checkout aus einem Worktree nur per Bash schreibbar** *(19.9.2026)* — das Write-Werkzeug sperrt aus einem Worktree Schreibzugriffe auf `<Haupt-Checkout>/.claude/`; die Regel (`bauschritt` Station A 4, globale CLAUDE.md) ist nur per `Bash` erfüllbar. Umgekehrt sehen Kompaktierungs-Hook und `plan:next` eine im Worktree abgelegte Datei nicht. Wurzel offen.
+
+Deckt sich mit Punkt (c) im Posten «Prozess-Kleinfunde Session QS-MONITOR-ROT (18.9.2026)» (`QS-EFFIZIENZ`, ebenfalls migriert 24.9.2026).
