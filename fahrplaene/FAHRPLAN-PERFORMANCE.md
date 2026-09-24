@@ -228,12 +228,13 @@ Spec-Heimat. **→ Bau-Spec: «Die priorisierte Abarbeitung» dieser Datei.***
   Runner-Robustheit — die ist mit **PR #421 (`23f4be7fb`) gelandet**, der Anlass damit erledigt.
   Offen bleiben c, d und die fünf Befunde unten; ein Querschnitt-Schritt trägt `wip` nur für die
   Dauer einer Session (Skill `auftrag`, Ziff. 2). Wortlaut der Prüfung → `ROADMAP-CHRONIK.md`.
-  - [ ] **OR-LCP ist bimodal — Ursache offen** *(20.7.2026)* — ~3.5 s oder ~11.3–11.6 s, nichts dazwischen; Deckel 13500 bleibt bis zur verstandenen Bimodalität (§8).
-  - [ ] **Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau** *(26.7.2026)* — Client-Rebuild des Index, kein Flake.
-  - [ ] **Eager-Kette `Shell→Sidebar→lib/navigation→normtext/register` lädt ~276 KB roh auf JEDER Route** *(Code-Inventur 4.8.2026)* — die Sidebar braucht aus `register.ts` nur die `GEBIETE`-Labels, zieht aber das ganze 189-KB-Register plus `startseiteConfig` (87 KB) in den kritischen Pfad; Entry gemessen 52.1 KB gz = 87 % des Budgets (Einzelwert, dist älter als HEAD — vor Zuschreibung §3-Streuung). Suchindex-Monolith 45.9 MB roh / 9.5 MB gz als EIN fetch, Budget zu 91 % ausgeschöpft. Zahlen: `bibliothek/betrieb/code-inventur-2026-08-04.md`.
-  - [ ] **§8-Auskunftslücke im Fehlerpfad der Artikel-Suche** *(26.7.2026)* — der Fehlschlag wird still geschluckt statt ausgewiesen.
-  - [ ] **«~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB** *(26.7.2026)* — reine Kommentar-Korrektur (§5).
-  - [ ] **Dauer-rAF-Sampler in `e2e/helpers/cls.ts` ohne Abschalt-Bedingung** *(26.7.2026)* — belastet jede gedrosselte Messung; Abschalt-Bedingung wäre verlustfrei.
+  - *Seit 24.9.2026 (Bauplan-Konsolidierung M-28, QS-DOKU-DIAET): offene Befund-Einträge stehen im Wortlaut als Posten-Dateien, hier je ein Zeiger «→ Posten».*
+  - → Posten `plan/posten/2026-09-24-or-lcp-ist-bimodal-ursache-offen.md` (OR-LCP ist bimodal — Ursache offen)
+  - → Posten `plan/posten/2026-09-24-artikel-suchindex-kostet-28-5-s-main-thread-aufbau.md` (Artikel-Suchindex kostet ~28.5 s Main-Thread-Aufbau)
+  - → Posten `plan/posten/2026-09-24-eager-kette-shell-sidebar-lib-navigation-normtext-register-l.md` (Eager-Kette Shell→Sidebar→lib/navigation→normtext/register lädt ~276 KB roh auf JEDER Route)
+  - → Posten `plan/posten/2026-09-24-8-auskunftsluecke-im-fehlerpfad-der-artikel-suche.md` (§8-Auskunftslücke im Fehlerpfad der Artikel-Suche)
+  - → Posten `plan/posten/2026-09-24-4-mb-artikel-index-ist-in-10-kommentaren-falsch-real-45-7-mi.md` («~4 MB Artikel-Index» ist in ~10 Kommentaren falsch — real 45.7 MiB)
+  - → Posten `plan/posten/2026-09-24-dauer-raf-sampler-in-e2e-helpers-cls-ts-ohne-abschalt-beding.md` (Dauer-rAF-Sampler in e2e/helpers/cls.ts ohne Abschalt-Bedingung)
   - [x] **e2e-Shard-Balance gegen GEMESSENE CI-Dauern packen** — Shards nach gemessener Wanduhr statt nach Datei-Zahl. **Entkoppelt 3.8.2026:** die frühere Kopplung «erst Merge Queue G7, dann packen» ist hinfällig — `QS-BASIS-MQ` ist am 3.8.2026 gestrichen (GitHub-Feature-Gate, nur Org-Repos; Chronik). **Gebaut 4.8.2026 (Bau-Evaluations-Session):** LPT-Neupackung aus den per-Spec-Dauern des grünen Laufs 30852386612 (63 Specs, 44.2 min) — Max-Gruppe von 8.5 auf 5.6 min Testzeit, alle 8 Gruppen ausgeglichen; Schieflage kam aus 8 seit dem 25.7. zugewachsenen Specs. Union-Wächter grün.
 
 ---

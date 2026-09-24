@@ -346,6 +346,10 @@ sind Projektionen, je Erlass, laden erst beim Klick. Kein VPS nötig (statische 
 
 ### §12.3 Etappen (Roadmap-Schritte `W2·6d-*`; Reihenfolge = `@queue`)
 
+**Dach seit 24.9.2026: `W2·6d-ENTSTEHUNG`** — die sieben Schritte der Spalte «Schritt» sind darin
+aufgegangen und stehen in `ROADMAP.md` als Etappen-Zeilen `EA0` … `EA9`; die Reihenfolge trägt
+seither das Dach, nicht mehr die `@queue`. Wortlaut: ROADMAP-CHRONIK.md, Fusionen 2026-09-24.
+
 | Etappe | Schritt | Ziel | Harte Auflagen | Phase |
 |---|---|---|---|---|
 | 0 | `W2·6d-VERFAHREN-RECHERCHE` | Deep Research Gesetzgebungsprozess Bund (später Kantone): Verfahrensmodell aus amtlichen Quellen (BV, ParlG, VlG, PublG, RVOV, BJ-Gesetzgebungsleitfaden), je Schritt Norm · Akteur · Dokument · Publikationsort · Datenspur (Fedlex-Code / Curia-Entität / nur Prosa); Vorlage = `entstehung-2026-09-15/gesetzgebungsverfahren-bund.md` (Entwurf) | nur amtliche Quellen (§7), Gegenprüfung durch zweites Modell, Ablage `bibliothek/` + INDEX; fachliche Abnahme David `[D]` nach Zeitsperre — der Bau der Daten-Etappen hängt NICHT daran | 2 |

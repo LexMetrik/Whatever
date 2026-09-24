@@ -1,5 +1,5 @@
 <!-- @posten
-dach: QS-EFFIZIENZ
+dach: QS-DOKU-DIAET
 titel: STRUKTUR-Session-Karte streichen
 anlass: Entscheid David 20.9.2026 («mach alle 4 wie empfohlen», Punkt 2) — nie umgesetzt
 -->
@@ -44,3 +44,5 @@ nicht nachgeführt, nur ergänzt):**
 selbst sind bereits vollständig im Archiv nachvollziehbar, `archiv/STRUKTUR-SESSIONKARTEN.md`
 + `archiv/struktur-sessionkarten/*.md` — kein Datenverlust), die beiden Hooks als
 Diff für David vorbereiten, übrige Fundstellen einzeln prüfen.
+
+Umgehängt 24.9.2026 von `QS-EFFIZIENZ` nach `QS-DOKU-DIAET` (M-16: Doku-/Chronik-Thema; Bauplan-Konsolidierung, QS-DOKU-DIAET).

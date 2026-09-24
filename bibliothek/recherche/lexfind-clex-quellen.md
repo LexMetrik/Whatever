@@ -80,5 +80,5 @@ bleibt die amtliche kantonale Sammlung (im UI als Live-Link offengelegt). Jeder
 Snapshot trägt stand + quelleUrl + version_uid + Drift-Tor (§7-Zitat-Ausnahme).
 Auto-akzeptierte Imports bleiben Status «entwurf», nie «geprüft» ohne David.
 
-→ Umsetzungsplan: `FAHRPLAN-GESETZE-IMPORT-3TIER.md`.
+→ Umsetzungsplan: `FAHRPLAN-GESETZE-IMPORT-3TIER.md` (seit 24.9.2026 archiviert: `archiv/FAHRPLAN-GESETZE-IMPORT-3TIER.md`).
 → Module: `scripts/normtext/lexfind-discovery.ts`, `scripts/normtext/confidence-logik.ts`.
