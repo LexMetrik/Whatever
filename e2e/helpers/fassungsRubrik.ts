@@ -69,6 +69,20 @@ export async function blattReiter(page: Page, reiter: string): Promise<void> {
 }
 
 /**
+ * S6 W1f (Auftrag 24.9.2026): jeder Reiter zeigt oben den Artikelteil, der
+ * erlassweite Teil steht darunter ZUGEKLAPPT («Alle … des Erlasses · N»).
+ * Klappt ihn auf, falls er als Klappzeile steht — bei Null im ganzen Erlass
+ * steht die Tafel ohne Klappzeile (dann ist nichts zu tun).
+ */
+export async function erlassTeilAuf(page: Page, reiter: string): Promise<void> {
+  const griff = page.locator(`[data-v3-blatt-erlassteil="${reiter}"] > button`).first();
+  // Die Zahl kommt mit der Tafel-Quelle; bis dahin kann die Klappzeile fehlen.
+  await expect.poll(async () => (await griff.count()) > 0
+    || (await page.locator(`[data-v3-panel-reiter-inhalt="${reiter}"]`).count()) > 0, { timeout: 20_000 }).toBe(true);
+  if ((await griff.count()) && (await griff.getAttribute('aria-expanded')) !== 'true') await griff.click();
+}
+
+/**
  * Wartet, bis der Historie-Shard die Fassungs-Zeile dieses Artikels im Blatt
  * gefüllt hat, und liefert ihren Klapp-Griff (noch zu).
  */

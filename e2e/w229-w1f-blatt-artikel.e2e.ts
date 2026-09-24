@@ -123,7 +123,11 @@ test.describe('S6 W1f · Funktionszeile aufgelöst, alles im Erlass-Blatt', () =
     await expect(gruppe).toBeVisible();
     await expect(gruppe.getByRole('link').first()).toBeVisible();
     await expect(gruppe).toContainText('Zu Art. 336c');
-    // Die erlassweite Liste bleibt darunter.
+    // Die erlassweite Liste bleibt darunter — seit dem Auftrag 24.9.2026
+    // («Standard ist nur der Artikelteil offen») zugeklappt, auf Klick da.
+    const griff = page.locator('[data-v3-blatt-erlassteil="werkzeuge"] > button');
+    await expect(griff).toHaveAttribute('aria-expanded', 'false');
+    await griff.click();
     const erlass = page.locator('[data-v3-panel-reiter-inhalt="werkzeuge"]');
     await expect(erlass).toBeVisible();
     const vorher = await gruppe.evaluate((g) => {
