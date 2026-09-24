@@ -148,9 +148,9 @@
   },
   "/rechner/schkg-fristen": {
     "folge": [
-      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: 06.08.2025, 24.00 Uhr.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"dateiName\":\"SchKG-Frist.ics\",\"endISO\":\"2025-08-06\",\"query\":\"?e=2025-07-15&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=ZH&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\",\"titel\":\"Fristende – SchKG-Fristberechnung\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: 11.08.2025, 24.00 Uhr.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"dateiName\":\"SchKG-Frist.ics\",\"endISO\":\"2025-08-11\",\"query\":\"?e=2025-07-15&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=ZH&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\",\"titel\":\"Fristende – SchKG-Fristberechnung\"}",
       "Aktenzeichen",
-      "PDF {\"title\":\"SchKG-Fristberechnung\",\"fileBase\":\"SchKG-Fristen\",\"domain\":\"schkg-fristen\",\"sha\":\"8305029b1ada7555\"}",
+      "PDF {\"title\":\"SchKG-Fristberechnung\",\"fileBase\":\"SchKG-Fristen\",\"domain\":\"schkg-fristen\",\"sha\":\"b23d1489c6a5a387\"}",
       "Teilen {\"query\":\"?e=2025-07-15&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=ZH&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\"}"
     ],
     "zeilen": [
@@ -169,8 +169,8 @@
       "Anfechtung (Pauliana)",
       "Rechtsbehelfe/Rechtsmittel",
       "Ergebnis kopieren",
-      "Hinweise / Vorbehalte (2)▸",
-      "Rechenweg (3 Schritte)▸",
+      "Hinweise / Vorbehalte (3)▸",
+      "Rechenweg (4 Schritte)▸",
       "Annahmen (4)▸",
       "Absatz kopieren",
       "In Kalender (.ics)",
