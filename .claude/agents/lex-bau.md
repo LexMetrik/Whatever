@@ -74,6 +74,10 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
   zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
   Beenden nur per eigener PID/Port, nie per Namensmuster (Vorfall 24.9.2026).
+  node_modules im Agent-Worktree: eigenes `npm ci --prefer-offline` (Sekunden),
+  KEIN Symlink auf den Haupt-Checkout — steht der hinter origin/main, meldet
+  gate falsch rot «node_modules passt nicht zu package-lock.json» (Beleg D2/#1072,
+  24.9.2026: @ast-grep/cli 0.45.2 vs ^0.45.3).
   Wer aus RAM-Gruenden `npm run gate` auslaesst, faehrt trotzdem die schnellen
   Konsistenz-Tore `npx vitest run src/tests/design-` (Sekunden, kein Browser)
   — Beleg #1053 (24.9.2026): Schnellwerkzeug-Reiter mit eigener Kasten-Optik
@@ -96,5 +100,7 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
 TABU: kein Merge, kein Deploy, keine Änderung an .claude/ oder CLAUDE.md.
 QUITTUNG: Ein Bauer quittiert NIE seine eigene Arbeit — kein gegenpruefung:ok, keine Zeile im Gegenprüfungs-Register, kein Gegenpruefung:-Trailer (F10, PR #616 2.9.2026); Verdikt kommt vom Prüf-Agenten, Quittung setzt der Orchestrator.
 RÜCKGABE: geänderte Dateien (absolute Pfade) · Tor-Ergebnisse mit Exit-Code · offene Punkte.
+
+RATSCHEN (Lehre 24.9.2026): ohne vollen Testlauf trotzdem src/tests/{rechner-flaechen,rechner-export,vorlagen-flaechen}-ratsche.test.tsx einzeln fahren — sonst erst im Gate rot.
 
 Standard-Routing: Stufe stark (aktuell model=opus), effort=high — Abweichungen setzt der Orchestrator im Call.

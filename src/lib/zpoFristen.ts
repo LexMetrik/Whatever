@@ -94,9 +94,13 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   // Stillstand: grundsätzlich nach Verfahren (Art. 145 Abs. 2). ABER: Im Schlichtungs-/
   // summarischen Verfahren ist der Hinweis nach Art. 145 Abs. 3 ZPO Gültigkeitsvorschrift
   // (BGE 139 III 78 E. 5) – fehlt er, stehen die Fristen gleichwohl still.
+  // RL-20/F1-04: Bei Fristen, die das Gericht nicht im Verfahren eröffnet
+  // (hinweispflichtEntfaellt, z.B. Arrestprosekution Art. 279 SchKG), greift
+  // die Hinweis-Regel nicht — ein fehlender Hinweis löst keinen Stillstand aus.
   const verfahrenStillstand = STILLSTAND_GILT[input.verfahren];
+  const hinweisregel = input.hinweispflichtEntfaellt !== true;
   const hinweisErfolgt = input.gerichtshinweisStillstand ?? true;
-  const stillstandGilt = verfahrenStillstand || hinweisErfolgt === false;
+  const stillstandGilt = verfahrenStillstand || (hinweisregel && hinweisErfolgt === false);
   const st = zpoStillstand(stillstandGilt);
   if (!verfahrenStillstand && stillstandGilt) {
     rechenweg.push({
@@ -206,7 +210,16 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   }
 
   // Art. 145 Abs. 3: Hinweispflicht bei Nichtgeltung des Stillstands
-  if (!stillstandGilt) {
+  if (!stillstandGilt && !hinweisregel) {
+    // RL-20/F1-04: keine Art.-145-Abs.-3-Warnung (sie verspräche einen
+    // Stillstand «gleichwohl», der für diese Frist nicht belegt ist).
+    warnungen.push('Gerechnet ohne Fristenstillstand (sichere Seite). Die Regel, wonach eine Frist ohne Hinweis des Gerichts gleichwohl stillsteht (Art. 145 Abs. 3 ZPO, BGE 139 III 78), ist auf diese nicht vom Gericht im Verfahren eröffnete Frist nicht zugeschnitten – darauf nicht vertrauen.');
+    rechenweg.push({
+      beschreibung: 'Geltung des Fristenstillstands (Art. 145 Abs. 2/3 ZPO)',
+      zwischenergebnis: 'Ohne Fristenstillstand gerechnet (sichere Seite); die Hinweis-Regel nach Art. 145 Abs. 3 ZPO ist nicht angewandt.',
+      normen: [N_145_2],
+    });
+  } else if (!stillstandGilt) {
     warnungen.push('Der Fristenstillstand gilt in diesem Verfahren nicht (Art. 145 Abs. 2 ZPO). Dies setzt voraus, dass das Gericht auf die Nichtgeltung hingewiesen hat (Art. 145 Abs. 3 ZPO – Gültigkeitsvorschrift, BGE 139 III 78); andernfalls steht die Frist gleichwohl still.');
     rechenweg.push({
       beschreibung: 'Geltung des Fristenstillstands (Art. 145 Abs. 2/3 ZPO)',
@@ -225,8 +238,11 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
     warnungen.push('[UMSTRITTEN] Berechnung nach der Mindermeinung (Art. 142 Abs. 1 ZPO für alle Fristen → Beginn am Folgetag). Das Bundesgericht teilt diese Auffassung nicht (BGer 5A_691/2023); es besteht ein Fristrisiko.');
   }
 
-  // Feiertags-Verifikationsvorbehalt (Ziff. 6.7)
-  warnungen.push('Kantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt regelmässig eine Fristwiederherstellung (Art. 148 ZPO) in Betracht.');
+  // Feiertags-Verifikationsvorbehalt (Ziff. 6.7). RL-20/R1-08 (Prüfung
+  // Rechtslogik 23.9.2026): vorher «kommt regelmässig eine Fristwiederher-
+  // stellung in Betracht» — zu beruhigend; Art. 148 Abs. 1 ZPO verlangt
+  // Glaubhaftmachung von keinem oder nur leichtem Verschulden.
+  warnungen.push('Kantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt eine Wiederherstellung (Art. 148 ZPO) nur ausnahmsweise in Betracht – sie setzt voraus, dass die Partei kein oder nur ein leichtes Verschulden trifft (Art. 148 Abs. 1 ZPO).');
 
   // Fristwahrung (Art. 143) + Säumnis (Art. 147/148)
   rechenweg.push({
