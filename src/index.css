@@ -3446,6 +3446,9 @@
   @media (min-width: 1024px) {
     .lc-start-band { padding-top: .25rem; padding-bottom: .25rem; }
     .lc-start-blatt-inhalt { padding-bottom: 1rem; }
+    /* Raster-Ausnahme (Gegenprüfung U13 25.9.2026): 6/7 px liegen bewusst neben der
+       0.25rem-Skala — Präzedenz ist die Basis `.lc-input { padding: 12px 0 13px }`
+       («METRIK-NEUTRAL»): je Seite genau halbiert, Linie und Schriftmetrik bleiben. */
     .lc-start-blatt-inhalt input[type="search"].lc-input { padding-top: 6px; padding-bottom: 7px; }
   }
   /* Farbschicht mit Kachel-Gesicht: steht während der Bewegung, blendet danach

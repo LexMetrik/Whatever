@@ -666,6 +666,10 @@ test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
 // Zwang»); ihr Überlauf wird als Messwert mitgeschrieben. Rot-Beweis
 // 25.9.2026: vor U13 Gesetze @1440×900 577/536 (41 px), Blatt-Unterkante 819
 // @1280×800.
+// Breiten (Gegenprüfung U13 25.9.2026): 1680×1050 und 1920×1080 sind bewusst
+// nicht eigens geprüft — ab 1280 ist der Inhalt auf `max-w-content` gedeckelt
+// (gleiche Blattbreite, gleiche Umbrüche) und beide haben mehr Höhe; 1280×800
+// ist damit der strengste Fall. Gemessen im U13-Bau: 528/528 an allen vier Grössen.
 test.describe('Startseite · U13 kein Scroll beim Aufklappen', () => {
   for (const [breite, hoehe] of [[1440, 900], [1280, 800]] as const) {
     test(`@${breite}×${hoehe}: Gesetze-Wahl ohne Scroll, alle Blätter ganz im Fenster`, async ({ page }) => {
