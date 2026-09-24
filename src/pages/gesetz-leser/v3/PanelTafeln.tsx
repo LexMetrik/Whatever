@@ -1,7 +1,9 @@
 import { useMemo, type ReactNode } from 'react';
 import { useLocale } from '../../../components/locale';
+import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { aufhebungFuerRegister } from '../../../lib/normtext/aufhebungen';
-import { revisionFuerToken, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
+import { revisionFuerToken, type ArtikelRevision, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
+import type { ArtikelHistorie } from '../../../lib/normtext/historie-parse';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { PanelAenderungen } from './PanelAenderungen';
 import { BotschaftZeile, PanelMaterialien } from './PanelMaterialien';
@@ -51,6 +53,26 @@ import { werkzeugAnsicht } from './werkzeugModell';
 // Artikelteil offen»). Ohne Artikelbezug steht ehrlich «Zu Art. N nichts
 // erfasst.» (§8). «Materialien» nennt die Botschaften, auf die eine Änderung
 // des Artikels verweist (`./blattMaterialien`, ELI-Identität).
+
+/**
+ * Bug-Check #1045 (24.9.2026, Code-Ableitung — kein Repro-Artikel im
+ * Bund-Korpus: für JEDES `proArtikel`-Token deckt `public/normtext/historie/`
+ * ebenfalls ein Ereignis, siehe Suchkommando in `leser-blatt-reiter-s6.test.tsx`).
+ * `historie-generieren.ts` und `extrahiere-artikel-revisionen.ts` klassifizieren
+ * dieselbe Fussnoten-Prosa NICHT zwingend gleich — divergieren sie künftig
+ * (kein Historie-Ereignis, aber ein Revisions-Beleg), zeigte `BlattFassung`
+ * nichts UND die Leerstellen-Zeile («Zu Art. N nichts erfasst») blieb
+ * unterdrückt (`ohneFassung` prüft `!artRev`) — eine stille Leerstelle (§8).
+ * Diese Funktion liefert dann den Beleg, den `PanelAenderungen`
+ * (`data-v3-panel-aenderung-artikelstand`) ohnehin schon zugeklappt zeigt, hier
+ * aber SICHTBAR im Artikelteil.
+ */
+export function artRevFassungFallback(
+  historie: ArtikelHistorie | undefined,
+  artRev: ArtikelRevision | null | undefined,
+): ArtikelRevision | undefined {
+  return historie?.ereignisse.length ? undefined : (artRev ?? undefined);
+}
 
 export interface PanelTafeln {
   tafeln: Readonly<Record<Exclude<PanelReiter, 'entscheide'>, ReactNode>>;
@@ -104,6 +126,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // «Änderungen» ohne jeden Beleg am Artikel: weder Fassungshistorie noch ein
   // Eintrag im Artikel-Revisions-Shard — erst dann ist «nichts» eine Antwort.
   const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && !artRev;
+  const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
   // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N
   // nichts erfasst.» darüber wäre dieselbe Auskunft zweimal (Artikel ⊂ Erlass).
   const erlZahl = erlaeuterungen.wert?.liste.length ?? null;
@@ -115,6 +138,11 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       aenderungen: (
         <>
           <BlattFassung artikel={blatt} erlassKey={erlassKey} zitat={normZitat} wort={wort} />
+          {artRevOhneHistorie && (
+            <p data-v3-blatt-fassung-revision={token} className="px-3 pt-2 text-body-s text-ink-700">
+              {normZitat} zuletzt geändert{artRevOhneHistorie.as ? ` durch ${artRevOhneHistorie.as}` : ''}, in Kraft seit {datumAnzeige(artRevOhneHistorie.iso)}.
+            </p>
+          )}
           <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token} geladen={ohneFassung}>{null}</BlattArtikelGruppe>
           <ErlassTeil was="Änderungen" zahl={revisionen.wert?.revisionen.length ?? null} daten="aenderungen">
             <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} ebene={ebene}
@@ -124,6 +152,15 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       ),
       materialien: (
         <>
+          {token && materialien.fertig && matZahl !== 0 && (
+            // Befund Bau W1f (#1045, 24.9.2026): der Artikelteil fand nur
+            // Register-Botschaften mit Fussnoten-Treffer (z. B. BGBM Art. 2 ohne
+            // BBl 2022 2651) — ehrlich offenlegen statt wegglätten (§8), Zuordnung
+            // bleibt unverändert (Ausbau über Geschäftsdaten: separater Schritt).
+            <p data-v3-blatt-materialien-hinweis={token} className="px-3 pb-1 pt-0.5 text-micro leading-snug text-ink-500">
+              Nur Botschaften, die eine Fussnote dieses Artikels nennt — bei Leerstelle lohnt ein Blick in «Alle Materialien des Erlasses» unten.
+            </p>
+          )}
           <BlattArtikelGruppe titel={zu} zahl={artBot.length} daten="materialien" token={token} geladen={materialien.fertig && matZahl !== 0}>
             {artBot.map((b) => <BotschaftZeile key={b.key} b={b} aenderung={aenderungNachBotschaft.get(b.key)} locale={locale} />)}
           </BlattArtikelGruppe>
