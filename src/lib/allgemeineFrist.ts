@@ -71,12 +71,31 @@ export const ALLG_FRIST_HINWEIS =
   'Für gerichtliche Fristen den ZPO-Fristenrechner, für betreibungsrechtliche den ' +
   'SchKG-Fristenrechner verwenden.';
 
+// RL-07/Q8-02 (Prüfung Rechtslogik 23.9.2026): Der Grundtext oben schickt
+// «gerichtliche Fristen» zum ZPO-Rechner — für Strafverfahren falsch, dort gibt
+// es keine Gerichtsferien (Art. 89 Abs. 2 StPO), und die Feiertage knüpfen an
+// den Wohnsitz/Sitz der Partei oder ihres Rechtsbeistands an (Art. 90 Abs. 2
+// Satz 2 StPO; Fedlex SR 312.0, Konsolidierung 1.4.2025). Eigener Zusatz statt
+// Änderung des Grundtexts: der steht wörtlich in den Golden allg:30t/allg:klemm
+// und im Allgemein-Formular. Der Zusatz erscheint nur im Pfad, den der
+// Tagerechner für StPO-Fristen empfiehlt («Keine Ferien»). Offen (Q8 §d):
+// Partei und Rechtsbeistand in verschiedenen Kantonen — keine amtliche Stelle
+// gefunden, darum nur der Hinweis auf den früheren Termin (sichere Seite).
+export const STPO_FRIST_HINWEIS =
+  'Strafverfahren: Es gibt keine Gerichtsferien (Art. 89 Abs. 2 StPO) – das Fristende oben gilt ohne '
+  + 'Stillstand. Massgebend für Feiertage ist der Kanton, in dem die Partei oder ihr Rechtsbeistand '
+  + 'Wohnsitz oder Sitz hat (Art. 90 Abs. 2 StPO), nicht der Gerichtsort; liegen beide in verschiedenen '
+  + 'Kantonen, im Zweifel den früheren Termin einhalten.';
+
 export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult {
   if (!Number.isInteger(input.laenge) || input.laenge <= 0) {
     throw new Error('Fristlänge muss eine ganze Zahl > 0 sein.');
   }
   if (input.feiertageVerschieben && !input.kanton) {
-    throw new Error('Für die Feiertags-Verschiebung ist der Kanton (Erfüllungsort) erforderlich.');
+    // RL-07/Q8-03: regimeneutral — Art. 78 OR knüpft an den Erfüllungsort an,
+    // Art. 90 Abs. 2 StPO an Wohnsitz/Sitz der Partei oder ihres Rechtsbeistands.
+    throw new Error('Für die Feiertags-Verschiebung ist der massgebende Kanton erforderlich '
+      + '(Vertragsfrist: Erfüllungsort; Strafverfahren: Wohnsitz/Sitz der Partei oder ihres Rechtsbeistands).');
   }
   const start = parseISO(input.start);
   if (isNaN(start.getTime())) throw new Error('Ungültiges Startdatum.');
