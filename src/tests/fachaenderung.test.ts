@@ -13,7 +13,9 @@ import {
   importZiele,
   istRefactorCommit,
   istTestDatei,
+  prTitelAusEreignis,
   pruefeFachaenderungForm,
+  squashVerstoss,
 } from '../../scripts/analyse/fachaenderung-kern';
 
 const RISIKO = 'src/lib/verjaehrung.ts';
@@ -170,4 +172,37 @@ describe('check:testtreue — §6.3 (Tests bleiben bei Refactorings unangetastet
   });
 });
 
-
+// ─── aus src/tests/steuerwerkzeuge.test.ts (PR #1026, 23.9.2026) ───────────────
+// Squash-Regel als Teil von R1, beim Rebase von RL-03 (24.9.2026) hierher
+// übertragen: gleiche Fälle; der vierte («nur im pull_request-Lauf») prüft
+// jetzt prTitelAusEreignis + bewerte statt der früheren squashMeldung.
+describe('check:fachaenderung R1 — Squash-Commit der Merge-Queue (PR-Titel, Beleg #1023)', () => {
+  const c = (betreff: string, dateien: string[]) => ({ sha: 'x', betreff, dateien });
+  it('refactor-Titel + deklarierter test-Commit ⇒ Verstoss (Beleg #1023)', () => {
+    const v = squashVerstoss('refactor(vorlagen): V2d+V2e', [
+      c('refactor(vorlagen): V2d', ['src/pages/A.tsx']),
+      c('test(vorlagen): Schwelle', ['src/tests/design-r9-fehlerbox-baustein.test.ts']),
+    ]);
+    expect(v?.testDateien).toEqual(['src/tests/design-r9-fehlerbox-baustein.test.ts']);
+  });
+  it('feat-Titel mit Test-Änderung ⇒ kein Verstoss', () => {
+    expect(squashVerstoss('feat(vorlagen): x', [c('test: y', ['e2e/a.e2e.ts'])])).toBeNull();
+  });
+  it('refactor-Titel ohne Test-Dateien ⇒ kein Verstoss', () => {
+    expect(squashVerstoss('refactor: x', [c('refactor: y', ['src/lib/a.ts'])])).toBeNull();
+  });
+  it('Ereignis: nur im pull_request-Lauf, sonst stumm', () => {
+    const lies = () => JSON.stringify({ pull_request: { title: 'refactor: x' } });
+    const cs = [c('test: y', ['src/tests/a.test.ts'])];
+    const titel = prTitelAusEreignis({ GITHUB_EVENT_NAME: 'pull_request', GITHUB_EVENT_PATH: 'e' }, lies);
+    expect(titel).toBe('refactor: x');
+    expect(prTitelAusEreignis({ GITHUB_EVENT_NAME: 'merge_group', GITHUB_EVENT_PATH: 'e' }, lies)).toBeUndefined();
+    expect(prTitelAusEreignis({}, lies)).toBeUndefined();
+    const rot = bewerte({ commits: cs, engineBefunde: [], goldenGeaendert: false, trailer: [], quelle: 'q', prTitel: titel });
+    expect(rot.rot).toBe(true);
+    expect(rot.text).toMatch(/Squash/);
+    expect(rot.text).toMatch(/#1023/);
+    const still = bewerte({ commits: cs, engineBefunde: [], goldenGeaendert: false, trailer: [], quelle: 'q', prTitel: undefined });
+    expect(still.rot).toBe(false);
+  });
+});
