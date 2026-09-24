@@ -3441,10 +3441,12 @@
      LINIE in der Registerfarbe, nicht eine Flaeche.
        · kantig: `border-radius: 0` (dieselbe Entscheidung wie R1-3 «Kanten
          statt Pille» bei den Badges).
-       · gewaehlt: 3-px-Strich links in `--reg-w` (Register «Werkzeuge» — jeder
+       · gewaehlt: 3-px-Strich (seit W2·29-WERKBANK-RECHNER R4 24.9.2026 OBEN
+         statt links — ein Look mit dem Segmentschalter der Vorlagen und dem
+         Board; vorher zwei Looks derselben Klasse) in `--reg-w` (Register «Werkzeuge» — jeder
          Konsument dieses Bausteins ist ein Rechner oder ein Vorlagen-Assistent,
          nachgezaehlt 6.9.2026) plus ein Haekchen oben rechts.
-     ALS INNENSCHATTEN, NICHT ALS BREITERER RAHMEN: eine 3-px-Kante links
+     ALS INNENSCHATTEN, NICHT ALS BREITERER RAHMEN: eine 3-px-Kante
      verschoebe den Kachelinhalt beim Waehlen um 2 px — der Zustandswechsel
      darf den Satz nicht bewegen. `inset` legt den Strich in die vorhandene Box.
      PLATZ FUER DAS HAEKCHEN steht IMMER (`pr-6` an der Kachel, nicht erst im
@@ -3461,7 +3463,7 @@
      4.89/9.62 — als Nicht-Text-Strich (≥3:1) und als Haekchen-Text (≥4.5:1)
      in beiden Modi und auf allen drei Flaechen erfuellt. */
   .lc-wahl-kachel { position: relative; border-radius: var(--radius-lg); } /* GRUNDTON 23.9.2026: löst «kantig» oben ab */
-  .lc-wahl-kachel[aria-pressed="true"] { box-shadow: inset 3px 0 0 var(--reg-w); }
+  .lc-wahl-kachel[aria-pressed="true"] { box-shadow: inset 0 2px 0 var(--reg-w); } /* + 1 px border-top reg-w (GB-20/21) = 3-px-Strich OBEN, W2·29-WERKBANK-RECHNER R4 */
   .lc-wahl-kachel[aria-pressed="true"]::after {
     content: '\2713';
     position: absolute; top: 6px; right: 8px;
@@ -4597,13 +4599,6 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
    dort ist die geschlossene Form die Aussage «ich bin ein Knopf». */
 .lc-wahl-kachel:hover { border-top-color: var(--reg-w); }
 .lc-wahl-kachel[aria-pressed="true"] { border-top-color: var(--reg-w); }
-/* W2·29-WERKBANK-VORLAGEN V1 · SEGMENT-KACHEL (`SelectionGrid reg="w"`,
-   VariantenKopf): der obere Strich wird der 3-px-REGISTERSTRICH (ruhend im
-   Haarlinien-Ton, Hover/gewählt `--reg-w` aus den zwei Regeln darüber) und
-   ersetzt den Innenstrich links — ein Zustand, ein Strich. Die Kante lag schon
-   in der Box, sie wird nur dicker: der Satz rückt beim Wählen nicht. */
-.lc-wahl-kachel[data-reg="w"] { border-top-width: 3px; }
-.lc-wahl-kachel[data-reg="w"][aria-pressed="true"] { box-shadow: none; }
 
 /* ─── GB-1b · DIE DREI WEITEREN TRÄGER JE ROUTE ─────────────────────────────
    NACHGEMESSEN 7.9.2026 nach dem ersten Wurf (Sonde `e2e/w224-gb-register.e2e.ts`):
@@ -4678,14 +4673,15 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
    keine Karte, keine Fläche, kein Ring — eine Zeile mit Trennlinie oben und,
    im gewählten Zustand, dem 3-px-Strich in der Werkzeug-Registerfarbe. Der
    Strich liegt als `inset`-Schatten IN der Box, damit der Satz beim Wählen
-   nicht um 3 px rückt (dieselbe Begründung wie an `.lc-wahl-kachel`). */
+   nicht rückt (dieselbe Begründung wie an `.lc-wahl-kachel`; seit
+   W2·29-WERKBANK-RECHNER R4 wie dort OBEN, 1 px Rand + 2 px Innenschatten). */
 .lc-wahl-zeile {
   position: relative;
   border-top: 1px solid var(--line);
   transition: border-color var(--dur-fast) var(--ease);
 }
 .lc-wahl-zeile:hover { border-top-color: var(--reg-w); }
-.lc-wahl-zeile-gewaehlt { box-shadow: inset 3px 0 0 var(--reg-w); border-top-color: var(--reg-w); }
+.lc-wahl-zeile-gewaehlt { box-shadow: inset 0 2px 0 var(--reg-w); border-top-color: var(--reg-w); } /* R4: Strich OBEN wie `.lc-wahl-kachel` */
 
 /* ═══ W2·6c-E3 · DIE ENTSTEHUNG AM ARTIKEL (Präfix `.lr8-entst`) ══════════════
    Auftrag David 6.9.2026 («wie ein Gesetz zustande gekommen ist»), Auflage:
@@ -4988,7 +4984,8 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
 a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 
 /* Haupteinstieg (Fristenrechner): breite Zeile, Registerstrich links als
-   Innenschatten — der Inhalt rückt nicht (dieselbe Wahl wie `.lc-wahl-kachel`). */
+   Innenschatten — der Inhalt rückt nicht (Linkseinstieg einer Liste, kein
+   Auswahlzustand; die Wahl-Kachel trägt ihren Strich seit R4 oben). */
 .kt-haupt {
   padding: 0.625rem 0.25rem 0.75rem 0.875rem;
   border-top: 1px solid var(--rule-soft);
