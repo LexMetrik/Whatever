@@ -504,6 +504,13 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
 - **S4 Abschluss.** e2e (Aufklappen, Stufe zurück, Deep-Link, Escape, Tastatur), Sichtprüfung 1280/390
   hell/dunkel, Löschbilanz, `status=done`. **Erledigt 24.9.2026** im S3-PR: e2e voll, Sichtprüfung
   1280/390 hell/dunkel, Nebenfunde als Posten unter `W2·29-WERKBANK-REST`.
+- **FEINSCHLIFF (`W2·29-WERKBANK-START-FEINSCHLIFF`, David 24.9.2026** «dass das schöner ist … überprüft,
+  dass nicht abgeschnitten ist»): erst messen (alle Blätter und Stufen, 1280/1024/768/390/360, hell/dunkel),
+  dann beheben; R8 (`e2e/kein-abschnitt.e2e.ts`) um die offenen Blätter erweitern. Vier Posten dorthin
+  umgehängt (Escape in der Öffnung, Resize-Remount, Verweis-Einträge, geteilte Bausteine/aria-live).
+  **Erledigt 24.9.2026:** Messung 234 R8-Funde in 11 Blatt-Zuständen → 0 (Rechtsgebiete überlappten, Kantone
+  gekappt, ✕-Box); Bewegung: Gesicht = `RubrikKachel alsBild` (sprang), Laden erst nach der Öffnung
+  (`blattRuhe.ts`, 83-ms-Bild weg), Kacheln kehren beim Schliessen gleichzeitig zurück; feste Portal-Bühne; unterer Rand blendet aus (David «verläufe in ordnung»).
 
 ## §6 · Prüfen und Frühsignale
 

@@ -5,7 +5,8 @@ import { BEHOERDEN } from '../../lib/materialien/register';
 import type { BrowseMaterial, BehoerdeId, DoktypId } from '../../lib/materialien/typen';
 import { StandChip } from '../ui/StandChip';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
-import { MEHR_KNOPF_KLASSEN } from '../ui/mehrKnopfKlassen';
+import { BlattSuchFeld, TrefferZahl, WeitereKnopf } from './BlattBausteine';
+import { useBlattRuhe } from './blattRuhe';
 
 // ─── Startseite · die Materialien-Kachel: sofort Suche (W2·29-WERKBANK-START S3)
 //
@@ -43,8 +44,10 @@ export function MaterialienBlatt() {
   const [behoerde, setBehoerde] = useState<BehoerdeId | ''>('');
   const [doktyp, setDoktyp] = useState<DoktypId | ''>('');
   const [portion, setPortion] = useState(PORTION);
+  const ruhe = useBlattRuhe();
 
   useEffect(() => {
+    if (!ruhe) return; // erst nach der Öffnungsbewegung (blattRuhe.ts)
     let lebt = true;
     ladeMaterialManifest().then((m) => {
       if (!lebt) return;
@@ -52,7 +55,7 @@ export function MaterialienBlatt() {
       setAlle(m.materialien);
     });
     return () => { lebt = false; };
-  }, []);
+  }, [ruhe]);
 
   const doktypOptionen = useMemo(() => vorhandeneDoktypen(alle ?? []), [alle]);
   const gefiltert = useMemo(() => {
@@ -70,24 +73,21 @@ export function MaterialienBlatt() {
 
   return (
     <div className="space-y-4">
-      <label className="block">
-        <span className="sr-only">Materialien durchsuchen</span>
-        <input type="search" value={suche} onChange={(e) => setSuche(e.target.value)}
-          placeholder="Titel, Nummer oder Behörde …" className="lc-input" />
-      </label>
+      <BlattSuchFeld wert={suche} setze={setSuche} label="Materialien durchsuchen"
+        platzhalter="Titel, Nummer oder Behörde …" />
       <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-        <label className="flex flex-wrap items-center gap-2 text-body-s text-ink-600">
+        <label className="flex min-w-0 items-center gap-2 text-body-s text-ink-600">
           <span>Behörde</span>
           <select value={behoerde} onChange={(e) => setBehoerde(e.target.value as BehoerdeId | '')}
-            className="lc-select lc-input-sm">
+            className="lc-select lc-input-sm min-w-0 max-w-[13rem]">
             <option value="">Alle</option>
             {BEHOERDEN.map((b) => <option key={b.id} value={b.id}>{b.kuerzel} — {b.name}</option>)}
           </select>
         </label>
-        <label className="flex flex-wrap items-center gap-2 text-body-s text-ink-600">
+        <label className="flex min-w-0 items-center gap-2 text-body-s text-ink-600">
           <span>Art</span>
           <select value={doktyp} onChange={(e) => setDoktyp(e.target.value as DoktypId | '')}
-            className="lc-select lc-input-sm">
+            className="lc-select lc-input-sm min-w-0 max-w-[13rem]">
             <option value="">Alle</option>
             {doktypOptionen.map((d) => <option key={d.id} value={d.id}>{d.label}</option>)}
           </select>
@@ -96,9 +96,10 @@ export function MaterialienBlatt() {
 
       <Laedt alle={alle} fehler={fehler}>
         {() => (gefiltert.length === 0 ? (
-          <p className="font-sans text-body-s text-ink-700">Kein Material gefunden.</p>
+          <p className="font-sans text-body-s text-ink-700" role="status">Kein Material gefunden.</p>
         ) : (
           <div className="space-y-3">
+            <TrefferZahl n={gefiltert.length} einzahl="Dokument" mehrzahl="Dokumente" />
             <div className="divide-y divide-rule-soft border-y border-rule-soft">
               {gefiltert.slice(0, portion).map((m) => (
                 <Link key={m.key} to={`/materialien/${encodeURIComponent(m.key)}`}
@@ -112,10 +113,7 @@ export function MaterialienBlatt() {
               ))}
             </div>
             {gefiltert.length > portion && (
-              <button type="button" onClick={() => setPortion((p) => p + PORTION)}
-                className={`lc-btn-mini ${MEHR_KNOPF_KLASSEN}`}>
-                Weitere anzeigen (<span className="num">{gefiltert.length - portion}</span> weitere)
-              </button>
+              <WeitereKnopf rest={gefiltert.length - portion} mehr={() => setPortion((p) => p + PORTION)} />
             )}
           </div>
         ))}

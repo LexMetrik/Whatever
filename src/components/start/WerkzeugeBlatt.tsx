@@ -7,6 +7,7 @@ import { kartePasst, LEERER_FILTER } from '../../lib/katalogSuche';
 import { KategorieSektion } from '../Katalog';
 import type { BlattOrt } from '../../lib/startBlatt';
 import { RubrikKachel } from '../ui/RubrikKachel';
+import { BlattSuchFeld } from './BlattBausteine';
 
 // ─── Startseite · die Stufen der Werkzeuge-Kachel (W2·29-WERKBANK-START S2) ──
 //
@@ -20,7 +21,7 @@ import { RubrikKachel } from '../ui/RubrikKachel';
 // (VorlagenUebersicht.tsx) — `OBERKATEGORIEN` + `KategorieSektion` liefern
 // Gebaute-zuerst/«In Vorbereitung» und die Rechtsgebiets-Gruppierung bereits
 // fertig (Katalog.tsx). Hier stehen nur die Blatt-Anatomie (Wahl, Filterfeld
-// wie in `GesetzeBlatt`) und die Aufteilung Rechner/Vorlagen per `istVorlage`
+// aus `BlattBausteine`) und die Aufteilung Rechner/Vorlagen per `istVorlage`
 // (über `kategorieFuer`/`kartenDerKategorie`, dieselbe Quelle wie /rechner
 // und /vorlagen — keine eigene, zweite Zuordnung, §5).
 
@@ -51,18 +52,6 @@ function Wahl({ zu }: { zu: (zweig: string) => () => void }) {
   );
 }
 
-/** Filterfeld wie in `GesetzeBlatt` — reine Anzeige, die Trefferlogik liegt
- *  in `kartePasst` (dieselbe wie die Kopfsuche und die Rubrikseiten, §5). */
-function Filter({ wert, setze, label }: { wert: string; setze: (s: string) => void; label: string }) {
-  return (
-    <label className="block max-w-md">
-      <span className="sr-only">{label}</span>
-      <input type="search" value={wert} onChange={(e) => setze(e.target.value)} placeholder={label}
-        className="lc-input" />
-    </label>
-  );
-}
-
 function RechnerListe() {
   const [suche, setSuche] = useState('');
   const q = suche.trim();
@@ -76,7 +65,7 @@ function RechnerListe() {
   );
   return (
     <div className="space-y-4">
-      <Filter wert={suche} setze={setSuche} label="Rechner filtern" />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Rechner filtern" />
       {kategorien.length === 0
         ? <p className="font-sans text-body-s text-ink-600">Kein Rechner passt auf «{q}».</p>
         : kategorien.map((kat) => (
@@ -96,7 +85,7 @@ function VorlagenListe() {
   );
   return (
     <div className="space-y-4">
-      <Filter wert={suche} setze={setSuche} label="Vorlagen filtern" />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Vorlagen filtern" />
       {/* Gegenprüfung S2 (24.9.2026): `KategorieSektion` bringt für die
           Kategorie «vorlagen» ein EIGENES Rechtsgebiet-Feld mit, das über
           `setSearchParams` ohne den Blatt-Verlaufsstatus schreibt (verliert

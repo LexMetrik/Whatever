@@ -3389,6 +3389,22 @@
     transition: opacity 105ms ease-out, transform 270ms cubic-bezier(.2,0,0,1); }
   .lc-start-blatt-inhalt[data-sichtbar] { opacity: 1; transform: none;
     transition: opacity 225ms ease-out 180ms, transform 270ms cubic-bezier(.2,0,0,1) 160ms; }
+  /* Unterer Rand des Blatt-Inhalts blendet aus, SOLANGE darunter noch etwas
+     kommt — Zeichen «hier geht es weiter» statt einer hart angeschnittenen
+     Zeile. David 24.9.2026 auf Vergleichsbilder: «verläufe in ordnung» (löst
+     für diese Stelle «keine Verläufe» der Spec ab). Über eine Scroll-Zeitleiste:
+     ohne Überlauf ist sie inaktiv und die Maske 0 (kein Ausblenden), am Ende
+     läuft sie auf 0 zurück. Browser ohne Scroll-Zeitleiste: harter Rand wie
+     bisher. */
+  @property --lc-start-rand { syntax: '<length>'; inherits: false; initial-value: 0px; }
+  .lc-start-blatt-inhalt {
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--lc-start-rand)), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - var(--lc-start-rand)), transparent);
+  }
+  @supports (animation-timeline: scroll()) {
+    .lc-start-blatt-inhalt { animation: lc-start-rand linear both; animation-timeline: scroll(self); }
+  }
+  @keyframes lc-start-rand { 0%, 92% { --lc-start-rand: 2.5rem; } 100% { --lc-start-rand: 0px; } }
   .lc-start-stufe { animation: lc-start-stufe-vor 280ms cubic-bezier(.2,0,0,1); }
   .lc-start-stufe[data-richtung="zurueck"] { animation-name: lc-start-stufe-zurueck; }
   @keyframes lc-start-stufe-vor { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
@@ -3398,8 +3414,8 @@
   .lc-start-schicht { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
     transition: opacity 200ms ease-out 135ms; }
   .lc-start-schicht[data-an] { opacity: 1; transition: opacity 120ms ease-out; }
-  .lc-start-gesicht { position: absolute; display: flex; flex-direction: column; gap: .375rem;
-    padding: 1.25rem; border-top: 2px solid; border-radius: var(--radius-xl); }
+  /* Das Gesicht IST die Kachel (`RubrikKachel alsBild`) — hier nur der Ort. */
+  .lc-start-gesicht { position: absolute; display: flex; }
   /* Telefon: Vollbild-Blatt, das von unten einfährt (David 23.9.2026 «5 ja»). */
   @media (max-width: 759.98px) {
     .lc-start-zelle { min-height: theme('minHeight.start-kachel-s'); }

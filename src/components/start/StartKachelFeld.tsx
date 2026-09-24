@@ -1,10 +1,11 @@
-import { useEffect, useLayoutEffect, useRef, useState, type ReactElement } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { Register } from '../layout/bereiche';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { AUFKLAPPBAR, blattKrumen, gleicherOrt, type BlattOrt, type BlattRubrik } from '../../lib/startBlatt';
 import { useBlattOrt } from './useBlattOrt';
+import { BlattRuheKontext } from './blattRuhe';
 import { GesetzeBlatt } from './GesetzeBlatt';
 import { WerkzeugeBlatt } from './WerkzeugeBlatt';
 import { MaterialienBlatt } from './MaterialienBlatt';
@@ -59,11 +60,12 @@ const FLAECHE: Record<Register, string> = {
   g: 'bg-reg-g-flaeche border-reg-g', r: 'bg-reg-r-flaeche border-reg-r',
   m: 'bg-reg-m-flaeche border-reg-m', w: 'bg-reg-w-flaeche border-reg-w',
 };
-const STRICH: Record<Register, string> = { g: 'border-reg-g', r: 'border-reg-r', m: 'border-reg-m', w: 'border-reg-w' };
 /** Rubriken ohne Unterstufen — die Suche IST die Stufe (Spec «Fokus drin»,
  *  S3-Nachzug 24.9.2026: Rechtsprechung teilt die Ausnahme mit Materialien). */
 const FOKUS_SUCHFELD_RUBRIKEN: ReadonlySet<BlattRubrik> = new Set<BlattRubrik>(['materialien', 'rechtsprechung']);
-/** Schliess-Dauer — muss mit der CSS-Transition `[data-phase=schliesst]` übereinstimmen (Öffnen: 450 ms, nur CSS). */
+/** Dauern — müssen mit den CSS-Transitionen `.lc-start-blatt` (450 ms) und
+ *  `[data-phase=schliesst]` (350 ms) übereinstimmen. */
+const DAUER_AUF = 450;
 const DAUER_ZU = 350;
 const SCHMAL = '(max-width: 759.98px)';
 
@@ -95,6 +97,11 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
   const [kontur, setKontur] = useState<Kontur | null>(null);
   const [richtung, setRichtung] = useState<'vor' | 'zurueck'>('vor');
   const [schmal, setSchmal] = useState(false);
+  // RUHE: die Öffnungsbewegung ist durch. Erst dann holen die Blätter ihre
+  // Daten (`blattRuhe.ts`) — gemessen 24.9.2026 @1280: das Rechtsprechungs-
+  // Register (9,4 MB) kam mitten in der Bewegung an, sein Parsen hielt EIN Bild
+  // 83 ms fest (Soll ≤ 17 ms), das sichtbare Ruckeln.
+  const [ruhe, setRuhe] = useState(true);
   const vorher = useRef<BlattOrt | null>(null);
   const erster = useRef(true);
   // Der laufende Übergang (Öffnen-Bild oder Schliessen-Zeitgeber). NICHT als
@@ -140,10 +147,16 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
     if (ort && !alt) {
       setSicht(ort);
       setRichtung('vor');
-      if (tiefLink || ruhig) { beginne(null); setKontur(null); setPhase('offen'); return; }
+      if (tiefLink || ruhig) { beginne(null); setKontur(null); setPhase('offen'); setRuhe(true); return; }
       setKontur(medien(SCHMAL) ? null : miss(ort.rubrik));
       setPhase('start');
-      beginne(naechstesBild(() => setPhase('offen')));
+      setRuhe(false);
+      let t = 0;
+      const bild = naechstesBild(() => {
+        setPhase('offen');
+        t = window.setTimeout(() => setRuhe(true), DAUER_AUF);
+      });
+      beginne(() => { bild(); window.clearTimeout(t); });
       return;
     }
     if (!ort && alt) {
@@ -152,6 +165,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
         fokusZurueck.current = r;
         setPhase('zu'); setSicht(null); setKontur(null);
       };
+      setRuhe(true);
       if (ruhig) { beginne(null); fertig(); return; }
       setKontur(medien(SCHMAL) ? null : miss(r));
       setPhase('schliesst');
@@ -186,6 +200,14 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
     fokusZurueck.current = null;
   }, [phase]);
 
+  // Fokus ins Blatt schon beim ÖFFNEN, nicht erst nach der Bewegung: sonst
+  // stand er 450 ms lang auf der Kachel unter dem Blatt, und Escape verpuffte
+  // (Posten FEINSCHLIFF 24.9.2026, Gegenprüfung S3). Den Rahmen, nicht das
+  // Suchfeld — das bekommt ihn, sobald das Blatt steht (unten).
+  useEffect(() => {
+    if (phase === 'start') blattRef.current?.focus({ preventScroll: true });
+  }, [phase]);
+
   // Fokus ins Blatt, sobald es offen steht, und bei jeder Stufe neu (§8).
   // Ausnahme S3 (Spec «Fokus drin»): Rubriken ohne Unterstufen — die Suche IST
   // die Stufe — bekommen den Fokus direkt im Suchfeld, nicht auf dem Rahmen.
@@ -200,7 +222,42 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
     blattRef.current?.focus({ preventScroll: true });
   }, [phase, sicht]);
 
+  // DIE BÜHNE des Blatts: ein fester Knoten, in den das Blatt IMMER per Portal
+  // rendert — nur der Knoten selbst wandert. Telefon: an den `body` (im Feld
+  // läge das Vollbild-Blatt in dessen Stapelkontext `isolation` und würde von
+  // den folgenden Abschnitten überdeckt, gemessen 23.9.2026 @390: Rechteck
+  // 0/0/390/844, aber unsichtbar). Breit: ins Feld, dort IST das Feld die
+  // Bühne (`position:absolute` bezieht sich auf `.lc-start-feld`).
+  // Vorher wechselte der PORTAL-ZIEL-Knoten mit der Breite, und React baute
+  // den ganzen Blatt-Teilbaum neu auf — Filter, Suchwort und geladene Liste
+  // weg, sobald das Fenster die 760-px-Grenze kreuzte (Posten FEINSCHLIFF,
+  // Gegenprüfung S1 23.9.2026). Ein umgehängter DOM-Knoten behält seinen
+  // React-Zustand; nur Fokus und Scrollstand setzt der Browser zurück, die
+  // werden hier nachgetragen.
+  const [buehne] = useState(() => {
+    if (typeof document === 'undefined') return null;
+    const el = document.createElement('div');
+    el.style.display = 'contents';
+    return el;
+  });
+  useLayoutEffect(() => {
+    const ziel = schmal ? document.body : feldRef.current;
+    if (!buehne || !ziel || buehne.parentNode === ziel) return;
+    const aktiv = document.activeElement;
+    const fokusDrin = aktiv instanceof HTMLElement && buehne.contains(aktiv);
+    const scroller = buehne.querySelector<HTMLElement>('.lc-start-blatt-inhalt');
+    const stand = scroller?.scrollTop ?? 0;
+    ziel.appendChild(buehne);
+    if (scroller) scroller.scrollTop = stand;
+    if (fokusDrin) aktiv.focus({ preventScroll: true });
+  }, [buehne, schmal]);
+  useEffect(() => () => buehne?.remove(), [buehne]);
+
   const offen = phase !== 'zu';
+  // Die übrigen Kacheln treten nur zurück, solange das Blatt aufgeht oder
+  // steht — beim Schliessen kehren sie GLEICHZEITIG zurück, nicht erst danach
+  // (gemessen 24.9.2026: Rückkehr erst nach dem Abbau, gesamt ~850 ms statt 350).
+  const zurueckgetreten = phase === 'start' || phase === 'offen';
   const kachel = sicht ? kacheln.find((k) => k.rubrik === sicht.rubrik) : undefined;
   const bewegt = phase === 'start' || phase === 'schliesst';
   const clip = bewegt && kontur
@@ -216,10 +273,8 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           return (
             <div key={k.rubrik} className="lc-start-zelle"
               ref={(el) => { if (el) zellen.current.set(k.rubrik, el); else zellen.current.delete(k.rubrik); }}
-              data-zurueck={offen && !diese ? '' : undefined}>
-              <RubrikKachel reg={k.reg} titel={<span className="break-words">{k.titel}</span>}
-                zahl={k.zahl} einheit={k.einheit} nutzen={k.nutzen} kompakt={schmal}
-                extra={k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>}
+              data-zurueck={zurueckgetreten && !diese ? '' : undefined}>
+              <RubrikKachel {...gesicht(k)} kompakt={schmal}
                 {...(klappt
                   ? { onWahl: () => gehe({ rubrik: k.rubrik, pfad: [] }), aufgeklappt: diese, steuert: BLATT_ID }
                   : { ziel: k.ziel })} />
@@ -228,7 +283,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
         })}
       </nav>
 
-      {offen && sicht && kachel && inEbene(schmal, (
+      {offen && sicht && kachel && buehne && createPortal((
         <section ref={blattRef} id={BLATT_ID} tabIndex={-1} role="region" aria-label={kachel.titel}
           className="lc-start-blatt" data-phase={phase} data-schmal={schmal ? '' : undefined}
           style={schmal ? undefined : { clipPath: clip, WebkitClipPath: clip }}
@@ -236,37 +291,36 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           <BlattKopf reg={kachel.reg} titel={kachel.titel} ort={sicht} hoch={hoch}
             zurueck={zurueck} schliessen={schliessen} />
           <div className="lc-start-blatt-inhalt" data-sichtbar={phase === 'offen' ? '' : undefined}>
+            <BlattRuheKontext.Provider value={ruhe}>
             <div key={[sicht.rubrik, ...sicht.pfad].join('/')} className="lc-start-stufe" data-richtung={richtung}>
               {sicht.rubrik === 'gesetze' && <GesetzeBlatt ort={sicht} gehe={gehe} />}
               {sicht.rubrik === 'werkzeuge' && <WerkzeugeBlatt ort={sicht} gehe={gehe} />}
               {sicht.rubrik === 'materialien' && <MaterialienBlatt />}
               {sicht.rubrik === 'rechtsprechung' && <RechtsprechungBlatt />}
             </div>
+            </BlattRuheKontext.Provider>
           </div>
           {!schmal && kontur && (
             <div aria-hidden className={`lc-start-schicht ${FLAECHE[kachel.reg]}`} data-an={bewegt ? '' : undefined}>
-              <div className={`lc-start-gesicht ${STRICH[kachel.reg]}`}
+              <div className="lc-start-gesicht"
                 style={{ top: kontur.oben, left: kontur.links, width: kontur.breite, height: kontur.hoehe }}>
-                <span className="font-sans text-h3 font-semibold tracking-tight text-ink-900">{kachel.titel}</span>
-                <span className="flex flex-wrap items-baseline gap-2">
-                  <span className="num font-serif text-h1 leading-none text-ink-900">{kachel.zahl}</span>
-                  <span className="text-body-s text-ink-700">{kachel.einheit}</span>
-                </span>
+                <RubrikKachel {...gesicht(kachel)} alsBild />
               </div>
             </div>
           )}
         </section>
-      ))}
+      ), buehne)}
     </div>
   );
 }
 
-/** Telefon: das Vollbild-Blatt hängt am `body` — im Feld läge es in dessen
- *  Stapelkontext (`isolation`) und würde von den folgenden Abschnitten der
- *  Seite überdeckt (gemessen 23.9.2026 @390: Rechteck 0/0/390/844, aber
- *  unsichtbar). Breit bleibt es im Feld, dort IST das Feld die Bühne. */
-function inEbene(schmal: boolean, knoten: ReactElement) {
-  return schmal && typeof document !== 'undefined' ? createPortal(knoten, document.body) : knoten;
+/** Das Gesicht einer Kachel — EINE Quelle für die bedienbare Kachel im Feld
+ *  und ihr Bild in der Farbschicht (sonst springt das Gesicht beim Klick). */
+function gesicht(k: KachelDef) {
+  return {
+    reg: k.reg, titel: <span className="break-words">{k.titel}</span>, zahl: k.zahl, einheit: k.einheit, nutzen: k.nutzen,
+    extra: k.teile && <span className="num text-body-s leading-snug text-ink-700">{k.teile}</span>,
+  };
 }
 
 /** Band oben im Blatt: Registerfläche + Strich, Pfad, «← Zurück», ✕. */
@@ -286,17 +340,22 @@ function BlattKopf({ reg, titel, ort, hoch, zurueck, schliessen }: {
           {krumen.map((k, i) => {
             const letzte = i === krumen.length - 1;
             return (
-              <li key={i} className="flex items-baseline gap-x-1.5">
+              // `min-w-0` + Trennung: «Zivilprozess- und Zwangsvollstreckungsrecht» lief
+              // @320 aus der Leiste (R8 a, FEINSCHLIFF 24.9.2026).
+              <li key={i} className="flex min-w-0 items-baseline gap-x-1.5">
                 {i > 0 && <span aria-hidden className="text-ink-500">›</span>}
                 {letzte
-                  ? <span aria-current="location" className="font-semibold text-ink-900">{k.label}</span>
+                  ? <span aria-current="location" className="min-w-0 hyphens-auto break-words font-semibold text-ink-900">{k.label}</span>
                   : <button type="button" onClick={() => hoch(k.ort)} className="lc-btn-ghost lc-btn-sm h-auto px-1 font-normal underline underline-offset-4">{k.label}</button>}
               </li>
             );
           })}
         </ol>
       </nav>
-      <SchliessKnopf name={`${titel} schliessen`} onClick={schliessen} />
+      {/* 44-px-Box wie im Bottom-Sheet (`SheetRahmen`): die Komfort-Trefferfläche
+          ragte sonst aus dem 24-px-Kasten (R8 a, alle Blätter, FEINSCHLIFF);
+          die negativen Ränder halten das Band so niedrig wie zuvor. */}
+      <SchliessKnopf name={`${titel} schliessen`} onClick={schliessen} klasse="-my-2.5 -mr-1 h-11 w-11" />
     </div>
   );
 }

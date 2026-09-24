@@ -311,9 +311,8 @@ test.describe('Startseite · Blatt der Rechtsprechung-Kachel', () => {
     await page.goto('/')
     await rechtsprechungKachel(page).click()
     await expect(blatt(page)).toBeVisible()
-    // Erst wenn der Fokus im Suchfeld steht, ist das Blatt offen und hört auf
-    // Escape (der Handler sitzt am Feld-Rahmen; während der Öffnung verpufft
-    // die Taste — Gegenprüfung 24.9.2026: ohne dieses Warten 1/20 grün).
+    // Hier wird der Fall «Blatt steht» geprüft (Fokus im Suchfeld); Escape
+    // MITTEN in der Öffnung prüft der FEINSCHLIFF-Block unten.
     await expect(blatt(page).getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })).toBeFocused()
     await page.keyboard.press('Escape')
     await expect(page).toHaveURL(/\/$/)
@@ -353,4 +352,69 @@ test('«/» lädt nie das 9,4-MB-Rechtsprechungs-Register (§15)', async ({ page
   await expect(page.getByText('Jüngste Entscheide im Korpus')).toBeVisible()
   await page.waitForTimeout(1000)
   expect(angefragt, `angefragte Register-URLs: ${JSON.stringify(angefragt)}`).toEqual([])
+})
+
+// ─── W2·29-WERKBANK-START-FEINSCHLIFF (David 24.9.2026: «dass das schöner ist
+// … überprüft, dass nicht abgeschnitten ist») ─────────────────────────────────
+// Drei Bedienmängel aus den Gegenprüfungen S1–S3, als echte Aktionsfolgen.
+test.describe('Startseite · Feinschliff', () => {
+  // Escape SOFORT nach dem Klick, mitten in der 450-ms-Öffnung. Vorher stand
+  // der Fokus bis zur Phase «offen» auf der Kachel UNTER dem Blatt, der
+  // Escape-Handler sitzt am Blatt — die Taste verpuffte (alle vier Kacheln).
+  for (const [name, kachel] of [['Gesetze', gesetzeKachel], ['Rechtsprechung', rechtsprechungKachel],
+    ['Materialien', materialienKachel], ['Werkzeuge', werkzeugeKachel]] as const) {
+    test(`${name}: Escape mitten in der Öffnung schliesst ganz, Fokus zurück auf die Kachel`, async ({ page }) => {
+      await page.goto('/')
+      await kachel(page).click()
+      // Das Blatt steht im DOM (Phase «start»/früh «offen») — die Bewegung
+      // läuft noch 450 ms. Nicht auf das Ende warten: genau hier verpuffte
+      // die Taste. (Vor dem ersten Zeichnen des Blatts — die Navigation ist
+      // eine React-Transition — gibt es noch kein Blatt, das hören könnte;
+      // dieses Fenster misst Millisekunden und ist kein Bedienfall.)
+      await expect(blatt(page)).toBeVisible()
+      await page.keyboard.press('Escape')
+      await expect(page).toHaveURL(/\/$/)
+      await expect(blatt(page)).toHaveCount(0)
+      await expect(kachel(page)).toBeFocused()
+    })
+  }
+
+  // Über die 760-px-Grenze wechselt das Blatt zwischen Feld und Vollbild. Vorher
+  // baute React dabei den ganzen Blatt-Teilbaum neu auf (Portal-Ziel wechselte):
+  // Suchwort, Treffer und Fokus waren weg.
+  test('Breitenwechsel Feld ↔ Vollbild behält Suchwort, Treffer und Fokus', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.goto('/?blatt=materialien')
+    const suchfeld = blatt(page).getByRole('searchbox', { name: 'Materialien durchsuchen' })
+    await expect(suchfeld).toBeFocused()
+    await suchfeld.fill('Umstrukturierungen')
+    const treffer = blatt(page).locator('a[href="/materialien/ESTV-KS-DBG-5A"]')
+    await expect(treffer).toBeVisible()
+
+    await page.setViewportSize({ width: 390, height: 844 })
+    await expect(page.locator('#root')).toHaveAttribute('inert', '')
+    await expect(suchfeld).toHaveValue('Umstrukturierungen')
+    await expect(treffer).toBeVisible()
+    await expect(suchfeld).toBeFocused()
+
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await expect(page.locator('#root')).not.toHaveAttribute('inert', '')
+    await expect(suchfeld).toHaveValue('Umstrukturierungen')
+    await expect(treffer).toBeVisible()
+  })
+
+  // §8: Verweis-Einträge (vollständiges Urteil zu einem BGE) sind keine eigenen
+  // Entscheide — die Rubrikseite zählt sie nicht mit, die Entscheid-Liste auf
+  // «/» lässt sie weg. Das Blatt zeigte 1'252 davon als gewöhnliche Treffer.
+  // Die Zahl wird aus dem Register nachgerechnet, nicht abgeschrieben.
+  test('Rechtsprechung: Trefferzahl ohne Verweis-Einträge, per aria-live gemeldet', async ({ page, request }) => {
+    const reg = await (await request.get('/rechtsprechung/register.json')).json() as { entscheide: { verweis?: unknown }[] }
+    const verweise = reg.entscheide.filter((e) => e.verweis).length
+    expect(verweise, 'ohne Verweis-Einträge im Korpus prüfte dieser Fall nichts').toBeGreaterThan(0)
+    const echte = reg.entscheide.length - verweise
+    await page.goto('/?blatt=rechtsprechung')
+    const zahl = blatt(page).getByRole('status').filter({ hasText: /Entscheide$/ })
+    await expect(zahl).toHaveText(`${echte.toLocaleString('de-CH')} Entscheide`)
+    await expect(zahl).toHaveAttribute('aria-live', 'polite')
+  })
 })

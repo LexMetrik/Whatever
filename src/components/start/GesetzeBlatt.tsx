@@ -7,6 +7,8 @@ import { type BrowseErlass } from '../../lib/normtext/browse-typen';
 import { erfassungsgrad, STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 import type { BlattOrt } from '../../lib/startBlatt';
 import { RubrikKachel } from '../ui/RubrikKachel';
+import { BlattSuchFeld } from './BlattBausteine';
+import { useBlattRuhe } from './blattRuhe';
 import { SchweizKarte } from '../SchweizKarte';
 import { InternationalRubriken } from '../normtext/InternationalRubriken';
 import { GruppenInhalt } from '../../pages/gesetze-teile/geteilt';
@@ -61,14 +63,19 @@ function Wahl({ zu }: { zu: Zu }) {
 function Gebiete({ zu }: { zu: Zu }) {
   return (
     <div className="space-y-3">
-      <ul className="grid gap-x-8 sm:grid-cols-2">
+      {/* `grid-cols-1`: ohne Spaltenvorgabe wuchs die Spalte @320 auf das längste
+          Einzelwort («Zwangsvollstreckungsrecht»), R8 a +8 px (FEINSCHLIFF). */}
+      <ul className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
         {z.bundSystematik.map((g) => (
           <li key={g.id} className="border-t border-rule-soft">
-            <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline">
+            {/* `whitespace-normal`: die Menüzeile ist sonst einzeilig — «Zivilprozess- und
+                Zwangsvollstreckungsrecht» lief bei jeder Breite über die Spalte und
+                in den Nachbarn (gemessen 24.9.2026, FEINSCHLIFF). */}
+            <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline whitespace-normal">
               <span aria-hidden className="num w-6 shrink-0 font-sans text-xs text-ink-500">{g.nr}</span>
               <span className="min-w-0 flex-1">
-                <span className="block font-serif text-body-l text-ink-900">{g.titel}</span>
-                <span className="block truncate font-sans text-xs text-ink-500">{g.kuerzel.join(' · ')}</span>
+                <span className="block hyphens-auto break-words font-serif text-body-l leading-snug text-ink-900">{g.titel}</span>
+                <span className="block truncate font-sans text-xs text-ink-500" title={g.kuerzel.join(' · ')}>{g.kuerzel.join(' · ')}</span>
               </span>
               <span className="num shrink-0 font-sans text-xs text-ink-700">{nf(g.anzahl)}</span>
             </button>
@@ -98,8 +105,9 @@ function Kantone({ zu }: { zu: Zu }) {
       <ul aria-label="Kantone" className="grid grid-cols-2 gap-x-4 self-start">
         {KANTONE.map((k) => (
           <li key={k} className="border-t border-rule-soft">
-            <button type="button" onClick={zu('kantone', k)} className="lc-menu-zeile" disabled={!n(k)}>
-              <span className="min-w-0 flex-1 truncate">{kantonName(k)}</span>
+            {/* Kantonsname bricht um statt «Basel-Lan…» (FEINSCHLIFF 24.9.2026). */}
+            <button type="button" onClick={zu('kantone', k)} className="lc-menu-zeile whitespace-normal" disabled={!n(k)}>
+              <span className="min-w-0 flex-1 break-words leading-snug">{kantonName(k)}</span>
               <span className="num shrink-0 text-xs text-ink-500">{n(k)}</span>
             </button>
           </li>
@@ -112,11 +120,13 @@ function Kantone({ zu }: { zu: Zu }) {
 /** Register erst bei Bedarf (§15); `null` = lädt, `[]` = nicht erreichbar. */
 function useRegister(): BrowseErlass[] | null {
   const [erlasse, setErlasse] = useState<BrowseErlass[] | null>(null);
+  const ruhe = useBlattRuhe();
   useEffect(() => {
+    if (!ruhe) return; // erst nach der Öffnungsbewegung (blattRuhe.ts)
     let lebt = true;
     ladeBrowseManifest().then((m) => { if (lebt) setErlasse(m?.erlasse ?? []); });
     return () => { lebt = false; };
-  }, []);
+  }, [ruhe]);
   return erlasse;
 }
 
@@ -126,16 +136,6 @@ function Laedt({ erlasse, children }: { erlasse: BrowseErlass[] | null; children
     return <p className="font-sans text-body-s text-ink-700" role="alert">Die Gesetzessammlung konnte nicht geladen werden. Bitte die Seite neu laden.</p>;
   }
   return <>{children()}</>;
-}
-
-function Filter({ wert, setze, label }: { wert: string; setze: (s: string) => void; label: string }) {
-  return (
-    <label className="block max-w-md">
-      <span className="sr-only">{label}</span>
-      <input type="search" value={wert} onChange={(e) => setze(e.target.value)} placeholder={label}
-        className="lc-input" />
-    </label>
-  );
 }
 
 const istIntl = (e: BrowseErlass) => e.rechtsgebiet === 'international';
@@ -156,7 +156,7 @@ function GebietErlasse({ nr }: { nr: string }) {
   return (
     <div className="space-y-4">
       <p className="max-w-reading font-sans text-body-s text-ink-600">{kat.lede}</p>
-      <Filter wert={suche} setze={setSuche} label={`In «${kat.titel}» filtern`} />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In «${kat.titel}» filtern`} />
       <Laedt erlasse={erlasse}>
         {() => gruppen.length
           ? gruppen.map((g) => <GruppenInhalt key={g.id} titel={g.titel} items={g.items} />)
@@ -181,7 +181,7 @@ function KantonErlasse({ kt }: { kt: string }) {
   );
   return (
     <div className="space-y-4">
-      <Filter wert={suche} setze={setSuche} label={`In ${kantonName(kt)} filtern`} />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In ${kantonName(kt)} filtern`} />
       <Laedt erlasse={erlasse}>
         {() => <KantonSystematik erlasse={eig} sys={sys?.[kt]} sysGeladen={sys !== null} />}
       </Laedt>
@@ -195,7 +195,7 @@ function International() {
   const intl = useMemo(() => (erlasse ? filtern(erlasse.filter(istIntl), suche) : []), [erlasse, suche]);
   return (
     <div className="space-y-4">
-      <Filter wert={suche} setze={setSuche} label="Staatsverträge filtern" />
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Staatsverträge filtern" />
       <Laedt erlasse={erlasse}>{() => <InternationalRubriken erlasse={intl} />}</Laedt>
     </div>
   );

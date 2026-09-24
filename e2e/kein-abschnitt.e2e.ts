@@ -201,6 +201,57 @@ test.describe('R8 — Geometrie-Sweep (a, b, c, f, g, h)', () => {
   }
 })
 
+// ── Startseite · die AUFGEKLAPPTEN Blätter (W2·29-WERKBANK-START-FEINSCHLIFF) ──
+// Die Routenliste oben sieht «/» nur ZUGEKLAPPT: die Blätter sind Zustand
+// (`/?blatt=…`), keine eigene Route, und tauchen in `prerenderRouten()` nie
+// auf. Gemessen 24.9.2026: kein einziger der Blatt-Zustände war im Sweep —
+// was im Blatt abgeschnitten wird, konnte dieses Tor nicht sehen. Jede Stufe
+// per Deep-Link (öffnet ohne Bewegung), Daten fertig geladen, dann derselbe
+// Viewport-Durchlauf wie oben. Das Resizen über die 760-px-Grenze prüft dabei
+// nebenbei, dass das Blatt den Wechsel Vollbild ↔ Feld übersteht.
+const BLATT_STUFEN = [
+  'gesetze', 'gesetze/bund', 'gesetze/bund/02', 'gesetze/bund/03', 'gesetze/kantone', 'gesetze/kantone/BS', 'gesetze/international',
+  'werkzeuge', 'werkzeuge/rechner', 'werkzeuge/vorlagen', 'materialien', 'rechtsprechung',
+] as const
+test.describe('R8 — Startseiten-Blätter (a, b, c, f, g, h)', () => {
+  for (const stufe of BLATT_STUFEN) {
+    for (const thema of THEMEN) {
+      const route = `/?blatt=${stufe}`
+      test(`${route} — ${thema}`, async ({ page }, testInfo) => {
+        testInfo.setTimeout(90_000) // s. Begründung im Geometrie-Sweep oben
+        await themaVorwaehlen(page, thema)
+        await page.goto(route)
+        const blatt = page.locator('#lm-start-blatt')
+        // Öffnet das Blatt nicht oder lädt es nie fertig, ist das ein FUND, kein
+        // Werkzeug-Fehler: `sicher()` schluckte ihn sonst, der Scan entfiele, und
+        // ein kaputtes Blatt machte das Tor GRÜNER (Gegenprüfung 24.9.2026, §6.7).
+        // Als Fund statt als harter Wurf, weil `mode: 'serial'` sonst alle
+        // Folgetests samt Bericht überspränge.
+        try {
+          await expect(blatt).toBeVisible({ timeout: 15_000 })
+          // Lade-Zeile weg = Liste steht (Register lädt erst beim Öffnen, §15).
+          await expect(blatt.getByText(/wird abgerufen|werden geladen/)).toHaveCount(0, { timeout: 20_000 })
+        } catch (e) {
+          const messwert = (e as Error).message.split('\n')[0].slice(0, 160)
+          GESAMMELTE_FUNDE.push({ route, viewport: 'vor-sweep', modus: thema, kategorie: 'blatt-oeffnet-nicht', selektor: '#lm-start-blatt', messwert })
+          return
+        }
+        await sicher(route, thema, async () => {
+          for (const vp of VIEWPORTS) {
+            await page.setViewportSize({ width: vp.width, height: vp.height })
+            await page.waitForTimeout(60) // Reflow nach Resize abwarten
+            await expect(blatt).toBeVisible()
+            const [geom, reiter] = await Promise.all([geometrieScan(page), reiterWortgrenzeScan(page)])
+            for (const f of [...geom, ...reiter]) {
+              GESAMMELTE_FUNDE.push({ route, viewport: vp.name, modus: thema, ...f })
+            }
+          }
+        })
+      })
+    }
+  }
+})
+
 // ── Kategorie d — Sprungziel unter dem sticky Kopf ──────────────────────────
 // Begrenzt auf die Gesetz-Vertreter (dort existieren `#art-…`-Sprungziele) und
 // zwei Viewports (schmal/breit — der Kopf ändert dort typischerweise seine
