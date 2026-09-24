@@ -8,7 +8,7 @@ import { formatDatum } from '../../lib/datumsUtils';
 import type { Kanton } from '../../types/legal';
 import type { SchkgInput, SchkgModus, SchkgFristnatur, SchkgEinheit, SchkgErgebnis } from '../../types/schkg';
 import { berechneSchkgFrist } from '../../lib/schkgFristen';
-import { PHASEN_SCHKG, PRESETS_SCHKG, SCHKG_DISCLAIMER, type SchkgPhase, type SchkgPreset } from '../../lib/schkgPresets';
+import { HEMMUNG_REGELN, PHASEN_SCHKG, PRESETS_SCHKG, SCHKG_DISCLAIMER, type SchkgPhase, type SchkgPreset } from '../../lib/schkgPresets';
 import { rechtsprechung, VERIFIKATION } from '../../data/verifikation';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
@@ -38,6 +38,7 @@ const MODI: { code: SchkgModus; label: string }[] = [
   { code: 'schkg_betreibungsferien', label: 'SchKG-Betreibungsferien (Art. 56/63) – kein Ruhen' },
   { code: 'zpo_stillstand', label: 'ZPO-Stillstand (gerichtliche Klage, Art. 56 Abs. 2 SchKG)' },
   { code: 'kein', label: 'Kein Stillstand' },
+  { code: 'schkg_wechsel', label: 'Wechselbetreibung – keine Betreibungsferien, Rechtsstillstand (Art. 56 Ziff. 3/63)' },
 ];
 
 const NATUREN: { code: SchkgFristnatur; label: string }[] = [
@@ -104,7 +105,10 @@ export function SchkgFristenForm({ live }: {
       ?? 'einleitung');
   const [aktiv, setAktiv] = useState<SchkgPreset | null>(() => PRESETS_SCHKG.find((x) => x.key === ausLink.presetKey) ?? null);
   const [override, setOverride] = useState<SchkgModus | ''>((ausLink.override as SchkgModus | undefined) ?? '');
-  const [hemmung, setHemmung] = useState<{ an: boolean; von: string; bis: string }>({ an: ausLink.hemmungAn ?? false, von: ausLink.hemmungVon ?? '', bis: ausLink.hemmungBis ?? '' });
+  const [hemmung, setHemmung] = useState<{ an: boolean; von: string; bis: string; von2: string; bis2: string }>({
+    an: ausLink.hemmungAn ?? false, von: ausLink.hemmungVon ?? '', bis: ausLink.hemmungBis ?? '',
+    von2: ausLink.hemmung2Von ?? '', bis2: ausLink.hemmung2Bis ?? '',
+  });
   const [rechtsstillstand, setRechtsstillstand] = useState<{ an: boolean; von: string; bis: string }>({ an: ausLink.rsAn ?? false, von: ausLink.rsVon ?? '', bis: ausLink.rsBis ?? '' });
 
   // Live-Brücke: Sync während des Renderns (Muster «adjusting state»);
@@ -144,7 +148,7 @@ export function SchkgFristenForm({ live }: {
   const ladePreset = (p: SchkgPreset) => {
     setAktiv(p);
     setOverride('');
-    setHemmung({ an: false, von: '', bis: '' });
+    setHemmung({ an: false, von: '', bis: '', von2: '', bis2: '' });
     setForm((f) => ({
       ...f,
       modus: p.modus,
@@ -162,6 +166,15 @@ export function SchkgFristenForm({ live }: {
   // Bedingung stand zuvor doppelt — die Gleichheit war nur kommentargestützt).
   const aktiverOverride = aktiv?.modusUmstritten && override ? override : undefined;
 
+  // RL-19 / F2-06: Die Hemmung wirkt nur, wo das Gesetz sie vorsieht — bei
+  // Presets mit `hemmungMoeglich` (oder ohne Preset, manueller Weg). Vorher
+  // rechnete ein Link mit `ha=1` die Hemmung auch bei verborgenem Feld ein
+  // (z. B. Art. 116 SchKG, der keinen Stillstand kennt).
+  const hemmungErlaubt = !aktiv || !!aktiv.hemmungMoeglich;
+  const hemmungRegel = HEMMUNG_REGELN[aktiv?.hemmungNorm ?? 'standard'];
+  const hemmungAktiv = hemmungErlaubt && hemmung.an;
+  const zweiterZeitraum = hemmungAktiv && hemmungRegel.zeitraum2 !== undefined;
+
   const basis = (einheit: SchkgEinheit, laenge: number, fristnatur: SchkgFristnatur, mitHemmung: boolean): SchkgInput => ({
     ereignis: form.ereignis,
     einheit,
@@ -171,15 +184,19 @@ export function SchkgFristenForm({ live }: {
     kanton: form.kanton,
     ausloeser: form.ausloeser,
     modusOverride: aktiverOverride,
-    hemmungVon: mitHemmung && hemmung.an ? hemmung.von : undefined,
-    hemmungBis: mitHemmung && hemmung.an ? hemmung.bis : undefined,
+    hemmungVon: mitHemmung && hemmungAktiv ? hemmung.von : undefined,
+    hemmungBis: mitHemmung && hemmungAktiv ? hemmung.bis : undefined,
+    hemmung2Von: mitHemmung && zweiterZeitraum && hemmung.von2 ? hemmung.von2 : undefined,
+    hemmung2Bis: mitHemmung && zweiterZeitraum && hemmung.bis2 ? hemmung.bis2 : undefined,
+    hemmungNorm: aktiv?.hemmungNorm,
     rechtsstillstandVon: rechtsstillstand.an ? rechtsstillstand.von : undefined,
     rechtsstillstandBis: rechtsstillstand.an ? rechtsstillstand.bis : undefined,
   });
 
   const fehler: string[] = [];
   if (!form.ereignis) fehler.push('Bitte ein auslösendes Ereignis (Datum) angeben.');
-  if (hemmung.an && (!hemmung.von || !hemmung.bis)) fehler.push('Hemmung: Start- und Enddatum des hemmenden Verfahrens angeben.');
+  if (hemmungAktiv && (!hemmung.von || !hemmung.bis)) fehler.push('Hemmung: Start- und Enddatum des hemmenden Verfahrens angeben.');
+  if (zweiterZeitraum && !hemmung.von2 !== !hemmung.bis2) fehler.push('Hemmung, 2. Zeitraum: Start- und Enddatum angeben oder beide leer lassen.');
   if (rechtsstillstand.an && (!rechtsstillstand.von || !rechtsstillstand.bis)) fehler.push('Rechtsstillstand: Start- und Enddatum angeben.');
 
   const istDual = !!(aktiv?.wartefrist && aktiv?.verwirkung);
@@ -191,7 +208,9 @@ export function SchkgFristenForm({ live }: {
   if (fehler.length === 0 && !istInfo) {
     try {
       if (istDual && aktiv) {
-        ausgaben.push({ titel: 'Wartefrist (frühestens)', natur: 'wartefrist', ergebnis: berechneSchkgFrist(basis(aktiv.wartefrist!.einheit, aktiv.wartefrist!.laenge, 'wartefrist', false)) });
+        // RL-19 / F2-06: Art. 154 Abs. 1 SchKG — «diese Fristen» stehen still,
+        // auch die frühestens-Frist (HEMMUNG_REGELN.auchWartefrist).
+        ausgaben.push({ titel: 'Wartefrist (frühestens)', natur: 'wartefrist', ergebnis: berechneSchkgFrist(basis(aktiv.wartefrist!.einheit, aktiv.wartefrist!.laenge, 'wartefrist', hemmungRegel.auchWartefrist)) });
         ausgaben.push({ titel: 'Verwirkungsfrist (spätestens)', natur: 'verwirkung', ergebnis: berechneSchkgFrist(basis(aktiv.verwirkung!.einheit, aktiv.verwirkung!.laenge, 'verwirkung', true)) });
       } else {
         ausgaben.push({ titel: 'SchKG-Fristberechnung', natur: form.fristnatur, ergebnis: berechneSchkgFrist(basis(form.einheit, form.laenge, form.fristnatur, true)) });
@@ -229,6 +248,7 @@ export function SchkgFristenForm({ live }: {
   const schkgQuery = () => permalinkKodieren(SCHKG_LINK_SPEC, {
     ...form, phase, presetKey: aktiv?.key, override: override || undefined,
     hemmungAn: hemmung.an, hemmungVon: hemmung.von || undefined, hemmungBis: hemmung.bis || undefined,
+    hemmung2Von: hemmung.von2 || undefined, hemmung2Bis: hemmung.bis2 || undefined,
     rsAn: rechtsstillstand.an, rsVon: rechtsstillstand.von || undefined, rsBis: rechtsstillstand.bis || undefined,
   });
 
@@ -345,16 +365,24 @@ export function SchkgFristenForm({ live }: {
       )}
 
       {/* Optionale Sonderlogik */}
-      {(aktiv?.hemmungMoeglich || !aktiv) && (
+      {hemmungErlaubt && (
         <div className="space-y-2">
           <Checkbox checked={hemmung.an} onChange={(v) => setHemmung((s) => ({ ...s, an: v }))}
-            label="Hemmung der Verwirkungsfrist (Art. 88 Abs. 2 / Art. 166 Abs. 2 SchKG)" />
+            label={hemmungRegel.label} />
           {hemmung.an && (
             <div className="flex flex-wrap gap-2 items-center pl-6">
-              <span className="text-body-s text-ink-500">Hemmendes Verfahren von</span>
+              <span className="text-body-s text-ink-500">{hemmungRegel.zeitraum1}</span>
               <DatumsFeld value={hemmung.von} onChange={(v) => setHemmung((s) => ({ ...s, von: v }))} className={inputCls} wrapperClassName="w-full sm:w-44" />
               <span className="text-body-s text-ink-500">bis</span>
               <DatumsFeld value={hemmung.bis} onChange={(v) => setHemmung((s) => ({ ...s, bis: v }))} className={inputCls} wrapperClassName="w-full sm:w-44" />
+            </div>
+          )}
+          {hemmung.an && hemmungRegel.zeitraum2 && (
+            <div className="flex flex-wrap gap-2 items-center pl-6">
+              <span className="text-body-s text-ink-500">{hemmungRegel.zeitraum2}</span>
+              <DatumsFeld value={hemmung.von2} onChange={(v) => setHemmung((s) => ({ ...s, von2: v }))} className={inputCls} wrapperClassName="w-full sm:w-44" />
+              <span className="text-body-s text-ink-500">bis</span>
+              <DatumsFeld value={hemmung.bis2} onChange={(v) => setHemmung((s) => ({ ...s, bis2: v }))} className={inputCls} wrapperClassName="w-full sm:w-44" />
             </div>
           )}
         </div>

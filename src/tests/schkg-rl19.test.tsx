@@ -254,9 +254,14 @@ describe('F2-07 · ungültige Daten und vertauschte Zeiträume werden gemeldet',
     expect(() => berechneSchkgFrist({ ...basis, rechtsstillstandVon: '2026-03-15', rechtsstillstandBis: '2026-03-15' })).not.toThrow();
   });
 
-  it('Formular: vertauschter Rechtsstillstand erscheint als Fehlermeldung, ohne Ergebnis', () => {
+  // Die Meldung selbst zeigt die FehlerBox erst nach der ersten Eingabe
+  // (BeruehrtRahmen, «kein Eingabefehler vor der ersten Eingabe») — im
+  // Server-Render prüfbar ist, dass kein Ergebnis mit dem vertauschten
+  // Zeitraum erscheint; den Text belegen die Engine-Fälle oben.
+  it('Formular: vertauschter Rechtsstillstand ergibt kein Ergebnis', () => {
     const html = renderSchkg('?e=2026-03-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=ZH&ra=1&rv=2026-03-25&rb=2026-03-15');
-    expect(html).toMatch(/Rechtsstillstand.*vor dem Beginn/);
     expect(html).not.toMatch(/Fristende \(dies ad quem\)/);
+    const gegenprobe = renderSchkg('?e=2026-03-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=ZH&ra=1&rv=2026-03-15&rb=2026-03-25');
+    expect(gegenprobe).toMatch(/Fristende \(dies ad quem\)/);
   });
 });
