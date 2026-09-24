@@ -34,11 +34,13 @@
  *                   nur eine Richtung sieht, kann durch Löschen der Gegenseite
  *                   still grün werden.
  *
- * NICHT geprüft (und mit Absicht nicht): die sha-GLEICHHEIT zwischen Index und
- * Snapshot. Das ist Inhalts-Drift, eine andere Fehlerklasse, und zuständig ist
- * `check:normtext` (scripts/normtext/check-drift.ts). Der Zählerstand wird unten
- * als DIAGNOSE ausgegeben, ausdrücklich OHNE Tor-Verdikt — sonst entstünde ein
- * zweiter, halber Drift-Wächter neben dem echten.
+ * (c) INHALT     golden[id] === Snapshot-sha, seit HN-03 (25.9.2026) HART.
+ *                Vormals DIAGNOSE, delegiert an «check:normtext» — das ist
+ *                falsifiziert (§7): check-drift.ts liest golden/normtext-
+ *                snapshot.json gar nicht (grep golden = 0 Treffer). Kein Tor
+ *                prüfte die sha-Werte (pruefsystem-04: manipulierter
+ *                Snapshot-sha lief mit Exit 0 durch). Echte Änderung ⇒ Golden
+ *                im selben Commit deklariert nachziehen, keine Ausnahmeliste.
  *
  * Offline: liest nur committete Artefakte, kein Netz, kein Cache.
  * Aufruf: vite-node scripts/check-golden-normtext.ts
@@ -51,28 +53,19 @@ const SNAP_DIRS = ['public/normtext/bund', 'public/normtext/kanton'];
 
 /**
  * Begründete Ausnahmen von (a): Snapshot-Knoten, die BEWUSST keinen
- * Golden-Eintrag tragen. Schlüssel = Knoten-id, Wert = Grund.
+ * Golden-Eintrag tragen. Schlüssel = Knoten-id, Wert = Grund. LEER, das ist
+ * der Punkt.
  *
- * LEER, und das ist der Punkt. Der Ist-Zustand bei Bau dieses Tors (Basis
- * b09e8239) hatte ein Residuum von 59 fehlenden Knoten — die 59 Artikel von
- * public/normtext/kanton/AR-1203.json. Ursache empirisch geklärt: Commit
- * 7a14fa06 (23.6.2026, `npm run normtext --nur=kanton --kanton=AR --discovery`)
- * löschte sie. Der `--discovery`-Zweig fährt NUR die LexWork-Phase (HTM/ZH/PDF
- * entfallen, Zeilen ~995-1001), der Golden-Merge desselben Zweigs ersetzt aber
- * ALLE `kanton/AR/*`-Schlüssel, sobald der Kanton irgendeinen frischen Eintrag
- * geliefert hat (`istErsetzbar`, Zeile ~1043). AR-1203 ist ein PDF-Routen-Erlass
- * (olexAt-Profil, ar.clex.ch/api/de/versions/1203/pdf_file) — seine Datei blieb
- * auf der Platte, seine 59 Golden-Schlüssel fielen weg. Der §8-Wächter dieses
- * Zweigs greift nur auf KANTONS-Granularität und ist für einen routen-
- * beschränkten Lauf zu grob.
- *
- * Behandelt wurde die URSACHE, nicht das Symptom: die 59 Einträge sind aus den
- * committeten Snapshots reprojiziert (`golden[id] = eintrag.sha`, die Definition
- * des Generators) und stimmen byte-gleich mit dem Bestand VOR dem Verlust
- * (golden@dd17d704: 59/59 sha identisch). Darum braucht dieses Tor keine
- * Pauschal-Toleranz. Wer hier je einen Eintrag hinzufügt, schreibt einen Grund
- * hin, der die Frage «warum darf dieser Artikel keine Drift-Basis haben?»
- * beantwortet — «historisch gewachsen» beantwortet sie nicht.
+ * Historie: Basis b09e8239 hatte 59 fehlende Knoten (public/normtext/kanton/
+ * AR-1203.json). Ursache: Commit 7a14fa06 (23.6.2026, `--nur=kanton
+ * --kanton=AR --discovery`) fährt nur die LexWork-Phase; ihr Golden-Merge
+ * ersetzt aber ALLE `kanton/AR/*`-Schlüssel (istErsetzbar, Z. ~1043) — AR-1203
+ * (PDF-Routen-Erlass, olexAt) blieb auf der Platte, seine Golden-Schlüssel
+ * fielen weg. Behoben an der URSACHE: die 59 Einträge sind aus den
+ * committeten Snapshots reprojiziert und byte-gleich mit dem Bestand vor dem
+ * Verlust (golden@dd17d704: 59/59 sha identisch) — keine Pauschal-Toleranz
+ * nötig. Wer hier einträgt, begründet WARUM dieser Artikel keine Drift-Basis
+ * haben darf — «historisch gewachsen» genügt nicht.
  */
 const AUSNAHMEN: Record<string, string> = {};
 
@@ -228,26 +221,32 @@ function main(): void {
     }
   }
 
-  // ── DIAGNOSE (KEIN Tor-Verdikt): sha-Abweichungen Index ↔ Snapshot ────────
-  // Inhalts-Drift ist die Zuständigkeit von `check:normtext`
-  // (scripts/normtext/check-drift.ts). Hier nur als Zahl sichtbar, damit dieses
-  // Tor nicht stillschweigend als Drift-Wächter missverstanden wird.
+  // ── (c) Inhalt: golden-sha === Snapshot-sha (hart, s. Kopfkommentar) ─────
   const shaAbweichend = knoten.filter((k) => goldenKeys.has(k.id) && golden[k.id] !== k.sha);
+  if (shaAbweichend.length > 0) {
+    const nachDatei = new Map<string, string[]>();
+    for (const k of shaAbweichend) nachDatei.set(k.datei, [...(nachDatei.get(k.datei) ?? []), k.id]);
+    console.error(
+      `  FEHLER: ${shaAbweichend.length} Knoten mit sha ≠ Golden-sha (${nachDatei.size} Datei(en)) ` +
+        `— ohne deklarierte Regeneration:`,
+    );
+    for (const [datei, ids] of [...nachDatei].sort()) {
+      console.error(`    ${datei} (${ids.length}): ${ids.slice(0, 8).join(', ')}${ids.length > 8 ? ' …' : ''}`);
+    }
+    exitCode = 1;
+  }
 
   console.log(`  Snapshot-Knoten:      ${knoten.length}`);
   console.log(`  Golden-Einträge:      ${goldenKeys.size}`);
   console.log(`  fehlend (ohne Ausn.): ${fehlendOhneAusnahme.length}`);
   console.log(`  Ausnahmen (genutzt):  ${fehlendMitAusnahme.length} von ${Object.keys(AUSNAHMEN).length} deklariert`);
   console.log(`  Waisen:               ${waisen.length}`);
-  console.log(
-    `  DIAGNOSE (kein Tor-Verdikt): ${shaAbweichend.length} Knoten mit sha ≠ Golden-sha ` +
-      `— Inhalts-Drift, zuständiges Tor ist check:normtext.`,
-  );
+  console.log(`  sha-Abweichungen:     ${shaAbweichend.length}`);
 
   if (exitCode !== 0) {
     console.error(
-      '\ncheck:golden-normtext ROT — der Golden-Index ist unvollständig oder verwaist.\n' +
-        'Der Index ist das §6-Beweismittel: ohne Eintrag ist ein Snapshot-Überschreiben unsichtbar.',
+      '\ncheck:golden-normtext ROT — der Golden-Index ist unvollständig, verwaist oder inhaltlich abweichend.\n' +
+        'Der Index ist das §6-Beweismittel: ohne Eintrag/Übereinstimmung ist ein Snapshot-Überschreiben unsichtbar.',
     );
     process.exit(exitCode);
   }
