@@ -103,6 +103,9 @@ export const RECHTSSCHUTZ: Record<string, string> = {
   // Integrität der Rechtslogik-Tests; im Zweifel ausgenommen.
   'scripts/check-fachaenderung.ts': 'Fachänderungs-Riegel (§6.3) — Integrität der Rechtslogik-Tests',
   'scripts/analyse/fachaenderung-kern.ts': 'Helfer von check-fachaenderung.ts — dieselbe Ausnahme',
+  // 24.9.2026: die R2-Erkennung (Assertion-Multimengen) aus test-assertion-diff.ts
+  // herausgelöst (vite-node-CLI-Fix, Gegenprüfung RL-03) — Kern des Riegels.
+  'scripts/analyse/assertion-mengen.ts': 'Assertion-Erkennung von check-fachaenderung.ts — dieselbe Ausnahme',
   '.github/workflows/waechter.yml': 'Wächter über die Normen-/Korpus-Läufe',
   '.github/workflows/fedlex-frische.yml': 'Fedlex-Frische',
   '.github/workflows/normen-monitor.yml': 'Normen-/Verfall-Überwachung',
