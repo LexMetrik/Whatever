@@ -17,15 +17,19 @@ import { INTERNATIONAL_GRUPPEN } from '../../lib/normtext/international-rubriken
 // `lib/normtext/international-rubriken.ts` — dieselbe Quelle, gegen die das
 // Anker-Tor des /international-Redirects seine Ziele prüft (§5/§7).
 
-export function InternationalRubriken({ erlasse }: { erlasse: BrowseErlass[] }) {
+// `gruppe` (START-UEBERARBEITUNG U1, 24.9.2026): nur DIESE Rubrik, ohne
+// «Weitere» — die Startseiten-Stufe `international/<gruppenId>`. Ohne `gruppe`
+// unverändert alle Rubriken (/gesetze).
+export function InternationalRubriken({ erlasse, gruppe }: { erlasse: BrowseErlass[]; gruppe?: string }) {
   const proKey = new Map(erlasse.map((e) => [e.key, e]));
   const zugeordnet = new Set<string>();
-  const gruppen = INTERNATIONAL_GRUPPEN.map((g) => {
+  const quelle = gruppe ? INTERNATIONAL_GRUPPEN.filter((g) => g.id === gruppe) : INTERNATIONAL_GRUPPEN;
+  const gruppen = quelle.map((g) => {
     const items = g.keys.map((k) => proKey.get(k)).filter((e): e is BrowseErlass => !!e);
     items.forEach((e) => zugeordnet.add(e.key));
     return { ...g, items };
   }).filter((g) => g.items.length > 0);
-  const weitere = erlasse.filter((e) => !zugeordnet.has(e.key));
+  const weitere = gruppe ? [] : erlasse.filter((e) => !zugeordnet.has(e.key));
 
   if (gruppen.length === 0 && weitere.length === 0) {
     return <Leerzustand art="bestand" text="Kein Eintrag gefunden." />;

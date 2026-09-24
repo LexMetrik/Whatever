@@ -6,42 +6,26 @@ import { berechneVerzugszins, formatCHF } from '../../lib/verzugszins';
 import type {
   VerzugszinsInput, VerzugszinsMethode, SatzGrund, VerzugsbeginnTyp, VerzugszinsErgebnis, VzEreignis,
 } from '../../lib/verzugszins';
+// Beschriftungen, Defaults und Link-Kodierung teilt sich dieses Formular mit der
+// Schnellform der Startseite (§5, W2·29-WERKBANK-START-UEBERARBEITUNG U2).
+import {
+  VERZUGSZINS_DISCLAIMER, METHODEN, GRUENDE, BEGINN, DEFAULTS, VZ_LINK_SPEC,
+  type EreignisEingabe, type VzLink,
+} from './verzugszinsTexte';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { DatumsFeld } from '../DatumsFeld';
 import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { permalinkKodieren, istISO, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { VerzugszinsTimeline } from '../VerzugszinsTimeline';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { datumOderStrich } from '../ui/datumText';
 
-const VERZUGSZINS_DISCLAIMER =
-  'Automatisierte Orientierungsberechnung des Verzugszinses nach Art. 104 OR – keine Rechtsberatung. ' +
-  'Art. 104 OR fixiert den Zinssatz, nicht die Tageszählung; die gewählte Methode ist im Einzelfall zu prüfen. ' +
-  'Ein über den Verzugszins hinausgehender Schaden bleibt vorbehalten (Art. 106 OR).';
-
-const METHODEN: { code: VerzugszinsMethode; label: string }[] = [
-  { code: 'act365', label: 'Tatsächliche Tage / 365 (Zürcher Gerichtsrechner)' },
-  { code: 'act360', label: 'Tatsächliche Tage / 360 (Bankusanz)' },
-  { code: '30E360', label: '30E/360 (kaufmännisch)' },
-];
-const GRUENDE: { code: SatzGrund; label: string }[] = [
-  { code: 'gesetzlich', label: 'Gesetzlich – 5 % (Art. 104 Abs. 1)' },
-  { code: 'vertraglich', label: 'Vertraglich höher (Art. 104 Abs. 2)' },
-  { code: 'kaufmaennisch', label: 'Kaufmännischer Diskonto (Art. 104 Abs. 3)' },
-];
-const BEGINN: { code: VerzugsbeginnTyp; label: string }[] = [
-  { code: 'mahnung', label: 'Mahnung – ab Erhalt (Art. 102 Abs. 1)' },
-  { code: 'verfalltag', label: 'Verfalltag – Zins ab Folgetag (Art. 102 Abs. 2)' },
-  { code: 'klage', label: 'Klage/Betreibung – ab Zustellung' },
-];
-
 // Reine Eingabedaten (Permalink/Beispiele) vs. State-Zeile mit stabiler id.
 // Die id ist nur UI-Identität (React-key) und erreicht die Engine NIE.
-type EreignisEingabe = { typ: 'teilzahlung' | 'satzaenderung'; datum: string; wert: number };
 type EreignisRow = EreignisEingabe & { id: string };
 
 const neueRowId = (): string =>
@@ -50,11 +34,6 @@ const neueRowId = (): string =>
     : `r-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
 
 const mitId = (r: EreignisEingabe): EreignisRow => ({ ...r, id: neueRowId() });
-
-const DEFAULTS: VerzugszinsInput = {
-  kapital: 10000, verzugsbeginn: '2024-01-01', beginnTyp: 'mahnung', stichtag: '2025-01-01',
-  zinssatzProzent: 5, satzGrund: 'gesetzlich', methode: 'act365',
-};
 
 type State = { form: VerzugszinsInput; rows: EreignisEingabe[]; zinsforderung: boolean };
 
@@ -71,27 +50,6 @@ function heuteISO(): string {
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 }
 
-
-// Permalink (FAHRPLAN-PRAXIS 1.3): Input + Ereignis-Zeilen + Zinsforderung.
-type VzLink = VerzugszinsInput & { rows?: EreignisEingabe[]; zinsforderung?: boolean } & Record<string, unknown>;
-const VZ_LINK_SPEC: PermalinkSpec<VzLink> = {
-  kapital: { p: 'c', typ: 'num', gueltig: (n) => n > 0 },
-  verzugsbeginn: { p: 'vb', typ: 'str', gueltig: istISO },
-  beginnTyp: { p: 'bt', typ: 'str', gueltig: einerVon('mahnung', 'verfalltag', 'klage') },
-  stichtag: { p: 's', typ: 'str', gueltig: istISO },
-  zinssatzProzent: { p: 'z', typ: 'num', gueltig: (n) => n >= 0 && n <= 100 },
-  satzGrund: { p: 'sg', typ: 'str', gueltig: einerVon('gesetzlich', 'vertraglich', 'kaufmaennisch') },
-  methode: { p: 'm', typ: 'str', gueltig: einerVon('act365', 'act360', '30E360') },
-  rows: {
-    p: 'r', typ: 'json',
-    gueltig: (v): boolean => Array.isArray(v) && v.length <= 50 && v.every((e) =>
-      e && typeof e === 'object'
-      && ['teilzahlung', 'satzaenderung'].includes((e as { typ?: string }).typ ?? '')
-      && istISO((e as { datum?: string }).datum ?? '')
-      && Number.isFinite((e as { wert?: number }).wert)),
-  },
-  zinsforderung: { p: 'zf', typ: 'bool' },
-};
 
 export function VerzugszinsForm() {
   const pk = usePaneKlasse();

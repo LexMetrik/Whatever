@@ -3419,6 +3419,16 @@
   .lc-start-stufe[data-richtung="zurueck"] { animation-name: lc-start-stufe-zurueck; }
   @keyframes lc-start-stufe-vor { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
   @keyframes lc-start-stufe-zurueck { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+  /* START-UEBERARBEITUNG U1 (David 24.9.2026, «Drei hohe Spalten»): die
+     Wahl-Stufe der Gesetze füllt ab `lg` die volle Blatthöhe. Die Stufe wird
+     dafür ein Raster mit mindestens Blatthöhe — seine einzige Zeile streckt
+     sich, die Spalten mit ihr. `minmax(0,1fr)`: kein Mindestinhalt sprengt die
+     Breite. Darunter bleibt die Stufe ein Block (Spalten untereinander, das
+     Blatt scrollt). Nur Stufen mit `.lc-start-fuellt` — alle anderen
+     unverändert. */
+  @media (min-width: 1024px) {
+    .lc-start-stufe:has(> .lc-start-fuellt) { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 100%; }
+  }
   /* Farbschicht mit Kachel-Gesicht: steht während der Bewegung, blendet danach
      nach rund 30 % der Öffnungsdauer auf den Inhalt über. */
   .lc-start-schicht { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;

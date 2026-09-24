@@ -11,6 +11,7 @@ import { BlattSuchFeld } from './BlattBausteine';
 import { useBlattRuhe } from './blattRuhe';
 import { SchweizKarte } from '../SchweizKarte';
 import { InternationalRubriken } from '../normtext/InternationalRubriken';
+import { INTERNATIONAL_GRUPPEN } from '../../lib/normtext/international-rubriken';
 import { GruppenInhalt } from '../../pages/gesetze-teile/geteilt';
 import { KantonSystematik } from '../../pages/gesetze-teile/KantonSystematik';
 
@@ -42,20 +43,111 @@ export function GesetzeBlatt({ ort, gehe }: { ort: BlattOrt; gehe: (o: BlattOrt)
   if (ebene === 'bund' && zweite) return <GebietErlasse nr={zweite} />;
   if (ebene === 'kantone' && !zweite) return <Kantone zu={zu} />;
   if (ebene === 'kantone' && zweite) return <KantonErlasse kt={zweite} />;
-  return <International />;
+  return <International gruppe={ebene === 'international' ? zweite : undefined} />;
 }
 
 type Zu = (...pfad: string[]) => () => void;
 
+// ─── Stufe «Wahl»: drei hohe Spalten (START-UEBERARBEITUNG U1, David 24.9.2026)
+//
+// Anlass: «es braucht etwas unter den vierecken» — die drei kleinen Kacheln
+// liessen bei 1024–1440 px rund ein Drittel des Blatts leer. Auswahl David
+// (Skizze «Drei hohe Spalten»): jede Kachel wird eine Spalte über die volle
+// Blatthöhe, darin die nächste Stufe schon anklickbar.
+//
+// AUFBAU je Spalte: der Kopf IST die bisherige `RubrikKachel` (Fläche,
+// Registerstrich, Zahl aus dem Zähler) und führt auf die Übersichts-Stufe;
+// darunter eigene Knöpfe bzw. die Karte — nie ein Knopf im Knopf.
+//   · Bund: Kopf → `bund` bleibt (Entscheid Bau): die Übersicht trägt die
+//     Kürzel je Gebiet und die Zählhinweis-Zeile, die Spalte nicht — sie ist
+//     also kein Doppel. Zeilen → `bund/<nr>`.
+//   · Kantone: Karte (dieselbe Erfassungsgrad-Ableitung wie `Kantone`) →
+//     `kantone/<kt>`; «Alle 26 Kantone» → `kantone` (Liste).
+//   · International: Rubriken → `international/<gruppenId>`, Kopf → alle.
+// Zahlen: nur `STARTSEITE_ZAEHLER` (§8). Die International-Rubriken tragen
+// keine Zahl — der Zähler führt keine je Rubrik, und eine Zahl aus den
+// Rubrik-Keys wäre eine Behauptung über das Register, das hier nicht lädt (§15).
+//
+// Höhe: `.lc-start-fuellt` (index.css) streckt die Stufe ab `lg` auf die volle
+// Blatthöhe; darunter stehen die Spalten untereinander, das Blatt scrollt.
+
+/** Kurzbeschriftung einzelner Rubriken in der schmalen Spalte — reine
+ *  Darstellung; die volle Bezeichnung (Quelle unverändert) steht im `title`,
+ *  im Pfad und als Überschrift der Stufe. */
+const INTL_KURZ: Readonly<Record<string, string>> = {
+  rechtshilfe: 'Rechtshilfe & Kindes-/Erwachsenenschutz',
+  'eu-verordnungen': 'EU-Verordnungen',
+};
+
+const nKanton = (k: string) => z.kantonErlassZahlen[k] ?? 0;
+const kantonGrad = (k: string) => {
+  const anzahl = nKanton(k);
+  if (!anzahl) return null;
+  const stufe = erfassungsgrad(k, anzahl).stufe;
+  return { stufe, text: `${anzahl} ${anzahl === 1 ? 'Erlass' : 'Erlasse'} · ${STUFE_WORT[stufe]}` };
+};
+
 function Wahl({ zu }: { zu: Zu }) {
   return (
-    <div className="grid gap-3 sm:grid-cols-3">
-      <RubrikKachel reg="g" onWahl={zu('bund')} titel="Bund" zahl={nf(z.gesetzeBundesrechtVolltext)}
-        einheit="Bundeserlasse" nutzen="Nach Rechtsgebiet, dann Erlass." />
-      <RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)}
-        einheit="kantonale Erlasse" nutzen="Über die Landeskarte, dann Erlass." />
-      <RubrikKachel reg="g" onWahl={zu('international')} titel="International" zahl={nf(z.gesetzeInternationalVolltext)}
-        einheit="Staatsverträge" nutzen="Staatsverträge und EU-Recht." />
+    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.25fr_1fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0">
+      <WahlSpalte kopf={<RubrikKachel reg="g" onWahl={zu('bund')} titel="Bund" zahl={nf(z.gesetzeBundesrechtVolltext)} einheit="Bundeserlasse" />}>
+        <ul aria-label="Rechtsgebiete des Bundes" className="px-2">
+          {z.bundSystematik.map((g) => (
+            <li key={g.id} className="border-t border-rule-soft">
+              <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline whitespace-normal px-2">
+                <span aria-hidden className="num w-5 shrink-0 text-xs text-ink-600">{g.nr}</span>
+                <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{g.titel}</span>
+                <span className="num shrink-0 text-xs text-ink-700">{nf(g.anzahl)}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </WahlSpalte>
+      <WahlSpalte kopf={<RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)} einheit="kantonale Erlasse" />}>
+        {/* `max-w-xs` untereinander: die Karte in voller Telefonbreite schob
+            die International-Spalte unnötig weit nach unten. */}
+        <div className="mx-auto max-w-xs px-4 lg:max-w-none">
+          {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
+              U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
+          <SchweizKarte className="w-full" kompakt onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
+            verfuegbar={(k) => nKanton(k) > 0} gradFuer={kantonGrad} />
+        </div>
+        <ul aria-label="Kantone als Liste" className="mt-2 px-2">
+          <li className="border-t border-rule-soft">
+            <button type="button" onClick={zu('kantone')} className="lc-menu-zeile whitespace-normal px-2 text-ink-900">
+              <span className="min-w-0 flex-1">Alle 26 Kantone</span>
+              <span aria-hidden className="shrink-0 text-ink-600">›</span>
+            </button>
+          </li>
+        </ul>
+      </WahlSpalte>
+      <WahlSpalte kopf={<RubrikKachel reg="g" onWahl={zu('international')} titel="International" zahl={nf(z.gesetzeInternationalVolltext)} einheit="Staatsverträge" />}>
+        <ul aria-label="Rubriken des internationalen Rechts" className="px-2">
+          {INTERNATIONAL_GRUPPEN.map((g) => (
+            <li key={g.id} className="border-t border-rule-soft">
+              <button type="button" onClick={zu('international', g.id)} title={INTL_KURZ[g.id] ? g.titel : undefined}
+                className="lc-menu-zeile whitespace-normal px-2">
+                <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{INTL_KURZ[g.id] ?? g.titel}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </WahlSpalte>
+    </div>
+  );
+}
+
+/** Eine Spalte der Wahl: die Kachel als Kopf, darunter die nächste Stufe auf
+ *  derselben Fläche. Die Fläche (`reg-g-flaeche`) liegt auf der Spalte, damit
+ *  sie bis unten reicht; der Kopf bringt Strich und Rundung selbst mit.
+ *  Ab `lg` teilen die drei Spalten ihre zwei Zeilen (`subgrid`): die Köpfe
+ *  sind gleich hoch, auch wenn eine Einheit umbricht («kantonale Erlasse»),
+ *  und die Listen beginnen auf einer Linie. */
+function WahlSpalte({ kopf, children }: { kopf: ReactNode; children: ReactNode }) {
+  return (
+    <div className="flex min-w-0 flex-col rounded-xl bg-reg-g-flaeche pb-3 [&_.text-ink-500]:text-ink-600 lg:row-span-2 lg:grid lg:grid-rows-subgrid">
+      <div className="flex">{kopf}</div>
+      <div className="min-w-0">{children}</div>
     </div>
   );
 }
@@ -91,17 +183,11 @@ function Gebiete({ zu }: { zu: Zu }) {
 }
 
 function Kantone({ zu }: { zu: Zu }) {
-  const n = (k: string) => z.kantonErlassZahlen[k] ?? 0;
+  const n = nKanton;
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
       <SchweizKarte className="w-full" onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
-        verfuegbar={(k) => n(k) > 0}
-        gradFuer={(k) => {
-          const anzahl = n(k);
-          if (!anzahl) return null;
-          const stufe = erfassungsgrad(k, anzahl).stufe;
-          return { stufe, text: `${anzahl} ${anzahl === 1 ? 'Erlass' : 'Erlasse'} · ${STUFE_WORT[stufe]}` };
-        }} />
+        verfuegbar={(k) => n(k) > 0} gradFuer={kantonGrad} />
       <ul aria-label="Kantone" className="grid grid-cols-2 gap-x-4 self-start">
         {KANTONE.map((k) => (
           <li key={k} className="border-t border-rule-soft">
@@ -189,14 +275,17 @@ function KantonErlasse({ kt }: { kt: string }) {
   );
 }
 
-function International() {
+/** `gruppe`: nur diese Rubrik (Stufe `international/<gruppenId>`, U1). */
+function International({ gruppe }: { gruppe?: string }) {
   const erlasse = useRegister();
   const [suche, setSuche] = useState('');
   const intl = useMemo(() => (erlasse ? filtern(erlasse.filter(istIntl), suche) : []), [erlasse, suche]);
+  // Kurzform im Filterfeld: der volle Titel lief dort in die Auslassung.
+  const titel = gruppe ? INTL_KURZ[gruppe] ?? INTERNATIONAL_GRUPPEN.find((g) => g.id === gruppe)?.titel : undefined;
   return (
     <div className="space-y-4">
-      <BlattSuchFeld schmal wert={suche} setze={setSuche} label="Staatsverträge filtern" />
-      <Laedt erlasse={erlasse}>{() => <InternationalRubriken erlasse={intl} />}</Laedt>
+      <BlattSuchFeld schmal wert={suche} setze={setSuche} label={titel ? `In «${titel}» filtern` : 'Staatsverträge filtern'} />
+      <Laedt erlasse={erlasse}>{() => <InternationalRubriken erlasse={intl} gruppe={gruppe} />}</Laedt>
     </div>
   );
 }
