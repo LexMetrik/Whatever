@@ -173,15 +173,21 @@ export const MV_DEFAULTS: MvAntworten = {
 
 export const mvGesetzlicheFrist = (t: MvObjektTyp) => (t === 'geschaeftsraum' ? 6 : 3);
 
-// Kalenderjahr-genau: erreicht die Spanne beginn→bis mindestens n Jahre?
-// (Review-Befund 5.6.2026: ein /365.25-Mittel blockierte exakte
-// 5-Kalenderjahre-Verträge fälschlich – Art. 269b verlangt «mindestens
-// fünf Jahre», die ein Festvertrag 1.10.2026–1.10.2031 erfüllt.)
+// Kalenderjahr-genau: umfasst die Mietdauer beginn…bis (beide Tage
+// eingeschlossen) mindestens n volle Jahre (Art. 269b / 269c lit. a OR)?
+// Der Tag des Mietbeginns zählt mit, das Enddatum («endet am …») ebenfalls:
+// erreicht ist die Dauer, wenn das Ende mindestens auf den Tag VOR dem n-ten
+// Jahrestag des Beginns fällt — 1.10.2026–30.9.2031 = fünf Jahre (VB-02,
+// W2·30-RL-W1; früher verlangte die Prüfung fälschlich den 1.10.2031).
+// Schaltjahr: Date.UTC(y, m, d − 1) rollt über — Beginn 29.2.2028 → Ende
+// 28.2.2033 (= Art. 77 Abs. 1 Ziff. 3 OR analog, Anknüpfungstag 28.2.2028);
+// Beginn 1.3.2029 → Ende 29.2.2032 (drittes Mietjahr bis zum Vortag des
+// Jahrestags 1.3.2032).
 const jahreErreicht = (beginnISO: string, bisISO: string, n: number): boolean => {
   const [by, bm, bd] = beginnISO.split('-').map(Number);
   const [zy, zm, zd] = bisISO.split('-').map(Number);
   if (![by, bm, bd, zy, zm, zd].every(Number.isFinite)) return false;
-  return zy > by + n || (zy === by + n && (zm > bm || (zm === bm && zd >= bd)));
+  return Date.UTC(zy, zm - 1, zd) >= Date.UTC(by + n, bm - 1, bd - 1);
 };
 
 // ── Gates (deterministische Validierung nach der Gutachtens-Matrix) ─────────
@@ -657,7 +663,9 @@ export function mvZusammenstellen(a: MvAntworten) {
   // Zentral statt 26 Baustein-Duplikate: «Vermieter»→«Untervermieter»,
   // «Mieter»→«Untermieter» (Wortanfang gross; «Hauptvermieter»/«Untermieter»
   // in den U-Bausteinen bleiben unberührt, da dort klein eingebettet).
-  const rollen = (t: string) => t.replace(/Vermieter/g, 'Untervermieter').replace(/Mieter/g, 'Untermieter');
+  // Nur das ganze Rollenwort «Mieter»/«Mieters» (S3c-a, W2·30-RL-W1):
+  // «Mieterschäden» ist der Versicherungsbegriff und bleibt stehen.
+  const rollen = (t: string) => t.replace(/Vermieter/g, 'Untervermieter').replace(/\bMieter(s?)\b/g, 'Untermieter$1');
   return {
     ...ergebnis,
     dokument: {
