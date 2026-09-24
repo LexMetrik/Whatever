@@ -14,9 +14,19 @@
 // leser-d35-f1-funktionszeile, leser-funktionszeile-zaehler, w224-d40-fassung)
 // dort, wo ihre Aussage fachlich weiterlebt — jetzt am neuen Ort:
 //
-//  (a) KEINE ZEILE AM ARTIKEL, Aktionen immer da: kein Rubrik-Griff, keine
-//      Zeile; «Zitat · Link · Amtliche Fassung ↗» stehen ohne Hover als ruhige
-//      Textzeile (Knopf-Baustein ohne sichtbare Haarlinie).
+//  (a) KEINE ZEILE AM ARTIKEL, Aktionen am Artikel: kein Rubrik-Griff, keine
+//      Zeile; «Zitat · Link · Amtliche Fassung ↗» als ruhige Textzeile
+//      (Knopf-Baustein ohne sichtbare Haarlinie), LINKSBÜNDIG an der
+//      Artikelkante. §6.3-DEKLARATION (Wunsch David 24.9.2026, «vorallem diese
+//      leiste muss überarbeitet werden»): mit Maus ruht die Zeile unsichtbar
+//      (opacity 0) und erscheint bei Hover und Fokus; vorher
+//      stand hier «ohne Hover sichtbar». Die Zusage «per Tastatur erreichbar»
+//      bleibt und ist jetzt ausdrücklich geprüft (Fokus ⇒ sichtbar).
+//      (a2) Touch (pointer: coarse, kein Hover): immer sichtbar.
+//      ROT ZU BEKOMMEN: in `src/index.css` Block (d) «ARTIKEL-AKTIONEN» die
+//      `opacity: 0`-Zeile entfernen ⇒ (a) rot («ruht nicht»); die Zeile
+//      `article:focus-within …` entfernen ⇒ (a) rot («Fokus»); die
+//      Media-Query-Klammer entfernen ⇒ (a2) rot.
 //  (b) VERWEISE OBEN IM BLATT: zugeklappt EINE Zeile mit der Zahl, Inhalt erst
 //      auf Klick; dieselbe Zahl wie Chips; über JEDEM Reiter.
 //  (c) FASSUNG IM REITER «ÄNDERUNGEN»: zugeklappt Stand («Gilt seit …»),
@@ -58,23 +68,44 @@ async function leser(page: Page, pfad: string, artId: string): Promise<void> {
 test.describe('S6 W1f · Funktionszeile aufgelöst, alles im Erlass-Blatt', () => {
   test.use({ viewport: { width: 1280, height: 900 } });
 
-  test('(a) kein Rubrik-Griff am Artikel — die Aktionen stehen ohne Hover als Textzeile', async ({ page }) => {
+  test('(a) kein Rubrik-Griff am Artikel — die Aktionen ruhen bis Hover/Fokus, linksbündig', async ({ page }) => {
     await leser(page, '/gesetze/bund/OR#art-336_c', 'art-336_c');
     await page.waitForTimeout(1_500); // Zähl-Datei und Historie-Shard kommen im Leerlauf
     const art = page.locator('#art-336_c');
     await expect(page.locator('.lc-leser .lr7-bez, .lc-leser .lr7-bez-marke, .lc-leser [data-bez-marken]'))
       .toHaveCount(0);
     await expect(page.locator('.lc-leser [data-artikel-dossier]')).toHaveCount(0);
-    // Ohne Hover, ohne Fokus: die Aktionen stehen (Z6 hing an der Zeile).
     await page.mouse.move(0, 0);
     const aktionen = art.locator('[data-artikel-aktionen]');
-    await expect(aktionen).toBeVisible();
+    const deckkraft = (loc: typeof aktionen) =>
+      loc.locator('.lr7-bez-aktionen').evaluate((el) => getComputedStyle(el).opacity);
+    await expect(aktionen).toBeVisible(); // Platz reserviert, im Fokus-Weg
     const zitat = aktionen.getByRole('button', { name: /^Zitat kopieren:/ });
     await expect(zitat).toBeVisible();
     await expect(aktionen.getByRole('button', { name: 'Permalink kopieren' })).toBeVisible();
     // Ruhig: der Knopf-Baustein ohne sichtbare Haarlinie (Textzeile, keine Knopfreihe).
     const rand = await zitat.evaluate((el) => getComputedStyle(el).borderTopColor);
     expect(rand, 'die Aktion trägt wieder eine sichtbare Knopf-Kante').toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
+    // Linksbündig: die Zeile beginnt an der Artikelkante, nicht rechts aussen.
+    const [zx, tx] = await art.evaluate((el) => [
+      el.querySelector('.lr7-bez-aktionen')!.getBoundingClientRect().left,
+      el.querySelector('.lr-text')!.getBoundingClientRect().left,
+    ]);
+    expect(Math.abs(zx - tx), 'die Aktionen stehen nicht an der Artikelkante').toBeLessThanOrEqual(8);
+    // Nachbar ohne Hover/Fokus/Ziel: die Zeile ruht (unsichtbar, Platz bleibt).
+    const nachbar = page.locator('#art-336_d');
+    await nachbar.scrollIntoViewIfNeeded();
+    await page.mouse.move(0, 0);
+    const nAkt = nachbar.locator('[data-artikel-aktionen]');
+    await expect.poll(() => deckkraft(nAkt), { message: 'die Zeile ruht nicht' }).toBe('0');
+    // Hover am Artikel ⇒ sichtbar.
+    await nachbar.locator('.lr-text').hover();
+    await expect.poll(() => deckkraft(nAkt), { message: 'Hover' }).toBe('1');
+    // Tastatur: Fokus auf «Zitat» ⇒ sichtbar (WCAG 2.1.1/2.4.7).
+    await page.mouse.move(0, 0);
+    await expect.poll(() => deckkraft(nAkt)).toBe('0');
+    await nAkt.getByRole('button', { name: /^Zitat kopieren:/ }).focus();
+    await expect.poll(() => deckkraft(nAkt), { message: 'Fokus' }).toBe('1');
   });
 
   test('(b) Verweise: zugeklappt eine Zeile mit Zahl, Chips erst auf Klick, über jedem Reiter', async ({ page }) => {
@@ -226,5 +257,18 @@ test.describe('S6 W1f · Split × Einzelmodus × Blatt (Auflage Nachprüfung #10
     await prim.locator('[data-v3-ansicht]').focus();
     await page.keyboard.press('r');
     await expect(blatt).toHaveCount(0);
+  });
+});
+
+test.describe('S6 W1f · Aktionen auf Touch', () => {
+  test.use({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+
+  test('(a2) ohne Hover (pointer: coarse) stehen die Aktionen immer', async ({ page }) => {
+    await leser(page, '/gesetze/bund/OR#art-336_c', 'art-336_c');
+    const nachbar = page.locator('#art-336_d');
+    await nachbar.scrollIntoViewIfNeeded();
+    const zeile = nachbar.locator('[data-artikel-aktionen] .lr7-bez-aktionen');
+    await expect(zeile).toBeVisible();
+    expect(await zeile.evaluate((el) => getComputedStyle(el).opacity), 'Touch: die Zeile ruht').toBe('1');
   });
 });
