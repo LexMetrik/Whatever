@@ -32,7 +32,7 @@ import { BEHOERDEN } from '../src/lib/materialien/register.ts';
 // hier gegen das Entscheid-Register, nach DERSELBEN Regel wie `zaehleSachgebiete`
 // in `src/lib/rechtsprechung/browse.ts` (Verweise raus) — die Zahl in der Leiste
 // ist damit exakt die Zahl auf der Sachgebiets-Kachel der Übersicht (§5/§8).
-import { GEBIETE, GEBIET_LABEL } from '../src/lib/normtext/register.ts';
+import { GEBIETE } from '../src/lib/normtext/register.ts';
 import type { EntscheidManifest } from '../src/lib/rechtsprechung/register.ts';
 // #691 (FAHRPLAN-OFFENE-BEFUNDE §1): der Stand der Rechtsprechung braucht das
 // jüngste ABRUFDATUM der Inhalte, nicht `register.json`s `erzeugt` (ein
