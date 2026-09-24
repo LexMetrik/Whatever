@@ -53,18 +53,27 @@ const N_56_1_2: Normverweis = { artikel: 'Art. 56 Abs. 1 Ziff. 2 SchKG', bemerku
 //   «beginnt der Fristenlauf am ersten Tag nach Ende des Stillstandes»). Die
 //   Gegenlesart (E. 2b als Zustellfiktion am ersten Tag nach den Ferien,
 //   Fristbeginn nach Art. 142 Abs. 1 ZPO erst am Tag darauf) wird mit ihrem
-//   Datum als Warnung offengelegt.
+//   Datum als Warnung offengelegt; bei einer Wartefrist wird sie Hauptwert,
+//   wenn sie das spätere Datum ergibt (RL-18 Nachzug, s. u.).
 // – Kalenderfrist (Monate/Jahre): Anker = letzter Ferientag (gleichbezeichneter
 //   Tag). OFFENER PUNKT: BGE 150 III 367 E. 5.6 (5A_691/2023 vom 13.8.2024)
 //   bezieht den «Tag, an dem die Frist zu laufen begann» (Art. 142 Abs. 2 ZPO,
 //   Fedlex SR 272, Fassung 1.7.2026) nicht auf Abs. 1, sondern auf den Tag des
-//   fristauslösenden Ereignisses. Gilt der Wirkungstag (E. 2b) als Ereignistag,
-//   endet die Frist einen Tag später. Hauptwert bleibt das frühere Datum
-//   (sichere Grenze der Verwirkungsfrist Art. 88 Abs. 2 SchKG); die Warnung
-//   legt beide Lesarten gleichrangig offen (Gegenprüfung 24.9.2026).
+//   fristauslösenden Ereignisses. Der Entscheid betrifft die ZPO (Klagefrist
+//   nach Art. 209 Abs. 3 ZPO); für das SchKG gilt er nur über den Verweis in
+//   Art. 31 SchKG — Übertragung, kein SchKG-Leitentscheid. Gilt der
+//   Wirkungstag (E. 2b) als Ereignistag, endet die Frist einen Tag später.
+//   Die Warnung legt beide Lesarten gleichrangig offen (Gegenprüfung 24.9.2026).
+// RICHTUNGSSICHERER HAUPTWERT (RL-18 Nachzug, Gegenprüfung #2 24.9.2026):
+//   Beide Lesarten werden gerechnet; ausgewiesen wird bei einer Wartefrist
+//   das SPÄTERE, bei Handlungs-/Verwirkungsfristen das FRÜHERE Datum (§1 —
+//   sicher ist, was nach beiden Lesarten nicht zu spät bzw. nicht verfrüht
+//   ist). Gilt für Tages- und Kalenderfristen.
 // Beispiel ZB 8.4.2026 (Osterferien 29.3.–12.4.2026): Rechtsvorschlag 22.4.
 // (Gegenlesart 23.4.), Fortsetzung frühestens beide 4.5., Fortsetzung
-// spätestens 12.4.2027 (Ereignistag-Lesart 13.4.2027).
+// spätestens 12.4.2027 (Ereignistag-Lesart 13.4.2027); Pfandverwertung
+// frühestens (1 Monat, Art. 154 SchKG) 15.5.2026 (Ereignistag-Lesart,
+// 14.5.2026 Auffahrt) statt 13.5.2026.
 //
 // BINDUNG: Die Regel greift nur, wenn der Auslöser nachweislich die Zustellung
 // einer Betreibungsurkunde an den Schuldner ist — Identitätsvergleich mit den
@@ -143,10 +152,54 @@ const NATUR_WARNUNG: Partial<Record<SchkgFristnatur, string>> = {
 
 // ─── Hauptfunktion ────────────────────────────────────────────────────────
 
+// RL-18 Nachzug (Gegenprüfung #2, 24.9.2026): Bei Zustellung einer
+// Betreibungsurkunde in den Betreibungsferien werden BEIDE Lesarten der
+// Zählweise vollständig gerechnet (Kopfkommentar ZÄHLWEISE); der Hauptwert
+// (Kachel, diesAdQuem, ICS/PDF) ist richtungssicher gewählt — Wartefrist →
+// das spätere, Handlungs-/Verwirkungsfrist → das frühere Datum (§1). Anlass:
+// Pfandverwertung Art. 154 SchKG, ZB 8.4.2026, 1 Monat Wartefrist → bisher
+// 13.05.2026 ausgewiesen, Ereignistag-Lesart 15.05.2026 (14.5.2026 Auffahrt):
+// ein Begehren am 13.5. wäre nach der Gegenlesart verfrüht.
 export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   if (!Number.isInteger(input.laenge) || input.laenge <= 0) {
     throw new Error('Fristlänge muss eine ganze Zahl > 0 sein.');
   }
+  const a = berechneLesart(input, 'ferienende');
+  if (!a.ferien) return a.r;
+  const b = berechneLesart(input, 'ereignistag');
+
+  const istWartefrist = input.fristnatur === 'wartefrist';
+  const bSicherer = istWartefrist
+    ? b.r.diesAdQuemISO > a.r.diesAdQuemISO
+    : b.r.diesAdQuemISO < a.r.diesAdQuemISO;
+  const haupt = bSicherer ? b.r : a.r;
+
+  const einheit = input.laenge === 1
+    ? { tage: 'Tag', monate: 'Monat', jahre: 'Jahr' }[input.einheit]
+    : { tage: 'Tage', monate: 'Monate', jahre: 'Jahre' }[input.einheit];
+  const wt = fmt(a.wirkungstag);
+  const lesarten = input.einheit === 'tage'
+    ? `Hauptlesart ist BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${wt}) zu laufen: ${a.r.diesAdQuem}. ` +
+      `Nach der Gegenlesart (Zustellung gilt erst am ${wt} als erfolgt, Fristbeginn am Folgetag nach Art. 142 Abs. 1 ZPO) ergibt sich ${b.r.diesAdQuem}. `
+    : 'Zwei Lesarten sind vertretbar. ' +
+      `Fristlauf ab dem ersten Tag nach den Ferien (BGE 121 III 284 E. 2c; Anker letzter Ferientag ${fmt(a.ferien.bis)}): ${a.r.diesAdQuem}. ` +
+      `Gilt der Wirkungstag ${wt} als Tag des fristauslösenden Ereignisses, auf den Art. 142 Abs. 2 ZPO abstellt, ergibt sich ${b.r.diesAdQuem} — ` +
+      'so BGE 150 III 367 E. 5.6 zu Art. 142 Abs. 2 ZPO (Fall zur Klagefrist nach Art. 209 Abs. 3 ZPO), hier über Art. 31 SchKG übertragen, kein SchKG-Leitentscheid. ';
+  const wahl = a.r.diesAdQuemISO === b.r.diesAdQuemISO
+    ? `Ausgewiesen ist ${haupt.diesAdQuem}; beide Lesarten führen zum selben Datum.`
+    : istWartefrist
+      ? `Ausgewiesen ist ${haupt.diesAdQuem} (das spätere Datum): Bei einer Wartefrist ist das spätere Datum die sichere Seite — eine Handlung vor Ablauf der Frist ist unzulässig.`
+      : `Ausgewiesen ist ${haupt.diesAdQuem} (das frühere Datum): Bei Handlungs- und Verwirkungsfristen ist das frühere Datum die sichere Seite — wer bis dahin handelt, wahrt die Frist nach beiden Lesarten.`;
+  haupt.warnungen.push(`Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): ` + lesarten + wahl);
+  return haupt;
+}
+
+type Lesart = 'ferienende' | 'ereignistag';
+
+function berechneLesart(
+  input: SchkgInput,
+  lesart: Lesart,
+): { r: SchkgErgebnis; ferien: ReturnType<typeof betreibungsperiodeFuer>; wirkungstag: Date } {
 
   const rechenweg: Rechenschritt[] = [];
   const annahmen: string[] = [];
@@ -158,12 +211,15 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
 
   // RL-18 / F2-03: Zustellung einer Betreibungsurkunde in den Betreibungsferien
   // → Wirkung und Fristbeginn am ersten Tag nach den Ferien (BGE 121 III 284
-  // E. 2b/c). `referenz` ist der Tag, ab dem gezählt wird (letzter Ferientag).
+  // E. 2b/c). `referenz` ist der Tag, ab dem gezählt wird: Lesart
+  // 'ferienende' = letzter Ferientag, Lesart 'ereignistag' = Wirkungstag.
   const urkundenZustellung = istBetreibungsurkundenZustellung(input.ausloeser);
   const ferienBeiZustellung =
     urkundenZustellung && modus === 'schkg_betreibungsferien' ? betreibungsperiodeFuer(ereignis) : null;
-  const referenz = ferienBeiZustellung ? ferienBeiZustellung.bis : ereignis;
   const wirkungstag = ferienBeiZustellung ? addDays(ferienBeiZustellung.bis, 1) : ereignis;
+  const referenz = ferienBeiZustellung
+    ? (lesart === 'ereignistag' ? wirkungstag : ferienBeiZustellung.bis)
+    : ereignis;
 
   if (input.modusOverride && input.modusOverride !== input.modus) {
     rechenweg.push({
@@ -189,7 +245,10 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
         `Die Zustellung am ${fmt(ereignis)} fällt in die Betreibungsferien (${fmt(ferienBeiZustellung.von)}–${fmt(ferienBeiZustellung.bis)}). ` +
         'Sie ist weder nichtig noch anfechtbar, entfaltet ihre Wirkung aber erst am ersten Tag nach den Ferien; ' +
         `die Fristen beginnen an diesem Tag zu laufen (BGE 121 III 284 E. 2b/c): ${fmt(wirkungstag)}. ` +
-        `Gezählt wird ab dem letzten Ferientag (${fmt(referenz)}) als Referenztag.`,
+        (lesart === 'ereignistag'
+          ? `Gezählt wird nach der Ereignistag-Lesart: Der Wirkungstag (${fmt(referenz)}) gilt als Tag des fristauslösenden Ereignisses; ` +
+            'diese Lesart ergibt hier das richtungssichere Datum (siehe Hinweis «Zählweise»).'
+          : `Gezählt wird ab dem letzten Ferientag (${fmt(referenz)}) als Referenztag.`),
       normen: [N_56_1_2, N_31],
     });
   }
@@ -267,7 +326,7 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     ? { tag: endeProvisorisch, verschoben: false }
     : normalisiereEnde(endeProvisorisch, input.kanton, st);
   // Frühestes zulässiges Datum (Begründung bei Schritt 4 unten); schon hier
-  // berechnet, weil die Q-10-Offenlegung den Hauptwert nennt.
+  // berechnet, weil es der Hauptwert dieser Lesart ist (diesAdQuem).
   const folgetag = istWartefrist ? addDays(diesAdQuem, 1) : diesAdQuem;
   const massgeblich = istWartefrist
     ? normalisiereEnde(folgetag, input.kanton, st).tag
@@ -334,26 +393,8 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     }
   }
 
-  // RL-18 / Q-10: Offenlegung der Gegenlesart zur Zählweise mit ihrem Datum.
-  // Tagesfrist: Rechnung nach BGE 121 III 284 E. 2c unstrittig, Gegenlesart
-  // nur offengelegt. Monats-/Jahresfrist: beide Lesarten gleichrangig — die
-  // Ereignistag-Lesart stützt BGE 150 III 367 E. 5.6 (Kopfkommentar ZÄHLWEISE).
-  if (ferienBeiZustellung) {
-    const gegen = berechneSchkgFrist({ ...input, ereignis: iso(wirkungstag), ausloeser: undefined, modusOverride: undefined, modus });
-    const einheit = input.laenge === 1
-      ? { tage: 'Tag', monate: 'Monat', jahre: 'Jahr' }[input.einheit]
-      : { tage: 'Tage', monate: 'Monate', jahre: 'Jahre' }[input.einheit];
-    warnungen.push(
-      input.einheit === 'tage'
-        ? `Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): Gerechnet ist nach BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${fmt(wirkungstag)}) zu laufen. ` +
-            `Nach der Gegenlesart (Zustellung gilt erst am ${fmt(wirkungstag)} als erfolgt, Fristbeginn am Folgetag nach Art. 142 Abs. 1 ZPO) ergäbe sich: ${gegen.diesAdQuem}. ` +
-            'Vorsichtig ist bei Handlungs- und Verwirkungsfristen das frühere, bei Wartefristen das spätere Datum.'
-        : `Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): Zwei Lesarten sind vertretbar. ` +
-            `Ausgewiesen ist ${fmt(massgeblich)} (Fristlauf ab dem ersten Tag nach den Ferien, BGE 121 III 284 E. 2c; Anker letzter Ferientag ${fmt(referenz)}). ` +
-            `Gilt der Wirkungstag ${fmt(wirkungstag)} als Tag des fristauslösenden Ereignisses, auf den Art. 142 Abs. 2 ZPO abstellt (BGE 150 III 367 E. 5.6), ergibt sich ${gegen.diesAdQuem}. ` +
-            'Sicher ist bei Handlungs- und Verwirkungsfristen das frühere, bei Wartefristen das spätere Datum.',
-    );
-  }
+  // RL-18 / Q-10: Die Offenlegung der jeweils anderen Lesart mit ihrem Datum
+  // hängt berechneSchkgFrist an (richtungssichere Wahl des Hauptwerts).
 
   annahmen.push(
     `Stillstand-Regime: ${MODUS_LABEL[modus]}.`,
@@ -402,7 +443,7 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
         ? `Letzter zulässiger Tag (Verwirkung): ${fmt(diesAdQuem)}, 24.00 Uhr`
         : `Fristende: ${fmt(diesAdQuem)}, 24.00 Uhr`;
 
-  return {
+  const r: SchkgErgebnis = {
     ergebnis: datumLabel + '.',
     fristbeginnNorm,
     status: 'ok',
@@ -419,4 +460,5 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     modusAktiv: modus,
     ruhenAnzeige: modus === 'zpo_stillstand',
   };
+  return { r, ferien: ferienBeiZustellung, wirkungstag };
 }
