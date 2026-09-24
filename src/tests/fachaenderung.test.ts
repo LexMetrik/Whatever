@@ -17,6 +17,7 @@ import {
   pruefeFachaenderungForm,
   squashVerstoss,
 } from '../../scripts/analyse/fachaenderung-kern';
+import { assertionMengen } from '../../scripts/analyse/test-assertion-diff';
 
 const RISIKO = 'src/lib/verjaehrung.ts';
 const NEUTRAL = 'src/lib/startseiteConfig.ts';
@@ -107,6 +108,64 @@ describe('check:fachaenderung — Heuristik und Randfälle', () => {
     expect(pruefeFachaenderungForm('Art. 266a OR - F4-01 Mietkündigung Zustelltag').art).toBe('gueltig');
     expect(pruefeFachaenderungForm('F4-01 Mietkündigung Zustelltag').art).toBe('mangel');
     expect(pruefeFachaenderungForm('— F4-01 Mietkündigung Zustelltag').art).toBe('mangel');
+  });
+});
+
+// ─── each-Tabellen (Gegenprüfung RL-03, SHA 2006823bf, Befund 1/2) ────────────
+// Befund: die Datenzeilen von it.each/test.each/describe.each flossen nicht in
+// die Multimenge — «erwartet 50 → 999999» in einer Tabellenzeile blieb grün.
+const KOPF = `import { describe, it, expect } from 'vitest';\nimport { f } from '../lib/verjaehrung';\n`;
+const eachText = (tabelle: string, aufruf = 'it.each', vorspann = '') =>
+  KOPF + vorspann + `describe('d', () => {\n  ${aufruf}(${tabelle})('Fall %s', (a, b) => {\n    expect(f(a)).toBe(b);\n  });\n});\n`;
+const tagText = (zeilen: string) =>
+  KOPF + 'describe(\'d\', () => {\n  it.each`\n    a    | b\n' + zeilen + '  `(\'Fall $a\', ({ a, b }) => {\n    expect(f(a)).toBe(b);\n  });\n});\n';
+const descEachText = (tabelle: string) =>
+  KOPF + `describe.each(${tabelle})('Gruppe %s', (a, b) => {\n  it('t', () => {\n    expect(f(a)).toBe(b);\n  });\n});\n`;
+const stand = (alt: string, neu: string): TestStand[] => [{ datei: 'src/tests/v.test.ts', alt, neu }];
+const TAB = '[[1, 50], [2, 60]]';
+
+describe('check:fachaenderung — each-Tabellen im Assertion-Diff', () => {
+  it('(i) ROT: it.each-Array, eine Datenzeile geändert (50 → 999999)', () => {
+    expect(eingabe(stand(eachText(TAB), eachText('[[1, 999999], [2, 60]]'))).rot).toBe(true);
+  });
+  it('(ii) ROT: it.each-Array, eine Datenzeile entfernt', () => {
+    expect(eingabe(stand(eachText(TAB), eachText('[[1, 50]]'))).rot).toBe(true);
+  });
+  it('(iii) GRÜN: it.each-Array, eine Datenzeile hinzugefügt', () => {
+    expect(eingabe(stand(eachText(TAB), eachText('[[1, 50], [2, 60], [3, 70]]'))).rot).toBe(false);
+  });
+  it('(iv) ROT: Tagged-Template-Tabelle, eine Zeile geändert', () => {
+    const alt = tagText('    ${1} | ${50}\n    ${2} | ${60}\n');
+    expect(eingabe(stand(alt, tagText('    ${1} | ${999999}\n    ${2} | ${60}\n'))).rot).toBe(true);
+    expect(eingabe(stand(alt, tagText('    ${1} | ${50}\n'))).rot).toBe(true);
+    expect(eingabe(stand(alt, tagText('    ${1} | ${50}\n    ${2} | ${60}\n    ${3} | ${70}\n'))).rot).toBe(false);
+  });
+  it('(v) ROT: describe.each analog (geändert/entfernt), hinzugefügt grün', () => {
+    expect(eingabe(stand(descEachText(TAB), descEachText('[[1, 999999], [2, 60]]'))).rot).toBe(true);
+    expect(eingabe(stand(descEachText(TAB), descEachText('[[2, 60]]'))).rot).toBe(true);
+    expect(eingabe(stand(descEachText(TAB), descEachText('[[1, 50], [2, 60], [3, 70]]'))).rot).toBe(false);
+  });
+  it('(vi) it.skip.each und it.each(…).skip werden als (abgeschalteter) Test erkannt', () => {
+    for (const text of [eachText(TAB, 'it.skip.each'), KOPF + `it.each(${TAB}).skip('Fall %s', (a, b) => { expect(f(a)).toBe(b); });\n`]) {
+      const m = assertionMengen(text, 'src/tests/v.test.ts');
+      expect([...m.ittest.keys()]).toEqual(['⊘Fall%s']);
+      expect(m.each.size).toBe(2);
+    }
+    expect(eingabe(stand(eachText(TAB, 'it.skip.each'), eachText('[[1, 999999], [2, 60]]', 'it.skip.each'))).rot).toBe(true);
+    expect(eingabe(stand(eachText(TAB), eachText(TAB, 'it.concurrent.each'))).rot).toBe(false);
+  });
+  it('(vii) GRÜN: reine Formatierung der Tabelle (Whitespace/Zeilenumbruch)', () => {
+    expect(eingabe(stand(eachText(TAB), eachText('[\n      [1,50],\n      [ 2 , 60 ],\n    ]'))).rot).toBe(false);
+    const alt = tagText('    ${1} | ${50}\n    ${2} | ${60}\n');
+    expect(eingabe(stand(alt, tagText('    ${1}     |    ${50}\n\n    ${2}|${60}\n'))).rot).toBe(false);
+  });
+  it('(viii) ROT: Tabellen-Konstante derselben Datei (auch via Spread/.map) — Zeile geändert oder entfernt', () => {
+    const k = (werte: string, arg = 'FAELLE') => eachText(arg, 'it.each', `const FAELLE = ${werte} as const;\n`);
+    expect(eingabe(stand(k(TAB), k('[[1, 999999], [2, 60]]'))).rot).toBe(true);
+    expect(eingabe(stand(k(TAB), k('[[2, 60]]'))).rot).toBe(true);
+    expect(eingabe(stand(k(TAB), k('[[1, 50], [2, 60], [3, 70]]'))).rot).toBe(false);
+    expect(eingabe(stand(k(TAB, '[...FAELLE]'), k('[[1, 999999], [2, 60]]', '[...FAELLE]'))).rot).toBe(true);
+    expect(eingabe(stand(k(TAB, 'FAELLE.map((z) => z)'), k('[[1, 999999], [2, 60]]', 'FAELLE.map((z) => z)'))).rot).toBe(true);
   });
 });
 
