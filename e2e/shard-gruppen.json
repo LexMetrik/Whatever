@@ -67,7 +67,6 @@
    "materialien-m3-edoeb.e2e.ts",
    "norm-sprung.e2e.ts",
    "rechtsprechung.e2e.ts",
-   "w226-funktionszeile.e2e.ts",
    "startseite-blatt.e2e.ts"
   ],
   "4": [
@@ -96,7 +95,6 @@
   "5": [
    "hist-ansicht-w25i.e2e.ts",
    "leitfaelle-chips.e2e.ts",
-   "leser-d35-f1-funktionszeile.e2e.ts",
    "leser-kein-ueberlauf.e2e.ts",
    "leser-optionen.e2e.ts",
    "leser-ruecksprung-r5-r7.e2e.ts",
@@ -112,9 +110,11 @@
    "suche-seite.e2e.ts",
    "uinav-j-rechtsprechung.e2e.ts",
    "w224-d35-f2-kopf.e2e.ts",
-   "w224-d40-fassung.e2e.ts",
    "a11y-flaeche.e2e.ts",
-   "leser-einzelmodus.e2e.ts"
+   "leser-einzelmodus.e2e.ts",
+   "w229-w1f-blatt-artikel.e2e.ts",
+   "w229-w1f-blatt-folgt.e2e.ts",
+   "w229-w1f-blatt-scroll.e2e.ts"
   ],
   "6": [
    "d36-einstellungen-fuss.e2e.ts",
@@ -123,7 +123,6 @@
    "gesetze-marginalie.e2e.ts",
    "gesetze-uebersicht-u.e2e.ts",
    "gesetze-ux-9punkte.e2e.ts",
-   "leser-funktionszeile-zaehler.e2e.ts",
    "leser-marke-mitlaufen.e2e.ts",
    "leser-suche-vertrag-b8.e2e.ts",
    "leser-v3-kopfzeile.e2e.ts",

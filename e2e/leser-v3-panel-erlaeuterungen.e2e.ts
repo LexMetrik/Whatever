@@ -65,6 +65,7 @@
 // Die Rot-Belege oben gelten ihrem Datum (§0 Ziff. 2b); der Rot-Beweis der
 // S6-Regeln steht in `src/tests/leser-blatt-reiter-s6.test.tsx`.
 import { test, expect, type Page } from '@playwright/test'
+import { erlassTeilAuf } from './helpers/fassungsRubrik'
 
 const KANTEN_MUSTER = /\/materialien\/kanten\//
 
@@ -80,6 +81,9 @@ async function reiter(page: Page, id: 'erlaeuterungen' | 'werkzeuge'): Promise<v
   const r = page.locator(`[data-v3-panel-reiter="${id}"]`)
   await r.click()
   await expect(r).toHaveAttribute('aria-selected', 'true')
+  // §6.3-SETUP S6 W1f (Auftrag 24.9.2026): die Erlass-Tafel steht seither unter
+  // dem Artikelteil ZUGEKLAPPT — aufklappen, dann gilt die Aussage unverändert.
+  await erlassTeilAuf(page, id)
   await expect(page.locator(`[data-v3-panel-reiter-inhalt="${id}"]`)).toBeVisible({ timeout: 20_000 })
 }
 
@@ -141,7 +145,11 @@ test.describe('S6 — Reiter «Erläuterungen» und «Werkzeuge» im Erlass-Blat
     await reiter(page, 'erlaeuterungen')
     const kopf = page.locator('[data-v3-panel] p').first()
     await expect(kopf).toContainText('DBG')
-    await expect(kopf).not.toContainText('Art.')
+    // §6.3-DEKLARATION S6 W1f (Auftrag 24.9.2026, «Der Kopf nennt in jedem
+    // Reiter Art. N»): Befund 34 (18.8.2026) nahm den Artikel aus dem Kopf, weil
+    // «Erläuterungen» damals nur den Erlass zeigte. Seither trägt jeder Reiter
+    // oben den Teil zum Artikel — der Kopf nennt ihn als Zitat MIT Kürzel.
+    await expect(kopf).toContainText(/Art\. \S+ DBG/)
     await page.locator('[data-v3-panel-reiter="erlaeuterungen"]').press('ArrowLeft')
     await expect(page.locator('[data-v3-panel-reiter="materialien"]')).toHaveAttribute('aria-selected', 'true')
     await page.locator('[data-v3-panel-reiter="materialien"]').press('End')

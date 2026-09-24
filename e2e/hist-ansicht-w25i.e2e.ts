@@ -1,10 +1,26 @@
 // @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
-import { F_MARKE, fassungAufklappen, fassungsMarke } from './helpers/fassungsRubrik';
+import { fassungAufklappen, fassungsMarke } from './helpers/fassungsRubrik';
 import AxeBuilder from '@axe-core/playwright';
 import {
-  ANSICHT_PANEL, AUS_WAHL_NAME, FUSSNOTEN_WAHL_NAME, VERMERKE_SCHALTER_NAME, WAHL_ROLLE,
+  ANSICHT_PANEL, FUSSNOTEN_WAHL_NAME, WAHL_ROLLE,
 } from './helpers/leserBeschriftung';
+
+// ═══ §6.3-DEKLARATION · S6 W1f (Entscheid David 24.9.2026) ══════════════════
+// Wörtlich: «die zeile soll ganz weg. infos sollen alle im blatt erscheinen.
+// einzige ausnahme sind wenn fussnoten aktiviert sind die sollen unten am
+// artikel erschienen». Die Dreier-Wahl wird ein SCHALTER «Fussnoten» (an =
+// `fussnoten`, aus = `aus`); die Stellung «Fassung» fällt, ihr Gegenstand (die
+// Rubrik «Gilt seit …» am Artikelende) steht im Erlass-Blatt. Diese Datei folgt:
+//   · `waehle(page, 'fussnoten' | 'aus')` stellt den Schalter; jede Schleife
+//     über «fassung»/«aus» läuft nur noch über «aus» — die Apparat-Zusagen
+//     (ganz weg, ganz zurück, DOM vollständig) bleiben Wort für Wort.
+//   · Die Vorgabe heisst «aus» (dieselbe Fussnoten-Sicht wie «Fassung» seit Z8).
+//   · Der Fall «Fassung zeigt die Fassungs-Spur …» wird zur Gegenprobe «der
+//     Schalter rührt die Fassung im Blatt NICHT an» — sie hängt an keiner
+//     Stellung mehr.
+//   · Die Matrix verliert ihre Spalte `fassung` (keine Spur mehr im Lesetext).
+// Die Blöcke unten, die von drei Stellungen sprechen, sind Belege ihres Datums.
 
 // ÄNDERUNGSVERMERKE — zweiwertig seit S1, ENTKOPPELT seit Ä68 (Entscheid David
 // 17.8.2026), EINE DREIER-WAHL seit D35-F3 (Entscheid David 7.9.2026).
@@ -113,17 +129,13 @@ async function ansichtOeffnen(page: Page): Promise<void> {
   await expect(panel).toBeVisible();
 }
 
-/** Die drei Stellungen der EINEN Wahl (D35-F3). */
-const STELLUNG = {
-  fassung: VERMERKE_SCHALTER_NAME,
-  fussnoten: FUSSNOTEN_WAHL_NAME,
-  aus: AUS_WAHL_NAME,
-} as const;
-
-/** Stellung wählen und warten, bis das Attribut am <html> steht. */
-async function waehle(page: Page, wert: keyof typeof STELLUNG): Promise<void> {
+/** S6 W1f · Schalter-Stellung setzen (an = «fussnoten», aus = «aus») und
+ *  warten, bis das Attribut am <html> steht. Idempotent: steht er schon, kein Klick. */
+async function waehle(page: Page, wert: 'fussnoten' | 'aus'): Promise<void> {
   await ansichtOeffnen(page);
-  await page.getByRole(WAHL_ROLLE, { name: STELLUNG[wert] }).click();
+  const schalter = page.locator(ANSICHT_PANEL).getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME });
+  const soll = wert === 'fussnoten' ? 'true' : 'false';
+  if (await schalter.getAttribute('aria-checked') !== soll) await schalter.click();
   await expect(page.locator('html')).toHaveAttribute('data-vermerke', wert);
 }
 
@@ -132,39 +144,24 @@ function apparatZeile(page: Page, artikel: string, nr: string) {
   return page.locator(`#fn-${artikel}-${nr}`);
 }
 
-test('Grundzustand: «Fassung» ist Vorgabe, Attribut am <html>, DREI Stellungen', async ({ page }) => {
+test('Grundzustand: «aus» ist Vorgabe, Attribut am <html>, EIN Schalter', async ({ page }) => {
+  // S6 W1f: bis 24.9.2026 «Fassung ist Vorgabe, DREI Stellungen» (Radiogruppe).
   await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
-  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'fassung');
+  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'aus');
   await ansichtOeffnen(page);
-  // W2·5m (14.9.2026): gezählt wird in der EIGENEN Gruppe. Bis hierher zählte
-  // die Zeile `menuitemradio` über das ganze Panel — richtig, solange es nur
-  // eine Radiogruppe gab. Seit der Lesart-Wahl (Kap. 15.3) sind es zwei, und
-  // die Zahl sprang auf 5, ohne dass an dieser Wahl etwas anders wäre. Die
-  // Sonde misst jetzt, was sie behauptet, und bliebe auch bei einer dritten
-  // Gruppe richtig.
-  const wahl = page.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE);
-  await expect(wahl, 'die Wahl hat genau drei Stellungen').toHaveCount(3);
-  // GENAU EINE steht — das ist die Zusage einer Radiogruppe, und sie ist der
-  // Kern von Davids Befund («entweder … oder»). Eine Checkbox-Gruppe wäre hier
-  // grün mit zwei Haken; diese Zeile ist der Unterschied.
-  const gesetzt = await wahl.evaluateAll(
-    (els) => els.filter((e) => e.getAttribute('aria-checked') === 'true').length,
-  );
-  expect(gesetzt, 'genau eine Stellung ist gesetzt').toBe(1);
-  await expect(page.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME }))
-    .toHaveAttribute('aria-checked', 'true');
-  // Die zwei alten `menuitemcheckbox`-Schalter für dieselbe Frage sind WEG.
-  // Ohne diese Negativ-Sonde könnte die Zweier-Bedienung beim nächsten Merge
-  // zurückkommen, ohne dass etwas rot wird (Präzedenz: der Wächter gegen die
-  // Alt-Zeitraum-Wahl in `leser-kopf-v2.e2e.ts`).
-  await expect(page.locator(`${ANSICHT_PANEL} [role="menuitemcheckbox"][aria-label^="Fussnoten"]`))
-    .toHaveCount(0);
+  const gruppe = page.locator('[data-v3-vermerke-wahl]');
+  await expect(gruppe.getByRole(WAHL_ROLLE), 'genau ein Schalter').toHaveCount(1);
+  await expect(gruppe.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME }))
+    .toHaveAttribute('aria-checked', 'false');
+  // Die Radiogruppe (D35-F3) ist weg — sonst stünde die gefallene Stellung
+  // «Fassung» wieder im Menü, ohne Gegenstand am Artikel.
+  await expect(page.locator(`${ANSICHT_PANEL} [role="menuitemradio"][data-v3-vermerke]`)).toHaveCount(0);
   // S1: der dreiwertige Streifen von vor 17.8.2026 ist ebenfalls restlos weg.
   await expect(page.locator('[aria-label="Darstellung der Änderungshistorie"]')).toHaveCount(0);
   await expect(page.locator('[data-hist-wahl]')).toHaveCount(0);
 });
 
-test('GANZ ODER GAR NICHT: in «Fassung»/«aus» geht der Apparat vollständig — auch V und Z', async ({ page }) => {
+test('GANZ ODER GAR NICHT: in «aus» geht der Apparat vollständig — auch V und Z', async ({ page }) => {
   // ── DEKLARIERTE ÄNDERUNG (§6.3, Entscheid David 7.9.2026) ──────────────────
   // Bis 7.9. prüfte dieser Fall, dass der VERMERKE-Schalter gar keine Fussnote
   // anfasst und der FUSSNOTEN-Schalter alle. Den zweiten gibt es nicht mehr:
@@ -210,7 +207,7 @@ test('GANZ ODER GAR NICHT: in «Fassung»/«aus» geht der Apparat vollständig 
   // `e2e/leser-optionen.e2e.ts` («A1-Mechanik … kein CLS»). Zwei Kopien
   // derselben Zusage sind ohnehin eine zu viel.
 
-  for (const stellung of ['fassung', 'aus'] as const) {
+  for (const stellung of ['aus'] as const) {
     await waehle(page, stellung);
     // DER KERN VON Z8: der Apparat geht GANZ — die reine SR-Zeile mit.
     await expect(v13, `${stellung}: V-Eintrag steht weiter da`).toBeHidden();
@@ -271,15 +268,15 @@ test('ALLE Marker im Wortlaut folgen der Wahl — A wie V', async ({ page }) => 
   }
   await expect(vMarker.first()).toBeVisible();
 
-  await waehle(page, 'fassung');
-  await expect(aMarker.first(), '«Fassung» lässt die A-Marke stehen').toBeHidden();
-  await expect(vMarker.first(), '«Fassung» lässt die V-Marke stehen').toBeHidden();
+  await waehle(page, 'aus');
+  await expect(aMarker.first(), '«aus» lässt die A-Marke stehen').toBeHidden();
+  await expect(vMarker.first(), '«aus» lässt die V-Marke stehen').toBeHidden();
   // DOM unverändert vollständig (A1-Mechanik).
   expect(await aMarker.count()).toBe(aAnzahl);
   expect(await vMarker.count()).toBe(vAnzahl);
 });
 
-test('DREI-STELLUNGS-MATRIX: Bund mit Klassen · Kanton ohne Klassifikation', async ({ page }) => {
+test('STELLUNGS-MATRIX: Bund mit Klassen · Kanton ohne Klassifikation', async ({ page }) => {
   // DIE Sonde der Verlustfreiheit. Sie prüft jede Stellung gegen die eine Regel:
   // die Wahl trägt `kl:'A'` und die Fassungs-Zeile — und sonst nichts.
   //
@@ -314,12 +311,8 @@ test('DREI-STELLUNGS-MATRIX: Bund mit Klassen · Kanton ohne Klassifikation', as
         apparat: n('.lc-leser [data-fn-apparat] > p'),
         nichtA: n('.lc-leser [data-fn-apparat] > p:not([data-fn-klasse="A"])'),
         marker: n('.lc-leser [data-fn-ref]'),
-        // §6.3-DEKLARATION (D40, 7.9.2026): die Fassungs-SPUR im Lesetext ist
-        // seit D40 die Rubrik-Marke der Funktionszeile, nicht mehr der
-        // Kopf-Slot. `[data-historie-zeile]` taugt als Sichtbarkeits-Zähler
-        // nicht mehr — sie steht jetzt auch in der Druck-Projektion
-        // (`hidden print:block`), die am Bildschirm nie sichtbar ist.
-        fassung: n('.lc-leser .lr7-bez-marke[data-reg="f"]'),
+        // S6 W1f: hier stand die Spalte `fassung` (Rubrik-Marke am
+        // Artikelende). Die Fassung steht im Blatt und an keiner Stellung.
       };
     });
 
@@ -339,9 +332,8 @@ test('DREI-STELLUNGS-MATRIX: Bund mit Klassen · Kanton ohne Klassifikation', as
     const voll = await zaehle();
     expect(voll.apparat, `${name}: keine Apparat-Zeilen sichtbar`).toBeGreaterThan(0);
     expect(voll.marker, `${name}: keine Marker sichtbar`).toBeGreaterThan(0);
-    expect(voll.fassung, `${name}: «Fussnoten» lässt die Fassungs-Zeile stehen`).toBe(0);
 
-    for (const stellung of ['fassung', 'aus'] as const) {
+    for (const stellung of ['aus'] as const) {
       await waehle(page, stellung);
       const m = await zaehle();
       // W2·26/Z8: der Apparat geht GANZ — keine Zeile, kein Marker, gleich
@@ -349,8 +341,6 @@ test('DREI-STELLUNGS-MATRIX: Bund mit Klassen · Kanton ohne Klassifikation', as
       expect(m.apparat, `${name}/${stellung}: Apparat-Zeilen stehen weiter da`).toBe(0);
       expect(m.nichtA, `${name}/${stellung}: nicht-A-Zeilen stehen weiter da`).toBe(0);
       expect(m.marker, `${name}/${stellung}: Marker stehen weiter da`).toBe(0);
-      expect(m.fassung, `${name}/${stellung}: Fassungs-Zeile`)
-        .toBe(stellung === 'fassung' ? voll.fassung || m.fassung : 0);
     }
 
     // Zurück auf «Fussnoten»: vollständige Wiederherstellung (A1).
@@ -361,129 +351,36 @@ test('DREI-STELLUNGS-MATRIX: Bund mit Klassen · Kanton ohne Klassifikation', as
   }
 });
 
-test('«Fassung» zeigt die Fassungs-Spur, «Fussnoten» und «aus» nehmen sie — der DOM bleibt vollständig', async ({ page }) => {
-  // ── DEKLARIERTE ÄNDERUNG (§6.3) ───────────────────────────────────────────
-  // Bis 17.8. forderte dieser Test das GEMEINSAME Verschwinden von drei Trägern
-  // (A-Marker · A-Apparat-Zeilen samt Rahmen · Fassungs-Zeile), bis 7.9. das
-  // Verschwinden NUR der Fassungs-Zeile. Seit D35-F3 gilt: die Fassungs-Zeile und
-  // die A-Träger sind GEGENLÄUFIG — genau eines von beiden steht (Davids
-  // «entweder … oder»), und in der Stellung «aus» keines.
-  // Die A1-Mechanik gilt unverändert (David 5.7.2026: `display:none`, nie
-  // gelöscht), damit jede Stellung vollständig wiederherstellt.
+test('der Schalter rührt die Fassung nicht an — sie steht im Blatt, am Artikel nur im Druck', async ({ page }) => {
+  // S6 W1f (Entscheid David 24.9.2026): bis hierher prüfte der Fall «Fassung
+  // zeigt die Fassungs-Spur, Fussnoten und aus nehmen sie». Die Spur am
+  // Artikelende ist gefallen; die Fassung steht als Klappzeile im Blatt
+  // (Reiter «Änderungen») und hängt an KEINER Stellung mehr. Geprüft wird
+  // darum die Gegenprobe in beiden Stellungen, dazu das, was vom alten Fall
+  // unverändert gilt: die Druck-Projektion am Artikel trägt den Stand in jeder
+  // Stellung (§8, «der Ausdruck verliert den Fassungsstand nicht»).
   await warteReader(page, '/gesetze/bund/BGBM', 'art-2');
-
   const art2 = page.locator('#art-2');
-  await art2.scrollIntoViewIfNeeded();
-  // §6.3-DEKLARATION (D40, 7.9.2026): die Fassungs-Spur ist die Rubrik der
-  // Funktionszeile — Marke UND Block. Beide werden geprüft, weil beide fallen
-  // müssen: ein Griff ohne Block wäre die Zusage einer Liste, die nicht kommt.
-  const fassung = art2.locator(F_MARKE);
-  const slot = art2.locator('.lr7-bez-block[data-reg="f"]');
-  // Sichtbarkeits-Zählung der A-Marker. `checkVisibility()` und NICHT
-  // `offsetParent`/`display` am Element selbst: geschaltet wird der VORFAHR, das
-  // Knopf-Element trägt weiter `display: inline`. Und NICHT
-  // `contentVisibilityAuto`: die Artikel stehen unter `content-visibility: auto` —
-  // würde man vom Scrollen übersprungene Teilbäume als «unsichtbar» zählen, wäre
-  // die Zusicherung schon durch die Scrollposition erfüllt und damit wertlos
-  // (§6.7). Der Standard-Modus meldet genau das, was hier gemeint ist.
-  const aMarkerSichtbar = () => page
-    .locator('.lc-leser [data-fn-klasse="A"] [data-fn-ref]')
-    .evaluateAll((els) => els.filter((el) => (el as HTMLElement).checkVisibility()).length);
-  // Der Badge wächst mit dem idle-Shard-Resolve ein — POSITIV-Vorbedingung: ohne
-  // ihn prüfte die Negativ-Zusicherung unten nichts (§6.7).
-  const zeile = await fassungAufklappen(art2);
-  await expect(zeile.getByText('Fassung', { exact: true })).toBeVisible();
-  const badgeText = (await zeile.textContent())?.trim() ?? '';
-  expect(badgeText, 'Fassungs-Zeile ohne Text — die Sonde unten wäre wertlos').toContain('Gilt seit');
-  // Die Marke selbst nennt die Zahl der Fassungen (§8: gezählt, nie geschätzt).
-  const markeText = (await fassung.textContent())?.trim() ?? '';
-  expect(markeText, 'die Marke nennt keine Fassungs-Zahl').toMatch(/\d+\s*Fassung/);
-
-  // Art. 9 trägt AUSSCHLIESSLICH A-Fussnoten — bis W2·26 der schärfste Fall:
-  // sein Apparat hatte in «Fassung»/«aus» keine einzige Zeile mehr zu zeigen und
-  // verschwand darum samt Rahmen (`data-fn-nur-a`, in React entschieden statt
-  // per `:has()`).
-  //
-  // §6.3-DEKLARATION (W2·26/Z8, 11.9.2026): `data-fn-nur-a` ist ERSATZLOS
-  // gestrichen. Es beantwortete die Frage «trägt dieser Apparat NUR A-Zeilen?»,
-  // damit kein leerer Rahmen stehen blieb — seit Z8 geht der Apparat ohnehin
-  // ganz, und was nicht mehr scheitern kann, wird gestrichen statt bewacht
-  // (§17-Gegengewicht). Die ZUSAGE dieses Falls ist unverändert und gilt jetzt
-  // für jeden Apparat, nicht nur für den A-only: kein leerer Rahmen, keine
-  // nackte Haarlinie.
-  const apparat9 = page.locator('#art-9 [data-fn-apparat]');
-  await page.locator('#art-9').scrollIntoViewIfNeeded();
-  await expect(apparat9).toHaveCount(1);
-
-  await waehle(page, 'fussnoten');
-  await page.locator('#art-9').scrollIntoViewIfNeeded();
-  await expect(apparat9, '«Fussnoten» zeigt den A-only-Apparat').toBeVisible();
-  const markerVorher = await aMarkerSichtbar();
-  expect(markerVorher, '«Fussnoten» zeigt A-Marker').toBeGreaterThan(0);
-  await art2.scrollIntoViewIfNeeded();
-  await expect(fassung, '«Fussnoten» lässt die Fassungs-Marke stehen').toBeHidden();
-  await expect(slot, '«Fussnoten» lässt den Fassungs-Block stehen').toBeHidden();
-
-  await waehle(page, 'fassung');
-  // Die Fassungs-Spur ist da …
-  await art2.scrollIntoViewIfNeeded();
-  await expect(fassung).toBeVisible();
-  await expect(slot).toBeVisible();
-  // … und der Apparat ist weg, samt Rahmen. Ohne die Rahmen-Zusicherung bliebe
-  // eine nackte Haarlinie über nichts stehen.
-  await page.locator('#art-9').scrollIntoViewIfNeeded();
-  await expect(apparat9, 'Apparat steht als leerer Kasten da').toBeHidden();
-  expect(await aMarkerSichtbar(), 'A-Marker stehen in «Fassung» weiter da').toBe(0);
-
-  await waehle(page, 'aus');
-  await art2.scrollIntoViewIfNeeded();
-  // DER EINE TRÄGER: keine Fassungs-Spur mehr — weder die Marke noch ihr Block.
-  //
-  // §0 Ziff. 2b: der Satz, der hier stand, galt dem reservierten Kopf-Slot
-  // («seine reservierte Höhe mt-4 + min-h-beiwerk = 16+24 px bliebe sonst als
-  // Phantom-Lücke unter jedem Artikel stehen») und war für seinen Stand richtig.
-  // Mit D40 ist der Slot gefallen; die Zusage «keine Spur» gilt unverändert und
-  // trifft jetzt beide Träger der Rubrik.
-  await expect(fassung).toBeHidden();
-  await expect(slot).toBeHidden();
-  await page.locator('#art-9').scrollIntoViewIfNeeded();
-  await expect(apparat9).toBeHidden();
-
-  // DOM-VOLLSTÄNDIGKEIT (§8): alles ist noch da, mit unverändertem Text.
-  // D40: geprüft wird an der DRUCK-Projektion — sie ist die Stelle, an der die
-  // Zeile in JEDER Stellung im DOM steht (die Rubrik rendert ihren Block erst
-  // auf Klick, s. D35-F1). Genau daran hängt auch die Zusage «der Ausdruck
-  // verliert den Fassungsstand nicht».
-  const imDruck = art2.locator('[data-hist-druck] [data-historie-zeile]');
-  // `textContent`, NICHT `innerText`: die Artikel stehen unter
-  // `content-visibility: auto` (W2.8) — dort liefert `innerText` für nicht
-  // gerenderte Teilbäume einen LEEREN String, und die Zusicherung wäre still
-  // wahr. `textContent` ist layout-unabhängig.
-  await expect(imDruck).toHaveCount(1);
-  expect((await imDruck.textContent())?.trim() ?? '').toContain('Gilt seit');
-  await expect(apparat9).toHaveCount(1);
-  expect((await apparat9.textContent())?.trim() ?? '').toContain('Eingefügt durch');
-
-  // Und der NORMTEXT des Artikels ist unberührt — sichtbar und findbar. Hier
-  // ebenfalls `textContent` statt `innerText`: Art. 2 liegt weit unten, sein
-  // Teilbaum ist vom `content-visibility: auto` übersprungen, und `innerText`
-  // lieferte dafür einen LEEREN String (genau so beim ersten Lauf der S1-Fassung
-  // passiert — die Zeile wäre still falsch geworden). Die SICHTBARKEIT prüft die
-  // Locator-Zusicherung, die eine Bounding-Box auswertet und vom Übersprungenen
-  // nicht getäuscht wird.
-  await art2.scrollIntoViewIfNeeded();
-  await expect(art2).toBeVisible();
-  expect(((await art2.textContent()) ?? '').length).toBeGreaterThan(20);
-
-  // POSITIV zurück: «Fussnoten» stellt die A-Spur vollständig wieder her.
-  await waehle(page, 'fussnoten');
-  await page.locator('#art-9').scrollIntoViewIfNeeded();
-  await expect(apparat9).toBeVisible();
-  expect(await aMarkerSichtbar(), 'A-Marker nicht wiederhergestellt').toBe(markerVorher);
+  // Am Artikel steht keine Fassungs-Spur mehr — weder Marke noch Block.
+  await expect(page.locator('.lc-leser .lr7-bez-marke, .lc-leser [data-bez-marken]')).toHaveCount(0);
+  for (const stellung of ['fussnoten', 'aus'] as const) {
+    await waehle(page, stellung);
+    await page.keyboard.press('Escape');
+    const zeile = await fassungAufklappen(art2);
+    await expect(zeile.getByText('Fassung', { exact: true })).toBeVisible();
+    await expect(zeile, `${stellung}: die Fassung im Blatt folgt dem Schalter`).toContainText('Gilt seit');
+    const imDruck = art2.locator('[data-hist-druck] [data-historie-zeile]');
+    await expect(imDruck).toHaveCount(1);
+    expect((await imDruck.textContent())?.trim() ?? '').toContain('Gilt seit');
+    await page.locator('[data-v3-panel-zu]').first().click();
+  }
 });
 
 test('Persistenz + Pre-Paint: die Wahl übersteht den Reload ohne Flackern', async ({ page }) => {
   await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
+  // S6 W1f: «aus» ist die Vorgabe — damit überhaupt geschrieben wird, einmal
+  // an und wieder aus (der Schalter ist idempotent, `waehle`).
+  await waehle(page, 'fussnoten');
   await waehle(page, 'aus');
   const ls = await page.evaluate(() => localStorage.getItem('lm.leser.optionen'));
   // D35-F3: der Wert steht unter dem EINEN neuen Schlüssel.
@@ -505,16 +402,11 @@ test('Persistenz + Pre-Paint: die Wahl übersteht den Reload ohne Flackern', asy
   await expect(apparatZeile(page, '4', '13')).toBeHidden();
   await expect(apparatZeile(page, '4', '12')).toBeHidden();
   await expect(apparatZeile(page, '4', '13')).toHaveCount(1);
-  // D40: die Fassungs-Spur nach dem Reload ist die Rubrik-Marke; «aus» nimmt sie.
-  // KEINE Zähl-Zusicherung: die A1-Mechanik lässt das Element im DOM stehen
-  // (David 5.7.2026, `display:none` statt löschen) — gezählt wird, was der
-  // Leser SIEHT, und das müssen null sein.
-  expect(await page.locator(`.lc-leser ${F_MARKE}`)
-    .evaluateAll((els) => els.filter((e) => (e as HTMLElement).checkVisibility()).length),
-  '«aus» lässt Fassungs-Marken stehen').toBe(0);
+  // S6 W1f: hier stand die Zusage «aus nimmt die Fassungs-Marken» — die Marken
+  // gibt es am Artikel nicht mehr (Fassung im Blatt, Stellung gefallen).
 });
 
-test('MIGRATION im Browser: ein gespeichertes «chronologie» steht als «Fassung» da', async ({ page }) => {
+test('MIGRATION im Browser: ein gespeichertes «chronologie» steht heute als «aus» da', async ({ page }) => {
   // Der Bestands-Speicher eines Nutzers von VOR S1 — genau der Fall, der sich
   // später nicht mehr nachstellen lässt. Die Regeln selbst liegen DOM-frei unter
   // `src/tests/leser-optionen-migration.test.ts`; hier zählt, dass der Pre-Paint-
@@ -530,16 +422,18 @@ test('MIGRATION im Browser: ein gespeichertes «chronologie» steht als «Fassun
     } catch { /* privater Modus */ }
   });
   await warteReader(page, '/gesetze/bund/BGBM', 'art-2');
-  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'fassung');
+  // S6 W1f: «Vermerke sichtbar» war seit D35-F3 «Fassung», und «Fassung» zeigte
+  // seit Z8 keinen Apparat ⇒ heute «aus» (dieselbe Fussnoten-Sicht, §8).
+  await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'aus');
   // Die gestrichenen Schalter können nichts mehr bewirken: kein Attribut am <html>.
   await expect(page.locator('html')).not.toHaveAttribute('data-verweise', /.*/);
   await expect(page.locator('html')).not.toHaveAttribute('data-fussnoten', /.*/);
   await expect(page.locator('html')).not.toHaveAttribute('data-histansicht', /.*/);
   await ansichtOeffnen(page);
-  await expect(page.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME }))
-    .toHaveAttribute('aria-checked', 'true');
-  // Und die Fassung ist wirklich da (nicht bloss die Stellung richtig gesetzt).
-  await page.locator('#art-2').scrollIntoViewIfNeeded();
+  await expect(page.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME }))
+    .toHaveAttribute('aria-checked', 'false');
+  // Und die Fassung ist wirklich da — im Blatt (nicht bloss die Stellung richtig gesetzt).
+  await page.keyboard.press('Escape');
   await fassungsMarke(page.locator('#art-2'));
 });
 
@@ -571,7 +465,7 @@ test('W2·26/Z8: JEDE Klasse folgt der Wahl — A, G und U auf einem Artikel', a
   await expect(u35).toHaveAttribute('data-fn-klasse', 'U');
   await expect(g41).toHaveAttribute('data-fn-klasse', 'G');
 
-  for (const stellung of ['fassung', 'aus'] as const) {
+  for (const stellung of ['aus'] as const) {
     await waehle(page, stellung);
     await expect(u35, `${stellung}: U folgt der Wahl nicht`).toBeHidden();
     await expect(g41, `${stellung}: G folgt der Wahl nicht`).toBeHidden();
@@ -590,7 +484,7 @@ test('W2·26/Z8: JEDE Klasse folgt der Wahl — A, G und U auf einem Artikel', a
   await expect(g41).toBeVisible();
 });
 
-test('axe: das offene Panel mit der Dreier-Wahl ist sauber', async ({ page }, testInfo) => {
+test('axe: das offene Panel mit dem Fussnoten-Schalter ist sauber', async ({ page }, testInfo) => {
   // Das Steuerelement lebt in einem Panel, das die a11y.e2e.ts-Stichprobe NICHT
   // öffnet (die scannt den Reader mit geschlossenem Menü) — ohne diesen Scan wäre
   // die axe-Zusage für diesen Schritt leer. Gescannt wird BEIDES: das offene
@@ -607,7 +501,7 @@ test('axe: das offene Panel mit der Dreier-Wahl ist sauber', async ({ page }, te
   await warteReader(page, '/gesetze/bund/BGBM', 'art-9');
   await waehle(page, 'aus');
   await ansichtOeffnen(page);
-  await expect(page.getByRole(WAHL_ROLLE, { name: AUS_WAHL_NAME })).toBeVisible();
+  await expect(page.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME })).toBeVisible();
 
   const ergebnis = await new AxeBuilder({ page }).withTags(TAGS).analyze();
   // Gleiche Tor-Politik wie a11y.e2e.ts: critical/serious gaten. `link-in-text-block`

@@ -18,7 +18,7 @@ import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
 import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
-import { normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
+import { blattArtikel, normZitat, OEFFNER_NAME, OEFFNER_WORT, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
 import { useBlattGedaechtnis } from './blattGedaechtnis';
 import { SuchSprungFeld } from './SuchSprungFeld';
 import { suchZoneAufbau } from './suchZoneAufbau';
@@ -298,7 +298,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
       {/* D27: kein `aktArtikel` mehr — Herleitung in `./LeserKopf`. */}
       <LeserKopf erlass={erlass} fussnotenAnzahl={m.fussnotenAnzahl}
         hatAenderungsvermerke={m.hatAenderungsvermerke}  modus={einzel.modus} onModusWahl={einzel.waehleModus}
-        bestimmungsWort={bestimmungsWort} stufe={stufe} gliederungKnopf={gliederungKnopf}
+        stufe={stufe} gliederungKnopf={gliederungKnopf}
         suchInZeile={suchInZeile} tocOffen={m.tocOffen}
         onGliederungZu={zweiSpalten ? () => setzeTocOffen(false) : undefined}
         // D35-F2: EIN Öffner je Breite (Ä92). Entscheid A (24.9.2026): wo das
@@ -366,7 +366,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // sonst blieben Reiter im Fokusbaum, ←/→ belegt und Shards geladen (§17: die Datei bleibt).
         panelZone={!bild.blatt ? null : (
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
-              paneZiel={overlayZiel} paneRolle={paneRolle}
+              paneZiel={overlayZiel} paneRolle={paneRolle} artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token)}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
               normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel}

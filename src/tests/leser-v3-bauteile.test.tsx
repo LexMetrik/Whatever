@@ -85,8 +85,11 @@ function renderKopf(props: Partial<Parameters<typeof LeserKopf>[0]> & { stufe: K
           durch — hier «Artikel» (Bund). Dass ein §-Erlass «Paragraphen»
           bekommt, prüft `leser-v3-erlassansicht.test.ts` an der einen
           Ableitung; hier stünde sonst eine zweite Wahrheit (§5/B8). */}
+      {/* §6.3-DEKLARATION (S6 W1f, 24.9.2026): `bestimmungsWort` ist keine
+          Prop des Kopfs mehr — ihr einziger Leser, die Rubriken-Wahl im
+          Ansicht-Menü, ist mit der Funktionszeile gefallen. */}
       <LeserKopf erlass={ERLASS} fussnotenAnzahl={3}
-        bestimmungsWort="Artikel" hatAenderungsvermerke {...props} />
+        hatAenderungsvermerke {...props} />
     </MemoryRouter>,
   );
 }

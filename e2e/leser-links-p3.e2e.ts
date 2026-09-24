@@ -56,6 +56,7 @@
 // ROT ZU BEKOMMEN (dieselbe Zeile wie oben): den `index.css`-Block entfernen —
 // der Rechnen-Eintrag verliert seinen Strich, (b) reisst.
 import { test, expect } from '@playwright/test';
+import { blattFuerArtikel, blattReiter } from './helpers/fassungsRubrik';
 
 const ORT = '/gesetze/bund/OR#art-336_c';
 
@@ -71,11 +72,13 @@ test.describe('P3 · Links im Gesetzesleser', () => {
     // liegen eingeklappt nicht im Layout.
     // D35-F1 (7.9.2026, §6.3): je Rubrik ein eigener Griff — für diesen Befund
     // zählen die Links ALLER Rubriken, also werden alle geöffnet.
-    const griffe = page.locator('#art-336_c .lr7-bez-marke');
-    for (let i = 0; i < await griffe.count(); i += 1) {
-      const g = griffe.nth(i);
-      if (await g.getAttribute('aria-expanded') !== 'true') await g.click();
-    }
+    // §6.3 · S6 W1f (Entscheid David 24.9.2026, «infos sollen alle im blatt
+    // erscheinen»): die Zeile ist gefallen. Der Positiv-Fall (b) misst den
+    // Rechnen-Eintrag «Kündigung & Fristen im Arbeitsverhältnis» jetzt dort,
+    // wo er steht: in der Artikelgruppe oben im Blatt-Reiter «Werkzeuge».
+    await blattFuerArtikel(page.locator('#art-336_c'), 20000);
+    await blattReiter(page, 'werkzeuge');
+    await expect(page.locator('[data-v3-blatt-artikelgruppe="werkzeuge"] a[href]').first()).toBeVisible();
     await page.waitForTimeout(250);
 
     const mess = await page.evaluate(() => {
@@ -94,7 +97,7 @@ test.describe('P3 · Links im Gesetzesleser', () => {
       // fehlender Strich kein Befund (Herleitung im Kopf, 7.9.2026).
       const istText = (a: Element) => !/(^|\s)no-underline(\s|$)/.test(String(a.className))
         && !a.closest('.lc-chip, .lc-btn-mini');
-      const bezug = [...document.querySelectorAll('#art-336_c .lr7-bez a[href]')].find(istText);
+      const bezug = [...document.querySelectorAll('[data-v3-blatt-artikelgruppe="werkzeuge"][data-v3-blatt-artikel="336_c"] a[href]')].find(istText);
       const kopf = [...document.querySelectorAll('.lc-leser a[href]')]
         .find((a) => /Amtliche Fassung/.test(a.textContent ?? '') && !a.closest('.lc-chip, .lc-btn-mini'));
       const strich = (el: Element | null | undefined) =>
@@ -108,7 +111,7 @@ test.describe('P3 · Links im Gesetzesleser', () => {
     expect(mess.nackt, `Links ohne Unterstrich und ohne erklärte Ausnahme:\n${mess.nackt.join('\n')}`)
       .toEqual([]);
     // (b) — ohne diese Hälfte wäre (a) mit `no-underline` überall erfüllbar.
-    expect(mess.bezugDa, 'kein TEXTLINK in der Bezüge-Zeile von OR 336c gefunden (nur Chips?) — der Positiv-Fall misst nichts').toBe(true);
+    expect(mess.bezugDa, 'kein TEXTLINK in der Werkzeug-Gruppe von OR 336c im Blatt gefunden — der Positiv-Fall misst nichts').toBe(true);
     expect(mess.bezugStrich, 'die Links der Bezüge-Zeile stehen wieder ohne Unterstrich').toBe(true);
     expect(mess.kopfDa, 'kein Fedlex-Textlink gefunden — der Positiv-Fall misst nichts').toBe(true);
     expect(mess.kopfStrich, '«Amtliche Fassung ↗» steht wieder ohne Unterstrich').toBe(true);

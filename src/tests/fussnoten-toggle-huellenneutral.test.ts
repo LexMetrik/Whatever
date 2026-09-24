@@ -71,8 +71,12 @@ const artikelBody = readFileSync(
   'utf8',
 );
 
-/** Anker: der erste ECHTE Selektor der Dämpfungs-Regel (nicht ihr Kommentar). */
-const ANKER = 'html[data-vermerke="fassung"] .lc-leser [data-fn-ref]';
+/** Anker: der erste ECHTE Selektor der Dämpfungs-Regel (nicht ihr Kommentar).
+ *  §6.3-DEKLARATION (S6 W1f, 24.9.2026): die Stellung «fassung» ist gefallen
+ *  (Entscheid David 24.9.2026, Funktionszeile aufgelöst; `data-vermerke` ist
+ *  zweiwertig). Der erste Selektor des Blocks ist damit der der Stellung
+ *  «aus» — derselbe Block, dieselben Zusagen; nur der Anker rückt nach. */
+const ANKER = 'html[data-vermerke="aus"] .lc-leser [data-fn-ref]';
 
 /** Die Selektor-Liste des Dämpfungs-Blocks (bis zur öffnenden `{`). */
 function daempfSelektoren(): string[] {

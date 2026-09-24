@@ -1,4 +1,5 @@
 // @shard-gruppe: 4
+import { blattFuerArtikel } from './helpers/fassungsRubrik';
 import { test, expect } from '@playwright/test';
 import { fehlerSammeln } from './helpers/fehlerSammeln';
 import { DROSSEL } from './helpers/budgets';
@@ -184,11 +185,15 @@ test.describe('A7 — strukturiertes Verweis-Popover (Wortlaut → Entscheide �
     // D35-F1 (7.9.2026, §6.3): die Zeile klappt je RUBRIK auf. Der Verweis-Chip
     // «Art. 20 OR» hängt an der Rubrik «Verweise» (`data-reg="g"`) — genau die
     // wird hier geöffnet, nicht mehr die ganze Zeile.
-    const bezuege = art.locator('.lr7-bez-marke[data-reg="g"]').first();
-    if (await bezuege.count() > 0 && await bezuege.getAttribute('aria-expanded') !== 'true') {
-      await bezuege.click();
-    }
-    const chip = art.getByRole('link', { name: /^Art\. 20 OR$/ }).first();
+    // S6 W1f (§6.3, Entscheid David 24.9.2026: «verweise soll auch in blatt»):
+    // die Rubrik «Verweise» am Artikelende ist gefallen; die Chips stehen in der
+    // Klappzeile «Verweise dieses Artikels» oben im Erlass-Blatt. Der Prüfpunkt
+    // (der Chip öffnet das strukturierte Popover) bleibt Wort für Wort.
+    await blattFuerArtikel(art);
+    const verweise = page.locator('[data-v3-blatt-verweise="312"]');
+    const klapp = verweise.locator('> button');
+    if (await klapp.getAttribute('aria-expanded') !== 'true') await klapp.click();
+    const chip = verweise.getByRole('link', { name: /^Art\. 20 OR$/ }).first();
     await expect(chip).toBeVisible({ timeout: 10_000 });
     await chip.click();
 

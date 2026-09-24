@@ -117,37 +117,12 @@ test.describe('D35-F4 — der Aus-Zustand ist eine Form, keine Tintenstufe', () 
     }
   })
 
-  test('@1440: die Wahl «Änderungen anzeigen als» wandert, statt sich abzuschalten', async ({ page }) => {
-    // EINMAL ROT GEZEIGT (§6.7, 7.9.2026): `LeserAenderungsWahl` auf
-    // `onKlick={() => setzeVermerke('fassung')}` gelegt — die Wahl bewegt sich
-    // dann nicht mehr, und dieser Fall scheitert an Zeile «aria-checked=true»
-    // (Received "false", nth(1) = «Fussnoten»).
-    // D35-F3: eine Radiogruppe hat IMMER genau eine gesetzte Stellung. Der
-    // Klick auf eine ungewählte verschiebt die gefüllte Marke, der Klick auf
-    // die gesetzte tut nichts — beides ist Form, nicht Tinte.
-    await ansichtAuf(page, 1440, 900)
-    // W2·5m (14.9.2026): in der EIGENEN Gruppe gezählt. Seit der Lesart-Wahl
-    // (Kap. 15.3) trägt das Menü ZWEI Radiogruppen; eine Zählung über das ganze
-    // Panel sprang damit auf 5, ohne dass an dieser Wahl etwas anders wäre.
-    // Schärfung, kein Nachgeben — die Zeile misst jetzt, was sie behauptet.
-    const stellungen = page.locator('[data-v3-vermerke-wahl] [role="menuitemradio"]')
-    expect(await stellungen.count(), 'Stellungen der Wahl').toBe(3)
-    const gesetzte = stellungen.filter({ has: page.locator('[data-menu-marke][data-an="an"]') })
-    await expect(gesetzte, 'genau eine gesetzte Stellung').toHaveCount(1)
-    // Index statt Filter: ein `filter({ has: … data-an="aus" })` löst sich bei
-    // JEDER Auswertung neu auf — nach dem Klick zeigte er auf eine andere
-    // Stellung, und die Zusicherung mass das falsche Element (gemessen
-    // 7.9.2026). Ein `nth()` bleibt auf demselben Knoten stehen.
-    const stand = await stellungen.evaluateAll((els) => els.map((e) => e.getAttribute('aria-checked')))
-    const andere = stellungen.nth(stand.findIndex((a) => a === 'false'))
-    await andere.click()
-    await expect(andere).toHaveAttribute('aria-checked', 'true')
-    await expect(stellungen.filter({ has: page.locator('[data-menu-marke][data-an="an"]') }),
-      'auch nach dem Wechsel genau eine gesetzte Stellung').toHaveCount(1)
-    // Idempotenz: derselbe Klick noch einmal schaltet nicht ab.
-    await andere.click()
-    await expect(andere).toHaveAttribute('aria-checked', 'true')
-  })
+  // §6.3-DEKLARATION (S6 W1f, Entscheid David 24.9.2026): hier stand der Fall
+  // «die Wahl ‹Änderungen anzeigen als› wandert, statt sich abzuschalten». Die
+  // Radiogruppe ist mit der Funktionszeile gefallen — übrig ist EIN Schalter
+  // «Fussnoten» (`menuitemcheckbox`), dessen Umlegen der Fall darüber mit
+  // `kasten` prüft. Eine Radiogruppe, deren Wandern hier zu prüfen wäre, gibt
+  // es in dieser Gruppe nicht mehr (die Lesart-Wahl prüft `leser-einzelmodus*`).
 })
 
 test.describe('D35-F4 — der Schriftregler ist eine Zeile, kein Kasten', () => {

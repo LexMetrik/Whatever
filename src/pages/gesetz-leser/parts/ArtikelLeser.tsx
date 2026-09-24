@@ -83,6 +83,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    * `./ArtikelLeser.bezuegeFuss.tsx`, wo auch die Marken gerechnet werden (§5).
    * Der Artikel-Körper darüber ist in beiden Fällen byte-gleich derselbe —
    * genau das misst das PX-Tor (Kap. 15.1, Grenze Hülle/Kern).
+   *
+   * S6 W1f (24.9.2026): die Funktionszeile ist gefallen. `'dossier'` rendert
+   * weiter den Bezüge-Fuss; sonst steht am Artikelende nur die ruhige
+   * Aktionszeile. Die Weiche steht seither HIER (unten am Fuss), weil der
+   * Bezüge-Fuss nur noch eine Gestalt kennt.
    */
   fussForm?: 'zeile' | 'dossier';
   istAnhang?: boolean;
@@ -214,6 +219,9 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // VERWEISE: im Artikel genannte, aufloesbare (Bund-)Normverweise als Chips am
   // Fuss sammeln — Herleitung und Dedupe in `./ArtikelLeser.fussnoten` (§6.6-Split).
   const verweise: string[] = sammleVerweise(e.bloecke);
+  // S6 W1f · die Aktionen: im Dossier Knöpfe (unverändert), sonst ruhige Textzeile.
+  const aktionen = <ArtikelAktionen artikel={e.artikel} basisPfad={basisPfad}
+    zitat={zitat} zitatVoll={zitatVoll} amtlich={amtlich} ruhig={fussForm !== 'dossier'} />;
   // Aufhebungsnotiz (G16/#3): die amtliche «Aufgehoben durch … (AS …)»-Notiz eines
   // voll aufgehobenen Artikels liegt als artikel-Ebene-Fussnote im Snapshot
   // (absatz/item = null). M2 (David 29.6.2026) / G2b: sie ist eine Fussnote und liegt
@@ -553,15 +561,24 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
         {/* DER BEZÜGE-FUSS (D34, David 7.9.2026: «das mit den bezügen soll unten
             an den artikel»): unter dem letzten Absatz und dem Fussnoten-Apparat,
             EIN Baustein für beide Formen (§5). AUSSERHALB von `artOffen`: ein
-            eingeklappter Artikel behält seine Zeile. */}
-        <ArtikelBezuegeFuss bezuege={bezuege} bezuegeImFuss={bezuegeImFuss}
-          erlassKey={erlass?.key} artikel={e.artikel} snapshot={e}
-          historie={historie} leitfaelle={leitfaelle} materialien={materialien} verweise={verweise}
-          werkzeuge={werkzeuge} zaehler={zaehler} zitat={zitat} revision={revision}
-          onOeffnen={onBezuegeOeffnen} onImBlatt={onImBlatt} laedt={bezuegeLaedt && !bezuege}
-          form={fussForm}
-          aktionen={<ArtikelAktionen artikel={e.artikel} basisPfad={basisPfad}
-            zitat={zitat} zitatVoll={zitatVoll} amtlich={amtlich} />} />
+            eingeklappter Artikel behält seine Zeile.
+            S6 W1f (Entscheid David 24.9.2026, «die zeile soll ganz weg. infos
+            sollen alle im blatt erscheinen»): in der Gesamtansicht steht hier
+            nur noch die ruhige Aktionszeile («Klein am Artikel»); die Rubriken
+            zeigt das Erlass-Blatt (`../v3/BlattArtikel.tsx`). Das Dossier des
+            Einzelmodus bleibt unverändert (D-E4). */}
+        {fussForm === 'dossier'
+          ? (
+            <ArtikelBezuegeFuss bezuege={bezuege} bezuegeImFuss={bezuegeImFuss}
+              erlassKey={erlass?.key} artikel={e.artikel} snapshot={e}
+              historie={historie} leitfaelle={leitfaelle} materialien={materialien} verweise={verweise}
+              werkzeuge={werkzeuge} zaehler={zaehler} zitat={zitat} revision={revision}
+              onOeffnen={onBezuegeOeffnen} onImBlatt={onImBlatt} laedt={bezuegeLaedt && !bezuege}
+              aktionen={aktionen} />
+          )
+          : (
+            <div data-artikel-aktionen className="mt-2 flex print:hidden" {...{ [SUCH_META]: '' }}>{aktionen}</div>
+          )}
       </div>
     </article>
   );

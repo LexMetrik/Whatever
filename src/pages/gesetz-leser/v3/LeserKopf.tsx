@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
 import type { LeserModus } from './einzelModus';
-import { zeigeVolltitel, type BestimmungsWort } from './erlassAnsicht';
+import { zeigeVolltitel } from './erlassAnsicht';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
 // ─── Die EINE Kopfzeile des Lesers V3 (FAHRPLAN-LESER-V3 Kap. 4a, H1) ────────
@@ -106,7 +106,7 @@ function streifenGriff(a: {
 }
 
 export function LeserKopf({
-  erlass, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, stufe, gliederungKnopf, modus, onModusWahl,
+  erlass, fussnotenAnzahl, hatAenderungsvermerke, stufe, gliederungKnopf, modus, onModusWahl,
   panelOeffner, suchZone, suchInZeile, tocOffen, onGliederungZu, rechterStreifen, onBlattZu, blattPanelId,
 }: {
   /** ── ENTSCHEID A (David 24.9.2026) · DER RECHTE STREIFEN ──────────────────
@@ -129,9 +129,6 @@ export function LeserKopf({
   hatAenderungsvermerke: boolean;
   /** D35-F3 · durchgereicht ans Ansicht-Menü (§8-Hinweis auf unklassifizierten
    *  Erlassen). Der Kopf wertet sie nicht aus — er ist die Leitung, nicht der Ort. */
-  /** D35-F2 · durchgereicht ans Ansicht-Menü (Kopf der Rubriken-Gruppe). Der
-   *  Kopf leitet nichts ab — er ist die Leitung, nicht der Ort (§5/B8). */
-  bestimmungsWort: BestimmungsWort;
   /** W2·5m · durchgereicht an `./LeserAnsichtV3` — die Lesart-Gruppe des
    *  Ansicht-Menüs (Kap. 15.3). Der Kopf wertet sie nicht aus (§3). */
   modus?: LeserModus;
@@ -330,7 +327,7 @@ export function LeserKopf({
           {gliederungKnopf}
           <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl}
             hatAenderungsvermerke={hatAenderungsvermerke}
-            bestimmungsWort={bestimmungsWort} modus={modus} onModusWahl={onModusWahl} />
+            modus={modus} onModusWahl={onModusWahl} />
         </div>
         {rechterStreifen && (
           // Spiegel von «‹ Gliederung ausblenden»: der Griff beginnt über der

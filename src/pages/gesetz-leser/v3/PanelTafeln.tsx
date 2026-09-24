@@ -4,11 +4,17 @@ import { aufhebungFuerRegister } from '../../../lib/normtext/aufhebungen';
 import { revisionFuerToken, type RevisionShard } from '../../../lib/verzahnung/artikel-revisionen';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { PanelAenderungen } from './PanelAenderungen';
-import { PanelMaterialien } from './PanelMaterialien';
+import { BotschaftZeile, PanelMaterialien } from './PanelMaterialien';
 import { PanelErlaeuterungen } from './PanelErlaeuterungen';
 import { PanelWerkzeuge } from './PanelWerkzeuge';
 import { useArtikelRevisionShard, useErlaeuterungen, useMaterialien, useRevisionen, type Geladen } from './panelKontextLaden';
 import type { PanelReiter } from './panelModell';
+import { bestimmungDativ, type BestimmungsWort } from './erlassWortlaut';
+import { useArtikelMaterialien } from '../artikelMaterialienLaden';
+import { werkzeugeAmArtikel } from '../randNotizWerkzeuge';
+import { ArtikelErlaeuterung, ArtikelWerkzeug, BlattArtikelGruppe, BlattFassung, ErlassTeil, type BlattArtikel } from './BlattArtikel';
+import { botschaftenZumArtikel } from './blattMaterialien';
+import { werkzeugAnsicht } from './werkzeugModell';
 
 // ─── Die vier ERLASS-weiten Tafeln des Blatts (S6, 23.9.2026) ───────────────
 //
@@ -27,6 +33,24 @@ import type { PanelReiter } from './panelModell';
 // Match) — und «Materialien» nennt umgekehrt den Änderungserlass, zu dem eine
 // Botschaft geführt hat. Beide Listen kommen aus demselben Gate (Panel war
 // offen), keine zusätzliche Anfrage.
+//
+// ── S6 W1f (Entscheid David 24.9.2026) · DER ARTIKEL OBEN IN DREI REITERN ──
+// Mit der Funktionszeile am Artikelende fällt ihre artikelscharfe Auskunft ins
+// Blatt (Herleitung und Tabelle in `./BlattArtikel`): «Änderungen» trägt oben
+// die Fassung des aktiven Artikels, «Erläuterungen» und «Werkzeuge» oben seine
+// eigene Gruppe vor der erlassweiten Liste. Die Materialien-Liste je Artikel
+// lädt über dieselbe Hook und dasselbe Gate wie bisher an der Zeile — ihr
+// modulweiter Promise-Cache verhindert einen zweiten Fetch.
+//
+// ── JEDER REITER ZUERST ZUM ARTIKEL (Auftrag 24.9.2026) ─────────────────────
+// Davids Meldung «erlassblatt scrollt nicht mit wenn sich artikel verändert»
+// (Beispiel KVG): nur «Entscheide» folgte dem Scroll-Spy, die übrigen Reiter
+// zeigten den ganzen Erlass. Seither trägt JEDER Reiter oben den Teil zum
+// aktiven Artikel (derselbe Bezug wie «Entscheide», `panelBezug`) und darunter
+// den erlassweiten Teil ZUGEKLAPPT (`ErlassTeil`, «Standard ist nur der
+// Artikelteil offen»). Ohne Artikelbezug steht ehrlich «Zu Art. N nichts
+// erfasst.» (§8). «Materialien» nennt die Botschaften, auf die eine Änderung
+// des Artikels verweist (`./blattMaterialien`, ELI-Identität).
 
 export interface PanelTafeln {
   tafeln: Readonly<Record<Exclude<PanelReiter, 'entscheide'>, ReactNode>>;
@@ -34,7 +58,7 @@ export interface PanelTafeln {
   artikelRevisionen: Geladen<RevisionShard | null>;
 }
 
-export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel }: {
+export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt, normZitat, wort }: {
   erlassKey: string | undefined;
   /** `zustand.jeGeoeffnet` — das Gate (Herleitung in `./panelKontextLaden`). */
   laden: boolean;
@@ -43,12 +67,18 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   stichtag: string | null;
   aktArtikel: string | null;
   artikelLabel: string | null;
+  /** S6 W1f · Eintrag und Historie des aktiven Artikels (`./BlattArtikel`). */
+  blatt: BlattArtikel | null;
+  /** Kurz-Zitat des aktiven Artikels («Art. 41 OR») und sein Zähl-Substantiv. */
+  normZitat: string;
+  wort: BestimmungsWort;
 }): PanelTafeln {
   const { locale } = useLocale();
   const revisionen = useRevisionen(erlassKey, laden);
   const artikelRevisionen = useArtikelRevisionShard(erlassKey, laden);
   const materialien = useMaterialien(erlassKey, laden, locale);
   const erlaeuterungen = useErlaeuterungen(erlassKey, laden);
+  const artikelMaterialien = useArtikelMaterialien(erlassKey, laden);
 
   const botschaftNachKey = useMemo(() => new Map<string, BotschaftBezug>(
     (materialien.wert?.botschaften ?? []).map((b) => [b.key, b]),
@@ -64,19 +94,64 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   const artRev = aktArtikel ? revisionFuerToken(artikelRevisionen.wert, aktArtikel) : undefined;
   const artikel = artRev && artikelLabel ? { label: artikelLabel, revision: artRev } : null;
   const aufhebung = erlassKey ? aufhebungFuerRegister(erlassKey) : undefined;
+  const token = blatt?.eintrag.artikel ?? null;
+  const artMat = token ? artikelMaterialien(token) : [];
+  const artWz = token ? werkzeugeAmArtikel(erlassKey, token) : [];
+  const zu = `Zu ${artikelLabel ?? bestimmungDativ(wort)}`;
+  const artBot = botschaftenZumArtikel(materialien.wert?.botschaften, blatt?.historie);
+  const mat = materialien.wert;
+  const matZahl = mat ? (mat.botschaften?.length ?? 0) + (mat.vernehmlassungen?.length ?? 0) + (mat.kanton?.length ?? 0) : null;
+  // «Änderungen» ohne jeden Beleg am Artikel: weder Fassungshistorie noch ein
+  // Eintrag im Artikel-Revisions-Shard — erst dann ist «nichts» eine Antwort.
+  const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && !artRev;
+  // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N
+  // nichts erfasst.» darüber wäre dieselbe Auskunft zweimal (Artikel ⊂ Erlass).
+  const erlZahl = erlaeuterungen.wert?.liste.length ?? null;
+  const wzZahl = erlassKey ? werkzeugAnsicht(erlassKey).verfuegbar.length : null;
 
   return {
     artikelRevisionen,
     tafeln: {
       aenderungen: (
-        <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} ebene={ebene}
-          aufhebung={aufhebung} botschaftNachKey={botschaftNachKey} artikel={artikel} locale={locale} />
+        <>
+          <BlattFassung artikel={blatt} erlassKey={erlassKey} zitat={normZitat} wort={wort} />
+          <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token} geladen={ohneFassung}>{null}</BlattArtikelGruppe>
+          <ErlassTeil was="Änderungen" zahl={revisionen.wert?.revisionen.length ?? null} daten="aenderungen">
+            <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} ebene={ebene}
+              aufhebung={aufhebung} botschaftNachKey={botschaftNachKey} artikel={artikel} locale={locale} />
+          </ErlassTeil>
+        </>
       ),
       materialien: (
-        <PanelMaterialien stand={materialien} ebene={ebene} locale={locale} aenderungNachBotschaft={aenderungNachBotschaft} />
+        <>
+          <BlattArtikelGruppe titel={zu} zahl={artBot.length} daten="materialien" token={token} geladen={materialien.fertig && matZahl !== 0}>
+            {artBot.map((b) => <BotschaftZeile key={b.key} b={b} aenderung={aenderungNachBotschaft.get(b.key)} locale={locale} />)}
+          </BlattArtikelGruppe>
+          <ErlassTeil was="Materialien" zahl={matZahl} daten="materialien">
+            <PanelMaterialien stand={materialien} ebene={ebene} locale={locale} aenderungNachBotschaft={aenderungNachBotschaft} />
+          </ErlassTeil>
+        </>
       ),
-      erlaeuterungen: <PanelErlaeuterungen stand={erlaeuterungen} revisionShard={artikelRevisionen.wert} ebene={ebene} />,
-      werkzeuge: <PanelWerkzeuge erlassKey={erlassKey ?? ''} />,
+      erlaeuterungen: (
+        <>
+          <BlattArtikelGruppe titel={zu} zahl={artMat?.length ?? 0} daten="erlaeuterungen" token={token} geladen={artMat !== undefined && erlZahl !== 0}>
+            {(artMat ?? []).map((m) => <ArtikelErlaeuterung key={m.key} m={m} />)}
+          </BlattArtikelGruppe>
+          <ErlassTeil was="Erläuterungen" zahl={erlZahl} daten="erlaeuterungen">
+            <PanelErlaeuterungen stand={erlaeuterungen} revisionShard={artikelRevisionen.wert} ebene={ebene} />
+          </ErlassTeil>
+        </>
+      ),
+      werkzeuge: (
+        <>
+          <BlattArtikelGruppe titel={zu} zahl={artWz.length} daten="werkzeuge" token={token} geladen={wzZahl !== 0}>
+            {artWz.map((w) => <ArtikelWerkzeug key={w.id} w={w} />)}
+          </BlattArtikelGruppe>
+          <ErlassTeil was="Werkzeuge" zahl={wzZahl} daten="werkzeuge">
+            <PanelWerkzeuge erlassKey={erlassKey ?? ''} />
+          </ErlassTeil>
+        </>
+      ),
     },
   };
 }

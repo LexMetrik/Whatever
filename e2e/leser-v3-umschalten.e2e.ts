@@ -10,7 +10,7 @@
 // ausschliesslich V3-eigenes Verhalten, ohne je nach V1 zu wechseln.
 import { test, expect } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
-import { FUSSNOTEN_WAHL_NAME, SCHALTER_ROLLE, VERMERKE_SCHALTER_NAME, WAHL_ROLLE } from './helpers/leserBeschriftung';
+import { FUSSNOTEN_WAHL_NAME, SCHALTER_ROLLE, WAHL_ROLLE } from './helpers/leserBeschriftung';
 
 test.describe('Ansicht-Menü — D1/B3', () => {
   // ── D1 (S1-Rest, gebaut im H3-Nachzug 17.8.2026) ──────────────────────────
@@ -62,16 +62,21 @@ test.describe('Ansicht-Menü — D1/B3', () => {
     // POSITIV — StPO: 187 von 283 Fussnoten sind `kl:'A'`, dazu ein
     // Historie-Shard. Die Wahl steht vollzählig, dazu die eine Checkbox.
     await oeffne('/gesetze/bund/STPO')
-    await expect(panel.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME })).toHaveCount(1)
+    // §6.3-DEKLARATION (S6 W1f, Entscheid David 24.9.2026): die Dreier-Wahl ist
+    // EIN Schalter «Fussnoten» (`menuitemcheckbox`, dieselbe Rolle wie
+    // SCHALTER_ROLLE), die sechs Rubriken-Schalter sind mit der Funktionszeile
+    // gefallen. Aussage unverändert: die Bedienung steht genau dort, wo sie wirkt.
+    await expect(panel.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME })).toHaveCount(1)
     // W2·5m (14.9.2026): in der EIGENEN Gruppe gezählt. Seit der Lesart-Wahl
     // (Kap. 15.3) trägt das Menü ZWEI Radiogruppen; eine Zählung über das ganze
     // Panel sprang damit auf 5, ohne dass an dieser Wahl etwas anders wäre.
     // Schärfung, kein Nachgeben — die Zeile misst jetzt, was sie behauptet.
-    await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(3)
+    await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(1)
     // §6.3-DEKLARATION (D40, 7.9.2026): SECHS Rubriken-Schalter — «Fassung» ist
     // dazugekommen (David: «und wieso ist fassung nicht auch unten am
     // artikel?»). Die Aussage bleibt: die Wahl steht vollzählig.
-    await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(6)
+    // S6 W1f: die Rubriken-Schalter sind gefallen — genau EIN Schalter im Menü.
+    await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(1)
 
     // ── §6.3-DEKLARATION (W2·26/Z8, Mandat David 11.9.2026) ────────────────
     // BS-640.100 (StG BS) stand hier als NEGATIV-Fall: 16 Fussnoten, KEINE
@@ -86,10 +91,10 @@ test.describe('Ansicht-Menü — D1/B3', () => {
     // 16.8.2026, nur eine Ebene höher). Die AUSSAGE des Falls ist unverändert:
     // die Wahl erscheint genau dort, wo sie etwas bewirkt.
     await oeffne('/gesetze/kanton/BS-640.100')
-    await expect(panel.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME })).toHaveCount(1)
+    await expect(panel.getByRole(WAHL_ROLLE, { name: FUSSNOTEN_WAHL_NAME })).toHaveCount(1)
     // W2·5m: in der eigenen Gruppe gezählt (s. oben, Zeile 66).
-    await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(3)
-    await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(6)
+    await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(1)
+    await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(1)
     // §8: es gibt hier wirklich keine Fassungs-Zeile — die Wahl trägt an diesem
     // Erlass allein über den Apparat, und der folgt ihr vollständig.
     await expect(page.locator('[data-historie-zeile]')).toHaveCount(0)
@@ -112,7 +117,8 @@ test.describe('Ansicht-Menü — D1/B3', () => {
     // davon immer, sie hängt an keinem Erlass-Merkmal; über das ganze Panel
     // gezählt läse die Zeile sonst «keine Radiogruppe», was nie gemeint war.
     await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(0)
-    await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(6)
+    // S6 W1f: ohne Fussnoten-Schalter steht kein einziger Schalter mehr im Menü.
+    await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(0)
 
     expect(fehler, fehler.join('\n')).toEqual([])
   })

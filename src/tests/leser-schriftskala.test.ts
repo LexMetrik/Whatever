@@ -70,7 +70,10 @@ describe('Leser-Schriftskala — Persistenz und Migration', () => {
     // den Apparat-Schalter nicht mehr gibt. Die Migrations-Regeln selbst stehen
     // unter `src/tests/leser-optionen-migration.test.ts`; hier zählt nur, dass
     // der Schrift-Schlüssel sie nicht stört.
-    expect(el.attrs['data-vermerke']).toBe('fassung');
+    // §6.3-DEKLARATION (S6 W1f, 24.9.2026): die Stellung «fassung» ist gefallen
+    // (Entscheid David 24.9.2026, Funktionszeile aufgelöst) und migriert auf
+    // «aus» — dieselbe Fussnoten-Sicht (`leserOptionen.aufZweiwertig`).
+    expect(el.attrs['data-vermerke']).toBe('aus');
   });
 
   it('unbekannter Wert ⇒ Vorgabestufe (nicht durchgereicht)', async () => {
@@ -126,7 +129,10 @@ describe('Leser-Schriftskala — Persistenz und Migration', () => {
     // §6.3-DEKLARATION (D40, 7.9.2026): der Grundzustand trägt die sechste
     // Rubrik `f` (Fassung in der Funktionszeile). Die Aussage bleibt: der
     // Schrift-Setzer rührt das fremde Feld nicht an.
-    expect(o.fussRubriken).toEqual(['f', 'r', 'm', 'g', 'w', 'a']);
+    // §6.3-DEKLARATION (S6 W1f, 24.9.2026): `fussRubriken` ist gestrichen
+    // (Funktionszeile aufgelöst) — es wird beim Schreiben abgeräumt wie jeder
+    // Alt-Schlüssel; die Aussage des Falls trägt `bezugKantone` darunter.
+    expect(o).not.toHaveProperty('fussRubriken');
     expect(o.bezugKantone).toEqual(['BS']);
     // S1 (deklarierte fachliche Änderung, §6.3): `hist: 'aus'` stand als
     // `histansicht: 'aus'` im neuen Speicher — die Nutzerwahl erhalten, nur

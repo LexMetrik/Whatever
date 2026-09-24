@@ -28,6 +28,7 @@
 //        seither trägt der Kopf-Griff überhaupt keine Artikel-Zahl mehr — die
 //        Zahl steht an genau einem Ort, der Funktionszeile am Artikelende
 //        (Variante A, `e2e/w224-d35-f2-kopf.e2e.ts`).
+import { blattFuerArtikel, blattReiter } from './helpers/fassungsRubrik'
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 
@@ -247,25 +248,31 @@ test.describe('Entscheid A — das Erlass-Blatt ist eine Spalte mit Schiene, wie
 // bleibt der ORTS-Teil der Zusage, weil er zu D32/D33 gehört: die Zeile trägt
 // die Zahl, der Kopf nicht.
 test.describe('N1/D35-F2 — die Entscheid-Zahl steht am Artikel, nicht im Kopf', () => {
-  test('(k) OR Art. 336c: die Funktionszeile trägt die Zahl, der Kopf-Griff keine', async ({ page }) => {
+  // §6.3-DEKLARATION (S6 W1f, Entscheid David 24.9.2026, «die zeile soll ganz
+  // weg. infos sollen alle im blatt erscheinen»): die Funktionszeile, die die
+  // Zahl trug, ist gefallen. Der ORTS-Teil der Zusage bleibt und wird enger:
+  // der Kopf-Griff nennt keine Zahl, am Artikel steht keine Rubrik mehr, und
+  // die Entscheide DIESES Artikels stehen im Reiter «Entscheide» des Blatts.
+  test('(k) OR Art. 336c: der Kopf-Griff nennt keine Zahl, die Entscheide stehen im Blatt', async ({ page }) => {
     test.slow()
     const fehler = await oeffne(page, '/gesetze/bund/OR#art-336_c', 1440)
-    // Die Zähl-Datei kommt im Leerlauf; die Marke ist ihr sichtbarer Beleg.
-    const marke = page.locator('#art-336_c .lr7-bez-marke[data-reg="r"]').first()
-    await expect(marke).toBeVisible({ timeout: 20_000 })
     await page.waitForTimeout(800)
-
-    const ausMarke = Number((((await marke.textContent()) ?? '').match(/\d+/) ?? ['0'])[0])
-    expect(ausMarke, 'die Bezüge-Zeile nennt keine Entscheid-Zahl — der Fall trägt nicht').toBeGreaterThan(0)
+    // Am Artikel keine Rubrik mehr — weder Marke noch Zeile.
+    await expect(page.locator('#art-336_c .lr7-bez-marke, #art-336_c [data-bez-marken]')).toHaveCount(0)
 
     // Der Griff steht (Positiv-Sonde §6.7 — sonst prüfte der Fall eine leere
     // Kopfzeile) und nennt keine Zahl, weder sichtbar noch im Attribut.
     const griff = page.locator(ZAEHLER).first()
     await expect(griff).toBeVisible()
-    expect(await griff.getAttribute('data-v3-panel-anzahl'),
-      `der Kopf-Griff trägt wieder eine Zahl — die Zeile nennt bereits ${ausMarke}`).toBeNull()
+    expect(await griff.getAttribute('data-v3-panel-anzahl'), 'der Kopf-Griff trägt wieder eine Zahl').toBeNull()
     expect((await griff.textContent()) ?? '', 'der Kopf-Griff schreibt wieder eine Zahl hin')
       .not.toMatch(/\d/)
+
+    // Positiv: das Blatt folgt Art. 336c und zeigt seine Entscheide.
+    await blattFuerArtikel(page.locator('#art-336_c'), 20_000)
+    await blattReiter(page, 'entscheide')
+    await expect(page.locator('[data-v3-panel] [role="tabpanel"] a[href^="/rechtsprechung/"]').first())
+      .toBeVisible({ timeout: 30_000 })
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

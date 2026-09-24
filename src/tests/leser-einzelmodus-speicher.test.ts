@@ -94,7 +94,11 @@ describe('W2·5m · die Lesart wird gemerkt', () => {
     setzeLeserAnsicht('artikel');
     const roh = JSON.parse(localStorage.getItem(KEY) as string);
     expect(roh.vermerke).toBe('fussnoten');
-    expect(roh.fussRubriken).toEqual(['r']);
+    // §6.3-DEKLARATION (S6 W1f, 24.9.2026): `fussRubriken` ist mit der
+    // Funktionszeile gestrichen und wird beim Schreiben abgeräumt (wie jeder
+    // Alt-Schlüssel); die Aussage «fremde Felder bleiben» tragen `vermerke`
+    // und `schrift`.
+    expect(roh).not.toHaveProperty('fussRubriken');
     expect(roh.schrift).toBe('gross');
     expect(roh.ansicht).toBe('artikel');
   });
