@@ -3,6 +3,7 @@
 // aus dem Auftrag; der Block «aus src/tests/check-testtreue.test.ts» ist
 // wörtlich aus steuerwerkzeuge.test.ts hierher umgezogen (Regel R1 = das
 // frühere check:testtreue, nur die Import-Quelle ist neu).
+import { spawnSync } from 'node:child_process';
 import { describe, expect, it } from 'vitest';
 import {
   type CommitInfo,
@@ -167,6 +168,19 @@ describe('check:fachaenderung — each-Tabellen im Assertion-Diff', () => {
     expect(eingabe(stand(k(TAB, '[...FAELLE]'), k('[[1, 999999], [2, 60]]', '[...FAELLE]'))).rot).toBe(true);
     expect(eingabe(stand(k(TAB, 'FAELLE.map((z) => z)'), k('[[1, 999999], [2, 60]]', 'FAELLE.map((z) => z)'))).rot).toBe(true);
   });
+});
+
+// ─── CLI-Einstieg (Nebenfund Nachzug RL-03, 24.9.2026) ─────────────────────────
+// Der Einstiegs-Guard `argv.some(/test-assertion-diff\.ts$/)` (b8d9a3ddd) war
+// unter vite-node IMMER falsch (argv = [node, vite-node-Bin, …Argumente]) —
+// der dokumentierte Aufruf (Skill landung, referenz-jules.md) endete still mit
+// Exit 0. Derselbe Defekt wie dispatch.ts 20.7.2026 (scripts/dispatch-cli.ts).
+describe('test-assertion-diff — CLI-Einstieg unter vite-node', () => {
+  it('ohne Argumente: Usage auf stderr und Exit 2, kein stiller No-op', () => {
+    const r = spawnSync('npx', ['vite-node', 'scripts/analyse/test-assertion-diff.ts'], { encoding: 'utf8' });
+    expect(r.stderr).toMatch(/Usage/);
+    expect(r.status).toBe(2);
+  }, 60_000);
 });
 
 // ─── aus src/tests/check-testtreue.test.ts ─────────────────────────────────────
