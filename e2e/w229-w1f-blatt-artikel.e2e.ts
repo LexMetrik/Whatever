@@ -26,6 +26,17 @@
 //  (e) DAS BLATT FOLGT DEM ARTIKEL: ein anderer Artikel am Kopf ⇒ andere
 //      Verweise-Zeile.
 //  (f) EINZELMODUS UNVERÄNDERT: das Dossier steht, samt Knopf-Aktionen.
+//  (g) SPLIT × EINZELMODUS × BLATT (Auflage aus der Nachprüfung von #1040,
+//      24.9.2026): im Zweit-Pane-Bild (⧉) wechselt das Hauptpane in den
+//      Einzelmodus — das Blatt (Sheet) geht zu, kein Griff, keine Schiene,
+//      «r» öffnet nichts, die Pane-Grenzen bleiben stehen (keine tote Spur);
+//      das Nachbar-Pane bleibt unberührt; zurück gilt der gemerkte Zustand.
+//      GEMESSEN 24.9.2026 @1440 OR|BGBM: Panes 2–720 / 723–1440, Rahmen
+//      26–696; das Blatt steht als Sheet ausserhalb der Panes (Portal),
+//      waagrecht 2–720 = genau über dem Hauptpane.
+//      ROT ZU BEKOMMEN (§6.7): in `v3/LeserRahmenV3.tsx` `einzelModus: imEinzel`
+//      → `einzelModus: false` ⇒ (g) rot — so gefahren 24.9.2026 gegen dist:
+//      «Einzelmodus: das Blatt steht noch», Expected 0 · Received 1.
 //
 // ROT ZU BEKOMMEN (§6.7) — die drei Eingriffe GEMEINSAM gefahren 24.9.2026
 // gegen den gebauten Stand: (a), (b), (c), (e) rot; (d), (f) grün (nicht
@@ -144,5 +155,72 @@ test.describe('S6 W1f · Einzelmodus unverändert (D-E4)', () => {
     const rand = await zitat.evaluate((el) => getComputedStyle(el).borderTopColor);
     expect(rand, 'im Dossier stehen die Aktionen wieder als Textzeile').not.toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
     await expect(page.locator('[data-v3-panel]')).toHaveCount(0);
+  });
+});
+
+test.describe('S6 W1f · Split × Einzelmodus × Blatt (Auflage Nachprüfung #1040)', () => {
+  test.use({ viewport: { width: 1440, height: 1000 } });
+
+  test('(g) Hauptpane im Einzelmodus: kein Blatt, kein Griff, keine tote Spur — das Nachbar-Pane unberührt', async ({ page }) => {
+    test.slow(); // zwei volle Leser-Instanzen
+    await page.goto('/gesetze/bund/OR?p=/gesetze/bund/BGBM#art-337_c');
+    const prim = page.locator('[data-pane="primaer"]');
+    const sek = page.locator('[data-pane="sekundaer"]');
+    await expect(sek.locator('[data-v3-kopf]')).toBeVisible({ timeout: 25_000 });
+    const grenzen = () => page.evaluate(() => {
+      const x = (s: string) => {
+        const b = document.querySelector(s)?.getBoundingClientRect();
+        return b ? [Math.round(b.left), Math.round(b.right)] : null;
+      };
+      return {
+        primaer: x('[data-pane="primaer"]'), sekundaer: x('[data-pane="sekundaer"]'),
+        rahmen: x('[data-pane="primaer"] [data-leser-v3="rahmen"]'),
+      };
+    });
+    const blatt = page.locator('[data-v3-panel]');
+    // Positiv-Sonde: in der Gesamtansicht hat das Hauptpane seinen Griff, und das
+    // Blatt öffnet als Sheet genau über dem Hauptpane — nicht über dem Nachbarn.
+    const griff = prim.locator('[data-v3-panel-oeffner]');
+    await expect(griff).toHaveCount(1, { timeout: 20_000 });
+    await griff.click();
+    await expect(blatt.first()).toBeVisible({ timeout: 20_000 });
+    const vorher = await grenzen();
+    const sheet = await blatt.first().evaluate((e) => {
+      const b = e.getBoundingClientRect();
+      return [Math.round(b.left), Math.round(b.right)];
+    });
+    expect(sheet[1], 'das Blatt ragt ins Nachbar-Pane').toBeLessThanOrEqual(vorher.sekundaer![0]);
+
+    // Hauptpane → Einzelmodus (über SEIN Ansicht-Menü).
+    await prim.locator('[data-v3-ansicht]').click();
+    await prim.locator('[data-v3-modus="artikel"]').click();
+    await expect(prim.locator('[data-einzel-artikel]')).toBeVisible({ timeout: 20_000 });
+    // Menü zu (es bleibt nach der Wahl offen) — sonst schluckte es Taste und Klick.
+    await page.locator('body').click({ position: { x: 5, y: 5 } });
+    await expect(prim.locator('[data-v3-modus="artikel"]')).toBeHidden();
+    const pruefeKeinBlatt = async (wann: string) => {
+      await expect(blatt, `${wann}: das Blatt steht noch`).toHaveCount(0);
+      await expect(prim.locator('[data-v3-panel-oeffner]'), `${wann}: Griff steht`).toHaveCount(0);
+      await expect(prim.locator('[data-v3-blatt-schiene]'), `${wann}: Schiene steht`).toHaveCount(0);
+      await expect(prim.locator('[data-v3-blatt-zu]'), `${wann}: «Erlass-Blatt ausblenden» steht`).toHaveCount(0);
+      expect(await grenzen(), `${wann}: Pane- oder Rahmengrenzen verschoben (tote Spur)`).toEqual(vorher);
+    };
+    await pruefeKeinBlatt('Einzelmodus');
+    await prim.locator('[data-v3-ansicht]').focus();
+    await page.keyboard.press('r');
+    await page.waitForTimeout(300);
+    await pruefeKeinBlatt('nach «r»');
+    // Das Nachbar-Pane bleibt in der Gesamtansicht, mit Griff.
+    await expect(sek.locator('[data-einzel-artikel]')).toHaveCount(0);
+    await expect(sek.locator('[data-v3-panel-oeffner]')).toHaveCount(1);
+
+    // Zurück: der gemerkte Zustand (Blatt offen) gilt wieder, «r» wirkt wieder.
+    await prim.locator('[data-v3-ansicht]').click();
+    await prim.locator('[data-v3-modus="erlass"]').click();
+    await expect(prim.locator('[data-einzel-artikel]')).toHaveCount(0, { timeout: 20_000 });
+    await expect(blatt.first()).toBeVisible({ timeout: 20_000 });
+    await prim.locator('[data-v3-ansicht]').focus();
+    await page.keyboard.press('r');
+    await expect(blatt).toHaveCount(0);
   });
 });
