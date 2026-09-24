@@ -211,19 +211,20 @@ damit zurückgebaut, samt Überlagerung `'rechts'`. Gebaut ab 1024 px (Einzelans
 eigene Spur 380 px rechts der Lese-Zelle (sticky wie das Gliederungs-`aside`, bis zur
 Fensterunterkante); zu = 36-px-Schiene «‹ Erlass-Blatt» (das Soll oben nannte 52 px — gebaut ist
 der Spiegel der Gliederungs-Schiene, 36 px); im Kopf rechts «Erlass-Blatt ausblenden ›», der
-Kopf-Knopf «Erlass-Blatt» entfällt; Rahmen wächst auf «linke Spur + 45 rem + rechte Spur», nie über
-den Raum (`rahmenSpalten.ts`). Schwellen (`LESE_MIN` 28 rem): Raum < 1156 px (Fenster ≈ 1204) ⇒ die
+Kopf-Knopf «Erlass-Blatt» entfällt; offen wächst der Rahmen auf «linke Spur + 45 rem + rechte Spur»,
+nie über den Raum, zu bleibt er der Seitenrahmen 1072 px (`rahmenSpalten.ts`; eine Aufweitung auch
+bei Schiene lief als R8-Fund über `div.lc-route`, 1088/1072). Schwellen (`LESE_MIN` 28 rem): Raum < 1156 px (Fenster ≈ 1204) ⇒ die
 Gliederung weicht dem offenen Blatt transient auf die Schiene; Raum < 904 px ⇒ Sheet wie unter
 1024. Gemessen 24.9.2026 (OR Art. 257d, Wortlaut `.lr-text` x/Breite, Blatt x, Gliederung offen):
 
 | Fenster | Blatt zu: Text | Blatt offen: Text | Blatt x | Gliederung offen | Neuumbruch |
 |---|---|---|---|---|---|
 | 1024 | 332/612 | 80/520 | 620 | weicht (Schiene) | ja |
-| 1204 | 413/641 | 332/448 | 800 | bleibt | ja |
-| 1280 | 451/641 | 332/524 | 876 | bleibt | ja |
-| 1400 | 511/641 | 333/641 | 996 | bleibt | nein (rutscht) |
-| 1440 | 531/641 | 353/641 | 1036 | bleibt | nein (rutscht) |
-| 1920 | 771/641 | 771/641 | 1472 | bleibt | nein, Text steht |
+| 1204 | 407/641 | 332/448 | 800 | bleibt | ja |
+| 1280 | 445/641 | 332/524 | 876 | bleibt | ja |
+| 1400 | 505/641 | 333/641 | 996 | bleibt | nein (rutscht) |
+| 1440 | 525/641 | 353/641 | 1036 | bleibt | nein (rutscht) |
+| 1920 | 765/641 | 771/641 | 1472 | bleibt | nein, Text steht (±6 px) |
 
 Blatt überlappt Text: in keiner Lage (e2e `leser-v3-rahmen` (h)); Laden mit gemerkten Lagen ohne
 Sprung (`leser-v3-kontext-cls` (c)); unter 1024 unverändert (Sheet + Knopf im Kopf). Abweichung:
