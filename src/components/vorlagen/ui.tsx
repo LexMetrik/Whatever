@@ -457,8 +457,27 @@ export function EckdatenKachel({ label, wert, sub, num, akzent }: { label: strin
  *  QS-UI 8b Teil 2 (4.8.2026): `titel` kam hinzu, weil derselbe Leerzustand auf den
  *  Vorlagen-Dokumentmappen fehlte — dort heisst der künftige Inhalt nicht «Ergebnis»,
  *  sondern «Dokumente». Default unverändert, also byte-gleich für die Rechner-Aufrufe.
- *  `data-platzhalter` ist der Tor-Griff (qsui-hierarchie I8). */
-export function ErgebnisPlatzhalter({ was, titel = 'Ergebnis' }: { was: React.ReactNode; titel?: string }) {
+ *  `data-platzhalter` ist der Tor-Griff (qsui-hierarchie I8).
+ *
+ *  RL-24-Nachzug (W2·30-RL-W2A, 25.9.2026): `rahmen="notiz"` für die Startseite.
+ *  Seit Entscheid W-12 (c) (David 24.9.2026) zeigt das Schnellwerkzeug «Frist»
+ *  vor der Ferien-Wahl kein Fristende, sondern diesen Leerzustand — die
+ *  gestrichelte `lc-tile` bräche dort das Startseiten-Rezept «kein lc-tile»
+ *  (katalog R3, design-r2c). Die Notiz nimmt denselben Rahmen wie das
+ *  Fristende, das an ihre Stelle tritt (`lc-notice`), ohne die 10-rem-
+ *  Mindesthöhe: die Startseiten-Bühne reserviert ihre Höhe selbst (Token
+ *  `start-schnell`). Default unverändert ⇒ alle Rechner-Aufrufe byte-gleich. */
+export function ErgebnisPlatzhalter({ was, titel = 'Ergebnis', rahmen = 'kachel' }: {
+  was: React.ReactNode; titel?: string; rahmen?: 'kachel' | 'notiz';
+}) {
+  if (rahmen === 'notiz') {
+    return (
+      <div data-platzhalter className="lc-notice space-y-1.5">
+        <p className="lc-overline">{titel}</p>
+        <p className="text-body-s text-ink-500">{was}</p>
+      </div>
+    );
+  }
   return (
     <div data-platzhalter className="lc-tile border-dashed min-h-40 flex flex-col justify-center gap-1.5 text-center">
       <p className="lc-overline">{titel}</p>

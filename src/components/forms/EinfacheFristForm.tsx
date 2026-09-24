@@ -11,7 +11,7 @@ import { stillstandsperioden } from '../../data/zpoFeiertage';
 import type { Kanton } from '../../types/legal';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { DatumsFeld } from '../DatumsFeld';
-import { ErgebnisPlatzhalter, FehlerBox, Field } from '../vorlagen/ui';
+import { ErgebnisPlatzhalter, FehlerBox, Field, LiveHeader } from '../vorlagen/ui';
 import { IcsExportButton } from '../IcsExportButton';
 import type { FristMarkierung } from './FristKalenderKompakt';
 import { getStandardKanton } from '../../lib/einstellungen';
@@ -233,6 +233,23 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   // Haus-Primitiv lc-input statt eines eigenen h-10/ring-Rezepts.
   const inputCls = 'lc-input';
 
+  // Leerzustand des Ergebnisplatzes (R13). RL-24-Nachzug (W2·30-RL-W2A,
+  // 25.9.2026): in den knappen Varianten (Startseite) mit derselben Kopfzeile
+  // «Live-Berechnung» und derselben Anatomie (`space-y-4`, `lc-notice`) wie das
+  // Fristende, das nach der Ferien-Wahl an seine Stelle tritt — als Notiz statt
+  // als gestrichelte Kachel (Startseiten-Rezept «kein lc-tile», katalog R3).
+  // BEWUSST kein `ErgebnisBlock`: vor der Wahl gibt es kein Ergebnis, also
+  // weder `id="lc-ergebnis-einfach"` noch `aria-live` (W-12 c, rl24 UI-07).
+  // Voll-Rechner (Tagerechner) unverändert: gestrichelte Kachel.
+  const leer = (was: string) => knapp
+    ? (
+      <div className="space-y-4">
+        <LiveHeader />
+        <ErgebnisPlatzhalter rahmen="notiz" was={was} />
+      </div>
+    )
+    : <ErgebnisPlatzhalter was={was} />;
+
   return (
     <div className="space-y-4">
       {/* items-end: bei verschieden hohen Labels (z.B. zweizeilig) bleiben die
@@ -385,11 +402,11 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
            `ErgebnisPlatzhalter` (R13) statt eines losen Satzes — er reserviert
            die Fläche (CLS) und sagt an, WAS erscheint. Der Satz selbst ist
            wörtlich unverändert. */
-        <ErgebnisPlatzhalter was="Datum und ganzzahlige Dauer eingeben – das Fristende erscheint sofort." />
+        leer('Datum und ganzzahlige Dauer eingeben – das Fristende erscheint sofort.')
       ) : ferien === null ? (
         /* RL-24/UI-07 (W-12 c): Pflichtwahl ohne Voreinstellung — erst die
            Ferien-Wahl bestimmt das Regime, vorher kein Fristende (§1/§8). */
-        <ErgebnisPlatzhalter was="Ferien/Stillstand wählen – das Fristende erscheint sofort." />
+        leer('Ferien/Stillstand wählen – das Fristende erscheint sofort.')
       ) : fehler !== '' ? (
         /* R2-E/F1-4: Eingabefehler in der geteilten `FehlerBox` (R8) — sie
            trägt role="alert", der lose Absatz tat es nicht. Wortlaut unverändert. */
