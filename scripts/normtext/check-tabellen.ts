@@ -26,6 +26,19 @@ const TYP_OK = new Set(['bereich', 'zahl', 'text', 'betrag']);
 // divergierende Listen → ein fr «de»/«jusqu’à»-Rest fiel sonst auseinander).
 const LONE_STAFFEL = new Set(['bis', 'über', 'ueber', 'ab', 'und', 'et', 'de', 'à', 'jusqu’à', "jusqu'à"]);
 
+/**
+ * Untergrenze der kanonischen Bund-Blöcke (PS-19/HN-03, 25.9.2026). Ohne sie
+ * lässt ein fehlendes `public/normtext/bund`-Verzeichnis das Tor grün durch:
+ * `readdirSync` wirft, der catch lieferte bisher befund- und kommentarlos
+ * `{kanon: 0}` zurück, main() druckte «OK» (Nullprobe-Beleg: leeres cwd →
+ * «kanonische spalten-Blöcke: 0 … OK», Exit 0). Realstand bei Bau dieses Tors
+ * (main d6c77ac40, `npx vite-node scripts/normtext/check-tabellen.ts`): 386.
+ * Ein Rückgang braucht einen deklarierten Grund und eine Anpassung dieser
+ * Zahl im selben Commit — kein Prozent-Puffer, eine harte Zahl ist die
+ * einzige, die die Nullprobe zuverlässig auffängt.
+ */
+const MIN_KANONISCH_BUND = 386;
+
 interface Befund {
   datei: string;
   id: string;
@@ -76,6 +89,13 @@ function laufe(verzeichnis: string, scharf: boolean): { befunde: Befund[]; kanon
   try {
     dateien = readdirSync(verzeichnis).filter((f) => f.endsWith('.json') && f !== 'index.json');
   } catch {
+    // Fehlendes/unlesbares Verzeichnis war bisher ein stiller Nulldurchlauf
+    // (0 Blöcke, Exit 0) statt eines Fehlschlags — genau der Nullprobe-Fund
+    // PS-19. Im scharfen (Bund-)Modus ist das ein Befund; die Untergrenze
+    // unten fängt denselben Fall zusätzlich ab, falls hier je gelockert wird.
+    if (scharf) {
+      befunde.push({ datei: verzeichnis, id: '(verzeichnis)', regel: 'verzeichnis', detail: 'fehlt oder ist nicht lesbar' });
+    }
     return { befunde, kanon, legacy };
   }
   for (const f of dateien) {
@@ -102,6 +122,14 @@ function laufe(verzeichnis: string, scharf: boolean): { befunde: Befund[]; kanon
 function main(): void {
   // BUND scharf
   const bund = laufe('public/normtext/bund', true);
+  if (bund.kanon < MIN_KANONISCH_BUND) {
+    bund.befunde.push({
+      datei: 'public/normtext/bund',
+      id: '(gesamt)',
+      regel: 'untergrenze',
+      detail: `nur ${bund.kanon} kanonische Blöcke, Untergrenze ${MIN_KANONISCH_BUND} unterschritten`,
+    });
+  }
   // KANTON Report-Modus (warnend, nicht blockierend)
   const kanton = laufe('public/normtext/kanton', false);
 
@@ -124,7 +152,7 @@ function main(): void {
     for (const b of bund.befunde) {
       console.error(`  ✗ ${b.id} [${b.regel}] ${b.detail}  (${b.datei.split('/').pop()})`);
     }
-    console.error(`\n${bund.befunde.length} Bruch/Brüche. Tabellen-Normalisierung (tabelle-normalisieren.ts) prüfen.`);
+    console.error(`\n${bund.befunde.length} Bruch/Brüche. Tabellen-Normalisierung (tabelle-normalisieren.ts) oder Verzeichnis public/normtext/bund prüfen.`);
     process.exit(1);
   }
 
