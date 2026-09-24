@@ -7,6 +7,8 @@ import { sammleVerweise } from '../parts/ArtikelLeser.fussnoten';
 import type { BlattArtikel } from './panelModell';
 import type { MaterialBezug, Werkzeug } from '../../../lib/normtext/werkzeuge';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
+import { WerkzeugKopf } from './PanelWerkzeuge';
+import { werkzeugStatus } from './werkzeugModell';
 import { bestimmungGenitiv as dieses, type BestimmungsWort } from './erlassWortlaut';
 
 // ═══ W2·29-WERKBANK-LESER S6 W1f · WAS AM ARTIKEL STAND, STEHT IM BLATT ══════
@@ -226,10 +228,11 @@ export function ArtikelErlaeuterung({ m }: { m: MaterialBezug }) {
 /** Ein Werkzeug des Artikels (Anatomie der früheren Rubrik `w`). */
 export function ArtikelWerkzeug({ w }: { w: Werkzeug }) {
   return (
-    <li className="grid border-l-2 border-l-reg-w pl-2.5 text-body-s">
-      <Link to={w.href}>{w.titel}</Link>
-      {/* Ein Rechner rechnet, eine Vorlage füllt ein Dokument. */}
-      <span className="text-micro text-ink-500">{w.modus === 'vorlage' ? 'Vorlage' : 'Rechner'}</span>
+    // Runde 2 (24.9.2026): dieselbe Zeilen-Anatomie wie die Erlass-Liste
+    // (`./PanelWerkzeuge` `WerkzeugKopf`) — samt Status-Etikett, das hier bis
+    // dahin fehlte (§8: dasselbe Werkzeug, dieselbe Auskunft).
+    <li data-v3-werkzeug-artikel={w.id} className="border-l-2 border-l-reg-w pl-2.5">
+      <WerkzeugKopf titel={w.titel} href={w.href} modus={w.modus} status={werkzeugStatus(w.id)} />
     </li>
   );
 }
