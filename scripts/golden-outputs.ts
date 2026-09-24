@@ -1,5 +1,13 @@
-// Golden-Output-Protokoll (§6 CLAUDE.md): friert die Ergebnisse ALLER
-// Engines und Vorlagen über eine breite Eingaben-Matrix ein. Die Basis ist
+// Golden-Output-Protokoll (§6 CLAUDE.md): friert die Ergebnisse der hier
+// importierten Engines und Vorlagen über eine Eingaben-Matrix ein — NICHT aller
+// (HN-18/PS-10, 25.9.2026 ehrlich gemacht). Vorlagen: jeder Zusammensteller
+// unter src/lib/vorlagen/ ausser gmbhDokumentmappe, keDokumentmappe und
+// kvZusammenstellen der Klage vereinfacht (kommen mit RL-41);
+// kuendigung-vermieter ist Checkliste ohne Zusammensteller (nur Engine-Auskunft).
+// Engines: exportierte berechne*/bestimme* ohne Fall hier (u. a. die
+// *Spiegel-Engines, Kostenrisiko/-vorschuss, Sicherheitsleistung) sind NICHT
+// abgedeckt — Lücken messen statt behaupten: je Export-Name in dieser Datei
+// suchen. Die Basis ist
 // COMMITTET (golden/lexmetrik-golden.json) und wird im CI gegated
 // (FAHRPLAN-GRUNDLAGEN G2/A1): jeder Push muss byte-gleich sein.
 //
@@ -50,6 +58,11 @@ import { nbZusammenstellen, NB_DEFAULTS, pruefeNbGates, nbFruehesterGesuchstag }
 import { skZusammenstellen, skWarnungen, SK_DEFAULTS } from '../src/lib/vorlagen/scheidungsklage';
 import { sbZusammenstellen, SB_DEFAULTS } from '../src/lib/vorlagen/scheidungsbegehren';
 import { egZusammenstellen, EG_DEFAULTS } from '../src/lib/vorlagen/eheschutzgesuch';
+import { kmZusammenstellen, KM_DEFAULTS, pruefeKmGates, type KmAntworten } from '../src/lib/vorlagen/kuendigungMieter';
+import { kagZusammenstellen, KAG_DEFAULTS, pruefeKagGates, kagIstProbezeit, type KagAntworten } from '../src/lib/vorlagen/kuendigungArbeitgeber';
+import { kanZusammenstellen, KAN_DEFAULTS, pruefeKanGates, type KanAntworten } from '../src/lib/vorlagen/kuendigungArbeitnehmer';
+import { kvZusammenstellen as kdgKvZusammenstellen, KV_DEFAULTS, pruefeKvGates, type KvAntworten } from '../src/lib/vorlagen/kuendigungAllgemein';
+import { vollmachtZusammenstellen, VOLLMACHT_DEFAULTS, pruefeVollmachtGates, type VollmachtAntworten } from '../src/lib/vorlagen/vollmacht';
 import { berechneBgerRechtsweg } from '../src/lib/bgerRechtsweg';
 import { berechneBggVwvgFrist } from '../src/lib/bggVwvgFristen';
 import { begruendungsAbsatz, fristbeginnZusatz } from '../src/lib/begruendung';
@@ -718,6 +731,64 @@ f('absatz:streitwert:einmalig50k', () => begruendungsAbsatz(berechneStreitwert({
 f('absatz:teuerung:indexmiete', () => begruendungsAbsatz(berechneTeuerung({ modus: 'indexmiete', betrag: 2500, vonMonat: '2007-10', bisMonat: '2012-03' })));
 f('absatz:gebv:zb5000', () => begruendungsAbsatz(berechneBetreibungskosten({ forderungCHF: 5_000, zahlungsbefehl: { zustellversuche: 2, weitereAusfertigungen: 1 } })));
 f('absatz:erbfrist:ausschlagung', () => begruendungsAbsatz(berechneErbFrist({ key: 'ausschlagung_gesetzlich', trigger: '2026-03-10' })));
+
+// ── Kündigungs-Familie + Vollmacht (HN-18/PS-10, 25.9.2026): Erstaufnahme ──
+// Je Vorlage ein Standard-Fall und Gates-Fälle, welche die includeIf-Weichen
+// bzw. Gate-Zweige auslösen. Jeder Fall friert Zusammenstellung (Dokument +
+// Protokoll + Engine-Ergebnis) UND Gate-Ergebnis ein. kag/kan: Probezeit- und
+// ordentliche Konstellation laufen durch berechneKuendigungsfrist (RL-16).
+const kdgMitGates = <A, Z extends object, G>(zus: (a: A) => Z, gates: (a: A, z: Z) => G) => (a: A) => { const z = zus(a); return { ...z, gates: gates(a, z) }; };
+const km = kdgMitGates(kmZusammenstellen, (a: KmAntworten, z) => pruefeKmGates(a, z.engine));
+const kmBasis: KmAntworten = { ...KM_DEFAULTS, absenderName: 'Mia Muster', absenderAdresse: 'Y 2, 4051 Basel', adressatName: 'V Immobilien AG', adressatAdresse: 'X 1, 4001 Basel', mietobjektAdresse: 'Y 2, 4051 Basel, 3. OG', kanton: 'BS', mietbeginn: '2020-04-01', zugang: '2026-06-20', ort: 'Basel', datum: '2026-06-15' };
+for (const [id, d] of Object.entries<Partial<KmAntworten>>({
+  standard: {},
+  'gates-familie-264-vertragstermine': { familienwohnung: true, zustimmungEhegatte: true, ehegatteName: 'Max Muster', mitmieter: ['Zoe Muster'], ausserterminlich: true, nachmieterName: 'Nina Neu', rueckgabeWunschdatum: '2026-07-31', terminQuelle: 'vertraglich_monate', vertragsTermineMonate: [3, 9] },
+  'gates-nichtig-ohne-zustimmung': { familienwohnung: true, zustimmungEhegatte: false },
+})) f(`vorl:km-${id}`, () => km({ ...kmBasis, ...d }));
+// kuendigung-vermieter ist bewusst Checkliste OHNE Zusammensteller (amtliches
+// Formular, Art. 266l Abs. 2 OR); eingefroren wird die Engine-Auskunft mit exakt
+// dem Aufruf der Seite (src/pages/VorlageKuendigungVermieter.tsx) — Weiche: Objekt.
+for (const objekt of ['wohnung', 'geschaeftsraum'] as const) f(`vorl:kuendigung-vermieter-auskunft-${objekt}`, () => berechneMietkuendigung({ kuendigungsart: 'ordentlich', objekt, zugang: '2026-06-20', kanton: 'BS', partei: 'vermieter', terminQuelle: 'ortsueblich', amtlichesFormular: true, separateZustellung: true }));
+const kag = kdgMitGates(kagZusammenstellen, (a: KagAntworten, z) => ({ ...pruefeKagGates(a, z.engine), istProbezeit: kagIstProbezeit(a) }));
+const kagBasis: KagAntworten = { ...KAG_DEFAULTS, absenderName: 'Muster AG', absenderAdresse: 'X 1, 8000 Zürich', adressatName: 'Beat Beispiel', adressatAdresse: 'Y 2, 8000 Zürich', unterzeichner: 'Anna Muster, Geschäftsführerin', vertragsbeginn: '2020-01-01', zugangKuendigung: '2026-03-10', probezeit: 'gesetzlich', ort: 'Zürich', datum: '2026-03-09' };
+for (const [id, d] of Object.entries<Partial<KagAntworten>>({
+  ordentlich: {},
+  'probezeit-freistellung-begruendung': { vertragsbeginn: '2026-01-05', zugangKuendigung: '2026-02-20', probezeit: 'vereinbart', probezeitMonate: 3, freistellung: true, freistellungAb: '2026-02-21', begruendungAufnehmen: true, begruendungText: 'Umstrukturierung der Abteilung.' },
+  'probezeit-letzter-tag': { vertragsbeginn: '2026-01-01', zugangKuendigung: '2026-03-31', probezeit: 'vereinbart', probezeitMonate: 3 },
+  'probezeit-folgetag': { vertragsbeginn: '2026-01-01', zugangKuendigung: '2026-04-01', probezeit: 'vereinbart', probezeitMonate: 3 },
+  'gates-nichtig-sperrfrist': { sperrereignisse: [{ typ: 'krankheit_unfall', von: '2026-03-01', bis: '2026-03-20' }] },
+  'gates-gehemmt-abweichend-vaterschaft': { sperrereignisse: [{ typ: 'krankheit_unfall', von: '2026-04-01', bis: '2026-04-20' }], fristQuelle: 'abweichend', abweichendeFristMonate: 3, abweichendeFristFormGueltig: true, vaterschaftsurlaubResttage: 5 },
+})) f(`vorl:kag-${id}`, () => kag({ ...kagBasis, ...d }));
+const kan = kdgMitGates(kanZusammenstellen, (a: KanAntworten, z) => pruefeKanGates(a, z.engine));
+const kanBasis: KanAntworten = { ...KAN_DEFAULTS, absenderName: 'Beat Beispiel', absenderAdresse: 'Y 2, 8000 Zürich', adressatName: 'Muster AG', adressatAdresse: 'X 1, 8000 Zürich', vertragsbeginn: '2020-01-01', zugangKuendigung: '2026-03-10', probezeit: 'gesetzlich', ort: 'Zürich', datum: '2026-03-09' };
+for (const [id, d] of Object.entries<Partial<KanAntworten>>({
+  ordentlich: {},
+  'probezeit-ohne-zeugnis-abrechnung': { vertragsbeginn: '2026-02-01', zugangKuendigung: '2026-03-15', probezeit: 'vereinbart', probezeitMonate: 2, zeugnisVerlangen: false, schlussabrechnungVerlangen: false },
+  'gates-abweichend-formungueltig': { fristQuelle: 'abweichend', abweichendeFristMonate: 3, abweichendeFristFormGueltig: false, kuendigungsterminMonatsende: false },
+})) f(`vorl:kan-${id}`, () => kan({ ...kanBasis, ...d }));
+f('vorl:kan-gates-blanko-abweichend', () => kan({ ...KAN_DEFAULTS, fristQuelle: 'abweichend' }));
+const kdgKv = (a: KvAntworten) => ({ ...kdgKvZusammenstellen(a), gates: pruefeKvGates(a) });
+const kdgKvBasis: KvAntworten = { ...KV_DEFAULTS, absenderName: 'Anna Muster', absenderAdresse: 'X 1, 4051 Basel', adressatName: 'Beispiel AG', adressatAdresse: 'Y 2, 8000 Zürich', vertragsBezeichnung: 'Fitness-Abonnement', vertragsnummer: 'A-123', zugang: '2026-06-20', ort: 'Basel', datum: '2026-06-15' };
+for (const [id, d] of Object.entries<Partial<KvAntworten>>({
+  generisch: {},
+  'gates-versicherung': { preset: 'versicherung', lebensversicherung: true, krankenzusatz: true, vertragsdauerUeber3Jahre: false, policennummer: 'P-9', aufNaechstmoeglich: false, kuendigungsterminWunsch: '2026-12-31' },
+  'gates-kk-praemie-ausstaende': { preset: 'krankenkasse', kkGrund: 'praemienmitteilung', kkAusstaende: true, kkVersichertennummer: 'V-42' },
+  'gates-kk-ordentlich': { preset: 'krankenkasse', kkGrund: 'ordentlich' },
+  'gates-kk-ordentlich-besondere-form': { preset: 'krankenkasse', kkGrund: 'ordentlich', kkBesondereForm: true },
+  'gates-darlehen': { preset: 'darlehen', aufforderungDatum: '2026-06-01' },
+  'gates-auftrag': { preset: 'auftrag' },
+  'gates-abo-telecom': { preset: 'abo_telecom' },
+})) f(`vorl:kdg-kv-${id}`, () => kdgKv({ ...kdgKvBasis, ...d }));
+const vm = (a: VollmachtAntworten) => ({ ...vollmachtZusammenstellen(a), gates: pruefeVollmachtGates(a) });
+const vmBasis: VollmachtAntworten = { ...VOLLMACHT_DEFAULTS, vorname: 'Anna', nachname: 'Muster', geburtsdatum: '1970-05-04', adresse: 'X 1, 4051 Basel', bevollmaechtigte: [{ name: 'Beat Beispiel', angaben: 'geb. 1975, Y 2, 4051 Basel' }], ort: 'Basel', datum: '2026-06-15' };
+const vmZwei = [{ name: 'Beat Beispiel', angaben: '' }, { name: 'Carla Beispiel', angaben: 'Rechtsanwältin' }];
+for (const [id, d] of Object.entries<Partial<VollmachtAntworten>>({
+  general: {},
+  'gates-anwalt-juristisch-gemeinsam': { typ: 'anwalt', geberTyp: 'juristisch', firma: 'Muster AG', sitz: 'Basel', vertretenDurch: 'Anna Muster, Präsidentin', mandatsgegenstand: 'Muster AG gegen Beispiel GmbH betreffend Forderung', prozessbefugnisse: true, geheimnisentbindung: true, bevollmaechtigte: vmZwei, vertretung: 'gemeinsam', substitution: 'erlaubt', befristetBis: '2027-06-30', fortgeltungTod: true },
+  'gates-spezial-geschaeft-buergschaft': { typ: 'spezial', geschaeft: 'Verkauf der Liegenschaft Y 2, 4051 Basel', bereiche: ['bank', 'immobilien', 'post', 'prozess'], ermaechtigungen: ['grundstuecke', 'vergleich'], buergschaft: true, bevollmaechtigte: vmZwei, vertretung: 'einzeln' },
+  'spezial-nur-bereiche': { typ: 'spezial', bereiche: ['behoerden', 'versicherungen'] },
+})) f(`vorl:vm-${id}`, () => vm({ ...vmBasis, ...d }));
+f('vorl:vm-gates-blanko-spezial', () => vm({ ...VOLLMACHT_DEFAULTS, typ: 'spezial' }));
 
 // ── Schreiben oder Vergleichen ──────────────────────────────────────────────
 // Bug-Check 10.6.2026 (NIEDRIG): fileURLToPath statt .pathname — Letzteres

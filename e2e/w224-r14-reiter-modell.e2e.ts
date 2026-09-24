@@ -27,6 +27,8 @@
 //       Gesetzes-Reiter und lässt 1 statt 2 stehen.
 //   Z2  `layout/Reiterleiste.neuerReiter` auf `neuerLeererReiter()` zurück ⇒
 //       die Aufschrift heisst «Neuer Reiter», nicht «Sammlung».
+//       R15 (24.9.2026) zusätzlich: `neuerReiter` auf `zurSammlung()` zurück
+//       ⇒ das zweite «+» legt keinen zweiten Reiter an.
 //   Z3  in `Reiterleiste.schliessen` das `zurSammlung()` durch `navigate('/')`
 //       ersetzen ⇒ nach dem letzten ✕ steht für einen Frame kein Reiter
 //       (bis R14b zusätzlich sichtbar am Attribut `data-reiter-leer`, das mit
@@ -93,17 +95,27 @@ test('Z1 — aus dem Gesetz auf die Marke: die Sammlung wird aktiv, das Gesetz b
 })
 
 // ═══ Z2 · «+» ÖFFNET DIE SAMMLUNG UND SETZT DEN CURSOR IN DIE SUCHE ═════════
-test('Z2 — «+» öffnet den Sammlungs-Reiter, fokussiert die Suche und legt keinen zweiten an', async ({ page }) => {
+//
+// ── DEKLARIERTE TEST-ÄNDERUNG (§6.3) · R15, Entscheid David 24.9.2026 ───────
+// Die Überschrift darüber bleibt als datierter Beleg (§0 Ziff. 2b). David
+// 24.9.2026: «… wenn man auf plus klickt sich eine neue startseite öffnet und
+// es nicht automatisch in suchen landet»; zur Höchstens-einer-Regel: «nein heb
+// diesen entscheid auf und mach es wie ich es sage». GEWOLLT GEÄNDERT: die
+// Kopf-Suche ist NICHT fokussiert, und ein zweites «+» legt «Sammlung (2)»
+// (`/?r=2`) an. Unverändert: das erste «+» legt genau EINE Sammlung an und
+// macht sie aktiv. Rot-Weg (R15): `neuerReiter` wieder auf `zurSammlung()`
+// ⇒ nach dem zweiten «+» steht `['/']`.
+test('Z2 — «+» öffnet den Sammlungs-Reiter ohne Such-Sprung; ein zweites «+» legt einen zweiten an (R15)', async ({ page }) => {
   await plusKnopf(page).click()
   await expect(page).toHaveURL(/\/$/)
   await expect.poll(() => pfade(page), { timeout: 10_000 }).toEqual(['/'])
   await expect(aktiv(page)).toContainText('Sammlung')
-  await expect(kopfFeld(page)).toBeFocused()
+  await expect(kopfFeld(page)).not.toBeFocused()
 
-  // Höchstens EINE Sammlung (R13-Entscheid, für W2·25 bindend).
-  await page.keyboard.press('Escape')
   await plusKnopf(page).click()
-  expect(await pfade(page)).toEqual(['/'])
+  await expect(page).toHaveURL(/\/\?r=2$/)
+  await expect.poll(() => pfade(page), { timeout: 10_000 }).toEqual(['/', '/?r=2'])
+  await expect(aktiv(page)).toContainText('(2)')
 })
 
 // ═══ Z3 · DER LETZTE ✕ FÜHRT IN DIE SAMMLUNG, NICHT INS NICHTS ══════════════

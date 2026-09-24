@@ -631,6 +631,11 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   je eine Zeile (gekürzt, voller Titel als Tooltip; volle Liste bleibt im Such-Leerzustand). Die Bühne reserviert nur
   noch die Frist-Höhe (Token `start-schnell` 32.25rem / `-eng` 44.5rem, neu gemessen); Verzugszins/Verjährung
   wachsen (löst die U4-Höhenregel «gleich hoch wie Verzugszins» ab). Schnellformen `gap-3` statt `gap-4`.
+- **U10 (Nachtrag David 24.9.2026 abends):** «tabliste soll so funktionieren, dass wenn man auf plus klickt sich
+  eine neue startseite öffnet und es nicht automatisch in suchen landet»; zur Höchstens-einer-Regel (R13/R14,
+  7.9.2026): «nein heb diesen entscheid auf und mach es wie ich es sage» → R15: jedes «+» (Klick, Alt+T,
+  Leerraum, Blatt) legt einen neuen Startseiten-Reiter an (`/`, sonst `naechsteInstanz('/')` → `/?r=2`,
+  «Sammlung (2)»), Fokus auf den neuen Reiter statt in die Kopf-Suche; `lm:suche-fokus` samt Lauscher gestrichen.
 - **U11 (Nachtrag David 24.9.2026 abends):** «bei gesetze soll auf allenen ebenen eine suche möglich sien» →
   Suchfeld auch auf Wahl (alle Erlasse), Gebiete (Bundesrecht) und Kantone (kantonales Recht), `StufenSuche`
   in `start/GesetzeSuche.tsx`: Treffer mit `filtern` und `GruppenInhalt`, Herkunft als Gruppenkopf, 30er-Portion;
@@ -639,6 +644,14 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   «Materialien» nennt beide Gattungen (Teile 1'356 Materialien · 327 Erläuterungen, Zähler-Felder
   `materialienGesetzgebung`/`materialienErlaeuterungen`), Blatt mit Schalter Alle · Materialien · Erläuterungen;
   Zuordnung aus `lib/materialien/gattung.ts` = Leser-Reiter-Regel (§5).
+- **U13 (Nachtrag David 24.9.2026 abends):** «nochmals an der darstellung und den breiten und grössen der startseite
+  arbeiten sodass alles optimal und schön genützt wird» + «es soll nicht zu scrollen kommen wenn man kachel
+  aufmacht» / «also bei gesetz» → Gesetze-Wahl ohne Scroll ab 1280×800 (vorher 577/536 px, nachher 528/528) und
+  offenes Blatt ganz im Fenster (Unterkante 819 → 795 px @1280×800): Feld ab `lg` 16 px unter der Kopfzeile,
+  `start-kachel-breit` 18 → 17.5rem, Blatt ab `lg` Kopfband −8 px, Polster unten 28 → 16 px, Suchfeld 50 → 38 px,
+  Spaltenköpfe `p-4` (Bund-Einheit bricht nicht mehr um). Rechte Spalte bleibt 20rem (Seite ab 1280 auf
+  `max-w-content` gedeckelt). Probe `e2e/startseite-blatt.e2e.ts` «U13» @1440×900/@1280×800. Rechtsprechung,
+  Materialien, Werkzeuge scrollen auf der ersten Stufe weiter im Blatt (Listen, «kein Zwang»).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 

@@ -406,11 +406,54 @@ export function Reiterleiste({ paneSchluessel = [] }: {
    *  DOM — vorher zu fokussieren hiesse, ein Element zu greifen, das gleich
    *  verschwindet. */
   const fokusNach = useRef<string | null>(null);
+  // ── R15 (24.9.2026) · DER WUNSCH GILT BIS ZUR NÄCHSTEN EINGABE ────────────
+  // Bis R15 wurde der Wunsch im ersten Render danach verbraucht. GEMESSEN
+  // (Vite-Dev, @1440 zweimal «+», @390 «Neuer Reiter» im Blatt, Mutation-
+  // Observer + Fokus-Protokoll): der neue Reiter steht in diesem Render noch
+  // nicht im Fenster, und `useReiterFenster` VERSCHIEBT die Reiter-Knoten in
+  // den folgenden Nachzügen bis zum Commit der Navigation (removed/added
+  // derselben Schlüssel) — ein verschobener Knoten verliert den Fokus, er fiel
+  // auf `<body>`. Darum: der ERSTE Zugriff darf den Fokus holen (von «+»,
+  // Blatt-Auslöser, Delete-Reiter); danach wird nur noch nachgefasst, wenn er
+  // wirklich verloren ist (`<body>`), nie gegen ein Ziel, das inzwischen
+  // jemand gewählt hat. Der Wunsch verfällt mit der nächsten Eingabe
+  // (Zeiger/Taste, Capture) oder wenn sein Reiter nicht mehr offen ist.
+  const fokusGeholt = useRef(false);
+  // Der «+»-Weg meldet seinen Wunsch als ZUSTAND, nicht über die Refs: seine
+  // Funktion steckt auch in einer Render-Liste (Leerraum-Menü), und
+  // `react-hooks/refs` wertet jeden Ref-Zugriff darin als Zugriff im Render
+  // (rot gesehen 24.9.2026). Der Effekt unten übernimmt ihn in `fokusNach`;
+  // die Zählung trennt zwei Wünsche mit demselben Ziel (zweimal «/»).
+  const [neuFokus, setNeuFokus] = useState<{ k: string; n: number } | null>(null);
+  const neuGesehen = useRef(0);
   useEffect(() => {
+    const verfallen = () => { fokusNach.current = null; fokusGeholt.current = false; };
+    window.addEventListener('pointerdown', verfallen, true);
+    window.addEventListener('keydown', verfallen, true);
+    return () => {
+      window.removeEventListener('pointerdown', verfallen, true);
+      window.removeEventListener('keydown', verfallen, true);
+    };
+  }, []);
+  useEffect(() => {
+    if (neuFokus && neuFokus.n !== neuGesehen.current) {
+      neuGesehen.current = neuFokus.n;
+      fokusNach.current = neuFokus.k;
+      fokusGeholt.current = false;
+    }
     const k = fokusNach.current;
     if (!k) return;
-    fokusNach.current = null;
-    knopfVon(k)?.focus();
+    if (!ordnung.some((t) => tabSchluessel(t.path) === k)) {
+      fokusNach.current = null;
+      fokusGeholt.current = false;
+      return;
+    }
+    const knopf = knopfVon(k);
+    if (!knopf) return;
+    const a = document.activeElement;
+    if (a === knopf || (fokusGeholt.current && a && a !== document.body)) return;
+    fokusGeholt.current = true;
+    knopf.focus();
   });
 
   const zumReiter = (k: string) => { setFokusWunsch(k); knopfVon(k)?.focus(); };
@@ -434,7 +477,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     if (ev.key === 'Delete') {
       const naechster = sichtbareSchluessel[i + 1] ?? sichtbareSchluessel[i - 1] ?? null;
       ev.preventDefault();
-      fokusNach.current = naechster;
+      fokusNach.current = naechster; fokusGeholt.current = false;
       if (naechster) setFokusWunsch(naechster);
       schliessen(sichtbar[i].path);
       return;
@@ -459,9 +502,29 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // einfach neuer reiter». Die Höchstens-einer-Regel (R13-Entscheid, für W2·25
   // bindend) braucht dafür keinen Sonderfall mehr: `merkeTab` erkennt die
   // bereits offene Sammlung an ihrer Identität und aktiviert sie.
+  //
+  // ── R15 (Entscheid David 24.9.2026) · JEDES «+» IST EIN NEUER REITER ─────
+  // Der Absatz darüber bleibt als datierter Beleg (§0 Ziff. 2b) — er galt bis
+  // `406b435ad`. David 24.9.2026: «tabliste soll so funktionieren, dass wenn
+  // man auf plus klickt sich eine neue startseite öffnet und es nicht
+  // automatisch in suchen landet»; auf den Hinweis, die Höchstens-einer-Regel
+  // stehe dem entgegen: «nein heb diesen entscheid auf und mach es wie ich es
+  // sage». Beides ist damit weg: der Sprung in die Kopf-Suche und die Regel.
+  // Ist die Sammlung «/» noch nicht offen, entsteht sie; sonst die nächste
+  // INSTANZ (`naechsteInstanz('/')` → `/?r=2`, «Sammlung (2)») — derselbe
+  // Rahmen wie «Duplizieren» am Gesetzes-Reiter (§10), kein zweiter Weg.
+  // Gelesen wird der Speicher, nicht `ordnung`: zwei schnelle Klicks im
+  // selben Frame sähen sonst beide denselben Stand (dieselbe Wahl wie der
+  // Rand-Schub, W2·18 Welle 3 Punkt 2). Der Fokus geht auf den neuen Reiter
+  // (Browser-Analogie; A11y: er darf nicht verschwinden) — über `fokusNach`,
+  // denselben Weg wie Delete (gemeldet als Zustand `neuFokus`, s. dort), weil der Knopf erst nach dem Render existiert.
+  // Aufrufer: «+», Alt+T, Leerraum-Doppelklick, Leerraum-Menü, Blatt.
   const neuerReiter = () => {
-    zurSammlung();
-    window.dispatchEvent(new CustomEvent('lm:suche-fokus'));
+    const ziel = ladeTabs().some((t) => tabSchluessel(t.path) === '/') ? naechsteInstanz('/') : '/';
+    merkeTab(ziel);
+    navigate(ziel);
+    setNeuFokus((v) => ({ k: ziel, n: (v?.n ?? 0) + 1 }));
+    setFokusWunsch(ziel);
   };
 
   // ── R13-6 · «ALLE SCHLIESSEN» AN EINER STELLE GERECHNET ───────────────────
