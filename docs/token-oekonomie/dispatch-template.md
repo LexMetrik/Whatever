@@ -91,6 +91,14 @@ zusammengestellt.
   Kopfzeilen, Chipzeilen) schliessen den R8-Sweep e2e/kein-abschnitt.e2e.ts
   ein. Beleg 13.9.2026: #842 (18 R8-Funde @320/390, Sweep nicht in der
   Pruefliste) und #844 (w224-l6-panekopf las «✕» statt Reitertext).
+  Layout-Aenderungen am Gesetzesleser pruefen ALLE Ansichtsmodi: Gesamt,
+  Einzelmodus, Split-Pane, kantonal, Druck, <1024/≥1024 (Beleg #1040,
+  24.9.2026: Blatt-Spur im Einzelmodus erst in der Gegenpruefung gefunden).
+4c RAM SPAREN (Weisung David 24.9.2026, «versuche ram zu sparen»; Absturz
+  23.9.2026 bei zu vielen Parallel-Laeufen). Playwright lokal hoechstens
+  --workers=2; die volle e2e-Suite nur EINMAL am Schluss, dazwischen gezielte
+  Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
+  zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
