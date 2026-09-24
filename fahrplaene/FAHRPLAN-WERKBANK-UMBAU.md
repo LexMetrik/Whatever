@@ -625,6 +625,12 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   nach #1053): Wahl als zwei hohe Spalten Rechner · Vorlagen (`WahlSpalte` geteilt in `BlattBausteine.tsx`),
   darunter Kategorien bzw. Rechtsgebiete mit Anzahl aus `KATALOG_KARTEN`; Stufen `werkzeuge/rechner/<kategorie>`
   und `werkzeuge/vorlagen/<gebiet>`, unbekannte ID → Liste.
+- **U9 (Nachtrag David 24.9.2026 abends):** «zuletzt geöffnet auf startseite soll nicht extra platz einnehmen sonder
+  schnellwerkzeug soll kleiner werden» → die zweite Rasterzeile (leer | Zuletzt) entfällt: «Zuletzt geöffnet» steht in
+  der Spalte unter dem Schnellwerkzeug, in derselben Zeile wie Kacheln + «Häufig gebraucht»; höchstens fünf Einträge,
+  je eine Zeile (gekürzt, voller Titel als Tooltip; volle Liste bleibt im Such-Leerzustand). Die Bühne reserviert nur
+  noch die Frist-Höhe (Token `start-schnell` 32.25rem / `-eng` 44.5rem, neu gemessen); Verzugszins/Verjährung
+  wachsen (löst die U4-Höhenregel «gleich hoch wie Verzugszins» ab). Schnellformen `gap-3` statt `gap-4`.
 - **U11 (Nachtrag David 24.9.2026 abends):** «bei gesetze soll auf allenen ebenen eine suche möglich sien» →
   Suchfeld auch auf Wahl (alle Erlasse), Gebiete (Bundesrecht) und Kantone (kantonales Recht), `StufenSuche`
   in `start/GesetzeSuche.tsx`: Treffer mit `filtern` und `GruppenInhalt`, Herkunft als Gruppenkopf, 30er-Portion;
