@@ -1,5 +1,5 @@
 // Dossier: bibliothek/normen/feiertage-kantone-bj.md · bibliothek/recherche/stillstand-vwvg-bgg.md
-import { parseISO } from 'date-fns';
+import { isValid, parseISO } from 'date-fns';
 import type { Kanton } from '../types/legal';
 import { formatDatum, formatISO } from './datumsUtils';
 import {
@@ -66,7 +66,10 @@ export interface BvFristInput {
 export interface BvFristResult {
   diesAdQuemISO: string;
   diesAdQuem: string;       // dd.MM.yyyy
-  stillstandAktiv: boolean; // Stillstand tatsächlich angewendet (nur Tagesfristen)
+  // RL-15/F3-07: Stillstandsregel ANWENDBAR (Tagesfrist, Art. 22a Abs. 1 VwVG /
+  // Art. 46 Abs. 1 BGG) — true auch, wenn die konkrete Frist keine Periode
+  // berührt (= einheit === 'tage'); sagt nicht, dass eine Periode übersprungen wurde.
+  stillstandAktiv: boolean;
   verschoben: boolean;      // Endverschiebung auf Werktag erfolgt
   normen: string[];         // Norm-Labels (Anzeige)
   annahmen: string[];
@@ -79,6 +82,7 @@ interface RegimeMeta {
   stillstandNorm: string;       // Abs. 1
   ausnahmeNorm: string;         // Abs. 2
   werktagNorm: string;          // Werktagsverschiebung
+  zustellNorm: string;          // Zustellfiktion 7. Tag
   ausnahmen: string[];          // Abs.-2-Katalog
 }
 
@@ -88,6 +92,7 @@ const REGIME: Record<StillstandRegime, RegimeMeta> = {
     stillstandNorm: 'Art. 22a Abs. 1 VwVG',
     ausnahmeNorm: 'Art. 22a Abs. 2 VwVG',
     werktagNorm: 'Art. 20 Abs. 3 VwVG',
+    zustellNorm: 'Art. 20 Abs. 2bis VwVG',
     ausnahmen: [
       'die aufschiebende Wirkung und andere vorsorgliche Massnahmen',
       'die öffentlichen Beschaffungen',
@@ -103,6 +108,7 @@ const REGIME: Record<StillstandRegime, RegimeMeta> = {
     // nicht nur Abs. 1 (die Wohnsitz/Sitz-Aussage steht in Abs. 2). Amtlich
     // verifiziert Fedlex SR 173.110, Konsolidierung 20260401 (§7, 2.7.2026).
     werktagNorm: 'Art. 45 BGG',
+    zustellNorm: 'Art. 44 Abs. 2 BGG',
     ausnahmen: [
       'die aufschiebende Wirkung und andere vorsorgliche Massnahmen',
       'die Wechselbetreibung',
@@ -127,6 +133,11 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
   }
   const meta = REGIME[input.regime];
   const ereignis = parseISO(input.ereignis);
+  // RL-15/F3-08: ungültiges Datum (z.B. 2026-02-30) vorab abweisen — sonst
+  // lief die Tageszählung ins Leere («konvergiert nicht»).
+  if (!isValid(ereignis)) {
+    throw new Error(`Ungültiges Datum des Ereignisses: «${input.ereignis}».`);
+  }
 
   // Geltungsbereich: Stillstand NUR bei «nach Tagen bestimmten» Fristen
   // (Art. 22a Abs. 1 VwVG / Art. 46 Abs. 1 BGG). Sonst keine geschlossene Zeit.
@@ -138,6 +149,10 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
     : fristendeKalender(ereignis, input.einheit, input.laenge, st, false);
 
   const { tag: diesAdQuem, verschoben } = normalisiereEnde(ende, input.kanton, st);
+  // RL-15/A16: nur BGG (Entscheid W-07 (a)), nur Tagesfristen (nur sie ruhen).
+  const stillstandsnaehe = input.regime === 'bgg' && istTage
+    ? bggStillstandsnaeheWarnung(ende, diesAdQuem, input.kanton)
+    : null;
 
   const annahmen: string[] = [];
   const warnungen: string[] = [];
@@ -155,6 +170,7 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
       + `(${meta.werktagNorm}).`,
     );
   }
+  if (stillstandsnaehe) warnungen.push(stillstandsnaehe);
 
   // RL-07/F3-04 (Prüfung Rechtslogik 23.9.2026): «die Partei oder ihr
   // Vertreter» (Art. 45 Abs. 2 BGG; Art. 20 Abs. 3 Satz 2 VwVG) — die
@@ -174,6 +190,47 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
     warnungen,
     ausnahmen: meta.ausnahmen,
   };
+}
+
+// ─── RL-15 · Fristende kurz vor dem BGG-Stillstand (Befund A16) ─────────────
+//
+// Art. 45 Abs. 1 BGG: Ist der letzte Tag Sa/So/Feiertag, endet die Frist «am
+// nächstfolgenden Werktag». Art. 46 Abs. 1 BGG: nach Tagen bestimmte Fristen
+// stehen still. Liegt dieser nächstfolgende Werktag IM Stillstand, schiebt die
+// Engine (Endregel 'ruhen_weiter', geteilt mit der ZPO) das Ende über den
+// Stillstand hinaus auf den Tag nach Periodenende. Das ist die nutzergünstige
+// Lesart; ob das Bundesgericht so rechnet, ist amtlich nicht belegt (Prüfung
+// Rechtslogik 23.9.2026, F3 A16). Entscheid David 23.9.2026: nicht umrechnen,
+// sondern warnen und die sichere Variante nennen — den nächstfolgenden Werktag
+// OHNE Stillstands-Sprung (Art. 45 Abs. 1 wörtlich; Beispiel: 18.3.2026 + 10 T
+// → Tag 10 Sa 28.3., sichere Variante Mo 30.3., Engine Mo 13.4.2026).
+// Die Endregel selbst bleibt unverändert (§1); rein, deterministisch (§2).
+//
+// `rohesEnde` = letzter Tag der Frist vor jeder Endverschiebung (fristendeTage),
+// `diesAdQuem` = Ergebnis der Endverschiebung mit Stillstand.
+export function bggStillstandsnaeheWarnung(rohesEnde: Date, diesAdQuem: Date, kanton: Kanton): string | null {
+  const sicher = normalisiereEnde(rohesEnde, kanton, OHNE_STILLSTAND).tag;
+  if (+sicher === +diesAdQuem) return null;
+  if (stillstandsperiodeFuer(sicher) === null) return null;
+  return `Fristende kurz vor dem Stillstand: Der letzte Tag der Frist (${formatDatum(rohesEnde)}) ist ein `
+    + `Samstag, Sonntag oder Feiertag, und der nächstfolgende Werktag (${formatDatum(sicher)}) liegt bereits `
+    + `im Stillstand nach Art. 46 Abs. 1 BGG. Berechnet ist das Fristende nach dem Stillstand `
+    + `(${formatDatum(diesAdQuem)}). Ob das Bundesgericht so rechnet, ist amtlich nicht belegt; nach dem `
+    + `Wortlaut von Art. 45 Abs. 1 BGG endet die Frist am ${formatDatum(sicher)} – sicherheitshalber bis `
+    + `dann einreichen.`;
+}
+
+/**
+ * RL-15/F3-05: Offenlegungs-Satz Zustellfiktion (UI/Hinweis). Art. 44 Abs. 2 BGG
+ * bzw. Art. 20 Abs. 2bis VwVG (Wortlaut Fedlex, Konsolidierung 1.4.2026 bzw.
+ * 1.7.2022). Bewusst NICHT in `annahmen` (Golden byte-gleich, §6), sondern wie
+ * bvAusnahmenSatz separat in der Anzeige.
+ */
+export function bvZustellfiktionSatz(regime: StillstandRegime): string {
+  const meta = REGIME[regime];
+  return 'Eingeschriebene Sendung nicht sofort entgegengenommen: Die Mitteilung gilt spätestens am '
+    + `siebenten Tag nach dem ersten erfolglosen Zustellungsversuch als erfolgt (${meta.zustellNorm}) – `
+    + 'wer später abholt, gibt diesen Tag als Ereignis ein, nicht den Abholtag.';
 }
 
 /** Offenlegungs-Satz für die Abs.-2-Ausnahmen (UI/Hinweis). */

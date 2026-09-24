@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import type { Kanton } from '../../types/legal';
 import type { ZpoInput, ZpoEinheit, ZpoVerfahren, ZpoFristnatur, ZpoZustellart, ZpoModus, ZpoErgebnis } from '../../types/zpo';
 import { berechneFrist, zustellfiktion } from '../../lib/zpoFristen';
-import { berechneBggVwvgFrist, type BvFristResult } from '../../lib/bggVwvgFristen';
+import { berechneBggVwvgFrist, bvZustellfiktionSatz, type BvFristResult } from '../../lib/bggVwvgFristen';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { zpoPdfCitations, zpoPdfErgebnis } from '../../lib/pdf/zpoPdf';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
@@ -403,7 +403,7 @@ export function ZpoFristenForm({ live }: {
             <p className="lc-overline">Fristende nach BGG (Art. 44–46 BGG)</p>
             <p className="text-h3 font-semibold text-ink-900 num">{bggErgebnis.diesAdQuem} · 24.00 Uhr</p>
             <ul className="text-body-s text-ink-500 leading-relaxed list-disc pl-5 space-y-0.5">
-              {[...bggErgebnis.annahmen, ...bggErgebnis.warnungen, BGG_PRESET_ZPO_FELDER].map((z) => <li key={z}>{z}</li>)}
+              {[...bggErgebnis.annahmen, ...bggErgebnis.warnungen, bvZustellfiktionSatz('bgg'), BGG_PRESET_ZPO_FELDER].map((z) => <li key={z}>{z}</li>)}
             </ul>
             <p className="text-body-s">
               <Link to="/rechner/bgg-fristen" className="font-medium text-brass-700 hover:text-brass-600 no-underline">
