@@ -58,6 +58,12 @@ Belege: `referenz-ci.md` §Merge-Queue.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
   einreihen — nie blind.
+- **Nie pushen, solange der PR in der Queue steht:** erst austragen, dann
+  pushen, dann neu einreihen — sonst läuft die Queue mit dem ALTEN Head
+  weiter und der Push löst keinen PR-Lauf aus (#1021, 23.9.2026).
+- **Folgezweige nach Squash-Landung der Basis:** `git rebase --onto
+  origin/main <alte-basis-sha>` statt mergen — Mergen erzeugt add/add-Konflikte
+  in jeder Datei (Werkbank-START, 23.9.2026).
 - **Kosten:** der `merge_group`-Lauf klassiert den Diff des Eintrags wie der
   PR-Lauf (reine Doku ohne Bau/Browser-Tests, ~1 min; Code voll, ~20+ min).
   Ein übersprungenes «Perf-Budget» zählt in der Queue als erfüllt (gemessen

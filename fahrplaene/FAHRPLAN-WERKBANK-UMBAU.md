@@ -602,6 +602,15 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
   SchweizKarte dunkel, F0.6 Haarlinien K2, `tailwind.config.js`-Reste; Tore `check:sediment`, `check:farbwelt`,
   axe dunkel) · **N2** Leser-Nachlauf (oben).
 
+**Bündelung 24.9.2026 (Auftrag David: «was das Gleiche oder Ähnliches betrifft, auch in diesen Umbau»).**
+13 Posten aus W2·17, W2·18, W2·19, W2·24-C, QS-UI, QS-DOKU-DIAET auf REST/NACHLAUF umgehängt (Scheibe steht
+je im Posten-Rumpf, Zeile «Umgehängt 24.9.2026»); dazu neue Posten aus den Werkbank-Nebenfunden vom 22.9. (N1:
+Titelschrift, Favicon, Reiterstrich-Kontrast) und aus verwaisten Notizen. Damit tragen **W2·24-C,
+W2·19-DESIGN-KONSISTENZ und QS-UI keine Posten mehr** — in S5 wie geplant nach Chronik/Archiv. Ebenfalls S5:
+W2·9 (a) gegenstandslos (R2 24.9.), (b) «aufgehobene Normen ausblenden» als Posten umbuchen, Schritt schliessen;
+Treffer-Landkarte-Posten ohne offene Checkbox schliessen. **Nicht gebündelt** (Risiko-Klasse/Leser-Fläche):
+PERF-REST, Klasse-daten-Posten (QS-KORPUS), Vorlagen-Verhalten aus W2·17, W2·7-VZUI, QS-CODE-*.
+
 ## §6 · Prüfen und Frühsignale
 
 1. **Rot-Beweis (§6.7)** beim Tor: Ausgabe rot *und* grün im PR. Ein Baseline-Eintrag macht es
