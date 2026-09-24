@@ -88,6 +88,23 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // Elementbreite ohnehin auf ein Wort zusammenfiel. Die Auflage «höchstens ein ✕
 // je Kopfzeile» in `./kopfStufen` ist unberührt.
 
+/** Die Streifen-Griffe links («‹ Gliederung ausblenden», D32) und rechts
+ *  («Erlass-Blatt ausblenden ›», Entscheid A 24.9.2026) — EIN Bau für beide
+ *  Spiegelseiten (§10; Knopf-Ratsche `design-r9-knopf-baustein`). */
+function streifenGriff(a: {
+  seite: 'links' | 'rechts'; wort: string; onKlick: () => void;
+  merkmale: Record<string, string | boolean | undefined>;
+}): ReactNode {
+  return (
+    <button type="button" {...a.merkmale} onClick={a.onKlick} title={a.wort}
+      className="lc-leiste-griff gap-1 px-1.5 text-micro">
+      {a.seite === 'links' && <span aria-hidden>‹</span>}
+      <span>{a.wort}</span>
+      {a.seite === 'rechts' && <span aria-hidden>›</span>}
+    </button>
+  );
+}
+
 export function LeserKopf({
   erlass, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, stufe, gliederungKnopf, modus, onModusWahl,
   panelOeffner, suchZone, suchInZeile, tocOffen, onGliederungZu, rechterStreifen, onBlattZu, blattPanelId,
@@ -274,17 +291,14 @@ export function LeserKopf({
               dieselbe Zahl wie das `gap-5` der Lese-Zeile). */}
           {onGliederungZu && (
             <span className="ml-auto shrink-0" style={{ paddingInlineEnd: 'var(--leser-spur-abstand)' }}>
-              <button type="button" data-v3-gliederung-zu onClick={onGliederungZu}
-                aria-expanded={tocOffen} title="Gliederung ausblenden"
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur «ausblenden»
-                    — Wort für Wort dasselbe wie «Seitenleiste ausblenden» der
-                    App-Leiste zwei Zentimeter weiter oben, aber mit anderer
-                    Wirkung. Zwei gleich beschriftete Knöpfe, die Verschiedenes
-                    tun, sind eine Falle (§8). Der Knopf sagt, WAS er
-                    ausblendet. Wortlaut mit dem Umzug unverändert. */}
-                <span aria-hidden>‹</span><span>Gliederung ausblenden</span>
-              </button>
+              {/* Ä12 (Ästhetik-Review 16.8.2026): hier stand nur «ausblenden»
+                  — Wort für Wort dasselbe wie «Seitenleiste ausblenden» der
+                  App-Leiste zwei Zentimeter weiter oben, aber mit anderer
+                  Wirkung. Zwei gleich beschriftete Knöpfe, die Verschiedenes
+                  tun, sind eine Falle (§8). Der Knopf sagt, WAS er
+                  ausblendet. Wortlaut mit dem Umzug unverändert. */}
+              {streifenGriff({ seite: 'links', wort: 'Gliederung ausblenden', onKlick: onGliederungZu,
+                merkmale: { 'data-v3-gliederung-zu': true, 'aria-expanded': tocOffen } })}
             </span>
           )}
         </div>
@@ -323,16 +337,11 @@ export function LeserKopf({
           // linken Kante des Blatts (Spur-Lücke als linkes Polster).
           <div className="flex h-full shrink-0 items-center"
             style={{ width: 'var(--leser-spur-versatz-rechts)', paddingInlineStart: 'var(--leser-spur-abstand)' }}>
-            {onBlattZu && (
-              <button type="button" data-v3-blatt-zu onClick={onBlattZu}
-                // Sonden-Anker und Aussenklick-Ausnahme wie am Kopf-Griff
-                // `./LeserPanelOeffner` — offen ist DIESER der eine Griff.
-                data-v3-panel-zaehler data-v3-panel-oeffner aria-keyshortcuts="r"
-                aria-expanded aria-controls={blattPanelId} title="Erlass-Blatt ausblenden"
-                className="lc-leiste-griff gap-1 px-1.5 text-micro">
-                <span className="whitespace-nowrap">Erlass-Blatt ausblenden</span><span aria-hidden>›</span>
-              </button>
-            )}
+            {onBlattZu && streifenGriff({ seite: 'rechts', wort: 'Erlass-Blatt ausblenden', onKlick: onBlattZu,
+              // Sonden-Anker und Aussenklick-Ausnahme wie am Kopf-Griff
+              // `./LeserPanelOeffner` — offen ist DIESER der eine Griff.
+              merkmale: { 'data-v3-blatt-zu': true, 'data-v3-panel-zaehler': true, 'data-v3-panel-oeffner': true,
+                'aria-keyshortcuts': 'r', 'aria-expanded': true, 'aria-controls': blattPanelId } })}
           </div>
         )}
       </div>
