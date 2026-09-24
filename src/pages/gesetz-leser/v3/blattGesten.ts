@@ -56,7 +56,24 @@ export function useZurueckSchliesst(aktiv: boolean, schliesse: () => void): void
       // Einen Takt später: StrictMode baut den Effekt im Dev sofort wieder auf —
       // dann steht `laeuft` wieder, und der Eintrag bleibt (sonst schlösse das
       // `back()` das eben geöffnete Blatt).
-      if (!perZurueck) setTimeout(() => { if (!laeuft.current && traegtMarke()) window.history.back(); }, 0);
+      //
+      // MIKROTASK, NICHT MAKROTASK (§17-Wurzelfix, Flacker-Befund 24.9.2026):
+      // `setTimeout(…, 0)` gibt die Kontrolle an die Browser-Ereignisschleife ab
+      // — in der Lücke kann bereits eine ECHTE Ganzseiten-Navigation unterwegs
+      // sein (Adresse tippen, externer Link, `page.goto` im Test), die von
+      // diesem Dokument noch gar nichts weiss, weil `window.history.state` bis
+      // zum tatsächlichen Entladen unverändert die MARKE trägt. Der dann
+      // verspätet feuernde `history.back()` konkurriert mit dieser fremden
+      // Navigation um denselben Frame — beobachtet als
+      // `net::ERR_ABORTED` auf `page.goto` in `e2e/leser-v3-panel-nachzug.e2e.ts`
+      // Fall (f): 11/30 rot unter 4× CPU-Drossel (Läufe 35984783583, 36009374111).
+      // `queueMicrotask` schliesst dasselbe Zeitfenster wie `setTimeout(…, 0)`
+      // für den einzigen Fall, den es abfangen muss — Reacts synchronen
+      // StrictMode-Doppelaufruf (cleanup→setup im selben Commit, ohne
+      // Rückkehr zur Ereignisschleife) —, lässt aber keine Makrotask-Lücke für
+      // eine fremde Navigation offen: Mikrotasks laufen restlos VOR der
+      // nächsten Makrotask (jede weitere Nutzer- oder Test-Aktion), nie danach.
+      if (!perZurueck) queueMicrotask(() => { if (!laeuft.current && traegtMarke()) window.history.back(); });
     };
   }, [aktiv]);
 }
