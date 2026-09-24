@@ -134,7 +134,8 @@ const FEIERTAGE: FeiertagDef[] = [
   { art: 'fix', monat: 1, tag: 1, kantone: 'alle', name: 'Neujahr' },
   // LU ergänzt (BJ Ziff. 3 lit. a – Doppelcheck 6.6.2026).
   { art: 'fix', monat: 1, tag: 2, kantone: ['ZH', 'BE', 'LU', 'OW', 'NW', 'GL', 'ZG', 'FR', 'SO', 'SH', 'SG', 'AG', 'TG', 'VD', 'VS', 'JU'], name: 'Berchtoldstag' },
-  // NE: 2.1. nur, wenn der 1.1. ein Sonntag ist (BJ Ziff. 24 Fn. 10).
+  // NE: 2.1. nur, wenn der 1.1. ein Sonntag ist (BJ Ziff. 24 Fn. 10) — zusätzlich
+  // als Schliesstag in Jahren mit amtlicher Liste (NE-Block, LI-CPC Art. 10a).
   { art: 'fix', monat: 1, tag: 2, kantone: ['NE'], name: 'Berchtoldstag', giltImJahr: (j) => wochentag(j, 1, 1) === 0 },
   { art: 'fix', monat: 1, tag: 6, kantone: ['UR', 'SZ', 'TI'], name: 'Heilige Drei Könige' },
   { art: 'fix', monat: 3, tag: 1, kantone: ['NE'], name: 'Instauration de la République' },
@@ -198,6 +199,33 @@ function lundiJeuneFederal(jahr: number): Date {     // VD: Montag nach 3. Sonnt
   return addDays(d, 14 + 1);
 }
 
+// NE-Block — Schliesstage der Kantonsverwaltung (RL-22, R1-04, Entscheid W-10 a).
+// LI-CPC NE Art. 10a (RSN 251.1, in Kraft 1.4.2015, Etat 1.7.2019), Randtitel
+// «Jours fériés (art. 142 CPC)»: «Sont considérés comme fériés dans le canton
+// les jours où les bureaux de l'administration cantonale sont fermés à raison
+// d'au moins une demi-journée.» (Wortlaut laut Zweitprüfung V8, amtlich geöffnet
+// 23.9.2026: https://rsn.ne.ch/DATA/program/books/rsne/pdf/2511.pdf)
+// Die Schliesstage legt der Conseil d'État fest (RDF RSN 152.512: «en sus des
+// jours fériés légaux, les jours désignés par le Conseil d'Etat» — Suchtreffer
+// 24.9.2026, Wortlaut NICHT selbst geöffnet). Eine stehende, jahresunabhängige
+// Regel ist damit NICHT belegt → nur Jahre mit amtlich publizierter Liste
+// werden geführt; für alle anderen Jahre gilt allein RSN 941.02 Art. 3 (oben),
+// also das frühere Fristende (sichere Richtung, kein Raten).
+// 2026: https://www.ne.ch/themes/economie-et-emploi/jours-feries-officiels
+// (laut V8 abgerufen 23.9.2026): 2.1., Ostermontag, Freitag nach Auffahrt,
+// Pfingstmontag, Lundi du Jeûne, 24.12., 26.12., 31.12. — Eigenabruf am
+// 24.9.2026 durch Netzsperre verhindert; Gegenprüfung muss die Liste amtlich
+// bestätigen. Neue Jahre nur mit amtlichem Beleg ergänzen (Pflegebedarf,
+// bibliothek/normen/feiertage-kantone-bj.md).
+const NE_SCHLIESSTAGE: Readonly<Record<number, ReadonlyArray<readonly [monat: number, tag: number]>>> = {
+  2026: [[1, 2], [4, 6], [5, 15], [5, 25], [9, 21], [12, 24], [12, 26], [12, 31]],
+};
+
+function istNeSchliesstag(date: Date): boolean {
+  const liste = NE_SCHLIESSTAGE[date.getFullYear()];
+  return liste !== undefined && liste.some(([m, t]) => date.getMonth() === m - 1 && date.getDate() === t);
+}
+
 function giltImKanton(kantone: 'alle' | Kanton[], kanton: Kanton): boolean {
   return kantone === 'alle' || kantone.includes(kanton);
 }
@@ -220,6 +248,7 @@ export function istFeiertag(date: Date, kanton: Kanton): boolean {
   if (kanton === 'GL' && sameDay(naefelserFahrt(jahr), date)) return true;
   if (kanton === 'GE' && sameDay(jeuneGenevois(jahr), date)) return true;
   if (kanton === 'VD' && sameDay(lundiJeuneFederal(jahr), date)) return true;
+  if (kanton === 'NE' && istNeSchliesstag(date)) return true;
   return false;
 }
 

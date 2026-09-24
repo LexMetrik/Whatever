@@ -116,6 +116,7 @@ siehe Spalte «RL-22».
 | BS | RLG § 2 (SG 811.100) | 1.7.2020 | deckungsgleich | Snapshot `BS-811.100.json` (abgerufen 23.6.2026) |
 | AG · OW · ZG · VS · NW · BE | EG ZPO § 21 (SAR 221.200) · GOG Art. 28 Abs. 2 (GDB 134.1) · GOG § 10 (BGS 161.1) · RPflG Art. 37 (SGS 173.1) · GerG Art. 69 (**NG 261.1**, nicht «262.1», R1-09) · FRG Art. 2 (BSG 555.1) | s. R1/V8 | deckungsgleich | Beleg R1/V8 |
 | SG · SH · GL (2.1.) | sGS 143.11 Art. 59 Abs. 1 + KG SG FS.2012.1 · SHR 180.111 § 33 Abs. 1 + OGE 40/2018/1/K · GS II A/6/2 Art. 19 Abs. 2 lit. a (GL ohne Gerichtspraxis) | 1.1.2026 / 1.1.2026 / 1.7.2026 | 2.1. bleibt (R1-01 durch V8 widerlegt); GL-Hinweis folgt RL-23 (W-11) | Beleg V8 |
+| NE | LI-CPC Art. 10a (RSN 251.1) https://rsn.ne.ch/DATA/program/books/rsne/pdf/2511.pdf — Schliesstage der Kantonsverwaltung (mind. halbtags) = Feiertag für Art. 142 ZPO | Etat 1.7.2019 (in Kraft 1.4.2015) | **neu geführt** je Jahr mit amtlicher Liste (`NE_SCHLIESSTAGE`): 2026 = 2.1., Ostermontag, Fr n. Auffahrt, Pfingstmontag, Lundi du Jeûne, 24.12., 26.12., 31.12. (ne.ch «Jours fériés officiels»); andere Jahre nur RSN 941.02 Art. 3 (W-10 a) | Beleg V8; Eigenabruf 24.9.2026 durch Netzsperre verhindert |
 | BL | GOG § 46 Abs. 2 (SGS 170) — Schliesstage | 1.1.2020 | **nicht geführt**, nur Hinweis (W-10; Geltung für ZPO offen) | Beleg V8 |
 | VD | LVLP Art. 73 Abs. 2 (BLV 280.05) — nur SchKG | 1.1.2018 | **nicht geführt**, nur Hinweis (W-10) | Beleg V8 (via LexFind) |
 
@@ -130,6 +131,14 @@ siehe Spalte «RL-22».
   Katalog), Abweichung offengelegt.
 - Kein datierter Parameter (keine Verfallsregister-Pflicht), aber bei jeder
   neuen BJ-Publikation: Matrix neu abgleichen.
+- **NE-Schliesstage (RL-22):** jährlich. Die Tage legt der Conseil d'État fest
+  (RDF RSN 152.512, «jours désignés par le Conseil d'Etat» — Wortlaut noch
+  amtlich zu öffnen). Eine stehende Regel ist nicht belegt; darum führt der Code
+  nur Jahre mit amtlich publizierter Liste. Für 2027 ff. die Liste auf
+  https://www.ne.ch/themes/economie-et-emploi/jours-feries-officiels abrufen
+  und `NE_SCHLIESSTAGE` + Gegenprobe-Ausnahme (`feiertage-gegenprobe.test.ts`)
+  ergänzen — sonst zeigt LexMetrik in NE ein zu frühes Fristende (sichere
+  Richtung).
 
 ## Quellen
 
