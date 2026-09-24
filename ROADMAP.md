@@ -97,12 +97,12 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      nachfüllen, wenn der Kopf erledigt ist. Der gestrichene Schwanz steht im Wortlaut in
      ROADMAP-CHRONIK.md (Umschichtung 20.9.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·30-RL-W2A`** (Rechtslogik Welle 2a, Fristen), danach
-> `W2·29-WERKBANK-REST` (Werkbank-Umbau Rest und Rückbau), dann Phase 1 Bund: `W2·27-BUND-FERTIG` →
-> `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue` nachgeführt 24.9.2026 auf die laufenden Go-Stränge:
-> Werkbank 22.9., Rechtslogik parallel 24.9.; Bund Phase 1 folgt dahinter; David hat Veto.** Steht
-> `W2·30-RL-W2A` auf `wip`, rückt `W2·29-WERKBANK-REST` an die Spitze — Marker dann nachziehen
-> (Regel 8.4). Bisheriger Marker und Queue-Schwanz im Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 2026-09-24 (1).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·29-WERKBANK-REST`** (Werkbank-Umbau Rest und Rückbau) — nach
+> Regel 8.4 nachgezogen 25.9.2026, weil `W2·30-RL-W2A` (Rechtslogik Welle 2a) seit #1073 auf `wip`
+> steht; dann Phase 1 Bund: `W2·27-BUND-FERTIG` → `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
+> nachgeführt 24.9.2026 auf die laufenden Go-Stränge: Werkbank 22.9., Rechtslogik parallel 24.9.;
+> Bund Phase 1 folgt dahinter; David hat Veto.** Bisheriger Marker und Queue-Schwanz im Wortlaut:
+> ROADMAP-CHRONIK.md, Umschichtung 2026-09-24 (1).
 > **Phasen-Dekret 14.9.2026 (David):** «erst das fundament fertig bauen und vps erst danach» ·
 > «der erste schritt sollte sein den gesetzesleser und die struktur der daten die wir darstellen zu
 > optimieren» · «grundsätzlich würde ich zuerst mit dem bund beginnen». Das Zielbild-Dekret
