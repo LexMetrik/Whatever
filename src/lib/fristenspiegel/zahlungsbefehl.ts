@@ -1,5 +1,8 @@
+import { addDays, parseISO } from 'date-fns';
 import { berechneSchkgFrist } from '../schkgFristen';
 import { PRESETS_SCHKG } from '../schkgPresets';
+import { normalisiereEnde, OHNE_STILLSTAND } from '../fristenEngine';
+import { formatDatum, formatISO } from '../datumsUtils';
 import type { Kanton } from '../../types/legal';
 import type { FristenspiegelErgebnis, SpiegelZeile } from './typen';
 
@@ -39,6 +42,23 @@ export function berechneZahlungsbefehlsSpiegel(input: ZahlungsbefehlSpiegelInput
     modus: fb.modus, fristnatur: 'verwirkung', kanton: input.kanton, ausloeser: fb.ausloeser,
   });
 
+  // RL-17 / Befund R1-07 (Prüfung Rechtslogik 23.9.2026, deklarierte fachliche
+  // Änderung): Das Fortsetzungsbegehren setzt voraus, dass die Betreibung
+  // «nicht durch Rechtsvorschlag … eingestellt» ist (Art. 88 Abs. 1 SchKG,
+  // SR 281.1, Fassung 1.1.2026) — also den unbenutzten Ablauf der
+  // Rechtsvorschlagsfrist. Endet diese wegen Art. 63 SchKG nach der Wartefrist
+  // (ZB 10.12.2026, ZH: RV bis 06.01.2027, Wartefrist-Folgetag 31.12.2026),
+  // ist frühestens der Tag NACH dem RV-Ende zulässig (07.01.2027). Vorher wies
+  // der Spiegel das RV-Ende selbst aus (06.01.2027 — an dem Tag kann der
+  // Schuldner noch Rechtsvorschlag erheben). Der Folgetag wird wie der
+  // Wartefrist-Folgetag auf den nächsten Werktag gelegt (Art. 31 SchKG i.V.m.
+  // Art. 142 Abs. 3 ZPO); Art. 63 verlängert ihn nicht (Engine, RL-17/F2-08).
+  // Richtungssicher: ausgewiesen wird der spätere der beiden Tage.
+  const nachRv = normalisiereEnde(addDays(parseISO(rvErg.diesAdQuemISO), 1), input.kanton, OHNE_STILLSTAND).tag;
+  const rvBestimmt = formatISO(nachRv) > fbWarte.diesAdQuemISO;
+  const warteISO = rvBestimmt ? formatISO(nachRv) : fbWarte.diesAdQuemISO;
+  const warteText = rvBestimmt ? formatDatum(nachRv) : fbWarte.diesAdQuem;
+
   const zeilen: SpiegelZeile[] = [
     {
       key: 'rechtsvorschlag',
@@ -56,10 +76,12 @@ export function berechneZahlungsbefehlsSpiegel(input: ZahlungsbefehlSpiegelInput
       normRef: 'Art. 88 Abs. 1 SchKG',
       fristnatur: 'wartefrist',
       status: 'bedingt',
-      endeText: fbWarte.diesAdQuem,
-      endeISO: fbWarte.diesAdQuemISO,
+      endeText: warteText,
+      endeISO: warteISO,
       endePraefix: 'frühestens ab',
-      bedingung: 'Nur ohne Rechtsvorschlag bzw. nach dessen Beseitigung — vor Ablauf von 20 Tagen unzulässig (Art. 88 Abs. 1 SchKG).',
+      bedingung: rvBestimmt
+        ? `Nur ohne Rechtsvorschlag bzw. nach dessen Beseitigung (Art. 88 Abs. 1 SchKG). Nach der 20-Tage-Wartefrist wäre das Begehren ab ${fbWarte.diesAdQuem} zulässig; die Rechtsvorschlagsfrist endet wegen der Betreibungsferien aber erst am ${rvErg.diesAdQuem} (Art. 63 SchKG) — ausgewiesen ist der Werktag danach.`
+        : 'Nur ohne Rechtsvorschlag bzw. nach dessen Beseitigung — vor Ablauf von 20 Tagen unzulässig (Art. 88 Abs. 1 SchKG).',
     },
     {
       key: 'fortsetzung_verwirkung',

@@ -7,10 +7,16 @@ import type { SchkgModus, SchkgFristnatur, SchkgEinheit, SchkgFristSpec } from '
 // Rechtsnatur, auslösendes Ereignis und – wo das Gesetz «frühestens X /
 // spätestens Y» kennt – eine Warte- UND eine Verwirkungsfrist (dual).
 //
-// VERIFY: Artikel, Absätze und Fristlängen sind aus dem redaktionellen Konzept
-// übernommen und vor Produktivschaltung gegen Fedlex SR 281.1 zu prüfen.
-// `verweise` referenzieren Schlüssel des zentralen Verifikations-Registers
-// (src/data/verifikation.ts); alle dortigen Einträge tragen verifiziert:false.
+// PRÜFSTAND (RL-17 / Befund F2-09, ersetzt den alten «VERIFY vor
+// Produktivschaltung»-Vermerk): Die Fristlängen der 33 berechenbaren Presets
+// (Einzel- und Dualfristen) stimmen mit dem Normtext von SR 281.1, Fassung
+// 1.1.2026 (Fedlex, eli/cc/11/529_488_529/20260101), überein — Stichprobe
+// Prüfung Rechtslogik 23.9.2026 (F2) und Skript-Abgleich 24.9.2026 (RL-17,
+// vite-node gegen die amtliche XML-Kopie). Nicht mitgeprüft: die 10 Tage von
+// `beschwerde_bger` (Art. 100 BGG, anderer Erlass). Stillstand-Regime und
+// Rechtsnatur sind je Preset mit Einzelbeleg kommentiert. Die fachliche
+// Abnahme (§7) steht aus: `verweise` referenzieren das Verifikations-Register
+// (src/data/verifikation.ts), dessen Einträge verifiziert:false tragen.
 
 export type SchkgPhase =
   | 'einleitung'
@@ -41,6 +47,11 @@ export type SchkgPreset = {
   fristnatur: SchkgFristnatur;
   ausloeser: string;
   hemmungMoeglich?: boolean;   // Art. 88 Abs. 2 / Art. 166 Abs. 2
+  // RL-17 / W-09: Schalter «Angefochten ist eine Betreibungshandlung». `modus`
+  // ist die Voreinstellung «nein»; bei «ja» gilt dieses Regime (Art. 63 SchKG
+  // setzt eine Betreibungshandlung i.S.v. Art. 56 SchKG voraus, BGE 149 III 179
+  // E. 4.1). Nur bei Presets gesetzt, deren Gegenstand beides sein kann.
+  modusBeiBetreibungshandlung?: SchkgModus;
   hinweis?: string;
   verweise?: string[];
 };
@@ -171,8 +182,21 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
     hinweis: 'Die Auflage des Kollokationsplans ist keine Betreibungshandlung → ZPO-Gerichtsferien (Art. 145 ZPO), nicht Art. 63 SchKG.', verweise: ['BGE_149_III_179'] },
   { key: 'kollokationsklage_pfaendung', phase: 'konkurs', label: 'Kollokationsklage Pfändung – 20 Tage', norm: 'Art. 148 SchKG',
     einheit: 'tage', laenge: 20, modus: 'zpo_stillstand', fristnatur: 'klagefrist', ausloeser: 'Zustellung Kollokationsverfügung' },
+  // RL-17 / Befund F2-02 (Prüfung Rechtslogik 23.9.2026, deklarierte fachliche
+  // Änderung): vorher modus 'schkg_betreibungsferien' → Art. 63 SchKG
+  // eingerechnet (Versammlung 10.7.2026, ZH: 05.08. statt 15.07.2026). Art. 239
+  // Abs. 1 SchKG (SR 281.1, Fassung 1.1.2026) richtet die Beschwerde gegen
+  // «Beschlüsse der Gläubigerversammlung» — eines Konkursorgans. BGE 149 III 179
+  // E. 4.1: «Handlungen der Konkursorgane stellen keine Betreibungshandlungen im
+  // Sinne von Art. 56 SchKG dar, womit die Vorschriften von Art. 56 und 63 SchKG
+  // im Konkurs nicht anwendbar sind» (mit Hinweis auf BGE 114 III 60 E. 2b,
+  // 96 III 74 E. 1, 88 III 28 E. 1; gelesen in der Korpus-Kopie
+  // public/rechtsprechung/bund/bge/149_III_179.json). Darum — abweichend vom
+  // Entscheid W-09, der für Art. 17 UND 239 einen Schalter vorsah (§7
+  // offengelegt) — hier KEIN Schalter: die Antwort «ja» käme im Konkurs nicht vor.
   { key: 'anfechtung_glaeubigerversammlung', phase: 'konkurs', label: 'Anfechtung erste Gläubigerversammlung – 5 Tage', norm: 'Art. 239 Abs. 1 SchKG',
-    einheit: 'tage', laenge: 5, modus: 'schkg_betreibungsferien', fristnatur: 'beschwerdefrist', ausloeser: 'Gläubigerversammlung' },
+    einheit: 'tage', laenge: 5, modus: 'kein', fristnatur: 'beschwerdefrist', ausloeser: 'Gläubigerversammlung',
+    hinweis: 'Beschlüsse der Gläubigerversammlung sind Handlungen eines Konkursorgans, keine Betreibungshandlungen → keine Verlängerung nach Art. 63 SchKG, auch nicht in den Betreibungsferien (BGE 149 III 179 E. 4.1). Der ZPO-Stillstand gilt für die Beschwerde an die Aufsichtsbehörde nicht (Art. 145 Abs. 4 Satz 2 ZPO).', verweise: ['BGE_149_III_179'] },
 
   // ── Nachlass ──
   { key: 'nachlass_provisorisch', phase: 'nachlass', label: 'Provisorische Nachlassstundung – max. 4 (+4) Monate', norm: 'Art. 293a SchKG',
@@ -186,12 +210,28 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
     hinweis: 'Vom Sachwalter angesetzte Frist.' },
 
   // ── Arrest ──
+  // RL-17 / Befund R5-03 (tief, V14 bestätigt): Die Frist läuft nach Art. 278
+  // Abs. 1 SchKG (SR 281.1, Fassung 1.1.2026) ab Kenntnis der Arrestanordnung,
+  // nicht ab Zustellung der Arresturkunde (für den Schuldner fällt beides meist
+  // zusammen, für betroffene Dritte nicht). Default-Regime Art. 56 ff. SchKG ist
+  // für das Recht bis 2024 kantonal belegt (V14: ZH OG PS110160 E. III.2, ZG OG
+  // BZ 2021 76 E. 2.3); OFFEN ist, ob die Einsprache seit 1.1.2025 als «Klage
+  // … vor einem Gericht» unter Art. 56 Abs. 2 SchKG fällt (dann ausschliesslich
+  // ZPO, summarisch → kein Stillstand, früheres Ende) — §8-Offenlegung im
+  // Hinweis, Default unverändert (Produktentscheid, kein Rechtsbeleg).
   { key: 'arresteinsprache', phase: 'arrest', label: 'Arresteinsprache – 10 Tage', norm: 'Art. 278 Abs. 1 SchKG',
-    einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', modusUmstritten: true, fristnatur: 'frist', ausloeser: 'Zustellung Arresturkunde',
-    hinweis: 'Betreibungsrechtliche Summarsache (Art. 251 ZPO) – Stillstand-Regime in Lehre/Rechtsprechung umstritten (Default Art. 56 ff. SchKG, manueller Override möglich). Nur Einsprache nötig; Begründung kann nachgereicht werden.', verweise: ['BGer_5A_545_2017'] },
-  { key: 'arrestprosekution', phase: 'arrest', label: 'Arrestprosekution – Betreibung einleiten – 10 Tage', norm: 'Art. 279 Abs. 1 SchKG',
+    einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', modusUmstritten: true, fristnatur: 'frist', ausloeser: 'Kenntnis der Arrestanordnung',
+    hinweis: 'Frist ab Kenntnis der Arrestanordnung (Art. 278 Abs. 1 SchKG) — für Dritte nicht zwingend die Zustellung der Arresturkunde. Betreibungsrechtliche Summarsache (Art. 251 ZPO): Voreinstellung Betreibungsferien mit Verlängerung nach Art. 63 SchKG (kantonale Praxis zum Recht bis 2024). Offen ist, ob die Einsprache seit 1.1.2025 als Klage vor Gericht unter Art. 56 Abs. 2 SchKG fällt — dann gilt ausschliesslich die ZPO, im summarischen Verfahren ohne Stillstand (Art. 145 Abs. 2 lit. b ZPO), und die Frist endet früher. Sicherer Weg: Override «Kein Stillstand». Nur Einsprache nötig; Begründung kann nachgereicht werden.', verweise: ['BGer_5A_545_2017'] },
+  // RL-17 / Befund R5-02 (V14): Art. 279 Abs. 1 SchKG kennt zwei Wege — Betreibung
+  // einleiten ODER Klage einreichen. Dieses Preset ist der Betreibungsweg: Das
+  // Betreibungsbegehren ist keine Klage vor Gericht, Art. 56/63 SchKG gelten;
+  // der Vorbehalt «Arrestverfahren» in Art. 56 erfasst nur Anordnung und Vollzug
+  // (BGE 96 III 46 E. 2, nach Prüfbericht V14 vom 23.9.2026 — hier nicht selbst
+  // nachgelesen, bger.ch nicht erreichbar). Der Klageweg folgt seit 1.1.2025
+  // ausschliesslich der ZPO (Art. 56 Abs. 2 SchKG) → ZPO-Preset 'arrestprosekution'.
+  { key: 'arrestprosekution', phase: 'arrest', label: 'Arrestprosekution durch Betreibungsbegehren – 10 Tage', norm: 'Art. 279 Abs. 1 SchKG',
     einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', fristnatur: 'verwirkung', ausloeser: 'Zustellung Arresturkunde',
-    hinweis: '«Einleitung» = Stellung des Betreibungsbegehrens. Arrest fällt sonst dahin (Art. 280 SchKG); Stillstand während Einspracheverfahren (Art. 278 Abs. 5).', verweise: ['BGer_5A_288_2012'] },
+    hinweis: 'Betreibungsweg: «Einleitung» = Stellung des Betreibungsbegehrens. Betreibungsferien und Art. 63 SchKG gelten — der Vorbehalt «Arrestverfahren» (Art. 56 SchKG) betrifft nur Anordnung und Vollzug des Arrests (BGE 96 III 46 E. 2). Arrest fällt sonst dahin (Art. 280 SchKG); Stillstand während Einspracheverfahren (Art. 278 Abs. 5). Wer den Arrest stattdessen durch Klage prosequiert, rechnet nach der ZPO (Art. 56 Abs. 2 SchKG) — ZPO-Fristenrechner, Vorlage «Arrestprosekution durch Klage».', verweise: ['BGer_5A_288_2012'] },
 
   // ── Anfechtung (Pauliana) ──
   // Bug-Check 10.6.2026 (HOCH, deklarierte fachliche Änderung): Art. 292 SchKG
@@ -204,9 +244,22 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
     hinweis: 'VERJÄHRUNGSfrist (seit 1.1.2020 drei Jahre) – kein Gerichtsferien-Stillstand; Hemmung/Unterbrechung nur nach Art. 134 f. OR. Verdachtsperioden materiell: 1 Jahr (Art. 286/287), 5 Jahre (Art. 288).' },
 
   // ── Rechtsbehelfe / Rechtsmittel ──
+  // RL-17 / Befund F2-02 + Entscheid David W-09 (24.9.2026, deklarierte
+  // fachliche Änderung): vorher immer modus 'schkg_betreibungsferien' (Kenntnis
+  // 10.7.2026, ZH: 05.08.2026). Art. 63 SchKG setzt eine Betreibungshandlung
+  // i.S.v. Art. 56 SchKG voraus (BGE 149 III 179 E. 4.1 mit Hinweisen; BGer
+  // 5A_730/2023 E. 3.2–3.4 «konstante Praxis»). Jetzt Voreinstellung «nein»
+  // → modus 'kein' (20.07.2026, die frühere = sichere Seite); Schalter «ja»
+  // → 'schkg_betreibungsferien' (05.08.2026).
+  // Anker Q-8 (A-N5 widerlegt): Art. 145 Abs. 4 ZPO lautet seit 1.1.2025 (AS 2023
+  // 491; SR 272, Fassung 1.7.2026, Fedlex eli/cc/2010/262/20260701) in Satz 2:
+  // «Sie sind für die Beschwerde vor der Aufsichtsbehörde nicht anwendbar.» Er
+  // ist geltendes Recht und nicht durch Art. 56 Abs. 2 SchKG abgelöst; dieser
+  // (ebenfalls seit 1.1.2025) regelt nur die Klagen vor Gericht. Für die
+  // Aufsichtsbeschwerde ist Art. 145 Abs. 4 Satz 2 ZPO der geltende Anker.
   { key: 'beschwerde_aufsicht', phase: 'rechtsmittel', label: 'Beschwerde an Aufsichtsbehörde – 10 Tage', norm: 'Art. 17 Abs. 2 SchKG',
-    einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', fristnatur: 'beschwerdefrist', ausloeser: 'Kenntnis der Verfügung',
-    hinweis: 'Aufsichtsbeschwerde: ZPO-Stillstand gilt NICHT (Art. 145 Abs. 4 Satz 2 ZPO); Art. 63 SchKG nur, wenn eine Betreibungshandlung angefochten wird. Rechtsverweigerung/-verzögerung jederzeit (Art. 17 Abs. 3).', verweise: ['BGE_141_III_170'] },
+    einheit: 'tage', laenge: 10, modus: 'kein', modusBeiBetreibungshandlung: 'schkg_betreibungsferien', fristnatur: 'beschwerdefrist', ausloeser: 'Kenntnis der Verfügung',
+    hinweis: 'Aufsichtsbeschwerde: Der ZPO-Stillstand gilt nicht (Art. 145 Abs. 4 Satz 2 ZPO). Die Verlängerung nach Art. 63 SchKG (bis zum 3. Werktag nach den Betreibungsferien) gilt nur, wenn die angefochtene Verfügung eine Betreibungshandlung ist (BGE 149 III 179 E. 4.1; BGer 5A_730/2023 E. 3.2) — Schalter unten; die Voreinstellung «nein» ergibt das frühere, sichere Datum. Rechtsverweigerung/-verzögerung jederzeit (Art. 17 Abs. 3).', verweise: ['BGE_141_III_170', 'BGE_149_III_179', 'BGer_5A_730_2023'] },
   // RL-05 / Befund F2-01 (Prüfung Rechtslogik 23.9.2026, deklarierte fachliche
   // Änderung): vorher modus 'schkg_betreibungsferien' → Art.-63-Verlängerung
   // eingerechnet (Eröffnung 10.7.2026 ZH: 05.08. statt 20.07.2026). Art. 63

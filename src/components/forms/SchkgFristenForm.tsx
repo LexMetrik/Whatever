@@ -207,12 +207,20 @@ export function SchkgFristenForm({ live }: {
   // der Engine-Input — strukturell statt per Auge (aktiverOverride oben).
   const effektivesRegime = aktiverOverride ?? form.modus;
 
+  // RL-17 / W-09: Schalter «Angefochten ist eine Betreibungshandlung». Kein
+  // eigener State — der Schalter IST das Regime des Presets (`modus` = «nein»,
+  // `modusBeiBetreibungshandlung` = «ja»); Permalink und PDF tragen ihn so über
+  // das Stillstand-Regime mit, ohne zweite Quelle.
+  const bhModus = aktiv?.modusBeiBetreibungshandlung;
+  const bhJa = bhModus !== undefined && form.modus === bhModus;
+
   const eingaben: Record<string, string> = {
     'Auslösendes Ereignis': form.ereignis,
     'Auslöser': form.ausloeser,
     'Stillstand-Regime': MODI.find((m) => m.code === effektivesRegime)?.label ?? form.modus,
     'Kanton': form.kanton,
     ...(istDual ? {} : { 'Frist': `${form.laenge} ${form.einheit}`, 'Rechtsnatur': form.fristnatur }),
+    ...(bhModus !== undefined ? { 'Angefochten ist eine Betreibungshandlung': bhJa ? 'ja' : 'nein' } : {}),
   };
 
   // FAHRPLAN-PRAXIS 1.2: Mandats-Referenz für den PDF-Kopf (optional).
@@ -327,6 +335,14 @@ export function SchkgFristenForm({ live }: {
           </Field>
         )}
       </div>
+
+      {/* RL-17 / W-09: nur bei Presets, deren Gegenstand eine Betreibungshandlung
+          sein kann (Art. 17 SchKG); Voreinstellung «nein» (Preset-Regime). */}
+      {aktiv && bhModus !== undefined && (
+        <Checkbox checked={bhJa} onChange={(v) => set('modus', v ? bhModus : aktiv.modus)}
+          label="Angefochten ist eine Betreibungshandlung (Art. 56 SchKG)"
+          hint="Nur bei einer Betreibungshandlung verlängert Art. 63 SchKG eine Frist, deren Ende in die Betreibungsferien fällt (BGE 149 III 179 E. 4.1). Voreinstellung «nein» ergibt das frühere, sichere Datum." />
+      )}
 
       {/* Optionale Sonderlogik */}
       {(aktiv?.hemmungMoeglich || !aktiv) && (

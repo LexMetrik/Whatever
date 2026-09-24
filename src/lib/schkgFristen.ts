@@ -327,10 +327,28 @@ function berechneLesart(
     : normalisiereEnde(endeProvisorisch, input.kanton, st);
   // Frühestes zulässiges Datum (Begründung bei Schritt 4 unten); schon hier
   // berechnet, weil es der Hauptwert dieser Lesart ist (diesAdQuem).
+  // RL-17 / Befunde F2-08, R1-07 (Prüfung Rechtslogik 23.9.2026, deklarierte
+  // fachliche Änderung): Art. 63 SchKG (SR 281.1, Fassung 1.1.2026) verlängert
+  // «das Ende einer Frist», das «für den Schuldner, den Gläubiger oder den
+  // Dritten» in die Betreibungsferien oder den Rechtsstillstand fällt — eine
+  // Handlungsfrist. Eine Wartefrist (Art. 88 Abs. 1, 116 Abs. 1, 154 Abs. 1,
+  // 166 Abs. 1 SchKG: «frühestens …») verpflichtet niemanden zu handeln; ihr
+  // Ablauf wird nicht verlängert. Das Begehren des Gläubigers ist keine
+  // Betreibungshandlung und darf in den Ferien gestellt werden; gesperrt ist
+  // nur die Betreibungshandlung des Amtes (Art. 56 Abs. 1 SchKG), die danach
+  // folgt. Vorher schob die Art.-63-Endregel den frühesten Tag hinaus (ZB
+  // 10.7.2026, 20 Tage: 05.08. statt 31.07.2026). Bleibt: Werktagsregel für den
+  // frühesten Handlungstag (Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO, s. u.).
+  // Rechtsprechung zur Wartefrist in den Ferien: nicht gefunden (Wortlaut-
+  // Auslegung, offen für die Gegenprüfung). Die Rechtsvorschlagsfrist kann
+  // wegen Art. 63 später enden — das verknüpft der Fristenspiegel (R1-07).
+  const stWartefrist = modus === 'schkg_betreibungsferien' ? OHNE_STILLSTAND : st;
   const folgetag = istWartefrist ? addDays(diesAdQuem, 1) : diesAdQuem;
   const massgeblich = istWartefrist
-    ? normalisiereEnde(folgetag, input.kanton, st).tag
+    ? normalisiereEnde(folgetag, input.kanton, stWartefrist).tag
     : diesAdQuem;
+  const warteInGeschlossenerZeit =
+    istWartefrist && modus === 'schkg_betreibungsferien' ? st.periodeFuer(massgeblich) : null;
   rechenweg.push({
     beschreibung: istWartefrist
       ? 'Schritt 3 – Ablauf der Wartefrist (keine Werktagsverschiebung, Art. 142 Abs. 3 ZPO)'
@@ -435,6 +453,20 @@ function berechneLesart(
         : `Die Wartefrist läuft am ${fmt(diesAdQuem)} um 24.00 Uhr ab – die Handlung ist frühestens am Folgetag, ${fmt(massgeblich)}, zulässig.`,
       normen: [N_31, N_142_3],
     });
+  }
+  if (warteInGeschlossenerZeit) {
+    rechenweg.push({
+      beschreibung: 'Schritt 4a – Wartefrist und Betreibungsferien',
+      zwischenergebnis:
+        `Der früheste Tag ${fmt(massgeblich)} liegt in den Betreibungsferien bzw. im Rechtsstillstand (bis ${fmt(warteInGeschlossenerZeit.bis)}). ` +
+        'Art. 63 SchKG verlängert nur das Ende einer Frist, innert der jemand handeln muss — die Wartefrist wird nicht hinausgeschoben. ' +
+        'Das Begehren kann gestellt werden; die darauf folgende Betreibungshandlung des Amtes ist erst nach der geschlossenen Zeit zulässig (Art. 56 Abs. 1 SchKG).',
+      normen: [N_63, N_56_1],
+    });
+    warnungen.push(
+      `Wartefrist in den Betreibungsferien: Art. 63 SchKG verlängert keine Wartefrist — das Begehren ist ab ${fmt(massgeblich)} zulässig, vollzogen wird erst nach dem ${fmt(warteInGeschlossenerZeit.bis)} (Art. 56 Abs. 1 SchKG). ` +
+        'Beim Fortsetzungsbegehren (Art. 88 Abs. 1 SchKG) muss zudem die Rechtsvorschlagsfrist unbenutzt abgelaufen sein; sie kann nach Art. 63 SchKG später enden als die Wartefrist — der Fristenspiegel «Zustellung des Zahlungsbefehls» weist darum den späteren der beiden Tage aus.',
+    );
   }
   const datumLabel =
     input.fristnatur === 'wartefrist'
