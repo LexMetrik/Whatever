@@ -8,7 +8,19 @@ import type { Kanton, Berechnungsergebnis } from './legal';
 //   zpo_stillstand          – gerichtliche SchKG-Klagen ab 1.1.2025: ZPO-Ruhen
 //                             (Art. 56 Abs. 2 SchKG / Art. 145 Abs. 4 ZPO).
 //   kein                    – Konkurseingaben/Ordnungsfristen: kein Stillstand.
-export type SchkgModus = 'schkg_betreibungsferien' | 'zpo_stillstand' | 'kein';
+//   schkg_wechsel           – Wechselbetreibung (RL-19 / F2-05): keine
+//                             Betreibungsferien (Art. 56 Abs. 1 Ziff. 2 SchKG),
+//                             aber Rechtsstillstand mit Art. 63 SchKG (Ziff. 3).
+export type SchkgModus = 'schkg_betreibungsferien' | 'zpo_stillstand' | 'kein' | 'schkg_wechsel';
+
+// Rechtsgrundlage des Fristenstillstands während eines durch den
+// Rechtsvorschlag veranlassten Verfahrens (RL-19 / F2-06). Ohne Angabe gilt
+// der Bestand «Art. 88 Abs. 2 / Art. 166 Abs. 2 SchKG».
+//   art154 – Pfandverwertung: «diese Fristen» (frühestens UND spätestens)
+//            stehen während des gerichtlichen Verfahrens still.
+//   art188 – Wechselbetreibung: zwei Zeiträume (Eingabe Rechtsvorschlag bis
+//            Bewilligungsentscheid; bei Bewilligung Klageanhebung bis Erledigung).
+export type SchkgHemmungNorm = 'art154' | 'art188';
 
 // Rechtsnatur der Frist (steuert Anzeige, Farbe und Warnhinweise).
 export type SchkgFristnatur =
@@ -37,6 +49,12 @@ export type SchkgInput = {
   // echtes Ruhen der Frist im Fenster [hemmungVon, hemmungBis].
   hemmungVon?: string;
   hemmungBis?: string;
+  // RL-19 / F2-06: zweiter Stillstands-Zeitraum (Art. 188 Abs. 2 Satz 2 SchKG:
+  // Anhebung bis Erledigung der Klage nach bewilligtem Rechtsvorschlag) und
+  // die Norm, die den Stillstand trägt (Text, Normverweis).
+  hemmung2Von?: string;
+  hemmung2Bis?: string;
+  hemmungNorm?: SchkgHemmungNorm;
 
   // Schuldnerbezogener Rechtsstillstand (Art. 57–62 SchKG): wird für die
   // Endregel wie eine Betreibungsferien-Periode behandelt (Art. 63 SchKG).

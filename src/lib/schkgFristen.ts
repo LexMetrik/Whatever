@@ -1,8 +1,8 @@
 // Dossier: bibliothek/normen/schkg-zustaendigkeit-regelwerk.md
-import { parseISO, addDays, differenceInCalendarDays, isAfter, isBefore } from 'date-fns';
+import { parseISO, addDays, differenceInCalendarDays, isAfter, isBefore, isValid, max as spaetestes } from 'date-fns';
 import type { Normverweis, Rechenschritt } from '../types/legal';
 import { formatDatum, formatISO } from './datumsUtils';
-import type { SchkgInput, SchkgErgebnis, SchkgModus, SchkgFristnatur } from '../types/schkg';
+import type { SchkgInput, SchkgErgebnis, SchkgModus, SchkgFristnatur, SchkgHemmungNorm } from '../types/schkg';
 import { stillstandsperioden, stillstandsperiodeFuer } from '../data/zpoFeiertage';
 import { betreibungsferien, betreibungsperiodeFuer } from '../data/schkgFeiertage';
 import { rechtsprechung } from '../data/verifikation';
@@ -29,6 +29,72 @@ const N_145_4:  Normverweis = { artikel: 'Art. 145 Abs. 4 ZPO', bemerkung: 'Stil
 const N_33_4:   Normverweis = { artikel: 'Art. 33 Abs. 4 SchKG', bemerkung: 'Wiederherstellung bei unverschuldetem Hindernis' };
 const N_88_2:   Normverweis = { artikel: 'Art. 88 Abs. 2 SchKG', bemerkung: 'Stillstand der Verwirkungsfrist während rechtsvorschlagsbedingtem Verfahren' };
 const N_166_2:  Normverweis = { artikel: 'Art. 166 Abs. 2 SchKG', bemerkung: 'Stillstand der Verwirkungsfrist während rechtsvorschlagsbedingtem Verfahren' };
+const N_56_1_2: Normverweis = { artikel: 'Art. 56 Abs. 1 Ziff. 2 SchKG', bemerkung: 'Keine Betreibungshandlungen während der Betreibungsferien' };
+const N_56_1_W: Normverweis = { artikel: 'Art. 56 Abs. 1 Ziff. 2/3 SchKG', bemerkung: 'Wechselbetreibung: keine Betreibungsferien; der Rechtsstillstand gilt' };
+const N_154_1:  Normverweis = { artikel: 'Art. 154 Abs. 1 SchKG', bemerkung: 'Stillstand beider Verwertungsfristen während des durch den Rechtsvorschlag veranlassten gerichtlichen Verfahrens' };
+const N_188_2:  Normverweis = { artikel: 'Art. 188 Abs. 2 SchKG', bemerkung: 'Wechselbetreibung: Rechtsvorschlagsverfahren und Klage nach Bewilligung fallen nicht in Berechnung' };
+
+// ─── RL-18 (Prüfung Rechtslogik 23.9.2026, Befunde F2-03/F2-04) ──────────
+//
+// Zustellung einer Betreibungsurkunde in den Betreibungsferien. Art. 56 Abs. 1
+// Ziff. 2 SchKG (Fedlex SR 281.1, Fassung 1.1.2026,
+// https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de): während der
+// Betreibungsferien «dürfen Betreibungshandlungen nicht vorgenommen werden»
+// (ausser im Arrestverfahren; in der Wechselbetreibung gibt es keine
+// Betreibungsferien). Rechtsfolge eines Verstosses: BGE 121 III 284 E. 2b —
+// die Handlung ist weder nichtig noch anfechtbar, sie «entfaltet ihre
+// Rechtswirkungen erst am ersten Tag nach Ablauf der Betreibungsferien»;
+// E. 2c — die Fristen (namentlich die Rechtsvorschlagsfrist) haben mit dem
+// ersten Tag nach den Ferien «zu laufen begonnen».
+//
+// ZÄHLWEISE (Q-10, offen für die Gegenprüfung): Tages- und Kalenderfrist-
+// Zweig verankern unterschiedlich.
+// – Tagesfrist: Tag 1 = erster Tag nach den Ferien (BGE 121 III 284 E. 2c).
+//   Technisch ist der letzte Ferientag Referenztag, Beginn am Folgetag
+//   (Art. 142 Abs. 1 ZPO) — dieselbe Behandlung, die die Engine im ZPO-Pfad
+//   für die Zustellung während des Stillstands anwendet (Art. 146 Abs. 1 ZPO:
+//   «beginnt der Fristenlauf am ersten Tag nach Ende des Stillstandes»). Die
+//   Gegenlesart (E. 2b als Zustellfiktion am ersten Tag nach den Ferien,
+//   Fristbeginn nach Art. 142 Abs. 1 ZPO erst am Tag darauf) wird mit ihrem
+//   Datum als Warnung offengelegt; bei einer Wartefrist wird sie Hauptwert,
+//   wenn sie das spätere Datum ergibt (RL-18 Nachzug, s. u.).
+// – Kalenderfrist (Monate/Jahre): Anker = letzter Ferientag (gleichbezeichneter
+//   Tag). OFFENER PUNKT: BGE 150 III 367 E. 5.6 (5A_691/2023 vom 13.8.2024)
+//   bezieht den «Tag, an dem die Frist zu laufen begann» (Art. 142 Abs. 2 ZPO,
+//   Fedlex SR 272, Fassung 1.7.2026) nicht auf Abs. 1, sondern auf den Tag des
+//   fristauslösenden Ereignisses. Der Entscheid betrifft die ZPO (Klagefrist
+//   nach Art. 209 Abs. 3 ZPO); für das SchKG gilt er nur über den Verweis in
+//   Art. 31 SchKG — Übertragung, kein SchKG-Leitentscheid. Gilt der
+//   Wirkungstag (E. 2b) als Ereignistag, endet die Frist einen Tag später.
+//   Die Warnung legt beide Lesarten gleichrangig offen (Gegenprüfung 24.9.2026).
+// RICHTUNGSSICHERER HAUPTWERT (RL-18 Nachzug, Gegenprüfung #2 24.9.2026):
+//   Beide Lesarten werden gerechnet; ausgewiesen wird bei einer Wartefrist
+//   das SPÄTERE, bei Handlungs-/Verwirkungsfristen das FRÜHERE Datum (§1 —
+//   sicher ist, was nach beiden Lesarten nicht zu spät bzw. nicht verfrüht
+//   ist). Gilt für Tages- und Kalenderfristen.
+// Beispiel ZB 8.4.2026 (Osterferien 29.3.–12.4.2026): Rechtsvorschlag 22.4.
+// (Gegenlesart 23.4.), Fortsetzung frühestens beide 4.5., Fortsetzung
+// spätestens 12.4.2027 (Ereignistag-Lesart 13.4.2027); Pfandverwertung
+// frühestens (1 Monat, Art. 154 SchKG) 15.5.2026 (Ereignistag-Lesart,
+// 14.5.2026 Auffahrt) statt 13.5.2026.
+//
+// BINDUNG: Die Regel greift nur, wenn der Auslöser nachweislich die Zustellung
+// einer Betreibungsurkunde an den Schuldner ist — Identitätsvergleich mit den
+// Preset-Auslösern (kein Substring), und nur im Betreibungsferien-Regime
+// (Wechselbetreibung: modus 'kein'). Ohne Auslöser ist die Ereignisart
+// unbekannt → keine Fiktion (Golden schkg:weihnachten bleibt byte-gleich).
+// Bewusst NICHT gebunden: Zustellung Arresturkunde (Art. 56 Abs. 1 SchKG
+// «ausser im Arrestverfahren»); Pfändungsvollzug/Lastenverzeichnis/Frist-
+// ansetzungen des Amtes (Wirkungsaufschub nicht einzeln belegt — offen).
+export const BETREIBUNGSURKUNDEN_AUSLOESER: readonly string[] = [
+  'Zustellung Zahlungsbefehl',
+  'Zustellung Zahlungsbefehl (Bedenkfrist Art. 152 SchKG)',
+  'Zustellung Konkursandrohung',
+];
+
+function istBetreibungsurkundenZustellung(ausloeser: string | undefined): boolean {
+  return ausloeser !== undefined && BETREIBUNGSURKUNDEN_AUSLOESER.includes(ausloeser);
+}
 
 const fmt = formatDatum;
 const iso = formatISO;
@@ -49,10 +115,16 @@ function baueStrategie(modus: SchkgModus, rsVon?: string, rsBis?: string): Still
 
   // schkg_betreibungsferien – Betreibungsferien (+ optional schuldnerbezogener
   // Rechtsstillstand). Kein Ruhen, nur 3-Werktage-Verlängerung am Ende (Art. 63).
+  // schkg_wechsel (RL-19 / F2-05) – dieselbe Endregel, aber OHNE Betreibungs-
+  // ferien (Art. 56 Abs. 1 Ziff. 2 SchKG); geschlossen ist nur der
+  // Rechtsstillstand (Ziff. 3). Ohne Rechtsstillstand bleibt allein die
+  // Werktagsverschiebung (wie 'kein').
+  const mitFerien = modus === 'schkg_betreibungsferien';
   const rs: Periode | null =
     rsVon && rsBis ? { key: 'rechtsstillstand', von: parseISO(rsVon), bis: parseISO(rsBis) } : null;
   const inRs = (d: Date) => rs !== null && !isBefore(d, rs.von) && !isAfter(d, rs.bis);
-  const basisPeriode = (d: Date): Periode | null => betreibungsperiodeFuer(d) ?? (inRs(d) ? rs : null);
+  const basisPeriode = (d: Date): Periode | null =>
+    (mitFerien ? betreibungsperiodeFuer(d) : null) ?? (inRs(d) ? rs : null);
   return {
     // Überlappen Betreibungsferien und Rechtsstillstand, bilden sie EINE
     // geschlossene Zeit: die Hülle wird vorwärts gemerged, damit Art. 63 am
@@ -68,7 +140,7 @@ function baueStrategie(modus: SchkgModus, rsVon?: string, rsBis?: string): Still
       }
       return bis === p.bis ? p : { key: `${p.key}+verbund`, von: p.von, bis };
     },
-    perioden: betreibungsferien,
+    perioden: mitFerien ? betreibungsferien : () => [],
     ruhenZaehlung: false,
     endregel: 'verlaengerung_3wt',
   };
@@ -78,6 +150,64 @@ const MODUS_LABEL: Record<SchkgModus, string> = {
   schkg_betreibungsferien: 'SchKG-Betreibungsferien (Art. 56/63 SchKG – kein Ruhen, 3-Werktage-Verlängerung)',
   zpo_stillstand: 'ZPO-Stillstand (gerichtliche Klage – Art. 56 Abs. 2 SchKG / Art. 145 Abs. 4 ZPO)',
   kein: 'Kein Stillstand (nur Werktagsverschiebung am Ende)',
+  schkg_wechsel: 'Wechselbetreibung (keine Betreibungsferien, Art. 56 Abs. 1 Ziff. 2 SchKG; Rechtsstillstand mit 3-Werktage-Verlängerung, Art. 63 SchKG)',
+};
+
+// Regime, in denen Art. 63 SchKG die Endregel bildet (Betreibungsferien und/
+// oder Rechtsstillstand verlängern das Ende; sie hemmen den Lauf nicht).
+const istArt63Regime = (m: SchkgModus) => m === 'schkg_betreibungsferien' || m === 'schkg_wechsel';
+
+// ─── RL-19 / F2-07 · Eingabeprüfung ───────────────────────────────────────
+// Ungültige Kalenderdaten (30.2.) und vertauschte Zeiträume werden mit einem
+// Nutzertext gemeldet — vorher roher Fehler «Invalid time value» bzw. ein
+// stilles Übergehen des Zeitraums (Rechtsstillstand, Hemmung).
+function pruefeDatum(wert: string, feld: string): Date {
+  const d = parseISO(wert);
+  if (!isValid(d)) throw new Error(`${feld}: «${wert}» ist kein gültiges Datum.`);
+  return d;
+}
+
+function pruefeZeitraum(von: string | undefined, bis: string | undefined, feld: string): void {
+  const v = von ? pruefeDatum(von, feld) : null;
+  const b = bis ? pruefeDatum(bis, feld) : null;
+  if (v && b && isBefore(b, v)) {
+    throw new Error(`${feld}: Das Ende (${formatDatum(b)}) liegt vor dem Beginn (${formatDatum(v)}) — bitte die Reihenfolge prüfen.`);
+  }
+}
+
+function pruefeEingabe(input: SchkgInput): void {
+  pruefeDatum(input.ereignis, 'Auslösendes Ereignis');
+  pruefeZeitraum(input.rechtsstillstandVon, input.rechtsstillstandBis, 'Rechtsstillstand');
+  pruefeZeitraum(input.hemmungVon, input.hemmungBis, 'Stillstand (Hemmung)');
+  pruefeZeitraum(input.hemmung2Von, input.hemmung2Bis, 'Stillstand, 2. Zeitraum');
+}
+
+// ─── RL-19 / F2-06 · Stillstand während des Rechtsvorschlagsverfahrens ───
+// Wortlaut SR 281.1, Fassung 1.1.2026 (Fedlex eli/cc/11/529_488_529/20260101):
+//   Art. 88 Abs. 2 / Art. 166 Abs. 2: «so steht diese Frist zwischen der
+//     Einleitung und der Erledigung eines dadurch veranlassten Gerichts- oder
+//     Verwaltungsverfahrens [Art. 166: gerichtlichen Verfahrens] still».
+//   Art. 154 Abs. 1 Satz 2: «so stehen diese Fristen zwischen der Einleitung
+//     und der Erledigung eines dadurch veranlassten gerichtlichen Verfahrens
+//     still» — beide Fristen (frühestens/spätestens).
+//   Art. 188 Abs. 2 Satz 2: Zeit zwischen Eingabe des Rechtsvorschlags und
+//     Bewilligungsentscheid sowie, bei Bewilligung, zwischen Anhebung und
+//     gerichtlicher Erledigung der Klage «fällt nicht in Berechnung».
+type HemmungText = { normen: Normverweis[]; verfahren: [string, string?]; warnung: string };
+const HEMMUNG_TEXT: Record<SchkgHemmungNorm, HemmungText> = {
+  art154: {
+    normen: [N_154_1],
+    verfahren: ['Während des durch den Rechtsvorschlag veranlassten gerichtlichen Verfahrens'],
+    warnung: 'Der Stillstand nach Art. 154 Abs. 1 SchKG ist als ganztägiger Stillstand im angegebenen Zeitraum modelliert; er erfasst beide Verwertungsfristen (frühestens und spätestens). Beginn (Einleitung) und Ende (Erledigung) des gerichtlichen Verfahrens sind im Einzelfall zu prüfen.',
+  },
+  art188: {
+    normen: [N_188_2],
+    verfahren: [
+      'Zwischen der Eingabe des Rechtsvorschlags und dem Entscheid über dessen Bewilligung',
+      'Zwischen der Anhebung und der gerichtlichen Erledigung der Klage (Rechtsvorschlag bewilligt)',
+    ],
+    warnung: 'Art. 188 Abs. 2 SchKG nimmt zwei Zeiträume von der Berechnung aus: das Verfahren über den Rechtsvorschlag (Eingabe bis Bewilligungsentscheid) und, bei Bewilligung, die Klage (Anhebung bis gerichtliche Erledigung). Die Zeit zwischen Bewilligungsentscheid und Klageanhebung läuft mit — die Zeiträume getrennt eingeben, nicht zu einem zusammenfassen. Modelliert als ganztägiger Stillstand; Beginn und Ende sind im Einzelfall zu prüfen.',
+  },
 };
 
 const NATUR_WARNUNG: Partial<Record<SchkgFristnatur, string>> = {
@@ -89,10 +219,55 @@ const NATUR_WARNUNG: Partial<Record<SchkgFristnatur, string>> = {
 
 // ─── Hauptfunktion ────────────────────────────────────────────────────────
 
+// RL-18 Nachzug (Gegenprüfung #2, 24.9.2026): Bei Zustellung einer
+// Betreibungsurkunde in den Betreibungsferien werden BEIDE Lesarten der
+// Zählweise vollständig gerechnet (Kopfkommentar ZÄHLWEISE); der Hauptwert
+// (Kachel, diesAdQuem, ICS/PDF) ist richtungssicher gewählt — Wartefrist →
+// das spätere, Handlungs-/Verwirkungsfrist → das frühere Datum (§1). Anlass:
+// Pfandverwertung Art. 154 SchKG, ZB 8.4.2026, 1 Monat Wartefrist → bisher
+// 13.05.2026 ausgewiesen, Ereignistag-Lesart 15.05.2026 (14.5.2026 Auffahrt):
+// ein Begehren am 13.5. wäre nach der Gegenlesart verfrüht.
 export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   if (!Number.isInteger(input.laenge) || input.laenge <= 0) {
     throw new Error('Fristlänge muss eine ganze Zahl > 0 sein.');
   }
+  pruefeEingabe(input);
+  const a = berechneLesart(input, 'ferienende');
+  if (!a.ferien) return a.r;
+  const b = berechneLesart(input, 'ereignistag');
+
+  const istWartefrist = input.fristnatur === 'wartefrist';
+  const bSicherer = istWartefrist
+    ? b.r.diesAdQuemISO > a.r.diesAdQuemISO
+    : b.r.diesAdQuemISO < a.r.diesAdQuemISO;
+  const haupt = bSicherer ? b.r : a.r;
+
+  const einheit = input.laenge === 1
+    ? { tage: 'Tag', monate: 'Monat', jahre: 'Jahr' }[input.einheit]
+    : { tage: 'Tage', monate: 'Monate', jahre: 'Jahre' }[input.einheit];
+  const wt = fmt(a.wirkungstag);
+  const lesarten = input.einheit === 'tage'
+    ? `Hauptlesart ist BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${wt}) zu laufen: ${a.r.diesAdQuem}. ` +
+      `Nach der Gegenlesart (Zustellung gilt erst am ${wt} als erfolgt, Fristbeginn am Folgetag nach Art. 142 Abs. 1 ZPO) ergibt sich ${b.r.diesAdQuem}. `
+    : 'Zwei Lesarten sind vertretbar. ' +
+      `Fristlauf ab dem ersten Tag nach den Ferien (BGE 121 III 284 E. 2c; Anker letzter Ferientag ${fmt(a.ferien.bis)}): ${a.r.diesAdQuem}. ` +
+      `Gilt der Wirkungstag ${wt} als Tag des fristauslösenden Ereignisses, auf den Art. 142 Abs. 2 ZPO abstellt, ergibt sich ${b.r.diesAdQuem} — ` +
+      'so BGE 150 III 367 E. 5.6 zu Art. 142 Abs. 2 ZPO (Fall zur Klagefrist nach Art. 209 Abs. 3 ZPO), hier über Art. 31 SchKG übertragen, kein SchKG-Leitentscheid. ';
+  const wahl = a.r.diesAdQuemISO === b.r.diesAdQuemISO
+    ? `Ausgewiesen ist ${haupt.diesAdQuem}; beide Lesarten führen zum selben Datum.`
+    : istWartefrist
+      ? `Ausgewiesen ist ${haupt.diesAdQuem} (das spätere Datum): Bei einer Wartefrist ist das spätere Datum die sichere Seite — eine Handlung vor Ablauf der Frist ist unzulässig.`
+      : `Ausgewiesen ist ${haupt.diesAdQuem} (das frühere Datum): Bei Handlungs- und Verwirkungsfristen ist das frühere Datum die sichere Seite — wer bis dahin handelt, wahrt die Frist nach beiden Lesarten.`;
+  haupt.warnungen.push(`Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): ` + lesarten + wahl);
+  return haupt;
+}
+
+type Lesart = 'ferienende' | 'ereignistag';
+
+function berechneLesart(
+  input: SchkgInput,
+  lesart: Lesart,
+): { r: SchkgErgebnis; ferien: ReturnType<typeof betreibungsperiodeFuer>; wirkungstag: Date } {
 
   const rechenweg: Rechenschritt[] = [];
   const annahmen: string[] = [];
@@ -101,6 +276,18 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   const modus = input.modusOverride ?? input.modus;
   const st = baueStrategie(modus, input.rechtsstillstandVon, input.rechtsstillstandBis);
   const ereignis = parseISO(input.ereignis);
+
+  // RL-18 / F2-03: Zustellung einer Betreibungsurkunde in den Betreibungsferien
+  // → Wirkung und Fristbeginn am ersten Tag nach den Ferien (BGE 121 III 284
+  // E. 2b/c). `referenz` ist der Tag, ab dem gezählt wird: Lesart
+  // 'ferienende' = letzter Ferientag, Lesart 'ereignistag' = Wirkungstag.
+  const urkundenZustellung = istBetreibungsurkundenZustellung(input.ausloeser);
+  const ferienBeiZustellung =
+    urkundenZustellung && modus === 'schkg_betreibungsferien' ? betreibungsperiodeFuer(ereignis) : null;
+  const wirkungstag = ferienBeiZustellung ? addDays(ferienBeiZustellung.bis, 1) : ereignis;
+  const referenz = ferienBeiZustellung
+    ? (lesart === 'ereignistag' ? wirkungstag : ferienBeiZustellung.bis)
+    : ereignis;
 
   if (input.modusOverride && input.modusOverride !== input.modus) {
     rechenweg.push({
@@ -119,12 +306,27 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     normen: [N_31, N_142_1],
   });
 
+  if (ferienBeiZustellung) {
+    rechenweg.push({
+      beschreibung: 'Schritt 1a – Zustellung in den Betreibungsferien',
+      zwischenergebnis:
+        `Die Zustellung am ${fmt(ereignis)} fällt in die Betreibungsferien (${fmt(ferienBeiZustellung.von)}–${fmt(ferienBeiZustellung.bis)}). ` +
+        'Sie ist weder nichtig noch anfechtbar, entfaltet ihre Wirkung aber erst am ersten Tag nach den Ferien; ' +
+        `die Fristen beginnen an diesem Tag zu laufen (BGE 121 III 284 E. 2b/c): ${fmt(wirkungstag)}. ` +
+        (lesart === 'ereignistag'
+          ? `Gezählt wird nach der Ereignistag-Lesart: Der Wirkungstag (${fmt(referenz)}) gilt als Tag des fristauslösenden Ereignisses; ` +
+            'diese Lesart ergibt hier das richtungssichere Datum (siehe Hinweis «Zählweise»).'
+          : `Gezählt wird ab dem letzten Ferientag (${fmt(referenz)}) als Referenztag.`),
+      normen: [N_56_1_2, N_31],
+    });
+  }
+
   // Schritt 2 – Fristende provisorisch
   let diesAQuo: Date;
   let endeProvisorisch: Date;
 
   if (input.einheit === 'tage') {
-    const r = fristendeTage(ereignis, input.laenge, st);
+    const r = fristendeTage(referenz, input.laenge, st);
     diesAQuo = r.diesAQuo;
     endeProvisorisch = r.ende;
     rechenweg.push({
@@ -133,13 +335,15 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
         `Tagesfrist von ${input.laenge} Tagen, Beginn (dies a quo): ${fmt(diesAQuo)}. ` +
         (modus === 'zpo_stillstand'
           ? 'Stillstandstage werden nicht mitgezählt (ZPO-Ruhen). '
-          : 'Die Frist läuft ohne Unterbruch (Betreibungsferien hemmen den Lauf nicht, Art. 63 SchKG). ') +
+          : modus === 'schkg_wechsel'
+            ? 'Die Frist läuft ohne Unterbruch (Wechselbetreibung: keine Betreibungsferien; ein Rechtsstillstand hemmt den Lauf nicht, Art. 63 SchKG). '
+            : 'Die Frist läuft ohne Unterbruch (Betreibungsferien hemmen den Lauf nicht, Art. 63 SchKG). ') +
         `Rechnerisches Ende (vor Endnormalisierung): ${fmt(endeProvisorisch)}.`,
       normen: modus === 'zpo_stillstand' ? [N_142_1, N_145_1] : [N_142_1, N_63],
       rechtsprechung: modus === 'schkg_betreibungsferien' ? [rechtsprechung('BGE_143_III_149')] : undefined,
     });
   } else {
-    const r = fristendeKalender(ereignis, input.einheit, input.laenge, st, false);
+    const r = fristendeKalender(referenz, input.einheit, input.laenge, st, false);
     diesAQuo = r.diesAQuo;
     endeProvisorisch = r.ende;
     const einheitLabel = input.einheit === 'monate' ? 'Monats' : 'Jahres';
@@ -156,14 +360,30 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   // Echtes Ruhen: Beginnt das hemmende Verfahren während des Fristenlaufs,
   // pausiert die Frist für das GANZE Fenster – auch über das rechnerische Ende
   // hinaus (das Verfahren dauert typischerweise länger als der Fristrest).
-  if (input.hemmungVon && input.hemmungBis) {
-    const hv = parseISO(input.hemmungVon);
-    const hb = parseISO(input.hemmungBis);
-    const von = isBefore(hv, diesAQuo) ? diesAQuo : hv;
+  // RL-19 / F2-06: Norm je Preset (Art. 154 Abs. 1, Art. 188 Abs. 2) und ein
+  // zweiter Zeitraum (Art. 188 Abs. 2 Satz 2). Ohne `hemmungNorm` und mit
+  // einem Zeitraum unverändert der Bestand (Art. 88 Abs. 2 / 166 Abs. 2).
+  // Die Zeiträume werden nach Beginn geordnet nacheinander angewandt; ein
+  // Tag, der schon in einem früheren Zeitraum stillstand, zählt nicht doppelt.
+  const zeitraeume: { von: Date; bis: Date; nr: 0 | 1 }[] = [];
+  if (input.hemmungVon && input.hemmungBis) zeitraeume.push({ von: parseISO(input.hemmungVon), bis: parseISO(input.hemmungBis), nr: 0 });
+  if (input.hemmung2Von && input.hemmung2Bis) zeitraeume.push({ von: parseISO(input.hemmung2Von), bis: parseISO(input.hemmung2Bis), nr: 1 });
+  zeitraeume.sort((x, y) => +x.von - +y.von);
+  const hText = input.hemmungNorm ? HEMMUNG_TEXT[input.hemmungNorm] : null;
+  let hemmungGewirkt = false;
+  let bisherBis: Date | null = null;
+  for (const z of zeitraeume) {
+    const hv = z.von;
+    const hb = z.bis;
+    const untergrenze = bisherBis ? spaetestes([diesAQuo, addDays(bisherBis, 1)]) : diesAQuo;
+    const von = isBefore(hv, untergrenze) ? untergrenze : hv;
+    bisherBis = bisherBis && isAfter(bisherBis, hb) ? bisherBis : hb;
     const beginntImLauf = !isAfter(von, endeProvisorisch) && !isBefore(hb, von);
-    if (beginntImLauf) {
-      const tage = differenceInCalendarDays(hb, von) + 1;
-      endeProvisorisch = addDays(endeProvisorisch, tage);
+    if (!beginntImLauf) continue;
+    hemmungGewirkt = true;
+    const tage = differenceInCalendarDays(hb, von) + 1;
+    endeProvisorisch = addDays(endeProvisorisch, tage);
+    if (!hText) {
       rechenweg.push({
         beschreibung: 'Schritt 2b – Stillstand der Verwirkungsfrist (Hemmung)',
         zwischenergebnis:
@@ -172,10 +392,23 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
         normen: [N_88_2, N_166_2],
         rechtsprechung: [rechtsprechung('BGer_5A_190_2023')],
       });
-      warnungen.push(
-        'Die Hemmung der Verwirkungsfrist (Art. 88 Abs. 2 / Art. 166 Abs. 2 SchKG) ist als ganztägiger Stillstand im angegebenen Fenster modelliert; der genaue Beginn/Ablauf des hemmenden Verfahrens ist im Einzelfall zu prüfen.',
-      );
+    } else {
+      const verfahren = hText.verfahren[z.nr] ?? hText.verfahren[0];
+      rechenweg.push({
+        beschreibung: input.fristnatur === 'wartefrist'
+          ? 'Schritt 2b – Stillstand der Wartefrist'
+          : 'Schritt 2b – Stillstand der Verwirkungsfrist',
+        zwischenergebnis:
+          `${verfahren} (${fmt(hv)}–${fmt(hb)}) steht die Frist still: ` +
+          `${tage} Tage (ab ${fmt(von)}); danach läuft sie weiter → neues rechnerisches Ende: ${fmt(endeProvisorisch)}.`,
+        normen: hText.normen,
+      });
     }
+  }
+  if (hemmungGewirkt) {
+    warnungen.push(hText
+      ? hText.warnung
+      : 'Die Hemmung der Verwirkungsfrist (Art. 88 Abs. 2 / Art. 166 Abs. 2 SchKG) ist als ganztägiger Stillstand im angegebenen Fenster modelliert; der genaue Beginn/Ablauf des hemmenden Verfahrens ist im Einzelfall zu prüfen.');
   }
 
   // Schritt 3 – Endnormalisierung
@@ -191,10 +424,34 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   const { tag: diesAdQuem, verschoben } = istWartefrist
     ? { tag: endeProvisorisch, verschoben: false }
     : normalisiereEnde(endeProvisorisch, input.kanton, st);
+  // Frühestes zulässiges Datum (Begründung bei Schritt 4 unten); schon hier
+  // berechnet, weil es der Hauptwert dieser Lesart ist (diesAdQuem).
+  // RL-17 / Befunde F2-08, R1-07 (Prüfung Rechtslogik 23.9.2026, deklarierte
+  // fachliche Änderung): Art. 63 SchKG (SR 281.1, Fassung 1.1.2026) verlängert
+  // «das Ende einer Frist», das «für den Schuldner, den Gläubiger oder den
+  // Dritten» in die Betreibungsferien oder den Rechtsstillstand fällt — eine
+  // Handlungsfrist. Eine Wartefrist (Art. 88 Abs. 1, 116 Abs. 1, 154 Abs. 1,
+  // 166 Abs. 1 SchKG: «frühestens …») verpflichtet niemanden zu handeln; ihr
+  // Ablauf wird nicht verlängert. Das Begehren des Gläubigers ist keine
+  // Betreibungshandlung und darf in den Ferien gestellt werden; gesperrt ist
+  // nur die Betreibungshandlung des Amtes (Art. 56 Abs. 1 SchKG), die danach
+  // folgt. Vorher schob die Art.-63-Endregel den frühesten Tag hinaus (ZB
+  // 10.7.2026, 20 Tage: 05.08. statt 31.07.2026). Bleibt: Werktagsregel für den
+  // frühesten Handlungstag (Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO, s. u.).
+  // Rechtsprechung zur Wartefrist in den Ferien: nicht gefunden (Wortlaut-
+  // Auslegung, offen für die Gegenprüfung). Die Rechtsvorschlagsfrist kann
+  // wegen Art. 63 später enden — das verknüpft der Fristenspiegel (R1-07).
+  const stWartefrist = istArt63Regime(modus) ? OHNE_STILLSTAND : st;
+  const folgetag = istWartefrist ? addDays(diesAdQuem, 1) : diesAdQuem;
+  const massgeblich = istWartefrist
+    ? normalisiereEnde(folgetag, input.kanton, stWartefrist).tag
+    : diesAdQuem;
+  const warteInGeschlossenerZeit =
+    istWartefrist && istArt63Regime(modus) ? st.periodeFuer(massgeblich) : null;
   rechenweg.push({
     beschreibung: istWartefrist
       ? 'Schritt 3 – Ablauf der Wartefrist (keine Werktagsverschiebung, Art. 142 Abs. 3 ZPO)'
-      : modus === 'schkg_betreibungsferien'
+      : istArt63Regime(modus)
         ? 'Schritt 3 – Endnormalisierung (Art. 63 SchKG / Art. 31 i.V.m. Art. 142 Abs. 3 ZPO)'
         : 'Schritt 3 – Endnormalisierung (Art. 142 Abs. 3 / Art. 145 Abs. 1 ZPO)',
     zwischenergebnis: istWartefrist
@@ -202,12 +459,14 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
       : verschoben
         ? modus === 'schkg_betreibungsferien'
           ? `Das rechnerische Ende ${fmt(endeProvisorisch)} fiel in eine geschlossene Zeit oder auf einen arbeitsfreien Tag → verschoben auf ${fmt(diesAdQuem)} (bei Ende in den Betreibungsferien: 3. Werktag danach, Art. 63 SchKG).`
+          : modus === 'schkg_wechsel'
+            ? `Das rechnerische Ende ${fmt(endeProvisorisch)} fiel in den Rechtsstillstand oder auf einen arbeitsfreien Tag → verschoben auf ${fmt(diesAdQuem)} (bei Ende im Rechtsstillstand: 3. Werktag danach, Art. 63 SchKG).`
           : `Das rechnerische Ende ${fmt(endeProvisorisch)} fiel auf einen arbeitsfreien Tag bzw. in einen Stillstand → verschoben auf ${fmt(diesAdQuem)}.`
         : `Ende ${fmt(diesAdQuem)} ist bereits ein Werktag – keine Verschiebung.`,
     normen: istWartefrist
       ? [N_142_3]
-      : modus === 'schkg_betreibungsferien' ? [N_63, N_142_3] : [N_142_3, N_145_1],
-    rechtsprechung: modus === 'schkg_betreibungsferien' && verschoben ? [rechtsprechung('BGE_108_III_49')] : undefined,
+      : istArt63Regime(modus) ? [N_63, N_142_3] : [N_142_3, N_145_1],
+    rechtsprechung: istArt63Regime(modus) && verschoben ? [rechtsprechung('BGE_108_III_49')] : undefined,
   });
 
   // ─── Hinweise / Vorbehalte ──────────────────────────────────────────────
@@ -220,6 +479,11 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
       'Achtung Betreibungsferien (Art. 56 SchKG) – NICHT identisch mit den Gerichtsferien: Sommer nur bis 31.7. (nicht 15.8.), Weihnachten nur bis 1.1. (nicht 2.1.). Sie hemmen den Fristenlauf nicht (Art. 63 SchKG).',
     );
   }
+  if (modus === 'schkg_wechsel') {
+    warnungen.push(
+      'Wechselbetreibung: Es gibt keine Betreibungsferien (Art. 56 Abs. 1 Ziff. 2 SchKG). Ein Rechtsstillstand des Schuldners (Art. 56 Abs. 1 Ziff. 3, Art. 57–62 SchKG) hemmt den Fristenlauf nicht; fällt das Ende in ihn, wird die Frist bis zum dritten Werktag nach seinem Ende verlängert (Art. 63 SchKG).',
+    );
+  }
   if (modus === 'zpo_stillstand') {
     warnungen.push(
       'Gerichtliche SchKG-Klage: Seit 1.1.2025 gilt der ZPO-Fristenstillstand (Art. 56 Abs. 2 SchKG / Art. 145 Abs. 4 ZPO), nicht die Betreibungsferien.',
@@ -228,11 +492,33 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   warnungen.push(
     'Kantonal unterschiedliche Feiertage beeinflussen das Fristende (Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO) und sind eigenständig zu prüfen.',
   );
-  if ((input.rechtsstillstandVon || input.rechtsstillstandBis) && modus !== 'schkg_betreibungsferien') {
+  if ((input.rechtsstillstandVon || input.rechtsstillstandBis) && !istArt63Regime(modus)) {
     warnungen.push(
-      'Der eingegebene Rechtsstillstand (Art. 57–62 SchKG) wirkt nur im Regime der Betreibungsferien (Art. 63 SchKG) und bleibt im gewählten Stillstand-Regime unberücksichtigt.',
+      'Der eingegebene Rechtsstillstand (Art. 57–62 SchKG) wirkt nur in den Regimen mit Verlängerung nach Art. 63 SchKG (Betreibungsferien, Wechselbetreibung) und bleibt im gewählten Stillstand-Regime unberücksichtigt.',
     );
   }
+
+  // RL-18 / F2-04: Zustellung einer Betreibungsurkunde während eines
+  // Rechtsstillstands. Beim Rechtsstillstand wegen Militär-, Zivil- oder
+  // Schutzdienstes (Art. 57 SchKG) ist die Zustellung nichtig (BGE 127 III 173
+  // E. 3, in Abgrenzung zu den Betreibungsferien, E. 3b); Art und Grund des
+  // eingegebenen Rechtsstillstands kennt die Engine nicht → Warnung, keine
+  // Umrechnung. Geprüft werden der Zustelltag und der Wirkungstag nach RL-18.
+  if (urkundenZustellung && input.rechtsstillstandVon && input.rechtsstillstandBis) {
+    const rsVon = parseISO(input.rechtsstillstandVon);
+    const rsBis = parseISO(input.rechtsstillstandBis);
+    const inRs = (d: Date) => !isBefore(d, rsVon) && !isAfter(d, rsBis);
+    if (inRs(ereignis) || inRs(wirkungstag)) {
+      warnungen.push(
+        `Zustellung während des eingegebenen Rechtsstillstands (${fmt(rsVon)}–${fmt(rsBis)}): Beruht er auf Militär-, Zivil- oder Schutzdienst (Art. 57 SchKG), ist die Zustellung nichtig (BGE 127 III 173 E. 3) — die Frist wird nicht ausgelöst, die Zustellung ist nach dem Ende des Rechtsstillstands zu wiederholen; die berechneten Daten gelten dann nicht. ` +
+          'Ausnahmen: Betreibung für periodische familienrechtliche Unterhalts- und Unterstützungsbeiträge (Art. 57 Abs. 3 SchKG), Zahlungsbefehl in der Betreibung auf Pfandverwertung nach drei Monaten Rechtsstillstand (Art. 57b Abs. 2 SchKG). ' +
+          'Bei einem Rechtsstillstand aus anderem Grund (Art. 58–62 SchKG) ist die Rechtsfolge im Einzelfall zu prüfen.',
+      );
+    }
+  }
+
+  // RL-18 / Q-10: Die Offenlegung der jeweils anderen Lesart mit ihrem Datum
+  // hängt berechneSchkgFrist an (richtungssichere Wahl des Hauptwerts).
 
   annahmen.push(
     `Stillstand-Regime: ${MODUS_LABEL[modus]}.`,
@@ -251,6 +537,7 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     N_142_3,
   ];
   if (modus === 'schkg_betreibungsferien') normverweise.push(N_56_1, N_63);
+  if (modus === 'schkg_wechsel') normverweise.push(N_56_1_W, N_63);
   if (modus === 'zpo_stillstand') normverweise.push(N_56_2, N_145_4, N_145_1);
   if (input.fristnatur === 'verwirkung') normverweise.push(N_33_4);
 
@@ -262,11 +549,8 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   // Wartefrist: frühester Handlungstag = Folgetag des (unverschobenen) Fristablaufs.
   // Fällt dieser Folgetag selbst auf einen Sa/So/Feiertag, ist die Handlung als
   // HANDLUNGSfrist erst am nächsten Werktag zulässig (Art. 142 Abs. 3 ZPO). Die
-  // Normalisierung wird deshalb NACH dem +1-Folgetag angewandt, nicht davor.
-  const folgetag = istWartefrist ? addDays(diesAdQuem, 1) : diesAdQuem;
-  const massgeblich = istWartefrist
-    ? normalisiereEnde(folgetag, input.kanton, st).tag
-    : diesAdQuem;
+  // Normalisierung wird deshalb NACH dem +1-Folgetag angewandt, nicht davor
+  // (folgetag/massgeblich sind oben nach Schritt 3 berechnet).
   if (istWartefrist) {
     const folgetagVerschoben = differenceInCalendarDays(massgeblich, folgetag) > 0;
     rechenweg.push({
@@ -277,6 +561,20 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
       normen: [N_31, N_142_3],
     });
   }
+  if (warteInGeschlossenerZeit) {
+    rechenweg.push({
+      beschreibung: 'Schritt 4a – Wartefrist und Betreibungsferien',
+      zwischenergebnis:
+        `Der früheste Tag ${fmt(massgeblich)} liegt in den Betreibungsferien bzw. im Rechtsstillstand (bis ${fmt(warteInGeschlossenerZeit.bis)}). ` +
+        'Art. 63 SchKG verlängert nur das Ende einer Frist, innert der jemand handeln muss — die Wartefrist wird nicht hinausgeschoben. ' +
+        'Das Begehren kann gestellt werden; die darauf folgende Betreibungshandlung des Amtes ist erst nach der geschlossenen Zeit zulässig (Art. 56 Abs. 1 SchKG).',
+      normen: [N_63, N_56_1],
+    });
+    warnungen.push(
+      `Wartefrist in den Betreibungsferien: Art. 63 SchKG verlängert keine Wartefrist — das Begehren ist ab ${fmt(massgeblich)} zulässig, vollzogen wird erst nach dem ${fmt(warteInGeschlossenerZeit.bis)} (Art. 56 Abs. 1 SchKG). ` +
+        'Beim Fortsetzungsbegehren (Art. 88 Abs. 1 SchKG) muss zudem die Rechtsvorschlagsfrist unbenutzt abgelaufen sein; sie kann nach Art. 63 SchKG später enden als die Wartefrist — der Fristenspiegel «Zustellung des Zahlungsbefehls» weist darum den späteren der beiden Tage aus.',
+    );
+  }
   const datumLabel =
     input.fristnatur === 'wartefrist'
       ? `Frühestes zulässiges Datum: ${fmt(massgeblich)}`
@@ -284,7 +582,7 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
         ? `Letzter zulässiger Tag (Verwirkung): ${fmt(diesAdQuem)}, 24.00 Uhr`
         : `Fristende: ${fmt(diesAdQuem)}, 24.00 Uhr`;
 
-  return {
+  const r: SchkgErgebnis = {
     ergebnis: datumLabel + '.',
     fristbeginnNorm,
     status: 'ok',
@@ -292,7 +590,7 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     annahmen,
     warnungen,
     normverweise,
-    massgeblicherEreignistag: fmt(ereignis),
+    massgeblicherEreignistag: fmt(wirkungstag),
     diesAQuo: fmt(diesAQuo),
     diesAdQuem: fmt(massgeblich),
     ereignisISO: iso(ereignis),
@@ -301,4 +599,5 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     modusAktiv: modus,
     ruhenAnzeige: modus === 'zpo_stillstand',
   };
+  return { r, ferien: ferienBeiZustellung, wirkungstag };
 }
