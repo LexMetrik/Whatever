@@ -212,7 +212,7 @@ export function GewaehrleistungForm() {
         <Field label="Rüge erhoben am" optional hint="prüft die Rechtzeitigkeit gegen Richtwerte bzw. 60-Tage-Frist">
           <DatumsFeld value={ruegeAm} onChange={setRuegeAm} className={inputCls} />
         </Field>
-        <Field label="Vereinbarte Verjährungsfrist (Jahre)" optional hint="wird gegen Mindest- (Art. 210 Abs. 4, 219a Abs. 3, 371 Abs. 3) und Höchstdauern geprüft">
+        <Field label="Vereinbarte Verjährungsfrist (Jahre)" optional hint="wird gegen Mindest- (Art. 210 Abs. 4, 219a Abs. 3, 371 Abs. 3) und Höchstdauern geprüft; Verträge vor dem 1.1.2026 nach altem Recht">
           <input type="number" inputMode="decimal" min={0} step={0.5} value={vereinbart} onChange={(e) => setVereinbart(e.target.value)}
             placeholder="leer = gesetzliche Frist" className={inputCls} />
         </Field>
