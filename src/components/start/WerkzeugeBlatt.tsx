@@ -97,9 +97,16 @@ function VorlagenListe() {
   return (
     <div className="space-y-4">
       <Filter wert={suche} setze={setSuche} label="Vorlagen filtern" />
+      {/* Gegenprüfung S2 (24.9.2026): `KategorieSektion` bringt für die
+          Kategorie «vorlagen» ein EIGENES Rechtsgebiet-Feld mit, das über
+          `setSearchParams` ohne den Blatt-Verlaufsstatus schreibt (verliert
+          `blattTiefe`/`blattVonZu`, `useBlattOrt.ts`) — Browser-Zurück öffnete
+          das Blatt danach erneut, und es entstand ein zweites Filterfeld
+          neben dem Blatt-eigenen `Filter` oben. `ohneGebietsFilter`
+          unterdrückt es; die Textsuche oben deckt den Anwendungsfall hier ab. */}
       {karten.length === 0
         ? <p className="font-sans text-body-s text-ink-600">Keine Vorlage passt auf «{q}».</p>
-        : <KategorieSektion kat={VORLAGEN_KATEGORIE} karten={karten} ohneKopf alleOffen={q !== ''} />}
+        : <KategorieSektion kat={VORLAGEN_KATEGORIE} karten={karten} ohneKopf alleOffen={q !== ''} ohneGebietsFilter />}
     </div>
   );
 }
