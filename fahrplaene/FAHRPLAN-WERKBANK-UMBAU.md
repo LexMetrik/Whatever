@@ -573,6 +573,9 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
 - **U3 Begrüssung höflich:** Sie-Form, keine Du-/Kumpel-Formen («Hoi», «Salü», «Ciao», «Scho uf?»), keine
   flapsigen Sprüche («Zurück an die Arbeit?», «Ein Käfeli zum Start?»); höfliche Mundart («Grüezi»,
   «Grüessech») und die Landessprachen bleiben.
+- **U4 «Häufig gebraucht» unter den vier Kacheln** (David 24.9. «was kommt unter der kacheln?», Auswahl mit
+  Skizze): eine ruhige Zeile mit direkten Links BV · ZGB · OR · StGB · ZPO · StPO · SchKG in den Leser; lädt
+  nichts nach, Ziele aus dem bestehenden Erlass-Register (keine handgeschriebenen URLs, §5).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
