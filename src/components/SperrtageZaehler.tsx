@@ -6,7 +6,9 @@ import { datumOderStrich } from './ui/datumText';
 // Sperrtage-Zähler (Art. 336c Abs. 1 OR): je Ereignis beanspruchte Tage;
 // bei Krankheit/Unfall zusätzlich Kontingent (30/90/180 je Dienstjahr) und
 // verbleibende Tage mit Messing-Füllbalken. Rückfälle gleicher Ursache
-// erhalten kein neues Kontingent (BGE 120 II 124, zu verifizieren).
+// erhalten kein neues Kontingent, sondern zehren vom Rest des ursprünglichen
+// (RL-13/W-04, Lesart nicht gerichtlich bestätigt — Offenlegung in den
+// Hinweisen der Engine). Alle Zahlen kommen aus lib/sperrfristen.ts (§3).
 
 const TYP_LABEL: Record<string, string> = {
   krankheit_unfall: 'Krankheit / Unfall',
@@ -52,13 +54,12 @@ export function SperrtageZaehler({ sperrtage }: { sperrtage: NonNullable<Sperrfr
                 <p className="text-body-s text-ink-700">
                   <span className="num text-ink-500 mr-1.5">{z.ereignis}.</span>
                   {label}
+                  {z.rueckfall && <span className="text-ink-500"> (Rückfall)</span>}
                   <span className="text-ink-500"> · {datumOderStrich(z.vonISO)} – {datumOderStrich(z.bisISO)}</span>
                 </p>
-                {z.rueckfall ? (
-                  <p className="text-body-s text-ink-500">Rückfall – kein neues Kontingent</p>
-                ) : z.kontingent != null ? (
+                {z.kontingent != null ? (
                   <p className="num text-body-s text-ink-900">
-                    {z.beansprucht} / {z.kontingent} Tage
+                    {z.beansprucht} / {z.kontingent} Tage{z.rueckfall ? ' aus dem Rest' : ''}
                     <span className={`ml-2 ${z.verbleibend === 0 ? 'text-danger-700' : 'text-ink-500'}`}>
                       · {z.verbleibend === 0 ? 'Kontingent ausgeschöpft' : `${z.verbleibend} verbleibend`}
                     </span>
@@ -83,6 +84,10 @@ export function SperrtageZaehler({ sperrtage }: { sperrtage: NonNullable<Sperrfr
         Kontingent Krankheit/Unfall je Dienstjahr: 30 (1. DJ) · 90 (2.–5. DJ) · 180 Tage (ab 6. DJ);
         Anfangstag zählt nicht (Art. 77 OR). Das Kontingent gilt je Verhinderungsursache —
         Überlappungen mehrerer Ereignisse werden für die Hemmung bereinigt.
+        {sperrtage.some((z) => z.rueckfall) && (
+          <> Rückfall: kein neues Kontingent, gezählt wird gegen den Rest des ursprünglichen —
+          Lesart und Zählweise siehe Hinweise.</>
+        )}
       </p>
     </section>
   );

@@ -497,7 +497,10 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
           `Rückfall (Ereignis ${i + 1}, gleiche Ursache wie Ereignis ${ref + 1}): Gerechnet wird kein neues Kontingent, sondern der Rest des ` +
           `ursprünglichen (${konto.kontingent} Tage, noch ${restVorher} offen). Diese Lesart stützt sich auf den Wortlaut von ` +
           `Art. 336c Abs. 1 lit. b OR (Schutz während der Verhinderung, höchstens ${konto.kontingent} Tage je Ursache); gerichtlich bestätigt ist ` +
-          `sie nicht — BGE 120 II 124 entscheidet nur, dass voneinander unabhängige Krankheiten oder Unfälle je eine neue Sperrfrist auslösen.`,
+          `sie nicht — BGE 120 II 124 entscheidet nur, dass voneinander unabhängige Krankheiten oder Unfälle je eine neue Sperrfrist auslösen. ` +
+          // RL-13 PR 2 (Gegenprüfung PR 1): die Zählweise gehört zur offengelegten Auslegung.
+          `Teil derselben Lesart ist die Zählweise: Im Rückfall zählt jeder Tag der Verhinderung; der Anfangstag ist nur beim Ersteintritt ` +
+          `nicht mitgezählt (Art. 77 OR), damit eine unterbrochene Krankheit nicht mehr Schutz erhält als dieselbe am Stück.`,
         );
         if (kontingentFuerDj(djRueckfall) !== konto.kontingent) {
           warnungen.push(

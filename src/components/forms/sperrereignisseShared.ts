@@ -31,3 +31,19 @@ export function sperrereignisEntfernen(liste: Sperrereignis[], i: number): Sperr
       return e;
     });
 }
+
+/**
+ * Typwechsel eines Ereignisses (RL-13 PR 2, UI-05). Einen Rückfall kennt nur
+ * Krankheit/Unfall (Art. 336c Abs. 1 lit. b OR): Wird Ereignis i zu einem
+ * anderen Typ, fällt sein eigener Bezug weg, und Rückfälle, die auf i zeigen,
+ * verlieren ihren Bezug — sonst bliebe im Formular ein unsichtbarer Wert
+ * stehen, den die Engine nur noch als «ungültiger Bezug» offenlegen könnte.
+ */
+export function sperrereignisTypSetzen(liste: Sperrereignis[], i: number, typ: SperrereignisTyp): Sperrereignis[] {
+  const krankheit = typ === 'krankheit_unfall';
+  return liste.map((e, j) => {
+    if (j === i) return krankheit ? { ...e, typ } : { ...e, typ, gleicheUrsacheWieEreignis: undefined };
+    if (!krankheit && e.gleicheUrsacheWieEreignis === i) return { ...e, gleicheUrsacheWieEreignis: undefined };
+    return e;
+  });
+}
