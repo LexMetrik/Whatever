@@ -541,8 +541,8 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Rechtslogik — Befunde Prüfung 23.9.2026  *(`feld: rechtslogik`)*
 
-- [~] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W0 · status: wip · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [x] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W0 · status: done · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-01 (dieser Schritt) · RL-02 (Risiko-Grenze, Gegenprüfungs-Pflicht auch für
   Tor-Dateien selbst, W-02 entschieden) · RL-03 (Fachänderungs-Riegel für
   Fixes ausserhalb der Risiko-Grenze). Muss vor jeder anderen RL-Welle gelandet
