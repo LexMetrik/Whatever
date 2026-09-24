@@ -106,8 +106,11 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   const [start, setStart] = useState(heute);
   const [laenge, setLaenge] = useState(10);
   const [einheit, setEinheit] = useState<Einheit>('tage');
-  // Auftrag David: Ferien/Stillstand standardmässig ZPO (Gerichtsferien).
-  const [ferien, setFerien] = useState<Ferien>('zpo');
+  // Auftrag David 10.6.2026 war «standardmässig ZPO (Gerichtsferien)». Ersetzt
+  // durch Entscheid W-12 (c), David 24.9.2026 (RL-24/UI-07, Prüfung
+  // Rechtslogik 23.9.2026): Pflichtwahl OHNE Voreinstellung — die ZPO-Vorgabe
+  // verlängerte summarische/SchKG-Fristen still über die Gerichtsferien.
+  const [ferien, setFerien] = useState<Ferien | null>(null);
   const [kanton, setKanton] = useState<Kanton>(getStandardKanton);
 
   // Die SchKG-Engine führt keine Wochenfristen (gesetzliche SchKG-Fristen
@@ -115,7 +118,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   // Bug-Check §9 (Code-Lupe, MITTEL): beim Wechsel auf SchKG wird die
   // Einheit EXPLIZIT auf Tage gestellt (State = Anzeige) statt «N Wochen»
   // still als «N Tage» zu rechnen.
-  const waehleFerien = (code: Ferien) => {
+  const waehleFerien = (code: Ferien | null) => {
     setFerien(code);
     if (code === 'schkg' && einheit === 'wochen') setEinheit('tage');
   };
@@ -128,7 +131,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   let endeZusatz = '';
   let zeilen: string[] = [];
   let fehler = '';
-  if (gueltig) {
+  if (gueltig && ferien !== null) {
     try {
       if (ferien === 'keine') {
         const r = berechneAllgemeineFrist({
@@ -178,7 +181,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   // Auslöse-Bedingungen wie zuvor — verhaltensneutral (§6), und `baueMarkierung`
   // ist rein (§2). Der Export liest hier nur ab, er rechnet nichts (§3).
   const markierung = useMemo(
-    () => (gueltig ? baueMarkierung(start, laenge, einheitEffektiv, ferien, kanton) : null),
+    () => (gueltig && ferien !== null ? baueMarkierung(start, laenge, einheitEffektiv, ferien, kanton) : null),
     [gueltig, start, laenge, einheitEffektiv, ferien, kanton],
   );
   useEffect(() => {
@@ -208,6 +211,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
       if (beruehrt.current.size === 0 && e.ferien === i.ferien) return;
       brueckeAktiv.current = true; // ab der ersten echten Änderung meldet jede weitere
     }
+    // RL-24/UI-07: ohne gewähltes Regime nichts nach unten reichen.
+    if (e.ferien === null) return;
     onEingaben({
       ferien: e.ferien,
       werte: { start: e.start, laenge: e.laenge, einheit: e.einheit, kanton: e.kanton },
@@ -305,7 +310,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
              stehen (§1/§8). */
           <div className="col-span-2 sm:col-span-1">
             <Field label="Ferien / Stillstand">
-              <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
+              <select value={ferien ?? ''} onChange={(e) => waehleFerien(e.target.value === '' ? null : e.target.value as Ferien)} className={inputCls + ' w-full'}>
+                <option value="">– wählen –</option>
                 {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
               </select>
             </Field>
@@ -318,7 +324,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
         // Dropdown, ohne die Erläuterungstexte (Auftrag David: möglichst wenig).
         <div className="max-w-xs">
           <Field label="Ferien / Stillstand">
-            <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
+            <select value={ferien ?? ''} onChange={(e) => waehleFerien(e.target.value === '' ? null : e.target.value as Ferien)} className={inputCls + ' w-full'}>
+              <option value="">– wählen –</option>
               {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
             </select>
           </Field>
@@ -379,6 +386,10 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
            die Fläche (CLS) und sagt an, WAS erscheint. Der Satz selbst ist
            wörtlich unverändert. */
         <ErgebnisPlatzhalter was="Datum und ganzzahlige Dauer eingeben – das Fristende erscheint sofort." />
+      ) : ferien === null ? (
+        /* RL-24/UI-07 (W-12 c): Pflichtwahl ohne Voreinstellung — erst die
+           Ferien-Wahl bestimmt das Regime, vorher kein Fristende (§1/§8). */
+        <ErgebnisPlatzhalter was="Ferien/Stillstand wählen – das Fristende erscheint sofort." />
       ) : fehler !== '' ? (
         /* R2-E/F1-4: Eingabefehler in der geteilten `FehlerBox` (R8) — sie
            trägt role="alert", der lose Absatz tat es nicht. Wortlaut unverändert. */

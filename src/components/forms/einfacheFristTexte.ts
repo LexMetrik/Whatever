@@ -25,7 +25,8 @@ export type EinfacheFristEingaben = {
   start: string;
   laenge: number;
   einheit: Einheit;
-  ferien: Ferien;
+  // RL-24/UI-07 (W-12 c, David 24.9.2026): null = noch keine Ferien-Wahl.
+  ferien: Ferien | null;
   kanton: Kanton;
 };
 
@@ -38,6 +39,7 @@ export type EinfacheFristEingaben = {
 // frisch geöffnetes Voll-Formular startet trotzdem kohärent mit den oben
 // sichtbaren Werten statt mit seinem veralteten Beispiel-Default.
 type EinfacheFristFeld = 'start' | 'laenge' | 'einheit' | 'kanton';
+// Gemeldet wird nur mit gewähltem Regime (RL-24/UI-07) — darum Ferien ohne null.
 export type EinfacheFristMeldung = {
   ferien: Ferien;
   werte: Pick<EinfacheFristEingaben, EinfacheFristFeld>;
@@ -77,8 +79,8 @@ const KANTON_ANKNUEPFUNG: Record<Ferien, string> = {
   bgg: 'Wohnsitz/Sitz der Partei oder ihrer Vertretung',
 };
 
-export function kantonFeldLabel(ferien: Ferien): string {
-  const a = KANTON_ANKNUEPFUNG[ferien];
+export function kantonFeldLabel(ferien: Ferien | null): string {
+  const a = ferien ? KANTON_ANKNUEPFUNG[ferien] : '';
   return a ? `Kanton (Feiertage) – ${a}` : 'Kanton (Feiertage)';
 }
 

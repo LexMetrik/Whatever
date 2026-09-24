@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 import {
   allgemeineFristErgebnis, tageZwischen, ALLG_FRIST_HINWEIS,
   rueckwaertsErgebnis, zustellHinweis, fristQueryKodieren, fristQueryLesen, MECHANIK_PRESETS,
-  type AllgFristInput, type AllgFristResult, type Einheit, type RueckVerschiebung, type ZustellArt,
+  type AllgFristInput, type AllgFristResult, type Einheit, type FristArt, type RueckVerschiebung, type ZustellArt,
 } from '../../lib/allgemeineFrist';
-import { FAM_STATUS_PRESETS } from '../../lib/famStatusPresets';
+import { FAM_STATUS_PRESETS, famPresetPatch } from '../../lib/famStatusPresets';
 import type { Berechnungsergebnis, Kanton } from '../../types/legal';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
@@ -48,7 +48,15 @@ type State = Omit<AllgFristInput, 'kanton'> & { kanton: Kanton };
 const DEFAULTS: State = {
   start: '2026-06-05', laenge: 30, einheit: 'tage',
   wochenendeVerschieben: true, feiertageVerschieben: true, kanton: 'ZH',
+  fristart: 'gesetzlich',
 };
+
+// RL-24/F1-02: Regime-Wahl (Art. 78 Abs. 1 OR vs. SR 173.110.3) — Rechtsregel
+// in lib/allgemeineFrist.ts, hier nur Beschriftung (§3).
+const FRISTARTEN: { code: FristArt; label: string }[] = [
+  { code: 'gesetzlich', label: 'Gesetzliche oder behördliche Frist' },
+  { code: 'vertraglich', label: 'Vertragsfrist / Erfüllungstag' },
+];
 
 // Mechanik-Presets seit FE-3 in lib/allgemeineFrist.ts (MECHANIK_PRESETS) —
 // der Preset-Index des Tagerechners listet sie von dort (§5).
@@ -77,9 +85,9 @@ export function AllgemeineFristForm({ live }: {
       // Standard-Kanton (Einstellungen) als Default; ein Permalink-Kanton (aus)
       // geht weiter vor (Auftrag David).
       const basis = { ...DEFAULTS, kanton: getStandardKanton(), ...(aus ?? {}) };
-      return famAusLink
-        ? { ...basis, laenge: famAusLink.laenge, einheit: famAusLink.einheit, wochenendeVerschieben: true, feiertageVerschieben: true }
-        : basis;
+      // RL-24/R5-06: Patch aus EINER Stelle (famPresetPatch) — Kündigungstermine
+      // ohne Werktagsverschiebung.
+      return famAusLink ? { ...basis, ...famPresetPatch(famAusLink) } : basis;
     } catch { return DEFAULTS; }
   });
   const [von, setVon] = useState('2026-06-05');
@@ -179,6 +187,7 @@ export function AllgemeineFristForm({ live }: {
     inputs: {
       'Startdatum (Ereignis)': form.start.split('-').reverse().join('.'),
       'Fristlänge': `${form.laenge} ${EINHEITEN.find((e) => e.code === form.einheit)?.label}`,
+      'Fristart': FRISTARTEN.find((f) => f.code === (form.fristart ?? 'gesetzlich'))!.label,
       'Wochenenden verschieben': form.wochenendeVerschieben ? 'ja' : 'nein',
       'Feiertage verschieben': form.feiertageVerschieben ? `ja (${form.kanton})` : 'nein',
     },
@@ -261,7 +270,7 @@ export function AllgemeineFristForm({ live }: {
             <span className="lc-overline lc-overline-soft">Familienrecht &amp; Status:</span>
             {FAM_STATUS_PRESETS.map((p) => (
               <button type="button" key={p.label}
-                onClick={() => { setForm((f) => ({ ...f, laenge: p.laenge, einheit: p.einheit, wochenendeVerschieben: true, feiertageVerschieben: true })); setFamPreset(p); }}
+                onClick={() => { setForm((f) => ({ ...f, ...famPresetPatch(p) })); setFamPreset(p); }}
                 title={`${p.norm} — ${p.info}`} className="lc-chip hover:bg-brass-200 transition-colors">{p.label}</button>
             ))}
           </div>
@@ -303,13 +312,21 @@ export function AllgemeineFristForm({ live }: {
                 </select>
               </Field>
             </div>
+            <Field label="Fristart" hint="Samstag verschiebt nur gesetzliche/behördliche Fristen (SR 173.110.3)">
+              <select className={inputCls} value={form.fristart ?? 'gesetzlich'}
+                onChange={(e) => set('fristart', e.target.value as FristArt)}>
+                {FRISTARTEN.map((f) => <option key={f.code} value={f.code}>{f.label}</option>)}
+              </select>
+            </Field>
             <Field label="Fristende verschieben">
               <div className="space-y-1.5 pt-1">
                 {/* Rechtlich EINE Operation «nächster Werktag»: Feiertage
                     implizieren die Wochenend-Verschiebung (gekoppelt) */}
                 <Checkbox checked={form.wochenendeVerschieben || form.feiertageVerschieben}
                   onChange={(v) => setForm((f) => ({ ...f, wochenendeVerschieben: v, feiertageVerschieben: v && f.feiertageVerschieben }))}
-                  label="Samstag/Sonntag → nächster Werktag (Art. 78 OR; SR 173.110.3)" />
+                  label={form.fristart === 'vertraglich'
+                    ? 'Sonntag → nächster Werktag (Art. 78 OR)'
+                    : 'Samstag/Sonntag → nächster Werktag (Art. 78 OR; SR 173.110.3)'} />
                 <Checkbox checked={form.feiertageVerschieben}
                   onChange={(v) => setForm((f) => ({ ...f, feiertageVerschieben: v, wochenendeVerschieben: f.wochenendeVerschieben || v }))}
                   label="zusätzlich gesetzliche Feiertage (kantonal)" />
