@@ -518,8 +518,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Die Suche ist auch nachts da.',
       'Die Kanzlei ist dunkel.',
       'Nachts sind die Akten still.',
-      'No wach?',
-      'No am Dossier?',
       'Guete spaate Aabig.',
       'Schöne spaate Aabig.',
       // Landessprachen (Ausbau 8.9.2026; «Bonne nuit.», «Buonanotte.»,
