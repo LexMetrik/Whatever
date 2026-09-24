@@ -52,7 +52,11 @@ export function VerzugszinsSchnellForm() {
     // Füllt die Bühne des Schnellwerkzeugs (Mindesthöhe, `start/Schnellwerkzeug`);
     // der Fuss steht unten (`mt-auto`), der Leerraum einer kürzeren Form liegt
     // damit zwischen Ergebnis und Fuss statt unter dem Fuss.
-    <div className="flex flex-1 flex-col gap-4">
+    // U9 (David 24.9.2026 abends «schnellwerkzeug soll kleiner werden»): Abstand
+    // `gap-3` wie der Frist-Block (`start/Schnellwerkzeug`) statt `gap-4` — die
+    // Bühne reserviert nur noch die Frist-Höhe, jede höhere Variante lässt die
+    // Spalte wachsen; −12 px ohne Feld- oder Textverlust.
+    <div className="flex flex-1 flex-col gap-3">
       {/* Zwei Spalten erst ab 16.5 rem Flächenbreite (2 × 126 px Datumsfeld +
           Abstand) — dieselbe Schwelle wie `EinfacheFristForm minimal`. */}
       <div className="grid grid-cols-1 @[16.5rem]:grid-cols-2 gap-3 items-end">

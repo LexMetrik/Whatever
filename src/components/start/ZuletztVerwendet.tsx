@@ -38,6 +38,21 @@ import { StartFlaeche } from './StartFlaeche';
 // Schnellwerkzeug (`pages/Startseite.tsx`). Reservieren liesse sie sich auch
 // nicht: bis zu zwölf Einträge brechen in einer 20-rem-Spalte beliebig um.
 // SSR/Prerender: serverseitig leer; der Client liest beim Mount synchron nach.
+//
+// U9 (Nachtrag David 24.9.2026 abends, FAHRPLAN-WERKBANK-UMBAU §5d-bis):
+// «zuletzt geöffnet auf startseite soll nicht extra platz einnehmen sonder
+// schnellwerkzeug soll kleiner werden». Die Fläche steht jetzt in DERSELBEN
+// Rasterzeile wie das Kachelfeld (`pages/Startseite.tsx`) und zählt damit zur
+// Zeilenhöhe. Darum ist sie begrenzt: höchstens FÜNF Einträge (`SICHTBAR`),
+// je Eintrag EINE Zeile (`truncate`, voller Titel als Tooltip und im
+// zugänglichen Namen). Die Kappung ist reine Darstellung — Reihenfolge, Ziele
+// und `holeZuletzt` sind unverändert; die volle Liste (bis zwölf) zeigt der
+// Such-Leerzustand (`SucheLeerzustand`). Das Wort «Reservieren liesse sie sich
+// auch nicht» oben gilt weiter (Anzahl 0–5 hängt am Browser-Speicher); weil
+// die Spalte samt fünf Zeilen niedriger ist als die linke Spalte, verschiebt
+// ihr Erscheinen nach dem Laden nichts (Messung: `tailwind.config.js`).
+// Aus der umbrechenden Marken-ZEILE wird dafür eine LISTE (ein Eintrag je
+// Zeile); Registerstrich je Eintrag bleibt.
 
 /** Inhalts-Typ → Register. `seite` gehört keinem Bestand an und bleibt Tinte. */
 const REGISTER: Record<ZuletztTyp, Register | 'ink'> = {
@@ -49,21 +64,26 @@ const MARKE: Record<Register | 'ink', string> = {
   g: 'bg-reg-g', r: 'bg-reg-r', m: 'bg-reg-m', w: 'bg-reg-w', ink: 'bg-ink-500',
 };
 
+/** U9: höchstens so viele Einträge auf der Startseite (Darstellung, nicht Speicher). */
+const SICHTBAR = 5;
+
 export function ZuletztVerwendet() {
   const [eintraege] = useState(holeZuletzt); // lazy, synchron — kein Effect-Nachwachsen
   if (eintraege.length === 0) return null;
   return (
     <StartFlaeche titel="Zuletzt geöffnet">
-      <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 font-sans text-body-s">
-        {eintraege.map((e) => (
-          <Link key={e.route} to={e.route}
-            className="border-b border-rule-soft pb-px no-underline hover:border-ink-900 hover:text-ink-900">
-            <span aria-hidden
-              className={`mr-1.5 inline-block h-2.5 w-[3px] align-[-1px] ${MARKE[REGISTER[e.typ]]}`} />
-            {e.titel}
-          </Link>
+      <ul className="grid gap-y-1.5 font-sans text-body-s">
+        {eintraege.slice(0, SICHTBAR).map((e) => (
+          <li key={e.route} className="flex min-w-0">
+            <Link to={e.route} title={e.titel}
+              className="inline-flex min-w-0 max-w-full items-center border-b border-rule-soft pb-px no-underline hover:border-ink-900 hover:text-ink-900">
+              <span aria-hidden
+                className={`mr-1.5 inline-block h-2.5 w-[3px] shrink-0 ${MARKE[REGISTER[e.typ]]}`} />
+              <span className="truncate">{e.titel}</span>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </StartFlaeche>
   );
 }

@@ -81,6 +81,14 @@ function zeileFuer(id: string): WerkzeugZeile | null {
   return { id, titel: k.title, modus: k.modus, status: k.status, href: benutzbar ? k.href ?? null : null, artikel: [] };
 }
 
+/** Status-Modell (§8) einer Werkzeug-Karte — dieselbe Quelle wie der Katalog
+ *  (`startseiteConfig`, §5). Runde 2 (24.9.2026): der Artikel-Teil des Blatts
+ *  zeigte das Etikett «Entwurf» nicht, die Erlass-Liste darunter schon — zwei
+ *  verschiedene Auskünfte zum selben Werkzeug. `null` = Karte unbekannt. */
+export function werkzeugStatus(id: string): Status | null {
+  return ALLE_KARTEN.find((c) => c.id === id)?.status ?? null;
+}
+
 function teile(zeilen: readonly WerkzeugZeile[], erlassWeit: boolean): WerkzeugAnsicht {
   return {
     verfuegbar: zeilen.filter((z) => z.href !== null),

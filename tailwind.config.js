@@ -392,11 +392,20 @@ export default {
       // Verjährung ≤ 588, Frist 514 → 41rem; einspaltig (Telefon 320) Verzugszins
       // 843 px → `-eng` 53rem; nach den Artikel-Hinweisen am Verzugszins
       // (Gegenprüfung U2) +35 px → zweispaltig 43.5rem, `-eng` 56.5rem (Reserve für 320).
+      // U9 (Nachtrag David 24.9.2026 abends «zuletzt geöffnet … soll nicht extra
+      // platz einnehmen sonder schnellwerkzeug soll kleiner werden»): die Bühne
+      // reserviert nur noch die FRIST-Variante (Prerender); höhere Varianten
+      // wachsen. Gemessen 24.9.2026 (Dev, Chromium, Inhalt ohne Mindesthöhe):
+      // zweispaltig @1024–1440 Frist 514 px (@390: 506) → 32.25rem (516);
+      // einspaltig @320 Frist 709 px → `-eng` 44.5rem (712). Zum Vergleich nach
+      // `gap-3` in den Schnellformen: Verzugszins 683 / Verjährung 537 (@1440).
+      // Spalte @1440 mit fünf «Zuletzt»: 643 + 16 + 219 = 878 px ≤ 906 px
+      // (linke Spalte natürlich) — «Zuletzt» nimmt keine eigene Zeile mehr ein.
       // U4 (24.9.2026) · `start-kachel-breit`: ab `lg` behalten die Kacheln die
       // Höhe von vor U2 (gemessen 289 px @1024–1440) statt auf die Höhe der
       // Fläche Schnellwerkzeug gestreckt zu werden; «Häufig gebraucht» darunter
       // füllt den Rest (`pages/Startseite.tsx`). `start-kachel` bleibt Untergrenze.
-      minHeight: { 'start-schnell': '43.5rem', 'start-schnell-eng': '56.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '18rem', 'start-kachel-s': '8.25rem', 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
+      minHeight: { 'start-schnell': '32.25rem', 'start-schnell-eng': '44.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '18rem', 'start-kachel-s': '8.25rem', 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

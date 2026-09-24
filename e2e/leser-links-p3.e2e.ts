@@ -76,9 +76,23 @@ test.describe('P3 · Links im Gesetzesleser', () => {
     // erscheinen»): die Zeile ist gefallen. Der Positiv-Fall (b) misst den
     // Rechnen-Eintrag «Kündigung & Fristen im Arbeitsverhältnis» jetzt dort,
     // wo er steht: in der Artikelgruppe oben im Blatt-Reiter «Werkzeuge».
+    // §6.3 · Runde 2 (24.9.2026, PR #1067): der Werkzeug-Eintrag im
+    // Artikelteil ist seither eine LISTENZEILE mit derselben Anatomie wie die
+    // Erlass-Liste darunter (`WerkzeugKopf`, Titel `no-underline`, Status-
+    // Spalte) — DESIGN-REGLEMENT F0.8 erlaubt Listenzeilen ausdrücklich ohne
+    // Strich. GEMESSEN 24.9.2026 (lokal gegen dist, @1440): die Werkzeug-Gruppe
+    // von 336c trägt danach genau einen Link, `no-underline`, `none` — kein
+    // Textlink mehr, (b) mass dort nichts. Der Positiv-Fall zieht darum in die
+    // Materialien-Gruppe desselben Artikels um: dort stehen echte Textlinks
+    // ohne Ausnahme-Marke («Fedlex ↗», «Curia Vista ↗» der Botschaft, gemessen
+    // `underline`). KEINE LOCKERUNG: dieselbe Auswahl `istText`, derselbe
+    // Leer-Treffer-Schutz; der Werkzeug-Reiter wird weiterhin geöffnet, damit
+    // (a) seine Zeilen mit sieht.
     await blattFuerArtikel(page.locator('#art-336_c'), 20000);
     await blattReiter(page, 'werkzeuge');
     await expect(page.locator('[data-v3-blatt-artikelgruppe="werkzeuge"] a[href]').first()).toBeVisible();
+    await blattReiter(page, 'materialien');
+    await expect(page.locator('[data-v3-blatt-artikelgruppe="materialien"][data-v3-blatt-artikel="336_c"] a[href]').first()).toBeVisible({ timeout: 20000 });
     await page.waitForTimeout(250);
 
     const mess = await page.evaluate(() => {
@@ -97,7 +111,7 @@ test.describe('P3 · Links im Gesetzesleser', () => {
       // fehlender Strich kein Befund (Herleitung im Kopf, 7.9.2026).
       const istText = (a: Element) => !/(^|\s)no-underline(\s|$)/.test(String(a.className))
         && !a.closest('.lc-chip, .lc-btn-mini');
-      const bezug = [...document.querySelectorAll('[data-v3-blatt-artikelgruppe="werkzeuge"][data-v3-blatt-artikel="336_c"] a[href]')].find(istText);
+      const bezug = [...document.querySelectorAll('[data-v3-blatt-artikelgruppe="materialien"][data-v3-blatt-artikel="336_c"] a[href]')].find(istText);
       const kopf = [...document.querySelectorAll('.lc-leser a[href]')]
         .find((a) => /Amtliche Fassung/.test(a.textContent ?? '') && !a.closest('.lc-chip, .lc-btn-mini'));
       const strich = (el: Element | null | undefined) =>
@@ -111,8 +125,8 @@ test.describe('P3 · Links im Gesetzesleser', () => {
     expect(mess.nackt, `Links ohne Unterstrich und ohne erklärte Ausnahme:\n${mess.nackt.join('\n')}`)
       .toEqual([]);
     // (b) — ohne diese Hälfte wäre (a) mit `no-underline` überall erfüllbar.
-    expect(mess.bezugDa, 'kein TEXTLINK in der Werkzeug-Gruppe von OR 336c im Blatt gefunden — der Positiv-Fall misst nichts').toBe(true);
-    expect(mess.bezugStrich, 'die Links der Bezüge-Zeile stehen wieder ohne Unterstrich').toBe(true);
+    expect(mess.bezugDa, 'kein TEXTLINK in der Materialien-Gruppe von OR 336c im Blatt gefunden — der Positiv-Fall misst nichts').toBe(true);
+    expect(mess.bezugStrich, 'die Textlinks im Artikelteil des Blatts stehen wieder ohne Unterstrich').toBe(true);
     expect(mess.kopfDa, 'kein Fedlex-Textlink gefunden — der Positiv-Fall misst nichts').toBe(true);
     expect(mess.kopfStrich, '«Amtliche Fassung ↗» steht wieder ohne Unterstrich').toBe(true);
   });

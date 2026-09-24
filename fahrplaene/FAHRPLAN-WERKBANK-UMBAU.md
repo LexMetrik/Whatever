@@ -364,7 +364,7 @@ Eingabe→Trefferleiste bei CPU×4 med 1.34 s.
 Board). 3 Aktive Fundstelle nur mit bestehenden Tokens. 4 Kern-Probe erweitert
 ArtikelBody.test.tsx, kein neues Tor. 5 Je PR «netto ≤ 0» in src anstreben. 6 Bereitschaftsmarker
 als Produkt-Attribut — nur mit gemessener Wirkung (S0: ohne Wirkung, ausgebaut 23.9.2026). **Wartet auf David:** nichts. (Funktionszeile im Einzelmodus nicht
-durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.)
+durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.) 7 (Entscheide David 24.9.2026, Chat, nach S6 W1g/#1062/#1063): Kürzel «OR» in der Werkzeugzeile über der Gliederung **bleibt** (Split unterscheidet die Seiten); Artikel-Aktionszeile «Zitat · Link · Amtliche Fassung» **so lassen** = linksbündig an der Artikelkante, Maus: erst bei Hover/Fokus sichtbar (Platz reserviert), Touch immer sichtbar — ersetzt den früheren Entscheid «klein am Artikel, immer sichtbar»; Reiter Änderungen: Zeile «Fassung dieses Artikels» startet **zugeklappt**. Erlass-Blatt auf dem Tablet (768×1024) 69 % der Höhe nach der Handy-Regel (#1067) — **so lassen**.
 
 ### 7 Nebenfunde
 
@@ -625,6 +625,20 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   nach #1053): Wahl als zwei hohe Spalten Rechner · Vorlagen (`WahlSpalte` geteilt in `BlattBausteine.tsx`),
   darunter Kategorien bzw. Rechtsgebiete mit Anzahl aus `KATALOG_KARTEN`; Stufen `werkzeuge/rechner/<kategorie>`
   und `werkzeuge/vorlagen/<gebiet>`, unbekannte ID → Liste.
+- **U9 (Nachtrag David 24.9.2026 abends):** «zuletzt geöffnet auf startseite soll nicht extra platz einnehmen sonder
+  schnellwerkzeug soll kleiner werden» → die zweite Rasterzeile (leer | Zuletzt) entfällt: «Zuletzt geöffnet» steht in
+  der Spalte unter dem Schnellwerkzeug, in derselben Zeile wie Kacheln + «Häufig gebraucht»; höchstens fünf Einträge,
+  je eine Zeile (gekürzt, voller Titel als Tooltip; volle Liste bleibt im Such-Leerzustand). Die Bühne reserviert nur
+  noch die Frist-Höhe (Token `start-schnell` 32.25rem / `-eng` 44.5rem, neu gemessen); Verzugszins/Verjährung
+  wachsen (löst die U4-Höhenregel «gleich hoch wie Verzugszins» ab). Schnellformen `gap-3` statt `gap-4`.
+- **U11 (Nachtrag David 24.9.2026 abends):** «bei gesetze soll auf allenen ebenen eine suche möglich sien» →
+  Suchfeld auch auf Wahl (alle Erlasse), Gebiete (Bundesrecht) und Kantone (kantonales Recht), `StufenSuche`
+  in `start/GesetzeSuche.tsx`: Treffer mit `filtern` und `GruppenInhalt`, Herkunft als Gruppenkopf, 30er-Portion;
+  Register erst beim Fokus ins Feld (§15).
+- **U12 (Nachtrag David 24.9.2026 abends):** «materialien soll erläuterungen und materialien enthalten» → Kachel
+  «Materialien» nennt beide Gattungen (Teile 1'356 Materialien · 327 Erläuterungen, Zähler-Felder
+  `materialienGesetzgebung`/`materialienErlaeuterungen`), Blatt mit Schalter Alle · Materialien · Erläuterungen;
+  Zuordnung aus `lib/materialien/gattung.ts` = Leser-Reiter-Regel (§5).
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 

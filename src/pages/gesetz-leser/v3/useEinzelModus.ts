@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { setzeLeserAnsicht, useLeserAnsicht } from '../leserOptionen';
+import { kanonischerAnkerToken } from '../suchTreffer';
 import {
   einzelAdresse, modusAusSuche, modusEntscheid, nachbarToken, sucheMitModus, tokenAusHash,
   type LeserModus,
@@ -102,7 +103,16 @@ export function useEinzelModus(
   // den Modus ohne Anker betritt — dort ist der Anfang des Erlasses die
   // einzige Stelle, die niemanden überrascht. Steht der Erlass noch nicht
   // (Shard unterwegs), ist das Ergebnis `null` und die Ansicht wartet.
-  const token = tokenAusHash(location.hash) ?? aktivToken ?? artTokens[0] ?? null;
+  //
+  // Runde 2 (24.9.2026, gemessen): `?ansicht=artikel#art-336c` fiel auf die
+  // Gesamtansicht zurück (scrollY 220'968 statt 504 @390), weil der Token des
+  // Erlasses `336_c` heisst. Die Gesamtansicht bildete die Schreibweise seit
+  // S6-W1a schon ab (`../inhalt-hooks-tieflink`), der Einzelmodus nicht —
+  // jetzt über DIESELBE Abbildung (`kanonischerAnkerToken`, §5): exakt vor
+  // unscharf, unscharf nur bei eindeutigem Treffer (§8: kein Rate-Sprung).
+  const ausAdresse = tokenAusHash(location.hash);
+  const token = (ausAdresse === null ? null : kanonischerAnkerToken(ausAdresse, artTokens))
+    ?? aktivToken ?? artTokens[0] ?? null;
 
   const gehZu = useCallback((ziel: string) => {
     // `pushState` (react-router `navigate` ohne `replace`) — die Begründung

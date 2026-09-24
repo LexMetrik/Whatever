@@ -125,7 +125,10 @@ Commit mit eigenem Roadmap-Trailer).
       Skill, Tor). Einzeilig dabei der **§17-Lehren-Check**: Lehre aufgekommen
       ⇒ verankert nach Formregel Skill `lehren` (Tor > Dispatch-§0 > Skill >
       Prosa) — nur im Chat gilt als nicht gezogen. Danach Datei löschen;
-      Übergabe: Datei bleibt, Pfad im Chip.
+      Übergabe: Datei bleibt, Pfad im Chip. Einen PR/Zweig nennt die Übergabe
+      nur mit Beleg «fertig» (gate-Exit 0 + Kopf-SHA), sonst «in Arbeit» —
+      Beleg D2/#1072 (24.9.2026): «fertig, nicht eingereicht», war gate-rot
+      mit 5 Tests, Lint und Schlankheit (§14.7).
 - [ ] **Status geschlossen:** `plan:set -- <id> status=done` + `check:plan`
       stehen im Feature-PR (Station D). Ein **separater Doku-PR nur dann**,
       wenn danach wirklich noch Rest-Doku offen ist (Skill `landung` Ziff. 7)
