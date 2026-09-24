@@ -60,9 +60,11 @@ describe('A-1 — SeitenTitel: EINE Grössen-Kaskade, kontextabhängig gemessen'
 // Vorlagen-Kopf ist aus `vorlagen/wizard.tsx` in den geteilten
 // `layout/WerkzeugKopf` gezogen — der Konsument des Bausteins ist jetzt dieser
 // Kopf (die Rechner folgen). Umfang und Assertion unverändert.
+// DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-RECHNER R1, 24.9.2026, §6.3): die
+// Rechner sind gefolgt — `RechnerKopf` rendert über `WerkzeugKopf` und baut
+// den Titel nicht mehr selbst; er fällt aus der Liste, der Baustein bleibt.
 const KONSUMENTEN = [
   'src/components/layout/SeitenKopf.tsx',
-  'src/components/layout/RechnerKopf.tsx',
   'src/components/layout/WerkzeugKopf.tsx',
   'src/pages/gesetz-leser/parts/ErlassLeserKopf.tsx',
   'src/pages/EntscheidLeser.tsx',
