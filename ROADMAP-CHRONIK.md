@@ -5486,3 +5486,117 @@ Wortlaut des gestrichenen Schrittes:
   **Offene Unterpunkte im Wortlaut** (verlagert 20.9.2026, Entscheid David): [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) §16 — die drei Deckel-/Schnitt-Posten und die Gliederungs-Nebenfunde.
   **Wird durch `W2·29-WERKBANK-LESER` abgelöst** (gleiches Ziel, anderer Weg) — Posten dort
   abarbeiten (Fahrplan Werkbank-Umbau §7); bis dahin unverändert baubar.
+
+
+# Umschichtung 2026-09-24 (1) — Bauplan-Konsolidierung: erledigte Schritte, Teilerfolge, Streichungen, David-Fragen, Queue
+
+Anlass: Auftrag David 24.9.2026 («prüfe auch noch den gesamten bauplan indem du inventarisierst und
+gleich die befunde einbaust und auch sonst zusammenlegst was es zu zusammenlegen gibt»), Schritt
+`QS-DOKU-DIAET`. Grundlage: Bauplan-Inventar Phase 1 (Projektordner
+`pruefung-herz-nieren-2026-09-24/bauplan-inventar.md`, Massnahmen M-01, M-03 … M-07, M-30, Frage
+F-1), freigegeben vom Orchestrator 24.9.2026. Alles wörtlich (aufraeumen.md §2), je Streichung eine
+Begründungszeile (§3). Kein `@meta` eines lebenden Schritts wurde verändert — ausser der
+freigegebenen Buchung `QS-DOKU-DIAET` (wip, `dep: []`, Commit davor).
+
+## W2·28-TREFFER-LANDKARTE — Treffer-Landkarte: wo im Dokument liegen die Treffer *(done, verschoben 2026-09-24)*
+
+- [x] **Treffer-Landkarte: wo im Dokument liegen die Treffer** *(`W2·28-TREFFER-LANDKARTE`, David 18.9.2026; reine UI)*
+  <!-- @meta id: W2·28-TREFFER-LANDKARTE · status: done · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md -->
+  Streifen neben dem Scrollbalken mit einer Marke je Suchtreffer (Gesetz + Entscheid), Klick springt; dieselbe Trefferquelle wie die Hervorhebung (§5).
+  **Detail:** [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §1.
+
+*`fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md` bleibt über die offenen Posten verlinkt (check:plan Regel 7).*
+
+## W2·29-MARKE — Marke: Logo A2 «Registerbuch» und Reiterleiste «Echte Registerreiter» *(done, verschoben 2026-09-24)*
+
+- [x] **Marke: Logo A2 «Registerbuch» und Reiterleiste «Echte Registerreiter»** *(`W2·29-MARKE`, Auftrag David 24.9.2026)*
+  <!-- @meta id: W2·29-MARKE · status: done · blocker: null · dep: [] · feld: design -->
+  Name und Wortmarke bleiben. Siegel → A2 (Buch, Rücken, §, vier Registerreiter), Favicon aus dem
+  Designsystem; offene-Reiter-Leiste als Blätter mit Registerstrich oben, aktiver Reiter verschmilzt mit der Seite.
+
+## QS-CI-MINUTEN — Teilerfolgs-Prosa *(✅-Teilerfolg, verschoben 2026-09-24)*
+
+Die Zeile stand bis 24.9.2026 im offenen Schritt; im Plan bleibt ein ✅-Einzeiler mit Termin
+(Nachmessung 8.10.2026) und dem offenen Punkt. Nachgeführt dort: der Stichtag «bis 22.9.» ist
+verstrichen — `scripts/check-e2e-flake.ts:162` schaltet ab `hart_ab` (`e2e/flake-modus.json`:
+2026-09-22) auf hart.
+
+  Gebaut 8.9.2026: M1–M5, Flacker-Wächter (Melde-Modus bis 22.9.2026, dann hart), Ergebnis-Job, Playwright-Install-Retry — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** **Merge Queue erledigt 19.9.2026:** Repo `LexMetrik/Whatever`, Ruleset 23699779 (SQUASH, ALLGREEN, max 3, Timeout 60 min, keine Bypass-Akteure), `strict` AUS; erster Durchlauf #922 + #917 gemeinsam gelandet 15:05:00Z. Herleitung (#914/#892), `QS-ORG-UMZUG` im Wortlaut, Entscheide David 8.9.2026 (Weg A, M2): Chronik, Umschichtung 19.9.2026 bzw. 14.9.2026 (3). Offen: Wurzel der flackernden Specs (Fehlerbuch §4, bis 22.9.) — unter der Queue schwerer.
+
+## QS-PERF — Teilerfolgs-Prosa *(✅-Teilerfolg, verschoben 2026-09-24)*
+
+  Leser-Tempo gebaut 1.9.2026 (A/B n=5): OR **10 368 → 7 899 ms @4×+4G**, **38 296 → 27 432 ms @6×+3G**,
+  ungedrosselt 780 ms — Wortlaut samt Bestands-Fix `InhaltsKopf`: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3).
+
+## Streichungen 2026-09-24
+
+- **`QS-BEWAEHRUNG`** (Residuen-Stub ohne `@meta`) — gestrichen 2026-09-24: der Schritt ist seit
+  15.9.2026 erledigt und steht samt `@meta` im Wortlaut in der Umschichtung 17.9.2026; der Stub
+  steuerte nichts mehr (keine `dep`, keine Queue). Wortlaut des Stubs:
+
+  ```
+  - [x] **Bewährungs-Messung für Tore, Hooks und Regeln** *(`QS-BEWAEHRUNG`)* — ✅ 15.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 17.9.2026.
+  ```
+- **`W2·9`** — gestrichen 2026-09-24: (a) A3 Kachel-Höhen ist gegenstandslos
+  (`fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md` §20, «Stand 24.9.2026 (W2·29-WERKBANK-RECHNER R2):
+  gegenstandslos»; die Rest-Befunde LM-066/LM-032 laufen im Posten
+  `plan/posten/2026-09-23-w2-9-a-kachel-hoehen-gebvkostenform-tsx-97-samt-lm-032-066-0.md` unter
+  `W2·29-WERKBANK-REST`); (b) «aufgehobene Normen ausblenden» ist eine Entscheidfrage («Abhaken
+  bleibt David-Entscheid») und steht seit 24.9.2026 als Zeile `aufgehobene-normen-schalter` im
+  Block `@david-fragen` der ROADMAP. *Abweichung offengelegt:* `FAHRPLAN-WERKBANK-UMBAU.md` §5f
+  plante für (b) «als Posten umbuchen»; freigegeben war `@david-fragen`, weil erst David
+  entscheidet, ob gebaut wird — ein Posten würde eine Bau-Einheit vortäuschen. Wortlaut:
+
+- [ ] **Aufräum-Item — zwei Restpunkte** *(`W2·9`)*
+  <!-- @meta id: W2·9 · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md -->
+  (a) A3 Kachel-Höhen (zur David-Abnahme geflaggt); (b) globaler Schalter «aufgehobene Normen
+  ausblenden» nie gebaut. Abhaken bleibt David-Entscheid.
+  **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §20.
+  **(a) fällt mit `W2·29-WERKBANK-RECHNER`** (Gegenstand Betreibungskosten-Formular, Planung
+  23.9.2026); (b) ist eine Funktion und bleibt hier.
+
+- **Blocker `david-go-entstehung`** — gestrichen 2026-09-24: ERTEILT seit 11.9.2026, kein `@meta`
+  referenziert ihn mehr (`npm run plan:dump`). Wortlaut der Register-Zeile:
+
+  ```
+  david-go-entstehung: ERTEILT — Go David 11.9.2026 («führe alles durch»); die drei W2·6c-ENTSTEHUNG-*-Schritte stehen auf `status: ready`, Blocker entfernt. Design freigegeben 6.9.2026; §11.9 der Materialien-Spec bucht die Entscheide 1–6 als entschieden 11.9.2026 (Mandat), Nr. 7 (fachliche Abnahme) bleibt bei David.
+  ```
+- **Blocker `david-design-entscheide`** — gestrichen 2026-09-24: ENTSCHIEDEN 22.9.2026, kein `@meta`
+  referenziert ihn mehr; der Entscheid im Wortlaut steht zusätzlich in
+  `fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md` §4. Wortlaut der Register-Zeile:
+
+  ```
+  david-design-entscheide: ENTSCHIEDEN — David 22.9.2026 (Chat): (1) Seitenleiste-Aufbau bleibt wie im Produkt; (2) Startseite vier Kacheln, Zahl aus dem generierten Zähler; (3) Farbe als Fläche JA (F0.2 und `check:farbwelt` im Tokens-Schritt ändern). `W2·29-WERKBANK-TOKENS` steht auf `ready`, Blocker entfernt; Wortlaut in FAHRPLAN-WERKBANK-UMBAU.md §4.
+  ```
+
+## Geparkt «Offene David-Grundsatzfragen» → `@david-fragen` (Abgleich gegen W-01 … W-22)
+
+Die Zeile stand seit 28.6.2026 im Block «Geparkt»; das Lagebild liest offene Fragen aber allein aus
+`@david-fragen` (`davidFragen`, `scripts/plan/bildDaten.ts`) — David hat sie dort nie gesehen.
+Abgleich 24.9.2026 gegen `fahrplaene/FAHRPLAN-RECHTSLOGIK.md` §4 (W-01 … W-22, Stand `main`
+e92e7ba1d): **keine der vier Fragen ist dort beantwortet** — W-13 betrifft die Berner Skala der
+Lohnfortzahlung (nicht den Dienstjahr-Stichtag der Kündigungsfrist), W-22 die Gleitkomma-Rundung
+`round2` (nicht die Frage, ob die GebV-SchKG 0.05 verlangt). Alle vier ziehen darum als offene
+Fragen nach `@david-fragen` (Schlüssel `dienstjahr-stichtag`, `sperrtage-anzeige`,
+`export-antworten`, `gebv-schkg-rundung`); ausführlicher Ursprung: `archiv/HANDLUNGSPLAN.md`
+Z.211–218 (7.6.2026). Wortlaut der Geparkt-Zeile:
+
+- **Offene David-Grundsatzfragen** (gebündelt mitführen): Dienstjahr-Stichtag Kündigungsfrist ·
+  Sperrtage-Konvention · 3 Export-Antworten · GebV-SchKG-Promille-Rundung (0.01 vs. amtlich 0.05).
+
+## `@queue` nachgeführt 2026-09-24 (Frage F-1)
+
+Befund Phase 1: von 106 `Roadmap:`-Trailern seit 17.9.2026 zeigten 2 auf Queue-IDs; gebaut wurde
+`W2·29-WERKBANK-*` (63) und `W2·30-RL-*` (7) — die Go-Entscheide 22.9. (Werkbank) und 23./24.9.
+(Rechtslogik parallel) standen nicht in der Queue. Nachgeführt (Entscheid Orchestrator, David hat
+Veto): `W2·30-RL-W2A, W2·29-WERKBANK-REST, W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS`. Aus der
+Queue gefallen (bleiben `ready`, ordnen sich per Dokumentreihenfolge): `W2·20-VERWEIS-SCHAERFE`,
+`W2·22-VERWEIS-FEDLEX`. Das Phasen-Dekret 14.9.2026 im ROADMAP-Kopf bleibt unverändert stehen.
+
+Queue und Marker bis 24.9.2026 im Wortlaut:
+
+`<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX -->`
+
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Sollbild «Was ist ein Gesetz bei LexMetrik», am Bund
+> festgeschrieben und dort eingelöst — Restposten als Zeilen im Schritt; seit 18.9.2026 wieder
+> `ready`, weil `wip` ohne Bau-Spur stand). Danach `W2·5l-NORMTEXT-B2` (Text-Treue M13/M14).
