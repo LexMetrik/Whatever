@@ -232,7 +232,7 @@ Stufen-Status `[~]`).
 
   - [ ] **K-4 · Einzel-Nachzüge Stand/Currency** *(F14/F9 + SO-Lektion)* — Invariante «stand ≤ Generierungsdatum» ins Tor `check:normtext`. §1-A.
   - [ ] **K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe** *(F7/F8/F15/F11/F25-Keys/F22)* — pro Kanton eine Tranche; K-6a vor K-6d. §1-A.
-  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. §1-A. **Teil b (15.9.2026): PDF-Kern** — ein Leser aus `adapter-pdf.ts` + `adapter-zh-pdf.ts` (Golden byte-gleich), Fehlerraten-Messgeschirr, pdfjs↔PyMuPDF-Vergleich; Vorbedingung `W2·6d-BOTSCHAFT-TEXT` B. Detail: Fahrplan Materialien §12.3 Etappe 1.
+  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. §1-A. **Teil b (15.9.2026): PDF-Kern** — ein Leser aus `adapter-pdf.ts` + `adapter-zh-pdf.ts` (Golden byte-gleich), Fehlerraten-Messgeschirr, pdfjs↔PyMuPDF-Vergleich; Vorbedingung `W2·6d-BOTSCHAFT-TEXT` B (seit 24.9.2026 Etappe EA3 im Dach `W2·6d-ENTSTEHUNG`). Detail: Fahrplan Materialien §12.3 Etappe 1.
   - [ ] **K-8 · xhtml-`<p>`-Strukturerhalt** *(F21)* — Schema nur additiv, Golden-Diff korpusweit offline. §1-A.
   - [ ] **K-9 · Erlass→Werkzeug-Brücke Kanton** *(F38)* — Build-Zeit-Inversion der Tarif-`quelleUrl`s + Konsistenz-Tor. §1-A.
   - [ ] **K-10 · AR-Sidecar-Batch** *(F30-AR)* — nur amtliche Überschriften, **Einzel-Erlass-POC vor dem Batch**. §1-A.
@@ -258,6 +258,8 @@ Stufen-Status `[~]`).
 ---
 
 ## §3 · Inhaltsdrift der kantonalen Snapshots gegen die Quellen (`W2·13-KANTONE-DRIFT`, Befund 2.8.2026)
+
+*24.9.2026: `W2·13-KANTONE-DRIFT` ist in `W2·13-KANTONE-DATEN` aufgegangen (Posten dort; ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
 
 **Befund (Herkunft ehrlich ausgewiesen).** Beim Nachführungs-Durchgang vom 2.8.2026 wurde die
 Bundes-Ebene bewusst allein bearbeitet (`--nur=bund`). Der Drift-Abgleich meldete dabei für die

@@ -60,7 +60,7 @@ noch zu bauende PDF-/PDF-embed-Pipeline.
    FR-Ausreisser (1 unbekannt) im Lauf prüfen.
 3. **Tier C (PDF-embed), 5 Kantone:** ZH 941, GE 862, JU 855, NE 827, SZ 424 —
    Host vom Klassifizierer erkannt, aber die PDF-embed-Import-Pipeline ist noch
-   nicht gebaut → Backlog (FAHRPLAN-GESETZE-IMPORT-3TIER Tier C).
+   nicht gebaut → Backlog (FAHRPLAN-GESETZE-IMPORT-3TIER Tier C; seit 24.9.2026 `archiv/FAHRPLAN-GESETZE-IMPORT-3TIER.md`).
 4. **2 Kantone unbekannt:** **VD 900** (kein Host-Muster im Klassifizierer) und
    **TI 621** (Host ≠ `m3.ti.ch` — vermutlich neuer Host/leere `original_url`).
    Quick-Follow-up: je eine `original_url` prüfen und Host-Muster in
