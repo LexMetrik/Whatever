@@ -199,6 +199,36 @@ Erfassungsgrad, MassgebendeGesetze} → KATALOGE. Geteilt: lr8-* und einzelne lr
 NICHT bauen (Board > Produkt): «Entscheide zu den Artikeln auf dieser Seite» mit Zählern,
 «Mappen»-Reiter, gelbe aktive Fundstelle #F3E3A6.
 
+**D-1 revidiert 24.9.2026 (Weisung 23.9. abends, Entscheid A 24.9.) — S6 W1e.** Weisung David
+23.9.2026 abends: «achte auch darauf dass sie sinnvoll erscheint. also das ui bei verschiedenen
+bildschirmgrössen so ist dass es nahe am relevanten artikel ist und einklappbar ist und nicht mit
+dem knopf erlass. analog gliederung.» Entscheid 24.9.2026, Variante A «Echte dritte Spalte»: «Das
+Blatt wird eine eigene Spalte wie die Gliederung und deckt nie Text ab. Nachteil: Der Text rutscht
+beim Öffnen zur Seite und bricht auf kleineren Bildschirmen neu um. Das hebt D33 (‹nichts
+verschiebt sich›) auf.» (verworfen B Schiene + Überlagerung, C Reiter in der Gliederung);
+«Gliederung eingeklappt merken» = Ja. D-1 (23.9.: Blatt am Fensterrand, `useFensterRand`) ist
+damit zurückgebaut, samt Überlagerung `'rechts'`. Gebaut ab 1024 px (Einzelansicht): Blatt offen =
+eigene Spur 380 px rechts der Lese-Zelle (sticky wie das Gliederungs-`aside`, bis zur
+Fensterunterkante); zu = 36-px-Schiene «‹ Erlass-Blatt» (das Soll oben nannte 52 px — gebaut ist
+der Spiegel der Gliederungs-Schiene, 36 px); im Kopf rechts «Erlass-Blatt ausblenden ›», der
+Kopf-Knopf «Erlass-Blatt» entfällt; Rahmen wächst auf «linke Spur + 45 rem + rechte Spur», nie über
+den Raum (`rahmenSpalten.ts`). Schwellen (`LESE_MIN` 28 rem): Raum < 1156 px (Fenster ≈ 1204) ⇒ die
+Gliederung weicht dem offenen Blatt transient auf die Schiene; Raum < 904 px ⇒ Sheet wie unter
+1024. Gemessen 24.9.2026 (OR Art. 257d, Wortlaut `.lr-text` x/Breite, Blatt x, Gliederung offen):
+
+| Fenster | Blatt zu: Text | Blatt offen: Text | Blatt x | Gliederung offen | Neuumbruch |
+|---|---|---|---|---|---|
+| 1024 | 332/612 | 80/520 | 620 | weicht (Schiene) | ja |
+| 1204 | 413/641 | 332/448 | 800 | bleibt | ja |
+| 1280 | 451/641 | 332/524 | 876 | bleibt | ja |
+| 1400 | 511/641 | 333/641 | 996 | bleibt | nein (rutscht) |
+| 1440 | 531/641 | 353/641 | 1036 | bleibt | nein (rutscht) |
+| 1920 | 771/641 | 771/641 | 1472 | bleibt | nein, Text steht |
+
+Blatt überlappt Text: in keiner Lage (e2e `leser-v3-rahmen` (h)); Laden mit gemerkten Lagen ohne
+Sprung (`leser-v3-kontext-cls` (c)); unter 1024 unverändert (Sheet + Knopf im Kopf). Abweichung:
+zwischen ~948 und 1023 px Fenster überlagerte das Blatt bisher (`'rechts'`), seither Sheet.
+
 ### 3 Scheiben (Session 1: S0+S1 · 2: S2+S3 · 3: S4+S5; jede allein landbar)
 
 - **S0 Prüfstrasse vorab** (`feld: betrieb`, unsichtbar): Flacker-Fixes (Ziff. 4); Kern-Probe als
@@ -308,7 +338,9 @@ durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.)
 geduldete Leser-Specs: leser-v3-suche-ohne-gliederung 19/20, leser-v3-blatt 7/20,
 leser-ruecksprung-r5-r7, verweis-u — gleiche Wettlauf-Familie; S0/S4/S5. 3 420-Deckel v3/:
 leserV3Modell.ts 419, uebersichtAngaben.ts 417. 4 index.css ~71 % Kommentare → QS-DOKU-DIAET.
-5 Board #EEF1F6 ≠ `--reg-g-flaeche` #D9DEE4 — Token gilt.
+5 Board #EEF1F6 ≠ `--reg-g-flaeche` #D9DEE4 — Token gilt. 6 (24.9.2026, S6 W1e) Soll oben
+«Gliederung links 250 px», gebaut sind 288 px (18 rem, seit W2·19 S2) — nicht nachgezogen, die
+Blatt-Schwellen rechnen mit 288.
 
 ## §5b · KATALOGE — Bauplan in Scheiben (Planung 23.9.2026)
 
