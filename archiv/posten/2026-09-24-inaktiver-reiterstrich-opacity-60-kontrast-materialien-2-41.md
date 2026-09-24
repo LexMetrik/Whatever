@@ -5,3 +5,5 @@ anlass: Nebenfund Design-Entwurf 22.9.2026 (Entscheid David «alle aufnehmen»),
 -->
 
 src/components/layout/reiterleiste/Reiter.tsx:454 dimmt inaktive Reiter mit opacity-60; der Registerstrich fällt für Materialien/Werkzeuge unter 3:1 (Nicht-Text-Kontrast, WCAG 1.4.11). N1, zusammen mit axe dunkel.
+
+**Erledigt 2026-09-24:** W2·29-MARKE: Strich oben in voller Registerfarbe, opacity-60 entfernt

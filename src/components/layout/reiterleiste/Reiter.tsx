@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type RefObject } from 'react';
 import { Link } from 'react-router-dom';
 import { tabSchluessel, reiterKurzformTeile, reiterKurzformText, reiterTitel, type TabEintrag } from '../../../lib/tabs';
 import type { VerlaufManifeste } from '../../../lib/verlaufLabel';
-import { registerVonPfad, REG_FLAECHE, REG_TON } from '../bereiche';
+import { registerVonPfad, REG_FLAECHE } from '../bereiche';
 import { SchliessKnopf } from '../../ui/SchliessKnopf';
 import { REITER_MIME } from './ueberlauf';
 
@@ -205,8 +205,22 @@ export function Reiter({
   // ohnehin keine Fläche kostet.
   const fest = !!t.fest;
   const stelleReserviert = !fest && stelle !== null && (stelle !== '' || liest);
+  // ── W2·29-MARKE (David 24.9.2026) · BREITE NACH INHALT, NICHT «Geset…» ──
+  // Der Boden der Aufschrift war fest 6ch: bei vollem Streifen schrumpften
+  // ALLE Reiter bis dorthin, und die Leiste zeigte zehn Stümpfe («Rech…»,
+  // «Gese…») statt fünf lesbarer Namen. Neu wächst der Boden mit dem Namen —
+  // Zeichenzahl + 1 (Versalien sind breiter als `ch`), mindestens die alten
+  // 6ch, höchstens 14ch. Ein kurzer Name steht damit ganz, ein langer bleibt
+  // bis 14ch lesbar und kürzt erst darüber; was dann nicht mehr passt, zieht
+  // wie bisher ins Blatt (`useReiterFenster`). Die Rechnung ist rein
+  // (Zeichenzahl), die Messung der Kanten bleibt die des Streifens.
+  // AM ANSCHLAG (`ohneKopf`: ein einziger Reiter, und er passt trotzdem
+  // nicht) gilt wieder der alte Boden 6ch — sonst sprengt ein langer Name
+  // @320 den Streifen (gemessen 24.9.2026, `kein-abschnitt.e2e.ts` R8:
+  // «Rechtsprechung» 174 px, ZH-211.11 mit Lesestellung 238 px in 171 px).
+  const kernBoden = ohneKopf ? '6ch' : `${Math.min(Math.max(kern.length + 1, 6), 14)}ch`;
   const reiterBoden = fest || kopf ? undefined
-    : `calc(6ch + 1.75rem + 0.875rem${stelleReserviert ? ' + var(--app-reiter-stelle-b) + 0.25rem' : ''})`;
+    : `calc(${kernBoden} + 1.75rem + 0.875rem${stelleReserviert ? ' + var(--app-reiter-stelle-b) + 0.25rem' : ''})`;
   return (
     <div
       data-reiter-aktiv={aktiv}
@@ -414,9 +428,19 @@ export function Reiter({
         //    `--app-reiter-min-b` (5rem) und kannte den Inhalt nicht; er ist
         //    jetzt `min-content` und kommt aus den Teilen unten (Herleitung
         //    und Messreihe: index.css bei `.rl-reiter`).
-        className={`group/reiter rl-reiter relative flex cursor-grab items-center border-r border-rule-soft active:cursor-grabbing ${
+        // ── W2·29-MARKE (David 24.9.2026, Variante 1 «Echte Registerreiter») ─
+        //    Jeder Reiter ist ein BLATT: Kanten links/rechts, oben der Strich
+        //    seines Registers. Der inaktive sitzt 4 px tiefer auf dem
+        //    Leistengrund (`well`) und hat eine Unterkante; der aktive trägt die
+        //    Seitenfläche (`paper`) OHNE Unterkante und verschmilzt so mit der
+        //    Seite darunter — der aufgeschlagene Ordner. Die 1-px-Linie der
+        //    Leiste (`Reiterleiste.tsx`) liegt absolut UNTER den Reitern: als
+        //    späteres positioniertes Geschwister deckt ihn der aktive Reiter
+        //    zu, der inaktive zeichnet dieselbe Linie als eigene Unterkante.
+        //    Vorher: Strich UNTEN, aktiver Reiter in Registerton getönt.
+        className={`group/reiter rl-reiter relative flex cursor-grab items-center border-x border-rule-soft active:cursor-grabbing ${
         zieht === t.path ? 'opacity-40' : ''
-      } ${aktiv ? (reg ? REG_TON[reg] : 'bg-paper-raised') : ''}`}
+      } ${aktiv ? 'bg-paper' : 'mt-1 border-b bg-well'}`}
         style={reiterBoden ? { minWidth: reiterBoden } : undefined}>
       {/* EINFÜGEMARKE (D15): 2 px in der Registerfarbe des GEZOGENEN Reiters,
           über die volle Reiterhöhe, auf der Seite, auf der er landen wird.
@@ -447,11 +471,17 @@ export function Reiter({
           nicht nur in der Deckkraft. Der Hover hebt auf 100 % — dieselbe
           Auskunft wie vorher, nur nicht mehr die einzige.
           Ohne Register (Meta-Route) bleibt es bei Tinte: geraten wird keine
-          Farbe (§8). */}
-      <span aria-hidden className={`absolute inset-x-0 bottom-0 h-0.5 ${
-        aktiv
-          ? (reg ? REG_FLAECHE[reg] : 'bg-ink-900')
-          : `${reg ? REG_FLAECHE[reg] : 'bg-ink-400'} opacity-60 group-hover/reiter:opacity-100`}`} />
+          Farbe (§8).
+          ABGELÖST 24.9.2026 (W2·29-MARKE): Tönung und 60 % sind weg, der
+          Strich steht oben in voller Farbe (Herleitung direkt darunter). */}
+      {/* W2·29-MARKE: der Strich sitzt OBEN (3 px, die Registerkante des
+          Blatts) und steht bei jedem Reiter in voller Farbe — aktiv und
+          inaktiv unterscheiden sich jetzt in Fläche, Höhe, Unterkante und
+          Gewicht, nicht mehr in der Deckkraft. Damit fällt auch der
+          60-%-Strich weg, der für Materialien/Werkzeuge unter 3:1 lag
+          (WCAG 1.4.11, Posten W2·29-WERKBANK-NACHLAUF 24.9.2026). */}
+      <span aria-hidden className={`absolute -inset-x-px top-0 h-[3px] ${
+        reg ? REG_FLAECHE[reg] : aktiv ? 'bg-ink-900' : 'bg-ink-400'}`} />
       {/* ── W2·18 WELLE 3 PUNKT 3 · WER ZU EINER ADRESSE FÜHRT, IST EIN LINK ─
           Hier stand ein `<button type="button">` mit `onClick={navigate}`.
           GEMESSEN am Vorstand (13.9.2026): Screenreader meldeten
@@ -529,7 +559,7 @@ export function Reiter({
         // `no-underline`: die Rolle ändert sich, das Bild nicht — ein Reiter
         // ist eine Fläche, kein Fliesstext-Verweis (D13/Design-Reglement).
         className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s no-underline ${
-          aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
+          aktiv ? 'font-semibold text-ink-900' : 'font-normal text-ink-600 hover:text-ink-900'}`}>
         {/* W2·25: «angeheftet» steht im Accessible Name, nicht als Glyphe im
             Reiter — eine Nadel neben dem Kürzel kostete genau die Breite, die
             das Anheften gewinnt, und sagt einer Sprachausgabe nichts. Für den
@@ -632,7 +662,8 @@ export function Reiter({
             drei Zeichen den Reiter noch unterscheidbar machen. */}
         <span data-reiter-teil="kern"
           className={fest ? 'min-w-[3ch] truncate max-w-[7rem]'
-            : kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
+            : kopf ? 'shrink-0' : 'truncate max-w-[15rem]'}
+          style={fest || kopf ? undefined : { minWidth: kernBoden }}>{kern}</span>
         {/* ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER WIRD NIE GEKÜRZT ──────────
             Sie hing bis hierher hinten am Kern und fiel darum als erstes weg:
             GEMESSEN 13.9.2026 standen «ZPO-Fristen (2)» und «(3)» beide als
