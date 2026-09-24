@@ -63,7 +63,9 @@ function Wahl({ zu }: { zu: Zu }) {
 function Gebiete({ zu }: { zu: Zu }) {
   return (
     <div className="space-y-3">
-      <ul className="grid gap-x-8 sm:grid-cols-2">
+      {/* `grid-cols-1`: ohne Spaltenvorgabe wuchs die Spalte @320 auf das längste
+          Einzelwort («Zwangsvollstreckungsrecht»), R8 a +8 px (FEINSCHLIFF). */}
+      <ul className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
         {z.bundSystematik.map((g) => (
           <li key={g.id} className="border-t border-rule-soft">
             {/* `whitespace-normal`: die Menüzeile ist sonst einzeilig — «Zivilprozess- und
@@ -72,7 +74,7 @@ function Gebiete({ zu }: { zu: Zu }) {
             <button type="button" onClick={zu('bund', g.nr)} className="lc-menu-zeile items-baseline whitespace-normal">
               <span aria-hidden className="num w-6 shrink-0 font-sans text-xs text-ink-500">{g.nr}</span>
               <span className="min-w-0 flex-1">
-                <span className="block break-words font-serif text-body-l leading-snug text-ink-900">{g.titel}</span>
+                <span className="block hyphens-auto break-words font-serif text-body-l leading-snug text-ink-900">{g.titel}</span>
                 <span className="block truncate font-sans text-xs text-ink-500" title={g.kuerzel.join(' · ')}>{g.kuerzel.join(' · ')}</span>
               </span>
               <span className="num shrink-0 font-sans text-xs text-ink-700">{nf(g.anzahl)}</span>
