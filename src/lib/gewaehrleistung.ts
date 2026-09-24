@@ -163,6 +163,13 @@ export function berechneGewaehrleistung(input: GewaehrleistungInput): Gewaehrlei
       zwischenergebnis: `${versteckt ? 'Versteckter Mangel: Frist läuft ab Entdeckung' : 'Frist läuft ab ' + (istWerk ? 'Abnahme' : istGrundstueck ? 'Besitzesantritt' : 'Ablieferung')} (${fmt(ruegeBasis)}); 60 Tage → ${fmt(ende)}. Die Vereinbarung kürzerer Fristen ist unwirksam. Versäumnis führt zur Genehmigungsfiktion (Verwirkung der Mängelrechte).`,
       normen: [N(norm, '60 Tage, zwingend'), N('Art. 78 OR', 'Werktagsregel für das Fristende')],
     });
+    // F5-08 (RL-06): Art. 367 Abs. 1bis / 370 Abs. 4 OR (Fassung 1.1.2026) machen nur
+    // KÜRZERE Fristen unwirksam. Eine vertraglich längere Rügefrist nach SIA 118 bleibt
+    // möglich – sie wird nicht gerechnet (SIA 118 ist Vertragsinhalt, keine amtliche
+    // Quelle), sondern offengelegt; gerechnet bleibt die gesetzliche 60-Tage-Frist.
+    if (sia) {
+      warnungen.push('SIA-Norm 118 vereinbart: Gerechnet ist die gesetzliche 60-Tage-Frist; unwirksam sind nur kürzere Fristen (Art. 367 Abs. 1bis / 370 Abs. 4 OR). Eine vertraglich längere Rügefrist nach SIA 118 (Rüge während der zweijährigen Garantiefrist, Art. 172 f. SIA 118) kann wirksam sein – Vertrag und Ausgabe der Norm prüfen.');
+    }
   } else if (sia && !versteckt) {
     ruege.art = 'sia';
     ruege.basisISO = iso(uebergabe);
@@ -237,10 +244,16 @@ export function berechneGewaehrleistung(input: GewaehrleistungInput): Gewaehrlei
   } else if (istGrundstueck) {
     jahre = 5;
     teilzwingend = neu;
-    dauerNorm = neu ? N('Art. 219a Abs. 3 OR', '5 Jahre ab Eigentumserwerb, teilzwingend') : N('Art. 219 Abs. 3 OR', '5 Jahre ab Eigentumserwerb (aufgehoben per 1.1.2026)');
+    dauerNorm = neu ? N('Art. 219a Abs. 3 OR', '5 Jahre ab Eigentumserwerb, teilzwingend') : N('Art. 219 Abs. 3 OR', '5 Jahre ab Eigentumserwerb für Mängel eines Gebäudes (aufgehoben per 1.1.2026)');
   } else if (istWerk) {
     jahre = sia ? 5 : objekt === 'beweglich' ? 2 : 5;
-    teilzwingend = neu && jahre === 5 && !sia;
+    // S3-b (RL-06): Teilzwingend ist die GESETZLICHE 5-Jahres-Frist (Art. 371 Abs. 1
+    // Satz 2 / Abs. 2 i.V.m. Abs. 3 OR, Fassung 1.1.2026: «kann nicht zu Lasten des
+    // Bestellers abgeändert werden»). Die Vereinbarung von SIA 118 ist Vertragsinhalt
+    // und kann die zwingende Norm nicht verdrängen – massgeblich ist allein das Objekt.
+    // Beim beweglichen Werk beruhen die 5 Jahre nur auf SIA 118 (gesetzlich 2 Jahre) →
+    // nicht teilzwingend.
+    teilzwingend = neu && objekt !== 'beweglich';
     dauerNorm = objekt === 'unbeweglich'
       ? N('Art. 371 Abs. 2 OR', '5 Jahre ab Abnahme (unbewegliches Werk, inkl. Architekt/Ingenieur)')
       : objekt === 'integriert'
@@ -268,15 +281,24 @@ export function berechneGewaehrleistung(input: GewaehrleistungInput): Gewaehrlei
       mindest = Math.max(mindest, 5);
       mindestGrund = istGrundstueck ? 'Art. 219a Abs. 3 OR (teilzwingend)' : 'Art. 371 Abs. 3 OR (teilzwingend)';
     }
-    // Übergangsrecht: teilzwingende Mindestdauer erfasst auch Altverträge,
-    // wenn die kürzere vereinbarte Frist am 1.1.2026 noch nicht abgelaufen war.
-    if (!neu && !teilzwingend && (istGrundstueck || (istWerk && jahre === 5))) {
-      const vereinbartesEnde = addYears(verjBeginn, v);
-      if (v < 5 && !isBefore(vereinbartesEnde, REVISION)) {
-        mindest = Math.max(mindest, 5);
-        mindestGrund = (istGrundstueck ? 'Art. 219a Abs. 3' : 'Art. 371 Abs. 3') + ' OR i.V.m. Übergangsrecht (vereinbarte Frist am 1.1.2026 noch nicht abgelaufen)';
-        warnungen.push('Übergangsrecht: Die teilzwingende 5-Jahres-Mindestdauer erfasst auch Altverträge, deren kürzere vereinbarte Frist beim Inkrafttreten am 1.1.2026 noch lief.');
-      }
+    // Übergangsrecht (F5-05, RL-06): KEINE Rückwirkung der teilzwingenden 5-Jahres-Frist.
+    // Die Teilrevision «Baumängel» (AS 2025 270, in Kraft 1.1.2026) enthält keine eigene
+    // Übergangsbestimmung (Ziff. I–III; https://www.fedlex.admin.ch/eli/oc/2025/270/de).
+    // Damit gilt Art. 1 Abs. 2 SchlT ZGB (SR 210): vor dem Inkrafttreten vorgenommene
+    // Handlungen – hier die Verkürzungsabrede – unterliegen «in Bezug auf ihre rechtliche
+    // Verbindlichkeit» dem bei ihrer Vornahme geltenden Recht
+    // (https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de, Fassung 1.7.2026).
+    // Botschaft BBl 2022 2743, Ziff. 4.2: Vereinbarungen eines Altvertrags werden «nach dem
+    // alten Recht beurteilt», ausdrücklich auch bei der Gewährleistung.
+    // Altes Recht (SR 220, Fassung 1.1.2025, https://www.fedlex.admin.ch/eli/cc/27/317_321_377/20250101/de):
+    // Art. 371 Abs. 2 und Art. 219 Abs. 3 OR a.F. sind dispositiv; die Unabänderlichkeit
+    // «zu Lasten des Bestellers/Käufers» steht erst in Art. 371 Abs. 3 / Art. 219a Abs. 3 OR
+    // (Fassung 1.1.2026). Art. 49 SchlT ZGB betrifft die gesetzliche Frist (unverändert
+    // 5 Jahre), nicht die Gültigkeit der Parteiabrede.
+    // Geprüft 24.9.2026 gegen die Fedlex-XML-Fassungen; bis zu diesem Fix (24.9.2026) hat die Engine
+    // die Mindestdauer rückwirkend angewandt (Befund F5-05, Prüfung Rechtslogik 23.9.2026).
+    if (!neu && v < 5 && (istGrundstueck || (istWerk && objekt !== 'beweglich'))) {
+      warnungen.push(`Übergangsrecht: Altvertrag (Vertragsschluss vor dem 1.1.2026) – die vereinbarte Verkürzung wird nach dem bei Vertragsschluss geltenden Recht beurteilt (Art. 1 Abs. 2 SchlT ZGB). Die Unabänderlichkeit zu Lasten ${istGrundstueck ? 'des Käufers (Art. 219a Abs. 3 OR)' : 'des Bestellers (Art. 371 Abs. 3 OR)'} gilt erst für Verträge ab dem 1.1.2026 und wirkt nicht zurück.`);
     }
 
     if (v < mindest) {
@@ -311,6 +333,13 @@ export function berechneGewaehrleistung(input: GewaehrleistungInput): Gewaehrlei
   // Hinweis: Entdeckung nach Verjährungseintritt
   if (entdeckung && isAfter(entdeckung, verjEnde) && !input.arglist) {
     warnungen.push(`Der Mangel wurde erst nach Eintritt der Verjährung entdeckt (${fmt(entdeckung)} > ${fmt(verjEnde)}) – die Mängelrechte sind verjährt, «selbst wenn der Käufer die Mängel erst später entdeckt» (Art. 210 Abs. 1 OR).`);
+  }
+  // F5-06 (RL-06): Art. 219 Abs. 3 OR a.F. (Fassung 1.1.2025) erfasst nur «die Mängel eines
+  // Gebäudes»; für übrige Grundstücksmängel verweist Art. 221 OR auf den Fahrniskauf
+  // (Art. 210 Abs. 1 OR in der Fassung 1.1.2025: zwei Jahre). Ohne Eingabe zur Mangelart
+  // nicht berechenbar und in der Lehre strittig → nur Hinweis; gerechnet sind 5 Jahre.
+  if (istGrundstueck && !neu && !input.arglist) {
+    warnungen.push('Grundstückkauf nach altem Recht: Die gerechneten 5 Jahre (Art. 219 Abs. 3 OR, Fassung bis 31.12.2025) gelten nur für Mängel eines Gebäudes. Für andere Mängel des Grundstücks (z. B. des Bodens) verweist Art. 221 OR auf den Fahrniskauf – Art. 210 Abs. 1 OR sah zwei Jahre vor; Beginn und Abgrenzung sind im Einzelfall zu prüfen.');
   }
   if (input.konsumentenkauf) {
     annahmen.push('Konsumentenkauf: Es wird unterstellt, dass alle drei Merkmale von Art. 210 Abs. 4 OR kumulativ erfüllt sind (persönlicher/familiärer Gebrauch, gewerblicher Verkäufer, Verkürzungsabrede).');
