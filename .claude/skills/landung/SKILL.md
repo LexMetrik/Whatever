@@ -55,6 +55,15 @@ Belege: `referenz-ci.md` §Merge-Queue.
 - **Queue-Abfrage** (QUEUED · AWAITING_CHECKS · MERGEABLE · UNMERGEABLE ·
   LOCKED):
   `gh api graphql -f query='{repository(owner:"LexMetrik",name:"Whatever"){mergeQueue(branch:"main"){entries(first:10){nodes{state position pullRequest{number}}}}}}'`
+  — `gh pr view --json` kennt kein `mergeQueueEntry`, und `autoMergeRequest`
+  ist für einen eingereihten PR `null`: daraus nie «aus der Queue gefallen»
+  folgern, nur die GraphQL-Abfrage entscheidet (Beleg #1066, 24.9.2026).
+- **Parallele Nachträge an dieselbe Fahrplan-Stelle** kollidieren: der erste
+  gelandete PR macht alle übrigen CONFLICTING (Beleg 24.9.2026: nach #1069
+  waren #1068/#1070/#1071 nur an FAHRPLAN-WERKBANK-UMBAU.md §5d-bis im
+  Konflikt, je ein Nachzug-Lauf). Bei mehreren gleichzeitig offenen PRs
+  eines Dachs: je Nachtrag eine Posten-Datei (`plan:posten -- neu`) statt
+  Fahrplan-Absatz, oder der Orchestrator trägt gesammelt nach der Landung ein.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
   einreihen — nie blind.
@@ -408,3 +417,8 @@ Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.
    API (PR #628, 2.9.2026). Mehrere IDs nie auf mehrere `Roadmap:`-Zeilen
    verteilen — nur die letzte Zeile gilt als Konvention (kein automatischer
    Leser mehr seit dem Abbau der `plan-buchung.yml`-Auto-Buchung 20.9.2026).
+   Gleiches gilt für `Fachaenderung:` und `Gegenpruefung:`: ein Trailer nur im
+   Commit reicht nicht, `check:fachaenderung` liest im PR-Lauf den
+   Queue-Squash aus Titel + Body — Zeile in den Schlussabsatz des Bodys
+   (Beleg #1072 und #1068, 24.9.2026, je ein CI-Lauf verloren). Das Tor
+   zählt auch UI-/Daten-Tests, sobald sie eine Risiko-Engine importieren.

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { berechneAllgemeineFrist, STPO_FRIST_HINWEIS, type Einheit } from '../../lib/allgemeineFrist';
 import { berechneFrist } from '../../lib/zpoFristen';
 import { berechneSchkgFrist } from '../../lib/schkgFristen';
-import { berechneBggVwvgFrist, bvAusnahmenSatz } from '../../lib/bggVwvgFristen';
+import { berechneBggVwvgFrist, bvAusnahmenSatz, bvZustellfiktionSatz } from '../../lib/bggVwvgFristen';
 import { zpoFristenLink, SCHKG_LINK_SPEC } from '../../lib/rechnerPermalinks';
 import { permalinkKodieren } from '../../lib/permalink';
 import { KANTONE } from '../../lib/kantone';
@@ -155,7 +155,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
         endeZusatz = r.stillstandAktiv
           ? `Stillstand (${ferien === 'vwvg' ? 'Art. 22a VwVG' : 'Art. 46 BGG'}) berücksichtigt`
           : 'Stillstand gilt nur für nach Tagen bestimmte Fristen – hier nicht angewendet';
-        zeilen = [...r.annahmen, ...r.warnungen, bvAusnahmenSatz(ferien)];
+        // RL-15/F3-05: Zustellfiktion (Art. 44 Abs. 2 BGG / Art. 20 Abs. 2bis VwVG).
+        zeilen = [...r.annahmen, ...r.warnungen, bvAusnahmenSatz(ferien), bvZustellfiktionSatz(ferien)];
       } else {
         const r = berechneSchkgFrist({
           ereignis: start, einheit: einheitEffektiv as 'tage' | 'monate' | 'jahre', laenge,

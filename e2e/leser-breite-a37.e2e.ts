@@ -58,6 +58,8 @@ async function ersterArtikelGeo(page: Page) {
     const s = R(spalte);
     if (!g || !b || !s) return null;
     return {
+      gruppeLeft: Math.round(g.left),
+      textLeft: Math.round(b.left),
       gruppeRight: Math.round(g.right),
       textRight: Math.round(b.right),
       textWidth: Math.round(b.width),
@@ -71,7 +73,7 @@ async function ersterArtikelGeo(page: Page) {
 test.describe('E6/A37 — Zitat-Link fluchtet mit der Textkante (kein toter Steg rechts)', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
   for (const key of ['OR', 'ZGB'] as const) {
-    test(`${key}: «Zitat/Link»-Gruppe steht bündig zur rechten Textkante`, async ({ page }) => {
+    test(`${key}: «Zitat/Link»-Gruppe fluchtet mit der Textkante (seit 24.9.2026 links)`, async ({ page }) => {
       await ladeReader(page, key);
       // §6.3-DEKLARATION (W2·26/Z6, Mandat David 11.9.2026): die Aktionsgruppe
       // wird erst gerendert, wenn der Artikel Hover oder Fokus hat oder eine
@@ -87,8 +89,17 @@ test.describe('E6/A37 — Zitat-Link fluchtet mit der Textkante (kein toter Steg
       // Kernkorrektur A37: die Aktionsgruppe fliesst NICHT mehr weit rechts in den
       // Leerraum — ihre Rechtskante liegt praktisch auf der Textkante (früher
       // ~110–144px daneben). Toleranz klein (Sub-Pixel/Rundung).
-      const diff = Math.abs(geo!.gruppeRight - geo!.textRight);
-      expect(diff, `${key}: Zitat/Link-Rechtskante (${geo!.gruppeRight}) ≈ Textkante (${geo!.textRight}), Δ=${diff}px`).toBeLessThanOrEqual(4);
+      // §6.3-DEKLARATION (Leisten-Überarbeitung, Wunsch David 24.9.2026,
+      // «vorallem diese leiste muss überarbeitet werden»): die Zeile steht jetzt
+      // LINKSBÜNDIG an der Artikelkante (Flucht mit «Art. N» und dem
+      // Fussnoten-Apparat). Die gemessene Sache von A37 — die Gruppe steht an
+      // einer Kante des Textblocks, nicht im Leerraum daneben — bleibt; gemessen
+      // wird jetzt die LINKE Kante. Die Span-Kante liegt um `-ml-1` (4 px) vor
+      // der Textkante, damit der erste Buchstabe fluchtet: Toleranz 8 px.
+      // Gemessen 24.9.2026 @1440 vor der Änderung: rechts Δ≤4; danach Rechtskante
+      // 707 gegen Textkante 1167 (Δ 460) — die rechte Messung ist gegenstandslos.
+      const diff = Math.abs(geo!.gruppeLeft - geo!.textLeft);
+      expect(diff, `${key}: Zitat/Link-Linkskante (${geo!.gruppeLeft}) ≈ Textkante (${geo!.textLeft}), Δ=${diff}px`).toBeLessThanOrEqual(8);
     });
   }
 

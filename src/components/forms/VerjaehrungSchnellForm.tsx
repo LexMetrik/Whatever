@@ -77,7 +77,11 @@ export function VerjaehrungSchnellForm() {
     // Füllt die Bühne des Schnellwerkzeugs (Mindesthöhe, `start/Schnellwerkzeug`);
     // der Fuss steht unten (`mt-auto`), der Leerraum einer kürzeren Form liegt
     // damit zwischen Ergebnis und Fuss statt unter dem Fuss.
-    <div className="flex flex-1 flex-col gap-4">
+    // U9 (David 24.9.2026 abends «schnellwerkzeug soll kleiner werden»): Abstand
+    // `gap-3` wie der Frist-Block (`start/Schnellwerkzeug`) statt `gap-4` — die
+    // Bühne reserviert nur noch die Frist-Höhe, jede höhere Variante lässt die
+    // Spalte wachsen; −12 px ohne Feld- oder Textverlust.
+    <div className="flex flex-1 flex-col gap-3">
       <Field label="Anspruchstyp" hint={wahl.detail}>
         <select value={regime} onChange={(e) => setRegime(e.target.value as VerjaehrungRegime)} className="lc-input w-full">
           {REGIMES.map((r) => <option key={r.code} value={r.code}>{teileWahl(r.label).name}</option>)}

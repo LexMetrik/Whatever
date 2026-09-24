@@ -12,6 +12,21 @@ import { test, expect, type Page } from '@playwright/test'
 //       das per subgrid gebundene Kachelfeld springt beim Wechsel nicht;
 //   (d) §15: Stammnutzer mit gespeicherter Wahl — kein Layout-Shift ohne
 //       Eingabe beim Laden (CLS-Beitrag < 0.01; gemessen 24.9.2026 s. Bericht).
+//
+// DEKLARIERTE ANPASSUNG (U9, Nachtrag David 24.9.2026 abends, §5d-bis, §6.3):
+// «zuletzt geöffnet auf startseite soll nicht extra platz einnehmen sonder
+// schnellwerkzeug soll kleiner werden». (c) zweiter Teil ist damit AUFGEHOBEN:
+// die Bühne reserviert nur noch die Frist-Höhe (Prerender-Variante), Verzugszins
+// und Verjährung dürfen die Fläche wachsen lassen (Trade-off bewusst, s.
+// `start/Schnellwerkzeug.tsx`). Geprüft wird jetzt:
+//   (c') Frist steht ohne Leerfläche in der Bühne (Reserve ≤ 16 px); die höheren
+//        Varianten sind mindestens so hoch und ragen nie über die Bühne hinaus;
+//   (e)  «Zuletzt geöffnet» nimmt keine eigene Rasterzeile ein: ab `lg` steht es
+//        in der Spalte unter dem Schnellwerkzeug und endet nicht unter «Häufig
+//        gebraucht»; höchstens fünf Einträge, je eine Zeile; sein Erscheinen
+//        nach dem Laden verschiebt nichts (CLS < 0.01, Frist). Einspaltig bleibt
+//        die Reihenfolge Kacheln · Häufig · Schnellwerkzeug · Zuletzt.
+// (d) bleibt unverändert grün (gemessen U9: verzugszins 0.0000, verjaehrung 0.0001).
 
 const KEY = 'lexmetrik.start.schnellwerkzeug'
 const flaeche = (page: Page) => page.locator('section:has([role=tabpanel])')
@@ -82,22 +97,77 @@ test.describe('Startseite · Schnellwerkzeug wählbar', () => {
   })
 
   for (const breite of [1440, 390] as const) {
-    test(`@${breite}: Fläche in allen drei Varianten gleich hoch — kein Sprung beim Wechsel`, async ({ page }) => {
+    test(`@${breite}: Bühne = Frist-Höhe (U9), höhere Varianten wachsen ohne Überlauf`, async ({ page }) => {
       await page.setViewportSize({ width: breite, height: 900 })
       await page.goto('/')
+      const panel = page.getByRole('tabpanel')
+      // Reserve = Bühne minus natürliche Höhe des Frist-Inhalts (Mindesthöhe kurz aufgehoben).
+      const reserve = await panel.evaluate((p) => {
+        const h = p.getBoundingClientRect().height
+        p.style.setProperty('min-height', '0px', 'important')
+        const natur = p.getBoundingClientRect().height
+        p.style.removeProperty('min-height')
+        return Math.round(h - natur)
+      })
+      // ≤ 16 px: die Token-Höhe gilt der schmalsten zweispaltigen Fläche (20rem-Spalte,
+      // Frist 514 px); breiter (@390: 506 px) bricht der Hinweis kürzer. Vor U9: 182 px.
+      expect(reserve, 'Bühne reserviert nur die Frist-Höhe').toBeLessThanOrEqual(16)
       const hFrist = await hoehe(page)
-      await reiter(page, 'Verzugszins').click()
-      await expect(page.getByRole('tabpanel')).toContainText('Verzugszins (gesamt)')
-      const hVz = await hoehe(page)
-      await reiter(page, 'Verjährung').click()
-      await expect(page.getByRole('tabpanel')).toContainText('Verjährungseintritt')
-      const hVj = await hoehe(page)
-      expect([hVz, hVj], `Frist ${hFrist} px`).toEqual([hFrist, hFrist])
-      // Kein Inhalt ragt über die reservierte Bühne hinaus (sonst wüchse die Fläche doch).
-      const ueber = await page.getByRole('tabpanel').evaluate((p) => p.scrollHeight - p.clientHeight)
-      expect(ueber).toBeLessThanOrEqual(0)
+      for (const [name, text] of [['Verzugszins', 'Verzugszins (gesamt)'], ['Verjährung', 'Verjährungseintritt']] as const) {
+        await reiter(page, name).click()
+        await expect(panel).toContainText(text)
+        expect(await hoehe(page), `${name} ≥ Frist ${hFrist} px`).toBeGreaterThanOrEqual(hFrist)
+        // Kein Inhalt ragt über die Bühne hinaus — sie wächst mit, statt abzuschneiden.
+        expect(await panel.evaluate((p) => p.scrollHeight - p.clientHeight)).toBeLessThanOrEqual(0)
+      }
     })
   }
+
+  test('U9: «Zuletzt geöffnet» ohne eigene Zeile — fünf einzeilige Einträge, kein Sprung', async ({ page }) => {
+    const titel = ['Bundesgesetz betreffend die Ergänzung des Schweizerischen Zivilgesetzbuches (Fünfter Teil: Obligationenrecht)',
+      'BGE 152 V 52', 'Verzugszinsrechner', 'Schweizerisches Zivilgesetzbuch', 'Bundesgesetz über Schuldbetreibung und Konkurs',
+      'Kreisschreiben Nr. 24', 'Arbeitsvertrag', 'Schweizerische Strafprozessordnung', 'Urteil 4A_123/2025', 'Fristenrechner',
+      'Bundesverfassung der Schweizerischen Eidgenossenschaft', 'Mietvertrag']
+    const eintraege = titel.map((t, i) => ({ route: `/gesetze/bund/U9-${i}`, titel: t, typ: 'gesetz', zeit: 12 - i }))
+    await page.addInitScript((e) => {
+      try { localStorage.setItem('lexmetrik-zuletzt', JSON.stringify(e)) } catch { /* s. Produktcode */ }
+      ;(window as unknown as { __cls: number }).__cls = 0
+      new PerformanceObserver((l) => {
+        for (const x of l.getEntries() as unknown as { value: number; hadRecentInput: boolean }[]) {
+          if (!x.hadRecentInput) (window as unknown as { __cls: number }).__cls += x.value
+        }
+      }).observe({ type: 'layout-shift', buffered: true })
+    }, eintraege)
+    const zuletzt = page.locator('section', { has: page.getByRole('heading', { name: 'Zuletzt geöffnet' }) })
+    const haeufig = page.locator('section', { has: page.getByRole('heading', { name: 'Häufig gebraucht' }) })
+    const kacheln = page.locator('.lc-start-feld')
+    const box = async (l: typeof zuletzt) => (await l.boundingBox())!
+
+    for (const breite of [1440, 1024] as const) {
+      await page.setViewportSize({ width: breite, height: 1000 })
+      await page.goto('/')
+      await expect(zuletzt.getByRole('link')).toHaveCount(5)
+      await expect(zuletzt.getByRole('link').first()).toHaveAttribute('title', titel[0])
+      await page.waitForTimeout(600)
+      const [s, z, h] = [await box(flaeche(page)), await box(zuletzt), await box(haeufig)]
+      expect(Math.round(z.x), 'Zuletzt in der Spalte des Schnellwerkzeugs').toBe(Math.round(s.x))
+      expect(z.y, 'Zuletzt unter dem Schnellwerkzeug').toBeGreaterThan(s.y + s.height)
+      expect(z.y + z.height, `@${breite}: keine eigene Zeile — endet nicht unter «Häufig gebraucht»`).toBeLessThanOrEqual(h.y + h.height + 1)
+      // Eine Zeile je Eintrag: jeder Verweis höchstens so hoch wie ein kurzer Eintrag.
+      const hoehen = await zuletzt.getByRole('link').evaluateAll((as) => as.map((a) => Math.round(a.getBoundingClientRect().height)))
+      expect(Math.max(...hoehen), `Verweishöhen ${hoehen.join('/')}`).toBeLessThanOrEqual(Math.min(...hoehen) + 1)
+      const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls)
+      console.log(`U9 CLS mit Zuletzt @${breite}: ${cls.toFixed(4)}`)
+      expect(cls).toBeLessThan(0.01)
+    }
+
+    await page.setViewportSize({ width: 390, height: 900 })
+    await page.goto('/')
+    await expect(zuletzt.getByRole('link')).toHaveCount(5)
+    const ys = [await box(kacheln), await box(haeufig), await box(flaeche(page)), await box(zuletzt)].map((b) => b.y)
+    expect(ys, 'einspaltig: Kacheln · Häufig · Schnellwerkzeug · Zuletzt').toEqual([...ys].sort((a, b) => a - b))
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0)
+  })
 
   for (const [wahl, text] of [['verzugszins', 'Verzugszins (gesamt)'], ['verjaehrung', 'Verjährungseintritt']] as const) {
     test(`§15 Stammnutzer «${wahl}»: Laden ohne Layout-Shift (CLS < 0.01)`, async ({ page }) => {
