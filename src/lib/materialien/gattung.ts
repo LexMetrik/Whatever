@@ -26,7 +26,7 @@ export type Gattung = 'materialien' | 'erlaeuterungen';
 export const KANTONALE_GESETZGEBUNG: ReadonlySet<DoktypId> = new Set<DoktypId>(['ratschlag', 'gr-bericht', 'gr-initiative']);
 
 /** Alle Doktypen, die der Leser-Reiter «Materialien» zeigt. */
-export const GESETZGEBUNG_DOKTYPEN: ReadonlySet<DoktypId> = new Set<DoktypId>([
+const GESETZGEBUNG_DOKTYPEN: ReadonlySet<DoktypId> = new Set<DoktypId>([
   'botschaft', 'vernehmlassung', ...KANTONALE_GESETZGEBUNG,
 ]);
 
