@@ -192,3 +192,19 @@ seit R11-R2 eine feste, reservierte Höhe).
 | `r14-a-sammlung-neben-gesetz-1440.jpg` | @1440: OR offen → Klick auf die Marke ⇒ **zwei** Reiter «OR» und «Sammlung», «Sammlung» aktiv, «2 offen». Vorher stand hier ein einziger Reiter — der OR war weg. |
 | `r14-b-nach-letztem-x-1440.jpg` | @1440: nach dem letzten ✕ ⇒ genau **ein** Reiter «Sammlung», aktiv, «1 offen». Vorher: leerer 34-px-Streifen ohne Reiter. |
 | `r14-c-sammlung-390.jpg` | @390: dasselbe Modell auf dem Telefon — «OR» und «Sammlung» nebeneinander, «2 offen». |
+
+## Aufgehoben 24.9.2026: die Höchstens-einer-Regel des «+» (R15)
+
+Dieser Bericht bleibt als datierter Beleg stehen (§0 Ziff. 2b). Seine Zusage «ein zweites «+» aktiviert die
+offene Sammlung, statt eine zweite anzulegen» (R13-Entscheid, für W2·25 bindend) und der Fokus-Sprung in die
+Kopf-Suche gelten **nicht mehr**. David 24.9.2026 (Chat): «tabliste soll so funktionieren, dass wenn man auf plus
+klickt sich eine neue startseite öffnet und es nicht automatisch in suchen landet»; auf den Hinweis auf diese
+Regel: «nein heb diesen entscheid auf und mach es wie ich es sage».
+
+Seit R15 legt jedes «+» (Klick, Alt+T, Leerraum-Doppelklick, Leerraum-Menü, Blatt) einen **neuen**
+Startseiten-Reiter an — «/», wenn er noch nicht offen ist, sonst die nächste Instanz `/?r=2`, `/?r=3` …
+(`lib/tabs.naechsteInstanz`, derselbe Rahmen wie «Duplizieren»), beschriftet «Sammlung (2)» usw. Der Fokus geht
+auf den neuen Reiter; das Ereignis `lm:suche-fokus` ist samt Lauscher gestrichen. Unverändert gilt der Kern
+dieses Berichts: die Sammlung ist ein gewöhnlicher Reiter und die Neuer-Reiter-Seite, der letzte ✕ und «Alle
+schliessen» führen in genau eine Sammlung «/», und wer auf «/» navigiert, ersetzt keinen Reiter. Belege:
+`src/lib/tabs.ts` (Block «R15»), `Reiterleiste.neuerReiter`, `e2e/w224-plus-reiter.e2e.ts`.

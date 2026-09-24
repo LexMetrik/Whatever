@@ -425,6 +425,9 @@ export function Shell({ children }: { children: ReactNode }) {
   // dort das Feld (Handler in HeaderSuche, samt Feld-Ref). Der Landeplatz-CTA auf
   // /gesetze fokussiert es über das Event «lm:suche-fokus». Die Shell trägt keinen
   // Palette-Zustand mehr.
+  // Nachtrag R15 (24.9.2026): das Event «lm:suche-fokus» gibt es nicht mehr —
+  // der CTA sendete es schon vorher nicht, der «+» der Reiterleiste seit R15
+  // auch nicht; Herleitung in `HeaderSuche.tsx` (Kommentar über den Shortcuts).
 
   return (
     <div className="min-h-screen bg-paper">

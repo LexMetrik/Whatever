@@ -631,6 +631,11 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   je eine Zeile (gekürzt, voller Titel als Tooltip; volle Liste bleibt im Such-Leerzustand). Die Bühne reserviert nur
   noch die Frist-Höhe (Token `start-schnell` 32.25rem / `-eng` 44.5rem, neu gemessen); Verzugszins/Verjährung
   wachsen (löst die U4-Höhenregel «gleich hoch wie Verzugszins» ab). Schnellformen `gap-3` statt `gap-4`.
+- **U10 (Nachtrag David 24.9.2026 abends):** «tabliste soll so funktionieren, dass wenn man auf plus klickt sich
+  eine neue startseite öffnet und es nicht automatisch in suchen landet»; zur Höchstens-einer-Regel (R13/R14,
+  7.9.2026): «nein heb diesen entscheid auf und mach es wie ich es sage» → R15: jedes «+» (Klick, Alt+T,
+  Leerraum, Blatt) legt einen neuen Startseiten-Reiter an (`/`, sonst `naechsteInstanz('/')` → `/?r=2`,
+  «Sammlung (2)»), Fokus auf den neuen Reiter statt in die Kopf-Suche; `lm:suche-fokus` samt Lauscher gestrichen.
 - **U11 (Nachtrag David 24.9.2026 abends):** «bei gesetze soll auf allenen ebenen eine suche möglich sien» →
   Suchfeld auch auf Wahl (alle Erlasse), Gebiete (Bundesrecht) und Kantone (kantonales Recht), `StufenSuche`
   in `start/GesetzeSuche.tsx`: Treffer mit `filtern` und `GruppenInhalt`, Herkunft als Gruppenkopf, 30er-Portion;
