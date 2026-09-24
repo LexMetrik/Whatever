@@ -181,6 +181,48 @@ describe('R5-03 · Arresteinsprache: Fristbeginn «Kenntnis», Art. 56 Abs. 2 Sc
   });
 });
 
+// Gegenprüfungs-Nachzug RL-17 (24.9.2026): Seit 1.1.2025 ist offen, ob die
+// Arresteinsprache (Art. 278 Abs. 1 SchKG) als Klage vor Gericht unter Art. 56
+// Abs. 2 SchKG fällt — dann ausschliesslich ZPO, summarisch ohne Stillstand
+// (Art. 145 Abs. 2 lit. b ZPO). Non liquet → Voreinstellung auf die frühere,
+// sichere Seite (wie W-09 bei Art. 17 SchKG); die spätere Lesart bleibt über
+// den Override wählbar. Soll von Hand (ZH): Kenntnis Fr 10.7.2026 + 10 Tage =
+// Mo 20.7.2026, kein Stillstand → 20.07.2026; Lesart Betreibungsferien: Ende in
+// den Ferien 15.–31.7. → Art. 63: 3. Werktag nach 31.7. (1.8. Sa/Bundesfeier,
+// 2.8. So; 3./4./5.8.) → 05.08.2026.
+describe('R5-03 Nachzug · Arresteinsprache: Voreinstellung auf die sichere Seite', () => {
+  it('Voreinstellung ohne Stillstand → 20.07.2026', () => {
+    const p = preset('arresteinsprache');
+    expect(p.modus).toBe('kein');
+    expect(berechneSchkgFrist(ausPreset('arresteinsprache')).diesAdQuem).toBe('20.07.2026');
+  });
+
+  it('Spätere Lesart (Betreibungsferien + Art. 63) bleibt über den Override wählbar → 05.08.2026', () => {
+    expect(preset('arresteinsprache').modusUmstritten).toBe(true);
+    const r = berechneSchkgFrist(ausPreset('arresteinsprache', { modus: 'schkg_betreibungsferien' }));
+    expect(r.diesAdQuem).toBe('05.08.2026');
+  });
+
+  it('Hinweis legt Stichtag und Normen der offenen Frage offen', () => {
+    const h = preset('arresteinsprache').hinweis ?? '';
+    expect(h).toMatch(/\b1\.1\.2025\b/);
+    expect(h).toMatch(/\bArt\. 145 Abs\. 2 lit\. b ZPO\b/);
+    expect(h).toMatch(/\bArt\. 56 Abs\. 2 SchKG\b/);
+    expect(h).toMatch(/\bArt\. 63 SchKG\b/);
+    expect(h).not.toMatch(/\bVoreinstellung Betreibungsferien\b/);
+  });
+
+  it('Formular: ohne Override 20.07.2026; Override Betreibungsferien → 05.08.2026', () => {
+    const basis = '?p=arresteinsprache&ph=arrest&e=2026-07-10&u=tage&l=10&m=kein&n=frist&k=ZH';
+    const ohne = renderSchkg(basis);
+    expect(ohne).toMatch(/Override/);
+    expect(ohne).toMatch(/20\.07\.2026/);
+    expect(ohne).not.toMatch(/05\.08\.2026/);
+    expect(ohne).not.toMatch(/Default folgt der aktuellen kantonalen Praxis/);
+    expect(renderSchkg(basis + '&o=schkg_betreibungsferien')).toMatch(/05\.08\.2026/);
+  });
+});
+
 describe('R5-02 · Arrestprosekution: Betreibungsweg (SchKG) und Klageweg (ZPO) beschriftet', () => {
   it('SchKG-Preset nennt den Betreibungsweg und verweist auf den Klageweg', () => {
     const p = preset('arrestprosekution');
