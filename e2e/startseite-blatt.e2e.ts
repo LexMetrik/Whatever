@@ -163,12 +163,13 @@ test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
   // OHNE den Blatt-Verlaufsstatus schrieb (`useBlattOrt.ts` verlor
   // `blattTiefe`/`blattVonZu`) — ✕ liess `/?rg=…` im Verlauf stehen, und
   // Browser-Zurück öffnete das Blatt erneut. Der Fix (`ohneGebietsFilter`)
-  // entfernt dieses zweite Feld aus dem Blatt; dieser Fall sichert die ganze
-  // Verlaufskette ab, unabhängig davon, welches Element künftig einmal
-  // zusätzlich die Adresse ändert. Rot-Beweis (einmalig, §6.7): mit
-  // `ohneGebietsFilter` in WerkzeugeBlatt.tsx entfernt und einer Wahl im
-  // dann sichtbaren Rechtsgebiet-Dropdown ist dieser Fall rot (Beleg im
-  // Bau-Bericht).
+  // entfernt dieses zweite Feld aus dem Blatt. Dieser Fall sichert zweierlei:
+  // (1) im Blatt steht KEIN Auswahlfeld (`select`), das an `useBlattOrt` vorbei
+  // die Adresse schreiben könnte, und (2) die Verlaufskette ✕ → Zurück. Die
+  // Kette allein fände den Fehler nicht (ohne Auswahl bleibt der Verlauf
+  // heil; Nachprüfung 24.9.2026) — darum die Zusicherung (1). Rot-Beweis
+  // (§6.7, 24.9.2026): mit `ohneGebietsFilter` in WerkzeugeBlatt.tsx entfernt
+  // ist (1) rot (1 `select` statt 0).
   test('Werkzeuge → Vorlagen → ✕: Adresse zurück auf «/», Browser-Zurück öffnet das Blatt nicht erneut', async ({ page }) => {
     await page.goto('/')
     await werkzeugeKachel(page).click()
@@ -176,6 +177,8 @@ test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
 
     await blatt(page).getByRole('button', { name: /Vorlagen/ }).click()
     await expect(page).toHaveURL(/\?blatt=werkzeuge\/vorlagen$/)
+    await expect(blatt(page).getByRole('searchbox').first()).toBeVisible()
+    await expect(blatt(page).locator('select')).toHaveCount(0)
 
     await blatt(page).getByRole('button', { name: 'Werkzeuge schliessen' }).click()
     await expect(page).toHaveURL(/\/$/)
