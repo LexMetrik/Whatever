@@ -668,6 +668,21 @@
       "Link teilen"
     ]
   },
+  "/rechner/notariat-grundbuch?ea=loeschung&kt=BS&gw=500000": {
+    "folge": [
+      "Teilen {\"query\":\"?ea=loeschung&kt=BS\"}"
+    ],
+    "zeilen": [
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Grundstückkauf",
+      "Beurkundung (Notariat)",
+      "Grundbuch (Eintragung)",
+      "Was kostet es in anderen Kantonen? →",
+      "Link teilen"
+    ]
+  },
   "/rechner/notariat-grundbuch?ga=baurecht&kt=ZH&gw=500000": {
     "folge": [
       "Aktenzeichen",

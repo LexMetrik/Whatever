@@ -86,6 +86,8 @@ const VARIANTEN: string[] = [
   '/rechner/notariat-grundbuch?kt=BS&kp=500000',
   '/rechner/notariat-grundbuch?ga=baurecht&kt=BS&gw=500000',
   '/rechner/notariat-grundbuch?ea=grundpfand&kt=BS&gw=500000',
+  // Grundbuch mit Tarif offen (BS Löschung, Gegenprüfung R5a): nur «Teilen», kein Aktenzeichen.
+  '/rechner/notariat-grundbuch?ea=loeschung&kt=BS&gw=500000',
   // R5a (24.9.2026): Beurkundung MIT PDF-Zustand. Baurecht BS liefert status
   // 'offen' (Tarif in Recherche) → kein PDF, nur «Teilen»; Baurecht ZH ist
   // wertbasiert belegt (berechneBeurkundung → status 'ok') und erreicht die
