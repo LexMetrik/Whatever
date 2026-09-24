@@ -17,10 +17,14 @@ export type SperrfristenErgebnis = Berechnungsergebnis & {
     ereignis: number;            // 1-basiert (UI-Nummerierung)
     typ: string;
     vonISO: string; bisISO: string;
-    beansprucht: number;         // Krankheit: Art.-77-Zählung (Anfangstag zählt nicht); sonst Kalendertage
-    kontingent?: number;
-    verbleibend?: number;
-    rueckfall?: boolean;         // Rückfall gleicher Ursache: kein neues Kontingent (BGE 120 II 124)
+    // Krankheit: Art.-77-Zählung (Anfangstag zählt nicht; der Hemmungszähler
+    // `gehemmtTage` zählt dagegen kalenderinklusiv — S3f-3, beide Zählweisen
+    // gewollt); Rückfall: jeder Tag der erneuten Verhinderung (derselbe Lauf,
+    // kein zweiter ausgenommener Anfangstag); sonst Kalendertage.
+    beansprucht: number;
+    kontingent?: number;         // Rückfall: Kontingent des Ursprungsereignisses
+    verbleibend?: number;        // Rückfall: Rest nach diesem Rückfall
+    rueckfall?: boolean;         // Rückfall gleicher Ursache: kein neues Kontingent, Rest des ursprünglichen (UI-06/W-04)
   }[];
 };
 
@@ -42,6 +46,15 @@ const N_336c_2: Normverweis = { artikel: 'Art. 336c Abs. 2 OR', bemerkung: 'Nich
 const N_336c_3: Normverweis = { artikel: 'Art. 336c Abs. 3 OR', bemerkung: 'Erstreckung auf Kündigungstermin' };
 const N_77:     Normverweis = { artikel: 'Art. 77 OR', bemerkung: 'Anfangstag zählt nicht (§1.2)' };
 const N_335c_1: Normverweis = { artikel: 'Art. 335c Abs. 1 OR', bemerkung: 'Rückrechnung vom Endtermin (§1.1)' };
+const N_336d:   Normverweis = { artikel: 'Art. 336d OR', bemerkung: 'Kündigung zur Unzeit durch den Arbeitnehmer' };
+
+/** Kontingent Art. 336c Abs. 1 lit. b OR je Dienstjahr (30/90/180 Tage). */
+const kontingentFuerDj = (dj: number): number => (dj <= 1 ? 30 : dj <= 5 ? 90 : 180);
+
+// UI-06 / W-04 (Entscheid David 24.9.2026): Vorbehalt im Ergebnis, sobald ein
+// Rückfall aus dem Restkontingent gerechnet wird (§8 — Lesart offenlegen).
+const RUECKFALL_VORBEHALT =
+  ' Vorbehalt: Rückfall aus dem Restkontingent gerechnet — diese Lesart ist nicht gerichtlich bestätigt (siehe Hinweise).';
 
 // ─── Hilfsfunktion: Sperrfrist-Intervall berechnen ───────────────────────
 
@@ -345,14 +358,22 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
   if (kuendigendePartei === 'arbeitnehmer') {
     rechenweg.push({
       beschreibung: 'Sperrfristen-Prüfung (Art. 336c OR)',
-      zwischenergebnis: 'Art. 336c OR gilt nur für Arbeitgeberkündigungen. Bei Arbeitnehmerkündigung keine Sperrfristen und keine Hemmung.',
-      normen: [N_336c_1],
+      // S3f-3 / QS-GP (24.9.2026): nicht mehr kategorisch — Art. 336d OR
+      // (Fedlex SR 220, Kons. 20260101) kennt ein Kündigungsverbot für den
+      // Arbeitnehmer; der Tatbestand ist im Sperrereignis-Modell nicht abbildbar
+      // und wird darum offengelegt statt still ausgeschlossen.
+      zwischenergebnis:
+        'Art. 336c OR gilt nur für Arbeitgeberkündigungen; bei Arbeitnehmerkündigung rechnet der Rechner keine Sperrfristen und keine Hemmung. ' +
+        'Nicht geprüft wird der Sonderfall von Art. 336d OR: Der Arbeitnehmer darf nicht kündigen, solange ein Vorgesetzter, dessen Funktionen er ' +
+        'auszuüben vermag, oder der Arbeitgeber selbst wegen Militär-, Schutz- oder Zivildienst (Art. 336c Abs. 1 lit. a OR) verhindert ist und er ' +
+        'dessen Tätigkeit übernehmen muss; Art. 336c Abs. 2 und 3 OR gelten dann entsprechend.',
+      normen: [N_336c_1, N_336d],
     });
     const kb = berechneKuendigungsfrist(input);
     rechenweg.push(...kb.ergebnis.rechenweg);
     annahmen.push(...kb.ergebnis.annahmen);
     return {
-      ergebnis: kb.ergebnis.ergebnis + ' (Art. 336c OR nicht anwendbar; Arbeitnehmerkündigung bleibt gültig.)',
+      ergebnis: kb.ergebnis.ergebnis + ' (Art. 336c OR nicht anwendbar; Sonderfall Art. 336d OR nicht geprüft.)',
       status: 'ok',
       rechenweg,
       annahmen,
@@ -412,21 +433,87 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
   const sperrtage: NonNullable<SperrfristenErgebnis['sperrtage']> = [];
   // B2-Fix 10.6.2026: Wiederaufleben-Kandidaten (BGE 133 III 517, 2. Konstellation)
   const folgeKandidaten: { ereignis: number; typ: string; von: Date; bis: Date; zusatzTage: number; neueMaxTage: number; jahrestag: Date; dj: number }[] = [];
+  // UI-06 / W-04 (Fachänderung 24.9.2026): Rückfall derselben Ursache → kein
+  // neues Kontingent, aber Schutz aus dem REST des ursprünglichen Kontingents.
+  // Grundlage ist der Wortlaut von Art. 336c Abs. 1 lit. b OR («während» der
+  // Verhinderung, höchstens 30/90/180 Tage — Obergrenze je Ursache); BGE 120 II
+  // 124 E. 3d/e entscheidet nur, dass Ereignisse «n'ayant aucun lien entre eux»
+  // je eine NEUE Sperrfrist auslösen. Die Lesart ist gerichtlich nicht bestätigt
+  // und wird im Ergebnis offengelegt. Vorher: Rückfall = null Schutz (V10: HOCH).
+  // Konto je Ursprungsereignis (Index): Rest, Kontingent, Dienstjahr am Ersteintritt.
+  const konten = new Map<number, { rest: number; kontingent: number; dj: number }>();
+  const wurzelVon = new Map<number, number>(); // Ereignis-Index → Index des Ursprungsereignisses
+  let mitRueckfall = false;
   sperrereignisse.forEach((e, i) => {
-    if (e.gleicheUrsacheWieEreignis != null) {
-      sperrtage.push({
-        ereignis: i + 1, typ: e.typ, vonISO: e.von, bisISO: e.bis,
-        beansprucht: 0, rueckfall: true,
-      });
-      // §1.3 / BGE 120 II 124: Rückfall derselben Ursache → KEINE neue Sperrfrist.
-      rechenweg.push({
-        beschreibung: `Sperrereignis ${i + 1} – ${e.typ}: Rückfall (gleiche Ursache wie Ereignis ${e.gleicheUrsacheWieEreignis + 1})`,
-        zwischenergebnis:
-          `Gleichartiger Grund derselben Ursache löst keine neue Sperrfrist aus (BGE 120 II 124 «aucun lien», zu verifizieren). ` +
-          `Keine eigene Sperrfrist; das Kontingent des ursprünglichen Ereignisses bleibt massgebend.`,
-        normen: [N_336c_1],
-      });
-      return;
+    // Nur Krankheit/Unfall kennt einen Rückfall; ein nach Typwechsel stehen
+    // gebliebener Bezug (Formular behält das Feld) darf z. B. eine Schwangerschaft
+    // nicht um ihren Schutz bringen.
+    const ref = e.typ === 'krankheit_unfall' ? e.gleicheUrsacheWieEreignis : null;
+    if (ref != null) {
+      const wurzel = Number.isInteger(ref) && ref >= 0 && ref < i ? wurzelVon.get(ref) : undefined;
+      const konto = wurzel != null ? konten.get(wurzel) : undefined;
+      if (wurzel != null && konto) {
+        mitRueckfall = true;
+        wurzelVon.set(i, wurzel);
+        const von = parseISO(e.von);
+        const restVorher = konto.rest;
+        // Jeder Tag der erneuten Verhinderung zählt gegen den Rest — der
+        // ausgenommene Anfangstag (Art. 77 OR) gehört zum Ersteintritt; eine
+        // zweigeteilte Krankheit gibt so nie mehr Schutz als dieselbe am Stück.
+        const bisMax = addDays(von, restVorher - 1);
+        const bisEingabe = parseISO(e.bis);
+        const bis = isBefore(bisEingabe, bisMax) ? bisEingabe : bisMax;
+        const tage = restVorher > 0 && !isBefore(bis, von) ? differenceInDays(bis, von) + 1 : 0;
+        konto.rest = restVorher - tage;
+        const djRueckfall = berechneDienstjahr(vb, von);
+        const kopf =
+          `Rückfall derselben Ursache wie Ereignis ${wurzel + 1}: kein neues Kontingent (BGE 120 II 124 E. 3d/e — nur voneinander ` +
+          `unabhängige Ereignisse lösen je eine neue Sperrfrist aus). Weiter gilt das Kontingent von Ereignis ${wurzel + 1} ` +
+          `(${konto.kontingent} Tage; Ersteintritt im ${konto.dj}. DJ), davon vor diesem Rückfall noch ${restVorher} Tage offen.`;
+        if (tage > 0) {
+          intervalle.push({
+            von, bis, kontingent: konto.kontingent,
+            beschreibung: `Rückfall Ereignis ${i + 1} aus dem Restkontingent von Ereignis ${wurzel + 1}`,
+            normen: [N_336c_1, N_77],
+          });
+          sperrIntervalle.push({ von: iso(von), bis: iso(bis), typ: e.typ });
+        }
+        sperrtage.push({
+          ereignis: i + 1, typ: e.typ,
+          vonISO: tage > 0 ? iso(von) : e.von, bisISO: tage > 0 ? iso(bis) : e.bis,
+          beansprucht: tage, kontingent: konto.kontingent, verbleibend: konto.rest, rueckfall: true,
+        });
+        rechenweg.push({
+          beschreibung: `Sperrereignis ${i + 1} – ${e.typ}: Rückfall (gleiche Ursache wie Ereignis ${ref + 1})`,
+          zwischenergebnis:
+            kopf + ' ' +
+            (tage > 0
+              ? `Im Rückfall zählt jeder Tag der Verhinderung (der Anfangstag ist nur beim Ersteintritt ausgenommen, Art. 77 OR): ` +
+                `Sperrfrist ${formatDatum(von)} – ${formatDatum(bis)} (${tage} Tage), danach verbleibend ${konto.rest} Tage.`
+              : `Das Kontingent ist aufgebraucht — dieser Rückfall löst keinen Kündigungsschutz aus.`),
+          normen: [N_336c_1, N_77],
+        });
+        warnungen.push(
+          `Rückfall (Ereignis ${i + 1}, gleiche Ursache wie Ereignis ${ref + 1}): Gerechnet wird kein neues Kontingent, sondern der Rest des ` +
+          `ursprünglichen (${konto.kontingent} Tage, noch ${restVorher} offen). Diese Lesart stützt sich auf den Wortlaut von ` +
+          `Art. 336c Abs. 1 lit. b OR (Schutz während der Verhinderung, höchstens ${konto.kontingent} Tage je Ursache); gerichtlich bestätigt ist ` +
+          `sie nicht — BGE 120 II 124 entscheidet nur, dass voneinander unabhängige Krankheiten oder Unfälle je eine neue Sperrfrist auslösen.`,
+        );
+        if (kontingentFuerDj(djRueckfall) !== konto.kontingent) {
+          warnungen.push(
+            `Rückfall (Ereignis ${i + 1}) im ${djRueckfall}. Dienstjahr, Ersteintritt im ${konto.dj}. Dienstjahr: gerechnet wird mit dem ` +
+            `Kontingent des Ersteintritts (${konto.kontingent} Tage). Ob stattdessen das Kontingent des neuen Dienstjahrs ` +
+            `(${kontingentFuerDj(djRueckfall)} Tage) unter Anrechnung der bezogenen Tage gilt, ist nicht geklärt.`,
+          );
+        }
+        return;
+      }
+      // Bezug ungültig (kein früheres Krankheits-/Unfallereignis): nicht still
+      // schutzlos lassen, sondern als eigenständige Ursache rechnen und offenlegen.
+      warnungen.push(
+        `Ereignis ${i + 1} ist als Rückfall von Ereignis ${ref + 1} erfasst, das kein früheres Krankheits- oder Unfallereignis ist — ` +
+        `als eigenständige Ursache gerechnet (eigene Sperrfrist). Bitte die Angabe prüfen.`,
+      );
     }
     const iv = berechneSperrfristIntervall(e, vb);
     if (iv.keinSchutz) {
@@ -454,6 +541,11 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
       kontingent: iv.kontingent,
       verbleibend: iv.kontingent != null ? Math.max(0, iv.kontingent - beansprucht) : undefined,
     });
+    // UI-06: Konto für spätere Rückfälle derselben Ursache eröffnen.
+    if (e.typ === 'krankheit_unfall' && iv.kontingent != null) {
+      wurzelVon.set(i, i);
+      konten.set(i, { rest: Math.max(0, iv.kontingent - beansprucht), kontingent: iv.kontingent, dj: berechneDienstjahr(vb, iv.von) });
+    }
     rechenweg.push({
       beschreibung: `Sperrereignis ${i + 1} – ${e.typ} (Art. 336c Abs. 1 OR)`,
       zwischenergebnis: iv.beschreibung,
@@ -496,7 +588,8 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
       ergebnis:
         `Kündigung NICHTIG – kein Beendigungsdatum. Der Zugang (${formatDatum(zugang)}) liegt in der Sperrfrist ` +
         `(${formatDatum(waehrendSperrfrist.von)} – ${formatDatum(waehrendSperrfrist.bis)}); die Kündigung entfaltet keine Wirkung und das Arbeitsverhältnis besteht weiter. ` +
-        `Sie ist nach Ablauf der Sperrfrist/Verhinderung – frühestens am ${formatDatum(fruehesteNeue)} – mit ordentlicher Frist zu wiederholen.`,
+        `Sie ist nach Ablauf der Sperrfrist/Verhinderung – frühestens am ${formatDatum(fruehesteNeue)} – mit ordentlicher Frist zu wiederholen.` +
+        (mitRueckfall ? RUECKFALL_VORBEHALT : ''),
       status: 'nichtig',
       rechenweg,
       annahmen,
@@ -629,7 +722,8 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
       normen: [N_336c_2],
     });
     return {
-      ergebnis: kb.ergebnis.ergebnis + ' (Keine Sperrfrist-Hemmung; Sperrgrund ausserhalb der rückgerechneten Frist.)',
+      ergebnis: kb.ergebnis.ergebnis + ' (Keine Sperrfrist-Hemmung; Sperrgrund ausserhalb der rückgerechneten Frist.)' +
+        (mitRueckfall ? RUECKFALL_VORBEHALT : ''),
       status: 'ok',
       rechenweg,
       annahmen,
@@ -681,7 +775,8 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
   return {
     ergebnis:
       `Kündigung gültig. Kündigungsfrist gehemmt um ${totalHemmungTage} Tage. ` +
-      `Beendigungsdatum nach Hemmung und Erstreckung: ${formatDatum(beendigungEndgueltig)}.`,
+      `Beendigungsdatum nach Hemmung und Erstreckung: ${formatDatum(beendigungEndgueltig)}.` +
+      (mitRueckfall ? RUECKFALL_VORBEHALT : ''),
     status: 'ok',
     rechenweg,
     annahmen,
