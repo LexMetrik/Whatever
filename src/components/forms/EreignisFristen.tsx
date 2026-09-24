@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Checkbox, ErgebnisPlatzhalter, Field, inputCls, NormLink } from '../vorlagen/ui';
 import { NormText } from '../NormText';
+import { AbschnittKopf } from '../layout/AbschnittKopf';
 import { DatumsFeld } from '../DatumsFeld';
 import { AktenzeichenFeld } from '../AktenzeichenFeld';
 import { BetragsFeld } from '../BetragsFeld';
@@ -111,15 +112,14 @@ export function EreignisFristenSektion({ ereignisse, id, zustellungVorgabe }: {
 }) {
   return (
     <section id={id} aria-label="Ereignis-Fristen"
-      className="bg-surface-raised border border-line p-6 sm:p-8 space-y-4 scroll-mt-28">
-      <div className="space-y-1">
-        <h2 className="lc-overline text-brass-700">Ereignis-Fristen – ein Anlass, mehrere Fristen</h2>
-        <p className="text-body-s text-ink-500 max-w-reading">
-          Ein Ereignis löst mehrere Fristen parallel aus – die Tabelle zeigt sie
-          mit Norm und Fristnatur, einzeln oder gesammelt als Kalender-Export
-          (gerechnet von denselben Engines wie der Rechner oben).
-        </p>
-      </div>
+      className="lc-werkzeug-karte p-6 sm:p-8 space-y-4 scroll-mt-28">
+      {/* R5b: Abschnitt mit Registerstrich wie die Rechner-Karte (`Card`), nicht
+          mehr der erhöhte Kasten — Kopf aus `AbschnittKopf`. */}
+      <AbschnittKopf titel="Ereignis-Fristen – ein Anlass, mehrere Fristen">
+        Ein Ereignis löst mehrere Fristen parallel aus – die Tabelle zeigt sie
+        mit Norm und Fristnatur, einzeln oder gesammelt als Kalender-Export
+        (gerechnet von denselben Engines wie der Rechner oben).
+      </AbschnittKopf>
       <EreignisFristen ereignisse={ereignisse} zustellungVorgabe={zustellungVorgabe} />
     </section>
   );
