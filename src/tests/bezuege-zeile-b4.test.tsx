@@ -111,7 +111,10 @@ describe('B7 · je Instanz EINE scrollbare Linie, alle Entscheide (David 28.7.20
   it('VORBEFUND: der Shard liefert an Art. 5 StPO ALLE 115 kantonalen Kanten', () => {
     // Ohne diesen Vorbefund wäre der Render-Test unten wertlos. Bis B6 stand hier
     // «deckelt 115 auf 8» — genau das ist die Änderung (§6.3-Deklaration oben).
-    expect(shard.gesamtProArtikel['5']).toMatchObject({ bge: 16, bger: 2, kantonal: 115 });
+    // bge 16 → 8, bger 2 → 10 (25.9.2026, Welle 2 D2 / E-1): acht BGE nennen
+    // Art. 5 StPO nur in einer nicht publizierten Erwägung — die Kante zeigt
+    // seither aufs Volltext-Urteil. Die 115 kantonalen Kanten bleiben.
+    expect(shard.gesamtProArtikel['5']).toMatchObject({ bge: 8, bger: 10, kantonal: 115 });
     expect(bezuegeFuerArtikel(shard, '5').filter((b) => b.facetten.status === 'kantonal')).toHaveLength(115);
   });
 
@@ -229,7 +232,7 @@ describe('B7 · die Zahl am Gruppenkopf (§8)', () => {
       <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
     );
     expect(s).toContain('5 von 115');
-    expect(s).toContain('5 von 16');
+    expect(s).toContain('5 von 8');   // bge; bis D2/E-1 (25.9.2026) «5 von 16»
     // «8 von …» wäre der alte Deckel — der ist weg.
     expect(s).not.toContain('8 von');
   });
@@ -325,7 +328,9 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
       <BezuegeZeile kanten={alle} gesamt={shard.gesamtProArtikel['428']} kantonAktiv
         normZitat="Art. 428 StPO" />,
     );
-    expect(zaehlerText(s, 'bge')).toBe('5');                 // 5 von 5, unverkürzt
+    // 4 von 4, unverkürzt (bis D2/E-1 25.9.2026: 5 — BGE 149 IV 307 nennt
+    // Art. 428 StPO nur im nicht publizierten Teil von 6B_911/2021).
+    expect(zaehlerText(s, 'bge')).toBe('4');
     expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 im Kanton');
     // Und die 882 steht genau EINMAL da, an der Gruppe, die verkürzt wurde.
     expect(s).toContain('882 insgesamt an diesem Artikel');

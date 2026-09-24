@@ -10,7 +10,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { encodeLatin1, dekodiereBs, trefferAnzahl, dokumentUrl, sucheUrl } from '../../scripts/rechtsprechung/bs-client';
 import { parseTrefferliste, gnJahr } from '../../scripts/rechtsprechung/bs-inventar';
-import { parseBsDokument, baueSnapshot, bereinigeQuellDebris, docketSafeVergabe, normAsciiWs } from '../../scripts/rechtsprechung/bs-parse';
+import { parseBsDokument, baueSnapshot, bereinigeQuellDebris, docketSafeVergabe, normAsciiWs, kopfDatum, plausiblesKopfDatum } from '../../scripts/rechtsprechung/bs-parse';
 import { sha256EntscheidBloecke } from '../../scripts/normtext/sha-entscheide';
 import type { InventarZeile } from '../../scripts/rechtsprechung/bs-inventar';
 
@@ -149,12 +149,22 @@ describe('Snapshot-Assemblierung (§3.4) + Kollisionsregel (§3.2)', () => {
     titel: 'IVG Invalidenrente', erstpublikation: '2026-06-23', aktualisiert: '2026-07-10',
   };
 
-  it('datumlos: Platzhalter <GN-Jahr>-01-01 + datumUnbekannt + Zitierung ohne «vom»', () => {
+  // FACHLICHE ÄNDERUNG, deklariert (§6.3, W2·29-WERKBANK-LESER D2/B-1, 23.9.2026):
+  // Bis hier erwartete dieser Test für das Fixture ohne Metadaten-Datum den
+  // Platzhalter 2025-01-01 + datumUnbekannt. Das Fixture ist aber ein echtes
+  // Portal-Dokument, dessen Deckblatt «URTEIL» / «vom 28. April 2026» trägt — das
+  // Entscheiddatum steht in der amtlichen Quelle, der Platzhalter war falsch
+  // (Befund B-1: «01.01.» erschien in den Bezügen als echtes Datum). Erwartet wird
+  // jetzt das Kopf-Datum; der Platzhalter-Pfad bleibt eigens geprüft (nächster
+  // Test, Kopf-Absatz aus dem Fixture entfernt).
+  it('datumlos in den Metadaten: Datum aus dem Deckblatt («URTEIL» / «vom 28. April 2026»)', () => {
     const p = parseBsDokument(fix('svg-iv-2025-93-datumlos.html'));
+    expect(p.datum).toBeNull();                        // Metadaten-Kopf ohne Entscheiddatum
+    expect(p.datumKopf).toBe('2026-04-28');
     const s = baueSnapshot(p, zeile, p.gn, '2026-07-19');
-    expect(s.datum).toBe('2025-01-01');
-    expect(s.datumUnbekannt).toBe(true);
-    expect(s.zitierung).toBe('Sozialversicherungsgericht BS IV.2025.93');
+    expect(s.datum).toBe('2026-04-28');
+    expect(s.datumUnbekannt).toBeUndefined();
+    expect(s.zitierung).toBe('Sozialversicherungsgericht BS IV.2025.93 vom 28.04.2026');
     expect(s.id).toBe('kanton/BS/bs_sozialversicherungsgericht/IV.2025.93');
     expect(s.quelle).toBe('gerichte-bs');
     expect(s.kuratierung).toBe('maschinell');
@@ -168,6 +178,26 @@ describe('Snapshot-Assemblierung (§3.4) + Kollisionsregel (§3.2)', () => {
     // 'sozial-abgaben' — deklarierte fachliche Änderung, §6.3.
     expect(s.sachgebiet).toBe('sozialversicherung');   // IV-Präfix
     expect(s.quelleUrl).toContain('nF30_KEY=74438');
+  });
+
+  it('ohne Deckblatt-Datum: ehrlicher Platzhalter <GN-Jahr>-01-01 + datumUnbekannt + Zitierung ohne «vom»', () => {
+    // Dasselbe echte Dokument, nur der Datums-Absatz des Deckblatts entfernt.
+    const roh = fix('svg-iv-2025-93-datumlos.html').toString('latin1');
+    const ohneKopf = roh.replace(/>vom 28\. April 2026</, '>&nbsp;<');
+    expect(ohneKopf).not.toBe(roh);
+    const p = parseBsDokument(Buffer.from(ohneKopf, 'latin1'));
+    expect(p.datumKopf).toBeNull();
+    const s = baueSnapshot(p, zeile, p.gn, '2026-07-19');
+    expect(s.datum).toBe('2025-01-01');
+    expect(s.datumUnbekannt).toBe(true);
+    expect(s.zitierung).toBe('Sozialversicherungsgericht BS IV.2025.93');
+  });
+
+  it('Kopf-Datum unplausibel (nach der Erstpublikation): bleibt ehrlich unbekannt', () => {
+    const p = parseBsDokument(fix('svg-iv-2025-93-datumlos.html'));
+    const s = baueSnapshot({ ...p, erstpublikation: '2026-01-01' }, zeile, p.gn, '2026-07-19');
+    expect(s.datum).toBe('2025-01-01');
+    expect(s.datumUnbekannt).toBe(true);
   });
 
   it('docketSafe: Erstes Dokument blank, weitere -YYYYMMDD, gleiches Datum zusätzlich -key', () => {
@@ -306,5 +336,31 @@ describe('bs-parse Fix-Welle 19.7.2026 (Fidelity-Befunde)', () => {
     expect(p.abschnitte.map((a) => a.typ)).toEqual(['erwaegung', 'dispositiv']);
     const disp = p.abschnitte[1].bloecke.map((b) => b.text).join('\n');
     expect(disp).toContain('Rechtsmittelbelehrung');
+  });
+});
+
+describe('kopfDatum — Entscheiddatum aus dem Deckblatt (B-1, strukturell)', () => {
+  const e = (...t: string[]) => t.map((text) => ({ text }));
+  it('Titelzeile + Ganzabsatz «vom …» ⇒ ISO-Datum (inkl. NBSP, Präsidial-Titel)', () => {
+    expect(kopfDatum(e('Appellationsgericht', 'BES.2024.88', 'ENTSCHEID', 'vom 15. September 2025', 'Mitwirkende'))).toBe('2025-09-15');
+    expect(kopfDatum(e('BV.2022.14', 'Urteil der Präsidentin', 'vom\u00a025. April 2023'))).toBe('2023-04-25');
+    expect(kopfDatum(e('X', 'URTEIL', 'vom 2. Februar 2022'))).toBe('2022-02-02');
+  });
+  it('kein Treffer ohne Titelzeile davor oder bei Satz statt Ganzabsatz', () => {
+    expect(kopfDatum(e('Mitwirkende', 'vom 15. September 2025'))).toBeNull();
+    expect(kopfDatum(e('ENTSCHEID', 'Mit Eingabe vom 23. November 2023 reichte A____ Strafanzeige ein.'))).toBeNull();
+  });
+  it('Kalender-Gegenprobe: «vom 31. April» ist kein Datum', () => {
+    expect(kopfDatum(e('URTEIL', 'vom 31. April 2025'))).toBeNull();
+  });
+  it('nur im Kopf-Fenster (die ersten 12 Einheiten)', () => {
+    const lang = e(...Array.from({ length: 12 }, (_, i) => `Absatz ${i}`), 'URTEIL', 'vom 1. März 2024');
+    expect(kopfDatum(lang)).toBeNull();
+  });
+  it('Plausibilität: nicht vor dem GN-Jahr, nicht nach der Erstpublikation', () => {
+    expect(plausiblesKopfDatum('2025-09-15', 2024, '2026-04-10')).toBe('2025-09-15');
+    expect(plausiblesKopfDatum('2023-12-31', 2024, null)).toBeNull();
+    expect(plausiblesKopfDatum('2026-05-01', 2024, '2026-04-10')).toBeNull();
+    expect(plausiblesKopfDatum(null, 2024, null)).toBeNull();
   });
 });

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "BGFA",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -15,12 +15,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_I_194",
-        "zitierung": "BGE 151 I 194",
-        "regesteKurz": "Art. 27, 29 Abs. 1 und Art. 36 BV; kantonales Obligatorium zum elektronischen Behördenverkehr für berufsmässige Parteivertreter (abstrakte Normenkontrolle). Berufsmässige Parteivertreter zu verpflichten, Eingaben an kantonale Verwaltungs-…",
+        "key": "bge_151_I_194__voll",
+        "zitierung": "Urteil 2C_113/2024 (nicht publ. in BGE 151 I 194)",
+        "regesteKurz": null,
         "datum": "2024-12-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -47,40 +47,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_271",
-        "zitierung": "BGE 151 II 271",
-        "regesteKurz": "Art. 29 BGFA; Disziplinarverfahren gegen einen in der Schweiz tätigen Rechtsanwalt aus einem EU/EFTA-Mitgliedstaat; Verwarnung wegen Verletzung der Berufspflichten. Die Aufsichtsbehörde eines Kantons, die ein Disziplinarverfahren gegen…",
-        "datum": "2024-11-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_191",
-        "zitierung": "BGE 151 II 191",
-        "regesteKurz": "Art. 2 Abs. 1 und Art. 12 lit. a BGFA; Disziplinarverfahren; Einforderung des Honorars durch einen Anwalt; Vorlage einer E-Mail des Anwalts der Gegenpartei im Zivilprozess. Der Anwalt, der auf gerichtlichem Weg sein Honorar einfordert,…",
-        "datum": "2024-08-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_IV_470",
         "zitierung": "BGE 150 IV 470",
         "regesteKurz": "Art. 264 Abs. 1 und Art. 171 Abs. 1 StPO; Geltungsbereich des Anwaltsgeheimnisses; Begriff der Anwaltskorrespondenz. Der Schutz des Anwaltsgeheimnisses beschränkt sich nicht auf den Monopolbereich der Anwaltstätigkeit, sondern umfasst…",
         "datum": "2024-08-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_308",
-        "zitierung": "BGE 150 II 308",
-        "regesteKurz": "a Art. 20 BGFA; aArt. 369 Abs. 7 StGB; Berücksichtigung von im kantonalen Anwaltsregister bereits gelöschten Disziplinarmassnahmen bei der Bemessung von Sanktionen. Bisherige Rechtsprechung des Bundesgerichts zur Berücksichtigung von…",
-        "datum": "2024-03-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -93,6 +63,36 @@
         "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_271__voll",
+        "zitierung": "Urteil 2C_144/2024 (nicht publ. in BGE 151 II 271)",
+        "regesteKurz": null,
+        "datum": "2024-11-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_191__voll",
+        "zitierung": "Urteil 2C_579/2023 (nicht publ. in BGE 151 II 191)",
+        "regesteKurz": null,
+        "datum": "2024-08-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_308__voll",
+        "zitierung": "Urteil 2C_164/2023 (nicht publ. in BGE 150 II 308)",
+        "regesteKurz": null,
+        "datum": "2024-03-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -209,44 +209,44 @@
     ],
     "8": [
       {
-        "key": "bge_150_I_93",
-        "zitierung": "BGE 150 I 93",
-        "regesteKurz": "Art. 8 Ziff. 1 EMRK; Art. 13 BV; Art. 3 KRK; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Die Nachteile, die mit dem Status der vorläufigen Aufnahme im Vergleich zur Aufenthaltsbewilligung für Kinder im…",
-        "datum": "2024-02-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_61",
         "zitierung": "BGE 147 II 61",
         "regesteKurz": "Art. 8 Abs. 1 lit. d, Art. 9 und Art. 12 lit. j BGFA; strukturelle Unabhängigkeit einer Anwaltskanzlei, die einem Alleinaktionär gehört; rechtliche und statutarische Auswirkungen des Risikos des Erwerbs von Aktien durch nicht anwaltliche…",
         "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_I_93__voll",
+        "zitierung": "Urteil 2C_198/2023 (nicht publ. in BGE 150 I 93)",
+        "regesteKurz": null,
+        "datum": "2024-02-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "9": [
       {
-        "key": "bge_151_I_194",
-        "zitierung": "BGE 151 I 194",
-        "regesteKurz": "Art. 27, 29 Abs. 1 und Art. 36 BV; kantonales Obligatorium zum elektronischen Behördenverkehr für berufsmässige Parteivertreter (abstrakte Normenkontrolle). Berufsmässige Parteivertreter zu verpflichten, Eingaben an kantonale Verwaltungs-…",
-        "datum": "2024-12-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_61",
         "zitierung": "BGE 147 II 61",
         "regesteKurz": "Art. 8 Abs. 1 lit. d, Art. 9 und Art. 12 lit. j BGFA; strukturelle Unabhängigkeit einer Anwaltskanzlei, die einem Alleinaktionär gehört; rechtliche und statutarische Auswirkungen des Risikos des Erwerbs von Aktien durch nicht anwaltliche…",
         "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_I_194__voll",
+        "zitierung": "Urteil 2C_113/2024 (nicht publ. in BGE 151 I 194)",
+        "regesteKurz": null,
+        "datum": "2024-12-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -305,30 +305,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_V_333",
-        "zitierung": "BGE 151 V 333",
-        "regesteKurz": "Art. 19 BVG; Art. 20 BVV 2; Art. 15 Abs. 1 lit. b FZV; vorrangige Begünstigte hinsichtlich der Erhaltung des Vorsorgeschutzes im Todesfall; geschiedener Ehegatte. Geschiedene Ehegatten gehören gemäss Art. 19 BVG zum Kreis der überlebenden…",
-        "datum": "2025-07-09",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_151_II_873",
         "zitierung": "BGE 151 II 873",
         "regesteKurz": "Art. 28 Ziff. 3 lit. c DBA CH-FR; Art. 8 EMRK; Art. 8 Abs. 6 und Art. 15 StAhiG; Art. 12 lit. h und Art. 13 BGFA; internationale Amtshilfe in Steuersachen; Amtshilfeersuchen zur Beschaffung von Informationen über schweizerische Bankkonten…",
         "datum": "2025-05-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_I_194",
-        "zitierung": "BGE 151 I 194",
-        "regesteKurz": "Art. 27, 29 Abs. 1 und Art. 36 BV; kantonales Obligatorium zum elektronischen Behördenverkehr für berufsmässige Parteivertreter (abstrakte Normenkontrolle). Berufsmässige Parteivertreter zu verpflichten, Eingaben an kantonale Verwaltungs-…",
-        "datum": "2024-12-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -349,6 +329,26 @@
         "zitierung": "BGE 150 II 217",
         "regesteKurz": "Art. 12 lit. d BGFA; Zulässigkeit und Grenzen der Anwaltswerbung; undifferenzierter Massenversand von Newslettern. Inhalt und Grenzen der Anwaltswerbung: Sie muss nicht nur massvoll sein und sich auf objektive Tatsachen beschränken,…",
         "datum": "2023-11-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_61",
+        "zitierung": "BGE 147 II 61",
+        "regesteKurz": "Art. 8 Abs. 1 lit. d, Art. 9 und Art. 12 lit. j BGFA; strukturelle Unabhängigkeit einer Anwaltskanzlei, die einem Alleinaktionär gehört; rechtliche und statutarische Auswirkungen des Risikos des Erwerbs von Aktien durch nicht anwaltliche…",
+        "datum": "2020-11-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_IV_218",
+        "zitierung": "BGE 146 IV 218",
+        "regesteKurz": "Akteneinsichtsrecht; Geheimhaltungspflicht betreffend das Verfahren und die davon betroffenen Personen; Kommunikation zwischen der Verteidigung und ihrer Mandantschaft (Art. 73 Abs. 2, 101 Abs. 1, 102 Abs. 1, 108 und 128 StPO; Art. 398…",
+        "datum": "2020-05-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -387,16 +387,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_I_194",
-        "zitierung": "BGE 151 I 194",
-        "regesteKurz": "Art. 27, 29 Abs. 1 und Art. 36 BV; kantonales Obligatorium zum elektronischen Behördenverkehr für berufsmässige Parteivertreter (abstrakte Normenkontrolle). Berufsmässige Parteivertreter zu verpflichten, Eingaben an kantonale Verwaltungs-…",
-        "datum": "2024-12-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_IV_470",
         "zitierung": "BGE 150 IV 470",
         "regesteKurz": "Art. 264 Abs. 1 und Art. 171 Abs. 1 StPO; Geltungsbereich des Anwaltsgeheimnisses; Begriff der Anwaltskorrespondenz. Der Schutz des Anwaltsgeheimnisses beschränkt sich nicht auf den Monopolbereich der Anwaltstätigkeit, sondern umfasst…",
@@ -405,19 +395,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_I_194__voll",
+        "zitierung": "Urteil 2C_113/2024 (nicht publ. in BGE 151 I 194)",
+        "regesteKurz": null,
+        "datum": "2024-12-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "14": [
-      {
-        "key": "bge_147_III_351",
-        "zitierung": "BGE 147 III 351",
-        "regesteKurz": "Art. 49 Abs. 1 BV, Art. 59 und 124 Abs. 1 ZPO, Art. 12 lit. c und 34 Abs. 1 BGFA; Zuständigkeit für den Entscheid über die Vertretungsbefugnis des Anwalts in einem hängigen Verfahren. Der Entscheid über die Vertretungsbefugnis des Anwalts…",
-        "datum": "2021-03-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_147_II_61",
         "zitierung": "BGE 147 II 61",
@@ -425,6 +415,16 @@
         "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_III_351__voll",
+        "zitierung": "Urteil 5A_485/2020 (nicht publ. in BGE 147 III 351)",
+        "regesteKurz": null,
+        "datum": "2021-03-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -442,16 +442,6 @@
       }
     ],
     "17": [
-      {
-        "key": "bge_150_II_300",
-        "zitierung": "BGE 150 II 300",
-        "regesteKurz": "Art. 13 Abs. 1 BGFA; Art. 321 Ziff. 2 StGB; Unzulässigkeit der Voraus-Entbindung vom anwaltlichen Berufsgeheimnis im Hinblick auf mögliche spätere Honorarstreitigkeiten. Die klageweise Durchsetzung einer Honorarforderung setzt eine…",
-        "datum": "2024-04-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_150_II_308",
         "zitierung": "BGE 150 II 308",
@@ -473,22 +463,32 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_III_351",
-        "zitierung": "BGE 147 III 351",
-        "regesteKurz": "Art. 49 Abs. 1 BV, Art. 59 und 124 Abs. 1 ZPO, Art. 12 lit. c und 34 Abs. 1 BGFA; Zuständigkeit für den Entscheid über die Vertretungsbefugnis des Anwalts in einem hängigen Verfahren. Der Entscheid über die Vertretungsbefugnis des Anwalts…",
-        "datum": "2021-03-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_I_219",
         "zitierung": "BGE 147 I 219",
         "regesteKurz": "Art. 6 Ziff. 1 EMRK; Anspruch auf eine öffentliche Gerichtsverhandlung im anwaltsrechtlichen Disziplinarverfahren. In Streitigkeiten über zivilrechtliche Ansprüche besteht nach Art. 6 Ziff. 1 EMRK ein Anspruch auf gerichtliche Beurteilung…",
         "datum": "2020-08-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_300__voll",
+        "zitierung": "Urteil 2C_257/2023 (nicht publ. in BGE 150 II 300)",
+        "regesteKurz": null,
+        "datum": "2024-04-05",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_III_351__voll",
+        "zitierung": "Urteil 5A_485/2020 (nicht publ. in BGE 147 III 351)",
+        "regesteKurz": null,
+        "datum": "2021-03-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -609,12 +609,12 @@
     ],
     "26": [
       {
-        "key": "bge_151_II_640",
-        "zitierung": "BGE 151 II 640",
-        "regesteKurz": "Art. 27 Abs. 1 und Art. 28 Abs. 2 BGFA; Eintragung von Anwältinnen und Anwälten in die EU/EFTA-Anwaltsliste. Voraussetzungen, unter welchen sich EU/EFTA-Anwältinnen und -Anwälte in die EU/EFTA-Anwaltsliste eintragen lassen können (E.…",
+        "key": "bge_151_II_640__voll",
+        "zitierung": "Urteil 2C_271/2024 (nicht publ. in BGE 151 II 640)",
+        "regesteKurz": null,
         "datum": "2025-02-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -707,12 +707,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_II_309",
-        "zitierung": "BGE 146 II 309",
-        "regesteKurz": "Art. 7 Abs. 3 BGFA; Art. 21 LPAv/VD; Bedingungen für die Eintragung in das kantonale Register für Anwaltspraktikanten. Art. 7 Abs. 3 BGFA ist so auszulegen, dass für die Anmeldung zum Anwaltspraktikum ein Bachelorabschluss im Schweizer…",
+        "key": "bge_146_II_309__voll",
+        "zitierung": "Urteil 2C_300/2019 (nicht publ. in BGE 146 II 309)",
+        "regesteKurz": null,
         "datum": "2020-01-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

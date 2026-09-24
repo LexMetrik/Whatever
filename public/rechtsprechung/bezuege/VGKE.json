@@ -1,20 +1,20 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"VGKE",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_146_I_157":{"zitierung":"BGE 146 I 157","regesteKurz":"Art. 13, 26, 27 BV; Art. 8 EMRK; Art. 3 SRVG; Bundesgesetz über die Sperrung und die Rückerstattung unrechtmässig erworbener Vermögenswerte ausländischer politisch exponierter Personen; Verordnung über die Sperrung von Vermögenswerten im…","datum":"2020-03-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_I_157__voll":{"zitierung":"Urteil 2C_572/2019 (nicht publ. in BGE 146 I 157)","regesteKurz":null,"datum":"2020-03-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 I 157","urteil":"2C_572/2019"}},
 "bs_appellationsgericht_VD.2020.254":{"zitierung":"Appellationsgericht BS VD.2020.254 vom 06.04.2022","regesteKurz":"Kantonale Steuern pro 2013 (Verlustrechnung, Ermessenstaxation; § 30 Abs. 1, § 158 Abs. 2 und § 160 Abs. 4 StG)","datum":"2022-04-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.247":{"zitierung":"Appellationsgericht BS VD.2022.247 vom 01.06.2023","regesteKurz":"Lohneinstufung","datum":"2023-06-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "5":[{"key":"bs_appellationsgericht_VD.2020.254","gewicht":null}],
-"6":[{"key":"bge_146_I_157","gewicht":0}],
+"6":[{"key":"bge_146_I_157__voll","gewicht":0,"erwaegungen":["E. 6"]}],
 "13":[{"key":"bs_appellationsgericht_VD.2022.247","gewicht":null}]
 },
 "gesamtProArtikel":{
 "5":{"kantonal":1},
-"6":{"bge":1},
+"6":{"bger":1},
 "13":{"kantonal":1}
 }
 }

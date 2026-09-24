@@ -1,12 +1,12 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"BS-834.410",
 "erlassEbene":"kanton",
 "dokumente":{
 "bs_appellationsgericht_VD.2023.55":{"zitierung":"Appellationsgericht BS VD.2023.55 vom 17.11.2023","regesteKurz":"Rückstellung des Einbürgerungsgesuchs","datum":"2023-11-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.190":{"zitierung":"Appellationsgericht BS VD.2024.190 vom 27.06.2025","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung EU/EFTA und Wegweisung","datum":"2025-06-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZB.2022.41":{"zitierung":"Appellationsgericht BS ZB.2022.41 vom 27.02.2023","regesteKurz":"Vorsorgliche Massnahmen im Scheidungsverfahren (BGer 5A_306/2023 vom 1. Dezember 2023)","datum":"2023-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_ZB.2023.62":{"zitierung":"Appellationsgericht BS ZB.2023.62","regesteKurz":"Kindesunterhalt","datum":"2023-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2023.62":{"zitierung":"Appellationsgericht BS ZB.2023.62 vom 24.09.2024","regesteKurz":"Kindesunterhalt","datum":"2024-09-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_EL.2024.11":{"zitierung":"Sozialversicherungsgericht BS EL.2024.11 vom 05.06.2025","regesteKurz":"ELG Ergänzungsleistungen; Berechnung (insb. Maximalbeitrag für Miete)","datum":"2025-06-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2023.17":{"zitierung":"Sozialversicherungsgericht BS KV.2023.17 vom 08.05.2024","regesteKurz":"Nachforderung für Krankenkassenprämien korrekt; Beschwerdeabweisung.","datum":"2024-05-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2023.8":{"zitierung":"Sozialversicherungsgericht BS KV.2023.8 vom 28.11.2023","regesteKurz":"KVG","datum":"2023-11-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
@@ -15,7 +15,7 @@
 "proArtikel":{
 "1":[{"key":"bs_sozialversicherungsgericht_KV.2023.17","gewicht":null}],
 "18":[{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
-"22":[{"key":"bs_appellationsgericht_VD.2024.190","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.41","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.62","gewicht":null}],
+"22":[{"key":"bs_appellationsgericht_VD.2024.190","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.62","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.41","gewicht":null}],
 "25":[{"key":"bs_sozialversicherungsgericht_EL.2024.11","gewicht":null}],
 "26":[{"key":"bs_sozialversicherungsgericht_KV.2023.17","gewicht":null}],
 "27":[{"key":"bs_sozialversicherungsgericht_KV.2023.17","gewicht":null}],

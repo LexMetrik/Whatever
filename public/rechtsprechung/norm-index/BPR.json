@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "BPR",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -215,27 +215,17 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_I_225",
-        "zitierung": "BGE 151 I 225",
-        "regesteKurz": "Art. 5, 8 Abs. 1 und 34 Abs. 2, Art. 130 Abs. 3 ter und 3 quater BV, Art. 10a und 11 BPR; Eidgenössische Volksabstimmung vom September 2022 über die Reform der Alters- und Hinterlassenenversicherung (AHV 21), allgemeine Informationslage…",
+        "key": "bge_151_I_225__voll",
+        "zitierung": "Urteil 1C_487/2024 (nicht publ. in BGE 151 I 225)",
+        "regesteKurz": null,
         "datum": "2024-12-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "80": [
-      {
-        "key": "bge_147_I_194",
-        "zitierung": "BGE 147 I 194",
-        "regesteKurz": "Art. 34, 142 Abs. 2, Art. 189 Abs. 4 BV, Art. 77 BPR; Eidgenössische Volksabstimmung über die Konzernverantwortungsinitiative; die Kritik am Erfordernis des Ständemehrs ist sofort gegen die Abstimmungsanordnung zu erheben. Die allgemeine…",
-        "datum": "2021-03-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
       {
         "key": "bge_147_I_206",
         "zitierung": "BGE 147 I 206",
@@ -247,14 +237,14 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_I_225",
-        "zitierung": "BGE 151 I 225",
-        "regesteKurz": "Art. 5, 8 Abs. 1 und 34 Abs. 2, Art. 130 Abs. 3 ter und 3 quater BV, Art. 10a und 11 BPR; Eidgenössische Volksabstimmung vom September 2022 über die Reform der Alters- und Hinterlassenenversicherung (AHV 21), allgemeine Informationslage…",
-        "datum": "2024-12-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_147_I_194__voll",
+        "zitierung": "Urteil 1C_713/2020 (nicht publ. in BGE 147 I 194)",
+        "regesteKurz": null,
+        "datum": "2021-03-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
       },
       {
         "key": "bge_146_I_126",
@@ -263,6 +253,16 @@
         "datum": "2020-03-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_I_225__voll",
+        "zitierung": "Urteil 1C_487/2024 (nicht publ. in BGE 151 I 225)",
+        "regesteKurz": null,
+        "datum": "2024-12-12",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

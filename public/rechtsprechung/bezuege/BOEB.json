@@ -1,10 +1,10 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"BOEB",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_148_II_106":{"zitierung":"BGE 148 II 106","regesteKurz":"Art. 45 und 45a des früheren Gesetzes über die öffentlichen Aufträge des Kantons Tessin vom 20. Februar 2001 (aGöA) und Art. 45a und 45b desselben derzeit in Kraft stehenden Gesetzes (GöA). Öffentliche Beschaffung: Geldstrafe nach Vergabe…","datum":"2021-12-14","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_148_II_564":{"zitierung":"BGE 148 II 564","regesteKurz":"Art. 2 Abs. 7 und Art. 9 Abs. 3 BGBM; Vergabe eines Monopols zum Plakataushang ohne Ausschreibung; Frage und Folgen der Nichtigkeit eines solchen Entscheids. Der Entscheid über die Vergabe eines Monopols zum Plakataushang ohne vorgängige…","datum":"2022-11-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_564__voll":{"zitierung":"Urteil 2C_959/2021 (nicht publ. in BGE 148 II 564)","regesteKurz":null,"datum":"2022-11-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 564","urteil":"2C_959/2021"}},
 "bge_150_II_105":{"zitierung":"BGE 150 II 105","regesteKurz":"Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der…","datum":"2023-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_II_123":{"zitierung":"BGE 150 II 123","regesteKurz":"Art. 89 Abs. 1 und Art. 111 Abs. 1 BGG; Art. 56 Abs. 4 BöB; Art. 56 Abs. 5 IVöB 2019; Art. 75 lit. a des Waadtländer Gesetzes über das Verwaltungsverfahren (LPA-VD); Zulässigkeitsvoraussetzungen einer egoistischen Verbandsbeschwerde gegen…","datum":"2024-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_81":{"zitierung":"BGE 151 II 81","regesteKurz":"Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich…","datum":"2024-07-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -13,8 +13,8 @@
 "proArtikel":{
 "2":[{"key":"bge_150_II_105","gewicht":0}],
 "4":[{"key":"bge_151_II_81","gewicht":0}],
-"8":[{"key":"bge_151_II_81","gewicht":0},{"key":"bge_148_II_564","gewicht":0}],
-"9":[{"key":"bge_148_II_564","gewicht":0}],
+"8":[{"key":"bge_151_II_81","gewicht":0},{"key":"bge_148_II_564__voll","gewicht":0,"erwaegungen":["E. 2.2"]}],
+"9":[{"key":"bge_148_II_564__voll","gewicht":0,"erwaegungen":["E. 2.2"]}],
 "10":[{"key":"bge_151_I_113","gewicht":0},{"key":"bge_151_II_81","gewicht":1}],
 "12":[{"key":"bge_151_I_113","gewicht":0}],
 "21":[{"key":"bge_150_II_105","gewicht":0}],
@@ -30,8 +30,8 @@
 "gesamtProArtikel":{
 "2":{"bge":1},
 "4":{"bge":1},
-"8":{"bge":2},
-"9":{"bge":1},
+"8":{"bge":1,"bger":1},
+"9":{"bger":1},
 "10":{"bge":2},
 "12":{"bge":1},
 "21":{"bge":1},

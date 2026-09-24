@@ -1,33 +1,34 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"GEBV_SCHKG",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_149_III_210":{"zitierung":"BGE 149 III 210","regesteKurz":"Art. 68 und 80 f. SchKG; Betreibung für mit definitivem Rechtsöffnungsentscheid zugesprochene Kosten und Parteientschädigung; Rechtsöffnungstitel; Einwendung des Schuldners. Der Rechtsöffnungsentscheid, welcher dem Gläubiger Kosten und…","datum":"2022-11-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_149_III_28":{"zitierung":"BGE 149 III 28","regesteKurz":"Art. 93, 197 Abs. 2 und Art. 221 SchKG; Konkursinventar, Pfändbarkeit eines Vorsorgeguthabens der Säule 3a. Art. 93 SchKG ist im Konkurs zu beachten und Vermögenswerte, die nach Massgabe dieser Vorschrift nicht gepfändet werden dürfen,…","datum":"2022-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_149_III_210__voll":{"zitierung":"Urteil 5A_433/2022 (nicht publ. in BGE 149 III 210)","regesteKurz":null,"datum":"2022-11-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"149 III 210","urteil":"5A_433/2022"}},
+"bge_149_III_28__voll":{"zitierung":"Urteil 5A_385/2022 (nicht publ. in BGE 149 III 28)","regesteKurz":null,"datum":"2022-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"149 III 28","urteil":"5A_385/2022"}},
 "bge_150_III_223":{"zitierung":"BGE 150 III 223","regesteKurz":"Art. 1, Art. 2, Art. 9 Abs. 1 lit. a, Art. 10 bis , Art. 13 Abs. 1, Art. 14, Art. 15 Abs. 1, Art. 16 Abs. 1 und Abs. 3, Art. 20, Art. 24 GebV SchKG; Art. 16, Art. 34, Art. 72 Abs. 1, Art. 90, Art. 112, Art. 114, Art. 115 Abs. 1 SchKG;…","datum":"2024-03-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_III_521":{"zitierung":"BGE 151 III 521","regesteKurz":"Art. 14, 15 und 16 GebV SchKG; Wegentschädigung. Das Betreibungsamt muss in der Abrechnung klar angeben, für welche Verrichtungen es Wegentschädigungen beansprucht (E. 3.3). Rechtsnatur der Wegentschädigung (Auslagenersatz und Gebühr). Bei…","datum":"2025-04-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_149_III_210","gewicht":0}],
+"1":[{"key":"bge_149_III_210__voll","gewicht":0,"erwaegungen":["E. 4.1.1"]}],
 "2":[{"key":"bge_150_III_223","gewicht":0}],
 "14":[{"key":"bge_151_III_521","gewicht":0},{"key":"bge_150_III_223","gewicht":1}],
 "15":[{"key":"bge_151_III_521","gewicht":0},{"key":"bge_150_III_223","gewicht":1}],
 "16":[{"key":"bge_151_III_521","gewicht":0}],
 "20":[{"key":"bge_150_III_223","gewicht":0}],
 "24":[{"key":"bge_150_III_223","gewicht":0}],
-"62":[{"key":"bge_149_III_210","gewicht":0},{"key":"bge_149_III_28","gewicht":0}],
+"62":[{"key":"bge_149_III_210","gewicht":0},{"key":"bge_149_III_28__voll","gewicht":0,"erwaegungen":["E. 7"]}],
 "10bis":[{"key":"bge_150_III_223","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1},
+"1":{"bger":1},
 "2":{"bge":1},
 "14":{"bge":2},
 "15":{"bge":2},
 "16":{"bge":1},
 "20":{"bge":1},
 "24":{"bge":1},
-"62":{"bge":2},
+"62":{"bge":1,"bger":1},
 "10bis":{"bge":1}
 }
 }
