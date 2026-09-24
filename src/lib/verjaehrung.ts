@@ -58,7 +58,11 @@ export type VerjaehrungInput = {
   strafbareHandlung?: boolean;       // Art. 60 Abs. 2 → Hinweis (externe StGB-Frist)
   stillstaende?: Stillstand[];
   unterbrechungen?: Unterbrechung[];
-  verzicht?: { datum: string; jahre?: number }; // Art. 141 (Overlay, max. 10 Jahre)
+  /** Einredeverzicht (Art. 141 OR) als Overlay. `datum` = Datum der
+   *  Erklärung; Wirkungsende entweder als Enddatum der Erklärung (`bis`,
+   *  massgeblich, wenn gesetzt) oder als Dauer in Jahren (`jahre`), je ab
+   *  Erklärung gerechnet (W-06 a, offengelegte Lesart); höchstens 10 Jahre. */
+  verzicht?: { datum: string; jahre?: number; bis?: string };
 };
 
 export type VerjaehrungErgebnis = Berechnungsergebnis & {
@@ -68,6 +72,9 @@ export type VerjaehrungErgebnis = Berechnungsergebnis & {
   massgeblicheFrist?: 'relativ' | 'absolut'; // welche Frist das Ende bestimmt
   verjaehrtAmStichtag?: boolean;
   verzichtBisISO?: string;   // Einredeverzicht wirkt bis (Art. 141)
+  /** Verjährt am Stichtag, die Einrede ist aber durch einen am Stichtag
+   *  wirksamen Verzicht ausgeschlossen (Art. 141 Abs. 1 / 142 OR). */
+  einredeAusgeschlossenAmStichtag?: boolean;
   gehemmtTage?: number;
   /** Nur bei Altfällen (Fristbeginn vor 1.1.2020) der Regime mit Altrecht:
    *  welches Recht nach Art. 49 SchlT ZGB massgeblich ist. `bisheriges_recht`
@@ -632,28 +639,103 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
   });
 
   // ── Verzicht (Art. 141) als Overlay ──
+  // RL-14 (Prüfung Rechtslogik 23.9.2026, F5-03/F5-04/S3-e/UI-04; Entscheid
+  // David W-06 a, 24.9.2026). Art. 141 Abs. 1 OR (Fedlex SR 220, Konsolidierung
+  // 1.1.2026, geprüft 24.9.2026): «Der Schuldner kann ab Beginn der Verjährung
+  // jeweils für höchstens zehn Jahre auf die Erhebung der Verjährungseinrede
+  // verzichten.» — «ab Beginn» regelt die Zulässigkeit (kein Vorausverzicht),
+  // «höchstens zehn Jahre» die Dauer je Verzicht. Ab wann die Dauer läuft,
+  // regelt das Gesetz bewusst nicht (Botschaft BBl 2014 235 S. 262: Moment des
+  // Verzichts oder Verjährungseintritt, Auslegung der Erklärung). Der Rechner
+  // rechnet ab Erklärung und legt das samt Alternative als Annahme offen; eine
+  // zu lange Dauer wird gekürzt (Art. 20 Abs. 2 OR, BBl a.a.O.); eine
+  // gesetzliche Ersatzdauer gibt es nicht (keine stille Vorgabe). Jahresgrenze
+  // nach Art. 77 Abs. 1 Ziff. 3 OR (date-fns addYears: fehlt der zahlengleiche
+  // Tag, letzter Tag des Monats).
   let verzichtBis: Date | null = null;
+  let verzichtDatum: Date | null = null;
   if (input.verzicht && verschoben) {
     const vd = parseISO(input.verzicht.datum);
-    // NaN/negative Dauer → Default 10 Jahre; > 10 wird gekürzt (Art. 141 Abs. 1)
+    const hoechst = addYears(vd, 10);
     const roh = input.verzicht.jahre;
-    const jahre = Number.isFinite(roh) && roh! > 0 ? Math.min(roh!, 10) : 10;
-    if (Number.isFinite(roh) && roh! > 10) {
-      warnungen.push('Ein Einredeverzicht von mehr als 10 Jahren wird auf die Höchstdauer von 10 Jahren gekürzt (Art. 141 Abs. 1 OR).');
-    }
+    const bisEingabe = input.verzicht.bis ? parseISO(input.verzicht.bis) : null;
+    const bis = bisEingabe && !isNaN(bisEingabe.getTime()) ? bisEingabe : null;
+    let ende: Date | null = null;
+    let dauerText = '';
     if (isBefore(vd, beginn)) {
       warnungen.push(`Verzicht vom ${fmt(vd)} liegt vor Beginn der Verjährung – ein Vorausverzicht ist nicht zulässig (Art. 141 Abs. 1 OR); der Verzicht bleibt unberücksichtigt.`);
+    } else if (bis) {
+      if (!isAfter(bis, vd)) {
+        warnungen.push(`Das Enddatum des Verzichts (${fmt(bis)}) liegt nicht nach der Erklärung vom ${fmt(vd)}; der Verzicht bleibt unberücksichtigt.`);
+      } else {
+        ende = bis;
+        dauerText = `bis ${fmt(bis)}`;
+        if (roh !== undefined) annahmen.push('Einredeverzicht: Enddatum und Dauer in Jahren angegeben – massgeblich ist das Enddatum der Erklärung; die Jahresangabe bleibt unberücksichtigt.');
+      }
+    } else if (roh === undefined) {
+      ende = hoechst;
+      dauerText = 'ohne Dauerangabe';
+      warnungen.push(`Einredeverzicht ohne Dauer: Das Gesetz kennt keine Ersatzdauer; die Dauer ist durch Auslegung der Erklärung zu ermitteln (Botschaft BBl 2014 235 S. 262). Ein unbefristeter Verzicht wird auf die Höchstdauer von 10 Jahren gekürzt (Art. 141 Abs. 1 i.V.m. Art. 20 Abs. 2 OR) – berechnet ist daher die Höchstdauer, 10 Jahre ab Erklärung (${fmt(hoechst)}); ein kürzerer Verzicht ist möglich. Nennt die Erklärung eine Dauer oder ein Enddatum, dieses eingeben.`);
+    } else if (!Number.isFinite(roh) || roh <= 0) {
+      warnungen.push('Die eingegebene Verzichtsdauer ist ungültig (mindestens 1 Jahr, oder ein Enddatum nach der Erklärung); der Verzicht bleibt unberücksichtigt.');
     } else {
-      verzichtBis = addYears(verschoben, jahre);
+      ende = addYears(vd, roh);
+      dauerText = `für ${roh} ${roh === 1 ? 'Jahr' : 'Jahre'}`;
+    }
+    if (ende && isAfter(ende, hoechst)) {
+      warnungen.push(
+        `Ein Einredeverzicht über mehr als 10 Jahre wird auf die Höchstdauer gekürzt (Art. 141 Abs. 1 i.V.m. Art. 20 Abs. 2 OR; Botschaft BBl 2014 235 S. 262): ` +
+        `wirksam bis ${fmt(hoechst)} statt ${fmt(ende)} (10 Jahre ab der Erklärung vom ${fmt(vd)}).` +
+        (isBefore(vd, verschoben)
+          ? ` Nach der anderen Lesart (Laufbeginn mit dem Verjährungseintritt am ${fmt(verschoben)}) läge die Grenze erst am ${fmt(addYears(verschoben, 10))}.`
+          : ''),
+      );
+      ende = hoechst;
+    }
+    if (ende) {
+      verzichtBis = ende;
+      verzichtDatum = vd;
+      const ohneWirkung = !isAfter(ende, verschoben);
       rechenweg.push({
         beschreibung: 'Einredeverzicht (Art. 141 OR)',
-        zwischenergebnis: `Schriftlicher Verzicht vom ${fmt(vd)}: Die Einrede kann bis ${fmt(verzichtBis)} nicht erhoben werden (höchstens 10 Jahre ab Verjährungseintritt; Kettenverzichte bleiben möglich).`,
+        zwischenergebnis: `Schriftlicher Verzicht vom ${fmt(vd)} ${dauerText}: Die Einrede kann bis ${fmt(ende)} nicht erhoben werden ` +
+          '(je Verzicht höchstens 10 Jahre, Art. 141 Abs. 1 OR; Laufbeginn ab Erklärung angenommen – siehe Annahmen; Kettenverzichte bleiben möglich).' +
+          (ohneWirkung ? ` Der Verzicht endet vor dem Verjährungseintritt (${fmt(verschoben)}) und bleibt ohne Auswirkung auf das Ergebnis.` : ''),
         normen: [N_141],
         rechtsprechung: [rechtsprechung('BGE_132_III_226')],
       });
-      annahmen.push('Schriftform des Verzichts (Art. 141 Abs. 1bis OR) wird als erfüllt unterstellt; in AGB kann nur der Verwender verzichten.');
+      if (bis) {
+        annahmen.push(`Einredeverzicht: Wirkungsende aus der Erklärung übernommen (${fmt(bis)}${isAfter(bis, ende) ? `, gekürzt auf ${fmt(ende)}` : ''}). Die Höchstdauer von 10 Jahren ist ab dem Datum der Verzichtserklärung gemessen; ab wann ein Verzicht gilt, regelt das Gesetz bewusst nicht (Botschaft BBl 2014 235 S. 262).`);
+      } else {
+        const alternative = isBefore(vd, verschoben) && roh !== undefined && Number.isFinite(roh) && roh > 0
+          ? ` In Betracht kommt auch der Verjährungseintritt (${fmt(verschoben)}); dann wirkte der Verzicht bis ${fmt(addYears(verschoben, Math.min(roh, 10)))}.`
+          : isBefore(vd, verschoben)
+            ? ` In Betracht kommt auch der Verjährungseintritt (${fmt(verschoben)}) als Laufbeginn.`
+            : '';
+        annahmen.push(`Laufbeginn der Verzichtsdauer: gerechnet ab dem Datum der Verzichtserklärung (${fmt(vd)}). Ab wann ein Verzicht gilt, regelt das Gesetz bewusst nicht (Botschaft BBl 2014 235 S. 262).${alternative} Massgeblich ist die Auslegung der Erklärung.`);
+      }
+      if (isBefore(vd, parseISO(INKRAFT_REVISION_2020))) {
+        // Art. 49 Abs. 4 SchlT ZGB: neues Recht erst ab 1.1.2020. aArt. 141
+        // Abs. 1 OR (Fedlex SR 220, Fassung 1.11.2019, PDF/A-Filestore, geprüft
+        // 24.9.2026): «Auf die Verjährung kann nicht zum voraus verzichtet
+        // werden.» Dauer/Grenze nach BGE 132 III 226 E. 3.3.8.
+        warnungen.push(`Verzicht vom ${fmt(vd)} vor dem 1.1.2020: Es galt aArt. 141 Abs. 1 OR («Auf die Verjährung kann nicht zum voraus verzichtet werden»); die Dauer richtete sich nach dem Parteiwillen, höchstens 10 Jahre (BGE 132 III 226 E. 3.3.8), ein gesetzliches Schriftformerfordernis bestand noch nicht. Gerechnet ist nach denselben Regeln wie für das geltende Recht – fachlich prüfen.`);
+      } else {
+        annahmen.push('Schriftform des Verzichts (Art. 141 Abs. 1bis OR) wird als erfüllt unterstellt; in AGB kann nur der Verwender verzichten.');
+      }
     }
   }
+  // F5-03: verjährt, aber die Einrede ist am Stichtag durch einen bereits
+  // erklärten, noch laufenden Verzicht ausgeschlossen (Art. 141 Abs. 1 / 142 OR).
+  const einredeAusgeschlossen = verjaehrt && verzichtBis != null && verzichtDatum != null
+    && !isAfter(verzichtDatum, stichtag) && !isAfter(stichtag, verzichtBis);
+  const verzichtAbgelaufen = verjaehrt && verzichtBis != null && verschoben != null
+    && isAfter(verzichtBis, verschoben) && isAfter(stichtag, verzichtBis);
+  const verzichtZusatzVerjaehrt = einredeAusgeschlossen
+    ? ` Einrede durch Verzicht bis ${fmt(verzichtBis!)} ausgeschlossen (Art. 141 Abs. 1 OR).`
+    : verzichtAbgelaufen
+      ? ` Sie ist als Einrede geltend zu machen (Art. 142 OR); der Einredeverzicht wirkte bis ${fmt(verzichtBis!)} und ist abgelaufen.`
+      : ' Sie ist als Einrede geltend zu machen (Art. 142 OR).';
 
   if (input.strafbareHandlung) {
     warnungen.push(
@@ -695,14 +777,14 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
     : '';
   const ergebnisText = ue?.art === 'bisheriges_recht' && verschoben
     ? verjaehrt
-      ? `Verjährt nach bisherigem Recht (Art. 49 Abs. 1 SchlT ZGB): Die Verjährung ist nach bisherigem Recht (${ue.norm}) mit Ablauf des ${fmt(verschoben)} eingetreten, also vor Inkrafttreten der Revision am 01.01.2020; die längeren neuen Fristen gelten nicht (Stichtag ${fmt(stichtag)}). Sie ist als Einrede geltend zu machen (Art. 142 OR).`
+      ? `Verjährt nach bisherigem Recht (Art. 49 Abs. 1 SchlT ZGB): Die Verjährung ist nach bisherigem Recht (${ue.norm}) mit Ablauf des ${fmt(verschoben)} eingetreten, also vor Inkrafttreten der Revision am 01.01.2020; die längeren neuen Fristen gelten nicht (Stichtag ${fmt(stichtag)}).${verzichtZusatzVerjaehrt}`
       : `Nicht verjährt am Stichtag ${fmt(stichtag)}: Nach bisherigem Recht (${ue.norm}) tritt die Verjährung mit unbenütztem Ablauf des ${fmt(verschoben)} ein, also vor dem 01.01.2020; die längeren neuen Fristen gelten nicht (Art. 49 Abs. 1 SchlT ZGB).`
     : ue?.art === 'unsicher'
       ? `Unsicher (Übergangsrecht, Art. 49 SchlT ZGB): Ende nach bisherigem Recht (${ue.norm}) ${fmt(ue.altEnde)}; Ende nach neuem Recht ${verschoben ? fmt(verschoben) : 'offen (Verfahren hängig)'}. ${ue.grund} Ergebnis fachlich prüfen.`
       : verschoben
     ? verjaehrt
-      ? `Verjährt: Die Verjährung ist mit Ablauf des ${fmt(verschoben)} eingetreten (Stichtag ${fmt(stichtag)}).${fristZusatz} Sie ist als Einrede geltend zu machen (Art. 142 OR).`
-      : `Nicht verjährt: Die Verjährung tritt mit unbenütztem Ablauf des ${fmt(verschoben)} ein.${fristZusatz}${verzichtBis ? ` Zufolge Einredeverzichts ist die Einrede bis ${fmt(verzichtBis)} ausgeschlossen.` : ''}`
+      ? `Verjährt: Die Verjährung ist mit Ablauf des ${fmt(verschoben)} eingetreten (Stichtag ${fmt(stichtag)}).${fristZusatz}${verzichtZusatzVerjaehrt}`
+      : `Nicht verjährt: Die Verjährung tritt mit unbenütztem Ablauf des ${fmt(verschoben)} ein.${fristZusatz}${verzichtBis && isAfter(verzichtBis, verschoben) ? ` Zufolge Einredeverzichts ist die Einrede bis ${fmt(verzichtBis)} ausgeschlossen.` : ''}`
     : `Die Verjährung steht prozessbedingt still (Art. 138 Abs. 1 OR); während des hängigen Verfahrens läuft auch eine allfällige absolute Frist nicht weiter – ein Fristende lässt sich erst nach Abschluss des Verfahrens bestimmen.`;
 
   return {
@@ -718,6 +800,7 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
     massgeblicheFrist,
     verjaehrtAmStichtag: verjaehrt,
     verzichtBisISO: verzichtBis ? iso(verzichtBis) : undefined,
+    ...(verzichtBis ? { einredeAusgeschlossenAmStichtag: einredeAusgeschlossen } : {}),
     gehemmtTage: gehemmtTage || undefined,
     ...(ue ? { uebergangsrecht: { art: ue.art, altrechtEndeISO: iso(ue.altEnde) } } : {}),
   };
