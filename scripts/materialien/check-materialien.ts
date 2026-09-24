@@ -64,6 +64,7 @@ import {
   type ShardDatei,
 } from './soft-law-projektion.ts';
 import { wortfeldTreffer, wortfeldImQuellcode } from './wortfeld.ts';
+import { kantenErlasseAusVerzeichnis, renderKantenErlasse, KANTEN_ERLASSE_PFAD } from './kanten-erlasse.ts';
 import { finding7Fehler, parseDatumArg } from './vernehmlassungen-tor.ts';
 import {
   pruefeDbVollstaendigkeit, pruefeKantenVollstaendigkeit, nurGelistete, shardInhaltGleich, zaehleKanten,
@@ -389,6 +390,18 @@ function main(): void {
   const dbKeys = new Set(dbDocs.map((d) => d.key));
   for (const k of dbKeys) if (!registerDbKeys.has(k)) fehler.push(`Zustands-Dokument '${k}' fehlt im register.json-DB-Teil.`);
   for (const k of registerDbKeys) if (!dbKeys.has(k)) fehler.push(`register.json-DB-Eintrag '${k}' ohne Zustands-Zeile.`);
+
+  // ── 10. Existenzliste ↔ Shard-Köpfe byte-genau (Posten 2026-09-24, kein Netz-404) ──
+  // Der Loader fetcht NUR Erlasse aus KANTEN_ERLASSE. Fehlt ein Shard-Kopf in der Liste,
+  // verschwänden seine Kanten still aus dem UI (§1) — darum Drift = Fehler, nicht Warnung.
+  const kantenErlasseSoll = renderKantenErlasse(kantenErlasseAusVerzeichnis(KANTEN_DIR));
+  const kantenErlasseIst = existsSync(KANTEN_ERLASSE_PFAD) ? readFileSync(KANTEN_ERLASSE_PFAD, 'utf8') : null;
+  if (kantenErlasseIst !== kantenErlasseSoll) {
+    fehler.push(
+      `${KANTEN_ERLASSE_PFAD} weicht von den Shard-Köpfen in ${KANTEN_DIR} ab (Existenzliste des Loaders) — ` +
+        `npm run materialien:kanten-erlasse ausführen und committen.`,
+    );
+  }
 
   const shards = existsSync(KANTEN_DIR) ? collectFiles(KANTEN_DIR, (p) => p.endsWith('.json')).length : 0;
   ausgabe(register.materialien.length, dbDocs.length, kantenGesamt, shards);

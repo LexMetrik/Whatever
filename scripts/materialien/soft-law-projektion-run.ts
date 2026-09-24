@@ -24,6 +24,7 @@ import {
   type DokMeta,
 } from './soft-law-projektion.ts';
 import { ladeZustand } from './soft-law-zustand.ts';
+import { schreibeKantenErlasse } from './kanten-erlasse.ts';
 import { pruefeDbVollstaendigkeit, pruefeKantenVollstaendigkeit, nurGelistete } from './db-vollstaendigkeit.ts';
 
 const datumArg = process.argv.find((a) => a.startsWith('--datum='));
@@ -101,6 +102,9 @@ if (kanten.length > 0) {
 } else {
   console.log('soft-law-projektion: keine Harvest-Kanten (DB fehlt oder hohl) — Shards bleiben unangetastet (kein Orphan-Loeschen).');
 }
+// (3) Existenzliste der Shard-Köpfe (kanten-erlasse.ts) — IMMER aus dem Verzeichnis nach dem
+// Schreiben, damit Liste und Shards nie auseinanderlaufen (Drift-Tor: check:materialien).
+const kantenErlasse = schreibeKantenErlasse();
 for (const d of downgrades) console.log(`  Downgrade: ${d.dok} · ${d.erlass} Art. ${d.artikel} → Erlass-Ebene (${d.grund})`);
 for (const n of nichtProjiziert) console.log(`  nicht projiziert: ${n.dok} · ${n.erlass} (${n.grund})`);
 
@@ -108,6 +112,6 @@ console.log(
   `soft-law-projektion (--datum=${datum}): register.json ${kern.materialien.length} Materialien ` +
     `(+ register-i18n.json ${Object.keys(i18n.titel).length} FR/IT-Titel · register-provenienz.json ${Object.keys(provenienz.eintraege).length} Einträge) ` +
     `(${register.materialien.length - dbDocs.length} kuratiert · ${dbDocs.length} DB); ` +
-    `Shards ${dateien.length} Datei(en) [${geschrieben} geschrieben · ${entfernt} orphan] · ` +
+    `Shards ${dateien.length} Datei(en) [${geschrieben} geschrieben · ${entfernt} orphan · ${kantenErlasse} Erlass-Köpfe gelistet] · ` +
     `${downgrades.length} Downgrades · ${nichtProjiziert.length} nicht projiziert.`,
 );

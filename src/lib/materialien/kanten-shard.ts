@@ -14,6 +14,15 @@
 // Der Kopf trägt IMMER die `dokumente` (urlBasis/stand); nur die `kanten` wandern
 // in die Buckets. Der Loader vereinigt sie transparent (KontextPanel lädt so 1
 // Erlass = 1 logischer Fetch, bei Bucket-Split n Dateien).
+//
+// Existenzliste (Posten 2026-09-24, W2·29-WERKBANK-LESER): gefetcht wird NUR ein
+// Erlass aus `KANTEN_ERLASSE` (generiert aus den committeten Shard-Köpfen,
+// scripts/materialien/kanten-erlasse.ts; Drift-Tor check:materialien). Vorher ging
+// jeder Erlass ohne Shard als Netz-404 über die Leitung (Konsolenfehler je Erlass,
+// gemessen gegen Prod 24.9.2026: KVG.json 404). Fachlich unverändert: kein Shard =
+// `null` = «keine Kanten».
+
+import { KANTEN_ERLASSE } from './kanten-erlasse.generated';
 
 /** Fundstelle einer aggregierten Kante (Ziffer + optionaler Deep-Link-Suffix). */
 interface ShardFundstelle {
@@ -65,11 +74,13 @@ async function holeJson(pfad: string): Promise<RohShard | null> {
 
 /**
  * Lädt den Kanten-Shard EINES Erlasses (mit Bucket-Vereinigung). `null` =
- * Erlass ohne Material-Kanten (404) oder transienter Fehler. Promise-Cache je
+ * Erlass ohne Material-Kanten (nicht in `KANTEN_ERLASSE`, oder doch 404) oder
+ * transienter Fehler. Promise-Cache je
  * Erlass; ein 404 wird gecacht (dauerhaft kein Shard), ein Netz-/Parse-Fehler
  * NICHT (§8 — späterer Aufruf darf erneut versuchen).
  */
 export async function ladeKantenShard(erlassKey: string): Promise<KantenShard | null> {
+  if (!KANTEN_ERLASSE.has(erlassKey)) return null; // kein Shard committet → kein Netzweg
   let p = shardPromises.get(erlassKey);
   if (!p) {
     p = (async () => {
