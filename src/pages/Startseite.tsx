@@ -109,7 +109,7 @@ export function Startseite() {
           <StartKachelFeld kacheln={KACHELN} />
           <HaeufigGebraucht />
         </div>
-        <aside aria-label="Arbeitsplatz" className={`grid content-start gap-y-4 ${pk('lg:row-span-2 lg:grid-rows-subgrid', '@5xl/pane:row-span-2 @5xl/pane:grid-rows-subgrid')}`}>
+        <aside aria-label="Arbeitsplatz" className={`grid content-start gap-y-4 ${pk('lg:grid-rows-[auto_1fr]', '@5xl/pane:grid-rows-[auto_1fr]')}`}>
           <Schnellwerkzeug />
           <ZuletztVerwendet />
         </aside>
