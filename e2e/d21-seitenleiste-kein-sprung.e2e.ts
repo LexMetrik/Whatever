@@ -72,13 +72,21 @@ test.describe('D21 · Kein Layoutsprung beim Routenwechsel', () => {
       expect(jetzt.breite, `Breite springt ${was}: ${anfang.breite} → ${jetzt.breite}`).toBe(anfang.breite)
     }
 
-    await rubrikLink(page, '/rechtsprechung').click()
-    await expect(page).toHaveURL(/\/rechtsprechung$/)
-    await messe('beim Wechsel / → /rechtsprechung')
+    // DEKLARIERTE ANPASSUNG (§6.3, W2·29-WERKBANK-START-LAYOUT, 24.9.2026): der
+    // Link «alle Entscheide» auf «/» fiel mit der Entscheid-Liste (David
+    // «entscheide sollen weg»). Der Weg in die Rechtsprechung — Davids Beispiel
+    // vom 6.9.2026 — führt jetzt über die Kachel: Blatt öffnen (erst auf das
+    // Blatt warten, die Navigation ist eine React-Transition), ersten Entscheid
+    // anklicken. Gemessen wird dieselbe Zusicherung (Kante/Breite bleiben).
+    await page.locator('main#inhalt').getByRole('button', { name: /Rechtsprechung/ }).first().click()
+    await expect(page.locator('#lm-start-blatt')).toBeVisible()
+    await page.locator('#lm-start-blatt a[href^="/rechtsprechung/"]').first().click()
+    await expect(page).toHaveURL(/\/rechtsprechung\/[^/?#]+$/)
+    await messe('beim Wechsel / → /rechtsprechung/<entscheid>')
 
     await page.goBack()
-    await expect(page).toHaveURL(/\/$/)
-    await messe('beim Zurückgehen /rechtsprechung → /')
+    await expect(page).toHaveURL(/\/(\?blatt=[^/]*)?$/)
+    await messe('beim Zurückgehen /rechtsprechung/<entscheid> → /')
 
     // DEKLARIERTE ANPASSUNG (§6.3, W2·29-WERKBANK-START, 24.9.2026): die
     // Gesetze-Kachel ist kein Link mehr — sie klappt vor Ort auf (Auftrag David

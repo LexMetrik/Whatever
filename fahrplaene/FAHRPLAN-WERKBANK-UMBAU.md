@@ -518,6 +518,10 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   materialien werkzeuge diese fläche einnehmen». Auswahlfrage mit Bildern: «A bündig» (Feld so hoch wie die
   Fläche Schnellwerkzeug, Token `start-kachel` bleibt Untergrenze) und «Schnellwerkzeug oben» («Zuletzt»
   darunter, nur mit Einträgen — füllt sich erst im Browser, oben schöbe es beim Laden alles nach unten).
+  **Erledigt 24.9.2026:** ab `lg` Raster 2×2 mit `subgrid` (Feld 594 px = Fläche Schnellwerkzeug @1024–1440,
+  Kacheln 289 px, Zeilen `1fr`); `EinfacheFristForm minimal` misst die Fläche (`@container`, @320 einspaltig);
+  Liste, `entscheidZitierung`, Projektion `neuesteEntscheide` gelöscht; CLS Stammnutzer ≤ 0.0006, Öffnung ohne
+  lange Bilder (100-ms-Bild erst beim Laden der Rechtsprechung nach der Bewegung, +670 ms).
 
 ## §6 · Prüfen und Frühsignale
 
