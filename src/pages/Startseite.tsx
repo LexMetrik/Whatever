@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
 import { STARTSEITE_ZAEHLER as z } from '../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { SuchBlock } from '../components/start/SuchBlock';
 import { ZuletztVerwendet } from '../components/start/ZuletztVerwendet';
 import { StartKachelFeld, type KachelDef } from '../components/start/StartKachelFeld';
-import { StartFlaeche } from '../components/start/StartFlaeche';
-import { EinfacheFristForm } from '../components/forms/EinfacheFristForm';
+import { Schnellwerkzeug } from '../components/start/Schnellwerkzeug';
+import { HaeufigGebraucht } from '../components/start/HaeufigGebraucht';
 import { VertrauensFuss } from '../components/start/VertrauensFuss';
 
 // ─── Startseite — Werkbank mit aufklappenden Kacheln (W2·29-WERKBANK-START) ──
@@ -17,7 +16,9 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //   · Kopf: die Begrüssung mit Suchfeld BLEIBT (Auswahlfrage 23.9.2026
 //     «Begrüssung behalten»; D39 vom 7.9.2026 gilt weiter).
 //   · Links: 2×2-Kachelfeld (Flächenton, Zahl aus dem Zähler, keine Linkzeilen).
-//   · Rechts: «Schnellwerkzeug» (Fristenrechner mit der echten Engine) und
+//   · Rechts: «Schnellwerkzeug» (Fristenrechner mit der echten Engine; seit
+//     U2 24.9.2026 wählbar Frist · Verzugszins · Verjährung, `start/
+//     Schnellwerkzeug.tsx`) und
 //     «Zuletzt» — «1 ja … 4 ja» am Prototyp. Die Spalte ist 20rem schmal, darum
 //     `EinfacheFristForm minimal` (zwei Spalten, Ferien als Auswahlfeld): die
 //     Vollform setzte vier Felder in 320 px, das Datum wurde gekappt
@@ -39,6 +40,16 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     Felds; «Zuletzt» füllt sich erst im Browser (localStorage) und kann das
 //     Feld nie verschieben (§15). Das Token `minHeight.start-kachel` bleibt die
 //     Untergrenze je Kachel.
+//   · U4/U6 (START-UEBERARBEITUNG, David 24.9.2026, §5d-bis) — löst «A bündig»
+//     ab: Zeile 1 links ist jetzt eine eigene Spalte «Kachelfeld + Häufig
+//     gebraucht» (`auto minmax(0,1fr)`). Die Kacheln behalten ab `lg` ihre
+//     bisherige Höhe (Token `start-kachel-breit`, 18rem ≈ die 289 px vor U2),
+//     «Häufig gebraucht» nimmt den Rest bis zur Unterkante der Fläche
+//     Schnellwerkzeug — die Kacheln werden nicht mehr gestreckt. Einspaltig
+//     (< lg): Kacheln, Häufig gebraucht, Schnellwerkzeug, Zuletzt — die
+//     Direktlinks gehören zu den Kacheln (beides Wege IN den Bestand), das
+//     Werkzeug folgt als eigenes Arbeitsgerät. `-mt-3`: weniger Leerraum unter
+//     der Kopfzeile (U6 «weniger Leerraum über den Kacheln»).
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -73,17 +84,16 @@ export function Startseite() {
   return (
     <div className={`grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
       <SuchBlock />
-      <div className={`grid gap-x-10 gap-y-9 ${pk('lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
-        <StartKachelFeld kacheln={KACHELN} />
+      <div className={`-mt-3 grid gap-x-10 gap-y-9 ${pk('lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
+        <div className={`grid gap-y-4 ${pk(
+          'lg:grid-rows-[auto_minmax(0,1fr)] lg:[&_.lc-start-zelle]:min-h-start-kachel-breit',
+          '@5xl/pane:grid-rows-[auto_minmax(0,1fr)] @5xl/pane:[&_.lc-start-zelle]:min-h-start-kachel-breit')}`}>
+          <StartKachelFeld kacheln={KACHELN} />
+          <HaeufigGebraucht />
+        </div>
         <aside aria-label="Arbeitsplatz"
           className={`grid content-start gap-y-4 ${pk('lg:row-span-2 lg:grid-rows-subgrid', '@5xl/pane:row-span-2 @5xl/pane:grid-rows-subgrid')}`}>
-          <StartFlaeche titel="Schnellwerkzeug · Frist berechnen">
-            <EinfacheFristForm minimal />
-            <p className="font-sans text-xs leading-relaxed text-ink-500">
-              Rückwärtsrechnung, Zustellart, Hemmung und Kalender im{' '}
-              <Link to="/rechner/tagerechner" className="underline hover:text-reg-w">Fristenrechner</Link>.
-            </p>
-          </StartFlaeche>
+          <Schnellwerkzeug />
           <ZuletztVerwendet />
         </aside>
       </div>

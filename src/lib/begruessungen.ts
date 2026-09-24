@@ -62,6 +62,22 @@
 // bleibt (Höhen-Reservierung im Hero, CLS). Der Wächter dazu steht in
 // src/tests/begruessungen.test.ts.
 //
+// NUR HÖFLICH 24.9.2026 (Auftrag David: «bei den begrüssungen die profanen
+// raus», «es soll höflich bleiben»): Du-/Kumpel-Formen und saloppe Grüsse
+// (Hoi · Salü · Sali · Ciao · Salut in allen Varianten, das Romansh «chau
+// ensemen» sowie die bare Mundart-Fragen «Scho uf?» / «Scho am Werk?» /
+// «No uf?») sowie flapsige/banale Kanzlei-Sprüche («Die Akten warten.»,
+// «Frisch ans Dossier.»/«Frisch an den Schriftsatz.», «Der Stapel wartet.»,
+// «Zurück an die Arbeit?», «Früh dran heute.», «Frühschicht im Recht.»,
+// «Ein Käfeli zum Start?»/«Ein Käfeli gefällig?», jede «Ihr <X>, Ihre
+// Akten»-Formel, «Scho Fyrabig?», «Bald gits Znacht.», «En Guete zum
+// Znacht.», «Salü, no wach?») sind repo-weit aus allen Pools gestrichen.
+// Formelle Sie-Form-Grüsse, höfliche Mundart, ruhige Tageszeit-Wünsche und
+// die Landessprachen-Formen bleiben unverändert stehen (Kriterienliste s.
+// Bau-Auftrag W2·29-WERKBANK-START-UEBERARBEITUNG §5d-bis). Jeder betroffene
+// Pool-Wächter in src/tests/begruessungen.test.ts ist im selben Schritt
+// nachgeführt.
+//
 // §2 (Determinismus): diese Datei bleibt REIN. Sie liefert Sprachmaterial und
 // eine Auswahlfunktion, deren Zufallsquelle der AUFRUFER mitbringt — der
 // eslint-Riegel gegen `Math.random()` in `src/lib/**` greift hier also nicht
@@ -91,21 +107,11 @@ export const IMMER: readonly string[] = [
   'Grüezi und willkommen.',
   'Grüessech.',
   'Grüessech mitenand.',
-  'Salü.',
-  'Salü zäme.',
-  'Sali mitenand.',
-  'Sali zäme.',
-  'Hoi zäme.',
-  'Hoi mitenand.',
   // Dezent kanzlei-gefärbt
-  'Die Akten warten.',
-  'Frisch ans Dossier.',
-  'Ihr Tag, Ihre Akten.',
   'Ihre Akten sind bereit.',
   'Das Dossier liegt bereit.',
   'Womit fangen wir an?',
   'Was steht heute an?',
-  'Zurück an die Arbeit?',
   'Recht griffbereit.',
   'Die Suche steht bereit.',
   'Ihr Nachschlagewerk.',
@@ -115,36 +121,23 @@ export const IMMER: readonly string[] = [
   'Bainvegni.',
   'Allegra.',
   // Sprachregionen (Ausbau 16.9.2026, Auftrag David «mach noch mehr grüsse
-  // aus allen sprachregionen der schweiz») — Mundart: Hoi/Sali allgemein,
-  // «zäma» Wallis/Graubünden, «Griäzi» Innerschweiz, «Grüessech» Bern.
-  'Hoi.',
-  'Sali.',
-  'Ciao zäme.',
-  'Hoi zäma.',
+  // aus allen sprachregionen der schweiz») — Mundart: «Griäzi» Innerschweiz,
+  // «Grüessech» Bern.
   'Griäzi mitänand.',
   'Grüessech zäme.',
   // Romandie.
-  'Salut.',
-  'Salut à tous.',
-  'Salut tout le monde.',
-  'Salut, ça joue?',
-  'Comment ça va?',
   'Bienvenue à tous.',
   'Bienvenue parmi nous.',
   'Soyez les bienvenus.',
   // Italienische Schweiz.
-  'Ciao.',
-  'Ciao a tutti.',
-  'Ciao, come va?',
   'Salve, benvenuti.',
   'Benvenuti a tutti.',
   'Ben arrivati.',
   // Rätoromanisch (Pledari Grond / Dicziunaris ladins, Abruf 17.9.2026):
-  // RG «Cordial bainvegni!», «chau ensemen!» (hallo zusammen) · Sursilvan
-  // «beinvegni» · Sutsilvan «bagnvagnieu!» · Surmiran «bavagnez!» (Sie-Form),
-  // «cordial bavegna» · Puter/Vallader «allegramaing!» (grüezi).
+  // RG «Cordial bainvegni!» · Sursilvan «beinvegni» · Sutsilvan
+  // «bagnvagnieu!» · Surmiran «bavagnez!» (Sie-Form), «cordial bavegna» ·
+  // Puter/Vallader «allegramaing!» (grüezi).
   'Cordial bainvegni.',
-  'Chau ensemen.',
   'Beinvegni.',
   'Bagnvagnieu.',
   'Bavagnez.',
@@ -180,10 +173,7 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Einen stillen Morgen.',
       'Ein klarer Morgen.',
       'Ein ruhiger Start.',
-      'Früh dran heute.',
       'Früh am Werk.',
-      'Frühschicht im Recht.',
-      'Ein Käfeli zum Start?',
       'Die Stille vor dem Tag.',
       'Noch ist es ruhig.',
       'Der Tag beginnt leise.',
@@ -195,14 +185,11 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Die Kanzlei erwacht.',
       'Morgenlicht und Akten.',
       'Ein früher Start ins Recht.',
-      'Ihr Morgen, Ihre Akten.',
       'Guete Morge.',
       'Guete Morge zäme.',
       'Guete früeche Morge.',
       'En früeche Morge.',
       'En ruhige Morge.',
-      'Scho uf?',
-      'Scho am Werk?',
       // Landessprachen und Schweizer Tagesrhythmus (Ausbau 8.9.2026).
       'Bonjour.',
       'Buongiorno.',
@@ -235,20 +222,15 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Der Tag nimmt Fahrt auf.',
       'Der Tag liegt vor Ihnen.',
       'Der erste Termin naht.',
-      'Der Stapel wartet.',
       'Die Post ist da.',
-      'Die ersten Paragraphen warten.',
-      'Die Fristen sind notiert?',
       'Das Dossier ist offen.',
       'Ein neuer Tag, neue Fälle.',
       'Ein Morgen für Präzision.',
       'Ein Morgen voller Fälle.',
-      'Frisch an den Schriftsatz.',
       'Zeit für den Schriftsatz.',
       'Guten Morgen in die Kanzlei.',
       'Ihr Vormittag beginnt.',
       'Guete Morge mitenand.',
-      'Guete Morge, alles klar?',
       'En schöne Morge.',
       'En produktive Morge.',
       'Schöne Morge zäme.',
@@ -260,14 +242,9 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Buongiorno a voi.',
       'Grüezi und guete Morge.',
       'Zeit für ein Znüni.',
-      'Bald ist Znüni.',
       // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Mundart · Romandie
       // («ça joue?») · Tessin · Sursilvan «bien di!» (Pledari Grond).
-      'Morge zäme.',
-      'Morge mitenand.',
-      'Bonjour, ça joue?',
       'Bonjour tout le monde.',
-      'Buongiorno, come va?',
       'Buondì a tutti.',
       'Bien di.',
     ],
@@ -282,7 +259,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Einen ruhigen Vormittag.',
       'Einen produktiven Vormittag.',
       'Mitten im Vormittag.',
-      'Der Vormittag läuft rund?',
       'Ein Vormittag voller Termine.',
       'Ein Vormittag für Klärung.',
       'Die Fristen laufen.',
@@ -318,7 +294,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       // (Pledari Grond: guten Tag).
       'Guata Tag.',
       'Guätä Tag.',
-      'Tag zäme.',
       'Bien le bonjour.',
       'Bonjour, bienvenue.',
       'Buongiorno, benvenuti.',
@@ -340,7 +315,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Kurz durchatmen.',
       'Gönnen Sie sich die Pause.',
       'Lassen Sie es sich schmecken.',
-      'Erst essen, dann Fristen.',
       'Die Akten dürfen warten.',
       'Ein Moment ohne Akten.',
       'Die Kanzlei macht Pause.',
@@ -374,7 +348,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       // Romandie · Tessin · Rätoromanisch «Mahlzeit!» im Pledari Grond —
       // RG «bun appetit!», Sursilvan «bien appetit!», Surmiran «bun appatet!».
       'E Guete.',
-      'Bonjour, ça va?',
       'Bonjour à toutes et à tous.',
       'Buongiorno e ben arrivati.',
       'Bun appetit.',
@@ -396,15 +369,11 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Auf die zweite Tageshälfte.',
       'Die zweite Hälfte läuft.',
       'Endspurt am Nachmittag.',
-      'Ein Käfeli gefällig?',
       'Weiterhin gute Aktenlage.',
-      'Die Dossiers im Griff?',
       'Das Dossier geht voran.',
-      'Der Stapel schrumpft.',
       'Noch ein Schriftsatz heute?',
       'Noch etwas Recherche?',
       'Die Frist ist gewahrt?',
-      'Die Verhandlung ist durch?',
       'Weiter im Text.',
       'Guete Namittag.',
       'Guete Namittag zäme.',
@@ -426,8 +395,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       // Romandie · Tessin · Rätoromanisch «guten Tag» NACH dem Mittagessen —
       // Sutsilvan «bùna sera!», Sursilvan «bunasera!» (Pledari Grond).
       'Bonjour, comment allez-vous?',
-      'Salve, come va?',
-      'Ciao, tutto bene?',
       'Bùna sera.',
       'Bunasera.',
     ],
@@ -444,7 +411,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Feierabend naht.',
       'Bald ist Feierabend.',
       'Willkommen zum Feierabend.',
-      'Schon Feierabend?',
       'Noch schnell etwas nachsehen?',
       'Noch eine letzte Notiz?',
       'Noch am Werk um diese Zeit?',
@@ -452,7 +418,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Noch eine Frage offen?',
       'Zeit für eine Recherche?',
       'Die letzte Frist von heute.',
-      'Der Schriftsatz ist raus?',
       'Ein guter Tag fürs Recht.',
       'Die Kanzlei leert sich.',
       'Einen guten Übergang.',
@@ -461,7 +426,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Schöne Fyrabig.',
       'En schöne Fyrabig.',
       'Schöne Fyrabig mitenand.',
-      'Fyrabig zäme.',
       'Grüezi zum Fyrabig.',
       'Grüessech am Aabig.',
       // Landessprachen und Schweizer Tagesrhythmus (Ausbau 8.9.2026;
@@ -470,14 +434,10 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Bonsoir à tous.',
       'Buonasera a tutti.',
       'Schöne Fyrabe.',
-      'Bald gits Znacht.',
       // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Basel «Fyroobe» ·
       // Mundart · Romandie · Tessin (Dialekt «Bonasera») · Sursilvan
       // «buna sera!» (Pledari Grond: guten Abend).
-      'Scho Fyrabig?',
       'Bonsoir tout le monde.',
-      'Bonsoir, ça joue?',
-      'Buonasera, come va?',
       'Bonasera.',
       'Buna sera.',
     ],
@@ -497,7 +457,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Willkommen am Abend.',
       'Grüezi zum Abend.',
       'Der Abend gehört Ihnen.',
-      'Der Abend ist noch jung.',
       'Noch eine Frist zu prüfen?',
       'Noch am Dossier?',
       'Abends noch am Werk?',
@@ -516,7 +475,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Buonasera.',
       'Buna saira.',
       'Schöne Obig.',
-      'En Guete zum Znacht.',
       // Nachgeschärft 8.9.2026 (Haupt-Session): «Was suchen Sie heute Abend?»
       // gestrichen, dafür nach.
       'Guete Aabig, willkomme.',
@@ -530,7 +488,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Guata Obig.',
       'Guätä Aabig.',
       'Bonsoir et bienvenue.',
-      'Bonsoir, comment ça va?',
       'Bonsoir à toutes et à tous.',
       'Buonasera e benvenuti.',
       'Buonasera, come sta?',
@@ -561,33 +518,23 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Die Suche ist auch nachts da.',
       'Die Kanzlei ist dunkel.',
       'Nachts sind die Akten still.',
-      'No spaat dra?',
-      'No wach?',
-      'No am Dossier?',
-      'No am Läse?',
       'Guete spaate Aabig.',
       'Schöne spaate Aabig.',
-      'Salü zu spaater Stund.',
       // Landessprachen (Ausbau 8.9.2026; «Bonne nuit.», «Buonanotte.»,
       // «Buon riposo.» und «Buna notg.» sind Abschiedsformeln und am 8.9.2026
       // durch späte Begrüssungen ersetzt).
       'Bonsoir à vous.',
       'Buonasera a voi.',
       // Nachgeschärft 8.9.2026 (Haupt-Session, «wirken bemüht»): drei Formeln
-      // gestrichen, drei Grüsse nach — «Guete Aabig mitenand.» stünde doppelt
-      // (schon im Abend-Pool), darum «Salü, no wach?» statt dessen.
+      // gestrichen, drei Grüsse nach.
       'Bonsoir, bienvenue.',
       'Buonasera, benvenuti.',
-      'Salü, no wach?',
       // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Mundart · Romandie ·
       // Tessin · Surmiran «tgau!» (Pledari Grond: hallo, als Begrüssung).
-      'No uf?',
       'Grüessech, no wach?',
       'Bonsoir, encore debout?',
       'Encore là? Bienvenue.',
       'Buonasera, ancora svegli?',
-      'Ciao, ancora al lavoro?',
-      'Tgau.',
     ],
   },
 ];

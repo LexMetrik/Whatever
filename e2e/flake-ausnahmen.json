@@ -22,5 +22,11 @@
     "seit": "2026-09-20",
     "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
     "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "leser-gliederung-a33.e2e.ts",
+    "seit": "2026-09-24",
+    "grund": "A9 (Z. 398, CLS-Budget 0.05): mehrfach lokal unter Load 16–34 rot mit CLS 0.059, isoliert 3/3 grün (Posten 24.9.2026). Ist derselbe ALT-MANGEL wie bibliothek/betrieb/a33-lesescroll-cls-altflake-2026-08-09.md (Nullprobe damals: 4/20 kalt auf main VOR jeder Bau-Einheit, 0/40 warm — Wurzel ist das Auto-Akkordeon aus Auftrag K, das den Aktiv-Pfad IM Sichtband um ~780px aufreisst; ob der Shift zählt, entscheidet Chromiums 500-ms-hadRecentInput-Fenster, reines Timing-Los). Eigene Nachmessung 24.9.2026 (Nullprobe, `--workers=1 --repeat-each=5`, isoliert = kein Playwright-Nebenlauf) bestätigt die Kontingenz auf Host-Last: bei Unix-Load ~50 (7 fremde Worktree-Builds/Test-Läufe gleichzeitig aktiv) 2/5 rot — dort allerdings als 95s-TIMEOUT (`clsAuslesen`/`expectVorwarten`), nicht als CLS-Zahlenüberschreitung, weil die 4×-CPU-Drossel auf einem bereits überlasteten Host den effektiven Faktor unkontrolliert weiter hochtreibt. Kein echter Produkt-Layout-Shift auf main; die drei Fix-Wege (a/b/c, alle ändern zugesagtes Verhalten des Auto-Aufklapp-Features) warten laut Bibliotheks-Eintrag weiter auf Davids Entscheid — Schwelle 0.05 bleibt unverändert (kein Bau-Entscheid).",
+    "ablauf": "2026-10-24"
   }
 ]

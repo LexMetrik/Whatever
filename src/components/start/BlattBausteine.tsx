@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+import type { Register } from '../layout/bereiche';
 import { MEHR_KNOPF_KLASSEN } from '../ui/mehrKnopfKlassen';
 
 // ─── Startseite · geteilte Bausteine der aufgeklappten Blätter (W2·29-WERKBANK-START-FEINSCHLIFF)
@@ -42,5 +44,26 @@ export function WeitereKnopf({ rest, mehr }: { rest: number; mehr: () => void })
     <button type="button" onClick={mehr} className={`lc-btn-mini ${MEHR_KNOPF_KLASSEN}`}>
       Weitere anzeigen (<span className="num">{rest.toLocaleString('de-CH')}</span> weitere)
     </button>
+  );
+}
+
+/** Fläche je Register — volle Klassennamen, damit Tailwind sie findet. */
+const SPALTEN_FLAECHE: Record<Register, string> = {
+  g: 'bg-reg-g-flaeche', r: 'bg-reg-r-flaeche', m: 'bg-reg-m-flaeche', w: 'bg-reg-w-flaeche',
+};
+
+/** Eine Spalte der Wahl-Stufe (START-UEBERARBEITUNG U1 Gesetze, U8 Werkzeuge):
+ *  die Kachel als Kopf, darunter die nächste Stufe auf derselben Fläche. Die
+ *  Fläche liegt auf der Spalte, damit sie bis unten reicht; der Kopf bringt
+ *  Strich und Rundung selbst mit. Ab `lg` teilen die Spalten ihre zwei Zeilen
+ *  (`subgrid`): die Köpfe sind gleich hoch, auch wenn eine Einheit umbricht,
+ *  und die Listen beginnen auf einer Linie. Seit U8 hier statt in
+ *  `GesetzeBlatt` (zwei Aufrufer, eine Anatomie — §10). */
+export function WahlSpalte({ reg, kopf, children }: { reg: Register; kopf: ReactNode; children: ReactNode }) {
+  return (
+    <div className={`flex min-w-0 flex-col rounded-xl ${SPALTEN_FLAECHE[reg]} pb-3 [&_.text-ink-500]:text-ink-600 lg:row-span-2 lg:grid lg:grid-rows-subgrid`}>
+      <div className="flex">{kopf}</div>
+      <div className="min-w-0">{children}</div>
+    </div>
   );
 }

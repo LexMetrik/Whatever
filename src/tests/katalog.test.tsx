@@ -311,11 +311,17 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
     expect(html).not.toContain('aria-label="Oberkategorien"');
   });
 
-  it('«Frist berechnen» ist die ECHTE Engine-Zeile — kein Tab-Kasten, keine Kopie', () => {
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-START-UEBERARBEITUNG U2, §6.3):
+  // David 24.9.2026 «ich möchte dass man bei den schnellwerkzeugen auswählen
+  // kann» (Auswahl Frist · Verzugszins · Verjährung) — das kehrt den V4-Rückbau
+  // «kein dreifacher Reiter» um. Geprüft wird jetzt GENAU EINE Reiterleiste mit
+  // GENAU DREI Reitern, Frist gewählt (Prerender kennt keinen Speicher), und
+  // weiterhin die echte Engine-Zeile samt Verweis in den Voll-Rechner.
+  it('«Frist berechnen» ist die ECHTE Engine-Zeile — ein Wahl-Reiter, Frist vorgewählt, keine Kopie', () => {
     const html = startHtml('/');
-    // V4-Rückbau, unverändert: kein dreifacher Reiter, keine zweite Tab-Leiste.
-    expect(html).not.toContain('role="tablist"');
-    expect(html).not.toMatch(/role="tab"/);
+    expect(html.match(/role="tablist"/g) ?? []).toHaveLength(1);
+    expect(html.match(/role="tab"[ >]/g) ?? []).toHaveLength(3);
+    expect(html).toMatch(/<button[^>]*role="tab"[^>]*aria-selected="true"[^>]*data-schnell="frist"/);
     // Die Fristen-Zeile rechnet live (echte Engine, keine Kopie).
     expect(html).toContain('Live-Berechnung');
     // Statt eingebetteter Zweit-Formulare der Verweis in den Voll-Rechner.

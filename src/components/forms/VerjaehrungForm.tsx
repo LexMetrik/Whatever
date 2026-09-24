@@ -10,34 +10,20 @@ import {
   type VerjaehrungInput, type VerjaehrungRegime, type VerjaehrungErgebnis,
   type Unterbrechung, type UnterbrechungsTyp, type Stillstand,
 } from '../../lib/verjaehrung';
+// Disclaimer und Anspruchstypen teilt sich dieses Formular mit der Schnellform
+// der Startseite (§5, W2·29-WERKBANK-START-UEBERARBEITUNG U2).
+import { VERJ_DISCLAIMER, REGIMES, VJ_LINK_SPEC, VJ_BEGINN_DEFAULT } from './verjaehrungTexte';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { DatumsFeld } from '../DatumsFeld';
 import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
+import { permalinkKodieren } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { datumOderStrich } from '../ui/datumText';
-
-const VERJ_DISCLAIMER =
-  'Automatisierte Orientierungsberechnung der Verjährung (Art. 60, 67, 127 ff. OR, Stand Revision 1.1.2020) – ' +
-  'keine Rechtsberatung. Der Kenntniszeitpunkt (Art. 60/67 OR) ist eine Tatfrage und wird als Eingabe übernommen. ' +
-  'Nicht abgebildet: strafrechtliche Längerfrist (Art. 60 Abs. 2 OR i.V.m. StGB), Spezialgesetze (z. B. SVG, VG, PrHG), ' +
-  'Übergangsrecht für Altfälle vor dem 1.1.2020 (Art. 49 SchlT ZGB) sowie die Wirkung unter Mitverpflichteten ' +
-  '(Art. 136 OR). Die Verjährung ist Einrede (Art. 142 OR); der konkrete Fall ist fachlich zu prüfen.';
-
-// UI-Texte und Reihenfolge lokal; die Fristzahlen kommen aus dem Engine-REGIME (§5: eine Quelle).
-const REGIMES: { code: VerjaehrungRegime; label: string; hint: string }[] = [
-  { code: 'ordentlich', label: 'Ordentliche Forderung – 10 Jahre (Art. 127 OR)', hint: 'Auffangregel für vertragliche Forderungen ohne Sonderfrist' },
-  { code: 'kurz', label: 'Katalogforderung – 5 Jahre (Art. 128 OR)', hint: 'Miet-/Pacht-/Kapitalzinse, periodische Leistungen, Handwerk, Arzt, Anwalt, Arbeitsverhältnis' },
-  { code: 'delikt', label: 'Unerlaubte Handlung – 3 / 10 Jahre (Art. 60 Abs. 1 OR)', hint: 'Sach- und Vermögensschaden' },
-  { code: 'delikt_person', label: 'Unerlaubte Handlung, Personenschaden – 3 / 20 Jahre (Art. 60 Abs. 1bis OR)', hint: 'Tötung oder Körperverletzung' },
-  { code: 'vertrag_person', label: 'Vertraglicher Personenschaden – 3 / 20 Jahre (Art. 128a OR)', hint: 'Körperverletzung/Tötung aus Vertragsverletzung' },
-  { code: 'bereicherung', label: 'Ungerechtfertigte Bereicherung – 3 / 10 Jahre (Art. 67 OR)', hint: 'Rückforderung grundloser Zuwendungen' },
-];
 
 const U_TYPEN: { code: UnterbrechungsTyp; label: string }[] = [
   { code: 'anerkennung', label: 'Anerkennung (z. B. Abschlagszahlung)' },
@@ -79,33 +65,12 @@ function FristKarte({ label, sub, wert, massgeblich }: { label: string; sub: str
   );
 }
 
-// Permalink (FAHRPLAN-PRAXIS 1.3)
-type VjLink = {
-  regime: string; beginnRelativ: string; beginnAbsolut?: string; stichtag: string;
-  kanton: string; strafbar?: boolean; stillstaende?: Stillstand[];
-  unterbrechungen?: Unterbrechung[]; verzichtAn?: boolean; verzichtDatum?: string; verzichtJahre?: string; verzichtBis?: string;
-};
-const VJ_LINK_SPEC: PermalinkSpec<VjLink & Record<string, unknown>> = {
-  regime: { p: 're', typ: 'str', gueltig: einerVon('ordentlich', 'kurz', 'delikt', 'delikt_person', 'vertrag_person', 'bereicherung') },
-  beginnRelativ: { p: 'br', typ: 'str', gueltig: istISO },
-  beginnAbsolut: { p: 'ba', typ: 'str', gueltig: istISO },
-  stichtag: { p: 's', typ: 'str', gueltig: istISO },
-  kanton: { p: 'k', typ: 'str', gueltig: istKanton },
-  strafbar: { p: 'st', typ: 'bool' },
-  stillstaende: { p: 'si', typ: 'json', gueltig: (v): boolean => Array.isArray(v) && v.length <= 20 && v.every((e) => e && typeof e === 'object' && istISO((e as Stillstand).von ?? '') && istISO((e as Stillstand).bis ?? '')) },
-  unterbrechungen: { p: 'un', typ: 'json', gueltig: (v): boolean => Array.isArray(v) && v.length <= 20 && v.every((e) => e && typeof e === 'object' && ['anerkennung', 'urkunde_urteil', 'betreibungsakt', 'klage_schlichtung'].includes((e as Unterbrechung).typ ?? '') && istISO((e as Unterbrechung).datum ?? '')) },
-  verzichtAn: { p: 'va', typ: 'bool' },
-  verzichtDatum: { p: 'vd', typ: 'str', gueltig: istISO },
-  verzichtJahre: { p: 'vj', typ: 'str', gueltig: (v) => /^\d{1,2}$/.test(v) },
-  verzichtBis: { p: 'vb', typ: 'str', gueltig: istISO },
-};
-
 export function VerjaehrungForm() {
   const pk = usePaneKlasse();
   const ausLink = usePermalinkFelder(VJ_LINK_SPEC);
   const heute = format(new Date(), 'yyyy-MM-dd');
   const [regime, setRegime] = useState<VerjaehrungRegime>((ausLink.regime as VerjaehrungRegime | undefined) ?? 'ordentlich');
-  const [beginnRelativ, setBeginnRelativ] = useState(ausLink.beginnRelativ ?? '2024-03-01');
+  const [beginnRelativ, setBeginnRelativ] = useState(ausLink.beginnRelativ ?? VJ_BEGINN_DEFAULT);
   const [beginnAbsolut, setBeginnAbsolut] = useState(ausLink.beginnAbsolut ?? '');
   const [stichtag, setStichtag] = useState(ausLink.stichtag ?? heute);
   const [kanton, setKanton] = useState<Kanton>((ausLink.kanton as Kanton | undefined) ?? getStandardKanton());

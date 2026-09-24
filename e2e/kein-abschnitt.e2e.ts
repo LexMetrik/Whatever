@@ -211,7 +211,12 @@ test.describe('R8 — Geometrie-Sweep (a, b, c, f, g, h)', () => {
 // nebenbei, dass das Blatt den Wechsel Vollbild ↔ Feld übersteht.
 const BLATT_STUFEN = [
   'gesetze', 'gesetze/bund', 'gesetze/bund/02', 'gesetze/bund/03', 'gesetze/kantone', 'gesetze/kantone/BS', 'gesetze/international',
+  // U1 (24.9.2026): Rubrik-Stufe aus der Wahl; «rechtshilfe» = der längste Titel.
+  'gesetze/international/menschenrechte', 'gesetze/international/rechtshilfe',
   'werkzeuge', 'werkzeuge/rechner', 'werkzeuge/vorlagen', 'materialien', 'rechtsprechung',
+  // U8 (24.9.2026): Gebiets-Stufen aus der Werkzeuge-Wahl; «zpo-bundesgericht» =
+  // der längste Gebietsname, «gebuehren» die längste Rechner-Kategorie.
+  'werkzeuge/rechner/gebuehren', 'werkzeuge/vorlagen/zpo-bundesgericht', 'werkzeuge/vorlagen/vertrag-or',
 ] as const
 test.describe('R8 — Startseiten-Blätter (a, b, c, f, g, h)', () => {
   for (const stufe of BLATT_STUFEN) {

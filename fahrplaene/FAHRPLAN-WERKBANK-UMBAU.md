@@ -586,6 +586,39 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   Liste, `entscheidZitierung`, Projektion `neuesteEntscheide` gelöscht; CLS Stammnutzer ≤ 0.0006, Öffnung ohne
   lange Bilder (100-ms-Bild erst beim Laden der Rechtsprechung nach der Bewegung, +670 ms).
 
+## §5d-bis · START-UEBERARBEITUNG (`W2·29-WERKBANK-START-UEBERARBEITUNG`, Entscheide David 24.9.2026)
+
+Anlass David 24.9. (Chat): «einiges nicht so schön … wenn man gesetz anklickt», «es braucht etwas unter den
+vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen die profanen raus … höflich bleiben».
+- **U1 Gesetze-Blatt, Stufe Wahl** (Auswahlfrage mit Skizze: «Drei hohe Spalten»): Bund · Kantone ·
+  International als Spalten über die volle Blatthöhe; jede zeigt die nächste Stufe direkt anklickbar —
+  Bund die fünf Rechtsgebiete (Zahl aus dem Zähler), Kantone die Landeskarte, International die Rubriken.
+  Handy: untereinander. Entscheide 23./24.9. (Kachel-Sprache, Adressen je Stufe, Zähler) bleiben.
+- **U2 Schnellwerkzeug wählbar:** Frist · Verzugszins · Verjährung (Auswahl David), Wahl merkt sich der
+  Browser (Komfort, darf fehlen). Nur bestehende Engines und Formulare, keine vereinfachte Rechtslogik (§1).
+- **U3 Begrüssung höflich:** Sie-Form, keine Du-/Kumpel-Formen («Hoi», «Salü», «Ciao», «Scho uf?»), keine
+  flapsigen Sprüche («Zurück an die Arbeit?», «Ein Käfeli zum Start?»); höfliche Mundart («Grüezi»,
+  «Grüessech») und die Landessprachen bleiben.
+- **U4 «Häufig gebraucht» unter den vier Kacheln** (David 24.9. «was kommt unter der kacheln?», Auswahl mit
+  Skizze): eine ruhige Zeile mit direkten Links BV · ZGB · OR · StGB · ZPO · StPO · SchKG in den Leser; lädt
+  nichts nach, Ziele aus dem bestehenden Erlass-Register (keine handgeschriebenen URLs, §5).
+  **Höhe (Auswahl David 24.9.):** Die Fläche Schnellwerkzeug ist in allen drei Varianten gleich hoch (so hoch
+  wie Verzugszins, kein Springen); die Kacheln behalten ihre bisherige Höhe, «Häufig gebraucht» darunter
+  füllt den Rest der linken Spalte — Kacheln + Zeile enden bündig mit der Fläche (löst «A bündig» 24.9. ab).
+- **U6 Begrüssung als ruhige Kopfzeile** (David 24.9. «ort und darstellung der begrüssung verschönern», Auswahl
+  mit Skizze «Kopfzeile ruhig»): Gruss links, Datum rechts auf derselben Grundlinie, etwas kleiner als heute;
+  darunter eine feine Linie über die volle Breite (Kacheln + Schnellwerkzeug; heute endet sie über den Kacheln),
+  weniger Leerraum über den Kacheln. Inhalt, Zufallswahl und Inline-Skript (CSP-Hash) bleiben.
+- **U5 Kantone-Karte treffbar** (David 24.9. «nimm die kantone-karte auch gleich mit»): Kantone-Spalte der Wahl
+  breiter (1 : 1.25 : 1), `SchweizKarte kompakt` mit unsichtbarer Trefferfläche für kleine Kantone; Mausklick auf
+  BS/ZG bei 1024 + 1280 per e2e belegt. Andere Karten-Nutzer unverändert (Prop Standard aus).
+- **U7 «Häufig gebraucht» gefüllt** (David 24.9. «sehr leer», Auswahl «Kürzel + voller Titel»): je Erlass Kürzel,
+  ausgeschriebener Titel und SR-Nummer aus dem Erlass-Register, zweispaltig.
+- **U8 Werkzeuge-Blatt wie Gesetze** (David 24.9. «mach danach das werkzeuge-blatt gleich wie gesetze», Nachzug
+  nach #1053): Wahl als zwei hohe Spalten Rechner · Vorlagen (`WahlSpalte` geteilt in `BlattBausteine.tsx`),
+  darunter Kategorien bzw. Rechtsgebiete mit Anzahl aus `KATALOG_KARTEN`; Stufen `werkzeuge/rechner/<kategorie>`
+  und `werkzeuge/vorlagen/<gebiet>`, unbekannte ID → Liste.
+
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
 **Befund** (lex-recherche Opus, 24.9., nur gelesen): geteilt sind schon `layout/SeitenKopf` (`.ub-*`, K1),
