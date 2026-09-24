@@ -1087,8 +1087,8 @@ Schiene schliesst in dieser Lage das Blatt). Unter 1024 px, bei sehr engem Raum 
 in jedem Fenster der geteilten Ansicht bleibt das Blatt ein Bottom-Sheet hinter dem
 Knopf «Erlass-Blatt» im Kopf. Das Handy-Sheet schliesst auch mit der
 Zurück-Geste und mit Wischen nach unten an der Griffleiste; seine Bedienelemente
-treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» beim Reiter «Entscheide», sonst
-«Erlass-Blatt · OR», mit Schliessen-Knopf (`Esc`). Darunter die optionale
+treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» in jedem Reiter (seit S6 W1f,
+vorher nur bei «Entscheide»), mit Schliessen-Knopf (`Esc`). Darunter die optionale
 Steckbrief-Zeile, dann fünf Reiter als Registerfläche — **Entscheide** (Register r),
 **Änderungen** (g), **Materialien** (m, nur Gesetzgebung), **Erläuterungen** (m,
 Behördenpraxis), **Werkzeuge** (w; eine Zeile je Rechner/Vorlage mit den Artikeln
@@ -1099,9 +1099,16 @@ Pfeiltasten wechseln den Reiter; nur die aktive Tafel wird geladen. Seit S6 W1f
 (24.9.2026) folgt das Blatt dem Artikel am Kopf der Lesespalte und trägt dessen
 Auskunft: über den Reitern die Klappzeile «Verweise dieses Artikels · N» (nur wenn
 N > 0; zugeklappt eine Zeile, aufgeklappt die Norm-Chips), im Reiter «Änderungen»
-oben «Fassung dieses Artikels», in «Erläuterungen» und «Werkzeuge» oben die Gruppe
-«Zu Art. N». Klappzeilen nach dem Board «Fliesstext-Blatt»: Registerlinie oben, ▸,
-Überzeile, Zahl bzw. Stand rechts; Inhalt erst aufgeklappt, `Esc` klappt zu. Inhalte,
+oben «Fassung dieses Artikels», in «Materialien» oben die Botschaften, auf die eine
+Änderung des Artikels verweist (Abgleich über die ELI im Bundesblatt), in
+«Erläuterungen» und «Werkzeuge» oben die Gruppe «Zu Art. N». Jeder dieser vier
+Reiter zeigt zuerst den Artikelteil; ohne Bezug steht «Zu Art. N nichts erfasst.»,
+darunter der erlassweite Teil **zugeklappt** («Alle Änderungen des Erlasses · N»;
+bei null im ganzen Erlass ohne Klappzeile, die Tafel sagt es in einer Zeile).
+Wechselt der Artikel am Kopf oder der Reiter, springt die Scrollfläche des Blatts
+ohne Animation an den Anfang (Meldung David 24.9.2026). Klappzeilen nach dem Board
+«Fliesstext-Blatt»: Registerlinie oben, ▸, Überzeile, Zahl bzw. Stand rechts;
+Inhalt erst aufgeklappt, `Esc` klappt zu. Inhalte,
 Filterzeile und Zähler der Tafeln wie 2.3.6–2.3.8 und 2.4. Im Druck fällt das Blatt
 weg (2.3.13).
 

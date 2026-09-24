@@ -243,6 +243,11 @@ Blatt folgt dem Artikel am Kopf: Klappzeile «Verweise dieses Artikels · N» ü
 N > 0), «Fassung dieses Artikels» oben in «Änderungen», Gruppe «Zu Art. N» oben in «Erläuterungen»
 und «Werkzeuge» (`v3/BlattArtikel.tsx`). Nebenbefund behoben: der 44-px-Trefferflächen-Aufsatz der
 Sheet-Links deckte in der Fassungs-Karte die Griffe «Alt/Neu» (DBG Art. 5 @320). Dossier unverändert.
+Nachtrag desselben Tages (Meldung David «erlass blatt scrollt nicht mit wenn sich artikel verändert»,
+Prod-Messung OR/KVG auf Stand #1040): jeder Reiter zeigt zuerst den Artikelteil (Materialien: Botschaften
+über die ELI `fga/<Jahr>/<Nr>` aus der Fassungshistorie), der erlassweite Teil steht zugeklappt darunter,
+leer «Zu Art. N nichts erfasst.»; der Kopf nennt «Art. N» in jedem Reiter (Befund 34 überholt); die
+Scrollfläche springt bei Artikel- und Reiterwechsel an den Anfang (Prod: innen 600, an Art. 44 noch 153).
 
 ### 3 Scheiben (Session 1: S0+S1 · 2: S2+S3 · 3: S4+S5; jede allein landbar)
 
