@@ -20,6 +20,9 @@ test('D1 · 31.02.2026 markiert das Feld und leert das alte Fristende', async ({
   // (EinfacheFristForm) — derselben Fläche, an der D1 gemessen wurde.
   const datum = page.locator('input[placeholder="TT.MM.JJJJ"]').first()
   const laenge = page.locator('input[type="number"]').first()
+  // RL-24/UI-07 (W-12 (c), 24.9.2026): ohne Ferien-Wahl kein Ergebnis. D1 wurde
+  // mit der damaligen ZPO-Vorbelegung gemessen — dieselbe Wahl jetzt ausdrücklich.
+  await page.getByRole('radio', { name: 'Gerichtsferien (ZPO)' }).check()
 
   await datum.fill('01.01.2026')
   await laenge.fill('30')

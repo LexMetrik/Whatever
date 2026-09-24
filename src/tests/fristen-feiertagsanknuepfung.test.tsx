@@ -111,8 +111,11 @@ describe('Q8-01 · Kantonsfeld des Tagerechners sagt, wessen Kanton', () => {
     const html = leer(renderToString(
       <MemoryRouter><LocaleProvider><EinfacheFristForm /></LocaleProvider></MemoryRouter>,
     ));
-    // Default-Regime ZPO (Auftrag David): Gerichtsort.
-    expect(html).toContain(kantonFeldLabel('zpo'));
+    // Bis 24.9.2026: Default-Regime ZPO (Auftrag David) → «– Gerichtsort». Seit
+    // RL-24/UI-07 (W-12 (c)) kein Regime vorgewählt → Grundbeschriftung ohne
+    // Anknüpfung; die Regime-Beschriftungen prüft der Test oben.
+    expect(html).toContain(`>${kantonFeldLabel(null)}<`);
+    expect(html).not.toContain(kantonFeldLabel('zpo'));
     expect(html).toMatch(/Wohnsitz\/Sitz der Partei oder ihres Rechtsbeistands \(Art\. 90 Abs\. 2 StPO\)/);
     expect(html).toMatch(/nicht (?:der|am) Gerichtsort/);
   });
