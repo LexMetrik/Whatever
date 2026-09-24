@@ -153,11 +153,15 @@ export function BlattFassung({ artikel, erlassKey, zitat, wort }: {
   );
 }
 
-/** Die artikelscharfe Gruppe oben in «Erläuterungen» und «Werkzeuge». Leer ⇒
- *  nichts (die erlassweite Liste darunter trägt die Auskunft). */
-export function BlattArtikelGruppe({ titel, zahl, daten, token, children }: {
+/** Die artikelscharfe Gruppe oben in «Materialien», «Erläuterungen» und
+ *  «Werkzeuge». Leer ⇒ ehrlich «Zu Art. N nichts erfasst.» (§8, Auftrag
+ *  24.9.2026) — aber erst, wenn die Quelle GELADEN ist: vorher wäre «nichts»
+ *  eine Behauptung über etwas, das noch kommt. */
+export function BlattArtikelGruppe({ titel, zahl, daten, token, geladen = true, children }: {
   titel: string;
   zahl: number;
+  /** Ist die Quelle der Gruppe durch? Sonst steht (noch) nichts. */
+  geladen?: boolean;
   /** Anker der Sonden: `data-v3-blatt-artikelgruppe="<reiter>"`. */
   daten: string;
   /** Token des aktiven Artikels — `data-v3-blatt-artikel`, damit eine Sonde
@@ -165,12 +169,42 @@ export function BlattArtikelGruppe({ titel, zahl, daten, token, children }: {
   token: string | null;
   children: ReactNode;
 }) {
-  if (zahl === 0) return null;
+  if (!token || !geladen) return null;
+  if (zahl === 0) {
+    return (
+      <p data-v3-blatt-artikelgruppe={daten} data-v3-blatt-artikel={token} data-v3-blatt-leer
+        className="px-3 pt-2 text-body-s text-ink-600">{titel} nichts erfasst.</p>
+    );
+  }
   return (
-    <section data-v3-blatt-artikelgruppe={daten} data-v3-blatt-artikel={token ?? undefined} className="px-3 pt-2">
+    <section data-v3-blatt-artikelgruppe={daten} data-v3-blatt-artikel={token} className="px-3 pt-2">
       <GruppenKopf als="p" dicht titel={titel} zahl={zahl} />
       <ul className="m-0 mt-0.5 grid list-none gap-1 p-0">{children}</ul>
     </section>
+  );
+}
+
+/**
+ * Der ERLASSWEITE Teil eines Reiters, unter dem Artikel-Teil und ZUGEKLAPPT
+ * («Alle Änderungen des Erlasses · 12»). Auftrag 24.9.2026: «Standard ist nur
+ * der Artikelteil offen» — David: «nicht zu viele infos». Die Liste selbst ist
+ * unverändert die bisherige Tafel; sie hängt sich erst beim Aufklappen ein.
+ */
+export function ErlassTeil({ was, zahl, daten, children }: {
+  /** «Änderungen», «Materialien», … — Reitername im Plural. */
+  was: string;
+  /** Anzahl, sobald bekannt; `null` = (noch) keine Zahl, dann steht keine. */
+  zahl: number | null;
+  daten: string;
+  children: ReactNode;
+}) {
+  return (
+    <Klappzeile titel={`Alle ${was} des Erlasses`} rechts={zahl === null ? '' : String(zahl)}
+      name={`Alle ${was} des Erlasses${zahl === null ? '' : ` (${zahl})`}`}
+      daten={{ 'data-v3-blatt-erlassteil': daten }}>
+      {/* Die Tafel trägt ihren eigenen Seitenabstand (`px-3`). */}
+      <div className="-mx-3">{children}</div>
+    </Klappzeile>
   );
 }
 
