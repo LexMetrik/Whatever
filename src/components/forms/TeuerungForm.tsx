@@ -10,10 +10,8 @@ import {
 } from '../../lib/teuerung';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
@@ -174,11 +172,8 @@ export function TeuerungForm() {
           </div>
           <ErgebnisAnzeige titel={`LIK-Indexierung (Basis ${monatLabel(ergebnis.basis)} = 100)`} ergebnis={ergebnis} />
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <LinkTeilenButton query={() => permalinkKodieren(TEU_LINK_SPEC, { modus, betrag, von, bis, rundung: rundung || undefined })} />
-          </div>
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+            query={() => permalinkKodieren(TEU_LINK_SPEC, { modus, betrag, von, bis, rundung: rundung || undefined })} />
           {/* QS-UI 8b (B2): Die Quellen-Mikrozeile (R4 Ziff. 7) lief über die volle
               Kartenbreite — gemessen 910 px und 104 Zeichen je Zeile gegen die
               640-px-Lesespalte. Nur Breite; Quellenangabe unverändert (§5/§7). */}

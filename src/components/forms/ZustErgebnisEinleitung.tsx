@@ -5,9 +5,7 @@ import { EckdatenKachel, GruppenTitel, inputCls } from '../vorlagen/ui';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
-import { PdfExportButton } from '../PdfExport';
-import { LinkTeilenButton } from '../LinkTeilenButton';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { permalinkKodieren } from '../../lib/permalink';
 import { ZUST_LINK_SPEC } from './zustaendigkeitLinkSpecs';
 import { ZPO_SCHWELLEN } from '../../lib/zustaendigkeit';
@@ -489,16 +487,14 @@ export function ZustErgebnisEinleitung({ z }: { z: ZustaendigkeitFormModell }) {
 
             <ErgebnisAnzeige titel="Zuständigkeit nach ZPO" ergebnis={ergebnis} />
             {ergebnis && <BegruendungSlot ergebnis={ergebnis} />}
-            <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-            <div className="flex flex-wrap items-center gap-3">
-              <PdfExportButton config={pdfConfig} />
-              <LinkTeilenButton query={() => permalinkKodieren(ZUST_LINK_SPEC, { ...f, schritt })} />
+            <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+              query={() => permalinkKodieren(ZUST_LINK_SPEC, { ...f, schritt })}>
               <p className="text-body-s text-ink-500">
                 Schwellen: vereinfacht ≤ CHF {ZPO_SCHWELLEN.VEREINFACHT.toLocaleString('de-CH')} ·
                 Entscheidvorschlag ≤ {ZPO_SCHWELLEN.ENTSCHEIDVORSCHLAG.toLocaleString('de-CH')} ·
                 Entscheid ≤ {ZPO_SCHWELLEN.ENTSCHEID_AUF_ANTRAG.toLocaleString('de-CH')} (ZPO-Fassung 1.1.2025).
               </p>
-            </div>
+            </ErgebnisExport>
           </ErgebnisBlock>
         )}
     </>

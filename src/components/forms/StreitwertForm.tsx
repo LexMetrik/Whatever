@@ -5,10 +5,8 @@ import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { BetragsFeld } from '../BetragsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
@@ -297,13 +295,10 @@ export function StreitwertForm() {
           </section>
 
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <LinkTeilenButton query={() => permalinkKodieren(SW_LINK_SPEC, {
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+            query={() => permalinkKodieren(SW_LINK_SPEC, {
               begehren, ausschliessend, widerklage: zahl(widerklageRoh), wkSchliesstAus, teilklage,
             })} />
-          </div>
         </ErgebnisBlock>
       )}
     </div>

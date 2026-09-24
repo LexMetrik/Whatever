@@ -9,8 +9,7 @@ import { berechneSperrfristen, type SperrfristenErgebnis } from '../../lib/sperr
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { FristenKalender } from '../FristenKalender';
 import { KuendigungTimeline } from '../KuendigungTimeline';
 import { SperrtageZaehler } from '../SperrtageZaehler';
@@ -264,10 +263,7 @@ export function KombinierteAnsicht() {
         {ergebnisse.kuendigung?.sperrtage && ergebnisse.kuendigung.sperrtage.length > 0 && (
           <SperrtageZaehler sperrtage={ergebnisse.kuendigung.sperrtage} />
         )}
-        <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-        <div className="flex flex-wrap items-center gap-3">
-          <PdfExportButton config={pdfConfig} />
-        </div>
+        <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig} />
       </div>
       </ErgebnisBlock>
     </div>

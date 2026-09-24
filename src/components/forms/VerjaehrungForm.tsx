@@ -14,13 +14,10 @@ import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
-import { IcsExportButton } from '../IcsExportButton';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { datumOderStrich } from '../ui/datumText';
@@ -331,24 +328,15 @@ export function VerjaehrungForm() {
 
           <ErgebnisAnzeige titel="Verjährung (Art. 60, 67, 127 ff. OR)" ergebnis={ergebnis} />
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <IcsExportButton endISO={ergebnis.verjaehrungISO}
-              titel={`Verjährungseintritt – ${(REGIMES.find((r) => r.code === regime)?.label ?? '').split(' – ')[0]}`}
-              aktenzeichen={aktenzeichen}
-              query={() => permalinkKodieren(VJ_LINK_SPEC, {
-                regime, beginnRelativ, beginnAbsolut: beginnAbsolut || undefined, stichtag, kanton,
-                strafbar, stillstaende, unterbrechungen, verzichtAn,
-                verzichtDatum: verzichtDatum || undefined, verzichtJahre: verzichtJahre || undefined,
-              })}
-              beschreibung={ergebnis.ergebnis} dateiName="Verjaehrung.ics" />
-            <LinkTeilenButton query={() => permalinkKodieren(VJ_LINK_SPEC, {
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+            query={() => permalinkKodieren(VJ_LINK_SPEC, {
               regime, beginnRelativ, beginnAbsolut: beginnAbsolut || undefined, stichtag, kanton,
               strafbar, stillstaende, unterbrechungen, verzichtAn,
               verzichtDatum: verzichtDatum || undefined, verzichtJahre: verzichtJahre || undefined,
-            })} />
-          </div>
+            })}
+            ics={[{ endISO: ergebnis.verjaehrungISO,
+              titel: `Verjährungseintritt – ${(REGIMES.find((r) => r.code === regime)?.label ?? '').split(' – ')[0]}`,
+              beschreibung: ergebnis.ergebnis, dateiName: 'Verjaehrung.ics' }]} />
         </ErgebnisBlock>
       )}
     </div>

@@ -1,0 +1,835 @@
+{
+  "/rechner/kuendigung": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Lohnfortzahlung bei Verhinderung (Art. 324a OR)\",\"fileBase\":\"Lohnfortzahlung\",\"domain\":\"arbeitsrecht\",\"sha\":\"48c7c2524c4ff4f0\"}",
+      "Teilen {\"query\":\"?vb=2024-01-01&a=2026-01-01&au=100&k=ZH&kt=0\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "A – LohnfortzahlungArt. 324a OR",
+      "B+C – KündigungArt. 335c / 336c OR",
+      "KombiniertA + B + C",
+      "Krankheit 3. DJ (BS)",
+      "Teil-AUF 50 %",
+      "DJ-übergreifend",
+      "KTG vorhanden",
+      "Erweiterte Eingaben (Anspruch, DJ-übergreifend, Lohnbasis)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (7)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/zpo-fristen": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"ZPO-Fristberechnung\",\"fileBase\":\"ZPO-Fristen\",\"domain\":\"zpo-fristen\",\"sha\":\"ebe519286010c919\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende (dies ad quem): 14.02.2025, 24.00 Uhr.\",\"dateiName\":\"ZPO-Frist.ics\",\"endISO\":\"2025-02-14\",\"query\":\"?e=2025-01-15&u=tage&l=30&v=ordentlich&k=ZH&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\",\"titel\":\"Fristende ZPO – 30 Tage\"}",
+      "Teilen {\"query\":\"?e=2025-01-15&u=tage&l=30&v=ordentlich&k=ZH&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Rechtsmittel",
+      "Schlichtung",
+      "Erstinstanz",
+      "Besondere Verfahren",
+      "Schiedsverfahren",
+      "Materielle Frist",
+      "Optionale Funktionen (Berechnungsmodus, Erstreckung, Zustellfiktion)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (6 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/verzugszins": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Verzugszins\",\"fileBase\":\"Verzugszins\",\"domain\":\"verzugszins\",\"sha\":\"d38b6792bd6ad6fc\"}",
+      "Teilen {\"query\":\"?c=10000&vb=2024-01-01&bt=mahnung&s=2025-01-01&z=5&sg=gesetzlich&m=act365&zf=0\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Rechnung offen, 5 %",
+      "Mit Teilzahlung",
+      "Vertraglich 8 %",
+      "Satzwechsel",
+      "heute",
+      "+ Teilzahlung",
+      "+ Satzänderung",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (6)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/gerichtszitat": {
+    "folge": [],
+    "zeilen": [],
+    "knoepfe": [
+      "BGE (amtliche Sammlung)Leitentscheid: Band · Teil · Seite",
+      "BGer (Geschäftsnummer)Nicht publiziert: Nummer · Datum"
+    ]
+  },
+  "/rechner/verjaehrung-board": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Gewährleistung & Mängelrüge (OR)\",\"fileBase\":\"Gewaehrleistung-Maengelruege\",\"domain\":\"gewaehrleistung\",\"sha\":\"9ea3a70b1fcb1051\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Mängelrüge «sofort» – Richtwert bis 09.03.2026 (sicher: 05.03.2026, äusserstens: 13.03.2026). Verjährung der Mängelrechte: 2 Jahre, bis 02.03.2028.\",\"dateiName\":\"Ruegefrist.ics\",\"query\":\"?ty=fahrniskauf&vd=2026-02-01&ob=beweglich&ue=2026-03-02&mt=offen&ar=0&ko=0&ge=0&sa=0&k=ZH&s=2026-03-01\",\"titel\":\"Rügefrist-Ende (Mängelrüge)\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Mängelrüge «sofort» – Richtwert bis 09.03.2026 (sicher: 05.03.2026, äusserstens: 13.03.2026). Verjährung der Mängelrechte: 2 Jahre, bis 02.03.2028.\",\"dateiName\":\"Verjaehrung-Maengelrechte.ics\",\"endISO\":\"2028-03-02\",\"query\":\"?ty=fahrniskauf&vd=2026-02-01&ob=beweglich&ue=2026-03-02&mt=offen&ar=0&ko=0&ge=0&sa=0&k=ZH&s=2026-03-01\",\"titel\":\"Verjährung Mängelrechte\"}",
+      "Teilen {\"query\":\"?ty=fahrniskauf&vd=2026-02-01&ob=beweglich&ue=2026-03-02&mt=offen&ar=0&ko=0&ge=0&sa=0&k=ZH&s=2026-03-01\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "offen erkennbar",
+      "versteckt",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (1)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/inkasso-strecke": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Verzugszins\",\"fileBase\":\"Verzugszins\",\"domain\":\"verzugszins\",\"sha\":\"d38b6792bd6ad6fc\"}",
+      "Teilen {\"query\":\"?c=10000&vb=2024-01-01&bt=mahnung&s=2025-01-01&z=5&sg=gesetzlich&m=act365&zf=0\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Rechnung offen, 5 %",
+      "Mit Teilzahlung",
+      "Vertraglich 8 %",
+      "Satzwechsel",
+      "heute",
+      "+ Teilzahlung",
+      "+ Satzänderung",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (6)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/schkg-fristen": {
+    "folge": [
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: 06.08.2025, 24.00 Uhr.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"dateiName\":\"SchKG-Frist.ics\",\"endISO\":\"2025-08-06\",\"query\":\"?e=2025-07-15&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=ZH&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\",\"titel\":\"Fristende – SchKG-Fristberechnung\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"SchKG-Fristberechnung\",\"fileBase\":\"SchKG-Fristen\",\"domain\":\"schkg-fristen\",\"sha\":\"8305029b1ada7555\"}",
+      "Teilen {\"query\":\"?e=2025-07-15&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=ZH&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\"}"
+    ],
+    "zeilen": [
+      "ICS in «space-y-4»",
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Einleitung",
+      "Rechtsöffnung & Klagen",
+      "Fortsetzung / Pfändung",
+      "Verwertung",
+      "Konkurs",
+      "Nachlass",
+      "Arrest",
+      "Anfechtung (Pauliana)",
+      "Rechtsbehelfe/Rechtsmittel",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (3 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "In Kalender (.ics)",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/erbteilung": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Erbteilung & Pflichtteil (ZGB)\",\"fileBase\":\"Erbteilung-Pflichtteil\",\"domain\":\"erbrecht\",\"sha\":\"90dddb50fb547da3\"}",
+      "Teilen {\"query\":\"?td=2025-06-01&zs=verheiratet&sc=0&s4=0&kl=2&va=keine_angabe&mu=keine_angabe&dp=0&ga=0&gs=errungenschaftsbeteiligung&be=%7B%22eigengut%22%3A%22%22%2C%22vorschlagE%22%3A%22%22%2C%22vorschlagU%22%3A%22%22%2C%22gesamtgut%22%3A%22%22%2C%22vermoegen%22%3A%22%22%2C%22direkt%22%3A%22%22%7D\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "+ Stamm",
+      "Güterrechtliche Vorstufe – Nachlass herleiten (optional)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (5)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/erb-fristen": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Erbrechtliche Fristen (ZGB)\",\"fileBase\":\"Erb-Fristen\",\"domain\":\"erb-fristen\",\"sha\":\"fac6bced38d02684\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: 10.06.2026 (Mittwoch) – Ausschlagung – gesetzliche Erbin/gesetzlicher Erbe (3 Monate).\",\"dateiName\":\"Erb-Frist.ics\",\"endISO\":\"2026-06-10\",\"query\":\"?p=ausschlagung_gesetzlich&t=2026-03-10&w=1&k=ZH\",\"titel\":\"Fristende – Ausschlagung – gesetzliche Erbin/gesetzlicher Erbe (3 Monate)\"}",
+      "Teilen {\"query\":\"?p=ausschlagung_gesetzlich&t=2026-03-10&w=1&k=ZH\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (4)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/mietrecht": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Mietrecht – Kündigungstermin-Berechnung\",\"fileBase\":\"Mietrecht-Kuendigung\",\"domain\":\"mietrecht\",\"sha\":\"5ec6d97af1b9de32\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Das Mietverhältnis endet am 30.09.2025. Spätester rechtzeitiger Zugang für diesen Termin: 30.06.2025.\",\"dateiName\":\"Mietende.ics\",\"endISO\":\"2025-09-30\",\"query\":\"?a=ordentlich&o=wohnung&pa=mieter&z=2025-06-23&k=ZH&q=ortsueblich&mo=%5B3%2C9%5D&od=1&fo=1&fw=0&se=1&zu=1\",\"titel\":\"Mietende (Kündigungstermin)\"}",
+      "Teilen {\"query\":\"?a=ordentlich&o=wohnung&pa=mieter&z=2025-06-23&k=ZH&q=ortsueblich&mo=%5B3%2C9%5D&od=1&fo=1&fw=0&se=1&zu=1\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/verjaehrung": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Verjährung (Art. 127 ff. OR)\",\"fileBase\":\"Verjaehrung\",\"domain\":\"verjaehrung\",\"sha\":\"6bc3bd6f9873b63f\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Nicht verjährt: Die Verjährung tritt mit unbenütztem Ablauf des 01.03.2034 ein.\",\"dateiName\":\"Verjaehrung.ics\",\"endISO\":\"2034-03-01\",\"query\":\"?re=ordentlich&br=2024-03-01&s=2026-03-01&k=ZH&st=0&va=0\",\"titel\":\"Verjährungseintritt – Ordentliche Forderung\"}",
+      "Teilen {\"query\":\"?re=ordentlich&br=2024-03-01&s=2026-03-01&k=ZH&st=0&va=0\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Offene Rechnung (10 J.)",
+      "Mietzins (5 J.)",
+      "Delikt (3/10 J.)",
+      "+ Unterbrechung",
+      "+ Stillstandsperiode",
+      "Ergebnis kopieren",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (1)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/gewaehrleistung": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Gewährleistung & Mängelrüge (OR)\",\"fileBase\":\"Gewaehrleistung-Maengelruege\",\"domain\":\"gewaehrleistung\",\"sha\":\"9ea3a70b1fcb1051\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Mängelrüge «sofort» – Richtwert bis 09.03.2026 (sicher: 05.03.2026, äusserstens: 13.03.2026). Verjährung der Mängelrechte: 2 Jahre, bis 02.03.2028.\",\"dateiName\":\"Ruegefrist.ics\",\"query\":\"?ty=fahrniskauf&vd=2026-02-01&ob=beweglich&ue=2026-03-02&mt=offen&ar=0&ko=0&ge=0&sa=0&k=ZH&s=2026-03-01\",\"titel\":\"Rügefrist-Ende (Mängelrüge)\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Mängelrüge «sofort» – Richtwert bis 09.03.2026 (sicher: 05.03.2026, äusserstens: 13.03.2026). Verjährung der Mängelrechte: 2 Jahre, bis 02.03.2028.\",\"dateiName\":\"Verjaehrung-Maengelrechte.ics\",\"endISO\":\"2028-03-02\",\"query\":\"?ty=fahrniskauf&vd=2026-02-01&ob=beweglich&ue=2026-03-02&mt=offen&ar=0&ko=0&ge=0&sa=0&k=ZH&s=2026-03-01\",\"titel\":\"Verjährung Mängelrechte\"}",
+      "Teilen {\"query\":\"?ty=fahrniskauf&vd=2026-02-01&ob=beweglich&ue=2026-03-02&mt=offen&ar=0&ko=0&ge=0&sa=0&k=ZH&s=2026-03-01\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "offen erkennbar",
+      "versteckt",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (1)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/tagerechner": {
+    "folge": [
+      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt regelmässig eine Fristwiederherstellung (Art. 148 ZPO) in Betracht.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"Allgemeine Frist\",\"fileBase\":\"Fristenrechner\",\"domain\":\"allgemeine-frist\",\"sha\":\"1d130a835f2bce29\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: Montag, 06.07.2026 (Art. 77/78 OR).\",\"endISO\":\"2026-07-06\",\"query\":\"?s=2026-06-05&l=30&e=tage&w=1&f=1&k=ZH\",\"titel\":\"Fristende – 30 Tage\"}",
+      "Teilen {\"query\":\"?s=2026-06-05&l=30&e=tage&w=1&f=1&k=ZH\"}"
+    ],
+    "zeilen": [
+      "ICS in «pt-1»",
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "In Kalender (.ics)",
+      "Allgemein (Vertrag/OR)",
+      "Zivilprozess (ZPO)",
+      "Betreibung (SchKG)",
+      "Weiss nicht?",
+      "Fristende berechnen",
+      "Rückwärts (spätester Tag)",
+      "Tage zwischen zwei Daten",
+      "Tagesfrist (Kalendertage)",
+      "Monatsfrist nach OR",
+      "Kalendertage ohne Verschiebung",
+      "Vaterschaftsklage der Mutter – 1 Jahr",
+      "Anfechtung der Vaterschaft – relativ 1 Jahr",
+      "Anfechtung der Vaterschaft – absolut 5 Jahre",
+      "Status-Klagen des Kindes – 1 Jahr ab Volljährigkeit",
+      "Wiedererteilung entzogener Sorge – Sperrfrist 1 Jahr",
+      "Kündigung einfache Gesellschaft – 6 Monate",
+      "KESB-Beschwerde – 30 Tage",
+      "KESB-Beschwerde gegen vorsorgliche Massnahmen – 10 Tage",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/teuerung": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"LIK-Teuerung\",\"fileBase\":\"Teuerungsrechner\",\"domain\":\"teuerung\",\"sha\":\"b6d8f9abb520cec6\"}",
+      "Teilen {\"query\":\"?m=generisch&b=1000&v=2022-12&bi=2026-07\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Wertsicherung (generisch)Renten, Pacht, Lizenzen – BFS-Dreisatz",
+      "Indexmiete100 %-Weitergabe (Art. 269b OR / Art. 17 VMWG)",
+      "UnterhaltsbeitragArt. 286 / 128 ZGB – Index gemäss Urteil",
+      "Ergebnis kopieren",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/zustaendigkeit": {
+    "folge": [],
+    "zeilen": [],
+    "knoepfe": [
+      "1Was möchten Sie tun?",
+      "2Worum geht es?",
+      "3Örtliche Anknüpfung",
+      "4Streitwert",
+      "5Sonderfälle",
+      "6Fahrplan",
+      "ZivilForderungen, Miete, Arbeit, Familie (ZPO)",
+      "Betreibung (SchKG)Betreibungsort, Rechtsöffnung, Aberkennung u. a.",
+      "StrafAnzeige, Gerichtsstand, Strafantrag (StPO)",
+      "VerwaltungIn VorbereitungBeschwerdeinstanzen (VwVG/kantonal)",
+      "Verfahren einleitenZuständige Schlichtungsbehörde bzw. erstes Gericht finden",
+      "Rechtsmittel ergreifenBerufung/Beschwerde — zuständige obere Instanz",
+      "← Zurück",
+      "Weiter →"
+    ]
+  },
+  "/rechner/streitwert": {
+    "folge": [],
+    "zeilen": [],
+    "knoepfe": [
+      "+ Begehren"
+    ]
+  },
+  "/rechner/betreibungskosten": {
+    "folge": [],
+    "zeilen": [],
+    "knoepfe": []
+  },
+  "/rechner/prozesskosten": {
+    "folge": [],
+    "zeilen": [],
+    "knoepfe": []
+  },
+  "/rechner/notariat-grundbuch": {
+    "folge": [],
+    "zeilen": [],
+    "knoepfe": [
+      "Grundstückkauf",
+      "Beurkundung (Notariat)",
+      "Grundbuch (Eintragung)"
+    ]
+  },
+  "/rechner/bgg-fristen": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Weiterzug ans Bundesgericht (BGG)\",\"fileBase\":\"BGer-Rechtsweg\",\"domain\":\"bger-rechtsweg\",\"sha\":\"2d58cdd85ddf61f1\"}",
+      "Teilen {\"query\":\"?w=zivil&g=schuldrecht&o=endentscheid&v=1&vm=0&eh=0&ei=0&kr=0&sg=0&mw=0&hk=0&wb=0&k=ZH\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "ZivilsacheBeschwerde in Zivilsachen (Art. 72 ff. BGG) – inkl. SchKG-Entscheide der Gerichte",
+      "SchKG-AufsichtsentscheidAufsichtsbehörde in Betreibungs-/Konkurssachen (Art. 19 SchKG) – 10 Tage",
+      "StrafsacheBeschwerde in Strafsachen (Art. 78 ff. BGG)",
+      "Öffentlich-rechtliche SacheBeschwerde nach Art. 82 ff. BGG – Ausnahmekatalog Art. 83 beachten",
+      "Ergebnis kopieren",
+      "Rechenweg (5 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/kuendigung?vb=2020-01-01&z=2026-02-10&kp=arbeitgeber#kuendigung": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Kündigungs- und Sperrfristen\",\"fileBase\":\"Kuendigung-Sperrfristen\",\"domain\":\"arbeitsrecht\",\"sha\":\"e6403f53d96066ce\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Ordentliche Kündigung (Arbeitgeber): Frist 2 Monat/e. Beendigungsdatum: 30.04.2026.\",\"dateiName\":\"Beendigung-Arbeitsverhaeltnis.ics\",\"endISO\":\"2026-04-30\",\"query\":\"?vb=2020-01-01&z=2026-02-10&kp=arbeitgeber&pm=1&ag=1&me=1\",\"titel\":\"Beendigung Arbeitsverhältnis\"}",
+      "Teilen {\"query\":\"?vb=2020-01-01&z=2026-02-10&kp=arbeitgeber&pm=1&ag=1&me=1\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "A – LohnfortzahlungArt. 324a OR",
+      "B+C – KündigungArt. 335c / 336c OR",
+      "KombiniertA + B + C",
+      "+ Ereignis",
+      "Ergebnis kopieren",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/zpo-fristen?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"ZPO-Fristberechnung\",\"fileBase\":\"ZPO-Fristen\",\"domain\":\"zpo-fristen\",\"sha\":\"bf75914cdf7c8179\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende (dies ad quem): 12.03.2026, 24.00 Uhr.\",\"dateiName\":\"ZPO-Frist.ics\",\"endISO\":\"2026-03-12\",\"query\":\"?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\",\"titel\":\"Fristende ZPO – 30 Tage\"}",
+      "Teilen {\"query\":\"?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Rechtsmittel",
+      "Schlichtung",
+      "Erstinstanz",
+      "Besondere Verfahren",
+      "Schiedsverfahren",
+      "Materielle Frist",
+      "Optionale Funktionen (Berechnungsmodus, Erstreckung, Zustellfiktion)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (6 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/tagerechner?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich#zpo": {
+    "folge": [
+      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt regelmässig eine Fristwiederherstellung (Art. 148 ZPO) in Betracht.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"ZPO-Fristberechnung\",\"fileBase\":\"ZPO-Fristen\",\"domain\":\"zpo-fristen\",\"sha\":\"bf75914cdf7c8179\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende (dies ad quem): 12.03.2026, 24.00 Uhr.\",\"dateiName\":\"ZPO-Frist.ics\",\"endISO\":\"2026-03-12\",\"query\":\"?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\",\"titel\":\"Fristende ZPO – 30 Tage\"}",
+      "Teilen {\"query\":\"?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\"}"
+    ],
+    "zeilen": [
+      "ICS in «pt-1»",
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "In Kalender (.ics)",
+      "Allgemein (Vertrag/OR)",
+      "Zivilprozess (ZPO)",
+      "Betreibung (SchKG)",
+      "Weiss nicht?",
+      "Rechtsmittel",
+      "Schlichtung",
+      "Erstinstanz",
+      "Besondere Verfahren",
+      "Schiedsverfahren",
+      "Materielle Frist",
+      "Optionale Funktionen (Berechnungsmodus, Erstreckung, Zustellfiktion)▼",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (6 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/bgg-fristen?w=zivil&g=schuldrecht&o=endentscheid&v=1&s=50000&e=2026-02-10&k=BS": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Weiterzug ans Bundesgericht (BGG)\",\"fileBase\":\"BGer-Rechtsweg\",\"domain\":\"bger-rechtsweg\",\"sha\":\"2559570f2bfb9db1\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Beschwerde in Zivilsachen: zulässig · Frist 30 Tage mit Stillstand · letzter Tag 12.03.2026 · I. zivilrechtliche Abteilung\",\"dateiName\":\"BGer-Frist.ics\",\"endISO\":\"2026-03-12\",\"query\":\"?w=zivil&g=schuldrecht&o=endentscheid&v=1&s=50000&vm=0&eh=0&ei=0&kr=0&sg=0&mw=0&hk=0&wb=0&e=2026-02-10&k=BS\",\"titel\":\"Beschwerdefrist Bundesgericht (BGG)\"}",
+      "Teilen {\"query\":\"?w=zivil&g=schuldrecht&o=endentscheid&v=1&s=50000&vm=0&eh=0&ei=0&kr=0&sg=0&mw=0&hk=0&wb=0&e=2026-02-10&k=BS\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "ZivilsacheBeschwerde in Zivilsachen (Art. 72 ff. BGG) – inkl. SchKG-Entscheide der Gerichte",
+      "SchKG-AufsichtsentscheidAufsichtsbehörde in Betreibungs-/Konkurssachen (Art. 19 SchKG) – 10 Tage",
+      "StrafsacheBeschwerde in Strafsachen (Art. 78 ff. BGG)",
+      "Öffentlich-rechtliche SacheBeschwerde nach Art. 82 ff. BGG – Ausnahmekatalog Art. 83 beachten",
+      "Ergebnis kopieren",
+      "Rechenweg (6 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
+      "Link teilen"
+    ]
+  },
+  "/rechner/streitwert?b=%5B%7B%22typ%22%3A%22einmalig%22%2C%22betrag%22%3A%2212000%22%7D%5D": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Streitwert (Art. 91–94a ZPO)\",\"fileBase\":\"Streitwert\",\"domain\":\"streitwert\",\"sha\":\"e1c05ac6735a2803\"}",
+      "Teilen {\"query\":\"?b=%5B%7B%22typ%22%3A%22einmalig%22%2C%22betrag%22%3A%2212000%22%2C%22jahresbetrag%22%3A%22%22%2C%22dauer%22%3A%22unbestimmt%22%2C%22jahre%22%3A%22%22%2C%22barwert%22%3A%22%22%7D%5D&x=0&wx=0&tk=0\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "+ Begehren",
+      "Ergebnis kopieren",
+      "Rechenweg (1 Schritte)▸",
+      "Annahmen (2)▸",
+      "übrige",
+      "Miete/Arbeit",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/betreibungskosten?f=12000&zb=1": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Betreibungskosten (GebV SchKG)\",\"fileBase\":\"Betreibungskosten\",\"domain\":\"gebv-kosten\",\"sha\":\"b999b6778f0378f3\"}",
+      "Teilen {\"query\":\"?f=12000&zb=1&za=0&zv=0&vk=0\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (1 Schritte)▸",
+      "Annahmen (2)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/prozesskosten?kt=BS&sw=50000&ph=entscheid": {
+    "folge": [
+      "Teilen {\"query\":\"?kt=BS&sw=50000&ph=entscheid&ma=allgemein&in=erstinstanz&vf=ordentlich\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"Prozesskosten (Art. 95/96 ZPO)\",\"fileBase\":\"Prozesskosten\",\"domain\":\"prozesskosten\",\"sha\":\"f2c7b6e2231788e6\"}"
+    ],
+    "zeilen": [
+      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
+      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+    ],
+    "knoepfe": [
+      "Kostenrisiko bei Teilobsiegen berechnen →",
+      "Was würde es in anderen Kantonen kosten? →",
+      "Gesamtkosten über den Instanzenzug →",
+      "Sicherheit für die Parteientschädigung (Art. 99) →",
+      "Link teilen",
+      "PDF-Rechenbericht"
+    ]
+  },
+  "/rechner/notariat-grundbuch?kt=BS&kp=500000": {
+    "folge": [
+      "Teilen {\"query\":\"?kt=BS&kp=500000\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"Notariats- & Grundbuchkosten (Grundstückkauf)\",\"fileBase\":\"Notariat-Grundbuch\",\"domain\":\"notariat-grundbuch\",\"sha\":\"5217eced8b6bf7ee\"}"
+    ],
+    "zeilen": [
+      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
+      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+    ],
+    "knoepfe": [
+      "Grundstückkauf",
+      "Beurkundung (Notariat)",
+      "Grundbuch (Eintragung)",
+      "Was kostet es in anderen Kantonen? →",
+      "Link teilen",
+      "PDF-Rechenbericht"
+    ]
+  },
+  "/rechner/notariat-grundbuch?ga=baurecht&kt=BS&gw=500000": {
+    "folge": [
+      "Teilen {\"query\":\"?ga=baurecht&gw=500000&kt=BS\"}"
+    ],
+    "zeilen": [
+      "Teilen in «mt-4 flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "Grundstückkauf",
+      "Beurkundung (Notariat)",
+      "Grundbuch (Eintragung)",
+      "Was kostet es in anderen Kantonen? →",
+      "Link teilen"
+    ]
+  },
+  "/rechner/notariat-grundbuch?ea=grundpfand&kt=BS&gw=500000": {
+    "folge": [
+      "Teilen {\"query\":\"?ea=grundpfand&gw=500000&kt=BS\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"Grundbuchgebühr – Grundpfand / Schuldbrief (Eintragung)\",\"fileBase\":\"Grundbuchgebuehr\",\"domain\":\"notariat-grundbuch\",\"sha\":\"6392c0a9b5f40db3\"}"
+    ],
+    "zeilen": [
+      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
+      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+    ],
+    "knoepfe": [
+      "Grundstückkauf",
+      "Beurkundung (Notariat)",
+      "Grundbuch (Eintragung)",
+      "Was kostet es in anderen Kantonen? →",
+      "Link teilen",
+      "PDF-Rechenbericht"
+    ]
+  },
+  "/rechner/tagerechner?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS#schkg": {
+    "folge": [
+      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt regelmässig eine Fristwiederherstellung (Art. 148 ZPO) in Betracht.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: 20.02.2026, 24.00 Uhr.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"dateiName\":\"SchKG-Frist.ics\",\"endISO\":\"2026-02-20\",\"query\":\"?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\",\"titel\":\"Fristende – SchKG-Fristberechnung\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"SchKG-Fristberechnung\",\"fileBase\":\"SchKG-Fristen\",\"domain\":\"schkg-fristen\",\"sha\":\"6a9ffce1c1ad40cb\"}",
+      "Teilen {\"query\":\"?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\"}"
+    ],
+    "zeilen": [
+      "ICS in «pt-1»",
+      "ICS in «space-y-4»",
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "In Kalender (.ics)",
+      "Allgemein (Vertrag/OR)",
+      "Zivilprozess (ZPO)",
+      "Betreibung (SchKG)",
+      "Weiss nicht?",
+      "Einleitung",
+      "Rechtsöffnung & Klagen",
+      "Fortsetzung / Pfändung",
+      "Verwertung",
+      "Konkurs",
+      "Nachlass",
+      "Arrest",
+      "Anfechtung (Pauliana)",
+      "Rechtsbehelfe/Rechtsmittel",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (2)▸",
+      "Rechenweg (3 Schritte)▸",
+      "Annahmen (4)▸",
+      "Absatz kopieren",
+      "In Kalender (.ics)",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/zustaendigkeit?ss=geldforderung&vr=1&sw=50000&k=BS&g=Basel&pl=4051&sch=8": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Zuständigkeit (ZPO)\",\"fileBase\":\"Zustaendigkeit\",\"domain\":\"zustaendigkeit\",\"sha\":\"304c95bcc9b483d7\"}",
+      "Teilen {\"query\":\"?ss=geldforderung&vr=1&sw=50000&mu=sonstige&gl=0&kv=0&kg=1&gt=0&bh=0&kh=0&ba=0&wf=0&av=0&du=allgemein&pu=verletzung&iu=ip_kartell_firma&bk=0&al=0&gv=0&g=Basel&pl=4051&k=BS&in=einleitung&ro=endentscheid&rv=ordentlich_vereinfacht&ri=erstinstanz&rf=0&sch=5\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "✓Was möchten Sie tun?",
+      "✓Worum geht es?",
+      "✓Örtliche Anknüpfung",
+      "✓Streitwert",
+      "✓Sonderfälle",
+      "6Fahrplan",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (6 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "Link teilen",
+      "← Zurück"
+    ]
+  },
+  "/rechner/zustaendigkeit?ss=geldforderung&vr=1&sw=50000&k=BS&in=rechtsmittel&ro=endentscheid&rv=ordentlich_vereinfacht&ri=erstinstanz&sch=8": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Rechtsmittel-Fahrplan (ZPO/BGG)\",\"fileBase\":\"Rechtsmittel\",\"domain\":\"zustaendigkeit\",\"sha\":\"f0e5fddd75261bba\"}",
+      "Teilen {\"query\":\"?ss=geldforderung&vr=1&sw=50000&mu=sonstige&gl=0&kv=0&kg=1&gt=0&bh=0&kh=0&ba=0&wf=0&av=0&du=allgemein&pu=verletzung&iu=ip_kartell_firma&bk=0&al=0&gv=0&k=BS&in=rechtsmittel&ro=endentscheid&rv=ordentlich_vereinfacht&ri=erstinstanz&rf=0&sch=4\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "✓Was möchten Sie tun?",
+      "✓Worum geht es?",
+      "✓Streitwert",
+      "✓Kanton",
+      "5Fahrplan",
+      "PDF-Rechenbericht",
+      "Link teilen",
+      "← Zurück"
+    ]
+  },
+  "/rechner/zustaendigkeit?sa=betreibung_einleiten&sst=natuerlich_wohnsitz&spf=kein&sfo=12000&spl=4051&skt=BS&sgm=Basel#schkg": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Zuständigkeit (SchKG)\",\"fileBase\":\"SchKG-Zustaendigkeit\",\"domain\":\"zustaendigkeit\",\"sha\":\"9e1b5b13a9a6408a\"}",
+      "Teilen {\"query\":\"?sa=betreibung_einleiten&sst=natuerlich_wohnsitz&spf=kein&sar=0&sfo=12000&swk=gewahrsam_schuldner&sko=pfaendung&sro=provisorisch&spl=4051&skt=BS&sgm=Basel\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "1Was möchten Sie tun?",
+      "ZivilForderungen, Miete, Arbeit, Familie (ZPO)",
+      "Betreibung (SchKG)Betreibungsort, Rechtsöffnung, Aberkennung u. a.",
+      "StrafAnzeige, Gerichtsstand, Strafantrag (StPO)",
+      "VerwaltungIn VorbereitungBeschwerdeinstanzen (VwVG/kantonal)",
+      "Betreibung einleitenBetreibungsbegehren → Zahlungsbefehl (Art. 67 SchKG)",
+      "RechtsöffnungNach Rechtsvorschlag — mit Urteil oder Schuldanerkennung (Art. 80/82)",
+      "AberkennungsklageSchuldnerseite nach provisorischer Rechtsöffnung (Art. 83 Abs. 2)",
+      "AnerkennungsklageForderungsprozess nach Rechtsvorschlag (Art. 79)",
+      "Tilgung/Nichtbestand geltend machenArt. 85 (Urkunden) / Art. 85a",
+      "Rückforderung (Nichtschuld bezahlt)Art. 86 — 1 Jahr",
+      "Drittansprache (Widerspruch)Eigentum Dritter an gepfändeten Sachen (Art. 106–109)",
+      "Kollokation anfechtenPfändung (Art. 148) / Konkurs (Art. 250)",
+      "ArrestSicherung vor/neben der Betreibung (Art. 271 ff.)",
+      "KonkursbegehrenNach Konkursandrohung (Art. 166)",
+      "Beschwerde gegen das AmtVerfügungen des Betreibungs-/Konkursamts (Art. 17)",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/zustaendigkeit?tan=anzeige&tat=bekannt&tkt=BS#straf": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Zuständigkeit (Strafverfahren)\",\"fileBase\":\"Straf-Zustaendigkeit\",\"domain\":\"zustaendigkeit\",\"sha\":\"68e9b7917e0fde3b\"}",
+      "Teilen {\"query\":\"?tan=anzeige&tat=bekannt&tka=wohnsitz&tsp=kein&tbe=allein&tmt=0&tad=0&tue=0&tbu=0&tmi=0&tkt=BS\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "1Was möchten Sie tun?",
+      "ZivilForderungen, Miete, Arbeit, Familie (ZPO)",
+      "Betreibung (SchKG)Betreibungsort, Rechtsöffnung, Aberkennung u. a.",
+      "StrafAnzeige, Gerichtsstand, Strafantrag (StPO)",
+      "VerwaltungIn VorbereitungBeschwerdeinstanzen (VwVG/kantonal)",
+      "Strafanzeige erstattenWo und wie anzeigen? (Art. 301 StPO)",
+      "Gerichtsstand prüfenWelcher Kanton verfolgt? (Art. 31–42 StPO)",
+      "Rechtsmittel ergreifenBerufung/Beschwerde/Einsprache/Revision (Art. 379 ff. StPO)",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/zustaendigkeit?tan=rechtsmittel&tre=urteil_erstinstanz&trw=beschuldigte_person&trz=umfassend&trk=BS#straf": {
+    "folge": [
+      "Aktenzeichen",
+      "PDF {\"title\":\"Rechtsmittel im Strafverfahren\",\"fileBase\":\"Straf-Rechtsmittel\",\"domain\":\"zustaendigkeit\",\"sha\":\"63d1f1211eb90215\"}",
+      "Teilen {\"query\":\"?tan=rechtsmittel&tre=urteil_erstinstanz&trw=beschuldigte_person&trz=umfassend&tru=0&trg=0&trr=noven&trb=0&trk=BS\"}"
+    ],
+    "zeilen": [
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "1Was möchten Sie tun?",
+      "ZivilForderungen, Miete, Arbeit, Familie (ZPO)",
+      "Betreibung (SchKG)Betreibungsort, Rechtsöffnung, Aberkennung u. a.",
+      "StrafAnzeige, Gerichtsstand, Strafantrag (StPO)",
+      "VerwaltungIn VorbereitungBeschwerdeinstanzen (VwVG/kantonal)",
+      "Strafanzeige erstattenWo und wie anzeigen? (Art. 301 StPO)",
+      "Gerichtsstand prüfenWelcher Kanton verfolgt? (Art. 31–42 StPO)",
+      "Rechtsmittel ergreifenBerufung/Beschwerde/Einsprache/Revision (Art. 379 ff. StPO)",
+      "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  }
+}

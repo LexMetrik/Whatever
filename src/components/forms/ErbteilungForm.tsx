@@ -11,10 +11,8 @@ import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, istISO, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { usePaneKlasse } from '../layout/PaneKontext';
@@ -394,14 +392,11 @@ export function ErbteilungForm() {
           </div>
 
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <LinkTeilenButton query={() => permalinkKodieren(ET_LINK_SPEC, {
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+            query={() => permalinkKodieren(ET_LINK_SPEC, {
               todesdatum, zivilstand, scheidung, scheidung472, kinderLebend, staemme,
               vater, mutter, dritteParentel, gueterrechtAn, gueterstand, betraege,
             })} />
-          </div>
         </ErgebnisBlock>
       )}
     </div>

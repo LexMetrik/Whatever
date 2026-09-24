@@ -15,12 +15,10 @@ import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { FristenKalender } from '../FristenKalender';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { fristbeginnZusatz } from '../../lib/begruendung';
 import { IcsExportButton } from '../IcsExportButton';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { KANTONE } from '../../lib/kantone';
 import { getStandardKanton } from '../../lib/einstellungen';
@@ -350,19 +348,11 @@ export function AllgemeineFristForm({ live }: {
                   Norm aus der Engine (Art. 77 OR), bei Rückwärtsfrist ohne
                   Beginn entfällt der Satz ersatzlos. */}
               <BegruendungSlot ergebnis={ergebnis} zusatz={fristbeginnZusatz(ergebnis.resultat.fristbeginnISO, ergebnis.normverweise[0]?.artikel)} />
-              <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-              <div className="flex flex-wrap items-center gap-3">
-                <PdfExportButton config={pdfConfig} />
-                <IcsExportButton endISO={ergebnis.resultat.endDatumISO}
-                  titel={`Fristende – ${form.laenge} ${EINHEITEN.find((e) => e.code === form.einheit)?.label}`}
-                  aktenzeichen={aktenzeichen}
-                  query={() => `?${fristQueryKodieren(form)}`}
-                  beschreibung={`Fristende: ${ergebnis.ergebnis} (Art. 77/78 OR).`} />
-                {/* Vereinheitlichung 7.6.2026 (Auftrag David): geteilter
-                    LinkTeilenButton statt Eigenbau — führt im Gegensatz zum
-                    alten Knopf auch den Hash mit (Verfahrens-Tab!). */}
-                <LinkTeilenButton query={() => `?${fristQueryKodieren(form)}`} />
-              </div>
+              <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+                query={() => `?${fristQueryKodieren(form)}`}
+                ics={[{ endISO: ergebnis.resultat.endDatumISO,
+                  titel: `Fristende – ${form.laenge} ${EINHEITEN.find((e) => e.code === form.einheit)?.label}`,
+                  beschreibung: `Fristende: ${ergebnis.ergebnis} (Art. 77/78 OR).` }]} />
               {/* QS-UI 8b (B2): Abgrenzungshinweis lief über die volle Kartenbreite —
                   gemessen 910 px gegen die 640-px-Lesespalte. Nur Breite; Wortlaut
                   und Links unverändert (Text aus lib/allgemeineFrist.ts, §5). */}
