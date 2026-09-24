@@ -511,6 +511,13 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   **Erledigt 24.9.2026:** Messung 234 R8-Funde in 11 Blatt-Zuständen → 0 (Rechtsgebiete überlappten, Kantone
   gekappt, ✕-Box); Bewegung: Gesicht = `RubrikKachel alsBild` (sprang), Laden erst nach der Öffnung
   (`blattRuhe.ts`, 83-ms-Bild weg), Kacheln kehren beim Schliessen gleichzeitig zurück; feste Portal-Bühne; unterer Rand blendet aus (David «verläufe in ordnung»).
+- **LAYOUT (`W2·29-WERKBANK-START-LAYOUT`, David 24.9.2026):** «seite klarer abgegrenzt» → rechte Spalte als
+  eigene Fläche (Auswahl «B eigene Fläche»: `bg-well`, `rounded-xl`, ohne Registerfarbe), «klarer unterteilt ·
+  auch die spalte selbst» → zwei Flächen je mit Überschrift; «entscheide sollen weg» — **kehrt «neuste
+  entscheide sollen nicht weg» (23.9.2026) um**, die Rubrik `/rechtsprechung` bleibt; «gesetze rechtsprechung
+  materialien werkzeuge diese fläche einnehmen». Auswahlfrage mit Bildern: «A bündig» (Feld so hoch wie die
+  Fläche Schnellwerkzeug, Token `start-kachel` bleibt Untergrenze) und «Schnellwerkzeug oben» («Zuletzt»
+  darunter, nur mit Einträgen — füllt sich erst im Browser, oben schöbe es beim Laden alles nach unten).
 
 ## §6 · Prüfen und Frühsignale
 
