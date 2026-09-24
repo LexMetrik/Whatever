@@ -1475,7 +1475,7 @@ nehme ich mit (PDF/Termin/Link).
 ### §R-1 · Seiten-Skelett (Reihenfolge fix)
 
 ```
-1. RechnerKopf            (h1, Kategorie, Norm-Chips — immer)
+1. RechnerKopf            (Band von layout/WerkzeugKopf: h1, Kategorie, Norm-Chips — immer)
 2. TagerechnerRueckverweis (nur nach R2)
 3. Werkzeug-Karte          (Card, components/ui/Card.tsx: border-y border-rule-soft p-6 sm:p-8)
    └── genau EIN Formular (bzw. Tab-Weiche über Teil-Formulare)
