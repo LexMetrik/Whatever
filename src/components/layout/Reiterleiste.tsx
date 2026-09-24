@@ -419,6 +419,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // jemand gewählt hat. Der Wunsch verfällt mit der nächsten Eingabe
   // (Zeiger/Taste, Capture) oder wenn sein Reiter nicht mehr offen ist.
   const fokusGeholt = useRef(false);
+  // Der «+»-Weg meldet seinen Wunsch als ZUSTAND, nicht über die Refs: seine
+  // Funktion steckt auch in einer Render-Liste (Leerraum-Menü), und
+  // `react-hooks/refs` wertet jeden Ref-Zugriff darin als Zugriff im Render
+  // (rot gesehen 24.9.2026). Der Effekt unten übernimmt ihn in `fokusNach`;
+  // die Zählung trennt zwei Wünsche mit demselben Ziel (zweimal «/»).
+  const [neuFokus, setNeuFokus] = useState<{ k: string; n: number } | null>(null);
+  const neuGesehen = useRef(0);
   useEffect(() => {
     const verfallen = () => { fokusNach.current = null; fokusGeholt.current = false; };
     window.addEventListener('pointerdown', verfallen, true);
@@ -429,6 +436,11 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     };
   }, []);
   useEffect(() => {
+    if (neuFokus && neuFokus.n !== neuGesehen.current) {
+      neuGesehen.current = neuFokus.n;
+      fokusNach.current = neuFokus.k;
+      fokusGeholt.current = false;
+    }
     const k = fokusNach.current;
     if (!k) return;
     if (!ordnung.some((t) => tabSchluessel(t.path) === k)) {
@@ -505,13 +517,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // selben Frame sähen sonst beide denselben Stand (dieselbe Wahl wie der
   // Rand-Schub, W2·18 Welle 3 Punkt 2). Der Fokus geht auf den neuen Reiter
   // (Browser-Analogie; A11y: er darf nicht verschwinden) — über `fokusNach`,
-  // denselben Weg wie Delete, weil der Knopf erst nach dem Render existiert.
+  // denselben Weg wie Delete (gemeldet als Zustand `neuFokus`, s. dort), weil der Knopf erst nach dem Render existiert.
   // Aufrufer: «+», Alt+T, Leerraum-Doppelklick, Leerraum-Menü, Blatt.
   const neuerReiter = () => {
     const ziel = ladeTabs().some((t) => tabSchluessel(t.path) === '/') ? naechsteInstanz('/') : '/';
     merkeTab(ziel);
     navigate(ziel);
-    fokusNach.current = ziel; fokusGeholt.current = false;
+    setNeuFokus((v) => ({ k: ziel, n: (v?.n ?? 0) + 1 }));
     setFokusWunsch(ziel);
   };
 
