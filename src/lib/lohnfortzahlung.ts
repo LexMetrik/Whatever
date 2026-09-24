@@ -306,6 +306,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   let zweiKredite = false;
   let zweitesEnde: Date | null = null;
   let jahrestag: Date | null = null;
+  let ersterKreditAnzeigeEnde = erstesEnde;
 
   if (verhinderungEnde) {
     const ve = parseISO(verhinderungEnde);
@@ -326,12 +327,20 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
         // Der spätere Endtermin bestimmt das Ende der Lohnfortzahlung (der neue Kredit
         // lebt am Jahrestag frisch auf, auch wenn der alte aufgebraucht war).
         letzterTag = isAfter(zweitesEnde, erstesEnde) ? zweitesEnde : erstesEnde;
+        // S3f-10 (RL-25): Anzeige sequenziell wie die Annahme unten — der 1. Kredit
+        // deckt höchstens bis zum Vortag des Jahrestags; vorher stand hier das
+        // rechnerische Ende des 1. Kredits, das den 2. Kredit überlappte (Enddatum
+        // letzterTag war und bleibt unverändert).
+        const ersterKreditGekappt = !isBefore(erstesEnde, jahrestag);
+        ersterKreditAnzeigeEnde = ersterKreditGekappt ? addDays(jahrestag, -1) : erstesEnde;
 
         rechenweg.push({
           beschreibung: 'Schritt 6b – Dienstjahr-übergreifende Verhinderung: zweiter Kredit (Art. 324a Abs. 2 OR)',
           zwischenergebnis:
             `Verhinderung reicht über den Jahrestag ${formatDatum(jahrestag)} ins ${dienstjahr + 1}. Dienstjahr. ` +
-            `Der Anspruch erneuert sich pro Dienstjahr (SHK N 53): 1. Kredit (${dienstjahr}. DJ) bis ${formatDatum(erstesEnde)}, ` +
+            `Der Anspruch erneuert sich pro Dienstjahr (SHK N 53): 1. Kredit (${dienstjahr}. DJ) bis ${formatDatum(ersterKreditAnzeigeEnde)}` +
+            (ersterKreditGekappt ? ` (Vortag des Jahrestags; der am Jahrestag nicht aufgebrauchte Rest wird nicht zum neuen Kredit addiert)` : '') +
+            `, ` +
             `2. Kredit (${dienstjahr + 1}. DJ, ${formatSkalaDauer(effektiveDauer2)}) ab ${formatDatum(jahrestag)} bis ${formatDatum(zweitesEnde)}.`,
           normen: [N_324a_2],
           rechtsprechung: [rechtsprechung('BGer_4A_215_2011')],
@@ -435,7 +444,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   const ergebnisText = ersterKreditErschoepft && !zweiKredite
     ? `Kein Lohnfortzahlungsanspruch mehr: Das Kontingent des ${dienstjahr}. Dienstjahrs (${formatSkalaDauer(effektiveDauer)}) ist durch die bereits bezogenen ${bereitsBezogen} Tage aufgebraucht.`
     : zweiKredite && zweitesEnde && jahrestag
-    ? `Lohnfortzahlung über Dienstjahreswechsel: 1. Kredit (${dienstjahr}. DJ)${ersterKreditErschoepft ? ' aufgebraucht' : ` bis ${formatDatum(erstesEnde)}`}, ` +
+    ? `Lohnfortzahlung über Dienstjahreswechsel: 1. Kredit (${dienstjahr}. DJ)${ersterKreditErschoepft ? ' aufgebraucht' : ` bis ${formatDatum(ersterKreditAnzeigeEnde)}`}, ` +
       `2. Kredit (${dienstjahr + 1}. DJ) ab ${formatDatum(jahrestag)} bis und mit ${formatDatum(letzterTag)}${teilAufZusatz}.`
     : `Lohnfortzahlung bis und mit ${formatDatum(letzterTag)} (${formatSkalaDauer(effektiveDauer)}${teilAufZusatz}).`;
 
