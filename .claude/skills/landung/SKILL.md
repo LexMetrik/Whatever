@@ -66,7 +66,11 @@ Belege: `referenz-ci.md` §Merge-Queue.
   Fahrplan-Absatz, oder der Orchestrator trägt gesammelt nach der Landung ein.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
-  einreihen — nie blind.
+  einreihen — nie blind. Beim Grund `merge_conflict` (Timeline-Ereignis
+  `RemovedFromMergeQueueEvent`) reiht der Nachzug-Push den PR NICHT wieder
+  ein: nach Merge von origin/main + Push ausdrücklich `gh pr merge --squash
+  --auto <nr>` und per Queue-Abfrage bestätigen (Beleg #1070, 24./25.9.2026:
+  22:01 UTC ausgeworfen, nach Nachzug 1f01f6d68 ~1 h CLEAN ausserhalb der Queue).
 - **Nie pushen, solange der PR in der Queue steht:** erst austragen, dann
   pushen, dann neu einreihen — sonst läuft die Queue mit dem ALTEN Head
   weiter und der Push löst keinen PR-Lauf aus (#1021, 23.9.2026).
