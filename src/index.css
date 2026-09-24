@@ -3433,6 +3433,21 @@
   @media (min-width: 1024px) {
     .lc-start-stufe:has(> .lc-start-fuellt) { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 100%; }
   }
+  /* U13 (Nachtrag David 24.9.2026 abends: «es soll nicht zu scrollen kommen
+     wenn man kachel aufmacht» / «also bei gesetz»). Gemessen 25.9.2026 (Dev,
+     Chromium, headless, @1440×900): die Gesetze-Wahl brauchte 577 px Inhalt in
+     536 px Sicht (16 Polster + 50 Suchfeld + 12 + 134 Spaltenkopf + 325 Liste
+     + 12 + 28 Polster). Ab `lg`, mildeste Mittel zuerst: Kopfband −8 px
+     (Polster .5 → .25rem; «← Zurück» bleibt 36 px, der 44-px-Schliessknopf
+     sitzt per negativem Rand), unteres Polster 28 → 16 px (wie oben), Suchfeld
+     50 → 38 px (Schriftgrösse bleibt 16 px, kein Zoom beim Fokus); die
+     Spaltenköpfe in `BlattBausteine` (WahlSpalte). Telefon und Tablett
+     unverändert. */
+  @media (min-width: 1024px) {
+    .lc-start-band { padding-top: .25rem; padding-bottom: .25rem; }
+    .lc-start-blatt-inhalt { padding-bottom: 1rem; }
+    .lc-start-blatt-inhalt input[type="search"].lc-input { padding-top: 6px; padding-bottom: 7px; }
+  }
   /* Farbschicht mit Kachel-Gesicht: steht während der Bewegung, blendet danach
      nach rund 30 % der Öffnungsdauer auf den Inhalt über. */
   .lc-start-schicht { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;

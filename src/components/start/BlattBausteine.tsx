@@ -61,10 +61,18 @@ const SPALTEN_FLAECHE: Record<Register, string> = {
  *  (`subgrid`): die Köpfe sind gleich hoch, auch wenn eine Einheit umbricht,
  *  und die Listen beginnen auf einer Linie. Seit U8 hier statt in
  *  `GesetzeBlatt` (zwei Aufrufer, eine Anatomie — §10). */
+//
+// U13 (Nachtrag David 24.9.2026 abends: «es soll nicht zu scrollen kommen wenn
+// man kachel aufmacht» / «also bei gesetz») · ab `lg` rückt der Kopf 16 statt
+// 20 px ein (`[&>button]:p-4`). Gemessen 25.9.2026 @1440: in der Bund-Spalte
+// brauchten Zahl + Einheit 59 + 8 + 93 = 160 px bei 159 px Platz — «Bundes-
+// erlasse» brach unter die Zahl, und über `subgrid` wurden alle drei Köpfe
+// 134 statt ~100 px hoch. Mit 16 px passen sie (167 px Platz), und die
+// Kopfschrift fluchtet mit den Listenzeilen darunter (px-2 + px-2 = 16 px).
 export function WahlSpalte({ reg, kopf, children }: { reg: Register; kopf: ReactNode; children: ReactNode }) {
   return (
     <div className={`flex min-w-0 flex-col rounded-xl ${SPALTEN_FLAECHE[reg]} pb-3 [&_.text-ink-500]:text-ink-600 lg:row-span-2 lg:grid lg:grid-rows-subgrid`}>
-      <div className="flex">{kopf}</div>
+      <div className="flex lg:[&>button]:p-4">{kopf}</div>
       <div className="min-w-0">{children}</div>
     </div>
   );
