@@ -339,6 +339,8 @@ export function LeserPanelZone({
             aria-labelledby={titelId}
             data-v3-panel-form={form}
             data-v3-panel-modal={modal ? 'ja' : 'nein'}
+            // S6 W1f · welcher Artikel gerade gilt (Sonden-Anker, `./BlattArtikel`).
+            data-v3-panel-artikel={aktArtikel ?? undefined}
             className={`${flaeche.klassen} flex flex-col`}
             style={flaeche.stil}>
             <LeserPanel panelId={panelId} titelId={titelId} artikelLabel={artikelLabel}

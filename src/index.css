@@ -3120,6 +3120,12 @@
     content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
     width: 100%; min-height: var(--tap-ziel-komfort);
   }
+  /* S6 W1f (24.9.2026): die Fassungs-Karte im Reiter «Änderungen» bricht die
+     Annahme oben — dort steht der Fundstellen-Link («AS 2024 573») DIREKT über
+     den Griffen «Warum?»/«Alt/Neu»; seine 44-px-Trefferfläche deckte sie
+     (gemessen @320, DBG Art. 5: `elementFromPoint` auf «Alt/Neu» traf den
+     Link). Dort keine Flächen-Erweiterung; die Griffe tragen `--tap-ziel`. */
+  [data-v3-panel-form='unten'] [data-v3-blatt-fassung] a[href]::after { content: none; }
   /* Senkrechte Rand-SCHIENE der eingeklappten Gliederung (C5b, v3/leisteAufbau).
      W2·29 S3: kein Kasten mehr (F0.6 Trennung über Linien) — die 2-px-Tintenlinie
      oben wiederholt die Kopflinie der offenen Leiste, die Fläche erst im Hover. */

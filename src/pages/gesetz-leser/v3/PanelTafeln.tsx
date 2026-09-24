@@ -102,7 +102,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       ),
       erlaeuterungen: (
         <>
-          <BlattArtikelGruppe titel={zu} zahl={artMat.length} daten="erlaeuterungen">
+          <BlattArtikelGruppe titel={zu} zahl={artMat.length} daten="erlaeuterungen" token={token}>
             {artMat.map((m) => <ArtikelErlaeuterung key={m.key} m={m} />)}
           </BlattArtikelGruppe>
           <PanelErlaeuterungen stand={erlaeuterungen} revisionShard={artikelRevisionen.wert} ebene={ebene} />
@@ -110,7 +110,7 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       ),
       werkzeuge: (
         <>
-          <BlattArtikelGruppe titel={zu} zahl={artWz.length} daten="werkzeuge">
+          <BlattArtikelGruppe titel={zu} zahl={artWz.length} daten="werkzeuge" token={token}>
             {artWz.map((w) => <ArtikelWerkzeug key={w.id} w={w} />)}
           </BlattArtikelGruppe>
           <PanelWerkzeuge erlassKey={erlassKey ?? ''} />

@@ -1,4 +1,4 @@
-import { useId, useState, type ReactNode } from 'react';
+import { useId, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
@@ -91,9 +91,19 @@ function Klappzeile({ titel, rechts, name, daten, children }: {
 }) {
   const [auf, setAuf] = useState(false);
   const id = useId();
+  const knopf = useRef<HTMLButtonElement>(null);
   return (
-    <section {...daten} className="shrink-0 px-3 pt-2">
-      <button type="button" aria-expanded={auf} aria-controls={auf ? id : undefined} aria-label={name}
+    // Escape schliesst die OFFENE Klappzeile und gibt den Fokus an ihren Griff —
+    // dieselbe Regel wie an der gefallenen Zeile (W2·26/Z4); erst ein zweites
+    // Escape erreicht das Blatt (`./usePopoverAutoZu`, Fenster-Hörer).
+    <section {...daten} className="shrink-0 px-3 pt-2"
+      onKeyDown={(ev) => {
+        if (ev.key !== 'Escape' || !auf) return;
+        ev.stopPropagation();
+        setAuf(false);
+        knopf.current?.focus();
+      }}>
+      <button ref={knopf} type="button" aria-expanded={auf} aria-controls={auf ? id : undefined} aria-label={name}
         onClick={() => setAuf((v) => !v)}
         // `.lc-btn-mini` ist der Knopf-Baustein (Höhe `--tap-ziel`, WCAG 2.5.8);
         // Rahmen und Rundung weichen der Registerlinie oben (Board-Anatomie).
@@ -164,16 +174,19 @@ export function BlattFassung({ artikel, erlassKey, zitat, wort }: {
 
 /** Die artikelscharfe Gruppe oben in «Erläuterungen» und «Werkzeuge». Leer ⇒
  *  nichts (die erlassweite Liste darunter trägt die Auskunft). */
-export function BlattArtikelGruppe({ titel, zahl, daten, children }: {
+export function BlattArtikelGruppe({ titel, zahl, daten, token, children }: {
   titel: string;
   zahl: number;
   /** Anker der Sonden: `data-v3-blatt-artikelgruppe="<reiter>"`. */
   daten: string;
+  /** Token des aktiven Artikels — `data-v3-blatt-artikel`, damit eine Sonde
+   *  prüfen kann, WELCHEM Artikel die Gruppe gilt (nicht nur, dass sie steht). */
+  token: string | null;
   children: ReactNode;
 }) {
   if (zahl === 0) return null;
   return (
-    <section data-v3-blatt-artikelgruppe={daten} className="px-3 pt-2">
+    <section data-v3-blatt-artikelgruppe={daten} data-v3-blatt-artikel={token ?? undefined} className="px-3 pt-2">
       <GruppenKopf als="p" dicht titel={titel} zahl={zahl} />
       <ul className="m-0 mt-0.5 grid list-none gap-1 p-0">{children}</ul>
     </section>
