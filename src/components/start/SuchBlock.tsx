@@ -62,6 +62,10 @@ import { GRUSS_ANKER_ID, GRUSS_DATEN_JSON, GRUSS_SKRIPT, useHeute } from './Begr
 // rot); GRÖSSE UND RANG laufen jetzt bewusst ZUSAMMEN statt auseinander (die
 // frühere GRÖSSE-≠-RANG-Anmerkung ist mit der zweiten Zeile entfallen).
 //
+// GRÖSSE seit U6 (David 24.9.2026 «etwas kleiner als heute»): eine Stufe
+// zurück, `text-h2 lg:text-h1` — 25.6 px @390, 32 px @1440. Der folgende
+// D39-Absatz ist der Stand davor (Beleg, nicht nachgeführt).
+//
 // GRÖSSE (D39, eine Typo-Stufe über dem R10-NACHZUG-Stand D14 — Skala aus
 // `tailwind.config.js`, kein neuer Wert): `text-h1 lg:text-display` — 32 px
 // @390, 36 px @1440 (zuvor 25.6/32 px). Im Pane misst `@3xl/pane` denselben
@@ -89,9 +93,18 @@ export function SuchBlock() {
     if (q.trim()) navigate(`/suche?q=${encodeURIComponent(q.trim())}`, { replace: true });
   }, [q, navigate]);
 
-  // Breiten-Deckel wie im Referenzbild (`.such{max-width:860px}`).
+  // U6 «Kopfzeile ruhig» (David 24.9.2026, FAHRPLAN-WERKBANK-UMBAU §5d-bis):
+  // Gruss links, Datum rechts auf derselben Grundlinie (`items-baseline`), die
+  // Linie darunter über die VOLLE Inhaltsbreite — der Breiten-Deckel
+  // `max-w-[54rem]` (Referenzbild `.such{max-width:860px}`) liess sie über den
+  // Kacheln enden und ist darum gestrichen. Weniger Leerraum (`pb-3` statt
+  // `pb-8`, Startseite `-mt-3`). Telefon: Gruss und Datum untereinander
+  // (`flex-col`), ab `sm` nebeneinander. Die Kinderfolge h1 → pools → wahl → p
+  // bleibt unverändert (das Skript liest seine Vorgänger und die h1 im selben
+  // Elternknoten); die beiden <script> sind `display:none` und keine Flex-Items
+  // mit Fläche.
   return (
-    <div className="max-w-[54rem] border-b border-rule pb-8">
+    <div className={`flex flex-col gap-y-1 border-b border-rule pb-3 ${pk('sm:flex-row sm:items-baseline sm:justify-between sm:gap-x-6', '@xl/pane:flex-row @xl/pane:items-baseline @xl/pane:justify-between @xl/pane:gap-x-6')}`}>
       {/* Gruss kommt aus `useHeute`. Im Server-HTML steht der Build-Gruss
           (Fallback ohne JavaScript); die zwei <script> direkt danach tauschen
           ihn noch VOR dem ersten Paint gegen einen Gruss der Besuchsstunde
@@ -103,7 +116,7 @@ export function SuchBlock() {
           `hydrateRoot` stimmt der Client-Text ohnehin mit dem umgeschriebenen
           DOM überein. */}
       <h1 suppressHydrationWarning
-        className={`font-serif italic text-ink-900 ${pk('text-h1 lg:text-display', 'text-h1 @3xl/pane:text-display')}`}>
+        className={`min-w-0 font-serif italic text-ink-900 ${pk('text-h2 lg:text-h1', 'text-h2 @3xl/pane:text-h1')}`}>
         {gruss}
       </h1>
       <script type="application/json" data-gruss="pools" dangerouslySetInnerHTML={{ __html: GRUSS_DATEN_JSON }} />
@@ -120,7 +133,7 @@ export function SuchBlock() {
           `Begruessung.tsx`): muss das Element DIREKT hinter dem Wahl-Skript
           tragen. Im Pane nicht — dort läuft kein Skript, und die id bliebe
           sonst neben der Hauptseite doppelt im Dokument. */}
-      <p id={imPane ? undefined : GRUSS_ANKER_ID} className="num mt-1.5 font-sans text-xs text-ink-500">
+      <p id={imPane ? undefined : GRUSS_ANKER_ID} className="num shrink-0 font-sans text-xs text-ink-500">
         <span suppressHydrationWarning>{wochentag}, {datum}</span>
         <span suppressHydrationWarning style={{ visibility: uhrzeit ? 'visible' : 'hidden' }}>
           {' '}· {uhrzeit ?? '00:00'}
