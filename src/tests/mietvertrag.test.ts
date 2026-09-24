@@ -197,7 +197,10 @@ describe('Mietvertrag – Review-Regressionen 5.6.2026', () => {
   it('MT-22 exakte Kalenderjahr-Befristung erfüllt die Index-/Staffel-Mindestdauer (kein 365.25-Artefakt)', () => {
     const fuenf = basis({ mietzinsModell: 'index', indexBasisMonat: 'Mai 2026', befristet: true, beginn: '2026-10-01', befristetBis: '2031-10-01' });
     expect(pruefeMvGates(fuenf).blocker).toEqual([]);
-    expect(pruefeMvGates({ ...fuenf, befristetBis: '2031-09-30' }).blocker.join()).toMatch(/fünf Jahre/);
+    // VB-02 (W2·30-RL-W1, Q7 Nr. 7): 1.10.2026–30.9.2031 sind bereits volle
+    // fünf Jahre (Art. 269b OR); erst 29.9.2031 unterschreitet sie.
+    expect(pruefeMvGates({ ...fuenf, befristetBis: '2031-09-30' }).blocker).toEqual([]);
+    expect(pruefeMvGates({ ...fuenf, befristetBis: '2031-09-29' }).blocker.join()).toMatch(/fünf Jahre/);
     const drei = basis({ mietzinsModell: 'staffel', befristet: true, beginn: '2027-03-01', befristetBis: '2030-03-01', staffeln: [{ ab: '2028-03-01', erhoehungCHF: '50' }] });
     expect(pruefeMvGates(drei).blocker).toEqual([]);
   });
@@ -330,5 +333,64 @@ describe('Mietvertrag – Detailgrad (P2 Vertrags-Varianten)', () => {
     for (const detailgrad of ['einfach', 'standard', 'experte'] as const) {
       expect(pruefeMvGates(basis({ detailgrad, kautionCHF: '9000' })).blocker.join()).toMatch(/drei Monatszinse/);
     }
+  });
+});
+
+// ─── RL-10 (W2·30-RL-W1): Mindestdauer Index-/Staffelmiete, VB-02 ───
+// Art. 269b OR «für mindestens fünf Jahre abgeschlossen», Art. 269c lit. a OR
+// «für mindestens drei Jahre» (Fedlex SR 220, Fassung 20260101,
+// https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_269_b / #art_269_c,
+// abgerufen 24.9.2026). Der Tag des Mietbeginns zählt zur Mietdauer, das
+// Enddatum («endet am …») ebenfalls: n volle Mietjahre sind erreicht, wenn das
+// Ende mindestens auf den Tag VOR dem n-ten Jahrestag des Beginns fällt.
+// Schaltjahr: Jahrestag des 29.2. in einem Gemeinjahr ist der 1.3. — deckt
+// sich mit Art. 77 Abs. 1 Ziff. 3 OR analog (Anknüpfungstag 28.2.2028 nicht
+// mitgezählt → 28.2.2033).
+describe('RL-10 Mindestdauer Index-/Staffelmiete (Art. 269b, 269c lit. a OR)', () => {
+  const index = (beginn: string, befristetBis: string) =>
+    basis({ mietzinsModell: 'index', indexBasisMonat: 'Mai 2026', befristet: true, beginn, befristetBis });
+  const staffel = (beginn: string, befristetBis: string, ab: string) =>
+    basis({ mietzinsModell: 'staffel', befristet: true, beginn, befristetBis, staffeln: [{ ab, erhoehungCHF: '50' }] });
+
+  it('RL10-1 Index 1.10.2026–30.9.2031 = volle fünf Jahre zulässig; bis 29.9.2031 gesperrt', () => {
+    expect(pruefeMvGates(index('2026-10-01', '2031-09-30')).blocker).toEqual([]);
+    expect(pruefeMvGates(index('2026-10-01', '2031-09-29')).blocker.join()).toMatch(/mindestens fünf Jahre/);
+  });
+
+  it('RL10-2 Staffel 1.10.2026–30.9.2029 = volle drei Jahre zulässig; bis 29.9.2029 gesperrt', () => {
+    expect(pruefeMvGates(staffel('2026-10-01', '2029-09-30', '2027-10-01')).blocker).toEqual([]);
+    expect(pruefeMvGates(staffel('2026-10-01', '2029-09-29', '2027-10-01')).blocker.join()).toMatch(/mindestens drei Jahre/);
+  });
+
+  it('RL10-3 Beginn 29.2.2028 (Schaltjahr): Index bis 28.2.2033 zulässig / 27.2.2033 gesperrt; Staffel bis 28.2.2031 / 27.2.2031', () => {
+    expect(pruefeMvGates(index('2028-02-29', '2033-02-28')).blocker).toEqual([]);
+    expect(pruefeMvGates(index('2028-02-29', '2033-02-27')).blocker.join()).toMatch(/mindestens fünf Jahre/);
+    expect(pruefeMvGates(staffel('2028-02-29', '2031-02-28', '2029-03-01')).blocker).toEqual([]);
+    expect(pruefeMvGates(staffel('2028-02-29', '2031-02-27', '2029-03-01')).blocker.join()).toMatch(/mindestens drei Jahre/);
+  });
+
+  it('RL10-4 Beginn 1.3.2029, Ende im Schaltjahr: drei Mietjahre reichen bis 29.2.2032, 28.2.2032 ist einen Tag zu kurz', () => {
+    expect(pruefeMvGates(staffel('2029-03-01', '2032-02-29', '2030-03-01')).blocker).toEqual([]);
+    expect(pruefeMvGates(staffel('2029-03-01', '2032-02-28', '2030-03-01')).blocker.join()).toMatch(/mindestens drei Jahre/);
+  });
+});
+
+// ─── RL-10 (W2·30-RL-W1): Rollen-Ersetzung Untermiete mit Wortgrenze, S3c-a ───
+// AUDIT-BUGS-2026-06-19 (bibliothek/register): «Mieterschäden» ist der
+// Versicherungsbegriff und darf nicht zu «Untermieterschäden» werden; die
+// Rollenwörter «Mieter»/«Mieters» werden weiterhin ersetzt.
+describe('RL-10 Untermiete: Rollen-Ersetzung nur am ganzen Wort', () => {
+  const um = basis({
+    mietverhaeltnis: 'untermiete', hmVermieterName: 'Immo AG', hmMietzinsCHF: '1500',
+    zustimmungStatus: 'schriftlich', untermieteUmfang: 'ganz', versicherungspflicht: true,
+  });
+  const text = mvZusammenstellen(um).dokument.absaetze.map((x) => `${x.ueberschrift ?? ''} ${x.text ?? ''}`).join('\n');
+
+  it('RL10-5 «Mieterschäden» bleibt, Rollenwörter «Mieter»/«Mieters» werden zu «Untermieter»/«Untermieters»', () => {
+    expect(text).toMatch(/\bMieterschäden\b/);
+    expect(text).not.toMatch(/Untermieterschäden/);
+    expect(text).toMatch(/\bDer Untermieter schliesst eine Privathaftpflichtversicherung\b/);
+    expect(text).toMatch(/\bdes Untermieters\b/);
+    expect(text).not.toMatch(/(?<![A-Za-zäöüÄÖÜ])Mieters?\b/);
   });
 });
