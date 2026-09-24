@@ -560,6 +560,20 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   Liste, `entscheidZitierung`, Projektion `neuesteEntscheide` gelöscht; CLS Stammnutzer ≤ 0.0006, Öffnung ohne
   lange Bilder (100-ms-Bild erst beim Laden der Rechtsprechung nach der Bewegung, +670 ms).
 
+## §5d-bis · START-UEBERARBEITUNG (`W2·29-WERKBANK-START-UEBERARBEITUNG`, Entscheide David 24.9.2026)
+
+Anlass David 24.9. (Chat): «einiges nicht so schön … wenn man gesetz anklickt», «es braucht etwas unter den
+vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen die profanen raus … höflich bleiben».
+- **U1 Gesetze-Blatt, Stufe Wahl** (Auswahlfrage mit Skizze: «Drei hohe Spalten»): Bund · Kantone ·
+  International als Spalten über die volle Blatthöhe; jede zeigt die nächste Stufe direkt anklickbar —
+  Bund die fünf Rechtsgebiete (Zahl aus dem Zähler), Kantone die Landeskarte, International die Rubriken.
+  Handy: untereinander. Entscheide 23./24.9. (Kachel-Sprache, Adressen je Stufe, Zähler) bleiben.
+- **U2 Schnellwerkzeug wählbar:** Frist · Verzugszins · Verjährung (Auswahl David), Wahl merkt sich der
+  Browser (Komfort, darf fehlen). Nur bestehende Engines und Formulare, keine vereinfachte Rechtslogik (§1).
+- **U3 Begrüssung höflich:** Sie-Form, keine Du-/Kumpel-Formen («Hoi», «Salü», «Ciao», «Scho uf?»), keine
+  flapsigen Sprüche («Zurück an die Arbeit?», «Ein Käfeli zum Start?»); höfliche Mundart («Grüezi»,
+  «Grüessech») und die Landessprachen bleiben.
+
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
 **Befund** (lex-recherche Opus, 24.9., nur gelesen): geteilt sind schon `layout/SeitenKopf` (`.ub-*`, K1),
