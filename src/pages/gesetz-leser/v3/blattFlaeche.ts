@@ -29,12 +29,12 @@ const BLATT_ANTEIL = 55;
  *  steht der Artikelkopf mit seiner ersten Zeile. Das bewacht
  *  `e2e/leser-v3-panel-nachzug.e2e.ts` als ≥ 120 px Streifen unter dem
  *  klebenden Kopf (`--nt-stick`, gemessen 190 px @390/375/320). Also reicht
- *  das Blatt bis 7.5 rem unter den Kopf, nie weniger als die bisherigen 55 %
+ *  das Blatt bis 8 rem (128 px, 8 px Luft über der Test-Schwelle) unter den Kopf, nie weniger als die bisherigen 55 %
  *  und nie mehr als 70 % (darüber wäre es ein Vollbild-Dialog mit Rundung):
- *  @390×844 → 534 px = 63 % (statt 464), @375×667 und @320×568 → 55 % wie
+ *  @390×844 → 526 px = 62 % (statt 464), @375×667 und @320×568 → 55 % wie
  *  bisher (dort lässt der Kopf keinen Raum für mehr). Im Pane bleibt es bei
  *  55 % der Overlay-Schicht — dort steht ein zweiter Text daneben. */
-const BLATT_HOEHE_MOBIL = `min(70dvh, max(${BLATT_ANTEIL}dvh, calc(100dvh - var(--nt-stick, 11.875rem) - 7.5rem)))`;
+const BLATT_HOEHE_MOBIL = `min(70dvh, max(${BLATT_ANTEIL}dvh, calc(100dvh - var(--nt-stick, 11.875rem) - 8rem)))`;
 
 export interface BlattFlaeche {
   /** Klassen und Stil des Trägers — nur die Spur (`spalte`) hat eine Box. */
