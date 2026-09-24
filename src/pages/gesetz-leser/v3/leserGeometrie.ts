@@ -142,6 +142,9 @@ export interface LeserGeometrieLage {
   suchInZeile: boolean;
   /** D32: waagrechter Versatz der Lese-Zelle (rem) — `rahmenBild.spurVersatzRem`. */
   spurVersatzRem: number;
+  /** Entscheid A (24.9.2026): Breite der rechten Spur samt Abstand (rem) —
+   *  `rahmenBild.spurVersatzRechtsRem`, der Spiegel von `spurVersatzRem`. */
+  spurVersatzRechtsRem: number;
 }
 
 /**
@@ -152,7 +155,7 @@ export interface LeserGeometrieLage {
  * `leser-v3-kopf-buendig` und `leser-v3-suchfeld-ueberall` messen beide Enden).
  */
 export function leserCssVariablen(lage: LeserGeometrieLage): CSSProperties {
-  const { stufe, vollflaechig, suchZoneKlebt, zoneHoch, suchInZeile, spurVersatzRem } = lage;
+  const { stufe, vollflaechig, suchZoneKlebt, zoneHoch, suchInZeile, spurVersatzRem, spurVersatzRechtsRem } = lage;
   return {
     '--leser-v3-kopf-h': kopfHoehe(stufe),
     // A-2: in der Einzelansicht klebt der Kopf direkt unter der Topbar — die
@@ -185,6 +188,9 @@ export function leserCssVariablen(lage: LeserGeometrieLage): CSSProperties {
     // Text statt über der Gliederung — ohne dass die Kopfzeile die Spuren
     // nachrechnen müsste (LM-003: eine Geometrie-Quelle, `./rahmenSpalten`).
     '--leser-spur-versatz': `${spurVersatzRem}rem`,
+    // Entscheid A (24.9.2026): dieselbe Kante rechts — der Streifen über der
+    // Blatt-Spur, in dem «Erlass-Blatt ausblenden ›» steht.
+    '--leser-spur-versatz-rechts': `${spurVersatzRechtsRem}rem`,
     // Der Abstand ZWISCHEN den Spuren (`gap-5` der Lese-Zeile), damit der
     // Gliederungs-Griff in der Kopfzeile über der Gliederung endet und nicht
     // über dem Gesetzestext.

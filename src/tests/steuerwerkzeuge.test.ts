@@ -1,4 +1,6 @@
-// src/tests/steuerwerkzeuge.test.ts — die drei Nicht-Plan-Steuerwerkzeuge. scripts/dispatch(-agents) · scripts/testtreue-kern · scripts/ci/diff-klassieren.
+// src/tests/steuerwerkzeuge.test.ts — die Nicht-Plan-Steuerwerkzeuge. scripts/dispatch(-agents) · scripts/ci/diff-klassieren
+// (bis 23.9.2026 auch scripts/testtreue-kern). Seit RL-03 (23.9.2026) steht der testtreue-Block in
+// src/tests/fachaenderung.test.ts; die Squash-Fälle aus PR #1026 folgten beim Rebase am 24.9.2026.
 // Zusammengelegt 31.8.2026 (QS-EFFIZIENZ, Ent-Regulierung Runde 2 Batch B; Beleg:
 // bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md §3 Kandidat 1). Die
 // Fälle stehen WÖRTLICH unter dem Banner ihrer Herkunftsdatei; gestrichen wurde
@@ -6,14 +8,6 @@
 import { describe, expect, it } from 'vitest';
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
-import {
-  type CommitInfo,
-  findeVerstoesse,
-  istRefactorCommit,
-  squashVerstoss,
-  squashMeldung,
-  istTestDatei,
-} from '../../scripts/testtreue-kern';
 import {
   CODE_FERNE_MUSTER,
   klassifiziereDateien,
@@ -260,69 +254,6 @@ describe('agentDatei — die Agent-Typen erben dieselbe Variante', () => {
 });
 
 
-// ─── aus src/tests/check-testtreue.test.ts ─────────────────────────────────────
-// src/tests/check-testtreue.test.ts — §6.3-Diff-Tor: der reine Kern, ohne git
-// (QS-AUDIT-VERWEISE 8.8.2026). Der Rot-Fall hier ist der §6.7-Beweis, dass
-// das Tor scheitern kann; der Live-Rot-Lauf ist im Bau-Protokoll dokumentiert.
-
-const commit = (betreff: string, dateien: string[]): CommitInfo => ({ sha: 'deadbeef00', betreff, dateien });
-
-describe('check:testtreue — §6.3 (Tests bleiben bei Refactorings unangetastet)', () => {
-  it('ROT: als refactor deklarierter Commit ändert eine Test-Datei', () => {
-    const v = findeVerstoesse([
-      commit('refactor(engine): verjaehrung entdoppelt', ['src/lib/verjaehrung/engine.ts', 'src/tests/verjaehrung.test.ts']),
-    ]);
-    expect(v).toHaveLength(1);
-    expect(v[0].testDateien).toEqual(['src/tests/verjaehrung.test.ts']);
-  });
-
-  it('ROT auch bei Scope-losem refactor: und bei e2e-Dateien', () => {
-    expect(findeVerstoesse([commit('refactor: split', ['e2e/a11y.e2e.ts'])])).toHaveLength(1);
-    expect(findeVerstoesse([commit('refactor!: breaking split', ['src/lib/x.test.ts'])])).toHaveLength(1);
-  });
-
-  it('GRÜN: refactor ohne Test-Berührung', () => {
-    expect(findeVerstoesse([commit('refactor(ui): karten entdoppelt', ['src/components/Card.tsx'])])).toHaveLength(0);
-  });
-
-  it('GRÜN: fachlicher Commit darf Tests ändern — genau das verlangt §6.3 (eigener, deklarierter Schritt)', () => {
-    expect(findeVerstoesse([
-      commit('fix(verjaehrung): Stichtagsregel korrigiert', ['src/lib/verjaehrung/engine.ts', 'src/tests/verjaehrung.test.ts']),
-      commit('test(plan): Regressionstest ergänzt', ['src/tests/plan-lage.test.ts']),
-    ])).toHaveLength(0);
-  });
-
-  it('erkennt refactor-Deklarationen präzise (kein Treffer auf «feat: refactor vorbereiten»)', () => {
-    expect(istRefactorCommit('refactor(plan-bild): …')).toBe(true);
-    expect(istRefactorCommit('feat: refactor vorbereiten')).toBe(false);
-    expect(istRefactorCommit('docs(refactoring): Skill ergänzt')).toBe(false);
-  });
-
-  it('Präfix-Grenzfälle: refactor!: , refactor(scope): und Gross-/Kleinschreibung — Ist-Verhalten eingefroren (Regelaudit 14.8.2026)', () => {
-    // Scope + Breaking-Marker, beide bereits oben über findeVerstoesse indirekt geprüft —
-    // hier explizit auf der reinen Klassifikator-Funktion, unabhängig von Testdatei-Erkennung.
-    expect(istRefactorCommit('refactor(scope): x')).toBe(true);
-    expect(istRefactorCommit('refactor!: x')).toBe(true);
-    expect(istRefactorCommit('refactor(scope)!: x')).toBe(true);
-    // Regex trägt das /i-Flag: Gross-/Kleinschreibung ist heute EGAL — das ist der
-    // Ist-Zustand, nicht die Soll-Vorgabe; dieser Test hält ihn fest, ändert ihn nicht.
-    expect(istRefactorCommit('Refactor: x')).toBe(true);
-    expect(istRefactorCommit('REFACTOR(scope): x')).toBe(true);
-    // Ohne Trenner nach dem Wort ist es kein Treffer (kein Conventional-Commit-Typ).
-    expect(istRefactorCommit('refactoring: x')).toBe(false);
-    expect(istRefactorCommit('refactor x')).toBe(false);
-  });
-
-  it('klassifiziert Test-Dateien wie §6.3 sie meint', () => {
-    expect(istTestDatei('src/tests/plan-check.test.ts')).toBe(true);
-    expect(istTestDatei('e2e/verzahnung.e2e.ts')).toBe(true);
-    expect(istTestDatei('src/lib/foo.test.tsx')).toBe(true);
-    expect(istTestDatei('src/lib/verjaehrung/engine.ts')).toBe(false);
-    expect(istTestDatei('scripts/check-testtreue.ts')).toBe(false);
-  });
-});
-
-
 // ─── aus src/tests/ci-diff-klassieren.test.ts ──────────────────────────────────
 // src/tests/ci-diff-klassieren.test.ts
 
@@ -563,29 +494,5 @@ describe('Bash↔TS-Parität — alle Literale, echtes grep -E, drei Zweige (19.
     expect(doku.map((t) => t[1]).sort()).toEqual(soll);
     expect(doku.every((t) => t[1] === t[2])).toBe(true);
     expect(fern.map((t) => t[1]).sort()).toEqual(soll);
-  });
-});
-
-describe('check:testtreue — Squash-Commit der Merge-Queue (PR-Titel)', () => {
-  const c = (betreff: string, dateien: string[]) => ({ sha: 'x', betreff, dateien });
-  it('refactor-Titel + deklarierter test-Commit ⇒ Verstoss (Beleg #1023)', () => {
-    const v = squashVerstoss('refactor(vorlagen): V2d+V2e', [
-      c('refactor(vorlagen): V2d', ['src/pages/A.tsx']),
-      c('test(vorlagen): Schwelle', ['src/tests/design-r9-fehlerbox-baustein.test.ts']),
-    ]);
-    expect(v?.testDateien).toEqual(['src/tests/design-r9-fehlerbox-baustein.test.ts']);
-  });
-  it('feat-Titel mit Test-Änderung ⇒ kein Verstoss', () => {
-    expect(squashVerstoss('feat(vorlagen): x', [c('test: y', ['e2e/a.e2e.ts'])])).toBeNull();
-  });
-  it('refactor-Titel ohne Test-Dateien ⇒ kein Verstoss', () => {
-    expect(squashVerstoss('refactor: x', [c('refactor: y', ['src/lib/a.ts'])])).toBeNull();
-  });
-  it('Ereignis: nur im pull_request-Lauf, sonst stumm', () => {
-    const lies = () => JSON.stringify({ pull_request: { title: 'refactor: x' } });
-    const cs = [c('test: y', ['src/tests/a.test.ts'])];
-    expect(squashMeldung({ GITHUB_EVENT_NAME: 'pull_request', GITHUB_EVENT_PATH: 'e' }, lies, cs)).toMatch(/Squash/);
-    expect(squashMeldung({ GITHUB_EVENT_NAME: 'merge_group', GITHUB_EVENT_PATH: 'e' }, lies, cs)).toBeNull();
-    expect(squashMeldung({}, lies, cs)).toBeNull();
   });
 });

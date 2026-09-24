@@ -50,7 +50,7 @@ Belege: `referenz-ci.md` §Merge-Queue.
   (Ziff. 3.2).
 - **PR-Titel = Squash-Betreff:** der Commit auf main trägt den PR-Titel. Ändert
   der PR Test-Dateien, darf der Titel-Typ nicht `refactor` sein (§6.3) — sonst
-  fällt er im `merge_group`-Lauf an `check:testtreue` (Beleg #1023, 23.9.2026;
+  fällt er im `merge_group`-Lauf an `check:fachaenderung` R1 (Beleg #1023, 23.9.2026;
   seither meldet das Tor es schon im PR-Lauf).
 - **Queue-Abfrage** (QUEUED · AWAITING_CHECKS · MERGEABLE · UNMERGEABLE ·
   LOCKED):
@@ -58,6 +58,12 @@ Belege: `referenz-ci.md` §Merge-Queue.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
   einreihen — nie blind.
+- **Nie pushen, solange der PR in der Queue steht:** erst austragen, dann
+  pushen, dann neu einreihen — sonst läuft die Queue mit dem ALTEN Head
+  weiter und der Push löst keinen PR-Lauf aus (#1021, 23.9.2026).
+- **Folgezweige nach Squash-Landung der Basis:** `git rebase --onto
+  origin/main <alte-basis-sha>` statt mergen — Mergen erzeugt add/add-Konflikte
+  in jeder Datei (Werkbank-START, 23.9.2026).
 - **Kosten:** der `merge_group`-Lauf klassiert den Diff des Eintrags wie der
   PR-Lauf (reine Doku ohne Bau/Browser-Tests, ~1 min; Code voll, ~20+ min).
   Ein übersprungenes «Perf-Budget» zählt in der Queue als erfüllt (gemessen

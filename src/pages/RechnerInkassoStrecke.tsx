@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Card } from '../components/ui/Card';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
+import { AbschnittKopf } from '../components/layout/AbschnittKopf';
 import { getCalculator } from '../lib/calculators';
 import { NormLink } from '../components/vorlagen/ui';
 import { VerzugszinsForm } from '../components/forms/VerzugszinsForm';
@@ -66,14 +67,10 @@ export function RechnerInkassoStrecke() {
       {/* 1 — Die Strecke (stateless Reverse-Reader) */}
       <Card>
         <div className="space-y-4">
-          <div>
-            <p className="lc-overline text-brass-700">Übersicht</p>
-            <h2 className="text-h3 text-ink-900">Von der offenen Forderung zur Betreibung</h2>
-            <p className="text-body-s text-ink-600 max-w-reading mt-1">
-              Fünf Schritte der Forderungsdurchsetzung – jeder verweist auf das zuständige Werkzeug.
-              Nichts wird gespeichert; die Beträge bleiben in Ihrer Sitzung.
-            </p>
-          </div>
+          <AbschnittKopf overline="Übersicht" titel="Von der offenen Forderung zur Betreibung">
+            Fünf Schritte der Forderungsdurchsetzung – jeder verweist auf das zuständige Werkzeug.
+            Nichts wird gespeichert; die Beträge bleiben in Ihrer Sitzung.
+          </AbschnittKopf>
           <ol className="space-y-3">
             {STRECKE.map((s) => (
               <li key={s.nr} className="lc-panel p-4">
@@ -100,10 +97,7 @@ export function RechnerInkassoStrecke() {
 
       {/* 2 — Verzugszins-Rechner (interaktiv, bestehende Engine) */}
       <Card>
-        <div className="mb-4">
-          <p className="lc-overline text-brass-700">Schritt 2</p>
-          <h2 className="text-h3 text-ink-900">Verzugszins berechnen</h2>
-        </div>
+        <AbschnittKopf overline="Schritt 2" titel="Verzugszins berechnen" className="mb-4" />
         <VerzugszinsForm />
       </Card>
     </div>

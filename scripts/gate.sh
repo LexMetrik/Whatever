@@ -132,11 +132,10 @@ run "golden:vergleich"  npm run golden:vergleich
 if [ "$mode" = "voll" ]; then
   run "lint"   npm run lint
   run "check"  npm run check
-  # §17-Wurzelfix (Beleg 5.9.2026, Jules-PR #709): `check:testtreue` lief in
-  # ci.yml, aber NICHT hier — ein als 'refactor' deklarierter Commit, der
-  # Tests ändert (§6.3), war lokal unsichtbar grün und erst in CI rot. Basis
-  # ist `origin/main` (Skript-Default), wie im CI-Schritt «Testtreue (§6.3)».
-  run "testtreue" npm run check:testtreue
+  # §17-Wurzelfix (Beleg 5.9.2026, Jules-PR #709): §6.3-Tor läuft auch lokal,
+  # nicht nur in ci.yml. Seit RL-03 (23.9.2026) check:fachaenderung (Nachfolger
+  # von check:testtreue); Basis `origin/main` wie im CI-Schritt.
+  run "fachaenderung" npm run check:fachaenderung
   # Wiedervorlage-Register der Prosa-Regeln (QS-BEWAEHRUNG B). Bewusst NUR hier
   # und nicht in check:seriell/ci.yml: das Tor ist rot nur bei struktureller
   # Verletzung, seine eigentliche Ausgabe ist die Fälligkeitsliste — die gehört

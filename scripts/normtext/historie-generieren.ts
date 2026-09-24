@@ -24,10 +24,12 @@ import {
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
+import { pruefeAufgehobenLebend, LEBEND_SCHWELLE, lebenderText, tokenAusId } from './historie-aufgehoben-lebend.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const QUELLE = resolve(wurzel, 'public/normtext/struktur/bund');
 const ZIEL = resolve(wurzel, 'public/normtext/historie');
+const TEXT = resolve(wurzel, 'public/normtext/bund');
 
 interface Sidecar {
   artikel?: Record<string, { fussnoten?: FnEingang[] }>;
@@ -53,7 +55,19 @@ interface Korpus extends Abdeckung {
  * Ein Erlass-Sidecar → deterministischer Shard-String (Token sortiert) + Zählwerk.
  * Rückgabe null, wenn der Erlass weder ein Ereignis noch ein Residuum trägt.
  */
+/** RL-11: Artikel-Token → «Körper trägt lebenden Normtext» aus dem Text-Shard
+ *  (public/normtext/bund/<ERLASS>.json); fehlender Shard/Eintrag = unbekannt. */
+function koerperLebendIndex(erlass: string): Map<string, boolean> {
+  const m = new Map<string, boolean>();
+  const pfad = resolve(TEXT, `${erlass}.json`);
+  if (!existsSync(pfad)) return m;
+  const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ id: string; bloecke?: [] }> };
+  for (const e of doc.eintraege ?? []) m.set(tokenAusId(e.id), lebenderText(e).length > LEBEND_SCHWELLE);
+  return m;
+}
+
 function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abdeckung; artikelMitHistorie: number; ereignisse: number; ereignisseDatiert: number } | null {
+  const lebend = koerperLebendIndex(erlass);
   const artikel: Record<string, ArtikelHistorie> = {};
   const residuum: Array<{ token: string; nr: string; roh: string }> = [];
   const abdeckung: Abdeckung = { fussnoten: 0, ereignis: 0, referenz: 0, unparsed: 0 };
@@ -65,7 +79,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
     const fussnoten = doc.artikel![token].fussnoten ?? [];
     if (fussnoten.length === 0) continue;
     abdeckung.fussnoten += fussnoten.length;
-    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten);
+    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten, { koerperLebend: lebend.get(token) });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;
     abdeckung.unparsed += unparsed.length;
@@ -156,6 +170,18 @@ if (!process.env.VITEST) {
     }
     for (const uebrig of vorhanden) { console.error(`check:historie: ${uebrig}.json ist verwaist (keine Quelle).`); drift = true; }
     if (drift) { console.error('→ `npm run gen:historie` ausführen und committen.'); process.exit(1); }
+    // RL-11 (R2-01): «aufgehobenSeit» nur ohne lebenden Normtext im Text-Shard.
+    const parsed = new Map([...shards].map(([k, v]) => [k, JSON.parse(v) as { artikel?: Record<string, ArtikelHistorie> }]));
+    const { befunde, geprueft, ohneText } = pruefeAufgehobenLebend(parsed, TEXT);
+    if (befunde.length > 0) {
+      console.error(
+        `check:historie ROT — ${befunde.length} von ${geprueft} Artikeln mit «aufgehobenSeit» tragen lebenden Normtext ` +
+          `(> ${LEBEND_SCHWELLE} Zeichen) im Text-Shard:`,
+      );
+      for (const b of befunde) console.error(`  ${b.erlass} Art. ${b.token} aufgehobenSeit=${b.aufgehobenSeit} (${b.zeichen} Z.) «${b.auszug}»`);
+      process.exit(1);
+    }
+    console.log(`check:historie: ${geprueft} Artikel mit «aufgehobenSeit» ohne lebenden Normtext (${ohneText} ohne Text-Eintrag).`);
     console.log(`check:historie: ${shards.size} Shards synchron mit den Struktur-Sidecars.`);
   } else {
     rmSync(ZIEL, { recursive: true, force: true }); // verwaiste Shards entfernen (kein toter Rest)

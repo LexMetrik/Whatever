@@ -142,7 +142,7 @@ Reihenfolge nach Produktwert, Dep-Kette
 | **`W2·29-WERKBANK-KATALOGE`** — die vier Kataloge | `design` | 2.2 · 3.2 · 4.2 · 5.2 · 1.2 Startseite (seit 23.9.) | vier Katalog-Boards + Suche · Abdeckung · Einstellungen · Main | Status-Modell sichtbar (§8); Kantons-Auswahl mit Schweizkarte hat kein Board — Session entscheidet |
 | **`W2·29-WERKBANK-VORLAGEN`** — ein Assistenten-Rahmen, dann die 30 | `werkzeuge` | 5.3 · 5.4 · 5.5 | Vorlage Arbeitsvertrag (Schritt 4 von 7) | Rahmen **aus den bestehenden** Vorlagen-Modulen in `src/lib/vorlagen/` samt `registry.ts` (korr. 23.9.2026: `*Schemas.ts` trifft nur die Gründungen), kein zweites Schema-Modell; PDF und DOCX aus demselben Assemble-Ergebnis (§5); die 42 geplanten fallen danach aus demselben Rahmen |
 | **`W2·29-WERKBANK-RECHNER`** — die 20 einzeln | `werkzeuge` | 4.3 · 4.4 | Fristenrechner ZPO | Gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock, Exportleiste. **Rechenfälle nie abstrahiert (§1)** — 20 Rechner bleiben 20 Handgriffe |
-| **`W2·29-WERKBANK-REST`** — Rest und Rückbau | `design` | 1.5 (ohne `/abdeckung`) · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
+| **`W2·29-WERKBANK-REST`** — Rest und Rückbau (Scheiben §5f; Design-Feinpaket → NACHLAUF, 24.9.) | `design` | 1.5 (ohne `/abdeckung`) · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
 
 **Nachtrag 23.9.2026 (Entscheid David, Chat, Option A):** Startseite aus REST in KATALOGE geholt
 (vier Kacheln mit denselben Karten-Bauteilen wie die Kataloge, als letzte Scheibe), KATALOGE parallel
@@ -198,6 +198,37 @@ Erfassungsgrad, MassgebendeGesetze} → KATALOGE. Geteilt: lr8-* und einzelne lr
 
 NICHT bauen (Board > Produkt): «Entscheide zu den Artikeln auf dieser Seite» mit Zählern,
 «Mappen»-Reiter, gelbe aktive Fundstelle #F3E3A6.
+
+**D-1 revidiert 24.9.2026 (Weisung 23.9. abends, Entscheid A 24.9.) — S6 W1e.** Weisung David
+23.9.2026 abends: «achte auch darauf dass sie sinnvoll erscheint. also das ui bei verschiedenen
+bildschirmgrössen so ist dass es nahe am relevanten artikel ist und einklappbar ist und nicht mit
+dem knopf erlass. analog gliederung.» Entscheid 24.9.2026, Variante A «Echte dritte Spalte»: «Das
+Blatt wird eine eigene Spalte wie die Gliederung und deckt nie Text ab. Nachteil: Der Text rutscht
+beim Öffnen zur Seite und bricht auf kleineren Bildschirmen neu um. Das hebt D33 (‹nichts
+verschiebt sich›) auf.» (verworfen B Schiene + Überlagerung, C Reiter in der Gliederung);
+«Gliederung eingeklappt merken» = Ja. D-1 (23.9.: Blatt am Fensterrand, `useFensterRand`) ist
+damit zurückgebaut, samt Überlagerung `'rechts'`. Gebaut ab 1024 px (Einzelansicht): Blatt offen =
+eigene Spur 380 px rechts der Lese-Zelle (sticky wie das Gliederungs-`aside`, bis zur
+Fensterunterkante); zu = 36-px-Schiene «‹ Erlass-Blatt» (das Soll oben nannte 52 px — gebaut ist
+der Spiegel der Gliederungs-Schiene, 36 px); im Kopf rechts «Erlass-Blatt ausblenden ›», der
+Kopf-Knopf «Erlass-Blatt» entfällt; offen wächst der Rahmen auf «linke Spur + 45 rem + rechte Spur»,
+nie über den Raum, zu bleibt er der Seitenrahmen 1072 px (`rahmenSpalten.ts`; eine Aufweitung auch
+bei Schiene lief als R8-Fund über `div.lc-route`, 1088/1072). Schwellen (`LESE_MIN` 28 rem): Raum < 1156 px (Fenster ≈ 1204) ⇒ die
+Gliederung weicht dem offenen Blatt transient auf die Schiene; Raum < 904 px ⇒ Sheet wie unter
+1024. Gemessen 24.9.2026 (OR Art. 257d, Wortlaut `.lr-text` x/Breite, Blatt x, Gliederung offen):
+
+| Fenster | Blatt zu: Text | Blatt offen: Text | Blatt x | Gliederung offen | Neuumbruch |
+|---|---|---|---|---|---|
+| 1024 | 332/612 | 80/520 | 620 | weicht (Schiene) | ja |
+| 1204 | 407/641 | 332/448 | 800 | bleibt | ja |
+| 1280 | 445/641 | 332/524 | 876 | bleibt | ja |
+| 1400 | 505/641 | 333/641 | 996 | bleibt | nein (rutscht) |
+| 1440 | 525/641 | 353/641 | 1036 | bleibt | nein (rutscht) |
+| 1920 | 765/641 | 771/641 | 1472 | bleibt | nein, Text steht (±6 px) |
+
+Blatt überlappt Text: in keiner Lage (e2e `leser-v3-rahmen` (h)); Laden mit gemerkten Lagen ohne
+Sprung (`leser-v3-kontext-cls` (c)); unter 1024 unverändert (Sheet + Knopf im Kopf). Abweichung:
+zwischen ~948 und 1023 px Fenster überlagerte das Blatt bisher (`'rechts'`), seither Sheet.
 
 ### 3 Scheiben (Session 1: S0+S1 · 2: S2+S3 · 3: S4+S5; jede allein landbar)
 
@@ -308,7 +339,9 @@ durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.)
 geduldete Leser-Specs: leser-v3-suche-ohne-gliederung 19/20, leser-v3-blatt 7/20,
 leser-ruecksprung-r5-r7, verweis-u — gleiche Wettlauf-Familie; S0/S4/S5. 3 420-Deckel v3/:
 leserV3Modell.ts 419, uebersichtAngaben.ts 417. 4 index.css ~71 % Kommentare → QS-DOKU-DIAET.
-5 Board #EEF1F6 ≠ `--reg-g-flaeche` #D9DEE4 — Token gilt.
+5 Board #EEF1F6 ≠ `--reg-g-flaeche` #D9DEE4 — Token gilt. 6 (24.9.2026, S6 W1e) Soll oben
+«Gliederung links 250 px», gebaut sind 288 px (18 rem, seit W2·19 S2) — nicht nachgezogen, die
+Blatt-Schwellen rechnen mit 288.
 
 ## §5b · KATALOGE — Bauplan in Scheiben (Planung 23.9.2026)
 
@@ -403,8 +436,11 @@ neu sind nur Kopf und eine gemeinsame Exportzeile (heute 25× inline). Kein Risi
 - **R3** `ErgebnisExport` (Aktenzeichen → PDF → ICS → Teilen → children): 21 Stellen in 20 Formularen; Ratsche
   `rechner-export-ratsche` (20 Routen + 19 Beispiel-Queries). R5a: auch die 4 Kosten-Rechner (Teilen hinter PDF; Aktenzeichen nur mit PDF/ICS).
   EreignisFristen/Schnellrechner bewusst eigen. *Gebaut 24.9.*
-- **R4** Auswahl-Kacheln ein Look (*gebaut 24.9.*: Strich oben für alle, `reg`-Prop weg) · `vorlagen/ui.tsx` an neutralen Ort · `Card`. **R5** Sonderseiten
-  (Tagerechner, Board, Inkasso, Zuständigkeit), Inventar 4.3/4.4 nachführen.
+- **R4** Auswahl-Kacheln ein Look (*gebaut 24.9.*: Strich oben für alle, `reg`-Prop weg) · `vorlagen/ui.tsx` bleibt geteilter
+  Formular-Baukasten (Entscheid 24.9., kein Umzug) · `Card`. **R5** Sonderseiten: `layout/AbschnittKopf` (Overline + h2 +
+  Einleitung) für Ergebnis-Kopf, Tagerechner, Board, Inkasso; Ereignis-Fristen-Sektion ohne Kasten; Zuständigkeit ohne Bedarf
+  (Karte + Kopf-Overrides tragen schon). Inventar 4.3 datiert (4.4 stimmte); §7-Rückbau UI-Befunde: nur LM-032/066/083
+  rechner-relevant — 083 überholt abgehakt, 066 (app-weit) nach REST. *Gebaut 24.9., Schritt done.*
 - **Nicht bauen:** rechte Normen-/Annahmen-Spalte des Boards, Streichung von PDF/Teilen/Aktenzeichen
   (Board ist Richtung; Inventar 4.3 R3–R5 gilt).
 
@@ -523,6 +559,57 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   Kacheln 289 px, Zeilen `1fr`); `EinfacheFristForm minimal` misst die Fläche (`@container`, @320 einspaltig);
   Liste, `entscheidZitierung`, Projektion `neuesteEntscheide` gelöscht; CLS Stammnutzer ≤ 0.0006, Öffnung ohne
   lange Bilder (100-ms-Bild erst beim Laden der Rechtsprechung nach der Bewegung, +670 ms).
+
+## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
+
+**Befund** (lex-recherche Opus, 24.9., nur gelesen): geteilt sind schon `layout/SeitenKopf` (`.ub-*`, K1),
+`layout/LeserKopfGeruest`, `kontext/KontextPanel`, `verzahnung/StatusBadge`, `SeitenTitel`/`FehlSeite`/`QuellLink`.
+Nicht umgebaut: `EntscheidLeser.tsx` (1130 Z.), `MaterialLeser.tsx`, `Materialien.tsx`, `MaterialienDeckung.tsx`,
+statische Seiten, Alt-Block `lr8-*` (`index.css` ~4715–4990, nur `components/entstehung/*`). Heute rendert kein
+Vitest den Entscheid-Leser. Mit allen 39 Posten wären es 4–5 Sessions — über dem Abbruchkriterium (§2 Ziff. 4).
+
+**Entscheide David 24.9.2026 (Chat):** (1) Design-Feinpaket (D6 Dunkel-Paket, D8b Mono-Diät, D8c Motiv-Katalog,
+Radius, CSS-Querschnitt) **aus REST gelöst** → eigener Schritt `W2·29-WERKBANK-NACHLAUF` nach REST. (2) F0.5:
+Flächen `.lc-akzent-w`/`.ub-kopf` bekommen **14 px Radius** (wie das Start-Gesicht) — in NACHLAUF N1. (3)
+StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»); nur die Darstellung zieht in S1 um.
+(4) QS-UI Runde 8: ☰-Anatomie und Hover-Stufe erledigt durch den Umbau; ⧉-Quittung → S5.
+
+- **S0 Prüfstrasse** (bau, ~0,5): Ratsche `rest-flaechen-ratsche.test.tsx` nach R0-Muster (`/materialien`,
+  ein `/materialien/:key`, `/materialien/deckung`, `/methodik`, `/ueber`, `/kontakt`, `/datenschutz`, 404,
+  `/rechtsprechung/:key` mit 3 Fixtures über Fetch-Stub) + Entscheid-Kern-Probe (`EntscheidBody`+`RegesteBlock`,
+  Hash, wie LESER-S0); `kein-abschnitt`-Sweep um Karten-Dichte. Rot-Beweis Pflicht.
+- **S1 Entscheid-Leser (Inventar 3.3)** (bau, ~1, dep S0): Kopf (Overline Gericht · Sammlung, H1 Zitierung,
+  Faktenzeile, Herkunft/ECLI), Regeste, Reiter, Lesemodus, Provenienz-Fuss, Kontext-Blatt; **Körper byte-gleich**.
+  Posten D8a slate, «maschinell»-Etikett @390, SchalterGruppe → `ui/`. Geteilt mit LESER: `LeserKopfGeruest`,
+  `KontextPanel`, `StatusBadge` — nur additiv ändern, LESER hat Vorrang in der Queue.
+- **S2 Materialien (3.4–3.6)** (bau, ~1, dep S0, parallel S1): Übersicht in der Kartenzeile aus K1, Material-Leser,
+  Deckungsseite; **nicht** Board-Tabelle/Filterspalte (neue Funktion). `lr8-*`/`lr7-*`-Rückbau am Ende von S2,
+  Leser-Specs (`entstehung-*`, `leser-bezuege-inhalt-d30`) mitfahren.
+- **S3 Statische Seiten, Druck, mobil (1.5, 6)** (bau, ~0,5–1): Methodik, Über, Kontakt, Datenschutz, 404;
+  `@media print`/`print:` sichten; Posten WerkzeugKopf-Intro @390 (Kurzfassung + aufklappbar, kein Textverlust),
+  Tagerechner @320 unter Last, LM-066 Bedienhöhen (`Tabs.tsx` HOEHE vs. `.lc-input`).
+- **S5 Rückbau und Schluss** (bau, ~0,5): Rest `FAHRPLAN-UI-BEFUNDE.md` abhaken/gegenstandslos → Archiv;
+  QS-UI (+ ⧉-Quittung), `W2·19-DESIGN-KONSISTENZ`, `W2·24-C` in Chronik/Archiv; PROJEKTBESCHRIEB §3/§4,
+  Inventar datieren; Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Werkzeuge-Blatt eine Quelle,
+  Generator «Staatsverträge»); Lagebild `--paper` aus `design/tokens.json`.
+- **Nicht in REST:** Such-Index Rechtsprechung-Blatt (Klasse daten, Gegenprüfung) → `W2·24-PERF-REST`;
+  modulepreload/`rel=expect` → `W2·24-PERF-REST`; Worktrees `npm ci` → `QS-EFFIZIENZ`; Reiter-Titel
+  Zuständigkeit → `W2·17-UI-BEFUNDE`; Leser-Nachlauf (NormText 795/800, NormChip-Ort, `leserV3Modell`,
+  Akkordeon, E3, Band-Rezepte, D7, Design-Pass Gesetze, Flake `w224-d35`) → NACHLAUF N2 (nach LESER-Ende;
+  deckt §5a Ziff. 5 «umbuchen, nicht im Umbau»).
+- **NACHLAUF** (`W2·29-WERKBANK-NACHLAUF`, dep REST + LESER): **N1** Design-Feinpaket (D6, D8b-Pilot → D8c,
+  Radius 14 px, `details>summary::after`, `@layer` → `:where()`, «Registerstrich + Radius» systematisch,
+  SchweizKarte dunkel, F0.6 Haarlinien K2, `tailwind.config.js`-Reste; Tore `check:sediment`, `check:farbwelt`,
+  axe dunkel) · **N2** Leser-Nachlauf (oben).
+
+**Bündelung 24.9.2026 (Auftrag David: «was das Gleiche oder Ähnliches betrifft, auch in diesen Umbau»).**
+13 Posten aus W2·17, W2·18, W2·19, W2·24-C, QS-UI, QS-DOKU-DIAET auf REST/NACHLAUF umgehängt (Scheibe steht
+je im Posten-Rumpf, Zeile «Umgehängt 24.9.2026»); dazu neue Posten aus den Werkbank-Nebenfunden vom 22.9. (N1:
+Titelschrift, Favicon, Reiterstrich-Kontrast) und aus verwaisten Notizen. Damit tragen **W2·24-C,
+W2·19-DESIGN-KONSISTENZ und QS-UI keine Posten mehr** — in S5 wie geplant nach Chronik/Archiv. Ebenfalls S5:
+W2·9 (a) gegenstandslos (R2 24.9.), (b) «aufgehobene Normen ausblenden» als Posten umbuchen, Schritt schliessen;
+Treffer-Landkarte-Posten ohne offene Checkbox schliessen. **Nicht gebündelt** (Risiko-Klasse/Leser-Fläche):
+PERF-REST, Klasse-daten-Posten (QS-KORPUS), Vorlagen-Verhalten aus W2·17, W2·7-VZUI, QS-CODE-*.
 
 ## §6 · Prüfen und Frühsignale
 
