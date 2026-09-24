@@ -364,7 +364,7 @@ Eingabe→Trefferleiste bei CPU×4 med 1.34 s.
 Board). 3 Aktive Fundstelle nur mit bestehenden Tokens. 4 Kern-Probe erweitert
 ArtikelBody.test.tsx, kein neues Tor. 5 Je PR «netto ≤ 0» in src anstreben. 6 Bereitschaftsmarker
 als Produkt-Attribut — nur mit gemessener Wirkung (S0: ohne Wirkung, ausgebaut 23.9.2026). **Wartet auf David:** nichts. (Funktionszeile im Einzelmodus nicht
-durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.)
+durch Board-Karten ersetzen = Funktionsänderung 2.3.9 — nicht tun.) 7 (Entscheide David 24.9.2026, Chat, nach S6 W1g/#1062/#1063): Kürzel «OR» in der Werkzeugzeile über der Gliederung **bleibt** (Split unterscheidet die Seiten); Artikel-Aktionszeile «Zitat · Link · Amtliche Fassung» **so lassen** = linksbündig an der Artikelkante, Maus: erst bei Hover/Fokus sichtbar (Platz reserviert), Touch immer sichtbar — ersetzt den früheren Entscheid «klein am Artikel, immer sichtbar»; Reiter Änderungen: Zeile «Fassung dieses Artikels» startet **zugeklappt**. Erlass-Blatt auf dem Tablet (768×1024) 69 % der Höhe nach der Handy-Regel (#1067) — **so lassen**.
 
 ### 7 Nebenfunde
 

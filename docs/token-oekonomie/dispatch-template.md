@@ -99,6 +99,7 @@ zusammengestellt.
   --workers=2; die volle e2e-Suite nur EINMAL am Schluss, dazwischen gezielte
   Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
   zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
+  Beenden nur per eigener PID/Port, nie per Namensmuster (Vorfall 24.9.2026).
   Wer aus RAM-Gruenden `npm run gate` auslaesst, faehrt trotzdem die schnellen
   Konsistenz-Tore `npx vitest run src/tests/design-` (Sekunden, kein Browser)
   — Beleg #1053 (24.9.2026): Schnellwerkzeug-Reiter mit eigener Kasten-Optik
