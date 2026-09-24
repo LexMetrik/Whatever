@@ -470,7 +470,13 @@ Umschichtung 20.9.2026 (2)):*
   Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —
   und die letzten Alt-Stylesheet-Reste samt abgelösten Reglementen und Fahrplänen löschen.
   Grenzen: `check:sediment` grün ohne Ausnahme; datierte Belege (`abnahme/**`) bleiben.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5 + §7.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f (Scheiben S0–S5) + §7.
+
+- [ ] **Werkbank-Umbau Nachlauf: Design-Feinpaket und Leser-Nachlauf** *(`W2·29-WERKBANK-NACHLAUF`, Entscheid David 24.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-NACHLAUF · status: ready · blocker: null · dep: [W2·29-WERKBANK-REST, W2·29-WERKBANK-LESER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: N1 Dunkel-Paket, Mono-Diät, Motiv-Katalog, 14-px-Radius der Flächen, CSS-Querschnitt; N2 was
+  LESER bewusst umgebucht hat (NormText schneiden, NormChip-Ort, Akkordeon, E3 u. a.). Aus REST gelöst,
+  damit REST im Abbruchkriterium bleibt (§2 Ziff. 4). **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f.
 
 - [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
   <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->

@@ -142,7 +142,7 @@ Reihenfolge nach Produktwert, Dep-Kette
 | **`W2·29-WERKBANK-KATALOGE`** — die vier Kataloge | `design` | 2.2 · 3.2 · 4.2 · 5.2 · 1.2 Startseite (seit 23.9.) | vier Katalog-Boards + Suche · Abdeckung · Einstellungen · Main | Status-Modell sichtbar (§8); Kantons-Auswahl mit Schweizkarte hat kein Board — Session entscheidet |
 | **`W2·29-WERKBANK-VORLAGEN`** — ein Assistenten-Rahmen, dann die 30 | `werkzeuge` | 5.3 · 5.4 · 5.5 | Vorlage Arbeitsvertrag (Schritt 4 von 7) | Rahmen **aus den bestehenden** Vorlagen-Modulen in `src/lib/vorlagen/` samt `registry.ts` (korr. 23.9.2026: `*Schemas.ts` trifft nur die Gründungen), kein zweites Schema-Modell; PDF und DOCX aus demselben Assemble-Ergebnis (§5); die 42 geplanten fallen danach aus demselben Rahmen |
 | **`W2·29-WERKBANK-RECHNER`** — die 20 einzeln | `werkzeuge` | 4.3 · 4.4 | Fristenrechner ZPO | Gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock, Exportleiste. **Rechenfälle nie abstrahiert (§1)** — 20 Rechner bleiben 20 Handgriffe |
-| **`W2·29-WERKBANK-REST`** — Rest und Rückbau | `design` | 1.5 (ohne `/abdeckung`) · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
+| **`W2·29-WERKBANK-REST`** — Rest und Rückbau (Scheiben §5f; Design-Feinpaket → NACHLAUF, 24.9.) | `design` | 1.5 (ohne `/abdeckung`) · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
 
 **Nachtrag 23.9.2026 (Entscheid David, Chat, Option A):** Startseite aus REST in KATALOGE geholt
 (vier Kacheln mit denselben Karten-Bauteilen wie die Kataloge, als letzte Scheibe), KATALOGE parallel
@@ -526,6 +526,48 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   Kacheln 289 px, Zeilen `1fr`); `EinfacheFristForm minimal` misst die Fläche (`@container`, @320 einspaltig);
   Liste, `entscheidZitierung`, Projektion `neuesteEntscheide` gelöscht; CLS Stammnutzer ≤ 0.0006, Öffnung ohne
   lange Bilder (100-ms-Bild erst beim Laden der Rechtsprechung nach der Bewegung, +670 ms).
+
+## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
+
+**Befund** (lex-recherche Opus, 24.9., nur gelesen): geteilt sind schon `layout/SeitenKopf` (`.ub-*`, K1),
+`layout/LeserKopfGeruest`, `kontext/KontextPanel`, `verzahnung/StatusBadge`, `SeitenTitel`/`FehlSeite`/`QuellLink`.
+Nicht umgebaut: `EntscheidLeser.tsx` (1130 Z.), `MaterialLeser.tsx`, `Materialien.tsx`, `MaterialienDeckung.tsx`,
+statische Seiten, Alt-Block `lr8-*` (`index.css` ~4715–4990, nur `components/entstehung/*`). Heute rendert kein
+Vitest den Entscheid-Leser. Mit allen 39 Posten wären es 4–5 Sessions — über dem Abbruchkriterium (§2 Ziff. 4).
+
+**Entscheide David 24.9.2026 (Chat):** (1) Design-Feinpaket (D6 Dunkel-Paket, D8b Mono-Diät, D8c Motiv-Katalog,
+Radius, CSS-Querschnitt) **aus REST gelöst** → eigener Schritt `W2·29-WERKBANK-NACHLAUF` nach REST. (2) F0.5:
+Flächen `.lc-akzent-w`/`.ub-kopf` bekommen **14 px Radius** (wie das Start-Gesicht) — in NACHLAUF N1. (3)
+StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»); nur die Darstellung zieht in S1 um.
+(4) QS-UI Runde 8: ☰-Anatomie und Hover-Stufe erledigt durch den Umbau; ⧉-Quittung → S5.
+
+- **S0 Prüfstrasse** (bau, ~0,5): Ratsche `rest-flaechen-ratsche.test.tsx` nach R0-Muster (`/materialien`,
+  ein `/materialien/:key`, `/materialien/deckung`, `/methodik`, `/ueber`, `/kontakt`, `/datenschutz`, 404,
+  `/rechtsprechung/:key` mit 3 Fixtures über Fetch-Stub) + Entscheid-Kern-Probe (`EntscheidBody`+`RegesteBlock`,
+  Hash, wie LESER-S0); `kein-abschnitt`-Sweep um Karten-Dichte. Rot-Beweis Pflicht.
+- **S1 Entscheid-Leser (Inventar 3.3)** (bau, ~1, dep S0): Kopf (Overline Gericht · Sammlung, H1 Zitierung,
+  Faktenzeile, Herkunft/ECLI), Regeste, Reiter, Lesemodus, Provenienz-Fuss, Kontext-Blatt; **Körper byte-gleich**.
+  Posten D8a slate, «maschinell»-Etikett @390, SchalterGruppe → `ui/`. Geteilt mit LESER: `LeserKopfGeruest`,
+  `KontextPanel`, `StatusBadge` — nur additiv ändern, LESER hat Vorrang in der Queue.
+- **S2 Materialien (3.4–3.6)** (bau, ~1, dep S0, parallel S1): Übersicht in der Kartenzeile aus K1, Material-Leser,
+  Deckungsseite; **nicht** Board-Tabelle/Filterspalte (neue Funktion). `lr8-*`/`lr7-*`-Rückbau am Ende von S2,
+  Leser-Specs (`entstehung-*`, `leser-bezuege-inhalt-d30`) mitfahren.
+- **S3 Statische Seiten, Druck, mobil (1.5, 6)** (bau, ~0,5–1): Methodik, Über, Kontakt, Datenschutz, 404;
+  `@media print`/`print:` sichten; Posten WerkzeugKopf-Intro @390 (Kurzfassung + aufklappbar, kein Textverlust),
+  Tagerechner @320 unter Last, LM-066 Bedienhöhen (`Tabs.tsx` HOEHE vs. `.lc-input`).
+- **S5 Rückbau und Schluss** (bau, ~0,5): Rest `FAHRPLAN-UI-BEFUNDE.md` abhaken/gegenstandslos → Archiv;
+  QS-UI (+ ⧉-Quittung), `W2·19-DESIGN-KONSISTENZ`, `W2·24-C` in Chronik/Archiv; PROJEKTBESCHRIEB §3/§4,
+  Inventar datieren; Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Werkzeuge-Blatt eine Quelle,
+  Generator «Staatsverträge»); Lagebild `--paper` aus `design/tokens.json`.
+- **Nicht in REST:** Such-Index Rechtsprechung-Blatt (Klasse daten, Gegenprüfung) → `W2·24-PERF-REST`;
+  modulepreload/`rel=expect` → `W2·24-PERF-REST`; Worktrees `npm ci` → `QS-EFFIZIENZ`; Reiter-Titel
+  Zuständigkeit → `W2·17-UI-BEFUNDE`; Leser-Nachlauf (NormText 795/800, NormChip-Ort, `leserV3Modell`,
+  Akkordeon, E3, Band-Rezepte, D7, Design-Pass Gesetze, Flake `w224-d35`) → NACHLAUF N2 (nach LESER-Ende;
+  deckt §5a Ziff. 5 «umbuchen, nicht im Umbau»).
+- **NACHLAUF** (`W2·29-WERKBANK-NACHLAUF`, dep REST + LESER): **N1** Design-Feinpaket (D6, D8b-Pilot → D8c,
+  Radius 14 px, `details>summary::after`, `@layer` → `:where()`, «Registerstrich + Radius» systematisch,
+  SchweizKarte dunkel, F0.6 Haarlinien K2, `tailwind.config.js`-Reste; Tore `check:sediment`, `check:farbwelt`,
+  axe dunkel) · **N2** Leser-Nachlauf (oben).
 
 ## §6 · Prüfen und Frühsignale
 
