@@ -168,3 +168,41 @@ describe('Anfechtung und Erstreckung (Art. 273 OR)', () => {
     expect(r.anfechtungBis).toBeUndefined();
   });
 });
+
+// F4-01 (Prüfung Rechtslogik 23.9.2026, W2·30-RL-W1): Art. 78 Abs. 1 OR
+// verschiebt nur den «Zeitpunkt der Erfüllung oder den letzten Tag einer
+// Frist». Der späteste Zugangstag liegt VOR Beginn der Kündigungsfrist und ist
+// kein Fristende (die Frist endet am Termin, Art. 266a Abs. 1, 266c/266e OR).
+// Fällt er auf Sa/So/Feiertag, gilt NICHT der nächste Werktag — ein Zugang
+// danach verfehlt den Termin (Art. 266a Abs. 2 OR: nächstmöglicher Termin).
+// Normtext: https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de (Stand 1.1.2026).
+describe('Zustelltag vor Fristbeginn: keine Art.-78-Verschiebung (F4-01)', () => {
+  it('Wohnung, jedes Monatsende, Zugang Mo 1.9.2025 → 31.12.2025 (31.8.2025 war Sonntag)', () => {
+    const r = berechneMietkuendigung(base({ zugang: '2025-09-01', kanton: 'ZH', terminQuelle: 'jedes_monatsende' }));
+    expect(r.endtermin).toBe('31.12.2025');
+    // verfehlterTermin meldet den ERSTEN verfehlten Kandidaten (30.09.2025), nicht 30.11.
+    expect(r.spaetesterZugang).toBe('30.09.2025');
+    // Kontrolle: Zugang am (Sonntag) 31.8.2025 selbst wahrt den 30.11.2025.
+    const amSonntag = berechneMietkuendigung(base({ zugang: '2025-08-31', kanton: 'ZH', terminQuelle: 'jedes_monatsende' }));
+    expect(amSonntag.endtermin).toBe('30.11.2025');
+    expect(amSonntag.spaetesterZugang).toBe('31.08.2025');
+  });
+
+  it('Wohnung, Termin nur Ende Dezember, Zugang Mo 2.10.2023 → 31.12.2024 (30.9.2023 war Samstag)', () => {
+    const r = berechneMietkuendigung(base({ zugang: '2023-10-02', kanton: 'ZH', terminQuelle: 'vertraglich_monate', vertragsTermineMonate: [12] }));
+    expect(r.endtermin).toBe('31.12.2024');
+    expect(r.verfehlterTermin).toBe('31.12.2023');
+  });
+
+  it('Möbliertes Zimmer (Art. 266e OR), Mietbeginn 1.1.2025, Zugang Mo 18.8.2025 → 30.09.2025 (17.8.2025 war Sonntag)', () => {
+    const r = berechneMietkuendigung(base({ objekt: 'moebliertes_zimmer', zugang: '2025-08-18', kanton: 'ZH', mietbeginn: '2025-01-01' }));
+    expect(r.endtermin).toBe('30.09.2025');
+    expect(r.verfehlterTermin).toBe('31.08.2025');
+  });
+
+  it('Rechenweg stellt keine Werktagsverschiebung des Zugangstags als Recht dar', () => {
+    const r = berechneMietkuendigung(base({ zugang: '2025-09-01', kanton: 'ZH', terminQuelle: 'jedes_monatsende' }));
+    const text = r.rechenweg.map((s) => s.zwischenergebnis).join('\n');
+    expect(text).not.toMatch(/Verschiebung auf den nächsten Werktag, Art\. 78 OR/);
+  });
+});

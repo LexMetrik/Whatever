@@ -156,9 +156,12 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
     );
   }
 
+  // RL-07/F3-04 (Prüfung Rechtslogik 23.9.2026): «die Partei oder ihr
+  // Vertreter» (Art. 45 Abs. 2 BGG; Art. 20 Abs. 3 Satz 2 VwVG) — die
+  // Vertretung fehlte im Text, obwohl der Kopfkommentar sie nennt.
   annahmen.push(
     `Endverschiebung nach ${meta.werktagNorm}: massgebend sind die Feiertage am Wohnsitz/Sitz der `
-    + `Partei (gewählter Kanton ${input.kanton}).`,
+    + `Partei oder ihrer Vertretung (gewählter Kanton ${input.kanton}).`,
   );
 
   return {

@@ -226,7 +226,7 @@
   "/rechner/mietrecht": {
     "folge": [
       "Aktenzeichen",
-      "PDF {\"title\":\"Mietrecht – Kündigungstermin-Berechnung\",\"fileBase\":\"Mietrecht-Kuendigung\",\"domain\":\"mietrecht\",\"sha\":\"5ec6d97af1b9de32\"}",
+      "PDF {\"title\":\"Mietrecht – Kündigungstermin-Berechnung\",\"fileBase\":\"Mietrecht-Kuendigung\",\"domain\":\"mietrecht\",\"sha\":\"cc5c5cc77029746e\"}",
       "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Das Mietverhältnis endet am 30.09.2025. Spätester rechtzeitiger Zugang für diesen Termin: 30.06.2025.\",\"dateiName\":\"Mietende.ics\",\"endISO\":\"2025-09-30\",\"query\":\"?a=ordentlich&o=wohnung&pa=mieter&z=2025-06-23&k=ZH&q=ortsueblich&mo=%5B3%2C9%5D&od=1&fo=1&fw=0&se=1&zu=1\",\"titel\":\"Mietende (Kündigungstermin)\"}",
       "Teilen {\"query\":\"?a=ordentlich&o=wohnung&pa=mieter&z=2025-06-23&k=ZH&q=ortsueblich&mo=%5B3%2C9%5D&od=1&fo=1&fw=0&se=1&zu=1\"}"
     ],

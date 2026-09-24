@@ -81,6 +81,17 @@ describe('Vorlage Kündigung Mieter:in (Maske 2a)', () => {
     expect(gates.hinweise.some((h) => h.includes('266a Abs. 2'))).toBe(true);
   });
 
+  // F4-01 (W2·30-RL-W1): späteste Zustellung am Sonntag 31.8.2025 wird nicht
+  // auf Mo 1.9. verschoben (Art. 78 OR erfasst den Zugangstag vor Fristbeginn
+  // nicht) → Zugang 1.9. verfehlt den 30.11.2025, Brief nennt 31.12.2025.
+  it('F4-01: Zugang Mo 1.9.2025, jedes Monatsende → Brief per 31.12.2025, nicht 30.11.2025', () => {
+    const a = basis({ zugang: '2025-09-01', terminQuelle: 'jedes_monatsende' });
+    const { ergebnis, engine } = kmZusammenstellen(a);
+    expect(engine!.endtermin).toBe('31.12.2025');
+    expect(dokumentAlsText(ergebnis)).toContain('per 31.12.2025');
+    expect(dokumentAlsText(ergebnis)).not.toContain('per 30.11.2025');
+  });
+
   it('Guards: möbliertes Zimmer braucht Mietbeginn; bewegliche Sache nicht; Kanton Pflicht', () => {
     expect(kmEngine(basis({ objekt: 'moebliertes_zimmer', mietbeginn: '' }))).toBeNull();
     expect(kmEngine(basis({ objekt: 'moebliertes_zimmer', mietbeginn: '2025-03-01' }))).not.toBeNull();
