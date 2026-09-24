@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
-import { HaeufigGebraucht, HAEUFIG_KUERZEL, haeufigeErlasse } from '../components/start/HaeufigGebraucht';
+import { HaeufigGebraucht } from '../components/start/HaeufigGebraucht';
+import { HAEUFIG_KUERZEL, haeufigeErlasse } from '../components/start/haeufigAuswahl';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
 import { erlassPfad } from '../lib/normtext/erlassAdresse';
 

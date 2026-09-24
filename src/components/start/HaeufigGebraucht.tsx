@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ERLASS_REGISTER, type ErlassRegistereintrag } from '../../lib/normtext/register';
 import { erlassPfad } from '../../lib/normtext/erlassAdresse';
 import { StartFlaeche } from './StartFlaeche';
+import { haeufigeErlasse } from './haeufigAuswahl';
 
 // ─── Startseite · «Häufig gebraucht» unter den vier Kacheln (U4, 24.9.2026) ──
 //
@@ -9,7 +9,7 @@ import { StartFlaeche } from './StartFlaeche';
 // ruhige Zeile mit direkten Links BV · ZGB · OR · StGB · ZPO · StPO · SchKG in
 // den Leser (FAHRPLAN-WERKBANK-UMBAU §5d-bis U4).
 //
-// §5 EINE QUELLE: hier stehen nur die sieben KÜRZEL (die Auswahl Davids).
+// §5 EINE QUELLE: `haeufigAuswahl.ts` führt nur die sieben KÜRZEL (Davids Auswahl).
 // Titel, Schlüssel und Adresse kommen aus dem Erlass-Register und `erlassPfad`
 // — keine handgeschriebene URL (die Schlüssel lauten teils anders als die
 // Kürzel: StGB → `STGB`, SchKG → `SCHKG`). Fehlt ein Kürzel im Register, wirft
@@ -27,14 +27,6 @@ import { StartFlaeche } from './StartFlaeche';
 // A11y: eine <h2> je Fläche (StartFlaeche); die Links sind eine Liste; der
 // zugängliche Name trägt Kürzel UND vollen Titel (WCAG 2.5.3: der sichtbare
 // Text steht vorn), der Titel zusätzlich als Tooltip.
-
-export const HAEUFIG_KUERZEL = ['BV', 'ZGB', 'OR', 'StGB', 'ZPO', 'StPO', 'SchKG'] as const;
-
-/** Register-Eintrag je Kürzel — nur Bundeserlasse (das Register trägt den Bund). */
-export function haeufigeErlasse(): ErlassRegistereintrag[] {
-  return HAEUFIG_KUERZEL.map((k) => ERLASS_REGISTER.find((e) => e.ebene === 'bund' && e.kuerzel === k))
-    .filter((e): e is ErlassRegistereintrag => !!e);
-}
 
 const ERLASSE = haeufigeErlasse();
 

@@ -479,3 +479,70 @@ test.describe('Startseite · Feinschliff', () => {
     await expect(zahl).toHaveAttribute('aria-live', 'polite')
   })
 })
+
+// ─── START-UEBERARBEITUNG U4 + U6 (David 24.9.2026, FAHRPLAN-WERKBANK-UMBAU §5d-bis)
+// U4: «Häufig gebraucht» unter den Kacheln — Kacheln behalten ab `lg` ihre Höhe
+// (Token `start-kachel-breit`, 18rem = 288 px), die Zeile füllt den Rest, und
+// die linke Spalte endet bündig mit der Fläche Schnellwerkzeug, in allen drei
+// Varianten. U6: Gruss und Datum auf einer Grundlinie, Linie über die volle
+// Breite. ROT ZU BEKOMMEN: in `pages/Startseite.tsx` die Spalte zurück auf das
+// blosse Kachelfeld stellen (Kacheln gestreckt, keine Zeile) bzw. in
+// `SuchBlock.tsx` den Breiten-Deckel `max-w-[54rem]` zurücksetzen.
+const haeufig = (page: Page) => page.locator('section').filter({ has: page.getByRole('heading', { name: 'Häufig gebraucht' }) })
+const schnell = (page: Page) => page.locator('section:has([role=tabpanel])')
+const unten = async (l: ReturnType<Page['locator']>) => { const b = (await l.boundingBox())!; return Math.round(b.y + b.height) }
+
+test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
+  for (const breite of [1024, 1440]) {
+    test(`@${breite}: Kacheln 288 px, «Häufig gebraucht» endet bündig mit dem Schnellwerkzeug — alle Varianten`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/')
+      for (const wahl of ['Frist', 'Verzugszins', 'Verjährung']) {
+        await page.getByRole('tab', { name: wahl, exact: true }).click()
+        const kacheln = await page.locator('.lc-start-zelle').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().height)))
+        expect(kacheln, `${wahl}: Kachelhöhen`).toEqual([288, 288, 288, 288])
+        expect(Math.abs(await unten(haeufig(page)) - await unten(schnell(page))), `${wahl}: Unterkanten`).toBeLessThanOrEqual(1)
+      }
+    })
+  }
+
+  test('@390: einspaltig Kacheln → Häufig gebraucht → Schnellwerkzeug', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 })
+    await page.goto('/')
+    const oben = async (l: ReturnType<Page['locator']>) => (await l.boundingBox())!.y
+    const feldUnten = await unten(page.locator('.lc-start-feld'))
+    expect(await oben(haeufig(page))).toBeGreaterThan(feldUnten)
+    expect(await oben(schnell(page))).toBeGreaterThan(await unten(haeufig(page)))
+  })
+
+  test('Direktlinks in den Leser, Ziel aus dem Register (StGB → STGB), Tastatur', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/')
+    const links = haeufig(page).getByRole('link')
+    await expect(links).toHaveText(['BV', 'ZGB', 'OR', 'StGB', 'ZPO', 'StPO', 'SchKG'])
+    await expect(haeufig(page).getByRole('link', { name: /^StGB – Schweizerisches Strafgesetzbuch$/ })).toHaveAttribute('href', '/gesetze/bund/STGB')
+    await links.nth(1).focus()
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL(/\/gesetze\/bund\/ZGB$/)
+  })
+
+  test('U6: Gruss und Datum auf einer Grundlinie @1440, untereinander @390; Linie über die volle Breite', async ({ page }) => {
+    for (const breite of [1440, 390]) {
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/')
+      const kopf = page.locator('main h1').first().locator('..')
+      const [h1, datum, k, a, f] = await Promise.all([page.locator('main h1').boundingBox(), kopf.locator('p').first().boundingBox(),
+        kopf.boundingBox(), page.locator('aside[aria-label="Arbeitsplatz"]').boundingBox(), page.locator('.lc-start-feld').boundingBox()])
+      if (breite === 1440) {
+        // Grundlinie: beide Zeilen enden unten gleich (items-baseline, ±3 px).
+        expect(Math.abs((h1!.y + h1!.height) - (datum!.y + datum!.height))).toBeLessThanOrEqual(3)
+        expect(datum!.x).toBeGreaterThan(h1!.x + h1!.width)
+        // Linie = Unterkante des Kopfs, von der Kachelspalte bis zum Rand des Schnellwerkzeugs.
+        expect(Math.round(k!.x)).toBe(Math.round(f!.x))
+        expect(Math.round(k!.x + k!.width)).toBe(Math.round(a!.x + a!.width))
+      } else {
+        expect(datum!.y).toBeGreaterThanOrEqual(h1!.y + h1!.height - 1)
+      }
+    }
+  })
+})
