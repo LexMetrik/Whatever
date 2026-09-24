@@ -1067,7 +1067,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             ev.preventDefault();
             oeffneMenue({ path: null, x: ev.clientX, y: ev.clientY });
           }}
-          className="relative flex min-w-0 flex-1 items-stretch gap-1 overflow-x-auto lc-reiter-scroll border-l border-rule-soft pl-1">
+          className="relative flex min-w-0 flex-1 items-stretch gap-1 overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
           {sichtbar.map((t) => {
             const k = tabSchluessel(t.path);
             const nr = ordnung.findIndex((x) => tabSchluessel(x.path) === k) + 1;

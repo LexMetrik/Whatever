@@ -214,7 +214,11 @@ export function Reiter({
   // bis 14ch lesbar und kürzt erst darüber; was dann nicht mehr passt, zieht
   // wie bisher ins Blatt (`useReiterFenster`). Die Rechnung ist rein
   // (Zeichenzahl), die Messung der Kanten bleibt die des Streifens.
-  const kernBoden = `${Math.min(Math.max(kern.length + 1, 6), 14)}ch`;
+  // AM ANSCHLAG (`ohneKopf`: ein einziger Reiter, und er passt trotzdem
+  // nicht) gilt wieder der alte Boden 6ch — sonst sprengt ein langer Name
+  // @320 den Streifen (gemessen 24.9.2026, `kein-abschnitt.e2e.ts` R8:
+  // «Rechtsprechung» 174 px, ZH-211.11 mit Lesestellung 238 px in 171 px).
+  const kernBoden = ohneKopf ? '6ch' : `${Math.min(Math.max(kern.length + 1, 6), 14)}ch`;
   const reiterBoden = fest || kopf ? undefined
     : `calc(${kernBoden} + 1.75rem + 0.875rem${stelleReserviert ? ' + var(--app-reiter-stelle-b) + 0.25rem' : ''})`;
   return (
