@@ -55,22 +55,17 @@ Belege: `referenz-ci.md` §Merge-Queue.
 - **Queue-Abfrage** (QUEUED · AWAITING_CHECKS · MERGEABLE · UNMERGEABLE ·
   LOCKED):
   `gh api graphql -f query='{repository(owner:"LexMetrik",name:"Whatever"){mergeQueue(branch:"main"){entries(first:10){nodes{state position pullRequest{number}}}}}}'`
-  — `gh pr view --json` kennt kein `mergeQueueEntry`, und `autoMergeRequest`
-  ist für einen eingereihten PR `null`: daraus nie «aus der Queue gefallen»
-  folgern, nur die GraphQL-Abfrage entscheidet (Beleg #1066, 24.9.2026).
+  — `autoMergeRequest` ist für eingereihte PRs `null`, `gh pr view` kennt
+  keinen Queue-Eintrag: nur diese Abfrage entscheidet (#1066, 24.9.2026).
 - **Parallele Nachträge an dieselbe Fahrplan-Stelle** kollidieren: der erste
-  gelandete PR macht alle übrigen CONFLICTING (Beleg 24.9.2026: nach #1069
-  waren #1068/#1070/#1071 nur an FAHRPLAN-WERKBANK-UMBAU.md §5d-bis im
-  Konflikt, je ein Nachzug-Lauf). Bei mehreren gleichzeitig offenen PRs
+  gelandete PR macht alle übrigen CONFLICTING (#1068/#1070/#1071 an
+  FAHRPLAN-WERKBANK-UMBAU.md §5d-bis, 24.9.2026). Bei mehreren offenen PRs
   eines Dachs: je Nachtrag eine Posten-Datei (`plan:posten -- neu`) statt
   Fahrplan-Absatz, oder der Orchestrator trägt gesammelt nach der Landung ein.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
-  einreihen — nie blind. Beim Grund `merge_conflict` (Timeline-Ereignis
-  `RemovedFromMergeQueueEvent`) reiht der Nachzug-Push den PR NICHT wieder
-  ein: nach Merge von origin/main + Push ausdrücklich `gh pr merge --squash
-  --auto <nr>` und per Queue-Abfrage bestätigen (Beleg #1070, 24./25.9.2026:
-  22:01 UTC ausgeworfen, nach Nachzug 1f01f6d68 ~1 h CLEAN ausserhalb der Queue).
+  einreihen — nie blind. Grund `merge_conflict`: der Nachzug-Push reiht NICHT
+  wieder ein — `gh pr merge --squash --auto <nr>`, Queue-Abfrage (#1070, 25.9.).
 - **Nie pushen, solange der PR in der Queue steht:** erst austragen, dann
   pushen, dann neu einreihen — sonst läuft die Queue mit dem ALTEN Head
   weiter und der Push löst keinen PR-Lauf aus (#1021, 23.9.2026).
