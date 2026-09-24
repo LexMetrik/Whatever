@@ -39,6 +39,12 @@ export type ZpoInput = {
   // Schlichtungs-/summarischen Verfahren auf die Nichtgeltung des Stillstands hingewiesen?
   // Fehlt der Hinweis (false), gilt der Stillstand gleichwohl. Default true.
   gerichtshinweisStillstand?: boolean;
+  // RL-20/F1-04 (Prüfung Rechtslogik 23.9.2026): Frist, die nicht vom Gericht
+  // in einem Schlichtungs-/summarischen Verfahren eröffnet wird (Preset
+  // «Arrestprosekution», Art. 279 SchKG). Die Hinweis-Regel nach Art. 145
+  // Abs. 3 ZPO (BGE 139 III 78) wird dann nicht angewandt: kein «Stillstand
+  // gleichwohl», gerechnet ohne Stillstand (sichere Seite). Default false.
+  hinweispflichtEntfaellt?: boolean;
 };
 
 // Erweitert das gemeinsame Ergebnis um die ZPO-spezifischen Eckdaten.

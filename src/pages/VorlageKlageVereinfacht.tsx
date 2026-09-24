@@ -387,7 +387,7 @@ const CONFIG: VorlagenSeitenConfig<KvAnswers> = {
   overlineFallback: 'Zivilprozess (ZPO)',
   overlineZusatz: ({ a }) => (a.gerichtsKanton === 'BS' ? 'Basel-Stadt' : `Kanton ${a.gerichtsKanton}`),
   titel: 'Klage im vereinfachten Verfahren',
-  intro: 'Erstellt die Klage nach Art. 244 ZPO aus festen Bausteinen: Rechtsbegehren, Streitgegenstand, freiwillige strukturierte Begründung, Beilagen mit Klagebewilligung — inkl. Gerichts-Adressat für alle Kantone (BS: Zivil-/Arbeitsgericht-Routing nach GOG BS, fachliche Abnahme ausstehend), Kostenfreiheits-Prüfung und Klagefrist-Berechnung mit Gerichtsferien. Ohne Sprachmodell.',
+  intro: 'Erstellt die Klage nach Art. 244 ZPO aus festen Bausteinen: Rechtsbegehren, Streitgegenstand, freiwillige strukturierte Begründung, Beilagen mit Klagebewilligung — Gerichts-Adressat aller Kantone (BS: Routing nach GOG BS, fachliche Abnahme ausstehend), Kostenfreiheits-Prüfung und Klagefrist-Berechnung mit Gerichtsferien. Ohne Sprachmodell.',
   badge: 'Papierform · unterschreiben · im Doppel',
   fussnote: NICHT_GESPEICHERT_HINWEIS,
   eingabeInhalt: (ctx, schritt) => <EingabeSchritt ctx={ctx} schritt={schritt} />,

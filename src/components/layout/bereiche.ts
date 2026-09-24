@@ -111,7 +111,9 @@ export const REG_HOVER_FLAECHE_BLATT: Record<Register, string> = {
 // Deckkraft, er färbt nicht mehr ein. Vier Tailwind-Klassennamen, die nur noch
 // dafür da waren, im Purge zu überleben. §17-Gegengewicht: gestrichen statt
 // bewacht.
-/** Leichte Tönung der Fläche in der Registerfarbe — der aktive Reiter. */
-export const REG_TON: Record<Register, string> = {
-  g: 'bg-reg-g/10', r: 'bg-reg-r/10', m: 'bg-reg-m/10', w: 'bg-reg-w/10',
-};
+// ── W2·29-MARKE (24.9.2026) · RÜCKBAU `REG_TON` ─────────────────────────────
+// Die Tönung des aktiven Reiters (`bg-reg-*/10`) hatte mit der Reiterleiste
+// «Echte Registerreiter» keinen Konsumenten mehr: der aktive Reiter trägt jetzt
+// die Seitenfläche `paper` und verschmilzt mit der Seite, die Registerfarbe
+// steht als Strich OBEN an jedem Reiter in voller Deckkraft (`Reiter.tsx`).
+// Die 60-%-Deckkraft aus dem Absatz darüber ist damit ebenfalls Geschichte.

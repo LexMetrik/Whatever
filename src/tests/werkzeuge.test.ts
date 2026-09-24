@@ -7,7 +7,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   ERLASS_WERKZEUGE, ARTIKEL_WERKZEUGE, werkzeugeFuerNorm, massgebendeErlasse,
-  werkzeugeFuerArtikel, werkzeugeFuerZitate, artikelWerkzeugGruppen,
+  werkzeugeFuerArtikel, werkzeugeFuerZitate, artikelWerkzeugGruppen, vergleicheArtikel,
 } from '../lib/normtext/werkzeuge';
 import { ALLE_KARTEN } from '../lib/startseiteConfig';
 import { ERLASS_REGISTER } from '../lib/normtext/register';
@@ -86,9 +86,15 @@ describe('Artikel↔Werkzeug-Map — Konsistenz (V1)', () => {
       for (let j = i + 1; j < ARTIKEL_WERKZEUGE.length; j++) {
         const a = ARTIKEL_WERKZEUGE[i], b = ARTIKEL_WERKZEUGE[j];
         if (a.erlass !== b.erlass) continue;
-        if (a.bis < b.von || b.bis < a.von) continue; // disjunkt
+        // Grenzen suffix-exakt (24.9.2026, Kanten 257d/257f: zwei Einzel-Artikel
+        // derselben Hauptnummer sind disjunkt; vorher verglich das Tor nur
+        // Hauptnummern und hätte sie als Doppel gemeldet). Dieselbe Ordnung wie
+        // die Zuordnung selbst (`vergleicheArtikel`, §5).
+        const [alo, ahi] = [a.vonArtikel ?? String(a.von), a.bisArtikel ?? String(a.bis)];
+        const [blo, bhi] = [b.vonArtikel ?? String(b.von), b.bisArtikel ?? String(b.bis)];
+        if (vergleicheArtikel(ahi, blo) < 0 || vergleicheArtikel(bhi, alo) < 0) continue; // disjunkt
         const geteilt = a.werkzeuge.filter((w) => b.werkzeuge.includes(w));
-        if (geteilt.length > 0) kollisionen.push(`${a.erlass} [${a.von}-${a.bis}]∩[${b.von}-${b.bis}]: ${geteilt.join(',')}`);
+        if (geteilt.length > 0) kollisionen.push(`${a.erlass} [${alo}-${ahi}]∩[${blo}-${bhi}]: ${geteilt.join(',')}`);
       }
     }
     expect(kollisionen).toEqual([]);

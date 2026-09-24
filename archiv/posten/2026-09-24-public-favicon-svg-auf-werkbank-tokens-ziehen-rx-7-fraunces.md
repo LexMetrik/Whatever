@@ -5,3 +5,5 @@ anlass: Nebenfund Design-Entwurf 22.9.2026 (Entscheid David «alle aufnehmen»),
 -->
 
 public/favicon.svg trägt weiter rx="7" (Radius), font-family Fraunces (nicht mehr im Schriftkanon) und feste Hex-Werte #1A1A17/#F7F4EC statt Werte aus design/tokens.json. N1.
+
+**Erledigt 2026-09-24:** W2·29-MARKE: Favicon aus dem Designsystem (Radius 0, § als Archivo-Pfad); Hex bleibt, weil ein <img>/Favicon keine CSS-Variablen auflöst
