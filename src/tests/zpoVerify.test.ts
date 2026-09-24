@@ -144,9 +144,12 @@ describe('Verifikation: kantonale Feiertage (Art. 142 Abs. 3)', () => {
     expect(istFeiertag(d('2025-12-26'), 'GE')).toBe(false);
     expect(istFeiertag(d('2025-12-26'), 'JU')).toBe(false);
   });
-  it('UR/AR/AI-Bedingung (Fn. 1/7/9): kein Stephanstag, wenn Weihnachten Mo/Fr', () => {
+  it('AR/AI-Bedingung (Fn. 7/9): kein Stephanstag, wenn Weihnachten Mo/Fr', () => {
     // 25.12.2023 = Mo und 25.12.2026 = Fr → entfällt; 25.12.2025 = Do → gilt.
-    expect(istFeiertag(d('2023-12-26'), 'UR')).toBe(false);
+    // UR bis 24.9.2026 hier mitgeprüft (BJ Fn. 1); seit RL-22 unbedingt — UR
+    // Ruhetagsgesetz Art. 9 lit. b (RB 70.1421) kennt keinen Vorbehalt (R1-03).
+    expect(istFeiertag(d('2023-12-26'), 'AI')).toBe(false);
+    expect(istFeiertag(d('2023-12-26'), 'UR')).toBe(true);
     expect(istFeiertag(d('2026-12-26'), 'AR')).toBe(false);
     expect(istFeiertag(d('2025-12-26'), 'AI')).toBe(true);
     expect(istFeiertag(d('2023-12-26'), 'ZH')).toBe(true); // unbedingte Kantone unberührt
