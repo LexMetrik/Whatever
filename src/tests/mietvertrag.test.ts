@@ -197,7 +197,10 @@ describe('Mietvertrag – Review-Regressionen 5.6.2026', () => {
   it('MT-22 exakte Kalenderjahr-Befristung erfüllt die Index-/Staffel-Mindestdauer (kein 365.25-Artefakt)', () => {
     const fuenf = basis({ mietzinsModell: 'index', indexBasisMonat: 'Mai 2026', befristet: true, beginn: '2026-10-01', befristetBis: '2031-10-01' });
     expect(pruefeMvGates(fuenf).blocker).toEqual([]);
-    expect(pruefeMvGates({ ...fuenf, befristetBis: '2031-09-30' }).blocker.join()).toMatch(/fünf Jahre/);
+    // VB-02 (W2·30-RL-W1, Q7 Nr. 7): 1.10.2026–30.9.2031 sind bereits volle
+    // fünf Jahre (Art. 269b OR); erst 29.9.2031 unterschreitet sie.
+    expect(pruefeMvGates({ ...fuenf, befristetBis: '2031-09-30' }).blocker).toEqual([]);
+    expect(pruefeMvGates({ ...fuenf, befristetBis: '2031-09-29' }).blocker.join()).toMatch(/fünf Jahre/);
     const drei = basis({ mietzinsModell: 'staffel', befristet: true, beginn: '2027-03-01', befristetBis: '2030-03-01', staffeln: [{ ab: '2028-03-01', erhoehungCHF: '50' }] });
     expect(pruefeMvGates(drei).blocker).toEqual([]);
   });
