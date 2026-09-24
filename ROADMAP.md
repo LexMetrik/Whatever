@@ -591,8 +591,8 @@ Umschichtung 20.9.2026 (2)):*
   zweites Schema-Modell (§5), PDF und DOCX aus demselben Assemble-Ergebnis, Golden byte-gleich.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
-- [ ] **Werkbank-Umbau Schritt 5: die 20 Rechner, einzeln** *(`W2·29-WERKBANK-RECHNER`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-RECHNER · status: ready · blocker: null · dep: [W2·29-WERKBANK-VORLAGEN] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [~] **Werkbank-Umbau Schritt 5: die 20 Rechner, einzeln** *(`W2·29-WERKBANK-RECHNER`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-RECHNER · status: wip · blocker: null · dep: [W2·29-WERKBANK-VORLAGEN] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock und Exportleiste; die 20 Rechner
   ziehen einzeln um. Grenzen: **Rechenfälle werden nie abstrahiert (§1)** — lieber 20 Handgriffe
   als eine Fabrik, die zwei rechtlich verschiedene Fälle gleich behandelt; Engine-Tests

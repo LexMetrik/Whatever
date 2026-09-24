@@ -387,6 +387,23 @@ geteilt → Änderung nur per Prop.
 **Nicht bauen:** «44», Status-Zeile «Ausgabe als PDF und Word» (Testament: kein DOCX),
 Seitenleisten-Baum, Board-Hex (Token gilt), gemeinsame Exportleiste (erst RECHNER).
 
+## §5e · RECHNER — Bauplan in Scheiben (Planung 24.9.2026)
+
+**Befund** (lex-recherche Opus, 24.9.): Ergebnisblock, -Anzeige, Eckdaten, Platzhalter, Stepper
+sind schon je EINMAL geteilt (auch ZustaendigkeitForm nutzt den `Stepper` aus `vorlagen/ui.tsx`);
+neu sind nur Kopf und eine gemeinsame Exportzeile (heute 25× inline). Kein Risikopfad.
+- **R0** Ratsche `rechner-flaechen-ratsche.test.tsx` (20 Routen, Erst-Render). **R1** `RechnerKopf`
+  = Aufsatz auf `WerkzeugKopf`; Overline ohne «· Rechner» (Krume nennt es, `w224-ga-kopf`);
+  `etikett` frei für RL-12. Deklarierte Optik (Gegenprüfung 24.9.): H1 + Kurzbeschrieb serif wie die
+  Vorlagen (§e «getragene Titel»), `&` ohne `sansAmp` (nur für die Display-Stimme), Abstand Kopf→Karte
+  24 statt 32 px (Seiten-`space-y-6`, wie Vorlagen). *Gebaut 24.9.*
+- **R2** Ergebnisblock-Optik (Abschnitts-Strich `--reg-w`, Fristende-Kachel) + Posten Kontrast/Kachel-Höhen.
+- **R3** `ErgebnisExport` (Aktenzeichen → PDF → ICS → Teilen) für die 24 Formulare; Ratsche per Beispiel-Permalink.
+- **R4** Auswahl-Kacheln ein Look · `vorlagen/ui.tsx` an neutralen Ort · `Card`. **R5** Sonderseiten
+  (Tagerechner, Board, Inkasso, Zuständigkeit), Inventar 4.3/4.4 nachführen.
+- **Nicht bauen:** rechte Normen-/Annahmen-Spalte des Boards, Streichung von PDF/Teilen/Aktenzeichen
+  (Board ist Richtung; Inventar 4.3 R3–R5 gilt).
+
 ## §5d · GRUNDTON + START — aufklappende Startseite (Entscheide David 23.9.2026)
 
 Prototyp (klickbar): https://claude.ai/artifact/JnPeKNP1cu2TRhjErP8vck · volle Spec mit Davids
