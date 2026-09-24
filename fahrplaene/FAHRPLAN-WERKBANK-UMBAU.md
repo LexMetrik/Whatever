@@ -583,6 +583,11 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   mit Skizze «Kopfzeile ruhig»): Gruss links, Datum rechts auf derselben Grundlinie, etwas kleiner als heute;
   darunter eine feine Linie über die volle Breite (Kacheln + Schnellwerkzeug; heute endet sie über den Kacheln),
   weniger Leerraum über den Kacheln. Inhalt, Zufallswahl und Inline-Skript (CSP-Hash) bleiben.
+- **U5 Kantone-Karte treffbar** (David 24.9. «nimm die kantone-karte auch gleich mit»): Kantone-Spalte der Wahl
+  breiter (1 : 1.25 : 1), `SchweizKarte kompakt` mit unsichtbarer Trefferfläche für kleine Kantone; Mausklick auf
+  BS/ZG bei 1024 + 1280 per e2e belegt. Andere Karten-Nutzer unverändert (Prop Standard aus).
+- **U7 «Häufig gebraucht» gefüllt** (David 24.9. «sehr leer», Auswahl «Kürzel + voller Titel»): je Erlass Kürzel,
+  ausgeschriebener Titel und SR-Nummer aus dem Erlass-Register, zweispaltig.
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
