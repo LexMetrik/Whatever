@@ -75,7 +75,7 @@ export const SG_SCHWELLEN = {
 // Offene Verifikationen (in UI offenlegen, nicht raten) – Abschnitt 18 der Anweisung
 export const SG_OFFENE_VERIFIKATIONEN: string[] = [
   'Kantonale Verweise (GOG BS SG 154.100, EG ZPO SG 221.100, GGR SG 154.810): §-Nummern noch nicht an der amtlichen Fassung bestätigt – verlinkt wird nur die Erlass-Seite.',
-  'Behördenadressen: amtlich verifiziert am Staatskalender BS (Stand 5.6.2026) – bei Umzug/Sanierung nachführen; andere Kantone sind noch nicht hinterlegt (Registry lib/vorlagen/behoerden.ts).',
+  'Behördenadressen: am Staatskalender BS nachgeprüft (Stand 5.6.2026) – bei Umzug/Sanierung nachführen; andere Kantone sind noch nicht hinterlegt (Registry lib/vorlagen/behoerden.ts).',
   'Randtitel «Art. 135 Ziff. 2 OR» vs. «Abs. 2»: Bezeichnung in amtlichen Formularen uneinheitlich.',
   'Bezifferung bereits im Schlichtungsstadium ist vertretbare Auslegung (streng erst für die Klage); unbezifferte Begehren nur über den Art.-85-Pfad.',
 ];

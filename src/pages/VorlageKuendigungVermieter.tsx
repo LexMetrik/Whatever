@@ -54,6 +54,7 @@ export function VorlageKuendigungVermieter() {
           Etikett trägt den Tor-Griff `data-formgate` (QS-UI 8b Teil 2) wie im
           Wizard-Kopf; Rückweg, Einleitung und Norm-Chips wortgleich. */}
       <WerkzeugKopf overline={`${card?.rechtsgebiet ?? 'Miete'} · Checkliste`}
+        status={card?.status}
         titel="Kündigung durch Vermieter:in"
         etikett={<span data-formgate className="lc-badge lc-badge-warn">Checkliste — kein Export</span>}
         vorspann={(

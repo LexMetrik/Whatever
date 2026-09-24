@@ -110,7 +110,7 @@ function EingabeSchritt({ ctx: { a, set }, schritt }: { ctx: SeiteCtx<KvAnswers>
     case 'materie': return (
       <div className="space-y-4">
         {/* Kantonsausbau 10.6.2026 (Auftrag David): Gericht je Kanton.
-            BS = abgenommenes GOG-Routing; übrige Kantone über die zweifach
+            BS = GOG-Routing (Entwurf, fachliche Abnahme ausstehend); übrige Kantone über die zweifach
             geprüfte Recherche-Schicht (KvGerichtWahl) bzw. Handeingabe. */}
         {/* BS-Adressat routing-abhängig (§ 71 GOG BS): Arbeitsgericht bzw.
             Zivilgericht — die Schwester-Masken adressieren fest das
@@ -387,7 +387,7 @@ const CONFIG: VorlagenSeitenConfig<KvAnswers> = {
   overlineFallback: 'Zivilprozess (ZPO)',
   overlineZusatz: ({ a }) => (a.gerichtsKanton === 'BS' ? 'Basel-Stadt' : `Kanton ${a.gerichtsKanton}`),
   titel: 'Klage im vereinfachten Verfahren',
-  intro: 'Erstellt die Klage nach Art. 244 ZPO aus festen Bausteinen: Rechtsbegehren, Streitgegenstand, freiwillige strukturierte Begründung, Beilagen mit Klagebewilligung — inkl. Gerichts-Adressat für alle Kantone (BS: abgenommenes Zivil-/Arbeitsgericht-Routing), Kostenfreiheits-Prüfung und Klagefrist-Berechnung mit Gerichtsferien. Ohne Sprachmodell.',
+  intro: 'Erstellt die Klage nach Art. 244 ZPO aus festen Bausteinen: Rechtsbegehren, Streitgegenstand, freiwillige strukturierte Begründung, Beilagen mit Klagebewilligung — inkl. Gerichts-Adressat für alle Kantone (BS: Zivil-/Arbeitsgericht-Routing nach GOG BS, fachliche Abnahme ausstehend), Kostenfreiheits-Prüfung und Klagefrist-Berechnung mit Gerichtsferien. Ohne Sprachmodell.',
   badge: 'Papierform · unterschreiben · im Doppel',
   fussnote: NICHT_GESPEICHERT_HINWEIS,
   eingabeInhalt: (ctx, schritt) => <EingabeSchritt ctx={ctx} schritt={schritt} />,
@@ -420,7 +420,7 @@ const CONFIG: VorlagenSeitenConfig<KvAnswers> = {
   pruefenFuss: ({ a }) => (
     <p className="text-xs text-ink-500">
       {a.gerichtsKanton === 'BS'
-        ? 'Basel-Stadt: Spruchkörper-Routing amtlich abgenommen (GOG BS).'
+        ? 'Basel-Stadt: Spruchkörper-Routing nach GOG BS (Entwurf, fachliche Abnahme ausstehend) — Angaben vor Einreichung prüfen.'
         : `Kanton ${a.gerichtsKanton}: Gerichtsadresse aus zweifach geprüfter Recherche (fachliche Abnahme ausstehend); Spruchkörper und kantonale Besonderheiten richten sich nach kantonalem Recht — Angaben vor Einreichung prüfen.`}
     </p>
   ),

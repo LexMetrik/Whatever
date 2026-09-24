@@ -76,7 +76,7 @@ export const KARTEN_FRISTEN: Record<string, CalculatorCard> = {
     id: 'betreibungskosten', modus: 'rechner', art: 'betrag', rechtsgebiet: 'Betreibung & Konkurs (SchKG)',
     rechtsbereich: 'privat',
     title: 'Betreibungskosten (GebV SchKG)',
-    description: 'Amtliche Gebühren je Betreibungsschritt nach der bundesrechtlich abschliessenden GebV SchKG (Stand 1.1.2026, Tarif Wert für Wert amtlich verifiziert): Zahlungsbefehl mit Ausfertigungen und Zustellversuchen, Pfändung (auch fruchtlos), Verwertung mit Erlös-Kappung, Einzahlung/Überweisung – als Beträge; gerichtliche Entscheidgebühren (z. B. Rechtsöffnung, Art. 48) ehrlich als Rahmen. Auslagen und die Überwälzung auf den Schuldner (Art. 68 SchKG) als Hinweis.',
+    description: 'Amtliche Gebühren je Betreibungsschritt nach der bundesrechtlich abschliessenden GebV SchKG (Stand 1.1.2026, Tarif Wert für Wert an der amtlichen Fassung verifiziert, fachlich nicht abgenommen): Zahlungsbefehl mit Ausfertigungen und Zustellversuchen, Pfändung (auch fruchtlos), Verwertung mit Erlös-Kappung, Einzahlung/Überweisung – als Beträge; gerichtliche Entscheidgebühren (z. B. Rechtsöffnung, Art. 48) ehrlich als Rahmen. Auslagen und die Überwälzung auf den Schuldner (Art. 68 SchKG) als Hinweis.',
     status: 'entwurf',
     norms: [
       { label: 'Art. 16 GebV SchKG', url: fedlexUrl('GebVSchKG', '16'), verified: false },
@@ -134,7 +134,12 @@ export const KARTEN_FRISTEN: Record<string, CalculatorCard> = {
       { label: 'Kündigung, Termine & Zahlungsverzug', status: 'entwurf' },
       { label: 'Kündigungsschreiben Mieter:in (Vorlage)', status: 'entwurf' },
       { label: 'Vermieter-Kündigung: Checkliste amtliches Formular', status: 'entwurf' },
-      { label: 'Anfechtung & Erstreckung', status: 'geplant' },
+      // R5-07 (RL-12, 24.9.2026): war «geplant», obwohl gebaut — mietrecht.ts
+      // abschluss() rechnet anfechtungBis/erstreckungBis (Art. 273/272a OR),
+      // MietrechtForm zeigt «Anfechtung/Erstreckung bis» bei Vermieter-
+      // Kündigung (Tests mietrecht.test.ts «Anfechtung und Erstreckung»).
+      // Offenlegung des Baustands (§8), KEINE Abnahme (§7).
+      { label: 'Anfechtung & Erstreckung', status: 'entwurf' },
     ],
     description: 'Kündigungstermine und -fristen für Wohn- und Geschäftsräume – mit Termin-Hierarchie, Formprüfung und ausserordentlichen Kündigungen; Direkteinstieg zum Kündigungsschreiben (Mieter:in) und zur Vermieter-Checkliste (amtliches Formular).',
     status: 'entwurf',
@@ -239,7 +244,7 @@ export const KARTEN_FRISTEN: Record<string, CalculatorCard> = {
     id: 'erbrecht-fristen', modus: 'rechner', art: 'frist', rechtsgebiet: 'Erbrecht',
     rechtsbereich: 'privat',
     title: 'Erbrecht – Fristen',
-    description: 'Ausschlagung, öffentliches Inventar sowie Ungültigkeits-, Herabsetzungs- und Erbschaftsklage – 15 Tatbestände mit exaktem Fristbeginn (Art. 521/533/567 ff. ZGB).',
+    description: 'Ausschlagung, öffentliches Inventar sowie Ungültigkeits-, Herabsetzungs- und Erbschaftsklage – 15 Tatbestände mit dem gesetzlichen Fristbeginn je Tatbestand (Art. 521/533/567 ff. ZGB).',
     // Quick-Win 1 (bibliothek/recherche/erbrecht-ausbau.md), gebaut 6.6.2026;
     // Engine src/lib/erbFristen.ts, Normen am ZGB-Cache verifiziert.
     status: 'entwurf',

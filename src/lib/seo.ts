@@ -170,6 +170,19 @@ export function katalogRouten(): string[] {
   return [...kartenProPfad().keys()];
 }
 
+/** Die Karte, die einen Routen-Pfad vertritt — DIESELBE Zuordnung wie Titel,
+ *  Beschreibung und Canonical (`kartenProPfad`). RL-12 PR 2 (Befund R3-06):
+ *  der Werkzeug-Kopf liest hieraus den Prüfstand, statt einen zweiten Status
+ *  zu führen (§5). Ein Schrägstrich am Ende zählt nicht; unbekannter Pfad →
+ *  `undefined` (der Kopf rät dann keinen Status). Die Zuordnung ist statisch
+ *  (Katalog), darum einmal gebaut und gehalten. */
+let kartenCache: Map<string, CatalogItem> | undefined;
+export function karteFuerPfad(pfad: string): CatalogItem | undefined {
+  const ohneSlash = pfad.length > 1 && pfad.endsWith('/') ? pfad.slice(0, -1) : pfad;
+  kartenCache ??= kartenProPfad();
+  return kartenCache.get(ohneSlash);
+}
+
 export function prerenderRouten(): string[] {
   return [...Object.keys(STATISCHE_SEITEN), ...katalogRouten()];
 }
