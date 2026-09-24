@@ -108,10 +108,15 @@ describe('RL-18 / F2-03 — Zustellung in den Betreibungsferien wirkt erst am er
     expect(r.diesAdQuem).toBe('12.01.2026'); // 10. Tag So 11.1. → Mo 12.1.
   });
 
-  it('Konkursandrohung in den Sommerferien: 20.7.2026 → Konkursbegehren frühestens 21.08.2026', () => {
+  // RL-18 Nachzug (Gegenprüfung #2): Wartefrist → richtungssicher das spätere
+  // Datum. Hauptlesart (Tag 1 = Sa 1.8.) ergäbe Ablauf Do 20.8., frühestens Fr
+  // 21.8.; Ereignistag-Lesart (Wirkung 1.8., Tag 1 = So 2.8.) Ablauf Fr 21.8.,
+  // Folgetag Sa 22.8. → Mo 24.8.2026. Ausgewiesen: 24.08.2026, 21.08.2026 offen.
+  it('Konkursandrohung in den Sommerferien: 20.7.2026 → Konkursbegehren frühestens 24.08.2026 (21.08.2026 offengelegt)', () => {
     const r = berechneSchkgFrist(base({ ereignis: '2026-07-20', laenge: 20, fristnatur: 'wartefrist', ausloeser: 'Zustellung Konkursandrohung' }));
-    expect(r.diesAQuo).toBe('01.08.2026');
-    expect(r.diesAdQuem).toBe('21.08.2026');
+    expect(r.diesAQuo).toBe('02.08.2026');
+    expect(r.diesAdQuem).toBe('24.08.2026');
+    expect(r.warnungen.find((w) => w.startsWith('Zählweise'))).toContain('21.08.2026');
   });
 
   it('Fristenspiegel A.2 erbt die Regel: ZB 8.4.2026 → RV 22.4., Fortsetzung frühestens 4.5.2026', () => {
