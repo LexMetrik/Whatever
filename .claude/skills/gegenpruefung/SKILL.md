@@ -128,6 +128,11 @@ teils einen anderen Baum (meldete migrierte Seiten als «nicht migriert»,
 Testzahl eines älteren Stands) — ein Verdikt ohne SHA gilt als nicht erfolgt
 (§14.7).
 
+**David-Entscheide im Wortlaut:** Stützt sich der Bau auf einen Entscheid
+Davids, zitiert der Prüfauftrag Wortlaut, Datum und Quelle (Nutzer-Turn bzw.
+Fahrplan-§) — der Prüfer sah ihn am 23.9.2026 (START S1) nur als Paraphrase
+des Koordinators und konnte ihn nicht gegenlesen.
+
 ## Modus wählen
 
 Sieh dir die geänderten Risiko-Dateien an (die rote Tor-Meldung listet sie):

@@ -90,8 +90,11 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
    `npm run gegenpruefung:ok`); `check:gegenpruefung` blockiert das Gate sonst.
 3. Verhaltensändernd ⇒ golden byte-gleich.
 4. Status-Marker gesetzt (CLAUDE.md §8).
-5. **Plan zurückgeschrieben:** `plan:set -- <id> status=done` + `check:plan`.
-6. **Nur wenn Jules oder Gemini beteiligt war:** Messwerte in
+5. **Regeländerung zieht ihre Kurzfassungen mit:** wer eine Regel ändert,
+   greppt alle Stellen, die sie zitieren (Reglement, `.claude/rules/*`,
+   Skills) — GRUNDTON übersah 23.9.2026 `rules/design.md` «Alle Radien 0».
+6. **Plan zurückgeschrieben:** `plan:set -- <id> status=done` + `check:plan`.
+7. **Nur wenn Jules oder Gemini beteiligt war:** Messwerte in
    `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5 nachtragen
    (`npm run fremdagenten:messung` für Jules-Quote/Dauer; Gemini echt/Schein
    von Hand ins Register) und Rückbau-Schwellen §3 prüfen.
