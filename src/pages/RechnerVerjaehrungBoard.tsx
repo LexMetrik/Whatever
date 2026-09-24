@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Card } from '../components/ui/Card';
 import { RechnerKopf } from '../components/layout/RechnerKopf';
+import { AbschnittKopf } from '../components/layout/AbschnittKopf';
 import { getCalculator } from '../lib/calculators';
 import { NormLink } from '../components/vorlagen/ui';
 import { GewaehrleistungForm } from '../components/forms/GewaehrleistungForm';
@@ -31,16 +32,12 @@ export function RechnerVerjaehrungBoard() {
       {/* 1 — Regime-Matrix (Rückgrat) */}
       <Card>
         <div className="space-y-4">
-          <div>
-            <p className="lc-overline text-brass-700">Übersicht</p>
-            <h2 className="text-h3 text-ink-900">Verjährungs-Regime im OR</h2>
-            <p className="text-body-s text-ink-600 max-w-reading mt-1">
-              Die sechs Grundregime mit relativer und absoluter Frist. Für die konkrete Berechnung
-              mit Stillstand, Unterbrechung und Einredeverzicht führt der{' '}
-              <Link to="/rechner/verjaehrung" className="text-brass-700 underline">Verjährungsrechner</Link>{' '}
-              die Allgemeinen-Teil-Mechanik (Art. 132/134/135 ff. OR).
-            </p>
-          </div>
+          <AbschnittKopf overline="Übersicht" titel="Verjährungs-Regime im OR">
+            Die sechs Grundregime mit relativer und absoluter Frist. Für die konkrete Berechnung
+            mit Stillstand, Unterbrechung und Einredeverzicht führt der{' '}
+            <Link to="/rechner/verjaehrung" className="text-brass-700 underline">Verjährungsrechner</Link>{' '}
+            die Allgemeinen-Teil-Mechanik (Art. 132/134/135 ff. OR).
+          </AbschnittKopf>
           <div className="overflow-x-auto">
             <table className="w-full text-body-s border-collapse">
               <thead>
@@ -104,10 +101,7 @@ export function RechnerVerjaehrungBoard() {
 
       {/* 2 — Gewährleistungs-Sonderfall (interaktiv, bestehende Engine) */}
       <Card>
-        <div className="mb-4">
-          <p className="lc-overline text-brass-700">Sonderfall Kauf / Werkvertrag</p>
-          <h2 className="text-h3 text-ink-900">Gewährleistung &amp; Mängelrüge</h2>
-        </div>
+        <AbschnittKopf overline="Sonderfall Kauf / Werkvertrag" titel="Gewährleistung & Mängelrüge" className="mb-4" />
         <GewaehrleistungForm />
       </Card>
     </div>
