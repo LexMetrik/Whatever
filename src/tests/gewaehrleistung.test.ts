@@ -113,14 +113,17 @@ describe('Gewährleistung – vereinbarte Fristen (Mindest-/Höchstdauern)', () 
     expect(r.verjaehrung.jahre).toBe(5);
   });
 
-  it('Übergangsrecht: Altvertrag mit kürzerer Frist, die am 1.1.2026 noch lief → 5-Jahres-Mindestdauer greift', () => {
+  // Fachänderung F5-05 (RL-06, 24.9.2026): Die Altabrede wird nach altem Recht
+  // beurteilt (Art. 1 Abs. 2 SchlT ZGB; BBl 2022 2743 Ziff. 4.2); Art. 371 Abs. 2
+  // OR a.F. war dispositiv, Art. 371 Abs. 3 OR n.F. (AS 2025 270) wirkt nicht zurück.
+  it('Übergangsrecht: Altvertrag mit kürzerer Frist, die am 1.1.2026 noch lief → Abrede bleibt wirksam (altes Recht)', () => {
     const r = berechneGewaehrleistung(base({
       vertragstyp: 'werkvertrag', vertragsdatum: '2025-06-01', objekt: 'unbeweglich',
       uebergabe: '2025-07-01', vereinbarteVerjaehrungJahre: 1,
     }));
-    expect(r.verjaehrung.vereinbartUnwirksam).toBe(true);
-    expect(r.verjaehrung.jahre).toBe(5);
-    expect(r.verjaehrung.endeISO).toBe('2030-07-01'); // Mo
+    expect(r.verjaehrung.vereinbartUnwirksam).toBe(false);
+    expect(r.verjaehrung.jahre).toBe(1);
+    expect(r.verjaehrung.endeISO).toBe('2026-07-01'); // Mi
     expect(r.warnungen.some((w) => w.includes('Übergangsrecht'))).toBe(true);
   });
 
