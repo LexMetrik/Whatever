@@ -48,9 +48,12 @@ describe('Begrüssungs-Pools', () => {
     }
   });
 
-  it('jede Tageszeit trägt genügend Abwechslung (Ausbau 8.9.2026: 30–45 je Fenster)', () => {
+  // Untergrenze 30 → 28 (David 24.9.2026 «die profanen raus», «höflich bleiben»):
+  // das Nacht-Fenster verlor seine Mundart-Kurzfragen («No wach?» u. ä.) und
+  // trägt 28; gezogen wird ohnehin aus Fenster + «immer»-Pool (≥ 30 dazu).
+  it('jede Tageszeit trägt genügend Abwechslung (Ausbau 8.9.2026, Kürzung 24.9.2026: 28–45 je Fenster)', () => {
     for (const t of TAGESZEITEN) {
-      expect(t.pool.length, `Pool ${t.id}`).toBeGreaterThanOrEqual(30);
+      expect(t.pool.length, `Pool ${t.id}`).toBeGreaterThanOrEqual(28);
       expect(t.pool.length, `Pool ${t.id}`).toBeLessThanOrEqual(45);
     }
   });
@@ -212,6 +215,21 @@ describe('Begrüssungs-Pools', () => {
     expect(GESTRICHEN.test('Der frühe Vogel fängt den Wurm.')).toBe(true);
     expect(GESTRICHEN.test('Willkommen im Paragraphendickicht.')).toBe(true);
     expect(GESTRICHEN.test('Grüezi mitenand.')).toBe(false);
+  });
+
+  it('kein Gruss ist salopp — nur höfliche Formen (David 24.9.2026 «höflich bleiben»)', () => {
+    // Du-/Kumpel-Grüsse und «wie geht's»-Fragen in allen Landessprachen; höfliche
+    // Mundart («Grüezi», «Grüessech», «Guete Morge») bleibt ausdrücklich erlaubt.
+    const SALOPP =
+      /(^|[\s,])(Hoi|Salü|Sali|Ciao|Salut|Tgau)(?=[\s.,?!]|$)|^(Morge|Tag) zäme|ça joue|ça va\?|come va|tutto bene|alles klar|^No \p{L}/iu;
+    expect(ALLE.filter((g) => SALOPP.test(g))).toEqual([]);
+    // Der Wächter kann scheitern (§6.7) — gestrichene Originale zeigen es.
+    for (const g of ['Hoi zäme.', 'Salü.', 'Ciao, tutto bene?', 'Bonjour, ça joue?', 'No wach?', 'Tgau.', 'Tag zäme.']) {
+      expect(SALOPP.test(g), g).toBe(true);
+    }
+    for (const g of ['Grüezi mitenand.', 'Grüessech, no wach?', 'Salve, benvenuti.', 'Bonjour, comment allez-vous?', 'Guete Morge zäme.']) {
+      expect(SALOPP.test(g), g).toBe(false);
+    }
   });
 
   it('NEGATIV-KONTROLLE: die Wächter greifen bei den gestrichenen Formen', () => {

@@ -81,6 +81,77 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     await expect(blatt(page)).toHaveCount(0)
   })
 
+  // START-UEBERARBEITUNG U1 (David 24.9.2026, «Drei hohe Spalten»): die
+  // Wahl-Stufe zeigt die nächste Stufe schon an. DEKLARIERTE ERGÄNZUNG — die
+  // drei neuen Wege aus der Wahl, je mit Browser-Zurück = eine Stufe.
+  test('Wahl: Rechtsgebiet direkt, Kanton über die Karte, International-Rubrik', async ({ page }) => {
+    await page.goto('/')
+    await gesetzeKachel(page).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    const gebiete = blatt(page).getByRole('list', { name: 'Rechtsgebiete des Bundes' })
+    await gebiete.getByRole('button', { name: /Privatrecht/ }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/bund\/02$/)
+    await expect(blatt(page).locator('a[href="/gesetze/bund/OR"]').first()).toBeVisible()
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+
+    await blatt(page).getByRole('button', { name: 'Zürich', exact: true }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/ZH$/)
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    // Kleine Kantone auch per Tastatur (Fokus + Enter). Den Mausklick auf BS/ZG
+    // belegt seit U5 (24.9.2026, `SchweizKarte kompakt`) der Test weiter unten.
+    await blatt(page).getByRole('button', { name: 'Basel-Stadt', exact: true }).focus()
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/BS$/)
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    await blatt(page).getByRole('button', { name: /Alle 26 Kantone/ }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/kantone$/)
+    await page.goBack()
+
+    const rubriken = blatt(page).getByRole('list', { name: 'Rubriken des internationalen Rechts' })
+    await rubriken.getByRole('button', { name: 'Menschenrechte' }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/international\/menschenrechte$/)
+    // Nur DIESE Rubrik: ihr Kopf steht, eine andere nicht.
+    await expect(blatt(page).locator('section#menschenrechte')).toBeVisible()
+    await expect(blatt(page).locator('section#asyl-migration')).toHaveCount(0)
+    await expect(blatt(page).getByRole('navigation', { name: 'Pfad im Blatt' })).toContainText('Menschenrechte')
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    await expect(rubriken).toBeVisible()
+  })
+
+  test('Wahl @1280: drei Spalten füllen die Blatthöhe', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.goto('/?blatt=gesetze')
+    const inhalt = blatt(page).locator('.lc-start-blatt-inhalt')
+    const wahl = blatt(page).locator('.lc-start-fuellt')
+    await expect(wahl).toBeVisible()
+    const [i, w] = await Promise.all([inhalt.boundingBox(), wahl.boundingBox()])
+    // Vorher (gemessen 24.9.2026 @1280): Wahl 179 px in 538 px Inhalt.
+    expect(w!.height).toBeGreaterThan(i!.height - 60)
+    const spalten = await wahl.evaluate((el) => [...el.children].map((c) => Math.round(c.getBoundingClientRect().left)))
+    expect(new Set(spalten).size).toBe(3)
+  })
+
+  // START-UEBERARBEITUNG U5 (David 24.9.2026 «nimm die kantone-karte auch
+  // gleich mit»): auf der schmalen Kantone-Spalte der Wahl (1024–1280 px) war
+  // die Karte so klein, dass kleine Kantone per Zeigerklick nicht zuverlässig
+  // trafen (Befund U1-Bau, siehe Kommentar oben bei «Kleine Kantone … per
+  // Tastatur»). ECHTER Zeigerklick statt Fokus+Enter — bei BEIDEN Breiten.
+  for (const breite of [1280, 1024]) {
+    test(`Wahl @${breite}: Kantone-Karte per Mausklick — Basel-Stadt und Zug treffen`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/?blatt=gesetze')
+      await blatt(page).getByRole('button', { name: 'Basel-Stadt', exact: true }).click()
+      await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/BS$/)
+      await page.goBack()
+      await blatt(page).getByRole('button', { name: 'Zug', exact: true }).click()
+      await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/ZG$/)
+    })
+  }
+
   test('Kantone: Landeskarte und Liste der 26, dann Erlassliste', async ({ page }) => {
     await page.goto('/?blatt=gesetze/kantone')
     await expect(blatt(page).locator('svg').first()).toBeVisible()
@@ -422,5 +493,73 @@ test.describe('Startseite · Feinschliff', () => {
     const zahl = blatt(page).getByRole('status').filter({ hasText: /Entscheide$/ })
     await expect(zahl).toHaveText(`${echte.toLocaleString('de-CH')} Entscheide`)
     await expect(zahl).toHaveAttribute('aria-live', 'polite')
+  })
+})
+
+// ─── START-UEBERARBEITUNG U4 + U6 (David 24.9.2026, FAHRPLAN-WERKBANK-UMBAU §5d-bis)
+// U4: «Häufig gebraucht» unter den Kacheln — Kacheln behalten ab `lg` ihre Höhe
+// (Token `start-kachel-breit`, 18rem = 288 px), die Zeile füllt den Rest, und
+// die linke Spalte endet bündig mit der Fläche Schnellwerkzeug, in allen drei
+// Varianten. U6: Gruss und Datum auf einer Grundlinie, Linie über die volle
+// Breite. ROT ZU BEKOMMEN: in `pages/Startseite.tsx` die Spalte zurück auf das
+// blosse Kachelfeld stellen (Kacheln gestreckt, keine Zeile) bzw. in
+// `SuchBlock.tsx` den Breiten-Deckel `max-w-[54rem]` zurücksetzen.
+const haeufig = (page: Page) => page.locator('section').filter({ has: page.getByRole('heading', { name: 'Häufig gebraucht' }) })
+const schnell = (page: Page) => page.locator('section:has([role=tabpanel])')
+const unten = async (l: ReturnType<Page['locator']>) => { const b = (await l.boundingBox())!; return Math.round(b.y + b.height) }
+
+test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
+  for (const breite of [1024, 1440]) {
+    test(`@${breite}: Kacheln 288 px, «Häufig gebraucht» endet bündig mit dem Schnellwerkzeug — alle Varianten`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/')
+      for (const wahl of ['Frist', 'Verzugszins', 'Verjährung']) {
+        await page.getByRole('tab', { name: wahl, exact: true }).click()
+        const kacheln = await page.locator('.lc-start-zelle').evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().height)))
+        expect(kacheln, `${wahl}: Kachelhöhen`).toEqual([288, 288, 288, 288])
+        expect(Math.abs(await unten(haeufig(page)) - await unten(schnell(page))), `${wahl}: Unterkanten`).toBeLessThanOrEqual(1)
+      }
+    })
+  }
+
+  test('@390: einspaltig Kacheln → Häufig gebraucht → Schnellwerkzeug', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 900 })
+    await page.goto('/')
+    const oben = async (l: ReturnType<Page['locator']>) => (await l.boundingBox())!.y
+    const feldUnten = await unten(page.locator('.lc-start-feld'))
+    expect(await oben(haeufig(page))).toBeGreaterThan(feldUnten)
+    expect(await oben(schnell(page))).toBeGreaterThan(await unten(haeufig(page)))
+  })
+
+  test('Direktlinks in den Leser, Ziel aus dem Register (StGB → STGB), Tastatur', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/')
+    const links = haeufig(page).getByRole('link')
+    // U7: Zeile = Kürzel · SR · Titel — das Kürzel steht vorn (deklarierte Design-Änderung).
+    await expect(links).toHaveText([/^BV/, /^ZGB/, /^OR/, /^StGB/, /^ZPO/, /^StPO/, /^SchKG/])
+    await expect(haeufig(page).getByRole('link', { name: /^StGB – Schweizerisches Strafgesetzbuch$/ })).toHaveAttribute('href', '/gesetze/bund/STGB')
+    await links.nth(1).focus()
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL(/\/gesetze\/bund\/ZGB$/)
+  })
+
+  test('U6: Gruss und Datum auf einer Grundlinie @1440, untereinander @390; Linie über die volle Breite', async ({ page }) => {
+    for (const breite of [1440, 390]) {
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/')
+      const kopf = page.locator('main h1').first().locator('..')
+      const [h1, datum, k, a, f] = await Promise.all([page.locator('main h1').boundingBox(), kopf.locator('p').first().boundingBox(),
+        kopf.boundingBox(), page.locator('aside[aria-label="Arbeitsplatz"]').boundingBox(), page.locator('.lc-start-feld').boundingBox()])
+      if (breite === 1440) {
+        // Grundlinie: beide Zeilen enden unten gleich (items-baseline, ±3 px).
+        expect(Math.abs((h1!.y + h1!.height) - (datum!.y + datum!.height))).toBeLessThanOrEqual(3)
+        expect(datum!.x).toBeGreaterThan(h1!.x + h1!.width)
+        // Linie = Unterkante des Kopfs, von der Kachelspalte bis zum Rand des Schnellwerkzeugs.
+        expect(Math.round(k!.x)).toBe(Math.round(f!.x))
+        expect(Math.round(k!.x + k!.width)).toBe(Math.round(a!.x + a!.width))
+      } else {
+        expect(datum!.y).toBeGreaterThanOrEqual(h1!.y + h1!.height - 1)
+      }
+    }
   })
 })
