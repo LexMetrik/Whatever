@@ -230,6 +230,20 @@ Blatt überlappt Text: in keiner Lage (e2e `leser-v3-rahmen` (h)); Laden mit gem
 Sprung (`leser-v3-kontext-cls` (c)); unter 1024 unverändert (Sheet + Knopf im Kopf). Abweichung:
 zwischen ~948 und 1023 px Fenster überlagerte das Blatt bisher (`'rechts'`), seither Sheet.
 
+**W1f Funktionszeile aufgelöst — Entscheide David 24.9.2026 (S6 W1f).** Wörtlich: «also blatt
+teil soll raus. verweise soll auch in blatt. und die zeile soll ganz weg. infos sollen alle im
+blatt erscheinen. einzige ausnahme sind wenn fussnoten aktiviert sind die sollen unten am artikel
+erschienen»; Aktionen «Klein am Artikel», Verweise «Oben im Blatt» (kein sechster Reiter),
+Einzelmodus «Ja, so lassen»; Nachtrag «nicht zu viele infos … übersichtlich» und «mehr am werkbank
+entwurf orientieren» (Board «Fliesstext-Blatt»). Gebaut: die Zeile am Artikelende und die
+Rubriken-Wahl im Menü «Ansicht» sind weg; am Artikel stehen nur noch der Fussnoten-Apparat (EIN
+Schalter «Fussnoten», zweiwertig; gespeichertes «Fassung» migriert auf «aus» = dieselbe
+Fussnoten-Sicht seit Z8) und die Aktionen als ruhige Textzeile (immer, nicht erst bei Hover). Das
+Blatt folgt dem Artikel am Kopf: Klappzeile «Verweise dieses Artikels · N» über den Reitern (nur
+N > 0), «Fassung dieses Artikels» oben in «Änderungen», Gruppe «Zu Art. N» oben in «Erläuterungen»
+und «Werkzeuge» (`v3/BlattArtikel.tsx`). Nebenbefund behoben: der 44-px-Trefferflächen-Aufsatz der
+Sheet-Links deckte in der Fassungs-Karte die Griffe «Alt/Neu» (DBG Art. 5 @320). Dossier unverändert.
+
 ### 3 Scheiben (Session 1: S0+S1 · 2: S2+S3 · 3: S4+S5; jede allein landbar)
 
 - **S0 Prüfstrasse vorab** (`feld: betrieb`, unsichtbar): Flacker-Fixes (Ziff. 4); Kern-Probe als
