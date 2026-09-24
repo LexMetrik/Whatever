@@ -486,9 +486,22 @@ describe('committeter Bereich — risikoBereichHash', () => {
   it('9) nur Prüflogik committet → hash null (Auto-Ausnahme gilt identisch)', () => {
     const root = repoMitZweig();
     schreib(root, 'src/lib/tarif/x.test.ts', 'it("x", () => {});\n');
-    schreib(root, 'scripts/gegenpruefung/kern.ts', '// x\n');
+    // Fixture bis RL-02 war scripts/gegenpruefung/kern.ts — seit W-02 (b)
+    // (David 23.9.2026) ist das ein Tor-Pfad und damit NICHT mehr ausgenommen
+    // (Fall 9b). Als reine Prüflogik steht hier darum ein check-Skript eines
+    // Risiko-Ordners; die Erwartung (hash null) ist unverändert.
+    schreib(root, 'scripts/normtext/check-foo.ts', '// x\n');
     commitAlles(root, 'nur pruef-logik');
     expect(risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' }).hash).toBeNull();
+  });
+
+  it('9b) Tor-Pfad committet → hash gesetzt, obwohl Prüflogik (RL-02, W-02 (b))', () => {
+    const root = repoMitZweig();
+    schreib(root, 'scripts/gegenpruefung/kern.ts', '// x\n');
+    commitAlles(root, 'tor-aenderung');
+    const r = risikoBereichHash({ cwd: root, bereich: 'basis..HEAD' });
+    expect(r.dateien).toEqual(['scripts/gegenpruefung/kern.ts']);
+    expect(r.hash).not.toBeNull();
   });
 
   it('10) Unicode-/Leerzeichen-Pfad wird auch im Bereich roh gebunden', () => {

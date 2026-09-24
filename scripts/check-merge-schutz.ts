@@ -89,7 +89,9 @@ if (trailer.length === 0) {
     `Bereich, aber KEIN 'Gegenpruefung:'-Verdikt in den Commits:\n${liste}\n\n` +
     `${VORFALL}\n${WEG}\n` +
     `  Reine Prüflogik ohne Inhaltsänderung: 'Gegenpruefung: n/a — reine Prüflogik' ` +
-    `— gilt hier NICHT, denn istPruefLogik() hat diese Dateien bereits ausgenommen.`);
+    `— gilt hier NICHT: reine Prüflogik ist bereits ausgenommen; was trotzdem ` +
+    `gelistet ist, ist Risiko-Pfad oder Tor-Pfad (istTorPfad, RL-02 W-02 (b): ` +
+    `Änderungen an den Toren selbst verlangen ein Verdikt).`);
 }
 
 // ── FORM DES VERDIKTS ────────────────────────────────────────────────────
