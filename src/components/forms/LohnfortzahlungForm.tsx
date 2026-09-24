@@ -95,6 +95,20 @@ const LF_LINK_SPEC: PermalinkSpec<LohnfortzahlungInput & Record<string, unknown>
   arbeitsverhaeltnisEnde: { p: 'ave', typ: 'str', gueltig: istISO },
 };
 
+// RL-25b (rechtslogik-rest-01/-05): Kalender-Beschriftung. Nach Karenzfrist
+// beginnt der Zeitraum nicht mit der Verhinderung; bei Unfall/Dienst ist er
+// nur die «beschränkte Zeit» einer Differenzpflicht (Art. 324b Abs. 2 OR).
+function kalenderLabels(nachKarenz: boolean, grund: Verhinderungsgrund | undefined) {
+  const beginn = nachKarenz ? 'Beginn des Anspruchs (nach Karenzfrist)' : 'Beginn der Verhinderung';
+  const differenz = grund === 'unfall' || grund === 'dienst';
+  return {
+    ereignis: beginn,
+    aquo: beginn,
+    adquem: differenz ? 'Ende der beschränkten Zeit' : 'Letzter bezahlter Tag',
+    band: differenz ? 'beschränkte Zeit (Differenz zu 80 %, Art. 324b Abs. 2 OR)' : 'bezahlter Zeitraum',
+  };
+}
+
 export function LohnfortzahlungForm() {
   const [form, setForm] = useState<LohnfortzahlungInput>(() => {
     // Standard-Kanton (Einstellungen) als Default; ein Permalink-Kanton geht
@@ -254,9 +268,18 @@ export function LohnfortzahlungForm() {
                 onChange={(e) => setKtg('praemienAnteilArbeitgeberProzent', e.target.value ? Number(e.target.value) : undefined)} />
             </Field>
           </div>
-          <Checkbox checked={form.ktgKriterien?.schriftlichVereinbart ?? false}
-            onChange={(v) => setKtg('schriftlichVereinbart', v)}
-            label="Schriftlich / in GAV-NAV vereinbart (Gültigkeitsvoraussetzung)" />
+          {/* RL-25b (rechtslogik-rest-03): dreiwertig statt Checkbox — «nein» macht
+              die KTG-Abrede formungültig (Engine rechnet die Skala), «nicht
+              angegeben» belässt die Annahme; eine leere Checkbox war beides. */}
+          <Field label="Schriftlich / in GAV-NAV vereinbart?" hint="Gültigkeitsvoraussetzung (Art. 324a Abs. 4 OR)">
+            <select className={inputCls}
+              value={form.ktgKriterien?.schriftlichVereinbart == null ? '' : form.ktgKriterien.schriftlichVereinbart ? 'ja' : 'nein'}
+              onChange={(e) => setKtg('schriftlichVereinbart', e.target.value === '' ? undefined : e.target.value === 'ja')}>
+              <option value="">nicht angegeben</option>
+              <option value="ja">ja</option>
+              <option value="nein">nein – Abrede unwirksam, gesetzliche Skala</option>
+            </select>
+          </Field>
           {/* B5-Fix 6.6.2026: Kriterium war in der Engine vorhanden (lohnfortzahlung.ts),
               aber im UI nie erreichbar — die Checkliste war unvollständig (§8). */}
           <Checkbox checked={form.ktgKriterien?.alleRisikenAbgedeckt ?? true}
@@ -324,7 +347,7 @@ export function LohnfortzahlungForm() {
               kanton={form.kanton}
               stillstandAktiv={false}
               feiertage={false}
-              labels={{ ereignis: 'Beginn der Verhinderung', aquo: 'Beginn der Verhinderung', adquem: 'Letzter bezahlter Tag', band: 'bezahlter Zeitraum' }}
+              labels={kalenderLabels(ergebnis.zeitraumVonISO !== form.verhinderungBeginn, form.verhinderungsgrund)}
             />
           )}
           <BegruendungSlot ergebnis={ergebnis} />
