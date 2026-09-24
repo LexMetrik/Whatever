@@ -23,6 +23,36 @@ import { urlMitHash } from '../../../lib/liveUrlSync';
 // Griffe den Fokus-Weg trugen — ohne sie erreichte die Tastatur die Aktionen
 // sonst nie (WCAG 2.1.1). Im Einzelmodus (Dossier) bleibt die Knopf-Gestalt
 // unverändert (D-E4).
+//
+// LEISTE 24.9.2026 (Wunsch David, Bild ArG Art. 5/6 dunkel @~740: «vorallem
+// diese leiste muss überarbeitet werden»): die Textzeile stand RECHTSBÜNDIG
+// (`ml-auto`) unter dem Fussnoten-Apparat, hing weder am Artikel noch an den
+// Fussnoten und wiederholte sich blass unter jedem Artikel. Jetzt: LINKSBÜNDIG
+// an der Artikelkante (dieselbe Flucht wie «Art. N» und der Apparat — der
+// Artikelfuss liest sich als EIN Block), und auf Geräten mit Maus erst voll
+// sichtbar, wenn der Artikel Hover oder Fokus hat
+// (`src/index.css`, Block «ARTIKEL-AKTIONEN»). Tastatur: `opacity`, nicht
+// `display`/`visibility` — die Knöpfe bleiben im Fokus-Weg und erscheinen,
+// sobald einer den Fokus hat (WCAG 2.1.1/2.4.7; der Einwand gegen den alten
+// Riegel Z6 war der fehlende Fokus-Weg, nicht das Ausblenden an sich). Touch
+// (`pointer: coarse`, kein Hover): immer sichtbar. Druck: die Hülle ist
+// `print:hidden` (`ArtikelLeser.tsx`). Funktion, Namen und data-Hooks
+// unverändert (Inventar 2.3.10).
+//
+// KEIN NEGATIVER RAND (Wurzelfix R8-Timeout, PR #1062, 24.9.2026): die
+// optische Flucht-Korrektur für den ersten Knopf (dessen `px-1` sonst 4 px
+// Luft vor «Art. N» liesse) sitzt bewusst NICHT als `-ml-1` am Container,
+// sondern als `padding-left: 0` am ersten `.lc-btn-mini` in
+// `src/index.css` (Block «ARTIKEL-AKTIONEN», `[data-aktionen-ruhig] >
+// .lc-btn-mini:first-child`). Sichtbar macht das keinen Unterschied — beide
+// Knöpfe tragen `border-transparent`/`bg-transparent`, nur der Text zählt.
+// Ein negativer Rand an ~1'700 Zeilen im OR liess aber R8s
+// Blutungs-Erkennung (`abschnittMessung.ts`, für JEDES Element im Dokument
+// gegen JEDE Blutung geprüft, O(Knoten×Blutungen)) auf ~66–72 s statt ~27–30 s
+// anschwellen — CI riss beim 90-s-Timeout (Läufe 36035202296). Gemessen: mit
+// `-ml-1` reproduzierbar 66–72 s (drei saubere Neubauten), ohne wieder
+// 27–30 s wie auf main. Kein Mess-Werkzeug-Fix — die Zeile bleibt für Nutzer
+// unverändert, nur ihre DOM-Kosten für den Sweep sinken.
 
 /** Ruhige Textzeile (S6 W1f): derselbe Knopf-Baustein (`.lc-btn-mini`: Höhe
  *  `--tap-ziel`, WCAG 2.5.8; Hover-Fläche als Zustandsauskunft), aber OHNE
@@ -89,7 +119,8 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich,
   };
 
   return (
-    <span className={`lr7-bez-aktionen ml-auto inline-flex flex-wrap items-center ${ruhig ? 'gap-0.5 text-micro text-ink-400' : 'gap-2'}`}>
+    <span data-aktionen-ruhig={ruhig ? '' : undefined}
+      className={`lr7-bez-aktionen inline-flex flex-wrap items-center ${ruhig ? 'gap-0.5 text-micro text-ink-500' : 'ml-auto gap-2'}`}>
       <button type="button" onClick={() => kopiere('zitat')}
         className={`lc-btn-mini ${k}`}
         aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>

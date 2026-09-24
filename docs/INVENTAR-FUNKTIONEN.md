@@ -1007,6 +1007,13 @@ Gesamtansicht **immer** als ruhige Textzeile «Zitat · Link · Amtliche Fassung
 Artikelende (Knopf-Baustein ohne sichtbare Haarlinie, Tap-Höhe 24 px) — nicht mehr erst
 bei Hover; im Einzelmodus als Knöpfe über dem Dossier.
 
+Seit der Leisten-Überarbeitung (24.9.2026, Wunsch David «vorallem diese leiste muss
+überarbeitet werden») steht die Textzeile **linksbündig** in der Flucht von «Art. N» und
+Fussnoten-Apparat. Auf Geräten mit Maus ruht sie unsichtbar (Platz reserviert) und
+erscheint, sobald der Artikel **Hover oder Tastatur-Fokus** hat — die Knöpfe bleiben im
+Tab-Weg, der Fokus macht sie sichtbar. Auf Touch-Geräten (kein Hover) steht sie immer.
+Im Druck entfällt sie wie bisher. Funktionen, Namen und Einzelmodus unverändert.
+
 **Kein Export einzelner Artikel** (weder PDF noch DOCX). «In neuem Reiter» und
 «Daneben öffnen» öffnen den **ganzen** Erlass in einem zweiten Fenster.
 

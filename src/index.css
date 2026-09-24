@@ -4198,6 +4198,39 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    `tailwind.config.js` (F9); hier nur, dass es eine eigene Zeile ist. */
 .lr7-bez-skelett { display: block; }
 
+/* (d) ARTIKEL-AKTIONEN «Zitat · Link · Amtliche Fassung ↗» (Inventar 2.3.10;
+   Wunsch David 24.9.2026, «vorallem diese leiste muss überarbeitet werden»).
+   Die ruhige Textzeile der Gesamtansicht (`parts/ArtikelAktionen.tsx`,
+   `[data-aktionen-ruhig]`) stand unter JEDEM Artikel sichtbar — ~1'700-mal im
+   OR dieselbe Zeile, die den Linienstapel Apparat-Haarlinie · Zeile ·
+   Artikel-Trenner verdichtete. Auf Geräten MIT Hover ruht sie jetzt
+   unsichtbar und erscheint am Artikel, der Hover oder Fokus hat (Tastatur: die
+   Knöpfe bleiben im Fokus-Weg, `opacity` statt `display`). KEIN `:target`:
+   der Leser rendert die Artikel nach dem Laden (SPA) — die Pseudoklasse
+   greift beim Tieflink nicht (gemessen 24.9.2026 an OR #art-336_c: opacity 0).
+   Ohne Hover (Touch) gilt die Regel nicht: dort steht sie immer. Der Platz
+   bleibt reserviert — kein Layout-Sprung beim Überfahren (CLS, §15). Das
+   Dossier des Einzelmodus (Knopf-Gestalt, D-E4) ist nicht betroffen.
+   FLUCHT OHNE NEGATIVEN RAND (Wurzelfix R8-Timeout, PR #1062, 24.9.2026):
+   die Zeile soll optisch an der Artikelkante fluchten, ohne die 4 px
+   `px-1`-Luft vor dem ersten Knopf. Statt eines `-ml-1` am Container
+   (bricht bei ~1'700 Vorkommen im OR die R8-Blutungserkennung, s.
+   `ArtikelAktionen.tsx`) nimmt NUR der erste Knopf sein linkes Padding weg —
+   sichtbar identisch, weil `.lc-btn-mini` in `ruhig` ohnehin
+   `border-transparent`/`bg-transparent` trägt und nur der Text zählt. */
+[data-aktionen-ruhig] > .lc-btn-mini:first-child { padding-left: 0; }
+@media (hover: hover) and (pointer: fine) {
+  [data-aktionen-ruhig] {
+    opacity: 0;
+    transition: opacity var(--dur-fast, 120ms) var(--ease, ease);
+  }
+  article:hover [data-aktionen-ruhig],
+  article:focus-within [data-aktionen-ruhig] { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-aktionen-ruhig] { transition: none; }
+}
+
 /* ═══ W2·24-R12A · ÜBERSICHTS-KÖPFE (Präfix `.ub-`, additiv am Dateiende) ═════
    D22 (David 6.9.2026, Bild /gesetze @~1160): «hier hat es wieder komische
    lücken». Drei Ursachen, alle in der Kopf-Zone der fünf Übersichten:
