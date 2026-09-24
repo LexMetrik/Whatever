@@ -150,7 +150,11 @@ export const A2_HOEHE_FALLBACK = 320; // = index.css-Default; Schätzung ohne Bl
 function textZeilen(text: string | undefined, proZeile = 68): number {
   return Math.max(1, Math.ceil((text?.length ?? 0) / proZeile));
 }
-export function schaetzeArtikelHoehe(e: NormSnapshot): number {
+/** `randtitelZeile`: steht die Sachüberschrift als EIGENE Zeile über «Art. N»?
+ *  Seit S6 W1g (24.9.2026) nur noch in der Zeilenform; in der Breitform steht
+ *  sie IN der Artikelnummer-Zeile (`parts/ArtikelLeser`) und kostet keine
+ *  eigene Höhe — die +30 wären dort eine Überschätzung je Artikel. */
+export function schaetzeArtikelHoehe(e: NormSnapshot, randtitelZeile = true): number {
   const ZEILE = 30;        // px je Fliesstext-Zeile
   // G-HIST-UI (§15.2, 20.7.2026): der reservierte Fassungs-Slot am Artikel-Fuss
   // (`mt-4 min-h-beiwerk` in ArtikelLeser, bis S2 `min-h-hist-zeile`) ist
@@ -199,7 +203,7 @@ export function schaetzeArtikelHoehe(e: NormSnapshot): number {
   // bleibt ebenfalls: er ist der Anker der Messreihen von 2026.
   const HIST_SLOT = 40;
   let h = 104 + HIST_SLOT; // Artikelkopf: «Art. N» + Trenner (border-t + pt-7 mt-7) + Basisabstand + Beiwerk-Zuschlag
-  if (e.titel) h += 30;    // amtlicher Randtitel/Sachüberschrift (eine Zeile)
+  if (e.titel && randtitelZeile) h += 30;    // amtlicher Randtitel/Sachüberschrift (eine Zeile)
   for (const b of e.bloecke) {
     // M13-Annex-Zwischenüberschrift (titel = Heading-Tiefe): kompakte Titelzeile.
     if (b.titel) { h += 40; continue; }

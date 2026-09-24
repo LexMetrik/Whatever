@@ -118,7 +118,15 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
     const wurzel = panelRef.current;
     if (wurzel == null) return;
     const vorher = document.activeElement as HTMLElement | null;
-    wurzel.focus();
+    // `preventScroll` (S6 W1g, 24.9.2026): das Beiwerk steht sichtbar NEBEN
+    // bzw. über dem Text — der Fokus darf die Lesestelle nicht verschieben.
+    // GEMESSEN @1024 am gebauten Stand (ZGB, Seitenanfang): seit das Blatt als
+    // Spalte bis zur Fensterunterkante reicht (`./blattFlaeche`), ragte es im
+    // Fluss 51 px unter den Rand, `focus()` scrollte das Fenster um diese 51 px,
+    // und nach dem Schliessen blieben 22 px Versatz stehen — die Gliederung
+    // kam bei y 183 statt 205 zurück (`w224-leser-d32-d33` (i) rot). Schon
+    // vorher scrollte es 29 px (und zurück); die Spalte klebt ohnehin.
+    wurzel.focus({ preventScroll: true });
     const taste = (e: KeyboardEvent) => {
       if (e.key === 'Escape' || e.key === 'Esc') schliesseRef.current();
     };

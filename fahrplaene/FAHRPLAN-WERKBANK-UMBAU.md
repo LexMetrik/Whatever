@@ -185,6 +185,10 @@ Erfassungsgrad, MassgebendeGesetze} → KATALOGE. Geteilt: lr8-* und einzelne lr
 
 - **Kopfzeile** «‹ Gesetze · OR Erlass ▾ · Gliederung ausblenden · ◧ · Ansicht ▾»: Werkbank-Typo,
   2-px-Tintenlinie, Textknöpfe; bleiben: alle Griffe/Menüs (2.3.12), Stand-Zeile, `data-v3-*`.
+  *Nachtrag 24.9.2026 (S6 W1g, Wunsch David «Board-Angleichung», «klarer unterteilt»):* die
+  Linie unter der Leser-Kopfzeile ist seither **1 px `--rule-soft`** statt der 2-px-Tintenlinie —
+  wie die Werkzeugzeile im Board «Fliesstext-Blatt». Das Soll oben bleibt als datierter Stand
+  stehen; die 2-px-Tinte trägt weiter die Titelblatt-Zeile der App (`--rule`).
 - **Titelblatt:** ein Block statt drei Bausteinen; alle Angaben 2.3.5 wörtlich (§8).
 - **Gliederung links 288 px** (18 rem, `rahmenSpalten.ts`; Board-Mass 250 px nachgeführt 24.9.2026, Nebenfund 6):
   aktiver Eintrag `--reg-g-flaeche` (Board #EEF1F6 ist kein Token;
@@ -193,6 +197,9 @@ Erfassungsgrad, MassgebendeGesetze} → KATALOGE. Geteilt: lr8-* und einzelne lr
   2.3.9 vollständig.
 - **Blatt offen 380 px:** Reiter als Registerfläche reg-r/m/w/g-flaeche; Inhalte/Filter/Zähler
   2.3.6–2.3.8, 2.4 bleiben.
+  *Nachtrag 24.9.2026 (S6 W1g, Entscheid David):* aktiver Reiter **nur Linie** (Registerkante
+  unten, keine Fläche); das Blatt steht ab 1024 px bündig als Spalte (kein Kartenrahmen, kein
+  Radius, bis zur Fensterunterkante), Haarlinien Gliederung | Text | Blatt 1 px `--rule-soft`.
 - **Blatt zu (52-px-Schiene), Suche oben:** Feld/Panel Werkbank-Stil; Feld IMMER im Kopf (2.3.11),
   D38-Liste, Deterministik.
 - **Unter-Gesetze (ein Artikel):** Karten/Pfad Werkbank-Stil; ←/→, Nachbarn, Dossier bleiben.

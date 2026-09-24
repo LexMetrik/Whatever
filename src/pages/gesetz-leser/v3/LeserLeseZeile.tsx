@@ -127,7 +127,16 @@ export function LeserLeseZeile({
           hat seit R6c keinen CSS-Leser mehr und bleibt als Sonden-Anker
           (`leser-klapp-sonde`, `leser-v3-kontext-cls`, `w224-leser-d32-d33`). */}
       <SatzspiegelKontext.Provider value={bild.satzspiegel}>
-      <div className="relative min-w-0" data-lr-spiegel={bild.satzspiegel}>
+      {/* S6 W1g (Wunsch David 24.9.2026 «klarer unterteilt», Board
+          «Fliesstext-Blatt»): senkrechte Haarlinien Gliederung | Text | Blatt,
+          1 px `--rule-soft`, je in der MITTE der Spur-Lücke (`gap-5`). Sie
+          hängen an DIESER Zelle (`::before`/`::after`, index.css
+          `[data-lr-linie-*]`), weil sie die einzige ist, die über die ganze
+          Erlasslänge reicht — die klebenden Nachbarn sind nur fensterhoch.
+          Nur wo die Nachbar-Spur wirklich steht (Spalte bzw. offenes Blatt). */}
+      <div className="relative min-w-0" data-lr-spiegel={bild.satzspiegel}
+        data-lr-linie-links={bild.gliederungSpalte ? '' : undefined}
+        data-lr-linie-rechts={bild.blattSpur ? '' : undefined}>
         {/* D33 (7.9.2026) stellte die Panel-Zone IN diese Zelle (klebende
             Überlagerung). Entscheid A (24.9.2026): sie steht wieder NEBEN ihr,
             als letztes Kind der Zeile — s. u. */}
