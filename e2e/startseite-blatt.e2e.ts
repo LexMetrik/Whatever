@@ -13,6 +13,7 @@ import { test, expect, type Page } from '@playwright/test'
 const feld = (page: Page) => page.getByRole('navigation', { name: 'Bereiche der Sammlung' })
 const blatt = (page: Page) => page.locator('#lm-start-blatt')
 const gesetzeKachel = (page: Page) => feld(page).getByRole('button', { name: /Gesetze/ })
+const werkzeugeKachel = (page: Page) => feld(page).getByRole('button', { name: /Werkzeuge/ })
 
 test.describe('Startseite · Kachelfeld', () => {
   for (const breite of [1280, 390]) {
@@ -117,5 +118,73 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     await expect(blatt(page)).toHaveCount(0)
     await expect(page.locator('#root')).not.toHaveAttribute('inert')
     await expect(gesetzeKachel(page)).toBeFocused()
+  })
+})
+
+// W2·29-WERKBANK-START S2 (23.9.2026, Fahrplan §5d) — Werkzeuge klappt jetzt
+// vor Ort auf: Rechner | Vorlagen → Liste nach Rechtsgebiet, letzte Stufe ist
+// die bestehende Produktseite (ein gewöhnlicher Link).
+test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
+  test('Werkzeuge → Vorlagen → Liste, Zurück, «In Vorbereitung» sichtbar', async ({ page }) => {
+    await page.goto('/')
+    const kachel = werkzeugeKachel(page)
+    await expect(kachel).toHaveAttribute('aria-expanded', 'false')
+    await kachel.click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge$/)
+    await expect(kachel).toHaveAttribute('aria-expanded', 'true')
+    await expect(blatt(page)).toBeFocused()
+
+    await blatt(page).getByRole('button', { name: /Vorlagen/ }).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge\/vorlagen$/)
+    // Letzte Stufe: echte Links auf die bestehenden Vorlagen-Seiten.
+    await expect(blatt(page).locator('a[href^="/vorlagen/"]').first()).toBeVisible()
+    // §8: geplante Vorlagen bleiben sichtbar, als «In Vorbereitung» — aber
+    // OHNE Link (Gegenprüfung S2 24.9.2026: der vorherige Fall prüfte nur die
+    // Sichtbarkeit, nicht die Linklosigkeit — eine geplante Karte mit Link
+    // wäre unentdeckt geblieben).
+    const inVorbereitung = blatt(page).locator('details').filter({ hasText: 'In Vorbereitung' })
+    await expect(inVorbereitung).toBeVisible()
+    await expect(inVorbereitung.locator('a[href]')).toHaveCount(0)
+
+    await blatt(page).getByRole('button', { name: '← Zurück' }).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge$/)
+
+    // Rechner: Filterfeld schneidet die Liste auf einen Treffer zu.
+    await blatt(page).getByRole('button', { name: /Rechner/ }).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge\/rechner$/)
+    await expect(blatt(page).locator('a[href^="/rechner/"]').first()).toBeVisible()
+    await blatt(page).getByPlaceholder('Rechner filtern').fill('Kapitalisierung')
+    await expect(blatt(page).locator('a[href="/rechner/streitwert"]')).toBeVisible()
+    await expect(blatt(page).locator('a[href^="/rechner/"]')).toHaveCount(1)
+  })
+
+  // Gegenprüfung S2 (24.9.2026), Befund 1/4: `KategorieSektion` trug in der
+  // Vorlagen-Stufe ein eigenes Rechtsgebiet-Feld, das über `setSearchParams`
+  // OHNE den Blatt-Verlaufsstatus schrieb (`useBlattOrt.ts` verlor
+  // `blattTiefe`/`blattVonZu`) — ✕ liess `/?rg=…` im Verlauf stehen, und
+  // Browser-Zurück öffnete das Blatt erneut. Der Fix (`ohneGebietsFilter`)
+  // entfernt dieses zweite Feld aus dem Blatt. Dieser Fall sichert zweierlei:
+  // (1) im Blatt steht KEIN Auswahlfeld (`select`), das an `useBlattOrt` vorbei
+  // die Adresse schreiben könnte, und (2) die Verlaufskette ✕ → Zurück. Die
+  // Kette allein fände den Fehler nicht (ohne Auswahl bleibt der Verlauf
+  // heil; Nachprüfung 24.9.2026) — darum die Zusicherung (1). Rot-Beweis
+  // (§6.7, 24.9.2026): mit `ohneGebietsFilter` in WerkzeugeBlatt.tsx entfernt
+  // ist (1) rot (1 `select` statt 0).
+  test('Werkzeuge → Vorlagen → ✕: Adresse zurück auf «/», Browser-Zurück öffnet das Blatt nicht erneut', async ({ page }) => {
+    await page.goto('/')
+    await werkzeugeKachel(page).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge$/)
+
+    await blatt(page).getByRole('button', { name: /Vorlagen/ }).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge\/vorlagen$/)
+    await expect(blatt(page).getByRole('searchbox').first()).toBeVisible()
+    await expect(blatt(page).locator('select')).toHaveCount(0)
+
+    await blatt(page).getByRole('button', { name: 'Werkzeuge schliessen' }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(blatt(page)).toHaveCount(0)
+
+    await page.goBack()
+    await expect(blatt(page)).toHaveCount(0)
   })
 })

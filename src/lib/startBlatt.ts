@@ -16,9 +16,10 @@ import { KANTON_NAMEN } from '../data/tarif/typen';
 /** Die vier Kacheln der Startseite, als Adress-Wort. */
 export type BlattRubrik = 'gesetze' | 'rechtsprechung' | 'materialien' | 'werkzeuge';
 
-/** Welche Kacheln schon vor Ort aufklappen. Scheibe S1: nur Gesetze; die
- *  anderen drei führen bis S2/S3 auf ihre Rubrikseite (Fahrplan §5d). */
-export const AUFKLAPPBAR: ReadonlySet<BlattRubrik> = new Set<BlattRubrik>(['gesetze']);
+/** Welche Kacheln schon vor Ort aufklappen. S1: Gesetze; S2 (23.9.2026) fügt
+ *  Werkzeuge hinzu; Rechtsprechung/Materialien führen bis S3 auf ihre
+ *  Rubrikseite (Fahrplan §5d). */
+export const AUFKLAPPBAR: ReadonlySet<BlattRubrik> = new Set<BlattRubrik>(['gesetze', 'werkzeuge']);
 
 export interface BlattOrt {
   rubrik: BlattRubrik;
@@ -44,6 +45,18 @@ function gesetzePfad(pfad: readonly string[]): string[] {
   return [ebene];
 }
 
+/** Die zwei Wahlen der Werkzeuge-Kachel (S2 23.9.2026): Rechner | Vorlagen,
+ *  jeweils eine Liste — keine weitere Tiefe (die letzte Stufe ist die
+ *  bestehende Produktseite, ein gewöhnlicher Link, keine eigene Blatt-Stufe). */
+type WerkzeugeZweig = 'rechner' | 'vorlagen';
+const WERKZEUGE_ZWEIGE: ReadonlySet<string> = new Set<WerkzeugeZweig>(['rechner', 'vorlagen']);
+
+/** Längster gültiger Anfang von `pfad` für die Werkzeuge-Kachel. */
+function werkzeugePfad(pfad: readonly string[]): string[] {
+  const [zweig] = pfad;
+  return zweig && WERKZEUGE_ZWEIGE.has(zweig) ? [zweig] : [];
+}
+
 /** Liest `?blatt=…`. `null` = Blatt zu (fehlend, leer oder eine Rubrik, die
  *  noch nicht aufklappt). */
 export function leseBlatt(wert: string | null | undefined): BlattOrt | null {
@@ -51,7 +64,8 @@ export function leseBlatt(wert: string | null | undefined): BlattOrt | null {
   const [rubrik, ...rest] = wert.split('/').filter(Boolean);
   if (!rubrik || !AUFKLAPPBAR.has(rubrik as BlattRubrik)) return null;
   const r = rubrik as BlattRubrik;
-  return { rubrik: r, pfad: r === 'gesetze' ? gesetzePfad(rest) : [] };
+  const pfad = r === 'gesetze' ? gesetzePfad(rest) : r === 'werkzeuge' ? werkzeugePfad(rest) : [];
+  return { rubrik: r, pfad };
 }
 
 /** Schreibt den Parameterwert (ohne `?blatt=`). */
@@ -71,6 +85,12 @@ export function gleicherOrt(a: BlattOrt | null, b: BlattOrt | null): boolean {
 
 /** Pfad-Leiste des Blatts unterhalb der Rubrik (Band oben im Blatt). */
 export function blattKrumen(ort: BlattOrt): { label: string; ort: BlattOrt }[] {
+  if (ort.rubrik === 'werkzeuge') {
+    const [zweig] = ort.pfad;
+    if (!zweig) return [];
+    const label = zweig === 'rechner' ? 'Rechner' : 'Vorlagen';
+    return [{ label, ort: { rubrik: ort.rubrik, pfad: [zweig] } }];
+  }
   if (ort.rubrik !== 'gesetze') return [];
   const [ebene, zweite] = ort.pfad;
   if (!ebene) return [];

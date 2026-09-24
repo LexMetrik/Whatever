@@ -143,8 +143,11 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
   // Modul-Registry ist gelöscht. Der PRÜFPUNKT bleibt: wer eine Kachel zeigt,
   // nimmt DEN Baustein; kein Start-Baustein baut `lc-tile` oder eine eigene
   // Kachel-Anatomie (Fläche + Strich + Zahl), die übrigen führen gar keine.
+  // NACHZUG S2 (23.9.2026, §6.3): die Wahl-Stufe der Werkzeuge-Kachel
+  // (`start/WerkzeugeBlatt`, Rechner | Vorlagen) ist der DRITTE Konsument —
+  // derselbe Baustein, kein eigener Kachel-Nachbau (analog GesetzeBlatt in S1).
   it('die Startseite konsumiert `ui/RubrikKachel`, die Start-Bausteine keine eigene Kachel', () => {
-    const konsumenten = ['components/start/StartKachelFeld.tsx', 'components/start/GesetzeBlatt.tsx'];
+    const konsumenten = ['components/start/StartKachelFeld.tsx', 'components/start/GesetzeBlatt.tsx', 'components/start/WerkzeugeBlatt.tsx'];
     for (const d of konsumenten) expect(lies(d), `${d}: rendert den Baustein`).toContain('<RubrikKachel');
     expect(lies('pages/Startseite.tsx'), 'Startseite: kein lc-tile').not.toContain('lc-tile');
     const startDateien = alleQuellen().filter((d) => d.includes('/components/start/'));

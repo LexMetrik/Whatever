@@ -275,10 +275,15 @@ describe('Startseite R3 — Inhaltsverzeichnis der Sammlung (deklarierte Anpassu
   // Kacheln (Gesetze als Knopf mit `aria-expanded`, die drei anderen bis S2/S3
   // als Link), «Jüngste Entscheide im Korpus» (§8-Wortlaut 5.9.2026), das
   // Schnellwerkzeug. Die Negativ-Zeilen bleiben unverändert.
+  // NACHZUG S2 (23.9.2026, §6.3): auch die Werkzeuge-Kachel ist jetzt ein
+  // Knopf (dasselbe Blatt, `aria-controls="lm-start-blatt"`) statt eines
+  // Links auf `/rechner` — die frühere dritte Erwartung (`href="/rechner"`)
+  // entfällt, dafür wird das Fehlen dieses Links geprüft.
   it('die vier Bestände stehen als Kacheln, darunter Entscheide und Schnellwerkzeug — kein lc-tile-Rezept', () => {
     const html = startHtml('/');
-    expect(html).toMatch(/<button[^>]*aria-expanded="false"[^>]*aria-controls="lm-start-blatt"/);
-    for (const ziel of ['/rechtsprechung', '/materialien', '/rechner']) expect(html).toContain(`href="${ziel}"`);
+    expect(html.match(/<button[^>]*aria-expanded="false"[^>]*aria-controls="lm-start-blatt"/g)?.length).toBe(2);
+    for (const ziel of ['/rechtsprechung', '/materialien']) expect(html).toContain(`href="${ziel}"`);
+    expect(html).not.toContain('href="/rechner"');
     expect(html).toContain('Jüngste Entscheide im Korpus');
     expect(html).toContain('Frist berechnen');
     // Das Blatt ist im Prerender ZU (Hydration, §15).

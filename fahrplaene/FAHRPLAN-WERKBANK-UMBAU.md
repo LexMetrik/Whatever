@@ -453,8 +453,16 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
   führen in S1 noch auf ihre Rubrikseite (Zwischenstand, sichtbar ehrlich). Löschen: `PultModul`,
   `PultAbschluss`, `startseiteModule`/`-ModulTypen`/`-Einstellung` samt Tests, `MaterialienListe`,
   `start/Werkzeuge`, nicht wiederverwendete Modul-Bausteine.
-- **S2 Werkzeuge.** Rechner | Vorlagen → Liste nach Rechtsgebiet aus `KATALOG_KARTEN` (gebaute zuerst,
-  «In Vorbereitung» sichtbar, §8) → Werkzeug-Seite.
+- **S2 Werkzeuge — GEBAUT (23.9.2026).** Rechner | Vorlagen → Liste nach Rechtsgebiet aus `KATALOG_KARTEN`
+  (gebaute zuerst, «In Vorbereitung» sichtbar, §8) → Werkzeug-Seite. `werkzeuge/(rechner|vorlagen)` als
+  Blatt-Stufen (`startBlatt.ts`), `start/WerkzeugeBlatt.tsx` als dritter `ui/RubrikKachel`-Konsument —
+  Gruppierung/Liste WIEDERVERWENDET `Katalog.tsx` (`KategorieSektion`/`OBERKATEGORIEN`/`kartenDerKategorie`,
+  dieselbe Quelle wie `/rechner` und `/vorlagen`), Filterfeld wie in `GesetzeBlatt`. Zweig `feat/w229-werkbank-start-s2`.
+  **Nachzug 24.9.2026** (Gegenprüfung ROT): `KategorieSektion` bekommt die Prop `ohneGebietsFilter` (Standard
+  aus, `/rechner`+`/vorlagen` unverändert) — im Blatt schaltet sie ihr eigenes Rechtsgebiet-Feld ab, das
+  `setSearchParams` ohne den Blatt-Verlaufsstatus (`useBlattOrt.ts`) aufrief und `?rg=…` im Verlauf stehen
+  liess (Browser-Zurück öffnete das Blatt erneut). e2e ergänzt: «In Vorbereitung» ohne Link, sowie
+  Werkzeuge→Vorlagen→✕ mit sauberer Adresse und geschlossenem Verlauf.
 - **S3 Rechtsprechung + Materialien.** Blatt öffnet mit Suchfeld (Fokus drin), Filter, Trefferliste;
   Daten erst beim Öffnen — `public/rechtsprechung/register.json` (9.4 MB) nie, kleineren Index messen und
   nutzen → Entscheid- bzw. Material-Seite.

@@ -304,7 +304,7 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
 
 // ─── Registerteil: eine Oberkategorie mit Gebiets-Gruppen + Geplant-Zeile ───
 
-export function KategorieSektion({ kat, karten, ohneKopf, alleOffen }: { kat: Oberkategorie; karten: CalculatorCard[]; ohneKopf?: boolean; alleOffen?: boolean }) {
+export function KategorieSektion({ kat, karten, ohneKopf, alleOffen, ohneGebietsFilter }: { kat: Oberkategorie; karten: CalculatorCard[]; ohneKopf?: boolean; alleOffen?: boolean; ohneGebietsFilter?: boolean }) {
   const [params, setParams] = useSearchParams();
   // Übersichtlichkeits-Politur (Auftrag David 10.6.2026): ZWEI ruhige
   // Gebrauchs-Ebenen statt einer Mischliste — «Alltag» (Praxis-Rang 1)
@@ -319,7 +319,13 @@ export function KategorieSektion({ kat, karten, ohneKopf, alleOffen }: { kat: Ob
   // vorhandene, getestete kartePasst-Logik (vorher mit leeren Sets aufgerufen,
   // also faktisch tot). NUR in der Vorlagen-Kategorie, der einzigen «Wand»;
   // teilbar über die URL (?rg=, ?status=). Reines Filtern, keine Logik berührt.
-  const filterAktiv = kat.id === 'vorlagen';
+  // Gegenprüfung S2 (24.9.2026): das Werkzeuge-Blatt bindet dieselbe Sektion
+  // für seine Vorlagen-Stufe ein, hat aber ein EIGENES Filterfeld
+  // (WerkzeugeBlatt.tsx). Dieses zweite, hier eingebaute Rechtsgebiet-Feld
+  // schreibt über `setSearchParams` OHNE den Blatt-Verlaufsstatus
+  // (`useBlattOrt.ts`) — Browser-Zurück öffnete danach das Blatt erneut. Die
+  // Prop schaltet es ab; Standard = heutiges Verhalten auf /rechner+/vorlagen.
+  const filterAktiv = kat.id === 'vorlagen' && !ohneGebietsFilter;
   const rgRoh = params.get('rg') ?? '';
   const aktiveGebiete = new Set(rgRoh ? rgRoh.split(',').filter(Boolean) : []);
   const nurVerfuegbar = params.get('status') === 'verfuegbar';

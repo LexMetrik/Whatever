@@ -6,6 +6,7 @@ import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { AUFKLAPPBAR, blattKrumen, gleicherOrt, type BlattOrt, type BlattRubrik } from '../../lib/startBlatt';
 import { useBlattOrt } from './useBlattOrt';
 import { GesetzeBlatt } from './GesetzeBlatt';
+import { WerkzeugeBlatt } from './WerkzeugeBlatt';
 
 // ─── Startseite · das 2×2-Kachelfeld, das vor Ort aufklappt (W2·29-WERKBANK-START S1)
 //
@@ -223,6 +224,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           <div className="lc-start-blatt-inhalt" data-sichtbar={phase === 'offen' ? '' : undefined}>
             <div key={[sicht.rubrik, ...sicht.pfad].join('/')} className="lc-start-stufe" data-richtung={richtung}>
               {sicht.rubrik === 'gesetze' && <GesetzeBlatt ort={sicht} gehe={gehe} />}
+              {sicht.rubrik === 'werkzeuge' && <WerkzeugeBlatt ort={sicht} gehe={gehe} />}
             </div>
           </div>
           {!schmal && kontur && (
