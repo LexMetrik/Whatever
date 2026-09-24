@@ -4,3 +4,5 @@ titel: Weisung David 23.9. abends: Erlass-Blatt wie die Gliederung — eigene ei
 -->
 
 Weisung David 23.9. abends: Erlass-Blatt wie die Gliederung — eigene einklappbare Seitenspalte mit Griff statt Knopf «Erlass», räumlich nahe am gelesenen Artikel, sinnvoll auf 390/768/1024/1280/1440/1920 (revidiert D-1 Fensterrand, #1002: bei 1920 weit weg vom Text); erst Analyse Ist Gliederung vs. Blatt je Breite
+
+**Erledigt 2026-09-24:** #1040 Blatt als dritte Spalte mit Schiene (Entscheid A 24.9.), #1045 Funktionszeile aufgelöst
