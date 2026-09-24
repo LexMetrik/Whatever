@@ -126,6 +126,17 @@ run() {
 }
 
 echo "Gates (${mode}):"
+# Vorprüfung Abhängigkeiten (Lehre 24.9.2026, W2·30-RL-W1): ein App-Worktree
+# brachte ein veraltetes node_modules mit (Stand 3.9.) — fehlende Pakete lösten
+# über den Elternordner in den Haupt-Checkout auf, zwei React-Kopien, ~60 rote
+# Tests ohne Code-Fehler, ein Gate-Lauf (5 min) verloren. `npm ls` erkennt den
+# Drift (gemessen: frisch nach npm ci Exit 0, drei veraltete Worktrees Exit 1).
+# Abbruch statt `run`: die Folge-Tore wären nur Rauschen.
+if ! npm ls --depth=0 >/dev/null 2>&1; then
+  printf '  ROT  node_modules passt nicht zu package-lock.json — zuerst «npm ci» (kein Code-Fehler; Details: npm ls --depth=0)\n'
+  ereignis "gate:npm-ls" false
+  exit 1
+fi
 run "tsc -b"            npx tsc -b
 run "vitest"            npm test
 run "golden:vergleich"  npm run golden:vergleich
