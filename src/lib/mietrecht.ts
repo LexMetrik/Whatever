@@ -4,7 +4,7 @@ import type { Normverweis, Rechenschritt } from '../types/legal';
 import { formatDatum, formatISO } from './datumsUtils';
 import type { MietInput, MietErgebnis, Mietobjekt, TerminQuelle } from '../types/mietrecht';
 import { ORTSUEBLICHE_TERMINE } from '../data/mietTermine';
-import { naechsterWerktag } from '../data/zpoFeiertage';
+import { hinweisBedingteFeiertage, naechsterWerktag } from '../data/zpoFeiertage';
 import { rechtsprechung } from '../data/verifikation';
 
 // ─── Mietrecht: Kündigungstermine und -fristen (Art. 253 ff. OR) ──────────
@@ -425,6 +425,13 @@ function abschluss(
     'Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.',
     'Bei Wohn-/Geschäftsräumen: Schriftform; Vermieterkündigung nur mit amtlich genehmigtem Formular; Familienwohnung mit Sonderschutz (Art. 266l–266n OR) – Verstoss macht die Kündigung nichtig (Art. 266o OR).',
   );
+  // RL-22-Nachzug: Art. 78 OR («staatlich anerkannter Feiertag») — kantonale
+  // Sonderfeiertage nur für bestimmte Verfahren (NE-Schliesstage, SO 1. Mai)
+  // zählen nicht; Warnung, wenn einer ein berechnetes Fristende verschieben würde.
+  for (const ende of [zahlungsfristEnde, anfechtungBis]) {
+    const h = ende ? hinweisBedingteFeiertage(ende, input.kanton) : null;
+    if (h && !warnungen.includes(h)) warnungen.push(h);
+  }
 
   const ergebnisText = endtermin
     ? `Das Mietverhältnis endet am ${fmt(endtermin)}.` +

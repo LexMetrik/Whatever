@@ -2,7 +2,7 @@
 import { addMonths, addYears, addDays, differenceInCalendarDays, isSaturday, isSunday, parseISO } from 'date-fns';
 import { fristendeTage, fristendeKalender, OHNE_STILLSTAND, type Einheit } from './fristenEngine';
 import { formatDatum, formatISO } from './datumsUtils';
-import { istFeiertag } from '../data/zpoFeiertage';
+import { hinweisBedingteFeiertage, istFeiertag } from '../data/zpoFeiertage';
 import { KANTONE } from './kantone';
 import type { Berechnungsergebnis, Kanton, Normverweis, Rechenschritt } from '../types/legal';
 
@@ -185,6 +185,14 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     ende = addDays(ende, 1);
   }
 
+  // RL-22-Nachzug: Feiertags-Kontext 'allgemein' (Art. 78 OR; auch StPO-Nutzung
+  // ohne eigenen Kontext) — kantonale Sonderfeiertage, die nur für bestimmte
+  // Verfahren gelten (NE-Schliesstage, SO 1. Mai), zählen nicht; Warnung, wenn
+  // einer das Fristende verschieben würde.
+  const bedingtHinweis = input.feiertageVerschieben && input.kanton
+    ? hinweisBedingteFeiertage(roh, input.kanton)
+    : null;
+
   schritte.push({
     label: 'Fristende (24.00 Uhr)',
     datum: fmt(ende), wochentag: wochentag(ende),
@@ -200,7 +208,11 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     verschiebeGruende,
     schritte,
     // Gesetzlich unverändert (Golden); vertraglich zusätzlich die Regime-Offenlegung.
-    hinweise: vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : [ALLG_FRIST_HINWEIS],
+    // RL-22-Nachzug: Warnung zu bedingten kantonalen Feiertagen hinten angefügt.
+    hinweise: [
+      ...(vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : [ALLG_FRIST_HINWEIS]),
+      ...(bedingtHinweis ? [bedingtHinweis] : []),
+    ],
     startISO: iso(start),
     fristbeginnISO: iso(addDays(start, 1)),
   };
@@ -363,7 +375,9 @@ export function berechneRueckwaertsFrist(input: RueckFristInput): AllgFristResul
   const verschiebeGruende: string[] = [];
   if (input.verschiebung === 'vorverlegen') {
     const frei = (d: Date): string | null => {
-      if (input.feiertageBeruecksichtigen && input.kanton && istFeiertag(d, input.kanton)) {
+      // RL-22-Nachzug: rückwärts ist der FRÜHERE Tag sicher → bedingte kantonale
+      // Feiertage (NE-Schliesstage, SO 1. Mai) zählen hier mit ('weitest').
+      if (input.feiertageBeruecksichtigen && input.kanton && istFeiertag(d, input.kanton, 'weitest')) {
         return `gesetzlicher Feiertag (${input.kanton})`;
       }
       if (isSunday(d)) return 'Sonntag';

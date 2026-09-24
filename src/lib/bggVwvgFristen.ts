@@ -10,6 +10,7 @@ import {
   fristendeTage,
   fristendeKalender,
   normalisiereEnde,
+  hinweisBedingteFeiertageEnde,
   OHNE_STILLSTAND,
   type Stillstand,
   type Einheit,
@@ -148,11 +149,16 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
     ? fristendeTage(ereignis, input.laenge, st)
     : fristendeKalender(ereignis, input.einheit, input.laenge, st, false);
 
-  const { tag: diesAdQuem, verschoben } = normalisiereEnde(ende, input.kanton, st);
+  // Feiertags-Kontext = Regime (RL-22-Nachzug): NE-Schliesstage zählen für Art. 45
+  // BGG (BGer 9C_396/2018 E. 2.3) und Art. 20 Abs. 3 VwVG (BVGer D-837/2025); der
+  // SO-1.-Mai (EG ZPO SO § 22 Abs. 2, nur Art. 142 ZPO) nicht → Warnung.
+  const kontext = input.regime;
+  const { tag: diesAdQuem, verschoben } = normalisiereEnde(ende, input.kanton, st, kontext);
   // RL-15/A16: nur BGG (Entscheid W-07 (a)), nur Tagesfristen (nur sie ruhen).
   const stillstandsnaehe = input.regime === 'bgg' && istTage
     ? bggStillstandsnaeheWarnung(ende, diesAdQuem, input.kanton)
     : null;
+  const bedingtHinweis = hinweisBedingteFeiertageEnde(ende, input.kanton, st, kontext);
 
   const annahmen: string[] = [];
   const warnungen: string[] = [];
@@ -171,6 +177,7 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
     );
   }
   if (stillstandsnaehe) warnungen.push(stillstandsnaehe);
+  if (bedingtHinweis) warnungen.push(bedingtHinweis);
 
   // RL-07/F3-04 (Prüfung Rechtslogik 23.9.2026): «die Partei oder ihr
   // Vertreter» (Art. 45 Abs. 2 BGG; Art. 20 Abs. 3 Satz 2 VwVG) — die
@@ -209,7 +216,7 @@ export function berechneBggVwvgFrist(input: BvFristInput): BvFristResult {
 // `rohesEnde` = letzter Tag der Frist vor jeder Endverschiebung (fristendeTage),
 // `diesAdQuem` = Ergebnis der Endverschiebung mit Stillstand.
 function bggStillstandsnaeheWarnung(rohesEnde: Date, diesAdQuem: Date, kanton: Kanton): string | null {
-  const sicher = normalisiereEnde(rohesEnde, kanton, OHNE_STILLSTAND).tag;
+  const sicher = normalisiereEnde(rohesEnde, kanton, OHNE_STILLSTAND, 'bgg').tag;
   if (+sicher === +diesAdQuem) return null;
   if (stillstandsperiodeFuer(sicher) === null) return null;
   return `Fristende kurz vor dem Stillstand: Der letzte Tag der Frist (${formatDatum(rohesEnde)}) ist ein `

@@ -69,10 +69,13 @@ function zpoStillstand(stillstandAktiv: boolean): Stillstand {
 }
 
 // Art. 142 Abs. 1bis: Zustellung per gewöhnlicher Post an Sa/So/Feiertag → nächster Werktag.
+// Feiertags-Kontext 'zpo' (RL-22-Nachzug): kantonale Tage, die nur für Art. 142 ZPO
+// Feiertag sind (NE LI-CPC Art. 10a, SO EG ZPO § 22 Abs. 2), zählen hier mit.
+const KONTEXT_ZPO = 'zpo' as const;
 function ereignisKorrigiert(input: ZpoInput, ereignis: Date): { tag: Date; korrigiert: boolean } {
-  if (input.zustellart === 'gewoehnliche_post' && istArbeitsfreierTag(ereignis, input.kanton)) {
+  if (input.zustellart === 'gewoehnliche_post' && istArbeitsfreierTag(ereignis, input.kanton, KONTEXT_ZPO)) {
     let d = ereignis;
-    while (istArbeitsfreierTag(d, input.kanton)) d = addDays(d, 1);
+    while (istArbeitsfreierTag(d, input.kanton, KONTEXT_ZPO)) d = addDays(d, 1);
     return { tag: d, korrigiert: true };
   }
   return { tag: ereignis, korrigiert: false };
@@ -161,7 +164,7 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   }
 
   // Schritt 3: Endnormalisierung (Art. 142 Abs. 3 + Art. 145 kumulativ)
-  const { tag: diesAdQuem, verschoben } = normalisiereEnde(endeProvisorisch, input.kanton, st);
+  const { tag: diesAdQuem, verschoben } = normalisiereEnde(endeProvisorisch, input.kanton, st, KONTEXT_ZPO);
   rechenweg.push({
     beschreibung: 'Schritt 3 – Endnormalisierung (Art. 142 Abs. 3 / Art. 145 Abs. 1)',
     zwischenergebnis: verschoben
@@ -185,7 +188,7 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
       }
       if (gezaehlt < tage) cursor = addDays(cursor, 1);
     }
-    const norm = normalisiereEnde(ende, input.kanton, st);
+    const norm = normalisiereEnde(ende, input.kanton, st, KONTEXT_ZPO);
     erstrecktBis = iso(norm.tag);
     rechenweg.push({
       beschreibung: 'Erstreckung (gerichtliche Frist, Art. 144 Abs. 2 ZPO)',

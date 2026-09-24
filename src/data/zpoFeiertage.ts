@@ -1,6 +1,6 @@
 import { addDays, isWeekend, isBefore, isAfter } from 'date-fns';
 import type { Kanton } from '../types/legal';
-import { dauerTageInklusiv } from '../lib/datumsUtils';
+import { dauerTageInklusiv, formatDatum } from '../lib/datumsUtils';
 
 // ─── Ostersonntag (gregorianischer Computus, Meeus/Anonymous) ─────────────
 
@@ -90,11 +90,15 @@ export function stillstandsperiodeFuer(date: Date): Stillstandsperiode | null {
 // Befunde R1-01/02/03/05/09, Zweitprüfung V8; Art. 142 Abs. 3 ZPO verlangt
 // «vom kantonalen Recht anerkannte» Feiertage — wo der Kanton für Fristen einen
 // eigenen Katalog führt, geht er der BJ-Liste vor):
-//  - SO: EG ZPO § 22 Abs. 2 (BGS 221.2, Fassung 1.1.2025) — Katalog für
-//    Art. 142 ZPO, kantonsweit, 1. Mai ganztags. Bis 24.9.2026 war der 1. Mai
-//    hier «bewusst weggelassen» (Begründung «erst ab 12.00 Uhr» aus dem
-//    Ruhetagsrecht BGS 512.41, für Fristen nicht massgeblich) — R1-02; die
-//    BJ-Fussnoten 3/4 (Bucheggberg/einzelne Gemeinden) sind damit obsolet (R1-05).
+//  - SO: EG ZPO § 22 Abs. 2 (BGS 221.2, Fassung 1.1.2025) — Katalog «für die
+//    Fristbestimmung gemäss Artikel 142 ZPO», kantonsweit, 1. Mai ganztags. Bis
+//    24.9.2026 war der 1. Mai hier «bewusst weggelassen» (Begründung «erst ab
+//    12.00 Uhr» aus dem Ruhetagsrecht BGS 512.41) — R1-02; die BJ-Fussnoten 3/4
+//    (Bucheggberg/einzelne Gemeinden) sind damit obsolet (R1-05). Seit dem
+//    RL-22-Nachzug (25.9.2026) ist der SO-1.-Mai ein BEDINGTER Feiertag (Block
+//    «Bedingte kantonale Feiertage» unten): ganztags nur im ZPO-Kontext; das
+//    allgemeine Ruhetagsgesetz SO § 2 Abs. 1 lit. b (BGS 512.41, Stand 1.9.2014)
+//    nennt ihn nur «ab 12.00 Uhr».
 //  - FR: JG Art. 121 Abs. 2 (SGF 130.1, Fassung 1.1.2024) — Feiertage gelten
 //    «im ganzen Kanton»; BJ-Fussnote 2 (Seebezirk) obsolet (R1-05).
 //  - UR: Ruhetagsgesetz Art. 9 lit. b (RB 70.1421, Fassung 1.1.2003) — Sankt-
@@ -112,8 +116,8 @@ export function stillstandsperiodeFuer(date: Date): Stillstandsperiode | null {
 //    SHR 180.111 § 33 Abs. 1 + OGE 40/2018/1/K E. 2.1.4; GL Personalverordnung
 //    GS II A/6/2 Art. 19 Abs. 2 lit. a — für GL keine Gerichtspraxis gefunden
 //    (Hinweis an Nutzer: RL-23, Entscheid W-11).
-//  - Schliesstage der Kantonsverwaltung: NE LI-CPC Art. 10a — s. NE-Block unten
-//    (Entscheid W-10 a). BL GOG § 46 Abs. 2 (SGS 170; Geltung für ZPO-Fristen
+//  - Schliesstage der Kantonsverwaltung: NE — s. Block «Bedingte kantonale
+//    Feiertage» unten (Entscheid W-10 a, Geltungsbereich RL-22-Nachzug). BL GOG § 46 Abs. 2 (SGS 170; Geltung für ZPO-Fristen
 //    offen) und VD LVLP Art. 73 Abs. 2 (BLV 280.05; nur SchKG): NICHT als
 //    Feiertag geführt, nur Hinweis (W-10; Nutzer-Hinweis folgt RL-23).
 
@@ -135,15 +139,14 @@ const FEIERTAGE: FeiertagDef[] = [
   // LU ergänzt (BJ Ziff. 3 lit. a – Doppelcheck 6.6.2026).
   { art: 'fix', monat: 1, tag: 2, kantone: ['ZH', 'BE', 'LU', 'OW', 'NW', 'GL', 'ZG', 'FR', 'SO', 'SH', 'SG', 'AG', 'TG', 'VD', 'VS', 'JU'], name: 'Berchtoldstag' },
   // NE: 2.1. nur, wenn der 1.1. ein Sonntag ist (BJ Ziff. 24 Fn. 10) — zusätzlich
-  // als Schliesstag in Jahren mit amtlicher Liste (NE-Block, LI-CPC Art. 10a).
+  // als bedingter Schliesstag (Block «Bedingte kantonale Feiertage», RDF Art. 11).
   { art: 'fix', monat: 1, tag: 2, kantone: ['NE'], name: 'Berchtoldstag', giltImJahr: (j) => wochentag(j, 1, 1) === 0 },
   { art: 'fix', monat: 1, tag: 6, kantone: ['UR', 'SZ', 'TI'], name: 'Heilige Drei Könige' },
   { art: 'fix', monat: 3, tag: 1, kantone: ['NE'], name: 'Instauration de la République' },
   { art: 'fix', monat: 3, tag: 19, kantone: ['UR', 'SZ', 'NW', 'TI', 'VS'], name: 'Josephstag' },
-  // SO ergänzt (RL-22, R1-02): EG ZPO SO § 22 Abs. 2 (BGS 221.2) nennt «den 1. Mai»
-  // ganztags als Feiertag für Art. 142 ZPO; die frühere «ab 12.00 Uhr»-Einschränkung
-  // stammt aus dem Ruhetagsrecht, nicht aus der für Fristen massgebenden Norm.
-  { art: 'fix', monat: 5, tag: 1, kantone: ['ZH', 'BS', 'BL', 'SO', 'SH', 'TG', 'AG', 'JU', 'NE', 'TI'], name: 'Tag der Arbeit' },
+  // SO NICHT hier: EG ZPO SO § 22 Abs. 2 (BGS 221.2) nennt «den 1. Mai» ganztags nur
+  // für Art. 142 ZPO — bedingter Feiertag, s. Block «Bedingte kantonale Feiertage».
+  { art: 'fix', monat: 5, tag: 1, kantone: ['ZH', 'BS', 'BL', 'SH', 'TG', 'AG', 'JU', 'NE', 'TI'], name: 'Tag der Arbeit' },
   { art: 'fix', monat: 6, tag: 23, kantone: ['JU'], name: 'Commémoration du plébiscite jurassien' },
   { art: 'fix', monat: 6, tag: 29, kantone: ['TI'], name: 'Peter und Paul' },
   { art: 'fix', monat: 8, tag: 1, kantone: 'alle', name: 'Bundesfeier' },
@@ -199,31 +202,107 @@ function lundiJeuneFederal(jahr: number): Date {     // VD: Montag nach 3. Sonnt
   return addDays(d, 14 + 1);
 }
 
-// NE-Block — Schliesstage der Kantonsverwaltung (RL-22, R1-04, Entscheid W-10 a).
-// LI-CPC NE Art. 10a (RSN 251.1, in Kraft 1.4.2015, Etat 1.7.2019), Randtitel
-// «Jours fériés (art. 142 CPC)»: «Sont considérés comme fériés dans le canton
-// les jours où les bureaux de l'administration cantonale sont fermés à raison
-// d'au moins une demi-journée.» (Wortlaut laut Zweitprüfung V8, amtlich geöffnet
-// 23.9.2026: https://rsn.ne.ch/DATA/program/books/rsne/pdf/2511.pdf)
-// Die Schliesstage legt der Conseil d'État fest (RDF RSN 152.512: «en sus des
-// jours fériés légaux, les jours désignés par le Conseil d'Etat» — Suchtreffer
-// 24.9.2026, Wortlaut NICHT selbst geöffnet). Eine stehende, jahresunabhängige
-// Regel ist damit NICHT belegt → nur Jahre mit amtlich publizierter Liste
-// werden geführt; für alle anderen Jahre gilt allein RSN 941.02 Art. 3 (oben),
-// also das frühere Fristende (sichere Richtung, kein Raten).
-// 2026: https://www.ne.ch/themes/economie-et-emploi/jours-feries-officiels
-// (laut V8 abgerufen 23.9.2026): 2.1., Ostermontag, Freitag nach Auffahrt,
-// Pfingstmontag, Lundi du Jeûne, 24.12., 26.12., 31.12. — Eigenabruf am
-// 24.9.2026 durch Netzsperre verhindert; Gegenprüfung muss die Liste amtlich
-// bestätigen. Neue Jahre nur mit amtlichem Beleg ergänzen (Pflegebedarf,
-// bibliothek/normen/feiertage-kantone-bj.md).
-const NE_SCHLIESSTAGE: Readonly<Record<number, ReadonlyArray<readonly [monat: number, tag: number]>>> = {
-  2026: [[1, 2], [4, 6], [5, 15], [5, 25], [9, 21], [12, 24], [12, 26], [12, 31]],
+// ─── Bedingte kantonale Feiertage (RL-22-Nachzug, 25.9.2026) ─────────────
+//
+// Zwei kantonale Regeln machen einen Tag nur für BESTIMMTE Verfahren zum
+// Feiertag. Sie zählen deshalb nicht pauschal, sondern je Feiertags-Kontext
+// (Parameter `kontext` von istFeiertag & Co.). Wo die Gleichstellung nicht
+// belegt ist, zählt der Tag NICHT (früheres = sicheres Fristende); die Engine
+// warnt dann (hinweisBedingteFeiertage). Amtlich selbst geöffnet am 25.9.2026:
+//
+// (1) NE-Schliesstage der Kantonsverwaltung. Stehende Regel: Règlement des
+//     fonctionnaires (RDF) Art. 11 Abs. 1 (RSN 152.512, Etat 1.1.2023, Text seit
+//     Erlass 9.3.2005 ohne Änderungsfussnote), «Le personnel a congé et les
+//     bureaux … de l'administration sont fermés toute la journée»: Sa, So,
+//     31.12., 1./2.1., 1.3., Karfreitag, Ostermontag, 1.5., Auffahrt und Freitag
+//     danach, Pfingstmontag, 1.8., Lundi du Jeûne fédéral, 24./25./26.12.
+//     https://rsn.ne.ch/DATA/program/books/rsne/pdf/152512.pdf
+//     Gegenprobe amtlich: ne.ch «Jours fériés officiels», Tabellen 2026 und 2027
+//     (https://www.ne.ch/themes/economie-et-emploi/jours-feries-officiels) —
+//     deckungsgleich mit der Regel. (Erstbau 24.9.2026 führte nur eine Tabelle
+//     2026, weil eine stehende Regel nicht belegt schien — §7-Abweichung, hier
+//     korrigiert; die Erstbau-Zitierung «jours désignés par le Conseil d'Etat»
+//     steht so NICHT in RDF Art. 11.) RDF Art. 11 Abs. 2 (Ersatzfreitage des
+//     Conseil d'État, wenn Tage auf Sa/So fallen) ist NICHT abgebildet — ob sie
+//     die Büros schliessen, ist nicht belegt (offen, Pflegebedarf).
+//     Gleichstellung mit einem Feiertag, je Wortlaut «Sont considérés comme
+//     fériés dans le canton les jours où les bureaux de l'administration
+//     cantonale sont fermés à raison d'au moins une demi-journée»:
+//       · ZPO: LI-CPC Art. 10a (RSN 251.1, in Kraft 1.4.2015, Etat 1.7.2019),
+//         Randtitel «Jours fériés (art. 142 CPC)» — rsn.ne.ch …/pdf/2511.pdf
+//       · StPO: LI-CPP Art. 9a (RSN 322.0, in Kraft 1.4.2015, Etat 13.3.2024),
+//         Randtitel «Jours fériés (art. 90 CPP)» — rsn.ne.ch …/pdf/3220.pdf
+//       · kantonales Verwaltungsverfahren: LPA Art. 33 Abs. 3 (RSN 152.130,
+//         État 1.1.2026; vorher LPJA Art. 20 Abs. 2) — rsn.ne.ch …/pdf/152130.pdf
+//       · BGG Art. 45: BGer 9C_396/2018 vom 20.12.2018 E. 2.3 (Pfingstmontag in
+//         NE = «jour férié selon le droit cantonal» kraft LPJA Art. 20 Abs. 2)
+//       · VwVG Art. 20 Abs. 3: BVGer D-837/2025 vom 26.2.2025 (24./26.12. NE;
+//         mit Verweis auf E-2540/2019)
+//     NICHT belegt: SchKG (Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO; LILP NE,
+//     RSN 261.1, kennt keine Regel) und OR Art. 78 («staatlich anerkannter
+//     Feiertag»). Gilt erst ab 1.4.2015 (frühestes Inkrafttreten der
+//     Gleichstellungsnormen LI-CPC/LI-CPP; sichere Richtung).
+// (2) SO 1. Mai: EG ZPO § 22 Abs. 2 (BGS 221.2, Fassung 1.1.2025, gleichlautend
+//     seit 1.3.2015) — «Für die Fristbestimmung gemäss Artikel 142 ZPO gelten als
+//     vom kantonalen Recht anerkannte Feiertage: … der 1. Mai …»
+//     https://bgs.so.ch/app/de/texts_of_law/221.2 — ausdrücklich auf Art. 142
+//     ZPO beschränkt. Allgemein gilt nur Ruhetagsgesetz SO § 2 Abs. 1 lit. b
+//     (BGS 512.41, Stand 1.9.2014): «1. Mai ab 12.00 Uhr»
+//     (https://bgs.so.ch/app/de/texts_of_law/512.41). Zählt nur im ZPO-Kontext,
+//     ab 1.3.2015 (ältere Fassungen nicht geprüft; sichere Richtung).
+
+/**
+ * Feiertags-Kontext = Verfahrensrecht, dessen Feiertagsbegriff gilt.
+ * - 'zpo'      Art. 142 Abs. 1bis/3 ZPO (Gerichtsort)
+ * - 'stpo'     Art. 90 Abs. 2 StPO (Wohnsitz/Sitz der Partei bzw. des Rechtsbeistands)
+ * - 'bgg'      Art. 45 BGG · 'vwvg' Art. 20 Abs. 3 VwVG (Wohnsitz/Sitz)
+ * - 'schkg'    Art. 31 SchKG i.V.m. Art. 142 Abs. 3 ZPO
+ * - 'allgemein' OR Art. 78 und jede Stelle ohne eigenes Verfahrensrecht (Voreinstellung)
+ * - 'weitest'  zählt ALLE bedingten Tage — NUR für Rechnungen, in denen der
+ *              spätere Tag die sichere Seite ist (Wartefrist, Rückwärtsfrist)
+ *              und für den Vergleich in hinweisBedingteFeiertage.
+ */
+export type FeiertagsKontext = 'zpo' | 'stpo' | 'bgg' | 'vwvg' | 'schkg' | 'allgemein' | 'weitest';
+
+type BedingteArt = 'ne_schliesstag' | 'so_1_mai';
+
+const BEDINGT_GILT_IN: Record<BedingteArt, readonly FeiertagsKontext[]> = {
+  ne_schliesstag: ['zpo', 'stpo', 'bgg', 'vwvg', 'weitest'],
+  so_1_mai: ['zpo', 'weitest'],
 };
 
+const BEDINGT_BESCHREIBUNG: Record<BedingteArt, string> = {
+  ne_schliesstag:
+    'im Kanton NE ein Schliesstag der Kantonsverwaltung (RDF Art. 11 Abs. 1, RSN 152.512). NE stellt '
+    + 'solche Tage für Fristen nach ZPO, StPO und im Verwaltungsverfahren einem Feiertag gleich (LI-CPC '
+    + 'Art. 10a, LI-CPP Art. 9a, LPA Art. 33 Abs. 3), für BGG/VwVG anerkannt (BGer 9C_396/2018 E. 2.3; '
+    + 'BVGer D-837/2025)',
+  so_1_mai:
+    'der 1. Mai im Kanton SO: ganztags Feiertag nur für Fristen nach Art. 142 ZPO (EG ZPO SO § 22 Abs. 2, '
+    + 'BGS 221.2); allgemein ist er erst ab 12.00 Uhr Ruhetag (Ruhetagsgesetz SO § 2 Abs. 1 lit. b, BGS 512.41)',
+};
+
+const NE_SCHLIESSTAGE_AB = new Date(2015, 3, 1);   // LI-CPC Art. 10a / LI-CPP Art. 9a in Kraft
+const SO_1_MAI_AB = new Date(2015, 2, 1);          // EG ZPO SO § 22 Abs. 2, geprüfte Fassung ab 1.3.2015
+
+/** NE-Schliesstag nach RDF Art. 11 Abs. 1 (ohne Sa/So, die ohnehin arbeitsfrei sind). */
 function istNeSchliesstag(date: Date): boolean {
-  const liste = NE_SCHLIESSTAGE[date.getFullYear()];
-  return liste !== undefined && liste.some(([m, t]) => date.getMonth() === m - 1 && date.getDate() === t);
+  if (isBefore(date, NE_SCHLIESSTAGE_AB)) return false;
+  const jahr = date.getFullYear();
+  const o = ostersonntag(jahr);
+  const fix: ReadonlyArray<readonly [monat: number, tag: number]> = [
+    [12, 31], [1, 1], [1, 2], [3, 1], [5, 1], [8, 1], [12, 24], [12, 25], [12, 26],
+  ];
+  if (fix.some(([m, t]) => date.getMonth() === m - 1 && date.getDate() === t)) return true;
+  // Karfreitag, Ostermontag, Auffahrt, Freitag nach Auffahrt, Pfingstmontag
+  if ([-2, 1, 39, 40, 50].some((off) => sameDay(addDays(o, off), date))) return true;
+  return sameDay(lundiJeuneFederal(jahr), date);
+}
+
+function bedingteArt(date: Date, kanton: Kanton): BedingteArt | null {
+  if (kanton === 'NE' && istNeSchliesstag(date)) return 'ne_schliesstag';
+  if (kanton === 'SO' && date.getMonth() === 4 && date.getDate() === 1 && !isBefore(date, SO_1_MAI_AB)) return 'so_1_mai';
+  return null;
 }
 
 function giltImKanton(kantone: 'alle' | Kanton[], kanton: Kanton): boolean {
@@ -233,8 +312,8 @@ function giltImKanton(kantone: 'alle' | Kanton[], kanton: Kanton): boolean {
 const sameDay = (a: Date, b: Date) =>
   a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 
-/** Anerkannter Feiertag am Gerichtsort? (Art. 142 Abs. 3 ZPO) */
-export function istFeiertag(date: Date, kanton: Kanton): boolean {
+/** Feiertag nach der Grundmatrix (BJ-Liste + kantonale Spezialnormen), ohne bedingte Tage. */
+function istGrundFeiertag(date: Date, kanton: Kanton): boolean {
   const jahr = date.getFullYear();
   const o = ostersonntag(jahr);
   const treffer = FEIERTAGE.some((def) => {
@@ -248,20 +327,75 @@ export function istFeiertag(date: Date, kanton: Kanton): boolean {
   if (kanton === 'GL' && sameDay(naefelserFahrt(jahr), date)) return true;
   if (kanton === 'GE' && sameDay(jeuneGenevois(jahr), date)) return true;
   if (kanton === 'VD' && sameDay(lundiJeuneFederal(jahr), date)) return true;
-  if (kanton === 'NE' && istNeSchliesstag(date)) return true;
   return false;
 }
 
-/** Arbeitsfreier Tag = Samstag/Sonntag oder anerkannter Feiertag am Gerichtsort. */
-export function istArbeitsfreierTag(date: Date, kanton: Kanton): boolean {
-  return isWeekend(date) || istFeiertag(date, kanton);
+/**
+ * Anerkannter Feiertag am massgebenden Ort im Feiertags-Kontext (Art. 142
+ * Abs. 3 ZPO, Art. 90 Abs. 2 StPO, Art. 45 BGG, Art. 20 Abs. 3 VwVG, Art. 31
+ * SchKG, Art. 78 OR). Voreinstellung 'allgemein' = bedingte kantonale Tage
+ * zählen NICHT (sichere Richtung für jede Stelle ohne eigenen Kontext).
+ */
+export function istFeiertag(date: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): boolean {
+  if (istGrundFeiertag(date, kanton)) return true;
+  const art = bedingteArt(date, kanton);
+  return art !== null && BEDINGT_GILT_IN[art].includes(kontext);
+}
+
+/** Arbeitsfreier Tag = Samstag/Sonntag oder anerkannter Feiertag im Kontext. */
+export function istArbeitsfreierTag(date: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): boolean {
+  return isWeekend(date) || istFeiertag(date, kanton, kontext);
 }
 
 /** Vorwärtsschiebung auf den nächsten Werktag (Sa/So/anerkannter Feiertag
  *  am massgebenden Ort) – kanonische Stelle; zuvor als while-Schleife in
  *  fristenEngine, verjaehrung und mietrecht je eigens ausgeschrieben. */
-export function naechsterWerktag(d: Date, kanton: Kanton): Date {
+export function naechsterWerktag(d: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): Date {
   let t = d;
-  while (istArbeitsfreierTag(t, kanton)) t = addDays(t, 1);
+  while (istArbeitsfreierTag(t, kanton, kontext)) t = addDays(t, 1);
   return t;
+}
+
+/** Bedingter kantonaler Werktag im Kontext: ein Tag, der nur in ANDEREN
+ *  Verfahren als Feiertag gilt (hier also als Werktag gezählt wird). */
+function istUngezaehlterBedingterTag(date: Date, kanton: Kanton, kontext: FeiertagsKontext): BedingteArt | null {
+  if (isWeekend(date) || istGrundFeiertag(date, kanton)) return null;
+  const art = bedingteArt(date, kanton);
+  return art !== null && !BEDINGT_GILT_IN[art].includes(kontext) ? art : null;
+}
+
+/**
+ * Warnsatz (RL-22-Nachzug): Das im `kontext` berechnete Ende `eng` wäre bei
+ * Zählung aller bedingten kantonalen Tage `weit` (eng ≤ weit). Nennt die dazwischen als
+ * Werktag gezählten bedingten Tage. `null`, wenn beide gleich sind.
+ * `richtung` = welche Seite die Engine gewählt hat: 'frueher' (Handlungsfrist:
+ * früheres Ende ist sicher) oder 'spaeter' (Wartefrist/frühestes Datum).
+ */
+export function bedingteFeiertageSatz(
+  von: Date, eng: Date, weit: Date, kanton: Kanton, kontext: FeiertagsKontext, richtung: 'frueher' | 'spaeter',
+): string | null {
+  if (+eng === +weit) return null;
+  const tage: string[] = [];
+  let art: BedingteArt | null = null;
+  // Nur Tage bis zum gewählten früheren Ende zählen als Ursache (danach liegen
+  // allein die Tage, über die die weiteste Lesart hinausschiebt).
+  for (let t = von, g = 0; !isAfter(t, eng) && g < 400; t = addDays(t, 1), g++) {
+    const a = istUngezaehlterBedingterTag(t, kanton, kontext);
+    if (a) { tage.push(formatDatum(t)); art = art ?? a; }
+  }
+  if (!art) return null;
+  const kopf = `Kantonaler Sonderfall: Der ${tage.join(', ')} ist ${BEDINGT_BESCHREIBUNG[art]}. `
+    + 'Dass diese Gleichstellung für die hier berechnete Frist gilt, ist nicht belegt. ';
+  return richtung === 'frueher'
+    ? kopf + `Berechnet ist das frühere, sichere Fristende (${formatDatum(eng)}); gilt der Tag im konkreten `
+      + `Verfahren als Feiertag, endet die Frist erst am ${formatDatum(weit)}. Im Zweifel bis ${formatDatum(eng)} handeln.`
+    : kopf + `Berechnet ist das spätere, sichere Datum (${formatDatum(weit)}); gilt der Tag im konkreten `
+      + `Verfahren nicht als Feiertag, wäre bereits der ${formatDatum(eng)} massgeblich.`;
+}
+
+/** Hinweis für Vorwärtsfristen ohne Stillstand (Art. 78 OR u. ä.): `null` oder Warnsatz. */
+export function hinweisBedingteFeiertage(rohesEnde: Date, kanton: Kanton, kontext: FeiertagsKontext = 'allgemein'): string | null {
+  const eng = naechsterWerktag(rohesEnde, kanton, kontext);
+  const weit = naechsterWerktag(rohesEnde, kanton, 'weitest');
+  return bedingteFeiertageSatz(rohesEnde, eng, weit, kanton, kontext, 'frueher');
 }

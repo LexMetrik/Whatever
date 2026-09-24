@@ -10,6 +10,7 @@ import {
   fristendeTage,
   fristendeKalender,
   normalisiereEnde,
+  hinweisBedingteFeiertageEnde,
   OHNE_STILLSTAND,
   type Periode,
   type Stillstand,
@@ -18,6 +19,12 @@ import {
 // ─── Feste Normverweise ───────────────────────────────────────────────────
 
 const N_31:     Normverweis = { artikel: 'Art. 31 SchKG', bemerkung: 'Fristberechnung subsidiär nach der ZPO' };
+
+// Feiertags-Kontext (RL-22-Nachzug, 25.9.2026): Dass kantonale Sonderfeiertage für
+// Art. 142 ZPO (NE LI-CPC Art. 10a, SO EG ZPO § 22 Abs. 2) über Art. 31 SchKG auch
+// für Betreibungsfristen gelten, ist nicht belegt (LILP NE, RSN 261.1: keine Regel)
+// → sie zählen nicht (früheres Fristende), die Engine warnt.
+const KONTEXT_SCHKG = 'schkg' as const;
 const N_142_1:  Normverweis = { artikel: 'Art. 142 Abs. 1 ZPO', bemerkung: 'Tagesfrist: Beginn am Folgetag (Zustelltag zählt nicht)' };
 const N_142_2:  Normverweis = { artikel: 'Art. 142 Abs. 2 ZPO', bemerkung: 'Monatsfrist: gleichbezeichneter Tag (Jahresfristen analog, st. Praxis)' };
 const N_142_3:  Normverweis = { artikel: 'Art. 142 Abs. 3 ZPO', bemerkung: 'Ende am Sa/So/Feiertag → nächster Werktag' };
@@ -423,7 +430,7 @@ function berechneLesart(
   const istWartefrist = input.fristnatur === 'wartefrist';
   const { tag: diesAdQuem, verschoben } = istWartefrist
     ? { tag: endeProvisorisch, verschoben: false }
-    : normalisiereEnde(endeProvisorisch, input.kanton, st);
+    : normalisiereEnde(endeProvisorisch, input.kanton, st, KONTEXT_SCHKG);
   // Frühestes zulässiges Datum (Begründung bei Schritt 4 unten); schon hier
   // berechnet, weil es der Hauptwert dieser Lesart ist (diesAdQuem).
   // RL-17 / Befunde F2-08, R1-07 (Prüfung Rechtslogik 23.9.2026, deklarierte
@@ -443,8 +450,11 @@ function berechneLesart(
   // wegen Art. 63 später enden — das verknüpft der Fristenspiegel (R1-07).
   const stWartefrist = istArt63Regime(modus) ? OHNE_STILLSTAND : st;
   const folgetag = istWartefrist ? addDays(diesAdQuem, 1) : diesAdQuem;
+  // RL-22-Nachzug: beim frühesten zulässigen Datum ist der SPÄTERE Tag die sichere
+  // Seite → bedingte kantonale Feiertage zählen hier ('weitest'), mit Warnung
+  // (unten nach Schritt 4, gleiche Stillstands-Strategie stWartefrist).
   const massgeblich = istWartefrist
-    ? normalisiereEnde(folgetag, input.kanton, stWartefrist).tag
+    ? normalisiereEnde(folgetag, input.kanton, stWartefrist, 'weitest').tag
     : diesAdQuem;
   const warteInGeschlossenerZeit =
     istWartefrist && istArt63Regime(modus) ? st.periodeFuer(massgeblich) : null;
@@ -551,6 +561,10 @@ function berechneLesart(
   // HANDLUNGSfrist erst am nächsten Werktag zulässig (Art. 142 Abs. 3 ZPO). Die
   // Normalisierung wird deshalb NACH dem +1-Folgetag angewandt, nicht davor
   // (folgetag/massgeblich sind oben nach Schritt 3 berechnet).
+  const bedingtHinweis = istWartefrist
+    ? hinweisBedingteFeiertageEnde(folgetag, input.kanton, stWartefrist, KONTEXT_SCHKG, 'spaeter')
+    : hinweisBedingteFeiertageEnde(endeProvisorisch, input.kanton, st, KONTEXT_SCHKG, 'frueher');
+  if (bedingtHinweis) warnungen.push(bedingtHinweis);
   if (istWartefrist) {
     const folgetagVerschoben = differenceInCalendarDays(massgeblich, folgetag) > 0;
     rechenweg.push({
