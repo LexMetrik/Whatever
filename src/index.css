@@ -4673,14 +4673,15 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
    keine Karte, keine Fläche, kein Ring — eine Zeile mit Trennlinie oben und,
    im gewählten Zustand, dem 3-px-Strich in der Werkzeug-Registerfarbe. Der
    Strich liegt als `inset`-Schatten IN der Box, damit der Satz beim Wählen
-   nicht um 3 px rückt (dieselbe Begründung wie an `.lc-wahl-kachel`). */
+   nicht rückt (dieselbe Begründung wie an `.lc-wahl-kachel`; seit
+   W2·29-WERKBANK-RECHNER R4 wie dort OBEN, 1 px Rand + 2 px Innenschatten). */
 .lc-wahl-zeile {
   position: relative;
   border-top: 1px solid var(--line);
   transition: border-color var(--dur-fast) var(--ease);
 }
 .lc-wahl-zeile:hover { border-top-color: var(--reg-w); }
-.lc-wahl-zeile-gewaehlt { box-shadow: inset 3px 0 0 var(--reg-w); border-top-color: var(--reg-w); }
+.lc-wahl-zeile-gewaehlt { box-shadow: inset 0 2px 0 var(--reg-w); border-top-color: var(--reg-w); } /* R4: Strich OBEN wie `.lc-wahl-kachel` */
 
 /* ═══ W2·6c-E3 · DIE ENTSTEHUNG AM ARTIKEL (Präfix `.lr8-entst`) ══════════════
    Auftrag David 6.9.2026 («wie ein Gesetz zustande gekommen ist»), Auflage:
@@ -4983,7 +4984,8 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
 a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 
 /* Haupteinstieg (Fristenrechner): breite Zeile, Registerstrich links als
-   Innenschatten — der Inhalt rückt nicht (dieselbe Wahl wie `.lc-wahl-kachel`). */
+   Innenschatten — der Inhalt rückt nicht (Linkseinstieg einer Liste, kein
+   Auswahlzustand; die Wahl-Kachel trägt ihren Strich seit R4 oben). */
 .kt-haupt {
   padding: 0.625rem 0.25rem 0.75rem 0.875rem;
   border-top: 1px solid var(--rule-soft);
