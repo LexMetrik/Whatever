@@ -36,8 +36,12 @@ export function findeDateienMitLiteralemNul(pfade: string[]): string[] {
     let inhalt: Buffer;
     try {
       inhalt = readFileSync(pfad);
-    } catch {
-      continue; // zwischen Auflistung und Lesen gelöscht/umbenannt — kein Befund dieser Wache
+    } catch (e) {
+      // Nur «zwischen Auflistung und Lesen gelöscht/umbenannt» ist kein Befund dieser Wache;
+      // jeder andere Lesefehler soll laut werden statt die Datei still zu überspringen
+      // (Gegenprüfung HN-03b, Auflage A2, 25.9.2026).
+      if ((e as NodeJS.ErrnoException).code === 'ENOENT') continue;
+      throw e;
     }
     if (inhalt.includes(0)) treffer.push(pfad);
   }
@@ -46,8 +50,11 @@ export function findeDateienMitLiteralemNul(pfade: string[]): string[] {
 
 describe('keine literalen NUL-Bytes in getrackten Quelldateien (PS-09/HN-03)', () => {
   it('git-getrackte .ts/.tsx/.mjs/.js/.py/.sh-Dateien enthalten kein literales NUL-Byte', () => {
-    const ausgabe = execFileSync('git', ['ls-files'], { encoding: 'utf8' });
-    const dateien = ausgabe.split('\n').filter((f) => f !== '' && QUELL_ENDUNGEN.some((e) => f.endsWith(e)));
+    // `-z`: Pfade roh statt in Anführungszeichen (Umlaute); `maxBuffer`: die Liste war am 25.9.2026 schon
+    // 75 % des Node-Standards (1 MiB) — ohne Puffer würde die Wache in ~3 Monaten grundlos rot
+    // (Gegenprüfung HN-03b, Auflage A1).
+    const ausgabe = execFileSync('git', ['ls-files', '-z'], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const dateien = ausgabe.split('\0').filter((f) => f !== '' && QUELL_ENDUNGEN.some((e) => f.endsWith(e)));
     expect(dateien.length).toBeGreaterThan(1000); // Sanity: `git ls-files` lief wirklich, keine leere/kaputte Liste
 
     const treffer = findeDateienMitLiteralemNul(dateien);
