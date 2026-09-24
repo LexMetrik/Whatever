@@ -19,7 +19,12 @@ import { rechtsprechung } from '../data/verifikation';
 //
 // Bewusst NICHT modelliert (Warnung/Annahme im Ergebnis): strafrechtliche
 // Längerfrist (Art. 60 Abs. 2, StGB-abhängig), Spezialgesetze (SVG, VG, PrHG),
-// Übergangsrecht für Altfälle vor 1.1.2020 (Art. 49 SchlT ZGB).
+// Verlustscheinforderung (Art. 149a Abs. 1 SchKG: 20 Jahre ab Ausstellung,
+// gegenüber Erben 1 Jahr ab Eröffnung des Erbgangs — kein Regime, Befund F5-07).
+// Übergangsrecht für Altfälle vor 1.1.2020 (Art. 49 SchlT ZGB): für die
+// Regime mit Altrecht (Art. 60/67 OR, vertraglicher Personenschaden) seit
+// RL-08 (23.9.2026) abgebildet, siehe `pruefeAltrecht`; Art. 127/128 OR sind
+// unverändert, dort bleibt es beim Übergangs-Hinweis.
 
 export type VerjaehrungRegime =
   | 'ordentlich'      // Art. 127: 10 Jahre ab Fälligkeit
@@ -64,6 +69,11 @@ export type VerjaehrungErgebnis = Berechnungsergebnis & {
   verjaehrtAmStichtag?: boolean;
   verzichtBisISO?: string;   // Einredeverzicht wirkt bis (Art. 141)
   gehemmtTage?: number;
+  /** Nur bei Altfällen (Fristbeginn vor 1.1.2020) der Regime mit Altrecht:
+   *  welches Recht nach Art. 49 SchlT ZGB massgeblich ist. `bisheriges_recht`
+   *  ⇒ verjaehrungISO IST das Altrecht-Ende; `unsicher` ⇒ Verdikt nicht
+   *  eindeutig abbildbar (Ergebnis-Text + Warnung nennen beide Daten). */
+  uebergangsrecht?: { art: 'bisheriges_recht' | 'neues_recht' | 'unsicher'; altrechtEndeISO: string };
 };
 
 // ─── Regime-Tabelle ─────────────────────────────────────────────────────────
@@ -119,6 +129,40 @@ const N_138_2: Normverweis = { artikel: 'Art. 138 Abs. 2 OR', bemerkung: 'jeder 
 const N_141: Normverweis = { artikel: 'Art. 141 OR', bemerkung: 'Einredeverzicht: schriftlich, max. 10 Jahre' };
 const N_142: Normverweis = { artikel: 'Art. 142 OR', bemerkung: 'Verjährung nur auf Einrede zu beachten' };
 const N_60_2: Normverweis = { artikel: 'Art. 60 Abs. 2 OR', bemerkung: 'strafrechtliche Längerfrist vorbehalten' };
+
+const N_49: Normverweis = { artikel: 'Art. 49 SchlT ZGB', bemerkung: 'Übergangsrecht Verjährung: bisher eingetretene Verjährung bleibt' };
+
+// ─── Übergangsrecht Revision 2020 (Art. 49 SchlT ZGB) ──────────────────────
+// Art. 49 SchlT ZGB, Fassung gemäss Anhang Ziff. 3 BG vom 15.6.2018 (Revision
+// des Verjährungsrechts, AS 2018 5343, BBl 2014 235), in Kraft seit 1.1.2020.
+// Wortlaut geprüft 23.9.2026 (RL-08) an Fedlex SR 210, Fassung 1.7.2026:
+// https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de
+//   Abs. 1: «Bestimmt das neue Recht eine längere Frist als das bisherige
+//   Recht, so gilt das neue Recht, sofern die Verjährung nach bisherigem Recht
+//   noch nicht eingetreten ist.» Abs. 2: «Bestimmt das neue Recht eine kürzere
+//   Frist, so gilt das bisherige Recht.» Abs. 3: Beginn einer laufenden
+//   Verjährung bleibt unberührt.
+const INKRAFT_REVISION_2020 = '2020-01-01';
+// Bisheriges Recht — Wortlaut geprüft 23.9.2026 an Fedlex SR 220, Fassung
+// 1.11.2019 (letzte Fassung vor dem 1.1.2020), PDF/A:
+// https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/27/317_321_377/20191101/de/pdf-a/fedlex-data-admin-ch-eli-cc-27-317_321_377-20191101-de-pdf-a.pdf
+//   aArt. 60 Abs. 1 OR: «in einem Jahre von dem Tage hinweg, wo der Geschädigte
+//   Kenntnis vom Schaden und von der Person des Ersatzpflichtigen erlangt hat,
+//   jedenfalls aber mit dem Ablaufe von zehn Jahren, vom Tage der schädigenden
+//   Handlung an gerechnet» (keine Sonderfrist für Personenschäden).
+//   aArt. 60 Abs. 2 OR: längere strafrechtliche Verjährung gilt auch zivil.
+//   aArt. 67 Abs. 1 OR: «mit Ablauf eines Jahres, nachdem der Verletzte von
+//   seinem Anspruch Kenntnis erhalten hat, in jedem Fall aber mit Ablauf von
+//   zehn Jahren seit der Entstehung des Anspruchs».
+//   Art. 127 / 130 Abs. 1 OR (unverändert): 10 Jahre ab Fälligkeit — für
+//   vertragliche Personenschäden galt vor Art. 128a OR nur diese Frist.
+//   Art. 132 OR (unverändert) und Art. 78 OR: Fristberechnung wie heute.
+const ALTRECHT: Partial<Record<VerjaehrungRegime, { relativJahre: number | null; absolutJahre: number; norm: string }>> = {
+  delikt: { relativJahre: 1, absolutJahre: 10, norm: 'aArt. 60 Abs. 1 OR: 1 Jahr ab Kenntnis / 10 Jahre ab schädigender Handlung' },
+  delikt_person: { relativJahre: 1, absolutJahre: 10, norm: 'aArt. 60 Abs. 1 OR: 1 Jahr ab Kenntnis / 10 Jahre ab schädigender Handlung' },
+  bereicherung: { relativJahre: 1, absolutJahre: 10, norm: 'aArt. 67 Abs. 1 OR: 1 Jahr ab Kenntnis / 10 Jahre ab Entstehung' },
+  vertrag_person: { relativJahre: null, absolutJahre: 10, norm: 'Art. 127/130 Abs. 1 OR: 10 Jahre ab Fälligkeit (= Pflichtverletzung)' },
+};
 
 const fmt = formatDatum;
 const iso = formatISO;
@@ -191,6 +235,50 @@ function mitStillstand(start: Date, ende0: Date, intervalle: HemmIntervall[]): {
 // Exportiert für Module mit derselben Fristend-Mechanik (z. B. Gewährleistung).
 export function werktagsEnde(d: Date, kanton: Kanton): Date {
   return naechsterWerktag(d, kanton);
+}
+
+// Art. 49 SchlT ZGB (RL-08, Befunde F5-01/F5-02): Ende nach bisherigem Recht
+// berechnen und entscheiden, welches Recht gilt. Deterministisch (§2); wo das
+// bisherige Recht mit den Eingaben nicht eindeutig abbildbar ist (aArt. 60
+// Abs. 2 OR, Unterbrechung/Stillstand im Altrecht-Fenster, Art. 49 Abs. 1 vs.
+// Abs. 2 bei vertrag_person), lautet das Verdikt «unsicher» (§8).
+type AltrechtBefund = {
+  art: 'bisheriges_recht' | 'neues_recht' | 'unsicher';
+  roh: Date; altEnde: Date; norm: string; grund?: string;
+};
+function pruefeAltrecht(
+  input: VerjaehrungInput, hemmungen: HemmIntervall[], unterbrechungen: Unterbrechung[],
+): AltrechtBefund | null {
+  const A = ALTRECHT[input.regime];
+  if (!A || !input.beginnAbsolut) return null;
+  const grenze = parseISO(INKRAFT_REVISION_2020);
+  const rel = parseISO(input.beginnRelativ);
+  const abs = parseISO(input.beginnAbsolut);
+  if (isNaN(abs.getTime()) || (!isBefore(rel, grenze) && !isBefore(abs, grenze))) return null;
+  const absEnde = rohesEnde(abs, A.absolutJahre);
+  const relEnde = A.relativJahre != null ? rohesEnde(rel, A.relativJahre) : null;
+  const roh = relEnde && isBefore(relEnde, absEnde) ? relEnde : absEnde;
+  const altEnde = werktagsEnde(roh, input.kanton);
+  // «eingetreten» = letzter Tag unbenützt verstrichen (Art. 132 Abs. 1 OR) vor
+  // Inkrafttreten: letzter Tag spätestens am 31.12.2019.
+  const eingetreten = isBefore(altEnde, grenze);
+  const befund = { roh, altEnde, norm: A.norm };
+  const fruehesterBeginn = isBefore(abs, rel) ? abs : rel;
+  const gruende: string[] = [];
+  if (eingetreten && input.strafbareHandlung && (input.regime === 'delikt' || input.regime === 'delikt_person')) {
+    gruende.push('Bei strafbarer Handlung galt schon nach bisherigem Recht die längere strafrechtliche Verjährung (aArt. 60 Abs. 2 OR); ob diese über den 1.1.2020 hinaus lief, ist StGB-abhängig und hier nicht berechnet.');
+  }
+  if (unterbrechungen.some((u) => { const d = parseISO(u.datum); return !isAfter(d, altEnde) && isBefore(d, grenze); })) {
+    gruende.push('Eine Unterbrechung vor dem 1.1.2020 setzte nach bisherigem Recht die bisherige (kürzere) Frist neu in Gang; ob diese vor dem 1.1.2020 ablief, bildet der Rechner nicht ab.');
+  }
+  if (eingetreten && hemmungen.some((h) => !isAfter(h.von, altEnde) && isAfter(h.bis, fruehesterBeginn))) {
+    gruende.push('Ein Stillstand im Fristenlauf vor dem 1.1.2020 richtet sich nach dem bisherigen Katalog von Art. 134 OR (2020 erweitert) und ist hier nicht nach bisherigem Recht abgebildet.');
+  }
+  if (!eingetreten && input.regime === 'vertrag_person') {
+    gruende.push('Die neue relative 3-Jahres-Frist (Art. 128a OR) ist kürzer als die bisherige 10-Jahres-Frist (Art. 127 OR), die absolute 20-Jahres-Frist länger; ob Art. 49 Abs. 1 oder Abs. 2 SchlT ZGB massgeblich ist, ist nicht eindeutig.');
+  }
+  if (gruende.length > 0) return { ...befund, art: 'unsicher', grund: gruende.join(' ') };
+  return { ...befund, art: eingetreten ? 'bisheriges_recht' : 'neues_recht' };
 }
 
 // ─── Hauptfunktion ──────────────────────────────────────────────────────────
@@ -488,8 +576,38 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
     });
   }
 
+  // ── Übergangsrecht (Art. 49 SchlT ZGB) für Altfälle vor dem 1.1.2020 ──
+  const ue = pruefeAltrecht(input, hemmungen, unterbrechungen);
+  if (ue) {
+    const werktagZusatz = ue.roh.getTime() !== ue.altEnde.getTime()
+      ? ` (letzter Tag ${fmt(ue.roh)} arbeitsfrei → nächster Werktag, Art. 78 OR)` : '';
+    rechenweg.push({
+      beschreibung: 'Übergangsrecht – Vergleich mit dem bisherigen Recht (Art. 49 SchlT ZGB)',
+      zwischenergebnis: ue.art === 'bisheriges_recht'
+        ? `Nach bisherigem Recht (${ue.norm}) endete die Frist am ${fmt(ue.altEnde)}${werktagZusatz} – vor Inkrafttreten der Revision am 01.01.2020. Die Verjährung ist damit nach bisherigem Recht eingetreten; die längeren neuen Fristen gelten nicht (Art. 49 Abs. 1 SchlT ZGB). Massgeblich ist dieses Datum, nicht die oben nach neuem Recht berechneten Fristen.${
+          unterbrechungen.length > 0 ? ' Spätere Unterbrechungshandlungen konnten die bereits eingetretene Verjährung nicht mehr unterbrechen.' : ''}`
+        : ue.art === 'neues_recht'
+          ? `Nach bisherigem Recht (${ue.norm}) wäre die Verjährung erst am ${fmt(ue.altEnde)}${werktagZusatz} eingetreten, also nicht vor dem 01.01.2020. Es gilt das neue Recht mit den längeren Fristen (Art. 49 Abs. 1 SchlT ZGB); der Beginn der laufenden Verjährung bleibt unberührt (Art. 49 Abs. 3 SchlT ZGB).`
+          : `Nach bisherigem Recht (${ue.norm}) ergäbe sich ohne Weiteres das Ende ${fmt(ue.altEnde)}${werktagZusatz}. ${ue.grund} Die nachstehenden Daten sind nach neuem Recht berechnet; das Verdikt ist unsicher.`,
+      normen: [N_49, ...(input.regime === 'vertrag_person' ? [{ artikel: 'Art. 127 OR' }, { artikel: 'Art. 130 Abs. 1 OR' }] : [])],
+      rechtsprechung: input.regime === 'vertrag_person' ? [rechtsprechung('BGE_137_III_16')] : undefined,
+    });
+    if (input.regime === 'vertrag_person') {
+      annahmen.push('Übergangsrecht: Nach bisherigem Recht verjährte der vertragliche Personenschaden in 10 Jahren ab Fälligkeit (Art. 127/130 Abs. 1 OR); als Fälligkeit wird der eingegebene Zeitpunkt der Pflichtverletzung übernommen (BGE 137 III 16).');
+    }
+    if (ue.art === 'unsicher') {
+      warnungen.push(`Übergangsrecht (Art. 49 SchlT ZGB) nicht eindeutig abbildbar: ${ue.grund} Ende nach bisherigem Recht ohne diese Umstände: ${fmt(ue.altEnde)}. Ergebnis fachlich prüfen.`);
+    }
+  }
+
   let verschoben: Date | null = null;
-  if (verjaehrung) {
+  if (ue?.art === 'bisheriges_recht') {
+    // Art. 49 Abs. 1 SchlT ZGB: die nach bisherigem Recht eingetretene
+    // Verjährung bleibt; keine der neuen Fristen ist massgeblich.
+    verschoben = ue.altEnde;
+    massgeblicheFrist = undefined;
+    annahmen.push(`Feiertagsverschiebung nach den im Kanton ${input.kanton} staatlich anerkannten Feiertagen (Erfüllungsort als Eingabe).`);
+  } else if (verjaehrung) {
     verschoben = werktagsEnde(verjaehrung, input.kanton);
     if (verschoben.getTime() !== verjaehrung.getTime()) {
       rechenweg.push({
@@ -542,7 +660,9 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
       'Strafbare Handlung (Art. 60 Abs. 2 OR): Der Anspruch verjährt frühestens mit Eintritt der strafrechtlichen Verfolgungsverjährung (Art. 97 StGB) – diese Längerfrist ist StGB-abhängig und hier nicht berechnet; das ausgewiesene Datum kann sich nach hinten verschieben.',
     );
   }
-  if (isBefore(beginn, parseISO('2020-01-01'))) {
+  // Regime mit Altrecht: Übergangsrecht oben abgebildet (pruefeAltrecht);
+  // Art. 127/128 OR sind unverändert → nur der allgemeine Hinweis.
+  if (!ALTRECHT[input.regime] && isBefore(beginn, parseISO(INKRAFT_REVISION_2020))) {
     warnungen.push(
       'Fristbeginn vor dem 1.1.2020: Für Altfälle gilt das Übergangsrecht (Art. 49 SchlT ZGB) – die Revision 2020 (u.a. relative Fristen 1 → 3 Jahre) ist hier nicht übergangsrechtlich abgebildet; Ergebnis prüfen.',
     );
@@ -557,6 +677,7 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
     ...(unterbrechungen.some((u) => u.typ === 'betreibungsakt') ? [N_138_2] : []),
     ...(input.verzicht ? [N_141] : []),
     ...(input.strafbareHandlung ? [N_60_2] : []),
+    ...(ue ? [N_49] : []),
     N_142,
   ];
 
@@ -572,7 +693,13 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
       ? ` Massgeblich ist die durch Unterbrechung neu angesetzte Frist (${letztFrist137II ? 'stets 10 Jahre, Art. 137 Abs. 2 OR' : 'Neubeginn nach Art. 138 Abs. 1 OR'}), die über die absolute Frist hinausreicht.`
       : ` Massgeblich ist die ${massgeblicheFrist === 'absolut' ? `absolute Frist (${R.absolutJahre} Jahre ab ${R.absolutLabel})` : `relative Frist (${R.relativJahre} Jahre ab ${R.beginnLabel})`}.`
     : '';
-  const ergebnisText = verschoben
+  const ergebnisText = ue?.art === 'bisheriges_recht' && verschoben
+    ? verjaehrt
+      ? `Verjährt nach bisherigem Recht (Art. 49 Abs. 1 SchlT ZGB): Die Verjährung ist nach bisherigem Recht (${ue.norm}) mit Ablauf des ${fmt(verschoben)} eingetreten, also vor Inkrafttreten der Revision am 01.01.2020; die längeren neuen Fristen gelten nicht (Stichtag ${fmt(stichtag)}). Sie ist als Einrede geltend zu machen (Art. 142 OR).`
+      : `Nicht verjährt am Stichtag ${fmt(stichtag)}: Nach bisherigem Recht (${ue.norm}) tritt die Verjährung mit unbenütztem Ablauf des ${fmt(verschoben)} ein, also vor dem 01.01.2020; die längeren neuen Fristen gelten nicht (Art. 49 Abs. 1 SchlT ZGB).`
+    : ue?.art === 'unsicher'
+      ? `Unsicher (Übergangsrecht, Art. 49 SchlT ZGB): Ende nach bisherigem Recht (${ue.norm}) ${fmt(ue.altEnde)}; Ende nach neuem Recht ${verschoben ? fmt(verschoben) : 'offen (Verfahren hängig)'}. ${ue.grund} Ergebnis fachlich prüfen.`
+      : verschoben
     ? verjaehrt
       ? `Verjährt: Die Verjährung ist mit Ablauf des ${fmt(verschoben)} eingetreten (Stichtag ${fmt(stichtag)}).${fristZusatz} Sie ist als Einrede geltend zu machen (Art. 142 OR).`
       : `Nicht verjährt: Die Verjährung tritt mit unbenütztem Ablauf des ${fmt(verschoben)} ein.${fristZusatz}${verzichtBis ? ` Zufolge Einredeverzichts ist die Einrede bis ${fmt(verzichtBis)} ausgeschlossen.` : ''}`
@@ -592,5 +719,6 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
     verjaehrtAmStichtag: verjaehrt,
     verzichtBisISO: verzichtBis ? iso(verzichtBis) : undefined,
     gehemmtTage: gehemmtTage || undefined,
+    ...(ue ? { uebergangsrecht: { art: ue.art, altrechtEndeISO: iso(ue.altEnde) } } : {}),
   };
 }
