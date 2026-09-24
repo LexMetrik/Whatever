@@ -4195,7 +4195,15 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    greift beim Tieflink nicht (gemessen 24.9.2026 an OR #art-336_c: opacity 0).
    Ohne Hover (Touch) gilt die Regel nicht: dort steht sie immer. Der Platz
    bleibt reserviert — kein Layout-Sprung beim Überfahren (CLS, §15). Das
-   Dossier des Einzelmodus (Knopf-Gestalt, D-E4) ist nicht betroffen. */
+   Dossier des Einzelmodus (Knopf-Gestalt, D-E4) ist nicht betroffen.
+   FLUCHT OHNE NEGATIVEN RAND (Wurzelfix R8-Timeout, PR #1062, 24.9.2026):
+   die Zeile soll optisch an der Artikelkante fluchten, ohne die 4 px
+   `px-1`-Luft vor dem ersten Knopf. Statt eines `-ml-1` am Container
+   (bricht bei ~1'700 Vorkommen im OR die R8-Blutungserkennung, s.
+   `ArtikelAktionen.tsx`) nimmt NUR der erste Knopf sein linkes Padding weg —
+   sichtbar identisch, weil `.lc-btn-mini` in `ruhig` ohnehin
+   `border-transparent`/`bg-transparent` trägt und nur der Text zählt. */
+[data-aktionen-ruhig] > .lc-btn-mini:first-child { padding-left: 0; }
 @media (hover: hover) and (pointer: fine) {
   [data-aktionen-ruhig] {
     opacity: 0;
