@@ -134,7 +134,12 @@ export const KARTEN_FRISTEN: Record<string, CalculatorCard> = {
       { label: 'Kündigung, Termine & Zahlungsverzug', status: 'entwurf' },
       { label: 'Kündigungsschreiben Mieter:in (Vorlage)', status: 'entwurf' },
       { label: 'Vermieter-Kündigung: Checkliste amtliches Formular', status: 'entwurf' },
-      { label: 'Anfechtung & Erstreckung', status: 'geplant' },
+      // R5-07 (RL-12, 24.9.2026): war «geplant», obwohl gebaut — mietrecht.ts
+      // abschluss() rechnet anfechtungBis/erstreckungBis (Art. 273/272a OR),
+      // MietrechtForm zeigt «Anfechtung/Erstreckung bis» bei Vermieter-
+      // Kündigung (Tests mietrecht.test.ts «Anfechtung und Erstreckung»).
+      // Offenlegung des Baustands (§8), KEINE Abnahme (§7).
+      { label: 'Anfechtung & Erstreckung', status: 'entwurf' },
     ],
     description: 'Kündigungstermine und -fristen für Wohn- und Geschäftsräume – mit Termin-Hierarchie, Formprüfung und ausserordentlichen Kündigungen; Direkteinstieg zum Kündigungsschreiben (Mieter:in) und zur Vermieter-Checkliste (amtliches Formular).',
     status: 'entwurf',
