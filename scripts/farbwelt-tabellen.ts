@@ -224,6 +224,12 @@ export const PFLICHT: Paar[] = [
   TEXT('ink-900', 'reg-w-flaeche', 'Farbe als Fläche: Fliesstext auf der Register-Fläche «Werkzeuge»'),
   TEXT('ink-600', 'reg-w-flaeche', 'Farbe als Fläche: Sekundärtext auf der Register-Fläche «Werkzeuge»'),
   NICHT('reg-w', 'reg-w-flaeche', 'Farbe als Fläche: Marke «Werkzeuge» auf der eigenen Fläche'),
+  // W2·29-WERKBANK-RECHNER R2 (24.9.2026): die Tagzahl der Fristende-Marke im
+  // FristenKalender (`text-auf-sage` auf `bg-ok-solid`, beide themenfest). Stand
+  // bis GRUNDTON als «Kontrast-Vermerk 4.45:1» nur in Prosa; seit paper hell
+  // #FDFCFA 4.64:1 — jetzt Pflichtpaar, damit eine Verschiebung von
+  // `ink-fixed-light` oder `sage-500` rot wird statt still unter 4.5 zu fallen.
+  TEXT('auf-sage', 'ok-solid', 'FristenKalender: Tagzahl der Fristende-Marke (ad quem)'),
 ];
 
 // (Referenz) C-1/C-2/C-3-Farb-Wörterbuch (§4b-B) — dokumentierte Zahlen als

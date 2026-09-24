@@ -450,9 +450,9 @@
        bewusst nicht) braucht die STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist). */
     --auf-gold: var(--ink-fixed-dark);
     /* Spiegelbild von `auf-gold`: helle Tinte für Text auf `ok-solid`, das bewusst nicht mit dem
-       Thema kippt. Liest auf `ok-solid`. KONTRAST-VERMERK: unter der Schwelle 4.5:1 - ok-solid hell
-       4.45:1, ok-solid dunkel 4.45:1. Der Wert bleibt exakt wie in der Quelle; diese Paarung darf
-       nicht für Lesetext verwendet werden.
+       Thema kippt. Liest auf `ok-solid`. KONTRAST: 4.64:1 auf ok-solid hell und dunkel, seit
+       GRUNDTON 23.9.2026 (paper hell #FDFCFA, vorher 4.45:1); Pflichtpaar in check:farbwelt
+       (W2·29-WERKBANK-RECHNER R2, 24.9.2026).
 
        C2 (5.9.2026): Text auf `--ok-solid` (= --sage-500, flippt bewusst NICHT
        mit dem Thema) braucht spiegelbildlich eine STETS helle Tinte — `text-paper`
