@@ -81,6 +81,53 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     await expect(blatt(page)).toHaveCount(0)
   })
 
+  // START-UEBERARBEITUNG U1 (David 24.9.2026, «Drei hohe Spalten»): die
+  // Wahl-Stufe zeigt die nächste Stufe schon an. DEKLARIERTE ERGÄNZUNG — die
+  // drei neuen Wege aus der Wahl, je mit Browser-Zurück = eine Stufe.
+  test('Wahl: Rechtsgebiet direkt, Kanton über die Karte, International-Rubrik', async ({ page }) => {
+    await page.goto('/')
+    await gesetzeKachel(page).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    const gebiete = blatt(page).getByRole('list', { name: 'Rechtsgebiete des Bundes' })
+    await gebiete.getByRole('button', { name: /Privatrecht/ }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/bund\/02$/)
+    await expect(blatt(page).locator('a[href="/gesetze/bund/OR"]').first()).toBeVisible()
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+
+    await blatt(page).getByRole('button', { name: 'Basel-Stadt', exact: true }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/BS$/)
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    await blatt(page).getByRole('button', { name: /Alle 26 Kantone/ }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/kantone$/)
+    await page.goBack()
+
+    const rubriken = blatt(page).getByRole('list', { name: 'Rubriken des internationalen Rechts' })
+    await rubriken.getByRole('button', { name: 'Menschenrechte' }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/international\/menschenrechte$/)
+    // Nur DIESE Rubrik: ihr Kopf steht, eine andere nicht.
+    await expect(blatt(page).locator('section#menschenrechte')).toBeVisible()
+    await expect(blatt(page).locator('section#asyl-migration')).toHaveCount(0)
+    await expect(blatt(page).getByRole('navigation', { name: 'Pfad im Blatt' })).toContainText('Menschenrechte')
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    await expect(rubriken).toBeVisible()
+  })
+
+  test('Wahl @1280: drei Spalten füllen die Blatthöhe', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.goto('/?blatt=gesetze')
+    const inhalt = blatt(page).locator('.lc-start-blatt-inhalt')
+    const wahl = blatt(page).locator('.lc-start-fuellt')
+    await expect(wahl).toBeVisible()
+    const [i, w] = await Promise.all([inhalt.boundingBox(), wahl.boundingBox()])
+    // Vorher (gemessen 24.9.2026 @1280): Wahl 179 px in 538 px Inhalt.
+    expect(w!.height).toBeGreaterThan(i!.height - 60)
+    const spalten = await wahl.evaluate((el) => [...el.children].map((c) => Math.round(c.getBoundingClientRect().left)))
+    expect(new Set(spalten).size).toBe(3)
+  })
+
   test('Kantone: Landeskarte und Liste der 26, dann Erlassliste', async ({ page }) => {
     await page.goto('/?blatt=gesetze/kantone')
     await expect(blatt(page).locator('svg').first()).toBeVisible()

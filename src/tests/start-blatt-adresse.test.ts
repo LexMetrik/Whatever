@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { leseBlatt, schreibeBlatt, elternOrt, gleicherOrt, blattKrumen } from '../lib/startBlatt';
+import { INTERNATIONAL_GRUPPEN } from '../lib/normtext/international-rubriken';
 
 // W2·29-WERKBANK-START S1 — die Adresse des aufgeklappten Blatts
 // (`/?blatt=<rubrik>/<stufe…>`, David 23.9.2026 «jede Stufe eine eigene
@@ -66,6 +67,22 @@ describe('Startseite · Blatt-Adresse', () => {
     expect(gleicherOrt(o, leseBlatt('gesetze/bund/02'))).toBe(true);
     expect(gleicherOrt(o, elternOrt(o))).toBe(false);
     expect(gleicherOrt(null, null)).toBe(true);
+  });
+
+  // START-UEBERARBEITUNG U1 (24.9.2026): die International-Spalte der Wahl
+  // führt direkt in EINE Rubrik — eigene Adresse, Browser-Zurück = eine Stufe.
+  it('International-Rubrik als eigene Stufe; unbekannte Rubrik kürzt auf «international»', () => {
+    for (const g of INTERNATIONAL_GRUPPEN) {
+      const w = `gesetze/international/${g.id}`;
+      expect(leseBlatt(w)).toEqual({ rubrik: 'gesetze', pfad: ['international', g.id] });
+      expect(schreibeBlatt(leseBlatt(w)!)).toBe(w);
+      expect(blattKrumen(leseBlatt(w)!)).toEqual([
+        { label: 'International', ort: { rubrik: 'gesetze', pfad: ['international'] } },
+        { label: g.titel, ort: { rubrik: 'gesetze', pfad: ['international', g.id] } },
+      ]);
+    }
+    expect(leseBlatt('gesetze/international/mond')?.pfad).toEqual(['international']);
+    expect(elternOrt(leseBlatt('gesetze/international/menschenrechte')!)).toEqual({ rubrik: 'gesetze', pfad: ['international'] });
   });
 
   // S2: «Rechner» bzw. «Vorlagen» als Pfad-Krume; leer auf der Wahl-Stufe.

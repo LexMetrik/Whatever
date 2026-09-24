@@ -12,6 +12,7 @@
 import { SYSTEMATIK } from './normtext/systematik';
 import { KANTONE } from './kantone';
 import { KANTON_NAMEN } from '../data/tarif/typen';
+import { INTERNATIONAL_GRUPPEN } from './normtext/international-rubriken';
 
 /** Die vier Kacheln der Startseite, als Adress-Wort. */
 export type BlattRubrik = 'gesetze' | 'rechtsprechung' | 'materialien' | 'werkzeuge';
@@ -42,6 +43,11 @@ type GesetzeEbene = 'bund' | 'kantone' | 'international';
 const GESETZE_EBENEN: ReadonlySet<string> = new Set<GesetzeEbene>(['bund', 'kantone', 'international']);
 const GEBIET_NR: ReadonlySet<string> = new Set(SYSTEMATIK.map((k) => k.nr));
 const KANTON: ReadonlySet<string> = new Set(KANTONE);
+/** START-UEBERARBEITUNG U1 (David 24.9.2026, «Drei hohe Spalten»): die
+ *  International-Spalte der Wahl führt direkt in EINE Rubrik — eigene Stufe
+ *  `international/<gruppenId>`, gleiche Quelle wie die Sektions-ids auf
+ *  /gesetze (`lib/normtext/international-rubriken.ts`, §5). */
+const INTL_GRUPPE: ReadonlySet<string> = new Set(INTERNATIONAL_GRUPPEN.map((g) => g.id));
 
 /** Längster gültiger Anfang von `pfad` für die Gesetze-Kachel. */
 function gesetzePfad(pfad: readonly string[]): string[] {
@@ -49,6 +55,7 @@ function gesetzePfad(pfad: readonly string[]): string[] {
   if (!ebene || !GESETZE_EBENEN.has(ebene)) return [];
   if (ebene === 'bund' && zweite && GEBIET_NR.has(zweite)) return ['bund', zweite];
   if (ebene === 'kantone' && zweite && KANTON.has(zweite)) return ['kantone', zweite];
+  if (ebene === 'international' && zweite && INTL_GRUPPE.has(zweite)) return ['international', zweite];
   return [ebene];
 }
 
@@ -106,6 +113,8 @@ export function blattKrumen(ort: BlattOrt): { label: string; ort: BlattOrt }[] {
   if (!zweite) return [erste];
   const titel = ebene === 'bund'
     ? SYSTEMATIK.find((k) => k.nr === zweite)?.titel ?? zweite
-    : KANTON_NAMEN[zweite as keyof typeof KANTON_NAMEN] ?? zweite;
+    : ebene === 'international'
+      ? INTERNATIONAL_GRUPPEN.find((g) => g.id === zweite)?.titel ?? zweite
+      : KANTON_NAMEN[zweite as keyof typeof KANTON_NAMEN] ?? zweite;
   return [erste, { label: titel, ort: { rubrik: ort.rubrik, pfad: [ebene, zweite] } }];
 }

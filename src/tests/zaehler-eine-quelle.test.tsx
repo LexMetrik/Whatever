@@ -9,6 +9,7 @@ import { VorlagenUebersicht } from '../pages/VorlagenUebersicht';
 import { Startseite } from '../pages/Startseite';
 import { GesetzeBlatt } from '../components/start/GesetzeBlatt';
 import { STARTSEITE_ZAEHLER as Z } from '../data/startseiteZaehler.generated';
+import { INTERNATIONAL_GRUPPEN } from '../lib/normtext/international-rubriken';
 
 // ─── W2·29-WERKBANK-KATALOGE K5 · EINE ZÄHLQUELLE (§5/§8) ───────────────────
 //
@@ -114,5 +115,29 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
     expect(t).toContain(`erfasste Volltext (${nf(Z.gesetzeBundesrechtVolltext)} Erlasse des Bundesrechts)`);
     expect(t).not.toContain(`(${nf(Z.gesetzeBundVolltext)} Erlasse)`);
     for (const k of Z.bundSystematik) expect(t).toContain(k.titel);
+  });
+
+  // START-UEBERARBEITUNG U1 (David 24.9.2026, «Drei hohe Spalten»): die
+  // Wahl-Stufe zeigt die nächste Stufe schon an — jede Zahl aus dem Zähler,
+  // keine Rubrik vergessen, kein Knopf im Knopf. ROT ZU BEKOMMEN: eine Zeile
+  // mit eigener Zahl statt `Z.bundSystematik[].anzahl`, eine International-
+  // Rubrik aus der Liste nehmen, oder die Spalte selbst zum Knopf machen.
+  it('f · Wahl-Stufe: drei Spalten, Zeilen aus dem Zähler, alle Rubriken, kein Knopf im Knopf', () => {
+    const h = html('/', <GesetzeBlatt ort={{ rubrik: 'gesetze', pfad: [] }} gehe={() => {}} />);
+    const { document } = parseHTML(`<!doctype html><html><body>${h}</body></html>`);
+    const knoepfe = [...document.querySelectorAll('button')];
+    for (const b of knoepfe) expect(b.querySelector('a, button')).toBeNull();
+    const knopfText = knoepfe.map((b) => (b.textContent ?? '').replace(/\s+/g, ' ').trim());
+    expect(knopfText).toContain(`${nf(Z.gesetzeBundesrechtVolltext)}BundeserlasseBund`);
+    expect(knopfText).toContain(`${nf(Z.gesetzeKantonVolltext)}kantonale ErlasseKantone`);
+    expect(knopfText).toContain(`${nf(Z.gesetzeInternationalVolltext)}StaatsverträgeInternational`);
+    const gebiete = document.querySelector('ul[aria-label="Rechtsgebiete des Bundes"]');
+    const zeilen = [...(gebiete?.querySelectorAll('button') ?? [])].map((b) => b.textContent);
+    expect(zeilen).toEqual(Z.bundSystematik.map((g) => `${g.nr}${g.titel}${nf(g.anzahl)}`));
+    const rubriken = [...(document.querySelector('ul[aria-label="Rubriken des internationalen Rechts"]')?.querySelectorAll('button') ?? [])];
+    expect(rubriken.map((b) => b.getAttribute('title') ?? b.textContent)).toEqual(INTERNATIONAL_GRUPPEN.map((g) => g.titel));
+    // Die Karte ist da (Kantone direkt wählbar), plus der Weg zur Liste der 26.
+    expect(document.querySelector('svg[aria-label^="Karte der Schweizer Kantone"]')).not.toBeNull();
+    expect(knopfText.some((t) => t.startsWith('Alle 26 Kantone'))).toBe(true);
   });
 });
