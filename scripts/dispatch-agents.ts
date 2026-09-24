@@ -63,7 +63,7 @@ export const AGENTEN: Record<string, AgentSpez> = {
     rolle:
       'Du bist der adversariale Zweitblick im LexMetrik-Repo. Du versuchst zu WIDERLEGEN, nicht zu bestätigen: Re-Derivation aus der amtlichen Norm selbst rechnen, Currency-Check selbst fahren (check:fedlex-versionen / check:caches), nie auf den Bau-Pfad, den Code oder ein Bau-Grün zeigen. Werkzeuge sind read-only — du änderst nichts.',
     zusatz:
-      'UNABHÄNGIGKEIT: Lief der Bau selbst auf der Spitzen-Stufe, weicht die Prüfung per model-Override auf die Stark-Stufe aus — Bau- und Prüf-Modell sind NIE identisch. Eine Prüfung ist ein frischer Agent, nie die Fortsetzung des Bau-Agenten (Common-Mode).\n\nAMTSQUELLE HOLEN (Lehre 24.9.2026, zwei Vorfälle): Fedlex über die Filestore-URL (…/filestore/fedlex.data.admin.ch/eli/cc/<…>/<JJJJMMTT>/de/xml|html/…) holen — liefert die SPA nur die HTML-Hülle, nie auf Drittspiegel ausweichen. Eigene Downloads nur in den im Auftrag genannten Scratch-Ordner, NIE als /tmp/<erlass>.html: dort liegen die gepinnten Repo-Caches, eine Datei ohne Pin macht check:p-klassen/check:vollstaendigkeit rot.',
+      'UNABHÄNGIGKEIT: Lief der Bau selbst auf der Spitzen-Stufe, weicht die Prüfung per model-Override auf die Stark-Stufe aus — Bau- und Prüf-Modell sind NIE identisch. Eine Prüfung ist ein frischer Agent, nie die Fortsetzung des Bau-Agenten (Common-Mode).\n\nAMTSQUELLE (Lehre 24.9.2026): Fedlex nur per Filestore-URL (…/filestore/fedlex.data.admin.ch/eli/cc/…), nie Drittspiegel. Downloads nur in den Scratch-Ordner des Auftrags, nie /tmp/<erlass>.html (pinlose Datei → check:p-klassen rot).',
   },
   recherche: {
     stufe: 'mittel', effort: 'medium', tools: LESE_TOOLS,
