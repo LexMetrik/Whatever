@@ -23034,5 +23034,4439 @@
  "absatz:streitwert:einmalig50k": "Massgeblicher Streitwert (Verfahren/Rechtsmittel): CHF 50'000. Massgebend sind Art. 91 ZPO, Art. 92 ZPO, Art. 93 ZPO, Art. 94 ZPO.",
  "absatz:teuerung:indexmiete": "CHF 2'549.05 (+2.0 %). Massgebend sind Art. 269b OR, Art. 17 VMWG.",
  "absatz:gebv:zb5000": "Amtliche Gebühren (Punktwerte): CHF 104. Der Schuldner trägt die Betreibungskosten; der Gläubiger schiesst sie vor und erhebt sie von den Zahlungen vorab (Art. 68 SchKG). Massgebend sind Art. 68 SchKG, Art. 6 GebV SchKG.",
- "absatz:erbfrist:ausschlagung": "Fristende: 10.06.2026 (Mittwoch) – Ausschlagung – gesetzliche Erbin/gesetzlicher Erbe (3 Monate). Massgebend sind Art. 567 Abs. 1 und 2 ZGB, Art. 570 ZGB, Art. 576 ZGB."
+ "absatz:erbfrist:ausschlagung": "Fristende: 10.06.2026 (Mittwoch) – Ausschlagung – gesetzliche Erbin/gesetzlicher Erbe (3 Monate). Massgebend sind Art. 567 Abs. 1 und 2 ZGB, Art. 570 ZGB, Art. 576 ZGB.",
+ "vorl:km-standard": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Mietverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "M_absender",
+      "text": "Mia Muster\nY 2, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "M_adressat",
+      "text": "V Immobilien AG\nX 1, 4001 Basel",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "M_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "M_betreff",
+      "text": "Kündigung des Mietverhältnisses — Y 2, 4051 Basel, 3. OG",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "M_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "M_erklaerung",
+      "text": "Hiermit kündige ich das Mietverhältnis über die oben genannte Mietsache ordentlich per 30.09.2026."
+     },
+     {
+      "bausteinId": "M_uebergabe",
+      "text": "Ich bitte um einen Termin für die Rückgabe der Mietsache und die gemeinsame Erstellung des Übergabeprotokolls sowie um die Abrechnung und Freigabe des Mietzinsdepots."
+     },
+     {
+      "bausteinId": "M_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "M_unterschrift",
+      "text": "___________________________\nMia Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Endtermin und Form-Prüfung beruhen auf den eingegebenen Daten (Art. 266a–o OR); massgebend ist der Zugang bei der Vermieterschaft. Ortsübliche Termine sind eine Tatfrage des konkreten Ortes.",
+    "version": "1.0.0 (Rechtsstand OR Art. 253 ff./266a–o; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "M_absender",
+    "M_adressat",
+    "M_datumzeile",
+    "M_betreff",
+    "M_anrede",
+    "M_erklaerung",
+    "M_uebergabe",
+    "M_schluss",
+    "M_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "M_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_betreff",
+     "begruendung": "Betreff mit Mietobjekt — immer enthalten."
+    },
+    {
+     "bausteinId": "M_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "M_erklaerung",
+     "begruendung": "Kündigungserklärung; Endtermin aus der Mietrechts-Engine (Termin-Hierarchie Vertrag → Ortsgebrauch → Gesetz; objektspezifische Frist nach Art. 266b–f OR).",
+     "norm": "Art. 266a OR"
+    },
+    {
+     "bausteinId": "M_uebergabe",
+     "begruendung": "Übergabe-/Depot-Bitte — immer enthalten (praktische Abwicklung)."
+    },
+    {
+     "bausteinId": "M_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "M_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Mietpartei; weitere Mieter:innen unterschreiben mit."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Das Mietverhältnis endet am 30.09.2026. Der angestrebte Termin 30.06.2026 wurde verfehlt (Art. 266a Abs. 2 OR). Spätester rechtzeitiger Zugang für diesen Termin: 30.06.2026.",
+   "status": "ok",
+   "rechenweg": [
+    {
+     "beschreibung": "Zugang der Kündigung",
+     "zwischenergebnis": "Zugang am 20.06.2026 (absolute Empfangstheorie: massgeblich ist der Eintritt in den Machtbereich des Empfängers; bei eingeschriebener Sendung mit Abholungseinladung in der Regel der Folgetag der Einladung. Die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht NICHT).",
+     "normen": [],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 137 III 208",
+       "aussage": "Absolute Empfangstheorie für den Zugang der Kündigung; Schutz der Familienwohnung auch bei Geschäftsräumen, die zugleich Familienwohnung sind.",
+       "verifiziert": false
+      },
+      {
+       "aktenzeichen": "BGE 140 III 244",
+       "aussage": "Zugang nach absoluter Empfangstheorie; die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht nicht.",
+       "verifiziert": false
+      }
+     ]
+    },
+    {
+     "beschreibung": "Objekt und Kündigungsfrist",
+     "zwischenergebnis": "Wohnräume: Frist 3 Monate (gesetzliches Minimum 3 Monate, Art. 266c OR).",
+     "normen": [
+      {
+       "artikel": "Art. 266c OR",
+       "bemerkung": "Wohnungen: 3 Monate"
+      },
+      {
+       "artikel": "Art. 266a OR",
+       "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Kündigungstermine (Hierarchie: Vertrag → Ortsgebrauch → Gesetz)",
+     "zwischenergebnis": "Massgebend: ortsübliche Termine im Kanton BS (Tatfrage – verbindliche Auskunft: Schlichtungsbehörde/Gemeinde). Nächste Termine: 30.06.2026, 31.07.2026, 31.08.2026, 30.09.2026 …",
+     "normen": [
+      {
+       "artikel": "Art. 266a OR",
+       "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+      },
+      {
+       "artikel": "Art. 266c OR",
+       "bemerkung": "Wohnungen: 3 Monate"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Fristwahrung und wirksamer Endtermin",
+     "zwischenergebnis": "Für den Termin 30.06.2026 wäre der Zugang spätestens am 31.03.2026 nötig gewesen – verfehlt. Die Kündigung ist deswegen NICHT ungültig, sie wirkt auf den nächstmöglichen Termin (Art. 266a Abs. 2 OR). Wirksamer Endtermin: 30.09.2026. Spätester rechtzeitiger Zugang dafür: 30.06.2026. Art. 78 OR verschiebt diesen Zugangstag NICHT auf den nächsten Werktag: Er liegt vor Beginn der Kündigungsfrist und ist weder Erfüllungszeitpunkt noch letzter Tag einer Frist (Art. 266a Abs. 1 OR). Auch der ENDTERMIN wird nicht verschoben, wenn er auf ein Wochenende fällt.",
+     "normen": [
+      {
+       "artikel": "Art. 266a OR",
+       "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+      },
+      {
+       "artikel": "Art. 77 OR",
+       "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+      },
+      {
+       "artikel": "Art. 78 OR",
+       "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+      }
+     ]
+    }
+   ],
+   "annahmen": [
+    "Unbefristetes Mietverhältnis (befristete enden ohne Kündigung durch Zeitablauf, Art. 266 OR).",
+    "Kündigende Partei: Mieter; Kanton BS (Feiertage für Art. 78 OR).",
+    "Zugang nach absoluter Empfangstheorie; A-Post-Plus-Zustellung ist auch samstags möglich."
+   ],
+   "warnungen": [
+    "Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.",
+    "Bei Wohn-/Geschäftsräumen: Schriftform; Vermieterkündigung nur mit amtlich genehmigtem Formular; Familienwohnung mit Sonderschutz (Art. 266l–266n OR) – Verstoss macht die Kündigung nichtig (Art. 266o OR)."
+   ],
+   "normverweise": [
+    {
+     "artikel": "Art. 266c OR",
+     "bemerkung": "Wohnungen: 3 Monate"
+    },
+    {
+     "artikel": "Art. 266a OR",
+     "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+    },
+    {
+     "artikel": "Art. 77 OR",
+     "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+    },
+    {
+     "artikel": "Art. 78 OR",
+     "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+    }
+   ],
+   "endtermin": "30.09.2026",
+   "endterminISO": "2026-09-30",
+   "spaetesterZugang": "30.06.2026",
+   "verfehlterTermin": "30.06.2026",
+   "zugangISO": "2026-06-20"
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.",
+    "Bei Wohn-/Geschäftsräumen: Schriftform; Vermieterkündigung nur mit amtlich genehmigtem Formular; Familienwohnung mit Sonderschutz (Art. 266l–266n OR) – Verstoss macht die Kündigung nichtig (Art. 266o OR)."
+   ],
+   "hinweise": [
+    "Der gewünschte Termin wäre verfehlt — die Kündigung ist deswegen nicht ungültig, sie wirkt auf den nächstmöglichen Termin (30.09.2026, Art. 266a Abs. 2 OR).",
+    "Schriftform (Art. 266l Abs. 1 OR): den Brief eigenhändig unterschreiben — bei mehreren Mieter:innen unterschreiben ALLE."
+   ]
+  }
+ },
+ "vorl:km-gates-familie-264-vertragstermine": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Mietverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "M_absender",
+      "text": "Mia Muster\nY 2, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "M_adressat",
+      "text": "V Immobilien AG\nX 1, 4001 Basel",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "M_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "M_betreff",
+      "text": "Kündigung des Mietverhältnisses — Y 2, 4051 Basel, 3. OG",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "M_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "M_erklaerung",
+      "text": "Hiermit kündige ich das Mietverhältnis über die oben genannte Mietsache ordentlich per 30.09.2026. Diese Kündigung erfolgt gemeinsam mit Zoe Muster."
+     },
+     {
+      "bausteinId": "M_familienwohnung_zustimmung",
+      "text": "Die Mietsache dient als Wohnung der Familie. Diese Kündigung wird mit der ausdrücklichen Zustimmung von Max Muster (Ehegatte/eingetragene Partnerin bzw. eingetragener Partner) ausgesprochen (Art. 266m OR); sie/er unterzeichnet mit."
+     },
+     {
+      "bausteinId": "M_ausserterminlich_264",
+      "text": "Ich gebe die Mietsache vorzeitig zurück und schlage als zumutbare:n, zahlungsfähige:n Nachmieter:in vor, die/der bereit ist, den Mietvertrag zu den gleichen Bedingungen zu übernehmen: Nina Neu. Mit deren/dessen Eintritt bin ich von meinen Verpflichtungen aus dem Mietverhältnis befreit (Art. 264 OR)."
+     },
+     {
+      "bausteinId": "M_uebergabe",
+      "text": "Ich bitte um einen Termin für die Rückgabe der Mietsache und die gemeinsame Erstellung des Übergabeprotokolls, gewünscht per 31.07.2026 sowie um die Abrechnung und Freigabe des Mietzinsdepots."
+     },
+     {
+      "bausteinId": "M_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "M_unterschrift",
+      "text": "___________________________\nMia Muster\n\n___________________________\nZoe Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     },
+     {
+      "bausteinId": "M_unterschrift_ehegatte",
+      "text": "___________________________\nMax Muster (Zustimmung nach Art. 266m OR)",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Endtermin und Form-Prüfung beruhen auf den eingegebenen Daten (Art. 266a–o OR); massgebend ist der Zugang bei der Vermieterschaft. Ortsübliche Termine sind eine Tatfrage des konkreten Ortes.",
+    "version": "1.0.0 (Rechtsstand OR Art. 253 ff./266a–o; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "M_absender",
+    "M_adressat",
+    "M_datumzeile",
+    "M_betreff",
+    "M_anrede",
+    "M_erklaerung",
+    "M_familienwohnung_zustimmung",
+    "M_ausserterminlich_264",
+    "M_uebergabe",
+    "M_schluss",
+    "M_unterschrift",
+    "M_unterschrift_ehegatte"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "M_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_betreff",
+     "begruendung": "Betreff mit Mietobjekt — immer enthalten."
+    },
+    {
+     "bausteinId": "M_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "M_erklaerung",
+     "begruendung": "Kündigungserklärung; Endtermin aus der Mietrechts-Engine (Termin-Hierarchie Vertrag → Ortsgebrauch → Gesetz; objektspezifische Frist nach Art. 266b–f OR).",
+     "norm": "Art. 266a OR"
+    },
+    {
+     "bausteinId": "M_familienwohnung_zustimmung",
+     "begruendung": "Familienwohnung: Zustimmung dokumentiert und Mitunterzeichnung angekündigt (Nichtigkeitsfolge des Art. 266o OR vermieden).",
+     "norm": "Art. 266m OR"
+    },
+    {
+     "bausteinId": "M_ausserterminlich_264",
+     "begruendung": "Ausserterminliche Rückgabe mit Nachmieter-Vorschlag gewählt.",
+     "norm": "Art. 264 OR",
+     "hinweis": "Ob der Nachmieter zumutbar, zahlungsfähig und übernahmebereit ist, beurteilt die Vermieterschaft — das Befreiungsrisiko bleibt offengelegt."
+    },
+    {
+     "bausteinId": "M_uebergabe",
+     "begruendung": "Übergabe-/Depot-Bitte — immer enthalten (praktische Abwicklung)."
+    },
+    {
+     "bausteinId": "M_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "M_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Mietpartei; weitere Mieter:innen unterschreiben mit."
+    },
+    {
+     "bausteinId": "M_unterschrift_ehegatte",
+     "begruendung": "Zweite Unterschriftslinie für die zustimmende Person (Familienwohnung).",
+     "norm": "Art. 266m OR"
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Das Mietverhältnis endet am 30.09.2026. Spätester rechtzeitiger Zugang für diesen Termin: 30.06.2026.",
+   "status": "ok",
+   "rechenweg": [
+    {
+     "beschreibung": "Zugang der Kündigung",
+     "zwischenergebnis": "Zugang am 20.06.2026 (absolute Empfangstheorie: massgeblich ist der Eintritt in den Machtbereich des Empfängers; bei eingeschriebener Sendung mit Abholungseinladung in der Regel der Folgetag der Einladung. Die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht NICHT).",
+     "normen": [],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 137 III 208",
+       "aussage": "Absolute Empfangstheorie für den Zugang der Kündigung; Schutz der Familienwohnung auch bei Geschäftsräumen, die zugleich Familienwohnung sind.",
+       "verifiziert": false
+      },
+      {
+       "aktenzeichen": "BGE 140 III 244",
+       "aussage": "Zugang nach absoluter Empfangstheorie; die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht nicht.",
+       "verifiziert": false
+      }
+     ]
+    },
+    {
+     "beschreibung": "Objekt und Kündigungsfrist",
+     "zwischenergebnis": "Wohnräume: Frist 3 Monate (gesetzliches Minimum 3 Monate, Art. 266c OR).",
+     "normen": [
+      {
+       "artikel": "Art. 266c OR",
+       "bemerkung": "Wohnungen: 3 Monate"
+      },
+      {
+       "artikel": "Art. 266a OR",
+       "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Kündigungstermine (Hierarchie: Vertrag → Ortsgebrauch → Gesetz)",
+     "zwischenergebnis": "Massgebend: vertraglich vereinbarte Termine (Monatsenden: 3, 9). Nächste Termine: 30.09.2026, 31.03.2027, 30.09.2027, 31.03.2028 …",
+     "normen": [
+      {
+       "artikel": "Art. 266a OR",
+       "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+      },
+      {
+       "artikel": "Art. 266c OR",
+       "bemerkung": "Wohnungen: 3 Monate"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Fristwahrung und wirksamer Endtermin",
+     "zwischenergebnis": "Wirksamer Endtermin: 30.09.2026. Spätester rechtzeitiger Zugang dafür: 30.06.2026. Art. 78 OR verschiebt diesen Zugangstag NICHT auf den nächsten Werktag: Er liegt vor Beginn der Kündigungsfrist und ist weder Erfüllungszeitpunkt noch letzter Tag einer Frist (Art. 266a Abs. 1 OR). Auch der ENDTERMIN wird nicht verschoben, wenn er auf ein Wochenende fällt.",
+     "normen": [
+      {
+       "artikel": "Art. 77 OR",
+       "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+      },
+      {
+       "artikel": "Art. 78 OR",
+       "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+      }
+     ]
+    }
+   ],
+   "annahmen": [
+    "Unbefristetes Mietverhältnis (befristete enden ohne Kündigung durch Zeitablauf, Art. 266 OR).",
+    "Kündigende Partei: Mieter; Kanton BS (Feiertage für Art. 78 OR).",
+    "Zugang nach absoluter Empfangstheorie; A-Post-Plus-Zustellung ist auch samstags möglich."
+   ],
+   "warnungen": [
+    "Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.",
+    "Bei Wohn-/Geschäftsräumen: Schriftform; Vermieterkündigung nur mit amtlich genehmigtem Formular; Familienwohnung mit Sonderschutz (Art. 266l–266n OR) – Verstoss macht die Kündigung nichtig (Art. 266o OR)."
+   ],
+   "normverweise": [
+    {
+     "artikel": "Art. 266c OR",
+     "bemerkung": "Wohnungen: 3 Monate"
+    },
+    {
+     "artikel": "Art. 266a OR",
+     "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+    },
+    {
+     "artikel": "Art. 77 OR",
+     "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+    },
+    {
+     "artikel": "Art. 78 OR",
+     "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+    }
+   ],
+   "endtermin": "30.09.2026",
+   "endterminISO": "2026-09-30",
+   "spaetesterZugang": "30.06.2026",
+   "zugangISO": "2026-06-20"
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.",
+    "Bei Wohn-/Geschäftsräumen: Schriftform; Vermieterkündigung nur mit amtlich genehmigtem Formular; Familienwohnung mit Sonderschutz (Art. 266l–266n OR) – Verstoss macht die Kündigung nichtig (Art. 266o OR).",
+    "Nachmieter-Voraussetzungen (zahlungsfähig · gleiche Bedingungen) sind nicht bestätigt — das Befreiungsrisiko trägt die kündigende Partei."
+   ],
+   "hinweise": [
+    "Schriftform (Art. 266l Abs. 1 OR): den Brief eigenhändig unterschreiben — bei mehreren Mieter:innen unterschreiben ALLE.",
+    "Ausserterminliche Rückgabe (Art. 264 OR): Befreiung nur, wenn der vorgeschlagene Nachmieter für die Vermieterschaft zumutbar, zahlungsfähig und zur Übernahme zu GLEICHEN Bedingungen bereit ist — sonst bleibt der Mietzins bis zum nächsten ordentlichen Termin geschuldet (Abs. 2). Die Beurteilung liegt bei der Vermieterschaft."
+   ]
+  }
+ },
+ "vorl:km-gates-nichtig-ohne-zustimmung": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Mietverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "M_absender",
+      "text": "Mia Muster\nY 2, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "M_adressat",
+      "text": "V Immobilien AG\nX 1, 4001 Basel",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "M_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "M_betreff",
+      "text": "Kündigung des Mietverhältnisses — Y 2, 4051 Basel, 3. OG",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "M_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "M_erklaerung",
+      "text": "Hiermit kündige ich das Mietverhältnis über die oben genannte Mietsache ordentlich per ________."
+     },
+     {
+      "bausteinId": "M_uebergabe",
+      "text": "Ich bitte um einen Termin für die Rückgabe der Mietsache und die gemeinsame Erstellung des Übergabeprotokolls sowie um die Abrechnung und Freigabe des Mietzinsdepots."
+     },
+     {
+      "bausteinId": "M_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "M_unterschrift",
+      "text": "___________________________\nMia Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Endtermin und Form-Prüfung beruhen auf den eingegebenen Daten (Art. 266a–o OR); massgebend ist der Zugang bei der Vermieterschaft. Ortsübliche Termine sind eine Tatfrage des konkreten Ortes.",
+    "version": "1.0.0 (Rechtsstand OR Art. 253 ff./266a–o; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "M_absender",
+    "M_adressat",
+    "M_datumzeile",
+    "M_betreff",
+    "M_anrede",
+    "M_erklaerung",
+    "M_uebergabe",
+    "M_schluss",
+    "M_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "M_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "M_betreff",
+     "begruendung": "Betreff mit Mietobjekt — immer enthalten."
+    },
+    {
+     "bausteinId": "M_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "M_erklaerung",
+     "begruendung": "Kündigungserklärung; Endtermin aus der Mietrechts-Engine (Termin-Hierarchie Vertrag → Ortsgebrauch → Gesetz; objektspezifische Frist nach Art. 266b–f OR).",
+     "norm": "Art. 266a OR"
+    },
+    {
+     "bausteinId": "M_uebergabe",
+     "begruendung": "Übergabe-/Depot-Bitte — immer enthalten (praktische Abwicklung)."
+    },
+    {
+     "bausteinId": "M_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "M_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Mietpartei; weitere Mieter:innen unterschreiben mit."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Die Kündigung ist NICHTIG (Art. 266o OR): Familienwohnung: Kündigung des Mieters ohne ausdrückliche Zustimmung des Ehegatten/Partners (Art. 266m OR).",
+   "status": "nichtig",
+   "rechenweg": [
+    {
+     "beschreibung": "Formprüfung (Art. 266l–266o OR)",
+     "zwischenergebnis": "Formverstoss: Familienwohnung: Kündigung des Mieters ohne ausdrückliche Zustimmung des Ehegatten/Partners (Art. 266m OR). Die Kündigung ist NICHTIG (Art. 266o OR) und entfaltet keine Wirkung.",
+     "normen": [
+      {
+       "artikel": "Art. 266l OR",
+       "bemerkung": "Schriftform; Vermieter: amtlich genehmigtes Formular"
+      },
+      {
+       "artikel": "Art. 266m OR",
+       "bemerkung": "Familienwohnung: Kündigung des Mieters nur mit Zustimmung des Ehegatten"
+      },
+      {
+       "artikel": "Art. 266n OR",
+       "bemerkung": "Familienwohnung: separate Zustellung an beide Ehegatten"
+      },
+      {
+       "artikel": "Art. 266o OR",
+       "bemerkung": "Nichtigkeit bei Formverstoss"
+      }
+     ],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 137 III 208",
+       "aussage": "Absolute Empfangstheorie für den Zugang der Kündigung; Schutz der Familienwohnung auch bei Geschäftsräumen, die zugleich Familienwohnung sind.",
+       "verifiziert": false
+      }
+     ]
+    }
+   ],
+   "annahmen": [],
+   "warnungen": [
+    "Eine nichtige Kündigung kann formgerecht wiederholt werden; Fristen laufen erst ab der neuen, gültigen Kündigung."
+   ],
+   "normverweise": [
+    {
+     "artikel": "Art. 266l OR",
+     "bemerkung": "Schriftform; Vermieter: amtlich genehmigtes Formular"
+    },
+    {
+     "artikel": "Art. 266o OR",
+     "bemerkung": "Nichtigkeit bei Formverstoss"
+    }
+   ],
+   "zugangISO": "2026-06-20"
+  },
+  "gates": {
+   "blocker": [
+    "Die Kündigung wäre NICHTIG: Bei der Wohnung der Familie braucht die Mieter-Kündigung die AUSDRÜCKLICHE Zustimmung des Ehegatten bzw. der eingetragenen Partnerin/des eingetragenen Partners (Art. 266m i.V.m. Art. 266o OR) — Zustimmung einholen und mitunterzeichnen lassen."
+   ],
+   "warnungen": [
+    "Eine nichtige Kündigung kann formgerecht wiederholt werden; Fristen laufen erst ab der neuen, gültigen Kündigung."
+   ],
+   "hinweise": [
+    "Schriftform (Art. 266l Abs. 1 OR): den Brief eigenhändig unterschreiben — bei mehreren Mieter:innen unterschreiben ALLE."
+   ]
+  }
+ },
+ "vorl:kuendigung-vermieter-auskunft-wohnung": {
+  "ergebnis": "Das Mietverhältnis endet am 30.09.2026. Der angestrebte Termin 30.06.2026 wurde verfehlt (Art. 266a Abs. 2 OR). Spätester rechtzeitiger Zugang für diesen Termin: 30.06.2026.",
+  "status": "ok",
+  "rechenweg": [
+   {
+    "beschreibung": "Zugang der Kündigung",
+    "zwischenergebnis": "Zugang am 20.06.2026 (absolute Empfangstheorie: massgeblich ist der Eintritt in den Machtbereich des Empfängers; bei eingeschriebener Sendung mit Abholungseinladung in der Regel der Folgetag der Einladung. Die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht NICHT).",
+    "normen": [],
+    "rechtsprechung": [
+     {
+      "aktenzeichen": "BGE 137 III 208",
+      "aussage": "Absolute Empfangstheorie für den Zugang der Kündigung; Schutz der Familienwohnung auch bei Geschäftsräumen, die zugleich Familienwohnung sind.",
+      "verifiziert": false
+     },
+     {
+      "aktenzeichen": "BGE 140 III 244",
+      "aussage": "Zugang nach absoluter Empfangstheorie; die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht nicht.",
+      "verifiziert": false
+     }
+    ]
+   },
+   {
+    "beschreibung": "Objekt und Kündigungsfrist",
+    "zwischenergebnis": "Wohnräume: Frist 3 Monate (gesetzliches Minimum 3 Monate, Art. 266c OR).",
+    "normen": [
+     {
+      "artikel": "Art. 266c OR",
+      "bemerkung": "Wohnungen: 3 Monate"
+     },
+     {
+      "artikel": "Art. 266a OR",
+      "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+     }
+    ]
+   },
+   {
+    "beschreibung": "Kündigungstermine (Hierarchie: Vertrag → Ortsgebrauch → Gesetz)",
+    "zwischenergebnis": "Massgebend: ortsübliche Termine im Kanton BS (Tatfrage – verbindliche Auskunft: Schlichtungsbehörde/Gemeinde). Nächste Termine: 30.06.2026, 31.07.2026, 31.08.2026, 30.09.2026 …",
+    "normen": [
+     {
+      "artikel": "Art. 266a OR",
+      "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+     },
+     {
+      "artikel": "Art. 266c OR",
+      "bemerkung": "Wohnungen: 3 Monate"
+     }
+    ]
+   },
+   {
+    "beschreibung": "Fristwahrung und wirksamer Endtermin",
+    "zwischenergebnis": "Für den Termin 30.06.2026 wäre der Zugang spätestens am 31.03.2026 nötig gewesen – verfehlt. Die Kündigung ist deswegen NICHT ungültig, sie wirkt auf den nächstmöglichen Termin (Art. 266a Abs. 2 OR). Wirksamer Endtermin: 30.09.2026. Spätester rechtzeitiger Zugang dafür: 30.06.2026. Art. 78 OR verschiebt diesen Zugangstag NICHT auf den nächsten Werktag: Er liegt vor Beginn der Kündigungsfrist und ist weder Erfüllungszeitpunkt noch letzter Tag einer Frist (Art. 266a Abs. 1 OR). Auch der ENDTERMIN wird nicht verschoben, wenn er auf ein Wochenende fällt.",
+    "normen": [
+     {
+      "artikel": "Art. 266a OR",
+      "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+     },
+     {
+      "artikel": "Art. 77 OR",
+      "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+     },
+     {
+      "artikel": "Art. 78 OR",
+      "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+     }
+    ]
+   },
+   {
+    "beschreibung": "Rechte des Mieters: Anfechtung und Erstreckung (Art. 273 OR)",
+    "zwischenergebnis": "Anfechtung der Kündigung bei der Schlichtungsbehörde innert 30 Tagen nach Empfang: bis 20.07.2026 (Verwirkungsfrist; Art. 78 OR angewandt). Erstreckungsbegehren (unbefristetes Verhältnis) ebenfalls innert 30 Tagen: bis 20.07.2026 (Höchstdauer: Wohnräume 4, Geschäftsräume 6 Jahre, Art. 272b OR).",
+    "normen": [
+     {
+      "artikel": "Art. 273 OR",
+      "bemerkung": "Anfechtung/Erstreckung: 30 Tage ab Empfang (Schlichtungsbehörde)"
+     }
+    ],
+    "rechtsprechung": [
+     {
+      "aktenzeichen": "BGer 5A_691/2023",
+      "aussage": "Monatsfristen knüpfen am Tag des fristauslösenden Ereignisses an (nicht am Folgetag) – einheitliche Methode für materielles Recht und Prozessrecht.",
+      "verifiziert": false
+     }
+    ]
+   }
+  ],
+  "annahmen": [
+   "Unbefristetes Mietverhältnis (befristete enden ohne Kündigung durch Zeitablauf, Art. 266 OR).",
+   "Kündigende Partei: Vermieter; Kanton BS (Feiertage für Art. 78 OR).",
+   "Zugang nach absoluter Empfangstheorie; A-Post-Plus-Zustellung ist auch samstags möglich."
+  ],
+  "warnungen": [
+   "Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.",
+   "Bei Wohn-/Geschäftsräumen: Schriftform; Vermieterkündigung nur mit amtlich genehmigtem Formular; Familienwohnung mit Sonderschutz (Art. 266l–266n OR) – Verstoss macht die Kündigung nichtig (Art. 266o OR)."
+  ],
+  "normverweise": [
+   {
+    "artikel": "Art. 266c OR",
+    "bemerkung": "Wohnungen: 3 Monate"
+   },
+   {
+    "artikel": "Art. 266a OR",
+    "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+   },
+   {
+    "artikel": "Art. 77 OR",
+    "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+   },
+   {
+    "artikel": "Art. 78 OR",
+    "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+   }
+  ],
+  "endtermin": "30.09.2026",
+  "endterminISO": "2026-09-30",
+  "spaetesterZugang": "30.06.2026",
+  "verfehlterTermin": "30.06.2026",
+  "anfechtungBis": "20.07.2026",
+  "erstreckungBis": "20.07.2026",
+  "zugangISO": "2026-06-20"
+ },
+ "vorl:kuendigung-vermieter-auskunft-geschaeftsraum": {
+  "ergebnis": "Das Mietverhältnis endet am 31.01.2027. Der angestrebte Termin 30.06.2026 wurde verfehlt (Art. 266a Abs. 2 OR). Spätester rechtzeitiger Zugang für diesen Termin: 31.07.2026.",
+  "status": "ok",
+  "rechenweg": [
+   {
+    "beschreibung": "Zugang der Kündigung",
+    "zwischenergebnis": "Zugang am 20.06.2026 (absolute Empfangstheorie: massgeblich ist der Eintritt in den Machtbereich des Empfängers; bei eingeschriebener Sendung mit Abholungseinladung in der Regel der Folgetag der Einladung. Die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht NICHT).",
+    "normen": [],
+    "rechtsprechung": [
+     {
+      "aktenzeichen": "BGE 137 III 208",
+      "aussage": "Absolute Empfangstheorie für den Zugang der Kündigung; Schutz der Familienwohnung auch bei Geschäftsräumen, die zugleich Familienwohnung sind.",
+      "verifiziert": false
+     },
+     {
+      "aktenzeichen": "BGE 140 III 244",
+      "aussage": "Zugang nach absoluter Empfangstheorie; die zivilprozessuale 7-Tage-Zustellfiktion gilt im materiellen Recht nicht.",
+      "verifiziert": false
+     }
+    ]
+   },
+   {
+    "beschreibung": "Objekt und Kündigungsfrist",
+    "zwischenergebnis": "Geschäftsräume: Frist 6 Monate (gesetzliches Minimum 6 Monate, Art. 266d OR).",
+    "normen": [
+     {
+      "artikel": "Art. 266d OR",
+      "bemerkung": "Geschäftsräume: 6 Monate"
+     },
+     {
+      "artikel": "Art. 266a OR",
+      "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+     }
+    ]
+   },
+   {
+    "beschreibung": "Kündigungstermine (Hierarchie: Vertrag → Ortsgebrauch → Gesetz)",
+    "zwischenergebnis": "Massgebend: ortsübliche Termine im Kanton BS (Tatfrage – verbindliche Auskunft: Schlichtungsbehörde/Gemeinde). Nächste Termine: 30.06.2026, 31.07.2026, 31.08.2026, 30.09.2026 …",
+    "normen": [
+     {
+      "artikel": "Art. 266a OR",
+      "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+     },
+     {
+      "artikel": "Art. 266d OR",
+      "bemerkung": "Geschäftsräume: 6 Monate"
+     }
+    ]
+   },
+   {
+    "beschreibung": "Fristwahrung und wirksamer Endtermin",
+    "zwischenergebnis": "Für den Termin 30.06.2026 wäre der Zugang spätestens am 31.12.2025 nötig gewesen – verfehlt. Die Kündigung ist deswegen NICHT ungültig, sie wirkt auf den nächstmöglichen Termin (Art. 266a Abs. 2 OR). Wirksamer Endtermin: 31.01.2027. Spätester rechtzeitiger Zugang dafür: 31.07.2026. Art. 78 OR verschiebt diesen Zugangstag NICHT auf den nächsten Werktag: Er liegt vor Beginn der Kündigungsfrist und ist weder Erfüllungszeitpunkt noch letzter Tag einer Frist (Art. 266a Abs. 1 OR). Auch der ENDTERMIN wird nicht verschoben, wenn er auf ein Wochenende fällt.",
+    "normen": [
+     {
+      "artikel": "Art. 266a OR",
+      "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+     },
+     {
+      "artikel": "Art. 77 OR",
+      "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+     },
+     {
+      "artikel": "Art. 78 OR",
+      "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+     }
+    ]
+   },
+   {
+    "beschreibung": "Rechte des Mieters: Anfechtung und Erstreckung (Art. 273 OR)",
+    "zwischenergebnis": "Anfechtung der Kündigung bei der Schlichtungsbehörde innert 30 Tagen nach Empfang: bis 20.07.2026 (Verwirkungsfrist; Art. 78 OR angewandt). Erstreckungsbegehren (unbefristetes Verhältnis) ebenfalls innert 30 Tagen: bis 20.07.2026 (Höchstdauer: Wohnräume 4, Geschäftsräume 6 Jahre, Art. 272b OR).",
+    "normen": [
+     {
+      "artikel": "Art. 273 OR",
+      "bemerkung": "Anfechtung/Erstreckung: 30 Tage ab Empfang (Schlichtungsbehörde)"
+     }
+    ],
+    "rechtsprechung": [
+     {
+      "aktenzeichen": "BGer 5A_691/2023",
+      "aussage": "Monatsfristen knüpfen am Tag des fristauslösenden Ereignisses an (nicht am Folgetag) – einheitliche Methode für materielles Recht und Prozessrecht.",
+      "verifiziert": false
+     }
+    ]
+   }
+  ],
+  "annahmen": [
+   "Unbefristetes Mietverhältnis (befristete enden ohne Kündigung durch Zeitablauf, Art. 266 OR).",
+   "Kündigende Partei: Vermieter; Kanton BS (Feiertage für Art. 78 OR).",
+   "Zugang nach absoluter Empfangstheorie; A-Post-Plus-Zustellung ist auch samstags möglich."
+  ],
+  "warnungen": [
+   "Ortsübliche Termine sind eine TATFRAGE und variieren teils nach Gemeinde – verbindliche Auskunft erteilt die Schlichtungsbehörde bzw. die Gemeinde.",
+   "Bei Wohn-/Geschäftsräumen: Schriftform; Vermieterkündigung nur mit amtlich genehmigtem Formular; Familienwohnung mit Sonderschutz (Art. 266l–266n OR) – Verstoss macht die Kündigung nichtig (Art. 266o OR)."
+  ],
+  "normverweise": [
+   {
+    "artikel": "Art. 266d OR",
+    "bemerkung": "Geschäftsräume: 6 Monate"
+   },
+   {
+    "artikel": "Art. 266a OR",
+    "bemerkung": "Fristen/Termine; bei Verfehlen Wirkung auf den nächstmöglichen Termin (Abs. 2)"
+   },
+   {
+    "artikel": "Art. 77 OR",
+    "bemerkung": "Fristberechnung (Tage/Wochen/Monate)"
+   },
+   {
+    "artikel": "Art. 78 OR",
+    "bemerkung": "Letzter Fristtag an Sa/So/Feiertag → nächster Werktag (nur Fristwahrung)"
+   }
+  ],
+  "endtermin": "31.01.2027",
+  "endterminISO": "2027-01-31",
+  "spaetesterZugang": "31.07.2026",
+  "verfehlterTermin": "30.06.2026",
+  "anfechtungBis": "20.07.2026",
+  "erstreckungBis": "20.07.2026",
+  "zugangISO": "2026-06-20"
+ },
+ "vorl:kag-ordentlich": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K2_absender",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K2_adressat",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K2_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K2_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K2_anrede",
+      "text": "Sehr geehrte Frau, sehr geehrter Herr Beispiel",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K2_erklaerung",
+      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per 31.05.2026."
+     },
+     {
+      "bausteinId": "K2_abrechnung",
+      "text": "Bis zum Austritt erhalten Sie die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden). Wir bitten Sie, Arbeitsmittel und Unterlagen bis zum letzten Arbeitstag zurückzugeben. Ein Arbeitszeugnis (Art. 330a OR) stellen wir Ihnen zu."
+     },
+     {
+      "bausteinId": "K2_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K2_unterschrift",
+      "text": "___________________________\nMuster AG\nAnna Muster, Geschäftsführerin",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Beendigungsdatum und Sperrfrist-Prüfung beruhen auf den eingegebenen Daten (Art. 335a–c, 336c OR); massgebend ist der Zugang bei der Arbeitnehmerin/beim Arbeitnehmer. GAV und Einzelvertrag gehen vor.",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff./336c; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K2_absender",
+    "K2_adressat",
+    "K2_datumzeile",
+    "K2_betreff",
+    "K2_anrede",
+    "K2_erklaerung",
+    "K2_abrechnung",
+    "K2_schluss",
+    "K2_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K2_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_anrede",
+     "begruendung": "Anrede — immer enthalten (Nachname aus dem Adressat-Feld, anpassbar)."
+    },
+    {
+     "bausteinId": "K2_erklaerung",
+     "begruendung": "Kündigungserklärung; Beendigungsdatum aus der Sperrfristen-Engine (gehemmt/erstreckt nach Art. 336c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K2_abrechnung",
+     "begruendung": "Abwicklung (Schlussabrechnung, Rückgaben, Zeugnis-Zusage) — immer enthalten.",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K2_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_unterschrift",
+     "begruendung": "Unterschrift der zeichnungsberechtigten Person für die Arbeitgeberin/den Arbeitgeber."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Ordentliche Kündigung (Arbeitgeber): Frist 2 Monat/e. Beendigungsdatum: 31.05.2026.",
+   "status": "ok",
+   "rechenweg": [
+    {
+     "beschreibung": "Sperrfristen-Prüfung (Art. 336c OR)",
+     "zwischenergebnis": "Keine Sperrereignisse angegeben. Keine Sperrfrist-Hemmung.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 1 OR",
+       "bemerkung": "Sperrfristen-Tatbestände"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+     "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
+     "normen": [
+      {
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 2 – Dienstjahr (Stichtag = Zugang der Kündigung)",
+     "zwischenergebnis": "Vertragsbeginn 01.01.2020, Zugang 10.03.2026: 6 vollendete Jahre + 1 = 7. Dienstjahr. Gesetzliche Frist: 2 Monat/e.",
+     "normen": [
+      {
+       "artikel": "Art. 335c OR",
+       "bemerkung": "Kündigungsfristen und -termine"
+      }
+     ],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 134 III 354",
+       "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
+       "verifiziert": false
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 3 – Fristberechnung und Endtermin",
+     "zwischenergebnis": "Frist: 2 Monat/e ab Zugang 10.03.2026 → 10.05.2026. Kündigungstermin = Monatsende: Beendigung 31.05.2026.",
+     "normen": [
+      {
+       "artikel": "Art. 335c OR",
+       "bemerkung": "Kündigungsfristen und -termine"
+      }
+     ]
+    }
+   ],
+   "annahmen": [
+    "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+    "Kündigungstermin: Monatsende.",
+    "Kündigung durch: Arbeitgeber."
+   ],
+   "warnungen": [],
+   "normverweise": [
+    {
+     "artikel": "Art. 335a OR",
+     "bemerkung": "Parität der Kündigungsfristen"
+    },
+    {
+     "artikel": "Art. 335b OR",
+     "bemerkung": "Probezeit"
+    },
+    {
+     "artikel": "Art. 335c OR",
+     "bemerkung": "Kündigungsfristen und -termine"
+    }
+   ],
+   "zugangISO": "2026-03-10",
+   "beendigungISO": "2026-05-31"
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Befristete Arbeitsverhältnisse enden ohne Kündigung durch Zeitablauf (Art. 334 OR) — für sie ist dieses Schreiben nicht gedacht.",
+    "Missbräuchliche Kündigung (Art. 336 OR): Die gekündigte Person kann bis zum Ende der Kündigungsfrist schriftlich Einsprache erheben und danach innert 180 Tagen klagen (Art. 336b OR; Entschädigung bis 6 Monatslöhne, Art. 336a Abs. 2)."
+   ],
+   "istProbezeit": false
+  }
+ },
+ "vorl:kag-probezeit-freistellung-begruendung": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K2_absender",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K2_adressat",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K2_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K2_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K2_anrede",
+      "text": "Sehr geehrte Frau, sehr geehrter Herr Beispiel",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K2_erklaerung",
+      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per 27.02.2026."
+     },
+     {
+      "bausteinId": "K2_probezeit",
+      "text": "(Die Kündigung erfolgt während der Probezeit; es gilt die siebentägige Frist nach Art. 335b OR.)"
+     },
+     {
+      "bausteinId": "K2_begruendung",
+      "text": "Umstrukturierung der Abteilung."
+     },
+     {
+      "bausteinId": "K2_freistellung",
+      "text": "Wir stellen Sie ab 21. Februar 2026 bis zum Austritt von der Arbeitspflicht frei. Der Lohn wird bis zur Beendigung ausgerichtet; anderweitiger Erwerb wird nach Art. 324 Abs. 2 OR angerechnet."
+     },
+     {
+      "bausteinId": "K2_abrechnung",
+      "text": "Bis zum Austritt erhalten Sie die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden). Wir bitten Sie, Arbeitsmittel und Unterlagen bis zum letzten Arbeitstag zurückzugeben. Ein Arbeitszeugnis (Art. 330a OR) stellen wir Ihnen zu."
+     },
+     {
+      "bausteinId": "K2_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K2_unterschrift",
+      "text": "___________________________\nMuster AG\nAnna Muster, Geschäftsführerin",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Beendigungsdatum und Sperrfrist-Prüfung beruhen auf den eingegebenen Daten (Art. 335a–c, 336c OR); massgebend ist der Zugang bei der Arbeitnehmerin/beim Arbeitnehmer. GAV und Einzelvertrag gehen vor.",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff./336c; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K2_absender",
+    "K2_adressat",
+    "K2_datumzeile",
+    "K2_betreff",
+    "K2_anrede",
+    "K2_erklaerung",
+    "K2_probezeit",
+    "K2_begruendung",
+    "K2_freistellung",
+    "K2_abrechnung",
+    "K2_schluss",
+    "K2_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K2_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_anrede",
+     "begruendung": "Anrede — immer enthalten (Nachname aus dem Adressat-Feld, anpassbar)."
+    },
+    {
+     "bausteinId": "K2_erklaerung",
+     "begruendung": "Kündigungserklärung; Beendigungsdatum aus der Sperrfristen-Engine (gehemmt/erstreckt nach Art. 336c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K2_probezeit",
+     "begruendung": "Zugang liegt in der Probezeit (Engine-Befund) — Klarstellung der 7-Tage-Frist; Sperrfristen gelten in der Probezeit nicht.",
+     "norm": "Art. 335b OR"
+    },
+    {
+     "bausteinId": "K2_begruendung",
+     "begruendung": "Begründung auf ausdrücklichen Wunsch aufgenommen (Freitext — rechtlich nur auf Verlangen geschuldet, Art. 335 Abs. 2 OR).",
+     "hinweis": "Bewusst optional: Eine frühe Festlegung kann die Verteidigung gegen einen Missbrauchsvorwurf erschweren."
+    },
+    {
+     "bausteinId": "K2_freistellung",
+     "begruendung": "Freistellung gewählt; Lohnfortzahlungs- und Anrechnungsfolge nach Art. 324 OR.",
+     "norm": "Art. 324 OR",
+     "hinweis": "Ferienanrechnung während der Freistellung ist eine Würdigungsfrage (Verhältnis Freistellungsdauer/Feriensaldo) und wird hier bewusst nicht berechnet."
+    },
+    {
+     "bausteinId": "K2_abrechnung",
+     "begruendung": "Abwicklung (Schlussabrechnung, Rückgaben, Zeugnis-Zusage) — immer enthalten.",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K2_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_unterschrift",
+     "begruendung": "Unterschrift der zeichnungsberechtigten Person für die Arbeitgeberin/den Arbeitgeber."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Kündigung in der Probezeit: Frist 7 Tage. Beendigung: 27.02.2026.",
+   "status": "ok",
+   "rechenweg": [
+    {
+     "beschreibung": "Sperrfristen-Prüfung (Art. 336c OR)",
+     "zwischenergebnis": "Art. 336c OR gilt nicht während der Probezeit (Art. 335b OR). Beendigung nach 7-Tages-Frist.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 1 OR",
+       "bemerkung": "Sperrfristen-Tatbestände"
+      },
+      {
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+     "zwischenergebnis": "Zugang 20.02.2026 liegt in der Probezeit (3 Monat/e, Ende 05.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
+     "normen": [
+      {
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
+      }
+     ]
+    }
+   ],
+   "annahmen": [
+    "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+    "Kündigungstermin: Monatsende."
+   ],
+   "warnungen": [],
+   "normverweise": [
+    {
+     "artikel": "Art. 336c Abs. 1 OR",
+     "bemerkung": "Sperrfristen-Tatbestände"
+    }
+   ],
+   "zugangISO": "2026-02-20",
+   "beendigungISO": "2026-02-27"
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Begründung im Kündigungsschreiben: rechtlich nicht erforderlich — sie ist nur auf Verlangen schriftlich zu liefern (Art. 335 Abs. 2 OR). Eine frühe Festlegung kann die Verteidigung gegen einen Missbrauchsvorwurf erschweren."
+   ],
+   "hinweise": [
+    "Befristete Arbeitsverhältnisse enden ohne Kündigung durch Zeitablauf (Art. 334 OR) — für sie ist dieses Schreiben nicht gedacht.",
+    "Missbräuchliche Kündigung (Art. 336 OR): Die gekündigte Person kann bis zum Ende der Kündigungsfrist schriftlich Einsprache erheben und danach innert 180 Tagen klagen (Art. 336b OR; Entschädigung bis 6 Monatslöhne, Art. 336a Abs. 2)."
+   ],
+   "istProbezeit": true
+  }
+ },
+ "vorl:kag-probezeit-letzter-tag": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K2_absender",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K2_adressat",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K2_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K2_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K2_anrede",
+      "text": "Sehr geehrte Frau, sehr geehrter Herr Beispiel",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K2_erklaerung",
+      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per 07.04.2026."
+     },
+     {
+      "bausteinId": "K2_probezeit",
+      "text": "(Die Kündigung erfolgt während der Probezeit; es gilt die siebentägige Frist nach Art. 335b OR.)"
+     },
+     {
+      "bausteinId": "K2_abrechnung",
+      "text": "Bis zum Austritt erhalten Sie die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden). Wir bitten Sie, Arbeitsmittel und Unterlagen bis zum letzten Arbeitstag zurückzugeben. Ein Arbeitszeugnis (Art. 330a OR) stellen wir Ihnen zu."
+     },
+     {
+      "bausteinId": "K2_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K2_unterschrift",
+      "text": "___________________________\nMuster AG\nAnna Muster, Geschäftsführerin",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Beendigungsdatum und Sperrfrist-Prüfung beruhen auf den eingegebenen Daten (Art. 335a–c, 336c OR); massgebend ist der Zugang bei der Arbeitnehmerin/beim Arbeitnehmer. GAV und Einzelvertrag gehen vor.",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff./336c; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K2_absender",
+    "K2_adressat",
+    "K2_datumzeile",
+    "K2_betreff",
+    "K2_anrede",
+    "K2_erklaerung",
+    "K2_probezeit",
+    "K2_abrechnung",
+    "K2_schluss",
+    "K2_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K2_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_anrede",
+     "begruendung": "Anrede — immer enthalten (Nachname aus dem Adressat-Feld, anpassbar)."
+    },
+    {
+     "bausteinId": "K2_erklaerung",
+     "begruendung": "Kündigungserklärung; Beendigungsdatum aus der Sperrfristen-Engine (gehemmt/erstreckt nach Art. 336c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K2_probezeit",
+     "begruendung": "Zugang liegt in der Probezeit (Engine-Befund) — Klarstellung der 7-Tage-Frist; Sperrfristen gelten in der Probezeit nicht.",
+     "norm": "Art. 335b OR"
+    },
+    {
+     "bausteinId": "K2_abrechnung",
+     "begruendung": "Abwicklung (Schlussabrechnung, Rückgaben, Zeugnis-Zusage) — immer enthalten.",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K2_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_unterschrift",
+     "begruendung": "Unterschrift der zeichnungsberechtigten Person für die Arbeitgeberin/den Arbeitgeber."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Kündigung in der Probezeit: Frist 7 Tage. Beendigung: 07.04.2026.",
+   "status": "ok",
+   "rechenweg": [
+    {
+     "beschreibung": "Sperrfristen-Prüfung (Art. 336c OR)",
+     "zwischenergebnis": "Art. 336c OR gilt nicht während der Probezeit (Art. 335b OR). Beendigung nach 7-Tages-Frist.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 1 OR",
+       "bemerkung": "Sperrfristen-Tatbestände"
+      },
+      {
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+     "zwischenergebnis": "Zugang 31.03.2026 liegt in der Probezeit (3 Monat/e, Ende 01.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
+     "normen": [
+      {
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
+      }
+     ]
+    }
+   ],
+   "annahmen": [
+    "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+    "Kündigungstermin: Monatsende."
+   ],
+   "warnungen": [],
+   "normverweise": [
+    {
+     "artikel": "Art. 336c Abs. 1 OR",
+     "bemerkung": "Sperrfristen-Tatbestände"
+    }
+   ],
+   "zugangISO": "2026-03-31",
+   "beendigungISO": "2026-04-07"
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Befristete Arbeitsverhältnisse enden ohne Kündigung durch Zeitablauf (Art. 334 OR) — für sie ist dieses Schreiben nicht gedacht.",
+    "Missbräuchliche Kündigung (Art. 336 OR): Die gekündigte Person kann bis zum Ende der Kündigungsfrist schriftlich Einsprache erheben und danach innert 180 Tagen klagen (Art. 336b OR; Entschädigung bis 6 Monatslöhne, Art. 336a Abs. 2)."
+   ],
+   "istProbezeit": true
+  }
+ },
+ "vorl:kag-probezeit-folgetag": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K2_absender",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K2_adressat",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K2_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K2_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K2_anrede",
+      "text": "Sehr geehrte Frau, sehr geehrter Herr Beispiel",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K2_erklaerung",
+      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per 31.05.2026."
+     },
+     {
+      "bausteinId": "K2_abrechnung",
+      "text": "Bis zum Austritt erhalten Sie die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden). Wir bitten Sie, Arbeitsmittel und Unterlagen bis zum letzten Arbeitstag zurückzugeben. Ein Arbeitszeugnis (Art. 330a OR) stellen wir Ihnen zu."
+     },
+     {
+      "bausteinId": "K2_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K2_unterschrift",
+      "text": "___________________________\nMuster AG\nAnna Muster, Geschäftsführerin",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Beendigungsdatum und Sperrfrist-Prüfung beruhen auf den eingegebenen Daten (Art. 335a–c, 336c OR); massgebend ist der Zugang bei der Arbeitnehmerin/beim Arbeitnehmer. GAV und Einzelvertrag gehen vor.",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff./336c; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K2_absender",
+    "K2_adressat",
+    "K2_datumzeile",
+    "K2_betreff",
+    "K2_anrede",
+    "K2_erklaerung",
+    "K2_abrechnung",
+    "K2_schluss",
+    "K2_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K2_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_anrede",
+     "begruendung": "Anrede — immer enthalten (Nachname aus dem Adressat-Feld, anpassbar)."
+    },
+    {
+     "bausteinId": "K2_erklaerung",
+     "begruendung": "Kündigungserklärung; Beendigungsdatum aus der Sperrfristen-Engine (gehemmt/erstreckt nach Art. 336c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K2_abrechnung",
+     "begruendung": "Abwicklung (Schlussabrechnung, Rückgaben, Zeugnis-Zusage) — immer enthalten.",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K2_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_unterschrift",
+     "begruendung": "Unterschrift der zeichnungsberechtigten Person für die Arbeitgeberin/den Arbeitgeber."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Ordentliche Kündigung (Arbeitgeber): Frist 1 Monat/e. Beendigungsdatum: 31.05.2026.",
+   "status": "ok",
+   "rechenweg": [
+    {
+     "beschreibung": "Sperrfristen-Prüfung (Art. 336c OR)",
+     "zwischenergebnis": "Keine Sperrereignisse angegeben. Keine Sperrfrist-Hemmung.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 1 OR",
+       "bemerkung": "Sperrfristen-Tatbestände"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+     "zwischenergebnis": "Zugang 01.04.2026 liegt ausserhalb der Probezeit (Ende 01.04.2026). Ordentliche Frist gilt.",
+     "normen": [
+      {
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 2 – Dienstjahr (Stichtag = Zugang der Kündigung)",
+     "zwischenergebnis": "Vertragsbeginn 01.01.2026, Zugang 01.04.2026: 0 vollendete Jahre + 1 = 1. Dienstjahr. Gesetzliche Frist: 1 Monat/e.",
+     "normen": [
+      {
+       "artikel": "Art. 335c OR",
+       "bemerkung": "Kündigungsfristen und -termine"
+      }
+     ],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 134 III 354",
+       "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
+       "verifiziert": false
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 3 – Fristberechnung und Endtermin",
+     "zwischenergebnis": "Frist: 1 Monat/e ab Zugang 01.04.2026 → 01.05.2026. Kündigungstermin = Monatsende: Beendigung 31.05.2026.",
+     "normen": [
+      {
+       "artikel": "Art. 335c OR",
+       "bemerkung": "Kündigungsfristen und -termine"
+      }
+     ]
+    }
+   ],
+   "annahmen": [
+    "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+    "Kündigungstermin: Monatsende.",
+    "Kündigung durch: Arbeitgeber."
+   ],
+   "warnungen": [],
+   "normverweise": [
+    {
+     "artikel": "Art. 335a OR",
+     "bemerkung": "Parität der Kündigungsfristen"
+    },
+    {
+     "artikel": "Art. 335b OR",
+     "bemerkung": "Probezeit"
+    },
+    {
+     "artikel": "Art. 335c OR",
+     "bemerkung": "Kündigungsfristen und -termine"
+    }
+   ],
+   "zugangISO": "2026-04-01",
+   "beendigungISO": "2026-05-31"
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Befristete Arbeitsverhältnisse enden ohne Kündigung durch Zeitablauf (Art. 334 OR) — für sie ist dieses Schreiben nicht gedacht.",
+    "Missbräuchliche Kündigung (Art. 336 OR): Die gekündigte Person kann bis zum Ende der Kündigungsfrist schriftlich Einsprache erheben und danach innert 180 Tagen klagen (Art. 336b OR; Entschädigung bis 6 Monatslöhne, Art. 336a Abs. 2)."
+   ],
+   "istProbezeit": false
+  }
+ },
+ "vorl:kag-gates-nichtig-sperrfrist": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K2_absender",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K2_adressat",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K2_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K2_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K2_anrede",
+      "text": "Sehr geehrte Frau, sehr geehrter Herr Beispiel",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K2_erklaerung",
+      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per ________."
+     },
+     {
+      "bausteinId": "K2_abrechnung",
+      "text": "Bis zum Austritt erhalten Sie die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden). Wir bitten Sie, Arbeitsmittel und Unterlagen bis zum letzten Arbeitstag zurückzugeben. Ein Arbeitszeugnis (Art. 330a OR) stellen wir Ihnen zu."
+     },
+     {
+      "bausteinId": "K2_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K2_unterschrift",
+      "text": "___________________________\nMuster AG\nAnna Muster, Geschäftsführerin",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Beendigungsdatum und Sperrfrist-Prüfung beruhen auf den eingegebenen Daten (Art. 335a–c, 336c OR); massgebend ist der Zugang bei der Arbeitnehmerin/beim Arbeitnehmer. GAV und Einzelvertrag gehen vor.",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff./336c; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K2_absender",
+    "K2_adressat",
+    "K2_datumzeile",
+    "K2_betreff",
+    "K2_anrede",
+    "K2_erklaerung",
+    "K2_abrechnung",
+    "K2_schluss",
+    "K2_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K2_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_anrede",
+     "begruendung": "Anrede — immer enthalten (Nachname aus dem Adressat-Feld, anpassbar)."
+    },
+    {
+     "bausteinId": "K2_erklaerung",
+     "begruendung": "Kündigungserklärung; Beendigungsdatum aus der Sperrfristen-Engine (gehemmt/erstreckt nach Art. 336c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K2_abrechnung",
+     "begruendung": "Abwicklung (Schlussabrechnung, Rückgaben, Zeugnis-Zusage) — immer enthalten.",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K2_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_unterschrift",
+     "begruendung": "Unterschrift der zeichnungsberechtigten Person für die Arbeitgeberin/den Arbeitgeber."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Kündigung NICHTIG – kein Beendigungsdatum. Der Zugang (10.03.2026) liegt in der Sperrfrist (01.03.2026 – 20.03.2026); die Kündigung entfaltet keine Wirkung und das Arbeitsverhältnis besteht weiter. Sie ist nach Ablauf der Sperrfrist/Verhinderung – frühestens am 21.03.2026 – mit ordentlicher Frist zu wiederholen.",
+   "status": "nichtig",
+   "rechenweg": [
+    {
+     "beschreibung": "Sperrereignis 1 – krankheit_unfall (Art. 336c Abs. 1 OR)",
+     "zwischenergebnis": "Krankheit/Unfall: Schutz max. 180 Tage (7. DJ), Anfangstag zählt nicht (Art. 77 OR). Sperrfrist 01.03.2026 – 20.03.2026.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 1 OR",
+       "bemerkung": "Sperrfristen-Tatbestände"
+      },
+      {
+       "artikel": "Art. 77 OR",
+       "bemerkung": "Anfangstag zählt nicht (§1.2)"
+      }
+     ]
+    },
+    {
+     "beschreibung": "C2 – Kündigung während Sperrfrist → NICHTIG (Art. 336c Abs. 2 OR)",
+     "zwischenergebnis": "Zugang der Kündigung (10.03.2026) fällt in die Sperrfrist 01.03.2026 – 20.03.2026. Die Kündigung ist NICHTIG (sie entfaltet keine Wirkung). Das Arbeitsverhältnis dauert fort. Die Kündigung muss nach Ablauf der Sperrfrist (Ende der geschützten Verhinderung), also frühestens am 21.03.2026, unter Einhaltung der ordentlichen Kündigungsfrist wiederholt werden.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 2 OR",
+       "bemerkung": "Nichtigkeit / Hemmung"
+      }
+     ],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 134 III 354",
+       "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
+       "verifiziert": false
+      }
+     ]
+    }
+   ],
+   "annahmen": [],
+   "warnungen": [
+    "Sperrfrist (Art. 336c OR) und Lohnfortzahlung (Art. 324a OR) sind voneinander unabhängig. Eine Sperrfrist bedeutet nicht automatisch Lohnfortzahlung in gleicher Dauer (Art. 336c N 2; BGE 115 V 437, zu verifizieren)."
+   ],
+   "normverweise": [
+    {
+     "artikel": "Art. 336c Abs. 1 OR",
+     "bemerkung": "Sperrfristen-Tatbestände"
+    },
+    {
+     "artikel": "Art. 336c Abs. 2 OR",
+     "bemerkung": "Nichtigkeit / Hemmung"
+    }
+   ],
+   "zugangISO": "2026-03-10",
+   "sperrfristEndeISO": "2026-03-20",
+   "fruehesteNeueKuendigungISO": "2026-03-21",
+   "sperrIntervalle": [
+    {
+     "von": "2026-03-01",
+     "bis": "2026-03-20",
+     "typ": "krankheit_unfall"
+    }
+   ],
+   "sperrtage": [
+    {
+     "ereignis": 1,
+     "typ": "krankheit_unfall",
+     "vonISO": "2026-03-01",
+     "bisISO": "2026-03-20",
+     "beansprucht": 19,
+     "kontingent": 180,
+     "verbleibend": 161
+    }
+   ]
+  },
+  "gates": {
+   "blocker": [
+    "Der Zugang fällt in eine Sperrfrist (Art. 336c Abs. 2 OR) — die Kündigung wäre NICHTIG. Frühestens am 21.03.2026 kann neu gekündigt werden (Zugang massgebend)."
+   ],
+   "warnungen": [
+    "Sperrfrist (Art. 336c OR) und Lohnfortzahlung (Art. 324a OR) sind voneinander unabhängig. Eine Sperrfrist bedeutet nicht automatisch Lohnfortzahlung in gleicher Dauer (Art. 336c N 2; BGE 115 V 437, zu verifizieren)."
+   ],
+   "hinweise": [
+    "Befristete Arbeitsverhältnisse enden ohne Kündigung durch Zeitablauf (Art. 334 OR) — für sie ist dieses Schreiben nicht gedacht.",
+    "Missbräuchliche Kündigung (Art. 336 OR): Die gekündigte Person kann bis zum Ende der Kündigungsfrist schriftlich Einsprache erheben und danach innert 180 Tagen klagen (Art. 336b OR; Entschädigung bis 6 Monatslöhne, Art. 336a Abs. 2)."
+   ],
+   "istProbezeit": false
+  }
+ },
+ "vorl:kag-gates-gehemmt-abweichend-vaterschaft": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K2_absender",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K2_adressat",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K2_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K2_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K2_anrede",
+      "text": "Sehr geehrte Frau, sehr geehrter Herr Beispiel",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K2_erklaerung",
+      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per 31.07.2026."
+     },
+     {
+      "bausteinId": "K2_abrechnung",
+      "text": "Bis zum Austritt erhalten Sie die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden). Wir bitten Sie, Arbeitsmittel und Unterlagen bis zum letzten Arbeitstag zurückzugeben. Ein Arbeitszeugnis (Art. 330a OR) stellen wir Ihnen zu."
+     },
+     {
+      "bausteinId": "K2_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K2_unterschrift",
+      "text": "___________________________\nMuster AG\nAnna Muster, Geschäftsführerin",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Beendigungsdatum und Sperrfrist-Prüfung beruhen auf den eingegebenen Daten (Art. 335a–c, 336c OR); massgebend ist der Zugang bei der Arbeitnehmerin/beim Arbeitnehmer. GAV und Einzelvertrag gehen vor.",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff./336c; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K2_absender",
+    "K2_adressat",
+    "K2_datumzeile",
+    "K2_betreff",
+    "K2_anrede",
+    "K2_erklaerung",
+    "K2_abrechnung",
+    "K2_schluss",
+    "K2_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K2_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_anrede",
+     "begruendung": "Anrede — immer enthalten (Nachname aus dem Adressat-Feld, anpassbar)."
+    },
+    {
+     "bausteinId": "K2_erklaerung",
+     "begruendung": "Kündigungserklärung; Beendigungsdatum aus der Sperrfristen-Engine (gehemmt/erstreckt nach Art. 336c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K2_abrechnung",
+     "begruendung": "Abwicklung (Schlussabrechnung, Rückgaben, Zeugnis-Zusage) — immer enthalten.",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K2_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K2_unterschrift",
+     "begruendung": "Unterschrift der zeichnungsberechtigten Person für die Arbeitgeberin/den Arbeitgeber."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": "Kündigung gültig. Kündigungsfrist gehemmt um 20 Tage. Beendigungsdatum nach Hemmung und Erstreckung: 31.07.2026.",
+   "status": "ok",
+   "rechenweg": [
+    {
+     "beschreibung": "Sperrereignis 1 – krankheit_unfall (Art. 336c Abs. 1 OR)",
+     "zwischenergebnis": "Krankheit/Unfall: Schutz max. 180 Tage (7. DJ), Anfangstag zählt nicht (Art. 77 OR). Sperrfrist 01.04.2026 – 20.04.2026.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 1 OR",
+       "bemerkung": "Sperrfristen-Tatbestände"
+      },
+      {
+       "artikel": "Art. 77 OR",
+       "bemerkung": "Anfangstag zählt nicht (§1.2)"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+     "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
+     "normen": [
+      {
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 2 – Dienstjahr (Stichtag = Zugang der Kündigung)",
+     "zwischenergebnis": "Vertragsbeginn 01.01.2020, Zugang 10.03.2026: 6 vollendete Jahre + 1 = 7. Dienstjahr. Gesetzliche Frist: 2 Monat/e.",
+     "normen": [
+      {
+       "artikel": "Art. 335c OR",
+       "bemerkung": "Kündigungsfristen und -termine"
+      }
+     ],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 134 III 354",
+       "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
+       "verifiziert": false
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 3 – Abweichende Kündigungsfrist gültig vereinbart (Art. 335a/c OR)",
+     "zwischenergebnis": "Schriftlich/GAV vereinbarte Frist 3 Monat/e (≥ Minimalfrist 1 Monat) gilt (länger als die gesetzliche Frist). Parität (Art. 335a Abs. 1 OR): für Arbeitgeber und Arbeitnehmer gilt dieselbe Frist.",
+     "normen": [
+      {
+       "artikel": "Art. 335a OR",
+       "bemerkung": "Parität der Kündigungsfristen"
+      },
+      {
+       "artikel": "Art. 335c Abs. 2 OR",
+       "bemerkung": "Abänderung; < 1 Monat nur GAV & 1. DJ"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Schritt 4 – Fristberechnung und Endtermin",
+     "zwischenergebnis": "Frist: 3 Monat/e ab Zugang 10.03.2026 → 10.06.2026. Kündigungstermin = Monatsende: ordentlicher Endtermin 30.06.2026. Verlängerung um 5 nicht bezogene Tage des Urlaubs des andern Elternteils (Art. 335c Abs. 3 i.V.m. Art. 329g OR) taggenau über den Endtermin hinaus: Beendigung 05.07.2026.",
+     "normen": [
+      {
+       "artikel": "Art. 335c OR",
+       "bemerkung": "Kündigungsfristen und -termine"
+      },
+      {
+       "artikel": "Art. 335c Abs. 3 OR",
+       "bemerkung": "Verlängerung bei Urlaub des andern Elternteils (Art. 329g OR)"
+      }
+     ]
+    },
+    {
+     "beschreibung": "C3 – Rückgerechnete Kündigungsfrist (Art. 335c Abs. 1 i.V.m. Art. 336c Abs. 2 OR)",
+     "zwischenergebnis": "Endtermin (ungehemmt): 05.07.2026. Frist 3 Monat/e rückgerechnet → hemmbares Fenster 30.03.2026 – 05.07.2026. Sperrgründe zwischen Zugang (10.03.2026) und Fristbeginn werden NICHT gehemmt.",
+     "normen": [
+      {
+       "artikel": "Art. 335c Abs. 1 OR",
+       "bemerkung": "Rückrechnung vom Endtermin (§1.1)"
+      },
+      {
+       "artikel": "Art. 336c Abs. 2 OR",
+       "bemerkung": "Nichtigkeit / Hemmung"
+      }
+     ],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 134 III 354",
+       "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
+       "verifiziert": false
+      },
+      {
+       "aktenzeichen": "BGE 115 V 437",
+       "aussage": "Rückrechnung vom Endtermin; Abgrenzung Kündigungsfrist-Verlängerung (Hemmung) von der Lohnfortzahlung.",
+       "verifiziert": false
+      },
+      {
+       "aktenzeichen": "BGE 131 III 467",
+       "aussage": "Massgeblich ist der Zugang der Kündigung; Gegenmeinung zum Fristbeginn (Frist läuft ab Zustellung).",
+       "verifiziert": false
+      }
+     ]
+    },
+    {
+     "beschreibung": "C3 – Hemmung: Sperrfrist schneidet rückgerechnete Kündigungsfrist",
+     "zwischenergebnis": "Sperrfrist-Abschnitt 01.04.2026 – 20.04.2026 schneidet die (um bisherige Hemmungen verlängerte) Frist 30.03.2026 – 25.07.2026: 20 Hemmungstage.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 2 OR",
+       "bemerkung": "Nichtigkeit / Hemmung"
+      }
+     ]
+    },
+    {
+     "beschreibung": "Hemmung total",
+     "zwischenergebnis": "Gesamt Hemmungstage (Union, keine Doppelzählung): 20. Endtermin vor Hemmung: 05.07.2026.",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 2 OR",
+       "bemerkung": "Nichtigkeit / Hemmung"
+      }
+     ]
+    },
+    {
+     "beschreibung": "C4 – Erstreckung auf Kündigungstermin (Art. 336c Abs. 3 OR)",
+     "zwischenergebnis": "Nach Hemmung: 25.07.2026. Kein Monatsende → Erstreckung auf 31.07.2026. Eine neue Arbeitsunfähigkeit in der Erstreckungsphase löst keine neue Sperrfrist aus (BGE 124 III 474, zu verifizieren).",
+     "normen": [
+      {
+       "artikel": "Art. 336c Abs. 3 OR",
+       "bemerkung": "Erstreckung auf Kündigungstermin"
+      }
+     ],
+     "rechtsprechung": [
+      {
+       "aktenzeichen": "BGE 124 III 474",
+       "aussage": "Neue Arbeitsunfähigkeit in der Erstreckungsphase (Abs. 3) löst keine neue Sperrfrist aus.",
+       "verifiziert": false
+      }
+     ]
+    }
+   ],
+   "annahmen": [
+    "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+    "Kündigungstermin: Monatsende.",
+    "Während des Urlaubs des andern Elternteils (Art. 329g OR, vormals «Vaterschaftsurlaub») besteht kein zeitlicher Kündigungsschutz (keine Sperrfrist), die Kündigungsfrist verlängert sich aber um die nicht bezogenen Urlaubstage (Art. 335c Abs. 3 OR). Die Verlängerung läuft taggenau; eine zusätzliche Erstreckung auf das nächste Monatsende gilt nur bei entsprechender vertraglicher Abrede und ist hier nicht berücksichtigt.",
+    "Kündigung durch: Arbeitgeber.",
+    "Hemmung nach Rückrechnungsprinzip: massgeblich ist die rückgerechnete Kündigungsfrist (30.03.2026 – 05.07.2026), nicht das Fenster ab Zugang (10.03.2026). Ein Sperrgrund zwischen Zugang und Fristbeginn löst keine Hemmung aus (Art. 336c N 7, abweichende Lehre vorhanden)."
+   ],
+   "warnungen": [
+    "Sperrfrist (Art. 336c OR) und Lohnfortzahlung (Art. 324a OR) sind voneinander unabhängig. Eine Sperrfrist bedeutet nicht automatisch Lohnfortzahlung in gleicher Dauer (Art. 336c N 2; BGE 115 V 437, zu verifizieren).",
+    "Rückfall derselben Krankheit/desselben Unfalls löst keine neue Sperrfrist aus (BGE 120 II 124, zu verifizieren)."
+   ],
+   "normverweise": [
+    {
+     "artikel": "Art. 336c Abs. 1 OR",
+     "bemerkung": "Sperrfristen-Tatbestände"
+    },
+    {
+     "artikel": "Art. 336c Abs. 2 OR",
+     "bemerkung": "Nichtigkeit / Hemmung"
+    },
+    {
+     "artikel": "Art. 336c Abs. 3 OR",
+     "bemerkung": "Erstreckung auf Kündigungstermin"
+    },
+    {
+     "artikel": "Art. 335c Abs. 1 OR",
+     "bemerkung": "Rückrechnung vom Endtermin (§1.1)"
+    },
+    {
+     "artikel": "Art. 335a OR",
+     "bemerkung": "Parität der Kündigungsfristen"
+    },
+    {
+     "artikel": "Art. 335b OR",
+     "bemerkung": "Probezeit"
+    },
+    {
+     "artikel": "Art. 335c OR",
+     "bemerkung": "Kündigungsfristen und -termine"
+    }
+   ],
+   "zugangISO": "2026-03-10",
+   "beendigungISO": "2026-07-31",
+   "gehemmtTage": 20,
+   "sperrIntervalle": [
+    {
+     "von": "2026-04-01",
+     "bis": "2026-04-20",
+     "typ": "krankheit_unfall"
+    }
+   ],
+   "sperrtage": [
+    {
+     "ereignis": 1,
+     "typ": "krankheit_unfall",
+     "vonISO": "2026-04-01",
+     "bisISO": "2026-04-20",
+     "beansprucht": 19,
+     "kontingent": 180,
+     "verbleibend": 161
+    }
+   ]
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Die Kündigungsfrist wird durch Sperrfristen um 20 Tage gehemmt; das Beendigungsdatum (31.07.2026) berücksichtigt Hemmung und Erstreckung auf den Endtermin (Art. 336c Abs. 2/3 OR).",
+    "Sperrfrist (Art. 336c OR) und Lohnfortzahlung (Art. 324a OR) sind voneinander unabhängig. Eine Sperrfrist bedeutet nicht automatisch Lohnfortzahlung in gleicher Dauer (Art. 336c N 2; BGE 115 V 437, zu verifizieren).",
+    "Rückfall derselben Krankheit/desselben Unfalls löst keine neue Sperrfrist aus (BGE 120 II 124, zu verifizieren)."
+   ],
+   "hinweise": [
+    "Befristete Arbeitsverhältnisse enden ohne Kündigung durch Zeitablauf (Art. 334 OR) — für sie ist dieses Schreiben nicht gedacht.",
+    "Missbräuchliche Kündigung (Art. 336 OR): Die gekündigte Person kann bis zum Ende der Kündigungsfrist schriftlich Einsprache erheben und danach innert 180 Tagen klagen (Art. 336b OR; Entschädigung bis 6 Monatslöhne, Art. 336a Abs. 2)."
+   ],
+   "istProbezeit": false
+  }
+ },
+ "vorl:kan-ordentlich": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K1_absender",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K1_adressat",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K1_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K1_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K1_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K1_erklaerung",
+      "text": "Hiermit kündige ich das Arbeitsverhältnis ordentlich und fristgerecht per 31.05.2026."
+     },
+     {
+      "bausteinId": "K1_zeugnis",
+      "text": "Ich bitte um Ausstellung eines qualifizierten Arbeitszeugnisses."
+     },
+     {
+      "bausteinId": "K1_abrechnung",
+      "text": "Bitte stellen Sie mir die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden) bis zum Austritt zu."
+     },
+     {
+      "bausteinId": "K1_dank",
+      "text": "Ich danke für die Zusammenarbeit und bitte um eine kurze schriftliche Bestätigung dieser Kündigung."
+     },
+     {
+      "bausteinId": "K1_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K1_unterschrift",
+      "text": "___________________________\nBeat Beispiel",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Die Kündigung des Arbeitsverhältnisses ist formfrei gültig (vorbehältlich vertraglicher Schriftform); massgebend ist der Zugang beim Empfänger. Das Beendigungsdatum beruht auf den eingegebenen Daten (Art. 335a–c OR).",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff.; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K1_absender",
+    "K1_adressat",
+    "K1_datumzeile",
+    "K1_betreff",
+    "K1_anrede",
+    "K1_erklaerung",
+    "K1_zeugnis",
+    "K1_abrechnung",
+    "K1_dank",
+    "K1_schluss",
+    "K1_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K1_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_anrede",
+     "begruendung": "Anrede – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_erklaerung",
+     "begruendung": "Kündigungserklärung mit Beendigungsdatum aus der Fristen-Engine (Art. 335a–c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K1_zeugnis",
+     "begruendung": "Zeugnisbitte gewählt (Anspruch nach Art. 330a OR).",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K1_abrechnung",
+     "begruendung": "Bitte um Schlussabrechnung gewählt."
+    },
+    {
+     "bausteinId": "K1_dank",
+     "begruendung": "Bestätigungsbitte (Zugangs-/Beweissicherung) – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": {
+    "ergebnis": "Ordentliche Kündigung (Arbeitnehmer): Frist 2 Monat/e. Beendigungsdatum: 31.05.2026.",
+    "status": "ok",
+    "rechenweg": [
+     {
+      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+      "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
+      "normen": [
+       {
+        "artikel": "Art. 335b OR",
+        "bemerkung": "Probezeit"
+       }
+      ]
+     },
+     {
+      "beschreibung": "Schritt 2 – Dienstjahr (Stichtag = Zugang der Kündigung)",
+      "zwischenergebnis": "Vertragsbeginn 01.01.2020, Zugang 10.03.2026: 6 vollendete Jahre + 1 = 7. Dienstjahr. Gesetzliche Frist: 2 Monat/e.",
+      "normen": [
+       {
+        "artikel": "Art. 335c OR",
+        "bemerkung": "Kündigungsfristen und -termine"
+       }
+      ],
+      "rechtsprechung": [
+       {
+        "aktenzeichen": "BGE 134 III 354",
+        "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
+        "verifiziert": false
+       }
+      ]
+     },
+     {
+      "beschreibung": "Schritt 3 – Fristberechnung und Endtermin",
+      "zwischenergebnis": "Frist: 2 Monat/e ab Zugang 10.03.2026 → 10.05.2026. Kündigungstermin = Monatsende: Beendigung 31.05.2026.",
+      "normen": [
+       {
+        "artikel": "Art. 335c OR",
+        "bemerkung": "Kündigungsfristen und -termine"
+       }
+      ]
+     }
+    ],
+    "annahmen": [
+     "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+     "Kündigungstermin: Monatsende.",
+     "Kündigung durch: Arbeitnehmer."
+    ],
+    "warnungen": [],
+    "normverweise": [
+     {
+      "artikel": "Art. 335a OR",
+      "bemerkung": "Parität der Kündigungsfristen"
+     },
+     {
+      "artikel": "Art. 335b OR",
+      "bemerkung": "Probezeit"
+     },
+     {
+      "artikel": "Art. 335c OR",
+      "bemerkung": "Kündigungsfristen und -termine"
+     }
+    ]
+   },
+   "beendigungsdatum": "2026-05-31T21:59:59.999Z",
+   "fristLaufendeDatum": "2026-05-09T22:00:00.000Z",
+   "ordentlichesEndeDatum": "2026-05-31T21:59:59.999Z",
+   "istProbezeit": false,
+   "fristMonate": 2
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Sieht der Arbeitsvertrag für die Kündigung Schriftform vor, ist sie Gültigkeitsvoraussetzung – dieses Schreiben unterschreiben und nachweisbar zustellen.",
+    "Freistellung oder Ferienbezug während der Kündigungsfrist nicht selbst verfügen – das ist Sache der Arbeitgeberin/des Arbeitgebers."
+   ]
+  }
+ },
+ "vorl:kan-probezeit-ohne-zeugnis-abrechnung": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K1_absender",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K1_adressat",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K1_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K1_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K1_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K1_erklaerung",
+      "text": "Hiermit kündige ich das Arbeitsverhältnis ordentlich und fristgerecht per 22.03.2026."
+     },
+     {
+      "bausteinId": "K1_probezeit",
+      "text": "(Die Kündigung erfolgt während der Probezeit; es gilt die siebentägige Frist nach Art. 335b OR.)"
+     },
+     {
+      "bausteinId": "K1_dank",
+      "text": "Ich danke für die Zusammenarbeit und bitte um eine kurze schriftliche Bestätigung dieser Kündigung."
+     },
+     {
+      "bausteinId": "K1_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K1_unterschrift",
+      "text": "___________________________\nBeat Beispiel",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Die Kündigung des Arbeitsverhältnisses ist formfrei gültig (vorbehältlich vertraglicher Schriftform); massgebend ist der Zugang beim Empfänger. Das Beendigungsdatum beruht auf den eingegebenen Daten (Art. 335a–c OR).",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff.; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K1_absender",
+    "K1_adressat",
+    "K1_datumzeile",
+    "K1_betreff",
+    "K1_anrede",
+    "K1_erklaerung",
+    "K1_probezeit",
+    "K1_dank",
+    "K1_schluss",
+    "K1_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K1_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_anrede",
+     "begruendung": "Anrede – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_erklaerung",
+     "begruendung": "Kündigungserklärung mit Beendigungsdatum aus der Fristen-Engine (Art. 335a–c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K1_probezeit",
+     "begruendung": "Zugang liegt in der Probezeit (Engine-Befund) – Klarstellung der 7-Tage-Frist.",
+     "norm": "Art. 335b OR"
+    },
+    {
+     "bausteinId": "K1_dank",
+     "begruendung": "Bestätigungsbitte (Zugangs-/Beweissicherung) – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": {
+    "ergebnis": "Kündigung in der Probezeit: Frist 7 Tage. Beendigung: 22.03.2026.",
+    "status": "ok",
+    "rechenweg": [
+     {
+      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+      "zwischenergebnis": "Zugang 15.03.2026 liegt in der Probezeit (2 Monat/e, Ende 01.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
+      "normen": [
+       {
+        "artikel": "Art. 335b OR",
+        "bemerkung": "Probezeit"
+       }
+      ]
+     }
+    ],
+    "annahmen": [
+     "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+     "Kündigungstermin: Monatsende."
+    ],
+    "warnungen": [],
+    "normverweise": [
+     {
+      "artikel": "Art. 335b OR",
+      "bemerkung": "Probezeit"
+     },
+     {
+      "artikel": "Art. 335a OR",
+      "bemerkung": "Parität der Kündigungsfristen"
+     }
+    ]
+   },
+   "beendigungsdatum": "2026-03-21T23:00:00.000Z",
+   "istProbezeit": true,
+   "fristMonate": 0
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Sieht der Arbeitsvertrag für die Kündigung Schriftform vor, ist sie Gültigkeitsvoraussetzung – dieses Schreiben unterschreiben und nachweisbar zustellen.",
+    "Freistellung oder Ferienbezug während der Kündigungsfrist nicht selbst verfügen – das ist Sache der Arbeitgeberin/des Arbeitgebers."
+   ]
+  }
+ },
+ "vorl:kan-gates-abweichend-formungueltig": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K1_absender",
+      "text": "Beat Beispiel\nY 2, 8000 Zürich",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K1_adressat",
+      "text": "Muster AG\nX 1, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K1_datumzeile",
+      "text": "Zürich, 9. März 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K1_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K1_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K1_erklaerung",
+      "text": "Hiermit kündige ich das Arbeitsverhältnis ordentlich und fristgerecht per 10.05.2026."
+     },
+     {
+      "bausteinId": "K1_zeugnis",
+      "text": "Ich bitte um Ausstellung eines qualifizierten Arbeitszeugnisses."
+     },
+     {
+      "bausteinId": "K1_abrechnung",
+      "text": "Bitte stellen Sie mir die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden) bis zum Austritt zu."
+     },
+     {
+      "bausteinId": "K1_dank",
+      "text": "Ich danke für die Zusammenarbeit und bitte um eine kurze schriftliche Bestätigung dieser Kündigung."
+     },
+     {
+      "bausteinId": "K1_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K1_unterschrift",
+      "text": "___________________________\nBeat Beispiel",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Die Kündigung des Arbeitsverhältnisses ist formfrei gültig (vorbehältlich vertraglicher Schriftform); massgebend ist der Zugang beim Empfänger. Das Beendigungsdatum beruht auf den eingegebenen Daten (Art. 335a–c OR).",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff.; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K1_absender",
+    "K1_adressat",
+    "K1_datumzeile",
+    "K1_betreff",
+    "K1_anrede",
+    "K1_erklaerung",
+    "K1_zeugnis",
+    "K1_abrechnung",
+    "K1_dank",
+    "K1_schluss",
+    "K1_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K1_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_anrede",
+     "begruendung": "Anrede – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_erklaerung",
+     "begruendung": "Kündigungserklärung mit Beendigungsdatum aus der Fristen-Engine (Art. 335a–c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K1_zeugnis",
+     "begruendung": "Zeugnisbitte gewählt (Anspruch nach Art. 330a OR).",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K1_abrechnung",
+     "begruendung": "Bitte um Schlussabrechnung gewählt."
+    },
+    {
+     "bausteinId": "K1_dank",
+     "begruendung": "Bestätigungsbitte (Zugangs-/Beweissicherung) – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "engine": {
+   "ergebnis": {
+    "ergebnis": "Ordentliche Kündigung (Arbeitnehmer): Frist 2 Monat/e. Beendigungsdatum: 10.05.2026.",
+    "status": "ok",
+    "rechenweg": [
+     {
+      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+      "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
+      "normen": [
+       {
+        "artikel": "Art. 335b OR",
+        "bemerkung": "Probezeit"
+       }
+      ]
+     },
+     {
+      "beschreibung": "Schritt 2 – Dienstjahr (Stichtag = Zugang der Kündigung)",
+      "zwischenergebnis": "Vertragsbeginn 01.01.2020, Zugang 10.03.2026: 6 vollendete Jahre + 1 = 7. Dienstjahr. Gesetzliche Frist: 2 Monat/e.",
+      "normen": [
+       {
+        "artikel": "Art. 335c OR",
+        "bemerkung": "Kündigungsfristen und -termine"
+       }
+      ],
+      "rechtsprechung": [
+       {
+        "aktenzeichen": "BGE 134 III 354",
+        "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
+        "verifiziert": false
+       }
+      ]
+     },
+     {
+      "beschreibung": "Schritt 3 – Abweichende Kündigungsfrist: Schriftform/GAV nicht bestätigt (Art. 335c Abs. 2 OR)",
+      "zwischenergebnis": "Abrede unwirksam → gesetzliche Frist 2 Monat/e.",
+      "normen": [
+       {
+        "artikel": "Art. 335c Abs. 2 OR",
+        "bemerkung": "Abänderung; < 1 Monat nur GAV & 1. DJ"
+       },
+       {
+        "artikel": "Art. 335a OR",
+        "bemerkung": "Parität der Kündigungsfristen"
+       }
+      ]
+     },
+     {
+      "beschreibung": "Schritt 4 – Fristberechnung und Endtermin",
+      "zwischenergebnis": "Frist: 2 Monat/e ab Zugang 10.03.2026 → 10.05.2026. Kein Monatsendtermin: Beendigung 10.05.2026.",
+      "normen": [
+       {
+        "artikel": "Art. 335c OR",
+        "bemerkung": "Kündigungsfristen und -termine"
+       }
+      ]
+     }
+    ],
+    "annahmen": [
+     "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
+     "Kündigungstermin: freies Datum (kein Monatsendtermin vereinbart).",
+     "Kündigung durch: Arbeitnehmer."
+    ],
+    "warnungen": [
+     "Abweichende Frist (3 Monate) ist mangels bestätigter Schriftform/GAV (Art. 335c Abs. 2 OR) unwirksam; es gilt die gesetzliche Frist (2 Monate)."
+    ],
+    "normverweise": [
+     {
+      "artikel": "Art. 335a OR",
+      "bemerkung": "Parität der Kündigungsfristen"
+     },
+     {
+      "artikel": "Art. 335b OR",
+      "bemerkung": "Probezeit"
+     },
+     {
+      "artikel": "Art. 335c OR",
+      "bemerkung": "Kündigungsfristen und -termine"
+     }
+    ]
+   },
+   "beendigungsdatum": "2026-05-09T22:00:00.000Z",
+   "fristLaufendeDatum": "2026-05-09T22:00:00.000Z",
+   "ordentlichesEndeDatum": "2026-05-09T22:00:00.000Z",
+   "istProbezeit": false,
+   "fristMonate": 2
+  },
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Abweichende Frist (3 Monate) ist mangels bestätigter Schriftform/GAV (Art. 335c Abs. 2 OR) unwirksam; es gilt die gesetzliche Frist (2 Monate)."
+   ],
+   "hinweise": [
+    "Sieht der Arbeitsvertrag für die Kündigung Schriftform vor, ist sie Gültigkeitsvoraussetzung – dieses Schreiben unterschreiben und nachweisbar zustellen.",
+    "Freistellung oder Ferienbezug während der Kündigungsfrist nicht selbst verfügen – das ist Sache der Arbeitgeberin/des Arbeitgebers."
+   ]
+  }
+ },
+ "vorl:kan-gates-blanko-abweichend": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung des Arbeitsverhältnisses",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "K1_absender",
+      "text": "________",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "K1_adressat",
+      "text": "________",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "K1_datumzeile",
+      "text": "________, ________",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "K1_betreff",
+      "text": "Kündigung des Arbeitsverhältnisses",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "K1_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "K1_erklaerung",
+      "text": "Hiermit kündige ich das Arbeitsverhältnis ordentlich und fristgerecht per ________."
+     },
+     {
+      "bausteinId": "K1_zeugnis",
+      "text": "Ich bitte um Ausstellung eines qualifizierten Arbeitszeugnisses."
+     },
+     {
+      "bausteinId": "K1_abrechnung",
+      "text": "Bitte stellen Sie mir die Schlussabrechnung (Lohn, anteiliger 13. Monatslohn, Feriensaldo, Überstunden) bis zum Austritt zu."
+     },
+     {
+      "bausteinId": "K1_dank",
+      "text": "Ich danke für die Zusammenarbeit und bitte um eine kurze schriftliche Bestätigung dieser Kündigung."
+     },
+     {
+      "bausteinId": "K1_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "K1_unterschrift",
+      "text": "___________________________\n________",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Die Kündigung des Arbeitsverhältnisses ist formfrei gültig (vorbehältlich vertraglicher Schriftform); massgebend ist der Zugang beim Empfänger. Das Beendigungsdatum beruht auf den eingegebenen Daten (Art. 335a–c OR).",
+    "version": "1.0.0 (Rechtsstand OR Art. 335 ff.; Masken-Spezifikation 6.6.2026)"
+   },
+   "aufgenommen": [
+    "K1_absender",
+    "K1_adressat",
+    "K1_datumzeile",
+    "K1_betreff",
+    "K1_anrede",
+    "K1_erklaerung",
+    "K1_zeugnis",
+    "K1_abrechnung",
+    "K1_dank",
+    "K1_schluss",
+    "K1_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "K1_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_betreff",
+     "begruendung": "Betreff des Kündigungsschreibens – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_anrede",
+     "begruendung": "Anrede – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_erklaerung",
+     "begruendung": "Kündigungserklärung mit Beendigungsdatum aus der Fristen-Engine (Art. 335a–c OR).",
+     "norm": "Art. 335 Abs. 1 OR"
+    },
+    {
+     "bausteinId": "K1_zeugnis",
+     "begruendung": "Zeugnisbitte gewählt (Anspruch nach Art. 330a OR).",
+     "norm": "Art. 330a OR"
+    },
+    {
+     "bausteinId": "K1_abrechnung",
+     "begruendung": "Bitte um Schlussabrechnung gewählt."
+    },
+    {
+     "bausteinId": "K1_dank",
+     "begruendung": "Bestätigungsbitte (Zugangs-/Beweissicherung) – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "K1_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "engine": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Abweichende Frist ohne bestätigte Schriftform/GAV ist unwirksam (Art. 335c Abs. 2 OR) – es würde die gesetzliche Frist gelten."
+   ],
+   "hinweise": [
+    "Sieht der Arbeitsvertrag für die Kündigung Schriftform vor, ist sie Gültigkeitsvoraussetzung – dieses Schreiben unterschreiben und nachweisbar zustellen.",
+    "Freistellung oder Ferienbezug während der Kündigungsfrist nicht selbst verfügen – das ist Sache der Arbeitgeberin/des Arbeitgebers."
+   ]
+  }
+ },
+ "vorl:kdg-kv-generisch": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_erklaerung_generisch",
+      "text": "Hiermit kündige ich den oben genannten Vertrag auf den nächstmöglichen Termin unter Einhaltung der vertraglichen bzw. gesetzlichen Frist."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_erklaerung_generisch",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_erklaerung_generisch",
+     "begruendung": "Generische Kündigungserklärung — bewusst ohne berechnete Frist (kein Spezialgesetz, §2)."
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": []
+  }
+ },
+ "vorl:kdg-kv-gates-versicherung": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_versicherung",
+      "text": "Hiermit kündige ich den Versicherungsvertrag (Police P-9) ordentlich auf das Ende des dritten bzw. des laufenden Versicherungsjahres unter Einhaltung der dreimonatigen Frist (Art. 35a VVG)."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_versicherung",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_versicherung",
+     "begruendung": "Ordentliche VVG-Kündigung (Wortlaut verifiziert: Ende des dritten oder jedes folgenden Jahres, Frist 3 Monate, schriftlich oder textnachweisbar).",
+     "norm": "Art. 35a VVG"
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Die LEBENSVERSICHERUNG ist vom ordentlichen Kündigungsrecht des Art. 35a VVG ausgenommen (Abs. 3) — massgebend sind Vertrag und die besonderen Bestimmungen (z. B. Umwandlung/Rückkauf, Art. 90 ff. VVG). Dieses Schreiben passt dafür nicht ohne Prüfung.",
+    "Das ordentliche Kündigungsrecht nach Art. 35a Abs. 1 VVG greift erst auf das Ende des DRITTEN Vertragsjahres. Vorher ist ordentlich nur kündbar, wenn der Vertrag es vorsieht (Abs. 2) — sonst bleibt die ausserordentliche Kündigung aus wichtigem Grund (Art. 35b VVG)."
+   ],
+   "hinweise": [
+    "Zusatzversicherung zur sozialen Krankenversicherung: Das ordentliche Kündigungsrecht steht NUR der versicherungsnehmenden Person zu (Art. 35a Abs. 4 VVG) — für Ihre eigene Kündigung ist das günstig; laufende Leistungen bleiben geschützt (Art. 35c VVG, zwingend).",
+    "Art. 35a VVG ist halbzwingend (Art. 98 VVG): Vertragsklauseln dürfen nur ZU IHREN GUNSTEN abweichen; Art. 35b/35c sind zwingend (Art. 97 VVG)."
+   ]
+  }
+ },
+ "vorl:kdg-kv-gates-kk-praemie-ausstaende": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_krankenkasse_praemie",
+      "text": "Hiermit kündige ich die obligatorische Krankenpflegeversicherung (Grundversicherung) (Versicherten-Nr. V-42) im Anschluss an die Mitteilung der neuen Prämie unter Einhaltung der einmonatigen Kündigungsfrist auf das Ende des Monats, der der Gültigkeit der neuen Prämie vorangeht (Art. 7 Abs. 2 KVG)."
+     },
+     {
+      "bausteinId": "V_krankenkasse_nahtlos",
+      "text": "Das Versicherungsverhältnis endet, sobald Ihnen mein neuer Versicherer die Aufnahme ohne Unterbrechung des Versicherungsschutzes mitgeteilt hat (Art. 7 Abs. 5 KVG)."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_krankenkasse_praemie",
+    "V_krankenkasse_nahtlos",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_krankenkasse_praemie",
+     "begruendung": "Kündigung auf Prämienmitteilung hin (Wortlaut verifiziert: einmonatige Frist auf das Ende des Monats vor Gültigkeit der neuen Prämie) — der Praxisfall «bis 30. November».",
+     "norm": "Art. 7 Abs. 2 KVG"
+    },
+    {
+     "bausteinId": "V_krankenkasse_nahtlos",
+     "begruendung": "Nahtlosigkeits-Klausel: Ende beim bisherigen Versicherer erst nach Mitteilung des neuen Versicherers (Versicherungspflicht ohne Lücke).",
+     "norm": "Art. 7 Abs. 5 KVG"
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Ausstehende Prämien, Kostenbeteiligungen, Verzugszinse oder Betreibungskosten SPERREN den Versichererwechsel, bis sie vollständig bezahlt sind (Art. 64a Abs. 6 KVG); wer nur Ausstände für seine Kinder hat, darf den Versicherer trotzdem wechseln. Vorbehalten bleiben zudem Wohnort-/Stellenwechsel und Bewilligungsentzug (Art. 7 Abs. 3 und 4 KVG)."
+   ],
+   "hinweise": [
+    "Gelten die neuen Prämien ab 1. Januar, muss diese Kündigung bis am 30. November beim Versicherer EINGETROFFEN sein (einmonatige Frist auf das Ende des Vormonats, Art. 7 Abs. 2 KVG) — massgebend ist der Zugang, nicht der Poststempel.",
+    "Zuerst den neuen Versicherer wählen und sich aufnehmen lassen: Das Verhältnis beim bisherigen Versicherer endet erst, wenn ihm der neue Versicherer die nahtlose Aufnahme mitgeteilt hat (Art. 7 Abs. 5 KVG) — die Versicherungspflicht kennt keine Lücke.",
+    "Zusatzversicherungen (VVG) sind von dieser Kündigung NICHT erfasst und werden separat gekündigt (Preset «Versicherung (VVG)»); der bisherige Versicherer darf den Wechsel der Grundversicherung nicht an die Kündigung der Zusatzversicherungen koppeln (Art. 7 Abs. 7 und 8 KVG)."
+   ]
+  }
+ },
+ "vorl:kdg-kv-gates-kk-ordentlich": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_krankenkasse_semester",
+      "text": "Hiermit kündige ich die obligatorische Krankenpflegeversicherung (Grundversicherung) ordentlich unter Einhaltung der dreimonatigen Kündigungsfrist auf das Ende des Kalendersemesters (Art. 7 Abs. 1 KVG)."
+     },
+     {
+      "bausteinId": "V_krankenkasse_nahtlos",
+      "text": "Das Versicherungsverhältnis endet, sobald Ihnen mein neuer Versicherer die Aufnahme ohne Unterbrechung des Versicherungsschutzes mitgeteilt hat (Art. 7 Abs. 5 KVG)."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_krankenkasse_semester",
+    "V_krankenkasse_nahtlos",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_krankenkasse_semester",
+     "begruendung": "Ordentliche Kündigung ohne besondere Versicherungsform (Wortlaut verifiziert: dreimonatige Frist auf das Ende eines Kalendersemesters).",
+     "norm": "Art. 7 Abs. 1 KVG"
+    },
+    {
+     "bausteinId": "V_krankenkasse_nahtlos",
+     "begruendung": "Nahtlosigkeits-Klausel: Ende beim bisherigen Versicherer erst nach Mitteilung des neuen Versicherers (Versicherungspflicht ohne Lücke).",
+     "norm": "Art. 7 Abs. 5 KVG"
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Ordentliche Termine sind der 30. Juni und der 31. Dezember (Ende des Kalendersemesters); die Kündigung muss drei Monate vorher — bis 31. März bzw. 30. September — zugegangen sein (Art. 7 Abs. 1 KVG).",
+    "Zuerst den neuen Versicherer wählen und sich aufnehmen lassen: Das Verhältnis beim bisherigen Versicherer endet erst, wenn ihm der neue Versicherer die nahtlose Aufnahme mitgeteilt hat (Art. 7 Abs. 5 KVG) — die Versicherungspflicht kennt keine Lücke.",
+    "Zusatzversicherungen (VVG) sind von dieser Kündigung NICHT erfasst und werden separat gekündigt (Preset «Versicherung (VVG)»); der bisherige Versicherer darf den Wechsel der Grundversicherung nicht an die Kündigung der Zusatzversicherungen koppeln (Art. 7 Abs. 7 und 8 KVG)."
+   ]
+  }
+ },
+ "vorl:kdg-kv-gates-kk-ordentlich-besondere-form": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_krankenkasse_jahresende",
+      "text": "Hiermit kündige ich die obligatorische Krankenpflegeversicherung (Grundversicherung) ordentlich unter Einhaltung der dreimonatigen Kündigungsfrist auf das Ende des Kalenderjahres, da eine besondere Versicherungsform besteht (Art. 7 Abs. 1 KVG; Art. 94 Abs. 2 KVV bzw. Art. 100 Abs. 3 KVV)."
+     },
+     {
+      "bausteinId": "V_krankenkasse_nahtlos",
+      "text": "Das Versicherungsverhältnis endet, sobald Ihnen mein neuer Versicherer die Aufnahme ohne Unterbrechung des Versicherungsschutzes mitgeteilt hat (Art. 7 Abs. 5 KVG)."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_krankenkasse_jahresende",
+    "V_krankenkasse_nahtlos",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_krankenkasse_jahresende",
+     "begruendung": "Ordentliche Kündigung bei wählbarer Franchise/eingeschränkter Wahl: Wechsel nur auf Jahresende (Art. 94 Abs. 2 bzw. Art. 100 Abs. 3 KVV, Fassung in Kraft seit 1.1.2025).",
+     "norm": "Art. 7 Abs. 1 KVG",
+     "hinweis": "Die Kündigung auf Prämienmitteilung hin (Art. 7 Abs. 2 KVG) bleibt auch bei besonderen Versicherungsformen vorbehalten."
+    },
+    {
+     "bausteinId": "V_krankenkasse_nahtlos",
+     "begruendung": "Nahtlosigkeits-Klausel: Ende beim bisherigen Versicherer erst nach Mitteilung des neuen Versicherers (Versicherungspflicht ohne Lücke).",
+     "norm": "Art. 7 Abs. 5 KVG"
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Besondere Versicherungsform (wählbare Franchise, HMO/Hausarzt u. ä.): Der ordentliche Wechsel ist nur auf das Ende des Kalenderjahres möglich (Art. 94 Abs. 2 KVV bzw. Art. 100 Abs. 3 KVV, Fassung in Kraft seit 1.1.2025); die Kündigung auf Prämienmitteilung hin bleibt vorbehalten.",
+    "Zuerst den neuen Versicherer wählen und sich aufnehmen lassen: Das Verhältnis beim bisherigen Versicherer endet erst, wenn ihm der neue Versicherer die nahtlose Aufnahme mitgeteilt hat (Art. 7 Abs. 5 KVG) — die Versicherungspflicht kennt keine Lücke.",
+    "Zusatzversicherungen (VVG) sind von dieser Kündigung NICHT erfasst und werden separat gekündigt (Preset «Versicherung (VVG)»); der bisherige Versicherer darf den Wechsel der Grundversicherung nicht an die Kündigung der Zusatzversicherungen koppeln (Art. 7 Abs. 7 und 8 KVG)."
+   ]
+  }
+ },
+ "vorl:kdg-kv-gates-darlehen": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_darlehen",
+      "text": "Hiermit kündige ich das Darlehen und fordere Sie zur Rückzahlung auf. Die Rückzahlung hat innert sechs Wochen seit Zugang der ersten Aufforderung vom 01.06.2026 zu erfolgen, somit bis zum 13.07.2026 (Art. 318 OR)."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_darlehen",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_darlehen",
+     "begruendung": "Darlehenskündigung mit 6-Wochen-Frist ab erster Aufforderung (Art. 318 OR).",
+     "norm": "Art. 318 OR"
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": "13.07.2026",
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Ohne vereinbarten Termin oder Frist gilt: Rückzahlung innert SECHS Wochen ab der ersten Aufforderung (Art. 318 OR); eine vereinbarte Regelung geht vor."
+   ]
+  }
+ },
+ "vorl:kdg-kv-gates-auftrag": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_auftrag",
+      "text": "Hiermit widerrufe bzw. kündige ich den Auftrag mit sofortiger Wirkung (Art. 404 Abs. 1 OR)."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_auftrag",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_auftrag",
+     "begruendung": "Auftrag: jederzeitiger Widerruf/Kündigung (Art. 404 Abs. 1 OR); Unzeit-Folge als Warnung offengelegt.",
+     "norm": "Art. 404 OR"
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [
+    "Kündigung zur UNZEIT verpflichtet zum Ersatz des dadurch verursachten Schadens (Art. 404 Abs. 2 OR). Das jederzeitige Widerrufsrecht selbst ist nach ständiger Rechtsprechung zwingend."
+   ],
+   "hinweise": []
+  }
+ },
+ "vorl:kdg-kv-gates-abo-telecom": {
+  "ergebnis": {
+   "dokument": {
+    "titel": "Kündigung",
+    "format": "eingabe",
+    "ausgabeArt": "fertig",
+    "absaetze": [
+     {
+      "bausteinId": "V_absender",
+      "text": "Anna Muster\nX 1, 4051 Basel",
+      "rolle": "absender"
+     },
+     {
+      "bausteinId": "V_adressat",
+      "text": "Beispiel AG\nY 2, 8000 Zürich",
+      "rolle": "adressat"
+     },
+     {
+      "bausteinId": "V_datumzeile",
+      "text": "Basel, 15. Juni 2026",
+      "rolle": "datumzeile"
+     },
+     {
+      "bausteinId": "V_betreff",
+      "text": "Kündigung — Fitness-Abonnement (Nr. A-123)",
+      "rolle": "betreff"
+     },
+     {
+      "bausteinId": "V_anrede",
+      "text": "Sehr geehrte Damen und Herren",
+      "rolle": "anrede"
+     },
+     {
+      "bausteinId": "V_abo",
+      "text": "Hiermit kündige ich das Abonnement bzw. den Vertrag auf den nächstmöglichen Termin gemäss den vereinbarten Vertrags-/Geschäftsbedingungen."
+     },
+     {
+      "bausteinId": "V_bestaetigung",
+      "text": "Bitte bestätigen Sie mir die Kündigung und den Beendigungstermin schriftlich."
+     },
+     {
+      "bausteinId": "V_schluss",
+      "text": "Freundliche Grüsse",
+      "rolle": "schlussformel"
+     },
+     {
+      "bausteinId": "V_unterschrift",
+      "text": "___________________________\nAnna Muster",
+      "rolle": "unterschrift",
+      "stricheErlaubt": true
+     }
+    ],
+    "disclaimer": "Erstellt mit LexMetrik. Keine Rechtsberatung. Massgebend sind Vertrag/AGB und die genannten Gesetzesbestimmungen; der Zugang beim Empfänger entscheidet. Bei Spezialverhältnissen (Arbeit, Miete) die spezialisierten Vorlagen verwenden.",
+    "version": "1.1.0 (KVG-Preset 11.6.2026, Art. 7/64a KVG + Art. 94/100 KVV verifiziert 20260101; Basis: Masken-Spez. 6.6.2026, VVG verifiziert 20240101)"
+   },
+   "aufgenommen": [
+    "V_absender",
+    "V_adressat",
+    "V_datumzeile",
+    "V_betreff",
+    "V_anrede",
+    "V_abo",
+    "V_bestaetigung",
+    "V_schluss",
+    "V_unterschrift"
+   ],
+   "protokoll": [
+    {
+     "bausteinId": "V_absender",
+     "begruendung": "Absenderin/Absender der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_adressat",
+     "begruendung": "Empfängerin/Empfänger der Kündigung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_datumzeile",
+     "begruendung": "Ort und Datum der Erklärung – immer enthalten."
+    },
+    {
+     "bausteinId": "V_betreff",
+     "begruendung": "Betreff mit Vertragsbezeichnung — immer enthalten."
+    },
+    {
+     "bausteinId": "V_anrede",
+     "begruendung": "Anrede — immer enthalten."
+    },
+    {
+     "bausteinId": "V_abo",
+     "begruendung": "Abo/Telecom: kein Spezialgesetz — Kündigung auf den nächstmöglichen AGB-Termin (ehrlich ohne berechnete Frist, §2)."
+    },
+    {
+     "bausteinId": "V_bestaetigung",
+     "begruendung": "Bestätigungsbitte (Beweissicherung) — immer enthalten."
+    },
+    {
+     "bausteinId": "V_schluss",
+     "begruendung": "Schlussformel – immer enthalten."
+    },
+    {
+     "bausteinId": "V_unterschrift",
+     "begruendung": "Unterschrift der kündigenden Partei."
+    }
+   ]
+  },
+  "rueckzahlungBis": null,
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Kein Spezialgesetz: Massgebend sind die vereinbarten AGB (Mindestlaufzeit, Termine) und die OR-Grundsätze — die Maske berechnet hier bewusst keine Frist (§2)."
+   ]
+  }
+ },
+ "vorl:vm-general": {
+  "dokument": {
+   "titel": "Generalvollmacht",
+   "format": "vertrag",
+   "ausgabeArt": "fertig",
+   "absaetze": [
+    {
+     "bausteinId": "VM01_geber_natuerlich",
+     "text": "Ich, Anna Muster, geboren am 04.05.1970, wohnhaft X 1, 4051 Basel (Vollmachtgeber/in), erteile hiermit die folgende Vollmacht:"
+    },
+    {
+     "bausteinId": "VM02_bevollmaechtigte",
+     "ueberschrift": "Bevollmächtigte Person(en)",
+     "text": "1. Bevollmächtigt wird/werden:"
+    },
+    {
+     "bausteinId": "VM02b_bevollmaechtigteliste",
+     "text": "– Beat Beispiel (geb. 1975, Y 2, 4051 Basel);"
+    },
+    {
+     "bausteinId": "VM20_umfang_general",
+     "ueberschrift": "Umfang der Vollmacht",
+     "text": "2. Die bevollmächtigte Person wird ermächtigt, die vollmachtgebende Person in allen Rechtshandlungen und Geschäften zu vertreten, für die eine Stellvertretung gesetzlich zulässig ist (Generalvollmacht)."
+    },
+    {
+     "bausteinId": "VM21_grenze_hoechstpersoenlich",
+     "text": "3. Ausgenommen bleiben höchstpersönliche Rechte, die keiner Vertretung zugänglich sind – insbesondere die Errichtung einer letztwilligen Verfügung, die Eheschliessung und die Anerkennung eines Kindes."
+    },
+    {
+     "bausteinId": "VM51_substitution_verboten",
+     "ueberschrift": "Substitution",
+     "text": "4. Die Erteilung einer Untervollmacht ist ausgeschlossen."
+    },
+    {
+     "bausteinId": "VM61_widerruf",
+     "text": "5. Diese Vollmacht kann jederzeit beschränkt oder widerrufen werden. Gegenüber gutgläubigen Dritten, denen die Vollmacht kundgegeben wurde, wird der Widerruf erst mit dessen Mitteilung wirksam."
+    },
+    {
+     "bausteinId": "VM70_unterschrift",
+     "text": "Basel, den 15.06.2026\n\n\n_________________________________\nAnna Muster (Vollmachtgeber/in)",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Erstellt mit LexMetrik – keine Rechtsberatung. Die Vollmacht ist grundsätzlich formfrei (Art. 11 OR); die unterzeichnete schriftliche Fassung dient dem Ausweis gegenüber Dritten (Art. 33 Abs. 3 OR). Formbedürftige Geschäfte (z. B. Bürgschaft, Grundstückkauf) und der Vorsorgefall (Vorsorgeauftrag, Art. 360 ff. ZGB) sind gesondert zu regeln.",
+   "version": "1.0.0 (Rechtsstand Art. 32–40 OR; Bericht 5.6.2026)"
+  },
+  "aufgenommen": [
+   "VM01_geber_natuerlich",
+   "VM02_bevollmaechtigte",
+   "VM02b_bevollmaechtigteliste",
+   "VM20_umfang_general",
+   "VM21_grenze_hoechstpersoenlich",
+   "VM51_substitution_verboten",
+   "VM61_widerruf",
+   "VM70_unterschrift"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "VM01_geber_natuerlich",
+    "begruendung": "Identifikation der vollmachtgebenden natürlichen Person – immer enthalten.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02_bevollmaechtigte",
+    "begruendung": "Aufgenommen, weil mindestens eine bevollmächtigte Person bezeichnet wurde.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02b_bevollmaechtigteliste",
+    "begruendung": "Je bevollmächtigte Person eine Zeile (Identifikation für die Kundgabe an Dritte).",
+    "norm": "Art. 33 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM20_umfang_general",
+    "begruendung": "Umfangsklausel der Generalvollmacht (Mustertext Bericht Ziff. 5).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM21_grenze_hoechstpersoenlich",
+    "begruendung": "Feste Grenze jeder Generalvollmacht: absolut höchstpersönliche Rechte sind vertretungsfeindlich.",
+    "norm": "Art. 19c ZGB"
+   },
+   {
+    "bausteinId": "VM51_substitution_verboten",
+    "begruendung": "Aufgenommen, weil Substitution ausgeschlossen wurde (persönliche Besorgungspflicht).",
+    "norm": "Art. 398 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM61_widerruf",
+    "begruendung": "Deklaratorische Widerrufsklausel – das Widerrufsrecht ist zwingend, ein Vorausverzicht ungültig (Art. 34 Abs. 2 OR).",
+    "norm": "Art. 34 OR"
+   },
+   {
+    "bausteinId": "VM70_unterschrift",
+    "begruendung": "Unterschriftsblock der vollmachtgebenden Person – die unterzeichnete Urkunde dient als Ausweis gegenüber Dritten.",
+    "norm": "Art. 33 Abs. 3 OR"
+   }
+  ],
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": []
+  }
+ },
+ "vorl:vm-gates-anwalt-juristisch-gemeinsam": {
+  "dokument": {
+   "titel": "Anwaltsvollmacht",
+   "format": "vertrag",
+   "ausgabeArt": "fertig",
+   "absaetze": [
+    {
+     "bausteinId": "VM01_geber_juristisch",
+     "text": "Muster AG, mit Sitz in Basel, vertreten durch Anna Muster, Präsidentin (Vollmachtgeberin), erteilt hiermit die folgende Vollmacht:"
+    },
+    {
+     "bausteinId": "VM02_bevollmaechtigte",
+     "ueberschrift": "Bevollmächtigte Person(en)",
+     "text": "1. Bevollmächtigt wird/werden:"
+    },
+    {
+     "bausteinId": "VM02b_bevollmaechtigteliste",
+     "text": "– Beat Beispiel;\n– Carla Beispiel (Rechtsanwältin);"
+    },
+    {
+     "bausteinId": "VM03_gemeinsam",
+     "text": "2. Mehrere Bevollmächtigte sind nur gemeinsam zur Vertretung berechtigt (Kollektivvollmacht)."
+    },
+    {
+     "bausteinId": "VM10_umfang_anwalt",
+     "ueberschrift": "Umfang der Vollmacht",
+     "text": "3. Die bevollmächtigte Person wird ermächtigt, die vollmachtgebende Person in Sachen Muster AG gegen Beispiel GmbH betreffend Forderung vor allen Gerichten und Behörden sowie gegenüber Privaten zu vertreten und alles zu tun oder zu unterlassen, was sie zur Wahrung der übertragenen Interessen für notwendig oder angemessen hält. Eingeschlossen sind insbesondere die Einreichung von Klagen und Rechtsmitteln, der Vollzug von Urteilen, die Empfangnahme und Herausgabe von Zahlungen sowie die Anhebung und Durchführung von Schuldbetreibungen und die Stellung von Konkursbegehren."
+    },
+    {
+     "bausteinId": "VM11_prozessbefugnisse",
+     "text": "4. Die bevollmächtigte Person ist ausdrücklich ermächtigt, Vergleiche abzuschliessen sowie Klagen anzuerkennen und zurückzuziehen."
+    },
+    {
+     "bausteinId": "VM12_geheimnisentbindung",
+     "text": "5. Dritte – namentlich Anwältinnen und Anwälte, Ärztinnen und Ärzte, Spitäler, Versicherungen, Banken und Behörden – werden gegenüber der bevollmächtigten Person von ihrer Schweige- und Geheimhaltungspflicht entbunden. Diese Entbindung kann jederzeit schriftlich widerrufen werden."
+    },
+    {
+     "bausteinId": "VM50_substitution_erlaubt",
+     "ueberschrift": "Substitution",
+     "text": "6. Die bevollmächtigte Person ist berechtigt, eine Untervollmacht zu erteilen (Substitution)."
+    },
+    {
+     "bausteinId": "VM60_befristung",
+     "text": "7. Diese Vollmacht ist befristet und gilt bis zum 30.06.2027."
+    },
+    {
+     "bausteinId": "VM61_widerruf",
+     "text": "8. Diese Vollmacht kann jederzeit beschränkt oder widerrufen werden. Gegenüber gutgläubigen Dritten, denen die Vollmacht kundgegeben wurde, wird der Widerruf erst mit dessen Mitteilung wirksam."
+    },
+    {
+     "bausteinId": "VM62_fortgeltung",
+     "text": "9. Diese Vollmacht erlischt nicht mit dem Tod, der Verschollenerklärung oder dem Verlust der Handlungsfähigkeit der vollmachtgebenden Person."
+    },
+    {
+     "bausteinId": "VM70_unterschrift",
+     "text": "Basel, den 15.06.2026\n\n\n_________________________________\nFür Muster AG: Anna Muster, Präsidentin",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Erstellt mit LexMetrik – keine Rechtsberatung. Die Vollmacht ist grundsätzlich formfrei (Art. 11 OR); die unterzeichnete schriftliche Fassung dient dem Ausweis gegenüber Dritten (Art. 33 Abs. 3 OR). Formbedürftige Geschäfte (z. B. Bürgschaft, Grundstückkauf) und der Vorsorgefall (Vorsorgeauftrag, Art. 360 ff. ZGB) sind gesondert zu regeln.",
+   "version": "1.0.0 (Rechtsstand Art. 32–40 OR; Bericht 5.6.2026)"
+  },
+  "aufgenommen": [
+   "VM01_geber_juristisch",
+   "VM02_bevollmaechtigte",
+   "VM02b_bevollmaechtigteliste",
+   "VM03_gemeinsam",
+   "VM10_umfang_anwalt",
+   "VM11_prozessbefugnisse",
+   "VM12_geheimnisentbindung",
+   "VM50_substitution_erlaubt",
+   "VM60_befristung",
+   "VM61_widerruf",
+   "VM62_fortgeltung",
+   "VM70_unterschrift"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "VM01_geber_juristisch",
+    "begruendung": "Identifikation der vollmachtgebenden juristischen Person samt Vertretungsorgan – immer enthalten.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02_bevollmaechtigte",
+    "begruendung": "Aufgenommen, weil mindestens eine bevollmächtigte Person bezeichnet wurde.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02b_bevollmaechtigteliste",
+    "begruendung": "Je bevollmächtigte Person eine Zeile (Identifikation für die Kundgabe an Dritte).",
+    "norm": "Art. 33 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM03_gemeinsam",
+    "begruendung": "Aufgenommen, weil mehrere Bevollmächtigte mit gemeinsamer Vertretung gewählt wurden.",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM10_umfang_anwalt",
+    "begruendung": "Umfangsklausel der Anwaltsvollmacht (Usanz SAV-Kanzleien); die Prozessvollmacht deckt alle Prozesshandlungen, die das Verfahren mit sich bringt.",
+    "norm": "Art. 33 Abs. 2 OR",
+    "hinweis": "Der Ausweis gegenüber Gericht/Behörde erfolgt durch diese schriftliche Vollmacht (Art. 68 Abs. 3 ZPO; Art. 129 Abs. 2 StPO; Art. 11 Abs. 2 VwVG)."
+   },
+   {
+    "bausteinId": "VM11_prozessbefugnisse",
+    "begruendung": "Aufgenommen, weil die Vergleichs-/Anerkennungs-/Rückzugsbefugnis ausdrücklich erteilt wurde – materielle Verfügungshandlungen brauchen die besondere Ermächtigung.",
+    "norm": "Art. 396 Abs. 3 OR",
+    "hinweis": "Vergleich, Klageanerkennung und Klagerückzug beenden das Verfahren mit Entscheidwirkung (Art. 241 ZPO); die Lehre stellt strenge Anforderungen an die Spezifizierung."
+   },
+   {
+    "bausteinId": "VM12_geheimnisentbindung",
+    "begruendung": "Aufgenommen, weil die Geheimnisentbindung zur Aktenbeschaffung gewählt wurde (Usanz in Anwaltsvollmachten)."
+   },
+   {
+    "bausteinId": "VM50_substitution_erlaubt",
+    "begruendung": "Aufgenommen, weil Substitution erlaubt wurde – bei befugter Substitution haftet die beauftragte Person nur für gehörige Auswahl und Instruktion.",
+    "norm": "Art. 399 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM60_befristung",
+    "begruendung": "Aufgenommen, weil eine Befristung gewählt wurde (zeitliche Beschränkung der Ermächtigung).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM61_widerruf",
+    "begruendung": "Deklaratorische Widerrufsklausel – das Widerrufsrecht ist zwingend, ein Vorausverzicht ungültig (Art. 34 Abs. 2 OR).",
+    "norm": "Art. 34 OR"
+   },
+   {
+    "bausteinId": "VM62_fortgeltung",
+    "begruendung": "Aufgenommen, weil die Fortgeltung über Tod/Handlungsunfähigkeit hinaus gewählt wurde – Art. 35 Abs. 1 OR ist dispositiv.",
+    "norm": "Art. 35 Abs. 1 OR",
+    "hinweis": "Für die Vorsorge bei Urteilsunfähigkeit ist der Vorsorgeauftrag (Art. 360 ff. ZGB) das massgebliche Instrument; Banken/Behörden akzeptieren blosse Dauervollmachten dann nicht zuverlässig."
+   },
+   {
+    "bausteinId": "VM70_unterschrift",
+    "begruendung": "Unterschriftsblock der vollmachtgebenden Person – die unterzeichnete Urkunde dient als Ausweis gegenüber Dritten.",
+    "norm": "Art. 33 Abs. 3 OR"
+   }
+  ],
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": [
+    "Fortgeltung über Tod/Urteilsunfähigkeit hinaus ist zulässig (Art. 35 Abs. 1 OR, dispositiv), deckt die Vorsorge aber nur unvollkommen: Banken und Behörden akzeptieren blosse Dauervollmachten bei eingetretener Urteilsunfähigkeit nicht zuverlässig. Für diesen Fall ist der VORSORGEAUFTRAG (Art. 360 ff. ZGB, eigene Vorlage) das gesetzlich vorgesehene Instrument."
+   ]
+  }
+ },
+ "vorl:vm-gates-spezial-geschaeft-buergschaft": {
+  "dokument": {
+   "titel": "Spezialvollmacht",
+   "format": "vertrag",
+   "ausgabeArt": "fertig",
+   "absaetze": [
+    {
+     "bausteinId": "VM01_geber_natuerlich",
+     "text": "Ich, Anna Muster, geboren am 04.05.1970, wohnhaft X 1, 4051 Basel (Vollmachtgeber/in), erteile hiermit die folgende Vollmacht:"
+    },
+    {
+     "bausteinId": "VM02_bevollmaechtigte",
+     "ueberschrift": "Bevollmächtigte Person(en)",
+     "text": "1. Bevollmächtigt wird/werden:"
+    },
+    {
+     "bausteinId": "VM02b_bevollmaechtigteliste",
+     "text": "– Beat Beispiel;\n– Carla Beispiel (Rechtsanwältin);"
+    },
+    {
+     "bausteinId": "VM03_einzeln",
+     "text": "2. Mehrere Bevollmächtigte sind je einzeln zur Vertretung berechtigt."
+    },
+    {
+     "bausteinId": "VM30_spezial_geschaeft",
+     "ueberschrift": "Umfang der Vollmacht",
+     "text": "3. Die bevollmächtigte Person wird ermächtigt, die vollmachtgebende Person in folgender Angelegenheit zu vertreten: Verkauf der Liegenschaft Y 2, 4051 Basel"
+    },
+    {
+     "bausteinId": "VM31a_bereiche_zusatz",
+     "text": "4. Die Vollmacht umfasst zudem die folgenden Vertretungsbereiche:"
+    },
+    {
+     "bausteinId": "VM31c_bereicheliste",
+     "text": "– Entgegennahme und Abholung von Postsendungen;\n– Vertretung gegenüber Banken und Finanzinstituten;\n– Verwaltung von Liegenschaften (Vermietung, Unterhalt, Nebenkosten);\n– Vertretung in Verfahren vor Behörden und Gerichten, soweit zulässig;"
+    },
+    {
+     "bausteinId": "VM32_beschraenkung",
+     "text": "5. Die Vollmacht ist auf die vorstehend bezeichneten Angelegenheiten und Bereiche beschränkt."
+    },
+    {
+     "bausteinId": "VM40_ermaechtigungen",
+     "ueberschrift": "Besondere Ermächtigungen",
+     "text": "6. Die bevollmächtigte Person ist ausdrücklich ermächtigt:"
+    },
+    {
+     "bausteinId": "VM40b_ermaechtigungenliste",
+     "text": "– einen Vergleich abzuschliessen;\n– Grundstücke zu veräussern oder zu belasten;"
+    },
+    {
+     "bausteinId": "VM51_substitution_verboten",
+     "ueberschrift": "Substitution",
+     "text": "7. Die Erteilung einer Untervollmacht ist ausgeschlossen."
+    },
+    {
+     "bausteinId": "VM61_widerruf",
+     "text": "8. Diese Vollmacht kann jederzeit beschränkt oder widerrufen werden. Gegenüber gutgläubigen Dritten, denen die Vollmacht kundgegeben wurde, wird der Widerruf erst mit dessen Mitteilung wirksam."
+    },
+    {
+     "bausteinId": "VM70_unterschrift",
+     "text": "Basel, den 15.06.2026\n\n\n_________________________________\nAnna Muster (Vollmachtgeber/in)",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Erstellt mit LexMetrik – keine Rechtsberatung. Die Vollmacht ist grundsätzlich formfrei (Art. 11 OR); die unterzeichnete schriftliche Fassung dient dem Ausweis gegenüber Dritten (Art. 33 Abs. 3 OR). Formbedürftige Geschäfte (z. B. Bürgschaft, Grundstückkauf) und der Vorsorgefall (Vorsorgeauftrag, Art. 360 ff. ZGB) sind gesondert zu regeln.",
+   "version": "1.0.0 (Rechtsstand Art. 32–40 OR; Bericht 5.6.2026)"
+  },
+  "aufgenommen": [
+   "VM01_geber_natuerlich",
+   "VM02_bevollmaechtigte",
+   "VM02b_bevollmaechtigteliste",
+   "VM03_einzeln",
+   "VM30_spezial_geschaeft",
+   "VM31a_bereiche_zusatz",
+   "VM31c_bereicheliste",
+   "VM32_beschraenkung",
+   "VM40_ermaechtigungen",
+   "VM40b_ermaechtigungenliste",
+   "VM51_substitution_verboten",
+   "VM61_widerruf",
+   "VM70_unterschrift"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "VM01_geber_natuerlich",
+    "begruendung": "Identifikation der vollmachtgebenden natürlichen Person – immer enthalten.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02_bevollmaechtigte",
+    "begruendung": "Aufgenommen, weil mindestens eine bevollmächtigte Person bezeichnet wurde.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02b_bevollmaechtigteliste",
+    "begruendung": "Je bevollmächtigte Person eine Zeile (Identifikation für die Kundgabe an Dritte).",
+    "norm": "Art. 33 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM03_einzeln",
+    "begruendung": "Aufgenommen, weil mehrere Bevollmächtigte mit Einzelvertretung gewählt wurden (Usanz «je einzeln»).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM30_spezial_geschaeft",
+    "begruendung": "Aufgenommen, weil ein bestimmtes Geschäft bezeichnet wurde (Spezialvollmacht).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM31a_bereiche_zusatz",
+    "begruendung": "Aufgenommen, weil zusätzlich zum bezeichneten Geschäft Vertretungsbereiche gewählt wurden.",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM31c_bereicheliste",
+    "begruendung": "Je gewählter Vertretungsbereich eine Zeile (sachliche Beschränkung).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM32_beschraenkung",
+    "begruendung": "Klarstellung der sachlichen Beschränkung – Überschreitung führt zum Handeln ohne Vertretungsmacht (Art. 38 f. OR).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM40_ermaechtigungen",
+    "begruendung": "Aufgenommen, weil Geschäfte gewählt wurden, die eine besondere Ermächtigung verlangen – sie gelten ohne ausdrückliche Nennung als NICHT erteilt.",
+    "norm": "Art. 396 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM40b_ermaechtigungenliste",
+    "begruendung": "Je besondere Ermächtigung eine Zeile (Katalog wortlautnah zu Art. 396 Abs. 3 OR).",
+    "norm": "Art. 396 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM51_substitution_verboten",
+    "begruendung": "Aufgenommen, weil Substitution ausgeschlossen wurde (persönliche Besorgungspflicht).",
+    "norm": "Art. 398 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM61_widerruf",
+    "begruendung": "Deklaratorische Widerrufsklausel – das Widerrufsrecht ist zwingend, ein Vorausverzicht ungültig (Art. 34 Abs. 2 OR).",
+    "norm": "Art. 34 OR"
+   },
+   {
+    "bausteinId": "VM70_unterschrift",
+    "begruendung": "Unterschriftsblock der vollmachtgebenden Person – die unterzeichnete Urkunde dient als Ausweis gegenüber Dritten.",
+    "norm": "Art. 33 Abs. 3 OR"
+   }
+  ],
+  "gates": {
+   "blocker": [
+    "Bürgschaftsvollmacht: Die Vollmacht zur Eingehung einer Bürgschaft bedarf DERSELBEN Form wie die Bürgschaft (Art. 493 Abs. 6 OR) – bei natürlichen Personen über CHF 2000 öffentliche Beurkundung (Art. 493 Abs. 2 OR). Eine einfach-schriftliche Vollmacht genügt nicht; bitte an ein Notariat wenden. Der Export ist gesperrt, solange diese Befugnis gewählt ist."
+   ],
+   "warnungen": [
+    "Grundstücke veräussern/belasten: Das Hauptgeschäft bedarf der öffentlichen Beurkundung (Art. 216 Abs. 1 OR); für den Grundbuchvollzug ist die Beglaubigung der Unterschriften erforderlich (Art. 86 GBV). Ob die VOLLMACHT selbst der Beurkundungsform bedarf, ist nicht eindeutig konsolidiert (ältere Linie BGE 112 II 330 vs. Formfreiheits-Praxis) – notarielle Beglaubigung/Beratung wird empfohlen.",
+    "Bankgeschäfte: Banken akzeptieren in der Regel nur BANKEIGENE Vollmachtsformulare. Diese Vollmacht ersetzt die beim Institut hinterlegte Bankvollmacht nicht – Formular direkt bei der Bank verlangen.",
+    "Prozessvertretung: Die BERUFSMÄSSIGE Vertretung im Zivilprozess ist Anwältinnen und Anwälten vorbehalten (Art. 68 Abs. 2 ZPO; BGE 140 III 555); nicht-berufsmässige Vertrauenspersonen sind nur beschränkt zulässig."
+   ],
+   "hinweise": [
+    "Für den Gebrauch gegenüber Grundbuch, Handelsregister oder Banken ist die Beglaubigung der Unterschrift Usanz (kantonal organisiert: Notariat, teilweise Gemeinde; Gebühren variieren stark).",
+    "Post: Für die Abholung avisierter Sendungen verwendet die Schweizerische Post ein eigenes Vollmachtsformular; Sendungen mit Zusatzleistung «eigenhändig» sind ausgenommen."
+   ]
+  }
+ },
+ "vorl:vm-spezial-nur-bereiche": {
+  "dokument": {
+   "titel": "Spezialvollmacht",
+   "format": "vertrag",
+   "ausgabeArt": "fertig",
+   "absaetze": [
+    {
+     "bausteinId": "VM01_geber_natuerlich",
+     "text": "Ich, Anna Muster, geboren am 04.05.1970, wohnhaft X 1, 4051 Basel (Vollmachtgeber/in), erteile hiermit die folgende Vollmacht:"
+    },
+    {
+     "bausteinId": "VM02_bevollmaechtigte",
+     "ueberschrift": "Bevollmächtigte Person(en)",
+     "text": "1. Bevollmächtigt wird/werden:"
+    },
+    {
+     "bausteinId": "VM02b_bevollmaechtigteliste",
+     "text": "– Beat Beispiel (geb. 1975, Y 2, 4051 Basel);"
+    },
+    {
+     "bausteinId": "VM31b_bereiche",
+     "ueberschrift": "Umfang der Vollmacht",
+     "text": "2. Die Vollmacht umfasst die folgenden Vertretungsbereiche:"
+    },
+    {
+     "bausteinId": "VM31c_bereicheliste",
+     "text": "– Vertretung gegenüber Behörden und Ämtern (insbesondere Gemeinde, Steuerverwaltung, Sozialversicherungen, Migrationsamt);\n– Vertretung gegenüber Versicherungen und Vorsorgeeinrichtungen;"
+    },
+    {
+     "bausteinId": "VM32_beschraenkung",
+     "text": "3. Die Vollmacht ist auf die vorstehend bezeichneten Angelegenheiten und Bereiche beschränkt."
+    },
+    {
+     "bausteinId": "VM51_substitution_verboten",
+     "ueberschrift": "Substitution",
+     "text": "4. Die Erteilung einer Untervollmacht ist ausgeschlossen."
+    },
+    {
+     "bausteinId": "VM61_widerruf",
+     "text": "5. Diese Vollmacht kann jederzeit beschränkt oder widerrufen werden. Gegenüber gutgläubigen Dritten, denen die Vollmacht kundgegeben wurde, wird der Widerruf erst mit dessen Mitteilung wirksam."
+    },
+    {
+     "bausteinId": "VM70_unterschrift",
+     "text": "Basel, den 15.06.2026\n\n\n_________________________________\nAnna Muster (Vollmachtgeber/in)",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Erstellt mit LexMetrik – keine Rechtsberatung. Die Vollmacht ist grundsätzlich formfrei (Art. 11 OR); die unterzeichnete schriftliche Fassung dient dem Ausweis gegenüber Dritten (Art. 33 Abs. 3 OR). Formbedürftige Geschäfte (z. B. Bürgschaft, Grundstückkauf) und der Vorsorgefall (Vorsorgeauftrag, Art. 360 ff. ZGB) sind gesondert zu regeln.",
+   "version": "1.0.0 (Rechtsstand Art. 32–40 OR; Bericht 5.6.2026)"
+  },
+  "aufgenommen": [
+   "VM01_geber_natuerlich",
+   "VM02_bevollmaechtigte",
+   "VM02b_bevollmaechtigteliste",
+   "VM31b_bereiche",
+   "VM31c_bereicheliste",
+   "VM32_beschraenkung",
+   "VM51_substitution_verboten",
+   "VM61_widerruf",
+   "VM70_unterschrift"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "VM01_geber_natuerlich",
+    "begruendung": "Identifikation der vollmachtgebenden natürlichen Person – immer enthalten.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02_bevollmaechtigte",
+    "begruendung": "Aufgenommen, weil mindestens eine bevollmächtigte Person bezeichnet wurde.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM02b_bevollmaechtigteliste",
+    "begruendung": "Je bevollmächtigte Person eine Zeile (Identifikation für die Kundgabe an Dritte).",
+    "norm": "Art. 33 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM31b_bereiche",
+    "begruendung": "Aufgenommen, weil Vertretungsbereiche (ohne einzelnes Geschäft) gewählt wurden.",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM31c_bereicheliste",
+    "begruendung": "Je gewählter Vertretungsbereich eine Zeile (sachliche Beschränkung).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM32_beschraenkung",
+    "begruendung": "Klarstellung der sachlichen Beschränkung – Überschreitung führt zum Handeln ohne Vertretungsmacht (Art. 38 f. OR).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM51_substitution_verboten",
+    "begruendung": "Aufgenommen, weil Substitution ausgeschlossen wurde (persönliche Besorgungspflicht).",
+    "norm": "Art. 398 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM61_widerruf",
+    "begruendung": "Deklaratorische Widerrufsklausel – das Widerrufsrecht ist zwingend, ein Vorausverzicht ungültig (Art. 34 Abs. 2 OR).",
+    "norm": "Art. 34 OR"
+   },
+   {
+    "bausteinId": "VM70_unterschrift",
+    "begruendung": "Unterschriftsblock der vollmachtgebenden Person – die unterzeichnete Urkunde dient als Ausweis gegenüber Dritten.",
+    "norm": "Art. 33 Abs. 3 OR"
+   }
+  ],
+  "gates": {
+   "blocker": [],
+   "warnungen": [],
+   "hinweise": []
+  }
+ },
+ "vorl:vm-gates-blanko-spezial": {
+  "dokument": {
+   "titel": "Spezialvollmacht",
+   "format": "vertrag",
+   "ausgabeArt": "fertig",
+   "absaetze": [
+    {
+     "bausteinId": "VM01_geber_natuerlich",
+     "text": "Ich, ________ ________, wohnhaft ________ (Vollmachtgeber/in), erteile hiermit die folgende Vollmacht:"
+    },
+    {
+     "bausteinId": "VM32_beschraenkung",
+     "text": "1. Die Vollmacht ist auf die vorstehend bezeichneten Angelegenheiten und Bereiche beschränkt."
+    },
+    {
+     "bausteinId": "VM51_substitution_verboten",
+     "ueberschrift": "Substitution",
+     "text": "2. Die Erteilung einer Untervollmacht ist ausgeschlossen."
+    },
+    {
+     "bausteinId": "VM61_widerruf",
+     "text": "3. Diese Vollmacht kann jederzeit beschränkt oder widerrufen werden. Gegenüber gutgläubigen Dritten, denen die Vollmacht kundgegeben wurde, wird der Widerruf erst mit dessen Mitteilung wirksam."
+    },
+    {
+     "bausteinId": "VM70_unterschrift",
+     "text": "den ________\n\n\n_________________________________\n________ ________ (Vollmachtgeber/in)",
+     "rolle": "unterschrift",
+     "stricheErlaubt": true
+    }
+   ],
+   "disclaimer": "Erstellt mit LexMetrik – keine Rechtsberatung. Die Vollmacht ist grundsätzlich formfrei (Art. 11 OR); die unterzeichnete schriftliche Fassung dient dem Ausweis gegenüber Dritten (Art. 33 Abs. 3 OR). Formbedürftige Geschäfte (z. B. Bürgschaft, Grundstückkauf) und der Vorsorgefall (Vorsorgeauftrag, Art. 360 ff. ZGB) sind gesondert zu regeln.",
+   "version": "1.0.0 (Rechtsstand Art. 32–40 OR; Bericht 5.6.2026)"
+  },
+  "aufgenommen": [
+   "VM01_geber_natuerlich",
+   "VM32_beschraenkung",
+   "VM51_substitution_verboten",
+   "VM61_widerruf",
+   "VM70_unterschrift"
+  ],
+  "protokoll": [
+   {
+    "bausteinId": "VM01_geber_natuerlich",
+    "begruendung": "Identifikation der vollmachtgebenden natürlichen Person – immer enthalten.",
+    "norm": "Art. 32 Abs. 1 OR"
+   },
+   {
+    "bausteinId": "VM32_beschraenkung",
+    "begruendung": "Klarstellung der sachlichen Beschränkung – Überschreitung führt zum Handeln ohne Vertretungsmacht (Art. 38 f. OR).",
+    "norm": "Art. 33 Abs. 2 OR"
+   },
+   {
+    "bausteinId": "VM51_substitution_verboten",
+    "begruendung": "Aufgenommen, weil Substitution ausgeschlossen wurde (persönliche Besorgungspflicht).",
+    "norm": "Art. 398 Abs. 3 OR"
+   },
+   {
+    "bausteinId": "VM61_widerruf",
+    "begruendung": "Deklaratorische Widerrufsklausel – das Widerrufsrecht ist zwingend, ein Vorausverzicht ungültig (Art. 34 Abs. 2 OR).",
+    "norm": "Art. 34 OR"
+   },
+   {
+    "bausteinId": "VM70_unterschrift",
+    "begruendung": "Unterschriftsblock der vollmachtgebenden Person – die unterzeichnete Urkunde dient als Ausweis gegenüber Dritten.",
+    "norm": "Art. 33 Abs. 3 OR"
+   }
+  ],
+  "gates": {
+   "blocker": [
+    "Mindestens eine bevollmächtigte Person bezeichnen (Art. 32 Abs. 1 OR).",
+    "Spezialvollmacht: das Geschäft genau bezeichnen oder mindestens einen Vertretungsbereich wählen – der Umfang der Vollmacht bestimmt sich nach ihrem Inhalt (Art. 33 Abs. 2 OR)."
+   ],
+   "warnungen": [],
+   "hinweise": []
+  }
+ }
 }
