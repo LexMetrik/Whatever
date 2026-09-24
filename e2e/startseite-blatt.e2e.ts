@@ -649,3 +649,41 @@ test.describe('Startseite · Häufig gebraucht und Kopfzeile', () => {
     }
   })
 })
+
+// ─── U13 · kein Scroll beim Aufklappen (Nachtrag David 24.9.2026 abends) ─────
+// «es soll nicht zu scrollen kommen wenn man kachel aufmacht» / «also bei
+// gesetz». PFLICHT: die erste Stufe der Gesetze (Suchfeld + drei Spalten) passt
+// ganz ins Blatt (kein Überlauf in `.lc-start-blatt-inhalt`) UND das Blatt
+// steht ganz im Fenster (die Seite muss nicht scrollen). Für die drei anderen
+// Kacheln gilt nur Letzteres — ihre erste Stufe trägt Listen (Treffer,
+// Vorlagen-Gebiete), die im Blatt scrollen dürfen (Auftrag U13: «dort kein
+// Zwang»); ihr Überlauf wird als Messwert mitgeschrieben. Rot-Beweis
+// 25.9.2026: vor U13 Gesetze @1440×900 577/536 (41 px), Blatt-Unterkante 819
+// @1280×800.
+test.describe('Startseite · U13 kein Scroll beim Aufklappen', () => {
+  for (const [breite, hoehe] of [[1440, 900], [1280, 800]] as const) {
+    test(`@${breite}×${hoehe}: Gesetze-Wahl ohne Scroll, alle Blätter ganz im Fenster`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      for (const [name, kachel] of [['Gesetze', gesetzeKachel], ['Rechtsprechung', rechtsprechungKachel],
+        ['Materialien', materialienKachel], ['Werkzeuge', werkzeugeKachel]] as const) {
+        await page.goto('/')
+        await kachel(page).click()
+        await expect(blatt(page)).toHaveAttribute('data-phase', 'offen')
+        // Die erste Stufe ist gerendert (Gesetze: das Suchfeld über den Spalten).
+        if (name === 'Gesetze') {
+          await expect(blatt(page).getByRole('searchbox', { name: 'Gesetze durchsuchen' })).toBeVisible()
+          await expect(blatt(page).getByRole('button', { name: 'Alle 26 Kantone' })).toBeVisible()
+        }
+        const m = await page.evaluate(() => {
+          const i = document.querySelector('.lc-start-blatt-inhalt')!
+          const b = document.querySelector('#lm-start-blatt')!.getBoundingClientRect()
+          return { ueber: i.scrollHeight - i.clientHeight, unten: Math.round(b.bottom), vh: innerHeight, sy: Math.round(scrollY) }
+        })
+        test.info().annotations.push({ type: `U13 ${name} @${breite}×${hoehe}`, description: JSON.stringify(m) })
+        expect(m.unten, `${name}: Blatt-Unterkante im Fenster (${JSON.stringify(m)})`).toBeLessThanOrEqual(m.vh)
+        expect(m.sy, `${name}: Seite unverschoben`).toBe(0)
+        if (name === 'Gesetze') expect(m.ueber, `Gesetze-Wahl ohne Überlauf (${JSON.stringify(m)})`).toBeLessThanOrEqual(1)
+      }
+    })
+  }
+})
