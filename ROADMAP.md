@@ -454,6 +454,12 @@ Umschichtung 20.9.2026 (2)):*
   Grenzen: Zahlen nur aus dem Zähler (§8), Suchdaten erst beim Öffnen (§15), Löschpflicht.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
 
+- [~] **Werkbank-Umbau: Startseite Feinschliff — Aufklappen ruhig, nichts abgeschnitten** *(`W2·29-WERKBANK-START-FEINSCHLIFF`, David 24.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-START-FEINSCHLIFF · status: wip · blocker: null · dep: [W2·29-WERKBANK-START] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: alle Blätter und Stufen bei 1280–360 px hell/dunkel messen, Kappungen und Bedienmängel beheben.
+  Grenzen: Entscheide 23.9. bleiben; R8-Tor deckt offene Blätter ab.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
+
 - [ ] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
   <!-- @meta id: W2·29-WERKBANK-REST · status: ready · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —

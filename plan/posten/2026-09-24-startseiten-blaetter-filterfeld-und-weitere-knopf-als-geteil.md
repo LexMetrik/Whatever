@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·29-WERKBANK-REST
+dach: W2·29-WERKBANK-START-FEINSCHLIFF
 titel: Startseiten-Blätter: Filterfeld und «Weitere»-Knopf als geteilte Bausteine, Trefferzahl per aria-live
 anlass: Gegenprüfung S2/S3 START 24.9.2026
 -->

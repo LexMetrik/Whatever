@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·29-WERKBANK-REST
+dach: W2·29-WERKBANK-START-FEINSCHLIFF
 titel: Rechtsprechung-Blatt ohne Suchwort: flache Liste mit Verweis-Einträgen ohne Kennzeichnung
 anlass: Gegenprüfung S3 START 24.9.2026
 -->
