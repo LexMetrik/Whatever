@@ -15,10 +15,12 @@ import { useId, type ReactNode } from 'react';
 //
 // EINE Quelle für beide Flächen (§5): `pages/Startseite.tsx` (Schnellwerkzeug)
 // und `start/ZuletztVerwendet.tsx`. Reine Darstellung (§3); je Fläche eine <h2>.
+// `@container`: der Inhalt misst die Fläche, nicht das Fenster (Schnellwerkzeug
+// @320, `EinfacheFristForm minimal`).
 export function StartFlaeche({ titel, children }: { titel: string; children: ReactNode }) {
   const id = useId();
   return (
-    <section aria-labelledby={id} className="grid content-start gap-y-3 rounded-xl bg-well p-5">
+    <section aria-labelledby={id} className="@container grid content-start gap-y-3 rounded-xl bg-well p-5">
       <h2 id={id} className="border-b border-rule pb-1.5 font-sans text-body-s font-semibold text-ink-900">{titel}</h2>
       {children}
     </section>

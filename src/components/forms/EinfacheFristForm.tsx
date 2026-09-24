@@ -249,7 +249,13 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           1280 bleibt es darum bei drei bzw. zwei Spalten. */}
       <div className={zeile
         ? 'grid grid-cols-2 gap-3 items-end sm:grid-cols-3 xl:grid-cols-[11.5rem_4.5rem_6rem_5rem_minmax(10.5rem,1fr)]'
-        : `grid grid-cols-2 ${minimal ? '' : pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')} gap-3 max-w-2xl items-end`}>
+        : `grid ${minimal ? 'grid-cols-1 @[16.5rem]:grid-cols-2' : `grid-cols-2 ${pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')}`} gap-3 max-w-2xl items-end`}>
+        {/* `minimal` (nur Startseite) misst seine FLÄCHE, nicht das Fenster
+            (W2·29-WERKBANK-START-LAYOUT 24.9.2026): seit das Schnellwerkzeug in
+            einer Mulde mit Innenabstand steht (`start/StartFlaeche`, ein
+            `@container`), blieben @320 nur 240 px — das Datum brauchte 126 px
+            Feld und bekam 114 (R8 a/b, `e2e/kein-abschnitt`). Zwei Spalten erst
+            ab 16.5 rem = 2 × 126 px + 12 px Abstand, darunter eine. */}
         {/* R2-E/F1-2: dieselbe `Field`-Anatomie wie in allen übrigen Rechner-
             Formularen (ZPO, SchKG, Gewährleistung …) statt der hauseigenen
             `<label><span class="lc-overline">`-Kopie — Label und Control sind
