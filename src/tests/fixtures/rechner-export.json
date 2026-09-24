@@ -668,6 +668,25 @@
       "PDF-Rechenbericht"
     ]
   },
+  "/rechner/notariat-grundbuch?ga=baurecht&kt=ZH&gw=500000": {
+    "folge": [
+      "Teilen {\"query\":\"?ga=baurecht&gw=500000&kt=ZH\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"Beurkundungskosten – Baurecht (Baurechtsvertrag)\",\"fileBase\":\"Beurkundungskosten\",\"domain\":\"notariat-grundbuch\",\"sha\":\"8175ff723a529b6b\"}"
+    ],
+    "zeilen": [
+      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
+      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+    ],
+    "knoepfe": [
+      "Grundstückkauf",
+      "Beurkundung (Notariat)",
+      "Grundbuch (Eintragung)",
+      "Was kostet es in anderen Kantonen? →",
+      "Link teilen",
+      "PDF-Rechenbericht"
+    ]
+  },
   "/rechner/tagerechner?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS#schkg": {
     "folge": [
       "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt regelmässig eine Fristwiederherstellung (Art. 148 ZPO) in Betracht.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
@@ -704,6 +723,50 @@
       "Absatz kopieren",
       "In Kalender (.ics)",
       "PDF-Rechenbericht",
+      "Link teilen"
+    ]
+  },
+  "/rechner/tagerechner?s=2026-02-10&l=30&e=tage&w=1&f=1&k=BS#allgemein": {
+    "folge": [
+      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt regelmässig eine Fristwiederherstellung (Art. 148 ZPO) in Betracht.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
+      "Aktenzeichen",
+      "PDF {\"title\":\"Allgemeine Frist\",\"fileBase\":\"Fristenrechner\",\"domain\":\"allgemeine-frist\",\"sha\":\"89e7fac3c517f855\"}",
+      "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: Donnerstag, 12.03.2026 (Art. 77/78 OR).\",\"endISO\":\"2026-03-12\",\"query\":\"?s=2026-02-10&l=30&e=tage&w=1&f=1&k=BS\",\"titel\":\"Fristende – 30 Tage\"}",
+      "Teilen {\"query\":\"?s=2026-02-10&l=30&e=tage&w=1&f=1&k=BS\"}"
+    ],
+    "zeilen": [
+      "ICS in «pt-1»",
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "ICS in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
+    ],
+    "knoepfe": [
+      "In Kalender (.ics)",
+      "Allgemein (Vertrag/OR)",
+      "Zivilprozess (ZPO)",
+      "Betreibung (SchKG)",
+      "Weiss nicht?",
+      "Fristende berechnen",
+      "Rückwärts (spätester Tag)",
+      "Tage zwischen zwei Daten",
+      "Tagesfrist (Kalendertage)",
+      "Monatsfrist nach OR",
+      "Kalendertage ohne Verschiebung",
+      "Vaterschaftsklage der Mutter – 1 Jahr",
+      "Anfechtung der Vaterschaft – relativ 1 Jahr",
+      "Anfechtung der Vaterschaft – absolut 5 Jahre",
+      "Status-Klagen des Kindes – 1 Jahr ab Volljährigkeit",
+      "Wiedererteilung entzogener Sorge – Sperrfrist 1 Jahr",
+      "Kündigung einfache Gesellschaft – 6 Monate",
+      "KESB-Beschwerde – 30 Tage",
+      "KESB-Beschwerde gegen vorsorgliche Massnahmen – 10 Tage",
+      "Ergebnis kopieren",
+      "Hinweise / Vorbehalte (1)▸",
+      "Rechenweg (4 Schritte)▸",
+      "Annahmen (3)▸",
+      "Absatz kopieren",
+      "PDF-Rechenbericht",
+      "In Kalender (.ics)",
       "Link teilen"
     ]
   },
