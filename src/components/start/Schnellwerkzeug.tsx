@@ -21,7 +21,10 @@ import { SCHNELL_WAHLEN, leseSchnellWahl, speichereSchnellWahl, type SchnellWahl
 //
 // §15 HÖHE: der Reiterinhalt steht in einer Bühne mit der Mindesthöhe
 // `min-h-start-schnell` (Token). Das Kachelfeld ist per `subgrid` so hoch wie
-// diese Fläche (W2·29-WERKBANK-START-LAYOUT «A bündig»); wechselte die Höhe mit
+// diese Fläche (W2·29-WERKBANK-START-LAYOUT «A bündig»; [Einordnung U13,
+// 25.9.2026: Stand bis U4 — seither hängt das Kachelfeld NICHT mehr per
+// `subgrid` an dieser Fläche, es hat die eigene Höhe `start-kachel-breit`,
+// s. den U9-Absatz unten]); wechselte die Höhe mit
 // der Variante, spränge beim Stammnutzer mit gespeicherter Wahl nach dem Laden
 // das ganze Feld, und jeder Reiterwechsel zöge die Kacheln mit. Die Bühne ist
 // darum so hoch wie die HÖCHSTE Variante (gemessen, siehe Token) — alle drei
