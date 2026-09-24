@@ -24,6 +24,13 @@
 // `RECHNER_EXPORT_SCHREIBEN=1 npx vitest run src/tests/rechner-export-ratsche.test.tsx`.
 // Ohne die Variable ist der Test streng. Neu erzeugen ist eine deklarierte
 // Änderung (§6.3) mit Begründung im auslösenden Commit.
+//
+// DEKLARIERTE ÄNDERUNG (W2·29-WERKBANK-RECHNER R5a, 24.9.2026, §6.3): die vier
+// Kosten-Rechner (Prozesskosten, Notariat/Grundstückkauf, Beurkundung,
+// Grundbuch-Eintragung) nutzen ErgebnisExport. «Teilen» wandert aus der
+// Schalterzeile hinter Aktenzeichen und PDF (§R-5); Props (Query, PDF-SHA)
+// byte-gleich; bei Beurkundung Baurecht BS (Tarif offen, kein PDF) kommt das
+// Aktenzeichen-Feld hinzu. Fixture neu erzeugt, Diff im Commit-Body.
 import { describe, it, expect, vi, beforeAll, afterAll, afterEach } from 'vitest';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';

@@ -598,48 +598,49 @@
   },
   "/rechner/prozesskosten?kt=BS&sw=50000&ph=entscheid": {
     "folge": [
-      "Teilen {\"query\":\"?kt=BS&sw=50000&ph=entscheid&ma=allgemein&in=erstinstanz&vf=ordentlich\"}",
       "Aktenzeichen",
-      "PDF {\"title\":\"Prozesskosten (Art. 95/96 ZPO)\",\"fileBase\":\"Prozesskosten\",\"domain\":\"prozesskosten\",\"sha\":\"f2c7b6e2231788e6\"}"
+      "PDF {\"title\":\"Prozesskosten (Art. 95/96 ZPO)\",\"fileBase\":\"Prozesskosten\",\"domain\":\"prozesskosten\",\"sha\":\"f2c7b6e2231788e6\"}",
+      "Teilen {\"query\":\"?kt=BS&sw=50000&ph=entscheid&ma=allgemein&in=erstinstanz&vf=ordentlich\"}"
     ],
     "zeilen": [
-      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
-      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
       "Kostenrisiko bei Teilobsiegen berechnen →",
       "Was würde es in anderen Kantonen kosten? →",
       "Gesamtkosten über den Instanzenzug →",
       "Sicherheit für die Parteientschädigung (Art. 99) →",
-      "Link teilen",
-      "PDF-Rechenbericht"
+      "PDF-Rechenbericht",
+      "Link teilen"
     ]
   },
   "/rechner/notariat-grundbuch?kt=BS&kp=500000": {
     "folge": [
-      "Teilen {\"query\":\"?kt=BS&kp=500000\"}",
       "Aktenzeichen",
-      "PDF {\"title\":\"Notariats- & Grundbuchkosten (Grundstückkauf)\",\"fileBase\":\"Notariat-Grundbuch\",\"domain\":\"notariat-grundbuch\",\"sha\":\"5217eced8b6bf7ee\"}"
+      "PDF {\"title\":\"Notariats- & Grundbuchkosten (Grundstückkauf)\",\"fileBase\":\"Notariat-Grundbuch\",\"domain\":\"notariat-grundbuch\",\"sha\":\"5217eced8b6bf7ee\"}",
+      "Teilen {\"query\":\"?kt=BS&kp=500000\"}"
     ],
     "zeilen": [
-      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
-      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
       "Grundstückkauf",
       "Beurkundung (Notariat)",
       "Grundbuch (Eintragung)",
       "Was kostet es in anderen Kantonen? →",
-      "Link teilen",
-      "PDF-Rechenbericht"
+      "PDF-Rechenbericht",
+      "Link teilen"
     ]
   },
   "/rechner/notariat-grundbuch?ga=baurecht&kt=BS&gw=500000": {
     "folge": [
+      "Aktenzeichen",
       "Teilen {\"query\":\"?ga=baurecht&gw=500000&kt=BS\"}"
     ],
     "zeilen": [
-      "Teilen in «mt-4 flex flex-wrap items-center gap-3»"
+      "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
       "Grundstückkauf",
@@ -651,40 +652,40 @@
   },
   "/rechner/notariat-grundbuch?ea=grundpfand&kt=BS&gw=500000": {
     "folge": [
-      "Teilen {\"query\":\"?ea=grundpfand&gw=500000&kt=BS\"}",
       "Aktenzeichen",
-      "PDF {\"title\":\"Grundbuchgebühr – Grundpfand / Schuldbrief (Eintragung)\",\"fileBase\":\"Grundbuchgebuehr\",\"domain\":\"notariat-grundbuch\",\"sha\":\"6392c0a9b5f40db3\"}"
+      "PDF {\"title\":\"Grundbuchgebühr – Grundpfand / Schuldbrief (Eintragung)\",\"fileBase\":\"Grundbuchgebuehr\",\"domain\":\"notariat-grundbuch\",\"sha\":\"6392c0a9b5f40db3\"}",
+      "Teilen {\"query\":\"?ea=grundpfand&gw=500000&kt=BS\"}"
     ],
     "zeilen": [
-      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
-      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
       "Grundstückkauf",
       "Beurkundung (Notariat)",
       "Grundbuch (Eintragung)",
       "Was kostet es in anderen Kantonen? →",
-      "Link teilen",
-      "PDF-Rechenbericht"
+      "PDF-Rechenbericht",
+      "Link teilen"
     ]
   },
   "/rechner/notariat-grundbuch?ga=baurecht&kt=ZH&gw=500000": {
     "folge": [
-      "Teilen {\"query\":\"?ga=baurecht&gw=500000&kt=ZH\"}",
       "Aktenzeichen",
-      "PDF {\"title\":\"Beurkundungskosten – Baurecht (Baurechtsvertrag)\",\"fileBase\":\"Beurkundungskosten\",\"domain\":\"notariat-grundbuch\",\"sha\":\"8175ff723a529b6b\"}"
+      "PDF {\"title\":\"Beurkundungskosten – Baurecht (Baurechtsvertrag)\",\"fileBase\":\"Beurkundungskosten\",\"domain\":\"notariat-grundbuch\",\"sha\":\"8175ff723a529b6b\"}",
+      "Teilen {\"query\":\"?ga=baurecht&gw=500000&kt=ZH\"}"
     ],
     "zeilen": [
-      "Teilen in «mt-4 flex flex-wrap items-center gap-3»",
-      "PDF in «mt-5 border-t border-line pt-4 space-y-3»"
+      "PDF in «flex flex-wrap items-center gap-3»",
+      "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
       "Grundstückkauf",
       "Beurkundung (Notariat)",
       "Grundbuch (Eintragung)",
       "Was kostet es in anderen Kantonen? →",
-      "Link teilen",
-      "PDF-Rechenbericht"
+      "PDF-Rechenbericht",
+      "Link teilen"
     ]
   },
   "/rechner/tagerechner?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS#schkg": {

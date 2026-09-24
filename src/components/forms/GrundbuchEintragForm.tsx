@@ -5,9 +5,7 @@ import { NormText } from '../NormText';
 import { KantonArtikelTrigger } from '../KantonQuelleLink';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { BetragsFeld } from '../BetragsFeld';
-import { LinkTeilenButton } from '../LinkTeilenButton';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
-import { PdfExportButton } from '../PdfExport';
+import { ErgebnisExport } from '../ErgebnisExport';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
@@ -139,7 +137,6 @@ export function GrundbuchEintragForm() {
             <button type="button" onClick={() => setVergleich((v) => !v)} className="text-body-s underline text-ink-700 hover:text-ink-900">
               {vergleich ? 'Interkantonalen Vergleich ausblenden' : 'Was kostet es in anderen Kantonen? →'}
             </button>
-            <LinkTeilenButton query={() => permalinkKodieren(GB_LINK_SPEC, { art, kanton, wert: wertNoetig ? w : undefined })} />
           </div>
 
           {vergleichsListe && (
@@ -168,12 +165,12 @@ export function GrundbuchEintragForm() {
             </div>
           )}
 
-          {pdfConfig && (
-            <div className="mt-5 border-t border-line pt-4 space-y-3">
-              <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-              <PdfExportButton config={pdfConfig} />
-            </div>
-          )}
+          {/* §R-5 (W2·29-WERKBANK-RECHNER R5a, 24.9.2026): Aktenzeichen → PDF →
+              Teilen in der geteilten Exportzeile; «Teilen» stand vorher neben dem Vergleichs-Schalter. Ohne PDF (Tarif offen) bleibt Teilen erreichbar. */}
+          <div className="mt-5 border-t border-line pt-4 space-y-3">
+            <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+              query={() => permalinkKodieren(GB_LINK_SPEC, { art, kanton, wert: wertNoetig ? w : undefined })} />
+          </div>
         </ErgebnisBlock>
       )}
     </div>
