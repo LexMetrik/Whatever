@@ -16,7 +16,7 @@ import { satzspiegelFuer, type Satzspiegel } from './satzspiegel';
 // @1920 105 px vom Text weg.
 // DAS BILD ab 1024 px in der Einzelansicht — drei Spuren, rechts gespiegelt:
 //   Gliederung 18 rem | Schiene 2.25 · Text · Blatt 23.75 rem | Schiene 2.25
-// Der Rahmen wächst (Ä60 (c), `aufweitung` aus der Historie zurück) auf «linke
+// Offen wächst der Rahmen (Ä60 (c), `aufweitung` aus der Historie zurück) auf «linke
 // Spur + Lesemass-Deckel + rechte Spur», nie über den Raum, und hält seine
 // linke Kante, solange rechts Raum ist — @1920 sitzt das Blatt bündig am Text.
 // ZWEI SCHWELLEN, beide aus `LESE_MIN` gerechnet (Messtabelle: Fahrplan §5a):
@@ -286,13 +286,13 @@ export function rahmenBild(lage: RahmenLage): RahmenBild {
   const rechtsRem = blattSpur ? SPUR_BLATT : SPUR_SCHIENE;
   const spurVersatzRechtsRem = blattSpalte ? rechtsRem + SPUR_ABSTAND : 0;
   // Ziel: die Spuren und keinen Schritt mehr (Ä60 (c): ein breiterer Rahmen gäbe
-  // dem Fliesstext Fensterbreite) — nie schmaler als ohne Aufweitung. Bei ZU-
-  // Blatt rechnet es mit der Gliederungsspalte, auch wenn sie eingeklappt ist:
-  // ihr Klappen verstellt den Rahmen sonst um 12 px, und die Kopf-Griffe rechts
-  // wanderten mit (D28, `leser-klapp-sonde` (a), gesehen 24.9.2026).
-  const linksZielRem = blattSpur || !spaltenLage ? spurVersatzRem : SPUR_GLIEDERUNG + SPUR_ABSTAND;
-  const breitePx = raum == null ? null
-    : Math.min(raum.raumPx, Math.max(raum.ruhePx, (linksZielRem + LESEMASS_MAX + spurVersatzRechtsRem) * rem));
+  // dem Fliesstext Fensterbreite) — nie schmaler als ohne Aufweitung. NUR bei
+  // offenem Blatt: zu hätte die Schiene den Rahmen um 12 px geweitet — gesehen
+  // 24.9.2026 als R8-Überlauf `div.lc-route` 1088/1072 (`kein-abschnitt`, 16
+  // Funde @1280/1440) und als Kopf-Versatz beim Gliederung-Klappen (D28,
+  // `leser-klapp-sonde` (a)). Zu ist der Rahmen darum der Ruherahmen.
+  const breitePx = raum == null ? null : !blattSpur ? raum.ruhePx
+    : Math.min(raum.raumPx, Math.max(raum.ruhePx, (spurVersatzRem + LESEMASS_MAX + spurVersatzRechtsRem) * rem));
   const zellePx = breitePx == null ? null : breitePx - (spurVersatzRem + spurVersatzRechtsRem) * rem;
   const satzspiegel = satzspiegelFuer(zellePx, rem, spaltenLage && ruheForm === 'rechts');
   const spuren = [spaltenLage ? `${spurRem}rem` : '', 'minmax(0,1fr)', blattSpalte ? `${rechtsRem}rem` : '']
