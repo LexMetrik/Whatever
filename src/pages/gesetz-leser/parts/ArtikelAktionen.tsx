@@ -14,8 +14,22 @@ import { urlMitHash } from '../../../lib/liveUrlSync';
 // den Anker in die Adresse, und im SEKUNDÄREN Pane keiner von beiden.
 // @390 (oder sobald die Rubriken die Breite füllen) rutscht die Gruppe auf die
 // nächste Zeile; `ml-auto` schiebt sie dort nicht aus dem Bild.
+//
+// S6 W1f (Entscheid David 24.9.2026, «Klein am Artikel»): die Funktionszeile
+// ist gefallen, die Aktionen bleiben am Artikel — in der Gesamtansicht als
+// RUHIGE TEXTZEILE (`ruhig`), keine Knopfreihe (Nachtrag 24.9.2026: «nicht zu
+// viele infos resp. darauf achten dass es übersichtlich erscheint»). Sie stehen
+// IMMER, nicht erst bei Hover: der Hover-Riegel Z6 hing an der Zeile, deren
+// Griffe den Fokus-Weg trugen — ohne sie erreichte die Tastatur die Aktionen
+// sonst nie (WCAG 2.1.1). Im Einzelmodus (Dossier) bleibt die Knopf-Gestalt
+// unverändert (D-E4).
 
-export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich }: {
+/** Ruhige Textzeile (S6 W1f): Textgrösse `micro`, Tinte 500, Unterstrich erst
+ *  bei Hover; `--tap-ziel` als Mindesthöhe hält WCAG 2.5.8 ohne Knopf-Rahmen. */
+const RUHIG = 'inline-flex min-h-[var(--tap-ziel)] items-center text-micro text-ink-500 no-underline underline-offset-2 hover:text-ink-900 hover:underline';
+const KNOPF = 'lc-btn-mini text-micro text-ink-500 hover:text-ink-900';
+
+export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich, ruhig = false }: {
   /** Artikel-Token (`e.artikel`) — der Anker `#art-<token>`. */
   artikel: string;
   /** Pfad des Erlasses ohne Anker (`/gesetze/bund/OR`). */
@@ -26,7 +40,11 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich 
   zitatVoll: string;
   /** EID-2 · amtlicher Deep-Link an genau diese Stelle, oder null (§8). */
   amtlich: string | null;
+  /** S6 W1f · Textzeile statt Knöpfe (Gesamtansicht). */
+  ruhig?: boolean;
 }) {
+  const k = ruhig ? RUHIG : KNOPF;
+  const trenner = ruhig ? <span aria-hidden className="text-micro text-ink-400">·</span> : null;
   // R4-D (5.9.2026): ZWEI Kopier-Knöpfe in einer Zeile ⇒ der geteilte Hook mit
   // MARKE, damit nur der geklickte sein Häkchen zeigt.
   const { marke: kopiert, kopieren } = useKopieren();
@@ -69,19 +87,21 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich 
   };
 
   return (
-    <span className="lr7-bez-aktionen ml-auto inline-flex flex-wrap items-center gap-2">
+    <span className={`lr7-bez-aktionen ml-auto inline-flex flex-wrap items-center ${ruhig ? 'gap-1.5' : 'gap-2'}`}>
       <button type="button" onClick={() => kopiere('zitat')}
-        className="lc-btn-mini text-micro text-ink-500 hover:text-ink-900"
+        className={k}
         aria-label={`Zitat kopieren: ${zitatVoll}`}>{kopiert === 'zitat' ? '✓ kopiert' : 'Zitat'}</button>
+      {trenner}
       <button type="button" onClick={() => kopiere('link')}
-        className="lc-btn-mini text-micro text-ink-500 hover:text-ink-900"
+        className={k}
         aria-label="Permalink kopieren">{kopiert === 'link' ? '✓' : 'Link'}</button>
       {/* EID-2: Outbound zur amtlichen Fassung AN DIESER STELLE (ELI-Form,
           target/rel wie die übrigen amtlichen Links, §12.4). Ä110: EINE
           Schreibung für EIN Ziel — sichtbarer Text = aria-label = title. */}
+      {amtlich && trenner}
       {amtlich && (
         <a href={amtlich} target="_blank" rel="noopener noreferrer"
-          className="lc-btn-mini text-micro text-ink-500 hover:text-ink-900 no-underline whitespace-nowrap"
+          className={`${k} no-underline whitespace-nowrap`}
           aria-label={`Amtliche Fassung von ${zitat} auf Fedlex öffnen ${NEUER_TAB}`}
           title="Amtliche Fassung an genau dieser Stelle (Fedlex)">Amtliche Fassung ↗</a>
       )}
