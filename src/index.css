@@ -4664,11 +4664,14 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
 /* ③b Auf der Registerfläche `reg-g-flaeche` ink-600 statt ink-500 (5.38/5.25:1
    gegen 4.22): Titelblatt-Band (S2) und die Marken-Zeile der Gliederung (S3,
    `[data-toc-aktiv]`); dazu die massgebliche Rechner-Kachel auf
-   `reg-w-flaeche` (ink-600 5.63/5.18:1, W2·29-WERKBANK-RECHNER R2). Ungeschichtet, damit es die Utility schlägt — kein
-   Umdefinieren des Tokens (tokens-drift). */
+   `reg-w-flaeche` (ink-600 5.84/5.18:1; ink-500 dunkel nur 4.18:1 — darum
+   auch `.lc-overline`, die ink-500 als Klassenfarbe trägt; W2·29-WERKBANK-RECHNER R2).
+   Ungeschichtet, damit es die Utility schlägt — kein Umdefinieren des Tokens
+   (tokens-drift). */
 .lc-titelblatt-band .text-ink-500,
 [data-toc-aktiv] .text-ink-500,
-.lc-akzent-w .text-ink-500 { color: var(--ink-600); }
+.lc-akzent-w .text-ink-500,
+.lc-akzent-w .lc-overline { color: var(--ink-600); }
 
 /* ─── GB-20 · DIE WAHL-ZEILE (Ferien/Stillstand des Fristenrechners) ────────
    Rezept zum Befund G20 (Herleitung am Aufrufer `forms/EinfacheFristForm`):
