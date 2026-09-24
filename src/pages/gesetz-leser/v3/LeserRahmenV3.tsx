@@ -35,6 +35,7 @@ import { kopfGlypheKlassen, kopfGriffKlassen, panelForm, useKopfStufe } from './
 import { useSuchSprungKuerzel } from './suchKuerzel';
 import { bestimmungsWort as bestimmungsWortVon, panelEbene, suchFeldName, suchPlatzhalter } from './erlassAnsicht';
 import { LeserUebersicht } from './LeserUebersicht';
+import { blattArtikel } from './BlattArtikel';
 import { useLeserV3Modell } from './leserV3Modell';
 
 // ═══ LESER V3 · Rahmen (FAHRPLAN-LESER-V3, Etappe H1) ═══════════════════════
@@ -371,7 +372,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               normZitat={normZitat(panelArtikel, erlass.kuerzel)} stichtag={m.currency?.[erlass.key]?.geprueftAm ?? null}
               artikelLabel={panelArtikel} erlassKuerzel={erlass.kuerzel}
               bestimmungsWort={bestimmungsWort} aktArtikel={panelZiel.token} ebene={panelEbene(erlass)}
-              steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />} />
+              steckbrief={leisteSteht ? null : <LeserUebersicht m={m} bestimmungsWort={bestimmungsWort} />}
+              artikel={blattArtikel(eintraege, m.artIndex, m.historieFuer, panelZiel.token)} />
           )} />
 
       {/* R4 «Weiterlesen» + R8 Tastatur — dieselben BAUSTEINE wie die Ist-Hülle

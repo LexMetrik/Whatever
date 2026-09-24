@@ -52,7 +52,7 @@ const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
 
 export function LeserPanel({
   panelId, titelId, artikelLabel, bestimmungsWort, erlassKuerzel, reiter, setReiter, inhalt, onSchliessen,
-  fuss, panelRef, kopfExtra, steckbrief,
+  fuss, panelRef, kopfExtra, steckbrief, verweise,
 }: {
   panelId: string;
   /** Id der Überschrift — der Aufrufer setzt sie als `aria-labelledby` an die
@@ -107,6 +107,10 @@ export function LeserPanel({
    * nur die aktive Tafel gemountet ist.
    */
   steckbrief?: ReactNode;
+  /** S6 W1f (Entscheid David 24.9.2026, «Oben im Blatt») · «Verweise in diesem
+   *  Artikel» — wie der Steckbrief über den Reitern, damit er in jedem Reiter
+   *  steht und nicht als Teil einer Tafel vorgelesen wird (`./BlattArtikel`). */
+  verweise?: ReactNode;
 }) {
   const leisteRef = useRef<HTMLDivElement>(null);
 
@@ -160,6 +164,7 @@ export function LeserPanel({
       {steckbrief && (
         <div data-v3-panel-steckbrief className="shrink-0 border-b border-line px-3 py-1">{steckbrief}</div>
       )}
+      {verweise}
 
       {/* ── Reiter-Leiste · Registerfläche (W2·29 S5, Board «Erlass-Blatt») ──
           Jedes Fach trägt sein Register (`REITER_REGISTER`): der aktive Reiter

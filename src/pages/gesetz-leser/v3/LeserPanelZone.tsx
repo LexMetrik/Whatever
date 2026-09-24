@@ -9,6 +9,7 @@ import { OEFFNER_SELEKTOR, type PanelBezuege, type PanelZustand } from './panelM
 import { usePopoverAutoZu } from './usePopoverAutoZu';
 import { blattFlaeche } from './blattFlaeche';
 import { useWischZu, useZurueckSchliesst } from './blattGesten';
+import { BlattVerweise, type BlattArtikel } from './BlattArtikel';
 
 // ─── WO das Panel steht (H3, Kap. 4d) ────────────────────────────────────────
 //
@@ -84,7 +85,7 @@ import { useWischZu, useZurueckSchliesst } from './blattGesten';
 
 export function LeserPanelZone({
   form, panelId, paneZiel, paneRolle, zustand, bezuege, erlassKey, quelleUrl, normZitat,
-  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag,
+  artikelLabel, erlassKuerzel, bestimmungsWort, aktArtikel, steckbrief, ebene, stichtag, artikel,
 }: {
   /** ── K-2b/F37 (W2·13-KANTONE, 31.8.2026) · WOHER DIE EBENE KOMMT ──────────
    *  Ebene des gelesenen Erlasses, DURCHGEREICHT vom Rahmen an die Tafeln
@@ -136,6 +137,9 @@ export function LeserPanelZone({
   steckbrief?: ReactNode;
   /** `currency.geprueftAm` — Stichtag «künftig / in Kraft» im Reiter Änderungen (S6). */
   stichtag: string | null;
+  /** S6 W1f (Entscheid David 24.9.2026) · Eintrag und Historie des aktiven
+   *  Artikels — die Auskunft der gefallenen Funktionszeile (`./BlattArtikel`). */
+  artikel: BlattArtikel | null;
 }) {
   const titelId = `${panelId}-titel`;
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -213,7 +217,8 @@ export function LeserPanelZone({
   // `./PanelTafeln` (dieselben Hooks, dasselbe Gate); der Artikel-Revisions-
   // Shard (§7b-Deckungslücke, normrevision-badge.e2e.ts) kommt von dort mit.
   const { tafeln, artikelRevisionen } = usePanelTafeln({
-    erlassKey, laden: zustand.jeGeoeffnet, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel,
+    erlassKey, laden: zustand.jeGeoeffnet, quelleUrl, ebene, stichtag, aktArtikel, artikelLabel, blatt: artikel,
+    normZitat, wort: bestimmungsWort,
   });
 
   // ═══ STECKBRIEF-ZEILE IM PANEL (H4-Vorbereitung II, 17./18.8.2026) ══════════
@@ -354,7 +359,9 @@ export function LeserPanelZone({
                 )
                 : undefined}
               // Ä89: die Steckbrief-Zeile gehört dem Panel, nicht seinen Tafeln.
-              steckbrief={steckbrief} />
+              steckbrief={steckbrief}
+              // S6 W1f: «Verweise … oben im Blatt», über jedem Reiter (Entscheid David 24.9.2026).
+              verweise={<BlattVerweise artikel={artikel} zitat={normZitat} wort={bestimmungsWort} />} />
           </div>
         </>
       )}
