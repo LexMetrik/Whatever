@@ -99,6 +99,13 @@ export function stillstandsperiodeFuer(date: Date): Stillstandsperiode | null {
 //    «Bedingte kantonale Feiertage» unten): ganztags nur im ZPO-Kontext; das
 //    allgemeine Ruhetagsgesetz SO § 2 Abs. 1 lit. b (BGS 512.41, Stand 1.9.2014)
 //    nennt ihn nur «ab 12.00 Uhr».
+//    Ergänzung RL-22c (25.9.2026): derselbe Katalog gilt wortgleich auch «für die
+//    Fristbestimmung gemäss Artikel 90 Absatz 2 StPO» (EG StPO SO § 10bis,
+//    BGS 321.3) und im kantonalen Verwaltungsverfahren (VRG SO § 9 Abs. 1,
+//    BGS 124.11), je seit 1.3.2015. 2.1., Ostermontag, Pfingstmontag und 26.12.
+//    nennt das Ruhetagsgesetz nicht — seither bedingte Tage (Block Ziff. 4);
+//    Fronleichnam/Mariä Himmelfahrt/Allerheiligen tragen dort den Vorbehalt
+//    «mit Ausnahme Bezirk Bucheggberg» (Block Ziff. 5).
 //  - FR: JG Art. 121 Abs. 2 (SGF 130.1, Fassung 1.1.2024) — Feiertage gelten
 //    «im ganzen Kanton»; BJ-Fussnote 2 (Seebezirk) obsolet (R1-05).
 //  - UR: Ruhetagsgesetz Art. 9 lit. b (RB 70.1421, Fassung 1.1.2003) — Sankt-
@@ -140,7 +147,8 @@ const FEIERTAGE: FeiertagDef[] = [
   { art: 'fix', monat: 1, tag: 1, kantone: 'alle', name: 'Neujahr' },
   // LU ergänzt (BJ Ziff. 3 lit. a – Doppelcheck 6.6.2026). GL NICHT hier (RL-23):
   // unsicher gezählter bedingter Tag, s. Block «Bedingte kantonale Feiertage» Ziff. 3.
-  { art: 'fix', monat: 1, tag: 2, kantone: ['ZH', 'BE', 'LU', 'OW', 'NW', 'ZG', 'FR', 'SO', 'SH', 'SG', 'AG', 'TG', 'VD', 'VS', 'JU'], name: 'Berchtoldstag' },
+  // SO NICHT hier (RL-22c): nur für Fristen nach ZPO/StPO gleichgestellt — Ziff. 4.
+  { art: 'fix', monat: 1, tag: 2, kantone: ['ZH', 'BE', 'LU', 'OW', 'NW', 'ZG', 'FR', 'SH', 'SG', 'AG', 'TG', 'VD', 'VS', 'JU'], name: 'Berchtoldstag' },
   // NE: 2.1. nur, wenn der 1.1. ein Sonntag ist (BJ Ziff. 24 Fn. 10) — zusätzlich
   // als bedingter Schliesstag (Block «Bedingte kantonale Feiertage», RDF Art. 11).
   { art: 'fix', monat: 1, tag: 2, kantone: ['NE'], name: 'Berchtoldstag', giltImJahr: (j) => wochentag(j, 1, 1) === 0 },
@@ -153,12 +161,13 @@ const FEIERTAGE: FeiertagDef[] = [
   { art: 'fix', monat: 6, tag: 23, kantone: ['JU'], name: 'Commémoration du plébiscite jurassien' },
   { art: 'fix', monat: 6, tag: 29, kantone: ['TI'], name: 'Peter und Paul' },
   { art: 'fix', monat: 8, tag: 1, kantone: 'alle', name: 'Bundesfeier' },
-  { art: 'fix', monat: 8, tag: 15, kantone: ['LU', 'UR', 'SZ', 'OW', 'NW', 'ZG', 'FR', 'SO', 'AI', 'TI', 'VS', 'JU', 'AG'], name: 'Mariä Himmelfahrt' },
+  // SO NICHT hier (RL-22c): Bucheggberg-Vorbehalt, s. Block «Bedingte kantonale Feiertage» Ziff. 5.
+  { art: 'fix', monat: 8, tag: 15, kantone: ['LU', 'UR', 'SZ', 'OW', 'NW', 'ZG', 'FR', 'AI', 'TI', 'VS', 'JU', 'AG'], name: 'Mariä Himmelfahrt' },
   // AI: nur innerer Landesteil (BJ Fn. 8) – Gerichtsort Appenzell liegt darin.
   { art: 'fix', monat: 9, tag: 22, kantone: ['AI'], name: 'Mauritiustag' },
   { art: 'fix', monat: 9, tag: 25, kantone: ['OW'], name: 'Bruder-Klausen-Fest' },
-  // GL ergänzt (BJ Ziff. 8 lit. a – Doppelcheck 6.6.2026).
-  { art: 'fix', monat: 11, tag: 1, kantone: ['LU', 'UR', 'SZ', 'OW', 'NW', 'GL', 'ZG', 'FR', 'SO', 'AI', 'SG', 'TI', 'VS', 'JU', 'AG'], name: 'Allerheiligen' },
+  // GL ergänzt (BJ Ziff. 8 lit. a – Doppelcheck 6.6.2026). SO: Block Ziff. 5 (RL-22c).
+  { art: 'fix', monat: 11, tag: 1, kantone: ['LU', 'UR', 'SZ', 'OW', 'NW', 'GL', 'ZG', 'FR', 'AI', 'SG', 'TI', 'VS', 'JU', 'AG'], name: 'Allerheiligen' },
   // FR ergänzt (BJ Ziff. 10 lit. a, Seebezirk-Vorbehalt Fn. 2 – s. Kopfkommentar;
   // Fn. 2 seit FR JG Art. 121 Abs. 2 obsolet: «im ganzen Kanton», RL-22).
   { art: 'fix', monat: 12, tag: 8, kantone: ['LU', 'UR', 'SZ', 'OW', 'NW', 'ZG', 'FR', 'AI', 'TI', 'VS', 'AG'], name: 'Mariä Empfängnis' },
@@ -166,7 +175,8 @@ const FEIERTAGE: FeiertagDef[] = [
   // GL (lit. a) und VS (lit. b) ergänzt; AR/AI/NE bedingt (eigene Einträge).
   // UR unbedingt (RL-22, R1-03): UR RB 70.1421 Art. 9 lit. b nennt den Sankt-Stefans-
   // Tag ohne Wochentags-Vorbehalt; der Mo/Fr-Vorbehalt stammte allein aus BJ Fn. 1.
-  { art: 'fix', monat: 12, tag: 26, kantone: ausser('VD', 'GE', 'JU', 'NE', 'AR', 'AI'), name: 'Stephanstag' },
+  // SO NICHT hier (RL-22c): nur für Fristen nach ZPO/StPO gleichgestellt — Ziff. 4.
+  { art: 'fix', monat: 12, tag: 26, kantone: ausser('VD', 'GE', 'JU', 'NE', 'AR', 'AI', 'SO'), name: 'Stephanstag' },
   // AR/AI: Stephanstag entfällt, wenn Weihnachten auf Mo/Fr fällt (BJ Fn. 7/9;
   // AR amtlich: V ArG AR 822.11 Art. 7, Stand 1.1.2016).
   { art: 'fix', monat: 12, tag: 26, kantone: ['AR', 'AI'], name: 'Stephanstag', giltImJahr: (j) => ![1, 5].includes(wochentag(j, 12, 25)) },
@@ -175,11 +185,12 @@ const FEIERTAGE: FeiertagDef[] = [
   { art: 'fix', monat: 12, tag: 31, kantone: ['GE'], name: 'Restauration de la République' },
   // Osterabhängige Feiertage
   { art: 'ostern', offset: -2, kantone: ausser('TI', 'VS'), name: 'Karfreitag' },
-  { art: 'ostern', offset: 1, kantone: ausser('NE'), name: 'Ostermontag' },
+  // SO NICHT hier (RL-22c, Ostermontag und Pfingstmontag): Block Ziff. 4.
+  { art: 'ostern', offset: 1, kantone: ausser('NE', 'SO'), name: 'Ostermontag' },
   { art: 'ostern', offset: 39, kantone: 'alle', name: 'Auffahrt' },
   // JU ergänzt (BJ Ziff. 26 lit. a «Lundi de Pentecôte» – Doppelcheck 6.6.2026).
-  { art: 'ostern', offset: 50, kantone: ausser('NE'), name: 'Pfingstmontag' },
-  { art: 'ostern', offset: 60, kantone: ['LU', 'UR', 'SZ', 'OW', 'NW', 'ZG', 'FR', 'SO', 'AI', 'TI', 'VS', 'JU', 'AG'], name: 'Fronleichnam' },
+  { art: 'ostern', offset: 50, kantone: ausser('NE', 'SO'), name: 'Pfingstmontag' },
+  { art: 'ostern', offset: 60, kantone: ['LU', 'UR', 'SZ', 'OW', 'NW', 'ZG', 'FR', 'AI', 'TI', 'VS', 'JU', 'AG'], name: 'Fronleichnam' },
 ];
 
 // Kantonale Spezialfeiertage mit eigener Datumsregel (nicht oster-/datumsfix).
@@ -253,6 +264,13 @@ function lundiJeuneFederal(jahr: number): Date {     // VD: Montag nach 3. Sonnt
 //     (BGS 512.41, Stand 1.9.2014): «1. Mai ab 12.00 Uhr»
 //     (https://bgs.so.ch/app/de/texts_of_law/512.41). Zählt nur im ZPO-Kontext,
 //     ab 1.3.2015 (ältere Fassungen nicht geprüft; sichere Richtung).
+//     Ergänzung RL-22c (25.9.2026): zählt auch im Kontext stpo — EG StPO SO
+//     § 10bis (BGS 321.3) nennt «den 1. Mai» im selben Katalog, in Kraft seit
+//     1.3.2015 (Fassung 4367 ab 1.3.2015 mit, Fassung 4291 bis 28.2.2015 ohne
+//     Katalog; API bgs.so.ch). Ältere EG-ZPO-Fassungen inzwischen geprüft: § 22 Abs. 2 in der
+//     Fassung 1.1.2011–28.2.2015 stellte «den Pfingstmontag, den 1. Mai,
+//     Fronleichnam, Mariä Himmelfahrt und Allerheiligen» gleich — die Zählung
+//     erst ab 1.3.2015 bleibt (vorher zu früh = sichere Richtung, Nebenfund).
 // (3) GL 2. Januar (RL-23, Befund Q5, Entscheid W-11 a «zählen + Warnung»,
 //     David 24.9.2026). Amtlich selbst geöffnet am 25.9.2026:
 //       · Ruhetagsgesetz GL (GS IX B/21/1, Version 1.7.2019) Art. 2 Abs. 1 lit. b/c
@@ -269,12 +287,49 @@ function lundiJeuneFederal(jahr: number): Date {     // VD: Montag nach 3. Sonnt
 //         Gebiet des Zivil-, Handels- und Verwaltungsrechts einschliesslich des
 //         diese Gebiete betreffenden Verfahrensrechts» — nicht im Strafverfahren.
 //     Zählt deshalb in zpo/schkg/bgg/vwvg/allgemein (+ weitest) mit Warnung
-//     (unsicherer Tag, BEDINGT_UNSICHER), im Kontext stpo NICHT (Art. 90 Abs. 2
+//     (unsicherer Tag, BEDINGT_UNSICHER — seit RL-22c BEDINGT_UNSICHER_IN), im Kontext stpo NICHT (Art. 90 Abs. 2
 //     StPO: nur kantonales Recht, und das GL-Recht nennt den Tag nicht; sichere
 //     Richtung, ebenfalls mit Warnung). Unterschied zu SG/SH: dort trägt der
 //     kantonale Normwortlaut den 2.1. («Ruhetag» sGS 143.11 Art. 59 Abs. 1,
 //     «Feiertag» SHR 180.111 § 33 Abs. 1) und Gerichtspraxis bestätigt ihn
 //     (KG SG FS.2012.1, OGE SH 40/2018/1/K) → Grundmatrix, keine Warnung.
+// (4) SO 2. Januar, Ostermontag, Pfingstmontag, 26. Dezember (RL-22c, Nebenfund
+//     RL-23-Bau). Amtlich selbst geöffnet am 25.9.2026 (API bgs.so.ch):
+//       · Ruhetagsgesetz SO § 2 Abs. 1 (BGS 512.41, in Kraft seit 1.9.2014,
+//         Version 4319): Feiertage «Neujahr, Auffahrt, 1. Mai ab 12.00 Uhr,
+//         Eidgenössischer Bettag» und (ohne Bucheggberg) Fronleichnam, Maria
+//         Himmelfahrt, Allerheiligen; hohe Feiertage «Karfreitag, Ostern,
+//         Pfingsten, Weihnachten» — die vier Tage fehlen.
+//         https://bgs.so.ch/app/de/texts_of_law/512.41
+//       · Gleichgestellt «für die Fristbestimmung», Katalog je wortgleich
+//         «Neujahr, der 2. Januar, Karfreitag, der Ostermontag, Auffahrt, der
+//         Pfingstmontag, der 1. Mai, Fronleichnam, Mariä Himmelfahrt,
+//         Allerheiligen, der 25. und der 26. Dezember», je in Kraft seit 1.3.2015
+//         (KRB 12.11.2014; Vorfassungen ohne diesen Katalog):
+//           EG ZPO SO § 22 Abs. 2 (BGS 221.2, Version 5488 seit 1.1.2025)
+//           EG StPO SO § 10bis (BGS 321.3, Version seit 1.1.2024)
+//           VRG SO § 9 Abs. 1 (BGS 124.11, Version seit 1.8.2025) — kantonales
+//             Verwaltungsverfahren; LexMetrik hat dafür keinen eigenen Kontext.
+//       · BGer 6B_730/2013 vom 10.12.2013 E. 1.2: Pfingstmontag 2013 in SO für
+//         Art. 90 Abs. 2 StPO NICHT anerkannt (EG StPO damals ohne
+//         Fristbestimmung) — Anlass der Revision 2015; 1P.184/2001 (dort zitiert):
+//         Stephanstag SO nicht anerkannt.
+//       · SO-Gerichtspraxis ZPO: OG SO ZKBES.2023.63/.64 (Pfingstmontag 2023
+//         nach § 22 Abs. 2 EG ZPO gezählt); allgemein: VSG SO VSBES.2023.213
+//         (Ostermontag «kein gesetzlich anerkannter» Feiertag).
+//     Zählt in zpo und stpo (Wortlaut), ab 1.3.2015. NICHT belegt: BGG Art. 45
+//     und VwVG Art. 20 Abs. 3 (keine BGer/BVGer-Praxis zu SO gefunden; der
+//     NE-Analogiefall 9C_396/2018 stützte sich auf NE-Recht), SchKG (Art. 31
+//     SchKG; kein SO-Katalog gefunden; Linie wie NE/SO 1. Mai) und OR Art. 78
+//     («staatlich anerkannt» = Ruhetagsgesetz) → nicht zählen, warnen.
+// (5) SO Fronleichnam, Mariä Himmelfahrt, Allerheiligen (RL-22c): allgemeine
+//     Feiertage nach Ruhetagsgesetz SO § 2 Abs. 1 lit. b, aber «mit Ausnahme
+//     Bezirk Bucheggberg». Für ZPO (§ 22 Abs. 2 EG ZPO, auch Fassung ab
+//     1.1.2011) und StPO (§ 10bis EG StPO, ab 1.3.2015) kantonsweit. Zählt in
+//     jedem Kontext (Stand bisher, kantonsweite Annahme wie AG/GR/AI); ausserhalb
+//     ZPO/StPO als unsicherer Tag mit Warnung, weil am massgebenden Ort im
+//     Bucheggberg (Art. 90 Abs. 2 StPO, Art. 45 Abs. 2 BGG: Wohnsitz/Sitz) der
+//     Tag nach Ruhetagsgesetz kein Feiertag ist.
 
 /**
  * Feiertags-Kontext = Verfahrensrecht, dessen Feiertagsbegriff gilt.
@@ -289,17 +344,35 @@ function lundiJeuneFederal(jahr: number): Date {     // VD: Montag nach 3. Sonnt
  */
 export type FeiertagsKontext = 'zpo' | 'stpo' | 'bgg' | 'vwvg' | 'schkg' | 'allgemein' | 'weitest';
 
-type BedingteArt = 'ne_schliesstag' | 'so_1_mai' | 'gl_berchtoldstag';
+type BedingteArt = 'ne_schliesstag' | 'so_1_mai' | 'gl_berchtoldstag' | 'so_fristtag' | 'so_bucheggberg';
+
+const ALLE_KONTEXTE: readonly FeiertagsKontext[] = ['zpo', 'stpo', 'bgg', 'vwvg', 'schkg', 'allgemein', 'weitest'];
 
 const BEDINGT_GILT_IN: Record<BedingteArt, readonly FeiertagsKontext[]> = {
   ne_schliesstag: ['zpo', 'stpo', 'bgg', 'vwvg', 'weitest'],
-  so_1_mai: ['zpo', 'weitest'],
+  so_1_mai: ['zpo', 'stpo', 'weitest'],
   gl_berchtoldstag: ['zpo', 'schkg', 'bgg', 'vwvg', 'allgemein', 'weitest'],
+  so_fristtag: ['zpo', 'stpo', 'weitest'],
+  so_bucheggberg: ALLE_KONTEXTE,
 };
 
 /** Bedingte Tage, die im Kontext zwar ZÄHLEN, deren Anerkennung aber unsicher
- *  ist (RL-23): die Engine warnt dann mit dem früheren, strengen Ende. */
-const BEDINGT_UNSICHER: ReadonlySet<BedingteArt> = new Set<BedingteArt>(['gl_berchtoldstag']);
+ *  ist (RL-23): die Engine warnt dann mit dem früheren, strengen Ende.
+ *  RL-22c: je Kontext — der SO-Bucheggberg-Vorbehalt fällt nur ausserhalb
+ *  ZPO/StPO an (StPO erst ab 1.3.2015, s. unsicherIm). */
+const BEDINGT_UNSICHER_IN: Record<BedingteArt, readonly FeiertagsKontext[]> = {
+  ne_schliesstag: [],
+  so_1_mai: [],
+  gl_berchtoldstag: ALLE_KONTEXTE,
+  so_fristtag: [],
+  so_bucheggberg: ['bgg', 'vwvg', 'schkg', 'allgemein', 'weitest'],
+};
+
+function unsicherIm(art: BedingteArt, kontext: FeiertagsKontext, date: Date): boolean {
+  if (BEDINGT_UNSICHER_IN[art].includes(kontext)) return true;
+  // Vor EG StPO SO § 10bis (1.3.2015) galt im Strafverfahren nur das Ruhetagsgesetz.
+  return art === 'so_bucheggberg' && kontext === 'stpo' && isBefore(date, SO_FRISTTAGE_AB);
+}
 
 const BEDINGT_BESCHREIBUNG: Record<BedingteArt, string> = {
   ne_schliesstag:
@@ -317,10 +390,23 @@ const BEDINGT_BESCHREIBUNG: Record<BedingteArt, string> = {
     + 'Ziff. 8 lit. b) nur als Tag, der «wie ein gesetzlicher Feiertag behandelt» wird (Art. 5 EuFrÜb, '
     + 'SR 0.221.122.3, anwendbar nur im Zivil-, Handels- und Verwaltungsrecht, Art. 1 Abs. 1); ein '
     + 'Glarner Urteil dazu ist nicht bekannt',
+  so_fristtag:
+    'im Kanton SO nur für bestimmte Verfahren einem Feiertag gleichgestellt: für Fristen nach der ZPO '
+    + '(EG ZPO SO § 22 Abs. 2, BGS 221.2), der StPO (EG StPO SO § 10bis, BGS 321.3) und im kantonalen '
+    + 'Verwaltungsverfahren (VRG SO § 9 Abs. 1, BGS 124.11). Das Ruhetagsgesetz SO (§ 2 Abs. 1, BGS 512.41) '
+    + 'nennt ihn nicht als Feiertag; nach früherem Recht hat das Bundesgericht den Pfingstmontag in SO nicht '
+    + 'als Feiertag anerkannt (BGer 6B_730/2013 E. 1.2)',
+  so_bucheggberg:
+    'im Kanton SO ein Feiertag nach Ruhetagsgesetz SO § 2 Abs. 1 lit. b (BGS 512.41), jedoch «mit Ausnahme '
+    + 'Bezirk Bucheggberg»; kantonsweit gilt er nur für Fristen nach ZPO und StPO (EG ZPO SO § 22 Abs. 2, '
+    + 'EG StPO SO § 10bis). Liegt der massgebende Wohnsitz oder Sitz im Bezirk Bucheggberg, zählt er '
+    + 'möglicherweise nicht',
 };
 
 const NE_SCHLIESSTAGE_AB = new Date(2015, 3, 1);   // LI-CPC Art. 10a / LI-CPP Art. 9a in Kraft
 const SO_1_MAI_AB = new Date(2015, 2, 1);          // EG ZPO SO § 22 Abs. 2, geprüfte Fassung ab 1.3.2015
+/** RL-22c: EG ZPO § 22 Abs. 2 / EG StPO § 10bis / VRG § 9 Abs. 1 SO — Katalog in Kraft seit 1.3.2015. */
+const SO_FRISTTAGE_AB = new Date(2015, 2, 1);
 
 /** NE-Schliesstag nach RDF Art. 11 Abs. 1 (ohne Sa/So, die ohnehin arbeitsfrei sind). */
 function istNeSchliesstag(date: Date): boolean {
@@ -340,21 +426,35 @@ function bedingteArt(date: Date, kanton: Kanton): BedingteArt | null {
   if (kanton === 'NE' && istNeSchliesstag(date)) return 'ne_schliesstag';
   if (kanton === 'GL' && date.getMonth() === 0 && date.getDate() === 2) return 'gl_berchtoldstag';
   if (kanton === 'SO' && date.getMonth() === 4 && date.getDate() === 1 && !isBefore(date, SO_1_MAI_AB)) return 'so_1_mai';
+  if (kanton === 'SO') return soBedingteArt(date);
+  return null;
+}
+
+/** RL-22c: SO-Tage ausserhalb der Grundmatrix (Block Ziff. 4 und 5). */
+function soBedingteArt(date: Date): BedingteArt | null {
+  const o = ostersonntag(date.getFullYear());
+  const m = date.getMonth() + 1;
+  const t = date.getDate();
+  if (!isBefore(date, SO_FRISTTAGE_AB)
+    && ((m === 1 && t === 2) || (m === 12 && t === 26) || sameDay(addDays(o, 1), date) || sameDay(addDays(o, 50), date))) {
+    return 'so_fristtag';
+  }
+  if ((m === 8 && t === 15) || (m === 11 && t === 1) || sameDay(addDays(o, 60), date)) return 'so_bucheggberg';
   return null;
 }
 
 /**
  * Strenge Lesart (RL-23): der Kontext OHNE die unsicher gezählten bedingten
- * Tage (BEDINGT_UNSICHER, heute GL 2.1.). Nur für den Warnvergleich — nie
+ * Tage (BEDINGT_UNSICHER_IN, heute GL 2.1. und SO-Bucheggberg-Tage). Nur für den Warnvergleich — nie
  * für das ausgewiesene Ergebnis (Entscheid W-11 a: der Tag zählt).
  */
 export interface StrengeLesart { readonly kontext: FeiertagsKontext; readonly ohneUnsichere: true }
 export type FeiertagsLesart = FeiertagsKontext | StrengeLesart;
 export const strengeLesart = (kontext: FeiertagsKontext): StrengeLesart => ({ kontext, ohneUnsichere: true });
 
-function zaehltBedingt(art: BedingteArt, lesart: FeiertagsLesart): boolean {
+function zaehltBedingt(art: BedingteArt, lesart: FeiertagsLesart, date: Date): boolean {
   if (typeof lesart === 'string') return BEDINGT_GILT_IN[art].includes(lesart);
-  return !BEDINGT_UNSICHER.has(art) && BEDINGT_GILT_IN[art].includes(lesart.kontext);
+  return !unsicherIm(art, lesart.kontext, date) && BEDINGT_GILT_IN[art].includes(lesart.kontext);
 }
 
 function giltImKanton(kantone: 'alle' | Kanton[], kanton: Kanton): boolean {
@@ -391,7 +491,7 @@ function istGrundFeiertag(date: Date, kanton: Kanton): boolean {
 export function istFeiertag(date: Date, kanton: Kanton, kontext: FeiertagsLesart = 'allgemein'): boolean {
   if (istGrundFeiertag(date, kanton)) return true;
   const art = bedingteArt(date, kanton);
-  return art !== null && zaehltBedingt(art, kontext);
+  return art !== null && zaehltBedingt(art, kontext, date);
 }
 
 /** Arbeitsfreier Tag = Samstag/Sonntag oder anerkannter Feiertag im Kontext. */
@@ -449,7 +549,7 @@ export function bedingteFeiertageSatz(
 function istGezaehlterUnsichererTag(date: Date, kanton: Kanton, kontext: FeiertagsKontext): BedingteArt | null {
   if (isWeekend(date) || istGrundFeiertag(date, kanton)) return null;
   const art = bedingteArt(date, kanton);
-  return art !== null && BEDINGT_UNSICHER.has(art) && BEDINGT_GILT_IN[art].includes(kontext) ? art : null;
+  return art !== null && unsicherIm(art, kontext, date) && BEDINGT_GILT_IN[art].includes(kontext) ? art : null;
 }
 
 /**

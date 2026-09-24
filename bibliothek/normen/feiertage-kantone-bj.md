@@ -93,6 +93,10 @@ Fussnoten der BJ-Liste:
   der Gerichtsort Appenzell liegt darin). *Ergänzung RL-22 (24.9.2026):* für FR
   und SO ist das nicht mehr Annahme, sondern geltendes Recht — FR JG Art. 121
   Abs. 2 «im ganzen Kanton», SO EG ZPO § 22 Abs. 2 kantonsweit (R1-05).
+  *Ergänzung RL-22c (25.9.2026):* für SO gilt das nur in den Kontexten `zpo`
+  und `stpo` (EG ZPO § 22 Abs. 2, EG StPO § 10bis); ausserhalb davon trägt
+  der Bucheggberg-Vorbehalt (Fn. 3 = Ruhetagsgesetz SO § 2 Abs. 1 lit. b)
+  wieder — Tag zählt, aber mit Warnung (Abschnitt «Solothurn» unten).
 - **Bewusst WEGGELASSEN:** SO-Josephstag und -Patrozinien (nur einzelne
   Gemeinden; § 22 Abs. 2 EG ZPO SO nennt sie nicht) · NE-Fronleichnam (nur
   Le Landeron). *Bis 24.9.2026 zusätzlich SO-1.-Mai* («halber Tag ab 12 Uhr»
@@ -111,7 +115,7 @@ siehe Spalte «RL-22».
 
 | Kanton | Norm | Fassung | Wirkung im Code | RL-22 |
 |---|---|---|---|---|
-| SO | EG ZPO § 22 Abs. 2 (BGS 221.2) https://bgs.so.ch/app/de/texts_of_law/221.2 | 1.1.2025 | 1. Mai ganztags **neu geführt** (R1-02); Katalog kantonsweit; 8.12. nicht. *Nachzug 25.9.2026:* nur Kontext `zpo` (Wortlaut «Für die Fristbestimmung gemäss Artikel 142 ZPO»), sonst Warnung | Beleg R1+V8; **amtlich selbst geöffnet 25.9.2026** (API bgs.so.ch, Fassung in Kraft seit 1.1.2025; Wortlaut gleich in den Fassungen ab 1.3.2015) |
+| SO | EG ZPO § 22 Abs. 2 (BGS 221.2) https://bgs.so.ch/app/de/texts_of_law/221.2 | 1.1.2025 | 1. Mai ganztags **neu geführt** (R1-02); Katalog kantonsweit; 8.12. nicht. *Nachzug 25.9.2026:* nur Kontext `zpo` (Wortlaut «Für die Fristbestimmung gemäss Artikel 142 ZPO»), sonst Warnung. *Ergänzung RL-22c 25.9.2026:* zusätzlich `stpo` (EG StPO SO § 10bis, BGS 321.3); 2.1./Ostermontag/Pfingstmontag/26.12. seither ebenfalls bedingt (Abschnitt «Solothurn») | Beleg R1+V8; **amtlich selbst geöffnet 25.9.2026** (API bgs.so.ch, Fassung in Kraft seit 1.1.2025; Wortlaut gleich in den Fassungen ab 1.3.2015) |
 | UR | Ruhetagsgesetz Art. 9 lit. b (RB 70.1421) https://rechtsbuch.ur.ch/app/de/texts_of_law/70.1421 | 1.1.2003 | Stephanstag **unbedingt** (R1-03) | Beleg R1+V8; **amtlich selbst geöffnet 25.9.2026** (API rechtsbuch.ur.ch, «… Weihnachten und Sankt-Stefans-Tag» ohne Vorbehalt; Arbeitsverordnung RB 20.1111 Art. 6 und GOG RB 2.3221 ohne abweichende Regel) |
 | AR | V ArG Art. 7 (822.11) https://ar.clex.ch/app/de/texts_of_law/822.11 | 1.1.2016 | Stephanstag entfällt bei Weihnachten Mo/Fr (unverändert) | Snapshot `public/normtext/kanton/AR-822.11.json` (abgerufen 23.6.2026) |
 | FR | JG Art. 121 Abs. 2 (SGF 130.1) https://bdlf.fr.ch/app/de/texts_of_law/130.1 | 1.1.2024 | Seebezirk-Fn. 2 obsolet («im ganzen Kanton») | Beleg R1 |
@@ -143,7 +147,9 @@ Vorverlegung), zählen alle bedingten Tage (Kontext `weitest`), ebenfalls mit Wa
 | | | BGG Art. 45 | BGer 9C_396/2018 vom 20.12.2018 E. 2.3 (Pfingstmontag NE «jour férié selon le droit cantonal», gestützt auf LPJA Art. 20 Abs. 2) — Text über entscheidsuche.ch (Spiegel von relevancy.bger.ch; bger.ch am 25.9.2026 HTTP 503) | |
 | | | VwVG Art. 20 Abs. 3 | BVGer D-837/2025 vom 26.2.2025 (24./26.12.2024 NE; Verweis auf E-2540/2019) — https://bvger.weblaw.ch/pdf/D-837-2025_2025-02-26_de3689cc-4a91-4f64-9179-4f6ac251689b.pdf | |
 | | | kant. Verwaltungsverfahren | LPA Art. 33 Abs. 3 (RSN 152.130, État 1.1.2026) — keine Engine | |
-| SO 1. Mai (ganztags) | EG ZPO § 22 Abs. 2 (BGS 221.2): «Für die Fristbestimmung gemäss Artikel 142 ZPO …» | ZPO | Wortlaut selbst | BGG, VwVG, StPO, SchKG, OR — allgemein nur «1. Mai ab 12.00 Uhr» (Ruhetagsgesetz SO § 2 Abs. 1 lit. b, BGS 512.41, Stand 1.9.2014, https://bgs.so.ch/app/de/texts_of_law/512.41) |
+| SO 1. Mai (ganztags) | EG ZPO § 22 Abs. 2 (BGS 221.2): «Für die Fristbestimmung gemäss Artikel 142 ZPO …» | ZPO | Wortlaut selbst | BGG, VwVG, StPO, SchKG, OR — allgemein nur «1. Mai ab 12.00 Uhr» (Ruhetagsgesetz SO § 2 Abs. 1 lit. b, BGS 512.41, Stand 1.9.2014, https://bgs.so.ch/app/de/texts_of_law/512.41) — *Ergänzung RL-22c 25.9.2026: StPO seit 1.3.2015 belegt (EG StPO SO § 10bis), zählt jetzt in `stpo`* |
+| SO 2. Januar, Ostermontag, Pfingstmontag, 26. Dezember (RL-22c) | EG ZPO § 22 Abs. 2, EG StPO § 10bis, VRG § 9 Abs. 1 (je ab 1.3.2015); Ruhetagsgesetz SO § 2 Abs. 1 nennt sie nicht | ZPO, StPO | Wortlaut selbst (s. Abschnitt «Solothurn») | BGG, VwVG, SchKG, OR 78 |
+| SO Fronleichnam, Mariä Himmelfahrt, Allerheiligen (RL-22c) | Ruhetagsgesetz SO § 2 Abs. 1 lit. b «mit Ausnahme Bezirk Bucheggberg»; EG ZPO/EG StPO kantonsweit | alle Kontexte — **zählt**; ausserhalb ZPO/StPO **unsicher** (Bucheggberg) → Warnung mit strengem Ende | Wortlaut selbst | — |
 
 Gegenprobe NE: ne.ch «Jours fériés officiels» (abgerufen 25.9.2026), Tabelle
 «Jours fériés dans l'administration cantonale» 2026 und 2027 — deckungsgleich mit
@@ -200,6 +206,53 @@ Richtung); offengelegt im StPO-Hinweis des allgemeinen Rechners.
 **Offen:** Glarner Gerichtspraxis (keine publizierte gefunden, Q5); ob der Kontext
 `bgg` bei Beschwerden in Strafsachen wie `stpo` zu behandeln wäre (EuFrÜb gilt
 dort nicht) — heute zählt `bgg` einheitlich, mit Warnung.
+
+## Solothurn (RL-22c, 25.9.2026)
+
+Befund (Nebenfund RL-23-Bau): SO zählte 2.1., Ostermontag, Pfingstmontag und
+26.12. in jedem Kontext. Eigener Abruf aller Belege am 25.9.2026 über die API
+`https://bgs.so.ch/api/de/texts_of_law/<BGS>` (in Kraft stehende Fassung) bzw.
+`…/texts_of_law/<BGS>/versions/<id>` (Vorfassungen):
+
+- **Ruhetagsgesetz SO** (BGS 512.41, Version 4319, in Kraft seit 1.9.2014) § 2
+  Abs. 1: lit. b «die Feiertage: Neujahr, Auffahrt, 1. Mai ab 12.00 Uhr,
+  Eidgenössischer Bettag, sowie - mit Ausnahme Bezirk Bucheggberg - Fronleichnam,
+  Maria Himmelfahrt, Allerheiligen»; lit. c «Karfreitag, Ostern, Pfingsten,
+  Weihnachten». **Kein 2.1., Ostermontag, Pfingstmontag, 26.12.**
+- **EG ZPO SO** (BGS 221.2) § 22 Abs. 2, **EG StPO SO** (BGS 321.3) § 10bis
+  («gemäss Artikel 90 Absatz 2 StPO») und **VRG SO** (BGS 124.11) § 9 Abs. 1
+  (kantonales Verwaltungsverfahren): wortgleicher Katalog «Neujahr, der 2. Januar,
+  Karfreitag, der Ostermontag, Auffahrt, der Pfingstmontag, der 1. Mai,
+  Fronleichnam, Mariä Himmelfahrt, Allerheiligen, der 25. und der 26. Dezember»,
+  je **in Kraft seit 1.3.2015** (KRB 12.11.2014). Vorfassungen: EG StPO 4291
+  und VRG 4089 ohne Katalog; EG ZPO 3367/3903 (1.1.2011–28.2.2015): nur
+  «Pfingstmontag, 1. Mai, Fronleichnam, Mariä Himmelfahrt und Allerheiligen».
+- **BGer 6B_730/2013** vom 10.12.2013 E. 1.2 (Pfingstmontag 20.5.2013, Berufung
+  Art. 399 Abs. 3 StPO, Wohnsitz SO): EG StPO «enthält keine Fristbestimmungen»
+  → Pfingstmontag nicht kantonal anerkannt (Beschwerde dennoch gutgeheissen
+  wegen überspitzten Formalismus, E. 1.3). Text: entscheidsuche.ch
+  (CH_BGer_006_6B-730-2013_2013-12-10; bger.ch am 25.9.2026 HTTP 503). Dort
+  zitiert: 1P.184/2001 (Stephanstag SO nicht anerkannt).
+- **SO-Praxis:** OG SO ZKBES.2023.63 und .64 (Pfingstmontag 29.5.2023 nach § 22
+  Abs. 2 EG ZPO gezählt); VSG SO VSBES.2023.213 vom 22.10.2024 (Ostermontag in SO
+  «kein gesetzlich anerkannter» Feiertag, Arbeitsrecht). Keine BGer-/BVGer-Praxis
+  zu SO unter Art. 45 BGG / Art. 20 Abs. 3 VwVG gefunden (entscheidsuche.ch,
+  Volltextsuche 25.9.2026).
+
+**Regel (deterministisch):** 2.1./Ostermontag/Pfingstmontag/26.12. SO zählen ab
+1.3.2015 in `zpo` und `stpo` (+ `weitest`), sonst nicht (Warnung mit beiden
+Daten; Wartefrist/Rückwärtsfrist über `weitest` spätere bzw. frühere sichere
+Seite). 1. Mai SO zusätzlich in `stpo`. Fronleichnam/Mariä Himmelfahrt/
+Allerheiligen SO zählen überall; in `bgg`/`vwvg`/`schkg`/`allgemein` (und `stpo`
+vor 1.3.2015) als unsicherer Tag mit Warnung (Bucheggberg).
+
+**Offen:** (a) BGG/VwVG — trägt der VRG-SO-Katalog als «vom kantonalen Recht
+anerkannter Feiertag» (Analogie NE: BGer 9C_396/2018 E. 2.3 stützte sich auf das
+kantonale Verwaltungsverfahrensgesetz)? Dann würden die vier Tage auch dort
+zählen. (b) SchKG — erfasst «Fristbestimmung gemäss Artikel 142 ZPO» über
+Art. 31 SchKG auch Betreibungsfristen? Kein SO-EG-SchKG-Katalog gefunden.
+(c) ZPO 1.1.2011–28.2.2015: Pfingstmontag und 1. Mai waren gleichgestellt, der
+Code zählt sie erst ab 1.3.2015 (zu früh = sichere Richtung).
 
 ## Pflegebedarf / Verifikations-TODO
 
