@@ -64,7 +64,7 @@ export function VerzugszinsSchnellForm() {
             onChange={(e) => set('zinssatzProzent', Number(e.target.value))} className={inputNum} />
         </Field>
         <div className="@[16.5rem]:col-span-2">
-          <Field label="Grundlage des Zinssatzes">
+          <Field label="Grundlage des Zinssatzes" hint={teileWahl(GRUENDE.find((g) => g.code === form.satzGrund)?.label ?? '').detail}>
             <select value={form.satzGrund} onChange={(e) => set('satzGrund', e.target.value as SatzGrund)} className="lc-input w-full">
               {GRUENDE.map((g) => <option key={g.code} value={g.code}>{teileWahl(g.label).name}</option>)}
             </select>
@@ -77,7 +77,7 @@ export function VerzugszinsSchnellForm() {
           <DatumsFeld value={form.stichtag} onChange={(v) => set('stichtag', v)} className="lc-input w-full" />
         </Field>
         <div className="@[16.5rem]:col-span-2">
-          <Field label="Art des Verzugsbeginns">
+          <Field label="Art des Verzugsbeginns" hint={teileWahl(BEGINN.find((b) => b.code === form.beginnTyp)?.label ?? '').detail}>
             <select value={form.beginnTyp} onChange={(e) => set('beginnTyp', e.target.value as VerzugsbeginnTyp)} className="lc-input w-full">
               {BEGINN.map((b) => <option key={b.code} value={b.code}>{teileWahl(b.label).name}</option>)}
             </select>

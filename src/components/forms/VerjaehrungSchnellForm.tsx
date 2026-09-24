@@ -125,7 +125,7 @@ export function VerjaehrungSchnellForm() {
       )}
 
       <SchnellFormFuss normverweise={ergebnis?.normverweise ?? []} hinweise={ergebnis?.warnungen.length ?? 0}
-        annahmen="keine Unterbrechung (Art. 135 OR), kein Stillstand (Art. 134 OR), kein Einredeverzicht (Art. 141 OR)"
+        annahmen={`keine Unterbrechung (Art. 135 OR), kein Stillstand (Art. 134 OR), kein Einredeverzicht (Art. 141 OR)${input.strafbareHandlung === false ? ', keine strafbare Handlung (Art. 60 Abs. 2 OR)' : ''}`}
         rechnerZiel={rechnerZiel} rechnerName="Verjährungsrechner" />
     </div>
   );

@@ -131,6 +131,9 @@ describe('Rechenergebnis = Engine (je Variante mindestens ein Fall)', () => {
     expect(schnell).toMatch(/<a [^>]*href="https:\/\/www\.fedlex\.admin\.ch[^"]*"[^>]*>Art\. 104 Abs\. 1 OR<\/a>/);
     // Offengelegte Annahmen + Weiterweg mit den Werten (Permalink).
     expect(schnell).toContain('Angenommen: Tageszählung');
+    // Artikel der gewählten Grundlage/Beginnart sichtbar wie im vollen Rechner (Gegenprüfung U2).
+    expect(schnell).toContain('5 % (Art. 104 Abs. 1)');
+    expect(schnell).toContain('ab Erhalt (Art. 102 Abs. 1)');
     expect(schnell).toMatch(/href="\/rechner\/verzugszins\?[^"]*c=10000/);
   });
 
