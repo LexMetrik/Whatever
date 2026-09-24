@@ -13,6 +13,10 @@ import { SYSTEMATIK } from './normtext/systematik';
 import { KANTONE } from './kantone';
 import { KANTON_NAMEN } from '../data/tarif/typen';
 import { INTERNATIONAL_GRUPPEN } from './normtext/international-rubriken';
+import { OBERKATEGORIEN, type Oberkategorie } from './oberkategorien';
+import { RECHTSGEBIET_SEKTIONEN } from './startseiteConfigTypen';
+import { KATALOG_KARTEN } from './startseiteConfig';
+import { istVorlage } from './vorlagenKategorie';
 
 /** Die vier Kacheln der Startseite, als Adress-Wort. */
 export type BlattRubrik = 'gesetze' | 'rechtsprechung' | 'materialien' | 'werkzeuge';
@@ -59,16 +63,35 @@ function gesetzePfad(pfad: readonly string[]): string[] {
   return [ebene];
 }
 
-/** Die zwei Wahlen der Werkzeuge-Kachel (S2 23.9.2026): Rechner | Vorlagen,
- *  jeweils eine Liste — keine weitere Tiefe (die letzte Stufe ist die
- *  bestehende Produktseite, ein gewöhnlicher Link, keine eigene Blatt-Stufe). */
+/** Die zwei Wahlen der Werkzeuge-Kachel (S2 23.9.2026): Rechner | Vorlagen.
+ *  Die letzte Stufe ist die bestehende Produktseite (gewöhnlicher Link). */
 type WerkzeugeZweig = 'rechner' | 'vorlagen';
 const WERKZEUGE_ZWEIGE: ReadonlySet<string> = new Set<WerkzeugeZweig>(['rechner', 'vorlagen']);
 
+/** START-UEBERARBEITUNG U8 (David 24.9.2026 «mach danach das werkzeuge-blatt
+ *  gleich wie gesetze»): die Wahl zeigt die nächste Stufe schon an, je eine
+ *  eigene Adresse `werkzeuge/rechner/<kategorie>` bzw.
+ *  `werkzeuge/vorlagen/<rechtsgebiet>`. Die Achsen sind DIESELBEN wie auf den
+ *  Rubrikseiten (§5, keine zweite Zuordnung):
+ *  · Rechner = die Oberkategorien ausser «vorlagen» (wie `RechnerUebersicht`).
+ *  · Vorlagen = die Rechtsgebiete, die der Rechtsgebiet-Filter auf /vorlagen
+ *    anbietet (`KategorieSektion`: Gebiete der echten Vorlagen), in der festen
+ *    Reihenfolge `RECHTSGEBIET_SEKTIONEN`; Adress-Wort = deren `id`. Nur
+ *    Gebiete mit mindestens einer Vorlage (verfügbar oder geplant) — ein
+ *    Gebiet ohne jede Vorlage wäre eine leere, erfundene Stufe (§8). */
+export const WERKZEUGE_RECHNER_KATEGORIEN: readonly Oberkategorie[] = OBERKATEGORIEN.filter((k) => k.id !== 'vorlagen');
+export const WERKZEUGE_VORLAGEN_GEBIETE: readonly { id: string; name: string }[] = RECHTSGEBIET_SEKTIONEN
+  .filter((s) => KATALOG_KARTEN.some((k) => istVorlage(k) && k.rechtsgebiet === s.name))
+  .map(({ id, name }) => ({ id, name }));
+const RECHNER_KATEGORIE: ReadonlySet<string> = new Set(WERKZEUGE_RECHNER_KATEGORIEN.map((k) => k.id));
+const VORLAGEN_GEBIET: ReadonlySet<string> = new Set(WERKZEUGE_VORLAGEN_GEBIETE.map((g) => g.id));
+
 /** Längster gültiger Anfang von `pfad` für die Werkzeuge-Kachel. */
 function werkzeugePfad(pfad: readonly string[]): string[] {
-  const [zweig] = pfad;
-  return zweig && WERKZEUGE_ZWEIGE.has(zweig) ? [zweig] : [];
+  const [zweig, zweite] = pfad;
+  if (!zweig || !WERKZEUGE_ZWEIGE.has(zweig)) return [];
+  const gueltig = zweig === 'rechner' ? RECHNER_KATEGORIE : VORLAGEN_GEBIET;
+  return zweite && gueltig.has(zweite) ? [zweig, zweite] : [zweig];
 }
 
 /** Liest `?blatt=…`. `null` = Blatt zu (fehlend, leer oder eine Rubrik, die
@@ -100,10 +123,15 @@ export function gleicherOrt(a: BlattOrt | null, b: BlattOrt | null): boolean {
 /** Pfad-Leiste des Blatts unterhalb der Rubrik (Band oben im Blatt). */
 export function blattKrumen(ort: BlattOrt): { label: string; ort: BlattOrt }[] {
   if (ort.rubrik === 'werkzeuge') {
-    const [zweig] = ort.pfad;
+    const [zweig, zweite] = ort.pfad;
     if (!zweig) return [];
     const label = zweig === 'rechner' ? 'Rechner' : 'Vorlagen';
-    return [{ label, ort: { rubrik: ort.rubrik, pfad: [zweig] } }];
+    const erste = { label, ort: { rubrik: ort.rubrik, pfad: [zweig] } };
+    if (!zweite) return [erste];
+    const titel = zweig === 'rechner'
+      ? WERKZEUGE_RECHNER_KATEGORIEN.find((k) => k.id === zweite)?.titel ?? zweite
+      : WERKZEUGE_VORLAGEN_GEBIETE.find((g) => g.id === zweite)?.name ?? zweite;
+    return [erste, { label: titel, ort: { rubrik: ort.rubrik, pfad: [zweig, zweite] } }];
   }
   if (ort.rubrik !== 'gesetze') return [];
   const [ebene, zweite] = ort.pfad;
