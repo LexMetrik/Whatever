@@ -99,8 +99,9 @@ export const STPO_FRIST_HINWEIS =
   + 'Wohnsitz oder Sitz hat (Art. 90 Abs. 2 StPO), nicht der Gerichtsort; liegen beide in verschiedenen '
   + 'Kantonen, im Zweifel den früheren Termin einhalten.';
 
-// RL-24/F1-02: Offenlegung des Vertragsfrist-Regimes (§8).
-export const VERTRAGSFRIST_HINWEIS =
+// RL-24/F1-02: Offenlegung des Vertragsfrist-Regimes (§8). Modul-intern: erreicht
+// das UI über `hinweise` → `warnungen` (ErgebnisAnzeige), kein Export (check:sediment d).
+const VERTRAGSFRIST_HINWEIS =
   'Vertragsfrist/Erfüllungstag: Verschoben wird nur bei Sonntag oder einem am Erfüllungsort staatlich '
   + 'anerkannten Feiertag (Art. 78 Abs. 1 OR), nicht bei Samstag – die Samstagsregel des Fristengesetzes '
   + '(SR 173.110.3) gilt für gesetzliche und behördliche Fristen. Abweichende Vereinbarungen bleiben '
