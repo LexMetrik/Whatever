@@ -1,16 +1,16 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "RPV",
   "gewichtQuelle": "alt",
   "proArtikel": {
     "1": [
       {
-        "key": "bge_150_II_2",
-        "zitierung": "BGE 150 II 2",
-        "regesteKurz": "Art. 23e und 23h NHG; Art. 7, 8, 9 Abs. 1, Art. 23 Abs. 1 lit. a-f, Art. 24 lit. b, 25, 26 Abs. 1 und Art. 27 PäV; Festsetzung der Kernzone des Naturerlebnisparks Jorat (Parc naturel périurbain du Jorat). Die Errichtung eines…",
+        "key": "bge_150_II_2__voll",
+        "zitierung": "Urteil 1C_115/2022 (nicht publ. in BGE 150 II 2)",
+        "regesteKurz": null,
         "datum": "2023-04-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -49,22 +49,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_86",
-        "zitierung": "BGE 149 II 86",
-        "regesteKurz": "Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…",
-        "datum": "2023-01-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_II_347",
         "zitierung": "BGE 146 II 347",
         "regesteKurz": "Art. 18, 18a NHG, Art. 3, 4, 5 Auenverordnung, Art. 17 RPG, Art. 18, 19, 21 EBG, Art. 2, 5, 7 JSG, Art. 4 FWG; Schutz eines Auengebiets von nationaler Bedeutung. Schutz der Biotop-Inventargebiete von nationaler Bedeutung durch die vom…",
         "datum": "2020-03-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_86__voll",
+        "zitierung": "Urteil 1C_240/2021 (nicht publ. in BGE 149 II 86)",
+        "regesteKurz": null,
+        "datum": "2023-01-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -135,12 +135,12 @@
     ],
     "22": [
       {
-        "key": "bge_147_II_319",
-        "zitierung": "BGE 147 II 319",
-        "regesteKurz": "Art. 18 NHG, Art. 14 NHV, Art. 12 EnG und Art. 9 EnV; Art. 11 und 25 USG, Art. 7 LSV; Windpark Sainte-Croix; Begriff des nationalen Interesses; Lärmschutz. Art. 9 Abs. 2 EnV, der für die jährliche Energieproduktion einen Schwellenwert von…",
+        "key": "bge_147_II_319__voll",
+        "zitierung": "Urteil 1C_657/2018 (nicht publ. in BGE 147 II 319)",
+        "regesteKurz": null,
         "datum": "2021-03-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -183,12 +183,12 @@
     ],
     "34": [
       {
-        "key": "bge_147_II_25",
-        "zitierung": "BGE 147 II 25",
-        "regesteKurz": "Art. 24c RPG; Art. 41 und 43a RPV; Anwendungsbereich von Art. 24c RPG. Art. 24c RPG in der revidierten Fassung vom 23. Dezember 2011 ist auf eine altrechtliche Wohnbaute in der Landwirtschaftszone, bei der eine landwirtschaftliche…",
+        "key": "bge_147_II_25__voll",
+        "zitierung": "Urteil 1C_145/2019 (nicht publ. in BGE 147 II 25)",
+        "regesteKurz": null,
         "datum": "2020-05-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -241,16 +241,6 @@
     ],
     "41": [
       {
-        "key": "bge_147_II_309",
-        "zitierung": "BGE 147 II 309",
-        "regesteKurz": "Wiederherstellung des rechtmässigen Zustands bei illegalen Bauten ausserhalb der Bauzone; keine Verwirkung dieses Anspruchs bzw. dieser Pflicht nach 30 Jahren. Bundesgerichtliche Rechtsprechung zur Verwirkung des Anspruchs bzw. der Pflicht…",
-        "datum": "2021-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_25",
         "zitierung": "BGE 147 II 25",
         "regesteKurz": "Art. 24c RPG; Art. 41 und 43a RPV; Anwendungsbereich von Art. 24c RPG. Art. 24c RPG in der revidierten Fassung vom 23. Dezember 2011 ist auf eine altrechtliche Wohnbaute in der Landwirtschaftszone, bei der eine landwirtschaftliche…",
@@ -261,12 +251,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_II_304",
-        "zitierung": "BGE 146 II 304",
-        "regesteKurz": "Besitzstandsschutz von zonenwidrigen Bauten ausserhalb der Bauzone im Gewässerraum (Art. 41c Abs. 2 GSchV; Art. 24c RPG). Art. 41c GSchV enthält eine gegenüber Art. 24c RPG eigenständige Besitzstandsgarantie (abweichend von Urteil…",
+        "key": "bge_147_II_309__voll",
+        "zitierung": "Urteil 1C_469/2019 (nicht publ. in BGE 147 II 309)",
+        "regesteKurz": null,
+        "datum": "2021-04-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_II_304__voll",
+        "zitierung": "Urteil 1C_22/2019 (nicht publ. in BGE 146 II 304)",
+        "regesteKurz": null,
         "datum": "2020-04-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -295,16 +295,6 @@
     ],
     "43": [
       {
-        "key": "bge_147_II_309",
-        "zitierung": "BGE 147 II 309",
-        "regesteKurz": "Wiederherstellung des rechtmässigen Zustands bei illegalen Bauten ausserhalb der Bauzone; keine Verwirkung dieses Anspruchs bzw. dieser Pflicht nach 30 Jahren. Bundesgerichtliche Rechtsprechung zur Verwirkung des Anspruchs bzw. der Pflicht…",
-        "datum": "2021-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_25",
         "zitierung": "BGE 147 II 25",
         "regesteKurz": "Art. 24c RPG; Art. 41 und 43a RPV; Anwendungsbereich von Art. 24c RPG. Art. 24c RPG in der revidierten Fassung vom 23. Dezember 2011 ist auf eine altrechtliche Wohnbaute in der Landwirtschaftszone, bei der eine landwirtschaftliche…",
@@ -321,6 +311,16 @@
         "datum": "2020-04-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_147_II_309__voll",
+        "zitierung": "Urteil 1C_469/2019 (nicht publ. in BGE 147 II 309)",
+        "regesteKurz": null,
+        "datum": "2021-04-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -371,12 +371,12 @@
     ],
     "42a": [
       {
-        "key": "bge_147_II_25",
-        "zitierung": "BGE 147 II 25",
-        "regesteKurz": "Art. 24c RPG; Art. 41 und 43a RPV; Anwendungsbereich von Art. 24c RPG. Art. 24c RPG in der revidierten Fassung vom 23. Dezember 2011 ist auf eine altrechtliche Wohnbaute in der Landwirtschaftszone, bei der eine landwirtschaftliche…",
+        "key": "bge_147_II_25__voll",
+        "zitierung": "Urteil 1C_145/2019 (nicht publ. in BGE 147 II 25)",
+        "regesteKurz": null,
         "datum": "2020-05-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

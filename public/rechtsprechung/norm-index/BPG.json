@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "BPG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -39,12 +39,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
+        "key": "bge_149_II_337__voll",
+        "zitierung": "Urteil 8C_387/2022 (nicht publ. in BGE 149 II 337)",
+        "regesteKurz": null,
         "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -189,22 +189,22 @@
     ],
     "38": [
       {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
-        "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_III_126",
         "zitierung": "BGE 148 III 126",
         "regesteKurz": "Ziff. 1 Abs. 3 und Ziff. 22 Gesamtarbeitsvertrag 2019 der SBB (GAV) i.V.m. Art. 335b Abs. 3 OR; Verlängerung der Probezeit bei Krankheit. Bei krankheitsbedingtem Arbeitsausfall während der Probezeit verlängert sich diese um die Anzahl der…",
         "datum": "2022-03-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_337__voll",
+        "zitierung": "Urteil 8C_387/2022 (nicht publ. in BGE 149 II 337)",
+        "regesteKurz": null,
+        "datum": "2023-08-21",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

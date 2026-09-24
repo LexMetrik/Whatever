@@ -1,28 +1,28 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "HREGV",
   "gewichtQuelle": "alt",
   "proArtikel": {
     "45": [
       {
-        "key": "bge_151_IV_228",
-        "zitierung": "BGE 151 IV 228",
-        "regesteKurz": "Art. 14 Abs. 1 VStrR; Verordnung über die Verbürgung von Darlehen zur Finanzierung schweizerischer Hochseeschiffe; Leistungsbetrug in der Tatbestandsvariante des Erfüllungsbetrugs. Aus einer bundesrechtskonformen Auslegung des geltenden…",
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "regesteKurz": null,
         "datum": "2025-02-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "82": [
       {
-        "key": "bge_147_III_505",
-        "zitierung": "BGE 147 III 505",
-        "regesteKurz": "Art. 783 und 822 OR; Erwerb eigener Stammanteile; Austritt. Würde das Ausscheiden eines Gesellschafters aus einer GmbH dazu führen, dass die Gesellschaft eigene Stammanteile im Nennwert von über 35 % des Stammkapitals hielte, ist der…",
+        "key": "bge_147_III_505__voll",
+        "zitierung": "Urteil 4A_209/2021 (nicht publ. in BGE 147 III 505)",
+        "regesteKurz": null,
         "datum": "2021-07-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -53,22 +53,22 @@
     ],
     "164": [
       {
-        "key": "bge_151_III_490",
-        "zitierung": "BGE 151 III 490",
-        "regesteKurz": "Inwieweit kommen die Art. 4 ff. der Übergangsbestimmungen OR zur Änderung vom 21. Juni 2019 (ÜBest OR) betreffend die Umwandlung von Inhaberaktien in Namenaktien von Gesetzes wegen bei der Wiedereintragung einer Gesellschaft zur Anwendung?…",
-        "datum": "2025-03-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_III_441",
         "zitierung": "BGE 146 III 441",
         "regesteKurz": "Löschung der konkursiten Gesellschaft im Handelsregister/Abtretung von Ansprüchen nach Art. 260 SchKG. Die Löschung der konkursiten Gesellschaft im Handelsregister hat keinen Einfluss auf die Aktivlegitimation der Abtretungsgläubiger nach…",
         "datum": "2020-08-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_III_490__voll",
+        "zitierung": "Urteil 4A_497/2024 (nicht publ. in BGE 151 III 490)",
+        "regesteKurz": null,
+        "datum": "2025-03-31",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

@@ -53,6 +53,7 @@ export type SchkgLink = {
   ereignis: string; einheit: string; laenge: number; modus: string; fristnatur: string;
   kanton: string; ausloeser?: string; phase?: string; presetKey?: string; override?: string;
   hemmungAn?: boolean; hemmungVon?: string; hemmungBis?: string;
+  hemmung2Von?: string; hemmung2Bis?: string;
   rsAn?: boolean; rsVon?: string; rsBis?: string;
 };
 
@@ -60,7 +61,8 @@ export const SCHKG_LINK_SPEC: PermalinkSpec<SchkgLink & Record<string, unknown>>
   ereignis: { p: 'e', typ: 'str', gueltig: istISO },
   einheit: { p: 'u', typ: 'str', gueltig: einerVon('tage', 'monate', 'jahre') },
   laenge: { p: 'l', typ: 'num', gueltig: (n) => Number.isInteger(n) && n > 0 },
-  modus: { p: 'm', typ: 'str', gueltig: einerVon('schkg_betreibungsferien', 'zpo_stillstand', 'kein') },
+  // RL-19 / F2-05: Regime 'schkg_wechsel' (Wechselbetreibung mit Rechtsstillstand).
+  modus: { p: 'm', typ: 'str', gueltig: einerVon('schkg_betreibungsferien', 'zpo_stillstand', 'kein', 'schkg_wechsel') },
   // Deklarierter Fix (FE-3-Befund 10.6.2026): Die Form kennt SECHS Natur-
   // Werte (types/schkg.ts) — die alte Dreier-Liste verwarf 'klagefrist'/
   // 'beschwerdefrist'/'ordnungsfrist' beim DEKODIEREN, Empfänger geteilter
@@ -70,10 +72,14 @@ export const SCHKG_LINK_SPEC: PermalinkSpec<SchkgLink & Record<string, unknown>>
   ausloeser: { p: 'a', typ: 'str' },
   phase: { p: 'ph', typ: 'str', gueltig: einerVon(...PHASEN_SCHKG.map((x) => x.code)) },
   presetKey: { p: 'p', typ: 'str', gueltig: einerVon(...PRESETS_SCHKG.map((x) => x.key)) },
-  override: { p: 'o', typ: 'str', gueltig: einerVon('schkg_betreibungsferien', 'zpo_stillstand', 'kein') },
+  override: { p: 'o', typ: 'str', gueltig: einerVon('schkg_betreibungsferien', 'zpo_stillstand', 'kein', 'schkg_wechsel') },
   hemmungAn: { p: 'ha', typ: 'bool' },
   hemmungVon: { p: 'hv', typ: 'str', gueltig: istISO },
   hemmungBis: { p: 'hb', typ: 'str', gueltig: istISO },
+  // RL-19 / F2-06: zweiter Stillstands-Zeitraum (Art. 188 Abs. 2 SchKG); nur
+  // kodiert, wenn gesetzt — bestehende Links bleiben byte-gleich.
+  hemmung2Von: { p: 'h2v', typ: 'str', gueltig: istISO },
+  hemmung2Bis: { p: 'h2b', typ: 'str', gueltig: istISO },
   rsAn: { p: 'ra', typ: 'bool' },
   rsVon: { p: 'rv', typ: 'str', gueltig: istISO },
   rsBis: { p: 'rb', typ: 'str', gueltig: istISO },

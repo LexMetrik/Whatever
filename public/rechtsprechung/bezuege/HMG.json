@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"HMG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -10,6 +10,7 @@
 "bge_150_IV_255":{"zitierung":"BGE 150 IV 255","regesteKurz":"Art. 1 StGB; Art. 10, 11 Abs. 1 und Art. 20 Abs. 1 lit. e BetmG; Beihilfe zum Suizid; Verschreibung einer tödlich wirkenden Substanz (Natriumpentobarbital); Legalitätsprinzip. Die Verschreibung von Natriumpentobarbital durch einen Arzt an…","datum":"2024-03-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_V_210":{"zitierung":"BGE 150 V 210","regesteKurz":"Art. 25 Abs. 1 und 2 lit. b, Art. 32 Abs. 1 Satz 1, Art. 34 Abs. 1, Art. 44 Abs. 1 Satz 1, Art. 52 Abs. 1 lit. a Ziff. 2 und lit. b KVG; Art. 63 Abs. 2 KVV; ALT II (Bearbeitungstarif) lit. D Ziff. 2 (nachfolgend: ALT II D 2); Art. 4 Abs. 1…","datum":"2024-03-18","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_323":{"zitierung":"BGE 151 II 323","regesteKurz":"Art. 23 und 23a HMG; Art. 42 lit. f, Art. 45 Abs. 1 lit. c Ziff. 3 VAM; Einteilung der \"Pille danach\" in Abgabekategorie B (verschreibungspflichtige Arzneimittel), da deren Abgabe weiterhin ein vorgängiges Fachgespräch mit einer…","datum":"2024-10-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_II_323__voll":{"zitierung":"Urteil 2C_69/2023 (nicht publ. in BGE 151 II 323)","regesteKurz":null,"datum":"2024-10-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 323","urteil":"2C_69/2023"}},
 "bge_151_II_742":{"zitierung":"BGE 151 II 742","regesteKurz":"Art. 3 Abs. 1 lit. a und Abs. 2, Art. 4 Abs. 2, Art. 7 Abs. 1 und 2 lit. e und f, Art. 49a KG; Art. 3 SVKG; Art. 5 Abs. 2 der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Wettbewerbsbeeinträchtigung als Voraussetzung…","datum":"2025-01-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_SB.2023.2":{"zitierung":"Appellationsgericht BS SB.2023.2 vom 12.08.2025","regesteKurz":"Verbrechen gegen das Betäubungsmittelgesetz (mit Gefährdung der Gesundheit vieler Menschen und Gewerbsmässigkeit),…","datum":"2025-08-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_SG.2019.7":{"zitierung":"Sozialversicherungsgericht BS SG.2019.7 vom 16.08.2022","regesteKurz":"Leistungen gemäss Arzneimittelliste mit Tarif (ALT) (Bundesgerichtsurteil 9C_65/2023 vom 18.3.2024)…","datum":"2022-08-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
@@ -26,8 +27,8 @@
 "25":[{"key":"bge_151_II_323","gewicht":0},{"key":"bge_150_V_210","gewicht":0}],
 "26":[{"key":"bge_150_IV_255","gewicht":0},{"key":"bge_148_IV_39","gewicht":0},{"key":"bs_sozialversicherungsgericht_SG.2019.7","gewicht":null}],
 "30":[{"key":"bge_150_V_210","gewicht":0},{"key":"bs_sozialversicherungsgericht_SG.2019.7","gewicht":null}],
-"31":[{"key":"bge_151_II_323","gewicht":0}],
-"32":[{"key":"bge_151_II_323","gewicht":0}],
+"31":[{"key":"bge_151_II_323__voll","gewicht":0,"erwaegungen":["E. 8"]}],
+"32":[{"key":"bge_151_II_323__voll","gewicht":0,"erwaegungen":["E. 8"]}],
 "52":[{"key":"bge_150_V_210","gewicht":0},{"key":"bs_sozialversicherungsgericht_SG.2019.7","gewicht":null}],
 "54":[{"key":"bge_150_V_210","gewicht":0}],
 "86":[{"key":"bge_150_IV_255","gewicht":0},{"key":"bs_appellationsgericht_SB.2023.2","gewicht":null}],
@@ -47,8 +48,8 @@
 "25":{"bge":2},
 "26":{"bge":2,"kantonal":1},
 "30":{"bge":1,"kantonal":1},
-"31":{"bge":1},
-"32":{"bge":1},
+"31":{"bger":1},
+"32":{"bger":1},
 "52":{"bge":1,"kantonal":1},
 "54":{"bge":1},
 "86":{"bge":1,"kantonal":1},

@@ -9,6 +9,9 @@
 // --delta: Inventar neu, nur neue/aktualisierte Keys fetchen; aus dem Portal
 // verschwundene Scope-Einträge fallen aus inventar.json → ihre Snapshots werden
 // beim Schreiben entfernt (Takedown-Respekt §2/§5.4) und im Report ausgewiesen.
+// --kopfdatum-nachtrag (B-1, 23.9.2026): nur die Dokumente OHNE Metadaten-Datum
+// holen und ihr Datum aus dem Deckblatt nachtragen (`nachtragKopfdatum`); kein
+// Inventar-Neubau, kein Vollabruf.
 
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -35,6 +38,20 @@ async function main() {
   const nurFetch = hat('--fetch-only');
   const nurParse = hat('--parse-only');
   const delta = hat('--delta');
+
+  // ── Sonderlauf B-1: Kopf-Datum der datumlosen Dokumente nachtragen ──
+  // Holt NUR die Rohdateien der Inventar-Einträge ohne Metadaten-Datum (golden
+  // store, idempotent) und patcht genau deren Datum — Begründung und Beweis-
+  // Vorbedingungen bei `nachtragKopfdatum` (bs-parse.ts).
+  if (hat('--kopfdatum-nachtrag')) {
+    const inv = ladeInventar();
+    const datumlos: Inventar = { ...inv, eintraege: inv.eintraege.filter((z) => !z.datum) };
+    const bericht = await fetcheAlle(datumlos, datum);
+    if (bericht.fehler.length) { process.exitCode = 1; return; }
+    const { nachtragKopfdatum } = await import('./bs-parse');
+    nachtragKopfdatum(inv, datum);
+    return;
+  }
 
   // ── Phase 1: Inventar (übersprungen bei --fetch-only/--parse-only) ──
   if (!nurFetch && !nurParse) {

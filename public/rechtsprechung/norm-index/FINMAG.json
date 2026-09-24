@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "FINMAG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -39,12 +39,12 @@
     ],
     "5": [
       {
-        "key": "bge_147_I_57",
-        "zitierung": "BGE 147 I 57",
-        "regesteKurz": "Art. 34 FINMAG; Art. 6, Art. 7 EMRK; Art. 14 Abs. 3 lit. g UNO-Pakt II; Art. 32 Abs. 1 BV. Die finanzmarktrechtliche Publikationsanordnung qualifiziert nicht als eine strafrechtliche Anklage bzw. eine Strafe im Sinne der Art. 6 und 7 EMRK.…",
+        "key": "bge_147_I_57__voll",
+        "zitierung": "Urteil 2C_92/2019 (nicht publ. in BGE 147 I 57)",
+        "regesteKurz": null,
         "datum": "2020-01-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -97,12 +97,12 @@
     ],
     "22": [
       {
-        "key": "bge_147_I_57",
-        "zitierung": "BGE 147 I 57",
-        "regesteKurz": "Art. 34 FINMAG; Art. 6, Art. 7 EMRK; Art. 14 Abs. 3 lit. g UNO-Pakt II; Art. 32 Abs. 1 BV. Die finanzmarktrechtliche Publikationsanordnung qualifiziert nicht als eine strafrechtliche Anklage bzw. eine Strafe im Sinne der Art. 6 und 7 EMRK.…",
+        "key": "bge_147_I_57__voll",
+        "zitierung": "Urteil 2C_92/2019 (nicht publ. in BGE 147 I 57)",
+        "regesteKurz": null,
         "datum": "2020-01-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -221,22 +221,22 @@
     ],
     "52": [
       {
-        "key": "bge_150_IV_57",
-        "zitierung": "BGE 150 IV 57",
-        "regesteKurz": "Art. 73 Abs. 1 VStrR; Überweisung zur gerichtlichen Beurteilung im Verwaltungsstrafverfahren ohne Vorliegen eines rechtskräftigen Entscheids über die Leistungs- oder Rückleistungspflicht. In Fällen, in denen die Vorfrage der Leistungs-…",
-        "datum": "2024-01-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_IV_274",
         "zitierung": "BGE 147 IV 274",
         "regesteKurz": "a Art. 6 Ziff. 1 EMRK; Art. 30 Abs. 1 BV; Art. 70 VStrR; Art. 97 Abs. 3 StGB; Strafverfügung; Verjährungsunterbrechung. Bestätigung der Rechtsprechung, wonach eine Strafverfügung gemäss Art. 70 VStrR verjährungsrechtlich im Sinne von Art.…",
         "datum": "2021-01-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_IV_57__voll",
+        "zitierung": "Urteil 6B_1005/2021 (nicht publ. in BGE 150 IV 57)",
+        "regesteKurz": null,
+        "datum": "2024-01-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

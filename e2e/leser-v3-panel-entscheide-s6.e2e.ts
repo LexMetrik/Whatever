@@ -37,25 +37,37 @@ test.describe('S6-W1b — Reiter Entscheide', () => {
     const gruppen = inhalt(page).locator('[data-v3-panel-gruppe]')
     await expect(gruppen.first()).toHaveAttribute('data-v3-panel-gruppe', 'bge', { timeout: 20_000 })
     const status = await gruppen.evaluateAll((els) => els.map((e) => e.getAttribute('data-v3-panel-gruppe')))
-    // BGE zuerst, danach nur noch kantonale Gruppen (an Art. 41 gibt es keinen Rest).
+    // BGE zuerst, dann je kantonales Gericht, dann der Rest (PanelEntscheide.tsx:
+    // «BGE, dann JE kantonales Gericht, dann der Rest (übrige BGer, eidg.)»).
+    // §6.3-DEKLARATION (W2·29-WERKBANK-LESER D2/E-1, 25.9.2026 — fachliche
+    // Änderung): bis D2 stand hier «an Art. 41 gibt es keinen Rest» und bge 30.
+    // Seit E-1 zeigen zehn der dreissig BGE-Kanten an Art. 41 OR aufs
+    // Volltext-Urteil (nur in einer nicht publizierten Erwägung genannt) —
+    // Shard `public/rechtsprechung/bezuege/OR.json`, gesamtProArtikel["41"]:
+    // main {bge 30, kantonal 21}, D2 {bge 20, bger 10, kantonal 21}. Es gibt
+    // darum eine Rest-Gruppe «bger» am Ende; geprüft bleibt die Reihung.
     expect(status[0]).toBe('bge')
-    expect(status.slice(1).every((s) => s === 'kantonal'), status.join(',')).toBe(true)
-    expect(status.length).toBeGreaterThan(1)
+    const iRest = status.findIndex((s, i) => i > 0 && s !== 'kantonal')
+    const kantonale = status.slice(1, iRest < 0 ? undefined : iRest)
+    expect(kantonale.length, status.join(',')).toBeGreaterThan(0)
+    expect(kantonale.every((s) => s === 'kantonal'), status.join(',')).toBe(true)
+    const rest = iRest < 0 ? [] : status.slice(iRest)
+    expect(rest.every((s) => s === 'bger' || s === 'eidg'), status.join(',')).toBe(true)
 
     // Je Gruppe höchstens fünf Zeilen beim Öffnen.
     for (const n of await gruppen.locator('ul').evaluateAll((uls) => uls.map((u) => u.children.length))) {
       expect(n).toBeLessThanOrEqual(5)
     }
     const bge = inhalt(page).locator('[data-v3-panel-gruppe="bge"]')
-    await expect(bge).toHaveAttribute('data-v3-panel-gruppe-zahl', '30')
+    await expect(bge).toHaveAttribute('data-v3-panel-gruppe-zahl', '20')
     await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(5)
 
-    // «weitere 25» (Rest ≤ 50) holt den ganzen Rest; der Fokus landet auf dem
+    // «weitere 15» (Rest ≤ 50) holt den ganzen Rest; der Fokus landet auf dem
     // ersten neuen Eintrag, nicht im Nichts (der Knopf verschwindet).
     const weitere = bge.locator('[data-v3-panel-weitere="bge"]')
-    await expect(weitere).toHaveText('weitere 25')
+    await expect(weitere).toHaveText('weitere 15')
     await weitere.click()
-    await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(30)
+    await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(20)
     await expect(weitere).toHaveCount(0)
     const fokusIndex = await page.evaluate(() => {
       const li = document.activeElement?.closest('[data-v3-panel-entscheid]')
