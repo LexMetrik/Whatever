@@ -614,6 +614,10 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
   BS/ZG bei 1024 + 1280 per e2e belegt. Andere Karten-Nutzer unverändert (Prop Standard aus).
 - **U7 «Häufig gebraucht» gefüllt** (David 24.9. «sehr leer», Auswahl «Kürzel + voller Titel»): je Erlass Kürzel,
   ausgeschriebener Titel und SR-Nummer aus dem Erlass-Register, zweispaltig.
+- **U8 Werkzeuge-Blatt wie Gesetze** (David 24.9. «mach danach das werkzeuge-blatt gleich wie gesetze», Nachzug
+  nach #1053): Wahl als zwei hohe Spalten Rechner · Vorlagen (`WahlSpalte` geteilt in `BlattBausteine.tsx`),
+  darunter Kategorien bzw. Rechtsgebiete mit Anzahl aus `KATALOG_KARTEN`; Stufen `werkzeuge/rechner/<kategorie>`
+  und `werkzeuge/vorlagen/<gebiet>`, unbekannte ID → Liste.
 
 ## §5f · REST — Bauplan in Scheiben (`W2·29-WERKBANK-REST`, Planung 24.9.2026)
 
