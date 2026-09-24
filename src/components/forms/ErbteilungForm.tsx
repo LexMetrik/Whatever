@@ -284,7 +284,7 @@ export function ErbteilungForm() {
             {gueterstand === 'errungenschaftsbeteiligung' && (
               <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
                 <Field label="Eigengut Erblasser (CHF)"><BetragsFeld erlaubeNegativ value={betraege.eigengut} onChange={(v) => setBetraege((b) => ({ ...b, eigengut: v }))} className={inputCls} /></Field>
-                <Field label="Vorschlag Erblasser (CHF)" hint="negativ = Rückschlag (zählt 0, Art. 210 Abs. 2)"><BetragsFeld erlaubeNegativ value={betraege.vorschlagE} onChange={(v) => setBetraege((b) => ({ ...b, vorschlagE: v }))} className={inputCls} /></Field>
+                <Field label="Vorschlag Erblasser (CHF)" hint="negativ = Rückschlag (mindert den Nachlass voll, Art. 209 Abs. 2, 474 Abs. 2 ZGB)"><BetragsFeld erlaubeNegativ value={betraege.vorschlagE} onChange={(v) => setBetraege((b) => ({ ...b, vorschlagE: v }))} className={inputCls} /></Field>
                 <Field label="Vorschlag Überlebender (CHF)"><BetragsFeld erlaubeNegativ value={betraege.vorschlagU} onChange={(v) => setBetraege((b) => ({ ...b, vorschlagU: v }))} className={inputCls} /></Field>
               </div>
             )}

@@ -565,8 +565,8 @@ Umschichtung 20.9.2026 (2)):*
   sein.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1.
 
-- [~] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W1 · status: wip · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [x] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W1 · status: done · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-11 (vorgezogen, «Aufgehoben seit») dann RL-04…RL-10, RL-12…RL-14:
   Mietkündigung, SchKG-Weiterzug, Gewährleistung, Fristen-Anknüpfung,
   Verjährung, Erbteilung, Mietvertrag, Katalog-Status, Sperrfrist-Rückfall,
