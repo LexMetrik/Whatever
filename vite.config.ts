@@ -104,6 +104,11 @@ function buildKennungMeta(): Plugin {
 
 export default defineConfig({
   plugins: [serifFontDisplayOptional(), react(), buildKennungMeta()],
+  // Dev-Server: Port aus `PORT`, wenn die Vorschau einen zuweist (`.claude/launch.json`
+  // «autoPort»). Vorher stand 5180 fest in der Startzeile — die zweite parallele
+  // Session fand den Port belegt und kam nicht an ihre Vorschau (24.9.2026, §17).
+  // Ohne `PORT` bleibt Vites Vorgabe; `strictPort` nur mit zugewiesenem Port.
+  server: process.env.PORT ? { port: Number(process.env.PORT), strictPort: true } : undefined,
   // O-1.9: Build-Kennung für den Fehlerkanal — Vercel-Commit-SHA (kurz), sonst 'dev'.
   // Erlaubt es, einen gemeldeten Client-Fehler einem Deploy zuzuordnen. Kein Geheimnis.
   define: {
