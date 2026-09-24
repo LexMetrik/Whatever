@@ -29,6 +29,50 @@ const N_145_4:  Normverweis = { artikel: 'Art. 145 Abs. 4 ZPO', bemerkung: 'Stil
 const N_33_4:   Normverweis = { artikel: 'Art. 33 Abs. 4 SchKG', bemerkung: 'Wiederherstellung bei unverschuldetem Hindernis' };
 const N_88_2:   Normverweis = { artikel: 'Art. 88 Abs. 2 SchKG', bemerkung: 'Stillstand der Verwirkungsfrist während rechtsvorschlagsbedingtem Verfahren' };
 const N_166_2:  Normverweis = { artikel: 'Art. 166 Abs. 2 SchKG', bemerkung: 'Stillstand der Verwirkungsfrist während rechtsvorschlagsbedingtem Verfahren' };
+const N_56_1_2: Normverweis = { artikel: 'Art. 56 Abs. 1 Ziff. 2 SchKG', bemerkung: 'Keine Betreibungshandlungen während der Betreibungsferien' };
+
+// ─── RL-18 (Prüfung Rechtslogik 23.9.2026, Befunde F2-03/F2-04) ──────────
+//
+// Zustellung einer Betreibungsurkunde in den Betreibungsferien. Art. 56 Abs. 1
+// Ziff. 2 SchKG (Fedlex SR 281.1, Fassung 1.1.2026,
+// https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de): während der
+// Betreibungsferien «dürfen Betreibungshandlungen nicht vorgenommen werden»
+// (ausser im Arrestverfahren; in der Wechselbetreibung gibt es keine
+// Betreibungsferien). Rechtsfolge eines Verstosses: BGE 121 III 284 E. 2b —
+// die Handlung ist weder nichtig noch anfechtbar, sie «entfaltet ihre
+// Rechtswirkungen erst am ersten Tag nach Ablauf der Betreibungsferien»;
+// E. 2c — die Fristen (namentlich die Rechtsvorschlagsfrist) haben mit dem
+// ersten Tag nach den Ferien «zu laufen begonnen».
+//
+// ZÄHLWEISE (Q-10, offen für die Gegenprüfung): Gerechnet wird nach E. 2c —
+// der erste Tag nach den Ferien ist der dies a quo. Technisch wird dafür der
+// letzte Ferientag als Referenztag der Zählung verwendet (Tagesfrist: Beginn
+// am Folgetag, Art. 142 Abs. 1 ZPO; Monats-/Jahresfrist: gleichbezeichneter
+// Tag) — dieselbe Behandlung, die die Engine im ZPO-Pfad für die Zustellung
+// während des Stillstands anwendet (Art. 146 Abs. 1 ZPO: «beginnt der
+// Fristenlauf am ersten Tag nach Ende des Stillstandes»). Die Gegenlesart
+// (E. 2b als Zustellfiktion am ersten Tag nach den Ferien, Fristbeginn nach
+// Art. 142 Abs. 1 ZPO erst am Tag darauf) wird mit ihrem Datum als Warnung
+// offengelegt. Beispiel ZB 8.4.2026 (Osterferien 29.3.–12.4.2026):
+// Rechtsvorschlag 22.4. (Gegenlesart 23.4.), Fortsetzung frühestens beide 4.5.
+//
+// BINDUNG: Die Regel greift nur, wenn der Auslöser nachweislich die Zustellung
+// einer Betreibungsurkunde an den Schuldner ist — Identitätsvergleich mit den
+// Preset-Auslösern (kein Substring), und nur im Betreibungsferien-Regime
+// (Wechselbetreibung: modus 'kein'). Ohne Auslöser ist die Ereignisart
+// unbekannt → keine Fiktion (Golden schkg:weihnachten bleibt byte-gleich).
+// Bewusst NICHT gebunden: Zustellung Arresturkunde (Art. 56 Abs. 1 SchKG
+// «ausser im Arrestverfahren»); Pfändungsvollzug/Lastenverzeichnis/Frist-
+// ansetzungen des Amtes (Wirkungsaufschub nicht einzeln belegt — offen).
+export const BETREIBUNGSURKUNDEN_AUSLOESER: readonly string[] = [
+  'Zustellung Zahlungsbefehl',
+  'Zustellung Zahlungsbefehl (Bedenkfrist Art. 152 SchKG)',
+  'Zustellung Konkursandrohung',
+];
+
+function istBetreibungsurkundenZustellung(ausloeser: string | undefined): boolean {
+  return ausloeser !== undefined && BETREIBUNGSURKUNDEN_AUSLOESER.includes(ausloeser);
+}
 
 const fmt = formatDatum;
 const iso = formatISO;
@@ -102,6 +146,15 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   const st = baueStrategie(modus, input.rechtsstillstandVon, input.rechtsstillstandBis);
   const ereignis = parseISO(input.ereignis);
 
+  // RL-18 / F2-03: Zustellung einer Betreibungsurkunde in den Betreibungsferien
+  // → Wirkung und Fristbeginn am ersten Tag nach den Ferien (BGE 121 III 284
+  // E. 2b/c). `referenz` ist der Tag, ab dem gezählt wird (letzter Ferientag).
+  const urkundenZustellung = istBetreibungsurkundenZustellung(input.ausloeser);
+  const ferienBeiZustellung =
+    urkundenZustellung && modus === 'schkg_betreibungsferien' ? betreibungsperiodeFuer(ereignis) : null;
+  const referenz = ferienBeiZustellung ? ferienBeiZustellung.bis : ereignis;
+  const wirkungstag = ferienBeiZustellung ? addDays(ferienBeiZustellung.bis, 1) : ereignis;
+
   if (input.modusOverride && input.modusOverride !== input.modus) {
     rechenweg.push({
       beschreibung: 'Manueller Override des Stillstand-Regimes',
@@ -119,12 +172,24 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     normen: [N_31, N_142_1],
   });
 
+  if (ferienBeiZustellung) {
+    rechenweg.push({
+      beschreibung: 'Schritt 1a – Zustellung in den Betreibungsferien',
+      zwischenergebnis:
+        `Die Zustellung am ${fmt(ereignis)} fällt in die Betreibungsferien (${fmt(ferienBeiZustellung.von)}–${fmt(ferienBeiZustellung.bis)}). ` +
+        'Sie ist weder nichtig noch anfechtbar, entfaltet ihre Wirkung aber erst am ersten Tag nach den Ferien; ' +
+        `die Fristen beginnen an diesem Tag zu laufen (BGE 121 III 284 E. 2b/c): ${fmt(wirkungstag)}. ` +
+        `Gezählt wird ab dem letzten Ferientag (${fmt(referenz)}) als Referenztag.`,
+      normen: [N_56_1_2, N_31],
+    });
+  }
+
   // Schritt 2 – Fristende provisorisch
   let diesAQuo: Date;
   let endeProvisorisch: Date;
 
   if (input.einheit === 'tage') {
-    const r = fristendeTage(ereignis, input.laenge, st);
+    const r = fristendeTage(referenz, input.laenge, st);
     diesAQuo = r.diesAQuo;
     endeProvisorisch = r.ende;
     rechenweg.push({
@@ -139,7 +204,7 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
       rechtsprechung: modus === 'schkg_betreibungsferien' ? [rechtsprechung('BGE_143_III_149')] : undefined,
     });
   } else {
-    const r = fristendeKalender(ereignis, input.einheit, input.laenge, st, false);
+    const r = fristendeKalender(referenz, input.einheit, input.laenge, st, false);
     diesAQuo = r.diesAQuo;
     endeProvisorisch = r.ende;
     const einheitLabel = input.einheit === 'monate' ? 'Monats' : 'Jahres';
@@ -234,6 +299,35 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     );
   }
 
+  // RL-18 / F2-04: Zustellung einer Betreibungsurkunde während eines
+  // Rechtsstillstands. Beim Rechtsstillstand wegen Militär-, Zivil- oder
+  // Schutzdienstes (Art. 57 SchKG) ist die Zustellung nichtig (BGE 127 III 173
+  // E. 3, in Abgrenzung zu den Betreibungsferien, E. 3b); Art und Grund des
+  // eingegebenen Rechtsstillstands kennt die Engine nicht → Warnung, keine
+  // Umrechnung. Geprüft werden der Zustelltag und der Wirkungstag nach RL-18.
+  if (urkundenZustellung && input.rechtsstillstandVon && input.rechtsstillstandBis) {
+    const rsVon = parseISO(input.rechtsstillstandVon);
+    const rsBis = parseISO(input.rechtsstillstandBis);
+    const inRs = (d: Date) => !isBefore(d, rsVon) && !isAfter(d, rsBis);
+    if (inRs(ereignis) || inRs(wirkungstag)) {
+      warnungen.push(
+        `Zustellung während des eingegebenen Rechtsstillstands (${fmt(rsVon)}–${fmt(rsBis)}): Beruht er auf Militär-, Zivil- oder Schutzdienst (Art. 57 SchKG), ist die Zustellung nichtig (BGE 127 III 173 E. 3) — die Frist wird nicht ausgelöst, die Zustellung ist nach dem Ende des Rechtsstillstands zu wiederholen; die berechneten Daten gelten dann nicht. ` +
+          'Ausnahmen: Betreibung für periodische familienrechtliche Unterhalts- und Unterstützungsbeiträge (Art. 57 Abs. 3 SchKG), Zahlungsbefehl in der Betreibung auf Pfandverwertung nach drei Monaten Rechtsstillstand (Art. 57b Abs. 2 SchKG). ' +
+          'Bei einem Rechtsstillstand aus anderem Grund (Art. 58–62 SchKG) ist die Rechtsfolge im Einzelfall zu prüfen.',
+      );
+    }
+  }
+
+  // RL-18 / Q-10: Offenlegung der Gegenlesart zur Zählweise mit ihrem Datum.
+  if (ferienBeiZustellung) {
+    const gegen = berechneSchkgFrist({ ...input, ereignis: iso(wirkungstag), ausloeser: undefined, modusOverride: undefined, modus });
+    warnungen.push(
+      `Zählweise bei Zustellung in den Betreibungsferien: Gerechnet ist nach BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${fmt(wirkungstag)}) zu laufen. ` +
+        `Nach der Gegenlesart (Zustellung gilt erst am ${fmt(wirkungstag)} als erfolgt, Fristbeginn am Folgetag nach Art. 142 Abs. 1 ZPO) ergäbe sich: ${gegen.diesAdQuem}. ` +
+        'Vorsichtig ist bei Handlungs- und Verwirkungsfristen das frühere, bei Wartefristen das spätere Datum.',
+    );
+  }
+
   annahmen.push(
     `Stillstand-Regime: ${MODUS_LABEL[modus]}.`,
     `Rechtsnatur: ${input.fristnatur}.`,
@@ -292,7 +386,7 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
     annahmen,
     warnungen,
     normverweise,
-    massgeblicherEreignistag: fmt(ereignis),
+    massgeblicherEreignistag: fmt(wirkungstag),
     diesAQuo: fmt(diesAQuo),
     diesAdQuem: fmt(massgeblich),
     ereignisISO: iso(ereignis),

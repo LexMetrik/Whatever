@@ -3,6 +3,8 @@ import { BeruehrtRahmen, Checkbox, EckdatenKachel, FehlerBox, Field, GruppenTite
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { Tabs } from '../ui/Tabs';
 import { useState } from 'react';
+import { parseISO } from 'date-fns';
+import { formatDatum } from '../../lib/datumsUtils';
 import type { Kanton } from '../../types/legal';
 import type { SchkgInput, SchkgModus, SchkgFristnatur, SchkgEinheit, SchkgErgebnis } from '../../types/schkg';
 import { berechneSchkgFrist } from '../../lib/schkgFristen';
@@ -383,7 +385,13 @@ export function SchkgFristenForm({ live }: {
                 </div>
                 <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
                   {[
-                    { label: 'Auslösendes Ereignis', val: e.massgeblicherEreignistag },
+                    // RL-18 (F2-03): Weicht der massgebliche Ereignistag von der
+                    // Zustellung ab (Zustellung in den Betreibungsferien, BGE
+                    // 121 III 284), zeigt die Kachel den Wirkungstag unter
+                    // eigenem Namen; die Zustellung bleibt im Kalender markiert.
+                    formatDatum(parseISO(e.ereignisISO)) === e.massgeblicherEreignistag
+                      ? { label: 'Auslösendes Ereignis', val: e.massgeblicherEreignistag }
+                      : { label: 'Zustellung wirkt ab', val: e.massgeblicherEreignistag },
                     { label: 'Fristbeginn (dies a quo)', val: e.diesAQuo },
                     { label: 'Fristende (dies ad quem)', val: `${e.diesAdQuem} · 24.00 Uhr`, akzent: true },
                   ].map((c) => (
