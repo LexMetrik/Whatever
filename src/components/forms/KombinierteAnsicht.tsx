@@ -1,9 +1,8 @@
-import { Field, inputCls, ListenEditor } from '../vorlagen/ui';
-import { NormText } from '../NormText';
+import { Checkbox, Field, inputCls } from '../vorlagen/ui';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { useState } from 'react';
-import type { ArbeitsrechtInput, Kanton, SperrereignisTyp, Sperrereignis } from '../../types/legal';
+import type { ArbeitsrechtInput, Kanton } from '../../types/legal';
 import { berechneLohnfortzahlung } from '../../lib/lohnfortzahlung';
 import { berechneSperrfristen, type SperrfristenErgebnis } from '../../lib/sperrfristen';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
@@ -16,21 +15,13 @@ import { SperrtageZaehler } from '../SperrtageZaehler';
 import { KANTONE } from '../../lib/kantone';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { SperrereignisseEditor } from './SperrereignisseEditor';
 
-const TYPEN: { code: SperrereignisTyp; label: string }[] = [
-  { code: 'krankheit_unfall',  label: 'Krankheit / Unfall (lit. b)' },
-  { code: 'schwangerschaft',   label: 'Schwangerschaft (lit. c)' },
-  { code: 'mutterschaftsurlaub_verlaengert', label: 'Verlängerter Mutterschaftsurlaub (lit. cbis)' },
-  { code: 'zusatzurlaub_tod_elternteil',     label: 'Zusatzurlaub Tod des anderen Elternteils (lit. cter)' },
-  { code: 'urlaub_tod_mutter',               label: 'Urlaub nach Tod der Mutter (lit. cquinquies)' },
-  { code: 'militaer_zivil',    label: 'Militär / Zivildienst (lit. a)' },
-  { code: 'hilfsaktion',       label: 'Hilfsaktion (lit. d)' },
-  { code: 'betreuungsurlaub',  label: 'Betreuungsurlaub (lit. cquater, Art. 329i)' },
-];
-
-// Typen mit optionalem Niederkunftsdatum (Endberechnung lit. c / Kappung lit. cter).
-const MIT_NIEDERKUNFT: SperrereignisTyp[] = ['schwangerschaft', 'zusatzurlaub_tod_elternteil'];
-
+// RL-13 PR 2 (UI-05, §5/§10): die frühere Kopie des Typen-Katalogs und des
+// Sperrereignis-Repeaters ist dem geteilten SperrereignisseEditor gewichen
+// (Katalog: sperrereignisseShared.ts). Damit trägt auch diese Ansicht den
+// Rückfall-Bezug, die Bezugs-Pflege beim Entfernen/Typwechsel und die
+// Niederkunfts-Felder aus EINER Quelle.
 
 const DEFAULTS: ArbeitsrechtInput = {
   vertragsbeginn: '2020-01-01',
@@ -38,6 +29,8 @@ const DEFAULTS: ArbeitsrechtInput = {
   kuendigendePartei: 'arbeitgeber',
   probezeitMonate: 1,
   kuendigungsterminMonatsende: true,
+  // wie KuendigungSperrForm: wirkt erst, wenn eine abweichende Frist erfasst ist
+  abweichendeFristFormGueltig: true,
   verhinderungBeginn: '2025-04-01',
   arbeitsunfaehigkeitProzent: 100,
   kanton: 'BS',
@@ -45,33 +38,17 @@ const DEFAULTS: ArbeitsrechtInput = {
   sperrereignisse: [],
 };
 
-export function KombinierteAnsicht() {
+export function KombinierteAnsicht({ startwerte }: {
+  /** Vorbelegung (Render-Tests, spätere Permalinks); überschreibt die Demo-DEFAULTS. */
+  startwerte?: Partial<ArbeitsrechtInput>;
+} = {}) {
   // Standard-Kanton (Einstellungen) als Default – konsistent zu den
   // Schwesterformularen (Auftrag David); DEFAULTS.kanton ist nur Fallback.
-  const [form, setForm] = useState<ArbeitsrechtInput>(() => ({ ...DEFAULTS, kanton: getStandardKanton() }));
+  const [form, setForm] = useState<ArbeitsrechtInput>(() => ({ ...DEFAULTS, kanton: getStandardKanton(), ...startwerte }));
   const pk = usePaneKlasse();
 
   const set = <K extends keyof ArbeitsrechtInput>(k: K, v: ArbeitsrechtInput[K]) =>
     setForm((f) => ({ ...f, [k]: v }));
-
-  const addEreignis = () =>
-    setForm((f) => ({
-      ...f,
-      sperrereignisse: [...(f.sperrereignisse ?? []), { typ: 'krankheit_unfall', von: '2025-04-01', bis: '2025-05-31' }],
-    }));
-
-  const updateEreignis = (i: number, field: keyof Sperrereignis, val: string) =>
-    setForm((f) => {
-      const list = [...(f.sperrereignisse ?? [])];
-      list[i] = { ...list[i], [field]: val } as Sperrereignis;
-      return { ...f, sperrereignisse: list };
-    });
-
-  const removeEreignis = (i: number) =>
-    setForm((f) => ({
-      ...f,
-      sperrereignisse: (f.sperrereignisse ?? []).filter((_, j) => j !== i),
-    }));
 
   // Live-Berechnung – B+C als EIN kohärentes Ergebnis (Sperrfristen integrieren die Kündigungsfrist).
   const ergebnisse: { lohnfortzahlung?: ReturnType<typeof berechneLohnfortzahlung>; kuendigung?: SperrfristenErgebnis } = {};
@@ -101,6 +78,10 @@ export function KombinierteAnsicht() {
     'Beginn Verhinderung': form.verhinderungBeginn ?? '',
     'AUF %': String(form.arbeitsunfaehigkeitProzent ?? 100),
     'Kanton': form.kanton ?? '',
+    'Kündigungstermin Monatsende': form.kuendigungsterminMonatsende ? 'Ja' : 'Nein',
+    ...(form.abweichendeFristMonate != null ? { 'Abweichende Frist (Monate)': String(form.abweichendeFristMonate) } : {}),
+    ...(form.kuendigendePartei === 'arbeitgeber' && form.vaterschaftsurlaubResttage
+      ? { 'Nicht bezogene Tage Art. 329g': String(form.vaterschaftsurlaubResttage) } : {}),
   };
 
   // PDF: Skalen-Hinweis nur, wenn die Lohnfortzahlung Teil des Berichts ist.
@@ -176,47 +157,66 @@ export function KombinierteAnsicht() {
         <Field label="Probezeit (Monate)">
           <input type="number" inputMode="decimal" min={0} max={3} value={form.probezeitMonate} onChange={(e) => set('probezeitMonate', Number(e.target.value))} className={inputCls} />
         </Field>
+
+        {/* RL-13 PR 2 (UI-05): Die Engine las Monatsende, abweichende Frist und
+            die nicht bezogenen Tage Art. 329g schon immer aus demselben Input —
+            die Ansicht bot sie nur nicht an (Monatsende fest «Ja», die beiden
+            anderen nie gesetzt). Wortlaut der Felder wie im Sperrfristen-Rechner. */}
+        <Field label="Kündigungstermin">
+          <div className="flex items-center gap-4 pt-2">
+            <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer">
+              <input type="radio" name="kterm-kombi" checked={form.kuendigungsterminMonatsende} onChange={() => set('kuendigungsterminMonatsende', true)} />
+              Monatsende (Standard)
+            </label>
+            <label className="flex items-center gap-2.5 py-1.5 text-body-s cursor-pointer">
+              <input type="radio" name="kterm-kombi" checked={!form.kuendigungsterminMonatsende} onChange={() => set('kuendigungsterminMonatsende', false)} />
+              Freies Datum
+            </label>
+          </div>
+        </Field>
+
+        <Field label="Abweichende Frist (Monate)" optional hint="§3.2 schriftlich/GAV; ≥ 1 Monat gilt (auch kürzer)">
+          <input
+            type="number" inputMode="decimal" min={0} step={0.5}
+            value={form.abweichendeFristMonate ?? ''}
+            onChange={(e) => set('abweichendeFristMonate', e.target.value ? Number(e.target.value) : undefined)}
+            className={inputCls}
+            placeholder="Leer = gesetzliche Frist"
+          />
+        </Field>
+
+        {form.abweichendeFristMonate != null && (
+          <Field label="Abweichende Frist – Gültigkeit (§3.2)">
+            <div className="flex flex-col gap-2 pt-1">
+              <Checkbox checked={form.abweichendeFristFormGueltig ?? false}
+                onChange={(v) => set('abweichendeFristFormGueltig', v)}
+                label="Schriftlich / GAV / NAV (Gültigkeitsvoraussetzung)" />
+              <Checkbox checked={form.abweichendeFristQuelleGAV ?? false}
+                onChange={(v) => set('abweichendeFristQuelleGAV', v)}
+                label="Quelle GAV (Verkürzung < 1 Monat nur GAV & 1. DJ)" />
+            </div>
+          </Field>
+        )}
+
+        {form.kuendigendePartei === 'arbeitgeber' && (
+          <Field label="Urlaub des andern Elternteils (Art. 329g) – nicht bezogene Tage" optional hint="Art. 335c Abs. 3 OR (vormals Vaterschaftsurlaub), verlängert die Frist taggenau">
+            <input
+              type="number" inputMode="decimal" min={0} step={1}
+              value={form.vaterschaftsurlaubResttage ?? ''}
+              onChange={(e) => set('vaterschaftsurlaubResttage', e.target.value ? Number(e.target.value) : undefined)}
+              className={inputCls}
+              placeholder="0"
+            />
+          </Field>
+        )}
       </div>
 
-      {/* Sperrereignisse */}
-      <div className="space-y-3">
-        <h4 className="text-body-s font-semibold text-ink-700"><NormText text={`Sperrereignisse (Art. 336c OR)`} /></h4>
-        {/* R2-F/F1-9: nur der Repeater-Container wandert auf den geteilten
-            ListenEditor — die Hinweisbox weiter unten ist bereits
-            `lc-notice-danger` und bleibt unberührt. Die vier rohen `<label>`
-            sind `Field` gewichen; damit trägt «Niederkunft» sein «optional» in
-            der Prop (F1-6-Rest: der R2-E-Wächter liest nur `<Field label=…>`
-            und sah diese Stelle deshalb nicht). */}
-        <ListenEditor
-          element="Ereignis"
-          eintraege={form.sperrereignisse ?? []}
-          onHinzufuegen={addEreignis}
-          onEntfernen={removeEreignis}
-          kinder={(e, i) => (
-            <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3 items-end', 'grid grid-cols-1 @3xl/pane:grid-cols-3 gap-3 items-end')}>
-              <Field label="Typ">
-                <select value={e.typ} onChange={(ev) => updateEreignis(i, 'typ', ev.target.value)} className={inputCls + ' text-xs'}>
-                  {TYPEN.map((t) => <option key={t.code} value={t.code}>{t.label}</option>)}
-                </select>
-              </Field>
-              {/* B5-Fix 10.6.2026 (SHK-Abgleich): Die 6-Monats-Kappung des
-                  Art. 329i OR läuft ab Beginn der RAHMENFRIST, nicht zwingend
-                  ab Urlaubsbeginn — das Eingabefeld muss das verlangen. */}
-              <Field label={e.typ === 'betreuungsurlaub' ? 'Von (Beginn der Rahmenfrist)' : 'Von'}>
-                <DatumsFeld value={e.von} onChange={(v) => updateEreignis(i, 'von', v)} className={inputCls + ' text-xs'} />
-              </Field>
-              <Field label="Bis">
-                <DatumsFeld value={e.bis} onChange={(v) => updateEreignis(i, 'bis', v)} className={inputCls + ' text-xs'} />
-              </Field>
-              {MIT_NIEDERKUNFT.includes(e.typ) && (
-                <Field label="Niederkunft" optional>
-                  <DatumsFeld value={e.niederkunft ?? ''} onChange={(v) => updateEreignis(i, 'niederkunft', v)} className={inputCls + ' text-xs'} />
-                </Field>
-              )}
-            </div>
-          )}
-        />
-      </div>
+      {/* Sperrereignisse — geteilter Editor (RL-13 PR 2, §10) */}
+      <SperrereignisseEditor
+        wert={form.sperrereignisse ?? []}
+        onChange={(liste) => set('sperrereignisse', liste)}
+        hinweis={form.kuendigendePartei === 'arbeitnehmer' ? 'nur bei Arbeitgeberkündigung relevant' : undefined}
+      />
 
       <ErgebnisBlock>
       {ergebnisse.kuendigung?.status === 'nichtig' && (
