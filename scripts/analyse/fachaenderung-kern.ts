@@ -10,7 +10,8 @@
 //       Trailer heilt das: Tests werden bei Refactorings nicht angepasst.
 //       Dazu der künftige Queue-Squash (PR-Titel als Betreff, PR #1026).
 //  (R2) Neu: eine GEÄNDERTE oder ENTFERNTE Assertion (expect-Ausdruck,
-//       it/test-/describe-Name, Abschalten per .skip/.todo) in einem Test einer
+//       it/test-/describe-Name, each-Tabellenzeile, Abschalten per
+//       .skip/.todo) in einem Test einer
 //       Risiko-Engine — oder jeder Diff an golden/lexmetrik-golden.json —
 //       verlangt den Trailer `Fachaenderung: <Norm> — <Befund-ID/Begründung>`
 //       (Befund-Teil ≥ 15 Zeichen, analog Merge-Schutz). Rein hinzugefügte
@@ -31,7 +32,15 @@
 // (b) nur src/tests/**/*.test.ts(x) wird auf Assertions gelesen (Tests neben
 // dem Code und e2e nur über R1); (c) Hilfsfunktionen, die intern expect()
 // aufrufen, werden am Aufrufort nicht als Assertion erkannt; (d) Golden wird
-// dateiweise erkannt, nicht je `werte`-Eintrag (feiner erst mit RL-48/S1-08).
+// dateiweise erkannt, nicht je `werte`-Eintrag (feiner erst mit RL-48/S1-08);
+// (e) each-Tabellen (erfasst seit Gegenprüfung 24.9.2026): Zeilen von .each/
+// .for als Array-Literal, Tagged Template oder Array-Konstante DERSELBEN Datei
+// (auch via Spread/`.map(…)`) zählen je Zeile. NICHT verfolgt: importierte
+// Tabellen/Fixture-Dateien; Tabellen aus Aufrufen ohne Array-Konstante der
+// Datei (`Object.keys(X)`, Fabrikfunktionen); Werte, die eine Zeile oder ein
+// expect nur per Bezeichner einbindet (`${FRIST}`, `{ frist: FRIST }`,
+// `toBe(ERWARTET)` — `const FRIST = 50` ändern bleibt unsichtbar); Tabellen,
+// die per `for`-Schleife statt .each durchlaufen werden.
 // Die Gegenprüfungs-Quittung auf Risiko-Engines erzwingt check:merge-schutz —
 // hier nur Hinweis, nicht zweimal geprüft.
 import { posix } from 'node:path';
@@ -143,7 +152,7 @@ export interface TestStand {
 export interface EngineBefund { engine: string; dateien: string[]; entfernt: string[] }
 
 function sammle(ziel: Map<string, number>, m: Mengen): void {
-  for (const art of ['describe', 'ittest', 'expect'] as const) {
+  for (const art of ['describe', 'ittest', 'expect', 'each'] as const) {
     for (const [w, n] of m[art]) ziel.set(`${art}: ${w}`, (ziel.get(`${art}: ${w}`) ?? 0) + n);
   }
 }

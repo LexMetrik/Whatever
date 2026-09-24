@@ -10,7 +10,7 @@
 // Aufruf: npx vite-node scripts/analyse/test-assertion-diff.ts <base-ref> <head-ref> [pfad-praefix]
 //   pfad-praefix default: src/tests/
 //
-// Sammelt für beide Refs aus allen *.ts/*.tsx-Dateien unter dem Präfix drei
+// Sammelt für beide Refs aus allen *.ts/*.tsx-Dateien unter dem Präfix vier
 // normalisierte MULTIMENGEN (Duplikate zählen — ein Diff auf einer echten
 // Menge übersieht «ein Duplikat entfernt, ein anderes bleibt», Beleg:
 // `sed -i '' '16d' src/tests/verzugszins.test.ts` liess ein zweites `expect(
@@ -21,8 +21,14 @@
 //   - expect-Ausdrücke (jede CallExpression, deren Aufrufkette bis zum
 //     Identifier `expect` zurückverfolgt werden kann, ganzer normalisierter
 //     Ausdruckstext via node.getText())
+//   - each-Tabellenzeilen (seit Gegenprüfung RL-03, 24.9.2026): jede
+//     Datenzeile von .each/.for — Array-Element, Zeile einer Tagged-Template-
+//     Tabelle, Elemente einer Array-Konstante DERSELBEN Datei (auch über
+//     Spread oder `KONST.map(…)`) — als `<Testname>:<Zeile>`, whitespace-
+//     normalisiert wie die expect-Texte. Vorher blieb «50 → 999999» in einer
+//     Tabellenzeile bei gleichem Namen und expect-Text unsichtbar.
 //
-// Exit 0: alle drei Multimengen identisch zwischen base-ref und head-ref.
+// Exit 0: alle vier Multimengen identisch zwischen base-ref und head-ref.
 // Exit 1: mindestens eine Multimenge unterscheidet sich.
 // Exit 2: Aufruffehler, ein Ref ist ungültig, ODER einer der beiden Refs
 //         liefert unter dem Präfix keine passenden Dateien (Nichtleer-Wache,
@@ -33,7 +39,8 @@
 //
 // Kein `echo` — jede Ausgabe geht über `process.stdout`/`process.stderr`.
 // Seit RL-03 (23.9.2026) auch Bibliothek für fachaenderung-kern.ts;
-// `.skip`/`.todo` zählt als eigener Name (⊘), Abschalten = Entfernen.
+// `.skip`/`.todo` (vor oder nach `.each`) zählt als eigener Name (⊘),
+// Abschalten = Entfernen.
 
 import { execFileSync } from 'node:child_process';
 import ts from 'typescript';
@@ -77,10 +84,11 @@ export interface Mengen {
   describe: Map<string, number>;
   ittest: Map<string, number>;
   expect: Map<string, number>;
+  each: Map<string, number>;
 }
 
 function leereMengen(): Mengen {
-  return { describe: new Map(), ittest: new Map(), expect: new Map() };
+  return { describe: new Map(), ittest: new Map(), expect: new Map(), each: new Map() };
 }
 
 function zaehleHinein(map: Map<string, number>, wert: string): void {
@@ -112,25 +120,70 @@ function ersteStringArg(node: ts.CallExpression): string | null {
   return null;
 }
 
-/** Basis-Identifier-Name für describe/it/test — auch durch .only/.skip/
- *  .todo/.concurrent und .each(...)(...) hindurch. */
-function basisTestAufrufName(node: ts.CallExpression): string | null {
-  // describe(...) / it(...) / test(...)
-  if (ts.isIdentifier(node.expression)) {
-    return node.expression.text;
-  }
-  // describe.only(...) / it.skip(...) / test.todo(...)
-  if (ts.isPropertyAccessExpression(node.expression) && ts.isIdentifier(node.expression.expression)) {
-    return node.expression.expression.text;
-  }
-  // it.each([...])(...) / test.each([...])(...)
-  if (ts.isCallExpression(node.expression)) {
-    const innerCallee = node.expression.expression;
-    if (ts.isPropertyAccessExpression(innerCallee) && ts.isIdentifier(innerCallee.expression)) {
-      return innerCallee.expression.text;
+interface TestKette { basis: string; glieder: string[]; tabelle: ts.Node | null }
+
+/** Aufrufkette eines describe/it/test-Aufrufs bis zum Basis-Identifier — auch
+ *  durch .only/.skip/.todo/.concurrent VOR oder NACH .each(…)/.each`…`/.for(…)
+ *  hindurch; `tabelle` ist das Tabellen-Argument dieser Kette. */
+function testKette(node: ts.CallExpression): TestKette | null {
+  const glieder: string[] = [];
+  let tabelle: ts.Node | null = null;
+  let aktuell: ts.Expression = node.expression;
+  for (;;) {
+    if (ts.isPropertyAccessExpression(aktuell)) { glieder.unshift(aktuell.name.text); aktuell = aktuell.expression; continue; }
+    if (ts.isCallExpression(aktuell)) {
+      const c = aktuell.expression;
+      if (ts.isPropertyAccessExpression(c) && /^(each|for)$/.test(c.name.text)) tabelle = aktuell.arguments[0] ?? null;
+      aktuell = c; continue;
     }
+    if (ts.isTaggedTemplateExpression(aktuell)) { tabelle = aktuell.template; aktuell = aktuell.tag; continue; }
+    if (ts.isNonNullExpression(aktuell) || ts.isParenthesizedExpression(aktuell)) { aktuell = aktuell.expression; continue; }
+    return ts.isIdentifier(aktuell) ? { basis: aktuell.text, glieder, tabelle } : null;
   }
-  return null;
+}
+
+/** Typ-/Klammer-Hüllen abziehen (`as const`, `satisfies`, `<T>x`, `x!`). */
+function entkleide(e: ts.Expression): ts.Expression {
+  while (ts.isParenthesizedExpression(e) || ts.isAsExpression(e) || ts.isSatisfiesExpression(e) ||
+    ts.isTypeAssertionExpression(e) || ts.isNonNullExpression(e)) e = e.expression;
+  return e;
+}
+
+/** Initialisierer aller Variablen-Deklarationen der Datei, je Name (jede Ebene). */
+function konstanten(quelle: ts.SourceFile): Map<string, ts.Expression[]> {
+  const m = new Map<string, ts.Expression[]>();
+  const besuchen = (n: ts.Node): void => {
+    if (ts.isVariableDeclaration(n) && ts.isIdentifier(n.name) && n.initializer) {
+      m.set(n.name.text, [...(m.get(n.name.text) ?? []), n.initializer]);
+    }
+    ts.forEachChild(n, besuchen);
+  };
+  besuchen(quelle);
+  return m;
+}
+
+/** Normalisierte Datenzeilen einer each-Tabelle. Array-Literal → je Element;
+ *  Tagged Template → je nichtleere Textzeile; sonst der Ausdruckstext selbst
+ *  plus — über den Basis-Identifier (`FAELLE`, `FAELLE.map(…)`, `...FAELLE`) —
+ *  die Zeilen einer gleichnamigen Deklaration derselben Datei. */
+function tabellenZeilen(
+  t: ts.Node, konst: Map<string, ts.Expression[]>, quelle: ts.SourceFile, besucht = new Set<string>(),
+): string[] {
+  if (ts.isNoSubstitutionTemplateLiteral(t) || ts.isTemplateExpression(t)) {
+    return t.getText(quelle).slice(1, -1).split('\n').map(normalisiere).filter(Boolean);
+  }
+  const e = entkleide(t as ts.Expression);
+  if (ts.isArrayLiteralExpression(e)) {
+    return e.elements.flatMap((el) => ts.isSpreadElement(el)
+      ? tabellenZeilen(el.expression, konst, quelle, besucht) : [normalisiere(el.getText(quelle))]);
+  }
+  const zeilen = [normalisiere(e.getText(quelle))];
+  const basis = entkleide(basisAusdruck(e));
+  if (ts.isIdentifier(basis) && !besucht.has(basis.text)) {
+    besucht.add(basis.text);
+    for (const init of konst.get(basis.text) ?? []) zeilen.push(...tabellenZeilen(init, konst, quelle, besucht));
+  }
+  return zeilen;
 }
 
 function istTestArt(basisName: string): 'describe' | 'ittest' | null {
@@ -143,15 +196,19 @@ function verarbeiteDatei(text: string, dateiname: string, mengen: Mengen): void 
   const scriptKind = dateiname.endsWith('.tsx') ? ts.ScriptKind.TSX : ts.ScriptKind.TS;
   const quelle = ts.createSourceFile(dateiname, text, ts.ScriptTarget.Latest, true, scriptKind);
 
+  const konst = konstanten(quelle);
   const besuchen = (node: ts.Node): void => {
     if (ts.isCallExpression(node)) {
-      const testName = basisTestAufrufName(node);
-      if (testName) {
-        const art = istTestArt(testName);
-        if (art) {
-          const name = ersteStringArg(node);
-          const aus = /^(describe|it|test)(\.\w+)*\.(skip|todo)\b/.test(node.expression.getText(quelle)) ? '⊘' : '';
-          if (name !== null) zaehleHinein(mengen[art], aus + normalisiere(name));
+      const kette = testKette(node);
+      const art = kette ? istTestArt(kette.basis) : null;
+      if (kette && art) {
+        const name = ersteStringArg(node);
+        const aus = kette.glieder.some((g) => g === 'skip' || g === 'todo') ? '⊘' : '';
+        if (name !== null) zaehleHinein(mengen[art], aus + normalisiere(name));
+        if (kette.tabelle) {
+          for (const z of tabellenZeilen(kette.tabelle, konst, quelle)) {
+            zaehleHinein(mengen.each, `${aus}${normalisiere(name ?? '')}:${z}`);
+          }
         }
       }
       const basis = basisAusdruck(node);
@@ -164,7 +221,7 @@ function verarbeiteDatei(text: string, dateiname: string, mengen: Mengen): void 
   besuchen(quelle);
 }
 
-/** Drei Multimengen einer einzelnen Testdatei (Text + Dateiname). */
+/** Vier Multimengen einer einzelnen Testdatei (Text + Dateiname). */
 export function assertionMengen(text: string, dateiname: string): Mengen {
   const mengen = leereMengen();
   verarbeiteDatei(text, dateiname, mengen);
@@ -253,6 +310,7 @@ function main(): void {
     { key: 'describe', titel: 'describe-Namen' },
     { key: 'ittest', titel: 'it/test-Namen' },
     { key: 'expect', titel: 'expect-Ausdrücke' },
+    { key: 'each', titel: 'each-Tabellenzeilen' },
   ];
 
   for (const { key, titel } of kategorien) {
@@ -270,7 +328,7 @@ function main(): void {
 
   if (status !== 0) {
     process.stderr.write(
-      `test-assertion-diff: Inhalts-Diff gefunden — mindestens eine der drei Multimengen ` +
+      `test-assertion-diff: Inhalts-Diff gefunden — mindestens eine der vier Multimengen ` +
       `unterscheidet sich zwischen ${baseRef} und ${headRef}.\n`);
   }
 
