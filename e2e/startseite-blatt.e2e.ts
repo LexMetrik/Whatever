@@ -260,6 +260,64 @@ test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
     await page.goBack()
     await expect(blatt(page)).toHaveCount(0)
   })
+
+  // START-UEBERARBEITUNG U8 (David 24.9.2026 «mach danach das werkzeuge-blatt
+  // gleich wie gesetze»): zwei hohe Spalten statt zweier kleiner Kacheln über
+  // leerer Fläche — Vorbild U1 (Gesetze-Wahl, Fall «drei Spalten» oben).
+  test('U8 Wahl @1280: zwei Spalten füllen die Blatthöhe', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await page.goto('/?blatt=werkzeuge')
+    const inhalt = blatt(page).locator('.lc-start-blatt-inhalt')
+    const wahl = blatt(page).locator('.lc-start-fuellt')
+    await expect(wahl).toBeVisible()
+    const [i, w] = await Promise.all([inhalt.boundingBox(), wahl.boundingBox()])
+    expect(w!.height).toBeGreaterThan(i!.height - 60)
+    const spalten = await wahl.evaluate((el) => [...el.children].map((c) => Math.round(c.getBoundingClientRect().left)))
+    expect(new Set(spalten).size).toBe(2)
+  })
+
+  test('U8 Wahl: Rechner-Kategorie und Vorlagen-Rechtsgebiet direkt, Zurück je eine Stufe', async ({ page }) => {
+    await page.goto('/')
+    await werkzeugeKachel(page).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge$/)
+    const pfad = blatt(page).getByRole('navigation', { name: 'Pfad im Blatt' })
+
+    const kategorien = blatt(page).getByRole('list', { name: 'Rechner nach Kategorie' })
+    await kategorien.getByRole('button', { name: /Fristen/ }).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge\/rechner\/fristen$/)
+    await expect(pfad).toContainText('Fristen')
+    await expect(blatt(page).locator('a[href="/rechner/zpo-fristen"]').first()).toBeVisible()
+    // Nur DIESE Kategorie: ein Gebühren-Rechner steht nicht darin.
+    await expect(blatt(page).locator('a[href="/rechner/betreibungskosten"]')).toHaveCount(0)
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge$/)
+
+    const gebiete = blatt(page).getByRole('list', { name: 'Vorlagen nach Rechtsgebiet' })
+    // §8: ein Gebiet nur mit geplanten Vorlagen sagt das, statt «0» zu zählen.
+    await expect(gebiete.getByRole('button', { name: /Strafrecht/ })).toContainText('in Vorbereitung')
+    await gebiete.getByRole('button', { name: /Familienrecht/ }).click()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge\/vorlagen\/familienrecht$/)
+    await expect(pfad).toContainText('Familienrecht')
+    await expect(blatt(page).locator('a[href="/vorlagen/scheidungsklage"]').first()).toBeVisible()
+    await expect(blatt(page).locator('a[href="/vorlagen/gmbh-gruendung"]')).toHaveCount(0)
+    const inVorbereitung = blatt(page).locator('details').filter({ hasText: 'In Vorbereitung' })
+    await expect(inVorbereitung).toBeVisible()
+    await expect(inVorbereitung.locator('a[href]')).toHaveCount(0)
+    await expect(blatt(page).locator('select')).toHaveCount(0)
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=werkzeuge$/)
+    await expect(gebiete).toBeVisible()
+  })
+
+  test('U8 Deep-Link mit unbekannter Gebiets-ID fällt auf die Liste zurück', async ({ page }) => {
+    await page.goto('/?blatt=werkzeuge/vorlagen/mond')
+    await expect(blatt(page).getByPlaceholder('Vorlagen filtern')).toBeVisible()
+    const pfad = blatt(page).getByRole('navigation', { name: 'Pfad im Blatt' })
+    await expect(pfad).toContainText('Vorlagen')
+    await expect(pfad).not.toContainText('mond')
+    await page.goto('/?blatt=werkzeuge/rechner/vorlagen')
+    await expect(blatt(page).getByPlaceholder('Rechner filtern')).toBeVisible()
+  })
 })
 
 // ─── W2·29-WERKBANK-START S3 · Materialien-Kachel: sofort Suche ──────────────
