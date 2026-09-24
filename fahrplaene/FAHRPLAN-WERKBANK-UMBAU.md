@@ -394,7 +394,9 @@ sind schon je EINMAL geteilt (auch ZustaendigkeitForm nutzt den `Stepper` aus `v
 neu sind nur Kopf und eine gemeinsame Exportzeile (heute 25× inline). Kein Risikopfad.
 - **R0** Ratsche `rechner-flaechen-ratsche.test.tsx` (20 Routen, Erst-Render). **R1** `RechnerKopf`
   = Aufsatz auf `WerkzeugKopf`; Overline ohne «· Rechner» (Krume nennt es, `w224-ga-kopf`);
-  `etikett` frei für RL-12. *Gebaut 24.9.*
+  `etikett` frei für RL-12. Deklarierte Optik (Gegenprüfung 24.9.): H1 + Kurzbeschrieb serif wie die
+  Vorlagen (§e «getragene Titel»), `&` ohne `sansAmp` (nur für die Display-Stimme), Abstand Kopf→Karte
+  24 statt 32 px (Seiten-`space-y-6`, wie Vorlagen). *Gebaut 24.9.*
 - **R2** Ergebnisblock-Optik (Abschnitts-Strich `--reg-w`, Fristende-Kachel) + Posten Kontrast/Kachel-Höhen.
 - **R3** `ErgebnisExport` (Aktenzeichen → PDF → ICS → Teilen) für die 24 Formulare; Ratsche per Beispiel-Permalink.
 - **R4** Auswahl-Kacheln ein Look · `vorlagen/ui.tsx` an neutralen Ort · `Card`. **R5** Sonderseiten
