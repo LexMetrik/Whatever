@@ -42,23 +42,33 @@
 //    (Media-Query löschen)                                          ⇒ (d) rot
 //  · am Griff `aria-expanded` weglassen                             ⇒ (e) rot
 import { test, expect, type Page } from '@playwright/test';
-import { F_BLOCK, F_MARKE } from './helpers/fassungsRubrik';
+import { fassungsMarke } from './helpers/fassungsRubrik';
+
+// ── §6.3-DEKLARATION · S6 W1f (Entscheid David 24.9.2026, «die zeile soll ganz
+// weg. infos sollen alle im blatt erscheinen») ────────────────────────────────
+// Die Karte steht seither in der Klappzeile «Fassung dieses Artikels» im Reiter
+// «Änderungen» des Erlass-Blatts, nicht mehr in der Rubrik «Fassung» am
+// Artikelende. Die Sonde folgt dem Ort (`helpers/fassungsRubrik.ts`); ihre
+// Zusagen bleiben. EINE Zusage wird genauer gefasst, nicht gelockert: «nie das
+// Register» galt der KARTE. Das Blatt lädt das Register beim Öffnen ohnehin für
+// seine Reiter (Erläuterungen, Materialien) — gezählt wird darum der ZUWACHS
+// durch den Klick auf die Fassung, und der muss 0 sein wie bisher.
 
 const ORT = '/gesetze/bund/ZPO';
 // ZPO 176 führt drei Änderungsstände: einen mit erfasster Botschaft und zwei
 // mit blosser AS-Fundstelle — beide Zustände der Karte an EINEM Artikel
 // (gemessen 11.9.2026 gegen `public/materialien/entstehung/ZPO.json`).
 const ART = '176';
-const MARKE = `#art-${ART} ${F_MARKE}`;
-const BLOCK = `#art-${ART} ${F_BLOCK}`;
+const BLOCK = `[data-v3-blatt-fassung="${ART}"]`;
+const MARKE = `${BLOCK} > button`;
 const GRIFF = `${BLOCK} [data-entstehung-griff]`;
 const KARTE = `${BLOCK} [data-entstehung-karte]`;
 
 async function oeffneArtikel(page: Page, ort = ORT, art = ART): Promise<void> {
   await page.goto(ort);
   await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
-  await page.locator(`#art-${art}`).scrollIntoViewIfNeeded();
-  await expect(page.locator(`#art-${art} ${F_MARKE}`)).toBeVisible({ timeout: 20_000 });
+  // S6 W1f: Artikel an den Kopf, Blatt auf, Reiter «Änderungen» (Helfer).
+  await fassungsMarke(page.locator(`#art-${art}`), 20_000);
 }
 
 /** Alle Abrufe zählen, die diese Karte auslösen könnte. */
@@ -83,8 +93,10 @@ test.describe('W2·6c-E3 · Entstehung am Artikel', () => {
     // Marke nicht) — und trotzdem hat die Entstehung nichts geholt.
     await page.waitForTimeout(1200);
     expect(gezaehlt.entstehung, `vor dem Klick geladen: ${gezaehlt.entstehung.join(' · ')}`).toHaveLength(0);
-    expect(gezaehlt.register, `Register im Lesefluss geladen: ${gezaehlt.register.join(' · ')}`).toHaveLength(0);
-    expect(gezaehlt.kanten, `Kanten im Lesefluss geladen: ${gezaehlt.kanten.join(' · ')}`).toHaveLength(0);
+    // S6 W1f: Register und Kanten-Shard darf das offene Blatt für SEINE Reiter
+    // geholt haben — gemessen wird unten der Zuwachs durch den Klick.
+    const registerVorher = gezaehlt.register.length;
+    const kantenVorher = gezaehlt.kanten.length;
 
     await page.locator(MARKE).click();
     await expect(page.locator(BLOCK)).toBeVisible();
@@ -101,16 +113,17 @@ test.describe('W2·6c-E3 · Entstehung am Artikel', () => {
     // einmal rot (11.9.2026): der bestehende Aufklapp-Ladepfad `weckeDaten`
     // zieht es mit, und die Praxis-Zeile rief ihn. Sie liest seither den
     // erlass-lokalen Kanten-Shard (Herleitung in `EntstehungsBlock.tsx`).
-    expect(gezaehlt.register, 'das 2,1-MB-Register ist nicht der Kanal dieser Karte').toHaveLength(0);
+    expect(gezaehlt.register.length - registerVorher, 'das 2,1-MB-Register ist nicht der Kanal dieser Karte').toBe(0);
     // Der Praxis-Zähler holt höchstens den Shard DIESES Erlasses (ZPO hat
     // keinen ⇒ ein 404, gemessen 11.9.2026) — nie einen fremden.
-    expect(gezaehlt.kanten.length).toBeLessThanOrEqual(1);
+    // S6 W1f: gezählt ab dem Klick (das offene Blatt holt den Kanten-Shard für
+    // seine Artikelgruppe «Erläuterungen» selbst; ein 404 wird nicht gemerkt).
+    expect(gezaehlt.kanten.length - kantenVorher).toBeLessThanOrEqual(1);
     for (const u of gezaehlt.kanten) expect(u).toContain('/materialien/kanten/ZPO');
 
     // Ein zweiter Artikel desselben Erlasses holt NICHTS nach.
-    await page.locator('#art-177').scrollIntoViewIfNeeded();
-    await page.locator(`#art-177 ${F_MARKE}`).click();
-    await expect(page.locator(`#art-177 ${F_BLOCK}`)).toBeVisible();
+    await (await fassungsMarke(page.locator('#art-177'))).click();
+    await expect(page.locator('[data-v3-blatt-fassung="177"] [data-historie-zeile]')).toBeVisible();
     await page.waitForTimeout(600);
     expect(gezaehlt.entstehung).toHaveLength(1);
   });
@@ -178,8 +191,8 @@ test.describe('W2·6c-E3 · Entstehung am Artikel', () => {
     // oc-URI), das keine erfasste Änderung trifft — der Artikel hat also eine
     // Fassungshistorie, aber keine erfasste Entstehung.
     await oeffneArtikel(page, '/gesetze/bund/BGBM', '3');
-    await page.locator(`#art-3 ${F_MARKE}`).click();
-    const block = page.locator(`#art-3 ${F_BLOCK}`);
+    await page.locator('[data-v3-blatt-fassung="3"] > button').click();
+    const block = page.locator('[data-v3-blatt-fassung="3"]');
     await expect(block).toBeVisible();
     // Die Zeitleiste steht unverändert — nur die Entstehung fehlt.
     await expect(block.locator('[data-historie-zeile]')).toHaveCount(1);
@@ -195,8 +208,8 @@ test.describe('W2·6c-E3 · Entstehung am Artikel', () => {
   test('(d) @320 px: kein Überlauf, und der Aufbau verschiebt keinen Artikel', async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 720 });
     await page.goto(`${ORT}#art-${ART}`);
-    await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
-    await expect(page.locator(MARKE)).toBeVisible({ timeout: 20_000 });
+    await expect(page.locator('#art-1')).toBeAttached({ timeout: 20_000 });
+    await fassungsMarke(page.locator(`#art-${ART}`), 20_000);
     await page.evaluate(() => document.fonts?.ready);
     await page.waitForTimeout(600);
 
@@ -271,8 +284,12 @@ test.describe('W2·6c-E3 · Entstehung am Artikel', () => {
     await expect(page.locator(KARTE)).toHaveCount(0);
 
     // Escape schliesst die RUBRIK (W2·26/Z4) und gibt den Fokus an ihren Griff.
+    // S6 W1f: die Klappzeile im Blatt bleibt stehen, ihr INHALT geht — und das
+    // Blatt selbst bleibt offen (erst ein zweites Escape erreicht es).
     await page.keyboard.press('Escape');
-    await expect(page.locator(BLOCK)).toHaveCount(0);
+    await expect(page.locator(`${BLOCK} [data-historie-zeile]`)).toHaveCount(0);
+    await expect(page.locator(MARKE)).toHaveAttribute('aria-expanded', 'false');
     await expect(page.locator(MARKE)).toBeFocused();
+    await expect(page.locator('[data-v3-panel]')).toBeVisible();
   });
 });

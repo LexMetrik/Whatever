@@ -72,7 +72,8 @@ test.describe('R3 — zitierfähige Referenz', () => {
     // gerendert (Herleitung in `parts/Funktionszeile.tsx`); die Zusagen dieses
     // Falls — der amtliche Link steht am Artikel, und die Zitat-Kopie trägt ihn
     // — sind unverändert. Der Hover steht VOR der ersten Zusicherung.
-    await page.locator('#art-8 .lr7-bez').hover();
+    // S6 W1f (§6.3): die Aktionen stehen IMMER am Artikel — kein Hover mehr nötig.
+    await expect(page.locator('#art-8 [data-artikel-aktionen]')).toBeVisible();
     // Der Artikel muss den amtlichen Link auch ANBIETEN — sonst prüfte der Test
     // eine Zeile, die es aus gutem Grund (§8) gar nicht geben darf.
     const amtlichLink = page.locator('#art-8').getByRole('link', { name: /Amtliche Fassung/ });

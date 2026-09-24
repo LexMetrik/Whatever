@@ -9,31 +9,85 @@
 // derselbe Griff in sechs Specs sechsmal (§5), und die nächste Ortsverschiebung
 // wäre wieder eine Sammel-Änderung. Er misst nichts und behauptet nichts — er
 // benennt Selektoren und klappt auf.
-import { expect, type Locator } from '@playwright/test';
+//
+// ═══ S6 W1f (Entscheid David 24.9.2026) · DIE NÄCHSTE ORTSVERSCHIEBUNG ═══════
+// Wörtlich: «die zeile soll ganz weg. infos sollen alle im blatt erscheinen».
+// Die Fassung steht seither als Klappzeile «Fassung dieses Artikels» oben im
+// Reiter «Änderungen» des Erlass-Blatts (`v3/BlattArtikel.tsx`) — für den
+// Artikel, dem das Blatt gerade folgt. Genau dafür existiert dieser Helfer: die
+// Specs rufen weiter `fassungAufklappen(art)`, nur der Weg dahinter ist neu
+// (Artikel an den Kopf scrollen → Blatt auf → Reiter → Klappzeile).
+import { expect, type Locator, type Page } from '@playwright/test';
+import { panelAufziehen } from './panelOeffnen';
 
-/** Die Marke «n Fassungen ›» in der Funktionszeile eines Artikels. */
-export const F_MARKE = '.lr7-bez-marke[data-reg="f"]';
-/** Der aufgeklappte Block darunter (Badge «Gilt seit …» + Zeitleiste). */
-export const F_BLOCK = '.lr7-bez-block[data-reg="f"]';
-/**
- * Wartet, bis der Historie-Shard die Fassungs-Marke dieses Artikels gefüllt hat.
- * Sie kommt idle nach (`inhalt-zustand.tsx`), wie die Marken «Entscheide» und
- * «Materialien» aus der Zähl-Datei.
- */
-export async function fassungsMarke(art: Locator, timeout = 15_000): Promise<Locator> {
-  const marke = art.locator(F_MARKE);
-  await expect(marke).toBeVisible({ timeout });
-  return marke;
+/** Die Klappzeile «Fassung dieses Artikels» im Blatt (Reiter «Änderungen»). */
+export const F_BLOCK = '[data-v3-blatt-fassung]';
+
+/** Token eines Artikel-Elements (`#art-336_c` ⇒ `336_c`). */
+async function tokenVon(art: Locator): Promise<string> {
+  const id = await art.getAttribute('id');
+  if (!id?.startsWith('art-')) throw new Error(`kein Artikel-Element: id=${id}`);
+  return id.slice(4);
 }
 
 /**
- * Klappt die Fassungs-Rubrik auf und liefert die Zeile IM Block —
- * das, was bis D40 der Kopf-Slot zeigte.
+ * Macht `art` zum Artikel, dem das Blatt folgt: an den Kopf der Lesespalte
+ * scrollen (dort liest der Scroll-Spy), Blatt öffnen, warten, bis es den
+ * Artikel nennt (`data-v3-panel-artikel`).
+ */
+export async function blattFuerArtikel(art: Locator, timeout = 15_000): Promise<{ page: Page; token: string }> {
+  const page = art.page();
+  const token = await tokenVon(art);
+  await expect(art).toBeAttached({ timeout });
+  // Erst scrollen, dann öffnen: als Bottom-Sheet (@390) ist das Blatt modal,
+  // dahinter scrollt dann nichts mehr.
+  await art.evaluate((el) => el.scrollIntoView({ block: 'start' }));
+  await page.waitForTimeout(300);
+  await panelAufziehen(page);
+  const flaeche = page.locator('[data-v3-panel-artikel]').first();
+  // Das Blatt kann die Lesespalte verschieben (Spur ab 1024 px) — darum erst
+  // NACH dem Öffnen an den Kopf scrollen, und so lange, bis der Scroll-Spy folgt.
+  // Der Scroll-Spy wertet nur bei einem Scroll-EREIGNIS aus: steht der Artikel
+  // schon am Kopf, löst `scrollIntoView` keines aus — darum ein Zupfen um 1 px.
+  await expect(async () => {
+    await art.evaluate(async (el) => {
+      el.scrollIntoView({ block: 'start' });
+      await new Promise((r) => requestAnimationFrame(r));
+      const sc = el.closest('[data-pane]') ?? document.scrollingElement ?? document.documentElement;
+      (sc as Element).scrollBy?.(0, 1);
+    });
+    await expect(flaeche).toHaveAttribute('data-v3-panel-artikel', token, { timeout: 1_500 });
+  }).toPass({ timeout });
+  return { page, token };
+}
+
+/** Wählt einen Reiter des offenen Blatts. */
+export async function blattReiter(page: Page, reiter: string): Promise<void> {
+  const tab = page.locator(`[data-v3-panel-reiter="${reiter}"]`).first();
+  if (await tab.getAttribute('aria-selected') !== 'true') await tab.click();
+  await expect(tab).toHaveAttribute('aria-selected', 'true');
+}
+
+/**
+ * Wartet, bis der Historie-Shard die Fassungs-Zeile dieses Artikels im Blatt
+ * gefüllt hat, und liefert ihren Klapp-Griff (noch zu).
+ */
+export async function fassungsMarke(art: Locator, timeout = 15_000): Promise<Locator> {
+  const { page, token } = await blattFuerArtikel(art, timeout);
+  await blattReiter(page, 'aenderungen');
+  const zeile = page.locator(`[data-v3-blatt-fassung="${token}"]`);
+  await expect(zeile).toBeVisible({ timeout });
+  return zeile.locator('button[aria-expanded]').first();
+}
+
+/**
+ * Klappt die Fassung auf und liefert die Zeile «Gilt seit …» samt Zeitleiste —
+ * das, was bis D40 der Kopf-Slot und bis W1f die Rubrik «Fassung» zeigte.
  */
 export async function fassungAufklappen(art: Locator, timeout = 15_000): Promise<Locator> {
-  const marke = await fassungsMarke(art, timeout);
-  if ((await marke.getAttribute('aria-expanded')) !== 'true') await marke.click();
-  const block = art.locator(F_BLOCK);
-  await expect(block).toBeVisible();
+  const griff = await fassungsMarke(art, timeout);
+  if ((await griff.getAttribute('aria-expanded')) !== 'true') await griff.click();
+  const token = await tokenVon(art);
+  const block = art.page().locator(`[data-v3-blatt-fassung="${token}"]`);
   return block.locator('[data-historie-zeile]');
 }

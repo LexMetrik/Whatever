@@ -1,7 +1,7 @@
 // @shard-gruppe: 6
 import { test, expect, type Page } from '@playwright/test';
 import {
-  ANSICHT_PANEL, AUS_WAHL_NAME, FUSSNOTEN_WAHL_NAME, VERMERKE_SCHALTER_NAME, WAHL_ROLLE,
+  ANSICHT_PANEL, FUSSNOTEN_WAHL_NAME, WAHL_ROLLE,
 } from './helpers/leserBeschriftung';
 
 // ══ WELCHE HÜLLE PRÜFT DIESE DATEI? (Nachzug 17.8.2026, Arch-Prüfer 7;
@@ -365,23 +365,23 @@ test.describe('S2 · Schalter-Rundlauf ist verlustfrei (A1-konform)', () => {
     // RUNDLAUF-Prüfung darunter misst weiterhin die Höhen, byte-gleich.
     // §6.3-DEKLARATION (D40, 7.9.2026): `[data-hist-slot]` gibt es nicht mehr;
     // die schaltbare Fassungs-Spur ist die Rubrik-Marke der Funktionszeile.
+    // §6.3-DEKLARATION (S6 W1f, Entscheid David 24.9.2026): die Fassungs-Spur
+    // am Artikel ist gefallen, die Dreier-Wahl ein Schalter «Fussnoten» mit
+    // der Vorgabe «aus». Geschaltet wird darum der Apparat allein; der Rundlauf
+    // heisst «an und wieder aus». Der Sachverhalt bleibt: die Bedienung WIRKT,
+    // und sie lässt keinen Höhen-Rest zurück.
     const beiwerkSichtbar = () => page.evaluate(() => [...document.querySelectorAll(
-      '.lr7-bez-marke[data-reg="f"], [data-fn-apparat], [data-fn-marker]')]
+      '[data-fn-apparat], [data-fn-marker]')]
       .filter((e) => (e as HTMLElement).checkVisibility()).length);
-    // Ä116: V3 «Fassung» (helpers/leserBeschriftung).
-    // ── §6.3-DEKLARATION (D35-F3, Entscheid David 7.9.2026) ──────────────────
-    // Aus zwei unabhängigen Schaltern ist EINE Radiogruppe geworden; ein
-    // «Rundlauf» heisst darum nicht mehr «zweimal denselben Schalter», sondern
-    // «weg von der Vorgabe und zurück». Geprüfter Sachverhalt unverändert: die
-    // Bedienung WIRKT, und sie lässt keinen Höhen-Rest zurück.
-    for (const name of [FUSSNOTEN_WAHL_NAME, AUS_WAHL_NAME]) {
+    for (const name of [FUSSNOTEN_WAHL_NAME]) {
       const wirkungVorher = await beiwerkSichtbar();
-      expect(wirkungVorher, `Stellung «${String(name)}»: nichts Sichtbares zum Schalten`).toBeGreaterThan(0);
-      await schalten(name);                     // Vorgabe → andere Stellung
+      await schalten(name);                     // Vorgabe «aus» → an
       // Die Stellung muss überhaupt WIRKEN — sonst wäre der Rundlauf unten
       // trivial grün (eine Bedienung ohne Wirkung besteht ihn immer, §6.7).
-      expect(await beiwerkSichtbar(), `Stellung «${String(name)}» ändert gar nichts`).not.toBe(wirkungVorher);
-      await schalten(VERMERKE_SCHALTER_NAME);   // zurück auf die Vorgabe
+      const wirkungAn = await beiwerkSichtbar();
+      expect(wirkungAn, `Schalter «${String(name)}»: nichts Sichtbares geschaltet`).toBeGreaterThan(0);
+      expect(wirkungAn, `Schalter «${String(name)}» ändert gar nichts`).not.toBe(wirkungVorher);
+      await schalten(name);                     // zurück auf die Vorgabe «aus»
       expect(await hoehen(), `Stellung «${String(name)}»: Rundlauf lässt einen Rest zurück`).toEqual(vorher);
     }
   });

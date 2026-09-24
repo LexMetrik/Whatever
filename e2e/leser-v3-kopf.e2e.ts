@@ -28,7 +28,7 @@
 // Beleg: bibliothek/betrieb/testapparat-fang-historie-2026-08-31.md §1.
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
-import { ANSICHT_PANEL, VERMERKE_SCHALTER_NAME, WAHL_ROLLE } from './helpers/leserBeschriftung'
+import { ANSICHT_PANEL, FUSSNOTEN_WAHL_NAME, WAHL_ROLLE } from './helpers/leserBeschriftung'
 import { DROSSEL, REAKTIONS_BUDGET, REAKTIONS_LATTE, CONTAINER_BUDGET_CI, CONTAINER_LOKAL_READER } from './helpers/budgets'
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -229,7 +229,10 @@ test('«Zitat kopieren»: deterministisches Zitat (Kürzel + SR + Stand) in die 
   // Anlass: 13 532 Knöpfe im OR-Leser, §15). Die Zusage dieses Falls — das
   // deterministische Zitat in der Zwischenablage — ist unverändert; nur die
   // Vorbedingung ist jetzt ausgesprochen.
-  await page.locator('#art-8 .lr7-bez').hover();
+  // S6 W1f (§6.3, Entscheid David 24.9.2026, «Klein am Artikel»): die Aktionen
+  // stehen seither IMMER als ruhige Textzeile am Artikel (`[data-artikel-aktionen]`)
+  // — der Hover als Vorbedingung entfällt, die Zusage bleibt.
+  await page.locator('#art-8 [data-artikel-aktionen]').scrollIntoViewIfNeeded();
   await page.locator('#art-8').getByRole('button', { name: /Zitat kopieren:/ }).click();
   const clip = await page.evaluate(() => navigator.clipboard.readText());
   // Deterministisches Format: «… BV, SR 101 (Stand dd.mm.yyyy)».
@@ -704,7 +707,10 @@ test('A9: «Ansicht»-Dropdown + Gliederungs-Sprung flüssig unter CPU-Throttle,
   // D35-F3 (§6.3, Entscheid David 7.9.2026): die beiden sind Stellungen EINER
   // Radiogruppe geworden (`menuitemradio`). Geprüfter Sachverhalt unverändert —
   // Reaktionszeit je Bedienung unter Drossel.
-  for (const name of [/^Fussnoten/, VERMERKE_SCHALTER_NAME] as const) {
+  // S6 W1f (§6.3, Entscheid David 24.9.2026): die Radiogruppe ist EIN Schalter
+  // «Fussnoten» geworden — geprüft wird er zweimal (an, dann aus); der
+  // Sachverhalt (Reaktionszeit je Bedienung unter Drossel) bleibt.
+  for (const name of [FUSSNOTEN_WAHL_NAME, FUSSNOTEN_WAHL_NAME] as const) {
     t0 = Date.now();
     const sw = gruppe.getByRole(WAHL_ROLLE, { name });
     const vorher = await sw.getAttribute('aria-checked');

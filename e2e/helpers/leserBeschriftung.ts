@@ -48,22 +48,22 @@ export const LESER_SUCHFELD_NAME = /^Im .+ suchen/;
  * anzeigen als» (`menuitemradio`, `v3/LeserAenderungsWahl.tsx`). Die NAMEN
  * bleiben Wort für Wort — Ä116 gilt unverändert —, nur die Rolle wechselt.
  * ALS KONSTANTE, aus demselben Grund wie `SCHALTER_ROLLE` darüber (§17).
- * Rot zu bekommen: auf `'menuitemcheckbox'` zurückstellen ⇒ die Wahl-Fälle rot.
+ *
+ * ── S6 W1f (Entscheid David 24.9.2026) · AUS DER WAHL WIRD EIN SCHALTER ─────
+ * «einzige ausnahme sind wenn fussnoten aktiviert sind die sollen unten am
+ * artikel erschienen»: die Stellung «Fassung» ist mit der Funktionszeile
+ * gefallen, «aus» ist der ausgeschaltete Schalter. Übrig bleibt EIN
+ * `menuitemcheckbox` «Fussnoten» in der Gruppe «Im Gesetzestext». Die
+ * Konstanten `VERMERKE_SCHALTER_NAME` und `AUS_WAHL_NAME` sind gestrichen;
+ * `WAHL_ROLLE` trägt jetzt die Rolle des Schalters.
+ * Rot zu bekommen: auf `'menuitemradio'` zurückstellen ⇒ die Schalter-Fälle rot.
  */
-export const WAHL_ROLLE = 'menuitemradio' as const;
+export const WAHL_ROLLE = 'menuitemcheckbox' as const;
 
-/** Die Stellung, die die Fassungs-Zeile am Artikel zeigt (Ä116 — heisst wie das
- *  Element, das sie schaltet). Verankert (`^…$`), damit das Muster nicht in
- *  eine künftige Stellung «Fassungs-Zeitleiste» o. ä. hineintrifft (§7). */
-export const VERMERKE_SCHALTER_NAME = /^Fassung$/;
-
-/** Die Stellung, die den vollen amtlichen Apparat zeigt. NICHT verankert: der
- *  Accessible Name trägt seit A26/LM-025 den Erlass-Zähler («Fussnoten (932 im
- *  Erlass)»), und der ist Teil der Auskunft, nicht des Namens. */
+/** Der Fussnoten-Schalter. NICHT verankert: der Accessible Name trägt seit
+ *  A26/LM-025 den Erlass-Zähler («Fussnoten (932 im Erlass)»), und der ist Teil
+ *  der Auskunft, nicht des Namens. */
 export const FUSSNOTEN_WAHL_NAME = /^Fussnoten/;
-
-/** Die dritte Stellung: weder Fassungs-Zeile noch Änderungs-Fussnoten. */
-export const AUS_WAHL_NAME = /^aus$/;
 
 /** Der Schalter für die Rechtsprechung («Rechtsprechung in der Kopfzeile»,
  *  Ä115 — Substantiv wie seine beiden Nachbarn, benennt seit B2 seine

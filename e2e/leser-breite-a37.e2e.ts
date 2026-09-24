@@ -78,7 +78,10 @@ test.describe('E6/A37 — Zitat-Link fluchtet mit der Textkante (kein toter Steg
       // Rubrik offen ist (auf Geräten ohne Hover immer; Anlass §15, 13 532
       // Knöpfe im OR-Leser). Die GEMESSENE Sache — ihre Rechtskante fluchtet mit
       // der Textkante — ist unverändert; die Vorbedingung ist jetzt ausgesprochen.
-      await page.locator('article[id^="art-"] .lr7-bez').first().hover();
+      // S6 W1f (§6.3, Entscheid David 24.9.2026): die Aktionen stehen seither
+      // IMMER als ruhige Textzeile am Artikel — kein Hover mehr nötig; die
+      // gemessene Sache (Rechtskante fluchtet mit der Textkante) bleibt.
+      await expect(page.locator('article[id^="art-"] [data-artikel-aktionen]').first()).toBeVisible();
       const geo = await ersterArtikelGeo(page);
       expect(geo, `${key}: Artikel-Geometrie messbar`).not.toBeNull();
       // Kernkorrektur A37: die Aktionsgruppe fliesst NICHT mehr weit rechts in den

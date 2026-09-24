@@ -28,6 +28,7 @@
 // `background: var(--paper-raised)` auf `transparent` setzen (= der Ist-Zustand
 // vor dem Fix) ⇒ (a) und (b) fallen in beiden Themes. Belegt in
 // `abnahme/design-identitaet/R5-F1K.md`.
+import { blattFuerArtikel, blattReiter } from './helpers/fassungsRubrik';
 import { test, expect, type Locator } from '@playwright/test';
 import { vollerApparat } from './helpers/vollerApparat';
 
@@ -149,12 +150,13 @@ for (const thema of ['light', 'dark'] as const) {
       await expect(page.locator('#art-1')).toBeVisible({ timeout: 20_000 });
       // D35-F1 (7.9.2026, §6.3): die Funktionszeile klappt je RUBRIK auf —
       // hier gebraucht wird die Rubrik «Entscheide» (`data-reg="r"`).
-      const details = page.locator('#art-336_c .lr7-bez');
-      await expect(details).toHaveCount(1, { timeout: 20_000 });
-      const griff = details.locator('.lr7-bez-marke[data-reg="r"]');
-      await expect(griff).toHaveCount(1, { timeout: 20_000 });
-      if (await griff.getAttribute('aria-expanded') !== 'true') await griff.click();
-      const chip = details.locator('[data-bezug-linie] a[href^="/rechtsprechung/"]').first();
+      // S6 W1f (§6.3, Entscheid David 24.9.2026, «infos sollen alle im blatt
+      // erscheinen»): die Rubrik «Entscheide» am Artikelende ist gefallen; die
+      // Entscheide DIESES Artikels stehen im Reiter «Entscheide» des Blatts —
+      // mit derselben `KanteMitVorschau`. Geprüft wird das Popover dort.
+      await blattFuerArtikel(page.locator('#art-336_c'), 20_000);
+      await blattReiter(page, 'entscheide');
+      const chip = page.locator('[data-v3-panel] [role="tabpanel"] a[href^="/rechtsprechung/"]').first();
       // ── WARTEFENSTER, GEMESSEN (CI-Fix E, 7.9.2026) ───────────────────────
       // Lauf 34066539241/Shard 2 meldete diesen Fall zweimal FLAKY (hell und
       // dunkel), beide Male mit «kein Bezugs-Chip zum Hovern» im ersten Versuch
