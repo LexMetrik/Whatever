@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react';
+import { ENTWURF_ERKLAERUNG, ENTWURF_KURZ, ENTWURF_MARKE } from './entwurfWortlaut';
 
 // ─── W2·10-UI-NAV/N0d·W3: Ein-Zeilen-Legende «Entwurf» am Katalog-Kopf ────────
 //
@@ -30,7 +31,7 @@ export function EntwurfLegende() {
 
   return (
     <span ref={wrapRef} className="relative inline-flex items-center gap-1.5 text-body-s text-ink-500">
-      <span className="lc-badge-entwurf">Entwurf</span>
+      <span className="lc-badge-entwurf">{ENTWURF_MARKE}</span>
       <button
         type="button"
         aria-describedby={offen ? id : undefined}
@@ -38,7 +39,7 @@ export function EntwurfLegende() {
         onClick={() => setOffen((v) => !v)}
         className="cursor-help underline decoration-dotted decoration-ink-300 underline-offset-2 hover:decoration-ink-500"
       >
-        erstellt, fachlich noch nicht geprüft
+        {ENTWURF_KURZ}
       </button>
       {offen && (
         <span
@@ -46,11 +47,27 @@ export function EntwurfLegende() {
           id={id}
           className="lc-popover absolute left-0 top-full z-dropdown mt-1 block w-72 max-w-[80vw] p-3 text-left text-body-s font-normal normal-case tracking-normal text-ink-700"
         >
-          <span className="lc-overline mb-1 block text-warn-700">Entwurf</span>
-          Das Werkzeug ist erstellt, aber fachlich noch nicht geprüft. Zahlen und
-          Aussagen im Einzelfall gegen Gesetz und Sachverhalt verifizieren.
+          <span className="lc-overline mb-1 block text-warn-700">{ENTWURF_MARKE}</span>
+          {ENTWURF_ERKLAERUNG}
         </span>
       )}
+    </span>
+  );
+}
+
+// ─── RL-12 PR 2 (R3-06): die Marke am Werkzeug-Kopf ─────────────────────────
+//
+// Dieselbe Aussage wie die Legende, aber STATISCH (kein Knopf, kein Popover):
+// im Titelblatt-Band steht sie ausgeschrieben, damit sie auch ohne Antippen
+// lesbar ist und die Knopf-Inventare der Werkzeug-Seiten (Flächen-Ratschen,
+// R9-Knopf-Zählung) nicht verändert. Wortlaut aus `entwurfWortlaut` (§5).
+// `flex-wrap`: bei 320 px bricht der Kurzsatz unter die Marke statt
+// überzulaufen. Nur existierende Tokens (§13).
+export function EntwurfHinweis() {
+  return (
+    <span className="inline-flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1 text-body-s text-ink-600">
+      <span className="lc-badge-entwurf">{ENTWURF_MARKE}</span>
+      <span>{ENTWURF_KURZ}</span>
     </span>
   );
 }
