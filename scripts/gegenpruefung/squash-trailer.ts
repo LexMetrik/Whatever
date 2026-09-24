@@ -159,13 +159,18 @@ const GEGENPRUEFUNG_KOPF = /^gegenpruefung:\s*/i;
  * Sektion — kein Treffer in früheren Absätzen, keine Suche im Fliesstext.
  */
 export function leseGegenpruefungAusSquash(message: string): string[] {
+  return leseTrailerAusSquash(message, GEGENPRUEFUNG_KOPF);
+}
+
+/** Dieselbe Lesung für einen beliebigen Trailer-Kopf (RL-03: 'Fachaenderung:'). */
+export function leseTrailerAusSquash(message: string, kopf: RegExp): string[] {
   const ohneCoAuthor = schneideCoAuthorAb(zeilen(message));
   const absatz = letzterAbsatz(ohneCoAuthor);
   if (absatz.length === 0 || !TRAILER_KOPF.test(absatz[0])) return [];
 
   return entumbrich(absatz)
-    .filter((z) => GEGENPRUEFUNG_KOPF.test(z))
-    .map((z) => z.replace(GEGENPRUEFUNG_KOPF, '').trim())
+    .filter((z) => kopf.test(z))
+    .map((z) => z.replace(kopf, '').trim())
     .filter(Boolean);
 }
 
@@ -178,11 +183,16 @@ export function leseGegenpruefungAusSquash(message: string): string[] {
  * (check-merge-schutz.ts), diese Funktion bekommt nur die fertige Ausgabe.
  */
 export function leseGegenpruefungAusRohLog(rohNulGetrennt: string): string[] {
+  return leseTrailerAusRohLog(rohNulGetrennt, GEGENPRUEFUNG_KOPF);
+}
+
+/** Dieselbe Rohlog-Lesung für einen beliebigen Trailer-Kopf. */
+export function leseTrailerAusRohLog(rohNulGetrennt: string, kopf: RegExp): string[] {
   return rohNulGetrennt
     .split('\0')
     .map((m) => m.replace(/^\n+/, '').replace(/\n+$/, ''))
     .filter(Boolean)
-    .flatMap((m) => leseGegenpruefungAusSquash(m));
+    .flatMap((m) => leseTrailerAusSquash(m, kopf));
 }
 
 /**

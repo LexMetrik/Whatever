@@ -44,8 +44,8 @@ describe('Flächen-Definition', () => {
   });
 
   it('nimmt Testtreue (§6.3) aus — Wächter samt Helfer', () => {
-    expect(istFlaeche('scripts/check-testtreue.ts')).toBe(false);
-    expect(istFlaeche('scripts/testtreue-kern.ts')).toBe(false);
+    expect(istFlaeche('scripts/check-fachaenderung.ts')).toBe(false);
+    expect(istFlaeche('scripts/analyse/fachaenderung-kern.ts')).toBe(false);
   });
 
   it('zählt Tests nie mit — §6.7 verlangt sie', () => {

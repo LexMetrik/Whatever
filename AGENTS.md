@@ -140,7 +140,7 @@ innerhalb, jeder Trailer einzeilig (git liest Trailer nur im letzten Absatz).
 
 Commit-Betreff nie mit Typ `refactor`, wenn der Commit Dateien unter
 `src/tests/**` ändert — ein Test-Split ist eine deklarierte Änderung, Form
-«QS-FREMDAGENTEN … : <deutscher Titel>» (§6.3, `check:testtreue`, Beleg PR #709).
+«QS-FREMDAGENTEN … : <deutscher Titel>» (§6.3, `check:fachaenderung`, Beleg PR #709).
 
 **Bei rotem Tor oder unklarem Auftrag: Entwurfs-PR mit Meldung, nicht raten.**
 Ein roter Lauf wird nicht «kreativ» gelöst. Ein Entwurfs-PR mit ehrlicher

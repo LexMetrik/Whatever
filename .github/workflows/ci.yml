@@ -80,7 +80,7 @@
 #
 # JETZT: kein Pfadfilter mehr auf `push`; der `diff`-Job klassiert auch
 # push-Events. Damit gilt auf main dieselbe Semantik wie im PR — art=doku fährt
-# `Merge-Schutz`, `Testtreue` und `check:plan` ECHT und quittiert den Rest.
+# `Merge-Schutz`, `Fachänderungs-Riegel` und `check:plan` ECHT und quittiert den Rest.
 # Ergebnis beider Richtungen: die 42 teuren Läufe werden billig, und die 158
 # bisher ungeprüften Pushes bekommen erstmals die drei Tore, die sie brauchen.
 #
@@ -426,7 +426,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
+              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
             fi
             exit 0
           fi
@@ -501,7 +501,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
+              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Fachänderungs-Riegel, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
             fi
             exit 0
           fi
@@ -797,8 +797,14 @@ jobs:
       #     weil check:plan nirgends in CI lief.
       - name: Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)
         run: npm run check:merge-schutz
-      - name: Testtreue (§6.3 — refactor-Commits ändern keine Tests)
-        run: npm run check:testtreue
+      # RL-03 (ersetzt check:testtreue); im PR zählt der PR-Body (Queue-Squash).
+      # R1 prüft im pull_request-Lauf zusätzlich den PR-Titel als künftigen
+      # Squash-Betreff (GITHUB_EVENT_PATH, PR #1026, Beleg Queue-Rauswurf #1023).
+      - name: Fachänderungs-Riegel (§6.3 + Fachaenderung-Trailer)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FACHAENDERUNG_PR: ${{ github.event.pull_request.number }}
+        run: npm run check:fachaenderung
       # Squash-Falle (Beleg 7.9.2026, PR #739): GitHub setzt beim Squash-Merge ALLE
       # Commit-Betreffs des PR in die Commit-Message von main. Trägt EINER davon
       # `[skip ci]`, überspringt GitHub auf main jeden Workflow — kein CI, KEIN
@@ -822,43 +828,26 @@ jobs:
             exit 1
           fi
           echo "Squash-Schutz grün — kein [skip ci] in den PR-Commits."
-      # Fremd-PR-Tor (T6, 3.9.2026, fahrplaene/FAHRPLAN-FREMDAGENTEN.md §2
-      # Phase 1): nur Branches im Jules-Muster (19-stellige Task-ID im Namen oder
-      # Präfix `jules-`/`jules/`) sind
-      # zuständig — Regex-Erkennung im Shell-Step, weil `if:` keine Regex kann.
-      # Bewusst KEIN eigenes check-*.ts (Steuerungs-Deckel, §17-Gegengewicht):
-      # Regel 1 = bestehendes scripts/analyse/test-assertion-diff.ts (Jules darf
-      # Tests verschieben, nie ändern), Regel 2 = keine Datei ausserhalb src/**
-      # (Risikopfade deckt check:merge-schutz). Exit ≠ 0 des Diff-Skripts (1 oder
-      # 2 = Referenz fehlt) ist rot — ein Tor ohne Referenz ist kein Tor.
-      - name: Fremd-PR-Tor (Assertion-Diff + Dateigrenzen, Jules-Branches)
+      # Fremd-PR-Tor (T6, 3.9.2026, fahrplaene/FAHRPLAN-FREMDAGENTEN.md §2) für
+      # Jules-Branches (19-stellige Task-ID oder Präfix `jules-`/`jules/`; nie
+      # «jules irgendwo», Beleg PR #656). Die Assertion-Regel ging am 23.9.2026
+      # (RL-03) in check:fachaenderung auf; Rest: Dateigrenze src/** und
+      # Kommentar-Bilanz (Regel 3/3b, Belege PR #662, #855/#857 — Details im
+      # Kopf von scripts/analyse/kommentar-bilanz.ts).
+      - name: Fremd-PR-Tor (Dateigrenzen + Kommentar-Bilanz, Jules-Branches)
         if: github.event_name == 'pull_request'
         env:
           HEAD_REF: ${{ github.head_ref }}
         run: |
-          # Jules-Muster (Beleg 4.9.2026, PR #647): `jules-<19 Ziffern>-<8 hex>` ODER
-          # `<slug>-<19 Ziffern>` — also: 19-Ziffern-Lauf irgendwo oder Präfix `jules-`/`jules/`.
-          # NICHT «jules irgendwo im Namen»: Beleg 4.9.2026, PR #656 (`docs/jules-weiche`) wurde
-          # fälschlich als Fremd-PR geprüft und rot (Dateien ausserhalb src/**).
           if ! [[ "$HEAD_REF" =~ [0-9]{19} || "$HEAD_REF" =~ ^jules[-/] ]]; then
             echo "Fremd-PR-Tor: nicht zuständig ($HEAD_REF)"; exit 0
           fi
           git fetch -q origin main
           basis=$(git merge-base origin/main HEAD)
-          npx vite-node scripts/analyse/test-assertion-diff.ts "$basis" HEAD src/tests/
           ausserhalb=$(git diff --name-only "$basis"..HEAD | grep -v '^src/' || true)
           if [ -n "$ausserhalb" ]; then
             echo "Fremd-PR-Tor ROT — Jules-Branch ändert Dateien ausserhalb src/**:"; echo "$ausserhalb"; exit 1
           fi
-          # Regel 3 + Regel 3b (Kommentar-Bilanz): ausgelagert nach
-          # scripts/analyse/kommentar-bilanz.ts (14.9.2026, Lehre PR #855/#857)
-          # — Logik gehört in ein testbares Skript, YAML ruft nur auf
-          # (Steuerungs-Deckel, §17-Gegengewicht). Regel 3 (Beleg PR #662,
-          # 4.9.2026): Summen-Bilanz — Jules erreichte die Zeilen-Grenze durch
-          # Löschen von 197 Kommentarzeilen. Regel 3b (Beleg PR #855/#857,
-          # 14.9.2026): eine gleichbleibende Summe verdeckte vier verfälschte
-          # Kommentarzeilen («hing»→«hung» u. a.) — Multimengen-Vergleich der
-          # getrimmten Kommentarzeilen deckt das auf. Details im Skriptkopf.
           npx vite-node scripts/analyse/kommentar-bilanz.ts "$basis" HEAD 'src/*.ts' 'src/*.tsx'
           echo "Fremd-PR-Tor grün ($HEAD_REF, Basis ${basis:0:8})"
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
