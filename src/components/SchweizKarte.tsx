@@ -36,6 +36,34 @@ const KANTE = 1;
 const RING_INNEN = { stark: 3, weich: 2 } as const;
 const RING_GEHAEUSE = { stark: 6, weich: 4.5 } as const;
 
+// ── `kompakt`: Trefferfläche für kleine Kantone (START-UEBERARBEITUNG U5,
+// Befund U1-Bau 24.9.2026) ───────────────────────────────────────────────────
+// In der schmalen Kantone-Spalte der Wahl-Stufe rendert dieselbe Karte auf
+// ~200 px statt ~640 px — Basel-Stadt misst im viewBox-Raum nur rund 22×24
+// Einheiten (gemessen an `KANTONE_KARTE.paths.BS`), bei 200 px Kartenbreite
+// also rund 4×5 CSS-px: ein Zeigerklick trifft dort nicht zuverlässig.
+//
+// Fix nach Wahl (b) aus dem Auftrag: für jeden kleinen Kanton trägt ein
+// umschliessendes `<g role="button" …>` ZWEI Kind-Pfade — den sichtbaren
+// (dünner Rand, normale Füllung) und einen unsichtbaren mit breitem `stroke`
+// (`pointerEvents="all"` — Füllung UND breiter Rand). Rolle/Label/Klick-Handler sitzen auf dem `<g>`,
+// nicht auf dem sichtbaren Pfad allein: ein ERSTER Anlauf mit zwei GESCHWISTER-
+// Pfaden auf gleicher Ebene liess Playwrights Ziel-Auflösung («target or
+// descendant of target») am eigenen unsichtbaren Geschwister-Pfad scheitern
+// (`<path …> intercepts pointer events`, rot gezeigt 24.9.2026) — beide Pfade
+// als Kinder DESSELBEN zugänglichen Elements beheben das strukturell, nicht
+// nur für Playwright: ein echter Zeigerklick zählt so oder so als Klick auf
+// den Kanton. Die kleinen Kantone werden bei `kompakt` zusätzlich ANS ENDE der
+// Zeichenfolge verschoben, damit ihr breiter Rand über jedem Nachbarn liegt —
+// unabhängig von der Reihenfolge in `KANTONE_KARTE.paths`. Nur additiv über
+// die neue Prop `kompakt` (Default `false`): alle anderen Aufrufer (u. a.
+// `/gesetze`, Stufe „Kantone“) bleiben byte-gleich im Verhalten. Liste =
+// Befund U1-Bau (kleinste Flächen auf der Karte); eine feste Breite statt
+// einer Formel je Kanton, weil das Ziel „zuverlässig treffbar auf der
+// schmalen Spalte“ ist, nicht ein exaktes Mass.
+const KLEINE_KANTONE: readonly string[] = ['BS', 'ZG', 'AI', 'AR', 'NW', 'OW', 'SH', 'GE'];
+const HALO_BREITE = 46;
+
 /**
  * Markierungs-Ring über einem Kanton: dunkles Gehäuse (--karte-kante) UNTER dem
  * Messing-Ring (--karte-marke). Das Gehäuse ist der Grund, warum die Markierung
@@ -77,7 +105,7 @@ function LegendeFeld({ fuellung, schraffiert, wort }: { fuellung: string; schraf
  * Bedienung die Aussage. Reine Darstellung (§3): die Stufe kommt fertig von
  * aussen, die Karte leitet nichts ab.
  */
-export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, className }: {
+export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, className, kompakt = false }: {
   aktiv?: string | null;
   onWaehle: (kanton: string) => void;
   nameFuer?: (kanton: string) => string;
@@ -85,6 +113,10 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, 
   /** Erfassungsgrad je Kanton — `null`/fehlend = keine erfassten Erlasse (neutral + schraffiert). */
   gradFuer?: (kanton: string) => KartenGrad | null;
   className?: string;
+  /** Karte rendert sehr schmal (Wahl-Spalte): vergrössert die Trefferfläche
+   *  kleiner Kantone, siehe `KLEINE_KANTONE` oben. Default `false` — ohne die
+   *  Prop bleibt jeder bestehende Aufrufer byte-gleich im Verhalten. */
+  kompakt?: boolean;
 }) {
   const [hover, setHover] = useState<string | null>(null);
   const name = (k: string) => (nameFuer ? nameFuer(k) : k);
@@ -132,8 +164,16 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, 
   const gezeigt = hover ?? aktiv ?? null;
   return (
     <div className={className ?? 'w-full max-w-[40rem] mx-auto'}>
-      {/* Bildunterschrift: zeigt, was unter dem Zeiger/Fokus liegt. */}
-      <div className="mb-2 flex items-baseline gap-2 min-h-[1.5rem]" aria-live="polite">
+      {/* Bildunterschrift: zeigt, was unter dem Zeiger/Fokus liegt. `kompakt`:
+          zusätzlich `overflow-hidden whitespace-nowrap` — auf der schmalen
+          Spalte lief die dreiteilige Zeile (Name · Kürzel · Zustand) sonst um
+          und wuchs auf zwei Zeilen, was die KARTE DARUNTER beim Hover nach
+          unten schob (rot gezeigt 24.9.2026: ein `mousemove` auf einen
+          kleinen Kanton verschob dessen eigene Fläche unter dem Zeiger, bevor
+          `mousedown`/`mouseup` dort ankamen — derselbe Effekt träfe auch
+          einen echten Zeiger, nicht nur den Test). `min-h` bleibt für BEIDE
+          Modi die einzige Höhen-Klammer. */}
+      <div className={`mb-2 flex items-baseline gap-2 min-h-[1.5rem]${kompakt ? ' overflow-hidden whitespace-nowrap' : ''}`} aria-live="polite">
         {gezeigt ? (
           <>
             <span className="text-body-s font-semibold text-ink-900">{name(gezeigt)}</span>
@@ -155,27 +195,60 @@ export function SchweizKarte({ aktiv, onWaehle, nameFuer, verfuegbar, gradFuer, 
             <line x1="0" y1="0" x2="0" y2="8" stroke="var(--karte-kante)" strokeWidth="2" />
           </pattern>
         </defs>
-        {eintraege.map(([k, d]) => {
+        {/* `kompakt`: die kleinen Kantone rücken ans ENDE der Zeichenfolge
+            (Reihenfolge unverändert für alle anderen), damit ihre breitere
+            Trefferfläche über jedem Nachbarn liegt, unabhängig davon, wie
+            `KANTONE_KARTE.paths` selbst sortiert ist. */}
+        {(kompakt
+          ? [...eintraege].sort((a, b) => Number(KLEINE_KANTONE.includes(a[0])) - Number(KLEINE_KANTONE.includes(b[0])))
+          : eintraege
+        ).map(([k, d]) => {
           const ist = aktiv === k;
           const waehlbar = verfuegbar ? verfuegbar(k) : true;
           const g = grad(k);
           // Ohne Erfassungsgrad (kein Erlass — oder im aktiven Filter keiner
           // übrig) neutral UND schraffiert; sonst die Stufe als Füllung.
           const fill = g ? FUELLUNG[g.stufe] : `url(#${SCHRAFFUR_ID})`;
+          const gemeinsam = {
+            onClick: waehlbar ? () => onWaehle(k) : undefined,
+            onMouseEnter: () => setHover(k),
+            onMouseLeave: () => setHover((h: string | null) => (h === k ? null : h)),
+            onFocus: () => setHover(k),
+            onBlur: () => setHover((h: string | null) => (h === k ? null : h)),
+            onKeyDown: waehlbar ? (e: React.KeyboardEvent) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onWaehle(k); } } : undefined,
+            tabIndex: waehlbar ? 0 : -1,
+            role: 'button' as const,
+            'aria-pressed': ist,
+            'aria-label': waehlbar ? name(k) : `${name(k)} — keine Erlasse`,
+            className: waehlbar ? 'cursor-pointer' : 'cursor-default',
+          };
+          // Tooltip trägt Zahl + Zustands-Wort — die Aussage der Füllung
+          // steht damit auch als Text bereit (§11.6.8).
+          const titel = <title>{tooltip(k)}</title>;
+          if (!kompakt || !KLEINE_KANTONE.includes(k)) {
+            return (
+              <path key={k} d={d} {...gemeinsam} style={{ fill, stroke: 'var(--karte-kante)', strokeWidth: KANTE }}>
+                {titel}
+              </path>
+            );
+          }
+          // Kleiner Kanton in `kompakt`: Rolle/Label/Handler sitzen auf dem
+          // `<g>`, nicht auf dem sichtbaren Pfad — der breite unsichtbare
+          // Treffer-Pfad ist dann ein DESCENDANT desselben zugänglichen
+          // Elements statt eines Geschwisters (Begründung oben bei
+          // `KLEINE_KANTONE`).
           return (
-            <path key={k} d={d}
-              onClick={waehlbar ? () => onWaehle(k) : undefined}
-              onMouseEnter={() => setHover(k)} onMouseLeave={() => setHover((h) => (h === k ? null : h))}
-              onFocus={() => setHover(k)} onBlur={() => setHover((h) => (h === k ? null : h))}
-              onKeyDown={waehlbar ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onWaehle(k); } } : undefined}
-              tabIndex={waehlbar ? 0 : -1} role="button" aria-pressed={ist}
-              aria-label={waehlbar ? name(k) : `${name(k)} — keine Erlasse`}
-              style={{ fill, stroke: 'var(--karte-kante)', strokeWidth: KANTE }}
-              className={waehlbar ? 'cursor-pointer' : 'cursor-default'}>
-              {/* Tooltip trägt Zahl + Zustands-Wort — die Aussage der Füllung
-                  steht damit auch als Text bereit (§11.6.8). */}
-              <title>{tooltip(k)}</title>
-            </path>
+            <g key={k} {...gemeinsam}>
+              {titel}
+              {/* `pointerEvents="all"`: fängt die GANZE Geometrie (Füllung UND
+                  Rand-Band), unabhängig von der (hier fehlenden) sichtbaren
+                  Malung — `pointerEvents="stroke"` allein liess die MITTE des
+                  Kantons klicklos (rot gezeigt 24.9.2026: Playwright klickt
+                  auf die Bbox-Mitte, die im Innern liegt, nicht am Rand). */}
+              <path d={d} aria-hidden fill="none" stroke="transparent" strokeWidth={HALO_BREITE}
+                strokeLinejoin="round" pointerEvents="all" />
+              <path d={d} aria-hidden pointerEvents="none" style={{ fill, stroke: 'var(--karte-kante)', strokeWidth: KANTE }} />
+            </g>
           );
         })}
         {/* Nicht-interaktive Ring-Pfade: zeichnen die Markierung EIN zweites Mal

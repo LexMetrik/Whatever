@@ -89,7 +89,7 @@ const kantonGrad = (k: string) => {
 
 function Wahl({ zu }: { zu: Zu }) {
   return (
-    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-3 lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0">
+    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.25fr_1fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0">
       <WahlSpalte kopf={<RubrikKachel reg="g" onWahl={zu('bund')} titel="Bund" zahl={nf(z.gesetzeBundesrechtVolltext)} einheit="Bundeserlasse" />}>
         <ul aria-label="Rechtsgebiete des Bundes" className="px-2">
           {z.bundSystematik.map((g) => (
@@ -107,7 +107,9 @@ function Wahl({ zu }: { zu: Zu }) {
         {/* `max-w-xs` untereinander: die Karte in voller Telefonbreite schob
             die International-Spalte unnötig weit nach unten. */}
         <div className="mx-auto max-w-xs px-4 lg:max-w-none">
-          <SchweizKarte className="w-full" onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
+          {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
+              U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
+          <SchweizKarte className="w-full" kompakt onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
             verfuegbar={(k) => nKanton(k) > 0} gradFuer={kantonGrad} />
         </div>
         <ul aria-label="Kantone als Liste" className="mt-2 px-2">

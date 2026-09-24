@@ -136,6 +136,23 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     expect(new Set(spalten).size).toBe(3)
   })
 
+  // START-UEBERARBEITUNG U5 (David 24.9.2026 «nimm die kantone-karte auch
+  // gleich mit»): auf der schmalen Kantone-Spalte der Wahl (1024–1280 px) war
+  // die Karte so klein, dass kleine Kantone per Zeigerklick nicht zuverlässig
+  // trafen (Befund U1-Bau, siehe Kommentar oben bei «Kleine Kantone … per
+  // Tastatur»). ECHTER Zeigerklick statt Fokus+Enter — bei BEIDEN Breiten.
+  for (const breite of [1280, 1024]) {
+    test(`Wahl @${breite}: Kantone-Karte per Mausklick — Basel-Stadt und Zug treffen`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/?blatt=gesetze')
+      await blatt(page).getByRole('button', { name: 'Basel-Stadt', exact: true }).click()
+      await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/BS$/)
+      await page.goBack()
+      await blatt(page).getByRole('button', { name: 'Zug', exact: true }).click()
+      await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/ZG$/)
+    })
+  }
+
   test('Kantone: Landeskarte und Liste der 26, dann Erlassliste', async ({ page }) => {
     await page.goto('/?blatt=gesetze/kantone')
     await expect(blatt(page).locator('svg').first()).toBeVisible()
