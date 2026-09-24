@@ -95,7 +95,15 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     await page.goBack()
     await expect(page).toHaveURL(/\?blatt=gesetze$/)
 
-    await blatt(page).getByRole('button', { name: 'Basel-Stadt', exact: true }).click()
+    await blatt(page).getByRole('button', { name: 'Zürich', exact: true }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/ZH$/)
+    await page.goBack()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    // Kleine Kantone auf der schmalen Karte: per Tastatur (Fokus + Enter) —
+    // ein Zeigerklick auf die wenige Pixel grosse Fläche von BS ist kein
+    // verlässlicher Weg; dafür steht «Alle 26 Kantone» darunter.
+    await blatt(page).getByRole('button', { name: 'Basel-Stadt', exact: true }).focus()
+    await page.keyboard.press('Enter')
     await expect(page).toHaveURL(/\?blatt=gesetze\/kantone\/BS$/)
     await page.goBack()
     await expect(page).toHaveURL(/\?blatt=gesetze$/)
