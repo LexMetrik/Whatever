@@ -182,3 +182,85 @@ describe('RL-18 / F2-04 — Zustellung während Rechtsstillstand', () => {
     expect(r.warnungen.some((x) => x.includes('BGE 127 III 173'))).toBe(false);
   });
 });
+
+// ─── RL-18 Nachzug (Gegenprüfung #2, 24.9.2026): richtungssicherer Hauptwert ──
+//
+// Befund: Pfandverwertungs-Presets (Art. 154 SchKG) — Wartefrist in Monaten,
+// Auslöser «Zustellung Zahlungsbefehl (Bedenkfrist Art. 152 SchKG)». ZB 8.4.2026
+// (Osterferien 29.3.–12.4.2026), 1 Monat: Kachel wies 13.05.2026 aus (Anker
+// letzter Ferientag), die offengelegte Ereignistag-Lesart (Wirkungstag 13.4.)
+// ergibt 15.05.2026 (Ablauf Mi 13.5. → Folgetag Do 14.5.2026 = Auffahrt → Fr
+// 15.5.). Bei einer Wartefrist ist das spätere Datum das sichere (§1): wer am
+// 13.5. handelt, handelt nach der Gegenlesart verfrüht.
+//
+// Soll: beide Lesarten werden berechnet; der Hauptwert ist richtungssicher —
+// Wartefrist → das SPÄTERE Datum, Handlungs-/Verwirkungsfrist → das FRÜHERE.
+// Gilt für Tages- und Kalenderfristen. Soll-Fälle per vite-node nachgerechnet
+// (Betreibungsferien-Kalender der Engine, 24.9.2026):
+//   Wartefrist 1 Monat,    ZB 8.4.2026   → 13.05.2026 / 15.05.2026 → Hauptwert 15.05.2026
+//   Wartefrist 20 Tage,    ZB 20.12.2025 → 22.01.2026 / 23.01.2026 → Hauptwert 23.01.2026
+//     (Weihnachtsferien 18.12.2025–1.1.2026; Tag 20 = Mi 21.1. bzw. Do 22.1.)
+//   Verwirkung 1 Jahr,     ZB 8.4.2026   → 12.04.2027 / 13.04.2027 → Hauptwert 12.04.2027
+//   Rechtsvorschlag 10 T., ZB 8.4.2026   → 22.04.2026 / 23.04.2026 → Hauptwert 22.04.2026
+//   Formular-Beispiel 10 T., ZB 15.7.2025 → 11.08.2025 / 11.08.2025 (unverändert)
+describe('RL-18 Nachzug — Hauptwert bei Ferienzustellung richtungssicher', () => {
+  const Z152 = 'Zustellung Zahlungsbefehl (Bedenkfrist Art. 152 SchKG)';
+  const zaehlweise = (w: string[]) => w.find((x) => x.startsWith('Zählweise'));
+
+  it('Wartefrist × Monate (Art. 154 SchKG): ZB 8.4.2026, 1 Monat → Hauptwert 15.05.2026, 13.05.2026 offengelegt', () => {
+    const r = berechneSchkgFrist(base({ einheit: 'monate', laenge: 1, fristnatur: 'wartefrist', ausloeser: Z152 }));
+    expect(r.diesAdQuem).toBe('15.05.2026');
+    expect(r.diesAdQuemISO).toBe('2026-05-15');
+    expect(r.ergebnis).toBe('Frühestes zulässiges Datum: 15.05.2026.');
+    const offen = zaehlweise(r.warnungen);
+    expect(offen, 'Offenlegung der Zählweise fehlt').toBeDefined();
+    expect(offen).toContain('Ausgewiesen ist 15.05.2026');
+    expect(offen).toContain('13.05.2026');
+  });
+
+  it('Pfandverwertungs-Presets (Wartefrist-Teil): Hauptwert nie früher als die Ereignistag-Lesart', () => {
+    for (const key of ['pfandverwertung_faust', 'pfandverwertung_grund']) {
+      const p = PRESETS_SCHKG.find((x) => x.key === key);
+      expect(p?.wartefrist, `Preset ${key} ohne Wartefrist`).toBeDefined();
+      expect(p!.ausloeser).toBe(Z152);
+      const spec = { einheit: p!.wartefrist!.einheit, laenge: p!.wartefrist!.laenge, fristnatur: 'wartefrist' as const };
+      const r = berechneSchkgFrist(base({ ...spec, ausloeser: p!.ausloeser }));
+      const g = berechneSchkgFrist(base({ ...spec, ausloeser: undefined, ereignis: '2026-04-13' }));
+      expect(r.diesAdQuemISO >= g.diesAdQuemISO, `${key}: ${r.diesAdQuem} < ${g.diesAdQuem}`).toBe(true);
+    }
+  });
+
+  it('Wartefrist × Tage mit abweichenden Lesarten: ZB 20.12.2025, 20 Tage → Hauptwert 23.01.2026, 22.01.2026 offengelegt', () => {
+    const r = berechneSchkgFrist(base({ ereignis: '2025-12-20', laenge: 20, fristnatur: 'wartefrist' }));
+    expect(r.diesAdQuem).toBe('23.01.2026');
+    const offen = zaehlweise(r.warnungen);
+    expect(offen).toContain('Ausgewiesen ist 23.01.2026');
+    expect(offen).toContain('22.01.2026');
+    expect(offen).toContain('BGE 121 III 284 E. 2c');
+  });
+
+  it('Verwirkung 1 Jahr bleibt 12.04.2027 (früheres Datum)', () => {
+    const r = berechneSchkgFrist(base({ einheit: 'jahre', laenge: 1, fristnatur: 'verwirkung' }));
+    expect(r.diesAdQuem).toBe('12.04.2027');
+    expect(zaehlweise(r.warnungen)).toContain('Ausgewiesen ist 12.04.2027');
+  });
+
+  it('Rechtsvorschlag bleibt 22.04.2026 (früheres Datum), 23.04.2026 offengelegt', () => {
+    const r = berechneSchkgFrist(base({}));
+    expect(r.diesAdQuem).toBe('22.04.2026');
+    expect(zaehlweise(r.warnungen)).toContain('Ausgewiesen ist 22.04.2026');
+    expect(zaehlweise(r.warnungen)).toContain('23.04.2026');
+  });
+
+  it('Formular-Beispiel ZB 15.7.2025, 10 Tage bleibt 11.08.2025', () => {
+    const r = berechneSchkgFrist(base({ ereignis: '2025-07-15' }));
+    expect(r.diesAdQuem).toBe('11.08.2025');
+  });
+
+  it('BGE 150 III 367 E. 5.6 ist als Übertragung über Art. 31 SchKG gekennzeichnet (Fall zu Art. 209 Abs. 3 ZPO)', () => {
+    const offen = zaehlweise(berechneSchkgFrist(base({ einheit: 'monate', laenge: 1 })).warnungen);
+    expect(offen).toContain('BGE 150 III 367 E. 5.6');
+    expect(offen).toContain('Art. 209 Abs. 3 ZPO');
+    expect(offen).toContain('Art. 31 SchKG');
+  });
+});
