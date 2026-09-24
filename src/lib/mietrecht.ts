@@ -14,8 +14,10 @@ import { rechtsprechung } from '../data/verifikation';
 // Zieltermin = frühester Termin mit Zugang ≤ (Termin − Frist); bei Verfehlen
 // nächstmöglicher Termin (Art. 266a Abs. 2 OR).
 //
-// Art. 78 OR (Werktagsverschiebung) gilt NUR für den spätesten Zustelltag
-// (Fristwahrung), NICHT für den Endtermin des Mietverhältnisses.
+// Art. 78 OR (Werktagsverschiebung) gilt WEDER für den spätesten Zustelltag
+// NOCH für den Endtermin des Mietverhältnisses (F4-01, W2·30-RL-W1; Detail
+// bei spaetesterZugangFuer). Angewandt wird er nur auf echte Fristenden
+// (Zahlungsfrist Art. 257d, Anfechtung/Erstreckung Art. 273 OR).
 //
 // VERIFY: Wortlaute der zitierten OR-Artikel vor Produktivschaltung auf
 // Fedlex SR 220 endkontrollieren; ortsübliche Termine sind Tatfrage.
@@ -71,16 +73,27 @@ function werktagOderNaechster(d: Date, kanton: MietInput['kanton']): { tag: Date
   return { tag, verschoben: +tag !== +d };
 }
 
-// Spätester rechtzeitiger Zugang für einen Termin T (roh und nach Art. 78).
+// Spätester rechtzeitiger Zugang für einen Termin T — OHNE Art. 78 OR.
+// Art. 78 Abs. 1 OR verschiebt nur den «Zeitpunkt der Erfüllung oder den
+// letzten Tag einer Frist». Die Kündigungsfrist (Art. 266a Abs. 1, 266b–266e
+// OR) endet am Termin; der späteste Zugangstag ist der Tag VOR ihrem Beginn,
+// kein Fristende. Fällt er auf Sa/So/Feiertag, muss die Kündigung trotzdem an
+// diesem Tag (bzw. früher) zugehen; ein Zugang am nächsten Werktag verkürzt
+// die gesetzliche Mindestfrist und wirkt auf den nächstmöglichen Termin
+// (Art. 266a Abs. 2 OR). BGE 148 III 126 E. 5.2.9 lässt die Anwendung von
+// Art. 78 OR selbst auf ein vorwärts laufendes Probezeitende offen; eine
+// BGer-Stütze für die Verschiebung des Zugangstags gibt es nicht (Prüfung
+// Rechtslogik 23.9.2026, Befund F4-01 + Zweitprüfung V1).
+// Quelle: Fedlex SR 220, Art. 77/78/266a–266e OR, Stand 1.1.2026,
+// https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de (Wortlaut aus dem Repo-Cache public/normtext/bund/OR.json, abgerufen 14.9.2026).
 // Monatsfristen: Es müssen FRIST volle Monate vor dem Termin liegen (Beispiel
 // Konzept §E: Termin 31.12., 3 Monate → Zugang spätestens 30.9.). Gerechnet
 // wird deshalb vom Folgetag des Termins zurück (Termin 30.6., 3 Monate →
 // 31.3., NICHT 30.3. – addMonths allein klemmt am kürzeren Monat).
-function spaetesterZugangFuer(T: Date, frist: { monate?: number; tage?: number }, kanton: MietInput['kanton']) {
-  const roh = frist.monate != null
+function spaetesterZugangFuer(T: Date, frist: { monate?: number; tage?: number }): Date {
+  return frist.monate != null
     ? addDays(addMonths(addDays(T, 1), -frist.monate), -1)
     : addDays(T, -(frist.tage ?? 0));
-  return { roh, ...werktagOderNaechster(roh, kanton) };
 }
 
 // Ende der k-ten Mietdauer-Periode ab Mietbeginn. Bei Mietbeginn am
@@ -340,29 +353,31 @@ export function berechneMietkuendigung(input: MietInput): MietErgebnis {
 
   // Frühester Termin, für den der Zugang rechtzeitig war.
   let endtermin: Date | null = null;
-  let spaetester: { roh: Date; tag: Date; verschoben: boolean } | null = null;
+  let spaetester: Date | null = null;
   let verfehlter: Date | null = null;
   for (const T of liste) {
-    const s = spaetesterZugangFuer(T, fristEff, input.kanton);
-    if (leq(zugang, s.tag)) { endtermin = T; spaetester = s; break; }
+    const s = spaetesterZugangFuer(T, fristEff);
+    if (leq(zugang, s)) { endtermin = T; spaetester = s; break; }
     if (!verfehlter) verfehlter = T;
   }
   if (!endtermin || !spaetester) throw new Error('Kein gültiger Kündigungstermin gefunden – Eingaben prüfen.');
+  const spaetesterRuhetag = werktagOderNaechster(spaetester, input.kanton).verschoben;
 
   rechenweg.push({
     beschreibung: 'Fristwahrung und wirksamer Endtermin',
     zwischenergebnis:
       (verfehlter
-        ? `Für den Termin ${fmt(verfehlter)} wäre der Zugang spätestens am ${fmt(spaetesterZugangFuer(verfehlter, fristEff, input.kanton).tag)} nötig gewesen – verfehlt. ` +
+        ? `Für den Termin ${fmt(verfehlter)} wäre der Zugang spätestens am ${fmt(spaetesterZugangFuer(verfehlter, fristEff))} nötig gewesen – verfehlt. ` +
           `Die Kündigung ist deswegen NICHT ungültig, sie wirkt auf den nächstmöglichen Termin (Art. 266a Abs. 2 OR). `
         : '') +
-      `Wirksamer Endtermin: ${fmt(endtermin)}. Spätester rechtzeitiger Zugang dafür: ${fmt(spaetester.tag)}` +
-      (spaetester.verschoben ? ` (${fmt(spaetester.roh)} fiel auf Sa/So/Feiertag → Verschiebung auf den nächsten Werktag, Art. 78 OR)` : '') +
-      '. Der ENDTERMIN selbst wird nicht verschoben, auch wenn er auf ein Wochenende fällt (Art. 78 OR betrifft nur die Fristwahrung).',
+      `Wirksamer Endtermin: ${fmt(endtermin)}. Spätester rechtzeitiger Zugang dafür: ${fmt(spaetester)}` +
+      (spaetesterRuhetag ? ' (fällt auf Sa/So/Feiertag – die Kündigung muss trotzdem spätestens an diesem Tag zugehen)' : '') +
+      '. Art. 78 OR verschiebt diesen Zugangstag NICHT auf den nächsten Werktag: Er liegt vor Beginn der Kündigungsfrist und ist weder Erfüllungszeitpunkt noch letzter Tag einer Frist (Art. 266a Abs. 1 OR). ' +
+      'Auch der ENDTERMIN wird nicht verschoben, wenn er auf ein Wochenende fällt.',
     normen: verfehlter ? [N_266a, N_77, N_78] : [N_77, N_78],
   });
 
-  return abschluss(input, zugang, endtermin, spaetester.tag, undefined, rechenweg, annahmen, warnungen,
+  return abschluss(input, zugang, endtermin, spaetester, undefined, rechenweg, annahmen, warnungen,
     [...(sonderNorm ? [sonderNorm] : []), frist.norm, N_266a, N_77, N_78], false, verfehlter ?? undefined);
 }
 

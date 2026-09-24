@@ -194,7 +194,7 @@ export function MietrechtForm() {
         <Field label="Zugang der Kündigung" hint="Absolute Empfangstheorie; bei Einschreiben i.d.R. Folgetag der Abholungseinladung">
           <DatumsFeld value={zugang} onChange={(v) => setZugang(v)} className={inputCls} />
         </Field>
-        <Field label="Kanton" hint={ort.hinweis ?? 'Für ortsübliche Termine und Feiertage (Art. 78 OR)'}>
+        <Field label="Kanton" hint={ort.hinweis ?? 'Für ortsübliche Termine und Feiertage (Art. 78 OR gilt für Zahlungs- und Anfechtungsfristen, nicht für den spätesten Zugang der Kündigung)'}>
           <select value={kanton} onChange={(e) => setKanton(e.target.value as Kanton)} className={inputCls}>
             {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
           </select>
