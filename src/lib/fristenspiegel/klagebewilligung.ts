@@ -54,8 +54,8 @@ export function berechneKlagebewilligungsSpiegel(input: KlagebewilligungSpiegelI
       `Kanton ${input.kanton} (Gerichtsort — Feiertage für die Endnormalisierung, Art. 142 Abs. 3 ZPO).`,
       'Versäumte Klagefrist: Die Klagebewilligung verfällt; das Schlichtungsverfahren wäre neu einzuleiten (die Verjährungsunterbrechung von Art. 135 OR bleibt davon unberührt zu prüfen).',
     ],
-    // Preset-Vorbehalt offenlegen (§8): Stillstand der Prosekutionsfrist
-    // ist nicht abschliessend geklärt.
+    // Preset-Hinweis offenlegen (§8). Seit RL-20/R5-05 (24.9.2026): Stillstand
+    // gilt (BGE 138 III 615); vorher hiess es «nicht abschliessend geklärt».
     warnungen: [...frist.warnungen, ...(p.hinweis ? [p.hinweis] : [])],
   };
 }

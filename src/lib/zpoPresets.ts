@@ -24,6 +24,11 @@ export type ZpoPreset = {
    *  nicht mit der ZPO-Feiertagsregel «Gerichtsort» (Art. 142 Abs. 3 ZPO). Die
    *  Regeln bleiben getrennt (§1/§4) — kein Umbau der ZPO-Engine. */
   engine?: 'bgg';
+  /** RL-20/F1-04 (Prüfung Rechtslogik 23.9.2026): Frist wird nicht vom
+   *  Gericht im Verfahren eröffnet → die Hinweis-Regel nach Art. 145 Abs. 3
+   *  ZPO (BGE 139 III 78) passt nicht; das Formular reicht das Merkmal als
+   *  `hinweispflichtEntfaellt` an die Engine und blendet die Checkbox aus. */
+  hinweispflichtEntfaellt?: true;
 };
 
 export const PHASEN: { code: ZpoPhase; label: string }[] = [
@@ -48,18 +53,26 @@ export const PRESETS: ZpoPreset[] = [
     hinweis: 'Revision 2025: 30 statt 10 Tage bei Art. 271/276/302/305 ZPO; Anschlussberufung zulässig. Stillstand-Anwendbarkeit im Einzelfall prüfen.' },
   { key: 'berufungsantwort', phase: 'rechtsmittel', label: 'Berufungsantwort – 30 Tage', norm: 'Art. 312 Abs. 2 ZPO',
     einheit: 'tage', laenge: 30, verfahren: 'ordentlich', fristnatur: 'gesetzlich',
-    hinweis: 'Gesetzlich, nicht erstreckbar – keine «Fristabnahme» (BGE 141 III 554).' },
+    hinweis: 'Gesetzlich, nicht erstreckbar – keine «Fristabnahme» (BGE 141 III 554). Gilt so im ordentlichen/vereinfachten Verfahren (mit Stillstand). Gegen einen im summarischen Verfahren ergangenen Entscheid: 10 Tage ohne Stillstand (Art. 314 Abs. 1, Art. 145 Abs. 2 lit. b ZPO) – Preset «Berufungsantwort gegen Summarentscheid» wählen; familienrechtliche Summarsachen (Art. 271/276/302/305): 30 Tage (Art. 314 Abs. 2).' },
+  // RL-20/R5-01 (Prüfung Rechtslogik 23.9.2026, mittel): Art. 314 Abs. 1 ZPO
+  // (Fedlex SR 272, Konsolidierung 1.7.2026) — «je zehn Tage» für Berufung
+  // UND Berufungsantwort gegen Summarentscheide; kein Stillstand auch im
+  // Berufungsverfahren (BGE 139 III 78 E. 4). Beleg: Zustellung 10.7.2026
+  // → 20.7.2026 (Ist mit Preset «Berufungsantwort» 10.9.2026).
+  { key: 'berufungsantwort_summar', phase: 'rechtsmittel', label: 'Berufungsantwort gegen Summarentscheid – 10 Tage', norm: 'Art. 314 Abs. 1 ZPO',
+    einheit: 'tage', laenge: 10, verfahren: 'rechtsmittel_summarisch', fristnatur: 'gesetzlich',
+    hinweis: 'Kein Stillstand (summarisch, gilt auch im Berufungsverfahren, BGE 139 III 78) – Hinweis des Gerichts beachten. Anschlussberufung unzulässig (Art. 314 Abs. 1 Satz 2 ZPO). Familienrechtliche Summarsachen (Art. 271/276/302/305): 30 Tage (Art. 314 Abs. 2).' },
   { key: 'anschlussberufung', phase: 'rechtsmittel', label: 'Anschlussberufung – 30 Tage', norm: 'Art. 313 Abs. 1 ZPO',
     einheit: 'tage', laenge: 30, verfahren: 'ordentlich', fristnatur: 'gesetzlich',
-    hinweis: 'Innert der Berufungsantwortfrist.' },
+    hinweis: 'Innert der Berufungsantwortfrist. Gegen einen im summarischen Verfahren ergangenen Entscheid unzulässig (Art. 314 Abs. 1 Satz 2 ZPO; Ausnahme familienrechtliche Summarsachen, Abs. 2).' },
   { key: 'beschwerde', phase: 'rechtsmittel', label: 'Beschwerde (begründeter Entscheid) – 30 Tage', norm: 'Art. 321 Abs. 1 ZPO',
     einheit: 'tage', laenge: 30, verfahren: 'ordentlich', fristnatur: 'gesetzlich' },
   { key: 'beschwerde_summar', phase: 'rechtsmittel', label: 'Beschwerde gegen Summarentscheid – 10 Tage', norm: 'Art. 321 Abs. 2 ZPO',
     einheit: 'tage', laenge: 10, verfahren: 'rechtsmittel_summarisch', fristnatur: 'gesetzlich',
-    hinweis: 'Auch prozessleitende Verfügungen; kein Stillstand (summarisch).' },
+    hinweis: 'Kein Stillstand, wenn der Entscheid im summarischen Verfahren erging (Art. 145 Abs. 2 lit. b ZPO). 10 Tage gelten auch für prozessleitende Verfügungen und andere erstinstanzliche Entscheide (Art. 321 Abs. 2): ergehen sie in einem ordentlichen oder vereinfachten Verfahren, ist die Ausnahme nicht einschlägig und der Stillstand gilt (Art. 145 Abs. 1 ZPO) – dann Verfahrensart umstellen. Ohne Stillstand gerechnet liegt das Datum auf der sicheren Seite.' },
   { key: 'revision', phase: 'rechtsmittel', label: 'Revision – 90 Tage (relativ)', norm: 'Art. 329 Abs. 1 ZPO',
     einheit: 'tage', laenge: 90, verfahren: 'ordentlich', fristnatur: 'gesetzlich',
-    hinweis: 'Ab Entdeckung des Revisionsgrundes. Absolute Frist: 10 Jahre ab Rechtskraft (Art. 329 Abs. 2).' },
+    hinweis: 'Ab Entdeckung des Revisionsgrundes. Absolute Frist: 10 Jahre ab Rechtskraft (Art. 329 Abs. 2). Gerechnet mit Stillstand (ordentliches/vereinfachtes Verfahren). Ob er bei der Revision eines im summarischen Verfahren ergangenen Entscheids entfällt (Art. 145 Abs. 2 lit. b ZPO), ist nicht geklärt – sicherer Weg: Verfahrensart «summarisch» wählen.' },
 
   // ── Schlichtung ──
   // Bug-Check 10.6.2026 (HOCH, deklarierte fachliche Änderung): Die Art.-209-
@@ -69,7 +82,7 @@ export const PRESETS: ZpoPreset[] = [
   // 'schlichtung' → Frist ohne Stillstand bis 1 Monat zu früh angezeigt.
   { key: 'klagebewilligung', phase: 'schlichtung', label: 'Gültigkeit Klagebewilligung – 3 Monate', norm: 'Art. 209 Abs. 3 ZPO',
     einheit: 'monate', laenge: 3, verfahren: 'klagefrist_klagebewilligung', fristnatur: 'gesetzlich',
-    hinweis: 'Ab Zustellung/Eröffnung. Ob für die Prosekutionsfrist ein Stillstand greift, ist nicht abschliessend geklärt – im Einzelfall prüfen.' },
+    hinweis: 'Ab Zustellung/Eröffnung. Stillstand gilt (BGE 138 III 615: die Klagefrist nach Art. 209 Abs. 3 und 4 ZPO steht während der Gerichtsferien still).' },
   { key: 'klagefrist_miete', phase: 'schlichtung', label: 'Klagefrist Miete/Pacht – 30 Tage', norm: 'Art. 209 Abs. 4 ZPO',
     einheit: 'tage', laenge: 30, verfahren: 'klagefrist_klagebewilligung', fristnatur: 'gesetzlich',
     hinweis: 'Wohn-/Geschäftsräume und landw. Pacht. Ab Zustellung der Klagebewilligung. Stillstand gilt (BGE 138 III 615).' },
@@ -80,10 +93,10 @@ export const PRESETS: ZpoPreset[] = [
   // ── Erstinstanz ──
   { key: 'begruendung', phase: 'erstinstanz', label: 'Begründung verlangen – 10 Tage', norm: 'Art. 239 Abs. 2 ZPO',
     einheit: 'tage', laenge: 10, verfahren: 'ordentlich', fristnatur: 'gesetzlich',
-    hinweis: 'Ab Eröffnung des Dispositivs; sonst gilt das Rechtsmittel als verzichtet.' },
+    hinweis: 'Ab Eröffnung des Dispositivs; sonst gilt das Rechtsmittel als verzichtet. Gilt so im ordentlichen/vereinfachten Verfahren (mit Stillstand). Bei einem Entscheid im summarischen Verfahren gilt kein Stillstand (Art. 145 Abs. 2 lit. b ZPO) – Verfahrensart auf «summarisch» umstellen; fehlte der Hinweis des Gerichts (Art. 145 Abs. 3), steht die Frist gleichwohl still (BGE 139 III 78 E. 5).' },
   { key: 'neueinreichung', phase: 'erstinstanz', label: 'Neueinreichung nach Nichteintreten – 1 Monat', norm: 'Art. 63 Abs. 1 ZPO',
     einheit: 'monate', laenge: 1, verfahren: 'ordentlich', fristnatur: 'gesetzlich',
-    hinweis: 'Fristwahrend für die Rechtshängigkeit.' },
+    hinweis: 'Fristwahrend für die Rechtshängigkeit. Gerechnet mit Stillstand (ordentliches/vereinfachtes Verfahren). Ob er gilt, wenn neu bei der Schlichtungsbehörde oder im summarischen Verfahren einzureichen ist (Schlichtung: Art. 145 Abs. 2 lit. a; summarisch: Art. 145 Abs. 2 lit. b ZPO), ist nicht geklärt – sicherer Weg: Verfahrensart ohne Stillstand wählen.' },
   { key: 'klageantwort', phase: 'erstinstanz', label: 'Klageantwort (ordentlich) – richterlich', norm: 'Art. 222 Abs. 1 ZPO',
     einheit: 'tage', verfahren: 'ordentlich', fristnatur: 'gerichtlich',
     hinweis: 'Vom Gericht angesetzt – Dauer eingeben. Richterliche Frist (erstreckbar, Art. 144 Abs. 2).' },
@@ -96,7 +109,7 @@ export const PRESETS: ZpoPreset[] = [
     einheit: 'tage', verfahren: 'summarisch', fristnatur: 'gerichtlich',
     hinweis: 'Vom Gericht angesetzt (Praxis z.B. 60 Tage). Stillstand-Anwendbarkeit umstritten (BGer 4A_20/2024) – im Einzelfall prüfen.' },
   { key: 'arrestprosekution', phase: 'besondere', label: 'Arrestprosekution – 10 Tage', norm: 'Art. 279 SchKG i.V.m. ZPO',
-    einheit: 'tage', laenge: 10, verfahren: 'summarisch', fristnatur: 'gesetzlich',
+    einheit: 'tage', laenge: 10, verfahren: 'summarisch', fristnatur: 'gesetzlich', hinweispflichtEntfaellt: true,
     hinweis: 'Schnittstelle SchKG: Betreibungs-/SchKG-Ferien gesondert prüfen.' },
 
   // ── Schiedsverfahren ──

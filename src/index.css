@@ -3185,7 +3185,7 @@
      `.lc-griff-glyph` (Archivo, «die Glyphe IST das ganze Bedienelement»,
      s. oben) — hier steht nichts doppelt. */
   .rl-plus {
-    @apply flex w-9 shrink-0 items-center justify-center border-l border-rule-soft text-ink-500 transition-colors hover:bg-well hover:text-ink-900;
+    @apply flex w-9 shrink-0 items-center justify-center border-l border-rule-soft text-ink-500 transition-colors hover:bg-paper hover:text-ink-900;
   }
   /* R2 (Prüfbefund R11, 6.9.2026): ohne Reiter steht das «+» LINKS am
      Inhaltsrand — dort trennt seine linke Kante nichts von nichts. */

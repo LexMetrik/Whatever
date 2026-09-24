@@ -126,7 +126,13 @@ test.describe('R13-2 — Überlauf aus der gemessenen Breite', () => {
       // Wird gekappt, MUSS der Weg zum Rest sichtbar sein.
       const blatt = page.getByRole('button', { name: `Alle ${ACHT.length} offenen Reiter` })
       await expect(blatt).toBeVisible()
-      if (anzahl < gesamt) await expect(blatt).toHaveText(`+${gesamt - anzahl}`)
+      // FACHLICH GEÄNDERT (§6.3, W2·29-MARKE, Auftrag David 24.9.2026): der Überlauf
+      // heisst ab sm «N weitere ▾», darunter weiter «+N ▾» — gemessen wird der
+      // SICHTBARE Text (innerText), die Zahl bleibt dieselbe Prüfung.
+      if (anzahl < gesamt) {
+        await expect(blatt).toHaveText(
+          new RegExp(`^(\\+${gesamt - anzahl}|${gesamt - anzahl} weitere) ▾$`), { useInnerText: true })
+      }
     })
   }
 })

@@ -177,6 +177,9 @@ export function ZpoFristenForm({ live }: {
   // presetKey zurück und damit auf die ZPO-Rechnung.
   const aktPreset = PRESETS.find((p) => p.key === presetKey);
   const bggPreset = aktPreset?.engine === 'bgg';
+  // RL-20/F1-04: Presets ohne Art.-145-Abs.-3-Hinweisregel (Arrestprosekution)
+  // — nur solange die Verfahrensart des Presets gewählt ist.
+  const hinweispflichtEntfaellt = aktPreset?.hinweispflichtEntfaellt === true && form.verfahren === aktPreset.verfahren;
   let ergebnis: ZpoErgebnis | null = null;
   let bggErgebnis: BvFristResult | null = null;
   if (fehler.length === 0) {
@@ -184,7 +187,7 @@ export function ZpoFristenForm({ live }: {
       if (bggPreset) {
         bggErgebnis = berechneBggVwvgFrist({ regime: 'bgg', ereignis: form.ereignis, einheit: form.einheit, laenge: form.laenge, kanton: form.kanton });
       } else {
-        ergebnis = berechneFrist(eingabe);
+        ergebnis = berechneFrist(hinweispflichtEntfaellt ? { ...eingabe, hinweispflichtEntfaellt: true } : eingabe);
       }
     } catch (err) { fehler.push((err as Error).message); }
   }
@@ -305,7 +308,7 @@ export function ZpoFristenForm({ live }: {
           </select>
         </Field>
 
-        {!aktVerfahren.stillstand && (
+        {!aktVerfahren.stillstand && !hinweispflichtEntfaellt && (
           <Field label="Hinweis des Gerichts auf Nichtgeltung des Stillstands?" hint="Art. 145 Abs. 3 ZPO – Gültigkeitsvorschrift (BGE 139 III 78)">
             <Checkbox
               checked={form.gerichtshinweisStillstand ?? true}
