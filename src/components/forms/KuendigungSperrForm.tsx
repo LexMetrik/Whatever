@@ -7,13 +7,10 @@ import { berechneSperrfristen, type SperrfristenErgebnis } from '../../lib/sperr
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, permalinkLesen } from '../../lib/permalink';
 import { KSP_LINK_SPEC } from '../../lib/rechnerPermalinks';
-import { IcsExportButton } from '../IcsExportButton';
 import { KuendigungTimeline } from '../KuendigungTimeline';
 import { SperrtageZaehler } from '../SperrtageZaehler';
 import { SperrereignisseEditor } from './SperrereignisseEditor';
@@ -273,20 +270,15 @@ export function KuendigungSperrForm({ onBeendigung }: {
           <KuendigungTimeline e={gesamt} />
           {gesamt.sperrtage && gesamt.sperrtage.length > 0 && <SperrtageZaehler sperrtage={gesamt.sperrtage} />}
           <BegruendungSlot ergebnis={gesamt} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            {gesamt.status === 'nichtig'
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig} query={kspQuery}
+            ics={[gesamt.status === 'nichtig'
               /* «Frühestens neu kündbar» = FRÜHESTMÖGLICHER Termin: keine
                  3-Tage-VORfrist-Erinnerung (richtungsverkehrt, Nichtigkeits-
                  risiko 336c — Code-Review #2, 7.6.2026) → vorfristTage 0. */
-              ? <IcsExportButton endISO={gesamt.fruehesteNeueKuendigungISO} titel="Frühestens neu kündbar (Art. 336c OR)"
-                  aktenzeichen={aktenzeichen} query={kspQuery}
-                  vorfristTage={0} beschreibung={gesamt.ergebnis} dateiName="Neue-Kuendigung-fruehestens.ics" />
-              : <IcsExportButton endISO={gesamt.beendigungISO} titel="Beendigung Arbeitsverhältnis"
-                  aktenzeichen={aktenzeichen} query={kspQuery}
-                  beschreibung={gesamt.ergebnis} dateiName="Beendigung-Arbeitsverhaeltnis.ics" />}
-            <LinkTeilenButton query={kspQuery} />
+              ? { endISO: gesamt.fruehesteNeueKuendigungISO, titel: 'Frühestens neu kündbar (Art. 336c OR)',
+                  vorfristTage: 0, beschreibung: gesamt.ergebnis, dateiName: 'Neue-Kuendigung-fruehestens.ics' }
+              : { endISO: gesamt.beendigungISO, titel: 'Beendigung Arbeitsverhältnis',
+                  beschreibung: gesamt.ergebnis, dateiName: 'Beendigung-Arbeitsverhaeltnis.ics' }]}>
             {/* S-5c (Fristenspiegel-Auflösung): die 336b-Fristen leben jetzt
                 als Ereignis-Block UNTEN AUF DIESER SEITE; das Beendigungs-
                 datum (inkl. Sperrfristen-Verschiebung!) fliesst live über
@@ -296,7 +288,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
                 336b-Fristen (Einsprache &amp; Klage) unten anzeigen →
               </a>
             )}
-          </div>
+          </ErgebnisExport>
         </ErgebnisBlock>
       )}
     </div>

@@ -13,11 +13,9 @@ import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { DatumsFeld } from '../DatumsFeld';
 import { sansAmp } from '../typografie';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { fristbeginnZusatz } from '../../lib/begruendung';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { SCHKG_LINK_SPEC } from '../../lib/rechnerPermalinks';
@@ -425,11 +423,7 @@ export function SchkgFristenForm({ live }: {
               </div>
             );
           })}
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <LinkTeilenButton query={schkgQuery} />
-          </div>
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig} query={schkgQuery} />
         </ErgebnisBlock>
       )}
     </div>

@@ -10,13 +10,10 @@ import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
-import { IcsExportButton } from '../IcsExportButton';
 import { FristenKalender } from '../FristenKalender';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
@@ -321,19 +318,12 @@ export function MietrechtForm() {
           )}
 
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <IcsExportButton endISO={ergebnis.endterminISO} titel="Mietende (Kündigungstermin)"
-              aktenzeichen={aktenzeichen}
-              query={mietQuery}
-              beschreibung={ergebnis.ergebnis} dateiName="Mietende.ics" />
-            <LinkTeilenButton query={mietQuery} />
-            {/* S-5c (Fristenspiegel-Auflösung): die alte Brücke «Im
-                Fristenspiegel öffnen» entfällt ersatzlos — Anfechtungs- und
-                Erstreckungsfrist (Art. 273 OR) zeigt dieser Rechner bereits
-                selbst (der Spiegel war reiner Konsument derselben Engine). */}
-          </div>
+          {/* S-5c (Fristenspiegel-Auflösung): die alte Brücke «Im
+              Fristenspiegel öffnen» entfällt ersatzlos — Anfechtungs- und
+              Erstreckungsfrist (Art. 273 OR) zeigt dieser Rechner bereits
+              selbst (der Spiegel war reiner Konsument derselben Engine). */}
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig} query={mietQuery}
+            ics={[{ endISO: ergebnis.endterminISO, titel: 'Mietende (Kündigungstermin)', beschreibung: ergebnis.ergebnis, dateiName: 'Mietende.ics' }]} />
         </ErgebnisBlock>
       )}
     </div>

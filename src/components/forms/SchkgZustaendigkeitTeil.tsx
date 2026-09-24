@@ -6,9 +6,7 @@ import { ErgebnisBlock } from '../ErgebnisBlock';
 import { SelectionGrid } from '../ui/SelectionGrid';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { BetragsFeld } from '../BetragsFeld';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
-import { PdfExportButton } from '../PdfExport';
-import { LinkTeilenButton } from '../LinkTeilenButton';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { permalinkKodieren, permalinkLesen } from '../../lib/permalink';
 import { SCHKG_LINK_SPEC, type SchkgLinkZustand } from './zustaendigkeitLinkSpecs';
 import { bgerRechtswegLink } from '../../lib/rechnerPermalinks';
@@ -475,9 +473,12 @@ export function SchkgZustaendigkeitTeil() {
 
           {/* Mandatstauglicher Output (G3.1 / M-8, 10.6.2026): Aktenzeichen +
               PDF + Teilen — gleicher geteilter Rahmen wie der Zivil-Teil (§10). */}
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={{
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen}
+            query={() => permalinkKodieren(SCHKG_LINK_SPEC, {
+              anliegen, schuldnerTyp, pfand, arrestGelegt, forderungRoh,
+              widerspruchK, kollokationIn, roArt, ortPlz, ortKanton, ortGemeinde,
+            })}
+            pdf={{
               aktenzeichen: aktenzeichen.trim() || undefined,
               title: 'Zuständigkeit (SchKG)',
               rechtsgrundlage: 'Bestimmung nach Art. 17, 46–55, 67 ff. SchKG (Stand 1.1.2025)',
@@ -505,11 +506,6 @@ export function SchkgZustaendigkeitTeil() {
               sections: [{ titel: 'Zuständigkeit nach SchKG', ergebnis: schkgZustaendigkeitBericht(r) }],
               disclaimer: SCHKG_DISCLAIMER,
             }} />
-            <LinkTeilenButton query={() => permalinkKodieren(SCHKG_LINK_SPEC, {
-              anliegen, schuldnerTyp, pfand, arrestGelegt, forderungRoh,
-              widerspruchK, kollokationIn, roArt, ortPlz, ortKanton, ortGemeinde,
-            })} />
-          </div>
 
           <p className="text-xs text-ink-500 pt-2 border-t border-line">
             Regelwerk verbatim am SchKG-Wortlaut verifiziert (Stand 1.1.2025) — fachliche Abnahme ausstehend.

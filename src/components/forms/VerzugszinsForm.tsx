@@ -9,10 +9,8 @@ import type {
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, istISO, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
@@ -276,11 +274,8 @@ export function VerzugszinsForm() {
           <ErgebnisAnzeige titel="Verzugszins (Art. 104 OR)" ergebnis={ergebnis} />
           {ergebnis.status === 'ok' && <VerzugszinsTimeline e={ergebnis} />}
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <LinkTeilenButton query={() => permalinkKodieren(VZ_LINK_SPEC, { ...form, rows: rows.map((r): EreignisEingabe => ({ typ: r.typ, datum: r.datum, wert: r.wert })), zinsforderung } as VzLink)} />
-          </div>
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+            query={() => permalinkKodieren(VZ_LINK_SPEC, { ...form, rows: rows.map((r): EreignisEingabe => ({ typ: r.typ, datum: r.datum, wert: r.wert })), zinsforderung } as VzLink)} />
         </ErgebnisBlock>
       )}
     </div>

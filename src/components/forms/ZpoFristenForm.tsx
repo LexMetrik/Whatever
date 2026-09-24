@@ -11,15 +11,12 @@ import { zpoPdfCitations, zpoPdfErgebnis } from '../../lib/pdf/zpoPdf';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
 import { fristbeginnZusatz } from '../../lib/begruendung';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { ZPO_LINK_SPEC } from '../../lib/rechnerPermalinks';
-import { IcsExportButton } from '../IcsExportButton';
 import { FristenKalender } from '../FristenKalender';
 import { PHASEN, PRESETS, MATERIELL_WARNUNG, type ZpoPhase, type ZpoPreset } from '../../lib/zpoPresets';
 import { getStandardKanton } from '../../lib/einstellungen';
@@ -400,15 +397,8 @@ export function ZpoFristenForm({ live }: {
               Deploy-Bug-Check 7.6.2026 (HOCH): war hartcodiert «Abs. 1» und
               widersprach bei Monatsfristen dem eigenen Normen-Satz. */}
           <BegruendungSlot ergebnis={ergebnis} zusatz={fristbeginnZusatz(ergebnis.diesAQuoISO, ergebnis.fristbeginnNorm)} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <IcsExportButton endISO={ergebnis.diesAdQuemISO} titel={icsTitel}
-              aktenzeichen={aktenzeichen}
-              query={zpoQuery}
-              beschreibung={ergebnis.ergebnis} dateiName="ZPO-Frist.ics" />
-            <LinkTeilenButton query={zpoQuery} />
-          </div>
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig} query={zpoQuery}
+            ics={[{ endISO: ergebnis.diesAdQuemISO, titel: icsTitel, beschreibung: ergebnis.ergebnis, dateiName: 'ZPO-Frist.ics' }]} />
         </ErgebnisBlock>
       )}
       </>

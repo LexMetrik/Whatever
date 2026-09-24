@@ -8,11 +8,8 @@ import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { BetragsFeld } from '../BetragsFeld';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { IcsExportButton } from '../IcsExportButton';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import { BGER_LINK_SPEC } from '../../lib/rechnerPermalinks';
@@ -254,16 +251,9 @@ export function BgerRechtswegForm() {
           </div>
           <ErgebnisAnzeige titel="Weiterzug ans Bundesgericht (BGG)" ergebnis={ergebnis} />
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            {pdfConfig && <PdfExportButton config={pdfConfig} />}
-            {ergebnis.fristende && (
-              <IcsExportButton endISO={ergebnis.fristende.endeISO} titel="Beschwerdefrist Bundesgericht (BGG)"
-                aktenzeichen={aktenzeichen} query={query}
-                beschreibung={ergebnis.ergebnis} dateiName="BGer-Frist.ics" />
-            )}
-            <LinkTeilenButton query={query} />
-          </div>
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig} query={query}
+            ics={ergebnis.fristende ? [{ endISO: ergebnis.fristende.endeISO, titel: 'Beschwerdefrist Bundesgericht (BGG)',
+              beschreibung: ergebnis.ergebnis, dateiName: 'BGer-Frist.ics' }] : []} />
         </ErgebnisBlock>
       )}
     </div>

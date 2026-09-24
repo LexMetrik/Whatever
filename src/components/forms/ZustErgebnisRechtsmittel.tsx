@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 import { NormText } from '../NormText';
 import { GruppenTitel, NormLink } from '../vorlagen/ui';
 import { ErgebnisBlock } from '../ErgebnisBlock';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
-import { PdfExportButton } from '../PdfExport';
-import { LinkTeilenButton } from '../LinkTeilenButton';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { permalinkKodieren } from '../../lib/permalink';
 import { ZUST_LINK_SPEC } from './zustaendigkeitLinkSpecs';
 import { zpoFristenLink, bgerRechtswegLink } from '../../lib/rechnerPermalinks';
@@ -194,9 +192,9 @@ export function ZustErgebnisRechtsmittel({ z }: { z: ZustaendigkeitFormModell })
             {/* Mandatstauglicher Output (G3.1 / M-8, 10.6.2026): Aktenzeichen +
                 PDF + Teilen auch im Rechtsmittel-Zweig — gleicher geteilter
                 Rahmen wie die Einleitungs-Sicht (§10). */}
-            <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-            <div className="flex flex-wrap items-center gap-3">
-              <PdfExportButton config={{
+            <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen}
+              query={() => permalinkKodieren(ZUST_LINK_SPEC, { ...f, schritt })}
+              pdf={{
                 aktenzeichen: aktenzeichen.trim() || undefined,
                 title: 'Rechtsmittel-Fahrplan (ZPO/BGG)',
                 rechtsgrundlage: 'Bestimmung nach Art. 308 ff., 319 ff. ZPO · Art. 72 ff. BGG',
@@ -226,8 +224,6 @@ export function ZustErgebnisRechtsmittel({ z }: { z: ZustaendigkeitFormModell })
                 sections: [{ titel: 'Rechtsmittel-Fahrplan', ergebnis: rechtsmittelBericht(rechtsmittel) }],
                 disclaimer: DISCLAIMER,
               }} />
-              <LinkTeilenButton query={() => permalinkKodieren(ZUST_LINK_SPEC, { ...f, schritt })} />
-            </div>
           </ErgebnisBlock>
         )}
     </>

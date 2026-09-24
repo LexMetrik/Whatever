@@ -6,9 +6,7 @@ import { Link } from 'react-router-dom';
 import { bgerRechtswegLink } from '../../lib/rechnerPermalinks';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { SelectionGrid } from '../ui/SelectionGrid';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
-import { PdfExportButton } from '../PdfExport';
-import { LinkTeilenButton } from '../LinkTeilenButton';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { permalinkKodieren, permalinkLesen } from '../../lib/permalink';
 import {
   STRAF_LINK_SPEC, STRAF_RM_LINK_SPEC,
@@ -271,9 +269,12 @@ export function StrafZustaendigkeitTeil() {
 
         {/* Mandatstauglicher Output (G3.1 / M-8, 10.6.2026): Aktenzeichen +
             PDF + Teilen — gleicher geteilter Rahmen wie Zivil/SchKG (§10). */}
-        <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-        <div className="flex flex-wrap items-center gap-3">
-          <PdfExportButton config={{
+        <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen}
+          query={() => permalinkKodieren(STRAF_LINK_SPEC, {
+            anliegen, tatort, kaskade, spezial, beteiligung, mehrereTaten,
+            antragsdelikt, uebertretung, bund, minderjaehrig, kanton,
+          })}
+          pdf={{
             aktenzeichen: aktenzeichen.trim() || undefined,
             title: 'Zuständigkeit (Strafverfahren)',
             rechtsgrundlage: 'Bestimmung nach Art. 31–42, 301 StPO (Stand 1.1.2024)',
@@ -304,11 +305,6 @@ export function StrafZustaendigkeitTeil() {
             sections: [{ titel: 'Zuständigkeit im Strafverfahren', ergebnis: strafZustaendigkeitBericht(r) }],
             disclaimer: STRAF_DISCLAIMER,
           }} />
-          <LinkTeilenButton query={() => permalinkKodieren(STRAF_LINK_SPEC, {
-            anliegen, tatort, kaskade, spezial, beteiligung, mehrereTaten,
-            antragsdelikt, uebertretung, bund, minderjaehrig, kanton,
-          })} />
-        </div>
 
         <p className="text-xs text-ink-500 pt-2 border-t border-line">
           Regelwerk verbatim am StPO-Wortlaut verifiziert (Stand 1.1.2024; Art. 301 StPO/Art. 31 StGB am 6.6.2026) — fachliche Abnahme ausstehend.
@@ -538,9 +534,12 @@ function StrafRechtsmittelTeil() {
         </div>
 
         {/* Mandatstauglicher Output (G3.1 / M-8, 10.6.2026). */}
-        <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-        <div className="flex flex-wrap items-center gap-3">
-          <PdfExportButton config={{
+        <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen}
+          query={() => permalinkKodieren(STRAF_RM_LINK_SPEC, {
+            anliegen: 'rechtsmittel', entscheidTyp, werFichtAn, ziel,
+            uebertretung, nurZugunsten, revGrund, bund, kanton,
+          })}
+          pdf={{
             aktenzeichen: aktenzeichen.trim() || undefined,
             title: 'Rechtsmittel im Strafverfahren',
             rechtsgrundlage: 'Bestimmung nach Art. 379 ff. StPO (Stand 1.1.2024)',
@@ -568,11 +567,6 @@ function StrafRechtsmittelTeil() {
             sections: [{ titel: 'Rechtsmittel im Strafverfahren', ergebnis: strafRechtsmittelBericht(r) }],
             disclaimer: STRAF_DISCLAIMER,
           }} />
-          <LinkTeilenButton query={() => permalinkKodieren(STRAF_RM_LINK_SPEC, {
-            anliegen: 'rechtsmittel', entscheidTyp, werFichtAn, ziel,
-            uebertretung, nurZugunsten, revGrund, bund, kanton,
-          })} />
-        </div>
 
         <p className="text-xs text-ink-500 pt-2 border-t border-line">
           Decision Tree aus dem StPO-Rechtsmittel-Dossier (6.6.2026), Wortlaute am StPO-Cache (Stand 1.1.2024) verifiziert — fachliche Abnahme ausstehend. Die Qualifikation des Entscheidtyps und das rechtlich geschützte Interesse (Art. 382 Abs. 1) sind Rechtsfragen.

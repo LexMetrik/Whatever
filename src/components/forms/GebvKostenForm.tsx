@@ -5,10 +5,8 @@ import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { BetragsFeld } from '../BetragsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
@@ -158,14 +156,11 @@ export function GebvKostenForm({ minimal = false }: { minimal?: boolean } = {}) 
         <ErgebnisBlock>
           <ErgebnisAnzeige titel="Betreibungskosten (GebV SchKG)" ergebnis={ergebnis} />
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <LinkTeilenButton query={() => permalinkKodieren(GK_LINK_SPEC, {
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+            query={() => permalinkKodieren(GK_LINK_SPEC, {
               forderung: zahl(forderung), zb, zbAusf: zahl(zbAusf), zbVersuche: zahl(zbVersuche),
               pf: pf || undefined, vw: zahl(vw), vwKein, ez: zahl(ez), sw: zahl(sw),
             })} />
-          </div>
         </ErgebnisBlock>
       )}
     </div>

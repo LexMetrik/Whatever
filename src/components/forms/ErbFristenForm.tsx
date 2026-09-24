@@ -8,13 +8,10 @@ import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { ErgebnisAnzeige } from '../ErgebnisAnzeige';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { DatumsFeld } from '../DatumsFeld';
-import { PdfExportButton } from '../PdfExport';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
+import { ErgebnisExport } from '../ErgebnisExport';
 import { BegruendungSlot } from '../BegruendungSlot';
-import { LinkTeilenButton } from '../LinkTeilenButton';
 import { permalinkKodieren, istISO, istKanton, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
-import { IcsExportButton } from '../IcsExportButton';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
 
@@ -125,15 +122,10 @@ export function ErbFristenForm() {
           </div>
           <ErgebnisAnzeige titel={`Erb-Frist: ${preset.label}`} ergebnis={ergebnis} />
           <BegruendungSlot ergebnis={ergebnis} />
-          <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-          <div className="flex flex-wrap items-center gap-3">
-            <PdfExportButton config={pdfConfig} />
-            <IcsExportButton endISO={ergebnis.resultat.endDatumISO} titel={`Fristende – ${preset.label}`}
-              aktenzeichen={aktenzeichen}
-              query={() => permalinkKodieren(EF_LINK_SPEC, { key, trigger, verschieben, kanton })}
-              beschreibung={ergebnis.ergebnis} dateiName="Erb-Frist.ics" />
-            <LinkTeilenButton query={() => permalinkKodieren(EF_LINK_SPEC, { key, trigger, verschieben, kanton })} />
-          </div>
+          <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+            query={() => permalinkKodieren(EF_LINK_SPEC, { key, trigger, verschieben, kanton })}
+            ics={[{ endISO: ergebnis.resultat.endDatumISO, titel: `Fristende – ${preset.label}`,
+              beschreibung: ergebnis.ergebnis, dateiName: 'Erb-Frist.ics' }]} />
         </ErgebnisBlock>
       )}
     </div>
