@@ -4,12 +4,20 @@
 – massgebend für die Endverschiebung Art. 142 Abs. 3 ZPO, Art. 31 SchKG und die
 3-Werktage-Zählung Art. 63 SchKG (`nthWerktagNach`).
 
-**Quelle:** BJ/EJPD, «Gesetzliche Feiertage und Tage, die in der Schweiz wie
+**Quelle (Grundgerüst):** BJ/EJPD, «Gesetzliche Feiertage und Tage, die in der Schweiz wie
 gesetzliche Feiertage behandelt werden», Verzeichnis nach Art. 11 des Europäischen
 Übereinkommens vom 16.5.1972 über die Berechnung von Fristen (SR 0.221.122.3),
 **Stand 1.1.2011** – alle 26 Sektionen am 6.6.2026 zeilenweise extrahiert und gegen
 die Code-Matrix abgeglichen (Doppelcheck-Auftrag David).
-URL: https://www.bj.admin.ch/dam/bj/de/data/publiservice/service/zivilprozessrecht/kant-feiertage.pdf.download.pdf/kant-feiertage-dfi.pdf
+URL (bis 2026): https://www.bj.admin.ch/dam/bj/de/data/publiservice/service/zivilprozessrecht/kant-feiertage.pdf.download.pdf/kant-feiertage-dfi.pdf
+— am 23.9.2026 HTTP 502 (F1-08); gleiche Liste, inhaltlich weiterhin «Stand: 1. Januar
+2011», abrufbar unter https://www.rhf.admin.ch/dam/de/sd-web/S6PzMB44EXP9/kant-feiertage.pdf
+(V8, HTTP 200 am 23.9.2026).
+
+**Quelle (massgebend, seit RL-22 24.9.2026):** das geltende kantonale Recht — Art. 142
+Abs. 3 ZPO verlangt «vom kantonalen Recht anerkannte» Feiertage. Wo ein Kanton für
+Fristen eine eigene Norm führt, geht sie der BJ-Liste vor (R1-05/F1-08, Prüfung
+Rechtslogik 23.9.2026). Stand je Kanton: Abschnitt «Kantonale Spezialnormen» unten.
 
 **Status: zweifach geprüft** (unabhängiger Recherche-Agent + eigener
 Vollabgleich am PDF-Text). Fachliche Abnahme durch David ausstehend.
@@ -79,14 +87,37 @@ Fussnoten der BJ-Liste:
 - **Kantonsweit geführt trotz Teilgebiets-Fussnote** (konservativ, zugunsten
   der Fristverschiebung): FR-Tage mit Fn. 2 (Seebezirk), SO-Tage mit Fn. 3/4
   (Bucheggberg/einzelne Gemeinden), AI-Mauritiustag (innerer Landesteil –
-  der Gerichtsort Appenzell liegt darin).
-- **Bewusst WEGGELASSEN:** SO-1.-Mai (halber Tag ab 12 Uhr macht den Tag
-  nicht arbeitsfrei) · SO-Josephstag und -Patrozinien (nur einzelne
-  Gemeinden) · NE-Fronleichnam (nur Le Landeron).
+  der Gerichtsort Appenzell liegt darin). *Ergänzung RL-22 (24.9.2026):* für FR
+  und SO ist das nicht mehr Annahme, sondern geltendes Recht — FR JG Art. 121
+  Abs. 2 «im ganzen Kanton», SO EG ZPO § 22 Abs. 2 kantonsweit (R1-05).
+- **Bewusst WEGGELASSEN:** SO-Josephstag und -Patrozinien (nur einzelne
+  Gemeinden; § 22 Abs. 2 EG ZPO SO nennt sie nicht) · NE-Fronleichnam (nur
+  Le Landeron). *Bis 24.9.2026 zusätzlich SO-1.-Mai* («halber Tag ab 12 Uhr»
+  — Begründung aus dem Ruhetagsrecht; seit RL-22 geführt, s. unten, R1-02).
 - **Korrigiert am 6.6.2026** (vorher falsch im Code): LU-Berchtoldstag,
   GL-Allerheiligen, GL- und VS-Stephanstag, JU-Pfingstmontag,
   FR-Mariä-Empfängnis, AI-Mauritiustag, NE/UR/AR/AI-Bedingungen,
   Näfelser-Fahrt-Karwoche-Regel.
+
+## Kantonale Spezialnormen (RL-22, 24.9.2026)
+
+Quelle der Belege: Prüfung Rechtslogik 23.9.2026 (Berichte R1, Zweitprüfung V8,
+amtliche Sammlungen geöffnet am 23.9.2026) — Projektordner
+`pruefung-rechtslogik-2026-09-23/berichte/`. Eigene Nachprüfung im RL-22-Bau:
+siehe Spalte «RL-22».
+
+| Kanton | Norm | Fassung | Wirkung im Code | RL-22 |
+|---|---|---|---|---|
+| SO | EG ZPO § 22 Abs. 2 (BGS 221.2) https://bgs.so.ch/app/de/texts_of_law/221.2 | 1.1.2025 | 1. Mai ganztags **neu geführt** (R1-02); Katalog kantonsweit; 8.12. nicht | Beleg R1+V8 |
+| UR | Ruhetagsgesetz Art. 9 lit. b (RB 70.1421) https://rechtsbuch.ur.ch/app/de/texts_of_law/70.1421 | 1.1.2003 | Stephanstag **unbedingt** (R1-03) | Beleg R1+V8 |
+| AR | V ArG Art. 7 (822.11) https://ar.clex.ch/app/de/texts_of_law/822.11 | 1.1.2016 | Stephanstag entfällt bei Weihnachten Mo/Fr (unverändert) | Snapshot `public/normtext/kanton/AR-822.11.json` (abgerufen 23.6.2026) |
+| FR | JG Art. 121 Abs. 2 (SGF 130.1) https://bdlf.fr.ch/app/de/texts_of_law/130.1 | 1.1.2024 | Seebezirk-Fn. 2 obsolet («im ganzen Kanton») | Beleg R1 |
+| ZH | GOG § 122 (LS 211.1) | 1.1.2026 (Fassung 131) | deckungsgleich | Snapshot `ZH-211.1.json` (abgerufen 1.9.2026) |
+| BS | RLG § 2 (SG 811.100) | 1.7.2020 | deckungsgleich | Snapshot `BS-811.100.json` (abgerufen 23.6.2026) |
+| AG · OW · ZG · VS · NW · BE | EG ZPO § 21 (SAR 221.200) · GOG Art. 28 Abs. 2 (GDB 134.1) · GOG § 10 (BGS 161.1) · RPflG Art. 37 (SGS 173.1) · GerG Art. 69 (**NG 261.1**, nicht «262.1», R1-09) · FRG Art. 2 (BSG 555.1) | s. R1/V8 | deckungsgleich | Beleg R1/V8 |
+| SG · SH · GL (2.1.) | sGS 143.11 Art. 59 Abs. 1 + KG SG FS.2012.1 · SHR 180.111 § 33 Abs. 1 + OGE 40/2018/1/K · GS II A/6/2 Art. 19 Abs. 2 lit. a (GL ohne Gerichtspraxis) | 1.1.2026 / 1.1.2026 / 1.7.2026 | 2.1. bleibt (R1-01 durch V8 widerlegt); GL-Hinweis folgt RL-23 (W-11) | Beleg V8 |
+| BL | GOG § 46 Abs. 2 (SGS 170) — Schliesstage | 1.1.2020 | **nicht geführt**, nur Hinweis (W-10; Geltung für ZPO offen) | Beleg V8 |
+| VD | LVLP Art. 73 Abs. 2 (BLV 280.05) — nur SchKG | 1.1.2018 | **nicht geführt**, nur Hinweis (W-10) | Beleg V8 (via LexFind) |
 
 ## Pflegebedarf / Verifikations-TODO
 
