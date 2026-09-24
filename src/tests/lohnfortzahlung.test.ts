@@ -44,7 +44,11 @@ describe('Lohnfortzahlung (Art. 324a OR)', () => {
   });
 
   // LA4 – AV-Dauer < 3 Monate → kein_anspruch
-  it('LA4: AV-Dauer < 3 Monate → kein_anspruch', () => {
+  // RL-25b (rechtslogik-rest-01, Fachänderung): die Karenzfrist verschiebt den
+  // Anspruch auf den ersten Tag des vierten Monats (BGE 131 III 623 E. 2.4),
+  // sie verneint ihn nicht. Ohne Ende der Verhinderung wird Andauern angenommen;
+  // der Fall «Verhinderung endet in der Karenzfrist» steht in rl25b-lohnfortzahlung.test.ts.
+  it('LA4: AV-Dauer < 3 Monate → Karenzfrist, Anspruch erst ab 1. Tag des 4. Monats', () => {
     const result = berechneLohnfortzahlung({
       vertragsbeginn: '2026-01-01',
       verhinderungBeginn: '2026-03-01',       // 2 Monate, keine vollen 3 Monate
@@ -52,7 +56,9 @@ describe('Lohnfortzahlung (Art. 324a OR)', () => {
       kanton: 'ZH',
       ktgGleichwertigVorhanden: false,
     });
-    expect(result.status).toBe('kein_anspruch');
+    expect(result.status).toBe('ok');
+    expect(result.zeitraumVonISO).toBe('2026-04-01');
+    expect(result.letzterTagISO).toBe('2026-04-21');
   });
 
   // LA5 – KTG gleichwertig → ktg_regime, keine Skala
@@ -147,7 +153,8 @@ describe('Lohnfortzahlung P1/P2 (Art. 324a OR)', () => {
   });
 
   // §7.12 – Unbefristet, KF ≤ 3 Monate, Verhinderung in Monat 2 → kein Lohn bis Ablauf 3 Monate
-  it('§7.12: Kündigungsfrist ≤ 3 Monate, Verhinderung in Monat 2 → kein_anspruch', () => {
+  // RL-25b (rechtslogik-rest-01, Fachänderung): Karenzfrist statt absolutem «kein Anspruch».
+  it('§7.12: Kündigungsfrist ≤ 3 Monate, Verhinderung in Monat 2 → Anspruch erst ab 1. Tag des 4. Monats', () => {
     const r = berechneLohnfortzahlung({
       vertragsbeginn: '2026-01-01',
       verhinderungBeginn: '2026-02-15',
@@ -156,7 +163,9 @@ describe('Lohnfortzahlung P1/P2 (Art. 324a OR)', () => {
       ktgGleichwertigVorhanden: false,
       vereinbarteKuendigungsfristMonate: 2, // ≤ 3
     });
-    expect(r.status).toBe('kein_anspruch');
+    expect(r.status).toBe('ok');
+    expect(r.zeitraumVonISO).toBe('2026-04-01');
+    expect(r.letzterTagISO).toBe('2026-04-21');
   });
 
   // §7.13 – Befristet fest > 3 Monate, Verhinderung in Woche 2 → Anspruch ab Tag 1
