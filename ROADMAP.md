@@ -465,8 +465,8 @@ Umschichtung 20.9.2026 (2)):*
   Ziel: Entscheid-Liste weg, rechte Spalte als zwei eigene Flächen, Kachelfeld bündig mit dem Schnellwerkzeug.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
 
-- [~] **Werkbank-Umbau: Startseite überarbeitet — Gesetze-Blatt, Schnellwerkzeug-Wahl, Begrüssung** *(`W2·29-WERKBANK-START-UEBERARBEITUNG`, David 24.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-START-UEBERARBEITUNG · status: wip · blocker: null · dep: [W2·29-WERKBANK-START-LAYOUT] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau: Startseite überarbeitet — Gesetze-Blatt, Schnellwerkzeug-Wahl, Begrüssung** *(`W2·29-WERKBANK-START-UEBERARBEITUNG`, David 24.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-START-UEBERARBEITUNG · status: done · blocker: null · dep: [W2·29-WERKBANK-START-LAYOUT] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Gesetze-Blatt ohne Leerfläche, Schnellwerkzeug wählbar, nur höfliche Begrüssungen, «Häufig gebraucht» unter den Kacheln.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d-bis.
 
