@@ -273,6 +273,22 @@ describe('Risiko-/Prüflogik-Prädikate', () => {
     expect(behalten('src/pages/VorlageVerjaehrungsverzicht.tsx')).toBe(true);
   });
 
+  // ANLASS: Gegenprüfung RL-02 24.9.2026 — die committeten Generator-Artefakte in
+  // src/lib/materialien/*.generated.ts (Amtsdaten stand/quelleUrl/normKeys aus
+  // scripts/materialien/**) lagen ausserhalb der Grenze, obwohl Generator und
+  // Projektion (public/materialien/**) Risiko sind. Gemessen vor dem Fix: false.
+  it('RL-02 A: Materialien-Generator-Artefakte in src/lib/materialien sind Risiko', () => {
+    expect(behalten('src/lib/materialien/botschaften.generated.ts')).toBe(true);
+    expect(behalten('src/lib/materialien/bs-grossrat.generated.ts')).toBe(true);
+    expect(behalten('src/lib/materialien/vernehmlassungen.generated.ts')).toBe(true);
+  });
+
+  it('RL-02 A Gegenprobe: Materialien-Ladeschichten bleiben frei (keine Rechtslogik)', () => {
+    expect(behalten('src/lib/materialien/browse.ts')).toBe(false);
+    expect(behalten('src/lib/materialien/ratschlaege.ts')).toBe(false);
+    expect(behalten('src/lib/materialien/kanten-shard.ts')).toBe(false);
+  });
+
   it('RL-02 A Gegenprobe: Nicht-Engines, PDF-Render, Adressdaten, andere Seiten, Tests bleiben frei', () => {
     expect(behalten('src/lib/kantone.ts')).toBe(false);
     expect(behalten('src/lib/bruch.ts')).toBe(false);
