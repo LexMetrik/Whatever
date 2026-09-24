@@ -74,6 +74,13 @@ const N = (artikel: string, bemerkung?: string): StrafNorm => ({ artikel, bemerk
 // Teil 3/5 — reiner Hinweistext, keine Logikänderung): Privatkläger-Bedingung
 // (Art. 81 Abs. 1 lit. b Ziff. 5), Art.-79-Ausnahme (BStGer-Beschwerdekammer)
 // und die zwei strafrechtlichen Abteilungen seit 1.2.2026 (Art. 35/35a BGerR).
+// RL-21 (F3-03, Prüfung Rechtslogik 23.9.2026): Der fehlende Stillstand in
+// Haftsachen war auf Art. 46 Abs. 2 lit. a BGG («vorsorgliche Massnahmen»)
+// gestützt. BGE 133 I 270 E. 1.2.1/1.2.2 (1B_154/2007, 14.9.2007) lässt diese
+// Einordnung ausdrücklich OFFEN und verneint den Stillstand wegen des
+// Beschleunigungsgebots (Art. 31 Abs. 3 BV, Art. 5 Ziff. 3 EMRK); Art. 46
+// Abs. 2 BGG (Fedlex-Konsolidierung 1.4.2026) nennt Haftsachen nicht.
+// Ergebnis unverändert, nur der Anker.
 const BGER_HINWEIS = {
   text:
     'WEITERZUG: Gegen den letztinstanzlichen kantonalen Endentscheid steht die Beschwerde in Strafsachen ans ' +
@@ -82,7 +89,7 @@ const BGER_HINWEIS = {
     'auswirken kann (Abs. 1 lit. b Ziff. 5); die Staatsanwaltschaft nicht bei Haftentscheiden (Ziff. 3). ' +
     'Gegen Entscheide der BStGer-BESCHWERDEKAMMER nur bei Zwangsmassnahmen (Art. 79 BGG). ' +
     'Vor- und Zwischenentscheide nur unter den Voraussetzungen der Art. 92/93 BGG. ' +
-    'Der BGG-Fristenstillstand (Art. 46 BGG) gilt — NICHT aber in Haftsachen (nach der Praxis als Verfahren betreffend vorsorgliche Massnahmen, Art. 46 Abs. 2 lit. a BGG). ' +
+    'Der BGG-Fristenstillstand (Art. 46 BGG) gilt — NICHT aber in Haftsachen: Das Bundesgericht schliesst ihn dort wegen des Beschleunigungsgebots aus (BGE 133 I 270 E. 1.2); Art. 46 Abs. 2 BGG nennt Haftsachen nicht ausdrücklich. ' +
     'Es entscheiden zwei strafrechtliche Abteilungen (seit 1.2.2026): materielle Straf-/Zivilfragen die Erste, ' +
     'strafprozessuale Zwischen-/Endentscheide und der Vollzug die Zweite (Art. 35/35a BGerR).',
   normen: [N('Art. 78 BGG'), N('Art. 79 BGG'), N('Art. 80 BGG'), N('Art. 81 BGG'), N('Art. 100 Abs. 1 BGG')],
@@ -160,6 +167,14 @@ export function bestimmeStrafRechtsmittel(input: StrafRmInput): StrafRmErgebnis 
         'RÜCKZUGSFIKTIONEN: Bleibt die Einsprache erhebende Person der Einvernahme (Art. 355 Abs. 2 StPO) bzw. der Hauptverhandlung (Art. 356 Abs. 4 StPO) trotz Vorladung unentschuldigt fern, gilt die Einsprache als zurückgezogen.',
         'Kein Fristenstillstand: Die StPO kennt KEINE Gerichtsferien (Art. 89 Abs. 2 StPO).',
       );
+      // RL-21 (F3-02): Art. 354 Abs. 1 lit. c StPO (Fedlex 1.4.2025) gibt der
+      // Staatsanwaltschaft die Einsprache nur «soweit vorgesehen» und nur der
+      // Ober- oder Generalstaatsanwaltschaft; welche Behörde, bestimmen Bund
+      // bzw. Kanton (Art. 381 Abs. 2 StPO).
+      if (input.werFichtAn === 'staatsanwaltschaft') {
+        weichen.push('EINSPRACHE DER STAATSANWALTSCHAFT nur, SOWEIT VORGESEHEN, durch die Ober- oder Generalstaatsanwaltschaft des Bundes bzw. des betreffenden Kantons im jeweiligen eidgenössischen oder kantonalen Verfahren (Art. 354 Abs. 1 lit. c StPO); ob eine solche Behörde besteht und berechtigt ist, bestimmen Bund bzw. Kanton (Art. 381 Abs. 2 StPO).');
+        normverweise.push(N('Art. 354 Abs. 1 lit. c StPO', 'Ober-/Generalstaatsanwaltschaft'), N('Art. 381 Abs. 2 StPO'));
+      }
       weichen.push(begruendung, 'Die Einsprache hat keinen Devolutiveffekt: Zunächst entscheidet die STAATSANWALTSCHAFT über Festhalten, neuen Strafbefehl, Einstellung oder Anklage (Art. 355 Abs. 3 StPO).');
       normverweise.push(N('Art. 354 StPO'), N('Art. 355 StPO'), N('Art. 356 StPO'));
       return {
@@ -214,9 +229,17 @@ export function bestimmeStrafRechtsmittel(input: StrafRmInput): StrafRmErgebnis 
       fristen.push(
         { label: 'Berufungs-ANMELDUNG', frist: '10 Tage seit ERÖFFNUNG des Urteils — an das ERSTINSTANZLICHE Gericht (schriftlich oder mündlich zu Protokoll)', norm: 'Art. 399 Abs. 1 StPO', kritisch: true },
         { label: 'Berufungs-ERKLÄRUNG', frist: '20 Tage seit ZUSTELLUNG des begründeten Urteils — an das BERUFUNGSGERICHT (schriftlich)', norm: 'Art. 399 Abs. 3 StPO', kritisch: true },
-        { label: 'Anschlussberufung der Gegenpartei', frist: '20 Tage seit Mitteilung der Berufungserklärung', norm: 'Art. 400 Abs. 3 / Art. 401 StPO', kritisch: false },
+        { label: 'Anschlussberufung der Gegenpartei', frist: '20 Tage seit Empfang der Berufungserklärung', norm: 'Art. 400 Abs. 3 / Art. 401 StPO', kritisch: false },
       );
-      const kognition = input.uebertretung
+      // RL-21 (F3-01): Art. 398 Abs. 5 StPO (Fedlex 1.4.2025) — beschränkt sich
+      // die Berufung auf den Zivilpunkt, wird nur so weit überprüft, als es das
+      // am Gerichtsstand anwendbare Zivilprozessrecht vorsähe. Abs. 5 ist die
+      // Sonderregel für den Zivilpunkt und geht der Übertretungs-Beschränkung
+      // (Abs. 4, Schuld-/Strafpunkt) vor.
+      const nurZivilpunkt = ziel === 'nur_zivilpunkt';
+      const kognition = nurZivilpunkt
+        ? 'BESCHRÄNKT AUF DEN ZIVILPUNKT: Das erstinstanzliche Urteil wird nur so weit überprüft, als es das am Gerichtsstand anwendbare Zivilprozessrecht vorsehen würde (Art. 398 Abs. 5 StPO).'
+        : input.uebertretung
         ? 'EINGESCHRÄNKT: Bildeten ausschliesslich Übertretungen Gegenstand des Verfahrens, kann nur geltend gemacht werden, das Urteil sei rechtsfehlerhaft oder die Sachverhaltsfeststellung offensichtlich unrichtig/auf Rechtsverletzung beruhend; NEUE Behauptungen und Beweise sind ausgeschlossen (Art. 398 Abs. 4 StPO).'
         : 'umfassend in allen angefochtenen Punkten: Rechtsverletzungen inkl. Ermessen, Sachverhalt, Unangemessenheit (Art. 398 Abs. 2/3 StPO)';
       warnungen.push(
@@ -227,8 +250,12 @@ export function bestimmeStrafRechtsmittel(input: StrafRmInput): StrafRmErgebnis 
         'Die Berufung VERDRÄNGT die Beschwerde (Art. 394 lit. a StPO): Gegen berufungsfähige Urteile ist nur die Berufung gegeben; mit ihr können auch Verfahrensfehler gerügt werden.',
         'Die Berufung hat im Umfang der Anfechtung AUFSCHIEBENDE Wirkung (Art. 402 StPO); in der Erklärung ist anzugeben, ob das Urteil vollumfänglich oder in Teilen angefochten wird (Art. 399 Abs. 3/4 StPO).',
       );
+      if (nurZivilpunkt) {
+        weichen.push('ANSCHLUSSBERUFUNG: Bezieht sich die Hauptberufung ausschliesslich auf den Zivilpunkt des Urteils, ist auch die Anschlussberufung auf deren Umfang beschränkt (Art. 401 Abs. 2 StPO).');
+      }
       if (input.nurZugunstenBeschuldigte) weichen.push(reformatio);
       normverweise.push(N('Art. 398 StPO'), N('Art. 399 StPO'), N('Art. 394 StPO', 'lit. a'), N('Art. 402 StPO'));
+      if (nurZivilpunkt) normverweise.push(N('Art. 398 Abs. 5 StPO', 'Zivilpunkt'), N('Art. 401 Abs. 2 StPO'));
       return {
         statthaft: 'berufung',
         text: `BERUFUNG gegen das erstinstanzliche Urteil (auch selbstständige nachträgliche Entscheide und Einziehungsentscheide, Art. 398 Abs. 1 StPO) — Anmeldung beim erstinstanzlichen Gericht, Erklärung an das ${berufungsgericht}.`,
@@ -260,7 +287,7 @@ export function bestimmeStrafRechtsmittel(input: StrafRmInput): StrafRmErgebnis 
         text: 'Haftentlassungsgesuche im Berufungsverfahren entscheidet die VERFAHRENSLEITUNG DES BERUFUNGSGERICHTS endgültig (Art. 233 StPO) — kein StPO-Rechtsmittel; offen bleibt nur die Beschwerde in Strafsachen ans Bundesgericht (Art. 78 ff. BGG).',
         instanz: '—', form: '—', kognition: null,
         fristen: [],
-        warnungen: ['In Haftsachen gilt der BGG-Fristenstillstand NICHT (Art. 46 Abs. 2 BGG).'],
+        warnungen: ['In Haftsachen gilt der BGG-Fristenstillstand NICHT — nach der Rechtsprechung wegen des Beschleunigungsgebots (BGE 133 I 270 E. 1.2), nicht kraft des Wortlauts von Art. 46 Abs. 2 BGG.'],
         weichen, bger: BGER_HINWEIS, normverweise,
       };
     }
