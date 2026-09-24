@@ -35,6 +35,9 @@ export interface FamStatusPreset {
   einheit: Einheit;
   /** Ehrlicher Kontext (§8): Auslöser, Gegen-Frist, Wiederherstellung. */
   info: string;
+  /** RL-24/R5-06: Ende ist ein Wirkungstermin, kein Handlungstag — keine
+   *  Werktagsverschiebung (Art. 78 OR). Fehlt das Feld, wird verschoben. */
+  ohneVerschiebung?: true;
 }
 
 export const FAM_STATUS_PRESETS: FamStatusPreset[] = [
@@ -78,7 +81,13 @@ export const FAM_STATUS_PRESETS: FamStatusPreset[] = [
     label: 'Kündigung einfache Gesellschaft – 6 Monate',
     norm: 'Art. 546 Abs. 1 OR',
     laenge: 6, einheit: 'monate',
-    info: 'Konkubinats-/Gesellschaftsauflösung: Kündigung in guten Treuen, nicht zur Unzeit; bei vereinbarten Jahresabschlüssen nur aufs Ende des Geschäftsjahres (Abs. 2). Entfällt bei Auflösung nach Art. 545 Abs. 1 Ziff. 1 OR.',
+    info: 'Konkubinats-/Gesellschaftsauflösung: Kündigung in guten Treuen, nicht zur Unzeit; bei vereinbarten Jahresabschlüssen nur aufs Ende des Geschäftsjahres (Abs. 2). Entfällt bei Auflösung nach Art. 545 Abs. 1 Ziff. 1 OR. Ergebnis = Auflösungstermin (Wirkung der Kündigung, kein Handlungstag) – ohne Verschiebung auf einen Werktag.',
+    // RL-24/R5-06 (Prüfung Rechtslogik 23.9.2026, «vermutet»): Art. 78 Abs. 1
+    // OR verschiebt den Zeitpunkt der Erfüllung bzw. den letzten Tag einer
+    // Frist, innert der gehandelt werden muss; die Auflösung auf sechs Monate
+    // (Art. 546 Abs. 1 OR; OR-Snapshot Stand 1.1.2026) ist ein Wirkungstermin.
+    // Beleg C13: Zugang 1.2.2026 + 6 Mt → 1.8.2026 (bisher 3.8.2026).
+    ohneVerschiebung: true,
   },
   {
     key: 'kesb_beschwerde',
@@ -95,3 +104,12 @@ export const FAM_STATUS_PRESETS: FamStatusPreset[] = [
     info: 'Start = Mitteilung der vorsorglichen Massnahme; bei fürsorgerischer Unterbringung gilt Art. 450b Abs. 2 ZGB (eigene 10-Tage-Regel).',
   },
 ];
+
+/** Patch des Allgemein-Formulars für einen Fach-Preset — EINE Stelle für den
+ *  Chip-Klick und den fp=-Link (§5; RL-24/R5-06). */
+export function famPresetPatch(p: FamStatusPreset): {
+  laenge: number; einheit: Einheit; wochenendeVerschieben: boolean; feiertageVerschieben: boolean;
+} {
+  const verschieben = !p.ohneVerschiebung;
+  return { laenge: p.laenge, einheit: p.einheit, wochenendeVerschieben: verschieben, feiertageVerschieben: verschieben };
+}

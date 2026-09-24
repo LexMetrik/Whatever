@@ -3,6 +3,7 @@ import { addMonths, addYears, addDays, differenceInCalendarDays, isSaturday, isS
 import { fristendeTage, fristendeKalender, OHNE_STILLSTAND, type Einheit } from './fristenEngine';
 import { formatDatum, formatISO } from './datumsUtils';
 import { istFeiertag } from '../data/zpoFeiertage';
+import { KANTONE } from './kantone';
 import type { Berechnungsergebnis, Kanton, Normverweis, Rechenschritt } from '../types/legal';
 
 // ─── Allgemeiner Fristenrechner (Art. 77/78 OR) – dünne Engine ──────────────
@@ -24,6 +25,16 @@ import type { Berechnungsergebnis, Kanton, Normverweis, Rechenschritt } from '..
 
 export type { Einheit } from './fristenEngine';
 
+// RL-24/F1-02 (Prüfung Rechtslogik 23.9.2026, Zweitprüfung V2): Art. 78 Abs. 1
+// OR verschiebt nur Sonntag und «am Erfüllungsorte staatlich anerkannte»
+// Feiertage (Fedlex SR 220, Snapshot public/normtext/bund/OR.json, Stand
+// 1.1.2026). Den Samstag stellt erst das Fristengesetz (SR 173.110.3) einem
+// Feiertag gleich — und nur für gesetzlich oder behördlich festgesetzte
+// Fristen (V2; Wortlaut SR 173.110.3 am 24.9.2026 mangels Netz NICHT amtlich
+// nachgelesen). Vertraglich vereinbarte Fristen/Erfüllungstage: kein Samstag.
+// Standard «gesetzlich» = bisheriges Verhalten (Golden allg:30t/allg:klemm).
+export type FristArt = 'gesetzlich' | 'vertraglich';
+
 export interface AllgFristInput {
   start: string;                 // 'YYYY-MM-DD', als reiner Kalendertag interpretiert
   laenge: number;                // > 0, ganzzahlig
@@ -31,6 +42,7 @@ export interface AllgFristInput {
   wochenendeVerschieben: boolean;
   feiertageVerschieben: boolean;
   kanton?: Kanton;               // nötig, wenn feiertageVerschieben
+  fristart?: FristArt;           // Standard 'gesetzlich' (RL-24/F1-02)
 }
 
 interface RechenSchritt {
@@ -87,6 +99,13 @@ export const STPO_FRIST_HINWEIS =
   + 'Wohnsitz oder Sitz hat (Art. 90 Abs. 2 StPO), nicht der Gerichtsort; liegen beide in verschiedenen '
   + 'Kantonen, im Zweifel den früheren Termin einhalten.';
 
+// RL-24/F1-02: Offenlegung des Vertragsfrist-Regimes (§8).
+export const VERTRAGSFRIST_HINWEIS =
+  'Vertragsfrist/Erfüllungstag: Verschoben wird nur bei Sonntag oder einem am Erfüllungsort staatlich '
+  + 'anerkannten Feiertag (Art. 78 Abs. 1 OR), nicht bei Samstag – die Samstagsregel des Fristengesetzes '
+  + '(SR 173.110.3) gilt für gesetzliche und behördliche Fristen. Abweichende Vereinbarungen bleiben '
+  + 'vorbehalten (Art. 78 Abs. 2 OR).';
+
 export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult {
   if (!Number.isInteger(input.laenge) || input.laenge <= 0) {
     throw new Error('Fristlänge muss eine ganze Zahl > 0 sein.');
@@ -140,12 +159,15 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   // Sonntag wäre rechtlich unhaltbar). Nur der reine Wochenend-Modus ohne
   // Feiertage bleibt wählbar (Feiertage bewusst ignoriert, kantonsfrei).
   const wochenende = input.wochenendeVerschieben || input.feiertageVerschieben;
+  // RL-24/F1-02: bei Vertragsfristen bleibt der Samstag ein Werktag (Art. 78
+  // Abs. 1 OR nennt nur Sonntag und Feiertag; SR 173.110.3 gilt nicht).
+  const vertraglich = input.fristart === 'vertraglich';
   const grundFuer = (d: Date): string | null => {
     if (input.feiertageVerschieben && input.kanton && istFeiertag(d, input.kanton)) {
       return `gesetzlicher Feiertag (${input.kanton})`;
     }
     if (wochenende && isSunday(d)) return 'Sonntag (Art. 78 Abs. 1 OR)';
-    if (wochenende && isSaturday(d)) return 'Samstag (SR 173.110.3)';
+    if (wochenende && !vertraglich && isSaturday(d)) return 'Samstag (SR 173.110.3)';
     return null;
   };
 
@@ -176,7 +198,8 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     verschoben: verschiebeGruende.length > 0,
     verschiebeGruende,
     schritte,
-    hinweise: [ALLG_FRIST_HINWEIS],
+    // Gesetzlich unverändert (Golden); vertraglich zusätzlich die Regime-Offenlegung.
+    hinweise: vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : [ALLG_FRIST_HINWEIS],
     startISO: iso(start),
     fristbeginnISO: iso(addDays(start, 1)),
   };
@@ -224,9 +247,11 @@ export function allgemeineFristErgebnis(input: AllgFristInput): Berechnungsergeb
     'Der Rechner ermittelt das Fristende ab dem eingegebenen Startdatum; den Fristbeginn (z. B. Zustellfiktionen) bestimmt er nicht.',
   ];
 
+  // RL-24/F1-02: bei Vertragsfristen ist SR 173.110.3 nicht einschlägig.
+  const verschiebeNormen = input.fristart === 'vertraglich' ? [N_78] : [N_78, N_SAMSTAG];
   const normverweise: Normverweis[] = [
     N_77,
-    ...(r.verschoben || input.wochenendeVerschieben || input.feiertageVerschieben ? [N_78, N_SAMSTAG] : []),
+    ...(r.verschoben || input.wochenendeVerschieben || input.feiertageVerschieben ? verschiebeNormen : []),
   ];
 
   return {
@@ -250,6 +275,11 @@ export function allgemeineFristErgebnis(input: AllgFristInput): Berechnungsergeb
 // (Termin 20.4. − 10 Tage → 9.4.; Quartalsende 30.6. − 3 Monate → 29.3. – so
 // auch Tests AF-18/AF-19). Hinweis: andere Engines mit eigener Termin-
 // Konvention (z. B. Kündigungstermine im Mietrecht) rechnen bewusst abweichend.
+// Ergänzung RL-24/F1-06 und S3f-7 (24.9.2026): Die Formel oben gilt nur ohne
+// Monatsende-Klemmung; massgeblich ist seither «spätester Tag X mit X + Frist
+// < Stichtag» (31.3. − 1 Monat → 28.2., nicht 27.2.). Der am 19.6.2026
+// gerügte Kommentarfehler («30.6−3M→31.3», AUDIT-BUGS:120) war bereits mit
+// 445e00910 (25.6.2026) behoben; S3f-7 las ihn am 23.9.2026 als offen.
 //
 // VERSCHIEBUNG: Art. 78 OR ist auf Vorwärtsfristen zugeschnitten («…endet
 // am nächstfolgenden Werktag»). Ob bei Rückwärtsfristen eine Wochenend-/
@@ -300,7 +330,24 @@ export function berechneRueckwaertsFrist(input: RueckFristInput): AllgFristResul
     jahre: (d, n) => addYears(d, -n),
   };
   const gespiegelt = zurueck[input.einheit](stichtag, input.laenge);
-  const roh = addDays(gespiegelt, -1);
+  // RL-24/F1-06 (Prüfung Rechtslogik 23.9.2026, Beleg R2): «gespiegelt − 1»
+  // ist nur ohne Monatsende-Klemmung richtig. Mit Klemmung (31.3. − 1 Mt =
+  // 28.2.) lag das Ergebnis einen Tag zu früh (27.2.), obwohl 28.2. + 1 Mt =
+  // 28.3. < 31.3. die volle Frist wahrt. Allgemein: spätester Tag X mit
+  // X + Frist < Stichtag (Vorwärtsregel Art. 77 Abs. 1 Ziff. 3 OR auf X
+  // angewandt). Für Tage/Wochen und ungeklemmte Monate/Jahre identisch mit
+  // der bisherigen Formel (Golden allg:rueck: 30.6. − 3 Mt → 29.3.).
+  const vorwaerts: Record<Einheit, (d: Date, n: number) => Date> = {
+    tage: (d, n) => addDays(d, n),
+    wochen: (d, n) => addDays(d, 7 * n),
+    monate: (d, n) => addMonths(d, n),
+    jahre: (d, n) => addYears(d, n),
+  };
+  let roh = gespiegelt;
+  for (let guard = 0; guard < 10
+    && differenceInCalendarDays(vorwaerts[input.einheit](roh, input.laenge), stichtag) >= 0; guard++) {
+    roh = addDays(roh, -1);
+  }
   const geklemmt = (input.einheit === 'monate' || input.einheit === 'jahre')
     && gespiegelt.getDate() !== stichtag.getDate();
   schritte.push({
@@ -406,8 +453,16 @@ export function zustellHinweis(art: ZustellArt, datumISO: string, kanton?: Kanto
   if (art === 'apostplus') {
     let v = d;
     const gruende: string[] = [];
+    // RL-24/VS3-08 (Prüfung Rechtslogik 23.9.2026): ohne Kanton blieb ein
+    // Feiertag unberücksichtigt (Fr 1.8.2025 → 1.8. statt 4.8.). Art. 142
+    // Abs. 1bis ZPO (amtliche Fassung 1.7.2026) knüpft an den Feiertag «am
+    // Gerichtsort» an. Ohne Kanton zählen darum nur Tage, die nach
+    // data/zpoFeiertage in ALLEN Kantonen Feiertag sind (z. B. 1. August) —
+    // richtig für jeden Gerichtsort; kantonale Feiertage verschieben nicht
+    // (früheres Ergebnis = sichere Seite) und der Hinweis verlangt den Kanton.
+    const feiertag = (x: Date) => kanton ? istFeiertag(x, kanton) : KANTONE.every((k) => istFeiertag(x, k));
     for (let g = 0; g < 10; g++) {
-      const frei = (kanton && istFeiertag(v, kanton)) ? 'Feiertag' : isSunday(v) ? 'Sonntag' : isSaturday(v) ? 'Samstag' : null;
+      const frei = feiertag(v) ? 'Feiertag' : isSunday(v) ? 'Sonntag' : isSaturday(v) ? 'Samstag' : null;
       if (!frei) break;
       gruende.push(frei);
       v = addDays(v, 1);
@@ -418,6 +473,7 @@ export function zustellHinweis(art: ZustellArt, datumISO: string, kanton?: Kanto
         gruende.length > 0
           ? `Zustellung durch gewöhnliche Post (A-Post Plus) an einem ${gruende[0]}: Die Mitteilung gilt erst am nächsten Werktag (${fmt(v)}) als erfolgt (Art. 142 Abs. 1bis ZPO, in Kraft seit 1.1.2025; Feiertage am GERICHTSORT).`
           : 'Zustellung durch gewöhnliche Post an einem Werktag: Es gilt das Zustelldatum (Art. 142 Abs. 1bis ZPO betrifft nur Sa/So/Feiertag).',
+        ...(kanton ? [] : ['Ohne Kanton sind nur die in allen Kantonen anerkannten Feiertage berücksichtigt – für kantonale Feiertage am Gerichtsort den Kanton angeben.']),
         'Hinweis, keine verbindliche Zustellberechnung – massgeblich ist der Einzelfall.',
       ],
     };
@@ -445,8 +501,10 @@ export { icsFuerFrist } from './icsExport';
 export const MECHANIK_PRESETS: { key: string; label: string; patch: Partial<AllgFristInput>; info?: string }[] = [
   { key: 'tagesfrist', label: 'Tagesfrist (Kalendertage)',
     patch: { einheit: 'tage', wochenendeVerschieben: true, feiertageVerschieben: true } },
-  { key: 'monatsfrist_or', label: 'Monatsfrist nach OR',
-    patch: { einheit: 'monate', laenge: 1, wochenendeVerschieben: true, feiertageVerschieben: true },
+  // RL-24/F1-02: Label nennt das Regime — die Samstagsverschiebung gilt nur
+  // für gesetzliche/behördliche Fristen; «nach OR» liess Vertragsfristen offen.
+  { key: 'monatsfrist_or', label: 'Monatsfrist (gesetzlich)',
+    patch: { einheit: 'monate', laenge: 1, wochenendeVerschieben: true, feiertageVerschieben: true, fristart: 'gesetzlich' },
     info: 'endet am gleichbezeichneten Tag (BGE 150 III 367)' },
   { key: 'kalendertage_pur', label: 'Kalendertage ohne Verschiebung',
     patch: { einheit: 'tage', wochenendeVerschieben: false, feiertageVerschieben: false } },
@@ -470,6 +528,8 @@ export function fristQueryKodieren(f: AllgFristInput): string {
   p.set('s', f.start); p.set('l', String(f.laenge)); p.set('e', f.einheit);
   if (f.wochenendeVerschieben) p.set('w', '1');
   if (f.feiertageVerschieben) { p.set('f', '1'); if (f.kanton) p.set('k', f.kanton); }
+  // RL-24/F1-02: nur die Vertragsfrist wird kodiert — gesetzliche Links bleiben byte-gleich.
+  if (f.fristart === 'vertraglich') p.set('r', 'v');
   return p.toString();
 }
 
@@ -514,5 +574,6 @@ export function fristQueryLesen(query: string): Partial<AllgFristInput> | null {
     wochenendeVerschieben: p.get('w') === '1' || p.get('f') === '1',
     feiertageVerschieben: p.get('f') === '1',
     ...(kanton ? { kanton } : {}),
+    ...(p.get('r') === 'v' ? { fristart: 'vertraglich' as const } : {}),
   };
 }
