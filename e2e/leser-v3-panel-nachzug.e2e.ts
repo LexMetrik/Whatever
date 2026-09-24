@@ -218,9 +218,15 @@ test.describe('H3-Nachzug — Panel: Lade-Ende, Erreichbarkeit, Gestalt', () => 
     // Unten angeschlagen: die Unterkante liegt am Fensterboden (±2 px Rundung).
     expect(Math.abs((box.y + box.height) - 844), `Sheet hängt nicht unten: ${box.y}+${box.height}`)
       .toBeLessThanOrEqual(2)
-    // Und es lässt oben Platz: 55 % Deckel ⇒ mindestens 40 % der Fläche frei.
-    expect(box.height, `Sheet zu hoch: ${box.height} px von 844`).toBeLessThanOrEqual(844 * 0.58)
-    expect(box.y, `Sheet beginnt zu weit oben: ${box.y}`).toBeGreaterThan(844 * 0.4)
+    // Und es lässt oben Platz. Bis 24.9.2026: «55 % Deckel ⇒ mindestens 40 %
+    // der Fläche frei» (≤ 58 % / y > 40 %). Seit Runde 2 (W2·29-WERKBANK-LESER,
+    // Auftrag «mobil Blatt-Anteil 55 % zu klein») reicht das Blatt bis 8 rem
+    // unter den klebenden Kopf, gedeckelt bei 70 % (`v3/blattFlaeche`):
+    // @390×844 526 px = 62 %. Die tragende Zusage — ein lesbarer
+    // Artikel-Streifen über dem Blatt — prüft unten unverändert die
+    // 120-px-Schwelle; hier bleibt der harte Deckel.
+    expect(box.height, `Sheet zu hoch: ${box.height} px von 844`).toBeLessThanOrEqual(844 * 0.7)
+    expect(box.y, `Sheet beginnt zu weit oben: ${box.y}`).toBeGreaterThan(844 * 0.3)
 
     // Der Lesetext steht darüber und ist SICHTBAR — das ist der Unterschied
     // zwischen einem Blatt und einem Vollbild-Dialog. Und er ist NICHT verschoben

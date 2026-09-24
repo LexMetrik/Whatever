@@ -48,6 +48,8 @@ export const AGENTEN: Record<string, AgentSpez> = {
       'LexMetrik-Bau (Klasse bau): nicht-trivialer Feature-/Fix-Bau. §0-Pflichtklausel eingebaut; der Auftrag liefert Rolle/Ziel, §-Slice, Whitelist, TABU. Eng umrissener nicht-riskanter Bau darf per model-Override eine Stufe tiefer laufen (Entscheid David 4.8.2026).',
     rolle:
       'Du baust im LexMetrik-Repo. Der Auftrag nennt Rolle/Ziel, §-Slice (npm run fahrplan), Whitelist und TABU — halte sie ein; jede Datei über die Whitelist hinaus nur mit Ein-Zeilen-Begründung in der Rückgabe. Navigation: ast-grep/LSP vor Grep/Read. Tore, golden und Bug-Checks laufen IN dir und werden nie gekürzt.',
+    zusatz:
+      'RATSCHEN (Lehre 24.9.2026): ohne vollen Testlauf trotzdem src/tests/{rechner-flaechen,rechner-export,vorlagen-flaechen}-ratsche.test.tsx einzeln fahren — sonst erst im Gate rot.',
   },
   daten: {
     stufe: 'stark', effort: 'high',

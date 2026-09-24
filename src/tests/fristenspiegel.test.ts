@@ -241,8 +241,11 @@ describe('Fristenspiegel A.2/A.7/A.6: Preset-Parameter-Identität (§5) + Multi-
     expect(normal.zeilen[0].normRef).toBe('Art. 209 Abs. 3 ZPO');
     expect(miete.zeilen[0].endeText).toBe(direkt30.diesAdQuem);
     expect(miete.zeilen[0].normRef).toBe('Art. 209 Abs. 4 ZPO');
-    // Preset-Vorbehalt (Prosekutions-Stillstand offen) wird durchgereicht (§8)
-    expect(normal.warnungen.join(' ')).toContain('nicht abschliessend geklärt');
+    // Preset-Hinweis wird durchgereicht (§8). RL-20/R5-05 (Prüfung Rechtslogik
+    // 23.9.2026): vorher «nicht abschliessend geklärt» — BGE 138 III 615 (E. 2)
+    // entscheidet: Klagefrist nach Art. 209 Abs. 3 und 4 ZPO steht still.
+    expect(normal.warnungen.join(' ')).toMatch(/\bBGE 138 III 615\b/);
+    expect(normal.warnungen.join(' ')).not.toContain('nicht abschliessend geklärt');
   });
 
   it('A.6 Erbgang: Ausschlagung+Inventar parallel (gleicher Trigger); Klagen NUR als Hinweis (anderer Trigger, §1)', () => {
