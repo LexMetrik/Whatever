@@ -5,10 +5,8 @@ import { menueTastenFahrt } from './menueTasten';
 import { kopfGriffKlassen } from './kopfStufen';
 import { useLeserOptionen } from '../leserOptionen';
 import { LeserAenderungsWahl } from './LeserAenderungsWahl';
-import { LeserRubrikenWahl } from './LeserRubrikenWahl';
 import { LeserModusWahl } from './LeserModusWahl';
 import type { LeserModus } from './einzelModus';
-import type { BestimmungsWort } from './erlassAnsicht';
 import { SchriftgroessenRegler } from '../../../components/ui/SchriftgroessenRegler';
 import { MenueRegler, MenueTitel } from '../../../components/ui/Menue';
 
@@ -66,7 +64,7 @@ import { MenueRegler, MenueTitel } from '../../../components/ui/Menue';
 // Gruppen bauen ihre Zeilen in eigenen Dateien (`./LeserAenderungsWahl`,
 // `./LeserRubrikenWahl`) und ziehen `MenueSchalter` dort direkt.
 
-export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, modus, onModusWahl }: {
+export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke, modus, onModusWahl }: {
   /** `true` = Handy-Zuschnitt: der Öffner zeigt «···» statt «Ansicht ▾»
    *  (Fahrplan Kap. 4a). Reine Beschriftung — der Accessible-Name bleibt in
    *  beiden Zuschnitten «Ansicht», und die Elemente des Panels sind identisch. */
@@ -83,10 +81,6 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
    * zweite Wahrheit, und sie liefe beim ersten Nachjustieren auseinander.
    */
   hatAenderungsvermerke: boolean;
-  /** D35-F2 · «Artikel» oder «Paragraphen» für den Kopf der Rubriken-Gruppe.
-   *  Durchgereicht aus `./erlassAnsicht.bestimmungsWort` — die EINE Ableitung
-   *  (B8/C1); hier steht keine zweite. */
-  bestimmungsWort: BestimmungsWort;
   /** W2·5m · die geltende Lesart (Adresse vor Präferenz, `./useEinzelModus`).
    *  `undefined` = der Aufrufer bietet den Umschalter nicht an (sekundäres
    *  Pane, Kap. 15.6) — dann steht die Gruppe gar nicht erst da (§8: kein
@@ -164,7 +158,8 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
         // D35-F2: «Rechtsprechung» ist raus (der Schalter ist gefallen), die
         // Rubriken-Gruppe ist drin — der Tooltip zählt weiterhin genau die Gruppen auf,
         // die das Menü wirklich trägt (§8).
-        title={`Ansicht: ${hatAenderungsvermerke ? 'Änderungen als Fassung, Fussnoten oder aus · ' : ''}Rubriken am Ende · Grösse nur des Gesetzestexts`}
+        // S6 W1f (24.9.2026): Rubriken-Wahl und Stellung «Fassung» sind gefallen.
+        title={`Ansicht: ${hatAenderungsvermerke ? 'Fussnoten am Artikel · ' : ''}Grösse nur des Gesetzestexts`}
       >
         {/* ── Ä91 (H4-Nachzug 18.8.2026) · ZWEI GESICHTER, NICHT DREI ────────
             Gemessen 18.8.2026 trug dieser Öffner DREI verschiedene Gestalten:
@@ -291,12 +286,9 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               tritt keine Rechtsprechungs-Gruppe, sondern die Rubriken-Wahl —
               eine andere Frage («was steht am ARTIKEL?»), darum ein eigener
               Baustein mit eigenem Gruppenkopf. */}
-          {/* D35-F2 · Davids Nachtrag «man soll mittels ansicht alles einzelne
-              abwählen können». Die Wahl selbst samt ihrer §15-Herleitung
-              (Attribut + CSS statt 1686 Abonnenten) steht in
-              `./LeserRubrikenWahl` — diese Datei stand vor dem Schritt bei 399
-              der 420 zulässigen Zeilen (Fundament-Sonde §6.6). */}
-          <LeserRubrikenWahl gewaehlt={opt.fussRubriken} bestimmungsWort={bestimmungsWort} />
+          {/* S6 W1f (Entscheid David 24.9.2026): HIER STAND die Rubriken-Wahl
+              (`./LeserRubrikenWahl`, D35-F2). Mit der Funktionszeile fiel ihr
+              Gegenstand — gestrichen statt bewacht (§17-Gegengewicht). */}
           </div>
 
           {/* ── Schriftgrösse ────────────────────────────────────────────────

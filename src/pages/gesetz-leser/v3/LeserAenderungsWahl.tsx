@@ -61,28 +61,22 @@ import { setzeVermerke, type VermerkeWahl } from '../leserOptionen';
 // ÄNDERUNGS-Ansicht an die Klasse `A`; hier dämpft keine Klasse mehr etwas
 // (Herleitung am Regelblock in `src/index.css`).
 
-/** Beschriftung, Tooltip und Stellung — die Reihenfolge IST die Menü-Ordnung. */
-const STELLUNGEN: ReadonlyArray<{ wert: VermerkeWahl; label: string; titel: string }> = [
-  {
-    wert: 'fassung',
-    label: 'Fassung',
-    titel: 'Zeigt die Fassungs-Zeile «Gilt seit …» samt Zeitleiste; der '
-      + 'Fussnoten-Apparat und seine Marken sind dann am Bildschirm aus. Im '
-      + 'Ausdruck bleibt der amtliche Apparat vollständig.',
-  },
-  {
-    wert: 'fussnoten',
-    label: 'Fussnoten',
-    titel: 'Zeigt den vollständigen amtlichen Fussnoten-Apparat samt Marken im '
-      + 'Text; die abgeleitete Fassungs-Zeile ist dann aus.',
-  },
-  {
-    wert: 'aus',
-    label: 'aus',
-    titel: 'Weder Fassungs-Zeile noch Fussnoten-Apparat — nur der Gesetzestext. '
-      + 'Im Ausdruck bleibt der amtliche Apparat vollständig.',
-  },
-];
+// ═══ S6 W1f (Entscheid David 24.9.2026) · EIN SCHALTER: FUSSNOTEN AM ARTIKEL ═
+//
+// Wörtlich: «infos sollen alle im blatt erscheinen. einzige ausnahme sind wenn
+// fussnoten aktiviert sind die sollen unten am artikel erschienen». Die
+// Stellung «Fassung» hatte ihren Gegenstand am Artikelende — die Zeile «Gilt
+// seit …» — und der steht seither im Erlass-Blatt (Reiter «Änderungen»). Aus
+// der Dreier-Wahl wird darum EIN Schalter: Fussnoten am Artikel an oder aus.
+// Die Blöcke oben sind Belege ihres Datums (§0 Ziff. 2b). Gespeicherte Wahlen
+// migriert `leserOptionen.migriereOptFelder` («Fassung» → aus, Herleitung dort).
+//
+// ROLLE `menuitemcheckbox`: ein Zweiwert-Schalter im Menü (derselbe Vertrag wie
+// die gefallene Rubriken-Wahl). `data-v3-vermerke="fussnoten"` bleibt als
+// Sonden-Anker — der Schalter IST die frühere Stellung «Fussnoten».
+
+const TITEL = 'Zeigt den vollständigen amtlichen Fussnoten-Apparat samt Marken im '
+  + 'Text unter jedem Artikel. Im Ausdruck bleibt der Apparat in jeder Stellung vollständig.';
 
 export function LeserAenderungsWahl({ wahl, fussnotenAnzahl }: {
   /** Die gesetzte Stellung aus dem geteilten Store. */
@@ -95,27 +89,22 @@ export function LeserAenderungsWahl({ wahl, fussnotenAnzahl }: {
   fussnotenAnzahl: number | null;
 }) {
   const zahl = fussnotenAnzahl != null && fussnotenAnzahl > 0 ? fussnotenAnzahl : null;
+  const an = wahl === 'fussnoten';
   return (
     <MenueGruppe attrs={{
       role: 'group',
-      'aria-label': 'Änderungen anzeigen als',
+      'aria-label': 'Am Artikel',
       'data-v3-vermerke-wahl': '',
     }}>
-      <MenueTitel>Änderungen anzeigen als</MenueTitel>
-      {STELLUNGEN.map((s) => (
-        <MenueSchalter
-          key={s.wert}
-          an={wahl === s.wert}
-          form="punkt"
-          label={s.label}
-          titel={zahl != null && s.wert === 'fussnoten' ? `${s.titel} (${zahl} in diesem Erlass)` : s.titel}
-          ariaLabel={zahl != null && s.wert === 'fussnoten' ? `Fussnoten (${zahl} im Erlass)` : undefined}
-          /* Idempotent: ein Klick auf die gesetzte Stellung ist ein No-op
-             (`setzeVermerke`) — eine Radiogruppe schaltet sich nicht selbst ab. */
-          onKlick={() => setzeVermerke(s.wert)}
-          attrs={{ role: 'menuitemradio', 'data-v3-vermerke': s.wert }}
-        />
-      ))}
+      <MenueTitel>Am Artikel</MenueTitel>
+      <MenueSchalter
+        an={an}
+        label="Fussnoten"
+        titel={zahl != null ? `${TITEL} (${zahl} in diesem Erlass)` : TITEL}
+        ariaLabel={zahl != null ? `Fussnoten (${zahl} im Erlass)` : undefined}
+        onKlick={() => setzeVermerke(an ? 'aus' : 'fussnoten')}
+        attrs={{ role: 'menuitemcheckbox', 'data-v3-vermerke': 'fussnoten' }}
+      />
     </MenueGruppe>
   );
 }

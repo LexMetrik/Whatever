@@ -1544,14 +1544,13 @@
      wie der Slot vorher: der Fassungs-Stand ist ABGELEITET (kein amtlicher
      Fussnotentext), er folgt der Wahl darum auch auf dem Papier. Am Bildschirm
      ist das Element ohnehin `display:none` (`hidden print:block`). */
-  html[data-vermerke="fussnoten"] .lc-leser .lr7-bez-marke[data-reg="f"],
-  html[data-vermerke="fussnoten"] .lc-leser .lr7-bez-block[data-reg="f"],
-  html[data-vermerke="fussnoten"] .lc-leser [data-hist-druck],
-  html[data-vermerke="aus"] .lc-leser .lr7-bez-marke[data-reg="f"],
-  html[data-vermerke="aus"] .lc-leser .lr7-bez-block[data-reg="f"],
-  html[data-vermerke="aus"] .lc-leser [data-hist-druck] {
-    display: none;
-  }
+  /* S6 W1f (Entscheid David 24.9.2026): HIER STAND die Regel, die Rubrik
+     «Fassung» und `[data-hist-druck]` in den Stellungen «Fussnoten»/«aus»
+     ausblendete. Die Rubrik am Artikelende gibt es nicht mehr (die Fassung
+     steht im Erlass-Blatt, Reiter «Änderungen»), und die Stellung «Fassung»
+     ist mit ihr gefallen — `data-vermerke` ist zweiwertig (Fussnoten an/aus).
+     Der Druck-Slot folgt darum keiner Wahl mehr: das Aktenstück trägt den
+     Stand des Artikels immer (§8, `e2e/druck-fundstellen-z2`). */
   /* ══ W2·26/Z8 (Mandat David 11.9.2026) · «FUSSNOTEN ABGEWÄHLT» HEISST ALLE ══
      WÖRTLICH: «Fussnoten, die z. B. nur eine SR-Nummer enthalten, müssen
      ebenfalls weg sein, wenn Fussnoten abgewählt sind.»
@@ -1605,9 +1604,6 @@
      Normtext selbst bleibt in jeder Stellung sichtbar, durchsuchbar und im
      Ausdruck. ═══════════════════════════════════════════════════════════════ */
   @media screen {
-    html[data-vermerke="fassung"] .lc-leser [data-fn-ref],
-    html[data-vermerke="fassung"] .lc-leser [data-fn-marker],
-    html[data-vermerke="fassung"] .lc-leser [data-fn-apparat],
     html[data-vermerke="aus"] .lc-leser [data-fn-ref],
     html[data-vermerke="aus"] .lc-leser [data-fn-marker],
     html[data-vermerke="aus"] .lc-leser [data-fn-apparat] {
@@ -4146,44 +4142,18 @@
 html[data-lr6-anker-warten] #lc-lesespalte,
 html[data-lr6-anker-warten] footer { visibility: hidden; }
 
-/* (b) W2·24-D35-F2/D40 · Rubriken-Wahl im Ansicht-Menü (`data-fuss-aus`,
-   `leserOptionen.ts`). CSS statt React (§15): 1686 Artikel im OR, ein Abo je
-   Artikel wären 1686 Neu-Renderings je Klick. Das Attribut trägt die
-   ABGEWÄHLTEN — der Grundzustand ist leer, braucht keine Regel, und das
-   prerenderte Markup bleibt byte-gleich. Griff und Block fallen gemeinsam
-   (§8: kein Griff ohne Liste, kein Block ohne Rückweg). */
-html[data-fuss-aus*="f"] .lc-leser .lr7-bez-marke[data-reg="f"],
-html[data-fuss-aus*="f"] .lc-leser .lr7-bez-block[data-reg="f"],
-html[data-fuss-aus*="r"] .lc-leser .lr7-bez-marke[data-reg="r"],
-html[data-fuss-aus*="r"] .lc-leser .lr7-bez-block[data-reg="r"],
-html[data-fuss-aus*="m"] .lc-leser .lr7-bez-marke[data-reg="m"],
-html[data-fuss-aus*="m"] .lc-leser .lr7-bez-block[data-reg="m"],
-html[data-fuss-aus*="g"] .lc-leser .lr7-bez-marke[data-reg="g"],
-html[data-fuss-aus*="g"] .lc-leser .lr7-bez-block[data-reg="g"],
-html[data-fuss-aus*="w"] .lc-leser .lr7-bez-marke[data-reg="w"],
-html[data-fuss-aus*="w"] .lc-leser .lr7-bez-block[data-reg="w"],
-html[data-fuss-aus*="a"] .lc-leser .lr7-bez-aktionen {
-  display: none;
-}
-/* Alles abgewählt ⇒ die Zeile geht samt Linie (eine leere Linie unter jedem
-   Artikel wäre ein Rahmen ohne Inhalt, F0.6). EXAKTER Vergleich: die Buchstaben
-   stehen kanonisch geordnet (`setzeFussRubriken`, §2). */
-html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
-  display: none;
-}
+/* (b) HIER STAND die Rubriken-Wahl (`data-fuss-aus`, W2·24-D35-F2/D40) —
+   gestrichen mit S6 W1f (24.9.2026): die Funktionszeile, deren Rubriken sie
+   abwählte, ist gefallen (Entscheid David, «die zeile soll ganz weg»). */
 
 /* (c) GETEILT mit `src/components/entstehung/*` (Pfeil, Klammer) und mit
    `parts/ArtikelDossier.tsx`/`ArtikelNachbarn.tsx` (Block, Skelett) — sie
    ziehen mit W2·29 S5 bzw. REST um. Die Klammer links (`--rule-artikel`) sagt
-   «gehört zu diesem Artikel», der Registerstrich am Block «welche Rubrik». */
+   «gehört zu diesem Artikel», der Registerstrich am Block «welche Rubrik».
+   S6 W1f (24.9.2026): die Klammer `.lr7-bez-inhalt` ist mit der Funktionszeile
+   gefallen (einziger Träger); Pfeil, Block und Skelett bleiben (Dossier,
+   Entstehungs-Karte). */
 .lr7-bez-pfeil { display: inline-block; transition: transform var(--dur-fast, 120ms) var(--ease, ease); }
-.lr7-bez-inhalt {
-  display: grid;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
-  border-left: 3px solid var(--rule-artikel);
-}
 .lr7-bez-block[data-reg] { min-width: 0; padding-left: 0.625rem; border-left: 2px solid var(--rule-soft); }
 .lr7-bez-block[data-reg="r"] { border-left-color: var(--reg-r); }
 .lr7-bez-block[data-reg="m"] { border-left-color: var(--reg-m); }
