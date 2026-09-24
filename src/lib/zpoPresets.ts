@@ -17,6 +17,13 @@ export type ZpoPreset = {
   verfahren: ZpoVerfahren;
   fristnatur: ZpoFristnatur;
   hinweis?: string;
+  /** RL-07/F1-01 (Prüfung Rechtslogik 23.9.2026): Frist folgt NICHT der ZPO,
+   *  sondern dem BGG — Fristbeginn Art. 44 Abs. 1, Feiertage am Wohnsitz/Sitz
+   *  der Partei oder ihrer Vertretung (Art. 45 Abs. 2), Stillstand Art. 46 BGG.
+   *  Das Formular rechnet solche Presets mit der BGG-Engine (bggVwvgFristen),
+   *  nicht mit der ZPO-Feiertagsregel «Gerichtsort» (Art. 142 Abs. 3 ZPO). Die
+   *  Regeln bleiben getrennt (§1/§4) — kein Umbau der ZPO-Engine. */
+  engine?: 'bgg';
 };
 
 export const PHASEN: { code: ZpoPhase; label: string }[] = [
@@ -93,9 +100,14 @@ export const PRESETS: ZpoPreset[] = [
     hinweis: 'Schnittstelle SchKG: Betreibungs-/SchKG-Ferien gesondert prüfen.' },
 
   // ── Schiedsverfahren ──
+  // RL-07/F1-01 (Prüfung Rechtslogik 23.9.2026, schwer): rechnete mit der
+  // ZPO-Engine → Feiertage am Gerichtsort (BGer = VD). Beleg: 21.8.2026 + 30 T,
+  // Vertretung ZH → Ist 22.9.2026 (Bettagsmontag VD), Soll 21.9.2026 nach
+  // Art. 45 Abs. 2 BGG (Fedlex SR 173.110, Konsolidierung 1.4.2026). Jetzt
+  // engine 'bgg': Rechnung über berechneBggVwvgFrist({ regime: 'bgg' }).
   { key: 'schied_bger', phase: 'schied', label: 'Beschwerde ans Bundesgericht – 30 Tage', norm: 'Art. 389 ZPO / Art. 100 BGG',
-    einheit: 'tage', laenge: 30, verfahren: 'ordentlich', fristnatur: 'gesetzlich',
-    hinweis: 'Richtet sich nach dem BGG; Stillstand nach Art. 46 BGG (Ausnahme Abs. 2). Dieser Rechner bildet den ZPO-Stillstand ab – BGG-Fristen im Einzelfall prüfen.' },
+    einheit: 'tage', laenge: 30, verfahren: 'ordentlich', fristnatur: 'gesetzlich', engine: 'bgg',
+    hinweis: 'Richtet sich nach dem BGG (Art. 389 ZPO, Art. 77 BGG) und wird nach Art. 44–46 BGG gerechnet: Feiertage am Wohnsitz/Sitz der Partei oder ihrer Vertretung (Art. 45 Abs. 2 BGG), nicht am Gerichtsort; Stillstand nach Art. 46 BGG (Ausnahmen Abs. 2). Zulässigkeit und Rügen im BGer-Rechtsweg-Rechner prüfen.' },
 ];
 
 export const MATERIELL_WARNUNG =
