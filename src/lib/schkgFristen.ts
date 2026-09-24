@@ -44,17 +44,27 @@ const N_56_1_2: Normverweis = { artikel: 'Art. 56 Abs. 1 Ziff. 2 SchKG', bemerku
 // E. 2c — die Fristen (namentlich die Rechtsvorschlagsfrist) haben mit dem
 // ersten Tag nach den Ferien «zu laufen begonnen».
 //
-// ZÄHLWEISE (Q-10, offen für die Gegenprüfung): Gerechnet wird nach E. 2c —
-// der erste Tag nach den Ferien ist der dies a quo. Technisch wird dafür der
-// letzte Ferientag als Referenztag der Zählung verwendet (Tagesfrist: Beginn
-// am Folgetag, Art. 142 Abs. 1 ZPO; Monats-/Jahresfrist: gleichbezeichneter
-// Tag) — dieselbe Behandlung, die die Engine im ZPO-Pfad für die Zustellung
-// während des Stillstands anwendet (Art. 146 Abs. 1 ZPO: «beginnt der
-// Fristenlauf am ersten Tag nach Ende des Stillstandes»). Die Gegenlesart
-// (E. 2b als Zustellfiktion am ersten Tag nach den Ferien, Fristbeginn nach
-// Art. 142 Abs. 1 ZPO erst am Tag darauf) wird mit ihrem Datum als Warnung
-// offengelegt. Beispiel ZB 8.4.2026 (Osterferien 29.3.–12.4.2026):
-// Rechtsvorschlag 22.4. (Gegenlesart 23.4.), Fortsetzung frühestens beide 4.5.
+// ZÄHLWEISE (Q-10, offen für die Gegenprüfung): Tages- und Kalenderfrist-
+// Zweig verankern unterschiedlich.
+// – Tagesfrist: Tag 1 = erster Tag nach den Ferien (BGE 121 III 284 E. 2c).
+//   Technisch ist der letzte Ferientag Referenztag, Beginn am Folgetag
+//   (Art. 142 Abs. 1 ZPO) — dieselbe Behandlung, die die Engine im ZPO-Pfad
+//   für die Zustellung während des Stillstands anwendet (Art. 146 Abs. 1 ZPO:
+//   «beginnt der Fristenlauf am ersten Tag nach Ende des Stillstandes»). Die
+//   Gegenlesart (E. 2b als Zustellfiktion am ersten Tag nach den Ferien,
+//   Fristbeginn nach Art. 142 Abs. 1 ZPO erst am Tag darauf) wird mit ihrem
+//   Datum als Warnung offengelegt.
+// – Kalenderfrist (Monate/Jahre): Anker = letzter Ferientag (gleichbezeichneter
+//   Tag). OFFENER PUNKT: BGE 150 III 367 E. 5.6 (5A_691/2023 vom 13.8.2024)
+//   bezieht den «Tag, an dem die Frist zu laufen begann» (Art. 142 Abs. 2 ZPO,
+//   Fedlex SR 272, Fassung 1.7.2026) nicht auf Abs. 1, sondern auf den Tag des
+//   fristauslösenden Ereignisses. Gilt der Wirkungstag (E. 2b) als Ereignistag,
+//   endet die Frist einen Tag später. Hauptwert bleibt das frühere Datum
+//   (sichere Grenze der Verwirkungsfrist Art. 88 Abs. 2 SchKG); die Warnung
+//   legt beide Lesarten gleichrangig offen (Gegenprüfung 24.9.2026).
+// Beispiel ZB 8.4.2026 (Osterferien 29.3.–12.4.2026): Rechtsvorschlag 22.4.
+// (Gegenlesart 23.4.), Fortsetzung frühestens beide 4.5., Fortsetzung
+// spätestens 12.4.2027 (Ereignistag-Lesart 13.4.2027).
 //
 // BINDUNG: Die Regel greift nur, wenn der Auslöser nachweislich die Zustellung
 // einer Betreibungsurkunde an den Schuldner ist — Identitätsvergleich mit den
@@ -256,6 +266,12 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   const { tag: diesAdQuem, verschoben } = istWartefrist
     ? { tag: endeProvisorisch, verschoben: false }
     : normalisiereEnde(endeProvisorisch, input.kanton, st);
+  // Frühestes zulässiges Datum (Begründung bei Schritt 4 unten); schon hier
+  // berechnet, weil die Q-10-Offenlegung den Hauptwert nennt.
+  const folgetag = istWartefrist ? addDays(diesAdQuem, 1) : diesAdQuem;
+  const massgeblich = istWartefrist
+    ? normalisiereEnde(folgetag, input.kanton, st).tag
+    : diesAdQuem;
   rechenweg.push({
     beschreibung: istWartefrist
       ? 'Schritt 3 – Ablauf der Wartefrist (keine Werktagsverschiebung, Art. 142 Abs. 3 ZPO)'
@@ -319,15 +335,23 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   }
 
   // RL-18 / Q-10: Offenlegung der Gegenlesart zur Zählweise mit ihrem Datum.
+  // Tagesfrist: Rechnung nach BGE 121 III 284 E. 2c unstrittig, Gegenlesart
+  // nur offengelegt. Monats-/Jahresfrist: beide Lesarten gleichrangig — die
+  // Ereignistag-Lesart stützt BGE 150 III 367 E. 5.6 (Kopfkommentar ZÄHLWEISE).
   if (ferienBeiZustellung) {
     const gegen = berechneSchkgFrist({ ...input, ereignis: iso(wirkungstag), ausloeser: undefined, modusOverride: undefined, modus });
     const einheit = input.laenge === 1
       ? { tage: 'Tag', monate: 'Monat', jahre: 'Jahr' }[input.einheit]
       : { tage: 'Tage', monate: 'Monate', jahre: 'Jahre' }[input.einheit];
     warnungen.push(
-      `Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): Gerechnet ist nach BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${fmt(wirkungstag)}) zu laufen. ` +
-        `Nach der Gegenlesart (Zustellung gilt erst am ${fmt(wirkungstag)} als erfolgt, Fristbeginn am Folgetag nach Art. 142 Abs. 1 ZPO) ergäbe sich: ${gegen.diesAdQuem}. ` +
-        'Vorsichtig ist bei Handlungs- und Verwirkungsfristen das frühere, bei Wartefristen das spätere Datum.',
+      input.einheit === 'tage'
+        ? `Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): Gerechnet ist nach BGE 121 III 284 E. 2c — die Frist beginnt am ersten Tag nach den Ferien (${fmt(wirkungstag)}) zu laufen. ` +
+            `Nach der Gegenlesart (Zustellung gilt erst am ${fmt(wirkungstag)} als erfolgt, Fristbeginn am Folgetag nach Art. 142 Abs. 1 ZPO) ergäbe sich: ${gegen.diesAdQuem}. ` +
+            'Vorsichtig ist bei Handlungs- und Verwirkungsfristen das frühere, bei Wartefristen das spätere Datum.'
+        : `Zählweise bei Zustellung in den Betreibungsferien (${input.laenge} ${einheit}): Zwei Lesarten sind vertretbar. ` +
+            `Ausgewiesen ist ${fmt(massgeblich)} (Fristlauf ab dem ersten Tag nach den Ferien, BGE 121 III 284 E. 2c; Anker letzter Ferientag ${fmt(referenz)}). ` +
+            `Gilt der Wirkungstag ${fmt(wirkungstag)} als Tag des fristauslösenden Ereignisses, auf den Art. 142 Abs. 2 ZPO abstellt (BGE 150 III 367 E. 5.6), ergibt sich ${gegen.diesAdQuem}. ` +
+            'Sicher ist bei Handlungs- und Verwirkungsfristen das frühere, bei Wartefristen das spätere Datum.',
     );
   }
 
@@ -359,11 +383,8 @@ export function berechneSchkgFrist(input: SchkgInput): SchkgErgebnis {
   // Wartefrist: frühester Handlungstag = Folgetag des (unverschobenen) Fristablaufs.
   // Fällt dieser Folgetag selbst auf einen Sa/So/Feiertag, ist die Handlung als
   // HANDLUNGSfrist erst am nächsten Werktag zulässig (Art. 142 Abs. 3 ZPO). Die
-  // Normalisierung wird deshalb NACH dem +1-Folgetag angewandt, nicht davor.
-  const folgetag = istWartefrist ? addDays(diesAdQuem, 1) : diesAdQuem;
-  const massgeblich = istWartefrist
-    ? normalisiereEnde(folgetag, input.kanton, st).tag
-    : diesAdQuem;
+  // Normalisierung wird deshalb NACH dem +1-Folgetag angewandt, nicht davor
+  // (folgetag/massgeblich sind oben nach Schritt 3 berechnet).
   if (istWartefrist) {
     const folgetagVerschoben = differenceInCalendarDays(massgeblich, folgetag) > 0;
     rechenweg.push({
