@@ -1,9 +1,9 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"FINIG",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_147_II_432":{"zitierung":"BGE 147 II 432","regesteKurz":"Art. 2 Abs. 1 und Art. 23 AVUS; Art. 8 und 35 Abs. 1 IRSG; Art. 154 FinfraG; Auslieferung an die USA; beidseitige Strafbarkeit; Insidertatbestand; Günstigkeitsprinzip. Art. 154 Abs. 3 FinfraG ermöglicht a priori wie seine…","datum":"2021-05-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_II_432__voll":{"zitierung":"Urteil 1C_196/2021 (nicht publ. in BGE 147 II 432)","regesteKurz":null,"datum":"2021-05-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"147 II 432","urteil":"1C_196/2021"}},
 "bge_148_II_121":{"zitierung":"BGE 148 II 121","regesteKurz":"Art. 9, 27, 49, 94 Abs. 1, 127 BV; Art. 34 KAG; Art. 39 FINIG; Art. 103 FusG; Handänderungsabgabe, die anlässlich des Wechsels der Leitung eines Immobilien-Anlagefonds erhoben wird; Wirtschaftsfreiheit und Wettbewerbsneutralität; Vorrang…","datum":"2022-03-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_II_98":{"zitierung":"BGE 150 II 98","regesteKurz":"Art. 49 BV; Art. 38 und 39 FINIG; Art. 37 KKV; Handänderungssteuer, die anlässlich des Wechsels der Leitung eines Immobilien-Anlagefonds erhoben wird; Überwälzung der Steuer auf die Anleger. Sofern der Wechsel der Fondsleitung - nach…","datum":"2023-12-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_884":{"zitierung":"BGE 151 II 884","regesteKurz":"a Art. 29 Abs. 1 BGG; Art. 38 f. StG; Anträge und Rügen vor Bundesgericht; Änderungen des Streitgegenstands im Rechtsmittelverfahren; Verwirkung der Einrede der funktionellen Unzuständigkeit. Grenzen der Zulässigkeit von Anträgen und Rügen…","datum":"2025-03-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
@@ -16,7 +16,7 @@
 "39":[{"key":"bge_150_II_98","gewicht":0},{"key":"bge_148_II_121","gewicht":0}],
 "40":[{"key":"bge_148_II_121","gewicht":0}],
 "41":[{"key":"bge_151_II_884","gewicht":0}],
-"69":[{"key":"bge_147_II_432","gewicht":0}]
+"69":[{"key":"bge_147_II_432__voll","gewicht":0,"erwaegungen":["E. 3.5"]}]
 },
 "gesamtProArtikel":{
 "1":{"bge":1},
@@ -26,6 +26,6 @@
 "39":{"bge":2},
 "40":{"bge":1},
 "41":{"bge":1},
-"69":{"bge":1}
+"69":{"bger":1}
 }
 }

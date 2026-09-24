@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "VSTG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -37,22 +37,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_II_437",
-        "zitierung": "BGE 150 II 437",
-        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die…",
-        "datum": "2024-03-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_338",
         "zitierung": "BGE 147 II 338",
         "regesteKurz": "Rückerstattung der Verrechnungssteuer; Steuerumgehung (Art. 21 Abs. 2 VStG); Tragweite der im Jahr 1990 publizierten Praxis der ESTV zum \"Kauf eines vollen Portemonnaies\". Voraussetzungen für die Rückerstattung der Verrechnungssteuer (E.…",
         "datum": "2021-07-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_437__voll",
+        "zitierung": "Urteil 9C_661/2022 (nicht publ. in BGE 150 II 437)",
+        "regesteKurz": null,
+        "datum": "2024-03-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -69,22 +69,22 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_II_827",
-        "zitierung": "BGE 151 II 827",
-        "regesteKurz": "Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine…",
+        "key": "bge_151_II_827__voll",
+        "zitierung": "Urteil 9C_690/2023 (nicht publ. in BGE 151 II 827)",
+        "regesteKurz": null,
         "datum": "2025-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_462",
-        "zitierung": "BGE 149 II 462",
-        "regesteKurz": "Art. 132 Abs. 1 BV; Art. 83 lit. m, Art. 113 BGG; Art. 6 Abs. 1 lit. k, Art. 12 StG; Erlass der Emissionsabgabe bzw. emissionsabgaberechtlicher Freibetrag. Entscheide des Bundesverwaltungsgerichts betreffend den Erlass der Emissionsabgabe…",
+        "key": "bge_149_II_462__voll",
+        "zitierung": "Urteil 9C_610/2022 (nicht publ. in BGE 149 II 462)",
+        "regesteKurz": null,
         "datum": "2023-09-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -155,16 +155,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_418",
-        "zitierung": "BGE 151 II 418",
-        "regesteKurz": "Art. 10 Abs. 2 und Art. 20 Abs. 1 lit. e DBG; ausländische kollektive Kapitalanlagen; Besteuerung der Einkünfte aus Thesaurierungsfonds. Ausländische kollektive Kapitalanlagen im Sinne von Art. 119 KAG fallen in den Anwendungsbereich von…",
-        "datum": "2024-12-09",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_II_437",
         "zitierung": "BGE 150 II 437",
         "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die…",
@@ -181,6 +171,16 @@
         "datum": "2021-07-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_418__voll",
+        "zitierung": "Urteil 9C_757/2023 (nicht publ. in BGE 151 II 418)",
+        "regesteKurz": null,
+        "datum": "2024-12-09",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -199,24 +199,24 @@
     ],
     "16": [
       {
-        "key": "bge_150_II_437",
-        "zitierung": "BGE 150 II 437",
-        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die…",
+        "key": "bge_150_II_437__voll",
+        "zitierung": "Urteil 9C_661/2022 (nicht publ. in BGE 150 II 437)",
+        "regesteKurz": null,
         "datum": "2024-03-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "17": [
       {
-        "key": "bge_150_II_437",
-        "zitierung": "BGE 150 II 437",
-        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die…",
+        "key": "bge_150_II_437__voll",
+        "zitierung": "Urteil 9C_661/2022 (nicht publ. in BGE 150 II 437)",
+        "regesteKurz": null,
         "datum": "2024-03-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -343,12 +343,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_I_105",
-        "zitierung": "BGE 146 I 105",
-        "regesteKurz": "Art. 10 Abs. 2 Bst. a DBA CH-LU; Art. 31 f. VRK; Art. 8 und 9 BV; Verwaltungsverordnungen (Kreisschreiben etc.); Auslegung; Vertrauensschutz; Anforderungen an Praxisänderungen; Gleichbehandlung im Unrecht. Bedeutung von…",
+        "key": "bge_146_I_105__voll",
+        "zitierung": "Urteil 2C_209/2017 (nicht publ. in BGE 146 I 105)",
+        "regesteKurz": null,
         "datum": "2019-12-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -365,22 +365,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_II_437",
-        "zitierung": "BGE 150 II 437",
-        "regesteKurz": "Art. 12 Abs. 1, Art. 16 Abs. 1 lit. c und Abs. 2 VStG; Art. 21 Abs. 2 VStV; Beginn des Verzugszinsenlaufs auf geldwerten Leistungen. Rechtsprechung und Lehre gehen in verschiedenen Situationen von unterschiedlichen Zeitpunkten für die…",
-        "datum": "2024-03-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_II_158",
         "zitierung": "BGE 149 II 158",
         "regesteKurz": "Art. 20 Abs. 1 lit. c und Abs. 3 und Art. 125 Abs. 3 DBG; Kapitaleinlageprinzip; Rückzahlung verdeckter Kapitaleinlagen. Befreit ein Inhaber von Beteiligungsrechten die Gesellschaft von einer Schuld (privative Schuldübernahme), ohne dafür…",
         "datum": "2023-03-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_II_437__voll",
+        "zitierung": "Urteil 9C_661/2022 (nicht publ. in BGE 150 II 437)",
+        "regesteKurz": null,
+        "datum": "2024-03-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -411,22 +411,22 @@
     ],
     "45": [
       {
-        "key": "bge_146_III_113",
-        "zitierung": "BGE 146 III 113",
-        "regesteKurz": "Art. 250 SchKG, Art. 59 Abs. 2 lit. a ZPO; Kollokationsklage, Nulldividende und schutzwürdiges Interesse. Das schutzwürdige Interesse an der Kollokationsklage kann gegeben sein, wenn die mutmassliche Konkursdividende Null beträgt und der…",
+        "key": "bge_146_III_113__voll",
+        "zitierung": "Urteil 5A_535/2018 (nicht publ. in BGE 146 III 113)",
+        "regesteKurz": null,
         "datum": "2020-01-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
       {
-        "key": "bge_151_III_348",
-        "zitierung": "BGE 151 III 348",
-        "regesteKurz": "Art. 72 ff., 113 ff. BGG; Art. 250 Abs. 2 SchKG; Art. 32d USG; Entscheide über die Kollokation öffentlich-rechtlicher Forderungen. Entscheide über die Kollokation fallen unter die Schuldbetreibungs- und Konkurssachen im Sinn von Art. 72…",
+        "key": "bge_151_III_348__voll",
+        "zitierung": "Urteil 5A_137/2024 (nicht publ. in BGE 151 III 348)",
+        "regesteKurz": null,
         "datum": "2024-12-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

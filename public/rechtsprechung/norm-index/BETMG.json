@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "BETMG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -297,10 +297,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_IV_379",
-        "zitierung": "BGE 147 IV 379",
-        "regesteKurz": "Art. 127 Abs. 5 StPO; Geltungsbereich des Anwaltsmonopols bei der Verteidigung der beschuldigten Person; abweichende kantonale Bestimmung für die Verteidigung im Übertretungsstrafverfahren. Der in Art. 127 Abs. 5 erster Teilsatz StPO…",
-        "datum": "2021-06-23",
+        "key": "bge_147_IV_340",
+        "zitierung": "BGE 147 IV 340",
+        "regesteKurz": "Art. 21 und 24 der Verordnung (EG) Nr. 1987/2006 (SIS-II-Verordnung) und der Verordnung (EU) 2018/1861; Voraussetzungen für die Ausschreibung von Einreiseverboten im Schengener Informationssystem (SIS). Art. 24 Abs. 2 Bst. a…",
+        "datum": "2021-03-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -309,22 +309,22 @@
     ],
     "19b": [
       {
-        "key": "bge_151_IV_18",
-        "zitierung": "BGE 151 IV 18",
-        "regesteKurz": "Art. 141 Abs. 2, Art. 263 Abs. 2 StPO; Erfordernis der nachträglichen schriftlichen Bestätigung der mündlich angeordneten Beschlagnahme. Das Erfordernis der nachträglichen schriftlichen Bestätigung der mündlich angeordneten Beschlagnahme…",
-        "datum": "2024-10-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_IV_307",
         "zitierung": "BGE 149 IV 307",
         "regesteKurz": "Art. 19b BetmG; Art. 69 StGB; Einziehbarkeit von Betäubungsmitteln des Wirkungstyps Cannabis in Zusammenhang mit straflosen Konsumvorbereitungshandlungen. Geringfügige, zum Eigenkonsum bestimmte Mengen Betäubungsmittel des Wirkungstyps…",
         "datum": "2023-06-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_18__voll",
+        "zitierung": "Urteil 7B_455/2023 (nicht publ. in BGE 151 IV 18)",
+        "regesteKurz": null,
+        "datum": "2024-10-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

@@ -580,11 +580,15 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
   ) as { kantenJeStatus: Record<string, number>; artikelJeStatus: Record<string, number>;
         erlasseJeStatus: Record<string, number>; artikelGesamt: number; erlasseGesamt: number };
 
-  it('BEFUND: die Klasse trägt korpusweit 164 Kanten an 93 von 6217 Artikeln', () => {
+  it('BEFUND: die Klasse trägt korpusweit 164 Kanten an 93 von 6228 Artikeln', () => {
     expect(bilanz.kantenJeStatus.eidg).toBe(164);
     expect(bilanz.artikelJeStatus.eidg).toBe(93);
     expect(bilanz.erlasseJeStatus.eidg).toBe(18);
-    expect(bilanz.artikelGesamt).toBe(6217);
+    // 6217 → 6228 (25.9.2026, W2·29-WERKBANK-LESER Welle 2 D2): die committeten
+    // Bezugs-Projektionen hinkten dem Generator seit #860/#911 nach — der AVG
+    // kam in den Normtext-Korpus, seine Kanten (11 Artikel, 1 Erlass) nie in
+    // die Shards. Reine Projektions-Nachführung, die eidg-Werte bleiben gleich.
+    expect(bilanz.artikelGesamt).toBe(6228);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
@@ -631,9 +635,17 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // Änderung, reine Datenkorrektur; dokumente 1253 → 1254 (zwei aza-Volltexte
     // zitieren BGG neu als eigenständiges Dokument, einer weniger durch die
     // entfernte Fremdkontamination — netto +1).
+    // ZWEITE Nachführung (25.9.2026, Welle 2 D2 / Befund E-1): Artikel, die ein
+    // BGE nur in einer NICHT amtlich publizierten Erwägung seines Volltext-
+    // Urteils nennt, hängen nicht mehr am BGE, sondern am Urteil (Klasse bger,
+    // «nicht publ. in BGE …»). Beim BGG trifft das den Grossteil — Eintretens-
+    // fragen (E. 1) stehen fast nie im publizierten Auszug. Die Aussage des
+    // Tests bleibt: Fundstellen ≠ Entscheide, in BEIDEN Klassen.
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/BGG.json', 'utf8')) as BezugsShard;
     const n = klassenImShard(s);
-    expect(n.bge!.kanten).toBe(10_604);
-    expect(n.bge!.dokumente).toBe(1254);
+    expect(n.bge!.kanten).toBe(1565);
+    expect(n.bge!.dokumente).toBe(525);
+    expect(n.bger!.kanten).toBe(9205);
+    expect(n.bger!.dokumente).toBe(1235);
   });
 });

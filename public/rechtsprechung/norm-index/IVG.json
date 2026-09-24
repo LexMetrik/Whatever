@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-09-23",
   "erlass": "IVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -111,30 +111,10 @@
         "gewicht": 2
       },
       {
-        "key": "bge_151_V_194",
-        "zitierung": "BGE 151 V 194",
-        "regesteKurz": "Art. 6 und 7 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 1a, 4 Abs. 1, Art. 28 Abs. 1 lit. a und Art. 28 Abs. 1 bis IVG; Therapierbarkeit der Gesundheitsschädigung und Rentenanspruch. Die Behandelbarkeit des Leidens tangiert den…",
-        "datum": "2025-02-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_151_V_66",
         "zitierung": "BGE 151 V 66",
         "regesteKurz": "Art. 8 Abs. 1 BV; Art. 4 Abs. 1 IVG in Verbindung mit Art. 6-8 ATSG; Art. 28 Abs. 1 IVG; invalidisierende Wirkung der Adipositas. Eine Adipositas kann eine zu Rentenleistungen berechtigende Invalidität bewirken, auch wenn sie grundsätzlich…",
         "datum": "2024-10-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_148_V_321",
-        "zitierung": "BGE 148 V 321",
-        "regesteKurz": "Art. 16 und Art. 17 Abs. 1 ATSG; Zumutbarkeit der Selbsteingliederung bei rückwirkend befristeter und/oder abgestufter Rentenzusprache; massgebender Zeitpunkt für die Ermittlung des Eckwerts des 55. Altersjahres. Für die Ermittlung, ob der…",
-        "datum": "2022-06-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -147,6 +127,26 @@
         "datum": "2021-11-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_V_194__voll",
+        "zitierung": "Urteil 9C_443/2023 (nicht publ. in BGE 151 V 194)",
+        "regesteKurz": null,
+        "datum": "2025-02-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_V_321__voll",
+        "zitierung": "Urteil 8C_104/2021 (nicht publ. in BGE 148 V 321)",
+        "regesteKurz": null,
+        "datum": "2022-06-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -267,12 +267,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_V_124",
-        "zitierung": "BGE 147 V 124",
-        "regesteKurz": "Art. 17 Abs. 1 ATSG; Art. 28a Abs. 3 IVG; Art. 27 bis Abs. 2-4 IVV (in Kraft seit 1. Januar 2018); gemischte Bemessungsmethode. Ein familiär bedingter Statuswechsel hin zu einer teilzeitlichen Erwerbstätigkeit gilt seit der am 1. Januar…",
+        "key": "bge_147_V_124__voll",
+        "zitierung": "Urteil 9C_82/2020 (nicht publ. in BGE 147 V 124)",
+        "regesteKurz": null,
         "datum": "2020-10-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -309,16 +309,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_V_315",
-        "zitierung": "BGE 151 V 315",
-        "regesteKurz": "Art. 9 Abs. 1 IVG; Art. 23 bis Abs. 1-3, Art. 14 Abs. 1 lit. b IVV; Anhang II FZA; Verordnung (EG) Nr. 883/2004; kein Anspruch auf Übernahme von invaliditätsbedingten baulichen Anpassungen an Immobilien im Ausland. Weder die…",
-        "datum": "2025-09-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_151_V_306",
         "zitierung": "BGE 151 V 306",
         "regesteKurz": "Art. 6 f. und Art. 44 ATSG; Art. 1a lit. a, Art. 8 Abs. 1, 1 bis und 1 ter , Art. 28 Abs. 1 lit. a und Abs. 1 bis , Art. 57 Abs. 1 lit. e und f, Art. 59 Abs. 3 IVG; Verlauf der beruflichen Eingliederung im Verhältnis zur Arbeitsfähigkeit…",
@@ -353,6 +343,16 @@
         "zitierung": "BGE 146 V 233",
         "regesteKurz": "Art. 8, 21 IVG und Art. 14 IVV; Ziff. 14.04 Anhang HVI und Rz. 2162 des Kreisschreibens des BSV über die Abgabe von Hilfsmitteln durch die Invalidenversicherung (KHMI); Kostenübernahme durch die IV für invaliditätsbedingte bauliche…",
         "datum": "2020-06-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_V_271",
+        "zitierung": "BGE 146 V 271",
+        "regesteKurz": "Art. 20 sexies Abs. 1 lit. b IVV; Taggelder während Eingliederungsmassnahmen. Art. 20 sexies Abs. 1 lit. b IVV (in Kraft seit 1. Januar 2008), wonach Versicherte als erwerbstätig gelten, wenn sie glaubhaft machen, dass sie nach Eintritt…",
+        "datum": "2020-05-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -423,27 +423,17 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_V_73",
-        "zitierung": "BGE 147 V 73",
-        "regesteKurz": "Art. 42 ter Abs. 3 IVG; Art. 39 IVV; Intensivpflegezuschlag zur Hilflosenentschädigung. Die Überwachung der Atmung über eine Trachealkanüle, die eine stetige unmittelbare Interventionsbereitschaft durch medizinisch geschultes Personal…",
+        "key": "bge_147_V_73__voll",
+        "zitierung": "Urteil 9C_777/2019 (nicht publ. in BGE 147 V 73)",
+        "regesteKurz": null,
         "datum": "2020-11-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "13": [
-      {
-        "key": "bge_151_V_315",
-        "zitierung": "BGE 151 V 315",
-        "regesteKurz": "Art. 9 Abs. 1 IVG; Art. 23 bis Abs. 1-3, Art. 14 Abs. 1 lit. b IVV; Anhang II FZA; Verordnung (EG) Nr. 883/2004; kein Anspruch auf Übernahme von invaliditätsbedingten baulichen Anpassungen an Immobilien im Ausland. Weder die…",
-        "datum": "2025-09-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_151_V_322",
         "zitierung": "BGE 151 V 322",
@@ -503,6 +493,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_315__voll",
+        "zitierung": "Urteil 8C_453/2024 (nicht publ. in BGE 151 V 315)",
+        "regesteKurz": null,
+        "datum": "2025-09-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "14": [
@@ -549,12 +549,12 @@
     ],
     "15": [
       {
-        "key": "bge_151_V_194",
-        "zitierung": "BGE 151 V 194",
-        "regesteKurz": "Art. 6 und 7 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 1a, 4 Abs. 1, Art. 28 Abs. 1 lit. a und Art. 28 Abs. 1 bis IVG; Therapierbarkeit der Gesundheitsschädigung und Rentenanspruch. Die Behandelbarkeit des Leidens tangiert den…",
+        "key": "bge_151_V_194__voll",
+        "zitierung": "Urteil 9C_443/2023 (nicht publ. in BGE 151 V 194)",
+        "regesteKurz": null,
         "datum": "2025-02-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -889,12 +889,12 @@
         "gewicht": 3
       },
       {
-        "key": "bge_146_V_16",
-        "zitierung": "BGE 146 V 16",
-        "regesteKurz": "Art. 16 ATSG; Invalideneinkommen; Abzug vom Tabellenlohn nach BGE 126 V 75 . Das Bundesgericht qualifiziert den Grenzgängerstatus in ständiger Rechtsprechung unter dem Kriterium \"Nationalität/Aufenthaltskategorie\" als potenziell…",
+        "key": "bge_146_V_16__voll",
+        "zitierung": "Urteil 8C_378/2019 (nicht publ. in BGE 146 V 16)",
+        "regesteKurz": null,
         "datum": "2019-12-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 2
       },
@@ -951,26 +951,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_V_66",
-        "zitierung": "BGE 151 V 66",
-        "regesteKurz": "Art. 8 Abs. 1 BV; Art. 4 Abs. 1 IVG in Verbindung mit Art. 6-8 ATSG; Art. 28 Abs. 1 IVG; invalidisierende Wirkung der Adipositas. Eine Adipositas kann eine zu Rentenleistungen berechtigende Invalidität bewirken, auch wenn sie grundsätzlich…",
-        "datum": "2024-10-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_V_410",
-        "zitierung": "BGE 150 V 410",
-        "regesteKurz": "Art. 16 ATSG; Art. 28a Abs. 1 IVG; Art. 26 Abs. 2, Art. 26 bis Abs. 3 und Art. 49 Abs. 1 bis IVV (in der Fassung vom 3. November 2021, in Kraft vom 1. Januar 2022 bis 31. Dezember 2023); Invalideneinkommen; Abzug vom Tabellenlohn. Die mit…",
-        "datum": "2024-07-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_V_133",
         "zitierung": "BGE 147 V 133",
         "regesteKurz": "Art. 29 bis Abs. 1 AHVG i.V.m. Art. 36 Abs. 2 IVG; Art. 8 Abs. 2 BV; Berechnungsgrundlage des Betrags der Invalidenrente bei Revision des Rentenanspruchs einer Person, die an einem Geburtsgebrechen leidet. Die Änderung des…",
@@ -989,16 +969,36 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_66__voll",
+        "zitierung": "Urteil 8C_104/2024 (nicht publ. in BGE 151 V 66)",
+        "regesteKurz": null,
+        "datum": "2024-10-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_410__voll",
+        "zitierung": "Urteil 8C_823/2023 (nicht publ. in BGE 150 V 410)",
+        "regesteKurz": null,
+        "datum": "2024-07-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "30": [
       {
-        "key": "bge_150_V_257",
-        "zitierung": "BGE 150 V 257",
-        "regesteKurz": "Art. 39 Abs. 1 AHVG; Art. 55 bis lit. b AHVV (je in der vom 1. Januar 1997 bis Ende 2023 geltenden Fassung); Aufschub der Altersrente, die eine Invalidenrente ablöst. Laut Art. 55 bis lit. b AHVV sind Altersrenten, die eine Invalidenrente…",
+        "key": "bge_150_V_257__voll",
+        "zitierung": "Urteil 9C_705/2023 (nicht publ. in BGE 150 V 257)",
+        "regesteKurz": null,
         "datum": "2024-06-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1225,12 +1225,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_V_73",
-        "zitierung": "BGE 147 V 73",
-        "regesteKurz": "Art. 42 ter Abs. 3 IVG; Art. 39 IVV; Intensivpflegezuschlag zur Hilflosenentschädigung. Die Überwachung der Atmung über eine Trachealkanüle, die eine stetige unmittelbare Interventionsbereitschaft durch medizinisch geschultes Personal…",
+        "key": "bge_147_V_73__voll",
+        "zitierung": "Urteil 9C_777/2019 (nicht publ. in BGE 147 V 73)",
+        "regesteKurz": null,
         "datum": "2020-11-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1249,24 +1249,14 @@
     ],
     "48": [
       {
-        "key": "bge_146_III_25",
-        "zitierung": "BGE 146 III 25",
-        "regesteKurz": "Art. 60 Abs. 1 OR; Art. 127 i.V.m. Art. 130 Abs. 1 OR; Art. 6 Ziff. 1 EMRK; Schadenersatzansprüche der Erben eines Asbestopfers; Beginn der absoluten Verjährung vertraglicher und ausservertraglicher Ansprüche; Bedeutung des EGMR-Urteils…",
+        "key": "bge_146_III_25__voll",
+        "zitierung": "Urteil 4A_554/2013 (nicht publ. in BGE 146 III 25)",
+        "regesteKurz": null,
         "datum": "2019-11-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_150_V_83",
-        "zitierung": "BGE 150 V 83",
-        "regesteKurz": "Art. 9 ATSG; Art. 42 Abs. 1 und 2 IVG; Art. 37 Abs. 1-3 IVV; Hilflosigkeit; Anspruch auf Hilflosenentschädigung. Kann eine versicherte Person eine alltägliche Lebensverrichtung nur in einer unüblichen Weise oder nur mit unzumutbarem…",
-        "datum": "2023-12-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_146_III_14",
@@ -1275,6 +1265,16 @@
         "datum": "2019-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_83__voll",
+        "zitierung": "Urteil 8C_103/2023 (nicht publ. in BGE 150 V 83)",
+        "regesteKurz": null,
+        "datum": "2023-12-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1371,12 +1371,12 @@
     ],
     "76": [
       {
-        "key": "bge_150_V_257",
-        "zitierung": "BGE 150 V 257",
-        "regesteKurz": "Art. 39 Abs. 1 AHVG; Art. 55 bis lit. b AHVV (je in der vom 1. Januar 1997 bis Ende 2023 geltenden Fassung); Aufschub der Altersrente, die eine Invalidenrente ablöst. Laut Art. 55 bis lit. b AHVV sind Altersrenten, die eine Invalidenrente…",
+        "key": "bge_150_V_257__voll",
+        "zitierung": "Urteil 9C_705/2023 (nicht publ. in BGE 150 V 257)",
+        "regesteKurz": null,
         "datum": "2024-06-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1427,22 +1427,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_V_410",
-        "zitierung": "BGE 150 V 410",
-        "regesteKurz": "Art. 16 ATSG; Art. 28a Abs. 1 IVG; Art. 26 Abs. 2, Art. 26 bis Abs. 3 und Art. 49 Abs. 1 bis IVV (in der Fassung vom 3. November 2021, in Kraft vom 1. Januar 2022 bis 31. Dezember 2023); Invalideneinkommen; Abzug vom Tabellenlohn. Die mit…",
-        "datum": "2024-07-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_V_271",
         "zitierung": "BGE 146 V 271",
         "regesteKurz": "Art. 20 sexies Abs. 1 lit. b IVV; Taggelder während Eingliederungsmassnahmen. Art. 20 sexies Abs. 1 lit. b IVV (in Kraft seit 1. Januar 2008), wonach Versicherte als erwerbstätig gelten, wenn sie glaubhaft machen, dass sie nach Eintritt…",
         "datum": "2020-05-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_410__voll",
+        "zitierung": "Urteil 8C_823/2023 (nicht publ. in BGE 150 V 410)",
+        "regesteKurz": null,
+        "datum": "2024-07-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1461,12 +1461,12 @@
     ],
     "18a": [
       {
-        "key": "bge_151_V_306",
-        "zitierung": "BGE 151 V 306",
-        "regesteKurz": "Art. 6 f. und Art. 44 ATSG; Art. 1a lit. a, Art. 8 Abs. 1, 1 bis und 1 ter , Art. 28 Abs. 1 lit. a und Abs. 1 bis , Art. 57 Abs. 1 lit. e und f, Art. 59 Abs. 3 IVG; Verlauf der beruflichen Eingliederung im Verhältnis zur Arbeitsfähigkeit…",
+        "key": "bge_151_V_306__voll",
+        "zitierung": "Urteil 9C_539/2024 (nicht publ. in BGE 151 V 306)",
+        "regesteKurz": null,
         "datum": "2025-06-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1597,12 +1597,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_V_73",
-        "zitierung": "BGE 147 V 73",
-        "regesteKurz": "Art. 42 ter Abs. 3 IVG; Art. 39 IVV; Intensivpflegezuschlag zur Hilflosenentschädigung. Die Überwachung der Atmung über eine Trachealkanüle, die eine stetige unmittelbare Interventionsbereitschaft durch medizinisch geschultes Personal…",
+        "key": "bge_147_V_73__voll",
+        "zitierung": "Urteil 9C_777/2019 (nicht publ. in BGE 147 V 73)",
+        "regesteKurz": null,
         "datum": "2020-11-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1619,16 +1619,6 @@
         "gewicht": 3
       },
       {
-        "key": "bge_151_V_66",
-        "zitierung": "BGE 151 V 66",
-        "regesteKurz": "Art. 8 Abs. 1 BV; Art. 4 Abs. 1 IVG in Verbindung mit Art. 6-8 ATSG; Art. 28 Abs. 1 IVG; invalidisierende Wirkung der Adipositas. Eine Adipositas kann eine zu Rentenleistungen berechtigende Invalidität bewirken, auch wenn sie grundsätzlich…",
-        "datum": "2024-10-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_147_V_124",
         "zitierung": "BGE 147 V 124",
         "regesteKurz": "Art. 17 Abs. 1 ATSG; Art. 28a Abs. 3 IVG; Art. 27 bis Abs. 2-4 IVV (in Kraft seit 1. Januar 2018); gemischte Bemessungsmethode. Ein familiär bedingter Statuswechsel hin zu einer teilzeitlichen Erwerbstätigkeit gilt seit der am 1. Januar…",
@@ -1639,14 +1629,14 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_V_194",
-        "zitierung": "BGE 151 V 194",
-        "regesteKurz": "Art. 6 und 7 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 1a, 4 Abs. 1, Art. 28 Abs. 1 lit. a und Art. 28 Abs. 1 bis IVG; Therapierbarkeit der Gesundheitsschädigung und Rentenanspruch. Die Behandelbarkeit des Leidens tangiert den…",
-        "datum": "2025-02-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_151_V_66__voll",
+        "zitierung": "Urteil 8C_104/2024 (nicht publ. in BGE 151 V 66)",
+        "regesteKurz": null,
+        "datum": "2024-10-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
       },
       {
         "key": "bge_150_V_410",
@@ -1665,6 +1655,16 @@
         "datum": "2024-03-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_194__voll",
+        "zitierung": "Urteil 9C_443/2023 (nicht publ. in BGE 151 V 194)",
+        "regesteKurz": null,
+        "datum": "2025-02-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1693,22 +1693,22 @@
     ],
     "42bis": [
       {
-        "key": "bge_151_V_1",
-        "zitierung": "BGE 151 V 1",
-        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der…",
-        "datum": "2024-08-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_III_297",
         "zitierung": "BGE 149 III 297",
         "regesteKurz": "Art. 285 Abs. 2 ZGB; Art. 9 ATSG; Art. 42 und 42 bis IVG; Hilflosenentschädigung und Betreuungsbeitrag. Die Hilflosenentschädigung des minderjährigen Kindes darf nicht vom Betreuungsunterhalt abgezogen werden, der im Rahmen des…",
         "datum": "2023-03-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1__voll",
+        "zitierung": "Urteil 9C_480/2022 (nicht publ. in BGE 151 V 1)",
+        "regesteKurz": null,
+        "datum": "2024-08-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1767,16 +1767,6 @@
     ],
     "42quinquies": [
       {
-        "key": "bge_150_V_273",
-        "zitierung": "BGE 150 V 273",
-        "regesteKurz": "Art. 25 Abs. 2 lit. a Ziff. 3, Art. 25a Abs. 1, Art. 35 Abs. 2 lit. e KVG; Art. 7 Abs. 1 lit. b, Art. 7 Abs. 2 lit. c KLV; Hauspflege. Laut BGE 145 V 161 E. 5 können Familienangehörige der versicherten Person, die bei einer zugelassenen…",
-        "datum": "2024-05-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_V_263",
         "zitierung": "BGE 150 V 263",
         "regesteKurz": "Art. 42 quinquies lit. a IVG; Assistenzbeitrag; Arbeitgebermodell. Für Hilfeleistungen von Assistenzpersonen, die nicht in einem Arbeitsverhältnis mit der versicherten Person, sondern mit einer juristischen Person stehen, besteht kein…",
@@ -1805,6 +1795,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_150_V_273__voll",
+        "zitierung": "Urteil 9C_385/2023 (nicht publ. in BGE 150 V 273)",
+        "regesteKurz": null,
+        "datum": "2024-05-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "42septies": [
@@ -1819,27 +1819,17 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_V_251",
-        "zitierung": "BGE 147 V 251",
-        "regesteKurz": "Art. 42 quater Abs. 3 IVG; Art. 39a lit. a IVV; Assistenzbeitrag für minderjährige Versicherte. Die Voraussetzung in Art. 39a lit. a IVV, wonach der Anspruch eines minderjährigen Versicherten auf einen Assistenzbeitrag vom Besuch der…",
+        "key": "bge_147_V_251__voll",
+        "zitierung": "Urteil 9C_236/2020 (nicht publ. in BGE 147 V 251)",
+        "regesteKurz": null,
         "datum": "2021-06-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "42sexies": [
-      {
-        "key": "bge_151_V_1",
-        "zitierung": "BGE 151 V 1",
-        "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der…",
-        "datum": "2024-08-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_148_V_408",
         "zitierung": "BGE 148 V 408",
@@ -1847,6 +1837,16 @@
         "datum": "2022-09-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_1__voll",
+        "zitierung": "Urteil 9C_480/2022 (nicht publ. in BGE 151 V 1)",
+        "regesteKurz": null,
+        "datum": "2024-08-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1983,16 +1983,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_V_194",
-        "zitierung": "BGE 151 V 194",
-        "regesteKurz": "Art. 6 und 7 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 1a, 4 Abs. 1, Art. 28 Abs. 1 lit. a und Art. 28 Abs. 1 bis IVG; Therapierbarkeit der Gesundheitsschädigung und Rentenanspruch. Die Behandelbarkeit des Leidens tangiert den…",
-        "datum": "2025-02-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_151_V_198",
         "zitierung": "BGE 151 V 198",
         "regesteKurz": "Art. 22 bis Abs. 5 und Art. 23 IVG; Art. 20 sexies Abs. 1, Art. 21 septies Abs. 5 und Art. 21 Abs. 3 IVV; Art. 4 und 5 Bst. a der Verordnung (EG) Nr. 883/ 2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung…",
@@ -2029,6 +2019,16 @@
         "datum": "2020-05-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_V_194__voll",
+        "zitierung": "Urteil 9C_443/2023 (nicht publ. in BGE 151 V 194)",
+        "regesteKurz": null,
+        "datum": "2025-02-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-09-23",
   "erlass": "VRK",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -131,22 +131,22 @@
         "gewicht": 1
       },
       {
-        "key": "bge_146_II_145",
-        "zitierung": "BGE 146 II 145",
-        "regesteKurz": "Art. 4 Anhang I FZA; Art. 2 Abs. 1 Bst. a Richtlinie 75/34/EWG; Aufenthaltsanspruch nach Beendigung einer selbständigen Erwerbstätigkeit, sofern die betroffene Person bereits bei der Einreise in die Schweiz das ordentliche Rentenalter…",
-        "datum": "2020-02-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_146_I_105",
         "zitierung": "BGE 146 I 105",
         "regesteKurz": "Art. 10 Abs. 2 Bst. a DBA CH-LU; Art. 31 f. VRK; Art. 8 und 9 BV; Verwaltungsverordnungen (Kreisschreiben etc.); Auslegung; Vertrauensschutz; Anforderungen an Praxisänderungen; Gleichbehandlung im Unrecht. Bedeutung von…",
         "datum": "2019-12-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_II_145__voll",
+        "zitierung": "Urteil 2C_534/2019 (nicht publ. in BGE 146 II 145)",
+        "regesteKurz": null,
+        "datum": "2020-02-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -213,12 +213,12 @@
         "gewicht": 1
       },
       {
-        "key": "bge_146_I_105",
-        "zitierung": "BGE 146 I 105",
-        "regesteKurz": "Art. 10 Abs. 2 Bst. a DBA CH-LU; Art. 31 f. VRK; Art. 8 und 9 BV; Verwaltungsverordnungen (Kreisschreiben etc.); Auslegung; Vertrauensschutz; Anforderungen an Praxisänderungen; Gleichbehandlung im Unrecht. Bedeutung von…",
+        "key": "bge_146_I_105__voll",
+        "zitierung": "Urteil 2C_209/2017 (nicht publ. in BGE 146 I 105)",
+        "regesteKurz": null,
         "datum": "2019-12-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },

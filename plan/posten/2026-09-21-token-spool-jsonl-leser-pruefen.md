@@ -1,5 +1,5 @@
 <!-- @posten
-dach: QS-EFFIZIENZ
+dach: QS-DOKU-DIAET
 titel: token-spool.jsonl — Leser/Schreiber nach dem retro:17-Rückbau prüfen
 anlass: Rückbau retro:17/Selbstopt (PR #951, 20.9.2026) — Restfrage aus der Notiz offen gelassen
 -->
@@ -28,3 +28,5 @@ unabhängig (21.9.2026) und ergänzt die Schreiber-Bestätigung; der Fix (Schrei
 `token_ablesen()` aus `abschluss-wache.py` entfernen ODER die Datei einen echten Zweck
 geben) gehört WEITERHIN in den Hook-Diff des anderen Postens, nicht hierher verdoppelt —
 Session-Edits an `.claude/hooks/**` sind TABU, der Diff geht an David.
+
+Umgehängt 24.9.2026 von `QS-EFFIZIENZ` nach `QS-DOKU-DIAET` (M-16: Doku-/Chronik-Thema; Bauplan-Konsolidierung, QS-DOKU-DIAET).

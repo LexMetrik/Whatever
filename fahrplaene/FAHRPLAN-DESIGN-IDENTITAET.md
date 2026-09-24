@@ -486,6 +486,9 @@ den Schub an der Grenze.
 
 ## §8 · Folgeschritte nach der Landung (Stand 7.9.2026)
 
+*24.9.2026: `W2·24-C` ist in `W2·19-DESIGN-KONSISTENZ`, `W2·24-PERF-REST` in `QS-PERF` aufgegangen
+(ROADMAP-CHRONIK.md, Fusionen 2026-09-24); die Posten liegen dort bzw. seit #1047 unter `W2·29-WERKBANK-REST`/`-NACHLAUF`.*
+
 Gebucht in `ROADMAP.md` unter `W2·24-DESIGN-IDENTITAET` als eigene Zeilen; hier steht das Detail.
 
 1. **`W2·24-C` · ⚖ öffnet Entscheide im zweiten Pane (Variante C zu D33).** Heute Variante A

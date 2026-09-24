@@ -39,6 +39,16 @@ export type FassungsBezug = 'gleich' | 'revidiert' | 'unbekannt';
  */
 export function entscheidPraezision(datum: string, gericht: string): Datumspraezision {
   if (gericht === 'bge' && /-01-01$/.test(datum)) return 'bandjahr';
+  // Kantonaler Platzhalter (B-1, W2·29-WERKBANK-LESER D2, 23.9.2026): ein BS-
+  // Entscheid ohne Entscheiddatum in der Quelle trägt <GN-Jahr>-01-01 +
+  // `datumUnbekannt`. Das GN-Jahr ist das EINGANGS-, nicht das Entscheidjahr
+  // (BES.2024.88: GN 2024, entschieden 15.9.2025) — anders als beim BGE-Bandjahr
+  // ist also nicht einmal das Jahr belastbar ⇒ 'unbekannt', nie 'revidiert'.
+  // Erkannt am kantonalen Gerichts-Code ('bs_…') bzw. an der Status-Klasse
+  // 'kantonal' (so übergibt es die Bezugs-Linie); Bundesgerichts-Daten bleiben
+  // unberührt. Gemessen am Korpus 23.9.2026: jedes kantonale YYYY-01-01 war ein
+  // solcher Platzhalter (42/42); nach dem Kopf-Datum-Nachtrag sind es 0.
+  if ((gericht === 'kantonal' || /^[a-z]{2}_/.test(gericht)) && /-01-01$/.test(datum)) return 'unbekannt';
   if (/^\d{4}-\d{2}-\d{2}$/.test(datum)) return 'tag';
   return 'unbekannt';
 }

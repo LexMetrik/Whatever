@@ -1,19 +1,9 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "AIG",
   "gewichtQuelle": "alt",
   "proArtikel": {
     "2": [
-      {
-        "key": "bge_148_IV_281",
-        "zitierung": "BGE 148 IV 281",
-        "regesteKurz": "Art. 8 Abs. 4 AsylG; Verletzung der Mitwirkungspflicht zur Beschaffung von Reisepapieren; Vorrang des AsylG gegenüber dem AuG bzw. AIG; Legalitätsprinzip. Schuldspruch wegen Verletzung der Mitwirkungspflicht zur Beschaffung von…",
-        "datum": "2022-03-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_147_II_1",
         "zitierung": "BGE 147 II 1",
@@ -25,12 +15,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_II_49",
-        "zitierung": "BGE 146 II 49",
-        "regesteKurz": "Art. 62 Abs. 2 AIG: Widerruf/Nichtverlängerung einer Aufenthaltsbewilligung gestützt auf ein Delikt, für das ein Strafgericht von einer Landesverweisung abgesehen hat. Art. 62 Abs. 2 AIG will verhindern, dass verschiedene Behörden…",
+        "key": "bge_148_IV_281__voll",
+        "zitierung": "Urteil 6B_1361/2020 (nicht publ. in BGE 148 IV 281)",
+        "regesteKurz": null,
+        "datum": "2022-03-28",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_II_49__voll",
+        "zitierung": "Urteil 2C_468/2019 (nicht publ. in BGE 146 II 49)",
+        "regesteKurz": null,
         "datum": "2019-11-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -141,16 +141,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_237",
-        "zitierung": "BGE 151 II 237",
-        "regesteKurz": "Art. 42 Abs. 1, Art. 51 Abs. 1 lit. b und Art. 83 Abs. 2 AIG; Art. 97 Abs. 1 BGG; Gesuch um Wiedererwägung der Verweigerung des Familiennachzugs wegen des Vorliegens von Widerrufsgründen; Pflicht zur Ermittlung des entscheiderheblichen…",
-        "datum": "2024-09-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_151_I_62",
         "zitierung": "BGE 151 I 62",
         "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
@@ -171,6 +161,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_151_II_237__voll",
+        "zitierung": "Urteil 2C_150/2024 (nicht publ. in BGE 151 II 237)",
+        "regesteKurz": null,
+        "datum": "2024-09-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bger_2C_291_2023",
         "zitierung": "BGer 2C_291/2023 vom 8. Mai 2024",
         "regesteKurz": "Aufenthaltsbewilligung (Wiedererwägung)",
@@ -183,12 +183,12 @@
     ],
     "33": [
       {
-        "key": "bge_147_I_268",
-        "zitierung": "BGE 147 I 268",
-        "regesteKurz": "Art. 83 lit. c Ziff. 2 BGG; Art. 8 EMRK; prekärer Aufenthalt; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung im Lichte des Anspruchs auf Achtung des Privatlebens. Zulässigkeit der Beschwerde in…",
+        "key": "bge_147_I_268__voll",
+        "zitierung": "Urteil 2C_175/2020 (nicht publ. in BGE 147 I 268)",
+        "regesteKurz": null,
         "datum": "2020-11-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -215,40 +215,40 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_I_62",
-        "zitierung": "BGE 151 I 62",
-        "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
-        "datum": "2024-07-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_1",
-        "zitierung": "BGE 149 II 1",
-        "regesteKurz": "Art. 43 Abs. 1 lit. c und e, Art. 44 Abs. 1 lit. c und e, Art. 63 Abs. 1 lit. c AIG; Rechtmässigkeit des Widerrufs einer Niederlassungsbewilligung, wenn Ergänzungsleistungen zur AHV/IV bezogen werden. Bezüglich der Frage, ob…",
-        "datum": "2022-12-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_II_1",
-        "zitierung": "BGE 148 II 1",
-        "regesteKurz": "Art. 34 Abs. 1, Art. 58a, Art. 62 Abs. 1 lit. d und g, Art. 63 Abs. 2 und 3, Art. 96 Abs. 2 und Art. 99 AIG; Art. 62a, Art. 77a ff. und Art. 85 Abs. 1 VZAE; Art. 3 lit. g ZV-EJPD; Rückstufung von einer altrechtlich erteilten…",
-        "datum": "2021-10-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bger_2C_12_2025",
         "zitierung": "BGer 2C_12/2025 vom 8. September 2025",
         "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
         "datum": "2025-09-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_I_62__voll",
+        "zitierung": "Urteil 2C_157/2023 (nicht publ. in BGE 151 I 62)",
+        "regesteKurz": null,
+        "datum": "2024-07-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_1__voll",
+        "zitierung": "Urteil 2C_60/2022 (nicht publ. in BGE 149 II 1)",
+        "regesteKurz": null,
+        "datum": "2022-12-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_II_1__voll",
+        "zitierung": "Urteil 2C_667/2020 (nicht publ. in BGE 148 II 1)",
+        "regesteKurz": null,
+        "datum": "2021-10-19",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -279,12 +279,12 @@
     ],
     "40": [
       {
-        "key": "bge_149_I_91",
-        "zitierung": "BGE 149 I 91",
-        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 83 lit. b und Art. 90 BGG; Art. 14 lit. c und d aBüG; Beschwerde ans Bundesgericht gegen einen Entscheid des Bundesverwaltungsgerichts, mit dem dieses eine Beschwerde gegen die Verweigerung der eidgenössischen…",
+        "key": "bge_149_I_91__voll",
+        "zitierung": "Urteil 1C_141/2022 (nicht publ. in BGE 149 I 91)",
+        "regesteKurz": null,
         "datum": "2022-12-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -323,22 +323,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_I_382",
-        "zitierung": "BGE 151 I 382",
-        "regesteKurz": "Art. 2 UNO-Pakt II; Art. 6 und 13 EMRK; Art. 29, 30, 190 und 191c BV; Art. 99 AIG; Prüfung der Kompetenz des Staatssekretariats für Migration (SEM), kantonalen Gerichtsurteilen die Zustimmung zu verweigern, auf ihre Verfassungs- und…",
-        "datum": "2025-03-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_I_89",
         "zitierung": "BGE 147 I 89",
         "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
         "datum": "2020-02-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_I_382__voll",
+        "zitierung": "Urteil 2C_681/2023 (nicht publ. in BGE 151 I 382)",
+        "regesteKurz": null,
+        "datum": "2025-03-19",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -355,22 +355,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_I_174",
-        "zitierung": "BGE 150 I 174",
-        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 90 und 93 BGG; § 13 Abs. 2 VRG/ZH; Qualifikation der Kostenverlegung im Rahmen einer Rückweisung zulasten des Rechtsvertreters als Endentscheid; Verletzung des Anspruchs auf rechtliches Gehör mangels Möglichkeit des…",
-        "datum": "2024-06-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_I_83",
         "zitierung": "BGE 146 I 83",
         "regesteKurz": "Art. 37, 38 Abs. 2, Art. 50 Abs. 1 BV, §§ 39, 59 und 64 KV/BS, Art. 11-13 BüG; abstrakte Normenkontrolle: verletzt eine kantonale Vermutungsregel bei der Prüfung eines Kriteriums der ordentlichen Einbürgerung die Autonomie der…",
         "datum": "2019-11-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_I_174__voll",
+        "zitierung": "Urteil 2C_179/2023 (nicht publ. in BGE 150 I 174)",
+        "regesteKurz": null,
+        "datum": "2024-06-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -381,16 +381,6 @@
         "zitierung": "BGE 151 II 737",
         "regesteKurz": "Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…",
         "datum": "2025-03-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_I_93",
-        "zitierung": "BGE 150 I 93",
-        "regesteKurz": "Art. 8 Ziff. 1 EMRK; Art. 13 BV; Art. 3 KRK; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Die Nachteile, die mit dem Status der vorläufigen Aufnahme im Vergleich zur Aufenthaltsbewilligung für Kinder im…",
-        "datum": "2024-02-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -413,6 +403,16 @@
         "datum": "2020-02-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_I_93__voll",
+        "zitierung": "Urteil 2C_198/2023 (nicht publ. in BGE 150 I 93)",
+        "regesteKurz": null,
+        "datum": "2024-02-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -487,12 +487,12 @@
     ],
     "51": [
       {
-        "key": "bge_151_I_382",
-        "zitierung": "BGE 151 I 382",
-        "regesteKurz": "Art. 2 UNO-Pakt II; Art. 6 und 13 EMRK; Art. 29, 30, 190 und 191c BV; Art. 99 AIG; Prüfung der Kompetenz des Staatssekretariats für Migration (SEM), kantonalen Gerichtsurteilen die Zustimmung zu verweigern, auf ihre Verfassungs- und…",
+        "key": "bge_151_I_382__voll",
+        "zitierung": "Urteil 2C_681/2023 (nicht publ. in BGE 151 I 382)",
+        "regesteKurz": null,
         "datum": "2025-03-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -531,12 +531,12 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_II_294",
-        "zitierung": "BGE 150 II 294",
-        "regesteKurz": "Art. 88 und 89b Abs. 2 AsylG; Art. 5 AsylV 2; Art. 16 Abs. 1, 2 und 5 SuG; Art. 5 und 39 VwVG; Vorgehensweise des SEM, wenn es beabsichtigt, auf die Ausrichtung von Pauschalabgeltungen in Anwendung von Art. 89b Abs. 2 AsylG zu verzichten.…",
+        "key": "bge_150_II_294__voll",
+        "zitierung": "Urteil 2C_692/2022 (nicht publ. in BGE 150 II 294)",
+        "regesteKurz": null,
         "datum": "2024-02-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -565,22 +565,22 @@
     ],
     "62": [
       {
-        "key": "bge_151_I_382",
-        "zitierung": "BGE 151 I 382",
-        "regesteKurz": "Art. 2 UNO-Pakt II; Art. 6 und 13 EMRK; Art. 29, 30, 190 und 191c BV; Art. 99 AIG; Prüfung der Kompetenz des Staatssekretariats für Migration (SEM), kantonalen Gerichtsurteilen die Zustimmung zu verweigern, auf ihre Verfassungs- und…",
-        "datum": "2025-03-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_151_II_237",
         "zitierung": "BGE 151 II 237",
         "regesteKurz": "Art. 42 Abs. 1, Art. 51 Abs. 1 lit. b und Art. 83 Abs. 2 AIG; Art. 97 Abs. 1 BGG; Gesuch um Wiedererwägung der Verweigerung des Familiennachzugs wegen des Vorliegens von Widerrufsgründen; Pflicht zur Ermittlung des entscheiderheblichen…",
         "datum": "2024-09-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_I_382__voll",
+        "zitierung": "Urteil 2C_681/2023 (nicht publ. in BGE 151 I 382)",
+        "regesteKurz": null,
+        "datum": "2025-03-19",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -599,16 +599,6 @@
         "zitierung": "BGE 148 II 1",
         "regesteKurz": "Art. 34 Abs. 1, Art. 58a, Art. 62 Abs. 1 lit. d und g, Art. 63 Abs. 2 und 3, Art. 96 Abs. 2 und Art. 99 AIG; Art. 62a, Art. 77a ff. und Art. 85 Abs. 1 VZAE; Art. 3 lit. g ZV-EJPD; Rückstufung von einer altrechtlich erteilten…",
         "datum": "2021-10-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_340",
-        "zitierung": "BGE 147 IV 340",
-        "regesteKurz": "Art. 21 und 24 der Verordnung (EG) Nr. 1987/2006 (SIS-II-Verordnung) und der Verordnung (EU) 2018/1861; Voraussetzungen für die Ausschreibung von Einreiseverboten im Schengener Informationssystem (SIS). Art. 24 Abs. 2 Bst. a…",
-        "datum": "2021-03-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -641,6 +631,16 @@
         "datum": "2019-11-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bger_2C_12_2025",
+        "zitierung": "BGer 2C_12/2025 vom 8. September 2025",
+        "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
+        "datum": "2025-09-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -819,20 +819,20 @@
     ],
     "76": [
       {
-        "key": "bge_149_II_6",
-        "zitierung": "BGE 149 II 6",
-        "regesteKurz": "Art. 16 Abs. 1 der Richtlinie 2008/115/EG (Rückführungsrichtlinie); Art. 80 Abs. 4 und Art. 81 Abs. 2 AIG (Fassung gemäss Ziff. I des Bundesgesetzes vom 14. Dezember 2018 [Verfahrensregelungen und Informationssysteme], in Kraft seit 1.…",
-        "datum": "2022-10-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bger_7B_651_2026",
         "zitierung": "BGer 7B_651/2026 vom 16. Juni 2026",
         "regesteKurz": null,
         "datum": "2026-06-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_6__voll",
+        "zitierung": "Urteil 2C_765/2022 (nicht publ. in BGE 149 II 6)",
+        "regesteKurz": null,
+        "datum": "2022-10-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -981,12 +981,12 @@
         "gewicht": 1
       },
       {
-        "key": "bge_149_I_66",
-        "zitierung": "BGE 149 I 66",
-        "regesteKurz": "Art. 8 EMRK; Art. 30 Abs. 1 lit. k und Art. 61 Abs. 2 AIG; Umfang des Aufenthaltsrechts gestützt auf das Privatleben nach Erlöschen der Aufenthaltsbewilligung. Hinweis auf die Rechtsprechung, wonach sich ein Ausländer nach einem…",
+        "key": "bge_149_I_66__voll",
+        "zitierung": "Urteil 2C_528/2021 (nicht publ. in BGE 149 I 66)",
+        "regesteKurz": null,
         "datum": "2022-06-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -1087,12 +1087,12 @@
         "gewicht": 1
       },
       {
-        "key": "bge_150_II_294",
-        "zitierung": "BGE 150 II 294",
-        "regesteKurz": "Art. 88 und 89b Abs. 2 AsylG; Art. 5 AsylV 2; Art. 16 Abs. 1, 2 und 5 SuG; Art. 5 und 39 VwVG; Vorgehensweise des SEM, wenn es beabsichtigt, auf die Ausrichtung von Pauschalabgeltungen in Anwendung von Art. 89b Abs. 2 AsylG zu verzichten.…",
+        "key": "bge_150_II_294__voll",
+        "zitierung": "Urteil 2C_692/2022 (nicht publ. in BGE 150 II 294)",
+        "regesteKurz": null,
         "datum": "2024-02-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1107,16 +1107,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_II_336",
-        "zitierung": "BGE 151 II 336",
-        "regesteKurz": "Art. 3 Anhang I FZA; Anwendbarkeit der freizügigkeitsrechtlichen Bestimmungen über den Familiennachzug (Voraussetzung des Auslandsbezugs). Streitgegenstand (E. 3). Darstellung der Rechtsprechung zum grenzüberschreitenden Bezug als…",
-        "datum": "2025-01-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_151_II_237",
@@ -1147,29 +1137,19 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_336__voll",
+        "zitierung": "Urteil 2C_307/2023 (nicht publ. in BGE 151 II 336)",
+        "regesteKurz": null,
+        "datum": "2025-01-14",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "96": [
-      {
-        "key": "bge_151_II_237",
-        "zitierung": "BGE 151 II 237",
-        "regesteKurz": "Art. 42 Abs. 1, Art. 51 Abs. 1 lit. b und Art. 83 Abs. 2 AIG; Art. 97 Abs. 1 BGG; Gesuch um Wiedererwägung der Verweigerung des Familiennachzugs wegen des Vorliegens von Widerrufsgründen; Pflicht zur Ermittlung des entscheiderheblichen…",
-        "datum": "2024-09-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_1",
-        "zitierung": "BGE 149 II 1",
-        "regesteKurz": "Art. 43 Abs. 1 lit. c und e, Art. 44 Abs. 1 lit. c und e, Art. 63 Abs. 1 lit. c AIG; Rechtmässigkeit des Widerrufs einer Niederlassungsbewilligung, wenn Ergänzungsleistungen zur AHV/IV bezogen werden. Bezüglich der Frage, ob…",
-        "datum": "2022-12-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_148_II_1",
         "zitierung": "BGE 148 II 1",
@@ -1181,12 +1161,32 @@
         "gewicht": 0
       },
       {
-        "key": "bge_146_II_49",
-        "zitierung": "BGE 146 II 49",
-        "regesteKurz": "Art. 62 Abs. 2 AIG: Widerruf/Nichtverlängerung einer Aufenthaltsbewilligung gestützt auf ein Delikt, für das ein Strafgericht von einer Landesverweisung abgesehen hat. Art. 62 Abs. 2 AIG will verhindern, dass verschiedene Behörden…",
+        "key": "bge_151_II_237__voll",
+        "zitierung": "Urteil 2C_150/2024 (nicht publ. in BGE 151 II 237)",
+        "regesteKurz": null,
+        "datum": "2024-09-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_II_1__voll",
+        "zitierung": "Urteil 2C_60/2022 (nicht publ. in BGE 149 II 1)",
+        "regesteKurz": null,
+        "datum": "2022-12-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_II_49__voll",
+        "zitierung": "Urteil 2C_468/2019 (nicht publ. in BGE 146 II 49)",
+        "regesteKurz": null,
         "datum": "2019-11-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1269,22 +1269,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_IV_35",
-        "zitierung": "BGE 149 IV 35",
-        "regesteKurz": "Art. 274 und 281 StPO; verspäteter Antrag auf Verlängerung einer geheimen Überwachungsmassnahme. Stellt die Staatsanwaltschaft ein Gesuch um Verlängerung einer geheimen Überwachungsmassnahme nach Ablauf des vom Zwangsmassnahmengericht im…",
-        "datum": "2022-11-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_IV_297",
         "zitierung": "BGE 146 IV 297",
         "regesteKurz": "Art. 5 Abs. 3 BV; Art. 116 Abs. 1 lit. a i.V.m. Abs. 2 AIG; Art. 17 StGB; Förderung der rechtswidrigen Einreise; Notstandshilfe; Dublin-Verfahren. Die Beschwerde ist gegen Entscheide des Bundesverwaltungsgerichts auf dem Gebiet des Asyls…",
         "datum": "2020-06-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_35__voll",
+        "zitierung": "Urteil 1B_282/2022 (nicht publ. in BGE 149 IV 35)",
+        "regesteKurz": null,
+        "datum": "2022-11-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1365,30 +1365,30 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_II_1",
-        "zitierung": "BGE 148 II 1",
-        "regesteKurz": "Art. 34 Abs. 1, Art. 58a, Art. 62 Abs. 1 lit. d und g, Art. 63 Abs. 2 und 3, Art. 96 Abs. 2 und Art. 99 AIG; Art. 62a, Art. 77a ff. und Art. 85 Abs. 1 VZAE; Art. 3 lit. g ZV-EJPD; Rückstufung von einer altrechtlich erteilten…",
-        "datum": "2021-10-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_I_185",
-        "zitierung": "BGE 146 I 185",
-        "regesteKurz": "Art. 8 EMRK, Art. 13 BV, Art. 44 und 47 AuG; nachträglicher Familiennachzug; Ehegatte mit gefestigtem Anwesenheitsrecht in der Schweiz. Verschlechtert sich der Gesundheitszustand eines Ehegatten erheblich, liegt darin eine wesentliche…",
-        "datum": "2020-02-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bger_2C_12_2025",
         "zitierung": "BGer 2C_12/2025 vom 8. September 2025",
         "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
         "datum": "2025-09-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_II_1__voll",
+        "zitierung": "Urteil 2C_667/2020 (nicht publ. in BGE 148 II 1)",
+        "regesteKurz": null,
+        "datum": "2021-10-19",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_146_I_185__voll",
+        "zitierung": "Urteil 2C_668/2018 (nicht publ. in BGE 146 I 185)",
+        "regesteKurz": null,
+        "datum": "2020-02-28",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1453,16 +1453,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_IV_266",
-        "zitierung": "BGE 149 IV 266",
-        "regesteKurz": "Art. 431 Abs. 1 StPO; zuständige Behörde für den Entscheid betreffend die Entschädigung wegen rechtswidriger Haftbedingungen. Welche Behörde für den Entscheid betreffend die Entschädigung wegen rechtswidriger Haftbedingungen zuständig ist,…",
-        "datum": "2023-05-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_II_1",
         "zitierung": "BGE 148 II 1",
         "regesteKurz": "Art. 34 Abs. 1, Art. 58a, Art. 62 Abs. 1 lit. d und g, Art. 63 Abs. 2 und 3, Art. 96 Abs. 2 und Art. 99 AIG; Art. 62a, Art. 77a ff. und Art. 85 Abs. 1 VZAE; Art. 3 lit. g ZV-EJPD; Rückstufung von einer altrechtlich erteilten…",
@@ -1487,6 +1477,16 @@
         "zitierung": "BGer 2C_12/2025 vom 8. September 2025",
         "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
         "datum": "2025-09-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_266__voll",
+        "zitierung": "Urteil 6B_900/2022 (nicht publ. in BGE 149 IV 266)",
+        "regesteKurz": null,
+        "datum": "2023-05-22",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

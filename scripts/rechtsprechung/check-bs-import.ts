@@ -4,7 +4,8 @@
 // committete Projektion (public/rechtsprechung/kanton/BS/** + register.json):
 //  · Fehlerliste leer · jeder Scope-Eintrag hat genau einen Snapshot (GN-Multiset
 //    beidseitig gleich, keine Waisen) · Jahres-Counts == Portal-Anker ·
-//    datumlose Einträge tragen datumUnbekannt + Platzhalter <GN-Jahr>-01-01 ·
+//    datumlose Einträge tragen datumUnbekannt + Platzhalter <GN-Jahr>-01-01 oder
+//    ein plausibles Kopf-Datum (B-1) · Datum == Inventar-Metadaten ·
 //    docketSafe-Kollisionsregel (§3.2) · statische Fidelity-Assertions
 //    (kein U+FFFD, kein Entity-/Tag-Rest, NBSP-Präsenzquote) · §7-Provenienz.
 // Kein Netz. Harte Verstösse → exit 1.
@@ -69,16 +70,16 @@ function main() {
     if (z.datum) invJahr.set(z.datum.slice(0, 4), (invJahr.get(z.datum.slice(0, 4)) ?? 0) + 1);
     else invDatumlos++;
   }
+  // Jahres-/Datumlos-Zählung erfolgt je Snapshot in der Datei-Schleife unten: seit
+  // dem Kopf-Datum-Nachtrag (B-1, W2·29-WERKBANK-LESER D2) trägt ein Dokument ohne
+  // Metadaten-Datum im Portal-Inventar ein ECHTES Datum aus seinem Deckblatt. Es
+  // gehört darum nicht in die Jahres-Anker des Inventars (die zählen nur Metadaten-
+  // Daten), sondern in die Datumlos-Menge — die Zuordnung braucht den nF30_KEY aus
+  // der Snapshot-URL und damit die Snapshot-Datei.
   const regJahr = new Map<string, number>();
   let regDatumlos = 0;
-  for (const e of bs) {
-    if (e.datumUnbekannt) regDatumlos++;
-    else regJahr.set(e.datum.slice(0, 4), (regJahr.get(e.datum.slice(0, 4)) ?? 0) + 1);
-  }
-  for (const [j, n] of invJahr) {
-    if ((regJahr.get(j) ?? 0) !== n) fehler.push(`Jahr ${j}: Inventar ${n} ≠ Register ${regJahr.get(j) ?? 0}`);
-  }
-  if (invDatumlos !== regDatumlos) fehler.push(`Datumlos: Inventar ${invDatumlos} ≠ Register ${regDatumlos}`);
+  let regKopfdatiert = 0;
+  const invProKey = new Map(inv.eintraege.map((z) => [z.key, z] as const));
   // Portal-Anker (nur Scope-Jahre ≥2022; ältere Jahres-Anteile stammen aus GN-Jahr-Scope).
   for (const [j, n] of Object.entries(inv.portal.jahre)) {
     const invN = inv.eintraege.filter((z) => z.datum?.startsWith(`${j}-`)).length;
@@ -124,6 +125,30 @@ function main() {
       fehler.push(`${e.key}: docketSafe «${stamm}» verletzt Kollisionsregel zu GN «${snap.nummer}»`);
     }
 
+    // Datum gegen das Inventar (über den nF30_KEY der amtlichen URL, eindeutig je Dokument).
+    const nf = /nF30_KEY=(\d+)/.exec(snap.quelleUrl);
+    const z = nf ? invProKey.get(Number(nf[1])) : undefined;
+    if (!z) {
+      fehler.push(`${e.key}: kein Inventar-Eintrag zum nF30_KEY der Quelle`);
+    } else if (z.datum) {
+      if (snap.datum !== z.datum || e.datum !== z.datum) fehler.push(`${e.key}: Datum ${snap.datum} ≠ Inventar-Metadaten ${z.datum}`);
+      if (snap.datumUnbekannt) fehler.push(`${e.key}: datumUnbekannt trotz Metadaten-Datum`);
+      regJahr.set(z.datum.slice(0, 4), (regJahr.get(z.datum.slice(0, 4)) ?? 0) + 1);
+    } else {
+      regDatumlos++;
+      if (!snap.datumUnbekannt) {
+        // Kopf-datiert (B-1): plausibel = nicht vor dem GN-Jahr, nicht nach der
+        // Erstpublikation, und die Zitierung nennt genau dieses Datum.
+        regKopfdatiert++;
+        const j = gnJahr(snap.nummer);
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(snap.datum)) fehler.push(`${e.key}: Kopf-Datum kein ISO-Tag: ${snap.datum}`);
+        if (j !== null && Number(snap.datum.slice(0, 4)) < j) fehler.push(`${e.key}: Kopf-Datum ${snap.datum} vor GN-Jahr ${j}`);
+        if (snap.erstpublikation && snap.datum > snap.erstpublikation) fehler.push(`${e.key}: Kopf-Datum ${snap.datum} nach Erstpublikation ${snap.erstpublikation}`);
+        const [y, m, d] = snap.datum.split('-');
+        if (!snap.zitierung.endsWith(` vom ${d}.${m}.${y}`)) fehler.push(`${e.key}: Zitierung «${snap.zitierung}» nennt das Kopf-Datum nicht`);
+      }
+    }
+
     // datumlos: Platzhalter == <GN-Jahr>-01-01 + datumUnbekannt beidseitig konsistent.
     if (snap.datumUnbekannt) {
       const j = gnJahr(snap.nummer);
@@ -154,6 +179,11 @@ function main() {
     if (!snap.abschnitte.length || !text.replace(/\s+/g, '')) fehler.push(`${e.key}: leerer Entscheidtext`);
   }
 
+  for (const [j, n] of invJahr) {
+    if ((regJahr.get(j) ?? 0) !== n) fehler.push(`Jahr ${j}: Inventar ${n} ≠ Register ${regJahr.get(j) ?? 0}`);
+  }
+  if (invDatumlos !== regDatumlos) fehler.push(`Datumlos: Inventar ${invDatumlos} ≠ Register ${regDatumlos}`);
+
   if (geprueft > 0) {
     const quote = mitNbsp / geprueft;
     if (quote < NBSP_QUOTE_MIN) {
@@ -166,7 +196,7 @@ function main() {
     if (fehler.length > 60) console.error(`[check:bs-entscheide] … und ${fehler.length - 60} weitere`);
     process.exit(1);
   }
-  console.log(`[check:bs-entscheide] OK — ${bs.length} BS-Entscheide (Inventar ${inv.eintraege.length}, datumlos ${regDatumlos}, NBSP-Quote ${geprueft ? ((mitNbsp / geprueft) * 100).toFixed(1) : '–'} %).`);
+  console.log(`[check:bs-entscheide] OK — ${bs.length} BS-Entscheide (Inventar ${inv.eintraege.length}, Inventar-datumlos ${regDatumlos}, davon Kopf-datiert ${regKopfdatiert}, NBSP-Quote ${geprueft ? ((mitNbsp / geprueft) * 100).toFixed(1) : '–'} %).`);
 }
 
 main();

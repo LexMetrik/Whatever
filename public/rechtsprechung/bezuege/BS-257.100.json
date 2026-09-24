@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"BS-257.100",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -44,7 +44,7 @@
 "bs_appellationsgericht_DGS.2025.2":{"zitierung":"Appellationsgericht BS DGS.2025.2 vom 24.02.2025","regesteKurz":"Gesuch um Erlass der Verfahrenskosten","datum":"2025-02-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_DGS.2025.20":{"zitierung":"Appellationsgericht BS DGS.2025.20 vom 14.05.2025","regesteKurz":"Ausstandsgesuch","datum":"2025-05-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_DGS.2025.28":{"zitierung":"Appellationsgericht BS DGS.2025.28 vom 03.03.2026","regesteKurz":"Revisionsgesuch betreffend einen Strafbefehl der Staatsanwaltschaft vom 12. März 2024 (VT.[...])","datum":"2026-03-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_DGS.2025.39":{"zitierung":"Appellationsgericht BS DGS.2025.39","regesteKurz":"Ausstandsbegehren gegen das Strafgericht","datum":"2025-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_DGS.2025.39":{"zitierung":"Appellationsgericht BS DGS.2025.39 vom 18.12.2025","regesteKurz":"Ausstandsbegehren gegen das Strafgericht","datum":"2025-12-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_HB.2019.43":{"zitierung":"Appellationsgericht BS HB.2019.43 vom 13.07.2022","regesteKurz":"Gesuch um Erlass der Verfahrenskosten","datum":"2022-07-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_HB.2019.59":{"zitierung":"Appellationsgericht BS HB.2019.59 vom 13.07.2022","regesteKurz":"Gesuch um Erlass der Verfahrenskosten","datum":"2022-07-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_HB.2019.60":{"zitierung":"Appellationsgericht BS HB.2019.60 vom 27.07.2023","regesteKurz":"Gesuch um Erlass der Verfahrenskosten","datum":"2023-07-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -75,7 +75,7 @@
 "proArtikel":{
 "1":[{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null}],
 "3":[{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null},{"key":"bs_appellationsgericht_ZS.2024.3","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.67","gewicht":null}],
-"4":[{"key":"bs_appellationsgericht_DGS.2025.28","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.20","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.60","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.39","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.25","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.43","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.11","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.9","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.6","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.9","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.33","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.27","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.8","gewicht":null},{"key":"bs_appellationsgericht_DGS.2022.3","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_DGS.2025.28","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.39","gewicht":null},{"key":"bs_appellationsgericht_DGS.2025.20","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.60","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.25","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.43","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.11","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.9","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.6","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.9","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.33","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.27","gewicht":null},{"key":"bs_appellationsgericht_DGS.2023.8","gewicht":null},{"key":"bs_appellationsgericht_DGS.2022.3","gewicht":null}],
 "7":[{"key":"bs_appellationsgericht_ZS.2024.3","gewicht":null}],
 "9":[{"key":"bs_appellationsgericht_DGS.2023.19","gewicht":null}],
 "10":[{"key":"bs_appellationsgericht_DGS.2023.19","gewicht":null}],

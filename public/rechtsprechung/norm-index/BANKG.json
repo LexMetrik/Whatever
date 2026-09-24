@@ -1,16 +1,16 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "BANKG",
   "gewichtQuelle": "alt",
   "proArtikel": {
     "1": [
       {
-        "key": "bge_147_I_57",
-        "zitierung": "BGE 147 I 57",
-        "regesteKurz": "Art. 34 FINMAG; Art. 6, Art. 7 EMRK; Art. 14 Abs. 3 lit. g UNO-Pakt II; Art. 32 Abs. 1 BV. Die finanzmarktrechtliche Publikationsanordnung qualifiziert nicht als eine strafrechtliche Anklage bzw. eine Strafe im Sinne der Art. 6 und 7 EMRK.…",
+        "key": "bge_147_I_57__voll",
+        "zitierung": "Urteil 2C_92/2019 (nicht publ. in BGE 147 I 57)",
+        "regesteKurz": null,
         "datum": "2020-01-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -113,22 +113,22 @@
     ],
     "47": [
       {
-        "key": "bge_151_IV_30",
-        "zitierung": "BGE 151 IV 30",
-        "regesteKurz": "Art. 197 Abs. 1 lit. b und c sowie Art. 248 Abs. 1 und Art. 264 StPO in der am 1. Januar 2024 in Kraft getretenen revidierten Fassung; Entsiegelung; Geschäftsgeheimnisse; Bankkundengeheimnis; Rechtsweg. In der neuen Fassung von Art. 248…",
-        "datum": "2024-09-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_432",
         "zitierung": "BGE 147 II 432",
         "regesteKurz": "Art. 2 Abs. 1 und Art. 23 AVUS; Art. 8 und 35 Abs. 1 IRSG; Art. 154 FinfraG; Auslieferung an die USA; beidseitige Strafbarkeit; Insidertatbestand; Günstigkeitsprinzip. Art. 154 Abs. 3 FinfraG ermöglicht a priori wie seine…",
         "datum": "2021-05-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_30__voll",
+        "zitierung": "Urteil 7B_313/2024 (nicht publ. in BGE 151 IV 30)",
+        "regesteKurz": null,
+        "datum": "2024-09-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

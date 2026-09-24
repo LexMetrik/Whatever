@@ -1,15 +1,16 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"MWSTV",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_146_II_73":{"zitierung":"BGE 146 II 73","regesteKurz":"Art. 69 ff. FusG; Art. 16 Abs. 2 MWSTG 2009; partielle mehrwertsteuerliche Steuernachfolge bei Übertragung eines Teilvermögens im Sinne des Fusionsgesetzes. Nach dem Mehrwertsteuerrecht von 1994 und 1999 setzte die Steuernachfolge der…","datum":"2020-02-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_146_II_73__voll":{"zitierung":"Urteil 2C_923/2018 (nicht publ. in BGE 146 II 73)","regesteKurz":null,"datum":"2020-02-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 II 73","urteil":"2C_923/2018"}},
 "bge_148_II_233":{"zitierung":"BGE 148 II 233","regesteKurz":"Art. 7 und 10 MWSTG 2009; Art. 13 und 21 MWSTG 1999; Art. 8 Abs. 1 MWSTV 2009; Inlandsbezug der unternehmerischen Tätigkeit; Unterstellungserklärung Ausland; Steuerumgehung. Nach altem (MWSTG 1999) wie nach neuem Mehrwertsteuerrecht (MWSTG…","datum":"2021-12-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_II_255":{"zitierung":"BGE 149 II 255","regesteKurz":"Art. 18 Abs. 2 lit. a-c bzw. lit. d-i, Art. 33 Abs. 1 und 2 MWSTG 2009; Charakter und Rechtsfolgen eines Investitionsbeitrags, der durch die öffentliche Hand ausgerichtet wird und der Förderung der privatwirtschaftlich erbrachten…","datum":"2023-06-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_II_385":{"zitierung":"BGE 149 II 385","regesteKurz":"Art. 21 Abs. 2 Ziff. 3 MWSTG; Art. 34 und 35 MWSTV; steuerbare Heilbehandlungen im Bereich \"Traditionelle Chinesische Medizin\" (TCM). Unter Zulassung zur Ausübung einer Heilbehandlung nach der kantonalen Gesetzgebung (im Sinne von Art. 35…","datum":"2023-08-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_II_43":{"zitierung":"BGE 149 II 43","regesteKurz":"Art. 18 Abs. 2 lit. a und Art. 33 Abs. 2 MWSTG; Begriff der Subventionen und der anderen öffentlich-rechtlichen Beiträge; Mittelflüsse zwischen Dienststellen desselben Gemeinwesens. Mittelflüsse zwischen Dienststellen desselben…","datum":"2022-11-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_289":{"zitierung":"BGE 151 II 289","regesteKurz":"Art. 29 Abs. 1 und 2, Art. 29a BV; Art. 49 VwVG; Art. 37 VGG; Art. 79 Abs. 2 MWSTG 2009; zur Kognition des Bundesverwaltungsgerichts, wenn dieses einen mehrwertsteuerrechtlichen Einspracheentscheid der ESTV zu überprüfen hat, der auf der…","datum":"2024-11-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_569":{"zitierung":"BGE 151 II 569","regesteKurz":"Art. 18 Abs. 1, Art. 20 Abs. 1 und 2 und Art. 27 Abs. 2 MWSTG; Rechnungsstellung der schweizerischen Mehrwertsteuer durch eine Schifffahrtsgesellschaft, welche an der SwissPass-Allianz und dem zentralen Abrechnungssystem teilnimmt.…","datum":"2024-12-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_II_569__voll":{"zitierung":"Urteil 9C_433/2024 (nicht publ. in BGE 151 II 569)","regesteKurz":null,"datum":"2024-12-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 569","urteil":"9C_433/2024"}}
 },
 "proArtikel":{
 "8":[{"key":"bge_148_II_233","gewicht":0}],
@@ -19,8 +20,8 @@
 "34":[{"key":"bge_149_II_385","gewicht":0}],
 "35":[{"key":"bge_149_II_385","gewicht":0}],
 "53":[{"key":"bge_151_II_289","gewicht":0}],
-"75":[{"key":"bge_151_II_569","gewicht":0}],
-"141":[{"key":"bge_146_II_73","gewicht":0}]
+"75":[{"key":"bge_151_II_569__voll","gewicht":0,"erwaegungen":["E. 7.2.1","E. 7.2.2","E. 7.3.2"]}],
+"141":[{"key":"bge_146_II_73__voll","gewicht":0,"erwaegungen":["E. 1.1"]}]
 },
 "gesamtProArtikel":{
 "8":{"bge":1},
@@ -30,7 +31,7 @@
 "34":{"bge":1},
 "35":{"bge":1},
 "53":{"bge":1},
-"75":{"bge":1},
-"141":{"bge":1}
+"75":{"bger":1},
+"141":{"bger":1}
 }
 }
