@@ -16,10 +16,17 @@ import { KANTON_NAMEN } from '../data/tarif/typen';
 /** Die vier Kacheln der Startseite, als Adress-Wort. */
 export type BlattRubrik = 'gesetze' | 'rechtsprechung' | 'materialien' | 'werkzeuge';
 
-/** Welche Kacheln schon vor Ort aufklappen. S1: Gesetze; S2 (23.9.2026) fügt
- *  Werkzeuge hinzu; Rechtsprechung/Materialien führen bis S3 auf ihre
- *  Rubrikseite (Fahrplan §5d). */
-export const AUFKLAPPBAR: ReadonlySet<BlattRubrik> = new Set<BlattRubrik>(['gesetze', 'werkzeuge']);
+/** Welche Kacheln vor Ort aufklappen — seit S3 alle vier. S1: Gesetze;
+ *  S2 (23.9.2026): Werkzeuge; S3 (23./24.9.2026): Materialien UND
+ *  Rechtsprechung — sofort Suche, keine Unterstufen. Rechtsprechung war
+ *  zunächst zurückgestellt (§15-Messwert, s. Fahrplan §5d S3-Nachtrag): das
+ *  Register ist 9,4 MB/775 KB gzip, mehr als das Sechsfache der 1,5-MB-
+ *  Register von Materialien/Gesetze. ENTSCHEID DAVID 23.9.2026 (Auswahlfrage):
+ *  «Beim Öffnen laden» (Option a) — das Register lädt über denselben Lader
+ *  wie `/rechtsprechung` (`ladeEntscheidManifest`) erst beim Mounten des
+ *  Blatts, nie auf «/» (Herleitung in `components/start/
+ *  RechtsprechungBlatt.tsx`). */
+export const AUFKLAPPBAR: ReadonlySet<BlattRubrik> = new Set<BlattRubrik>(['gesetze', 'werkzeuge', 'materialien', 'rechtsprechung']);
 
 export interface BlattOrt {
   rubrik: BlattRubrik;

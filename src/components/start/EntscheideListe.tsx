@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import type { BrowseEntscheid } from '../../lib/rechtsprechung/register';
 import { STARTSEITE_ZAEHLER } from '../../data/startseiteZaehler.generated';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { ohneDatumsSuffix } from './entscheidZitierung';
@@ -28,12 +26,11 @@ import { Datum } from '../ui/Datum';
 // die Ausgabe-Zeile der Titelblatt-Krone (`layout/Topbar.tsx`, `AusgabeZeile`)
 // denselben Baustein auf jeder Seite. Auf «/» stand er damit zweimal (§5).
 //
-// Datenpfad unverändert: build-time-Register, lazy geladen, neueste zuerst.
-// Keine Live-Augmentierung (verifizierter API-Vertrag nötig, §1/§7).
-
-// MAX 6: die Liste ist eine Kostprobe, kein Archiv — «Alle Entscheide →» führt
-// zur Vollsicht.
-const MAX = 6;
+// Datenpfad seit S3-Nebenfund (23.9.2026): build-time-Projektion aus dem
+// Register (kein Client-Fetch mehr, §15 — Herleitung unten bei `news`),
+// neueste zuerst. Keine Live-Augmentierung (verifizierter API-Vertrag nötig,
+// §1/§7). MAX 6 (Kostprobe, kein Archiv, «Alle Entscheide →» führt zur
+// Vollsicht) ist die Kappung `MAX_NEUESTE` im Generator, nicht mehr hier.
 
 const nf = (n: number) => n.toLocaleString('de-CH');
 
@@ -46,84 +43,50 @@ const nf = (n: number) => n.toLocaleString('de-CH');
 // lokale `.num`, das hier Monospace erzwang, wo der Kanon keine Familie wechselt.
 // Format der Anzeige unverändert («17.06.2026»), Nicht-ISO bleibt stehen (§8).
 
-/**
- * Ein Listen-Eintrag: der Entscheid plus die VORAB aufgelösten Norm-Kürzel.
- *
- * Die Labels werden im dynamischen `import()` unten mitberechnet und hier
- * mitgeführt, statt `normLabel` statisch zu importieren: `browse.ts` zieht das
- * ERLASS_REGISTER nach sich und gehört darum nicht in das Startseiten-Bundle
- * (§15 — die Liste lädt das Register ohnehin schon lazy).
- */
-interface Eintrag {
-  e: BrowseEntscheid;
-  /** Anzeigename des Rechtsgebiets (aus GEBIET_LABEL, im lazy Chunk aufgelöst). */
-  gebiet: string;
-  /** Kürzel der in der Regeste zitierten Kernnormen (leer, wenn keine erfasst). */
-  normen: string[];
-}
+/** Ein Eintrag der Mini-Projektion (`gen-startseite-zaehler.ts`, S3-Nebenfund) —
+ *  Gebiet und Norm-Kürzel sind dort bereits aufgelöst, hier reine Darstellung. */
+type NeuesterEintrag = (typeof STARTSEITE_ZAEHLER)['neuesteEntscheide'][number];
 
 /** Aufeinanderfolgende Einträge gleichen Datums zu einer Gruppe bündeln (J4).
  *
- *  Die Liste ist nach Datum absteigend sortiert (`nachDatum`), gleiche Daten
- *  stehen also zusammen. Das Datum trägt die GRUPPE einmal, statt dasselbe
- *  «07.08.2026» auf drei Zeilen zu wiederholen. Rein darstellend (§3), keine
- *  Umsortierung — die Reihenfolge der Einträge bleibt exakt die der Quelle. */
-function nachDatumGruppiert(liste: Eintrag[]): { datum: string; eintraege: Eintrag[] }[] {
-  const gruppen: { datum: string; eintraege: Eintrag[] }[] = [];
+ *  Die Liste ist nach Datum absteigend sortiert (Buildzeit-`nachDatum`, s.
+ *  Generator), gleiche Daten stehen also zusammen. Das Datum trägt die GRUPPE
+ *  einmal, statt dasselbe «07.08.2026» auf drei Zeilen zu wiederholen. Rein
+ *  darstellend (§3), keine Umsortierung — die Reihenfolge der Einträge bleibt
+ *  exakt die der Quelle. */
+function nachDatumGruppiert(liste: NeuesterEintrag[]): { datum: string; eintraege: NeuesterEintrag[] }[] {
+  const gruppen: { datum: string; eintraege: NeuesterEintrag[] }[] = [];
   for (const eintrag of liste) {
     const letzte = gruppen[gruppen.length - 1];
-    if (letzte && letzte.datum === eintrag.e.datum) letzte.eintraege.push(eintrag);
-    else gruppen.push({ datum: eintrag.e.datum, eintraege: [eintrag] });
+    if (letzte && letzte.datum === eintrag.datum) letzte.eintraege.push(eintrag);
+    else gruppen.push({ datum: eintrag.datum, eintraege: [eintrag] });
   }
   return gruppen;
 }
 
 export function EntscheideListe() {
-  const [news, setNews] = useState<Eintrag[] | null>(null);
   const pk = usePaneKlasse();
 
   // W2·29-WERKBANK-START S1: das Modul ist fest auf der Seite (David 23.9.2026
   // «neuste entscheide sollen nicht weg»; der Modul-Baukasten mit `an` ist
-  // gestrichen). Geladen wird nach der Hydration, die Höhe ist reserviert (§15).
-  useEffect(() => {
-    let lebt = true;
-    import('../../lib/rechtsprechung/browse')
-      .then(async (m) => {
-        // Gebiets-Labels aus DEMSELBEN lazy Chunk: `browse.ts` hängt ohnehin an
-        // `normtext/register`, die beiden liegen also im gleichen Bündel — der
-        // dynamische Zugriff kostet darum kein zusätzliches Startseiten-Gewicht.
-        const { GEBIET_LABEL } = await import('../../lib/normtext/register');
-        const manifest = await m.ladeEntscheidManifest();
-        if (!lebt) return;
-        // `!e.verweis`: Volltext-Verweise sind Redirect-Stubs auf einen echten
-        // Eintrag (EntscheidLeser leitet auf `zielKey` um) — die Hauptansicht
-        // (Rechtsprechung.tsx) zählt/listet sie durchgängig als `!e.verweis`.
-        // Ohne diesen Filter doppelte dieselbe BGE als eigene Zeile.
-        const bund = (manifest?.entscheide ?? []).filter((e) => e.gerichtstyp === 'bundesgericht' && !e.verweis);
-        // Norm-Kürzel gleich hier auflösen — sie sind der §8-KONFORME Ersatz für
-        // eine fehlende Regeste: die im Entscheid angewandten Normen stehen so im
-        // Korpus. Es wird NIE ein generiertes Kurz-Résumé erzeugt (§8) — fehlt
-        // beides, bleibt die Zeile schlicht ohne Beschreibung.
-        setNews(m.nachDatum(bund).slice(0, MAX).map((e) => ({ // neueste zuerst
-          e,
-          gebiet: GEBIET_LABEL[e.sachgebiet] ?? e.sachgebiet,
-          normen: e.normKeys.slice(0, 3).map((k) => m.normLabel(k)),
-        })));
-      })
-      .catch(() => { if (lebt) setNews([]); });
-    return () => { lebt = false; };
-  }, []);
+  // gestrichen).
+  //
+  // S3-NEBENFUND (23.9.2026, gemessen): hier stand bis dahin ein `useEffect`,
+  // das nach der Hydration `ladeEntscheidManifest()` lud — also das 9,4-MB-
+  // Rechtsprechungs-Register (§15-Verstoss) — für SECHS Zeilen. Die Auswahl
+  // (Bundesgericht, keine Verweise, neueste zuerst, bis zu drei Norm-Kürzel je
+  // Zeile) läuft jetzt UNVERÄNDERT, aber zur BUILDZEIT im Generator
+  // (`scripts/gen-startseite-zaehler.ts`, dieselbe `nachDatum`/`normLabel`-
+  // Logik aus `lib/rechtsprechung/browse.ts`, §10) — `STARTSEITE_ZAEHLER.
+  // neuesteEntscheide` ist bereits die fertige Mini-Projektion. Kein Fetch,
+  // kein Ladezustand mehr nötig: die Daten stehen synchron im Bundle, wie alle
+  // übrigen Zähler dieser Datei (Datenstand = Build, §2/§5).
+  const news = STARTSEITE_ZAEHLER.neuesteEntscheide;
 
-  // Leerzustand-Invariante (S3-Fix, §3 #6): drei Zustände, sauber getrennt.
-  // (1) LADEN: Platz reservieren, damit die Liste die Seite beim Eintreffen
-  //     nicht nach unten schiebt (gemessener CLS-Anteil 0,57 im Streifen-Bau) —
-  //     ohne Titel über der Reservierung.
-  //     Die Reservierung spannt BEIDE Spalten des Satzspiegels: ein einzelnes
-  //     Grid-Kind läge sonst in der Marginalienspalte und verschöbe die
-  //     Zellen-Paarung aller folgenden Zeilen um eins.
-  if (news === null) return <div className="min-h-modul-news" aria-hidden />;
-  // (2) DEFINITIV LEER (leeres Register, SSR/Prerender): Vollkollaps, kein
-  //     Titel, keine Reservierung (§8).
+  // DEFINITIV LEER (leeres Register): Vollkollaps, kein Titel, keine
+  // Platzreservierung (§8) — im Betrieb kommt das nicht vor (`check:entscheide`
+  // hält eine Mindestzahl), bleibt aber die ehrliche Antwort auf einen leeren
+  // Bestand statt einer erfundenen Liste.
   if (news.length === 0) return null;
 
   return (
@@ -135,7 +98,7 @@ export function EntscheideListe() {
           )}`}>
             <Datum iso={g.datum} className="block font-sans text-xs text-ink-500" />
             <div className="grid gap-y-1">
-              {g.eintraege.map(({ e, gebiet, normen }) => (
+              {g.eintraege.map((e) => (
                 /* Spaltenbreite GEMESSEN, nicht geschätzt (6.9.2026, Preview
                    @1440): die kanonische Zitierung lautet «BGer 1C_733/2025 vom
                    17. Juni 2026» und misst 14 px Grotesk rund 250 px. Bei
@@ -173,11 +136,11 @@ export function EntscheideListe() {
                         Das WORT bleibt «Leitentscheid» — kein ★, kein Icon (Prüfer-
                         Verdikt D23-F4: eine Marke, die nur ein Zeichen ist, sagt
                         nichts). Der Satzpunkt entfällt mit dem Satz. */}
-                    {e.leitcharakter === 'leitentscheid' && <><span className="lc-badge lc-badge-ok">Leitentscheid</span>{' '}</>}
-                    <span data-gebiet={gebiet}>{gebiet}</span>
+                    {e.leitentscheid && <><span className="lc-badge lc-badge-ok">Leitentscheid</span>{' '}</>}
+                    <span data-gebiet={e.gebiet}>{e.gebiet}</span>
                     {e.regesteKurz
                       ? <> · {e.regesteKurz}</>
-                      : normen.length > 0 && <> · angewandt: {normen.join(', ')}</>}
+                      : e.normen.length > 0 && <> · angewandt: {e.normen.join(', ')}</>}
                   </span>
                 </p>
               ))}

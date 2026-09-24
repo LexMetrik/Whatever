@@ -7,6 +7,8 @@ import { AUFKLAPPBAR, blattKrumen, gleicherOrt, type BlattOrt, type BlattRubrik 
 import { useBlattOrt } from './useBlattOrt';
 import { GesetzeBlatt } from './GesetzeBlatt';
 import { WerkzeugeBlatt } from './WerkzeugeBlatt';
+import { MaterialienBlatt } from './MaterialienBlatt';
+import { RechtsprechungBlatt } from './RechtsprechungBlatt';
 
 // ─── Startseite · das 2×2-Kachelfeld, das vor Ort aufklappt (W2·29-WERKBANK-START S1)
 //
@@ -58,6 +60,9 @@ const FLAECHE: Record<Register, string> = {
   m: 'bg-reg-m-flaeche border-reg-m', w: 'bg-reg-w-flaeche border-reg-w',
 };
 const STRICH: Record<Register, string> = { g: 'border-reg-g', r: 'border-reg-r', m: 'border-reg-m', w: 'border-reg-w' };
+/** Rubriken ohne Unterstufen — die Suche IST die Stufe (Spec «Fokus drin»,
+ *  S3-Nachzug 24.9.2026: Rechtsprechung teilt die Ausnahme mit Materialien). */
+const FOKUS_SUCHFELD_RUBRIKEN: ReadonlySet<BlattRubrik> = new Set<BlattRubrik>(['materialien', 'rechtsprechung']);
 /** Schliess-Dauer — muss mit der CSS-Transition `[data-phase=schliesst]` übereinstimmen (Öffnen: 450 ms, nur CSS). */
 const DAUER_ZU = 350;
 const SCHMAL = '(max-width: 759.98px)';
@@ -182,8 +187,17 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
   }, [phase]);
 
   // Fokus ins Blatt, sobald es offen steht, und bei jeder Stufe neu (§8).
+  // Ausnahme S3 (Spec «Fokus drin»): Rubriken ohne Unterstufen — die Suche IST
+  // die Stufe — bekommen den Fokus direkt im Suchfeld, nicht auf dem Rahmen.
+  // S3-Nachzug (24.9.2026): Rechtsprechung teilt dieselbe Ausnahme wie
+  // Materialien (beide reine Sofort-Suche-Kacheln, `FOKUS_SUCHFELD_RUBRIKEN`).
   useEffect(() => {
-    if (phase === 'offen') blattRef.current?.focus({ preventScroll: true });
+    if (phase !== 'offen') return;
+    if (sicht && FOKUS_SUCHFELD_RUBRIKEN.has(sicht.rubrik)) {
+      blattRef.current?.querySelector<HTMLInputElement>('input[type="search"]')?.focus({ preventScroll: true });
+      return;
+    }
+    blattRef.current?.focus({ preventScroll: true });
   }, [phase, sicht]);
 
   const offen = phase !== 'zu';
@@ -225,6 +239,8 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
             <div key={[sicht.rubrik, ...sicht.pfad].join('/')} className="lc-start-stufe" data-richtung={richtung}>
               {sicht.rubrik === 'gesetze' && <GesetzeBlatt ort={sicht} gehe={gehe} />}
               {sicht.rubrik === 'werkzeuge' && <WerkzeugeBlatt ort={sicht} gehe={gehe} />}
+              {sicht.rubrik === 'materialien' && <MaterialienBlatt />}
+              {sicht.rubrik === 'rechtsprechung' && <RechtsprechungBlatt />}
             </div>
           </div>
           {!schmal && kontur && (

@@ -14,6 +14,8 @@ const feld = (page: Page) => page.getByRole('navigation', { name: 'Bereiche der 
 const blatt = (page: Page) => page.locator('#lm-start-blatt')
 const gesetzeKachel = (page: Page) => feld(page).getByRole('button', { name: /Gesetze/ })
 const werkzeugeKachel = (page: Page) => feld(page).getByRole('button', { name: /Werkzeuge/ })
+const materialienKachel = (page: Page) => feld(page).getByRole('button', { name: /Materialien/ })
+const rechtsprechungKachel = (page: Page) => feld(page).getByRole('button', { name: /Rechtsprechung/ })
 
 test.describe('Startseite · Kachelfeld', () => {
   for (const breite of [1280, 390]) {
@@ -187,4 +189,168 @@ test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
     await page.goBack()
     await expect(blatt(page)).toHaveCount(0)
   })
+})
+
+// ─── W2·29-WERKBANK-START S3 · Materialien-Kachel: sofort Suche ──────────────
+//
+// David 23.9.2026: «Materialien … wenn sie aufgeht soll direkt eine suche …
+// ermöglichen». Keine Unterstufen (Fahrplan §5d S3) — Fokus liegt IM Suchfeld,
+// nicht auf dem Blatt-Rahmen (Spec «Fokus drin», Ausnahme in StartKachelFeld).
+test.describe('Startseite · Blatt der Materialien-Kachel', () => {
+  test('öffnet mit Fokus im Suchfeld, filtert, Treffer führt in die Detailseite', async ({ page }) => {
+    await page.goto('/')
+    const kachel = materialienKachel(page)
+    await expect(kachel).toHaveAttribute('aria-expanded', 'false')
+    await kachel.click()
+    await expect(page).toHaveURL(/\?blatt=materialien$/)
+    await expect(kachel).toHaveAttribute('aria-expanded', 'true')
+    const suchfeld = blatt(page).getByRole('searchbox', { name: 'Materialien durchsuchen' })
+    // Fokus IM Feld, NICHT auf dem Blatt-Rahmen (Ausnahme S3).
+    await expect(suchfeld).toBeFocused()
+    await expect(blatt(page)).not.toBeFocused()
+
+    await suchfeld.fill('Umstrukturierungen')
+    // «Umstrukturierungen» trifft drei Titel (gemessen: node -e Filter über
+    // register.json) — das Ziel wird über den eindeutigen Detail-Link
+    // angesprochen, nicht über die (unspezifizierte) Trefferreihenfolge.
+    const treffer = blatt(page).locator('a[href="/materialien/ESTV-KS-DBG-5A"]')
+    await expect(treffer).toBeVisible()
+    await treffer.click()
+    await expect(page).toHaveURL(/\/materialien\/ESTV-KS-DBG-5A$/)
+  })
+
+  test('Filter nach Behörde, «Weitere anzeigen» wächst die Portion', async ({ page }) => {
+    await page.goto('/?blatt=materialien')
+    await expect(blatt(page)).toBeVisible()
+    // ESTV führt 144 Materialien (gemessen: node -e Zählung register.json,
+    // > PORTION 20) — die Portion zeigt darum anfangs nur 20 Zeilen.
+    await blatt(page).getByLabel('Behörde').selectOption('ESTV')
+    const zeilen = blatt(page).locator('a[href^="/materialien/"]')
+    await expect(zeilen).toHaveCount(20)
+    const mehr = blatt(page).getByRole('button', { name: /Weitere anzeigen/ })
+    await expect(mehr).toBeVisible()
+    await mehr.click()
+    await expect(zeilen).toHaveCount(40)
+  })
+
+  test('Deep-Link öffnet direkt mit Fokus im Suchfeld; ✕ schliesst ganz', async ({ page }) => {
+    await page.goto('/?blatt=materialien')
+    await expect(blatt(page)).toBeVisible()
+    // Nachzug (Gegenprüfung S3, 24.9.2026): der Deep-Link-Fall prüfte bislang
+    // nur, dass das Blatt steht — nicht, dass die Fokus-Ausnahme «Fokus drin»
+    // auch auf dem Deep-Link-Pfad greift (dort läuft `useLayoutEffect` mit
+    // `tiefLink=true`, ein eigener Zweig gegenüber dem Klick-Pfad).
+    const suchfeld = blatt(page).getByRole('searchbox', { name: 'Materialien durchsuchen' })
+    await expect(suchfeld).toBeFocused()
+    await blatt(page).getByRole('button', { name: 'Materialien schliessen' }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(blatt(page)).toHaveCount(0)
+  })
+})
+
+// ─── W2·29-WERKBANK-START S3-Nachzug · Rechtsprechung-Kachel: sofort Suche ──
+//
+// Entscheid David 23./24.9.2026 («Beim Öffnen laden», Fahrplan §5d
+// S3-Nachtrag): das 9,46-MB-Register lädt über denselben Lader wie
+// `/rechtsprechung` (`ladeEntscheidManifest`) erst beim Mounten des Blatts —
+// nie auf «/», nie beim Hover, nie bei der Hydration. Fokus liegt IM Suchfeld
+// (Spec «Fokus drin», dieselbe Ausnahme wie Materialien).
+test.describe('Startseite · Blatt der Rechtsprechung-Kachel', () => {
+  test('Register wird genau beim Öffnen angefragt (vorher nicht); Suche findet Treffer mit Link; Filter Leitentscheide wirkt', async ({ page }) => {
+    const angefragt: string[] = []
+    page.on('request', (r) => { if (r.url().includes('/rechtsprechung/register.json')) angefragt.push(r.url()) })
+    await page.goto('/')
+    // VOR dem Klick bis zur Netzruhe warten (keine Anfrage mehr seit 500 ms),
+    // nicht auf eine feste Frist: der alte Fehlstand fragte das Register nach
+    // +318–441 ms an (Gegenprüfung 24.9.2026) — eine feste 500-ms-Frist liesse
+    // auf einem langsamen Runner einen späten Fetch durchrutschen. Träfe das
+    // Register hier ein, wäre §15 verletzt.
+    await page.waitForLoadState('networkidle')
+    expect(angefragt, 'vor dem Öffnen: keine Anfrage').toEqual([])
+
+    const kachel = rechtsprechungKachel(page)
+    await expect(kachel).toHaveAttribute('aria-expanded', 'false')
+    await kachel.click()
+    await expect(page).toHaveURL(/\?blatt=rechtsprechung$/)
+    await expect(kachel).toHaveAttribute('aria-expanded', 'true')
+    const suchfeld = blatt(page).getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })
+    // Fokus IM Feld, NICHT auf dem Blatt-Rahmen (Ausnahme S3, wie Materialien).
+    await expect(suchfeld).toBeFocused()
+    await expect(blatt(page)).not.toBeFocused()
+    // GENAU DANN: nach dem Öffnen ist die Anfrage da (Rot-Beweis-Gegenstück
+    // zum «/»-Beleg unten — dort wird ROT erzwungen, wenn die Anfrage VORHER
+    // käme; hier wird GRÜN erzwungen, dass sie NACHHER kommt).
+    await expect.poll(() => angefragt.length, 'nach dem Öffnen: genau eine Anfrage').toBeGreaterThan(0)
+
+    // Filter «wirkt»: Kantonal + Leitentscheide zusammen sind LEER (Korpus-
+    // Fakt, gemessen `node -e` Zählung register.json am 24.9.2026: von 3'795
+    // kantonalen Entscheiden trägt keiner `leitcharakter: 'leitentscheid'`,
+    // die BGE-Leitentscheide sind ausschliesslich Bundesgericht/CH) — ein
+    // robuster Beleg, dass die drei Filter tatsächlich UND-verknüpft filtern,
+    // statt nur als Knopf zu existieren.
+    await blatt(page).getByRole('button', { name: 'Kantonal' }).click()
+    await expect(blatt(page).getByRole('button', { name: 'Kantonal' })).toHaveAttribute('aria-pressed', 'true')
+    await blatt(page).getByRole('button', { name: 'Leitentscheide' }).click()
+    await expect(blatt(page).getByText('Kein Entscheid gefunden.')).toBeVisible()
+    // Zurück auf unfiltriert für den Such-Treffer unten.
+    await blatt(page).getByRole('button', { name: 'Leitentscheide' }).click()
+    await blatt(page).getByRole('button', { name: 'Kantonal' }).click()
+
+    // «152 V 52» trifft genau EINEN Entscheid (gemessen: node -e Filter über
+    // register.json, Aktenzeichen = BGE-Referenz = Zitierung-Kern) — das Ziel
+    // wird über den eindeutigen Detail-Link angesprochen, nicht über die
+    // (unspezifizierte) Trefferreihenfolge.
+    await suchfeld.fill('152 V 52')
+    const treffer = blatt(page).locator('a[href="/rechtsprechung/bge_152_V_52"]')
+    await expect(treffer).toBeVisible()
+    await treffer.click()
+    await expect(page).toHaveURL(/\/rechtsprechung\/bge_152_V_52$/)
+  })
+
+  test('Escape schliesst das Blatt ganz, Fokus zurück auf die Kachel', async ({ page }) => {
+    await page.goto('/')
+    await rechtsprechungKachel(page).click()
+    await expect(blatt(page)).toBeVisible()
+    // Erst wenn der Fokus im Suchfeld steht, ist das Blatt offen und hört auf
+    // Escape (der Handler sitzt am Feld-Rahmen; während der Öffnung verpufft
+    // die Taste — Gegenprüfung 24.9.2026: ohne dieses Warten 1/20 grün).
+    await expect(blatt(page).getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })).toBeFocused()
+    await page.keyboard.press('Escape')
+    await expect(page).toHaveURL(/\/$/)
+    await expect(blatt(page)).toHaveCount(0)
+    await expect(rechtsprechungKachel(page)).toBeFocused()
+  })
+
+  test('Deep-Link öffnet direkt mit Fokus im Suchfeld; ✕ schliesst ganz', async ({ page }) => {
+    await page.goto('/?blatt=rechtsprechung')
+    await expect(blatt(page)).toBeVisible()
+    const suchfeld = blatt(page).getByRole('searchbox', { name: 'Rechtsprechung durchsuchen' })
+    await expect(suchfeld).toBeFocused()
+    await blatt(page).getByRole('button', { name: 'Rechtsprechung schliessen' }).click()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(blatt(page)).toHaveCount(0)
+  })
+})
+
+// ─── §15-Beleg: das 9,4-MB-Rechtsprechungs-Register lädt NIE auf «/» ─────────
+//
+// S3-Nebenfund (23.9.2026, gemessen): die Entscheid-Liste lud vor dem Fix
+// `/rechtsprechung/register.json` nach der Hydration (dynamischer `import()`
+// in `start/EntscheideListe.tsx`). Die Auswahl läuft seither zur Buildzeit im
+// Zähler-Generator; die Liste rendert nur noch die Mini-Projektion
+// `STARTSEITE_ZAEHLER.neuesteEntscheide`. ROT ZU BEKOMMEN: den `useEffect`-
+// Fetch in `EntscheideListe.tsx` wiederherstellen — dann meldet dieser Test
+// die geladene Register-URL (§6.7).
+test('«/» lädt nie das 9,4-MB-Rechtsprechungs-Register (§15)', async ({ page }) => {
+  const angefragt: string[] = []
+  page.on('request', (r) => { if (r.url().includes('/rechtsprechung/register.json')) angefragt.push(r.url()) })
+  await page.goto('/')
+  // Die Entscheid-Liste («Jüngste Entscheide im Korpus», §8-Wortlaut) steht
+  // sofort im HTML (Buildzeit-Projektion) — kein
+  // Nachlade-Fenster, auf das gewartet werden müsste; trotzdem eine kurze,
+  // grosszügige Frist, damit ein eventueller (fehlerhafter) Nachlade-Fetch
+  // Zeit hätte, VOR der Zusicherung einzutreffen.
+  await expect(page.getByText('Jüngste Entscheide im Korpus')).toBeVisible()
+  await page.waitForTimeout(1000)
+  expect(angefragt, `angefragte Register-URLs: ${JSON.stringify(angefragt)}`).toEqual([])
 })

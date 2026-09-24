@@ -32,7 +32,17 @@ import { BEHOERDEN } from '../src/lib/materialien/register.ts';
 // hier gegen das Entscheid-Register, nach DERSELBEN Regel wie `zaehleSachgebiete`
 // in `src/lib/rechtsprechung/browse.ts` (Verweise raus) — die Zahl in der Leiste
 // ist damit exakt die Zahl auf der Sachgebiets-Kachel der Übersicht (§5/§8).
-import { GEBIETE } from '../src/lib/normtext/register.ts';
+import { GEBIETE, GEBIET_LABEL } from '../src/lib/normtext/register.ts';
+// W2·29-WERKBANK-START S3-Nebenfund (23.9.2026, gemessen): «Neueste Entscheide»
+// (start/EntscheideListe.tsx) lud nach der Hydration `ladeEntscheidManifest()` —
+// also das 9,4-MB-Rechtsprechungs-Register (§15-Verstoss) — für sechs Zeilen.
+// Fix: dieselbe Auswahl/Sortierung (`nachDatum`, `normLabel` aus
+// `lib/rechtsprechung/browse.ts`, unverändert wiederverwendet, §10) läuft HIER
+// zur Buildzeit gegen dasselbe Register; die Liste rendert nur noch die
+// Mini-Projektion `neuesteEntscheide` unten. Datenstand = Build (wie alle
+// übrigen Zähler dieser Datei).
+import { nachDatum, normLabel } from '../src/lib/rechtsprechung/browse.ts';
+import type { EntscheidManifest } from '../src/lib/rechtsprechung/register.ts';
 // #691 (FAHRPLAN-OFFENE-BEFUNDE §1): der Stand der Rechtsprechung braucht das
 // jüngste ABRUFDATUM der Inhalte, nicht `register.json`s `erzeugt` (ein
 // Bau-Zeitstempel). Kern in einem Helfer OHNE Top-Level-Seiteneffekte, damit
@@ -51,18 +61,12 @@ interface ErlassEintrag {
   /** Konsolidierungsstand des Snapshots (ISO) — D8: Quelle des Inhaltsalters. */
   stand?: string | null;
 }
-interface EntscheidEintrag {
-  verweis?: unknown;
-  /** Entscheiddatum (ISO) — D8. */
-  datum?: string | null;
-  /** Sach-Achse (GEBIETE-id) — D26. */
-  sachgebiet?: string;
-  /** 'leitentscheid' | 'routine' … — D26. */
-  leitcharakter?: string;
-  /** Pfad zur eigenen Snapshot-Datei, relativ zu `public/rechtsprechung/`
-   *  (`null` bei Verweisen) — #691: Quelle des Abrufdatums je Entscheid. */
-  datei?: string | null;
-}
+// S3-Nebenfund: `r.entscheide` braucht jetzt auch `key`/`zitierung`/`gerichtstyp`/
+// `regesteKurz`/`normKeys` für `neuesteEntscheide` (unten) — statt die ad-hoc-
+// Teilmenge weiter von Hand zu pflegen, ist `r` seither voll als
+// `EntscheidManifest` (register.ts, dieselbe Quelle) typisiert; alle bisherigen
+// Zugriffe (`verweis`/`datum`/`sachgebiet`/`leitcharakter`/`datei`) bleiben
+// unverändert gültig, weil `BrowseEntscheid` sie ohnehin trägt.
 interface MaterialEintrag {
   key: string; behoerde: string;
   /** Publikations-/Fassungsstand der Materialie (ISO) — D8. */
@@ -145,7 +149,7 @@ function zaehle() {
 
   // Rechtsprechung: Nicht-Verweis-Entscheide = echte Volltext-Snapshots (Verweise
   // sind Redirect-Stubs auf ein anderes Urteil, s. NewsHeader/Rechtsprechung.tsx).
-  const r = JSON.parse(readFileSync(RSPR_REGISTER, 'utf8')) as { erzeugt: string; entscheide: EntscheidEintrag[] };
+  const r = JSON.parse(readFileSync(RSPR_REGISTER, 'utf8')) as EntscheidManifest;
   const echteEntscheide = r.entscheide.filter((e) => !e.verweis);
   const entscheide = echteEntscheide.length;
   // K5: Verweis-Einträge (das vollständige Urteil zu einem BGE, eigener Eintrag
@@ -164,6 +168,23 @@ function zaehle() {
     .map((gb) => ({ id: gb.id, label: gb.label, anzahl: proGebiet[gb.id] }));
   const rechtsprechungLeitentscheide = echteEntscheide
     .filter((e) => e.leitcharakter === 'leitentscheid').length;
+
+  // S3-Nebenfund (23.9.2026, gemessen): «Neueste Entscheide» auf «/» lud dafür
+  // client-seitig das 9,4-MB-Register — hier läuft DIESELBE Auswahl/Sortierung
+  // (`nachDatum`, aus browse.ts wiederverwendet, §10) zur Buildzeit; die Liste
+  // rendert nur noch diese Mini-Projektion (§15). Auswahl unverändert zur
+  // vorigen Client-Logik: Bundesgericht, keine Verweise, neueste zuerst.
+  const MAX_NEUESTE = 6;
+  const bundesgericht = echteEntscheide.filter((e) => e.gerichtstyp === 'bundesgericht');
+  const neuesteEntscheide = nachDatum(bundesgericht).slice(0, MAX_NEUESTE).map((e) => ({
+    key: e.key,
+    datum: e.datum,
+    zitierung: e.zitierung,
+    leitentscheid: e.leitcharakter === 'leitentscheid',
+    gebiet: GEBIET_LABEL[e.sachgebiet] ?? e.sachgebiet,
+    regesteKurz: e.regesteKurz,
+    normen: e.normKeys.slice(0, 3).map(normLabel),
+  }));
 
   // Rechner/Vorlagen: verfügbare Katalog-Karten MIT eigener Seite (aus dem Katalog
   // abgeleitet, §5 — nicht zweitgepflegt).
@@ -224,6 +245,7 @@ function zaehle() {
     rechtsprechungVollurteilVerweise: vollurteilVerweise,
     rechtsprechungSachgebiete,
     rechtsprechungLeitentscheide,
+    neuesteEntscheide,
     materialien,
     materialienBehoerden,
     rechner,
@@ -278,6 +300,15 @@ function baue(): string {
     '  /** W2·24-D26: amtliche Leitentscheide (Nicht-Verweise, leitcharakter\n' +
     '   *  `leitentscheid`) — Ziel `/rechtsprechung?leit=1`. */\n' +
     '  rechtsprechungLeitentscheide: number;\n' +
+    '  /** S3-Nebenfund (23.9.2026): die bis zu sechs neuesten Bundesgerichts-\n' +
+    '   *  Entscheide (Nicht-Verweise, neueste zuerst — dieselbe Auswahl wie zuvor\n' +
+    '   *  `start/EntscheideListe.tsx` zur Laufzeit traf), als Mini-Projektion für\n' +
+    '   *  die Startseite. Ersetzt den Client-Fetch des vollen Registers (§15).\n' +
+    '   *  `normen` = bis zu drei aufgelöste Norm-Kürzel der angewandten Normen. */\n' +
+    '  neuesteEntscheide: Array<{\n' +
+    '    key: string; datum: string; zitierung: string; leitentscheid: boolean;\n' +
+    '    gebiet: string; regesteKurz: string | null; normen: string[];\n' +
+    '  }>;\n' +
     '  /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */\n' +
     '  materialien: number;\n' +
     '  /** W2·24-R3: erfasste Materialien je Behörde, Reihenfolge BEHOERDEN (rang);\n' +

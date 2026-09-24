@@ -466,6 +466,40 @@ CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBod
 - **S3 Rechtsprechung + Materialien.** Blatt öffnet mit Suchfeld (Fokus drin), Filter, Trefferliste;
   Daten erst beim Öffnen — `public/rechtsprechung/register.json` (9.4 MB) nie, kleineren Index messen und
   nutzen → Entscheid- bzw. Material-Seite.
+  **Nachtrag 23.9.2026 (Bau-Session, Messwerte):** Materialien GEBAUT und gelandet-bereit — Suchfeld
+  (Fokus drin), Filter Behörde/Art, Trefferliste (Portion 20 + «Weitere anzeigen»), wiederverwendet
+  `lib/materialien/browse.ts` + `ui/TrefferZeile` (§10); Register lädt erst beim Öffnen
+  (`public/materialien/register.json`, 1'516'755 B ≈ 1,45 MiB — GRÖSSENORDNUNG identisch mit
+  `public/normtext/register.json`, 1'518'387 B, das die Gesetze-Kachel bereits beim Betreten einer
+  Erlassliste lädt). Rechtsprechung ZURÜCKGESTELLT (§15 hart, kein stiller Bau): gemessen
+  `public/rechtsprechung/register.json` = 9'458'225 B ≈ 9,02 MiB, gzip 775'098 B ≈ 757 KiB — das
+  6,2-Fache der Materialien-/Normtext-Vergleichsgrösse. Gemessen (`ladeEntscheidManifest`,
+  `lib/rechtsprechung/browse.ts`): die bestehende kuratierte Rechtsprechungs-Suche (Filter
+  Leitentscheide/Bundesgericht/Kantonal — genau die vom Auftrag verlangten Facetten) lädt SELBST das
+  volle Register, es existiert keine kleinere Quelle mit denselben Facetten. Die einzige lokale
+  Alternative ohne Registerlast ist `components/rechtsprechung/LiveSuche.tsx` (externe Live-Suche
+  entscheidsuche.ch, 0 Byte lokal) — trägt aber keine Leitentscheid-Facette. Entscheid David offen:
+  (a) 9,4-MB-Last beim Blatt-Öffnen akzeptieren (Parität mit dem vollen Besuch von `/rechtsprechung`),
+  (b) Rechtsprechungs-Blatt vorerst nur mit der externen Live-Suche (schlankere Facetten), oder
+  (c) eigener Daten-Auftrag: schlanker Such-Index nur für dieses Blatt (Klasse daten, eigene
+  Gegenprüfung). Bis dahin bleibt die Rechtsprechung-Kachel ein Link auf `/rechtsprechung` (S1-Stand).
+  Nebenfund behoben: `start/EntscheideListe.tsx` lud dasselbe 9,4-MB-Register nach der Hydration für
+  sechs Zeilen — die Auswahl läuft jetzt unverändert (`nachDatum`/`normLabel` aus
+  `lib/rechtsprechung/browse.ts`, §10) zur Buildzeit im Zähler-Generator (`neuesteEntscheide`-
+  Projektion in `startseiteZaehler.generated.ts`), die Liste rendert synchron ohne Fetch.
+  **Nachtrag 24.9.2026 (Bau-Session S3-Nachzug):** Entscheid David zu den drei offenen Optionen —
+  **(a) «Beim Öffnen laden»** — das 9,4-MB/775-KB-gzip-Register kostet beim Aufklappen der
+  Rechtsprechung-Kachel genau so viel wie heute der Klick auf `/rechtsprechung`, nicht mehr: es lädt
+  über denselben Lader (`ladeEntscheidManifest`) erst beim Mounten von `start/RechtsprechungBlatt.tsx`.
+  Auf «/» selbst, beim Hover und bei der Hydration bleibt es unangetastet (e2e-Beleg: «Register wird
+  genau beim Öffnen angefragt» in `e2e/startseite-blatt.e2e.ts`). Rechtsprechung ist damit die DRITTE
+  Kachel in `startBlatt.ts::AUFKLAPPBAR`, Filter beschränkt auf die drei Facetten aus dem Auftrag
+  (Leitentscheide · Bundesgericht · Kantonal), Suchlogik/Filter/Treffer-Zeile wiederverwendet aus
+  `lib/rechtsprechung/browse.ts` + `ui/TrefferZeile` (§10), Ziel jeder Zeile die bestehende Detailseite
+  `/rechtsprechung/:key`. **Offen, NICHT Teil dieser Scheibe:** ein schlankerer Such-Index nur für das
+  Blatt (Option c des Nachtrags vom 23.9.) bleibt ein eigener, späterer Daten-Schritt (Klasse daten,
+  eigene Gegenprüfung) — die 9,4-MB-Last bleibt bis dahin bestehen, sie ist nur nicht mehr grösser als
+  der bestehende Weg über `/rechtsprechung`.
 - **S4 Abschluss.** e2e (Aufklappen, Stufe zurück, Deep-Link, Escape, Tastatur), Sichtprüfung 1280/390
   hell/dunkel, Löschbilanz, `status=done`.
 
