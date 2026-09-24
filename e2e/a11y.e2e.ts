@@ -369,6 +369,12 @@ const DUNKEL_PUNKTE: Array<{
     },
   },
   { titel: 'Tagerechner', punkt: 'tagerechner', url: '/rechner/tagerechner' },
+  // W2·29-WERKBANK-RECHNER R2 (24.9.2026): die massgebliche Ergebnis-Kachel
+  // steht auf `--reg-w-flaeche`; ink-500 misst dort dunkel nur 4.18:1 (Regel
+  // ③b in index.css hebt auf ink-600). Die Gegenprüfung fand die Lücke, kein
+  // Tor sah sie. /rechner/mietrecht zeigt die Kachel ohne Eingabe; Rot-Beweis
+  // im PR (③b-Zeile entfernt → color-contrast serious, 1 Knoten).
+  { titel: 'Rechner Mietrecht (massgebliche Kachel)', punkt: 'rechner-mietrecht', url: '/rechner/mietrecht' },
   {
     titel: 'Tagerechner mit offenem Kalender-Popover', punkt: 'tagerechner-kalender', url: '/rechner/tagerechner',
     herstellen: async (page) => {

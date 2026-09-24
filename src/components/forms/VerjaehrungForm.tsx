@@ -69,9 +69,9 @@ function FristKarte({ label, sub, wert, massgeblich }: { label: string; sub: str
     // R2-F/F1-5: war `border-brass-500 border-t-[3px]` — das färbte ALLE vier
     // Kanten messingfarben, während dieselbe «massgeblich»-Markierung überall
     // sonst (EckdatenKachel, Beurkundung, Prozesskosten …) nur die Oberkante
-    // trägt. Kanon ist `.lc-akzent-brass` (index.css), Seitenkanten bleiben
+    // trägt. Kanon ist `.lc-akzent-w` (index.css), Seitenkanten bleiben
     // `--line`.
-    <div className={`lc-tile ${massgeblich ? 'lc-akzent-brass' : ''}`}>
+    <div className={`lc-tile ${massgeblich ? 'lc-akzent-w' : ''}`}>
       <div className="flex items-start justify-between gap-2 mb-1">
         <p className="text-xs text-ink-500">{label}</p>
         {massgeblich && <span className="lc-badge lc-badge-massgeblich shrink-0">massgeblich</span>}

@@ -57,7 +57,7 @@ function PostenKarte({ titel, posten, akzent }: { titel: string; posten: NgPoste
   // Aufwand» (das suggeriert eine verhandelbare Gebühr).
   const entfaellt = !e.deterministisch && q.erlassNr === '—' && q.artikel === '—';
   return (
-    <div className={`lc-tile ${akzent ? 'lc-akzent-brass' : ''}`}>
+    <div className={`lc-tile ${akzent ? 'lc-akzent-w' : ''}`}>
       <p className="text-xs text-ink-500 mb-1">{titel}</p>
       <p key={ngPostenText(posten)} className="lc-wert-puls text-body-l font-semibold text-ink-900 num">{entfaellt ? 'Entfällt' : ngPostenText(posten)}</p>
       {!e.deterministisch && !entfaellt && <p className="mt-1 text-body-s text-ink-600">Rahmen/aufwandabhängig – konkrete Festsetzung im Einzelfall.</p>}
@@ -180,7 +180,7 @@ export function NotariatGrundbuchForm({ minimal = false, ohneDisclaimer = false 
             {ergebnis.handaenderungssteuer && <PostenKarte titel="Handänderungssteuer (Steuer)" posten={ergebnis.handaenderungssteuer} akzent />}
           </div>
 
-          <div className="mt-3 lc-tile lc-akzent-brass">
+          <div className="mt-3 lc-tile lc-akzent-w">
             <div className="flex items-baseline justify-between gap-3 flex-wrap">
               <p className="text-xs text-ink-500">Gebühren gesamt (Notariat + Grundbuch{ergebnis.grundpfand ? ' + Grundpfand' : ''})</p>
               <p className="num text-body-l font-semibold text-ink-900">{spanneText(ergebnis.gesamtGebuehren)}</p>

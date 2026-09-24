@@ -68,7 +68,7 @@ const vergleichSortwert = (r: { gerichtskosten: PostenErgebnis; parteientschaedi
 function PostenKarte({ titel, posten }: { titel: string; posten: PostenErgebnis }) {
   const q = posten.quelle;
   return (
-    <div className="lc-tile lc-akzent-brass">
+    <div className="lc-tile lc-akzent-w">
       <p className="text-xs text-ink-500 mb-1">{titel}</p>
       <p key={postenText(posten)} className="lc-wert-puls text-body-l font-semibold text-ink-900 num">{postenText(posten)}</p>
       {posten.kostenlos
@@ -266,7 +266,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
             <Checkbox checked={mwst} onChange={setMwst} className="mt-3" label="Berechtigte Partei nicht vorsteuerabzugsberechtigt (z. B. Privatperson) — MwSt auf die Parteientschädigung hinzurechnen" />
           )}
           {mwstAufschlag && (
-            <div className="mt-2 lc-tile lc-akzent-brass">
+            <div className="mt-2 lc-tile lc-akzent-w">
               <div className="flex items-baseline justify-between gap-3 flex-wrap">
                 <p className="text-xs text-ink-500">Parteientschädigung inkl. MwSt {mwstAufschlag.satzProzent.toLocaleString('de-CH')} %</p>
                 <p className="num text-body-l font-semibold text-ink-900">
@@ -357,7 +357,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
                       <p className="num text-body-l font-semibold text-ink-900">{spanneText(kostenrisiko.parteientschaedigungSaldo)}</p>
                       <p className="mt-1 text-xs text-ink-500">+ Sie erhalten · − Sie zahlen</p>
                     </div>
-                    <div className="lc-tile lc-akzent-brass">
+                    <div className="lc-tile lc-akzent-w">
                       <p className="text-xs text-ink-500 mb-1">{kostenrisiko.unentgeltlich ? 'Netto trotz UR (nur Gegenpartei)' : 'Geschätzte Netto-Kostenbelastung'}</p>
                       <p className="num text-body-l font-semibold text-ink-900">{spanneText(kostenrisiko.nettoBelastung)}</p>
                     </div>

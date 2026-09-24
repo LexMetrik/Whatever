@@ -424,10 +424,10 @@ export function BeispielChips({ items }: { items: { label: string; laden: () => 
  *  Nur die einfache Label/Wert(-Sub)-Form; Spezialkacheln (z. B. Verjährungs-
  *  FristKarte mit «massgeblich»-Badge) bleiben bewusst eigenständig.
  *  `akzent` markiert die EINE wichtigste Kachel des Blocks mit der
- *  Messing-Oberkante (DESIGN-REGLEMENT §R-4 Ziff. 1). */
+ *  Werkzeug-Oberkante und -Fläche `.lc-akzent-w` (DESIGN-REGLEMENT §R-4 Ziff. 1). */
 export function EckdatenKachel({ label, wert, sub, num, akzent }: { label: string; wert: string; sub?: string; num?: boolean; akzent?: boolean }) {
   return (
-    <div className={akzent ? 'lc-tile lc-akzent-brass' : 'lc-tile'}>
+    <div className={akzent ? 'lc-tile lc-akzent-w' : 'lc-tile'}>
       <p className="text-xs text-ink-500 mb-1">{label}</p>
       {/* key={wert}: bei Wertänderung re-mountet der Knoten → der lc-wert-puls
           läuft erneut, also wird die Live-Neuberechnung sichtbar (Redesign E8). */}

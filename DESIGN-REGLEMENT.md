@@ -1479,7 +1479,7 @@ nehme ich mit (PDF/Termin/Link).
 ```
 1. RechnerKopf            (Band von layout/WerkzeugKopf: Serif-h1, Kategorie, Norm-Chips — immer)
 2. TagerechnerRueckverweis (nur nach R2)
-3. Werkzeug-Karte          (Card, components/ui/Card.tsx: border-y border-rule-soft p-6 sm:p-8)
+3. Werkzeug-Karte          (Card, components/ui/Card.tsx: .lc-werkzeug-karte p-6 sm:p-8 — Strich --reg-w oben)
    └── genau EIN Formular (bzw. Tab-Weiche über Teil-Formulare)
 4. EreignisFristenSektion  (nur nach R9)
 5. Themen-Einstieg         (Vorlagen-Direktlinks, nur nach R10)
@@ -1532,8 +1532,8 @@ Reihenfolge — vom Verdikt zur Mitnahme:
                             ErgebnisSprung, LiveHeader — §10-Baustein)
   1. EckdatenKacheln        (max. 3 wichtigste Werte; die Kachel des
                             MASSGEBLICHEN Werts — i. d. R. Fristende bzw.
-                            Hauptbetrag — trägt die Messing-Oberkante,
-                            EckdatenKachel akzent)
+                            Hauptbetrag — trägt Strich + Fläche «Werkzeuge»,
+                            `.lc-akzent-w`, EckdatenKachel akzent)
   2. ErgebnisAnzeige        (Status-Verdikt → Vorbehalte → Rechenweg →
                             Annahmen → Normverweise → Volltext-Disclaimer)
   3. Visualisierung         (FristenKalender · Timeline — falls vorhanden)

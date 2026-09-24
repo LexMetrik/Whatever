@@ -397,7 +397,9 @@ neu sind nur Kopf und eine gemeinsame Exportzeile (heute 25× inline). Kein Risi
   `etikett` frei für RL-12. Deklarierte Optik (Gegenprüfung 24.9.): H1 + Kurzbeschrieb serif wie die
   Vorlagen (§e «getragene Titel»), `&` ohne `sansAmp` (nur für die Display-Stimme), Abstand Kopf→Karte
   24 statt 32 px (Seiten-`space-y-6`, wie Vorlagen). *Gebaut 24.9.*
-- **R2** Ergebnisblock-Optik (Abschnitts-Strich `--reg-w`, Fristende-Kachel) + Posten Kontrast/Kachel-Höhen.
+- **R2** `.lc-akzent-w` (Strich + Fläche `--reg-w`), Karte/ErgebnisAnzeige als Abschnitt mit Strich statt Kasten
+  (bündig, ohne Seitenpolster; der zweite Strich in der Karte trennt Eingaben/Ergebnis wie im Board), ink-500/`.lc-overline`
+  auf der Fläche → ink-600 (dunkel 4.18:1, axe-Punkt `rechner-mietrecht`); Posten Kontrast (Pflichtpaar) und A3 zu. *Gebaut 24.9.*
 - **R3** `ErgebnisExport` (Aktenzeichen → PDF → ICS → Teilen) für die 24 Formulare; Ratsche per Beispiel-Permalink.
 - **R4** Auswahl-Kacheln ein Look · `vorlagen/ui.tsx` an neutralen Ort · `Card`. **R5** Sonderseiten
   (Tagerechner, Board, Inkasso, Zuständigkeit), Inventar 4.3/4.4 nachführen.

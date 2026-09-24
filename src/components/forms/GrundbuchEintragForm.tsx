@@ -119,7 +119,7 @@ export function GrundbuchEintragForm() {
               <p className="mt-1 text-body-s text-ink-600">Der kantonale Grundbuchgebühren-Tarif für diese Eintragungsart ist noch nicht abschliessend verifiziert hinterlegt – es wird bewusst kein Betrag geschätzt.</p>
             </div>
           ) : (
-            <div className="lc-tile lc-akzent-brass">
+            <div className="lc-tile lc-akzent-w">
               <p className="text-xs text-ink-500 mb-1">Grundbuchgebühr ({def.label})</p>
               <p key={ngPostenText(ergebnis.posten)} className="lc-wert-puls text-body-l font-semibold text-ink-900 num">{ngPostenText(ergebnis.posten)}</p>
               {!ergebnis.posten.ergebnis.deterministisch && <p className="mt-1 text-body-s text-ink-600">Rahmen/aufwandabhängig – konkrete Festsetzung im Einzelfall.</p>}

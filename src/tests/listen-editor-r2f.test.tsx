@@ -10,7 +10,7 @@
 //
 // F1-5 (Akzent-Oberkante): Die 3 px starke Oberkante «massgeblich» / «keine
 // Sperre» war sechsmal als `border-t-[3px]` von Hand gesetzt. Kanon sind die
-// beiden CSS-Klassen `.lc-akzent-brass` / `.lc-akzent-danger` (index.css) —
+// beiden CSS-Klassen `.lc-akzent-w` / `.lc-akzent-danger` (index.css) —
 // die Farbe trägt die Bedeutung, und nur dort ist sie theme-fest.
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
@@ -86,14 +86,18 @@ describe('R2-F/F1-5 — die Akzent-Oberkante kommt aus der CSS-Klasse', () => {
     const treffer = quellen.filter(([, q]) => q.includes('border-t-[3px]')).map(([p]) => p);
     expect(
       treffer,
-      'Kanon: className="lc-akzent-brass" (massgeblich) bzw. "lc-akzent-danger" (Sperre) — '
-      + 'nur dort hält der Ton im Dunkelmodus (index.css --brass-line/--danger-line)',
+      'Kanon: className="lc-akzent-w" (massgeblich) bzw. "lc-akzent-danger" (Sperre) — '
+      + 'nur dort hält der Ton im Dunkelmodus (index.css --reg-w/--danger-line)',
     ).toEqual([]);
   });
 
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-RECHNER R2, 24.9.2026, §6.3): die
+  // massgebliche Kachel trägt das Register «Werkzeuge» (`.lc-akzent-w`, Strich
+  // `--reg-w` + Fläche) statt `.lc-akzent-brass`/`--brass-line`. Anatomie (3 px
+  // Oberkante, eine Klasse je Bedeutung) und Umfang der Assertion unverändert.
   it('beide Akzent-Klassen sind in index.css definiert', () => {
     const css = readFileSync('src/index.css', 'utf8');
-    expect(css).toMatch(/\.lc-akzent-brass\s*\{\s*border-top:\s*3px solid var\(--brass-line\)/);
+    expect(css).toMatch(/\.lc-akzent-w\s*\{\s*border-top:\s*3px solid var\(--reg-w\)/);
     expect(css).toMatch(/\.lc-akzent-danger\s*\{\s*border-top:\s*3px solid var\(--danger-line\)/);
   });
 });

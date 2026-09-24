@@ -450,9 +450,9 @@
        bewusst nicht) braucht die STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist). */
     --auf-gold: var(--ink-fixed-dark);
     /* Spiegelbild von `auf-gold`: helle Tinte für Text auf `ok-solid`, das bewusst nicht mit dem
-       Thema kippt. Liest auf `ok-solid`. KONTRAST-VERMERK: unter der Schwelle 4.5:1 - ok-solid hell
-       4.45:1, ok-solid dunkel 4.45:1. Der Wert bleibt exakt wie in der Quelle; diese Paarung darf
-       nicht für Lesetext verwendet werden.
+       Thema kippt. Liest auf `ok-solid`. KONTRAST: 4.64:1 auf ok-solid hell und dunkel, seit
+       GRUNDTON 23.9.2026 (paper hell #FDFCFA, vorher 4.45:1); Pflichtpaar in check:farbwelt
+       (W2·29-WERKBANK-RECHNER R2, 24.9.2026).
 
        C2 (5.9.2026): Text auf `--ok-solid` (= --sage-500, flippt bewusst NICHT
        mit dem Thema) braucht spiegelbildlich eine STETS helle Tinte — `text-paper`
@@ -2257,6 +2257,10 @@
      dadurch erst richtig lesbar). */
   .lc-tile { background: transparent; border: 0;
     border-top: 1px solid var(--rule-soft); @apply p-4; }
+  /* Werkzeug-Karte der Rechner-Seiten (`ui/Card`, W2·29-WERKBANK-RECHNER R2):
+     Registerstrich oben wie `.ub-kopf` und die Abschnitte des Boards
+     «Unter-Rechner», unten die Haarlinie — kein Kasten (U2). */
+  .lc-werkzeug-karte { border-top: 2px solid var(--reg-w); border-bottom: 1px solid var(--rule-soft); }
   /* Akzent-Oberkante (massgeblich) — EINE Quelle statt 6×
      inline border-t-[3px]; die Bedeutung trägt die Farbe, nicht die Stelle. */
   /* LM-033 (B11-Karten, 4.9.2026): die Akzent-Oberkante ist 3 px stark, der
@@ -2267,13 +2271,18 @@
      2 px werden am Innenabstand zurückgenommen (`.lc-tile` = p-4 = 1rem, und
      beide Klassen liegen ausschliesslich auf `.lc-tile`) — Oberkante und
      Kachelhöhe bleiben unverändert, die Grundlinien fluchten wieder. */
-  .lc-akzent-brass { border-top: 3px solid var(--brass-line); padding-top: calc(1rem - 2px); }
+  /* W2·29-WERKBANK-RECHNER R2 (24.9.2026): die massgebliche Kachel trägt das
+     Register «Werkzeuge» wie die Fristende-Kachel des Boards «Unter-Rechner» —
+     Strich `--reg-w`, Fläche `--reg-w-flaeche` (F0.2 «Farbe als Fläche», Tinte
+     darauf: ink-900/ink-600, Sekundärtext unten in ③b angehoben). Vorher
+     `.lc-akzent-w` (brass = neutrale Tinte, F0.3 — der Name log). */
+  .lc-akzent-w { border-top: 3px solid var(--reg-w); background: var(--reg-w-flaeche); padding-top: calc(1rem - 2px); }
   /* Danger-Variante derselben Oberkante (Design-Konsistenz R2-F/F1-5,
      31.8.2026). Sie markiert nicht «massgeblich», sondern «Sperre/kein
      statthaftes Rechtsmittel» — gemessen waren dafür drei handgebaute
      `border-t-[3px] border-t-danger-line` (KuendigungSperrForm,
      StrafZustaendigkeitTeil, VorlageKuendigungArbeitgeber). Die Farbe trägt
-     die Bedeutung, die Anatomie ist dieselbe wie bei Messing; `--danger-line`
+     die Bedeutung, die Anatomie ist dieselbe wie bei `.lc-akzent-w`; `--danger-line`
      hält den Kontrast im Dunkelmodus (index.css:461). */
   .lc-akzent-danger { border-top: 3px solid var(--danger-line); padding-top: calc(1rem - 2px); }
 
@@ -4654,10 +4663,15 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
 
 /* ③b Auf der Registerfläche `reg-g-flaeche` ink-600 statt ink-500 (5.38/5.25:1
    gegen 4.22): Titelblatt-Band (S2) und die Marken-Zeile der Gliederung (S3,
-   `[data-toc-aktiv]`). Ungeschichtet, damit es die Utility schlägt — kein
-   Umdefinieren des Tokens (tokens-drift). */
+   `[data-toc-aktiv]`); dazu die massgebliche Rechner-Kachel auf
+   `reg-w-flaeche` (ink-600 5.84/5.18:1; ink-500 dunkel nur 4.18:1 — darum
+   auch `.lc-overline`, die ink-500 als Klassenfarbe trägt; W2·29-WERKBANK-RECHNER R2).
+   Ungeschichtet, damit es die Utility schlägt — kein Umdefinieren des Tokens
+   (tokens-drift). */
 .lc-titelblatt-band .text-ink-500,
-[data-toc-aktiv] .text-ink-500 { color: var(--ink-600); }
+[data-toc-aktiv] .text-ink-500,
+.lc-akzent-w .text-ink-500,
+.lc-akzent-w .lc-overline { color: var(--ink-600); }
 
 /* ─── GB-20 · DIE WAHL-ZEILE (Ferien/Stillstand des Fristenrechners) ────────
    Rezept zum Befund G20 (Herleitung am Aufrufer `forms/EinfacheFristForm`):
