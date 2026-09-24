@@ -100,6 +100,10 @@ zusammengestellt.
   Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
   zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
   Beenden nur per eigener PID/Port, nie per Namensmuster (Vorfall 24.9.2026).
+  node_modules im Agent-Worktree: eigenes `npm ci --prefer-offline` (Sekunden),
+  KEIN Symlink auf den Haupt-Checkout — steht der hinter origin/main, meldet
+  gate falsch rot «node_modules passt nicht zu package-lock.json» (Beleg D2/#1072,
+  24.9.2026: @ast-grep/cli 0.45.2 vs ^0.45.3).
   Wer aus RAM-Gruenden `npm run gate` auslaesst, faehrt trotzdem die schnellen
   Konsistenz-Tore `npx vitest run src/tests/design-` (Sekunden, kein Browser)
   — Beleg #1053 (24.9.2026): Schnellwerkzeug-Reiter mit eigener Kasten-Optik
