@@ -121,7 +121,7 @@ david-design-entscheide: ENTSCHIEDEN — David 22.9.2026 (Chat): (1) Seitenleist
   ist Abschnitt 2 des Funktions-Inventars (jede Fläche, jedes Feld, jeder Zustand). Grenzen:
   **Normtext-Körper golden byte-gleich**, Rechen-/Datenlogik unangetastet, alte Komponente fällt
   im selben PR, e2e-Selektoren ziehen mit; drei Sessions, sonst zurückstellen.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5, Scheiben §5c.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5, Scheiben §5a (S0–S5, S6 Erlass-Blatt).
 
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`; Phase 2, Entscheid 14.9.2026)*
   <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->

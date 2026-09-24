@@ -186,7 +186,8 @@ Erfassungsgrad, MassgebendeGesetze} → KATALOGE. Geteilt: lr8-* und einzelne lr
 - **Kopfzeile** «‹ Gesetze · OR Erlass ▾ · Gliederung ausblenden · ◧ · Ansicht ▾»: Werkbank-Typo,
   2-px-Tintenlinie, Textknöpfe; bleiben: alle Griffe/Menüs (2.3.12), Stand-Zeile, `data-v3-*`.
 - **Titelblatt:** ein Block statt drei Bausteinen; alle Angaben 2.3.5 wörtlich (§8).
-- **Gliederung links 250 px:** aktiver Eintrag `--reg-g-flaeche` (Board #EEF1F6 ist kein Token;
+- **Gliederung links 288 px** (18 rem, `rahmenSpalten.ts`; Board-Mass 250 px nachgeführt 24.9.2026, Nebenfund 6):
+  aktiver Eintrag `--reg-g-flaeche` (Board #EEF1F6 ist kein Token;
   Token gilt); Aufbau/Klapp/Spy/Sheet <1024 bleiben.
 - **Artikel:** Randtitel/«Art. N» Werkbank-Satz, Funktionszeile als Linienzeile; Kern byte-gleich;
   2.3.9 vollständig.
@@ -297,6 +298,12 @@ Scrollfläche springt bei Artikel- und Reiterwechsel an den Anfang (Prod: innen 
   leser-v3-panel-*, leser-v3-scrim-b7n1, hist-ansicht-w25i, entstehung-synopse-leser) + 3 Einzel
   (leser-einzelmodus, leser-nachbar-rohdaten, a11y). 2.4 zieht nur mit. dep S4.
 
+- **S6 Erlass-Blatt** (nachgetragen 24.9.2026, war nur in PRs/Posten geführt): W1a Hülle (#1002),
+  W1b Reiter Entscheide (#1003), W1cd fünf Reiter (#1006), D6 Werkzeug-Kanten suffix-exakt (#1016,
+  Risikopfad), W1e Blatt als dritte Spalte mit Schiene (#1040, Entscheid David 24.9. «A»), W1f
+  Funktionszeile aufgelöst, Reiter folgen dem Artikel (#1045). Offen: W1g Board-Angleichung,
+  Runde 2 mobil, Welle-2-Daten — `npm run plan:posten -- W2·29-WERKBANK-LESER`.
+
 **Querschnitt:** `data-*`-Hooks unverändert (e2e greift fast nur darüber: data-v3-kopf 104 Treffer;
 .lc-leser 61, lr7-* 101). 78 Vitest-Dateien lesen Leser-/Normtext-/CSS-Quellen → vor Push greppen,
 deklariert mitziehen. 116/168 e2e-Specs mit gesetze/. Keine Screenshot-Tests → Sichtprüfung
@@ -360,7 +367,7 @@ leser-ruecksprung-r5-r7, verweis-u — gleiche Wettlauf-Familie; S0/S4/S5. 3 420
 leserV3Modell.ts 419, uebersichtAngaben.ts 417. 4 index.css ~71 % Kommentare → QS-DOKU-DIAET.
 5 Board #EEF1F6 ≠ `--reg-g-flaeche` #D9DEE4 — Token gilt. 6 (24.9.2026, S6 W1e) Soll oben
 «Gliederung links 250 px», gebaut sind 288 px (18 rem, seit W2·19 S2) — nicht nachgezogen, die
-Blatt-Schwellen rechnen mit 288.
+Blatt-Schwellen rechnen mit 288. Soll-Zeile Ziff. 2 am 24.9.2026 auf 288 px nachgeführt. 7 (24.9.2026) `src/components/NormText.tsx` 795 Z., nicht in `scripts/schlankheit-bestand.json` — `check:schlankheit` wird ab 801 rot; Schneiden ist in `W2·29-WERKBANK-NACHLAUF` gebucht, vorher nicht wachsen lassen.
 
 ## §5b · KATALOGE — Bauplan in Scheiben (Planung 23.9.2026)
 
