@@ -340,10 +340,12 @@ function BlattKopf({ reg, titel, ort, hoch, zurueck, schliessen }: {
           {krumen.map((k, i) => {
             const letzte = i === krumen.length - 1;
             return (
-              <li key={i} className="flex items-baseline gap-x-1.5">
+              // `min-w-0` + Trennung: «Zivilprozess- und Zwangsvollstreckungsrecht» lief
+              // @320 aus der Leiste (R8 a, FEINSCHLIFF 24.9.2026).
+              <li key={i} className="flex min-w-0 items-baseline gap-x-1.5">
                 {i > 0 && <span aria-hidden className="text-ink-500">›</span>}
                 {letzte
-                  ? <span aria-current="location" className="font-semibold text-ink-900">{k.label}</span>
+                  ? <span aria-current="location" className="min-w-0 hyphens-auto break-words font-semibold text-ink-900">{k.label}</span>
                   : <button type="button" onClick={() => hoch(k.ort)} className="lc-btn-ghost lc-btn-sm h-auto px-1 font-normal underline underline-offset-4">{k.label}</button>}
               </li>
             );

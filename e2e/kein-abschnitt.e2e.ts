@@ -219,13 +219,24 @@ test.describe('R8 — Startseiten-Blätter (a, b, c, f, g, h)', () => {
       const route = `/?blatt=${stufe}`
       test(`${route} — ${thema}`, async ({ page }, testInfo) => {
         testInfo.setTimeout(90_000) // s. Begründung im Geometrie-Sweep oben
-        await sicher(route, thema, async () => {
-          await themaVorwaehlen(page, thema)
-          await page.goto(route)
-          const blatt = page.locator('#lm-start-blatt')
+        await themaVorwaehlen(page, thema)
+        await page.goto(route)
+        const blatt = page.locator('#lm-start-blatt')
+        // Öffnet das Blatt nicht oder lädt es nie fertig, ist das ein FUND, kein
+        // Werkzeug-Fehler: `sicher()` schluckte ihn sonst, der Scan entfiele, und
+        // ein kaputtes Blatt machte das Tor GRÜNER (Gegenprüfung 24.9.2026, §6.7).
+        // Als Fund statt als harter Wurf, weil `mode: 'serial'` sonst alle
+        // Folgetests samt Bericht überspränge.
+        try {
           await expect(blatt).toBeVisible({ timeout: 15_000 })
           // Lade-Zeile weg = Liste steht (Register lädt erst beim Öffnen, §15).
           await expect(blatt.getByText(/wird abgerufen|werden geladen/)).toHaveCount(0, { timeout: 20_000 })
+        } catch (e) {
+          const messwert = (e as Error).message.split('\n')[0].slice(0, 160)
+          GESAMMELTE_FUNDE.push({ route, viewport: 'vor-sweep', modus: thema, kategorie: 'blatt-oeffnet-nicht', selektor: '#lm-start-blatt', messwert })
+          return
+        }
+        await sicher(route, thema, async () => {
           for (const vp of VIEWPORTS) {
             await page.setViewportSize({ width: vp.width, height: vp.height })
             await page.waitForTimeout(60) // Reflow nach Resize abwarten
