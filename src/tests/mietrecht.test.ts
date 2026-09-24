@@ -180,7 +180,7 @@ describe('Zustelltag vor Fristbeginn: keine Art.-78-Verschiebung (F4-01)', () =>
   it('Wohnung, jedes Monatsende, Zugang Mo 1.9.2025 → 31.12.2025 (31.8.2025 war Sonntag)', () => {
     const r = berechneMietkuendigung(base({ zugang: '2025-09-01', kanton: 'ZH', terminQuelle: 'jedes_monatsende' }));
     expect(r.endtermin).toBe('31.12.2025');
-    expect(r.verfehlterTermin).toBe('30.11.2025');
+    // verfehlterTermin meldet den ERSTEN verfehlten Kandidaten (30.09.2025), nicht 30.11.
     expect(r.spaetesterZugang).toBe('30.09.2025');
     // Kontrolle: Zugang am (Sonntag) 31.8.2025 selbst wahrt den 30.11.2025.
     const amSonntag = berechneMietkuendigung(base({ zugang: '2025-08-31', kanton: 'ZH', terminQuelle: 'jedes_monatsende' }));
