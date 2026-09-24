@@ -204,10 +204,15 @@ test.describe('H3 — kein Layout-Sprung im Lesekörper', () => {
   // Lesekörper steht (rAF läuft vor dem Malen): schon dort müssen Gliederung
   // (Schiene) und Blatt (offen, nach Neuladen wiederhergestellt) stehen. Dazu
   // der Shift-Deckel wie in (a), gezählt ab dem Neuladen.
-  // ROT GESEHEN (§6.7, 24.9.2026): Wiederherstellen in `v3/blattGedaechtnis`
-  // als `useEffect` statt `useLayoutEffect` ⇒ erstes Bild «Blatt zu»; den
-  // Lazy-Initializer in `inhalt-zustand.tsx` auf `useState(true)` ⇒ erstes
-  // Bild «Gliederung offen».
+  // ROT GESEHEN (§6.7, 24.9.2026): die gemerkte Wahl erst NACH dem ersten Bild
+  // anwenden (`useState(true)` + verzögertes `setTocOffen(false)` in
+  // `inhalt-zustand.tsx`) ⇒ erstes Bild `{ aside: 1, schiene: 0 }`, rot;
+  // `merkeGliederung` im Rahmen weglassen ⇒ ebenso. NICHT rot wurde der Blatt-
+  // Teil mit dem Wiederherstellen als gewöhnlichem `useEffect` (Ist-Stand von
+  // `v3/blattGedaechtnis`): der Erlass-Key kommt vor dem Lesekörper, also steht
+  // das Blatt schon im ersten Bild offen — auch nach In-App-Zurück (5/5,
+  // `scratchpad/zurueck.cjs`). Der Fall bewacht es trotzdem, damit ein späterer
+  // Umbau des Ladens (Key und Lesekörper im selben Commit) auffällt.
   test('(c) D @1440: gemerkte Gliederung «zu» und wiederhergestelltes Blatt stehen ab dem ersten Bild', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
