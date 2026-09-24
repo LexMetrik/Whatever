@@ -83,7 +83,7 @@ function FristKarte({ label, sub, wert, massgeblich }: { label: string; sub: str
 type VjLink = {
   regime: string; beginnRelativ: string; beginnAbsolut?: string; stichtag: string;
   kanton: string; strafbar?: boolean; stillstaende?: Stillstand[];
-  unterbrechungen?: Unterbrechung[]; verzichtAn?: boolean; verzichtDatum?: string; verzichtJahre?: string;
+  unterbrechungen?: Unterbrechung[]; verzichtAn?: boolean; verzichtDatum?: string; verzichtJahre?: string; verzichtBis?: string;
 };
 const VJ_LINK_SPEC: PermalinkSpec<VjLink & Record<string, unknown>> = {
   regime: { p: 're', typ: 'str', gueltig: einerVon('ordentlich', 'kurz', 'delikt', 'delikt_person', 'vertrag_person', 'bereicherung') },
@@ -97,6 +97,7 @@ const VJ_LINK_SPEC: PermalinkSpec<VjLink & Record<string, unknown>> = {
   verzichtAn: { p: 'va', typ: 'bool' },
   verzichtDatum: { p: 'vd', typ: 'str', gueltig: istISO },
   verzichtJahre: { p: 'vj', typ: 'str', gueltig: (v) => /^\d{1,2}$/.test(v) },
+  verzichtBis: { p: 'vb', typ: 'str', gueltig: istISO },
 };
 
 export function VerjaehrungForm() {
@@ -114,13 +115,14 @@ export function VerjaehrungForm() {
   const [verzichtAn, setVerzichtAn] = useState(ausLink.verzichtAn ?? false);
   const [verzichtDatum, setVerzichtDatum] = useState(ausLink.verzichtDatum ?? '');
   const [verzichtJahre, setVerzichtJahre] = useState(ausLink.verzichtJahre ?? '');
+  const [verzichtBis, setVerzichtBis] = useState(ausLink.verzichtBis ?? '');
 
   // UX-Programm B7 (5.6.2026): Presets für den schnellen Einstieg — reine
   // UI-Zustände, keine Engine-Logik. Daten bewusst fix (nachvollziehbar).
   const ladePreset = (regime_: VerjaehrungRegime, relativ: string, absolut: string) => {
     setRegime(regime_); setBeginnRelativ(relativ); setBeginnAbsolut(absolut);
     setStrafbar(false); setStillstaende([]); setUnterbrechungen([]);
-    setVerzichtAn(false); setVerzichtDatum(''); setVerzichtJahre('');
+    setVerzichtAn(false); setVerzichtDatum(''); setVerzichtJahre(''); setVerzichtBis('');
   };
   const PRESETS = [
     { label: 'Offene Rechnung (10 J.)', laden: () => ladePreset('ordentlich', '2019-09-15', '') },
@@ -145,7 +147,11 @@ export function VerjaehrungForm() {
     stillstaende: stillstaende.filter((s) => s.von && s.bis),
     unterbrechungen: unterbrechungen.filter((u) => u.datum),
     verzicht: verzichtAn && verzichtDatum
-      ? { datum: verzichtDatum, jahre: verzichtJahre.trim() === '' ? undefined : Number(verzichtJahre) }
+      ? {
+          datum: verzichtDatum,
+          jahre: verzichtJahre.trim() === '' ? undefined : Number(verzichtJahre),
+          bis: verzichtBis || undefined,
+        }
       : undefined,
   };
 
@@ -160,7 +166,8 @@ export function VerjaehrungForm() {
     'Kanton (Feiertage, Erfüllungsort)': kanton,
     ...(stillstaende.length ? { 'Stillstand (Art. 134 OR)': stillstaende.map((s) => `${datumOderStrich(s.von)}–${datumOderStrich(s.bis)}`).join('; ') } : {}),
     ...(unterbrechungen.length ? { 'Unterbrechungen (Art. 135 OR)': unterbrechungen.map((u) => `${U_TYPEN.find((t) => t.code === u.typ)?.label} am ${datumOderStrich(u.datum)}`).join('; ') } : {}),
-    ...(verzichtAn && verzichtDatum ? { 'Einredeverzicht (Art. 141 OR)': `vom ${datumOderStrich(verzichtDatum)}` } : {}),
+    ...(verzichtAn && verzichtDatum ? { 'Einredeverzicht (Art. 141 OR)': `vom ${datumOderStrich(verzichtDatum)}${
+      verzichtBis ? ` bis ${datumOderStrich(verzichtBis)}` : verzichtJahre.trim() ? ` für ${verzichtJahre.trim()} Jahre` : ' (ohne Dauer)'}` } : {}),
   };
 
   // FAHRPLAN-PRAXIS 1.2: Mandats-Referenz für den PDF-Kopf (optional).
@@ -282,9 +289,19 @@ export function VerjaehrungForm() {
             <span className="text-body-s text-ink-500">erklärt am</span>
             <DatumsFeld value={verzichtDatum} onChange={setVerzichtDatum} className={inputCls} wrapperClassName="w-full sm:w-44" />
             <span className="text-body-s text-ink-500">für</span>
-            <input type="number" inputMode="decimal" min={1} max={10} value={verzichtJahre} placeholder="10"
+            {/* UI-04 (RL-14): kein Platzhalter «10» — ohne Dauer rechnet die
+                Engine nicht still, sondern warnt. Fehlermarke erst nach
+                Eingabe (leeres Feld ist kein Fehler). */}
+            <input type="number" inputMode="numeric" min={1} max={10} step={1} value={verzichtJahre}
+              aria-label="Verzichtsdauer in Jahren"
+              aria-invalid={verzichtJahre.trim() !== '' && !(Number.isInteger(Number(verzichtJahre)) && Number(verzichtJahre) >= 1)}
               onChange={(e) => setVerzichtJahre(e.target.value)} className={inputCls + ' w-24'} />
-            <span className="text-body-s text-ink-500">Jahre (max. 10, ab Verjährungseintritt)</span>
+            <span className="text-body-s text-ink-500">Jahre ab Erklärung, oder bis</span>
+            <DatumsFeld value={verzichtBis} onChange={setVerzichtBis} className={inputCls} wrapperClassName="w-full sm:w-44" />
+            <p className="w-full text-xs text-ink-500">
+              Höchstens 10 Jahre je Verzicht (Art. 141 Abs. 1 OR). Ab wann die Dauer läuft, lässt das Gesetz offen;
+              gerechnet wird ab dem Datum der Erklärung (Hinweis im Ergebnis).
+            </p>
           </div>
         )}
       </div>
@@ -316,6 +333,9 @@ export function VerjaehrungForm() {
               <p className="text-body-l font-semibold">
                 {ergebnis.status !== 'ok'
                   ? <span className="text-ink-500">Eingaben unvollständig</span>
+                  : ergebnis.verjaehrtAmStichtag && ergebnis.einredeAusgeschlossenAmStichtag && ergebnis.verzichtBisISO
+                    // F5-03 (RL-14): Verjährung eingetreten, Einrede aber durch Verzicht ausgeschlossen — kein Rot.
+                    ? <span className="text-warn-700"><NormText text={`verjährt – Einrede durch Verzicht bis ${datumOderStrich(ergebnis.verzichtBisISO)} ausgeschlossen (Art. 141 OR)`} /></span>
                   : ergebnis.verjaehrtAmStichtag
                     ? <span className="text-danger-700"><NormText text={`verjährt (Einrede, Art. 142 OR)`} /></span>
                     : <span className="text-ok-text">nicht verjährt</span>}
@@ -333,6 +353,7 @@ export function VerjaehrungForm() {
               regime, beginnRelativ, beginnAbsolut: beginnAbsolut || undefined, stichtag, kanton,
               strafbar, stillstaende, unterbrechungen, verzichtAn,
               verzichtDatum: verzichtDatum || undefined, verzichtJahre: verzichtJahre || undefined,
+              verzichtBis: verzichtBis || undefined,
             })}
             ics={[{ endISO: ergebnis.verjaehrungISO,
               titel: `Verjährungseintritt – ${(REGIMES.find((r) => r.code === regime)?.label ?? '').split(' – ')[0]}`,

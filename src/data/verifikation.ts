@@ -346,10 +346,16 @@ export const VERIFIKATION: Record<string, VerifikationsEintrag> = {
       'Art. 138 Abs. 1 OR: Neubeginn der Verjährung erst mit Abschluss des Rechtsstreits vor der befassten Instanz (Ausschöpfung des Instanzenzugs).',
     verifiziert: false,
   },
+  // RL-14 (24.9.2026): Aussage berichtigt — der Entscheid legt KEINEN
+  // Laufbeginn fest (E. 3.3.8: Dauer nach Parteiwillen, Art. 19 OR; höchstens
+  // die ordentliche 10-Jahres-Frist von Art. 127 OR; E. 3.3.7: Verzicht auch
+  // nach Ablauf möglich). Altes Recht (aArt. 141 Abs. 1 OR). Text gelesen
+  // 24.9.2026 über entscheidsuche.ch (CH_BGE_005_BGE-132-III-226_2006; bger.ch
+  // HTTP 503); vgl. Prüfung Rechtslogik Q1 (BBl 2014 235 S. 262).
   BGE_132_III_226: {
     aktenzeichen: 'BGE 132 III 226',
     aussage:
-      'Verzicht auf die Verjährungseinrede: Höchstdauer von 10 Jahren bemisst sich ab Verjährungseintritt.',
+      'Verzicht auf die Verjährungseinrede (altes Recht): Dauer nach dem Parteiwillen, höchstens 10 Jahre (Art. 127 OR); einen Laufbeginn legt der Entscheid nicht fest.',
     verifiziert: false,
   },
   BGE_114_II_335: {
