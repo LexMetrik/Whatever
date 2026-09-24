@@ -13,11 +13,12 @@
 // (§8: Fetch-Fehler ≠ leer). Reine Ladeschicht (§3), keine Rechtslogik.
 
 import { ladeMaterialManifest } from './browse';
-import type { BrowseMaterial, DoktypId, MaterialManifest } from './typen';
+import { KANTONALE_GESETZGEBUNG } from './gattung';
+import type { BrowseMaterial, MaterialManifest } from './typen';
 
-/** Die Dokumenttypen der kantonalen Gesetzgebung — Vorlagen und Berichte an das
- *  Parlament, also das kantonale Gegenstück zur Botschaft des Bundesrates. */
-const KANTONALE_GESETZGEBUNG: ReadonlySet<DoktypId> = new Set<DoktypId>(['ratschlag', 'gr-bericht', 'gr-initiative']);
+// Die Menge `KANTONALE_GESETZGEBUNG` stand bis 24.9.2026 hier; sie ist nach
+// `./gattung.ts` verschoben (unverändert), weil die Startseite dieselbe
+// Materialien/Erläuterungen-Zuordnung braucht wie der Leser (§5).
 
 /** Anzeige-Form eines kantonalen Parlamentsgeschäfts. */
 export interface KantonalesGeschaeft {

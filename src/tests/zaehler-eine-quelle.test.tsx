@@ -97,7 +97,17 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
     expect(g).toContain(nf(Z.gesetzeVolltext));
     expect(g).toContain(`${nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(Z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge`);
     expect(r).toContain(`${nf(Z.rechtsprechungVolltext)}Entscheide im Volltext`);
-    expect(m).toContain(`${nf(Z.materialien)}amtliche Materialien erfasst`);
+    // DEKLARIERTE ANPASSUNG U12 (David 24.9.2026, «materialien soll
+    // erläuterungen und materialien enthalten», §6.3): die Einheit hiess
+    // «amtliche Materialien erfasst» und mischte die Hausbegriffe; jetzt nennt
+    // sie beide Gattungen, und die Teile schlüsseln die Zahl auf. Summe der
+    // Teile = Kachelzahl (Zuordnung `lib/materialien/gattung.ts`). ROT ZU
+    // BEKOMMEN: im Generator eine Gattung anders als über `gattungVon` zählen.
+    expect(m).toContain(`${nf(Z.materialien)}Materialien und Erläuterungen erfasst`);
+    expect(Z.materialienGesetzgebung + Z.materialienErlaeuterungen).toBe(Z.materialien);
+    expect(Z.materialienGesetzgebung).toBeGreaterThan(0);
+    expect(Z.materialienErlaeuterungen).toBeGreaterThan(0);
+    expect(m).toContain(`${nf(Z.materialienGesetzgebung)} Materialien (Gesetzgebung) · ${nf(Z.materialienErlaeuterungen)} Erläuterungen (Verwaltungspraxis)`);
     expect(w).toContain(nf(Z.rechner + Z.vorlagen));
     expect(w).toContain(`${nf(Z.rechner)} Rechner · ${nf(Z.vorlagen)} Vorlagen`);
     // Kein Link im Link: die Kachel ist selbst der eine Link bzw. Knopf.

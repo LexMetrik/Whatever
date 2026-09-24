@@ -89,8 +89,14 @@ const KACHELN: readonly KachelDef[] = [
     teile: `${nf(z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(z.gesetzeInternationalVolltext)} Staatsverträge` },
   { rubrik: 'rechtsprechung', reg: 'r', ziel: '/rechtsprechung', titel: 'Rechtsprechung', zahl: nf(z.rechtsprechungVolltext),
     einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet' },
+  // U12 (David 24.9.2026: «materialien soll erläuterungen und materialien
+  // enthalten»): die Kachel führt BEIDE Gattungen (Hausbegriffe wie im Leser,
+  // `lib/materialien/gattung.ts`) — vorher nannte der Nutzen nur die
+  // Verwaltungspraxis und die Einheit «amtliche Materialien» mischte beides.
   { rubrik: 'materialien', reg: 'm', ziel: '/materialien', titel: 'Materialien', zahl: nf(z.materialien),
-    einheit: 'amtliche Materialien erfasst', nutzen: 'Kreisschreiben, Wegleitungen und Leitfäden nach Behörde' },
+    einheit: 'Materialien und Erläuterungen erfasst',
+    nutzen: 'Botschaften und Vernehmlassungen · Kreisschreiben, Wegleitungen und Leitfäden nach Behörde',
+    teile: `${nf(z.materialienGesetzgebung)} Materialien (Gesetzgebung) · ${nf(z.materialienErlaeuterungen)} Erläuterungen (Verwaltungspraxis)` },
   // Ziel `/rechner`: der Werkzeug-Katalog (K4) führt Rechner und Vorlagen.
   { rubrik: 'werkzeuge', reg: 'w', ziel: '/rechner', titel: 'Werkzeuge', zahl: nf(z.rechner + z.vorlagen),
     einheit: 'Rechner und Vorlagen', nutzen: 'Fristen, Gebühren und Beträge, Zuständigkeiten · Verträge, Klagen und Gesuche',
