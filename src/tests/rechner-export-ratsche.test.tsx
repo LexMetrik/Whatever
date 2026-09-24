@@ -24,6 +24,14 @@
 // `RECHNER_EXPORT_SCHREIBEN=1 npx vitest run src/tests/rechner-export-ratsche.test.tsx`.
 // Ohne die Variable ist der Test streng. Neu erzeugen ist eine deklarierte
 // Änderung (§6.3) mit Begründung im auslösenden Commit.
+//
+// DEKLARIERTE ÄNDERUNG (W2·29-WERKBANK-RECHNER R5a, 24.9.2026, §6.3): die vier
+// Kosten-Rechner (Prozesskosten, Notariat/Grundstückkauf, Beurkundung,
+// Grundbuch-Eintragung) nutzen ErgebnisExport. «Teilen» wandert aus der
+// Schalterzeile hinter Aktenzeichen und PDF (§R-5); Props (Query, PDF-SHA)
+// byte-gleich. Das Aktenzeichen-Feld steht nur, wenn PDF oder Kalender es
+// tragen (Beurkundung Baurecht BS, Tarif offen: weiter nur «Teilen», wie vor
+// R5a). Fixture neu erzeugt, Diff im Commit-Body.
 import { describe, it, expect, vi, beforeAll, afterAll, afterEach } from 'vitest';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -78,7 +86,17 @@ const VARIANTEN: string[] = [
   '/rechner/notariat-grundbuch?kt=BS&kp=500000',
   '/rechner/notariat-grundbuch?ga=baurecht&kt=BS&gw=500000',
   '/rechner/notariat-grundbuch?ea=grundpfand&kt=BS&gw=500000',
+  // Grundbuch mit Tarif offen (BS Löschung, Gegenprüfung R5a): nur «Teilen», kein Aktenzeichen.
+  '/rechner/notariat-grundbuch?ea=loeschung&kt=BS&gw=500000',
+  // R5a (24.9.2026): Beurkundung MIT PDF-Zustand. Baurecht BS liefert status
+  // 'offen' (Tarif in Recherche) → kein PDF, nur «Teilen»; Baurecht ZH ist
+  // wertbasiert belegt (berechneBeurkundung → status 'ok') und erreicht die
+  // volle Exportzeile.
+  '/rechner/notariat-grundbuch?ga=baurecht&kt=ZH&gw=500000',
   '/rechner/tagerechner?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS#schkg',
+  // R5a: Ratschen-Lücke aus der R3-Gegenprüfung — Reiter #allgemein mit
+  // Beispiel-Query (Parameter: fristQueryKodieren, src/lib/allgemeineFrist.ts).
+  '/rechner/tagerechner?s=2026-02-10&l=30&e=tage&w=1&f=1&k=BS#allgemein',
   '/rechner/zustaendigkeit?ss=geldforderung&vr=1&sw=50000&k=BS&g=Basel&pl=4051&sch=8',
   '/rechner/zustaendigkeit?ss=geldforderung&vr=1&sw=50000&k=BS&in=rechtsmittel&ro=endentscheid&rv=ordentlich_vereinfacht&ri=erstinstanz&sch=8',
   '/rechner/zustaendigkeit?sa=betreibung_einleiten&sst=natuerlich_wohnsitz&spf=kein&sfo=12000&spl=4051&skt=BS&sgm=Basel#schkg',

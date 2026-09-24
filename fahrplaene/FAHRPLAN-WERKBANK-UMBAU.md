@@ -401,7 +401,8 @@ neu sind nur Kopf und eine gemeinsame Exportzeile (heute 25× inline). Kein Risi
   (bündig, ohne Seitenpolster; der zweite Strich in der Karte trennt Eingaben/Ergebnis wie im Board), ink-500/`.lc-overline`
   auf der Fläche → ink-600 (dunkel 4.18:1, axe-Punkt `rechner-mietrecht`); Posten Kontrast (Pflichtpaar) und A3 zu. *Gebaut 24.9.*
 - **R3** `ErgebnisExport` (Aktenzeichen → PDF → ICS → Teilen → children): 21 Stellen in 20 Formularen; Ratsche
-  `rechner-export-ratsche` (20 Routen + 16 Beispiel-Queries). Offen: 4 Kosten-Rechner (Posten §R-5), EreignisFristen/Schnellrechner bewusst eigen. *Gebaut 24.9.*
+  `rechner-export-ratsche` (20 Routen + 19 Beispiel-Queries). R5a: auch die 4 Kosten-Rechner (Teilen hinter PDF; Aktenzeichen nur mit PDF/ICS).
+  EreignisFristen/Schnellrechner bewusst eigen. *Gebaut 24.9.*
 - **R4** Auswahl-Kacheln ein Look (*gebaut 24.9.*: Strich oben für alle, `reg`-Prop weg) · `vorlagen/ui.tsx` an neutralen Ort · `Card`. **R5** Sonderseiten
   (Tagerechner, Board, Inkasso, Zuständigkeit), Inventar 4.3/4.4 nachführen.
 - **Nicht bauen:** rechte Normen-/Annahmen-Spalte des Boards, Streichung von PDF/Teilen/Aktenzeichen

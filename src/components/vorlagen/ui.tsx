@@ -7,7 +7,11 @@ import { NormChip } from './NormChip';
 import { GruppenKopf } from '../ui/GruppenKopf';
 import { useZielSichtbar } from './useZielSichtbar';
 
-// Geteilte UI-Bausteine der Vorlagen-Wizards (Testament, Patientenverfügung, …).
+// Geteilter Formular-Baukasten BEIDER Werkzeug-Familien — Rechner und Vorlagen
+// (Field, inputCls, FehlerBox, BeruehrtRahmen, Stepper, EckdatenKachel, …;
+// gezählt 24.9.2026: 37 Rechner- und 40 Vorlagen-Importer). Der Ort unter
+// `vorlagen/` ist historisch; ein Umzug wäre ein 77-Dateien-Churn ohne
+// Verhaltenswert (Entscheid W2·29-WERKBANK-RECHNER R4).
 
 export const inputCls = 'lc-input';
 

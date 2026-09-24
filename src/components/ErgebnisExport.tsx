@@ -9,6 +9,7 @@ import { LinkTeilenButton } from './LinkTeilenButton';
 // Aktenzeichen → PDF → ICS (0..n) → Teilen in fester Reihenfolge. Reine Darstellung
 // (§3): alle Fachwerte kommen fertig vom Formular; der Rahmen reicht nur
 // Aktenzeichen und Query an die ICS-Knöpfe weiter. `children` folgt nach «Teilen».
+// Das Aktenzeichen-Feld steht nur, wenn es in PDF oder Kalender einfliesst (R5a).
 type IcsEintrag = Omit<ComponentProps<typeof IcsExportButton>, 'aktenzeichen' | 'query' | 'className'>;
 
 export function ErgebnisExport({ aktenzeichen, onAktenzeichen, pdf, ics = [], query, children }: {
@@ -21,7 +22,7 @@ export function ErgebnisExport({ aktenzeichen, onAktenzeichen, pdf, ics = [], qu
 }) {
   return (
     <>
-      <AktenzeichenFeld value={aktenzeichen} onChange={onAktenzeichen} />
+      {(pdf || ics.length > 0) && <AktenzeichenFeld value={aktenzeichen} onChange={onAktenzeichen} />}
       <div className="flex flex-wrap items-center gap-3">
         {pdf && <PdfExportButton config={pdf} />}
         {ics.map((e, i) => <IcsExportButton key={i} {...e} aktenzeichen={aktenzeichen} query={query} />)}

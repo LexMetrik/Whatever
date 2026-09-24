@@ -7,9 +7,7 @@ import { KantonNormText } from '../KantonNormText';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { BetragsFeld } from '../BetragsFeld';
-import { LinkTeilenButton } from '../LinkTeilenButton';
-import { AktenzeichenFeld } from '../AktenzeichenFeld';
-import { PdfExportButton } from '../PdfExport';
+import { ErgebnisExport } from '../ErgebnisExport';
 import type { PdfDocConfig } from '../../lib/pdf/pdfModel';
 import { permalinkKodieren, einerVon, type PermalinkSpec } from '../../lib/permalink';
 import { usePermalinkFelder } from '../../hooks/usePermalinkFelder';
@@ -323,7 +321,6 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
               className="text-body-s underline text-ink-700 hover:text-ink-900">
               {kaution ? 'Sicherheitsleistung ausblenden' : 'Sicherheit für die Parteientschädigung (Art. 99) →'}
             </button>
-            <LinkTeilenButton query={() => permalinkKodieren(PK_LINK_SPEC, { kanton, sw: nv ? undefined : streitwertRoh, phase, materie, instanz, verfahren: verfahrenRelevant ? verfahren : undefined, quote: risiko ? quote : undefined, mwst: mwst ? true : undefined, nv: nv ? true : undefined })} />
           </div>
 
           {risiko && (
@@ -457,12 +454,12 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
             </div>
           )}
 
-          {pdfConfig && (
-            <div className="mt-5 border-t border-line pt-4 space-y-3">
-              <AktenzeichenFeld value={aktenzeichen} onChange={setAktenzeichen} />
-              <PdfExportButton config={pdfConfig} />
-            </div>
-          )}
+          {/* §R-5 (W2·29-WERKBANK-RECHNER R5a, 24.9.2026): Aktenzeichen → PDF →
+              Teilen in der geteilten Exportzeile; «Teilen» stand vorher in der Schalterzeile (Kostenrisiko/Vergleich/Instanzenzug/Art. 99). */}
+          <div className="mt-5 border-t border-line pt-4 space-y-3">
+            <ErgebnisExport aktenzeichen={aktenzeichen} onAktenzeichen={setAktenzeichen} pdf={pdfConfig}
+              query={() => permalinkKodieren(PK_LINK_SPEC, { kanton, sw: nv ? undefined : streitwertRoh, phase, materie, instanz, verfahren: verfahrenRelevant ? verfahren : undefined, quote: risiko ? quote : undefined, mwst: mwst ? true : undefined, nv: nv ? true : undefined })} />
+          </div>
         </ErgebnisBlock>
       )}
     </div>
