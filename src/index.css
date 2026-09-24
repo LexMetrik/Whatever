@@ -4189,8 +4189,10 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    `[data-aktionen-ruhig]`) stand unter JEDEM Artikel sichtbar — ~1'700-mal im
    OR dieselbe Zeile, die den Linienstapel Apparat-Haarlinie · Zeile ·
    Artikel-Trenner verdichtete. Auf Geräten MIT Hover ruht sie jetzt
-   unsichtbar und erscheint am Artikel, der Hover, Fokus (Tastatur: die Knöpfe
-   bleiben im Fokus-Weg, `opacity` statt `display`) oder das Sprungziel hat.
+   unsichtbar und erscheint am Artikel, der Hover oder Fokus hat (Tastatur: die
+   Knöpfe bleiben im Fokus-Weg, `opacity` statt `display`). KEIN `:target`:
+   der Leser rendert die Artikel nach dem Laden (SPA) — die Pseudoklasse
+   greift beim Tieflink nicht (gemessen 24.9.2026 an OR #art-336_c: opacity 0).
    Ohne Hover (Touch) gilt die Regel nicht: dort steht sie immer. Der Platz
    bleibt reserviert — kein Layout-Sprung beim Überfahren (CLS, §15). Das
    Dossier des Einzelmodus (Knopf-Gestalt, D-E4) ist nicht betroffen. */
@@ -4200,8 +4202,7 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
     transition: opacity var(--dur-fast, 120ms) var(--ease, ease);
   }
   article:hover [data-aktionen-ruhig],
-  article:focus-within [data-aktionen-ruhig],
-  article:target [data-aktionen-ruhig] { opacity: 1; }
+  article:focus-within [data-aktionen-ruhig] { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
   [data-aktionen-ruhig] { transition: none; }

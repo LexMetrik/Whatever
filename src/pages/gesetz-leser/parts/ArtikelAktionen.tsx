@@ -30,7 +30,7 @@ import { urlMitHash } from '../../../lib/liveUrlSync';
 // Fussnoten und wiederholte sich blass unter jedem Artikel. Jetzt: LINKSBÜNDIG
 // an der Artikelkante (dieselbe Flucht wie «Art. N» und der Apparat — der
 // Artikelfuss liest sich als EIN Block), und auf Geräten mit Maus erst voll
-// sichtbar, wenn der Artikel Hover, Fokus oder das Sprungziel (`:target`) hat
+// sichtbar, wenn der Artikel Hover oder Fokus hat
 // (`src/index.css`, Block «ARTIKEL-AKTIONEN»). Tastatur: `opacity`, nicht
 // `display`/`visibility` — die Knöpfe bleiben im Fokus-Weg und erscheinen,
 // sobald einer den Fokus hat (WCAG 2.1.1/2.4.7; der Einwand gegen den alten
