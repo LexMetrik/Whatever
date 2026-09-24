@@ -131,9 +131,12 @@ echo "Gates (${mode}):"
 # über den Elternordner in den Haupt-Checkout auf, zwei React-Kopien, ~60 rote
 # Tests ohne Code-Fehler, ein Gate-Lauf (5 min) verloren. `npm ls` erkennt den
 # Drift (gemessen: frisch nach npm ci Exit 0, drei veraltete Worktrees Exit 1).
+# `--all` statt `--depth=0` (Gegenprüfung 24.9.2026): --depth=0 übersah einen
+# verschachtelten Versionskonflikt (Paket verlangt react@^19, lokal 18) — genau
+# das Zwei-Kopien-Muster; Laufzeit gleich (~0.25 s).
 # Abbruch statt `run`: die Folge-Tore wären nur Rauschen.
-if ! npm ls --depth=0 >/dev/null 2>&1; then
-  printf '  ROT  node_modules passt nicht zu package-lock.json — zuerst «npm ci» (kein Code-Fehler; Details: npm ls --depth=0)\n'
+if ! npm ls --all >/dev/null 2>&1; then
+  printf '  ROT  node_modules passt nicht zu package-lock.json — zuerst «npm ci» (kein Code-Fehler; Details: npm ls --all)\n'
   ereignis "gate:npm-ls" false
   exit 1
 fi
