@@ -71,6 +71,36 @@ describe('RL-18 / F2-03 — Zustellung in den Betreibungsferien wirkt erst am er
     expect(offen).toContain('23.04.2026');
   });
 
+  // Q-10 Nachzug (Gegenprüfung 24.9.2026): Für Monats-/Jahresfristen ist die
+  // spätere Lesart gut gestützt — BGE 150 III 367 E. 5.6 (5A_691/2023 vom
+  // 13.8.2024): der «Tag, an dem die Frist zu laufen begann» (Art. 142 Abs. 2
+  // ZPO) ist der Tag des fristauslösenden Ereignisses; gilt der Wirkungstag
+  // 13.4.2026 (BGE 121 III 284 E. 2b) als Ereignistag → 13.04.2027. Beide
+  // Lesarten werden gleichrangig offengelegt; der Hauptwert 12.04.2027 bleibt
+  // als sichere Grenze der Verwirkungsfrist.
+  it('Q-10: Jahresfrist legt beide Lesarten offen — 12.04.2027 und 13.04.2027 nach BGE 150 III 367 E. 5.6', () => {
+    const r = berechneSchkgFrist(base({ einheit: 'jahre', laenge: 1, fristnatur: 'verwirkung' }));
+    expect(r.diesAdQuem).toBe('12.04.2027');
+    const offen = r.warnungen.find((w) => w.startsWith('Zählweise') && w.includes('(1 Jahr)'));
+    expect(offen, 'Offenlegung der Zählweise fehlt').toBeDefined();
+    expect(offen).toContain('BGE 150 III 367 E. 5.6');
+    expect(offen).toContain('Art. 142 Abs. 2 ZPO');
+    expect(offen).toContain('13.04.2027');
+    expect(offen).toContain('12.04.2027');
+  });
+
+  it('Q-10: Monatsfrist ebenso (1 Monat → 12.05.2026 / 13.05.2026); Tagesfrist ohne BGE 150 III 367', () => {
+    const m = berechneSchkgFrist(base({ einheit: 'monate', laenge: 1 }));
+    const offenM = m.warnungen.find((w) => w.startsWith('Zählweise') && w.includes('(1 Monat)'));
+    expect(offenM).toContain('BGE 150 III 367 E. 5.6');
+    expect(offenM).toContain('12.05.2026');
+    expect(offenM).toContain('13.05.2026');
+    const t = berechneSchkgFrist(base({}));
+    const offenT = t.warnungen.find((w) => w.startsWith('Zählweise'));
+    expect(offenT).toContain('BGE 121 III 284 E. 2c');
+    expect(offenT).not.toContain('BGE 150 III 367');
+  });
+
   it('Weihnachtsferien: ZB 20.12.2025 → Fristbeginn 2.1.2026, Rechtsvorschlag bis 12.01.2026', () => {
     const r = berechneSchkgFrist(base({ ereignis: '2025-12-20' }));
     expect(r.massgeblicherEreignistag).toBe('02.01.2026');
