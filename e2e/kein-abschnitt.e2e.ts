@@ -204,13 +204,13 @@ test.describe('R8 — Geometrie-Sweep (a, b, c, f, g, h)', () => {
 // ── Startseite · die AUFGEKLAPPTEN Blätter (W2·29-WERKBANK-START-FEINSCHLIFF) ──
 // Die Routenliste oben sieht «/» nur ZUGEKLAPPT: die Blätter sind Zustand
 // (`/?blatt=…`), keine eigene Route, und tauchen in `prerenderRouten()` nie
-// auf. Gemessen 24.9.2026: kein einziger der 11 Blatt-Zustände war im Sweep —
+// auf. Gemessen 24.9.2026: kein einziger der Blatt-Zustände war im Sweep —
 // was im Blatt abgeschnitten wird, konnte dieses Tor nicht sehen. Jede Stufe
 // per Deep-Link (öffnet ohne Bewegung), Daten fertig geladen, dann derselbe
 // Viewport-Durchlauf wie oben. Das Resizen über die 760-px-Grenze prüft dabei
 // nebenbei, dass das Blatt den Wechsel Vollbild ↔ Feld übersteht.
 const BLATT_STUFEN = [
-  'gesetze', 'gesetze/bund', 'gesetze/bund/02', 'gesetze/kantone', 'gesetze/kantone/BS', 'gesetze/international',
+  'gesetze', 'gesetze/bund', 'gesetze/bund/02', 'gesetze/bund/03', 'gesetze/kantone', 'gesetze/kantone/BS', 'gesetze/international',
   'werkzeuge', 'werkzeuge/rechner', 'werkzeuge/vorlagen', 'materialien', 'rechtsprechung',
 ] as const
 test.describe('R8 — Startseiten-Blätter (a, b, c, f, g, h)', () => {

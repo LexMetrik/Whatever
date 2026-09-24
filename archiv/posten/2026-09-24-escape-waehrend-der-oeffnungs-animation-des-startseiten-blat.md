@@ -5,3 +5,5 @@ anlass: Gegenprüfung S3 START 24.9.2026
 -->
 
 StartKachelFeld: Escape in den 450 ms der Öffnung verpufft (Handler erst in Phase offen), bei allen vier Kacheln reproduziert. Bedien-Mangel der S1-Mechanik; e2e wartet heute auf den Feld-Fokus.
+
+**Erledigt 2026-09-24:** Feinschliff-PR, e2e startseite-blatt «Feinschliff» (Rot-Beweis 26/30 alt)
