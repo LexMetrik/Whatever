@@ -774,7 +774,7 @@ async function pruefeDrift(hauptlauf: AliasZeile[], srAnzahl: number): Promise<n
     const [sr, sprache] = p.split('|');
     if (!bestandAbk) {
       neu.push(`SR ${sr} / ${sprache}: Fedlex führt '${liveAbk.join("', '")}' — im Artefakt fehlt die Zeile`);
-    } else if (liveAbk.join(' ') !== bestandAbk.join(' ')) {
+    } else if (liveAbk.join('\u0000') !== bestandAbk.join('\u0000')) {
       geaendert.push(`SR ${sr} / ${sprache}: Artefakt '${bestandAbk.join("', '")}' → Fedlex '${liveAbk.join("', '")}'`);
     }
   }
