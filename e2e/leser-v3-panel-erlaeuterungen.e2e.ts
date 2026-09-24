@@ -17,6 +17,10 @@
 //   ARG — Kanten-Shard JA, artikelscharfe Gruppen 0, grobe Zuordnung 1
 //         («Lohnfortzahlung (kantonale Skala)»). Der Vollfall aus
 //         Behörden-Praxis + grober Werkzeug-Liste.
+//         [Ergänzt 24.9.2026, Nachzug #1016 (D6/AN-6): die ArG-Zuordnung zur
+//         Lohnfortzahlung war fachlich falsch und ist entfernt; seither ARG
+//         erlass-weit 0 verfügbare Werkzeuge, 1 geplantes (Überzeit-Zuschlag,
+//         Art. 12/13 ArG). Die grobe Liste prüft (a3) an der VMWG.]
 //   DBG — Kanten-Shard JA, Werkzeuge 0 (die Karten dazu sind geplant, also nach
 //         §8 ausgeblendet). Der Fall, in dem der Werkzeug-Abschnitt ehrlich
 //         entfällt statt eine leere Überschrift zu setzen.
@@ -49,6 +53,9 @@
 //   (a)  ARG — Behörden-Praxis im Reiter «Erläuterungen» (die artikelweise
 //        SECO-Wegleitung als EIN Posten, AN-8), die grobe Werkzeug-Zuordnung
 //        im Reiter «Werkzeuge» («dem Erlass als Ganzem zugeordnet»).
+//        [Seit #1016 (24.9.2026): am ArG kein verfügbares Werkzeug mehr, nur
+//        der geplante Überzeit-Zuschlag «In Vorbereitung»; die grobe
+//        Zuordnung MIT verfügbarem Werkzeug misst (a3) an der VMWG.]
 //   (a2) DBG — Erläuterungen da; «Werkzeuge» zeigt keine leere Überschrift
 //        (heute: nur «In Vorbereitung», AN-12 — geplante Karten ohne Link).
 //   (b)  Kopf nennt den ERLASS, Pfeiltasten laufen bis «Werkzeuge».
@@ -77,7 +84,7 @@ async function reiter(page: Page, id: 'erlaeuterungen' | 'werkzeuge'): Promise<v
 }
 
 test.describe('S6 — Reiter «Erläuterungen» und «Werkzeuge» im Erlass-Blatt', () => {
-  test('(a) ARG: Erläuterungen gebündelt, Werkzeuge erlass-weit', async ({ page }) => {
+  test('(a) ARG: Erläuterungen gebündelt, Werkzeuge ehrlich ohne verfügbaren Rechner', async ({ page }) => {
     await panelOeffnen(page, '/gesetze/bund/ARG')
     await expect(page.locator('[data-v3-panel-reiter="erlaeuterungen"]')).toHaveAttribute('title', /Behördliche Erläuterungen/)
     await reiter(page, 'erlaeuterungen')
@@ -86,9 +93,35 @@ test.describe('S6 — Reiter «Erläuterungen» und «Werkzeuge» im Erlass-Blat
     // AN-8: die artikelweise Wegleitung ist EIN Posten, nicht 71 Zeilen.
     await expect(page.locator('[data-v3-erlaeuterung-reihe]')).toHaveCount(1)
     expect(await page.locator('[data-v3-erlaeuterungen] > ul > li').count()).toBeLessThan(20)
+    // §6.3-DEKLARATION (Fachkorrektur #1016, 24.9.2026, Befund AN-6): das ArG
+    // trägt keine OR-Rechner mehr. Die frühere erlass-weite Zuordnung
+    // «Lohnfortzahlung (kantonale Skala)» war falsch — die Regel steht in
+    // Art. 324a/324b OR, nicht im ArG (Fedlex AKN SR 822.11, Fassung 1.9.2023;
+    // Beleg in src/lib/normtext/werkzeuge.ts). Gemessen 24.9.2026
+    // (`werkzeugAnsicht('ARG')`): verfügbar 0, geplant 1 (ueberstunden-zuschlag,
+    // Art. 12/13 ArG). Der Reiter sagt das ehrlich: kein Link, der Überzeit-
+    // Zuschlag nur «In Vorbereitung». Die grobe Liste MIT Werkzeug: (a3).
     await reiter(page, 'werkzeuge')
     await expect(page.locator('[data-v3-werkzeuge="erlass"]')).toContainText('nicht einzelnen Artikeln')
-    expect(await page.locator('[data-v3-werkzeug]').count()).toBeGreaterThan(0)
+    await expect(page.locator('[data-v3-werkzeug]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-werkzeug-geplant="ueberstunden-zuschlag"]')).toHaveCount(1)
+    await expect(page.locator('[data-v3-werkzeug-geplant] a')).toHaveCount(0)
+  })
+
+  test('(a3) VMWG: grobe Werkzeug-Zuordnung sagt, dass sie grob ist', async ({ page }) => {
+    // Ersatz-Fixture für den Grob-Pfad aus (a), übernommen aus #1016 (D6,
+    // 23.9.2026) auf die S6-Selektoren: die VMWG (SR 221.213.11) hat keine
+    // artikelscharfe Kante, aber auf Erlass-Ebene den verfügbaren
+    // Miet-Kündigungsrechner (Art. 9 VMWG «Kündigungen»).
+    await panelOeffnen(page, '/gesetze/bund/VMWG')
+    await reiter(page, 'werkzeuge')
+    // Die grobe Erlass-Zuordnung SAGT, dass sie grob ist, statt eine
+    // Artikel-Genauigkeit zu suggerieren, die es nicht gibt (§8).
+    const grob = page.locator('[data-v3-werkzeuge="erlass"]')
+    await expect(grob, 'Werkzeug-Abschnitt fehlt an der VMWG').toBeVisible()
+    await expect(grob).toContainText('nicht einzelnen Artikeln')
+    expect(await grob.locator('[data-v3-werkzeug]').count()).toBeGreaterThan(0)
+    await expect(page.locator('[data-v3-werkzeuge="artikel"]')).toHaveCount(0)
   })
 
   test('(a2) DBG: Erläuterungen da, Werkzeuge ohne leere Überschrift', async ({ page }) => {
