@@ -185,6 +185,16 @@ describe('Reiter «Werkzeuge» — je Werkzeug EINE Zeile', () => {
     const html = renderToString(<MemoryRouter><PanelWerkzeuge erlassKey="OR" /></MemoryRouter>);
     expect((html.match(/data-v3-werkzeug="/g) ?? []).length).toBe(a.verfuegbar.length);
   });
+  // Nachzug #1016 (S6-D6, 24.9.2026): die Kanten tragen exakte Suffix-Grenzen.
+  // Das Etikett nennt sie («Art. 324a–324b», nicht «Art. 324» — Art. 324 OR ist
+  // der Annahmeverzug des Arbeitgebers), und die Reihenfolge ist die amtliche.
+  it('D6: Artikel-Etikett suffix-exakt, amtliche Reihenfolge', () => {
+    const artikelVon = (e: string, id: string) =>
+      [...werkzeugAnsicht(e).verfuegbar, ...werkzeugAnsicht(e).geplant].find((z) => z.id === id)?.artikel.map((a) => a.label);
+    expect(artikelVon('OR', 'lohnfortzahlung')).toEqual(['Art. 324a–324b']);
+    expect(artikelVon('SCHKG', 'nichtbekanntgabe-betreibung')).toEqual(['Art. 8a']);
+    expect(artikelVon('OR', 'kuendigung-sperrfristen')).toEqual(['Art. 335–335c', 'Art. 336c']);
+  });
   it('AN-14: der Beleg ist per Aufklappen erreichbar (nicht nur im title)', () => {
     const html = renderToString(<MemoryRouter><PanelWerkzeuge erlassKey="OR" /></MemoryRouter>);
     expect(html).toContain('data-v3-werkzeug-beleg');

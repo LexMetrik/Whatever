@@ -1,4 +1,4 @@
-import { ARTIKEL_WERKZEUGE, ERLASS_WERKZEUGE } from '../../../lib/normtext/werkzeuge';
+import { ARTIKEL_WERKZEUGE, ERLASS_WERKZEUGE, bereichLabel, vergleicheArtikel, type ArtikelWerkzeugKante } from '../../../lib/normtext/werkzeuge';
 import { ALLE_KARTEN, istVerfuegbar } from '../../../lib/startseiteConfig';
 import type { Status } from '../../../lib/startseiteConfigTypen';
 
@@ -30,13 +30,21 @@ import type { Status } from '../../../lib/startseiteConfigTypen';
 // passt, steht in `werkzeuge.ts` (Risikopfad, §7-Belege je Kante); die
 // Hauptnummer-Regel dort (335c ⊂ 335) gilt unverändert — Befund AN-5/AN-6
 // (Art. 324 statt 324a, ArG → Lohnfortzahlung) ist Welle 2 (Daten).
+// [Ergänzt 24.9.2026, Nachzug #1016 (S6-D6): die Kanten tragen seither exakte
+// Suffix-Grenzen (`vonArtikel`/`bisArtikel`). Etikett und Reihenfolge kommen
+// darum aus `bereichLabel`/`vergleicheArtikel` derselben Datei — «Art. 324a–324b»
+// statt «Art. 324», 8a nach 8. Dieses Modell filtert nicht nach Artikel; die
+// Abgleich-Regel `trifftArtikel` braucht es hier nicht.]
 
 /** Ein Artikelbereich, zu dem ein Werkzeug passt — mit seinem fachlichen Beleg. */
 interface WerkzeugArtikel {
-  /** «Art. 60» bzw. «Art. 127–142». */
+  /** «Art. 60», «Art. 324a–324b» bzw. «Art. 127–142» (`bereichLabel`). */
   label: string;
+  /** Hauptnummern; exakte Grenzen mit Suffix in `vonArtikel`/`bisArtikel`. */
   von: number;
   bis: number;
+  vonArtikel?: string;
+  bisArtikel?: string;
   /** Beleg der Kante (§7) — sichtbar per Aufklappen, nicht nur im `title`. */
   beleg: string;
 }
@@ -59,9 +67,9 @@ export interface WerkzeugAnsicht {
   erlassWeit: boolean;
 }
 
-function artikelLabel(von: number, bis: number): string {
-  return von === bis ? `Art. ${von}` : `Art. ${von}–${bis}`;
-}
+/** Exakte Grenzen einer Kante als Kennung («324a»; ohne Suffix die Hauptnummer). */
+function untergrenze(k: ArtikelWerkzeugKante): string { return k.vonArtikel ?? String(k.von); }
+function obergrenze(k: ArtikelWerkzeugKante): string { return k.bisArtikel ?? String(k.bis); }
 
 /** Karte → Zeile, oder `null`, wenn die Karte fehlt oder weder benutzbar noch
  *  geplant ist (eine verfügbare Karte ohne `href` hätte einen toten Link). */
@@ -94,7 +102,8 @@ export function werkzeugAnsicht(erlassKey: string): WerkzeugAnsicht {
   const kanten = ARTIKEL_WERKZEUGE
     .filter((k) => k.erlass === erlassKey)
     .slice()
-    .sort((a, b) => a.von - b.von || a.bis - b.bis);
+    .sort((a, b) => vergleicheArtikel(untergrenze(a), untergrenze(b))
+      || vergleicheArtikel(obergrenze(a), obergrenze(b)));
   const proId = new Map<string, WerkzeugZeile>();
   for (const k of kanten) {
     for (const id of k.werkzeuge) {
@@ -105,8 +114,15 @@ export function werkzeugAnsicht(erlassKey: string): WerkzeugAnsicht {
         z = neu;
         proId.set(id, z);
       }
-      const label = artikelLabel(k.von, k.bis);
-      if (!z.artikel.some((a) => a.label === label)) z.artikel.push({ label, von: k.von, bis: k.bis, beleg: k.beleg });
+      const label = bereichLabel(k);
+      if (!z.artikel.some((a) => a.label === label)) {
+        z.artikel.push({
+          label, von: k.von, bis: k.bis,
+          ...(k.vonArtikel !== undefined ? { vonArtikel: k.vonArtikel } : {}),
+          ...(k.bisArtikel !== undefined ? { bisArtikel: k.bisArtikel } : {}),
+          beleg: k.beleg,
+        });
+      }
     }
   }
   const scharf = [...proId.values()];
