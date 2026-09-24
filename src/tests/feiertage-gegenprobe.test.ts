@@ -129,8 +129,10 @@ const AUSNAHMEN_OSTERN: OsterAusnahme[] = [
   {
     kanton: 'NE', offset: 1,
     grund: 'Ostermontag ist in zpoFeiertage.ts FEIERTAGE ausdrücklich `kantone: ausser(\'NE\')` ' +
-      '— NE ist bewusst ausgenommen; die Bibliothek führt «Lundi de Pâques» für NE dennoch ' +
-      'als public.',
+      '— NE ist bewusst ausgenommen (RSN 941.02 Art. 3); die Bibliothek führt «Lundi de Pâques» ' +
+      'für NE dennoch als public. Seit RL-22 (24.9.2026) ist der NE-Ostermontag in Jahren mit ' +
+      'amtlich publizierter Schliesstagsliste (LI-CPC Art. 10a, bisher 2026) Feiertag — dort ' +
+      'stimmen beide Quellen überein, die Ausnahme greift nur noch für die übrigen Jahre.',
   },
   {
     kanton: 'NE', offset: 60,
@@ -183,6 +185,18 @@ test('Näfelser Fahrt GL 2027: LexMetrik berechnet amtlich korrekt den 1.4.2027 
 const NAEFELSER_FAHRT_2027_UNGEKLAERT_DATEN = new Set(['GL|2027-04-08', 'GL|2027-04-01']);
 function istNaefelserFahrt2027Ungeklaert(kanton: Kanton, datum: string): boolean {
   return NAEFELSER_FAHRT_2027_UNGEKLAERT_DATEN.has(`${kanton}|${datum}`);
+}
+
+// ─── Ausnahme: NE-Schliesstage (RL-22, 24.9.2026, R1-04, Entscheid W-10 a) ──
+// LI-CPC NE Art. 10a (RSN 251.1): Tage, an denen die Kantonsverwaltung mind.
+// halbtags geschlossen ist, gelten als Feiertag für Art. 142 ZPO. zpoFeiertage.ts
+// führt sie je Jahr mit amtlich publizierter Liste (NE_SCHLIESSTAGE, bisher 2026;
+// Quelle ne.ch «Jours fériés officiels», laut Zweitprüfung V8 abgerufen
+// 23.9.2026). date-holidays kennt keine Verwaltungsschliesstage — Abweichung
+// NUR_LEXMETRIK ist daher begründet; nur die hier gelisteten Einzeldaten.
+const NE_SCHLIESSTAG_AUSNAHMEN = new Set(['NE|2026-05-15', 'NE|2026-12-24', 'NE|2026-12-31']);
+function istNeSchliesstagAusnahme(kanton: Kanton, datum: string): boolean {
+  return NE_SCHLIESSTAG_AUSNAHMEN.has(`${kanton}|${datum}`);
 }
 
 function findeFesteAusnahme(kanton: Kanton, monat: number, tag: number): FesteAusnahme | undefined {
@@ -278,10 +292,12 @@ for (const kanton of ALLE_KANTONE) {
       const oster = findeOsterAusnahme(kanton, datum, jahr);
       const stephanstag = istStephanstagBezugstagAusnahme(kanton, m, d);
       const istNaefelserFahrt2027 = istNaefelserFahrt2027Ungeklaert(kanton, key);
+      const neSchliesstag = istNeSchliesstagAusnahme(kanton, key);
 
       const grund = fest?.grund ?? oster?.grund ??
-        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : '');
-      const begruendet = Boolean(fest || oster || stephanstag);
+        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : '') ||
+        (neSchliesstag ? 'NE-Schliesstag nach LI-CPC Art. 10a (RSN 251.1) — siehe Kommentar oben.' : '');
+      const begruendet = Boolean(fest || oster || stephanstag || neSchliesstag);
 
       const eintrag: Abweichung = {
         richtung: 'NUR_LEXMETRIK', kanton, jahr, datum: key, bibliotheksName: bibEintraege[0]?.name ?? '(kein Eintrag)',
