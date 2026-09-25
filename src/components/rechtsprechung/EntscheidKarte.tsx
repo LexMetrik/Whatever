@@ -51,9 +51,12 @@ export function EntscheidKarte({ e, onNorm }: {
       <Link to={ziel} className="block no-underline after:absolute after:inset-0 after:content-['']" data-quarantaene={e.quarantaene}>
         {/* Statuszeile: Gebiet + Leit-Marker links, Status rechts. K3: bricht
             um — @390 lief «Volltext nicht verfügbar» + «maschinell» über den
-            Kartenrand (auf main gesehen 23.9.2026, «maschinell» abgeschnitten). */}
+            Kartenrand (auf main gesehen 23.9.2026, «maschinell» abgeschnitten).
+            REST S1: seit «maschinell» links hinter dem Sachgebiet steht, bricht
+            auch die LINKE Gruppe selbst um — sonst @320 Überlauf 263/248 px
+            (R8-Sweep `kein-abschnitt`, Dichte «Karten», 25.9.2026). */}
         <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-micro">
-          <span className="flex items-center gap-2">
+          <span className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
             {verweis
               ? <span className="lc-badge lc-badge-soft">Vollständiges Urteil</span>
               : leit && <span className="lc-badge lc-badge-ok">Leitentscheid</span>}
