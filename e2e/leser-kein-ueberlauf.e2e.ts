@@ -121,7 +121,7 @@ test.describe('B6 — die Seite läuft nicht quer', () => {
 // W2·19-GLIEDERUNG/S9 — Zusatzpunkt David 9.8.2026: die Leiste darf NICHT von
 // links nach rechts scrollbar sein. Kein horizontaler Overflow im
 // [data-toc]-Scroller (Baum, Trefferliste, Zonen A/C) — lange Etikette
-// (HAdoptÜ-Anhang, tief verschachtelte OR-Zweige) brechen um statt
+// (HAÜ-Anhang, tief verschachtelte OR-Zweige) brechen um statt
 // überzulaufen oder einen Scrollbalken zu erzeugen. Dieselbe Garantie im
 // mobilen Gliederungs-Sheet (eigener Scroller, `[data-gliederung-baum-scroll]`).
 // Abnahme-Mass: `scrollWidth <= clientWidth` am Scroller-Container — die
@@ -147,7 +147,7 @@ test.describe('W2·19-GLIEDERUNG/S9 — Leiste ohne horizontalen Overflow', () =
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
-  test('HAdoptÜ (HAUE) — lange Anhang-/Titel-Etikette überlaufen nicht', async ({ page }) => {
+  test('HAÜ (HAUE) — lange Anhang-/Titel-Etikette überlaufen nicht', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/international/HAUE')
