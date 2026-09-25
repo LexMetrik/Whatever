@@ -276,3 +276,48 @@ describe('KanonischeTabelle (block.mehrspaltig.spalten)', () => {
     expect(out).toContain('x · y · z'); // verlustfrei linear
   });
 });
+
+// ── W2·31 B11 (26.9.2026): Legacy-Tabelle — Nachspann und Beschriftungsspalte ──
+// Befund EMRK-Geltungsbereich: 11 Einzelzellen-Fussnoten am Tabellenende zogen
+// Spalte 1 auf 3'118 px. Zusicherung: der Nachspann steht unter dem Raster
+// (verlustfrei, gleiche Reihenfolge), Einzelzellen MITTEN in der Tabelle bleiben
+// Zeilen, nur Spalte 1 darf umbrechen.
+describe('LegacyMehrspaltigeTabelle — Nachspann (B11)', () => {
+  const render = (zeilen: string[][], kopf?: string[]) => renderToString(
+    <ArtikelBody bloecke={[{ absatz: null, text: '', mehrspaltig: { kopf, zeilen } }]} artikel="scope_u1" passus={{ absatz: null }} />,
+  );
+
+  it('Einzelzellen-Zeilen am Ende → Nachspann unter dem Raster, Wortlaut und Reihenfolge unverändert', () => {
+    const out = render([
+      ['Albanien', '2. Oktober', '1996'],
+      ['Europa'],
+      ['Andorra*', '22. Januar', '1996'],
+      ['* Vorbehalte und Erklärungen. Lange Fussnote.'],
+      ['a Anwendungserklärung nach Art. 56.'],
+    ], ['Vertragsstaaten', 'Ratifikation', '']);
+    // Raster: 3 Kopfzellen, 3 Zeilen (die MITTLERE Einzelzelle bleibt Zeile) × 3 = 9 Zellen
+    expect((out.match(/role="columnheader"/g) ?? []).length).toBe(3);
+    expect((out.match(/role="cell"/g) ?? []).length).toBe(9);
+    const nach = out.slice(out.indexOf('data-tabelle-nachspann'));
+    expect(nach).toContain('* Vorbehalte und Erklärungen. Lange Fussnote.');
+    expect(nach.indexOf('* Vorbehalte')).toBeLessThan(nach.indexOf('a Anwendungserklärung'));
+    expect(nach).not.toContain('role="cell"');
+  });
+
+  it('ohne Einzelzellen-Ende kein Nachspann; einspaltige Tabelle bleibt ganz Raster', () => {
+    expect(render([['A', '1'], ['B', '2']])).not.toContain('data-tabelle-nachspann');
+    const einspaltig = render([['nur'], ['eine Spalte']]);
+    expect(einspaltig).not.toContain('data-tabelle-nachspann');
+    expect((einspaltig.match(/role="cell"/g) ?? []).length).toBe(2);
+  });
+
+  it('nur Spalte 1 darf umbrechen (mit Untergrenze), alle übrigen einzeilig, kein w-max', () => {
+    const out = render([['Karibische Gebiete (Bonaire)', '1. Dezember', '1955']]);
+    expect(out).not.toMatch(/class="table min-w-full w-max"/);
+    const zellen = [...out.matchAll(/role="cell" class="([^"]*)"/g)].map((m) => m[1]);
+    expect(zellen[0]).toContain('min-w-[9rem]');
+    expect(zellen[0]).not.toContain('whitespace-nowrap');
+    expect(zellen[1]).toContain('whitespace-nowrap');
+    expect(zellen[2]).toContain('whitespace-nowrap');
+  });
+});

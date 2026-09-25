@@ -123,23 +123,48 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
 // Alt-Renderer für Legacy-`{kopf,zeilen}` (Kanton/nicht migrierte Bund-Fallbacks):
 // UNVERÄNDERT übernommen — Inhalts-Heuristik + Padding bleiben, damit Kanton-Tabellen
 // byte-gleich rendern (L0-Abwärtskompatibilität). Bund nutzt KanonischeTabelle.
-function LegacyMehrspaltigeTabelle({ kopf, zeilen }: { kopf?: string[]; zeilen: string[][] }) {
-  const spalten = Math.max(kopf?.length ?? 0, ...zeilen.map((z) => z.length));
+// (Stand bis 25.9.2026; seit B11 gilt die folgende deklarierte Änderung — auch
+// für Kanton-Tabellen, deren Markup damit nicht mehr byte-gleich zum L0 ist.)
+//
+// ── W2·31-BILDSCHIRMBREITE B11 (26.9.2026) · DEKLARIERTE DARSTELLUNGSÄNDERUNG ──
+// Befund (gemessen am Build 7b13d9de8, `/gesetze/international/EMRK`, Geltungs-
+// bereichs-Tabelle): der Kasten war 3'558 px breit, sichtbar 603 (@1280–1920) bzw.
+// 312 (@390) — die Beschriftungsspalte allein 3'118 px. Zwei Ursachen, beide
+// Darstellung, keine Daten (§3/§7 — Zellwortlaut und Reihenfolge unverändert):
+//  1. NACHSPANN. Die Fussnoten der Tabelle («* Vorbehalte …», «a …» bis «j …»)
+//     stehen als EINZELZELLEN-Zeilen am Ende (Quelle: eine Zeile, die die ganze
+//     Tabelle überspannt). In Spalte 1 gepresst und ohne Umbruch (`w-max`) gaben
+//     sie der ganzen Spalte ihre Länge (bis 350 Zeichen). Sie stehen jetzt unter
+//     dem Raster als Absatz über die Kastenbreite — wie in der Quelle. Betroffen
+//     (Skript-Zählung public/normtext, 26.9.2026): 82 Legacy-Tabellen in 35
+//     Bundes-/Staatsvertrags-Erlassen, keine kantonale.
+//  2. BESCHRIFTUNGSSPALTE. `w-max` hielt JEDE Zelle einzeilig. Jetzt darf nur
+//     die erste Spalte umbrechen (nie unter 9 rem ≈ 16 Zeichen — sonst zerfällt
+//     sie wortweise, gesehen @390: 42 px, Zeile 1'102 px hoch); alle übrigen
+//     bleiben wie bisher einzeilig (`whitespace-nowrap`, Daten/Zahlen brechen nie,
+//     §N-4a). Passt die Tabelle schon heute, ändert sich nichts (`min-w-full`).
+//     Reicht die Breite auch so nicht, bleibt der Querscroll samt Affordanz.
+function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string[]; zeilen: string[][] }) {
+  const spalten = Math.max(kopf?.length ?? 0, ...alleZeilen.map((z) => z.length));
+  let rumpfEnde = alleZeilen.length;
+  while (spalten > 1 && rumpfEnde > 0 && alleZeilen[rumpfEnde - 1].length === 1) rumpfEnde--;
+  const zeilen = alleZeilen.slice(0, rumpfEnde);
+  const nachspann = alleZeilen.slice(rumpfEnde).map((z) => z[0]);
   const padZeile = (z: string[]) => {
     const padded = [...z];
     while (padded.length < spalten) padded.push('');
     return padded;
   };
   const spalteNumerisch = Array.from({ length: spalten }, (_, ci) =>
-    zeilen.some((z) => istNumerischeZelle(z[ci] ?? '')),
+    alleZeilen.some((z) => istNumerischeZelle(z[ci] ?? '')),
   );
   const zelleCls = (ci: number, kopfZeile: boolean) =>
-    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ''}${
+    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ci > 0 ? ' whitespace-nowrap' : ' min-w-[9rem]'}${
       kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'
     }`;
   return (
     <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0] lc-ziffern">
-      <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full w-max">
+      <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full">
         {kopf && kopf.length > 0 && (
           <span role="row" className="table-row bg-paper-sunken/40">
             {padZeile(kopf).map((h, ci) => (
@@ -161,6 +186,12 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen }: { kopf?: string[]; zeilen: 
           </span>
         ))}
       </span>
+      {/* `sticky left-0`: scrollt das Raster quer, bleibt der Nachspann im Blick. */}
+      {nachspann.length > 0 && (
+        <span data-tabelle-nachspann="" className="sticky left-0 block border-t border-rule-artikel px-3 py-1.5 text-ink-700">
+          {nachspann.map((t, i) => <span key={i} className="block leading-snug">{gruppiereTausender(t)}</span>)}
+        </span>
+      )}
     </span>
   );
 }
