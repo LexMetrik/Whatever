@@ -70,6 +70,20 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
     expect(kopfEntscheiddatum('Entscheiddatum: 04.07.2025 Abteilung B 2024/58, B 2024/59 Entscheid vom 3. Februar 2025', 'B 2024/58, B 2024/59'))
       .toMatchObject({ status: 'ok', datum: '2025-02-03' });
   });
+  it('Kopfzeilen-Liste mit beliebigem Trenner oder fremdem Aktenzeichen vorne belegt keinen Titel (Nachprüfung 25.9.2026, N1–N3/N5/N6)', () => {
+    const K = 'San Gallo Verwaltungsgericht 03.02.2025 ';
+    for (const liste of ['B 2024/58 B 2024/59', 'B 2024/58 / B 2024/59', 'B 2024/58; B 2024/59']) {
+      expect(kopfEntscheiddatum(`${K}${liste} Entscheid vom 14. Januar 2026 des Bundesgerichts`, 'B 2024/58, B 2024/59').status).toBe('widerspruch');
+    }
+    expect(kopfEntscheiddatum('Obergericht 01.06.2026 ZR1 26 20, ZR1 26 21 Urteil vom 14. Januar 2027', 'ZR1 2026 20, ZR1 2026 21').status).toBe('widerspruch');
+    // N6: eigenes Aktenzeichen erst an zweiter Stelle der Kopfzeile ⇒ trotzdem Plattform-Kandidat
+    const n6 = kopfEntscheiddatum(`${K}B 2024/58, B 2024/59 Entscheid vom 14. Januar 2026`, 'B 2024/59');
+    expect(n6.status).toBe('widerspruch');
+    if (n6.status === 'widerspruch') expect(n6.kandidaten.map((k) => k.beleg)).toContain('03.02.2025 B 2024/58, B 2024/59');
+    expect(kopfEntscheiddatum(`${K}B 2024/58, B 2024/59 Steuerbefreiung`, 'B 2024/59')).toMatchObject({ status: 'ok', datum: '2025-02-03', regel: 'kopfzeile-datum-az' });
+    // BGer-Zitat mit «_» stiftet kein Plattformdatum
+    expect(kopfEntscheiddatum('Verwaltungsgericht Regeste (BGer 14.01.2026 2C_511/2025, B 2024/59)', 'B 2024/59').status).toBe('fehlt');
+  });
   it('echt SG UV 2025/14: Titel auf PDF-Seite 2, Aktenzeichen im PDF ⇒ 21.10.2025', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
     expect(kantonsEntscheiddatum(d, SG_UV_2025_14_PDF)).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });

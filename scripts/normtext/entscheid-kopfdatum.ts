@@ -132,13 +132,26 @@ export function aktenzeichenRe(docket: string | null | undefined): RegExp | null
 }
 
 /**
+ * Plattform-Kopfzeile «TT.MM.JJJJ» + Kette aktenzeichenartiger Glieder: das eigene
+ * Aktenzeichen, «und», Versal-/Ziffernglieder («B», «2024/58», «ZR1»), getrennt
+ * durch Leerzeichen, «,», «;», «/». Ein Wort wie «Obergericht» beendet die Kette.
+ * `maske` (für `titelBelegt`) nimmt zusätzlich «Nr.» und BGer-Glieder mit «_» auf
+ * (lieber zu viel maskiert); die Erkennung (Form 2) nicht, damit ein Zitat
+ * «14.01.2026 2C_511/2025, B 2024/59» kein Plattformdatum stiftet.
+ */
+function kopfzeileKette(az: RegExp, maske: boolean): RegExp {
+  const glied = maske ? '(?:Fall-|Geschäfts)?Nr\\.:?|[\\p{Lu}\\d][\\p{Lu}\\d./_-]*(?![\\p{L}\\d])' : '[\\p{Lu}\\d][\\p{Lu}\\d./-]*(?![\\p{L}\\d_])';
+  return new RegExp(`(?<![\\d.])(\\d{2})\\.(\\d{2})\\.(\\d{4})(?:[ ,;/]+(?:(?:${az.source})|und|${glied}))*`, 'gu');
+}
+
+/**
  * Identitätsbeleg für einen Titel (nur nötig, wenn im selben Kopf ein
  * abweichendes Plattform-Datum steht): (a) der Kopf zitiert den Entscheid selbst
  * mit DIESEM Datum und dem EIGENEN Aktenzeichen («vom 4. August 2025, BV 2024/21»,
  * SG-Regeste; «vom 20.08.2026, Nr. 100.2025.363U», BE-Fusszeile), oder (b) das
  * eigene Aktenzeichen steht unmittelbar vor dem Titel, ohne Satzzeichen dazwischen
- * und nicht als Teil einer Plattform-Kopfzeile «TT.MM.JJJJ Az(, Az)*» (an keiner
- * Stelle der Liste) (AG «XBE.2025.10 Entscheid vom», BS «AK.2022.32 ENTSCHEID vom»).
+ * und nicht als Teil einer Plattform-Kopfzeile «TT.MM.JJJJ Az …» (an keiner
+ * Stelle der Liste, gleich welcher Trenner) (AG «XBE.2025.10 Entscheid vom», BS «AK.2022.32 ENTSCHEID vom»).
  */
 function titelBelegt(kopf: string, titelIndex: number, datum: string, az: RegExp | null): boolean {
   if (!az) return false;
@@ -147,12 +160,15 @@ function titelBelegt(kopf: string, titelIndex: number, datum: string, az: RegExp
     const d = m[1] ? iso(m[3], MONATE[m[2]], m[1]) : iso(m[6], m[5], m[4]);
     if (d === datum) return true;
   }
-  // Kein Aktenzeichen einer Plattform-Kopfzeile «TT.MM.JJJJ Az(, Az)*» — auch nicht
+  // Kein Aktenzeichen einer Plattform-Kopfzeile «TT.MM.JJJJ Az …» — auch nicht
   // das zweite, dem nur «, » vorangeht (Gegenprüfung 25.9.2026, SG «03.02.2025
-  // B 2024/58, B 2024/59 Entscheid vom 14. Januar 2026 des Bundesgerichts»).
-  // Die ganze Kopfzeile wird darum vor der Prüfung durch einen Stopp ersetzt.
-  const kopfzeile = new RegExp(`(?<![\\d.])\\d{2}\\.\\d{2}\\.\\d{4} (?:${az.source})(?:(?:, ?| und )(?:${az.source}))*`, 'gu');
-  const vor = kopf.slice(0, titelIndex).replace(kopfzeile, ';');
+  // B 2024/58, B 2024/59 Entscheid vom 14. Januar 2026 des Bundesgerichts»), und
+  // unabhängig vom Listentrenner (Leerzeichen, «/», «;», «und») oder einem
+  // FREMDEN Aktenzeichen davor (Nachprüfung 25.9.2026). Darum wird die ganze
+  // Kette aktenzeichenartiger Glieder direkt nach dem Datum (Versal-/Ziffernglied,
+  // «Nr.», «und», Trenner; ein Wort wie «Obergericht» beendet sie) durch einen
+  // Stopp ersetzt: kein eigenes Aktenzeichen im Nahbereich nach «TT.MM.JJJJ» belegt.
+  const vor = kopf.slice(0, titelIndex).replace(kopfzeileKette(az, true), ';');
   return new RegExp(`(?:${az.source})[^.;:()«»]{0,30}$`, 'u').test(vor);
 }
 
@@ -210,13 +226,13 @@ export function kopfEntscheiddatum(fullText: string | null | undefined, docket?:
     if (d) plattform.push({ datum: d, regel: 'feld-entscheiddatum', beleg: f[0] });
   }
   const az = aktenzeichenRe(docket);
-  if (az) {
-    const re = new RegExp(`(?<![\\d.])(\\d{2})\\.(\\d{2})\\.(\\d{4}) (?:${az.source})`, 'u');
-    const k = re.exec(kopf);
-    if (k) {
-      const d = iso(k[3], k[2], k[1]);
-      if (d) plattform.push({ datum: d, regel: 'kopfzeile-datum-az', beleg: k[0] });
-    }
+  // Form 2: das eigene Aktenzeichen irgendwo in der Kette nach dem Datum, auch
+  // hinter einem fremden («03.02.2025 B 2024/58, B 2024/59» für B 2024/59;
+  // Nachprüfung 25.9.2026: sonst gewann ein BGer-Titeldatum ohne Gegenkandidat).
+  for (const k of az ? kopf.matchAll(kopfzeileKette(az, false)) : []) {
+    const eigen = az!.exec(k[0].slice(10));
+    const d = eigen ? iso(k[3], k[2], k[1]) : null;
+    if (eigen && d) { plattform.push({ datum: d, regel: 'kopfzeile-datum-az', beleg: k[0].slice(0, 10 + eigen.index + eigen[0].length) }); break; }
   }
   let titel: KopfKandidat | null = null;
   let titelIndex = 0;
