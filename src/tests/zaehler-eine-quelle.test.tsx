@@ -5,6 +5,7 @@ import { parseHTML } from 'linkedom';
 import { LocaleProvider } from '../components/locale';
 import { Abdeckung } from '../pages/Abdeckung';
 import { Gesetze } from '../pages/Gesetze';
+import { Materialien } from '../pages/Materialien';
 import { VorlagenUebersicht } from '../pages/VorlagenUebersicht';
 import { Startseite } from '../pages/Startseite';
 import { GesetzeBlatt } from '../components/start/GesetzeBlatt';
@@ -47,7 +48,13 @@ describe('K5 · eine Zählquelle', () => {
     expect(t).toContain(`${nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse`);
     expect(t).toContain(`${nf(Z.gesetzeInternationalVolltext)} Staatsverträge`);
     expect(t).toContain(`${nf(Z.gesetzeKantonVolltext)} kantonalen Erlasse`);
-    expect(t).toContain(`${nf(Z.materialien)} amtliche Ressourcen`);
+    // REST S2 (25.9.2026, Fachänderung deklariert): Hausbegriffe statt
+    // «amtliche Ressourcen» — die Summe steht als Zahl, die Gattungen je mit
+    // ihrem Teilzähler (U12), die alte Mischbezeichnung nirgends mehr.
+    expect(t).toContain(`${nf(Z.materialien)}Materialien und Erläuterungen`);
+    expect(t).toContain(`${nf(Z.materialienGesetzgebung)} Materialien (Gesetzgebung)`);
+    expect(t).toContain(`${nf(Z.materialienErlaeuterungen)} Erläuterungen (Verwaltungspraxis)`);
+    expect(t).not.toContain('amtliche Ressourcen');
     // Die vermischte Summe (Entscheide + Verweise) steht nirgends mehr.
     expect(t).not.toContain(nf(Z.rechtsprechungVolltext + Z.rechtsprechungVollurteilVerweise));
   });
@@ -55,6 +62,17 @@ describe('K5 · eine Zählquelle', () => {
   it('b · /gesetze-Kopf zählt Bundesrecht, Kantone und Staatsverträge je einmal', () => {
     const t = text(html('/gesetze', <Gesetze />));
     expect(t).toContain(`${nf(Z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(Z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(Z.gesetzeInternationalVolltext)} Staatsverträge im Volltext`);
+  });
+
+  // REST S2 (Posten «Materialien-Kopf», 25.9.2026): die Ausgabe-Zeile nannte
+  // die Summe «Publikationen der Bundesbehörden» — falsch, der Bestand trägt
+  // kantonale Parlamentsgeschäfte und die Materialien der Gesetzgebung.
+  // ROT ZU BEKOMMEN: in `Materialien.tsx` die alte Ausgabe-Zeile zurückholen.
+  it('b2 · /materialien-Kopf zählt Gesetzgebung und Verwaltungspraxis getrennt', () => {
+    const { document } = parseHTML(`<!doctype html><html><body>${html('/materialien', <Materialien />)}</body></html>`);
+    const ausgabe = document.querySelector('.ub-ausgabe')?.textContent ?? '';
+    expect(ausgabe).toBe(`${nf(Z.materialienGesetzgebung)} Materialien (Gesetzgebung) · ${nf(Z.materialienErlaeuterungen)} Erläuterungen (Verwaltungspraxis), bibliografisch mit Live-Link`);
+    expect(ausgabe).not.toContain('Bundesbehörden');
   });
 
   it('c · /vorlagen: Filter-Fuss zählt, was die Seite zeigt (= Kopf)', () => {

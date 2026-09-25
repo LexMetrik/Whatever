@@ -90,11 +90,17 @@ export function Abdeckung() {
           </p>
         </Bestand>
 
-        <Bestand reg="m" titel="Materialien" zahl={nf(Z.materialien)} einheit="amtliche Ressourcen">
+        {/* REST S2 (Posten «Materialien-Kopf», 25.9.2026): «amtliche Ressourcen»
+            warf zwei Gattungen zusammen und nannte nur die Verwaltungspraxis.
+            Jetzt die Hausbegriffe mit den Teilzählern (U12/#1068) — Summe
+            weiter `Z.materialien`, Wortlaut wie Startseite und /materialien. */}
+        <Bestand reg="m" titel="Materialien" zahl={nf(Z.materialien)} einheit="Materialien und Erläuterungen">
           <p>
-            <strong className="font-semibold text-ink-900">{nf(Z.materialien)} amtliche Ressourcen</strong>{' '}
-            (Kreisschreiben, Leitfäden, Wegleitungen, Rundschreiben) — faktisches Soft-Law ohne
-            Gesetzesrang, je mit Live-Link zur amtlichen Fassung.
+            <strong className="font-semibold text-ink-900">{nf(Z.materialienGesetzgebung)} Materialien (Gesetzgebung)</strong>{' '}
+            — Botschaften, Vernehmlassungen, kantonale Parlamentsgeschäfte — und{' '}
+            <strong className="font-semibold text-ink-900">{nf(Z.materialienErlaeuterungen)} Erläuterungen (Verwaltungspraxis)</strong>{' '}
+            — Kreisschreiben, Leitfäden, Wegleitungen, Rundschreiben; faktisches Soft-Law ohne
+            Gesetzesrang. Jeder Eintrag bibliografisch, mit Live-Link zur amtlichen Fassung.
           </p>
         </Bestand>
 

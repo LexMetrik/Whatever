@@ -62,7 +62,9 @@ export function MaterialEntstehung({ materialKey, doktyp }: {
             gelten darum auf Erlass-Ebene — welcher Artikel welchen Erlasses gemeint ist, sagt der
             amtliche Text nicht eindeutig (§8).</>}
       </p>
-      <ul className="lr8-entst-anker">
+      {/* REST S2 (25.9.2026): Form der gelöschten `.lr8-entst-anker` als Token-
+          Utility — Liste mit Kante, wie die Verfahrenskette am Artikel. */}
+      <ul className="grid gap-0.5 border-l border-rule-soft pl-2.5 text-xs text-ink-600">
         {sidecar.anker.map((a) => (
           <li key={a.eId}>
             {ziel
@@ -70,7 +72,7 @@ export function MaterialEntstehung({ materialKey, doktyp }: {
               : <span title={a.ueberschrift}>{a.ueberschrift}</span>}
             {' '}
             <a href={ankerUrl(sidecar, a)} target="_blank" rel="noopener noreferrer"
-              className="text-ink-400 hover:text-brass-700"
+              className="text-ink-500 hover:text-ink-900"
               aria-label={`${a.ueberschrift} in der amtlichen Botschaft öffnen`}>↗</a>
           </li>
         ))}

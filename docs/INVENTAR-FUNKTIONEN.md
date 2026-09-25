@@ -1530,7 +1530,8 @@ BS-Ratschläge). Je Karte führt eine In-App-Detailseite mit bibliografischen
 Metadaten und Live-Link — **kein gespeicherter Volltext**.
 
 **Elemente.** Seitenkopf (Überschrift «Materialien» + Ausgabe-Zeile «<N>
-Publikationen der Bundesbehörden, bibliografisch mit Live-Link») · Filterfeld
+Materialien (Gesetzgebung) · <N> Erläuterungen (Verwaltungspraxis), bibliografisch mit
+Live-Link» — Wortlaut seit REST S2, 25.9.2026) · Filterfeld
 «Filtern» (Platzhalter «Titel, Nummer oder Behörde …», Fuss-Hinweis zum Suchumfang)
 plus zwei Auswahllisten **«Behörde»** (mit «Kürzel — Name» je Option) und
 **«Dokumenttyp»**. Darunter je Behörde eine Sektion (Gruppenkopf mit Kürzel und

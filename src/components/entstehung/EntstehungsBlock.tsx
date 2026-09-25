@@ -79,6 +79,39 @@ import type { ArtikelHistorie, HistorieEreignis } from '../../lib/normtext/histo
 // Frage «warum?» unabhängig.
 
 /** Wie viele Punkte dieses Artikels eine erfasste Begründung tragen (§8). */
+// ── W2·29-WERKBANK-REST S2 (25.9.2026) · DIE FORM STEHT AM BAUTEIL ────────────
+// Der Alt-Block `.lr8-entst*` in `src/index.css` ist gelöscht (Löschpflicht,
+// FAHRPLAN-WERKBANK-UMBAU §2/§7); seine Deklarationen stehen hier als Token-
+// Utility, Muster LESER S1 (`.lr7-*` → Bauteil). Werte 1:1 übernommen — Linien
+// statt Kästen (F0.6), Registerkante `reg-g`, Schrift `text-micro` (11 px).
+// Zwei ERKLÄRTE Abweichungen: (1) HN-D7/DK-06 — Text in `ink-400` (3.44:1 auf
+// `paper` hell, 3.30:1 dunkel, unter WCAG 1.4.3) steht jetzt in `ink-500`
+// (5.57:1 / 5.32:1; gerechnet aus design/tokens.json); (2) Messing-Hover
+// (`brass-700`) heisst `ink-900` — derselbe Wert (F0.3), ohne Lüge im Namen.
+// Die Namen `data-entstehung-*` bleiben die Sonden-Anker.
+const E = {
+  block: 'min-w-0',
+  /** Griff «Warum?»/«Alt/Neu»: Mini-Griff (`lc-btn-mini` steht am Tag, B-K1)
+   *  in der Zeile des Punktes. */
+  griff: 'group/griff ml-1 align-baseline text-micro aria-expanded:text-ink-900',
+  /** Der Pfeil dreht sich, wenn sein Griff offen ist. */
+  pfeil: 'inline-block transition-transform duration-fast group-aria-expanded/griff:rotate-90',
+  karte: 'mt-1.5 mb-1 grid min-w-0 gap-[0.1875rem] border-l-2 border-reg-g pl-2',
+  /** @390 eine Spalte: das Feldwort steht ÜBER seinem Wert (Sonde `entstehung-karte-e3` (d)). */
+  zeile: 'grid min-w-0 grid-cols-[minmax(0,7.5rem)_minmax(0,1fr)] items-baseline gap-x-2 gap-y-0.5 [@media(max-width:30rem)]:grid-cols-1',
+  feld: 'font-sans text-micro leading-[1.35] text-ink-500',
+  kette: 'mt-1 grid gap-px border-l border-rule-soft pl-2.5 text-micro leading-[1.35] text-ink-500',
+  mehr: 'mt-1 inline-flex text-micro leading-[inherit] text-ink-500 hover:text-ink-900',
+  fuss: 'mt-1 flex flex-wrap items-center gap-1 text-micro leading-[1.35]',
+  stand: 'mt-2 text-micro leading-[1.35]',
+  praxis: 'mt-0.5 text-micro leading-[1.35]',
+  ohne: 'mt-2 text-micro leading-[1.4] text-ink-500',
+  ohneKopf: 'mb-0.5',
+  ohneListe: 'grid gap-0.5 border-l border-rule-soft pl-2.5',
+  /** Solange der Synopse-Shard lädt: Karte + Lage in einem (Kante wie die Karte). */
+  synLaedt: 'my-1 min-w-0 border-l-2 border-reg-g pl-2 text-micro leading-[1.4] text-ink-500',
+} as const;
+
 function zaehleDeckung(ereignisse: readonly HistorieEreignis[], p: EntstehungProjektion | null) {
   let mitAenderung = 0;
   let mitBotschaft = 0;
@@ -113,14 +146,14 @@ function Verfahrenskette({ b }: { b: EntstehungBotschaft }) {
   // Vernehmlassung nach der Botschaft). Sortiert wird NUR die Anzeige (§3).
   const sortiert = [...schritte].sort((x, y) => (x.datum! < y.datum! ? -1 : x.datum! > y.datum! ? 1 : 0));
   return (
-    <ol className="lr8-entst-kette" data-entstehung-kette>
+    <ol className={E.kette} data-entstehung-kette>
       {sortiert.map((s, i) => {
         const url = verfahrensQuelleUrl(s);
         return (
           <li key={`${s.code}-${s.datum}-${i}`}>
             <span className="text-ink-700">{verfahrensLabel(s)}</span>
             <span> · <span className="num text-ink-600">{datumCh(s.datum!)}</span></span>
-            {url && <span> · <a href={url} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">Fundstelle&nbsp;↗</a></span>}
+            {url && <span> · <a href={url} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900">Fundstelle&nbsp;↗</a></span>}
           </li>
         );
       })}
@@ -143,41 +176,41 @@ function Aenderungskarte({ e, a, projektion, anker, artikel, abgerufen }: {
   const bbl = bblQuelle(e);
   const ankerTreffer = anker ? ankerFuerToken(anker, artikel) : null;
   return (
-    <div className="lr8-entst-karte" data-entstehung-karte>
-      <div className="lr8-entst-zeile">
-        <span className="lr8-entst-feld">Betrifft</span>
+    <div className={E.karte} data-entstehung-karte>
+      <div className={E.zeile}>
+        <span className={E.feld}>Betrifft</span>
         <span>{betrifft(e)}</span>
       </div>
-      <div className="lr8-entst-zeile">
-        <span className="lr8-entst-feld">Geändert durch</span>
+      <div className={E.zeile}>
+        <span className={E.feld}>Geändert durch</span>
         <span>
-          <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">
+          <a href={a.url} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900">
             {a.titel ?? a.as ?? 'Änderungserlass'}&nbsp;↗
           </a>
-          {a.titel && a.as && <span className="text-ink-400"> · <span className="num">{a.as}</span></span>}
-          {a.inkraft && <span className="text-ink-400"> · in Kraft seit <span className="num">{datumCh(a.inkraft)}</span></span>}
+          {a.titel && a.as && <span className="text-ink-500"> · <span className="num">{a.as}</span></span>}
+          {a.inkraft && <span className="text-ink-500"> · in Kraft seit <span className="num">{datumCh(a.inkraft)}</span></span>}
         </span>
       </div>
-      <div className="lr8-entst-zeile">
-        <span className="lr8-entst-feld">Begründung</span>
+      <div className={E.zeile}>
+        <span className={E.feld}>Begründung</span>
         <span>
           {b ? (
             <>
-              <a href={b.url} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">
+              <a href={b.url} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900">
                 {b.nummer ? `Botschaft ${b.nummer}` : 'Botschaft'}: {b.titel}&nbsp;↗
               </a>
-              <span className="text-ink-400"> · vom <span className="num">{datumCh(b.stand)}</span></span>
+              <span className="text-ink-500"> · vom <span className="num">{datumCh(b.stand)}</span></span>
               {ankerTreffer && (
                 <>
                   {' '}
                   <a href={ankerUrl(anker!, ankerTreffer)} target="_blank" rel="noopener noreferrer"
-                    className="lc-chip lr8-entst-sprung" data-entstehung-sprung
+                    className="lc-chip border-l-reg-g no-underline hover:text-ink-900" data-entstehung-sprung
                     title={ankerTreffer.ueberschrift}>Sprung zur Erläuterung&nbsp;↗</a>
                 </>
               )}
               <Verfahrenskette b={b} />
               {a.botschaft && (
-                <Link to={`/materialien/${encodeURIComponent(a.botschaft)}`} className="lr8-entst-mehr">
+                <Link to={`/materialien/${encodeURIComponent(a.botschaft)}`} className={E.mehr}>
                   Vorlage im Überblick<span aria-hidden>&nbsp;›</span>
                 </Link>
               )}
@@ -185,20 +218,20 @@ function Aenderungskarte({ e, a, projektion, anker, artikel, abgerufen }: {
           ) : bbl ? (
             <>
               {bbl.url
-                ? <a href={bbl.url} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700"><span className="num">{bbl.label}</span>&nbsp;↗</a>
+                ? <a href={bbl.url} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900"><span className="num">{bbl.label}</span>&nbsp;↗</a>
                 : <span className="num">{bbl.label}</span>}
               {' '}
-              <span className="lc-chip lr8-entst-luecke">Botschaft nicht erfasst</span>
+              <span className="lc-chip border-l-warn-500">Botschaft nicht erfasst</span>
             </>
           ) : (
             <span className="text-ink-500">Die amtliche Fussnote nennt keine Bundesblatt-Fundstelle.</span>
           )}
         </span>
       </div>
-      <p className="lr8-entst-fuss">
+      <p className={E.fuss}>
         <span className="lc-chip">amtlich · aus der Fedlex-Fussnote</span>
         {' '}
-        <span className="text-ink-400">
+        <span className="text-ink-500">
           Fedlex, Bundeskanzlei · Abruf <span className="num">{abgerufen ? datumCh(abgerufen) : 'unbekannt'}</span> ·
           massgeblich bleibt {AMTLICHE_FASSUNG_NOMEN}.
         </span>
@@ -207,7 +240,7 @@ function Aenderungskarte({ e, a, projektion, anker, artikel, abgerufen }: {
             vorkommt. Der Link beantwortet sie; er lädt nichts mit, die
             Deckungs-Sicht wird erst auf der Zielseite geholt. */}
         {' '}
-        <Link to="/materialien/deckung" className="lr8-entst-mehr">Was fehlt?</Link>
+        <Link to="/materialien/deckung" className={E.mehr}>Was fehlt?</Link>
       </p>
     </div>
   );
@@ -373,7 +406,7 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
   const synopseKarte = (schluessel: string, e?: HistorieEreignis) => {
     const id = `${kartenId}-syn-${schluessel}`;
     if (synShard === undefined) {
-      return <p className="lr8-syn lr8-syn-lage" id={id} data-synopse-karte data-synopse-lage="laedt">Fassungsvergleich: lädt …</p>;
+      return <p className={E.synLaedt} id={id} data-synopse-karte data-synopse-lage="laedt">Fassungsvergleich: lädt …</p>;
     }
     let lage: SynopseLage;
     if (e) {
@@ -402,11 +435,11 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
         {treffer && (
           <>
             {' '}
-            <button type="button" className="lc-btn-mini lr8-entst-griff text-micro"
+            <button type="button" className={`lc-btn-mini ${E.griff}`}
               aria-expanded={auf} aria-controls={auf ? `${kartenId}-${i}` : undefined}
               data-entstehung-griff
               onClick={() => setOffen(auf ? null : i)}>
-              Warum?<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span>
+              Warum?<span aria-hidden className={E.pfeil}>&nbsp;›</span>
             </button>
           </>
         )}
@@ -414,11 +447,11 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
         {/* Der zweite Griff: WAS stand vorher. Er steht an JEDEM Punkt, auch
             ohne erfasste Änderung — die Frage ist von der Frage «warum?»
             unabhängig, und die Antwort («erst ab 2021») ist auch eine. */}
-        <button type="button" className="lc-btn-mini lr8-entst-griff text-micro"
+        <button type="button" className={`lc-btn-mini ${E.griff}`}
           aria-expanded={synAuf} aria-controls={synAuf ? `${kartenId}-syn-${synSchluessel}` : undefined}
           data-synopse-griff
           onClick={() => setSynOffen(synAuf ? null : synSchluessel)}>
-          Alt/Neu<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span>
+          Alt/Neu<span aria-hidden className={E.pfeil}>&nbsp;›</span>
         </button>
         {auf && treffer && projektion && (
           <div id={`${kartenId}-${i}`}>
@@ -432,9 +465,9 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
   };
 
   return (
-    <div className="lr8-entst" data-entstehung>
+    <div className={E.block} data-entstehung>
       <ArtikelHistorieZeile historie={historie} zeitleiste zusatz={zusatz} />
-      <p className="lr8-entst-stand" data-entstehung-stand>
+      <p className={E.stand} data-entstehung-stand>
         {projektion === undefined ? (
           <span className="text-ink-500">Entstehung: lädt …</span>
         ) : projektion === null || deckung.mitAenderung === 0 ? (
@@ -454,11 +487,11 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
         // zu ihrem Stand kein Ereignis an diesem Artikel (gemessen 11.9.2026:
         // 1175 solcher Blöcke, 0 davon auf einem Datum mit Ereignis). Sie
         // deshalb wegzulassen hiesse, einen belegten Wortlaut zu verschweigen.
-        <div className="lr8-entst-ohne" data-entstehung-ohne-ereignis>
-          <p className="lr8-entst-ohne-kopf">
+        <div className={E.ohne} data-entstehung-ohne-ereignis>
+          <p className={E.ohneKopf}>
             Wortlaut-Änderungen ohne Fussnoten-Ereignis im amtlichen Apparat:
           </p>
-          <ul>
+          <ul className={E.ohneListe}>
             {ohneEreignis.map((t, i) => {
               const k = `o${i}`;
               const auf = synOffen === k;
@@ -466,11 +499,11 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
                 <li key={k}>
                   <span className="text-ink-600">Stand <span className="num">{datumCh(t.schritt.bis)}</span></span>
                   {' '}
-                  <button type="button" className="lc-btn-mini lr8-entst-griff text-micro"
+                  <button type="button" className={`lc-btn-mini ${E.griff}`}
                     aria-expanded={auf} aria-controls={auf ? `${kartenId}-syn-${k}` : undefined}
                     data-synopse-griff
                     onClick={() => setSynOffen(auf ? null : k)}>
-                    Alt/Neu<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span>
+                    Alt/Neu<span aria-hidden className={E.pfeil}>&nbsp;›</span>
                   </button>
                   {auf && synopseKarte(k)}
                 </li>
@@ -485,11 +518,11 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
         // nächste führt ihn unverändert wieder. Bis 12.9.2026 buchte der Generator
         // daraus «entfallen» + «neu eingefügt» — 22 Aufhebungen, die es nie gab
         // (CHEMRRV Art. 4–24, Gegenprüfungs-Befund A6 zu PR #798).
-        <div className="lr8-entst-ohne" data-entstehung-quellluecke>
-          <p className="lr8-entst-ohne-kopf">
+        <div className={E.ohne} data-entstehung-quellluecke>
+          <p className={E.ohneKopf}>
             Stände, in denen die amtliche Quelle diesen Artikel nicht führt:
           </p>
-          <ul>
+          <ul className={E.ohneListe}>
             {quellLuecken.map((t, i) => {
               const k = `q${i}`;
               const auf = synOffen === k;
@@ -499,11 +532,11 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
                     Stand <span className="num">{datumCh(t.schritt.bis)}</span>
                   </span>
                   {' '}
-                  <button type="button" className="lc-btn-mini lr8-entst-griff text-micro"
+                  <button type="button" className={`lc-btn-mini ${E.griff}`}
                     aria-expanded={auf} aria-controls={auf ? `${kartenId}-syn-${k}` : undefined}
                     data-synopse-griff
                     onClick={() => setSynOffen(auf ? null : k)}>
-                    Alt/Neu<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span>
+                    Alt/Neu<span aria-hidden className={E.pfeil}>&nbsp;›</span>
                   </button>
                   {auf && synopseKarte(k)}
                 </li>
@@ -512,7 +545,7 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
           </ul>
         </div>
       )}
-      <p className="lr8-entst-praxis" data-entstehung-praxis>
+      <p className={E.praxis} data-entstehung-praxis>
         <span className="text-ink-500">
           {praxis === undefined
             ? 'Praxis: lädt …'

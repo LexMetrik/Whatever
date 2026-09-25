@@ -36,13 +36,53 @@ import {
 // ganze Apparat steht im Fuss JEDER Karte, weil jede Karte einen Wortlaut
 // zitiert. Und wo nichts vorliegt, sagt die Karte, was fehlt, statt zu schweigen.
 
-/** Ein Stück Wortlaut in seiner Rolle: gestrichen, neu, unverändert. */
-function Stuecke({ stuecke }: { stuecke: readonly DiffStueck[] }) {
+// ── W2·29-WERKBANK-REST S2 (25.9.2026) · DIE FORM STEHT AM BAUTEIL ────────────
+// Der Alt-Block `.lr8-syn*` in `src/index.css` ist gelöscht (Löschpflicht,
+// FAHRPLAN-WERKBANK-UMBAU §2/§7); seine Deklarationen stehen hier als Token-
+// Utility (Muster LESER S1). Werte 1:1 — Linien statt Kästen (F0.6), Kante
+// `reg-g` (F0.2), Markierung des NEUEN Wortlauts mit dem Suchtreffer-Paar
+// `brass-200`/`ink-900` (A35), Durchstrich für den gestrichenen.
+// ERKLÄRTE Abweichungen: (1) die 10-px-Etiketten (`0.625rem`: Zeilenmarke,
+// Seiten-Etikett «Alt»/«Neu», Nachweis-Feld) stehen auf der kleinsten
+// Hausstufe `text-micro` (11 px, design/tokens.json — «kleinste Stufe des
+// Hauses»); (2) HN-D7/DK-06 — Text in `ink-400` (3.44:1 auf `paper` hell,
+// 3.30:1 dunkel) steht in `ink-500` (5.57:1 / 5.32:1). `data-synopse-*`
+// bleiben die Sonden-Anker (neu `data-synopse-text` für den zitierten Wortlaut).
+const S = {
+  karte: 'mt-1.5 mb-1 min-w-0 border-l-2 border-reg-g pl-2',
+  kopf: 'mb-1 text-micro leading-[1.35]',
+  /** Zustände ohne Gegenüberstellung (§8) — nie eine leere Karte. */
+  hinweis: 'my-1 text-micro leading-[1.4] text-ink-500',
+  /** Chip-Tick «warn»: eine Auskunft über unseren Bestand, kein Rechtsstatus (B3). */
+  warn: 'lc-chip border-l-warn-500',
+  zeilen: 'mt-1 grid min-w-0 gap-2',
+  /** EINE Zeile = ein Absatz; zwei Spalten ab Tablet (48 rem), gestapelt darunter. */
+  zeile: 'grid min-w-0 grid-cols-1 gap-x-3 gap-y-0.5 border-t border-rule-soft pt-1.5 md:grid-cols-2',
+  marke: 'col-span-full font-sans text-micro leading-[1.35] text-ink-600',
+  spalte: 'min-w-0',
+  beide: 'col-span-full min-w-0',
+  seite: 'block font-sans text-micro leading-[1.35] text-ink-500',
+  /** Der zitierte Wortlaut: `pre-line` hält die Absatzgrenzen (`synopse-diff.ts`). */
+  text: 'text-xs leading-[1.45] text-ink-700 whitespace-pre-line [overflow-wrap:anywhere]',
+  leer: 'text-micro leading-[1.4] text-ink-500',
+  /** Entwurf ↔ Beschluss (E6): derselbe Apparat eine Stufe tiefer eingerückt. */
+  entwurf: 'mt-2 border-l border-rule-soft pl-2',
+  /** Zitat-Nachweis (§7 a–d) — in JEDER Karte. */
+  fuss: 'mt-2 grid gap-px border-t border-rule-soft pt-1.5 text-micro leading-[1.35] text-ink-500',
+  feld: 'font-sans text-micro leading-[1.35] text-ink-500',
+} as const;
+
+/** Ein Stück Wortlaut in seiner Rolle: gestrichen, neu, unverändert.
+ *  `flach`: ein GANZ neuer Block bekommt keine Fläche — steht daneben ohnehin
+ *  «eingefügt» und ist jedes Wort neu, sagte die Tönung nichts mehr (F0.2);
+ *  der Durchstrich der gestrichenen Seite bleibt, er IST die Aussage.
+ *  `<del>`/`<ins>` tragen die Semantik an die Vorlesehilfe weiter (WCAG 1.3.1). */
+function Stuecke({ stuecke, flach = false }: { stuecke: readonly DiffStueck[]; flach?: boolean }) {
   return (
     <>
       {stuecke.map((s, i) => (
-        s.marke === 'weg' ? <del key={i}>{s.text}</del>
-          : s.marke === 'neu' ? <ins key={i}>{s.text}</ins>
+        s.marke === 'weg' ? <del key={i} className="line-through decoration-1 text-ink-500">{s.text}</del>
+          : s.marke === 'neu' ? <ins key={i} className={flach ? 'no-underline text-ink-700' : 'no-underline bg-brass-200 px-px text-ink-900'}>{s.text}</ins>
             : <span key={i}>{s.text}</span>
       ))}
     </>
@@ -68,7 +108,7 @@ const ZEILEN_WORT: Record<SynopseZeile['art'], string> = {
 /**
  * Die Gegenüberstellung selbst.
  *
- * Zwei Spalten ab Tablet, untereinander bei 320 px (`src/index.css`). Die
+ * Zwei Spalten ab Tablet, untereinander bei 320 px (`S.zeile`). Die
  * Seiten-Etiketten «Alt»/«Neu» stehen in JEDER Zelle und nicht nur in einer
  * Kopfzeile: gestapelt wäre eine Kopfzeile drei Bildschirmhöhen entfernt, und
  * bei einem Gesetzestext darf keine Sekunde Zweifel bestehen, welche Spalte
@@ -80,33 +120,33 @@ function Gegenueberstellung({ zeilen, altWort, neuWort }: {
   neuWort: string;
 }) {
   return (
-    <ol className="lr8-syn-zeilen" data-synopse-zeilen>
+    <ol className={S.zeilen} data-synopse-zeilen>
       {zeilen.map((z, i) => (
-        <li key={i} className="lr8-syn-zeile" data-synopse-zeile={z.art}>
-          <p className="lr8-syn-marke">
+        <li key={i} className={S.zeile} data-synopse-zeile={z.art}>
+          <p className={S.marke}>
             {marke(z)}
             {marke(z) && ' · '}
-            <span className="text-ink-400">{ZEILEN_WORT[z.art]}</span>
+            <span className="text-ink-500">{ZEILEN_WORT[z.art]}</span>
           </p>
           {z.art === 'gleich' ? (
             // Unverändertes steht EINMAL über beide Spalten. Weglassen wäre
             // falsch — der Absatz gehört zum Artikel und der Leser braucht den
             // Zusammenhang —, aber ihn zweimal wortgleich nebeneinanderzustellen
             // verdoppelte nur die Höhe der Karte, ohne eine Frage zu beantworten.
-            <div className="lr8-syn-spalte lr8-syn-beide">
-              <p className="lr8-syn-text">{(z.neu ?? z.alt ?? []).map((s) => s.text).join('')}</p>
+            <div className={S.beide}>
+              <p className={S.text} data-synopse-text>{(z.neu ?? z.alt ?? []).map((s) => s.text).join('')}</p>
             </div>
           ) : (
             <>
-              <div className="lr8-syn-spalte">
-                <span className="lr8-syn-seite">{altWort}</span>
-                {z.alt ? <p className="lr8-syn-text"><Stuecke stuecke={z.alt} /></p>
-                  : <p className="lr8-syn-leer">— in dieser Fassung nicht vorhanden</p>}
+              <div className={S.spalte}>
+                <span className={S.seite}>{altWort}</span>
+                {z.alt ? <p className={S.text} data-synopse-text><Stuecke stuecke={z.alt} flach={z.art === 'eingefuegt'} /></p>
+                  : <p className={S.leer}>— in dieser Fassung nicht vorhanden</p>}
               </div>
-              <div className="lr8-syn-spalte">
-                <span className="lr8-syn-seite">{neuWort}</span>
-                {z.neu ? <p className="lr8-syn-text"><Stuecke stuecke={z.neu} /></p>
-                  : <p className="lr8-syn-leer">— aufgehoben</p>}
+              <div className={S.spalte}>
+                <span className={S.seite}>{neuWort}</span>
+                {z.neu ? <p className={S.text} data-synopse-text><Stuecke stuecke={z.neu} flach={z.art === 'eingefuegt'} /></p>
+                  : <p className={S.leer}>— aufgehoben</p>}
               </div>
             </>
           )}
@@ -122,10 +162,10 @@ function Nachweis({ wort, stand, liveUrl, quelleUrl, abgerufen }: {
 }) {
   return (
     <li>
-      <span className="lr8-syn-feld">{wort}</span>{' '}
+      <span className={S.feld}>{wort}</span>{' '}
       <span className="num">{datumCh(stand)}</span>
-      {liveUrl && <> · <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">amtliche Fassung&nbsp;↗</a></>}
-      {quelleUrl && <> · <a href={quelleUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">ausgewertete Quelle&nbsp;↗</a></>}
+      {liveUrl && <> · <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900">amtliche Fassung&nbsp;↗</a></>}
+      {quelleUrl && <> · <a href={quelleUrl} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900">ausgewertete Quelle&nbsp;↗</a></>}
       {abgerufen && <> · Abruf <span className="num">{datumCh(abgerufen)}</span></>}
     </li>
   );
@@ -149,12 +189,12 @@ export function SynopseKarte({ lage, shard, geltend, entwurf, zustand, id }: {
   id: string;
 }) {
   return (
-    <div className="lr8-syn" data-synopse-karte id={id}>
+    <div className={S.karte} data-synopse-karte id={id}>
       {lage.art === 'vergleich'
         ? <Vergleich treffer={lage.treffer} shard={shard!} geltend={geltend} entwurf={entwurf} zustand={zustand} />
         : lage.art === 'quelle_unvollstaendig'
           ? <QuellLuecke treffer={lage.treffer} />
-          : <p className="lr8-syn-lage" data-synopse-lage={lage.art}>{lageSatz(lage)}</p>}
+          : <p className={S.hinweis} data-synopse-lage={lage.art}>{lageSatz(lage)}</p>}
     </div>
   );
 }
@@ -213,15 +253,15 @@ function QuellLuecke({ treffer }: { treffer: QuellLueckeTreffer }) {
   const fuehrt = daten.length === 1 ? 'führt' : 'führen';
   return (
     <div data-synopse-lage="quelle_unvollstaendig">
-      <p className="lr8-syn-kopf">
+      <p className={S.kopf}>
         <span className="lc-overline"><span className="lc-punkt" aria-hidden />Quelle unvollständig</span>{' '}
         <span className="text-ink-500">
           {artikel.label}
           {artikel.ueberschrift && <> · {artikel.ueberschrift}</>}
         </span>
       </p>
-      <p className="lr8-syn-hinweis" data-synopse-quellluecke>
-        <span className="lc-chip lr8-syn-warn">Quelle unvollständig</span>{' '}
+      <p className={S.hinweis} data-synopse-quellluecke>
+        <span className={S.warn}>Quelle unvollständig</span>{' '}
         {/* «nur in einem Änderungsanhang» ist keine Vermutung, sondern Bedingung der
             Buchung: ohne diesen Beleg wird gar keine Quelllücke gebucht (Auflage
             Gegenprüfung PR #801, `findeQuellLuecken` (4), Tor-Ast in
@@ -234,12 +274,12 @@ function QuellLuecke({ treffer }: { treffer: QuellLueckeTreffer }) {
           Artefakt, nicht die Bestimmung.
         </>}
       </p>
-      <ul className="lr8-syn-fuss" data-synopse-fuss>
+      <ul className={S.fuss} data-synopse-fuss>
         {belege.map((b) => (
           <Nachweis key={b.datum} wort="Betroffener Stand" stand={b.datum} liveUrl={b.liveUrl}
             quelleUrl={b.xmlUrl} abgerufen={b.abgerufen} />
         ))}
-        <li className="text-ink-400">
+        <li className="text-ink-500">
           Erkannt über die ganze Stände-Kette: dieselbe eId fehlt in diesem einen Abschnitt
           und kehrt Zeichen für Zeichen unverändert zurück.
         </li>
@@ -263,7 +303,7 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
   const neuWort = neuHerkunft === 'geltend' ? 'Neu · geltend' : `Neu · ab ${datumCh(schritt.bis)}`;
   return (
     <>
-      <p className="lr8-syn-kopf">
+      <p className={S.kopf}>
         <span className="lc-overline"><span className="lc-punkt" aria-hidden />Fassungsvergleich</span>{' '}
         <span className="text-ink-500">
           {artikel.label}
@@ -274,42 +314,42 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
         </span>
       </p>
       {neu === null && (
-        <p className="lr8-syn-hinweis">Der Artikel ist mit diesem Stand entfallen; rechts steht darum nichts.</p>
+        <p className={S.hinweis}>Der Artikel ist mit diesem Stand entfallen; rechts steht darum nichts.</p>
       )}
       {zustand === 'aufgehoben' && neuHerkunft === 'geltend' && (
-        <p className="lr8-syn-hinweis">Der Artikel ist heute aufgehoben — die rechte Spalte zeigt den Korpus-Stand dieser Aufhebung.</p>
+        <p className={S.hinweis}>Der Artikel ist heute aufgehoben — die rechte Spalte zeigt den Korpus-Stand dieser Aufhebung.</p>
       )}
       {/* W2·27 (15.9.2026): ohne amtlichen Vermerk sagt die Karte, WAS sie weiss
           — dass kein Wortlaut da ist —, und nicht, was sie vermutet (§8). */}
       {zustand === 'leer-ungeklaert' && neuHerkunft === 'geltend' && (
-        <p className="lr8-syn-hinweis">{LEERSTELLE_ERLAEUTERUNG} Die rechte Spalte zeigt den Korpus-Stand.</p>
+        <p className={S.hinweis}>{LEERSTELLE_ERLAEUTERUNG} Die rechte Spalte zeigt den Korpus-Stand.</p>
       )}
       {artikel.zustand === 'ohne_ereignis' && (
-        <p className="lr8-syn-hinweis" data-synopse-ohne-ereignis>
-          <span className="lc-chip lr8-syn-warn">ohne Fussnoten-Ereignis</span>{' '}
+        <p className={S.hinweis} data-synopse-ohne-ereignis>
+          <span className={S.warn}>ohne Fussnoten-Ereignis</span>{' '}
           Dieser Wortlaut-Unterschied steht in den amtlichen Konsolidierungen, aber der amtliche
           Fussnoten-Apparat führt dazu kein Änderungs-Ereignis. Gezeigt wird beides, aufgelöst nichts.
         </p>
       )}
       {mehrdeutig && (
-        <p className="lr8-syn-hinweis">
+        <p className={S.hinweis}>
           Auf diesen Stand wirkten mehrere Änderungserlasse — der Unterschied gehört dem Stand,
           nicht sicher einem einzelnen Erlass.
         </p>
       )}
       {hatUnterschied(zeilen) && <Gegenueberstellung zeilen={zeilen} altWort={altWort} neuWort={neuWort} />}
       {!hatUnterschied(zeilen) && (nurTitelGeaendert(artikel, zeilen)
-        ? <p className="lr8-syn-lage" data-synopse-lage="nur-titel">
+        ? <p className={S.hinweis} data-synopse-lage="nur-titel">
             Am Wortlaut dieses Artikels ist zwischen den beiden Ständen kein Unterschied erkennbar —
             geändert wurde nur die amtliche Sachüberschrift: {artikel.ueberschrift
               ? <>«{artikel.ueberschrift}» wurde zu «{artikel.ueberschriftNeu}»</>
               : <>der Artikel trägt neu die Sachüberschrift «{artikel.ueberschriftNeu}»</>}.
           </p>
-        : <p className="lr8-syn-lage" data-synopse-lage="gleich">
+        : <p className={S.hinweis} data-synopse-lage="gleich">
             Zwischen den beiden Ständen ist am Wortlaut dieses Artikels kein Unterschied erkennbar.
           </p>)}
       {entwurf && <EntwurfBlock fund={entwurf} />}
-      <ul className="lr8-syn-fuss" data-synopse-fuss>
+      <ul className={S.fuss} data-synopse-fuss>
         <Nachweis wort="Alt" stand={schritt.von} liveUrl={altStand?.liveUrl}
           quelleUrl={altStand?.xmlUrl} abgerufen={altStand?.abgerufen} />
         {neuHerkunft === 'geltend'
@@ -318,11 +358,11 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
           : <Nachweis wort="Neu" stand={schritt.bis} liveUrl={neuStand?.liveUrl}
               quelleUrl={neuStand?.xmlUrl} abgerufen={neuStand?.abgerufen} />}
         <li>
-          <span className="lr8-syn-feld">Normalisierung</span>{' '}
+          <span className={S.feld}>Normalisierung</span>{' '}
           <span className="num">{shard.normProfil}</span>
-          <span className="text-ink-400"> · Prüfsumme des Alt-Blocks <span className="num">{artikel.shaNorm.slice(0, 12)}…</span></span>
+          <span className="text-ink-500"> · Prüfsumme des Alt-Blocks <span className="num">{artikel.shaNorm.slice(0, 12)}…</span></span>
         </li>
-        <li className="text-ink-400">
+        <li className="text-ink-500">
           Wortlaut amtlich zitiert · massgeblich bleibt {AMTLICHE_FASSUNG_NOMEN}.
         </li>
       </ul>
@@ -353,12 +393,12 @@ function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
 function EntwurfBlock({ fund }: { fund: EntwurfFund }) {
   const { shard, artikel } = fund;
   return (
-    <div className="lr8-syn-entwurf" data-synopse-entwurf>
-      <p className="lr8-syn-kopf">
+    <div className={S.entwurf} data-synopse-entwurf>
+      <p className={S.kopf}>
         <span className="lc-overline"><span className="lc-punkt" aria-hidden />Entwurf des Bundesrats</span>{' '}
         <span className="text-ink-500">{artikel.label}</span>
       </p>
-      <p className="lr8-syn-hinweis">
+      <p className={S.hinweis}>
         {artikel.art === 'nur_entwurf'
           // §8 · «nur im Entwurf» heisst NICHT «gestrichen»: der Join läuft über
           // das vollständige Etikett, und das Parlament ändert oft nur den
@@ -368,27 +408,27 @@ function EntwurfBlock({ fund }: { fund: EntwurfFund }) {
           : 'Unter demselben Etikett weicht der Schlussabstimmungstext vom Entwurf ab.'}
         {' '}Der Entwurf druckt nur die geänderten Teile des Artikels ab; was daraus wurde, steht oben in der Spalte «Neu».
       </p>
-      <div className="lr8-syn-spalte">
-        <span className="lr8-syn-seite">Wortlaut im Entwurf</span>
-        <p className="lr8-syn-text">{artikel.entwurf}</p>
+      <div className={S.spalte}>
+        <span className={S.seite}>Wortlaut im Entwurf</span>
+        <p className={S.text} data-synopse-text>{artikel.entwurf}</p>
       </div>
-      <ul className="lr8-syn-fuss">
+      <ul className={S.fuss}>
         <li>
-          <span className="lr8-syn-feld">Entwurf</span>{' '}
+          <span className={S.feld}>Entwurf</span>{' '}
           {shard.entwurfDok.datum && <><span className="num">{datumCh(shard.entwurfDok.datum)}</span> · </>}
-          <a href={entwurfUrl(shard, artikel)} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">
+          <a href={entwurfUrl(shard, artikel)} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900">
             <span className="num">{shard.entwurfDok.fga}</span>&nbsp;↗
           </a>
         </li>
         <li>
-          <span className="lr8-syn-feld">Beschluss</span>{' '}
+          <span className={S.feld}>Beschluss</span>{' '}
           {shard.beschlussDok.datum && <><span className="num">{datumCh(shard.beschlussDok.datum)}</span> · </>}
-          <a href={shard.beschlussDok.liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brass-700">
+          <a href={shard.beschlussDok.liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-ink-900">
             <span className="num">{shard.beschlussDok.fga}</span>&nbsp;↗
           </a>
-          <span className="text-ink-400"> · Abruf <span className="num">{datumCh(shard.abgerufen)}</span></span>
+          <span className="text-ink-500"> · Abruf <span className="num">{datumCh(shard.abgerufen)}</span></span>
         </li>
-        <li className="text-ink-400">
+        <li className="text-ink-500">
           Zuordnung über das Artikel-Label, nie über die Dokument-id — ein id-Abgleich ordnete
           gemessen 7 von 41 Artikeln falsch zu.
         </li>
