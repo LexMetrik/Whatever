@@ -1,0 +1,627 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "bund/bge/152_II_196",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "abteilung": "II",
+      "nummer": "152 II 196",
+      "bgeReferenz": "152 II 196",
+      "zitierung": "BGE 152 II 196",
+      "datum": "2025-06-30",
+      "sprache": "de",
+      "leitcharakter": "leitentscheid",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "public",
+      "rubrum": {
+        "besetzung": "Bundesrichterin Aubry Girardin, Präsidentin, Bundesrichter Donzallaz, Bundesrichterinnen Hänni, Ryter, Bundesrichter Kradolfer, Gerichtsschreiberin Wortha",
+        "parteien": "Pro Natura - Schweizerischer Bund für Naturschutz, Beschwerdeführer, vertreten durch Kathrin Abegglen und Dr. Gregor Geisser, Rechtsanwälte, gegen Amt für Natur, Jagd und Fischerei (ANJF) des Kantons St. Gallen, Rechtsdienst, Davidstrasse 35, 9001 St. Gallen",
+        "gegenstand": "Abschuss eines schadenstiftenden Wolfs im Gebiet Schils- und Weisstannental",
+        "vorinstanz": "Verwaltungsgerichts des Kantons St. Gallen, Abteilung II, vom 11. März 2024 (B 2023/259)"
+      },
+      "regeste": {
+        "text": "Art. 12 Abs. 2 JSG; Art. 10 quinquies Abs. 1 lit. a JSV (Fassung 1. Juli 2023); Abschuss eines Einzelwolfes; Feststellung der Herdenschutzmassnahmen und des schadenstiftenden Tieres. Ein Einzelwolf darf nur zum Abschuss freigegeben werden, wenn zuvor Massnahmen zum Schutz der Herde getroffen wurden. Die Feststellung solcher Herdenschutzmassnahmen erfolgt gemäss der Vollzugshilfe Herdenschutz des BAFU (E. 4). Die vorliegenden Abklärungen zum Herdenschutzzaun (E. 6), zu den Witterungsverhältnissen (E. 7) und zum schadenstiftenden Tier (E. 8) genügen diesen Anforderungen nicht und erweisen sich überdies als willkürlich.",
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 12 Abs. 2 JSG; Art. 10quinquies Abs. 1 lit. a JSV (Fassung 1. Juli 2023); Abschuss eines Einzelwolfes; Feststellung der Herdenschutzmassnahmen und des schadenstiftenden Tieres.",
+            "absaetze": [
+              "Ein Einzelwolf darf nur zum Abschuss freigegeben werden, wenn zuvor Massnahmen zum Schutz der Herde getroffen wurden. Die Feststellung solcher Herdenschutzmassnahmen erfolgt gemäss der Vollzugshilfe Herdenschutz des BAFU (E. 4). Die vorliegenden Abklärungen zum Herdenschutzzaun (E. 6), zu den Witterungsverhältnissen (E. 7) und zum schadenstiftenden Tier (E. 8) genügen diesen Anforderungen nicht und erweisen sich überdies als willkürlich."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-II-196%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 12 al. 2 LChP; art. 10quinquies al. 1 let. a OChP (version au 1er juillet 2023); tir d'un loup isolé; constatations en lien avec les mesures de protection du troupeau et l'animal responsable des dégâts.",
+            "absaetze": [
+              "Un loup isolé ne peut être abattu que si des mesures de protection du troupeau ont été prises au préalable. La constatation de telles mesures de protection du troupeau s'effectue conformément à l'aide à l'exécution sur la protection des troupeaux de l'OFEV (consid. 4). En l'espèce, les clarifications des faits pertinents en lien avec la clôture de protection du troupeau (consid. 6), les conditions météorologiques (consid. 7) et l'animal responsable des dégâts (consid. 8) ne satisfont pas à ces exigences et s'avèrent en outre arbitraires."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-II-196%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 12 cpv. 2 LCP; art. 10quinquies cpv. 1 lett. a OCP (versione del 1° luglio 2023); abbattimento di un lupo singolo; constatazione relativa a misure di protezione del bestiame e all'animale dannoso.",
+            "absaetze": [
+              "Un lupo singolo può essere abbattuto solo se sono già state adottate misure di protezione del bestiame. La constatazione di tali misure di protezione del bestiame si effettua conformemente all'aiuto all'esecuzione concernente la protezione del bestiame dell'UFAM (consid. 4). Gli accertamenti svolti in merito alla recinzione del bestiame (consid. 6), alle condizioni meteorologiche (consid. 7) e all'animale dannoso (consid. 8) non soddisfano queste esigenze e risultano inoltre arbitrari."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-II-196%3Ait&lang=it&type=show_document"
+          }
+        ]
+      },
+      "regesteAmtlich": true,
+      "abschnitte": [
+        {
+          "typ": "sachverhalt",
+          "vollstaendig": true,
+          "bloecke": [
+            {
+              "marke": "A.",
+              "tiefe": 1,
+              "text": "Die Alp \"A.________\" liegt in der Gemeinde Flums und ist dem Gebiet des Schilstals zugeordnet. Auf der Alp \"A.________\" wurden am 9. August 2023 zwei Schafe, am 21. August 2023 ein Schaf und am 3. September 2023 ein Schaf bei Wolfsangriffen gerissen. Zum Schutz der Herde wurden Herdenschutzhunde eingesetzt. Die Heimweide \"B.________\" liegt in der Gemeinde Mels und gehört zum Gebiet des Weisstannentals. Auf der Heimweide \"B.________\" wurden am 11. November 2023 acht Schafe bei Wolfsangriffen gerissen. Zum Schutz der Herde wurden Elektrozäune eingesetzt. Das Schils- und Weisstannental ist seit dem Jahr 2019 Streifgebiet des Wolfsrüden M111 und der Fähe F35, einem Wolfspaar ohne Jungtiere. Das Weisstannental ist zudem Streifgebiet des Calfeisental-Rudels, damals bestehend aus zwei Elterntieren und sechs Jungwölfen. Die Streifgebiete des Wolfspaares und des Calfeisental-Rudels überschneiden sich und lassen sich nicht eindeutig voneinander abgrenzen. Der Nutztierriss vom 3. September 2023 auf der Alp \"A.________\" im Schilstal wird aufgrund einer DNA-Auswertung der Fähe F35 zugeordnet. Die übrigen vorgenannten Nutztierrisse im Schils- und im Weisstannental konnten trotz DNA-Probe keinem Wolf zugeordnet werden."
+            },
+            {
+              "marke": "B.",
+              "tiefe": 1,
+              "text": "Mit Verfügung vom 16. November 2023, publiziert am 21. November 2023, ordnete das Amt für Natur, Jagd und Fischerei des Kantons St. Gallen den Abschuss eines der beiden Tiere aus dem Wolfspaar an und entzog einem allfälligen Rechtsmittel die aufschiebende Wirkung. Dagegen erhob Pro Natura, Schweizerischer Bund für Naturschutz, Sektion St. Gallen-Appenzell, Sprungbeschwerde ans Verwaltungsgericht des Kantons St. Gallen. Dieses gewährte mit Verfügung vom 20. Dezember 2023 superprovisorisch die aufschiebende Wirkung, entzog sie mit Verfügung vom 15. Januar 2024 jedoch wieder. Mit Urteil vom 11. März 2024 wies das Verwaltungsgericht des Kantons St. Gallen die Beschwerde ab."
+            },
+            {
+              "marke": "C.",
+              "tiefe": 1,
+              "text": "Mit Beschwerde in öffentlich-rechtlichen Angelegenheiten vom 26. April 2024 gelangt Pro Natura, Schweizerischer Bund für Naturschutz, Sektion St. Gallen-Appenzell (nachfolgend \"Pro Natura\" oder Beschwerdeführerin), ans Bundesgericht. Sie beantragt die Aufhebung des Urteils vom 11. März 2024 und der Zwischenverfügung vom 15. Januar 2024 und die Feststellung der erkannten Rechtsverletzungen. Das Amt für Natur, Jagd und Fischerei des Kantons St. Gallen (nachfolgend \"Kanton\") beantragt in seiner Vernehmlassung die Abweisung der Beschwerde. Die Vorinstanz beantragt ebenfalls die Abweisung der Beschwerde und verweist zur Begründung auf das angefochtene Urteil. Das Bundesamt für Umwelt BAFU reicht eine Vernehmlassung ein, stellt aber keinen Antrag in der Sache."
+            }
+          ]
+        },
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 1",
+              "tiefe": 1,
+              "text": "Das Bundesgericht prüft die Eintretensvoraussetzungen von Amtes wegen und mit freier Kognition (Art. 29 Abs. 1 BGG; BGE 150 II 273 E. 1; 150 II 346 E. 1.1)."
+            },
+            {
+              "marke": "E. 1.1",
+              "tiefe": 2,
+              "text": "Pro Natura ist eine gesamtschweizerisch tätige Organisation, die nach Art. 12 NHG zur Erhebung von Beschwerden an das Bundesgericht berechtigt ist (Art. 89 Abs. 2 lit. d BGG; vgl. Ziff. 6 des Anhangs zur Verordnung vom 27. Juni 1990 über die Bezeichnung der im Bereich des Umweltschutzes und des Natur- und Heimatschutzes beschwerdeberechtigten Organisationen [VBO; SR 814.076]). Pro Natura macht geltend, der bewilligte Abschuss eines Einzelwolfes aus dem Wolfspaar verstosse gegen das Bundesgesetz vom 20. Juni 1986 über die Jagd und den Schutz wildlebender Säugetiere und Vögel (Jagdgesetz, JSG; SR 922.0) und dessen Ausführungsbestimmungen. Die Erhaltung der Artenvielfalt der wild lebenden Säugetiere ist eine Bundesaufgabe (Art. 79 BV). Pro Natura ist deshalb gemäss Art. 2 und 3 in Verbindung mit Art. 12 Abs. 1 lit. b NHG zur Beschwerde befugt (vgl. BGE 136 II 101 E. 1.1). Ferner hat sie am vorinstanzlichen Verfahren teilgenommen und ist dort mit ihrem Begehren, die Abschussverfügung für rechtswidrig zu erklären, nicht durchgedrungen (Art. 89 Abs. 1 lit. a und b BGG; vgl. BGE 136 II 101 E. 1.1). Pro Natura ist daher grundsätzlich zur Beschwerde berechtigt."
+            },
+            {
+              "marke": "E. 1.2",
+              "tiefe": 2,
+              "text": "Die Befugnis, Beschwerde ans Bundesgericht zu erheben, setzt zudem ein aktuelles und praktisches Interesse an der Aufhebung des angefochtenen Entscheids voraus (vgl. Art. 89 Abs. 1 lit. c BGG). Das schutzwürdige Interesse besteht im praktischen Nutzen, der sich ergibt, wenn die Beschwerdeführerin mit ihrem Anliegen obsiegt und dadurch ihre tatsächliche oder rechtliche Situation unmittelbar beeinflusst werden kann (BGE 150 II 409 E. 2.2.2; 141 II 14 E. 4.4); das Rechtsschutzinteresse muss daher grundsätzlich aktuell sein. Das Bundesgericht verzichtet aber ausnahmsweise auf das Erfordernis, wenn sich die aufgeworfenen Fragen unter gleichen oder ähnlichen Umständen jederzeit wieder stellen können, eine rechtzeitige Überprüfung im Einzelfall kaum je möglich wäre und die Beantwortung wegen deren grundsätzlicher Bedeutung im öffentlichen Interesse liegt (BGE 147 I 478 E. 2.2; 146 II 335 E. 1.3; Urteil 2C_214/2023 vom 7. Mai 2024 E. 1.3).\n\nNachdem die Abschussverfügung nur bis zum 19. Januar 2024 gültig war, verfügt Pro Natura über kein aktuelles Interesse mehr an der Beurteilung ihrer Beschwerde gegen das Urteil vom 11. März 2024. Vorliegend kann allerdings auf das Erfordernis des aktuellen Rechtsschutzinteresses verzichtet werden: Die sich hier im Zusammenhang mit dem Wolfsabschuss eines Einzelwolfes aus einem Wolfspaar stellenden Fragen sind von öffentlichem Interesse und können sich aufgrund der wachsenden Wolfspopulation erneut stellen. Sie sind durch das Bundesgericht bis anhin nicht beantwortet worden und werden nicht rechtzeitig beantworten werden können, weil die Abschussverfügungen jeweils auf 60 Tagen befristet sind (Art. 9b Abs. 6 der aktuell in Kraft stehenden Jagdverordnung [JSV; SR 922.1]). Die Voraussetzungen des ausnahmsweisen Verzichts auf das aktuelle Rechtsschutzinteresse sind somit gegeben."
+            },
+            {
+              "marke": "E. 1.3",
+              "tiefe": 2,
+              "text": "Soweit das Urteil vom 11. März 2024 angefochten ist, richtet sich die Beschwerde gegen einen Endentscheid (Art. 90 BGG) einer letzten kantonalen Instanz eines oberen Gerichts (Art. 86 Abs. 1 lit. d und Abs. 2 BGG). Mit diesem wird der angeordnete Abschuss eines Wolfes bestätigt. Dabei handelt es sich um eine Angelegenheit des öffentlichen Rechts (Art. 82 lit. a BGG), die nicht unter den Ausnahmekatalog von Art. 83 BGG fällt. Schliesslich wurde die Beschwerde rechtzeitig (Art. 100 Abs. 1 BGG) und formgerecht (Art. 42 Abs. 2 BGG) eingereicht, so dass auf die Beschwerde mit der nachfolgenden Einschränkung einzutreten ist."
+            },
+            {
+              "marke": "E. 1.4",
+              "tiefe": 2,
+              "text": "Pro Natura ficht ausserdem die Verfügung vom 15. Januar 2024 an. Mit dieser entzog die Vorinstanz der Beschwerde die aufschiebende Wirkung. Dabei handelt es sich um eine vorsorgliche Massnahme, deren Wirkung mit dem Endentscheid dahinfällt. Die Verfügung kann sich somit nicht auf den Endentscheid auswirken, weshalb es sich nicht um eine nachträglich anfechtbare Zwischenverfügung handelt (vgl. Art. 93 Abs. 3 BGG). Es besteht keine Möglichkeit der Beschwerde, wenn die Zwischenverfügung im Zeitpunkt des Endentscheids keine Wirkung mehr entfaltet (BOVEY GRÉGORY, in: Commentaire de la LTF, 3. Aufl., Bern 2022, Art. 93 N 48). Das ist vorliegend mit Blick auf den Entzug der aufschiebenden Wirkung durch die Vorinstanz der Fall. Auf die Beschwerde gegen die Verfügung vom 15. Januar 2024 ist somit nicht einzutreten."
+            },
+            {
+              "marke": "E. 2.1",
+              "tiefe": 2,
+              "text": "Mit Beschwerde in öffentlich-rechtlichen Angelegenheiten kann namentlich die Verletzung von Bundesrecht gerügt werden (Art. 95 lit. a BGG). Das Bundesgericht wendet das Recht von Amtes wegen an (Art. 106 Abs. 1 BGG), prüft die bei ihm angefochtenen Entscheide aber grundsätzlich nur auf Rechtsverletzungen hin, die die Beschwerdeführerin vorbringt und begründet (vgl. Art. 42 Abs. 2 BGG; BGE 150 II 346 E. 1.5.1; 149 II 337 E. 2.2; 147 I 73 E. 2.1). Erhöhte Anforderungen an die Begründung gelten, soweit die Verletzung von Grundrechten gerügt wird (Art. 106 Abs. 2 BGG). Um der qualifizierten Rüge- und Begründungspflicht zu genügen, ist in der Beschwerde klar und detailliert anhand der Erwägungen des angefochtenen Entscheids darzulegen und, wenn möglich, zu belegen, inwiefern verfassungsmässige Individualrechte verletzt worden sein sollen (BGE 150 I 80 E. 2.1; 149 I 248 E. 3.1; 149 I 105 E. 2.1)."
+            },
+            {
+              "marke": "E. 2.2",
+              "tiefe": 2,
+              "text": "Das Bundesgericht legt seinem Urteil den Sachverhalt zugrunde, den die Vorinstanz festgestellt hat (Art. 105 Abs. 1 BGG). Eine Berichtigung oder Ergänzung der vorinstanzlichen Sachverhaltsfeststellungen ist von Amtes wegen (Art. 105 Abs. 2 BGG) oder auf Rüge hin (Art. 97 Abs. 1 BGG) möglich. Von den tatsächlichen Grundlagen des vorinstanzlichen Urteils weicht das Bundesgericht jedoch nur ab, wenn diese offensichtlich unrichtig, sprich willkürlich, sind oder auf einer Rechtsverletzung im Sinne von Art. 95 BGG beruhen und die Behebung des Mangels für den Verfahrensausgang entscheidend sein kann (Art. 97 Abs. 1 BGG; BGE 149 II 337 E. 2.3; 147 I 73 E. 2.2). Entsprechende Rügen unterstehen der qualifizierten Rüge- und Begründungspflicht (vgl. E. 2.1 vorstehend)."
+            },
+            {
+              "marke": "E. 2.3",
+              "tiefe": 2,
+              "text": "Das Bundesgericht hat das BAFU als beschwerdebefugte Bundesbehörde zur Vernehmlassung eingeladen (Art. 89 Abs. 2 lit. a i.V.m. Art. 102 Abs. 1 BGG). In dieser Funktion ist das Amt befugt, neue Tatsachen und Beweismittel vorzubringen und die Verletzung von Bundesrecht zu rügen (BGE 136 II 359 E. 1.2; Urteil 1C_623/2022 vom 9. Dezember 2024 E. 2.3)."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Gegenstand des Verfahrens ist die Frage, ob die Abschussbewilligung für einen einzelnen Wolf aus dem Wolfspaar rechtmässig erteilt wurde. Unumstritten ist, dass die acht Schafe auf der Heimweide \"B.________\" bei einem Wolfsangriff gerissen wurden. Bestritten ist jedoch, dass die Schafe ordnungsgemäss geschützt gewesen seien, dass es sich beim schadenstiftenden Tier um einen Wolf aus dem Wolfspaar und nicht aus dem Wolfsrudel gehandelt habe und dass der verfügte Abschuss verhältnismässig gewesen sein soll. Diesbezüglich rügt die Beschwerdeführerin in Übereinstimmung mit dem BAFU neben einer offensichtlich unrichtigen und unvollständigen Sachverhaltsfeststellung und einer Verletzung des rechtlichen Gehörs die unrichtige Rechtsanwendung durch die Vorinstanz. Bevor auf die einzelnen Rügen eingegangen wird, wird die Rechtslage dargestellt."
+            },
+            {
+              "marke": "E. 4.1",
+              "tiefe": 2,
+              "text": "Beim Wolf handelt es sich um eine geschützte Tierart (Art. 2 lit. b in Verbindung mit Art. 7 Abs. 1 und Art. 5 JSG; in der Fassung vom 1. Juli 2023). Gemäss Anhang II des Übereinkommens über die Erhaltung der europäischen wildlebenden Pflanzen und Tiere und ihrer natürlichen Lebensräume vom 19. September 1979 (Berner Konvention, SR 0.455) handelt es sich beim Wolf sogar um eine streng geschützte Tierart. Als solche darf der Wolf nicht gejagt werden."
+            },
+            {
+              "marke": "E. 4.2",
+              "tiefe": 2,
+              "text": "Die Kantone können jederzeit Massnahmen gegen einzelne geschützte Tiere, die erheblichen Schaden anrichten, anordnen oder erlauben (Art. 12 Abs. 2 JSG). Zur Verhütung von Wildschaden haben die Kantone aber vorgängig Verhütungsmassnahmen zu treffen (Art. 12 Abs. 1 JSG). Der Bund fördert und koordiniert die Massnahmen der Kantone zur Verhütung von Wildschaden, der durch Grossraubtiere an Nutztieren verursacht wird (Art. 12 Abs. 5 Satz 1 JSG)."
+            },
+            {
+              "marke": "E. 4.3",
+              "tiefe": 2,
+              "text": "Der Kanton darf in alleiniger Kompetenz nur dann den Abschuss eines Wolfes verfügen, wenn der Schaden durch einen einzelnen Wolf verursacht worden ist. Wurde der Schaden von einem Wolf eines Rudels verursacht und soll der Abschuss eines oder mehrerer Wölfe aus dem Rudel verfügt werden, ist - abgesehen vom hier nicht einschlägigen Art. 9ter JSV - die Zustimmung des BAFU einzuholen (Art. 4 Abs. 1 JSV; in der Fassung vom 1. Juli 2023). Artikel 9bis JSV konkretisiert die Gesetzesvorgaben für einzelne, nicht zu einem Rudel gehörende Wölfe. Für solche Wölfe kann der Kanton eine Abschussbewilligung erteilen, wenn diese erheblichen Schaden an Nutztieren anrichten (Art. 9bis Abs. 1 JSV). Ein solcher Schaden durch einen einzelnen Wolf liegt vor, wenn in seinem Streifgebiet mindestens 6 Nutztiere innerhalb von vier Monaten getötet werden, nachdem früher bereits Schäden durch Wölfe zu verzeichnen waren (Art. 9bis Abs. 2 lit. c JSV). Bei der Beurteilung dieses Schadens bleiben Nutztiere unberücksichtigt, die in einem Gebiet getötet wurden, in dem trotz Schäden, die mehr als vier Monate zurückliegen, keine zumutbaren Schutzmassnahmen nach Artikel 10quinquies JSV ergriffen worden sind (Art. 9bis Abs. 4 JSV)."
+            },
+            {
+              "marke": "E. 4.4",
+              "tiefe": 2,
+              "text": "Zumutbare Schutzmassnahmen zum Schutz von Schafen auf Weiden sind namentlich Elektrozäune, die vor Grossraubtieren schützen (Art. 10quinquies Abs. 1 lit. a JSV). Für Einzelheiten erstellt das BAFU ein Konzept für den Wolf, das insbesondere Grundsätze über die Verhütung von Schäden und Gefährdungssituationen, die Förderung von Verhütungsmassnahmen und die Ermittlung von Schäden und Gefährdungen enthält (Art. 10bis lit. b, c und d JSV)."
+            },
+            {
+              "marke": "E. 4.5",
+              "tiefe": 2,
+              "text": "Gestützt auf diese Delegationsnorm hat das BAFU das Konzept Wolf Schweiz, Stand Juli 2023 (nachfolgend Konzept Wolf), erlassen. Dieses sieht vor, dass die Herdenschutzmassnahmen sowie deren Zumutbarkeit in der Richtlinie des BAFU zum Herdenschutz definiert werden (Konzept Wolf S. 10). Die Richtlinie wurde mit der Vollzugshilfe Herdenschutz des BAFU von 2019 umgesetzt (nachfolgend Vollzugshilfe Herdenschutz). Gemäss der Vollzugshilfe Herdenschutz stellen elektrifizierte Zaunsysteme einen direkten technischen Schutz für die Nutztiere vor Angriffen dar, sofern die Zäune zum Schutz von Grossraubtieren und gemäss dem Merkblatt Herdenschutzzäune (AGRIDEA) fachgerecht aufgebaut und unterhalten sind (Vollzugshilfe Herdenschutz Ziff. 4.1.2.2). Gemäss dem erwähnten Merkblatt der AGRIDEA \"Wolfschutzzäune auf Kleinviehweiden\" (nachfolgend Merkblatt AGRIDEA) bieten elektrifizierte Weidenetze der Höhe 0,9 Meter, gut gespannt, einen Grundschutz. Eine konstante Stromspannung von 3'000 Volt ist notwendig (Merkblatt AGRIDEA S. 3). Das Weidenetz muss einen dichten Bodenschluss aufweisen und mit einem 12 Volt Akkugerät oder Solarzaungerät mit guter Erdung ausgestattet sein. Der Zaun muss an jeder Stelle - auch bei Nässe - eine Spannung von mindestens 3'000 Volt aufweisen; aufwachsendes Gras ist regelmässig zurückzuschneiden. Für den Unterhalt des Zaunes ist die tägliche Kontrolle des Zaunes mit einem Voltmessgerät unerlässlich. Dabei wird auch auf offene Tore, Schäden am Zaun oder andere Mängel geachtet (Merkblatt AGRIDEA S. 2)."
+            },
+            {
+              "marke": "E. 4.6",
+              "tiefe": 2,
+              "text": "Nutztierrisse müssen gemäss der Vollzugshilfe Herdenschutz, falls es zu einem behördlich angeordneten Abschuss kommt, sorgfältig und nachvollziehbar bezüglich der ergriffenen Schutzmassnahmen beurteilt werden. Dafür wird ein Vorgehen gemäss der Musterformulare der AGRIDEA empfohlen (Vollzugshilfe Herdenschutz Ziff. 5.3)."
+            },
+            {
+              "marke": "E. 4.6.1",
+              "tiefe": 3,
+              "text": "Im Falle eines Nutztierrisses muss in einem ersten Schritt der IST-Zustand allfällig ergriffener Massnahmen zum Herdenschutz durch eine Fachperson des Kantons beschrieben werden. Nach gängiger Praxis beurteilt meist der kantonale Wildhüter den Nutztierriss, während der kantonale Herdenschutzbeauftragte die Massnahmen zum Herdenschutz erfasst. Deren Aufgabe besteht einzig im sorgfältigen, sachlichen Beschreiben des IST-Zustandes zum Schadenzeitpunkt. Die sachliche Beschreibung muss vollständig und so konkret sein, dass sowohl der Grossraubtierriss als auch der Herdenschutz für Dritte nachvollziehbar wird und allenfalls auch von einem Gericht beurteilt werden kann (Vollzugshilfe Herdenschutz Ziff. 5.3.1)."
+            },
+            {
+              "marke": "E. 4.6.2",
+              "tiefe": 3,
+              "text": "Diese Beurteilung des Herdenschutzbeauftragten ist Grundlage für die im zweiten Schritt erfolgende Beurteilung des kantonalen Landwirtschaftsamtes, ob die Nutztiere wirksam geschützt waren. Diese Beurteilung ist zentraler Bestandteil des Formulars und sie muss so erfolgen, dass das Ergebnis für Dritte nachvollziehbar und vor Gericht überprüfbar ist (Vollzugshilfe Herdenschutz Ziff. 5.3.2)."
+            },
+            {
+              "marke": "E. 4.6.3",
+              "tiefe": 3,
+              "text": "Als dritter und letzter Schritt wird das vom Herdenschutzberater ausgefüllte und vom Landwirtschaftsamt bewertete Formular zum IST-Zustand der angetroffenen Massnahmen zum Herdenschutz durch die kantonale Jagdverwaltung einem Gesamtfazit unterzogen. Dabei entscheidet die Jagdverwaltung bei jedem einzelnen Nutztierriss über die Anrechenbarkeit des Risses auf das Abschusskontingent von Grossraubtieren. Bezüglich der Frage, ob die gerissenen Nutztiere tatsächlich als geschützt zu gelten haben, stützt sich die Jagdverwaltung auf den Entscheid des kantonalen Landwirtschaftsamtes ab. Auch diese Beurteilung ist zentraler Bestandteil des Formulars und muss für Dritte nachvollziehbar und vom Gericht überprüfbar erfolgen (Vollzugshilfe Herdenschutz Ziff. 5.3.3)."
+            },
+            {
+              "marke": "E. 4.7",
+              "tiefe": 2,
+              "text": "Bei der Vollzugshilfe des BAFU handelt es sich um eine Verwaltungsverordnung, welche für die Gerichte rechtlich unverbindlich ist. Von einer rechtmässigen Verwaltungsverordnung weicht das Bundesgericht indes nicht ohne triftigen Grund ab, sofern sie eine dem Einzelfall angepasste und gerecht werdende Auslegung der anwendbaren Bestimmungen zulässt und eine überzeugende Konkretisierung der gesetzlichen Vorgaben enthält (vgl. BGE 150 II 40 E. 6.6.2; 145 V 84 E. 6.1.1; 142 V 442 E. 5.2; Urteile 2C_294/2023 vom 22. Januar 2024 E. 6.6; 2C_671/2023 vom 21. Januar 2025 E. 6.3.1, zur Publ. vorgesehen)."
+            },
+            {
+              "marke": "E. 4.8",
+              "tiefe": 2,
+              "text": "Aus dem skizzierten, im Zeitpunkt des Verfügungserlasses anwendbaren Recht (vgl. BGE 139 II 243 E. 11.1; 2C_893/2022 vom 3. Mai 2023 E. 3.2.1) ergibt sich somit Folgendes: Bevor ein Wolf, sei es ein Einzelwolf aus einem Wolfspaar oder aus einem Rudel, zum Abschuss freigegeben werden darf, müssen Verhütungsmassnahmen gegen Wolfsrisse getroffen worden sein (Art. 12 Abs. 1 und 2 JSG). Nur wenn diese nicht wirken, mithin trotz der Ergreifung zumutbarer Schutzmassnahmen Schäden durch den Wolf zu verzeichnen sind, darf der Abschuss als ausserordentliche Massnahme verfügt werden (vgl. Art. 4 Abs. 1 lit. c und Art. 4bis Abs. 2 JSV betr. Rudel; Art. 9bis Abs. 4 JSV betr. Einzelwolf; vgl. BGE 136 II 101 E. 5.1, E. 5.5). Im Sinne der Verhältnismässigkeit und des Schutzstatus des Wolfes ist dessen Abschuss ultima ratio (MARTI ARNOLD, in: St. Galler Kommentar BV, 4. Aufl. 2023, N 7 zu Art. 79 BV; BÜTLER MICHAEL, in: NHG Kommentar, 2. Aufl. 2019, N 50 ff. zum JSG)."
+            },
+            {
+              "marke": "E. 5.1",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin beanstandet zunächst, dass die Abschussbewilligung für einen Einzelwolf erteilt wurde, ohne vorab zu prüfen und festzustellen, ob wirksame Schutzmassnahmen ergriffen worden sind und der Schaden einem Wolf aus dem Wolfspaar zuzuordnen ist. Dieser Vorwurf wird vom BAFU gestützt."
+            },
+            {
+              "marke": "E. 5.2",
+              "tiefe": 2,
+              "text": "Wie vorstehend dargelegt, setzt Art. 9bis JSV in einem ersten Schritt die Feststellung voraus, dass eine Herdenschutzmassnahme, namentlich ein wirksamer elektrifizierter Zaun, vorhanden war und dass die Schäden von einem Einzelwolf (aus dem Wolfspaar) verursacht wurden. Die Beurteilung, ob dies der Fall ist, stellt eine Tatfrage dar. Die Beschwerdeführerin macht in diesem Zusammenhang eine willkürliche Sachverhaltsfeststellung, eine Verletzung des rechtlichen Gehörs und des Untersuchungsgrundsatzes geltend. Sie rügt insbesondere eine Verletzung von Art. 9 und Art. 29 Abs. 2 BV. In den folgenden Erwägungen werden zunächst die Sachverhaltsrügen behandelt, d.h. die Herdenschutzmassnahme (nachfolgend E. 6), die Witterungsverhältnisse (nachfolgend E. 7) und der schadenstiftende Wolf (nachfolgend E. 8), bevor anschliessend auf die Gehörsrüge eingegangen wird (nachfolgend E. 9)."
+            },
+            {
+              "marke": "E. 5.3",
+              "tiefe": 2,
+              "text": "Die Sachverhaltsfeststellung oder die Beweiswürdigung erweist sich als offensichtlich unrichtig und damit willkürlich, wenn das Gericht den Sinn und die Tragweite eines Beweismittels offensichtlich verkennt, wenn es ohne sachlichen Grund ein wichtiges und entscheidwesentliches Beweismittel unberücksichtigt lässt oder wenn es auf der Grundlage der festgestellten Tatsachen unhaltbare Schlussfolgerungen zieht (vgl. BGE 150 II 417 E. 2.6.4; 140 III 264 E. 2.3; Urteil 2C_160/2023 vom 21. Januar 2025 E. 6.2; 2D_18/2023 vom 5. März 2024 E. 4.1)."
+            },
+            {
+              "marke": "E. 6.1",
+              "tiefe": 2,
+              "text": "Im Hinblick auf die Herdenschutzmassnahme stellt die Vorinstanz im angefochtenen Urteil fest, dass die vom Tierhalter getroffenen Massnahmen von der Anlaufstelle Herdenschutz am 17. November 2023 anhand der in der Woche vor dem Riss erstellten Fotos des Zauns, des Viehhüters und der Messungen als fachgerecht beurteilt worden seien. Daraus dürfe ohne weiteres geschlossen werden, dass der Verlauf des Zauns dem Terrain angepasst gewesen sei. Darüber hinaus könne ein Nachweis, dass im Zeitpunkt des Wolfsangriffs die erforderlichen Massnahmen - gespanntes Weidenetz ohne Lücken mit mindestens 3000 Volt unter Strom stehend - nachträglich nicht mehr erbracht werden (angefochtenes Urteil E. 3.2.3). Weiter stellte die Vorinstanz fest, dass der Tierhalter den Schaden unverzüglich gemeldet habe. In den vom Wildhüter anlässlich einer Begehung noch am 11. November 2023 aufgenommenen Protokollen zur Erfassung einzelner Nutztierrisse seien die Schäden behördlich anerkannt worden. Bei der Aufnahme der Rissprotokolle sei nicht festgehalten worden, dass die getroffenen Massnahmen, soweit sie nach dem Wolfsangriff noch intakt gewesen seien, den Anforderungen an einen ausreichenden Herdenschutz nicht genügen würden. Vielmehr sei die Parzelle als fachgerecht geschützt beurteilt und die Entschädigungen ohne Hinweise auf Kürzungen festgelegt worden. Dass der Tierhalter als verlässlich und die von ihm ergriffenen Massnahmen als ausreichend beurteilt würden, müsse als Nachweis ausreichen (angefochtenes Urteil E. 3.2.3).\n\nIn der Verfügung vom 15. Januar 2024 stellte die Vorinstanz betreffend Herdenschutzmassnahme darüber hinaus fest, dass die Heimweide \"B.________\" mit einem elektrifizierten Weidenetz umgeben sei. Die Anlaufstelle Herdenschutz des Landwirtschaftlichen Zentrums SG habe am 17. November 2023 anhand der in der Woche vor dem Riss erstellten Fotos des Zauns, des Viehhüters und der Messungen (3'600 und 4'800 Volt Spannung bei Messungen am 8. und 10. November 2023) festgestellt, der Tierhalter habe eine Herdenschutzmassnahme in der Form eines fachgerechten Herdenschutzzauns ergriffen (Verfügung vom 15. Januar 2024 E. 4.3).\n\nDie Vorinstanz stützt sich für die Sachverhaltsfeststellung im Hinblick auf die Herdenschutzmassnahme somit auf folgende Akten ab: das Protokoll zur Erfassung der Herdenschutzmassnahmen, die Protokolle zur Erfassung des Nutztierschadens sowie in der Woche vor dem Riss erstellte Fotos des Zauns, des Viehhüters und der Strommessungen. Gestützt darauf kommt sie zum Schluss, dass die Weide \"B.________\" durch einen fachgerechten Herdenschutzzaun geschützt gewesen sei (angefochtener Entscheid E. 3.2.3; Verfügung vom 15. Januar 2024 E. 4.3)."
+            },
+            {
+              "marke": "E. 6.2",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin bringt dagegen vor, dass niemand die Herdenschutzmassnahme vor Ort überprüft habe. Der Herdenschutzbeauftragte habe sich für die Prüfung der Herdenschutzmassnahme vielmehr auf undatierte, unvollständige oder nicht vorhandene Fotos gestützt, welche nicht geeignet gewesen seien, die Wirksamkeit des Zaunes zu belegen. Auf das von ihm ausgefüllte Herdenschutzformular dürfe daher genauso wenig abgestellt werden wie auf die Schadensformulare des Wildhüters, der die Herdenschutzmassnahme ebenfalls nicht überprüft habe. Wenn die Vorinstanz für die Sachverhaltserstellung auf die Beurteilung des nicht anwesenden Herdenschutzbeauftragten gestützt auf nicht von ihm erstellte, unvollständige und undatierte Fotos sowie auf das in dieser Hinsicht nicht aussagekräftige Protokoll des Wildhüters, der die Herdenschutzmassnahme nicht kontrolliert habe, abstelle (angefochtenes Urteil E. 3.2.3; Verfügung vom 15. Januar 2024 E. 4.3) und basierend darauf auf das Vorhandensein einer fachgerechten Herdenschutzmassnahme schliesse, sei dies haltlos und damit willkürlich."
+            },
+            {
+              "marke": "E. 6.3",
+              "tiefe": 2,
+              "text": "Das BAFU teilt die Ansicht der Beschwerdeführerin. Die Analyse der Herdenschutzmassnahmen habe erst mehrere Tage nach dem Angriff stattgefunden, die Formulare seien unvollständig, die Fotos nicht datiert oder von einer Woche vor dem Angriff und daher ungeeignet, die Situation im Angriffszeitpunkt wiederzugeben. Ferner fehle ein Nachweis der Stromspannung am unteren Zaunende."
+            },
+            {
+              "marke": "E. 6.4",
+              "tiefe": 2,
+              "text": "Die Kritik erweist sich als berechtigt. Die Beschwerdeführerin kann aufzeigen, dass das Herdenschutzformular gravierende Mängel aufweist. Wenn die Vorinstanz für den Nachweis der Herdenschutzmassnahmen das von der Anlaufstelle Herdenschutz am 17. November 2023 ausgefüllte Herdenschutzformular genügen lässt und auf deren Schlussfolgerung, die Massnahmen seien fachgerecht gewesen, abstellt, ist dies angesichts der Mängel des Formulars unhaltbar."
+            },
+            {
+              "marke": "E. 6.4.1",
+              "tiefe": 3,
+              "text": "Aufgabe des Herdenschutzbeauftragten ist es gemäss der Vollzugshilfe Herdenschutz, den IST-Zustand zum Schadenszeitpunkt sorgfältig, sachlich, vollständig und konkret zu beschreiben (vorstehend E. 4.6.1). Bei der Vollzugshilfe Herdenschutz handelt es sich zwar um eine für Gerichte unverbindliche Verwaltungsverordnung (vorstehend E. 4.7). Vorliegend gibt es jedoch keinen Grund, davon abzuweichen. Es wird von keiner der Parteien geltend gemacht, dass die vom Herdenschutzbeauftragten durchzuführende Bestandsaufnahme gemäss der Vollzugshilfe Herdenschutz nicht rechtskonform und nicht anwendbar wäre. Das ist auch nicht ersichtlich. Dementsprechend hat sich die Beschreibung des IST-Zustandes daran zu messen, was die Vorinstanz nicht beachtet hat."
+            },
+            {
+              "marke": "E. 6.4.2",
+              "tiefe": 3,
+              "text": "Es ist unbestritten, dass die Anlaufstelle Herdenschutz keine Besichtigung vor Ort vornahm. Sie konnte die Herdenschutzmassnahmen somit nur anhand der - unbestrittenermassen nicht von ihr erstellten - Fotos prüfen. Die Beschwerdeführerin kann aber aufzeigen, dass die Fotos nicht geeignet sind, den Zustand des Zaunes zum Risszeitpunkt zu belegen, wie es Ziel der Bestandsaufnahme durch die kantonale Fachperson für Herdenschutz wäre. Die Bilder sind unvollständig, sowohl was in formeller Hinsicht den Aufnahmezeitpunkt betrifft, als auch was in materieller Hinsicht die zu belegenden Tatsachen angeht. Die Bilder zeigen offenbar alle unterschiedliche Zeitpunkte. Keines der Bilder zeigt das Zaungerät, das zur Produktion von Strom verwendet worden sein soll. Es fehlt eine Angabe dazu, um was für ein Gerät es sich handelt (z.B. Akku oder Solar) und ob dieses zum Risszeitpunkt funktionstüchtig war. Die Fotos bilden zudem nicht den Zaun auf seiner ganzen Länge ab. Die beiden Bilder des Zaunes zeigen nur Ausschnitte und dies gemäss Feststellung der Vorinstanz nicht einmal im Zustand zum Risszeitpunkt, sondern einen Tag später, nachdem es stark geschneit hatte. Ob der Zaun im Risszeitpunkt den bundesrechtlichen Anforderungen an Herdenschutzmassnahmen genügte (vorstehend E. 4.5), lässt sich daraus nicht ableiten. Die undatierten Bilder der Strommessung schliesslich lassen sich zum einen weder einem Zeitpunkt zuordnen (es ist nicht nachvollziehbar, woher die Vorinstanz die Daten 8. und 10. November 2023 hat und wie sie die gemessenen Stromspannungen zuordnet). Zum anderen zeigen sie, worauf das BAFU hinweist, nur die Messung am oberen Ende des Zaunes."
+            },
+            {
+              "marke": "E. 6.4.3",
+              "tiefe": 3,
+              "text": "Die Grundlagen, um die Herdenschutzmassnahmen konkret und nachvollziehbar zu beschreiben, sind offensichtlich unvollständig. Die Vorinstanz durfte dieses Beweismittel somit nicht verwenden, ohne in Willkür zu verfallen. Mit dieser rudimentären Dokumentation war eine sorgfältige Prüfung der Herdenschutzmassnahme nicht möglich und wird entsprechend vom BAFU kritisiert. Wenn die Anlaufstelle Herdenschutz im Herdenschutzformular dennoch ankreuzt, der Zaun sei auf der ganzen Länge beurteilt worden und Zaunaufbau und -unterhalt entsprächen der Checkliste des BAFU, beruht diese Beurteilung offensichtlich nicht auf aktenkundigen Tatsachen. Die im Formular angegebene Stromspannung von 4'000 Volt stimmt überdies mit keinem der aktenkundigen Fotos überein, die eine Spannung von 3'600 Volt und 4'800 Volt zeigen. Ob der untere Netzbereich vor oder im Risszeitpunkt Strom führte - oder dem Wolf die Möglichkeit gab, darunter durchzuschlüpfen (vgl. Merkblatt AGRIDEA S. 1) -, ergibt sich auch nicht aus dem Formular; die entsprechende Frage wurde dort offengelassen."
+            },
+            {
+              "marke": "E. 6.4.4",
+              "tiefe": 3,
+              "text": "Die Vorinstanz übernimmt die Beurteilung der Herdenschutzmassnahme durch die Anlaufstelle Herdenschutz vom 17. November 2023, obschon die Beschreibung offensichtlich unvollständig und unrichtig ist. Sie ist weder nachvollziehbar noch überprüfbar, wie es die Vollzugshilfe Herdenschutz vorschreibt (vorstehend E. 4.6.1). Indem die Vorinstanz gestützt darauf schliesst, es sei eine fachgerechte Herdenschutzmassnahme in Form eines funktionstüchtigen elektrifizierten Weidenetzes ergriffen worden (vgl. angefochtener Entscheid E. 3.2.3), zieht sie einen unhaltbaren Schluss und verfällt in Willkür. Es widerspricht den Vorgaben der Vollzugshilfe Herdenschutz, wenn die Vorinstanz eine nachträgliche Begehung für den Nachweis von Herdenschutzmassnahmen für nicht geeignet hält (Verfügung vom 15. November 2024 E. 4.3) und erwägt, \"darüber hinaus\" (gemeint über die vier Fotos hinaus) könne kein Nachweis erbracht werden (angefochtener Entscheid E. 3.2.3), da genau jene vollständige und konkrete Bestandsaufnahme gemäss Vollzugshilfe Herdenschutz \"einzige\" Aufgabe des Herdenschutzbeauftragten ist (vorstehend E. 4.6.1)."
+            },
+            {
+              "marke": "E. 6.5",
+              "tiefe": 2,
+              "text": "Die Vorinstanz durfte sich für den Beleg ausreichender Herdenschutzmassnahmen auch nicht auf die Beurteilung des Kantons im Schadensformular verlassen, ohne damit ebenfalls in Willkür zu verfallen (vgl. angefochtener Entscheid E. 3.2.3). Zwar wurde die Parzelle dort durch die kantonale Jagdverwaltung am 16. November 2023 als fachgerecht geschützt beurteilt, worauf die Vorinstanz Bezug nimmt. Allerdings basiert die Einschätzung der Jagdverwaltung über den Schutzstatus des Nutztieres gemäss dem Formular explizit auf der \"kantonalen Beurteilung zum Herdenschutz\" (vgl. auch vorstehend E. 4.6.2), mithin auf dem in E. 6.4 behandelten Herdenschutzformular. Dieses genügt, wie vorstehend gezeigt, den bundesrechtlichen Anforderungen an den Nachweis der Herdenschutzmassnahmen nicht, weshalb darauf nicht willkürfrei abgestellt werden kann. In diesem Zusammenhang nicht zu übersehen ist zudem die Tatsache, dass die Jagdverwaltung die Parzelle bereits am 16. November 2023 als \"gemäss der Beurteilung zum Herdenschutz\" \"fachgerecht geschützt\" beurteilte, die Anlaufstelle Herdenschutz selbst die Herdenschutzmassnahmen aber erst am 17. November 2023 feststellte und beurteilte. Die kantonale Jagdverwaltung erklärte die Parzelle somit als fachgerecht geschützt, bevor die Anlaufstelle Herdenschutz die massgebliche Beurteilung vornahm, auf die sich die Jagdverwaltung zu stützen hatte (vorstehend E. 4.6.2). Die Beurteilung der Jagdverwaltung im Schadensformular kann für die Sachverhaltserstellung somit nicht herangezogen werden, da sie sich bestenfalls auf die offensichtlich unvollständige Beschreibung und Beurteilung der Anlaufstelle Herdenschutz oder schlimmstenfalls auf keine aktenkundigen Erkenntnisse stützt."
+            },
+            {
+              "marke": "E. 6.6",
+              "tiefe": 2,
+              "text": "Dass der Kanton schliesslich ungekürzte Entschädigungen für die gerissenen Schafe ausgerichtet und der Wildhüter in den Schadensprotokollen nicht festgehalten habe, die Herdenschutzmassnahmen würden nicht den Anforderungen an einen genügenden Herdenschutz genügen (angefochtener Entscheid E. 3.2.3), lässt in Übereinstimmung mit der Beschwerdeführerin und entgegen der Auffassung der Vorinstanz nicht den Umkehrschluss zu, dass solche Massnahmen bestanden hätten. Zum einen hat der Wildhüter die Herdenschutzmassnahmen nicht geprüft. Etwas anderes wurde weder festgestellt noch behauptet und ist auch nicht Aufgabe des Wildhüters, der in erster Linie die Nutztierrisse zu dokumentieren hat (vorstehend E. 4.6.1). Dementsprechend, so zeigt es die Beschwerdeführerin auf, enthält das Schadensformular keine Fragen zu den Herdenschutzmassnahmen, sondern nur zum Perimeter, und es gab keinen Anlass für den Wildhüter, sich zu den Anforderungen der Herdenschutzmassnahmen zu äussern. Nachdem, wie die Beschwerdeführerin weiter zutreffend aufzeigt, im Kanton St. Gallen für Nutztiere keine Verhütungsmassnahmen getroffen werden müssen, um Entschädigungen bei Wildschäden zu erhalten (§ 56 Abs. 5 JV/SG; vgl. NORER ROLAND, Wolfsmanagement im Alpenraum, Wien 2024, S. 326), ist der Verweis auf die ungekürzte Entschädigung für die Feststellung von Herdenschutzmassnahmen unbehelflich."
+            },
+            {
+              "marke": "E. 7.1",
+              "tiefe": 2,
+              "text": "In der Verfügung vom 15. Januar 2024 stellte die Vorinstanz im Hinblick auf die Witterungsverhältnisse fest, dass in der Nacht auf den 11. November 2023 etwa um Mitternacht gemäss zwei anwesenden Wildhütern kein Schnee gelegen und es keinen Niederschlag gegeben habe. Niederschlag habe es erst ab dem 12. November 2023 gegeben. Weiter weise das Amt für Natur, Jagd und Fischerei darauf hin, dass auf den Schadensbildern lediglich ein kleiner Flaum Schnee auf dem Boden und auf den gerissenen Schafen erkennbar sei. Es sei daher nicht davon auszugehen, dass die geringe Schneemenge die Stromspannung in einem signifikanten Ausmass hätte reduzieren können. Die Bilder, die eine Schneemenge wiedergeben, welche geeignet sein könnte, die Spannung auf dem Weidenetz auf ein nicht ausreichend abschreckend wirkendes Niveau absinken zu lassen, seien am 12. November 2023 entstanden (Verfügung vom 15. Januar 2024 E. 4.3).\n\nDer Sachverhaltsfeststellung betreffend Witterungsverhältnisse liegen somit folgende Akten zugrunde: Schadensbilder (d.h. der gerissenen Schafe), Fotos des Zauns, eigene Abklärungen betreffend Witterungsverhältnisse sowie die Vernehmlassung des kantonalen Amtes vom 5. Januar 2024. Gestützt darauf kommt die Vorinstanz zum Schluss, dass der wenige Schnee die Stromspannung nicht reduziert habe (angefochtener Entscheid E. 3.2.3; Verfügung vom 15. Januar 2024 E. 4.3)."
+            },
+            {
+              "marke": "E. 7.2",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin rügt es als widersprüchlich, wenn die Vorinstanz einerseits feststellt, es habe kein Schnee gelegen, obwohl der Wildhüter angegeben habe, im Risszeitpunkt habe es Niederschlag gegeben, und die Vorinstanz andererseits feststellt, die Wölfe hätten durch Fährten im Schnee identifiziert werden können."
+            },
+            {
+              "marke": "E. 7.3",
+              "tiefe": 2,
+              "text": "Das BAFU hält ebenfalls dafür, dass es unklar sei, ob es geregnet oder geschneit habe, was für die Wirksamkeit des Zaunes aber entscheidend sei."
+            },
+            {
+              "marke": "E. 7.4",
+              "tiefe": 2,
+              "text": "Es wird zu Recht vorgebracht, dass die Witterungsverhältnisse im Risszeitpunkt weitgehend im Dunkeln bleiben. Unbestritten ist, dass im Zeitpunkt, als der Wildhüter die Schadensbilder aufnahm, also am Morgen des 11. November 2023, Schnee auf dem Boden und auf den Schafen lag. Bilder vom Zaun zur gleichen Zeit sind nicht aktenkundig. Die Vorinstanz stellt denn auch nicht fest, dass kein Schnee auf dem Zaun gelegen habe. Sie stellt vielmehr fest, die auf den Schadensbildern ersichtliche Menge Schnee sei nicht geeignet, die Wirksamkeit des Zauns zu beeinträchtigen (Verfügung vom 15. Januar 2024 E. 4.3). Wie sie zu dieser Annahme kommt, begründet sie nicht. Auffällig ist zudem, dass die Vorinstanz den Entstehungszeitpunkt aller Bilder, auch jene des Zauns, im angefochtenen Urteil auf eine Woche vor dem Riss datiert (angefochtener Entscheid E. 3.2.3; vorstehend E. 6.1), während dieselben Bilder des Zauns gemäss Verfügung vom 15. Januar 2024 am 12. November 2023 entstanden sein sollen (vorstehend E. 7.1)."
+            },
+            {
+              "marke": "E. 7.5",
+              "tiefe": 2,
+              "text": "Gemäss Merkblatt AGRIDEA wird betont, dass der Zaun auch bei Nässe 3'000 Volt führen müsse (vorstehend E. 4.5). Das BAFU weist in diesem Zusammenhang darauf hin, dass Elektrozäune bei Schnee keine ideale Schutzmassnahme seien, da die Wirksamkeit herabgesetzt sein kann. Die Annahme der Vorinstanz enthält keine Begründung, wie sie zum Schluss kommt, die Wirkung des Zaunes sei nicht beeinträchtigt gewesen. Dies wäre angesichts des Vorgesagten aber relevant. Da jedoch aufgrund der unvollständigen Abklärung und Dokumentation des Zustandes des Zaunes an sich bereits unklar ist, ob dieser überhaupt durchgehend instand war und oben und unten Strom führte, mithin den Anforderungen an wirksame Herdenschutzmassnahmen erfüllte (vorstehend E. 6), ist letztlich nicht entscheidend, wie die Witterungsverhältnisse im Risszeitpunkt waren."
+            },
+            {
+              "marke": "E. 8.1",
+              "tiefe": 2,
+              "text": "Im Hinblick auf die Feststellung, welcher Wolf den Schaden verursacht hat, stellt die Vorinstanz fest, dass die DNA-Proben keinem Wolf hätten zugeordnet werden können. Das Weisstannental liege gemäss Karte Wolfsgenetik nicht nur im Streifgebiet des Wolfspaars, sondern auch des Wolfsrudels aus dem Calfeisental. Gestützt auf die Vernehmlassung des kantonalen Amtes stellt sie fest, dass die Präsenz des Wolfspaars im Weisstannental in den Jahren 2022 und 2023 genetisch nachgewiesen sei und das Wolfspaar seit 2019 bzw. 2022 Nutztierrisse verursache. Ferner deute gemäss Vernehmlassung des kantonalen Amtes das konkrete Schadensbild nicht auf eine Verursachung durch ein Wolfsrudel hin. Aufgrund der vorgefundenen Fährten und der Nutzung der Schafe sei das Rudel auszuschliessen, da dieses nach den Rissen jeweils eine grosse Fleischmenge verschlinge und einen grossen Teil der Beute in derselben Nacht verspeise. Dass sich unentdeckte Wölfe in diesem Streifgebiet aufhalten würden, sei zudem unwahrscheinlich (Verfügung vom 15. Januar 2024 E. 4.4).\n\nDie Vorinstanz stützt sich für die Feststellung des schadenstiftenden Tiers auf die Auswertung der DNA-Proben, die Karte Wolfsgenetik und die Vernehmlassung des kantonalen Amtes vom 5. Januar 2024. Sie schliesst daraus, es sei ausreichend wahrscheinlich, dass die Nutztierrisse auf der Weide \"B.________\" vom Wolfspaar verursacht worden seien (angefochtener Entscheid E. 4.3; Verfügung vom 15. Januar 2024 E. 4.4)."
+            },
+            {
+              "marke": "E. 8.2",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin wirft der Vorinstanz vor, sie habe allein gestützt auf Behauptungen des Kantons über Rissmuster und Spuren festgestellt, der Schaden sei vom Wolfspaar ausgegangen. Die vom Kanton behaupteten Rissmuster und Spuren im Schnee seien jedoch weder dokumentiert noch näher beschrieben. Nicht einmal bekannt sei, wie viele Fährten gefunden worden seien und wer diese Fährten beurteilt haben soll. Dass Fährten im Schnee gefunden sein sollen, stehe ferner in unauflösbarem Widerspruch zur gleichzeitigen Annahme der Vorinstanz, im Risszeitpunkt habe kein Schnee gelegen und der Zaun sei nicht eingeschneit gewesen."
+            },
+            {
+              "marke": "E. 8.3",
+              "tiefe": 2,
+              "text": "Das BAFU stützt diese Kritik. Es bringt vor, neben Fotobelegen der Spuren fehlten in den Akten Informationen dazu, wie die Spuren im Schnee ausgesehen hätten und weshalb diese nicht dem Rudel hätten zugeordnet werden können, namentlich welches Verhalten oder welche Art von Schäden das Rudel verursache."
+            },
+            {
+              "marke": "E. 8.4",
+              "tiefe": 2,
+              "text": "Es ist unstrittig, dass die Heimweide \"B.________\" im Streifgebiet sowohl des Wolfspaars als auch des Rudels liegt (vorstehend Bst. A). Da somit beide Wolfsgruppen in Frage kommen, ist die sorgfältige Abklärung anhand objektiver Kriterien besonders wichtig, um Fehlabschüsse zu vermeiden, wie das BAFU zu Recht zu bedenken gibt. Allein, dass das Wolfspaar im Weisstannental nachgewiesen wurde und ihnen auch Risse - in anderen Gebieten - nachgewiesen wurden, vermag das Wolfspaar somit nicht als schadensverursachend auszumachen, da dasselbe offenbar auch auf das am 4. Dezember 2023 zum Abschuss freigegebene Rudel zutrifft."
+            },
+            {
+              "marke": "E. 8.5",
+              "tiefe": 2,
+              "text": "Die Vorinstanz unterzog die Zuordnung nur im Rahmen des vorsorglichen Massnahmeverfahrens einer summarischen Prüfung; im Endentscheid geht sie darauf nicht weiter ein, sondern verweist vollumfänglich auf ihre Verfügung vom 15. Januar 2024. Die Beschwerdeführerin zeigt zutreffend auf, dass sich die Vorinstanz dabei allein auf die Behauptungen des Kantons stützt, welche in den Akten keine Stütze finden. Die Vorinstanz bezieht sich auf Fährten, welche nicht aktenkundig sind. Die Spuren sind weder beschrieben noch fotografisch festgehalten. Es ist unklar, wer die Spuren wo gesichtet haben soll, ob sie im Schnee oder auf erdigem Boden sind, wie sie aussehen sollen und warum deswegen auf das Wolfspaar zu schliessen ist. Die Vorinstanz übernimmt die Behauptung des Kantons, das Schadensbild deute nicht auf eine Verursachung durch ein Rudel hin, da dieses die Schafe jeweils ganz auffresse, als bewiesen, ohne eine genauere Beschreibung zu verlangen oder konkrete Belege einzufordern. Namentlich zieht die Vorinstanz keine Bilder anderer durch das Rudel verursachter Schäden bei, mit denen die Behauptung des Kantons belegt werden könnte. Nachdem das Rudel bereits zum Abschuss freigegeben war und ihm Risse sollen zugeordnet worden sein (vgl. nachfolgend E. 9.2), müsste es solche Schadensbilder aber geben. Die Behauptungen des Kantons stellen angesichts der Tatsache, dass dieser auch die Abschussbewilligung erlassen hat, keine objektiven Kriterien dar."
+            },
+            {
+              "marke": "E. 9.1",
+              "tiefe": 2,
+              "text": "Der Anspruch auf rechtliches Gehör nach Art. 29 Abs. 2 BV dient einerseits der Sachaufklärung, andererseits stellt er ein persönlichkeitsbezogenes Mitwirkungsrecht beim Erlass eines Entscheides dar, welcher in die Rechtsstellung des Einzelnen eingreift (BGE 144 I 11 E. 5.3; 140 I 99 E. 3.4; Urteile 2C_577/2024 vom 15. Januar 2025 E. 3.2; 2C_69/2023 vom 15. Oktober 2024 E. 3.1.1). Der Gehörsanspruch räumt der betroffenen Person unter anderem einen Begründungsanspruch ein. Artikel 29 Abs. 2 BV verlangt, dass die Behörde die Vorbringen des vom Entscheid in seiner Rechtsstellung Betroffenen auch tatsächlich hört, sorgfältig und ernsthaft prüft und - soweit entscheidrelevant - in der Entscheidfindung berücksichtigt. Nicht erforderlich ist, dass sich die Begründung mit allen Parteistandpunkten einlässlich auseinandersetzt und jedes einzelne Vorbringen ausdrücklich widerlegt; vielmehr genügt es, wenn der Entscheid gegebenenfalls sachgerecht angefochten werden kann (BGE 149 V 156 E. 6.1; 146 II 335 E. 5.1; 142 II 49 E. 9.2). Die Begründungspflicht ist nur dann verletzt, wenn das Gericht auf die für den Ausgang des Verfahrens wesentlichen Vorbringen selbst implizit nicht eingeht (Urteil 2C_683/2022 vom 5. Januar 2024 E. 4.1.1 mit Hinweisen)."
+            },
+            {
+              "marke": "E. 9.2",
+              "tiefe": 2,
+              "text": "Aus den obigen Erwägungen folgt, dass der Sachverhalt offensichtlich unvollständig ist und ungenügend durch die Vorinstanz abgeklärt wurde. Die Vorinstanz begründet - wie erwähnt (vorstehend E. 7.4) - nicht, warum der ersichtliche Schnee nicht zu einem Spannungsverlust führen sollte, wie die Beschwerdeführerin vorbringt. Die Vorinstanz begründet ferner nicht, aus welchem Grund sie das Vorbringen der Beschwerdeführerin, dass das Rudel in dieser Nacht an jenem Ort vermutet worden sei, weshalb einzelne Wölfe aus dem Rudel angegriffen haben könnten, verwirft. Gleiches gilt für das Vorbringen der Beschwerdeführerin, dem Rudel habe im Sommer 2023 auf der Alp \"C.________\", die ebenfalls im Weisstannental liege und mit Zäunen geschützt gewesen sei, mehrere Risse zugeordnet werden können. Nachdem die Vorinstanz sich allein auf Behauptungen des Kantons stützt, um den Schaden zuzuordnen, wäre es geboten gewesen, sich mit diesen Vorbringen explizit auseinanderzusetzen und entsprechende Sachverhaltsabklärungen vorzunehmen. Die Vorinstanz setzt sich in Verletzung des rechtlichen Gehörs auch nicht implizit mit den Vorbringen der Beschwerdeführerin auseinander (vgl. vorstehend E. 9.1), sodass auch eine Begründung dafür, warum weitere Abklärungen unterlassen wurden, fehlt."
+            },
+            {
+              "marke": "E. 9.3",
+              "tiefe": 2,
+              "text": "Die Vorinstanz hat es ferner unterlassen, Abklärungen und Feststellungen im Hinblick auf das Wolfspaar vorzunehmen, wie die Beschwerdeführerin zu Recht rügt. Dem Wolfspaar werden die drei Risse auf der Alp \"A.________\" im Sommer 2023 zugeordnet (vorstehend Bst. A). Es sollte somit auch Schadensbilder des Wolfspaars geben, die zum Vergleich hätten herangezogen werden können. Die Vorinstanz liefert zudem keine Begründung für das unterschiedliche Jagdverhalten des Wolfspaars. Waren im Sommer zum Schutz der Schafe Herdenschutzhunde im Einsatz und riss das Wolfspaar dort pro Angriff ein bis zwei Schafe (vorstehend Bst. A), galt es für den streitgegenständlichen Angriff einen - von der Vorinstanz als wirksam erachteten - Herdenschutzzaun zu überwinden und wurden acht Schafe aufs Mal angegriffen. Dass dies das Wolfspaar und nicht das achtköpfige Rudel verursacht haben soll, liegt nicht auf der Hand und hätte weitere Sachverhaltsfeststellungen erfordert."
+            },
+            {
+              "marke": "E. 9.4",
+              "tiefe": 2,
+              "text": "Aufgrund der lückenhaften Abklärung wesentlicher Sachverhaltselemente bleibt der Sachverhalt unvollständig."
+            },
+            {
+              "marke": "E. 10",
+              "tiefe": 1,
+              "text": "Nach dem Gesagten dringt die Beschwerdeführerin mit ihrer Sachverhaltsrüge durch. Die Vorinstanz hat den Sachverhalt offensichtlich unvollständig festgestellt, indem sie auf unvollständige, unrichtige und widersprüchliche Formulare abstellte, Behauptungen des Kantons ohne weiteren Beleg als Nachweis genügen liess, hingegen entscheiderhebliche Vorbringen der Beschwerdeführerin nicht beachtete und keine eigenen Abklärungen vornahm. Nachdem der Sachverhalt, wie die Vorinstanz selbst feststellt, im Nachhinein nur schwer festzustellen ist, kommt der zeitnahen Besichtigung und Beurteilung durch den Herdenschutzbeauftragten umso mehr Gewicht zu. Warum eine solche im vorliegenden Fall unterblieben ist, ist unklar. Dass eine Begehung am nächsten Morgen möglich war, zeigt die Präsenz des Wildhüters vor Ort.\n\nDamit hat die Vorinstanz sowohl gegen Art. 9 BV als auch Art. 29 Abs. 2 BV verstossen und den Sachverhalt in rechtsverletzender Weise festgestellt."
+            },
+            {
+              "marke": "E. 11",
+              "tiefe": 1,
+              "text": "Gestützt auf den unvollständigen Sachverhalt kann entgegen der Auffassung der Vorinstanz nicht festgestellt werden, dass wirksame Herdenschutzmassnahmen ergriffen und die Risse durch das Wolfspaar verursacht worden sind. Ohne die Ergreifung von Herdenschutzmassnahmen und die Identifikation des schadenstiftenden Tieres erweist sich die Bewilligung des Einzelabschusses als nicht erforderlich und nicht geeignet, damit als unverhältnismässig und verletzt Art. 12 Abs. 2 JSG (vgl. vorstehend E. 4.2, E. 4.8). Dies führt zur Rechtswidrigkeit der Abschussverfügung, welche wohlgemerkt ohnehin bereits am 16. November 2023 erlassen wurde, mithin bevor die Herdenschutzmassnahmen überhaupt überprüft worden sind (vorstehend Bst. B und E. 6.4.4). Die Vorinstanz hätte die Bewilligung des Abschusses folglich nicht bestätigen dürfen."
+            },
+            {
+              "marke": "E. 12",
+              "tiefe": 1,
+              "text": "Die Bewilligung des Einzelabschusses des Wolfes mit Verfügung vom 16. November 2023 verstösst nach dem Gesagten gegen Bundesrecht. Die Beschwerde ist daher gutzuheissen, soweit darauf einzutreten ist, und das Urteil des Verwaltungsgerichts vom 11. März 2024 aufzuheben. Eine Behandlung der weiteren Vorbringen der Beschwerdeführerin erübrigt sich vor diesem Hintergrund; insbesondere sind die Fragen der milderen Massnahmen und der Begrenzung des Abschussperimeters nicht mehr zu prüfen.\n\nFür das bundesgerichtliche Verfahren sind keine Kosten zu erheben (Art. 66 Abs. 1 und 4 BGG). Die Beschwerdeführerin hat Anspruch auf eine angemessene Parteientschädigung für das bundesgerichtliche und das vorinstanzliche Verfahren (Art. 68 Abs. 1, 2 und 5 BGG; vgl. Urteil 1C_243/2019 vom 25. November 2020 E. 5, nicht publ. in: BGE 147 II 186)."
+            }
+          ]
+        },
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Die Beschwerde wird gutgeheissen, soweit darauf einzutreten ist, und das Urteil des Verwaltungsgerichts des Kantons St. Gallen, Abteilung II, wird aufgehoben."
+            },
+            {
+              "marke": "2.",
+              "text": "Es werden keine Gerichtskosten erhoben."
+            },
+            {
+              "marke": "3.",
+              "text": "Das Amt für Natur, Jagd und Fischerei des Kantons St. Gallen hat die Beschwerdeführerin für das bundesgerichtliche und das verwaltungsgerichtliche Verfahren mit insgesamt Fr. 6'000.-- zu entschädigen."
+            },
+            {
+              "marke": "4.",
+              "text": "Dieses Urteil wird den Verfahrensbeteiligten, dem Verwaltungsgericht des Kantons St. Gallen, Abteilung II, und dem Bundesamt für Umwelt mitgeteilt."
+            },
+            {
+              "marke": null,
+              "text": "Lausanne, 30. Juni 2025\n\nIm Namen der II. öffentlich-rechtlichen Abteilung\n\ndes Schweizerischen Bundesgerichts\n\nDie Präsidentin: F. Aubry Girardin\n\nDie Gerichtsschreiberin: A. Wortha"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Die Beschwerde wird gutgeheissen, soweit darauf einzutreten ist, und das Urteil des Verwaltungsgerichts des Kantons St. Gallen, Abteilung II, wird aufgehoben.",
+        "Es werden keine Gerichtskosten erhoben.",
+        "Das Amt für Natur, Jagd und Fischerei des Kantons St. Gallen hat die Beschwerdeführerin für das bundesgerichtliche und das verwaltungsgerichtliche Verfahren mit insgesamt Fr. 6'000.-- zu entschädigen.",
+        "Dieses Urteil wird den Verfahrensbeteiligten, dem Verwaltungsgericht des Kantons St. Gallen, Abteilung II, und dem Bundesamt für Umwelt mitgeteilt."
+      ],
+      "zitierteNormen": [
+        "Art. 10quinquies Abs. 1 JSV",
+        "Art. 10quinquies JSV",
+        "Art. 12 Abs. 1 JSG",
+        "Art. 12 Abs. 2 JSG",
+        "Art. 12 Abs. 5 JSG",
+        "Art. 29 Abs. 2 BV",
+        "Art. 4 Abs. 1 JSV",
+        "Art. 4bis Abs. 2 JSV",
+        "Art. 100 Abs. 1 BGG",
+        "Art. 102 Abs. 1 BGG",
+        "Art. 105 Abs. 1 BGG",
+        "Art. 105 Abs. 2 BGG",
+        "Art. 106 Abs. 1 BGG",
+        "Art. 106 Abs. 2 BGG"
+      ],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "NHG"
+      ],
+      "zitierteEntscheide": [
+        "1C_243/2019",
+        "1C_623/2022",
+        "2C_160/2023",
+        "2C_214/2023",
+        "2C_294/2023",
+        "2C_577/2024",
+        "2C_671/2023",
+        "2C_68/2024",
+        "2C_683/2022",
+        "2C_69/2023",
+        "2C_893/2022",
+        "2D_18/2023",
+        "BGE 136 II 101",
+        "BGE 136 II 359",
+        "BGE 139 II 243",
+        "BGE 144 I 11",
+        "BGE 147 I 478",
+        "BGE 147 II 186",
+        "BGE 149 II 337",
+        "BGE 149 V 156",
+        "BGE 150 I 80",
+        "BGE 150 II 273",
+        "BGE 150 II 346",
+        "BGE 150 II 40",
+        "BGE 150 II 409",
+        "BGE 150 II 417"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-II-196%3Ade&lang=de&zoom=&type=show_document",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "d8308b0f2e1960a445702a67ac4cbbe6139c0884a07e21a3c336b34158c05761",
+      "sha": "77020ce4be5e2f33013f7865f1b7a9a298480314121fdd73172318a31554a753",
+      "auszugAbschnitte": [
+        {
+          "typ": "sachverhalt",
+          "vollstaendig": true,
+          "bloecke": [
+            {
+              "marke": "A.",
+              "tiefe": 1,
+              "text": "Die Alp Halde liegt in der Gemeinde Flums und ist dem Gebiet des Schilstals zugeordnet. Auf der Alp Halde wurden am 9. August 2023 zwei Schafe, am 21. August 2023 ein Schaf und am 3. September 2023 ein Schaf bei Wolfsangriffen gerissen. Zum Schutz der Herde wurden Herdenschutzhunde eingesetzt. Die Heimweide \"A.\" liegt in der Gemeinde Mels und gehört zum Gebiet des Weisstannentals. Auf der Heimweide \"A.\" wurden am 11. November 2023 acht Schafe bei Wolfsangriffen gerissen. Zum Schutz der Herde wurden Elektrozäune eingesetzt. Das Schils- und Weisstannental ist seit dem Jahr 2019 Streifgebiet des Wolfsrüden M111 und der Fähe F35, einem Wolfspaar ohne Jungtiere. Das Weisstannental ist zudem Streifgebiet des Calfeisental-Rudels, damals bestehend aus zwei Elterntieren und sechs Jungwölfen. Die Streifgebiete des Wolfspaares und des Calfeisental-Rudels überschneiden sich und lassen sich nicht eindeutig voneinander abgrenzen. Der Nutztierriss vom 3. September 2023 auf der Alp Halde im Schilstal wird aufgrund einer DNA-Auswertung der Fähe F35 zugeordnet. Die übrigen vorgenannten Nutztierrisse im Schils- und im Weisstannental konnten trotz DNA-Probe keinem Wolf zugeordnet werden."
+            },
+            {
+              "marke": "B.",
+              "tiefe": 1,
+              "text": "Mit Verfügung vom 16. November 2023, publiziert am 21. November 2023, ordnete das Amt für Natur, Jagd und Fischerei des Kantons St. Gallen den Abschuss eines der beiden Tiere aus dem Wolfspaar an und entzog einem allfälligen Rechtsmittel die aufschiebende Wirkung. Dagegen erhob Pro Natura, Schweizerischer Bund für Naturschutz, Sektion St. Gallen-Appenzell, Sprungbeschwerde ans Verwaltungsgericht des Kantons St. Gallen. Dieses gewährte mit Verfügung vom 20. Dezember 2023 superprovisorisch die aufschiebende Wirkung, entzog sie mit Verfügung vom 15. Januar 2024 jedoch wieder. Mit Urteil vom 11. März 2024 wies das Verwaltungsgericht des Kantons St. Gallen die Beschwerde ab."
+            },
+            {
+              "marke": "C.",
+              "tiefe": 1,
+              "text": "Mit Beschwerde in öffentlich-rechtlichen Angelegenheiten vom 26. April 2024 gelangt Pro Natura, Schweizerischer Bund für Naturschutz, Sektion St. Gallen-Appenzell (nachfolgend: Pro Natura oder Beschwerdeführerin), ans Bundesgericht. (...) Das Bundesgericht heisst die Beschwerde gut. (Auszug) Aus den Erwägungen:"
+            }
+          ]
+        },
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 4.1",
+              "tiefe": 2,
+              "text": "Beim Wolf handelt es sich um eine geschützte Tierart (Art. 2 lit. b in Verbindung mit Art. 7 Abs. 1 und Art. 5 des Bundesgesetzes vom 20. Juni 1986 über die Jagd und den Schutz wildlebender Säugetiere und Vögel [Jagdgesetz, JSG; SR 922.0; in der Fassung vom 1. Juli 2023]). Gemäss Anhang II des Übereinkommens vom 19. September 1979 über die Erhaltung der europäischen wildlebenden Pflanzen und Tiere und ihrer natürlichen Lebensräume (SR 0.455) handelt es sich beim Wolf sogar um eine streng geschützte Tierart. Als solche darf der Wolf nicht gejagt werden."
+            },
+            {
+              "marke": "E. 4.2",
+              "tiefe": 2,
+              "text": "Die Kantone können jederzeit Massnahmen gegen einzelne geschützte Tiere, die erheblichen Schaden anrichten, anordnen oder erlauben (Art. 12 Abs. 2 JSG). Zur Verhütung von Wildschaden haben die Kantone aber vorgängig Verhütungsmassnahmen zu treffen (Art. 12 Abs. 1 JSG). Der Bund fördert und koordiniert die Massnahmen der Kantone zur Verhütung von Wildschaden, der durch Grossraubtiere an Nutztieren verursacht wird (Art. 12 Abs. 5 Satz 1 JSG)."
+            },
+            {
+              "marke": "E. 4.3",
+              "tiefe": 2,
+              "text": "Der Kanton darf in alleiniger Kompetenz nur dann den Abschuss eines Wolfes verfügen, wenn der Schaden durch einen einzelnen Wolf verursacht worden ist. Wurde der Schaden von einem Wolf eines Rudels verursacht und soll der Abschuss eines oder mehrerer Wölfe aus dem Rudel verfügt werden, ist - abgesehen vom hier nicht einschlägigen Art. 9 ter der Verordnung vom 29. Februar 1988 über die Jagd und den Schutz wildlebender Säugetiere und Vögel BGE 152 II 196 S. 199 (Jagdverordnung, JSV; SR 922.01) - die Zustimmung des Bundesamts für Umwelt (BAFU) einzuholen (Art. 4 Abs. 1 JSV; in der Fassung vom 1. Juli 2023). Artikel 9 bis JSV konkretisiert die Gesetzesvorgaben für einzelne, nicht zu einem Rudel gehörende Wölfe. Für solche Wölfe kann der Kanton eine Abschussbewilligung erteilen, wenn diese erheblichen Schaden an Nutztieren anrichten (Art. 9 bis Abs. 1 JSV). Ein solcher Schaden durch einen einzelnen Wolf liegt vor, wenn in seinem Streifgebiet mindestens 6 Nutztiere innerhalb von vier Monaten getötet werden, nachdem früher bereits Schäden durch Wölfe zu verzeichnen waren (Art. 9 bis Abs. 2 lit. c JSV). Bei der Beurteilung dieses Schadens bleiben Nutztiere unberücksichtigt, die in einem Gebiet getötet wurden, in dem trotz Schäden, die mehr als vier Monate zurückliegen, keine zumutbaren Schutzmassnahmen nach Artikel 10 quinquies JSV ergriffen worden sind (Art. 9 bis Abs. 4 JSV)."
+            },
+            {
+              "marke": "E. 4.4",
+              "tiefe": 2,
+              "text": "Zumutbare Schutzmassnahmen zum Schutz von Schafen auf Weiden sind namentlich Elektrozäune, die vor Grossraubtieren schützen (Art. 10 quinquies Abs. 1 lit. a JSV). Für Einzelheiten erstellt das BAFU ein Konzept für den Wolf, das insbesondere Grundsätze über die Verhütung von Schäden und Gefährdungssituationen, die Förderung von Verhütungsmassnahmen und die Ermittlung von Schäden und Gefährdungen enthält (Art. 10 bis lit. b, c und d JSV)."
+            },
+            {
+              "marke": "E. 4.5",
+              "tiefe": 2,
+              "text": "Gestützt auf diese Delegationsnorm hat das BAFU das Konzept Wolf Schweiz, Stand Juli 2023 (nachfolgend: Konzept Wolf), erlassen. Dieses sieht vor, dass die Herdenschutzmassnahmen sowie deren Zumutbarkeit in der Richtlinie des BAFU zum Herdenschutz definiert werden (Konzept Wolf, a.a.O., S. 10). Die Richtlinie wurde mit der Vollzugshilfe Herdenschutz des BAFU von 2019 umgesetzt (nachfolgend: Vollzugshilfe Herdenschutz). Gemäss der Vollzugshilfe Herdenschutz stellen elektrifizierte Zaunsysteme einen direkten technischen Schutz für die Nutztiere vor Angriffen dar, sofern die Zäune zum Schutz von Grossraubtieren und gemäss dem Merkblatt Herdenschutzzäune (AGRIDEA) fachgerecht aufgebaut und unterhalten sind (Vollzugshilfe Herdenschutz, a.a.O., Ziff. 4.1.2.2). Gemäss dem erwähnten Merkblatt der AGRIDEA \"Wolfschutzzäune auf Kleinviehweiden\" (nachfolgend: Merkblatt AGRIDEA) bieten elektrifizierte Weidenetze der Höhe 0,9 Meter, gut gespannt, einen Grundschutz. Eine konstante Stromspannung von 3'000 Volt ist notwendig (Merkblatt AGRIDEA, a.a.O., S. 3). Das Weidenetz muss einen dichten BGE 152 II 196 S. 200 Bodenschluss aufweisen und mit einem 12 Volt Akkugerät oder Solarzaungerät mit guter Erdung ausgestattet sein. Der Zaun muss an jeder Stelle - auch bei Nässe - eine Spannung von mindestens 3'000 Volt aufweisen; aufwachsendes Gras ist regelmässig zurückzuschneiden. Für den Unterhalt des Zaunes ist die tägliche Kontrolle des Zaunes mit einem Voltmessgerät unerlässlich. Dabei wird auch auf offene Tore, Schäden am Zaun oder andere Mängel geachtet (Merkblatt AGRIDEA, a.a.O., S. 2)."
+            },
+            {
+              "marke": "E. 4.6",
+              "tiefe": 2,
+              "text": "Nutztierrisse müssen gemäss der Vollzugshilfe Herdenschutz, falls es zu einem behördlich angeordneten Abschuss kommt, sorgfältig und nachvollziehbar bezüglich der ergriffenen Schutzmassnahmen beurteilt werden. Dafür wird ein Vorgehen gemäss der Musterformulare der AGRIDEA empfohlen (Vollzugshilfe Herdenschutz, a.a.O., Ziff. 5.3)."
+            },
+            {
+              "marke": "E. 4.6.1",
+              "tiefe": 3,
+              "text": "Im Falle eines Nutztierrisses muss in einem ersten Schritt der IST-Zustand allfällig ergriffener Massnahmen zum Herdenschutz durch eine Fachperson des Kantons beschrieben werden. Nach gängiger Praxis beurteilt meist der kantonale Wildhüter den Nutztierriss, während der kantonale Herdenschutzbeauftragte die Massnahmen zum Herdenschutz erfasst. Deren Aufgabe besteht einzig im sorgfältigen, sachlichen Beschreiben des IST-Zustandes zum Schadenzeitpunkt. Die sachliche Beschreibung muss vollständig und so konkret sein, dass sowohl der Grossraubtierriss als auch der Herdenschutz für Dritte nachvollziehbar wird und allenfalls auch von einem Gericht beurteilt werden kann (Vollzugshilfe Herdenschutz, a.a.O., Ziff. 5.3.1)."
+            },
+            {
+              "marke": "E. 4.6.2",
+              "tiefe": 3,
+              "text": "Diese Beurteilung des Herdenschutzbeauftragten ist Grundlage für die im zweiten Schritt erfolgende Beurteilung des kantonalen Landwirtschaftsamtes, ob die Nutztiere wirksam geschützt waren. Diese Beurteilung ist zentraler Bestandteil des Formulars und sie muss so erfolgen, dass das Ergebnis für Dritte nachvollziehbar und vor Gericht überprüfbar ist (Vollzugshilfe Herdenschutz, a.a.O., Ziff. 5.3.2)."
+            },
+            {
+              "marke": "E. 4.6.3",
+              "tiefe": 3,
+              "text": "Als dritter und letzter Schritt wird das vom Herdenschutzberater ausgefüllte und vom Landwirtschaftsamt bewertete Formular zum IST-Zustand der angetroffenen Massnahmen zum Herdenschutz durch die kantonale Jagdverwaltung einem Gesamtfazit unterzogen. Dabei entscheidet die Jagdverwaltung bei jedem einzelnen Nutztierriss über die Anrechenbarkeit des Risses auf das Abschusskontingent von Grossraubtieren. Bezüglich der Frage, ob die gerissenen BGE 152 II 196 S. 201 Nutztiere tatsächlich als geschützt zu gelten haben, stützt sich die Jagdverwaltung auf den Entscheid des kantonalen Landwirtschaftsamtes ab. Auch diese Beurteilung ist zentraler Bestandteil des Formulars und muss für Dritte nachvollziehbar und vom Gericht überprüfbar erfolgen (Vollzugshilfe Herdenschutz, a.a.O., Ziff. 5.3.3)."
+            },
+            {
+              "marke": "E. 4.7",
+              "tiefe": 2,
+              "text": "Bei der Vollzugshilfe des BAFU handelt es sich um eine Verwaltungsverordnung, welche für die Gerichte rechtlich unverbindlich ist. Von einer rechtmässigen Verwaltungsverordnung weicht das Bundesgericht indes nicht ohne triftigen Grund ab, sofern sie eine dem Einzelfall angepasste und gerecht werdende Auslegung der anwendbaren Bestimmungen zulässt und eine überzeugende Konkretisierung der gesetzlichen Vorgaben enthält (vgl. BGE 150 II 40 E. 6.6.2; BGE 145 V 84 E. 6.1.1; BGE 142 V 442 E. 5.2; Urteile 2C_294/2023 vom 22. Januar 2024 E. 6.6; 2C_671/2023 vom 21. Januar 2025 E. 6.3.1, nicht publ. in: BGE 151 II 136)."
+            },
+            {
+              "marke": "E. 4.8",
+              "tiefe": 2,
+              "text": "Aus dem skizzierten, im Zeitpunkt des Verfügungserlasses anwendbaren Recht (vgl. BGE 139 II 243 E. 11.1; Urteil 2C_893/2022 vom 3. Mai 2023 E. 3.2.1) ergibt sich somit Folgendes: Bevor ein Wolf, sei es ein Einzelwolf aus einem Wolfspaar oder aus einem Rudel, zum Abschuss freigegeben werden darf, müssen Verhütungsmassnahmen gegen Wolfsrisse getroffen worden sein (Art. 12 Abs. 1 und 2 JSG). Nur wenn diese nicht wirken, mithin trotz der Ergreifung zumutbarer Schutzmassnahmen Schäden durch den Wolf zu verzeichnen sind, darf der Abschuss als ausserordentliche Massnahme verfügt werden (vgl. Art. 4 Abs. 1 lit. c und Art. 4 bis Abs. 2 JSV betr. Rudel; Art. 9 bis Abs. 4 JSV betr. Einzelwolf; vgl. BGE 136 II 101 E. 5.1, E. 5.5). Im Sinne der Verhältnismässigkeit und des Schutzstatus des Wolfes ist dessen Abschuss ultima ratio (ARNOLD MARTI, in: Die schweizerische Bundesverfassung, St. Galler Kommentar, 4. Aufl. 2023, N. 7 zu Art. 79 BV; MICHAEL BÜTLER, in: Kommentar NHG, 2. Aufl. 2019, N. 50 ff. zum JSG)."
+            },
+            {
+              "marke": "E. 5.1",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin beanstandet zunächst, dass die Abschussbewilligung für einen Einzelwolf erteilt wurde, ohne vorab zu prüfen und festzustellen, ob wirksame Schutzmassnahmen ergriffen worden sind und der Schaden einem Wolf aus dem Wolfspaar zuzuordnen ist. Dieser Vorwurf wird vom BAFU gestützt."
+            },
+            {
+              "marke": "E. 5.2",
+              "tiefe": 2,
+              "text": "Wie vorstehend dargelegt, setzt Art. 9 bis JSV in einem ersten Schritt die Feststellung voraus, dass eine Herdenschutzmassnahme, BGE 152 II 196 S. 202 namentlich ein wirksamer elektrifizierter Zaun, vorhanden war und dass die Schäden von einem Einzelwolf (aus dem Wolfspaar) verursacht wurden. Die Beurteilung, ob dies der Fall ist, stellt eine Tatfrage dar. Die Beschwerdeführerin macht in diesem Zusammenhang eine willkürliche Sachverhaltsfeststellung, eine Verletzung des rechtlichen Gehörs und des Untersuchungsgrundsatzes geltend. Sie rügt insbesondere eine Verletzung von Art. 9 und Art. 29 Abs. 2 BV. In den folgenden Erwägungen werden zunächst die Sachverhaltsrügen behandelt, d.h. die Herdenschutzmassnahme (nachfolgend E. 6), die Witterungsverhältnisse (nachfolgend E. 7) und der schadenstiftende Wolf (nachfolgend E. 8), bevor anschliessend auf die Gehörsrüge eingegangen wird (nicht publ. E. 9)."
+            },
+            {
+              "marke": "E. 5.3",
+              "tiefe": 2,
+              "text": "Die Sachverhaltsfeststellung oder die Beweiswürdigung erweist sich als offensichtlich unrichtig und damit willkürlich, wenn das Gericht den Sinn und die Tragweite eines Beweismittels offensichtlich verkennt, wenn es ohne sachlichen Grund ein wichtiges und entscheidwesentliches Beweismittel unberücksichtigt lässt oder wenn es auf der Grundlage der festgestellten Tatsachen unhaltbare Schlussfolgerungen zieht (vgl. BGE 150 II 417 E. 2.6.4; BGE 140 III 264 E. 2.3; Urteile 2C_160/2023 vom 21. Januar 2025 E. 6.2, nicht publ. in: BGE 151 II 46; 2D_18/2023 vom 5. März 2024 E. 4.1)."
+            },
+            {
+              "marke": "E. 6.1",
+              "tiefe": 2,
+              "text": "Im Hinblick auf die Herdenschutzmassnahme stellt die Vorinstanz im angefochtenen Urteil fest, dass die vom Tierhalter getroffenen Massnahmen von der Anlaufstelle Herdenschutz am 17. November 2023 anhand der in der Woche vor dem Riss erstellten Fotos des Zauns, des Viehhüters und der Messungen als fachgerecht beurteilt worden seien. Daraus dürfe ohne weiteres geschlossen werden, dass der Verlauf des Zauns dem Terrain angepasst gewesen sei. Darüber hinaus könne ein Nachweis, dass im Zeitpunkt des Wolfsangriffs die erforderlichen Massnahmen - gespanntes Weidenetz ohne Lücken mit mindestens 3000 Volt unter Strom stehend - nachträglich nicht mehr erbracht werden. Weiter stellte die Vorinstanz fest, dass der Tierhalter den Schaden unverzüglich gemeldet habe. In den vom Wildhüter anlässlich einer Begehung noch am 11. November 2023 aufgenommenen Protokollen zur Erfassung einzelner Nutztierrisse seien die Schäden behördlich anerkannt worden. Bei der Aufnahme der Rissprotokolle sei nicht festgehalten worden, dass die getroffenen Massnahmen, soweit sie nach dem Wolfsangriff noch intakt gewesen seien, den Anforderungen an einen ausreichenden Herdenschutz nicht BGE 152 II 196 S. 203 genügen würden. Vielmehr sei die Parzelle als fachgerecht geschützt beurteilt und die Entschädigungen ohne Hinweise auf Kürzungen festgelegt worden. Dass der Tierhalter als verlässlich und die von ihm ergriffenen Massnahmen als ausreichend beurteilt würden, müsse als Nachweis ausreichen. In der Verfügung vom 15. Januar 2024 stellte die Vorinstanz betreffend Herdenschutzmassnahme darüber hinaus fest, dass die Heimweide \"A.\" mit einem elektrifizierten Weidenetz umgeben sei. Die Anlaufstelle Herdenschutz des Landwirtschaftlichen Zentrums SG habe am 17. November 2023 anhand der in der Woche vor dem Riss erstellten Fotos des Zauns, des Viehhüters und der Messungen (3'600 und 4'800 Volt Spannung bei Messungen am 8. und 10. November 2023) festgestellt, der Tierhalter habe eine Herdenschutzmassnahme in der Form eines fachgerechten Herdenschutzzauns ergriffen. Die Vorinstanz stützt sich für die Sachverhaltsfeststellung im Hinblick auf die Herdenschutzmassnahme somit auf folgende Akten ab: das Protokoll zur Erfassung der Herdenschutzmassnahmen, die Protokolle zur Erfassung des Nutztierschadens sowie in der Woche vor dem Riss erstellte Fotos des Zauns, des Viehhüters und der Strommessungen. Gestützt darauf kommt sie zum Schluss, dass die Weide \"A.\" durch einen fachgerechten Herdenschutzzaun geschützt gewesen sei."
+            },
+            {
+              "marke": "E. 6.2",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin bringt dagegen vor, dass niemand die Herdenschutzmassnahme vor Ort überprüft habe. Der Herdenschutzbeauftragte habe sich für die Prüfung der Herdenschutzmassnahme vielmehr auf undatierte, unvollständige oder nicht vorhandene Fotos gestützt, welche nicht geeignet gewesen seien, die Wirksamkeit des Zaunes zu belegen. Auf das von ihm ausgefüllte Herdenschutzformular dürfe daher genauso wenig abgestellt werden wie auf die Schadensformulare des Wildhüters, der die Herdenschutzmassnahme ebenfalls nicht überprüft habe. Wenn die Vorinstanz für die Sachverhaltserstellung auf die Beurteilung des nicht anwesenden Herdenschutzbeauftragten gestützt auf nicht von ihm erstellte, unvollständige und undatierte Fotos sowie auf das in dieser Hinsicht nicht aussagekräftige Protokoll des Wildhüters, der die Herdenschutzmassnahme nicht kontrolliert habe, abstelle und basierend darauf auf das Vorhandensein einer fachgerechten Herdenschutzmassnahme schliesse, sei dies haltlos und damit willkürlich. BGE 152 II 196 S. 204"
+            },
+            {
+              "marke": "E. 6.3",
+              "tiefe": 2,
+              "text": "Das BAFU teilt die Ansicht der Beschwerdeführerin. Die Analyse der Herdenschutzmassnahmen habe erst mehrere Tage nach dem Angriff stattgefunden, die Formulare seien unvollständig, die Fotos nicht datiert oder von einer Woche vor dem Angriff und daher ungeeignet, die Situation im Angriffszeitpunkt wiederzugeben. Ferner fehle ein Nachweis der Stromspannung am unteren Zaunende."
+            },
+            {
+              "marke": "E. 6.4",
+              "tiefe": 2,
+              "text": "Die Kritik erweist sich als berechtigt. Die Beschwerdeführerin kann aufzeigen, dass das Herdenschutzformular gravierende Mängel aufweist. Wenn die Vorinstanz für den Nachweis der Herdenschutzmassnahmen das von der Anlaufstelle Herdenschutz am 17. November 2023 ausgefüllte Herdenschutzformular genügen lässt und auf deren Schlussfolgerung, die Massnahmen seien fachgerecht gewesen, abstellt, ist dies angesichts der Mängel des Formulars unhaltbar."
+            },
+            {
+              "marke": "E. 6.4.1",
+              "tiefe": 3,
+              "text": "Aufgabe des Herdenschutzbeauftragten ist es gemäss der Vollzugshilfe Herdenschutz, den IST-Zustand zum Schadenszeitpunkt sorgfältig, sachlich, vollständig und konkret zu beschreiben (vorstehend E. 4.6.1). Bei der Vollzugshilfe Herdenschutz handelt es sich zwar um eine für Gerichte unverbindliche Verwaltungsverordnung (vorstehend E. 4.7). Vorliegend gibt es jedoch keinen Grund, davon abzuweichen. Es wird von keiner der Parteien geltend gemacht, dass die vom Herdenschutzbeauftragten durchzuführende Bestandsaufnahme gemäss der Vollzugshilfe Herdenschutz nicht rechtskonform und nicht anwendbar wäre. Das ist auch nicht ersichtlich. Dementsprechend hat sich die Beschreibung des IST-Zustandes daran zu messen, was die Vorinstanz nicht beachtet hat."
+            },
+            {
+              "marke": "E. 6.4.2",
+              "tiefe": 3,
+              "text": "Es ist unbestritten, dass die Anlaufstelle Herdenschutz keine Besichtigung vor Ort vornahm. Sie konnte die Herdenschutzmassnahmen somit nur anhand der - unbestrittenermassen nicht von ihr erstellten - Fotos prüfen. Die Beschwerdeführerin kann aber aufzeigen, dass die Fotos nicht geeignet sind, den Zustand des Zaunes zum Risszeitpunkt zu belegen, wie es Ziel der Bestandsaufnahme durch die kantonale Fachperson für Herdenschutz wäre. Die Bilder sind unvollständig, sowohl was in formeller Hinsicht den Aufnahmezeitpunkt betrifft, als auch was in materieller Hinsicht die zu belegenden Tatsachen angeht. Die Bilder zeigen offenbar alle unterschiedliche Zeitpunkte. Keines der Bilder zeigt das Zaungerät, das zur Produktion von Strom verwendet worden sein soll. Es fehlt eine Angabe dazu, um was für ein Gerät es sich handelt (z.B. Akku oder Solar) und ob dieses zum Risszeitpunkt funktionstüchtig war. BGE 152 II 196 S. 205 Die Fotos bilden zudem nicht den Zaun auf seiner ganzen Länge ab. Die beiden Bilder des Zaunes zeigen nur Ausschnitte und dies gemäss Feststellung der Vorinstanz nicht einmal im Zustand zum Risszeitpunkt, sondern einen Tag später, nachdem es stark geschneit hatte. Ob der Zaun im Risszeitpunkt den bundesrechtlichen Anforderungen an Herdenschutzmassnahmen genügte (vorstehend E. 4.5), lässt sich daraus nicht ableiten. Die undatierten Bilder der Strommessung schliesslich lassen sich zum einen weder einem Zeitpunkt zuordnen (es ist nicht nachvollziehbar, woher die Vorinstanz die Daten 8. und 10. November 2023 hat und wie sie die gemessenen Stromspannungen zuordnet). Zum anderen zeigen sie, worauf das BAFU hinweist, nur die Messung am oberen Ende des Zaunes."
+            },
+            {
+              "marke": "E. 6.4.3",
+              "tiefe": 3,
+              "text": "Die Grundlagen, um die Herdenschutzmassnahmen konkret und nachvollziehbar zu beschreiben, sind offensichtlich unvollständig. Die Vorinstanz durfte dieses Beweismittel somit nicht verwenden, ohne in Willkür zu verfallen. Mit dieser rudimentären Dokumentation war eine sorgfältige Prüfung der Herdenschutzmassnahme nicht möglich und wird entsprechend vom BAFU kritisiert. Wenn die Anlaufstelle Herdenschutz im Herdenschutzformular dennoch ankreuzt, der Zaun sei auf der ganzen Länge beurteilt worden und Zaunaufbau und -unterhalt entsprächen der Checkliste des BAFU, beruht diese Beurteilung offensichtlich nicht auf aktenkundigen Tatsachen. Die im Formular angegebene Stromspannung von 4'000 Volt stimmt überdies mit keinem der aktenkundigen Fotos überein, die eine Spannung von 3'600 Volt und 4'800 Volt zeigen. Ob der untere Netzbereich vor oder im Risszeitpunkt Strom führte - oder dem Wolf die Möglichkeit gab, darunter durchzuschlüpfen (vgl. Merkblatt AGRIDEA, a.a.O., S. 1) -, ergibt sich auch nicht aus dem Formular; die entsprechende Frage wurde dort offengelassen."
+            },
+            {
+              "marke": "E. 6.4.4",
+              "tiefe": 3,
+              "text": "Die Vorinstanz übernimmt die Beurteilung der Herdenschutzmassnahme durch die Anlaufstelle Herdenschutz vom 17. November 2023, obschon die Beschreibung offensichtlich unvollständig und unrichtig ist. Sie ist weder nachvollziehbar noch überprüfbar, wie es die Vollzugshilfe Herdenschutz vorschreibt (vorstehend E. 4.6.1). Indem die Vorinstanz gestützt darauf schliesst, es sei eine fachgerechte Herdenschutzmassnahme in Form eines funktionstüchtigen elektrifizierten Weidenetzes ergriffen worden, zieht sie einen unhaltbaren Schluss und verfällt in Willkür. Es widerspricht den Vorgaben der Vollzugshilfe Herdenschutz, wenn die Vorinstanz eine BGE 152 II 196 S. 206 nachträgliche Begehung für den Nachweis von Herdenschutzmassnahmen für nicht geeignet hält und erwägt, \"darüber hinaus\" (gemeint über die vier Fotos hinaus) könne kein Nachweis erbracht werden, da genau jene vollständige und konkrete Bestandsaufnahme gemäss Vollzugshilfe Herdenschutz \"einzige\" Aufgabe des Herdenschutzbeauftragten ist (vorstehend E. 4.6.1)."
+            },
+            {
+              "marke": "E. 6.5",
+              "tiefe": 2,
+              "text": "Die Vorinstanz durfte sich für den Beleg ausreichender Herdenschutzmassnahmen auch nicht auf die Beurteilung des Kantons im Schadensformular verlassen, ohne damit ebenfalls in Willkür zu verfallen. Zwar wurde die Parzelle dort durch die kantonale Jagdverwaltung am 16. November 2023 als fachgerecht geschützt beurteilt, worauf die Vorinstanz Bezug nimmt. Allerdings basiert die Einschätzung der Jagdverwaltung über den Schutzstatus des Nutztieres gemäss dem Formular explizit auf der \"kantonalen Beurteilung zum Herdenschutz\" (vgl. auch vorstehend E. 4.6.2), mithin auf dem in E. 6.4 behandelten Herdenschutzformular. Dieses genügt, wie vorstehend gezeigt, den bundesrechtlichen Anforderungen an den Nachweis der Herdenschutzmassnahmen nicht, weshalb darauf nicht willkürfrei abgestellt werden kann. In diesem Zusammenhang nicht zu übersehen ist zudem die Tatsache, dass die Jagdverwaltung die Parzelle bereits am 16. November 2023 als \"gemäss der Beurteilung zum Herdenschutz\" \"fachgerecht geschützt\" beurteilte, die Anlaufstelle Herdenschutz selbst die Herdenschutzmassnahmen aber erst am 17. November 2023 feststellte und beurteilte. Die kantonale Jagdverwaltung erklärte die Parzelle somit als fachgerecht geschützt, bevor die Anlaufstelle Herdenschutz die massgebliche Beurteilung vornahm, auf die sich die Jagdverwaltung zu stützen hatte (vorstehend E. 4.6.2). Die Beurteilung der Jagdverwaltung im Schadensformular kann für die Sachverhaltserstellung somit nicht herangezogen werden, da sie sich bestenfalls auf die offensichtlich unvollständige Beschreibung und Beurteilung der Anlaufstelle Herdenschutz oder schlimmstenfalls auf keine aktenkundigen Erkenntnisse stützt."
+            },
+            {
+              "marke": "E. 6.6",
+              "tiefe": 2,
+              "text": "Dass der Kanton schliesslich ungekürzte Entschädigungen für die gerissenen Schafe ausgerichtet und der Wildhüter in den Schadensprotokollen nicht festgehalten habe, die Herdenschutzmassnahmen würden nicht den Anforderungen an einen genügenden Herdenschutz genügen, lässt in Übereinstimmung mit der Beschwerdeführerin und entgegen der Auffassung der Vorinstanz nicht den Umkehrschluss zu, dass solche Massnahmen bestanden hätten. Zum einen hat der Wildhüter die Herdenschutzmassnahmen nicht geprüft. Etwas BGE 152 II 196 S. 207 anderes wurde weder festgestellt noch behauptet und ist auch nicht Aufgabe des Wildhüters, der in erster Linie die Nutztierrisse zu dokumentieren hat (vorstehend E. 4.6.1). Dementsprechend, so zeigt es die Beschwerdeführerin auf, enthält das Schadensformular keine Fragen zu den Herdenschutzmassnahmen, sondern nur zum Perimeter, und es gab keinen Anlass für den Wildhüter, sich zu den Anforderungen der Herdenschutzmassnahmen zu äussern. Nachdem, wie die Beschwerdeführerin weiter zutreffend aufzeigt, im Kanton St. Gallen für Nutztiere keine Verhütungsmassnahmen getroffen werden müssen, um Entschädigungen bei Wildschäden zu erhalten (Art. 56 Abs. 5 der Jagdverordnung des Kantons St. Gallen vom 19. Mai 2015 [JV; sGS 853.11]; vgl. ROLAND NORER, Wolfsmanagement im Alpenraum, 2024, S. 326), ist der Verweis auf die ungekürzte Entschädigung für die Feststellung von Herdenschutzmassnahmen unbehelflich."
+            },
+            {
+              "marke": "E. 7.1",
+              "tiefe": 2,
+              "text": "In der Verfügung vom 15. Januar 2024 stellte die Vorinstanz im Hinblick auf die Witterungsverhältnisse fest, dass in der Nacht auf den 11. November 2023 etwa um Mitternacht gemäss zwei anwesenden Wildhütern kein Schnee gelegen und es keinen Niederschlag gegeben habe. Niederschlag habe es erst ab dem 12. November 2023 gegeben. Weiter weise das Amt für Natur, Jagd und Fischerei darauf hin, dass auf den Schadensbildern lediglich ein kleiner Flaum Schnee auf dem Boden und auf den gerissenen Schafen erkennbar sei. Es sei daher nicht davon auszugehen, dass die geringe Schneemenge die Stromspannung in einem signifikanten Ausmass hätte reduzieren können. Die Bilder, die eine Schneemenge wiedergeben, welche geeignet sein könnte, die Spannung auf dem Weidenetz auf ein nicht ausreichend abschreckend wirkendes Niveau absinken zu lassen, seien am 12. November 2023 entstanden. Der Sachverhaltsfeststellung betreffend Witterungsverhältnisse liegen somit folgende Akten zugrunde: Schadensbilder (d.h. der gerissenen Schafe), Fotos des Zauns, eigene Abklärungen betreffend Witterungsverhältnisse sowie die Vernehmlassung des kantonalen Amtes vom 5. Januar 2024. Gestützt darauf kommt die Vorinstanz zum Schluss, dass der wenige Schnee die Stromspannung nicht reduziert habe."
+            },
+            {
+              "marke": "E. 7.2",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin rügt es als widersprüchlich, wenn die Vorinstanz einerseits feststellt, es habe kein Schnee gelegen, obwohl der Wildhüter angegeben habe, im Risszeitpunkt habe es BGE 152 II 196 S. 208 Niederschlag gegeben, und die Vorinstanz andererseits feststellt, die Wölfe hätten durch Fährten im Schnee identifiziert werden können."
+            },
+            {
+              "marke": "E. 7.3",
+              "tiefe": 2,
+              "text": "Das BAFU hält ebenfalls dafür, dass es unklar sei, ob es geregnet oder geschneit habe, was für die Wirksamkeit des Zaunes aber entscheidend sei."
+            },
+            {
+              "marke": "E. 7.4",
+              "tiefe": 2,
+              "text": "Es wird zu Recht vorgebracht, dass die Witterungsverhältnisse im Risszeitpunkt weitgehend im Dunkeln bleiben. Unbestritten ist, dass im Zeitpunkt, als der Wildhüter die Schadensbilder aufnahm, also am Morgen des 11. November 2023, Schnee auf dem Boden und auf den Schafen lag. Bilder vom Zaun zur gleichen Zeit sind nicht aktenkundig. Die Vorinstanz stellt denn auch nicht fest, dass kein Schnee auf dem Zaun gelegen habe. Sie stellt vielmehr fest, die auf den Schadensbildern ersichtliche Menge Schnee sei nicht geeignet, die Wirksamkeit des Zauns zu beeinträchtigen. Wie sie zu dieser Annahme kommt, begründet sie nicht. Auffällig ist zudem, dass die Vorinstanz den Entstehungszeitpunkt aller Bilder, auch jene des Zauns, im angefochtenen Urteil auf eine Woche vor dem Riss datiert (vorstehend E. 6.1), während dieselben Bilder des Zauns gemäss Verfügung vom 15. Januar 2024 am 12. November 2023 entstanden sein sollen (vorstehend E. 7.1)."
+            },
+            {
+              "marke": "E. 7.5",
+              "tiefe": 2,
+              "text": "Gemäss Merkblatt AGRIDEA wird betont, dass der Zaun auch bei Nässe 3'000 Volt führen müsse (vorstehend E. 4.5). Das BAFU weist in diesem Zusammenhang darauf hin, dass Elektrozäune bei Schnee keine ideale Schutzmassnahme seien, da die Wirksamkeit herabgesetzt sein kann. Die Annahme der Vorinstanz enthält keine Begründung, wie sie zum Schluss kommt, die Wirkung des Zaunes sei nicht beeinträchtigt gewesen. Dies wäre angesichts des Vorgesagten aber relevant. Da jedoch aufgrund der unvollständigen Abklärung und Dokumentation des Zustandes des Zaunes an sich bereits unklar ist, ob dieser überhaupt durchgehend instand war und oben und unten Strom führte, mithin den Anforderungen an wirksame Herdenschutzmassnahmen erfüllte (vorstehend E. 6), ist letztlich nicht entscheidend, wie die Witterungsverhältnisse im Risszeitpunkt waren."
+            },
+            {
+              "marke": "E. 8.1",
+              "tiefe": 2,
+              "text": "Im Hinblick auf die Feststellung, welcher Wolf den Schaden verursacht hat, stellt die Vorinstanz fest, dass die DNA-Proben keinem Wolf hätten zugeordnet werden können. Das Weisstannental liege gemäss Karte Wolfsgenetik nicht nur im Streifgebiet des BGE 152 II 196 S. 209 Wolfspaars, sondern auch des Wolfsrudels aus dem Calfeisental. Gestützt auf die Vernehmlassung des kantonalen Amtes stellt sie fest, dass die Präsenz des Wolfspaars im Weisstannental in den Jahren 2022 und 2023 genetisch nachgewiesen sei und das Wolfspaar seit 2019 bzw. 2022 Nutztierrisse verursache. Ferner deute gemäss Vernehmlassung des kantonalen Amtes das konkrete Schadensbild nicht auf eine Verursachung durch ein Wolfsrudel hin. Aufgrund der vorgefundenen Fährten und der Nutzung der Schafe sei das Rudel auszuschliessen, da dieses nach den Rissen jeweils eine grosse Fleischmenge verschlinge und einen grossen Teil der Beute in derselben Nacht verspeise. Dass sich unentdeckte Wölfe in diesem Streifgebiet aufhalten würden, sei zudem unwahrscheinlich. Die Vorinstanz stützt sich für die Feststellung des schadenstiftenden Tiers auf die Auswertung der DNA-Proben, die Karte Wolfsgenetik und die Vernehmlassung des kantonalen Amtes vom 5. Januar 2024. Sie schliesst daraus, es sei ausreichend wahrscheinlich, dass die Nutztierrisse auf der Weide \"A.\" vom Wolfspaar verursacht worden seien."
+            },
+            {
+              "marke": "E. 8.2",
+              "tiefe": 2,
+              "text": "Die Beschwerdeführerin wirft der Vorinstanz vor, sie habe allein gestützt auf Behauptungen des Kantons über Rissmuster und Spuren festgestellt, der Schaden sei vom Wolfspaar ausgegangen. Die vom Kanton behaupteten Rissmuster und Spuren im Schnee seien jedoch weder dokumentiert noch näher beschrieben. Nicht einmal bekannt sei, wie viele Fährten gefunden worden seien und wer diese Fährten beurteilt haben soll. Dass Fährten im Schnee gefunden sein sollen, stehe ferner in unauflösbarem Widerspruch zur gleichzeitigen Annahme der Vorinstanz, im Risszeitpunkt habe kein Schnee gelegen und der Zaun sei nicht eingeschneit gewesen."
+            },
+            {
+              "marke": "E. 8.3",
+              "tiefe": 2,
+              "text": "Das BAFU stützt diese Kritik. Es bringt vor, neben Fotobelegen der Spuren fehlten in den Akten Informationen dazu, wie die Spuren im Schnee ausgesehen hätten und weshalb diese nicht dem Rudel hätten zugeordnet werden können, namentlich welches Verhalten oder welche Art von Schäden das Rudel verursache."
+            },
+            {
+              "marke": "E. 8.4",
+              "tiefe": 2,
+              "text": "Es ist unstrittig, dass die Heimweide \"A.\" im Streifgebiet sowohl des Wolfspaars als auch des Rudels liegt (vorstehend Bst. A.). Da somit beide Wolfsgruppen in Frage kommen, ist die sorgfältige Abklärung anhand objektiver Kriterien besonders wichtig, um Fehlabschüsse zu vermeiden, wie das BAFU zu Recht zu bedenken gibt. Allein, dass das Wolfspaar im Weisstannental nachgewiesen wurde BGE 152 II 196 S. 210 und ihnen auch Risse - in anderen Gebieten - nachgewiesen wurden, vermag das Wolfspaar somit nicht als schadensverursachend auszumachen, da dasselbe offenbar auch auf das am 4. Dezember 2023 zum Abschuss freigegebene Rudel zutrifft."
+            },
+            {
+              "marke": "E. 8.5",
+              "tiefe": 2,
+              "text": "Die Vorinstanz unterzog die Zuordnung nur im Rahmen des vorsorglichen Massnahmeverfahrens einer summarischen Prüfung; im Endentscheid geht sie darauf nicht weiter ein, sondern verweist vollumfänglich auf ihre Verfügung vom 15. Januar 2024. Die Beschwerdeführerin zeigt zutreffend auf, dass sich die Vorinstanz dabei allein auf die Behauptungen des Kantons stützt, welche in den Akten keine Stütze finden. Die Vorinstanz bezieht sich auf Fährten, welche nicht aktenkundig sind. Die Spuren sind weder beschrieben noch fotografisch festgehalten. Es ist unklar, wer die Spuren wo gesichtet haben soll, ob sie im Schnee oder auf erdigem Boden sind, wie sie aussehen sollen und warum deswegen auf das Wolfspaar zu schliessen ist. Die Vorinstanz übernimmt die Behauptung des Kantons, das Schadensbild deute nicht auf eine Verursachung durch ein Rudel hin, da dieses die Schafe jeweils ganz auffresse, als bewiesen, ohne eine genauere Beschreibung zu verlangen oder konkrete Belege einzufordern. Namentlich zieht die Vorinstanz keine Bilder anderer durch das Rudel verursachter Schäden bei, mit denen die Behauptung des Kantons belegt werden könnte. Nachdem das Rudel bereits zum Abschuss freigegeben war und ihm Risse sollen zugeordnet worden sein (vgl. nicht publ. E. 9.2), müsste es solche Schadensbilder aber geben. Die Behauptungen des Kantons stellen angesichts der Tatsache, dass dieser auch die Abschussbewilligung erlassen hat, keine objektiven Kriterien dar."
+            }
+          ]
+        }
+      ],
+      "azaUrteil": {
+        "aktenzeichen": "2C_68/2024",
+        "key": "bger_2C_68_2024",
+        "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://30-06-2025-2C_68-2024&lang=de&type=show_document"
+      },
+      "ecli": "ECLI:CH:BGE:2025:152.II.196"
+    }
+  ]
+}

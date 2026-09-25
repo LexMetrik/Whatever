@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "IRSG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -31,6 +31,16 @@
         "datum": "2021-05-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_20__voll",
+        "zitierung": "Urteil 1C_480/2025 (nicht publ. in BGE 152 I 20)",
+        "regesteKurz": null,
+        "datum": "2026-02-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -69,16 +79,6 @@
     ],
     "3": [
       {
-        "key": "bge_151_I_113",
-        "zitierung": "BGE 151 I 113",
-        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
-        "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_IV_376",
         "zitierung": "BGE 149 IV 376",
         "regesteKurz": "a Art. 2 IRSG; Rechtshilfeausschlussgrund des Ordre public. Inhalt und Geltung des Ordre-public-Vorbehalts in der internationalen Rechtshilfe in Strafsachen. Anforderungen an den Beweis und an die Intensität der Prüfung durch die…",
@@ -113,74 +113,10 @@
     ],
     "8": [
       {
-        "key": "bge_151_II_81",
-        "zitierung": "BGE 151 II 81",
-        "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich…",
-        "datum": "2024-07-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_432",
         "zitierung": "BGE 147 II 432",
         "regesteKurz": "Art. 2 Abs. 1 und Art. 23 AVUS; Art. 8 und 35 Abs. 1 IRSG; Art. 154 FinfraG; Auslieferung an die USA; beidseitige Strafbarkeit; Insidertatbestand; Günstigkeitsprinzip. Art. 154 Abs. 3 FinfraG ermöglicht a priori wie seine…",
         "datum": "2021-05-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_264",
-        "zitierung": "BGE 147 II 264",
-        "regesteKurz": "Art. 8 Abs. 1 lit. a IVöB; Ziff. 2 des Anhangs 2 und Fussnote 1 des Anhangs 3 der Anlage I des WTO-Übereinkommen über das öffentliche Beschaffungswesen. Umsetzung von Verpflichtungen aus internationalen Verträgen in nationales Recht.…",
-        "datum": "2020-10-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "9": [
-      {
-        "key": "bge_151_I_113",
-        "zitierung": "BGE 151 I 113",
-        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
-        "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "10": [
-      {
-        "key": "bge_151_II_81",
-        "zitierung": "BGE 151 II 81",
-        "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich…",
-        "datum": "2024-07-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_105__voll",
-        "zitierung": "Urteil 2C_50/2022 (nicht publ. in BGE 150 II 105)",
-        "regesteKurz": null,
-        "datum": "2023-11-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_151_I_113",
-        "zitierung": "BGE 151 I 113",
-        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
-        "datum": "2025-01-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -201,16 +137,6 @@
     ],
     "12": [
       {
-        "key": "bge_151_I_113",
-        "zitierung": "BGE 151 I 113",
-        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
-        "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_IV_36",
         "zitierung": "BGE 146 IV 36",
         "regesteKurz": "Art. 280, 272, 277 StPO, Art. 30 IRSG; Aufzeichnungen im Ausland mithilfe eines technischen Überwachungsgerätes (Mikrofon). Die technischen Überwachungsmassnahmen im Sinn von Art. 280 StPO sind Zwangsmassnahmen (E. 2.1). Aufgrund des…",
@@ -223,32 +149,10 @@
     ],
     "13": [
       {
-        "key": "bge_151_I_113",
-        "zitierung": "BGE 151 I 113",
-        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
-        "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_IV_121",
         "zitierung": "BGE 150 IV 121",
         "regesteKurz": "Art. 6 und 7 Abs. 1 und 3 StGB; Übereinkommen des Europarats vom 11. Mai 2011 zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention); aktives Personalitätsprinzip; Tragweite des Erfordernisses der…",
         "datum": "2024-04-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "15": [
-      {
-        "key": "bge_150_I_183",
-        "zitierung": "BGE 150 I 183",
-        "regesteKurz": "Art. 29 Abs. 1 BV; Art. 13 lit. h sowie Art. 15 Abs. 1 bis und 2 IVöB 2001; Art. 51 Abs. 1 und 2 sowie Art. 56 Abs. 1 IVöB 2019; Verfügungsbegriff; Lauf der Beschwerdefrist; Verhältnis zwischen der individuellen Zustellung und der…",
-        "datum": "2024-06-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -267,18 +171,6 @@
         "gewicht": 0
       }
     ],
-    "21": [
-      {
-        "key": "bge_150_II_105",
-        "zitierung": "BGE 150 II 105",
-        "regesteKurz": "Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der…",
-        "datum": "2023-11-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "25": [
       {
         "key": "bge_149_IV_144__voll",
@@ -289,6 +181,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_20",
+        "zitierung": "BGE 152 I 20",
+        "regesteKurz": "Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist…",
+        "datum": "2026-02-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_201__voll",
@@ -311,30 +213,6 @@
         "gewicht": 0
       }
     ],
-    "26": [
-      {
-        "key": "bge_151_I_113",
-        "zitierung": "BGE 151 I 113",
-        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
-        "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "27": [
-      {
-        "key": "bge_151_I_113__voll",
-        "zitierung": "Urteil 2C_587/2023 (nicht publ. in BGE 151 I 113)",
-        "regesteKurz": null,
-        "datum": "2025-01-30",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "28": [
       {
         "key": "bge_149_IV_144",
@@ -343,18 +221,6 @@
         "datum": "2023-01-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "29": [
-      {
-        "key": "bge_151_I_113__voll",
-        "zitierung": "Urteil 2C_587/2023 (nicht publ. in BGE 151 I 113)",
-        "regesteKurz": null,
-        "datum": "2025-01-30",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -377,18 +243,6 @@
         "datum": "2019-11-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "31": [
-      {
-        "key": "bge_151_I_113__voll",
-        "zitierung": "Urteil 2C_587/2023 (nicht publ. in BGE 151 I 113)",
-        "regesteKurz": null,
-        "datum": "2025-01-30",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -437,18 +291,6 @@
         "gewicht": 0
       }
     ],
-    "42": [
-      {
-        "key": "bge_152_II_142",
-        "zitierung": "BGE 152 II 142",
-        "regesteKurz": "Art. 9 BV; Art. 42 Abs. 1 und Art. 58 IVöB; Rechtsschutz bei verfrüht abgeschlossenen Beschaffungsverträgen. Die Auffassung der Vorinstanz, wonach der Rechtsschutz bei Beschaffungsverträgen, die in Verletzung der Stillhalteregelung nach…",
-        "datum": "2025-05-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "47": [
       {
         "key": "bge_146_IV_338__voll",
@@ -485,30 +327,6 @@
         "gewicht": 0
       }
     ],
-    "52": [
-      {
-        "key": "bge_151_II_81",
-        "zitierung": "BGE 151 II 81",
-        "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich…",
-        "datum": "2024-07-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "53": [
-      {
-        "key": "bge_151_II_81",
-        "zitierung": "BGE 151 II 81",
-        "regesteKurz": "Art. 10 Abs. 2 lit. b, c und d IVöB 2019; Art. 10 Abs. 3 lit. b, c und d BöB; Begriff der \"in-house\"-, \"quasi-in-house\"- und \"in-state\"-Vergabe. Streitgegenstand (E. 3). Relevanter rechtlicher Rahmen und Begriffe der dem Geltungsbereich…",
-        "datum": "2024-07-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "55": [
       {
         "key": "bge_148_I_127",
@@ -521,61 +339,7 @@
         "gewicht": 0
       }
     ],
-    "56": [
-      {
-        "key": "bge_150_II_105",
-        "zitierung": "BGE 150 II 105",
-        "regesteKurz": "Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der…",
-        "datum": "2023-11-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_I_183",
-        "zitierung": "BGE 150 I 183",
-        "regesteKurz": "Art. 29 Abs. 1 BV; Art. 13 lit. h sowie Art. 15 Abs. 1 bis und 2 IVöB 2001; Art. 51 Abs. 1 und 2 sowie Art. 56 Abs. 1 IVöB 2019; Verfügungsbegriff; Lauf der Beschwerdefrist; Verhältnis zwischen der individuellen Zustellung und der…",
-        "datum": "2024-06-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_123",
-        "zitierung": "BGE 150 II 123",
-        "regesteKurz": "Art. 89 Abs. 1 und Art. 111 Abs. 1 BGG; Art. 56 Abs. 4 BöB; Art. 56 Abs. 5 IVöB 2019; Art. 75 lit. a des Waadtländer Gesetzes über das Verwaltungsverfahren (LPA-VD); Zulässigkeitsvoraussetzungen einer egoistischen Verbandsbeschwerde gegen…",
-        "datum": "2024-02-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "58": [
-      {
-        "key": "bge_152_II_142",
-        "zitierung": "BGE 152 II 142",
-        "regesteKurz": "Art. 9 BV; Art. 42 Abs. 1 und Art. 58 IVöB; Rechtsschutz bei verfrüht abgeschlossenen Beschaffungsverträgen. Die Auffassung der Vorinstanz, wonach der Rechtsschutz bei Beschaffungsverträgen, die in Verletzung der Stillhalteregelung nach…",
-        "datum": "2025-05-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
     "63": [
-      {
-        "key": "bge_151_I_113",
-        "zitierung": "BGE 151 I 113",
-        "regesteKurz": "Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…",
-        "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
       {
         "key": "bge_149_IV_376",
         "zitierung": "BGE 149 IV 376",
@@ -591,18 +355,6 @@
         "zitierung": "BGE 147 IV 518",
         "regesteKurz": "Art. 14 Abs. 1 des Vertrags vom 12. Mai 2004 zwischen der Schweizerischen Eidgenossenschaft und der Föderativen Republik Brasilien über Rechtshilfe in Strafsachen; Art. 29a und Art. 32 Abs. 2 und Abs. 3 BV; Art. 63 Abs. 2 lit. a IRSG; Art.…",
         "datum": "2021-05-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "64": [
-      {
-        "key": "bge_150_II_105",
-        "zitierung": "BGE 150 II 105",
-        "regesteKurz": "Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der…",
-        "datum": "2023-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -699,18 +451,6 @@
         "zitierung": "BGE 149 IV 376",
         "regesteKurz": "a Art. 2 IRSG; Rechtshilfeausschlussgrund des Ordre public. Inhalt und Geltung des Ordre-public-Vorbehalts in der internationalen Rechtshilfe in Strafsachen. Anforderungen an den Beweis und an die Intensität der Prüfung durch die…",
         "datum": "2023-04-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "12bis": [
-      {
-        "key": "bge_150_II_105",
-        "zitierung": "BGE 150 II 105",
-        "regesteKurz": "Art. XIII Abs. 1 lit. b GPA 2012; Art. 21 Abs. 2 lit. c BöB und IVöB 2019; Art. 8 Abs. 1 lit. c aRLMP-VD; Beschwerdelegitimation und Beweislast für das Fehlen einer angemessenen Alternative bei freihändigen Vergaben (Änderung der…",
-        "datum": "2023-11-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -881,6 +621,18 @@
         "zitierung": "BGE 147 IV 544",
         "regesteKurz": "Art. 78 ff., 84 und 93 Abs. 1 lit. a BGG, Art. 80e Abs. 2 lit. b IRSG; zulässiges Rechtsmittel ans Bundesgericht in Streitfällen über die Parteistellung und Akteneinsicht in einem Strafverfahren bei parallelem Rechtshilfeverfahren. Sind im…",
         "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "80h": [
+      {
+        "key": "bge_152_I_20",
+        "zitierung": "BGE 152 I 20",
+        "regesteKurz": "Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist…",
+        "datum": "2026-02-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

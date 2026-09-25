@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "LUGUE",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -105,6 +105,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_257__voll",
+        "zitierung": "Urteil 5A_844/2024 (nicht publ. in BGE 152 III 257)",
+        "regesteKurz": null,
+        "datum": "2026-02-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "5": [
@@ -179,6 +189,18 @@
         "zitierung": "BGE 149 III 379",
         "regesteKurz": "Vorrang des vereinbarten Gerichtsstands (Art. 23 Abs. 1 LugÜ) vor dem Gerichtsstand der Streitgenossenschaft (Art. 8a Abs. 1 IPRG). Internationaler Charakter der Sache im Sinne von Art. 1 Abs. 1 IPRG (E. 4). Unterschiedliche…",
         "datum": "2023-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "21": [
+      {
+        "key": "bge_152_III_115",
+        "zitierung": "BGE 152 III 115",
+        "regesteKurz": "a Art. 9 Abs. 1 und 2 IPRG; Art. 199 Abs. 2 ZPO; internationale Rechtshängigkeit; erste, für die Klageeinleitung notwendige Verfahrenshandlung. Um die Rechtshängigkeit im Sinne von Art. 9 Abs. 2 IPRG zu begründen, genügt die Einreichung…",
+        "datum": "2026-01-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -294,23 +316,33 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_III_345",
-        "zitierung": "BGE 150 III 345",
-        "regesteKurz": "Art. 32 LugÜ; Anerkennbarkeit und Vollstreckbarerklärung eines italienischen Mahnbescheids (decreto ingiuntivo). Ein sofort mit seinem Erlass für vollstreckbar erklärter italienischer Mahnbescheid, stellt eine Entscheidung im Sinne von…",
-        "datum": "2024-08-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 2
       },
       {
         "key": "bge_147_III_491",
         "zitierung": "BGE 147 III 491",
         "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht…",
         "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_205",
+        "zitierung": "BGE 152 III 205",
+        "regesteKurz": "Art. 34 Abs. 1 LugÜ; Anerkennung einer Entscheidung; materieller ordre public. Unter der Voraussetzung, dass keine besonderen Umstände vorliegen, die das Einlegen der Rechtsbehelfe im Ursprungsland zu sehr erschweren oder unmöglich machen,…",
+        "datum": "2025-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_345",
+        "zitierung": "BGE 150 III 345",
+        "regesteKurz": "Art. 32 LugÜ; Anerkennbarkeit und Vollstreckbarerklärung eines italienischen Mahnbescheids (decreto ingiuntivo). Ein sofort mit seinem Erlass für vollstreckbar erklärter italienischer Mahnbescheid, stellt eine Entscheidung im Sinne von…",
+        "datum": "2024-08-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -358,7 +390,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_III_205",
+        "zitierung": "BGE 152 III 205",
+        "regesteKurz": "Art. 34 Abs. 1 LugÜ; Anerkennung einer Entscheidung; materieller ordre public. Unter der Voraussetzung, dass keine besonderen Umstände vorliegen, die das Einlegen der Rechtsbehelfe im Ursprungsland zu sehr erschweren oder unmöglich machen,…",
+        "datum": "2025-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_III_345",
@@ -734,7 +776,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_150_III_413",
@@ -753,6 +795,16 @@
         "datum": "2023-07-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_205__voll",
+        "zitierung": "Urteil 4A_129/2024 (nicht publ. in BGE 152 III 205)",
+        "regesteKurz": null,
+        "datum": "2025-09-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"VZAE",
 "erlassEbene":"bund",
 "dokumente":{
@@ -13,6 +13,8 @@
 "bge_149_IV_231":{"zitierung":"BGE 149 IV 231","regesteKurz":"Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im…","datum":"2023-03-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_IV_266__voll":{"zitierung":"Urteil 6B_900/2022 (nicht publ. in BGE 149 IV 266)","regesteKurz":null,"datum":"2023-05-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"149 IV 266","urteil":"6B_900/2022"}},
 "bge_149_I_207__voll":{"zitierung":"Urteil 2C_734/2022 (nicht publ. in BGE 149 I 207)","regesteKurz":null,"datum":"2023-05-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"149 I 207","urteil":"2C_734/2022"}},
+"bge_152_II_409":{"zitierung":"BGE 152 II 409","regesteKurz":"Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…","datum":"2025-10-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_I_157__voll":{"zitierung":"Urteil 2C_18/2025 (nicht publ. in BGE 152 I 157)","regesteKurz":null,"datum":"2025-10-02","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 I 157","urteil":"2C_18/2025"}},
 "bger_2C_1060_2020":{"zitierung":"BGer 2C_1060/2020 vom 19. Februar 2021","regesteKurz":"Niederlassungsbewilligung; Nichteintreten","datum":"2021-02-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"}},
 "bs_appellationsgericht_BES.2023.167":{"zitierung":"Appellationsgericht BS BES.2023.167 vom 12.09.2024","regesteKurz":"Amtliche Verteidigung","datum":"2024-09-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2020.70":{"zitierung":"Appellationsgericht BS SB.2020.70 vom 17.11.2023","regesteKurz":"Menschenhandel, Förderung der Prostitution, einfache Körperverletzung, Drohung, Förderung der rechtswidrigen Ein-,…","datum":"2023-11-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -72,8 +74,9 @@
 "proArtikel":{
 "5":[{"key":"bs_appellationsgericht_VD.2023.175","gewicht":null}],
 "6":[{"key":"bs_appellationsgericht_VD.2024.178","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.236","gewicht":null}],
+"8":[{"key":"bge_152_II_409","gewicht":0}],
 "23":[{"key":"bge_147_I_89","gewicht":0}],
-"31":[{"key":"bge_149_IV_231","gewicht":0},{"key":"bge_147_IV_453","gewicht":1},{"key":"bge_149_IV_266__voll","gewicht":0,"erwaegungen":["E. 5.3.1"]},{"key":"bs_appellationsgericht_SB.2023.48","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.123","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.52","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.167","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.2","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.65","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.133","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.149","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.83","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.70","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.95","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.244","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.11","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.135","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.269","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.181","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.147","gewicht":null}],
+"31":[{"key":"bge_152_II_409","gewicht":0},{"key":"bge_149_IV_231","gewicht":0},{"key":"bge_147_IV_453","gewicht":1},{"key":"bge_149_IV_266__voll","gewicht":0,"erwaegungen":["E. 5.3.1"]},{"key":"bs_appellationsgericht_SB.2023.48","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.123","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.52","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.167","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.2","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.65","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.133","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.149","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.83","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.70","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.95","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.244","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.11","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.26","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.135","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.269","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.203","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.181","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.147","gewicht":null}],
 "32":[{"key":"bs_appellationsgericht_VD.2024.2","gewicht":null}],
 "36":[{"key":"bs_appellationsgericht_SB.2020.70","gewicht":null}],
 "47":[{"key":"bge_146_I_185","gewicht":0}],
@@ -94,14 +97,15 @@
 "62a":[{"key":"bge_148_II_1","gewicht":0},{"key":"bs_appellationsgericht_VD.2024.78","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null}],
 "77a":[{"key":"bge_147_IV_340","gewicht":0},{"key":"bge_148_II_1__voll","gewicht":0,"erwaegungen":["E. 2.2"]},{"key":"bs_appellationsgericht_VD.2025.172","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.114","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.57","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.167","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.24","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.129","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.192","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.4","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.233","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.149","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.155","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.147","gewicht":null}],
 "77d":[{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null}],
-"77e":[{"key":"bs_appellationsgericht_VD.2025.172","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.168","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.24","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.129","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.163","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.194","gewicht":null}],
+"77e":[{"key":"bge_152_I_157__voll","gewicht":0,"erwaegungen":["E. 3.2.1"]},{"key":"bs_appellationsgericht_VD.2025.172","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.168","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.24","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.129","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.163","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.194","gewicht":null}],
 "77f":[{"key":"bge_148_II_1","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.6","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.245","gewicht":null}]
 },
 "gesamtProArtikel":{
 "5":{"kantonal":1},
 "6":{"kantonal":4},
+"8":{"bge":1},
 "23":{"bge":1},
-"31":{"bge":2,"bger":1,"kantonal":22},
+"31":{"bge":3,"bger":1,"kantonal":22},
 "32":{"kantonal":1},
 "36":{"kantonal":1},
 "47":{"bge":1},
@@ -122,7 +126,7 @@
 "62a":{"bge":1,"kantonal":2},
 "77a":{"bge":1,"bger":1,"kantonal":14},
 "77d":{"kantonal":1},
-"77e":{"kantonal":10},
+"77e":{"bger":1,"kantonal":10},
 "77f":{"bge":1,"kantonal":4}
 }
 }

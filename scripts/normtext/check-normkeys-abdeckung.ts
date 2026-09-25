@@ -148,6 +148,7 @@ import {
   LITERATUR_MARKER,
   normKeyFuerAbk,
   normalisiereAbk,
+  gerichtsKuerzelKey,
 } from './entscheide-mapping';
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
 import {
@@ -317,6 +318,8 @@ interface TokenZahl {
   statutes: number;
   /** Nennungen im Fliesstext-Pfad (Refs aus extrahiereStatutRefs). */
   fliesstext: number;
+  /** Snapshots ausserhalb des Bundesgerichts mit diesem Token (GERICHTS_KUERZEL gelten dort nicht). */
+  ausserhalbBger?: number;
   /** Anzahl SNAPSHOTS, in denen das Token vorkommt — die Häufigkeit des Tors. */
   snapshots: number;
 }
@@ -349,7 +352,11 @@ function erhebe(snaps: readonly ReturnType<typeof ladeBestandSnapshots>[number][
       hole(token).fliesstext += 1;
       imSnapshot.add(token);
     }
-    for (const token of imSnapshot) hole(token).snapshots += 1;
+    for (const token of imSnapshot) {
+      const z = hole(token);
+      z.snapshots += 1;
+      if (snap.gerichtstyp !== 'bundesgericht') z.ausserhalbBger = (z.ausserhalbBger ?? 0) + 1;
+    }
   }
   return zahlen;
 }
@@ -555,12 +562,20 @@ function main(): void {
 
   // ── Klassifikation ────────────────────────────────────────────────────────
   const alle = [...zahlen.values()].sort((a, b) => vergleiche(a.token, b.token));
-  const gemappt = alle.filter((z) => normKeyFuerAbk(z.token) !== null);
+  // GERICHTS_KUERZEL (entscheide-mapping.ts, QS-KORPUS 25.9.2026) wirken im
+  // Produktpfad NUR in Bundesgerichts-Snapshots. Das Tor zählt ein solches Token
+  // darum nur dann als gemappt, wenn es AUSSCHLIESSLICH dort vorkommt — eine
+  // einzige kantonale/eidg. Nennung liesse es ungemappt (sie verschwände im
+  // Produktpfad ja weiterhin lautlos, §6.7).
+  const key = (z: TokenZahl): string | null =>
+    normKeyFuerAbk(z.token)
+    ?? (!z.ausserhalbBger ? gerichtsKuerzelKey(z.token, 'bundesgericht') : null);
+  const gemappt = alle.filter((z) => key(z) !== null);
   const ausgeschlossen = alle.filter(
-    (z) => normKeyFuerAbk(z.token) === null && ABK_AUSSCHLUSS.has(z.token),
+    (z) => key(z) === null && ABK_AUSSCHLUSS.has(z.token),
   );
   const ungemappt = alle.filter(
-    (z) => normKeyFuerAbk(z.token) === null && !ABK_AUSSCHLUSS.has(z.token),
+    (z) => key(z) === null && !ABK_AUSSCHLUSS.has(z.token),
   );
 
   const summe = (liste: TokenZahl[], feld: 'statutes' | 'fliesstext'): number =>

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "BGG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -29,6 +29,16 @@
         "zitierung": "BGer 12T_4/2025 vom 15. Juni 2026",
         "regesteKurz": null,
         "datum": "2026-06-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_242__voll",
+        "zitierung": "Urteil 7B_760/2023 (nicht publ. in BGE 152 IV 242)",
+        "regesteKurz": null,
+        "datum": "2026-02-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -159,6 +169,26 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_168",
+        "zitierung": "BGE 152 III 168",
+        "regesteKurz": "Art. 343 Abs. 1 lit. b ZPO; Bemessung der Ordnungsbusse. Auch wenn dieselbe Verpflichtung zu einem Tun, Unterlassen oder Dulden wiederholt nicht erfüllt wurde, darf das Vollstreckungsgericht im selben Vollstreckungsverfahren gestützt auf…",
+        "datum": "2025-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_129",
+        "zitierung": "BGE 152 IV 129",
+        "regesteKurz": "a Art. 48 Abs. 1 und Art. 100 Abs. 1 BGG; Beweis der rechtzeitigen Aufgabe der Beschwerde bei der Schweizerischen Post im Rahmen eines Abholvertrags. Eine rechtsuchende Person, die eine fristgebundene Sendung im Rahmen eines Abholvertrags…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_V_20",
         "zitierung": "BGE 152 V 20",
         "regesteKurz": "Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin…",
@@ -203,26 +233,6 @@
         "zitierung": "BGE 148 II 369",
         "regesteKurz": "Art. 49 und Art. 186 Abs. 4 BV; Art. 66 Abs. 4, Art. 89 Abs. 2 lit. a und Art. 111 Abs. 2 BGG; § 13 und § 65a Abs. 2 VRG/ZH; Sinn und Zweck der Behördenbeschwerde des Bundes und entsprechende Verteilung kantonaler Gerichtskosten. Sinn und…",
         "datum": "2022-03-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_II_92",
-        "zitierung": "BGE 148 II 92",
-        "regesteKurz": "Art. 2 Abs. 1 lit. a und Art. 3 Abs. 1 lit. a BGÖ; Art. 55 URG; Anwendung des BGÖ auf die Schiedskommission im Tarifgenehmigungsverfahren mit Einigungstarif. Die Eidgenössische Schiedskommission für die Verwertung von Urheberrechten und…",
-        "datum": "2021-10-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_510",
-        "zitierung": "BGE 147 IV 510",
-        "regesteKurz": "Art. 86 StPO und Art. 9 VeÜ-ZSSV; kein Rechtsanspruch auf elektronische Zustellung von Mitteilungen der Strafbehörden. In Strafsachen sieht Art. 86 StPO vor, dass Mitteilungen der Strafbehörden an die betroffene Person mit deren…",
-        "datum": "2021-06-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -312,7 +322,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 21
       },
       {
         "key": "bge_147_I_89",
@@ -322,7 +332,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 19
+        "gewicht": 20
+      },
+      {
+        "key": "bge_146_II_276",
+        "zitierung": "BGE 146 II 276",
+        "regesteKurz": "Art. 83 lit. f Ziff. 2 BGG; Art. 1 Abs. 3 lit. d, Art. 13 lit. f und Art. 18 Abs. 1 der Interkantonalen Vereinbarung vom 25. November 1994/15. März 2001 über das öffentliche Beschaffungswesen; Wirtschaftlichkeitsgrundsatz; Wirkung der…",
+        "datum": "2020-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 16
+      },
+      {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 15
       },
       {
         "key": "bge_147_I_333",
@@ -335,26 +365,6 @@
         "gewicht": 13
       },
       {
-        "key": "bge_146_II_276",
-        "zitierung": "BGE 146 II 276",
-        "regesteKurz": "Art. 83 lit. f Ziff. 2 BGG; Art. 1 Abs. 3 lit. d, Art. 13 lit. f und Art. 18 Abs. 1 der Interkantonalen Vereinbarung vom 25. November 1994/15. März 2001 über das öffentliche Beschaffungswesen; Wirtschaftlichkeitsgrundsatz; Wirkung der…",
-        "datum": "2020-01-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 13
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 10
-      },
-      {
         "key": "bge_149_I_105",
         "zitierung": "BGE 149 I 105",
         "regesteKurz": "Art. 8 und 10 BV; Einführung einer COVID-Testpflicht für nicht geimpfte Gesundheits- und Sozialarbeiter. Prüfungsbefugnis und Feststellung des Sachverhalts, wenn das Bundesgericht als einzige richterliche Instanz im Rahmen einer abstrakten…",
@@ -362,7 +372,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 10
+        "gewicht": 11
       },
       {
         "key": "bge_149_III_277",
@@ -372,17 +382,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 9
+        "gewicht": 10
       },
       {
-        "key": "bge_149_I_191__voll",
-        "zitierung": "Urteil 2C_810/2021 (nicht publ. in BGE 149 I 191)",
+        "key": "bge_150_II_409__voll",
+        "zitierung": "Urteil 9C_416/2023 (nicht publ. in BGE 150 II 409)",
         "regesteKurz": null,
-        "datum": "2023-03-31",
+        "datum": "2024-05-16",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 7
+        "gewicht": 8
       }
     ],
     "30": [
@@ -732,7 +742,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 78
+        "gewicht": 87
       },
       {
         "key": "bge_146_IV_88",
@@ -742,27 +752,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 30
-      },
-      {
-        "key": "bge_148_I_160",
-        "zitierung": "BGE 148 I 160",
-        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
-        "datum": "2021-12-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 23
-      },
-      {
-        "key": "bge_147_I_89",
-        "zitierung": "BGE 147 I 89",
-        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
-        "datum": "2020-02-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 23
+        "gewicht": 33
       },
       {
         "key": "bge_150_II_346",
@@ -772,7 +762,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 19
+        "gewicht": 32
+      },
+      {
+        "key": "bge_148_I_160",
+        "zitierung": "BGE 148 I 160",
+        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
+        "datum": "2021-12-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 29
       },
       {
         "key": "bge_148_V_366",
@@ -782,7 +782,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 19
+        "gewicht": 25
+      },
+      {
+        "key": "bge_147_I_89",
+        "zitierung": "BGE 147 I 89",
+        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
+        "datum": "2020-02-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 24
+      },
+      {
+        "key": "bge_149_II_337",
+        "zitierung": "BGE 149 II 337",
+        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
+        "datum": "2023-08-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 18
       },
       {
         "key": "bge_148_V_174",
@@ -792,17 +812,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 16
-      },
-      {
-        "key": "bge_148_II_392",
-        "zitierung": "BGE 148 II 392",
-        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
-        "datum": "2022-05-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 14
+        "gewicht": 17
       }
     ],
     "43": [
@@ -887,6 +897,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_129",
+        "zitierung": "BGE 152 IV 129",
+        "regesteKurz": "a Art. 48 Abs. 1 und Art. 100 Abs. 1 BGG; Beweis der rechtzeitigen Aufgabe der Beschwerde bei der Schweizerischen Post im Rahmen eines Abholvertrags. Eine rechtsuchende Person, die eine fristgebundene Sendung im Rahmen eines Abholvertrags…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_III_367",
@@ -981,40 +1001,40 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_129",
+        "zitierung": "BGE 152 IV 129",
+        "regesteKurz": "a Art. 48 Abs. 1 und Art. 100 Abs. 1 BGG; Beweis der rechtzeitigen Aufgabe der Beschwerde bei der Schweizerischen Post im Rahmen eines Abholvertrags. Eine rechtsuchende Person, die eine fristgebundene Sendung im Rahmen eines Abholvertrags…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_30__voll",
+        "zitierung": "Urteil 4A_115/2025 (nicht publ. in BGE 152 III 30)",
+        "regesteKurz": null,
+        "datum": "2026-01-12",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_205__voll",
+        "zitierung": "Urteil 4A_129/2024 (nicht publ. in BGE 152 III 205)",
+        "regesteKurz": null,
+        "datum": "2025-09-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_III_1__voll",
         "zitierung": "Urteil 5A_347/2024 (nicht publ. in BGE 152 III 1)",
         "regesteKurz": null,
         "datum": "2025-08-13",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_699__voll",
-        "zitierung": "Urteil 2C_87/2024 (nicht publ. in BGE 151 II 699)",
-        "regesteKurz": null,
-        "datum": "2025-02-27",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
-        "regesteKurz": null,
-        "datum": "2025-02-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_III_249__voll",
-        "zitierung": "Urteil 5A_342/2023 (nicht publ. in BGE 151 III 249)",
-        "regesteKurz": null,
-        "datum": "2024-11-07",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1030,6 +1050,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 7
+      },
+      {
+        "key": "bge_148_I_160",
+        "zitierung": "BGE 148 I 160",
+        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
+        "datum": "2021-12-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 5
       },
       {
@@ -1040,7 +1070,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_149_I_105",
@@ -1050,15 +1080,25 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_151_III_62__voll",
+        "zitierung": "Urteil 4A_572/2023 (nicht publ. in BGE 151 III 62)",
+        "regesteKurz": null,
+        "datum": "2024-06-11",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 3
       },
       {
-        "key": "bge_148_I_160",
-        "zitierung": "BGE 148 I 160",
-        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
-        "datum": "2021-12-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_150_I_120__voll",
+        "zitierung": "Urteil 2C_79/2023 (nicht publ. in BGE 150 I 120)",
+        "regesteKurz": null,
+        "datum": "2024-02-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
       },
@@ -1073,30 +1113,10 @@
         "gewicht": 2
       },
       {
-        "key": "bge_151_III_62__voll",
-        "zitierung": "Urteil 4A_572/2023 (nicht publ. in BGE 151 III 62)",
+        "key": "bge_151_III_586__voll",
+        "zitierung": "Urteil 4A_528/2024 (nicht publ. in BGE 151 III 586)",
         "regesteKurz": null,
-        "datum": "2024-06-11",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_150_I_120__voll",
-        "zitierung": "Urteil 2C_79/2023 (nicht publ. in BGE 150 I 120)",
-        "regesteKurz": null,
-        "datum": "2024-02-23",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_146_III_326__voll",
-        "zitierung": "Urteil 4A_9/2020 (nicht publ. in BGE 146 III 326)",
-        "regesteKurz": null,
-        "datum": "2020-07-09",
+        "datum": "2025-06-26",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1112,7 +1132,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_148_III_330__voll",
@@ -1123,6 +1143,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_263__voll",
+        "zitierung": "Urteil 4A_494/2024 (nicht publ. in BGE 152 III 263)",
+        "regesteKurz": null,
+        "datum": "2026-01-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_III_455__voll",
@@ -1173,34 +1203,34 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_146_III_358__voll",
-        "zitierung": "Urteil 4A_486/2019 (nicht publ. in BGE 146 III 358)",
-        "regesteKurz": null,
-        "datum": "2020-08-17",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "48": [
       {
-        "key": "bge_149_IV_97",
-        "zitierung": "BGE 149 IV 97",
-        "regesteKurz": "Art. 100 und 50 BGG; Art. 130 StPO; Art. 6 Ziff. 1 und 3 lit. c EMRK; verspätete Beschwerde ans Bundesgericht; Wiederherstellung der Beschwerdefrist; notwendige Verteidigung; Recht auf ein faires Verfahren und eine effektive Verteidigung.…",
-        "datum": "2021-11-22",
+        "key": "bge_147_IV_526",
+        "zitierung": "BGE 147 IV 526",
+        "regesteKurz": "a Art. 91 Abs. 2 StPO; Art. 48 BGG; Nachweis der Einhaltung der Beschwerdefrist durch Vorlage eines Videos. Das Datum, an welchem eine Rechtsschrift eingereicht wird, entspricht vermutungsweise demjenigen des Poststempels. Möchte eine…",
+        "datum": "2021-10-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_129",
+        "zitierung": "BGE 152 IV 129",
+        "regesteKurz": "a Art. 48 Abs. 1 und Art. 100 Abs. 1 BGG; Beweis der rechtzeitigen Aufgabe der Beschwerde bei der Schweizerischen Post im Rahmen eines Abholvertrags. Eine rechtsuchende Person, die eine fristgebundene Sendung im Rahmen eines Abholvertrags…",
+        "datum": "2025-09-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_147_IV_526",
-        "zitierung": "BGE 147 IV 526",
-        "regesteKurz": "a Art. 91 Abs. 2 StPO; Art. 48 BGG; Nachweis der Einhaltung der Beschwerdefrist durch Vorlage eines Videos. Das Datum, an welchem eine Rechtsschrift eingereicht wird, entspricht vermutungsweise demjenigen des Poststempels. Möchte eine…",
-        "datum": "2021-10-07",
+        "key": "bge_149_IV_97",
+        "zitierung": "BGE 149 IV 97",
+        "regesteKurz": "Art. 100 und 50 BGG; Art. 130 StPO; Art. 6 Ziff. 1 und 3 lit. c EMRK; verspätete Beschwerde ans Bundesgericht; Wiederherstellung der Beschwerdefrist; notwendige Verteidigung; Recht auf ein faires Verfahren und eine effektive Verteidigung.…",
+        "datum": "2021-11-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1251,16 +1281,6 @@
         "zitierung": "Urteil 6B_536/2020 (nicht publ. in BGE 147 IV 471)",
         "regesteKurz": null,
         "datum": "2021-06-23",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_510__voll",
-        "zitierung": "Urteil 1B_240/2020 (nicht publ. in BGE 147 IV 510)",
-        "regesteKurz": null,
-        "datum": "2021-06-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1329,9 +1349,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_38__voll",
+        "zitierung": "Urteil 4A_482/2024 (nicht publ. in BGE 152 III 38)",
+        "regesteKurz": null,
+        "datum": "2025-08-12",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "51": [
+      {
+        "key": "bge_151_III_45",
+        "zitierung": "BGE 151 III 45",
+        "regesteKurz": "a Art. 51 Abs. 4 BGG; Streitwert bei Rechtsöffnung für Unterhaltsbeiträge; keine Kapitalisierung. Künftige Unterhaltsbeiträge sind noch nicht fällig und können daher vom Rechtsöffnungsbegehren nicht erfasst werden. Entsprechend steht im…",
+        "datum": "2024-08-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_149_III_258__voll",
         "zitierung": "Urteil 5A_816/2022 (nicht publ. in BGE 149 III 258)",
@@ -1363,16 +1403,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_III_45",
-        "zitierung": "BGE 151 III 45",
-        "regesteKurz": "a Art. 51 Abs. 4 BGG; Streitwert bei Rechtsöffnung für Unterhaltsbeiträge; keine Kapitalisierung. Künftige Unterhaltsbeiträge sind noch nicht fällig und können daher vom Rechtsöffnungsbegehren nicht erfasst werden. Entsprechend steht im…",
-        "datum": "2024-08-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_I_104",
         "zitierung": "BGE 148 I 104",
         "regesteKurz": "Art. 29 Abs. 1, Art. 29a, Art. 30 Abs. 1, Art. 48 BV; Konkordat vom 29. Oktober 1970 über die Schulkoordination (Schulkonkordat); Rechtsschutz und Instanzenzug bei personalrechtlichen Streitigkeiten innerhalb einer Fachagentur der…",
@@ -1383,30 +1413,30 @@
         "gewicht": 0
       },
       {
-        "key": "bge_152_III_1__voll",
-        "zitierung": "Urteil 5A_347/2024 (nicht publ. in BGE 152 III 1)",
+        "key": "bge_152_III_154__voll",
+        "zitierung": "Urteil 4A_364/2025 (nicht publ. in BGE 152 III 154)",
         "regesteKurz": null,
-        "datum": "2025-08-13",
+        "datum": "2025-12-18",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_I_93__voll",
-        "zitierung": "Urteil 1C_668/2023 (nicht publ. in BGE 151 I 93)",
+        "key": "bge_152_III_213__voll",
+        "zitierung": "Urteil 5A_78/2025 (nicht publ. in BGE 152 III 213)",
         "regesteKurz": null,
-        "datum": "2024-08-22",
+        "datum": "2025-10-22",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_150_III_257__voll",
-        "zitierung": "Urteil 4A_189/2022 (nicht publ. in BGE 150 III 257)",
+        "key": "bge_152_III_230__voll",
+        "zitierung": "Urteil 5A_275/2025 (nicht publ. in BGE 152 III 230)",
         "regesteKurz": null,
-        "datum": "2024-05-22",
+        "datum": "2025-10-22",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1446,7 +1476,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_151_III_586__voll",
@@ -1456,7 +1486,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_151_III_471__voll",
@@ -1466,7 +1496,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_147_III_107__voll",
@@ -1476,47 +1506,47 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
-        "key": "bge_152_III_71",
-        "zitierung": "BGE 152 III 71",
-        "regesteKurz": "Art. 356 Abs. 1 lit. a, Art. 396 ZPO; Art. 54 Abs. 1, Art. 74 Abs. 1, Art. 65 Abs. 3 lit. b BGG; ausnahmsweise Verwendung einer vom angefochtenen Entscheid abweichenden Amtssprache; Streitwerterfordernis bei der Anfechtung eines kantonalen…",
-        "datum": "2025-11-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_I_174",
-        "zitierung": "BGE 150 I 174",
-        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 90 und 93 BGG; § 13 Abs. 2 VRG/ZH; Qualifikation der Kostenverlegung im Rahmen einer Rückweisung zulasten des Rechtsvertreters als Endentscheid; Verletzung des Anspruchs auf rechtliches Gehör mangels Möglichkeit des…",
-        "datum": "2024-06-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_III_153",
-        "zitierung": "BGE 147 III 153",
-        "regesteKurz": "Art. 17 Abs. 1 ZPO; Gerichtsstandsvereinbarung, Culpa in contrahendo. Grundsätze der Auslegung einer Gerichtsstandsvereinbarung (E. 5). Unmöglichkeit, den tatsächlichen übereinstimmenden Parteiwillen festzustellen (E. 6). Objektivierte…",
-        "datum": "2021-02-09",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_III_563__voll",
-        "zitierung": "Urteil 5A_808/2024 (nicht publ. in BGE 151 III 563)",
+        "key": "bge_152_III_263__voll",
+        "zitierung": "Urteil 4A_494/2024 (nicht publ. in BGE 152 III 263)",
         "regesteKurz": null,
-        "datum": "2025-07-24",
+        "datum": "2026-01-23",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_279__voll",
+        "zitierung": "Urteil 4A_510/2024 (nicht publ. in BGE 152 III 279)",
+        "regesteKurz": null,
+        "datum": "2026-01-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_150_III_89__voll",
+        "zitierung": "Urteil 4A_172/2023 (nicht publ. in BGE 150 III 89)",
+        "regesteKurz": null,
+        "datum": "2024-01-11",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_III_586__voll",
+        "zitierung": "Urteil 4A_166/2021 (nicht publ. in BGE 147 III 586)",
+        "regesteKurz": null,
+        "datum": "2021-09-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
       }
     ],
     "55": [
@@ -1749,6 +1779,16 @@
     ],
     "60": [
       {
+        "key": "bge_152_III_168",
+        "zitierung": "BGE 152 III 168",
+        "regesteKurz": "Art. 343 Abs. 1 lit. b ZPO; Bemessung der Ordnungsbusse. Auch wenn dieselbe Verpflichtung zu einem Tun, Unterlassen oder Dulden wiederholt nicht erfüllt wurde, darf das Vollstreckungsgericht im selben Vollstreckungsverfahren gestützt auf…",
+        "datum": "2025-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_I_194",
         "zitierung": "BGE 151 I 194",
         "regesteKurz": "Art. 27, 29 Abs. 1 und Art. 36 BV; kantonales Obligatorium zum elektronischen Behördenverkehr für berufsmässige Parteivertreter (abstrakte Normenkontrolle). Berufsmässige Parteivertreter zu verpflichten, Eingaben an kantonale Verwaltungs-…",
@@ -1863,6 +1903,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_III_190__voll",
+        "zitierung": "Urteil 4A_170/2024 (nicht publ. in BGE 152 III 190)",
+        "regesteKurz": null,
+        "datum": "2025-09-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_V_209__voll",
         "zitierung": "Urteil 8C_432/2021 (nicht publ. in BGE 148 V 209)",
         "regesteKurz": null,
@@ -1892,7 +1942,27 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
+        "gewicht": 6
+      },
+      {
+        "key": "bge_150_I_50__voll",
+        "zitierung": "Urteil 7B_471/2023 (nicht publ. in BGE 150 I 50)",
+        "regesteKurz": null,
+        "datum": "2024-01-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 5
+      },
+      {
+        "key": "bge_148_V_174__voll",
+        "zitierung": "Urteil 8C_256/2021 (nicht publ. in BGE 148 V 174)",
+        "regesteKurz": null,
+        "datum": "2022-03-09",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 4
       },
       {
         "key": "bge_148_IV_89__voll",
@@ -1905,36 +1975,6 @@
         "gewicht": 4
       },
       {
-        "key": "bge_150_I_50__voll",
-        "zitierung": "Urteil 7B_471/2023 (nicht publ. in BGE 150 I 50)",
-        "regesteKurz": null,
-        "datum": "2024-01-03",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_148_V_174__voll",
-        "zitierung": "Urteil 8C_256/2021 (nicht publ. in BGE 148 V 174)",
-        "regesteKurz": null,
-        "datum": "2022-03-09",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_147_IV_534__voll",
-        "zitierung": "Urteil 6B_323/2021 (nicht publ. in BGE 147 IV 534)",
-        "regesteKurz": null,
-        "datum": "2021-08-11",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
         "key": "bge_147_I_268__voll",
         "zitierung": "Urteil 2C_175/2020 (nicht publ. in BGE 147 I 268)",
         "regesteKurz": null,
@@ -1942,23 +1982,33 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
-        "key": "bge_147_III_265__voll",
-        "zitierung": "Urteil 5A_311/2019 (nicht publ. in BGE 147 III 265)",
+        "key": "bge_150_IV_103__voll",
+        "zitierung": "Urteil 7B_215/2023 (nicht publ. in BGE 150 IV 103)",
         "regesteKurz": null,
-        "datum": "2020-11-11",
+        "datum": "2023-11-30",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
       },
       {
-        "key": "bge_146_IV_136__voll",
-        "zitierung": "Urteil 1B_6/2020 (nicht publ. in BGE 146 IV 136)",
+        "key": "bge_150_IV_10__voll",
+        "zitierung": "Urteil 6B_234/2022 (nicht publ. in BGE 150 IV 10)",
         "regesteKurz": null,
-        "datum": "2020-01-29",
+        "datum": "2023-06-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_149_IV_248__voll",
+        "zitierung": "Urteil 6B_219/2021 (nicht publ. in BGE 149 IV 248)",
+        "regesteKurz": null,
+        "datum": "2023-04-19",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -1971,6 +2021,36 @@
         "zitierung": "Urteil 2C_196/2023 (nicht publ. in BGE 150 II 123)",
         "regesteKurz": null,
         "datum": "2024-02-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_IV_188__voll",
+        "zitierung": "Urteil 6B_831/2023 (nicht publ. in BGE 150 IV 188)",
+        "regesteKurz": null,
+        "datum": "2024-04-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_IV_248__voll",
+        "zitierung": "Urteil 6B_219/2021 (nicht publ. in BGE 149 IV 248)",
+        "regesteKurz": null,
+        "datum": "2023-04-19",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_IV_288__voll",
+        "zitierung": "Urteil 6B_1270/2021 (nicht publ. in BGE 148 IV 288)",
+        "regesteKurz": null,
+        "datum": "2022-06-02",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2015,36 +2095,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_147_I_16__voll",
-        "zitierung": "Urteil 2C_664/2016 (nicht publ. in BGE 147 I 16)",
-        "regesteKurz": null,
-        "datum": "2020-03-25",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_146_V_51__voll",
-        "zitierung": "Urteil 8C_22/2019 (nicht publ. in BGE 146 V 51)",
-        "regesteKurz": null,
-        "datum": "2019-09-24",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_152_III_71",
-        "zitierung": "BGE 152 III 71",
-        "regesteKurz": "Art. 356 Abs. 1 lit. a, Art. 396 ZPO; Art. 54 Abs. 1, Art. 74 Abs. 1, Art. 65 Abs. 3 lit. b BGG; ausnahmsweise Verwendung einer vom angefochtenen Entscheid abweichenden Amtssprache; Streitwerterfordernis bei der Anfechtung eines kantonalen…",
-        "datum": "2025-11-05",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "66": [
@@ -2056,7 +2106,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 75
+        "gewicht": 84
       },
       {
         "key": "bge_146_IV_88__voll",
@@ -2066,7 +2116,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 46
+        "gewicht": 49
       },
       {
         "key": "bge_147_IV_73__voll",
@@ -2076,37 +2126,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 45
-      },
-      {
-        "key": "bge_148_I_160",
-        "zitierung": "BGE 148 I 160",
-        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
-        "datum": "2021-12-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 27
-      },
-      {
-        "key": "bge_148_IV_356__voll",
-        "zitierung": "Urteil 6B_536/2022 (nicht publ. in BGE 148 IV 356)",
-        "regesteKurz": null,
-        "datum": "2022-08-25",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 25
-      },
-      {
-        "key": "bge_146_II_335__voll",
-        "zitierung": "Urteil 2C_910/2019 (nicht publ. in BGE 146 II 335)",
-        "regesteKurz": null,
-        "datum": "2020-05-11",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 24
+        "gewicht": 47
       },
       {
         "key": "bge_150_II_346__voll",
@@ -2116,17 +2136,47 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 36
       },
       {
-        "key": "bge_149_II_66__voll",
-        "zitierung": "Urteil 1C_661/2021 (nicht publ. in BGE 149 II 66)",
+        "key": "bge_148_I_160",
+        "zitierung": "BGE 148 I 160",
+        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
+        "datum": "2021-12-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 33
+      },
+      {
+        "key": "bge_148_IV_356__voll",
+        "zitierung": "Urteil 6B_536/2022 (nicht publ. in BGE 148 IV 356)",
         "regesteKurz": null,
-        "datum": "2022-07-14",
+        "datum": "2022-08-25",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 29
+      },
+      {
+        "key": "bge_146_II_335__voll",
+        "zitierung": "Urteil 2C_910/2019 (nicht publ. in BGE 146 II 335)",
+        "regesteKurz": null,
+        "datum": "2020-05-11",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 25
+      },
+      {
+        "key": "bge_148_V_366__voll",
+        "zitierung": "Urteil 8C_141/2022 (nicht publ. in BGE 148 V 366)",
+        "regesteKurz": null,
+        "datum": "2022-08-17",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 24
       }
     ],
     "67": [
@@ -2138,7 +2188,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 7
       },
       {
         "key": "bge_150_II_244__voll",
@@ -2158,7 +2208,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 4
       },
       {
         "key": "bge_149_II_462__voll",
@@ -2220,13 +2270,23 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 74
+        "gewicht": 81
       },
       {
         "key": "bge_146_IV_88__voll",
         "zitierung": "Urteil 6B_614/2019 (nicht publ. in BGE 146 IV 88)",
         "regesteKurz": null,
         "datum": "2019-12-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 40
+      },
+      {
+        "key": "bge_150_II_346__voll",
+        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
+        "regesteKurz": null,
+        "datum": "2024-05-03",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2240,17 +2300,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 29
-      },
-      {
-        "key": "bge_150_II_346__voll",
-        "zitierung": "Urteil 9C_336/2023 (nicht publ. in BGE 150 II 346)",
-        "regesteKurz": null,
-        "datum": "2024-05-03",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 22
+        "gewicht": 36
       },
       {
         "key": "bge_148_IV_356__voll",
@@ -2260,7 +2310,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 21
+        "gewicht": 24
       },
       {
         "key": "bge_147_I_89__voll",
@@ -2270,7 +2320,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 21
+        "gewicht": 22
       },
       {
         "key": "bge_149_II_66__voll",
@@ -2280,7 +2330,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 21
       },
       {
         "key": "bge_146_II_335__voll",
@@ -2290,7 +2340,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 18
+        "gewicht": 19
       }
     ],
     "71": [
@@ -2302,7 +2352,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_149_II_187__voll",
@@ -2312,7 +2362,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_149_IV_9__voll",
@@ -2329,6 +2379,16 @@
         "zitierung": "Urteil 6B_257/2020 (nicht publ. in BGE 147 IV 409)",
         "regesteKurz": null,
         "datum": "2021-06-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_II_384__voll",
+        "zitierung": "Urteil 2C_614/2019 (nicht publ. in BGE 146 II 384)",
+        "regesteKurz": null,
+        "datum": "2020-06-25",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2363,16 +2423,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_II_154__voll",
-        "zitierung": "Urteil 9C_47/2024 (nicht publ. in BGE 151 II 154)",
-        "regesteKurz": null,
-        "datum": "2024-09-23",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
       }
     ],
     "72": [
@@ -2384,7 +2434,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_146_III_284",
@@ -2394,7 +2444,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_147_I_89",
@@ -2404,13 +2454,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_150_III_113__voll",
         "zitierung": "Urteil 5A_357/2022 (nicht publ. in BGE 150 III 113)",
         "regesteKurz": null,
         "datum": "2023-11-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_149_III_105__voll",
+        "zitierung": "Urteil 4A_407/2021 (nicht publ. in BGE 149 III 105)",
+        "regesteKurz": null,
+        "datum": "2022-09-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2445,16 +2505,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
-      },
-      {
-        "key": "bge_149_III_287",
-        "zitierung": "BGE 149 III 287",
-        "regesteKurz": "a Art. 74 Abs. 2 lit. a BGG; Art. 49 Abs. 1 BV; Beschwerde in Zivilsachen; Rechtsfrage von grundsätzlicher Bedeutung; Grundsatz des Vorrangs des Bundesrechts. Trotz Unterschreitens der gesetzlichen Streitwertgrenze verbleibt kein Raum für…",
-        "datum": "2023-04-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
       }
     ],
     "73": [
@@ -2471,6 +2521,16 @@
     ],
     "74": [
       {
+        "key": "bge_147_III_172__voll",
+        "zitierung": "Urteil 4A_529/2020 (nicht publ. in BGE 147 III 172)",
+        "regesteKurz": null,
+        "datum": "2020-12-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
         "key": "bge_146_III_265__voll",
         "zitierung": "Urteil 4A_400/2019 (nicht publ. in BGE 146 III 265)",
         "regesteKurz": null,
@@ -2479,6 +2539,46 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 4
+      },
+      {
+        "key": "bge_146_III_237",
+        "zitierung": "BGE 146 III 237",
+        "regesteKurz": "Art. 219 i.V.m. Art. 229 Abs. 1 und 2 ZPO; Aktenschluss im summarischen Verfahren bei zweitem Schriftenwechsel. Wird im Summarverfahren ein zweiter Schriftenwechsel angeordnet, sind darin unbeschränkt Noven zulässig. Der Aktenschluss tritt…",
+        "datum": "2020-06-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
+        "datum": "2020-01-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_149_III_12__voll",
+        "zitierung": "Urteil 5A_87/2022 (nicht publ. in BGE 149 III 12)",
+        "regesteKurz": null,
+        "datum": "2022-11-02",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_149_III_105__voll",
+        "zitierung": "Urteil 4A_407/2021 (nicht publ. in BGE 149 III 105)",
+        "regesteKurz": null,
+        "datum": "2022-09-13",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
       },
       {
         "key": "bge_148_III_314__voll",
@@ -2491,67 +2591,37 @@
         "gewicht": 3
       },
       {
-        "key": "bge_147_III_14__voll",
-        "zitierung": "Urteil 4A_554/2019 (nicht publ. in BGE 147 III 14)",
+        "key": "bge_147_III_491__voll",
+        "zitierung": "Urteil 5A_697/2020 (nicht publ. in BGE 147 III 491)",
         "regesteKurz": null,
-        "datum": "2020-10-26",
+        "datum": "2021-03-22",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
-      },
-      {
-        "key": "bge_146_III_37__voll",
-        "zitierung": "Urteil 4A_455/2018 (nicht publ. in BGE 146 III 37)",
-        "regesteKurz": null,
-        "datum": "2019-10-09",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_146_III_55__voll",
-        "zitierung": "Urteil 4A_70/2019 (nicht publ. in BGE 146 III 55)",
-        "regesteKurz": null,
-        "datum": "2019-08-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_149_III_287",
-        "zitierung": "BGE 149 III 287",
-        "regesteKurz": "a Art. 74 Abs. 2 lit. a BGG; Art. 49 Abs. 1 BV; Beschwerde in Zivilsachen; Rechtsfrage von grundsätzlicher Bedeutung; Grundsatz des Vorrangs des Bundesrechts. Trotz Unterschreitens der gesetzlichen Streitwertgrenze verbleibt kein Raum für…",
-        "datum": "2023-04-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_146_III_237",
-        "zitierung": "BGE 146 III 237",
-        "regesteKurz": "Art. 219 i.V.m. Art. 229 Abs. 1 und 2 ZPO; Aktenschluss im summarischen Verfahren bei zweitem Schriftenwechsel. Wird im Summarverfahren ein zweiter Schriftenwechsel angeordnet, sind darin unbeschränkt Noven zulässig. Der Aktenschluss tritt…",
-        "datum": "2020-06-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_146_III_157",
-        "zitierung": "BGE 146 III 157",
-        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
-        "datum": "2020-01-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
       }
     ],
     "75": [
+      {
+        "key": "bge_146_III_203",
+        "zitierung": "BGE 146 III 203",
+        "regesteKurz": "a Art. 298 ZPO; Kindesanhörung und vorweggenommene (antizipierte) Beweiswürdigung. Voraussetzungen, unter denen das Gericht gestützt auf eine vorweggenommene Beweiswürdigung auf eine Kindesanhörung verzichten darf. Unterscheidung zwischen…",
+        "datum": "2020-05-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_147_III_172__voll",
+        "zitierung": "Urteil 4A_529/2020 (nicht publ. in BGE 147 III 172)",
+        "regesteKurz": null,
+        "datum": "2020-12-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 4
+      },
       {
         "key": "bge_146_III_265__voll",
         "zitierung": "Urteil 4A_400/2019 (nicht publ. in BGE 146 III 265)",
@@ -2563,10 +2633,10 @@
         "gewicht": 4
       },
       {
-        "key": "bge_146_III_203",
-        "zitierung": "BGE 146 III 203",
-        "regesteKurz": "a Art. 298 ZPO; Kindesanhörung und vorweggenommene (antizipierte) Beweiswürdigung. Voraussetzungen, unter denen das Gericht gestützt auf eine vorweggenommene Beweiswürdigung auf eine Kindesanhörung verzichten darf. Unterscheidung zwischen…",
-        "datum": "2020-05-20",
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
+        "datum": "2020-01-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2593,6 +2663,16 @@
         "gewicht": 3
       },
       {
+        "key": "bge_149_III_105__voll",
+        "zitierung": "Urteil 4A_407/2021 (nicht publ. in BGE 149 III 105)",
+        "regesteKurz": null,
+        "datum": "2022-09-13",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_148_III_257__voll",
         "zitierung": "Urteil 4A_518/2021 (nicht publ. in BGE 148 III 257)",
         "regesteKurz": null,
@@ -2601,36 +2681,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
-      },
-      {
-        "key": "bge_147_III_14__voll",
-        "zitierung": "Urteil 4A_554/2019 (nicht publ. in BGE 147 III 14)",
-        "regesteKurz": null,
-        "datum": "2020-10-26",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_146_III_37__voll",
-        "zitierung": "Urteil 4A_455/2018 (nicht publ. in BGE 146 III 37)",
-        "regesteKurz": null,
-        "datum": "2019-10-09",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_149_III_287",
-        "zitierung": "BGE 149 III 287",
-        "regesteKurz": "a Art. 74 Abs. 2 lit. a BGG; Art. 49 Abs. 1 BV; Beschwerde in Zivilsachen; Rechtsfrage von grundsätzlicher Bedeutung; Grundsatz des Vorrangs des Bundesrechts. Trotz Unterschreitens der gesetzlichen Streitwertgrenze verbleibt kein Raum für…",
-        "datum": "2023-04-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
       }
     ],
     "76": [
@@ -2645,6 +2695,26 @@
         "gewicht": 5
       },
       {
+        "key": "bge_147_III_491__voll",
+        "zitierung": "Urteil 5A_697/2020 (nicht publ. in BGE 147 III 491)",
+        "regesteKurz": null,
+        "datum": "2021-03-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_151_III_62__voll",
+        "zitierung": "Urteil 4A_572/2023 (nicht publ. in BGE 151 III 62)",
+        "regesteKurz": null,
+        "datum": "2024-06-11",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
         "key": "bge_150_III_113__voll",
         "zitierung": "Urteil 5A_357/2022 (nicht publ. in BGE 150 III 113)",
         "regesteKurz": null,
@@ -2655,10 +2725,10 @@
         "gewicht": 3
       },
       {
-        "key": "bge_147_III_491__voll",
-        "zitierung": "Urteil 5A_697/2020 (nicht publ. in BGE 147 III 491)",
+        "key": "bge_149_III_105__voll",
+        "zitierung": "Urteil 4A_407/2021 (nicht publ. in BGE 149 III 105)",
         "regesteKurz": null,
-        "datum": "2021-03-22",
+        "datum": "2022-09-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2685,32 +2755,12 @@
         "gewicht": 3
       },
       {
-        "key": "bge_151_III_62__voll",
-        "zitierung": "Urteil 4A_572/2023 (nicht publ. in BGE 151 III 62)",
-        "regesteKurz": null,
-        "datum": "2024-06-11",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_149_III_98__voll",
-        "zitierung": "Urteil 4A_531/2021 (nicht publ. in BGE 149 III 98)",
-        "regesteKurz": null,
-        "datum": "2022-07-18",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_148_III_145__voll",
-        "zitierung": "Urteil 5A_367/2021 (nicht publ. in BGE 148 III 145)",
-        "regesteKurz": null,
-        "datum": "2021-12-14",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
+        "datum": "2020-01-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
       }
@@ -2734,7 +2784,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_150_III_280",
@@ -2744,7 +2794,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 4
       },
       {
         "key": "bge_148_III_436",
@@ -2764,40 +2814,50 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
-        "key": "bge_147_III_500",
-        "zitierung": "BGE 147 III 500",
-        "regesteKurz": "Art. 75 und 77 BGG; Art. 191 IPRG; internationale Schiedsgerichtsbarkeit; Ausschöpfung des schiedsgerichtlichen Instanzenzugs; Eintretensvoraussetzung. Auf die Beschwerde in Zivilsachen an das Bundesgericht gegen einen internationalen…",
-        "datum": "2021-06-18",
+        "key": "bge_148_III_427__voll",
+        "zitierung": "Urteil 4A_232/2022 (nicht publ. in BGE 148 III 427)",
+        "regesteKurz": null,
+        "datum": "2022-12-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_III_62",
+        "zitierung": "BGE 151 III 62",
+        "regesteKurz": "a Art. 190a IPRG; internationale Schiedsgerichtsbarkeit; Revisionsobjekt; Prüfungsbefugnis des Bundesgerichts bei einem Revisionsgesuch. Ein Zwischenschiedsspruch, der das Schiedsgericht bindet, das ihn gefällt hat, ist der Revision…",
+        "datum": "2024-06-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       },
       {
-        "key": "bge_150_III_238__voll",
-        "zitierung": "Urteil 4A_603/2023 (nicht publ. in BGE 150 III 238)",
-        "regesteKurz": null,
-        "datum": "2024-03-25",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_149_III_277__voll",
-        "zitierung": "Urteil 4A_184/2022 (nicht publ. in BGE 149 III 277)",
-        "regesteKurz": null,
-        "datum": "2023-03-08",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_150_III_89",
+        "zitierung": "BGE 150 III 89",
+        "regesteKurz": "a Art. 99 Abs. 1 BGG; Rechtsgutachten. Prozessuale Behandlung eines im bundesgerichtlichen Beschwerdeverfahren neu eingereichten Rechtsgutachtens (E. 3.1). Regeste b Art. 178 Abs. 2 und Art. 190 Abs. 2 lit. b IPRG; Art. 31 f. VRK;…",
+        "datum": "2024-01-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       }
     ],
     "78": [
+      {
+        "key": "bge_149_IV_9",
+        "zitierung": "BGE 149 IV 9",
+        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
+        "datum": "2022-09-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
+      },
       {
         "key": "bge_150_IV_149__voll",
         "zitierung": "Urteil 7B_155/2024 (nicht publ. in BGE 150 IV 149)",
@@ -2809,10 +2869,10 @@
         "gewicht": 6
       },
       {
-        "key": "bge_149_IV_9",
-        "zitierung": "BGE 149 IV 9",
-        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
-        "datum": "2022-09-27",
+        "key": "bge_150_IV_103",
+        "zitierung": "BGE 150 IV 103",
+        "regesteKurz": "a Art. 78 ff. und 93 Abs. 1 lit. a BGG; Zwischenentscheid betreffend die Beweiserhebung; Zulässigkeit der Beschwerde in Strafsachen. Wird im Rahmen eines hängigen Strafverfahrens der Beizug von Urkunden aus abgeschlossenen Strafverfahren,…",
+        "datum": "2023-11-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2829,16 +2889,6 @@
         "gewicht": 4
       },
       {
-        "key": "bge_150_IV_103",
-        "zitierung": "BGE 150 IV 103",
-        "regesteKurz": "a Art. 78 ff. und 93 Abs. 1 lit. a BGG; Zwischenentscheid betreffend die Beweiserhebung; Zulässigkeit der Beschwerde in Strafsachen. Wird im Rahmen eines hängigen Strafverfahrens der Beizug von Urkunden aus abgeschlossenen Strafverfahren,…",
-        "datum": "2023-11-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
         "key": "bge_150_IV_277__voll",
         "zitierung": "Urteil 7B_261/2023 (nicht publ. in BGE 150 IV 277)",
         "regesteKurz": null,
@@ -2847,6 +2897,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
+      },
+      {
+        "key": "bge_150_IV_38",
+        "zitierung": "BGE 150 IV 38",
+        "regesteKurz": "a Art. 78 ff. BGG; Art. 222 und 429-431 StPO; Zulässigkeit der Beschwerde in Strafsachen. Gegen kantonal letztinstanzliche Entscheide über die Anordnung von Sicherheitshaft im selbstständigen gerichtlichen Nachverfahren betreffend die…",
+        "datum": "2023-11-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
       },
       {
         "key": "bge_149_IV_205",
@@ -2867,19 +2927,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_147_IV_188",
-        "zitierung": "BGE 147 IV 188",
-        "regesteKurz": "Art. 29 f. StPO, Art. 92 und 93 Abs. 1 lit. a BGG; Eintretensfrage bei Trennung von Strafverfahren. Darstellung der früheren, uneinheitlichen Rechtsprechung (E. 1.2). Art. 92 BGG ist bei Verfahrenstrennungen nur anwendbar, wenn im…",
-        "datum": "2020-12-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
       }
     ],
     "79": [
+      {
+        "key": "bge_147_IV_479__voll",
+        "zitierung": "Urteil 6B_379/2020 (nicht publ. in BGE 147 IV 479)",
+        "regesteKurz": null,
+        "datum": "2021-06-01",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
       {
         "key": "bge_146_IV_172",
         "zitierung": "BGE 146 IV 172",
@@ -2911,20 +2971,30 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_IV_398__voll",
-        "zitierung": "Urteil 6B_57/2022 (nicht publ. in BGE 148 IV 398)",
+        "key": "bge_152_IV_234__voll",
+        "zitierung": "Urteil 7B_65/2023 (nicht publ. in BGE 152 IV 234)",
         "regesteKurz": null,
-        "datum": "2022-08-19",
+        "datum": "2025-12-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_147_IV_479__voll",
-        "zitierung": "Urteil 6B_379/2020 (nicht publ. in BGE 147 IV 479)",
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
         "regesteKurz": null,
-        "datum": "2021-06-01",
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_IV_398__voll",
+        "zitierung": "Urteil 6B_57/2022 (nicht publ. in BGE 148 IV 398)",
+        "regesteKurz": null,
+        "datum": "2022-08-19",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2940,7 +3010,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 7
+        "gewicht": 9
       },
       {
         "key": "bge_147_IV_439__voll",
@@ -2950,7 +3020,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 6
+        "gewicht": 7
       },
       {
         "key": "bge_150_IV_103",
@@ -2960,23 +3030,33 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_149_IV_205",
-        "zitierung": "BGE 149 IV 205",
-        "regesteKurz": "Art. 93 Abs. 1 lit. a BGG; Art. 182 ff., Art. 393 Abs. 1 lit. a und Art. 394 lit. b StPO; Art. 10 Abs. 2 und Art. 13 Abs. 1 BV; Ablehnung eines Beweisantrags der beschuldigten Person durch die Staatsanwaltschaft; nicht wieder…",
-        "datum": "2023-02-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 5
       },
       {
         "key": "bge_148_IV_124",
         "zitierung": "BGE 148 IV 124",
         "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
         "datum": "2022-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_149_IV_248__voll",
+        "zitierung": "Urteil 6B_219/2021 (nicht publ. in BGE 149 IV 248)",
+        "regesteKurz": null,
+        "datum": "2023-04-19",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_149_IV_205",
+        "zitierung": "BGE 149 IV 205",
+        "regesteKurz": "Art. 93 Abs. 1 lit. a BGG; Art. 182 ff., Art. 393 Abs. 1 lit. a und Art. 394 lit. b StPO; Art. 10 Abs. 2 und Art. 13 Abs. 1 BV; Ablehnung eines Beweisantrags der beschuldigten Person durch die Staatsanwaltschaft; nicht wieder…",
+        "datum": "2023-02-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3001,16 +3081,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_150_IV_277__voll",
-        "zitierung": "Urteil 7B_261/2023 (nicht publ. in BGE 150 IV 277)",
-        "regesteKurz": null,
-        "datum": "2024-03-18",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 2
       }
     ],
     "81": [
@@ -3022,13 +3092,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_148_IV_275",
         "zitierung": "BGE 148 IV 275",
         "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Art. 135 Abs. 3 lit. b, Art. 135 Abs. 4 lit. a und b, Art. 429 Abs. 1 lit. a, Art. 434 Abs. 1 und 2 StPO; Entschädigungsansprüche von Drittpersonen; Beschwerdelegitimation der Staatsanwaltschaft. Die…",
         "datum": "2022-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_147_IV_47",
+        "zitierung": "BGE 147 IV 47",
+        "regesteKurz": "a Art. 81 Abs. 1 lit. b BGG; Art. 426 Abs. 2, Art. 433 Abs. 1 lit. b StPO; Beschwerdelegitimation der Privatklägerschaft bezüglich der Kostentragungspflicht einer beschuldigten Person, deren Verfahren eingestellt wurde. Das rechtlich…",
+        "datum": "2020-12-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3043,16 +3123,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 4
-      },
-      {
-        "key": "bge_147_IV_47",
-        "zitierung": "BGE 147 IV 47",
-        "regesteKurz": "a Art. 81 Abs. 1 lit. b BGG; Art. 426 Abs. 2, Art. 433 Abs. 1 lit. b StPO; Beschwerdelegitimation der Privatklägerschaft bezüglich der Kostentragungspflicht einer beschuldigten Person, deren Verfahren eingestellt wurde. Das rechtlich…",
-        "datum": "2020-12-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 3
       },
       {
         "key": "bge_146_IV_297",
@@ -3104,7 +3174,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 32
+        "gewicht": 36
       },
       {
         "key": "bge_148_I_160",
@@ -3114,7 +3184,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 18
+        "gewicht": 24
       },
       {
         "key": "bge_149_I_105",
@@ -3124,7 +3194,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 12
+        "gewicht": 15
       },
       {
         "key": "bge_146_II_276",
@@ -3134,7 +3204,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 9
+        "gewicht": 11
+      },
+      {
+        "key": "bge_148_V_366__voll",
+        "zitierung": "Urteil 8C_141/2022 (nicht publ. in BGE 148 V 366)",
+        "regesteKurz": null,
+        "datum": "2022-08-17",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 10
       },
       {
         "key": "bge_147_I_16__voll",
@@ -3147,6 +3227,16 @@
         "gewicht": 9
       },
       {
+        "key": "bge_149_II_66",
+        "zitierung": "BGE 149 II 66",
+        "regesteKurz": "Art. 89 Abs. 1 lit. a, Art. 89 Abs. 3, Art. 93 Abs. 1 lit. a BGG; Beschwerde in Stimmrechtssachen; Anfechtung eines Urteils, welches das kommunale Parlament verpflichtet, eine neue Umsetzungsvorlage zu einer allgemeinen Anregung…",
+        "datum": "2022-07-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 8
+      },
+      {
         "key": "bge_147_I_333",
         "zitierung": "BGE 147 I 333",
         "regesteKurz": "Art. 29a und Art. 185 Abs. 3 BV; Art. 30 Abs. 2 und Art. 86 BGG; Art. 11 Abs. 3 der Verordnung über die Abfederung der wirtschaftlichen Auswirkungen des Coronavirus (COVID-19) im Kultursektor (COVID-Verordnung Kultur); selbständige…",
@@ -3155,26 +3245,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 8
-      },
-      {
-        "key": "bge_148_V_366__voll",
-        "zitierung": "Urteil 8C_141/2022 (nicht publ. in BGE 148 V 366)",
-        "regesteKurz": null,
-        "datum": "2022-08-17",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 8
-      },
-      {
-        "key": "bge_149_II_66",
-        "zitierung": "BGE 149 II 66",
-        "regesteKurz": "Art. 89 Abs. 1 lit. a, Art. 89 Abs. 3, Art. 93 Abs. 1 lit. a BGG; Beschwerde in Stimmrechtssachen; Anfechtung eines Urteils, welches das kommunale Parlament verpflichtet, eine neue Umsetzungsvorlage zu einer allgemeinen Anregung…",
-        "datum": "2022-07-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 7
       }
     ],
     "83": [
@@ -3186,17 +3256,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 32
-      },
-      {
-        "key": "bge_147_I_89",
-        "zitierung": "BGE 147 I 89",
-        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
-        "datum": "2020-02-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 18
+        "gewicht": 38
       },
       {
         "key": "bge_148_I_160",
@@ -3206,13 +3266,33 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 16
+        "gewicht": 19
+      },
+      {
+        "key": "bge_147_I_89",
+        "zitierung": "BGE 147 I 89",
+        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
+        "datum": "2020-02-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 19
       },
       {
         "key": "bge_146_II_276",
         "zitierung": "BGE 146 II 276",
         "regesteKurz": "Art. 83 lit. f Ziff. 2 BGG; Art. 1 Abs. 3 lit. d, Art. 13 lit. f und Art. 18 Abs. 1 der Interkantonalen Vereinbarung vom 25. November 1994/15. März 2001 über das öffentliche Beschaffungswesen; Wirtschaftlichkeitsgrundsatz; Wirkung der…",
         "datum": "2020-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 13
+      },
+      {
+        "key": "bge_147_I_268",
+        "zitierung": "BGE 147 I 268",
+        "regesteKurz": "Art. 83 lit. c Ziff. 2 BGG; Art. 8 EMRK; prekärer Aufenthalt; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung im Lichte des Anspruchs auf Achtung des Privatlebens. Zulässigkeit der Beschwerde in…",
+        "datum": "2020-11-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3229,12 +3309,12 @@
         "gewicht": 9
       },
       {
-        "key": "bge_147_I_268",
-        "zitierung": "BGE 147 I 268",
-        "regesteKurz": "Art. 83 lit. c Ziff. 2 BGG; Art. 8 EMRK; prekärer Aufenthalt; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung im Lichte des Anspruchs auf Achtung des Privatlebens. Zulässigkeit der Beschwerde in…",
-        "datum": "2020-11-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_149_II_187__voll",
+        "zitierung": "Urteil 2C_488/2020 (nicht publ. in BGE 149 II 187)",
+        "regesteKurz": null,
+        "datum": "2023-03-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 8
       },
@@ -3246,17 +3326,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 6
-      },
-      {
-        "key": "bge_149_II_187__voll",
-        "zitierung": "Urteil 2C_488/2020 (nicht publ. in BGE 149 II 187)",
-        "regesteKurz": null,
-        "datum": "2023-03-29",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 6
+        "gewicht": 7
       }
     ],
     "84": [
@@ -3383,6 +3453,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_II_169__voll",
+        "zitierung": "Urteil 2C_416/2024 (nicht publ. in BGE 152 II 169)",
+        "regesteKurz": null,
+        "datum": "2025-07-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_625__voll",
         "zitierung": "Urteil 1C_713/2024 (nicht publ. in BGE 151 II 625)",
         "regesteKurz": null,
@@ -3411,16 +3491,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_465__voll",
-        "zitierung": "Urteil 1C_653/2022 (nicht publ. in BGE 150 II 465)",
-        "regesteKurz": null,
-        "datum": "2024-06-03",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "86": [
@@ -3429,6 +3499,16 @@
         "zitierung": "BGE 148 I 160",
         "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
         "datum": "2021-12-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 15
+      },
+      {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3445,6 +3525,16 @@
         "gewicht": 10
       },
       {
+        "key": "bge_149_II_337__voll",
+        "zitierung": "Urteil 8C_387/2022 (nicht publ. in BGE 149 II 337)",
+        "regesteKurz": null,
+        "datum": "2023-08-21",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 9
+      },
+      {
         "key": "bge_146_II_276",
         "zitierung": "BGE 146 II 276",
         "regesteKurz": "Art. 83 lit. f Ziff. 2 BGG; Art. 1 Abs. 3 lit. d, Art. 13 lit. f und Art. 18 Abs. 1 der Interkantonalen Vereinbarung vom 25. November 1994/15. März 2001 über das öffentliche Beschaffungswesen; Wirtschaftlichkeitsgrundsatz; Wirkung der…",
@@ -3452,47 +3542,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 7
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
-      },
-      {
-        "key": "bge_149_I_146",
-        "zitierung": "BGE 149 I 146",
-        "regesteKurz": "Art. 29a BV; Rechtsweggarantie; Ermessenssubventionen. Dem Entscheid über die Ausrichtung von Beiträgen aus dem kommunalen Kurtaxenertrag, die nach dem kantonalen Recht Ermessenssubventionen darstellen, kommt kein vorwiegend politischer…",
-        "datum": "2023-03-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
-      },
-      {
-        "key": "bge_148_II_392",
-        "zitierung": "BGE 148 II 392",
-        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
-        "datum": "2022-05-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
-      },
-      {
-        "key": "bge_147_I_1",
-        "zitierung": "BGE 147 I 1",
-        "regesteKurz": "Art. 5 Abs. 1 sowie Art. 8 Abs. 1 und 2 BV; Art. 82 lit. a, Art. 86 Abs. 2 und 3 sowie Art. 89 Abs. 1 BGG; Nichtwiederwahl eines Verwaltungsrichters aus Altersgründen; Anfechtbarkeit des Wahlakts des kantonalen Parlaments; Vereinbarkeit…",
-        "datum": "2020-07-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 8
       },
       {
         "key": "bge_149_II_187__voll",
@@ -3502,7 +3552,27 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 7
+      },
+      {
+        "key": "bge_148_II_392",
+        "zitierung": "BGE 148 II 392",
+        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
+        "datum": "2022-05-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
+      },
+      {
+        "key": "bge_146_I_36",
+        "zitierung": "BGE 146 I 36",
+        "regesteKurz": "Art. 50 Abs. 1 BV, Art. 86 Abs. 3, Art. 87 Abs. 1, Art. 89 Abs. 2 lit. c, Art. 90 und 93 BGG, Art. 8 ff. und 26 RPG, Art. 5 Abs. 2 RPV; Gemeindeautonomie im Zusammenhang mit der Fortschreibung eines Richtplans. Anfechtbarkeit von…",
+        "datum": "2019-10-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
       }
     ],
     "87": [
@@ -3678,7 +3748,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 47
+        "gewicht": 51
       },
       {
         "key": "bge_148_I_160",
@@ -3688,7 +3758,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 22
+        "gewicht": 26
       },
       {
         "key": "bge_149_I_105",
@@ -3698,7 +3768,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 15
+        "gewicht": 18
       },
       {
         "key": "bge_147_I_478",
@@ -3708,7 +3778,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 13
+        "gewicht": 15
+      },
+      {
+        "key": "bge_147_II_44",
+        "zitierung": "BGE 147 II 44",
+        "regesteKurz": "Art. 90, 98, 106 Abs. 2 BGG; Rechtsnatur des Entscheids über die endgültige Nichtanordnung bzw. Aufhebung einer erstinstanzlich verfügten verkehrsmedizinischen Untersuchung und eines Sicherungsentzugs eines Führerausweises; vorsorgliche…",
+        "datum": "2020-09-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 14
+      },
+      {
+        "key": "bge_149_II_66",
+        "zitierung": "BGE 149 II 66",
+        "regesteKurz": "Art. 89 Abs. 1 lit. a, Art. 89 Abs. 3, Art. 93 Abs. 1 lit. a BGG; Beschwerde in Stimmrechtssachen; Anfechtung eines Urteils, welches das kommunale Parlament verpflichtet, eine neue Umsetzungsvorlage zu einer allgemeinen Anregung…",
+        "datum": "2022-07-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 12
       },
       {
         "key": "bge_146_I_62",
@@ -3721,26 +3811,6 @@
         "gewicht": 12
       },
       {
-        "key": "bge_149_II_66",
-        "zitierung": "BGE 149 II 66",
-        "regesteKurz": "Art. 89 Abs. 1 lit. a, Art. 89 Abs. 3, Art. 93 Abs. 1 lit. a BGG; Beschwerde in Stimmrechtssachen; Anfechtung eines Urteils, welches das kommunale Parlament verpflichtet, eine neue Umsetzungsvorlage zu einer allgemeinen Anregung…",
-        "datum": "2022-07-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 11
-      },
-      {
-        "key": "bge_147_II_44",
-        "zitierung": "BGE 147 II 44",
-        "regesteKurz": "Art. 90, 98, 106 Abs. 2 BGG; Rechtsnatur des Entscheids über die endgültige Nichtanordnung bzw. Aufhebung einer erstinstanzlich verfügten verkehrsmedizinischen Untersuchung und eines Sicherungsentzugs eines Führerausweises; vorsorgliche…",
-        "datum": "2020-09-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 11
-      },
-      {
         "key": "bge_150_I_1__voll",
         "zitierung": "Urteil 9C_335/2023 (nicht publ. in BGE 150 I 1)",
         "regesteKurz": null,
@@ -3748,19 +3818,19 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 11
+        "gewicht": 12
       }
     ],
     "90": [
       {
-        "key": "bge_147_I_89",
-        "zitierung": "BGE 147 I 89",
-        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
-        "datum": "2020-02-13",
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 27
       },
       {
         "key": "bge_148_I_160",
@@ -3770,7 +3840,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 18
+        "gewicht": 23
+      },
+      {
+        "key": "bge_147_I_89",
+        "zitierung": "BGE 147 I 89",
+        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
+        "datum": "2020-02-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 22
       },
       {
         "key": "bge_148_V_366__voll",
@@ -3780,17 +3860,37 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
+        "gewicht": 20
+      },
+      {
+        "key": "bge_149_II_337__voll",
+        "zitierung": "Urteil 8C_387/2022 (nicht publ. in BGE 149 II 337)",
+        "regesteKurz": null,
+        "datum": "2023-08-21",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 15
       },
       {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
+        "key": "bge_147_II_44",
+        "zitierung": "BGE 147 II 44",
+        "regesteKurz": "Art. 90, 98, 106 Abs. 2 BGG; Rechtsnatur des Entscheids über die endgültige Nichtanordnung bzw. Aufhebung einer erstinstanzlich verfügten verkehrsmedizinischen Untersuchung und eines Sicherungsentzugs eines Führerausweises; vorsorgliche…",
+        "datum": "2020-09-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 13
+        "gewicht": 14
+      },
+      {
+        "key": "bge_147_I_478__voll",
+        "zitierung": "Urteil 2C_8/2021 (nicht publ. in BGE 147 I 478)",
+        "regesteKurz": null,
+        "datum": "2021-06-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 14
       },
       {
         "key": "bge_146_II_335",
@@ -3801,36 +3901,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 12
-      },
-      {
-        "key": "bge_147_I_478__voll",
-        "zitierung": "Urteil 2C_8/2021 (nicht publ. in BGE 147 I 478)",
-        "regesteKurz": null,
-        "datum": "2021-06-25",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 12
-      },
-      {
-        "key": "bge_147_II_44",
-        "zitierung": "BGE 147 II 44",
-        "regesteKurz": "Art. 90, 98, 106 Abs. 2 BGG; Rechtsnatur des Entscheids über die endgültige Nichtanordnung bzw. Aufhebung einer erstinstanzlich verfügten verkehrsmedizinischen Untersuchung und eines Sicherungsentzugs eines Führerausweises; vorsorgliche…",
-        "datum": "2020-09-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 11
-      },
-      {
-        "key": "bge_149_II_337__voll",
-        "zitierung": "Urteil 8C_387/2022 (nicht publ. in BGE 149 II 337)",
-        "regesteKurz": null,
-        "datum": "2023-08-21",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 9
       }
     ],
     "91": [
@@ -3862,7 +3932,17 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_150_II_566",
+        "zitierung": "BGE 150 II 566",
+        "regesteKurz": "Art. 93 BGG; Baubewilligung mit Nebenbestimmungen; Behebung von Projektmängeln in nachgelagerten Verfahren. Anwendungsfall der in BGE 149 II 170 publizierten Praxis. Zur Zulässigkeit nachgelagerter Baubewilligungsverfahren (E. 2.2). Der…",
+        "datum": "2024-07-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_150_II_346",
@@ -3903,19 +3983,19 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_III_287",
-        "zitierung": "BGE 151 III 287",
-        "regesteKurz": "Art. 158, 242 und 319 lit. b Ziff. 2 ZPO; vorsorgliche Beweisführung; Rechtsmittel; Beschwerde. Der Entscheid, womit das Gericht den Abschluss einer vorsorglichen Beweisführung feststellt und über die Kosten und Auslagen entscheidet,…",
-        "datum": "2024-12-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "92": [
+      {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 5
+      },
       {
         "key": "bge_148_IV_155",
         "zitierung": "BGE 148 IV 155",
@@ -3934,13 +4014,33 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
+        "gewicht": 4
+      },
+      {
+        "key": "bge_147_III_159",
+        "zitierung": "BGE 147 III 159",
+        "regesteKurz": "Art. 59 Abs. 2 lit. b ZPO; Art. 92 und 93 BGG; Theorie der doppelrelevanten Tatsachen; Weigerung, das Verfahren auf die Frage der Zuständigkeit zu beschränken; Eintretensvoraussetzungen der Beschwerde in Zivilsachen. Grundsätze der…",
+        "datum": "2021-02-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 3
       },
       {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
+        "key": "bge_150_II_566",
+        "zitierung": "BGE 150 II 566",
+        "regesteKurz": "Art. 93 BGG; Baubewilligung mit Nebenbestimmungen; Behebung von Projektmängeln in nachgelagerten Verfahren. Anwendungsfall der in BGE 149 II 170 publizierten Praxis. Zur Zulässigkeit nachgelagerter Baubewilligungsverfahren (E. 2.2). Der…",
+        "datum": "2024-07-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_I_174",
+        "zitierung": "BGE 150 I 174",
+        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 90 und 93 BGG; § 13 Abs. 2 VRG/ZH; Qualifikation der Kostenverlegung im Rahmen einer Rückweisung zulasten des Rechtsvertreters als Endentscheid; Verletzung des Anspruchs auf rechtliches Gehör mangels Möglichkeit des…",
+        "datum": "2024-06-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3957,16 +4057,6 @@
         "gewicht": 2
       },
       {
-        "key": "bge_147_III_159",
-        "zitierung": "BGE 147 III 159",
-        "regesteKurz": "Art. 59 Abs. 2 lit. b ZPO; Art. 92 und 93 BGG; Theorie der doppelrelevanten Tatsachen; Weigerung, das Verfahren auf die Frage der Zuständigkeit zu beschränken; Eintretensvoraussetzungen der Beschwerde in Zivilsachen. Grundsätze der…",
-        "datum": "2021-02-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
         "key": "bge_146_III_217__voll",
         "zitierung": "Urteil 5A_127/2019 (nicht publ. in BGE 146 III 217)",
         "regesteKurz": null,
@@ -3975,29 +4065,19 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_150_II_566",
-        "zitierung": "BGE 150 II 566",
-        "regesteKurz": "Art. 93 BGG; Baubewilligung mit Nebenbestimmungen; Behebung von Projektmängeln in nachgelagerten Verfahren. Anwendungsfall der in BGE 149 II 170 publizierten Praxis. Zur Zulässigkeit nachgelagerter Baubewilligungsverfahren (E. 2.2). Der…",
-        "datum": "2024-07-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_150_II_273",
-        "zitierung": "BGE 150 II 273",
-        "regesteKurz": "a Art. 120 Abs. 1 und 2 BGG; Art. 16 Abs. 1 und 5 SuG; Zulässigkeit der Beschwerde an das Bundesgericht gegen einen Entscheid betreffend eine öffentlich-rechtliche Streitigkeit zwischen einem Kanton und dem Bund. Zuständigkeit des…",
-        "datum": "2023-12-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
       }
     ],
     "93": [
+      {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 12
+      },
       {
         "key": "bge_148_IV_155",
         "zitierung": "BGE 148 IV 155",
@@ -4007,16 +4087,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 7
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 6
       },
       {
         "key": "bge_149_II_66",
@@ -4049,6 +4119,16 @@
         "gewicht": 4
       },
       {
+        "key": "bge_147_III_159",
+        "zitierung": "BGE 147 III 159",
+        "regesteKurz": "Art. 59 Abs. 2 lit. b ZPO; Art. 92 und 93 BGG; Theorie der doppelrelevanten Tatsachen; Weigerung, das Verfahren auf die Frage der Zuständigkeit zu beschränken; Eintretensvoraussetzungen der Beschwerde in Zivilsachen. Grundsätze der…",
+        "datum": "2021-02-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
         "key": "bge_146_III_254",
         "zitierung": "BGE 146 III 254",
         "regesteKurz": "Voraussetzungen für die Zulässigkeit einer Beschwerde in Zivilsachen: Abgrenzung zwischen einem Teilentscheid (Art. 91 lit. a BGG) und einem Zwischenentscheid (Art. 93 BGG). Wie ist bei eventualgehäuften Rechtsbegehren der selbständig…",
@@ -4059,24 +4139,14 @@
         "gewicht": 4
       },
       {
-        "key": "bge_147_III_159",
-        "zitierung": "BGE 147 III 159",
-        "regesteKurz": "Art. 59 Abs. 2 lit. b ZPO; Art. 92 und 93 BGG; Theorie der doppelrelevanten Tatsachen; Weigerung, das Verfahren auf die Frage der Zuständigkeit zu beschränken; Eintretensvoraussetzungen der Beschwerde in Zivilsachen. Grundsätze der…",
-        "datum": "2021-02-17",
+        "key": "bge_146_I_36",
+        "zitierung": "BGE 146 I 36",
+        "regesteKurz": "Art. 50 Abs. 1 BV, Art. 86 Abs. 3, Art. 87 Abs. 1, Art. 89 Abs. 2 lit. c, Art. 90 und 93 BGG, Art. 8 ff. und 26 RPG, Art. 5 Abs. 2 RPV; Gemeindeautonomie im Zusammenhang mit der Fortschreibung eines Richtplans. Anfechtbarkeit von…",
+        "datum": "2019-10-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_148_II_73__voll",
-        "zitierung": "Urteil 8C_110/2021 (nicht publ. in BGE 148 II 73)",
-        "regesteKurz": null,
-        "datum": "2022-01-26",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       }
     ],
     "94": [
@@ -4140,7 +4210,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 81
+        "gewicht": 89
       },
       {
         "key": "bge_146_IV_88",
@@ -4150,13 +4220,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 36
+        "gewicht": 38
       },
       {
         "key": "bge_147_IV_73",
         "zitierung": "BGE 147 IV 73",
         "regesteKurz": "Art. 146 Abs. 1 StGB; Betrug; Entgelt für sexuelle Dienstleistungen; Täuschung über die Zahlungsbereitschaft; Arglist; Vermögensschaden. Die Vorspiegelung der Zahlungsbereitschaft ist als Täuschung über innere Tatsachen grundsätzlich…",
         "datum": "2021-01-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 35
+      },
+      {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4170,7 +4250,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 28
+        "gewicht": 33
       },
       {
         "key": "bge_148_V_366",
@@ -4180,17 +4260,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 23
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 21
+        "gewicht": 29
       },
       {
         "key": "bge_146_II_335__voll",
@@ -4203,14 +4273,14 @@
         "gewicht": 20
       },
       {
-        "key": "bge_148_II_392",
-        "zitierung": "BGE 148 II 392",
-        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
-        "datum": "2022-05-18",
+        "key": "bge_149_II_337",
+        "zitierung": "BGE 149 II 337",
+        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
+        "datum": "2023-08-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 18
+        "gewicht": 19
       }
     ],
     "96": [
@@ -4222,7 +4292,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 5
       },
       {
         "key": "bge_147_V_213__voll",
@@ -4255,10 +4325,30 @@
         "gewicht": 3
       },
       {
+        "key": "bge_149_II_337",
+        "zitierung": "BGE 149 II 337",
+        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
+        "datum": "2023-08-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_148_V_102__voll",
         "zitierung": "Urteil 8C_463/2021 (nicht publ. in BGE 148 V 102)",
         "regesteKurz": null,
         "datum": "2021-11-09",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_147_V_35__voll",
+        "zitierung": "Urteil 8C_678/2019 (nicht publ. in BGE 147 V 35)",
+        "regesteKurz": null,
+        "datum": "2020-09-14",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -4273,26 +4363,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
-        "datum": "2023-08-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_149_V_185",
-        "zitierung": "BGE 149 V 185",
-        "regesteKurz": "Art. 9, 10 und 11 ELG; Art. 4, 5, 11a und 14a ELV; gemeinsame Berechnung der Ergänzungsleistungen einer Bezügerin von Leistungen der IV und ihres Kindes, welches eine Kinderrente der IV bezieht und mit ihr in einem gemeinsamen Haushalt…",
-        "datum": "2023-05-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
       }
     ],
     "97": [
@@ -4304,7 +4374,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 52
+        "gewicht": 55
       },
       {
         "key": "bge_146_IV_88",
@@ -4314,7 +4384,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 42
+        "gewicht": 45
       },
       {
         "key": "bge_148_IV_356",
@@ -4324,27 +4394,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 29
-      },
-      {
-        "key": "bge_148_I_160",
-        "zitierung": "BGE 148 I 160",
-        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
-        "datum": "2021-12-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 18
-      },
-      {
-        "key": "bge_148_IV_409",
-        "zitierung": "BGE 148 IV 409",
-        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von…",
-        "datum": "2022-08-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 16
+        "gewicht": 32
       },
       {
         "key": "bge_150_II_346",
@@ -4354,7 +4404,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 13
+        "gewicht": 23
+      },
+      {
+        "key": "bge_148_I_160",
+        "zitierung": "BGE 148 I 160",
+        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
+        "datum": "2021-12-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 21
+      },
+      {
+        "key": "bge_148_IV_409",
+        "zitierung": "BGE 148 IV 409",
+        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von…",
+        "datum": "2022-08-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 20
       },
       {
         "key": "bge_149_II_337",
@@ -4364,13 +4434,13 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 12
+        "gewicht": 17
       },
       {
-        "key": "bge_146_IV_114",
-        "zitierung": "BGE 146 IV 114",
-        "regesteKurz": "Art. 116 StGB; Kindstötung. Tötet eine Mutter ihr Kind nach der Geburt, setzt der privilegierende Tatbestand der Kindstötung voraus, dass sie unter dem Einfluss des Geburtsvorganges handelte, welcher bis zur Nachgeburt unwiderlegbar…",
-        "datum": "2020-03-05",
+        "key": "bge_146_IV_297",
+        "zitierung": "BGE 146 IV 297",
+        "regesteKurz": "Art. 5 Abs. 3 BV; Art. 116 Abs. 1 lit. a i.V.m. Abs. 2 AIG; Art. 17 StGB; Förderung der rechtswidrigen Einreise; Notstandshilfe; Dublin-Verfahren. Die Beschwerde ist gegen Entscheide des Bundesverwaltungsgerichts auf dem Gebiet des Asyls…",
+        "datum": "2020-06-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4468,7 +4538,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 11
+        "gewicht": 12
       },
       {
         "key": "bge_148_I_160",
@@ -4478,7 +4548,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 7
+        "gewicht": 10
       },
       {
         "key": "bge_149_III_465",
@@ -4488,7 +4558,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_148_IV_356__voll",
@@ -4498,7 +4568,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_149_II_381",
@@ -4550,17 +4620,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 55
-      },
-      {
-        "key": "bge_148_I_160",
-        "zitierung": "BGE 148 I 160",
-        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
-        "datum": "2021-12-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 22
+        "gewicht": 62
       },
       {
         "key": "bge_150_II_346",
@@ -4570,37 +4630,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 20
+        "gewicht": 33
       },
       {
-        "key": "bge_146_II_335",
-        "zitierung": "BGE 146 II 335",
-        "regesteKurz": "Art. 1 Abs. 1, Art. 2 Ziff. 6 und Art. 12 Abs. 1 AVEG; Allgemeinverbindlicherklärung von Gesamtarbeitsverträgen; Prinzip der \"offenen Türe\"; Zulässigkeit von Nebenbestimmungen. Zulässigkeit der Beschwerde in öffentlich-rechtlichen…",
-        "datum": "2020-05-11",
+        "key": "bge_148_I_160",
+        "zitierung": "BGE 148 I 160",
+        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
+        "datum": "2021-12-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 15
-      },
-      {
-        "key": "bge_149_II_66",
-        "zitierung": "BGE 149 II 66",
-        "regesteKurz": "Art. 89 Abs. 1 lit. a, Art. 89 Abs. 3, Art. 93 Abs. 1 lit. a BGG; Beschwerde in Stimmrechtssachen; Anfechtung eines Urteils, welches das kommunale Parlament verpflichtet, eine neue Umsetzungsvorlage zu einer allgemeinen Anregung…",
-        "datum": "2022-07-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 14
-      },
-      {
-        "key": "bge_148_II_392__voll",
-        "zitierung": "Urteil 2C_336/2021 (nicht publ. in BGE 148 II 392)",
-        "regesteKurz": null,
-        "datum": "2022-05-18",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 14
+        "gewicht": 27
       },
       {
         "key": "bge_149_II_337__voll",
@@ -4610,7 +4650,37 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 13
+        "gewicht": 18
+      },
+      {
+        "key": "bge_146_II_335",
+        "zitierung": "BGE 146 II 335",
+        "regesteKurz": "Art. 1 Abs. 1, Art. 2 Ziff. 6 und Art. 12 Abs. 1 AVEG; Allgemeinverbindlicherklärung von Gesamtarbeitsverträgen; Prinzip der \"offenen Türe\"; Zulässigkeit von Nebenbestimmungen. Zulässigkeit der Beschwerde in öffentlich-rechtlichen…",
+        "datum": "2020-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 16
+      },
+      {
+        "key": "bge_149_II_66",
+        "zitierung": "BGE 149 II 66",
+        "regesteKurz": "Art. 89 Abs. 1 lit. a, Art. 89 Abs. 3, Art. 93 Abs. 1 lit. a BGG; Beschwerde in Stimmrechtssachen; Anfechtung eines Urteils, welches das kommunale Parlament verpflichtet, eine neue Umsetzungsvorlage zu einer allgemeinen Anregung…",
+        "datum": "2022-07-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 15
+      },
+      {
+        "key": "bge_146_II_276",
+        "zitierung": "BGE 146 II 276",
+        "regesteKurz": "Art. 83 lit. f Ziff. 2 BGG; Art. 1 Abs. 3 lit. d, Art. 13 lit. f und Art. 18 Abs. 1 der Interkantonalen Vereinbarung vom 25. November 1994/15. März 2001 über das öffentliche Beschaffungswesen; Wirtschaftlichkeitsgrundsatz; Wirkung der…",
+        "datum": "2020-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 15
       },
       {
         "key": "bge_149_I_207__voll",
@@ -4620,7 +4690,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 13
+        "gewicht": 15
       }
     ],
     "101": [
@@ -4767,20 +4837,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_V_284__voll",
-        "zitierung": "Urteil 9C_199/2022 (nicht publ. in BGE 151 V 284)",
+        "key": "bge_152_II_289__voll",
+        "zitierung": "Urteil 1C_200/2024 (nicht publ. in BGE 152 II 289)",
         "regesteKurz": null,
-        "datum": "2025-04-29",
+        "datum": "2025-08-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "key": "bge_152_II_196__voll",
+        "zitierung": "Urteil 2C_68/2024 (nicht publ. in BGE 152 II 196)",
         "regesteKurz": null,
-        "datum": "2025-02-06",
+        "datum": "2025-06-30",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -4796,7 +4866,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_146_IV_105",
@@ -4849,20 +4919,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_152_II_75__voll",
-        "zitierung": "Urteil 2C_352/2024 (nicht publ. in BGE 152 II 75)",
+        "key": "bge_152_III_225__voll",
+        "zitierung": "Urteil 5A_54/2024 (nicht publ. in BGE 152 III 225)",
         "regesteKurz": null,
-        "datum": "2025-09-24",
+        "datum": "2026-01-28",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_152_IV_64__voll",
-        "zitierung": "Urteil 6B_1297/2023 (nicht publ. in BGE 152 IV 64)",
+        "key": "bge_152_II_75__voll",
+        "zitierung": "Urteil 2C_352/2024 (nicht publ. in BGE 152 II 75)",
         "regesteKurz": null,
-        "datum": "2025-09-12",
+        "datum": "2025-09-24",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -4920,7 +4990,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 78
+        "gewicht": 87
       },
       {
         "key": "bge_146_IV_88",
@@ -4930,7 +5000,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 49
+        "gewicht": 52
       },
       {
         "key": "bge_147_IV_73",
@@ -4940,27 +5010,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 43
-      },
-      {
-        "key": "bge_148_IV_356",
-        "zitierung": "BGE 148 IV 356",
-        "regesteKurz": "Art. 6 und 195 Abs. 2 StPO; Untersuchungsgrundsatz; Einholen von Berichten und Auskünften; Auskünfte über Vorstrafen und den Leumund der beschuldigten Person. Das Sachgericht hat vor Erlass des Urteils einen aktuellen Strafregisterauszug…",
-        "datum": "2022-08-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 29
-      },
-      {
-        "key": "bge_148_I_160",
-        "zitierung": "BGE 148 I 160",
-        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
-        "datum": "2021-12-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 26
+        "gewicht": 45
       },
       {
         "key": "bge_150_II_346",
@@ -4970,59 +5020,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 23
+        "gewicht": 37
       },
       {
-        "key": "bge_148_V_366",
-        "zitierung": "BGE 148 V 366",
-        "regesteKurz": "Art. 57 Abs. 1 UVG; Zuständigkeit des Schiedsgerichts. Die sachliche Zuständigkeit des kantonalen Schiedsgerichts nach Art. 57 Abs. 1 UVG bestimmt sich unter anderem mit Blick auf die sich in Wirklichkeit gegenüberstehenden Parteien und…",
-        "datum": "2022-08-17",
+        "key": "bge_148_IV_356",
+        "zitierung": "BGE 148 IV 356",
+        "regesteKurz": "Art. 6 und 195 Abs. 2 StPO; Untersuchungsgrundsatz; Einholen von Berichten und Auskünften; Auskünfte über Vorstrafen und den Leumund der beschuldigten Person. Das Sachgericht hat vor Erlass des Urteils einen aktuellen Strafregisterauszug…",
+        "datum": "2022-08-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 22
-      },
-      {
-        "key": "bge_148_II_392",
-        "zitierung": "BGE 148 II 392",
-        "regesteKurz": "Art. 27, 29 Abs. 2, Art. 94 Abs. 4, Art. 106 und 190 BV; Art. 3 lit. a, Art. 4, 9, 21, 24 Abs. 1 und Art. 86 ff. BGS; DNS-Zugangssperre für von ausländischen Unternehmen in der Schweiz angebotene Online-Geldspiele. Gegen Entscheide des…",
-        "datum": "2022-05-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 18
-      }
-    ],
-    "106": [
-      {
-        "key": "bge_147_I_73",
-        "zitierung": "BGE 147 I 73",
-        "regesteKurz": "Art. 83 lit. t BGG; Art. 8 Abs. 1 und 2 BV; Unzulässigkeit der Beschwerde in öffentlich-rechtlichen Angelegenheiten gegen Entscheide über das Ergebnis von Prüfungen und anderen Fähigkeitsbewertungen; Gleichheitssatz und…",
-        "datum": "2020-07-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 86
-      },
-      {
-        "key": "bge_146_IV_88",
-        "zitierung": "BGE 146 IV 88",
-        "regesteKurz": "Art. 91a Abs. 1 i.V.m. Art. 55 Abs. 1 und 2 SVG und Art. 10 Abs. 2 SKV; Verweigerung von Massnahmen zur Feststellung der Fahrunfähigkeit; Betäubungsmittelvortests; hinreichende Verdachtsmomente zur Durchführung; Beweiswert. Für die…",
-        "datum": "2019-12-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 50
-      },
-      {
-        "key": "bge_147_IV_73",
-        "zitierung": "BGE 147 IV 73",
-        "regesteKurz": "Art. 146 Abs. 1 StGB; Betrug; Entgelt für sexuelle Dienstleistungen; Täuschung über die Zahlungsbereitschaft; Arglist; Vermögensschaden. Die Vorspiegelung der Zahlungsbereitschaft ist als Täuschung über innere Tatsachen grundsätzlich…",
-        "datum": "2021-01-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 44
+        "gewicht": 33
       },
       {
         "key": "bge_148_I_160",
@@ -5035,10 +5043,92 @@
         "gewicht": 31
       },
       {
+        "key": "bge_148_V_366",
+        "zitierung": "BGE 148 V 366",
+        "regesteKurz": "Art. 57 Abs. 1 UVG; Zuständigkeit des Schiedsgerichts. Die sachliche Zuständigkeit des kantonalen Schiedsgerichts nach Art. 57 Abs. 1 UVG bestimmt sich unter anderem mit Blick auf die sich in Wirklichkeit gegenüberstehenden Parteien und…",
+        "datum": "2022-08-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 28
+      },
+      {
+        "key": "bge_148_IV_409",
+        "zitierung": "BGE 148 IV 409",
+        "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von…",
+        "datum": "2022-08-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 21
+      }
+    ],
+    "106": [
+      {
+        "key": "bge_147_I_73",
+        "zitierung": "BGE 147 I 73",
+        "regesteKurz": "Art. 83 lit. t BGG; Art. 8 Abs. 1 und 2 BV; Unzulässigkeit der Beschwerde in öffentlich-rechtlichen Angelegenheiten gegen Entscheide über das Ergebnis von Prüfungen und anderen Fähigkeitsbewertungen; Gleichheitssatz und…",
+        "datum": "2020-07-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 96
+      },
+      {
+        "key": "bge_146_IV_88",
+        "zitierung": "BGE 146 IV 88",
+        "regesteKurz": "Art. 91a Abs. 1 i.V.m. Art. 55 Abs. 1 und 2 SVG und Art. 10 Abs. 2 SKV; Verweigerung von Massnahmen zur Feststellung der Fahrunfähigkeit; Betäubungsmittelvortests; hinreichende Verdachtsmomente zur Durchführung; Beweiswert. Für die…",
+        "datum": "2019-12-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 53
+      },
+      {
+        "key": "bge_147_IV_73",
+        "zitierung": "BGE 147 IV 73",
+        "regesteKurz": "Art. 146 Abs. 1 StGB; Betrug; Entgelt für sexuelle Dienstleistungen; Täuschung über die Zahlungsbereitschaft; Arglist; Vermögensschaden. Die Vorspiegelung der Zahlungsbereitschaft ist als Täuschung über innere Tatsachen grundsätzlich…",
+        "datum": "2021-01-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 46
+      },
+      {
+        "key": "bge_148_I_160",
+        "zitierung": "BGE 148 I 160",
+        "regesteKurz": "Art. 8 Abs. 2, 15 und 36 BV; Art. 9 EMRK; Art. 3, 6 und 7 des Gesetzes über die Laizität des Staates des Kantons Genf vom 26. April 2018 (LLE/GE); Glaubens- und Gewissensfreiheit; Verbot von Diskriminierungen; abstrakte Normenkontrolle.…",
+        "datum": "2021-12-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 36
+      },
+      {
+        "key": "bge_150_II_346",
+        "zitierung": "BGE 150 II 346",
+        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
+        "datum": "2024-05-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 35
+      },
+      {
         "key": "bge_148_IV_356",
         "zitierung": "BGE 148 IV 356",
         "regesteKurz": "Art. 6 und 195 Abs. 2 StPO; Untersuchungsgrundsatz; Einholen von Berichten und Auskünften; Auskünfte über Vorstrafen und den Leumund der beschuldigten Person. Das Sachgericht hat vor Erlass des Urteils einen aktuellen Strafregisterauszug…",
         "datum": "2022-08-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 32
+      },
+      {
+        "key": "bge_148_V_366",
+        "zitierung": "BGE 148 V 366",
+        "regesteKurz": "Art. 57 Abs. 1 UVG; Zuständigkeit des Schiedsgerichts. Die sachliche Zuständigkeit des kantonalen Schiedsgerichts nach Art. 57 Abs. 1 UVG bestimmt sich unter anderem mit Blick auf die sich in Wirklichkeit gegenüberstehenden Parteien und…",
+        "datum": "2022-08-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -5053,26 +5143,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 23
-      },
-      {
-        "key": "bge_150_II_346",
-        "zitierung": "BGE 150 II 346",
-        "regesteKurz": "Art. 82 lit. a, Art. 86 Abs. 1 lit. d und Abs. 2 BGG; zur Beschwerde omisso medio (unter \"Überspringen\" der kantonalen Oberinstanz) im öffentlich-rechtlichen Bereich und deren Voraussetzungen. Eine Beschwerde omisso medio an das…",
-        "datum": "2024-05-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 22
-      },
-      {
-        "key": "bge_148_V_366",
-        "zitierung": "BGE 148 V 366",
-        "regesteKurz": "Art. 57 Abs. 1 UVG; Zuständigkeit des Schiedsgerichts. Die sachliche Zuständigkeit des kantonalen Schiedsgerichts nach Art. 57 Abs. 1 UVG bestimmt sich unter anderem mit Blick auf die sich in Wirklichkeit gegenüberstehenden Parteien und…",
-        "datum": "2022-08-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 22
       }
     ],
     "107": [
@@ -5105,6 +5175,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 5
+      },
+      {
+        "key": "bge_147_III_107__voll",
+        "zitierung": "Urteil 4A_124/2020 (nicht publ. in BGE 147 III 107)",
+        "regesteKurz": null,
+        "datum": "2020-11-13",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 4
       },
       {
         "key": "bge_148_I_127",
@@ -5141,16 +5221,6 @@
         "zitierung": "Urteil 6B_210/2021 (nicht publ. in BGE 148 IV 205)",
         "regesteKurz": null,
         "datum": "2022-03-24",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 3
-      },
-      {
-        "key": "bge_147_III_107__voll",
-        "zitierung": "Urteil 4A_124/2020 (nicht publ. in BGE 147 III 107)",
-        "regesteKurz": null,
-        "datum": "2020-11-13",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -5240,6 +5310,16 @@
       }
     ],
     "109": [
+      {
+        "key": "bge_152_V_85__voll",
+        "zitierung": "Urteil 9C_606/2023 (nicht publ. in BGE 152 V 85)",
+        "regesteKurz": null,
+        "datum": "2025-10-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_II_289__voll",
         "zitierung": "Urteil 9C_302/2024 (nicht publ. in BGE 151 II 289)",
@@ -5457,6 +5537,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_115",
+        "zitierung": "BGE 152 III 115",
+        "regesteKurz": "a Art. 9 Abs. 1 und 2 IPRG; Art. 199 Abs. 2 ZPO; internationale Rechtshängigkeit; erste, für die Klageeinleitung notwendige Verfahrenshandlung. Um die Rechtshängigkeit im Sinne von Art. 9 Abs. 2 IPRG zu begründen, genügt die Einreichung…",
+        "datum": "2026-01-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_II_1",
         "zitierung": "BGE 152 II 1",
         "regesteKurz": "Art. 1 Abs. 1, Art. 6 Abs. 1, Art. 457-459 ZGB; Art. 13a SchlT ZGB; § 3 Abs. 1 und 2 des Gesetzes des Kantons Luzern vom 27. Mai 1908 betreffend die Erbschaftssteuern (EStG/LU); kann auch eine uneheliche Person erbschaftssteuerrechtlich…",
@@ -5495,29 +5585,9 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_II_359",
-        "zitierung": "BGE 148 II 359",
-        "regesteKurz": "Publikation von Baugesuchen im Anwendungsbereich des ZWG (Art. 20 Abs. 1 ZWG; Art. 12b NHG). Art. 20 Abs. 1 ZWG ist lex specialis zu Art. 12b Abs. 1 Satz 1 und Abs. 2 NHG. Die Publikation von Baugesuchen im Anwendungsbereich des ZWG…",
-        "datum": "2022-03-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "113": [
-      {
-        "key": "bge_147_I_89",
-        "zitierung": "BGE 147 I 89",
-        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
-        "datum": "2020-02-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 7
-      },
       {
         "key": "bge_146_II_276",
         "zitierung": "BGE 146 II 276",
@@ -5526,7 +5596,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 6
+        "gewicht": 9
+      },
+      {
+        "key": "bge_147_I_89",
+        "zitierung": "BGE 147 I 89",
+        "regesteKurz": "Art. 8 Abs. 2 BV; Art. 27 AIG; Verweigerung einer Aufenthaltsbewilligung zu Studienzwecken; Diskriminierung aufgrund des Alters. Zusammenfassung der Rechtsprechung zum Schutzbereich von Art. 8 Abs. 2 BV betreffend Diskriminierung aufgrund…",
+        "datum": "2020-02-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 8
+      },
+      {
+        "key": "bge_147_I_268",
+        "zitierung": "BGE 147 I 268",
+        "regesteKurz": "Art. 83 lit. c Ziff. 2 BGG; Art. 8 EMRK; prekärer Aufenthalt; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung im Lichte des Anspruchs auf Achtung des Privatlebens. Zulässigkeit der Beschwerde in…",
+        "datum": "2020-11-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
       },
       {
         "key": "bge_148_I_160",
@@ -5539,12 +5629,12 @@
         "gewicht": 3
       },
       {
-        "key": "bge_147_I_268",
-        "zitierung": "BGE 147 I 268",
-        "regesteKurz": "Art. 83 lit. c Ziff. 2 BGG; Art. 8 EMRK; prekärer Aufenthalt; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung im Lichte des Anspruchs auf Achtung des Privatlebens. Zulässigkeit der Beschwerde in…",
-        "datum": "2020-11-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_150_II_123__voll",
+        "zitierung": "Urteil 2C_196/2023 (nicht publ. in BGE 150 II 123)",
+        "regesteKurz": null,
+        "datum": "2024-02-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 3
       },
@@ -5559,32 +5649,22 @@
         "gewicht": 3
       },
       {
-        "key": "bge_147_I_333",
-        "zitierung": "BGE 147 I 333",
-        "regesteKurz": "Art. 29a und Art. 185 Abs. 3 BV; Art. 30 Abs. 2 und Art. 86 BGG; Art. 11 Abs. 3 der Verordnung über die Abfederung der wirtschaftlichen Auswirkungen des Coronavirus (COVID-19) im Kultursektor (COVID-Verordnung Kultur); selbständige…",
-        "datum": "2021-03-24",
+        "key": "bge_150_I_174",
+        "zitierung": "BGE 150 I 174",
+        "regesteKurz": "Art. 29 Abs. 2 BV; Art. 90 und 93 BGG; § 13 Abs. 2 VRG/ZH; Qualifikation der Kostenverlegung im Rahmen einer Rückweisung zulasten des Rechtsvertreters als Endentscheid; Verletzung des Anspruchs auf rechtliches Gehör mangels Möglichkeit des…",
+        "datum": "2024-06-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
       },
       {
-        "key": "bge_148_III_95__voll",
-        "zitierung": "Urteil 5A_294/2021 (nicht publ. in BGE 148 III 95)",
-        "regesteKurz": null,
-        "datum": "2021-12-07",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
-        "key": "bge_147_IV_55__voll",
-        "zitierung": "Urteil 6B_117/2020 (nicht publ. in BGE 147 IV 55)",
-        "regesteKurz": null,
-        "datum": "2020-11-13",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_147_I_333",
+        "zitierung": "BGE 147 I 333",
+        "regesteKurz": "Art. 29a und Art. 185 Abs. 3 BV; Art. 30 Abs. 2 und Art. 86 BGG; Art. 11 Abs. 3 der Verordnung über die Abfederung der wirtschaftlichen Auswirkungen des Coronavirus (COVID-19) im Kultursektor (COVID-Verordnung Kultur); selbständige…",
+        "datum": "2021-03-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
       }
@@ -5971,6 +6051,16 @@
     ],
     "119": [
       {
+        "key": "bge_150_II_123__voll",
+        "zitierung": "Urteil 2C_196/2023 (nicht publ. in BGE 150 II 123)",
+        "regesteKurz": null,
+        "datum": "2024-02-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_150_II_105__voll",
         "zitierung": "Urteil 2C_50/2022 (nicht publ. in BGE 150 II 105)",
         "regesteKurz": null,
@@ -6011,10 +6101,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_II_123__voll",
-        "zitierung": "Urteil 2C_196/2023 (nicht publ. in BGE 150 II 123)",
+        "key": "bge_152_I_142__voll",
+        "zitierung": "Urteil 2C_54/2025 (nicht publ. in BGE 152 I 142)",
         "regesteKurz": null,
-        "datum": "2024-02-07",
+        "datum": "2025-09-16",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -6206,7 +6296,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 5
+        "gewicht": 6
       },
       {
         "key": "bge_149_III_277",
@@ -6216,7 +6306,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_148_III_436__voll",
@@ -6226,7 +6316,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_151_III_586",
@@ -6236,7 +6326,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_151_III_471",
@@ -6246,7 +6336,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_III_279",
+        "zitierung": "BGE 152 III 279",
+        "regesteKurz": "Internationale Sportschiedsgerichtsbarkeit; Revisionsgesuch; nachträgliche Entdeckung entscheidender Beweismittel (Art. 190a Abs. 1 lit. a IPRG); Unterscheidung zwischen Spielregeln und Rechtsnormen; \"Field of Play\"-Doktrin. \"Field of…",
+        "datum": "2026-01-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_III_475",
@@ -6263,16 +6363,6 @@
         "zitierung": "BGE 150 V 363",
         "regesteKurz": "Art. 123 Abs. 2 lit. a BGG; Revisionsgrund (Gutachten der Gutachterstelle PMEDA Polydisziplinäre Medizinische Abklärungen, Zürich). Der von der Eidgenössischen Kommission für Qualitätssicherung in der medizinischen Begutachtung (EKQMB)…",
         "datum": "2024-06-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_I_41",
-        "zitierung": "BGE 151 I 41",
-        "regesteKurz": "Art. 34 Abs. 2 und Art. 161 Abs. 1 BV, Art. 52 Abs. 1 KV/ZH; Wahl des Zürcher Kantonsrats und Wahl von dessen Kommissionen; Parteiwechsel einer Kantonsrätin zwischen Wahltermin und Konstituierung des Parlaments. Nichteintreten auf die…",
-        "datum": "2024-05-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -6449,6 +6539,18 @@
         "gewicht": 0
       }
     ],
+    "131": [
+      {
+        "key": "bge_152_III_279",
+        "zitierung": "BGE 152 III 279",
+        "regesteKurz": "Internationale Sportschiedsgerichtsbarkeit; Revisionsgesuch; nachträgliche Entdeckung entscheidender Beweismittel (Art. 190a Abs. 1 lit. a IPRG); Unterscheidung zwischen Spielregeln und Rechtsnormen; \"Field of Play\"-Doktrin. \"Field of…",
+        "datum": "2026-01-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "132": [
       {
         "key": "bge_148_III_436",
@@ -6469,6 +6571,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_461",
+        "zitierung": "BGE 152 II 461",
+        "regesteKurz": "Art. 83 lit. z BGG; Art. 22 RPG; Art. 10a Abs. 1 USG; Windpark Montagne-de-Buttes; Frage von grundsätzlicher Bedeutung; Pflicht zur Festlegung des Modells der Windenergieanlage bei der Erteilung der Baubewilligung. Art. 83 lit. z BGG gilt…",
+        "datum": "2025-12-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_147_I_333",
@@ -6530,7 +6642,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_149_III_277__voll",
@@ -6540,7 +6652,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 5
       },
       {
         "key": "bge_151_III_62",
@@ -6550,7 +6662,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_151_III_586__voll",
@@ -6560,7 +6672,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_151_III_471__voll",
@@ -6570,7 +6682,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_152_III_71",
@@ -6593,10 +6705,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_III_475__voll",
-        "zitierung": "Urteil 4F_24/2024 (nicht publ. in BGE 151 III 475)",
+        "key": "bge_152_III_279__voll",
+        "zitierung": "Urteil 4A_510/2024 (nicht publ. in BGE 152 III 279)",
         "regesteKurz": null,
-        "datum": "2025-05-06",
+        "datum": "2026-01-23",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

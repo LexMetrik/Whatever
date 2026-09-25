@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"ARG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -9,6 +9,7 @@
 "bge_148_I_198":{"zitierung":"BGE 148 I 198","regesteKurz":"Art. 49 Abs. 1 BV; Art. 23 Abs. 1 des Tessiner Ladenöffnungsgesetzes (LAN/ TI); Prinzip des Vorrangs des Bundesrechts; Bestimmung, welche den Schutz des Arbeitnehmers bezweckt. Kognition des Bundesgerichts im Rahmen der abstrakten…","datum":"2021-12-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_149_V_14":{"zitierung":"BGE 149 V 14","regesteKurz":"Art. 15 Abs. 1 des Bundesgesetzes vom 25. September 2020 über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (rückwirkend in Kraft getreten am 17. September 2020; in der vom 1. April 2021…","datum":"2023-01-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_699":{"zitierung":"BGE 151 II 699","regesteKurz":"Art. 39 Abs. 1 und 3 EBG; Art. 18 Abs. 1 und Art. 27 Abs. 1 ArG; Art. 26 Abs. 2 und 4 ArGV 2; koordinierte Auslegung von Art. 39 Abs. 1 und 3 EBG sowie von Art. 26 Abs. 2 und 4 ArGV 2 betreffend die Sonntagsarbeit an Bahnhöfen. Bei…","datum":"2025-02-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_I_84":{"zitierung":"BGE 152 I 84","regesteKurz":"Art. 49 Abs. 1 BV; Art. 19 Abs. 6 ArG; Art. 18 und 18A LHOM/GE; Sonntagsarbeit an vier Sonntagen pro Jahr ohne Bewilligung; Vorrang des Bundesrechts; Ablehnung einer im kantonalen Recht vorgesehenen Bedingung für die Ladenöffnungszeiten,…","datum":"2025-09-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BES.2022.93":{"zitierung":"Appellationsgericht BS BES.2022.93 vom 11.04.2023","regesteKurz":"Verfahrenseinstellung (BGer-Nr. 6B_767/2023 vom 21. Juni 2023)","datum":"2023-04-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2024.20":{"zitierung":"Appellationsgericht BS SB.2024.20 vom 06.02.2025","regesteKurz":"Diebstahl","datum":"2025-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.163":{"zitierung":"Appellationsgericht BS VD.2024.163 vom 27.05.2025","regesteKurz":"fristlose Auflösung des Arbeitsverhältnisses","datum":"2025-05-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
@@ -17,26 +18,28 @@
 "1":[{"key":"bge_148_II_203","gewicht":0}],
 "2":[{"key":"bge_148_II_203","gewicht":0}],
 "6":[{"key":"bge_149_V_14","gewicht":0}],
-"18":[{"key":"bge_151_II_699","gewicht":0}],
-"19":[{"key":"bge_151_II_699","gewicht":0}],
+"18":[{"key":"bge_152_I_84","gewicht":0},{"key":"bge_151_II_699","gewicht":0}],
+"19":[{"key":"bge_152_I_84","gewicht":0},{"key":"bge_151_II_699","gewicht":0}],
+"20":[{"key":"bge_152_I_84","gewicht":0}],
 "27":[{"key":"bge_151_II_699","gewicht":0}],
 "41":[{"key":"bge_148_II_203","gewicht":0}],
 "44":[{"key":"bge_148_II_16","gewicht":0}],
 "58":[{"key":"bge_148_II_203__voll","gewicht":0,"erwaegungen":["E. 1.2"]},{"key":"bs_appellationsgericht_BES.2022.93","gewicht":null}],
-"71":[{"key":"bge_148_I_198","gewicht":0}],
+"71":[{"key":"bge_152_I_84","gewicht":0},{"key":"bge_148_I_198","gewicht":1}],
 "35a":[{"key":"bs_appellationsgericht_VD.2024.163","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.20","gewicht":null}]
 },
 "gesamtProArtikel":{
 "1":{"bge":1},
 "2":{"bge":1},
 "6":{"bge":1},
-"18":{"bge":1},
-"19":{"bge":1},
+"18":{"bge":2},
+"19":{"bge":2},
+"20":{"bge":1},
 "27":{"bge":1},
 "41":{"bge":1},
 "44":{"bge":1},
 "58":{"bger":1,"kantonal":1},
-"71":{"bge":1},
+"71":{"bge":2},
 "35a":{"kantonal":2}
 }
 }

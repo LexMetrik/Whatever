@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"BVG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -74,6 +74,7 @@
 "bge_151_V_280__voll":{"zitierung":"Urteil 9C_583/2024 (nicht publ. in BGE 151 V 280)","regesteKurz":null,"datum":"2025-05-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 V 280","urteil":"9C_583/2024"}},
 "bge_151_V_333":{"zitierung":"BGE 151 V 333","regesteKurz":"Art. 19 BVG; Art. 20 BVV 2; Art. 15 Abs. 1 lit. b FZV; vorrangige Begünstigte hinsichtlich der Erhaltung des Vorsorgeschutzes im Todesfall; geschiedener Ehegatte. Geschiedene Ehegatten gehören gemäss Art. 19 BVG zum Kreis der überlebenden…","datum":"2025-07-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_V_343":{"zitierung":"BGE 151 V 343","regesteKurz":"Art. 21 Abs. 3 FZA; Art. 79b Abs. 2 BVG; Art. 60b Abs. 1 BVV 2; quantitative und zeitliche Begrenzung der jährlichen Einkaufssumme der beruflichen Vorsorge. Art. 60b Abs. 1 BVV 2 begrenzt die jährliche Einkaufssumme quantitativ (20 % des…","datum":"2025-07-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_III_81__voll":{"zitierung":"Urteil 5A_384/2024 (nicht publ. in BGE 152 III 81)","regesteKurz":null,"datum":"2025-09-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 III 81","urteil":"5A_384/2024"}},
 "bs_appellationsgericht_BEZ.2025.20":{"zitierung":"Appellationsgericht BS BEZ.2025.20 vom 30.04.2025","regesteKurz":"Verwertung","datum":"2025-04-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.241":{"zitierung":"Appellationsgericht BS VD.2022.241 vom 26.07.2023","regesteKurz":"Kündigung des Arbeitsverhältnisses","datum":"2023-07-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.89":{"zitierung":"Appellationsgericht BS VD.2024.89 vom 07.12.2024","regesteKurz":"Erlass der Grundstückgewinnsteuer","datum":"2024-12-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -138,7 +139,8 @@
 },
 "proArtikel":{
 "1":[{"key":"bge_150_V_161","gewicht":0},{"key":"bge_150_V_12","gewicht":0},{"key":"bge_148_V_334","gewicht":0},{"key":"bge_148_III_232","gewicht":0},{"key":"bge_148_V_234","gewicht":0},{"key":"bge_148_II_73","gewicht":0},{"key":"bge_148_V_58","gewicht":0},{"key":"bge_148_V_114","gewicht":1},{"key":"bge_146_V_331","gewicht":1},{"key":"bge_146_V_341","gewicht":1},{"key":"bs_sozialversicherungsgericht_BV.2022.13","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.18","gewicht":null}],
-"2":[{"key":"bge_148_V_234","gewicht":0},{"key":"bge_147_V_322","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2023.19","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2024.13","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2024.9","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.16","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.14","gewicht":null}],
+"2":[{"key":"bge_148_V_234","gewicht":0},{"key":"bge_147_V_322","gewicht":0},{"key":"bge_152_III_81__voll","gewicht":0,"erwaegungen":["E. 4.2"]},{"key":"bs_sozialversicherungsgericht_BV.2023.19","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2024.13","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2024.9","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.16","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.14","gewicht":null}],
+"3":[{"key":"bge_152_III_81__voll","gewicht":0,"erwaegungen":["E. 4.2"]}],
 "5":[{"key":"bs_sozialversicherungsgericht_BV.2021.21","gewicht":null}],
 "6":[{"key":"bge_150_V_89","gewicht":0},{"key":"bge_147_V_146","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2024.9","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2024.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.18","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.15","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.20","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.23","gewicht":null}],
 "7":[{"key":"bge_150_V_12","gewicht":0},{"key":"bge_149_III_258","gewicht":0},{"key":"bge_148_V_234","gewicht":0},{"key":"bge_147_V_146","gewicht":0},{"key":"bge_148_II_313__voll","gewicht":0,"erwaegungen":["E. 5.2"]},{"key":"bs_sozialversicherungsgericht_BV.2023.19","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.16","gewicht":null}],
@@ -147,7 +149,7 @@
 "11":[{"key":"bge_146_V_169","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2024.13","gewicht":null}],
 "13":[{"key":"bge_150_V_447","gewicht":0},{"key":"bge_150_V_161","gewicht":0},{"key":"bge_150_V_89","gewicht":0},{"key":"bge_150_V_12","gewicht":0},{"key":"bge_148_III_232","gewicht":0},{"key":"bge_148_V_114","gewicht":1},{"key":"bs_sozialversicherungsgericht_BV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2025.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2024.1","gewicht":null}],
 "15":[{"key":"bge_151_V_219","gewicht":0},{"key":"bge_151_V_144","gewicht":0},{"key":"bge_149_V_106","gewicht":1},{"key":"bge_147_V_10","gewicht":0},{"key":"bge_147_V_86","gewicht":0},{"key":"bge_147_III_402__voll","gewicht":0,"erwaegungen":["E. 10.8.3.2"]},{"key":"sg_gerichte_BV2024_21","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.8","gewicht":null}],
-"16":[{"key":"bge_149_III_258","gewicht":0}],
+"16":[{"key":"bge_149_III_258","gewicht":0},{"key":"bge_152_III_81__voll","gewicht":0,"erwaegungen":["E. 4.2"]}],
 "17":[{"key":"bge_150_V_447","gewicht":0},{"key":"bge_147_V_2","gewicht":1}],
 "18":[{"key":"bs_sozialversicherungsgericht_BV.2025.2","gewicht":null}],
 "19":[{"key":"bge_151_V_333","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2021.24-20241128","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.24","gewicht":null}],
@@ -220,7 +222,8 @@
 },
 "gesamtProArtikel":{
 "1":{"bge":10,"kantonal":2},
-"2":{"bge":2,"kantonal":5},
+"2":{"bge":2,"bger":1,"kantonal":5},
+"3":{"bger":1},
 "5":{"kantonal":1},
 "6":{"bge":2,"kantonal":8},
 "7":{"bge":4,"bger":1,"kantonal":2},
@@ -229,7 +232,7 @@
 "11":{"bge":1,"kantonal":1},
 "13":{"bge":6,"kantonal":3},
 "15":{"bge":5,"bger":1,"kantonal":2},
-"16":{"bge":1},
+"16":{"bge":1,"bger":1},
 "17":{"bge":2},
 "18":{"kantonal":1},
 "19":{"bge":1,"kantonal":2},

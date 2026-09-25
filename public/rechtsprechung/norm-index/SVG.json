@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "SVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -149,20 +149,30 @@
     ],
     "16": [
       {
-        "key": "bge_150_II_537",
-        "zitierung": "BGE 150 II 537",
-        "regesteKurz": "Art. 98 BGG; Art. 15d Abs. 1 SVG; Anordnung einer Fahreignungsuntersuchung; vorsorgliche Massnahme; Kognition des Bundesgerichts. Die Anordnung einer Fahreignungsuntersuchung stellt eine vorsorgliche Massnahme dar. Die Kognition des…",
-        "datum": "2024-06-04",
+        "key": "bge_149_II_96",
+        "zitierung": "BGE 149 II 96",
+        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die…",
+        "datum": "2022-11-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_179",
+        "zitierung": "BGE 152 II 179",
+        "regesteKurz": "Art. 16 Abs. 3 sowie Art. 100 Ziff. 4 Satz 3 und Ziff. 5 SVG; dringliche Dienstfahrten; Führerausweisentzug; Unterschreitung der Mindestentzugsdauer. Art. 16 Abs. 3 Satz 2 SVG verpflichtet die Verwaltungsbehörde nicht, im Falle einer vom…",
+        "datum": "2025-08-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_96",
-        "zitierung": "BGE 149 II 96",
-        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die…",
-        "datum": "2022-11-03",
+        "key": "bge_150_II_537",
+        "zitierung": "BGE 150 II 537",
+        "regesteKurz": "Art. 98 BGG; Art. 15d Abs. 1 SVG; Anordnung einer Fahreignungsuntersuchung; vorsorgliche Massnahme; Kognition des Bundesgerichts. Die Anordnung einer Fahreignungsuntersuchung stellt eine vorsorgliche Massnahme dar. Die Kognition des…",
+        "datum": "2024-06-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -565,6 +575,16 @@
     ],
     "63": [
       {
+        "key": "bge_152_III_30",
+        "zitierung": "BGE 152 III 30",
+        "regesteKurz": "Art. 32 ZPO; Gerichtsstand bei Konsumentenverträgen. Die Weigerung, einen Vertrag abzuschliessen, namentlich ein Bankkonto für den Zahlungsverkehr zu eröffnen, stellt keine Streitigkeit aus einem Konsumentenvertrag im Sinne von Art. 32 ZPO…",
+        "datum": "2026-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_III_7",
         "zitierung": "BGE 152 III 7",
         "regesteKurz": "Art. 75 Abs. 3 ATSG; Art. 63 SVG; Ausnahme vom Regressprivileg des Arbeitgebers; Begriff der obligatorischen Haftpflichtversicherung; Unfall mit einem Bagger. Der in Art. 75 Abs. 3 ATSG statuierte Ausschluss des Regressprivilegs des…",
@@ -683,6 +703,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_149_II_96",
+        "zitierung": "BGE 149 II 96",
+        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die…",
+        "datum": "2022-11-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_148_IV_456",
         "zitierung": "BGE 148 IV 456",
         "regesteKurz": "Art. 337 Abs. 3 und Art. 405 Abs. 3 StPO; persönliches Erscheinen der Staatsanwaltschaft an der Berufungsverhandlung. Art. 405 Abs. 3 StPO schreibt für das mündliche Verfahren vor, dass die Verfahrensleitung die Staatsanwaltschaft in den…",
@@ -701,16 +731,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_IV_357",
-        "zitierung": "BGE 151 IV 357",
-        "regesteKurz": "Art. 90 Abs. 3 und 3 ter SVG in Verbindung mit Art. 41 und 47 StGB; qualifiziert grobe Verletzung der Verkehrsregeln; Strafzumessung. Art. 90 Abs. 3 ter SVG räumt dem Richter bei der Strafzumessung einen grösseren Ermessensspielraum ein,…",
-        "datum": "2025-10-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "91": [
@@ -1011,6 +1031,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_II_179",
+        "zitierung": "BGE 152 II 179",
+        "regesteKurz": "Art. 16 Abs. 3 sowie Art. 100 Ziff. 4 Satz 3 und Ziff. 5 SVG; dringliche Dienstfahrten; Führerausweisentzug; Unterschreitung der Mindestentzugsdauer. Art. 16 Abs. 3 Satz 2 SVG verpflichtet die Verwaltungsbehörde nicht, im Falle einer vom…",
+        "datum": "2025-08-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_153",
         "zitierung": "BGE 149 IV 153",
         "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht.…",
@@ -1033,20 +1063,30 @@
     ],
     "102": [
       {
-        "key": "bge_149_IV_153",
-        "zitierung": "BGE 149 IV 153",
-        "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht.…",
-        "datum": "2023-02-01",
+        "key": "bge_149_II_96",
+        "zitierung": "BGE 149 II 96",
+        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die…",
+        "datum": "2022-11-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_179",
+        "zitierung": "BGE 152 II 179",
+        "regesteKurz": "Art. 16 Abs. 3 sowie Art. 100 Ziff. 4 Satz 3 und Ziff. 5 SVG; dringliche Dienstfahrten; Führerausweisentzug; Unterschreitung der Mindestentzugsdauer. Art. 16 Abs. 3 Satz 2 SVG verpflichtet die Verwaltungsbehörde nicht, im Falle einer vom…",
+        "datum": "2025-08-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_96",
-        "zitierung": "BGE 149 II 96",
-        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die…",
-        "datum": "2022-11-03",
+        "key": "bge_149_IV_153",
+        "zitierung": "BGE 149 IV 153",
+        "regesteKurz": "Art. 4 Abs. 2 Rahmenabkommen über die Grenzabfertigung mit Deutschland; Art. 3 StGB; Art. 95 Abs. 1 lit. b SVG; Art. 4 SKV; mangelnde Fahrberechtigung beim bevorstehenden Grenzübertritt; örtliche Zuständigkeit und anwendbares Recht.…",
+        "datum": "2023-02-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1193,6 +1233,16 @@
     ],
     "16a": [
       {
+        "key": "bge_152_II_179",
+        "zitierung": "BGE 152 II 179",
+        "regesteKurz": "Art. 16 Abs. 3 sowie Art. 100 Ziff. 4 Satz 3 und Ziff. 5 SVG; dringliche Dienstfahrten; Führerausweisentzug; Unterschreitung der Mindestentzugsdauer. Art. 16 Abs. 3 Satz 2 SVG verpflichtet die Verwaltungsbehörde nicht, im Falle einer vom…",
+        "datum": "2025-08-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_146_II_300",
         "zitierung": "BGE 146 II 300",
         "regesteKurz": "Art. 15a Abs. 4 SVG; Verfall des Führerausweises auf Probe. Entscheidend für den Verfall des Führerausweises auf Probe ist, dass nach einer ersten Widerhandlung, die zu einem Ausweisentzug (sowie zu einer Verlängerung der Probezeit)…",
@@ -1204,6 +1254,16 @@
       }
     ],
     "16b": [
+      {
+        "key": "bge_152_II_179",
+        "zitierung": "BGE 152 II 179",
+        "regesteKurz": "Art. 16 Abs. 3 sowie Art. 100 Ziff. 4 Satz 3 und Ziff. 5 SVG; dringliche Dienstfahrten; Führerausweisentzug; Unterschreitung der Mindestentzugsdauer. Art. 16 Abs. 3 Satz 2 SVG verpflichtet die Verwaltungsbehörde nicht, im Falle einer vom…",
+        "datum": "2025-08-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_II_511",
         "zitierung": "BGE 148 II 511",
@@ -1217,20 +1277,30 @@
     ],
     "16c": [
       {
-        "key": "bge_150_II_505",
-        "zitierung": "BGE 150 II 505",
-        "regesteKurz": "a Art. 27 Abs. 1 SVG; Pflicht zur Beachtung einer signalisierten Höchstgeschwindigkeit. Signalisierte Höchstgeschwindigkeiten sind für alle Verkehrsteilnehmende verbindlich, auch wenn sie nicht rechtsgültig publiziert worden sind. Dies…",
-        "datum": "2024-05-23",
+        "key": "bge_149_II_96",
+        "zitierung": "BGE 149 II 96",
+        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die…",
+        "datum": "2022-11-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_179",
+        "zitierung": "BGE 152 II 179",
+        "regesteKurz": "Art. 16 Abs. 3 sowie Art. 100 Ziff. 4 Satz 3 und Ziff. 5 SVG; dringliche Dienstfahrten; Führerausweisentzug; Unterschreitung der Mindestentzugsdauer. Art. 16 Abs. 3 Satz 2 SVG verpflichtet die Verwaltungsbehörde nicht, im Falle einer vom…",
+        "datum": "2025-08-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_149_II_96",
-        "zitierung": "BGE 149 II 96",
-        "regesteKurz": "Art. 16 Abs. 2 SVG; Art. 2 Abs. 2 StGB ;titi; Anhang 1 Ziff. 314.3 OBV; Warnungsentzug des Führerausweises wegen Rechtsüberholens auf der Autobahn; Grundsatz der lex mitior; Beurteilung als Ordnungswidrigkeit. Beim Entscheid über die…",
-        "datum": "2022-11-03",
+        "key": "bge_150_II_505",
+        "zitierung": "BGE 150 II 505",
+        "regesteKurz": "a Art. 27 Abs. 1 SVG; Pflicht zur Beachtung einer signalisierten Höchstgeschwindigkeit. Signalisierte Höchstgeschwindigkeiten sind für alle Verkehrsteilnehmende verbindlich, auch wenn sie nicht rechtsgültig publiziert worden sind. Dies…",
+        "datum": "2024-05-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

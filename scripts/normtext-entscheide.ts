@@ -16,11 +16,13 @@ import {
 import { schreibeKorpus, ladeBestandSnapshots, berichteBezuege } from './normtext/entscheide-schreiben';
 import {
   normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
+  sperrEntfernteNormKeys,
 } from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
 import { verschlechtertDatum } from './normtext/bge-bandjahr';
 import { mergeB1Ergebnis } from './normtext/entscheide-b1-merge';
+import { findeFremdeFundstelleImBody } from './normtext/entscheide-koerper-konflation';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
 import type { Rechtsgebiet } from '../src/lib/normtext/register';
 import * as path from 'node:path';
@@ -352,9 +354,15 @@ async function main() {
     // nicht angenommen; alles andere läuft weiter in den fail-closed Abbruch.
     const litVerworfen = new Map<string, readonly string[]>();
     let litVerworfenKeys = 0;
+    const sperrVerworfen = new Map<string, readonly string[]>();
+    let sperrVerworfenKeys = 0;
     for (const s of basis) {
       const alt = s.normKeys ?? [];
-      const nichtBewahren = new Set(literaturEntfernteNormKeys(s));
+      // Zweite Gegenrichtung (QS-KORPUS 25.9.2026): Keys, die NUR aus einem jetzt
+      // in ABK_AUSSCHLUSS gesperrten Alias stammten (AIMP → IRSG …), je Snapshot
+      // mechanisch belegt durch `sperrEntfernteNormKeys`, ebenfalls nicht bewahren.
+      const gesperrt = new Set(sperrEntfernteNormKeys(s));
+      const nichtBewahren = new Set([...literaturEntfernteNormKeys(s), ...gesperrt]);
       // ohne hint: rein aus dem Snapshot
       const { keys: neu, nurAlt, verworfen } = remapNormKeys(alt, normKeysVonSnapshot(s), nichtBewahren);
       if (nurAlt.length) {
@@ -362,9 +370,12 @@ async function main() {
         altErhaltenSnaps++;
         bewahrt.set(s.id, nurAlt);
       }
-      if (verworfen.length) {
-        litVerworfenKeys += verworfen.length;
-        litVerworfen.set(s.id, verworfen);
+      const ausSperre = verworfen.filter((k) => gesperrt.has(k));
+      const ausLiteratur = verworfen.filter((k) => !gesperrt.has(k));
+      if (ausSperre.length) { sperrVerworfenKeys += ausSperre.length; sperrVerworfen.set(s.id, ausSperre); }
+      if (ausLiteratur.length) {
+        litVerworfenKeys += ausLiteratur.length;
+        litVerworfen.set(s.id, ausLiteratur);
       }
       if (neu.length !== alt.length || neu.some((k, i) => k !== alt[i])) veraendert++;
       s.normKeys = neu;
@@ -391,6 +402,10 @@ async function main() {
     // ist eine Korrektur an ausgelieferten Daten und gehört ins Lauf-Protokoll (§8).
     console.log(`[remap] alt-verworfen (Literatur-Phantome, NICHT bewahrt): ${litVerworfenKeys} Keys über ${litVerworfen.size} Snapshots.`);
     for (const [id, keys] of [...litVerworfen].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))) {
+      console.log(`  · ${id}: ${[...keys].join(', ')}`);
+    }
+    console.log(`[remap] alt-verworfen (gesperrtes Alias-Kürzel, ABK_AUSSCHLUSS, NICHT bewahrt): ${sperrVerworfenKeys} Keys über ${sperrVerworfen.size} Snapshots.`);
+    for (const [id, keys] of [...sperrVerworfen].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))) {
       console.log(`  · ${id}: ${[...keys].join(', ')}`);
     }
     console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);
@@ -460,7 +475,22 @@ async function main() {
     // Leer-Guard (§6): fehlgeschlagener Lauf entwertet nie den Bestand.
     if (neueIds.length && neu.length === 0) { console.log('[bge-baender] 0 geholt (Quelle nicht erreichbar?) — Korpus unberührt.'); return; }
     // Duplikat-Guard: nie ein bereits erfasstes id doppelt (idempotent bei Re-Run).
-    const neuUniq = neu.filter((s) => !bestandIds.has(s.id));
+    // Konflations-Guard (§8, Band-Nachzug 25.9.2026): trägt der Sammlungs-Auszug ODER
+    // der Volltext eines NEUEN BGE den laufenden Seitenkopf eines ANDEREN BGE desselben
+    // Bandes, ist OCLs Basis-Record vermischt — Anlassfall 152 I 2: auszugAbschnitte
+    // = vollständiger Text von 152 I 20, während Regeste (clir) und aza-Volltext
+    // (1C_435/2024) korrekt waren. Der Tor-Wächter in check-entscheide.ts prüft nur
+    // `abschnitte`, nicht den Auszug — darum hier VOR dem Schreiben: nicht aufnehmen
+    // statt einen fremden Text unter der eigenen Fundstelle zeigen (wie Exakt-Id-Guard).
+    const koerperText = (a: EntscheidSnapshot['abschnitte'] | undefined) => (a ?? []).flatMap((x) => x.bloecke.map((b) => b.text)).join('\n');
+    const konflatiert: string[] = [];
+    const neuUniq = neu.filter((s) => !bestandIds.has(s.id)).filter((s) => {
+      const fremd = findeFremdeFundstelleImBody(koerperText(s.auszugAbschnitte), s.bgeReferenz)
+        ?? findeFremdeFundstelleImBody(koerperText(s.abschnitte), s.bgeReferenz);
+      if (fremd) konflatiert.push(`${s.bgeReferenz} (trägt Kopf von ${fremd})`);
+      return !fremd;
+    });
+    if (konflatiert.length) console.log(`[bge-baender] §8-Konflations-Guard: ${konflatiert.length} neue BGE NICHT aufgenommen (OCL-Basis-Record vermischt): ${konflatiert.join(', ')}`);
     const mitVoll = neuUniq.filter((s) => s.azaUrteil).length;
     console.log(`[bge-baender] neu erfasst: ${neuUniq.length} (Volltext ${mitVoll}, Auszug ${neuUniq.length - mitVoll})`);
 

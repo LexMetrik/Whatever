@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "FZA",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -12,7 +12,17 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_151_II_213",
+        "zitierung": "BGE 151 II 213",
+        "regesteKurz": "Art. 7 lit. e FZA; Art. 3 Abs. 1 und 5 sowie Art. 7 Anhang I FZA; mit einem französischen Grenzgänger verheiratete Drittenstaatenangehörige; abgeleitetes Recht auf Ausübung einer Erwerbstätigkeit in der Schweiz. Die Staatsangehörige eines…",
+        "datum": "2024-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_146_II_145",
@@ -23,6 +33,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_233",
+        "zitierung": "BGE 152 II 233",
+        "regesteKurz": "Art. 2 FZA; Art. 9 und 15 Anhang I FZA; Art. 3 der Richtlinie 2005/36/EG; indirekte Anerkennung eines bereits in Rumänien anerkannten algerischen Zahnarzt-Diploms einer französischen Staatsangehörigen. Fällt die Anerkennung von…",
+        "datum": "2025-09-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_343",
@@ -43,16 +63,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_213",
-        "zitierung": "BGE 151 II 213",
-        "regesteKurz": "Art. 7 lit. e FZA; Art. 3 Abs. 1 und 5 sowie Art. 7 Anhang I FZA; mit einem französischen Grenzgänger verheiratete Drittenstaatenangehörige; abgeleitetes Recht auf Ausübung einer Erwerbstätigkeit in der Schweiz. Die Staatsangehörige eines…",
-        "datum": "2024-07-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "2": [
@@ -64,7 +74,37 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_152_II_224",
+        "zitierung": "BGE 152 II 224",
+        "regesteKurz": "Art. 2 und 9 FZA; Art. 9 und 15 Anhang I FZA; Art. 13 Richtlinie 2005/36/ EG; freizügigkeitsrechtliche Anerkennung eines ausländischen Diploms im Bereich Podologie. Verneinung eines Anspruchs auf Diplomanerkennung gestützt auf Art. 13…",
+        "datum": "2025-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_213",
+        "zitierung": "BGE 151 II 213",
+        "regesteKurz": "Art. 7 lit. e FZA; Art. 3 Abs. 1 und 5 sowie Art. 7 Anhang I FZA; mit einem französischen Grenzgänger verheiratete Drittenstaatenangehörige; abgeleitetes Recht auf Ausübung einer Erwerbstätigkeit in der Schweiz. Die Staatsangehörige eines…",
+        "datum": "2024-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_233",
+        "zitierung": "BGE 152 II 233",
+        "regesteKurz": "Art. 2 FZA; Art. 9 und 15 Anhang I FZA; Art. 3 der Richtlinie 2005/36/EG; indirekte Anerkennung eines bereits in Rumänien anerkannten algerischen Zahnarzt-Diploms einer französischen Staatsangehörigen. Fällt die Anerkennung von…",
+        "datum": "2025-09-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_343",
@@ -97,40 +137,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_213",
-        "zitierung": "BGE 151 II 213",
-        "regesteKurz": "Art. 7 lit. e FZA; Art. 3 Abs. 1 und 5 sowie Art. 7 Anhang I FZA; mit einem französischen Grenzgänger verheiratete Drittenstaatenangehörige; abgeleitetes Recht auf Ausübung einer Erwerbstätigkeit in der Schweiz. Die Staatsangehörige eines…",
-        "datum": "2024-07-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_II_202",
         "zitierung": "BGE 150 II 202",
         "regesteKurz": "a Art. 22 Abs. 1 DBG; Einkünfte aus Vorsorge. Steuerliche Einordnung von Renten (Beiträge wie Auszahlungen) aus einem ausländischen Vorsorgewerk in die Systematik von Art. 22 Abs. 1 DBG (E. 4). Regeste b Art. 204 DBG; Übergangslösung für…",
         "datum": "2023-12-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_34",
-        "zitierung": "BGE 149 II 34",
-        "regesteKurz": "Art. 9 Abs. 2 Anhang I FZA; Art. 40 Abs. 3 DBG; Umrechnung der Arbeitseinkünfte eines Grenzgängers; keine Diskriminierung. Wenn eine in der Schweiz ansässige Person den Wohnsitz in der Schweiz aufgibt und zu einem späteren Zeitpunkt in…",
-        "datum": "2022-05-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_375",
-        "zitierung": "BGE 147 II 375",
-        "regesteKurz": "a Art. 2 Abs. 3 und Art. 3 Satz 2 EntsG; Voraussetzungen für den Abzug von Unterkunfts- und Verpflegungskosten vom Lohn im ortsüblichen Mass. Das Abzugsverbot von Unterkunfts- und Verpflegungskosten gemäss Art. 2 Abs. 3 EntsG gilt für alle…",
-        "datum": "2021-03-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -178,7 +188,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_II_157",
+        "zitierung": "BGE 152 II 157",
+        "regesteKurz": "Art. 4 FZA in Verbindung mit Art. 6 Anhang I FZA; Art. 6 FZA in Verbindung mit Art. 24 Anhang I FZA; Wiedererlangung der Arbeitnehmereigenschaft im Sinne des FZA durch eine Person, die nach dem Verlust ihrer Arbeitnehmereigenschaft einen…",
+        "datum": "2025-05-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_II_277",
@@ -255,6 +275,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_157",
+        "zitierung": "BGE 152 II 157",
+        "regesteKurz": "Art. 4 FZA in Verbindung mit Art. 6 Anhang I FZA; Art. 6 FZA in Verbindung mit Art. 24 Anhang I FZA; Wiedererlangung der Arbeitnehmereigenschaft im Sinne des FZA durch eine Person, die nach dem Verlust ihrer Arbeitnehmereigenschaft einen…",
+        "datum": "2025-05-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_277",
         "zitierung": "BGE 151 II 277",
         "regesteKurz": "Art. 4 und 6 FZA; Art. 4 Abs. 1 und 6 Anhang I FZA; Art. 61a AIG; Art. 18 IVG; Arbeitnehmereigenschaft und Arbeitsvermittlung gemäss IVG; Verbleiberecht in der Schweiz bei Arbeitsunfähigkeit; Verhältnis zum IV-Verfahren. Wird eine…",
@@ -320,6 +350,26 @@
       }
     ],
     "9": [
+      {
+        "key": "bge_152_II_224",
+        "zitierung": "BGE 152 II 224",
+        "regesteKurz": "Art. 2 und 9 FZA; Art. 9 und 15 Anhang I FZA; Art. 13 Richtlinie 2005/36/ EG; freizügigkeitsrechtliche Anerkennung eines ausländischen Diploms im Bereich Podologie. Verneinung eines Anspruchs auf Diplomanerkennung gestützt auf Art. 13…",
+        "datum": "2025-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_233",
+        "zitierung": "BGE 152 II 233",
+        "regesteKurz": "Art. 2 FZA; Art. 9 und 15 Anhang I FZA; Art. 3 der Richtlinie 2005/36/EG; indirekte Anerkennung eines bereits in Rumänien anerkannten algerischen Zahnarzt-Diploms einer französischen Staatsangehörigen. Fällt die Anerkennung von…",
+        "datum": "2025-09-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_II_640",
         "zitierung": "BGE 151 II 640",
@@ -416,7 +466,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 4
+        "gewicht": 6
       },
       {
         "key": "bge_149_I_248",
@@ -426,7 +476,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_146_II_89",
@@ -437,6 +487,36 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
+      },
+      {
+        "key": "bge_152_II_224",
+        "zitierung": "BGE 152 II 224",
+        "regesteKurz": "Art. 2 und 9 FZA; Art. 9 und 15 Anhang I FZA; Art. 13 Richtlinie 2005/36/ EG; freizügigkeitsrechtliche Anerkennung eines ausländischen Diploms im Bereich Podologie. Verneinung eines Anspruchs auf Diplomanerkennung gestützt auf Art. 13…",
+        "datum": "2025-08-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_336",
+        "zitierung": "BGE 151 II 336",
+        "regesteKurz": "Art. 3 Anhang I FZA; Anwendbarkeit der freizügigkeitsrechtlichen Bestimmungen über den Familiennachzug (Voraussetzung des Auslandsbezugs). Streitgegenstand (E. 3). Darstellung der Rechtsprechung zum grenzüberschreitenden Bezug als…",
+        "datum": "2025-01-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_II_213",
+        "zitierung": "BGE 151 II 213",
+        "regesteKurz": "Art. 7 lit. e FZA; Art. 3 Abs. 1 und 5 sowie Art. 7 Anhang I FZA; mit einem französischen Grenzgänger verheiratete Drittenstaatenangehörige; abgeleitetes Recht auf Ausübung einer Erwerbstätigkeit in der Schweiz. Die Staatsangehörige eines…",
+        "datum": "2024-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_150_II_202",
@@ -457,36 +537,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_151_II_726",
-        "zitierung": "BGE 151 II 726",
-        "regesteKurz": "Art. 21 Abs. 1 lit. a und b sowie Art. 40 Abs. 1 Satz 2 AHVG (in der bis zum 31. Dezember 2023 geltenden Fassung); Art. 7 lit. c FZA und Art. 4 Abs. 1 und 2 Anhang I FZA; Art. 2 Abs. 1 lit. a der Verordnung (EWG) Nr. 1251/70 vom 29. Juni…",
-        "datum": "2025-04-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_640",
-        "zitierung": "BGE 151 II 640",
-        "regesteKurz": "Art. 27 Abs. 1 und Art. 28 Abs. 2 BGFA; Eintragung von Anwältinnen und Anwälten in die EU/EFTA-Anwaltsliste. Voraussetzungen, unter welchen sich EU/EFTA-Anwältinnen und -Anwälte in die EU/EFTA-Anwaltsliste eintragen lassen können (E.…",
-        "datum": "2025-02-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_277",
-        "zitierung": "BGE 151 II 277",
-        "regesteKurz": "Art. 4 und 6 FZA; Art. 4 Abs. 1 und 6 Anhang I FZA; Art. 61a AIG; Art. 18 IVG; Arbeitnehmereigenschaft und Arbeitsvermittlung gemäss IVG; Verbleiberecht in der Schweiz bei Arbeitsunfähigkeit; Verhältnis zum IV-Verfahren. Wird eine…",
-        "datum": "2025-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "20": [
