@@ -127,7 +127,7 @@ const CONFIG: VorlagenSeitenConfig<VvAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit der Verzicht trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700">
         <li><strong>Schriftform ist zwingend</strong><NormText text={` (Art. 141 Abs. 1bis OR) – drucken und von der Schuldnerseite unterschreiben lassen.`} /></li>
         <li><strong>Zustellung nachweisen</strong> – {KDG_ZUGANGS_HINWEIS}</li>
       </ul>
