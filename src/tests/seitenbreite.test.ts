@@ -76,11 +76,28 @@ describe('seitenbreite: Tabelle', () => {
       .some((e: { key: string }) => e.key === material)).toBe(true);
   });
 
-  it('B1a: alle Seitenarten stehen auf content, die Rahmenklasse ist die bisherige', () => {
+  // §6.3-DEKLARATION (B1c, 25.9.2026): hier stand «alle Seitenarten stehen
+  // auf content» — eine Momentaufnahme von B1a, die jeden Posten B2–B12 (der
+  // genau EINE Zeile der Tabelle auf `weit` stellt) zu einer Testanpassung
+  // zwänge. B1 führt den Mechanismus erst ein; die tragende Invariante ist
+  // nicht der heutige Wert, sondern: nur die zwei Stufen, und unterhalb von
+  // 2xl (1536 px Viewport bzw. 96rem Pane) bleibt JEDE Art auf `content`.
+  // Die gemessene Breite je Art bewacht `e2e/seitenbreite.e2e.ts`.
+  it('jede Stufe ist content|weit; unter 2xl bleibt jede Art auf content', () => {
     for (const [art, { stufe, beispielPfad }] of Object.entries(SEITENBREITE)) {
-      expect(stufe, art).toBe('content');
-      expect(rahmenbreiteKlasse(beispielPfad, 'fenster'), art).toBe('max-w-content');
-      expect(rahmenbreiteKlasse(beispielPfad, 'pane'), art).toBe('max-w-content');
+      expect(['content', 'weit'], art).toContain(stufe);
+      const fenster = rahmenbreiteKlasse(beispielPfad, 'fenster');
+      const pane = rahmenbreiteKlasse(beispielPfad, 'pane');
+      // Grundklasse (ohne Präfix) ist immer `max-w-content`.
+      expect(fenster.split(' ').filter((k) => !k.includes(':')), art).toEqual(['max-w-content']);
+      expect(pane.split(' ').filter((k) => !k.includes(':')), art).toEqual(['max-w-content']);
+      if (stufe === 'weit') {
+        expect(fenster, art).toContain('2xl:max-w-weit');
+        expect(pane, art).toContain('@[96rem]/pane:max-w-weit');
+      } else {
+        expect(fenster, art).toBe('max-w-content');
+        expect(pane, art).toBe('max-w-content');
+      }
     }
   });
 });
