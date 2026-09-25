@@ -6,6 +6,7 @@ import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
 import { MaterialKarte } from '../components/materialien/MaterialKarte';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
+import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { AMTLICHE_FASSUNG_NOMEN } from '../lib/benennung';
 import {
   ladeMaterialManifest, gruppiereNachBehoerde, filtere, vorhandeneDoktypen,
@@ -84,12 +85,9 @@ export function Materialien() {
         </div>
       )}
 
-      {!materialien && !fehler && (
-        <div className="py-12 text-center space-y-3">
-          <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-          <p className="text-body-s text-ink-500">Die Übersicht wird abgerufen …</p>
-        </div>
-      )}
+      {/* W3-7 (Posten, REST S2): der eine Lade-Baustein statt der eigenen
+          Kopie — trägt zusätzlich `role="status"` (Ankündigung für Vorlesehilfen). */}
+      {!materialien && !fehler && <Ladeanzeige text="Die Übersicht wird abgerufen …" className="py-12" />}
 
       {materialien && (
         <>
@@ -186,7 +184,7 @@ export function Materialien() {
       {/* D11: der §8-Vorbehalt steht im Fuss, nicht im Einstieg. Die Rubrik
           führt bewusst keine eigenen Volltexte — das ist eine Aussage über die
           Sammlung und gehört zu ihrem Fuss, nicht über ihren Titel. */}
-      <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
+      <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-reading">
         Faktisches «Soft-Law», kein Gesetzesrang. Diese Rubrik führt keine eigenen Volltexte; jeder Eintrag verlinkt die Publikation, massgeblich ist stets {AMTLICHE_FASSUNG_NOMEN}.
       </p>
       {/* W2·6c-DECKUNGS-SEITE (§8): unaufdringlich im Fuss, nicht im Einstieg —
@@ -195,7 +193,7 @@ export function Materialien() {
           die Deckungs-Sicht wird erst auf der Zielseite geholt. */}
       <p className="text-micro text-ink-500 max-w-reading">
         Wie weit die Entstehungsgeschichte der Erlasse hinterlegt ist — und wo nicht:{' '}
-        <Link to="/materialien/deckung" className="text-brass-700 underline hover:text-brass-600">
+        <Link to="/materialien/deckung" className="lc-link">
           Was wir nicht haben
         </Link>
       </p>

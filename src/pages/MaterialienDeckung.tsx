@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
+import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { datumCh } from '../lib/normtext/erlassKopfText';
 import { erlassPfadVonKey } from '../lib/normtext/erlassAdresse';
 import { AMTLICHE_FASSUNG_NOMEN, MASSGEBLICH_HALBSATZ } from '../lib/benennung';
@@ -58,7 +59,7 @@ function EbenenZeile({ name, haben, gesamt, einheit, stand, quelle, hinweis }: {
   hinweis?: string;
 }) {
   return (
-    <div className="grid gap-x-6 gap-y-1 border-t border-line py-3 sm:grid-cols-[minmax(0,1fr)_auto]">
+    <div className="grid gap-x-6 gap-y-1 border-t border-rule-soft py-3 sm:grid-cols-[minmax(0,1fr)_auto]">
       <div className="min-w-0">
         <p className="text-body-s font-medium text-ink-900">{name}</p>
         <p className="text-xs leading-snug text-ink-500">{quelle} · Stand {datumCh(stand)}</p>
@@ -204,7 +205,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
           </p>
       </section>
 
-      <section aria-labelledby="d-ohne" data-deckung-ohne className="space-y-2 border-t border-line pt-6">
+      <section aria-labelledby="d-ohne" data-deckung-ohne className="space-y-2 border-t border-rule-soft pt-6">
         <h2 id="d-ohne" className="text-h3 font-display font-semibold text-ink-900">
           Änderungen, zu denen die amtliche Fussnote schweigt
         </h2>
@@ -239,7 +240,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
         </>
       </section>
 
-      <section aria-labelledby="d-liste" className="space-y-2 border-t border-line pt-6">
+      <section aria-labelledby="d-liste" className="space-y-2 border-t border-rule-soft pt-6">
         <h2 id="d-liste" className="text-h3 font-display font-semibold text-ink-900">
           Jeder Erlass einzeln
         </h2>
@@ -287,7 +288,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                     key={sp.id}
                     scope="col"
                     aria-sort={spalte === sp.id ? (richtung === 'auf' ? 'ascending' : 'descending') : 'none'}
-                    className={`border-b border-line py-2 align-bottom text-xs font-medium text-ink-600 ${sp.ziffern ? 'text-right' : 'text-left'}`}
+                    className={`border-b-2 border-rule py-2 align-bottom text-xs font-medium text-ink-600 ${sp.ziffern ? 'text-right' : 'text-left'}`}
                   >
                     <button
                       type="button"
@@ -300,7 +301,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                       className="lc-btn-mini text-xs font-medium text-ink-600 hover:text-ink-900"
                     >
                       {sp.kopf}
-                      <span aria-hidden className="ml-1 text-ink-400">
+                      <span aria-hidden className="ml-1 text-ink-500">
                         {spalte === sp.id ? (richtung === 'auf' ? '▲' : '▼') : '·'}
                       </span>
                     </button>
@@ -310,7 +311,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
             </thead>
             <tbody>
               {liste.map((z) => (
-                <tr key={z.key} data-deckung-zeile={z.key} className="border-b border-line align-baseline">
+                <tr key={z.key} data-deckung-zeile={z.key} className="border-b border-rule-soft align-baseline">
                   <th scope="row" className="max-w-[7rem] py-1.5 pr-3 text-left font-normal sm:max-w-[16rem] sm:pr-4">
                     {/* §5: die Erlass-Adresse hat EINE Ableitung. Hier stand
                         `/gesetze/bund/<key>` von Hand — für die 14 erfassten
@@ -320,7 +321,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                         src/tests/erlass-adresse.test.ts hat es gemeldet. */}
                     <Link
                       to={erlassPfadVonKey(z.key)}
-                      className="text-brass-700 no-underline hover:text-brass-600"
+                      className="text-ink-900 no-underline underline-offset-2 hover:underline"
                     >
                       {z.key}
                     </Link>
@@ -353,10 +354,10 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
         </p>
       </section>
 
-      <section className="space-y-2 border-t border-line pt-6">
+      <section className="space-y-2 border-t border-rule-soft pt-6">
         <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
           Was die Suche durchsucht, steht auf einer eigenen Seite:{' '}
-          <Link to="/abdeckung" className="text-brass-700 underline hover:text-brass-600">
+          <Link to="/abdeckung" className="lc-link">
             Was ist durchsuchbar
           </Link>
           . Diese Seite hier handelt allein von der Entstehungsgeschichte der Erlasse. Keine
@@ -366,6 +367,12 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
     </>
   );
 }
+
+// W2·29-WERKBANK-REST S2 (25.9.2026): Werkbank-Tokens statt Alt-Tönen —
+// Trennlinien 1 px `rule-soft`, Tabellenkopf 2 px `rule` (F0.6), Links ohne
+// Messing (`lc-link` im Fliesstext; in der Tabelle als Listen-Link ohne Strich
+// mit Unterstrich beim Überfahren, F0.8), der Lade-Baustein `ui/Ladeanzeige`.
+// Zahlen, Spalten, Sortierung und Wortlaut unverändert (Inventar 3.6).
 
 /**
  * Die Route `/materialien/deckung`: Kopf + Ladezustand + die Sicht.
@@ -410,9 +417,8 @@ export function MaterialienDeckung() {
         </p>
       )}
 
-      {!p && !fehler && (
-        <p className="text-body-s text-ink-500">Die Deckungszahlen werden geladen …</p>
-      )}
+      {/* W3-7 (REST S2): der eine Lade-Baustein, mit `role="status"`. */}
+      {!p && !fehler && <Ladeanzeige text="Die Deckungszahlen werden geladen …" />}
 
       {p && <DeckungsSicht p={p} />}
     </div>

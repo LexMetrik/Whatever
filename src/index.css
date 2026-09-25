@@ -5240,3 +5240,21 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   border-top: 2px solid var(--tafel-reg, var(--rule-soft));
   padding-top: .5rem;
 }
+
+/* ═══ W2·29-WERKBANK-REST S2 · MATERIALIEN (25.9.2026) ═══════════════════════
+   Material-Leser `/materialien/:key` auf dem Titelblatt der Werkbank (Board
+   «Unter-Materialien»): `LeserKopfGeruest form="titelblatt"` wie der Erlass-
+   Kopf (LESER S2). `.lc-titelblatt-band` selbst bleibt die Gesetze-Fläche —
+   der Gesetzes-Leser bewegt sich nicht; die Materialien-Route setzt ihre
+   eigene Fläche darüber. Kontrast (WCAG 1.4.3, gerechnet aus design/tokens.json
+   25.9.2026): auf `reg-m-flaeche` trägt `reg-m` als Overline-Text nur 4.25:1
+   (hell) — darum Tinte ink-600 (5.85 hell / 5.14 dunkel), wie `.ub-kopf`
+   (K1); ink-500 der Fakten hebt Regel ③b (oben) auf ink-600. Der Band-Strich
+   IST die Registermarke; die 3.5-rem-Marke am Routenkopf (GB-1) entfällt hier
+   wie bei `.ub-kopf`. */
+.lc-route[data-reg="m"] .lc-titelblatt-band {
+  background: var(--reg-m-flaeche);
+  border-top-color: var(--reg-m);
+}
+.lc-route[data-reg="m"] .lc-titelblatt-band .lc-overline { color: var(--ink-600); }
+.lc-route[data-reg="m"]:has(.lc-titelblatt-band)::before { content: none; }

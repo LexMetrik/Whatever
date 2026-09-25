@@ -11,6 +11,7 @@ import { MASSGEBLICH_SATZ } from '../lib/benennung';
 import { Datum } from '../components/ui/Datum';
 import { QuellLink } from '../components/ui/QuellLink';
 import { FehlSeite } from '../components/ui/FehlSeite';
+import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 import type { BrowseMaterial } from '../lib/materialien/typen';
 
@@ -72,14 +73,9 @@ export function MaterialLeser() {
   const laden = !data || data.key !== key;
   const material = laden ? null : data.material;
 
-  if (laden) {
-    return (
-      <div className="py-12 text-center space-y-3">
-        <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-        <p className="text-body-s text-ink-500">Das Material wird abgerufen …</p>
-      </div>
-    );
-  }
+  // W3-7 (Posten, REST S2): der eine Lade-Baustein (`ui/Ladeanzeige`, mit
+  // `role="status"`) statt der eigenen Kopie.
+  if (laden) return <Ladeanzeige text="Das Material wird abgerufen …" className="py-12" />;
 
   // ── D-6 (Design-Konsistenz, 31.8.2026) · EINE FEHLSEITE ──────────────────
   // Der Fehl-Zweig baute Kopf und Rückweg selbst: `SeitenKopf` + ein
@@ -123,7 +119,16 @@ export function MaterialLeser() {
           bekommt die Haarlinie unter sich, und das Rechtsgebiet wandert aus der
           Meta-Zeile in die Overline — dorthin, wo Erlass- und Entscheid-Leser
           ihr Sachgebiet seit je zeigen (B-7). Kein Wort geht verloren. */}
+      {/* W2·29-WERKBANK-REST S2 (25.9.2026) · DAS TITELBLATT DER WERKBANK.
+          Die Identität (Overline · Titel · Fakten) steht auf der Registerfläche
+          der Route (`form="titelblatt"`, dieselbe Prop wie der Erlass-Kopf, LESER
+          S2) — Board «Unter-Materialien»: ein Band im Materialien-Register über
+          dem Kopf. Das geteilte Gerüst bleibt unverändert; die Fläche «m» setzt
+          die Route (`.lc-route[data-reg="m"] .lc-titelblatt-band`, index.css,
+          Block «REST S2»). Ehrlichkeits-Zeile, Aktionen und URL-Abdruck bleiben
+          auf dem Papier, wie am Erlass. Kein Wort, kein Band entfällt. */}
       <LeserKopfGeruest
+        form="titelblatt"
         overline={<KopfOverline glieder={[
           { text: m.behoerdeKuerzel, rolle: 'herkunft' },
           { text: m.nummer ? `${m.doktypLabel} ${m.nummer}` : m.doktypLabel, rolle: 'art' },
@@ -204,7 +209,7 @@ export function MaterialLeser() {
           hat (breiter Kopf, Lesespalte für den Text). Ebenso Kanon ist der im
           selben Befund genannte Entscheid-Aufbau «Titel/Meta breit, Entscheidtext
           in der Lesespalte» (Reglement R1, 60–75 Zeichen). */}
-      <div className="border-t border-line pt-6 max-w-reading">
+      <div className="border-t border-rule-soft pt-6 max-w-reading">
         <Link to="/materialien" className="lc-btn lc-btn-outline lc-btn-sm">← Alle Materialien</Link>
       </div>
     </article>
