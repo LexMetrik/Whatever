@@ -97,9 +97,9 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      nachfüllen, wenn der Kopf erledigt ist. Der gestrichene Schwanz steht im Wortlaut in
      ROADMAP-CHRONIK.md (Umschichtung 20.9.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·29-WERKBANK-REST`** (Werkbank-Umbau Rest und Rückbau) — nach
-> Regel 8.4 nachgezogen 25.9.2026, weil `W2·30-RL-W2A` (Rechtslogik Welle 2a) seit #1073 auf `wip`
-> steht; dann Phase 1 Bund: `W2·27-BUND-FERTIG` → `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Phase 1 Bund) — nach Regel 8.4 nachgezogen
+> 25.9.2026, weil `W2·29-WERKBANK-REST` (Werkbank-Umbau Rest und Rückbau, Scheibe S0) auf `wip` steht;
+> danach `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
 > nachgeführt 24.9.2026 auf die laufenden Go-Stränge: Werkbank 22.9., Rechtslogik parallel 24.9.;
 > Bund Phase 1 folgt dahinter; David hat Veto.** Bisheriger Marker und Queue-Schwanz im Wortlaut:
 > ROADMAP-CHRONIK.md, Umschichtung 2026-09-24 (1).
@@ -428,8 +428,8 @@ Umschichtung 20.9.2026 (2)):*
   Ziel: Gesetze-Blatt ohne Leerfläche, Schnellwerkzeug wählbar, nur höfliche Begrüssungen, «Häufig gebraucht» unter den Kacheln.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d-bis.
 
-- [ ] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-REST · status: ready · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [~] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-REST · status: wip · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —
   und die letzten Alt-Stylesheet-Reste samt abgelösten Reglementen und Fahrplänen löschen.
   Grenzen: `check:sediment` grün ohne Ausnahme; datierte Belege (`abnahme/**`) bleiben.
