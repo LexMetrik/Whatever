@@ -98,6 +98,10 @@ export type KuendigungsfristInput = {
   abweichendeFristQuelleGAV?: boolean;   // §3.2 für Verkürzung < 1 Monat im 1. DJ
   kuendigungsterminMonatsende: boolean; // default true
   vaterschaftsurlaubResttage?: number;   // §3.4 Art. 335c Abs. 3 OR (nur Arbeitgeberkündigung)
+  // RL-16b (W-08 b): Arbeitstage der Woche für die Probezeitverlängerung
+  // (Art. 335b Abs. 3 OR, BGE 148 III 126) — Wochentage nach date-fns getDay
+  // (0 = So … 6 = Sa); fehlt/ungültig → Mo–Fr mit Warnung.
+  arbeitstageWoche?: number[];
 };
 
 // ─── Module C: Sperrfristen ───────────────────────────────────────────────

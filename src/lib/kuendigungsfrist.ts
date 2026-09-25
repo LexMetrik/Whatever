@@ -1,12 +1,13 @@
 // Dossier: bibliothek/recherche/arbeitsrecht-rechner.md
-import { parseISO, addDays, addMonths, subMonths, isBefore, isEqual } from 'date-fns';
-import type { KuendigungsfristInput, Berechnungsergebnis, Normverweis } from '../types/legal';
+import { parseISO, addDays, addMonths, subMonths, isAfter, isBefore, isEqual } from 'date-fns';
+import type { KuendigungsfristInput, SperrfristenInput, Berechnungsergebnis, Normverweis } from '../types/legal';
 import {
   berechneDienstjahr,
   formatDatum,
   letzerTagDesMonats,
 } from './datumsUtils';
 import { rechtsprechung } from '../data/verifikation';
+import { berechneProbezeitVerlaengerung, probezeitVerlaengerungTexte, N_335b_3, N_BV_110_3 } from './kuendigungsfristProbezeit';
 
 // ─── Feste Normverweise (Art. 335a–c OR) ─────────────────────────────────
 
@@ -55,10 +56,24 @@ function wirksameProbezeitMonate(probezeitMonate: number): number {
 /** Letzter Tag der (unverlängerten) Probezeit; null ohne Probezeit.
  *  Bug-Check 10.6.2026: Der erste Arbeitstag zählt mit (1 Monat ab 1.4. endet
  *  am 30.4.). RL-16/F4-03 (24.9.2026): EINE Funktion für Logik UND Rechenweg —
- *  vorher zeigte der Rechenweg addMonths ohne −1 Tag (01.02. statt 31.01.). */
-export function probezeitEnde(vertragsbeginn: Date, probezeitMonate: number): Date | null {
+ *  vorher zeigte der Rechenweg addMonths ohne −1 Tag (01.02. statt 31.01.).
+ *  Nachtrag RL-16b (Gegenprüfung 25.9.2026, deklarierte Fachänderung): Die
+ *  Regel vom 10.6.2026 widerspricht der Rechtsprechung. BGE 144 III 152
+ *  E. 4.4.3: Wird der Vertrag am Tag des Stellenantritts geschlossen, zählt
+ *  dieser Tag nicht (Zivilkomputation), «Art. 77 Abs. 1 Ziff. 3 OR ist ohne
+ *  Weiteres anwendbar» — Antritt 15.7.2015, 1 Monat → Ende 15.8.2015. Bestätigt
+ *  in 8C_317/2021 E. 5.2.3.1 (= BGE 148 III 126): Antritt 16.3.2020, 3 Monate
+ *  → Ende 16.6.2020 [Präzisierung 25.9.2026: E. 5.2.3.1 steht nur im
+ *  vollständigen Urteil 8C_317/2021, entscheidsuche.ch
+ *  CH_BGer_008_8C-317-2021_2022-03-08, nicht in der Publikation BGE 148 III
+ *  126]. Also Ende am gleichnamigen Tag; fehlt er, am letzten Tag
+ *  des Monats (Art. 77 Abs. 1 Ziff. 3 OR — date-fns addMonths kappt genau so:
+ *  31.1. + 1 Monat = 28.2.). Offen gelassen (E. 4.4.3 a.E.): Vertragsschluss
+ *  VOR dem Antritt — dafür rechnet berechneKuendigungsfrist das Vortags-Ende
+ *  als Gegenprobe und warnt, wo es das Ergebnis kippt (§8). */
+function probezeitEnde(vertragsbeginn: Date, probezeitMonate: number): Date | null {
   const monate = wirksameProbezeitMonate(probezeitMonate);
-  return monate === 0 ? null : addDays(addMonths(vertragsbeginn, monate), -1);
+  return monate === 0 ? null : addMonths(vertragsbeginn, monate);
 }
 
 export type KuendigungsfristResultat = {
@@ -81,7 +96,12 @@ function istInProbezeit(zugang: Date, ende: Date | null): boolean {
   return isBefore(zugang, ende) || isEqual(zugang, ende);
 }
 
-export function berechneKuendigungsfrist(input: KuendigungsfristInput): KuendigungsfristResultat {
+/** `sperrereignisse` (optional): Verhinderungen für die Probezeitverlängerung
+ *  nach Art. 335b Abs. 3 OR (RL-16b) — dieselben Ereignisse wie im
+ *  Sperrfristen-Rechner, damit Formular und Vorlagen EIN Probezeitende sehen. */
+export function berechneKuendigungsfrist(
+  input: KuendigungsfristInput & Pick<SperrfristenInput, 'sperrereignisse'>,
+): KuendigungsfristResultat {
   const {
     vertragsbeginn,
     zugangKuendigung,
@@ -105,7 +125,29 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
 
   const dauerProbezeitMonate = wirksameProbezeitMonate(probezeitMonate);
   const pzEnde = probezeitEnde(vb, probezeitMonate);
-  const inProbezeit = istInProbezeit(zugang, pzEnde);
+  // RL-16b (W-08 b): Verlängerung nach Art. 335b Abs. 3 OR — nur relevant,
+  // wenn der Zugang nach dem unverlängerten Ende liegt (sonst ohnehin Probezeit).
+  const pzVerl = pzEnde !== null && isAfter(zugang, pzEnde)
+    ? berechneProbezeitVerlaengerung(vb, pzEnde, input.sperrereignisse, input.arbeitstageWoche)
+    : null;
+  const inProbezeit = istInProbezeit(zugang, pzVerl?.ende ?? pzEnde);
+
+  // Gegenprobe zur offenen Frage aus BGE 144 III 152 E. 4.4.3 a.E.: zählt bei
+  // Vertragsschluss vor dem Antritt der erste Tag mit, endet die Probezeit am
+  // Vortag des gleichnamigen Tages (samt Verlängerung neu gerechnet).
+  if (pzEnde !== null) {
+    const endeVortag = addDays(pzEnde, -1);
+    const verlVortag = isAfter(zugang, endeVortag)
+      ? berechneProbezeitVerlaengerung(vb, endeVortag, input.sperrereignisse, input.arbeitstageWoche)
+      : null;
+    const endeAlt = verlVortag?.ende ?? endeVortag;
+    if (istInProbezeit(zugang, endeAlt) !== inProbezeit) {
+      warnungen.push(
+        `Probezeitende nach BGE 144 III 152 E. 4.4.3 (Art. 77 Abs. 1 Ziff. 3 OR): Der Tag des Stellenantritts zählt nicht mit, wenn der Arbeitsvertrag an diesem Tag geschlossen wurde — gerechnet ist darum mit Ende am ${formatDatum(pzEnde)}${pzVerl ? ` (verlängert bis ${formatDatum(pzVerl.ende)})` : ''}. ` +
+        `Wurde der Vertrag schon vor dem Stellenantritt geschlossen, hat das Bundesgericht offengelassen, ob der erste Tag mitzählt; dann endete die Probezeit am ${formatDatum(endeAlt)}, und der Zugang (${formatDatum(zugang)}) läge ${inProbezeit ? 'ausserhalb' : 'in'} der Probezeit — das Ergebnis hängt davon ab.`,
+      );
+    }
+  }
 
   // RL-16 / F4-04 (24.9.2026): Art. 335b Abs. 2 OR erlaubt höchstens drei
   // Monate — die Kappung bleibt, wird aber offengelegt (§8) statt still.
@@ -118,11 +160,25 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
   if (pzEnde !== null) {
     rechenweg.push({
       beschreibung: 'Schritt 1 – Probezeit prüfen (Art. 335b OR)',
-      zwischenergebnis: inProbezeit
+      zwischenergebnis: pzVerl
+        ? `Zugang ${formatDatum(zugang)} liegt nach dem unverlängerten Ende der Probezeit (${dauerProbezeitMonate} Monat/e, Ende ${formatDatum(pzEnde)}); Verhinderung in der Probezeit → Verlängerung prüfen.`
+        : inProbezeit
         ? `Zugang ${formatDatum(zugang)} liegt in der Probezeit (${dauerProbezeitMonate} Monat/e, Ende ${formatDatum(pzEnde)}). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.`
         : `Zugang ${formatDatum(zugang)} liegt ausserhalb der Probezeit (Ende ${formatDatum(pzEnde)}). Ordentliche Frist gilt.`,
       normen: [N_335b],
     });
+  }
+
+  if (pzVerl) {
+    const t = probezeitVerlaengerungTexte(pzVerl, zugang);
+    rechenweg.push({
+      beschreibung: 'Schritt 1a – Verlängerung der Probezeit (Art. 335b Abs. 3 OR)',
+      zwischenergebnis: t.schritt,
+      normen: [N_335b_3, ...(pzVerl.bundesfeiertagNichtGezaehlt ? [N_BV_110_3] : [])],
+      rechtsprechung: [rechtsprechung('BGE_148_III_126')],
+    });
+    warnungen.push(...t.warnungen);
+    annahmen.push(...t.annahmen);
   }
 
   if (inProbezeit) {
@@ -134,7 +190,7 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
         rechenweg,
         annahmen,
         warnungen,
-        normverweise: [N_335b, N_335a],
+        normverweise: [N_335b, ...(pzVerl ? [N_335b_3] : []), N_335a],
       },
       beendigungsdatum: beendigung,
       istProbezeit: true,
