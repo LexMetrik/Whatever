@@ -118,11 +118,11 @@ describe('segmentiereArtikel — Fussnoten, Absatznummer, Tabellen, Anker-Präse
         '<dd>Hongkong a</dd></dl></td></tr></tbody></table>',
     );
     const segmente = segmentiereArtikel(html, 'art_1')!;
-    // B4: zusätzlich EIN Zeilen-Fingerabdruck (art 'tr') neben dem Zell-Segment
-    // (art 'dd', aus der dl-Zerlegung der einzigen Zelle) — additiv, kein
-    // Ersatz für die feinere Zellzerlegung.
-    expect(segmente.filter((s) => s.art !== 'tr').map((s) => s.text)).toEqual(['Hongkong a']);
-    expect(segmente.filter((s) => s.art === 'tr').map((s) => s.text)).toEqual(['Hongkong a']);
+    // B4: KEIN zusätzlicher Zeilen-Fingerabdruck, weil die einzige Zelle über
+    // <dl>/<dd> zerlegt wird (Falsch-Positiv-Schutz, s. Testgruppe B4 unten) —
+    // das Zell-Segment selbst (art 'dd') bleibt unverändert bestehen.
+    expect(segmente.map((s) => s.text)).toEqual(['Hongkong a']);
+    expect(segmente.some((s) => s.art === 'tr')).toBe(false);
   });
 
   it('entfernt eingebetteten <style>-Inhalt (Inline-SVG-Icon) aus dem Segmenttext', () => {
@@ -323,15 +323,27 @@ describe('segmentiereArtikel — B4: Zeilen-Fingerabdruck rettet eine zu kurze T
     expect(segmente.some((s) => s.art === 'td' && s.text === '0.77')).toBe(true);
   });
 
-  it('eine verklebungsfreie Zeilen-Verkettung bei Zellen mit eigener <p>+<dl>-Struktur (kein "Nunter"-Artefakt)', () => {
+  it('lässt eine Zeile mit einer <dl>/<dd>-Listenzelle OHNE Zeilen-Fingerabdruck (Falsch-Positiv-Schutz, empirisch an GSCHV/KRK gefunden)', () => {
+    // Die Projektion bewahrt für solche Zellen manchmal die Listenmarke als
+    // literales Zeichen im Text (GSCHV annex_2: "…Temperaturen: – über 10
+    // °C…"), unsere Zerlegung entfernt <dt> aber IMMER — eine Zeilen-
+    // Verkettung mehrerer <dd> würde an genau dieser Stelle klaffen und
+    // fälschlich rot werden, obwohl die einzelnen <dd> (über die normale
+    // Zellzerlegung, unten belegt) weiterhin geprüft sind.
     const html = huelle(
       '<table><tbody><tr><td><p class="man-template-tab-krpr">Bei Temperaturen:</p>' +
         '<dl><dt>– </dt><dd>über 10 °C: 0,2 mg/l N</dd><dt>– </dt><dd>unter 10 °C: 0,4 mg/l N</dd></dl></td></tr></tbody></table>',
     );
     const segmente = segmentiereArtikel(html, 'art_1')!;
-    const zeile = segmente.find((s) => s.art === 'tr');
-    expect(zeile).toBeDefined();
-    expect(zeile!.text).not.toContain('Nunter');
+    expect(segmente.some((s) => s.art === 'tr')).toBe(false);
+    expect(segmente.map((s) => s.text)).toContain('über 10 °C: 0,2 mg/l N');
+    expect(segmente.map((s) => s.text)).toContain('unter 10 °C: 0,4 mg/l N');
+  });
+
+  it('eine Zeile aus AUSSCHLIESSLICH einfachen Zellen bekommt weiterhin einen Zeilen-Fingerabdruck', () => {
+    const html = huelle('<table><tbody><tr><td>Grundgebühr</td><td>Zuschlag</td></tr></tbody></table>');
+    const segmente = segmentiereArtikel(html, 'art_1')!;
+    expect(segmente.some((s) => s.art === 'tr' && s.text === 'Grundgebühr Zuschlag')).toBe(true);
   });
 });
 

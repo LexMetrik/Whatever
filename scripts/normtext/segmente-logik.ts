@@ -405,12 +405,27 @@ export function segmentiereAnker(
   // Mindestlänge und macht die Löschung EINER Zelle in der Zeile sichtbar,
   // ohne die bestehende (feinere) Zellzerlegung zu ersetzen — rein additiv.
   //
-  // WICHTIG: die Zeile wird aus denselben BEREITS ZERLEGTEN Teilen gebaut wie
-  // die Zellzerlegung unten (nicht aus rohem `blockText(zelle)`) — sonst
-  // reproduziert die Verkettung genau das "…Nunter 10…"-Verklebungs-Artefakt
-  // (s. Kommentar oben), das die Zellzerlegung eigentlich vermeidet: rohe
-  // Zell-Kindelemente (eigene <p>+<dl>-Struktur) haben KEINEN Leerraum
-  // zwischen sich im DOM, `blockText` fügt keinen ein.
+  // WICHTIG (verklebungsfrei): die Zeile wird aus denselben BEREITS ZERLEGTEN
+  // Teilen gebaut wie die Zellzerlegung unten (nicht aus rohem
+  // `blockText(zelle)`) — sonst reproduziert die Verkettung genau das
+  // "…Nunter 10…"-Verklebungs-Artefakt (s. Kommentar oben), das die
+  // Zellzerlegung eigentlich vermeidet: rohe Zell-Kindelemente (eigene
+  // <p>+<dl>-Struktur) haben KEINEN Leerraum zwischen sich im DOM, `blockText`
+  // fügt keinen ein.
+  //
+  // AUSNAHME (empirisch 25.9.2026 an KRK/GSCHV gefunden, NACH dem ersten
+  // B4-Entwurf): eine Zelle mit eigener <dl>/<dt>/<dd>-Liste wird von der
+  // Zeilenverkettung ausgenommen. Grund: die Projektion bewahrt für solche
+  // Zellen manchmal die Listenmarke als LITERALES Zeichen im Text (z.B. der
+  // Gedankenstrich-Marker in GSCHV annex_2 "…Temperaturen: – über 10 °C…",
+  // oder die Sternchen-Legende in KRK/CEDAW/… "* Vorbehalte … ** Einwendungen
+  // …") — unsere Zerlegung entfernt <dt> dagegen IMMER (§ Architektur Ziff. 4,
+  // reine Listenmarke). Beide Seiten sind für sich korrekt, aber die
+  // Verkettung MEHRERER <dd> zu einer Zeile würde genau an der vom Original
+  // markierten, bei uns aber entfernten Stelle auseinanderklaffen — ein
+  // Falsch-Positiv der Zeilenprüfung, kein echter Verlust (die einzelnen <dd>
+  // bleiben über die normale Zellzerlegung unten weiterhin GEPRÜFT, nur ohne
+  // den zusätzlichen Zeilen-Fingerabdruck).
   for (const tabelle of [...klon.querySelectorAll('table')]) {
     for (const zeile of [...tabelle.querySelectorAll('tr')]) {
       const zellenDerZeile = [...zeile.children].filter(
@@ -418,16 +433,18 @@ export function segmentiereAnker(
       );
       if (zellenDerZeile.length === 0) continue;
       const zeilenTeile: string[] = [];
+      let listenzelleImSpiel = false;
       for (const zelle of zellenDerZeile) {
         const innereSegmente: RohSegment[] = [];
         segmentiereBereich(zelle.cloneNode(true), innereSegmente);
         if (innereSegmente.length > 0) {
+          listenzelleImSpiel = true;
           for (const seg of innereSegmente) zeilenTeile.push(seg.text);
         } else {
           zeilenTeile.push(blockText(zelle));
         }
       }
-      segmente.push({ art: 'tr', text: zeilenTeile.join(' ') });
+      if (!listenzelleImSpiel) segmente.push({ art: 'tr', text: zeilenTeile.join(' ') });
     }
     for (const zelle of [...tabelle.querySelectorAll('td, th')]) {
       const innereSegmente: RohSegment[] = [];
