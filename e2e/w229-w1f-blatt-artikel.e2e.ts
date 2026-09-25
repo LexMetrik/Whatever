@@ -17,11 +17,7 @@
 //  (a) KEINE ZEILE AM ARTIKEL, Aktionen am Artikel: kein Rubrik-Griff, keine
 //      Zeile; «Zitat · Link · Amtliche Fassung ↗» als ruhige Textzeile
 //      (Knopf-Baustein ohne sichtbare Haarlinie), LINKSBÜNDIG an der
-//      Artikelkante. ERGÄNZT W3-6 (HN-D7 DK-24, Audit 25.9.2026, §0 Ziff. 2b —
-//      diese Zeile bleibt der Stand vom 24.9.2026, wird nicht nachgeführt):
-//      seither trägt der Knopf überall die SICHTBARE Haarlinie der
-//      Einzelansicht; die Textzeilen-Anordnung selbst (Abstand, Trenner) ist
-//      unverändert. §6.3-DEKLARATION (Wunsch David 24.9.2026, «vorallem diese
+//      Artikelkante. §6.3-DEKLARATION (Wunsch David 24.9.2026, «vorallem diese
 //      leiste muss überarbeitet werden»): mit Maus ruht die Zeile unsichtbar
 //      (opacity 0) und erscheint bei Hover und Fokus; vorher
 //      stand hier «ohne Hover sichtbar». Die Zusage «per Tastatur erreichbar»
@@ -87,14 +83,9 @@ test.describe('S6 W1f · Funktionszeile aufgelöst, alles im Erlass-Blatt', () =
     const zitat = aktionen.getByRole('button', { name: /^Zitat kopieren:/ });
     await expect(zitat).toBeVisible();
     await expect(aktionen.getByRole('button', { name: 'Permalink kopieren' })).toBeVisible();
-    // W3-6 (HN-D7 DK-24, Audit 25.9.2026, ergänzt zu S6 W1f/24.9.2026): «Zitat»/
-    // «Link» trugen in Gesamt- und Einzelansicht ZWEI Knopf-Formen — hier (bis
-    // W3-6) ohne sichtbare Haarlinie, dort mit. Seither EINE Form (die der
-    // Einzelansicht) an BEIDEN Orten; die ruhigere TEXTZEILEN-Anordnung von W1f
-    // (enger Abstand, «·»-Trenner statt eigener Zeilenumbrüche) bleibt — W1f
-    // galt der Anordnung, nicht dem Knopf (`parts/ArtikelAktionen.tsx`).
+    // Ruhig: der Knopf-Baustein ohne sichtbare Haarlinie (Textzeile, keine Knopfreihe).
     const rand = await zitat.evaluate((el) => getComputedStyle(el).borderTopColor);
-    expect(rand, 'die Aktion hat die vereinheitlichte Knopf-Kante verloren').not.toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
+    expect(rand, 'die Aktion trägt wieder eine sichtbare Knopf-Kante').toMatch(/rgba\(0, 0, 0, 0\)|transparent/);
     // Linksbündig: die Zeile beginnt an der Artikelkante, nicht rechts aussen.
     const [zx, tx] = await art.evaluate((el) => [
       el.querySelector('.lr7-bez-aktionen')!.getBoundingClientRect().left,
