@@ -321,7 +321,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                         src/tests/erlass-adresse.test.ts hat es gemeldet. */}
                     <Link
                       to={erlassPfadVonKey(z.key)}
-                      className="text-ink-900 no-underline underline-offset-2 hover:underline"
+                      className="lc-link"
                     >
                       {z.key}
                     </Link>
@@ -370,8 +370,8 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
 
 // W2·29-WERKBANK-REST S2 (25.9.2026): Werkbank-Tokens statt Alt-Tönen —
 // Trennlinien 1 px `rule-soft`, Tabellenkopf 2 px `rule` (F0.6), Links ohne
-// Messing (`lc-link` im Fliesstext; in der Tabelle als Listen-Link ohne Strich
-// mit Unterstrich beim Überfahren, F0.8), der Lade-Baustein `ui/Ladeanzeige`.
+// Messing (`lc-link`, auch in der Erlass-Spalte der Tabelle: ein Strich erst
+// beim Überfahren ist verboten, B-L1b), der Lade-Baustein `ui/Ladeanzeige`.
 // Zahlen, Spalten, Sortierung und Wortlaut unverändert (Inventar 3.6).
 
 /**
