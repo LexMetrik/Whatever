@@ -131,6 +131,31 @@ eine bewusste Lesespalte (`max-w-reading` ≈ 40rem); volle Fensterbreite für
 Fliesstext ist verboten. *(Die typografisch schwachen amtlichen Anzeigen
 (bger.ch: Times, volle Breite) sind genau der leicht erreichbare Vorsprung.)*
 
+**B2a — Rahmenbreite: `content` Standard, `weit` nur für Raster/Kacheln einer
+Route ohne ungedeckelten Fliesstext (W2·29-WERKBANK-REST-BREITE, 25.9.2026,
+Entscheid David «ja das soll optimiert werden»).** Zwei Stufen, verschiedene
+Zwecke:
+- **`content`** (70rem = 1120px aussen, 1072px innen) ist der Rahmen jeder
+  Route (`Shell.tsx`) — Default, unverändert.
+- **`weit`** (90rem) gilt **nur der Startseite**, **nur ab `2xl`** (1536px),
+  und **nur für Raster und Kachelbreiten** — nie für Fliesstext. Grund: ohne
+  Deckel hätte eine site-weite Verbreiterung ungedeckelten Fliesstext
+  (`PflichtDisclaimer`, `MaterialKarte` u. ä.) mitgezogen (gemessen 25.9.2026:
+  973px/128 Zeichen je Zeile auf `/rechner/zpo-fristen`) — genau die Zeile,
+  die B2 verbietet.
+- Die Lesemass-Deckel `reading` (40rem)/`normtext` (42rem)/`kleintext`
+  (24rem) bleiben von `weit` unberührt — sie gelten unabhängig vom
+  Rahmen, auch innerhalb einer `weit`-Route.
+- Eine Route bekommt `weit` nur, wenn sie **keinen** ungedeckelten Fliesstext
+  trägt (sonst B2-Verstoss). Wer eine weitere Seitenart auf `weit` setzt,
+  prüft das VORHER (nicht erst der Golden-Beweis danach).
+- Golden-Beweis (§6, byte-gleich für jede andere Route): `e2e/startseite-
+  breite.e2e.ts`. Herleitung, Messreihe und die verworfene Variante (b):
+  Kopfkommentar `tailwind.config.js` (`maxWidth`-Eintrag) und
+  `pages/Startseite.tsx`.
+- Folge-Schritt (je Seitenart geprüft, nicht vorweggenommen):
+  W2·31-BILDSCHIRMBREITE.
+
 **B3 — Klare visuelle Hierarchie, ein Icon-System, vier Status-Familien.**
 Inhalt scanbar gliedern (Überschriften-Hierarchie, Abstand, nicht Textwüste).
 Icons/Symbole **zusätzlich** zum Text (nie als alleiniger Bedeutungsträger).
