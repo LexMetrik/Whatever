@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: bgerRechtsweg.ts:445-446 (/rechner/bgg-fristen): Stillstandsnähe ohne Warnung trotz exportierter bggStillstandsnaeheWarnung
 anlass: RL-15-GP-Nebenfund, 24.9.2026
 -->

@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: strafRechtsmittel.ts: Kopfkommentar verweist auf veraltetes /tmp/stpo.html (Stand 1.1.2024)
 anlass: RL-21-Nebenfund, 24.9.2026
 -->

@@ -87,7 +87,7 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: W2·30-RL-W2A, W2·29-WERKBANK-REST, W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS -->
+<!-- @queue: W2·29-WERKBANK-REST, W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
@@ -504,8 +504,8 @@ Umschichtung 20.9.2026 (2)):*
   Verjährungsverzicht.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 1).
 
-- [~] **Welle 2a — mittlere Befunde Fristen** *(`W2·30-RL-W2A`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W2A · status: wip · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [x] **Welle 2a — mittlere Befunde Fristen** *(`W2·30-RL-W2A`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W2A · status: done · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-15…RL-25: BGG-Stillstand, Probezeit, SchKG-Fristen, ZPO-/StPO-Presets,
   Feiertags-Daten und -Hinweise, Tagerechner, Lohnfortzahlungs-Skalen.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2a).

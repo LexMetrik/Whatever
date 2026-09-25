@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: SchKG Zustellung in Betreibungsferien, Monats-/Jahresfristen (Art. 88 Abs. 2): früheres oder späteres Datum als Hauptwert?
 anlass: RL-18, Session 4, 24.9.2026 (Notizen «Wartet auf David»)
 wartet-auf: david

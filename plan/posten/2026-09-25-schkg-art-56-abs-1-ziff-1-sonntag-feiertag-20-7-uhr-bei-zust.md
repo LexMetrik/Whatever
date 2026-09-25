@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: SchKG Art. 56 Abs. 1 Ziff. 1 (Sonntag/Feiertag/20–7 Uhr) bei Zustellung nicht geprüft
 anlass: RL-18-Nebenfund, 24.9.2026
 -->

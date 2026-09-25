@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: Sperrfristen: Anzeige Hemmungsfenster «30.08.–30.09.», obwohl ab 31.8. gerechnet (Monatsende mit Uhrzeit)
 anlass: Session-Notizen 2026-09-24
 -->
