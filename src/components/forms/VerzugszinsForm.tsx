@@ -109,7 +109,7 @@ export function VerzugszinsForm() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Verzugszins nach Art. 104 OR; die Tageszählungs-Methode ist eine offengelegte methodische Wahl."
         text={VERZUGSZINS_DISCLAIMER} />

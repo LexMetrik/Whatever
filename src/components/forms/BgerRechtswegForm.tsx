@@ -153,7 +153,7 @@ export function BgerRechtswegForm() {
   } : null;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Beschwerdetyp, Frist und Abteilung nach BGG/BGerR; Rechtsfragen werden offengelegt, nie entschieden."
         text={BGER_DISCLAIMER} />

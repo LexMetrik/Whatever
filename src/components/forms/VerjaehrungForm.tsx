@@ -151,7 +151,7 @@ export function VerjaehrungForm() {
     setUnterbrechungen((arr) => arr.map((u, j) => (j === i ? { ...u, ...patch } : u)));
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer */}
       <PflichtDisclaimer kurz="Verjährungs-Orientierung (Art. 60/67/127 ff. OR). Kenntniszeitpunkt und Sonderfristen sind fachlich zu prüfen." text={VERJ_DISCLAIMER} />
 

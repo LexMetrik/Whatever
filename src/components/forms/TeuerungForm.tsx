@@ -116,7 +116,7 @@ export function TeuerungForm() {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="LIK-Indexierung nach den publizierten BFS-Reihen; massgeblich sind Vertrag bzw. Urteil (Indexklausel, Basis, Rundung)."
         text={DISCLAIMER} />

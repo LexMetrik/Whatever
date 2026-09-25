@@ -75,7 +75,7 @@ export function ErbFristenForm() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Erbrechtliche Fristen-Orientierung (Art. 521/533/567 ff. ZGB). Fristbeginn und Behördenzuständigkeit sind fachlich zu prüfen."
         text={ERB_DISCLAIMER}

@@ -239,7 +239,7 @@ export function ZpoFristenForm({ live }: {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer (Ziff. 9) – immer sichtbar, kompakt. Volltext im Ergebnis-Panel. */}
       <PflichtDisclaimer kurz="Rechnerische Orientierung (Art. 142–147 ZPO, Praxis BGer 5A_691/2023). Massgeblich ist der Gerichtsort." text={DISCLAIMER} />
 

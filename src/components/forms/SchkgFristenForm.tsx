@@ -265,7 +265,7 @@ export function SchkgFristenForm({ live }: {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer */}
       <PflichtDisclaimer kurz="Rechnerische Orientierung (Art. 31/56/63 SchKG, Schnittstelle Art. 145 ZPO). Betreibungsferien ≠ Gerichtsferien." text={SCHKG_DISCLAIMER} />
 

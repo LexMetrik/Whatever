@@ -50,7 +50,7 @@ export function GerichtszitatForm() {
   const ergebnis = formatiereGerichtszitat(input);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Formatiert die eingegebene Fundstelle nach der Zitierkonvention – ohne zu prüfen, ob der Entscheid existiert oder was er sagt."
         text="Der Zitierer setzt nur die eingegebenen Angaben zu einer Fundstelle zusammen (BGE bzw. BGer). Er ist keine Rechtsprechungs-Recherche: Fundstelle und Aussage sind an der amtlichen Quelle zu prüfen." />
@@ -110,7 +110,7 @@ export function GerichtszitatForm() {
       )}
 
       {ergebnis.status === 'ok' && ergebnis.zitat && (
-        <div className="lc-panel p-4 space-y-3">
+        <div className="lc-panel p-4 space-y-3" data-ergebnisplatz="">
           <p className="lc-overline text-brass-700">Fundstelle</p>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <p className="text-body font-medium text-ink-900 num">{ergebnis.zitat}</p>

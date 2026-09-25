@@ -131,7 +131,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Kündigungsfrist und Sperrfristen nach Art. 335c / 336c OR; massgeblich sind GAV und Einzelvertrag."
         text={KSP_DISCLAIMER} />

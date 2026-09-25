@@ -169,7 +169,7 @@ export function ErbteilungForm() {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer */}
       <PflichtDisclaimer kurz="Quoten-Orientierung (Art. 457 ff., 470 ff. ZGB, Revision 2023). Massgebend ist das Todesdatum." text={ERB_DISCLAIMER} />
 

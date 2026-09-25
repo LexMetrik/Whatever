@@ -203,7 +203,7 @@ export function AllgemeineFristForm({ live }: {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Fristende nach Art. 77/78 OR ab dem eingegebenen Startdatum; Fristbeginn (Zustellung) und verfahrensrechtliche Stillstände bestimmt der Rechner nicht."
         text={DISCLAIMER} />

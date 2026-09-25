@@ -171,7 +171,7 @@ export function MietrechtForm() {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer kurz="Orientierung (Art. 253 ff. OR). Ortsübliche Termine sind Tatfrage; verbindlich ist die Schlichtungsbehörde." text={MIET_DISCLAIMER} />
 
       <div className={`grid grid-cols-1 ${pk('sm:grid-cols-2', '@lg/pane:grid-cols-2')} gap-4`}>

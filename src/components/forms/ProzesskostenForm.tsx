@@ -187,7 +187,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Startseite-Schnellrechner (minimal): kein per-Tab-Disclaimer — die Startseite
           trägt den globalen Pflicht-Hinweis (§8). Voll-Rechner: Disclaimer bleibt. */}
       {!minimal && <PflichtDisclaimer kurz="Gerichtskosten + Parteientschädigung nach kantonalem Tarif (Art. 95/96 ZPO); Ermessenstarife als Spanne." text={DISCLAIMER} />}

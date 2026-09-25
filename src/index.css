@@ -5054,3 +5054,40 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 }
 .lc-route[data-reg="m"] .lc-titelblatt-band .lc-overline { color: var(--ink-600); }
 .lc-route[data-reg="m"]:has(.lc-titelblatt-band)::before { content: none; }
+
+/* ═══ Rechner: Eingabe ‖ Ergebnis (W2·31-BILDSCHIRMBREITE B3, 25.9.2026) ═════
+   Gemessen @1920 (Stufe content, Karte 1008 px Innenbreite): der Ergebnis-
+   block begann bei 916–2302 px, auf 14 von 19 Rechnern unter dem Falz
+   (Viewport 1080). Ab einer KARTEN-Breite von 72rem (Stufe `weit`: 1328 px
+   innen; Stufe content: 1008 — bleibt gestapelt; offene Seitenleiste oder
+   Schriftskala 1.4: gestapelt) stehen die Formularteile R3 Ziff. 1–5 links,
+   der Ergebnisplatz (R3 Ziff. 6: `ErgebnisBlock` bzw. `ErgebnisPlatzhalter`,
+   R13) rechts, beide ab derselben Oberkante. Reine Darstellung (§3): DOM-
+   und damit Lese-, Tab- und Vorlese-Reihenfolge bleiben (Eingabe vor
+   Ergebnis), die aria-live-Region ist dieselbe; Druck und 390 px liegen
+   unter der Schwelle und sind unverändert.
+   Die Spalten-Wahl trifft das FORMULAR (Klasse `lc-rechner-spalten` an seiner
+   Wurzel, deren direktes Kind der Ergebnisplatz ist) — Sonderlayouts
+   (Einfacher Fristenrechner, Zuständigkeits-Wizard) tragen sie nicht.
+   Zeilen-Mechanik: die linken Kinder belegen je eine `auto`-Zeile; der
+   Ergebnisplatz überspannt alle Zeilen bis zur `1fr`-Zeile am Schluss. Ein
+   Element, das eine flexible Spur überspannt, gibt seine Höhe nur an diese
+   ab — die linken Zeilen werden nicht gedehnt (CSS Grid §12.5). Die 24 Zeilen
+   decken jede heutige Formularwurzel (max. gemessen: siehe Wächter
+   `e2e/rechner-breite.e2e.ts`); weitere Kinder liefen unter die Spalten, nie
+   in sie hinein. */
+@container rechnerkarte (width >= 72rem) {
+  .lc-rechner-spalten {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: repeat(24, auto) 1fr;
+    column-gap: 3rem;
+    align-items: start;
+  }
+  .lc-rechner-spalten > * { grid-column: 1; }
+  .lc-rechner-spalten > :is([data-ergebnisplatz], [data-platzhalter]):not([hidden]) {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    margin-top: 0;
+  }
+}

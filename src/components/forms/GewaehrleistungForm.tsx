@@ -163,7 +163,7 @@ export function GewaehrleistungForm() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer */}
       <PflichtDisclaimer kurz="Rüge- und Verjährungsfristen der Sachgewährleistung; die «sofort»-Frist ist eine Näherung." text={GW_DISCLAIMER} />
 
