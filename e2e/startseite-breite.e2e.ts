@@ -42,20 +42,24 @@ async function inhaltsbreite(page: Page): Promise<number> {
   return page.evaluate(() => Math.round(document.querySelector('main > div')!.getBoundingClientRect().width));
 }
 
-const messeMaxCharsProZeile = (selector: string) => (page: Page) => page.evaluate((sel) => {
-  let best: { text: string; ch: number } | null = null;
-  document.querySelectorAll(sel).forEach((el) => {
-    const text = (el.textContent ?? '').trim();
-    if (text.length < 8) return;
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    const rects = range.getClientRects();
-    if (!rects.length) return;
-    const ch = text.length / rects.length;
-    if (!best || ch > best.ch) best = { text: text.slice(0, 90), ch };
-  });
-  return best;
-}, selector);
+interface ZeilenBefund { text: string; ch: number }
+
+async function messeMaxCharsProZeile(page: Page, selector: string): Promise<ZeilenBefund | null> {
+  return page.evaluate((sel: string): ZeilenBefund | null => {
+    let best: ZeilenBefund | null = null;
+    document.querySelectorAll(sel).forEach((el) => {
+      const text = (el.textContent ?? '').trim();
+      if (text.length < 8) return;
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const rects = range.getClientRects();
+      if (!rects.length) return;
+      const ch = text.length / rects.length;
+      if (!best || ch > best.ch) best = { text: text.slice(0, 90), ch };
+    });
+    return best;
+  }, selector);
+}
 
 test.describe('Startseite · Inhaltsbreite ab 2xl (W2·29-WERKBANK-REST-BREITE)', () => {
   // (i) Nur «/» wächst ab 2xl (1536px) auf `weit` (90rem = 1440px); darunter
@@ -81,6 +85,34 @@ test.describe('Startseite · Inhaltsbreite ab 2xl (W2·29-WERKBANK-REST-BREITE)'
     });
   }
 
+  // U13 GILT AUCH BREITER: der Kopfkommentar von `e2e/startseite-blatt.e2e.ts`
+  // (Test «U13 kein Scroll beim Aufklappen») deckt bewusst nur @1440×900 und
+  // @1280×800 ab — Begründung dort: «ab 1280 ist der Inhalt auf `max-w-content`
+  // gedeckelt … beide [1680/1920] haben mehr Höhe». Mit `weit` ab 2xl stimmt die
+  // Breiten-Prämisse dort nicht mehr; dieser Fall schliesst genau diese Lücke,
+  // für alle vier Kacheln (nicht nur Gesetze). ROT ZU BEKOMMEN (§6.7): den
+  // `2xl:max-w-[13.5rem]`-Deckel an der Kantone-Karte (`GesetzeBlatt.tsx`)
+  // entfernen — dann reisst «Gesetze» ab 1536px mit 38px Überlauf.
+  for (const [breite, hoehe] of [[1680, 1050], [1920, 1080]] as const) {
+    test(`@${breite}×${hoehe}: alle vier Blätter ohne Scroll im Fenster`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe });
+      for (const name of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Werkzeuge']) {
+        await page.goto('/');
+        await page.getByRole('navigation', { name: 'Bereiche der Sammlung' })
+          .getByRole('button', { name: new RegExp(name) }).click();
+        await expect(page.locator('#lm-start-blatt')).toHaveAttribute('data-phase', 'offen');
+        const m = await page.evaluate(() => {
+          const i = document.querySelector('.lc-start-blatt-inhalt')!;
+          const b = document.querySelector('#lm-start-blatt')!.getBoundingClientRect();
+          return { ueber: i.scrollHeight - i.clientHeight, unten: Math.round(b.bottom), vh: innerHeight, sy: Math.round(scrollY) };
+        });
+        expect(m.unten, `${name}: Blatt-Unterkante im Fenster (${JSON.stringify(m)})`).toBeLessThanOrEqual(m.vh);
+        expect(m.sy, `${name}: Seite unverschoben`).toBe(0);
+        expect(m.ueber, `${name}: kein Überlauf im Blatt-Inhalt (${JSON.stringify(m)})`).toBeLessThanOrEqual(1);
+      }
+    });
+  }
+
   // (iii) Mit mehr Platz dürfen Kachel-Zeilen (Nutzen-/Teile-Zeile) nicht auf
   // eine unlesbare Länge auslaufen — Kachelbreite wächst @1680/@1920 von
   // 348px auf 508px (Messreihe im Kopfkommentar `Startseite.tsx`).
@@ -92,7 +124,7 @@ test.describe('Startseite · Inhaltsbreite ab 2xl (W2·29-WERKBANK-REST-BREITE)'
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto('/');
     await page.waitForSelector('.lc-start-zelle');
-    const m = await messeMaxCharsProZeile('.lc-start-zelle .text-body-s')(page);
+    const m = await messeMaxCharsProZeile(page, '.lc-start-zelle .text-body-s');
     expect(m, 'mindestens eine Nutzen-/Teile-Zeile gemessen').not.toBeNull();
     expect(m!.ch, `«${m!.text}»: ${m!.ch.toFixed(1)} ch`).toBeLessThanOrEqual(75);
   });
@@ -103,7 +135,7 @@ test.describe('Startseite · Inhaltsbreite ab 2xl (W2·29-WERKBANK-REST-BREITE)'
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto('/');
     await page.waitForSelector('.lc-start-zelle');
-    const m = await messeMaxCharsProZeile('a.lc-menu-zeile span.line-clamp-2')(page);
+    const m = await messeMaxCharsProZeile(page, 'a.lc-menu-zeile span.line-clamp-2');
     expect(m, 'mindestens eine Titel-Zeile gemessen').not.toBeNull();
     expect(m!.ch, `«${m!.text}»: ${m!.ch.toFixed(1)} ch`).toBeLessThanOrEqual(75);
   });
