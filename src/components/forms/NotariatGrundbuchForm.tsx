@@ -135,7 +135,7 @@ export function NotariatGrundbuchForm({ minimal = false, ohneDisclaimer = false 
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* minimal = Startseite-Schnellrechner: globaler Pflicht-Hinweis dort (§8).
           ohneDisclaimer = Grundstückkauf-Tab in BeurkundungForm: der Hinweis
           steht dort bereits oberhalb der Tab-Leiste (LM-170, s. o.). */}

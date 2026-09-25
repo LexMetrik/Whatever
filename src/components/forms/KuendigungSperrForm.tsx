@@ -131,7 +131,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Kündigungsfrist und Sperrfristen nach Art. 335c / 336c OR; massgeblich sind GAV und Einzelvertrag."
         text={KSP_DISCLAIMER} />
@@ -230,7 +230,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
         <ErgebnisBlock>
           {/* Prominente Eckdaten – ein kohärentes Ergebnis */}
           {gesamt.status === 'nichtig' ? (
-            <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+            <div className="lc-kachelraster">
               <div className="lc-tile lc-akzent-danger">
                 <p className="lc-overline mb-1">Status</p>
                 <p className="text-h2 leading-none font-semibold text-danger-700">NICHTIG</p>
@@ -245,7 +245,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
               </div>
             </div>
           ) : (
-            <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+            <div className="lc-kachelraster">
               <div className="lc-tile">
                 <p className="lc-overline mb-1">Status</p>
                 <p className="text-body-l font-semibold text-ok-text">Gültig</p>

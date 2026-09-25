@@ -86,7 +86,7 @@ export function GebvKostenForm({ minimal = false }: { minimal?: boolean } = {}) 
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* minimal = Startseite-Schnellrechner: globaler Pflicht-Hinweis dort (§8). */}
       {!minimal && <PflichtDisclaimer kurz="Amtliche Gebühren je Betreibungsschritt (GebV SchKG); Rahmengebühren nur als Bandbreite, Auslagen effektiv." text={GK_DISCLAIMER} />}
 

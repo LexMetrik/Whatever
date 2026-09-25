@@ -109,7 +109,7 @@ export function VerzugszinsForm() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Verzugszins nach Art. 104 OR; die Tageszählungs-Methode ist eine offengelegte methodische Wahl."
         text={VERZUGSZINS_DISCLAIMER} />
@@ -213,7 +213,7 @@ export function VerzugszinsForm() {
         <ErgebnisBlock>
           {ergebnis.status === 'ok' && (
             <>
-              <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+              <div className="lc-kachelraster">
                 {[
                   { label: 'Verzugszins (gesamt)', val: `CHF ${ergebnis.zinsTotalCHF}`, akzent: true },
                   { label: 'Offenes Kapital', val: `CHF ${ergebnis.kapitalOffenCHF}` },

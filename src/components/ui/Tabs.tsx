@@ -130,7 +130,14 @@ export function Tabs<T extends string>({
       // heller Balken quer ueber den umgebrochenen Zeilen. Eine Affordanz fuer
       // eine Bewegung, die es nicht gibt, ist ein Fleck. Dieselbe Bauform wie
       // die `lg:bg-none`-Zeile an der Seitenleisten-Schiene.
-      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-4 w-fit max-w-full overflow-x-auto lc-scrollrand-x max-[400px]:flex-wrap max-[400px]:h-auto max-[400px]:overflow-x-visible max-[400px]:bg-none`}
+      // ── W2·31-BILDSCHIRMBREITE B3-Nachzug (Gegenprüfung 26.9.2026, Mangel B3)
+      //    · IN DER EINGABESPALTE DER BREITEN WERKZEUG-KARTE WIRD UMBROCHEN ──
+      // `lc-reiterleiste` ist nur der Griff: ab 72rem Kartenbreite steht die
+      // Eingabe links (~624–640 px), und die Regel in index.css (Block
+      // `.lc-rechner-spalten`) bricht die Leiste dort um, statt sie zu
+      // schieben — GEMESSEN @1920: ZPO-Phasen 684/640 px, SchKG 1088/640 px
+      // (vier von neun Phasen verborgen). Herleitung und Abwägung dort.
+      className={`lc-reiterleiste print:hidden flex ${HOEHE[groesse]} items-stretch gap-4 w-fit max-w-full overflow-x-auto lc-scrollrand-x max-[400px]:flex-wrap max-[400px]:h-auto max-[400px]:overflow-x-visible max-[400px]:bg-none`}
     >
       {items.map((it, i) => {
         const aktiv = value === it.code;

@@ -203,7 +203,7 @@ export function AllgemeineFristForm({ live }: {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Fristende nach Art. 77/78 OR ab dem eingegebenen Startdatum; Fristbeginn (Zustellung) und verfahrensrechtliche Stillstände bestimmt der Rechner nicht."
         text={DISCLAIMER} />
@@ -351,7 +351,7 @@ export function AllgemeineFristForm({ live }: {
           {ergebnis && (
             <ErgebnisBlock id="lc-ergebnis-allgemein">
               {/* Prominente Eckdaten (Angleichung an ZPO/SchKG) */}
-              <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+              <div className="lc-kachelraster">
                 {[
                   { label: 'Ereignistag (zählt nicht)', val: ergebnis.resultat.startISO.split('-').reverse().join('.') },
                   { label: 'Fristbeginn (dies a quo)', val: ergebnis.resultat.fristbeginnISO!.split('-').reverse().join('.') },
