@@ -1,6 +1,6 @@
 # Funktions-Inventar LexMetrik
 
-**Stand:** `main@a2ad90c7d`, 22.9.2026. Zahlen aus den generierten Registern
+**Stand:** `main@a2ad90c7d`, 22.9.2026 — **Stand nach Werkbank-Umbau REST, 25.9.2026** (Datierung nachgezogen, Inhalt nicht neu geprüft). Zahlen aus den generierten Registern
 (`public/normtext/register.json` erzeugt 2026-09-21 · `public/rechtsprechung/register.json`
 erzeugt 2026-09-12 · `public/materialien/register.json` erzeugt 2026-09-18 ·
 `src/data/startseiteZaehler.generated.ts`).
