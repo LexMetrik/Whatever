@@ -22,6 +22,11 @@ npm run entscheide -- --datum=$(date +%F) --bge-von=2024-01-01 --bge-limit=300 \
 # Additiv — Bestand byte-treu von der Platte + nur die eidg. Gerichte ergänzen (kein Drift der 272)
 npm run entscheide -- --datum=$(date +%F) --additiv --eidg=bvger,bstger,bpatger --eidg-pro=5
 
+# Additiv — Stichproben eidg. UND kantonaler Gerichte auffrischen (seit 25.9.2026): je Gericht
+# die N NEUEN Urteile (Bestands-ids fallen vor der N-Auswahl heraus), danach --remap wie oben
+npm run entscheide -- --datum=$(date +%F) --additiv --eidg=bvger,bstger,bpatger --eidg-pro=5 \
+  --courts=zh_obergericht,be_verwaltungsgericht,sg_gerichte,gr_gerichte,ag_gerichte --kanton-pro=6
+
 # Offline aus Fixtures (Quelle nicht erreichbar / deterministischer Trockenlauf)
 npm run entscheide:seed -- --datum=$(date +%F)
 
@@ -54,12 +59,12 @@ gate-«Fünferkette» (`tsc -b` · `vitest` · `golden:vergleich` · `lint` · `
 | `--datum=YYYY-MM-DD` | heute (ISO) | Abrufdatum / Provenienz; **immer `$(date +%F)` aus der Shell** (§2) | `const datum` |
 | `--limit=N` | `45` | Bund-BFS: max. gewählte Urteile | `const bundLimit` |
 | `--seeds=a,b` | `bger_5A_1100_2025` | Start-IDs des Citation-Graph-BFS | `const SEEDS` (in `bundKorpus`) |
-| `--courts=c1,c2` | – | kantonale Gerichte (Listing je Gericht) | `const kantCourts` |
-| `--kanton-pro=N` | `8` | je Kanton-Gericht gewählte Urteile | `const kantonPro` |
+| `--courts=c1,c2` | – | kantonale Gerichte (Listing je Gericht); **Vollbau und — seit 25.9.2026 — `--additiv`** | `const kantCourts` |
+| `--kanton-pro=N` | `8` | je Kanton-Gericht gewählte Urteile, nach Rang (Regeste → Leitentscheid → Datum desc) aus den 4·N neuesten des Listings; additiv: N **neue** (Bestands-ids vorher ausgeschlossen) | `const kantonPro` |
 | `--bge-von=YYYY-MM-DD` | – | **aktiviert** den BGE-Leitentscheid-Zweig (sonst keine BGE) | `const bgeVon` |
 | `--bge-limit=N` | `300` | enumerierte BGE ab `--bge-von` | `const bgeLimit` |
 | `--eidg=bvger,bstger,bpatger` | – | eidg. Gerichte als eigener Zweig (**nur sinnvoll mit `--additiv`**) | `const eidgCourts` |
-| `--eidg-pro=N` | `5` | je eidg. Gericht die N neuesten | `const eidgPro` |
+| `--eidg-pro=N` | `5` | je eidg. Gericht die N neuesten (Datum desc aus den 4·N neuesten des Listings); additiv: N **neue** (Bestands-ids vorher ausgeschlossen) | `const eidgPro` |
 | `--additiv` | aus | Bestand von der Platte laden + nur Neues ergänzen (kein Live-Neuzug der 272) | `const additiv` (Pfad in `main()`) |
 | `--bge-refresh` | aus | nur additiv: mitten im Wort (U+2026) gekappte Bestands-BGE neu nachladen, `by id` ersetzen | `const bgeRefresh` |
 
@@ -69,6 +74,12 @@ Vier Quellzweige (Funktionen in `main()`): `bgeKorpus` (BGE, nur mit `--bge-von`
 (Citation-Graph-BFS ab Seeds) · `kantonKorpus` (Listing je Gericht) · `eidgKorpus`
 (BVGer/BStGer/BPatGer, nur im additiven Pfad). Ohne `--additiv` überschreibt der Lauf
 den bestehenden Korpus aus den Live-Quellen; mit `--additiv` bleibt der committete Bestand byte-gleich.
+Additiv laufen `eidgKorpus` und `kantonKorpus` (25.9.2026); Zusammenführen (Bestand gewinnt jede
+id-Kollision) und Leer-Guard je Zweig (angefordert, aber 0 **geholt** ⇒ Abbruch; «0 neu», weil alles
+schon im Bestand liegt, ist kein Abbruch) leben im reinen Kern `scripts/normtext/entscheide-additiv.ts`
+(Test `src/tests/entscheide-additiv.test.ts`). Das Log nennt je Gericht «davon k schon im Bestand» und
+die Datumsspanne der Auswahl — liegt sie vor dem jüngsten Bestandsurteil, lieferte das Listing nichts
+Jüngeres (Stichprobe nicht aufgefrischt, ehrlich melden).
 
 ---
 
@@ -196,7 +207,7 @@ auf einen NEUEN Regress deutet.
 
 7. **Leer-Guard (§6).** Wird eine Quelle angefordert, aber **nichts** geholt, bleibt der bestehende
    Korpus **unberührt** — nie einen committeten Korpus durch einen fehlgeschlagenen OCL-Lauf entwerten.
-   In `main()` (`scripts/normtext-entscheide.ts`) an jedem Schreib-Punkt verdrahtet (Vollbau, additiv-eidg,
+   In `main()` (`scripts/normtext-entscheide.ts`) an jedem Schreib-Punkt verdrahtet (Vollbau, additiv-eidg/-kantonal — Kern `scripts/normtext/entscheide-additiv.ts`,
    additiv-gesamt, `--bge-refresh`; grep-bar über die «Leer-Guard»-Kommentare und die «Korpus unberührt»-
    Log-Zeilen). ⇒ Bei OCL-Ausfall NICHT halben Korpus
    schreiben — Lauf bricht selbsttätig ab (Fehlerfall 2, `methodology` / SKILL.md): offline über
