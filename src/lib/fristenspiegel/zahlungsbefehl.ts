@@ -1,7 +1,7 @@
 import { addDays, parseISO } from 'date-fns';
 import { berechneSchkgFrist } from '../schkgFristen';
 import { PRESETS_SCHKG } from '../schkgPresets';
-import { normalisiereEnde, OHNE_STILLSTAND } from '../fristenEngine';
+import { hinweisBedingteFeiertageEnde, normalisiereEnde, OHNE_STILLSTAND } from '../fristenEngine';
 import { formatDatum, formatISO } from '../datumsUtils';
 import type { Kanton } from '../../types/legal';
 import type { FristenspiegelErgebnis, SpiegelZeile } from './typen';
@@ -54,8 +54,17 @@ export function berechneZahlungsbefehlsSpiegel(input: ZahlungsbefehlSpiegelInput
   // Wartefrist-Folgetag auf den nächsten Werktag gelegt (Art. 31 SchKG i.V.m.
   // Art. 142 Abs. 3 ZPO); Art. 63 verlängert ihn nicht (Engine, RL-17/F2-08).
   // Richtungssicher: ausgewiesen wird der spätere der beiden Tage.
-  const nachRv = normalisiereEnde(addDays(parseISO(rvErg.diesAdQuemISO), 1), input.kanton, OHNE_STILLSTAND).tag;
+  // Landung Paket 5 (RL-22-Nachzug): frühestes zulässiges Datum → der SPÄTERE
+  // Tag ist sicher; bedingte kantonale Feiertage zählen darum wie beim
+  // Wartefrist-Folgetag der Engine ('weitest', schkgFristen).
+  // Beispiel SO, Zustellung 2.4.2025: RV-Ende 30.4.2025 (Art. 63), Folgetag
+  // Do 1.5. (SO 1. Mai zählt nur nach EG ZPO/StPO) → ausgewiesen Fr 2.5.2025.
+  const folgetagRv = addDays(parseISO(rvErg.diesAdQuemISO), 1);
+  const nachRv = normalisiereEnde(folgetagRv, input.kanton, OHNE_STILLSTAND, 'weitest').tag;
   const rvBestimmt = formatISO(nachRv) > fbWarte.diesAdQuemISO;
+  const nachRvHinweis = rvBestimmt
+    ? hinweisBedingteFeiertageEnde(folgetagRv, input.kanton, OHNE_STILLSTAND, 'schkg', 'spaeter')
+    : null;
   const warteISO = rvBestimmt ? formatISO(nachRv) : fbWarte.diesAdQuemISO;
   const warteText = rvBestimmt ? formatDatum(nachRv) : fbWarte.diesAdQuem;
 
@@ -104,7 +113,10 @@ export function berechneZahlungsbefehlsSpiegel(input: ZahlungsbefehlSpiegelInput
   ];
 
   // Engine-Warnungen der drei Läufe zusammenführen (dedupliziert, §8).
-  const warnungen = [...new Set([...rvErg.warnungen, ...fbWarte.warnungen, ...fbVerwirkung.warnungen])];
+  const warnungen = [...new Set([
+    ...rvErg.warnungen, ...fbWarte.warnungen, ...fbVerwirkung.warnungen,
+    ...(nachRvHinweis ? [nachRvHinweis] : []),
+  ])];
 
   return {
     ereignisLabel: 'Zustellung des Zahlungsbefehls',

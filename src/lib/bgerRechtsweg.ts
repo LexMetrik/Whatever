@@ -3,7 +3,7 @@
 import { parseISO } from 'date-fns';
 import { formatISO } from './datumsUtils';
 import type { Kanton, Berechnungsergebnis, Rechenschritt, Normverweis } from '../types/legal';
-import { fristendeTage, normalisiereEnde, OHNE_STILLSTAND, type Stillstand } from './fristenEngine';
+import { fristendeTage, hinweisBedingteFeiertageEnde, normalisiereEnde, OHNE_STILLSTAND, type Stillstand } from './fristenEngine';
 import { stillstandsperioden, stillstandsperiodeFuer } from '../data/zpoFeiertage';
 import { formatDatum, istGueltigesISO } from './datumsUtils';
 import { chfOhnePraefix } from './format';
@@ -443,7 +443,11 @@ export function berechneBgerRechtsweg(input: BgerInput): BgerErgebnis {
     }
     const st = stillstand ? BGG_STILLSTAND : OHNE_STILLSTAND;
     const { ende } = fristendeTage(parseISO(input.eroeffnung), fristTage, st);
-    const norm = normalisiereEnde(ende, kanton, st);
+    // Feiertags-Kontext 'bgg' (RL-22-Nachzug): NE-Schliesstage zählen (BGer
+    // 9C_396/2018 E. 2.3), SO 1. Mai nicht (nur Art. 142 ZPO) → Warnung.
+    const norm = normalisiereEnde(ende, kanton, st, 'bgg');
+    const bedingtHinweis = hinweisBedingteFeiertageEnde(ende, kanton, st, 'bgg');
+    if (bedingtHinweis) warnungen.push(bedingtHinweis);
     fristende = {
       endeISO: formatISO(norm.tag),
       endeText: formatDatum(norm.tag),

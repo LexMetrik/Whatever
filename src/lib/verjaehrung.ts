@@ -1,7 +1,7 @@
 import { parseISO, addDays, addYears, differenceInCalendarDays, isAfter, isBefore } from 'date-fns';
 import type { Berechnungsergebnis, Rechenschritt, Normverweis, Kanton } from '../types/legal';
 import { formatDatum, formatISO } from './datumsUtils';
-import { naechsterWerktag } from '../data/zpoFeiertage';
+import { hinweisBedingteFeiertage, naechsterWerktag } from '../data/zpoFeiertage';
 import { rechtsprechung } from '../data/verifikation';
 
 // ─── Verjährung (Art. 60, 67, 127–142 OR, Stand Revision 1.1.2020) ─────────
@@ -616,6 +616,11 @@ export function berechneVerjaehrung(input: VerjaehrungInput): VerjaehrungErgebni
     annahmen.push(`Feiertagsverschiebung nach den im Kanton ${input.kanton} staatlich anerkannten Feiertagen (Erfüllungsort als Eingabe).`);
   } else if (verjaehrung) {
     verschoben = werktagsEnde(verjaehrung, input.kanton);
+    // RL-22-Nachzug: Art. 78 OR («staatlich anerkannter Feiertag») — kantonale
+    // Sonderfeiertage nur für bestimmte Verfahren (NE-Schliesstage, SO 1. Mai)
+    // zählen nicht; Warnung, wenn einer das Ende verschieben würde.
+    const bedingtHinweis = hinweisBedingteFeiertage(verjaehrung, input.kanton);
+    if (bedingtHinweis) warnungen.push(bedingtHinweis);
     if (verschoben.getTime() !== verjaehrung.getTime()) {
       rechenweg.push({
         beschreibung: 'Werktagsregel (Art. 78 OR i.V.m. Art. 132 Abs. 2 OR)',

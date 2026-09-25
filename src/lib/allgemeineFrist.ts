@@ -2,7 +2,9 @@
 import { addMonths, addYears, addDays, differenceInCalendarDays, isSaturday, isSunday, parseISO } from 'date-fns';
 import { fristendeTage, fristendeKalender, OHNE_STILLSTAND, type Einheit } from './fristenEngine';
 import { formatDatum, formatISO } from './datumsUtils';
-import { istFeiertag } from '../data/zpoFeiertage';
+import {
+  bedingteFeiertageSatz, istFeiertag, strengeLesart, unsichereFeiertageSatz, type FeiertagsLesart,
+} from '../data/zpoFeiertage';
 import { KANTONE } from './kantone';
 import type { Berechnungsergebnis, Kanton, Normverweis, Rechenschritt } from '../types/legal';
 
@@ -93,11 +95,17 @@ export const ALLG_FRIST_HINWEIS =
 // Tagerechner für StPO-Fristen empfiehlt («Keine Ferien»). Offen (Q8 §d):
 // Partei und Rechtsbeistand in verschiedenen Kantonen — keine amtliche Stelle
 // gefunden, darum nur der Hinweis auf den früheren Termin (sichere Seite).
+// RL-23/Q8-04: BGer 6B_730/2013 E. 1.2 (10.12.2013) prüft auch kommunale
+// Ruhetage am Wohnsitz (SO: Gemeinden können zusätzliche Ruhetage bezeichnen,
+// heute Ruhetagsgesetz SO § 2 Abs. 2, BGS 512.41); die Feiertagsmatrix führt
+// nur kantonale Tage → Fristende allenfalls zu früh (sichere Richtung), offengelegt.
 export const STPO_FRIST_HINWEIS =
   'Strafverfahren: Es gibt keine Gerichtsferien (Art. 89 Abs. 2 StPO) – das Fristende oben gilt ohne '
   + 'Stillstand. Massgebend für Feiertage ist der Kanton, in dem die Partei oder ihr Rechtsbeistand '
   + 'Wohnsitz oder Sitz hat (Art. 90 Abs. 2 StPO), nicht der Gerichtsort; liegen beide in verschiedenen '
-  + 'Kantonen, im Zweifel den früheren Termin einhalten.';
+  + 'Kantonen, im Zweifel den früheren Termin einhalten. Allfällige kommunale Ruhetage am Wohnsitz oder Sitz, '
+  + 'die das Bundesgericht mitberücksichtigt (BGer 6B_730/2013 E. 1.2), sind nicht abgebildet – das Fristende '
+  + 'liegt deshalb allenfalls früher als nötig, nie wegen solcher Tage später.';
 
 // RL-24/F1-02: Offenlegung des Vertragsfrist-Regimes (§8). Modul-intern: erreicht
 // das UI über `hinweise` → `warnungen` (ErgebnisAnzeige), kein Export (check:sediment d).
@@ -163,13 +171,22 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   // RL-24/F1-02: bei Vertragsfristen bleibt der Samstag ein Werktag (Art. 78
   // Abs. 1 OR nennt nur Sonntag und Feiertag; SR 173.110.3 gilt nicht).
   const vertraglich = input.fristart === 'vertraglich';
-  const grundFuer = (d: Date): string | null => {
-    if (input.feiertageVerschieben && input.kanton && istFeiertag(d, input.kanton)) {
+  // Feiertags-Kontext 'allgemein' (RL-22-Nachzug; Art. 78 OR). `lesart` nur für
+  // den Warnvergleich unten (weitest/streng) — dieselbe Schleife, damit der
+  // Hinweis auch bei Vertragsfristen (Samstag = Werktag) das richtige Ende nennt.
+  const grundFuer = (d: Date, lesart: FeiertagsLesart = 'allgemein'): string | null => {
+    if (input.feiertageVerschieben && input.kanton && istFeiertag(d, input.kanton, lesart)) {
       return `gesetzlicher Feiertag (${input.kanton})`;
     }
     if (wochenende && isSunday(d)) return 'Sonntag (Art. 78 Abs. 1 OR)';
     if (wochenende && !vertraglich && isSaturday(d)) return 'Samstag (SR 173.110.3)';
     return null;
+  };
+
+  const verschiebeBis = (lesart: FeiertagsLesart): Date => {
+    let t = roh;
+    for (let guard = 0; guard < 30 && grundFuer(t, lesart); guard++) t = addDays(t, 1);
+    return t;
   };
 
   let ende = roh;
@@ -184,6 +201,18 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     verschiebeGruende.push(`${fmt(ende)} (${wochentag(ende)}): ${grund}`);
     ende = addDays(ende, 1);
   }
+
+  // RL-22-Nachzug: Feiertags-Kontext 'allgemein' (Art. 78 OR; auch StPO-Nutzung
+  // ohne eigenen Kontext) — kantonale Sonderfeiertage, die nur für bestimmte
+  // Verfahren gelten (NE-Schliesstage, SO 1. Mai), zählen nicht; Warnung, wenn
+  // einer das Fristende verschieben würde. RL-23: ebenso Warnung, wenn ein
+  // unsicher gezählter Tag (GL 2.1.) verschoben hat. Landung Paket 5 mit RL-24:
+  // Vergleich über dieselbe Verschiebe-Schleife (vorher naechsterWerktag, der
+  // bei Vertragsfristen den Samstag übersprang — falsches Ende im Warnsatz).
+  const bedingtHinweis = input.feiertageVerschieben && input.kanton
+    ? bedingteFeiertageSatz(roh, ende, verschiebeBis('weitest'), input.kanton, 'allgemein', 'frueher')
+      ?? unsichereFeiertageSatz([[roh, ende]], ende, verschiebeBis(strengeLesart('allgemein')), input.kanton, 'allgemein', 'frueher')
+    : null;
 
   schritte.push({
     label: 'Fristende (24.00 Uhr)',
@@ -200,7 +229,11 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
     verschiebeGruende,
     schritte,
     // Gesetzlich unverändert (Golden); vertraglich zusätzlich die Regime-Offenlegung.
-    hinweise: vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : [ALLG_FRIST_HINWEIS],
+    // RL-22-Nachzug: Warnung zu bedingten kantonalen Feiertagen hinten angefügt.
+    hinweise: [
+      ...(vertraglich ? [VERTRAGSFRIST_HINWEIS, ALLG_FRIST_HINWEIS] : [ALLG_FRIST_HINWEIS]),
+      ...(bedingtHinweis ? [bedingtHinweis] : []),
+    ],
     startISO: iso(start),
     fristbeginnISO: iso(addDays(start, 1)),
   };
@@ -363,7 +396,9 @@ export function berechneRueckwaertsFrist(input: RueckFristInput): AllgFristResul
   const verschiebeGruende: string[] = [];
   if (input.verschiebung === 'vorverlegen') {
     const frei = (d: Date): string | null => {
-      if (input.feiertageBeruecksichtigen && input.kanton && istFeiertag(d, input.kanton)) {
+      // RL-22-Nachzug: rückwärts ist der FRÜHERE Tag sicher → bedingte kantonale
+      // Feiertage (NE-Schliesstage, SO 1. Mai) zählen hier mit ('weitest').
+      if (input.feiertageBeruecksichtigen && input.kanton && istFeiertag(d, input.kanton, 'weitest')) {
         return `gesetzlicher Feiertag (${input.kanton})`;
       }
       if (isSunday(d)) return 'Sonntag';
@@ -461,13 +496,34 @@ export function zustellHinweis(art: ZustellArt, datumISO: string, kanton?: Kanto
     // data/zpoFeiertage in ALLEN Kantonen Feiertag sind (z. B. 1. August) —
     // richtig für jeden Gerichtsort; kantonale Feiertage verschieben nicht
     // (früheres Ergebnis = sichere Seite) und der Hinweis verlangt den Kanton.
-    const feiertag = (x: Date) => kanton ? istFeiertag(x, kanton) : KANTONE.every((k) => istFeiertag(x, k));
+    // Landung Paket 5 (RL-22/22c/23): Feiertags-Kontext 'zpo' — der Hinweis
+    // wendet Art. 142 Abs. 1bis ZPO an, wie zpoFristen (ereignisKorrigiert):
+    // kantonale Tage, die nur für Art. 142 ZPO Feiertag sind (NE LI-CPC Art. 10a,
+    // SO EG ZPO § 22 Abs. 2), zählen; ein unsicher gezählter Tag (GL 2.1.)
+    // zählt mit Warnung und dem früheren Datum ohne ihn (strenge Lesart).
+    // Ohne Kanton (Gerichtsort unbekannt) bleibt es bei der früheren, sicheren
+    // Seite: 'allgemein' in allen Kantonen, wie vor der Landung (AF-21).
+    const feiertag = (x: Date, lesart: FeiertagsLesart) =>
+      kanton ? istFeiertag(x, kanton, lesart) : KANTONE.every((k) => istFeiertag(x, k, 'allgemein'));
+    const frei = (x: Date, lesart: FeiertagsLesart) =>
+      feiertag(x, lesart) ? 'Feiertag' : isSunday(x) ? 'Sonntag' : isSaturday(x) ? 'Samstag' : null;
     for (let g = 0; g < 10; g++) {
-      const frei = feiertag(v) ? 'Feiertag' : isSunday(v) ? 'Sonntag' : isSaturday(v) ? 'Samstag' : null;
-      if (!frei) break;
-      gruende.push(frei);
+      const grund = frei(v, 'zpo');
+      if (!grund) break;
+      gruende.push(grund);
       v = addDays(v, 1);
     }
+    let vStreng = d;
+    for (let g = 0; g < 10 && frei(vStreng, strengeLesart('zpo')); g++) vStreng = addDays(vStreng, 1);
+    const unsichereTage: string[] = [];
+    for (let t = vStreng; +vStreng !== +v && t < v; t = addDays(t, 1)) {
+      if (feiertag(t, 'zpo') && !feiertag(t, strengeLesart('zpo'))) unsichereTage.push(fmt(t));
+    }
+    const unsicher = unsichereTage.length > 0
+      ? `Kantonaler Sonderfall: Der ${unsichereTage.join(', ')} ist hier als Feiertag am Gerichtsort mitgezählt; `
+        + `ob das Gericht ihn anerkennt, ist nicht gesichert. Zählt er nicht, gilt die Mitteilung bereits am ${fmt(vStreng)} als erfolgt – `
+        + 'sicherheitshalber die Frist ab diesem Tag berechnen.'
+      : null;
     return {
       vorschlagISO: iso(v), vorschlagFmt: `${wochentag(v)}, ${fmt(v)}`,
       hinweise: [
@@ -475,6 +531,7 @@ export function zustellHinweis(art: ZustellArt, datumISO: string, kanton?: Kanto
           ? `Zustellung durch gewöhnliche Post (A-Post Plus) an einem ${gruende[0]}: Die Mitteilung gilt erst am nächsten Werktag (${fmt(v)}) als erfolgt (Art. 142 Abs. 1bis ZPO, in Kraft seit 1.1.2025; Feiertage am GERICHTSORT).`
           : 'Zustellung durch gewöhnliche Post an einem Werktag: Es gilt das Zustelldatum (Art. 142 Abs. 1bis ZPO betrifft nur Sa/So/Feiertag).',
         ...(kanton ? [] : ['Ohne Kanton sind nur die in allen Kantonen anerkannten Feiertage berücksichtigt – für kantonale Feiertage am Gerichtsort den Kanton angeben.']),
+        ...(unsicher ? [unsicher] : []),
         'Hinweis, keine verbindliche Zustellberechnung – massgeblich ist der Einzelfall.',
       ],
     };

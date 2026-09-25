@@ -37,6 +37,10 @@ const ALLE_KANTONE: Kanton[] = [
   'SH', 'AR', 'AI', 'SG', 'GR', 'AG', 'TG', 'TI', 'VD', 'VS', 'NE', 'GE', 'JU',
 ];
 const JAHRE = [2024, 2025, 2026, 2027];
+// Feiertags-Kontext der Gegenprobe (RL-22-Nachzug 25.9.2026): Die Matrix wird als
+// Art.-142-Abs.-3-ZPO-Matrix geprüft (Kopfkommentar zpoFeiertage.ts) — damit sind
+// die bedingten kantonalen Tage (NE-Schliesstage, SO 1. Mai) eingeschlossen.
+const KONTEXT = 'zpo' as const;
 
 function iso(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -93,11 +97,10 @@ const AUSNAHMEN_FEST: FesteAusnahme[] = [
       '(nur einzelne Gemeinden)» — kein kantonsweiter gesetzlicher Feiertag nach Art. 142 ' +
       'Abs. 3 ZPO.',
   },
-  {
-    kanton: 'SO', monat: 5, tag: 1,
-    grund: 'Bewusst weggelassen laut Kopfkommentar zpoFeiertage.ts: «SO-1.-Mai (Feiertag erst ' +
-      'ab 12.00 Uhr – halber Tag macht den Tag nicht arbeitsfrei)».',
-  },
+  // SO 1.5.: Ausnahme bis 24.9.2026 («bewusst weggelassen, erst ab 12.00 Uhr»)
+  // gestrichen — EG ZPO SO § 22 Abs. 2 (BGS 221.2) nennt den 1. Mai ganztags als
+  // Feiertag für Art. 142 ZPO; LexMetrik und Bibliothek stimmen seit RL-22 überein
+  // (R1-02, Sammelfreigabe W-05).
   {
     kanton: 'VS', monat: 5, tag: 1,
     grund: '1. Mai («Tag der Arbeit») gilt nach der FEIERTAGE-Kantonsliste in zpoFeiertage.ts ' +
@@ -127,12 +130,9 @@ const AUSNAHMEN_FEST: FesteAusnahme[] = [
 // Kantonsliste ohne NE) ─────────────────────────────────────────────────
 type OsterAusnahme = { kanton: Kanton; offset: number; grund: string };
 const AUSNAHMEN_OSTERN: OsterAusnahme[] = [
-  {
-    kanton: 'NE', offset: 1,
-    grund: 'Ostermontag ist in zpoFeiertage.ts FEIERTAGE ausdrücklich `kantone: ausser(\'NE\')` ' +
-      '— NE ist bewusst ausgenommen; die Bibliothek führt «Lundi de Pâques» für NE dennoch ' +
-      'als public.',
-  },
+  // NE Ostermontag (offset 1): Ausnahme mit dem RL-22-Nachzug (25.9.2026) gestrichen —
+  // im ZPO-Kontext ist er seit 1.4.2015 jedes Jahr Feiertag (Schliesstag nach RDF
+  // Art. 11 Abs. 1 i.V.m. LI-CPC Art. 10a); LexMetrik und Bibliothek stimmen überein.
   {
     kanton: 'NE', offset: 60,
     grund: 'Fronleichnam («la Fête-Dieu») ist in zpoFeiertage.ts FEIERTAGE nicht in der ' +
@@ -141,16 +141,18 @@ const AUSNAHMEN_OSTERN: OsterAusnahme[] = [
   },
 ];
 
-// ─── Ausnahme: Stephanstag UR/AR — beide Quellen bilden dieselbe Rechtsidee
-// (BJ Fn. 1/7/9: Stephanstag entfällt in bestimmten Konstellationen) ab,
-// beziehen sich aber auf unterschiedliche Bezugstage: LexMetrik prüft den
-// Wochentag von Weihnachten selbst (25.12., zpoFeiertage.ts: `giltImJahr:
-// (j) => ![1, 5].includes(wochentag(j, 12, 25))`, Kommentar «UR/AR/AI:
-// Stephanstag entfällt, wenn Weihnachten auf Montag oder Freitag fällt»);
-// date-holidays prüft stattdessen den Wochentag des 26.12. selbst, und mit
-// kantonal unterschiedlichen Ausschlusstagen (Rule laut Bibliotheksdaten:
-// UR «12-26 not on monday, friday», AR «12-26 not on monday»). Dadurch
-// weichen die beiden Formeln in einzelnen Jahren voneinander ab.
+// ─── Ausnahme: Stephanstag UR/AR — die Bibliothek date-holidays prüft den
+// Wochentag des 26.12. selbst, mit kantonal unterschiedlichen Ausschlusstagen
+// (Rule laut Bibliotheksdaten: UR «12-26 not on monday, friday», AR «12-26
+// not on monday»).
+//  - AR: LexMetrik prüft den Wochentag von Weihnachten (25.12.) nach V ArG AR
+//    822.11 Art. 7 («nicht gefeiert, wenn der 1. Weihnachtstag auf einen Montag
+//    oder Freitag fällt», Stand 1.1.2016) — gleiche Rechtsidee, anderer Bezugstag.
+//  - UR: seit RL-22 (24.9.2026, R1-03, Sammelfreigabe W-05) führt LexMetrik den
+//    Stephanstag UNBEDINGT (Ruhetagsgesetz UR Art. 9 lit. b, RB 70.1421: «…
+//    Weihnachten und Sankt-Stefans-Tag» ohne Vorbehalt). Die Bibliotheksregel
+//    hat dafür keine Rechtsgrundlage; Abweichung z.B. UR 26.12.2025 (Fr).
+//    Vorher (bis 24.9.2026) begründet mit dem BJ-Fn.-1-Vorbehalt im Code.
 function istStephanstagBezugstagAusnahme(kanton: Kanton, monat: number, tag: number): boolean {
   return (kanton === 'UR' || kanton === 'AR') && monat === 12 && tag === 26;
 }
@@ -182,6 +184,25 @@ test('Näfelser Fahrt GL 2027: LexMetrik berechnet amtlich korrekt den 1.4.2027 
 const NAEFELSER_FAHRT_2027_UNGEKLAERT_DATEN = new Set(['GL|2027-04-08', 'GL|2027-04-01']);
 function istNaefelserFahrt2027Ungeklaert(kanton: Kanton, datum: string): boolean {
   return NAEFELSER_FAHRT_2027_UNGEKLAERT_DATEN.has(`${kanton}|${datum}`);
+}
+
+// ─── Ausnahme: NE-Schliesstage (RL-22, 24.9.2026, R1-04, Entscheid W-10 a) ──
+// LI-CPC NE Art. 10a (RSN 251.1): Tage, an denen die Kantonsverwaltung mind.
+// halbtags geschlossen ist, gelten als Feiertag für Art. 142 ZPO. Seit dem
+// RL-22-Nachzug (25.9.2026) als stehende Regel nach RDF Art. 11 Abs. 1 (RSN
+// 152.512, amtlich geöffnet 25.9.2026) — nicht mehr als Jahrestabelle 2026.
+// date-holidays kennt keine Verwaltungsschliesstage — Abweichung NUR_LEXMETRIK
+// ist begründet, aber nur für die Schliesstage, die NICHT schon gesetzliche
+// Feiertage nach RSN 941.02 Art. 3 sind und die die Bibliothek nicht führt:
+// Freitag nach Auffahrt, 24.12., 31.12. (hier unabhängig aus dem RDF-Wortlaut
+// hergeleitet, nicht aus zpoFeiertage.ts — R1-06).
+function istNeSchliesstagAusnahme(kanton: Kanton, datum: string): boolean {
+  if (kanton !== 'NE') return false;
+  const [y, m, d] = datum.split('-').map(Number);
+  if (m === 12 && (d === 24 || d === 31)) return true;
+  const o = ostersonntag(y);
+  const freitagNachAuffahrt = new Date(o.getFullYear(), o.getMonth(), o.getDate() + 40);
+  return iso(freitagNachAuffahrt) === datum;
 }
 
 function findeFesteAusnahme(kanton: Kanton, monat: number, tag: number): FesteAusnahme | undefined {
@@ -224,7 +245,7 @@ for (const kanton of ALLE_KANTONE) {
     for (const [key, name] of bibPublicTage) {
       const [y, m, d] = key.split('-').map(Number);
       const datum = new Date(y, m - 1, d);
-      if (istFeiertag(datum, kanton)) continue; // Übereinstimmung
+      if (istFeiertag(datum, kanton, KONTEXT)) continue; // Übereinstimmung
 
       // Generische Regel: Sonntags-Duplikat — ein Sonntag ist über Art. 142
       // Abs. 1 ZPO / isWeekend ohnehin arbeitsfrei; die BJ-Liste (Art. 142
@@ -240,7 +261,7 @@ for (const kanton of ALLE_KANTONE) {
       const istNaefelserFahrt2027 = istNaefelserFahrt2027Ungeklaert(kanton, key);
 
       const grund = fest?.grund ?? oster?.grund ??
-        (stephanstag ? 'Stephanstag UR/AR: unterschiedliche Bezugstage der beiden Formeln (siehe Kommentar oben).' : '');
+        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : '');
       const begruendet = Boolean(fest || oster || stephanstag);
 
       const eintrag: Abweichung = {
@@ -255,7 +276,7 @@ for (const kanton of ALLE_KANTONE) {
 
     // Richtung 2: LexMetrik → Bibliothek
     for (const datum of tageDesJahres(jahr)) {
-      if (!istFeiertag(datum, kanton)) continue;
+      if (!istFeiertag(datum, kanton, KONTEXT)) continue;
       const key = iso(datum);
       if (bibPublicTage.has(key)) continue; // Übereinstimmung
 
@@ -277,10 +298,12 @@ for (const kanton of ALLE_KANTONE) {
       const oster = findeOsterAusnahme(kanton, datum, jahr);
       const stephanstag = istStephanstagBezugstagAusnahme(kanton, m, d);
       const istNaefelserFahrt2027 = istNaefelserFahrt2027Ungeklaert(kanton, key);
+      const neSchliesstag = istNeSchliesstagAusnahme(kanton, key);
 
       const grund = fest?.grund ?? oster?.grund ??
-        (stephanstag ? 'Stephanstag UR/AR: unterschiedliche Bezugstage der beiden Formeln (siehe Kommentar oben).' : '');
-      const begruendet = Boolean(fest || oster || stephanstag);
+        (stephanstag ? 'Stephanstag UR/AR: Bibliotheksregel ohne Rechtsgrundlage (UR) bzw. anderer Bezugstag (AR) — siehe Kommentar oben.' : null) ??
+        (neSchliesstag ? 'NE-Schliesstag nach LI-CPC Art. 10a (RSN 251.1) — siehe Kommentar oben.' : '');
+      const begruendet = Boolean(fest || oster || stephanstag || neSchliesstag);
 
       const eintrag: Abweichung = {
         richtung: 'NUR_LEXMETRIK', kanton, jahr, datum: key, bibliotheksName: bibEintraege[0]?.name ?? '(kein Eintrag)',
