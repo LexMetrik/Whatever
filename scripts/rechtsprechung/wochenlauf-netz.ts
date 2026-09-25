@@ -8,12 +8,12 @@ import {
   type RegEintrag, type StichprobenZeile, type FrischeZeile,
 } from './wochenlauf-kern';
 import { pdfText } from './wochenlauf-pdf';
-import { clirUrl, bgeRefZuClirId } from '../normtext/clir-regeste';
+import { clirKandidaten, bgeRefZuClirId } from '../normtext/clir-regeste';
 import { jget, type OclDecision } from '../normtext/adapter-entscheide';
 
 const OCL = 'https://mcp.opencaselaw.ch/api'; // wie adapter-entscheide.ts (API nicht exportiert)
 
-/** Amtliche Quelle holen: höflich, 30 s Timeout; nächste URL bei 5xx/Netzfehler (bger.ch → search.bger.ch). */
+/** Amtliche Quelle holen: höflich, 30 s Timeout; nächste URL bei 5xx/Netzfehler (Reihenfolge der Liste, BGE: clirKandidaten). */
 export async function holeSeite(urls: string[]): Promise<{ url: string; bytes: Uint8Array; utf8: boolean } | null> {
   for (const url of urls) {
     for (let i = 0; i < 2; i++) {
@@ -28,15 +28,11 @@ export async function holeSeite(urls: string[]): Promise<{ url: string; bytes: U
   return null;
 }
 
-// TODO(Quellen-PR fix/rechtsprechung-quellen-robust): das www→search-Ausweichen
-// hier ist eine eigene Kopie; nach dessen Landung durch den Export aus
-// clir-regeste.ts ersetzen (§5, eine Quelle).
+/** Quell-URLs in Abrufreihenfolge. BGE: clirKandidaten (clir-regeste.ts, eine Quelle, §5 — search.bger.ch, dann www.bger.ch). */
 export async function urlsFuer(e: RegEintrag): Promise<string[]> {
   if (gruppeVon(e) === 'bge') {
     const id = bgeRefZuClirId(e.bgeReferenz ?? '');
-    if (!id) return [];
-    const www = clirUrl(id, 'de');
-    return [www, www.replace('://www.bger.ch/', '://search.bger.ch/')];
+    return id ? clirKandidaten(id, 'de') : [];
   }
   const ocl = oclIdFuerPdf(e);
   const pdf = ocl ? (await jget<OclDecision>(`${OCL}/decisions/${encodeURIComponent(ocl)}`))?.pdf_url : null;

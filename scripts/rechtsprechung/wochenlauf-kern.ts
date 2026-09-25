@@ -170,13 +170,28 @@ export const AUSGENOMMEN: Readonly<Record<string, string>> = {
 };
 export const aktiveGerichte = (gerichte: readonly string[]) => gerichte.filter((g) => !(g in AUSGENOMMEN));
 
+/**
+ * Aufruf «Übrige Gerichte» (npm run entscheide, additiv): eidg. und kantonale
+ * Gerichte OHNE die AUSGENOMMENEN — abgeleitet, nicht doppelt gepflegt (§5).
+ * `--courts` im additiven Modus trägt seit #1117 (entscheide-additiv.ts).
+ */
+export function uebrigeAufruf(datum: string): { args: string[]; kantone: string[] } {
+  const eidg = aktiveGerichte(EIDG_GERICHTE);
+  const kantone = aktiveGerichte(KANTONS_GERICHTE);
+  return {
+    args: ['run', 'entscheide', '--', `--datum=${datum}`, '--additiv', `--eidg=${eidg.join(',')}`, '--eidg-pro=5', `--courts=${kantone.join(',')}`, '--kanton-pro=6'],
+    kantone,
+  };
+}
+
 // ── Kantonaler Zweig (A4) ───────────────────────────────────────────────────
 /**
- * Auf main ignoriert `npm run entscheide -- --additiv` die Optionen
- * `--courts/--kanton-pro` still (normtext-entscheide.ts, additiver Block: nur
- * eidg.). Der additive Kantonszweig kommt mit der Datei unten (Stichproben-PR
- * der Parallel-Session). Bis dahin ist «kantonal» ein AUSFALL, nie still; mit
- * Zweig muss jedes angeforderte Gericht im Log vorkommen (sonst ebenfalls Ausfall).
+ * Bis #1117 ignorierte `npm run entscheide -- --additiv` die Optionen
+ * `--courts/--kanton-pro` still (nur eidg.). Seit #1117 (25.9.2026) trägt die
+ * Datei unten den additiven Kantonszweig; fehlt sie (Rückbau), ist «kantonal»
+ * ein AUSFALL, nie still. Mit Zweig muss jedes angeforderte Gericht im Log
+ * vorkommen — der Generator schreibt je Gericht «[kanton] <gericht>: …»
+ * (auch bei «übersprungen»); fehlt die Zeile, ebenfalls Ausfall.
  */
 export const KANTONSZWEIG_DATEI = 'scripts/normtext/entscheide-additiv.ts';
 export function kantonalAusfall(hatZweig: boolean, courts: string[], log: string): string[] {
@@ -522,6 +537,28 @@ export function inPruefung(l: PrLage): string | null {
   if (l.labels.includes(LABEL_IN_PRUEFUNG)) return `Label ${LABEL_IN_PRUEFUNG}`;
   if (l.menschen.length) return `Kommentar/Review von ${[...new Set(l.menschen)].sort().join(', ')}`;
   return null;
+}
+
+// ── Richter-Phantome (Lehre #1117/#1122) ────────────────────────────────────
+/**
+ * Neue Richter-Slugs in public/rechtsprechung/richter.json auf Phantome prüfen:
+ * Skill korpus-werkstatt, methodology/rechtsprechung.md (Nachtrag #1122) —
+ * Rollenwörter und Einwort-Slugs erkennt check:besetzung nicht (Beleg #1117:
+ * «Vorsitz Martin Stupf», «Mark»/«Schweizer»). Der Bestand trägt 239 legitime
+ * Einwort-Namen (BGer-Kurzform «Abrecht», Messung 25.9.2026), darum zählen nur
+ * NEUE Slugs gegen main: Rollenwort im Namen ⇒ Phantom; Einwort-Name ⇒ zu
+ * sichten. Beides macht das Tor rot (Entwurf), damit die prüfende Session jeden
+ * neuen Namen sieht, bevor er live geht.
+ */
+const ROLLENWORT = /(?<![\p{L}])(?:vorsitz\p{L}*|(?:vize|gerichts)?präsident\p{L}*|gerichtsschreiber\p{L}*|aktuar\p{L}*|\p{L}*richter\p{L}*|kammer|instanz|referent\p{L}*|juge|greffi\p{L}*|président\p{L}*|giudice|cancellier\p{L}*|presidente|und|mit|sowie)(?![\p{L}])/iu;
+export function richterPhantome(vorher: Record<string, { name: string }>, nachher: Record<string, { name: string }>): string[] {
+  const out: string[] = [];
+  for (const [slug, { name }] of Object.entries(nachher).sort(([a], [b]) => (a < b ? -1 : 1))) {
+    if (slug in vorher) continue;
+    if (ROLLENWORT.test(name)) out.push(`${slug} «${name}»: Rollenwort im Namen — Phantom`);
+    else if (!/\s/.test(name.trim())) out.push(`${slug} «${name}»: Einwort-Name — gegen den Spruchkörper sichten`);
+  }
+  return out;
 }
 
 // ── Tore (Punkt 3) ──────────────────────────────────────────────────────────

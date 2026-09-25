@@ -136,7 +136,7 @@ export function baueBericht(d: BerichtDaten): string {
     '',
     `## Identitäts-Stichprobe (automatisch): ${tr}/${pr} Treffer${s.length - pr ? `, ${s.length - pr} nicht prüfbar` : ''}`,
     '',
-    'Zwei Kriterien je Eintrag, getrennt: Aktenzeichen (mit Wortgrenze, nie Substring) und Entscheiddatum (amtlich, auf den Tag). BGE gegen bger.ch clir (Ausweichadresse search.bger.ch), BS gegen das Portal, übrige gegen die Quelle als HTML- oder PDF-Text (BVGer über OCL `pdf_url`). Ein ✗ in einem Kriterium = Fehltreffer ⇒ Entwurf; Datum nicht ermittelbar = nicht prüfbar (Handprüfung).',
+    'Zwei Kriterien je Eintrag, getrennt: Aktenzeichen (mit Wortgrenze, nie Substring) und Entscheiddatum (amtlich, auf den Tag). BGE gegen bger.ch clir (search.bger.ch, Ausweichadresse www.bger.ch), BS gegen das Portal, übrige gegen die Quelle als HTML- oder PDF-Text (BVGer über OCL `pdf_url`). Ein ✗ in einem Kriterium = Fehltreffer ⇒ Entwurf; Datum nicht ermittelbar = nicht prüfbar (Handprüfung).',
     '',
     '| Eintrag | Ergebnis | Aktenzeichen | Datum | Beleg |',
     '|---|---|---|---|---|',

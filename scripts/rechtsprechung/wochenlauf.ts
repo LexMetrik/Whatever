@@ -35,7 +35,7 @@ import { join } from 'node:path';
 import {
   baenderFuer, vergleicheRegister, erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, KANTONSZWEIG_DATEI,
   leseBsDelta, leseBsVoll, waehleStichprobe, entscheide, mergeSchutzSperrt, budgetZeilen, budgetBefund,
-  teilePfade, leseStatusZ, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, aktiveGerichte, EIDG_GERICHTE, KANTONS_GERICHTE,
+  teilePfade, leseStatusZ, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, uebrigeAufruf, richterPhantome,
   type RegEintrag, type Tor, type StichprobenZeile,
 } from './wochenlauf-kern';
 import { baueBericht, baueCommit, baueSummary, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
@@ -108,6 +108,10 @@ async function main(): Promise<void> {
   let vorherMain = vorherLauf;
   try { vorherMain = regAus(git('show', `origin/main:${REGISTER}`)); } catch { /* ohne origin/main (lokal): Basis = Laufstart */ }
   const gzVorher = gzJetzt();
+  const RICHTER = 'public/rechtsprechung/richter.json';
+  const richterAus = (json: string) => (JSON.parse(json) as { richter: Record<string, { name: string }> }).richter;
+  let richterVorher = richterAus(readFileSync(RICHTER, 'utf8'));
+  try { richterVorher = richterAus(git('show', `origin/main:${RICHTER}`)); } catch { /* lokal ohne origin/main: Laufstart */ }
   const start = git('rev-parse', 'HEAD').trim();
 
   const quellen: Schritt[] = [];
@@ -117,10 +121,8 @@ async function main(): Promise<void> {
     quellen.push(await schritt(`BGE Bd. ${baender.vor}+${baender.lauf}`, 'npm', ['run', 'entscheide', '--', D, '--additiv', `--bge-baender=${baender.vor},${baender.lauf}`], true));
     quellen.push(await schritt(BS, 'npm', ['run', 'entscheide:bs', '--', '--delta', D], true));
     // Ausgenommene Gerichte (AUSGENOMMEN, wochenlauf-kern.ts) fehlen hier und stehen im Bericht.
-    const eidg = aktiveGerichte(EIDG_GERICHTE);
-    const kantone = aktiveGerichte(KANTONS_GERICHTE);
-    quellen.push(await schritt(UEBRIGE, 'npm', ['run', 'entscheide', '--', D, '--additiv', `--eidg=${eidg.join(',')}`, '--eidg-pro=5',
-      `--courts=${kantone.join(',')}`, '--kanton-pro=6'], true, (log) => kantonalAusfall(existsSync(KANTONSZWEIG_DATEI), kantone, log)));
+    const u = uebrigeAufruf(datum);
+    quellen.push(await schritt(UEBRIGE, 'npm', u.args, true, (log) => kantonalAusfall(existsSync(KANTONSZWEIG_DATEI), u.kantone, log)));
   }
   if (checkpoint) git('reset', '-q', '--mixed', start);
 
@@ -151,6 +153,9 @@ async function main(): Promise<void> {
     // check:merge-schutz (zwangsläufig rot bis zum Verdikt). `npm run check` ist
     // die Tor-Menge von check:seriell (tor-paritaet hält sie deckungsgleich mit
     // ci.yml); check:gegenpruefung ist darin im Runner ein grüner No-op (CI-Selbstschutz).
+    // check:besetzung (in npm run check) erkennt Phantom-Richter nicht (Lehre #1117/#1122).
+    const phantome = richterPhantome(richterVorher, richterAus(readFileSync(RICHTER, 'utf8')));
+    tore.push({ name: 'Richter-Slugs (Phantom-Prüfung, Lehre #1117)', code: phantome.length ? 1 : 0, auszug: phantome.slice(0, 8).join(' · ') + (phantome.length > 8 ? ` · … +${phantome.length - 8}` : '') });
     tore.push((await tor('npm test', 'npm', ['test'], 20)).t);
     const chk = await fuehreAus('npm', ['run', 'check'], rest(20));
     tore.push(...(chk.code === 0 ? [{ name: 'npm run check (alle Sub-Checks)', code: 0, auszug: '' }] : zerlegeRunParallel(chk.log, chk.code)));

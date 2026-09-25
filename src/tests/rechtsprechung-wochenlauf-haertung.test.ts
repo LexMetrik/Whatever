@@ -3,17 +3,19 @@
 // macht (Beleg in der Bau-Rückgabe).
 import { describe, it, expect, beforeAll } from 'vitest';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
   erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, entscheide, leseBsDelta, leseBsVoll, waehleStichprobe,
   pruefeText, aktenzeichenVarianten, amtlichesDatum, oclIdFuerPdf, budgetZeilen, budgetBefund, bewerteFrische,
-  teilePfade, leseStatusZ, inPruefung, aktiveGerichte, KANTONS_GERICHTE, AUSGENOMMEN, zerlegeRunParallel, e2eAuswahl, restMinuten, vergleicheRegister, BOT,
+  teilePfade, leseStatusZ, inPruefung, aktiveGerichte, KANTONS_GERICHTE, AUSGENOMMEN, uebrigeAufruf, richterPhantome, KANTONSZWEIG_DATEI, zerlegeRunParallel, e2eAuswahl, restMinuten, vergleicheRegister, BOT,
   type Lage, type RegEintrag,
 } from '../../scripts/rechtsprechung/wochenlauf-kern';
 import { baueBericht, baueSummary, kopfsatz, type BerichtDaten } from '../../scripts/rechtsprechung/wochenlauf-bericht';
 import { fuegeStuecke, pdfText } from '../../scripts/rechtsprechung/wochenlauf-pdf';
+import { urlsFuer } from '../../scripts/rechtsprechung/wochenlauf-netz';
+import { clirKandidaten } from '../../scripts/normtext/clir-regeste';
 import { baueAufVorwoche, type Git } from '../../scripts/rechtsprechung/wochenlauf-basis';
 import { ergaenzeInhaltsAbweichungen, VOLLABGLEICH_DECKEL, type BsDeltaPlan } from '../../scripts/rechtsprechung/bs-delta';
 import { DATEN_BUDGET } from '../../scripts/perf/daten-budget';
@@ -398,9 +400,55 @@ describe('16 · kantonaler Zweig nie still (A4)', () => {
     expect(kantonalAusfall(false, K, '')).toEqual(['kantonal: übersprungen — Generator ohne additiven Kantonszweig (scripts/normtext/entscheide-additiv.ts fehlt; zh_obergericht, gr_gerichte)']);
     expect(erkenneAusfaelle(kantonalAusfall(false, K, '')[0])).toHaveLength(1);
   });
+  it('seit #1117 ist der additive Kantonszweig da; echte Log-Form von main wird erkannt', () => {
+    expect(existsSync(KANTONSZWEIG_DATEI)).toBe(true);
+    // Zeilenform: normtext-entscheide.ts kantonKorpus (main 25.9.2026)
+    const log = [
+      '[kanton] zh_obergericht: 24 de (davon 3 schon im Bestand) → 6 gewählt (Regeste: 2; Datum 2026-07-01…2026-08-06)',
+      '[kanton] be_verwaltungsgericht: übersprungen — 0 IDs (Listing nicht erreichbar)',
+      '[additiv] übersprungen (1): be_verwaltungsgericht (0 IDs)',
+    ].join('\n');
+    const { kantone } = uebrigeAufruf('2026-09-28');
+    expect(kantonalAusfall(true, kantone, log)).toEqual([]); // beide melden sich
+    expect(erkenneAusfaelle(log)).toHaveLength(2); // «übersprungen» bleibt Ausfall
+  });
+  it('Aufruf «Übrige» leitet --courts aus AUSGENOMMEN ab (ohne sg/ag/gr)', () => {
+    const { args } = uebrigeAufruf('2026-09-28');
+    expect(args).toContain('--courts=zh_obergericht,be_verwaltungsgericht');
+    expect(args).toContain('--eidg=bvger,bstger,bpatger');
+    expect(args.join(' ')).not.toMatch(/sg_gerichte|ag_gerichte|gr_gerichte/);
+    expect(args.slice(0, 5)).toEqual(['run', 'entscheide', '--', '--datum=2026-09-28', '--additiv']);
+  });
   it('mit Zweig: jedes Gericht muss im Log vorkommen (Wortgrenze)', () => {
     expect(kantonalAusfall(true, K, '[kanton] zh_obergericht: 24 de → 6 gewählt\n[kanton] gr_gerichte: 24 de → 6 gewählt')).toEqual([]);
     expect(kantonalAusfall(true, K, '[kanton] zh_obergericht: 24 de → 6 gewählt\n[kanton] gr_gerichte_x: 1')).toEqual(['kantonal: keine Rückmeldung im Generator-Log für gr_gerichte — AUSFALL']);
+  });
+});
+
+describe('BGE-Abruf über clirKandidaten (Quellen-PR #1120, §5)', () => {
+  it('Reihenfolge kommt aus clir-regeste.ts: search.bger.ch vor www.bger.ch', async () => {
+    const u = await urlsFuer(e('bge_152_V_122', 'bge', '2026-05-11', { bgeReferenz: '152 V 122' }));
+    expect(u).toEqual(clirKandidaten('152-V-122', 'de'));
+    expect(u.map((x) => new URL(x).host)).toEqual(['search.bger.ch', 'www.bger.ch']);
+  });
+});
+
+describe('Richter-Phantome (Lehre #1117/#1122 — check:besetzung erkennt sie nicht)', () => {
+  const alt = { abrecht: { name: 'Abrecht' } };
+  it('nur NEUE Slugs: Rollenwort ⇒ Phantom, Einwort ⇒ sichten, Vor- und Nachname ⇒ ok', () => {
+    // Mutation: «if (slug in vorher) continue» entfernen ⇒ der Bestand «Abrecht» würde gemeldet.
+    expect(richterPhantome(alt, { ...alt,
+      'vorsitz-martin-stupf': { name: 'Vorsitz Martin Stupf' }, mark: { name: 'Mark' }, 'mueller-anna': { name: 'Anna Müller' },
+      'gerichtsschreiberin-x': { name: 'Gerichtsschreiberin X. Y' },
+    })).toEqual([
+      'gerichtsschreiberin-x «Gerichtsschreiberin X. Y»: Rollenwort im Namen — Phantom',
+      'mark «Mark»: Einwort-Name — gegen den Spruchkörper sichten',
+      'vorsitz-martin-stupf «Vorsitz Martin Stupf»: Rollenwort im Namen — Phantom',
+    ]);
+  });
+  it('am Bestand: kein Rollenwort in einem der Namen von richter.json (sonst wäre die Regel zu weit)', () => {
+    const r = (JSON.parse(readFileSync('public/rechtsprechung/richter.json', 'utf8')) as { richter: Record<string, { name: string }> }).richter;
+    expect(richterPhantome({}, r).filter((x) => x.includes('Rollenwort'))).toEqual([]);
   });
 });
 
