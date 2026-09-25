@@ -2,7 +2,9 @@
 import { addMonths, addYears, addDays, differenceInCalendarDays, isSaturday, isSunday, parseISO } from 'date-fns';
 import { fristendeTage, fristendeKalender, OHNE_STILLSTAND, type Einheit } from './fristenEngine';
 import { formatDatum, formatISO } from './datumsUtils';
-import { hinweisBedingteFeiertage, istFeiertag } from '../data/zpoFeiertage';
+import {
+  bedingteFeiertageSatz, istFeiertag, strengeLesart, unsichereFeiertageSatz, type FeiertagsLesart,
+} from '../data/zpoFeiertage';
 import { KANTONE } from './kantone';
 import type { Berechnungsergebnis, Kanton, Normverweis, Rechenschritt } from '../types/legal';
 
@@ -169,13 +171,22 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   // RL-24/F1-02: bei Vertragsfristen bleibt der Samstag ein Werktag (Art. 78
   // Abs. 1 OR nennt nur Sonntag und Feiertag; SR 173.110.3 gilt nicht).
   const vertraglich = input.fristart === 'vertraglich';
-  const grundFuer = (d: Date): string | null => {
-    if (input.feiertageVerschieben && input.kanton && istFeiertag(d, input.kanton)) {
+  // Feiertags-Kontext 'allgemein' (RL-22-Nachzug; Art. 78 OR). `lesart` nur für
+  // den Warnvergleich unten (weitest/streng) — dieselbe Schleife, damit der
+  // Hinweis auch bei Vertragsfristen (Samstag = Werktag) das richtige Ende nennt.
+  const grundFuer = (d: Date, lesart: FeiertagsLesart = 'allgemein'): string | null => {
+    if (input.feiertageVerschieben && input.kanton && istFeiertag(d, input.kanton, lesart)) {
       return `gesetzlicher Feiertag (${input.kanton})`;
     }
     if (wochenende && isSunday(d)) return 'Sonntag (Art. 78 Abs. 1 OR)';
     if (wochenende && !vertraglich && isSaturday(d)) return 'Samstag (SR 173.110.3)';
     return null;
+  };
+
+  const verschiebeBis = (lesart: FeiertagsLesart): Date => {
+    let t = roh;
+    for (let guard = 0; guard < 30 && grundFuer(t, lesart); guard++) t = addDays(t, 1);
+    return t;
   };
 
   let ende = roh;
@@ -194,9 +205,13 @@ export function berechneAllgemeineFrist(input: AllgFristInput): AllgFristResult 
   // RL-22-Nachzug: Feiertags-Kontext 'allgemein' (Art. 78 OR; auch StPO-Nutzung
   // ohne eigenen Kontext) — kantonale Sonderfeiertage, die nur für bestimmte
   // Verfahren gelten (NE-Schliesstage, SO 1. Mai), zählen nicht; Warnung, wenn
-  // einer das Fristende verschieben würde.
+  // einer das Fristende verschieben würde. RL-23: ebenso Warnung, wenn ein
+  // unsicher gezählter Tag (GL 2.1.) verschoben hat. Landung Paket 5 mit RL-24:
+  // Vergleich über dieselbe Verschiebe-Schleife (vorher naechsterWerktag, der
+  // bei Vertragsfristen den Samstag übersprang — falsches Ende im Warnsatz).
   const bedingtHinweis = input.feiertageVerschieben && input.kanton
-    ? hinweisBedingteFeiertage(roh, input.kanton)
+    ? bedingteFeiertageSatz(roh, ende, verschiebeBis('weitest'), input.kanton, 'allgemein', 'frueher')
+      ?? unsichereFeiertageSatz([[roh, ende]], ende, verschiebeBis(strengeLesart('allgemein')), input.kanton, 'allgemein', 'frueher')
     : null;
 
   schritte.push({
@@ -481,13 +496,32 @@ export function zustellHinweis(art: ZustellArt, datumISO: string, kanton?: Kanto
     // data/zpoFeiertage in ALLEN Kantonen Feiertag sind (z. B. 1. August) —
     // richtig für jeden Gerichtsort; kantonale Feiertage verschieben nicht
     // (früheres Ergebnis = sichere Seite) und der Hinweis verlangt den Kanton.
-    const feiertag = (x: Date) => kanton ? istFeiertag(x, kanton) : KANTONE.every((k) => istFeiertag(x, k));
+    // Landung Paket 5 (RL-22/22c/23): Feiertags-Kontext 'zpo' — der Hinweis
+    // wendet Art. 142 Abs. 1bis ZPO an, wie zpoFristen (ereignisKorrigiert):
+    // kantonale Tage, die nur für Art. 142 ZPO Feiertag sind (NE LI-CPC Art. 10a,
+    // SO EG ZPO § 22 Abs. 2), zählen; ein unsicher gezählter Tag (GL 2.1.)
+    // zählt mit Warnung und dem früheren Datum ohne ihn (strenge Lesart).
+    const feiertag = (x: Date, lesart: FeiertagsLesart) =>
+      kanton ? istFeiertag(x, kanton, lesart) : KANTONE.every((k) => istFeiertag(x, k, lesart));
+    const frei = (x: Date, lesart: FeiertagsLesart) =>
+      feiertag(x, lesart) ? 'Feiertag' : isSunday(x) ? 'Sonntag' : isSaturday(x) ? 'Samstag' : null;
     for (let g = 0; g < 10; g++) {
-      const frei = feiertag(v) ? 'Feiertag' : isSunday(v) ? 'Sonntag' : isSaturday(v) ? 'Samstag' : null;
-      if (!frei) break;
-      gruende.push(frei);
+      const grund = frei(v, 'zpo');
+      if (!grund) break;
+      gruende.push(grund);
       v = addDays(v, 1);
     }
+    let vStreng = d;
+    for (let g = 0; g < 10 && frei(vStreng, strengeLesart('zpo')); g++) vStreng = addDays(vStreng, 1);
+    const unsichereTage: string[] = [];
+    for (let t = vStreng; +vStreng !== +v && t < v; t = addDays(t, 1)) {
+      if (feiertag(t, 'zpo') && !feiertag(t, strengeLesart('zpo'))) unsichereTage.push(fmt(t));
+    }
+    const unsicher = unsichereTage.length > 0
+      ? `Kantonaler Sonderfall: Der ${unsichereTage.join(', ')} ist hier als Feiertag am Gerichtsort mitgezählt; `
+        + `ob das Gericht ihn anerkennt, ist nicht gesichert. Zählt er nicht, gilt die Mitteilung bereits am ${fmt(vStreng)} als erfolgt – `
+        + 'sicherheitshalber die Frist ab diesem Tag berechnen.'
+      : null;
     return {
       vorschlagISO: iso(v), vorschlagFmt: `${wochentag(v)}, ${fmt(v)}`,
       hinweise: [
@@ -495,6 +529,7 @@ export function zustellHinweis(art: ZustellArt, datumISO: string, kanton?: Kanto
           ? `Zustellung durch gewöhnliche Post (A-Post Plus) an einem ${gruende[0]}: Die Mitteilung gilt erst am nächsten Werktag (${fmt(v)}) als erfolgt (Art. 142 Abs. 1bis ZPO, in Kraft seit 1.1.2025; Feiertage am GERICHTSORT).`
           : 'Zustellung durch gewöhnliche Post an einem Werktag: Es gilt das Zustelldatum (Art. 142 Abs. 1bis ZPO betrifft nur Sa/So/Feiertag).',
         ...(kanton ? [] : ['Ohne Kanton sind nur die in allen Kantonen anerkannten Feiertage berücksichtigt – für kantonale Feiertage am Gerichtsort den Kanton angeben.']),
+        ...(unsicher ? [unsicher] : []),
         'Hinweis, keine verbindliche Zustellberechnung – massgeblich ist der Einzelfall.',
       ],
     };
