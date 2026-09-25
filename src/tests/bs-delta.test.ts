@@ -71,6 +71,27 @@ describe('BS-Delta: Plan Soll (Inventar) ↔ Ist (Korpus)', () => {
     expect(out).toHaveLength(3);
   });
 
+  // Auflage Gegenprüfung #1112: JEDES Listenfeld allein löst «aktualisiert» aus.
+  // Rot-Beweis je Feld: den zugehörigen Vergleich in `abweichungen` entfernen →
+  // genau dieser Fall wird rot.
+  const feldFaelle: Array<[string, Partial<InventarZeile>, RegExp]> = [
+    ['gn', { gn: 'SB.2024.999' }, /^gn /],
+    ['gnSekundaer', { gnSekundaer: 'AG.2026.77' }, /^gnSekundaer /],
+    ['datum', { datum: '2020-02-02' }, /^datum /],
+    ['erstpublikation', { erstpublikation: '2020-03-03' }, /^erstpublikation /],
+    ['titel', { titel: 'geänderter Titel (BGer-Urteil nachgetragen)' }, /^titel$/],
+  ];
+  for (const [feld, aenderung, grund] of feldFaelle) {
+    it(`nur ${feld} geändert ⇒ aktualisiert`, () => {
+      const bestand = bestandBauen();
+      const plan = planeBsDelta(inventar([{ ...zA, ...aenderung }, zB]), bestand);
+      expect(plan.aktualisiert.map((a) => a.z.key)).toEqual([1001]);
+      expect(plan.aktualisiert[0].gruende).toHaveLength(1);
+      expect(plan.aktualisiert[0].gruende[0]).toMatch(grund);
+      expect(plan.unveraendert).toBe(1);
+    });
+  }
+
   it('Takedown: aus dem Inventar verschwundener Key wird entfernt und ausgewiesen', () => {
     const bestand = bestandBauen();
     const plan = planeBsDelta(inventar([zA]), bestand);
