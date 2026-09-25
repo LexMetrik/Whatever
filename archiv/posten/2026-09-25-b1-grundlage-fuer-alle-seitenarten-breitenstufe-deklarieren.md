@@ -13,3 +13,5 @@ Zeichen statt versprochener 66–71 auf /ueber, /methodik, /materialien/deckung)
 für alle Seitenarten anlegen (Vorbild e2e/startseite-breite.e2e.ts). Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
 - **WIP abgelegt 25.9.2026 (Entscheid David: «nur notieren und ablegen»):** erster Startseiten-Schritt der Werkbank-Session (Token `weit` 90rem in `tailwind.config.js`, `inhaltsbreiteFuer` in `Shell.tsx` nur für `/` ab `2xl`, Commit 95395b3e3) liegt als Tag `archiv/w2-29-werkbank-rest-breite-2026-09-25`; der weiter gebaute lokale Stand (Raster ab 2xl + Kantone-Karte-Fix + Wächter 6bb20e2c5, U13-Sweep @1680/@1920 f978200ad, Dach-Reglement «Rahmenbreite content/weit» a610b6566, nie gepusht) als Tag `archiv/w2-29-werkbank-rest-breite-voll-2026-09-25` — Zweig gelöscht. Pfad-Sonderregel ist durch B1 (deklarierte Breitenstufe je Seitenart) überholt; Token-Wert und Messbegründung (973 px/128 Zeichen) wiederverwendbar.
+
+**Erledigt 2026-09-25:** PR #1131
