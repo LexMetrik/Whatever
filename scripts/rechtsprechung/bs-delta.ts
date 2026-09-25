@@ -206,6 +206,14 @@ export async function parseUndSchreibeDelta(inventar: Inventar, datum: string, p
 // ihn setzt), den Spruchkörper und das Dispositiv mit dem Bestand. Abweichungen
 // werden «aktualisiert» (Grund «inhalt: …») und laufen durch denselben Delta-Pfad.
 
+/**
+ * Spruchkörper und Dispositiv werden OHNE Leerraum verglichen: Probe 25.9.2026
+ * (4 Dokumente frisch geholt): sha 4/4 gleich, aber IV.2023.46 «Zalad ,» frisch
+ * gegen «Zalad,» im Bestand — ein Leerzeichen ist keine Inhaltsänderung und
+ * hätte hochgerechnet den Deckel gerissen.
+ */
+const ohneLeerraum = (s: string | null | undefined) => (s ?? '').replace(/\s+/g, '');
+
 /** Mehr Inhalts-Abweichungen als das ist eher Parser-Drift als Portal-Änderung: fail-closed. */
 export const VOLLABGLEICH_DECKEL = 200;
 
@@ -224,8 +232,8 @@ export function ergaenzeInhaltsAbweichungen(
     if (!alt || imPlan.has(z.key)) continue;
     const g: string[] = [];
     if (sha(p) !== alt.sha) g.push('inhalt: sha');
-    if ((p.besetzung ?? null) !== (alt.rubrum?.besetzung ?? null)) g.push('inhalt: besetzung');
-    if (JSON.stringify(p.dispositivOrders ?? []) !== JSON.stringify(alt.dispositivOrders ?? [])) g.push('inhalt: dispositiv');
+    if (ohneLeerraum(p.besetzung) !== ohneLeerraum(alt.rubrum?.besetzung)) g.push('inhalt: besetzung');
+    if (ohneLeerraum((p.dispositivOrders ?? []).join('\u0000')) !== ohneLeerraum((alt.dispositivOrders ?? []).join('\u0000'))) g.push('inhalt: dispositiv');
     if (g.length) dazu.push({ z, alt, gruende: g });
   }
   if (dazu.length > VOLLABGLEICH_DECKEL) {

@@ -344,8 +344,9 @@ describe('13 · BS-Vollabgleich', () => {
   const plan: BsDeltaPlan = { neu: [zeile(9)], aktualisiert: [], unveraendert: 3, takedown: [] };
   const frisch = (key: number, sha: string, besetzung = 'X') => ({ p: { abschnitte: sha as never, besetzung, dispositivOrders: [] }, z: zeile(key) });
   it('Inhalts-Hash, Spruchkörper, Dispositiv: Abweichung ⇒ aktualisiert (Grund inhalt), gleich ⇒ unverändert', () => {
-    const r = ergaenzeInhaltsAbweichungen(plan, [frisch(1, 's1'), frisch(2, 's2-neu'), frisch(3, 's3', 'Y'), frisch(9, 'n')],
-      [snap(1, 's1'), snap(2, 's2'), snap(3, 's3')], (p) => p.abschnitte as unknown as string);
+    const r = ergaenzeInhaltsAbweichungen(plan, [frisch(1, 's1', 'A. Zalad , B'), frisch(2, 's2-neu'), frisch(3, 's3', 'Y'), frisch(9, 'n')],
+      [snap(1, 's1', 'A. Zalad, B'), snap(2, 's2'), snap(3, 's3')], (p) => p.abschnitte as unknown as string);
+    // Leerraum allein ist keine Inhaltsänderung (Probe IV.2023.46, 25.9.2026). Mutation: ohneLeerraum weg ⇒ inhalt 3.
     expect(r.inhalt).toBe(2);
     expect(r.plan.unveraendert).toBe(1);
     expect(r.plan.aktualisiert.map((a) => [a.z.key, a.gruende])).toEqual([[2, ['inhalt: sha']], [3, ['inhalt: besetzung']]]);
