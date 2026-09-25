@@ -99,6 +99,9 @@ function titelText(s: string): string {
 }
 
 /** Fedlex `type-projet/200` = «Botschaft des Bundesrats» (amtliches Vokabular, TYPE_PROJET). */
+/** Amtliche BBl-Fundstellen-Form (M-7). */
+const BBL_FORM = /^BBl \d{4} \d+$/;
+
 export const TYP_BOTSCHAFT = 'https://fedlex.data.admin.ch/vocabulary/type-projet/200';
 
 /**
@@ -123,8 +126,10 @@ export function baueBotschaften(
   bindings: SparqlBinding[],
   meta: ErlassMeta[],
   ereignisseProProj?: Map<string, VerfahrensEreignis[]>,
-  /** M-5: oc → Erlass-Keys aus den Fedlex-Auswirkungen (botschaften-auswirkungen.ts). Fehlt er,
-   *  zählt allein die SR-Klassierung (Pfad A); Pfad-B-Bindungen (ohne sr) fallen dann weg. */
+  /** M-5: oc → Erlass-Keys aus den Fedlex-Auswirkungen (botschaften-auswirkungen.ts). Ergänzt
+   *  normKeys um jeden Korpus-Erlass, den ein oc dieser Botschaft ändert; fehlt er, zählt
+   *  allein die SR-Klassierung. Erreichbar bleiben nur Botschaften, deren oc unter einer
+   *  Korpus-SR klassiert ist (Ausbau auf fremd klassierte oc: offen, Deckel-Entscheid). */
   auswirkungen?: ReadonlyMap<string, ReadonlySet<string>>,
 ): BotschaftEintrag[] {
   const srNachErlass = new Map<string, ErlassMeta>();
@@ -146,21 +151,19 @@ export function baueBotschaften(
     const fga = b.botschaft?.value;
     const sr = b.sr?.value;
     if (!fga) continue;
-    // Pfad A: SR-Klassierung des oc. Pfad B (M-5): Bindung ohne sr = oc unter keiner Korpus-SR
-    // klassiert — nur über die Auswirkungen zuordenbar (unten), sonst verworfen.
-    const erlass = sr ? srNachErlass.get(sr) : undefined;
-    if (sr && !erlass) continue; // SR ausserhalb der Grundmenge → ignorieren
-    if (!sr && !(b.oc?.value && auswirkungen?.has(b.oc.value))) continue;
+    if (!sr) continue;
+    const erlass = srNachErlass.get(sr);
+    if (!erlass) continue; // SR ausserhalb der Grundmenge → ignorieren
     let r = proBotschaft.get(fga);
     if (!r) {
       r = {
         fga, date: b.dateDoc?.value ?? '',
-        de: b.titleDe?.value, fr: b.titleFr?.value, it: b.titleIt?.value, bbl: b.bbl?.value,
+        de: b.titleDe?.value, fr: b.titleFr?.value, it: b.titleIt?.value,
         normKeys: new Set(), ocUris: new Set(), projCuria: new Map(),
       };
       proBotschaft.set(fga, r);
     }
-    if (erlass) r.normKeys.add(erlass.key);
+    r.normKeys.add(erlass.key);
     if (b.oc?.value) r.ocUris.add(b.oc.value);
     if (b.proj?.value && !r.projCuria.has(b.proj.value)) r.projCuria.set(b.proj.value, b.curia?.value ?? '');
     // Skalare: Erst-Bindung gewinnt (pro fga konstant); nur füllen, was fehlt.
@@ -168,7 +171,12 @@ export function baueBotschaften(
     if (!r.de && b.titleDe?.value) r.de = b.titleDe.value;
     if (!r.fr && b.titleFr?.value) r.fr = b.titleFr.value;
     if (!r.it && b.titleIt?.value) r.it = b.titleIt.value;
-    if (!r.bbl && b.bbl?.value) r.bbl = b.bbl.value;
+    // M-7: Fundstelle aus dcterms:identifier der DE-Expression (alle Jahrgänge; seit dem
+    // digitalen BBl 2022 fehlt jolux:historicalLegalId, live 25.9.2026 fga/2025/3067/de),
+    // sonst historicalLegalId. Nur die amtliche Form «BBl JJJJ S» — alles andere keine Aussage.
+    for (const f of [b.bbl?.value, b.bblHist?.value]) {
+      if (!r.bbl && f && BBL_FORM.test(f.trim())) r.bbl = f.trim();
+    }
   }
   // M-5: Auswirkungen der ocUris ergänzen normKeys (nur Keys der Grundmenge).
   if (auswirkungen) {
@@ -179,7 +187,6 @@ export function baueBotschaften(
 
   const out: BotschaftEintrag[] = [];
   for (const r of proBotschaft.values()) {
-    if (!r.normKeys.size) continue; // kein Korpus-Erlass betroffen
     if (!r.date) continue; // ohne Datum kein ehrlicher «stand» → auslassen (Log via CLI)
     const normKeys = [...r.normKeys].sort();
     // Primärer normKey = kleinster rang (Prominenz), Tiebreak key → rechtsgebiet erben (§2, nicht raten).
@@ -212,7 +219,7 @@ export function baueBotschaften(
       rang,
       normKeys,
       hinweis: PROVENIENZ,
-      fundstelle: r.bbl ? titelText(r.bbl) : undefined,
+      fundstelle: r.bbl,
       projEli: projEli || undefined,
       ocUris: r.ocUris.size ? [...r.ocUris].sort() : undefined,
       botschaftDate: iso,
@@ -247,7 +254,7 @@ export function shaBotschaft(e: BotschaftEintrag): string {
 }
 
 // ── SPARQL-Query (eine VALUES-Batch) ────────────────────────────────────────────
-/** Gemeinsamer Kettenrumpf ab ?oc (Pfad A und B): Projekt → Ereignis → Botschaft + Felder.
+/** Kettenrumpf ab ?oc: Projekt → Ereignis → Botschaft + Felder.
  *  `?evType` (M-4) und `?bbl` (M-7) OPTIONAL — gefiltert wird im reinen Parser (testbar). */
 function kettenRumpf(): string {
   return `  ?proj jolux:hasResultingLegalResource ?oc ; jolux:draftHasLegislativeTask ?event .
@@ -259,14 +266,15 @@ function kettenRumpf(): string {
   OPTIONAL { ?botschaft jolux:isRealizedBy ?ede . ?ede jolux:language ${LANG.de} ; jolux:title ?titleDe . }
   OPTIONAL { ?botschaft jolux:isRealizedBy ?efr . ?efr jolux:language ${LANG.fr} ; jolux:title ?titleFr . }
   OPTIONAL { ?botschaft jolux:isRealizedBy ?eit . ?eit jolux:language ${LANG.it} ; jolux:title ?titleIt . }
-  OPTIONAL { ?botschaft jolux:isRealizedBy ?ebb . ?ebb jolux:language ${LANG.de} ; jolux:historicalLegalId ?bbl . }`;
+  OPTIONAL { ?botschaft jolux:isRealizedBy ?ebb . ?ebb jolux:language ${LANG.de} ; <http://purl.org/dc/terms/identifier> ?bbl . }
+  OPTIONAL { ?botschaft jolux:isRealizedBy ?ebh . ?ebh jolux:language ${LANG.de} ; jolux:historicalLegalId ?bblHist . }`;
 }
 
-/** Pfad A: SR (VALUES ?notation) → klassierte oc → Kette. */
+/** SR (VALUES ?notation) → klassierte oc → Kette. */
 export function baueQuery(valuesInline: string): string {
   return `PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-SELECT ?sr ?botschaft ?proj ?oc ?evType ?dateDoc ?curia ?titleDe ?titleFr ?titleIt ?bbl WHERE {
+SELECT ?sr ?botschaft ?proj ?oc ?evType ?dateDoc ?curia ?titleDe ?titleFr ?titleIt ?bbl ?bblHist WHERE {
   VALUES ?notation { ${valuesInline} }
   ?tax skos:notation ?notation . BIND(STR(?notation) AS ?sr)
   ?oc jolux:classifiedByTaxonomyEntry ?tax ; jolux:legalResourceFamilyType <https://fedlex.data.admin.ch/vocabulary/resource-family/oc> .
@@ -274,14 +282,6 @@ ${kettenRumpf()}
 }`;
 }
 
-/** Pfad B (M-5): fremd klassierte oc (VALUES ?oc, aus den Auswirkungen) → Kette. Ohne ?sr. */
-export function baueQueryOc(valuesInline: string): string {
-  return `PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
-SELECT ?botschaft ?proj ?oc ?evType ?dateDoc ?curia ?titleDe ?titleFr ?titleIt ?bbl WHERE {
-  VALUES ?oc { ${valuesInline} }
-${kettenRumpf()}
-}`;
-}
 
 /**
  * Deterministische Ordnung der Roh-Bindings je SR (Befund (f), QS-MONITOR-ROT, 1.9.2026): der
@@ -303,19 +303,9 @@ export async function holeBindings(
   meta: ErlassMeta[],
   fetchImpl: FetchImpl = fetch,
   rawDir?: string,
-  /** M-5 Pfad B: fremd klassierte oc (auswirkungsIndex().fremdOcs); leer = nur Pfad A. */
-  fremdOcs: readonly string[] = [],
 ): Promise<SparqlBinding[]> {
   const werte = meta.map((m) => `"${m.sr}"^^${NOTATION_TYPE}`);
   const bindings = await sparqlBatch(werte, baueQuery, { batchGroesse: 55, fetchImpl });
-  const bindingsB = fremdOcs.length
-    ? await sparqlBatch(fremdOcs.map((oc) => `<${oc}>`), baueQueryOc, { batchGroesse: 55, fetchImpl })
-    : [];
-  if (rawDir) {
-    // store-raw Pfad B (§11): eine Datei, deterministisch sortiert.
-    mkdirSync(rawDir, { recursive: true });
-    writeFileSync(`${rawDir}/_pfad-b-auswirkungen.json`, JSON.stringify(sortiereBindings(bindingsB), null, 2) + '\n', 'utf8');
-  }
   if (rawDir) {
     // store-raw je SR (§11): Bindings nach SR gruppiert deterministisch ablegen → Re-Parse ohne Re-Crawl.
     mkdirSync(rawDir, { recursive: true });
@@ -330,7 +320,7 @@ export async function holeBindings(
       writeFileSync(datei, JSON.stringify(sortiereBindings(bs), null, 2) + '\n', 'utf8');
     }
   }
-  return [...bindings, ...bindingsB];
+  return bindings;
 }
 
 /** Serialisiert die Einträge als generiertes TS-Modul (byte-deterministisch). */

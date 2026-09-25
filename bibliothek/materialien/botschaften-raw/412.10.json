@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 5686"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 5686"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 5686"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 5686"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 5686"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 5686"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio relativo a una nuova legge sulla formazione professionale(Legge sulla formazione professionale, LFPr)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 5686"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2000 5686"
     }
@@ -230,6 +250,11 @@
       "value": "Messaggio sulla promozione dell'educazione, della ricerca e dell'innovazione negli anni 20172020"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 3089"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 3089"
     }
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 3089"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2016 3089"
     }
   },
@@ -324,6 +354,11 @@
       "value": "Messaggio sulla promozione dell'educazione, della ricerca e dell'innovazione negli anni 20172020"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 3089"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 3089"
     }
@@ -369,6 +404,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla promozione dell’educazione, della ricerca e dell’innovazione negli anni 2025–2028"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 900"
     }
   }
 ]

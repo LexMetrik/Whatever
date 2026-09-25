@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2393"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 2393"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2393"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 2393"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la modifica della legge sugli agenti terapeutici (Preparati ospedalieri)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2393"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 2393"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge sugli agenti terapeutici "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 1"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 1"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 1"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge sugli agenti terapeutici "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 1"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 1"
     }
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente la modifica della legge sugli agenti terapeutici (nuovo disciplinamento dei dispositivi medici)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 1"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 1"
     }
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 1"
     }
   },
@@ -418,6 +458,11 @@
       "value": "Messaggio concernente la modifica della legge sugli agenti terapeutici (nuovo disciplinamento dei dispositivi medici)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 1"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 1"
     }

@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 4340"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 4340"
     }
   },
@@ -137,99 +147,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2002 4340"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2002/672"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/2734"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2004/621"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-05-01"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "02.035"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "* Botschaft betreffend das Zusatzprotokoll zum Übereinkommen des Europarats über die Überstellung verurteilter Personen und die Änderung des Rechtshilfegesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif au Protocole additionnel à la Convention du Conseil de l'Europe sur le transfèrement des personnes condamnées et à une modification de la loi sur l'entraide pénale internationale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2002 4340"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2002/672"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/2734"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2004/621"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-05-01"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "02.035"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "* Botschaft betreffend das Zusatzprotokoll zum Übereinkommen des Europarats über die Überstellung verurteilter Personen und die Änderung des Rechtshilfegesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif au Protocole additionnel à la Convention du Conseil de l'Europe sur le transfèrement des personnes condamnées et à une modification de la loi sur l'entraide pénale internationale"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 4340"
     }
@@ -278,6 +199,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2002/672"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/2734"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2004/621"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-05-01"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "02.035"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "* Botschaft betreffend das Zusatzprotokoll zum Übereinkommen des Europarats über die Überstellung verurteilter Personen und die Änderung des Rechtshilfegesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif au Protocole additionnel à la Convention du Conseil de l'Europe sur le transfèrement des personnes condamnées et à une modification de la loi sur l'entraide pénale internationale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2002/672"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/2734"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2004/621"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-05-01"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "02.035"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "* Botschaft betreffend das Zusatzprotokoll zum Übereinkommen des Europarats über die Überstellung verurteilter Personen und die Änderung des Rechtshilfegesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif au Protocole additionnel à la Convention du Conseil de l'Europe sur le transfèrement des personnes condamnées et à une modification de la loi sur l'entraide pénale internationale"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 4340"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 7413"
     }
   },
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 7413"
     }
   },
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 7413"
     }
   },
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 7413"
     }

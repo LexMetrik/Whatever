@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 2151"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 2151"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 2151"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 2151"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la revisione parziale della legge federale sulla protezione della natura e del paesaggio (LPN)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 2151"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2005 2151"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente l'approvazione del Protocollo di Nagoya  sull'accesso alle risorse genetiche e la giusta ed equacondivisione dei benefici derivanti dalla loro utilizzazione (Protocollo di Nagoya) e la sua attuazione (legge federale sulla protezione della natura e del paesaggio) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 3009"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 3009"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 3009"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 3009"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente l'approvazione del Protocollo di Nagoya  sull'accesso alle risorse genetiche e la giusta ed equacondivisione dei benefici derivanti dalla loro utilizzazione (Protocollo di Nagoya) e la sua attuazione (legge federale sulla protezione della natura e del paesaggio) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 3009"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 3009"
     }

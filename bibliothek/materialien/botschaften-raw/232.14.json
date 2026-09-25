@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 3773"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 3773"
     }
   },
@@ -137,99 +147,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2005 3773"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "232.14"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/556"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/0593"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-05-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.040"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung von zwei Abkommen betreffend das europäische Patentsystem und über die Änderung des Patentgesetzes "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'approbation de deux traités relatifs au système du brevet européen et la modification de la loi sur les brevets"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2005 3773"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "232.14"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/556"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/0593"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-05-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.040"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung von zwei Abkommen betreffend das europäische Patentsystem und über die Änderung des Patentgesetzes "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'approbation de deux traités relatifs au système du brevet européen et la modification de la loi sur les brevets"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2005 3773"
     }
@@ -278,6 +199,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "232.14"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/556"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/0593"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-05-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.040"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung von zwei Abkommen betreffend das europäische Patentsystem und über die Änderung des Patentgesetzes "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'approbation de deux traités relatifs au système du brevet européen et la modification de la loi sur les brevets"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "232.14"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/556"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/0593"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-05-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.040"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung von zwei Abkommen betreffend das europäische Patentsystem und über die Änderung des Patentgesetzes "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'approbation de deux traités relatifs au système du brevet européen et la modification de la loi sur les brevets"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 3773"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 1"
     }
   },
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 1"
     }
   },
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 1"
     }
   },
@@ -466,6 +511,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 1"
     }
   },
@@ -513,6 +563,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 1"
     }
   },
@@ -559,6 +614,11 @@
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2006 1"
     }
@@ -606,6 +666,11 @@
       "value": "Messaggio sulla modifica della legge sui brevetti (Scelta del sistema di esaurimento nel diritto dei brevetti) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 303"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2008 303"
     }
@@ -654,6 +719,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 303"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2008 303"
     }
   },
@@ -700,6 +770,11 @@
       "value": "Messaggio sulla modifica della legge sui brevetti (Scelta del sistema di esaurimento nel diritto dei brevetti) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 303"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2008 303"
     }
@@ -745,6 +820,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 7"
     }
   }
 ]

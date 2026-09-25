@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 5839"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 5839"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 5839"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 5839"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio relativo alla legge federale sulla proroga del decreto federale concernente la prescrizione medica di eroina"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 5839"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 5839"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge sugli stupefacenti (sperimentazioni pilota con canapa)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 2529"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 2529"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 2529"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 2529"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge sugli stupefacenti (sperimentazioni pilota con canapa)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 2529"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 2529"
     }
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente la modifica della legge sugli stupefacenti (Medicamenti a base di canapa)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 6069"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 6069"
     }
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente la modifica della legge sugli stupefacenti (Medicamenti a base di canapa)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 6069"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 6069"
     }

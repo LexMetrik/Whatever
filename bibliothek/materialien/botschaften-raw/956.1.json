@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 2829"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 2829"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 2829"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 2829"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 2829"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 2829"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio sulla legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LAUFIN)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 2829"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2006 2829"
     }

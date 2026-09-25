@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 2022"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 2022"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 2022"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 2022"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la revisione della legge sui cartelli"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 2022"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 2022"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente l'approvazione dell'Accordo tra la Confederazione Svizzera e l'Unione europea concernente la cooperazione in merito all'applicazione dei rispettivi diritti della concorrenza "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 3959"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 3959"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 3959"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 3959"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente l'approvazione dell'Accordo tra la Confederazione Svizzera e l'Unione europea concernente la cooperazione in merito all'applicazione dei rispettivi diritti della concorrenza "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 3959"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 3959"
     }
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente l'iniziativa popolare «Stop all'isola dei prezzi elevati  per prezzi equi (Iniziativa per prezzi equi)» e il controprogetto indiretto (modifica della legge sui cartelli)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 4877"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 4877"
     }
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente l'iniziativa popolare «Stop all'isola dei prezzi elevati  per prezzi equi (Iniziativa per prezzi equi)» e il controprogetto indiretto (modifica della legge sui cartelli)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 4877"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 4877"
     }

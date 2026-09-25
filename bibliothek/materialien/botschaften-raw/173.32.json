@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4202"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2001 4202"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4202"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2001 4202"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4202"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2001 4202"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4202"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2001 4202"
     }

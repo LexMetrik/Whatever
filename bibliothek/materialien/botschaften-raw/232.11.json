@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8533"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 8533"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8533"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 8533"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la modifica della legge sulla protezione dei marchi e una legge federale sulla protezione dello stemma della Svizzera e di altri segni pubblici (Progetto «Swissness»)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8533"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 8533"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero (modifica della legge sulla protezione dei marchi) dell'Atto di Ginevra dell'Accordo di Lisbona sulle denominazioni d'origine e le indicazioni geografiche"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 5827"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 5827"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 5827"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 5827"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero (modifica della legge sulla protezione dei marchi) dell'Atto di Ginevra dell'Accordo di Lisbona sulle denominazioni d'origine e le indicazioni geografiche"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 5827"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 5827"
     }

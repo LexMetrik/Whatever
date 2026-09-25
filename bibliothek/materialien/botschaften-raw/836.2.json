@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6101"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 6101"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6101"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 6101"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la modifica della legge federale sugli assegni familiari (Creazione di un registro degli assegni familiari)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6101"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 6101"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge sugli assegni familiari"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 1019"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 1019"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 1019"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 1019"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge sugli assegni familiari"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 1019"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 1019"
     }
@@ -322,6 +352,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sugli assegni familiari"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 1469"
     }
   }
 ]

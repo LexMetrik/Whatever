@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 1288"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 1288"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 1288"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 1288"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 1288"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 1288"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la legge federale sull'unione domestica registrata di coppie omosessuali"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 1288"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2003 1288"
     }

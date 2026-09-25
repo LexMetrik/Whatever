@@ -31,24 +31,12 @@ export interface AuswirkungsQuelle {
   /** Erlass-Key (= Dateiname im store-raw). */
   key: string;
   auswirkungen: ReadonlyArray<{ oc: string; typ: number }>;
-  /** oc, die Fedlex unter der SR DIESES Erlasses klassiert (Pfad (b), `bBindings[].oc`). */
-  klassiert: ReadonlyArray<string>;
 }
 
-/**
- * REIN (§2): oc → Erlass-Keys (nur Rechtsetzungs-Typen) und die «fremd klassierten» oc —
- * jene, die Korpus-Erlasse ändern, aber unter KEINER Korpus-SR klassiert sind. Nur für diese
- * braucht der Generator die zweite SPARQL-Kette (Pfad B, oc → Projekt → Botschaft); alle
- * übrigen erreicht bereits Pfad A über die SR-Klassierung.
- */
-export function auswirkungsIndex(quellen: ReadonlyArray<AuswirkungsQuelle>): {
-  index: Map<string, Set<string>>;
-  fremdOcs: string[];
-} {
+/** REIN (§2): oc → Erlass-Keys, nur Rechtsetzungs-Typen. */
+export function auswirkungsIndex(quellen: ReadonlyArray<AuswirkungsQuelle>): Map<string, Set<string>> {
   const index = new Map<string, Set<string>>();
-  const klassiert = new Set<string>();
   for (const q of quellen) {
-    for (const oc of q.klassiert) klassiert.add(oc);
     for (const a of q.auswirkungen) {
       if (!RECHTSETZUNGS_TYPEN.has(a.typ)) continue;
       let s = index.get(a.oc);
@@ -56,8 +44,7 @@ export function auswirkungsIndex(quellen: ReadonlyArray<AuswirkungsQuelle>): {
       s.add(q.key);
     }
   }
-  const fremdOcs = [...index.keys()].filter((oc) => !klassiert.has(oc)).sort();
-  return { index, fremdOcs };
+  return index;
 }
 
 /** Liest den committeten store-raw (Netz-frei). Fehlt er oder ein Erlass darin: leer —
@@ -69,13 +56,11 @@ export function ladeAuswirkungsQuellen(keys: ReadonlyArray<string>, dir = REVISI
   for (const key of [...keys].sort()) {
     if (!vorhanden.has(key)) continue;
     const raw = JSON.parse(readFileSync(`${dir}/${key}.json`, 'utf8')) as {
-      bBindings?: Array<{ oc?: { value: string } }>;
       kontext?: { auswirkungen?: Array<{ oc: string; typ: number }> } | null;
     };
     out.push({
       key,
       auswirkungen: (raw.kontext?.auswirkungen ?? []).map((a) => ({ oc: a.oc, typ: a.typ })),
-      klassiert: (raw.bBindings ?? []).map((b) => b.oc?.value).filter((v): v is string => !!v),
     });
   }
   return out;

@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7221"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 7221"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7221"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 7221"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente il Codice di diritto processuale civile svizzero (CPC)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7221"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2006 7221"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente il decreto federale sull'approvazione e l'attuazione della revisione della Convenzione di Lugano concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 1777"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 1777"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 1777"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 1777"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente il decreto federale sull'approvazione e l'attuazione della revisione della Convenzione di Lugano concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 1777"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 1777"
     }
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente la modifica del Codice di diritto processuale civile svizzero (Migliorare la praticabilità e l'applicazione del diritto)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 2697"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 2697"
     }
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente la modifica del Codice di diritto processuale civile svizzero (Migliorare la praticabilità e l'applicazione del diritto)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 2697"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 2697"
     }

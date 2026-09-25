@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4397"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 4397"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4397"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 4397"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4397"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 4397"
     }
   },
@@ -184,6 +199,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 3789"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 3789"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 3789"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 3789"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 3789"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 3789"
     }
   },
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente una legge sulla sorveglianza delle imprese di assicurazione (legge sulla sorveglianza degli assicuratori [LSA]) e la modifica della legge federale sul contratto d'assicurazione"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 3789"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2003 3789"
     }
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente la modifica della legge sulla sorveglianza degli assicuratori (LSA)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 8967"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 8967"
     }
@@ -418,6 +458,11 @@
       "value": "Messaggio concernente la modifica della legge sulla sorveglianza degli assicuratori (LSA)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 8967"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 8967"
     }

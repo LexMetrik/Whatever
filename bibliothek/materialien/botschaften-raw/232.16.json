@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4155"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4155"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4155"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4155"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente l'approvazione della Convenzione internazionale riveduta per la protezione delle novità vegetali e la modifica della legge federale sulla protezione delle novità vegetali"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4155"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2004 4155"
     }

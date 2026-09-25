@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 803"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 803"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 803"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 803"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente l'adeguamento dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA; revisione dell'allegato)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 803"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 803"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla parte generale del diritto delle assicurazioni sociali"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1607"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 1607"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1607"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 1607"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla parte generale del diritto delle assicurazioni sociali"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1607"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 1607"
     }

@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 9005"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 9005"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 9005"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 9005"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 9005"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 9005"
     }
   },
@@ -184,6 +199,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 1911"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 1911"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 1911"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 1911"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 1911"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 1911"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2825"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2825"
     }
   },
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2825"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2825"
     }
   },
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2825"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2825"
     }
   },
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente la revisione totale della legge federale sulla cittadinanza svizzera (Legge sulla cittadinanza, LCit)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2825"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2011 2825"
     }

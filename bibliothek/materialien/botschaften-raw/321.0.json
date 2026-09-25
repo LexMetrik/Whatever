@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 7859"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 7859"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 7859"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 7859"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la revisione del Codice penale militare (Ordinamento disciplinare)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 7859"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 7859"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica del Codice penale militare e della Procedura penale militare (Modifiche in seguito alla revisione della parte generale del CPM e altri adeguamenti)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 8353"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 8353"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 8353"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 8353"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica del Codice penale militare e della Procedura penale militare (Modifiche in seguito alla revisione della parte generale del CPM e altri adeguamenti)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 8353"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 8353"
     }

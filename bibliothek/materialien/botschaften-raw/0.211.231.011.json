@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2595"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 2595"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2595"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 2595"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2595"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 2595"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente l'attuazione delle convenzioni sul rapimento internazionale di minori nonché l'approvazione e l'attuazione delle Convenzioni dell'Aia sulla protezione dei minori e degli adulti"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2595"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 2595"
     }

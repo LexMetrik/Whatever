@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 3389"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 3389"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 3389"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 3389"
     }
   },
@@ -137,99 +147,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2006 3389"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "231.1"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/359"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2770"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/357"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-03-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "06.031"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und zur Änderung des Urheberrechtsgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'arrêté fédéral relatif à l'approbation de deux traités de l'Organisation Mondiale de la Propriété Intellectuelle et concernant la modification de la loi sur le droit d'auteur"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente il decreto federale che approva due trattati dell'Organizzazione mondiale della Proprietà Intellettuale e la modifica della legge sul diritto d'autore"
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2006 3389"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "231.1"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/359"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2770"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/357"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-03-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "06.031"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und zur Änderung des Urheberrechtsgesetzes"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'arrêté fédéral relatif à l'approbation de deux traités de l'Organisation Mondiale de la Propriété Intellectuelle et concernant la modification de la loi sur le droit d'auteur"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente il decreto federale che approva due trattati dell'Organizzazione mondiale della Proprietà Intellettuale e la modifica della legge sul diritto d'autore"
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2006 3389"
     }
@@ -278,6 +199,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 3389"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 3389"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "231.1"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/359"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2770"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/357"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-03-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "06.031"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und zur Änderung des Urheberrechtsgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'arrêté fédéral relatif à l'approbation de deux traités de l'Organisation Mondiale de la Propriété Intellectuelle et concernant la modification de la loi sur le droit d'auteur"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente il decreto federale che approva due trattati dell'Organizzazione mondiale della Proprietà Intellettuale e la modifica della legge sul diritto d'autore"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 3389"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 3389"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "231.1"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/359"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/2770"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/357"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-03-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "06.031"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und zur Änderung des Urheberrechtsgesetzes"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'arrêté fédéral relatif à l'approbation de deux traités de l'Organisation Mondiale de la Propriété Intellectuelle et concernant la modification de la loi sur le droit d'auteur"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente il decreto federale che approva due trattati dell'Organizzazione mondiale della Proprietà Intellettuale e la modifica della legge sul diritto d'autore"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 3389"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 3389"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 591"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 591"
     }
   },
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 591"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 591"
     }
   },
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 591"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 591"
     }
   },
@@ -466,6 +511,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 591"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 591"
     }
   },
@@ -513,6 +563,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 591"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 591"
     }
   },
@@ -559,6 +614,11 @@
       "value": "Messaggio concernente la modifica della legge sul diritto d'autore nonché l'approvazione e l'attuazione di due trattati dell'Organizzazione mondiale della proprietà intellettuale"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 591"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 591"
     }

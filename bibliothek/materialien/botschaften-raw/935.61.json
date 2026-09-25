@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6013"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6013"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6013"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6013"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6013"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6013"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la legge federale sulla libera circolazione degli avvocati (Legge sugli avvocati, LLCA) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6013"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 1999 6013"
     }
@@ -230,6 +250,11 @@
       "value": "Messaggio relativo alla modifica della legge federale sulla libera circolazione degli avvocati"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 2637"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 2637"
     }
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 2637"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 2637"
     }
   },
@@ -324,6 +354,11 @@
       "value": "Messaggio relativo alla modifica della legge federale sulla libera circolazione degli avvocati"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 2637"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 2637"
     }
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla libera circolazione degli avvocati"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6621"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2005 6621"
     }
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6621"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 6621"
     }
   },
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla libera circolazione degli avvocati"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6621"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2005 6621"
     }
@@ -510,6 +560,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’approvazione dell’Accordo tra la Svizzera e il Regno Unito sul riconoscimento delle qualifiche professionali e la sua trasposizione (modifica della legge sugli avvocati) nonché la delega al Consiglio federale della competenza di concludere trattati internazionali sul riconoscimento delle qualifiche professionali nei campi d’applicazione della legge sulle professioni mediche, della legge sulle professioni sanitarie, della legge sugli avvocati e della legge sulle professioni psicologiche"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 460"
     }
   }
 ]

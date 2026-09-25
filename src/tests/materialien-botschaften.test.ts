@@ -199,33 +199,29 @@ describe('M-4 — nur type-projet/200 begründet Projekt → Botschaft', () => {
 // M-5 — Reproduktion am main 59078ae8c: BOTSCHAFT-2019-1847 (19.043, missbräuchlicher Konkurs)
 // nur unter OR, obwohl AS 2023 628 laut Fedlex-Rechtsanalyse («Auswirkungen», revisionen-raw)
 // auch SchKG und StGB ändert — Fedlex klassiert den oc nur unter SR 220. Die Auswirkungen
-// ergänzen normKeys; ein oc, der unter KEINER Korpus-SR klassiert ist (Pfad B, Bindung ohne
-// sr), wird allein über die Auswirkungen zugeordnet.
+// ergänzen normKeys. Bindungen ohne sr (oc unter keiner Korpus-SR klassiert) bleiben verworfen.
 describe('M-5 — normKeys aus den Fedlex-Auswirkungen des ändernden Erlasses', () => {
   const fga = 'https://fedlex.data.admin.ch/eli/fga/2019/1847';
   const ocA = 'https://fedlex.data.admin.ch/eli/oc/2023/628';
-  const ocB = 'https://fedlex.data.admin.ch/eli/oc/2099/1';
-  const idx = new Map<string, Set<string>>([[ocA, new Set(['OR', 'SCHKG', 'STGB'])], [ocB, new Set(['BV'])]]);
-  it('Pfad A (SR-Klassierung) + Auswirkungen ⇒ OR, SCHKG, STGB', () => {
-    const out = baueBotschaften([
-      bind({ sr: '220', botschaft: fga, proj: 'p1', oc: ocA, evType: TYP(200), dateDoc: '2019-06-26', curia: '19.043', titleDe: 'Missbräuchlicher Konkurs' }),
-    ], META_W2, undefined, idx);
-    expect(out[0].normKeys).toEqual(['OR', 'SCHKG', 'STGB']);
+  const idx = new Map<string, Set<string>>([[ocA, new Set(['OR', 'SCHKG', 'STGB', 'NICHT-IM-KORPUS'])]]);
+  const b = bind({ sr: '220', botschaft: fga, proj: 'p1', oc: ocA, evType: TYP(200), dateDoc: '2019-06-26', curia: '19.043', titleDe: 'Missbräuchlicher Konkurs' });
+  it('SR-Klassierung + Auswirkungen ⇒ OR, SCHKG, STGB (nur Keys der Grundmenge)', () => {
+    expect(baueBotschaften([b], META_W2, undefined, idx)[0].normKeys).toEqual(['OR', 'SCHKG', 'STGB']);
   });
-  it('Pfad B (ohne sr) wird nur über die Auswirkungen zugeordnet; ohne Index-Treffer verworfen', () => {
-    const b = bind({ botschaft: 'https://fedlex.data.admin.ch/eli/fga/2099/5', proj: 'p2', oc: ocB, evType: TYP(200), dateDoc: '2099-01-01', titleDe: 'Y' });
-    expect(baueBotschaften([b], META_W2, undefined, idx)[0].normKeys).toEqual(['BV']);
-    expect(baueBotschaften([b], META_W2, undefined, new Map())).toHaveLength(0);
-    expect(baueBotschaften([b], META_W2)).toHaveLength(0);
+  it('ohne Index bleibt es bei der SR-Klassierung', () => {
+    expect(baueBotschaften([b], META_W2)[0].normKeys).toEqual(['OR']);
   });
-  it('auswirkungsIndex: nur Rechtsetzungs-Typen, fremdOcs = Index minus Korpus-klassierte oc', () => {
+  it('Bindung ohne sr wird verworfen, auch wenn ihr oc im Index steht', () => {
+    const ohneSr = bind({ botschaft: fga, proj: 'p1', oc: ocA, evType: TYP(200), dateDoc: '2019-06-26', titleDe: 'X' });
+    expect(baueBotschaften([ohneSr], META_W2, undefined, idx)).toHaveLength(0);
+  });
+  it('auswirkungsIndex: nur Rechtsetzungs-Typen (1/2/5/7/27/30), nie 3/6/9/12', () => {
     const r = auswirkungsIndex([
-      { key: 'SCHKG', auswirkungen: [{ oc: ocA, typ: 1 }, { oc: 'x/12', typ: 12 }, { oc: 'x/6', typ: 6 }], klassiert: [] },
-      { key: 'OR', auswirkungen: [{ oc: ocA, typ: 1 }, { oc: ocB, typ: 2 }], klassiert: [ocA] },
+      { key: 'SCHKG', auswirkungen: [{ oc: ocA, typ: 1 }, { oc: 'x/12', typ: 12 }, { oc: 'x/6', typ: 6 }, { oc: 'x/3', typ: 3 }, { oc: 'x/9', typ: 9 }] },
+      { key: 'OR', auswirkungen: [{ oc: ocA, typ: 1 }, { oc: 'x/27', typ: 27 }] },
     ]);
-    expect([...r.index.keys()].sort()).toEqual([ocB, ocA].sort());
-    expect([...r.index.get(ocA)!].sort()).toEqual(['OR', 'SCHKG']);
-    expect(r.fremdOcs).toEqual([ocB]);
+    expect([...r.keys()].sort()).toEqual([ocA, 'x/27'].sort());
+    expect([...r.get(ocA)!].sort()).toEqual(['OR', 'SCHKG']);
   });
 });
 
@@ -242,9 +238,10 @@ describe('M-7 — BBl-Fundstelle', () => {
 
 describe('BOTSCHAFTEN (committet) — Befunde M-4/M-5/M-7 behoben', () => {
   const patg = BOTSCHAFTEN.find((b) => b.key === 'BOTSCHAFT-2006-1');
-  it('M-4: PatG-Botschaft 05.082, nur PATG', () => {
+  it('M-4: PatG-Botschaft 05.082, unter PATG, nicht mehr unter BV', () => {
     expect(patg?.nummer).toBe('05.082');
-    expect(patg?.normKeys).toEqual(['PATG']);
+    expect(patg?.normKeys).toContain('PATG');
+    expect(patg?.normKeys).not.toContain('BV');
   });
   it('M-5: 19.043 unter OR, SCHKG und STGB', () => {
     expect(BOTSCHAFTEN.find((b) => b.key === 'BOTSCHAFT-2019-1847')?.normKeys).toEqual(expect.arrayContaining(['OR', 'SCHKG', 'STGB']));

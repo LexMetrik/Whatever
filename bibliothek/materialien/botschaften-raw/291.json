@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 9315"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 9315"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 9315"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 9315"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la legge sui titoli contabili e la Convenzione dell'Aia sugli strumenti finanziari "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 9315"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2006 9315"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 11: Fallimento e concordato)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 4125"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 4125"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 4125"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2017 4125"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 11: Fallimento e concordato)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 4125"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 4125"
     }
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 12: Arbitrato internazionale)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 7163"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 7163"
     }
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 7163"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 7163"
     }
   },
@@ -418,6 +458,11 @@
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 12: Arbitrato internazionale)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 7163"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 7163"
     }
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Diritto successorio)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 3309"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 3309"
     }
@@ -512,6 +562,11 @@
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Diritto successorio)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 3309"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 3309"
     }
@@ -557,6 +612,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’approvazione e l’attuazione della Convenzione dell’Aia sugli accordi di scelta del foro"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 1460"
     }
   },
   {
@@ -600,6 +660,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il decreto federale sull’impiego dei mezzi di comunicazione elettronici nei procedimenti civili transfrontalieri"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 792"
     }
   }
 ]

@@ -40,6 +40,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale e del diritto penale minorile (Pacchetto di misure: esecuzione delle sanzioni)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 2991"
     }
   }
 ]

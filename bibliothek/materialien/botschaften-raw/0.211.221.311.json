@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5795"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 5795"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5795"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 5795"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5795"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 5795"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la Convenzione dell'Aia del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale, nonché la legge federale relativa a tale Convenzione e a provvedimenti per la protezione del minore nelle adozioni internazionali "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5795"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 1999 5795"
     }

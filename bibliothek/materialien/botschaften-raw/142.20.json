@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -184,6 +199,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4963"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2001 4963"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4963"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2001 4963"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4963"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2001 4963"
     }
   },
@@ -325,99 +355,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2002 3709"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2002/541"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0232"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2007/758"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-03-08"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "02.024"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "* Botschaft zum Bundesgesetz über die Ausländerinnen und Ausländer"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi sur les étrangers"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio relativo alla legge federale sugli stranieri"
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2002 3709"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2002/541"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0232"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2007/758"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-03-08"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "02.024"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "* Botschaft zum Bundesgesetz über die Ausländerinnen und Ausländer"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi sur les étrangers"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio relativo alla legge federale sugli stranieri"
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2002 3709"
     }
@@ -466,6 +407,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3709"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3709"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2002/541"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0232"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2007/758"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-03-08"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "02.024"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "* Botschaft zum Bundesgesetz über die Ausländerinnen und Ausländer"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi sur les étrangers"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo alla legge federale sugli stranieri"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3709"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3709"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2002/541"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2002/0232"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2007/758"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-03-08"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "02.024"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "* Botschaft zum Bundesgesetz über die Ausländerinnen und Ausländer"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi sur les étrangers"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo alla legge federale sugli stranieri"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3709"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 3709"
     }
   },
@@ -513,6 +563,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 5615"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 5615"
     }
   },
@@ -560,6 +615,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 5615"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 5615"
     }
   },
@@ -607,6 +667,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 5615"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 5615"
     }
   },
@@ -654,6 +719,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5891"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5891"
     }
   },
@@ -701,6 +771,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5891"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5891"
     }
   },
@@ -748,6 +823,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5891"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5891"
     }
   },
@@ -795,6 +875,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7759"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 7759"
     }
   },
@@ -842,6 +927,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7759"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 7759"
     }
   },
@@ -889,6 +979,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7759"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 7759"
     }
   },
@@ -936,6 +1031,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 7937"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 7937"
     }
   },
@@ -983,6 +1083,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 7937"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 7937"
     }
   },
@@ -1030,99 +1135,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2007 7937"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2007/1048"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/779"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-10-24"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "07.083"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und zu den Änderun-gen im Ausländer- und Asylrecht zur vollständigen Umsetzung des bereits übernommenen Schengen- und Dublin-Besitzstands (Ergänzungen) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message portant approbation et mise en uvre de l'échange de notes entre la Suisse et l'Union européenne concernant la reprise du code frontières Schengen (développement de l'acquis de Schengen) et relatif aux modifications du droit des étrangers et du droit de l'asile en vue de la mise en uvre totale de l'acquis de Schengen et Dublin déjà repris (complé-ments) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio relativo al decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del codice frontiere Schengen (sviluppo dell'acquis di Schengen) e le modifiche nel diritto in materia di stranieri e di asilo per la trasposizione completa dell'acquis di Schengen e di Dublino (com-plementi)"
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2007 7937"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2007/1048"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/779"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-10-24"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "07.083"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und zu den Änderun-gen im Ausländer- und Asylrecht zur vollständigen Umsetzung des bereits übernommenen Schengen- und Dublin-Besitzstands (Ergänzungen) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message portant approbation et mise en uvre de l'échange de notes entre la Suisse et l'Union européenne concernant la reprise du code frontières Schengen (développement de l'acquis de Schengen) et relatif aux modifications du droit des étrangers et du droit de l'asile en vue de la mise en uvre totale de l'acquis de Schengen et Dublin déjà repris (complé-ments) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio relativo al decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del codice frontiere Schengen (sviluppo dell'acquis di Schengen) e le modifiche nel diritto in materia di stranieri e di asilo per la trasposizione completa dell'acquis di Schengen e di Dublino (com-plementi)"
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 7937"
     }
@@ -1171,6 +1187,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 7937"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 7937"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2007/1048"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/779"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-10-24"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "07.083"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und zu den Änderun-gen im Ausländer- und Asylrecht zur vollständigen Umsetzung des bereits übernommenen Schengen- und Dublin-Besitzstands (Ergänzungen) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message portant approbation et mise en uvre de l'échange de notes entre la Suisse et l'Union européenne concernant la reprise du code frontières Schengen (développement de l'acquis de Schengen) et relatif aux modifications du droit des étrangers et du droit de l'asile en vue de la mise en uvre totale de l'acquis de Schengen et Dublin déjà repris (complé-ments) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo al decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del codice frontiere Schengen (sviluppo dell'acquis di Schengen) e le modifiche nel diritto in materia di stranieri e di asilo per la trasposizione completa dell'acquis di Schengen e di Dublino (com-plementi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 7937"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 7937"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1287"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2007/1048"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/779"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-10-24"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "07.083"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und zu den Änderun-gen im Ausländer- und Asylrecht zur vollständigen Umsetzung des bereits übernommenen Schengen- und Dublin-Besitzstands (Ergänzungen) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message portant approbation et mise en uvre de l'échange de notes entre la Suisse et l'Union européenne concernant la reprise du code frontières Schengen (développement de l'acquis de Schengen) et relatif aux modifications du droit des étrangers et du droit de l'asile en vue de la mise en uvre totale de l'acquis de Schengen et Dublin déjà repris (complé-ments) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo al decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del codice frontiere Schengen (sviluppo dell'acquis di Schengen) e le modifiche nel diritto in materia di stranieri e di asilo per la trasposizione completa dell'acquis di Schengen e di Dublino (com-plementi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 7937"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 7937"
     }
   },
@@ -1218,6 +1343,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 4245"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 4245"
     }
   },
@@ -1265,6 +1395,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 4245"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 4245"
     }
   },
@@ -1312,6 +1447,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 4245"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 4245"
     }
   },
@@ -1359,6 +1499,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6749"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 6749"
     }
   },
@@ -1406,6 +1551,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6749"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 6749"
     }
   },
@@ -1453,6 +1603,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6749"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 6749"
     }
   },
@@ -1500,6 +1655,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8881"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 8881"
     }
   },
@@ -1547,6 +1707,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8881"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 8881"
     }
   },
@@ -1594,99 +1759,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2009 8881"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2009/1572"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/848"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-11-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "09.087"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) und über eine Änderung des Bundesgesetzes über die Ausländerinnen und  Ausländer (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la CE concernant la reprise de la directive CE sur le retour (directive 2008/115/CE) développement de l'acquis de Schengen) et sur une modification de la loi fédérale sur les étrangers (contrôle automatisé aux frontières, conseillers en matière de documents, système d'information MIDES) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e la CE relativo al recepimento della direttiva della CE sul rimpatrio (Direttiva 2008/115/CE)  (Sviluppo dell'acquis di Schengen) e concernente una modifica della legge federale sugli stranieri (Controllo di confine automatizzato, consulenti in materia di documenti, sistema d'informazione MIDES) "
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2009 8881"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2009/1572"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/848"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-11-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "09.087"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) und über eine Änderung des Bundesgesetzes über die Ausländerinnen und  Ausländer (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la CE concernant la reprise de la directive CE sur le retour (directive 2008/115/CE) développement de l'acquis de Schengen) et sur une modification de la loi fédérale sur les étrangers (contrôle automatisé aux frontières, conseillers en matière de documents, système d'information MIDES) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e la CE relativo al recepimento della direttiva della CE sul rimpatrio (Direttiva 2008/115/CE)  (Sviluppo dell'acquis di Schengen) e concernente una modifica della legge federale sugli stranieri (Controllo di confine automatizzato, consulenti in materia di documenti, sistema d'informazione MIDES) "
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 8881"
     }
@@ -1735,6 +1811,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8881"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2009 8881"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2009/1572"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/848"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-11-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "09.087"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) und über eine Änderung des Bundesgesetzes über die Ausländerinnen und  Ausländer (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la CE concernant la reprise de la directive CE sur le retour (directive 2008/115/CE) développement de l'acquis de Schengen) et sur une modification de la loi fédérale sur les étrangers (contrôle automatisé aux frontières, conseillers en matière de documents, système d'information MIDES) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e la CE relativo al recepimento della direttiva della CE sul rimpatrio (Direttiva 2008/115/CE)  (Sviluppo dell'acquis di Schengen) e concernente una modifica della legge federale sugli stranieri (Controllo di confine automatizzato, consulenti in materia di documenti, sistema d'informazione MIDES) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8881"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2009 8881"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2009/1528"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2009/1572"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/848"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-11-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "09.087"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) und über eine Änderung des Bundesgesetzes über die Ausländerinnen und  Ausländer (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la CE concernant la reprise de la directive CE sur le retour (directive 2008/115/CE) développement de l'acquis de Schengen) et sur une modification de la loi fédérale sur les étrangers (contrôle automatisé aux frontières, conseillers en matière de documents, système d'information MIDES) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e la CE relativo al recepimento della direttiva della CE sul rimpatrio (Direttiva 2008/115/CE)  (Sviluppo dell'acquis di Schengen) e concernente una modifica della legge federale sugli stranieri (Controllo di confine automatizzato, consulenti in materia di documenti, sistema d'informazione MIDES) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 8881"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 8881"
     }
   },
@@ -1782,6 +1967,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 51"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2010 51"
     }
   },
@@ -1829,6 +2019,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 51"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2010 51"
     }
   },
@@ -1876,99 +2071,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2010 51"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/6"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2009/2164"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/25"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-11-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "09.085"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Einführung biometrischer Daten im Ausländerausweis (Weiterentwicklung des Schengen-Besitzstands) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la Communauté européenne concernant l'introduction des données biométriques dans les titres de séjour pour étrangers (Développement de l'acquis de Schengen) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero dello scambio di note tra la Svizzera e la Comunità europea concernente l'introduzione dei dati biometrici nei permessi di soggiorno per stranieri (Sviluppo dell'acquis di Schengen) "
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2010 51"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/6"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2009/2164"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/25"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-11-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "09.085"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Einführung biometrischer Daten im Ausländerausweis (Weiterentwicklung des Schengen-Besitzstands) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la Communauté européenne concernant l'introduction des données biométriques dans les titres de séjour pour étrangers (Développement de l'acquis de Schengen) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero dello scambio di note tra la Svizzera e la Comunità europea concernente l'introduzione dei dati biometrici nei permessi di soggiorno per stranieri (Sviluppo dell'acquis di Schengen) "
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2010 51"
     }
@@ -2017,6 +2123,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 51"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 51"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/6"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2009/2164"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/25"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-11-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "09.085"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Einführung biometrischer Daten im Ausländerausweis (Weiterentwicklung des Schengen-Besitzstands) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la Communauté européenne concernant l'introduction des données biométriques dans les titres de séjour pour étrangers (Développement de l'acquis de Schengen) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero dello scambio di note tra la Svizzera e la Comunità europea concernente l'introduzione dei dati biometrici nei permessi di soggiorno per stranieri (Sviluppo dell'acquis di Schengen) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 51"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 51"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/6"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2009/2164"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/25"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-11-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "09.085"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Einführung biometrischer Daten im Ausländerausweis (Weiterentwicklung des Schengen-Besitzstands) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message sur l'approbation et la mise en uvre de l'échange de notes entre la Suisse et la Communauté européenne concernant l'introduction des données biométriques dans les titres de séjour pour étrangers (Développement de l'acquis de Schengen) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero dello scambio di note tra la Svizzera e la Comunità europea concernente l'introduzione dei dati biometrici nei permessi di soggiorno per stranieri (Sviluppo dell'acquis di Schengen) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 51"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2010 51"
     }
   },
@@ -2064,6 +2279,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2185"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2185"
     }
   },
@@ -2111,6 +2331,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2185"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2185"
     }
   },
@@ -2158,6 +2383,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2185"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2185"
     }
   },
@@ -2205,6 +2435,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 2397"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 2397"
     }
   },
@@ -2252,6 +2487,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 2397"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 2397"
     }
   },
@@ -2299,6 +2539,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 2397"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 2397"
     }
   },
@@ -2346,6 +2591,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 2561"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 2561"
     }
   },
@@ -2393,6 +2643,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 2561"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 2561"
     }
   },
@@ -2440,6 +2695,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 2561"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 2561"
     }
   },
@@ -2487,6 +2747,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 2675"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 2675"
     }
   },
@@ -2534,6 +2799,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 2675"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 2675"
     }
   },
@@ -2581,99 +2851,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2014 2675"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/489"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/1941"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/432"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-03-07"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.029"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) Nr. 603/2013 und (EU) Nr. 604/2013 (Weiterentwicklungen des Dublin/Eurodac-Besitzstands) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'approbation et à la mise en uvre des échanges de notes entre la Suisse et l'UE concernant la reprise des règlements (UE) n° 603/2013 et n° 604/2013 (Développements de l'acquis de Dublin/Eurodac)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione degli scambi di note tra la Svizzera e l'UE in merito al recepimento dei regolamenti (UE) n. 603/2013 e (UE) n. 604/2013 (Sviluppi dell'acquis di «Dublino/Eurodac») "
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2014 2675"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/489"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/1941"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/432"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-03-07"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.029"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) Nr. 603/2013 und (EU) Nr. 604/2013 (Weiterentwicklungen des Dublin/Eurodac-Besitzstands) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'approbation et à la mise en uvre des échanges de notes entre la Suisse et l'UE concernant la reprise des règlements (UE) n° 603/2013 et n° 604/2013 (Développements de l'acquis de Dublin/Eurodac)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione degli scambi di note tra la Svizzera e l'UE in merito al recepimento dei regolamenti (UE) n. 603/2013 e (UE) n. 604/2013 (Sviluppi dell'acquis di «Dublino/Eurodac») "
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2014 2675"
     }
@@ -2722,6 +2903,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 2675"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 2675"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/489"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/1941"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/432"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-03-07"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.029"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) Nr. 603/2013 und (EU) Nr. 604/2013 (Weiterentwicklungen des Dublin/Eurodac-Besitzstands) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'approbation et à la mise en uvre des échanges de notes entre la Suisse et l'UE concernant la reprise des règlements (UE) n° 603/2013 et n° 604/2013 (Développements de l'acquis de Dublin/Eurodac)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione degli scambi di note tra la Svizzera e l'UE in merito al recepimento dei regolamenti (UE) n. 603/2013 e (UE) n. 604/2013 (Sviluppi dell'acquis di «Dublino/Eurodac») "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 2675"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 2675"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/489"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/1941"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/432"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-03-07"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.029"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) Nr. 603/2013 und (EU) Nr. 604/2013 (Weiterentwicklungen des Dublin/Eurodac-Besitzstands) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'approbation et à la mise en uvre des échanges de notes entre la Suisse et l'UE concernant la reprise des règlements (UE) n° 603/2013 et n° 604/2013 (Développements de l'acquis de Dublin/Eurodac)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione degli scambi di note tra la Svizzera e l'UE in merito al recepimento dei regolamenti (UE) n. 603/2013 e (UE) n. 604/2013 (Sviluppi dell'acquis di «Dublino/Eurodac») "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 2675"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 2675"
     }
   },
@@ -2769,6 +3059,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3373"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 3373"
     }
   },
@@ -2816,6 +3111,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3373"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 3373"
     }
   },
@@ -2863,6 +3163,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3373"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 3373"
     }
   },
@@ -2910,6 +3215,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3373"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 3373"
     }
   },
@@ -2957,6 +3267,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3373"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 3373"
     }
   },
@@ -3003,6 +3318,11 @@
       "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del regolamento (UE) n. 1051/2013 che modifica il codice frontiere Schengen al fine di introdurre norme comuni sul ripristino temporaneo del controllo di frontiera alle frontiere interne (sviluppo dell'acquis di Schengen) e altre modifiche del diritto in materia d'asilo e di stranieri "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3373"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2014 3373"
     }
@@ -3050,6 +3370,11 @@
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri (Regolazione dell'immigrazione e miglioramenti nell'esecuzione degli accordi sulla libera circolazione)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 3007"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 3007"
     }
@@ -3098,6 +3423,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 3007"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2016 3007"
     }
   },
@@ -3144,6 +3474,11 @@
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri (Regolazione dell'immigrazione e miglioramenti nell'esecuzione degli accordi sulla libera circolazione)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 3007"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 3007"
     }
@@ -3191,6 +3526,11 @@
       "value": "Messaggio sull'approvazione e la trasposizione dello scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del regolamento (UE) n. 2016/1624 relativo alla guardia di frontiera e costiera europea (Sviluppo dell'acquis di Schengen)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 4155"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 4155"
     }
@@ -3239,6 +3579,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 4155"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2017 4155"
     }
   },
@@ -3285,6 +3630,11 @@
       "value": "Messaggio sull'approvazione e la trasposizione dello scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del regolamento (UE) n. 2016/1624 relativo alla guardia di frontiera e costiera europea (Sviluppo dell'acquis di Schengen)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 4155"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 4155"
     }
@@ -3332,6 +3682,11 @@
       "value": "Messaggio concernente la revisione della legge federale sugli stranieri (LStr) (Norme procedurali e sistemi d'informazione)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1685"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 1685"
     }
@@ -3380,6 +3735,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1685"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 1685"
     }
   },
@@ -3426,6 +3786,11 @@
       "value": "Messaggio concernente la revisione della legge federale sugli stranieri (LStr) (Norme procedurali e sistemi d'informazione)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1685"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 1685"
     }
@@ -3473,6 +3838,11 @@
       "value": "Messaggio relativo all'approvazione e trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l'UE concernenti il recepimento delle basi legali per l'istituzione e l'uso del sistema di ingressi/uscite (EES) (regolamenti [UE] n. 2017/2226 e 2017/2225; sviluppi dell'acquis di Schengen) e modifica della legge federale sugli stranieri e la loro integrazione (LStrI)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 175"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 175"
     }
@@ -3521,6 +3891,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 175"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 175"
     }
   },
@@ -3567,6 +3942,11 @@
       "value": "Messaggio relativo all'approvazione e trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l'UE concernenti il recepimento delle basi legali per l'istituzione e l'uso del sistema di ingressi/uscite (EES) (regolamenti [UE] n. 2017/2226 e 2017/2225; sviluppi dell'acquis di Schengen) e modifica della legge federale sugli stranieri e la loro integrazione (LStrI)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 175"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 175"
     }
@@ -3615,6 +3995,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 175"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 175"
     }
   },
@@ -3661,6 +4046,11 @@
       "value": "Messaggio relativo all'approvazione e trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l'UE concernenti il recepimento delle basi legali per l'istituzione e l'uso del sistema di ingressi/uscite (EES) (regolamenti [UE] n. 2017/2226 e 2017/2225; sviluppi dell'acquis di Schengen) e modifica della legge federale sugli stranieri e la loro integrazione (LStrI)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 175"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 175"
     }
@@ -3708,6 +4098,11 @@
       "value": "Messaggio relativo all'approvazione e alla trasposizione nel diritto svizzero dello scambio di note tra la Svizzera e l'UE concernente il recepimento del regolamento (UE) 2018/1240 sul sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppo dell'acquis di Schengen) e alla modifica della legge federale sugli stranieri e la loro integrazione (Assoggettamento del Servizio delle attività informative della Confederazione alla legge sulla protezione dei dati in ambito Schengen)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 2885"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 2885"
     }
@@ -3755,6 +4150,11 @@
       "value": "Messaggio relativo all'approvazione e alla trasposizione nel diritto svizzero dello scambio di note tra la Svizzera e l'UE concernente il recepimento del regolamento (UE) 2018/1240 sul sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppo dell'acquis di Schengen) e alla modifica della legge federale sugli stranieri e la loro integrazione (Assoggettamento del Servizio delle attività informative della Confederazione alla legge sulla protezione dei dati in ambito Schengen)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 2885"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 2885"
     }
@@ -3803,6 +4203,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 2885"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 2885"
     }
   },
@@ -3850,6 +4255,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 3465"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 3465"
     }
   },
@@ -3897,6 +4307,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 3465"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 3465"
     }
   },
@@ -3944,6 +4359,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 7105"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 7105"
     }
   },
@@ -3991,6 +4411,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 7105"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 7105"
     }
   },
@@ -4038,6 +4463,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 7457"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 7457"
     }
   },
@@ -4084,6 +4514,11 @@
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri e la loro integrazione (Limitazioni per i viaggi all'estero e adeguamenti dello statuto dell'ammissione provvisoria)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 7457"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 7457"
     }
@@ -4132,6 +4567,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 7983"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2020 7983"
     }
   },
@@ -4176,6 +4616,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri e la loro integrazione (Test COVID-19 in caso di rinvio coatto)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2021 1901"
     }
   },
   {
@@ -4219,6 +4664,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri e la loro integrazione (Test COVID-19 in caso di rinvio coatto)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2021 1901"
     }
   },
   {
@@ -4262,6 +4712,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo all’approvazione dell’Accordo sulla cooperazione transfrontaliera (cooperazione Prüm), del Protocollo Eurodac tra la Svizzera e l’UE, dell’Accordo con gli Stati Uniti sulla prevenzione e la lotta ai reati gravi e alla loro trasposizione (modifica del Codice penale, della legge sui profili del DNA, della legge sull’asilo e della legge sugli stranieri e la loro integrazione) nonché a un credito d’impegno per l’attuazione del programma Prüm Plus"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2021 738"
     }
   },
   {
@@ -4305,6 +4760,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri e la loro integrazione (Aiuto finanziario ai Cantoni che gestiscono centri di partenza alla frontiera svizzera)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 1312"
     }
   },
   {
@@ -4348,6 +4808,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri e la loro integrazione (proroga delle disposizioni sul test COVID-19 in caso di rinvio coatto)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 1359"
     }
   },
   {
@@ -4391,6 +4856,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli stranieri e la loro integrazione (proroga delle disposizioni sul test COVID-19 in caso di rinvio coatto)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 1359"
     }
   },
   {
@@ -4434,6 +4904,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo all’approvazione e alla trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2021/1133 e (UE) 2021/1134 per la riforma del sistema di informazione visti e delle condizioni di accesso agli altri sistemi di informazione dell’UE ai fini del VIS (sviluppi dell’acquis di Schengen) e relativo alla modifica della legge sugli stranieri e la loro integrazione (accesso al CIR e ai dati di tre sistemi d’informazione dell’UE)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 1421"
     }
   },
   {
@@ -4477,6 +4952,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo all’approvazione e alla trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2021/1150 e (UE) 2021/1152 per quanto riguarda la definizione delle condizioni di accesso agli altri sistemi di informazione dell’UE ai fini del sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppi dell’acquis di Schengen) e la modifica della legge federale sugli stranieri e la loro integrazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 1449"
     }
   },
   {
@@ -4520,6 +5000,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo all’approvazione e alla trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2021/1150 e (UE) 2021/1152 per quanto riguarda la definizione delle condizioni di accesso agli altri sistemi di informazione dell’UE ai fini del sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppi dell’acquis di Schengen) e la modifica della legge federale sugli stranieri e la loro integrazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 1449"
     }
   },
   {
@@ -4563,6 +5048,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’approvazione e la trasposizione dello scambio di note tra la Svizzera e l’UE concernente il recepimento del regolamento (UE) 2023/2667 che modifica diversi atti normativi europei per quanto riguarda la digita-lizzazione della procedura di visto (Sviluppo dell’acquis di Schengen)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 3274"
     }
   },
   {
@@ -4606,6 +5096,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo all’approvazione e alla trasposizione nel diritto svizzero dello scambio di note tra la Svizzera e l’UE concernente il recepimento del regolamento (UE) 2024/1717 recante modifica del regolamento (UE) 2016/399 che istituisce un codice dell’Unione relativo al regime di attraversamento delle frontiere da parte delle persone (Sviluppo dell’acquis di Schengen) e altre modifiche della legge federale sugli stranieri e la loro integrazione (LStrI)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2025 1146"
     }
   },
   {
@@ -4649,6 +5144,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’approvazione e la trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2024/1351, (UE) 2024/1359, (UE) 2024/1349, (UE) 2024/1358 e (UE) 2024/1356 (Patto sulla migrazione e l’asilo dell’UE) (Sviluppi dell’acquis di Schengen e Dublino/Eurodac)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2025 1478"
     }
   },
   {
@@ -4692,6 +5192,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’approvazione e la trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2024/1351, (UE) 2024/1359, (UE) 2024/1349, (UE) 2024/1358 e (UE) 2024/1356 (Patto sulla migrazione e l’asilo dell’UE) (Sviluppi dell’acquis di Schengen e Dublino/Eurodac)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2025 1478"
     }
   },
   {
@@ -4735,6 +5240,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’approvazione e la trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2024/1351, (UE) 2024/1359, (UE) 2024/1349, (UE) 2024/1358 e (UE) 2024/1356 (Patto sulla migrazione e l’asilo dell’UE) (Sviluppi dell’acquis di Schengen e Dublino/Eurodac)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2025 1478"
     }
   },
   {
@@ -4778,6 +5288,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente le misure di sgravio del bilancio della Confederazione applicabili dal 2027"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2025 3067"
     }
   }
 ]

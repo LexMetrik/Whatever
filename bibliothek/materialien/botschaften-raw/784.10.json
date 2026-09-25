@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7951"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 7951"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7951"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 7951"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio relativo alla modifica della legge sulle telecomunicazioni (LTC)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7951"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2003 7951"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la revisione della legge sulle telecomunicazioni"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 6559"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 6559"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 6559"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2017 6559"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la revisione della legge sulle telecomunicazioni"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 6559"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 6559"
     }

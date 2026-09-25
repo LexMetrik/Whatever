@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2000 255"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente una modifica della legge sul libero passaggio (Diritti in caso di scelta della strategia d'investimento da parte dell'assicurato) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 1793"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2015 1793"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 1793"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2015 1793"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente una modifica della legge sul libero passaggio (Diritti in caso di scelta della strategia d'investimento da parte dell'assicurato) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 1793"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2015 1793"
     }

@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -184,6 +199,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 4083"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 4083"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 4083"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 4083"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 4083"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 4083"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 6845"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 6845"
     }
   },
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 6845"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 6845"
     }
   },
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 6845"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2002 6845"
     }
   },
@@ -466,6 +511,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4259"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4259"
     }
   },
@@ -513,6 +563,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4259"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4259"
     }
   },
@@ -560,99 +615,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2004 4259"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/706"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1043"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2005/139"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-05-26"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.031"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Teilrevision des Bundesgesetzes über die Krankenversicherung (Strategie und dringliche Punkte)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la révision partielle de la loi fédérale sur l'assu-rance-maladie (Stratégie et thèmes urgents)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2004 4259"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/706"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1043"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2005/139"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-05-26"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.031"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Teilrevision des Bundesgesetzes über die Krankenversicherung (Strategie und dringliche Punkte)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la révision partielle de la loi fédérale sur l'assu-rance-maladie (Stratégie et thèmes urgents)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2004 4259"
     }
@@ -701,6 +667,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4259"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/706"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1043"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2005/139"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2004-05-26"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "04.031"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Teilrevision des Bundesgesetzes über die Krankenversicherung (Strategie und dringliche Punkte)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la révision partielle de la loi fédérale sur l'assu-rance-maladie (Stratégie et thèmes urgents)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4259"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/706"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1043"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2005/139"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2004-05-26"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "04.031"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Teilrevision des Bundesgesetzes über die Krankenversicherung (Strategie und dringliche Punkte)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la révision partielle de la loi fédérale sur l'assu-rance-maladie (Stratégie et thèmes urgents)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4259"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4259"
     }
   },
@@ -748,6 +823,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4293"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4293"
     }
   },
@@ -795,6 +875,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4293"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4293"
     }
   },
@@ -842,6 +927,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4293"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4293"
     }
   },
@@ -889,6 +979,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4327"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4327"
     }
   },
@@ -936,6 +1031,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4327"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4327"
     }
   },
@@ -983,6 +1083,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4327"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 4327"
     }
   },
@@ -1030,6 +1135,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5551"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5551"
     }
   },
@@ -1077,6 +1187,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5551"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5551"
     }
   },
@@ -1124,6 +1239,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5551"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5551"
     }
   },
@@ -1171,6 +1291,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5551"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5551"
     }
   },
@@ -1218,6 +1343,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5551"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5551"
     }
   },
@@ -1264,6 +1394,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5551"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2004 5551"
     }
@@ -1311,6 +1446,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Correzione dei premi pagati tra il 1996 e il 2011) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 1923"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2012 1923"
     }
@@ -1359,6 +1499,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 1923"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2012 1923"
     }
   },
@@ -1405,6 +1550,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Correzione dei premi pagati tra il 1996 e il 2011) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 1923"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2012 1923"
     }
@@ -1452,6 +1602,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 9439"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2012 9439"
     }
@@ -1500,6 +1655,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 9439"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2012 9439"
     }
   },
@@ -1546,6 +1706,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 9439"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2012 9439"
     }
@@ -1593,6 +1758,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie. (Adeguamento delle disposizioni con pertinenza internazionale)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 1"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 1"
     }
@@ -1641,6 +1811,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 1"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2016 1"
     }
   },
@@ -1687,6 +1862,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie. (Adeguamento delle disposizioni con pertinenza internazionale)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 1"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 1"
     }
@@ -1735,6 +1915,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 257"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2016 257"
     }
   },
@@ -1782,6 +1967,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 257"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2016 257"
     }
   },
@@ -1829,6 +2019,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 3125"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 3125"
     }
   },
@@ -1876,6 +2071,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 3125"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 3125"
     }
   },
@@ -1923,6 +2123,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 6071"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 6071"
     }
   },
@@ -1970,6 +2175,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 6071"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 6071"
     }
   },
@@ -2017,6 +2227,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 6071"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2019 6071"
     }
   },
@@ -2063,6 +2278,11 @@
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Misure di contenimento dei costi  Pacchetto 1)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 6071"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2019 6071"
     }
@@ -2110,6 +2330,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Rimunerazione del materiale sanitario)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 4825"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 4825"
     }
@@ -2157,6 +2382,11 @@
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Rimunerazione del materiale sanitario)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 4825"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 4825"
     }
@@ -2202,6 +2432,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’iniziativa popolare «Al massimo il 10 per cento del reddito per i premi delle casse malati (Iniziativa per premi meno onerosi)» e il controprogetto indiretto (modifica della legge sull’assicurazione malattie)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2021 2383"
     }
   },
   {
@@ -2245,6 +2480,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’iniziativa popolare «Per premi più bassi –Freno ai costi nel settore sanitario (Iniziativa per un freno ai costi)» e il controprogetto indiretto (Modifica della legge federale sull’assicurazione malattie)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2021 2819"
     }
   },
   {
@@ -2288,6 +2528,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l’approvazione e la trasposizione nel diritto svizzero della Convenzione sul coordinamento della sicurezza sociale tra la Svizzera e il Regno Unito"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 1180"
     }
   },
   {
@@ -2331,6 +2576,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull’assicurazione malattie (Misure di contenimento dei costi – Pacchetto 2)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 2427"
     }
   }
 ]

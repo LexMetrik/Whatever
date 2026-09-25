@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 255"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 255"
     }
   },
@@ -184,6 +199,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6029"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 6029"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6029"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 6029"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6029"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 6029"
     }
   },
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente la legislazione esecutiva della nuova  impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6029"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2005 6029"
     }
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 7465"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 7465"
     }
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 7465"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2016 7465"
     }
   },
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (Riforma delle PC)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 7465"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 7465"
     }
@@ -510,6 +560,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (Prestazioni di aiuto e assistenza a domicilio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 2448"
     }
   }
 ]

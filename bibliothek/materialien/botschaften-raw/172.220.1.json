@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 7059"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2010 7059"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 7059"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2010 7059"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la legge federale sul programma di consolidamento 20122013 (LPCon 12/13) e la legge federale concernente ottimizzazioni nella gestione dei dati del personale e negli investimenti di PUBLICA "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 7059"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2010 7059"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente una modifica della legge sul personale federale "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 6703"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2011 6703"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 6703"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 6703"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente una modifica della legge sul personale federale "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 6703"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2011 6703"
     }
@@ -322,6 +352,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sul personale federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 2316"
     }
   }
 ]

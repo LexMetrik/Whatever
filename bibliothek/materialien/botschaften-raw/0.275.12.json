@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 1777"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 1777"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 1777"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 1777"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 1777"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 1777"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente il decreto federale sull'approvazione e l'attuazione della revisione della Convenzione di Lugano concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 1777"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 1777"
     }

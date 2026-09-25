@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 2893"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 2893"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 2893"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 2893"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 2893"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 2893"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la Convenzione per l'unificazione di alcune norme relative al trasporto aereo internazionale"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 2893"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2004 2893"
     }

@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente l'approvazione degli accordi settoriali tra la Svizzera e la CE "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 1999 6128"
     }
@@ -230,6 +250,11 @@
       "value": "Messaggio concernente la legge federale sull'adeguamento delle misure collaterali alla libera circolazione delle persone "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 3397"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2012 3397"
     }
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 3397"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2012 3397"
     }
   },
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente la legge federale sull'adeguamento delle misure collaterali alla libera circolazione delle persone "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 3397"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2012 3397"
     }
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente la modifica della legge sui lavoratori distaccati"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 5845"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2015 5845"
     }
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 5845"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2015 5845"
     }
   },
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente la modifica della legge sui lavoratori distaccati"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 5845"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2015 5845"
     }
@@ -510,6 +560,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sui lavoratori distaccati"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 3190"
     }
   },
   {
@@ -553,6 +608,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sui lavoratori distaccati"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 3190"
     }
   }
 ]

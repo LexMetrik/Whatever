@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 5317"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 5317"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 5317"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 5317"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 5317"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 5317"
     }
   },
@@ -184,6 +199,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2433"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2433"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2433"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2433"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2433"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 2433"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 7561"
     }
   },
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 7561"
     }
   },
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 7561"
     }
   },
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente il primo pacchetto di misure della Strategia energetica 2050 (Revisione del diritto in materia di energia) e l'iniziativa popolare «Per un abbandono pianificato dell'energia nucleare (Iniziativa per l'abbandono del nucleare)» "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 7561"
     }
@@ -510,6 +560,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale su un approvvigionamento elettrico sicuro con le energie rinnovabili"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2021 1666"
     }
   },
   {
@@ -553,6 +608,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sull’energia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 1602"
     }
   },
   {
@@ -596,6 +656,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sull’energia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 1602"
     }
   },
   {
@@ -639,6 +704,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo all’approvazione dell’Accordo concernente misure di solidarietà volte a garantire la sicurezza dell’approvvigionamento di gas tra la Svizzera, la Germania e l’Italia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 2318"
     }
   }
 ]

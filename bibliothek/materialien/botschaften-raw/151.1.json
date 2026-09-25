@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7809"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 7809"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7809"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 7809"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente una modifica della legge federale sulla parità dei sessi (procedura di conciliazione)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7809"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2003 7809"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla parità dei sessi (Legge sulla parità dei sessi, LPar)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 5507"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 5507"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 5507"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2017 5507"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla parità dei sessi (Legge sulla parità dei sessi, LPar)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 5507"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 5507"
     }

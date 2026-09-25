@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 7165"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 7165"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 7165"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 7165"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 7165"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 7165"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio sulla revisione totale della legge federale concernente l'aiuto alle vittime di reati (LAV)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 7165"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2005 7165"
     }

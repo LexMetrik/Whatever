@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5313"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5313"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5313"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 5313"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente modifiche del finanziamento dei progetti FTP"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 5313"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2004 5313"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio aggiuntivo concernente la Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2681"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 2681"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2681"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 2681"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio aggiuntivo concernente la Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 2681"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 2681"
     }
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente il progetto di legislazione sul traffico merci "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 4377"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 4377"
     }
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 4377"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2007 4377"
     }
   },
@@ -418,6 +458,11 @@
       "value": "Messaggio concernente il progetto di legislazione sul traffico merci "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 4377"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2007 4377"
     }
@@ -463,6 +508,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sulle ferrovie (Attuazione del pilastro tecnico del 4° pacchetto ferroviario dell’UE)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 703"
     }
   }
 ]

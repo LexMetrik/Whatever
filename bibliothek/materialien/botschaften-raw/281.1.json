@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 551"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 551"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 551"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 551"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente il decreto federale che approva e attua  la Convenzione dell'Aia relativa alla legge applicabile ai trust e al loro riconoscimento "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 551"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2006 551"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio sulla modifica della legge federale sulla esecuzione e sul fallimento (procedura di risanamento) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 6455"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2010 6455"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 6455"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2010 6455"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio sulla modifica della legge federale sulla esecuzione e sul fallimento (procedura di risanamento) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 6455"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2010 6455"
     }
@@ -324,6 +354,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla esecuzione e sul fallimento (Professione di rappresentante nel procedimento esecutivo) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 8669"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2014 8669"
     }
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 8669"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2014 8669"
     }
   },
@@ -418,6 +458,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla esecuzione e sul fallimento (Professione di rappresentante nel procedimento esecutivo) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 8669"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2014 8669"
     }

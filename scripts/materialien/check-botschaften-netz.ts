@@ -66,11 +66,11 @@ async function main(): Promise<void> {
   }
 
   // M-5: derselbe Auswirkungs-Index wie im Generator (committeter Revisionen-store-raw).
-  const { index: auswirkungen, fremdOcs } = auswirkungsIndex(ladeAuswirkungsQuellen(meta.map((m) => m.key)));
+  const auswirkungen = auswirkungsIndex(ladeAuswirkungsQuellen(meta.map((m) => m.key)));
   let bindings;
   let ereignisseProProj;
   try {
-    bindings = filtereBotschaftsKanten(await holeBindings(meta, fetch, undefined, fremdOcs)); // kein store-raw im Tor
+    bindings = filtereBotschaftsKanten(await holeBindings(meta)); // kein store-raw im Tor
     // E1: zweiter Durchgang (derselbe Endpunkt) für die Verfahrenskette je Projekt-Knoten.
     const projUris = [...new Set(bindings.map((b) => b.proj?.value).filter((v): v is string => !!v))].sort();
     ereignisseProProj = baueEreignisse(await holeEreignisBindings(projUris));

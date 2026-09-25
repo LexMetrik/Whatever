@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 6773"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 6773"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 6773"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 6773"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente una modifica della legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 6773"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2004 6773"
     }

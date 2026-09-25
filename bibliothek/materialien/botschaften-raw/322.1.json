@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 767"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 767"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 767"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 767"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la modifica della procedura penale militare (Protezione dei testimoni)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 767"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2003 767"
     }

@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 4357"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 4357"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 4357"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 4357"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente una modifica della legge federale sull'acquisto di fondi da parte di persone all'estero"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 4357"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2003 4357"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente l'approvazione e l'attuazione dell'Accordo tra la Confederazione Svizzera e il Regno Unito di Gran Bretagna e Irlanda del Nord sui diritti dei cittadini in seguito al recesso del Regno Unito dall'Unione europea e dall'Accordo sulla libera circolazione delle persone"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 1029"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 1029"
     }
@@ -230,6 +250,11 @@
       "value": "Messaggio concernente l'approvazione e l'attuazione dell'Accordo tra la Confederazione Svizzera e il Regno Unito di Gran Bretagna e Irlanda del Nord sui diritti dei cittadini in seguito al recesso del Regno Unito dall'Unione europea e dall'Accordo sulla libera circolazione delle persone"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 1029"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2020 1029"
     }

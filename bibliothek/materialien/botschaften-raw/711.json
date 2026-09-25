@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 4713"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 4713"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 4713"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2018 4713"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la revisione parziale della legge federale sulla espropriazione (LEspr)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 4713"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 4713"
     }

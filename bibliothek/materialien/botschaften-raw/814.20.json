@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 937"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 937"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 937"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2005 937"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente la modifica della legge sulla protezione delle acque"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 937"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2005 937"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla protezione delle acque (Finanziamento dell'eliminazione delle sostanze in tracce nelle acque di scarico conformemente al principio «chi inquina paga») "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 5549"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 5549"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 5549"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2013 5549"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge federale sulla protezione delle acque (Finanziamento dell'eliminazione delle sostanze in tracce nelle acque di scarico conformemente al principio «chi inquina paga») "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 5549"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 5549"
     }

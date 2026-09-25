@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7711"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 7711"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7711"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 7711"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7711"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2003 7711"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubl)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2003 7711"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2003 7711"
     }
@@ -230,6 +250,11 @@
       "value": "Messaggio concernente la modifica della legge sulle  pubblicazioni ufficiali (Cambiamento della versione determinante: dalla versione cartacea a quella elettronica) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7057"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 7057"
     }
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge sulle  pubblicazioni ufficiali (Cambiamento della versione determinante: dalla versione cartacea a quella elettronica) "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7057"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2013 7057"
     }

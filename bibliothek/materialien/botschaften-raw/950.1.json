@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 8901"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2015 8901"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 8901"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2015 8901"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 8901"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2015 8901"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la legge sui servizi finanziari (LSF) e la legge sugli istituti finanziari (LIFin)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 8901"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2015 8901"
     }

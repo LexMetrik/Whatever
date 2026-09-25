@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2729"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 2729"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2729"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 2729"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2729"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2000 2729"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente il decreto federale sull'Atto di Ginevra relativo all'Accordo dell'Aja sulla protezione dei modelli e la legge federale sulla protezione del design "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2729"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2000 2729"
     }

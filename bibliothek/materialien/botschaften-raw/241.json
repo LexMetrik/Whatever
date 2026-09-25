@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 6983"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 6983"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 6983"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2004 6983"
     }
   },
@@ -136,6 +146,11 @@
       "value": "Messaggio concernente l'approvazione e l'attuazione della Convenzione penale del Consiglio d'Europa sulla corruzione e del relativo Protocollo aggiuntivo (Modifica del Codice penale e della legge federale contro la concorrenza sleale)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 6983"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2004 6983"
     }
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la modifica della legge federale contro la concorrenza sleale (LCSI)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6151"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 6151"
     }
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6151"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2009 6151"
     }
   },
@@ -277,6 +302,11 @@
       "value": "Messaggio concernente la modifica della legge federale contro la concorrenza sleale (LCSI)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 6151"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2009 6151"
     }

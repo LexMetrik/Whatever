@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 6128"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 1999 6128"
     }
   },
@@ -184,6 +199,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 6337"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 6337"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 6337"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 6337"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 6337"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2006 6337"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 5571"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 5571"
     }
   },
@@ -372,6 +407,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 5571"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 5571"
     }
   },
@@ -419,6 +459,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 5571"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2011 5571"
     }
   },
@@ -465,6 +510,11 @@
       "value": "Messaggio concernente la legge federale sulle derrate alimentari e gli oggetti d'uso"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 5571"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2011 5571"
     }

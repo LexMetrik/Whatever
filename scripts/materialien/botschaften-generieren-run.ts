@@ -26,9 +26,9 @@ if (quellen.length !== meta.length) {
   console.error(`botschaften: Auswirkungen nur für ${quellen.length}/${meta.length} Erlasse in ${REVISIONEN_RAW_DIR} — erst normtext:revisionen laufen lassen.`);
   process.exit(1);
 }
-const { index: auswirkungen, fremdOcs } = auswirkungsIndex(quellen);
-console.log(`botschaften: Auswirkungs-Index ${auswirkungen.size} oc, davon ${fremdOcs.length} unter keiner Korpus-SR klassiert (Pfad B)`);
-const bindings = filtereBotschaftsKanten(await holeBindings(meta, fetch, 'bibliothek/materialien/botschaften-raw', fremdOcs));
+const auswirkungen = auswirkungsIndex(quellen);
+console.log(`botschaften: Auswirkungs-Index ${auswirkungen.size} oc (Rechtsetzungs-Typen)`);
+const bindings = filtereBotschaftsKanten(await holeBindings(meta, fetch, 'bibliothek/materialien/botschaften-raw'));
 
 // E1 (§11.7): zweiter Durchgang gegen denselben Endpunkt — Verfahrenskette je
 // Projekt-Knoten. Die proj-Menge stammt aus dem ersten Durchgang (kein Raten).

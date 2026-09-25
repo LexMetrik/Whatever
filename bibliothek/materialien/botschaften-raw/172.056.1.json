@@ -43,6 +43,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 1851"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2017 1851"
     }
   },
@@ -90,6 +95,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 1851"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2017 1851"
     }
   },
@@ -137,6 +147,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 1851"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2017 1851"
     }
   },
@@ -183,6 +198,11 @@
       "value": "Messaggio concernente la revisione totale della legge federale sugli acquisti pubblici"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 1851"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2017 1851"
     }

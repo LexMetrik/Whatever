@@ -43,99 +43,10 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
       "value": "BBl 2001 4202"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.71"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-02-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "01.023"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
-    },
-    "bbl": {
-      "type": "literal",
-      "value": "BBl 2001 4202"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.71"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
-    },
-    "evType": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-02-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "01.023"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
-    },
-    "bbl": {
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2001 4202"
     }
@@ -184,6 +95,115 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4202"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.71"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-02-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "01.023"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4202"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.71"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2001/731"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2001/0205"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2003/314"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-02-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "01.023"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Totalrevision der Bundesrechtspflege"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision totale de l'organisation judiciaire fédérale "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 4202"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2001 4202"
     }
   },
@@ -231,6 +251,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 8125"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2008 8125"
     }
   },
@@ -278,6 +303,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 8125"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2008 8125"
     }
   },
@@ -325,6 +355,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 8125"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2008 8125"
     }
   },
@@ -371,6 +406,11 @@
       "value": "Messaggio concernente la legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 8125"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2008 8125"
     }
@@ -418,6 +458,11 @@
       "value": "Messaggio aggiuntivo concernente la modifica della legge sul Tribunale federale (Istituzione di una corte d'appello in seno al Tribunale penale federale)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 6199"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 6199"
     }
@@ -466,6 +511,11 @@
     },
     "bbl": {
       "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 6199"
+    },
+    "bblHist": {
+      "type": "literal",
       "value": "BBl 2016 6199"
     }
   },
@@ -512,6 +562,11 @@
       "value": "Messaggio aggiuntivo concernente la modifica della legge sul Tribunale federale (Istituzione di una corte d'appello in seno al Tribunale penale federale)"
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 6199"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2016 6199"
     }
@@ -559,6 +614,11 @@
       "value": "Messaggio concernente l'armonizzazione delle pene e l'adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 2827"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 2827"
     }
@@ -606,6 +666,11 @@
       "value": "Messaggio concernente l'armonizzazione delle pene e l'adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni "
     },
     "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 2827"
+    },
+    "bblHist": {
       "type": "literal",
       "value": "BBl 2018 2827"
     }
