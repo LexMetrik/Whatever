@@ -1,7 +1,9 @@
 # ESTV-Kreisschreiben: Dokumentdatum und Ersetzung — Messung 25.9.2026
 
-Anlass: Erlass-Blatt Welle 2 Daten-Rest (W2·29-WERKBANK-LESER), Befunde AN-1, AN-2, AN-13
-aus dem Reiter «Behördliche Erläuterungen» (Befund-Sammlung 23.9.2026).
+**Erstellt:** 25.9.2026 — Daten-Bauer, Auftrag Orchestrator «Erlass-Blatt Welle 2 Daten-Rest»
+(W2·29-WERKBANK-LESER), Befunde AN-1, AN-2, AN-13 aus dem Reiter «Behördliche Erläuterungen»
+(Befund-Sammlung 23.9.2026).
+**Status:** ERSTRECHERCHE
 
 ## Quelle mit Stand
 
