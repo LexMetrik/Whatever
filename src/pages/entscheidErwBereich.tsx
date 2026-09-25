@@ -64,7 +64,10 @@ export const ErwBereich = memo(function ErwBereich({
    *  ErwBereich wertet ihn auf `sucheAktiv` (§ Falle a, 21.9.2026): Schalter-
    *  Anzeige und Landkarten-Sichtbarkeit stehen so auf demselben Stand wie
    *  Rail-Schranke und Zähler. Vorsorge für die neue Gewertet-Kopplung, kein
-   *  gemessener Altbefund (vorher fielen beide am rohen Stand zusammen). */
+   *  gemessener Altbefund (vorher fielen beide am rohen Stand zusammen).
+   *  Ergänzt 25.9.2026 (REST S1, §2b): «nie zurückgesetzt» galt bis hierher;
+   *  seither setzt der Leser ihn beim LEEREN des Feldes zurück
+   *  (`entscheidSucheZustand.ts`) — diese Komponente weiterhin nie selbst. */
   markenAusRoh: boolean;
   onMarkenSchalten: (aus: boolean) => void;
   /** Darf der Streifen auf DIESER Fläche überhaupt stehen? Nur noch die Lage

@@ -5,6 +5,7 @@
  *   (a) Zählzeile bleibt während der Rechenzeit LEER — Platz reserviert,
  *       kein «wird gezählt» (keine zusätzlichen aria-live-Sprechakte).
  *   (b) Suche erst ab zwei Zeichen — Rail, Zähler, Landkarte und Hervorhebung.
+ *   (c) Marken-Schalter «Hervorhebung» setzt sich beim Leeren der Suche zurück.
  * Harness wie `entscheid-erw-ein-stand.test.tsx`: Fake-Timer-Render gegen den
  * echten `ErwBereich`-Baum (linkedom + react-dom/client).
  */
@@ -16,6 +17,7 @@ import { ErwBereich } from '../pages/entscheidErwBereich';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
 import { readFileSync } from 'node:fs';
 import { sucheWirksam } from '../pages/entscheidLeserRegeln';
+import { useEntscheidSuche } from '../pages/entscheidSucheZustand';
 
 const ABSCHNITTE: EntscheidAbschnitt[] = [
   { typ: 'sachverhalt', bloecke: [{ marke: null, text: 'A. Ausgangslage.' }] },
@@ -137,5 +139,40 @@ describe('(b) Suche erst ab zwei Zeichen', () => {
     const q = readFileSync('src/pages/EntscheidLeser.tsx', 'utf8');
     expect(q).toContain('if (sucheWirksam(suche) && !markenAus) {');
     expect(q).toContain('const markenAus = sucheWirksam(suche) && markenAusRoh;');
+  });
+});
+
+describe('(c) Leeren der Suche setzt den Marken-Schalter zurück', () => {
+  type Api = ReturnType<typeof useEntscheidSuche>;
+  let api: Api | null = null;
+  function Sonde() { api = useEntscheidSuche(); return null; }
+  async function tun(f: (a: Api) => void) { await act(async () => { f(api!); }); }
+
+  afterEach(async () => {
+    await abbauen();
+    vi.unstubAllGlobals();
+    api = null;
+  });
+
+  it('Suchen → Schalter aus → Feld leeren → neu suchen: Hervorhebung ist wieder AN', async () => {
+    const ziel = aufbauen();
+    root = createRoot(ziel);
+    await act(async () => { root!.render(createElement(Sonde)); });
+    await tun((a) => a.setzeSuche(BEGRIFF));
+    await tun((a) => a.setzeMarkenAus(true));
+    expect(api!.markenAusRoh).toBe(true);
+    await tun((a) => a.setzeSuche('Beschw'));          // Verfeinern leert nicht
+    expect(api!.markenAusRoh, 'Tippen ohne Leeren lässt den Schalter stehen').toBe(true);
+    await tun((a) => a.setzeSuche('   '));              // nur Leerraum = leer
+    expect(api!.markenAusRoh).toBe(false);
+    await tun((a) => a.setzeSuche(BEGRIFF));
+    expect(api!.markenAusRoh, 'beim nächsten Suchen wieder Farbe').toBe(false);
+  });
+
+  it('der Leser reicht genau diesen Setzer an das Suchfeld', () => {
+    const q = readFileSync('src/pages/EntscheidLeser.tsx', 'utf8');
+    expect(q).toContain('= useEntscheidSuche();');
+    expect(q).toContain('onSuche={setzeSuche}');
+    expect(q).not.toMatch(/useState\(''\);\s*\n[^\n]*\bsuche\b/);
   });
 });

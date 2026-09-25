@@ -25,6 +25,7 @@ import {
 import { datumOderStrich } from '../components/ui/datumText';
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
 import { ErwBereich } from './entscheidErwBereich';
+import { useEntscheidSuche } from './entscheidSucheZustand';
 import { usePaneKlasse, usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 // ── W2·19-DESIGN-KONSISTENZ · B2/BAU-4 (31.8.2026) · KANON-NACHZÜGE ─────────
@@ -263,17 +264,9 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   }, [imPane]);
   // Laufindex des «nächste Fundstelle»-Knopfes (LM-208), zyklisch über die Ziele.
   const [fundIdx, setFundIdx] = useState(0);
-  // V5 «Im Entscheid suchen» — komponenten-lokal wie die In-Gesetz-Suche vor
-  // ihrer Adress-Spiegelung: der Begriff ist eine Lesehilfe, kein Ort. Er kommt
-  // bewusst NICHT in die URL (kein Verlaufseintrag je Tastendruck, §Z Ziff. 7).
-  const [suche, setSuche] = useState('');
-  // ── W2·28 · L-2 · EIN Schalter für Hervorhebung UND Treffer-Marken ─────────
-  // Gleiche Bauart wie im Gesetz-Leser (`v3/leserV3Modell.ts`): lokal, nicht
-  // persistiert, und beim RENDER gegen das leere Feld geprüft statt in einem
-  // Effekt zurückgesetzt. Wer das Feld leert, findet beim nächsten Suchen
-  // wieder Farbe vor (§8 — ein stumm fortwirkender Schalter liesse Treffer
-  // verschwinden, ohne dass jemand ihn gesetzt zu haben glaubt).
-  const [markenAusRoh, setzeMarkenAus] = useState(false);
+  // V5 «Im Entscheid suchen» + W2·28 · L-2 Marken-Schalter: Zustand und die
+  // Rücksetz-Zusage (Leeren → Hervorhebung wieder an) in `entscheidSucheZustand`.
+  const { suche, setzeSuche, markenAusRoh, setzeMarkenAus } = useEntscheidSuche();
   // REST S1: «leer» heisst hier «keine wirksame Suche» (ab zwei Zeichen, `sucheWirksam`).
   const markenAus = sucheWirksam(suche) && markenAusRoh;
   const [fsIdx, setFsIdx] = useState<number>(ladeFsIdx);
@@ -1017,7 +1010,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               dort rechnen, sonst läge er beim Leeren einen Tick daneben. */}
           {!lese && (
             <ErwBereich abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
-              suche={suche} onSuche={setSuche} springe={springeZuAbschnitt}
+              suche={suche} onSuche={setzeSuche} springe={springeZuAbschnitt}
               markenAusRoh={markenAusRoh} onMarkenSchalten={setzeMarkenAus}
               landkarteSteht={!imPane}
               aktivAnker={aktivAnker} />
