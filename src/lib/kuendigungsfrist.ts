@@ -1,12 +1,13 @@
 // Dossier: bibliothek/recherche/arbeitsrecht-rechner.md
-import { parseISO, addDays, addMonths, subMonths, isBefore, isEqual } from 'date-fns';
-import type { KuendigungsfristInput, Berechnungsergebnis, Normverweis } from '../types/legal';
+import { parseISO, addDays, addMonths, subMonths, isAfter, isBefore, isEqual } from 'date-fns';
+import type { KuendigungsfristInput, SperrfristenInput, Berechnungsergebnis, Normverweis } from '../types/legal';
 import {
   berechneDienstjahr,
   formatDatum,
   letzerTagDesMonats,
 } from './datumsUtils';
 import { rechtsprechung } from '../data/verifikation';
+import { berechneProbezeitVerlaengerung, probezeitVerlaengerungTexte, N_335b_3, N_BV_110_3 } from './kuendigungsfristProbezeit';
 
 // ─── Feste Normverweise (Art. 335a–c OR) ─────────────────────────────────
 
@@ -56,7 +57,7 @@ function wirksameProbezeitMonate(probezeitMonate: number): number {
  *  Bug-Check 10.6.2026: Der erste Arbeitstag zählt mit (1 Monat ab 1.4. endet
  *  am 30.4.). RL-16/F4-03 (24.9.2026): EINE Funktion für Logik UND Rechenweg —
  *  vorher zeigte der Rechenweg addMonths ohne −1 Tag (01.02. statt 31.01.). */
-export function probezeitEnde(vertragsbeginn: Date, probezeitMonate: number): Date | null {
+function probezeitEnde(vertragsbeginn: Date, probezeitMonate: number): Date | null {
   const monate = wirksameProbezeitMonate(probezeitMonate);
   return monate === 0 ? null : addDays(addMonths(vertragsbeginn, monate), -1);
 }
@@ -81,7 +82,12 @@ function istInProbezeit(zugang: Date, ende: Date | null): boolean {
   return isBefore(zugang, ende) || isEqual(zugang, ende);
 }
 
-export function berechneKuendigungsfrist(input: KuendigungsfristInput): KuendigungsfristResultat {
+/** `sperrereignisse` (optional): Verhinderungen für die Probezeitverlängerung
+ *  nach Art. 335b Abs. 3 OR (RL-16b) — dieselben Ereignisse wie im
+ *  Sperrfristen-Rechner, damit Formular und Vorlagen EIN Probezeitende sehen. */
+export function berechneKuendigungsfrist(
+  input: KuendigungsfristInput & Pick<SperrfristenInput, 'sperrereignisse'>,
+): KuendigungsfristResultat {
   const {
     vertragsbeginn,
     zugangKuendigung,
@@ -105,7 +111,12 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
 
   const dauerProbezeitMonate = wirksameProbezeitMonate(probezeitMonate);
   const pzEnde = probezeitEnde(vb, probezeitMonate);
-  const inProbezeit = istInProbezeit(zugang, pzEnde);
+  // RL-16b (W-08 b): Verlängerung nach Art. 335b Abs. 3 OR — nur relevant,
+  // wenn der Zugang nach dem unverlängerten Ende liegt (sonst ohnehin Probezeit).
+  const pzVerl = pzEnde !== null && isAfter(zugang, pzEnde)
+    ? berechneProbezeitVerlaengerung(vb, pzEnde, input.sperrereignisse, input.arbeitstageWoche)
+    : null;
+  const inProbezeit = istInProbezeit(zugang, pzVerl?.ende ?? pzEnde);
 
   // RL-16 / F4-04 (24.9.2026): Art. 335b Abs. 2 OR erlaubt höchstens drei
   // Monate — die Kappung bleibt, wird aber offengelegt (§8) statt still.
@@ -118,11 +129,25 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
   if (pzEnde !== null) {
     rechenweg.push({
       beschreibung: 'Schritt 1 – Probezeit prüfen (Art. 335b OR)',
-      zwischenergebnis: inProbezeit
+      zwischenergebnis: pzVerl
+        ? `Zugang ${formatDatum(zugang)} liegt nach dem unverlängerten Ende der Probezeit (${dauerProbezeitMonate} Monat/e, Ende ${formatDatum(pzEnde)}); Verhinderung in der Probezeit → Verlängerung prüfen.`
+        : inProbezeit
         ? `Zugang ${formatDatum(zugang)} liegt in der Probezeit (${dauerProbezeitMonate} Monat/e, Ende ${formatDatum(pzEnde)}). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.`
         : `Zugang ${formatDatum(zugang)} liegt ausserhalb der Probezeit (Ende ${formatDatum(pzEnde)}). Ordentliche Frist gilt.`,
       normen: [N_335b],
     });
+  }
+
+  if (pzVerl) {
+    const t = probezeitVerlaengerungTexte(pzVerl, zugang);
+    rechenweg.push({
+      beschreibung: 'Schritt 1a – Verlängerung der Probezeit (Art. 335b Abs. 3 OR)',
+      zwischenergebnis: t.schritt,
+      normen: [N_335b_3, ...(pzVerl.bundesfeiertagNichtGezaehlt ? [N_BV_110_3] : [])],
+      rechtsprechung: [rechtsprechung('BGE_148_III_126')],
+    });
+    warnungen.push(...t.warnungen);
+    annahmen.push(...t.annahmen);
   }
 
   if (inProbezeit) {
@@ -134,7 +159,7 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
         rechenweg,
         annahmen,
         warnungen,
-        normverweise: [N_335b, N_335a],
+        normverweise: [N_335b, ...(pzVerl ? [N_335b_3] : []), N_335a],
       },
       beendigungsdatum: beendigung,
       istProbezeit: true,

@@ -16,6 +16,8 @@ import { KANTONE } from '../../lib/kantone';
 import { getStandardKanton } from '../../lib/einstellungen';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { SperrereignisseEditor } from './SperrereignisseEditor';
+import { ArbeitstageFeld } from './ArbeitstageFeld';
+import { arbeitstageText, STANDARD_ARBEITSTAGE } from '../../lib/kuendigungsfristProbezeit';
 
 // RL-13 PR 2 (UI-05, §5/§10): die frühere Kopie des Typen-Katalogs und des
 // Sperrereignis-Repeaters ist dem geteilten SperrereignisseEditor gewichen
@@ -35,6 +37,8 @@ const DEFAULTS: ArbeitsrechtInput = {
   arbeitsunfaehigkeitProzent: 100,
   kanton: 'BS',
   ktgGleichwertigVorhanden: false,
+  // RL-16b: Standard Mo–Fr (Art. 335b Abs. 3 OR, BGE 148 III 126)
+  arbeitstageWoche: [1, 2, 3, 4, 5],
   sperrereignisse: [],
 };
 
@@ -79,6 +83,7 @@ export function KombinierteAnsicht({ startwerte }: {
     'AUF %': String(form.arbeitsunfaehigkeitProzent ?? 100),
     'Kanton': form.kanton ?? '',
     'Kündigungstermin Monatsende': form.kuendigungsterminMonatsende ? 'Ja' : 'Nein',
+    ...(form.probezeitMonate > 0 ? { 'Arbeitstage pro Woche': arbeitstageText(form.arbeitstageWoche ?? STANDARD_ARBEITSTAGE) } : {}),
     ...(form.abweichendeFristMonate != null ? { 'Abweichende Frist (Monate)': String(form.abweichendeFristMonate) } : {}),
     ...(form.kuendigendePartei === 'arbeitgeber' && form.vaterschaftsurlaubResttage
       ? { 'Nicht bezogene Tage Art. 329g': String(form.vaterschaftsurlaubResttage) } : {}),
@@ -157,6 +162,14 @@ export function KombinierteAnsicht({ startwerte }: {
         <Field label="Probezeit (Monate)">
           <input type="number" inputMode="decimal" min={0} max={3} value={form.probezeitMonate} onChange={(e) => set('probezeitMonate', Number(e.target.value))} className={inputCls} />
         </Field>
+
+        {/* RL-16b (W-08 b): Arbeitstage für die Probezeitverlängerung nach
+            Art. 335b Abs. 3 OR — nur sichtbar, wenn eine Probezeit besteht. */}
+        {form.probezeitMonate > 0 && (
+          <Field label="Arbeitstage pro Woche" hint="Für die Verlängerung der Probezeit bei Krankheit, Unfall oder Dienstpflicht (Art. 335b Abs. 3 OR)">
+            <ArbeitstageFeld wert={form.arbeitstageWoche} onChange={(t) => set('arbeitstageWoche', t)} />
+          </Field>
+        )}
 
         {/* RL-13 PR 2 (UI-05): Die Engine las Monatsende, abweichende Frist und
             die nicht bezogenen Tage Art. 329g schon immer aus demselben Input —

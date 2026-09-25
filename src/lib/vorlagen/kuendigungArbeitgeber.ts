@@ -94,7 +94,10 @@ export function kagEngine(a: KagAntworten): SperrfristenErgebnis | null {
  *  zum internen Befund von berechneSperrfristen; §5 — kein Text-Parsing). */
 export function kagIstProbezeit(a: KagAntworten): boolean {
   if (!ISO.test(a.vertragsbeginn) || !ISO.test(a.zugangKuendigung)) return false;
-  return berechneKuendigungsfrist(kagEngineInput(a)).istProbezeit;
+  // RL-16b: dieselben Sperrereignisse wie kagEngine — sonst sähe der
+  // Probezeit-Satz des Briefs die Verlängerung nach Art. 335b Abs. 3 OR nicht.
+  const ereignisse = Array.isArray(a.sperrereignisse) ? a.sperrereignisse : [];
+  return berechneKuendigungsfrist({ ...kagEngineInput(a), sperrereignisse: ereignisse }).istProbezeit;
 }
 
 // ── Gates (Spez. 1b/d) ──────────────────────────────────────────────────────

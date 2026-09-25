@@ -31,6 +31,7 @@
 import { describe, it, expect } from 'vitest';
 import { format } from 'date-fns';
 import { renderToString } from 'react-dom/server';
+import { MemoryRouter } from 'react-router-dom';
 import { berechneKuendigungsfrist } from '../lib/kuendigungsfrist';
 import { berechneSperrfristen } from '../lib/sperrfristen';
 import { KAG_DEFAULTS, kagIstProbezeit, kagEngine, type KagAntworten } from '../lib/vorlagen/kuendigungArbeitgeber';
@@ -84,8 +85,7 @@ describe('RL-16b Befund F4-02 — Soll-Fall 5.2.2025 → 12.2.2025', () => {
   });
 
   it('Feld fehlt (z. B. Vorlage ohne Feld): Standard Mo–Fr, gleiches Ergebnis + offengelegte Annahme', () => {
-    const { arbeitstageWoche: _weg, ...ohneFeld } = BEFUND;
-    const r = berechneKuendigungsfrist(ohneFeld);
+    const r = berechneKuendigungsfrist({ ...BEFUND, arbeitstageWoche: undefined });
     expect(ds(r.beendigungsdatum)).toBe('2025-02-12');
     expect(r.ergebnis.warnungen.some((w) => w.includes('Montag bis Freitag'))).toBe(true);
   });
@@ -272,7 +272,7 @@ describe('RL-16b Formulare zeigen das Feld «Arbeitstage»', () => {
   const text = (html: string) => html.replace(/<!-- -->/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
 
   it('Kündigungs-/Sperrfristen-Rechner: Wochentags-Gruppe mit sieben Ankreuzfeldern', () => {
-    const html = renderToString(<KuendigungSperrForm />);
+    const html = renderToString(<MemoryRouter initialEntries={['/rechner/kuendigung']}><KuendigungSperrForm /></MemoryRouter>);
     expect(text(html)).toContain('Arbeitstage');
     expect(html).toMatch(/role="group"[^>]*aria-labelledby/);
     expect((html.match(/data-wochentag=/g) ?? []).length).toBe(7);
