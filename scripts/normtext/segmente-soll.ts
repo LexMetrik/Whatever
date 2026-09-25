@@ -17,9 +17,49 @@ export interface SollPin {
   htmlN: number;
 }
 
+/**
+ * G1 (Runde 3): Zeilen ohne Zeilen-Fingerabdruck, je Grund — in der Soll-Datei
+ * mitgeführt, damit auch Modus B (ohne HTML) die Zahl in JEDEM Lauf ausgeben
+ * kann. Rein aus der HTML abgeleitet (deterministisch), Teil des Soll-Inhalts.
+ */
+export interface ZeilenStatistik {
+  tabellen: number;
+  tabellenOhneZeilenFp: number; // Tabellen, in denen KEINE Zeile einen Zeilen-Fingerabdruck trägt
+  zeilen: number; // Zeilen mit mindestens einer td/th-Zelle
+  mitFingerabdruck: number;
+  ungeschuetzt: number; // Zeilen ohne Zeilen-Fingerabdruck UND ohne Zelle ≥ SEGMENT_MINDESTLAENGE — Inhalt gar nicht geprüft
+  ohne: {
+    kopf: number; // <thead> oder nur <th>-Zellen (Projektion fasst Köpfe spaltenweise zusammen, G2)
+    einzelzelle: number; // höchstens EINE nicht-leere Zelle — die Zeile IST die Zelle (Zellregel greift)
+    marken: number; // ≥ 2 nicht-leere Zellen, aber jede Nachbarschaft durch eine Listenmarke (<dt>) getrennt
+    bild: number; // wie «marken», getrennt durch eine Bildzelle (Projektion: bildKacheln, Bild-Metadaten zwischen den Zellen)
+  };
+}
+
+export function leereZeilenStatistik(): ZeilenStatistik {
+  return { tabellen: 0, tabellenOhneZeilenFp: 0, zeilen: 0, mitFingerabdruck: 0, ungeschuetzt: 0, ohne: { kopf: 0, einzelzelle: 0, marken: 0, bild: 0 } };
+}
+
+export function addiereZeilenStatistik(ziel: ZeilenStatistik, quelle: ZeilenStatistik): void {
+  ziel.tabellen += quelle.tabellen;
+  ziel.tabellenOhneZeilenFp += quelle.tabellenOhneZeilenFp;
+  ziel.ungeschuetzt += quelle.ungeschuetzt;
+  ziel.zeilen += quelle.zeilen;
+  ziel.mitFingerabdruck += quelle.mitFingerabdruck;
+  ziel.ohne.kopf += quelle.ohne.kopf;
+  ziel.ohne.einzelzelle += quelle.ohne.einzelzelle;
+  ziel.ohne.marken += quelle.ohne.marken;
+  ziel.ohne.bild += quelle.ohne.bild;
+}
+
+export function zeilenStatistikGleich(a: ZeilenStatistik | undefined, b: ZeilenStatistik | undefined): boolean {
+  return JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+}
+
 export interface SollDatei {
   pin: SollPin;
   segmenterVersion: number;
+  zeilenStatistik?: ZeilenStatistik; // ab SEGMENTER_VERSION 3 (G1)
   artikel: Record<string, [number, string][]>; // eId -> [[laenge, hash], …] (kompakt statt Objekt je Eintrag)
 }
 

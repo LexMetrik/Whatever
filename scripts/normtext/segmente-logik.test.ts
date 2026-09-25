@@ -17,8 +17,12 @@ import {
   normalisiere,
   parseErlassHtml,
   projektionsBlob,
+  segmentiereAnker,
   segmentiereArtikel,
+  segmenteZuFingerabdruecken,
+  leereZeilenStatistik,
   type BasislinienEintrag,
+  type ZeilenStatistik,
 } from './segmente-logik.ts';
 
 function huelle(koerper: string): string {
@@ -359,6 +363,82 @@ describe('segmentiereArtikel — B4: Zeilen-Fingerabdruck rettet eine zu kurze T
     const zeile = segmente.find((s) => s.art === 'tr');
     expect(zeile).toBeDefined();
     expect(zeile!.text).toContain('0.77');
+  });
+});
+
+describe('G1 (Runde 3): Zeilen-Fingerabdruck je ZEILE aus der HTML, nicht je Projektions-Eintrag', () => {
+  const trTexte = (html: string, statistik?: ZeilenStatistik): string[] =>
+    segmentiereAnker(parseErlassHtml(html), 'art_1', undefined, statistik)!
+      .filter((s) => s.art === 'tr')
+      .map((s) => normalisiere(s.text));
+
+  it('Kopfzeile aus <th> bekommt KEINEN Zeilen-Fingerabdruck (Projektion fasst Köpfe spaltenweise zusammen, RDV annex_3)', () => {
+    const html = huelle('<table><tr><th>Stoff</th><th>Grenzwert</th></tr><tr><td>Arsen</td><td>2</td></tr></table>');
+    expect(trTexte(html)).toEqual(['Arsen2']);
+  });
+
+  it('<td>-Kopfzeile mit Fedlex-Klasse man-template-tab-kpf gilt als Kopf; <th class="…-krpr"> als Datenzeile', () => {
+    const html = huelle(
+      '<table><tr><td><p class="man-template-tab-kpf">Stufe</p></td><td><p class="man-template-tab-kpf">Wert</p></td></tr>' +
+        '<tr><th><p class="man-template-tab-krpr">I</p></th><th><p class="man-template-tab-krpr">55</p></th></tr></table>',
+    );
+    expect(trTexte(html)).toEqual(['I55']);
+  });
+
+  it('Zeile in <thead> gilt als Kopf, auch mit <td>-Zellen', () => {
+    const html = huelle('<table><thead><tr><td>Stoff</td><td>Wert</td></tr></thead><tbody><tr><td>Blei</td><td>30</td></tr></tbody></table>');
+    expect(trTexte(html)).toEqual(['Blei30']);
+  });
+
+  it('Listenzelle (dt/dd) VOR der Wertzelle: Stück ab der Marke deckt die Nachbarschaft (VTS Art. 135 «4,00»)', () => {
+    const html = huelle(
+      '<table><tr><td></td><td>Meter</td></tr>' +
+        '<tr><td><dl><dt>a.</dt><dd>Länge</dd></dl></td><td>4,00</td></tr></table>',
+    );
+    expect(trTexte(html)).toContain('Länge4,00');
+  });
+
+  it('Listenmarke ZWISCHEN zwei Zellinhalten trennt das Stück — keine Verkettung über die Marke (GSCHV annex_2)', () => {
+    const html = huelle(
+      '<table><tr><td>Stickstoff</td><td><dl><dt>–</dt><dd>über 10 °C</dd><dt>–</dt><dd>unter 10 °C</dd></dl></td></tr></table>',
+    );
+    const statistik = leereZeilenStatistik();
+    expect(trTexte(html, statistik)).toEqual([]);
+    expect(statistik.ohne.marken).toBe(1);
+  });
+
+  it('zählt Tabellen und Zeilen ohne Fingerabdruck je Grund', () => {
+    const html = huelle(
+      '<table><tr><th>A</th><th>B</th></tr><tr><td>nur eine Zelle</td><td></td></tr><tr><td>x</td><td>1</td></tr></table>',
+    );
+    const statistik = leereZeilenStatistik();
+    trTexte(html, statistik);
+    expect(statistik).toEqual({
+      tabellen: 1,
+      tabellenOhneZeilenFp: 0,
+      zeilen: 3,
+      mitFingerabdruck: 1,
+      ungeschuetzt: 1, // Kopfzeile «A | B»: keine Zelle ≥ 8 Zeichen
+      ohne: { kopf: 1, einzelzelle: 1, marken: 0, bild: 0 },
+    });
+  });
+
+  it('Bildzelle (Signaltafel, Projektion bildKacheln) wird isoliert — keine Verkettung über sie hinweg (SSV annex_2)', () => {
+    const html = huelle(
+      '<table><tr><td><p>1.03 Doppelkurve</p><img src="a.png"></td><td><p>1.04 Doppelkurve links</p><img src="b.png"></td></tr></table>',
+    );
+    const statistik = leereZeilenStatistik();
+    expect(trTexte(html, statistik)).toEqual([]);
+    expect(statistik.ohne.bild).toBe(1);
+  });
+
+  it('Mindestlänge: ein Zeilenstück aus ≥ 2 Zellen wird auch unter 8 Zeichen gefingerprintet, eine Zelle nicht', () => {
+    const fps = segmenteZuFingerabdruecken([
+      { art: 'tr', text: 'Arsen 2' },
+      { art: 'td', text: '2' },
+      { art: 'p', text: 'kurz' },
+    ]);
+    expect(fps.map((f) => f.fp.laenge)).toEqual([6]);
   });
 });
 

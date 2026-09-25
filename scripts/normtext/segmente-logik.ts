@@ -21,7 +21,7 @@
  * unbelegte Wahrheit).
  */
 import { parseHTML } from 'linkedom';
-import type { Fingerabdruck } from './segmente-soll.ts';
+import { leereZeilenStatistik, type Fingerabdruck, type ZeilenStatistik } from './segmente-soll.ts';
 
 // Soll-/Basislinien-Logik liegt seit Runde 3 (25.9.2026) in `segmente-soll.ts`
 // (§6.6); hier re-exportiert, damit Aufrufer und Tests EINE Import-Quelle behalten.
@@ -142,7 +142,7 @@ export function fehlendeIndizes(blobNormalisiert: string, fps: readonly Fingerab
 
 // ── HTML-Segmentierung (Modus C: frische Ableitung) ────────────────────────
 
-export type SegmentArt = 'p' | 'dd' | 'td' | 'th' | 'h' | 'tr';
+export type SegmentArt = 'p' | 'dd' | 'td' | 'th' | 'h' | 'tr' | 'caption';
 
 export interface RohSegment {
   art: SegmentArt;
@@ -172,6 +172,8 @@ interface Knoten extends KnotenText {
   children: Iterable<Knoten>;
   childNodes: Iterable<KnotenText>;
   firstElementChild: Knoten | null;
+  parentElement: Knoten | null;
+  closest(sel: string): Knoten | null;
   cloneNode(tief: boolean): Knoten;
   querySelector(sel: string): Knoten | null;
   querySelectorAll(sel: string): Iterable<Knoten>;
@@ -375,17 +377,131 @@ function restmenge(bereich: Knoten): string | null {
   return roh.trim().replace(/\s+/g, ' ').slice(0, 80); // lesbare Vorschau (Leerraum erhalten), Schwelle bleibt normalisiert
 }
 
+// ── G1 (Runde 3): Zeilen-Fingerabdruck je Zeile, allein aus der HTML ───────
+//
+// Eine Zeile verkettet (B4) macht die Löschung EINER zu kurzen Zelle sichtbar
+// (Tarifbetrag «0.77», «190.–», «4,00»). Entscheid je ZEILE:
+//  (1) KOPFZEILE (in <thead> oder nur <th>-Zellen) ⇒ kein Zeilen-Fingerabdruck.
+//      Die Projektion legt Köpfe spaltenweise ab (`mehrspaltig.kopf`, bei
+//      `spalten[]` mit `typ` zwischen den Titeln; RDV annex_3: dreizeiliger
+//      Kopf spaltenweise zusammengefasst) — eine Kopfzeilen-Verkettung wäre
+//      ein Tor-Artefakt (G2). Kopfzellen ≥ 8 Zeichen bleiben über die
+//      Zellregel geprüft.
+//  (2) LISTENMARKEN: jedes <dt> TRENNT die Zeile in Stücke (statt die Zeile
+//      ganz auszunehmen). Die Projektion führt eine Marke teils literal im
+//      Zelltext («a. Länge»), teils gar nicht — ein Stück OHNE Marke ist in
+//      beiden Fällen zusammenhängend im Blob, eine Verkettung ÜBER die Marke
+//      hinweg nicht (GSCHV annex_2 «…N – unter 10 °C», KRK-Sternchen-Legende).
+//  (3) Ein Stück wird gefingerprintet, wenn es Text aus ≥ 2 Zellen trägt
+//      (`ZEILE_MINDESTZELLEN`) — unabhängig von der Zeichenzahl (VVEA Anhang 7
+//      «Arsen / 2» = 6 Zeichen). Begründung der Mindestlänge: die Information
+//      des Zeilen-Fingerabdrucks ist die NACHBARSCHAFT zweier Zellen; ein
+//      Stück aus EINER Zelle ist genau das Zellsegment (Zellregel, ≥ 8). Ein
+//      kurzes Stück kann höchstens zufällig anderswo im Artikel-Blob stehen —
+//      das schwächt die Prüfung (falsch grün), macht sie aber nie falsch rot.
+// Zeilen ohne Fingerabdruck werden je Grund gezählt (`ZeilenStatistik`) und in
+// jedem Lauf ausgegeben.
+export const ZEILE_MINDESTZELLEN = 2;
+
+// Platzhalter für eine Listenmarke im Zeilentext — NUL kommt in geparster
+// HTML nicht vor (der Parser ersetzt es durch U+FFFD).
+const MARKEN_TRENNER = '\u0000';
+
+function zellTextMitMarken(zelle: Knoten): string {
+  const klon = ohneStyleUndScript(ohneFussnotenmarken(zelle.cloneNode(true)));
+  for (const dt of [...klon.querySelectorAll('dt')]) dt.textContent = MARKEN_TRENNER;
+  return klon.textContent ?? '';
+}
+
+// Kopfzeile nach dem AMTLICHEN Markup (Fedlex-Klassen, nicht Extraktor-Code):
+// <thead>; oder jede nicht-leere Zelle ist <th> ohne Daten-Klasse
+// (`man-template-tab-krpr`/`-utit` = Tabellenkörper, z.B. LRV Anhang 3,
+// VTS Anhang 9); oder jede nicht-leere Zelle trägt `man-template-tab-kpf`
+// (Kopf als <td>, z.B. RDV annex_3, LSV-Anhänge, FZA annex_III).
+function hatKlasse(zelle: Knoten, muster: RegExp): boolean {
+  if (muster.test(zelle.getAttribute('class') ?? '')) return true;
+  for (const el of zelle.querySelectorAll('[class]')) if (muster.test(el.getAttribute('class') ?? '')) return true;
+  return false;
+}
+
+function istKopfzeile(zeile: Knoten, zellen: Knoten[]): boolean {
+  if (zeile.parentElement?.tagName === 'THEAD') return true;
+  const nichtLeer = zellen.filter((z) => normalisiere(z.textContent ?? '').length > 0);
+  if (nichtLeer.length === 0) return false;
+  if (nichtLeer.every((z) => z.tagName === 'TH' && !hatKlasse(z, /man-template-tab-(?:krpr|utit)/))) return true;
+  return nichtLeer.every((z) => hatKlasse(z, /man-template-tab-kpf/));
+}
+
+function zeilenSegmente(tabelle: Knoten, segmente: RohSegment[], statistik: ZeilenStatistik): void {
+  statistik.tabellen++;
+  let zeilenMitFp = 0;
+  const ohneFp = (zellen: Knoten[]): void => {
+    const laengste = Math.max(0, ...zellen.map((z) => normalisiere(zellTextMitMarken(z)).length));
+    if (laengste > 0 && laengste < SEGMENT_MINDESTLAENGE) statistik.ungeschuetzt++;
+  };
+  for (const zeile of [...tabelle.querySelectorAll('tr')]) {
+    if (zeile.closest('table') !== tabelle) continue; // Zeile einer verschachtelten Tabelle: dort gezählt
+    const zellen = [...zeile.children].filter((k) => k.tagName === 'TD' || k.tagName === 'TH');
+    if (zellen.length === 0) continue;
+    statistik.zeilen++;
+    if (istKopfzeile(zeile, zellen)) {
+      statistik.ohne.kopf++;
+      ohneFp(zellen);
+      continue;
+    }
+    const stuecke: Array<{ teile: string[]; zellen: number }> = [{ teile: [], zellen: 0 }];
+    let nichtLeer = 0;
+    let bildzelle = false;
+    for (const zelle of zellen) {
+      // (4) BILDZELLE (<img>/<svg>, Signaltafeln SSV annex_2): die Projektion
+      // legt sie als `bildKacheln` ab — Bild-Metadaten (datei/alt/sha) stehen
+      // im Blob ZWISCHEN den Zellen. Die Bildzelle wird darum wie eine Marke
+      // isoliert (eigenes Stück davor und danach), ihr Text bleibt zellweise geprüft.
+      const mitBild = zelle.querySelector('img, svg') !== null;
+      if (mitBild) {
+        bildzelle = true;
+        stuecke.push({ teile: [], zellen: 0 });
+      }
+      const teile = zellTextMitMarken(zelle).split(MARKEN_TRENNER);
+      if (normalisiere(teile.join('')).length > 0) nichtLeer++;
+      teile.forEach((teil, i) => {
+        if (i > 0) stuecke.push({ teile: [], zellen: 0 });
+        if (normalisiere(teil).length === 0) return;
+        const aktuell = stuecke[stuecke.length - 1];
+        aktuell.teile.push(teil.trim());
+        aktuell.zellen++;
+      });
+      if (mitBild) stuecke.push({ teile: [], zellen: 0 });
+    }
+    const mehrzellig = stuecke.filter((s) => s.zellen >= ZEILE_MINDESTZELLEN);
+    if (mehrzellig.length > 0) {
+      statistik.mitFingerabdruck++;
+      zeilenMitFp++;
+      for (const s of mehrzellig) segmente.push({ art: 'tr', text: s.teile.join(' ') });
+      continue;
+    }
+    if (nichtLeer < ZEILE_MINDESTZELLEN) statistik.ohne.einzelzelle++;
+    else if (bildzelle) statistik.ohne.bild++;
+    else statistik.ohne.marken++;
+    ohneFp(zellen);
+  }
+  if (zeilenMitFp === 0) statistik.tabellenOhneZeilenFp++;
+}
+
 /**
  * @param restmeldungen optional: wird — falls übergeben — um eine Meldung
  *   ergänzt, wenn nach der Zerlegung nennenswerter unklassifizierter Text
  *   übrig bleibt (B2-Restmengen-Prüfung). `undefined` (Default, Tests/Fixtures
  *   ohne Interesse daran) macht KEINE Restmengen-Prüfung — reine Performance/
  *   Kompatibilität, kein Verhaltensunterschied an den Segmenten selbst.
+ * @param statistik optional (G1): wird um Tabellen/Zeilen und die Zeilen ohne
+ *   Zeilen-Fingerabdruck je Grund hochgezählt.
  */
 export function segmentiereAnker(
   dokument: { getElementById: (id: string) => Knoten | null },
   ankerId: string,
   restmeldungen?: string[],
+  statistik: ZeilenStatistik = leereZeilenStatistik(),
 ): RohSegment[] | null {
   const wurzel = dokument.getElementById(ankerId);
   if (!wurzel) return null;
@@ -432,63 +548,17 @@ export function segmentiereAnker(
   // zu "…Nunter 10…", ein Zerlegungs-Artefakt). Enthält die Zelle KEINE
   // solche innere Struktur, bleibt sie EIN Segment (Fallback: `blockText`).
   //
-  // B4 (Gegenprüfung 25.9.2026): ZUSÄTZLICH ein Fingerabdruck je ZEILE aus
-  // den verketteten Zellen. Grund: 24'368 von 42'101 nicht-leeren Zellen lagen
-  // unter der Segment-Mindestlänge (8 Zeichen — z.B. ein Tarifbetrag «0.77»)
-  // und wurden dadurch NIE gefingerprintet; eine gelöschte Tarifzelle blieb
-  // grün. Eine ganze Zeile verkettet reicht praktisch immer über die
-  // Mindestlänge und macht die Löschung EINER Zelle in der Zeile sichtbar,
-  // ohne die bestehende (feinere) Zellzerlegung zu ersetzen — rein additiv.
-  //
-  // WICHTIG (verklebungsfrei): die Zeile wird aus denselben BEREITS ZERLEGTEN
-  // Teilen gebaut wie die Zellzerlegung unten (nicht aus rohem
-  // `blockText(zelle)`) — sonst reproduziert die Verkettung genau das
-  // "…Nunter 10…"-Verklebungs-Artefakt (s. Kommentar oben), das die
-  // Zellzerlegung eigentlich vermeidet: rohe Zell-Kindelemente (eigene
-  // <p>+<dl>-Struktur) haben KEINEN Leerraum zwischen sich im DOM, `blockText`
-  // fügt keinen ein.
-  //
-  // AUSNAHME (empirisch 25.9.2026 an KRK/GSCHV gefunden, NACH dem ersten
-  // B4-Entwurf): eine Zelle mit eigener <dl>/<dt>/<dd>-LISTE wird von der
-  // Zeilenverkettung ausgenommen. Grund: die Projektion bewahrt für solche
-  // Zellen manchmal die Listenmarke als LITERALES Zeichen im Text (z.B. der
-  // Gedankenstrich-Marker in GSCHV annex_2 "…Temperaturen: – über 10 °C…",
-  // oder die Sternchen-Legende in KRK/CEDAW/… "* Vorbehalte … ** Einwendungen
-  // …") — unsere Zerlegung entfernt <dt> dagegen IMMER (§ Architektur Ziff. 4,
-  // reine Listenmarke). Beide Seiten sind für sich korrekt, aber die
-  // Verkettung MEHRERER <dd> zu einer Zeile würde genau an der vom Original
-  // markierten, bei uns aber entfernten Stelle auseinanderklaffen — ein
-  // Falsch-Positiv der Zeilenprüfung, kein echter Verlust (die einzelnen <dd>
-  // bleiben über die normale Zellzerlegung unten weiterhin GEPRÜFT, nur ohne
-  // den zusätzlichen Zeilen-Fingerabdruck).
-  //
-  // SCHARF AUF 'dd' begrenzt (Regression 25.9.2026, VOR dem Commit gefangen):
-  // eine erste Fassung prüfte `innereSegmente.length > 0` — das erfasst JEDE
-  // Zelle, deren Text in einem <p> steckt (die tarifübliche Fedlex-Konvention,
-  // empirisch an DBG Art. 36 "0.77" gefunden: JEDE Zelle der Tarif-Tabelle hat
-  // ein umschliessendes <p>, ohne jede dt/dd-Listenmarke) — und schaltete den
-  // Zeilen-Fingerabdruck damit für genau den Fall ab, den B4 überhaupt lösen
-  // sollte. `<p>` hat kein benachbartes <dt>, also kein Klebe-Risiko — nur
-  // <dd>-Segmente (aus einer dt/dd-Liste) lösen die Ausnahme aus.
+  // ZUSÄTZLICH Zeilen-Fingerabdrücke (B4; G1 Runde 3 — Entscheid je ZEILE,
+  // allein aus der HTML, s. `zeilenSegmente`). Die frühere Fassung schaltete
+  // sie je Projektions-EINTRAG ab, sobald dort irgendwo `items`/`spalten`
+  // vorkam — 62 % aller Zeilen ohne Schutz (GP 2, G1), und das Soll hing von
+  // der Projektion ab (G6). `<caption>` (G5) ist ein eigenes Segment, statt mit
+  // der Tabelle verworfen zu werden (heute 0 im Korpus).
   for (const tabelle of [...klon.querySelectorAll('table')]) {
-    for (const zeile of [...tabelle.querySelectorAll('tr')]) {
-      const zellenDerZeile = [...zeile.children].filter(
-        (k: Knoten) => k.tagName === 'TD' || k.tagName === 'TH',
-      );
-      if (zellenDerZeile.length === 0) continue;
-      const zeilenTeile: string[] = [];
-      let listenzelleImSpiel = false;
-      for (const zelle of zellenDerZeile) {
-        const innereSegmente: RohSegment[] = [];
-        segmentiereBereich(zelle.cloneNode(true), innereSegmente);
-        if (innereSegmente.length > 0) {
-          if (innereSegmente.some((seg) => seg.art === 'dd')) listenzelleImSpiel = true;
-          for (const seg of innereSegmente) zeilenTeile.push(seg.text);
-        } else {
-          zeilenTeile.push(blockText(zelle));
-        }
-      }
-      if (!listenzelleImSpiel) segmente.push({ art: 'tr', text: zeilenTeile.join(' ') });
+    zeilenSegmente(tabelle, segmente, statistik);
+    for (const beschriftung of [...tabelle.querySelectorAll('caption')]) {
+      segmente.push({ art: 'caption', text: blockText(beschriftung) });
+      beschriftung.remove();
     }
     for (const zelle of [...tabelle.querySelectorAll('td, th')]) {
       const innereSegmente: RohSegment[] = [];
@@ -566,3 +636,18 @@ export function projektionsBlob(eintrag: Pick<ProjektionsEintrag, 'bloecke' | 'g
   return normalisiere(teile.join(''));
 }
 
+
+/**
+ * Rohsegmente → Fingerabdrücke mit der Mindestlängen-Regel je Art: Zeilen-
+ * stücke (`tr`) tragen ihre eigene Untergrenze bereits (≥ 2 Zellen, s.
+ * `ZEILE_MINDESTZELLEN`), alle übrigen Segmente `SEGMENT_MINDESTLAENGE`.
+ */
+export function segmenteZuFingerabdruecken(roh: readonly RohSegment[]): Array<{ roh: RohSegment; fp: Fingerabdruck }> {
+  const aus: Array<{ roh: RohSegment; fp: Fingerabdruck }> = [];
+  for (const r of roh) {
+    const n = normalisiere(r.text);
+    if (n.length === 0 || (r.art !== 'tr' && n.length < SEGMENT_MINDESTLAENGE)) continue;
+    aus.push({ roh: r, fp: fingerabdruck(n) });
+  }
+  return aus;
+}

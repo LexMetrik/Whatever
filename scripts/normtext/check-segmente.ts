@@ -30,25 +30,27 @@ import { execFileSync } from 'node:child_process';
 import { parseFedlexCacheEintraege, type FedlexCacheEintrag } from './inventar-bund.ts';
 import { pinBefund, pinIdentitaet } from './cache-pin-befund.ts';
 import {
+  addiereZeilenStatistik,
   alleArtikelEids,
   ankerIdVonEid,
   fehlendeIndizes,
-  fingerabdruck,
   fingerabdrueckeZuSoll,
   gleicheBasislinieAb,
-  normalisiere,
+  leereZeilenStatistik,
   parseErlassHtml,
   pinIdentGleich,
   projektionsBlob,
   segmentiereAnker,
-  SEGMENT_MINDESTLAENGE,
+  segmenteZuFingerabdruecken,
   SEGMENTER_VERSION,
   sollZuFingerabdruecke,
+  zeilenStatistikGleich,
   type BasislinienEintrag,
   type Fingerabdruck,
   type ProjektionsEintrag,
   type SollDatei,
   type SollPin,
+  type ZeilenStatistik,
 } from './segmente-logik.ts';
 
 // B1 (dokumentierte Ausnahme, s. u.): KKV art_126_z__2 ist der Synthese-
@@ -155,53 +157,18 @@ function sollInhaltGleich(
 interface FrischesSoll {
   pin: SollPin;
   artikel: Record<string, Fingerabdruck[]>;
+  zeilenStatistik: ZeilenStatistik; // G1: Zeilen ohne Zeilen-Fingerabdruck je Grund (landet im Soll)
   auszuegeJeEid: Map<string, Map<string, string>>; // eId -> hash -> Auszug (≤80 Zeichen, NUR Report/Basislinie)
   keinAnkerLokalisierbar: string[];
   restmeldungen: string[]; // B2: nennenswerter unklassifizierter Text nach der Zerlegung (meldend, s. segmente-logik.ts)
 }
 
-/**
- * B4-Folgebefund (Gegenprüfung-Nachbesserung 25.9.2026, NACH dem ersten
- * Vollkorpus-Lauf EMPIRISCH gefunden, zweimal nachgeschärft): der naiv
- * verkettete Zeilen-Fingerabdruck (B4) setzt voraus, dass die Projektion die
- * Zellen einer Zeile direkt benachbart im Blob ablegt — das gilt NICHT
- * durchgehend:
- *  (a) `mehrspaltig.spalten[]` (Objekte `{typ, titel}`) reiht das `typ`-Feld
- *      ("text"/"zahl") ZWISCHEN je zwei Spalten-`titel`-Werten ein (empirisch
- *      an EAUE decl_u3: Blob "…textStaatentextNotenaustauschvomzahl…" statt
- *      direkter Nachbarschaft).
- *  (b) `items[]` (Objekte `{marke, text, trenner}`, die dt/dd-Listendarstellung)
- *      reiht `marke`/`trenner` zwischen die `text`-Werte ein — UND Fedlex legt
- *      mehrsprachige Zellinhalte oft per `<br>` innerhalb EINER Zelle ab, was
- *      `blockText` (kein Trenner für `<br>`, DOM-Eigenheit) zu einem eigenen
- *      Klebe-Artefakt verschmilzt, der seinerseits nicht mit der Projektions-
- *      Reihenfolge übereinstimmt (empirisch an VVV annex_1 "Interne
- *      Kontrollnummer …" belegt: die Zeilen-Verkettung erwartet die nächste
- *      Zelle direkt im Anschluss, die Projektion hat dort andere Zeilen
- *      dazwischen).
- * Für die REINEN Schemas (`mehrspaltig.kopf`: flaches String-Array,
- * `mehrspaltig.zeilen[i]`: flaches String-Array je Zeile, schlichter Fliess-
- * text) gibt es diese Zwischen-Tokens NICHT — dort stehen Zellen tatsächlich
- * direkt benachbart im Blob (empirisch am ursprünglichen B4-Fall DBG Art. 36
- * "0.77" bestätigt, reines kopf/zeilen-Schema, KEIN items/spalten).
- *
- * Statt jedes weitere Einzelmuster zu verfolgen (bereits zwei gefunden, nach
- * dem ersten Fix ein DRITTES empirisch aufgetaucht): eine ALLOWLIST statt
- * einer wachsenden Denylist — der Zeilen-Fingerabdruck läuft NUR, wenn der
- * GESAMTE Projektions-Eintrag NIRGENDS `items` oder `mehrspaltig.spalten`
- * verwendet (§1: im Zweifel schwächere Zusatzprüfung statt Falsch-Positive;
- * die feinere Zellzerlegung bleibt für ALLE Schemas unverändert bestehen). Da
- * `segmentiereAnker`/`segmentiereBereich` bewusst UNABHÄNGIG von der
- * Projektion bleiben (§ Architektur Ziff. 3), passiert die Filterung ERST
- * hier — dieselbe Stelle, die für B5 ohnehin schon die Projektion mitliest.
- */
-function zeilenFingerabdruckUnsicher(eintrag: ProjektionsEintrag | undefined): boolean {
-  if (!eintrag || !Array.isArray(eintrag.bloecke)) return false;
-  return (eintrag.bloecke as Array<{ items?: unknown; mehrspaltig?: { spalten?: unknown } }>).some(
-    (b) => Boolean(b.items) || (b.mehrspaltig && Array.isArray(b.mehrspaltig.spalten)),
-  );
-}
-
+// G1/G6 (Runde 3, 25.9.2026): die frühere Allowlist `zeilenFingerabdruckUnsicher`
+// (Zeilen-Fingerabdruck je Projektions-EINTRAG ab, sobald dort `items` oder
+// `mehrspaltig.spalten` vorkam) ist entfernt — sie liess 62 % aller Zeilen
+// ungeschützt (GebV SchKG Art. 16 «190.–», GebV-HReg Anhang «160.–» grün) und
+// machte das Soll von der Projektion abhängig (G6). Der Entscheid fällt jetzt
+// je Zeile, allein aus der HTML (`segmente-logik.ts`, `zeilenSegmente`).
 /**
  * B1+B5 (Gegenprüfung 25.9.2026): die zu prüfende Artikelmenge kommt aus DEN
  * HTML-ANKERN (`alleArtikelEids`), VEREINIGT mit den Projektions-eIds — nicht
@@ -229,22 +196,17 @@ function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
   const auszuegeJeEid = new Map<string, Map<string, string>>();
   const keinAnkerLokalisierbar: string[] = [];
   const restmeldungen: string[] = [];
+  const zeilenStatistik = leereZeilenStatistik();
 
   for (const eId of alleEids) {
-    let rohSegmente = segmentiereAnker(dokument, ankerIdVonEid(eId), restmeldungen);
+    const rohSegmente = segmentiereAnker(dokument, ankerIdVonEid(eId), restmeldungen, zeilenStatistik);
     if (rohSegmente === null) {
       keinAnkerLokalisierbar.push(eId);
       continue;
     }
-    if (zeilenFingerabdruckUnsicher(projektion?.get(`${praefix}${eId}`))) {
-      rohSegmente = rohSegmente.filter((s) => s.art !== 'tr');
-    }
     const fps: Fingerabdruck[] = [];
     const auszuege = new Map<string, string>();
-    for (const roh of rohSegmente) {
-      const normalisiert = normalisiere(roh.text);
-      if (normalisiert.length < SEGMENT_MINDESTLAENGE) continue;
-      const fp = fingerabdruck(normalisiert);
+    for (const { roh, fp } of segmenteZuFingerabdruecken(rohSegmente)) {
       fps.push(fp);
       if (!auszuege.has(fp.hash)) auszuege.set(fp.hash, roh.text.trim().replace(/\s+/g, ' ').slice(0, 80));
     }
@@ -255,6 +217,7 @@ function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
   return {
     pin: { eli: e.eli, konsolidierung: e.konsolidierung, htmlN: e.htmlN },
     artikel,
+    zeilenStatistik,
     auszuegeJeEid,
     keinAnkerLokalisierbar,
     restmeldungen,
@@ -316,6 +279,7 @@ function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
     const sollDatei: SollDatei = {
       pin: frisch.pin,
       segmenterVersion: SEGMENTER_VERSION,
+      zeilenStatistik: frisch.zeilenStatistik,
       artikel: Object.fromEntries(
         Object.entries(frisch.artikel).map(([eId, fps]) => [eId, fingerabdrueckeZuSoll(fps)]),
       ),
@@ -358,6 +322,7 @@ interface Zwischenergebnis {
   geprueftErlasse: Set<string>; // B10: welche Erlass-KEYs diesen Lauf TATSÄCHLICH geprüft wurden (nicht keinSoll/sollVeraltet)
   keinAnkerLokalisierbarGesamt: Array<{ erlass: string; eId: string }>; // B1: nur Modus C (Modus B rührt die HTML nie an)
   restmeldungenGesamt: string[]; // B2: nur Modus C
+  zeilenStatistik: ZeilenStatistik; // G1: B aus den Soll-Dateien, C frisch aus der HTML
 }
 
 function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
@@ -366,6 +331,7 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
   const keinSoll: string[] = [];
   const keinProjektionsEintragGesamt: Array<{ erlass: string; eId: string }> = [];
   const geprueftErlasse = new Set<string>();
+  const zeilenStatistik = leereZeilenStatistik();
   let geprueftArtikelGesamt = 0;
 
   for (const e of eintraege) {
@@ -381,6 +347,7 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     }
     const key = e.name.toUpperCase();
     geprueftErlasse.add(key);
+    if (committedSoll.zeilenStatistik) addiereZeilenStatistik(zeilenStatistik, committedSoll.zeilenStatistik);
     const { funde, keinProjektionsEintrag, geprueftArtikel } = pruefeErlassGegenProjektion(key, committedSoll.artikel);
     alleFunde.push(...funde);
     for (const eId of keinProjektionsEintrag) keinProjektionsEintragGesamt.push({ erlass: key, eId });
@@ -397,6 +364,7 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     geprueftErlasse,
     keinAnkerLokalisierbarGesamt: [],
     restmeldungenGesamt: [],
+    zeilenStatistik,
   };
 }
 
@@ -408,11 +376,13 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
   const geprueftErlasse = new Set<string>();
   const keinAnkerLokalisierbarGesamt: Array<{ erlass: string; eId: string }> = [];
   const restmeldungenGesamt: string[] = [];
+  const zeilenStatistik = leereZeilenStatistik();
   let geprueftArtikelGesamt = 0;
 
   for (const e of eintraege) {
     const frisch = leiteFrischesSollAb(e);
     const key = e.name.toUpperCase();
+    addiereZeilenStatistik(zeilenStatistik, frisch.zeilenStatistik);
     for (const eId of frisch.keinAnkerLokalisierbar) keinAnkerLokalisierbarGesamt.push({ erlass: key, eId });
     restmeldungenGesamt.push(...frisch.restmeldungen);
     const kompaktesSoll = Object.fromEntries(
@@ -423,7 +393,10 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
       keinSoll.push(e.name);
     } else {
       const pinGleich = pinIdentGleich(committedSoll.pin, frisch.pin) && committedSoll.segmenterVersion === SEGMENTER_VERSION;
-      const inhaltGleich = pinGleich && sollInhaltGleich(committedSoll.artikel, kompaktesSoll);
+      const inhaltGleich =
+        pinGleich &&
+        sollInhaltGleich(committedSoll.artikel, kompaktesSoll) &&
+        zeilenStatistikGleich(committedSoll.zeilenStatistik, frisch.zeilenStatistik);
       if (!pinGleich || !inhaltGleich) sollVeraltet.push(e.name);
     }
 
@@ -448,6 +421,7 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     geprueftErlasse,
     keinAnkerLokalisierbarGesamt,
     restmeldungenGesamt,
+    zeilenStatistik,
   };
 }
 
@@ -521,6 +495,14 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
   let fehler = false;
 
   console.log(`[check:segmente] Modus ${z.modus} — ${z.eintraege.length} Erlasse, ${z.geprueftArtikelGesamt} Artikel geprüft.`);
+  // G1: in JEDEM Lauf — Tabellen/Zeilen und die Zeilen OHNE Zeilen-Fingerabdruck je Grund.
+  const zs = z.zeilenStatistik;
+  const ohneFp = zs.ohne.kopf + zs.ohne.einzelzelle + zs.ohne.marken + zs.ohne.bild;
+  console.log(
+    `ℹ  Tabellen ${zs.tabellen} (${zs.tabellenOhneZeilenFp} ganz ohne Zeilen-Fingerabdruck), Zeilen ${zs.zeilen}: ` +
+      `${zs.mitFingerabdruck} mit Zeilen-Fingerabdruck, ${ohneFp} ohne, davon ${zs.ungeschuetzt} ganz ungeprüft (keine Zelle ≥ 8 Zeichen) ` +
+      `(Kopfzeile ${zs.ohne.kopf} · eine Zelle ${zs.ohne.einzelzelle} · durch Listenmarken getrennt ${zs.ohne.marken} · durch Bildzellen getrennt ${zs.ohne.bild}).`,
+  );
 
   // B1: Ausklammerungen JEDEN Lauf zählen/ausgeben (nur Modus C — Modus B
   // rührt die HTML nie an, s. Zwischenergebnis). Zulässig nur die
