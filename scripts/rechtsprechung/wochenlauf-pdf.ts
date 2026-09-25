@@ -36,7 +36,11 @@ export function fuegeStuecke(stuecke: Stueck[]): string {
   return out;
 }
 
-/** Volltext eines PDF (alle Seiten); leerer String, wenn keine Textebene (Scan). */
+/**
+ * Volltext eines PDF (alle Seiten, getrennt durch Seitenvorschub «\f» — `amtlichesDatum`
+ * liest daran den Kopf einer Folgeseite, SG-Deckblatt 26.9.2026); leerer String, wenn
+ * keine Textebene (Scan).
+ */
 export async function pdfText(bytes: Uint8Array): Promise<string> {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
   const doc = await pdfjs.getDocument({ data: bytes, useSystemFonts: true, isEvalSupported: false }).promise;
@@ -55,5 +59,5 @@ export async function pdfText(bytes: Uint8Array): Promise<string> {
   } finally {
     await doc.destroy();
   }
-  return seiten.join('\n');
+  return seiten.join('\f');
 }

@@ -377,11 +377,11 @@ describe('13 · BS-Vollabgleich', () => {
   });
 });
 
-describe('Ausschluss SG/AG/GR (Befund #1117) — eine Stelle, im Bericht sichtbar', () => {
-  it('Wochenlauf zieht SG, AG, GR und (seit Probelauf 25.9.2026) BE nicht nach', () => {
-    expect(aktiveGerichte(KANTONS_GERICHTE)).toEqual(['zh_obergericht']);
-    expect(Object.keys(AUSGENOMMEN).sort()).toEqual(['ag_gerichte', 'be_verwaltungsgericht', 'gr_gerichte', 'sg_gerichte']);
-    expect(baueBericht(bericht({}))).toContain('**Ausgenommen (nicht nachgezogen):** sg_gerichte — Datum aus OCL unzuverlässig');
+describe('Ausschluss SG/AG/GR/BE (Befund #1117, aufgehoben 26.9.2026) — eine Stelle, im Bericht sichtbar', () => {
+  it('Wochenlauf zieht seit der Wiederaufnahme alle Kantone nach; Bericht ohne Ausgenommen-Zeile', () => {
+    expect(aktiveGerichte(KANTONS_GERICHTE)).toEqual(KANTONS_GERICHTE);
+    expect(Object.keys(AUSGENOMMEN)).toEqual([]);
+    expect(baueBericht(bericht({}))).not.toContain('**Ausgenommen');
   });
   it('BE-Datum-Fehltreffer ⇒ Entwurf, Bericht nennt amtliches und OCL-Datum', () => {
     const t = `KV 200 2026 230\nUrteil der Einzelrichterin vom 20. Mai 2026\n${'Erwägung '.repeat(80)}`;
@@ -406,17 +406,20 @@ describe('16 · kantonaler Zweig nie still (A4)', () => {
     const log = [
       '[kanton] zh_obergericht: 24 de (davon 3 schon im Bestand) → 6 gewählt (Regeste: 2; Datum 2026-07-01…2026-08-06)',
       '[kanton] be_verwaltungsgericht: übersprungen — 0 IDs (Listing nicht erreichbar)',
+      '[kanton] sg_gerichte: 2 zurückgehalten (kein eigener Urteilskopf; davon 0 Bestand unverändert): B 2023/207 (plattform-ohne-kopf …)',
+      '[kanton] sg_gerichte: 22 de → 6 gewählt (Regeste: 1; Datum 2025-01-08…2025-10-21)',
+      '[kanton] gr_gerichte: 24 de → 6 gewählt (Regeste: 0; Datum 2026-09-08…2026-09-21)',
+      '[kanton] ag_gerichte: 21 de → 6 gewählt (Regeste: 0; Datum 2025-08-20…2025-12-02)',
       '[additiv] übersprungen (1): be_verwaltungsgericht (0 IDs)',
     ].join('\n');
     const { kantone } = uebrigeAufruf('2026-09-28');
-    expect(kantonalAusfall(true, kantone, log)).toEqual([]); // beide melden sich
+    expect(kantonalAusfall(true, kantone, log)).toEqual([]); // alle melden sich
     expect(erkenneAusfaelle(log)).toHaveLength(2); // «übersprungen» bleibt Ausfall
   });
-  it('Aufruf «Übrige» leitet --courts aus AUSGENOMMEN ab (ohne sg/ag/gr/be)', () => {
+  it('Aufruf «Übrige» leitet --courts aus AUSGENOMMEN ab (seit 26.9.2026 mit sg/ag/gr/be)', () => {
     const { args } = uebrigeAufruf('2026-09-28');
-    expect(args).toContain('--courts=zh_obergericht');
+    expect(args).toContain('--courts=zh_obergericht,be_verwaltungsgericht,sg_gerichte,gr_gerichte,ag_gerichte');
     expect(args).toContain('--eidg=bvger,bstger,bpatger');
-    expect(args.join(' ')).not.toMatch(/sg_gerichte|ag_gerichte|gr_gerichte/);
     expect(args.slice(0, 5)).toEqual(['run', 'entscheide', '--', '--datum=2026-09-28', '--additiv']);
   });
   it('mit Zweig: jedes Gericht muss im Log vorkommen (Wortgrenze)', () => {

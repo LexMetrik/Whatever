@@ -120,9 +120,9 @@ describe('A2 · Befund der Vorwoche verschwindet nicht', () => {
 describe('N1 · Gerichte mit unzuverlässigem Datum: Vollprüfung', () => {
   const be = Array.from({ length: 6 }, (_, i) => e(`be_verwaltungsgericht_${i}`, 'be_verwaltungsgericht', '2026-08-3' + (i % 2)));
   const andere = Array.from({ length: 40 }, (_, i) => e(`bvger_${String(i).padStart(2, '0')}`, 'bvger'));
-  it('eine Stelle, heute nur BE; BE ist seit dem Probelauf 25.9.2026 ausgenommen (M8), die Regel bleibt', () => {
-    expect([...DATUM_VOLLPRUEFUNG]).toEqual(['be_verwaltungsgericht']);
-    expect(AUSGENOMMEN).toHaveProperty('be_verwaltungsgericht');
+  it('eine Stelle: BE, seit der Wiederaufnahme 26.9.2026 auch SG/AG/GR; keines mehr ausgenommen', () => {
+    expect([...DATUM_VOLLPRUEFUNG].sort()).toEqual(['ag_gerichte', 'be_verwaltungsgericht', 'gr_gerichte', 'sg_gerichte']);
+    expect(AUSGENOMMEN).not.toHaveProperty('be_verwaltungsgericht');
   });
   it('JEDER neue BE-Eintrag in der Stichprobe, zusätzlich zu n', () => {
     // Mutation: DATUM_VOLLPRUEFUNG-Filter in stichprobenPlan entfernen ⇒ nur ein Teil der BE-Einträge.
