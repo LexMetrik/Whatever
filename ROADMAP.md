@@ -276,8 +276,8 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
   - [ ] **B2 · Client-Watchlist** — localStorage-Liste gemerkter Normen, gegen Build-Artefakte geprüft; Rückblick-Flag gegen `fassungsToken`/`sha`, nie `geprueftAm`.
   - [ ] **GER · Gerichts-Delta mit ehrlicher Latenz** — Build-Zeit-Delta je Gericht/Norm; eigenes Verdikt, Import-Kadenz sichtbar (§8).
 
-- [~] **Korpus-Pflege: fehlende und fehlerhafte amtliche Substanz** *(`QS-KORPUS`, Fusion 15.8.2026)*
-  <!-- @meta id: QS-KORPUS · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [ ] **Korpus-Pflege: fehlende und fehlerhafte amtliche Substanz** *(`QS-KORPUS`, Fusion 15.8.2026)*
+  <!-- @meta id: QS-KORPUS · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Dach für die offenen Reparaturen an Normtext- und Rechtsprechungs-Korpus; je Zeile eine
   sortenreine Bau-Einheit. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §1.
   **Offene Befundliste im Wortlaut** (verlagert 20.9.2026, Entscheid David): Fahrplan §1, Abschnitt «Restposten aus ROADMAP.md». Jede Zeile liegt auf dem Risikopfad ⇒ Gegenprüfung Pflicht, amtlicher Beleg mit Norm + Link + Stand (§7), Korrektur nie in der Projektion (§5).
