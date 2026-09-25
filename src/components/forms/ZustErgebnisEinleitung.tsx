@@ -9,6 +9,8 @@ import { ErgebnisExport } from '../ErgebnisExport';
 import { permalinkKodieren } from '../../lib/permalink';
 import { ZUST_LINK_SPEC } from './zustaendigkeitLinkSpecs';
 import { ZPO_SCHWELLEN } from '../../lib/zustaendigkeit';
+// RL-42 / Z1-03: derselbe Satz wie in der Engine (§5).
+import { SCHLICHTUNG_FREIWILLIG_199_3 } from '../../lib/zustaendigkeit/erstinstanz';
 import { ERLASS_LINKS } from '../../data/erlassLinks';
 import { AMT_KANTONE, MIETE_AMT_KANTONE } from '../../data/schlichtung/amtAufloesung';
 import { behoerdeAlsBlock } from '../../lib/vorlagen/behoerden';
@@ -67,7 +69,7 @@ export function ZustErgebnisEinleitung({ z }: { z: ZustaendigkeitFormModell }) {
                     <p className="text-body-s text-ink-900 whitespace-pre-line">
                       {handelsgericht.name}{'\n'}{handelsgericht.strasse}{'\n'}{handelsgericht.plzOrt}
                     </p>
-                    <p className="text-xs text-ink-500">{handelsgericht.organisation}. Bei handelsgerichtlicher Zuständigkeit: Klage direkt, keine Schlichtung (Art. 199 Abs. 3 ZPO); Rechtsmittel direkt ans Bundesgericht (Art. 75 Abs. 2 lit. b BGG).</p>
+                    <p className="text-xs text-ink-500">{handelsgericht.organisation}. Bei handelsgerichtlicher Zuständigkeit: {SCHLICHTUNG_FREIWILLIG_199_3}; Rechtsmittel direkt ans Bundesgericht (Art. 75 Abs. 2 lit. b BGG).</p>
                   </>
                 ) : (
                   <p className="text-body-s text-ink-700">

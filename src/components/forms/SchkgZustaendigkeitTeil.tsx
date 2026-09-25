@@ -11,7 +11,7 @@ import { permalinkKodieren, permalinkLesen } from '../../lib/permalink';
 import { SCHKG_LINK_SPEC, type SchkgLinkZustand } from './zustaendigkeitLinkSpecs';
 import { bgerRechtswegLink } from '../../lib/rechnerPermalinks';
 import {
-  bestimmeSchkgZustaendigkeit, schkgZustaendigkeitBericht, BETREIBUNGSAEMTER_VERZEICHNIS,
+  bestimmeSchkgZustaendigkeit, schkgZustaendigkeitBericht, schkgFristStillstand, BETREIBUNGSAEMTER_VERZEICHNIS,
   type SchkgAnliegen, type SchkgInput, type SchkgPfand, type SchkgSchuldnerTyp,
   type WiderspruchKonstellation,
 } from '../../lib/schkgZustaendigkeit';
@@ -385,12 +385,16 @@ export function SchkgZustaendigkeitTeil() {
           {r.fristen.length > 0 && (
             <div className="lc-card p-5 space-y-2.5">
               <GruppenTitel>Fristen</GruppenTitel>
-              {r.fristen.map((f) => (
-                <p key={f.label + f.norm} className="text-body-s text-ink-800">
-                  {f.kritisch && <span className="lc-badge lc-badge-danger mr-1.5">Verwirkung</span>}
-                  <span className="font-medium text-ink-900">{f.label}:</span> {f.frist} <span className="text-ink-500">({f.norm})</span>
-                </p>
-              ))}
+              {r.fristen.map((f) => {
+                const stillstand = schkgFristStillstand(f);
+                return (
+                  <p key={f.label + f.norm} className="text-body-s text-ink-800">
+                    {f.kritisch && <span className="lc-badge lc-badge-danger mr-1.5">Verwirkung</span>}
+                    <span className="font-medium text-ink-900">{f.label}:</span> {f.frist} <span className="text-ink-500">({f.norm})</span>
+                    {stillstand && <span className="block text-xs text-ink-500 mt-0.5"><NormText text={stillstand} /></span>}
+                  </p>
+                );
+              })}
               {/* Prefill-Brücke BGer (Auftrag David 11.6.2026): der Weiterzug
                   des Aufsichts-Entscheids — 10 T. (Wechsel 5 T.), streitwert-
                   unabhängig, II. zivilrechtliche Abteilung (Art. 34 BGerR). */}

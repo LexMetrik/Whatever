@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  bestimmeZustaendigkeit, bestimmeRechtsmittel, zustaendigkeitErgebnis, ZPO_SCHWELLEN,
+  bestimmeZustaendigkeit, bestimmeRechtsmittel, zustaendigkeitErgebnis,
   type ZustaendigkeitInput,
 } from '../lib/zustaendigkeit';
 import * as erstinstanz from '../lib/zustaendigkeit/erstinstanz';
@@ -103,9 +103,12 @@ describe('Z1-06 — SchKG-Fristen mit Stillstand-Hinweis (Art. 56 Abs. 2 SchKG /
     (schkg as Record<string, unknown>).schkgFristStillstand
       ? ((schkg as Record<string, unknown>).schkgFristStillstand as (x: typeof f) => string | null)(f)
       : null;
-  it('gerichtliche Klagefristen: ZPO-Stillstand (Aberkennung, Widerspruch, Kollokation)', () => {
+  it('gerichtliche Klagefristen: ZPO-Stillstand (Aberkennung, Rückforderung, Widerspruch, Kollokation) — Anker wie schkgPresets', () => {
     const faelle: schkg.SchkgInput[] = [
       { anliegen: 'aberkennungsklage', schuldnerTyp: 'natuerlich_wohnsitz', forderungCHF: 30_000 },
+      { anliegen: 'rueckforderung', schuldnerTyp: 'natuerlich_wohnsitz', forderungCHF: 8_000 },
+      { anliegen: 'widerspruch', schuldnerTyp: 'natuerlich_wohnsitz', widerspruchKonstellation: 'gewahrsam_schuldner' },
+      { anliegen: 'widerspruch', schuldnerTyp: 'natuerlich_wohnsitz', widerspruchKonstellation: 'grundstueck' },
       { anliegen: 'kollokation', schuldnerTyp: 'jur_person_hr', kollokationIn: 'konkurs', forderungCHF: 120_000 },
       { anliegen: 'kollokation', schuldnerTyp: 'natuerlich_wohnsitz', kollokationIn: 'pfaendung', forderungCHF: 20_000 },
       { anliegen: 'widerspruch', schuldnerTyp: 'natuerlich_wohnsitz', widerspruchKonstellation: 'gewahrsam_dritter_ch' },
@@ -128,9 +131,10 @@ describe('Z1-06 — SchKG-Fristen mit Stillstand-Hinweis (Art. 56 Abs. 2 SchKG /
     expect(h).toContain('Art. 63 SchKG');
     expect(h).toContain('Betreibungshandlung');
   });
-  it('übrige Fristen ohne Pauschal-Hinweis (eigene Regime: Art. 88 Abs. 2, 74, 86 …)', () => {
-    const r = schkg.bestimmeSchkgZustaendigkeit({ anliegen: 'rueckforderung', schuldnerTyp: 'natuerlich_wohnsitz', forderungCHF: 8_000 });
+  it('übrige Fristen ohne Pauschal-Hinweis (eigene Regime: Art. 74, 88 Abs. 2 …)', () => {
+    const r = schkg.bestimmeSchkgZustaendigkeit({ anliegen: 'betreibung_einleiten', schuldnerTyp: 'natuerlich_wohnsitz', forderungCHF: 5_000 });
     expect(typeof (schkg as Record<string, unknown>).schkgFristStillstand).toBe('function');
-    expect(hinweis(r.fristen[0])).toBeNull();
+    expect(r.fristen.length).toBeGreaterThan(0);
+    for (const f of r.fristen) expect(hinweis(f)).toBeNull();
   });
 });
