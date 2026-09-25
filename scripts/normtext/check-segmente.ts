@@ -31,6 +31,27 @@
  * im Soll und wird von diesem Tor nicht geprüft — bekannt als M13, Behebung im
  * Schritt W2·5l-NORMTEXT-B2. Modus C zählt diese Abschnitte in jedem Lauf.
  *
+ * PRÜFGRENZEN (Gegenprüfung 3, 25.9.2026 — bewusst offen, je ein Posten):
+ *  - R3-2 Kurze Kopfzellen: Kopfzeilen tragen keinen Zeilen-Fingerabdruck,
+ *    Zellen < 8 Zeichen keinen Zell-Fingerabdruck. Eine Kopfzeile aus lauter
+ *    kurzen Zellen ist darum ungeschützt (GP 3: ~63 Zeilen, u. a. AHVV
+ *    Art. 56bis/56quater Monate, ERV Anhang 2 Ratingklassen, ZEMIS-V Anhang 1
+ *    Zugriffsmatrix). Löschen/Vertauschen dort bleibt grün (M2, M2b). Posten
+ *    plan/posten/2026-09-25-segment-tor-r3-2-kurze-kopfzellen-schuetzen-….
+ *  - R3-3 Vollständigkeit, nicht Überschuss: geprüft wird, ob jedes Soll-Stück
+ *    als Teilstring im Blob steht. Zeichen, die an ein Stück angehängt oder
+ *    vorangestellt werden, sind unsichtbar («60–500» → «60–5 000», Stufe
+ *    «4» → «14»: grün). Eine Wertänderung ist keine Vollständigkeitsfrage;
+ *    die Klasse Fussnoten-Leak (angehängte Ziffer) fällt darunter. Posten
+ *    plan/posten/2026-09-25-segment-tor-r3-3-wertaenderungen-….
+ *  - R3-4 Beleg ist Reibung, keine Kryptografie: B6 verlangt bei neuer Datei,
+ *    Versions- UND Pin-Wechsel einen gültigen Modus-C-Beleg. Den Hash kann
+ *    man von Hand nachrechnen (5 Zeilen), dann ist B grün; nur Modus C
+ *    (frische HTML) deckt das auf, und Modus C läuft heute in keiner CI
+ *    (Posten plan/posten/2026-09-25-segment-tor-modus-c-woechentlich-…).
+ *  - Häufigkeit (R3-1, behoben): das Soll ist eine Multimenge; überlappende
+ *    Fenster im Blob zählen mit (nur Richtung grün, nie falsches Rot).
+ *
  * `LEXMETRIK_FEDLEX_CACHE_DIR` (Default `/tmp`): NUR für die eigenen Rot-Beweise
  * (R6–R9, s. Bericht) — ein Test-Cache-Verzeichnis statt des mit anderen
  * Sessions GETEILTEN `/tmp`, damit die Rot-Proben den echten Cache nie anfassen.
@@ -95,7 +116,7 @@ const OHNE_PROJEKTION_BEKANNT: ReadonlyMap<string, string> = new Map([
   // Führerausweiskategorien» (VZV, SR 741.51, Stand 1.1.2026) steht in HTML und
   // AKN-XML (eId annex_u1/lvl_u1), fehlt in der Projektion; der Extraktor
   // verwirft unnummerierte annex_uN als Deckblatt, sobald nummerierte Anhänge
-  // existieren. Befund zur Behebung gemeldet (Bau-Bericht Runde 3).
+  // existieren. Extraktor-Fix: plan/posten/2026-09-25-extraktor-fix-vzv-beilage-….
   ['VZV\u0000annex_u1', 'normtext-treue-deckblatt: Beilage vom Extraktor als Deckblatt verworfen (echter Verlust)'],
 ]);
 

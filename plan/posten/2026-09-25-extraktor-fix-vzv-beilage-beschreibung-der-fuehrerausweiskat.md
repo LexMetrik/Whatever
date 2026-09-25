@@ -1,0 +1,7 @@
+<!-- @posten
+dach: QS-KORPUS
+titel: Extraktor-Fix VZV-Beilage «Beschreibung der Führerausweiskategorien» (normtext-treue-deckblatt)
+anlass: Gegenprüfung 3 Segment-Tor 25.9.2026, Befund R3-5
+-->
+
+Befund R3-5 (Gegenprüfung 3, 25.9.2026; Bau-Bericht Runde 3): die Beilage «Beschreibung der Führerausweiskategorien» der VZV (SR 741.51, Stand 1.1.2026) steht in der amtlichen HTML (html-3) und im AKN-XML (eId annex_u1/lvl_u1), fehlt aber in der Projektion public/normtext/bund/VZV.json. Ursache: der Extraktor (scripts/normtext-snapshot.ts, Regel alleAnhangAnker) verwirft unnummerierte annex_uN als Deckblatt-Inhaltsübersicht, sobald nummerierte Anhänge existieren. Neue Verlust-Klasse normtext-treue-deckblatt. check:vollstaendigkeit sieht den Verlust nicht, weil es denselben Filter teilt. Das Segment-Tor führt ihn als dokumentierte Ausnahme OHNE_PROJEKTION_BEKANNT (Schlüssel VZV annex_u1, 26 Fingerabdrücke im Soll); VZV trägt id=annex_u1 dreimal (Beilage + 2 «Aufgehoben»-Stubs). Fix: Deckblatt-Regel auf echte Inhaltsübersichten einengen (Abgrenzung CHEMRRV annex_u1 = echtes Deckblatt), VZV neu extrahieren, danach die Ausnahme in check-segmente.ts streichen (das Tor meldet sie dann selbst als veraltet). Eigener Folge-PR, Klasse daten, Gegenprüfung Pflicht. GP-Bericht: ~/Documents/David/03_Projekte/LexMetrik/pruefung-herz-nieren-2026-09-24/berichte/gegenpruefung-segment-tor-runde3-2026-09-25.md.
