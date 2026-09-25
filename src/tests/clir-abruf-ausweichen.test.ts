@@ -105,7 +105,9 @@ describe('holeClirHtml — sichtbarer Ausfall', () => {
 
 describe('OCL-Abruf jget — identifizierender User-Agent (Repo-Konvention)', () => {
   it('sendet dieselbe UA-Konstante wie der clir-Abruf', async () => {
-    const f = vi.fn(async (_u: string, _i?: RequestInit) => new Response('{"ok":1}', { status: 200 }));
+    const f = vi.fn<(u: string, i?: RequestInit) => Promise<Response>>(
+      async () => new Response('{"ok":1}', { status: 200 }),
+    );
     vi.stubGlobal('fetch', f);
     expect(await jget('https://mcp.opencaselaw.ch/api/decisions/x')).toEqual({ ok: 1 });
     const headers = f.mock.calls[0][1]?.headers as Record<string, string>;
