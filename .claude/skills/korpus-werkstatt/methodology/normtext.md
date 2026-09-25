@@ -50,11 +50,16 @@ Pflicht-Stellen, kein Generator-Automatismus (`CLAUDE.md` §2: keine Heuristik):
 `scripts/fedlex-cache.sh`-Zeile (der Pin), der `register.ts`-Eintrag (Identität +
 Taxonomie), und — wenn der FEDLEX-Schlüssel vom `key` abweicht — der `fedlexKey`
 samt `fedlex.ts`-Eintrag (der `fedlexKey` ist typisiert `FedlexGesetz`, ein neuer
-Wert muss also im `FEDLEX`-Objekt `src/lib/fedlex.ts` existieren). Optional,
-NUR wenn die Anzeige-Abkürzung vom Default abweicht: ein Eintrag in der
-`ERLASS_MAP`-Konstante in `scripts/normtext-snapshot.ts` (sonst fällt der
-Generator auf den `key` zurück — der Fallback `ERLASS_MAP[name] ?? gesetzKey`
-in derselben Datei). *Warum:*
+Wert muss also im `FEDLEX`-Objekt `src/lib/fedlex.ts` existieren). Das
+Anzeige-Kürzel (Snapshot-Feld `erlass`) ist das `kuerzel` desselben
+`register.ts`-Eintrags — amtliche Abkürzung (Fedlex `titleShort`, Kurztitel oder
+Ingress eines Ausführungsgesetzes), sonst ausdrücklich als Hand-Kürzel in
+`bibliothek/recherche/fedlex-abkuerzungen-titleshort.md` geführt.
+`scripts/normtext-snapshot.ts` liest es über `bundKuerzelNachschlagen`; fehlt der
+Register-Eintrag, ist das ein **Build-Fehler**, kein Rückfall auf den `key`
+(HN-04, 25.9.2026: die frühere zweite Tabelle `ERLASS_MAP` samt
+Grossbuchstaben-Rückfall ist gestrichen; Wächter
+`src/tests/normtext-bund-erlass-register.test.ts`). *Warum:*
 Das Register ist Single Source of Truth für
 Identität/Taxonomie (Kopfkommentar «Single Source of Truth für Identität +
 Taxonomie» in `src/lib/normtext/register.ts`), nicht für den Normtext (der lebt
@@ -139,7 +144,7 @@ verbindliche Drift-Quelle.
 
 **2 — Nur das Datum-Feld bumpen.** In `scripts/fedlex-cache.sh` **nur das
 `YYYYMMDD`-Feld der bestehenden Zeile** des Zielerlasses aktualisieren — KEIN
-neuer `register.ts`-Eintrag, kein `ERLASS_MAP`/`fedlexKey`. `npm run fedlex:eli --
+neuer `register.ts`-Eintrag, kein neues `kuerzel`/`fedlexKey`. `npm run fedlex:eli --
 <SR-Nr>` liefert die frische Zeile zum Abgleich. *Warum:* Identität und Taxonomie
 ändern sich bei einem reinen Stand-Update nicht — nur die geltende Fassung.
 

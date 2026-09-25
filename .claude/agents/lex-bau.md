@@ -41,6 +41,7 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   Zahl. Beleg: a33-Diagnose 8./9.8.2026, kalt 2-4/20 rot vs. warm 0/40.
 4 RECOVERY. Committe lokal nach jedem abgeschlossenen Teilschritt (WIP-Commit
   genuegt, --squash fasst zusammen). Nie uncommittet ueber laengere Arbeit hinweg.
+  Gilt auch bei «nur lokal, kein Push» (App-Neustart 25.9.2026: 2 Agenten leer).
   Commit-Message immer per `git commit -F <datei>` oder Heredoc mit 'EOF'
   (gequotet) — nie als -m "…"-String mit Backticks: die Shell substituiert
   sie, die Message verliert Woerter, und --amend ist gesperrt (2 Vorfaelle

@@ -58,6 +58,7 @@ import { mischeGoldenKanton, mischeGoldenVollLauf } from './normtext/golden-kant
 import { baueBrowseManifest } from './normtext/browse-manifest.ts';
 import type { NormSnapshot, NormSnapshotDatei } from '../src/lib/normtext/typen.ts';
 import type { BildRef } from './normtext/extrahiere-fedlex.ts';
+import { ERLASS_REGISTER } from '../src/lib/normtext/register.ts';
 
 // ── Argument --datum= auslesen ────────────────────────────────────────────────
 function leseDatum(): string {
@@ -75,189 +76,42 @@ function leseDatum(): string {
   return datum;
 }
 
-// ── Erlass-Abkürzungs-Map ─────────────────────────────────────────────────────
-const ERLASS_MAP: Record<string, string> = {
-  emrk: 'EMRK', eoebv: 'EÖBV', avg: 'AVG', or: 'OR', // +3 QS-KORPUS 14.9.2026 (zeilen-neutral, §6.6-Deckel erschoepft)
-  zgb: 'ZGB',
-  zpo: 'ZPO',
-  schkg: 'SchKG',
-  arg: 'ArG',
-  vmwg: 'VMWG',
-  stpo: 'StPO',
-  vwvg: 'VwVG',
-  bgg: 'BGG',
-  bgerr: 'BGerR',
-  vvg: 'VVG',
-  hregv: 'HRegV',
-  gebv_hreg: 'GebV-HReg',
-  gebv_schkg: 'GebV SchKG',
-  stgb: 'StGB',
-  stg: 'StG',
-  kvg: 'KVG',
-  kvv: 'KVV',
-  // Erweiterung 17.6.2026 (jedes zitierte Bundesgesetz mit Volltext-Snapshot).
-  mwstg: 'MWSTG',
-  urg: 'URG',
-  bewg: 'BewG',
-  eog: 'EOG',
-  svg: 'SVG',
-  dsg: 'DSG',
-  bbg: 'BBG',
-  gbv: 'GBV',
-  jstpo: 'JStPO',
-  // Volltext-Ausbau Bund 23.6.2026 (Promotion aus nur-live-link-Stubs)
-  partg: 'PartG',
-  jstg: 'JStG',
-  iprg: 'IPRG',
-  betmg: 'BetmG',
-  vstrr: 'VStrR',
-  // Batch 2 (23.6.2026)
-  atsg: 'ATSG',
-  bvg: 'BVG',
-  uvg: 'UVG',
-  avig: 'AVIG',
-  rpg: 'RPG',
-  usg: 'USG',
-  vgg: 'VGG',
-  bgfa: 'BGFA',
-  kkg: 'KKG',
-  gwg: 'GwG',
-  // Batch 3 (23.6.2026)
-  ivg: 'IVG',
-  famzg: 'FamZG',
-  sthg: 'StHG',
-  aig: 'AIG',
-  asylg: 'AsylG',
-  glg: 'GlG',
-  finmag: 'FINMAG',
-  bgbb: 'BGBB',
-  // Batch 4 (23.6.2026)
-  ahvg: 'AHVG',
-  bankg: 'BankG',
-  hmg: 'HMG',
-  // ── Punkt 12 Batch 2 (24.6.2026, Bund-VERORDNUNGEN Volltext) ──
-  ahvv: 'AHVV',
-  ivv: 'IVV',
-  elv: 'ELV',
-  bvv_2: 'BVV 2',
-  uvv: 'UVV',
-  aviv: 'AVIV',
-  atsv: 'ATSV',
-  klv: 'KLV',
-  mwstv: 'MWSTV',
-  vstv: 'VStV',
-  vzae: 'VZAE',
-  vrv: 'VRV',
-  vzv: 'VZV',
-  ssv: 'SSV',
-  dsv: 'DSV',
-  argv1: 'ArGV 1',
-  bewv: 'BewV',
-  buev: 'BüV',
-  fzv: 'FZV',
-  kov: 'KOV',
-  rpv: 'RPV',
-  vbb: 'VFRR',
-  voeb: 'VöB',
-  vzg: 'VZG',
-  bvv3: 'BVV 3',
-  mvv: 'MVV',
-  eov: 'EOV',
-  famzv: 'FamZV',
-  argv2: 'ArGV 2',
-  argv3: 'ArGV 3',
-  argv4: 'ArGV 4',
-  vev: 'VEV',
-  vinta: 'VIntA',
-  asylv1: 'AsylV 1',
-  asylv2: 'AsylV 2',
-  asylv3: 'AsylV 3',
-  gschv: 'GSchV',
-  lrv: 'LRV',
-  lsv: 'LSV',
-  vvea: 'VVEA',
-  chemv: 'ChemV',
-  nhv: 'NHV',
-  wav: 'WaV',
-  vts: 'VTS',
-  bankv: 'BankV',
-  kkv: 'KKV',
-  erv: 'ERV',
-  finiv: 'FINIV',
-  finfrav: 'FinfraV',
-  fidlev: 'FIDLEV',
-  avo: 'AVO',
-  gwv_finma: 'GwV-FINMA',
-  vam: 'VAM',
-  ambv: 'AMBV',
-  mepv: 'MepV',
-  epv: 'EpV',
-  bpv: 'BPV',
-  rvov: 'RVOV',
-  vgke: 'VGKE',
-  betmkv: 'BetmKV',
-  qstv: 'QStV',
-  // ── Punkt 12 Batch 3 (25.6.2026): Promotion nur-live-link-Stub → Volltext ──
-  sortg: 'SortG',
-  prg: 'PRG',
-  beg: 'BEG',
-  mstg: 'MStG',
-  mstp: 'MStP',
-  irsg: 'IRSG',
-  mvg: 'MVG',
-  eng: 'EnG',
-  co2_gesetz: 'CO2-Gesetz',
-  epg: 'EpG',
-  txg: 'TxG',
-  lmg: 'LMG',
-  lfg: 'LFG',
-  ebg: 'EBG',
-  fmg: 'FMG',
-  mg: 'MG',
-  zstv: 'ZStV',
-  thg: 'THG',
-  bgbm: 'BGBM',
-  // ── Punkt 12 Batch 3 (25.6.2026): kuratierte zentrale Bundes-VERORDNUNGEN ──
-  mschv: 'MSchV',
-  patv: 'PatV',
-  desv: 'DesV',
-  urv: 'URV',
-  tgbv: 'TGBV',
-  bkv: 'BKV',
-  zentv: 'ZentV',
-  vkkg: 'VKKG',
-  argv5: 'ArGV 5',
-  vvk: 'VVK',
-  vkl: 'VKL',
-  vfv: 'VFV',
-  bbv: 'BBV',
-  bmv: 'BMV',
-  // Totalrevision derselben SR 412.103.1 (12.9.2026): `bmv` = historische
-  // Fassung von 2009 (aufgehoben 1.3.2026), `bmv_2025` = die seit 1.3.2026
-  // geltende Verordnung vom 13. Juni 2025. Beide tragen amtlich das Kürzel BMV
-  // — der Register-key (Datei-Stamm) unterscheidet sie, nicht das Kürzel.
-  bmv_2025: 'BMV',
-  zemis_v: 'ZEMIS-V',
-  adov: 'AdoV',
-  rdv: 'RDV',
-  zavv: 'ZAV',
-  akkbv: 'AkkBV',
-  finfrav_finma: 'FinfraV-FINMA',
-  finma_gebv: 'FINMA-GebV',
-  kkv_finma: 'KKV-FINMA',
-  nbv: 'NBV',
-  pavo: 'PAVO',
-  vgr: 'VGR',
-  skv: 'SKV',
-  vvv: 'VVV',
-  vil: 'VIL',
-  fdv: 'FDV',
-  fav: 'FAV',
-  uvpv: 'UVPV',
-  chemrrv: 'ChemRRV',
-  veva: 'VeVA',
-  vgvp: 'VGV',
-};
+// ── Erlass-Abkürzung: EINE Quelle — das Register (HN-04, QS-KORPUS 25.9.2026) ─
+// Die frühere eigene ERLASS_MAP (171 Einträge, deckungsgleich mit dem Register)
+// war eine zweite Pflegestelle für denselben Fachinhalt (§5-Verstoss, Befund
+// VS-01) und liess für ~60 nicht gepflegte Namen einen toUpperCase-Rückfall
+// laufen, der bei 37 Bundeserlassen ein amtlich FALSCHES Kürzel erzeugte
+// («DESG» statt «DesG» — massgeblich ist das Register-Kürzel, das dieselbe
+// Herkunft wie die frühere Map hat: Fedlex-Kurztitel bzw., wo Fedlex keinen
+// führt, das dokumentiert verifizierte Hand-Kürzel, s.
+// bibliothek/recherche/fedlex-abkuerzungen-titleshort.md). Das Kürzel kommt
+// jetzt ausschliesslich aus `ERLASS_REGISTER`; ein Name ohne Register-Eintrag
+// ist ein Build-Fehler statt eines geratenen Rückfalls (§2/§8, s.u.).
+const BUND_KUERZEL: ReadonlyMap<string, string> = new Map(
+  ERLASS_REGISTER.filter((e) => e.ebene === 'bund').map((e) => [e.key, e.kuerzel]),
+);
+
+/**
+ * Löst das Anzeige-Kürzel eines Bund-Erlasses ausschliesslich über das
+ * Register auf — HN-04: ersetzt den früheren toUpperCase-Rückfall. Ein
+ * `gesetzKey` ohne Register-Eintrag ist ein Build-Fehler, nie ein geratenes
+ * Kürzel (§2/§8). Reine Funktion (2. Argument optional nur für Tests) —
+ * Rot-Beweis: src/tests/normtext-snapshot-erlass-kuerzel.test.ts.
+ */
+export function bundKuerzelNachschlagen(
+  gesetzKey: string,
+  register: ReadonlyMap<string, string> = BUND_KUERZEL,
+): string {
+  const kuerzel = register.get(gesetzKey);
+  if (kuerzel === undefined) {
+    throw new Error(
+      `[normtext-snapshot] Kein Register-Kürzel für "${gesetzKey}" — ` +
+        `ERLASS_REGISTER (ebene 'bund', src/lib/normtext/register.ts) um diesen Erlass ` +
+        `ergänzen. Kürzel wird nie geraten (§2/§8).`,
+    );
+  }
+  return kuerzel;
+}
 
 // ── Konsolidierungsdatum YYYYMMDD → ISO YYYY-MM-DD ───────────────────────────
 function konsZuIso(kons: string): string {
@@ -1382,7 +1236,7 @@ async function main(): Promise<void> {
   for (const eintrag of eintraege) {
     const { name, eli, konsolidierung } = eintrag;
     const gesetzKey = name.toUpperCase();
-    const erlass = ERLASS_MAP[name] ?? gesetzKey;
+    const erlass = bundKuerzelNachschlagen(gesetzKey);
     const stand = konsZuIso(konsolidierung);
     const htmlPfad = `/tmp/${name}.html`;
 

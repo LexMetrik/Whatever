@@ -36,6 +36,7 @@ import { PRO_SCHRITT, istLetzterSchritt, naechsteSichtbar, verkuerzungAus, zahlT
 import { bezuegeFuerArtikel, type Bezug, type BezugsShard } from '../lib/rechtsprechung/bezuege';
 import { waehleBezuege } from '../pages/gesetz-leser/bezugAuswahl';
 import type { BezugStatus } from '../lib/verzahnung/facetten';
+import { imMarkup, rohShard, sollKanten, tsd } from './korpusSoll.helfer';
 
 function kante(key: string, zitierung: string, status: BezugStatus, kanton: string, datum = '2020-01-01'): Bezug {
   return {
@@ -103,12 +104,24 @@ describe('B4 · Rang-Trennung im Markup (§8)', () => {
   });
 });
 
+// §6.3-DEKLARATION (25.9.2026, QS-KORPUS Einheit P «Zahl-Pins korpusrelativ»):
+// die Korpuszahlen an Art. 5 / Art. 428 StPO (zuletzt kantonal 117 / 918, bge 8,
+// bger 10, GR 1) standen fest im Test und rissen bei jedem Korpus-Zuwachs —
+// #1112 musste 34 Zeilen dieser Datei nachziehen (Messbericht urteils-
+// automatik 25.9.2026, Teil A §1). Seither kommt jeder Soll-Wert aus dem rohen
+// Shard (`korpusSoll.helfer`, gezählt OHNE src/lib), und die Vorbedingung, die
+// der Test braucht, steht als Invariante daneben. Die Aussagen bleiben: der
+// Shard liefert ALLES, was er zählt; die Linie zeigt 5 und nennt die volle Menge.
+const STPO_ROH = rohShard('STPO');
+const soll5 = (status: string) => sollKanten(STPO_ROH, '5', status).length;
+
 describe('B7 · je Instanz EINE scrollbare Linie, alle Entscheide (David 28.7.2026)', () => {
   const shard = JSON.parse(
     readFileSync('public/rechtsprechung/bezuege/STPO.json', 'utf8'),
   ) as BezugsShard;
+  const N = soll5('kantonal');
 
-  it('VORBEFUND: der Shard liefert an Art. 5 StPO ALLE 117 kantonalen Kanten', () => {
+  it('VORBEFUND: der Shard liefert an Art. 5 StPO ALLE kantonalen Kanten', () => {
     // Ohne diesen Vorbefund wäre der Render-Test unten wertlos. Bis B6 stand hier
     // «deckelt 115 auf 8» — genau das ist die Änderung (§6.3-Deklaration oben).
     // bge 16 → 8, bger 2 → 10 (25.9.2026, Welle 2 D2 / E-1): acht BGE nennen
@@ -117,8 +130,16 @@ describe('B7 · je Instanz EINE scrollbare Linie, alle Entscheide (David 28.7.20
     // §6.3-DEKLARATION (25.9.2026, QS-KORPUS BS-Delta +185/41): kantonal 115 → 117
     // (zwei neue BS-Urteile zitieren Art. 5 StPO); bge/bger unverändert. Die
     // Aussage des Tests — der Shard liefert ALLE kantonalen Kanten — steht.
-    expect(shard.gesamtProArtikel['5']).toMatchObject({ bge: 8, bger: 10, kantonal: 117 });
-    expect(bezuegeFuerArtikel(shard, '5').filter((b) => b.facetten.status === 'kantonal')).toHaveLength(117);
+    // Einheit P: die erfasste Zahl (Generator) == die gelieferten Kanten
+    // (unabhängig gezählt) — je Klasse. Ein Auslieferungs-Deckel risse das.
+    for (const k of ['bge', 'bger', 'kantonal']) {
+      expect(shard.gesamtProArtikel['5'][k as BezugStatus], k).toBe(soll5(k));
+    }
+    // Vorbedingungen der Render-Tests unten: kantonal über dem alten Deckel
+    // «8 je Status», bge über einer Portion (sonst gäbe es kein «5 von …»).
+    expect(N).toBeGreaterThan(8);
+    expect(soll5('bge')).toBeGreaterThan(PRO_SCHRITT);
+    expect(bezuegeFuerArtikel(shard, '5').filter((b) => b.facetten.status === 'kantonal')).toHaveLength(N);
   });
 
   it('VORBEFUND: die Kanten stehen chronologisch neu → alt', () => {
@@ -151,13 +172,13 @@ describe('B7 · je Instanz EINE scrollbare Linie, alle Entscheide (David 28.7.20
     expect(s).not.toContain('flex-wrap');
   });
 
-  it('zeigt 5 Chips je Linie, nicht alle 117 (David 29.7.2026)', () => {
+  it('zeigt 5 Chips je Linie, nicht alle (David 29.7.2026)', () => {
     const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['kantonal'], []);
     const s = html(<BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />);
     expect(s.match(/lc-chip /g) ?? []).toHaveLength(5);
     // Die ZAHL nennt trotzdem die volle Menge — die Linie ist portioniert, die
-    // Auskunft nicht.
-    expect(s).toContain('5 von 117');
+    // Auskunft nicht. (Einheit P: Identität am Zähler statt Teilkette.)
+    expect(zaehlerText(s, 'kantonal')).toBe(`5 von ${tsd(N)}`);
   });
 
   it('«weitere 5» steht am Linienende und ist ein echter, benannter Knopf', () => {
@@ -230,12 +251,13 @@ describe('B7 · die Zahl am Gruppenkopf (§8)', () => {
   ) as BezugsShard;
   const kanten = waehleBezuege(bezuegeFuerArtikel(shard, '5'), ['bge', 'bger', 'kantonal'], []);
 
-  it('ohne Filter: «5 von 117» — die Portion vorn, die volle Menge hinten', () => {
+  it('ohne Filter: «5 von N» — die Portion vorn, die volle Menge hinten', () => {
     const s = html(
       <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
     );
-    expect(s).toContain('5 von 117');
-    expect(s).toContain('5 von 8');   // bge; bis D2/E-1 (25.9.2026) «5 von 16»
+    // Einheit P (25.9.2026): bis dahin fest «5 von 117» / «5 von 8».
+    expect(zaehlerText(s, 'kantonal')).toBe(`5 von ${tsd(soll5('kantonal'))}`);
+    expect(zaehlerText(s, 'bge')).toBe(`5 von ${tsd(soll5('bge'))}`);   // bis D2/E-1 (25.9.2026) «5 von 16»
     // «8 von …» wäre der alte Deckel — der ist weg.
     expect(s).not.toContain('8 von');
   });
@@ -291,10 +313,20 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
   // §6.3-DEKLARATION (25.9.2026, QS-KORPUS BS-Delta +185/41): StPO/428 kantonal
   // 882 → 918 (BS 879 → 915, je 1 GR/ZH/AG unverändert). Die Reproduktion oben
   // bleibt datiert beim damaligen Stand; die Aussage (1 aus GR) steht.
-  it('VORBEFUND: StPO/428 führt 918 kantonale Entscheide, davon 1 aus GR', () => {
-    expect(shard.gesamtProArtikel['428']).toMatchObject({ kantonal: 918 });
+  // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Einheit P): 918 und «1 aus GR» sind
+  // seither aus dem rohen Shard gezählt (s. Kopf von «B7 · je Instanz»). Die
+  // Vorbedingung des Befunds — GR ist ein ECHTER Schnitt: mindestens einer,
+  // aber nicht alle — steht als Invariante.
+  const gesamt428 = sollKanten(STPO_ROH, '428', 'kantonal').length;
+  const nGr = sollKanten(STPO_ROH, '428', 'kantonal', 'GR').length;
+  const grZahl = `${Math.min(nGr, PRO_SCHRITT)} von ${tsd(nGr)}`;
+  it('VORBEFUND: StPO/428 führt N kantonale Entscheide, davon wenige aus GR', () => {
+    expect(shard.gesamtProArtikel['428'].kantonal).toBe(gesamt428);
+    expect(nGr).toBeGreaterThanOrEqual(1);
+    expect(nGr).toBeLessThan(gesamt428);
     const gr = waehleBezuege(bezuegeFuerArtikel(shard, '428'), ['kantonal'], ['GR']);
-    expect(gr).toHaveLength(1);
+    expect(gr).toHaveLength(nGr);
+    expect(gr.every((b) => b.facetten.kanton === 'GR')).toBe(true);
   });
 
   // ── ABWEICHUNG vom Beispiel der Fix-Richtung, deklariert (§14.7) ──────────
@@ -305,14 +337,14 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
   // Zähler und Knopf 881 Entscheide, die diese Linie nie liefert: die eine
   // falsche Aussage wäre durch eine andere ersetzt. Die 882 gehört deshalb in
   // den `title` — geprüft wird sie unten in derselben Zusicherung.
-  it('«1 von 1 im Kanton» + «918 insgesamt» im title — nicht die nackte «1» (§8)', () => {
+  it('«1 von 1 im Kanton» + «N insgesamt» im title — nicht die nackte «1» (§8)', () => {
     const gr = waehleBezuege(bezuegeFuerArtikel(shard, '428'), ['kantonal'], ['GR']);
     const s = html(
       <BezuegeZeile kanten={gr} gesamt={shard.gesamtProArtikel['428']} kantonAktiv
         normZitat="Art. 428 StPO" />,
     );
-    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 im Kanton');
-    expect(s).toContain('1 im gewählten Kanton, 918 insgesamt an diesem Artikel');
+    expect(zaehlerText(s, 'kantonal')).toBe(`${grZahl} im Kanton`);
+    expect(s).toContain(imMarkup(`${tsd(nGr)} im gewählten Kanton, ${tsd(gesamt428)} insgesamt an diesem Artikel`));
   });
 
   it('beide Filter zusammen: «in der Auswahl», nicht eine der beiden Ursachen allein', () => {
@@ -321,8 +353,8 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
       <BezuegeZeile kanten={gr} gesamt={shard.gesamtProArtikel['428']} zeitAktiv kantonAktiv
         normZitat="Art. 428 StPO" />,
     );
-    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 in der Auswahl');
-    expect(s).toContain('1 in der gewählten Auswahl, 918 insgesamt an diesem Artikel');
+    expect(zaehlerText(s, 'kantonal')).toBe(`${grZahl} in der Auswahl`);
+    expect(s).toContain(imMarkup(`${tsd(nGr)} in der gewählten Auswahl, ${tsd(gesamt428)} insgesamt an diesem Artikel`));
   });
 
   it('der Kantons-Schnitt beschriftet NUR die verkürzte Gruppe, nicht die anderen', () => {
@@ -336,10 +368,14 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
     );
     // 4 von 4, unverkürzt (bis D2/E-1 25.9.2026: 5 — BGE 149 IV 307 nennt
     // Art. 428 StPO nur im nicht publizierten Teil von 6B_911/2021).
-    expect(zaehlerText(s, 'bge')).toBe('4');
-    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 im Kanton');
-    // Und die 882 steht genau EINMAL da, an der Gruppe, die verkürzt wurde.
-    expect(s).toContain('918 insgesamt an diesem Artikel');
+    // Einheit P: bge-Soll aus dem rohen Shard; die Aussage «unverkürzt, ohne
+    // Ursache» hängt an der Form ohne Zusatz, nicht an der Zahl 4.
+    const nBge = sollKanten(STPO_ROH, '428', 'bge').length;
+    expect(zaehlerText(s, 'bge')).toBe(nBge > PRO_SCHRITT ? `${PRO_SCHRITT} von ${tsd(nBge)}` : tsd(nBge));
+    expect(zaehlerText(s, 'kantonal')).toBe(`${grZahl} im Kanton`);
+    // Und die Gesamtzahl steht genau EINMAL da, an der Gruppe, die verkürzt wurde.
+    const titel = imMarkup(`${tsd(gesamt428)} insgesamt an diesem Artikel`);
+    expect(s.split(titel)).toHaveLength(2);
   });
 
   it('J3-WÄCHTER: ohne aktiven Filter steht NIRGENDS eine Ursache — auch nicht im title', () => {
@@ -349,7 +385,7 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
     const s = html(
       <BezuegeZeile kanten={kanten} gesamt={shard.gesamtProArtikel['5']} normZitat="Art. 5 StPO" />,
     );
-    expect(zaehlerText(s, 'kantonal')).toBe('5 von 117');
+    expect(zaehlerText(s, 'kantonal')).toBe(`5 von ${tsd(soll5('kantonal'))}`);
     expect(s).not.toMatch(/im gewählten Zeitraum/);
     expect(s).not.toMatch(/im gewählten Kanton/);
     expect(s).not.toMatch(/in der gewählten Auswahl/);

@@ -296,8 +296,8 @@ Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.
    schreiben; offline über `npm run entscheide:seed` / Fixtures; ehrlicher
    §8-Fallback-Status statt erfundener Werte.
 3. **SR-Kollision** → Quarantäne; Identität in `src/lib/normtext/register.ts`
-   (`fedlexKey`), `FEDLEX` in `src/lib/fedlex.ts` und `ERLASS_MAP` in
-   `scripts/normtext-snapshot.ts` klären (Identität ≠ Normtext); **erst dann**
+   (`fedlexKey`, `kuerzel` — seit HN-04 die einzige Kürzel-Quelle, `ERLASS_MAP`
+   gestrichen) und `FEDLEX` in `src/lib/fedlex.ts` klären (Identität ≠ Normtext); **erst dann**
    Snapshot generieren.
 4. **Gate / vitest rot** → §6.5-Diagnoseweg (Skill `refactoring`, Ziff. 6): nur
    die rote Datei einzeln, `npm run golden:diff -- <id>`; **nie

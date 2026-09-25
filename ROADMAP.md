@@ -122,14 +122,6 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
 
 ## Leser — Gesetzes-Darstellung  *(`feld: leser`)*
 
-- [x] **Werkbank-Umbau Schritt 2: der Gesetzes-Leser** *(`W2·29-WERKBANK-LESER`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-LESER · status: done · blocker: null · dep: [W2·29-WERKBANK-TOKENS] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: die Leser-Hülle auf die Werkbank umziehen — grösster Korpus, darum zuerst. Abnahmeliste
-  ist Abschnitt 2 des Funktions-Inventars (jede Fläche, jedes Feld, jeder Zustand). Grenzen:
-  **Normtext-Körper golden byte-gleich**, Rechen-/Datenlogik unangetastet, alte Komponente fällt
-  im selben PR, e2e-Selektoren ziehen mit; drei Sessions, sonst zurückstellen.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5, Scheiben §5a (S0–S5, S6 Erlass-Blatt).
-
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`; Phase 2, Entscheid 14.9.2026)*
   <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   Hier die NICHT-Risiko-Einheiten (reine Darstellung/Suche/Anzeige); Extraktion & Daten liegen in
@@ -276,8 +268,8 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
   - [ ] **B2 · Client-Watchlist** — localStorage-Liste gemerkter Normen, gegen Build-Artefakte geprüft; Rückblick-Flag gegen `fassungsToken`/`sha`, nie `geprueftAm`.
   - [ ] **GER · Gerichts-Delta mit ehrlicher Latenz** — Build-Zeit-Delta je Gericht/Norm; eigenes Verdikt, Import-Kadenz sichtbar (§8).
 
-- [ ] **Korpus-Pflege: fehlende und fehlerhafte amtliche Substanz** *(`QS-KORPUS`, Fusion 15.8.2026)*
-  <!-- @meta id: QS-KORPUS · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [~] **Korpus-Pflege: fehlende und fehlerhafte amtliche Substanz** *(`QS-KORPUS`, Fusion 15.8.2026)*
+  <!-- @meta id: QS-KORPUS · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Dach für die offenen Reparaturen an Normtext- und Rechtsprechungs-Korpus; je Zeile eine
   sortenreine Bau-Einheit. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §1.
   **Offene Befundliste im Wortlaut** (verlagert 20.9.2026, Entscheid David): Fahrplan §1, Abschnitt «Restposten aus ROADMAP.md». Jede Zeile liegt auf dem Risikopfad ⇒ Gegenprüfung Pflicht, amtlicher Beleg mit Norm + Link + Stand (§7), Korrektur nie in der Projektion (§5).
@@ -353,22 +345,6 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Design & Oberfläche  *(`feld: design`)*
 
-- [x] **Werkbank-Umbau Schritt 1: eine Token-Quelle** *(`W2·29-WERKBANK-TOKENS`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-TOKENS · status: done · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: `tokens.json` des Design-Systems als **einzige** Quelle im Repo; generiert werden daraus
-  die `:root`/`html.dark`-Blöcke und die Farb-/Typo-Teile von `tailwind.config.js`, die fünf
-  Reglemente werden auf eines konsolidiert (§5). Grenzen: Kontrast-Tore grün, Normtext-Körper
-  farbfrei, Golden byte-gleich, **Startseite unberührt** (V4 Werkbank live seit 5.9.2026).
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §4.
-
-- [x] **Werkbank-Umbau Schritt 0b: vierte Sediment-Gattung — ungenutzte Exporte** *(`W2·29-WERKBANK-EXPORTE`, Go David 22.9.2026 «einverstanden zu allem»)*
-  <!-- @meta id: W2·29-WERKBANK-EXPORTE · status: done · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: `check:sediment` (d) — exportierte Funktionen und Typen ohne Importer (knip liefert sie
-  schon: gemessen 22.9.2026 84 Exporte + 43 Typen). Geburtsbeweis rot, dann alle Funde im
-  selben PR beseitigt (Export entfernen oder Code löschen), Tor grün; keine Baseline.
-  Grenzen: Rechtslogik unberührt, Golden byte-gleich, `src/lib/**` nur Export-Schlüsselwort.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §3 (Nachtrag d).
-
 - [ ] **Tore-Diät: 92 Wachen auf Wirksamkeit messen** *(`QS-TORE-DIAET`, Go David 22.9.2026)*
   <!-- @meta id: QS-TORE-DIAET · status: ready · blocker: null · dep: [W2·29-WERKBANK-REST] · feld: betrieb · fahrplan: null -->
   Ziel: jedes `check:*`-Tor (22.9.2026: 92, davon 22 unter `scripts/check-*.ts` = 218 KB)
@@ -391,49 +367,6 @@ Umschichtung 20.9.2026 (2)):*
   trägt nicht — `FLAECHE` in `scripts/analyse/steuerflaecheKern.ts` zählt `fahrplaene/**`, `archiv/**`,
   `ROADMAP.md`, `plan/posten/**` und `STRUKTUR.md` nicht; Archivieren senkt `check:steuerflaeche` um 0 KB.
   Wirkung von (a) ist Lesefläche, ROADMAP-Warn-Deckel und `plan:next`-Rauschen (Bauplan-Inventar 24.9.2026 §0).
-
-- [x] **Werkbank-Umbau Schritt 3: die vier Kataloge** *(`W2·29-WERKBANK-KATALOGE`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-KATALOGE · status: done · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: Gesetze-, Rechtsprechungs-, Rechner- und Vorlagen-Katalog samt Suche, Abdeckung und
-  Einstellungen auf die Werkbank umziehen; Abnahmeliste sind die Inventar-Abschnitte 2.2/3.2/4.2/5.2.
-  Seit 23.9.2026 auch die Startseite (1.2, vier Kacheln) und parallel zu LESER (Entscheid David).
-  Grenzen: Status-Modell bleibt sichtbar (§8), Löschpflicht im selben PR, Löschbilanz ≥ 50 %.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
-
-- [x] **Werkbank-Umbau: Grundton — Werkbank-Hintergrund und Rundungen für alle Seiten** *(`W2·29-WERKBANK-GRUNDTON`, David 23.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-GRUNDTON · status: done · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: Grundregel des Umbaus in `design/tokens.json` — Hintergrund wie Werkbank, Radius-Skala.
-  Grenzen: Kontrast-Tore grün, Normtext gerade, Golden byte-gleich.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
-
-- [x] **Werkbank-Umbau: neue Startseite mit aufklappenden Kacheln** *(`W2·29-WERKBANK-START`, Prototyp + Go David 23.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-START · status: done · blocker: null · dep: [W2·29-WERKBANK-GRUNDTON] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: vier Kacheln, die vor Ort aufklappen und bis zum Erlass bzw. Werkzeug führen.
-  Grenzen: Zahlen nur aus dem Zähler (§8), Suchdaten erst beim Öffnen (§15), Löschpflicht.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
-
-- [x] **Werkbank-Umbau: Startseite Feinschliff — Aufklappen ruhig, nichts abgeschnitten** *(`W2·29-WERKBANK-START-FEINSCHLIFF`, David 24.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-START-FEINSCHLIFF · status: done · blocker: null · dep: [W2·29-WERKBANK-START] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: alle Blätter und Stufen bei 1280–360 px hell/dunkel messen, Kappungen und Bedienmängel beheben.
-  Grenzen: Entscheide 23.9. bleiben; R8-Tor deckt offene Blätter ab.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
-
-- [x] **Werkbank-Umbau: Startseite neu gegliedert — Kacheln füllen die Fläche** *(`W2·29-WERKBANK-START-LAYOUT`, David 24.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-START-LAYOUT · status: done · blocker: null · dep: [W2·29-WERKBANK-START-FEINSCHLIFF] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: Entscheid-Liste weg, rechte Spalte als zwei eigene Flächen, Kachelfeld bündig mit dem Schnellwerkzeug.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
-
-- [x] **Werkbank-Umbau: Startseite überarbeitet — Gesetze-Blatt, Schnellwerkzeug-Wahl, Begrüssung** *(`W2·29-WERKBANK-START-UEBERARBEITUNG`, David 24.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-START-UEBERARBEITUNG · status: done · blocker: null · dep: [W2·29-WERKBANK-START-LAYOUT] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: Gesetze-Blatt ohne Leerfläche, Schnellwerkzeug wählbar, nur höfliche Begrüssungen, «Häufig gebraucht» unter den Kacheln.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d-bis.
-
-- [x] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-REST · status: done · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —
-  und die letzten Alt-Stylesheet-Reste samt abgelösten Reglementen und Fahrplänen löschen.
-  Grenzen: `check:sediment` grün ohne Ausnahme; datierte Belege (`abnahme/**`) bleiben.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f (Scheiben S0–S5) + §7.
 
 - [ ] **Werkbank-Umbau Nachlauf: Design-Feinpaket und Leser-Nachlauf** *(`W2·29-WERKBANK-NACHLAUF`, Entscheid David 24.9.2026)*
   <!-- @meta id: W2·29-WERKBANK-NACHLAUF · status: ready · blocker: null · dep: [W2·29-WERKBANK-REST, W2·29-WERKBANK-LESER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
@@ -499,28 +432,6 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Rechtslogik — Befunde Prüfung 23.9.2026  *(`feld: rechtslogik`)*
 
-- [x] **Welle 0 — Voraussetzungen: Bauplan-Eintrag, Risiko-Grenze, Fachänderungs-Riegel** *(`W2·30-RL-W0`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W0 · status: done · blocker: null · dep: [] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
-  RL-01 (dieser Schritt) · RL-02 (Risiko-Grenze, Gegenprüfungs-Pflicht auch für
-  Tor-Dateien selbst, W-02 entschieden) · RL-03 (Fachänderungs-Riegel für
-  Fixes ausserhalb der Risiko-Grenze). Muss vor jeder anderen RL-Welle gelandet
-  sein.
-  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1.
-
-- [x] **Welle 1 — Gesetzesleser + die 11 schweren Rechtslogik-Befunde** *(`W2·30-RL-W1`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W1 · status: done · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
-  RL-11 (vorgezogen, «Aufgehoben seit») dann RL-04…RL-10, RL-12…RL-14:
-  Mietkündigung, SchKG-Weiterzug, Gewährleistung, Fristen-Anknüpfung,
-  Verjährung, Erbteilung, Mietvertrag, Katalog-Status, Sperrfrist-Rückfall,
-  Verjährungsverzicht.
-  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 1).
-
-- [x] **Welle 2a — mittlere Befunde Fristen** *(`W2·30-RL-W2A`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W2A · status: done · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
-  RL-15…RL-25: BGG-Stillstand, Probezeit, SchKG-Fristen, ZPO-/StPO-Presets,
-  Feiertags-Daten und -Hinweise, Tagerechner, Lohnfortzahlungs-Skalen.
-  **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2a).
-
 - [ ] **Welle 2b — mittlere Befunde Beträge/Tarife** *(`W2·30-RL-W2B`, Go David 23.9.2026)*
   <!-- @meta id: W2·30-RL-W2B · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-26…RL-38: UR-Verbandstarif (W-14 entschieden), Tarif-Primitiv,
@@ -529,8 +440,8 @@ Umschichtung 20.9.2026 (2)):*
   §5-Kopien Tarifdaten, ZPO-Kosten Bund, Erbteilung/Verzugszins/Teuerung Rest.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2b).
 
-- [~] **Welle 2c — mittlere Befunde Vorlagen/Zuständigkeit/Leser** *(`W2·30-RL-W2C`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W2C · status: wip · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [ ] **Welle 2c — mittlere Befunde Vorlagen/Zuständigkeit/Leser** *(`W2·30-RL-W2C`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W2C · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-39…RL-47: Werkvertrag, Familienrecht, Vorlagen Gesellschaft/Prozess,
   Straf-/Zivilzuständigkeit, Leser-Fassungsstand Rest, Stammdaten-Adressen,
   Formular-Eingaben, Logik aus UI, Datum-/Zitier-Helfer.
@@ -552,21 +463,6 @@ Umschichtung 20.9.2026 (2)):*
 ---
 
 ## Werkzeuge — Rechner & Vorlagen  *(`feld: werkzeuge`)*
-
-- [x] **Werkbank-Umbau Schritt 4: Vorlagen-Rahmen, dann die 30 Vorlagen** *(`W2·29-WERKBANK-VORLAGEN`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-VORLAGEN · status: done · blocker: null · dep: [W2·29-WERKBANK-KATALOGE] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: **ein** gemeinsamer Assistenten-Rahmen aus den bestehenden Vorlagen-Modulen in `src/lib/vorlagen/`,
-  darauf die 30 Vorlagen; die 42 geplanten fallen danach aus demselben Rahmen. Grenzen: kein
-  zweites Schema-Modell (§5), PDF und DOCX aus demselben Assemble-Ergebnis, Golden byte-gleich.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
-
-- [x] **Werkbank-Umbau Schritt 5: die 20 Rechner, einzeln** *(`W2·29-WERKBANK-RECHNER`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-RECHNER · status: done · blocker: null · dep: [W2·29-WERKBANK-VORLAGEN] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock und Exportleiste; die 20 Rechner
-  ziehen einzeln um. Grenzen: **Rechenfälle werden nie abstrahiert (§1)** — lieber 20 Handgriffe
-  als eine Fabrik, die zwei rechtlich verschiedene Fälle gleich behandelt; Engine-Tests
-  unverändert (§6.3), Golden byte-gleich.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
 - [ ] **Prozesskosten-Cockpit Restbau** *(`W1·4`, Hauptmoat, ENTPARKT 3.8.2026 David)*
   <!-- @meta id: W1·4 · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md -->
@@ -623,15 +519,6 @@ Umschichtung 20.9.2026 (2)):*
 
 > Dieses Feld steht bewusst zuletzt: ohne `@queue`-Eintrag entscheidet die Dokumentreihenfolge,
 > und dann soll ein Produkt-Schritt gewinnen, nicht ein Prozess-Schritt.
-
-- [x] **Werkbank-Umbau Schritt 0: Tor gegen Sediment** *(`W2·29-WERKBANK-TOR`, Go David 22.9.2026, Auflage 3 des Rats-Verdikts)*
-  <!-- @meta id: W2·29-WERKBANK-TOR · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: ein Tor `check:sediment` gegen tote CSS-Klassen, verwaiste Komponenten und doppelte
-  Metadaten-Quellen — die drei Gattungen, für die keine der 91 Wachen zuständig ist. Grenzen:
-  **keine Baseline, keine Bestandsliste, kein Warnung-statt-Fail**; vorhandenes `knip` prüfen,
-  statt es zu verdoppeln (§17-Gegengewicht). **Fällt das Tor nicht rot, fällt der ganze
-  Umbau-Plan** — die sechs Folgeschritte werden dann gestrichen, nicht gebaut.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §3.
 
 - [ ] **Effizienz-Dauerauftrag (Token/Prozess)** *(`QS-EFFIZIENZ`, stehender Auftrag David 14.8.2026)*
   <!-- @meta id: QS-EFFIZIENZ · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md -->

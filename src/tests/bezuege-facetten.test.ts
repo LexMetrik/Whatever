@@ -14,6 +14,7 @@ import { readFileSync } from 'node:fs';
 import { bezuegeFuerArtikel, filtereBezuege, klassenImShard, trefferJeStatus } from '../lib/rechtsprechung/bezuege';
 import { waehleBezuege } from '../pages/gesetz-leser/bezugAuswahl';
 import type { BezugsShard } from '../lib/rechtsprechung/bezuege';
+import { rohShard, sollKanten, sollKlassen } from './korpusSoll.helfer';
 
 // W2·7-BEZUG B1–B3, Datenschicht. Getestet wird das, was fachlich falsch werden
 // KANN: die Status-Achse (§8 — Leitentscheid nie stillschweigend gleichgestellt),
@@ -590,7 +591,7 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
   ) as { kantenJeStatus: Record<string, number>; artikelJeStatus: Record<string, number>;
         erlasseJeStatus: Record<string, number>; artikelGesamt: number; erlasseGesamt: number };
 
-  it('BEFUND: die Klasse trägt korpusweit 159 Kanten an 88 von 6335 Artikeln', () => {
+  it('BEFUND: die Klasse ist verdrahtet, aber korpusweit selten (< 2 % der Kanten)', () => {
     // §6.3-DEKLARATION (25.9.2026, QS-KORPUS, Sperre AIMP/OCP/OS): damals 164
     // Kanten / 93 Artikel / 18 Erlasse. Die eidg-Klasse verliert die IRSG-Kanten
     // von bund/bstger/RR_2026_46 (it, nennt das IRSG nur als «AIMP», das seit der
@@ -600,9 +601,21 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // 15 neue BVGer/BStGer/BPatGer-Urteile (vorher 15, jetzt 30 eidg. Snapshots;
     // Asyl-/Ausländerrecht zitiert breit). Nullprobe origin/main 284deacdb = 159/88/17.
     // Die Klasse bleibt gegenüber kantonal (> 50 000) klein; die Aussage steht.
-    expect(bilanz.kantenJeStatus.eidg).toBe(404);
-    expect(bilanz.artikelJeStatus.eidg).toBe(184);
-    expect(bilanz.erlasseJeStatus.eidg).toBe(25);
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Einheit P «Zahl-Pins korpusrelativ»):
+    // die festen Werte (zuletzt 404/184/25, artikelGesamt 6431) rissen bei JEDEM
+    // Korpus-Zuwachs (Messbericht urteils-automatik Teil A §1). Geprüft wird
+    // seither die Aussage selbst: die Klasse hat Kanten (verdrahtet) und bleibt
+    // korpusweit unter 2 % aller Kanten (selten); dazu die Rangfolge
+    // Erlasse ≤ Artikel ≤ Kanten. Die Übereinstimmung Bilanz ↔ Shards prüft
+    // `check:bezuege` exakt (scripts/normtext/check-bezuege.ts, «aus den Shards
+    // gerechnet») — hier nicht doppelt.
+    const k = bilanz.kantenJeStatus;
+    const alleKanten = Object.values(k).reduce((a, b) => a + b, 0);
+    expect(k.eidg).toBeGreaterThan(0);
+    expect(k.eidg / alleKanten).toBeLessThan(0.02);
+    expect(bilanz.erlasseJeStatus.eidg).toBeGreaterThan(0);
+    expect(bilanz.erlasseJeStatus.eidg).toBeLessThanOrEqual(bilanz.artikelJeStatus.eidg);
+    expect(bilanz.artikelJeStatus.eidg).toBeLessThanOrEqual(k.eidg);
     // 6217 → 6228 (25.9.2026, W2·29-WERKBANK-LESER Welle 2 D2): die committeten
     // Bezugs-Projektionen hinkten dem Generator seit #860/#911 nach — der AVG
     // kam in den Normtext-Korpus, seine Kanten (11 Artikel, 1 Erlass) nie in
@@ -621,18 +634,31 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // eidg-Werte (159/88/17) unverändert — die Aussage des Tests steht.
     // 6404 → 6431 (25.9.2026, Stichproben-Nachzug, s. oben): die 27 neuen Urteile
     // zitieren 27 bisher unzitierte Artikel. Nullprobe origin/main 284deacdb = 6404.
-    expect(bilanz.artikelGesamt).toBe(6431);
+    // Seit Einheit P eine UNTERGRENZE (Stand origin/main 88148db4a = 6431): der
+    // Korpus wächst, er schrumpft nur durch eine Korrektur — und die gehört mit
+    // §6.3-Deklaration hierher, nicht still in die Zahl.
+    expect(bilanz.artikelGesamt).toBeGreaterThanOrEqual(6431);
+    expect(bilanz.artikelJeStatus.eidg).toBeLessThan(bilanz.artikelGesamt);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
 
-  it('BEFUND: an Art. 41 OR — dem Artikel des Auftrags — hat sie null Kanten', () => {
+  it('BEFUND: an Art. 41 OR — dem Artikel des Auftrags — zeigt «Eidg.» genau, was der Shard führt', () => {
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Einheit P): bis dahin «hat sie null
+    // Kanten» — wahr am Stand origin/main 88148db4a (Art. 41 OR: 0 eidg-Kanten),
+    // aber ein Korpus-Pin: ein BPatGer-/BVGer-Urteil zum Schadenersatz nach
+    // Art. 41 OR machte den BEFUND falsch, nicht die App (Zuwachs-Simulation
+    // Einheit P: +1 BVGer-Kante ⇒ rot). Die Aussage — das Prädikat arbeitet, es
+    // liefert genau die eidg-Kanten, die da sind, auch null — gegen den rohen
+    // Shard (korpusSoll.helfer, ohne src/lib).
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/OR.json', 'utf8')) as BezugsShard;
-    expect(bezuegeFuerArtikel(s, '41').some((b) => b.facetten.status === 'eidg')).toBe(false);
+    const soll = sollKanten(rohShard('OR'), '41', 'eidg').map((k) => k.key);
+    const alle = bezuegeFuerArtikel(s, '41');
+    expect(alle.filter((b) => b.facetten.status === 'eidg').map((b) => b.key)).toEqual(soll);
     // KEIN Bug im Filter: dieselbe Auswahl findet an demselben Artikel die
-    // Klassen, die es dort gibt. Das Prädikat arbeitet — es hat nur nichts.
-    expect(waehleBezuege(bezuegeFuerArtikel(s, '41'), ['eidg'], [])).toEqual([]);
-    expect(waehleBezuege(bezuegeFuerArtikel(s, '41'), ['bge'], []).length).toBeGreaterThan(0);
+    // Klassen, die es dort gibt. Das Prädikat arbeitet — auch wenn es nichts hat.
+    expect(waehleBezuege(alle, ['eidg'], []).map((b) => b.key)).toEqual(soll);
+    expect(waehleBezuege(alle, ['bge'], []).length).toBeGreaterThan(0);
   });
 
   it('das Prädikat greift, wo es etwas gibt — Gegenprobe an einem eidg-tragenden Erlass', () => {
@@ -649,7 +675,13 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // §6.3-DEKLARATION (25.9.2026, Stichproben-Nachzug): bis dahin trug das OR
     // keine eidg-Fundstelle (`n.eidg` undefined). Die neuen BPatGer-Urteile
     // (O2023_002/008, O2023_017, S2025_003) zitieren das OR: 3 Entscheide, 4 Kanten.
-    expect(n.eidg).toEqual({ dokumente: 3, kanten: 4 });
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Einheit P): statt der festen 3/4
+    // der Soll-Wert JE KLASSE unabhängig aus dem Shard gezählt (korpusSoll.helfer,
+    // ohne src/lib) — strenger als vorher (alle Klassen, nicht nur eidg) und
+    // stabil bei Zuwachs; 3/4 bleibt als Untergrenze.
+    expect(n).toEqual(sollKlassen(rohShard('OR')));
+    expect(n.eidg!.dokumente).toBeGreaterThanOrEqual(3);
+    expect(n.eidg!.kanten).toBeGreaterThanOrEqual(4);
     // Die frühere Aussage «0 Fundstellen ⇒ gar kein Eintrag» bleibt geprüft:
     for (const z of Object.values(n)) expect(z.kanten).toBeGreaterThan(0);
     expect(n.bge!.dokumente).toBeGreaterThan(0);
@@ -684,10 +716,15 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // seither bge 1647/559 · bger 9920/1314 — reiner Korpus-Zuwachs, keine
     // Rechenlogik-Änderung; Faktor Fundstellen/Entscheide bleibt in beiden Klassen > 2.
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/BGG.json', 'utf8')) as BezugsShard;
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Einheit P «Zahl-Pins korpusrelativ»):
+    // die vierte Nachführung entfällt. Statt 1647/559 · 9920/1314 zu pinnen, wird
+    // `klassenImShard` gegen eine unabhängige Zählung auf dem rohen Shard geprüft
+    // (korpusSoll.helfer, ohne src/lib) — exakt, je Klasse —, und die erklärte
+    // Aussage selbst: Fundstellen/Entscheide > 2 in BEIDEN Klassen.
     const n = klassenImShard(s);
-    expect(n.bge!.kanten).toBe(1647);
-    expect(n.bge!.dokumente).toBe(559);
-    expect(n.bger!.kanten).toBe(9920);
-    expect(n.bger!.dokumente).toBe(1314);
+    expect(n).toEqual(sollKlassen(rohShard('BGG')));
+    for (const klasse of ['bge', 'bger'] as const) {
+      expect(n[klasse]!.kanten / n[klasse]!.dokumente, klasse).toBeGreaterThan(2);
+    }
   });
 });

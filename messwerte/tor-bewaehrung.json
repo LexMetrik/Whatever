@@ -2,11 +2,11 @@
   "_generiert": "scripts/analyse/tor-bewaehrung.ts — Belege maschinell ergänzt (--import-ci); Einträge der Quelle `manuell` dürfen von Hand stehen und werden nie überschrieben",
   "schema": 1,
   "ciFenster": {
-    "abgerufenAm": "2026-09-24",
+    "abgerufenAm": "2026-09-25",
     "laeufeAbgerufen": 1000,
-    "fehlLaeufe": 106,
-    "aeltesterLauf": "2026-09-12",
-    "juengsterLauf": "2026-09-24"
+    "fehlLaeufe": 104,
+    "aeltesterLauf": "2026-09-14",
+    "juengsterLauf": "2026-09-25"
   },
   "eintraege": [
     {
@@ -502,7 +502,7 @@
       "name": "check:e2e-flake",
       "art": "tor",
       "seit": "2026-09-08",
-      "letztesRot": "2026-09-24",
+      "letztesRot": "2026-09-25",
       "laeufe": 0,
       "belege": [
         {
@@ -589,6 +589,36 @@
           "datum": "2026-09-24",
           "quelle": "ci-run-URL",
           "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36048365734 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-24",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36073915574 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36126882154 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36149851136 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36150798701 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36153524417 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36157870757 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
         }
       ]
     },
@@ -1140,7 +1170,7 @@
       "name": "check:merge-schutz",
       "art": "tor",
       "seit": "2026-07-20",
-      "letztesRot": "2026-09-23",
+      "letztesRot": "2026-09-25",
       "laeufe": 0,
       "belege": [
         {
@@ -1892,6 +1922,136 @@
           "datum": "2026-09-23",
           "quelle": "ci-run-URL",
           "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/35897050754 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36110708720 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36110708720 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36113830651 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36113830651 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36122099335 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36122099335 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36126294315 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36126294315 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36137120757 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36137120757 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36140683376 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36140683376 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36150798701 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36150798701 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36152906490 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36152906490 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36153524417 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36153524417 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36157870757 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36157870757 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36163210096 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36163210096 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36166187013 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36166187013 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36170091931 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36170091931 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
         }
       ]
     },
@@ -1915,9 +2075,15 @@
       "name": "check:normkeys",
       "art": "tor",
       "seit": "2026-07-28",
-      "letztesRot": null,
+      "letztesRot": "2026-09-25",
       "laeufe": 84,
-      "belege": []
+      "belege": [
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36124134898 — Step «normKeys-Abdeckung (Verzahnung Rechtsprechung ↔ Gesetz)» rot"
+        }
+      ]
     },
     {
       "name": "check:normkeys-kanton",
@@ -2134,9 +2300,15 @@
       "name": "check:perf-budget",
       "art": "tor",
       "seit": "2026-06-30",
-      "letztesRot": null,
+      "letztesRot": "2026-09-25",
       "laeufe": 0,
-      "belege": []
+      "belege": [
+        {
+          "datum": "2026-09-25",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36141636309 — Step «Perf-Budget — Bundle-Topologie (Chrome-frei)» rot"
+        }
+      ]
     },
     {
       "name": "check:perf-lighthouse",
@@ -2618,6 +2790,11 @@
           "datum": "2026-09-24",
           "quelle": "ci-run-URL",
           "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36047349830 — Step «Steuerungs-Fläche (Sperrklinke, Byte-Summe + Anhebungs-Schutz)» rot"
+        },
+        {
+          "datum": "2026-09-24",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/LexMetrik/Whatever/actions/runs/36069924422 — Step «Steuerungs-Fläche (Sperrklinke, Byte-Summe + Anhebungs-Schutz)» rot"
         }
       ]
     },
