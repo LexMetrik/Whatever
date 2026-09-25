@@ -31,7 +31,7 @@ export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; bei
   vorlage: { stufe: 'content', beispielPfad: '/vorlagen/testament' },
   gesetze: { stufe: 'content', beispielPfad: '/gesetze' },
   'gesetz-leser': { stufe: 'content', beispielPfad: '/gesetze/bund/OR' },
-  rechtsprechung: { stufe: 'content', beispielPfad: '/rechtsprechung' },
+  rechtsprechung: { stufe: 'weit', beispielPfad: '/rechtsprechung' },
   'entscheid-leser': { stufe: 'content', beispielPfad: '/rechtsprechung/bge_152_V_122' },
   materialien: { stufe: 'weit', beispielPfad: '/materialien' }, // B2 (25.9.2026): Karten-Raster
   'materialien-deckung': { stufe: 'weit', beispielPfad: '/materialien/deckung' }, // B2: Deckungstabelle
