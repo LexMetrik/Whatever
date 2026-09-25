@@ -672,7 +672,7 @@ export function Gesetze() {
         </>
       )}
       {/* D11: der §8-Vorbehalt gehört an den Fuss, nicht in den Einstieg. */}
-      <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
+      <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-kleintext">
         Geltende Fassung mit Stand und amtlichem Live-Link je Erlass; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.
       </p>
     </div>

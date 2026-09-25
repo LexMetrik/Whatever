@@ -94,7 +94,7 @@ export function VerfallUebersicht() {
               </div>
               <p className="text-body-s font-medium text-ink-900">{t.label}</p>
               {(t.wert || t.rhythmus) && (
-                <p className="text-xs text-ink-500 leading-relaxed">
+                <p className="text-xs text-ink-500 leading-relaxed max-w-kleintext">
                   {t.wert}
                   {t.wert && t.rhythmus ? ' · ' : ''}
                   {t.rhythmus ? `Prüfrhythmus: ${t.rhythmus}` : ''}

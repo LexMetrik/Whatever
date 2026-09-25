@@ -63,7 +63,7 @@ function EbenenZeile({ name, haben, gesamt, einheit, stand, quelle, hinweis }: {
       <div className="min-w-0">
         <p className="text-body-s font-medium text-ink-900">{name}</p>
         <p className="text-xs leading-snug text-ink-500">{quelle} · Stand {datumCh(stand)}</p>
-        {hinweis && <p className="max-w-reading text-xs leading-snug text-ink-500">{hinweis}</p>}
+        {hinweis && <p className="max-w-kleintext text-xs leading-snug text-ink-500">{hinweis}</p>}
       </div>
       <p className="lc-ziffern text-body-s text-ink-700 sm:text-right">
         <span className="text-ink-900">{nf(haben)}</span>
@@ -347,7 +347,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
             </tbody>
           </table>
         </div>
-        <p className="max-w-reading pt-2 text-xs leading-snug text-ink-500">
+        <p className="max-w-kleintext pt-2 text-xs leading-snug text-ink-500">
           Ein Gedankenstrich heisst «für diesen Erlass nicht erhoben», nie «null». Erlasse ohne
           Fassungsvergleich tragen in den letzten beiden Spalten einen Strich, weil es für sie
           kein Fenster ab 2021 gibt.

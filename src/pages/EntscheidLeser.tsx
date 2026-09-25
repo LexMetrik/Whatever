@@ -929,7 +929,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
 
       {/* Einordnung der gewählten Fassung (nicht sticky), gekoppelt an die Ansicht. */}
       {switcherSichtbar && (
-        <p className="text-micro text-ink-500 max-w-reading">
+        <p className="text-micro text-ink-500 max-w-kleintext">
           {ansicht === 'voll'
             ? <>Das vollständige unterliegende Urteil <span className="num">{snap.azaUrteil?.aktenzeichen}</span> — Grundlage der amtlichen Sammlung BGE <span className="num">{snap.bgeReferenz}</span>.</>
             : <>Der amtlich publizierte Auszug der Sammlung BGE <span className="num">{snap.bgeReferenz}</span> — vom Gericht kuratiert.</>}
@@ -944,7 +944,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // darum kommt der Name hier aus derselben Konstante wie der Link selbst
         // (§5). Der Pfeil steht ausgeschrieben dahinter, weil der Nutzer genau
         // diese Beschriftung suchen soll.
-        <p className="text-micro text-ink-500 max-w-reading">
+        <p className="text-micro text-ink-500 max-w-kleintext">
           Auszug aus der amtlichen Sammlung (BGE <span className="num">{snap.bgeReferenz}</span>). Das vollständige Urteil ist bei der Quelle verfügbar ({AMTLICHE_FASSUNG} ↗, oben).
         </p>
       )}
@@ -1062,7 +1062,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
             Halbsatz nach Gedankenstrich wird ein eigener Satz, weil die
             Konstante diese Form trägt; ein zweites Literal für die
             Halbsatz-Grammatik wäre wieder eine zweite Wahrheit (§5). */}
-        <p className="text-micro text-ink-500 max-w-reading leading-relaxed">
+        <p className="text-micro text-ink-500 max-w-kleintext leading-relaxed">
           Der Urteilstext ist als amtliches Werk gemeinfrei (Art. 5 URG). Eine allfällige
           Regeste ist redaktionell. Diese Wiedergabe ersetzt die amtliche Fassung nicht und
           stellt keine Rechtsberatung dar. {MASSGEBLICH_SATZ}

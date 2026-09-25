@@ -20,11 +20,11 @@ export function VertrauensFuss() {
     <div className={`col-span-full grid gap-x-6 gap-y-3 pt-5 font-sans text-xs leading-relaxed text-ink-500 ${pk(
       'md:grid-cols-2', '@2xl/pane:grid-cols-2',
     )}`}>
-      <div className="max-w-reading space-y-1.5">
+      <div className="max-w-kleintext space-y-1.5">
         <p>{VERTRAUENS_SATZ}</p>
         <p>{STATUS_SATZ}</p>
       </div>
-      <section aria-label="Rechtlicher Hinweis" className="max-w-reading">
+      <section aria-label="Rechtlicher Hinweis" className="max-w-kleintext">
         <p>
           Alle Rechner liefern automatisierte Orientierungsberechnungen und keine Rechtsberatung. Massgeblich
           sind Gesetz, GAV, Vertrag und der konkrete Sachverhalt. Für die Wahrung einer Frist im Einzelfall ist

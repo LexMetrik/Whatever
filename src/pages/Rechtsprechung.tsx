@@ -502,7 +502,7 @@ export function Rechtsprechung() {
                 Ehrlichkeits-Zeile soll gelesen werden. Trennlinie und Text laufen
                 BEIDE in der Lesespalte (border-t sitzt am selben <p> — Bug-Check
                 #441 B1: der frühere Kommentar behauptete «volle Spalte»). */}
-            <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-reading">
+            <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-kleintext">
               Keine Rechtsberatung. «ungeprüft» = maschinell erfasst, fachlich noch nicht abgenommen; massgeblich ist stets die amtliche Fassung (Link je Entscheid).
             </p>
           </div>
