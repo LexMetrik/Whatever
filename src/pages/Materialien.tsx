@@ -178,7 +178,15 @@ export function Materialien() {
                     <GruppenKopf stufe={2} titel={g.kuerzel} zahl={g.materialien.length} />
                     <p className="text-body-s text-ink-500 max-w-reading-s">{g.name}</p>
                   </div>
-                  <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-3')}>
+                  {/* W2·31-BILDSCHIRMBREITE B2 (25.9.2026): die Seitenart
+                      `materialien` steht auf `weit` (seitenbreite.ts) — ab
+                      derselben Schwelle (2xl bzw. Pane 96rem) eine vierte
+                      Spalte. Gemessen @1920: Karte 349 → 339 px (≥ 300),
+                      die Scrollstrecke sinkt um rund ein Viertel; die Karte
+                      hält den Titel dort auf vier statt drei Zeilen
+                      (MaterialKarte), damit die schmalere Spalte nicht mehr
+                      Titel kappt als vorher. */}
+                  <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 @[96rem]/pane:grid-cols-4 gap-3')}>
                     {g.materialien.map((m) => <MaterialKarte key={m.key} m={m} />)}
                   </div>
                 </section>

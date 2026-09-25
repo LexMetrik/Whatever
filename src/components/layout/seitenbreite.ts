@@ -33,8 +33,8 @@ export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; bei
   'gesetz-leser': { stufe: 'content', beispielPfad: '/gesetze/bund/OR' },
   rechtsprechung: { stufe: 'content', beispielPfad: '/rechtsprechung' },
   'entscheid-leser': { stufe: 'content', beispielPfad: '/rechtsprechung/bge_152_V_122' },
-  materialien: { stufe: 'content', beispielPfad: '/materialien' },
-  'materialien-deckung': { stufe: 'content', beispielPfad: '/materialien/deckung' },
+  materialien: { stufe: 'weit', beispielPfad: '/materialien' }, // B2 (25.9.2026): Karten-Raster
+  'materialien-deckung': { stufe: 'weit', beispielPfad: '/materialien/deckung' }, // B2: Deckungstabelle
   'material-leser': { stufe: 'content', beispielPfad: '/materialien/ESTV-KS-DBG-5A' },
   info: { stufe: 'content', beispielPfad: '/ueber' },
   methodik: { stufe: 'content', beispielPfad: '/methodik' },
