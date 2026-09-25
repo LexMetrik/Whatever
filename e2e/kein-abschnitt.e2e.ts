@@ -40,6 +40,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { katalogRouten, prerenderRouten } from '../src/lib/seo'
+import { DICHTE_KEY, type Dichte } from '../src/components/rechtsprechung/zustand'
 import { geometrieScan, popoverUeberlaufScan, reiterWortgrenzeScan, sprungzielUnterKopf } from './helpers/abschnittMessung'
 import { nachAllowlistTrennen, type Fund } from './helpers/abschnittAllowlist'
 
@@ -246,6 +247,60 @@ test.describe('R8 — Startseiten-Blätter (a, b, c, f, g, h)', () => {
             await page.setViewportSize({ width: vp.width, height: vp.height })
             await page.waitForTimeout(60) // Reflow nach Resize abwarten
             await expect(blatt).toBeVisible()
+            const [geom, reiter] = await Promise.all([geometrieScan(page), reiterWortgrenzeScan(page)])
+            for (const f of [...geom, ...reiter]) {
+              GESAMMELTE_FUNDE.push({ route, viewport: vp.name, modus: thema, ...f })
+            }
+          }
+        })
+      })
+    }
+  }
+})
+
+// ── Dichte «Liste» UND «Karten» (Posten 2026-09-23, W2·29-WERKBANK-REST S0) ──
+// Der Geometrie-Sweep oben sieht jede Route in ihrer DEFAULT-Dichte. Die
+// einzige nutzerwählbare Dichte der App — /rechtsprechung, Schalter «Liste ·
+// Karten» (`DICHTE_KEY`, components/rechtsprechung/zustand.ts) — lief darum
+// nur als «Liste» durch; ein Überlauf in der Karten-Fläche blieb unentdeckt
+// (Session-Notizen 23.9.2026). Hier fahren BEIDE Dichten, vorgewählt über den
+// localStorage-Schlüssel, den die Seite selbst liest (kein eigener
+// Mechanismus, §5), und gemessen wird erst, wenn die Trefferliste in der
+// gewählten Dichte STEHT — der Sweep oben wartet nur auf das h1 und kann die
+// Liste vor dem Laden messen. Steht sie nicht (Schalter umbenannt, Schlüssel
+// geändert, Register lädt nicht), ist das ein FUND `dichte-rendert-nicht`,
+// kein Werkzeug-Fehler: sonst machte ein kaputter Schalter das Tor grüner
+// (Muster Startseiten-Blätter oben, Gegenprüfung 24.9.2026, §6.7).
+const DICHTEN: ReadonlyArray<{ wert: Dichte; knopf: string }> = [
+  { wert: 'liste', knopf: 'Liste' },
+  { wert: 'karten', knopf: 'Karten' },
+]
+test.describe('R8 — Dichte-Sweep /rechtsprechung (a, b, c, f, g, h)', () => {
+  for (const { wert, knopf } of DICHTEN) {
+    for (const thema of THEMEN) {
+      const route = `/rechtsprechung [dichte=${wert}]`
+      test(`${route} — ${thema}`, async ({ page }, testInfo) => {
+        testInfo.setTimeout(90_000) // s. Begründung im Geometrie-Sweep oben
+        await themaVorwaehlen(page, thema)
+        await page.addInitScript(([k, d]) => {
+          try { localStorage.setItem(k, d) } catch { /* privater Modus */ }
+        }, [DICHTE_KEY, wert] as const)
+        await page.goto('/rechtsprechung')
+        const karten = page.locator('.lc-card a[href^="/rechtsprechung/"]')
+        try {
+          await expect(page.getByRole('button', { name: knopf, exact: true })).toHaveAttribute('aria-pressed', 'true', { timeout: 20_000 })
+          await expect(page.locator('a[href^="/rechtsprechung/"]').first()).toBeVisible({ timeout: 20_000 })
+          if (wert === 'karten') await expect(karten.first()).toBeVisible()
+          else await expect(karten).toHaveCount(0)
+        } catch (e) {
+          const messwert = (e as Error).message.split('\n')[0].slice(0, 160)
+          GESAMMELTE_FUNDE.push({ route, viewport: 'vor-sweep', modus: thema, kategorie: 'dichte-rendert-nicht', selektor: `Dichte «${knopf}»`, messwert })
+          return
+        }
+        await sicher(route, thema, async () => {
+          for (const vp of VIEWPORTS) {
+            await page.setViewportSize({ width: vp.width, height: vp.height })
+            await page.waitForTimeout(60) // Reflow nach Resize abwarten
             const [geom, reiter] = await Promise.all([geometrieScan(page), reiterWortgrenzeScan(page)])
             for (const f of [...geom, ...reiter]) {
               GESAMMELTE_FUNDE.push({ route, viewport: vp.name, modus: thema, ...f })
