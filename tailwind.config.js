@@ -265,7 +265,15 @@ export default {
       // AUCH die dichtesten Absätze (Abkürzungs- und Zahlenketten «AS 1959
       // 858; 1964 965 Ziff. I-II», ~4.8 px/ch statt 5.9) unter die 80. Der
       // EMRK-Hinweis liegt damit auf der xs-Stufe bei ~69 ch.
-      maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem', kleintext: '24rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte)
+      // `weit` (W2·29-WERKBANK-REST-BREITE, 25.9.2026, Entscheid David «ja das
+      // soll optimiert werden»): ab 1280 sass die Startseite auf demselben
+      // Deckel `content` (70rem/1120px aussen) wie jede andere Route — 1680
+      // und 1920 sahen darum identisch aus. `weit` gilt NUR auf der Startseite
+      // (Shell.tsx `inhaltsbreiteFuer`, ab `2xl`/1536px) und NUR für
+      // Raster/Kacheln, nie für Fliesstext: `reading`/`normtext`/`kleintext`
+      // bleiben unverändert die Lesemass-Deckel. Alle anderen Routen bleiben
+      // byte-gleich auf `content` (Golden-Beweis `e2e/startseite-breite.e2e.ts`).
+      maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem', kleintext: '24rem', weit: '90rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte); weit ≈ 1440px (nur Startseite ab 2xl)
       // ── DIE EINZUG-SKALA IST GESTRICHEN (Entscheid David 29.8.2026) ────────
       // Hier standen `spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' }`
       // — die Tiefen-Staffelung des Gesetzes-Lesers (W2·5d G1 / V2·L-1, 20 px je
