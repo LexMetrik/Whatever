@@ -153,10 +153,10 @@ Quellen-Priorität und PDF-Extraktionsregeln im Detail:
   Risiko-Pfad ist die adversariale Gegenprüfung **verpflichtend**, nicht auf
   Abruf. Das Tor `check:gegenpruefung` erzwingt sie über `istRisikoPfad()`
   (`scripts/gegenpruefung/kern.ts`): Normtext-Pfade und der Entscheid-Generator
-  `scripts/normtext-entscheide.ts` sind Risiko-Pfade, seit 25.9.2026 (Entscheid
-  David) auch ALLE Entscheid-Outputs `public/rechtsprechung/**` (vorher nur
-  `bezuege/*.json`) — das Tor greift dort, ein Wochenlauf-PR ist ohne Verdikt
-  gesperrt. Beweismittel und Werkzeugkasten: `tools/verifikation.md`.
+  `scripts/normtext-entscheide.ts` sind Risiko-Pfade, die reinen
+  Entscheid-Outputs `public/rechtsprechung/**` NICHT — dort greift das Tor
+  nicht, die Pflicht-Gegenprüfung wird dennoch gefahren und im §14.5-Trailer
+  quittiert. Beweismittel und Werkzeugkasten: `tools/verifikation.md`.
 - **Zusatz-Pass (on-demand):** Davon getrennt der **user-getriggerte**
   `review.md`-Audit («prüf das», «stimmt das?», «review»). Das ist **nicht** der
   §14.4-Pflicht-Pass, sondern ein zusätzlicher Audit — nie automatisch starten.
