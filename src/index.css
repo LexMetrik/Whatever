@@ -5075,11 +5075,15 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
    ab — die linken Zeilen werden nicht gedehnt (CSS Grid §12.5). Die 24 Zeilen
    decken jede heutige Formularwurzel (max. gemessen: siehe Wächter
    `e2e/rechner-breite.e2e.ts`); weitere Kinder liefen unter die Spalten, nie
-   in sie hinein. */
+   in sie hinein.
+   Spaltenbreiten: halb/halb; die rechte Spur behält ihre Mindestbreite
+   (`minmax(auto, 1fr)`), damit ein Ergebnis mit Mindestbreite nicht in einen
+   Querscroll fällt — gemessen: Erben-Tabelle `min-w-[42rem]` braucht 712 px,
+   halb/halb gab 640 (Querscroll 712/640); die linke Spur weicht dann aus. */
 @container rechnerkarte (width >= 72rem) {
   .lc-rechner-spalten {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(auto, 1fr);
     grid-template-rows: repeat(24, auto) 1fr;
     column-gap: 3rem;
     align-items: start;
