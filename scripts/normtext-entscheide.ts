@@ -12,7 +12,9 @@
 //
 import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
+  holeAmtlicheKopfSeiten,
 } from './normtext/adapter-entscheide';
+import { kopfdatumRefresh, holeKantonDecisionOcl } from './normtext/entscheide-kopfdatum-refresh';
 import { schreibeKorpus, ladeBestandSnapshots, berichteBezuege } from './normtext/entscheide-schreiben';
 import {
   normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
@@ -116,6 +118,12 @@ const remap = process.argv.includes('--remap');
 // Lauf mit gleichem --datum ändert nichts. Berührt AUSSCHLIESSLICH
 // `rubrum.besetzung`; `abschnitte`/`sha`/Volltext bleiben unberührt (§7 Zitattreue).
 const rubrumRefresh = process.argv.includes('--rubrum-refresh');
+// --kopfdatum-refresh (QS-KORPUS, Entscheid David 25.9.2026): setzt `datum` +
+// `zitierung` der KANTONALEN OCL-Snapshots auf das Datum des amtlichen
+// Urteilskopfs (gleiche Regel wie der Live-Adapter). NETZ-Lauf (OCL-Volltext,
+// ggf. amtliches PDF) — der Kopf steht nicht im Snapshot. Kern + Tore:
+// scripts/normtext/entscheide-kopfdatum-refresh.ts.
+const kopfdatumRefreshLauf = process.argv.includes('--kopfdatum-refresh');
 /**
  * DEKLARIERTE Alt-Key-Bewahrung (Linse 3, 28.7.2026) — die Ratsche bekommt eine
  * Sperre.
@@ -348,6 +356,21 @@ async function eidgKorpus(ausschluss: ReadonlySet<string> = new Set()): Promise<
 const docketSlug = (d: string) => d.replace(/\s+/g, '').replace(/[^A-Za-z0-9]/g, '_');
 
 async function main() {
+  // ── Kopfdatum kantonaler Snapshots (QS-KORPUS 25.9.2026) — nur datum/zitierung ──
+  if (kopfdatumRefreshLauf) {
+    const basis = ladeBestandSnapshots();
+    const zeilen = await kopfdatumRefresh(basis, { holeDecision: holeKantonDecisionOcl, holeSeiten: (u) => holeAmtlicheKopfSeiten(u) });
+    for (const z of zeilen) {
+      console.log(`[kopfdatum] ${z.id}\t${z.alt} → ${z.neu}${z.alt === z.neu ? ' (=)' : ''}\t${z.quelle}\t«${z.beleg}»${z.abweichung ? `\tabweichend: ${z.abweichung}` : ''}${z.hashDrift ? '\t(OCL-Inhalt seit Abruf verändert)' : ''}`);
+    }
+    const geaendert = zeilen.filter((z) => z.alt !== z.neu).length;
+    const ohneKopf = zeilen.filter((z) => z.quelle === 'ocl-decision_date').length;
+    console.log(`[kopfdatum] ${zeilen.length} kantonale OCL-Snapshots · Datum korrigiert: ${geaendert} · ohne Kopfdatum (OCL-Wert behalten): ${ohneKopf}`);
+    const res = schreibeKorpus(basis, datum);
+    console.log(`[kopfdatum] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets.`);
+    return;
+  }
+
   // ── Rubrum-Satzzeichen (LM-127/LM-132) — OFFLINE, vor allen Netz-Zweigen ────
   if (rubrumRefresh) {
     const basis = ladeBestandSnapshots();

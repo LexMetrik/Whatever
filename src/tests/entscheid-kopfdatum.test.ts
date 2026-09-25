@@ -4,7 +4,9 @@ import { join } from 'node:path';
 import {
   kopfEntscheiddatum, kopfBereich, pdfKopfNormalisieren,
 } from '../../scripts/normtext/entscheid-kopfdatum';
-import { mappeEntscheidOCL, type OclDecision } from '../../scripts/normtext/adapter-entscheide';
+import { mappeEntscheidOCL, kantonsEntscheiddatum, type OclDecision } from '../../scripts/normtext/adapter-entscheide';
+import { kopfdatumRefresh } from '../../scripts/normtext/entscheide-kopfdatum-refresh';
+import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 
 // Echte Urteilsköpfe (OCL full_text, abgerufen 25.9.2026), Soll-Datum identitäts-
 // geprüft gegen den Kopf des amtlichen PDF/HTML (QS-KORPUS, Entscheid David 25.9.2026).
@@ -106,8 +108,67 @@ describe('mappeEntscheidOCL — Entscheiddatum aus dem Kopf (kantonal) ', () => 
     const s = mappeEntscheidOCL(basis({ full_text: 'Obergericht XBE.2025.10 Besetzung Oberrichterin Merkofer. Die Beschwerde wird gutgeheissen.' }), null, '2026-09-25')!;
     expect(s.datum).toBe('2025-10-21');
   });
+  it('SG-Deckblatt ohne eigenen Kopf: Titel im amtlichen PDF gewinnt (UV 2025/14)', () => {
+    const det = basis({
+      court: 'sg_gerichte', canton: 'SG', docket_number: 'UV 2025/14', decision_date: '2025-10-23',
+      full_text: 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Saint-Gall Versicherungsgericht 23.10.2025 UV 2025/14 Art. 6 Abs. 1 UVG; Leistungspflicht der Unfallversicherung.',
+    });
+    expect(kantonsEntscheiddatum(det).datum).toBe('2025-10-23');
+    const seiten = ['Publikationsplattform St.Galler Gerichte Fall-Nr.: UV 2025/14 Entscheiddatum: 23.10.2025', 'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 2 1 . Oktober 2025 Besetzung'];
+    const r = kantonsEntscheiddatum(det, seiten);
+    expect(r).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });
+    expect(mappeEntscheidOCL(det, null, '2026-09-25', { amtlicheKopfSeiten: seiten })!.datum).toBe('2025-10-21');
+  });
+  it('Zukunfts-Riegel greift auf das Kopfdatum (kantonal)', () => {
+    expect(mappeEntscheidOCL(basis({ decision_date: '2025-01-01' }), null, '2025-08-01')).toBeNull();
+  });
   it('Bund (CH): decision_date unverändert (Pfad byte-gleich)', () => {
     const s = mappeEntscheidOCL(basis({ court: 'bger', canton: 'CH', docket_number: '5A_1/2025', full_text: 'Bundesgericht Urteil vom 3. März 2025 Besetzung. Erwägungen folgen hier im Text.' }), null, '2026-09-25')!;
     expect(s.datum).toBe('2025-10-21');
+  });
+});
+
+describe('kopfdatumRefresh — Bestand über den Generator (nur datum + zitierung)', () => {
+  const snap = (over: Partial<EntscheidSnapshot>): EntscheidSnapshot => ({
+    id: 'kanton/GR/gr_gerichte/SBK202638', gericht: 'gr_gerichte', gerichtName: 'Kantonsgericht GR', kanton: 'GR',
+    nummer: 'SBK 2026 38', datum: '2026-06-24', zitierung: 'Kantonsgericht GR SBK 2026 38 vom 24.06.2026',
+    quelle: 'opencaselaw', quelleUrl: 'https://entscheidsuche.gr.ch/x', abgerufen: '2026-06-26', fassungsToken: 'h', sha: 's',
+    abschnitte: [], ...over,
+  } as EntscheidSnapshot);
+  const det = (over: Partial<OclDecision> = {}): OclDecision => ({
+    decision_id: 'gr_gerichte_SBK 2026 38', court: 'gr_gerichte', canton: 'GR', docket_number: 'SBK 2026 38',
+    decision_date: '2026-06-24', content_hash: 'h',
+    full_text: 'Obergericht des Kantons Graubünden Entscheid vom 28. April 2026 mitgeteilt am 28. Mai 2026 Referenz SBK 26 38 Instanz Besetzung',
+    ...over,
+  } as OclDecision);
+  const keineSeiten = async () => null;
+
+  it('korrigiert datum + zitierung, lässt Text/sha/abgerufen und Bund/BS unberührt', async () => {
+    const gr = snap({});
+    const bund = snap({ id: 'bund/bger/x', kanton: 'CH', gericht: 'bger', nummer: 'x' });
+    const bs = snap({ id: 'kanton/BS/bs_appellationsgericht/x', kanton: 'BS', quelle: 'gerichte-bs' as EntscheidSnapshot['quelle'] });
+    const vorher = JSON.stringify([bund, bs]);
+    const z = await kopfdatumRefresh([gr, bund, bs], { holeDecision: async () => det(), holeSeiten: keineSeiten });
+    expect(z).toHaveLength(1);
+    expect(gr.datum).toBe('2026-04-28');
+    expect(gr.zitierung).toBe('Kantonsgericht GR SBK 2026 38 vom 28.04.2026');
+    expect([gr.sha, gr.abgerufen, gr.fassungsToken]).toEqual(['s', '2026-06-26', 'h']);
+    expect(JSON.stringify([bund, bs])).toBe(vorher);
+  });
+  it('Identitäts-Tor: fremdes Aktenzeichen ⇒ Abbruch, nichts geändert', async () => {
+    const gr = snap({});
+    await expect(kopfdatumRefresh([gr], { holeDecision: async () => det({ docket_number: 'SBK 2026 388' }), holeSeiten: keineSeiten })).rejects.toThrow(/ABBRUCH/);
+    expect(gr.datum).toBe('2026-06-24');
+  });
+  it('ohne Kopfdatum bleibt der Bestandswert (ehrlich gemeldet)', async () => {
+    const gr = snap({});
+    const z = await kopfdatumRefresh([gr], { holeDecision: async () => det({ full_text: 'Obergericht Referenz SBK 26 38 Besetzung' }), holeSeiten: keineSeiten });
+    expect(gr.datum).toBe('2026-06-24');
+    expect(z[0].quelle).toBe('ocl-decision_date');
+  });
+  it('Kopfdatum nach dem Abrufdatum wird nicht übernommen', async () => {
+    const gr = snap({ abgerufen: '2026-04-01' });
+    await kopfdatumRefresh([gr], { holeDecision: async () => det(), holeSeiten: keineSeiten });
+    expect(gr.datum).toBe('2026-06-24');
   });
 });
