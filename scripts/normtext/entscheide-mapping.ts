@@ -83,6 +83,7 @@ import {
   extrahiereStatutRefs, extrahiereStatutRefsMitAnzahl, INVALID_LAW_CODES,
 } from '../../src/lib/rechtsprechung/zitat-extraktion';
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
+import { verbindeMehrwortKuerzel } from './mehrwort-kuerzel';
 // Fassungs-Reihen (SR-Slot mit deklarierter Totalrevision) leben in einem
 // eigenen Leaf-Modul (§6.6); diese Datei nutzt sie und reicht sie weiter.
 import {
@@ -751,7 +752,8 @@ export function literaturSpannen(text: string): string[] {
  * ändert Erlass- und Artikel-Ebene gemeinsam — genau das ist der Zweck.
  */
 export function fliesstextOhneApparat(snap: EntscheidSnapshot): string {
-  return ohneLiteraturApparat(fliesstextVon(snap));
+  // Belegte Mehrwort-Kürzel («GebV SchKG») als EIN Code — sonst kappt der Extraktor am Leerzeichen (mehrwort-kuerzel.ts).
+  return verbindeMehrwortKuerzel(ohneLiteraturApparat(fliesstextVon(snap)));
 }
 
 /**

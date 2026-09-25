@@ -39,13 +39,13 @@ import { join } from 'node:path';
 import {
   baenderFuer, vergleicheRegister, erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, KANTONSZWEIG_DATEI,
   leseBsDelta, leseBsVoll, entscheide, mergeSchutzSperrt, budgetZeilen, budgetBefund,
-  teilePfade, leseStatusZ, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, uebrigeAufruf, richterPhantome,
+  teilePfade, leseStatusZ, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, uebrigeAufruf, richterPhantome, kindUmgebung, oclUrsachen,
   type RegEintrag, type Tor, type StichprobenZeile,
 } from './wochenlauf-kern';
 import { baueBericht, baueCommit, baueSummary, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
 import { stichprobeZeile, frische } from './wochenlauf-netz';
 import {
-  stichprobenPlan, pruefeVorwoche, offeneBefunde, identitaetGeaendert, bsAktualisiertEintraege, mitFrist, ungeprueft, type Vorwoche,
+  stichprobenPlan, pruefeVorwoche, offeneBefunde, vollpruefungOffen, identitaetGeaendert, bsAktualisiertEintraege, mitFrist, ungeprueft, type Vorwoche,
 } from './wochenlauf-vorwoche';
 import { DATEN_BUDGET, gz } from '../perf/daten-budget';
 
@@ -77,7 +77,7 @@ function fuehreAus(cmd: string, args: string[], timeoutMin: number): Promise<{ c
   if (timeoutMin <= 0) return Promise.resolve({ code: 124, log: `übersprungen — Lauf-Frist erreicht (${cmd} ${args.join(' ')})\n`, stdout: '' });
   console.log(`\n::group::${cmd} ${args.join(' ')}`);
   return new Promise((res) => {
-    const p = spawn(cmd, args, { stdio: ['ignore', 'pipe', 'pipe'] });
+    const p = spawn(cmd, args, { stdio: ['ignore', 'pipe', 'pipe'], env: kindUmgebung(process.env) }); // M1: ohne geerbtes NODE_ENV
     let log = '';
     let stdout = '';
     const nimm = (b: Buffer, ziel: NodeJS.WriteStream) => { const s = b.toString('utf8'); log += s; ziel.write(s); return s; };
@@ -94,7 +94,9 @@ const logs = new Map<string, string>();
 async function schritt(name: string, cmd: string, args: string[], quelle: boolean, zusatz: (log: string) => string[] = () => []): Promise<Schritt> {
   const r = await fuehreAus(cmd, args, quelle ? rest(90, quellenFristMin) : rest(20));
   logs.set(name, r.log);
-  const s: Schritt = { name, befehl: `${cmd} ${args.join(' ')}`, code: r.code, ausfaelle: [...erkenneAusfaelle(r.log), ...zusatz(r.log)] };
+  const aus = [...erkenneAusfaelle(r.log), ...zusatz(r.log)];
+  // Ausgefallen ⇒ die jget-Ursachen (HTTP-Status/Fehlerklasse) mit in den Bericht; nie selbst ein Ausfall.
+  const s: Schritt = { name, befehl: `${cmd} ${args.join(' ')}`, code: r.code, ausfaelle: aus.length || r.code !== 0 ? [...aus, ...oclUrsachen(r.log)] : aus };
   if (quelle && checkpoint) {
     if (r.code === 0) { git('add', '-A'); git('commit', '-q', '--allow-empty', '--no-verify', '-m', `wip: ${name}`); }
     else { git('reset', '-q', '--hard', 'HEAD'); git('clean', '-qfd', '--', 'public', 'daten', 'bibliothek', 'src'); }
@@ -149,6 +151,7 @@ async function main(): Promise<void> {
   const tore: Tor[] = [];
   const stichprobe: StichprobenZeile[] = [];
   const fristAus: string[] = [];
+  const vollOffen: string[] = [];
   let dateien: string[] = [];
   let gzNachher = gzVorher;
   if (inhaltsDiff) {
@@ -187,6 +190,7 @@ async function main(): Promise<void> {
     const plan = stichprobenPlan(pool, stichprobeN, jetzt, (vorwoche?.befunde ?? []).map((x) => x.key));
     const sp = await mitFrist(plan, weiter, stichprobeZeile, ungeprueft);
     stichprobe.push(...sp.out);
+    vollOffen.push(...vollpruefungOffen(plan, sp.out)); // R2: Vollprüfungs-Gericht nicht prüfbar ⇒ eigener Entwurf-Grund
     if (sp.uebersprungen) fristAus.push(`Stichprobe ${sp.uebersprungen} von ${plan.length}`);
     dateien = leseStatusZ(git('status', '--porcelain', '-z', '-uall'));
   } else if (checkpoint) {
@@ -202,7 +206,7 @@ async function main(): Promise<void> {
   const sperrt = mergeSchutzSperrt(erwartet);
   const vw = pruefeVorwoche(vorwoche, stichprobe);
   const ent = entscheide({
-    vorwocheOffen: vw.gruende, fristAus,
+    vorwocheOffen: vw.gruende, fristAus, vollpruefungOffen: vollOffen,
     inhaltsDiff, quellenAus, toreRot: tore.filter((t) => t.code !== 0).map((t) => t.name),
     nachbauRot: nachbau.filter((n) => n.code !== 0).map((n) => n.name), stichprobe, mergeSchutzSperrt: sperrt,
     unerwartet, budgetUeber: budgetBefund(budget).ueber, vorwocheVerworfen: basis.vorwocheVerworfen,

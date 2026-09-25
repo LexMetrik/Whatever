@@ -68,6 +68,18 @@ export function offeneBefunde(stichprobe: StichprobenZeile[], vorOffen: VorBefun
   return out;
 }
 
+/**
+ * R2 (Nachprüfung #1113, nachgebaut aus archiv/wochenlauf-restpunkte-r1-r3-2026-09-25):
+ * ein Eintrag eines DATUM_VOLLPRUEFUNG-Gerichts, der «nicht prüfbar» blieb (Datum nicht
+ * lesbar, Quelle weg, Frist), ist ein eigener Entwurf-Grund — sonst ist die Vollprüfung
+ * wirkungslos (Probelauf 25.9.2026: 6/6 BE «Quelle nicht erreichbar», kein Entwurf-Grund).
+ */
+export function vollpruefungOffen(plan: RegEintrag[], stichprobe: StichprobenZeile[]): string[] {
+  const voll = new Map(plan.filter((e) => DATUM_VOLLPRUEFUNG.has(e.gericht)).map((e) => [e.key, e.gericht]));
+  return stichprobe.filter((s) => s.ergebnis === 'nicht-pruefbar' && voll.has(s.key))
+    .map((s) => `${voll.get(s.key)!.split('_')[0].toUpperCase()}: Datum nicht belegbar — ${s.key}`);
+}
+
 // ── Stichproben-Pool und Plan (A2, N1, N3) ──────────────────────────────────
 const IDENTITAET = ['gericht', 'datum', 'nummer', 'bgeReferenz', 'quelleUrl'] as const;
 /** Einträge, die in beiden Registern stehen, deren Identitätsfelder aber abweichen (Datum, Aktenzeichen, Fundstelle, Quelle). */

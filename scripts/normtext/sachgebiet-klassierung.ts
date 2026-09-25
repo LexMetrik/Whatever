@@ -478,7 +478,11 @@ export function bgeRoemischSachgebiet(docket: string): Rechtsgebiet | null {
  *      beantwortet ist. `band: null`, weil hier ein bger-Urteil klassiert wird —
  *      den Sammlungs-Band bringt `bgeSachgebietHint` ein.
  *   4. Abteilungs-Präfix (5A→privat) ist präziser als …
- *   5. … kantonale Aktenzeichen-Präfixe, und beide präziser als …
+ *   5. … kantonale Aktenzeichen-Präfixe — NUR für kantonale Gerichte (`kanton` ≠
+ *      'CH'): BStGer «BV.2026.10» (Beschwerdeverfahren Verwaltungsstrafrecht) traf
+ *      sonst «BV = berufliche Vorsorge» ⇒ «sozialversicherung» (Probelauf
+ *      Wochenlauf 25.9.2026, Tor B); bvger/bstger/bpatger gehen über 6. —, und
+ *      beide präziser als …
  *   6. … die grobe OCL-legal_area (erst Fallback). Sonst 'oeffentlich'.
  */
 export function sachgebietFuerEntscheid(opts: {
@@ -487,6 +491,8 @@ export function sachgebietFuerEntscheid(opts: {
   normKeys: Iterable<string>;
   zitierteNormen: string[];
   legalArea: string | null | undefined;
+  /** OCL `canton` ('CH' = Bundesgericht/eidg. Gericht); nur kantonal greift KANT_PRAEFIX. */
+  kanton: string;
 }): Rechtsgebiet {
   return (
     opts.hint
@@ -504,7 +510,7 @@ export function sachgebietFuerEntscheid(opts: {
           })
         : null)
     ?? abteilungZuSachgebiet(opts.docket)
-    ?? kantonalSachgebiet(opts.docket)
+    ?? (opts.kanton !== 'CH' ? kantonalSachgebiet(opts.docket) : null)
     ?? legalAreaZuSachgebiet(opts.legalArea)
     ?? 'oeffentlich'
   );

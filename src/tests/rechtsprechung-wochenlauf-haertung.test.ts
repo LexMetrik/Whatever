@@ -378,9 +378,9 @@ describe('13 · BS-Vollabgleich', () => {
 });
 
 describe('Ausschluss SG/AG/GR (Befund #1117) — eine Stelle, im Bericht sichtbar', () => {
-  it('Wochenlauf zieht SG, AG, GR nicht nach; BE bleibt (mit Datumsprüfung)', () => {
-    expect(aktiveGerichte(KANTONS_GERICHTE)).toEqual(['zh_obergericht', 'be_verwaltungsgericht']);
-    expect(Object.keys(AUSGENOMMEN).sort()).toEqual(['ag_gerichte', 'gr_gerichte', 'sg_gerichte']);
+  it('Wochenlauf zieht SG, AG, GR und (seit Probelauf 25.9.2026) BE nicht nach', () => {
+    expect(aktiveGerichte(KANTONS_GERICHTE)).toEqual(['zh_obergericht']);
+    expect(Object.keys(AUSGENOMMEN).sort()).toEqual(['ag_gerichte', 'be_verwaltungsgericht', 'gr_gerichte', 'sg_gerichte']);
     expect(baueBericht(bericht({}))).toContain('**Ausgenommen (nicht nachgezogen):** sg_gerichte — Datum aus OCL unzuverlässig');
   });
   it('BE-Datum-Fehltreffer ⇒ Entwurf, Bericht nennt amtliches und OCL-Datum', () => {
@@ -412,9 +412,9 @@ describe('16 · kantonaler Zweig nie still (A4)', () => {
     expect(kantonalAusfall(true, kantone, log)).toEqual([]); // beide melden sich
     expect(erkenneAusfaelle(log)).toHaveLength(2); // «übersprungen» bleibt Ausfall
   });
-  it('Aufruf «Übrige» leitet --courts aus AUSGENOMMEN ab (ohne sg/ag/gr)', () => {
+  it('Aufruf «Übrige» leitet --courts aus AUSGENOMMEN ab (ohne sg/ag/gr/be)', () => {
     const { args } = uebrigeAufruf('2026-09-28');
-    expect(args).toContain('--courts=zh_obergericht,be_verwaltungsgericht');
+    expect(args).toContain('--courts=zh_obergericht');
     expect(args).toContain('--eidg=bvger,bstger,bpatger');
     expect(args.join(' ')).not.toMatch(/sg_gerichte|ag_gerichte|gr_gerichte/);
     expect(args.slice(0, 5)).toEqual(['run', 'entscheide', '--', '--datum=2026-09-28', '--additiv']);

@@ -155,6 +155,7 @@ import {
   extrahiereStatutRefs, extrahiereStatutRefsMitAnzahl, INVALID_LAW_CODES,
 } from '../../src/lib/rechtsprechung/zitat-extraktion';
 import { vergleiche } from './vergleich';
+import { verbindeMehrwortKuerzel } from './mehrwort-kuerzel';
 
 /** Snapshot-Frequenz, ab der ein ungemapptes Token das Tor rot macht. */
 const SCHWELLE = 20;
@@ -458,7 +459,7 @@ function unerreichbareAliase(): UnerreichbaresAlias[] {
   for (const a of ABK_ALIASE) {
     const ziel = normalisiereAbk(a.abk);
     if (!ziel) continue;
-    const refs = extrahiereStatutRefs(`Art. 1 ${a.abk}`);
+    const refs = extrahiereStatutRefs(verbindeMehrwortKuerzel(`Art. 1 ${a.abk}`)); // wie der Produktpfad (fliesstextOhneApparat)
     if (refs.some((r) => normalisiereAbk(r.gesetz) === ziel)) continue;
     raus.push({ abk: a.abk, sr: a.sr, sprache: a.sprache, grund: unerreichbarGrund(a.abk) });
   }
