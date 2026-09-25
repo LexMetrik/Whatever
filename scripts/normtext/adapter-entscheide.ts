@@ -17,8 +17,8 @@ import { sha256EntscheidBloecke } from './sha-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
 import { kantonsEntscheiddatum, kopfSeitenFallsNoetig } from './entscheid-kantonsdatum';
-// markenPlausibel/MONAT leben jetzt in erwaegung-normalisieren.ts (Single Source, §5);
-// hier re-exportiert, damit bestehende Importeure/Tests stabil bleiben.
+import { ersetzeKonflatiertenAuszug } from './clir-auszug';
+// markenPlausibel/MONAT: Single Source erwaegung-normalisieren.ts (§5), re-exportiert für Bestands-Importeure.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
 import {
   statutesZuNormKeys, gerichtstypFuerCourt,
@@ -640,7 +640,7 @@ export { bgeRoemischSachgebiet };
 export async function holeBgeLeitentscheid(
   bgeId: string,
   abgerufen: string,
-  kopf: { azaAz?: string | null; datumFallback?: string | null } = {},
+  kopf: { azaAz?: string | null; datumFallback?: string | null; clirAuszug?: EntscheidAbschnitt[] | null } = {},
 ): Promise<EntscheidSnapshot | null> {
   // OCL liefert decision_id inkonsistent (`bge_BGE_150_III_223`, `bge_152 III 51`) UND die
   // Keyed-Lookup matcht kurze Seiten-Ids PRÄFIXUNSCHARF: `/decisions/151_V_1` → 151_V_194.
@@ -722,7 +722,7 @@ export async function holeBgeLeitentscheid(
     ],
     legalArea: det.legal_area,
   });
-  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeHint ?? roemHint ?? undefined });
+  const basis = ersetzeKonflatiertenAuszug(mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeHint ?? roemHint ?? undefined }), kopf.clirAuszug, spracheAusBody); // Konflations-Rückfall (clir-auszug.ts)
   if (!basis) return null;
   basis.gerichtName = 'Bundesgericht';
 
