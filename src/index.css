@@ -277,8 +277,14 @@
        tragen nur die Wärme nach (Hue 84.6°, L unverändert ±0.001). */
     --brass-700: var(--ink-fixed-dark);
     /* Linien- und Fokus-Stufe der neutralen Skala: Kanten, Umrisse, der Ring der Kantonsauswahl,
-       dunkel der Fokusring. Nicht-Text-Marke, darum 3:1 als Schwelle. */
-    --brass-500: #7A766E;
+       dunkel der Fokusring. Nicht-Text-Marke, darum 3:1 als Schwelle.
+
+       Ausnahme mit Text: Füllung der Fristbeginn-Marke im Fristenkalender (`bg-brass-500
+       text-paper`). W2·29-WERKBANK-REST S3 (25.9.2026, Posten Dependabot #918): hell minimal
+       abgedunkelt #7A766E → #78746C (je Kanal −2, Ton gehalten), damit `paper` darauf 4.54:1 trägt
+       (vorher 4.41:1); dunkel unverändert, `paper` dunkel darauf 5.51:1. Die frühere Tinte
+       `auf-gold` mass auf dieser Füllung hell nur 3.47:1 (axe 4.13). */
+    --brass-500: #78746C;
     /* Dekorative Linie und helle Fläche der neutralen Skala (`accent-line-decor`). In beiden Themes
        vergleichsweise hell - Text darauf nimmt darum `auf-gold`. KONTRAST-VERMERK: rein dekorativ,
        trägt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht. Gemessen auf paper 1.58:1 hell /
