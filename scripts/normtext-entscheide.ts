@@ -23,7 +23,7 @@ import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZ
 import { verschlechtertDatum } from './normtext/bge-bandjahr';
 import { mergeB1Ergebnis } from './normtext/entscheide-b1-merge';
 import { findeFremdeFundstelleImBody } from './normtext/entscheide-koerper-konflation';
-import { waehleNeue, fuehreAdditivZusammen } from './normtext/entscheide-additiv';
+import { waehleNeue, fuehreAdditivZusammen, nachDatumDesc, kantonSortierer } from './normtext/entscheide-additiv';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
 import type { Rechtsgebiet } from '../src/lib/normtext/register';
 import * as path from 'node:path';
@@ -72,7 +72,7 @@ const arg = (name: string): string | null => {
 const datum = arg('--datum') ?? new Date().toISOString().slice(0, 10);
 const bundLimit = Number(arg('--limit') ?? '45');
 // --courts/--kanton-pro: im Vollbau Teil der Neuauswahl; mit --additiv (seit 25.9.2026)
-// je Gericht die N nach Rang besten NEUEN Urteile (Bestands-ids ausgeschlossen).
+// je Gericht die N neuesten NEUEN Urteile nach Datum desc (Bestands-ids ausgeschlossen).
 const kantonPro = Number(arg('--kanton-pro') ?? '8');
 const kantCourts = (arg('--courts') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 // Amtliche Leitentscheide (BGE): --bge-von=YYYY-MM-DD aktiviert den dritten Quell-Zweig.
@@ -248,13 +248,21 @@ const spanne = (xs: EntscheidSnapshot[]) => {
  * `ausschluss` (nur additiv, 25.9.2026): Bestands-ids fallen VOR der Rang-Auswahl
  * heraus, damit N wirklich neue Urteile dazukommen; im Vollbau leer (Verhalten
  * unverändert). `geholt` zählt die erfolgreich geholten Snapshots für den Leer-Guard.
+ * Additiv wählt streng nach Datum desc (`kantonSortierer`), der Vollbau nach Rang.
+ * Nicht erreichbare Gerichte landen in `uebersprungen` (nie still, 25.9.2026).
  */
-async function kantonKorpus(ausschluss: ReadonlySet<string> = new Set()): Promise<{ snaps: EntscheidSnapshot[]; geholt: number }> {
+type ZweigLauf = { snaps: EntscheidSnapshot[]; geholt: number; uebersprungen: string[] };
+async function kantonKorpus(ausschluss: ReadonlySet<string> = new Set(), additivModus = false): Promise<ZweigLauf> {
   const out: EntscheidSnapshot[] = [];
+  const uebersprungen: string[] = [];
   let geholt = 0;
   for (const court of kantCourts) {
     const ids = await enumeriereNeueste(court, kantonPro * 4);
-    if (!ids.length) { console.log(`[kanton] ${court}: 0 IDs (Listing nicht erreichbar)`); continue; }
+    if (!ids.length) {
+      console.log(`[kanton] ${court}: übersprungen — 0 IDs (Listing nicht erreichbar)`);
+      uebersprungen.push(`${court} (0 IDs)`);
+      continue;
+    }
     const snaps = await mapLimit(ids.slice(0, kantonPro * 4), 4, async (id) => {
       const s = await holeEntscheidOCL(id, datum, { sprache: 'de' });
       process.stdout.write(s ? '.' : 'x');
@@ -262,13 +270,18 @@ async function kantonKorpus(ausschluss: ReadonlySet<string> = new Set()): Promis
     });
     process.stdout.write('\n');
     const ok = snaps.filter((s): s is EntscheidSnapshot => !!s);
+    if (!ok.length) {
+      console.log(`[kanton] ${court}: übersprungen — ${ids.length} IDs, aber 0 Details geholt`);
+      uebersprungen.push(`${court} (0 Details)`);
+      continue;
+    }
     geholt += ok.length;
     const imBestand = ok.filter((s) => ausschluss.has(s.id)).length;
-    const gewaehlt = waehleNeue(ok, ausschluss, kantonPro, sortAuswahl);
+    const gewaehlt = waehleNeue(ok, ausschluss, kantonPro, kantonSortierer(additivModus, sortAuswahl));
     out.push(...gewaehlt);
     console.log(`[kanton] ${court}: ${ok.length} de${ausschluss.size ? ` (davon ${imBestand} schon im Bestand)` : ''} → ${gewaehlt.length} gewählt (Regeste: ${gewaehlt.filter((s) => s.regeste).length}; Datum ${spanne(gewaehlt)})`);
   }
-  return { snaps: out, geholt };
+  return { snaps: out, geholt, uebersprungen };
 }
 
 /** Amtliche Leitentscheide (BGE): Enumeration → angereicherter A2-Merge je BGE. */
@@ -294,12 +307,17 @@ async function bgeKorpus(): Promise<EntscheidSnapshot[]> {
  * Status (bgeReferenz bleibt null → leitcharakter 'routine', Invariante gewahrt);
  * gerichtstyp/Anzeigename kommen aus dem Mapping. id-Pfad: bund/<court>/<docket>.
  */
-async function eidgKorpus(ausschluss: ReadonlySet<string> = new Set()): Promise<{ snaps: EntscheidSnapshot[]; geholt: number }> {
+async function eidgKorpus(ausschluss: ReadonlySet<string> = new Set()): Promise<ZweigLauf> {
   const out: EntscheidSnapshot[] = [];
+  const uebersprungen: string[] = [];
   let geholt = 0;
   for (const court of eidgCourts) {
     const ids = await enumeriereNeuesteAlle(court, eidgPro * 4);
-    if (!ids.length) { console.log(`[eidg] ${court}: 0 IDs (Listing nicht erreichbar)`); continue; }
+    if (!ids.length) {
+      console.log(`[eidg] ${court}: übersprungen — 0 IDs (Listing nicht erreichbar)`);
+      uebersprungen.push(`${court} (0 IDs)`);
+      continue;
+    }
     const sachgebietHint = EIDG_SACHGEBIET[court] ?? null;
     const snaps = await mapLimit(ids.slice(0, eidgPro * 4), 4, async (id) => {
       const s = await holeEntscheidOCL(id, datum, { sprache: null, sachgebietHint });
@@ -308,18 +326,22 @@ async function eidgKorpus(ausschluss: ReadonlySet<string> = new Set()): Promise<
     });
     process.stdout.write('\n');
     const ok = snaps.filter((s): s is EntscheidSnapshot => !!s);
+    if (!ok.length) {
+      console.log(`[eidg] ${court}: übersprungen — ${ids.length} IDs, aber 0 Details geholt`);
+      uebersprungen.push(`${court} (0 Details)`);
+      continue;
+    }
     geholt += ok.length;
     const imBestand = ok.filter((s) => ausschluss.has(s.id)).length;
     // Die N neuesten, die NICHT schon im Bestand sind (Datum desc; id als stabiler
     // Tiebreaker, §2-Determinismus). Ausschluss vor dem slice (25.9.2026): sonst
     // belegten Bestandsurteile Plätze der N und fielen danach im Dedupe weg.
-    const gewaehlt = waehleNeue(ok, ausschluss, eidgPro, (xs) => [...xs]
-      .sort((a, b) => (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : a.id < b.id ? -1 : a.id > b.id ? 1 : 0)));
+    const gewaehlt = waehleNeue(ok, ausschluss, eidgPro, nachDatumDesc);
     out.push(...gewaehlt);
     const spr = gewaehlt.reduce((m, s) => ((m[s.sprache] = (m[s.sprache] ?? 0) + 1), m), {} as Record<string, number>);
     console.log(`[eidg] ${court}: ${ok.length} geholt${ausschluss.size ? ` (davon ${imBestand} schon im Bestand)` : ''} → ${gewaehlt.length} gewählt (${Object.entries(spr).map(([k, v]) => `${k}:${v}`).join(' ')}; Datum ${spanne(gewaehlt)})`);
   }
-  return { snaps: out, geholt };
+  return { snaps: out, geholt, uebersprungen };
 }
 
 /** docket → dateisicheres Slug-Tail (identisch zu mappeEntscheidOCL, §5). */
@@ -713,12 +735,14 @@ async function main() {
     // Zweig: angefordert, aber 0 geholt ⇒ Korpus unberührt) im reinen Kern
     // `entscheide-additiv.ts` (Unit-Test: src/tests/entscheide-additiv.test.ts).
     const bestandIds = new Set(basis.map((s) => s.id));
-    const eidg = eidgCourts.length ? await eidgKorpus(bestandIds) : { snaps: [], geholt: 0 };
-    const kanton = kantCourts.length ? await kantonKorpus(bestandIds) : { snaps: [], geholt: 0 };
+    const leer: ZweigLauf = { snaps: [], geholt: 0, uebersprungen: [] };
+    const eidg = eidgCourts.length ? await eidgKorpus(bestandIds) : leer;
+    const kanton = kantCourts.length ? await kantonKorpus(bestandIds, true) : leer;
     const erg = fuehreAdditivZusammen(basis, [
-      { name: 'eidg.', angefordert: eidgCourts.length, geholt: eidg.geholt, neu: eidg.snaps },
-      { name: 'kantonale', angefordert: kantCourts.length, geholt: kanton.geholt, neu: kanton.snaps },
+      { name: 'eidg.', angefordert: eidgCourts.length, geholt: eidg.geholt, neu: eidg.snaps, uebersprungen: eidg.uebersprungen },
+      { name: 'kantonale', angefordert: kantCourts.length, geholt: kanton.geholt, neu: kanton.snaps, uebersprungen: kanton.uebersprungen },
     ]);
+    if (erg.uebersprungen.length) console.log(`[additiv] übersprungen (${erg.uebersprungen.length}): ${erg.uebersprungen.join(', ')}`);
     if (erg.abbruch) {
       console.log(erg.abbruch);
       return;

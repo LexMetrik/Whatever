@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { waehleNeue, fuehreAdditivZusammen } from '../../scripts/normtext/entscheide-additiv';
+import { waehleNeue, fuehreAdditivZusammen, kantonSortierer } from '../../scripts/normtext/entscheide-additiv';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 
 // Minimal-Fixture: nur die Felder, die der Zusammenführ-Kern liest (id, datum) plus
@@ -72,5 +72,44 @@ describe('additiver Kantonszweig (Auftrag David 25.9.2026, Stichproben auffrisch
     ]);
     expect(r.abbruch).toBeNull();
     expect(r.auswahl).toHaveLength(basis.length + 1);
+  });
+
+  // Entscheid Orchestrator 25.9.2026: additiv kantonal streng nach Datum desc (wie eidg.),
+  // Vollbau unverändert nach Rang (Regeste zuerst) — damit der Vollbau byte-gleich wählt.
+  const rang = (xs: EntscheidSnapshot[]) =>
+    [...xs].sort((a, b) =>
+      (Number(!(a as unknown as { regeste?: unknown }).regeste) - Number(!(b as unknown as { regeste?: unknown }).regeste))
+      || (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : 0)
+      || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  const mitRegeste = (id: string, datum: string) =>
+    ({ ...snap(id, datum, 'frisch'), regeste: { text: 'R', quelle: 'opencaselaw' } }) as unknown as EntscheidSnapshot;
+  const sgPool = [
+    mitRegeste('kanton/SG/sg_gerichte/ALT_MIT_REGESTE', '2025-11-01'),
+    snap('kanton/SG/sg_gerichte/NEU1', '2026-09-15', 'frisch'),
+    snap('kanton/SG/sg_gerichte/NEU2', '2026-09-01', 'frisch'),
+  ];
+
+  it('additiv: kantonale Auswahl streng nach Datum — ein älteres Urteil mit Regeste verdrängt kein neueres', () => {
+    const neu = waehleNeue(sgPool, new Set(), 2, kantonSortierer(true, rang));
+    expect(neu.map((s) => s.id)).toEqual(['kanton/SG/sg_gerichte/NEU1', 'kanton/SG/sg_gerichte/NEU2']);
+  });
+
+  it('Vollbau: kantonale Auswahl bleibt die Rang-Auswahl (derselbe Sortierer, Regeste zuerst)', () => {
+    expect(kantonSortierer(false, rang)).toBe(rang);
+    const neu = waehleNeue(sgPool, new Set(), 2, kantonSortierer(false, rang));
+    expect(neu.map((s) => s.id)).toEqual(['kanton/SG/sg_gerichte/ALT_MIT_REGESTE', 'kanton/SG/sg_gerichte/NEU1']);
+  });
+
+  it('übersprungene Gerichte werden gemeldet, nicht still verschluckt — auch beim Abbruch', () => {
+    const ok = fuehreAdditivZusammen(basis, [
+      { name: 'kantonale', angefordert: 2, geholt: 3, neu: [], uebersprungen: ['ag_gerichte (0 IDs)'] },
+    ]);
+    expect(ok.abbruch).toBeNull();
+    expect(ok.uebersprungen).toEqual(['ag_gerichte (0 IDs)']);
+    const ab = fuehreAdditivZusammen(basis, [
+      { name: 'kantonale', angefordert: 1, geholt: 0, neu: [], uebersprungen: ['sg_gerichte (0 Details)'] },
+    ]);
+    expect(ab.abbruch).not.toBeNull();
+    expect(ab.uebersprungen).toEqual(['sg_gerichte (0 Details)']);
   });
 });

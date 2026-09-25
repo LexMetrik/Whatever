@@ -27,6 +27,12 @@ export interface AdditivZweig {
   geholt: number;
   /** Gewählte neue Snapshots (bereits ohne Bestands-ids). */
   neu: EntscheidSnapshot[];
+  /**
+   * Gerichte des Zweigs, deren Listing/Details nicht erreichbar waren (0 IDs oder 0
+   * Details). Sie werden übersprungen, die übrigen geschrieben — aber nie still:
+   * Weisung Orchestrator 25.9.2026, «übersprungen» muss im Log UND im Bericht stehen.
+   */
+  uebersprungen?: string[];
 }
 
 export interface AdditivErgebnis {
@@ -36,6 +42,25 @@ export interface AdditivErgebnis {
   abbruch: string | null;
   /** Tatsächlich neu hinzugekommene Snapshots je Zweig-Name (nach globalem Dedupe). */
   neuJeZweig: Record<string, number>;
+  /** Übersprungene Gerichte aller Zweige (Log-Pflicht, siehe `AdditivZweig.uebersprungen`). */
+  uebersprungen: string[];
+}
+
+/** Datum absteigend, id als totaler Tiebreaker (§2) — «die N neuesten». */
+export const nachDatumDesc = (xs: EntscheidSnapshot[]): EntscheidSnapshot[] =>
+  [...xs].sort((a, b) => (a.datum < b.datum ? 1 : a.datum > b.datum ? -1 : a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+
+/**
+ * Auswahl-Sortierer des Kantonszweigs. Additiv (Auffrischen der Stichprobe, Entscheid
+ * Orchestrator 25.9.2026): streng nach Datum absteigend wie der eidg. Zweig — der Auftrag
+ * heisst «die neuesten». Vollbau: unverändert die Rang-Auswahl (Regeste → Leitentscheid
+ * → Datum), damit ein Vollbau byte-gleich wählt wie bisher (§6).
+ */
+export function kantonSortierer(
+  additiv: boolean,
+  rangSortierer: (xs: EntscheidSnapshot[]) => EntscheidSnapshot[],
+): (xs: EntscheidSnapshot[]) => EntscheidSnapshot[] {
+  return additiv ? nachDatumDesc : rangSortierer;
 }
 
 /**
@@ -57,6 +82,7 @@ export function fuehreAdditivZusammen(
   basis: EntscheidSnapshot[],
   zweige: AdditivZweig[],
 ): AdditivErgebnis {
+  const uebersprungen = zweige.flatMap((z) => z.uebersprungen ?? []);
   // Leer-Guard (§6): Schutz gegen stillen Bestand-Überschreib bei OCL-Ausfall.
   for (const z of zweige) {
     if (z.angefordert > 0 && z.geholt === 0) {
@@ -64,6 +90,7 @@ export function fuehreAdditivZusammen(
         auswahl: [],
         abbruch: `[additiv] 0 ${z.name} Entscheide geholt (Quelle nicht erreichbar?) — Korpus unberührt.`,
         neuJeZweig: {},
+        uebersprungen,
       };
     }
   }
@@ -77,7 +104,7 @@ export function fuehreAdditivZusammen(
     neuJeZweig[z.name] = dazu.length;
   }
   if (auswahl.length === 0) {
-    return { auswahl: [], abbruch: '[additiv] 0 Snapshots — bestehender Korpus bleibt unberührt.', neuJeZweig };
+    return { auswahl: [], abbruch: '[additiv] 0 Snapshots — bestehender Korpus bleibt unberührt.', neuJeZweig, uebersprungen };
   }
-  return { auswahl, abbruch: null, neuJeZweig };
+  return { auswahl, abbruch: null, neuJeZweig, uebersprungen };
 }

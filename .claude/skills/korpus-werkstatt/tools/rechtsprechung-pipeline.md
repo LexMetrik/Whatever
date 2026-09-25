@@ -60,7 +60,7 @@ gate-«Fünferkette» (`tsc -b` · `vitest` · `golden:vergleich` · `lint` · `
 | `--limit=N` | `45` | Bund-BFS: max. gewählte Urteile | `const bundLimit` |
 | `--seeds=a,b` | `bger_5A_1100_2025` | Start-IDs des Citation-Graph-BFS | `const SEEDS` (in `bundKorpus`) |
 | `--courts=c1,c2` | – | kantonale Gerichte (Listing je Gericht); **Vollbau und — seit 25.9.2026 — `--additiv`** | `const kantCourts` |
-| `--kanton-pro=N` | `8` | je Kanton-Gericht gewählte Urteile, nach Rang (Regeste → Leitentscheid → Datum desc) aus den 4·N neuesten des Listings; additiv: N **neue** (Bestands-ids vorher ausgeschlossen) | `const kantonPro` |
+| `--kanton-pro=N` | `8` | je Kanton-Gericht gewählte Urteile aus den 4·N neuesten des Listings — Vollbau nach Rang (Regeste → Leitentscheid → Datum desc), **additiv streng nach Datum desc** und nur **neue** (Bestands-ids vorher ausgeschlossen) | `const kantonPro` |
 | `--bge-von=YYYY-MM-DD` | – | **aktiviert** den BGE-Leitentscheid-Zweig (sonst keine BGE) | `const bgeVon` |
 | `--bge-limit=N` | `300` | enumerierte BGE ab `--bge-von` | `const bgeLimit` |
 | `--eidg=bvger,bstger,bpatger` | – | eidg. Gerichte als eigener Zweig (**nur sinnvoll mit `--additiv`**) | `const eidgCourts` |
@@ -79,7 +79,10 @@ id-Kollision) und Leer-Guard je Zweig (angefordert, aber 0 **geholt** ⇒ Abbruc
 schon im Bestand liegt, ist kein Abbruch) leben im reinen Kern `scripts/normtext/entscheide-additiv.ts`
 (Test `src/tests/entscheide-additiv.test.ts`). Das Log nennt je Gericht «davon k schon im Bestand» und
 die Datumsspanne der Auswahl — liegt sie vor dem jüngsten Bestandsurteil, lieferte das Listing nichts
-Jüngeres (Stichprobe nicht aufgefrischt, ehrlich melden).
+Jüngeres (Stichprobe nicht aufgefrischt, ehrlich melden). Ein einzelnes Gericht ohne erreichbares Listing
+(0 IDs) oder ohne geholte Details wird **übersprungen** — nie still: je Gericht eine Zeile
+«<court>: übersprungen — …» und eine Sammelzeile «[additiv] übersprungen (k): …»; ins Lauf-Protokoll
+bzw. den Bericht übernehmen.
 
 ---
 

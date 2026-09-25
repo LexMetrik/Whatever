@@ -43,8 +43,9 @@ in `tools/rechtsprechung-pipeline.md`). Wähle nach dem, was in den Korpus soll:
   (`ladeBestandSnapshots`) und ergänzt nur die frisch geholten Zweige — er zieht die
   bestehenden BGE/Bund/Kanton **nicht** über die Live-API neu (§6: kein
   Bestand-Drift). Das ist der Default für jede gezielte Ergänzung (z. B. neue
-  eidg. Gerichte, seit 25.9.2026 auch kantonale per `--courts`, je Gericht N
-  **neue** — Bestands-ids fallen vor der Auswahl heraus; `--bge-refresh`
+  eidg. Gerichte, seit 25.9.2026 auch kantonale per `--courts`, je Gericht die N
+  neuesten **neuen** nach Datum — Bestands-ids fallen vor der Auswahl heraus;
+  nicht erreichbare Gerichte werden «übersprungen» gemeldet; `--bge-refresh`
   gekappter BGE). Ohne `--additiv` würde der
   bestehende Korpus überschrieben.
 - **Leer-Guard (§6):** Wurden Quellen angefordert, aber nichts geholt (OCL down),
