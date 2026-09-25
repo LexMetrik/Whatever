@@ -42,6 +42,8 @@ import tailwindConfig from '../tailwind.config.js';
 const LESEMASS_AUSNAHMEN: ReadonlyArray<readonly [string, string]> = [
   ['[id^="art-"]', 'Normtext im Gesetzes-Leser — eigenes Tor e2e/leser-lesemass.e2e.ts (max-w-normtext, S2/R5)'],
   ['pre, code', 'Code/Rechenweg in Mono — kein Fliesstext'],
+  ['.min-h-kopf-stand', 'Stand-Ausweis im Leser-Kopf (LeserKopfGeruest): Segmentzeile «Stand · in Kraft · geprüft» (Beiwerk); ihre CLS-Reserve `min-h-kopf-stand*` ist auf die heutige Zeilenzahl geeicht — ein Deckel verschöbe die Reserve (offen, eigener Posten)'],
+  ['.tb-zeile', 'Erlass-Register /gesetze: Tabellenzeile (Kürzel · Titel · SR-Nr.), der Titel ist eine Zelle, kein Absatz — Tabellen dürfen wachsen (Grundsatz David 25.9.2026)'],
 ];
 //
 // ROT ZU BEKOMMEN (§6.7, Beweise im Commit-Bericht B1c):
@@ -61,6 +63,10 @@ const VIEWPORTS = [
 const BREIT = VIEWPORTS[3];
 const BP_2XL = 1536; // Tailwind-Standard `2xl` (px, von der Schriftskala unberührt)
 const MAX_CH = 80;
+// Die Seiten-Fusszeile (Footer.tsx) — nicht ein <footer> INNERHALB einer Seite
+// (z. B. Entscheid-Leser), sonst zählte deren Text doppelt.
+const SEITENFUSS = 'footer:not(main footer)';
+const FUSS_RAHMEN = `${SEITENFUSS} > div.mx-auto, ${SEITENFUSS} > div > div.mx-auto`;
 const MIN_ZEICHEN = 120;
 const SKALA_KEY = 'lexmetrik-schriftskala'; // useSchriftskala.ts
 const SKALA = '1.4';
@@ -99,11 +105,11 @@ interface Rahmen {
 }
 
 async function messeRahmen(page: Page): Promise<Rahmen> {
-  return page.evaluate(() => {
+  return page.evaluate((fussRahmen) => {
     const box = (el: Element) => { const r = el.getBoundingClientRect(); return { l: r.left, r: r.right, w: r.width }; };
     const main = document.querySelector('main#inhalt')!;
     const innen = main.querySelector(':scope > div')!;
-    const footer = [...document.querySelectorAll('footer > div.mx-auto, footer > div > div.mx-auto')].map(box);
+    const footer = [...document.querySelectorAll(fussRahmen)].map(box);
     return {
       rootPx: parseFloat(getComputedStyle(document.documentElement).fontSize),
       mainPx: main.getBoundingClientRect().width,
@@ -112,78 +118,118 @@ async function messeRahmen(page: Page): Promise<Rahmen> {
       scrollW: document.documentElement.scrollWidth,
       innerW: window.innerWidth,
     };
-  });
+  }, FUSS_RAHMEN);
 }
 
 interface LesemassFund { ch: number; zeile: string; tag: string; px: number; anker: string }
 
 async function messeLesemass(page: Page): Promise<LesemassFund[]> {
   const ausnahmen = LESEMASS_AUSNAHMEN.map(([s]) => s).join(', ');
-  return page.evaluate(({ ausnahmen, maxCh, minZeichen }) => {
+  return page.evaluate(({ ausnahmen, maxCh, minZeichen, SEITENFUSS }) => {
     const funde: LesemassFund[] = [];
     const wortRe = /\S+/g;
-    for (const el of document.querySelectorAll('main p, main li, main dd, main blockquote, main figcaption, footer p, footer li')) {
-      if (el.closest(ausnahmen)) continue;
-      if (!(el as HTMLElement).checkVisibility?.()) continue;
-      // Wörter mit Rect sammeln (nur sichtbarer Text).
-      // `weiss`: steht im Quelltext Leerraum vor dem Wort? Nur dann zählt die
-      // Lücke als Zeichen — sonst würden Fussnoten-/Link-Knoten, die ohne
-      // Leerschlag am Vorwort kleben, die Zeile künstlich verlängern.
-      const woerter: Array<{ t: string; weiss: boolean; x: number; r: number; cy: number; h: number }> = [];
-      let vorher = '';
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      const range = document.createRange();
+    // Gemessen wird je ABSATZ-BLOCK: jeder Textknoten gehört zu seinem nächsten
+    // nicht-inline Vorfahren (block, list-item, Flex-/Grid-Kind …). So zählt
+    // eine Tabellen-/Rasterzeile aus Zellen (flex) je Zelle, und ein <li> mit
+    // Titel und Unterzeile in verschiedenen Schriftstufen wird nicht gemischt.
+    // Fliesstext ist ein Block, der selbst oder dessen Vorfahr p/li/dd/
+    // blockquote/figcaption ist.
+    type Wort = { t: string; weiss: boolean; x: number; r: number; cy: number; h: number };
+    const bloecke = new Map<Element, { woerter: Wort[]; vorher: string }>();
+    const blockVon = new Map<Element, Element | null>();
+    const findeBlock = (e: Element): Element | null => {
+      if (blockVon.has(e)) return blockVon.get(e)!;
+      const d = getComputedStyle(e).display;
+      const b = d.startsWith('inline') || d === 'contents' ? (e.parentElement ? findeBlock(e.parentElement) : null) : e;
+      blockVon.set(e, b);
+      return b;
+    };
+    const range = document.createRange();
+    for (const wurzel of document.querySelectorAll(`main#inhalt, ${SEITENFUSS}`)) {
+      const walker = document.createTreeWalker(wurzel, NodeFilter.SHOW_TEXT);
       for (let n = walker.nextNode(); n; n = walker.nextNode()) {
         const eltern = n.parentElement!;
+        const text = n.textContent ?? '';
+        if (!text.trim()) {
+          const b = findeBlock(eltern);
+          const g = b && bloecke.get(b);
+          if (g) g.vorher = ' ';
+          continue;
+        }
         if (eltern.closest(ausnahmen)) continue;
+        const block = findeBlock(eltern);
+        if (!block || !block.closest('p, li, dd, blockquote, figcaption')) continue;
         const eb = eltern.getBoundingClientRect();
         if (eb.width <= 1 || eb.height <= 1) continue; // sr-only / weggeklappt
-        const text = n.textContent ?? '';
-        const vorKnoten = vorher;
-        vorher = text.slice(-1) || vorher;
+        let g = bloecke.get(block);
+        if (!g) { g = { woerter: [], vorher: '' }; bloecke.set(block, g); }
+        // `weiss`: steht im Quelltext Leerraum vor dem Wort? Nur dann zählt die
+        // Lücke als Zeichen — sonst würden Fussnoten-/Link-Knoten, die ohne
+        // Leerschlag am Vorwort kleben, die Zeile künstlich verlängern.
+        const vorKnoten = g.vorher;
+        g.vorher = text.slice(-1);
         for (const m of text.matchAll(wortRe)) {
           range.setStart(n, m.index!);
           range.setEnd(n, m.index! + m[0].length);
-          const rs = range.getClientRects();
+          const rs = [...range.getClientRects()].filter((r) => r.width > 0 && r.height > 0);
           if (!rs.length) continue;
-          const r0 = rs[0];
-          if (r0.width <= 0 || r0.height <= 0) continue;
           const davor = m.index! > 0 ? text[m.index! - 1] : vorKnoten;
-          woerter.push({ t: m[0], weiss: davor === '' || /\s/.test(davor), x: r0.left, r: r0.right, cy: (r0.top + r0.bottom) / 2, h: r0.height });
+          // Ein am Zeilenende getrenntes Wort («UNO-|Behinderten…», hyphens)
+          // hat ein Rect je Zeile: Zeichen anteilig nach Breite verteilen,
+          // sonst zählte das ganze Wort in die erste Zeile.
+          const summe = rs.reduce((acc, r) => acc + r.width, 0);
+          let ab = 0;
+          rs.forEach((r, i) => {
+            const bis = i === rs.length - 1 ? m[0].length : Math.round(m[0].length * (rs.slice(0, i + 1).reduce((acc, q) => acc + q.width, 0) / summe));
+            g!.woerter.push({ t: m[0].slice(ab, bis), weiss: i === 0 && (davor === '' || /\s/.test(davor)), x: r.left, r: r.right, cy: (r.top + r.bottom) / 2, h: r.height });
+            ab = bis;
+          });
         }
       }
+    }
+    for (const [el, { woerter }] of bloecke) {
       const zeichen = woerter.reduce((s, w) => s + w.t.length + (w.weiss ? 1 : 0), 0);
       if (zeichen < minZeichen) continue;
       // Zeilen: nach Mitte-y clustern (Toleranz halbe Wort-Höhe), dann nach x.
       woerter.sort((a, b) => a.cy - b.cy || a.x - b.x);
-      const zeilen: (typeof woerter)[] = [];
+      const zeilen: Wort[][] = [];
       for (const w of woerter) {
         const z = zeilen[zeilen.length - 1];
         if (z && Math.abs(w.cy - z[0].cy) < z[0].h / 2) z.push(w); else zeilen.push([w]);
       }
       if (zeilen.length < 2) continue;
       const fs = parseFloat(getComputedStyle(el).fontSize);
-      for (const z of zeilen) {
+      // Je Zeile das längste Stück (Spalten nebeneinander = eigene Stücke).
+      const laengen = zeilen.map((z) => {
         z.sort((a, b) => a.x - b.x);
+        let best = '';
         let stueck: typeof z = [];
         let rechts = -Infinity;
-        const pruefe = () => {
+        const schliesse = () => {
           const s = stueck.map((w, i) => (i > 0 && w.weiss ? ' ' : '') + w.t).join('');
-          if (s.length > maxCh) {
-            funde.push({ ch: s.length, zeile: s.slice(0, 100), tag: `${el.tagName.toLowerCase()}.${(el as HTMLElement).className}`.slice(0, 120), px: Math.round(el.getBoundingClientRect().width), anker: el.parentElement?.closest('[id]')?.id ?? '' });
-          }
+          if (s.length > best.length) best = s;
         };
         for (const w of z) {
-          if (stueck.length && w.x - rechts > 3 * fs) { pruefe(); stueck = []; }
+          if (stueck.length && w.x - rechts > 3 * fs) { schliesse(); stueck = []; }
           stueck.push(w);
           rechts = w.r;
         }
-        pruefe();
+        schliesse();
+        return best;
+      });
+      // Zeichen/Zeile = Mittel der VOLLEN Zeilen (alle ausser der letzten):
+      // die kurze Schlusszeile drückt den Schnitt nicht, ein einzelnes langes
+      // Kompositum macht aber auch keinen Fund — gemessen wird die Kapazität
+      // der Spalte in Zeichen, wie WCAG 1.4.8 sie meint.
+      const voll = laengen.slice(0, -1);
+      const ch = Math.round((voll.reduce((s, z) => s + z.length, 0) / voll.length) * 10) / 10;
+      if (ch > maxCh) {
+        const laengste = voll.reduce((a, b) => (b.length > a.length ? b : a));
+        funde.push({ ch, zeile: laengste.slice(0, 100), tag: `${el.tagName.toLowerCase()}.${(el as HTMLElement).className}`.slice(0, 120), px: Math.round(el.getBoundingClientRect().width), anker: el.parentElement?.closest('[id]')?.id ?? '' });
       }
     }
-    // Pro Element nur der schlimmste Fund, sortiert.
-    return funde.sort((a, b) => b.ch - a.ch).slice(0, 12);
-  }, { ausnahmen, maxCh: MAX_CH, minZeichen: MIN_ZEICHEN });
+    return funde.sort((a, b) => b.ch - a.ch).slice(0, 15);
+  }, { ausnahmen, maxCh: MAX_CH, minZeichen: MIN_ZEICHEN, SEITENFUSS });
 }
 
 function pruefeRahmen(m: Rahmen, stufe: Breitenstufe, ort: string): void {
@@ -212,7 +258,7 @@ async function pruefeLesemass(page: Page, ort: string): Promise<void> {
 /** (5) Rahmen (Inhalt + beide Footer-Container) auf 90rem erzwingen. */
 async function simuliereWeit(page: Page): Promise<void> {
   await page.addStyleTag({
-    content: `main#inhalt > div, footer > div.mx-auto, footer > div > div.mx-auto { max-width: ${REM_WEIT}rem !important; }`,
+    content: `main#inhalt > div, ${FUSS_RAHMEN} { max-width: ${REM_WEIT}rem !important; }`,
   });
 }
 
