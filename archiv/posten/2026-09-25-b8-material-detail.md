@@ -8,3 +8,5 @@ Nach B1, sonst frei. Befund: Inhalt 640 px linksbündig, rechts bleiben rund 430
 Randfläche nutzt die Breitenstufe (Metadaten/Beiwerk), Lesetext 640 px bleibt unverändert.
 Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
+
+**Erledigt 2026-09-25:** PR #1135
