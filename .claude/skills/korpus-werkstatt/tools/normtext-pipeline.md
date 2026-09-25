@@ -21,7 +21,7 @@ Kanton-Spur haben **getrennte Tor-Blöcke** — sie sind nicht austauschbar.
 
 ```
 npm run fedlex:eli -- <SR-Nr>                          # → 5-Feld-GERUEST  key|eli|YYYYMMDD|0|art_1  (NACHBEARBEITUNG noetig, s.u.)
-# … Zeile von Hand nachbearbeiten + in scripts/fedlex-cache.sh einfuegen (Register/ERLASS_MAP ggf. ergaenzen) …
+# … Zeile von Hand nachbearbeiten + in scripts/fedlex-cache.sh einfuegen (Register-Eintrag inkl. kuerzel ergaenzen — fehlt er, bricht der Snapshot-Lauf ab) …
 bash scripts/fedlex-cache.sh                           # bzw. npm run check:caches — laedt Filestore-HTML nach /tmp + prueft Anker + SR-Sonde
 npm run normtext -- --nur=bund --datum=$(date +%F)     # regeneriert ALLE Bund-Snapshots aus der gepinnten cache.sh
 npm run normtext:struktur -- --datum=$(date +%F)       # Struktur-Sidecar BUND (NICHT struktur-kanton)
@@ -224,10 +224,12 @@ Eine **Snapshot-Datei** pro Erlass/Kanton: `{ erzeugt, eintraege: NormSnapshot[]
 Neuer Bund-Snapshot → Eintrag über die `bund(key, kuerzel, titel, sr,
 rechtsgebiet, rang, fedlexKey?)`-Helferfunktion in `register.ts`; fehlt der
 FEDLEX-Schlüssel, wirft `bund()` schon beim Laden (`if (!(fk in FEDLEX)) throw …
-FEDLEX-Schlüssel fehlt`). Stimmt der lowercase-key nicht mit der `ERLASS_MAP`
-(`const ERLASS_MAP` in `normtext-snapshot.ts`) überein, zeigt der Reader das
-Roh-Kürzel statt der Abkürzung — den key in **beiden** (Register **und**
-`ERLASS_MAP`) führen.
+FEDLEX-Schlüssel fehlt`). Das Anzeige-Kürzel (`erlass`) kommt ausschliesslich
+aus dem `kuerzel` dieses Register-Eintrags (`bundKuerzelNachschlagen` in
+`normtext-snapshot.ts`); ein Cache-Name ohne Bund-Register-Eintrag ist ein
+Build-Fehler, kein Rückfall. Die frühere zweite Tabelle `ERLASS_MAP` ist seit
+HN-04 (25.9.2026) gestrichen; `src/tests/normtext-bund-erlass-register.test.ts`
+prüft «Snapshot-`erlass` = Register-Kürzel» über alle Bund-Dateien.
 
 ---
 

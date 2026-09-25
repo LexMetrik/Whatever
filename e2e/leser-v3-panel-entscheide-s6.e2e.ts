@@ -16,6 +16,7 @@
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { panelAufziehen } from './helpers/panelOeffnen'
+import { rohShard, sollKanten } from '../src/tests/korpusSoll.helfer'
 
 const SHARD = '**/rechtsprechung/bezuege/**'
 
@@ -64,16 +65,24 @@ test.describe('S6-W1b — Reiter Entscheide', () => {
     // kantonal 21}); seither {bge 21, bger 11, kantonal 21}. Der eine neue BGE
     // an Art. 41 OR ist BGE 152 IV 201 (6B_973/2023 vom 4.12.2025, neu aus
     // Bd. 152, PR #1099). Portion (5) und «Rest ≤ 50 ⇒ alles» bleiben gleich.
+    // §6.3-DEKLARATION (QS-KORPUS Einheit P «Zahl-Pins korpusrelativ»,
+    // 25.9.2026): die feste 21 riss bei jedem Korpus-Zuwachs (Lauf 36124134898,
+    // #1099: «Expected "20", Received "21"»). Soll-Wert seither aus dem rohen
+    // Shard (korpusSoll.helfer, ohne src/lib); die Vorbedingung des Falls —
+    // mehr als eine Portion (5), Rest in EINEM Schritt (≤ 50) — als Invariante.
+    const n = sollKanten(rohShard('OR'), '41', 'bge').length
+    expect(n, 'Vorbedingung: 5 < BGE an Art. 41 OR ≤ 55').toBeGreaterThan(5)
+    expect(n, 'Vorbedingung: 5 < BGE an Art. 41 OR ≤ 55').toBeLessThanOrEqual(55)
     const bge = inhalt(page).locator('[data-v3-panel-gruppe="bge"]')
-    await expect(bge).toHaveAttribute('data-v3-panel-gruppe-zahl', '21')
+    await expect(bge).toHaveAttribute('data-v3-panel-gruppe-zahl', String(n))
     await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(5)
 
-    // «weitere 16» (Rest ≤ 50) holt den ganzen Rest; der Fokus landet auf dem
+    // «weitere n−5» (Rest ≤ 50) holt den ganzen Rest; der Fokus landet auf dem
     // ersten neuen Eintrag, nicht im Nichts (der Knopf verschwindet).
     const weitere = bge.locator('[data-v3-panel-weitere="bge"]')
-    await expect(weitere).toHaveText('weitere 16')
+    await expect(weitere).toHaveText(`weitere ${n - 5}`)
     await weitere.click()
-    await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(21)
+    await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(n)
     await expect(weitere).toHaveCount(0)
     const fokusIndex = await page.evaluate(() => {
       const li = document.activeElement?.closest('[data-v3-panel-entscheid]')

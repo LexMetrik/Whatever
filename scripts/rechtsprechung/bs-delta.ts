@@ -173,11 +173,15 @@ export function berichteBsDelta(plan: BsDeltaPlan): void {
   for (const s of plan.takedown) console.log(`[bs-delta]   Takedown (aus dem Portal verschwunden, wird entfernt): ${s.id}`);
 }
 
-/** Delta-Parse + Korpus schreiben: nur die Plan-Zeilen parsen, Rest von der Platte. */
-export async function parseUndSchreibeDelta(inventar: Inventar, datum: string): Promise<BsDeltaPlan> {
+/**
+ * Delta-Parse + Korpus schreiben: nur die Plan-Zeilen parsen, Rest von der Platte.
+ * `planVorgabe` (optional, Vollabgleich): ein schon um Inhalts-Abweichungen
+ * ergänzter Plan (ergaenzeInhaltsAbweichungen) statt des Listenfeld-Plans.
+ */
+export async function parseUndSchreibeDelta(inventar: Inventar, datum: string, planVorgabe?: BsDeltaPlan): Promise<BsDeltaPlan> {
   const { parseRohdateien, ladeFetchCheckpoint, baueSnapshot, docketSafeVergabe } = await import('./bs-parse');
   const bestand = ladeBestandSnapshots();
-  const plan = planeBsDelta(inventar, bestand);
+  const plan = planVorgabe ?? planeBsDelta(inventar, bestand);
   berichteBsDelta(plan);
   if (!zuHolen(plan).length && !plan.takedown.length) {
     console.log('[bs-delta] nichts zu tun — Korpus unberührt.');
@@ -190,4 +194,50 @@ export async function parseUndSchreibeDelta(inventar: Inventar, datum: string): 
   const res = schreibeKorpus(fuehreBsDeltaZusammen(bestand, plan, gebaut), datum);
   console.log(`[bs-delta] geschrieben: ${res.anzahl} Manifest-Einträge (${gebaut.length} BS-Snapshots neu gebaut, ${plan.takedown.length} entfernt).`);
   return plan;
+}
+
+// ── Vollabgleich (monatlich; schliesst die GRENZE im Kopf) ──────────────────
+// Posten 25.9.2026 «bs-delta sieht Textänderung ohne Listenfeld-Änderung nicht»:
+// das Portal bietet weder ETag noch Last-Modified (HEAD 405, GET ohne beides —
+// ua-mess-B §8); ein Frische-Beleg geht nur über den Inhalt. Der Monatslauf
+// (scripts/rechtsprechung/wochenlauf-bs-voll.ts) holt ALLE Scope-Dokumente frisch
+// (~56 min bei 700 ms Abstand) und vergleicht je Listen-unverändertem Dokument
+// den Inhalts-Hash `sha` (sha256EntscheidBloecke der Abschnitte, wie baueSnapshot
+// ihn setzt), den Spruchkörper und das Dispositiv mit dem Bestand. Abweichungen
+// werden «aktualisiert» (Grund «inhalt: …») und laufen durch denselben Delta-Pfad.
+
+/**
+ * Spruchkörper und Dispositiv werden OHNE Leerraum verglichen: Probe 25.9.2026
+ * (4 Dokumente frisch geholt): sha 4/4 gleich, aber IV.2023.46 «Zalad ,» frisch
+ * gegen «Zalad,» im Bestand — ein Leerzeichen ist keine Inhaltsänderung und
+ * hätte hochgerechnet den Deckel gerissen.
+ */
+const ohneLeerraum = (s: string | null | undefined) => (s ?? '').replace(/\s+/g, '');
+
+/** Mehr Inhalts-Abweichungen als das ist eher Parser-Drift als Portal-Änderung: fail-closed. */
+export const VOLLABGLEICH_DECKEL = 200;
+
+export function ergaenzeInhaltsAbweichungen(
+  plan: BsDeltaPlan,
+  frisch: Array<{ p: Pick<ParseErgebnis, 'abschnitte' | 'besetzung' | 'dispositivOrders'>; z: InventarZeile }>,
+  bestand: EntscheidSnapshot[],
+  sha: (p: Pick<ParseErgebnis, 'abschnitte'>) => string,
+): { plan: BsDeltaPlan; inhalt: number } {
+  const imPlan = new Set(zuHolen(plan).map((z) => z.key));
+  const proKey = new Map<number, EntscheidSnapshot>();
+  for (const s of bestand) if (s.quelle === BS_QUELLE) proKey.set(bsKeyVon(s)!, s);
+  const dazu: BsDeltaPlan['aktualisiert'] = [];
+  for (const { p, z } of frisch) {
+    const alt = proKey.get(z.key);
+    if (!alt || imPlan.has(z.key)) continue;
+    const g: string[] = [];
+    if (sha(p) !== alt.sha) g.push('inhalt: sha');
+    if (ohneLeerraum(p.besetzung) !== ohneLeerraum(alt.rubrum?.besetzung)) g.push('inhalt: besetzung');
+    if (ohneLeerraum((p.dispositivOrders ?? []).join('\u0000')) !== ohneLeerraum((alt.dispositivOrders ?? []).join('\u0000'))) g.push('inhalt: dispositiv');
+    if (g.length) dazu.push({ z, alt, gruende: g });
+  }
+  if (dazu.length > VOLLABGLEICH_DECKEL) {
+    throw new Error(`[bs-voll] ABBRUCH: ${dazu.length} Inhalts-Abweichungen > Deckel ${VOLLABGLEICH_DECKEL} — Parser-Drift? Vollimport prüfen, nichts geschrieben.`);
+  }
+  return { plan: { ...plan, aktualisiert: [...plan.aktualisiert, ...dazu], unveraendert: plan.unveraendert - dazu.length }, inhalt: dazu.length };
 }

@@ -286,7 +286,7 @@ kein Alias-Problem, sondern eine bewusste fachliche Entscheidung über ein Hand-
 | 0.142.40 | STAATENLOSE | Staatenlose |
 | 0.172.030.4 | APOSTILLE | Apostille-Übk. |
 | 0.211.213.02 | HUVUE | HUVÜ |
-| 0.211.221.311 | HAUE | HAdoptÜ |
+| 0.211.221.311 | HAUE | HAÜ — amtliche Kurzform aus dem Ingress des BG-HAÜ (SR 211.221.31, Fassung 1.1.2013, https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2002/639/20130101/de/html/fedlex-data-admin-ch-eli-cc-2002-639-20130101-de-html-6.html, abgerufen 25.9.2026); bis 25.9.2026 Hand-Kürzel «HAdoptÜ» (Gegenprüfung HN-04 B1) |
 | 0.211.230.02 | HKUE | HKÜ |
 | 0.211.232.1 | HEUE | HEsÜ |
 | 0.221.211.1 | CISG | CISG |

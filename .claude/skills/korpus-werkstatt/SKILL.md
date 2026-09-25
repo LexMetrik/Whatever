@@ -1,6 +1,6 @@
 ---
 name: korpus-werkstatt
-description: "Verwenden bei «neuen Bundeserlass/Kantonserlass hinzufügen», «Erlass/Snapshot aktualisieren», «verifizier den Erlass X», «stimmt der Anker/Stand?», «Render-Bug / falsches «aufgehoben» / Tausendertrenner / text-indent / zerrissene Abkürzung», «Rechtsprechungs-Korpus erweitern», «BGE-Leitentscheid», «Snapshot generieren», «review / prüf das» — Content-Produktion + Verifikation für die Lexmetrik-Korpora Normtext (Gesetze) und Rechtsprechung (Urteile): Erlass/Entscheid extrahieren, mit Norm+Link+Stand belegen, Render/Extraktion prüfen."
+description: "Verwenden bei «neuen Bundeserlass/Kantonserlass hinzufügen», «Erlass/Snapshot aktualisieren», «verifizier den Erlass X», «stimmt der Anker/Stand?», «Render-Bug / falsches «aufgehoben» / Tausendertrenner / text-indent / zerrissene Abkürzung», «Rechtsprechungs-Korpus erweitern», «BGE-Leitentscheid», «Snapshot generieren», «review / prüf das», «prüf und lande die Rechtsprechung» (Wochen-Nachzug) — Content-Produktion + Verifikation für die Lexmetrik-Korpora Normtext (Gesetze) und Rechtsprechung (Urteile): Erlass/Entscheid extrahieren, mit Norm+Link+Stand belegen, Render/Extraktion prüfen."
 ---
 
 # Korpus-Werkstatt LexMetrik (Normtext + Rechtsprechung)
@@ -161,6 +161,39 @@ Quellen-Priorität und PDF-Extraktionsregeln im Detail:
   `review.md`-Audit («prüf das», «stimmt das?», «review»). Das ist **nicht** der
   §14.4-Pflicht-Pass, sondern ein zusätzlicher Audit — nie automatisch starten.
 
+## Wochen-Nachzug prüfen und landen («prüf und lande die Rechtsprechung»)
+
+Montags öffnet `rechtsprechung-wochenlauf.yml` EINEN PR `auto/rechtsprechung-*`
+(Entscheid David 25.9.2026: «Vorbereiten, Prüfung vor Live», kein Auto-Merge).
+Body = Bericht aus `scripts/rechtsprechung/wochenlauf.ts`: Zahlen je Gericht,
+Ausfälle, Befunde der Guards, BS-Takedowns/-Aktualisierungen, Tore (npm test,
+npm run check, Build, perf-budget, Korpus-e2e — wie merge_group), Budget,
+Frische je Gericht, Stichprobe (auch PDF). Am 3. des Monats statt dessen der
+BS-Vollabgleich (Inhalts-Hash aller BS-Dokumente). Ein offener, unberührter
+Auto-PR wird fortgeführt (main eingemergt, Vorwoche bleibt), nie dupliziert.
+Signale: ENTWURF ⇒ Draft + `::warning::` + Summary-Kopf «ENTWURF — ROT»,
+Lauf grün (Exit 0); Exit 1 nur bei Absturz oder kein Diff mit Quellen-Ausfall
+(Wächter-Issue). Ohne Risiko-Datei im Diff (public/rechtsprechung/** allein
+sperrt nicht) ⇒ Entwurf, weil check:merge-schutz dann nicht sperrte.
+
+0. **In Prüfung nehmen:** Label `in-pruefung` setzen (oder kommentieren/
+   committen) — der nächste Lauf überschreibt den PR dann nicht, er setzt aus.
+1. PR lesen. ENTWURF = etwas war rot (Grund im Kopf) — erst beheben, dann weiter.
+   «Kalendergebunden» (check:verfall u. a.) trifft auch main: dort fixen.
+   Offene Befunde stehen im Kommentar-Block `wochenlauf-befunde` des Bodys;
+   der nächste Lauf prüft sie zwingend erneut und hebt den Entwurf erst auf,
+   wenn jeder erneut grün ist. Von Hand quittieren = Eintrag aus dem Block
+   streichen (mit Begründung im PR). BE-Einträge werden vollständig geprüft.
+2. Pflicht-Gegenprüfung (Skill `gegenpruefung`, Prüfer ≠ Bau-Modell) mit den
+   Linsen aus «Verifikation» oben, dazu **normKeys inhaltlich** (Remap-Zuwachs
+   an Stichproben gegen den Entscheidtext, Lehre #1099). Die Auto-Stichprobe
+   ersetzt die blinde Stichprobe nicht; «nicht prüfbar» von Hand.
+3. Quittung `npm run gegenpruefung:ok` (Register), Verdikt-Commit auf den Zweig.
+4. Im PR-Body die Zeile `Gegenpruefung: ausstehend …` durch das Verdikt
+   ersetzen — sonst bleibt `check:merge-schutz` rot (Queue-Squash liest den Body).
+5. Zahl-Pins in Tests/e2e, die am Zuwachs reissen, als eigenen `test(`-Commit
+   nachziehen; dann einreihen per Skill `landung`.
+
 ## Optionaler Zweitblick (Diskrepanz-Finder)
 
 Zusätzlich zum Pflicht-Pass — nicht statt ihm. Bei einem **neuen oder
@@ -261,8 +294,8 @@ Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.
    schreiben; offline über `npm run entscheide:seed` / Fixtures; ehrlicher
    §8-Fallback-Status statt erfundener Werte.
 3. **SR-Kollision** → Quarantäne; Identität in `src/lib/normtext/register.ts`
-   (`fedlexKey`), `FEDLEX` in `src/lib/fedlex.ts` und `ERLASS_MAP` in
-   `scripts/normtext-snapshot.ts` klären (Identität ≠ Normtext); **erst dann**
+   (`fedlexKey`, `kuerzel` — seit HN-04 die einzige Kürzel-Quelle, `ERLASS_MAP`
+   gestrichen) und `FEDLEX` in `src/lib/fedlex.ts` klären (Identität ≠ Normtext); **erst dann**
    Snapshot generieren.
 4. **Gate / vitest rot** → §6.5-Diagnoseweg (Skill `refactoring`, Ziff. 6): nur
    die rote Datei einzeln, `npm run golden:diff -- <id>`; **nie
