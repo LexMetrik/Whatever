@@ -90,7 +90,11 @@ Nicht nur «Tore grün», sondern die volle Definition of Done (§14.4):
    `normKeys` neuer Einträge (Kürzel → Erlass) gegen die DE-Regeste, gezielt auf
    sprachübergreifende Homonyme (Beleg #1099, 25.9.2026: fr. «AIMP» = IVöB lief als
    it. «AIMP» = IRSG — neun Beschaffungs-BGE unter dem IRSG, sieben davon schon live;
-   Runde 1 hatte nur Determinismus/Verdrängung geprüft). Davon getrennt der user-getriggerte
+   Runde 1 hatte nur Determinismus/Verdrängung geprüft) + **Datum gegen den amtlichen
+   Urteilskopf** (Beleg #1117: OCL-`decision_date` bei GR/BE/SG/AG falsch — Mitteilungs- bzw.
+   BGer-Datum; 20/24 im Bestand, Posten offen) + **neue Richter-Slugs** in `richter.json` auf
+   Phantome (Rollenwörter, Einwort-Slugs — `check:besetzung` erkennt sie nicht; Beleg #1117:
+   «Vorsitz Martin Stupf», «Mark»/«Schweizer»). Davon getrennt der user-getriggerte
    `review.md`-Audit («prüf das») — das ist **nicht** dieser Pflicht-Pass.
 3. **Status-Marker (§8)** gesetzt — `verifiziert`/«geprüft» **nie automatisch**
    (Zeitsperre bis 1.12.2026; Status-Hebung nur über den `abnahme`-Skill).
