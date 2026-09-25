@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: SO-Feiertagskatalog (EG ZPO § 22 II) für SchKG-Fristen über Art. 31 SchKG? Warntext «Gericht» bei OR 78 sachfremd
 -->
 

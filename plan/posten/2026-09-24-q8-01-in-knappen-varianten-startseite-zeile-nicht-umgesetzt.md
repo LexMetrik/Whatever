@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: Q8-01 in knappen Varianten (Startseite/Zeile) nicht umgesetzt («Kanton (Feiertage)» wegen Spaltenbreite); SchKG-Label Betreibungsamt-Anknüpfung offen; Partei/Vertretung in verschiedenen Kantonen nur Hinweis
 anlass: Session-Notizen 2026-09-24
 -->

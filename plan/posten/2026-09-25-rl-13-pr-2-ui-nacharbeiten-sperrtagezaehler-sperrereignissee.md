@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: RL-13 PR 2 UI-Nacharbeiten (SperrtageZaehler, SperrereignisseEditor, KombinierteAnsicht, legal.ts)
 anlass: Notizen-Session 24.9.2026, Übernahme aus RL-13-Rest
 -->

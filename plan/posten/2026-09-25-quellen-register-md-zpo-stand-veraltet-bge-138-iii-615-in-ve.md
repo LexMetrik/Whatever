@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: quellen-register.md ZPO-Stand veraltet; BGE 138 III 615 in verifikation.ts trotz Beleg verifiziert:false (Abnahme David)
 anlass: RL-20-Nebenfund, Session 5, 24.9.2026 (Notizen «Wartet auf David»)
 wartet-auf: david

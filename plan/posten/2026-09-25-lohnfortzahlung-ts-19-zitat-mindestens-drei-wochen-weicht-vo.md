@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: lohnfortzahlung.ts:19: Zitat «mindestens drei Wochen» weicht vom Wortlaut Art. 324a Abs. 2 OR ab
 anlass: RL-25-Nebenfund, 24.9.2026
 -->
