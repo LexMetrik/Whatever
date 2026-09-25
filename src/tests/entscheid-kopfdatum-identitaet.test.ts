@@ -116,6 +116,11 @@ describe('Befund 3 — Aktenzeichen-Identität: Leerzeichen/Punkt, verbundene Ve
     expect(re('UV 2025/14').test('XUV 2025/14')).toBe(false);
     expect(re('B 2023/225').test('B 2023/225A')).toBe(false);
   });
+  it('BE-Suffix nur die belegte Form «U» (Nachprüfung 25.9.2026)', () => {
+    expect(re('100 2025 363').test('Nr. 100.2025.363U, Seite 2')).toBe(true);
+    for (const x of ['V', 'A', 'Z', 'u']) expect(re('100 2025 363').test(`Nr. 100.2025.363${x}, Seite 2`)).toBe(false);
+    expect(re('100 2026 142').test('100.2026.142/143V')).toBe(false);
+  });
   it('GR-Referenz mit Kurzjahr («Referenz SBK 26 38», echter PDF-Kopf) = «SBK 2026 38», eng', () => {
     expect(re('SBK 2026 38').test('mitgeteilt am 28. Mai 2026 Referenz SBK 26 38 Instanz')).toBe(true);
     expect(re('SBK 2026 38').test('Referenz SBK 26 388')).toBe(false);

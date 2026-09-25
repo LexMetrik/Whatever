@@ -84,20 +84,26 @@ const escRe = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
  * Aktenzeichen-Muster (eng, §1): Leerzeichen und Punkt als Trenner gleichwertig
  * (BE-PDF «100.2025.363U» = OCL «100 2025 363», Messung 25.9.2026); rein
- * numerische Aktenzeichen zusätzlich mit BE-Suffix-Buchstabe («…363U») und
+ * numerische Aktenzeichen zusätzlich mit belegtem BE-Suffix («…363U», nur U) und
  * verbundenen Verfahren («100.2026.142/143» deckt 142 und 143). Mehrere
  * Aktenzeichen («B 2024/58, B 2024/59») einzeln; eine Jahres-Gruppe vor der
  * laufenden Nummer auch zweistellig (GR «SBK 26 38»). Kein Präfix-/Suffix-Treffer:
  * davor/danach keine Ziffer/kein Buchstabe, danach auch kein «.<Ziffer>».
  * Leer ⇒ null. Exportiert für Tests.
  */
+/** Belegte BE-Aktenzeichen-Suffixe (Verwaltungsgericht «100.2025.363U»); erweitern nur mit Beleg. */
+const BE_SUFFIX = '(?:U)';
+
 export function aktenzeichenRe(docket: string | null | undefined): RegExp | null {
   const alts = flach(String(docket ?? '')).split(/\s*,\s*/).map((az) => {
     const g = az.split(/[ .]+/).filter(Boolean);
     if (!g.length) return '';
     const numerisch = g.every((x) => /^\d+$/.test(x));
     const letzte = escRe(g[g.length - 1]);
-    const ende = numerisch ? `(?:\\d+/)*${letzte}(?:/\\d+)*[A-Z]?` : letzte;
+    // Suffix nur die belegte BE-Form «U» (Bestand 25.9.2026: 12× «…U», kein anderer
+    // Buchstabe) — «100.2025.363V» ist nicht als identisch belegt (Nachprüfung 25.9.2026);
+    // verbundene Verfahren ganz gelesen, damit «142/143V» nicht über «142» durchrutscht.
+    const ende = numerisch ? `(?:\\d+/)*${letzte}(?:/\\d+)*${BE_SUFFIX}?(?!/\\d)` : letzte;
     // GR-Referenz mit Kurzjahr: «SBK 26 38» = «SBK 2026 38» (PDF-Kopf, Messung 25.9.2026).
     const jahr = (x: string) => (/^(?:19|20)\d{2}$/.test(x) ? `(?:${x.slice(0, 2)})?${x.slice(2)}` : escRe(x));
     return [...g.slice(0, -1).map(jahr), ende].join('[ .]');
