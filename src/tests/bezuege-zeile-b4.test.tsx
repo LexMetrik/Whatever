@@ -291,10 +291,14 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
   // §6.3-DEKLARATION (25.9.2026, QS-KORPUS BS-Delta +185/41): StPO/428 kantonal
   // 882 → 918 (BS 879 → 915, je 1 GR/ZH/AG unverändert). Die Reproduktion oben
   // bleibt datiert beim damaligen Stand; die Aussage (1 aus GR) steht.
+  // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Stichproben-Nachzug kantonal 5×6):
+  // StPO/428 kantonal 918 → 919, GR 1 → 2 (neu GR SR2 2026 44 zitiert Art. 428
+  // StPO). Nullprobe origin/main 284deacdb = 918 / GR 1. Aussage (Verkürzung
+  // wird benannt) steht; nur die Zahlen folgen dem Korpus.
   it('VORBEFUND: StPO/428 führt 918 kantonale Entscheide, davon 1 aus GR', () => {
-    expect(shard.gesamtProArtikel['428']).toMatchObject({ kantonal: 918 });
+    expect(shard.gesamtProArtikel['428']).toMatchObject({ kantonal: 919 });
     const gr = waehleBezuege(bezuegeFuerArtikel(shard, '428'), ['kantonal'], ['GR']);
-    expect(gr).toHaveLength(1);
+    expect(gr).toHaveLength(2);
   });
 
   // ── ABWEICHUNG vom Beispiel der Fix-Richtung, deklariert (§14.7) ──────────
@@ -311,8 +315,8 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
       <BezuegeZeile kanten={gr} gesamt={shard.gesamtProArtikel['428']} kantonAktiv
         normZitat="Art. 428 StPO" />,
     );
-    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 im Kanton');
-    expect(s).toContain('1 im gewählten Kanton, 918 insgesamt an diesem Artikel');
+    expect(zaehlerText(s, 'kantonal')).toBe('2 von 2 im Kanton');
+    expect(s).toContain('2 im gewählten Kanton, 919 insgesamt an diesem Artikel');
   });
 
   it('beide Filter zusammen: «in der Auswahl», nicht eine der beiden Ursachen allein', () => {
@@ -321,8 +325,8 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
       <BezuegeZeile kanten={gr} gesamt={shard.gesamtProArtikel['428']} zeitAktiv kantonAktiv
         normZitat="Art. 428 StPO" />,
     );
-    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 in der Auswahl');
-    expect(s).toContain('1 in der gewählten Auswahl, 918 insgesamt an diesem Artikel');
+    expect(zaehlerText(s, 'kantonal')).toBe('2 von 2 in der Auswahl');
+    expect(s).toContain('2 in der gewählten Auswahl, 919 insgesamt an diesem Artikel');
   });
 
   it('der Kantons-Schnitt beschriftet NUR die verkürzte Gruppe, nicht die anderen', () => {
@@ -337,9 +341,9 @@ describe('B7 · Kantons-Filter: Verkürzung wird benannt (J1/J2/J3)', () => {
     // 4 von 4, unverkürzt (bis D2/E-1 25.9.2026: 5 — BGE 149 IV 307 nennt
     // Art. 428 StPO nur im nicht publizierten Teil von 6B_911/2021).
     expect(zaehlerText(s, 'bge')).toBe('4');
-    expect(zaehlerText(s, 'kantonal')).toBe('1 von 1 im Kanton');
+    expect(zaehlerText(s, 'kantonal')).toBe('2 von 2 im Kanton');
     // Und die 882 steht genau EINMAL da, an der Gruppe, die verkürzt wurde.
-    expect(s).toContain('918 insgesamt an diesem Artikel');
+    expect(s).toContain('919 insgesamt an diesem Artikel');
   });
 
   it('J3-WÄCHTER: ohne aktiven Filter steht NIRGENDS eine Ursache — auch nicht im title', () => {
