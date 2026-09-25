@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "ELG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -37,6 +37,16 @@
     ],
     "2": [
       {
+        "key": "bge_152_V_70",
+        "zitierung": "BGE 152 V 70",
+        "regesteKurz": "Art. 14 Abs. 1 ELG; Art. 21 Abs. 5 ATSG; Sistierung der Vergütung von Krankheits- und Invaliditätskosten bei Aufenthalt des Bezügers von Ergänzungsleistungen zu einer Invalidenrente im Straf- oder Massnahmenvollzug; Auslegung. Art. 14 Abs.…",
+        "datum": "2026-02-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_V_24",
         "zitierung": "BGE 151 V 24",
         "regesteKurz": "Art. 11 Abs. 1 lit. g ELG (in der bis 31. Dezember 2020 gültig gewesenen Fassung); Vermögensverzicht vor der Eheschliessung. Ein durch den verstorbenen Ehegatten vor der Eheschliessung vorgenommener Vermögensverzicht ist bei den…",
@@ -58,6 +68,16 @@
       }
     ],
     "3": [
+      {
+        "key": "bge_152_V_70",
+        "zitierung": "BGE 152 V 70",
+        "regesteKurz": "Art. 14 Abs. 1 ELG; Art. 21 Abs. 5 ATSG; Sistierung der Vergütung von Krankheits- und Invaliditätskosten bei Aufenthalt des Bezügers von Ergänzungsleistungen zu einer Invalidenrente im Straf- oder Massnahmenvollzug; Auslegung. Art. 14 Abs.…",
+        "datum": "2026-02-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_V_24",
         "zitierung": "BGE 151 V 24",
@@ -125,20 +145,20 @@
     ],
     "9": [
       {
-        "key": "bge_147_V_312",
-        "zitierung": "BGE 147 V 312",
-        "regesteKurz": "Art. 14 Abs. 1 lit. b ELG; Art. 13 Abs. 1 der st. gallischen Verordnung über die Vergütung von Krankheits- und Behinderungskosten bei Ergänzungsleistungen; Art. 8 Abs. 1 und Art. 13 Abs. 1 BV; Krankheits- und Behinderungskosten. Eine…",
-        "datum": "2021-05-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_146_V_306",
         "zitierung": "BGE 146 V 306",
         "regesteKurz": "Art. 11 Abs. 1 lit. g ELG; anrechenbare Einnahmen bei Verschwendung des Vermögens. Auch wenn Ergänzungsleistungen ein gewisser sozialhilferechtlicher Charakter beigemessen wird, bleiben sie Sozialversicherungsleistungen. Bestätigung der…",
         "datum": "2020-06-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_147_V_312",
+        "zitierung": "BGE 147 V 312",
+        "regesteKurz": "Art. 14 Abs. 1 lit. b ELG; Art. 13 Abs. 1 der st. gallischen Verordnung über die Vergütung von Krankheits- und Behinderungskosten bei Ergänzungsleistungen; Art. 8 Abs. 1 und Art. 13 Abs. 1 BV; Krankheits- und Behinderungskosten. Eine…",
+        "datum": "2021-05-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -279,20 +299,20 @@
     ],
     "11": [
       {
-        "key": "bge_146_V_331",
-        "zitierung": "BGE 146 V 331",
-        "regesteKurz": "Art. 11 Abs. 1 lit. c ELG; Art. 16 Abs. 2 FZV; Zeitpunkt der Anrechnung von Guthaben eines Freizügigkeitskontos bei rückwirkender Ausrichtung von Ergänzungsleistungen zur Invalidenrente. Übersicht über die Rechtsprechung. Ein verzehrbarer…",
-        "datum": "2020-09-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 2
-      },
-      {
         "key": "bge_146_V_306",
         "zitierung": "BGE 146 V 306",
         "regesteKurz": "Art. 11 Abs. 1 lit. g ELG; anrechenbare Einnahmen bei Verschwendung des Vermögens. Auch wenn Ergänzungsleistungen ein gewisser sozialhilferechtlicher Charakter beigemessen wird, bleiben sie Sozialversicherungsleistungen. Bestätigung der…",
         "datum": "2020-06-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_146_V_331",
+        "zitierung": "BGE 146 V 331",
+        "regesteKurz": "Art. 11 Abs. 1 lit. c ELG; Art. 16 Abs. 2 FZV; Zeitpunkt der Anrechnung von Guthaben eines Freizügigkeitskontos bei rückwirkender Ausrichtung von Ergänzungsleistungen zur Invalidenrente. Übersicht über die Rechtsprechung. Ein verzehrbarer…",
+        "datum": "2020-09-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -307,6 +327,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_99",
+        "zitierung": "BGE 152 V 99",
+        "regesteKurz": "Art. 11 Abs. 1 lit. c ELG; Anrechnung eines Vermögensteils als Einnahme. Sind die Voraussetzungen für die gemeinsame Berechnung der Ergänzungsleistungen erfüllt, so ist bei einem Ehepaar, bei dem der eine Partner eine Invalidenrente, der…",
+        "datum": "2026-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_24",
@@ -343,16 +373,6 @@
         "zitierung": "BGE 150 V 105",
         "regesteKurz": "Art. 8 Abs. 1 BV; Art. 14 Abs. 1 lit. b und Abs. 2 ELG; Art. 12 Abs. 1 der st. gallischen Verordnung vom 11. Dezember 2007 über die Vergütung von Krankheits- und Behinderungskosten bei den Ergänzungsleistungen; Pflege und Betreuung durch…",
         "datum": "2024-03-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_V_161",
-        "zitierung": "BGE 150 V 161",
-        "regesteKurz": "Art. 5 Abs. 2, Art. 6, Art. 113 BV; Art. 1 Abs. 1 BVG; Art. 2-4 FZG; Art. 16 Abs. 1 FZV; Art. 92 Abs. 1 Ziff. 10 und Art. 93 SchKG; § 5 Abs. 1, § 6 Abs. 3, § 7 Abs. 1, § 11, § 13a Abs. 1 des Gesetzes des Kantons Basel-Landschaft vom 21.…",
-        "datum": "2024-02-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -403,6 +423,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_70",
+        "zitierung": "BGE 152 V 70",
+        "regesteKurz": "Art. 14 Abs. 1 ELG; Art. 21 Abs. 5 ATSG; Sistierung der Vergütung von Krankheits- und Invaliditätskosten bei Aufenthalt des Bezügers von Ergänzungsleistungen zu einer Invalidenrente im Straf- oder Massnahmenvollzug; Auslegung. Art. 14 Abs.…",
+        "datum": "2026-02-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_88",
@@ -493,6 +523,18 @@
         "zitierung": "Urteil 9C_60/2021 (nicht publ. in BGE 148 V 21)",
         "regesteKurz": null,
         "datum": "2021-12-22",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "66": [
+      {
+        "key": "bge_152_V_99__voll",
+        "zitierung": "Urteil 8C_217/2025 (nicht publ. in BGE 152 V 99)",
+        "regesteKurz": null,
+        "datum": "2026-02-24",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

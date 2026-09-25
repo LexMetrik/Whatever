@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "ASYLG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -15,6 +15,18 @@
         "gewicht": 0
       }
     ],
+    "3": [
+      {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "5": [
       {
         "key": "bge_149_IV_231",
@@ -24,7 +36,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_152_IV_64__voll",
@@ -62,6 +84,16 @@
       }
     ],
     "14": [
+      {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_I_72",
         "zitierung": "BGE 149 I 72",
@@ -111,6 +143,18 @@
         "datum": "2024-02-22",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "24": [
+      {
+        "key": "bge_152_II_169",
+        "zitierung": "BGE 152 II 169",
+        "regesteKurz": "Art. 146 und 178 Abs. 3 BV; Art. 3, 19 Abs. 1 lit. a und Abs. 3 VG; Zuständigkeit für den Erlass einer Verfügung über streitige Haftungsansprüche im Zusammenhang mit einem Todesfall in einem Bundesasylzentrum. Wenn der Bund im Rahmen…",
+        "datum": "2025-07-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -239,6 +283,30 @@
         "gewicht": 0
       }
     ],
+    "58": [
+      {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "59": [
+      {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "63": [
       {
         "key": "bge_150_II_273",
@@ -295,6 +363,50 @@
         "gewicht": 0
       }
     ],
+    "81": [
+      {
+        "key": "bge_152_I_122",
+        "zitierung": "BGE 152 I 122",
+        "regesteKurz": "Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_89__voll",
+        "zitierung": "Urteil 8C_184/2024 (nicht publ. in BGE 152 II 89)",
+        "regesteKurz": null,
+        "datum": "2026-01-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "82": [
+      {
+        "key": "bge_152_I_122",
+        "zitierung": "BGE 152 I 122",
+        "regesteKurz": "Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "88": [
       {
         "key": "bge_150_II_273",
@@ -305,6 +417,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_II_294",
@@ -417,6 +539,42 @@
         "gewicht": 0
       }
     ],
+    "111b": [
+      {
+        "key": "bge_152_I_122",
+        "zitierung": "BGE 152 I 122",
+        "regesteKurz": "Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "111c": [
+      {
+        "key": "bge_152_I_122",
+        "zitierung": "BGE 152 I 122",
+        "regesteKurz": "Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "24b": [
+      {
+        "key": "bge_152_II_169",
+        "zitierung": "BGE 152 II 169",
+        "regesteKurz": "Art. 146 und 178 Abs. 3 BV; Art. 3, 19 Abs. 1 lit. a und Abs. 3 VG; Zuständigkeit für den Erlass einer Verfügung über streitige Haftungsansprüche im Zusammenhang mit einem Todesfall in einem Bundesasylzentrum. Wenn der Bund im Rahmen…",
+        "datum": "2025-07-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "31a": [
       {
         "key": "bge_146_IV_297__voll",
@@ -467,6 +625,18 @@
         "zitierung": "Urteil 1C_104/2022 (nicht publ. in BGE 149 IV 183)",
         "regesteKurz": null,
         "datum": "2022-12-20",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "83a": [
+      {
+        "key": "bge_152_II_89__voll",
+        "zitierung": "Urteil 8C_184/2024 (nicht publ. in BGE 152 II 89)",
+        "regesteKurz": null,
+        "datum": "2026-01-27",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

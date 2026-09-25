@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "WAG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -9,6 +9,18 @@
         "zitierung": "BGE 150 I 213",
         "regesteKurz": "Art. 49 Abs. 1 und Art. 77 BV; Art. 699 ZGB; Art. 14 WaG; Art. 19 Abs. 1 WaldG/GE; Art. 23 Abs. 3 WaldV/GE; Grundsatz des Vorrangs des Bundesrechts; Unterstellung von Lasergame-Spielen im Wald unter eine vorherige punktuelle…",
         "datum": "2024-05-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "2": [
+      {
+        "key": "bge_152_II_311",
+        "zitierung": "BGE 152 II 311",
+        "regesteKurz": "a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…",
+        "datum": "2025-11-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -37,6 +49,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_311",
+        "zitierung": "BGE 152 II 311",
+        "regesteKurz": "a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…",
+        "datum": "2025-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_II_86",
         "zitierung": "BGE 149 II 86",
         "regesteKurz": "Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…",
@@ -55,6 +77,30 @@
         "datum": "2021-03-18",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "10": [
+      {
+        "key": "bge_152_II_311",
+        "zitierung": "BGE 152 II 311",
+        "regesteKurz": "a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…",
+        "datum": "2025-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "13": [
+      {
+        "key": "bge_152_II_311",
+        "zitierung": "BGE 152 II 311",
+        "regesteKurz": "a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…",
+        "datum": "2025-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -101,6 +147,28 @@
         "datum": "2024-11-21",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "17": [
+      {
+        "key": "bge_152_II_311",
+        "zitierung": "BGE 152 II 311",
+        "regesteKurz": "a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…",
+        "datum": "2025-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_298",
+        "zitierung": "BGE 152 II 298",
+        "regesteKurz": "Art. 78 Abs. 2 BV; Art. 2 und 12 NHG; Art. 19 Abs. 2 GSchG; Art. 32 Abs. 2 GSchV; Art. 17 WaG; Art. 16 VVEA; Beschwerdelegitimation des Schweizer Heimatschutzes; Vorliegen einer Bundesaufgabe. Eine Bundesaufgabe liegt vor, wenn für Anlagen…",
+        "datum": "2025-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }

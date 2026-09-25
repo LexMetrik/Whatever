@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"KVV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -48,6 +48,7 @@
 "bge_151_V_258":{"zitierung":"BGE 151 V 258","regesteKurz":"Art. 43 Abs. 1 und Art. 61 lit. c ATSG; Grundsatz der freien Beweiswürdigung; Beweiswert eines Berichts einer Psychologin. Wohl kann eine fachärztliche Beurteilung des Gesundheitszustandes und der Arbeitsfähigkeit grundsätzlich nur…","datum":"2025-05-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_V_284__voll":{"zitierung":"Urteil 9C_199/2022 (nicht publ. in BGE 151 V 284)","regesteKurz":null,"datum":"2025-04-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 V 284","urteil":"9C_199/2022"}},
 "bge_151_V_30":{"zitierung":"BGE 151 V 30","regesteKurz":"Art. 32 Abs. 1, Art. 42 Abs. 3, 3 bis , 4 und 5, Art. 56 Abs. 1 und 2, Art. 57, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a, Art. 59a Abs. 1 und 3, Art. 84 Abs. 1 und 2, Art. 84a Abs. 1 lit. a KVG; Art. 30-30c, Art. 59 Abs. 1, Art. 59a bis und…","datum":"2024-09-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_V_149":{"zitierung":"BGE 152 V 149","regesteKurz":"Art. 1 Bst. l, zweiter Satz, Art. 3 Abs. 1 und Art. 11 Abs. 2 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Art. 3 Abs. 3 lit. a KVG…","datum":"2026-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_sozialversicherungsgericht_KV.2020.3":{"zitierung":"Sozialversicherungsgericht BS KV.2020.3 vom 11.04.2024","regesteKurz":"KVG Internationale Leistungsaushilfe im Bereich der Krankenversicherung nach Art. 23 Verordnung (EG) 88/2004 bei Bezug…","datum":"2024-04-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2021.27":{"zitierung":"Sozialversicherungsgericht BS KV.2021.27 vom 18.01.2022","regesteKurz":"Beschwerdeabweisung, Prämienforderungen und Kostenbeteiligungen sind geschuldet (Bundesgerichtsurteil 9C_200/2022 vom…","datum":"2022-01-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2021.28":{"zitierung":"Sozialversicherungsgericht BS KV.2021.28 vom 15.03.2022","regesteKurz":"KVG","datum":"2022-03-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
@@ -82,7 +83,7 @@
 "bs_sozialversicherungsgericht_SG.2019.2":{"zitierung":"Sozialversicherungsgericht BS SG.2019.2 vom 08.04.2022","regesteKurz":"Kumulierte Abrechnung zweier Tarifpositionen, Prüfung insbesondere der Zweckmässigkeit der zusätzlich verrechneten…","datum":"2022-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_146_V_152","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2022.7","gewicht":null}],
+"1":[{"key":"bge_152_V_149","gewicht":0},{"key":"bge_146_V_152","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2022.7","gewicht":null}],
 "2":[{"key":"bge_147_V_402","gewicht":0},{"key":"bge_147_V_387","gewicht":0},{"key":"bge_146_V_290","gewicht":0},{"key":"bge_146_V_152","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2024.4-20251114","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2020.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2022.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2022.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2021.4","gewicht":null}],
 "6":[{"key":"bge_146_V_152","gewicht":0}],
 "7":[{"key":"bge_147_V_387","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2024.4","gewicht":null}],
@@ -141,7 +142,7 @@
 "90c":[{"key":"bge_151_V_158","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1,"kantonal":1},
+"1":{"bge":2,"kantonal":1},
 "2":{"bge":4,"kantonal":6},
 "6":{"bge":1},
 "7":{"bge":1,"kantonal":1},

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "RPG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -129,6 +129,26 @@
     ],
     "3": [
       {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_289",
+        "zitierung": "BGE 152 II 289",
+        "regesteKurz": "Art. 15 Abs. 2 und Art. 21 Abs. 2 RPG; vorfrageweise Überprüfung eines Sondernutzungsplans, der sich auf einen vom Bundesgericht aufgehobenen kommunalen Nutzungsplan stützt. Steht der Sondernutzungsplan in einem engen…",
+        "datum": "2025-08-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_II_368",
         "zitierung": "BGE 149 II 368",
         "regesteKurz": "Art. 26 Abs. 2 BV, Art. 5 Abs. 2 RPG, Art. 93 Abs. 1 lit. b BGG; materielle Enteignung, Nichteinzonung eines Grundstücks infolge einer Zuweisung zu einer Zone für Bauten im kommunalen Interesse. Anfechtbarkeit eines Zwischenentscheids, mit…",
@@ -185,26 +205,6 @@
         "datum": "2019-12-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_48__voll",
-        "zitierung": "Urteil 1C_526/2022 (nicht publ. in BGE 150 II 48)",
-        "regesteKurz": null,
-        "datum": "2023-11-20",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_319__voll",
-        "zitierung": "Urteil 1C_657/2018 (nicht publ. in BGE 147 II 319)",
-        "regesteKurz": null,
-        "datum": "2021-03-18",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -549,6 +549,16 @@
     ],
     "14": [
       {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_II_48",
         "zitierung": "BGE 150 II 48",
         "regesteKurz": "Art. 16a Abs. 3 RPG; Art. 38 RPV; Pflicht zur Errichtung einer Spezial- oder Intensivlandwirtschaftszone auf dem Weg der Nutzungsplanung. Entstehung von Art. 16a Abs. 3 RPG und Definition der Speziallandwirtschaftszone (E. 2.4). Es obliegt…",
@@ -617,19 +627,59 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      }
+    ],
+    "15": [
+      {
+        "key": "bge_148_II_417",
+        "zitierung": "BGE 148 II 417",
+        "regesteKurz": "Art. 15 Abs. 1 und 2, Art. 21 Abs. 2 und Art. 27 RPG; vorfrageweise Überprüfung des Zonenplans im Baubewilligungsverfahren; kommunale Planungszone. Wegen der Überdimensionierung der Bauzonen der Gemeinde, der Lage der fraglichen Parzellen…",
+        "datum": "2022-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
-        "key": "bge_146_I_70",
-        "zitierung": "BGE 146 I 70",
-        "regesteKurz": "Art. 26 Abs. 1, Art. 27 Abs. 1, Art. 36, Art. 49 Abs. 1, Art. 109 Abs. 1, Art. 122 Abs. 1 BV; kommunale Bestimmungen zum preisgünstigen Wohnungsbau; abstrakte Normenkontrolle; Vorrang von Bundesrecht; Eigentumsgarantie;…",
-        "datum": "2019-11-14",
+        "key": "bge_147_II_351",
+        "zitierung": "BGE 147 II 351",
+        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
+        "datum": "2021-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_II_289",
+        "zitierung": "BGE 146 II 289",
+        "regesteKurz": "Art. 15, 18 und 27 RPG und Art. 47 RPV; Reduktion und Neubestimmung der Bauzone im Rahmen der Schaffung einer neuen Nutzungsplanung. Es ist bundesrechtswidrig, im Rahmen der generellen Neuregelung der Nutzungszonen eine Planungszone zu…",
+        "datum": "2020-04-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      }
-    ],
-    "15": [
+      },
+      {
+        "key": "bge_152_II_289",
+        "zitierung": "BGE 152 II 289",
+        "regesteKurz": "Art. 15 Abs. 2 und Art. 21 Abs. 2 RPG; vorfrageweise Überprüfung eines Sondernutzungsplans, der sich auf einen vom Bundesgericht aufgehobenen kommunalen Nutzungsplan stützt. Steht der Sondernutzungsplan in einem engen…",
+        "datum": "2025-08-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_II_368",
         "zitierung": "BGE 149 II 368",
@@ -651,60 +701,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_II_417",
-        "zitierung": "BGE 148 II 417",
-        "regesteKurz": "Art. 15 Abs. 1 und 2, Art. 21 Abs. 2 und Art. 27 RPG; vorfrageweise Überprüfung des Zonenplans im Baubewilligungsverfahren; kommunale Planungszone. Wegen der Überdimensionierung der Bauzonen der Gemeinde, der Lage der fraglichen Parzellen…",
-        "datum": "2022-07-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_484",
         "zitierung": "BGE 147 II 484",
         "regesteKurz": "Art. 24 USG, Art. 30 LSV; Umzonung von nicht erschlossenem Land in der Bauzone, Lärmschutz. Die lärmschutzrechtlichen Voraussetzungen für die Erschliessung einer Bauzone sind auch zu berücksichtigen, wenn nicht erschlossenes Land umgezont…",
         "datum": "2021-09-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_300",
-        "zitierung": "BGE 147 II 300",
-        "regesteKurz": "Beschwerde gegen die \"Kleinsiedlungsverordnung\" des Thurgauer Regierungsrats (Art. 14 und 33 RPG; Art. 82, 86 Abs. 2 und Art. 87 BGG). Die Erlassbeschwerde (Art. 82 lit. b und 87 BGG) steht grundsätzlich nur gegen kantonale Hoheitsakte mit…",
-        "datum": "2021-03-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_351",
-        "zitierung": "BGE 147 II 351",
-        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
-        "datum": "2021-02-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_289",
-        "zitierung": "BGE 146 II 289",
-        "regesteKurz": "Art. 15, 18 und 27 RPG und Art. 47 RPV; Reduktion und Neubestimmung der Bauzone im Rahmen der Schaffung einer neuen Nutzungsplanung. Es ist bundesrechtswidrig, im Rahmen der generellen Neuregelung der Nutzungszonen eine Planungszone zu…",
-        "datum": "2020-04-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_134",
-        "zitierung": "BGE 146 II 134",
-        "regesteKurz": "Art. 36a Abs. 3 GSchG; Art. 41cbis GSchV; Art. 26 ff. RPV; Ausscheidung von Gewässerräumen in der Landwirtschaftszone: Inwiefern müssen Fruchtfolgeflächen kompensiert werden? Auslegung von Art. 36a Abs. 3 GSchG nach Wortlaut (E. 9.1),…",
-        "datum": "2019-12-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -775,6 +775,36 @@
     ],
     "17": [
       {
+        "key": "bge_147_II_351",
+        "zitierung": "BGE 147 II 351",
+        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
+        "datum": "2021-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_II_2",
         "zitierung": "BGE 150 II 2",
         "regesteKurz": "Art. 23e und 23h NHG; Art. 7, 8, 9 Abs. 1, Art. 23 Abs. 1 lit. a-f, Art. 24 lit. b, 25, 26 Abs. 1 und Art. 27 PäV; Festsetzung der Kernzone des Naturerlebnisparks Jorat (Parc naturel périurbain du Jorat). Die Errichtung eines…",
@@ -805,16 +835,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_II_351",
-        "zitierung": "BGE 147 II 351",
-        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
-        "datum": "2021-02-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_II_347",
         "zitierung": "BGE 146 II 347",
         "regesteKurz": "Art. 18, 18a NHG, Art. 3, 4, 5 Auenverordnung, Art. 17 RPG, Art. 18, 19, 21 EBG, Art. 2, 5, 7 JSG, Art. 4 FWG; Schutz eines Auengebiets von nationaler Bedeutung. Schutz der Biotop-Inventargebiete von nationaler Bedeutung durch die vom…",
@@ -837,20 +857,30 @@
     ],
     "18": [
       {
-        "key": "bge_149_II_237",
-        "zitierung": "BGE 149 II 237",
-        "regesteKurz": "Art. 2 Abs. 1 und Art. 6 Abs. 1 BGBB; landwirtschaftliches Grundstück, das in einem Kiesabbauplan einbezogen ist; Anwendungsbereich des BGBB. Die Schaffung einer Kiesabbauzone schliesst das darin befindliche landwirtschaftliche Grundstück…",
-        "datum": "2023-02-07",
+        "key": "bge_147_II_351",
+        "zitierung": "BGE 147 II 351",
+        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
+        "datum": "2021-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_147_II_351",
-        "zitierung": "BGE 147 II 351",
-        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
-        "datum": "2021-02-02",
+        "key": "bge_149_II_237",
+        "zitierung": "BGE 149 II 237",
+        "regesteKurz": "Art. 2 Abs. 1 und Art. 6 Abs. 1 BGBB; landwirtschaftliches Grundstück, das in einem Kiesabbauplan einbezogen ist; Anwendungsbereich des BGBB. Die Schaffung einer Kiesabbauzone schliesst das darin befindliche landwirtschaftliche Grundstück…",
+        "datum": "2023-02-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -903,6 +933,46 @@
     ],
     "21": [
       {
+        "key": "bge_148_II_417",
+        "zitierung": "BGE 148 II 417",
+        "regesteKurz": "Art. 15 Abs. 1 und 2, Art. 21 Abs. 2 und Art. 27 RPG; vorfrageweise Überprüfung des Zonenplans im Baubewilligungsverfahren; kommunale Planungszone. Wegen der Überdimensionierung der Bauzonen der Gemeinde, der Lage der fraglichen Parzellen…",
+        "datum": "2022-07-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_146_II_289",
+        "zitierung": "BGE 146 II 289",
+        "regesteKurz": "Art. 15, 18 und 27 RPG und Art. 47 RPV; Reduktion und Neubestimmung der Bauzone im Rahmen der Schaffung einer neuen Nutzungsplanung. Es ist bundesrechtswidrig, im Rahmen der generellen Neuregelung der Nutzungszonen eine Planungszone zu…",
+        "datum": "2020-04-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_311",
+        "zitierung": "BGE 152 II 311",
+        "regesteKurz": "a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…",
+        "datum": "2025-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_289",
+        "zitierung": "BGE 152 II 289",
+        "regesteKurz": "Art. 15 Abs. 2 und Art. 21 Abs. 2 RPG; vorfrageweise Überprüfung eines Sondernutzungsplans, der sich auf einen vom Bundesgericht aufgehobenen kommunalen Nutzungsplan stützt. Steht der Sondernutzungsplan in einem engen…",
+        "datum": "2025-08-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_II_48",
         "zitierung": "BGE 150 II 48",
         "regesteKurz": "Art. 16a Abs. 3 RPG; Art. 38 RPV; Pflicht zur Errichtung einer Spezial- oder Intensivlandwirtschaftszone auf dem Weg der Nutzungsplanung. Entstehung von Art. 16a Abs. 3 RPG und Definition der Speziallandwirtschaftszone (E. 2.4). Es obliegt…",
@@ -913,30 +983,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_II_417",
-        "zitierung": "BGE 148 II 417",
-        "regesteKurz": "Art. 15 Abs. 1 und 2, Art. 21 Abs. 2 und Art. 27 RPG; vorfrageweise Überprüfung des Zonenplans im Baubewilligungsverfahren; kommunale Planungszone. Wegen der Überdimensionierung der Bauzonen der Gemeinde, der Lage der fraglichen Parzellen…",
-        "datum": "2022-07-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_II_139",
         "zitierung": "BGE 148 II 139",
         "regesteKurz": "Art. 9 BV, Art. 13, 14, 16 und 22 RPG, Art. 32 Abs. 1 lit. a FIFG, Art. 126 Abs. 3 MG, Art. 37 Abs. 4 und Art. 37m Abs. 1 LFG, Art. 30a VIL; Zulässigkeit eines kantonalen Gestaltungsplans für den Innovationspark Zürich (IPZ) auf dem…",
         "datum": "2021-11-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_289",
-        "zitierung": "BGE 146 II 289",
-        "regesteKurz": "Art. 15, 18 und 27 RPG und Art. 47 RPV; Reduktion und Neubestimmung der Bauzone im Rahmen der Schaffung einer neuen Nutzungsplanung. Es ist bundesrechtswidrig, im Rahmen der generellen Neuregelung der Nutzungszonen eine Planungszone zu…",
-        "datum": "2020-04-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -964,6 +1014,26 @@
       }
     ],
     "22": [
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_461",
+        "zitierung": "BGE 152 II 461",
+        "regesteKurz": "Art. 83 lit. z BGG; Art. 22 RPG; Art. 10a Abs. 1 USG; Windpark Montagne-de-Buttes; Frage von grundsätzlicher Bedeutung; Pflicht zur Festlegung des Modells der Windenergieanlage bei der Erteilung der Baubewilligung. Art. 83 lit. z BGG gilt…",
+        "datum": "2025-12-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_II_566",
         "zitierung": "BGE 150 II 566",
@@ -1027,6 +1097,36 @@
     ],
     "24": [
       {
+        "key": "bge_147_II_351",
+        "zitierung": "BGE 147 II 351",
+        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
+        "datum": "2021-02-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_918",
         "zitierung": "BGE 151 II 918",
         "regesteKurz": "Art. 25 Abs. 2 und Art. 25a RPG; Art. 87 Abs. 3 des Raumplanungsgesetzes für den Kanton Graubünden vom 6. Dezember 2004 (KRG/GR); Unvereinbarkeit der Bündner Zuständigkeitsordnung mit Art. 25 Abs. 2 RPG und Verletzung des…",
@@ -1067,16 +1167,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_II_351",
-        "zitierung": "BGE 147 II 351",
-        "regesteKurz": "Art. 24 und Art. 24c Abs. 2 RPG; Art. 42 Abs. 3 lit. b RPV; Art. 2 Abs. 1 lit. b und Art. 6 Abs. 2 NHG; Neubau eines Keltereigebäudes in der Grünzone einer Gemeinde mit schützenswertem Ortsbild von nationaler Bedeutung. Die kommunale…",
-        "datum": "2021-02-02",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_II_25",
         "zitierung": "BGE 147 II 25",
         "regesteKurz": "Art. 24c RPG; Art. 41 und 43a RPV; Anwendungsbereich von Art. 24c RPG. Art. 24c RPG in der revidierten Fassung vom 23. Dezember 2011 ist auf eine altrechtliche Wohnbaute in der Landwirtschaftszone, bei der eine landwirtschaftliche…",
@@ -1085,29 +1175,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
+      }
+    ],
+    "25": [
       {
-        "key": "bge_146_II_376",
-        "zitierung": "BGE 146 II 376",
-        "regesteKurz": "Art. 78 Abs. 4 BV; Art. 18a Abs. 1 NHG; Art. 2, Art. 5, Art. 6, Art. 7 AlgV; Art. 24 lit. a, Art. 37a RPG; Art. 43, Art. 43a RPV; fehlende nachträgliche Baubewilligungsfähigkeit eines in der Landwirtschaftszone und in einem…",
-        "datum": "2020-04-16",
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
-      {
-        "key": "bge_146_II_289__voll",
-        "zitierung": "Urteil 1C_632/2018 (nicht publ. in BGE 146 II 289)",
-        "regesteKurz": null,
-        "datum": "2020-04-16",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      }
-    ],
-    "25": [
       {
         "key": "bge_151_II_918",
         "zitierung": "BGE 151 II 918",
@@ -1445,6 +1525,16 @@
     ],
     "18a": [
       {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_II_379",
         "zitierung": "BGE 150 II 379",
         "regesteKurz": "Art. 22 Abs. 1 RPG; Ziff. 62 Abs. 5 bis und Ziff. 63 Abs. 2 und 3 Anhang 1 NISV; Baubewilligungspflicht für Mobilfunkanlagen mit adaptiven Antennen. Die Anwendung des Korrekturfaktors auf bestehende, bisher nach dem \"Worst-Case-Szenario\"…",
@@ -1613,6 +1703,36 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_461",
+        "zitierung": "BGE 152 II 461",
+        "regesteKurz": "Art. 83 lit. z BGG; Art. 22 RPG; Art. 10a Abs. 1 USG; Windpark Montagne-de-Buttes; Frage von grundsätzlicher Bedeutung; Pflicht zur Festlegung des Modells der Windenergieanlage bei der Erteilung der Baubewilligung. Art. 83 lit. z BGG gilt…",
+        "datum": "2025-12-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_311",
+        "zitierung": "BGE 152 II 311",
+        "regesteKurz": "a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…",
+        "datum": "2025-11-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_918",
         "zitierung": "BGE 151 II 918",
         "regesteKurz": "Art. 25 Abs. 2 und Art. 25a RPG; Art. 87 Abs. 3 des Raumplanungsgesetzes für den Kanton Graubünden vom 6. Dezember 2004 (KRG/GR); Unvereinbarkeit der Bündner Zuständigkeitsordnung mit Art. 25 Abs. 2 RPG und Verletzung des…",
@@ -1637,36 +1757,6 @@
         "zitierung": "BGE 150 II 489",
         "regesteKurz": "a Art. 22 Abs. 1 RPG; Baubewilligungspflicht für die Verlegung von Leitungen im Boden. Im Boden ausserhalb der Bauzonen und im Uferbereich eines Flusses verlegte Fernmeldeleitungen sind bewilligungspflichtige Anlagen im Sinne von Art. 22…",
         "datum": "2024-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_II_133",
-        "zitierung": "BGE 150 II 133",
-        "regesteKurz": "Art. 3 Abs. 1 und Art. 6 Abs. 1 und 2 NHG; Art. 6 Abs. 1 und 2 VBLN; Art. 10a Abs. 1 und Art. 10b USG; Art. 5 Abs. 3 UVPV; Art. 25a RPG; Art. 3 RPV; Ausscheidung einer kantonalen Nutzungszone für die Errichtung einer Deponie im Perimeter…",
-        "datum": "2023-11-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_269",
-        "zitierung": "BGE 149 II 269",
-        "regesteKurz": "Art. 6, 21, 23 f., 28 und 44 NSG; Art. 2 und 30 NSV; Bewilligungsverfahren für eine direkte Zufahrt ab dem Autobahnanschluss Pfäffikon über eine Hochbrücke zum Einkaufszentrum Seedamm-Center. Bauvorhaben, welche weitreichende Eingriffe in…",
-        "datum": "2023-04-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_86",
-        "zitierung": "BGE 149 II 86",
-        "regesteKurz": "Art. 8 Abs. 2, 8b, 9, 11 und 12 RPG, Art. 5 Abs. 2 lit. a RPV; Windpark Eoljoux; Aufhebung des Nutzungsplans; Weigerung des Bundesrats, die Richtplanfestsetzung für das Vorhaben zu genehmigen; Rechtsschutz. Richtplanvorbehalt; Verankerung…",
-        "datum": "2023-01-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

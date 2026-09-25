@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "NHG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -17,6 +17,16 @@
     ],
     "2": [
       {
+        "key": "bge_152_II_298",
+        "zitierung": "BGE 152 II 298",
+        "regesteKurz": "Art. 78 Abs. 2 BV; Art. 2 und 12 NHG; Art. 19 Abs. 2 GSchG; Art. 32 Abs. 2 GSchV; Art. 17 WaG; Art. 16 VVEA; Beschwerdelegitimation des Schweizer Heimatschutzes; Vorliegen einer Bundesaufgabe. Eine Bundesaufgabe liegt vor, wenn für Anlagen…",
+        "datum": "2025-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_147_II_164__voll",
         "zitierung": "Urteil 1C_356/2019 (nicht publ. in BGE 147 II 164)",
         "regesteKurz": null,
@@ -25,6 +35,26 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_II_133",
@@ -65,26 +95,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_347__voll",
-        "zitierung": "Urteil 1C_595/2018 (nicht publ. in BGE 146 II 347)",
-        "regesteKurz": null,
-        "datum": "2020-03-24",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_80__voll",
-        "zitierung": "Urteil 1C_161/2019 (nicht publ. in BGE 146 II 80)",
-        "regesteKurz": null,
-        "datum": "2020-01-23",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "3": [
@@ -100,6 +110,16 @@
       }
     ],
     "5": [
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_II_133",
         "zitierung": "BGE 150 II 133",
@@ -163,6 +183,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_II_133",
         "zitierung": "BGE 150 II 133",
         "regesteKurz": "Art. 3 Abs. 1 und Art. 6 Abs. 1 und 2 NHG; Art. 6 Abs. 1 und 2 VBLN; Art. 10a Abs. 1 und Art. 10b USG; Art. 5 Abs. 3 UVPV; Art. 25a RPG; Art. 3 RPV; Ausscheidung einer kantonalen Nutzungszone für die Errichtung einer Deponie im Perimeter…",
@@ -201,19 +231,29 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_II_198__voll",
-        "zitierung": "Urteil 1C_453/2020 (nicht publ. in BGE 148 II 198)",
-        "regesteKurz": null,
-        "datum": "2021-09-21",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "7": [
+      {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_II_133",
         "zitierung": "BGE 150 II 133",
@@ -237,6 +277,26 @@
     ],
     "12": [
       {
+        "key": "bge_152_II_298",
+        "zitierung": "BGE 152 II 298",
+        "regesteKurz": "Art. 78 Abs. 2 BV; Art. 2 und 12 NHG; Art. 19 Abs. 2 GSchG; Art. 32 Abs. 2 GSchV; Art. 17 WaG; Art. 16 VVEA; Beschwerdelegitimation des Schweizer Heimatschutzes; Vorliegen einer Bundesaufgabe. Eine Bundesaufgabe liegt vor, wenn für Anlagen…",
+        "datum": "2025-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_II_186__voll",
+        "zitierung": "Urteil 1C_243/2019 (nicht publ. in BGE 147 II 186)",
+        "regesteKurz": null,
+        "datum": "2020-11-25",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_II_164__voll",
         "zitierung": "Urteil 1C_356/2019 (nicht publ. in BGE 147 II 164)",
         "regesteKurz": null,
@@ -247,12 +307,32 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_350",
+        "zitierung": "BGE 152 II 350",
+        "regesteKurz": "Art. 14 ff., 24 und 25 Abs. 2 RPG; Qualifikation einer Zone als Bau- oder Nichtbauzone bei ober- und unterirdisch verschieden ausgestalteter Bebaubarkeit; kantonales Bewilligungserfordernis und Vorliegen einer Bundesaufgabe. Der Untergrund…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_II_359",
         "zitierung": "BGE 148 II 359",
         "regesteKurz": "Publikation von Baugesuchen im Anwendungsbereich des ZWG (Art. 20 Abs. 1 ZWG; Art. 12b NHG). Art. 20 Abs. 1 ZWG ist lex specialis zu Art. 12b Abs. 1 Satz 1 und Abs. 2 NHG. Die Publikation von Baugesuchen im Anwendungsbereich des ZWG…",
         "datum": "2022-03-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_196__voll",
+        "zitierung": "Urteil 2C_68/2024 (nicht publ. in BGE 152 II 196)",
+        "regesteKurz": null,
+        "datum": "2025-06-30",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -271,36 +351,6 @@
         "zitierung": "Urteil 1C_453/2020 (nicht publ. in BGE 148 II 198)",
         "regesteKurz": null,
         "datum": "2021-09-21",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_186__voll",
-        "zitierung": "Urteil 1C_243/2019 (nicht publ. in BGE 147 II 186)",
-        "regesteKurz": null,
-        "datum": "2020-11-25",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_347__voll",
-        "zitierung": "Urteil 1C_595/2018 (nicht publ. in BGE 146 II 347)",
-        "regesteKurz": null,
-        "datum": "2020-03-24",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_II_80__voll",
-        "zitierung": "Urteil 1C_161/2019 (nicht publ. in BGE 146 II 80)",
-        "regesteKurz": null,
-        "datum": "2020-01-23",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -327,6 +377,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_461",
+        "zitierung": "BGE 152 II 461",
+        "regesteKurz": "Art. 83 lit. z BGG; Art. 22 RPG; Art. 10a Abs. 1 USG; Windpark Montagne-de-Buttes; Frage von grundsätzlicher Bedeutung; Pflicht zur Festlegung des Modells der Windenergieanlage bei der Erteilung der Baubewilligung. Art. 83 lit. z BGG gilt…",
+        "datum": "2025-12-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_II_304",
@@ -437,6 +497,18 @@
         "gewicht": 0
       }
     ],
+    "25": [
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "26": [
       {
         "key": "bge_147_II_186__voll",
@@ -485,6 +557,18 @@
         "gewicht": 0
       }
     ],
+    "17a": [
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "18a": [
       {
         "key": "bge_147_II_164",
@@ -495,6 +579,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_147_II_319",

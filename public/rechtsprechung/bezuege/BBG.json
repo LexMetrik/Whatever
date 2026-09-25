@@ -1,25 +1,32 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"BBG",
 "erlassEbene":"bund",
 "dokumente":{
+"bge_152_II_224__voll":{"zitierung":"Urteil 2C_49/2024 (nicht publ. in BGE 152 II 224)","regesteKurz":null,"datum":"2025-08-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 II 224","urteil":"2C_49/2024"}},
 "bge_152_I_65__voll":{"zitierung":"Urteil 2C_567/2024 (nicht publ. in BGE 152 I 65)","regesteKurz":null,"datum":"2025-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 I 65","urteil":"2C_567/2024"}},
 "bs_appellationsgericht_VD.2023.140":{"zitierung":"Appellationsgericht BS VD.2023.140 vom 24.04.2024","regesteKurz":"Rückerstattung von Ausbildungskosten","datum":"2024-04-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
+"2":[{"key":"bge_152_II_224__voll","gewicht":0,"erwaegungen":["E. 3.3"]}],
 "12":[{"key":"bs_appellationsgericht_VD.2023.140","gewicht":null}],
+"19":[{"key":"bge_152_II_224__voll","gewicht":0,"erwaegungen":["E. 3.3"]}],
 "26":[{"key":"bs_appellationsgericht_VD.2023.140","gewicht":null}],
+"29":[{"key":"bge_152_II_224__voll","gewicht":0,"erwaegungen":["E. 3.1"]}],
 "30":[{"key":"bs_appellationsgericht_VD.2023.140","gewicht":null}],
 "37":[{"key":"bs_appellationsgericht_VD.2023.140","gewicht":null}],
 "38":[{"key":"bs_appellationsgericht_VD.2023.140","gewicht":null}],
-"68":[{"key":"bge_152_I_65__voll","gewicht":0,"erwaegungen":["E. 6"]}]
+"68":[{"key":"bge_152_I_65__voll","gewicht":0,"erwaegungen":["E. 6"]},{"key":"bge_152_II_224__voll","gewicht":0,"erwaegungen":["E. 3.4"]}]
 },
 "gesamtProArtikel":{
+"2":{"bger":1},
 "12":{"kantonal":1},
+"19":{"bger":1},
 "26":{"kantonal":1},
+"29":{"bger":1},
 "30":{"kantonal":1},
 "37":{"kantonal":1},
 "38":{"kantonal":1},
-"68":{"bger":1}
+"68":{"bger":2}
 }
 }

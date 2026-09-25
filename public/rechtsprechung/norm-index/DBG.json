@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "DBG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -1554,17 +1554,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_151_II_802",
-        "zitierung": "BGE 151 II 802",
-        "regesteKurz": "Art. 63 Abs. 1 lit. b DBG; Art. 960b Abs. 2 OR; mit Aktiven des Umlaufvermögens verbundene Verlustrisiken; Wertschwankungsreserven. Bei Rückstellungen zu Lasten der Erfolgsrechnung im Sinne von Art. 63 Abs. 1 lit. b DBG handelt es sich…",
-        "datum": "2025-02-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 2
       },
       {
         "key": "bge_147_II_155__voll",
@@ -1573,6 +1563,26 @@
         "datum": "2020-11-26",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_422",
+        "zitierung": "BGE 152 II 422",
+        "regesteKurz": "Art. 58 Abs. 1 lit. b DBG; Art. 24 Abs. 1 lit. a StHG; Abzugsfähigkeit der passiven Zinsen als durch den Handelsgebrauch gerechtfertigte Aufwendungen im Rahmen eines \"Debt Push Down\". Fall einer Gesellschaft (Akquisitionsvehikel; \"special…",
+        "datum": "2026-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_II_802",
+        "zitierung": "BGE 151 II 802",
+        "regesteKurz": "Art. 63 Abs. 1 lit. b DBG; Art. 960b Abs. 2 OR; mit Aktiven des Umlaufvermögens verbundene Verlustrisiken; Wertschwankungsreserven. Bei Rückstellungen zu Lasten der Erfolgsrechnung im Sinne von Art. 63 Abs. 1 lit. b DBG handelt es sich…",
+        "datum": "2025-02-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1586,7 +1596,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
+      },
+      {
+        "key": "bge_147_II_155",
+        "zitierung": "BGE 147 II 155",
+        "regesteKurz": "Auslegung von Art. 62 Abs. 4 DBG (Art. 28 Abs. 1 ter StHG). Art. 62 Abs. 4 DBG ist eine steuerrechtliche Berichtigungsbestimmung. Sie ermöglicht, beim steuerbaren Gewinn der geprüften Periode nicht begründete Abschreibungen oder…",
+        "datum": "2020-11-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_422",
+        "zitierung": "BGE 152 II 422",
+        "regesteKurz": "Art. 58 Abs. 1 lit. b DBG; Art. 24 Abs. 1 lit. a StHG; Abzugsfähigkeit der passiven Zinsen als durch den Handelsgebrauch gerechtfertigte Aufwendungen im Rahmen eines \"Debt Push Down\". Fall einer Gesellschaft (Akquisitionsvehikel; \"special…",
+        "datum": "2026-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_II_827",
@@ -1603,16 +1633,6 @@
         "zitierung": "BGE 151 II 11",
         "regesteKurz": "Art. 58 Abs. 1 und 3 DBG; Art. 24 Abs. 1 und 5 StHG; Ermittlung des hypothetischen Fremdvergleichspreises im Bereich der Besteuerung der Partnerwerke. Wesen der Partnerwerke und Grundlagen von deren Besteuerung (E. 2). Die zur Ermittlung…",
         "datum": "2024-06-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_155",
-        "zitierung": "BGE 147 II 155",
-        "regesteKurz": "Auslegung von Art. 62 Abs. 4 DBG (Art. 28 Abs. 1 ter StHG). Art. 62 Abs. 4 DBG ist eine steuerrechtliche Berichtigungsbestimmung. Sie ermöglicht, beim steuerbaren Gewinn der geprüften Periode nicht begründete Abschreibungen oder…",
-        "datum": "2020-11-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1679,6 +1699,16 @@
         "zitierung": "BGE 151 II 545",
         "regesteKurz": "Art. 13 Abs. 1, Art. 14 Abs. 1 lit. j StG; Umsatzabgabe; Übertragung einer Beteiligung innerhalb eines Konzerns; Gratiszuteilung von Mitarbeiteraktien. Die konzerninterne Übertragung einer (indirekten) Beteiligung von mindestens 20 % am…",
         "datum": "2024-11-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_422",
+        "zitierung": "BGE 152 II 422",
+        "regesteKurz": "Art. 58 Abs. 1 lit. b DBG; Art. 24 Abs. 1 lit. a StHG; Abzugsfähigkeit der passiven Zinsen als durch den Handelsgebrauch gerechtfertigte Aufwendungen im Rahmen eines \"Debt Push Down\". Fall einer Gesellschaft (Akquisitionsvehikel; \"special…",
+        "datum": "2026-02-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1751,6 +1781,16 @@
     ],
     "67": [
       {
+        "key": "bge_152_II_422",
+        "zitierung": "BGE 152 II 422",
+        "regesteKurz": "Art. 58 Abs. 1 lit. b DBG; Art. 24 Abs. 1 lit. a StHG; Abzugsfähigkeit der passiven Zinsen als durch den Handelsgebrauch gerechtfertigte Aufwendungen im Rahmen eines \"Debt Push Down\". Fall einer Gesellschaft (Akquisitionsvehikel; \"special…",
+        "datum": "2026-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_II_802",
         "zitierung": "BGE 151 II 802",
         "regesteKurz": "Art. 63 Abs. 1 lit. b DBG; Art. 960b Abs. 2 OR; mit Aktiven des Umlaufvermögens verbundene Verlustrisiken; Wertschwankungsreserven. Bei Rückstellungen zu Lasten der Erfolgsrechnung im Sinne von Art. 63 Abs. 1 lit. b DBG handelt es sich…",
@@ -1806,6 +1846,16 @@
       }
     ],
     "79": [
+      {
+        "key": "bge_152_II_422",
+        "zitierung": "BGE 152 II 422",
+        "regesteKurz": "Art. 58 Abs. 1 lit. b DBG; Art. 24 Abs. 1 lit. a StHG; Abzugsfähigkeit der passiven Zinsen als durch den Handelsgebrauch gerechtfertigte Aufwendungen im Rahmen eines \"Debt Push Down\". Fall einer Gesellschaft (Akquisitionsvehikel; \"special…",
+        "datum": "2026-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_II_802",
         "zitierung": "BGE 151 II 802",
@@ -2483,6 +2533,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_422__voll",
+        "zitierung": "Urteil 9C_606/2025 (nicht publ. in BGE 152 II 422)",
+        "regesteKurz": null,
+        "datum": "2026-02-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_II_98__voll",
         "zitierung": "Urteil 9C_416/2024 (nicht publ. in BGE 152 II 98)",
         "regesteKurz": null,
@@ -2517,16 +2577,6 @@
         "zitierung": "Urteil 9C_165/2024 (nicht publ. in BGE 151 II 581)",
         "regesteKurz": null,
         "datum": "2024-10-28",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_101__voll",
-        "zitierung": "Urteil 9C_323/2023 (nicht publ. in BGE 151 II 101)",
-        "regesteKurz": null,
-        "datum": "2024-08-07",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2653,6 +2703,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_II_422__voll",
+        "zitierung": "Urteil 9C_606/2025 (nicht publ. in BGE 152 II 422)",
+        "regesteKurz": null,
+        "datum": "2026-02-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_II_177__voll",
         "zitierung": "Urteil 9C_689/2022 (nicht publ. in BGE 149 II 177)",
         "regesteKurz": null,
@@ -2681,6 +2741,16 @@
         "datum": "2022-05-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_422__voll",
+        "zitierung": "Urteil 9C_606/2025 (nicht publ. in BGE 152 II 422)",
+        "regesteKurz": null,
+        "datum": "2026-02-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },

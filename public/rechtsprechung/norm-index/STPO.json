@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "STPO",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -469,6 +469,16 @@
     ],
     "9": [
       {
+        "key": "bge_149_IV_128",
+        "zitierung": "BGE 149 IV 128",
+        "regesteKurz": "Art. 312 StGB; Amtsmissbrauch; besondere Nachteilsabsicht. Der vom Täter beabsichtigte Nachteil kann auch in der Zwangshandlung selbst liegen ungeachtet dessen, ob er ein legitimes Ziel verfolgt (Präzisierung der Rechtsprechung; E. 1,…",
+        "datum": "2023-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 4
+      },
+      {
         "key": "bge_147_IV_439",
         "zitierung": "BGE 147 IV 439",
         "regesteKurz": "Art. 91 Abs. 2 lit. b, Art. 31 Abs. 2 und Art. 55 Abs. 7 lit. a SVG, Art. 2 Abs. 2 lit. a VRV, Art. 34 lit. a VSKV-ASTRA, Art. 12 Abs. 2 StGB; Fahren in fahrunfähigem Zustand nach Cannabiskonsum, Zulässigkeit der auf Verordnungsebene…",
@@ -479,14 +489,34 @@
         "gewicht": 4
       },
       {
-        "key": "bge_149_IV_128",
-        "zitierung": "BGE 149 IV 128",
-        "regesteKurz": "Art. 312 StGB; Amtsmissbrauch; besondere Nachteilsabsicht. Der vom Täter beabsichtigte Nachteil kann auch in der Zwangshandlung selbst liegen ungeachtet dessen, ob er ein legitimes Ziel verfolgt (Präzisierung der Rechtsprechung; E. 1,…",
-        "datum": "2023-01-30",
+        "key": "bge_150_IV_433__voll",
+        "zitierung": "Urteil 6B_1033/2023 (nicht publ. in BGE 150 IV 433)",
+        "regesteKurz": null,
+        "datum": "2024-07-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_IV_505__voll",
+        "zitierung": "Urteil 6B_1498/2020 (nicht publ. in BGE 147 IV 505)",
+        "regesteKurz": null,
+        "datum": "2021-11-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_242",
+        "zitierung": "BGE 152 IV 242",
+        "regesteKurz": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels. Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den…",
+        "datum": "2026-02-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 0
       },
       {
         "key": "bge_147_IV_167",
@@ -499,50 +529,20 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_365__voll",
         "zitierung": "Urteil 6B_819/2023 (nicht publ. in BGE 151 IV 365)",
         "regesteKurz": null,
         "datum": "2025-09-05",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
-        "regesteKurz": null,
-        "datum": "2025-02-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_IV_433__voll",
-        "zitierung": "Urteil 6B_1033/2023 (nicht publ. in BGE 150 IV 433)",
-        "regesteKurz": null,
-        "datum": "2024-07-08",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_IV_273__voll",
-        "zitierung": "Urteil 6B_938/2023 (nicht publ. in BGE 150 IV 273)",
-        "regesteKurz": null,
-        "datum": "2024-03-21",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_IV_42__voll",
-        "zitierung": "Urteil 6B_171/2022 (nicht publ. in BGE 149 IV 42)",
-        "regesteKurz": null,
-        "datum": "2022-11-29",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -555,6 +555,26 @@
         "zitierung": "BGE 148 IV 409",
         "regesteKurz": "Art. 173 ff. StGB; Ehrverletzungen; Äusserungen gegenüber einem Rechtsanwalt. Die Bedeutung von Äusserungen, die ein Mandant gegenüber seinem Rechtsanwalt tätigt, ist nicht auf die gleiche Weise zu beurteilen wie die Bedeutung von…",
         "datum": "2022-08-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 6
+      },
+      {
+        "key": "bge_147_IV_439",
+        "zitierung": "BGE 147 IV 439",
+        "regesteKurz": "Art. 91 Abs. 2 lit. b, Art. 31 Abs. 2 und Art. 55 Abs. 7 lit. a SVG, Art. 2 Abs. 2 lit. a VRV, Art. 34 lit. a VSKV-ASTRA, Art. 12 Abs. 2 StGB; Fahren in fahrunfähigem Zustand nach Cannabiskonsum, Zulässigkeit der auf Verordnungsebene…",
+        "datum": "2021-06-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 3
+      },
+      {
+        "key": "bge_147_IV_534",
+        "zitierung": "BGE 147 IV 534",
+        "regesteKurz": "Art. 139 Abs. 2, Art. 164 Abs. 1 und 2, Art. 177 Abs. 2 StPO; Abklärungen zum Vorleben und den persönlichen Verhältnissen von Zeugen. Art. 164 Abs. 1 StPO dient dem Schutz der Persönlichkeit von Zeuginnen und Zeugen (E. 2.3.2). Über die…",
+        "datum": "2021-08-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -571,26 +591,6 @@
         "gewicht": 2
       },
       {
-        "key": "bge_147_IV_534",
-        "zitierung": "BGE 147 IV 534",
-        "regesteKurz": "Art. 139 Abs. 2, Art. 164 Abs. 1 und 2, Art. 177 Abs. 2 StPO; Abklärungen zum Vorleben und den persönlichen Verhältnissen von Zeugen. Art. 164 Abs. 1 StPO dient dem Schutz der Persönlichkeit von Zeuginnen und Zeugen (E. 2.3.2). Über die…",
-        "datum": "2021-08-11",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_147_IV_439",
-        "zitierung": "BGE 147 IV 439",
-        "regesteKurz": "Art. 91 Abs. 2 lit. b, Art. 31 Abs. 2 und Art. 55 Abs. 7 lit. a SVG, Art. 2 Abs. 2 lit. a VRV, Art. 34 lit. a VSKV-ASTRA, Art. 12 Abs. 2 StGB; Fahren in fahrunfähigem Zustand nach Cannabiskonsum, Zulässigkeit der auf Verordnungsebene…",
-        "datum": "2021-06-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_147_IV_479",
         "zitierung": "BGE 147 IV 479",
         "regesteKurz": "Art. 70 Abs. 1, 2 und 5, Art. 71 Abs. 1, Art. 322 septies Abs. 1 StGB; aktive Bestechung; Umfang der Einziehung bei der blossen Beeinflussung von Ermessensentscheiden; Durchgriff. Der Erlös aus einem durch Bestechung zustande gekommenen…",
@@ -598,7 +598,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_146_IV_297",
@@ -608,7 +608,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_149_IV_50__voll",
@@ -618,15 +618,15 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
-        "key": "bge_147_IV_93__voll",
-        "zitierung": "Urteil 6B_360/2020 (nicht publ. in BGE 147 IV 93)",
-        "regesteKurz": null,
-        "datum": "2020-10-08",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_150_IV_86",
+        "zitierung": "BGE 150 IV 86",
+        "regesteKurz": "Art. 25 und 322 septies Abs. 2 StGB; passive Bestechung fremder Amtsträger; Gehilfenschaft. Abschluss einer \"Bestechungsvereinbarung\" (\"pacte corruptif\") im Rahmen von Geschäftsverhandlungen zwischen einer norwegischen Gesellschaft, die…",
+        "datum": "2023-10-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       }
@@ -640,7 +640,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_149_IV_50",
@@ -650,17 +650,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_151_IV_249",
-        "zitierung": "BGE 151 IV 249",
-        "regesteKurz": "Art. 47, 54 und 66a ff. StGB; Strafzumessung bei gleichzeitiger Landesverweisung. Die gleichzeitig ausgesprochene Landesverweisung ist bei der Strafzumessung nicht strafmindernd zu berücksichtigen (E. 5.3). Regeste Art. 47, 54 et 66a ss…",
-        "datum": "2025-05-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 2
       },
       {
         "key": "bge_151_IV_18__voll",
@@ -669,6 +659,26 @@
         "datum": "2024-10-03",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_249",
+        "zitierung": "BGE 151 IV 249",
+        "regesteKurz": "Art. 47, 54 und 66a ff. StGB; Strafzumessung bei gleichzeitiger Landesverweisung. Die gleichzeitig ausgesprochene Landesverweisung ist bei der Strafzumessung nicht strafmindernd zu berücksichtigen (E. 5.3). Regeste Art. 47, 54 et 66a ss…",
+        "datum": "2025-05-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -1561,6 +1571,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "61": [
@@ -1645,6 +1665,16 @@
     ],
     "69": [
       {
+        "key": "bge_147_I_463",
+        "zitierung": "BGE 147 I 463",
+        "regesteKurz": "Art. 30 Abs. 3 BV, Art. 6 Ziff. 1 EMRK und Art. 14 Abs. 1 UNO-Pakt II; Art. 29 Abs. 2 BV, Art. 99 Abs. 1 StPO und Art. 35 Abs. 2 lit. g des Einführungsgesetzes des Kantons St. Gallen vom 3. August 2010 zur Schweizerischen Straf- und…",
+        "datum": "2021-05-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_IV_145__voll",
         "zitierung": "Urteil 6B_601/2020 (nicht publ. in BGE 147 IV 145)",
         "regesteKurz": null,
@@ -1653,6 +1683,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_10",
@@ -1668,16 +1708,6 @@
         "key": "bge_147_IV_297",
         "zitierung": "BGE 147 IV 297",
         "regesteKurz": "a Art. 6 Ziff. 1 EMRK, Art. 14 UNO Pakt II, Art. 30 Abs. 3 BV, Art. 69 und 70 StPO; Grundsatz der Justizöffentlichkeit, teilweiser Ausschluss der Öffentlichkeit, Anwesenheit von Vertrauenspersonen. Der Entscheid über den teilweisen…",
-        "datum": "2021-05-26",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_I_463",
-        "zitierung": "BGE 147 I 463",
-        "regesteKurz": "Art. 30 Abs. 3 BV, Art. 6 Ziff. 1 EMRK und Art. 14 Abs. 1 UNO-Pakt II; Art. 29 Abs. 2 BV, Art. 99 Abs. 1 StPO und Art. 35 Abs. 2 lit. g des Einführungsgesetzes des Kantons St. Gallen vom 3. August 2010 zur Schweizerischen Straf- und…",
         "datum": "2021-05-26",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
@@ -1797,6 +1827,16 @@
     ],
     "80": [
       {
+        "key": "bge_148_IV_445",
+        "zitierung": "BGE 148 IV 445",
+        "regesteKurz": "Art. 353 Abs. 1 lit. k und Art. 80 Abs. 2 StPO; auch beim Erlass eines Strafbefehls stellt die persönliche handschriftliche Unterschrift ein formelles Gültigkeitserfordernis im Interesse der Rechtssicherheit dar. Das Anbringen eines…",
+        "datum": "2022-06-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_IV_145",
         "zitierung": "BGE 147 IV 145",
         "regesteKurz": "a Art. 292 StGB, Art. 70 Abs. 1 und Abs. 3, Art. 80 Abs. 3 StPO; formelle Gültigkeitsvoraussetzungen und Tragweite eines Beschlusses, welcher den Zugang von Gerichtsberichterstattern zu einer unter Ausschluss der Öffentlichkeit geführten…",
@@ -1815,16 +1855,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_148_IV_445",
-        "zitierung": "BGE 148 IV 445",
-        "regesteKurz": "Art. 353 Abs. 1 lit. k und Art. 80 Abs. 2 StPO; auch beim Erlass eines Strafbefehls stellt die persönliche handschriftliche Unterschrift ein formelles Gültigkeitserfordernis im Interesse der Rechtssicherheit dar. Das Anbringen eines…",
-        "datum": "2022-06-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_148_IV_1",
@@ -2264,6 +2294,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_129",
+        "zitierung": "BGE 152 IV 129",
+        "regesteKurz": "a Art. 48 Abs. 1 und Art. 100 Abs. 1 BGG; Beweis der rechtzeitigen Aufgabe der Beschwerde bei der Schweizerischen Post im Rahmen eines Abholvertrags. Eine rechtsuchende Person, die eine fristgebundene Sendung im Rahmen eines Abholvertrags…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       },
       {
@@ -2319,6 +2359,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_96__voll",
+        "zitierung": "Urteil 7B_631/2023 (nicht publ. in BGE 152 IV 96)",
+        "regesteKurz": null,
+        "datum": "2025-09-18",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "94": [
@@ -2367,6 +2417,16 @@
     ],
     "100": [
       {
+        "key": "bge_148_IV_288__voll",
+        "zitierung": "Urteil 6B_1270/2021 (nicht publ. in BGE 148 IV 288)",
+        "regesteKurz": null,
+        "datum": "2022-06-02",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_IV_18",
         "zitierung": "BGE 151 IV 18",
         "regesteKurz": "Art. 141 Abs. 2, Art. 263 Abs. 2 StPO; Erfordernis der nachträglichen schriftlichen Bestätigung der mündlich angeordneten Beschlagnahme. Das Erfordernis der nachträglichen schriftlichen Bestätigung der mündlich angeordneten Beschlagnahme…",
@@ -2397,20 +2457,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_IV_384__voll",
-        "zitierung": "Urteil 6B_1037/2023 (nicht publ. in BGE 150 IV 384)",
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
         "regesteKurz": null,
-        "datum": "2024-06-05",
+        "datum": "2025-12-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_148_IV_288__voll",
-        "zitierung": "Urteil 6B_1270/2021 (nicht publ. in BGE 148 IV 288)",
+        "key": "bge_150_IV_384__voll",
+        "zitierung": "Urteil 6B_1037/2023 (nicht publ. in BGE 150 IV 384)",
         "regesteKurz": null,
-        "datum": "2022-06-02",
+        "datum": "2024-06-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2429,20 +2489,30 @@
     ],
     "101": [
       {
-        "key": "bge_150_IV_345",
-        "zitierung": "BGE 150 IV 345",
-        "regesteKurz": "Art. 147 Abs. 1 und 4 StPO; Art. 6 Ziff. 3 lit. d EMRK; Teilnahmerecht und Konfrontationsanspruch; Unverwertbarkeit von in Verletzung des Teilnahmerechts der beschuldigten Person abgehaltenen Einvernahmen zu deren Nachteil auch nach…",
-        "datum": "2024-06-05",
+        "key": "bge_147_I_463",
+        "zitierung": "BGE 147 I 463",
+        "regesteKurz": "Art. 30 Abs. 3 BV, Art. 6 Ziff. 1 EMRK und Art. 14 Abs. 1 UNO-Pakt II; Art. 29 Abs. 2 BV, Art. 99 Abs. 1 StPO und Art. 35 Abs. 2 lit. g des Einführungsgesetzes des Kantons St. Gallen vom 3. August 2010 zur Schweizerischen Straf- und…",
+        "datum": "2021-05-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_147_I_463",
-        "zitierung": "BGE 147 I 463",
-        "regesteKurz": "Art. 30 Abs. 3 BV, Art. 6 Ziff. 1 EMRK und Art. 14 Abs. 1 UNO-Pakt II; Art. 29 Abs. 2 BV, Art. 99 Abs. 1 StPO und Art. 35 Abs. 2 lit. g des Einführungsgesetzes des Kantons St. Gallen vom 3. August 2010 zur Schweizerischen Straf- und…",
-        "datum": "2021-05-26",
+        "key": "bge_150_IV_345",
+        "zitierung": "BGE 150 IV 345",
+        "regesteKurz": "Art. 147 Abs. 1 und 4 StPO; Art. 6 Ziff. 3 lit. d EMRK; Teilnahmerecht und Konfrontationsanspruch; Unverwertbarkeit von in Verletzung des Teilnahmerechts der beschuldigten Person abgehaltenen Einvernahmen zu deren Nachteil auch nach…",
+        "datum": "2024-06-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2543,6 +2613,26 @@
     ],
     "104": [
       {
+        "key": "bge_148_IV_124",
+        "zitierung": "BGE 148 IV 124",
+        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
+        "datum": "2022-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_147_IV_269",
+        "zitierung": "BGE 147 IV 269",
+        "regesteKurz": "Art. 104, 115 und 118 Abs. 1 StPO; Art. 317 StGB; Urkundenfälschung im Amt, Geschädigtenstellung. Massgebende Prinzipien für die Zulassung als Privatklägerschaft (E. 3.1 und 3.2). Die beschwerdeführende Gesellschaft wurde durch den…",
+        "datum": "2021-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_146_IV_76",
         "zitierung": "BGE 146 IV 76",
         "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die…",
@@ -2553,24 +2643,24 @@
         "gewicht": 2
       },
       {
-        "key": "bge_148_IV_124",
-        "zitierung": "BGE 148 IV 124",
-        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
-        "datum": "2022-01-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "regesteKurz": null,
+        "datum": "2025-02-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
       {
-        "key": "bge_147_IV_269",
-        "zitierung": "BGE 147 IV 269",
-        "regesteKurz": "Art. 104, 115 und 118 Abs. 1 StPO; Art. 317 StGB; Urkundenfälschung im Amt, Geschädigtenstellung. Massgebende Prinzipien für die Zulassung als Privatklägerschaft (E. 3.1 und 3.2). Die beschwerdeführende Gesellschaft wurde durch den…",
-        "datum": "2021-04-27",
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_225",
@@ -2601,29 +2691,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_170",
-        "zitierung": "BGE 148 IV 170",
-        "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
-        "datum": "2022-04-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_361",
-        "zitierung": "BGE 147 IV 361",
-        "regesteKurz": "Art. 127 Abs. 1 StPO; Art. 13 IPRG; Befugnis der Organe einer ausländischen Gesellschaft, einen Rechtsbeistand zu bestellen; Begriff des ausländischen Rechts. Ist eine ausländische Gesellschaft an einem in der Schweiz geführten…",
-        "datum": "2021-01-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "105": [
+      {
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "regesteKurz": null,
+        "datum": "2025-02-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_IV_91",
         "zitierung": "BGE 149 IV 91",
@@ -2665,16 +2755,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
-        "regesteKurz": null,
-        "datum": "2025-02-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_IV_385__voll",
         "zitierung": "Urteil 1B_333/2020 (nicht publ. in BGE 147 IV 385)",
         "regesteKurz": null,
@@ -2703,6 +2783,16 @@
         "zitierung": "Urteil 6B_1403/2021 (nicht publ. in BGE 148 I 295)",
         "regesteKurz": null,
         "datum": "2022-06-09",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_IV_288__voll",
+        "zitierung": "Urteil 6B_1270/2021 (nicht publ. in BGE 148 IV 288)",
+        "regesteKurz": null,
+        "datum": "2022-06-02",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2749,30 +2839,20 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_330__voll",
         "zitierung": "Urteil 7B_358/2025 (nicht publ. in BGE 151 IV 330)",
         "regesteKurz": null,
         "datum": "2025-05-28",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_288__voll",
-        "zitierung": "Urteil 7B_1075/2024 (nicht publ. in BGE 151 IV 288)",
-        "regesteKurz": null,
-        "datum": "2025-01-27",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_IV_384__voll",
-        "zitierung": "Urteil 6B_1037/2023 (nicht publ. in BGE 150 IV 384)",
-        "regesteKurz": null,
-        "datum": "2024-06-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2833,6 +2913,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_27",
+        "zitierung": "BGE 152 IV 27",
+        "regesteKurz": "a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…",
+        "datum": "2026-01-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_9",
         "zitierung": "BGE 149 IV 9",
         "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
@@ -2874,7 +2964,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_148_IV_205",
@@ -2887,10 +2977,32 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_249__voll",
         "zitierung": "Urteil 6B_1218/2023 (nicht publ. in BGE 151 IV 249)",
         "regesteKurz": null,
         "datum": "2025-05-07",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "114": [
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2916,7 +3028,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "regesteKurz": null,
+        "datum": "2025-02-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_405",
@@ -2955,26 +3087,6 @@
         "datum": "2022-04-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_170",
-        "zitierung": "BGE 148 IV 170",
-        "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
-        "datum": "2022-04-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_201__voll",
-        "zitierung": "Urteil 6B_95/2024 (nicht publ. in BGE 151 IV 201)",
-        "regesteKurz": null,
-        "datum": "2025-02-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -3085,6 +3197,16 @@
         "gewicht": 3
       },
       {
+        "key": "bge_147_IV_269",
+        "zitierung": "BGE 147 IV 269",
+        "regesteKurz": "Art. 104, 115 und 118 Abs. 1 StPO; Art. 317 StGB; Urkundenfälschung im Amt, Geschädigtenstellung. Massgebende Prinzipien für die Zulassung als Privatklägerschaft (E. 3.1 und 3.2). Die beschwerdeführende Gesellschaft wurde durch den…",
+        "datum": "2021-04-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_148_IV_432",
         "zitierung": "BGE 148 IV 432",
         "regesteKurz": "Art. 115 Abs. 1, Art. 122 Abs. 1, Art. 126 Abs. 1 lit. b und Abs. 2 lit. d StPO; adhäsionsweise erhobene Zivilklage im Strafverfahren; Zivilforderungen bei Freispruch der beschuldigten Person; vertragliche Ansprüche. Zivilansprüche, die…",
@@ -3095,12 +3217,12 @@
         "gewicht": 1
       },
       {
-        "key": "bge_147_IV_269",
-        "zitierung": "BGE 147 IV 269",
-        "regesteKurz": "Art. 104, 115 und 118 Abs. 1 StPO; Art. 317 StGB; Urkundenfälschung im Amt, Geschädigtenstellung. Massgebende Prinzipien für die Zulassung als Privatklägerschaft (E. 3.1 und 3.2). Die beschwerdeführende Gesellschaft wurde durch den…",
-        "datum": "2021-04-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "regesteKurz": null,
+        "datum": "2025-02-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -3125,6 +3247,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_III_401",
         "zitierung": "BGE 148 III 401",
         "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen…",
@@ -3133,29 +3265,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_256",
-        "zitierung": "BGE 148 IV 256",
-        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 5 BGG; Art. 115, 118 und 121 StPO; Art. 110 Abs. 1 StGB; Stellung der geschädigten Person und Beschwerdelegitimation der Erben mit nachrangiger Erbberechtigung; Übergang der Verfahrensrechte. Die…",
-        "datum": "2022-04-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_170",
-        "zitierung": "BGE 148 IV 170",
-        "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
-        "datum": "2022-04-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "119": [
+      {
+        "key": "bge_148_IV_124",
+        "zitierung": "BGE 148 IV 124",
+        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
+        "datum": "2022-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
       {
         "key": "bge_148_III_401",
         "zitierung": "BGE 148 III 401",
@@ -3177,22 +3299,22 @@
         "gewicht": 1
       },
       {
-        "key": "bge_148_IV_124",
-        "zitierung": "BGE 148 IV 124",
-        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
-        "datum": "2022-01-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_146_IV_76",
         "zitierung": "BGE 146 IV 76",
         "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die…",
         "datum": "2019-11-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "regesteKurz": null,
+        "datum": "2025-02-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -3207,6 +3329,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_46",
         "zitierung": "BGE 151 IV 46",
         "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
@@ -3215,29 +3347,29 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_151_III_418__voll",
-        "zitierung": "Urteil 4A_249/2024 (nicht publ. in BGE 151 III 418)",
-        "regesteKurz": null,
-        "datum": "2025-03-04",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
-        "regesteKurz": null,
-        "datum": "2025-02-06",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "121": [
+      {
+        "key": "bge_148_IV_256",
+        "zitierung": "BGE 148 IV 256",
+        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 5 BGG; Art. 115, 118 und 121 StPO; Art. 110 Abs. 1 StGB; Stellung der geschädigten Person und Beschwerdelegitimation der Erben mit nachrangiger Erbberechtigung; Übergang der Verfahrensrechte. Die…",
+        "datum": "2022-04-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_IV_170",
+        "zitierung": "BGE 148 IV 170",
+        "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
+        "datum": "2022-04-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_146_IV_76",
         "zitierung": "BGE 146 IV 76",
@@ -3249,20 +3381,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_148_IV_256",
-        "zitierung": "BGE 148 IV 256",
-        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 5 BGG; Art. 115, 118 und 121 StPO; Art. 110 Abs. 1 StGB; Stellung der geschädigten Person und Beschwerdelegitimation der Erben mit nachrangiger Erbberechtigung; Übergang der Verfahrensrechte. Die…",
-        "datum": "2022-04-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_170",
-        "zitierung": "BGE 148 IV 170",
-        "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
-        "datum": "2022-04-07",
+        "key": "bge_152_IV_27",
+        "zitierung": "BGE 152 IV 27",
+        "regesteKurz": "a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…",
+        "datum": "2026-01-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3341,10 +3463,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "key": "bge_152_IV_161__voll",
+        "zitierung": "Urteil 6B_1141/2023 (nicht publ. in BGE 152 IV 161)",
         "regesteKurz": null,
-        "datum": "2025-02-06",
+        "datum": "2025-11-12",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -3605,6 +3727,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_136",
+        "zitierung": "BGE 152 II 136",
+        "regesteKurz": "Art. 12 lit. a BGFA; Disziplinarmassnahme; berufliche Verfehlung technischer Art; Aufhebung der ausgesprochenen Verwarnung. Um disziplinarisch geahndet zu werden, müssen berufliche Verfehlungen technischer Art schwerwiegend sein. Die…",
+        "datum": "2025-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_447",
         "zitierung": "BGE 150 IV 447",
         "regesteKurz": "Art. 19 Abs. 2 lit. b StPO; Art. 29 Abs. 1 und Art. 30 Abs. 1 BV; Art. 6 Ziff. 1 EMRK; Zuständigkeit des Einzelgerichts, Obergrenze von zwei Jahren Freiheitsstrafe. Bei der Einhaltung der Maximalgrenze von zwei Jahren gemäss Art. 19 Abs. 2…",
@@ -3639,16 +3771,6 @@
         "zitierung": "BGE 148 IV 456",
         "regesteKurz": "Art. 337 Abs. 3 und Art. 405 Abs. 3 StPO; persönliches Erscheinen der Staatsanwaltschaft an der Berufungsverhandlung. Art. 405 Abs. 3 StPO schreibt für das mündliche Verfahren vor, dass die Verfahrensleitung die Staatsanwaltschaft in den…",
         "datum": "2022-09-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_172",
-        "zitierung": "BGE 146 IV 172",
-        "regesteKurz": "Art. 78 ff. BGG; Art. 21 und 24 der Verordnung (EG) Nr. 1987/2006 (SIS-II-Verordnung); Art. 20 f. N-SIS-Verordnung; Art. 391 Abs. 2 StPO; Ausschreibung der Landesverweisung im SIS: Voraussetzungen, Zuständigkeit, Verfahren,…",
-        "datum": "2020-04-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -3824,7 +3946,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_146_IV_297",
@@ -3851,6 +3973,16 @@
         "zitierung": "Urteil 6B_219/2021 (nicht publ. in BGE 149 IV 248)",
         "regesteKurz": null,
         "datum": "2023-04-19",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_IV_288__voll",
+        "zitierung": "Urteil 6B_1270/2021 (nicht publ. in BGE 148 IV 288)",
+        "regesteKurz": null,
+        "datum": "2022-06-02",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -3885,34 +4017,24 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_149_IV_352",
-        "zitierung": "BGE 149 IV 352",
-        "regesteKurz": "Art. 43 ff. StPO; nationale Rechtshilfe, keine prozessualen Zwangsmittel zulässig. Im Rechtshilfeverfahren stehen der ersuchenden Behörde gegenüber der ersuchten Behörde keine prozessualen Zwangsmittel zur Verfügung. Die Regeln über die…",
-        "datum": "2023-07-10",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "140": [
-      {
-        "key": "bge_149_IV_352",
-        "zitierung": "BGE 149 IV 352",
-        "regesteKurz": "Art. 43 ff. StPO; nationale Rechtshilfe, keine prozessualen Zwangsmittel zulässig. Im Rechtshilfeverfahren stehen der ersuchenden Behörde gegenüber der ersuchten Behörde keine prozessualen Zwangsmittel zur Verfügung. Die Regeln über die…",
-        "datum": "2023-07-10",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
       {
         "key": "bge_147_IV_534",
         "zitierung": "BGE 147 IV 534",
         "regesteKurz": "Art. 139 Abs. 2, Art. 164 Abs. 1 und 2, Art. 177 Abs. 2 StPO; Abklärungen zum Vorleben und den persönlichen Verhältnissen von Zeugen. Art. 164 Abs. 1 StPO dient dem Schutz der Persönlichkeit von Zeuginnen und Zeugen (E. 2.3.2). Über die…",
         "datum": "2021-08-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_149_IV_352",
+        "zitierung": "BGE 149 IV 352",
+        "regesteKurz": "Art. 43 ff. StPO; nationale Rechtshilfe, keine prozessualen Zwangsmittel zulässig. Im Rechtshilfeverfahren stehen der ersuchenden Behörde gegenüber der ersuchten Behörde keine prozessualen Zwangsmittel zur Verfügung. Die Regeln über die…",
+        "datum": "2023-07-10",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4255,6 +4377,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_242__voll",
+        "zitierung": "Urteil 7B_760/2023 (nicht publ. in BGE 152 IV 242)",
+        "regesteKurz": null,
+        "datum": "2026-02-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_IV_409__voll",
         "zitierung": "Urteil 6B_257/2020 (nicht publ. in BGE 147 IV 409)",
         "regesteKurz": null,
@@ -4267,16 +4399,6 @@
     ],
     "158": [
       {
-        "key": "bge_151_IV_73",
-        "zitierung": "BGE 151 IV 73",
-        "regesteKurz": "Art. 157 f., insb. Art. 158 Abs. 1 und 2, Art. 141 Abs. 1 und 4 StPO; Erfragung des Zugangscodes zu einem Mobiltelefon im Rahmen einer Hausdurchsuchung; materieller Begriff der Beschuldigteneinvernahme; \"nemo tenetur\"-Grundsatz;…",
-        "datum": "2025-01-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_IV_9",
         "zitierung": "BGE 149 IV 9",
         "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
@@ -4284,13 +4406,33 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 1
       },
       {
         "key": "bge_148_IV_221",
         "zitierung": "BGE 148 IV 221",
         "regesteKurz": "Art. 14 Abs. 3 lit. g UNO-Pakt II; Art. 3, 25 Abs. 1 sowie Art. 50 VStrR; Art. 264 Abs. 1 und 2 StPO; Siegelung und Entsiegelung sichergestellter elektronischer Geräte im Verwaltungsstrafverfahren. Zweck der Siegelung ist, jegliche…",
         "datum": "2022-02-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_73",
+        "zitierung": "BGE 151 IV 73",
+        "regesteKurz": "Art. 157 f., insb. Art. 158 Abs. 1 und 2, Art. 141 Abs. 1 und 4 StPO; Erfragung des Zugangscodes zu einem Mobiltelefon im Rahmen einer Hausdurchsuchung; materieller Begriff der Beschuldigteneinvernahme; \"nemo tenetur\"-Grundsatz;…",
+        "datum": "2025-01-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4579,6 +4721,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_242",
+        "zitierung": "BGE 152 IV 242",
+        "regesteKurz": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels. Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den…",
+        "datum": "2026-02-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_IV_462",
         "zitierung": "BGE 150 IV 462",
         "regesteKurz": "Art. 182 ff. und 195 StPO; Abgrenzung zwischen Sachverständigengutachten und amtlichem Bericht. Ein forensisch-psychologischer Bericht, der zur (vorläufigen) Einschätzung der Wiederholungsgefahr im Haftverfahren eingeholt wird und dessen…",
@@ -4633,16 +4785,6 @@
         "zitierung": "Urteil 6B_75/2023 (nicht publ. in BGE 149 IV 284)",
         "regesteKurz": null,
         "datum": "2023-04-18",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_IV_91__voll",
-        "zitierung": "Urteil 6B_1362/2021 (nicht publ. in BGE 149 IV 91)",
-        "regesteKurz": null,
-        "datum": "2023-01-26",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -5019,6 +5161,16 @@
         "gewicht": 0
       },
       {
+        "key": "bge_152_IV_234__voll",
+        "zitierung": "Urteil 7B_65/2023 (nicht publ. in BGE 152 IV 234)",
+        "regesteKurz": null,
+        "datum": "2025-12-05",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_I_218__voll",
         "zitierung": "Urteil 1C_39/2021 (nicht publ. in BGE 149 I 218)",
         "regesteKurz": null,
@@ -5033,16 +5185,6 @@
         "zitierung": "Urteil 1B_333/2020 (nicht publ. in BGE 147 IV 385)",
         "regesteKurz": null,
         "datum": "2021-06-22",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_424__voll",
-        "zitierung": "Urteil 1B_132/2020 (nicht publ. in BGE 147 IV 424)",
-        "regesteKurz": null,
-        "datum": "2020-06-18",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -5259,6 +5401,16 @@
         "datum": "2024-04-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -5509,22 +5661,22 @@
         "gewicht": 1
       },
       {
-        "key": "bge_146_IV_49",
-        "zitierung": "BGE 146 IV 49",
-        "regesteKurz": "Art. 61 Abs. 4 Satz 1 StGB; stationäre therapeutische Massnahme für junge Erwachsene, Beginn der vierjährigen Höchstdauer. Der vorzeitige Massnahmenvollzug ist bei der Berechnung der vierjährigen Höchstdauer gemäss Art. 61 Abs. 4 Satz 1…",
-        "datum": "2020-02-20",
+        "key": "bge_146_I_115",
+        "zitierung": "BGE 146 I 115",
+        "regesteKurz": "Art. 5 Ziff. 1 EMRK; Art. 5 Abs. 1 und Art. 31 Abs. 1 BV; Art. 221, Art. 229-233 und Art. 363 f. StPO. Ausreichende gesetzliche Grundlage für Sicherheitshaft im massnahmenrechtlichen gerichtlichen Nachverfahren. Auseinandersetzung mit dem…",
+        "datum": "2020-03-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       },
       {
-        "key": "bge_150_IV_462__voll",
-        "zitierung": "Urteil 7B_843/2024 (nicht publ. in BGE 150 IV 462)",
-        "regesteKurz": null,
-        "datum": "2024-09-04",
-        "leitcharakter": "routine",
-        "gericht": "bger",
+        "key": "bge_146_IV_49",
+        "zitierung": "BGE 146 IV 49",
+        "regesteKurz": "Art. 61 Abs. 4 Satz 1 StGB; stationäre therapeutische Massnahme für junge Erwachsene, Beginn der vierjährigen Höchstdauer. Der vorzeitige Massnahmenvollzug ist bei der Berechnung der vierjährigen Höchstdauer gemäss Art. 61 Abs. 4 Satz 1…",
+        "datum": "2020-02-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       }
@@ -7516,6 +7668,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       },
       {
@@ -7549,6 +7711,16 @@
         "datum": "2024-11-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -7643,6 +7815,16 @@
         "datum": "2019-11-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -7901,10 +8083,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_IV_465__voll",
-        "zitierung": "Urteil 6B_336/2021 (nicht publ. in BGE 147 IV 465)",
+        "key": "bge_152_IV_234__voll",
+        "zitierung": "Urteil 7B_65/2023 (nicht publ. in BGE 152 IV 234)",
         "regesteKurz": null,
-        "datum": "2021-08-27",
+        "datum": "2025-12-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -7920,7 +8102,27 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_IV_18__voll",
+        "zitierung": "Urteil 7B_455/2023 (nicht publ. in BGE 151 IV 18)",
+        "regesteKurz": null,
+        "datum": "2024-10-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_149_IV_307",
@@ -7939,16 +8141,6 @@
         "datum": "2022-03-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_18__voll",
-        "zitierung": "Urteil 7B_455/2023 (nicht publ. in BGE 151 IV 18)",
-        "regesteKurz": null,
-        "datum": "2024-10-03",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -7997,6 +8189,16 @@
     ],
     "322": [
       {
+        "key": "bge_148_IV_124",
+        "zitierung": "BGE 148 IV 124",
+        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
+        "datum": "2022-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_IV_76",
         "zitierung": "BGE 146 IV 76",
         "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die…",
@@ -8007,10 +8209,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_148_IV_124",
-        "zitierung": "BGE 148 IV 124",
-        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
-        "datum": "2022-01-17",
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -8028,6 +8230,26 @@
       }
     ],
     "323": [
+      {
+        "key": "bge_148_IV_124",
+        "zitierung": "BGE 148 IV 124",
+        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
+        "datum": "2022-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_IV_201",
         "zitierung": "BGE 150 IV 201",
@@ -8047,16 +8269,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_124",
-        "zitierung": "BGE 148 IV 124",
-        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
-        "datum": "2022-01-17",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "324": [
@@ -8067,6 +8279,16 @@
         "datum": "2020-10-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_147_IV_505__voll",
+        "zitierung": "Urteil 6B_1498/2020 (nicht publ. in BGE 147 IV 505)",
+        "regesteKurz": null,
+        "datum": "2021-11-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -8111,10 +8333,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_IV_505__voll",
-        "zitierung": "Urteil 6B_1498/2020 (nicht publ. in BGE 147 IV 505)",
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
         "regesteKurz": null,
-        "datum": "2021-11-29",
+        "datum": "2025-12-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -8122,6 +8344,16 @@
       }
     ],
     "325": [
+      {
+        "key": "bge_149_IV_128",
+        "zitierung": "BGE 149 IV 128",
+        "regesteKurz": "Art. 312 StGB; Amtsmissbrauch; besondere Nachteilsabsicht. Der vom Täter beabsichtigte Nachteil kann auch in der Zwangshandlung selbst liegen ungeachtet dessen, ob er ein legitimes Ziel verfolgt (Präzisierung der Rechtsprechung; E. 1,…",
+        "datum": "2023-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 7
+      },
       {
         "key": "bge_148_IV_124",
         "zitierung": "BGE 148 IV 124",
@@ -8131,16 +8363,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 6
-      },
-      {
-        "key": "bge_149_IV_128",
-        "zitierung": "BGE 149 IV 128",
-        "regesteKurz": "Art. 312 StGB; Amtsmissbrauch; besondere Nachteilsabsicht. Der vom Täter beabsichtigte Nachteil kann auch in der Zwangshandlung selbst liegen ungeachtet dessen, ob er ein legitimes Ziel verfolgt (Präzisierung der Rechtsprechung; E. 1,…",
-        "datum": "2023-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
       },
       {
         "key": "bge_147_IV_439",
@@ -8160,7 +8382,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_150_IV_447",
@@ -8365,6 +8587,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_161",
+        "zitierung": "BGE 152 IV 161",
+        "regesteKurz": "Art. 183 Ziff. 2 StGB; Kindsentführung. An BGE 141 IV 10 ist auch unter der am 1. Juli 2014 in Kraft getretenen Bestimmung von Art. 301a ZGB festzuhalten (E. 2.4). Die massive Verletzung des Kindeswohls im Sinne von BGE 141 IV 10 lässt…",
+        "datum": "2025-11-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_149_IV_42",
@@ -8697,6 +8929,16 @@
     ],
     "344": [
       {
+        "key": "bge_150_IV_433__voll",
+        "zitierung": "Urteil 6B_1033/2023 (nicht publ. in BGE 150 IV 433)",
+        "regesteKurz": null,
+        "datum": "2024-07-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_148_IV_124__voll",
         "zitierung": "Urteil 6B_1404/2020 (nicht publ. in BGE 148 IV 124)",
         "regesteKurz": null,
@@ -8705,6 +8947,26 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_147_IV_505__voll",
+        "zitierung": "Urteil 6B_1498/2020 (nicht publ. in BGE 147 IV 505)",
+        "regesteKurz": null,
+        "datum": "2021-11-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_365__voll",
@@ -8737,16 +8999,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_IV_433__voll",
-        "zitierung": "Urteil 6B_1033/2023 (nicht publ. in BGE 150 IV 433)",
-        "regesteKurz": null,
-        "datum": "2024-07-08",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_150_IV_188__voll",
         "zitierung": "Urteil 6B_831/2023 (nicht publ. in BGE 150 IV 188)",
         "regesteKurz": null,
@@ -8755,29 +9007,19 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_150_IV_255__voll",
-        "zitierung": "Urteil 6B_393/2023 (nicht publ. in BGE 150 IV 255)",
-        "regesteKurz": null,
-        "datum": "2024-03-13",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_298__voll",
-        "zitierung": "Urteil 6B_120/2021 (nicht publ. in BGE 148 IV 298)",
-        "regesteKurz": null,
-        "datum": "2022-04-11",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "345": [
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_146_IV_59__voll",
         "zitierung": "Urteil 6B_389/2019 (nicht publ. in BGE 146 IV 59)",
@@ -8813,6 +9055,16 @@
     ],
     "349": [
       {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_IV_356",
         "zitierung": "BGE 148 IV 356",
         "regesteKurz": "Art. 6 und 195 Abs. 2 StPO; Untersuchungsgrundsatz; Einholen von Berichten und Auskünften; Auskünfte über Vorstrafen und den Leumund der beschuldigten Person. Das Sachgericht hat vor Erlass des Urteils einen aktuellen Strafregisterauszug…",
@@ -8825,6 +9077,16 @@
     ],
     "350": [
       {
+        "key": "bge_149_IV_128",
+        "zitierung": "BGE 149 IV 128",
+        "regesteKurz": "Art. 312 StGB; Amtsmissbrauch; besondere Nachteilsabsicht. Der vom Täter beabsichtigte Nachteil kann auch in der Zwangshandlung selbst liegen ungeachtet dessen, ob er ein legitimes Ziel verfolgt (Präzisierung der Rechtsprechung; E. 1,…",
+        "datum": "2023-01-30",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 7
+      },
+      {
         "key": "bge_148_IV_124",
         "zitierung": "BGE 148 IV 124",
         "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
@@ -8833,16 +9095,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 6
-      },
-      {
-        "key": "bge_149_IV_128",
-        "zitierung": "BGE 149 IV 128",
-        "regesteKurz": "Art. 312 StGB; Amtsmissbrauch; besondere Nachteilsabsicht. Der vom Täter beabsichtigte Nachteil kann auch in der Zwangshandlung selbst liegen ungeachtet dessen, ob er ein legitimes Ziel verfolgt (Präzisierung der Rechtsprechung; E. 1,…",
-        "datum": "2023-01-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 5
       },
       {
         "key": "bge_147_IV_439",
@@ -8885,6 +9137,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_150_IV_433__voll",
+        "zitierung": "Urteil 6B_1033/2023 (nicht publ. in BGE 150 IV 433)",
+        "regesteKurz": null,
+        "datum": "2024-07-08",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_150_IV_188__voll",
         "zitierung": "Urteil 6B_831/2023 (nicht publ. in BGE 150 IV 188)",
         "regesteKurz": null,
@@ -8893,16 +9155,6 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_149_IV_42",
-        "zitierung": "BGE 149 IV 42",
-        "regesteKurz": "Art. 333 Abs. 1 StPO; Änderung der Anklage. Die Rückweisung an die Staatsanwaltschaft gemäss Art. 333 Abs. 1 StPO setzt gemäss dem klaren Gesetzeswortlaut und der bundesgerichtlichen Rechtsprechung voraus, dass der in der Anklageschrift…",
-        "datum": "2022-11-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "351": [
@@ -8936,7 +9188,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_147_IV_329",
@@ -8947,6 +9199,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_46",
@@ -8997,16 +9259,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_265",
-        "zitierung": "BGE 148 IV 265",
-        "regesteKurz": "Art. 355 Abs. 3, Art. 356 Abs. 7 und Art. 392 StPO; Strafbefehlsverfahren; Antrag auf Aufhebung des Strafbefehls gestützt auf Art. 392 StPO; Zuständigkeit der Staatsanwaltschaft und der Erstinstanz. Art. 356 Abs. 7 StPO, soweit er eine…",
-        "datum": "2022-07-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "353": [
@@ -9018,23 +9270,43 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_149_IV_50",
-        "zitierung": "BGE 149 IV 50",
-        "regesteKurz": "Art. 355 und 356 StPO; Einsprache gegen einen Strafbefehl, Rückzug der Einsprache. Die beschuldigte Person kann die Einsprache nur zurückziehen, wenn die Staatsanwaltschaft nach Abnahme der Beweise am ursprünglichen Strafbefehl festhält.…",
-        "datum": "2023-01-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
+        "gewicht": 2
       },
       {
         "key": "bge_149_IV_9",
         "zitierung": "BGE 149 IV 9",
         "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
         "datum": "2022-09-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_38",
+        "zitierung": "BGE 152 I 38",
+        "regesteKurz": "a Art. 7 EMRK; Art. 11A des Genfer Strafgesetzes vom 17. November 2006; Bettelei; konkrete Prüfung der Gesetzmässigkeit von gestützt auf kantonales Recht verhängten Bussen. Wiederholung der Anforderungen an die Bestimmtheit des Gesetzes…",
+        "datum": "2025-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_50",
+        "zitierung": "BGE 149 IV 50",
+        "regesteKurz": "Art. 355 und 356 StPO; Einsprache gegen einen Strafbefehl, Rückzug der Einsprache. Die beschuldigte Person kann die Einsprache nur zurückziehen, wenn die Staatsanwaltschaft nach Abnahme der Beweise am ursprünglichen Strafbefehl festhält.…",
+        "datum": "2023-01-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -9051,6 +9323,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
+      },
+      {
+        "key": "bge_149_IV_9",
+        "zitierung": "BGE 149 IV 9",
+        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
+        "datum": "2022-09-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
       },
       {
         "key": "bge_148_IV_445",
@@ -9073,30 +9355,30 @@
         "gewicht": 1
       },
       {
-        "key": "bge_149_IV_50",
-        "zitierung": "BGE 149 IV 50",
-        "regesteKurz": "Art. 355 und 356 StPO; Einsprache gegen einen Strafbefehl, Rückzug der Einsprache. Die beschuldigte Person kann die Einsprache nur zurückziehen, wenn die Staatsanwaltschaft nach Abnahme der Beweise am ursprünglichen Strafbefehl festhält.…",
-        "datum": "2023-01-18",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_IV_9",
-        "zitierung": "BGE 149 IV 9",
-        "regesteKurz": "a Art. 6 EMRK, Art. 14 Abs. 3 lit. g UNO-Pakt II, Art. 32 BV und Art. 113 StPO; Selbstbelastungsprivileg (\"nemo tenetur se ipsum accusare\") und Recht zu schweigen; Verpflichtung, die Personalien anzugeben. Allgemeiner Geltungsbereich des…",
-        "datum": "2022-09-27",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_IV_274",
         "zitierung": "BGE 147 IV 274",
         "regesteKurz": "a Art. 6 Ziff. 1 EMRK; Art. 30 Abs. 1 BV; Art. 70 VStrR; Art. 97 Abs. 3 StGB; Strafverfügung; Verjährungsunterbrechung. Bestätigung der Rechtsprechung, wonach eine Strafverfügung gemäss Art. 70 VStrR verjährungsrechtlich im Sinne von Art.…",
         "datum": "2021-01-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_50",
+        "zitierung": "BGE 149 IV 50",
+        "regesteKurz": "Art. 355 und 356 StPO; Einsprache gegen einen Strafbefehl, Rückzug der Einsprache. Die beschuldigte Person kann die Einsprache nur zurückziehen, wenn die Staatsanwaltschaft nach Abnahme der Beweise am ursprünglichen Strafbefehl festhält.…",
+        "datum": "2023-01-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -9115,6 +9397,16 @@
     ],
     "355": [
       {
+        "key": "bge_147_IV_274",
+        "zitierung": "BGE 147 IV 274",
+        "regesteKurz": "a Art. 6 Ziff. 1 EMRK; Art. 30 Abs. 1 BV; Art. 70 VStrR; Art. 97 Abs. 3 StGB; Strafverfügung; Verjährungsunterbrechung. Bestätigung der Rechtsprechung, wonach eine Strafverfügung gemäss Art. 70 VStrR verjährungsrechtlich im Sinne von Art.…",
+        "datum": "2021-01-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_IV_30",
         "zitierung": "BGE 146 IV 30",
         "regesteKurz": "Art. 85 Abs. 4 lit. a und 356 Abs. 4 StPO; Einsprache gegen einen Strafbefehl, Nichterscheinen an der Hauptverhandlung im Verfahren vor dem erstinstanzlichen Gericht, Rückzugsfiktion der Einsprache. Die gesetzliche Fiktion, wonach bei…",
@@ -9123,6 +9415,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_149_IV_50",
@@ -9149,16 +9451,6 @@
         "zitierung": "BGE 148 IV 445",
         "regesteKurz": "Art. 353 Abs. 1 lit. k und Art. 80 Abs. 2 StPO; auch beim Erlass eines Strafbefehls stellt die persönliche handschriftliche Unterschrift ein formelles Gültigkeitserfordernis im Interesse der Rechtssicherheit dar. Das Anbringen eines…",
         "datum": "2022-06-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_274",
-        "zitierung": "BGE 147 IV 274",
-        "regesteKurz": "a Art. 6 Ziff. 1 EMRK; Art. 30 Abs. 1 BV; Art. 70 VStrR; Art. 97 Abs. 3 StGB; Strafverfügung; Verjährungsunterbrechung. Bestätigung der Rechtsprechung, wonach eine Strafverfügung gemäss Art. 70 VStrR verjährungsrechtlich im Sinne von Art.…",
-        "datum": "2021-01-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -9197,6 +9489,16 @@
         "gewicht": 2
       },
       {
+        "key": "bge_148_IV_445",
+        "zitierung": "BGE 148 IV 445",
+        "regesteKurz": "Art. 353 Abs. 1 lit. k und Art. 80 Abs. 2 StPO; auch beim Erlass eines Strafbefehls stellt die persönliche handschriftliche Unterschrift ein formelles Gültigkeitserfordernis im Interesse der Rechtssicherheit dar. Das Anbringen eines…",
+        "datum": "2022-06-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_146_IV_286",
         "zitierung": "BGE 146 IV 286",
         "regesteKurz": "Art. 356 Abs. 3 StPO; Strafbefehl; Rückzug der Einsprache durch konkludente Handlung. Der Rückzug der Einsprache gegen einen Strafbefehl kann durch konkludentes Handeln erfolgen. Wenn die einsprechende Person die im Strafbefehl der…",
@@ -9215,6 +9517,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_225",
@@ -9241,26 +9553,6 @@
         "zitierung": "BGE 149 IV 105",
         "regesteKurz": "Art. 32 und Art. 33 Abs. 1 und 3 StGB; Art. 392 StPO; Rückzug des Strafantrags; Folgen des Prinzips der Unteilbarkeit des Strafantrags. Wenn in einem Strafverfahren, das wegen einer nur auf Antrag hin zu verfolgenden Straftat eröffnet…",
         "datum": "2022-12-16",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_265",
-        "zitierung": "BGE 148 IV 265",
-        "regesteKurz": "Art. 355 Abs. 3, Art. 356 Abs. 7 und Art. 392 StPO; Strafbefehlsverfahren; Antrag auf Aufhebung des Strafbefehls gestützt auf Art. 392 StPO; Zuständigkeit der Staatsanwaltschaft und der Erstinstanz. Art. 356 Abs. 7 StPO, soweit er eine…",
-        "datum": "2022-07-14",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_IV_445",
-        "zitierung": "BGE 148 IV 445",
-        "regesteKurz": "Art. 353 Abs. 1 lit. k und Art. 80 Abs. 2 StPO; auch beim Erlass eines Strafbefehls stellt die persönliche handschriftliche Unterschrift ein formelles Gültigkeitserfordernis im Interesse der Rechtssicherheit dar. Das Anbringen eines…",
-        "datum": "2022-06-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -9411,6 +9703,26 @@
     ],
     "363": [
       {
+        "key": "bge_150_IV_38",
+        "zitierung": "BGE 150 IV 38",
+        "regesteKurz": "a Art. 78 ff. BGG; Art. 222 und 429-431 StPO; Zulässigkeit der Beschwerde in Strafsachen. Gegen kantonal letztinstanzliche Entscheide über die Anordnung von Sicherheitshaft im selbstständigen gerichtlichen Nachverfahren betreffend die…",
+        "datum": "2023-11-20",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_I_115",
+        "zitierung": "BGE 146 I 115",
+        "regesteKurz": "Art. 5 Ziff. 1 EMRK; Art. 5 Abs. 1 und Art. 31 Abs. 1 BV; Art. 221, Art. 229-233 und Art. 363 f. StPO. Ausreichende gesetzliche Grundlage für Sicherheitshaft im massnahmenrechtlichen gerichtlichen Nachverfahren. Auseinandersetzung mit dem…",
+        "datum": "2020-03-31",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_147_IV_218__voll",
         "zitierung": "Urteil 6B_82/2021 (nicht publ. in BGE 147 IV 218)",
         "regesteKurz": null,
@@ -9421,24 +9733,24 @@
         "gewicht": 2
       },
       {
-        "key": "bge_150_IV_38",
-        "zitierung": "BGE 150 IV 38",
-        "regesteKurz": "a Art. 78 ff. BGG; Art. 222 und 429-431 StPO; Zulässigkeit der Beschwerde in Strafsachen. Gegen kantonal letztinstanzliche Entscheide über die Anordnung von Sicherheitshaft im selbstständigen gerichtlichen Nachverfahren betreffend die…",
-        "datum": "2023-11-20",
+        "key": "bge_148_IV_1",
+        "zitierung": "BGE 148 IV 1",
+        "regesteKurz": "Art. 59 Abs. 1 und 4, Art. 62a Abs. 1 lit. b, Art. 62c Abs. 1 lit. a, Abs. 3 und 4, Art. 63 Abs. 1, Art. 63a Abs. 2 und 3, Art. 63b Abs. 5 und Art. 64 Abs. 1 StGB; Art. 2 Abs. 2, Art. 29 f., Art. 80 Abs. 1, Art. 197 Abs. 1 lit. a, Art. 393…",
+        "datum": "2021-08-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
       },
       {
-        "key": "bge_146_I_115",
-        "zitierung": "BGE 146 I 115",
-        "regesteKurz": "Art. 5 Ziff. 1 EMRK; Art. 5 Abs. 1 und Art. 31 Abs. 1 BV; Art. 221, Art. 229-233 und Art. 363 f. StPO. Ausreichende gesetzliche Grundlage für Sicherheitshaft im massnahmenrechtlichen gerichtlichen Nachverfahren. Auseinandersetzung mit dem…",
-        "datum": "2020-03-31",
+        "key": "bge_152_IV_185",
+        "zitierung": "BGE 152 IV 185",
+        "regesteKurz": "Art. 364a Abs. 1 lit. a StPO; ernsthafte Erwartung der Anordnung des Vollzugs einer freiheitsentziehenden Sanktion als Voraussetzung für Sicherheitshaft im Nachverfahren. Sicherheitshaft nach Art. 364a StPO setzt unter anderem voraus, dass…",
+        "datum": "2026-02-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_330",
@@ -9461,32 +9773,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_IV_1",
-        "zitierung": "BGE 148 IV 1",
-        "regesteKurz": "Art. 59 Abs. 1 und 4, Art. 62a Abs. 1 lit. b, Art. 62c Abs. 1 lit. a, Abs. 3 und 4, Art. 63 Abs. 1, Art. 63a Abs. 2 und 3, Art. 63b Abs. 5 und Art. 64 Abs. 1 StGB; Art. 2 Abs. 2, Art. 29 f., Art. 80 Abs. 1, Art. 197 Abs. 1 lit. a, Art. 393…",
-        "datum": "2021-08-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_147_IV_108",
         "zitierung": "BGE 147 IV 108",
         "regesteKurz": "Art. 34 Abs. 3 StPO; nachträgliche Gesamtstrafenbildung. Art. 34 Abs. 3 StPO stellt sicher, dass die materiell-rechtlichen Vorschriften der Gesamtstrafenbildung von der verurteilten Person wirksam durchgesetzt werden können (E. 2.2.1). Das…",
         "datum": "2020-08-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_205__voll",
-        "zitierung": "Urteil 6B_1375/2020 (nicht publ. in BGE 147 IV 205)",
-        "regesteKurz": null,
-        "datum": "2021-02-22",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -9545,6 +9837,28 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "367": [
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "368": [
@@ -9565,6 +9879,16 @@
         "datum": "2019-10-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -9589,6 +9913,18 @@
         "datum": "2019-10-28",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "371": [
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -9927,6 +10263,16 @@
     ],
     "382": [
       {
+        "key": "bge_151_IV_46",
+        "zitierung": "BGE 151 IV 46",
+        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
+        "datum": "2024-11-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_146_IV_76",
         "zitierung": "BGE 146 IV 76",
         "regesteKurz": "a Art. 110 Abs. 1 StGB; Art. 118, 121 Abs. 1 und 382 Abs. 1 StPO; Legitimation der Angehörigen einer verstorbenen geschädigten Person zur Anfechtung einer Verfahrenseinstellung. Die Angehörigen der verstorbenen geschädigten Person, die…",
@@ -9935,16 +10281,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_151_IV_46",
-        "zitierung": "BGE 151 IV 46",
-        "regesteKurz": "Art. 360 StPO; Auslegung; Umfang des Rechts der Privatklägerschaft, die Anklageschrift im abgekürzten Verfahren abzulehnen. Die Ablehnung einer im abgekürzten Verfahren ergangenen Anklageschrift durch die Privatklägerschaft (Art. 360 Abs.…",
-        "datum": "2024-11-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
       },
       {
         "key": "bge_149_IV_91",
@@ -9967,6 +10303,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_148_IV_124",
+        "zitierung": "BGE 148 IV 124",
+        "regesteKurz": "Art. 11 Abs. 1, Art. 119 Abs. 2 lit. a, Art. 319 Abs. 1 lit. a, Art. 320 Abs. 4, Art. 324 Abs. 2, Art. 333 Abs. 1 StPO; Art. 4 des Protokolls Nr. 7 zur EMRK; Art. 14 Abs. 7 UNO-Pakt II; Teileinstellungsverfügung; Grundsatz \"ne bis in…",
+        "datum": "2022-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_IV_505",
         "zitierung": "BGE 147 IV 505",
         "regesteKurz": "Art. 3 Abs. 2 lit. a, Art. 381 Abs. 1, Art. 391 Abs. 2, Art. 401 StPO; Zulässigkeit der Anschlussberufung; Grundsatz von Treu und Glauben im Strafverfahren. Legitimation der Staatsanwaltschaft, Anschlussberufung zu erheben, um damit das…",
@@ -9977,30 +10323,20 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_219",
         "zitierung": "BGE 151 IV 219",
         "regesteKurz": "Art. 401 StPO; Anschlussberufung; Ausschluss der Anschlussberufung auf eine Anschlussberufung. Wer Hauptberufung erhoben hat, kann gegen die hiergegen geführte Anschlussberufung nicht seinerseits Anschlussberufung erklären. Eine…",
         "datum": "2025-02-24",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_IV_98",
-        "zitierung": "BGE 151 IV 98",
-        "regesteKurz": "Art. 81 Abs. 1 lit. b Ziff. 3 BGG; Beschwerdelegitimation der Staatsanwaltschaft; Gültigkeit des Strafantrags. Die Staatsanwaltschaft ist in Bezug auf die Frage der Gültigkeit des Strafantrags nicht zur Beschwerde an das Bundesgericht…",
-        "datum": "2024-11-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_150_IV_409",
-        "zitierung": "BGE 150 IV 409",
-        "regesteKurz": "Art. 55a StGB; Art. 382 Abs. 1 und Art. 393 Abs. 1 lit. a StPO; kantonale Beschwerde gegen einen die Sistierung des Verfahrens ablehnenden Entscheid; Rechtsweg und Beschwerdelegitimation des Beschuldigten. Bei der auf Art. 55a StGB…",
-        "datum": "2024-07-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -10134,7 +10470,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_147_IV_409",
@@ -10151,6 +10487,16 @@
         "zitierung": "Urteil 6B_1403/2021 (nicht publ. in BGE 148 I 295)",
         "regesteKurz": null,
         "datum": "2022-06-09",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_IV_288__voll",
+        "zitierung": "Urteil 6B_1270/2021 (nicht publ. in BGE 148 IV 288)",
+        "regesteKurz": null,
+        "datum": "2022-06-02",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -10191,16 +10537,6 @@
         "zitierung": "BGE 147 IV 127",
         "regesteKurz": "Art. 406 StPO; Art. 6 Ziff. 1 EMRK; Voraussetzungen für die Durchführung eines schriftlichen Berufungsverfahrens. Das Berufungsverfahren ist grundsätzlich mündlich. Es kann nur ausnahmsweise unter den engen Voraussetzungen von Art. 406…",
         "datum": "2020-10-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_IV_332",
-        "zitierung": "BGE 146 IV 332",
-        "regesteKurz": "Art. 429 Abs. 1 lit. a und Abs. 2 StPO; Entschädigungsanspruch bei Verfahrenseinstellung. Wird ein Strafverfahren eingestellt, hat die beschuldigte Person gemäss Art. 429 Abs. 1 lit. a StPO Anspruch auf eine Entschädigung ihrer…",
-        "datum": "2020-09-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -10925,6 +11261,16 @@
     ],
     "405": [
       {
+        "key": "bge_147_IV_505",
+        "zitierung": "BGE 147 IV 505",
+        "regesteKurz": "Art. 3 Abs. 2 lit. a, Art. 381 Abs. 1, Art. 391 Abs. 2, Art. 401 StPO; Zulässigkeit der Anschlussberufung; Grundsatz von Treu und Glauben im Strafverfahren. Legitimation der Staatsanwaltschaft, Anschlussberufung zu erheben, um damit das…",
+        "datum": "2021-11-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_IV_127",
         "zitierung": "BGE 147 IV 127",
         "regesteKurz": "Art. 406 StPO; Art. 6 Ziff. 1 EMRK; Voraussetzungen für die Durchführung eines schriftlichen Berufungsverfahrens. Das Berufungsverfahren ist grundsätzlich mündlich. Es kann nur ausnahmsweise unter den engen Voraussetzungen von Art. 406…",
@@ -10993,16 +11339,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_IV_505",
-        "zitierung": "BGE 147 IV 505",
-        "regesteKurz": "Art. 3 Abs. 2 lit. a, Art. 381 Abs. 1, Art. 391 Abs. 2, Art. 401 StPO; Zulässigkeit der Anschlussberufung; Grundsatz von Treu und Glauben im Strafverfahren. Legitimation der Staatsanwaltschaft, Anschlussberufung zu erheben, um damit das…",
-        "datum": "2021-11-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "406": [
@@ -11057,6 +11393,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_136",
+        "zitierung": "BGE 152 II 136",
+        "regesteKurz": "Art. 12 lit. a BGFA; Disziplinarmassnahme; berufliche Verfehlung technischer Art; Aufhebung der ausgesprochenen Verwarnung. Um disziplinarisch geahndet zu werden, müssen berufliche Verfehlungen technischer Art schwerwiegend sein. Die…",
+        "datum": "2025-06-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_225",
@@ -11169,6 +11515,16 @@
         "datum": "2023-04-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -11400,7 +11756,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_146_IV_258__voll",
@@ -11410,7 +11766,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_152_IV_14",
@@ -11453,20 +11809,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
         "regesteKurz": null,
-        "datum": "2025-02-06",
+        "datum": "2025-12-04",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_150_IV_273__voll",
-        "zitierung": "Urteil 6B_938/2023 (nicht publ. in BGE 150 IV 273)",
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
         "regesteKurz": null,
-        "datum": "2024-03-21",
+        "datum": "2025-02-06",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -11566,13 +11922,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_146_IV_231",
         "zitierung": "BGE 146 IV 231",
         "regesteKurz": "Art. 429 Abs. 1 lit. c StPO; Anspruch auf Genugtuung bei ungerechtfertigtem Freiheitsentzug. Eine Anhaltung gefolgt von einer Festnahme, die sich auf eine Gesamtdauer von mehr als drei Stunden erstreckt, stellt einen Eingriff in die…",
         "datum": "2020-07-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_IV_258",
+        "zitierung": "BGE 146 IV 258",
+        "regesteKurz": "Art. 251 Ziff. 1 StGB; Falschbeurkundung (inhaltlich unrichtiger Kaufvertrag). Ein in einfacher Schriftform abgefasster Vertrag mit unrichtigem Inhalt erfüllt den Tatbestand der Falschbeurkundung grundsätzlich nicht, da ihm keine erhöhte…",
+        "datum": "2020-05-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -11609,20 +11975,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_146_IV_258",
-        "zitierung": "BGE 146 IV 258",
-        "regesteKurz": "Art. 251 Ziff. 1 StGB; Falschbeurkundung (inhaltlich unrichtiger Kaufvertrag). Ein in einfacher Schriftform abgefasster Vertrag mit unrichtigem Inhalt erfüllt den Tatbestand der Falschbeurkundung grundsätzlich nicht, da ihm keine erhöhte…",
-        "datum": "2020-05-19",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_149_IV_307__voll",
-        "zitierung": "Urteil 6B_911/2021 (nicht publ. in BGE 149 IV 307)",
+        "key": "bge_150_IV_389__voll",
+        "zitierung": "Urteil 6B_83/2024 (nicht publ. in BGE 150 IV 389)",
         "regesteKurz": null,
-        "datum": "2023-06-19",
+        "datum": "2024-07-16",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -11637,6 +11993,16 @@
         "datum": "2020-07-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -11764,6 +12130,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_150_IV_389__voll",
+        "zitierung": "Urteil 6B_83/2024 (nicht publ. in BGE 150 IV 389)",
+        "regesteKurz": null,
+        "datum": "2024-07-16",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
         "gewicht": 1
       },
       {
@@ -11777,20 +12153,30 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "key": "bge_152_IV_234__voll",
+        "zitierung": "Urteil 7B_65/2023 (nicht publ. in BGE 152 IV 234)",
         "regesteKurz": null,
-        "datum": "2025-02-06",
+        "datum": "2025-12-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_150_IV_389__voll",
-        "zitierung": "Urteil 6B_83/2024 (nicht publ. in BGE 150 IV 389)",
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
         "regesteKurz": null,
-        "datum": "2024-07-16",
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "regesteKurz": null,
+        "datum": "2025-02-06",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -11808,6 +12194,16 @@
       }
     ],
     "434": [
+      {
+        "key": "bge_152_IV_234",
+        "zitierung": "BGE 152 IV 234",
+        "regesteKurz": "Art. 71 und 305 bis StGB; Methode zur Bestimmung des Betrags der Ersatzforderung im Falle einer Vermischung von Vermögenswerten aus einer Geldwäschereistraftat mit legalen Vermögenswerten. Die Bestimmungen des Strafgesetzbuches über die…",
+        "datum": "2025-12-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_IV_275",
         "zitierung": "BGE 148 IV 275",
@@ -11883,6 +12279,16 @@
     ],
     "437": [
       {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_IV_105__voll",
         "zitierung": "Urteil 6B_1083/2021 (nicht publ. in BGE 149 IV 105)",
         "regesteKurz": null,
@@ -11933,6 +12339,16 @@
         "datum": "2021-09-14",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_57",
+        "zitierung": "BGE 152 IV 57",
+        "regesteKurz": "Art. 5 Ziff. 1 EMRK; Art. 58 Abs. 2 und Art. 59 Abs. 3 StGB; Einrichtungen zum Vollzug stationärer therapeutischer Massnahmen. Gemäss Art. 58 Abs. 2 StGB müssen die therapeutischen Einrichtungen im Sinne der Art. 59-61 StGB vom…",
+        "datum": "2025-10-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -12385,6 +12801,18 @@
         "gewicht": 0
       }
     ],
+    "352a": [
+      {
+        "key": "bge_152_IV_96",
+        "zitierung": "BGE 152 IV 96",
+        "regesteKurz": "Art. 6 Ziff. 1 EMRK, Art. 30 Abs. 3 BV und Art. 14 Ziff. 1 UNO-Pakt II; Art. 69 und Art. 101 Abs. 3 StPO; Antrag von Medien auf Einsichtnahme in einen Strafbefehl, gegen den Einsprache erhoben worden ist. Die Bestimmung von Art. 69 Abs. 2…",
+        "datum": "2025-09-18",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "364a": [
       {
         "key": "bge_150_IV_38",
@@ -12394,7 +12822,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_IV_185",
+        "zitierung": "BGE 152 IV 185",
+        "regesteKurz": "Art. 364a Abs. 1 lit. a StPO; ernsthafte Erwartung der Anordnung des Vollzugs einer freiheitsentziehenden Sanktion als Voraussetzung für Sicherheitshaft im Nachverfahren. Sicherheitshaft nach Art. 364a StPO setzt unter anderem voraus, dass…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_330",
@@ -12416,7 +12854,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_IV_185",
+        "zitierung": "BGE 152 IV 185",
+        "regesteKurz": "Art. 364a Abs. 1 lit. a StPO; ernsthafte Erwartung der Anordnung des Vollzugs einer freiheitsentziehenden Sanktion als Voraussetzung für Sicherheitshaft im Nachverfahren. Sicherheitshaft nach Art. 364a StPO setzt unter anderem voraus, dass…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_IV_330",

@@ -1,0 +1,169 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "bund/bge/152_I_20",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "abteilung": "I",
+      "nummer": "152 I 20",
+      "bgeReferenz": "152 I 20",
+      "zitierung": "BGE 152 I 20",
+      "datum": "2026-01-01",
+      "sprache": "fr",
+      "leitcharakter": "leitentscheid",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "public",
+      "rubrum": {
+        "besetzung": "MM. les Juges fédéraux Haag, Président, Chaix, Kneubühler, Müller et Merz. Greffier: M. Kurz",
+        "parteien": "A.________, représenté par Me Nicola Meier, avocat, recourant, contre Office fédéral de la justice, Unité Extraditions, Bundesrain 20, 3003 Berne",
+        "gegenstand": "Refus de transfèrement vers la France",
+        "vorinstanz": "Cour des plaintes du Tribunal pénal fédéral du 26 août 2025"
+      },
+      "regeste": {
+        "text": "Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist berechtigt, die Ablehnung des BJ, ein Überstellungsgesuch zu stellen, anzufechten (Änderung der Rechtsprechung; E. 2). Feststellung einer Verletzung des Anspruchs auf rechtliches Gehör durch das BJ und Rückweisung der Sache an dieses Amt (E. 3).",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": true,
+      "abschnitte": [
+        {
+          "typ": "sachverhalt",
+          "vollstaendig": true,
+          "bloecke": [
+            {
+              "marke": "A.",
+              "tiefe": 1,
+              "text": "Par jugement du 13 septembre 2024, le Tribunal correctionnel du canton de Genève a reconnu A. (ressortissant français) coupable de tentative de brigandage aggravé, menaces, rupture de ban et infraction à la loi fédérale du 20 juin 1997 sur les armes, les accessoires d'armes et les munitions (LArm; RS 514.14), et l'a condamné à 8 ans de privation de liberté (sous déduction de 626 jours de détention avant jugement) et à l'expulsion à vie du territoire suisse. Le 2 novembre 2024, A. a demandé à l'Office fédéral de la justice (OFJ) à être transféré vers la France pour y purger le solde de sa peine. Cette demande a été transmise au Ministère public genevois, lequel s'y est opposé le 20 février 2025 en considérant que l'exécution de la peine en Suisse n'entravait pas la réinsertion de l'intéressé, le lieu de détention étant suffisamment proche du lieu de résidence de sa famille en France. Le 15 mai 2025, l'OFJ a informé A. qu'il refusait de demander son transfèrement à la France, en se référant à la prise de position du Ministère public genevois."
+            },
+            {
+              "marke": "B.",
+              "tiefe": 1,
+              "text": "Par acte du 16 juin 2025, A. a recouru auprès du Tribunal administratif fédéral (TAF), lequel a transmis le recours à la Cour des plaintes du Tribunal pénal fédéral (TPF). Par arrêt du 26 août 2025, la Cour des plaintes a déclaré le recours irrecevable. Le refus de requérir le transfèrement constituait un acte d'entraide judiciaire. Toutefois, l'intéressé ne disposait pas d'un droit à un transfèrement, de sorte qu'il n'avait pas qualité pour recourir. Il ne pouvait pas non plus se plaindre d'une violation de ses droits de procédure puisque sa demande avait été traitée et que la prise de position du Ministère public genevois lui avait été communiquée avec la décision attaquée. C. Agissant par la voie du recours en matière de droit public, A. demande au Tribunal fédéral d'annuler l'arrêt de la Cour des plaintes et la décision de l'OFJ, d'inviter le Ministère public genevois à rendre un préavis favorable et l'OFJ à mettre en oeuvre la procédure de transfèrement. (...) Le Tribunal fédéral a admis le recours. (extrait)"
+            }
+          ]
+        },
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": "E. 2",
+              "tiefe": 1,
+              "text": "Le recourant soutient que le refus d'entrer en matière sur son recours serait constitutif d'une violation des art. 80h let. b et 25 al. 2 bis EIMP (RS 351.1), ainsi que du droit d'accès au juge garanti par BGE 152 I 20 S. 22 l' art. 29a Cst. Il estime que la jurisprudence déniant au requérant le droit de recourir contre un refus de présenter une demande de transfèrement (ATF 118 Ib 137) est antérieure à l'entrée en vigueur de l' art. 80h EIMP qui reconnaît désormais le droit de recourir contre une mesure d'entraide à toute personne touchée par la mesure. Le droit de recourir étant reconnu à l'encontre d'une décision de transfèrement, il devrait en aller de même pour un refus."
+            },
+            {
+              "marke": "E. 2.1",
+              "tiefe": 2,
+              "text": "L'art. 25 al. 3, 2 e phrase, EIMP prévoit que l'autorité cantonale peut recourir contre la décision de l'office fédéral de ne pas présenter une demande. La Cour des plaintes rappelle que selon la jurisprudence, la personne qui demande son transfèrement n'aurait pas qualité pour recourir contre un refus dès lors que ni la CEEJ (RS 0.351.1), ni l'EIMP ne confèrent un droit à un transfèrement pour l'exécution d'une peine, la personne condamnée ne pouvant exprimer qu'un souhait à ce sujet, sans impliquer aucune obligation pour l'autorité (ATF 118 Ib 137 consid. 2b)."
+            },
+            {
+              "marke": "E. 2.2",
+              "tiefe": 2,
+              "text": "Contrairement à ce que soutient le recourant, l'entrée en vigueur de l' art. 80h EIMP, le 1 er février 1997, ne justifie pas à lui seul de revenir sur la jurisprudence précitée de 1992: cette disposition ne s'applique en effet qu'à l'exécution des demandes d'entraide provenant de l'étranger au sens de la troisième partie de la loi, alors que la délégation de l'exécution des peines est régie par la cinquième partie de la loi. En revanche, l'entrée en vigueur de l' art. 29a Cst., ultérieurement à l'arrêt précité, justifie un réexamen de cette jurisprudence."
+            },
+            {
+              "marke": "E. 2.3",
+              "tiefe": 2,
+              "text": "Entré en vigueur le 1 er janvier 2007 (cf. RO 2006 1059), l' art. 29a Cst. prévoit que toute personne a droit à ce que sa cause soit jugée par une autorité judiciaire; la Confédération et les cantons peuvent, par la loi, exclure l'accès au juge dans des cas exceptionnels. Cette norme constitutionnelle étend donc le contrôle judiciaire en principe à toutes les contestations juridiques, y compris aux actes de l'administration, en établissant une garantie générale de l'accès au juge (ATF 147 I 333 consid. 1.5.1; ATF 143 I 344 consid. 8.2; ATF 141 I 172 consid. 4.4.1). Pour pouvoir invoquer l' art. 29a Cst., il faut que le justiciable se trouve dans une situation de contestation juridique, c'est-à-dire qu'il existe un litige portant sur un différend juridique qui met en jeu des intérêts individuels dignes de protection (ATF 144 II 233 consid. 4.4; ATF 143 I 336 consid. 4.1 et les références). Il suffit donc que la position juridique de l'intéressé soit atteinte par la décision contestée BGE 152 I 20 S. 23 (ATF 136 I 323 consid. 4.7). Le droit à un contrôle du juge doit être accordé non seulement lorsqu'il existe une prétention à l'égard de l'État, mais aussi lorsqu'il s'agit de déterminer les modalités d'action de celui-ci, notamment lorsqu'il en résulte des désavantages pour certains justiciables (ATF 143 II 336 consid. 4.3.2 et les références citées). L' art. 6 CEDH offre une protection équivalente (arrêt 8D_5/ 2022 du 22 février 2023 consid. 6.2.2; cf. ATF 134 V 401 consid. 5.3)."
+            },
+            {
+              "marke": "E. 2.4",
+              "tiefe": 2,
+              "text": "En l'occurrence, le recourant faisait valoir, sur le fond, que le refus de présenter une demande de transfèrement à la France l'affecterait directement dès lors qu'il a fait l'objet d'une expulsion à vie du territoire suisse et qu'une réinsertion dans ce pays ne serait pas envisageable. Les éléments tels que les attaches familiales, ses projets professionnels et son insertion culturelle n'auraient pas été pris en considération. Le recourant invoque ainsi notamment une atteinte à son droit au respect de la vie privée et familiale (art. 13 Cst., art. 8 CEDH) et se plaint en outre d'une inégalité de traitement prohibée par l' art. 8 Cst. en relevant que la France aurait déjà accepté le transfèrement d'un condamné en Suisse dans un cas comparable au sien. Le recourant rendait ainsi suffisamment vraisemblable une atteinte à ses intérêts juridiquement protégés, ce qui devait lui permettre l'accès à un juge en application de l' art. 29a Cst., indépendamment du fait, non contesté, qu'il ne dispose pas d'un droit au transfèrement."
+            },
+            {
+              "marke": "E. 2.5",
+              "tiefe": 2,
+              "text": "Selon la seconde phrase de l' art. 29a Cst., la Confédération ou les cantons peuvent, par la loi, exclure l'accès au juge dans des cas exceptionnels. Cette exception vise les cas difficilement justiciables, tels que les actes gouvernementaux qui soulèvent essentiellement des questions politiques (ANDREAS KLEY, in St. Galler Kommentar, Die schweizerische Bundesverfassung, 2023, n os 23 ss ad art. 29a Cst.; cf. aussi idem, n os 35 ss concernant les décisions telles que les refus de naturalisation ou la grâce en matière pénale). Ces exceptions doivent être prévues dans une loi au sens formel et ressortir clairement de la base légale en question (STÉPHANE GRODECKI, in Commentaire romand, Constitution fédérale, 2021, n° 35 ad art. 29a Cst.). Tel n'est pas le cas en l'occurrence; même si le condamné ne dispose d'aucun droit à un transfèrement et ne peut qu'émettre un voeu auquel l'autorité suisse peut répondre comme elle l'entend (ROBERT ZIMMERMANN, La coopération judiciaire en matière pénale, 6 e éd. 2025, n. 946), la décision rendue à ce propos ne repose pas sur des considérations politiques qui la rendraient difficilement justiciable. En outre, si le BGE 152 I 20 S. 24 texte de l' art. 25 al. 3 EIMP (qui était déjà en vigueur avant l'adoption de l' art. 29a Cst.) confère au canton la possibilité de recourir contre un refus de requérir le transfèrement, il n'exclut pas expressément le droit de recours du condamné. Rien ne permet dès lors de retenir que cette disposition constitue une exception à la garantie de l'accès au juge telle qu'elle découle de l' art. 29a Cst."
+            },
+            {
+              "marke": "E. 2.6",
+              "tiefe": 2,
+              "text": "C'est par conséquent à tort que la Cour des plaintes a refusé d'entrer en matière sur le recours qui lui était soumis. Il y a donc lieu d'admettre le recours et d'annuler l'arrêt attaqué. Dans un tel cas, le Tribunal fédéral devrait en principe renvoyer la cause à l'instance précédente afin qu'elle statue sur le recours qui lui était soumis (ATF 143 I 344 consid. 4). Les circonstances du cas d'espèce imposent toutefois, comme on le verra, une solution différente."
+            },
+            {
+              "marke": "E. 3",
+              "tiefe": 1,
+              "text": "Le recourant soutient que son droit d'être entendu aurait été violé dès lors qu'il n'a eu connaissance du préavis du Ministère public genevois qu'à réception de la décision de l'OFJ et n'a donc pas pu se déterminer à son propos. Comme cela est rappelé ci-dessus, une violation du droit d'être entendu peut justifier une entrée en matière au sens de l' art. 84 LTF, pour autant que cette violation soit grave et évidente. Tel est le cas en l'occurrence."
+            },
+            {
+              "marke": "E. 3.1",
+              "tiefe": 2,
+              "text": "Le recourant faisait valoir devant la Cour des plaintes qu'il n'avait pas eu l'occasion de se déterminer sur la prise de position du Ministère public genevois, celle-ci ne lui ayant été communiquée qu'avec la décision de l'OFJ. Dans l'arrêt attaqué, la Cour des plaintes nie toute violation du droit d'être entendu; elle relève que la demande de transfèrement du recourant a été traitée, mais cela ne répond pas au grief soulevé dès lors que le droit d'obtenir une décision relève d'un aspect distinct du droit d'être entendu. Quant au fait que le recourant s'est vu communiquer la prise de position du Ministère public genevois avec l'acte entrepris, il ne permet pas de nier la violation évidente du droit d'être entendu."
+            },
+            {
+              "marke": "E. 3.2",
+              "tiefe": 2,
+              "text": "Celui-ci garantit en effet au justiciable le droit de s'expliquer avant qu'une décision ne soit prise à son détriment, de prendre connaissance de toute argumentation présentée à l'autorité et de se déterminer à son propos, dans la mesure où il l'estime nécessaire, que celle-ci contienne ou non de nouveaux éléments de fait ou de droit, et qu'elle soit ou non concrètement susceptible d'influer sur la décision à rendre (ATF 142 III 48 consid. 4.1.1). Il englobe également le droit de produire des preuves pertinentes, d'obtenir qu'il soit donné suite à ses offres BGE 152 I 20 S. 25 de preuves pertinentes, de participer à l'administration des preuves essentielles ou à tout le moins de s'exprimer sur son résultat, lorsque cela est de nature à influer sur la décision à rendre (ATF 148 II 73 consid. 7.3.1; ATF 145 I 167 consid. 4.1)."
+            },
+            {
+              "marke": "E. 3.3",
+              "tiefe": 2,
+              "text": "En l'occurrence, le Ministère public genevois a été invité par l'OFJ, le 17 janvier 2025, à se déterminer sur la demande de transfèrement. Dans sa réponse du 20 février 2025, il a considéré que l'exécution du solde de peine en Suisse n'entravait pas la réinsertion du recourant \"compte tenu des processus existants en la matière\". En outre, la proximité entre le lieu de résidence de sa famille en France et le lieu de détention (quand bien même celui-ci devrait être déplacé de 200 ou 300 km) n'entravait nullement les relations avec les membres de sa famille. Cet avis n'a pas été communiqué au recourant. Celui-ci n'a pas eu l'occasion de se déterminer à ce propos avant que l'OFJ ne rende sa décision, laquelle est au demeurant exclusivement fondée sur l'opposition du Ministère public. Il y a ainsi une violation crasse du droit d'être entendu."
+            },
+            {
+              "marke": "E. 3.4",
+              "tiefe": 2,
+              "text": "La Cour des plaintes aurait dès lors dû non seulement entrer en matière sur le recours, mais également l'admettre pour ce motif formel et renvoyer la cause à l'OFJ afin qu'il procède dans le respect du droit d'être entendu du recourant. Afin d'éviter de longs et inutiles détours procéduraux (le recourant a présenté sa demande de transfèrement au mois de novembre 2024), le Tribunal fédéral peut procéder lui-même à ce renvoi (cf. art. 107 al. 2 LTF)."
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Le recours est admis. L'arrêt attaqué est annulé, de même que la décision de l'OFJ du 15 mai 2025, et la cause est renvoyée à cette autorité pour nouvelle décision au sens des considérants.",
+        "Il n'est pas perçu de frais judiciaires.",
+        "Une indemnité de dépens de 3'000 fr. est allouée à Me Nicola Meier, à la charge de l'OFJ, pour les procédures devant la Cour des plaintes et le Tribunal fédéral.",
+        "La demande d'assistance judiciaire est sans objet.",
+        "Le présent arrêt est communiqué au mandataire du recourant, à l'Office fédéral de la justice, Unité Extraditions, et à la Cour des plaintes du Tribunal pénal fédéral."
+      ],
+      "zitierteNormen": [
+        "Art. 107 Abs. 2 LTF",
+        "Art. 13 CST",
+        "Art. 25 Abs. 3 EIMP",
+        "Art. 29a BV",
+        "Art. 29a CST",
+        "Art. 6 CEDH",
+        "Art. 8 CEDH",
+        "Art. 8 CST",
+        "Art. 100 Abs. 2 LTF",
+        "Art. 42 Abs. 2 LTF",
+        "Art. 66 Abs. 4 LTF"
+      ],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "IRSG"
+      ],
+      "zitierteEntscheide": [
+        "1C_268/2016",
+        "1C_288/2024",
+        "1C_368/2024",
+        "1C_480/2025",
+        "1C_58/2018",
+        "8D_5/2022",
+        "BGE 134 IV 156",
+        "BGE 134 V 401",
+        "BGE 136 I 323",
+        "BGE 142 III 48",
+        "BGE 143 I 344",
+        "BGE 143 II 336",
+        "BGE 144 II 233",
+        "BGE 145 IV 99",
+        "BGE 147 I 333",
+        "BGE 148 II 73",
+        "RR.2025.128"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-20%3Ade&lang=de&zoom=&type=show_document",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "e72057ed4a1c42dcb66b6778fd117a15d548096f01b3882d294735c5ba7e91e3",
+      "sha": "724cb5041c47cebc62c8c29ae5daf0ae683ffd46a002167d6b704a2ac9b6cf24",
+      "azaUrteil": null,
+      "ecli": "ECLI:CH:BGE:2026:152.I.20"
+    }
+  ]
+}

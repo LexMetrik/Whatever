@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"GSCHV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -11,23 +11,24 @@
 "bge_148_II_198":{"zitierung":"BGE 148 II 198","regesteKurz":"Festlegung des Gewässerraums der Muota im BLN-Gebiet Nr. 1606 gemäss Art. 41a Abs. 1 GSchV. Die Mindestbreite des Gewässerraums eines Fliessgewässers bestimmt sich in Landschaften von nationaler Bedeutung nach Art. 41a Abs. 1 (und nicht…","datum":"2021-09-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_II_198__voll":{"zitierung":"Urteil 1C_453/2020 (nicht publ. in BGE 148 II 198)","regesteKurz":null,"datum":"2021-09-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 198","urteil":"1C_453/2020"}},
 "bge_151_II_304__voll":{"zitierung":"Urteil 1C_217/2023 (nicht publ. in BGE 151 II 304)","regesteKurz":null,"datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 304","urteil":"1C_217/2023"}},
+"bge_152_II_298":{"zitierung":"BGE 152 II 298","regesteKurz":"Art. 78 Abs. 2 BV; Art. 2 und 12 NHG; Art. 19 Abs. 2 GSchG; Art. 32 Abs. 2 GSchV; Art. 17 WaG; Art. 16 VVEA; Beschwerdelegitimation des Schweizer Heimatschutzes; Vorliegen einer Bundesaufgabe. Eine Bundesaufgabe liegt vor, wenn für Anlagen…","datum":"2025-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VD.2021.133":{"zitierung":"Appellationsgericht BS VD.2021.133 vom 17.08.2022","regesteKurz":"Zonenänderung, Festsetzung eines Bebauungsplans, Zuweisung der Lärmempfindlichkeitsstufe, Änderung des Wohnanteilplans,…","datum":"2022-08-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.40":{"zitierung":"Appellationsgericht BS VD.2024.40 vom 28.03.2025","regesteKurz":"Kantonaler Nutzungsplan Gewässerraum, Heissensteinbach","datum":"2025-03-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "29":[{"key":"bge_147_II_309__voll","gewicht":0,"erwaegungen":["E. 8.1"]}],
-"32":[{"key":"bge_147_II_309__voll","gewicht":0,"erwaegungen":["E. 8.1","E. 8.4"]},{"key":"bge_146_II_304__voll","gewicht":0,"erwaegungen":["E. 13.1"]}],
+"32":[{"key":"bge_152_II_298","gewicht":0},{"key":"bge_147_II_309__voll","gewicht":0,"erwaegungen":["E. 8.1","E. 8.4"]},{"key":"bge_146_II_304__voll","gewicht":0,"erwaegungen":["E. 13.1"]}],
 "46":[{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
 "41a":[{"key":"bge_148_II_198","gewicht":0},{"key":"bge_146_II_134","gewicht":0},{"key":"bs_appellationsgericht_VD.2024.40","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
-"41c":[{"key":"bge_148_II_198","gewicht":0},{"key":"bge_146_II_304","gewicht":0},{"key":"bge_151_II_304__voll","gewicht":0},{"key":"bge_146_II_134__voll","gewicht":0,"erwaegungen":["E. 1.1","E. 2.2","E. 4.2","E. 6.3.2","E. 7.1","E. 8.5"]},{"key":"bs_appellationsgericht_VD.2024.40","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
+"41c":[{"key":"bge_152_II_298","gewicht":0},{"key":"bge_148_II_198","gewicht":0},{"key":"bge_146_II_304","gewicht":0},{"key":"bge_151_II_304__voll","gewicht":0},{"key":"bge_146_II_134__voll","gewicht":0,"erwaegungen":["E. 1.1","E. 2.2","E. 4.2","E. 6.3.2","E. 7.1","E. 8.5"]},{"key":"bs_appellationsgericht_VD.2024.40","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
 "41d":[{"key":"bge_148_II_198__voll","gewicht":0,"erwaegungen":["E. 7.1","E. 7.5"]}]
 },
 "gesamtProArtikel":{
 "29":{"bger":1},
-"32":{"bger":2},
+"32":{"bge":1,"bger":2},
 "46":{"kantonal":1},
 "41a":{"bge":2,"kantonal":2},
-"41c":{"bge":2,"bger":2,"kantonal":2},
+"41c":{"bge":3,"bger":2,"kantonal":2},
 "41d":{"bger":1}
 }
 }

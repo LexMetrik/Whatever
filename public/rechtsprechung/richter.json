@@ -1,9 +1,9 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "richter": {
     "abrecht": {
       "name": "Abrecht",
-      "count": 130
+      "count": 137
     },
     "achtari": {
       "name": "Achtari",
@@ -59,7 +59,7 @@
     },
     "aubry-girardin": {
       "name": "Aubry Girardin",
-      "count": 188
+      "count": 205
     },
     "baier-kim": {
       "name": "Kim Baier",
@@ -111,7 +111,7 @@
     },
     "berger": {
       "name": "Berger",
-      "count": 16
+      "count": 17
     },
     "berger-gotz": {
       "name": "Berger Götz",
@@ -135,7 +135,7 @@
     },
     "beusch": {
       "name": "Beusch",
-      "count": 205
+      "count": 212
     },
     "bianchi": {
       "name": "Bianchi",
@@ -175,7 +175,7 @@
     },
     "bollinger": {
       "name": "Bollinger",
-      "count": 23
+      "count": 31
     },
     "boog": {
       "name": "Boog",
@@ -193,9 +193,13 @@
       "name": "Botteron",
       "count": 0
     },
+    "bouchat": {
+      "name": "Bouchat",
+      "count": 0
+    },
     "bovey": {
       "name": "Bovey",
-      "count": 139
+      "count": 147
     },
     "braun": {
       "name": "Braun",
@@ -295,7 +299,7 @@
     },
     "chaix": {
       "name": "Chaix",
-      "count": 160
+      "count": 170
     },
     "chatton-gregor": {
       "name": "Gregor Chatton",
@@ -371,7 +375,7 @@
     },
     "de-rossa": {
       "name": "De Rossa",
-      "count": 60
+      "count": 68
     },
     "de-sepibus": {
       "name": "de Sépibus",
@@ -379,7 +383,7 @@
     },
     "denys": {
       "name": "Denys",
-      "count": 189
+      "count": 200
     },
     "dettwiler-janick": {
       "name": "Janick Dettwiler",
@@ -409,9 +413,13 @@
       "name": "Dolivo",
       "count": 0
     },
+    "dolivo-bonvin": {
+      "name": "Dolivo-Bonvin",
+      "count": 0
+    },
     "donzallaz": {
       "name": "Donzallaz",
-      "count": 178
+      "count": 195
     },
     "dormann": {
       "name": "Dormann",
@@ -521,6 +529,10 @@
       "name": "Leda Ferretti",
       "count": 0
     },
+    "fildir": {
+      "name": "Fildir",
+      "count": 0
+    },
     "fildir-tugce": {
       "name": "Tugce Fildir",
       "count": 0
@@ -613,6 +625,10 @@
       "name": "Glanzmann",
       "count": 38
     },
+    "glassey": {
+      "name": "Glassey",
+      "count": 1
+    },
     "gmur-a": {
       "name": "A. Gmür",
       "count": 0
@@ -663,7 +679,7 @@
     },
     "guidon": {
       "name": "Guidon",
-      "count": 13
+      "count": 20
     },
     "guntert-m": {
       "name": "M. Güntert",
@@ -683,7 +699,7 @@
     },
     "haag": {
       "name": "Haag",
-      "count": 158
+      "count": 168
     },
     "hahn": {
       "name": "Hahn",
@@ -691,7 +707,7 @@
     },
     "hanni": {
       "name": "Hänni",
-      "count": 169
+      "count": 186
     },
     "harri": {
       "name": "Härri",
@@ -699,7 +715,11 @@
     },
     "hartmann": {
       "name": "Hartmann",
-      "count": 108
+      "count": 116
+    },
+    "hausammann": {
+      "name": "Hausammann",
+      "count": 0
     },
     "havalda-s": {
       "name": "S. Havalda",
@@ -711,7 +731,7 @@
     },
     "heine": {
       "name": "Heine",
-      "count": 122
+      "count": 134
     },
     "heiniger-evelyn": {
       "name": "Evelyn Heiniger",
@@ -731,7 +751,7 @@
     },
     "herrmann": {
       "name": "Herrmann",
-      "count": 140
+      "count": 148
     },
     "herrmann-heiniger": {
       "name": "Herrmann-Heiniger",
@@ -755,7 +775,7 @@
     },
     "hofmann": {
       "name": "Hofmann",
-      "count": 41
+      "count": 48
     },
     "hohl": {
       "name": "Hohl",
@@ -783,7 +803,7 @@
     },
     "hurni": {
       "name": "Hurni",
-      "count": 140
+      "count": 151
     },
     "imre-hazal": {
       "name": "Hazal Imre",
@@ -803,7 +823,7 @@
     },
     "jacquemoud-rossari": {
       "name": "Jacquemoud-Rossari",
-      "count": 179
+      "count": 186
     },
     "jakob-alexandra": {
       "name": "Alexandra Jakob",
@@ -847,7 +867,7 @@
     },
     "josi": {
       "name": "Josi",
-      "count": 12
+      "count": 20
     },
     "jucker-beat": {
       "name": "Beat Jucker",
@@ -895,7 +915,7 @@
     },
     "kiss": {
       "name": "Kiss",
-      "count": 175
+      "count": 185
     },
     "kistler": {
       "name": "Kistler",
@@ -923,11 +943,15 @@
     },
     "kneubuhler": {
       "name": "Kneubühler",
-      "count": 157
+      "count": 167
+    },
+    "koc-h": {
+      "name": "Koc h",
+      "count": 1
     },
     "koch": {
       "name": "Koch",
-      "count": 140
+      "count": 146
     },
     "kocher": {
       "name": "Kocher",
@@ -935,7 +959,7 @@
     },
     "kolz": {
       "name": "Kölz",
-      "count": 62
+      "count": 69
     },
     "konig": {
       "name": "König",
@@ -951,7 +975,7 @@
     },
     "kradolfer": {
       "name": "Kradolfer",
-      "count": 63
+      "count": 80
     },
     "kreis-manuel": {
       "name": "Manuel Kreis",
@@ -1047,7 +1071,7 @@
     },
     "maillard": {
       "name": "Maillard",
-      "count": 126
+      "count": 139
     },
     "mairot": {
       "name": "Mairot",
@@ -1085,6 +1109,10 @@
       "name": "L. Marti",
       "count": 0
     },
+    "marti-schreier": {
+      "name": "Marti-Schreier",
+      "count": 1
+    },
     "matt": {
       "name": "Matt",
       "count": 0
@@ -1099,7 +1127,7 @@
     },
     "may-canellas": {
       "name": "May Canellas",
-      "count": 172
+      "count": 182
     },
     "mayhall": {
       "name": "Mayhall",
@@ -1127,11 +1155,11 @@
     },
     "merz": {
       "name": "Merz",
-      "count": 100
+      "count": 110
     },
     "metral": {
       "name": "Métral",
-      "count": 41
+      "count": 54
     },
     "meyer": {
       "name": "Meyer",
@@ -1163,7 +1191,7 @@
     },
     "moser-szeless": {
       "name": "Moser-Szeless",
-      "count": 200
+      "count": 207
     },
     "moses": {
       "name": "Moses",
@@ -1175,7 +1203,7 @@
     },
     "muller": {
       "name": "Müller",
-      "count": 125
+      "count": 135
     },
     "muller-arenja-patrik": {
       "name": "Patrik Müller-Arenja",
@@ -1199,7 +1227,7 @@
     },
     "muschietti": {
       "name": "Muschietti",
-      "count": 165
+      "count": 173
     },
     "musy": {
       "name": "Musy",
@@ -1271,7 +1299,7 @@
     },
     "parrino": {
       "name": "Parrino",
-      "count": 202
+      "count": 209
     },
     "pasquini": {
       "name": "Pasquini",
@@ -1411,7 +1439,7 @@
     },
     "ruedi": {
       "name": "Rüedi",
-      "count": 183
+      "count": 193
     },
     "ruhl-w": {
       "name": "W. Rühl",
@@ -1427,7 +1455,7 @@
     },
     "ryter": {
       "name": "Ryter",
-      "count": 108
+      "count": 125
     },
     "sauder-gregory": {
       "name": "Grégory Sauder",
@@ -1459,7 +1487,7 @@
     },
     "scherrer-reber": {
       "name": "Scherrer Reber",
-      "count": 110
+      "count": 123
     },
     "schibli-r": {
       "name": "R. Schibli",
@@ -1551,7 +1579,7 @@
     },
     "stadelmann": {
       "name": "Stadelmann",
-      "count": 212
+      "count": 218
     },
     "stadler": {
       "name": "Stadler",
@@ -1592,6 +1620,10 @@
     "stramandino-desiree": {
       "name": "Désirée Stramandino",
       "count": 13
+    },
+    "stubi": {
+      "name": "Stübi",
+      "count": 0
     },
     "studli-pascal": {
       "name": "Pascal Stüdli",
@@ -1695,11 +1727,11 @@
     },
     "van-de-graaf": {
       "name": "van de Graaf",
-      "count": 139
+      "count": 146
     },
     "viscione": {
       "name": "Viscione",
-      "count": 126
+      "count": 139
     },
     "vlahos-philip": {
       "name": "Philip Vlahos",
@@ -1723,7 +1755,7 @@
     },
     "von-felten": {
       "name": "von Felten",
-      "count": 37
+      "count": 44
     },
     "von-kaenel-lukas": {
       "name": "Lukas von Kaenel",
@@ -1807,7 +1839,7 @@
     },
     "wohlhauser": {
       "name": "Wohlhauser",
-      "count": 13
+      "count": 20
     },
     "wolf-s": {
       "name": "S. Wolf",

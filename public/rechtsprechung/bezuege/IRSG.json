@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"IRSG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -31,6 +31,8 @@
 "bge_151_I_113":{"zitierung":"BGE 151 I 113","regesteKurz":"Art. 27, 48 Abs. 5, Art. 49 Abs. 1 und Art. 94 BV; Art. 63 Abs. 4 der Interkantonalen Vereinbarung über das öffentliche Beschaffungswesen (IVöB 2019); Art. 27, 29 und 31 BöB/IVöB 2019; Art. VIII Abs. 1 des Übereinkommens der…","datum":"2025-01-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_I_113__voll":{"zitierung":"Urteil 2C_587/2023 (nicht publ. in BGE 151 I 113)","regesteKurz":null,"datum":"2025-01-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 I 113","urteil":"2C_587/2023"}},
 "bge_152_II_142":{"zitierung":"BGE 152 II 142","regesteKurz":"Art. 9 BV; Art. 42 Abs. 1 und Art. 58 IVöB; Rechtsschutz bei verfrüht abgeschlossenen Beschaffungsverträgen. Die Auffassung der Vorinstanz, wonach der Rechtsschutz bei Beschaffungsverträgen, die in Verletzung der Stillhalteregelung nach…","datum":"2025-05-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_I_2":{"zitierung":"BGE 152 I 2","regesteKurz":"Sperrung von Vermögenswerten im Hinblick auf eine Einziehung bei Scheitern der Rechtshilfe an die Ukraine (Art. 4 SRVG); Anspruch auf vorgängige Anhörung (Art. 29 Abs. 2 BV; Art. 30 VwVG). Anspruch der Kontoinhaber und -inhaberinnen auf…","datum":"2026-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_I_20":{"zitierung":"BGE 152 I 20","regesteKurz":"Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist…","datum":"2026-01-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BES.2022.28":{"zitierung":"Appellationsgericht BS BES.2022.28 vom 28.06.2022","regesteKurz":"Rechtsverzögerung/Rechtsverweigerung","datum":"2022-06-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2025.31":{"zitierung":"Appellationsgericht BS BES.2025.31 vom 13.01.2026","regesteKurz":"Nichtanhandnahme (Beschwerde bei BG hängig)","datum":"2026-01-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2021.61":{"zitierung":"Appellationsgericht BS SB.2021.61 vom 27.04.2023","regesteKurz":"mehrfacher Diebstahl sowie Hausfriedensbruch","datum":"2023-04-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -57,7 +59,7 @@
 "16":[{"key":"bs_appellationsgericht_BES.2022.28","gewicht":null}],
 "18":[{"key":"bge_149_IV_144","gewicht":0}],
 "21":[{"key":"bge_150_II_105","gewicht":0},{"key":"bstger_RR_2026_46","gewicht":null}],
-"25":[{"key":"bge_150_IV_201__voll","gewicht":0,"erwaegungen":["E. 1.1"]},{"key":"bge_149_IV_144__voll","gewicht":1,"erwaegungen":["E. 1.3"]},{"key":"bge_146_IV_338__voll","gewicht":0,"erwaegungen":["E. 2.1"]},{"key":"bs_appellationsgericht_BES.2022.28","gewicht":null}],
+"25":[{"key":"bge_152_I_2","gewicht":0},{"key":"bge_152_I_20","gewicht":0},{"key":"bge_150_IV_201__voll","gewicht":0,"erwaegungen":["E. 1.1"]},{"key":"bge_149_IV_144__voll","gewicht":1,"erwaegungen":["E. 1.3"]},{"key":"bge_146_IV_338__voll","gewicht":0,"erwaegungen":["E. 2.1"]},{"key":"bs_appellationsgericht_BES.2022.28","gewicht":null}],
 "26":[{"key":"bge_151_I_113","gewicht":0}],
 "27":[{"key":"bge_151_I_113__voll","gewicht":0,"erwaegungen":["E. 6.6","E. 6.7","E. 6.8.3","E. 6.9","E. 7.1.3","E. 7.2.2","E. 7.3.2","E. 7.4.1"]}],
 "28":[{"key":"bge_149_IV_144","gewicht":0}],
@@ -99,6 +101,7 @@
 "80b":[{"key":"bge_147_IV_544","gewicht":0}],
 "80d":[{"key":"bge_146_IV_36","gewicht":0},{"key":"bs_appellationsgericht_BES.2022.28","gewicht":null}],
 "80e":[{"key":"bge_147_IV_544","gewicht":0}],
+"80h":[{"key":"bge_152_I_2","gewicht":0},{"key":"bge_152_I_20","gewicht":0}],
 "80o":[{"key":"bge_149_IV_144","gewicht":0}],
 "80p":[{"key":"bge_149_IV_144","gewicht":0},{"key":"bge_148_I_127","gewicht":0}]
 },
@@ -119,7 +122,7 @@
 "16":{"kantonal":1},
 "18":{"bge":1},
 "21":{"bge":1,"eidg":1},
-"25":{"bger":3,"kantonal":1},
+"25":{"bge":2,"bger":3,"kantonal":1},
 "26":{"bge":1},
 "27":{"bger":1},
 "28":{"bge":1},
@@ -161,6 +164,7 @@
 "80b":{"bge":1},
 "80d":{"bge":1,"kantonal":1},
 "80e":{"bge":1},
+"80h":{"bge":2},
 "80o":{"bge":1},
 "80p":{"bge":2}
 }

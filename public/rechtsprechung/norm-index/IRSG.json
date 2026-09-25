@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "IRSG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -289,6 +289,26 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_2",
+        "zitierung": "BGE 152 I 2",
+        "regesteKurz": "Sperrung von Vermögenswerten im Hinblick auf eine Einziehung bei Scheitern der Rechtshilfe an die Ukraine (Art. 4 SRVG); Anspruch auf vorgängige Anhörung (Art. 29 Abs. 2 BV; Art. 30 VwVG). Anspruch der Kontoinhaber und -inhaberinnen auf…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_20",
+        "zitierung": "BGE 152 I 20",
+        "regesteKurz": "Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_201__voll",
@@ -881,6 +901,28 @@
         "zitierung": "BGE 147 IV 544",
         "regesteKurz": "Art. 78 ff., 84 und 93 Abs. 1 lit. a BGG, Art. 80e Abs. 2 lit. b IRSG; zulässiges Rechtsmittel ans Bundesgericht in Streitfällen über die Parteistellung und Akteneinsicht in einem Strafverfahren bei parallelem Rechtshilfeverfahren. Sind im…",
         "datum": "2021-05-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "80h": [
+      {
+        "key": "bge_152_I_2",
+        "zitierung": "BGE 152 I 2",
+        "regesteKurz": "Sperrung von Vermögenswerten im Hinblick auf eine Einziehung bei Scheitern der Rechtshilfe an die Ukraine (Art. 4 SRVG); Anspruch auf vorgängige Anhörung (Art. 29 Abs. 2 BV; Art. 30 VwVG). Anspruch der Kontoinhaber und -inhaberinnen auf…",
+        "datum": "2026-01-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_20",
+        "zitierung": "BGE 152 I 20",
+        "regesteKurz": "Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist…",
+        "datum": "2026-01-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

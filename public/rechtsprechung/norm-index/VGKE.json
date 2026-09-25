@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "VGKE",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -9,6 +9,42 @@
         "zitierung": "Urteil 2C_572/2019 (nicht publ. in BGE 146 I 157)",
         "regesteKurz": null,
         "datum": "2020-03-11",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "9": [
+      {
+        "key": "bge_152_II_450__voll",
+        "zitierung": "Urteil 2C_127/2023 (nicht publ. in BGE 152 II 450)",
+        "regesteKurz": null,
+        "datum": "2025-12-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "12": [
+      {
+        "key": "bge_152_II_169__voll",
+        "zitierung": "Urteil 2C_416/2024 (nicht publ. in BGE 152 II 169)",
+        "regesteKurz": null,
+        "datum": "2025-07-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "14": [
+      {
+        "key": "bge_152_II_169__voll",
+        "zitierung": "Urteil 2C_416/2024 (nicht publ. in BGE 152 II 169)",
+        "regesteKurz": null,
+        "datum": "2025-07-29",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",

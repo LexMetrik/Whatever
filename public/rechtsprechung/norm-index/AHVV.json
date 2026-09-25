@@ -1,24 +1,44 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "AHVV",
   "gewichtQuelle": "alt",
   "proArtikel": {
     "6": [
       {
-        "key": "bge_148_V_385",
-        "zitierung": "BGE 148 V 385",
-        "regesteKurz": "Art. 5 Abs. 2 und 4 AHVG; Art. 6 Abs. 2 lit. f AHVV; AHV-Beitragspflicht; Ausnahme; Subvention einer Kindertagesstätte. Die Subvention des Arbeitgebers für die betriebseigene oder eine angeschlossene Kindertagesstätte gehört zum…",
-        "datum": "2022-10-17",
+        "key": "bge_148_V_253",
+        "zitierung": "BGE 148 V 253",
+        "regesteKurz": "Art. 16d Abs. 3 EOG; Art. 25 EOV; Mutterschaftsentschädigung; Nationalrätin. Das Parlamentsmandat einer Nationalrätin stellt eine Erwerbstätigkeit im Sinne von Art. 16d Abs. 3 EOG dar. Nimmt die Mutter diese Tätigkeit vorzeitig wieder auf,…",
+        "datum": "2022-03-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_148_V_253",
-        "zitierung": "BGE 148 V 253",
-        "regesteKurz": "Art. 16d Abs. 3 EOG; Art. 25 EOV; Mutterschaftsentschädigung; Nationalrätin. Das Parlamentsmandat einer Nationalrätin stellt eine Erwerbstätigkeit im Sinne von Art. 16d Abs. 3 EOG dar. Nimmt die Mutter diese Tätigkeit vorzeitig wieder auf,…",
-        "datum": "2022-03-08",
+        "key": "bge_152_V_106",
+        "zitierung": "BGE 152 V 106",
+        "regesteKurz": "Art. 30 Abs. 1 lit. c AVIG; Art. 34 Abs. 1 BV; keine Pflicht zur Stellensuche für Bundesparlamentarier vor den Neuwahlen. Ein Bundesparlamentarier, der sich zur Wiederwahl zur Verfügung stellt, ist nicht gehalten, drei Monate vor den…",
+        "datum": "2025-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_V_385",
+        "zitierung": "BGE 148 V 385",
+        "regesteKurz": "Art. 5 Abs. 2 und 4 AHVG; Art. 6 Abs. 2 lit. f AHVV; AHV-Beitragspflicht; Ausnahme; Subvention einer Kindertagesstätte. Die Subvention des Arbeitgebers für die betriebseigene oder eine angeschlossene Kindertagesstätte gehört zum…",
+        "datum": "2022-10-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -41,6 +61,16 @@
         "zitierung": "BGE 148 V 253",
         "regesteKurz": "Art. 16d Abs. 3 EOG; Art. 25 EOV; Mutterschaftsentschädigung; Nationalrätin. Das Parlamentsmandat einer Nationalrätin stellt eine Erwerbstätigkeit im Sinne von Art. 16d Abs. 3 EOG dar. Nimmt die Mutter diese Tätigkeit vorzeitig wieder auf,…",
         "datum": "2022-03-08",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_106",
+        "zitierung": "BGE 152 V 106",
+        "regesteKurz": "Art. 30 Abs. 1 lit. c AVIG; Art. 34 Abs. 1 BV; keine Pflicht zur Stellensuche für Bundesparlamentarier vor den Neuwahlen. Ein Bundesparlamentarier, der sich zur Wiederwahl zur Verfügung stellt, ist nicht gehalten, drei Monate vor den…",
+        "datum": "2025-12-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -317,6 +347,18 @@
         "gewicht": 0
       }
     ],
+    "68": [
+      {
+        "key": "bge_152_V_85",
+        "zitierung": "BGE 152 V 85",
+        "regesteKurz": "Art. 29 quater lit. b, Art. 29 sexies Abs. 1 und 3 AHVG; Art. 299 ZGB; Berechnung der Altersrente; Anrechnung und Teilung von Erziehungsgutschriften im Fall des ausserehelichen Kindes einer gerichtlich vom Ehemann getrennten Mutter, die…",
+        "datum": "2025-10-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "79": [
       {
         "key": "bge_150_V_57",
@@ -485,12 +527,36 @@
         "gewicht": 0
       }
     ],
+    "50b": [
+      {
+        "key": "bge_152_V_85__voll",
+        "zitierung": "Urteil 9C_606/2023 (nicht publ. in BGE 152 V 85)",
+        "regesteKurz": null,
+        "datum": "2025-10-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "51bis": [
       {
         "key": "bge_146_V_313",
         "zitierung": "BGE 146 V 313",
         "regesteKurz": "Art. 30 ter Abs. 3 AHVG; Eintragung beitragspflichtiger Einkommen Unselbständigerwerbender. Für die ausnahmsweise Anwendung des Erwerbsjahrsprinzips ist einzig relevant, ob der Arbeitnehmer einerseits im Zeitpunkt der nachträglichen…",
         "datum": "2020-08-26",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "52f": [
+      {
+        "key": "bge_152_V_85",
+        "zitierung": "BGE 152 V 85",
+        "regesteKurz": "Art. 29 quater lit. b, Art. 29 sexies Abs. 1 und 3 AHVG; Art. 299 ZGB; Berechnung der Altersrente; Anrechnung und Teilung von Erziehungsgutschriften im Fall des ausserehelichen Kindes einer gerichtlich vom Ehemann getrennten Mutter, die…",
+        "datum": "2025-10-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -641,6 +707,16 @@
     ],
     "71ter": [
       {
+        "key": "bge_152_V_114",
+        "zitierung": "BGE 152 V 114",
+        "regesteKurz": "Art. 35 Abs. 4 IVG; Art. 82 Abs. 1 IVV; Art. 71 ter Abs. 1 und Abs. 2 AHVV; Art. 20 ATSG; Auszahlungsmodalitäten bei Kinderrenten der Invalidenversicherung. Die nach Art. 71 ter Abs. 1 AHVV erforderliche Voraussetzung des Zusammenwohnens…",
+        "datum": "2026-03-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_147_V_2",
         "zitierung": "BGE 147 V 2",
         "regesteKurz": "Art. 25, Art. 73 Abs. 1 und 2 BVG; Art. 71 ter Abs. 3 AHVV; Invalidenkinderrente; Aktivlegitimation; Drittauszahlung. Weder das Personalvorsorgereglement der Sammelstiftung (gültig ab 1. Januar 2002) noch Art. 25 BVG bieten dem…",
@@ -649,6 +725,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_122",
+        "zitierung": "BGE 152 V 122",
+        "regesteKurz": "Art. 35 Abs. 4 IVG; Art. 82 Abs. 1 IVV in Verbindung mit Art. 71 ter Abs. 1 und 2 AHVV; Nachzahlung einer Kinderrente; Drittauszahlung. Die in Art. 71 ter Abs. 1 AHVV genannte Voraussetzung des Getrenntlebens muss bei einer Nachzahlung von…",
+        "datum": "2026-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_V_447",

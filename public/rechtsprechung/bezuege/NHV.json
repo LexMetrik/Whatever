@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"NHV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -12,13 +12,15 @@
 "bge_147_II_385":{"zitierung":"BGE 147 II 385","regesteKurz":"Art. 64 Abs. 1 lit. e BGBB; Bewilligung zum Erwerb eines landwirtschaftlichen Grundstücks, um darauf ein \"Objekt des Naturschutzes\" zu erhalten; Auslegung. Art. 64 Abs. 1 lit. e BGBB ermöglicht es, eine Bewilligung für den Erwerb eines…","datum":"2021-10-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_II_36":{"zitierung":"BGE 148 II 36","regesteKurz":"a Windpark Grenchenberg; Richtplanpflicht (Art. 8 Abs. 2 RPG). Anforderungen an die auf Stufe Richtplan nötigen Abklärungen. Dazu gehört das Vorkommen gefährdeter und national prioritärer Arten, die ein Konfliktpotenzial mit…","datum":"2021-11-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_304":{"zitierung":"BGE 151 II 304","regesteKurz":"Art. 18 Abs. 1 ter NHG; Art. 14 Abs. 6 NHV; Art. 7 Abs. 4 JSG; Fuss- und Wanderwegprojekt in einem der letzten nicht erschlossenen Tobel der Region; Autonomiebeschwerde der Gemeinden gegen die teilweise Aufhebung dieses Projekts durch das…","datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_304__voll":{"zitierung":"Urteil 1C_217/2023 (nicht publ. in BGE 151 II 304)","regesteKurz":null,"datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 304","urteil":"1C_217/2023"}}
+"bge_151_II_304__voll":{"zitierung":"Urteil 1C_217/2023 (nicht publ. in BGE 151 II 304)","regesteKurz":null,"datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 304","urteil":"1C_217/2023"}},
+"bge_152_II_276":{"zitierung":"BGE 152 II 276","regesteKurz":"Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…","datum":"2026-01-05","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
 "13":[{"key":"bge_147_II_385","gewicht":0}],
 "14":[{"key":"bge_151_II_304","gewicht":0},{"key":"bge_148_II_36","gewicht":1},{"key":"bge_147_II_319","gewicht":1},{"key":"bge_146_II_347","gewicht":0},{"key":"bge_146_II_304__voll","gewicht":0,"erwaegungen":["E. 9.2"]}],
 "20":[{"key":"bge_148_II_36","gewicht":1},{"key":"bge_151_II_304__voll","gewicht":0,"erwaegungen":["E. 4","E. 5"]}],
 "23":[{"key":"bge_147_II_125__voll","gewicht":0,"erwaegungen":["E. 2"]}],
+"25":[{"key":"bge_152_II_276","gewicht":0}],
 "29":[{"key":"bge_147_II_164","gewicht":0},{"key":"bge_146_II_347__voll","gewicht":0,"erwaegungen":["E. 4.2"]}]
 },
 "gesamtProArtikel":{
@@ -26,6 +28,7 @@
 "14":{"bge":4,"bger":1},
 "20":{"bge":1,"bger":1},
 "23":{"bger":1},
+"25":{"bge":1},
 "29":{"bge":1,"bger":1}
 }
 }
