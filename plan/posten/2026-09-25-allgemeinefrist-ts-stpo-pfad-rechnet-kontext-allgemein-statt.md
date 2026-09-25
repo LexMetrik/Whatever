@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: allgemeineFrist.ts: StPO-Pfad rechnet Kontext «allgemein» statt «stpo»
 anlass: RL-23-Nebenfund, 24.9.2026
 -->

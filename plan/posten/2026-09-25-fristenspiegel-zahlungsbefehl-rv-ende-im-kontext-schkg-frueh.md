@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: Fristenspiegel Zahlungsbefehl: RV-Ende im Kontext schkg — «frühestens» nicht voll richtungssicher
 -->
 

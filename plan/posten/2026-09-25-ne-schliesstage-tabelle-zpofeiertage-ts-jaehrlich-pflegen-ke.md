@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: NE-Schliesstage-Tabelle (zpoFeiertage.ts) jährlich pflegen — kein Tor; feiertage-kantone-bj.md BJ-Stand von 2011
 anlass: RL-22-Nebenfund, 24.9.2026
 -->

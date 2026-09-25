@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: NW-Warnung (Lohnfortzahlung) erscheint auch, wenn Basler- und Berner-Skala im selben DJ übereinstimmen
 anlass: RL-25-Nebenfund, 24.9.2026
 -->

@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: [D] A16-Warnung auch im ZPO-Rechner? Recherche 25.9.: kein amtlicher Beleg, Empfehlung Warnung wie BGG (W-07 b)
 -->
 
