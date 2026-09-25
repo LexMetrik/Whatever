@@ -69,7 +69,7 @@ const vorlagenZahl = (name: string) => gebietKarten(name).filter(istVerfuegbar).
 
 function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
   return (
-    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.35fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0">
+    <div className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.35fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)]">
       <WahlSpalte reg="w" kopf={<RubrikKachel reg="w" onWahl={zu('rechner')} titel="Rechner" zahl={nf(z.rechner)} einheit="Rechner" />}>
         <ul aria-label="Rechner nach Kategorie" className="px-2">
           {RECHNER_KATEGORIEN.map((k) => (
@@ -86,14 +86,23 @@ function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
         </ul>
       </WahlSpalte>
       <WahlSpalte reg="w" kopf={<RubrikKachel reg="w" onWahl={zu('vorlagen')} titel="Vorlagen" zahl={nf(z.vorlagen)} einheit="Vorlagen" />}>
-        {/* Eine Spalte, auch ab `xl`: zwei Unterspalten zerrissen @1440
-            («Strafpro-zess», «in Vorbereitung» gequetscht — Screenshot U8-Bau);
-            das Blatt scrollt stattdessen. */}
-        <ul aria-label="Vorlagen nach Rechtsgebiet" className="px-2">
+        {/* U8 (24.9.2026): eine Spalte, auch ab `xl` — zwei Unterspalten
+            zerrissen @1440 im Verhältnis 1 : 1.35 («Strafpro-zess», «in
+            Vorbereitung» gequetscht); das Blatt scrollte stattdessen.
+            S5a (W2·29-WERKBANK-REST, 25.9.2026, Posten U13-Nebenfund):
+            gemessen @1440×900 lief die Liste 163 px über das Blatt (14 Zeilen,
+            546 px), während unter den drei Rechner-Kategorien ~317 px leer
+            blieben. Ab `xl` darum Spaltenverhältnis nach Inhalt (0.8 : 2) UND
+            zwei Unterspalten, als Zeitungsspalten (`columns`, Lesefolge
+            abwärts), Zeile nie geteilt: Überlauf 0 px @1280×800/1440×900/
+            1920×1080; fünf Namen brechen am Wortende auf zwei Zeilen, keiner
+            mit Trennstrich. Unter `xl` (1024: Überlauf nur 163 → 9 px, aber neun
+            Zeilen auf 2–3 Zeilen gequetscht) bleibt die eine Spalte. */}
+        <ul aria-label="Vorlagen nach Rechtsgebiet" className="px-2 xl:columns-2 xl:gap-x-2">
           {WERKZEUGE_VORLAGEN_GEBIETE.map((g) => {
             const n = vorlagenZahl(g.name);
             return (
-              <li key={g.id} className="border-t border-rule-soft">
+              <li key={g.id} className="break-inside-avoid border-t border-rule-soft">
                 <button type="button" onClick={zu('vorlagen', g.id)} className="lc-menu-zeile items-baseline whitespace-normal px-2">
                   <span className="min-w-0 flex-1 hyphens-auto break-words leading-snug text-ink-900">{g.name}</span>
                   {n > 0

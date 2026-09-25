@@ -279,6 +279,31 @@ test.describe('Startseite · Blatt der Werkzeuge-Kachel', () => {
     expect(new Set(spalten).size).toBe(2)
   })
 
+  // S5a (W2·29-WERKBANK-REST, 25.9.2026, U13-Nebenfund): ab `xl` zwei
+  // Vorlagen-Unterspalten im Verhältnis 0.8 : 2 — die Wahl passt ganz ins Blatt.
+  // Rot-Beweis: vor S5a @1440×900 und @1280×800 je 163 px Überlauf (691/528).
+  for (const [breite, hoehe] of [[1440, 900], [1280, 800]] as const) {
+    test(`S5a Wahl @${breite}×${hoehe}: Werkzeuge ohne Überlauf, keine Vorlagen-Zeile geteilt`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: hoehe })
+      await page.goto('/?blatt=werkzeuge')
+      const liste = blatt(page).getByRole('list', { name: 'Vorlagen nach Rechtsgebiet' })
+      await expect(liste).toBeVisible()
+      const m = await page.evaluate(() => {
+        const i = document.querySelector('.lc-start-blatt-inhalt')!
+        const ul = document.querySelector('ul[aria-label="Vorlagen nach Rechtsgebiet"]')!
+        return {
+          ueber: i.scrollHeight - i.clientHeight,
+          // eine Zeile in zwei Spalten-Fragmente zerlegt ⇒ mehr als ein Rechteck
+          geteilt: [...ul.children].filter((li) => li.getClientRects().length > 1).length,
+          spalten: new Set([...ul.children].map((li) => Math.round(li.getBoundingClientRect().left))).size,
+        }
+      })
+      expect(m.ueber, `Werkzeuge-Wahl ohne Überlauf (${JSON.stringify(m)})`).toBeLessThanOrEqual(1)
+      expect(m.geteilt, 'keine Vorlagen-Zeile über zwei Spalten').toBe(0)
+      expect(m.spalten, 'Vorlagen-Liste zweispaltig').toBe(2)
+    })
+  }
+
   test('U8 Wahl: Rechner-Kategorie und Vorlagen-Rechtsgebiet direkt, Zurück je eine Stufe', async ({ page }) => {
     await page.goto('/')
     await werkzeugeKachel(page).click()
