@@ -5,6 +5,9 @@
 // fehlt), F4-03 = VB-05 (Rechenweg zeigt Probezeitende +1 Tag), F4-04
 // (Probezeit > 3 Monate still gekappt), S3b-a (addMonths(…, 0.5) verschluckt
 // den GAV-Halbmonat). Entscheid David 24.9.2026 W-08 (a): Warnung sofort.
+// Nachtrag RL-16b (25.9.2026, W-08 (b)): Stufe 2 RECHNET die Verlängerung
+// (BGE 148 III 126 E. 5.2.6/5.2.7); die F4-02-Fälle unten erwarten seither das
+// gerechnete Ergebnis statt der Stufe-1-Warnung (deklarierte Fachänderung).
 //
 // Norm (Fedlex SR 220, Konsolidierung 20260101, in Kraft 1.1.–30.9.2026 laut
 // SPARQL dateApplicability; Wortlaut in 20261001 unverändert; abgerufen
@@ -125,31 +128,38 @@ describe('S3b-a — halber Monat = 15 Tage, zuletzt gezählt (Art. 77 Abs. 1 Zif
   });
 });
 
-describe('F4-02 / S3c-b — Probezeitverlängerung Art. 335b Abs. 3 OR: Warnung (W-08 Stufe 1)', () => {
-  it('VB 1.1.2025, PZ 1 Mt, krank 10.–19.1., Zugang 5.2. → Warnung (Verlängerung nicht gerechnet)', () => {
+describe('F4-02 / S3c-b — Probezeitverlängerung Art. 335b Abs. 3 OR: gerechnet (W-08 Stufe 2, RL-16b)', () => {
+  // Stufe 1 (RL-16, 24.9.2026) erwartete hier die Warnung «nicht gerechnet»
+  // und die ordentliche Frist. Stufe 2: 6 Arbeitstage Mo–Fr (10., 13.–17.1.)
+  // → Probezeit bis 10.2.2025 → Zugang 5.2. in der Probezeit → 12.2.2025.
+  const stufe1Warnung = (w: string[]) => w.some((x) => x.includes('nicht gerechnet'));
+
+  it('VB 1.1.2025, PZ 1 Mt, krank 10.–19.1., Zugang 5.2. → verlängerte Probezeit, Beendigung 12.02.2025', () => {
     const r = berechneSperrfristen(PZ_FALL);
-    expect(hatPzWarnung(r.warnungen)).toBe(true);
-    expect(r.warnungen.find((w) => w.includes('Art. 335b Abs. 3 OR'))).toContain('BGE 148 III 126');
+    expect(r.beendigungISO).toBe('2025-02-12');
+    expect(stufe1Warnung(r.warnungen)).toBe(false);
   });
 
-  it('Folgefall: zusätzlich krank ab 3.2. — «nichtig» trägt die Warnung', () => {
+  it('Folgefall: zusätzlich krank ab 3.2. — Zugang liegt in der verlängerten Probezeit, keine Sperrfrist', () => {
     const r = berechneSperrfristen({
       ...PZ_FALL,
       sperrereignisse: [...PZ_FALL.sperrereignisse!, { typ: 'krankheit_unfall', von: '2025-02-03', bis: '2025-02-20' }],
     });
-    expect(hatPzWarnung(r.warnungen)).toBe(true);
+    expect(r.status).not.toBe('nichtig');
+    expect(r.beendigungISO).toBe('2025-02-12');
   });
 
-  it('Militär-/Zivildienst in der Probezeit (gesetzliche Pflicht) → Warnung', () => {
+  it('Militär-/Zivildienst in der Probezeit (gesetzliche Pflicht) → verlängert (5 Tage, Ende 7.2.) → 12.02.2025', () => {
     const r = berechneSperrfristen({
       ...PZ_FALL, sperrereignisse: [{ typ: 'militaer_zivil', von: '2025-01-13', bis: '2025-01-17' }],
     });
-    expect(hatPzWarnung(r.warnungen)).toBe(true);
+    expect(r.beendigungISO).toBe('2025-02-12');
   });
 
-  it('Arbeitnehmerkündigung: Warnung ebenfalls (7 Tage statt ordentlicher Frist möglich)', () => {
+  it('Arbeitnehmerkündigung: 7-Tage-Frist in der verlängerten Probezeit', () => {
     const r = berechneSperrfristen({ ...PZ_FALL, kuendigendePartei: 'arbeitnehmer' });
-    expect(hatPzWarnung(r.warnungen)).toBe(true);
+    expect(r.beendigungISO).toBe('2025-02-12');
+    expect(stufe1Warnung(r.warnungen)).toBe(false);
   });
 
   it('Ereignis nur nach der Probezeit → keine Warnung', () => {
