@@ -169,6 +169,35 @@ export const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
     + 'EMRK]. Die echten AVG-Fundstellen tragen zusätzlich das Token AVG (de) '
     + 'oder LSE (fr) und bleiben über diese Aliase wirksam. Lieber eine Lücke '
     + 'als eine falsche Bundesrechts-Zuordnung (§1/§8).'],
+  // ── SPRACHÜBERGREIFEND mehrdeutig (Nach-Verdikt «widerlegt» zu e3f874779,
+  //    QS-KORPUS 25.9.2026). Die Alias-Ebene bildet ein Kürzel sprachungebunden
+  //    ab; Fedlex vergibt dieselbe Buchstabenfolge aber in verschiedenen Sprachen
+  //    an verschiedene Erlasse (SPARQL jolux:titleShort über alle
+  //    ConsolidationAbstracts, Abruf 25.9.2026). Eine sprachgebundene Auflösung
+  //    ist nicht sauber möglich: BGE tragen die DE/FR/IT-Regeste im selben
+  //    Snapshot, `snap.sprache` trennt die Blöcke nicht. Darum Sperre (§8 — eine
+  //    benannte Lücke statt einer falschen Zuordnung). Echte Fundstellen bleiben
+  //    über die übrigen Sprachfassungen wirksam (IRSG/EIMP, VKL/OCPre, AVO).
+  ['AIMP', 'sprachübergreifend mehrdeutig: ITA «AIMP» = IRSG (SR 351.1), FRA '
+    + '«AIMP» = Accord intercantonal sur les marchés publics (IVöB, SR 172.056.5) '
+    + '— Fedlex-SPARQL 25.9.2026. Korpus: Beschaffungs-BGE trugen falsch IRSG, '
+    + 'z.B. bund/bge/152_II_211 (DE-Regeste «Art. 44 Abs. 1 lit. b IVöB», FR «art. '
+    + '44 al. 1 let. b AIMP»), 152_II_325 («Art. 20, 35 f., 48, 53 IVöB»), '
+    + '151_II_81 («ci-après: AIMP 2019»), 150_II_105 («AIMP 2001; RO 2003 196»). '
+    + 'Rechtshilfe-BGE behalten IRSG über «IRSG»/«EIMP» der DE/FR-Regeste.'],
+  ['OCP', 'sprachübergreifend mehrdeutig: FRA «OCP» = VKL (SR 832.104), ITA «OCP» '
+    + '= Jagdverordnung JSV (SR 922.01) — Fedlex-SPARQL 25.9.2026. Korpus: '
+    + 'bund/bge/152_II_196 (DE-Regeste «Art. 10quinquies Abs. 1 lit. a JSV», IT '
+    + '«art. 10quinquies cpv. 1 lett. a OCP»; Einzelwolf) und 150_IV_425 («art. 4 '
+    + 'e 5 OCP-CPM» = V-StGB-MStGB, SR 311.01, vom Extraktor am Bindestrich '
+    + 'gekappt) trugen falsch VKL.'],
+  ['OS', 'mehrdeutig: FRA/ITA «OS» = AVO (SR 961.011) und SR 961.05 (Fedlex-SPARQL '
+    + '25.9.2026); im Korpus ausschliesslich «OS LCart» = KG-Sanktionsverordnung '
+    + 'SVKG (SR 251.5), vom Extraktor am Leerzeichen zu «OS» gekappt — z.B. '
+    + 'bund/bge/148_II_25 «(Ordonnance sur les sanctions LCart, OS LCart; RS '
+    + '251.5)», 147_II_72, 146_II_217 «art. 2-6 OS LCart». Alle sechs Treffer '
+    + '(146_II_217, 147_II_72, 148_II_25, 148_II_321, 148_II_521, 151_II_742) '
+    + 'trugen falsch AVO.'],
 ]);
 
 /**
@@ -264,11 +293,13 @@ function baueSrIndex(): { srKey: Map<string, string>; mehrdeutig: Set<string> } 
  */
 function baueAbkTabelle(): {
   tabelle: Map<string, string>; kollisionen: string[]; notizen: string[]; ausgeschlossen: string[];
+  gesperrteZiele: Map<string, Set<string>>;
 } {
   const tabelle = new Map<string, string>();
   const kollidiert = new Set<string>();
   const notizen: string[] = [];
   const ausgeschlossen: string[] = [];
+  const gesperrteZiele = new Map<string, Set<string>>();
   const setze = (kandidat: string, key: string): void => {
     if (!kandidat) return;
     const bisher = tabelle.get(kandidat);
@@ -301,6 +332,8 @@ function baueAbkTabelle(): {
     }
     if (AUSGESCHLOSSENE_KEYS.has(key) || ABK_AUSSCHLUSS.has(normalisiereAbk(a.abk))) {
       ausgeschlossen.push(`${a.abk} (SR ${a.sr}, ${a.sprache}) → ${key}`);
+      const t = normalisiereAbk(a.abk);
+      (gesperrteZiele.get(t) ?? gesperrteZiele.set(t, new Set()).get(t)!).add(key);
       continue;
     }
     setze(normalisiereAbk(a.abk), key);
@@ -312,6 +345,7 @@ function baueAbkTabelle(): {
     kollisionen: [...kollidiert].sort(),
     notizen: notizen.sort(),
     ausgeschlossen: ausgeschlossen.sort(),
+    gesperrteZiele,
   };
 }
 
@@ -320,6 +354,7 @@ const {
   kollisionen: KOLLISIONEN,
   notizen: ALIAS_NOTIZEN,
   ausgeschlossen: ALIAS_AUSGESCHLOSSEN,
+  gesperrteZiele: GESPERRTE_ALIAS_ZIELE,
 } = baueAbkTabelle();
 
 /**
@@ -842,6 +877,32 @@ export function literaturEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
   const roh = keysAus(fliesstextVon(snap));
   const rein = keysAus(fliesstextOhneApparat(snap));
   return [...roh].filter((k) => !rein.has(k) && !ausStatutes.has(k)).sort();
+}
+
+/**
+ * normKeys, die AUSSCHLIESSLICH aus einem gesperrten Alias-Kürzel stammen
+ * (ABK_AUSSCHLUSS, z.B. «AIMP» → IRSG) — die zweite Gegenrichtung der
+ * Bewahr-Ratsche (QS-KORPUS 25.9.2026, Nach-Verdikt zu e3f874779).
+ *
+ * WOFÜR: eine Sperre in ABK_AUSSCHLUSS entlarvt Alt-Keys als Fehlzuordnung;
+ * `--remap` bewahrte sie sonst (oder bräche fail-closed ab). Die Ursache wird je
+ * Snapshot MECHANISCH belegt, nicht angenommen: der Snapshot nennt ein
+ * gesperrtes Kürzel, dessen Alias-Ziel genau dieser Key war, UND die
+ * Neuberechnung (ohne das Kürzel) reproduziert den Key nicht. Wird der Key über
+ * ein anderes Kürzel weiter belegt (Rechtshilfe-BGE: «IRSG»/«EIMP»), bleibt er
+ * — `normKeysVonSnapshot` enthält ihn dann. Rein, sortiert (§2).
+ */
+export function sperrEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
+  const kandidaten = new Set<string>();
+  const pruefe = (abk: string): void => {
+    const ziele = GESPERRTE_ALIAS_ZIELE.get(normalisiereAbk(abk));
+    if (ziele) for (const k of ziele) kandidaten.add(k);
+  };
+  for (const z of snap.zitierteNormen ?? []) { const a = abkVonStatut(z); if (a) pruefe(a); }
+  for (const ref of extrahiereStatutRefs(fliesstextVon(snap))) pruefe(ref.gesetz);
+  if (!kandidaten.size) return [];
+  const jetzt = new Set(normKeysVonSnapshot(snap));
+  return [...kandidaten].filter((k) => !jetzt.has(k)).sort();
 }
 
 /**

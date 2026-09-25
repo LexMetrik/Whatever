@@ -16,6 +16,7 @@ import {
 import { schreibeKorpus, ladeBestandSnapshots, berichteBezuege } from './normtext/entscheide-schreiben';
 import {
   normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
+  sperrEntfernteNormKeys,
 } from './normtext/entscheide-mapping';
 import { sha256EntscheidBloecke } from './normtext/sha-entscheide';
 import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZuClirId } from './normtext/clir-regeste';
@@ -353,9 +354,15 @@ async function main() {
     // nicht angenommen; alles andere läuft weiter in den fail-closed Abbruch.
     const litVerworfen = new Map<string, readonly string[]>();
     let litVerworfenKeys = 0;
+    const sperrVerworfen = new Map<string, readonly string[]>();
+    let sperrVerworfenKeys = 0;
     for (const s of basis) {
       const alt = s.normKeys ?? [];
-      const nichtBewahren = new Set(literaturEntfernteNormKeys(s));
+      // Zweite Gegenrichtung (QS-KORPUS 25.9.2026): Keys, die NUR aus einem jetzt
+      // in ABK_AUSSCHLUSS gesperrten Alias stammten (AIMP → IRSG …), je Snapshot
+      // mechanisch belegt durch `sperrEntfernteNormKeys`, ebenfalls nicht bewahren.
+      const gesperrt = new Set(sperrEntfernteNormKeys(s));
+      const nichtBewahren = new Set([...literaturEntfernteNormKeys(s), ...gesperrt]);
       // ohne hint: rein aus dem Snapshot
       const { keys: neu, nurAlt, verworfen } = remapNormKeys(alt, normKeysVonSnapshot(s), nichtBewahren);
       if (nurAlt.length) {
@@ -363,9 +370,12 @@ async function main() {
         altErhaltenSnaps++;
         bewahrt.set(s.id, nurAlt);
       }
-      if (verworfen.length) {
-        litVerworfenKeys += verworfen.length;
-        litVerworfen.set(s.id, verworfen);
+      const ausSperre = verworfen.filter((k) => gesperrt.has(k));
+      const ausLiteratur = verworfen.filter((k) => !gesperrt.has(k));
+      if (ausSperre.length) { sperrVerworfenKeys += ausSperre.length; sperrVerworfen.set(s.id, ausSperre); }
+      if (ausLiteratur.length) {
+        litVerworfenKeys += ausLiteratur.length;
+        litVerworfen.set(s.id, ausLiteratur);
       }
       if (neu.length !== alt.length || neu.some((k, i) => k !== alt[i])) veraendert++;
       s.normKeys = neu;
@@ -392,6 +402,10 @@ async function main() {
     // ist eine Korrektur an ausgelieferten Daten und gehört ins Lauf-Protokoll (§8).
     console.log(`[remap] alt-verworfen (Literatur-Phantome, NICHT bewahrt): ${litVerworfenKeys} Keys über ${litVerworfen.size} Snapshots.`);
     for (const [id, keys] of [...litVerworfen].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))) {
+      console.log(`  · ${id}: ${[...keys].join(', ')}`);
+    }
+    console.log(`[remap] alt-verworfen (gesperrtes Alias-Kürzel, ABK_AUSSCHLUSS, NICHT bewahrt): ${sperrVerworfenKeys} Keys über ${sperrVerworfen.size} Snapshots.`);
+    for (const [id, keys] of [...sperrVerworfen].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))) {
       console.log(`  · ${id}: ${[...keys].join(', ')}`);
     }
     console.log(`[remap] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets, ${res.artikelBuckets} Artikel-Buckets, ${res.shards} Shards.`);

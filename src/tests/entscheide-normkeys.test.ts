@@ -131,10 +131,18 @@ describe('Alias-Ebene — amtliche FR/IT-Kürzel zeigen auf den Register-key', (
     expect(normKeyFuerAbk('LT')).toBeNull();
     expect(normKeyFuerAbk('LTB')).toBeNull();
     expect(normKeyFuerAbk('StG')).toBeNull();
+    // §6.3-DEKLARATION (QS-KORPUS 25.9.2026, Nach-Verdikt zu e3f874779): vier
+    // Zeilen dazu — die sprachübergreifend mehrdeutigen AIMP/OCP/OS (Beleg in
+    // ABK_AUSSCHLUSS und src/tests/abk-sprachuebergreifend.test.ts). Bis dahin
+    // standen hier nur LC/LT/LTB/StG.
     expect([...ABK_ALIAS_AUSGESCHLOSSEN]).toEqual([
+      'AIMP (SR 351.1, it) → IRSG',
       'LC (SR 823.11, it) → AVG',
       'LT (SR 641.10, fr) → STG',
       'LTB (SR 641.10, it) → STG',
+      'OCP (SR 832.104, fr) → VKL',
+      'OS (SR 961.011, fr) → AVO',
+      'OS (SR 961.011, it) → AVO',
       'StG (SR 641.10, de) → STG',
     ]);
   });
@@ -195,11 +203,14 @@ describe('Sicherungen der Ableitung — sichtbar statt still (§6.7)', () => {
     // genau darum steht die Liste hier exakt und nicht als Obergrenze.
     expect([...ABK_KOLLISIONEN]).toEqual([]);
   });
-  it('ABK_AUSSCHLUSS trägt heute «LC» und «STG», mit begründendem Text', () => {
+  it('ABK_AUSSCHLUSS trägt «STG», «LC» und die sprachübergreifenden «AIMP», «OCP», «OS», mit begründendem Text', () => {
     // 'LC' seit Nachzug QS-MONITOR-ROT (18.9.2026): Gegenprüfung Opus auf Commit
     // 4eec6ea1f — das it-Alias 'LC' (SR 823.11, AVG) kollidiert mit dem
     // Waadtländer Gemeindegesetz (BLV 175.11), Beleg BGE 149 I 343.
-    expect([...ABK_AUSSCHLUSS.keys()]).toEqual(['STG', 'LC']);
+    // AIMP/OCP/OS seit 25.9.2026 (QS-KORPUS, Nach-Verdikt zu e3f874779): Fedlex
+    // vergibt das Kürzel sprachabhängig an verschiedene Erlasse; vorher ['STG', 'LC'].
+    expect([...ABK_AUSSCHLUSS.keys()]).toEqual(['STG', 'LC', 'AIMP', 'OCP', 'OS']);
+    for (const t of ['AIMP', 'OCP', 'OS']) expect(ABK_AUSSCHLUSS.get(t), t).toMatch(/Fedlex-SPARQL 25\.9\.2026/);
     expect(ABK_AUSSCHLUSS.get('STG')).toMatch(/kantonal/);
     expect(ABK_AUSSCHLUSS.get('LC')).toMatch(/Waadt|Vaud/);
   });
