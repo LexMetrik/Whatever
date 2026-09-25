@@ -1,6 +1,6 @@
 ---
 name: korpus-werkstatt
-description: "Verwenden bei «neuen Bundeserlass/Kantonserlass hinzufügen», «Erlass/Snapshot aktualisieren», «verifizier den Erlass X», «stimmt der Anker/Stand?», «Render-Bug / falsches «aufgehoben» / Tausendertrenner / text-indent / zerrissene Abkürzung», «Rechtsprechungs-Korpus erweitern», «BGE-Leitentscheid», «Snapshot generieren», «review / prüf das» — Content-Produktion + Verifikation für die Lexmetrik-Korpora Normtext (Gesetze) und Rechtsprechung (Urteile): Erlass/Entscheid extrahieren, mit Norm+Link+Stand belegen, Render/Extraktion prüfen."
+description: "Verwenden bei «neuen Bundeserlass/Kantonserlass hinzufügen», «Erlass/Snapshot aktualisieren», «verifizier den Erlass X», «stimmt der Anker/Stand?», «Render-Bug / falsches «aufgehoben» / Tausendertrenner / text-indent / zerrissene Abkürzung», «Rechtsprechungs-Korpus erweitern», «BGE-Leitentscheid», «Snapshot generieren», «review / prüf das», «prüf und lande die Rechtsprechung» (Wochen-Nachzug) — Content-Produktion + Verifikation für die Lexmetrik-Korpora Normtext (Gesetze) und Rechtsprechung (Urteile): Erlass/Entscheid extrahieren, mit Norm+Link+Stand belegen, Render/Extraktion prüfen."
 ---
 
 # Korpus-Werkstatt LexMetrik (Normtext + Rechtsprechung)
@@ -160,6 +160,24 @@ Quellen-Priorität und PDF-Extraktionsregeln im Detail:
 - **Zusatz-Pass (on-demand):** Davon getrennt der **user-getriggerte**
   `review.md`-Audit («prüf das», «stimmt das?», «review»). Das ist **nicht** der
   §14.4-Pflicht-Pass, sondern ein zusätzlicher Audit — nie automatisch starten.
+
+## Wochen-Nachzug prüfen und landen («prüf und lande die Rechtsprechung»)
+
+Montags öffnet `rechtsprechung-wochenlauf.yml` EINEN PR `auto/rechtsprechung-*`
+(Entscheid David 25.9.2026: «Vorbereiten, Prüfung vor Live», kein Auto-Merge).
+Body = Bericht aus `scripts/rechtsprechung/wochenlauf.ts`: Zahlen je Gericht,
+Ausfälle, BS-Takedowns/-Aktualisierungen, Tore, automatische Stichprobe.
+
+1. PR lesen. ENTWURF = etwas war rot (Grund im Kopf) — erst beheben, dann weiter.
+2. Pflicht-Gegenprüfung (Skill `gegenpruefung`, Prüfer ≠ Bau-Modell) mit den
+   Linsen aus «Verifikation» oben, dazu **normKeys inhaltlich** (Remap-Zuwachs
+   an Stichproben gegen den Entscheidtext, Lehre #1099). Die Auto-Stichprobe
+   ersetzt die blinde Stichprobe nicht; «nicht prüfbar» (PDF) von Hand.
+3. Quittung `npm run gegenpruefung:ok` (Register), Verdikt-Commit auf den Zweig.
+4. Im PR-Body die Zeile `Gegenpruefung: ausstehend …` durch das Verdikt
+   ersetzen — sonst bleibt `check:merge-schutz` rot (Queue-Squash liest den Body).
+5. Zahl-Pins in Tests/e2e, die am Zuwachs reissen, als eigenen `test(`-Commit
+   nachziehen; dann einreihen per Skill `landung`.
 
 ## Optionaler Zweitblick (Diskrepanz-Finder)
 
