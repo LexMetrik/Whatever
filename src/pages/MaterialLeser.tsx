@@ -96,7 +96,7 @@ export function MaterialLeser() {
       // einem literalen «%» im Schlüssel — und ein Wurf im Render-Pfad machte aus
       // einer Fehlseite eine Fehlerseite. Gezeigt wird ohnehin genau das, was in
       // der Adresse stand (§8).
-      <FehlSeite bereich="Amtliche Ressourcen" objekt="Material" name={key}
+      <FehlSeite bereich="Materialien" objekt="Material" name={key}
         erklaerung="Dieser Eintrag existiert nicht (mehr)."
         wege={[{ to: '/materialien', label: 'Alle Materialien' }]} />
     );
