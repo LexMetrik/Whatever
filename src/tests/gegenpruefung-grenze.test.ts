@@ -8,6 +8,7 @@ import { join } from 'node:path';
 import {
   behalten,
   istPruefLogik,
+  istRisikoPfad,
   istTorPfad,
   RECHTSLOGIK_DATEIEN,
   TOR_DATEIEN,
@@ -66,6 +67,29 @@ describe('Risiko-Grenze RL-02', () => {
     expect(behalten('src/lib/startseiteVorlagenEingabenGesellschaft.ts')).toBe(true);
     expect(behalten('src/lib/startseiteVorlagenVorsorgeVertraege.ts')).toBe(true);
     expect(behalten('src/pages/VorlageVerjaehrungsverzicht.tsx')).toBe(true);
+  });
+
+  it('Entscheid David 25.9.2026: ALLE Urteilsdaten public/rechtsprechung/** sind Risikopfad', () => {
+    // Vorher (bis 25.9.2026) nur bezuege/*.json — Register, Snapshots, Richter
+    // und Norm-Index lagen ausserhalb (Messung Teil A §2: false).
+    for (const p of [
+      'public/rechtsprechung/register.json',
+      'public/rechtsprechung/bund/bge/146_III_1.json',
+      'public/rechtsprechung/kanton/BS/bs_appellationsgericht/AK.2022.32.json',
+      'public/rechtsprechung/richter.json',
+      'public/rechtsprechung/bezuege-bilanz.json',
+      'public/rechtsprechung/norm-index.json',
+      'public/rechtsprechung/norm-index-erlasse.json',
+      'public/rechtsprechung/norm-index/OR.json',
+      'public/rechtsprechung/normkeys-kanton.json',
+      'public/rechtsprechung/kuenftig/unterordner/x.json',
+    ]) {
+      expect(istRisikoPfad(p), p).toBe(true);
+      expect(behalten(p), p).toBe(true);
+    }
+    // Nachbarn bleiben draussen (Präfix mit Schrägstrich, kein Substring).
+    expect(behalten('public/rechtsprechung-alt/register.json')).toBe(false);
+    expect(behalten('src/lib/rechtsprechung/register.ts')).toBe(false);
   });
 
   // ANLASS: Gegenprüfung RL-02 24.9.2026 — die committeten Generator-Artefakte in

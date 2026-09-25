@@ -342,7 +342,11 @@ export function istRisikoPfad(p: string): boolean {
   if (KATALOGTEXT_RE.test(p)) return true;
   // rekursiv wie public/normtext (Blocker Linse 2): ein späterer Unterordner
   // darf nicht aus der Grenze fallen.
-  if (p.startsWith('public/rechtsprechung/bezuege/') && p.endsWith('.json')) return true;
+  // Entscheid David 25.9.2026 (Chat): alle Urteilsdaten Risikopfad — Wochenlauf-PR
+  // ohne Umweg gesperrt. Bis dahin nur bezuege/*.json; register.json, bund/**,
+  // kanton/**, richter.json, norm-index* lagen draussen (behalten() = false,
+  // gemessen 25.9.2026). Heute ausschliesslich .json im Baum.
+  if (p.startsWith('public/rechtsprechung/')) return true;
   // Seit QS-CODE-SPLITS ist `zustaendigkeit.ts` eine reine Fassade; die tragende
   // Rechenlogik (erstinstanz/rechtsmittel/gemeinsam) liegt im gleichnamigen Ordner.
   // OHNE den Ordner-Zweig hätte der Split die Risiko-Klassifikation der eigentlichen
