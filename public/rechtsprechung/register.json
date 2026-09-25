@@ -16,7 +16,11 @@
       "regesteKurz": "Verlängerung Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.77.json",
@@ -45,7 +49,10 @@
       "regesteKurz": "Ausschaffungshaft (Art. 76 Abs. 1 AIG)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "ASYLG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.78.json",
@@ -74,7 +81,9 @@
       "regesteKurz": "Vorbereitungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.76.json",
@@ -103,7 +112,9 @@
       "regesteKurz": "Verlängerung der Durchsetzungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.73.json",
@@ -132,7 +143,10 @@
       "regesteKurz": "Verlängerung Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.74.json",
@@ -161,7 +175,9 @@
       "regesteKurz": "Ausschaffungshaft mit Verzicht auf mündliche Verhandlung",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.75.json",
@@ -190,7 +206,11 @@
       "regesteKurz": "Verlängerung Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.70.json",
@@ -219,7 +239,13 @@
       "regesteKurz": "Forderung aus diversen Rechtsgründen (nicht rechtskräftig)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "OR",
+        "STGB",
+        "UWG",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_zivilgericht/K3.2025.24.json",
@@ -260,7 +286,11 @@
       "regesteKurz": "Verlängerung Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.67.json",
@@ -289,7 +319,10 @@
       "regesteKurz": "Anordnung der Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.68.json",
@@ -318,7 +351,11 @@
       "regesteKurz": "Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.66.json",
@@ -347,7 +384,9 @@
       "regesteKurz": "Anordnung Durchsetzungshaft (Art. 78 AIG)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.64.json",
@@ -376,7 +415,9 @@
       "regesteKurz": "Vorbereitungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.65.json",
@@ -405,7 +446,11 @@
       "regesteKurz": "Verlängerung Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BV",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.59.json",
@@ -434,7 +479,10 @@
       "regesteKurz": "Ausschaffungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.63.json",
@@ -463,7 +511,9 @@
       "regesteKurz": "Anordnung der Durchsetzungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.58.json",
@@ -492,7 +542,10 @@
       "regesteKurz": "Gesuch um Erlass bzw. Stundung (Entscheid des Appellationsgerichts SB.2024.114 vom 6. Oktober 2025) (nicht…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2026.29.json",
@@ -525,7 +578,9 @@
       "regesteKurz": "Vorbereitungshaft nach Art. 76a AIG (Haft im Rahmen des Dublin-Verfahrens)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.60.json",
@@ -587,7 +642,10 @@
       "regesteKurz": "Widerruf einer Standbetriebsbewilligung (nicht rechtskräftig)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.192.json",
@@ -1062,7 +1120,12 @@
       "regesteKurz": "Leistungseinstellung",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG",
+        "UVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.49.json",
@@ -1659,7 +1722,14 @@
       "regesteKurz": "Prämien/Kostenbeteiligungen; Rechtsöffnung",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "ELG",
+        "KVG",
+        "KVV",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/KV.2025.6.json",
@@ -1911,7 +1981,9 @@
       "regesteKurz": "Anordnung der Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.51.json",
@@ -1940,7 +2012,11 @@
       "regesteKurz": "Rückweisung, somatische Beschwerden wurden nicht abgeklärt.",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.111.json",
@@ -1981,7 +2057,10 @@
       "regesteKurz": "Rente",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.123.json",
@@ -2082,7 +2161,9 @@
       "regesteKurz": "Vorbereitungshaft (Art. 75 Abs. 1 AIG)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.50.json",
@@ -2111,7 +2192,13 @@
       "regesteKurz": "Nichtinvasive Probenahme und DNA-Analyse (nicht rechtskräftig)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.124.json",
@@ -2240,7 +2327,12 @@
       "regesteKurz": "AVIG",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "AVIG",
+        "AVIV",
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/AL.2026.1.json",
@@ -2281,7 +2373,13 @@
       "regesteKurz": "Prämienausstände, Mahngebühren und Spesenpauschale, Rechtsöffnungsverfahren",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "KVG",
+        "KVV",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/KV.2026.1.json",
@@ -2322,7 +2420,13 @@
       "regesteKurz": "UVG Unselbständige Akkordarbeit sowie Inaktivität von juristischen Personen (Subunternehmen); Umgehungsgeschäft.",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "ATSG",
+        "BGG",
+        "UVG",
+        "UVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.57.json",
@@ -2370,7 +2474,11 @@
       "regesteKurz": "Freistellung und Ordentliche Kündigung aufgrund schwerer Pflichtverletzungen (nicht rechtskräftig) (Beschwerde beim…",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "OR"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.97.json",
@@ -2732,7 +2840,12 @@
       "regesteKurz": "UVG Rente",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVV",
+        "UVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.58.json",
@@ -2889,7 +3002,10 @@
       "regesteKurz": "Rechtsverweigerung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/KE.2026.16.json",
@@ -2974,7 +3090,11 @@
       "regesteKurz": "Pfändung (Kosten)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.34.json",
@@ -3092,7 +3212,11 @@
       "regesteKurz": "Rechtsverzögerung/Rechtsverweigerung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/KE.2026.3.json",
@@ -3165,7 +3289,11 @@
       "regesteKurz": "Schutz der Persönlichkeit",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.7.json",
@@ -3281,7 +3409,10 @@
       "regesteKurz": "Konkursbeschwerde nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.31.json",
@@ -3322,7 +3453,14 @@
       "regesteKurz": "Zustimmung zum Wechsel des Aufenthaltsortes des Sohns",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "HKSUE96",
+        "STGB",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/KE.2026.8.json",
@@ -3355,7 +3493,11 @@
       "regesteKurz": "ELG Bejahung des guten Glaubens nach einer Meldepflichtverletzung (Beschwerde beim Bundesgericht hängig)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "ATSV",
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/EL.2025.11.json",
@@ -3396,7 +3538,12 @@
       "regesteKurz": "Invalidenrente; Aufteilung Haushalt und Erwerb",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.120.json",
@@ -3437,7 +3584,9 @@
       "regesteKurz": "Ausschaffungshaft",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/AUS.2026.41.json",
@@ -3551,7 +3700,10 @@
       "regesteKurz": "Parteientschädigung bei Teileinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2024.123.json",
@@ -3584,7 +3736,12 @@
       "regesteKurz": "Rechenschaftsablage / Kostenentscheid (Rückweisungsverfahren betr. ZB.2024.19)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZZ.2025.1.json",
@@ -3657,7 +3814,11 @@
       "regesteKurz": "Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "VZAE"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.172.json",
@@ -3698,7 +3859,10 @@
       "regesteKurz": "Rechtsvorschlag mangels neuen Vermögens",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.20.json",
@@ -3731,7 +3895,12 @@
       "regesteKurz": "Gesuch um internationale Zustellhilfe vom 19. September 2025",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "HZUE",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGZ.2025.8.json",
@@ -3764,7 +3933,11 @@
       "regesteKurz": "Getrenntleben / Unterhalt",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.1.json",
@@ -3805,7 +3978,11 @@
       "regesteKurz": "Forderung aus Arbeitsvertrag",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.23.json",
@@ -3846,7 +4023,11 @@
       "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO",
+        "SVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2026.6.json",
@@ -3879,7 +4060,10 @@
       "regesteKurz": "Kostenvorschuss",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.25.json",
@@ -4349,7 +4533,11 @@
       "regesteKurz": "IVG Invalidenrente (Beschwerde beim Bundesgericht hängig)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.93.json",
@@ -4390,7 +4578,12 @@
       "regesteKurz": "Revisionsgesuch",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "VWVG",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGV.2025.6.json",
@@ -4431,7 +4624,10 @@
       "regesteKurz": "Ablehnung des Einbürgerungsgesuchs",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.188.json",
@@ -4498,7 +4694,11 @@
       "regesteKurz": "Rechtsöffnung (Beschwerde beim Bundesgericht hängig)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.10.json",
@@ -4539,7 +4739,13 @@
       "regesteKurz": "Berichtigung des Personenstandsregisters",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB",
+        "ZSTV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.204.json",
@@ -4730,7 +4936,12 @@
       "regesteKurz": "Persönlichkeitsstörung oder Persönlichkeitsakzentuierung? Gutachten beweiskräftig.",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.20.json",
@@ -4771,7 +4982,10 @@
       "regesteKurz": "Gesuch um Erlass der Verfahrenskosten (Urteil des Appellationsgerichts SB.2013.87 vom 29. April 2014)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2026.15.json",
@@ -4837,7 +5051,12 @@
       "regesteKurz": "Ausstandsgesuch gegen den Appellationsgerichtspräsidenten (BGer 1C_2024/2026 vom 10.06.2026)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGV.2025.9.json",
@@ -5161,7 +5380,12 @@
       "regesteKurz": "Eintritt der Arbeitsunfähigkeit und zeitlicher Zusammenhang",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "IVG",
+        "OR"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/BV.2025.7.json",
@@ -5202,7 +5426,11 @@
       "regesteKurz": "Verlängerung der Untersuchungshaft",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/HB.2026.6.json",
@@ -5235,7 +5463,11 @@
       "regesteKurz": "Rückforderung",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "AVIG",
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/AL.2026.2.json",
@@ -5446,7 +5678,10 @@
       "regesteKurz": "Ausweisung (BGer 4A_173/2026 vom 18. Mai 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.18.json",
@@ -5487,7 +5722,10 @@
       "regesteKurz": "Abschreibung des Verfahrens und Wiederherstellung (BGer 4D_80/2026 vom 1. Juni 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.19.json",
@@ -5528,7 +5766,10 @@
       "regesteKurz": "Ausweisung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.20.json",
@@ -5569,7 +5810,14 @@
       "regesteKurz": "AHVG Schadenersatz",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AHVG",
+        "AHVV",
+        "ATSG",
+        "BGG",
+        "OR",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/AH.2024.9.json",
@@ -5610,7 +5858,10 @@
       "regesteKurz": "Anfechtungsobjekt. Beweiswertigkeit eines medizinischen Gutachtens.",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.114.json",
@@ -5651,7 +5902,11 @@
       "regesteKurz": "IVG Nach Erlass der angefochtenen Verfügung eingetretene Verschlechterung des Gesundheitszustandes; Geltendmachung im…",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.83.json",
@@ -5692,7 +5947,12 @@
       "regesteKurz": "Anspruchsrelevante Verschlechterung des Gesundheitszustandes glaubhaft gemacht.",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2026.30.json",
@@ -5715,7 +5975,10 @@
       "regesteKurz": "Beschlagnahme (Rückweisungsverfahren betr. BES.2024.137)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2026.1.json",
@@ -5748,7 +6011,10 @@
       "regesteKurz": "Gesuch um Erlass der Verfahrenskosten (Entscheid des Appellationsgerichts vom 28. Juli 2025 im Verfahren DGS.2024.1)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2026.13.json",
@@ -5812,7 +6078,11 @@
       "regesteKurz": "Konkursandrohung (Bger 5A_387/2026 vom 07. Mai 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.8.json",
@@ -5853,7 +6123,10 @@
       "regesteKurz": "Revisionsgesuch betreffend einen Strafbefehl der Staatsanwaltschaft vom 8. August 2025 (VT.[...])",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2026.4.json",
@@ -5894,7 +6167,10 @@
       "regesteKurz": "Übernahme einer Beistandschaft",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/KE.2026.6.json",
@@ -5935,7 +6211,10 @@
       "regesteKurz": "Submission: Ersatzbeschaffung medizinischer All-In-One-PCs für den OP-Bereich",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2026.17.json",
@@ -6063,7 +6342,12 @@
       "regesteKurz": "Klage auf Feststellung neuen Vermögens",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.18.json",
@@ -6104,7 +6388,11 @@
       "regesteKurz": "Vergewaltigung, mehrfache sexuelle Nötigung, mehrfache versuchte sexuelle Nötigung sowie Tätlichkeiten",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.87.json",
@@ -6145,7 +6433,10 @@
       "regesteKurz": "Fristwiederherstellung und Sistierung",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.208.json",
@@ -6219,7 +6510,10 @@
       "regesteKurz": "Verfahrenseinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.75.json",
@@ -6252,7 +6546,11 @@
       "regesteKurz": "Kündigung des Arbeitsverhältnisses",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "VWVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.23.json",
@@ -6377,7 +6675,11 @@
       "regesteKurz": "mehrfache sexuelle Nötigung und mehrfache sexuelle Handlungen mit einem Kind",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.53.json",
@@ -6464,7 +6766,13 @@
       "regesteKurz": "IVG Hilflosenentschädigung aufgrund lebenspraktischer Begleitung beim Geburtsgebrechen 404 (Beschwerde beim…",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV",
+        "VWVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.85.json",
@@ -6550,7 +6858,10 @@
       "regesteKurz": "Genugtuung nach Verfahrenseinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.128.json",
@@ -6630,7 +6941,10 @@
       "regesteKurz": "vorzeitiger Strafvollzug",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.102.json",
@@ -6663,7 +6977,11 @@
       "regesteKurz": "IVG",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.110.json",
@@ -6704,7 +7022,11 @@
       "regesteKurz": "UVG",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.44.json",
@@ -7138,7 +7460,11 @@
       "regesteKurz": "Nichtanhandnahme (Beschwerde bei BG hängig)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.60.json",
@@ -7171,7 +7497,10 @@
       "regesteKurz": "Gesuch um Erlass der Verfahrenskosten (Urteil des Appellationsgerichts SB.2024.113 vom 28. Mai 2025)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2026.11.json",
@@ -7204,7 +7533,10 @@
       "regesteKurz": "Verlängerung der Untersuchungshaft",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/HB.2026.5.json",
@@ -7237,7 +7569,12 @@
       "regesteKurz": "Demonstrationsverbot (Beschwerde am BGer hängig)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.148.json",
@@ -7438,7 +7775,10 @@
       "regesteKurz": "Zustellung Nichtanhandnahmeverfügung und Entschädigungsforderung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.78.json",
@@ -7471,7 +7811,11 @@
       "regesteKurz": "Pfändung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.14.json",
@@ -7512,7 +7856,11 @@
       "regesteKurz": "IV-Rente; Rückweisung zur Begutachtung",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2026.17.json",
@@ -7625,7 +7973,11 @@
       "regesteKurz": "Rechtsöffnung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.69.json",
@@ -7666,7 +8018,10 @@
       "regesteKurz": "Jährliche Prüfung der ambulanten Behandlung gemäss Art. 63a Abs. 1 StGB (Beschwerde beim BG hängig)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.142.json",
@@ -7707,7 +8062,9 @@
       "regesteKurz": "Forderung (Rückweisungsverfahren betr. ZB.2023.58)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZZ.2025.2.json",
@@ -7788,7 +8145,13 @@
       "regesteKurz": "Verfahrenseinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.83.json",
@@ -7821,7 +8184,10 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.9.json",
@@ -7885,7 +8251,12 @@
       "regesteKurz": "Urteilsänderung (BGer 5A_342/2026 vom 23. April 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.47.json",
@@ -8064,7 +8435,11 @@
       "regesteKurz": "Verfahrenseinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.59.json",
@@ -8097,7 +8472,12 @@
       "regesteKurz": "Haben die für die Invalidität mitursächlichen psychischen Faktoren das Krankheitsgeschehen schon während der…",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "BVG",
+        "FZG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/BV.2025.10.json",
@@ -8138,7 +8518,12 @@
       "regesteKurz": "Krankentaggeld: krankheitsbedingte Arbeitsunfähigkeit nicht nachgewiesen, Gegenbeweis durch Versicherung erbracht",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "LUGUE",
+        "VVG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/ZV.2025.3.json",
@@ -8298,7 +8683,12 @@
       "regesteKurz": "Verfahrenseinstellung (Beschwerde am BG hängig)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.42.json",
@@ -8331,7 +8721,11 @@
       "regesteKurz": "Sistierung und Nichteintreten",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.106.json",
@@ -8372,7 +8766,10 @@
       "regesteKurz": "Rechtsverweigerung/Rechtverzögerung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/KE.2025.48.json",
@@ -8459,7 +8856,10 @@
       "regesteKurz": "Errichtung einer Beistandschaft sowie Entzug des Kontozugriffs gestützt auf Art. 395 Abs. 3 ZGB",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/KE.2025.51.json",
@@ -8500,7 +8900,11 @@
       "regesteKurz": "Anordnung einer forensisch-psychiatrischen Begutachtung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.21.json",
@@ -8614,7 +9018,12 @@
       "regesteKurz": "Forderung aus Arbeitsvertrag (BGer 4A_199/2026 vom 19. Juni 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.41.json",
@@ -8688,7 +9097,10 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG (Betreibung Nr. [...])",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.15.json",
@@ -8729,7 +9141,10 @@
       "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.129.json",
@@ -8762,7 +9177,9 @@
       "regesteKurz": "Ordnungsbusse",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.1.json",
@@ -8871,7 +9288,11 @@
       "regesteKurz": "Verfahrenseinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.118.json",
@@ -8904,7 +9325,11 @@
       "regesteKurz": "Pfändung (BGer 5A_209/2026 vom 15.04.26)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.110.json",
@@ -8945,7 +9370,10 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.16.json",
@@ -8986,7 +9414,11 @@
       "regesteKurz": "Ausweisung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.3.json",
@@ -9119,7 +9551,10 @@
       "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2026.2.json",
@@ -9234,7 +9669,11 @@
       "regesteKurz": "Rechtsöffnung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.102.json",
@@ -9275,7 +9714,10 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG (BGer 5A_263/2026 vom 22.05.2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.11.json",
@@ -9515,7 +9957,12 @@
       "regesteKurz": "Rechtsöffnung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.78.json",
@@ -9556,7 +10003,11 @@
       "regesteKurz": "Ausweisung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2026.9.json",
@@ -9797,7 +10248,12 @@
       "regesteKurz": "Ausstandsbegehren gegen die Instruktionsrichterin im Verfahren […]",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2025.44.json",
@@ -9846,7 +10302,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.13.json",
@@ -10216,7 +10676,14 @@
       "regesteKurz": "Nichtanhandnahme",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "JSTG",
+        "JSTPO",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.108.json",
@@ -10381,7 +10848,10 @@
       "regesteKurz": "Nichteintreten betreffend Anträge Vater vom 07. März 2025",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/KE.2025.40.json",
@@ -10422,7 +10892,11 @@
       "regesteKurz": "Strafzumessung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.20.json",
@@ -10714,7 +11188,10 @@
       "regesteKurz": "Gesuch um Erlass der Verfahrenskosten (Entscheid des Appellationsgerichts vom 25. November 2020 im Verfahren…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2026.5.json",
@@ -10747,7 +11224,13 @@
       "regesteKurz": "Vergewaltigung, mehrfache, teilweise versuchte, sexuelle Nötigung sowie nachträgliche Anordnung einer stationären…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2024.66.json",
@@ -11316,7 +11799,11 @@
       "regesteKurz": "IVG (Beschwerde beim Bundesgericht hängig)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.67.json",
@@ -11357,7 +11844,13 @@
       "regesteKurz": "IVG",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV",
+        "KVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.68.json",
@@ -11398,7 +11891,13 @@
       "regesteKurz": "IVG",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "IVG",
+        "IVV",
+        "KVG",
+        "KVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.69.json",
@@ -11439,7 +11938,12 @@
       "regesteKurz": "Leichte Hilflosigkeit in zwei Lebensverrichtungen bejaht; Anspruch auf Intensivpflegezuschlag",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.74.json",
@@ -11480,7 +11984,10 @@
       "regesteKurz": "Befehl für erkennungsdienstliche Erfassung / Kosten- und Entschädigungsfolgen (Rückweisungsverfahren betr. BES.2024.10)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2025.7.json",
@@ -11597,7 +12104,10 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG (Betreibung Nr. 23061410)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.5.json",
@@ -11638,7 +12148,11 @@
       "regesteKurz": "mehrfache harte Pornografie (sexuelle Handlungen mit Tieren und tat-sächliche sexuelle Handlungen mit Kindern) und…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.25.json",
@@ -11832,7 +12346,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.6.json",
@@ -12014,7 +12532,11 @@
       "regesteKurz": "Grundbuchsperre",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.16.json",
@@ -12047,7 +12569,9 @@
       "regesteKurz": "Aufsichtsrechtliche Anzeige vom 25. November 2025 (BGer 5A_170/2026 vom 01.04.2026)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGZ.2025.10.json",
@@ -12088,7 +12612,12 @@
       "regesteKurz": "Verbrechen gegen das Betäubungsmittelgesetz 6B_279/2026 Urteil BG vom 02.09.2026",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.5.json",
@@ -12678,7 +13207,12 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2026.3.json",
@@ -12719,7 +13253,12 @@
       "regesteKurz": "unrechtmässige Aneignung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.22.json",
@@ -12839,7 +13378,11 @@
       "regesteKurz": "Rechtsöffnung (BGer 4D_35/2026 vom 12. Mai 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.93.json",
@@ -13438,7 +13981,11 @@
       "regesteKurz": "ad 1: Gefährdung durch Sprengstoffe in verbrecherischer Absicht, ver-suchte schwere Körperverletzung, mehrfache…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2024.55.json",
@@ -13594,7 +14141,11 @@
       "regesteKurz": "Verfahrenseinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.8.json",
@@ -13815,7 +14366,13 @@
       "regesteKurz": "Härtefallbewilligung",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "VZAE"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.123.json",
@@ -13881,7 +14438,12 @@
       "regesteKurz": "Aufrechterhaltung einer Weisung, Haftentschädigung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "OR",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.16.json",
@@ -13922,7 +14484,12 @@
       "regesteKurz": "Strafzumessung und Dauer der Landesverweisung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.35.json",
@@ -14353,7 +14920,12 @@
       "regesteKurz": "Rechtsverzögerung- und Rechtsverweigerung, Sistierung, Auskunftsrecht",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.86.json",
@@ -14386,7 +14958,11 @@
       "regesteKurz": "Kinderbelange (Obhut, Unterhalt)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.43.json",
@@ -14669,7 +15245,10 @@
       "regesteKurz": "Nichteintreten auf Einsprache infolge Verspätung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.120.json",
@@ -14902,7 +15481,13 @@
       "regesteKurz": "BVG Anspruch auf eine Invalidenrente; zeitlicher Zusammenhang",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BVG",
+        "IVG",
+        "OR",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/BV.2025.4.json",
@@ -14989,7 +15574,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.109.json",
@@ -15030,7 +15619,13 @@
       "regesteKurz": "mehrfache Vergewaltigung, mehrfache sexuelle Nötigung, mehrfache sexuelle Handlungen mit einem Kind, mehrfache…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.4.json",
@@ -15079,7 +15674,10 @@
       "regesteKurz": "Rechtsöffnung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.100.json",
@@ -15120,7 +15718,11 @@
       "regesteKurz": "Arrest",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.52.json",
@@ -15161,7 +15763,11 @@
       "regesteKurz": "Wiederherstellung betreffend das Beschwerdeverfahren BEZ.2025.105",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGZ.2025.12.json",
@@ -15324,7 +15930,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.107.json",
@@ -15365,7 +15975,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.108.json",
@@ -15406,7 +16020,10 @@
       "regesteKurz": "Bauentscheid Nr. BBG [...](1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.35.json",
@@ -15447,7 +16064,12 @@
       "regesteKurz": "Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "GSCHG",
+        "GSCHV",
+        "RPV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.36.json",
@@ -15488,7 +16110,12 @@
       "regesteKurz": "Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "GSCHG",
+        "GSCHV",
+        "RPV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.37.json",
@@ -15645,7 +16272,10 @@
       "regesteKurz": "rechtswidrige Einreise",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2024.63.json",
@@ -17000,7 +17630,9 @@
       "regesteKurz": "Auflösung der Gesellschaft (Art. 731b OR) (CHE-[...])",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.90.json",
@@ -17033,7 +17665,10 @@
       "regesteKurz": "Nichteintreten auf einen Rekurs (BGer 2C_127/2026 vom 29. Juli 2026)",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2024.150.json",
@@ -17310,7 +17945,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.103.json",
@@ -17351,7 +17990,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG (Beschwerde beim BGer hängig)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.105.json",
@@ -17392,7 +18035,9 @@
       "regesteKurz": "Nachzahlungsverfahren (Art. 123 ZPO)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.91.json",
@@ -17783,7 +18428,12 @@
       "regesteKurz": "Verlängerung der stationären therapeutischen Massnahme gemäss Art. 59 Abs. 4 StGB",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.61.json",
@@ -18024,7 +18674,11 @@
       "regesteKurz": "Fallabschluss; status quo sine vel ante",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.31.json",
@@ -18320,7 +18974,10 @@
       "regesteKurz": "Forderung aus Kaufvertrag (BGer 4A_672/2025 vom 16.02.2026 und 4A_90/2026 vom 24.02.2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.32.json",
@@ -18683,7 +19340,10 @@
       "regesteKurz": "Rechtsöffnung (BGer 4D_246/2025 vom 10.02.2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.98.json",
@@ -19230,7 +19890,13 @@
       "regesteKurz": "Anordnung einer stationären therapeutischen Behandlung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.59.json",
@@ -19566,7 +20232,12 @@
       "regesteKurz": "Pfändung (BGer-Nummer: 5A_1081/2025 vom 5. Januar 2026)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "DBG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.95.json",
@@ -19769,7 +20440,10 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.99.json",
@@ -20259,7 +20933,11 @@
       "regesteKurz": "Rechtsöffnung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.86.json",
@@ -20300,7 +20978,11 @@
       "regesteKurz": "Auflösung einer Gesellschaft (Art. 731b OR)",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.45.json",
@@ -20365,7 +21047,12 @@
       "regesteKurz": "mehrfache Vergewaltigung, mehrfache sexuelle Nötigung, mehrfache (teilweise versuchte) sexuelle Handlungen mit einem…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2024.105.json",
@@ -20414,7 +21101,10 @@
       "regesteKurz": "unentgeltliche Rechtspflege",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.72.json",
@@ -20829,7 +21519,10 @@
       "regesteKurz": "unentgeltliche Rechtspflege",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.88.json",
@@ -20870,7 +21563,11 @@
       "regesteKurz": "Konkurseröffnung nach Art. 166 SchKG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.94.json",
@@ -21141,7 +21838,13 @@
       "regesteKurz": "Arrest/Aufhebung Arrestkaution",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "SCHKG",
+        "ZGB",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2025.24.json",
@@ -21182,7 +21885,10 @@
       "regesteKurz": "Ausstandsbegehren gegen den Instruktionsrichter im Verfahren [...]",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2025.25.json",
@@ -21984,7 +22690,11 @@
       "regesteKurz": "Bedingte Entlassung aus dem Strafvollzug nach Art. 86 StGB",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.144.json",
@@ -22433,7 +23143,14 @@
       "regesteKurz": "mehrfaches Verbrechen gegen das Betäubungsmittelgesetz, mit Gefährdung der Gesundheit vieler Menschen, mehrfache…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.17.json",
@@ -22857,7 +23574,10 @@
       "regesteKurz": "Rechtsverzögerung im Verfahren VT.[...]",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2025.85.json",
@@ -22890,7 +23610,13 @@
       "regesteKurz": "versuchte vorsätzliche Tötung, stationäre Massnahme",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2025.2.json",
@@ -23515,7 +24241,11 @@
       "regesteKurz": "IVG Neuanmeldung; kein Rentenanspruch (Bundesgerichtsurteil 9C_285/2026 vom 29.07.2026)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.40.json",
@@ -23556,7 +24286,11 @@
       "regesteKurz": "Unfallbegriff vorliegend erfüllt; Beschwerdegutheissung (Bundesgerichtsurteil 8C_171/2026 vom 03.09.2026)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.25.json",
@@ -23876,7 +24610,13 @@
       "regesteKurz": "Herausgabe von Akten der Invalidenversicherung an die Haftpflichtversicherung rechtmässig; Beschwerdeabweisung.",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "DSG",
+        "IVG",
+        "ZGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.3.json",
@@ -25291,7 +26031,12 @@
       "regesteKurz": "Klage betreffend UWG",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "UWG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZK.2024.1.json",
@@ -27109,7 +27854,10 @@
       "regesteKurz": "Verweigerung der bedingten Entlassung aus dem Strafvollzug nach Art. 86 StGB",
       "sachgebiet": "oeffentlich",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/VD.2025.38.json",
@@ -28704,7 +29452,14 @@
       "regesteKurz": "Ausweisung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "OR",
+        "STPO",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZB.2025.31.json",
@@ -31773,7 +32528,15 @@
       "regesteKurz": "gewerbs- und bandenmässiges Verbrechen gegen das Betäubungsmittelgesetz, Betrug, mehrfache Urkundenfälschung,…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2023.18.json",
@@ -32671,7 +33434,11 @@
       "regesteKurz": "Abweisung Haftentlassungsgesuch und Verlängerung der Untersuchungshaft",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/HB.2025.15.json",
@@ -33752,7 +34519,11 @@
       "regesteKurz": "mehrfacher Betrug, unrechtmässiger Bezug von Leistungen einer Sozialversicherung oder der Sozialhilfe",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2024.110.json",
@@ -34494,7 +35265,12 @@
       "regesteKurz": "Anwendbarkeit der gemischten Methode; Einschränkung im Haushalt; Verwertbarkeit der Restarbeitsfähigkeit",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.50.json",
@@ -36794,7 +37570,12 @@
       "regesteKurz": "UVG Beschwerdeabweisung (Bundesgerichtsurteil 8C_710/2025 vom 08.07.2026)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG",
+        "UVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.14.json",
@@ -36835,7 +37616,12 @@
       "regesteKurz": "Verlängerung der Sicherheitshaft während des Berufungsverfahrens (Rückweisungsverfahren betr. SB.2024.112)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2025.4.json",
@@ -37777,7 +38563,11 @@
       "regesteKurz": "Haftentlassungsgesuch",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/HB.2025.13.json",
@@ -38100,7 +38890,11 @@
       "regesteKurz": "Verfahrenseinstellung und Verfahrenskosten (Rückweisungsverfahren betr. SB.2022.124)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2025.2.json",
@@ -38211,7 +39005,10 @@
       "regesteKurz": "Erkennungsdienstliche Erfassung / Kostenentscheid (Rückweisungsverfahren betr. BES.2023.87)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2025.3.json",
@@ -43184,7 +43981,13 @@
       "regesteKurz": "grobe Verletzung der Verkehrsregeln Urteil BG vom 29.07.2026 6B_772/2025",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG",
+        "VRV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2024.31.json",
@@ -43810,7 +44613,11 @@
       "regesteKurz": "Leistungsablehnung zu Recht erfolgt; Beschwerdeabweisung",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "UVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2024.45.json",
@@ -46504,7 +47311,11 @@
       "regesteKurz": "Ausstandsbegehren gegen die Abteilung Wirtschaftsdelikte der Staatsanwaltschaft (BGer 7B_587/2025 vom 18. Juni 2026)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2024.34.json",
@@ -47607,7 +48418,12 @@
       "regesteKurz": "Zivilforderung (Rückweisungsverfahren betr. SB.2021.8)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.2.json",
@@ -50439,7 +51255,10 @@
       "regesteKurz": "Verfahrenseinstellung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BES.2024.99.json",
@@ -52250,7 +53069,12 @@
       "regesteKurz": "Anspruch auf eine Invalidenrente; Gerichtsgutachten (Bundesgerichtsurteil 8C_443/2025)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2023.90.json",
@@ -54967,7 +55791,13 @@
       "regesteKurz": "UVG (Bundesgerichtsurteil 8C_471/2025 vom 10.08.2026)",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVV",
+        "UVG",
+        "UVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/UV.2024.27.json",
@@ -60617,7 +61447,13 @@
       "regesteKurz": "ad 1: versuchte schwere Körperverletzung ad 2: Raufhandel, versuchte schwere Körperverletzung ad 3: einfache…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2022.42.json",
@@ -62183,7 +63019,10 @@
       "regesteKurz": "Rechtsöffnung",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/BEZ.2024.75.json",
@@ -62629,7 +63468,14 @@
       "regesteKurz": "Entschädigung gemäss Art. 431 StPO (Rückweisungsverfahren betr. BES.2022.4)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "IRSG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.8.json",
@@ -66048,7 +66894,14 @@
       "regesteKurz": "Verbrechen gegen das Betäubungsmittelgesetz mit Gefährdung der Gesundheit vieler Menschen, mehrfaches Vergehen gegen…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.7.json",
@@ -66951,7 +67804,15 @@
       "regesteKurz": "Landesverweisung (Rückweisungsverfahren betr. SB.2019.74) (Beschwerde am BGer hängig)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "FZA",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.6.json",
@@ -67560,7 +68421,10 @@
       "regesteKurz": "Revisionsgesuch",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/DGS.2025.13.json",
@@ -72200,7 +73064,11 @@
       "regesteKurz": "Drohung, Raufhandel und Widerhandlung gegen das Waffengesetz",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2020.41.json",
@@ -81153,7 +82021,15 @@
       "regesteKurz": "ad Bkl. 1: mehrfache versuchte schwere Körperverletzung, Nötigung, mehrfache Gefährdung des Lebens, (Urteil BGer…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BETMG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "GFK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2023.19.json",
@@ -83621,7 +84497,11 @@
       "regesteKurz": "Befehl für erkennungsdienstliche Erfassung / Wiedererwägung (Rückweisungsverfahren betr. BES.2022.34)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.9.json",
@@ -84326,7 +85206,13 @@
       "regesteKurz": "Landesverweisung (Rückweisungsverfahren betr. SB.2022.19)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.5.json",
@@ -87606,7 +88492,13 @@
       "regesteKurz": "Erwerbstätigkeit ohne Bewilligung (Rückweisungsverfahren betr. SB.2021.67) 6B_828/2024 Urteil Bundesgericht vom…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.3.json",
@@ -88996,7 +89888,12 @@
       "regesteKurz": "Verletzung der Verkehrsregeln, Vereitelung von Massnahmen zur Feststellung der Fahrunfähigkeit (Motorfahrzeugführer)…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO",
+        "SVG"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/ZS.2024.4.json",
@@ -99687,7 +100584,12 @@
       "regesteKurz": "ad 1: Raufhandel und rechtswidrige Einreise ad 2: mehrfacher, teilweise versuchter Diebstahl, Raufhandel, mehrfacher…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2021.34.json",
@@ -101520,7 +102422,13 @@
       "regesteKurz": "Raufhandel, sexuelle Handlungen mit Kindern und sexuelle Belästigung",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2021.59.json",
@@ -113149,7 +114057,12 @@
       "regesteKurz": "Kein Taggeldanspruch für eine neue Arbeitsunfähigkeit nach Beendigung des Arbeitsverhlätnisses (Bundesgerichtsurteil…",
       "sachgebiet": "privat",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "OR",
+        "VVG",
+        "ZPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/ZV.2023.4.json",
@@ -116347,7 +117260,15 @@
       "regesteKurz": "ad1: versuchte vorsätzliche Tötung, Sachbeschädigung (grosser Schaden), Gewalt und Drohung gegen Behörden und Beamte…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ASYLG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "GFK",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2021.82.json",
@@ -118139,7 +119060,11 @@
       "regesteKurz": "versuchte schwere Körperverletzung (Urteil BGer 6B_458/2024 vom 7. Juli 2026)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2022.30-20240226.json",
@@ -133839,7 +134764,12 @@
       "regesteKurz": "Hinderung einer Amtshandlung und Diensterschwerung (BGer 6B_175/2024 vom 6. Juli 2026)",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "BV",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2022.101.json",
@@ -181809,7 +182739,12 @@
       "regesteKurz": "IVG (Bundesgerichtsurteil 8C_166/2023) vom 06.03.2024",
       "sachgebiet": "sozialversicherung",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "ATSG",
+        "BGG",
+        "IVG",
+        "IVV"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_sozialversicherungsgericht/IV.2020.138.json",
@@ -211726,7 +212661,17 @@
       "regesteKurz": "ad 1: versuchte vorsätzliche Tötung, mehrfacher Raufhandel und Unterlassung der Buchführung etc. ad 2: versuchte…",
       "sachgebiet": "straf",
       "sprache": "de",
-      "normKeys": [],
+      "normKeys": [
+        "AIG",
+        "ASYLG",
+        "BGG",
+        "BV",
+        "EMRK",
+        "GFK",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "datei": "kanton/BS/bs_appellationsgericht/SB.2021.37.json",

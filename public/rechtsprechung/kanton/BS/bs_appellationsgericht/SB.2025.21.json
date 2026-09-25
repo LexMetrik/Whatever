@@ -113,7 +113,11 @@
         "Es wird ein forensisch-psychiatrisches Gutachten über den Berufungskläger in Auftrag gegeben."
       ],
       "zitierteNormen": [],
-      "normKeys": [],
+      "normKeys": [
+        "BGG",
+        "STGB",
+        "STPO"
+      ],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
