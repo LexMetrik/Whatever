@@ -722,8 +722,9 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
   §3/§4 auf Ist gezogen (Test-/E2E-Zahlen, Prerender-Routen, Katalog-Statusverteilung — DB-Korpuszahlen
   nicht verifizierbar, `daten/` in diesem Worktree gitignored). `docs/INVENTAR-FUNKTIONEN.md` Kopf datiert.
   `DESIGN-REGLEMENT.md` 3 veraltete Stellen ergänzt (§0.2b, nicht überschrieben). Lagebild `--paper` liest
-  jetzt `design/tokens.json`. **Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Generator
-  «Staatsverträge») nicht Teil dieser Scheibe** — im S5c-Dispatch nicht enthalten, bleibt offen.
+  jetzt `design/tokens.json`. Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Generator
+  «Staatsverträge») ist in S5a erledigt (#1115; Systematik «0» gegenstandslos seit #1025) — korrigiert
+  25.9.2026 von der Haupt-Session (die S5c-Doku-Zeile behauptete «bleibt offen»).
 - **Nicht in REST:** Such-Index Rechtsprechung-Blatt (Klasse daten, Gegenprüfung) → `W2·24-PERF-REST`;
   modulepreload/`rel=expect` → `W2·24-PERF-REST`; Worktrees `npm ci` → `QS-EFFIZIENZ`; Reiter-Titel
   Zuständigkeit → `W2·17-UI-BEFUNDE`; Leser-Nachlauf (NormText 795/800, NormChip-Ort, `leserV3Modell`,
