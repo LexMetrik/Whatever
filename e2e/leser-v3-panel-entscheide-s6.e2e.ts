@@ -58,16 +58,22 @@ test.describe('S6-W1b — Reiter Entscheide', () => {
     for (const n of await gruppen.locator('ul').evaluateAll((uls) => uls.map((u) => u.children.length))) {
       expect(n).toBeLessThanOrEqual(5)
     }
+    // §6.3-DEKLARATION (QS-KORPUS BGE-Band-Nachzug 152, 25.9.2026 — Korpus-
+    // Zuwachs, keine Logik-Änderung): damals bge 20 / «weitere 15» / 20 (Shard
+    // OR.json auf origin/main, gesamtProArtikel["41"] {bge 20, bger 10,
+    // kantonal 21}); seither {bge 21, bger 11, kantonal 21}. Der eine neue BGE
+    // an Art. 41 OR ist BGE 152 IV 201 (6B_973/2023 vom 4.12.2025, neu aus
+    // Bd. 152, PR #1099). Portion (5) und «Rest ≤ 50 ⇒ alles» bleiben gleich.
     const bge = inhalt(page).locator('[data-v3-panel-gruppe="bge"]')
-    await expect(bge).toHaveAttribute('data-v3-panel-gruppe-zahl', '20')
+    await expect(bge).toHaveAttribute('data-v3-panel-gruppe-zahl', '21')
     await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(5)
 
-    // «weitere 15» (Rest ≤ 50) holt den ganzen Rest; der Fokus landet auf dem
+    // «weitere 16» (Rest ≤ 50) holt den ganzen Rest; der Fokus landet auf dem
     // ersten neuen Eintrag, nicht im Nichts (der Knopf verschwindet).
     const weitere = bge.locator('[data-v3-panel-weitere="bge"]')
-    await expect(weitere).toHaveText('weitere 15')
+    await expect(weitere).toHaveText('weitere 16')
     await weitere.click()
-    await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(20)
+    await expect(bge.locator('[data-v3-panel-entscheid]')).toHaveCount(21)
     await expect(weitere).toHaveCount(0)
     const fokusIndex = await page.evaluate(() => {
       const li = document.activeElement?.closest('[data-v3-panel-entscheid]')
