@@ -15,3 +15,7 @@ Gemeinsam für alle Design-Einheiten: Massstab ist das Reglement in der Fassung 
 DK-26 wartet auf den eigenen Posten W-HN-3 (David).
 
 Quelle: Herz-und-Nieren-Prüfung 24.9.2026, UMSETZUNGSPLAN.md Einheit HN-D7 (Projektordner `~/Documents/David/03_Projekte/LexMetrik/pruefung-herz-nieren-2026-09-24/`; Belege in BEFUNDLISTE.md und berichte/). Kürzel: NT normtext-treue · PS pruefsystem · VS verschlankung · SA sicherheit-a11y · DK design-konsistenz · RR rechtslogik-rest; b = zweitgeprüft bestätigt, EA = nur Erstprüfer (vor dem Fix reproduzieren, sonst fällt der Beifang mit Begründungszeile im PR weg). Zeilenangaben Stand main 1d6eeb3c5 (24.9.2026) — vor dem Bau nachmessen.
+
+**Abschluss LESER-Teil 25.9.2026:** Ladeanzeige ein Baustein `src/components/ui/Ladeanzeige.tsx` mit role="status" (#1097; Reststellen EntscheidLeser/MaterialLeser/Materialien/Gesetze → NACHLAUF). DK-24 reproduziert, aber gewollt — beide Formen Entscheide David 24.9.2026 (S6 W1f ruhige Textzeile; D-E4 Einzelmodus «so lassen») → fällt mit Begründung weg (c52807551). DK-26 hängt an W-HN-3, mit diesem nach NACHLAUF umgehängt.
+
+**Erledigt 2026-09-25:** PR #1097
