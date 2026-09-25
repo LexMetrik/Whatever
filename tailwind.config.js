@@ -405,7 +405,16 @@ export default {
       // Höhe von vor U2 (gemessen 289 px @1024–1440) statt auf die Höhe der
       // Fläche Schnellwerkzeug gestreckt zu werden; «Häufig gebraucht» darunter
       // füllt den Rest (`pages/Startseite.tsx`). `start-kachel` bleibt Untergrenze.
-      minHeight: { 'start-schnell': '32.25rem', 'start-schnell-eng': '44.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '18rem', 'start-kachel-s': '8.25rem', 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
+      // U13 (Nachtrag David 24.9.2026 abends: «es soll nicht zu scrollen kommen
+      // wenn man kachel aufmacht» / «also bei gesetz») · 18rem → 17.5rem. Das
+      // offene Blatt (`inset: 0`) ist so hoch wie das Feld (2 × Kachel + 16 px);
+      // es soll ab 1280×800 ganz im Fenster stehen. Gemessen 25.9.2026 (Dev,
+      // Chromium, headless): Feld-Oberkante 227 px (nach U13-Abstand 219 px),
+      // Feld 2 × 288 + 16 = 592 → Unterkante 819 > 800 (Seite scrollte 19 px).
+      // 17.5rem: 2 × 280 + 16 = 576 → Unterkante 795 ≤ 800. Die Kacheln tragen
+      // ~200 px Inhalt, sie verlieren nur Leerraum; die Gesetze-Wahl passt nach
+      // den Blatt-Massen in `index.css` (U13) trotzdem ohne Scroll (Inhalt 520 ≤ 528 px Sicht).
+      minHeight: { 'start-schnell': '32.25rem', 'start-schnell-eng': '44.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '17.5rem', 'start-kachel-s': '8.25rem', 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

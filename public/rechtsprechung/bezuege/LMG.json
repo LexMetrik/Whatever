@@ -1,16 +1,16 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"LMG",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_151_II_533":{"zitierung":"BGE 151 II 533","regesteKurz":"Art. 29a, Art. 191 Abs. 3 BV; Art. 82 lit. a, Art. 83 lit. l BGG; zur Zulässigkeit und Unzulässigkeit der Beschwerde im Bereich zollrechtlicher Fragen. Die Veranlagung der Zollabgabe erfolgt anhand von Art, Beschaffenheit und Bruttogewicht…","datum":"2024-11-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_151_II_533__voll":{"zitierung":"Urteil 9C_3/2024 (nicht publ. in BGE 151 II 533)","regesteKurz":null,"datum":"2024-11-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 533","urteil":"9C_3/2024"}},
 "bge_152_II_124":{"zitierung":"BGE 152 II 124","regesteKurz":"Art. 12 Abs. 3, Art. 18 und 19 LMG; Art. 12 und 14 LGV; Art. 9 VLtH; lebensmittelrechtliches Täuschungsverbot; Verwendung von Tierarten zur Bezeichnung von pflanzlichen Fleischersatzprodukten. Streitgegenstand (E. 3).…","datum":"2025-05-02","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VD.2022.269":{"zitierung":"Appellationsgericht BS VD.2022.269 vom 13.11.2023","regesteKurz":"Verbot der gewerblichen Abgabe von mit Lachgas gefüllten Ballonen (Verfügungen vom 26. August 2021 und 19. November…","datum":"2023-11-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.108":{"zitierung":"Appellationsgericht BS VD.2023.108 vom 09.02.2024","regesteKurz":"Widerhandlung gegen das Gastgewerbegesetz","datum":"2024-02-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.70":{"zitierung":"Appellationsgericht BS VD.2025.70 vom 15.10.2025","regesteKurz":"Curcuma-Extrakt, Vollzug Lebensmittelgesetzgebung","datum":"2025-10-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_151_II_533","gewicht":0}],
+"1":[{"key":"bge_151_II_533__voll","gewicht":0,"erwaegungen":["E. 2.2.4"]}],
 "2":[{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
 "4":[{"key":"bs_appellationsgericht_VD.2023.108","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
 "7":[{"key":"bs_appellationsgericht_VD.2025.70","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.269","gewicht":null}],
@@ -28,7 +28,7 @@
 "70":[{"key":"bs_appellationsgericht_VD.2025.70","gewicht":null}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1},
+"1":{"bger":1},
 "2":{"kantonal":1},
 "4":{"kantonal":2},
 "7":{"kantonal":2},

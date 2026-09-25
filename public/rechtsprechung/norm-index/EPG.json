@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "EPG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -79,12 +79,12 @@
         "gewicht": 1
       },
       {
-        "key": "bge_148_I_89",
-        "zitierung": "BGE 148 I 89",
-        "regesteKurz": "Art. 5 Abs. 2, Art. 11 und Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Art. 10 Covid-19-Verordnung des Kantons Bern vom 4. November 2020; abstrakte Normenkontrolle; Maskentragpflicht ab dem 5. Schuljahr der…",
+        "key": "bge_148_I_89__voll",
+        "zitierung": "Urteil 2C_183/2021 (nicht publ. in BGE 148 I 89)",
+        "regesteKurz": null,
         "datum": "2021-11-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -141,22 +141,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_I_89",
-        "zitierung": "BGE 148 I 89",
-        "regesteKurz": "Art. 5 Abs. 2, Art. 11 und Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Art. 10 Covid-19-Verordnung des Kantons Bern vom 4. November 2020; abstrakte Normenkontrolle; Maskentragpflicht ab dem 5. Schuljahr der…",
-        "datum": "2021-11-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_146_III_313",
         "zitierung": "BGE 146 III 313",
         "regesteKurz": "Art. 301 Abs. 1, Art. 307 Abs. 1 ZGB; Uneinigkeit der Eltern über die Masernimpfung für die gemeinsamen Kinder; Gefährdung des Kindeswohls. Sind die sorgeberechtigten Eltern darüber entzweit (vgl. Art. 301 Abs. 1 ZGB), ob ihr Kind gegen…",
         "datum": "2020-06-16",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_I_89__voll",
+        "zitierung": "Urteil 2C_183/2021 (nicht publ. in BGE 148 I 89)",
+        "regesteKurz": null,
+        "datum": "2021-11-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -193,30 +193,10 @@
         "gewicht": 1
       },
       {
-        "key": "bge_149_I_191",
-        "zitierung": "BGE 149 I 191",
-        "regesteKurz": "Art. 8 EMRK; Art. 10 Abs. 2 und Art. 36 BV; Art. 40 EpG; abstrakte Normenkontrolle von Art. 2 der Verordnung vom 14. September 2021 über die Covid-19-Zertifikatspflicht für den Studienbetrieb an Hochschulen des Kantons Freiburg. Rechtslage…",
-        "datum": "2023-03-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_I_105",
         "zitierung": "BGE 149 I 105",
         "regesteKurz": "Art. 8 und 10 BV; Einführung einer COVID-Testpflicht für nicht geimpfte Gesundheits- und Sozialarbeiter. Prüfungsbefugnis und Feststellung des Sachverhalts, wenn das Bundesgericht als einzige richterliche Instanz im Rahmen einer abstrakten…",
         "datum": "2022-12-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_148_I_89",
-        "zitierung": "BGE 148 I 89",
-        "regesteKurz": "Art. 5 Abs. 2, Art. 11 und Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Art. 10 Covid-19-Verordnung des Kantons Bern vom 4. November 2020; abstrakte Normenkontrolle; Maskentragpflicht ab dem 5. Schuljahr der…",
-        "datum": "2021-11-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -229,6 +209,26 @@
         "datum": "2021-11-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_I_191__voll",
+        "zitierung": "Urteil 2C_810/2021 (nicht publ. in BGE 149 I 191)",
+        "regesteKurz": null,
+        "datum": "2023-03-31",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_148_I_89__voll",
+        "zitierung": "Urteil 2C_183/2021 (nicht publ. in BGE 148 I 89)",
+        "regesteKurz": null,
+        "datum": "2021-11-23",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -247,12 +247,12 @@
     ],
     "11": [
       {
-        "key": "bge_150_III_22",
-        "zitierung": "BGE 150 III 22",
-        "regesteKurz": "Art. 324 und 91 OR; Annahmeverzug des Arbeitgebers; ungerechtfertigte Verweigerung der gehörig angebotenen Leistung; Betriebsschliessungen zur Bekämpfung des Coronavirus. Die Arbeitsverhinderung als Folge von Massnahmen zur Bekämpfung des…",
+        "key": "bge_150_III_22__voll",
+        "zitierung": "Urteil 4A_53/2023 (nicht publ. in BGE 150 III 22)",
+        "regesteKurz": null,
         "datum": "2023-08-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -311,16 +311,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_IV_183",
-        "zitierung": "BGE 149 IV 183",
-        "regesteKurz": "Art. 7 StPO, Art. 110 Abs. 3 StGB; Erfordernis einer Ermächtigung zur Strafverfolgung. Grundlagen des Ermächtigungsvorbehalts (E. 2). Für Privatpersonen, denen öffentliche Aufgaben übertragen werden, gilt das Ermächtigungserfordernis…",
-        "datum": "2022-12-20",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_I_19",
         "zitierung": "BGE 148 I 19",
         "regesteKurz": "Art. 22, Art. 34, Art. 36 Abs. 1 und 3, Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Covid-19-Reglement des Kantons Uri vom 26. März 2021; Beschränkung der Teilnehmerzahl an politischen und zivilgesellschaftlichen…",
@@ -337,6 +327,16 @@
         "datum": "2021-09-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_149_IV_183__voll",
+        "zitierung": "Urteil 1C_104/2022 (nicht publ. in BGE 149 IV 183)",
+        "regesteKurz": null,
+        "datum": "2022-12-20",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -421,12 +421,12 @@
     ],
     "33": [
       {
-        "key": "bge_147_I_478",
-        "zitierung": "BGE 147 I 478",
-        "regesteKurz": "Art. 42 Abs. 2 und Art. 89 Abs. 1 lit. c BGG; Art. 36 Abs. 1, Art. 46 Abs. 1 und Art. 118 Abs. 2 lit. b BV; Art. 40 und Art. 75 EpG; Art. 2 und 8 Covid-19-Verordnung besondere Lage; § 47, 49, 50, 56, 59 KV/SZ; abstrakte Normenkontrolle;…",
+        "key": "bge_147_I_478__voll",
+        "zitierung": "Urteil 2C_8/2021 (nicht publ. in BGE 147 I 478)",
+        "regesteKurz": null,
         "datum": "2021-06-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -451,24 +451,24 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_I_450",
-        "zitierung": "BGE 147 I 450",
-        "regesteKurz": "Art. 22 und Art. 36 Abs. 1 und 3 BV; Art. 30 und 40 EpG; Covid-19-Massnahmen; Veranstaltungsverbot; gesetzliche Grundlage; Verhältnismässigkeit. Das Veranstaltungsverbot des Kantons Schwyz zur Eindämmung der Covid-19-Pandemie erweist sich…",
+        "key": "bge_147_I_450__voll",
+        "zitierung": "Urteil 2C_941/2020 (nicht publ. in BGE 147 I 450)",
+        "regesteKurz": null,
         "datum": "2021-07-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "38": [
       {
-        "key": "bge_149_I_161",
-        "zitierung": "BGE 149 I 161",
-        "regesteKurz": "Art. 10 Abs. 2, 13 Abs. 1, 36 BV; Art. 8 EMRK; Art. 75 Abs. 3 StGB; Art. 35 lit. j und Art. 89 des Waadtländer Reglements vom 16. August 2017 über die Stellung verurteilter Personen im Straf- oder Massnahmenvollzug (RSPC); Kontrolle der…",
+        "key": "bge_149_I_161__voll",
+        "zitierung": "Urteil 6B_1206/2021 (nicht publ. in BGE 149 I 161)",
+        "regesteKurz": null,
         "datum": "2023-03-30",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -587,47 +587,27 @@
         "gewicht": 1
       },
       {
-        "key": "bge_149_I_191",
-        "zitierung": "BGE 149 I 191",
-        "regesteKurz": "Art. 8 EMRK; Art. 10 Abs. 2 und Art. 36 BV; Art. 40 EpG; abstrakte Normenkontrolle von Art. 2 der Verordnung vom 14. September 2021 über die Covid-19-Zertifikatspflicht für den Studienbetrieb an Hochschulen des Kantons Freiburg. Rechtslage…",
+        "key": "bge_149_I_191__voll",
+        "zitierung": "Urteil 2C_810/2021 (nicht publ. in BGE 149 I 191)",
+        "regesteKurz": null,
         "datum": "2023-03-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_148_I_89",
-        "zitierung": "BGE 148 I 89",
-        "regesteKurz": "Art. 5 Abs. 2, Art. 11 und Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Art. 10 Covid-19-Verordnung des Kantons Bern vom 4. November 2020; abstrakte Normenkontrolle; Maskentragpflicht ab dem 5. Schuljahr der…",
+        "key": "bge_148_I_89__voll",
+        "zitierung": "Urteil 2C_183/2021 (nicht publ. in BGE 148 I 89)",
+        "regesteKurz": null,
         "datum": "2021-11-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "81": [
-      {
-        "key": "bge_148_I_19",
-        "zitierung": "BGE 148 I 19",
-        "regesteKurz": "Art. 22, Art. 34, Art. 36 Abs. 1 und 3, Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Covid-19-Reglement des Kantons Uri vom 26. März 2021; Beschränkung der Teilnehmerzahl an politischen und zivilgesellschaftlichen…",
-        "datum": "2021-09-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_148_I_33",
-        "zitierung": "BGE 148 I 33",
-        "regesteKurz": "Art. 22, Art. 36 Abs. 1 und 3, Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Covid-19-Verordnung des Kantons Bern vom 4. November 2020; Beschränkung der Teilnehmerzahl an politischen und zivilgesellschaftlichen…",
-        "datum": "2021-09-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
       {
         "key": "bge_147_I_450",
         "zitierung": "BGE 147 I 450",
@@ -639,12 +619,32 @@
         "gewicht": 1
       },
       {
-        "key": "bge_148_I_89",
-        "zitierung": "BGE 148 I 89",
-        "regesteKurz": "Art. 5 Abs. 2, Art. 11 und Art. 49 BV; Art. 40 EpG; Art. 8 Covid-19-Verordnung besondere Lage; Art. 10 Covid-19-Verordnung des Kantons Bern vom 4. November 2020; abstrakte Normenkontrolle; Maskentragpflicht ab dem 5. Schuljahr der…",
+        "key": "bge_148_I_19__voll",
+        "zitierung": "Urteil 2C_290/2021 (nicht publ. in BGE 148 I 19)",
+        "regesteKurz": null,
+        "datum": "2021-09-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_I_33__voll",
+        "zitierung": "Urteil 2C_308/2021 (nicht publ. in BGE 148 I 33)",
+        "regesteKurz": null,
+        "datum": "2021-09-03",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_148_I_89__voll",
+        "zitierung": "Urteil 2C_183/2021 (nicht publ. in BGE 148 I 89)",
+        "regesteKurz": null,
         "datum": "2021-11-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -671,12 +671,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_I_450",
-        "zitierung": "BGE 147 I 450",
-        "regesteKurz": "Art. 22 und Art. 36 Abs. 1 und 3 BV; Art. 30 und 40 EpG; Covid-19-Massnahmen; Veranstaltungsverbot; gesetzliche Grundlage; Verhältnismässigkeit. Das Veranstaltungsverbot des Kantons Schwyz zur Eindämmung der Covid-19-Pandemie erweist sich…",
+        "key": "bge_147_I_450__voll",
+        "zitierung": "Urteil 2C_941/2020 (nicht publ. in BGE 147 I 450)",
+        "regesteKurz": null,
         "datum": "2021-07-08",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

@@ -115,6 +115,9 @@ Fedlex-Stelle (SPARQL-Endpoint + Filestore-HTML) — nie ein Dritt-Repo.
 
 ## §17 · Kanonik-Arbiter meldet `fza`/`cmr` NICHT-KANONISCH (`QS-CURRENCY-KANON`, Befund 2.8.2026)
 
+*24.9.2026: `QS-CURRENCY-KANON` ist in `QS-KORPUS` aufgegangen (Posten «fza/cmr NICHT-KANONISCH
+klären …» dort; ROADMAP-CHRONIK.md, Fusionen 2026-09-24). Die Spec hier gilt unverändert.*
+
 **Befund, reproduziert.** `npm run check:fedlex-versionen` endet mit **Exit 1**; im Abschnitt
 «Kanonik-Arbiter (html-N vs. `isExemplifiedBy`)» stehen zwei Erlasse:
 
@@ -169,6 +172,8 @@ allein dieser §.*
 *`Gegenpruefung: n/a`. Die Ursachenklärung der Kanonik-Wurzeln bleibt `QS-CURRENCY-KANON` (§17).*
 
 ### §18.1 `QS-FRIT-DRIFT` — FR/IT-Drift-Wächter Stufe 1
+
+*24.9.2026: `QS-FRIT-DRIFT` ist in `W2·5g-ZEIT` aufgegangen (Posten Stufe 2 dort; ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
 
 - **Anlass:** sämtliche Norm-Verifikationen vom 3.8.2026 liefen **nur auf DE**. Eine
   französische oder italienische Fassung könnte längst abweichen, ohne dass ein Tor es sieht.

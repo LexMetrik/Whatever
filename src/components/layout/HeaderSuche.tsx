@@ -164,8 +164,14 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
   // Globale Fokus-Shortcuts: «/» UND ⌘K/Ctrl-K fokussieren das Feld (A5 — die
   // frühere Palette ist entfallen, der Shortcut bleibt nützlich). In Eingabe-
   // feldern greift «/» nicht (normales Zeichen), ⌘K/Ctrl-K schon (globaler
-  // Einstieg von überall). Zusätzlich lauscht das Feld auf «lm:suche-fokus», mit
-  // dem der /gesetze-Landeplatz-CTA es fokussiert. Der aktuelle Feldwert wird
+  // Einstieg von überall). Bis 24.9.2026 lauschte das Feld zusätzlich auf das
+  // Fenster-Ereignis «lm:suche-fokus»; einziger Sender war zuletzt der «+» der
+  // Reiterleiste (der hier genannte /gesetze-Landeplatz-CTA sendete es nicht
+  // mehr — grep 24.9.2026: 0 Sender ausser `Reiterleiste.neuerReiter`). Seit
+  // R15 (David 24.9.2026: «… und es nicht automatisch in suchen landet»)
+  // sendet niemand mehr — der Lauscher ist ersatzlos gestrichen
+  // (§17-Gegengewicht: was nichts mehr auslöst, wird gestrichen, nicht
+  // bewacht). Der aktuelle Feldwert wird
   // direkt vom DOM-Element gelesen (kein stale-closure über `wert`), das Panel
   // öffnet nur bei bereits vorhandenem Text (leeres Feld bleibt ruhig).
   useEffect(() => {
@@ -191,7 +197,6 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
       fokussiere();
     };
     window.addEventListener('keydown', handler);
-    window.addEventListener('lm:suche-fokus', fokussiere);
     // VORLAUF (§17-Wurzel-Fix 4.9.2026): dieser Effekt läuft erst nach dem
     // ersten React-Commit. Ein ⌘K aus dem Fenster davor hat `main.tsx` gemerkt
     // — hier wird es eingelöst. Ab der Anmeldung hält sich der Vorlauf heraus,
@@ -200,7 +205,6 @@ export function HeaderSuche({ onFokusModus, onFokusZurueck }: {
     return () => {
       suchKuerzelEmpfaengerAbmelden(fokussiere);
       window.removeEventListener('keydown', handler);
-      window.removeEventListener('lm:suche-fokus', fokussiere);
     };
   }, [fokussiere]);
 

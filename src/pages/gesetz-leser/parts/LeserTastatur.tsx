@@ -161,6 +161,22 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaette
         setHilfeOffen(false);
         return;
       }
+      // «r» SCHLIESST das modale Erlass-Blatt (Bottom-Sheet der schmalen
+      // Einzelansicht) — dieselbe Selbst-Ausnahme wie «?» oben: die Taste räumt
+      // den Dialog weg, der sie selbst ist, statt hinter ihm zu wirken.
+      // Runde 2 (24.9.2026, reproduziert @390 mit Tastatur, z. B. Tablet mit
+      // Tastatur-Hülle): «r» öffnete, schloss aber nicht — Guard 3 verschluckte
+      // die Taste, weil das offene Blatt selbst `aria-modal` ist. Nur wenn das
+      // Blatt der EINZIGE offene modale Dialog ist; jeder andere (Hilfe,
+      // Suche) sperrt weiter.
+      if (e.key === 'r' && panelRef.current) {
+        const modale = document.querySelectorAll('[role="dialog"][aria-modal="true"]');
+        if (modale.length === 1 && modale[0].matches('[data-v3-panel-modal="ja"]')) {
+          e.preventDefault();
+          panelRef.current();
+          return;
+        }
+      }
       // Guard 3: hinter einem offenen modalen Dialog wird nichts bedient — ohne
       // Ausnahme, das eigene Overlay eingeschlossen (dasselbe Prinzip, nach dem
       // `Shell.tsx` F6 sperrt).

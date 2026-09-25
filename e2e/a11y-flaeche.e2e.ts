@@ -121,6 +121,10 @@ test('Zustand — Rechner mit Ergebnis (Tagerechner)', async ({ page }, testInfo
   await expect(page.locator('h1').first()).toBeVisible()
   // Zwei Datumsfelder füllen → die Ergebnis-Karte (Verdikt, Zwischenwerte,
   // Kopier-Affordanz) rendert. Ohne Eingabe misst axe nur das leere Formular.
+  // RL-24/UI-07 (W-12 (c), 24.9.2026): bis dahin schaltete die ZPO-Vorbelegung
+  // oben den Voll-Tab beim ersten Tippen auf «Zivilprozess» (dessen Datumsfeld
+  // ist nth(1)). Seither keine Vorbelegung — dieselbe Wahl ausdrücklich.
+  await page.locator('input[name="einfache-frist-ferien"][value="zpo"]').check()
   const felder = page.locator('input[type="text"][inputmode="numeric"], input[placeholder*="TT."]')
   await felder.nth(0).fill('01.01.2026')
   await felder.nth(1).fill('31.03.2026')

@@ -1093,14 +1093,19 @@ offenen Blatts auf ihre Schiene und kehrt beim Schliessen zurück (ein Klick auf
 Schiene schliesst in dieser Lage das Blatt). Unter 1024 px, bei sehr engem Raum und
 in jedem Fenster der geteilten Ansicht bleibt das Blatt ein Bottom-Sheet hinter dem
 Knopf «Erlass-Blatt» im Kopf. Das Handy-Sheet schliesst auch mit der
-Zurück-Geste und mit Wischen nach unten an der Griffleiste; seine Bedienelemente
-treffen ab 44 px. Kopf «Erlass-Blatt · Art. 41 OR» in jedem Reiter (seit S6 W1f,
+Zurück-Geste, mit Wischen nach unten an der Griffleiste und mit der Taste `r`
+(Tablet mit Tastatur; seit Runde 2, 24.9.2026); seine Bedienelemente
+treffen ab 44 px. Es hat eine **feste Höhe** ab dem ersten Bild (springt nicht,
+wenn die Liste nachlädt) und reicht bis 8 rem unter den klebenden Kopf, damit
+Artikelkopf und erste Zeile frei bleiben: mindestens 55 %, höchstens 70 % der
+Fensterhöhe (@390×844: 62 %). Im Fenster der geteilten Ansicht 55 % des Fensters. Kopf «Erlass-Blatt · Art. 41 OR» in jedem Reiter (seit S6 W1f,
 vorher nur bei «Entscheide»), mit Schliessen-Knopf (`Esc`). Darunter die optionale
 Steckbrief-Zeile, dann fünf Reiter als Registerfläche — **Entscheide** (Register r),
 **Änderungen** (g), **Materialien** (m, nur Gesetzgebung), **Erläuterungen** (m,
 Behördenpraxis), **Werkzeuge** (w; eine Zeile je Rechner/Vorlage mit den Artikeln
-und aufklappbarer Zuordnung, geplante unter «In Vorbereitung» ohne Link); der aktive
-steht auf der getönten Registerfläche mit Registerkante; alle fünf passen in eine
+und aufklappbarer Zuordnung, das Status-Etikett «Entwurf» in einer festen rechten
+Spalte — auch im Artikelteil —, geplante unter «In Vorbereitung» ohne Link); der aktive
+steht mit Registerkante, ohne getönte Fläche (seit S6 W1g); alle fünf passen in eine
 Zeile (Umbruch nur bei grosser Schriftstufe oder unter 380 px, nie abgeschnitten).
 Pfeiltasten wechseln den Reiter; nur die aktive Tafel wird geladen. Seit S6 W1f
 (24.9.2026) folgt das Blatt dem Artikel am Kopf der Lesespalte und trägt dessen
@@ -1125,7 +1130,9 @@ Neuladen steht das Blatt wieder so da, wie man es verliess. Ein gemerkter Reiter
 «Anwendung» (vor S6) öffnet dessen Nachfolger «Erläuterungen».
 
 **Einzel-Artikel** (`?ansicht=artikel`; «Ganzer Erlass» ist Vorgabe und steht nie
-in der Adresse): genau eine Bestimmung. Darüber der Gliederungspfad — jede Stufe
+in der Adresse): genau eine Bestimmung; der Anker darf wie in der Gesamtansicht
+ohne Unterstrich stehen (`#art-336c` zeigt Art. 336c, nur bei eindeutigem Treffer;
+seit Runde 2, 24.9.2026). Darüber der Gliederungspfad — jede Stufe
 mit eigenem Artikel führt zurück in den ganzen Erlass, sonst bleibt sie Text.
 Darunter das Pfeilpaar «davor / danach» in voller Tap-Höhe, die Zeile
 «← → blättert vor und zurück» (auf Geräten ohne Tastatur ausgeblendet), die

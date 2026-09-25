@@ -42,7 +42,7 @@ Checkbox-lose Einheiten tragen es analog direkt unter Überschrift/Bullet.
 | `status` | Die Ampel | `ready` · `wip` · `blocked` · `done` · `parked` (Grammatik s. u.) |
 | `blocker` | Token, falls `blocked`/`parked` | Token aus dem Blocker-Register oder `null` |
 | `dep` | Einheiten, die erst `done` sein müssen | Liste von IDs, z. B. `[W1·4]` oder `[]` |
-| `feld` | **Baufeld** — die eine Code-Fläche des Schritts | `leser` · `korpus` · `rechtsprechung` · `suche` · `design` · `werkzeuge` · `betrieb` |
+| `feld` | **Baufeld** — die eine Code-Fläche des Schritts | `leser` · `korpus` · `rechtsprechung` · `suche` · `design` · `werkzeuge` · `betrieb` · `rechtslogik` (seit 23.9.2026, #1014) |
 | `fahrplan` | Detail-Datei (optional) | Pfad (`fahrplaene/…` bzw. `archiv/…`) oder leer |
 
 **Massgeblich ist der Code, nicht diese Tabelle** (§5): Vokabular und Semantik von `feld` stehen in
@@ -52,7 +52,7 @@ so ist.
 ### Feld `feld` — das Baufeld (Plan-Neuschnitt 29.8.2026, Auftrag David)
 
 Ein Schritt liegt auf genau EINER Code-Fläche; das Feld benennt sie, und die ROADMAP gliedert nach
-denselben sieben Werten. Es beantwortet maschinell genau eine Frage — **können zwei Schritte
+denselben Werten (29.8.2026: sieben; seit 23.9.2026 acht mit `rechtslogik`, #1014). Es beantwortet maschinell genau eine Frage — **können zwei Schritte
 gleichzeitig gebaut werden?** — nach der Regel: *dasselbe Feld nie parallel, verschiedene Felder
 immer.* Fehlt es, gilt der Schritt konservativ als «kollidiert mit allem» (eigene Lane).
 
@@ -228,7 +228,7 @@ der unmittelbar danach laufende `check:plan` nie an der eigenen Setzer-Aktion ro
 ### `check:plan` — die Prüfungen (das ist die `QS-PH`-Schärfe)
 
 - **Schema (Regel 1 + 14):** keine doppelt vergebene ID; jedes `@meta` trägt ein `feld:` aus dem
-  Vokabular der sieben Baufelder. *(Die frühere Inventar-Abdeckung — «jede Inventar-ID hat ein
+  Vokabular der Baufelder (seit 23.9.2026 acht, `FELD_WERTE` in `scripts/plan/etikett.ts`). *(Die frühere Inventar-Abdeckung — «jede Inventar-ID hat ein
   @meta, kein verwaistes @meta» — ist am 29.8.2026 gestrichen: Doppelbuchführung, deren Anlass
   «Waisen mergten grün» durch den CI-Einbau von `check:plan` behoben ist.)*
 - **Checkbox-Kopplung:** nur für Einheiten **mit** Checkbox, gemäss Tabelle oben.

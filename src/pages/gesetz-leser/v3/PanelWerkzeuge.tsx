@@ -36,15 +36,32 @@ function Zuordnung({ z }: { z: WerkzeugZeile }) {
   );
 }
 
-function Art({ z }: { z: WerkzeugZeile }) {
+/**
+ * Eine Werkzeug-Zeile: Titel und Art links, das Status-Etikett in einer
+ * eigenen rechten Spalte.
+ *
+ * ── RUNDE 2 (24.9.2026) · «ENTWURF» RUHIGER, NICHT LEISER ──────────────────
+ * Gemessen OR @390, Liste offen: 13 von 13 Werkzeugen tragen «Entwurf», und das
+ * Etikett stand INLINE hinter dem Titel — je nach Titellänge an 8 verschiedenen
+ * x-Lagen (68…297 px), teils am Zeilenende, teils umgebrochen. Das Auge sprang
+ * von Kasten zu Kasten. Jetzt steht es in einer festen rechten Spalte (eine
+ * x-Lage, oben bündig) — dieselbe Marke `lc-badge-entwurf`, derselbe Wortlaut,
+ * an jeder Zeile: §8 bleibt ungeschmälert (das Etikett wird nie entfernt, nur
+ * ausgerichtet). Status wie im Katalog (`components/Katalog.tsx`): «Entwurf»
+ * heisst erstellt, fachlich noch nicht geprüft.
+ */
+export function WerkzeugKopf({ titel, href, modus, status }: {
+  titel: string; href: string; modus: 'rechner' | 'vorlage'; status: string | null;
+}) {
   return (
-    <span className="text-micro text-ink-500">
-      {z.modus === 'vorlage' ? 'Vorlage' : 'Rechner'}
-      {/* Status wie im Katalog (`components/Katalog.tsx`): «Entwurf» heisst
-          erstellt, fachlich noch nicht geprüft (§8). */}
-      {z.status === 'entwurf' && (
-        <span className="lc-badge-entwurf ml-1.5 align-middle" title="erstellt, fachlich noch nicht geprüft">Entwurf</span>
-      )}
+    <span className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-2">
+      <span className="flex min-w-0 flex-wrap items-baseline gap-x-2">
+        <Link to={href} className="text-body-s font-medium text-ink-800 no-underline hover:text-ink-900">{titel}</Link>
+        <span className="text-micro text-ink-500">{modus === 'vorlage' ? 'Vorlage' : 'Rechner'}</span>
+      </span>
+      {status === 'entwurf'
+        ? <span data-v3-werkzeug-status="entwurf" className="lc-badge-entwurf mt-0.5" title="erstellt, fachlich noch nicht geprüft">Entwurf</span>
+        : <span />}
     </span>
   );
 }
@@ -73,10 +90,7 @@ export function PanelWerkzeuge({ erlassKey }: { erlassKey: string }) {
           <ul className="mt-0.5">
             {verfuegbar.map((z) => (
               <li key={z.id} data-v3-werkzeug={z.id} className="border-l-2 border-t border-line border-l-reg-w py-2 pl-2.5">
-                <span className="flex flex-wrap items-baseline gap-x-2">
-                  <Link to={z.href ?? '#'} className="text-body-s font-medium text-ink-800 no-underline hover:text-ink-900">{z.titel}</Link>
-                  <Art z={z} />
-                </span>
+                <WerkzeugKopf titel={z.titel} href={z.href ?? '#'} modus={z.modus} status={z.status} />
                 <Zuordnung z={z} />
               </li>
             ))}

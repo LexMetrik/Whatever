@@ -2,7 +2,10 @@
 import { addDays, addMonths, addYears, isAfter, isBefore } from 'date-fns';
 import type { Kanton } from '../types/legal';
 import { dauerTageInklusiv } from './datumsUtils';
-import { istArbeitsfreierTag, naechsterWerktag } from '../data/zpoFeiertage';
+import {
+  bedingteFeiertageSatz, istArbeitsfreierTag, naechsterWerktag, strengeLesart, unsichereFeiertageSatz,
+  type FeiertagsKontext, type FeiertagsLesart,
+} from '../data/zpoFeiertage';
 
 // ─── Generische Fristen-Engine ────────────────────────────────────────────
 //
@@ -54,13 +57,15 @@ function dauerTage(p: Periode): number {
 /**
  * Der n-te Werktag NACH `d`. Samstag, Sonntag und anerkannte Feiertage am
  * Gerichtsort zählen nicht mit (Art. 63 SchKG; BGE 108 III 49).
+ * `kontext`: Feiertags-Kontext (RL-22-Nachzug, zpoFeiertage.ts «Bedingte
+ * kantonale Feiertage»); Voreinstellung 'allgemein' = sichere Richtung.
  */
-export function nthWerktagNach(d: Date, n: number, kanton: Kanton): Date {
+export function nthWerktagNach(d: Date, n: number, kanton: Kanton, kontext: FeiertagsLesart = 'allgemein'): Date {
   let c = d;
   let gezaehlt = 0;
   for (let guard = 0; guard < 100 && gezaehlt < n; guard++) {
     c = addDays(c, 1);
-    if (!istArbeitsfreierTag(c, kanton)) gezaehlt += 1;
+    if (!istArbeitsfreierTag(c, kanton, kontext)) gezaehlt += 1;
   }
   return c;
 }
@@ -159,6 +164,7 @@ export function normalisiereEnde(
   ende: Date,
   kanton: Kanton,
   st: Stillstand,
+  kontext: FeiertagsLesart = 'allgemein',
 ): { tag: Date; verschoben: boolean } {
   // SchKG Art. 63: Ende IN geschlossener Zeit → 3. Werktag danach. Liegt das
   // Ende nur auf einem Sa/So/Feiertag (nicht in der Periode), gilt nicht die
@@ -176,8 +182,8 @@ export function normalisiereEnde(
     let verschoben = false;
     for (let guard = 0; guard < 12; guard++) {
       const p = st.periodeFuer(d);
-      if (p) { d = nthWerktagNach(p.bis, 3, kanton); verschoben = true; continue; }
-      const w = naechsterWerktag(d, kanton);
+      if (p) { d = nthWerktagNach(p.bis, 3, kanton, kontext); verschoben = true; continue; }
+      const w = naechsterWerktag(d, kanton, kontext);
       if (+w !== +d) { d = w; verschoben = true; continue; }
       break;
     }
@@ -191,8 +197,32 @@ export function normalisiereEnde(
   for (let guard = 0; guard < 400; guard++) {
     const p = st.endregel === 'ruhen_weiter' ? st.periodeFuer(d) : null;
     if (p) { d = addDays(p.bis, 1); verschoben = true; continue; }
-    if (istArbeitsfreierTag(d, kanton)) { d = addDays(d, 1); verschoben = true; continue; }
+    if (istArbeitsfreierTag(d, kanton, kontext)) { d = addDays(d, 1); verschoben = true; continue; }
     break;
   }
   return { tag: d, verschoben };
+}
+
+/**
+ * RL-22-Nachzug: Warnsatz, wenn ein bedingter kantonaler Feiertag (NE-Schliess-
+ * tag, SO 1. Mai), der im `kontext` NICHT zählt, das Fristende verändern würde.
+ * Vergleicht die Endnormalisierung im Kontext mit der weitesten Lesart.
+ * RL-23 (Q5, W-11 a): sonst Warnsatz, wenn ein im Kontext GEZÄHLTER, aber
+ * unsicherer Tag (GL 2.1.) das Ende verschoben hat (Vergleich mit der
+ * strengen Lesart ohne diesen Tag).
+ * `richtung` 'frueher' = Handlungsfrist (Engine wählt das frühere Ende),
+ * 'spaeter' = frühestes zulässiges Datum (Engine wählt das spätere).
+ */
+export function hinweisBedingteFeiertageEnde(
+  ende: Date,
+  kanton: Kanton,
+  st: Stillstand,
+  kontext: FeiertagsKontext,
+  richtung: 'frueher' | 'spaeter' = 'frueher',
+): string | null {
+  const eng = normalisiereEnde(ende, kanton, st, kontext).tag;
+  const weit = normalisiereEnde(ende, kanton, st, 'weitest').tag;
+  const streng = normalisiereEnde(ende, kanton, st, strengeLesart(kontext)).tag;
+  return bedingteFeiertageSatz(ende, eng, weit, kanton, kontext, richtung)
+    ?? unsichereFeiertageSatz([[ende, eng]], eng, streng, kanton, kontext, richtung);
 }

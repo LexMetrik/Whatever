@@ -217,7 +217,15 @@ describe('Fristenspiegel A.2/A.7/A.6: Preset-Parameter-Identität (§5) + Multi-
 
     expect(e.zeilen.find((z) => z.key === 'rechtsvorschlag')!.endeText).toBe(rvDirekt.diesAdQuem);
     const warte = e.zeilen.find((z) => z.key === 'fortsetzung_warte')!;
-    expect(warte.endeText).toBe(warteDirekt.diesAdQuem);
+    // Deklarierte fachliche Änderung RL-17 / R1-07 (Art. 88 Abs. 1, Art. 63
+    // SchKG): Der Spiegel weist den SPÄTEREN Tag von Wartefrist (direkte Engine
+    // mit den Preset-Parametern) und Rechtsvorschlagsende + 1 Werktag aus —
+    // vorher galt Identität mit der Wartefrist. ZB 5.7.2026: Wartefrist-
+    // Folgetag So 26.7. → Mo 27.07.2026 (Art. 63 verlängert keine Wartefrist,
+    // F2-08); RV-Ende 15.7. in den Ferien → 05.08.2026 → frühestens 06.08.2026.
+    expect(warteDirekt.diesAdQuem).toBe('27.07.2026');
+    expect(rvDirekt.diesAdQuem).toBe('05.08.2026');
+    expect(warte.endeText).toBe('06.08.2026');
     expect(warte.endePraefix).toBe('frühestens ab');   // Wartefrist ≠ «bis»
     expect(warte.status).toBe('bedingt');               // nur ohne RV
     const verw = e.zeilen.find((z) => z.key === 'fortsetzung_verwirkung')!;

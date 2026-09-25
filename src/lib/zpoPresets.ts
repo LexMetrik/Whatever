@@ -108,9 +108,24 @@ export const PRESETS: ZpoPreset[] = [
   { key: 'prosekution', phase: 'besondere', label: 'Prosekutionsfrist vorsorgl. Massnahmen – richterlich', norm: 'Art. 263 ZPO',
     einheit: 'tage', verfahren: 'summarisch', fristnatur: 'gerichtlich',
     hinweis: 'Vom Gericht angesetzt (Praxis z.B. 60 Tage). Stillstand-Anwendbarkeit umstritten (BGer 4A_20/2024) – im Einzelfall prüfen.' },
-  { key: 'arrestprosekution', phase: 'besondere', label: 'Arrestprosekution – 10 Tage', norm: 'Art. 279 SchKG i.V.m. ZPO',
+  // RL-17 / Befund R5-02 (V14, Etikett und Hinweis; Rechnung unverändert):
+  // Art. 279 Abs. 1 SchKG kennt zwei Wege. Dieses Preset ist der KLAGEweg:
+  // Für Klagen nach dem SchKG vor Gericht gelten seit 1.1.2025
+  // «ausschliesslich» die ZPO-Stillstandsregeln (Art. 56 Abs. 2 SchKG, SR 281.1
+  // Fassung 1.1.2026; Art. 145 Abs. 4 Satz 1 ZPO, SR 272 Fassung 1.7.2026) —
+  // der frühere Hinweis «Betreibungs-/SchKG-Ferien gesondert prüfen» widersprach
+  // dem. Gerechnet wird ohne Stillstand (verfahren 'summarisch'): Norm-Beleg
+  // für «kein Stillstand» ist Art. 145 Abs. 2 ZPO — lit. a (Schlichtungs-
+  // verfahren; die Klage wird i.d.R. mit dem Schlichtungsgesuch eingeleitet,
+  // Art. 197/62 Abs. 1 ZPO), lit. b (summarisches Verfahren). Ob für die
+  // Prosequierungsklage im ordentlichen/vereinfachten Verfahren der Stillstand
+  // nach Art. 145 Abs. 1 ZPO gilt, ist zum neuen Recht nicht höchstrichterlich
+  // geklärt (V14: keine Rechtsprechung gefunden) → das Datum ohne Stillstand ist
+  // das frühere, sichere. `hinweispflichtEntfaellt` (RL-20/F1-04) bleibt.
+  // Der Betreibungsweg steht im SchKG-Rechner (schkgPresets 'arrestprosekution').
+  { key: 'arrestprosekution', phase: 'besondere', label: 'Arrestprosekution durch Klage – 10 Tage', norm: 'Art. 279 Abs. 1 SchKG i.V.m. Art. 56 Abs. 2 SchKG',
     einheit: 'tage', laenge: 10, verfahren: 'summarisch', fristnatur: 'gesetzlich', hinweispflichtEntfaellt: true,
-    hinweis: 'Schnittstelle SchKG: Betreibungs-/SchKG-Ferien gesondert prüfen.' },
+    hinweis: 'Klageweg: Für die Prosequierungsklage gelten seit 1.1.2025 ausschliesslich die Stillstandsregeln der ZPO (Art. 56 Abs. 2 SchKG, Art. 145 Abs. 4 ZPO) — keine Betreibungsferien, keine Verlängerung nach Art. 63 SchKG. Gerechnet ohne Stillstand: Er gilt nicht im Schlichtungsverfahren (Art. 145 Abs. 2 lit. a ZPO), mit dem die Klage in der Regel eingeleitet wird, und nicht im summarischen Verfahren (lit. b); ob er für die Klage im ordentlichen oder vereinfachten Verfahren gilt, ist zum neuen Recht nicht geklärt — das Datum ohne Stillstand ist das frühere, sichere. Prosequierung durch Betreibungsbegehren: SchKG-Fristenrechner (Betreibungsferien, Art. 63 SchKG).' },
 
   // ── Schiedsverfahren ──
   // RL-07/F1-01 (Prüfung Rechtslogik 23.9.2026, schwer): rechnete mit der

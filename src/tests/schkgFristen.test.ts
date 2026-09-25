@@ -157,12 +157,20 @@ describe('SchKG-Fristenrechner', () => {
 import { PRESETS_SCHKG } from '../lib/schkgPresets';
 
 describe('Audit-Fix B2 – Wechselbetreibung ohne Betreibungsferien', () => {
-  it('alle drei Wechsel-Presets stehen auf modus \'kein\'', () => {
+  // RL-19 / Befund F2-05 (deklarierte fachliche Änderung, 24.9.2026): Art. 56
+  // Abs. 1 Ziff. 2 SchKG schliesst in der Wechselbetreibung nur die
+  // Betreibungs-FERIEN aus, nicht den Rechtsstillstand (Ziff. 3, Art. 63).
+  // Die Invariante «keine Betreibungsferien» bleibt; statt 'kein' tragen die
+  // von einer Betreibungshandlung ausgelösten Fristen das Regime
+  // 'schkg_wechsel' (Rechtsstillstand mit Art. 63), die Beschwerde (Art. 20)
+  // bleibt auf 'kein' mit Schalter wie Art. 17 (RL-17/W-09).
+  it('kein Wechsel-Preset rechnet mit Betreibungsferien', () => {
     const wechsel = PRESETS_SCHKG.filter((p) => p.key.includes('wechsel'));
     expect(wechsel.map((p) => p.key).sort()).toEqual(
       ['beschwerde_wechsel', 'konkursbegehren_wechsel', 'rechtsvorschlag_wechsel'],
     );
-    for (const p of wechsel) expect(p.modus, p.key).toBe('kein');
+    for (const p of wechsel) expect(p.modus, p.key).not.toBe('schkg_betreibungsferien');
+    for (const p of wechsel) expect(p.modusBeiBetreibungshandlung ?? p.modus, p.key).toBe('schkg_wechsel');
     for (const p of wechsel) expect(p.hinweis).toContain('Art. 56 Ziff. 2');
   });
 

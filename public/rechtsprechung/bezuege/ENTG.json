@@ -1,43 +1,45 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"ENTG",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_147_II_201":{"zitierung":"BGE 147 II 201","regesteKurz":"Entschädigung für die Erneuerung eines Überleitungsrechts für eine bestehende Starkstromleitung; Anwendungsbereich von Art. 83 lit. w BGG; Rechtsfrage von grundsätzlicher Bedeutung. Der am 1. Januar 2018 in Kraft getretene Art. 83 lit. w…","datum":"2020-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_148_II_387":{"zitierung":"BGE 148 II 387","regesteKurz":"Art. 30e, 58 USG; Art. 26, 27 BV; Enteignung für eine Deponie. Verhältnis von Art. 58 Abs. 1 USG zum kantonalen Enteignungsrecht (E. 3.1). Bedürfnisklausel bei der Bewilligungspflicht für Deponien gemäss Art. 30e Abs. 2 USG (E. 3.2.3).…","datum":"2022-03-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_147_II_201__voll":{"zitierung":"Urteil 1C_647/2019 (nicht publ. in BGE 147 II 201)","regesteKurz":null,"datum":"2020-10-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"147 II 201","urteil":"1C_647/2019"}},
+"bge_148_II_387":{"zitierung":"BGE 148 II 387","regesteKurz":"Art. 30e, 58 USG; Art. 26, 27 BV; Enteignung für eine Deponie. Verhältnis von Art. 58 Abs. 1 USG zum kantonalen Enteignungsrecht (E. 3.1). Bedürfnisklausel bei der Bewilligungspflicht für Deponien gemäss Art. 30e Abs. 2 USG (E. 3.2.3).…","datum":"2022-03-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_148_II_387__voll":{"zitierung":"Urteil 1C_177/2021 (nicht publ. in BGE 148 II 387)","regesteKurz":null,"datum":"2022-03-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 387","urteil":"1C_177/2021"}}
 },
 "proArtikel":{
-"3":[{"key":"bge_148_II_387","gewicht":0}],
+"3":[{"key":"bge_148_II_387__voll","gewicht":0,"erwaegungen":["E. 4.2"]}],
 "5":[{"key":"bge_148_II_387","gewicht":0}],
-"6":[{"key":"bge_148_II_387","gewicht":0}],
-"7":[{"key":"bge_148_II_387","gewicht":0}],
+"6":[{"key":"bge_148_II_387__voll","gewicht":0,"erwaegungen":["E. 5.1"]}],
+"7":[{"key":"bge_148_II_387__voll","gewicht":0,"erwaegungen":["E. 4.2","E. 4.3","E. 4.4"]}],
 "16":[{"key":"bge_147_II_201","gewicht":0}],
 "19":[{"key":"bge_147_II_201","gewicht":0}],
-"22":[{"key":"bge_147_II_201","gewicht":0}],
+"22":[{"key":"bge_147_II_201__voll","gewicht":0,"erwaegungen":["E. 6.3"]}],
 "33":[{"key":"bge_147_II_201","gewicht":0}],
 "41":[{"key":"bge_147_II_201","gewicht":0}],
 "48":[{"key":"bge_147_II_201","gewicht":0}],
-"50":[{"key":"bge_147_II_201","gewicht":0}],
+"50":[{"key":"bge_147_II_201__voll","gewicht":0,"erwaegungen":["E. 1.4"]}],
 "64":[{"key":"bge_147_II_201","gewicht":0}],
 "76":[{"key":"bge_147_II_201","gewicht":0}],
 "91":[{"key":"bge_147_II_201","gewicht":0}],
-"19bis":[{"key":"bge_147_II_201","gewicht":0}]
+"19bis":[{"key":"bge_147_II_201__voll","gewicht":0,"erwaegungen":["E. 7.1","E. 7.4"]}]
 },
 "gesamtProArtikel":{
-"3":{"bge":1},
+"3":{"bger":1},
 "5":{"bge":1},
-"6":{"bge":1},
-"7":{"bge":1},
+"6":{"bger":1},
+"7":{"bger":1},
 "16":{"bge":1},
 "19":{"bge":1},
-"22":{"bge":1},
+"22":{"bger":1},
 "33":{"bge":1},
 "41":{"bge":1},
 "48":{"bge":1},
-"50":{"bge":1},
+"50":{"bger":1},
 "64":{"bge":1},
 "76":{"bge":1},
 "91":{"bge":1},
-"19bis":{"bge":1}
+"19bis":{"bger":1}
 }
 }

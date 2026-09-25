@@ -1,11 +1,11 @@
 {
-"erzeugt":"2026-09-05",
+"erzeugt":"2026-09-23",
 "erlass":"FZV",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_146_V_331":{"zitierung":"BGE 146 V 331","regesteKurz":"Art. 11 Abs. 1 lit. c ELG; Art. 16 Abs. 2 FZV; Zeitpunkt der Anrechnung von Guthaben eines Freizügigkeitskontos bei rückwirkender Ausrichtung von Ergänzungsleistungen zur Invalidenrente. Übersicht über die Rechtsprechung. Ein verzehrbarer…","datum":"2020-09-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_146_V_341":{"zitierung":"BGE 146 V 341","regesteKurz":"a Art. 61 BVG; Art. 3 BVV 1; Zuständigkeit der kantonalen BVG-Aufsichtsbehörde. Seit dem Inkrafttreten von Art. 3 BVV 1 in der per 1. Januar 2012 geltenden Fassung (nach der Änderung des BVG vom 19. März 2010 [Strukturreform]) gibt es neu…","datum":"2020-09-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_147_V_10":{"zitierung":"BGE 147 V 10","regesteKurz":"Art. 26 Abs. 4 BVG; Regressforderung; Schadenszins. Zur Regressforderung gehört ein Regress- resp. Schadenszins (E. 4). Dessen Höhe richtet sich nach dem BVG-Mindestzinssatz plus ein Prozent (E. 5). Regeste Art. 26 al. 4 LPP; prétention…","datum":"2021-01-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_147_V_10__voll":{"zitierung":"Urteil 9C_63/2020 (nicht publ. in BGE 147 V 10)","regesteKurz":null,"datum":"2021-01-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"147 V 10","urteil":"9C_63/2020"}},
 "bge_148_III_232":{"zitierung":"BGE 148 III 232","regesteKurz":"Art. 92 Abs. 1 Ziff. 10 und Art. 275 SchKG; Art. 4 Abs. 1 FZG; Art. 16 Abs. 1 FZV; Verarrestierung von Guthaben der beruflichen Vorsorge; auf ein Konto bei einer Freizügigkeitseinrichtung überwiesene Austrittsleistung; Eintritt der…","datum":"2022-04-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_V_114":{"zitierung":"BGE 148 V 114","regesteKurz":"Art. 113 BV; § 20 Abs. 1 des Gesetzes des Kantons Aargau vom 6. März 2001 über die öffentliche Sozialhilfe und die soziale Prävention; § 20 Abs. 1 der Sozialhilfe- und Präventionsverordnung des Kantons Aargau vom 28. August 2002; Art. 16…","datum":"2021-11-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_V_161":{"zitierung":"BGE 150 V 161","regesteKurz":"Art. 5 Abs. 2, Art. 6, Art. 113 BV; Art. 1 Abs. 1 BVG; Art. 2-4 FZG; Art. 16 Abs. 1 FZV; Art. 92 Abs. 1 Ziff. 10 und Art. 93 SchKG; § 5 Abs. 1, § 6 Abs. 3, § 7 Abs. 1, § 11, § 13a Abs. 1 des Gesetzes des Kantons Basel-Landschaft vom 21.…","datum":"2024-02-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -16,7 +16,7 @@
 "bs_sozialversicherungsgericht_BV.2024.1":{"zitierung":"Sozialversicherungsgericht BS BV.2024.1 vom 13.08.2024","regesteKurz":"BVG Anwendbares Vorsorgereglement; Zinsberechnung; Klagegutheissung","datum":"2024-08-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"7":[{"key":"bge_147_V_10","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2024.1","gewicht":null}],
+"7":[{"key":"bge_147_V_10__voll","gewicht":0,"erwaegungen":["E. 2.2"]},{"key":"bs_sozialversicherungsgericht_BV.2024.1","gewicht":null}],
 "10":[{"key":"bge_151_V_169","gewicht":0},{"key":"bge_150_V_161","gewicht":1},{"key":"bge_148_III_232","gewicht":0},{"key":"bge_148_V_114","gewicht":1},{"key":"bge_146_V_341","gewicht":1}],
 "12":[{"key":"bge_148_III_232","gewicht":0}],
 "13":[{"key":"bge_148_III_232","gewicht":0},{"key":"bge_146_V_341","gewicht":1}],
@@ -28,7 +28,7 @@
 "19g":[{"key":"bge_151_V_144","gewicht":0}]
 },
 "gesamtProArtikel":{
-"7":{"bge":1,"kantonal":1},
+"7":{"bger":1,"kantonal":1},
 "10":{"bge":5},
 "12":{"bge":1},
 "13":{"bge":2},

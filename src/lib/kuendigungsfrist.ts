@@ -1,5 +1,5 @@
 // Dossier: bibliothek/recherche/arbeitsrecht-rechner.md
-import { parseISO, addDays, addMonths, isBefore, isEqual } from 'date-fns';
+import { parseISO, addDays, addMonths, subMonths, isBefore, isEqual } from 'date-fns';
 import type { KuendigungsfristInput, Berechnungsergebnis, Normverweis } from '../types/legal';
 import {
   berechneDienstjahr,
@@ -19,6 +19,47 @@ const N_335c_2: Normverweis = { artikel: 'Art. 335c Abs. 2 OR', bemerkung: 'Abä
 // (nicht mehr «Vaterschaftsurlaub»). Internes Feld vaterschaftsurlaubResttage
 // bleibt (Permalink-/Schema-Stabilität); nutzersichtbare Texte folgen dem Gesetz.
 const N_335c_3: Normverweis = { artikel: 'Art. 335c Abs. 3 OR', bemerkung: 'Verlängerung bei Urlaub des andern Elternteils (Art. 329g OR)' };
+const N_77_halb: Normverweis = { artikel: 'Art. 77 Abs. 1 Ziff. 3 OR', bemerkung: '«halber Monat» = 15 Tage, zuletzt gezählt' };
+
+// ─── Monatsfristen mit halbem Monat (RL-16 / S3b-a, 24.9.2026) ───────────
+//
+// Art. 77 Abs. 1 Ziff. 3 Satz 2 OR (Fedlex SR 220, Kons. 20260101, Wortlaut
+// in 20261001 unverändert): Der Ausdruck «halber Monat» wird einem Zeitraum
+// von 15 Tagen gleichgeachtet, die bei einer Frist von einem oder mehreren
+// Monaten und einem halben Monat ZULETZT zu zählen sind. date-fns 4 schneidet
+// Bruchteile in addMonths still ab (0,5 → 0) und rechnet subMonths(…, 0,5)
+// als ganzen Monat — vorher verschwand der GAV-Halbmonat (1. DJ) und die
+// Sperrfristen-Rückrechnung griff einen Monat zurück.
+
+/** Frist in (halben) Monaten vorwärts: ganze Monate, dann 15 Tage. */
+function addFristMonate(d: Date, monate: number): Date {
+  const ganz = Math.floor(monate);
+  const nachMonaten = addMonths(d, ganz);
+  return monate - ganz === 0.5 ? addDays(nachMonaten, 15) : nachMonaten;
+}
+
+/** Rückrechnung vom Endtermin: zuerst die zuletzt gezählten 15 Tage, dann die ganzen Monate. */
+export function subFristMonate(d: Date, monate: number): Date {
+  const ganz = Math.floor(monate);
+  const ohneHalbmonat = monate - ganz === 0.5 ? addDays(d, -15) : d;
+  return subMonths(ohneHalbmonat, ganz);
+}
+
+// ─── Probezeit (Art. 335b OR) ─────────────────────────────────────────────
+
+/** Wirksame Probezeitdauer: höchstens drei Monate (Art. 335b Abs. 2 OR). */
+function wirksameProbezeitMonate(probezeitMonate: number): number {
+  return Math.min(Math.max(probezeitMonate, 0), 3);
+}
+
+/** Letzter Tag der (unverlängerten) Probezeit; null ohne Probezeit.
+ *  Bug-Check 10.6.2026: Der erste Arbeitstag zählt mit (1 Monat ab 1.4. endet
+ *  am 30.4.). RL-16/F4-03 (24.9.2026): EINE Funktion für Logik UND Rechenweg —
+ *  vorher zeigte der Rechenweg addMonths ohne −1 Tag (01.02. statt 31.01.). */
+export function probezeitEnde(vertragsbeginn: Date, probezeitMonate: number): Date | null {
+  const monate = wirksameProbezeitMonate(probezeitMonate);
+  return monate === 0 ? null : addDays(addMonths(vertragsbeginn, monate), -1);
+}
 
 export type KuendigungsfristResultat = {
   ergebnis: Berechnungsergebnis;
@@ -32,14 +73,12 @@ export type KuendigungsfristResultat = {
   fristMonate: number;
 };
 
-function istInProbezeit(vb: Date, zugang: Date, probezeitMonate: number): boolean {
-  if (probezeitMonate === 0) return false;
-  // Bug-Check 10.6.2026 (MITTEL, deklarierte fachliche Änderung): Der erste
-  // Arbeitstag zählt mit (Praxis zu Art. 335b OR: 1 Monat ab 1.4. endet am
-  // 30.4.). Vorher galt der Zugang am Tag NACH Probezeitende noch als
-  // Probezeitkündigung (7 Tage, keine Sperrfristen).
-  const probezeitEnde = addDays(addMonths(vb, probezeitMonate), -1);
-  return isBefore(zugang, probezeitEnde) || isEqual(zugang, probezeitEnde);
+function istInProbezeit(zugang: Date, ende: Date | null): boolean {
+  if (ende === null) return false;
+  // Bug-Check 10.6.2026 (MITTEL, deklarierte fachliche Änderung): Vorher galt
+  // der Zugang am Tag NACH Probezeitende noch als Probezeitkündigung (7 Tage,
+  // keine Sperrfristen). Ende inklusive.
+  return isBefore(zugang, ende) || isEqual(zugang, ende);
 }
 
 export function berechneKuendigungsfrist(input: KuendigungsfristInput): KuendigungsfristResultat {
@@ -64,16 +103,24 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
 
   // ─── Probezeit prüfen (Art. 335b OR) ─────────────────────────────────
 
-  const dauerProbezeitMonate = Math.min(Math.max(probezeitMonate, 0), 3);
-  const inProbezeit = istInProbezeit(vb, zugang, dauerProbezeitMonate);
+  const dauerProbezeitMonate = wirksameProbezeitMonate(probezeitMonate);
+  const pzEnde = probezeitEnde(vb, probezeitMonate);
+  const inProbezeit = istInProbezeit(zugang, pzEnde);
 
-  if (dauerProbezeitMonate > 0) {
-    const probezeitEnde = addMonths(vb, dauerProbezeitMonate);
+  // RL-16 / F4-04 (24.9.2026): Art. 335b Abs. 2 OR erlaubt höchstens drei
+  // Monate — die Kappung bleibt, wird aber offengelegt (§8) statt still.
+  if (probezeitMonate > 3) {
+    warnungen.push(
+      `Die vereinbarte Probezeit von ${probezeitMonate} Monaten übersteigt das Höchstmass von drei Monaten (Art. 335b Abs. 2 OR); die Abrede ist insoweit unwirksam. Gerechnet wird mit drei Monaten.`,
+    );
+  }
+
+  if (pzEnde !== null) {
     rechenweg.push({
       beschreibung: 'Schritt 1 – Probezeit prüfen (Art. 335b OR)',
       zwischenergebnis: inProbezeit
-        ? `Zugang ${formatDatum(zugang)} liegt in der Probezeit (${dauerProbezeitMonate} Monat/e, Ende ${formatDatum(probezeitEnde)}). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.`
-        : `Zugang ${formatDatum(zugang)} liegt ausserhalb der Probezeit (Ende ${formatDatum(probezeitEnde)}). Ordentliche Frist gilt.`,
+        ? `Zugang ${formatDatum(zugang)} liegt in der Probezeit (${dauerProbezeitMonate} Monat/e, Ende ${formatDatum(pzEnde)}). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.`
+        : `Zugang ${formatDatum(zugang)} liegt ausserhalb der Probezeit (Ende ${formatDatum(pzEnde)}). Ordentliche Frist gilt.`,
       normen: [N_335b],
     });
   }
@@ -179,9 +226,22 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
     }
   }
 
+  // RL-16 / S3b-a (24.9.2026): Monatsfristen sind nur in ganzen und halben
+  // Monaten bestimmbar (Art. 77 Abs. 1 Ziff. 3 OR). Andere Bruchteile werden
+  // auf den halben Monat abgerundet — wie bisher nie länger als eingegeben —
+  // und offengelegt (§8), statt von date-fns still abgeschnitten.
+  const fristMonateHalb = Math.floor(fristMonate * 2) / 2;
+  if (fristMonateHalb !== fristMonate) {
+    warnungen.push(
+      `Die Frist von ${fristMonate} Monaten ist keine bestimmbare Monatsfrist: Art. 77 Abs. 1 Ziff. 3 OR kennt neben ganzen Monaten nur den halben Monat (15 Tage). Gerechnet wird mit ${fristMonateHalb} Monat/en; eine in Tagen oder Wochen vereinbarte Frist ist gesondert zu prüfen.`,
+    );
+    fristMonate = fristMonateHalb;
+  }
+  const mitHalbmonat = fristMonate % 1 !== 0;
+
   // ─── Fristberechnung und Endtermin (inkl. §3.4 Urlaub des andern Elternteils) ────
 
-  const fristLaufende = addMonths(zugang, fristMonate);
+  const fristLaufende = addFristMonate(zugang, fristMonate);
 
   // SHK-Abgleich-Fix 10.6.2026 (B1, deklarierte fachliche Änderung —
   // normen/arbeitsrecht-shk-abgleich.md): Die Verlängerung um nicht bezogene
@@ -206,7 +266,9 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
   rechenweg.push({
     beschreibung: `Schritt ${abweichendeFristMonate != null ? 4 : 3} – Fristberechnung und Endtermin`,
     zwischenergebnis:
-      `Frist: ${fristMonate} Monat/e ab Zugang ${formatDatum(zugang)} → ${formatDatum(fristLaufende)}. ` +
+      `Frist: ${fristMonate} Monat/e ab Zugang ${formatDatum(zugang)}` +
+      (mitHalbmonat ? ` (halber Monat = 15 Tage, zuletzt gezählt)` : '') +
+      ` → ${formatDatum(fristLaufende)}. ` +
       (vaterschaftResttage > 0
         ? (kuendigungsterminMonatsende
             ? `Kündigungstermin = Monatsende: ordentlicher Endtermin ${formatDatum(ordentlichesEnde)}. `
@@ -215,7 +277,7 @@ export function berechneKuendigungsfrist(input: KuendigungsfristInput): Kuendigu
         : kuendigungsterminMonatsende
           ? `Kündigungstermin = Monatsende: Beendigung ${formatDatum(beendigung)}.`
           : `Kein Monatsendtermin: Beendigung ${formatDatum(beendigung)}.`),
-    normen: vaterschaftResttage > 0 ? [N_335c, N_335c_3] : [N_335c],
+    normen: [N_335c, ...(vaterschaftResttage > 0 ? [N_335c_3] : []), ...(mitHalbmonat ? [N_77_halb] : [])],
   });
 
   if (vaterschaftResttage > 0) {

@@ -39,6 +39,12 @@ export interface StartseiteZaehler {
   rechtsprechungLeitentscheide: number;
   /** Erfasste amtliche Materialien (Behördenpublikationen, nur-live-link). */
   materialien: number;
+  /** U12: davon Materialien im Hausbegriff — Gesetzgebung (Botschaften,
+   *  Vernehmlassungen, kantonale Parlamentsgeschäfte; `gattungVon`). */
+  materialienGesetzgebung: number;
+  /** U12: davon Erläuterungen — Verwaltungspraxis ohne Gesetzesrang.
+   *  materialienGesetzgebung + materialienErlaeuterungen = materialien. */
+  materialienErlaeuterungen: number;
   /** W2·24-R3: erfasste Materialien je Behörde, Reihenfolge BEHOERDEN (rang);
    *  Behörden ohne Eintrag fehlen (nie eine 0-Zeile behaupten, §8). */
   materialienBehoerden: Array<{ id: string; kuerzel: string; name: string; anzahl: number }>;
@@ -206,6 +212,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   ],
   "rechtsprechungLeitentscheide": 1259,
   "materialien": 1683,
+  "materialienGesetzgebung": 1356,
+  "materialienErlaeuterungen": 327,
   "materialienBehoerden": [
     {
       "id": "ESTV",
@@ -271,7 +279,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "rechner": 23,
   "vorlagen": 26,
   "standGesetze": "2026-09-21",
-  "standRechtsprechung": "2026-09-12",
+  "standRechtsprechung": "2026-09-23",
   "standMaterialien": "2026-09-18",
   "juengsterGesetzStand": "2026-09-02",
   "juengsterEntscheid": "2026-07-08",

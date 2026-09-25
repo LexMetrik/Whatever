@@ -153,6 +153,8 @@ Umbau der Token-Schicht. Farbwärme/Atmosphäre ist und bleibt `W2·11-DESIGN`.
 
 ## §8 · ROADMAP-Spec QS-UI (wörtlich verschoben 31.7.2026)
 
+*24.9.2026: `QS-UI` ist in `W2·19-DESIGN-KONSISTENZ` aufgegangen (ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
+
 > **→ Bau-Spec: §1–§6 dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.* *Wörtlich bis auf die Selbstverweise, die am 31.7.2026 auf «diese Datei» neutralisiert wurden (Endprüfung Fix-Runde 1; Fund R2-18).*
@@ -181,6 +183,8 @@ Umbau der Token-Schicht. Farbwärme/Atmosphäre ist und bleibt `W2·11-DESIGN`.
 
 ## §9 · ROADMAP-Spec W2·16-INVENTAR (wörtlich verschoben 31.7.2026)
 
+*24.9.2026: `W2·16-INVENTAR` ist in `W2·16-ANLEITUNG` aufgegangen; der Rest ist ein Posten dort (ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
+
 > **→ Bau-Spec: §7.1 «Schritt 1 — Funktions-Inventar» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 
 *Wörtlich aus `ROADMAP.md` (QS-TOK/ROADMAP-Diät B4, 31.7.2026); dort bleiben Checkbox, `@meta`, Einzeiler, Pointer. Steuert nicht — Spec-Heimat.*
@@ -198,6 +202,9 @@ Umbau der Token-Schicht. Farbwärme/Atmosphäre ist und bleibt `W2·11-DESIGN`.
 ---
 
 ## §10 · ROADMAP-Spec W2·16-ANLEITUNG (wörtlich verschoben 31.7.2026)
+
+*24.9.2026: die `dep` auf `W2·16-INVENTAR` entfällt — das Inventar liegt als `docs/INVENTAR-FUNKTIONEN.md`
+vor (#975); `W2·16-ANLEITUNG` ist geparkt hinter `zielbild-gesetzesleser` (ROADMAP-CHRONIK.md, Fusionen 2026-09-24).*
 
 > **→ Bau-Spec: §7.2 «Schritt 2 — Bedienungsanleitung / Onboarding» dieser Datei.** Dieser § ist die *wörtlich hierher verschobene ROADMAP-Prosa* (Wortlaut-Heimat), nicht die Bau-Spezifikation — wer nur ihn slict, baut ohne die verbindlichen Einheiten, Entscheide und Querschnitt-Regeln.
 

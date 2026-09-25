@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-23",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2022.1",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "VD.2022.1",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS VD.2022.1",
-      "datum": "2022-01-01",
+      "zitierung": "Appellationsgericht BS VD.2022.1 vom 02.02.2022",
+      "datum": "2022-02-02",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -157,10 +157,9 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=72811&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-09-23",
       "fassungsToken": "2022-06-29",
       "sha": "9c2e7e7efeb8855dd6714fddd041d917639b6ee1fd0612e4a321391a6a32bf2d",
-      "datumUnbekannt": true,
       "erstpublikation": "2022-06-29",
       "aktualisiert": "2022-06-29",
       "nummerSekundaer": "AG.2022.69",

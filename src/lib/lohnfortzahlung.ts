@@ -10,7 +10,7 @@ import {
   skaliereSkalaDauer,
   dauerUeberDreiMonate,
 } from './datumsUtils';
-import { skaleFuerKanton, dauerAusSkala } from '../data/lohnfortzahlungSkalen';
+import { skaleFuerKanton, dauerAusSkala, skalaHinweise } from '../data/lohnfortzahlungSkalen';
 import { rechtsprechung } from '../data/verifikation';
 
 // ─── Feste Normverweise (Art. 324a OR) ────────────────────────────────────
@@ -106,7 +106,14 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
 
   // ─── Schritt 0: KTG-Gleichwertigkeitsprüfung (§2.6) ──────────────────
 
-  if (ktgGleichwertigVorhanden) {
+  // RL-25b (rechtslogik-rest-03, nur «schriftlich»): Art. 324a Abs. 4 OR lässt
+  // eine abweichende Regelung nur «durch schriftliche Abrede, Normalarbeits-
+  // vertrag oder Gesamtarbeitsvertrag» zu — Gültigkeitsvoraussetzung, kein
+  // Gesamtvergleich. Ist sie ausdrücklich verneint, verdrängt die KTG-Abrede die
+  // Skala nicht; die übrigen Checklisten-Kriterien bleiben Indikation (§8).
+  const ktgFormungueltig = ktgGleichwertigVorhanden && ktgKriterien?.schriftlichVereinbart === false;
+
+  if (ktgGleichwertigVorhanden && !ktgFormungueltig) {
     let indikationsText =
       'Faustregel der Rechtsprechung: Taggeld ≥ 80 % des Lohnes während max. 720 Tagen, Karenzfrist max. 3 Tage, ' +
       'Prämien mindestens hälftig durch Arbeitgeber. Gleichwertigkeit ist ein abstrakter Gesamtvergleich im Einzelfall.';
@@ -136,6 +143,20 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
       ],
       normverweise: [N_324a_4, N_324b, N_362],
     };
+  }
+
+  if (ktgFormungueltig) {
+    rechenweg.push({
+      beschreibung: 'Schritt 0 – KTG-Abrede: Formerfordernis (Art. 324a Abs. 4 OR)',
+      zwischenergebnis:
+        'Eine Krankentaggeldversicherung ist angegeben, aber weder schriftlich noch in einem Normal- oder Gesamtarbeitsvertrag vereinbart. ' +
+        'Art. 324a Abs. 4 OR lässt eine abweichende Regelung nur «durch schriftliche Abrede, Normalarbeitsvertrag oder Gesamtarbeitsvertrag» zu; ' +
+        'die Form ist Gültigkeitsvoraussetzung. Die Abrede verdrängt die gesetzliche Regelung darum nicht: Es gilt die Skala nach Art. 324a Abs. 1–3 OR als Mindestanspruch.',
+      normen: [N_324a_4, N_324a_1, N_362],
+    });
+    warnungen.push(
+      'KTG-Abrede nicht schriftlich (auch nicht in GAV/NAV) vereinbart: nach Art. 324a Abs. 4 OR keine gültige abweichende Regelung; berechnet ist der gesetzliche Mindestanspruch nach Skala. Ob und wieweit ausbezahlte Taggelder an diesen Lohnanspruch anzurechnen sind, ist im Einzelfall zu prüfen.',
+    );
   }
 
   // ─── Schritt 1: Anspruchsvoraussetzung (§2.2 differenziert) ──────────
@@ -170,15 +191,46 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
     rechtsprechung: [rechtsprechung('BGE_131_III_623')],
   });
 
-  if (!hatAnspruch) {
-    return {
-      ergebnis: 'Kein Anspruch auf Lohnfortzahlung: Das Arbeitsverhältnis hat noch keine 3 Monate gedauert und es liegt keine feste Dauer / Kündigungsfrist > 3 Monate vor (Art. 324a Abs. 1 OR; BGE 131 III 623, zu verifizieren).',
-      status: 'kein_anspruch',
-      rechenweg,
-      annahmen,
-      warnungen,
-      normverweise: [N_324a_1],
-    };
+  // RL-25b (rechtslogik-rest-01): Die Karenzfrist schiebt den Anspruch nur
+  // hinaus, sie verneint ihn nicht. BGE 131 III 623 E. 2.4 (Regeste): bei
+  // unbefristetem Vertrag mit Kündigungsfrist ≤ 3 Monaten «keinen Lohnanspruch
+  // vor dem ersten Tag des vierten Monats». Dauert die Verhinderung darüber
+  // hinaus, läuft der Skala-Kredit ab diesem Tag. Vorher: absolut «Kein Anspruch».
+  let anspruchsBeginn = vhb;
+  const nachKarenz = !hatAnspruch;
+  if (nachKarenz) {
+    const veK = verhinderungEnde ? parseISO(verhinderungEnde) : null;
+    if (veK && isBefore(veK, dreiMonate)) {
+      return {
+        ergebnis:
+          `Kein Anspruch auf Lohnfortzahlung: Die Verhinderung (${formatDatum(vhb)} bis ${formatDatum(veK)}) endet vor dem ersten Tag des vierten Monats ` +
+          `des Arbeitsverhältnisses (${formatDatum(dreiMonate)}); bis dahin trägt der Arbeitnehmer den Lohnausfall selbst ` +
+          `(Karenzfrist; Art. 324a Abs. 1 OR; BGE 131 III 623 E. 2.4).`,
+        status: 'kein_anspruch',
+        rechenweg,
+        annahmen,
+        warnungen,
+        normverweise: [N_324a_1],
+      };
+    }
+    anspruchsBeginn = dreiMonate;
+    rechenweg.push({
+      beschreibung: 'Schritt 1a – Anspruchsbeginn nach Ablauf der Karenzfrist (Art. 324a Abs. 1 OR)',
+      zwischenergebnis:
+        (veK
+          ? `Die Verhinderung dauert bis ${formatDatum(veK)} und reicht über den ${formatDatum(dreiMonate)} hinaus. `
+          : `Ende der Verhinderung nicht angegeben – angenommen wird, dass sie über den ${formatDatum(dreiMonate)} hinaus andauert. `) +
+        `Vom ${formatDatum(vhb)} bis ${formatDatum(addDays(dreiMonate, -1))} ist kein Lohn geschuldet (Karenzfrist); ` +
+        `ab dem ${formatDatum(dreiMonate)} (erster Tag des vierten Monats) besteht der Anspruch nach Skala.`,
+      normen: [N_324a_1],
+      rechtsprechung: [rechtsprechung('BGE_131_III_623')],
+    });
+    if (!veK) {
+      warnungen.push(
+        `Ende der Verhinderung nicht angegeben: Berechnet ist der Anspruch ab ${formatDatum(dreiMonate)} unter der Annahme, dass die Verhinderung so lange andauert. ` +
+        `Endet sie vor dem ${formatDatum(dreiMonate)}, besteht kein Anspruch (Karenzfrist, BGE 131 III 623 E. 2.4).`,
+      );
+    }
   }
 
   // ─── Schritt 2: Skala bestimmen (§2.5 Zuordnungs-Vorbehalt) ──────────
@@ -209,7 +261,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
     normen: [N_324a_2],
   });
 
-  // ─── Schritt 4: Skala ablesen (§2.4 «mindestens», §2.5 DJ>11) ────────
+  // ─── Schritt 4: Skala ablesen (§2.4 «mindestens», §2.5 Beleggrenze) ──
 
   const skalaEintrag = dauerAusSkala(skala, dienstjahr);
   if (!skalaEintrag) {
@@ -224,11 +276,10 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   }
 
   const basisdauer = skalaEintrag.dauer;
-  if (dienstjahr > 11) {
-    warnungen.push(
-      `Skala-Fortschreibung für das ${dienstjahr}. Dienstjahr ist in der vorliegenden SECO-/SHK-Tabelle (nur bis 11. DJ abgedruckt) nicht belegt (verifiziert: false). Insufficient data – kantonale Praxis prüfen.`,
-    );
-  }
+  // RL-25 (F4-05, W-13): Beleggrenze je Skala (Basel/Zürich SHK bis 11. DJ,
+  // Bern Obergericht BE bis 19. DJ), Fortschreibungen und NW-Widerspruch offenlegen.
+  const hinweise = skalaHinweise(kanton, skala, dienstjahr);
+  warnungen.push(...hinweise.warnungen);
 
   rechenweg.push({
     beschreibung: `Schritt 4 – Skala-Dauer ablesen (${skala.name}, ${dienstjahr}. DJ)`,
@@ -237,7 +288,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
         ? `1. Dienstjahr: mindestens ${formatSkalaDauer(basisdauer)} (Art. 324a Abs. 2 OR – «mindestens drei Wochen»). `
         : `Regelmass laut Gerichtspraxis: ${formatSkalaDauer(basisdauer)}. `) +
       `Orientierungswert, nicht gerichtsverbindlich (SHK Art. 324a N 50)` +
-      (dienstjahr > 11 ? ` – Fortschreibung > 11. DJ aus der Quelle nicht belegt.` : '') + '.',
+      hinweise.rechenwegZusatz + '.',
     normen: [N_324a_2],
   });
 
@@ -264,13 +315,16 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
 
   // ─── Schritt 6: Enddatum 1. Kredit ───────────────────────────────────
 
-  let erstesEnde = letzterTagLohnfortzahlung(vhb, effektiveDauer);
+  let erstesEnde = letzterTagLohnfortzahlung(anspruchsBeginn, effektiveDauer);
   let ersterKreditErschoepft = false;
 
   rechenweg.push({
     beschreibung: 'Schritt 6 – Letzter bezahlter Tag, 1. Kredit (Lohn ab erstem Tag inkl.)',
     zwischenergebnis:
-      `Beginn der Verhinderung ${formatDatum(vhb)} + ${formatSkalaDauer(effektiveDauer)} − 1 Tag = ${formatDatum(erstesEnde)}.`,
+      (nachKarenz
+        ? `Beginn des Anspruchs nach Karenzfrist ${formatDatum(anspruchsBeginn)}`
+        : `Beginn der Verhinderung ${formatDatum(vhb)}`) +
+      ` + ${formatSkalaDauer(effektiveDauer)} − 1 Tag = ${formatDatum(erstesEnde)}.`,
     normen: [N_324a_2],
   });
 
@@ -284,8 +338,8 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
     const restTage = Math.max(0, kreditTage - bereitsBezogen);
     ersterKreditErschoepft = restTage === 0;
     erstesEnde = restTage > 0
-      ? letzterTagLohnfortzahlung(vhb, { typ: 'tage', anzahl: restTage })
-      : addDays(vhb, -1); // kein bezahlter Tag im 1. Kredit
+      ? letzterTagLohnfortzahlung(anspruchsBeginn, { typ: 'tage', anzahl: restTage })
+      : addDays(anspruchsBeginn, -1); // kein bezahlter Tag im 1. Kredit
     rechenweg.push({
       beschreibung: 'Schritt 6a – Verrechnung früherer Absenzen im selben Dienstjahr (Art. 324a Abs. 2 OR)',
       zwischenergebnis:
@@ -307,6 +361,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   let zweiKredite = false;
   let zweitesEnde: Date | null = null;
   let jahrestag: Date | null = null;
+  let ersterKreditAnzeigeEnde = erstesEnde;
 
   if (verhinderungEnde) {
     const ve = parseISO(verhinderungEnde);
@@ -327,12 +382,20 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
         // Der spätere Endtermin bestimmt das Ende der Lohnfortzahlung (der neue Kredit
         // lebt am Jahrestag frisch auf, auch wenn der alte aufgebraucht war).
         letzterTag = isAfter(zweitesEnde, erstesEnde) ? zweitesEnde : erstesEnde;
+        // S3f-10 (RL-25): Anzeige sequenziell wie die Annahme unten — der 1. Kredit
+        // deckt höchstens bis zum Vortag des Jahrestags; vorher stand hier das
+        // rechnerische Ende des 1. Kredits, das den 2. Kredit überlappte (Enddatum
+        // letzterTag war und bleibt unverändert).
+        const ersterKreditGekappt = !isBefore(erstesEnde, jahrestag);
+        ersterKreditAnzeigeEnde = ersterKreditGekappt ? addDays(jahrestag, -1) : erstesEnde;
 
         rechenweg.push({
           beschreibung: 'Schritt 6b – Dienstjahr-übergreifende Verhinderung: zweiter Kredit (Art. 324a Abs. 2 OR)',
           zwischenergebnis:
             `Verhinderung reicht über den Jahrestag ${formatDatum(jahrestag)} ins ${dienstjahr + 1}. Dienstjahr. ` +
-            `Der Anspruch erneuert sich pro Dienstjahr (SHK N 53): 1. Kredit (${dienstjahr}. DJ) bis ${formatDatum(erstesEnde)}, ` +
+            `Der Anspruch erneuert sich pro Dienstjahr (SHK N 53): 1. Kredit (${dienstjahr}. DJ) bis ${formatDatum(ersterKreditAnzeigeEnde)}` +
+            (ersterKreditGekappt ? ` (Vortag des Jahrestags; der am Jahrestag nicht aufgebrauchte Rest wird nicht zum neuen Kredit addiert)` : '') +
+            `, ` +
             `2. Kredit (${dienstjahr + 1}. DJ, ${formatSkalaDauer(effektiveDauer2)}) ab ${formatDatum(jahrestag)} bis ${formatDatum(zweitesEnde)}.`,
           normen: [N_324a_2],
           rechtsprechung: [rechtsprechung('BGer_4A_215_2011')],
@@ -351,8 +414,12 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   // B4-Fix 10.6.2026 (SHK 324a N 55, BGE 127 III 318 — deklarierte fachliche
   // Erweiterung): Die Lohnfortzahlungspflicht endet mit der Beendigung des
   // Arbeitsverhältnisses. Vorher gab es keine Kappung aufs AV-Ende.
+  let avEndeVorAnspruch: Date | null = null;
   if (input.arbeitsverhaeltnisEnde) {
     const avEnde = parseISO(input.arbeitsverhaeltnisEnde);
+    // RL-25b: endet das AV vor dem ersten bezahlten Tag (z. B. noch in der
+    // Karenzfrist), entsteht kein Zeitraum — nicht «bis und mit» vor dem Beginn.
+    if (isBefore(avEnde, anspruchsBeginn)) avEndeVorAnspruch = avEnde;
     if (isBefore(avEnde, letzterTag)) {
       letzterTag = avEnde;
       rechenweg.push({
@@ -372,24 +439,33 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   // ─── Schritt 7 (optional): Lohnbasis / Geldminimum CHF (§2.3, §2.7) ──
 
   if (monatslohnBrutto != null && monatslohnBrutto > 0) {
-    const tagesansatz = monatslohnBrutto / 30;
+    // RL-25b (rechtslogik-rest-04): Der 13. Monatslohn ist Lohnbestandteil
+    // (Art. 324a Abs. 1 OR «den darauf entfallenden Lohn», Lohnausfallprinzip);
+    // vorher wirkte die Option nur im Annahmetext, nicht auf den Betrag.
+    const mitDreizehntem = input.dreizehnterMonatslohn === true;
+    const monatsbasis = mitDreizehntem ? (monatslohnBrutto * 13) / 12 : monatslohnBrutto;
+    const tagesansatz = monatsbasis / 30;
     const lohnkreditTage = skalaDauerTage(basisdauer);
     const lohnkreditCHF = lohnkreditTage * tagesansatz;
     rechenweg.push({
       beschreibung: 'Schritt 7 – Lohnbasis und Geldminimum (orientierend, Lohnausfallprinzip)',
       zwischenergebnis:
-        `Monatslohn brutto CHF ${monatslohnBrutto.toFixed(2)} → Tagesansatz ~CHF ${tagesansatz.toFixed(2)} (Monat = 30 Tage). ` +
+        `Monatslohn brutto CHF ${monatslohnBrutto.toFixed(2)}` +
+        (mitDreizehntem ? ` inkl. 13. Monatslohn anteilig (× 13/12 = CHF ${monatsbasis.toFixed(2)})` : '') +
+        ` → Tagesansatz ~CHF ${tagesansatz.toFixed(2)} (Monat = 30 Tage). ` +
         `Geldminimum (primär geschuldet): Skala-Dauer ${formatSkalaDauer(basisdauer)} ≈ ${lohnkreditTage} Tage × CHF ${tagesansatz.toFixed(2)} = ~CHF ${lohnkreditCHF.toFixed(2)} voller Lohn. ` +
         `Die Kalenderdauer ist die abgeleitete Hilfsgrösse. Massgebend ist der Lohn, den der Arbeitnehmer erhalten hätte ` +
         `(Grundlohn, 13. Monatslohn anteilig, regelmässige Zulagen; variable Bestandteile = Durchschnitt; echte Spesen nicht). Bei schwankendem Lohn 12-Monats-Durchschnitt.`,
       normen: [N_324a_1],
     });
-    annahmen.push('Lohnbasis: 100 % des vertraglichen Bruttolohns nach Lohnausfallprinzip (SHK Art. 324a N 47–49)' + (input.dreizehnterMonatslohn ? ', inkl. 13. Monatslohn (anteilig).' : '.'));
+    annahmen.push('Lohnbasis: 100 % des vertraglichen Bruttolohns nach Lohnausfallprinzip (SHK Art. 324a N 47–49)' + (mitDreizehntem ? ', inkl. 13. Monatslohn (anteilig, × 13/12).' : '.'));
   }
 
   annahmen.push(
     'Mehrere Absenzen im gleichen Dienstjahr werden kumuliert; das Skala-Kontingent gilt pro Dienstjahr.',
-    'Keine Karenztage: Lohnfortzahlung beginnt ab dem ersten Tag der Verhinderung.',
+    nachKarenz
+      ? `Karenzfrist: Lohnfortzahlung beginnt am ${formatDatum(anspruchsBeginn)} (erster Tag des vierten Monats), nicht am ersten Tag der Verhinderung; keine weiteren Karenztage.`
+      : 'Keine Karenztage: Lohnfortzahlung beginnt ab dem ersten Tag der Verhinderung.',
     'Verschulden: Bei Vorsatz oder grobem Selbstverschulden entfällt der Anspruch ganz (Art. 324a Abs. 1 OR); bei Schwangerschaft, Dienst und öffentlichem Amt ist fehlendes Verschulden keine Voraussetzung.',
   );
 
@@ -406,6 +482,7 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
       normen: [N_324b_1, N_324b_3, N_324a_2],
     });
     warnungen.push('Unfall ohne UVG-Deckung (z.B. < 8 Wochenstunden bei Nichtberufsunfall) oder Lohn über dem UVG-Höchstbetrag: Arbeitgeber zahlt die Differenz zu 80 % bzw. den Lohn nach Skala (Art. 324b Abs. 2).');
+    annahmen.push('Unfalltag = eingegebener Beginn der Verhinderung (massgebend für den Taggeldbeginn nach Art. 16 Abs. 2 UVG).');
   } else if (grund === 'dienst') {
     koordHinweis = ' Dienst: Die Erwerbsersatzordnung (EO) entschädigt; deckt sie ≥ 80 %, ist der Arbeitgeber befreit, sonst schuldet er die Differenz zu 80 % (Art. 324b Abs. 1/2).';
     rechenweg.push({
@@ -433,25 +510,56 @@ export function berechneLohnfortzahlung(input: LohnfortzahlungInput): Berechnung
   // ─── Ergebnis-Text ───────────────────────────────────────────────────
 
   const teilAufZusatz = arbeitsunfaehigkeitProzent < 100 ? `, bei ${arbeitsunfaehigkeitProzent} % AUF nach Geldminimum (gestreckt)` : '';
-  const ergebnisText = ersterKreditErschoepft && !zweiKredite
-    ? `Kein Lohnfortzahlungsanspruch mehr: Das Kontingent des ${dienstjahr}. Dienstjahrs (${formatSkalaDauer(effektiveDauer)}) ist durch die bereits bezogenen ${bereitsBezogen} Tage aufgebraucht.`
-    : zweiKredite && zweitesEnde && jahrestag
-    ? `Lohnfortzahlung über Dienstjahreswechsel: 1. Kredit (${dienstjahr}. DJ)${ersterKreditErschoepft ? ' aufgebraucht' : ` bis ${formatDatum(erstesEnde)}`}, ` +
-      `2. Kredit (${dienstjahr + 1}. DJ) ab ${formatDatum(jahrestag)} bis und mit ${formatDatum(letzterTag)}${teilAufZusatz}.`
-    : `Lohnfortzahlung bis und mit ${formatDatum(letzterTag)} (${formatSkalaDauer(effektiveDauer)}${teilAufZusatz}).`;
+  const kontingentAufgebraucht = (ersterKreditErschoepft && !zweiKredite) || avEndeVorAnspruch != null;
+  const karenzZusatz = nachKarenz
+    ? `Karenzfrist: kein Lohn vor dem ${formatDatum(anspruchsBeginn)} (erster Tag des vierten Monats; Art. 324a Abs. 1 OR, BGE 131 III 623 E. 2.4). `
+    : '';
+  // Zeitraum der Skala-Dauer («beschränkte Zeit» i.S.v. Art. 324a Abs. 1/2 und 324b Abs. 1/2 OR).
+  const zeitraumSatz = zweiKredite && zweitesEnde && jahrestag
+    ? `über Dienstjahreswechsel: 1. Kredit (${dienstjahr}. DJ)${ersterKreditErschoepft ? ' aufgebraucht' : ` bis ${formatDatum(ersterKreditAnzeigeEnde)}`}, ` +
+      `2. Kredit (${dienstjahr + 1}. DJ) ab ${formatDatum(jahrestag)} bis und mit ${formatDatum(letzterTag)}${teilAufZusatz}`
+    : `${nachKarenz ? `ab ${formatDatum(anspruchsBeginn)} ` : ''}bis und mit ${formatDatum(letzterTag)} (${formatSkalaDauer(effektiveDauer)}${teilAufZusatz})`;
+
+  // RL-25b (rechtslogik-rest-05): Bei Unfall/Dienst deckt eine obligatorische
+  // Versicherung; der Arbeitgeber ist befreit, wenn sie ≥ 80 % deckt (Art. 324b
+  // Abs. 1 OR), schuldet für eine Wartezeit mindestens 80 % (Abs. 3) und sonst
+  // die Differenz zu 80 % für die beschränkte Zeit (Abs. 2). Vorher behauptete
+  // die Kopfzeile die volle Skala-Dauer als «Lohnfortzahlung».
+  let kopf: string;
+  if (avEndeVorAnspruch) {
+    kopf = `Kein Anspruch auf Lohnfortzahlung: Das Arbeitsverhältnis endet am ${formatDatum(avEndeVorAnspruch)}, ` +
+      (nachKarenz
+        ? `vor dem Beginn des Anspruchs am ${formatDatum(anspruchsBeginn)} (Karenzfrist; Art. 324a Abs. 1 OR, BGE 131 III 623 E. 2.4).`
+        : `vor dem Beginn der Verhinderung am ${formatDatum(anspruchsBeginn)}.`) + koordHinweis;
+  } else if (ersterKreditErschoepft && !zweiKredite) {
+    kopf = `Kein Lohnfortzahlungsanspruch mehr: Das Kontingent des ${dienstjahr}. Dienstjahrs (${formatSkalaDauer(effektiveDauer)}) ist durch die bereits bezogenen ${bereitsBezogen} Tage aufgebraucht.` + koordHinweis;
+  } else if (grund === 'unfall') {
+    const taggeldAb = addDays(vhb, 3); // Art. 16 Abs. 2 UVG: «am dritten Tag nach dem Unfalltag»
+    kopf = karenzZusatz +
+      (nachKarenz
+        ? `Unfall: Die Wartezeit bis zum UVG-Taggeld (ab ${formatDatum(taggeldAb)}, dritter Tag nach dem Unfalltag, Art. 16 Abs. 2 UVG) fällt in die Karenzfrist; ob Art. 324b Abs. 3 OR (mindestens 80 % für die Karenztage) schon vor Entstehen des Anspruchs nach Art. 324a Abs. 1 OR greift, ist im Einzelfall zu prüfen. `
+        : `Unfall: Der Arbeitgeber schuldet in der Regel nur mindestens 80 % des Lohns für die Wartezeit (Karenztage) bis zum Beginn des UVG-Taggelds am ${formatDatum(taggeldAb)} (dritter Tag nach dem Unfalltag, Art. 16 Abs. 2 UVG; Art. 324b Abs. 3 OR). `) +
+      `Decken die UVG-Leistungen mindestens 80 % des Lohns, ist der Arbeitgeber im Übrigen befreit (Art. 324b Abs. 1 OR); decken sie weniger (z. B. Lohn über dem versicherten Höchstverdienst), ` +
+      `schuldet er die Differenz zu 80 % während der beschränkten Zeit nach Skala ${zeitraumSatz} (Art. 324b Abs. 2 OR).`;
+  } else if (grund === 'dienst') {
+    kopf = karenzZusatz +
+      `Dienst: Die Erwerbsersatzordnung (EO) entschädigt den Erwerbsausfall. Deckt sie mindestens 80 % des Lohns, schuldet der Arbeitgeber keinen Lohn (Art. 324b Abs. 1 OR); ` +
+      `sonst schuldet er die Differenz zu 80 % während der beschränkten Zeit nach Skala ${zeitraumSatz} (Art. 324b Abs. 2 OR).`;
+  } else {
+    kopf = karenzZusatz + `Lohnfortzahlung ${zeitraumSatz}.` + koordHinweis;
+  }
 
   const normverweise = [N_324a_1, N_324a_2, N_324a_3, N_324a_4, N_362];
   if (grund === 'unfall' || grund === 'dienst') normverweise.push(N_324b, N_324b_1, N_324b_2, N_324b_3);
 
-  const kontingentAufgebraucht = ersterKreditErschoepft && !zweiKredite;
   return {
-    ergebnis: ergebnisText + koordHinweis,
+    ergebnis: kopf,
     status: kontingentAufgebraucht ? 'kein_anspruch' : 'ok',
     rechenweg,
     annahmen,
     warnungen,
     normverweise,
-    zeitraumVonISO: kontingentAufgebraucht ? undefined : formatISO(vhb),
+    zeitraumVonISO: kontingentAufgebraucht ? undefined : formatISO(anspruchsBeginn),
     letzterTagISO: kontingentAufgebraucht ? undefined : formatISO(letzterTag),
   };
 }

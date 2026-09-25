@@ -339,8 +339,8 @@
       "Anfechtung (Pauliana)",
       "Rechtsbehelfe/Rechtsmittel",
       "Ergebnis kopieren",
-      "Hinweise / Vorbehalte (2)▸",
-      "Rechenweg (3 Schritte)▸",
+      "Hinweise / Vorbehalte (3)▸",
+      "Rechenweg (4 Schritte)▸",
       "Annahmen (4)▸",
       "Absatz kopieren",
       "In Kalender (.ics)",
@@ -435,7 +435,7 @@
       "Ergebnis kopieren",
       "Hinweise / Vorbehalte (4)▸",
       "Rechenweg (5 Schritte)▸",
-      "Annahmen (2)▸",
+      "Annahmen (3)▸",
       "Absatz kopieren",
       "PDF-Rechenbericht",
       "In Kalender (.ics)",
@@ -631,7 +631,6 @@
       "Art. 78 OR → /gesetze/bund/OR#art-78"
     ],
     "knoepfe": [
-      "In Kalender (.ics)",
       "Allgemein (Vertrag/OR)",
       "Zivilprozess (ZPO)",
       "Betreibung (SchKG)",
@@ -640,7 +639,7 @@
       "Rückwärts (spätester Tag)",
       "Tage zwischen zwei Daten",
       "Tagesfrist (Kalendertage)",
-      "Monatsfrist nach OR",
+      "Monatsfrist (gesetzlich)",
       "Kalendertage ohne Verschiebung",
       "Vaterschaftsklage der Mutter – 1 Jahr",
       "Anfechtung der Vaterschaft – relativ 1 Jahr",
@@ -670,16 +669,14 @@
       "h2 Allgemeine Frist (Art. 77/78 OR)"
     ],
     "ergebnisAnker": [
-      "lc-ergebnis-einfach",
       "lc-ergebnis-allgemein"
     ],
-    "platzhalter": 0,
+    "platzhalter": 1,
     "links": [
       "Art. 77 OR → /gesetze/bund/OR#art-77",
       "Art. 78 OR → /gesetze/bund/OR#art-78",
       "Art. 145 ZPO → /gesetze/bund/ZPO#art-145",
       "Art. 56 SchKG → /gesetze/bund/SCHKG#art-56",
-      "Im ZPO-Rechner verfeinern (Verfahren, Zustellart, Hemmung …) → → /rechner/zpo-fristen?e=2026-03-01&u=tage&l=10&v=ordentlich&k=ZH&n=gesetzlich",
       "Art. 77 OR → /gesetze/bund/OR#art-77",
       "Art. 78 OR → /gesetze/bund/OR#art-78",
       "ZPO-Fristen → → /rechner/zpo-fristen",

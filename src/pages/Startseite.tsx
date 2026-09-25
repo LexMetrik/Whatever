@@ -68,6 +68,18 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     Laden, wächst nur die neue Fläche, nichts verschiebt sich (§15).
 //     Einspaltig bleibt die Reihenfolge Kacheln · Häufig · Schnellwerkzeug ·
 //     Zuletzt. Messwerte: Token-Kommentar in `tailwind.config.js`.
+//   · U13 (START-UEBERARBEITUNG, Nachtrag David 24.9.2026 abends, §5d-bis):
+//     «nochmals an der darstellung und den breiten und grössen der startseite
+//     arbeiten sodass alles optimal und schön genützt wird» und «es soll nicht
+//     zu scrollen kommen wenn man kachel aufmacht» / «also bei gesetz». Ab `lg`
+//     steht das Kachelfeld 16 px unter der Kopfzeile (`lg:-mt-5`, vorher 24 px
+//     per `-mt-3`) — derselbe Abstand wie zwischen Feld und «Häufig gebraucht»
+//     und zwischen den Flächen der Spalte. Zusammen mit `start-kachel-breit`
+//     17.5rem steht das offene Blatt ab 1280×800 ganz im Fenster (Messwerte:
+//     Token-Kommentar). Die Spaltenbreite 20rem bleibt: die Seite ist ab 1280
+//     auf `max-w-content` (1072 px Inhalt) gedeckelt, eine breitere Spalte
+//     nähme dem Blatt Breite und liesse die Gesetze-Wahl umbrechen und höher
+//     werden. Telefon unverändert.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -89,8 +101,14 @@ const KACHELN: readonly KachelDef[] = [
     teile: `${nf(z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(z.gesetzeInternationalVolltext)} Staatsverträge` },
   { rubrik: 'rechtsprechung', reg: 'r', ziel: '/rechtsprechung', titel: 'Rechtsprechung', zahl: nf(z.rechtsprechungVolltext),
     einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet' },
+  // U12 (David 24.9.2026: «materialien soll erläuterungen und materialien
+  // enthalten»): die Kachel führt BEIDE Gattungen (Hausbegriffe wie im Leser,
+  // `lib/materialien/gattung.ts`) — vorher nannte der Nutzen nur die
+  // Verwaltungspraxis und die Einheit «amtliche Materialien» mischte beides.
   { rubrik: 'materialien', reg: 'm', ziel: '/materialien', titel: 'Materialien', zahl: nf(z.materialien),
-    einheit: 'amtliche Materialien erfasst', nutzen: 'Kreisschreiben, Wegleitungen und Leitfäden nach Behörde' },
+    einheit: 'Materialien und Erläuterungen erfasst',
+    nutzen: 'Botschaften und Vernehmlassungen · Kreisschreiben, Wegleitungen und Leitfäden nach Behörde',
+    teile: `${nf(z.materialienGesetzgebung)} Materialien (Gesetzgebung) · ${nf(z.materialienErlaeuterungen)} Erläuterungen (Verwaltungspraxis)` },
   // Ziel `/rechner`: der Werkzeug-Katalog (K4) führt Rechner und Vorlagen.
   { rubrik: 'werkzeuge', reg: 'w', ziel: '/rechner', titel: 'Werkzeuge', zahl: nf(z.rechner + z.vorlagen),
     einheit: 'Rechner und Vorlagen', nutzen: 'Fristen, Gebühren und Beträge, Zuständigkeiten · Verträge, Klagen und Gesuche',
@@ -102,7 +120,7 @@ export function Startseite() {
   return (
     <div className={`grid gap-y-9 ${pk('sm:-mt-6', '')}`}>
       <SuchBlock />
-      <div className={`-mt-3 grid gap-x-10 gap-y-9 ${pk('lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
+      <div className={`-mt-3 grid gap-x-10 gap-y-9 ${pk('lg:-mt-5 ', '@5xl/pane:-mt-5 ')}${pk('lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-y-4', '@5xl/pane:grid-cols-[minmax(0,1fr)_20rem] @5xl/pane:gap-y-4')}`}>
         <div className={`grid gap-y-4 ${pk(
           'lg:grid-rows-[auto_minmax(0,1fr)] lg:[&_.lc-start-zelle]:min-h-start-kachel-breit',
           '@5xl/pane:grid-rows-[auto_minmax(0,1fr)] @5xl/pane:[&_.lc-start-zelle]:min-h-start-kachel-breit')}`}>

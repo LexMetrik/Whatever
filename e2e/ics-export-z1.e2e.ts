@@ -33,10 +33,13 @@ test.describe('Z1 · Kalender-Ausleitung im Schnell-/Tagerechner', () => {
   test('Tagerechner liefert eine gültige .ics zum angezeigten Fristende', async ({ page }) => {
     await page.goto('/rechner/tagerechner')
     const knopf = page.locator(EINFACH).getByRole('button', { name: KNOPF })
+    // RL-24/UI-07 (W-12 (c), David 24.9.2026): keine Vorbelegung mehr — das
+    // Regime wird gewählt, erst dann erscheint das Fristende samt Export.
+    await page.locator('input[name="einfache-frist-ferien"][value="zpo"]').check()
     await expect(knopf, 'der Tagerechner trägt die Kalender-Ausleitung').toBeVisible()
 
     // Deterministische Eingabe statt des «heute»-Defaults: 10 Tage ab 1.6.2026
-    // unter ZPO-Gerichtsferien (Vorbelegung des Rechners).
+    // unter ZPO-Gerichtsferien (bis 24.9.2026 Vorbelegung, seither gewählt).
     await page.locator('input[placeholder="TT.MM.JJJJ"]').first().fill('01.06.2026')
     await expect(page.locator(EINFACH).getByText('Fristende', { exact: true })).toBeVisible()
 
@@ -70,7 +73,7 @@ test.describe('Z1 · Kalender-Ausleitung im Schnell-/Tagerechner', () => {
   test('M-1 — verschiedene Regimes mit gleichem Endtag ergeben verschiedene UIDs', async ({ page }) => {
     await page.goto('/rechner/tagerechner')
     const knopf = page.locator(EINFACH).getByRole('button', { name: KNOPF })
-    await expect(knopf).toBeVisible()
+    // RL-24/UI-07: ohne Ferien-Wahl kein Ergebnis — die Wahl folgt in holen().
     await page.locator('input[placeholder="TT.MM.JJJJ"]').first().fill('01.06.2026')
 
     const holen = async (regime: string) => {
@@ -102,6 +105,8 @@ test.describe('Z1 · Kalender-Ausleitung im Schnell-/Tagerechner', () => {
   // die Startseite trägt dieselbe .ics-Ausleitung — ist unverändert.
   test('Startseiten-Fristenzeile trägt dieselbe Ausleitung', async ({ page }) => {
     await page.goto('/')
+    // RL-24/UI-07 (W-12 (c), 24.9.2026): ohne Ferien-Wahl kein Fristende — wählen.
+    await page.getByLabel('Ferien / Stillstand').first().selectOption('zpo')
     const knopf = page.getByRole('button', { name: KNOPF }).first()
     await expect(knopf).toBeVisible()
     const { text } = await icsHolen(page, () => knopf.click())
@@ -110,6 +115,7 @@ test.describe('Z1 · Kalender-Ausleitung im Schnell-/Tagerechner', () => {
 
   test('A9 — Tastatur, Accessible Name und Tap-Ziel', async ({ page }) => {
     await page.goto('/rechner/tagerechner')
+    await page.locator('input[name="einfache-frist-ferien"][value="zpo"]').check() // RL-24/UI-07
     const knopf = page.locator(EINFACH).getByRole('button', { name: KNOPF })
     await expect(knopf).toBeVisible()
 
@@ -133,6 +139,9 @@ test.describe('Z1 · Kalender-Ausleitung im Schnell-/Tagerechner', () => {
     test.skip(browser.browserType().name() !== 'chromium', 'CDP-Drossel nur in Chromium')
     const cdp = await page.context().newCDPSession(page)
     await page.goto('/rechner/tagerechner')
+    // RL-24/UI-07: Regime wählen, BEVOR der CLS-Zähler scharf ist (der Wechsel
+    // Platzhalter → Ergebnis ist Nutzer-Eingabe, nicht Gegenstand dieser Messung).
+    await page.locator('input[name="einfache-frist-ferien"][value="zpo"]').check()
     await expect(page.locator(EINFACH).getByRole('button', { name: KNOPF })).toBeVisible()
 
     // Layout-Shift-Zähler VOR der Interaktion scharf schalten.

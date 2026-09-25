@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-23",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2023.37-75582",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "VD.2023.37",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS VD.2023.37",
-      "datum": "2023-01-01",
+      "zitierung": "Appellationsgericht BS VD.2023.37 vom 04.08.2023",
+      "datum": "2023-08-04",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "oeffentlich",
@@ -145,10 +145,9 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=75582&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-09-23",
       "fassungsToken": "2025-03-29",
       "sha": "8f17adbf0b4cb9351186e9f07f994d772193de6cca5b499551b95171a8cfa0d6",
-      "datumUnbekannt": true,
       "erstpublikation": "2025-03-29",
       "aktualisiert": "2025-03-29",
       "nummerSekundaer": "AG.2023.485",

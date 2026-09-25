@@ -113,9 +113,17 @@ describe('Rechenergebnis = Engine (je Variante mindestens ein Fall)', () => {
     vi.stubGlobal('localStorage', undefined); // Standardkanton ZH
   });
 
-  it('Frist: 10 Tage ab heute, ZPO-Gerichtsferien — Fristende aus berechneFrist', () => {
+  // RL-24/UI-07 (Entscheid W-12 (c), David 24.9.2026): bis dahin rechnete die
+  // Frist-Variante mit der Voreinstellung «ZPO-Gerichtsferien» und zeigte das
+  // Fristende aus berechneFrist sofort. Seither Pflichtwahl ohne Voreinstellung:
+  // vor der Ferien-Wahl KEIN Fristende (auch nicht das ZPO-Ergebnis), sondern
+  // der Platzhalter. Das Rechnen nach der Wahl bewacht e2e (ics-export-z1,
+  // schnellrechner-kalender) und rl24-allgemeine-frist.test.tsx.
+  it('Frist: 10 Tage ab heute, ohne Ferien-Wahl — kein Fristende, Platzhalter statt ZPO-Vorgabe', () => {
     const r = berechneFrist({ ereignis: '2026-09-24', einheit: 'tage', laenge: 10, verfahren: 'ordentlich', kanton: 'ZH', fristnatur: 'gesetzlich' });
-    expect(html(<Schnellwerkzeug />)).toContain(r.diesAdQuem);
+    const h = html(<Schnellwerkzeug />);
+    expect(h).not.toContain(r.diesAdQuem);
+    expect(h).toContain('Ferien/Stillstand wählen');
   });
 
   it('Verzugszins: Default-Fall — Zins und Total aus berechneVerzugszins, gleich wie im vollen Rechner', () => {

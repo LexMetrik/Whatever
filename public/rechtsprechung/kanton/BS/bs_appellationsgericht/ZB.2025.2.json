@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-23",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZB.2025.2",
@@ -10,8 +10,8 @@
       "abteilung": null,
       "nummer": "ZB.2025.2",
       "bgeReferenz": null,
-      "zitierung": "Appellationsgericht BS ZB.2025.2",
-      "datum": "2025-01-01",
+      "zitierung": "Appellationsgericht BS ZB.2025.2 vom 23.05.2025",
+      "datum": "2025-05-23",
       "sprache": "de",
       "leitcharakter": "routine",
       "sachgebiet": "privat",
@@ -352,10 +352,9 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78436&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
+      "abgerufen": "2026-09-23",
       "fassungsToken": "2025-09-18",
       "sha": "7855bf204f2c1313910608d82f40e93dcf992f8d9fdc916437ac31b293feb079",
-      "datumUnbekannt": true,
       "erstpublikation": "2025-09-18",
       "aktualisiert": "2025-09-18",
       "nummerSekundaer": "AG.2025.302",

@@ -1,5 +1,5 @@
 <!-- @posten
-dach: QS-CURRENCY-KANON
+dach: QS-KORPUS
 titel: Frische-Rennen: Automatik-Chip aus einer Momentaufnahme kann bis zum Merge falsch werden
 anlass: PR #953 (Fedlex-Frische-Automatik 21.9.2026); Auflage A3 der Gegenprüfung (Opus 5, 21.9.2026), Nachtrag im selben PR gebaut
 -->
@@ -8,3 +8,5 @@ anlass: PR #953 (Fedlex-Frische-Automatik 21.9.2026); Auflage A3 der Gegenprüfu
     Wurzel-Fix-Kandidat: `check:fedlex-versionen` als PR-Tor UND im `merge_group` erneut fahren (heute läuft es nur im Frische-Workflow selbst, `.github/workflows/fedlex-frische.yml`, Schritt «Kanonik-Arbiter + Selbstheilung»). Kippt es rot, kippt der PR rot, statt eine überholte Zusage zu landen. Vor dem Bau klären: (a) Netz-Tor in der Queue heisst 232 SPARQL-Auflösungen je Merge-Versuch — Laufzeit und Flake-Rate gegen QS-CI-MINUTEN messen, ggf. nur auf PRs, die `public/normtext/currency.json` oder `scripts/fedlex-cache.sh` berühren; (b) Alternative ohne Netz: `geprueftAm` nicht als blosses Datum, sondern als Zusage mit Verfall schreiben (Chip verfällt nach n Tagen von selbst) — das heilt die Klasse auch für PRs, die tagelang liegen, und kostet keine CI-Minuten; (c) Chesterton: der heutige Zuschnitt ist Absicht (der Reparatur-Arm trägt seine eigenen Tore, Kommentar ~Z. 366 ff. in `fedlex-frische.yml`) — der Fix ergänzt ihn, ersetzt ihn nicht.
 
   **Nachtrag Gegenprüfung 21.9.2026 (Opus, Runde 2):** Beim Bau nicht untergehen lassen — die PDF-Achse hat KEINEN Kanonik-Arbiter: der Wechsel `…-de-pdf-a.pdf` → `…-de-pdf-a-1.pdf` (HKUE, beide HTTP 200, 498 → 537 KB) wäre von keinem Tor gemeldet worden; `check:fedlex-versionen` prüft nur die HTML-Manifestation.
+
+Umgehängt 24.9.2026 von `QS-CURRENCY-KANON` (aufgegangen in `QS-KORPUS`, Fusionen 2026-09-24, QS-DOKU-DIAET).

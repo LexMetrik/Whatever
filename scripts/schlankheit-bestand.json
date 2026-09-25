@@ -6,6 +6,7 @@
   "scripts/normtext/adapter-lexwork.ts": 839,
   "scripts/normtext/adapter-pdf.ts": 1073,
   "scripts/normtext/adapter-zh-pdf.ts": 1421,
+  "scripts/normtext/bezuege-bauen.ts": 941,
   "scripts/normtext/check-normkeys-abdeckung.ts": 811,
   "scripts/normtext/entscheide-mapping.ts": 1152,
   "scripts/normtext/extrahiere-fedlex.ts": 1496,
@@ -13,6 +14,7 @@
   "scripts/plan/bildSeiten.ts": 843,
   "src/components/layout/Reiterleiste.tsx": 1237,
   "src/lib/rechtsprechung/zitat-extraktion.ts": 844,
+  "src/lib/sperrfristen.ts": 850,
   "src/lib/tabs.ts": 1205,
   "src/lib/verjaehrung.ts": 807,
   "src/pages/EntscheidLeser.tsx": 1095

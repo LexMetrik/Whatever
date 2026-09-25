@@ -32,3 +32,5 @@ Art. 60 Abs. 1bis und Art. 128a OR gibt es in der Sache **keinen** BGer-Entschei
 
 **Bleibt `wartet-auf: david`** — die Messung liefert die Grundlage, der fachliche Entscheid über die
 Weiche (und über die Behandlung der K3/K4-Klasse) gehört David. Nicht drängen.
+
+**Ergänzung 25.9.2026 (Bauplan-Inventar F-4):** Schliess-Kandidat — prüfen, ob die Rechtslogik-Welle (RL-08) die Weiche inzwischen gebaut hat; wenn ja, mit Beleg (Commit, Test) schliessen. Der Entscheid bleibt bei David (fachlich, §7).

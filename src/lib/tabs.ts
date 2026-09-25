@@ -152,6 +152,27 @@ export interface TabEintrag {
 // sie ohne Leser (§17-Gegengewicht: was niemand mehr liest, wird gestrichen,
 // nicht aufbewahrt). Die REIHENFOLGE der fünf Bereiche, die sie nebenbei
 // festhielt, steht unverändert in `lib/tabGruppen.KAT_ORDER`.
+//
+// ── R15 (Entscheid David 24.9.2026) · JEDES «+» IST EIN NEUER STARTSEITEN-REITER
+//
+// Die R14-Absätze darüber bleiben als DATIERTE BELEGE stehen (§0 Ziff. 2b) —
+// ihre Zusage «Sammlung = Neuer-Reiter-Seite» gilt weiter. AUFGEHOBEN ist
+// allein die Höchstens-einer-Regel (R13-Entscheid, 7.9.2026: ein zweites «+»
+// aktivierte die offene Sammlung, statt eine zweite anzulegen). Davids
+// Wortlaut 24.9.2026: «tabliste soll so funktionieren, dass wenn man auf plus
+// klickt sich eine neue startseite öffnet und es nicht automatisch in suchen
+// landet»; auf den Hinweis auf die Regel: «nein heb diesen entscheid auf und
+// mach es wie ich es sage».
+//
+// NEUE REGEL, in einem Satz: **Jedes «+» (Klick, Alt+T, Leerraum, Blatt) legt
+// einen NEUEN Startseiten-Reiter an, wie im Browser.** Mechanik ohne neuen
+// Baustein (§10): ist «/» noch nicht offen, entsteht «/»; sonst
+// `naechsteInstanz('/')` → `/?r=2`, `/?r=3` … — derselbe Instanz-Diskriminator
+// wie «Duplizieren» am Gesetzes-Reiter (`tabSchluessel`), Beschriftung
+// «Sammlung (2)» aus `reiterKurzformTeile`. Der Sprung in die Kopf-Suche
+// (`lm:suche-fokus`) entfällt ersatzlos; der Fokus geht auf den neuen Reiter.
+// Die Wahl steht in `components/layout/Reiterleiste.neuerReiter`; `MAX`, Ring
+// und Anheften sind unverändert.
 
 // ─── R3-F7 (Prüfbefund 6.9.2026) · KURZFORM STATT SEO-TITEL ─────────────────
 //
@@ -1053,6 +1074,9 @@ function schreibeGeschlossene(ring: GeschlossenerReiter[]): void {
  *  «+»-Reiter (`!eintrag.leer`); seit die Sammlung selbst der Reiter ist, ist
  *  ihr PFAD das Merkmal — der Sonderfall im Datenmodell entfällt. */
 function merkeGeschlossen(neue: GeschlossenerReiter[]): void {
+  // R15 (24.9.2026): `pfadTeil` statt Schlüssel — auch die Instanzen `/?r=2` …
+  // aus dem «+» bleiben draussen. Eine leere Startseite braucht keine
+  // Rückfahrkarte, gleich viele davon erst recht nicht.
   const echte = neue.filter(({ eintrag }) => pfadTeil(eintrag.path) !== '/');
   if (echte.length === 0) return;
   // ── W2·18 WELLE 2 PUNKT 4 · EINE GANZE LEISTE LIEGT VERKEHRT HERUM AB ────

@@ -7,6 +7,9 @@ import {
   stillstandsperioden,
   stillstandsperiodeFuer,
   istArbeitsfreierTag,
+  strengeLesart,
+  unsichereFeiertageSatz,
+  type FeiertagsLesart,
 } from '../data/zpoFeiertage';
 import {
   fristendeTage,
@@ -69,10 +72,15 @@ function zpoStillstand(stillstandAktiv: boolean): Stillstand {
 }
 
 // Art. 142 Abs. 1bis: Zustellung per gewöhnlicher Post an Sa/So/Feiertag → nächster Werktag.
-function ereignisKorrigiert(input: ZpoInput, ereignis: Date): { tag: Date; korrigiert: boolean } {
-  if (input.zustellart === 'gewoehnliche_post' && istArbeitsfreierTag(ereignis, input.kanton)) {
+// Feiertags-Kontext 'zpo' (RL-22-Nachzug): kantonale Tage, die nur für Art. 142 ZPO
+// Feiertag sind (NE LI-CPC Art. 10a, SO EG ZPO § 22 Abs. 2), zählen hier mit.
+const KONTEXT_ZPO = 'zpo' as const;
+function ereignisKorrigiert(
+  input: ZpoInput, ereignis: Date, lesart: FeiertagsLesart = KONTEXT_ZPO,
+): { tag: Date; korrigiert: boolean } {
+  if (input.zustellart === 'gewoehnliche_post' && istArbeitsfreierTag(ereignis, input.kanton, lesart)) {
     let d = ereignis;
-    while (istArbeitsfreierTag(d, input.kanton)) d = addDays(d, 1);
+    while (istArbeitsfreierTag(d, input.kanton, lesart)) d = addDays(d, 1);
     return { tag: d, korrigiert: true };
   }
   return { tag: ereignis, korrigiert: false };
@@ -90,6 +98,10 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   const warnungen: string[] = [];
 
   const ereignis = parseISO(input.ereignis);
+  // RL-24/F1-07 (Prüfung Rechtslogik 23.9.2026): ein Nicht-Kalendertag
+  // (2026-02-30) lief bis in date-fns und warf «Invalid time value».
+  // Kontrollierte Meldung wie allgemeineFrist.ts (Muster dort).
+  if (isNaN(ereignis.getTime())) throw new Error('Ungültiges Ereignisdatum.');
 
   // Stillstand: grundsätzlich nach Verfahren (Art. 145 Abs. 2). ABER: Im Schlichtungs-/
   // summarischen Verfahren ist der Hinweis nach Art. 145 Abs. 3 ZPO Gültigkeitsvorschrift
@@ -157,7 +169,7 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   }
 
   // Schritt 3: Endnormalisierung (Art. 142 Abs. 3 + Art. 145 kumulativ)
-  const { tag: diesAdQuem, verschoben } = normalisiereEnde(endeProvisorisch, input.kanton, st);
+  const { tag: diesAdQuem, verschoben } = normalisiereEnde(endeProvisorisch, input.kanton, st, KONTEXT_ZPO);
   rechenweg.push({
     beschreibung: 'Schritt 3 – Endnormalisierung (Art. 142 Abs. 3 / Art. 145 Abs. 1)',
     zwischenergebnis: verschoben
@@ -165,6 +177,22 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
       : `Ende ${fmt(diesAdQuem)} ist bereits ein Werktag ausserhalb des Stillstands – keine Verschiebung.`,
     normen: [N_142_3, N_145_1],
   });
+
+  // RL-23 (Q5, Entscheid W-11 a): ein unsicher gezählter kantonaler Tag (GL 2.1.)
+  // zählt als Feiertag, die Warnung nennt aber das Ende ohne ihn (strenge Lesart)
+  // — über Art. 142 Abs. 1bis (Zustellung) und die Endverschiebung (Abs. 3).
+  const streng = strengeLesart(KONTEXT_ZPO);
+  const massgeblichStreng = ereignisKorrigiert(input, ereignis, streng).tag;
+  const endeProvStreng = +massgeblichStreng === +massgeblich
+    ? endeProvisorisch
+    : input.einheit === 'tage'
+      ? fristendeTage(massgeblichStreng, input.laenge, st).ende
+      : fristendeKalender(massgeblichStreng, input.einheit, input.laenge, st, input.modus === 'mindermeinung').ende;
+  const unsicherHinweis = unsichereFeiertageSatz(
+    [[ereignis, massgeblich], [endeProvisorisch, diesAdQuem]],
+    diesAdQuem, normalisiereEnde(endeProvStreng, input.kanton, st, streng).tag,
+    input.kanton, KONTEXT_ZPO, 'frueher',
+  );
 
   // Optional: Erstreckung (Ziff. 7.5) – nur gerichtliche Fristen
   let erstrecktBis: string | undefined;
@@ -181,7 +209,7 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
       }
       if (gezaehlt < tage) cursor = addDays(cursor, 1);
     }
-    const norm = normalisiereEnde(ende, input.kanton, st);
+    const norm = normalisiereEnde(ende, input.kanton, st, KONTEXT_ZPO);
     erstrecktBis = iso(norm.tag);
     rechenweg.push({
       beschreibung: 'Erstreckung (gerichtliche Frist, Art. 144 Abs. 2 ZPO)',
@@ -237,6 +265,8 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   if (input.modus === 'mindermeinung') {
     warnungen.push('[UMSTRITTEN] Berechnung nach der Mindermeinung (Art. 142 Abs. 1 ZPO für alle Fristen → Beginn am Folgetag). Das Bundesgericht teilt diese Auffassung nicht (BGer 5A_691/2023); es besteht ein Fristrisiko.');
   }
+
+  if (unsicherHinweis) warnungen.push(unsicherHinweis);
 
   // Feiertags-Verifikationsvorbehalt (Ziff. 6.7). RL-20/R1-08 (Prüfung
   // Rechtslogik 23.9.2026): vorher «kommt regelmässig eine Fristwiederher-
@@ -303,5 +333,8 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
 // Zustellversuch als zugestellt (unabhängig vom Wochentag). Hilfsgrösse.
 
 export function zustellfiktion(erfolgloserVersuch: string): string {
-  return iso(addDays(parseISO(erfolgloserVersuch), 7));
+  const d = parseISO(erfolgloserVersuch);
+  // RL-24/F1-07: keine rohe RangeError-Meldung bei ungültigem Datum.
+  if (isNaN(d.getTime())) throw new Error('Ungültiges Datum des Zustellversuchs.');
+  return iso(addDays(d, 7));
 }

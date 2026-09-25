@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-05",
+  "erzeugt": "2026-09-23",
   "erlass": "LUGUE",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -35,16 +35,6 @@
         "gewicht": 0
       },
       {
-        "key": "bge_150_III_423",
-        "zitierung": "BGE 150 III 423",
-        "regesteKurz": "Art. 34 Nr. 3 LugÜ; Art. II Abs. 3 NYÜ; Rechtskraft eines negativen Zuständigkeitsentscheids eines Schiedsgerichts. Erklärt sich das vereinbarte Schiedsgericht mit Sitz im Ausland für unzuständig und wird dieser Schiedsentscheid in der…",
-        "datum": "2024-08-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_III_318",
         "zitierung": "BGE 149 III 318",
         "regesteKurz": "Art. 271 Abs. 1 Ziff. 6 SchKG; Art. 54 f. des Übereinkommens vom 18. März 1965 zur Beilegung von Investitionsstreitigkeiten zwischen Staaten und Angehörigen anderer Staaten (nachfolgend: ICSID-Übereinkommen); Art. 9 BV; Gesuch um…",
@@ -71,6 +61,16 @@
         "datum": "2022-10-31",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_423__voll",
+        "zitierung": "Urteil 4A_621/2023 (nicht publ. in BGE 150 III 423)",
+        "regesteKurz": null,
+        "datum": "2024-08-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -163,12 +163,12 @@
     ],
     "15": [
       {
-        "key": "bge_149_III_379",
-        "zitierung": "BGE 149 III 379",
-        "regesteKurz": "Vorrang des vereinbarten Gerichtsstands (Art. 23 Abs. 1 LugÜ) vor dem Gerichtsstand der Streitgenossenschaft (Art. 8a Abs. 1 IPRG). Internationaler Charakter der Sache im Sinne von Art. 1 Abs. 1 IPRG (E. 4). Unterschiedliche…",
+        "key": "bge_149_III_379__voll",
+        "zitierung": "Urteil 4A_310/2022 (nicht publ. in BGE 149 III 379)",
+        "regesteKurz": null,
         "datum": "2023-07-12",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -197,12 +197,12 @@
         "gewicht": 0
       },
       {
-        "key": "bge_147_III_337",
-        "zitierung": "BGE 147 III 337",
-        "regesteKurz": "a Art. 51 PatG, Art. 69 Abs. 1 EPÜ 2000; Auslegung von Patentansprüchen. Bei der Auslegung von Patentansprüchen handelt es sich um eine Rechtsfrage, die vom Bundesgericht im Beschwerdeverfahren frei überprüft werden kann (E. 6.1 und 6.2).…",
+        "key": "bge_147_III_337__voll",
+        "zitierung": "Urteil 4A_490/2020 (nicht publ. in BGE 147 III 337)",
+        "regesteKurz": null,
         "datum": "2021-05-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -239,24 +239,24 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_III_242",
-        "zitierung": "BGE 148 III 242",
-        "regesteKurz": "Art. 3 IPRG; Notzuständigkeit. Die Ungültigkeit einer Gerichtsstandsvereinbarung hat nicht ohne weiteres zur Folge, dass ein von Art. 3 IPRG erfasstes Rechtsschutzdefizit besteht. Die Partei, die sich auf die Notzuständigkeit beruft, muss…",
+        "key": "bge_148_III_242__voll",
+        "zitierung": "Urteil 4A_486/2021 (nicht publ. in BGE 148 III 242)",
+        "regesteKurz": null,
         "datum": "2022-03-09",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "24": [
       {
-        "key": "bge_146_III_225",
-        "zitierung": "BGE 146 III 225",
-        "regesteKurz": "Kennzeichengebrauch im Internet; hinreichender Bezug zur Schweiz. Grundsätze der Beurteilung, wann bei der Verwendung einer ausländischen Internetpräsenz ein Kennzeichengebrauch in der Schweiz vorliegt (E. 3). Regeste Usage de signes sur…",
+        "key": "bge_146_III_225__voll",
+        "zitierung": "Urteil 4A_335/2019 (nicht publ. in BGE 146 III 225)",
+        "regesteKurz": null,
         "datum": "2020-04-29",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -391,36 +391,26 @@
         "gewicht": 0
       },
       {
-        "key": "bge_148_III_371",
-        "zitierung": "BGE 148 III 371",
-        "regesteKurz": "Art. 59 Abs. 2 lit. e ZPO; materielle Rechtskraft; Präklusion. Nicht im Dispositiv enthaltene Feststellungen zu präjudiziellen Rechtsverhältnissen und zu sonstigen Neben- und Vorfragen erwachsen nicht in materielle Rechtskraft. Ausgenommen…",
+        "key": "bge_148_III_371__voll",
+        "zitierung": "Urteil 4A_525/2021 (nicht publ. in BGE 148 III 371)",
+        "regesteKurz": null,
         "datum": "2022-04-28",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "35": [
       {
-        "key": "bge_147_III_491",
-        "zitierung": "BGE 147 III 491",
-        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht…",
+        "key": "bge_147_III_491__voll",
+        "zitierung": "Urteil 5A_697/2020 (nicht publ. in BGE 147 III 491)",
+        "regesteKurz": null,
         "datum": "2021-03-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
-      },
-      {
-        "key": "bge_150_III_423",
-        "zitierung": "BGE 150 III 423",
-        "regesteKurz": "Art. 34 Nr. 3 LugÜ; Art. II Abs. 3 NYÜ; Rechtskraft eines negativen Zuständigkeitsentscheids eines Schiedsgerichts. Erklärt sich das vereinbarte Schiedsgericht mit Sitz im Ausland für unzuständig und wird dieser Schiedsentscheid in der…",
-        "datum": "2024-08-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       },
       {
         "key": "bge_149_III_224",
@@ -431,16 +421,26 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_150_III_423__voll",
+        "zitierung": "Urteil 4A_621/2023 (nicht publ. in BGE 150 III 423)",
+        "regesteKurz": null,
+        "datum": "2024-08-06",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "36": [
       {
-        "key": "bge_147_III_491",
-        "zitierung": "BGE 147 III 491",
-        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht…",
+        "key": "bge_147_III_491__voll",
+        "zitierung": "Urteil 5A_697/2020 (nicht publ. in BGE 147 III 491)",
+        "regesteKurz": null,
         "datum": "2021-03-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -551,22 +551,22 @@
     ],
     "41": [
       {
-        "key": "bge_149_III_34",
-        "zitierung": "BGE 149 III 34",
-        "regesteKurz": "Art. 39 Abs. 2 LugÜ; Art. 49 und 52 SchKG; Exequatur- und Arrestbegehren, unverteilte Erbschaft; Betreibungsort des Arrestes. Prüfung und Kognition mit Bezug auf den Arrestort als Ort gemäss Art. 39 Abs. 2 LugÜ, wo die Zwangsvollstreckung…",
-        "datum": "2022-10-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_146_III_157",
         "zitierung": "BGE 146 III 157",
         "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
         "datum": "2020-01-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_III_34__voll",
+        "zitierung": "Urteil 5A_103/2022 (nicht publ. in BGE 149 III 34)",
+        "regesteKurz": null,
+        "datum": "2022-10-31",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
@@ -605,24 +605,24 @@
     ],
     "45": [
       {
-        "key": "bge_147_III_491",
-        "zitierung": "BGE 147 III 491",
-        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht…",
+        "key": "bge_147_III_491__voll",
+        "zitierung": "Urteil 5A_697/2020 (nicht publ. in BGE 147 III 491)",
+        "regesteKurz": null,
         "datum": "2021-03-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
     ],
     "46": [
       {
-        "key": "bge_147_III_491",
-        "zitierung": "BGE 147 III 491",
-        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht…",
+        "key": "bge_147_III_491__voll",
+        "zitierung": "Urteil 5A_697/2020 (nicht publ. in BGE 147 III 491)",
+        "regesteKurz": null,
         "datum": "2021-03-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -639,22 +639,22 @@
         "gewicht": 2
       },
       {
-        "key": "bge_149_III_34",
-        "zitierung": "BGE 149 III 34",
-        "regesteKurz": "Art. 39 Abs. 2 LugÜ; Art. 49 und 52 SchKG; Exequatur- und Arrestbegehren, unverteilte Erbschaft; Betreibungsort des Arrestes. Prüfung und Kognition mit Bezug auf den Arrestort als Ort gemäss Art. 39 Abs. 2 LugÜ, wo die Zwangsvollstreckung…",
-        "datum": "2022-10-31",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_146_III_157",
         "zitierung": "BGE 146 III 157",
         "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
         "datum": "2020-01-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_149_III_34__voll",
+        "zitierung": "Urteil 5A_103/2022 (nicht publ. in BGE 149 III 34)",
+        "regesteKurz": null,
+        "datum": "2022-10-31",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
       },
