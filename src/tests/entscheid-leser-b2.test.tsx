@@ -123,7 +123,7 @@ describe('A-2 — der Leser misst im Pane die Pane, nicht das Fenster', () => {
     const q = quelle();
     // Ausserhalb eines Panes liefert `pk` weiterhin die Viewport-Kette — die
     // 5'093 prerenderten Entscheid-Seiten ändern sich dadurch nicht.
-    expect(q).toContain('xl:grid-cols-[minmax(0,1fr)_15rem]');
+    expect(q).toContain('xl:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)]');
     expect(q).toContain('sm:grid-cols-[7rem_minmax(0,1fr)]');
   });
 

@@ -978,9 +978,22 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // Logikverlust, den §1 der Optik vorzieht.
         // Der `@3xl`-Wert aus `Rechtsprechung.tsx` gilt dort für ZWEI GLEICHE
         // Kartenspalten; er ist das Vorbild für die Mechanik, nicht für die Zahl.
+        // ── W2·31-BILDSCHIRMBREITE B7 (25.9.2026) · DER RAND GEHÖRT DEM RAIL ─
+        // Vorher `minmax(0,1fr)_15rem`: die Lesespalte war 800 px breit, der
+        // Text darin 640 px mittig — je 80 px tote Fläche, der Text 80 px
+        // eingerückt gegen Titelblock und Sprungleiste, 112 px Luft bis zum
+        // Rail (gemessen @1280–1920). Jetzt ist die Lesespalte GENAU das
+        // Lesemass (`minmax(0,40rem)`, Text unverändert 640 px) und der Rail
+        // nimmt den Rest (`minmax(15rem,1fr)`, @1280 400 statt 240 px): Suchfeld
+        // und Normen-Liste bekommen die Breite, der Text fluchtet mit dem Kopf.
+        // Wird es eng (Seitenleiste offen), schrumpft zuerst die Lesespalte wie
+        // bisher — der Rail behält seine 15 rem Mindestbreite (Grid-Regel:
+        // feste Obergrenze vor `fr`). Die Seitenart bleibt Stufe `content`:
+        // 90 rem gäben dem Rail 720 px für Nummern-Einträge — Leerfläche,
+        // kein Inhalt.
         <div className={pk(
-          'flex flex-col gap-4 xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:items-start xl:gap-8',
-          'flex flex-col gap-4 @5xl/pane:grid @5xl/pane:grid-cols-[minmax(0,1fr)_15rem] @5xl/pane:items-start @5xl/pane:gap-8',
+          'flex flex-col gap-4 xl:grid xl:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] xl:items-start xl:gap-8',
+          'flex flex-col gap-4 @5xl/pane:grid @5xl/pane:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @5xl/pane:items-start @5xl/pane:gap-8',
         )}>
           {/* B6 (§9-Bug-Check 4.8.2026): im LESEMODUS gibt es den Rail nicht.
               Dort ist der Haupt-Body ausgehängt (der Overlay zeigt seinen
