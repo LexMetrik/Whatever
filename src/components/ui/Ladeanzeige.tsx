@@ -18,6 +18,10 @@
 // `pages/MaterialLeser` (und die Deckungsseite, die eine Textzeile ohne
 // Ablesekante trug) nutzen jetzt diesen Baustein; offen sind
 // `pages/EntscheidLeser` (REST S1) und `pages/Gesetze`.
+// NACHTRAG REST S5b (25.9.2026): `pages/Gesetze` umgestellt, dazu die dem
+// ersten grep entgangene Kopie `pages/Rechtsprechung` (Klassenfolge
+// «scale-rule mx-auto max-w-[200px]»). Nachmessung
+// `grep -rn "scale-rule" src/pages src/components`: Markup nur noch hier.
 export function Ladeanzeige({ text, className = '' }: {
   /** Der sichtbare UND per `role="status"` angekündigte Text («Wird geladen …»). */
   text: string;
