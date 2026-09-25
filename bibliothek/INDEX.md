@@ -138,6 +138,11 @@ unzuverlässig (GR 6/6, BE 5/12, SG 6/6, AG 5/6 falsch; ZH/Bund korrekt); Regel 
 korrigiert). SG-Plattform weicht 2× vom eigenen Kopf ab (BV 2024/21, UV 2025/14). Pflege: neue
 Kopfformen als Fixture. Abnahme David offen.
 
+**Sprach-Homonyme bei Erlass-Kürzeln (QS-KORPUS):** [rechtsprechung/sprach-homonyme-abkuerzungen-2026-09-25.md](rechtsprechung/sprach-homonyme-abkuerzungen-2026-09-25.md) —
+Quelle Fedlex-SPARQL `jolux:titleShort`, Stand 25.9.2026. AIMP (it = IRSG, fr = IVöB) und OCP
+(fr = VKL, it = JSV) lösen nur in Text ihrer Sprache auf (`SPRACH_HOMONYME`); OS bleibt gesperrt.
+Wirkung: +IRSG an 2 bstger-Entscheiden. Pflege: neues Homonym mit SPARQL-Beleg. Abnahme David offen.
+
 **Sachgebiets-Klassierung Rechtsprechung — J3-Regelwerk (W2·10-UI-NAV-J3):** [rechtsprechung/sachgebiet-klassierung-j3-2026-08-29.md](rechtsprechung/sachgebiet-klassierung-j3-2026-08-29.md) —
 Regel-Stand 29.8.2026 (deterministisch, §2): 2A/2C/2D-Default neu `oeffentlich` statt Pauschale
 `sozial-abgaben`; `NORM_SIGNAL` + BGFA→öffentlich (Anlassfall BGE 150 II 300); BV bewusst KEIN
