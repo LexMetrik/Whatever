@@ -1,4 +1,4 @@
-import { gattungVon } from '../../lib/materialien/gattung';
+import { GATTUNG_RANG, gattungVon } from '../../lib/materialien/gattung';
 import { MASSGEBLICH_SATZ } from '../../lib/benennung';
 import type { DoktypId } from '../../lib/materialien/typen';
 
@@ -22,7 +22,7 @@ export function GattungsHinweis({ doktyp }: { doktyp: DoktypId }) {
   if (gattungVon(doktyp) === 'materialien') {
     return (
       <p data-gattung="materialien">
-        <strong>Gesetzgebungsmaterial, kein Gesetzesrang.</strong> Es dokumentiert das
+        <strong>{GATTUNG_RANG.materialien}.</strong> Es dokumentiert das
         Gesetzgebungsverfahren und kann bei der Auslegung eines Erlasses beigezogen werden,
         namentlich bei der historischen Auslegung.
         {' '}{MASSGEBLICH_SATZ} Maschinell erfasst, fachlich noch nicht
@@ -32,7 +32,7 @@ export function GattungsHinweis({ doktyp }: { doktyp: DoktypId }) {
   }
   return (
     <p data-gattung="erlaeuterungen">
-      <strong>Behördenpublikation, kein Gesetzesrang.</strong> Verwaltungsverordnungen
+      <strong>{GATTUNG_RANG.erlaeuterungen}.</strong> Verwaltungsverordnungen
       (Kreisschreiben, Wegleitungen, Leitfäden u.&nbsp;a.) binden die Verwaltung intern und
       sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.
       {' '}{MASSGEBLICH_SATZ} Maschinell erfasst, fachlich noch nicht

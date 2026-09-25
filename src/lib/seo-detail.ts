@@ -29,6 +29,7 @@ import {
   standausweisSatz,
 } from './normtext/erlassKopfText';
 import { GEBIET_LABEL } from './normtext/register';
+import { GATTUNG_RANG, gattungVon } from './materialien/gattung';
 import { erlassAltPfad, erlassPfad } from './normtext/erlassAdresse';
 import { ABSCHNITT_TITEL } from './rechtsprechung/abschnitte';
 import type { Rechtsgebiet } from './normtext/register';
@@ -170,7 +171,7 @@ export function metaFuerMaterial(m: BrowseMaterial): RouteMetadaten {
     titel: `${m.titel} — ${m.behoerdeKuerzel} — LexMetrik`,
     beschreibung:
       `${m.behoerdeName}: ${m.doktypLabel}${nr} «${m.titel}», Stand ${m.stand}. ` +
-      `Amtliche Ressource (Soft-Law, kein Gesetzesrang) mit Live-Link zur amtlichen Fassung ` +
+      `${GATTUNG_RANG[gattungVon(m.doktyp)]}; mit Live-Link zur amtlichen Fassung ` +
       `und Verzahnung zu den massgebenden Gesetzen. Keine Rechtsberatung.`,
     canonical: SITE_URL + pfad,
   };
@@ -290,7 +291,7 @@ export function materialDetailHtml(m: BrowseMaterial): string {
     // B-6/B-1-Nachzug (R2-A): dasselbe Nomen und derselbe Link-Name wie in der
     // React-Fläche (`MaterialLeser` → `ui/QuellLink`). Der Pfeil steht hinten
     // (Ä110); «Zur amtlichen Fassung» ist der verworfene Wortlaut.
-    `<p>Amtliche Ressource (Soft-Law, kein Gesetzesrang). ${MASSGEBLICH_SATZ}</p>` +
+    `<p>${esc(GATTUNG_RANG[gattungVon(m.doktyp)])}. ${MASSGEBLICH_SATZ}</p>` +
     `<p><a href="${esc(m.quelleUrl)}" rel="noopener noreferrer">${AMTLICHE_FASSUNG} ↗</a></p>` +
     `</article>`
   );
