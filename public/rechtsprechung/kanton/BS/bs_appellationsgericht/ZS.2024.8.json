@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2024.8",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Entschädigung gemäss Art. 431 StPO",
+        "gegenstand": "Entschädigung gemäss Art. 431 StPO (Rückweisungsverfahren betr. BES.2022.4)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Christian Hoenen, Dr. phil und MLaw Jacqueline Frossard, Prof. Dr. Daniela Thurnherr Keller und Gerichtsschreiber MLaw Fabio Anceschi"
@@ -200,11 +200,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77981&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-09-03",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "4bf15ab661513a2f262892e1229fcc048c8d7ff994d81299d2b16593b1dbbf20",
       "erstpublikation": "2025-09-03",
-      "aktualisiert": "2025-09-03",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2025.73",
       "ecli": "ECLI:CH:BSA:2025:ZS.2024.8"
     }

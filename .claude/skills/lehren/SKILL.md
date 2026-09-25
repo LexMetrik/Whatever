@@ -265,6 +265,16 @@ Satz 1 ist seit 20.9.2026 erzwungen statt Prosa: `check:steuerflaeche` deckelt
 die Byte-Summe der ganzen Steuerungs-Fläche, die Grenze sinkt nur (Anhebung nur
 mit datiertem David-Entscheid) — Rechtsschutz ausgenommen.
 
+**Streich-Prüfung je Satz** (Entscheid David 25.9.2026; zugeschnitten aus
+`mattpocock/skills` writing-for-agents, MIT, Stand c55ee46): das Tor misst die
+Menge, nicht was weg kann — dafür drei Fragen. (a) *Leerlauf:* handelte der
+Agent ohne den Satz anders? Nein → der ganze Satz fällt. (b) *Nachschlagbar:*
+steht es schon in Datei, Konfiguration oder `--help`? Dann Verweis statt
+Wortlaut; bleiben dürfen Konvention, Grund, Falle. (c) *Leitwort:* dieselbe
+Aufzählung an mehreren Orten wird ein Wort (Muster «Nullprobe»). Sicherung
+F17 (#577 → #876): trägt ein Satz einen Auftrag, wird er vor dem Streichen
+ausgeführt oder als Posten angelegt; Rechtsschutz-Text bleibt aussen vor.
+
 ## §17-Prozessarbeit: die Fünf-Schritte-Reihenfolge
 
 *Herkunft: zugeschnitten aus `malkreide/musk-algorithm-skill` (Hayal Oezkan,

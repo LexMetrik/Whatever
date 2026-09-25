@@ -44,7 +44,13 @@ export function Kontakt() {
       <SeitenKopf overline="Kontakt" titel="Kontakt aufnehmen"
         intro="Fragen, Korrekturen zu einer Berechnung oder einem Baustein, Vorschläge für neue Rechner und Vorlagen – Hinweise auf Fehler sind besonders willkommen." />
 
-      <div className="bg-surface-raised rounded-2xl border border-line p-5 sm:p-6 space-y-5">
+      {/* W2·29-WERKBANK-REST S3 (25.9.2026): hier stand die letzte
+          Kasten-Karte der App (`bg-surface-raised rounded-2xl border`, 16 px —
+          ausserhalb der Radien 4·8·10·14, F0.5; Trennung über Kasten statt
+          Linie, F0.6). Das Formular steht jetzt in der Gruppen-Anatomie der
+          Einstellungen: Tinten-Linie oben (`.meta-abschnitt`), kein Rahmen.
+          Felder, Einwilligung, Fehlerbox, Hinweis und Knöpfe unverändert. */}
+      <div className="meta-abschnitt space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Field label="Name" optional>
             <input className={inputCls} value={e.name} onChange={(ev) => set('name', ev.target.value)} autoComplete="name" />

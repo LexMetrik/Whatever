@@ -277,13 +277,24 @@
        tragen nur die Wärme nach (Hue 84.6°, L unverändert ±0.001). */
     --brass-700: var(--ink-fixed-dark);
     /* Linien- und Fokus-Stufe der neutralen Skala: Kanten, Umrisse, der Ring der Kantonsauswahl,
-       dunkel der Fokusring. Nicht-Text-Marke, darum 3:1 als Schwelle. */
-    --brass-500: #7A766E;
+       dunkel der Fokusring. Nicht-Text-Marke, darum 3:1 als Schwelle.
+
+       Ausnahme mit Text: Füllung der Fristbeginn-Marke im Fristenkalender (`bg-brass-500
+       text-paper`). W2·29-WERKBANK-REST S3 (25.9.2026, Posten Dependabot #918): hell minimal
+       abgedunkelt #7A766E → #78746C (je Kanal −2, Ton gehalten), damit `paper` darauf 4.54:1 trägt
+       (vorher 4.41:1); dunkel unverändert, `paper` dunkel darauf 5.51:1. Die frühere Tinte
+       `auf-gold` mass auf dieser Füllung hell nur 3.47:1 (axe 4.13). */
+    --brass-500: #78746C;
     /* Dekorative Linie und helle Fläche der neutralen Skala (`accent-line-decor`). In beiden Themes
        vergleichsweise hell - Text darauf nimmt darum `auf-gold`. KONTRAST-VERMERK: rein dekorativ,
        trägt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht. Gemessen auf paper 1.58:1 hell /
        2.15:1 dunkel und auf well 1.48:1 hell / 2.29:1 dunkel. Nie für Text oder für eine Kante, die
-       eine Aussage trägt. */
+       eine Aussage trägt. W2·29-WERKBANK-REST S5c (25.9.2026): die Aussage «in beiden Themes
+       vergleichsweise hell - Text darauf nimmt darum `auf-gold`» trifft seit der Dunkel-Rampe
+       (#514F4B) nicht mehr zu — `auf-gold` darauf misst dunkel 1.92:1. Der einzige Verbraucher mit
+       Text darauf, der Verzugszins-Zeitstrahl (VerzugszinsTimeline.tsx), nutzt brass-300 seit S5c
+       nicht mehr (Stelle 2 der Satz-Palette ist `ink-300`, Beschriftung `ink-900`). Zum Vergleich
+       gemessen: `ink-900` auf brass-300 9.30:1 hell / 6.20:1 dunkel. */
     --brass-300: #CAC7C1;
     /* Punkt- und Dekor-Stufe: Aufzählungsmarken, kleine Zeichen neben Text. */
     --brass-600: #4D4A44;
@@ -447,7 +458,14 @@
        bislang
        nur per Inline-Style erreichbar; hier als Utility). C2-Gegenstück: Text auf --ok-solid
        (flippt
-       bewusst nicht) braucht die STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist). */
+       bewusst nicht) braucht die STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist).
+
+       W2·29-WERKBANK-REST S5c (25.9.2026): der oben als Beleg genannte Verbraucher
+       VerzugszinsTimeline.tsx trägt `auf-gold` nicht mehr — alle Zeitstrahl-Flächen kippen mit dem
+       Thema, die Beschriftung ist `ink-900` (Probe
+       src/tests/verzugszins-zeitstrahl-kontrast.test.tsx). Seit W2·29-WERKBANK-REST S3
+       (FristenKalender, `text-paper`) hat das Token damit KEINEN Verbraucher im Code mehr; Löschen
+       berührt `scripts/farbwelt-tabellen.ts` (ALIAS) und ist ein eigener Schritt. */
     --auf-gold: var(--ink-fixed-dark);
     /* Spiegelbild von `auf-gold`: helle Tinte für Text auf `ok-solid`, das bewusst nicht mit dem
        Thema kippt. Liest auf `ok-solid`. KONTRAST: 4.64:1 auf ok-solid hell und dunkel, seit
@@ -1116,7 +1134,16 @@
      hell (Links/Akzent/Status-Text) und die FLÄCHEN-Töne dunkel (aktiver Nav-
      Grund, Hover, Badges), die Linien-/Skala-Mitten bleiben Gold. Aktiviert über
      die .dark-Klasse am <html> (components/thema.ts), nicht über @media — David
-     kann unabhängig vom System umschalten. */
+     kann unabhängig vom System umschalten.
+     ── DK-09 (W2·29-WERKBANK-REST S3, 25.9.2026) · NUR AM BILDSCHIRM ──────────
+     Gemessen (Herz-und-Nieren-Prüfung, bestätigt 25.9.2026; e2e
+     `druck-dunkel-dk09`): Druck aus dem Dunkelmodus setzte die Tinte des
+     Overrides (#E2E0DC) auf Papier-Weiss — 1.32:1. Der Override gilt darum
+     nur ausserhalb des Drucks; der Ausdruck steht immer auf den hellen
+     `:root`-Token. Keine zweite Wertequelle im Druckblock (§5, Token-Quelle
+     `design/tokens.json`): die Klammer entscheidet, WANN die Werte gelten,
+     nicht WELCHE. */
+  @media not print {
   html.dark {
     /* @generated tokens:start — Quelle design/tokens.json, npm run gen:tokens; nie von Hand */
     /* Tinte → hell (Text & Struktur auf dunklem Papier)
@@ -1225,6 +1252,7 @@
        Tönung etwas stärker, damit die Flächen auf Dunkel lesbar bleiben. */
     --status-tint:18%;
   }
+  } /* Ende @media not print (DK-09) */
 
   html { color-scheme: light; }
   body {
@@ -1906,12 +1934,14 @@
     text-underline-offset: .15em;
   }
 
-  /* Der DRUCK fällt in die Zeilenform zurück — die Regeln dafür stehen im
-     einen `@media print`-Block dieser Datei (Suchwort «SATZSPIEGEL IM DRUCK»),
-     nicht hier: `src/tests/druck-fundstellen.test.ts` liest den ERSTEN
-     print-Block der Datei und prüft an ihm die Druck-Zusagen. Ein zweiter,
-     früher stehender Block hat ihm am 6.9.2026 genau die drei Regeln
-     verdeckt, die er sichern soll. Eine Stelle für den Druck (§5). */
+  /* Druck-Regeln stehen im EINEN `@media print`-Block weiter unten, nicht
+     hier: `src/tests/druck-fundstellen.test.ts` liest den ERSTEN print-Block
+     der Datei und prüft an ihm die Druck-Zusagen. Ein zweiter, früher
+     stehender Block hat ihm am 6.9.2026 genau die Regeln verdeckt, die er
+     sichern soll. Eine Stelle für den Druck (§5).
+     (W2·29-WERKBANK-REST S3, 25.9.2026: der Verweis auf die Satzspiegel-
+     Regeln ist gestrichen — die Regeln selbst fielen mit R6c, der Zeiger
+     zeigte seither ins Leere.) */
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen
      Layout/Paint. Inhalt bleibt im DOM (Suche/Anker/Screenreader/Crawler
@@ -2004,8 +2034,15 @@
        Gestalt wechselt je Breite, die Anker nicht. Bewacht:
        `e2e/leser-v3-scrim-b7n1.e2e.ts` (Druck) und `druck-fundstellen.test.ts`. */
     [data-v3-panel-spur], [data-v3-panel-scrim] { display: none !important; }
+    /* Papier-Weiss. Die TINTE dazu kommt seit DK-09 (25.9.2026) immer aus den
+       hellen `:root`-Token: der Dunkel-Override ist auf `@media not print`
+       geklammert (Block «Dunkelmodus» oben) — vorher druckte der Dunkelmodus
+       #E2E0DC auf dieses Weiss (1.32:1, e2e `druck-dunkel-dk09`). */
     body { background: #fff; }
-    .lc-card, [class*='shadow'] { box-shadow: none !important; }
+    /* W2·29-WERKBANK-REST S3: `.lc-card` aus der Liste gestrichen — die Karte
+       trägt seit U2 (6.9.2026) keinen Schatten mehr (nur Linien), die Regel
+       konnte an ihr nichts mehr tun. Die Tailwind-`shadow-*`-Flächen bleiben. */
+    [class*='shadow'] { box-shadow: none !important; }
     .lc-reveal { animation: none !important; }
     a { color: inherit; text-decoration: none; }
 
@@ -2888,12 +2925,12 @@
      `--lc-scrollrand-grund` ist der DECKEL-Ton: er muss der Fläche entsprechen,
      auf der der Scroller sitzt, sonst deckt er mit der falschen Farbe ab.
      Vorgabe `--paper`; Scroller auf Karten-/Panel-Grund setzen die Variable um
-     (`lc-scrollrand-grund-surface`). Nur `background-image`/-size/
+     (bis 25.9.2026 über eine eigene Klasse für `--surface` — seit der Unter-
+     strich-Leiste B-R1 ohne Verwender, mit REST S2/VS-08 gelöscht). Nur `background-image`/-size/
      -position, nie die `background`-Kurzform: sonst löschte die Klasse die
      Tailwind-Fläche (`bg-surface`) mit. */
   .lc-scrollrand-x,
   .lc-scrollrand-y { --lc-scrollrand-grund: var(--paper); }
-  .lc-scrollrand-grund-surface { --lc-scrollrand-grund: var(--surface); }
 
   .lc-scrollrand-x {
     background-image:
@@ -4184,22 +4221,11 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    gestrichen mit S6 W1f (24.9.2026): die Funktionszeile, deren Rubriken sie
    abwählte, ist gefallen (Entscheid David, «die zeile soll ganz weg»). */
 
-/* (c) GETEILT mit `src/components/entstehung/*` (Pfeil, Klammer) und mit
-   `parts/ArtikelDossier.tsx`/`ArtikelNachbarn.tsx` (Block, Skelett) — sie
-   ziehen mit W2·29 S5 bzw. REST um. Die Klammer links (`--rule-artikel`) sagt
-   «gehört zu diesem Artikel», der Registerstrich am Block «welche Rubrik».
-   S6 W1f (24.9.2026): die Klammer `.lr7-bez-inhalt` ist mit der Funktionszeile
-   gefallen (einziger Träger); Pfeil, Block und Skelett bleiben (Dossier,
-   Entstehungs-Karte). */
-.lr7-bez-pfeil { display: inline-block; transition: transform var(--dur-fast, 120ms) var(--ease, ease); }
-.lr7-bez-block[data-reg] { min-width: 0; padding-left: 0.625rem; border-left: 2px solid var(--rule-soft); }
-.lr7-bez-block[data-reg="r"] { border-left-color: var(--reg-r); }
-.lr7-bez-block[data-reg="m"] { border-left-color: var(--reg-m); }
-.lr7-bez-block[data-reg="g"] { border-left-color: var(--reg-g); }
-.lr7-bez-block[data-reg="w"] { border-left-color: var(--reg-w); }
-/* Die reservierte HÖHE des Skeletts steht als `min-h-bez-skelett` in
-   `tailwind.config.js` (F9); hier nur, dass es eine eigene Zeile ist. */
-.lr7-bez-skelett { display: block; }
+/* (c) HIER STANDEN `.lr7-bez-pfeil`, `.lr7-bez-block[data-reg…]` und
+   `.lr7-bez-skelett` — geteilt mit `components/entstehung/*`. Mit REST S2
+   (25.9.2026) als Token-Utility an die Bauteile gezogen (`ArtikelDossier.tsx`
+   `BLOCK_KANTE`, `ArtikelLeser.bezuegeFuss.tsx`, `EntstehungsBlock.tsx` `E.pfeil`),
+   Werte unverändert. Die Klassennamen `.lr7-bez*` bleiben Sonden-Anker (N8). */
 
 /* (d) ARTIKEL-AKTIONEN «Zitat · Link · Amtliche Fassung ↗» (Inventar 2.3.10;
    Wunsch David 24.9.2026, «vorallem diese leiste muss überarbeitet werden»).
@@ -4733,6 +4759,33 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-akzent-w .text-ink-500,
 .lc-akzent-w .lc-overline { color: var(--ink-600); }
 
+/* ── W2·29-WERKBANK-REST S1 (25.9.2026) · TITELBLATT «RECHTSPRECHUNG» ──────
+   `layout/LeserKopfGeruest` mit `register="r"` (Entscheid-Leser): dasselbe
+   Band wie der Erlass-Kopf (S2), Fläche und Strich aus dem Register
+   «Rechtsprechung» (F0.2, nur `--reg-r-flaeche` als Fläche, Tinte darauf).
+   Gemessen 25.9.2026 auf `reg-r-flaeche`: ink-500 4.31:1 hell / 4.28:1 dunkel
+   (< 4.5) → Overline wie die übrigen `text-ink-500` auf ink-600
+   (5.49 / 5.30:1). Auf einer Route mit Register gewinnt ③ (oben,
+   `.lc-route[data-reg] header .lc-overline`: kursive Literata in `reg-r`,
+   7.70 / 6.34:1 auf der Fläche); diese Regel ist der Boden ausserhalb davon.
+   Nur `[data-reg]`: das Gesetzes-Band bleibt unberührt. */
+.lc-titelblatt-band[data-reg="r"] {
+  background: var(--reg-r-flaeche);
+  border-top-color: var(--reg-r);
+}
+.lc-titelblatt-band[data-reg] .lc-overline { color: var(--ink-600); }
+/* Randnotiz statt Kasten (`StatusBadge variant="text"`, «maschinell»): Board
+   «Unter-Rechtsprechung-Register» — gepunktet unterstrichener Text in der
+   Schriftgrösse der Zeile, ink-500 (5.34:1 auf paper, KONTRAST-R1). Die
+   Punktlinie ist Form, nicht Farbe (F2): sie unterscheidet die Randnotiz vom
+   Fliesstext auch ohne Farbsehen. */
+.lc-marke-text {
+  color: var(--ink-500);
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
 /* ─── GB-20 · DIE WAHL-ZEILE (Ferien/Stillstand des Fristenrechners) ────────
    Rezept zum Befund G20 (Herleitung am Aufrufer `forms/EinfacheFristForm`):
    keine Karte, keine Fläche, kein Ring — eine Zeile mit Trennlinie oben und,
@@ -4748,278 +4801,12 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-wahl-zeile:hover { border-top-color: var(--reg-w); }
 .lc-wahl-zeile-gewaehlt { box-shadow: inset 0 2px 0 var(--reg-w); border-top-color: var(--reg-w); } /* R4: Strich OBEN wie `.lc-wahl-kachel` */
 
-/* ═══ W2·6c-E3 · DIE ENTSTEHUNG AM ARTIKEL (Präfix `.lr8-entst`) ══════════════
-   Auftrag David 6.9.2026 («wie ein Gesetz zustande gekommen ist»), Auflage:
-   das Gesetz NICHT überladen. Der ganze Block lebt darum im Aufklapp-Block der
-   Rubrik «Fassung» (`.lr7-bez-block[data-reg="f"]`) — im Lesefluss ist er nicht
-   vorhanden, nicht bloss unsichtbar (die Funktionszeile rendert einen
-   zugeklappten Block gar nicht, D35-F1).
-
-   KEIN NEUES TOKEN, KEINE NEUE FARBE (§13/F0.1–F0.8): Linien statt Kästen
-   (`--rule-soft`), Radius 0, Registerfarbe der Gesetze (`--reg-g`) als Kante —
-   dieselbe, die die Rubrik «Fassung» an ihrer Marke trägt (Herleitung am Typ
-   `BezugsMarke.reg` in `parts/Funktionszeile.tsx`). Schriftstufen sind die der
-   Zeitleiste, in der die Karte steht (micro/xs).
-   Additiv am Dateiende, wie die `.lr6-`/`.ub-`-Blöcke darüber. */
-.lr8-entst { min-width: 0; }
-
-/* Der Griff «Warum?» am Punkt der Fassungsleiste. Er erbt die Anatomie der
-   Mini-Griffe (`.lc-btn-mini`: Haarlinie, `--tap-ziel` als Mindesthöhe, WCAG
-   2.5.8) und steht in der Zeile des Punktes — nicht darunter: er gehört zu
-   DIESEM Ereignis, und eine eigene Zeile machte aus einem Punkt zwei. */
-.lr8-entst-griff { margin-left: 0.25rem; vertical-align: baseline; }
-.lr8-entst-griff[aria-expanded="true"] { color: var(--ink-900); }
-.lr8-entst-griff[aria-expanded="true"] .lr7-bez-pfeil { transform: rotate(90deg); }
-
-/* Die Änderungskarte: eine eingerückte Spalte mit Kante — dieselbe Sprache wie
-   der Rubrik-Block, eine Stufe tiefer (F0.6: Trennung über Linien). */
-.lr8-entst-karte {
-  margin: 0.375rem 0 0.25rem;
-  padding-left: 0.5rem;
-  border-left: 2px solid var(--reg-g);
-  display: grid;
-  gap: 0.1875rem;
-  min-width: 0;
-}
-.lr8-entst-zeile {
-  display: grid;
-  grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
-  gap: 0.125rem 0.5rem;
-  align-items: baseline;
-  min-width: 0;
-}
-/* @390 bricht die Karte auf eine Spalte um — das Feldwort steht dann ÜBER
-   seinem Wert, statt ihn auf 3 Zeichen Breite zu quetschen (320-px-Messung der
-   Sonde `entstehung-karte-e3`). */
-@media (max-width: 30rem) {
-  .lr8-entst-zeile { grid-template-columns: minmax(0, 1fr); }
-}
-.lr8-entst-feld {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.6875rem;
-  line-height: 1.35;
-  color: var(--ink-400);
-}
-
-/* Die Verfahrenskette der Vorlage: amtliche Etiketten, chronologisch. Kein
-   eigener Rahmen — sie ist der Fuss der Begründung, nicht ein zweiter Kasten. */
-.lr8-entst-kette {
-  margin: 0.25rem 0 0;
-  padding-left: 0.625rem;
-  border-left: 1px solid var(--rule-soft);
-  display: grid;
-  gap: 0.0625rem;
-  font-size: 0.6875rem;
-  line-height: 1.35;
-  color: var(--ink-500);
-}
-.lr8-entst-mehr {
-  display: inline-flex;
-  margin-top: 0.25rem;
-  font-size: 0.6875rem;
-  color: var(--ink-500);
-}
-.lr8-entst-mehr:hover { color: var(--brass-700); }
-
-/* Provenienz-Fuss der Karte (§7 a/c: Quelle, Abrufdatum, Vorbehalt). Er steht
-   in JEDER Karte, weil jede Karte eine eigene Rechtsaussage trägt. */
-.lr8-entst-fuss {
-  margin: 0.25rem 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.6875rem;
-  line-height: 1.35;
-}
-/* Der Anker-Sprung ist ein LINK in Chip-Gestalt (er verlässt die Seite) — die
-   Tick-Farbe sagt «Gesetzes-Register», der Pfeil sagt «extern» (Z7-Kanon). */
-.lr8-entst-sprung { border-left-color: var(--reg-g); text-decoration: none; }
-.lr8-entst-sprung:hover { color: var(--brass-700); }
-/* Die benannte Lücke (§8): «Botschaft nicht erfasst» ist eine Auskunft über
-   unseren Bestand, kein Rechtsstatus — darum der Status-Tick `warn`, nicht
-   `danger` (B3: keine Ad-hoc-Farbe). */
-.lr8-entst-luecke { border-left-color: var(--warn-500); }
-
-/* Zustands- und Praxis-Zeile am Fuss des Blocks: sie sagen, WIE VIEL erfasst
-   ist — nie, dass es nichts gibt (§8). */
-.lr8-entst-stand,
-.lr8-entst-praxis {
-  margin: 0.5rem 0 0;
-  font-size: 0.6875rem;
-  line-height: 1.35;
-}
-.lr8-entst-praxis { margin-top: 0.125rem; }
-
-/* Rückrichtung am Material («Erläutert diese Artikel», W2·6c-E3): eine Liste
-   mit Kante, dieselbe Anatomie wie die Verfahrenskette der Karte am Artikel. */
-.lr8-entst-anker {
-  display: grid;
-  gap: 0.125rem;
-  padding-left: 0.625rem;
-  border-left: 1px solid var(--rule-soft);
-  font-size: 0.75rem;
-  line-height: 1.4;
-  color: var(--ink-600);
-}
-
-/* ═══ W2·6c-SYNOPSE-LESER · DER FASSUNGSVERGLEICH (Präfix `.lr8-syn`) ════════
-   Der Griff «Alt/Neu» an jedem Punkt der Fassungsleiste öffnet den Wortlaut von
-   damals neben dem Wortlaut von heute. Er lebt im selben Aufklapp-Block wie die
-   Entstehungs-Karte (`.lr8-entst`) und erbt deren Sprache: Linien statt Kästen
-   (F0.6), Radius 0 (F0.5), Registerfarbe der Gesetze als Kante (F0.2, `--reg-g`).
-
-   KEIN NEUES TOKEN (§13/F2, Tor `check:farbwelt`): die Hervorhebung des NEUEN
-   Wortlauts benutzt exakt das Paar, mit dem die Seite seit A35 Suchtreffer
-   markiert (`--brass-200` auf `--ink-900`) — EINE Markierung, die der Leser aus
-   der Volltextsuche wiedererkennt und die mit `html.dark` mitkippt. Der
-   GESTRICHENE Wortlaut bekommt gar keine Fläche, sondern den Durchstrich: eine
-   zweite Tönung wäre eine zweite Farbrolle, und «weg» ist ohnehin kein Zustand,
-   den man einfärbt. `<del>`/`<ins>` stehen dabei nicht aus Dekoration da — sie
-   sind die HTML-Semantik für genau diesen Fall und tragen sie an die
-   Vorlesehilfe weiter (WCAG 1.3.1). */
-.lr8-syn {
-  margin: 0.375rem 0 0.25rem;
-  padding-left: 0.5rem;
-  border-left: 2px solid var(--reg-g);
-  min-width: 0;
-}
-.lr8-syn-kopf { margin: 0 0 0.25rem; font-size: 0.6875rem; line-height: 1.35; }
-/* Zustände ohne Gegenüberstellung (§8): «erst ab 2021», «kein Stand
-   ausgewertet», «kein Unterschied erkennbar» — nie eine leere Karte. */
-.lr8-syn-lage,
-.lr8-syn-hinweis {
-  margin: 0.25rem 0;
-  font-size: 0.6875rem;
-  line-height: 1.4;
-  color: var(--ink-500);
-}
-.lr8-syn-warn { border-left-color: var(--warn-500); }
-
-.lr8-syn-zeilen {
-  margin: 0.25rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.5rem;
-  min-width: 0;
-}
-/* EINE Zeile = ein Absatz, eine Ziffer, ein Buchstabe. Zwei Spalten ab Tablet;
-   bei 320 px stapeln sie sich, und weil dann keine Kopfzeile mehr neben dem
-   Text steht, trägt JEDE Zelle ihr eigenes Etikett «Alt»/«Neu» (`.lr8-syn-seite`,
-   im Markup, nicht per CSS eingeblendet — bei einem Gesetzestext darf nie
-   zweifelhaft sein, welche Spalte gilt, §8). */
-.lr8-syn-zeile {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0.125rem 0.75rem;
-  padding-top: 0.375rem;
-  border-top: 1px solid var(--rule-soft);
-  min-width: 0;
-}
-.lr8-syn-marke { grid-column: 1 / -1; }
-@media (min-width: 48rem) {
-  .lr8-syn-zeile { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-}
-.lr8-syn-marke {
-  margin: 0;
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.625rem;
-  line-height: 1.35;
-  color: var(--ink-600);
-}
-.lr8-syn-spalte { min-width: 0; }
-/* Unverändertes steht einmal über beide Spalten (Herleitung in `SynopseKarte.tsx`);
-   einspaltig ist `1 / -1` ohnehin die eine Spalte. */
-.lr8-syn-beide { grid-column: 1 / -1; }
-.lr8-syn-seite {
-  display: block;
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.625rem;
-  line-height: 1.35;
-  color: var(--ink-400);
-}
-/* Der zitierte Wortlaut: Lese-Serife wie im Artikel selbst, damit der Vergleich
-   nicht wie ein Protokoll aussieht. `pre-line` hält die Absatzgrenzen, die beim
-   Verdichten etikettloser Blöcke entstehen (`synopse-diff.ts`). */
-.lr8-syn-text {
-  margin: 0;
-  font-size: 0.75rem;
-  line-height: 1.45;
-  color: var(--ink-700);
-  white-space: pre-line;
-  overflow-wrap: anywhere;
-}
-.lr8-syn-leer {
-  margin: 0;
-  font-size: 0.6875rem;
-  line-height: 1.4;
-  color: var(--ink-400);
-}
-.lr8-syn-text del {
-  text-decoration: line-through;
-  text-decoration-thickness: 1px;
-  color: var(--ink-500);
-}
-.lr8-syn-text ins {
-  text-decoration: none;
-  background-color: var(--brass-200);
-  color: var(--ink-900);
-  padding: 0 0.0625rem;
-}
-/* Ein GANZ neuer Block bekommt keine Fläche: die Markierung soll zeigen, WO in
-   einem Satz sich etwas geändert hat — steht daneben ohnehin «eingefügt» und ist
-   jedes Wort neu, wäre der ganze Absatz getönt und die Markierung sagte nichts
-   mehr (F0.2: Farbe als Marke, nie als Fläche). Der Durchstrich der gestrichenen
-   Seite bleibt, er IST die Aussage. */
-.lr8-syn-zeile[data-synopse-zeile="eingefuegt"] .lr8-syn-text ins {
-  background-color: transparent;
-  color: var(--ink-700);
-  padding: 0;
-}
-/* Entwurf ↔ Beschluss (E6): derselbe Apparat eine Stufe tiefer eingerückt — es
-   ist ein ZWEITER Vergleich innerhalb desselben Fassungspunkts, kein Nachtrag. */
-.lr8-syn-entwurf {
-  margin-top: 0.5rem;
-  padding-left: 0.5rem;
-  border-left: 1px solid var(--rule-soft);
-}
-/* Zitat-Nachweis (§7 a–d): Stand beider Fassungen, amtliche Quelle, Live-Link,
-   Abrufdatum, Profil der Normalisierung. Er steht in JEDER Karte, weil jede
-   Karte einen Gesetzestext zitiert. */
-.lr8-syn-fuss {
-  margin: 0.5rem 0 0;
-  padding: 0.375rem 0 0 0;
-  list-style: none;
-  border-top: 1px solid var(--rule-soft);
-  display: grid;
-  gap: 0.0625rem;
-  font-size: 0.6875rem;
-  line-height: 1.35;
-  color: var(--ink-500);
-}
-.lr8-syn-feld {
-  font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.625rem;
-  color: var(--ink-400);
-}
-/* Alt-Blöcke ohne Fussnoten-Ereignis: ein eigener Abschnitt unter der Leiste,
-   weil sie an keinem ihrer Punkte hängen (Herleitung in `synopse-diff.ts`). */
-.lr8-entst-ohne {
-  margin-top: 0.5rem;
-  font-size: 0.6875rem;
-  line-height: 1.4;
-  color: var(--ink-500);
-}
-.lr8-entst-ohne-kopf { margin: 0 0 0.125rem; }
-.lr8-entst-ohne ul {
-  margin: 0;
-  padding-left: 0.625rem;
-  list-style: none;
-  border-left: 1px solid var(--rule-soft);
-  display: grid;
-  gap: 0.125rem;
-}
+/* ═══ W2·6c-E3 / SYNOPSE-LESER · HIER STANDEN `.lr8-entst*` und `.lr8-syn*` ═════
+   (Entstehungs-Karte und Fassungsvergleich am Artikel, 6.–11.9.2026). Gelöscht
+   mit W2·29-WERKBANK-REST S2 (25.9.2026, Löschpflicht §2): die Form steht als
+   Token-Utility an den Bauteilen `components/entstehung/EntstehungsBlock.tsx`
+   (Konstante `E`), `SynopseKarte.tsx` (`S`) und `MaterialEntstehung.tsx`;
+   Herleitungen dort, der alte Wortlaut im Git-Verlauf dieser Datei. */
 
 /* ═══ W2·29-WERKBANK-KATALOGE K4 · RECHNER-/VORLAGEN-KATALOG (Präfix `.kt-`) ═══
    Boards «Unter-Rechner-Katalog» / «Unter-Vorlagen» (Richtung, nicht
@@ -5136,7 +4923,10 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 @media (min-width: 1100px) {
   .es-raster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-.es-gruppe { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+/* W2·29-WERKBANK-REST S3 (25.9.2026): dieselbe Gruppen-Linie trägt die
+   Abschnitte der statischen Seiten (`layout/MetaAbschnitt`, /kontakt) — eine
+   Regel für alle Meta-Seiten statt einer zweiten (§5). */
+.es-gruppe, .meta-abschnitt { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
 .es-zeile + .es-zeile { border-top: 1px solid var(--rule-soft); padding-top: 1.0625rem; margin-top: 1.125rem; }
 
 /* ═══ S6 W1g (W2·29-WERKBANK-LESER, Wunsch David 24.9.2026) · LESER AN DAS
@@ -5240,3 +5030,21 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   border-top: 2px solid var(--tafel-reg, var(--rule-soft));
   padding-top: .5rem;
 }
+
+/* ═══ W2·29-WERKBANK-REST S2 · MATERIALIEN (25.9.2026) ═══════════════════════
+   Material-Leser `/materialien/:key` auf dem Titelblatt der Werkbank (Board
+   «Unter-Materialien»): `LeserKopfGeruest form="titelblatt"` wie der Erlass-
+   Kopf (LESER S2). `.lc-titelblatt-band` selbst bleibt die Gesetze-Fläche —
+   der Gesetzes-Leser bewegt sich nicht; die Materialien-Route setzt ihre
+   eigene Fläche darüber. Kontrast (WCAG 1.4.3, gerechnet aus design/tokens.json
+   25.9.2026): auf `reg-m-flaeche` trägt `reg-m` als Overline-Text nur 4.25:1
+   (hell) — darum Tinte ink-600 (5.85 hell / 5.14 dunkel), wie `.ub-kopf`
+   (K1); ink-500 der Fakten hebt Regel ③b (oben) auf ink-600. Der Band-Strich
+   IST die Registermarke; die 3.5-rem-Marke am Routenkopf (GB-1) entfällt hier
+   wie bei `.ub-kopf`. */
+.lc-route[data-reg="m"] .lc-titelblatt-band {
+  background: var(--reg-m-flaeche);
+  border-top-color: var(--reg-m);
+}
+.lc-route[data-reg="m"] .lc-titelblatt-band .lc-overline { color: var(--ink-600); }
+.lc-route[data-reg="m"]:has(.lc-titelblatt-band)::before { content: none; }

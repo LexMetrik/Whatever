@@ -225,8 +225,15 @@ export function AllgemeineFristForm({ live }: {
         <>
           {/* P1.2 Zustell-/Zugangs-Helfer – REIN INFORMATIV, keine Subsumtion */}
           <details className="lc-card p-4">
+            {/* W2·29-WERKBANK-REST S3 (25.9.2026): die Summary ist seit der
+                App-weiten Regel eine Flex-Zeile (index.css, `details > summary`)
+                — Text und Klammer-Span waren darum ZWEI Flex-Kinder mit je
+                eigener Mindestbreite («ausgelöst?» + «Zustellberechnung)»),
+                @320 zusammen 214 px in 200 (R8 a, bisher als «::marker»
+                allowgelistet — gemessen: es gibt keinen Marker mehr). Ein
+                gemeinsamer Span bricht als EIN Absatz um. Text unverändert. */}
             <summary className="cursor-pointer text-body-s font-medium text-ink-700">
-              Wie wurde die Frist ausgelöst? <span className="text-ink-500 font-normal">(optionaler Hinweis-Helfer – keine verbindliche Zustellberechnung)</span>
+              <span className="min-w-0">Wie wurde die Frist ausgelöst? <span className="text-ink-500 font-normal">(optionaler Hinweis-Helfer – keine verbindliche Zustellberechnung)</span></span>
             </summary>
             <div className={pk('mt-3 grid grid-cols-1 sm:grid-cols-[1fr_1fr_auto] gap-3 items-end', 'mt-3 grid grid-cols-1 @4xl/pane:grid-cols-[1fr_1fr_auto] gap-3 items-end')}>
               <Field label="Zustellart">

@@ -1,12 +1,13 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"BS-730.115",
 "erlassEbene":"kanton",
 "dokumente":{
 "bs_appellationsgericht_VD.2022.180":{"zitierung":"Appellationsgericht BS VD.2022.180 vom 29.09.2023","regesteKurz":"Eintragung in das Inventar der schützenswerten Bauten","datum":"2023-09-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.264":{"zitierung":"Appellationsgericht BS VD.2022.264 vom 27.11.2023","regesteKurz":"Bauentscheid Nr. BBG 9'122'923 (1) vom 25. Mai 2021 in Sachen Neubau Mehrfamilienhaus mit 8 Wohnungen, Maiengasse 52,…","datum":"2023-11-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.166":{"zitierung":"Appellationsgericht BS VD.2023.166 vom 04.07.2024","regesteKurz":"Bauentscheid Nr. [...] vom 15. Februar 2022 in Sachen Umbau und Sanierung der Wohnungen, Sanierung Gebäudehülle, [...]","datum":"2024-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2024.23":{"zitierung":"Appellationsgericht BS VD.2024.23 vom 02.12.2024","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…","datum":"2024-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2024.23":{"zitierung":"Appellationsgericht BS VD.2024.23 vom 02.12.2024","regesteKurz":"Vorentscheid Generelles Baubegehren Nr. [...] vom 13. Februar 2023 in Sachen Grundsatzfragen zum Bauvorhaben Renovation…","datum":"2024-12-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.37":{"zitierung":"Appellationsgericht BS VD.2025.37 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "7":[{"key":"bs_appellationsgericht_VD.2022.180","gewicht":null}],
@@ -14,7 +15,8 @@
 "12":[{"key":"bs_appellationsgericht_VD.2023.166","gewicht":null}],
 "13":[{"key":"bs_appellationsgericht_VD.2024.23","gewicht":null}],
 "43":[{"key":"bs_appellationsgericht_VD.2022.264","gewicht":null}],
-"44":[{"key":"bs_appellationsgericht_VD.2022.264","gewicht":null}]
+"44":[{"key":"bs_appellationsgericht_VD.2022.264","gewicht":null}],
+"69":[{"key":"bs_appellationsgericht_VD.2025.37","gewicht":null}]
 },
 "gesamtProArtikel":{
 "7":{"kantonal":1},
@@ -22,6 +24,7 @@
 "12":{"kantonal":1},
 "13":{"kantonal":1},
 "43":{"kantonal":1},
-"44":{"kantonal":1}
+"44":{"kantonal":1},
+"69":{"kantonal":1}
 }
 }

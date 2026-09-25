@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.14",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "UVG Beschwerdeabweisung (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "UVG Beschwerdeabweisung (Bundesgerichtsurteil 8C_710/2025 vom 08.07.2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. G. Thomi (Vorsitz), Dr. med. W. Rühl, lic. phil. D. Borer und Gerichtsschreiberin Dr. K. Zimmermann"
@@ -341,11 +341,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78987&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-12-09",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-07-23",
       "sha": "216c5d038591dbacf07d768af6247d73c17a56b82b5b779d057e0a441c307901",
       "erstpublikation": "2025-11-20",
-      "aktualisiert": "2025-12-09",
+      "aktualisiert": "2026-07-23",
       "nummerSekundaer": "SVG.2025.186",
       "ecli": "ECLI:CH:BSS:2025:UV.2025.14"
     }

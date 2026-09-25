@@ -5,7 +5,7 @@ import { TrefferLandkarte } from '../components/leser/TrefferLandkarte';
 import { landkarteSpur } from '../components/leser/landkarteModell';
 import { erwaegungsGliederung, erwaegungsWort } from '../lib/rechtsprechung/abschnitte';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
-import { nennungsAnker, trefferInErwaegungen, zaehleTreffer, type SuchTreffer } from './entscheidLeserRegeln';
+import { nennungsAnker, sucheWirksam, trefferInErwaegungen, zaehleTreffer, type SuchTreffer } from './entscheidLeserRegeln';
 import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
 import { useSucheGewertet } from './entscheidErwEntprellung';
 
@@ -64,7 +64,10 @@ export const ErwBereich = memo(function ErwBereich({
    *  ErwBereich wertet ihn auf `sucheAktiv` (§ Falle a, 21.9.2026): Schalter-
    *  Anzeige und Landkarten-Sichtbarkeit stehen so auf demselben Stand wie
    *  Rail-Schranke und Zähler. Vorsorge für die neue Gewertet-Kopplung, kein
-   *  gemessener Altbefund (vorher fielen beide am rohen Stand zusammen). */
+   *  gemessener Altbefund (vorher fielen beide am rohen Stand zusammen).
+   *  Ergänzt 25.9.2026 (REST S1, §2b): «nie zurückgesetzt» galt bis hierher;
+   *  seither setzt der Leser ihn beim LEEREN des Feldes zurück
+   *  (`entscheidSucheZustand.ts`) — diese Komponente weiterhin nie selbst. */
   markenAusRoh: boolean;
   onMarkenSchalten: (aus: boolean) => void;
   /** Darf der Streifen auf DIESER Fläche überhaupt stehen? Nur noch die Lage
@@ -140,7 +143,12 @@ export const ErwBereich = memo(function ErwBereich({
   // Hervorhebung wurde GEMESSEN und verworfen: 5/5 Läufe schlechter, +68 ± 29
   // ms GESAMTBLOCKADE (längste Einzelblockade 130–156 statt 90–95 ms). Die
   // Hervorhebung bleibt darum roh.
-  const sucheGewertet = useSucheGewertet(suche);
+  // REST S1 (Entscheid David 22.9.2026): unter zwei Zeichen geht NICHTS in die
+  // Wertung — auch nicht in die Rechnung. Der Hook sieht dann einen leeren
+  // Begriff, rechnet also nichts und betritt die Suche beim zweiten Zeichen
+  // SOFORT (seine 0-ms-Regel greift, weil der gewertete Stand leer ist).
+  const wirksam = sucheWirksam(suche);
+  const sucheGewertet = useSucheGewertet(wirksam ? suche : '');
   // ── § Falle a/b (21.9.2026) · EIN STAND FÜR DIE GANZE DARSTELLUNGSSEITE ────
   // `sucheAktiv` ist NICHT nur «`sucheGewertet` ist nicht leer» — das wäre zu
   // GROSSZÜGIG in der falschen Richtung: beim VERLASSEN (Feld leeren) ist
@@ -157,7 +165,7 @@ export const ErwBereich = memo(function ErwBereich({
   // gewerteten Stand wartet (Folge 1/2 oben). `markenAusGewertet` erbt dieselbe
   // Regel — Schalter und Landkarte verschwinden beim Leeren darum im SELBEN
   // Tick wie die Trefferliste, nicht einen Tick später.
-  const sucheAktiv = suche.trim() !== '' && sucheGewertet.trim() !== '';
+  const sucheAktiv = wirksam && sucheGewertet.trim() !== '';
   const markenAusGewertet = sucheAktiv && markenAusRoh;
   const treffer = useMemo(() => trefferInErwaegungen(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
   const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
@@ -179,6 +187,7 @@ export const ErwBereich = memo(function ErwBereich({
     <>
       <ErwaegungsRail gliederung={gliederung} treffer={treffer} trefferGesamt={trefferGesamt}
         normen={normen} suche={suche} onSuche={onSuche} springe={springe} sucheAktiv={sucheAktiv}
+        mindestHinweis={!wirksam && suche.trim() !== ''}
         markenSchalter={<MarkenSchalter aus={markenAusGewertet} onSchalten={onMarkenSchalten} />} />
       {/* ── W2·28 · L-1 · DER STREIFEN ────────────────────────────────────
           `trefferGesamt > 0` ist ZEICHENGLEICH die Bedingung, unter der der

@@ -491,3 +491,38 @@ describe('Gegenprüfung 20.7.2026 — Kanon: Abkürzung ist kein Vollname', () =
     expect(r.anzeige.get('pfleiderer-andrea')).toBe('Andrea Pfleiderer');
   });
 });
+
+// Nachzug eidg./kantonal 25.9.2026 (QS-KORPUS): BStGer BG.2026.62 (fr) — der Rollen-
+// Zusatz «vice-présidente» hinterliess das Präfix «vice-» als Phantom-Richter mit
+// Rolle vorsitz (check:besetzung G1b/G5 rot), Miriam Forni verlor den Vorsitz.
+describe('Nachzug 25.9.2026 — «vice-présidente» ist ein Rollenwort', () => {
+  it('BStGer BG.2026.62: kein Richter «vice», Vorsitz bei Forni', () => {
+    const r = slugs('Les juges pénaux fédéraux Miriam Forni, vice-présidente, Roy Garré et Nathalie Zufferey, la greffière Salomé Jaques', 'bstger');
+    expect(r).toEqual([
+      'forni-miriam:vorsitz', 'garre-roy:mitglied', 'zufferey-nathalie:mitglied', 'jaques-salome:gerichtsschreiber',
+    ]);
+  });
+});
+
+// Auflage A1 der Gegenprüfung #1117 (25.9.2026): drei Phantom-Richter aus dem Nachzug.
+describe('Auflage A1 25.9.2026 — Phantom-Richter aus Rollenwort und Titel mitten im Namen', () => {
+  it('BStGer SN.2026.4: nacktes «Vorsitz» ist ein Rollenwort, kein Vorname', () => {
+    // Amtstext mit verlorenem Zeilenumbruch: «Stefan Heimgartner, Vorsitz / Martin Stupf …»
+    const r = slugs('Bundesstrafrichter Stefan Heimgartner, Vorsitz Martin Stupf und Fiona Krummenacher Gerichtsschreiberin Elena Inhelder', 'bstger');
+    expect(r).toEqual([
+      'heimgartner-stefan:vorsitz', 'stupf-martin:mitglied', 'krummenacher-fiona:mitglied', 'inhelder-elena:gerichtsschreiber',
+    ]);
+  });
+
+  it('BPatGer S2025_003: «Präsident Mark Dr. iur. Schweizer» ist EINE Person (Titel mitten im Namen, Amtstext)', () => {
+    const r = slugs('Präsident Mark Dr. iur. Schweizer (Vorsitz), Richter Dr. sc. nat. ETH Tobias Bremi (Referent), Richter Dr. chem. Michael Kaufmann Erster Gerichtsschreiber MLaw Sven Bucher', 'bpatger');
+    expect(r).toEqual([
+      'schweizer-mark:vorsitz', 'bremi-tobias:mitglied', 'kaufmann-michael:mitglied', 'bucher-sven:gerichtsschreiber',
+    ]);
+  });
+
+  it('Gegenprobe: fehlendes Komma zwischen ZWEI Vollnamen wird weiter getrennt (BEZ.2025.75)', () => {
+    const r = slugs('Dr. Olivier Steiner Dr. Claudius Gelzer, lic. iur. André Equey', 'bs_appellationsgericht');
+    expect(r.map((x) => x.split(':')[0])).toEqual(['steiner-olivier', 'gelzer-claudius', 'equey-andre']);
+  });
+});

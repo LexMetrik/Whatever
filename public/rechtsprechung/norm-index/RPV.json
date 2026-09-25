@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "RPV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -37,6 +37,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_II_133",
@@ -363,6 +373,42 @@
         "zitierung": "BGE 151 II 737",
         "regesteKurz": "Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…",
         "datum": "2025-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "18a": [
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "32a": [
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "32b": [
+      {
+        "key": "bge_152_II_276",
+        "zitierung": "BGE 152 II 276",
+        "regesteKurz": "Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…",
+        "datum": "2026-01-05",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

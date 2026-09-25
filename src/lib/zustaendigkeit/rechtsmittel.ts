@@ -247,7 +247,20 @@ export function bestimmeRechtsmittel(input: ZustaendigkeitInput): RechtsmittelEr
     normverweise.push({ artikel: 'Art. 74 Abs. 1 BGG' });
   } else if (sw >= bgerSchwelle) {
     bger = 'zulaessig';
-    bgerText = `Streitwert CHF ${sw.toLocaleString('de-CH')} ≥ ${bgerSchwelle.toLocaleString('de-CH')} (${mietArbeit ? 'arbeits-/mietrechtlicher Fall' : 'übrige Fälle'}) → Beschwerde in Zivilsachen ans Bundesgericht zulässig (Art. 74 Abs. 1 BGG). Massgeblich sind die vor der Vorinstanz streitig gebliebenen Begehren (Art. 51 Abs. 1 lit. a BGG).`;
+    // RL-42 / Z1-04: Art. 51 Abs. 1 BGG (SR 173.110, Fassung 1.4.2026,
+    // Fedlex-Filestore eli/cc/2006/218/20260401, abgerufen 25.9.2026):
+    // «a. bei Beschwerden gegen Endentscheide nach den Begehren, die vor der
+    // Vorinstanz streitig geblieben waren; … c. bei Beschwerden gegen Vor- und
+    // Zwischenentscheide nach den Begehren, die vor der Instanz streitig sind,
+    // wo die Hauptsache hängig ist». Vorher stand lit. a für jedes Objekt.
+    // Vorsorgliche Massnahmen: je nach Einordnung End- oder Zwischenentscheid
+    // — nicht subsumiert, beide Buchstaben offengelegt (§8).
+    const streitwertBasis51 = objekt === 'zwischenentscheid' || objekt === 'prozessleitende_verfuegung'
+      ? 'Massgeblich sind die Begehren, die vor der Instanz streitig sind, wo die Hauptsache hängig ist (Art. 51 Abs. 1 lit. c BGG — Vor- und Zwischenentscheide).'
+      : objekt === 'vorsorgliche_massnahme'
+        ? 'Massgeblich sind bei einem Endentscheid die vor der Vorinstanz streitig gebliebenen Begehren (Art. 51 Abs. 1 lit. a BGG), bei einem Vor- oder Zwischenentscheid die Begehren vor der Instanz, wo die Hauptsache hängig ist (lit. c) — Einordnung des Massnahmeentscheids im Einzelfall prüfen.'
+        : 'Massgeblich sind die vor der Vorinstanz streitig gebliebenen Begehren (Art. 51 Abs. 1 lit. a BGG).';
+    bgerText = `Streitwert CHF ${sw.toLocaleString('de-CH')} ≥ ${bgerSchwelle.toLocaleString('de-CH')} (${mietArbeit ? 'arbeits-/mietrechtlicher Fall' : 'übrige Fälle'}) → Beschwerde in Zivilsachen ans Bundesgericht zulässig (Art. 74 Abs. 1 BGG). ${streitwertBasis51}`;
     normverweise.push({ artikel: 'Art. 74 Abs. 1 BGG' });
   } else {
     bger = 'schwelle_verfehlt';
@@ -259,8 +272,9 @@ export function bestimmeRechtsmittel(input: ZustaendigkeitInput): RechtsmittelEr
   // ZPO setzt einen Streitwert von mindestens 100 000 Franken voraus — eine
   // Eingabe darunter ist faktisch unmöglich und wird offengelegt statt still
   // akzeptiert (§8).
-  if (vorinstanz === 'direktklage_oberes_gericht' && sw !== null && sw < 100_000) {
-    weichen.push(`Eingabe prüfen: Die Direktklage beim oberen Gericht setzt einen Streitwert von mindestens CHF 100'000 voraus (Art. 8 Abs. 1 ZPO) — angegeben sind CHF ${sw.toLocaleString('de-CH')}. Lag der Streitwert vor der Vorinstanz tatsächlich darunter, war Art. 8 nicht der richtige Weg.`);
+  // RL-42 / VS3-19 (§5): Schwelle aus ZPO_SCHWELLEN statt Literal.
+  if (vorinstanz === 'direktklage_oberes_gericht' && sw !== null && sw < ZPO_SCHWELLEN.DIREKTKLAGE_MIN) {
+    weichen.push(`Eingabe prüfen: Die Direktklage beim oberen Gericht setzt einen Streitwert von mindestens CHF ${ZPO_SCHWELLEN.DIREKTKLAGE_MIN.toLocaleString('de-CH')} voraus (Art. 8 Abs. 1 ZPO) — angegeben sind CHF ${sw.toLocaleString('de-CH')}. Lag der Streitwert vor der Vorinstanz tatsächlich darunter, war Art. 8 nicht der richtige Weg.`);
   }
 
   // Zwischenentscheid-Weiche ans BGer (Art. 92/93 BGG — Wortlaut-verifiziert):

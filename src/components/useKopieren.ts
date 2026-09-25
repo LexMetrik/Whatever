@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { kopierAnsageRegion, sageKopiertAn } from './ui/kopierAnsage';
 
 // ─── Kopier-Hook (FAHRPLAN-BEGRUENDUNGS-ABSATZ B2-1) ────────────────────────
 // Geteilte Copy-to-Clipboard-Mechanik: «Kopiert ✓» erst NACH erfolgreichem
@@ -51,7 +52,13 @@ import { useEffect, useRef, useState } from 'react';
 export const KOPIER_DAUER_MS = 1600;
 
 /** Was `kopieren()` entgegennimmt: nur den Text, oder Text plus MARKE. */
-export type KopierAuftrag = { text?: string; marke?: string };
+export type KopierAuftrag = {
+  text?: string;
+  marke?: string;
+  /** Screenreader-Ansage nach dem Schreiben (REST S5b, `ui/kopierAnsage`);
+   *  ohne Angabe «In die Zwischenablage kopiert». */
+  ansage?: string;
+};
 
 export function useKopieren(text?: string, dauerMs = KOPIER_DAUER_MS): {
   /** Steht die Quittung? Für den Regelfall «ein Ziel je Fläche». */
@@ -78,6 +85,9 @@ export function useKopieren(text?: string, dauerMs = KOPIER_DAUER_MS): {
   // Variante seiner eigenen Kopien (§5/§10, R3-α 31.8.2026).
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  // Die Ansage-Region steht VOR dem ersten Klick im DOM (Screenreader
+  // überhören eine Region, die erst mit ihrem Text erscheint).
+  useEffect(() => { kopierAnsageRegion(); }, []);
   const kopieren = (was?: string | KopierAuftrag) => {
     const auftrag: KopierAuftrag = typeof was === 'string' ? { text: was } : (was ?? {});
     const inhalt = auftrag.text ?? text;
@@ -91,6 +101,7 @@ export function useKopieren(text?: string, dauerMs = KOPIER_DAUER_MS): {
       // Erfolgszweig darf nicht als «Berechtigung verweigert» durchgehen.
       navigator.clipboard?.writeText(inhalt).then(() => {
         setMarke(auftrag.marke ?? 'ja');
+        sageKopiertAn(auftrag.ansage);
         if (timer.current) clearTimeout(timer.current);
         timer.current = setTimeout(() => setMarke(''), dauerMs);
       }, () => { /* Berechtigung verweigert/unsicherer Kontext */ });

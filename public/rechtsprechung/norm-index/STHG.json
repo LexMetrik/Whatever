@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "STHG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -95,6 +95,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_437",
+        "zitierung": "BGE 152 II 437",
+        "regesteKurz": "Art. 12 Abs. 3 lit. a StHG; Art. 132 Abs. 1 lit. a des Steuergesetzes des Kantons St. Gallen vom 9. April 1998; Umfang des Aufschubs der Grundstückgewinnsteuer bei gemischten Schenkungen. Art. 12 Abs. 3 lit. a StHG ist dahingehend…",
+        "datum": "2025-12-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_II_262",
@@ -562,7 +572,7 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_150_I_1__voll",
@@ -572,7 +582,17 @@
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
+      },
+      {
+        "key": "bge_151_II_818",
+        "zitierung": "BGE 151 II 818",
+        "regesteKurz": "Art. 12 Abs. 3 lit. a StHG; Art. 58 Abs. 3 und 4 des Gesetzes der Republik und des Kantons Neuenburg vom 21. März 2000 über die direkten Steuern (LCdir); Aufschub der Besteuerung von Grundstückgewinnen bei Übertragung der Liegenschaft als…",
+        "datum": "2025-03-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
       },
       {
         "key": "bge_150_II_478",
@@ -593,16 +613,6 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 2
-      },
-      {
-        "key": "bge_151_II_818",
-        "zitierung": "BGE 151 II 818",
-        "regesteKurz": "Art. 12 Abs. 3 lit. a StHG; Art. 58 Abs. 3 und 4 des Gesetzes der Republik und des Kantons Neuenburg vom 21. März 2000 über die direkten Steuern (LCdir); Aufschub der Besteuerung von Grundstückgewinnen bei Übertragung der Liegenschaft als…",
-        "datum": "2025-03-21",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
       },
       {
         "key": "bge_148_II_299",
@@ -1033,6 +1043,16 @@
     ],
     "24": [
       {
+        "key": "bge_151_II_545",
+        "zitierung": "BGE 151 II 545",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 14 Abs. 1 lit. j StG; Umsatzabgabe; Übertragung einer Beteiligung innerhalb eines Konzerns; Gratiszuteilung von Mitarbeiteraktien. Die konzerninterne Übertragung einer (indirekten) Beteiligung von mindestens 20 % am…",
+        "datum": "2024-11-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_II_802__voll",
         "zitierung": "Urteil 9C_625/2023 (nicht publ. in BGE 151 II 802)",
         "regesteKurz": null,
@@ -1043,20 +1063,30 @@
         "gewicht": 1
       },
       {
-        "key": "bge_151_II_860",
-        "zitierung": "BGE 151 II 860",
-        "regesteKurz": "Art. 87, 90 Abs. 2 KAG; Art. 957 ff. OR; Buchführungspflichten für Immobilienfonds mit direktem Grundbesitz; Niederstwertprinzip; Erst- und Folgebewertung; Periodizitätsprinzip und Nachholung von Aufwandbuchungen. Erstmals in eine Bilanz…",
-        "datum": "2025-06-03",
+        "key": "bge_147_II_155__voll",
+        "zitierung": "Urteil 2C_132/2020 (nicht publ. in BGE 147 II 155)",
+        "regesteKurz": null,
+        "datum": "2020-11-26",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_422",
+        "zitierung": "BGE 152 II 422",
+        "regesteKurz": "Art. 58 Abs. 1 lit. b DBG; Art. 24 Abs. 1 lit. a StHG; Abzugsfähigkeit der passiven Zinsen als durch den Handelsgebrauch gerechtfertigte Aufwendungen im Rahmen eines \"Debt Push Down\". Fall einer Gesellschaft (Akquisitionsvehikel; \"special…",
+        "datum": "2026-02-24",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_151_II_545",
-        "zitierung": "BGE 151 II 545",
-        "regesteKurz": "Art. 13 Abs. 1, Art. 14 Abs. 1 lit. j StG; Umsatzabgabe; Übertragung einer Beteiligung innerhalb eines Konzerns; Gratiszuteilung von Mitarbeiteraktien. Die konzerninterne Übertragung einer (indirekten) Beteiligung von mindestens 20 % am…",
-        "datum": "2024-11-25",
+        "key": "bge_151_II_860",
+        "zitierung": "BGE 151 II 860",
+        "regesteKurz": "Art. 87, 90 Abs. 2 KAG; Art. 957 ff. OR; Buchführungspflichten für Immobilienfonds mit direktem Grundbesitz; Niederstwertprinzip; Erst- und Folgebewertung; Periodizitätsprinzip und Nachholung von Aufwandbuchungen. Erstmals in eine Bilanz…",
+        "datum": "2025-06-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1091,19 +1121,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_155__voll",
-        "zitierung": "Urteil 2C_132/2020 (nicht publ. in BGE 147 II 155)",
-        "regesteKurz": null,
-        "datum": "2020-11-26",
-        "leitcharakter": "routine",
-        "gericht": "bger",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "25": [
+      {
+        "key": "bge_152_II_422",
+        "zitierung": "BGE 152 II 422",
+        "regesteKurz": "Art. 58 Abs. 1 lit. b DBG; Art. 24 Abs. 1 lit. a StHG; Abzugsfähigkeit der passiven Zinsen als durch den Handelsgebrauch gerechtfertigte Aufwendungen im Rahmen eines \"Debt Push Down\". Fall einer Gesellschaft (Akquisitionsvehikel; \"special…",
+        "datum": "2026-02-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_II_11",
         "zitierung": "BGE 151 II 11",
@@ -1489,6 +1519,16 @@
         "datum": "2021-12-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_422__voll",
+        "zitierung": "Urteil 9C_606/2025 (nicht publ. in BGE 152 II 422)",
+        "regesteKurz": null,
+        "datum": "2026-02-24",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

@@ -44,6 +44,8 @@
 //  · dort den Satz für `vor_fenster` leeren                       ⇒ (c) rot
 //  · in `src/index.css` `.lr8-syn-zeile` fest auf zwei Spalten zwingen
 //    und `white-space: nowrap` setzen                             ⇒ (d) rot
+//    (seit REST S2, 25.9.2026: dieselbe Form steht in `SynopseKarte.tsx`,
+//    Konstante `S.zeile` — dort `md:` streichen und `whitespace-nowrap` setzen)
 //  · am Griff `aria-expanded` weglassen                           ⇒ (e) rot
 //  · in `synopse-run.ts` die Umbuchung auf `quelle_unvollstaendig`
 //    auslassen (Shards neu erzeugen)                               ⇒ (f) rot
@@ -142,7 +144,9 @@ test.describe('W2·6c-SYNOPSE-LESER · Fassungsvergleich am Artikel', () => {
     // Die drei eingefügten Wörter, und NUR sie.
     const zeile = karte.locator('[data-synopse-zeile="geaendert"]').first();
     await expect(zeile.locator('ins')).toContainText('selbstständige oder unselbstständige');
-    await expect(zeile.locator('.lr8-syn-text').first())
+    // REST S2 (25.9.2026): Selektor zieht mit dem gelöschten Alt-Block
+    // `.lr8-syn-text` auf den Sonden-Anker `data-synopse-text` um (§4b).
+    await expect(zeile.locator('[data-synopse-text]').first())
       .toContainText('in der Schweiz eine Erwerbstätigkeit ausüben;');
 
     // §7 a–d im Fuss: Stand beider Fassungen, Quelle, Live-Link, Abruf, Profil.

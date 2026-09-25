@@ -135,3 +135,17 @@ describe('besetzungsTeile — kein erfundener Link (§1/§8)', () => {
     expect(t).toContain('Meierhans'); // Fixture-Dokumentation
   });
 });
+
+// Auflage A1 #1117 (25.9.2026): Titel MITTEN im Namen (amtliches PDF BPatGer S2025_003).
+// Der Link muss den ganzen amtlichen Wortlaut «Mark Dr. iur. Schweizer» tragen — ein
+// umgestellter Roh-Name («Dr. iur. Mark Schweizer») wäre im Freitext nicht auffindbar.
+describe('Titel mitten im Namen bleibt verlinkbar (BPatGer S2025_003)', () => {
+  it('ein Link auf schweizer-mark über den amtlichen Wortlaut, Freitext byte-treu', () => {
+    const t = 'Präsident Mark Dr. iur. Schweizer (Vorsitz), Richter Dr. sc. nat. ETH Tobias Bremi (Referent), Richter Dr. chem. Michael Kaufmann Erster Gerichtsschreiber MLaw Sven Bucher';
+    const teile = besetzungsTeile(t, 'bpatger', refsWie(t, 'bpatger'));
+    expect(links(teile)).toEqual([
+      'Mark Dr. iur. Schweizer→schweizer-mark', 'Tobias Bremi→bremi-tobias', 'Michael Kaufmann→kaufmann-michael',
+    ]);
+    expect(wortlaut(teile)).toBe(t);
+  });
+});

@@ -1,17 +1,18 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"VVEA",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_147_I_433":{"zitierung":"BGE 147 I 433","regesteKurz":"Art. 29 Abs. 2 und Art. 50 BV, Art. 85 und 95 KV/ZH, Art. 4 und 9 f. RPG, Art. 31 Abs. 1 USG, Art. 4 f. VVEA, § 23 f. und 35 AbfG/ZH; Abfall- und Deponieplanung; Festsetzung der Deponiestandorte im Richtplan; Mitwirkung der Gemeinden und…","datum":"2021-02-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_148_II_155":{"zitierung":"BGE 148 II 155","regesteKurz":"Art. 7 Abs. 6 und 6 bis , Art. 30 und 32c USG; Art. 2 und 5 AltlV; Art. 19 VVEA; Kataster der belasteten Standorte (KbS); Ablagerungsstandort. Eintragung von Ablagerungsstandorten in den KbS; Abgrenzung zwischen der Ablagerung von Abfällen…","datum":"2021-11-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_148_II_387":{"zitierung":"BGE 148 II 387","regesteKurz":"Art. 30e, 58 USG; Art. 26, 27 BV; Enteignung für eine Deponie. Verhältnis von Art. 58 Abs. 1 USG zum kantonalen Enteignungsrecht (E. 3.1). Bedürfnisklausel bei der Bewilligungspflicht für Deponien gemäss Art. 30e Abs. 2 USG (E. 3.2.3).…","datum":"2022-03-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_148_II_387":{"zitierung":"BGE 148 II 387","regesteKurz":"Art. 30e, 58 USG; Art. 26, 27 BV; Enteignung für eine Deponie. Verhältnis von Art. 58 Abs. 1 USG zum kantonalen Enteignungsrecht (E. 3.1). Bedürfnisklausel bei der Bewilligungspflicht für Deponien gemäss Art. 30e Abs. 2 USG (E. 3.2.3).…","datum":"2022-03-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_II_298":{"zitierung":"BGE 152 II 298","regesteKurz":"Art. 78 Abs. 2 BV; Art. 2 und 12 NHG; Art. 19 Abs. 2 GSchG; Art. 32 Abs. 2 GSchV; Art. 17 WaG; Art. 16 VVEA; Beschwerdelegitimation des Schweizer Heimatschutzes; Vorliegen einer Bundesaufgabe. Eine Bundesaufgabe liegt vor, wenn für Anlagen…","datum":"2025-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
 "3":[{"key":"bge_148_II_387","gewicht":0}],
 "4":[{"key":"bge_148_II_387","gewicht":0},{"key":"bge_147_I_433","gewicht":0}],
 "5":[{"key":"bge_148_II_387","gewicht":0},{"key":"bge_147_I_433","gewicht":0}],
-"16":[{"key":"bge_148_II_155","gewicht":0}],
+"16":[{"key":"bge_152_II_298","gewicht":0},{"key":"bge_148_II_155","gewicht":0}],
 "19":[{"key":"bge_148_II_155","gewicht":0}],
 "35":[{"key":"bge_148_II_387","gewicht":0}]
 },
@@ -19,7 +20,7 @@
 "3":{"bge":1},
 "4":{"bge":2},
 "5":{"bge":2},
-"16":{"bge":1},
+"16":{"bge":2},
 "19":{"bge":1},
 "35":{"bge":1}
 }

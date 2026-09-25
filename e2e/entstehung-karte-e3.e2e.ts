@@ -40,6 +40,8 @@
 //  · dort den Satz «Zu den Änderungen … keine Entstehung erfasst» leeren ⇒ (c) rot
 //  · in `src/index.css` `.lr8-entst-zeile` fest auf zwei Spalten zwingen
 //    (Media-Query löschen)                                          ⇒ (d) rot
+//    (seit REST S2, 25.9.2026: `EntstehungsBlock.tsx`, Konstante `E.zeile`
+//    — dort die Variante `[@media(max-width:30rem)]:grid-cols-1` streichen)
 //  · am Griff `aria-expanded` weglassen                             ⇒ (e) rot
 import { test, expect, type Page } from '@playwright/test';
 import { fassungsMarke } from './helpers/fassungsRubrik';

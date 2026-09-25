@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"STBOG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -11,18 +11,21 @@
 "bge_151_IV_338":{"zitierung":"BGE 151 IV 338","regesteKurz":"Art. 393 Abs. 1 lit. c StPO; Rechtsmittel gegen Entscheide des Zwangsmassnahmengerichts. In seiner seit dem 1. Juli 2024 geltenden Fassung ist Art. 393 Abs. 1 lit. c StPO dahingehend zu verstehen, dass gegen Entscheide des…","datum":"2025-07-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bstger_CR_2026_4":{"zitierung":"BStGer CR.2026.4 vom 9. Juni 2026","regesteKurz":"Revisionsgesuch gegen die Verfügung der Beschwerdekammer des Bundesstrafgerichts BB.2026.36 vom 5. Mai 2026 (Art. 410 ff. StPO)","datum":"2026-06-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
 "bstger_CR_2026_5":{"zitierung":"BStGer CR.2026.5 vom 11. Juni 2026","regesteKurz":"Revisionsgesuch gegen die Verfügung der Beschwerdekammer BB.2024.154-155 vom 13. Dezember 2024 bzw. vom 2. Januar 2025 (Art. 410 ff. StPO)","datum":"2026-06-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
+"bstger_RH_2026_8":{"zitierung":"BStGer RH.2026.8 vom 8. September 2026","regesteKurz":"Entraide judiciaire internationale en matière pénale à la France; mandat d'arrêt en vue d'extradition (art. 48 al. 2 EIMP)","datum":"2026-09-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
 "bstger_RR_2026_46":{"zitierung":"BStGer RR.2026.46 vom 19. Mai 2026","regesteKurz":"Assistenza giudiziaria internazionale in materia penale all'Italia; Decisione di estradizione (art. 55 AIMP); Domanda di estensione","datum":"2026-05-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
-"bstger_SK_2025_57":{"zitierung":"BStGer SK.2025.57 vom 20. Mai 2026","regesteKurz":"Geldwäscherei (Art. 305bis StGB)","datum":"2026-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}}
+"bstger_RR_2026_97":{"zitierung":"BStGer RR.2026.97 vom 3. September 2026","regesteKurz":"Assistenza giudiziaria internazionale in materia penale all'Italia; decisione di estradizione (art. 55 AIMP)","datum":"2026-09-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
+"bstger_SK_2025_57":{"zitierung":"BStGer SK.2025.57 vom 20. Mai 2026","regesteKurz":"Geldwäscherei (Art. 305bis StGB)","datum":"2026-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}},
+"bstger_SN_2026_4":{"zitierung":"BStGer SN.2026.4 vom 4. September 2026","regesteKurz":"Gesuch um Ausschluss der Öffentlichkeit (Art. 70 Abs. 1 lit. a StPO)","datum":"2026-09-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_147_IV_36","gewicht":0}],
 "7":[{"key":"bge_146_IV_185","gewicht":0}],
 "15":[{"key":"bge_147_IV_36","gewicht":0},{"key":"bge_146_IV_185","gewicht":0}],
 "36":[{"key":"bge_147_IV_329","gewicht":0}],
-"37":[{"key":"bge_151_IV_338","gewicht":0},{"key":"bge_150_II_273","gewicht":0},{"key":"bge_146_IV_185","gewicht":0},{"key":"bstger_RR_2026_46","gewicht":null}],
-"39":[{"key":"bge_146_IV_185","gewicht":0},{"key":"bstger_RR_2026_46","gewicht":null}],
+"37":[{"key":"bge_151_IV_338","gewicht":0},{"key":"bge_150_II_273","gewicht":0},{"key":"bge_146_IV_185","gewicht":0},{"key":"bstger_SN_2026_4","gewicht":null},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bstger_RR_2026_46","gewicht":null}],
+"39":[{"key":"bge_146_IV_185","gewicht":0},{"key":"bstger_RH_2026_8","gewicht":null},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bstger_RR_2026_46","gewicht":null}],
 "40":[{"key":"bge_146_IV_185","gewicht":0}],
-"73":[{"key":"bstger_RR_2026_46","gewicht":null}],
+"73":[{"key":"bstger_RH_2026_8","gewicht":null},{"key":"bstger_RR_2026_97","gewicht":null},{"key":"bstger_RR_2026_46","gewicht":null}],
 "78":[{"key":"bge_146_IV_293","gewicht":0}],
 "38a":[{"key":"bge_146_IV_293","gewicht":0},{"key":"bge_146_IV_185","gewicht":0},{"key":"bstger_CR_2026_5","gewicht":null},{"key":"bstger_CR_2026_4","gewicht":null},{"key":"bstger_SK_2025_57","gewicht":null}]
 },
@@ -31,10 +34,10 @@
 "7":{"bge":1},
 "15":{"bge":2},
 "36":{"bge":1},
-"37":{"bge":3,"eidg":1},
-"39":{"bge":1,"eidg":1},
+"37":{"bge":3,"eidg":3},
+"39":{"bge":1,"eidg":3},
 "40":{"bge":1},
-"73":{"eidg":1},
+"73":{"eidg":3},
 "78":{"bge":1},
 "38a":{"bge":2,"eidg":3}
 }

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"BS-153.810",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -32,6 +32,7 @@
 "bs_appellationsgericht_VD.2024.31":{"zitierung":"Appellationsgericht BS VD.2024.31 vom 10.07.2024","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2024-07-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.56":{"zitierung":"Appellationsgericht BS VD.2024.56 vom 20.06.2024","regesteKurz":"Wegweisung","datum":"2024-06-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.78":{"zitierung":"Appellationsgericht BS VD.2024.78 vom 06.12.2024","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2024-12-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.123":{"zitierung":"Appellationsgericht BS VD.2025.123 vom 15.01.2026","regesteKurz":"Härtefallbewilligung","datum":"2026-01-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.39":{"zitierung":"Appellationsgericht BS VD.2025.39 vom 08.09.2025","regesteKurz":"Vollzugsunterbrechung und unentgeltliche Rechtspflege","datum":"2025-09-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.55":{"zitierung":"Appellationsgericht BS VD.2025.55 vom 21.07.2025","regesteKurz":"Arbeitsexternat, unentgeltliche Rechtspflege","datum":"2025-07-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.63":{"zitierung":"Appellationsgericht BS VD.2025.63 vom 23.09.2025","regesteKurz":"Familiennachzug und Wegweisung","datum":"2025-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -40,7 +41,7 @@
 "proArtikel":{
 "5":[{"key":"bs_appellationsgericht_VD.2021.25","gewicht":null}],
 "6":[{"key":"bs_appellationsgericht_VD.2021.25","gewicht":null}],
-"11":[{"key":"bs_appellationsgericht_VD.2025.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.78","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.182","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.112","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.244","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.72","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.4","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.233","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.168","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.244","gewicht":null}],
+"11":[{"key":"bs_appellationsgericht_VD.2025.123","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.78","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.182","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.112","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.244","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.72","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.4","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.233","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.168","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.244","gewicht":null}],
 "13":[{"key":"bs_appellationsgericht_VD.2024.122","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.216","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.206","gewicht":null}],
 "15":[{"key":"bs_appellationsgericht_VD.2025.39","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.113","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.31","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.56","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.129","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.57","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.3","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.171","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.22","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.282","gewicht":null}],
 "16":[{"key":"bs_appellationsgericht_VD.2023.146","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.32","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.57","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.37","gewicht":null}],
@@ -49,7 +50,7 @@
 "gesamtProArtikel":{
 "5":{"kantonal":1},
 "6":{"kantonal":1},
-"11":{"kantonal":12},
+"11":{"kantonal":13},
 "13":{"kantonal":3},
 "15":{"kantonal":11},
 "16":{"kantonal":4},

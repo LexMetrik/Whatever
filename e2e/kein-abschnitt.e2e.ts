@@ -40,6 +40,7 @@ import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { katalogRouten, prerenderRouten } from '../src/lib/seo'
+import { DICHTE_KEY, type Dichte } from '../src/components/rechtsprechung/zustand'
 import { geometrieScan, popoverUeberlaufScan, reiterWortgrenzeScan, sprungzielUnterKopf } from './helpers/abschnittMessung'
 import { nachAllowlistTrennen, type Fund } from './helpers/abschnittAllowlist'
 
@@ -68,6 +69,28 @@ async function seiteBereit(page: Page, route: string): Promise<void> {
   await expect(page.locator('h1').first()).toBeVisible({ timeout: 15_000 })
 }
 
+// ── W2·29-WERKBANK-REST S3 (25.9.2026) · DATENSEITEN ERST GELADEN MESSEN ────
+// Posten 25.9.2026 (Befund Bau S0): `seiteBereit` wartete nur auf das h1 — die
+// Datenseiten (/rechtsprechung, /materialien, /materialien/deckung, /gesetze)
+// laden ihr Register erst NACH dem Kopf und zeigen solange eine Lade-Zeile
+// («Die Sammlung wird abgerufen …», «Die Deckungszahlen werden geladen …»,
+// Routen-Hülle «Wird geladen …»). Der Sweep konnte so den Ladezustand messen.
+// MESSBEDINGUNG (§0 Ziff. 3): lokal warm, 1 Worker, stand die Liste beim h1
+// schon (Lade-Zeile 0, Knoten h1→geladen gleich, 37–129 ms) — die Lücke ist
+// lastabhängig, darum ein Warten auf den Zustand statt einer Zeit.
+// Lädt die Seite NICHT fertig, ist das ein FUND (`daten-laden-nicht`), kein
+// Werkzeug-Fehler: `sicher()` schluckte ihn sonst, und eine Seite, die nie
+// lädt, machte das Tor grüner (Muster Startseiten-Blätter, §6.7).
+const LADE_ZEILE = /wird abgerufen|werden geladen|wird geladen/i
+async function datenGeladen(page: Page): Promise<string | null> {
+  try {
+    await expect(page.locator('main').getByText(LADE_ZEILE)).toHaveCount(0, { timeout: 20_000 })
+    return null
+  } catch (e) {
+    return (e as Error).message.split('\n')[0].slice(0, 160)
+  }
+}
+
 /** Werkzeug-Fehler dürfen NIE die Datei killen (Robustheits-Nachtrag, zweiter
  *  Lauf 6.9.2026): `mode: 'serial'` überspringt bei einem fehlgeschlagenen
  *  Test ALLE folgenden — inklusive des Berichts, der die eigentliche Aussage
@@ -89,7 +112,12 @@ async function sicher(route: string, ort: string, fn: () => Promise<void>): Prom
 
 // ── Routenliste (§5: SSoT statt Handliste für den statischen Teil) ──────────
 const KATALOG = new Set(katalogRouten())
-const STATISCHE_ROUTEN = prerenderRouten().filter((r) => !KATALOG.has(r))
+// W2·29-WERKBANK-REST S3 (25.9.2026): `/rechtsprechung` fährt NUR im
+// Dichte-Sweep unten — der misst dieselbe Route in BEIDEN Dichten, jeweils
+// erst mit stehender Trefferliste. Im Geometrie-Sweep lief sie zusätzlich in
+// der Default-Dichte «Liste»: doppelt gemessen (Posten 25.9.2026).
+const NUR_IM_DICHTE_SWEEP = new Set(['/rechtsprechung'])
+const STATISCHE_ROUTEN = prerenderRouten().filter((r) => !KATALOG.has(r) && !NUR_IM_DICHTE_SWEEP.has(r))
 
 // Je 2 Vertreter aus dem Bestand — nicht enumeriert, weil das den Sweep auf
 // alle ~19 Rechner/~29 Vorlagen und alle Erlasse/Entscheide/Materialien
@@ -187,6 +215,11 @@ test.describe('R8 — Geometrie-Sweep (a, b, c, f, g, h)', () => {
         await sicher(route, thema, async () => {
           await themaVorwaehlen(page, thema)
           await seiteBereit(page, route)
+          const nichtGeladen = await datenGeladen(page)
+          if (nichtGeladen) {
+            GESAMMELTE_FUNDE.push({ route, viewport: 'vor-sweep', modus: thema, kategorie: 'daten-laden-nicht', selektor: 'main', messwert: nichtGeladen })
+            return
+          }
           for (const vp of VIEWPORTS) {
             await page.setViewportSize({ width: vp.width, height: vp.height })
             await page.waitForTimeout(60) // Reflow nach Resize abwarten
@@ -246,6 +279,60 @@ test.describe('R8 — Startseiten-Blätter (a, b, c, f, g, h)', () => {
             await page.setViewportSize({ width: vp.width, height: vp.height })
             await page.waitForTimeout(60) // Reflow nach Resize abwarten
             await expect(blatt).toBeVisible()
+            const [geom, reiter] = await Promise.all([geometrieScan(page), reiterWortgrenzeScan(page)])
+            for (const f of [...geom, ...reiter]) {
+              GESAMMELTE_FUNDE.push({ route, viewport: vp.name, modus: thema, ...f })
+            }
+          }
+        })
+      })
+    }
+  }
+})
+
+// ── Dichte «Liste» UND «Karten» (Posten 2026-09-23, W2·29-WERKBANK-REST S0) ──
+// Der Geometrie-Sweep oben sieht jede Route in ihrer DEFAULT-Dichte. Die
+// einzige nutzerwählbare Dichte der App — /rechtsprechung, Schalter «Liste ·
+// Karten» (`DICHTE_KEY`, components/rechtsprechung/zustand.ts) — lief darum
+// nur als «Liste» durch; ein Überlauf in der Karten-Fläche blieb unentdeckt
+// (Session-Notizen 23.9.2026). Hier fahren BEIDE Dichten, vorgewählt über den
+// localStorage-Schlüssel, den die Seite selbst liest (kein eigener
+// Mechanismus, §5), und gemessen wird erst, wenn die Trefferliste in der
+// gewählten Dichte STEHT — der Sweep oben wartet nur auf das h1 und kann die
+// Liste vor dem Laden messen. Steht sie nicht (Schalter umbenannt, Schlüssel
+// geändert, Register lädt nicht), ist das ein FUND `dichte-rendert-nicht`,
+// kein Werkzeug-Fehler: sonst machte ein kaputter Schalter das Tor grüner
+// (Muster Startseiten-Blätter oben, Gegenprüfung 24.9.2026, §6.7).
+const DICHTEN: ReadonlyArray<{ wert: Dichte; knopf: string }> = [
+  { wert: 'liste', knopf: 'Liste' },
+  { wert: 'karten', knopf: 'Karten' },
+]
+test.describe('R8 — Dichte-Sweep /rechtsprechung (a, b, c, f, g, h)', () => {
+  for (const { wert, knopf } of DICHTEN) {
+    for (const thema of THEMEN) {
+      const route = `/rechtsprechung [dichte=${wert}]`
+      test(`${route} — ${thema}`, async ({ page }, testInfo) => {
+        testInfo.setTimeout(90_000) // s. Begründung im Geometrie-Sweep oben
+        await themaVorwaehlen(page, thema)
+        await page.addInitScript(([k, d]) => {
+          try { localStorage.setItem(k, d) } catch { /* privater Modus */ }
+        }, [DICHTE_KEY, wert] as const)
+        await page.goto('/rechtsprechung')
+        const karten = page.locator('.lc-card a[href^="/rechtsprechung/"]')
+        try {
+          await expect(page.getByRole('button', { name: knopf, exact: true })).toHaveAttribute('aria-pressed', 'true', { timeout: 20_000 })
+          await expect(page.locator('a[href^="/rechtsprechung/"]').first()).toBeVisible({ timeout: 20_000 })
+          if (wert === 'karten') await expect(karten.first()).toBeVisible()
+          else await expect(karten).toHaveCount(0)
+        } catch (e) {
+          const messwert = (e as Error).message.split('\n')[0].slice(0, 160)
+          GESAMMELTE_FUNDE.push({ route, viewport: 'vor-sweep', modus: thema, kategorie: 'dichte-rendert-nicht', selektor: `Dichte «${knopf}»`, messwert })
+          return
+        }
+        await sicher(route, thema, async () => {
+          for (const vp of VIEWPORTS) {
+            await page.setViewportSize({ width: vp.width, height: vp.height })
+            await page.waitForTimeout(60) // Reflow nach Resize abwarten
             const [geom, reiter] = await Promise.all([geometrieScan(page), reiterWortgrenzeScan(page)])
             for (const f of [...geom, ...reiter]) {
               GESAMMELTE_FUNDE.push({ route, viewport: vp.name, modus: thema, ...f })

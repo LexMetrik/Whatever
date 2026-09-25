@@ -24,7 +24,12 @@ export type RevisionZeile = RevisionBezug & {
  *  unbekannter Schlüssel wird NICHT angezeigt (keine erfundene Bezeichnung). */
 const WIRKUNG_LABEL: Readonly<Record<string, string>> = {
   aenderung: 'Änderung',
-  aufhebung: 'Aufhebung',
+  // W3-1 (Audit 25.9.2026): «Aufhebung» stand nackt neben dem Erlasstitel und
+  // liess sich als Aufhebung des GANZEN Erlasses lesen (Bsp. PatG AS 2026 232,
+  // OR TJPG AS 2026 323) — Fedlex meint hier aber `aufhebung` nur für EINZELNE
+  // Bestimmungen (die vollständige Aufhebung trägt den eigenen Schlüssel
+  // `vollstaendige-aufhebung` unten und bleibt unverändert).
+  aufhebung: 'hebt Bestimmungen auf',
   'vollstaendige-aufhebung': 'Vollständige Aufhebung',
   inkrafttreten: 'Inkrafttreten',
   teilinkraftsetzung: 'Teilinkraftsetzung',

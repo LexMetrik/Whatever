@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "AVIG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -21,6 +21,16 @@
         "datum": "2020-04-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_81__voll",
+        "zitierung": "Urteil 5A_384/2024 (nicht publ. in BGE 152 III 81)",
+        "regesteKurz": null,
+        "datum": "2025-09-10",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -83,6 +93,26 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_V_136",
+        "zitierung": "BGE 152 V 136",
+        "regesteKurz": "Art. 8 Abs. 1 AVIG; Art. 37 Abs. 3 AVIV; Bemessungszeitraum für den versicherten Verdienst bei verzögerter Anmeldung zum Taggeldbezug. Art. 37 Abs. 3 AVIV ist in Verbindung mit Art. 8 Abs. 1 AVIG zu verstehen. Art. 37 Abs. 3 AVIV findet…",
+        "datum": "2026-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_235",
         "zitierung": "BGE 150 V 235",
         "regesteKurz": "Art. 8 Abs. 1, Art. 24 Abs. 1 und 3 AVIG; Höhe des anzurechnenden Zwischenverdienstes. Unter dem erzielten Zwischenverdienst gemäss Art. 24 Abs. 1 und 3 AVIG ist nicht der arbeitgeberseitig ausbezahlte Geldbetrag, sondern der…",
@@ -131,29 +161,19 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_322",
-        "zitierung": "BGE 147 V 322",
-        "regesteKurz": "Art. 2 Abs. 3, Art. 10 Abs. 1 und Art. 23 lit. a BVG; Art. 1 Abs. 1 der Verordnung vom 3. März 1997 über die obligatorische berufliche Vorsorge von arbeitslosen Personen; Versicherungsschutz bei Eintritt der Arbeitsunfähigkeit nach der…",
-        "datum": "2021-07-06",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_342",
-        "zitierung": "BGE 147 V 342",
-        "regesteKurz": "Art. 8 Abs. 1 lit. e, Art. 13 Abs. 1 und 3 AVIG; Art. 12 Abs. 2 lit. a AVIV; Beitragszeit vorzeitig Pensionierter. Die Rechtsprechung zur Beitragszeit bei einer vorzeitigen Pensionierung ist dahingehend zu ändern, dass neben den im…",
-        "datum": "2021-06-15",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
       }
     ],
     "9": [
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_V_342",
         "zitierung": "BGE 147 V 342",
@@ -171,6 +191,16 @@
         "datum": "2020-03-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_136__voll",
+        "zitierung": "Urteil 8C_360/2025 (nicht publ. in BGE 152 V 136)",
+        "regesteKurz": null,
+        "datum": "2026-04-14",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -267,9 +297,39 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_136__voll",
+        "zitierung": "Urteil 8C_360/2025 (nicht publ. in BGE 152 V 136)",
+        "regesteKurz": null,
+        "datum": "2026-04-14",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "13": [
+      {
+        "key": "bge_152_V_136",
+        "zitierung": "BGE 152 V 136",
+        "regesteKurz": "Art. 8 Abs. 1 AVIG; Art. 37 Abs. 3 AVIV; Bemessungszeitraum für den versicherten Verdienst bei verzögerter Anmeldung zum Taggeldbezug. Art. 37 Abs. 3 AVIV ist in Verbindung mit Art. 8 Abs. 1 AVIG zu verstehen. Art. 37 Abs. 3 AVIV findet…",
+        "datum": "2026-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_V_144",
         "zitierung": "BGE 148 V 144",
@@ -293,6 +353,16 @@
     ],
     "14": [
       {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_44",
         "zitierung": "BGE 150 V 44",
         "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor…",
@@ -313,6 +383,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_145",
+        "zitierung": "BGE 152 III 145",
+        "regesteKurz": "Art. 38a Abs. 1 Satz 1 VVG; Schadenminderungspflicht der krankentaggeldversicherten Person; arbeitsplatzbezogene Arbeitsunfähigkeit; Übergangstaggeld. Allgemeine Versicherungsbedingungen einer Krankentaggeldversicherung dürfen die…",
+        "datum": "2025-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_V_296",
@@ -369,6 +449,26 @@
     ],
     "17": [
       {
+        "key": "bge_152_V_106",
+        "zitierung": "BGE 152 V 106",
+        "regesteKurz": "Art. 30 Abs. 1 lit. c AVIG; Art. 34 Abs. 1 BV; keine Pflicht zur Stellensuche für Bundesparlamentarier vor den Neuwahlen. Ein Bundesparlamentarier, der sich zur Wiederwahl zur Verfügung stellt, ist nicht gehalten, drei Monate vor den…",
+        "datum": "2025-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_145",
+        "zitierung": "BGE 152 III 145",
+        "regesteKurz": "Art. 38a Abs. 1 Satz 1 VVG; Schadenminderungspflicht der krankentaggeldversicherten Person; arbeitsplatzbezogene Arbeitsunfähigkeit; Übergangstaggeld. Allgemeine Versicherungsbedingungen einer Krankentaggeldversicherung dürfen die…",
+        "datum": "2025-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_198",
         "zitierung": "BGE 150 V 198",
         "regesteKurz": "Art. 114 Abs. 5 BV; Art. 5 Abs. 1 lit. c und Art. 13 Abs. 2 und 3 ÜLG (in Kraft seit 1. Juli 2021); Überbrückungsleistungen für ältere Arbeitslose; Anspruchsvoraussetzungen für die Überbrückungsleistungen; Verzicht auf Vermögenswerte;…",
@@ -395,6 +495,16 @@
         "datum": "2020-03-11",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_60__voll",
+        "zitierung": "Urteil 8C_753/2024 (nicht publ. in BGE 152 V 60)",
+        "regesteKurz": null,
+        "datum": "2025-09-01",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -483,6 +593,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_136__voll",
+        "zitierung": "Urteil 8C_360/2025 (nicht publ. in BGE 152 V 136)",
+        "regesteKurz": null,
+        "datum": "2026-04-14",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "24": [
@@ -521,6 +641,16 @@
     ],
     "27": [
       {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_V_136",
         "zitierung": "BGE 149 V 136",
         "regesteKurz": "Art. 114 Abs. 5 BV; Art. 3 Abs. 1, Art. 4 Abs. 1 und Art. 5 Abs. 1 lit. b ÜLG (in Kraft seit 1. Juli 2021); Art. 8, Art. 15 und Art. 16 des Abkommens vom 21. Juni 1999 zwischen der Schweizerischen Eidgenossenschaft einerseits und der…",
@@ -532,6 +662,16 @@
       }
     ],
     "28": [
+      {
+        "key": "bge_152_III_145",
+        "zitierung": "BGE 152 III 145",
+        "regesteKurz": "Art. 38a Abs. 1 Satz 1 VVG; Schadenminderungspflicht der krankentaggeldversicherten Person; arbeitsplatzbezogene Arbeitsunfähigkeit; Übergangstaggeld. Allgemeine Versicherungsbedingungen einer Krankentaggeldversicherung dürfen die…",
+        "datum": "2025-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_V_322",
         "zitierung": "BGE 147 V 322",
@@ -586,6 +726,26 @@
       }
     ],
     "30": [
+      {
+        "key": "bge_152_V_106",
+        "zitierung": "BGE 152 V 106",
+        "regesteKurz": "Art. 30 Abs. 1 lit. c AVIG; Art. 34 Abs. 1 BV; keine Pflicht zur Stellensuche für Bundesparlamentarier vor den Neuwahlen. Ein Bundesparlamentarier, der sich zur Wiederwahl zur Verfügung stellt, ist nicht gehalten, drei Monate vor den…",
+        "datum": "2025-12-16",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_60",
+        "zitierung": "BGE 152 V 60",
+        "regesteKurz": "Art. 30 Abs. 1 lit. c AVIG; Pflicht zur Stellensuche während der Rekrutenschule. Wie jeden vollzeitbeschäftigten Erwerbstätigen kann die Arbeitssuche auch einen Rekruten, je nach seinem konkreten Einsatz, vor besondere Herausforderungen…",
+        "datum": "2025-09-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_V_136",
         "zitierung": "BGE 149 V 136",
@@ -861,6 +1021,18 @@
         "gewicht": 0
       }
     ],
+    "71d": [
+      {
+        "key": "bge_152_V_136",
+        "zitierung": "BGE 152 V 136",
+        "regesteKurz": "Art. 8 Abs. 1 AVIG; Art. 37 Abs. 3 AVIV; Bemessungszeitraum für den versicherten Verdienst bei verzögerter Anmeldung zum Taggeldbezug. Art. 37 Abs. 3 AVIV ist in Verbindung mit Art. 8 Abs. 1 AVIG zu verstehen. Art. 37 Abs. 3 AVIV findet…",
+        "datum": "2026-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "83a": [
       {
         "key": "bge_150_V_249",
@@ -879,6 +1051,18 @@
         "zitierung": "BGE 146 V 104",
         "regesteKurz": "Art. 3 und Art. 90c Abs. 1 AVIG; Beitragspflicht bei nachträglicher Lohnzahlung. Die Bestimmung des Beitragssatzes einer Lohnnachzahlung (Art. 5 Abs. 1 AHVG) ist nicht oder nicht ausschliesslich auf der Ebene des Beitragsbezugs…",
         "datum": "2020-04-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "9a": [
+      {
+        "key": "bge_152_V_136",
+        "zitierung": "BGE 152 V 136",
+        "regesteKurz": "Art. 8 Abs. 1 AVIG; Art. 37 Abs. 3 AVIV; Bemessungszeitraum für den versicherten Verdienst bei verzögerter Anmeldung zum Taggeldbezug. Art. 37 Abs. 3 AVIV ist in Verbindung mit Art. 8 Abs. 1 AVIG zu verstehen. Art. 37 Abs. 3 AVIV findet…",
+        "datum": "2026-04-14",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

@@ -43,7 +43,10 @@ in `tools/rechtsprechung-pipeline.md`). Wähle nach dem, was in den Korpus soll:
   (`ladeBestandSnapshots`) und ergänzt nur die frisch geholten Zweige — er zieht die
   bestehenden BGE/Bund/Kanton **nicht** über die Live-API neu (§6: kein
   Bestand-Drift). Das ist der Default für jede gezielte Ergänzung (z. B. neue
-  eidg. Gerichte, `--bge-refresh` gekappter BGE). Ohne `--additiv` würde der
+  eidg. Gerichte, seit 25.9.2026 auch kantonale per `--courts`, je Gericht die N
+  neuesten **neuen** nach Datum — Bestands-ids fallen vor der Auswahl heraus;
+  nicht erreichbare Gerichte werden «übersprungen» gemeldet; `--bge-refresh`
+  gekappter BGE). Ohne `--additiv` würde der
   bestehende Korpus überschrieben.
 - **Leer-Guard (§6):** Wurden Quellen angefordert, aber nichts geholt (OCL down),
   bleibt der Korpus **unberührt** statt entwertet. Ein leeres Ergebnis ist ein
@@ -83,7 +86,15 @@ Nicht nur «Tore grün», sondern die volle Definition of Done (§14.4):
    Output-only-Diffs (`public/rechtsprechung/**`) — dort die Pflicht-Gegenprüfung
    dennoch fahren.
    Linsen: die vier Invarianten oben + die OCL-Quirk-Liste aus
-   `tools/rechtsprechung-pipeline.md`. Davon getrennt der user-getriggerte
+   `tools/rechtsprechung-pipeline.md` + **Zuordnung inhaltlich**: Stichprobe der
+   `normKeys` neuer Einträge (Kürzel → Erlass) gegen die DE-Regeste, gezielt auf
+   sprachübergreifende Homonyme (Beleg #1099, 25.9.2026: fr. «AIMP» = IVöB lief als
+   it. «AIMP» = IRSG — neun Beschaffungs-BGE unter dem IRSG, sieben davon schon live;
+   Runde 1 hatte nur Determinismus/Verdrängung geprüft) + **Datum gegen den amtlichen
+   Urteilskopf** (Beleg #1117: OCL-`decision_date` bei GR/BE/SG/AG falsch — Mitteilungs- bzw.
+   BGer-Datum; 20/24 im Bestand, Posten offen) + **neue Richter-Slugs** in `richter.json` auf
+   Phantome (Rollenwörter, Einwort-Slugs — `check:besetzung` erkennt sie nicht; Beleg #1117:
+   «Vorsitz Martin Stupf», «Mark»/«Schweizer»). Davon getrennt der user-getriggerte
    `review.md`-Audit («prüf das») — das ist **nicht** dieser Pflicht-Pass.
 3. **Status-Marker (§8)** gesetzt — `verifiziert`/«geprüft» **nie automatisch**
    (Zeitsperre bis 1.12.2026; Status-Hebung nur über den `abnahme`-Skill).

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "USG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -593,6 +593,18 @@
         "gewicht": 0
       }
     ],
+    "34": [
+      {
+        "key": "bge_152_II_311__voll",
+        "zitierung": "Urteil 1C_660/2024 (nicht publ. in BGE 152 II 311)",
+        "regesteKurz": null,
+        "datum": "2025-11-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "38": [
       {
         "key": "bge_151_II_593",
@@ -664,6 +676,16 @@
       }
     ],
     "10a": [
+      {
+        "key": "bge_152_II_461",
+        "zitierung": "BGE 152 II 461",
+        "regesteKurz": "Art. 83 lit. z BGG; Art. 22 RPG; Art. 10a Abs. 1 USG; Windpark Montagne-de-Buttes; Frage von grundsätzlicher Bedeutung; Pflicht zur Festlegung des Modells der Windenergieanlage bei der Erteilung der Baubewilligung. Art. 83 lit. z BGG gilt…",
+        "datum": "2025-12-01",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_II_547",
         "zitierung": "BGE 150 II 547",
@@ -741,6 +763,18 @@
         "zitierung": "BGE 146 II 36",
         "regesteKurz": "Umfang der Umweltverträglichkeitsprüfung (UVP; Art. 8 und 10a USG, Art. 37 und 37m LFG). Pflicht, bei einer UVP alle Einzelanlagen zu beurteilen, die aufgrund ihres räumlichen, funktionalen und zeitlichen Zusammenhangs als Gesamtanlage im…",
         "datum": "2019-10-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "10c": [
+      {
+        "key": "bge_152_II_461",
+        "zitierung": "BGE 152 II 461",
+        "regesteKurz": "Art. 83 lit. z BGG; Art. 22 RPG; Art. 10a Abs. 1 USG; Windpark Montagne-de-Buttes; Frage von grundsätzlicher Bedeutung; Pflicht zur Festlegung des Modells der Windenergieanlage bei der Erteilung der Baubewilligung. Art. 83 lit. z BGG gilt…",
+        "datum": "2025-12-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -857,6 +891,16 @@
         "datum": "2021-11-25",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_311__voll",
+        "zitierung": "Urteil 1C_660/2024 (nicht publ. in BGE 152 II 311)",
+        "regesteKurz": null,
+        "datum": "2025-11-27",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },

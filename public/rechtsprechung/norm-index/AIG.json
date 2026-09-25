@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "AIG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -71,6 +71,18 @@
         "gewicht": 0
       }
     ],
+    "13": [
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "17": [
       {
         "key": "bge_151_I_306",
@@ -121,6 +133,16 @@
     ],
     "30": [
       {
+        "key": "bge_151_I_62",
+        "zitierung": "BGE 151 I 62",
+        "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
+        "datum": "2024-07-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_149_I_66",
         "zitierung": "BGE 149 I 66",
         "regesteKurz": "Art. 8 EMRK; Art. 30 Abs. 1 lit. k und Art. 61 Abs. 2 AIG; Umfang des Aufenthaltsrechts gestützt auf das Privatleben nach Erlöschen der Aufenthaltsbewilligung. Hinweis auf die Rechtsprechung, wonach sich ein Ausländer nach einem…",
@@ -141,22 +163,22 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_I_62",
-        "zitierung": "BGE 151 I 62",
-        "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
-        "datum": "2024-07-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_149_I_248",
         "zitierung": "BGE 149 I 248",
         "regesteKurz": "Art. 8 Abs. 2, Art. 10 Abs. 2, Art. 16, 27 und 36 BV; Art. 8, 10 und 14 EMRK; Grund- und Menschenrechtskonformität eines partiellen Bettelverbots; abstrakte Normenkontrolle. Bettelei fällt in den Schutzbereich des Grundrechts der…",
         "datum": "2023-03-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_409__voll",
+        "zitierung": "Urteil 2C_64/2025 (nicht publ. in BGE 152 II 409)",
+        "regesteKurz": null,
+        "datum": "2025-10-21",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -462,6 +484,16 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
         "gewicht": 0
       },
       {
@@ -513,6 +545,16 @@
         "zitierung": "BGE 151 II 737",
         "regesteKurz": "Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…",
         "datum": "2025-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -585,6 +627,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_IV_249",
         "zitierung": "BGE 151 IV 249",
         "regesteKurz": "Art. 47, 54 und 66a ff. StGB; Strafzumessung bei gleichzeitiger Landesverweisung. Die gleichzeitig ausgesprochene Landesverweisung ist bei der Strafzumessung nicht strafmindernd zu berücksichtigen (E. 5.3). Regeste Art. 47, 54 et 66a ss…",
@@ -631,16 +683,6 @@
         "datum": "2019-11-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bger_2C_12_2025",
-        "zitierung": "BGer 2C_12/2025 vom 8. September 2025",
-        "regesteKurz": "Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung",
-        "datum": "2025-09-08",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -760,6 +802,16 @@
       }
     ],
     "68": [
+      {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_I_91",
         "zitierung": "BGE 149 I 91",
@@ -968,13 +1020,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 5
       },
       {
         "key": "bge_149_IV_231",
         "zitierung": "BGE 149 IV 231",
         "regesteKurz": "Art. 66a und 66d StGB; strafrechtliche Landesverweisung. Bestätigung der Grundzüge der strafrechtlichen Landesverweisung (E. 2.1). Allfällige Vollzugshindernisse der Landesverweisung im Sinne von Art. 66d Abs. 1 StGB müssen bereits im…",
         "datum": "2023-03-06",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_151_I_62",
+        "zitierung": "BGE 151 I 62",
+        "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
+        "datum": "2024-07-23",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -991,40 +1053,40 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_I_306",
         "zitierung": "BGE 151 I 306",
         "regesteKurz": "Art. 14 BV; Art. 12 EMRK; Art. 98 Abs. 4 ZGB; Recht auf Ehe; illegal anwesende Personen. Zusammenfassung der Rechtsprechung zum Recht auf Ehe in Zusammenhang mit dem Aufenthaltsrecht in der Schweiz (E. 5.1-5.4). Die Nichterteilung von…",
         "datum": "2025-05-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_II_237",
-        "zitierung": "BGE 151 II 237",
-        "regesteKurz": "Art. 42 Abs. 1, Art. 51 Abs. 1 lit. b und Art. 83 Abs. 2 AIG; Art. 97 Abs. 1 BGG; Gesuch um Wiedererwägung der Verweigerung des Familiennachzugs wegen des Vorliegens von Widerrufsgründen; Pflicht zur Ermittlung des entscheiderheblichen…",
-        "datum": "2024-09-25",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_I_62",
-        "zitierung": "BGE 151 I 62",
-        "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
-        "datum": "2024-07-23",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_II_421",
-        "zitierung": "BGE 147 II 421",
-        "regesteKurz": "Art. 1 Abs. 1 des Übereinkommens über die Rechtsstellung der Staatenlosen; Anerkennung des Status der Staatenlosigkeit für Personen der kurdischen Minderheit der Ajanib der Provinz al-Hasaka in Syrien und vorläufige Aufnahme in der…",
-        "datum": "2021-04-30",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1040,7 +1102,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 2
+        "gewicht": 3
       },
       {
         "key": "bge_150_I_93",
@@ -1050,13 +1112,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_151_I_62",
         "zitierung": "BGE 151 I 62",
         "regesteKurz": "Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…",
         "datum": "2024-07-23",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1069,6 +1141,18 @@
         "zitierung": "BGE 147 I 268",
         "regesteKurz": "Art. 83 lit. c Ziff. 2 BGG; Art. 8 EMRK; prekärer Aufenthalt; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung im Lichte des Anspruchs auf Achtung des Privatlebens. Zulässigkeit der Beschwerde in…",
         "datum": "2020-11-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "86": [
+      {
+        "key": "bge_152_II_89",
+        "zitierung": "BGE 152 II 89",
+        "regesteKurz": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz…",
+        "datum": "2026-01-27",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1097,6 +1181,18 @@
         "gewicht": 0
       }
     ],
+    "89": [
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "90": [
       {
         "key": "bge_147_II_49",
@@ -1107,6 +1203,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_II_237",
@@ -1151,12 +1257,32 @@
     ],
     "96": [
       {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_II_1",
         "zitierung": "BGE 148 II 1",
         "regesteKurz": "Art. 34 Abs. 1, Art. 58a, Art. 62 Abs. 1 lit. d und g, Art. 63 Abs. 2 und 3, Art. 96 Abs. 2 und Art. 99 AIG; Art. 62a, Art. 77a ff. und Art. 85 Abs. 1 VZAE; Art. 3 lit. g ZV-EJPD; Rückstufung von einer altrechtlich erteilten…",
         "datum": "2021-10-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_II_409__voll",
+        "zitierung": "Urteil 2C_64/2025 (nicht publ. in BGE 152 II 409)",
+        "regesteKurz": null,
+        "datum": "2025-10-21",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
@@ -1235,6 +1361,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_IV_329",
@@ -1343,6 +1479,18 @@
         "gewicht": 0
       }
     ],
+    "120": [
+      {
+        "key": "bge_152_II_409",
+        "zitierung": "BGE 152 II 409",
+        "regesteKurz": "Art. 13 Abs. 1, Art. 84 Abs. 5, Art. 89 und 90 lit. c AIG; Art. 8 Abs. 1 und 2 lit. a und b und Art. 31 Abs. 2 VZAE; Art. 8 EMRK; Identitätsnachweis bei der Erteilung einer Aufenthaltsbewilligung anstelle der vorläufigen Aufnahme; Schritte…",
+        "datum": "2025-10-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "126": [
       {
         "key": "bge_151_I_382",
@@ -1440,13 +1588,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_151_II_737",
         "zitierung": "BGE 151 II 737",
         "regesteKurz": "Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…",
         "datum": "2025-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_157",
+        "zitierung": "BGE 152 I 157",
+        "regesteKurz": "Art. 3 EMRK; Art. 50 Abs. 1 lit. b und Abs. 2 und Art. 52 AIG; Härtefall nach Auflösung der Ehe oder Familiengemeinschaft, wenn Homosexualität im Wegweisungsland strafbar ist. Wichtige persönliche Gründe, die eine Verlängerung der…",
+        "datum": "2025-10-02",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1514,7 +1672,17 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
+      },
+      {
+        "key": "bge_152_II_157",
+        "zitierung": "BGE 152 II 157",
+        "regesteKurz": "Art. 4 FZA in Verbindung mit Art. 6 Anhang I FZA; Art. 6 FZA in Verbindung mit Art. 24 Anhang I FZA; Wiedererlangung der Arbeitnehmereigenschaft im Sinne des FZA durch eine Person, die nach dem Verlust ihrer Arbeitnehmereigenschaft einen…",
+        "datum": "2025-05-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_II_277",

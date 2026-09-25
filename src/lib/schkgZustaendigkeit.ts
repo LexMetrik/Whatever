@@ -58,7 +58,7 @@ export interface SchkgInput {
 }
 
 interface SchkgNorm { artikel: string; bemerkung?: string }
-interface SchkgFrist { label: string; frist: string; norm: string; kritisch: boolean }
+export interface SchkgFrist { label: string; frist: string; norm: string; kritisch: boolean }
 interface SchkgSchritt { titel: string; text: string }
 
 export interface SchkgErgebnis {
@@ -361,6 +361,42 @@ export function bestimmeSchkgZustaendigkeit(input: SchkgInput): SchkgErgebnis {
   };
 }
 
+// ── Stillstand-Hinweis je Frist (RL-42 / Z1-06, Prüfung Rechtslogik 23.9.2026)
+// Wortlaute (Fedlex-Filestore, abgerufen 25.9.2026):
+//   Art. 145 Abs. 4 ZPO (SR 272, Fassung 1.7.2026): «Die Bestimmungen dieses
+//   Gesetzes über den Stillstand der Fristen sind für alle Klagen nach dem
+//   SchKG, die vor einem Gericht einzureichen sind, anwendbar. Sie sind für
+//   die Beschwerde vor der Aufsichtsbehörde nicht anwendbar.»
+//   Art. 56 Abs. 2 SchKG (SR 281.1, Fassung 1.1.2026): «Für die Klagen nach
+//   diesem Gesetz, die vor einem Gericht einzureichen sind, sind
+//   ausschliesslich die Bestimmungen der ZPO über den Stillstand der Fristen
+//   anwendbar.»
+// Anker gleich wie src/lib/schkgPresets.ts (RL-05/RL-17): Klagen → Art. 56
+// Abs. 2 SchKG (+ Art. 145 Abs. 4 Satz 1 ZPO), zpo_stillstand; Aufsichts-
+// beschwerde → Art. 145 Abs. 4 Satz 2 ZPO, Art. 63 SchKG nur bei Betreibungs-
+// handlung. Nur Fristen mit eindeutigem Regime; Fristen mit eigenem Regime
+// (Art. 74, 88 Abs. 2, 166 Abs. 2, BGG) und die Arrest-Fristen (Art. 278/279,
+// Rechtslage seit 1.1.2025 offen, siehe Presets) bleiben ohne Pauschal-Hinweis.
+// Als reine Ableitung aus der Frist-Norm gehalten (kein neues Feld im
+// SchkgErgebnis): Anzeige und Bericht rufen dieselbe Funktion (§3/§5).
+const ZPO_STILLSTAND_KLAGEN: ReadonlySet<string> = new Set([
+  'Art. 83 Abs. 2 SchKG',   // Aberkennungsklage
+  'Art. 86 Abs. 1 SchKG',   // Rückforderungsklage
+  'Art. 107 Abs. 5 SchKG',  // Widerspruchsklage (Gewahrsam Schuldner)
+  'Art. 108 Abs. 2 SchKG',  // Widerspruchsklage (Gewahrsam Dritter)
+  'Art. 107 Abs. 5 bzw. 108 Abs. 2 SchKG (je nach Grundbuch-Eintrag des Anspruchs)',
+  'Art. 148 Abs. 1 SchKG',  // Kollokationsklage Pfändung
+  'Art. 250 Abs. 1 SchKG',  // Kollokationsklage Konkurs
+]);
+const SCHKG_STILLSTAND_KLAGE = 'Gerichtliche Klage: Es gilt der Fristenstillstand der ZPO (Ostern ± 7 Tage, 15. Juli–15. August, 18. Dezember–2. Januar), nicht die Betreibungsferien (Art. 56 Abs. 2 SchKG; Art. 145 Abs. 4 Satz 1 ZPO).';
+const SCHKG_STILLSTAND_BESCHWERDE = 'Aufsichtsbeschwerde: KEIN Fristenstillstand der ZPO (Art. 145 Abs. 4 Satz 2 ZPO). Fällt das Fristende in die Betreibungsferien, verlängert Art. 63 SchKG die Frist nur, wenn die angefochtene Verfügung eine Betreibungshandlung ist — im Zweifel vom früheren Datum ausgehen.';
+
+export function schkgFristStillstand(f: SchkgFrist): string | null {
+  if (ZPO_STILLSTAND_KLAGEN.has(f.norm)) return SCHKG_STILLSTAND_KLAGE;
+  if (f.norm === 'Art. 17 Abs. 2 SchKG') return SCHKG_STILLSTAND_BESCHWERDE;
+  return null;
+}
+
 /** Amtliche Abfrage des zuständigen Betreibungs-/Konkursamts — deterministischer
  *  Einstieg zur konkreten Amtsadresse. Behörden-Audit 6.6.2026: die frühere
  *  BJ-eSchKG-URL (e-service.admin.ch/eschkg/app/verzeichnis) liefert 404;
@@ -380,11 +416,14 @@ export function schkgZustaendigkeitBericht(r: SchkgErgebnis): Berechnungsergebni
       { beschreibung: 'Betreibungsort (Wurzelgrösse)', zwischenergebnis: `${r.betreibungsort.text}.`, normen: r.betreibungsort.normen },
       { beschreibung: 'Forum für dieses Anliegen', zwischenergebnis: `${r.forum.stelle}. ${r.forum.text}`, normen: r.forum.normen },
       { beschreibung: 'Eingabe und Verfahren', zwischenergebnis: `${r.eingabe.art}. ${r.eingabe.verfahren}.`, normen: [] },
-      ...r.fristen.map((f) => ({
-        beschreibung: `Frist: ${f.label}${f.kritisch ? ' (Verwirkung)' : ''}`,
-        zwischenergebnis: `${f.frist} (${f.norm})`,
-        normen: [],
-      })),
+      ...r.fristen.map((f) => {
+        const stillstand = schkgFristStillstand(f);
+        return {
+          beschreibung: `Frist: ${f.label}${f.kritisch ? ' (Verwirkung)' : ''}`,
+          zwischenergebnis: `${f.frist} (${f.norm})${stillstand ? ` — ${stillstand}` : ''}`,
+          normen: [],
+        };
+      }),
       ...(r.kostenZahlungsbefehl ? [{
         beschreibung: 'Gebühr Zahlungsbefehl',
         zwischenergebnis: `CHF ${r.kostenZahlungsbefehl.gebuehrCHF.toFixed(2)} (Forderung ${r.kostenZahlungsbefehl.band} Franken)`,

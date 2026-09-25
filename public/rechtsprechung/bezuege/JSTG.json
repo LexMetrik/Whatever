@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"JSTG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -12,6 +12,7 @@
 "bge_149_IV_342":{"zitierung":"BGE 149 IV 342","regesteKurz":"Art. 3 Abs. 2 JStG; Art. 66a ff. StGB; Landesverweisung von Übergangsstraftätern. Ein dem Erwachsenenstrafrecht unterstehendes Delikt eines jungen Straftäters kann eine Anlasstat für eine (nicht obligatorische) Landesverweisung darstellen,…","datum":"2023-06-14","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_IV_10":{"zitierung":"BGE 151 IV 10","regesteKurz":"Art. 14 Abs. 1 und 2 JStPO; Grundsatz der Nichtöffentlichkeit der Hauptverhandlung im Jugendstrafverfahren. Das Jugendstrafverfahren findet unter Ausschluss der Öffentlichkeit statt. Das Jugendgericht und die Berufungsinstanz können eine…","datum":"2024-10-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BES.2023.136":{"zitierung":"Appellationsgericht BS BES.2023.136 vom 30.05.2024","regesteKurz":"Änderung der Massnahme, amtliche Verteidigung, Versetzung im Vollzug, Entschädigung für Freiheitsentzug","datum":"2024-05-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BES.2025.108":{"zitierung":"Appellationsgericht BS BES.2025.108 vom 13.02.2026","regesteKurz":"Nichtanhandnahme","datum":"2026-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2025.45":{"zitierung":"Appellationsgericht BS BES.2025.45 vom 02.07.2025","regesteKurz":"Stationäre Beobachtung","datum":"2025-07-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2018.2":{"zitierung":"Appellationsgericht BS SB.2018.2 vom 06.04.2022","regesteKurz":"Raufhandel","datum":"2022-04-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2020.119":{"zitierung":"Appellationsgericht BS SB.2020.119 vom 19.09.2025","regesteKurz":"Diebstahl, mehrfache (teilweise qualifizierte) Sachbeschädigung (grosser Schaden), Hausfriedensbruch, Hinderung einer…","datum":"2025-09-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -46,7 +47,7 @@
 "32":[{"key":"bge_148_IV_419","gewicht":0},{"key":"bge_148_IV_298__voll","gewicht":0,"erwaegungen":["E. 8.4"]}],
 "34":[{"key":"bs_appellationsgericht_SB.2022.23-20240926","gewicht":null}],
 "35":[{"key":"bs_appellationsgericht_SB.2024.16","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.23-20240926","gewicht":null},{"key":"bs_appellationsgericht_SB.2018.2","gewicht":null}],
-"36":[{"key":"bs_appellationsgericht_SB.2020.119","gewicht":null}]
+"36":[{"key":"bs_appellationsgericht_BES.2025.108","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.119","gewicht":null}]
 },
 "gesamtProArtikel":{
 "1":{"bge":3,"kantonal":5},
@@ -71,6 +72,6 @@
 "32":{"bge":1,"bger":1},
 "34":{"kantonal":1},
 "35":{"kantonal":3},
-"36":{"kantonal":1}
+"36":{"kantonal":2}
 }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { berechneAllgemeineFrist, STPO_FRIST_HINWEIS, type Einheit } from '../../lib/allgemeineFrist';
+import { allgemeineFristErgebnis, berechneAllgemeineFrist, STPO_FRIST_HINWEIS, type Einheit } from '../../lib/allgemeineFrist';
 import { berechneFrist } from '../../lib/zpoFristen';
 import { berechneSchkgFrist } from '../../lib/schkgFristen';
 import { berechneBggVwvgFrist, bvAusnahmenSatz, bvZustellfiktionSatz } from '../../lib/bggVwvgFristen';
@@ -10,6 +10,7 @@ import { KANTONE } from '../../lib/kantone';
 import { stillstandsperioden } from '../../data/zpoFeiertage';
 import type { Kanton } from '../../types/legal';
 import { ErgebnisBlock } from '../ErgebnisBlock';
+import { NormText } from '../NormText';
 import { DatumsFeld } from '../DatumsFeld';
 import { ErgebnisPlatzhalter, FehlerBox, Field, LiveHeader } from '../vorlagen/ui';
 import { IcsExportButton } from '../IcsExportButton';
@@ -130,14 +131,24 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   let ende = '';
   let endeZusatz = '';
   let zeilen: string[] = [];
+  // S5a (W2·29-WERKBANK-REST, 25.9.2026): Normbezüge der Startseiten-Kurzform
+  // (`minimal`) — wie der Fuss der Verzugszins-/Verjährungs-Kurzform
+  // (`SchnellFormFuss`). NUR aus der rechnenden Engine übernommen (§7, keine
+  // eigene Zuordnung): `normverweise` bzw. bei BGG/VwVG die Norm-Labels `normen`.
+  let normen: readonly string[] = [];
   let fehler = '';
   if (gueltig && ferien !== null) {
     try {
       if (ferien === 'keine') {
-        const r = berechneAllgemeineFrist({
+        // `allgemeineFristErgebnis` ist die Hülle derselben Engine (ruft
+        // `berechneAllgemeineFrist` mit derselben Eingabe, `resultat` = dessen
+        // Rückgabe) und trägt zusätzlich die Normverweise.
+        const erg = allgemeineFristErgebnis({
           start, laenge, einheit: einheitEffektiv,
           wochenendeVerschieben: true, feiertageVerschieben: true, kanton,
         });
+        const r = erg.resultat;
+        normen = erg.normverweise.map((n) => n.artikel);
         ende = `${r.endWochentag}, ${r.endDatum}`;
         endeZusatz = r.verschoben ? `verschoben: ${r.verschiebeGruende.join(' · ')}` : '';
         // RL-07/Q8-02: «Keine Ferien» ist auch der empfohlene StPO-Pfad (Hinweis
@@ -152,6 +163,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
         ende = r.diesAdQuem;
         endeZusatz = r.stillstandAktiv ? 'Stillstand (Art. 145 ZPO) berücksichtigt' : '';
         zeilen = [...r.annahmen, ...r.warnungen];
+        normen = r.normverweise.map((n) => n.artikel);
       } else if (ferien === 'vwvg' || ferien === 'bgg') {
         const r = berechneBggVwvgFrist({ regime: ferien, ereignis: start, einheit: einheitEffektiv, laenge, kanton });
         ende = r.diesAdQuem;
@@ -160,6 +172,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           : 'Stillstand gilt nur für nach Tagen bestimmte Fristen – hier nicht angewendet';
         // RL-15/F3-05: Zustellfiktion (Art. 44 Abs. 2 BGG / Art. 20 Abs. 2bis VwVG).
         zeilen = [...r.annahmen, ...r.warnungen, bvAusnahmenSatz(ferien), bvZustellfiktionSatz(ferien)];
+        normen = r.normen;
       } else {
         const r = berechneSchkgFrist({
           ereignis: start, einheit: einheitEffektiv as 'tage' | 'monate' | 'jahre', laenge,
@@ -167,6 +180,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
         });
         ende = r.diesAdQuem;
         zeilen = [...r.annahmen, ...r.warnungen];
+        normen = r.normverweise.map((n) => n.artikel);
       }
     } catch {
       fehler = 'Mit diesen Eingaben lässt sich keine Frist berechnen – bitte Datum und Dauer prüfen.';
@@ -295,13 +309,24 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           1280 bleibt es darum bei drei bzw. zwei Spalten. */}
       <div className={zeile
         ? 'grid grid-cols-2 gap-3 items-end sm:grid-cols-3 xl:grid-cols-[11.5rem_4.5rem_6rem_5rem_minmax(10.5rem,1fr)]'
-        : `grid ${minimal ? 'grid-cols-1 @[16.5rem]:grid-cols-2' : `grid-cols-2 ${pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')}`} gap-3 max-w-2xl items-end`}>
+        : `grid ${minimal ? 'grid-cols-1 @[16.5rem]:grid-cols-2' : pk('grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-4', 'grid-cols-2 @3xl/pane:grid-cols-4')} gap-3 max-w-2xl items-end`}>
         {/* `minimal` (nur Startseite) misst seine FLÄCHE, nicht das Fenster
             (W2·29-WERKBANK-START-LAYOUT 24.9.2026): seit das Schnellwerkzeug in
             einer Mulde mit Innenabstand steht (`start/StartFlaeche`, ein
             `@container`), blieben @320 nur 240 px — das Datum brauchte 126 px
             Feld und bekam 114 (R8 a/b, `e2e/kein-abschnitt`). Zwei Spalten erst
             ab 16.5 rem = 2 × 126 px + 12 px Abstand, darunter eine. */}
+        {/* Dieselbe Wurzel auf /rechner/tagerechner (W2·29-WERKBANK-REST S3,
+            25.9.2026, Posten «R8 unter Last @320»): die Werkzeug-Karte liess
+            @320 232 px Inhalt, zwei Spalten à 110 px — das Datum «25.09.2026»
+            braucht 126 px (82 px Text + 44 px Kalender-Knopf) und stand
+            gekappt da, deterministisch, nicht nur unter Last (gemessen: 126/110
+            nach 60, 300 und 1500 ms). Bisher stand das in der R8-Allowlist.
+            Zwei Spalten jetzt erst ab 360 px Fenster (Karte 272 px Inhalt →
+            2 × 130 px); darunter eine. Viewport statt Container-Query, weil
+            eine `@[…]`-Stufe neben `sm:grid-cols-4` in der CSS-Reihenfolge
+            nicht sicher vor ihr stünde; das Fenster-Pendant (`pk`, zweites
+            Argument) bleibt unverändert. */}
         {/* R2-E/F1-2: dieselbe `Field`-Anatomie wie in allen übrigen Rechner-
             Formularen (ZPO, SchKG, Gewährleistung …) statt der hauseigenen
             `<label><span class="lc-overline">`-Kopie — Label und Control sind
@@ -482,6 +507,15 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
               </p>
             )}
           </div>
+          {/* S5a: Normbezüge nur in der Startseiten-Kurzform — der volle
+              Rechner zeigt sie im Rechenweg. Schrift und Form wie
+              `SchnellFormFuss` (`data-schnell-normen`), dieselbe
+              Verweis-Erkennung (`NormText`, Fedlex-Link je Artikel). */}
+          {minimal && normen.length > 0 && (
+            <p data-schnell-normen className="pt-2 font-sans text-xs leading-relaxed text-ink-500">
+              Normen: <NormText text={normen.join(' · ')} />
+            </p>
+          )}
         </ErgebnisBlock>
       )}
     </div>

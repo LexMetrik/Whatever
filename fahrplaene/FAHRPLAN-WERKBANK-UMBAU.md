@@ -376,6 +376,8 @@ leserV3Modell.ts 419, uebersichtAngaben.ts 417. 4 index.css ~71 % Kommentare →
 «Gliederung links 250 px», gebaut sind 288 px (18 rem, seit W2·19 S2) — nicht nachgezogen, die
 Blatt-Schwellen rechnen mit 288. Soll-Zeile Ziff. 2 am 24.9.2026 auf 288 px nachgeführt. 7 (24.9.2026) `src/components/NormText.tsx` 795 Z., nicht in `scripts/schlankheit-bestand.json` — `check:schlankheit` wird ab 801 rot; Schneiden ist in `W2·29-WERKBANK-NACHLAUF` gebucht, vorher nicht wachsen lassen.
 
+**Abschluss LESER 25.9.2026 (Entscheid David: «Leser Welle 3 als letzte Runde, dann Rest starten»):** Welle 3 als ein Durchgang — Audit 13 Befunde/0 kritisch; Daten-Rest #1096 (GP bestanden, live 1866236f), UI-Befunde #1097; DK-24 fällt weg (beide Knopf-Formen sind Entscheide 24.9.: S6 W1f / D-E4). Rest umgehängt: Darstellung → `W2·29-WERKBANK-NACHLAUF` N2, Daten → `W2·27-BUND-FERTIG`/`W2·6d-ENTSTEHUNG`, Werkzeug → `QS-EFFIZIENZ`/`QS-BASIS` (je Posten mit Zeile «Umgehängt 25.9.2026»). `LESER=done`; weiter mit §5f S0.
+
 ## §5b · KATALOGE — Bauplan in Scheiben (Planung 23.9.2026)
 
 **Kernbefunde** (lex-recherche Opus, 23.9.2026): (1) EINE Kachel = `ui/RubrikKachel` + Prop `reg`
@@ -659,7 +661,8 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
 `layout/LeserKopfGeruest`, `kontext/KontextPanel`, `verzahnung/StatusBadge`, `SeitenTitel`/`FehlSeite`/`QuellLink`.
 Nicht umgebaut: `EntscheidLeser.tsx` (1130 Z.), `MaterialLeser.tsx`, `Materialien.tsx`, `MaterialienDeckung.tsx`,
 statische Seiten, Alt-Block `lr8-*` (`index.css` ~4715–4990, nur `components/entstehung/*`). Heute rendert kein
-Vitest den Entscheid-Leser. Mit allen 39 Posten wären es 4–5 Sessions — über dem Abbruchkriterium (§2 Ziff. 4).
+Vitest den Entscheid-Leser *(präzisiert 25.9.2026, Bau S0: gilt für die Seite; `EntscheidBody` rendern schon
+`entscheid-body-quarantaene.test.tsx` und `entscheid-konsistenz.test.tsx`)*. Mit allen 39 Posten wären es 4–5 Sessions — über dem Abbruchkriterium (§2 Ziff. 4).
 
 **Entscheide David 24.9.2026 (Chat):** (1) Design-Feinpaket (D6 Dunkel-Paket, D8b Mono-Diät, D8c Motiv-Katalog,
 Radius, CSS-Querschnitt) **aus REST gelöst** → eigener Schritt `W2·29-WERKBANK-NACHLAUF` nach REST. (2) F0.5:
@@ -671,6 +674,13 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
   ein `/materialien/:key`, `/materialien/deckung`, `/methodik`, `/ueber`, `/kontakt`, `/datenschutz`, 404,
   `/rechtsprechung/:key` mit 3 Fixtures über Fetch-Stub) + Entscheid-Kern-Probe (`EntscheidBody`+`RegesteBlock`,
   Hash, wie LESER-S0); `kein-abschnitt`-Sweep um Karten-Dichte. Rot-Beweis Pflicht.
+  **Gebaut 25.9.2026** (Spec-Korrektur: die Rest-Routen stehen nicht im Routen-Manifest, sondern in
+  `src/RouteSwitch.tsx` — die Ratsche rendert `<RouteSwitch/>` und misst den GELADENEN Zustand über einen
+  beidseitig dichten Fetch-Stub, nicht den Erst-Render wie R0): `src/tests/rest-flaechen-ratsche.test.tsx`
+  (13 Adressen, Fixture `rest-flaechen.json` + `rest-flaechen/netz.json`, Schreib-Schalter
+  `REST_FLAECHEN_SCHREIBEN=1`), `src/tests/EntscheidBody.kernprobe.test.tsx` (12 Korpus-Fälle, Hash voll/struktur,
+  Fixture `kern-probe-entscheid.json`; Such-Hervorhebung nicht abgedeckt), `e2e/kein-abschnitt.e2e.ts` Block
+  «Dichte-Sweep /rechtsprechung» (Liste + Karten). Rot-Beweise im PR-Body.
 - **S1 Entscheid-Leser (Inventar 3.3)** (bau, ~1, dep S0): Kopf (Overline Gericht · Sammlung, H1 Zitierung,
   Faktenzeile, Herkunft/ECLI), Regeste, Reiter, Lesemodus, Provenienz-Fuss, Kontext-Blatt; **Körper byte-gleich**.
   Posten D8a slate, «maschinell»-Etikett @390, SchalterGruppe → `ui/`. Geteilt mit LESER: `LeserKopfGeruest`,
@@ -678,13 +688,49 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
 - **S2 Materialien (3.4–3.6)** (bau, ~1, dep S0, parallel S1): Übersicht in der Kartenzeile aus K1, Material-Leser,
   Deckungsseite; **nicht** Board-Tabelle/Filterspalte (neue Funktion). `lr8-*`/`lr7-*`-Rückbau am Ende von S2,
   Leser-Specs (`entstehung-*`, `leser-bezuege-inhalt-d30`) mitfahren.
+  **Gebaut 25.9.2026 (S1 + S2 parallel, je Bug-Check Sonnet «bestanden mit Auflagen», Auflagen erfüllt):**
+  S1 — Kopf auf `LeserKopfGeruest register="r"` (Band «Rechtsprechung», additive Props `register`/`nachBand`),
+  «maschinell» als Randnotiz `StatusBadge variant="text"`, D8a Rollen-Schicht, `ui/SchalterGruppe`,
+  Ladeanzeige, Verhaltensänderungen (Zählzeile leer, Suche ab zwei Zeichen, Marken-Rücksetzen); Körper
+  byte-gleich (Kern-Probe unverändert); ECLI aus dem Board NICHT gezeigt (selbst gebildet, §7/§8 — wartet
+  auf David); MM3-Flake lokal nicht reproduzierbar (Posten offen). S2 — Materialien-Übersicht/-Leser/
+  Deckung auf der Werkbank, Rückbau `lr8-*`/`lr7-bez-*`, DK-06, VS-08, Wortlaut Materialien (Gesetzgebung)/
+  Erläuterungen (Verwaltungspraxis). Hinweisbox der Material-Einzelseite je Gattung wartet auf David.
 - **S3 Statische Seiten, Druck, mobil (1.5, 6)** (bau, ~0,5–1): Methodik, Über, Kontakt, Datenschutz, 404;
   `@media print`/`print:` sichten; Posten WerkzeugKopf-Intro @390 (Kurzfassung + aufklappbar, kein Textverlust),
   Tagerechner @320 unter Last, LM-066 Bedienhöhen (`Tabs.tsx` HOEHE vs. `.lc-input`).
+  **Gebaut 25.9.2026 (Bug-Check Sonnet «bestanden mit Auflagen»):** Spec-Korrektur — die statischen Seiten
+  standen schon auf `SeitenKopf`, zu löschen blieben lokale Abschnitt-Hüllen und die Kontakt-Karte. Meta-Seiten
+  ohne Reiter (`lib/tabs.oeffnetReiter`); DK-09 über `@media not print` um den `html.dark`-Tokenblock (keine
+  zweite Wertequelle); Kontrast `brass-500` hell #7A766E → #78746C, Fristbeginn-Tinte `text-paper` (4.54/5.51:1;
+  Fristende war seit GRUNDTON 23.9. schon 4.64) — axe 4.13 lokal grün, Dependabot-Bump der Browser-Tests damit
+  entblockt; WerkzeugKopf-Intro < 640 px drei Zeilen + «Weiterlesen»; Tagerechner @320 deterministisch (nicht
+  lastabhängig), 6 Allowlist-Einträge gestrichen; `kein-abschnitt` wartet auf geladene Daten. LM-066 wartet auf David.
 - **S5 Rückbau und Schluss** (bau, ~0,5): Rest `FAHRPLAN-UI-BEFUNDE.md` abhaken/gegenstandslos → Archiv;
   QS-UI (+ ⧉-Quittung), `W2·19-DESIGN-KONSISTENZ`, `W2·24-C` in Chronik/Archiv; PROJEKTBESCHRIEB §3/§4,
   Inventar datieren; Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Werkzeuge-Blatt eine Quelle,
   Generator «Staatsverträge»); Lagebild `--paper` aus `design/tokens.json`.
+  **Gebaut 25.9.2026** (S5a `#1115`, `9196af793`, gemergt 15:03 UTC; S5b `#1116`, `36b4afd46`, gemergt
+  15:28 UTC — Beleg `gh pr view 1115/1116 --json number,state,mergeCommit,mergedAt`; **S5c-Doku, diese
+  Session**): `FAHRPLAN-UI-BEFUNDE.md` alle 14 offenen Checkboxen gegen Ist-Code geprüft (2 erledigt/
+  überholt, 1 entschieden, 1 umgehängt, 9 echt offen ⇒ Posten unter `W2·29-WERKBANK-NACHLAUF`) — **nicht
+  archiviert**: der Fahrplan trägt einen lebenden Zeiger (`W2·17-UI-BEFUNDE`, status ready, §9/§24 physisch
+  noch vorhanden). `W2·19-DESIGN-KONSISTENZ` **nicht geschlossen** — trägt entgegen der Planungs-Annahme
+  Stand 25.9. wieder 8 offene Posten (Herz-und-Nieren-Befunde HN-D1–D6, PR #1081, 24.9. nachträglich
+  eingebucht); `W2·24-C`/`QS-UI` unverändert 0. Posten geschlossen/verortet (Treffer-Landkarte,
+  W2·9-Kachelhöhen inkl. LM-032→NACHLAUF, Startseite-Breite→`W2·31-BILDSCHIRMBREITE`). PROJEKTBESCHRIEB
+  §3/§4 auf Ist gezogen (Test-/E2E-Zahlen, Prerender-Routen, Katalog-Statusverteilung — DB-Korpuszahlen
+  nicht verifizierbar, `daten/` in diesem Worktree gitignored). `docs/INVENTAR-FUNKTIONEN.md` Kopf datiert.
+  `DESIGN-REGLEMENT.md` 3 veraltete Stellen ergänzt (§0.2b, nicht überschrieben). Lagebild `--paper` liest
+  jetzt `design/tokens.json`. Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Generator
+  «Staatsverträge») ist in S5a erledigt (#1115; Systematik «0» gegenstandslos seit #1025) — korrigiert
+  25.9.2026 von der Haupt-Session (die S5c-Doku-Zeile behauptete «bleibt offen»).
+- **REST abgeschlossen 25.9.2026** (eine Session, Abbruchkriterium §2 Ziff. 4 eingehalten): S0 #1107, S1 #1111,
+  S2 #1110, S3 #1114, S5a #1115, S5b #1116, S5c-Doku #1119, S5c-Bau + Abschluss (dieser PR). Entscheide David
+  25.9.2026 gebucht (ECLI nicht zeigen, Suche ab zwei Zeichen, Hinweis je Gattung — Gegenprüfung trägt, BGE 145 IV 364
+  E. 3.3 / BGE 128 I 34 E. 3b —, LM-066 belassen, /datenschutz ohne Reiter, Köpfe «Erlasse», 1024×768 keine Pflicht,
+  Startseite breit → `W2·31-BILDSCHIRMBREITE`). Rest-Posten umgehängt: Leser-/Design-Nachzüge → `W2·29-WERKBANK-NACHLAUF`,
+  Flacker → `W2·18-FEHLERBUCH`, Werkzeug-Lücken → `QS-BASIS`. `W2·19-DESIGN-KONSISTENZ` bleibt offen (8 HN-Posten).
 - **Nicht in REST:** Such-Index Rechtsprechung-Blatt (Klasse daten, Gegenprüfung) → `W2·24-PERF-REST`;
   modulepreload/`rel=expect` → `W2·24-PERF-REST`; Worktrees `npm ci` → `QS-EFFIZIENZ`; Reiter-Titel
   Zuständigkeit → `W2·17-UI-BEFUNDE`; Leser-Nachlauf (NormText 795/800, NormChip-Ort, `leserV3Modell`,

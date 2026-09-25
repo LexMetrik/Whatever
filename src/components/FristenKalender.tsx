@@ -257,7 +257,16 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
                     // (< 4.5:1, WCAG 1.4.3/F2) — `text-auf-gold` ist die nicht
                     // flippende Tinte für Text auf Gold-Füllung (D-1.8,
                     // `--auf-gold`, Beleg VerzugszinsTimeline.tsx).
-                    else if (isAQuo) { marker = 'bg-brass-500 text-auf-gold font-semibold rounded-full'; title = L.aquo; }
+                    // W2·29-WERKBANK-REST S3 (25.9.2026, Posten #918): `auf-gold`
+                    // mass HELL nur 3.47:1 (axe 4.13; die Füllung ist hell ein
+                    // mittleres Grau, keine helle Gold-Fläche mehr). `brass-500`
+                    // flippt MIT dem Thema (hell dunkler, dunkel heller) — die
+                    // Tinte muss darum ebenfalls flippen: `text-paper` (hell
+                    // #FDFCFA auf #78746C 4.54:1, dunkel #1B1917 auf #949088
+                    // 5.51:1). Damit trägt die Marke dieselbe Anatomie wie die
+                    // Fristende-Marke daneben: helle Tagzahl auf voller Füllung.
+                    // Wächter: `e2e/kontrast-fristmarker.e2e.ts`.
+                    else if (isAQuo) { marker = 'bg-brass-500 text-paper font-semibold rounded-full'; title = L.aquo; }
                     // LM-190: Die Papier-Füllung des Ereignis-Rings deckte die LINKE
                     // Rundung des Fristbands zu — das Band schien erst am Folgetag
                     // zu beginnen, mit einer sichtbaren Kerbe davor (gemessen

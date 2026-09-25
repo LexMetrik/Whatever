@@ -113,7 +113,7 @@ const STATISCHE_SEITEN: Record<string, { titel: string; beschreibung: string; og
   // steht hier NICHT mehr — die Route ist ein Redirect auf die Säule und darf
   // deshalb weder prerendert noch gesitemappt werden (eine Sitemap-URL, die
   // 308 antwortet, ist ein Widerspruch in sich).
-  '/materialien': { titel: 'Amtliche Ressourcen / Materialien — LexMetrik', beschreibung: 'Praxisleitende Publikationen der Bundesbehörden — ESTV-Kreisschreiben, EDÖB-Leitfäden, SECO- und BSV-Wegleitungen, EHRA-Praxismitteilungen, FINMA-Rundschreiben, IGE-Richtlinien. Faktisches Soft-Law ohne Gesetzesrang, je mit Live-Link zur amtlichen Fassung und mit den Gesetzen verzahnt.' },
+  '/materialien': { titel: 'Materialien und Erläuterungen — LexMetrik', beschreibung: 'Materialien der Gesetzgebung (Botschaften, Vernehmlassungen, kantonale Parlamentsgeschäfte) und Erläuterungen der Verwaltungspraxis (Kreisschreiben, Wegleitungen, Leitfäden, Rundschreiben) — bibliografisch, je mit Live-Link zur amtlichen Fassung und mit den Gesetzen verzahnt. Erläuterungen sind faktisches Soft-Law ohne Gesetzesrang.' },
   '/methodik': { titel: 'Wie LexMetrik rechnet — LexMetrik', beschreibung: 'Wie LexMetrik Fristen, Beträge und Quoten herleitet: gerechnet wird nach festen Regeln, jeder Schritt nachvollziehbar, jede Norm mit der amtlichen Sammlung verlinkt.' },
   '/ueber': { titel: 'Über — LexMetrik', beschreibung: 'Warum es LexMetrik gibt — entstanden bei der Vorbereitung auf die Anwaltsprüfung: überprüfbare, normtreue Rechtsberechnung statt Black Box.' },
   '/kontakt': { titel: 'Kontakt aufnehmen — LexMetrik', beschreibung: 'Fragen, Korrekturen zu einer Berechnung oder einem Baustein, Vorschläge für neue Rechner und Vorlagen — Hinweise auf Fehler sind besonders willkommen.' },

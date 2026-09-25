@@ -13,6 +13,24 @@ export function esc(s: string): string {
 }
 
 // ---------------------------------------------------------------------------
+// `--paper` aus `design/tokens.json` (SSoT §5) statt eigenem Wert — Posten
+// 2026-09-24 (Gegenprüfung GRUNDTON, SSoT-Drift). Nur dieser eine Wert; die
+// übrige Palette des Lagebilds (gold/sage/slate/…) ist ein bewusst
+// eigenständiges, schlankes Bericht-Schema, keine zweite Design-Wahrheit.
+// ---------------------------------------------------------------------------
+import { readFileSync } from 'node:fs';
+
+function paperToken(): { light: string; dark: string } {
+  const quelle = JSON.parse(readFileSync('design/tokens.json', 'utf8')) as {
+    color: { tokens: { name: string; value: { light: string; dark: string } }[] };
+  };
+  const t = quelle.color.tokens.find((k) => k.name === 'paper');
+  if (!t) throw new Error('bildHtml: Token «paper» fehlt in design/tokens.json');
+  return t.value;
+}
+const PAPER = paperToken();
+
+// ---------------------------------------------------------------------------
 // Seiten-Register — die vier Seiten und ihre Dateinamen
 // ---------------------------------------------------------------------------
 /** Die Index-Seite heisst IMMER `plan-bild.html` (bzw. der per `--out`
@@ -59,10 +77,10 @@ export function seitenDatei(indexPfad: string, schluessel: SeitenSchluessel): st
 //    String) — Kommentare zum CSS gehören deshalb hierher.
 // ---------------------------------------------------------------------------
 export const STIL = `
-  :root { --paper:#FCFAF6; --raised:#FFFEFC; --ink:#1C1A15; --soft:#4A463C; --faint:#7A7466;
+  :root { --paper:${PAPER.light}; --raised:#FFFEFC; --ink:#1C1A15; --soft:#4A463C; --faint:#7A7466;
     --line:#E4DFD2; --gold:#8A6D1F; --gold-bg:#F5EEDA; --sage:#4E6B45; --sage-bg:#EAEBE2;
     --slate:#4A5350; --slate-bg:#E9E9E5; --warn:#8A5417; --warn-bg:#F5EBDE; --danger:#A03A28; --danger-bg:#F2E5DD; }
-  @media (prefers-color-scheme: dark) { :root { --paper:#16150F; --raised:#201E17; --ink:#ECE8DD;
+  @media (prefers-color-scheme: dark) { :root { --paper:${PAPER.dark}; --raised:#201E17; --ink:#ECE8DD;
     --soft:#B8B2A2; --faint:#857E6E; --line:#35311F; --gold:#C9A94E; --gold-bg:#2C2510;
     --sage:#96B38C; --sage-bg:#22251B; --slate:#A9B3AE; --slate-bg:#21231F; --warn:#D9A75B;
     --warn-bg:#312515; --danger:#D98A75; --danger-bg:#2C1D15; } }

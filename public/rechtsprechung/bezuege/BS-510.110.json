@@ -1,14 +1,17 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"BS-510.110",
 "erlassEbene":"kanton",
 "dokumente":{
+"bs_appellationsgericht_BEZ.2025.34":{"zitierung":"Appellationsgericht BS BEZ.2025.34 vom 18.05.2026","regesteKurz":"Pfändung (Kosten)","datum":"2026-05-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.31":{"zitierung":"Appellationsgericht BS VD.2023.31 vom 01.11.2023","regesteKurz":"Rückzahlung von Ausbildungskosten","datum":"2023-11-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"7":[{"key":"bs_appellationsgericht_VD.2023.31","gewicht":null}]
+"7":[{"key":"bs_appellationsgericht_VD.2023.31","gewicht":null}],
+"18":[{"key":"bs_appellationsgericht_BEZ.2025.34","gewicht":null}]
 },
 "gesamtProArtikel":{
-"7":{"kantonal":1}
+"7":{"kantonal":1},
+"18":{"kantonal":1}
 }
 }

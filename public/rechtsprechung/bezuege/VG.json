@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"VG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -8,28 +8,31 @@
 "bge_150_III_332":{"zitierung":"BGE 150 III 332","regesteKurz":"Art. 273 SchKG; Art. 170 DBG; Art. 78 StHG; Haftung für Arrestschaden; Steuerarrest. Die Steuerbehörden haften wie jeder andere Gläubiger nach Art. 273 Abs. 1 SchKG für den aus einem ungerechtfertigten Steuerarrest entstandenen Schaden (E.…","datum":"2024-04-02","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_II_225":{"zitierung":"BGE 150 II 225","regesteKurz":"Art. 3 Abs. 1 und 2 VG; Art. 34 und 35 aBöB; Anwendbarkeit des Verantwortlichkeitsgesetzes bei Staatshaftungsansprüchen in Zusammenhang mit Vergabeverfahren nach dem (alten) Beschaffungsrecht des Bundes. Grundsätze der Haftung nach Art. 3…","datum":"2024-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_245":{"zitierung":"BGE 151 II 245","regesteKurz":"Art. 6 Abs. 1 und 2 VG; Genugtuungsanspruch des Ehemanns in Zusammenhang mit der Verweigerung des Schweizer Grenzwachtkorps, medizinische Hilfe für seine schwangere Frau beizuziehen. Anwendbare Bestimmungen des Verantwortlichkeitsgesetzes…","datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_II_169":{"zitierung":"BGE 152 II 169","regesteKurz":"Art. 146 und 178 Abs. 3 BV; Art. 3, 19 Abs. 1 lit. a und Abs. 3 VG; Zuständigkeit für den Erlass einer Verfügung über streitige Haftungsansprüche im Zusammenhang mit einem Todesfall in einem Bundesasylzentrum. Wenn der Bund im Rahmen…","datum":"2025-07-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_sozialversicherungsgericht_IV.2023.61":{"zitierung":"Sozialversicherungsgericht BS IV.2023.61 vom 05.10.2023","regesteKurz":"IVG","datum":"2023-10-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_148_II_218","gewicht":0}],
-"3":[{"key":"bge_151_II_245","gewicht":0},{"key":"bge_150_III_332","gewicht":0},{"key":"bge_150_II_225","gewicht":1},{"key":"bge_148_II_73","gewicht":0},{"key":"bs_sozialversicherungsgericht_IV.2023.61","gewicht":null}],
+"1":[{"key":"bge_152_II_169","gewicht":0},{"key":"bge_148_II_218","gewicht":1}],
+"3":[{"key":"bge_152_II_169","gewicht":0},{"key":"bge_151_II_245","gewicht":0},{"key":"bge_150_III_332","gewicht":0},{"key":"bge_150_II_225","gewicht":1},{"key":"bge_148_II_73","gewicht":0},{"key":"bs_sozialversicherungsgericht_IV.2023.61","gewicht":null}],
 "4":[{"key":"bge_148_II_73","gewicht":0}],
 "5":[{"key":"bge_151_II_245","gewicht":0}],
 "6":[{"key":"bge_151_II_245","gewicht":0}],
+"10":[{"key":"bge_152_II_169","gewicht":0}],
 "11":[{"key":"bge_150_III_332","gewicht":0}],
 "12":[{"key":"bge_150_II_225","gewicht":0},{"key":"bs_sozialversicherungsgericht_IV.2023.61","gewicht":null}],
-"19":[{"key":"bge_148_II_73","gewicht":0},{"key":"bge_148_II_218","gewicht":0}],
+"19":[{"key":"bge_152_II_169","gewicht":0},{"key":"bge_148_II_73","gewicht":0},{"key":"bge_148_II_218","gewicht":1}],
 "20":[{"key":"bge_148_II_73","gewicht":0},{"key":"bs_sozialversicherungsgericht_IV.2023.61","gewicht":null}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1},
-"3":{"bge":4,"kantonal":1},
+"1":{"bge":2},
+"3":{"bge":5,"kantonal":1},
 "4":{"bge":1},
 "5":{"bge":1},
 "6":{"bge":1},
+"10":{"bge":1},
 "11":{"bge":1},
 "12":{"bge":1,"kantonal":1},
-"19":{"bge":2},
+"19":{"bge":3},
 "20":{"bge":1,"kantonal":1}
 }
 }

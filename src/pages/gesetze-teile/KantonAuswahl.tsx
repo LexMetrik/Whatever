@@ -12,7 +12,7 @@ const KANTON_NAMEN: Record<string, string> = KANTON_NAMEN_TYP;
 import { KantonWappen } from '../../components/KantonWappen';
 import { SchweizKarte } from '../../components/SchweizKarte';
 import { StufeBadge } from '../../components/normtext/Erfassungsgrad';
-import { SchalterGruppe } from '../../components/normtext/GesetzeGliederung';
+import { SchalterGruppe } from '../../components/ui/SchalterGruppe';
 import { erfassungsgrad, STUFE_RANG, STUFE_WORT } from '../../lib/normtext/erfassungsgrad';
 
 // Eine Kanton-Kachel des Auswahlrasters (Wappen · Vollname · Erlass-Zähler +

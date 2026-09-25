@@ -51,13 +51,21 @@ export function EntscheidKarte({ e, onNorm }: {
       <Link to={ziel} className="block no-underline after:absolute after:inset-0 after:content-['']" data-quarantaene={e.quarantaene}>
         {/* Statuszeile: Gebiet + Leit-Marker links, Status rechts. K3: bricht
             um — @390 lief «Volltext nicht verfügbar» + «maschinell» über den
-            Kartenrand (auf main gesehen 23.9.2026, «maschinell» abgeschnitten). */}
+            Kartenrand (auf main gesehen 23.9.2026, «maschinell» abgeschnitten).
+            REST S1: seit «maschinell» links hinter dem Sachgebiet steht, bricht
+            auch die LINKE Gruppe selbst um — sonst @320 Überlauf 263/248 px
+            (R8-Sweep `kein-abschnitt`, Dichte «Karten», 25.9.2026). */}
         <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-micro">
-          <span className="flex items-center gap-2">
+          <span className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
             {verweis
               ? <span className="lc-badge lc-badge-soft">Vollständiges Urteil</span>
               : leit && <span className="lc-badge lc-badge-ok">Leitentscheid</span>}
             <span className="lc-overline text-reg-r" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
+            {/* REST S1 (25.9.2026, Posten «maschinell springt @390»): die
+                Randnotiz stand in der RECHTEN Gruppe und sprang mit deren
+                Umbruch mal nach rechts, mal an den linken Rand. Jetzt fest
+                hinter dem Sachgebiet, das sie qualifiziert (Board). */}
+            {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" variant="text" />}
           </span>
           <span className="flex shrink-0 items-center gap-1.5">
             {/* D3 (Gegenprüfungs-Auflage 12.9.2026, PR #816): ein quarantänierter
@@ -73,7 +81,6 @@ export function EntscheidKarte({ e, onNorm }: {
               <span className="text-ink-500 italic"
                 title="Betreff/Titel aus dem amtlichen Portal — keine Regeste">amtl. Betreff</span>
             )}
-            {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
           </span>
         </div>
 

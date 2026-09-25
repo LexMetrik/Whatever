@@ -205,6 +205,13 @@ auch die Session-Notizen-Datei (§17, Weisung David 15.9.2026): der
 Orchestrator führt sie selbst, nie ein Sub-Agent (Skill `bauschritt`
 Station A/B/E).
 
+**Agent in einen ANDEREN Worktree als den der Session** (25.9.2026, REST S1/S2):
+Write/Edit sind dort per Hook gesperrt; der Auftrag nennt den Schreibweg
+(Bash/python-Heredoc) ausdrücklich — sonst improvisiert der Agent (S1 wich auf
+`EnterWorktree` aus, S2 auf Heredoc). Gilt auch für Prüfer: das Env-Arbeitsverzeichnis
+des Agenten ist der Session-Worktree, nicht das Prüfziel — Auftrag nennt absolute
+Pfade bzw. `git -C <pfad>` (S5b-Prüfer meldete die Diskrepanz selbst, 25.9.2026).
+
 **Vier Orchestrator-Fallen** (Belege 5.–9.8.2026, Detail: git-Historie):
 (a) nie Probe-/Testnachrichten an Agenten, Empfänger-ID vor dem Senden
 verifizieren (eine Nachricht weckt auch einen beendeten Agenten mit vollem
@@ -250,7 +257,11 @@ Worktree — Preview aus dem Worktree nur mit eigenem `vite`-Prozess im
 Worktree-cwd, sonst prüft man fremden Code; (c) Hintergrund-Bash-Läufe haben
 ein hartes Tool-Timeout von **10 min** (600 000 ms; ein Agenten-Crawl starb nach
 ~70 min als Monitor) — Warte-Schleifen ≤ 9 min und neu setzen, lange Crawls als
-persistenter Monitor oder in Etappen mit Zwischen-Commit; Wächter auf CI je
+persistenter Monitor oder in Etappen mit Zwischen-Commit (Agent-Abbruch nach
+600 s ohne Ausgabe, 3× 25.9.2026: per SendMessage fortsetzen statt neu
+dispatchen — ausser Isolations-Agent, s. (l); Timeout bei GitHub/Fedlex/bger,
+während Google antwortet = IPv4-Ausfall: `curl -4`/`-6` probieren, David
+informieren, 25.9.2026); Wächter auf CI je
 SHA prüfen (`gh run list --branch … headSha`), nicht per `gh pr checks`, das
 auch abgebrochene Alt-Läufe als «fail» zeigt; (d) `test:e2e` prüft ohne vorherigen
 `npm run build` ein altes `dist` — Wurzel-Fix im `webServer` (F11), bis dahin

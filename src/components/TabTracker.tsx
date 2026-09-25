@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
-import { ersetzeTab, merkeTab, uebernehmeMappe } from '../lib/tabs';
+import { ersetzeTab, merkeTab, oeffnetReiter, uebernehmeMappe } from '../lib/tabs';
 import { mappeAusSuche, ohneMappe } from '../lib/mappen';
 import { labelAusMeta } from '../lib/verlaufLabel';
 import { kanonisierePfad } from '../lib/normtext/erlassAdresse';
@@ -104,6 +104,12 @@ export function TabTracker() {
   useEffect(() => {
     // R14b: hier stand der Meta-Zweig (`aktiv.current = null`). Er ist
     // ersatzlos weg — jede Route läuft jetzt denselben Weg.
+    // W2·29-WERKBANK-REST S3 (Entscheid David 19.9.2026, «keine reiter für
+    // meta seite»): der Meta-Zweig ist ZURÜCK, für die vier Routen der Liste
+    // in `lib/tabs.oeffnetReiter` (Herleitung dort). Kein Reiter entsteht,
+    // keiner wird ersetzt — und die Herkunft fällt weg, sonst ersetzte die
+    // nächste Navigation den verlassenen Reiter (R14-Lehre).
+    if (!oeffnetReiter(pathname)) { aktiv.current = null; return; }
     // pathname + ?search: der Instanz-Diskriminator ?r=<n> (dasselbe Gesetz
     // mehrfach offen, Auftrag David) gehört zur Reiter-Identität; merkeTab/
     // tabSchluessel ignorieren übrige Query-Parameter für die Dedup-Identität.
@@ -188,6 +194,9 @@ function useNeuerReiterGeste(): void {
       if (!href.startsWith('/')) return;
       const [vorHash, ankerTeil] = href.split('#');
       const pfad = vorHash.split('?')[0];
+      // W2·29-WERKBANK-REST S3: eine Meta-Seite ist kein Reiter-Ziel — die
+      // Geste fällt an den Browser zurück (zweites Browser-Fenster), wie bis R14b.
+      if (!oeffnetReiter(pfad)) return;
       e.preventDefault();
       e.stopPropagation();
       merkeTab(

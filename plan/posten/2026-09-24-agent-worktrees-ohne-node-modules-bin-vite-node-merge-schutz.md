@@ -1,7 +1,9 @@
 <!-- @posten
-dach: W2·29-WERKBANK-LESER
+dach: QS-EFFIZIENZ
 titel: Agent-Worktrees ohne node_modules/.bin/vite-node: merge-schutz-pr-koerper.test.ts und gate lokal falsch rot (spawnSync status null)
 anlass: #1055/#1056/#1057/#1059 (24.9.2026), Nullprobe auf main ebenfalls rot
 -->
 
 §17: Worktree-Setup (Symlink node_modules oder npm ci) in Skill landung/bauschritt bzw. Worktree-Hook verankern, oder den Test bei fehlendem vite-node mit klarer Meldung überspringen statt 4 Fehlschläge.
+
+**Umgehängt 25.9.2026** von `W2·29-WERKBANK-LESER` nach `QS-EFFIZIENZ` — LESER mit Welle 3 abgeschlossen (Entscheid David 25.9.2026 «Leser Welle 3 als letzte Runde, dann Rest starten»). Werkzeug, kein Leser-Bau.

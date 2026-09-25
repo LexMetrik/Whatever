@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "KRK",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -43,6 +43,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_122",
+        "zitierung": "BGE 152 I 122",
+        "regesteKurz": "Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_151_I_62",
@@ -117,6 +127,40 @@
         "zitierung": "BGE 151 I 314",
         "regesteKurz": "Art. 8 Abs. 2 und 3, Art. 15 und 35 BV; Übertragung der Führung einer öffentlichen Mädchensekundarschule an die Stiftung Schule St. Katharina. (Grundrechtliche) Gewährleistungsverantwortung des Gemeinwesens bei der Übertragung der…",
         "datum": "2025-01-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_I_134",
+        "zitierung": "BGE 152 I 134",
+        "regesteKurz": "Art. 9 EMRK; Art. 8, 15 und 36 BV; Dispensation vom obligatorischen Schwimmunterricht für ein Kind von Angehörigen der Palmarianischen Kirche. Grundsätze zu Gesuchen um Dispensation vom obligatorischen Schulunterricht, insbesondere vom…",
+        "datum": "2026-02-10",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "22": [
+      {
+        "key": "bge_152_I_122",
+        "zitierung": "BGE 152 I 122",
+        "regesteKurz": "Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…",
+        "datum": "2026-02-09",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "31": [
+      {
+        "key": "bge_152_I_122",
+        "zitierung": "BGE 152 I 122",
+        "regesteKurz": "Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…",
+        "datum": "2026-02-09",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

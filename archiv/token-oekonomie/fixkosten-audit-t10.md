@@ -59,3 +59,25 @@ bestätigt den Befund vom 10.7.2026 mit direkter Quellenprüfung statt Ableitung
 **Verdikt unverändert:** selektive Deaktivierung bleibt Account-Ebene = David-Entscheid.
 T10 ist damit repo-seitig mit diesem Negativ-Befund **abgeschlossen**, kein weiterer
 Bau-Bedarf.
+
+## Nachtrag 25.9.2026 — Hebel gefunden (Befund oben bleibt als damaliger Stand)
+
+Die Prüfungen vom 10.7. und 5.8.2026 deckten nur `enabledMcpServers`/`disabledMcpServers`
+ab. Übersehen: eine Verbotsregel `permissions.deny` mit blossem Servernamen
+(`mcp__<server>`) nimmt alle Werkzeuge dieses Servers aus dem Kontext — laut
+code.claude.com/docs/en/permissions (abgerufen 25.9.2026) «removes the tool from Claude's
+context entirely»; gefunden über Pocock, aihero.dev «How To Kill The Bloat…» (Analyse
+`03_Projekte/LexMetrik/aihero-analyse-2026-09-25/bericht.md` im Vault).
+
+Umgesetzt (Freigabe David 25.9.2026, Chat «ja, beide umsetzen») in
+`.claude/settings.local.json` (gitignored, nur lokal): deny für Alpha Vantage
+(`mcp__0e948d59-…`), Gmail (`mcp__758bcb60-…`), Google Calendar (`mcp__f5d1ccef-…`),
+Google Drive (`mcp__d845ef9e-…`), PowerPoint (`mcp__PowerPoint__By_Anthropic_`) — zusammen
+rund 180 Werkzeugnamen. Vercel bleibt (Log-Lesen nützlich; David-Entscheid offen), ebenso die
+Nie-abschalten-Liste oben.
+
+Beleg: in derselben Session griff die Regel für Aufrufe sofort (`…__PING` → «Permission …
+has been denied»), die Werkzeugliste der laufenden Session blieb unverändert. **Offen:**
+Wegfall aus der Liste einer NEUEN Session und Wirkung auf Sub-Agenten — beim nächsten
+Session-Start prüfen (Werkzeugliste bzw. `/context`) und hier ergänzen.
+

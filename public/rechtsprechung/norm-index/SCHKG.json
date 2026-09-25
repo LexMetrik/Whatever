@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "SCHKG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -555,6 +555,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_205__voll",
+        "zitierung": "Urteil 4A_129/2024 (nicht publ. in BGE 152 III 205)",
+        "regesteKurz": null,
+        "datum": "2025-09-15",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "39": [
@@ -1010,13 +1020,23 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 1
+        "gewicht": 2
       },
       {
         "key": "bge_149_III_210",
         "zitierung": "BGE 149 III 210",
         "regesteKurz": "Art. 68 und 80 f. SchKG; Betreibung für mit definitivem Rechtsöffnungsentscheid zugesprochene Kosten und Parteientschädigung; Rechtsöffnungstitel; Einwendung des Schuldners. Der Rechtsöffnungsentscheid, welcher dem Gläubiger Kosten und…",
         "datum": "2022-11-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_154",
+        "zitierung": "BGE 152 III 154",
+        "regesteKurz": "Art. 111 Abs. 1 Satz 2 ZPO; Art. 68 SchKG; Rückerstattung des Kostenvorschusses an obsiegende Partei in summarischen SchKG-Verfahren nach Art. 251 ZPO. Art. 111 Abs. 1 Satz 2 ZPO ist auch in summarischen SchKG-Verfahren gemäss Art. 251 ZPO…",
+        "datum": "2025-12-18",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1311,6 +1331,26 @@
         "gewicht": 2
       },
       {
+        "key": "bge_147_III_491",
+        "zitierung": "BGE 147 III 491",
+        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht…",
+        "datum": "2021-03-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
+        "datum": "2020-01-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_149_III_258",
         "zitierung": "BGE 149 III 258",
         "regesteKurz": "Art. 80 Abs. 1 und Art. 81 Abs. 1 SchKG; definitive Rechtsöffnung und Leistungsurteil auf Bezahlung eines Bruttolohns; Rechtsöffnungstitel; befreiende Einwendung. Definitive Rechtsöffnung im Fall, dass der betriebene Arbeitgeber zur…",
@@ -1331,16 +1371,6 @@
         "gewicht": 1
       },
       {
-        "key": "bge_147_III_491",
-        "zitierung": "BGE 147 III 491",
-        "regesteKurz": "a Art. 32 ff. LugÜ; Anerkennung und Vollstreckung eines englischen Urteils; Folgen des Brexit für die Anwendbarkeit des LugÜ. Das Vereinigte Königreich ist bis zum 31. Dezember 2020 ein an das LugÜ gebundener Staat (E. 6.1.1). Es besteht…",
-        "datum": "2021-03-22",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
         "key": "bge_147_III_41",
         "zitierung": "BGE 147 III 41",
         "regesteKurz": "Art. 8a Abs. 3 lit. d SchKG; Gesuch um Nichtbekanntgabe der Betreibung an Dritte. Hat der Betreibungsgläubiger ein Verfahren zur Beseitigung des Rechtsvorschlages (Art. 79-84 SchKG) eingeleitet, gibt das Betreibungsamt Dritten von der…",
@@ -1355,16 +1385,6 @@
         "zitierung": "BGE 146 III 284",
         "regesteKurz": "Art. 72 ff. BGG; Beschwerde in Zivilsachen gegen ein Scheidungsurteil im Unterhaltspunkt; Eintritt der formellen Rechtskraft. Die Beschwerde in Zivilsachen hemmt die formelle Rechtskraft eines Unterhaltsentscheids der oberen kantonalen…",
         "datum": "2020-06-03",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_146_III_157",
-        "zitierung": "BGE 146 III 157",
-        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
-        "datum": "2020-01-07",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1423,6 +1443,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_146_III_157",
+        "zitierung": "BGE 146 III 157",
+        "regesteKurz": "Art. 80 f. und 279 SchKG; Art. 33, 38 und 47 LugÜ; Arrestprosequierung; definitive Rechtsöffnung. Solange der ausländische Entscheid in der Sache nicht zugestellt wird, muss der Gläubiger den Arrest in der Schweiz nicht prosequieren,…",
+        "datum": "2020-01-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
         "key": "bge_151_III_402__voll",
         "zitierung": "Urteil 4A_436/2024 (nicht publ. in BGE 151 III 402)",
         "regesteKurz": null,
@@ -1447,16 +1477,6 @@
         "zitierung": "BGE 151 III 177",
         "regesteKurz": "a Art. 169 Abs. 1 DBG; Art. 78 StHG; Art. 38 und 80 SchKG; Steuerarrest; Sicherstellungsverfügung; Betreibung auf Sicherheitsleistung; Rechtsöffnung. Sicherstellungsverfügungen berechtigen erst dann zur definitiven Rechtsöffnung, wenn sie…",
         "datum": "2025-02-04",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_151_III_405",
-        "zitierung": "BGE 151 III 405",
-        "regesteKurz": "Tragweite einer von einem Generalunternehmer an einen Handwerker ausgestellten Schuldanerkennung bei der definitiven Rechtsöffnung zur Beseitigung des Rechtsvorschlags eines Dritten, der Eigentümer der Liegenschaft ist, in einer vom…",
-        "datum": "2024-12-04",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -2817,20 +2837,30 @@
     ],
     "197": [
       {
-        "key": "bge_149_III_28",
-        "zitierung": "BGE 149 III 28",
-        "regesteKurz": "Art. 93, 197 Abs. 2 und Art. 221 SchKG; Konkursinventar, Pfändbarkeit eines Vorsorgeguthabens der Säule 3a. Art. 93 SchKG ist im Konkurs zu beachten und Vermögenswerte, die nach Massgabe dieser Vorschrift nicht gepfändet werden dürfen,…",
-        "datum": "2022-09-01",
+        "key": "bge_148_IV_170",
+        "zitierung": "BGE 148 IV 170",
+        "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
+        "datum": "2022-04-07",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_IV_27",
+        "zitierung": "BGE 152 IV 27",
+        "regesteKurz": "a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…",
+        "datum": "2026-01-29",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_148_IV_170",
-        "zitierung": "BGE 148 IV 170",
-        "regesteKurz": "a Art. 115 Abs. 1 StPO; Begriff des Geschädigten. Geschädigtenstellung bei Vermögensdelikten (E. 3.3.1 und 3.3.2), Konkursdelikten (E. 3.4.1) und Urkundendelikten (E. 3.5.1; je Bestätigung der Rechtsprechung). Regeste b Art. 163-167 StGB;…",
-        "datum": "2022-04-07",
+        "key": "bge_149_III_28",
+        "zitierung": "BGE 149 III 28",
+        "regesteKurz": "Art. 93, 197 Abs. 2 und Art. 221 SchKG; Konkursinventar, Pfändbarkeit eines Vorsorgeguthabens der Säule 3a. Art. 93 SchKG ist im Konkurs zu beachten und Vermögenswerte, die nach Massgabe dieser Vorschrift nicht gepfändet werden dürfen,…",
+        "datum": "2022-09-01",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2024.7",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Verbrechen gegen das Betäubungsmittelgesetz mit Gefährdung der Gesundheit vieler Menschen, mehrfaches Vergehen gegen das Waffengesetz und nachträgliche Verwahrung",
+        "gegenstand": "Verbrechen gegen das Betäubungsmittelgesetz mit Gefährdung der Gesundheit vieler Menschen, mehrfaches Vergehen gegen das Waffengesetz und nachträgliche Verwahrung (Rückweisungsverfahren betr. SB.2022.74)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Patrizia Schmid (Vorsitz), Dr. Christoph A. Spenlé, lic. iur. Lucienne Renaud und Gerichtsschreiberin Dr. Noémi Biro"
@@ -349,11 +349,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78186&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-08-13",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "037a0c8d2fd5556f790d67f7b562fe72d888269dca34fc0c592cb7fb974f7d87",
       "erstpublikation": "2025-08-13",
-      "aktualisiert": "2025-08-13",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2025.170",
       "ecli": "ECLI:CH:BSA:2025:ZS.2024.7"
     }

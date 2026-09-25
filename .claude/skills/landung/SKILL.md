@@ -71,7 +71,9 @@ Belege: `referenz-ci.md` §Merge-Queue.
   weiter und der Push löst keinen PR-Lauf aus (#1021, 23.9.2026).
 - **Folgezweige nach Squash-Landung der Basis:** `git rebase --onto
   origin/main <alte-basis-sha>` statt mergen — Mergen erzeugt add/add-Konflikte
-  in jeder Datei (Werkbank-START, 23.9.2026).
+  in jeder Datei (Werkbank-START, 23.9.2026). War die Basis ein unsquashter
+  Paket-Zweig: eigene Commits (`git log --no-merges <alte-spitze>..<zweig>`)
+  auf origin/main cherry-picken, Inhaltsgleichheit je Datei belegen (25.9.2026).
 - **Kosten:** der `merge_group`-Lauf klassiert den Diff des Eintrags wie der
   PR-Lauf (reine Doku ohne Bau/Browser-Tests, ~1 min; Code voll, ~20+ min).
   Ein übersprungenes «Perf-Budget» zählt in der Queue als erfüllt (gemessen
@@ -94,8 +96,11 @@ Belege: `referenz-ci.md` §Merge-Queue.
    Projektionen (`daten-manifest.json`, `*.generated.ts`,
    rechtsprechung-Indexe) `merge=regen` (eigene Seite behalten, **Generator
    neu laufen**). `golden/*.json` und `public/normtext/**` bewusst OHNE
-   Treiber — dort SOLL der Konflikt anhalten. `rerere` aktiv. Treiber greifen
-   nur lokal, nie beim GitHub-Server-Merge.
+   Treiber — dort SOLL der Konflikt anhalten. `rerere` aktiv — es wendet
+   Auflösungen auch in fremdem Kontext an («using previous resolution»,
+   25.9.2026): Paket-/Bau-Zweige mit `git -c rerere.enabled=false merge`,
+   danach `git diff --cached --stat MERGE_HEAD` gegen die eigene Dateimenge
+   prüfen. Treiber greifen nur lokal, nie beim GitHub-Server-Merge.
    *(Anker-Konkordanz «§12.x»: `referenz-ci.md`.)*
 
 ---
@@ -172,6 +177,10 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    bestätigen. `public/normtext/**`: Konflikt SOLL anhalten ⇒ Gegenprüfung.
    Steuer-Doku (STRUKTUR/ROADMAP/FAHRPLAN/INDEX): von Hand, beide Beiträge.
 5. **Gate:** `npm run gate` grün — erzwingt die Regeneration aus Schritt 4.
+   Rot NUR an Vitest-Hook-Timeouts der Suchtests (suche-rang/suche/
+   rankingTestset) bei Last ~20–30 = fremdes gate parallel, kein Code-Rot:
+   Ruhe abwarten, neu fahren — fremde gates starten auch NACH dem eigenen
+   Start (RL-39, 25.9.2026).
 6. **CI-Grün verifizieren — zweimal:** vor dem Einreihen Push +
    `gh pr checks <nr> --watch` bis grün; nach dem Einreihen den
    `merge_group`-Lauf bis MERGED verfolgen (pollen, Ziff. 7c).
@@ -335,7 +344,10 @@ Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
    (7 gelandet, 5 `claude/*`, 6 `worktree-agent-*`), 2 ungelandet ohne PR.
    Diese Ziffer sah nur EIGENE Flächen — daher Anzeige + Befehl (`lehren` 5).
 2. **Geparkte Stände sind Tags, keine Branches:** `git tag
-   archiv/<slug>-<datum> <sha>` pushen, Branch löschen.
+   archiv/<slug>-<datum> <sha>` pushen, Branch löschen. `<sha>` ist der
+   LOKALE Kopf, nicht `origin/<branch>` — vorher `git log origin/<branch>..<branch>`
+   prüfen (Beleg 25.9.2026: Tag auf den Remote-Kopf gesetzt, drei nie gepushte
+   Commits nur per Reflog gerettet → zweites Tag).
 3. **Dependabot je Session einordnen:** Patch/Minor einreihen (`gh pr merge
    <n> --squash`, `--auto` zulässig — kein Risikopfad, kein Nachzug),
    Hauptversionen mit Begründung schliessen — nie liegen lassen (8.9.2026:
@@ -405,7 +417,9 @@ Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.
    Endinhalt der Risiko-Dateien des eigenen Diffs nicht ändert; ändert die
    Regeneration eine Risiko-Projektion (register.json!), braucht der
    Merge-Stand ein enges Nach-Verdikt derselben Prüf-Instanz (belegt 1.9.2026,
-   ZH-Tranche).
+   ZH-Tranche). Quittung danach lokal per `gegenpruefung:ok -- --bereich`;
+   die dabei neu angehängte Register-Zeile verwerfen — es gilt die des
+   Prüfers (RL-16b, #1096, 25.9.2026).
 5. **Der Roadmap-Trailer-Block muss der LETZTE Absatz im PR-Body sein — auch
    nach der Zeile «🤖 Generated with …» —, jede Zeile < 72 Zeichen.** Die
    Queue-Squash-Nachricht ist PR-Titel `(#N)` + PR-Body (`--subject/--body`
@@ -419,5 +433,8 @@ Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.
    Gleiches gilt für `Fachaenderung:` und `Gegenpruefung:`: ein Trailer nur im
    Commit reicht nicht, `check:fachaenderung` liest im PR-Lauf den
    Queue-Squash aus Titel + Body — Zeile in den Schlussabsatz des Bodys
-   (Beleg #1072 und #1068, 24.9.2026, je ein CI-Lauf verloren). Das Tor
+   (Beleg #1072 und #1068, 24.9.2026, je ein CI-Lauf verloren). Auch im Body gilt die
+   volle Form `Fachaenderung: <Gegenstand> — <Begründung ≥ 15 Zeichen>` (Gedankenstrich
+   Pflicht); eine Kurzform («X, Test a, b2») fällt im PR-Lauf, auch wenn der Commit-
+   Trailer gültig ist (#1110, 25.9.2026). Das Tor
    zählt auch UI-/Daten-Tests, sobald sie eine Risiko-Engine importieren.

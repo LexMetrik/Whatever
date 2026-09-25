@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "EOG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -165,6 +165,16 @@
         "datum": "2022-03-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_81__voll",
+        "zitierung": "Urteil 5A_384/2024 (nicht publ. in BGE 152 III 81)",
+        "regesteKurz": null,
+        "datum": "2025-09-10",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

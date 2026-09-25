@@ -78,6 +78,7 @@
 
 import { ABK_ALIASE } from '../../src/lib/normtext/abk-aliase.generated';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register';
+import { GERICHTS_KUERZEL } from './gerichts-kuerzel';
 import {
   extrahiereStatutRefs, extrahiereStatutRefsMitAnzahl, INVALID_LAW_CODES,
 } from '../../src/lib/rechtsprechung/zitat-extraktion';
@@ -169,6 +170,35 @@ export const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
     + 'EMRK]. Die echten AVG-Fundstellen tragen zusätzlich das Token AVG (de) '
     + 'oder LSE (fr) und bleiben über diese Aliase wirksam. Lieber eine Lücke '
     + 'als eine falsche Bundesrechts-Zuordnung (§1/§8).'],
+  // ── SPRACHÜBERGREIFEND mehrdeutig (Nach-Verdikt «widerlegt» zu e3f874779,
+  //    QS-KORPUS 25.9.2026). Die Alias-Ebene bildet ein Kürzel sprachungebunden
+  //    ab; Fedlex vergibt dieselbe Buchstabenfolge aber in verschiedenen Sprachen
+  //    an verschiedene Erlasse (SPARQL jolux:titleShort über alle
+  //    ConsolidationAbstracts, Abruf 25.9.2026). Eine sprachgebundene Auflösung
+  //    ist nicht sauber möglich: BGE tragen die DE/FR/IT-Regeste im selben
+  //    Snapshot, `snap.sprache` trennt die Blöcke nicht. Darum Sperre (§8 — eine
+  //    benannte Lücke statt einer falschen Zuordnung). Echte Fundstellen bleiben
+  //    über die übrigen Sprachfassungen wirksam (IRSG/EIMP, VKL/OCPre, AVO).
+  ['AIMP', 'sprachübergreifend mehrdeutig: ITA «AIMP» = IRSG (SR 351.1), FRA '
+    + '«AIMP» = Accord intercantonal sur les marchés publics (IVöB, SR 172.056.5) '
+    + '— Fedlex-SPARQL 25.9.2026. Korpus: Beschaffungs-BGE trugen falsch IRSG, '
+    + 'z.B. bund/bge/152_II_211 (DE-Regeste «Art. 44 Abs. 1 lit. b IVöB», FR «art. '
+    + '44 al. 1 let. b AIMP»), 152_II_325 («Art. 20, 35 f., 48, 53 IVöB»), '
+    + '151_II_81 («ci-après: AIMP 2019»), 150_II_105 («AIMP 2001; RO 2003 196»). '
+    + 'Rechtshilfe-BGE behalten IRSG über «IRSG»/«EIMP» der DE/FR-Regeste.'],
+  ['OCP', 'sprachübergreifend mehrdeutig: FRA «OCP» = VKL (SR 832.104), ITA «OCP» '
+    + '= Jagdverordnung JSV (SR 922.01) — Fedlex-SPARQL 25.9.2026. Korpus: '
+    + 'bund/bge/152_II_196 (DE-Regeste «Art. 10quinquies Abs. 1 lit. a JSV», IT '
+    + '«art. 10quinquies cpv. 1 lett. a OCP»; Einzelwolf) und 150_IV_425 («art. 4 '
+    + 'e 5 OCP-CPM» = V-StGB-MStGB, SR 311.01, vom Extraktor am Bindestrich '
+    + 'gekappt) trugen falsch VKL.'],
+  ['OS', 'mehrdeutig: FRA/ITA «OS» = AVO (SR 961.011) und SR 961.05 (Fedlex-SPARQL '
+    + '25.9.2026); im Korpus ausschliesslich «OS LCart» = KG-Sanktionsverordnung '
+    + 'SVKG (SR 251.5), vom Extraktor am Leerzeichen zu «OS» gekappt — z.B. '
+    + 'bund/bge/148_II_25 «(Ordonnance sur les sanctions LCart, OS LCart; RS '
+    + '251.5)», 147_II_72, 146_II_217 «art. 2-6 OS LCart». Alle sechs Treffer '
+    + '(146_II_217, 147_II_72, 148_II_25, 148_II_321, 148_II_521, 151_II_742) '
+    + 'trugen falsch AVO.'],
 ]);
 
 /**
@@ -264,11 +294,13 @@ function baueSrIndex(): { srKey: Map<string, string>; mehrdeutig: Set<string> } 
  */
 function baueAbkTabelle(): {
   tabelle: Map<string, string>; kollisionen: string[]; notizen: string[]; ausgeschlossen: string[];
+  gesperrteZiele: Map<string, Set<string>>;
 } {
   const tabelle = new Map<string, string>();
   const kollidiert = new Set<string>();
   const notizen: string[] = [];
   const ausgeschlossen: string[] = [];
+  const gesperrteZiele = new Map<string, Set<string>>();
   const setze = (kandidat: string, key: string): void => {
     if (!kandidat) return;
     const bisher = tabelle.get(kandidat);
@@ -301,6 +333,8 @@ function baueAbkTabelle(): {
     }
     if (AUSGESCHLOSSENE_KEYS.has(key) || ABK_AUSSCHLUSS.has(normalisiereAbk(a.abk))) {
       ausgeschlossen.push(`${a.abk} (SR ${a.sr}, ${a.sprache}) → ${key}`);
+      const t = normalisiereAbk(a.abk);
+      (gesperrteZiele.get(t) ?? gesperrteZiele.set(t, new Set()).get(t)!).add(key);
       continue;
     }
     setze(normalisiereAbk(a.abk), key);
@@ -312,6 +346,7 @@ function baueAbkTabelle(): {
     kollisionen: [...kollidiert].sort(),
     notizen: notizen.sort(),
     ausgeschlossen: ausgeschlossen.sort(),
+    gesperrteZiele,
   };
 }
 
@@ -320,6 +355,7 @@ const {
   kollisionen: KOLLISIONEN,
   notizen: ALIAS_NOTIZEN,
   ausgeschlossen: ALIAS_AUSGESCHLOSSEN,
+  gesperrteZiele: GESPERRTE_ALIAS_ZIELE,
 } = baueAbkTabelle();
 
 /**
@@ -391,6 +427,61 @@ export function normKeyFuerAbk(abk: string, datum?: string | null): string | nul
   return damals ? damals.key : key;
 }
 
+// VOM BUNDESGERICHT IM URTEIL SELBST DEFINIERTE KÜRZEL — Tabelle, Belege und
+// Belegregel in ./gerichts-kuerzel.ts (QS-KORPUS 25.9.2026). Hier nur die Auflösung,
+// NUR in Bundesgerichts-Snapshots wirksam (normKeyFuerAbk sieht sie nicht).
+export { GERICHTS_KUERZEL, type GerichtsKuerzel } from './gerichts-kuerzel';
+
+function baueGerichtsKuerzel(): { tabelle: Map<string, string>; notizen: string[] } {
+  const tabelle = new Map<string, string>();
+  const notizen: string[] = [];
+  const { srKey } = baueSrIndex();
+  for (const g of GERICHTS_KUERZEL) {
+    const abk = normalisiereAbk(g.abk);
+    const key = srKey.get(g.sr);
+    if (key === undefined) { notizen.push(`${g.abk} (SR ${g.sr}) — SR nicht eindeutig im ERLASS_REGISTER: verworfen`); continue; }
+    if (ABK_TABELLE.has(abk) || KOLLISIONEN.includes(abk) || ABK_AUSSCHLUSS.has(abk)) {
+      notizen.push(`${g.abk} (SR ${g.sr}) — kollidiert mit Register-/Fedlex-Kürzel: verworfen`);
+      continue;
+    }
+    if (AUSGESCHLOSSENE_KEYS.has(key)) { notizen.push(`${g.abk} (SR ${g.sr}) → ${key} ausgeschlossen: verworfen`); continue; }
+    if (tabelle.has(abk) && tabelle.get(abk) !== key) { notizen.push(`${g.abk} — doppelt mit verschiedenen SR: verworfen`); tabelle.delete(abk); continue; }
+    tabelle.set(abk, key);
+  }
+  return { tabelle, notizen: notizen.sort() };
+}
+
+const { tabelle: GERICHTS_TABELLE, notizen: GERICHTS_NOTIZEN } = baueGerichtsKuerzel();
+
+/** Verworfene Einträge von GERICHTS_KUERZEL (leer = sauber; der Unit-Test hält das fest). */
+export const GERICHTS_KUERZEL_NOTIZEN: ReadonlyArray<string> = GERICHTS_NOTIZEN;
+
+/**
+ * Register-key eines vom Bundesgericht definierten Kürzels — NUR für
+ * `gerichtstyp === 'bundesgericht'`, sonst null. Datum wie `normKeyFuerAbk`
+ * (Fassungs-Reihe), heute ohne Wirkung (VRK hat keine Reihe).
+ */
+export function gerichtsKuerzelKey(abk: string, gerichtstyp: string | null | undefined, datum?: string | null): string | null {
+  if (gerichtstyp !== 'bundesgericht') return null;
+  const key = GERICHTS_TABELLE.get(normalisiereAbk(abk));
+  if (key === undefined) return null;
+  if (!datum) return key;
+  const reihe = REIHE_JE_KEY.get(key);
+  if (!reihe || reihe.geltend !== key) return key;
+  const damals = reihe.historisch.find((h) => datum < h.bis);
+  return damals ? damals.key : key;
+}
+
+/**
+ * Snapshot-gebundene Auflösung: erst die amtliche Ebene (`normKeyFuerAbk`),
+ * dann — nur bei Bundesgerichts-Snapshots — die Gerichts-Kürzel. EINE Stelle für
+ * alle Snapshot-Pfade (normKeys, Literatur-Befund, Artikel-Schlüssel), damit
+ * Norm-Index und Bezüge dieselbe Zuordnung sehen (§5).
+ */
+export function normKeyImSnapshot(abk: string, gerichtstyp: string | null | undefined, datum?: string | null): string | null {
+  return normKeyFuerAbk(abk, datum) ?? gerichtsKuerzelKey(abk, gerichtstyp, datum);
+}
+
 /**
  * "Art. 32 Abs. 2 BGG" → ['BGG']; mehrere Nennungen dedupliziert.
  * Das Trailing-Token fängt einen angehängten einzelnen Ziffern-Block mit
@@ -421,12 +512,13 @@ export function normKeyFuerAbk(abk: string, datum?: string | null): string | nul
  * dort strukturell schlechter abgeschnitten als die Bundes-Snapshots — ein
  * Unterschied der QUELLE, nicht der Rechtsanwendung.
  */
-export function statutesZuNormKeys(statutes: string[], datum?: string | null): string[] {
+export function statutesZuNormKeys(statutes: string[], datum?: string | null, gerichtstyp?: string | null): string[] {
   const out = new Set<string>();
   for (const s of statutes ?? []) {
     const abk = abkVonStatut(s);
     if (!abk) continue;
-    const k = normKeyFuerAbk(abk, datum);
+    // `gerichtstyp` (optional): nur Bundesgerichts-Snapshots sehen GERICHTS_KUERZEL.
+    const k = normKeyImSnapshot(abk, gerichtstyp, datum);
     if (k) out.add(k);
   }
   return [...out];
@@ -683,9 +775,9 @@ export function fliesstextOhneApparat(snap: EntscheidSnapshot): string {
  */
 export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | null): string[] {
   const datum = fassungsDatumVon(snap);
-  const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? [], datum));
+  const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp));
   for (const ref of extrahiereStatutRefs(fliesstextOhneApparat(snap))) {
-    const k = normKeyFuerAbk(ref.gesetz, datum);
+    const k = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
     if (k) out.add(k);
   }
   if (hint && !AUSGESCHLOSSENE_KEYS.has(hint)) out.add(hint);
@@ -713,11 +805,11 @@ export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | nul
  */
 export function literaturEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
   const datum = fassungsDatumVon(snap);
-  const ausStatutes = new Set(statutesZuNormKeys(snap.zitierteNormen ?? [], datum));
+  const ausStatutes = new Set(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp));
   const keysAus = (text: string): Set<string> => {
     const out = new Set<string>();
     for (const ref of extrahiereStatutRefs(text)) {
-      const k = normKeyFuerAbk(ref.gesetz, datum);
+      const k = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
       if (k) out.add(k);
     }
     return out;
@@ -725,6 +817,32 @@ export function literaturEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
   const roh = keysAus(fliesstextVon(snap));
   const rein = keysAus(fliesstextOhneApparat(snap));
   return [...roh].filter((k) => !rein.has(k) && !ausStatutes.has(k)).sort();
+}
+
+/**
+ * normKeys, die AUSSCHLIESSLICH aus einem gesperrten Alias-Kürzel stammen
+ * (ABK_AUSSCHLUSS, z.B. «AIMP» → IRSG) — die zweite Gegenrichtung der
+ * Bewahr-Ratsche (QS-KORPUS 25.9.2026, Nach-Verdikt zu e3f874779).
+ *
+ * WOFÜR: eine Sperre in ABK_AUSSCHLUSS entlarvt Alt-Keys als Fehlzuordnung;
+ * `--remap` bewahrte sie sonst (oder bräche fail-closed ab). Die Ursache wird je
+ * Snapshot MECHANISCH belegt, nicht angenommen: der Snapshot nennt ein
+ * gesperrtes Kürzel, dessen Alias-Ziel genau dieser Key war, UND die
+ * Neuberechnung (ohne das Kürzel) reproduziert den Key nicht. Wird der Key über
+ * ein anderes Kürzel weiter belegt (Rechtshilfe-BGE: «IRSG»/«EIMP»), bleibt er
+ * — `normKeysVonSnapshot` enthält ihn dann. Rein, sortiert (§2).
+ */
+export function sperrEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
+  const kandidaten = new Set<string>();
+  const pruefe = (abk: string): void => {
+    const ziele = GESPERRTE_ALIAS_ZIELE.get(normalisiereAbk(abk));
+    if (ziele) for (const k of ziele) kandidaten.add(k);
+  };
+  for (const z of snap.zitierteNormen ?? []) { const a = abkVonStatut(z); if (a) pruefe(a); }
+  for (const ref of extrahiereStatutRefs(fliesstextVon(snap))) pruefe(ref.gesetz);
+  if (!kandidaten.size) return [];
+  const jetzt = new Set(normKeysVonSnapshot(snap));
+  return [...kandidaten].filter((k) => !jetzt.has(k)).sort();
 }
 
 /**
@@ -829,7 +947,7 @@ export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<strin
   const datum = fassungsDatumVon(snap);
   const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextOhneApparat(snap);
   for (const ref of extrahiereStatutRefs(text)) {
-    const rk = normKeyFuerAbk(ref.gesetz, datum);
+    const rk = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
     if (!rk) continue;
     out.add(`${rk}/${ref.artikel}`);
   }
@@ -1069,7 +1187,7 @@ export function artikelSchluesselMitBefund(snap: EntscheidSnapshot): {
   const roh = new Set<string>();
   const rohText = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
   for (const ref of extrahiereStatutRefs(rohText)) {
-    const rk = normKeyFuerAbk(ref.gesetz, fassungsDatumVon(snap));
+    const rk = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, fassungsDatumVon(snap));
     if (rk) roh.add(`${rk}/${ref.artikel}`);
   }
   const literaturVerworfen = [...roh].filter((k) => !schluessel.has(k)).sort();

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"RPV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -26,12 +26,15 @@
 "bge_150_II_2":{"zitierung":"BGE 150 II 2","regesteKurz":"Art. 23e und 23h NHG; Art. 7, 8, 9 Abs. 1, Art. 23 Abs. 1 lit. a-f, Art. 24 lit. b, 25, 26 Abs. 1 und Art. 27 PäV; Festsetzung der Kernzone des Naturerlebnisparks Jorat (Parc naturel périurbain du Jorat). Die Errichtung eines…","datum":"2023-04-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_II_2__voll":{"zitierung":"Urteil 1C_115/2022 (nicht publ. in BGE 150 II 2)","regesteKurz":null,"datum":"2023-04-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"150 II 2","urteil":"1C_115/2022"}},
 "bge_150_II_48":{"zitierung":"BGE 150 II 48","regesteKurz":"Art. 16a Abs. 3 RPG; Art. 38 RPV; Pflicht zur Errichtung einer Spezial- oder Intensivlandwirtschaftszone auf dem Weg der Nutzungsplanung. Entstehung von Art. 16a Abs. 3 RPG und Definition der Speziallandwirtschaftszone (E. 2.4). Es obliegt…","datum":"2023-11-20","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_737":{"zitierung":"BGE 151 II 737","regesteKurz":"Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…","datum":"2025-03-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_II_737":{"zitierung":"BGE 151 II 737","regesteKurz":"Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…","datum":"2025-03-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_II_276":{"zitierung":"BGE 152 II 276","regesteKurz":"Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…","datum":"2026-01-05","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bs_appellationsgericht_VD.2025.36":{"zitierung":"Appellationsgericht BS VD.2025.36 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.37":{"zitierung":"Appellationsgericht BS VD.2025.37 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_150_II_2__voll","gewicht":0,"erwaegungen":["E. 1.2"]}],
 "2":[{"key":"bge_150_II_133","gewicht":0}],
-"3":[{"key":"bge_150_II_133","gewicht":0},{"key":"bge_148_II_36","gewicht":1},{"key":"bge_146_II_347","gewicht":0},{"key":"bge_149_II_86__voll","gewicht":0,"erwaegungen":["E. 2.2"]}],
+"3":[{"key":"bge_152_II_276","gewicht":0},{"key":"bge_150_II_133","gewicht":0},{"key":"bge_148_II_36","gewicht":1},{"key":"bge_146_II_347","gewicht":0},{"key":"bge_149_II_86__voll","gewicht":0,"erwaegungen":["E. 2.2"]}],
 "5":[{"key":"bge_150_II_2","gewicht":0},{"key":"bge_149_II_86","gewicht":0},{"key":"bge_147_II_164","gewicht":1},{"key":"bge_146_I_36","gewicht":2}],
 "11":[{"key":"bge_150_II_2","gewicht":0},{"key":"bge_146_I_36","gewicht":0}],
 "22":[{"key":"bge_147_II_319__voll","gewicht":0,"erwaegungen":["E. 9"]}],
@@ -45,8 +48,11 @@
 "41":[{"key":"bge_147_II_25","gewicht":0},{"key":"bge_147_II_309__voll","gewicht":0,"erwaegungen":["E. 6.2"]},{"key":"bge_146_II_304__voll","gewicht":0,"erwaegungen":["E. 8.1","E. 12.3"]}],
 "42":[{"key":"bge_147_II_351","gewicht":0},{"key":"bge_146_II_376","gewicht":0}],
 "43":[{"key":"bge_147_II_25","gewicht":0},{"key":"bge_146_II_376","gewicht":0},{"key":"bge_147_II_309__voll","gewicht":0,"erwaegungen":["E. 6.2"]}],
-"47":[{"key":"bge_150_II_133","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bge_146_II_289","gewicht":0}],
+"47":[{"key":"bge_150_II_133","gewicht":0},{"key":"bge_147_II_319","gewicht":0},{"key":"bge_146_II_289","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.36","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.37","gewicht":null}],
 "52":[{"key":"bge_151_II_737","gewicht":0}],
+"18a":[{"key":"bge_152_II_276","gewicht":0}],
+"32a":[{"key":"bge_152_II_276","gewicht":0}],
+"32b":[{"key":"bge_152_II_276","gewicht":0}],
 "42a":[{"key":"bge_147_II_25__voll","gewicht":0,"erwaegungen":["E. 4.1","E. 4.2"]}],
 "43a":[{"key":"bge_147_II_465","gewicht":0},{"key":"bge_147_II_25","gewicht":0},{"key":"bge_146_II_376","gewicht":0},{"key":"bge_146_II_304","gewicht":0}],
 "52a":[{"key":"bge_146_II_289","gewicht":0}]
@@ -54,7 +60,7 @@
 "gesamtProArtikel":{
 "1":{"bger":1},
 "2":{"bge":1},
-"3":{"bge":3,"bger":1},
+"3":{"bge":4,"bger":1},
 "5":{"bge":4},
 "11":{"bge":2},
 "22":{"bger":1},
@@ -68,8 +74,11 @@
 "41":{"bge":1,"bger":2},
 "42":{"bge":2},
 "43":{"bge":2,"bger":1},
-"47":{"bge":3},
+"47":{"bge":3,"kantonal":2},
 "52":{"bge":1},
+"18a":{"bge":1},
+"32a":{"bge":1},
+"32b":{"bge":1},
 "42a":{"bger":1},
 "43a":{"bge":4},
 "52a":{"bge":1}

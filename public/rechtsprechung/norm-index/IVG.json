@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "IVG",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -75,6 +75,16 @@
         "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_81__voll",
+        "zitierung": "Urteil 5A_384/2024 (nicht publ. in BGE 152 III 81)",
+        "regesteKurz": null,
+        "datum": "2025-09-10",
+        "leitcharakter": "routine",
+        "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
       }
     ],
     "3": [
@@ -95,6 +105,16 @@
         "datum": "2022-03-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_81__voll",
+        "zitierung": "Urteil 5A_384/2024 (nicht publ. in BGE 152 III 81)",
+        "regesteKurz": null,
+        "datum": "2025-09-10",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1027,6 +1047,26 @@
     ],
     "35": [
       {
+        "key": "bge_152_V_114",
+        "zitierung": "BGE 152 V 114",
+        "regesteKurz": "Art. 35 Abs. 4 IVG; Art. 82 Abs. 1 IVV; Art. 71 ter Abs. 1 und Abs. 2 AHVV; Art. 20 ATSG; Auszahlungsmodalitäten bei Kinderrenten der Invalidenversicherung. Die nach Art. 71 ter Abs. 1 AHVV erforderliche Voraussetzung des Zusammenwohnens…",
+        "datum": "2026-03-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_122",
+        "zitierung": "BGE 152 V 122",
+        "regesteKurz": "Art. 35 Abs. 4 IVG; Art. 82 Abs. 1 IVV in Verbindung mit Art. 71 ter Abs. 1 und 2 AHVV; Nachzahlung einer Kinderrente; Drittauszahlung. Die in Art. 71 ter Abs. 1 AHVV genannte Voraussetzung des Getrenntlebens muss bei einer Nachzahlung von…",
+        "datum": "2026-05-11",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_149_V_185",
         "zitierung": "BGE 149 V 185",
         "regesteKurz": "Art. 9, 10 und 11 ELG; Art. 4, 5, 11a und 14a ELV; gemeinsame Berechnung der Ergänzungsleistungen einer Bezügerin von Leistungen der IV und ihres Kindes, welches eine Kinderrente der IV bezieht und mit ihr in einem gemeinsamen Haushalt…",
@@ -1175,6 +1215,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_V_8",
+        "zitierung": "BGE 152 V 8",
+        "regesteKurz": "Art. 42 Abs. 3 Satz 2 IVG; Anspruchsvoraussetzungen für eine Hilflosenentschädigung bei einer Hilflosigkeit leichten Grades wegen des Bedarfs an lebenspraktischer Begleitung. Das in Satz 2 des Art. 42 Abs. 3 IVG vorgesehene restriktive…",
+        "datum": "2025-09-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_V_212",
         "zitierung": "BGE 151 V 212",
         "regesteKurz": "Art. 42 Abs. 1-3 und Art. 42 ter Abs. 1 und 2 IVG; Art. 35 ter , Art. 37 Abs. 2 lit. c und Art. 38 IVV; invalidenversicherungsrechtliche Heimdefinition im Zusammenhang mit lebenspraktischer Begleitung. Auch eine einzelne Wohnung in einem…",
@@ -1221,16 +1271,6 @@
         "datum": "2023-03-15",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_147_V_73__voll",
-        "zitierung": "Urteil 9C_777/2019 (nicht publ. in BGE 147 V 73)",
-        "regesteKurz": null,
-        "datum": "2020-11-24",
-        "leitcharakter": "routine",
-        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1291,7 +1331,29 @@
         "gewicht": 0
       }
     ],
+    "54": [
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "57": [
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_151_V_306",
         "zitierung": "BGE 151 V 306",
@@ -1329,6 +1391,18 @@
         "zitierung": "BGE 151 V 306",
         "regesteKurz": "Art. 6 f. und Art. 44 ATSG; Art. 1a lit. a, Art. 8 Abs. 1, 1 bis und 1 ter , Art. 28 Abs. 1 lit. a und Abs. 1 bis , Art. 57 Abs. 1 lit. e und f, Art. 59 Abs. 3 IVG; Verlauf der beruflichen Eingliederung im Verhältnis zur Arbeitsfähigkeit…",
         "datum": "2025-06-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "60": [
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -1377,6 +1451,30 @@
         "datum": "2024-06-04",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "77": [
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "79": [
+      {
+        "key": "bge_152_IV_249",
+        "zitierung": "BGE 152 IV 249",
+        "regesteKurz": "Art. 104 Abs. 1 lit. b i.V.m. Art. 118 Abs. 1 und Art. 119 Abs. 2 lit. a, Art. 104 Abs. 2, Art. 105 Abs. 2, Art. 115 Abs. 1 sowie Art. 322 Abs. 2 i.V.m. Art. 382 Abs. 1 StPO; Parteistellung und Beschwerdelegitimation der…",
+        "datum": "2026-01-22",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -1616,7 +1714,7 @@
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
-        "gewicht": 3
+        "gewicht": 4
       },
       {
         "key": "bge_147_V_124",
@@ -1637,6 +1735,16 @@
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_70",
+        "zitierung": "BGE 152 V 70",
+        "regesteKurz": "Art. 14 Abs. 1 ELG; Art. 21 Abs. 5 ATSG; Sistierung der Vergütung von Krankheits- und Invaliditätskosten bei Aufenthalt des Bezügers von Ergänzungsleistungen zu einer Invalidenrente im Straf- oder Massnahmenvollzug; Auslegung. Art. 14 Abs.…",
+        "datum": "2026-02-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
       },
       {
         "key": "bge_150_V_410",
@@ -1692,6 +1800,16 @@
       }
     ],
     "42bis": [
+      {
+        "key": "bge_152_V_8",
+        "zitierung": "BGE 152 V 8",
+        "regesteKurz": "Art. 42 Abs. 3 Satz 2 IVG; Anspruchsvoraussetzungen für eine Hilflosenentschädigung bei einer Hilflosigkeit leichten Grades wegen des Bedarfs an lebenspraktischer Begleitung. Das in Satz 2 des Art. 42 Abs. 3 IVG vorgesehene restriktive…",
+        "datum": "2025-09-24",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_III_297",
         "zitierung": "BGE 149 III 297",
