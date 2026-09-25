@@ -103,3 +103,15 @@ export async function kopfSeitenFallsNoetig(det: OclKopfFelder): Promise<string[
   // Widerspruch: kein Kopfdatum, das PDF entschiede ihn nicht (kantonsEntscheiddatum).
   return (k.status === 'ok' && k.regel === 'titel-vom') || k.status === 'widerspruch' || !url ? null : holeAmtlicheKopfSeiten(url);
 }
+
+/**
+ * Live-Import (`holeEntscheid`): Kopf-Seiten wie `kopfSeitenFallsNoetig` und —
+ * kantonal — eine Log-Zeile, falls das Datum auf OCL-`decision_date` zurückfällt
+ * (Gegenprüfung #1126: der Rückfall blieb sonst still). Kein Schema-/UI-Ausbau.
+ */
+export async function kopfSeitenMitRueckfallMeldung(det: OclKopfFelder & { court?: unknown }): Promise<string[] | null> {
+  const seiten = await kopfSeitenFallsNoetig(det);
+  const meldung = String(det.canton ?? 'CH') !== 'CH' ? kopfdatumRueckfallMeldung(det, kantonsEntscheiddatum(det, seiten)) : null;
+  if (meldung) console.warn(meldung);
+  return seiten;
+}

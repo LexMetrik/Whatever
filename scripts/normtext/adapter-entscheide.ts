@@ -16,7 +16,7 @@ import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
-import { kantonsEntscheiddatum, kopfSeitenFallsNoetig, kopfdatumRueckfallMeldung } from './entscheid-kantonsdatum';
+import { kantonsEntscheiddatum, kopfSeitenMitRueckfallMeldung } from './entscheid-kantonsdatum';
 import { ersetzeKonflatiertenAuszug } from './clir-auszug';
 // markenPlausibel/MONAT: Single Source erwaegung-normalisieren.ts (§5), re-exportiert für Bestands-Importeure.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
@@ -461,11 +461,7 @@ export async function holeEntscheidOCL(
   // paragraph_excerpt_chars: OCL-Maximum ist 5000 (höher → HTTP 422 → kein Strukturtext).
   const str = await jget<OclStructure>(`${API}/structure/${decisionId}?paragraph_excerpt_chars=5000`);
   await fuelleGekappteErwaegungen(decisionId, str);
-  const amtlicheKopfSeiten = await kopfSeitenFallsNoetig(det);
-  // Kantonaler Rückfall auf OCL-decision_date nicht still (Gegenprüfung #1126).
-  const rueckfall = String(det.canton ?? 'CH') !== 'CH' ? kopfdatumRueckfallMeldung(det, kantonsEntscheiddatum(det, amtlicheKopfSeiten)) : null;
-  if (rueckfall) console.warn(rueckfall);
-  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten });
+  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten: await kopfSeitenMitRueckfallMeldung(det) });
 }
 
 /** Enumeration via Atom-Feed (Frische): IDs aus dem <id>-Element (atomIds, ocl-abruf.ts). */

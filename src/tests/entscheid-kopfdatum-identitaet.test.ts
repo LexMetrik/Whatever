@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { kopfEntscheiddatum, aktenzeichenRe } from '../../scripts/normtext/entscheid-kopfdatum';
-import { kantonsEntscheiddatum, kopfdatumRueckfallMeldung } from '../../scripts/normtext/entscheid-kantonsdatum';
+import { kantonsEntscheiddatum, kopfdatumRueckfallMeldung, kopfSeitenMitRueckfallMeldung } from '../../scripts/normtext/entscheid-kantonsdatum';
 import { kopfdatumRefresh } from '../../scripts/normtext/entscheide-kopfdatum-refresh';
 import type { OclDecision } from '../../scripts/normtext/adapter-entscheide';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
@@ -127,6 +127,19 @@ describe('Befund 2 — stiller Rückfall auf OCL decision_date wird gemeldet', (
     const d = det({ full_text: 'Entscheiddatum: 08.01.2025 Verwaltungsgericht Urteil vom 22. Dezember 2025' });
     expect(kopfdatumRueckfallMeldung(d, kantonsEntscheiddatum(d, null)))
       .toBe('[kopfdatum] Rückfall auf OCL decision_date 2025-12-22: sg_gerichte B 2023/225 — Widerspruch im Kopf (titel-vom=2025-12-22, feld-entscheiddatum=2025-01-08)');
+  });
+  it('Live-Import-Pfad schreibt die Zeile ins Log (ohne PDF-URL: kein Netz)', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    try {
+      const d = det({ court: 'be_verwaltungsgericht', canton: 'BE', docket_number: '100 2026 7', decision_date: '2026-05-02', full_text: 'Verwaltungsgericht Verfügung des Instruktionsrichters vom 30. April 2026' });
+      expect(await kopfSeitenMitRueckfallMeldung(d)).toBeNull();
+      expect(warn.mock.calls.map((c) => c[0])).toEqual(['[kopfdatum] Rückfall auf OCL decision_date 2026-05-02: be_verwaltungsgericht 100 2026 7 — kein eigenes Kopfdatum im OCL-Kopf; amtliches PDF nicht verfügbar']);
+      warn.mockClear();
+      await kopfSeitenMitRueckfallMeldung(det({ canton: 'CH', court: 'bger' }));
+      expect(warn).not.toHaveBeenCalled();
+    } finally {
+      warn.mockRestore();
+    }
   });
   it('Kopfdatum gefunden ⇒ keine Meldung', () => {
     const d = det({ docket_number: 'UV 2025/14', full_text: SG_UV_2025_14_OCL });
