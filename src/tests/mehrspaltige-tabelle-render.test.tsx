@@ -320,7 +320,7 @@ describe('LegacyMehrspaltigeTabelle — Nachspann (B11)', () => {
     const zellen = [...out.matchAll(/role="cell" class="([^"]*)"/g)].map((m) => m[1]);
     expect(zellen[0]).toContain('min-w-[9rem]');
     expect(zellen[0]).not.toContain('whitespace-nowrap');
-    expect(zellen[0]).toContain('[overflow-wrap:break-word]');
+    expect(zellen[0]).toContain('lc-wortumbruch');
     expect(zellen[1]).toContain('whitespace-nowrap');
     expect(zellen[2]).toContain('whitespace-nowrap');
   });

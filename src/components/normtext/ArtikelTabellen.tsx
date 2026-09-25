@@ -143,8 +143,9 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
 //  2. BESCHRIFTUNGSSPALTE. `w-max` hielt JEDE Zelle einzeilig. Jetzt darf nur
 //     die erste Spalte umbrechen (nie unter 9 rem ≈ 16 Zeichen — sonst zerfällt
 //     sie wortweise, gesehen @390: 42 px, Zeile 1'102 px hoch; und nie mitten
-//     im Wort: `break-word` statt des geerbten `anywhere` — «Aserbaidscha|n*»
-//     @390 gesehen, 26.9.2026); alle übrigen
+//     im Wort ohne Strich: `.lc-wortumbruch` (Silbentrennung, `break-word` als
+//     Garant) statt des geerbten `anywhere` — «Aserbaidscha|n*» @390 gesehen;
+//     ohne Silbentrennung lief «Vertragsstaaten» @1280 9 px quer); alle übrigen
 //     bleiben wie bisher einzeilig (`whitespace-nowrap`, Daten/Zahlen brechen nie,
 //     §N-4a). Passt die Tabelle schon heute, ändert sich nichts (`min-w-full`).
 //     Reicht die Breite auch so nicht, bleibt der Querscroll samt Affordanz.
@@ -163,7 +164,7 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
     alleZeilen.some((z) => istNumerischeZelle(z[ci] ?? '')),
   );
   const zelleCls = (ci: number, kopfZeile: boolean) =>
-    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ci > 0 ? ' whitespace-nowrap' : ' min-w-[9rem] [overflow-wrap:break-word]'}${
+    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ci > 0 ? ' whitespace-nowrap' : ' min-w-[9rem] lc-wortumbruch'}${
       kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'
     }`;
   return (
