@@ -285,8 +285,14 @@ const GERICHT_KURZ: Record<string, string> = {
  *  nichts, was die Nummer nicht schon identifiziert, und der `title` des
  *  Reiters trägt die vollständige Zitierung weiter. Ohne Ziffern-Wort gibt es
  *  keinen Kern; dann kürzt wie bisher der ganze Text. */
+//  NACHTRAG REST S5b (25.9.2026): auch das Datum in WORT-Form («vom 20. Juni
+//  2022») — GEMESSEN 39 von 6505 Zitierungen (BGer/BVGer/BStGer/BPatGer),
+//  darunter der einzige Rechtsprechungs-Rest der `kein-abschnitt`-Allowlist
+//  (bger_1B_278_2022 @320/390). Nur die zwölf deutschen Monatsnamen; alles
+//  andere bleibt stehen (§7, nichts raten).
+const DATUM_AM_ENDE = /\s+vom\s+(?:\d{1,2}\.\d{1,2}\.\d{2,4}|\d{1,2}\.\s*(?:Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+\d{4})\s*$/;
 function zerlege(zitierung: string): { kopf: string; kern: string } {
-  const ohneDatum = zitierung.replace(/\s+vom\s+\d{1,2}\.\d{1,2}\.\d{2,4}\s*$/, '');
+  const ohneDatum = zitierung.replace(DATUM_AM_ENDE, '');
   const worte = ohneDatum.split(/\s+/).filter(Boolean);
   const i = worte.findIndex((w) => /\d/.test(w));
   if (i <= 0) return { kopf: '', kern: ohneDatum };
