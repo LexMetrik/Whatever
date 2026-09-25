@@ -154,7 +154,7 @@ export function LesemodusOverlay({ ziel, snap, abschnitte, regesteText, massgebl
               className="border-l border-line min-h-6 px-2 py-1 text-ink-600 lc-hover-flaeche disabled:opacity-40" title="Entscheidtext vergrössern">A+</button>
           </span>
           <button ref={schliessRef} type="button" onClick={onClose}
-            className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400" title="Lesemodus schliessen (Esc)">
+            className="lc-chip no-underline hover:text-accent-text hover:border-accent-line" title="Lesemodus schliessen (Esc)">
             ✕ schliessen
           </button>
         </span>
@@ -174,7 +174,7 @@ export function LesemodusOverlay({ ziel, snap, abschnitte, regesteText, massgebl
               gibt es kein StatusBadge (auch vor J3 nicht); der title ist hier der
               einzige Hinweis (Hover; auf Touch nicht erreichbar — bekannter Rest,
               Bibliotheks-Doku J3). */}
-          <span className="text-brass-700" title={snap.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}> · {GEBIET_LABEL[snap.sachgebiet]}</span>
+          <span className="text-accent-text" title={snap.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}> · {GEBIET_LABEL[snap.sachgebiet]}</span>
         </p>
         {/* A-1-Nachzug: auch das Overlay-H1 kommt aus dem einen Titel-Baustein
             (er misst hier den `@container/pane` am Overlay-Wurzelknoten, s. o.).
@@ -221,7 +221,7 @@ export function LesemodusOverlay({ ziel, snap, abschnitte, regesteText, massgebl
 
         <footer className="mt-12 border-t border-line pt-5 text-body-s text-ink-500">
           <MassgeblicheFassung url={massgeblicheUrl} titel={massgeblichTitel} fehlt={massgeblichFehlt}
-            className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400" />
+            className="lc-chip no-underline hover:text-accent-text hover:border-accent-line" />
           {/* B-6-Nachzug, dritte und letzte Stelle dieses Lesers (Begründung im
               Provenienz-Fuss oben). */}
           <p className="mt-3 text-micro text-ink-500 leading-relaxed">

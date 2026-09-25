@@ -133,7 +133,11 @@ test.describe('R13B — Reiterleiste: CLS 0 über Öffnen, Schliessen, Hover und
     // das nicht scheitern kann). Der Speicher wird danach geleert, damit das
     // folgende `page.goto` (ein KALTSTART, der nichts ersetzt) wieder bei
     // genau EINEM Reiter landet — sonst mässe der Fall 1 gegen 2 Reiter.
-    await expect(page.locator('[data-reiter-streifen] [data-reiter-schluessel]')).toHaveCount(1)
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3) · W2·29-WERKBANK-REST S3, 25.9.2026 ─
+    // Entscheid David 19.9.2026 «keine reiter für meta seite»: `/kontakt`
+    // trägt wieder KEINEN Reiter — der Fall misst damit wieder, was sein Titel
+    // sagt (0 → 1 Reiter), wie vor R14b. Die Geometrie-Zusagen unverändert.
+    await expect(page.locator('[data-reiter-streifen] [data-reiter-schluessel]')).toHaveCount(0)
     await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
     await page.waitForTimeout(1200)
     const leer = await masse(page)
@@ -231,7 +235,9 @@ test.describe('R13B — Reiterleiste: CLS 0 über Öffnen, Schliessen, Hover und
     await expect(page.locator(LEISTE)).toBeVisible({ timeout: 45_000 })
     // R14b (s. Fall darüber): Speicher leeren, damit der Kaltstart auf ZGB
     // wieder GENAU EINEN Reiter trägt und der letzte ✕ ihn auch trifft.
-    await expect(page.locator('[data-reiter-streifen] [data-reiter-schluessel]')).toHaveCount(1)
+    // W2·29-WERKBANK-REST S3 (s. Fall «der erste Reiter entsteht»): `/kontakt`
+    // trägt keinen Reiter mehr — die Leiste steht vor dem Öffnen leer.
+    await expect(page.locator('[data-reiter-streifen] [data-reiter-schluessel]')).toHaveCount(0)
     await page.evaluate(() => localStorage.removeItem('lexmetrik-tabs'))
     await page.waitForTimeout(1200)
     const leerVorher = await masse(page)

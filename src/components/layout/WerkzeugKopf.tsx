@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import { NormChip } from '../vorlagen/NormChip';
 import { SeitenTitel } from '../ui/SeitenTitel';
 import { EntwurfHinweis } from '../EntwurfLegende';
@@ -22,6 +22,19 @@ import type { Status } from '../../lib/startseiteConfigTypen';
 // wie im Katalog (§8). «geprüft» zeigt keinen Warnhinweis; ohne `status`
 // (Seite ohne Karte) bleibt das Band wie bisher — der Kopf rät keinen Status.
 // Etikett und Status stehen NEBENEINANDER, keiner verdrängt den anderen.
+
+// ── W2·29-WERKBANK-REST S3 (25.9.2026) · EINLEITUNG MOBIL GEKÜRZT ──────────
+// Posten «WerkzeugKopf-Intro @390 sehr hoch»: die Katalog-Beschriebe sind bis
+// 62 Wörter lang (Notariat 580 Zeichen, Tagerechner 382 — gemessen per
+// vite-node über `CALCULATORS`), in der Serif-Stufe `text-body-l` füllten sie
+// @390 den ersten Bildschirm, bevor ein Eingabefeld kam. Unter `sm` (640 px)
+// zeigt der Kopf darum drei Zeilen und einen Knopf «Weiterlesen»; der VOLLE
+// Text steht immer im DOM (Screenreader, Suche, Druck lesen ihn ganz — die
+// Kürzung ist `line-clamp`, reine Darstellung, kein Textverlust). Ab `sm` und
+// bei kurzen Beschrieben bleibt alles wie bisher. Nicht nach dem ersten Satz
+// geschnitten: der ist oft selbst 270–380 Zeichen lang (Tagerechner 273).
+// Schwelle: ~3 Zeilen à ~40 Zeichen @390 in der Serif-Stufe.
+const INTRO_KURZ_AB = 140;
 
 /** Ein Norm-Chip des Kopfes — dieselben Angaben, die `NormChip` nimmt. */
 interface WerkzeugNorm {
@@ -48,6 +61,9 @@ export function WerkzeugKopf({ overline, titel, titelKlasse, status, etikett, vo
   /** Zeilen unter den Chips (passender Rechner, Zurücksetzen, Hinweise). */
   children?: ReactNode;
 }) {
+  const kuerzbar = typeof intro === 'string' && intro.length > INTRO_KURZ_AB;
+  const [introOffen, setIntroOffen] = useState(false);
+  const introId = useId();
   return (
     <div className="space-y-3">
       <div className="ub-kopf wk-kopf flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
@@ -65,7 +81,19 @@ export function WerkzeugKopf({ overline, titel, titelKlasse, status, etikett, vo
         )}
       </div>
       {vorspann}
-      {intro && <p className="font-serif text-body-l text-ink-600 max-w-reading">{intro}</p>}
+      {intro && (
+        <div className="max-w-reading">
+          <p id={introId} data-werkzeug-intro={kuerzbar ? (introOffen ? 'offen' : 'gekuerzt') : undefined}
+            className={`font-serif text-body-l text-ink-600${kuerzbar && !introOffen ? ' max-sm:line-clamp-3' : ''}`}>{intro}</p>
+          {kuerzbar && (
+            <button type="button" aria-expanded={introOffen} aria-controls={introId}
+              onClick={() => setIntroOffen((o) => !o)}
+              className="lc-btn-ghost lc-btn-sm mt-1 sm:hidden">
+              {introOffen ? 'Einklappen' : 'Weiterlesen'}
+            </button>
+          )}
+        </div>
+      )}
       {/* lc-chip-zeile (LM-044/N1): Norm-Chips sind <a> und tragen die
           Link-Unterstreichung als Form-Merkmal. */}
       <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">

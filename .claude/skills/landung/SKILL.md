@@ -430,5 +430,8 @@ Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.
    Gleiches gilt für `Fachaenderung:` und `Gegenpruefung:`: ein Trailer nur im
    Commit reicht nicht, `check:fachaenderung` liest im PR-Lauf den
    Queue-Squash aus Titel + Body — Zeile in den Schlussabsatz des Bodys
-   (Beleg #1072 und #1068, 24.9.2026, je ein CI-Lauf verloren). Das Tor
+   (Beleg #1072 und #1068, 24.9.2026, je ein CI-Lauf verloren). Auch im Body gilt die
+   volle Form `Fachaenderung: <Gegenstand> — <Begründung ≥ 15 Zeichen>` (Gedankenstrich
+   Pflicht); eine Kurzform («X, Test a, b2») fällt im PR-Lauf, auch wenn der Commit-
+   Trailer gültig ist (#1110, 25.9.2026). Das Tor
    zählt auch UI-/Daten-Tests, sobald sie eine Risiko-Engine importieren.

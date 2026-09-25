@@ -17,19 +17,22 @@
 "bs_sozialversicherungsgericht_KV.2024.4":{"zitierung":"Sozialversicherungsgericht BS KV.2024.4 vom 06.02.2025","regesteKurz":"KVG Zu Recht besonderen Grund i.S.v. Art. 2 Abs. 8 KVV verneint und Gesuch um Befreiung von der schweizerischen…","datum":"2025-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2024.4-20251114":{"zitierung":"Sozialversicherungsgericht BS KV.2024.4 vom 14.11.2025","regesteKurz":"KVG Beschwerde gutgeheissen und Beschwerdeführer von der Krankenversicherungspflicht befreit","datum":"2025-11-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2025.3":{"zitierung":"Sozialversicherungsgericht BS KV.2025.3 vom 08.07.2025","regesteKurz":"KVG Spitalbedürftigkeit","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_KV.2025.4":{"zitierung":"Sozialversicherungsgericht BS KV.2025.4 vom 08.07.2025","regesteKurz":"KVG, Einstellung der Prämienverbilligung; Mitwirkungspflichtverletzung, (Beschwerde beim Bundesgericht hängig)","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_KV.2025.4":{"zitierung":"Sozialversicherungsgericht BS KV.2025.4 vom 08.07.2025","regesteKurz":"KVG, Einstellung der Prämienverbilligung; Mitwirkungspflichtverletzung, (Beschwerde beim Bundesgericht hängig)","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_KV.2025.6":{"zitierung":"Sozialversicherungsgericht BS KV.2025.6 vom 12.06.2026","regesteKurz":"Prämien/Kostenbeteiligungen; Rechtsöffnung","datum":"2026-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "2":[{"key":"bs_sozialversicherungsgericht_KV.2024.4-20251114","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.4","gewicht":null}],
-"17":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.17","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
+"17":[{"key":"bs_sozialversicherungsgericht_KV.2025.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.17","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
 "20":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null}],
+"21":[{"key":"bs_sozialversicherungsgericht_KV.2025.6","gewicht":null}],
 "52":[{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.17","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.16","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.14","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2022.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2021.27","gewicht":null}],
 "54":[{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2021.4","gewicht":null}]
 },
 "gesamtProArtikel":{
 "2":{"kantonal":2},
-"17":{"kantonal":3},
+"17":{"kantonal":4},
 "20":{"kantonal":1},
+"21":{"kantonal":1},
 "52":{"kantonal":12},
 "54":{"kantonal":5}
 }

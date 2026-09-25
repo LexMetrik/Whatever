@@ -18,6 +18,7 @@ import { GLIEDERUNGEN, type Gliederung } from '../../lib/normtext/gliederung';
 import { ErlassTabelle } from './ErlassKarte';
 import { GruppenKopf } from '../ui/GruppenKopf';
 import { Leerzustand } from '../ui/Leerzustand';
+import { SchalterGruppe } from '../ui/SchalterGruppe';
 
 // ── Der gemeinsame Umschalter (ein Interaktions-Vokabular, A15/A4) ────────────
 
@@ -34,30 +35,6 @@ const GLIEDERUNG_HINWEIS: Record<Gliederung, string> = {
   systematisch: 'Die amtliche Systematik der Sammlung.',
   rechtsgebiet: 'Nach Rechtsgebiet gruppiert (Sach-Achse des Registers).',
 };
-
-/** Gruppe gedrückter TEXT-Schalter (`.ub-schalter`, D22 «keine Kästen»):
- *  `role=group` + `aria-pressed` (F3/F4). EIN Bild für Ebene, Gliederung,
- *  Karte/Liste und Sortierung auf /gesetze (K2, vorher drei Pill-Kopien mit
- *  Messing-Fläche). `etikett` = sichtbare Beschriftung vor den Optionen. */
-export function SchalterGruppe<T extends string | null>({ name, etikett, optionen, wert, onWahl, className }: {
-  name: string; etikett?: string;
-  optionen: readonly { id: T; label: string; title?: string }[];
-  wert: T; onWahl: (id: T) => void; className?: string;
-}) {
-  return (
-    <div role="group" aria-label={name} className={`flex flex-wrap items-baseline gap-x-5 gap-y-1${className ? ` ${className}` : ''}`}>
-      {/* LM-055 (B15, 4.9.2026): das Etikett darf sich nicht als weitere Option
-          lesen — eigene Stimme (Overline) und ein Schritt mehr Abstand. */}
-      {etikett && <span className="lc-overline mr-1">{etikett}</span>}
-      {optionen.map((o) => (
-        <button key={o.id ?? 'alle'} type="button" className="ub-schalter" aria-pressed={wert === o.id}
-          title={o.title} onClick={() => onWahl(o.id)}>
-          {o.label}
-        </button>
-      ))}
-    </div>
-  );
-}
 
 /** 3-Wege-Umschalter Relevanz · Systematisch · Rechtsgebiet — gilt für alle
  *  drei Säulen gleich (A15). */

@@ -1,6 +1,7 @@
 // Seite «Methodik» – vertiefte Fassung; die Kurzfassung («So rechnet LexMetrik»)
 // auf der Startseite bleibt davon unberührt.
 import { SeitenKopf } from '../components/layout/SeitenKopf';
+import { MetaAbschnitt } from '../components/layout/MetaAbschnitt';
 import { VerfallUebersicht } from '../components/VerfallUebersicht';
 
 const ABSCHNITTE: { titel: string; text: string }[] = [
@@ -71,11 +72,10 @@ export function Methodik() {
       <SeitenKopf overline="Methodik" titel="Wie LexMetrik rechnet" />
 
       <div className="space-y-8">
+        {/* W2·29-WERKBANK-REST S3: die Abschnitts-Hülle kommt aus
+            `layout/MetaAbschnitt` (eine Quelle mit /ueber und /datenschutz). */}
         {ABSCHNITTE.map((a) => (
-          <section key={a.titel} className="space-y-2 border-t border-line pt-6">
-            <h2 className="text-h3 font-display font-semibold text-ink-900">{a.titel}</h2>
-            <p className="text-body-s text-ink-600 leading-relaxed max-w-reading">{a.text}</p>
-          </section>
+          <MetaAbschnitt key={a.titel} titel={a.titel}><p>{a.text}</p></MetaAbschnitt>
         ))}
 
         <VerfallUebersicht />
