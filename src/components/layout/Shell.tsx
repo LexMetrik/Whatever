@@ -71,6 +71,21 @@ function ZiehGriff({ breite, setBreite }: { breite: number; setBreite: (b: numbe
   );
 }
 
+// Route-Breite des Inhalts (W2·29-WERKBANK-REST-BREITE, Entscheid David
+// 25.9.2026 «ab 1280 auf allen breiten identisch … das soll optimiert
+// werden»): Default für JEDE Route bleibt `max-w-content` (70rem) — byte-
+// gleich zum bisherigen Stand. Einzige Ausnahme ist die Startseite (`/`):
+// dort kommt ab `2xl` (1536px) die breitere Stufe `weit` (90rem, Token in
+// `tailwind.config.js`) hinzu, weil Kacheln/Raster den Platz sinnvoll nutzen
+// können, ohne dass ungedeckelter Fliesstext (z. B. `PflichtDisclaimer`,
+// `MaterialKarte`) mitwächst — eine globale Verbreiterung hätte genau das
+// getan (Messung 25.9.2026: 973px/128 Zeichen je Zeile auf /rechner/zpo-
+// fristen). Benannte Funktion statt Inline-Bedingung, weil es (noch) keine
+// routenweise Layout-Konfiguration in dieser Datei gibt.
+function inhaltsbreiteFuer(pfad: string): string {
+  return pfad === '/' ? 'max-w-content 2xl:max-w-weit' : 'max-w-content';
+}
+
 // ─── App-Shell (Build-Plan App-Shell, Phase 3) ─────────────────────────────
 //
 // Dauerhaft sichtbare LINKE Seitenleiste (Desktop) + schmaler TOP-Streifen,
@@ -112,7 +127,10 @@ export function Shell({ children }: { children: ReactNode }) {
   // `/einstellungen` und hält dort seinen eigenen `useSchriftskala`; die Shell
   // braucht die Steuer-API nicht mehr. Angewendet wird die gespeicherte Wahl
   // unverändert vor dem ersten Render in `main.tsx` (`wendeSchriftskalaAn`).
-  const inhaltsbreiteKlasse = 'max-w-content';
+  // Seit W2·29-WERKBANK-REST-BREITE (25.9.2026) ist `max-w-content` nur noch
+  // der Default aller Routen — die Startseite bekommt ab `2xl` zusätzlich
+  // `weit`, siehe `inhaltsbreiteFuer` oben.
+  const inhaltsbreiteKlasse = inhaltsbreiteFuer(pathname);
 
   // Split-View (B-1): sekundäre Panes nur ab lg nebeneinander; mobil + Prerender
   // = 1 Pane (istLg startet false → SSR/Default byte-gleich, B-4-Faltung gratis).
