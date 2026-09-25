@@ -4,6 +4,7 @@ import { assemble } from './engine';
 import { fmtDatum, fmtDatumLang } from './datum';
 import { berechneSperrfristen, type SperrfristenErgebnis } from '../sperrfristen';
 import { berechneKuendigungsfrist } from '../kuendigungsfrist';
+import { STANDARD_ARBEITSTAGE } from '../kuendigungsfristProbezeit';
 import type { Sperrereignis } from '../../types/legal';
 import {
   type KdgBasisAntworten, KDG_BASIS_DEFAULTS, kdgBasisAbgeleitet,
@@ -34,6 +35,12 @@ export type KagAntworten = KdgBasisAntworten & {
   kuendigungsterminMonatsende: boolean;
   vaterschaftsurlaubResttage: number;    // Art. 335c Abs. 3 OR
   sperrereignisse: Sperrereignis[];      // Art. 336c OR (geteilter Editor)
+  // RL-16b Nachzug (Gegenprüfung Runde 2, 25.9.2026): Arbeitstage der Person
+  // für die Probezeitverlängerung (Art. 335b Abs. 3 OR, BGE 148 III 126
+  // E. 5.2.6) — Wochentage nach date-fns getDay (0 = So … 6 = Sa). Optional:
+  // fehlt das Feld (Antworten vor RL-16b), rechnet die Engine Mo–Fr und legt
+  // das als Warnung offen; die Maske setzt den Standard sichtbar (KAG_DEFAULTS).
+  arbeitstageWoche?: number[];
   // Offengelegte Spez.-Abweichung (Bug-Check B, 6.6.2026): Der Feldkatalog 1b
   // der Spezifikation listet freistellung/freistellungAb nicht, ihre Baustein-
   // liste nennt K2_freistellung mit {{freistellungAbFmt}} aber ausdrücklich —
@@ -54,6 +61,7 @@ export const KAG_DEFAULTS: KagAntworten = {
   kuendigungsterminMonatsende: true,
   vaterschaftsurlaubResttage: 0,
   sperrereignisse: [],
+  arbeitstageWoche: [...STANDARD_ARBEITSTAGE],
   freistellung: false, freistellungAb: '',
   begruendungAufnehmen: false, begruendungText: '',
 };
@@ -79,6 +87,9 @@ function kagEngineInput(a: KagAntworten) {
     abweichendeFristQuelleGAV: a.fristQuelle === 'abweichend' ? a.abweichendeFristQuelleGAV : undefined,
     kuendigungsterminMonatsende: a.kuendigungsterminMonatsende,
     vaterschaftsurlaubResttage: a.vaterschaftsurlaubResttage > 0 ? a.vaterschaftsurlaubResttage : undefined,
+    // RL-16b Nachzug: unverändert durchreichen — Prüfung/Standard in der Engine
+    // (istGueltigeArbeitstage), sonst rechnete der Brief bei Teilzeit Mo–Fr.
+    arbeitstageWoche: a.arbeitstageWoche,
   };
 }
 
