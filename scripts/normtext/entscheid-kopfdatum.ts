@@ -111,8 +111,8 @@ export function aktenzeichenRe(docket: string | null | undefined): RegExp | null
  * mit DIESEM Datum und dem EIGENEN Aktenzeichen («vom 4. August 2025, BV 2024/21»,
  * SG-Regeste; «vom 20.08.2026, Nr. 100.2025.363U», BE-Fusszeile), oder (b) das
  * eigene Aktenzeichen steht unmittelbar vor dem Titel, ohne Satzzeichen dazwischen
- * und nicht als Teil einer Plattform-Kopfzeile «TT.MM.JJJJ Az»
- * (AG «XBE.2025.10 Entscheid vom», BS «AK.2022.32 ENTSCHEID vom»).
+ * und nicht als Teil einer Plattform-Kopfzeile «TT.MM.JJJJ Az(, Az)*» (an keiner
+ * Stelle der Liste) (AG «XBE.2025.10 Entscheid vom», BS «AK.2022.32 ENTSCHEID vom»).
  */
 function titelBelegt(kopf: string, titelIndex: number, datum: string, az: RegExp | null): boolean {
   if (!az) return false;
@@ -121,8 +121,13 @@ function titelBelegt(kopf: string, titelIndex: number, datum: string, az: RegExp
     const d = m[1] ? iso(m[3], MONATE[m[2]], m[1]) : iso(m[6], m[5], m[4]);
     if (d === datum) return true;
   }
-  // Nicht das Aktenzeichen einer Plattform-Kopfzeile («08.01.2025 B 2023/225 …»).
-  return new RegExp(`(?<!\\d{2}\\.\\d{2}\\.\\d{4} )(?:${az.source})[^.;:()«»]{0,30}$`, 'u').test(kopf.slice(0, titelIndex));
+  // Kein Aktenzeichen einer Plattform-Kopfzeile «TT.MM.JJJJ Az(, Az)*» — auch nicht
+  // das zweite, dem nur «, » vorangeht (Gegenprüfung 25.9.2026, SG «03.02.2025
+  // B 2024/58, B 2024/59 Entscheid vom 14. Januar 2026 des Bundesgerichts»).
+  // Die ganze Kopfzeile wird darum vor der Prüfung durch einen Stopp ersetzt.
+  const kopfzeile = new RegExp(`(?<![\\d.])\\d{2}\\.\\d{2}\\.\\d{4} (?:${az.source})(?:(?:, ?| und )(?:${az.source}))*`, 'gu');
+  const vor = kopf.slice(0, titelIndex).replace(kopfzeile, ';');
+  return new RegExp(`(?:${az.source})[^.;:()«»]{0,30}$`, 'u').test(vor);
 }
 
 /** ISO-Datum mit Kalender-Gegenprobe («31. April» ist kein Datum) und Jahres-Rahmen. */

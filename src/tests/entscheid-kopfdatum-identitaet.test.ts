@@ -57,6 +57,18 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
       .toMatchObject({ status: 'ok', datum: '2025-08-21' });
     expect(kopfEntscheiddatum('Entscheiddatum: 04.07.2025 B 2023/225. Obergericht Urteil vom 22. Dezember 2025', 'B 2023/225').status).toBe('widerspruch');
   });
+  it('Plattform-Kopfzeile mit mehreren Aktenzeichen: auch das zweite belegt keinen Titel (Nachprüfung 25.9.2026)', () => {
+    // Echte SG-OCL-Form (dreisprachige Kopfzeile, verbundene Verfahren), dahinter ein BGer-Nachgang.
+    const sg = 'St.Gallen Verwaltungsgericht 03.02.2025 B 2024/58, B 2024/59 Saint-Gall Verwaltungsgericht 03.02.2025 B 2024/58, B 2024/59 San Gallo Verwaltungsgericht 03.02.2025 B 2024/58, B 2024/59 Entscheid vom 14. Januar 2026 des Bundesgerichts';
+    const k = kopfEntscheiddatum(sg, 'B 2024/58, B 2024/59');
+    expect(k.status).toBe('widerspruch');
+    expect(kopfEntscheiddatum('Verwaltungsgericht 03.02.2025 B 2024/58 und B 2024/59 Urteil vom 14. Januar 2026', 'B 2024/58, B 2024/59').status).toBe('widerspruch');
+    // Gegenprobe: dasselbe Aktenzeichen AUSSERHALB der Kopfzeile unmittelbar vor dem Titel belegt weiterhin.
+    expect(kopfEntscheiddatum('Verwaltungsgericht 03.02.2025 B 2024/58, B 2024/59 Abteilung II B 2024/59 Entscheid vom 4. Februar 2025', 'B 2024/58, B 2024/59'))
+      .toMatchObject({ status: 'ok', datum: '2025-02-04' });
+    expect(kopfEntscheiddatum('Entscheiddatum: 04.07.2025 Abteilung B 2024/58, B 2024/59 Entscheid vom 3. Februar 2025', 'B 2024/58, B 2024/59'))
+      .toMatchObject({ status: 'ok', datum: '2025-02-03' });
+  });
   it('echt SG UV 2025/14: Titel auf PDF-Seite 2, Aktenzeichen im PDF ⇒ 21.10.2025', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
     expect(kantonsEntscheiddatum(d, SG_UV_2025_14_PDF)).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });
