@@ -12,3 +12,5 @@ baubar.**
   - [ ] **Suche erst ab zwei Zeichen** *(Entscheid David 22.9.2026)* — ein einzelnes Zeichen erzeugt auf einem langen Entscheid 15 019 Treffer in 201 Erwägungen und ~150 ms Arbeit; der teuerste Aufruf ist per Konstruktion der erste und bewusst unentprellt. Die Mindestlänge ändert bewusst, was die Suche findet (Einzelzeichen wie «§» oder eine Ziffer fallen weg) — das ist der getroffene fachliche Entscheid, nicht ein Nebeneffekt.
 
 Umgehängt 24.9.2026 (W2·17-UI-BEFUNDE → W2·29-WERKBANK-REST, Bündelung in den Werkbank-Umbau, Auftrag David 24.9. «was das Gleiche oder Ähnliches betrifft, auch in diesen Umbau»): S1 (EntscheidLeser); Verhaltensänderung → eigener Commit, getrennt vom Byte-Gleich-Beweis des Körpers.
+
+**Erledigt 2026-09-25:** REST S1 (Kopf vor Rebase c0bf8b106, PR folgt): gebaut, Bug-Check Sonnet bestanden
