@@ -441,6 +441,12 @@ describe('G1 (Runde 3): Zeilen-Fingerabdruck je ZEILE aus der HTML, nicht je Pro
     expect(statistik.ohne.bild).toBe(1);
   });
 
+  it('G5: <caption> wird ein eigenes Segment, statt mit der Tabelle verworfen zu werden', () => {
+    const html = huelle('<table><caption>Tabelle 1: Gebühren nach Streitwert</caption><tr><td>bis 100</td><td>7.–</td></tr></table>');
+    const segmente = segmentiereArtikel(html, 'art_1')!;
+    expect(segmente.some((s) => s.art === 'caption' && s.text.includes('Gebühren nach Streitwert'))).toBe(true);
+  });
+
   it('Mindestlänge: ein Zeilenstück aus ≥ 2 Zellen wird auch unter 8 Zeichen gefingerprintet, eine Zelle nicht', () => {
     const fps = segmenteZuFingerabdruecken([
       { art: 'tr', text: 'Arsen 2' },

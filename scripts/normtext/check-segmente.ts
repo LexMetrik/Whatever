@@ -177,7 +177,7 @@ interface FrischesSoll {
   zeilenStatistik: ZeilenStatistik; // G1: Zeilen ohne Zeilen-Fingerabdruck je Grund (landet im Soll)
   auszuegeJeEid: Map<string, Map<string, string>>; // eId -> hash -> Auszug (≤80 Zeichen, NUR Report/Basislinie)
   keinAnkerLokalisierbar: string[];
-  restmeldungen: string[]; // B2: nennenswerter unklassifizierter Text nach der Zerlegung (meldend, s. segmente-logik.ts)
+  restmeldungen: string[]; // B2/G5: unklassifizierter Text nach der Zerlegung — ROT (s. segmente-logik.ts restmenge)
 }
 
 // G1/G6 (Runde 3, 25.9.2026): die frühere Allowlist `zeilenFingerabdruckUnsicher`
@@ -218,7 +218,9 @@ function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
   const zeilenStatistik = leereZeilenStatistik();
 
   for (const eId of alleEids) {
-    const rohSegmente = segmentiereAnker(dokument, ankerIdVonEid(eId), restmeldungen, zeilenStatistik);
+    const rest: string[] = [];
+    const rohSegmente = segmentiereAnker(dokument, ankerIdVonEid(eId), rest, zeilenStatistik);
+    for (const m of rest) restmeldungen.push(`${key} ${eId}: ${m}`); // G5: Meldung nennt Erlass und eId
     if (rohSegmente === null) {
       keinAnkerLokalisierbar.push(eId);
       continue;
@@ -285,6 +287,15 @@ function unerwarteteAusklammerungen(anzeige: ReadonlyArray<{ erlass: string; eId
     .map((a) => `${a.erlass} ${a.eId}`);
 }
 
+// G5 (Runde 3): Text, den kein Segmenttyp erfasst (unbekannter Block wie
+// <ul>/<li>), ist ROT — heute 0 Treffer, ein neuer Fall hält den Lauf an.
+function restmengenFehler(meldungen: readonly string[]): string[] {
+  return [
+    `❌ FEHLER (G5): ${meldungen.length} Text-Rest(e) ohne Segment — unbekannter Block-Typ, Zerlegung erweitern:`,
+    ...meldungen.slice(0, 20).map((m) => `   · ${m}`),
+  ];
+}
+
 // ── --schreiben ─────────────────────────────────────────────────────────────
 
 function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
@@ -317,10 +328,7 @@ function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
       ...unerwartet.slice(0, 30).map((a) => `   · ${a}`),
     ]);
   }
-  if (restmeldungen.length > 0) {
-    console.log(`ℹ  ${restmeldungen.length} Restmengen-Meldung(en) (B2, meldend — kein Fehler):`);
-    for (const m of restmeldungen.slice(0, 10)) console.log(`   · ${m}`);
-  }
+  if (restmeldungen.length > 0) fehlerUndExit(restmengenFehler(restmeldungen));
   console.log(
     `✓ --schreiben: ${eintraege.length} Soll-Dateien in ${SOLL_VERZEICHNIS}/ geschrieben ` +
       `(${gesamtArtikel} Artikel, ${gesamtSegmente} Segmente, ${ausklammerungen.length} ausgeklammert ` +
@@ -543,10 +551,10 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
       for (const a of unerwartet.slice(0, 30)) console.error(`   · ${a}`);
     }
   }
-  // B2: Restmengen-Prüfung — meldend, kein Fehler (s. segmente-logik.ts `restmenge`).
+  // B2/G5: Restmenge (Text ohne Segment) ist ROT (s. segmente-logik.ts `restmenge`).
   if (z.restmeldungenGesamt.length > 0) {
-    console.log(`ℹ  ${z.restmeldungenGesamt.length} Restmengen-Meldung(en) (B2, meldend):`);
-    for (const m of z.restmeldungenGesamt.slice(0, 10)) console.log(`   · ${m}`);
+    fehler = true;
+    for (const zeile of restmengenFehler(z.restmeldungenGesamt)) console.error(zeile);
   }
 
   // B6: nur Modus B (s. Begründung oben — Modus C ist gegen diesen Fall

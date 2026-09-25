@@ -386,11 +386,12 @@ function segmentiereBereich(bereich: Knoten, segmente: RohSegment[]): void {
 // Block-Typ (z.B. <ul>/<li>, <blockquote>) würde sonst wie dl>dl VOR diesem
 // Fix komplett unbemerkt Text verschlucken. Schwelle wie ein Segment (§
 // Architektur Ziff. 5: < 8 Zeichen sind Marken/Ziffern-Rauschen, kein
-// Verlust-Risiko). Rein meldend (kein Segment, keine Fingerabdruck-Prüfung
-// dagegen) — eine willkürlich zusammengeklebte Restmenge mehrerer, im
-// Original NICHT benachbarter Text-Knoten ist keine verlässliche
-// Enthaltensein-Prüfung gegen den Projektions-Blob (anders als ein
-// tatsächliches HTML-Element).
+// Verlust-Risiko). Kein Segment (keine Fingerabdruck-Prüfung dagegen) — eine
+// willkürlich zusammengeklebte Restmenge mehrerer, im Original NICHT
+// benachbarter Text-Knoten ist keine verlässliche Enthaltensein-Prüfung gegen
+// den Projektions-Blob. G5 (Runde 3): die CLI macht jede Restmenge ROT statt
+// sie nur zu melden (heute 0 Treffer — ein neuer Block-Typ wie <ul>/<li> soll
+// den Frische-PR anhalten, nicht in einer Hinweiszeile untergehen).
 function restmenge(bereich: Knoten): string | null {
   const roh = bereich.textContent ?? '';
   if (normalisiere(roh).length < SEGMENT_MINDESTLAENGE) return null;
@@ -597,7 +598,7 @@ export function segmentiereAnker(
 
   if (restmeldungen) {
     const rest = restmenge(klon);
-    if (rest) restmeldungen.push(`${ankerId}: "${rest}"`);
+    if (rest) restmeldungen.push(`"${rest}"`); // Erlass + eId setzt der Aufrufer davor (G5)
   }
 
   return segmente;
