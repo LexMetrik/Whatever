@@ -122,6 +122,9 @@ export interface MaterialRegistereintrag {
   normKeys?: string[];
   /** Optionaler Ehrlichkeits-/Pflege-Hinweis (z. B. «Hash unbestätigt»). */
   hinweis?: string;
+  /** Amtliche Fundstelle im Bundesblatt («BBl 2006 1», Fedlex `jolux:historicalLegalId` der
+   *  DE-Fassung; M-7, W2·29-WERKBANK-LESER 25.9.2026). Heute nur Botschaften (BR). */
+  fundstelle?: string;
   // ── Botschaften-Zusatzfelder (Paket 2, W2·6; sonst undefined) ──────────────
   /** Amtlicher Titel FR/IT (i18n-Zusage; Botschaften tragen ihn, §1 nie umformulieren). */
   titelFr?: string;
@@ -215,6 +218,8 @@ export interface BrowseMaterial {
   rang: number;
   normKeys: string[];
   hinweis: string | null;
+  /** BBl-Fundstelle («BBl 2006 1»; nur Botschaften, M-7 25.9.2026). */
+  fundstelle?: string;
   /** Vernehmlassungs-Zustand (Paket 3; nur bei doktyp==='vernehmlassung' gesetzt).
    *  Bleibt im Kern: das Kontext-Panel zeigt Status und Frist in JEDER Sprache. */
   vernehmlassung?: {

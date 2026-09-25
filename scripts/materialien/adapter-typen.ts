@@ -21,7 +21,7 @@ export interface SoftLawDok {
   hinweis: string | null;
   quelle_url: string; // §7 b (amtliche PDF-URL)
   stand: string; // ISO, §7 a
-  stand_quelle: 'hub-label' | 'pdf-text' | 'pdf-meta' | 'payload' | 'toc' | 'ziffer-datum';
+  stand_quelle: 'hub-label' | 'hub-beschreibung' | 'pdf-text' | 'pdf-meta' | 'payload' | 'toc' | 'ziffer-datum';
   abgerufen: string;
   drift_token: string; // §0/A8: Insert muss liefern
   quell_ids: Record<string, unknown>;

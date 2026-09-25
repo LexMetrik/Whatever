@@ -225,6 +225,27 @@ export function titelDatumNachIso(titel: string): string | null {
   return `${m[3]}-${m[2].padStart(2, '0')}-${m[1].padStart(2, '0')}`;
 }
 
+/**
+ * AN-2 (W2·29-WERKBANK-LESER, 25.9.2026): Dokumentdatum aus der amtlichen Beschreibung der
+ * Indexseite — ESTV schreibt es dort als «<Gegenstand> vom DD.MM.YYYY (<Steuerart>)» (live
+ * 25.9.2026: «… vom 31.08.2005 (Direkte Bundessteuer)» an KS Nr. 11, dessen Upload-Label
+ * «10. Oktober 2023» lautet). NUR die erste Zeile (Folgezeilen listen Anhänge mit FREMDEN
+ * Daten, z. B. «Kreisschreiben Nr. 30 der SSK vom 22. August 2007» an KS Nr. 20) und NUR die
+ * numerische Form. Rein; null = keine Aussage.
+ */
+export function beschreibungDatumNachIso(beschreibung: string): string | null {
+  return titelDatumNachIso(beschreibung.split('\n')[0] ?? '');
+}
+
+/** AN-13: amtliche Signatur der W-Serie im Titel («W01-006D vom 06.06.2001» → «W01-006»; das
+ *  «D» ist das Sprachkürzel). Der Dateiname (dbst-ks-w03-006) gruppiert ESTV-intern anders —
+ *  live 25.9.2026 w03-006 ↔ W01-006D, w03-008 ↔ W02-008D —, darum trägt die ANZEIGE die
+ *  Titel-Signatur, der Key bleibt dateinamen-stabil (§2.6). */
+export function wSignaturAusTitel(titel: string): string | null {
+  const m = /^(W\d{2}-\d{3})D?\b/.exec(titel);
+  return m ? m[1] : null;
+}
+
 /** Anzeige-Nummer je Familie ('Nr. 50a' | 'Nr. 45 · Anhang 1-1' | 'W95-002' | 'Mitteilung 020' |
  *  'S-02.122.1b'). Beilagen tragen die Beilage IN der Nummer — sonst kollidierte (behoerde+nummer)
  *  mit dem Haupt-KS (Dubletten-Tor §2.6, live gefangen bei KS 37 Anhang 1–5). */
@@ -279,7 +300,13 @@ export function parseAnkerInhalt(inner: string): { titel: string; beschreibung: 
   if (!t) return null;
   const titel = dekodiereEntities(t[1].replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
   const d = /<p[^>]*class="[^"]*download-item__description[^"]*"[^>]*>([\s\S]*?)<\/p>/.exec(inner);
-  const beschreibung = d ? dekodiereEntities(d[1].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim() : '';
+  // Zeilen bleiben erhalten (AN-2/AN-13, 25.9.2026): die erste Zeile ist der Gegenstand samt
+  // Dokumentdatum, Folgezeilen listen Anhänge («- Beispiele»); innerhalb der Zeile wie bisher
+  // Whitespace-normalisiert. Wo die Beschreibung als Zitat-Basis dient, wird sie einzeilig.
+  const beschreibung = d
+    ? dekodiereEntities(d[1].replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' '))
+      .split(/\r?\n/).map((z) => z.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n')
+    : '';
   let datumLabel = '';
   for (const s of inner.matchAll(/<span class="meta-info__item">([^<]*)<\/span>/g)) {
     const v = dekodiereEntities(s[1]).trim();
@@ -340,7 +367,7 @@ export function baueDokUndKanten(
     if (ausBeschreibung.length > 0) {
       erlasse = ausBeschreibung;
       zuordnung = 'amtlich';
-      rohZitatBasis = roh.beschreibung;
+      rohZitatBasis = roh.beschreibung.replace(/\s+/g, ' ');
     } else {
       erlasse = [...new Set(seiten.map((s) => s.kontextErlass))];
       zuordnung = 'maschinell';
@@ -348,18 +375,32 @@ export function baueDokUndKanten(
     }
   }
 
-  const stand = titelDatumNachIso(roh.titel) ?? datumslabelNachIso(roh.datumLabel);
+  // Datum: Titel (W-Serie/Mitteilung) → Beschreibung (AN-2; nur Haupt-Dokumente, eine
+  // Beilage-Beschreibung nennt das Datum ihres Haupt-KS «gemäss Kreisschreiben Nr. 23 vom …»)
+  // → Upload-Label der Indexseite (letzter Rückfall, als 'hub-label' deklariert).
+  const titelDatum = titelDatumNachIso(roh.titel);
+  const beschreibungDatum = (titelDatum || b.beilage) ? null : beschreibungDatumNachIso(roh.beschreibung);
+  const stand = titelDatum ?? beschreibungDatum ?? datumslabelNachIso(roh.datumLabel);
+  const standQuelle = beschreibungDatum ? 'hub-beschreibung' as const : 'hub-label' as const;
   const doktyp = doktypVon(b, roh.titel);
+  // AN-13: W-Serie — Titel ist nur «Signatur vom Datum», der Gegenstand steht allein in der
+  // ersten Zeile der amtlichen Beschreibung. Beide Teile wörtlich, verbunden wie ESTV die
+  // Kreisschreiben selbst betitelt («Kreisschreiben Nr. 50: <Gegenstand>»).
+  const wSignatur = b.familie === 'w' ? wSignaturAusTitel(roh.titel) : null;
+  const gegenstand = (roh.beschreibung.split('\n')[0] ?? '').trim();
+  const titel = wSignatur && /^W\d{2}-\d{3}D? vom \d{1,2}\.\d{1,2}\.\d{4}$/.test(roh.titel.trim()) && gegenstand
+    ? `${roh.titel.trim()}: ${gegenstand}`
+    : roh.titel;
   const shaId = createHash('sha256')
-    .update([id, roh.titel, roh.href, stand, erlasse.join(','), zuordnung].join(' '), 'utf8')
+    .update([id, titel, roh.href, stand, erlasse.join(','), zuordnung].join(' '), 'utf8')
     .digest('hex');
 
   const dok: SoftLawDok = {
     id,
     behoerde: 'ESTV',
     doktyp,
-    titel: roh.titel,
-    nummer: anzeigeNummer(b),
+    titel,
+    nummer: wSignatur ?? anzeigeNummer(b),
     // W2-TRENNUNG (29.8.2026): ESTV = Eidgenössische STEUERverwaltung —
     // Kreis-/Rundschreiben zur direkten Bundessteuer und zur Verrechnungs-
     // steuer sind ausnahmslos Steuerdokumente, nie Sozialversicherung.
@@ -370,7 +411,7 @@ export function baueDokUndKanten(
     hinweis: zuordnung === 'maschinell' ? HINWEIS_MASCHINELL : HINWEIS_ESTV,
     quelle_url: roh.href,
     stand,
-    stand_quelle: 'hub-label',
+    stand_quelle: standQuelle,
     abgerufen,
     drift_token: driftToken(roh.titel, roh.datumLabel, roh.href),
     quell_ids: { dam_token: damTokenAusUrl(roh.href), url_basis: roh.href, seiten: seiten.map((s) => s.tag) },
