@@ -237,7 +237,7 @@ auf einen NEUEN Regress deutet.
     Mitteilungs-/Publikations- oder nachfolgende BGer-Datum (GR 6/6, BE 5/12, SG 6/6, AG 5/6 falsch;
     ZH und Bund korrekt). Kantonal gilt der amtliche Urteilskopf: `kantonsEntscheiddatum` in
     `mappeEntscheidOCL` (Regel `kopfEntscheiddatum`, `scripts/normtext/entscheid-kopfdatum.ts`;
-    SG-Deckblatt ohne Kopf ⇒ Kopf des amtlichen PDF über `holeAmtlicheKopfSeiten`). Bestand:
+    SG-Deckblatt ohne Kopf ⇒ Kopf des amtlichen PDF über `kopfSeitenFallsNoetig`, `entscheid-kantonsdatum.ts`). Bestand:
     `npm run entscheide -- --datum=$(date +%F) --kopfdatum-refresh` (Netz, nur datum + zitierung).
     Beleg: `bibliothek/rechtsprechung/kantonales-entscheiddatum-kopf-2026-09-25.md`.
 

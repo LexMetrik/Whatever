@@ -43,7 +43,7 @@ bleibt unberührt.
 ## Regel (deterministisch, §2)
 
 `kopfEntscheiddatum` (`scripts/normtext/entscheid-kopfdatum.ts`), angewandt nur kantonal über
-`kantonsEntscheiddatum` (`scripts/normtext/adapter-entscheide.ts`):
+`kantonsEntscheiddatum` (`scripts/normtext/entscheid-kantonsdatum.ts`, angewandt in `mappeEntscheidOCL`):
 
 1. Kopf-Bereich = erste 1500 Zeichen bis vor den ersten Stopp-Marker (in Sachen · betreffend ·
    Gegenstand · Parteien · Besetzung · Beteiligte · Sachverhalt · Erwägungen · Anfechtungsobj.).
