@@ -344,7 +344,10 @@ Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
    (7 gelandet, 5 `claude/*`, 6 `worktree-agent-*`), 2 ungelandet ohne PR.
    Diese Ziffer sah nur EIGENE Flächen — daher Anzeige + Befehl (`lehren` 5).
 2. **Geparkte Stände sind Tags, keine Branches:** `git tag
-   archiv/<slug>-<datum> <sha>` pushen, Branch löschen.
+   archiv/<slug>-<datum> <sha>` pushen, Branch löschen. `<sha>` ist der
+   LOKALE Kopf, nicht `origin/<branch>` — vorher `git log origin/<branch>..<branch>`
+   prüfen (Beleg 25.9.2026: Tag auf den Remote-Kopf gesetzt, drei nie gepushte
+   Commits nur per Reflog gerettet → zweites Tag).
 3. **Dependabot je Session einordnen:** Patch/Minor einreihen (`gh pr merge
    <n> --squash`, `--auto` zulässig — kein Risikopfad, kein Nachzug),
    Hauptversionen mit Begründung schliessen — nie liegen lassen (8.9.2026:
