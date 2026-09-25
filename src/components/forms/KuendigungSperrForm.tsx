@@ -14,6 +14,8 @@ import { KSP_LINK_SPEC } from '../../lib/rechnerPermalinks';
 import { KuendigungTimeline } from '../KuendigungTimeline';
 import { SperrtageZaehler } from '../SperrtageZaehler';
 import { SperrereignisseEditor } from './SperrereignisseEditor';
+import { ArbeitstageFeld } from './ArbeitstageFeld';
+import { arbeitstageText, STANDARD_ARBEITSTAGE } from '../../lib/kuendigungsfristProbezeit';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import { datumOderStrich } from '../ui/datumText';
 
@@ -31,6 +33,8 @@ const DEFAULTS: SperrfristenInput = {
   probezeitMonate: 1,
   kuendigungsterminMonatsende: true,
   abweichendeFristFormGueltig: true,
+  // RL-16b: Standard Mo–Fr (Art. 335b Abs. 3 OR, BGE 148 III 126)
+  arbeitstageWoche: [1, 2, 3, 4, 5],
   sperrereignisse: [],
 };
 
@@ -93,6 +97,7 @@ export function KuendigungSperrForm({ onBeendigung }: {
     'Kündigende Partei': form.kuendigendePartei === 'arbeitgeber' ? 'Arbeitgeber' : 'Arbeitnehmer',
     'Probezeit (Monate)': String(form.probezeitMonate),
     'Kündigungstermin Monatsende': form.kuendigungsterminMonatsende ? 'Ja' : 'Nein',
+    ...(form.probezeitMonate > 0 ? { 'Arbeitstage pro Woche': arbeitstageText(form.arbeitstageWoche ?? STANDARD_ARBEITSTAGE) } : {}),
     ...(form.abweichendeFristMonate != null ? { 'Abweichende Frist (Monate)': String(form.abweichendeFristMonate) } : {}),
   };
 
@@ -154,6 +159,14 @@ export function KuendigungSperrForm({ onBeendigung }: {
             className={inputCls}
           />
         </Field>
+
+        {/* RL-16b (W-08 b): Arbeitstage für die Probezeitverlängerung nach
+            Art. 335b Abs. 3 OR — nur sichtbar, wenn eine Probezeit besteht. */}
+        {form.probezeitMonate > 0 && (
+          <Field label="Arbeitstage pro Woche" hint="Für die Verlängerung der Probezeit bei Krankheit, Unfall oder Dienstpflicht (Art. 335b Abs. 3 OR)">
+            <ArbeitstageFeld wert={form.arbeitstageWoche} onChange={(t) => set('arbeitstageWoche', t)} />
+          </Field>
+        )}
 
         <Field label="Abweichende Frist (Monate)" optional hint="§3.2 schriftlich/GAV; ≥ 1 Monat gilt (auch kürzer)">
           <input
