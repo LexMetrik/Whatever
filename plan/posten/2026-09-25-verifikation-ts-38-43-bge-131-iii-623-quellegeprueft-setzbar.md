@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: verifikation.ts:38-43 BGE_131_III_623 quelleGeprueft setzbar; lohnfortzahlung.ts Schritt 8 Karenztage-Text präzisieren
 anlass: RL-25b-Nebenfund, 24.9.2026
 -->

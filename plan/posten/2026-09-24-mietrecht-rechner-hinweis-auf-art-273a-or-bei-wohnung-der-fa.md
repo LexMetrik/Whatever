@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: Mietrecht-Rechner: Hinweis auf Art. 273a OR bei Wohnung der Familie (Ehegatte kann Kündigung ebenfalls anfechten)
 anlass: Entscheid David 24.9.2026 (Chat) «273a ja», Empfehlung aus Bau #1056
 -->

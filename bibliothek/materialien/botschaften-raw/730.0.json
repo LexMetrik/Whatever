@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/728"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'energia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 5317"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2009 5317"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/728"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'energia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 5317"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2009 5317"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/728"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'energia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2009 5317"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2009 5317"
     }
   },
   {
@@ -132,6 +171,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/370"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'energia (art. 8)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2433"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 2433"
     }
   },
   {
@@ -171,6 +223,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/370"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'energia (art. 8)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2433"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 2433"
     }
   },
   {
@@ -210,6 +275,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/370"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'energia (art. 8)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 2433"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 2433"
     }
   },
   {
@@ -249,6 +327,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +352,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il primo pacchetto di misure della Strategia energetica 2050 (Revisione del diritto in materia di energia) e l'iniziativa popolare «Per un abbandono pianificato dell'energia nucleare (Iniziativa per l'abbandono del nucleare)» "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 7561"
     }
   },
   {
@@ -288,6 +379,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +404,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il primo pacchetto di misure della Strategia energetica 2050 (Revisione del diritto in materia di energia) e l'iniziativa popolare «Per un abbandono pianificato dell'energia nucleare (Iniziativa per l'abbandono del nucleare)» "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 7561"
     }
   },
   {
@@ -327,6 +431,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +456,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il primo pacchetto di misure della Strategia energetica 2050 (Revisione del diritto in materia di energia) e l'iniziativa popolare «Per un abbandono pianificato dell'energia nucleare (Iniziativa per l'abbandono del nucleare)» "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 7561"
     }
   },
   {
@@ -366,6 +483,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/762"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +508,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il primo pacchetto di misure della Strategia energetica 2050 (Revisione del diritto in materia di energia) e l'iniziativa popolare «Per un abbandono pianificato dell'energia nucleare (Iniziativa per l'abbandono del nucleare)» "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 7561"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 7561"
     }
   },
   {
@@ -405,6 +535,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/679"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +560,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale su un approvvigionamento elettrico sicuro con le energie rinnovabili"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2021 1666"
     }
   },
   {
@@ -445,6 +584,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/297"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -465,6 +608,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sull’energia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 1602"
     }
   },
   {
@@ -484,6 +632,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/99"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -504,6 +656,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sull’energia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 1602"
     }
   },
   {
@@ -522,6 +679,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2025/589"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -543,6 +704,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo all’approvazione dell’Accordo concernente misure di solidarietà volte a garantire la sicurezza dell’approvvigionamento di gas tra la Svizzera, la Germania e l’Italia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 2318"
     }
   }
 ]

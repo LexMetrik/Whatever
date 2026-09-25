@@ -2070,7 +2070,7 @@
    "rechenweg": [
     {
      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-     "zwischenergebnis": "Zugang 10.09.2025 liegt ausserhalb der Probezeit (Ende 31.03.2025). Ordentliche Frist gilt.",
+     "zwischenergebnis": "Zugang 10.09.2025 liegt ausserhalb der Probezeit (Ende 01.04.2025). Ordentliche Frist gilt.",
      "normen": [
       {
        "artikel": "Art. 335b OR",
@@ -2140,7 +2140,7 @@
    "rechenweg": [
     {
      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-     "zwischenergebnis": "Zugang 10.09.2025 liegt ausserhalb der Probezeit (Ende 31.01.2015). Ordentliche Frist gilt.",
+     "zwischenergebnis": "Zugang 10.09.2025 liegt ausserhalb der Probezeit (Ende 01.02.2015). Ordentliche Frist gilt.",
      "normen": [
       {
        "artikel": "Art. 335b OR",
@@ -2223,7 +2223,7 @@
    },
    {
     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-    "zwischenergebnis": "Zugang 20.04.2025 liegt ausserhalb der Probezeit (Ende 31.01.2020). Ordentliche Frist gilt.",
+    "zwischenergebnis": "Zugang 20.04.2025 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
     "normen": [
      {
       "artikel": "Art. 335b OR",
@@ -24033,7 +24033,7 @@
     },
     {
      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-     "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 31.01.2020). Ordentliche Frist gilt.",
+     "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
      "normen": [
       {
        "artikel": "Art. 335b OR",
@@ -24260,7 +24260,7 @@
     },
     {
      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-     "zwischenergebnis": "Zugang 20.02.2026 liegt in der Probezeit (3 Monat/e, Ende 04.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
+     "zwischenergebnis": "Zugang 20.02.2026 liegt in der Probezeit (3 Monat/e, Ende 05.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
      "normen": [
       {
        "artikel": "Art. 335b OR",
@@ -24432,7 +24432,7 @@
     },
     {
      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-     "zwischenergebnis": "Zugang 31.03.2026 liegt in der Probezeit (3 Monat/e, Ende 31.03.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
+     "zwischenergebnis": "Zugang 31.03.2026 liegt in der Probezeit (3 Monat/e, Ende 01.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
      "normen": [
       {
        "artikel": "Art. 335b OR",
@@ -24499,7 +24499,11 @@
      },
      {
       "bausteinId": "K2_erklaerung",
-      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per 31.05.2026."
+      "text": "Hiermit kündigen wir das mit Ihnen bestehende Arbeitsverhältnis ordentlich per 08.04.2026."
+     },
+     {
+      "bausteinId": "K2_probezeit",
+      "text": "(Die Kündigung erfolgt während der Probezeit; es gilt die siebentägige Frist nach Art. 335b OR.)"
      },
      {
       "bausteinId": "K2_abrechnung",
@@ -24527,6 +24531,7 @@
     "K2_betreff",
     "K2_anrede",
     "K2_erklaerung",
+    "K2_probezeit",
     "K2_abrechnung",
     "K2_schluss",
     "K2_unterschrift"
@@ -24558,6 +24563,11 @@
      "norm": "Art. 335 Abs. 1 OR"
     },
     {
+     "bausteinId": "K2_probezeit",
+     "begruendung": "Zugang liegt in der Probezeit (Engine-Befund) — Klarstellung der 7-Tage-Frist; Sperrfristen gelten in der Probezeit nicht.",
+     "norm": "Art. 335b OR"
+    },
+    {
      "bausteinId": "K2_abrechnung",
      "begruendung": "Abwicklung (Schlussabrechnung, Rückgaben, Zeugnis-Zusage) — immer enthalten.",
      "norm": "Art. 330a OR"
@@ -24573,23 +24583,17 @@
    ]
   },
   "engine": {
-   "ergebnis": "Ordentliche Kündigung (Arbeitgeber): Frist 1 Monat/e. Beendigungsdatum: 31.05.2026.",
+   "ergebnis": "Kündigung in der Probezeit: Frist 7 Tage. Beendigung: 08.04.2026.",
    "status": "ok",
    "rechenweg": [
     {
      "beschreibung": "Sperrfristen-Prüfung (Art. 336c OR)",
-     "zwischenergebnis": "Keine Sperrereignisse angegeben. Keine Sperrfrist-Hemmung.",
+     "zwischenergebnis": "Art. 336c OR gilt nicht während der Probezeit (Art. 335b OR). Beendigung nach 7-Tages-Frist.",
      "normen": [
       {
        "artikel": "Art. 336c Abs. 1 OR",
        "bemerkung": "Sperrfristen-Tatbestände"
-      }
-     ]
-    },
-    {
-     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-     "zwischenergebnis": "Zugang 01.04.2026 liegt ausserhalb der Probezeit (Ende 31.03.2026). Ordentliche Frist gilt.",
-     "normen": [
+      },
       {
        "artikel": "Art. 335b OR",
        "bemerkung": "Probezeit"
@@ -24597,64 +24601,42 @@
      ]
     },
     {
-     "beschreibung": "Schritt 2 – Dienstjahr (Stichtag = Zugang der Kündigung)",
-     "zwischenergebnis": "Vertragsbeginn 01.01.2026, Zugang 01.04.2026: 0 vollendete Jahre + 1 = 1. Dienstjahr. Gesetzliche Frist: 1 Monat/e.",
+     "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
+     "zwischenergebnis": "Zugang 01.04.2026 liegt in der Probezeit (3 Monat/e, Ende 01.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
      "normen": [
       {
-       "artikel": "Art. 335c OR",
-       "bemerkung": "Kündigungsfristen und -termine"
-      }
-     ],
-     "rechtsprechung": [
-      {
-       "aktenzeichen": "BGE 134 III 354",
-       "aussage": "Zugangs-/Empfangsprinzip; Rückrechnung der Kündigungsfrist vom Endtermin.",
-       "verifiziert": false
-      }
-     ]
-    },
-    {
-     "beschreibung": "Schritt 3 – Fristberechnung und Endtermin",
-     "zwischenergebnis": "Frist: 1 Monat/e ab Zugang 01.04.2026 → 01.05.2026. Kündigungstermin = Monatsende: Beendigung 31.05.2026.",
-     "normen": [
-      {
-       "artikel": "Art. 335c OR",
-       "bemerkung": "Kündigungsfristen und -termine"
+       "artikel": "Art. 335b OR",
+       "bemerkung": "Probezeit"
       }
      ]
     }
    ],
    "annahmen": [
     "Massgebend ist der Zugang der Kündigung beim Empfänger (Zugangsprinzip), nicht das Datum des Absenders.",
-    "Kündigungstermin: Monatsende.",
-    "Kündigung durch: Arbeitgeber."
+    "Kündigungstermin: Monatsende."
    ],
-   "warnungen": [],
+   "warnungen": [
+    "Probezeitende nach BGE 144 III 152 E. 4.4.3 (Art. 77 Abs. 1 Ziff. 3 OR): Der Tag des Stellenantritts zählt nicht mit, wenn der Arbeitsvertrag an diesem Tag geschlossen wurde — gerechnet ist darum mit Ende am 01.04.2026. Wurde der Vertrag schon vor dem Stellenantritt geschlossen, hat das Bundesgericht offengelassen, ob der erste Tag mitzählt; dann endete die Probezeit am 31.03.2026, und der Zugang (01.04.2026) läge ausserhalb der Probezeit — das Ergebnis hängt davon ab."
+   ],
    "normverweise": [
     {
-     "artikel": "Art. 335a OR",
-     "bemerkung": "Parität der Kündigungsfristen"
-    },
-    {
-     "artikel": "Art. 335b OR",
-     "bemerkung": "Probezeit"
-    },
-    {
-     "artikel": "Art. 335c OR",
-     "bemerkung": "Kündigungsfristen und -termine"
+     "artikel": "Art. 336c Abs. 1 OR",
+     "bemerkung": "Sperrfristen-Tatbestände"
     }
    ],
    "zugangISO": "2026-04-01",
-   "beendigungISO": "2026-05-31"
+   "beendigungISO": "2026-04-08"
   },
   "gates": {
    "blocker": [],
-   "warnungen": [],
+   "warnungen": [
+    "Probezeitende nach BGE 144 III 152 E. 4.4.3 (Art. 77 Abs. 1 Ziff. 3 OR): Der Tag des Stellenantritts zählt nicht mit, wenn der Arbeitsvertrag an diesem Tag geschlossen wurde — gerechnet ist darum mit Ende am 01.04.2026. Wurde der Vertrag schon vor dem Stellenantritt geschlossen, hat das Bundesgericht offengelassen, ob der erste Tag mitzählt; dann endete die Probezeit am 31.03.2026, und der Zugang (01.04.2026) läge ausserhalb der Probezeit — das Ergebnis hängt davon ab."
+   ],
    "hinweise": [
     "Befristete Arbeitsverhältnisse enden ohne Kündigung durch Zeitablauf (Art. 334 OR) — für sie ist dieses Schreiben nicht gedacht.",
     "Missbräuchliche Kündigung (Art. 336 OR): Die gekündigte Person kann bis zum Ende der Kündigungsfrist schriftlich Einsprache erheben und danach innert 180 Tagen klagen (Art. 336b OR; Entschädigung bis 6 Monatslöhne, Art. 336a Abs. 2)."
    ],
-   "istProbezeit": false
+   "istProbezeit": true
   }
  },
  "vorl:kag-gates-nichtig-sperrfrist": {
@@ -24977,7 +24959,7 @@
     },
     {
      "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-     "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 31.01.2020). Ordentliche Frist gilt.",
+     "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
      "normen": [
       {
        "artikel": "Art. 335b OR",
@@ -25308,7 +25290,7 @@
     "rechenweg": [
      {
       "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-      "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 31.01.2020). Ordentliche Frist gilt.",
+      "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
       "normen": [
        {
         "artikel": "Art. 335b OR",
@@ -25503,7 +25485,7 @@
     "rechenweg": [
      {
       "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-      "zwischenergebnis": "Zugang 15.03.2026 liegt in der Probezeit (2 Monat/e, Ende 31.03.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
+      "zwischenergebnis": "Zugang 15.03.2026 liegt in der Probezeit (2 Monat/e, Ende 01.04.2026). Frist: 7 Tage, kein Monatsendtermin, keine Sperrfristen.",
       "normen": [
        {
         "artikel": "Art. 335b OR",
@@ -25673,7 +25655,7 @@
     "rechenweg": [
      {
       "beschreibung": "Schritt 1 – Probezeit prüfen (Art. 335b OR)",
-      "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 31.01.2020). Ordentliche Frist gilt.",
+      "zwischenergebnis": "Zugang 10.03.2026 liegt ausserhalb der Probezeit (Ende 01.02.2020). Ordentliche Frist gilt.",
       "normen": [
        {
         "artikel": "Art. 335b OR",

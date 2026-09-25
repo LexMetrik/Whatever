@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/180"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (revisione delle disposizioni penali in materia di corruzione) nonché l'adesione della Svizzera alla Convenzione sulla lotta alla corruzione di pubblici ufficiali stranieri nelle operazioni economiche internazionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5497"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 5497"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/180"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (revisione delle disposizioni penali in materia di corruzione) nonché l'adesione della Svizzera alla Convenzione sulla lotta alla corruzione di pubblici ufficiali stranieri nelle operazioni economiche internazionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5497"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 5497"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/180"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (revisione delle disposizioni penali in materia di corruzione) nonché l'adesione della Svizzera alla Convenzione sulla lotta alla corruzione di pubblici ufficiali stranieri nelle operazioni economiche internazionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5497"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 5497"
     }
   },
   {
@@ -133,6 +172,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/430"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2943"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 2943"
     }
   },
   {
@@ -172,6 +224,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/430"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2943"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 2943"
     }
   },
   {
@@ -211,6 +276,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/430"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2943"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 2943"
     }
   },
   {
@@ -250,6 +328,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -270,6 +352,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2943"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 2943"
     }
   },
   {
@@ -289,6 +380,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -309,6 +404,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2943"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 2943"
     }
   },
   {
@@ -328,6 +432,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/92"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -348,6 +456,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (reati contro l'integrità sessuale / prescrizione in caso di reati sessuali commessi su fanciulli e divieto del possesso di pornografia dura) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 2943"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 2943"
     }
   },
   {
@@ -366,6 +483,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/236"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +508,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente lo Statuto di Roma della Corte penale internazionale, la legge federale sulla cooperazione con la Corte penale internazionale e una revisione del diritto Codice penale "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 391"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 391"
     }
   },
   {
@@ -405,6 +535,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/236"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +560,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente lo Statuto di Roma della Corte penale internazionale, la legge federale sulla cooperazione con la Corte penale internazionale e una revisione del diritto Codice penale "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 391"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 391"
     }
   },
   {
@@ -444,6 +587,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/236"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -465,6 +612,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente lo Statuto di Roma della Corte penale internazionale, la legge federale sulla cooperazione con la Corte penale internazionale e una revisione del diritto Codice penale "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 391"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 391"
     }
   },
   {
@@ -483,6 +639,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/417"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -504,6 +664,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente le Convenzioni internazionali per la repressione del finanziamento del terrorismo e per la repressione degli attentati terroristici con esplosivo nonché la modifica del Codice penale e l'adeguamento di altre leggi federali"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 5390"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 5390"
     }
   },
   {
@@ -522,6 +691,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/417"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -543,6 +716,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente le Convenzioni internazionali per la repressione del finanziamento del terrorismo e per la repressione degli attentati terroristici con esplosivo nonché la modifica del Codice penale e l'adeguamento di altre leggi federali"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 5390"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 5390"
     }
   },
   {
@@ -561,6 +743,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/417"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -582,123 +768,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente le Convenzioni internazionali per la repressione del finanziamento del terrorismo e per la repressione degli attentati terroristici con esplosivo nonché la modifica del Codice penale e l'adeguamento di altre leggi federali"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "311.0"
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 5390"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/131"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/2779"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2006/180"
-    },
-    "dateDoc": {
+    "bblHist": {
       "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-01-26"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.017"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'Accord entre la Confédération suisse et l'Office européen de police"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'Accordo tra la Confederazione Svizzera e l'Ufficio europeo di polizia"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/131"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/2779"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2006/180"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-01-26"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.017"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'Accord entre la Confédération suisse et l'Office européen de police"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'Accordo tra la Confederazione Svizzera e l'Ufficio europeo di polizia"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2005/131"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/2779"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2006/180"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-01-26"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "05.017"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'Accord entre la Confédération suisse et l'Office européen de police"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'Accordo tra la Confederazione Svizzera e l'Ufficio europeo di polizia"
+      "value": "BBl 2002 5390"
     }
   },
   {
@@ -717,6 +795,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/823"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +820,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sull'approvazione del Protocollo facoltativo del 25 maggio 2000 alla Convenzione sui diritti del fanciullo concernente la vendita di fanciulli, la prostituzione infantile e la pedopornografia come pure la corrispondente modifica della disposizione penale sulla tratta di esseri umani "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 2807"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 2807"
     }
   },
   {
@@ -756,6 +847,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/823"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +872,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sull'approvazione del Protocollo facoltativo del 25 maggio 2000 alla Convenzione sui diritti del fanciullo concernente la vendita di fanciulli, la prostituzione infantile e la pedopornografia come pure la corrispondente modifica della disposizione penale sulla tratta di esseri umani "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 2807"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 2807"
     }
   },
   {
@@ -795,6 +899,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/823"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -816,6 +924,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sull'approvazione del Protocollo facoltativo del 25 maggio 2000 alla Convenzione sui diritti del fanciullo concernente la vendita di fanciulli, la prostituzione infantile e la pedopornografia come pure la corrispondente modifica della disposizione penale sulla tratta di esseri umani "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 2807"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 2807"
     }
   },
   {
@@ -834,6 +951,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -855,6 +976,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 4689"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 4689"
     }
   },
   {
@@ -873,6 +1003,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -894,6 +1028,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 4689"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 4689"
     }
   },
   {
@@ -912,6 +1055,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/550"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -933,6 +1080,171 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale nella sua  versione del 13 dicembre 2002 nonché del Codice penale militare nella sua versione del 21 marzo 2003 "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 4689"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 4689"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/131"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/2779"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2006/180"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-01-26"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.017"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'Accord entre la Confédération suisse et l'Office européen de police"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'Accordo tra la Confederazione Svizzera e l'Ufficio europeo di polizia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 983"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 983"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/131"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/2779"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2006/180"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-01-26"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.017"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'Accord entre la Confédération suisse et l'Office européen de police"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'Accordo tra la Confederazione Svizzera e l'Ufficio europeo di polizia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 983"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 983"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2005/131"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/2779"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2006/180"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-01-26"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "05.017"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'Accord entre la Confédération suisse et l'Office européen de police"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'Accordo tra la Confederazione Svizzera e l'Ufficio europeo di polizia"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 983"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 983"
     }
   },
   {
@@ -951,6 +1263,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -972,6 +1288,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 889"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 889"
     }
   },
   {
@@ -990,6 +1315,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1011,6 +1340,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 889"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 889"
     }
   },
   {
@@ -1029,6 +1367,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/413"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1050,6 +1392,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero nella sua versione del 13 dicembre 2002. (Attuazione dell'art. 123a della Costituzione federale relativo all'internamento a vita di criminali estremamente pericolosi) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 889"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 889"
     }
   },
   {
@@ -1068,6 +1419,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/631"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1089,6 +1444,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero (abrogazione dell'art. 161 n. 3 CP) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 439"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 439"
     }
   },
   {
@@ -1107,6 +1471,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/631"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1128,6 +1496,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero (abrogazione dell'art. 161 n. 3 CP) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 439"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 439"
     }
   },
   {
@@ -1146,6 +1523,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/631"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1167,6 +1548,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero (abrogazione dell'art. 161 n. 3 CP) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 439"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 439"
     }
   },
   {
@@ -1185,6 +1575,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/64"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1206,6 +1600,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'attuazione delle Raccomandazioni rivedute del Gruppo d'azione finanziaria (GAFI) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 6269"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 6269"
     }
   },
   {
@@ -1224,6 +1627,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/64"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1245,6 +1652,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'attuazione delle Raccomandazioni rivedute del Gruppo d'azione finanziaria (GAFI) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 6269"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 6269"
     }
   },
   {
@@ -1263,6 +1679,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/64"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1284,6 +1704,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'attuazione delle Raccomandazioni rivedute del Gruppo d'azione finanziaria (GAFI) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 6269"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 6269"
     }
   },
   {
@@ -1302,6 +1731,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1323,6 +1756,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica di leggi federali per l'attuazione dello Statuto di Roma della Corte penale internazionale "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 3863"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 3863"
     }
   },
   {
@@ -1341,6 +1783,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1362,6 +1808,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica di leggi federali per l'attuazione dello Statuto di Roma della Corte penale internazionale "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 3863"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 3863"
     }
   },
   {
@@ -1380,6 +1835,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/704"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1401,6 +1860,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica di leggi federali per l'attuazione dello Statuto di Roma della Corte penale internazionale "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 3863"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 3863"
     }
   },
   {
@@ -1419,6 +1887,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/887"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1440,6 +1912,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione della Convenzione del Consiglio d'Europa sulla cibercriminalità"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 4697"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 4697"
     }
   },
   {
@@ -1458,6 +1939,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/887"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1479,6 +1964,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione della Convenzione del Consiglio d'Europa sulla cibercriminalità"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 4697"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 4697"
     }
   },
   {
@@ -1497,6 +1991,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/887"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1518,6 +2016,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione della Convenzione del Consiglio d'Europa sulla cibercriminalità"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 4697"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 4697"
     }
   },
   {
@@ -1536,6 +2043,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1557,6 +2068,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 5977"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 5977"
     }
   },
   {
@@ -1575,6 +2095,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1596,6 +2120,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 5977"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 5977"
     }
   },
   {
@@ -1614,6 +2147,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/696"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1635,357 +2172,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi  (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "311.0"
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 5977"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1181"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1418"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/248"
-    },
-    "dateDoc": {
+    "bblHist": {
       "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-07-04"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.066"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Genehmigung des Übereinkommens des Europarats zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention) sowie zu seiner Umsetzung (Änderung des Strafgesetzbuchs) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'approbation de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote) et sa mise en uvre (modification du code pénal) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la sua trasposizione (modifica del Codice penale) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1181"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1418"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/248"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-07-04"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.066"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Genehmigung des Übereinkommens des Europarats zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention) sowie zu seiner Umsetzung (Änderung des Strafgesetzbuchs) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'approbation de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote) et sa mise en uvre (modification du code pénal) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la sua trasposizione (modifica del Codice penale) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1181"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1418"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/248"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-07-04"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.066"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Genehmigung des Übereinkommens des Europarats zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention) sowie zu seiner Umsetzung (Änderung des Strafgesetzbuchs) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'approbation de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote) et sa mise en uvre (modification du code pénal) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la sua trasposizione (modifica del Codice penale) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1719"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1643"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2013/783"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-07"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.082"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Verlängerung der Verfolgungsverjährung) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code pénal et du code pénal militaire (Allongement des délais de prescription) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1719"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1643"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2013/783"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-07"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.082"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Verlängerung der Verfolgungsverjährung) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code pénal et du code pénal militaire (Allongement des délais de prescription) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1719"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1643"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2013/783"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-07"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.082"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Verlängerung der Verfolgungsverjährung) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code pénal et du code pénal militaire (Allongement des délais de prescription) "
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale) "
+      "value": "BBl 2011 5977"
     }
   },
   {
@@ -2004,6 +2199,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/249"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2025,6 +2224,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (Modifica del diritto sanzionatorio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 4721"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 4721"
     }
   },
   {
@@ -2043,6 +2251,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/249"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2064,6 +2276,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (Modifica del diritto sanzionatorio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 4721"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 4721"
     }
   },
   {
@@ -2082,6 +2303,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/249"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2103,6 +2328,483 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale svizzero e del Codice penale militare (Modifica del diritto sanzionatorio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 4721"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 4721"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1181"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1418"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/248"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-07-04"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.066"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Genehmigung des Übereinkommens des Europarats zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention) sowie zu seiner Umsetzung (Änderung des Strafgesetzbuchs) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'approbation de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote) et sa mise en uvre (modification du code pénal) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la sua trasposizione (modifica del Codice penale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 7571"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 7571"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1181"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1418"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/248"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-07-04"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.066"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Genehmigung des Übereinkommens des Europarats zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention) sowie zu seiner Umsetzung (Änderung des Strafgesetzbuchs) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'approbation de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote) et sa mise en uvre (modification du code pénal) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la sua trasposizione (modifica del Codice penale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 7571"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 7571"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1181"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1418"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/248"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-07-04"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.066"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Genehmigung des Übereinkommens des Europarats zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention) sowie zu seiner Umsetzung (Änderung des Strafgesetzbuchs) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'approbation de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote) et sa mise en uvre (modification du code pénal) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la sua trasposizione (modifica del Codice penale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 7571"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 7571"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.076"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 8819"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 8819"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.076"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 8819"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 8819"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/1798"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/355"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-10"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.076"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 8819"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 8819"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1719"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1643"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2013/783"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-07"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.082"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Verlängerung der Verfolgungsverjährung) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code pénal et du code pénal militaire (Allongement des délais de prescription) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 9253"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 9253"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1719"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1643"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2013/783"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-07"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.082"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Verlängerung der Verfolgungsverjährung) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code pénal et du code pénal militaire (Allongement des délais de prescription) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 9253"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 9253"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1719"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/1643"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2013/783"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-07"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.082"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Verlängerung der Verfolgungsverjährung) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code pénal et du code pénal militaire (Allongement des délais de prescription) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 9253"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 9253"
     }
   },
   {
@@ -2121,6 +2823,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/380"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2142,6 +2848,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 5975"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 5975"
     }
   },
   {
@@ -2160,6 +2875,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/380"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2181,6 +2900,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 5975"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 5975"
     }
   },
   {
@@ -2199,6 +2927,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/380"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2220,6 +2952,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 5975"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 5975"
     }
   },
   {
@@ -2238,6 +2979,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2259,6 +3004,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 303"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 303"
     }
   },
   {
@@ -2277,6 +3031,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2298,6 +3056,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 303"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 303"
     }
   },
   {
@@ -2316,6 +3083,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/326"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2337,6 +3108,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 303"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 303"
     }
   },
   {
@@ -2355,6 +3135,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/257"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2376,6 +3160,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale (Disposizioni penali sulla corruzione) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3591"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 3591"
     }
   },
   {
@@ -2394,6 +3187,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/257"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2415,6 +3212,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale (Disposizioni penali sulla corruzione) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3591"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 3591"
     }
   },
   {
@@ -2433,6 +3239,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/257"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2454,6 +3264,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale (Disposizioni penali sulla corruzione) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3591"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 3591"
     }
   },
   {
@@ -2472,6 +3291,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/756"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2493,6 +3316,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione della Convenzione per la protezione di tutte le persone dalla sparizione forzata e la sua attuazione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 453"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 453"
     }
   },
   {
@@ -2511,6 +3343,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/756"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2532,6 +3368,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione della Convenzione per la protezione di tutte le persone dalla sparizione forzata e la sua attuazione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 453"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 453"
     }
   },
   {
@@ -2550,6 +3395,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/756"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2571,6 +3420,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione della Convenzione per la protezione di tutte le persone dalla sparizione forzata e la sua attuazione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 453"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 453"
     }
   },
   {
@@ -2589,6 +3447,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/603"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2610,6 +3472,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Attuazione dell'art. 123c Cost.)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 6115"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2016 6115"
     }
   },
   {
@@ -2628,6 +3499,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/603"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2649,6 +3524,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice penale e del Codice penale militare (Attuazione dell'art. 123c Cost.)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2016 6115"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2016 6115"
     }
   },
   {
@@ -2668,6 +3552,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/259"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -2688,6 +3576,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'armonizzazione delle pene e l'adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 2827"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 2827"
     }
   },
   {
@@ -2707,6 +3604,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/259"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -2727,6 +3628,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'armonizzazione delle pene e l'adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 2827"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 2827"
     }
   },
   {
@@ -2746,6 +3656,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/27"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -2766,6 +3680,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'armonizzazione delle pene e l'adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 2827"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 2827"
     }
   },
   {
@@ -2785,6 +3708,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/27"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -2805,6 +3732,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'armonizzazione delle pene e l'adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 2827"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 2827"
     }
   }
 ]

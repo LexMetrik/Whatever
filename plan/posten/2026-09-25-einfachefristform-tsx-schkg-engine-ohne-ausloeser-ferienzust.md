@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: EinfacheFristForm.tsx: schkg-Engine ohne Auslöser — Ferienzustellung greift dort nie
 anlass: RL-18-Nebenfund, 24.9.2026
 -->

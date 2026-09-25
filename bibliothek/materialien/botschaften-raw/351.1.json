@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/498"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/498"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/498"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
     }
   },
   {
@@ -133,6 +172,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/621"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
     }
   },
   {
@@ -172,6 +224,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/621"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
     }
   },
   {
@@ -211,6 +276,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/621"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati nonché una modifica della legge sull'assistenza in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4340"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4340"
     }
   },
   {
@@ -249,6 +327,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +352,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 7413"
     }
   },
   {
@@ -288,6 +379,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +404,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 7413"
     }
   },
   {
@@ -327,6 +431,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +456,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 7413"
     }
   },
   {
@@ -366,6 +483,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/233"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +508,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica dell'articolo 1 della legge federale sull'assistenza internazionale in materia penale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 7413"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 7413"
     }
   }
 ]
