@@ -242,11 +242,15 @@ describe('Sperrfristen (Art. 336c OR)', () => {
   });
 });
 
-describe('Bug-Check-Fix 10.6.2026: Probezeit-Ende (Art. 335b OR — erster Arbeitstag zählt mit)', () => {
-  it('1 Monat Probezeit ab 1.4. endet am 30.4. — Zugang 1.5. ist ORDENTLICHE Kündigung', () => {
-    const inProbe = berechneKuendigungsfrist({ vertragsbeginn: '2026-04-01', zugangKuendigung: '2026-04-30', kuendigendePartei: 'arbeitgeber', kuendigungsterminMonatsende: true, probezeitMonate: 1 });
+describe('Bug-Check-Fix 10.6.2026: Probezeit-Ende (Art. 335b OR) — seit RL-16b nach BGE 144 III 152', () => {
+  // Bis 25.9.2026: «erster Arbeitstag zählt mit, 1 Monat ab 1.4. endet am 30.4.».
+  // Seit RL-16b (Gegenprüfung, deklarierte Fachänderung): BGE 144 III 152
+  // E. 4.4.3 — der Tag des Stellenantritts zählt nicht (Vertragsschluss am
+  // Antrittstag), Art. 77 Abs. 1 Ziff. 3 OR → Ende am gleichnamigen Tag 1.5.
+  it('1 Monat Probezeit ab 1.4. endet am 1.5. — Zugang 2.5. ist ORDENTLICHE Kündigung', () => {
+    const inProbe = berechneKuendigungsfrist({ vertragsbeginn: '2026-04-01', zugangKuendigung: '2026-05-01', kuendigendePartei: 'arbeitgeber', kuendigungsterminMonatsende: true, probezeitMonate: 1 });
     expect(inProbe.istProbezeit).toBe(true);
-    const danach = berechneKuendigungsfrist({ vertragsbeginn: '2026-04-01', zugangKuendigung: '2026-05-01', kuendigendePartei: 'arbeitgeber', kuendigungsterminMonatsende: true, probezeitMonate: 1 });
+    const danach = berechneKuendigungsfrist({ vertragsbeginn: '2026-04-01', zugangKuendigung: '2026-05-02', kuendigendePartei: 'arbeitgeber', kuendigungsterminMonatsende: true, probezeitMonate: 1 });
     expect(danach.istProbezeit).toBe(false);
     expect(ds(danach.beendigungsdatum!)).toBe('2026-06-30');
   });
