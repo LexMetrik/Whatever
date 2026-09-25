@@ -591,7 +591,10 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // 6228 → 6352 (25.9.2026, QS-KORPUS BGE-Band-Nachzug 152, +80 BGE): die neuen
     // Leitentscheide zitieren 124 bisher unzitierte Artikel. Nullprobe origin/main
     // = 6228; eidg-Werte (164/93/18) unverändert — die Aussage des Tests steht.
-    expect(bilanz.artikelGesamt).toBe(6352);
+    // 6352 → 6357 (25.9.2026, QS-KORPUS GERICHTS_KUERZEL «CV» → VRK, SR 0.111):
+    // die bisher lautlos verlorenen CV-Zitate treffen fünf zusätzliche VRK-Artikel
+    // (19, 24, 25, 30, 41; Sidecar struktur/bund/VRK.json). eidg-Werte unverändert.
+    expect(bilanz.artikelGesamt).toBe(6357);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
