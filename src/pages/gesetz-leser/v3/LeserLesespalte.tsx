@@ -94,7 +94,9 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   // D30 · die Materialien-LISTE zur bereits gezählten Materialien-ZAHL. Wie der
   // Zähler: EIN Fetch je Erlass, im Leerlauf, hier und nicht im Modell (die
   // Lesespalte ist der einzige Konsument, §6.6-Schwelle des Modells).
-  const artikelMaterialien = useArtikelMaterialien(erlass?.key, bezuegeGeweckt);
+  // W3-5: die Randnotiz zeigt hier keinen «nichts erfasst»-Text, nur die
+  // Nachschlage-Funktion; das `unsicher`-Flag ist ihr Konsument (PanelTafeln).
+  const [artikelMaterialien] = useArtikelMaterialien(erlass?.key, bezuegeGeweckt);
   // Split-Regel der Randnotiz (s. `onClickCapture` unten): EIN Abo je Spalte.
   // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
   const { oeffneDaneben, kannOeffnen, istOffen: paneOffen } = usePaneSteuerung();

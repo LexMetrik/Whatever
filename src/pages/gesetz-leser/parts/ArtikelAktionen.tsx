@@ -54,11 +54,6 @@ import { urlMitHash } from '../../../lib/liveUrlSync';
 // 27–30 s wie auf main. Kein Mess-Werkzeug-Fix — die Zeile bleibt für Nutzer
 // unverändert, nur ihre DOM-Kosten für den Sweep sinken.
 
-/** Ruhige Textzeile (S6 W1f): derselbe Knopf-Baustein (`.lc-btn-mini`: Höhe
- *  `--tap-ziel`, WCAG 2.5.8; Hover-Fläche als Zustandsauskunft), aber OHNE
- *  sichtbare Haarlinie — so liest sich die Gruppe als eine Textzeile
- *  «Zitat · Link · Amtliche Fassung ↗», nicht als Knopfreihe. */
-const RUHIG = 'border-transparent px-1 text-micro text-ink-500 hover:text-ink-900';
 const KNOPF = 'text-micro text-ink-500 hover:text-ink-900';
 
 export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich, ruhig = false }: {
@@ -75,7 +70,14 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich,
   /** S6 W1f · Textzeile statt Knöpfe (Gesamtansicht). */
   ruhig?: boolean;
 }) {
-  const k = ruhig ? RUHIG : KNOPF;
+  // W3-6 (HN-D7 DK-24, Audit 25.9.2026): «Zitat»/«Link» trugen in Gesamt- und
+  // Einzelansicht ZWEI verschiedene Knopf-Formen — hier `border-transparent`
+  // (unsichtbare Haarlinie, S6 W1f, 24.9.2026), dort die volle `.lc-btn-mini`-
+  // Form mit sichtbarer Haarlinie und 6 px Innenabstand. EINE Form: immer
+  // `KNOPF` (die Einzelansicht-Form). Die ruhigere TEXTZEILEN-Anordnung der
+  // Gesamtansicht (engerer Abstand, «·»-Trenner statt eigener Haarlinien)
+  // bleibt — W1f galt der Anordnung, nicht dem Knopf selbst.
+  const k = KNOPF;
   const trenner = ruhig ? <span aria-hidden>·</span> : null;
   // R4-D (5.9.2026): ZWEI Kopier-Knöpfe in einer Zeile ⇒ der geteilte Hook mit
   // MARKE, damit nur der geklickte sein Häkchen zeigt.
