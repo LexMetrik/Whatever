@@ -580,6 +580,7 @@ async function main() {
       } else luecken.push(`${s.bgeReferenz} [ohne dt. clir-Regeste — §1 unverändert]`);
     }
     console.log(`[bge-baender] clir-Regeste: ${mitFassung}/${amtlichNeu.length} neue BGE dreisprachig strukturiert.`);
+    for (const s of neuUniq) s.normKeys = normKeysVonSnapshot(s); // nach Sprachfassungen/Quarantäne: dieselbe Ableitung wie --remap (§5, QS-KORPUS 25.9.2026)
     if (luecken.length) console.log(`[bge-baender] nicht vollständig dreisprachig (${luecken.length}): ${luecken.join(', ')}`);
 
     // Dedup wie im Vollbau: ein bger-Routine-Bestand, der jetzt als BGE-aza-Volltext

@@ -82,8 +82,11 @@ import { GERICHTS_KUERZEL } from './gerichts-kuerzel';
 import {
   extrahiereStatutRefs, extrahiereStatutRefsMitAnzahl, INVALID_LAW_CODES,
 } from '../../src/lib/rechtsprechung/zitat-extraktion';
-import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
+import type { EntscheidSnapshot, EntscheidSprache } from '../../src/lib/rechtsprechung/typen';
 import { verbindeMehrwortKuerzel } from './mehrwort-kuerzel';
+import {
+  fliesstextVon, spracheDerSammelteile, sprachStueckeVon, ohneLiteraturApparat, fliesstextOhneApparat, literaturSpannen,
+} from './entscheide-text';
 // Fassungs-Reihen (SR-Slot mit deklarierter Totalrevision) leben in einem
 // eigenen Leaf-Modul (§6.6); diese Datei nutzt sie und reicht sie weiter.
 import {
@@ -171,28 +174,13 @@ export const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
     + 'EMRK]. Die echten AVG-Fundstellen tragen zusätzlich das Token AVG (de) '
     + 'oder LSE (fr) und bleiben über diese Aliase wirksam. Lieber eine Lücke '
     + 'als eine falsche Bundesrechts-Zuordnung (§1/§8).'],
-  // ── SPRACHÜBERGREIFEND mehrdeutig (Nach-Verdikt «widerlegt» zu e3f874779,
-  //    QS-KORPUS 25.9.2026). Die Alias-Ebene bildet ein Kürzel sprachungebunden
-  //    ab; Fedlex vergibt dieselbe Buchstabenfolge aber in verschiedenen Sprachen
-  //    an verschiedene Erlasse (SPARQL jolux:titleShort über alle
-  //    ConsolidationAbstracts, Abruf 25.9.2026). Eine sprachgebundene Auflösung
-  //    ist nicht sauber möglich: BGE tragen die DE/FR/IT-Regeste im selben
-  //    Snapshot, `snap.sprache` trennt die Blöcke nicht. Darum Sperre (§8 — eine
-  //    benannte Lücke statt einer falschen Zuordnung). Echte Fundstellen bleiben
-  //    über die übrigen Sprachfassungen wirksam (IRSG/EIMP, VKL/OCPre, AVO).
-  ['AIMP', 'sprachübergreifend mehrdeutig: ITA «AIMP» = IRSG (SR 351.1), FRA '
-    + '«AIMP» = Accord intercantonal sur les marchés publics (IVöB, SR 172.056.5) '
-    + '— Fedlex-SPARQL 25.9.2026. Korpus: Beschaffungs-BGE trugen falsch IRSG, '
-    + 'z.B. bund/bge/152_II_211 (DE-Regeste «Art. 44 Abs. 1 lit. b IVöB», FR «art. '
-    + '44 al. 1 let. b AIMP»), 152_II_325 («Art. 20, 35 f., 48, 53 IVöB»), '
-    + '151_II_81 («ci-après: AIMP 2019»), 150_II_105 («AIMP 2001; RO 2003 196»). '
-    + 'Rechtshilfe-BGE behalten IRSG über «IRSG»/«EIMP» der DE/FR-Regeste.'],
-  ['OCP', 'sprachübergreifend mehrdeutig: FRA «OCP» = VKL (SR 832.104), ITA «OCP» '
-    + '= Jagdverordnung JSV (SR 922.01) — Fedlex-SPARQL 25.9.2026. Korpus: '
-    + 'bund/bge/152_II_196 (DE-Regeste «Art. 10quinquies Abs. 1 lit. a JSV», IT '
-    + '«art. 10quinquies cpv. 1 lett. a OCP»; Einzelwolf) und 150_IV_425 («art. 4 '
-    + 'e 5 OCP-CPM» = V-StGB-MStGB, SR 311.01, vom Extraktor am Bindestrich '
-    + 'gekappt) trugen falsch VKL.'],
+  // ── «OS» bleibt TOTAL gesperrt (QS-KORPUS 25.9.2026). AIMP/OCP sind seit dem
+  //    Wurzel-Fix nicht mehr hier, sondern sprachgebunden (SPRACH_HOMONYME unten).
+  //    «OS» taugt dafür nicht: Fedlex vergibt es INNERHALB derselben Sprache an
+  //    zwei Erlasse (FRA/ITA SR 961.011 und SR 961.05), und der Korpus kennt es
+  //    nur als vom Extraktor gekapptes «OS LCart» (SVKG, SR 251.5) — auch in
+  //    FRANZÖSISCHEM Body-Text (148_II_25, 148_II_321, 148_II_521). Eine
+  //    Sprachbindung löste dort falsch AVO auf (§1).
   ['OS', 'mehrdeutig: FRA/ITA «OS» = AVO (SR 961.011) und SR 961.05 (Fedlex-SPARQL '
     + '25.9.2026); im Korpus ausschliesslich «OS LCart» = KG-Sanktionsverordnung '
     + 'SVKG (SR 251.5), vom Extraktor am Leerzeichen zu «OS» gekappt — z.B. '
@@ -200,6 +188,33 @@ export const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
     + '251.5)», 147_II_72, 146_II_217 «art. 2-6 OS LCart». Alle sechs Treffer '
     + '(146_II_217, 147_II_72, 148_II_25, 148_II_321, 148_II_521, 151_II_742) '
     + 'trugen falsch AVO.'],
+]);
+
+/**
+ * SPRACHGEBUNDENE Kürzel (QS-KORPUS 25.9.2026, Wurzel-Fix zum Nach-Verdikt von
+ * e3f874779). Fedlex vergibt dieselbe Buchstabenfolge in VERSCHIEDENEN Amts-
+ * sprachen an VERSCHIEDENE Erlasse (SPARQL jolux:titleShort über alle
+ * ConsolidationAbstracts, Abruf 25.9.2026, https://fedlex.data.admin.ch/sparqlendpoint):
+ *   AIMP — ITA SR 351.1 (IRSG) · FRA SR 172.056.5 (IVöB, nicht im Register)
+ *   OCP  — FRA SR 832.104 (VKL) · ITA SR 922.01 (JSV, nicht im Register)
+ * Innerhalb EINER Sprache ist das Kürzel eindeutig. Darum keine Sperre mehr,
+ * sondern Bindung: der Alias einer Zeile von ABK_ALIASE ({sr, sprache, abk})
+ * löst NUR in Text dieser Sprache auf (`normKeyImSnapshot` mit `sprache`), nie
+ * sprachungebunden (`normKeyFuerAbk` → null). Welche Textstelle welche Sprache
+ * trägt, bestimmt `sprachStueckeVon`: nur wo die Zuordnung eindeutig ist —
+ * sonst bleibt das Kürzel ungebunden, also ohne Key (§8: Lücke statt Raten).
+ * Anlass: bund/bstger/RR_2026_46 (it, Rechtshilfe) nennt das IRSG nur «AIMP» und
+ * verlor es mit der Totalsperre; Beschaffungs-BGE (152 II 211 u.a.) nennen die
+ * IVöB in der FR-Regeste «AIMP» und dürfen das IRSG weiterhin NICHT bekommen.
+ */
+export const SPRACH_HOMONYME: ReadonlyMap<string, string> = new Map([
+  ['AIMP', 'Fedlex-SPARQL 25.9.2026: ITA «AIMP» = IRSG (SR 351.1), FRA «AIMP» = '
+    + 'IVöB (SR 172.056.5). Gebunden an it-Text. Korpus: bund/bstger/RR_2026_46 und '
+    + 'RR_2026_97 (it, Rechtshilfe, «art. 1 cpv. 1 AIMP»); Beschaffungs-BGE mit '
+    + 'FR-Regeste «AIMP» (152_II_211, 152_II_325, 151_II_81, 150_II_105) bleiben ohne IRSG.'],
+  ['OCP', 'Fedlex-SPARQL 25.9.2026: FRA «OCP» = VKL (SR 832.104), ITA «OCP» = JSV '
+    + '(SR 922.01). Gebunden an fr-Text. Korpus: nur it-Nennungen (152_II_196 JSV, '
+    + '150_IV_425 «OCP-CPM») — sie bleiben ohne VKL.'],
 ]);
 
 /**
@@ -296,12 +311,17 @@ function baueSrIndex(): { srKey: Map<string, string>; mehrdeutig: Set<string> } 
 function baueAbkTabelle(): {
   tabelle: Map<string, string>; kollisionen: string[]; notizen: string[]; ausgeschlossen: string[];
   gesperrteZiele: Map<string, Set<string>>;
+  sprachTabelle: Map<string, Map<string, string>>;
 } {
   const tabelle = new Map<string, string>();
   const kollidiert = new Set<string>();
   const notizen: string[] = [];
   const ausgeschlossen: string[] = [];
   const gesperrteZiele = new Map<string, Set<string>>();
+  // SPRACH_HOMONYME: je Amtssprache eine eigene Tabelle mit eigener Kollisions-
+  // regel (zwei SR-Nummern in DERSELBEN Sprache ⇒ beidseitig verworfen, §1).
+  const sprachTabelle = new Map<string, Map<string, string>>();
+  const sprachKollidiert: Array<[string, string]> = [];
   const setze = (kandidat: string, key: string): void => {
     if (!kandidat) return;
     const bisher = tabelle.get(kandidat);
@@ -332,22 +352,37 @@ function baueAbkTabelle(): {
       );
       continue;
     }
-    if (AUSGESCHLOSSENE_KEYS.has(key) || ABK_AUSSCHLUSS.has(normalisiereAbk(a.abk))) {
+    const t = normalisiereAbk(a.abk);
+    if (AUSGESCHLOSSENE_KEYS.has(key) || ABK_AUSSCHLUSS.has(t)) {
       ausgeschlossen.push(`${a.abk} (SR ${a.sr}, ${a.sprache}) → ${key}`);
-      const t = normalisiereAbk(a.abk);
       (gesperrteZiele.get(t) ?? gesperrteZiele.set(t, new Set()).get(t)!).add(key);
       continue;
     }
-    setze(normalisiereAbk(a.abk), key);
+    if (SPRACH_HOMONYME.has(t)) {
+      // Sprachungebunden gesperrt (darum auch Ziel der Sperr-Gegenrichtung
+      // `sperrEntfernteNormKeys`), sprachgebunden aufgelöst.
+      (gesperrteZiele.get(t) ?? gesperrteZiele.set(t, new Set()).get(t)!).add(key);
+      const je = sprachTabelle.get(a.sprache) ?? sprachTabelle.set(a.sprache, new Map()).get(a.sprache)!;
+      const bisher = je.get(t);
+      if (bisher !== undefined && bisher !== key) sprachKollidiert.push([a.sprache, t]);
+      else je.set(t, key);
+      continue;
+    }
+    setze(t, key);
   }
 
   for (const k of kollidiert) tabelle.delete(k);   // beide Seiten verwerfen
+  for (const [sp, t] of sprachKollidiert) { sprachTabelle.get(sp)?.delete(t); kollidiert.add(`${t} (${sp})`); }
+  // Ein Sprach-Homonym gilt NIE sprachungebunden — auch nicht, falls je ein
+  // Register-Kürzel dieselbe Buchstabenfolge trüge (dann wäre es mehrdeutig).
+  for (const t of SPRACH_HOMONYME.keys()) tabelle.delete(t);
   return {
     tabelle,
     kollisionen: [...kollidiert].sort(),
     notizen: notizen.sort(),
     ausgeschlossen: ausgeschlossen.sort(),
     gesperrteZiele,
+    sprachTabelle,
   };
 }
 
@@ -357,6 +392,7 @@ const {
   notizen: ALIAS_NOTIZEN,
   ausgeschlossen: ALIAS_AUSGESCHLOSSEN,
   gesperrteZiele: GESPERRTE_ALIAS_ZIELE,
+  sprachTabelle: SPRACH_TABELLE,
 } = baueAbkTabelle();
 
 /**
@@ -415,9 +451,14 @@ export const ABK_KOLLISIONEN: ReadonlyArray<string> = KOLLISIONEN;
  */
 export function normKeyFuerAbk(abk: string, datum?: string | null): string | null {
   const k = normalisiereAbk(abk);
-  if (ABK_AUSSCHLUSS.has(k)) return null;
+  if (ABK_AUSSCHLUSS.has(k) || SPRACH_HOMONYME.has(k)) return null;
   const key = ABK_TABELLE.get(k);
   if (key === undefined) return null;
+  return damalsGeltend(key, datum);
+}
+
+/** Fassungs-Reihe: die am `datum` geltende Fassung von `key` (ohne Datum: `key`). */
+function damalsGeltend(key: string, datum?: string | null): string {
   if (!datum) return key;
   const reihe = REIHE_JE_KEY.get(key);
   if (!reihe || reihe.geltend !== key) return key;
@@ -426,6 +467,21 @@ export function normKeyFuerAbk(abk: string, datum?: string | null): string | nul
   // mehrgliedrigen Kette (A → B → C) trifft das die richtige Stufe.
   const damals = reihe.historisch.find((h) => datum < h.bis);
   return damals ? damals.key : key;
+}
+
+/**
+ * Register-key eines SPRACH_HOMONYMS — NUR, wenn die Textstelle eindeutig in der
+ * Sprache steht, an die der Fedlex-Alias gebunden ist; sonst null (§8).
+ */
+export function sprachAliasKey(abk: string, sprache: EntscheidSprache | null | undefined, datum?: string | null): string | null {
+  if (!sprache) return null;
+  const key = SPRACH_TABELLE.get(sprache)?.get(normalisiereAbk(abk));
+  return key === undefined ? null : damalsGeltend(key, datum);
+}
+
+/** Ist das Kürzel ein SPRACH_HOMONYM (Auflösung nur sprachgebunden)? */
+export function istSprachHomonym(abk: string): boolean {
+  return SPRACH_HOMONYME.has(normalisiereAbk(abk));
 }
 
 // VOM BUNDESGERICHT IM URTEIL SELBST DEFINIERTE KÜRZEL — Tabelle, Belege und
@@ -441,7 +497,7 @@ function baueGerichtsKuerzel(): { tabelle: Map<string, string>; notizen: string[
     const abk = normalisiereAbk(g.abk);
     const key = srKey.get(g.sr);
     if (key === undefined) { notizen.push(`${g.abk} (SR ${g.sr}) — SR nicht eindeutig im ERLASS_REGISTER: verworfen`); continue; }
-    if (ABK_TABELLE.has(abk) || KOLLISIONEN.includes(abk) || ABK_AUSSCHLUSS.has(abk)) {
+    if (ABK_TABELLE.has(abk) || KOLLISIONEN.includes(abk) || ABK_AUSSCHLUSS.has(abk) || SPRACH_HOMONYME.has(abk)) {
       notizen.push(`${g.abk} (SR ${g.sr}) — kollidiert mit Register-/Fedlex-Kürzel: verworfen`);
       continue;
     }
@@ -466,21 +522,22 @@ export function gerichtsKuerzelKey(abk: string, gerichtstyp: string | null | und
   if (gerichtstyp !== 'bundesgericht') return null;
   const key = GERICHTS_TABELLE.get(normalisiereAbk(abk));
   if (key === undefined) return null;
-  if (!datum) return key;
-  const reihe = REIHE_JE_KEY.get(key);
-  if (!reihe || reihe.geltend !== key) return key;
-  const damals = reihe.historisch.find((h) => datum < h.bis);
-  return damals ? damals.key : key;
+  return damalsGeltend(key, datum);
 }
 
 /**
  * Snapshot-gebundene Auflösung: erst die amtliche Ebene (`normKeyFuerAbk`),
- * dann — nur bei Bundesgerichts-Snapshots — die Gerichts-Kürzel. EINE Stelle für
- * alle Snapshot-Pfade (normKeys, Literatur-Befund, Artikel-Schlüssel), damit
- * Norm-Index und Bezüge dieselbe Zuordnung sehen (§5).
+ * dann die sprachgebundenen Aliase (SPRACH_HOMONYME, nur mit eindeutiger
+ * `sprache` der Textstelle), dann — nur bei Bundesgerichts-Snapshots — die
+ * Gerichts-Kürzel. EINE Stelle für alle Snapshot-Pfade (normKeys, Literatur-
+ * Befund, Artikel-Schlüssel, fremd definierte Keys), damit Norm-Index und
+ * Bezüge dieselbe Zuordnung sehen (§5).
  */
-export function normKeyImSnapshot(abk: string, gerichtstyp: string | null | undefined, datum?: string | null): string | null {
-  return normKeyFuerAbk(abk, datum) ?? gerichtsKuerzelKey(abk, gerichtstyp, datum);
+export function normKeyImSnapshot(
+  abk: string, gerichtstyp: string | null | undefined, datum?: string | null,
+  sprache?: EntscheidSprache | null,
+): string | null {
+  return normKeyFuerAbk(abk, datum) ?? sprachAliasKey(abk, sprache, datum) ?? gerichtsKuerzelKey(abk, gerichtstyp, datum);
 }
 
 /**
@@ -513,13 +570,17 @@ export function normKeyImSnapshot(abk: string, gerichtstyp: string | null | unde
  * dort strukturell schlechter abgeschnitten als die Bundes-Snapshots — ein
  * Unterschied der QUELLE, nicht der Rechtsanwendung.
  */
-export function statutesZuNormKeys(statutes: string[], datum?: string | null, gerichtstyp?: string | null): string[] {
+export function statutesZuNormKeys(
+  statutes: string[], datum?: string | null, gerichtstyp?: string | null, sprache?: EntscheidSprache | null,
+): string[] {
   const out = new Set<string>();
   for (const s of statutes ?? []) {
     const abk = abkVonStatut(s);
     if (!abk) continue;
     // `gerichtstyp` (optional): nur Bundesgerichts-Snapshots sehen GERICHTS_KUERZEL.
-    const k = normKeyImSnapshot(abk, gerichtstyp, datum);
+    // `sprache` (optional): nur mit eindeutiger Sprache lösen SPRACH_HOMONYME auf
+    // (`spracheDerSammelteile`); ohne Angabe bleiben sie ungebunden.
+    const k = normKeyImSnapshot(abk, gerichtstyp, datum, sprache);
     if (k) out.add(k);
   }
   return [...out];
@@ -565,195 +626,40 @@ export function abkVonStatut(statut: string): string | null {
   return m[1];
 }
 
+// Text-Assemblage, Sprach-Zuordnung je Stück und Literatur-Kontext-Regel leben
+// seit 25.9.2026 im Leaf-Modul ./entscheide-text.ts (§6.6); hier weitergereicht.
+export {
+  fliesstextVon, regesteTextVon, spracheDerSammelteile, sprachStueckeVon, type SprachStueck,
+  LITERATUR_MARKER, ohneLiteraturApparat, literaturSpannen, fliesstextOhneApparat,
+} from './entscheide-text';
+
 /**
- * Deterministische Text-Assemblage eines Snapshots für die Zitat-Extraktion
- * (W2·6-NKEY Baustein d): Regeste (flach + alle Sprachfassungen inkl. der
- * mehrteiligen «Regeste a/b/c») und alle Abschnitts-Blöcke (Volltext UND
- * BGE-Auszug). KEINE weiteren Felder — kein Rubrum, keine Dispositiv-Orders,
- * keine Zitierung: dort stehen Parteien-/Verfahrensangaben, keine Norm-Zitate.
- * Rein (§2): gleiche Eingabe → gleicher String.
+ * Treffer der SPRACH_HOMONYME, je Textstück in dessen eindeutiger Sprache
+ * aufgelöst ({key, artikel}). NUR Homonyme: alle übrigen Kürzel löst der
+ * sprachungebundene Pfad unverändert über den Gesamttext auf — die Ausgabe der
+ * bestehenden Keys bleibt damit byte-gleich. `mitStatutes` stellt die Roh-
+ * statutes als Sammel-Teil voran, `ohneApparat` bereinigt jedes Stück um die
+ * Zitier-Apparat-Spannen (deren Grenzen `;`/`)`/`»`/Zeilenende nie über ein
+ * Stück hinausreichen). Rein (§2).
  */
-export function fliesstextVon(snap: EntscheidSnapshot): string {
-  return zusammen([...regesteTeile(snap), ...blockTeile(snap.abschnitte), ...blockTeile(snap.auszugAbschnitte)]);
-}
-
-/** Gemeinsame Endstufe aller Text-Assemblagen: leere Teile weg, mit `\n` fügen. */
-function zusammen(teile: readonly (string | undefined)[]): string {
-  return teile.filter((t) => typeof t === 'string' && t.trim() !== '').join('\n');
-}
-
-/** Regeste-Anteil (flach + alle Sprachfassungen inkl. «Regeste a/b/c»), in Reihenfolge. */
-function regesteTeile(snap: EntscheidSnapshot): string[] {
-  const teile: string[] = [];
-  const reg = snap.regeste;
-  if (!reg) return teile;
-  teile.push(reg.text);
-  for (const f of reg.sprachfassungen ?? []) {
-    teile.push(f.kopf);
-    teile.push(...(f.absaetze ?? []));
-    for (const w of f.weitereRegesten ?? []) {
-      teile.push(w.kopf);
-      teile.push(...(w.absaetze ?? []));
+function sprachgebundeneTreffer(
+  snap: EntscheidSnapshot, opts: { ohneApparat: boolean; mitStatutes: boolean },
+): Array<{ key: string; artikel: string }> {
+  const datum = fassungsDatumVon(snap);
+  const stuecke = sprachStueckeVon(snap);
+  if (opts.mitStatutes) stuecke.unshift({ sprache: spracheDerSammelteile(snap), text: (snap.zitierteNormen ?? []).join('\n') });
+  const out: Array<{ key: string; artikel: string }> = [];
+  for (const st of stuecke) {
+    if (!st.sprache) continue;
+    // wie `fliesstextOhneApparat`: bereinigt UND Mehrwort-Kürzel verbunden (mehrwort-kuerzel.ts, §5).
+    const text = opts.ohneApparat ? verbindeMehrwortKuerzel(ohneLiteraturApparat(st.text)) : st.text;
+    for (const ref of extrahiereStatutRefs(text)) {
+      if (!istSprachHomonym(ref.gesetz)) continue;
+      const k = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum, st.sprache);
+      if (k) out.push({ key: k, artikel: ref.artikel });
     }
   }
-  return teile;
-}
-
-/** Block-Texte einer Abschnittsfolge, in Reihenfolge. */
-function blockTeile(abschnitte: EntscheidSnapshot['abschnitte'] | undefined): string[] {
-  const teile: string[] = [];
-  for (const a of abschnitte ?? []) for (const b of a.bloecke ?? []) teile.push(b.text);
-  return teile;
-}
-
-/**
- * NUR die Regeste eines Snapshots — der amtliche LEITSATZ. Wird heute nur noch
- * für Messungen und Tests gebraucht (die Korroborations-Regel, die sie als
- * eigenen Zweig führte, ist zurückgebaut); bleibt exportiert, weil der
- * Leitsatz-Anteil die einzige Text-Teilmenge ist, die man ohne zweite
- * Assemblage nicht wieder herstellen kann (§5).
- */
-export function regesteTextVon(snap: EntscheidSnapshot): string {
-  return zusammen(regesteTeile(snap));
-}
-
-/**
- * ── LITERATUR-KONTEXT-REGEL (Gegenprüfung R3, Entscheid Orchestrator 28.7.2026)
- *
- * WAS SIE TUT. Sie entfernt aus dem Fliesstext die deklarierten ZITIER-APPARAT-
- * SPANNEN, BEVOR die Zitat-Extraktion darüber läuft. Eine Spanne beginnt an
- * einem der unten aufgeführten Marker und endet am nächsten Segment-Ende —
- * `;`, `)`, `»` oder Zeilenende. Alles ausserhalb bleibt unberührt.
- *
- * WARUM DAS UND NICHT ZÄHLEN. Der Vorläufer war eine Häufigkeits-Schwelle
- * («eine Nennung ist Literatur, zwei sind Erörterung»). Sie ist an der eigenen
- * Messung gescheitert: in der gleichverteilten Stichprobe der von ihr
- * verworfenen Paare war rund die Hälfte ECHTE Rechtsanwendung (ATSG/17, ZPO/138,
- * OR/30, STPO/428, EMRK/6). Häufigkeit misst nicht, ob eine Norm trägt — eine
- * einmal, aber tragend erörterte Norm sieht gezählt aus wie eine beiläufige.
- * Der KONTEXT dagegen unterscheidet genau die Klasse, um die es geht: «N. 508/509
- * zu Art. 517-518 ZGB» ist eine Angabe ÜBER ein Buch, nicht über den Fall.
- *
- * REICHWEITE: BEIDE EBENEN. `normKeysVonSnapshot` (Erlass) und
- * `artikelSchluesselVonSnapshot` (Artikel) lesen denselben bereinigten Text
- * (`fliesstextOhneApparat`, §5). Das ist kein Kompromiss, sondern die richtige
- * Symmetrie: ein Literaturnachweis ist auch keine Erlass-Nennung des Gerichts.
- * Der Dekret-Stand «erst vollständig erkennen, dann kuratieren» (David
- * 27.7.2026) bleibt damit unangetastet — es wird nichts nach Häufigkeit,
- * Wichtigkeit oder Rang verworfen, sondern genau eine syntaktisch benannte
- * Textsorte.
- *
- * AUFNAHME-REGEL FÜR MARKER (§7): nur mit Korpus-Beleg (Entscheid-ID + Zitat)
- * und gemessener Häufigkeit. Im Zweifel NICHT aufnehmen — die nicht
- * aufgenommenen Klassen stehen unten benannt, damit die Lücke sichtbar ist (§8)
- * statt sich als «vollständig» auszugeben.
- *
- * NICHT AUFGENOMMEN, obwohl hochfrequent — bekannte REST-KLASSE (§8). Die
- * verbreitetste deutsche Kommentar-Form nennt den Artikel OHNE «zu»-Anker, hinter
- * dem blossen Werktitel: «Jean-Richard-dit-Bressel, in: Basler Kommentar,
- * 3. Auflage 2023, Art. 279 StPO N 13» (6'781 Vorkommen von «Basler/Berner/
- * Zürcher Kommentar» in 2'292 Snapshots; «in:» allein 21'179 in 3'421). Ein
- * Marker auf den blossen Werktitel hätte keine verlässliche Spannen-Grenze — er
- * träfe auch «Nach dem Basler Kommentar ist Art. 41 OR anwendbar», also eine
- * Aussage des Gerichts. Diese Klasse bleibt darum bewusst unerfasst: eine
- * benannte Lücke ist einer stillen Fehl-Löschung immer vorzuziehen (§1).
- */
-interface LiteraturMarker {
-  /** Sprechender Name (erscheint in der Tor-/Lauf-Ausgabe). */
-  readonly name: string;
-  /** Regex-Quelle des MARKERS (ohne Spannen-Schwanz), case-insensitiv gelesen. */
-  readonly muster: string;
-  /** Korpus-Beleg: Entscheid-ID + Wortlaut (§7 — kein Marker ohne Fundstelle). */
-  readonly beleg: string;
-  /** Gemessene Häufigkeit am committeten Korpus (5'093 Snapshots, 28.7.2026). */
-  readonly korpus: string;
-}
-
-export const LITERATUR_MARKER: readonly LiteraturMarker[] = [
-  {
-    name: 'Kommentar-Titel («… Kommentar zu Art. X»)',
-    muster: 'Kommentar zu\\s+Art\\.',
-    beleg:
-      'bge_150_IV_10: «MARCEL ALEXANDER NIGGLI, Rassendiskriminierung, Ein Kommentar '
-      + 'zu Art. 261bis StGB und Art. 171c MStG, 2a ed. 2007, n. 405 e 407)» — das '
-      + 'Gericht wendet Art. 171c MStG nirgends an (Phantom-Fund der Gegenprüfung R2).',
-    korpus: '52 Vorkommen in 27 Snapshots',
-  },
-  {
-    name: 'Randnummer-Fundstelle («N. 508/509 zu Art. X»)',
-    // ABWEICHUNG vom Auftrags-Wortlaut (§7), belegt statt behauptet: der Auftrag
-    // nannte nur die Form mit Punkt («N. 12 zu Art.»). Am Korpus stehen daneben
-    // die punktlose Form («N 51 zu Art.», 316 Vorkommen in 117 Snapshots, Beleg
-    // bs_sozialversicherungsgericht/BV.2026.5 «N 51 zu Art. 26 BVG») und die
-    // Randziffer («Rz 46 zu Art.», 84 in 49, Beleg bs_.../KV.2025.2 «Rz 46 zu
-    // Art. 64a KVG») — dieselbe Textsorte, derselbe Anker «zu Art.». Sie hier
-    // NICHT zu führen hiesse, dieselbe Klasse je nach Setzergewohnheit
-    // verschieden zu behandeln (§1).
-    muster: '\\b(?:N|Rz|Rn)\\.?\\s*\\d+[a-z]?(?:\\s*[/–-]\\s*\\d+[a-z]?)?(?:\\s*f{1,2}\\.)?\\s+zu\\s+Art\\.',
-    beleg:
-      'bge_146_III_106: «(KÜNZLE, Berner Kommentar, 2011, N. 508/509 zu Art. 517-518 '
-      + 'ZGB; PILLER, in: Commentaire romand, Code civil II, 2016, N. 131 zu '
-      + 'Art. 518 ZGB)» — ZGB/517 stand allein aus dieser Fundstelle im Index.',
-    korpus: '7\'111 Vorkommen «N. … zu Art.» in 689 Snapshots (+ 316 punktlos, + 84 «Rz»)',
-  },
-  {
-    name: 'fr/it Kommentar-Fundstelle («n° 10 ad art. X»)',
-    // Der Anker ist «ad art.» selbst, nicht die vorangehende Randnummer: die
-    // Schreibungen wechseln («n° 10», «n o 2», «no 66», «n. 1 e segg.»), das
-    // «ad» nicht. «AD» steht bereits in INVALID_LAW_CODES, ist also nie
-    // law-Kandidat; die Form «ad art.» ist in DE/FR/IT-Urteilstext ausnahmslos
-    // ein Verweis auf eine Fundstelle (Kommentar oder Botschaft), nie eine
-    // Subsumtion — deshalb aufgenommen.
-    muster: '\\bad\\s+art\\.',
-    beleg:
-      'bge_152_I_105: «NORA MARKWALDER, in St. Galler Kommentar, …, 4e éd. 2023, '
-      + 'n° 2 ad art. 123c Cst.; CHRISTIAN DENYS, in Commentaire romand, '
-      + 'Constitution fédérale, 2021, n° 10 ad art. 123c Cst.»',
-    korpus: '4\'463 Vorkommen in 324 Snapshots (davon 3\'084 in der Form «n° … ad art.»)',
-  },
-];
-
-/**
- * Segment-Ende einer Zitier-Apparat-Spanne. Bewusst KURZ gehalten: der Apparat
- * endet in Schweizer Urteilstext am Semikolon (nächster Autor), an der
- * schliessenden Klammer (Ende des Klammer-Nachweises), am schliessenden
- * Anführungszeichen oder an der Absatzgrenze. Ein längerer Schwanz risse
- * Gerichtstext mit heraus (§1).
- */
-const SPANNEN_ENDE = '[^;)»\\n]*';
-
-const LITERATUR_SPANNE = new RegExp(
-  `(?:${LITERATUR_MARKER.map((m) => m.muster).join('|')})${SPANNEN_ENDE}`,
-  'gi',
-);
-
-/**
- * Fliesstext OHNE die deklarierten Zitier-Apparat-Spannen. Rein und
- * deterministisch (§2): kein Zustand, keine Reihenfolge-Abhängigkeit — `replace`
- * mit einem /g-Muster setzt `lastIndex` selbst zurück.
- *
- * Ersetzt wird durch ein LEERZEICHEN, nicht durch nichts: sonst klebten die
- * Textränder links und rechts der Spanne zusammen und könnten ein Zitat
- * ERZEUGEN, das im Original nicht steht (die Regel darf nur wegnehmen, §1).
- */
-export function ohneLiteraturApparat(text: string): string {
-  if (!text) return text;
-  return text.replace(LITERATUR_SPANNE, ' ');
-}
-
-/** Die entfernten Spannen selbst — Grundlage der Verwurf-Statistik (§6.7). */
-export function literaturSpannen(text: string): string[] {
-  if (!text) return [];
-  return [...text.matchAll(LITERATUR_SPANNE)].map((m) => m[0]);
-}
-
-/**
- * Die EINE Text-Quelle beider Extraktions-Ebenen (§5). Wer hier etwas ändert,
- * ändert Erlass- und Artikel-Ebene gemeinsam — genau das ist der Zweck.
- */
-export function fliesstextOhneApparat(snap: EntscheidSnapshot): string {
-  // Belegte Mehrwort-Kürzel («GebV SchKG») als EIN Code — sonst kappt der Extraktor am Leerzeichen (mehrwort-kuerzel.ts).
-  return verbindeMehrwortKuerzel(ohneLiteraturApparat(fliesstextVon(snap)));
+  return out;
 }
 
 /**
@@ -777,10 +683,15 @@ export function fliesstextOhneApparat(snap: EntscheidSnapshot): string {
  */
 export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | null): string[] {
   const datum = fassungsDatumVon(snap);
-  const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp));
-  for (const ref of extrahiereStatutRefs(fliesstextOhneApparat(snap))) {
+  const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp, spracheDerSammelteile(snap)));
+  const refs = extrahiereStatutRefs(fliesstextOhneApparat(snap));
+  for (const ref of refs) {
     const k = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
     if (k) out.add(k);
+  }
+  // SPRACH_HOMONYME: nur je Textstück mit eindeutiger Sprache (QS-KORPUS 25.9.2026).
+  if (refs.some((r) => istSprachHomonym(r.gesetz))) {
+    for (const t of sprachgebundeneTreffer(snap, { ohneApparat: true, mitStatutes: false })) out.add(t.key);
   }
   if (hint && !AUSGESCHLOSSENE_KEYS.has(hint)) out.add(hint);
   return [...out].sort();
@@ -807,17 +718,21 @@ export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | nul
  */
 export function literaturEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
   const datum = fassungsDatumVon(snap);
-  const ausStatutes = new Set(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp));
-  const keysAus = (text: string): Set<string> => {
+  const ausStatutes = new Set(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp, spracheDerSammelteile(snap)));
+  const keysAus = (text: string, ohneApparat: boolean): Set<string> => {
     const out = new Set<string>();
-    for (const ref of extrahiereStatutRefs(text)) {
+    const refs = extrahiereStatutRefs(text);
+    for (const ref of refs) {
       const k = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
       if (k) out.add(k);
     }
+    if (refs.some((r) => istSprachHomonym(r.gesetz))) {
+      for (const t of sprachgebundeneTreffer(snap, { ohneApparat, mitStatutes: false })) out.add(t.key);
+    }
     return out;
   };
-  const roh = keysAus(fliesstextVon(snap));
-  const rein = keysAus(fliesstextOhneApparat(snap));
+  const roh = keysAus(fliesstextVon(snap), false);
+  const rein = keysAus(fliesstextOhneApparat(snap), true);
   return [...roh].filter((k) => !rein.has(k) && !ausStatutes.has(k)).sort();
 }
 
@@ -948,10 +863,15 @@ export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<strin
   const out = new Set<string>();
   const datum = fassungsDatumVon(snap);
   const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextOhneApparat(snap);
-  for (const ref of extrahiereStatutRefs(text)) {
+  const refs = extrahiereStatutRefs(text);
+  for (const ref of refs) {
     const rk = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
     if (!rk) continue;
     out.add(`${rk}/${ref.artikel}`);
+  }
+  // SPRACH_HOMONYME: dieselbe sprachgebundene Auflösung wie in `normKeysVonSnapshot` (§5).
+  if (refs.some((r) => istSprachHomonym(r.gesetz))) {
+    for (const t of sprachgebundeneTreffer(snap, { ohneApparat: true, mitStatutes: true })) out.add(`${t.key}/${t.artikel}`);
   }
   return out;
 }
@@ -1108,12 +1028,27 @@ export function fremdDefinierteKeys(snap: EntscheidSnapshot): Set<string> {
   // den `artikelSchluesselVonSnapshot` für dieses Dokument erzeugt — ein Riegel
   // auf die andere Fassung derselben Reihe griffe ins Leere (§5).
   const datum = fassungsDatumVon(snap);
+  // DIESELBE Auflösung wie die Extraktion (`normKeyImSnapshot`, §5) — inkl. der
+  // Gerichts-Kürzel (Posten «fremdDefinierteKeys berücksichtigt GERICHTS_KUERZEL
+  // nicht», 25.9.2026) und der SPRACH_HOMONYME in der Sprache der Fundstelle.
+  // Die Sprache folgt aus der Position im Gesamttext (Stück-Grenzen wie in
+  // `fliesstextVon`, Trenner '\n'); nur für Homonyme berechnet.
+  let grenzen: Array<{ bis: number; sprache: EntscheidSprache | null }> | null = null;
+  const spracheBei = (idx: number): EntscheidSprache | null => {
+    if (!grenzen) {
+      let pos = 0;
+      grenzen = sprachStueckeVon(snap).map((st) => { pos += st.text.length + 1; return { bis: pos, sprache: st.sprache }; });
+    }
+    return grenzen.find((g) => idx < g.bis)?.sprache ?? null;
+  };
+  const aufloesen = (abk: string, idx: number): string | null =>
+    normKeyImSnapshot(abk, snap.gerichtstyp, datum, istSprachHomonym(abk) ? spracheBei(idx) : null);
 
   // ARM A — Titel-Definition ohne Überschneidung («(Biozidprodukteverordnung, BPR)»).
   for (const m of text.matchAll(DEFINITION)) {
     const titel = m[1];
     if (!TITEL_WORT.test(titel) || ZITAT_KOPF.test(titel)) continue;
-    const key = normKeyFuerAbk(m[2], datum);
+    const key = aufloesen(m[2], (m.index ?? 0) + m[0].lastIndexOf(m[2]));
     if (!key) continue;
     if (!titelUeberlappt(titel, REGISTER_TITEL.get(key) ?? '')) out.add(key);
   }
@@ -1141,7 +1076,7 @@ export function fremdDefinierteKeys(snap: EntscheidSnapshot): Set<string> {
   // sie widerlegen sie nicht.
   for (const m of text.matchAll(SIGEL_BINDUNG)) {
     if (!KANTONS_SIGEL.has(m[2]) && !KANTONS_SIGEL.has(m[2].toUpperCase())) continue;
-    const key = normKeyFuerAbk(m[1], datum);
+    const key = aufloesen(m[1], m.index ?? 0);
     if (!key) continue;
     // DIESELBE TITEL-PRÜFUNG WIE ARM A — nur sitzt der Titel hier VOR der
     // Klammer («des kantonalen Anwaltsgesetzes vom 28. März 2006 (KAG; BSG
@@ -1188,9 +1123,13 @@ export function artikelSchluesselMitBefund(snap: EntscheidSnapshot): {
 
   const roh = new Set<string>();
   const rohText = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
-  for (const ref of extrahiereStatutRefs(rohText)) {
+  const rohRefs = extrahiereStatutRefs(rohText);
+  for (const ref of rohRefs) {
     const rk = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, fassungsDatumVon(snap));
     if (rk) roh.add(`${rk}/${ref.artikel}`);
+  }
+  if (rohRefs.some((r) => istSprachHomonym(r.gesetz))) {
+    for (const t of sprachgebundeneTreffer(snap, { ohneApparat: false, mitStatutes: true })) roh.add(`${t.key}/${t.artikel}`);
   }
   const literaturVerworfen = [...roh].filter((k) => !schluessel.has(k)).sort();
 

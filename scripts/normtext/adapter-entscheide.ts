@@ -18,6 +18,7 @@ import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
 import { kantonsEntscheiddatum, kopfSeitenMitRueckfallMeldung, kopfZurueckhalten, type KopfHoleOpts } from './entscheid-kantonsdatum';
 import { ersetzeKonflatiertenAuszug } from './clir-auszug';
+import { spracheAusBody } from './sprache-aus-body';
 // markenPlausibel/MONAT: Single Source erwaegung-normalisieren.ts (§5), re-exportiert für Bestands-Importeure.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
 import {
@@ -167,30 +168,9 @@ export function extrahiereRubrum(fullText: string | undefined): EntscheidRubrum 
   return rubrum;
 }
 
-// A2: Sprach-Label aus dem BODY bestimmen (nicht aus dem OCL-Record kopieren —
-// das war die Quelle des Mislabels: ein fr/it-BGE trägt im 'bge'-Record
-// language='de', der FR/IT-Body stammt aber aus dem unterliegenden aza-Urteil).
-// Deterministisch (§2): distinkte Funktionswörter je Sprache zählen, klarer
-// Sieger (≥5 Treffer und ≥1.25× Zweitplatzierter) gewinnt, sonst null →
-// der Aufrufer fällt auf det.language zurück. Empirisch über den ganzen Korpus
-// (327 Bodies) verifiziert: 323 de / 4 fr / 0 it, kein DE-Fehlklassifikat.
-const SPRACH_SIGNAL: { code: EntscheidSprache; re: RegExp }[] = [
-  { code: 'de', re: /\b(?:der|die|das|und|nicht|dass|eine|auch|über|dem|den|des|ist|gegen|durch|bei|vom|wird|werden|sich|Urteil|Beschwerde|zur|zum|nach)\b/giu },
-  { code: 'fr', re: /\b(?:recours|contre|cette|selon|dans|pour|qui|que|est|les|une|aux|ainsi|droit|arr[êe]t|fait|elle|leur|ont|avec|sans|sous|été)\b/giu },
-  { code: 'it', re: /\b(?:che|della|nella|sono|essere|questo|ricorso|delle|dalla|alla|dei|degli|sentenza|dell|viene|stato|secondo|nonché)\b/giu },
-];
-
-/** Sprache eines Entscheids aus seinem gerenderten Body-Text ableiten (§2). */
-export function spracheAusBody(abschnitte: EntscheidAbschnitt[]): EntscheidSprache | null {
-  const text = abschnitte.flatMap((a) => a.bloecke.map((b) => b.text)).join(' ').slice(0, 6000);
-  if (text.replace(/\s/g, '').length < 80) return null; // zu wenig Text → kein Override
-  const score = SPRACH_SIGNAL
-    .map(({ code, re }) => ({ code, n: (text.match(re) ?? []).length }))
-    .sort((a, b) => b.n - a.n);
-  const [top, zweit] = score;
-  if (top.n < 5 || top.n < (zweit?.n ?? 0) * 1.25) return null;
-  return top.code;
-}
+// A2: Sprach-Label aus dem BODY — seit 25.9.2026 im Leaf-Modul ./sprache-aus-body.ts
+// (wortgleich verschoben; hier nur weitergereicht, alle Importe bleiben gültig).
+export { spracheAusBody };
 
 /**
  * Inline-Dispositiv „1. … 2. … 3. …" (einzeiliger Blob) splitten — NICHT an Datums-„2. Mai":
@@ -736,7 +716,7 @@ export async function holeBgeLeitentscheid(
     // `auszugAbschnitte` = amtlicher BGE-Sammlungstext (der publizierte «Auszug»).
     // Die UI bietet beide als Tabs. basis.abschnitte ist der Sammlungstext aus dem
     // BGE-Record (vor dem Merge), azaSnap.abschnitte das volle Urteil.
-    return {
+    const merged: EntscheidSnapshot = {
       ...basis,
       datum: azaSnap.datum,
       // A2: `abschnitte` ist jetzt das (oft fr/it) aza-Urteil → Sprache folgt dem
@@ -759,15 +739,21 @@ export async function holeBgeLeitentscheid(
       // zuerst in Originalfolge, dann die NEUEN aza-Einträge in Originalfolge; kein
       // Re-Sort, damit bestehende Snapshots nicht unnötig umgeschrieben werden (§6).
       zitierteNormen: [...new Set([...basis.zitierteNormen, ...azaSnap.zitierteNormen])],
-      // Vereinigung beider Seiten (Sammlungs-Auszug + volles Urteil) — sortiert,
-      // damit dieser Bau-Pfad dieselbe Reihenfolge liefert wie normKeysVonSnapshot
-      // über den fertigen Merge (§2 build-pfad-unabhängig).
-      normKeys: [...new Set([...basis.normKeys, ...azaSnap.normKeys])].sort(),
+      // Wird unten über den FERTIGEN Merge berechnet (eine Ableitung, §5).
+      normKeys: [],
       // quelleUrl = bger.ch-Live-URL des unterliegenden Urteils = massgebliche Fassung
       // der Voll-Ansicht (Detail) und Quelle-Link der getrennten Übersichts-Karte (§5/§8).
       azaUrteil: { aktenzeichen: azaAz!, key: azaKey!, quelleUrl: azaSnap.quelleUrl },
       sha: azaSnap.sha,
     };
+    // EINE normKeys-Ableitung für Nachzug und Remap (§5, QS-KORPUS 25.9.2026):
+    // bisher die Vereinigung basis∪aza, je Seite mit EIGENEM Datum und eigener
+    // Sprache berechnet — der Remap rechnet dagegen über den fertigen Merge
+    // (Entscheiddatum des Urteils, Body-Sprache, dreisprachige Regeste). Beide
+    // Pfade liefern jetzt dasselbe; Text geht nicht verloren, denn der Merge
+    // trägt beide Seiten (abschnitte + auszugAbschnitte + zitierteNormen beider).
+    merged.normKeys = normKeysVonSnapshot(merged);
+    return merged;
   }
   // Auszug-only (§8): OHNE aufgelöstes Urteil ist das OCL-`decision_date` KEINE
   // verlässliche Datumsquelle (Streudaten aus dem Fliesstext, z.B. «1959-05-24» für

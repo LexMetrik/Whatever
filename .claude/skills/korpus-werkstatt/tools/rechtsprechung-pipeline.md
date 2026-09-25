@@ -30,9 +30,8 @@ npm run entscheide -- --datum=$(date +%F) --additiv --eidg=bvger,bstger,bpatger 
 # Offline aus Fixtures (Quelle nicht erreichbar / deterministischer Trockenlauf)
 npm run entscheide:seed -- --datum=$(date +%F)
 
-# BGE-Band-Nachzug (additiv, band-basiert) — DANACH immer --remap (offline): der Nachzug bildet
-# normKeys nur aus statutes, der Remap auch aus dem Fliesstext (Posten «sprachgebundene Alias-
-# Auflösung», bis zur Angleichung; Beleg #1099: +IRSG/+VKL erst im Remap sichtbar)
+# BGE-Band-Nachzug (additiv) — danach --remap als Fixpunkt-Probe: seit 25.9.2026 dieselbe
+# normKeys-Ableitung wie der Remap; «verändert: 0» an den neuen BGE erwartet
 npm run entscheide -- --datum=$(date +%F) --additiv --bge-baender=152
 npm run entscheide -- --datum=$(date +%F) --remap
 # Danach (sonst check:zaehler rot):
