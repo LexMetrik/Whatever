@@ -38,7 +38,13 @@ export function MaterialKarte({ m }: { m: BrowseMaterial }) {
           kappt ohnehin auf 3 Zeilen), aber die Karte wächst erst mit einer
           breiteren Rasterspalte in einem späteren Posten (B-Reihe); `reading-s`
           jetzt gesetzt, damit der Titel dann nicht unbegrenzt mitwächst. */}
-      <p className="mt-1.5 text-body-s font-medium text-ink-900 leading-snug line-clamp-3 underline-offset-2 group-hover:underline max-w-reading-s">{m.titel}</p>
+      {/* B2 (W2·31-BILDSCHIRMBREITE, 25.9.2026): ab vier Rasterspalten
+          (`@container/raster` ≥ 78rem, gesetzt in pages/Materialien.tsx —
+          die Karte lebt nur dort) wird die Karte schmaler, darum vier statt
+          drei Titelzeilen. Gemessen (Titel ungekappt, 1684 Karten): bei
+          307 px Titelbreite brauchen 429 Titel mehr als drei, 213 mehr als
+          vier Zeilen. Die Kappung bleibt: Einzeltitel reichen bis 14 Zeilen. */}
+      <p className="mt-1.5 text-body-s font-medium text-ink-900 leading-snug line-clamp-3 @[78rem]/raster:line-clamp-4 underline-offset-2 group-hover:underline max-w-reading-s">{m.titel}</p>
       {/* lc-chip-zeile (LM-044/N1): der Stand-Chip ist ein <span> ohne role und
           bleibt darum ausdrücklich FLACH — reine Angabe, keine Aktion, kein Link.
           LM-028: `mt-auto` hängt den Fuss an die Kartenunterkante (die Karte ist

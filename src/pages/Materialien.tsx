@@ -164,7 +164,7 @@ export function Materialien() {
             <Leerzustand art="filter" text="Kein Material gefunden."
               weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setBehoerde(''); setDoktyp(''); setSuche(''); } }} />
           ) : (
-            <div className="space-y-6">
+            <div className="@container/raster space-y-6">
               {gruppen.map((g) => (
                 <section key={g.behoerde} id={`b-${g.behoerde}`} className="space-y-3 scroll-mt-24">
                   <div className="space-y-1.5">
@@ -178,7 +178,21 @@ export function Materialien() {
                     <GruppenKopf stufe={2} titel={g.kuerzel} zahl={g.materialien.length} />
                     <p className="text-body-s text-ink-500 max-w-reading-s">{g.name}</p>
                   </div>
-                  <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-3')}>
+                  {/* W2·31-BILDSCHIRMBREITE B2 (25.9.2026): die Seitenart
+                      `materialien` steht auf `weit` (seitenbreite.ts); die
+                      vierte Spalte hängt aber an der RASTERBREITE
+                      (`@container/raster`, ab 78rem), nicht am Viewport —
+                      sonst fiele sie bei offener Seitenleiste mit: gemessen
+                      @1536, Leiste 460 px, `2xl:grid-cols-4` → 4 × 248 px.
+                      78rem hält die Karte bei ≥ 303 px (vorher 349). So greift
+                      sie in Fenster und Pane gleich; der Titel folgt derselben
+                      Schwelle (MaterialKarte). Das `lg:` vor der Fenster-
+                      Variante ist nur CSS-Reihenfolge: Tailwind gibt die
+                      Container-Regeln VOR den Media-Regeln aus, allein verlöre
+                      `@[78rem]/raster:grid-cols-4` gegen `lg:grid-cols-3`
+                      (im Build-CSS nachgesehen). Eine 78rem breite Spalte
+                      setzt ohnehin ≥ lg voraus, die Stapelung ändert nichts. */}
+                  <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:@[78rem]/raster:grid-cols-4 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 @[78rem]/raster:grid-cols-4 gap-3')}>
                     {g.materialien.map((m) => <MaterialKarte key={m.key} m={m} />)}
                   </div>
                 </section>

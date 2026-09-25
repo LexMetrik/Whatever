@@ -12,3 +12,5 @@ Reihenfolge-Bedingung ausser B1). Messquelle:
 Zum Abgleich: keine bestehende Breiten-Posten-Doppelung (2026-09-20-vorlagen-breite.md und
 2026-09-20-rechtsprechungs-uebersicht-…-korpus-breite.md betreffen Inhalts-/Fallabdeckung, nicht
 Bildschirmbreite).
+
+**Erledigt 2026-09-25:** PR #1133
