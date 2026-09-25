@@ -4,6 +4,7 @@ import {
 } from '../../lib/rechtsprechung/livesuche';
 import { kantonLabel } from './format';
 import { Datum } from '../ui/Datum';
+import { SchalterGruppe } from '../ui/SchalterGruppe';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from '../ui/TrefferZeile';
 
 // Opt-in Live-Volltextsuche über den GESAMTEN Schweizer Korpus (entscheidsuche.ch),
@@ -49,6 +50,11 @@ function LiveTrefferZeile({ t }: { t: LiveTreffer }) {
     <div className={`${TREFFER_ZEILE_RAHMEN} px-4 py-2.5`}>{inner}</div>
   );
 }
+
+const SORT_OPTIONEN: readonly { id: LiveSortierung; label: string }[] = [
+  { id: 'relevanz', label: 'Relevanz' },
+  { id: 'datum', label: 'Neueste' },
+];
 
 export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
   const [offen, setOffen] = useState(false);
@@ -106,15 +112,9 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
           placeholder="Begriff, Norm oder Aktenzeichen …" aria-label="Live-Suchbegriff"
           className="lc-input lc-input-sm w-auto min-w-0 flex-1"
         />
-        {/* K3: Text-Schalter (`.ub-schalter`, D22) statt Kasten-Segment. */}
-        <div className="flex items-baseline gap-x-4" role="group" aria-label="Sortierung">
-          {(['relevanz', 'datum'] as const).map((s) => (
-            <button key={s} type="button" onClick={() => setzeSort(s)} aria-pressed={sortNach === s}
-              className="ub-schalter">
-              {s === 'relevanz' ? 'Relevanz' : 'Neueste'}
-            </button>
-          ))}
-        </div>
+        {/* K3: Text-Schalter (`.ub-schalter`, D22) statt Kasten-Segment —
+            seit REST S1 (25.9.2026) aus dem Baustein `ui/SchalterGruppe`. */}
+        <SchalterGruppe name="Sortierung" wert={sortNach} onWahl={setzeSort} optionen={SORT_OPTIONEN} />
         <button type="submit" disabled={!q.trim() || laden}
           className="lc-btn-mini px-3 text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-transparent hover:text-ink-900 disabled:opacity-40">
           {laden ? 'sucht …' : 'Suchen'}

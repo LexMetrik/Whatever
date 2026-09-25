@@ -108,13 +108,22 @@ export function KopfOverline({ glieder }: {
 }
 
 export function LeserKopfGeruest({
-  overline, titel, nachTitel, fakten = [], stand = [], standReserve = false,
-  ehrlichkeit, aktionen, children, form = 'kopf',
+  overline, titel, nachTitel, fakten = [], nachBand, stand = [], standReserve = false,
+  ehrlichkeit, aktionen, children, form = 'kopf', register,
 }: {
   /** W2·29-WERKBANK-LESER S2 · `titelblatt` legt die Identität (Overline · Titel
    *  · Fakten) auf die Registerfläche `.lc-titelblatt-band` (index.css); Stand,
    *  Aktionen und Banner bleiben auf dem Papier. Vorgabe `kopf` = unverändert. */
   form?: 'kopf' | 'titelblatt';
+  /** W2·29-WERKBANK-REST S1 · Register des Titelblatt-Bandes (`data-reg` am
+   *  Band, Rezept in index.css). Ohne Angabe bleibt das Band «Gesetze» — der
+   *  Erlass-Kopf rendert zeichengleich (additiv, Gesetzes-Leser unberührt). */
+  register?: 'r';
+  /** W2·29-WERKBANK-REST S1 · Inhalts-Bänder, die zur Identität gehören, aber
+   *  NICHT auf die Registerfläche (Entscheid: Herkunfts-Hinweis mit Knopf,
+   *  Rubrum mit `lc-overline`-Etiketten). Steht direkt nach den Fakten, in der
+   *  Form `titelblatt` ausserhalb des Bandes auf dem Papier. */
+  nachBand?: ReactNode;
   /** Band 1 — in aller Regel ein `<KopfOverline>`. */
   overline: ReactNode;
   /** Band 2 — die H1. Als Knoten, weil Stimme (Serif/Display), Umbruch-Regel und
@@ -161,8 +170,9 @@ export function LeserKopfGeruest({
   return (
     <header className="space-y-2 border-b border-line pb-5">
       {form === 'titelblatt'
-        ? <div data-titelblatt-band className="lc-titelblatt-band space-y-2">{identitaet}</div>
+        ? <div data-titelblatt-band data-reg={register} className="lc-titelblatt-band space-y-2">{identitaet}</div>
         : identitaet}
+      {nachBand}
 
       {(stand.length > 0 || ehrlichkeit) && (
         <div className={`${standReserve ? 'min-h-kopf-stand sm:min-h-kopf-stand-sm md:min-h-kopf-stand-md ' : ''}space-y-1`}>
