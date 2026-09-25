@@ -87,11 +87,23 @@ export function fingerabdruck(normalisiertesSegment: string): Fingerabdruck {
   return { laenge: normalisiertesSegment.length, hash: `${a.toString(36)}.${b.toString(36)}` };
 }
 
-/** Menge aller Fenster-Hashes gegebener Länge im (bereits normalisierten) Blob. */
-function fensterHashes(blobNormalisiert: string, laenge: number): Set<string> {
+/**
+ * Markiert in `gefunden` jeden Index aus `ziele`, dessen Hash-Paar (a, b) als
+ * Fenster der Länge `laenge` im Blob vorkommt. G11 (Runde 3, §15): statt eines
+ * Strings je Fenster (`"a.b"` in einem Set — bei ~25'600 Artikeln × allen
+ * Segmentlängen der teuerste Schritt von Modus B) wird je Fenster nur die Zahl
+ * `a` in einer Map nachgeschlagen und bei Treffer `b` verglichen. Dieselbe
+ * Rollformel, dieselben beiden Hashes — kein Logikverlust (Unit-Test gegen
+ * naive String-Suche unverändert, Modus-B/C-Ergebnis byte-gleich, s. Bericht).
+ */
+function markiereFenster(
+  blobNormalisiert: string,
+  laenge: number,
+  ziele: ReadonlyMap<number, ReadonlyArray<{ b: number; i: number }>>,
+  gefunden: Set<number>,
+): void {
   const n = blobNormalisiert.length;
-  const treffer = new Set<string>();
-  if (laenge <= 0 || laenge > n) return treffer; // Länge > Blob-Länge: kann nie enthalten sein.
+  if (laenge <= 0 || laenge > n) return; // Länge > Blob-Länge: kann nie enthalten sein.
   let potenzA = 1;
   let potenzB = 1;
   for (let i = 0; i < laenge - 1; i++) {
@@ -105,7 +117,11 @@ function fensterHashes(blobNormalisiert: string, laenge: number): Set<string> {
     a = (a * BASIS_A + c) % MOD;
     b = (b * BASIS_B + c) % MOD;
   }
-  treffer.add(`${a.toString(36)}.${b.toString(36)}`);
+  const pruefe = (): void => {
+    const kandidaten = ziele.get(a);
+    if (kandidaten) for (const k of kandidaten) if (k.b === b) gefunden.add(k.i);
+  };
+  pruefe();
   for (let i = laenge; i < n; i++) {
     const raus = blobNormalisiert.charCodeAt(i - laenge);
     const rein = blobNormalisiert.charCodeAt(i);
@@ -114,9 +130,8 @@ function fensterHashes(blobNormalisiert: string, laenge: number): Set<string> {
     // behaftet) — zweifach normalisiert, s. Unit-Test gegen naive String-Suche.
     a = ((((a - raus * potenzA) % MOD) + MOD) % MOD * BASIS_A + rein) % MOD;
     b = ((((b - raus * potenzB) % MOD) + MOD) % MOD * BASIS_B + rein) % MOD;
-    treffer.add(`${a.toString(36)}.${b.toString(36)}`);
+    pruefe();
   }
-  return treffer;
 }
 
 /**
@@ -126,18 +141,20 @@ function fensterHashes(blobNormalisiert: string, laenge: number): Set<string> {
  * Länge, damit jede Blob-Länge nur einmal abgefahren wird.
  */
 export function fehlendeIndizes(blobNormalisiert: string, fps: readonly Fingerabdruck[]): number[] {
-  const nachLaenge = new Map<number, number[]>();
+  const nachLaenge = new Map<number, Map<number, Array<{ b: number; i: number }>>>();
   fps.forEach((fp, i) => {
-    const liste = nachLaenge.get(fp.laenge);
-    if (liste) liste.push(i);
-    else nachLaenge.set(fp.laenge, [i]);
+    const [a36, b36] = fp.hash.split('.');
+    const a = parseInt(a36, 36);
+    const b = parseInt(b36, 36);
+    let ziele = nachLaenge.get(fp.laenge);
+    if (!ziele) nachLaenge.set(fp.laenge, (ziele = new Map()));
+    const liste = ziele.get(a);
+    if (liste) liste.push({ b, i });
+    else ziele.set(a, [{ b, i }]);
   });
-  const fehlt = new Set<number>(fps.map((_, i) => i));
-  for (const [laenge, indizes] of nachLaenge) {
-    const fenster = fensterHashes(blobNormalisiert, laenge);
-    for (const i of indizes) if (fenster.has(fps[i].hash)) fehlt.delete(i);
-  }
-  return [...fehlt].sort((x, y) => x - y);
+  const gefunden = new Set<number>();
+  for (const [laenge, ziele] of nachLaenge) markiereFenster(blobNormalisiert, laenge, ziele, gefunden);
+  return fps.map((_, i) => i).filter((i) => !gefunden.has(i));
 }
 
 // ── HTML-Segmentierung (Modus C: frische Ableitung) ────────────────────────
