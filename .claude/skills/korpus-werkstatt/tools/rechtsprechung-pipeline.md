@@ -233,6 +233,14 @@ auf einen NEUEN Regress deutet.
    (Ist + grosszügige Reserve) — bremst Unfälle, limitiert nicht künstlich. Bei Korpus-Ausbau hier
    bewusst nachziehen, mit Begründungs-Kommentar (Anpassungs-Historie steht im File).
 
+10. **Kantonales `decision_date` ≠ Entscheiddatum (25.9.2026).** OCL liefert kantonal oft das
+    Mitteilungs-/Publikations- oder nachfolgende BGer-Datum (GR 6/6, BE 5/12, SG 6/6, AG 5/6 falsch;
+    ZH und Bund korrekt). Kantonal gilt der amtliche Urteilskopf: `kantonsEntscheiddatum` in
+    `mappeEntscheidOCL` (Regel `kopfEntscheiddatum`, `scripts/normtext/entscheid-kopfdatum.ts`;
+    SG-Deckblatt ohne Kopf ⇒ Kopf des amtlichen PDF über `holeAmtlicheKopfSeiten`). Bestand:
+    `npm run entscheide -- --datum=$(date +%F) --kopfdatum-refresh` (Netz, nur datum + zitierung).
+    Beleg: `bibliothek/rechtsprechung/kantonales-entscheiddatum-kopf-2026-09-25.md`.
+
 Weitere am Code verdrahtete Invarianten (für `review.md` relevant), alle in `main()`
 (`scripts/normtext-entscheide.ts`): **BGE-Dedup** — ein bereits als BGE-Volltext erfasstes bger-Urteil
 wird nicht zusätzlich als Routine-Eintrag geführt (Dedup über `bge.filter((s) => s.azaUrteil)`);
