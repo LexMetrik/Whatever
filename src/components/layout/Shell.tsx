@@ -619,7 +619,7 @@ export function Shell({ children }: { children: ReactNode }) {
                     onNavigiert={meldeLive}
                     onSchliessen={() => schliesseUndFokus(i)}
                     onHauptfenster={() => zumHauptfenster(i)}
-                    onTeilen={() => kopiereLayoutLink(layoutPermalink(liveSek))} teilenKopiert={layoutLinkKopiert}
+                    onTeilen={() => kopiereLayoutLink({ text: layoutPermalink(liveSek), ansage: 'Layout-Link kopiert' })} teilenKopiert={layoutLinkKopiert}
                     onLinks={() => verschiebePane(i + 1, i)} onRechts={() => verschiebePane(i + 1, i + 2)}
                     kannLinks kannRechts={i < pane.sekundaer.length - 1}
                     ziehbar={multipane} {...dnd.griff(i + 1)} {...dnd.spalte(i + 1)} />
