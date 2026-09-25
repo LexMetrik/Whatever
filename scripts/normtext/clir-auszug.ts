@@ -53,8 +53,8 @@ function ohneSeitenkoepfe(roh: string, eigeneRef: string): string | null {
   let fremd = false;
   const out = roh.replace(SEITENKOPF_DIV, (_m, inner: string) => {
     const m = SEITENKOPF_TEXT.exec(String(inner));
-    if (!m) fremd = true;
-    return ` ${inner} `;
+    if (!m || norm(m[1]) !== eigeneRef) fremd = true;
+    return ' ';
   });
   return fremd ? null : out;
 }
