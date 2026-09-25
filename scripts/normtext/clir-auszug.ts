@@ -122,9 +122,11 @@ export function parseClirAuszug(html: string, bgeReferenz: string | null | undef
   if (!erw.length) return null;
   abschnitte.push({ typ: 'erwaegung', bloecke: erw });
 
-  // Leck-Fallen: kein Rest-Markup/Entity, kein Seitenkopf (eigener oder fremder desselben Bandes).
+  // Leck-Fallen: kein Rest-Markup/Entity, keine Fehl-Dekodierung, kein Seitenkopf (eigener oder fremder desselben Bandes).
   const alles = abschnitte.flatMap((a) => a.bloecke.map((b) => b.text)).join('\n');
   if (/<\/?[a-z][^>]*>|&[a-z]+;|&#\d+;/i.test(alles)) return null;
+  // Falsche Dekodierung (Seite deklariert utf-8, liefert iso-8859-1): Ersatzzeichen/Mojibake ⇒ nicht raten.
+  if (/\uFFFD|Ã[\u0080-\u00BF]/.test(alles)) return null;
   if (findeFremdeFundstelleImBody(alles, ref)) return null;
   if (new RegExp(`\\bBGE\\s+${ref.replace(/\s+/g, '\\s+')}\\s+S\\.\\s*\\d+`).test(alles)) return null;
   return abschnitte;
