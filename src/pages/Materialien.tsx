@@ -76,7 +76,13 @@ export function Materialien() {
           Overline, keine halbe Haarlinie, kein Erklär-Absatz. */}
       <SeitenKopf
         titel="Materialien"
-        ausgabe={`${nf(STARTSEITE_ZAEHLER.materialien)} Publikationen der Bundesbehörden, bibliografisch mit Live-Link`}
+        /* REST S2 (Posten «Materialien-Kopf», 25.9.2026): «Publikationen der
+           Bundesbehörden» war falsch — der Bestand enthält kantonale
+           Parlamentsgeschäfte (GR BS) und die Materialien der Gesetzgebung.
+           Jetzt die Hausbegriffe mit den Teilzählern aus derselben Quelle
+           (U12/#1068), Wortlaut gleich wie die Startseite: Materialien =
+           Gesetzgebung, Erläuterungen = Verwaltungspraxis. */
+        ausgabe={`${nf(STARTSEITE_ZAEHLER.materialienGesetzgebung)} Materialien (Gesetzgebung) · ${nf(STARTSEITE_ZAEHLER.materialienErlaeuterungen)} Erläuterungen (Verwaltungspraxis), bibliografisch mit Live-Link`}
       />
 
       {fehler && (
