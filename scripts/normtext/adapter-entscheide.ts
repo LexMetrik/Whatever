@@ -15,6 +15,7 @@ import { rubrumFeldPlausibel } from '../../src/lib/rechtsprechung/rubrum';
 import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
+import { RECHTSPRECHUNG_UA } from './clir-regeste';
 // markenPlausibel/MONAT leben jetzt in erwaegung-normalisieren.ts (Single Source, §5);
 // hier re-exportiert, damit bestehende Importeure/Tests stabil bleiben.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
@@ -60,7 +61,7 @@ export async function jget<T = unknown>(url: string, tries = 3, timeoutMs = 4500
     const ac = new AbortController();
     const t = setTimeout(() => ac.abort(), timeoutMs);
     try {
-      const res = await fetch(url, { signal: ac.signal, redirect: 'follow' });
+      const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': RECHTSPRECHUNG_UA }, redirect: 'follow' });
       clearTimeout(t);
       if (res.status === 404 || res.status === 422) return null;
       if (!res.ok) { await sleep(800 * (i + 1)); continue; }

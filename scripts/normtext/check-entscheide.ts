@@ -114,6 +114,36 @@ function dirGroesseMB(dir: string): number {
   return total / (1024 * 1024);
 }
 
+type Abschnitte = EntscheidSnapshotDatei['eintraege'][number]['abschnitte'];
+const fliesstext = (abs: Abschnitte | undefined) =>
+  (abs ?? []).flatMap((a) => a.bloecke.map((b) => b.text)).join('\n');
+
+/**
+ * Wächter (Gegenprüfungs-Auflage C1, 12.9.2026, PR #816): ein Text trägt den
+ * laufenden Seitenkopf eines ANDEREN BGE desselben Bandes — er gehört dann nicht
+ * zur eigenen Fundstelle (OCL-Basis-Record-Konflation, Anlassfall bge_152_V_2 ←
+ * 152 V 20). Legitime Zitierungen ÄLTERER Bände bleiben unberührt (siehe
+ * entscheide-koerper-konflation.ts).
+ * Seit 25.9.2026 AUCH auf dem amtlichen Sammlungs-Auszug (`auszugAbschnitte`):
+ * dort steht seit #1099 der Sammlungstext, und 1300/1332 Auszüge tragen einen
+ * Seitenkopf desselben Bandes (Messung 25.9.2026, main 4153b7361; Volltext
+ * dagegen 6/1259) — ohne diese Prüfung lag der Hauptteil der Abdeckung
+ * ausserhalb des Tors. Nullprobe main: 0 Befunde auf beiden Feldern.
+ */
+export function konflationsBefunde(
+  key: string,
+  bgeReferenz: string | null | undefined,
+  snap: { abschnitte: Abschnitte; auszugAbschnitte?: Abschnitte },
+): string[] {
+  if (!bgeReferenz) return [];
+  const out: string[] = [];
+  const body = findeFremdeFundstelleImBody(fliesstext(snap.abschnitte), bgeReferenz);
+  if (body) out.push(`${key}: Body trägt den laufenden Kopf von BGE ${body} (eigene Fundstelle ${bgeReferenz}) — Basis-Record-Konflation (§8, W2·18-FEHLERBUCH-Muster)`);
+  const auszug = findeFremdeFundstelleImBody(fliesstext(snap.auszugAbschnitte), bgeReferenz);
+  if (auszug) out.push(`${key}: Sammlungs-Auszug trägt den laufenden Kopf von BGE ${auszug} (eigene Fundstelle ${bgeReferenz}) — Auszug-Konflation (§8, W2·18-FEHLERBUCH-Muster)`);
+  return out;
+}
+
 function main() {
   if (!existsSync(PUB) || !existsSync(join(PUB, 'register.json'))) {
     console.error('[check:entscheide] public/rechtsprechung/register.json fehlt — Korpus nicht gebaut.');
@@ -183,17 +213,7 @@ function main() {
     if (snap.sha !== erwartet) fehler.push(`${e.key}: sha-Drift (Datei ${snap.sha?.slice(0, 8)} ≠ erwartet ${erwartet.slice(0, 8)})`);
     const volltext = snap.abschnitte.flatMap((a) => a.bloecke.map((b) => b.text)).join('\n');
     if (AHV.test(volltext) || AHV.test(snap.regeste?.text ?? '')) warn.push(`${e.key}: mögliche AHV-Nummer im Text (Anonymisierung prüfen)`);
-    // Wächter (Gegenprüfungs-Auflage C1, 12.9.2026, PR #816): der Body trägt den
-    // laufenden Seitenkopf eines ANDEREN BGE desselben Bandes — der Body gehört
-    // dann nicht zur eigenen Fundstelle (OCL-Basis-Record-Konflation, Anlassfall
-    // bge_152_V_2 ← 152 V 20). Legitime Zitierungen ÄLTERER Bände bleiben unberührt
-    // (siehe entscheide-koerper-konflation.ts).
-    if (e.bgeReferenz) {
-      const fremd = findeFremdeFundstelleImBody(volltext, e.bgeReferenz);
-      if (fremd) {
-        fehler.push(`${e.key}: Body trägt den laufenden Kopf von BGE ${fremd} (eigene Fundstelle ${e.bgeReferenz}) — Basis-Record-Konflation (§8, W2·18-FEHLERBUCH-Muster)`);
-      }
-    }
+    fehler.push(...konflationsBefunde(e.key, e.bgeReferenz, snap));
     // Wächter (Gegenprüfungs-Auflage B2, 12.9.2026, PR #816): ein amtlicher BGE
     // (regesteAmtlich, leitcharakter==='leitentscheid') mit Regeste-Text MUSS die
     // dreisprachige Struktur (A18) tragen — 1258/1259 taten das, bis der B1-Refresh
@@ -455,4 +475,6 @@ function main() {
   console.log(`[check:entscheide] OK — ${manifest.entscheide.length} Entscheide, ${mb.toFixed(2)} MB, ${warn.length} Warnung(en).`);
 }
 
-main();
+// Entry-Erkennung über `VITEST` (Repo-Muster check-e2e-flake.ts): der Test
+// importiert `konflationsBefunde` und darf keinen Lauf/Exit auslösen.
+if (!process.env.VITEST) main();
