@@ -58,7 +58,7 @@ function ImBlattGriff({ reiter, name, onImBlatt }: {
       aria-label={name}
       data-v3-bez-imblatt={reiter === 'entscheide' ? '' : reiter}>
       {/* D-5 (S6-W1a): EIN Name der Fläche — bis 23.9.2026 «im Blatt öffnen». */}
-      im Erlass-Blatt öffnen<span aria-hidden className="lr7-bez-pfeil">&nbsp;›</span></button>
+      im Erlass-Blatt öffnen<span aria-hidden className="inline-block transition-transform duration-fast">&nbsp;›</span></button>
   );
 }
 

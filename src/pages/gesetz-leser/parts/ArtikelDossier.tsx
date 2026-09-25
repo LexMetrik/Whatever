@@ -132,6 +132,15 @@ const GRIFF_REGISTER: Readonly<Record<BezugsMarke['reg'], string>> = {
   f: 'border-l-reg-g', g: 'border-l-reg-g', r: 'border-l-reg-r', m: 'border-l-reg-m', w: 'border-l-reg-w',
 };
 
+/** Kante des AUFGEKLAPPTEN Blocks (W2·29-WERKBANK-REST S2, 25.9.2026): die
+ *  Regeln `.lr7-bez-block[data-reg…]` aus `src/index.css` stehen jetzt hier,
+ *  Wert für Wert — 2 px links, 0.625 rem Einzug, Kante im Register der Rubrik;
+ *  die Fassung (`f`) trug dort keine eigene Regel und bleibt `rule-soft`. Der
+ *  Klassenname `lr7-bez-block` bleibt als Anker (`v3/LeserLesespalte`, Sonden). */
+const BLOCK_KANTE: Readonly<Record<BezugsMarke['reg'], string>> = {
+  f: 'border-l-rule-soft', g: 'border-l-reg-g', r: 'border-l-reg-r', m: 'border-l-reg-m', w: 'border-l-reg-w',
+};
+
 /** Was ein Block im Titel trägt: «3 Fassungen», «6 Verweise», «1 Rechner». */
 function blockTitel(m: BezugsMarke): string {
   const name = m.anzahl === 1 ? m.wort[0] : m.wort[1];
@@ -228,12 +237,12 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
               </button>
             </h3>
             {auf && (
-              <div id={`${blockId}-${m.reg}`} className="lr7-bez-block mb-2 ml-3" data-reg={m.reg}>
+              <div id={`${blockId}-${m.reg}`} className={`lr7-bez-block mb-2 ml-3 min-w-0 border-l-2 pl-2.5 ${BLOCK_KANTE[m.reg]}`} data-reg={m.reg}>
                 {m.anzahl === 0 && m.leer
                   ? <p className="text-body-s text-ink-600">{m.leer}</p>
                   : (m.brauchtDaten && laedt && !m.inhalt
                       ? (
-                        <span className="lr7-bez-skelett min-h-bez-skelett">
+                        <span className="lr7-bez-skelett block min-h-bez-skelett">
                           <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />{m.wort[1]}</span>
                           <span className="text-body-s text-ink-500">lädt …</span>
                         </span>
