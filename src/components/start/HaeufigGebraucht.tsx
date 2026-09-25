@@ -41,9 +41,14 @@ const anzeigeTitel = (titel: string) => /\(([^()]+)\)$/.exec(titel)?.[1] ?? tite
 export function HaeufigGebraucht() {
   return (
     <StartFlaeche titel="Häufig gebraucht" fuellt>
-      <ul className="grid grid-cols-1 content-center gap-x-6 @[34rem]:grid-cols-2">
+      {/* W2·31-BILDSCHIRMBREITE (25.9.2026, Startseite auf `weit`): ab 52rem
+          Flächenbreite drei Spalten statt zwei — nur auf dem `weit`-Rahmen ab
+          `2xl` (Fläche @1920 ≈ 62rem; auf `content` ≈ 42rem, dort zwei wie
+          bisher). Sieben Einträge in drei statt vier Zeilen; die Titelspalte
+          bleibt ≈ 40 Zeichen (Wächter `e2e/startseite-breite.e2e.ts`). */}
+      <ul className="grid grid-cols-1 content-center gap-x-6 @[34rem]:grid-cols-2 @[52rem]:grid-cols-3">
         {ERLASSE.map((e) => (
-          <li key={e.key} className="border-t border-rule-soft first:border-t-0 @[34rem]:[&:nth-child(2)]:border-t-0">
+          <li key={e.key} className="border-t border-rule-soft first:border-t-0 @[34rem]:[&:nth-child(2)]:border-t-0 @[52rem]:[&:nth-child(3)]:border-t-0">
             <Link to={erlassPfad(e)} title={e.titel} aria-label={`${e.kuerzel} – ${e.titel}`}
               className="lc-menu-zeile items-start gap-3 whitespace-normal no-underline">
               <span className="w-14 shrink-0 font-sans leading-tight">

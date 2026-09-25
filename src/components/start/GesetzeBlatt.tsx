@@ -128,7 +128,13 @@ function Wahl({ zu }: { zu: Zu }) {
         <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)} einheit="Erlasse" />}>
           {/* `max-w-xs` untereinander: die Karte in voller Telefonbreite schob
               die International-Spalte unnötig weit nach unten. */}
-          <div className="mx-auto max-w-xs px-4 lg:max-w-none">
+          {/* W2·31-BILDSCHIRMBREITE (25.9.2026, Startseite auf `weit`): `2xl:max-w-[15.5rem]`
+              hält die Karte auf ihrer `content`-Grösse (Spalte 1.25fr bei 712 px Blatt =
+              249 px Hülle, Karte 216 px). Ohne Deckel wüchse sie mit dem 1032-px-Blatt
+              auf ~340 px und damit ~60 px höher — die Gesetze-Wahl liefe über (U13
+              «kein Scroll beim Aufklappen», Rot-Beweis `e2e/startseite-breite.e2e.ts`).
+              Unter `2xl` bindet der Deckel nie (Rahmen dort ≤ `content`). */}
+          <div className="mx-auto max-w-xs px-4 lg:max-w-none 2xl:max-w-[15.5rem]">
             {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
                 U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
             <SchweizKarte className="w-full" kompakt onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}
