@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: verifikation.ts:239-243: BGE 141 III 170 (2015) fälschlich Art. 145 Abs. 4 Satz 2 ZPO zugeschrieben — Norm gilt erst seit 2025
 anlass: RL-17-Nebenfund, 24.9.2026
 -->

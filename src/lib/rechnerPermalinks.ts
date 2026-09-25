@@ -1,5 +1,6 @@
 import { permalinkKodieren, istISO, istKanton, einerVon, type PermalinkSpec } from './permalink';
 import type { SperrfristenInput } from '../types/legal';
+import { istGueltigeArbeitstage } from './kuendigungsfristProbezeit';
 import { PRESETS as ZPO_PRESETS } from './zpoPresets';
 import { PHASEN_SCHKG, PRESETS_SCHKG } from './schkgPresets';
 
@@ -99,6 +100,8 @@ export const KSP_LINK_SPEC: PermalinkSpec<SperrfristenInput & Record<string, unk
   abweichendeFristQuelleGAV: { p: 'aq', typ: 'bool' },
   kuendigungsterminMonatsende: { p: 'me', typ: 'bool' },
   vaterschaftsurlaubResttage: { p: 'vu', typ: 'num', gueltig: (n) => Number.isInteger(n) && n >= 0 },
+  // RL-16b: Arbeitstage der Woche (0 = So … 6 = Sa) für Art. 335b Abs. 3 OR.
+  arbeitstageWoche: { p: 'at', typ: 'json', gueltig: istGueltigeArbeitstage },
   sperrereignisse: {
     p: 'se', typ: 'json',
     gueltig: (v): boolean => Array.isArray(v) && v.length <= 20 && v.every((e) =>

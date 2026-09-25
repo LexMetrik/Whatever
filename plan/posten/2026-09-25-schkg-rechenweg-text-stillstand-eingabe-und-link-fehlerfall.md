@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: SchKG-Rechenweg-Text, Stillstand-Eingabe und Link-Fehlerfall: drei UI-Nachbesserungen (RL-19)
 anlass: RL-19-Nebenfund, 24.9.2026
 -->

@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: EinfacheFristForm.tsx:80 variante='zeile' ohne Konsument; e2e-Kommentar «Frist 514 px» nach Tokenwechsel veraltet
 anlass: RL-24-Nebenfund, 24.9.2026
 -->

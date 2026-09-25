@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: SchKG Ferienzustellung: Grenzwert-Tests 29.3./12.4. fehlen; Weihnachts-Ferienende 2.1. ungetestet
 anlass: RL-18-Nebenfund, 24.9.2026
 -->

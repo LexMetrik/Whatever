@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: Verjährungsverzicht im Rechner: drei Auslegungsfragen (RL-14 PR 2)
 anlass: Bau RL-14 PR 2, 24.9.2026 — Rechner legt die gewählte Lesart offen, nicht blockierend
 wartet-auf: david
