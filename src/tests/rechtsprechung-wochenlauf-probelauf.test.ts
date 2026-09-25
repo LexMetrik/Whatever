@@ -165,10 +165,10 @@ describe('M6 · «GebV SchKG» im Fliesstext erreichbar (SR 281.35)', () => {
 });
 
 describe('M8 · BE ausgenommen; R2: Vollprüfungs-Gericht «nicht prüfbar» ⇒ Entwurf', () => {
-  it('BE nicht nachgezogen, Grund mit Messung; Vollprüfungs-Regel bleibt für die Wiederaufnahme', () => {
-    // Mutation: be_verwaltungsgericht aus AUSGENOMMEN streichen ⇒ rot.
-    expect(AUSGENOMMEN.be_verwaltungsgericht).toBe('Datum aus OCL unzuverlässig — 5/12 Bestand falsch, Messung 25.9.2026');
-    expect(aktiveGerichte(KANTONS_GERICHTE)).not.toContain('be_verwaltungsgericht');
+  it('BE seit 26.9.2026 wieder nachgezogen (Kopfdatum #1126/#1138); Vollprüfung bleibt', () => {
+    // Mutation: be_verwaltungsgericht zurück in AUSGENOMMEN ⇒ rot.
+    expect(AUSGENOMMEN).not.toHaveProperty('be_verwaltungsgericht');
+    expect(aktiveGerichte(KANTONS_GERICHTE)).toContain('be_verwaltungsgericht');
     expect(DATUM_VOLLPRUEFUNG.has('be_verwaltungsgericht')).toBe(true);
   });
   const plan = [e('be_verwaltungsgericht_1002026142', 'be_verwaltungsgericht', '2026-08-18'), e('bvger_x', 'bvger', '2026-09-01')];

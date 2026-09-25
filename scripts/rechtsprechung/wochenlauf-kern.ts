@@ -148,6 +148,7 @@ const GUARD_MUSTER: RegExp[] = [
   /Kollisions-Quarantäne: [1-9]/, // [bge-baender]/[bge-refresh]/[bge]/[b1]: zurückgestuft
   /alt-verworfen .*: [1-9]\d* Keys/, // [remap]: Keys aus dem Bestand entfernt
   /— verworfen \(A1\)/, //         [b1]: frisches Ergebnis verschlechtert das Datum
+  /^\[kanton\] \S+: [1-9]\d* zurückgehalten/, // entscheide-additiv.ts zurueckhalteZeile: ohne eigenen Urteilskopf
 ];
 export interface GuardBefund { zeile: string; details: string[] }
 export function erkenneGuardBefunde(log: string): GuardBefund[] {
@@ -167,35 +168,25 @@ export const EIDG_GERICHTE = ['bvger', 'bstger', 'bpatger'];
 export const KANTONS_GERICHTE = ['zh_obergericht', 'be_verwaltungsgericht', 'sg_gerichte', 'gr_gerichte', 'ag_gerichte'];
 /**
  * Gerichte, die der Wochenlauf NICHT nachzieht — die einzige Stelle dafür (§5);
- * der Bericht nennt sie. Befund Stichproben-Nachzug PR #1117 (25.9.2026): OCL
- * liefert `decision_date` schon falsch, der Adapter übernimmt es als Text
- * (adapter-entscheide.ts) — sg_gerichte: Datum des nachfolgenden BGer-Urteils
- * (9/12 im Bestand); ag_gerichte: um Tage bis Wochen verschoben; gr_gerichte:
- * Bestand 6/6 falsch, +6 bis +62 Tage. Eigene Stichprobe 25.9.2026 gegen die
- * Quell-PDFs bestätigt: SG 2/2, AG 2/3, GR 3/3 Datum ✗. be_verwaltungsgericht
- * seit dem Probelauf 25.9.2026 (#1129) ebenfalls: Datum gegen die Quell-PDFs
- * 1/6 neu und 5/12 Bestand falsch (3–5 Wochen zu spät), und die Datumsprüfung
- * scheiterte auf dem Runner (Quelle nicht erreichbar) — DATUM_VOLLPRUEFUNG
- * bleibt für die Wiederaufnahme stehen.
- * Rückbau: Posten QS-KORPUS 2026-09-25 Adapter-Datum (a)/(g) — entfällt je
- * Gericht, sobald dessen Datum an der Quelle belegt richtig ankommt.
+ * der Bericht nennt sie. Bis 26.9.2026 standen hier SG, AG, GR (Befund #1117: OCL-
+ * `decision_date` falsch) und BE (Probelauf #1129: 5/12 Bestand falsch). Seit #1126
+ * (Datum aus dem amtlichen Urteilskopf) und #1138 (ohne eigenen Titel zurückgehalten)
+ * wieder frei: Stichprobe 26.9.2026 gegen die amtlichen PDFs, n = 58 (SG 17, AG 17,
+ * GR 12, BE 12) — 45 Datum = Kopf, 13 zurückgehalten, 0 falsch (Beleg im PR).
  */
-export const AUSGENOMMEN: Readonly<Record<string, string>> = {
-  sg_gerichte: 'Datum aus OCL unzuverlässig',
-  ag_gerichte: 'Datum aus OCL unzuverlässig',
-  gr_gerichte: 'Datum aus OCL unzuverlässig',
-  be_verwaltungsgericht: 'Datum aus OCL unzuverlässig — 5/12 Bestand falsch, Messung 25.9.2026',
-};
+export const AUSGENOMMEN: Readonly<Record<string, string>> = {};
 export const aktiveGerichte = (gerichte: readonly string[]) => gerichte.filter((g) => !(g in AUSGENOMMEN));
 /**
  * Nachgezogene Gerichte mit bekannter Datums-Unzuverlässigkeit — die einzige
  * Stelle dafür (§5): JEDER neue oder geänderte Eintrag geht zusätzlich zu n in
  * die Stichprobe (stichprobenPlan, wochenlauf-vorwoche.ts), nicht nur
- * stichprobenhaft. Auflage N1 der Gegenprüfung #1113 (25.9.2026): BE-Datum
- * stammt aus OCL wie bei SG/AG/GR; neue Einträge 6/6 richtig, aber nicht belegt
- * für die Zukunft.
+ * stichprobenhaft. BE seit Auflage N1 der Gegenprüfung #1113 (25.9.2026). SG, AG,
+ * GR mit der Wiederaufnahme 26.9.2026: das OCL-Datum weicht dort meist vom Kopf ab
+ * (Stichprobe: SG 12/12, AG 8/10 der aufgenommenen), die Kopf-Regel (#1126/#1138)
+ * lief aber noch nie im Wochenlauf. Rückbau je Gericht, wenn zwei Läufe ohne
+ * Datums-Fehltreffer bleiben (Posten QS-KORPUS).
  */
-export const DATUM_VOLLPRUEFUNG: ReadonlySet<string> = new Set(['be_verwaltungsgericht']);
+export const DATUM_VOLLPRUEFUNG: ReadonlySet<string> = new Set(['be_verwaltungsgericht', 'sg_gerichte', 'ag_gerichte', 'gr_gerichte']);
 
 /**
  * Aufruf «Übrige Gerichte» (npm run entscheide, additiv): eidg. und kantonale
@@ -366,8 +357,8 @@ export function pruefeBs(html: string, e: RegEintrag): Identitaet {
 
 /**
  * Gerichte, deren Urteile das Jahr im Aktenzeichen zweistellig schreiben, wo
- * OCL/Register es vierstellig führen — eng gefasst, je Gericht belegt (GR ist
- * derzeit AUSGENOMMEN; die Regel bleibt für die Wiederaufnahme):
+ * OCL/Register es vierstellig führen — eng gefasst, je Gericht belegt (Stichprobe
+ * 26.9.2026: alle 12 GR-Köpfe «Referenz SBK 26 16» usw.):
  *  · gr_gerichte: «Referenz ZR1 24 196» / «SBK 26 38» / «SV1 26 9» im Urteil,
  *    «ZR1 2024 196» / «SBK 2026 38» / «SV1 2026 9» im Register (PDF-Messung
  *    25.9.2026, drei Urteile).
@@ -398,24 +389,44 @@ const TYP_RE = 'urteil|entscheid|beschluss|verfügung|arrêt|décision|jugement|
  * 2026», GR «Urteil vom 25. April 2026», AG «Urteil vom11. September 2025», SG
  * «Entscheiddatum: 03.02.2025», ZH (HTML) «Beschluss 12.05.2026». Weil Sperrschrift die Wortabstände verschluckt,
  * wird auf dem Kopf OHNE Leerraum gesucht. Vorrang: ein Etikett
- * «Entscheiddatum:»; sonst die ERSTE Fügung «<Entscheidart> … vom/du/del
+ * «Entscheiddatum:» (ausser Titel im Kopf von S. 2/3, SG-Deckblatt); sonst die ERSTE Fügung «<Entscheidart> … vom/du/del
  * <Datum>» mit höchstens 60 Zeichen dazwischen (auch ein Aktenzeichen:
  * «Urteil 8C_484/2025 vom …»); der Rubrum-Kopf steht vor Vorinstanz- und
  * Verfahrensdaten.
  * Nur Tag/Monat/Jahr als Text — keine Zeitstempel, also keine Zeitzonen-Falle.
  */
-export function amtlichesDatum(t: string): string | null {
-  const k = t.normalize('NFC').slice(0, 3000).replace(/\s+/g, '').toLowerCase();
-  const iso = (j: string, m: number, d: string) => (m >= 1 && m <= 12 && +d >= 1 && +d <= 31 ? `${j}-${String(m).padStart(2, '0')}-${d.padStart(2, '0')}` : null);
+export function amtlichesDatum(t: string, eigenesAz?: RegExp): string | null {
+  const k = flach(t, 3000);
   const etikett = /entscheiddatum:?(\d{1,2})\.(\d{1,2})\.(\d{4})(?!\d)/u.exec(k);
-  if (etikett) return iso(etikett[3], +etikett[2], etikett[1]);
+  if (!etikett) return titelDatum(k);
+  // SG-Deckblatt (Freigabe-Stichprobe 26.9.2026): das Etikett ist das PLATTFORM-Datum
+  // von S. 1; der amtliche Kopf «Entscheid vom …» steht im Seitenkopf von S. 2 und
+  // weicht ab (UV 2025/14: 23.10. vs. 21.10.2025; 3/12 SG). Er gewinnt — aber nur auf
+  // einer Seite, die SELBST das eigene Aktenzeichen trägt (Identität wie der Generator,
+  // entscheid-kantonsdatum.ts): im alten Format 2024 fehlt es auf S. 2/3, und deren
+  // Seitenkopf zitiert Vorentscheide («Urteil 1C_486/2019 vom …», B 2023/207). Dann
+  // bleibt das Etikett. Seiten trennt pdfText mit «\f».
+  for (const seite of eigenesAz ? t.split('\f').slice(1, 3).filter((x) => eigenesAz.test(x)) : []) {
+    const d = titelDatum(flach(seite, FOLGESEITE_KOPF));
+    if (d) return d;
+  }
+  return isoDatum(etikett[3], +etikett[2], etikett[1]);
+}
+
+/** Seitenkopf einer Folgeseite, ohne Leerraum (SG S. 2: Titel an Stelle ~70). */
+const FOLGESEITE_KOPF = 150;
+const flach = (t: string, n: number) => t.normalize('NFC').slice(0, n).replace(/\s+/g, '').toLowerCase();
+const isoDatum = (j: string, m: number, d: string) => (m >= 1 && m <= 12 && +d >= 1 && +d <= 31 ? `${j}-${String(m).padStart(2, '0')}-${d.padStart(2, '0')}` : null);
+
+/** Erste Titel-Fügung «<Entscheidart> … vom <Datum>» (bzw. ZH direkt) im flachen Kopf `k`. */
+function titelDatum(k: string): string | null {
   const re = new RegExp(`(?:${TYP_RE}).{0,60}?(?:vom|du|del|dell['’]|dello)(\\d{1,2})(?:er|°)?\\.?(?:(${MONAT_RE})|(\\d{1,2})\\.)(\\d{4})(?!\\d)`, 'u');
   // ZH (HTML-Druckansicht, 25.9.2026): «Beschluss 12.05.2026» — Entscheidart direkt vor dem Zahlendatum.
   const direkt = new RegExp(`(?:${TYP_RE})(\\d{1,2})\\.(\\d{1,2})\\.(\\d{4})(?!\\d)`, 'u').exec(k);
   const m = re.exec(k);
-  if (direkt && (!m || direkt.index < m.index)) return iso(direkt[3], +direkt[2], direkt[1]);
+  if (direkt && (!m || direkt.index < m.index)) return isoDatum(direkt[3], +direkt[2], direkt[1]);
   if (!m) return null;
-  return iso(m[4], m[2] ? MONAT_NR.get(m[2])! : +m[3], m[1]);
+  return isoDatum(m[4], m[2] ? MONAT_NR.get(m[2])! : +m[3], m[1]);
 }
 
 /** Unter dieser Zeichenzahl hat ein PDF keine brauchbare Textebene (Scan) — nicht prüfbar statt Fehltreffer. */
@@ -444,7 +455,7 @@ export function pruefeText(t: string, e: RegEintrag, art: 'pdf' | 'html'): Ident
       : { treffer: null, akz: null, detail: `${nr}: nicht im HTML (JS-Hülle?) — Handprüfung` };
   }
   const akzText = var_ === nr ? nr : `${nr} (als «${var_}»)`;
-  const amtlich = amtlichesDatum(t);
+  const amtlich = amtlichesDatum(t, grenze(var_, VERFAHRENSART_GERICHTE.has(e.gericht)));
   if (amtlich === null) return { treffer: null, akz: true, datum: null, detail: `${akzText} · ${quelle} · Datum nicht ermittelbar (Korpus ${e.datum}) — Handprüfung` };
   if (amtlich !== e.datum) return { treffer: false, akz: true, datum: false, detail: `${akzText} · ${quelle} · Datum amtlich ${amtlich} ≠ Korpus/OCL ${e.datum}` };
   return { treffer: true, akz: true, datum: true, detail: `${akzText} · ${quelle} · ${amtlich}` };
