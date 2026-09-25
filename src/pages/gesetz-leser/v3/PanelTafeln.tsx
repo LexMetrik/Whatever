@@ -8,6 +8,7 @@ import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import { PanelAenderungen } from './PanelAenderungen';
 import { BotschaftZeile, PanelMaterialien } from './PanelMaterialien';
 import { PanelErlaeuterungen } from './PanelErlaeuterungen';
+import { ordneErlaeuterungen } from './erlaeuterungModell';
 import { PanelWerkzeuge } from './PanelWerkzeuge';
 import { useArtikelRevisionShard, useErlaeuterungen, useMaterialien, useRevisionen, type Geladen } from './panelKontextLaden';
 import type { PanelReiter } from './panelModell';
@@ -100,7 +101,11 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   const artikelRevisionen = useArtikelRevisionShard(erlassKey, laden);
   const materialien = useMaterialien(erlassKey, laden, locale);
   const erlaeuterungen = useErlaeuterungen(erlassKey, laden);
-  const artikelMaterialien = useArtikelMaterialien(erlassKey, laden);
+  // W3-5 (Audit 25.9.2026): `unsicher` = das Manifest (`/materialien/register.json`)
+  // konnte nicht geladen werden — dann ist eine leere `artMat` kein «nichts
+  // erfasst», sondern derselbe Ausfall, den die Erläuterungen-Tafel gleich
+  // darunter als Fehlermeldung zeigt.
+  const [artikelMaterialien, artikelMaterialienUnsicher] = useArtikelMaterialien(erlassKey, laden);
 
   const botschaftNachKey = useMemo(() => new Map<string, BotschaftBezug>(
     (materialien.wert?.botschaften ?? []).map((b) => [b.key, b]),
@@ -127,9 +132,22 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
   // Eintrag im Artikel-Revisions-Shard — erst dann ist «nichts» eine Antwort.
   const ohneFassung = !blatt?.historie?.ereignisse.length && artikelRevisionen.fertig && !artRev;
   const artRevOhneHistorie = artRevFassungFallback(blatt?.historie, artRev);
+  // W3-4 (Audit 25.9.2026): für KEINEN Kanton liegen Änderungsdaten vor (0 von
+  // 231 Sidecars kantonal, Beleg in `PanelAenderungen`) — das ist eine Auskunft
+  // über den ERLASS, nicht über den einzelnen Paragrafen. «Zu § 44 nichts
+  // erfasst.» (die artikelscharfe Leerzeile unten) suggerierte aber genau das:
+  // eine Prüfung DIESES Paragrafen, die nie stattfand. Dieselbe Bedingung wie
+  // in `PanelAenderungen` (`stand.wert === null && ebene === 'kanton'`).
+  const aenderungenAmKantonNichtErfasst = ebene === 'kanton' && revisionen.fertig && revisionen.wert === null;
   // Ist der ganze Erlass leer, sagt das die Tafel selbst — ein zweites «Zu Art. N
   // nichts erfasst.» darüber wäre dieselbe Auskunft zweimal (Artikel ⊂ Erlass).
-  const erlZahl = erlaeuterungen.wert?.liste.length ?? null;
+  // W3-3 (Audit 25.9.2026): EINE Zählweise für den Reiter — die gruppierte
+  // (wie der Gruppenkopf in `PanelErlaeuterungen` sie zeigt), nicht die rohe
+  // Listenlänge. Eine artikelweise Wegleitung (z. B. ArG, «SECO · Wegleitung,
+  // artikelweise») zählt in der Rohliste einmal je Artikel — 76 Zeilen, aber
+  // 6 tatsächliche Dokumente/Reihen; die Klappzeile «Alle Erläuterungen des
+  // Erlasses» nannte bisher die rohe Zahl und widersprach dem Gruppenkopf (§5).
+  const erlZahl = erlaeuterungen.wert ? ordneErlaeuterungen(erlaeuterungen.wert.liste).length : null;
   const wzZahl = erlassKey ? werkzeugAnsicht(erlassKey).verfuegbar.length : null;
 
   return {
@@ -143,8 +161,14 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
               {normZitat} zuletzt geändert{artRevOhneHistorie.as ? ` durch ${artRevOhneHistorie.as}` : ''}, in Kraft seit {datumAnzeige(artRevOhneHistorie.iso)}.
             </p>
           )}
-          <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token} geladen={ohneFassung}>{null}</BlattArtikelGruppe>
-          <ErlassTeil was="Änderungen" zahl={revisionen.wert?.revisionen.length ?? null} daten="aenderungen">
+          <BlattArtikelGruppe titel={zu} zahl={0} daten="aenderungen" token={token}
+            geladen={ohneFassung && !aenderungenAmKantonNichtErfasst}>{null}</BlattArtikelGruppe>
+          {/* W3-4: `zahl={0}` statt `null` erzwingt bei `ErlassTeil` den
+              UNGEKLAPPTEN Pfad («Null im ganzen Erlass: keine Klappzeile») —
+              der ehrliche Leerzustand aus `PanelAenderungen` steht dann sofort
+              sichtbar, wie bei Materialien/Erläuterungen/Werkzeuge am Kanton. */}
+          <ErlassTeil was="Änderungen"
+            zahl={aenderungenAmKantonNichtErfasst ? 0 : (revisionen.wert?.revisionen.length ?? null)} daten="aenderungen">
             <PanelAenderungen stand={revisionen} quelleUrl={quelleUrl} stichtag={stichtag} ebene={ebene}
               aufhebung={aufhebung} botschaftNachKey={botschaftNachKey} artikel={artikel} locale={locale} />
           </ErlassTeil>
@@ -171,7 +195,8 @@ export function usePanelTafeln({ erlassKey, laden, quelleUrl, ebene, stichtag, a
       ),
       erlaeuterungen: (
         <>
-          <BlattArtikelGruppe titel={zu} zahl={artMat?.length ?? 0} daten="erlaeuterungen" token={token} geladen={artMat !== undefined && erlZahl !== 0}>
+          <BlattArtikelGruppe titel={zu} zahl={artMat?.length ?? 0} daten="erlaeuterungen" token={token}
+            geladen={artMat !== undefined && erlZahl !== 0 && !artikelMaterialienUnsicher}>
             {(artMat ?? []).map((m) => <ArtikelErlaeuterung key={m.key} m={m} />)}
           </BlattArtikelGruppe>
           <ErlassTeil was="Erläuterungen" zahl={erlZahl} daten="erlaeuterungen">

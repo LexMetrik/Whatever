@@ -118,6 +118,17 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
     const wurzel = panelRef.current;
     if (wurzel == null) return;
     const vorher = document.activeElement as HTMLElement | null;
+    // Befund 2/3 (Bug-Check 25.9.2026): die Pane-Identität wird HIER erfasst,
+    // solange `wurzel` noch im DOM hängt — nicht erst im Cleanup unten. Grund:
+    // wenn das Panel schliesst, entfernt React seinen Inhalt VOR dem Cleanup
+    // dieses Effekts (`offen` steht in den deps); `wurzel` (`panelRef.current`,
+    // nur bei `offen` gerendert) ist zu diesem Zeitpunkt bereits aus dem
+    // umschliessenden `wrapRef`-Träger herausgetrennt (`removeChild` kappt
+    // GENAU dort die Elternkette). `wurzel.closest(...)` im Cleanup fände die
+    // Pane-Markierung darum NIE — ROT bewiesen an Fall (j)/(4) («r» öffnet ohne
+    // Klick auf einen Öffner, `vorher` = body): der Selektor-Zweig griff nie,
+    // weil `closest` schon an der abgetrennten Wurzel scheiterte.
+    const paneRolle = wurzel.closest<HTMLElement>('[data-v3-pane]')?.getAttribute('data-v3-pane');
     // `preventScroll` (S6 W1g, 24.9.2026): das Beiwerk steht sichtbar NEBEN
     // bzw. über dem Text — der Fokus darf die Lesestelle nicht verschieben.
     // GEMESSEN @1024 am gebauten Stand (ZGB, Seitenanfang): seit das Blatt als
@@ -133,9 +144,68 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
     window.addEventListener('keydown', taste);
     return () => {
       window.removeEventListener('keydown', taste);
-      if (vorher && typeof vorher.focus === 'function') vorher.focus();
+      // W3-2 (Audit 25.9.2026, @1024/1440, ROT bewiesen in
+      // `e2e/w224-leser-d32-d33.e2e.ts` Fall (j)): `vorher` sollte der geklickte
+      // Öffner sein (die Schiene, `data-v3-blatt-schiene`) — die verschwindet
+      // aber im SELBEN Commit, der das Panel öffnet (`LeserLeseZeile` rendert
+      // sie nur bei `bild.blattSchiene`, das beim Öffnen auf `false` kippt).
+      // Ein erster Fix prüfte `vorher.isConnected` — das griff nicht: sobald das
+      // fokussierte Element aus dem DOM fällt, setzt der Browser den Fokus
+      // SOFORT auf `document.body` zurück, VOR diesem Effekt-Lauf — `vorher` war
+      // also schon beim Öffnen `document.body` (isConnected, aber falsch).
+      //
+      // Bug-Check 25.9.2026 (Befund 2/3, Nachzug zu PR #1097): der Öffner-
+      // Selektor allein griff zu weit — `document.querySelector` ist
+      // DOKUMENTWEIT und traf in der Split-Ansicht immer den ERSTEN Öffner im
+      // DOM (das LINKE Pane), auch wenn Panel und Klick im RECHTEN Pane
+      // standen. Repro @1920 (`OR?p=/gesetze/bund/ZGB#art-684`, Öffner rechts
+      // klicken, Esc): Fokus landete im primären statt im sekundären Pane.
+      //
+      // ERSTER Fix-Versuch «`vorher` gewinnt, sooft verbunden und nicht
+      // `document.body`» ROT bewiesen an genau diesem Fall (j)/(4) («r» öffnet
+      // nach einem Klick auf eine LEERE Stelle, kein Öffner): der Klick fokussiert
+      // dort mangels näherem Ziel `<main id="inhalt" tabIndex={-1}>` (Chromiums
+      // Default-Fokus-Suche läuft zum nächsten fokussierbaren VORFAHREN hoch) —
+      // `vorher` war also verbunden, nicht body, aber trotzdem NICHT der Öffner,
+      // und bekam fälschlich den Fokus (statt der Schiene). Massgeblich ist darum
+      // nicht ob `vorher` irgendein verbundenes Element ist, sondern ob es
+      // SELBST der Öffner ist (`vorher.matches(aussenAusnahme)`):
+      //   (a) `vorher` gewinnt NUR, wenn es verbunden ist UND selbst auf den
+      //       Öffner-Selektor passt — das ist exakt der Split-Repro (der
+      //       geklickte Zähler im rechten Pane erfüllt beides) und lässt jeden
+      //       Fall, in dem `vorher` bloss zufällig fokussiert war (body, oder
+      //       wie hier `<main>` als Fokus-Notnagel), unberührt durchfallen;
+      //   (b) sonst der Öffner-Selektor, aber nur INNERHALB des Panes, in dem
+      //       dieses Panel steht (`paneRolle`, oben BEIM ÖFFNEN erfasst — nicht
+      //       hier, s. Begründung dort). `closest('[data-pane]')` griffe an
+      //       dieser Stelle ohnehin nicht (Sackgasse, hier dokumentiert, damit
+      //       sie kein zweites Mal versucht wird): dieses Panel portalt in die
+      //       Overlay-Wurzel des Panes (`paneZiel`/`overlayWurzel`,
+      //       `LeserPanelZone.tsx`), und die liegt im echten DOM als
+      //       GESCHWISTER von `[data-pane]` (`Shell.tsx`/`Pane.tsx`:
+      //       `<main data-pane="primaer">` und `<div ref={primaerOverlay}>`
+      //       teilen sich nur den Eltern-`<div>`) — `closest('[data-pane]')`
+      //       liefe an beiden Panes vorbei zur Zeile hoch, statt eines zu
+      //       treffen. Die Pane-Identität steht darum am Panel SELBST:
+      //       `data-v3-pane={paneRolle}` auf `wrapRef` (H2-Befund,
+      //       „DOM-Vorfahrenkette bleibt unberührt“) wandert mit dem Portal und
+      //       trägt `'primaer'`/`'sekundaer'` unabhängig vom DOM-Ort. Der
+      //       ÖFFNER selbst ist NICHT portalt — er sitzt normal im jeweiligen
+      //       `[data-pane]`-Baum —, also sucht der Selektor dort gescoped;
+      //       ohne `paneRolle` oder ohne Treffer darin (Einzelansicht: kein
+      //       `[data-pane]` im Baum) bleibt die Suche dokumentweit, wie zuvor
+      //       — das erhält den W3-2-Fall (j) unverändert grün.
+      const vorherIstOeffner = !!(vorher && vorher.isConnected && aussenAusnahme && vorher.matches(aussenAusnahme));
+      const geOeffnetImPane = paneRolle && aussenAusnahme
+        ? document.querySelector<HTMLElement>(`[data-pane="${paneRolle}"] ${aussenAusnahme}`)
+        : null;
+      const ziel = (vorherIstOeffner ? vorher : null)
+        || geOeffnetImPane
+        || (aussenAusnahme ? document.querySelector<HTMLElement>(aussenAusnahme) : null)
+        || (vorher && vorher.isConnected ? vorher : null);
+      if (ziel && typeof ziel.focus === 'function') ziel.focus();
     };
-  }, [offen, modus, panelRef]);
+  }, [offen, modus, panelRef, aussenAusnahme]);
 
   // ── Aussenklick — in JEDEM Modus ausser `spalte` (Herleitung im Kopf) ─────
   useEffect(() => {

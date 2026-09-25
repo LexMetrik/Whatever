@@ -43,7 +43,18 @@ export type MaterialNachschlag = (artikelToken: string) => MaterialBezug[] | und
 
 const LEER: MaterialNachschlag = () => undefined;
 
-export function useArtikelMaterialien(erlassKey: string | undefined, laden: boolean): MaterialNachschlag {
+/**
+ * @returns Tupel `[nachschlagen, unsicher]`. W3-5 (Audit 25.9.2026): bricht
+ *  das Manifest (`/materialien/register.json`, `ladeMaterialManifest`) ab,
+ *  liefert es `null` (Fangnetz dort) — `projiziereMaterialien` kann daraus
+ *  nicht mehr unterscheiden, ob am Artikel wirklich nichts erfasst ist oder
+ *  das Manifest bloss fehlte, und eine leere Liste sah in `PanelTafeln`
+ *  darum wie eine geprüfte Auskunft aus («Zu Art. 336c nichts erfasst.»),
+ *  während direkt darunter derselbe Ausfall als Fehlermeldung stand.
+ *  `unsicher` macht die fehlende Unterscheidung explizit, statt sie in
+ *  `src/lib/kontext.projiziereMaterialien` (Risikopfad) nachzuziehen.
+ */
+export function useArtikelMaterialien(erlassKey: string | undefined, laden: boolean): [MaterialNachschlag, boolean] {
   // Der Zustand trägt den SCHLÜSSEL mit (Muster aus `bezuegeZaehler.ts`): ohne
   // ihn zeigte die Zeile nach einem Erlass-Wechsel kurz die Materialien des
   // vorigen Erlasses, und der Effekt müsste synchron `null` setzen.
@@ -61,11 +72,17 @@ export function useArtikelMaterialien(erlassKey: string | undefined, laden: bool
     return () => { lebt = false; abbrechen?.(); };
   }, [erlassKey, laden]);
 
-  if (!erlassKey || stand?.key !== erlassKey) return LEER;
+  if (!erlassKey || stand?.key !== erlassKey) return [LEER, false];
   // Ab hier ist der Lade-VERSUCH durch: ein fehlender Shard (404 = Erlass ohne
   // Material-Kanten) ergibt die LEERE Liste, nicht `undefined` — sonst stünde
   // die Skelett-Zeile «lädt …» für immer (§8: «nichts erfasst» ist eine Antwort,
   // «lädt» wäre eine Unwahrheit).
   const { shard, manifest } = stand;
-  return (artikelToken: string) => projiziereMaterialien(shard, manifest, artikelToken);
+  return [
+    (artikelToken: string) => projiziereMaterialien(shard, manifest, artikelToken),
+    // W3-5: `manifest === null` heisst hier NICHT «kein Manifest nötig» (das
+    // Manifest ist erlassübergreifend, kein 404-Normalfall wie der Shard) —
+    // es heisst, `ladeMaterialManifest` ist gescheitert.
+    manifest === null,
+  ];
 }

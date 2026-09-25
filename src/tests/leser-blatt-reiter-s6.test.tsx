@@ -95,6 +95,20 @@ describe('Reiter «Materialien» — nur Gesetzgebung, amtlich beschriftet', () 
     expect(html).toContain('Ratschläge und Berichte an den Grossen Rat');
     expect(html).toContain('24.1692');
   });
+  it('M-3/§8 (Bug-Check 25.9.2026): «maschinell»-Etikett nur bei maschineller Zuordnung, nie bei amtlicher Fussnote', () => {
+    const amtlichHtml = materialien({ kanton: [{
+      key: 'BS-GR-19.1517', titel: 'Ratschlag Anzeigesteuergesetz', doktypLabel: 'Ratschlag', behoerdeKuerzel: 'GR BS',
+      nummer: '19.1517', stand: '2019-08-21', quelleUrl: 'https://grosserrat.bs.ch/?gnr=19.1517',
+      hinweis: 'Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft.',
+    }] });
+    expect(amtlichHtml).not.toContain('maschinell');
+    const maschinellHtml = materialien({ kanton: [{
+      key: 'BS-GR-25.0082', titel: 'Ratschlag Schulgesetz', doktypLabel: 'Ratschlag', behoerdeKuerzel: 'GR BS',
+      nummer: '25.0082', stand: '2025-02-05', quelleUrl: 'https://grosserrat.bs.ch/?gnr=25.0082',
+      hinweis: 'Zuordnung maschinell über Erlassdatum und Titel im amtlichen Geschäftstitel; fachlich nicht geprüft.',
+    }] });
+    expect(maschinellHtml).toContain('maschinell');
+  });
   it('M-6: §8-Zeile mit «nicht geprüft», Abdeckung und Datenstand; Revisions-Verweis nur belegt', () => {
     const html = materialien({ botschaften: [BOT] });
     expect(html).toContain('fachlich nicht geprüft');
@@ -270,6 +284,18 @@ describe('Reiter «Änderungen» — neue Sidecar-Felder (#1001), optional geles
     expect(html).toContain('Berichtigung');
     expect(html).toContain('Hebt diesen Erlass auf');
     expect(html).not.toContain('in Kraft seit 01.03.2026, im hier gezeigten Text');
+  });
+  // W3-1 (Audit 25.9.2026): Fedlex' `aufhebung` meint die Aufhebung EINZELNER
+  // Bestimmungen (Bsp. PatG AS 2026 232, OR TJPG AS 2026 323) — die Marke stand
+  // bisher nackt als «Aufhebung» neben dem Erlasstitel und liess sich als
+  // Aufhebung des GANZEN Erlasses lesen. Identitäts-Treffer mit Wortgrenze
+  // (§0/§7): `>Aufhebung<` darf NICHT mehr vorkommen — «Vollständige Aufhebung»
+  // (anderer Schlüssel, anderer Satz «Hebt diesen Erlass auf») bleibt unberührt.
+  it('W3-1: Wirkung «aufhebung» (einzelne Bestimmungen) heisst «hebt Bestimmungen auf», nicht nackt «Aufhebung»', () => {
+    const html = aenderungen([{ ...rev({ dateEntryInForce: '2026-01-01' }), wirkungen: ['aufhebung'] }]);
+    expect(html).toContain('data-v3-panel-aenderung-wirkung');
+    expect(html).toContain('>hebt Bestimmungen auf<');
+    expect(html).not.toMatch(/>Aufhebung</);
   });
   it('datumAusErlass: §8-Hinweis, dass das Datum abweichen kann', () => {
     const html = aenderungen([{ ...rev({ dateEntryInForce: '2019-01-01' }), datumAusErlass: true }]);
