@@ -206,7 +206,16 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     // K7 (§6.3, deklariert): der Fuss nennt Bundesrecht und Staatsverträge
     // getrennt statt der Mischzahl — der Ausdruck ist schärfer, nicht weicher.
     expect(bund, 'Bund-Stufe: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundesrechtVolltext\)} Erlasse\s+des Bundesrechts\)/);
-    expect(kantone, 'Kanton-Stufe: Zähler mit Scope').toMatch(/kantonale Erlasse/);
+    // S5c (§6.3, deklariert, Entscheid David 25.9.2026 «wie empfohlen»): die
+    // Wahl-Köpfe tragen die Einheit «Erlasse»; das Scope-Wort ist der Titel
+    // derselben Kachel («Bund», «Kantone», direkt unter der Zahl, im selben
+    // Knopf). Der Prüfpunkt «Zahl NIE ohne Scope-Wort» wird darum an der
+    // Kachel geprüft — Zahl, Einheit und Ebene in EINEM Aufruf. Vorher
+    // (bis S5b): `toMatch(/kantonale Erlasse/)`.
+    expect(bund, 'Bund-Kopf: Zahl + Einheit + Ebene in einer Kachel')
+      .toMatch(/titel="Bund" zahl=\{nf\(z\.gesetzeBundesrechtVolltext\)\} einheit="Erlasse"/);
+    expect(kantone, 'Kanton-Kopf: Zahl + Einheit + Ebene in einer Kachel')
+      .toMatch(/titel="Kantone" zahl=\{nf\(z\.gesetzeKantonVolltext\)\} einheit="Erlasse"/);
     // W2·29-WERKBANK-START-LAYOUT (§6.3, deklariert, David 24.9.2026 «entscheide
     // sollen weg»): das Entscheide-Modul ist gestrichen; «Entscheide im
     // Volltext» prüft die Zeile «Bereich Rechtsprechung» oben an der Kachel.
