@@ -440,8 +440,8 @@ Umschichtung 20.9.2026 (2)):*
   §5-Kopien Tarifdaten, ZPO-Kosten Bund, Erbteilung/Verzugszins/Teuerung Rest.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2b).
 
-- [~] **Welle 2c — mittlere Befunde Vorlagen/Zuständigkeit/Leser** *(`W2·30-RL-W2C`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W2C · status: wip · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [ ] **Welle 2c — mittlere Befunde Vorlagen/Zuständigkeit/Leser** *(`W2·30-RL-W2C`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W2C · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-39…RL-47: Werkvertrag, Familienrecht, Vorlagen Gesellschaft/Prozess,
   Straf-/Zivilzuständigkeit, Leser-Fassungsstand Rest, Stammdaten-Adressen,
   Formular-Eingaben, Logik aus UI, Datum-/Zitier-Helfer.
