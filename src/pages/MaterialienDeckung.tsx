@@ -80,11 +80,15 @@ function EbenenZeile({ name, haben, gesamt, einheit, stand, quelle, hinweis }: {
   );
 }
 
-const SPALTEN: ReadonlyArray<{ id: DeckungSpalte; kopf: string; titel: string; ziffern: boolean }> = [
+// `kopfKlasse` (B2, 25.9.2026): die Zahlenspalten schrumpfen auf ihren Inhalt
+// (`w-px`, Tabelle unten), ihr Kopf bricht dafür um. Der längste Kopf fiel so
+// auf drei Zeilen («Änderungen / · mit / Botschaft»); die Mindestbreite hält
+// ihn ab `sm` bei zwei («Änderungen · / mit Botschaft»). Wortlaut unverändert.
+const SPALTEN: ReadonlyArray<{ id: DeckungSpalte; kopf: string; titel: string; ziffern: boolean; kopfKlasse?: string }> = [
   { id: 'erlass', kopf: 'Erlass', titel: 'Nach Kürzel sortieren', ziffern: false },
   { id: 'quote', kopf: 'Fussnoten-Deckung', titel: 'Nach Deckungsgrad sortieren', ziffern: true },
   { id: 'ocFussnoten', kopf: 'Fundstellen', titel: 'Nach Zahl der Fussnoten-Fundstellen sortieren', ziffern: true },
-  { id: 'aenderungen', kopf: 'Änderungen · mit Botschaft', titel: 'Nach Zahl der Änderungen sortieren', ziffern: true },
+  { id: 'aenderungen', kopf: 'Änderungen · mit Botschaft', titel: 'Nach Zahl der Änderungen sortieren', ziffern: true, kopfKlasse: 'sm:min-w-[7rem]' },
   { id: 'altBloecke', kopf: 'Alt-Blöcke', titel: 'Nach Zahl der Alt-Blöcke sortieren', ziffern: true },
   { id: 'ohneEreignis', kopf: 'ohne Ereignis', titel: 'Nach Alt-Blöcken ohne Fussnoten-Ereignis sortieren', ziffern: true },
 ];
@@ -284,8 +288,8 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
             sie schrumpfen auf ihren Inhalt (Kopf bricht dafür um), der ganze
             Rest fällt an die Erlass-Spalte. Gemessen (Preview): vorher 328 px
             Erlass-Spalte und 148 per Ellipse gekappte Titel @1280–1920, die
-            Zahlenspalten 103–220 px breit; nachher 669 px / 28 gekappt @1280
-            und @1440 (content), 989 px / 2 gekappt ab 1536 (weit). Unter `sm`
+            Zahlenspalten 103–220 px breit; nachher 648 px / 30 gekappt @1280
+            und @1440 (content), 968 px / 2 gekappt ab 1536 (weit). Unter `sm`
             unverändert (Spalten 112/94/88/91/61/69 px). */}
         <div className="mt-2 overflow-x-auto lc-scrollrand-x sm:mt-4">
           <table data-deckung-tabelle className="w-full min-w-[30rem] border-collapse text-body-s sm:min-w-[38rem]">
@@ -300,7 +304,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                     key={sp.id}
                     scope="col"
                     aria-sort={spalte === sp.id ? (richtung === 'auf' ? 'ascending' : 'descending') : 'none'}
-                    className={`border-b-2 border-rule py-2 align-bottom text-xs font-medium text-ink-600 ${sp.ziffern ? 'w-px text-right' : 'text-left'}`}
+                    className={`border-b-2 border-rule py-2 align-bottom text-xs font-medium text-ink-600 ${sp.ziffern ? 'w-px text-right' : 'text-left'} ${sp.kopfKlasse ?? ''}`}
                   >
                     <button
                       type="button"
