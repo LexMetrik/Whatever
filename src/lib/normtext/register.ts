@@ -370,7 +370,7 @@ export const ERLASS_REGISTER: ReadonlyArray<ErlassRegistereintrag> = ([
   bund('CEDAW', 'CEDAW', 'Übereinkommen vom 18. Dezember 1979 zur Beseitigung jeder Form von Diskriminierung der Frau (CEDAW)', '0.108', 'international', 101),
   bund('UNO_ANTIFOLTER', 'UN-Antifolterkonvention', 'Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe', '0.105', 'international', 102),
   bund('HEUE', 'HEsÜ', 'Übereinkommen vom 13. Januar 2000 über den internationalen Schutz von Erwachsenen (Haager Erwachsenenschutzübereinkommen)', '0.211.232.1', 'international', 103),
-  bund('HAUE', 'HAdoptÜ', 'Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der internationalen Adoption (Haager Adoptionsübereinkommen)', '0.211.221.311', 'international', 104),
+  bund('HAUE', 'HAÜ', 'Übereinkommen vom 29. Mai 1993 über den Schutz von Kindern und die Zusammenarbeit auf dem Gebiet der internationalen Adoption (Haager Adoptionsübereinkommen)', '0.211.221.311', 'international', 104),
   bund('PVUE', 'PVÜ', 'Pariser Verbandsübereinkunft zum Schutz des gewerblichen Eigentums (revidiert in Stockholm am 14. Juli 1967)', '0.232.04', 'international', 105),
   bund('ICAO', 'ICAO-Übk.', 'Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt', '0.748.0', 'international', 106),
   bund('GFK', 'GFK', 'Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge (Genfer Flüchtlingskonvention, GFK)', '0.142.30', 'international', 107),

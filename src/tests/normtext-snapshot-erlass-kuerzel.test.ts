@@ -47,7 +47,7 @@ describe('HN-04: bundKuerzelNachschlagen — Register statt ERLASS_MAP', () => {
     ['BOEB', 'BOEB', 'BöB'],
     ['FINFRAG', 'FINFRAG', 'FinfraG'],
     ['APOSTILLE', 'APOSTILLE', 'Apostille-Übk.'],
-    ['HAUE', 'HAUE', 'HAdoptÜ'],
+    ['HAUE', 'HAUE', 'HAÜ'],
     ['VSTG', 'VSTG', 'VStG'],
     ['FUSG', 'FUSG', 'FusG'],
     ['MSCHG', 'MSCHG', 'MSchG'],
