@@ -302,7 +302,7 @@ export function GewaehrleistungForm() {
       )}
 
       {ergebnis && ergebnis.status !== 'ok' && (
-        <div role="alert" className="lc-notice lc-notice-danger">
+        <div role="alert" data-fehlerbox="" className="lc-notice lc-notice-danger">
           <p className="text-body-s text-danger-700">{ergebnis.ergebnis}</p>
         </div>
       )}

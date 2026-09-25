@@ -2290,6 +2290,26 @@
      dadurch erst richtig lesbar). */
   .lc-tile { background: transparent; border: 0;
     border-top: 1px solid var(--rule-soft); @apply p-4; }
+  /* Kachelraster der Ergebnis-Eckdaten (W2·31-BILDSCHIRMBREITE B3-Nachzug,
+     Gegenprüfung 26.9.2026, Mangel B2). Die Spaltenzahl folgt der EIGENEN
+     Breite, nicht dem Viewport: vorher `sm:grid-cols-3` (bzw. `lg:…-4`), im
+     Pane `@xl/pane:…` (pk). In der 640-px-Ergebnisspalte @1920 brach
+     «01.03.2034 · 24.00 Uhr» zweizeilig (Kachel 205 px, gemessener Bedarf
+     221 px = Wert text-body-l semibold + p-4); gestapelt ebenso bei 656 und
+     528 px Breite (@768/@640). Regel: höchstens `--kacheln` Spalten (R-4:
+     max. 3 Eckdaten; Verjährung mit absoluter Frist 4), jede mindestens
+     14 rem — sonst eine Spalte weniger. `auto-fill` hält leere Spuren wie
+     `grid-cols-3` (zwei Kacheln bleiben je ein Drittel breit). Keine
+     Container-Query am Ergebnisplatz: `container-type: inline-size` setzt
+     dessen Mindestbreite auf 0 und schöbe die Erben-Tabelle wieder in den
+     Querscroll (gemessen 712/640 px). */
+  .lc-kachelraster {
+    --kacheln: 3;
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: repeat(auto-fill,
+      minmax(max(min(100%, 14rem), (100% - (var(--kacheln) - 1) * .75rem) / var(--kacheln)), 1fr));
+  }
   /* Werkzeug-Karte der Rechner-Seiten (`ui/Card`, W2·29-WERKBANK-RECHNER R2):
      Registerstrich oben wie `.ub-kopf` und die Abschnitte des Boards
      «Unter-Rechner», unten die Haarlinie — kein Kasten (U2). */
@@ -5093,5 +5113,29 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
     grid-column: 2;
     grid-row: 1 / -1;
     margin-top: 0;
+  }
+  /* Nachzug (Gegenprüfung 26.9.2026, Mangel B1): bei ungültiger Eingabe
+     rendern die Formulare weder Ergebnis noch Platzhalter — die rechte Spur
+     stand leer. Gemessen @1920 (18 Rechner, je ein Feld geleert): leer auf
+     13 Rechnern, teils mit Eingabefehler-Box links, teils ganz ohne Meldung
+     (Ergebnis `null`). Ohne Ergebnis nimmt die Box der Ergebnis-Ebene
+     (`FehlerBox` bzw. die Status-Meldung mit `data-fehlerbox`) den Ergebnis-
+     platz ein — sie sagt, warum dort nichts steht; role="alert" und DOM-
+     Reihenfolge bleiben. Steht rechts auch keine Box, hält ein leerer Rahmen
+     in der Anatomie des `ErgebnisPlatzhalter` (gestrichelte Oberlinie,
+     10 rem) die Spur sichtbar besetzt — ohne Text, weil ein Rahmen keine
+     Aussage über die fehlende Eingabe erfinden darf (§8). Feldnahe Meldungen
+     stehen im Feld und nicht als Kind der Wurzel: sie bleiben links. */
+  .lc-rechner-spalten:not(:has(> :is([data-ergebnisplatz], [data-platzhalter]):not([hidden]))) > [data-fehlerbox] {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    margin-top: 0;
+  }
+  .lc-rechner-spalten:not(:has(> :is([data-ergebnisplatz], [data-platzhalter], [data-fehlerbox]):not([hidden])))::after {
+    content: '';
+    grid-column: 2;
+    grid-row: 1 / -1;
+    min-height: 10rem;
+    border-top: 1px dashed var(--rule-soft);
   }
 }

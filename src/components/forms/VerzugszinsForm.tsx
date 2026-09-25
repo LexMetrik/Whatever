@@ -213,7 +213,7 @@ export function VerzugszinsForm() {
         <ErgebnisBlock>
           {ergebnis.status === 'ok' && (
             <>
-              <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+              <div className="lc-kachelraster">
                 {[
                   { label: 'Verzugszins (gesamt)', val: `CHF ${ergebnis.zinsTotalCHF}`, akzent: true },
                   { label: 'Offenes Kapital', val: `CHF ${ergebnis.kapitalOffenCHF}` },

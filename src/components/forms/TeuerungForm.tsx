@@ -161,7 +161,7 @@ export function TeuerungForm() {
       {ergebnis && (
         <ErgebnisBlock>
           {/* Eckdaten (UX B17): Wichtigstes zuerst, wie bei den übrigen Rechnern */}
-          <div className={`grid grid-cols-1 ${pk('sm:grid-cols-3', '@xl/pane:grid-cols-3')} gap-3`}>
+          <div className="lc-kachelraster">
             {[
               { label: 'Indexierter Betrag', val: `CHF ${ergebnis.betragNeu.toLocaleString('de-CH', { minimumFractionDigits: 2 })}`, akzent: true },
               { label: 'Veränderung', val: `${ergebnis.prozent > 0 ? '+' : ''}${ergebnis.prozent.toFixed(1)} %` },

@@ -427,7 +427,7 @@ export function SchkgFristenForm({ live }: {
                   <h3 className="text-h3 font-display font-semibold text-ink-900">{sansAmp(a.titel)}</h3>
                   {badge && <span className={`lc-badge ${badge.cls}`}>{badge.label}</span>}
                 </div>
-                <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+                <div className="lc-kachelraster">
                   {[
                     // RL-18 (F2-03): Weicht der massgebliche Ereignistag von der
                     // Zustellung ab (Zustellung in den Betreibungsferien, BGE

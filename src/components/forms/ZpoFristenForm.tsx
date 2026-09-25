@@ -419,7 +419,7 @@ export function ZpoFristenForm({ live }: {
       {ergebnis && (
         <ErgebnisBlock id="lc-ergebnis-zpo">
           {/* Prominente Eckdaten */}
-          <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+          <div className="lc-kachelraster">
             {[
               { label: 'Massgeblicher Ereignistag', val: ergebnis.massgeblicherEreignistag },
               { label: 'Fristbeginn (dies a quo)', val: ergebnis.diesAQuo },

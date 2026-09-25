@@ -306,7 +306,7 @@ export function ErbteilungForm() {
       {ergebnis && (
         <ErgebnisBlock>
           {/* Eckdaten */}
-          <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+          <div className="lc-kachelraster">
             <EckdatenKachel label="Rechtsstand"
               wert={ergebnis.rechtsstand === 'neu' ? 'Neues Recht (ab 1.1.2023)' : 'Altes Recht (bis 31.12.2022)'} />
             <EckdatenKachel akzent num label="Verfügbare Quote"
