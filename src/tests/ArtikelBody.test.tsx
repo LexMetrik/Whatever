@@ -581,7 +581,7 @@ const KERN_ERWARTET: Record<string, [string, string]> = {
   'T-B mehrspaltig, ≥3 Zahlspalten': ['fb6708751ad0c9d578f668e86dd3dda4da8371bad0e485681faca86d1f8c8f7d', '1f2b0a7ddf4230f0d1e8ae2c070f0c7ff1d3d99164a536799d6f2bc9ee2f19dd'],
   'T-C Einzel-Leerzelle bleibt (T-C7)': ['1be2f0869943e633e460105d1f8c3d259cb99f76eff0c8b189192991589eab2d', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
   'T-D kopflos (T-D6)': ['1fbc23a33acd46c027f33cb489b1272aacf35fd10e5a7c85630a4ba07b2b04f4', '7249f22f596b249a3a532480e15bea9273d2d1c05c42b6ad2b0bef904c35bd72'],
-  'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['de9e9d5c14d396e1ea93bff3a3e6dcc6985f7372cf77497c1b9b3b95b4e7eaa5', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
+  'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['cf1fb40933016e0ac9ff6aa227ad072fd5d8296283199812862d0d71b3e623ee', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
   'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['2a353abb5a3aa8037bde36b36caab7d1f9b36d05b83efad0f7eab9626ead5faf', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
   'T-B5 Kurzform tabelle (Kanton)': ['adb4bc97974243eb3e51d199e590604cfdcc2918b36425450d44cad85c64f977', 'ad119a6f2413cb360f9570634315a99d7b3d075cd2ce7b220c1d670cc88b8be5'],
   'Formelbild (DBG Art. 22)': ['2dcfb0e99eaaed263e2e3d64df3812fffe0b961a85962be1069a4965374b2c2e', '63c572a17754ba935d4bbb1dd3099e5881fab13ca6797d2d72ed3c91be7c8346'],
