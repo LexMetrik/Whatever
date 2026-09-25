@@ -17,6 +17,10 @@ import type { SchkgModus, SchkgFristnatur, SchkgEinheit, SchkgFristSpec, SchkgHe
 // Rechtsnatur sind je Preset mit Einzelbeleg kommentiert. Die fachliche
 // Abnahme (§7) steht aus: `verweise` referenzieren das Verifikations-Register
 // (src/data/verifikation.ts), dessen Einträge verifiziert:false tragen.
+// Ergänzung RL-17b (25.9.2026, Beleg oben unverändert): `schuldenruf_nachlass`
+// ist seither berechenbar (1 Monat, Art. 300 Abs. 1 SchKG, Fassung 1.1.2026,
+// Fedlex-Filestore …/20260101/de/xml/…-de-xml-3.xml) — damit 34 berechenbare
+// Presets; die Zählung 33 oben bezieht sich auf den Stand 24.9.2026.
 
 export type SchkgPhase =
   | 'einleitung'
@@ -76,8 +80,34 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
   { key: 'rechtsvorschlag', phase: 'einleitung', label: 'Rechtsvorschlag – 10 Tage', norm: 'Art. 74 Abs. 1 SchKG',
     einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', fristnatur: 'frist', ausloeser: 'Zustellung Zahlungsbefehl',
     hinweis: 'Keine Begründung nötig (Art. 75 SchKG); Wiederherstellung nach Art. 33 Abs. 4 SchKG.' },
+  // RL-17b / Befund rechtslogik-rest-12 (Herz-und-Nieren-Prüfung 24.9.2026,
+  // deklarierte fachliche Änderung): vorher fest modus 'schkg_betreibungsferien'
+  // ohne Kennzeichnung (Kenntnis 10.7.2026, ZH: 05.08.2026). Wortlaut geprüft
+  // (amtliche Fedlex-Filestore-Kopien, abgerufen 25.9.2026; SR 281.1 Fassung
+  // 1.1.2026, SR 272 Fassung 1.7.2026): Art. 77 Abs. 2 SchKG — der Rechtsvorschlag
+  // ist «innert zehn Tagen, nachdem er vom Gläubigerwechsel Kenntnis erhalten
+  // hat, beim Richter des Betreibungsortes schriftlich und begründet
+  // anzubringen»; die Frist wahrt also eine Eingabe bei GERICHT, nicht beim
+  // Betreibungsamt. Die Bewilligung ist Summarsache (Art. 251 lit. b ZPO: «des
+  // nachträglichen Rechtsvorschlages (Art. 77 Abs. 3 SchKG)»). Seit 1.1.2025
+  // gelten für «Klagen nach diesem Gesetz, die vor einem Gericht einzureichen
+  // sind», ausschliesslich die ZPO-Stillstandsregeln (Art. 56 Abs. 2 SchKG);
+  // im summarischen Verfahren gibt es keinen Stillstand (Art. 145 Abs. 2 lit. b
+  // ZPO). OFFEN ist — wie bei der Arresteinsprache (unten) —, ob das Gesuch um
+  // Bewilligung des nachträglichen Rechtsvorschlags eine «Klage» i.S.v. Art. 56
+  // Abs. 2 SchKG ist; Rechtsprechung dazu nicht gefunden (entscheidsuche.ch-
+  // Volltext «nachträglichen Rechtsvorschlag» ∧ «Betreibungsferien» 25.9.2026:
+  // 0 Treffer; bger.ch-Suche 25.9.2026 HTTP 503). Zusätzlich setzt Art. 63
+  // SchKG eine Betreibungshandlung voraus (BGE 149 III 179 E. 4.1); der
+  // Fristauslöser hier ist die Kenntnis des Gläubigerwechsels, nicht eine
+  // Betreibungshandlung gegenüber dem Schuldner. Darum wie `arresteinsprache`:
+  // Voreinstellung auf das FRÜHERE, sichere Datum (modus 'kein', 20.07.2026),
+  // die Lesart Betreibungsferien + Art. 63 SchKG bleibt über den Override
+  // (modusUmstritten) wählbar (05.08.2026). Produktentscheid bei offener Frage,
+  // kein Rechtsbeleg für die Voreinstellung (§8 im Hinweis offengelegt).
   { key: 'rechtsvorschlag_nachtraeglich', phase: 'einleitung', label: 'Nachträglicher Rechtsvorschlag – 10 Tage', norm: 'Art. 77 SchKG',
-    einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', fristnatur: 'frist', ausloeser: 'Kenntnis des Gläubigerwechsels' },
+    einheit: 'tage', laenge: 10, modus: 'kein', modusUmstritten: true, fristnatur: 'frist', ausloeser: 'Kenntnis des Gläubigerwechsels',
+    hinweis: 'Der nachträgliche Rechtsvorschlag ist innert 10 Tagen seit Kenntnis des Gläubigerwechsels beim Richter des Betreibungsortes schriftlich und begründet anzubringen; die Einreden gegen den neuen Gläubiger sind glaubhaft zu machen (Art. 77 Abs. 2 SchKG). Über die Bewilligung entscheidet das Gericht im summarischen Verfahren (Art. 251 lit. b ZPO). Seit 1.1.2025 ist offen, ob das Gesuch als Klage vor Gericht unter Art. 56 Abs. 2 SchKG fällt; dann gilt die ZPO, im summarischen Verfahren ohne Stillstand (Art. 145 Abs. 2 lit. b ZPO). Voreinstellung darum ohne Stillstand (früheres, sicheres Datum). Die Lesart mit Betreibungsferien und Verlängerung nach Art. 63 SchKG (späteres Datum) ist über den Override wählbar.' },
   // B2-Fix 6.6.2026: «in der Wechselbetreibung gibt es keine Betreibungsferien»
   // (Art. 56 Ziff. 2 SchKG, Wortlaut am Cache verifiziert) → modus 'kein' für
   // alle drei Wechsel-Presets; vorher verschob die Ferien-Logik das Fristende
@@ -228,9 +258,30 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
   { key: 'nachlass_definitiv', phase: 'nachlass', label: 'Definitive Nachlassstundung – 4–6 (bis 24) Monate', norm: 'Art. 294 Abs. 1 / 295b SchKG',
     infoOnly: true, modus: 'kein', fristnatur: 'frist', ausloeser: 'Bewilligung',
     hinweis: 'Stundungsdauer: 4–6 Monate, gesamt bis 12, in komplexen Fällen bis 24 Monate.' },
-  { key: 'schuldenruf_nachlass', phase: 'nachlass', label: 'Schuldenruf im Nachlass (richterlich)', norm: 'Art. 300 SchKG',
-    infoOnly: true, modus: 'kein', fristnatur: 'frist', ausloeser: 'Publikation',
-    hinweis: 'Vom Sachwalter angesetzte Frist.' },
+  // RL-17b / Befund rechtslogik-rest-13 (Herz-und-Nieren-Prüfung 24.9.2026,
+  // deklarierte fachliche Änderung): vorher infoOnly mit Label «(richterlich)»
+  // und Hinweis «Vom Sachwalter angesetzte Frist» — beides falsch. Art. 300
+  // Abs. 1 SchKG (SR 281.1, Fassung 1.1.2026, amtliche Fedlex-Filestore-Kopie,
+  // abgerufen 25.9.2026): Der Sachwalter fordert «durch öffentliche
+  // Bekanntmachung (Art. 35 und 296) die Gläubiger auf, ihre Forderungen innert
+  // eines Monats einzugeben», sonst sind sie bei den Verhandlungen über den
+  // Nachlassvertrag «nicht stimmberechtigt». Die Frist ist GESETZLICH (ein
+  // Monat), der Sachwalter bestimmt sie nicht. Auslöser: Art. 35 Abs. 1 SchKG —
+  // für die Fristberechnung ist die Veröffentlichung im SHAB massgebend.
+  // Monatsrechnung Art. 31 SchKG i.V.m. Art. 142 Abs. 2 ZPO (wie
+  // `schuldenruf_konkurs`). Regime 'kein': Der Schuldenruf ist eine Handlung
+  // des Sachwalters, keine Betreibungshandlung; BGE 73 III 91 (Regeste: Art. 56,
+  // 57 ff., 63 SchKG «sind auf die Verfügungen des Sachwalters im
+  // Nachlassverfahren … nicht anwendbar»; gelesen im Scan der amtlichen
+  // Sammlung, entscheidsuche.ch CH_BGB_005_BGE-73-III-84, 25.9.2026) —
+  // Entscheid zum Recht von 1947, für das geltende Recht nicht eigens bestätigt;
+  // gleichlaufend BGE 149 III 179 E. 4.1 für die Konkursorgane. 'kein' ergibt
+  // zugleich das frühere, sichere Datum. Fristnatur 'frist' (neutral): anders
+  // als im Konkurs (Art. 251 SchKG) regelt das Gesetz keine verspätete Eingabe;
+  // Rechtsfolge ist allein der Verlust des Stimmrechts.
+  { key: 'schuldenruf_nachlass', phase: 'nachlass', label: 'Eingabefrist Forderungen (Schuldenruf Nachlass) – 1 Monat', norm: 'Art. 300 Abs. 1 SchKG',
+    einheit: 'monate', laenge: 1, modus: 'kein', fristnatur: 'frist', ausloeser: 'Publikation SHAB',
+    hinweis: 'Gesetzliche Frist von einem Monat ab der öffentlichen Bekanntmachung des Sachwalters; massgebend ist die Veröffentlichung im SHAB (Art. 35 Abs. 1 SchKG). Wer nicht fristgerecht eingibt, ist bei den Verhandlungen über den Nachlassvertrag nicht stimmberechtigt (Art. 300 Abs. 1 SchKG). Der Schuldenruf ist eine Handlung des Sachwalters, keine Betreibungshandlung → keine Verlängerung nach Art. 63 SchKG in den Betreibungsferien (BGE 73 III 91).' },
 
   // ── Arrest ──
   // RL-17 / Befund R5-03 (tief, V14 bestätigt): Die Frist läuft nach Art. 278
