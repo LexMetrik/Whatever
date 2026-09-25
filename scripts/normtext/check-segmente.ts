@@ -35,8 +35,7 @@
  * (R6–R9, s. Bericht) — ein Test-Cache-Verzeichnis statt des mit anderen
  * Sessions GETEILTEN `/tmp`, damit die Rot-Proben den echten Cache nie anfassen.
  */
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseFedlexCacheEintraege, type FedlexCacheEintrag } from './inventar-bund.ts';
 import { pinBefund, pinIdentitaet } from './cache-pin-befund.ts';
 import {
@@ -48,31 +47,33 @@ import {
   dispTextAusserhalbArtikel,
   fehlendeIndizes,
   fingerabdrueckeZuSoll,
-  klassiereSollAenderung,
   gleicheBasislinieAb,
   leereZeilenStatistik,
   parseErlassHtml,
   pinIdentGleich,
-  pruefeBeleg,
   projektionsBlob,
   segmentiereAnker,
   segmenteZuFingerabdruecken,
   SEGMENTER_VERSION,
   sollAktualitaet,
-  sollBelegHash,
   sollInhaltGleich,
   sollZuFingerabdruecke,
-  urteileB6,
   zeilenStatistikGleich,
-  type B6Urteil,
   type BasislinienEintrag,
   type Fingerabdruck,
-  type ModusCBeleg,
   type ProjektionsEintrag,
   type SollDatei,
   type SollPin,
   type ZeilenStatistik,
 } from './segmente-logik.ts';
+import {
+  B6_BASIS_REF,
+  B6_KOPF_REF,
+  pruefeB6,
+  pruefeBelegAufPlatte,
+  schreibeBeleg,
+  SOLL_VERZEICHNIS,
+} from './segmente-beleg-io.ts';
 
 // B1 (dokumentierte Ausnahme, s. u.): KKV art_126_z__2 ist der Synthese-
 // Schlüssel für das ZWEITE physische `<article id="art_126_z">` in der HTML
@@ -103,7 +104,6 @@ const cacheDir = process.env.LEXMETRIK_FEDLEX_CACHE_DIR || STANDARD_CACHE_DIR;
 const cachePflicht = process.argv.includes('--cache-pflicht') || process.env.LEXMETRIK_CACHE_PFLICHT === '1';
 const schreibenModus = process.argv.includes('--schreiben');
 
-const SOLL_VERZEICHNIS = 'scripts/normtext/segmente-soll';
 const BASISLINIEN_PFAD = 'scripts/normtext/segmente-basislinie.json';
 const PROJEKTIONS_VERZEICHNIS = 'public/normtext/bund';
 
@@ -460,89 +460,6 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
   };
 }
 
-// ── B6: Modus-B-Schutz gegen koordinierte Soll+Projektions-Manipulation ────
-//
-// Modus B vergleicht die Projektion NUR gegen das committete Soll — löscht ein
-// Commit denselben Fingerabdruck aus BEIDEN gemeinsam, bleibt B grün (Modus C
-// erkennt es über die frische HTML-Ableitung, läuft aber nur im Cache-Pfad).
-// B-Regel: eine Soll-Datei darf sich im COMMITTETEN Bereich nur ändern, wenn
-// Pin ODER Segmenter-Version mitgewandert sind. Diff-Basis WIE
-// `check:merge-schutz` (git merge-base origin/main HEAD, per Umgebung
-// überschreibbar). G4 (Runde 3): ohne auflösbare Basis ROT wie dort (vorher
-// «übersprungen» + grün); Dateien OHNE Vergleichsbasis (neu/Versionswechsel)
-// werden gezählt und verlangen einen gültigen Modus-C-Beleg (segmente-soll.ts).
-const B6_BASIS_REF = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
-const B6_KOPF_REF = process.env.MERGE_SCHUTZ_KOPF ?? 'HEAD';
-
-function gitStill(args: string[]): string | null {
-  try {
-    return execFileSync('git', args, { stdio: ['ignore', 'pipe', 'ignore'] }).toString('utf8');
-  } catch {
-    return null;
-  }
-}
-
-function liesOderNull(pfad: string): string | null {
-  return existsSync(pfad) ? readFileSync(pfad, 'utf8') : null;
-}
-
-/** Alle Soll-Dateien (ohne den Beleg selbst) — Grundlage des Beleg-Hashes. */
-function sollDateienAufPlatte(): Array<{ name: string; inhalt: string }> {
-  if (!existsSync(SOLL_VERZEICHNIS)) return [];
-  return readdirSync(SOLL_VERZEICHNIS)
-    .filter((n) => n.endsWith('.json') && n !== BELEG_DATEINAME)
-    .map((name) => ({ name, inhalt: readFileSync(`${SOLL_VERZEICHNIS}/${name}`, 'utf8') }));
-}
-
-function aktuellerSollHash(): string {
-  return sollBelegHash(sollDateienAufPlatte());
-}
-
-function ladeBeleg(): ModusCBeleg | null {
-  const roh = liesOderNull(`${SOLL_VERZEICHNIS}/${BELEG_DATEINAME}`);
-  if (roh === null) return null;
-  try {
-    return JSON.parse(roh) as ModusCBeleg;
-  } catch {
-    return null;
-  }
-}
-
-/** --schreiben: Beleg nachführen; bei unverändertem Hash bleibt die Datei byte-gleich (Datum steht). */
-function schreibeBeleg(): void {
-  const sollHash = aktuellerSollHash();
-  const alt = ladeBeleg();
-  if (alt && alt.segmenterVersion === SEGMENTER_VERSION && alt.sollHash === sollHash) return;
-  const beleg: ModusCBeleg = {
-    segmenterVersion: SEGMENTER_VERSION,
-    sollHash,
-    dateien: sollDateienAufPlatte().length,
-    datum: new Date().toISOString().slice(0, 10), // Werkzeug-Metadatum, keine Rechenlogik (§2 unberührt)
-  };
-  writeFileSync(`${SOLL_VERZEICHNIS}/${BELEG_DATEINAME}`, JSON.stringify(beleg, null, 2) + '\n', 'utf8');
-}
-
-function pruefeB6(): B6Urteil | { basisFehler: string } {
-  const basis = gitStill(['merge-base', B6_BASIS_REF, B6_KOPF_REF]);
-  if (basis === null) {
-    return {
-      basisFehler:
-        `Referenz '${B6_BASIS_REF}' nicht auflösbar — erst 'git fetch origin', dann erneut ` +
-        `(kein stiller Skip: ein Tor ohne Referenz ist kein Tor, wie check:merge-schutz).`,
-    };
-  }
-  const b = basis.trim();
-  const diffOut = gitStill(['diff', '--name-only', `${b}..${B6_KOPF_REF}`, '--', SOLL_VERZEICHNIS]);
-  if (diffOut === null) return { basisFehler: 'git diff auf die Soll-Dateien fehlgeschlagen.' };
-  const aenderungen = diffOut
-    .split('\n')
-    .map((z) => z.trim())
-    .filter((p) => p && !p.endsWith(`/${BELEG_DATEINAME}`))
-    .map((pfad) => ({ pfad, art: klassiereSollAenderung(gitStill(['show', `${b}:${pfad}`]), liesOderNull(pfad)) }));
-  return urteileB6(aenderungen, () =>
-    pruefeBeleg(ladeBeleg(), { segmenterVersion: SEGMENTER_VERSION, sollHash: aktuellerSollHash() }),
-  );
-}
 // ── Bericht + Urteil ─────────────────────────────────────────────────────────
 
 function berichteUndBewerte(z: Zwischenergebnis): void {
@@ -623,7 +540,7 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
       }
     }
   } else {
-    const beleg = pruefeBeleg(ladeBeleg(), { segmenterVersion: SEGMENTER_VERSION, sollHash: aktuellerSollHash() });
+    const beleg = pruefeBelegAufPlatte();
     if (!beleg.ok) {
       fehler = true;
       console.error(`❌ FEHLER (G4): ${BELEG_DATEINAME} passt nicht — ${beleg.grund} → npm run check:segmente -- --schreiben`);
