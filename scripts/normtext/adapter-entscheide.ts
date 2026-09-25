@@ -38,6 +38,8 @@ export interface OclDecision {
   legal_area?: string | null; regeste?: string | null; full_text?: string;
   statutes?: string[]; cited_decisions?: string | string[]; content_hash?: string;
   source_url?: string; canonical_url?: string;
+  /** Direkter PDF-Link (BVGer: source_url ist eine JS-Hülle); nur die Wochenlauf-Stichprobe liest ihn (25.9.2026). */
+  pdf_url?: string;
   [k: string]: unknown;
 }
 // H-8/B22: OclParagraph liegt jetzt in adapter-typen.ts (löst den Typ-Zyklus

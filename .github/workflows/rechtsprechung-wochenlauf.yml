@@ -1,21 +1,33 @@
 # ─── Rechtsprechungs-Wochenlauf (QS-KORPUS) ─────────────────────────────────
 # Montags: neue BGE (laufender + Vorjahresband), BS-Delta, übrige Gerichte
-# additiv, dann Remap/Projektionen/Tore und eine automatische Identitäts-
-# Stichprobe. Ergebnis: EIN PR mit Bericht — oder keiner, wenn nichts Neues kam.
-# Logik: scripts/rechtsprechung/wochenlauf.ts (+ -kern.ts, getestet).
+# additiv, dann Remap/Projektionen, die Prüfstrasse wie merge_group (npm test,
+# npm run check, Build, perf-budget, Korpus-e2e) und eine automatische
+# Identitäts-Stichprobe. Monatlich (3.) statt dessen der BS-Vollabgleich
+# (Inhalts-Hash aller BS-Dokumente gegen das Portal). Ergebnis: EIN PR mit
+# Bericht — oder keiner, wenn nichts Neues kam.
+# Logik: scripts/rechtsprechung/wochenlauf*.ts (Kern + Bericht getestet).
 #
 # KEIN AUTO-MERGE (Entscheid David 25.9.2026: «Vorbereiten, Prüfung vor Live»).
 # Das Rahmen-Gate «Ja, voll freigeben» (16.7.2026) gilt nur für
 # fedlex-frische.yml. Der PR trägt «Gegenpruefung: ausstehend» — formal
 # untauglich, check:merge-schutz bleibt rot, bis eine Session prüft
 # (Skill korpus-werkstatt, «Wochen-Nachzug prüfen und landen»).
-# Rotes Tor oder Fehltreffer der Stichprobe ⇒ PR als ENTWURF, Befund im Body.
+# Rotes Tor, Quellen-Ausfall oder Fehltreffer ⇒ PR als ENTWURF, Befund im
+# Body, dazu ::warning:: und Summary-Kopf «ENTWURF — ROT».
 name: Rechtsprechung-Wochenlauf
 
 on:
   schedule:
     - cron: '37 5 * * 1' # montags 05:37 UTC: nach fedlex-frische (04:43), vor normen-monitor (07:17)
+    - cron: '41 2 3 * *' # am 3. des Monats 02:41 UTC: BS-Vollabgleich (~56 min Abruf); fällt der 3. auf einen Montag, wartet der Wochenlauf (concurrency)
   workflow_dispatch:
+    inputs:
+      modus:
+        description: 'woche (Standard) oder bs-vollabgleich (nur BS, alle Dokumente gegen das Portal)'
+        required: false
+        default: woche
+        type: choice
+        options: [woche, bs-vollabgleich]
 
 concurrency:
   group: rechtsprechung-wochenlauf
@@ -25,89 +37,122 @@ jobs:
   wochenlauf:
     name: Entscheide nachziehen · Bericht · PR
     runs-on: ubuntu-latest
-    # BS-Delta holt je Woche wenige hundert Dokumente, BGE-Bänder brauchen clir
-    # je neuem Entscheid; dazu 7 Tore. Grosszügig, weil ein Abbruch alles verwirft.
-    timeout-minutes: 150
+    # Budget (A10): Quellen ≤ 110 min (--quellen-frist-min, danach übersprungen
+    # und als Ausfall gemeldet), Skript gesamt ≤ 165 min (--frist-min; Nachbau,
+    # Tore ~20 min, Build+e2e ~15 min holen ihre Zeit aus dem Rest), dazu Setup
+    # und PR-Schritt. Ein Abbruch durch GitHub verwürfe alles — darum endet das
+    # Skript vor diesem Deckel.
+    timeout-minutes: 185
     env:
       TZ: Europe/Zurich # wie ci.yml/fedlex-frische.yml
+      MODUS: ${{ github.event.inputs.modus || (github.event.schedule == '41 2 3 * *' && 'bs-vollabgleich') || 'woche' }}
     permissions:
       contents: write
       pull-requests: write
-      actions: write # CI-Dispatch, falls kein AUTOMERGE_TOKEN greift (s. fedlex-frische.yml K1)
+      actions: write # CI-Dispatch nach dem Push (s. PR-Schritt)
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # Aufbau auf dem Vorwochen-PR: main einmergen braucht die Historie
       - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
       - run: npx -y npm@11 ci
+      - name: Playwright-Browser-Cache
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Playwright-Browser (Chromium, für die Korpus-e2e)
+        run: bash scripts/ci/playwright-install.sh
 
       - name: Laufdatum festlegen (§2 — kein Date.now in der Erhebung)
         id: datum
         run: echo "iso=$(date -u +%F)" >> "$GITHUB_OUTPUT"
 
-      - name: Wochenlauf (Quellen · Nachbau · Tore · Stichprobe)
-        id: lauf
-        # --checkpoint: WIP-Commit je Quelle, Rücksetzen bei Exit ≠ 0 — ein
-        # Quellen-Ausfall bricht die anderen nicht ab (Kopf wochenlauf.ts).
+      - name: Basis wählen (offener Auto-PR? in Prüfung?)
+        id: basis
+        env:
+          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
         run: |
           git config user.name  "rechtsprechung-wochenlauf-bot"
           git config user.email "noreply@anthropic.com"
+          npx vite-node scripts/rechtsprechung/wochenlauf-basis.ts -- \
+            --datum=${{ steps.datum.outputs.iso }} --aus="$RUNNER_TEMP/wochenlauf"
+
+      - name: In Prüfung — Lauf ausgesetzt
+        if: steps.basis.outputs.aussetzen == 'true'
+        env:
+          NR: ${{ steps.basis.outputs.nr }}
+          GRUND: ${{ steps.basis.outputs.grund }}
+        run: |
+          echo "::warning::PR #${NR} ist in Prüfung (${GRUND}) — nicht überschrieben; Nachzug nächste Woche."
+          echo "## Rechtsprechungs-Wochenlauf: ausgesetzt — PR #${NR} in Prüfung (${GRUND})" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Wochenlauf (Quellen · Nachbau · Tore · Stichprobe)
+        id: lauf
+        if: steps.basis.outputs.aussetzen != 'true'
+        # --checkpoint: WIP-Commit je Quelle, Rücksetzen bei Exit ≠ 0 — ein
+        # Quellen-Ausfall bricht die anderen nicht ab (Kopf wochenlauf.ts).
+        run: |
           npx vite-node scripts/rechtsprechung/wochenlauf.ts -- \
-            --datum=${{ steps.datum.outputs.iso }} --aus="$RUNNER_TEMP/wochenlauf" --checkpoint
+            --datum=${{ steps.datum.outputs.iso }} --aus="$RUNNER_TEMP/wochenlauf" --checkpoint \
+            --modus="$MODUS" --quellen-frist-min=110 --frist-min=165
 
       - name: Job-Summary
-        if: always()
+        if: always() && steps.basis.outputs.aussetzen != 'true'
         run: cat "$RUNNER_TEMP/wochenlauf/summary.md" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || echo "Kein Bericht — Lauf abgestürzt, siehe Log." >> "$GITHUB_STEP_SUMMARY"
 
       - name: PR eröffnen oder aktualisieren (NIE Auto-Merge)
         if: steps.lauf.outputs.entscheid == 'pr' || steps.lauf.outputs.entscheid == 'entwurf'
         env:
           GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || github.token }}
-          HAT_PAT: ${{ secrets.AUTOMERGE_TOKEN != '' }}
           DATUM: ${{ steps.datum.outputs.iso }}
           ENTSCHEID: ${{ steps.lauf.outputs.entscheid }}
+          BRANCH: ${{ steps.basis.outputs.branch }}
+          NR: ${{ steps.basis.outputs.nr }}
+          LEASE: ${{ steps.basis.outputs.lease }}
           AUS: ${{ runner.temp }}/wochenlauf
         run: |
           set -euo pipefail
           titel="feat(rechtsprechung): Wochen-Nachzug ${DATUM} (QS-KORPUS)"
-          # Ein offener Auto-PR wird aktualisiert, nicht dupliziert. Er baut
-          # ohnehin auf main auf, trägt also den Stand der Vorwoche mit.
-          branch=$(gh pr list --state open --json headRefName \
-            --jq '[.[].headRefName | select(startswith("auto/rechtsprechung-"))][0] // empty')
-          nr=""
-          if [ -n "$branch" ]; then
-            nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')
-            # Nie überschreiben, woran eine Session schon arbeitet: fremde
-            # Commits auf dem Zweig oder ein eingesetztes Verdikt im Body.
-            git fetch -q origin "$branch"
-            autor=$(git log -1 --format=%an "origin/$branch")
-            body=$(gh pr view "$nr" --json body --jq .body)
-            if [ "$autor" != "rechtsprechung-wochenlauf-bot" ] || \
-               grep -qE '^Gegenpruefung: (bestanden|behoben)' <<< "$body"; then
-              echo "::warning::PR #${nr} ist in Prüfung (Autor ${autor} bzw. Verdikt gesetzt) — nicht überschrieben; Nachzug nächste Woche."
-              echo "**PR #${nr} in Prüfung — nicht überschrieben.**" >> "$GITHUB_STEP_SUMMARY"
-              exit 0
-            fi
-          else
-            branch="auto/rechtsprechung-${DATUM}"
+          # Ein offener, unberührter Auto-PR wurde im Schritt «Basis wählen»
+          # ausgecheckt und main eingemergt — der Lauf baute auf SEINEM Kopf auf,
+          # die Einträge der Vorwoche bleiben (A6). Direkt vor dem Push noch
+          # einmal prüfen: der Lauf dauert bis zu drei Stunden (A9).
+          if [ -n "$NR" ]; then
+            npx vite-node scripts/rechtsprechung/wochenlauf-basis.ts -- --pruefe="$NR" --branch="$BRANCH" || {
+              echo "**PR #${NR} inzwischen in Prüfung — nicht überschrieben.**" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
           fi
-          git checkout -q -B "$branch"
-          git add -A
+          git checkout -q -B "$BRANCH"
+          # Positivliste statt `git add -A` (A11): nur, was der Lauf erwartet
+          # schreibt (wochenlauf-kern.ts ERWARTETE_PFADE); Unerwartetes steht im
+          # Bericht und macht den PR zum Entwurf.
+          git reset -q
+          if [ -s "$AUS/pfade.nul" ]; then git add -A --pathspec-from-file="$AUS/pfade.nul" --pathspec-file-nul; fi
           git commit -q -F "$AUS/commit.txt"
-          git push -q --force origin "$branch"
+          # Lease: überschreibt nur, wenn der Branch noch auf dem Stand vom
+          # Laufstart steht — ein zwischenzeitlicher fremder Push lässt den
+          # Push scheitern statt ihn zu verwerfen.
+          if [ -n "$LEASE" ]; then git push -q --force-with-lease="${BRANCH}:${LEASE}" origin "$BRANCH"
+          else git push -q origin "$BRANCH"; fi
+          nr="$NR"
           if [ -n "$nr" ]; then
             gh pr edit "$nr" --title "$titel" --body-file "$AUS/bericht.md"
           else
             entwurf=""; [ "$ENTSCHEID" = "entwurf" ] && entwurf="--draft"
-            gh pr create --base main --head "$branch" $entwurf --title "$titel" --body-file "$AUS/bericht.md"
-            nr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')
+            gh pr create --base main --head "$BRANCH" $entwurf --title "$titel" --body-file "$AUS/bericht.md"
+            nr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
           fi
           # Entwurf-Status dem Befund dieser Woche angleichen (beide Richtungen).
           if [ "$ENTSCHEID" = "entwurf" ]; then gh pr ready "$nr" --undo || true; else gh pr ready "$nr" || true; fi
-          # github.token löst keine Workflows aus (Rekursionssperre) — dann CI
-          # per workflow_dispatch anstossen; mit PAT lief sie schon durch den Push.
-          if [ "$HAT_PAT" != "true" ]; then
-            gh workflow run ci.yml --ref "$branch" || echo "::warning::ci.yml-Dispatch fehlgeschlagen — der Wächter zieht nach."
-          fi
-          echo "PR #${nr} (${ENTSCHEID}) auf ${branch}." >> "$GITHUB_STEP_SUMMARY"
+          # CI IMMER per workflow_dispatch anstossen (Repo-Muster fedlex-frische.yml
+          # K1): der Push oben läuft mit dem github.token des Checkouts, und
+          # dessen Events lösen keine Workflows aus (Rekursionssperre). Bis
+          # 25.9.2026 wurde bei vorhandenem PAT nicht dispatcht — ein AKTUALISIERTER
+          # PR blieb dann bis zum Wächter (~25 h) ohne Pflicht-Kontexte (A5).
+          # Beim neu eröffneten PR mit PAT läuft die CI zusätzlich über das
+          # PR-Ereignis — ein doppelter Lauf ist der Preis für eine Regel ohne Fallunterscheidung.
+          gh workflow run ci.yml --ref "$BRANCH" || echo "::warning::ci.yml-Dispatch fehlgeschlagen — der Wächter zieht nach."
+          echo "PR #${nr} (${ENTSCHEID}) auf ${BRANCH}." >> "$GITHUB_STEP_SUMMARY"

@@ -111,6 +111,7 @@ export const RECHTSSCHUTZ: Record<string, string> = {
   '.github/workflows/normen-monitor.yml': 'Normen-/Verfall-Überwachung',
   '.github/workflows/korpus-raw-release.yml': 'Korpus-Rohdaten-Release',
   '.github/workflows/turso-sync.yml': 'Datenhaltung (DB-Sync)',
+  '.github/workflows/rechtsprechung-wochenlauf.yml': 'Entscheid-Nachzug (Rechtsdaten-Kette)',
 };
 
 /** Tests zählen nie — §6.7 verlangt sie; ein Deckel darf sie nicht bestrafen. */

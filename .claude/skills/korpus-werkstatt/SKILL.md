@@ -166,13 +166,23 @@ Quellen-Priorität und PDF-Extraktionsregeln im Detail:
 Montags öffnet `rechtsprechung-wochenlauf.yml` EINEN PR `auto/rechtsprechung-*`
 (Entscheid David 25.9.2026: «Vorbereiten, Prüfung vor Live», kein Auto-Merge).
 Body = Bericht aus `scripts/rechtsprechung/wochenlauf.ts`: Zahlen je Gericht,
-Ausfälle, BS-Takedowns/-Aktualisierungen, Tore, automatische Stichprobe.
+Ausfälle, Befunde der Guards, BS-Takedowns/-Aktualisierungen, Tore (npm test,
+npm run check, Build, perf-budget, Korpus-e2e — wie merge_group), Budget,
+Frische je Gericht, Stichprobe (auch PDF). Am 3. des Monats statt dessen der
+BS-Vollabgleich (Inhalts-Hash aller BS-Dokumente). Ein offener, unberührter
+Auto-PR wird fortgeführt (main eingemergt, Vorwoche bleibt), nie dupliziert.
+Signale: ENTWURF ⇒ Draft + `::warning::` + Summary-Kopf «ENTWURF — ROT»,
+Lauf grün (Exit 0); Exit 1 nur bei Absturz oder kein Diff mit Quellen-Ausfall
+(Wächter-Issue). Ohne Risiko-Datei im Diff (public/rechtsprechung/** allein
+sperrt nicht) ⇒ Entwurf, weil check:merge-schutz dann nicht sperrte.
 
+0. **In Prüfung nehmen:** Label `in-pruefung` setzen (oder kommentieren/
+   committen) — der nächste Lauf überschreibt den PR dann nicht, er setzt aus.
 1. PR lesen. ENTWURF = etwas war rot (Grund im Kopf) — erst beheben, dann weiter.
 2. Pflicht-Gegenprüfung (Skill `gegenpruefung`, Prüfer ≠ Bau-Modell) mit den
    Linsen aus «Verifikation» oben, dazu **normKeys inhaltlich** (Remap-Zuwachs
    an Stichproben gegen den Entscheidtext, Lehre #1099). Die Auto-Stichprobe
-   ersetzt die blinde Stichprobe nicht; «nicht prüfbar» (PDF) von Hand.
+   ersetzt die blinde Stichprobe nicht; «nicht prüfbar» von Hand.
 3. Quittung `npm run gegenpruefung:ok` (Register), Verdikt-Commit auf den Zweig.
 4. Im PR-Body die Zeile `Gegenpruefung: ausstehend …` durch das Verdikt
    ersetzen — sonst bleibt `check:merge-schutz` rot (Queue-Squash liest den Body).

@@ -2,9 +2,9 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
   baenderFuer, vergleicheRegister, erkenneAusfaelle, leseBsDelta, waehleStichprobe,
-  pruefeBge, pruefeBs, pruefeGenerisch, entscheide, mergeSchutzSperrt, baueBericht, baueCommit,
-  TITEL, SCHLUSS, type RegEintrag, type BerichtDaten, type Lage,
+  pruefeBge, pruefeBs, pruefeGenerisch, entscheide, mergeSchutzSperrt, type RegEintrag, type Lage,
 } from '../../scripts/rechtsprechung/wochenlauf-kern';
+import { baueBericht, baueCommit, TITEL, SCHLUSS, type BerichtDaten } from '../../scripts/rechtsprechung/wochenlauf-bericht';
 import { bandJahrVon } from '../../scripts/normtext/bge-bandjahr';
 import { pruefePrKoerper } from '../../scripts/gegenpruefung/pr-schutz';
 import { leseGegenpruefungAusSquash } from '../../scripts/gegenpruefung/squash-trailer';
@@ -86,14 +86,14 @@ describe('waehleStichprobe', () => {
     expect(s).toHaveLength(12);
     expect(s.filter((x) => x.gericht === 'bge')).toHaveLength(5);
     expect(s.filter((x) => x.quelle === 'gerichte-bs')).toHaveLength(5);
-    expect(s.filter((x) => x.gericht !== 'bge' && x.quelle !== 'gerichte-bs')).toHaveLength(2);
+    expect(s.filter((x) => x.gericht !== 'bge' && x.quelle !== 'gerichte-bs')).toHaveLength(2); // nur 2 vorhanden
     expect(waehleStichprobe([...bge, ...ueb, ...bs], 12)).toEqual(s);
   });
-  it('übrige (meist PDF) höchstens 2, solange BGE/BS die Plätze füllen; sonst füllen sie auf', () => {
+  it('übrige (seit 25.9.2026 als PDF prüfbar) bekommen ihren Anteil reihum; fehlt eine Gruppe, füllen die anderen auf', () => {
     const viele = Array.from({ length: 20 }, (_, i) => e(`bvger_${10 + i}`, 'bvger', '2026-03-01'));
     const s = waehleStichprobe([...viele, ...bge], 12);
-    expect(s.filter((x) => x.gericht === 'bvger')).toHaveLength(2);
-    expect(s.filter((x) => x.gericht === 'bge')).toHaveLength(10);
+    expect(s.filter((x) => x.gericht === 'bvger')).toHaveLength(6);
+    expect(s.filter((x) => x.gericht === 'bge')).toHaveLength(6);
     expect(waehleStichprobe(viele, 12)).toHaveLength(12);
   });
   it('nimmt alle, wenn weniger als n neu sind', () => {
@@ -131,14 +131,15 @@ describe('Identität gegen die amtliche Seite (Wortgrenze, nie Substring — §0
     expect(pruefeGenerisch(s, e('k', 'sg_gerichte', '2026-06-19', { nummer: 'B 2024/58, B 2024/59' })).treffer).toBe(true);
     expect(pruefeGenerisch(s, e('k', 'bvger', '2026-06-19', { nummer: 'F-421/2026' })).treffer).toBeNull();
     expect(pruefeGenerisch(s, e('k', 'zh_obergericht', '2026-06-19', { nummer: 'UE24031' })).treffer).toBeNull();
-    expect(pruefeGenerisch('%PDF-1.7 … F-4218/2026', e('k', 'bstger', '2026-06-19', { nummer: 'F-4218/2026' })).treffer).toBeNull();
+    expect(pruefeGenerisch('%PDF-1.7 … F-4218/2026', e('k', 'bstger', '2026-06-19', { nummer: 'F-4218/2026' })).treffer).toBeNull(); // PDF: über pdfText
   });
 });
 
 describe('entscheide — kein Diff / Entwurf / PR', () => {
   const gruen: Lage = {
-    inhaltsDiff: true, toreRot: [], nachbauRot: [], mergeSchutzSperrt: true,
+    inhaltsDiff: true, quellenAus: [], toreRot: [], nachbauRot: [], mergeSchutzSperrt: true,
     stichprobe: [{ key: 'a', url: null, ergebnis: 'treffer', detail: '' }],
+    unerwartet: [], budgetUeber: [], vorwocheVerworfen: null,
   };
   it('kein Diff → kein PR, auch wenn etwas rot wäre', () => {
     expect(entscheide({ ...gruen, inhaltsDiff: false, toreRot: ['check:x'] }).entscheid).toBe('kein-diff');
@@ -155,13 +156,16 @@ describe('entscheide — kein Diff / Entwurf / PR', () => {
 
 describe('Merge-Schutz: «ausstehend» sperrt die Landung bis zum Verdikt', () => {
   const daten: BerichtDaten = {
-    datum: '2026-09-28', baender: { vor: 151, lauf: 152 },
+    datum: '2026-09-28', modus: 'woche', baender: { vor: 151, lauf: 152 },
+    basis: { branch: null, nr: null, vorwocheVerworfen: null },
     quellen: [{ name: 'Basel-Stadt (Delta)', befehl: 'npm run entscheide:bs', code: 1, ausfaelle: ['[bs-import] 3 Fetch-Fehler'] }],
     nachbau: [],
     vergleich: { neu: [e('c', 'bge', '2026-05-11')], entfernt: [], jeGericht: [{ gericht: 'bge', vorher: 1, nachher: 2, neuestes: '2026-05-11' }] },
-    bs: { aktualisiert: [], takedown: [] },
+    dieseWoche: { neu: 1, entfernt: 0 },
+    bs: { aktualisiert: [], takedown: [] }, bsVoll: null, guards: [],
     tore: [{ name: 'check:normkeys', code: 1, auszug: 'ROT | Schwelle 20' }],
     stichprobe: [{ key: 'c', url: 'https://search.bger.ch/x', ergebnis: 'treffer', detail: '152 V 122' }],
+    budget: [], frische: [], unerwartet: [],
     entscheid: { entscheid: 'entwurf', gruende: ['Tor rot: check:normkeys'] },
     mergeSchutzSperrt: true, laufUrl: null,
   };
