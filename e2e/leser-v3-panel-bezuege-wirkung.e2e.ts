@@ -48,6 +48,24 @@
 // Zählkette: ab 2021-01-01 → 5, bis 2023-12-31 → 3, ab 2024-01-01 → 2.
 import { test, expect, type Page } from '@playwright/test'
 import { panelAufziehen } from './helpers/panelOeffnen'
+import { rohShard, sollImFenster, sollKanten } from '../src/tests/korpusSoll.helfer'
+
+// §6.3-DEKLARATION (QS-KORPUS Einheit P «Zahl-Pins korpusrelativ», 25.9.2026):
+// die Zählkette 8 / 5 / 3 / 2 stand fest im Test und riss mit jedem neuen BGE
+// zu Art. 5 StPO (Messbericht urteils-automatik 25.9.2026, Teil A §1). Seither
+// wird sie aus den Daten des rohen Shards gezählt (korpusSoll.helfer, ohne
+// src/lib — der Zeitfilter der App wird geprüft, nicht nachgebaut; die Grenzen
+// sind Jahresgrenzen, dort decken sich Tages- und Bandjahr-Vergleich). Die
+// Aussage «von schneidet, bis grenzt WEITER ein» hängt an einer echten
+// Abstufung; die steht als Invariante: 0 < bis-Fenster < von-Fenster < alle.
+// Das geschlossene Fenster 2021–2023 ist gegen neue Bände ohnehin immun.
+const BGE_DATEN = sollKanten(rohShard('STPO'), '5', 'bge').map((k) => k.datum)
+const SOLL = {
+  alle: BGE_DATEN.length,
+  ab2021: sollImFenster(BGE_DATEN, '2021-01-01', ''),
+  fenster2021bis2023: sollImFenster(BGE_DATEN, '2021-01-01', '2023-12-31'),
+  ab2024: sollImFenster(BGE_DATEN, '2024-01-01', ''),
+}
 
 const STPO = '/gesetze/bund/STPO#art-5'
 
@@ -91,6 +109,14 @@ async function erwarteBge(page: Page, n: number): Promise<void> {
 }
 
 test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () => {
+  test('VORBEDINGUNG: die Zählkette an Art. 5 StPO ist echt abgestuft', () => {
+    expect(SOLL.fenster2021bis2023, JSON.stringify(SOLL)).toBeGreaterThan(0)
+    expect(SOLL.fenster2021bis2023, JSON.stringify(SOLL)).toBeLessThan(SOLL.ab2021)
+    expect(SOLL.ab2021, JSON.stringify(SOLL)).toBeLessThan(SOLL.alle)
+    expect(SOLL.ab2024, JSON.stringify(SOLL)).toBeGreaterThan(0)
+    expect(SOLL.ab2024, JSON.stringify(SOLL)).toBeLessThan(SOLL.alle)
+  })
+
   test('Kanton-Schnitt löscht die Bundes-Kanten nicht', async ({ page }) => {
     await panelMitFilterOeffnen(page)
     await instanzenKlappeOeffnen(page)
@@ -134,13 +160,13 @@ test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () 
 
   test('Datumsfeld «von» schneidet die Liste, «bis» grenzt weiter ein', async ({ page }) => {
     await panelMitFilterOeffnen(page)
-    await erwarteBge(page, 8)
+    await erwarteBge(page, SOLL.alle)
     await zeitKlappeOeffnen(page)
     await panel(page).locator('[data-zeit-feld="von"]').fill('2021-01-01')
-    // 5 der 8 Leitentscheide zu Art. 5 sind von 2021 oder jünger (D2/E-1).
-    await erwarteBge(page, 5)
+    // Damals (D2/E-1): 5 der 8 Leitentscheide zu Art. 5 von 2021 oder jünger.
+    await erwarteBge(page, SOLL.ab2021)
     await panel(page).locator('[data-zeit-feld="bis"]').fill('2023-12-31')
-    await erwarteBge(page, 3)
+    await erwarteBge(page, SOLL.fenster2021bis2023)
   })
 
   test('verdrehte Eingabe wird getauscht, nicht als leere Menge gedeutet', async ({ page }) => {
@@ -148,16 +174,16 @@ test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () 
     await zeitKlappeOeffnen(page)
     await panel(page).locator('[data-zeit-feld="bis"]').fill('2021-01-01')
     await panel(page).locator('[data-zeit-feld="von"]').fill('2023-12-31')
-    await erwarteBge(page, 3)
+    await erwarteBge(page, SOLL.fenster2021bis2023)
   })
 
   test('Zurücksetzen hebt den Zeitraum auf', async ({ page }) => {
     await panelMitFilterOeffnen(page)
     await zeitKlappeOeffnen(page)
     await panel(page).locator('[data-zeit-feld="von"]').fill('2024-01-01')
-    await erwarteBge(page, 2)
+    await erwarteBge(page, SOLL.ab2024)
     await page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen').click()
-    await erwarteBge(page, 8)
+    await erwarteBge(page, SOLL.alle)
     await expect(panel(page).locator('[data-zeit-feld="von"]')).toHaveValue('')
   })
 
@@ -165,11 +191,11 @@ test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () 
     await panelMitFilterOeffnen(page)
     await zeitKlappeOeffnen(page)
     await panel(page).locator('[data-zeit-feld="von"]').fill('2021-01-01')
-    await erwarteBge(page, 5)
+    await erwarteBge(page, SOLL.ab2021)
     await page.reload()
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
-    await erwarteBge(page, 5)
+    await erwarteBge(page, SOLL.ab2021)
     await zeitKlappeOeffnen(page)
     await expect(panel(page).locator('[data-zeit-feld="von"]')).toHaveValue('2021-01-01')
   })
@@ -212,7 +238,7 @@ test.describe('V3-Panel · Bezüge-Facetten/Zeit — WIRKUNG (§7b Pos. 2)', () 
     await page.reload()
     await expect(page.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
     await panelAufziehen(page)
-    await erwarteBge(page, 8)
+    await erwarteBge(page, SOLL.alle)
     await zeitKlappeOeffnen(page)
     await expect(panel(page).locator('[data-zeit-feld="von"]')).toHaveValue('')
     await expect(page.getByTitle('Zeitraum aufheben — wieder alle Entscheide zeigen')).toHaveCount(0)
