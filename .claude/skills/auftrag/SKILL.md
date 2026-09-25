@@ -234,7 +234,10 @@ offenlegen (Beleg 18.9.2026, `QS-MONITOR-ROT`: Opus widerlegte zwei von drei
 Sonnet-Bauten im ersten Durchgang — die Unabhängigkeit trug, nicht die Bau-Stufe).
 
 **Sparsamkeit** (David 8.8.2026): erst EIN Recherche-Agent, bei Lücken
-nachfassen statt parallel doppeln; Prüfaufwand skaliert mit Risiko × Umfang.
+nachfassen statt parallel doppeln; vor einer Recherche zu externen
+Vorbildern/Repos zuerst `bibliothek/INDEX.md` + `bibliothek/recherche/`
+greppen — sonst fast doppelt beauftragt (Beleg 25.9.2026: OCL-Recherche lag
+seit 2.9.2026 in `fremdquellen-sichtung-2026-09-02.md` schon vor); Prüfaufwand skaliert mit Risiko × Umfang.
 Folge-Slices derselben Fläche: bestehenden Agenten fortsetzen statt neu
 spawnen — nie für die Gegenprüfung, nie über Klassen-Grenzen, und nicht
 mehr, wenn der Agent schon schwer beladen ist (Richtwert ~300k Token: ab da
