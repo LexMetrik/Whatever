@@ -62,7 +62,12 @@ export const SEGMENT_MINDESTLAENGE = 8;
 // geändert (dl>dl, h1–h5, Tabellenzeilen-Fingerabdruck, disp-Anker-Abbildung,
 // Artikelmenge aus der HTML statt der Projektion) — jede committete Soll-Datei
 // von Version 1 ist mit der heutigen Logik nicht mehr vergleichbar.
-export const SEGMENTER_VERSION = 2;
+//
+// 3 (Gegenprüfung 2, Runde 3, 25.9.2026): Zeilen-Fingerabdruck je Zeile allein
+// aus der HTML (G1: Kopfzeilen aus, Listenmarken/Bildzellen trennen Stücke,
+// ≥ 2 Zellen), Anhang-/scope-/decl-Anker in der HTML-Menge (G3), caption als
+// Segment (G5), Zeilen-Statistik in der Soll-Datei.
+export const SEGMENTER_VERSION = 3;
 
 // ── Rolling-Hash / Fingerabdruck (NACHTRAG: Rabin-Karp, BigInt-frei) ───────
 // Zwei unabhängige Polynom-Hashes mod 2^31−1 (Mersenne-Primzahl, gängige Wahl
