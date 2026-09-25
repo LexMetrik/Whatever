@@ -1561,6 +1561,13 @@ Kind sein (`data-ergebnisplatz` am `ErgebnisBlock`). Die Reihenfolge im DOM
 zweispaltig: Einfacher Fristenrechner (eigene Zeilen-Anatomie, auch auf der
 Startseite) und das Zuständigkeits-Trio (Wizard, R12). Wächter:
 `e2e/rechner-breite.e2e.ts`.
+Nachzug (26.9.2026): Liegt kein Ergebnis vor, nimmt die FehlerBox
+(Ziff. 5, `data-fehlerbox`) den Ergebnisplatz rechts ein; steht rechts gar
+nichts, hält ein leerer gestrichelter Rahmen die Spur (ohne Text).
+Reiterleisten der Eingabespalte (`ui/Tabs`, Griff `lc-reiterleiste`)
+brechen um, statt zu schieben. Die Eckdaten-Kacheln (R4 Ziff. 1) stehen im
+`lc-kachelraster`: Spaltenzahl nach der eigenen Breite (max. 3, je
+mind. 14 rem), nicht nach dem Viewport.
 
 ### §R-4 · Ergebnisblock-Skelett (Reihenfolge fix)
 
