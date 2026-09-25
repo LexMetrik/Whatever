@@ -14,6 +14,10 @@
 // Nur die WHITELIST-Stellen dieses Bau-Schritts (Route, gesetz-leser) sind
 // hierauf umgestellt; die vier übrigen Fundstellen liegen ausserhalb der
 // Fläche dieses Schritts und sind unverändert (Nebenfund, Rückgabe).
+// NACHTRAG W2·29-WERKBANK-REST S2 (25.9.2026): `pages/Materialien`,
+// `pages/MaterialLeser` (und die Deckungsseite, die eine Textzeile ohne
+// Ablesekante trug) nutzen jetzt diesen Baustein; offen sind
+// `pages/EntscheidLeser` (REST S1) und `pages/Gesetze`.
 export function Ladeanzeige({ text, className = '' }: {
   /** Der sichtbare UND per `role="status"` angekündigte Text («Wird geladen …»). */
   text: string;
