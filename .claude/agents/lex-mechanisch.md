@@ -77,6 +77,9 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   Per Port NUR den lauschenden Prozess: `lsof -ti tcp:PORT -sTCP:LISTEN` —
   ohne `-sTCP:LISTEN` liefert lsof auch Client-Verbindungen (25.9.2026: so
   wurde ein Netzwerkdienst der Claude-App auf Port 4791 beendet, REST S1).
+  Rot-Proben fuer e2e gegen den QUELLCODE (src/), nie gegen dist/ — lokal baut
+  playwright.config vor `preview` neu (F11) und ueberschreibt eine dist-Mutation;
+  die Probe wirkt dann falsch gruen (25.9.2026, DK-09-Probe REST S5b).
   node_modules im Agent-Worktree: eigenes `npm ci --prefer-offline` (Sekunden),
   KEIN Symlink auf den Haupt-Checkout — steht der hinter origin/main, meldet
   gate falsch rot «node_modules passt nicht zu package-lock.json» (Beleg D2/#1072,
