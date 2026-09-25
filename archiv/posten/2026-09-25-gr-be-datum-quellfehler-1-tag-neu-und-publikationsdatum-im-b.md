@@ -9,3 +9,5 @@ Messung 25.9.2026 gegen den PDF-Kopf («Urteil/Entscheid … vom»): GR neu 5/6 
 Entscheid David 25.9.2026 (Chat): Variante A — Korrektur der Bestandsdaten aus dem amtlichen Urteilskopf; offen im Bauplan, keine Session angesetzt. Summe heute live falsch 20/24 (GR 6, BE 5, SG 4, AG 5).
 
 Ergänzung 25.9.2026 (OCL-Recherche `ocl-datum-herkunft.md`, Repo-Belege, Abruf 25.9.2026): GR+BE laufen über denselben Tribuna-Parser `base_tribuna.py:490-499` — er nimmt das ERSTE datumsförmige Token der Zeile, ohne zu wissen, aus welcher Spalte (Entscheiddatum/Erfasst/Rechtskraft) es stammt; passt zu +6…+62 (GR) bzw. +23…+29 Tagen (BE-Bestand). Bestätigt den Wurzel-Fix-Vorschlag oben: Datum aus dem amtlichen PDF-Kopf lesen statt OCL `decision_date` zu übernehmen.
+
+**Erledigt 2026-09-25:** QS-KORPUS Kopfdatum: Adapter kantonsEntscheiddatum + --kopfdatum-refresh, 22 Bestandsdaten korrigiert (Branch feat/qs-korpus-entscheiddatum-kopf)

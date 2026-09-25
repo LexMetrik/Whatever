@@ -14,6 +14,7 @@ import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots, berichteBezuege } from './normtext/entscheide-schreiben';
+import { kopfdatumRefreshLauf } from './normtext/entscheide-kopfdatum-refresh';
 import {
   normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
   sperrEntfernteNormKeys,
@@ -116,6 +117,10 @@ const remap = process.argv.includes('--remap');
 // Lauf mit gleichem --datum ändert nichts. Berührt AUSSCHLIESSLICH
 // `rubrum.besetzung`; `abschnitte`/`sha`/Volltext bleiben unberührt (§7 Zitattreue).
 const rubrumRefresh = process.argv.includes('--rubrum-refresh');
+// --kopfdatum-refresh (QS-KORPUS 25.9.2026): kantonale OCL-Snapshots — `datum` +
+// `zitierung` aus dem amtlichen Urteilskopf. NETZ-Lauf; Kern + Tore in
+// scripts/normtext/entscheide-kopfdatum-refresh.ts.
+const kopfdatumRefresh = process.argv.includes('--kopfdatum-refresh');
 /**
  * DEKLARIERTE Alt-Key-Bewahrung (Linse 3, 28.7.2026) — die Ratsche bekommt eine
  * Sperre.
@@ -348,6 +353,7 @@ async function eidgKorpus(ausschluss: ReadonlySet<string> = new Set()): Promise<
 const docketSlug = (d: string) => d.replace(/\s+/g, '').replace(/[^A-Za-z0-9]/g, '_');
 
 async function main() {
+  if (kopfdatumRefresh) { await kopfdatumRefreshLauf(datum); return; }
   // ── Rubrum-Satzzeichen (LM-127/LM-132) — OFFLINE, vor allen Netz-Zweigen ────
   if (rubrumRefresh) {
     const basis = ladeBestandSnapshots();

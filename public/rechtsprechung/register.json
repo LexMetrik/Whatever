@@ -1622,33 +1622,6 @@
       ]
     },
     {
-      "key": "gr_gerichte_ZR12024196",
-      "gericht": "gr_gerichte",
-      "gerichtName": "Kantonsgericht GR",
-      "gerichtstyp": "kantonal",
-      "kanton": "GR",
-      "nummer": "ZR1 2024 196",
-      "bgeReferenz": null,
-      "datum": "2026-06-26",
-      "zitierung": "Kantonsgericht GR ZR1 2024 196 vom 26.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "VVG",
-        "ZGB",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/GR/gr_gerichte/ZR12024196.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2024_196_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097621f4570664b13bf55e81fbe0fab98d0503043ceb6fa41269cf7621ed24d0d09aedc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097621f4570664b13bf55e81fbe0fab98d0503043ceb6fa41269cf7621ed24d0d09aedc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=ZR1_2024_196",
-      "fassungsToken": "13f1e7260f92e170c9a0ab54cc4c430906c7ed765513f69b99a40f32af1c0556"
-    },
-    {
       "key": "bs_appellationsgericht_VD.2025.147",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -1692,33 +1665,6 @@
           "r": "gerichtsschreiber"
         }
       ]
-    },
-    {
-      "key": "gr_gerichte_SBK202638",
-      "gericht": "gr_gerichte",
-      "gerichtName": "Kantonsgericht GR",
-      "gerichtstyp": "kantonal",
-      "kanton": "GR",
-      "nummer": "SBK 2026 38",
-      "bgeReferenz": null,
-      "datum": "2026-06-24",
-      "zitierung": "Kantonsgericht GR SBK 2026 38 vom 24.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "SCHKG",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/GR/gr_gerichte/SBK202638.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SBK_2026_38_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976100379aa5672b21024ec82fc2ce77387ea726dfb4d5385eaa4b46dfd730a6207edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976100379aa5672b21024ec82fc2ce77387ea726dfb4d5385eaa4b46dfd730a6207edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SBK_2026_38",
-      "fassungsToken": "318ef42d4d5d9b0c43741a4fa1b19f1792a9385eddea29ba4e7f55f0af789ca1"
     },
     {
       "key": "bs_appellationsgericht_BES.2026.9",
@@ -1799,60 +1745,6 @@
       ]
     },
     {
-      "key": "gr_gerichte_SV120269",
-      "gericht": "gr_gerichte",
-      "gerichtName": "Kantonsgericht GR",
-      "gerichtstyp": "kantonal",
-      "kanton": "GR",
-      "nummer": "SV1 2026 9",
-      "bgeReferenz": null,
-      "datum": "2026-06-19",
-      "zitierung": "Kantonsgericht GR SV1 2026 9 vom 19.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "privat",
-      "sprache": "de",
-      "normKeys": [
-        "BV",
-        "OR",
-        "ZGB"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/GR/gr_gerichte/SV120269.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SV1_2026_9_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976a2f9f0d97b173961a94990d08d97d18708b1d5e3c91cfe980713c01d0db51c84edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976a2f9f0d97b173961a94990d08d97d18708b1d5e3c91cfe980713c01d0db51c84edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SV1_2026_9",
-      "fassungsToken": "5371e14760cf7da2f335f1055976200d2215eae6f0f1a9381fe4be61f0871a34"
-    },
-    {
-      "key": "be_verwaltungsgericht_2002026230",
-      "gericht": "be_verwaltungsgericht",
-      "gerichtName": "Verwaltungsgericht BE",
-      "gerichtstyp": "kantonal",
-      "kanton": "BE",
-      "nummer": "200 2026 230",
-      "bgeReferenz": null,
-      "datum": "2026-06-18",
-      "zitierung": "Verwaltungsgericht BE 200 2026 230 vom 18.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "sozialversicherung",
-      "sprache": "de",
-      "normKeys": [
-        "ATSG",
-        "ATSV",
-        "KVG"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BE/be_verwaltungsgericht/2002026230.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_230_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2de547295d41afb4e0daf8f4e61b4fa70fe74af34a19ea0111df82d744c2eb5bb99849ed07289a717e8f574fc555f3167?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2de547295d41afb4e0daf8f4e61b4fa70fe74af34a19ea0111df82d744c2eb5bb99849ed07289a717e8f574fc555f3167&pathIsEncrypted=1&dossiernummer=200_2026_230",
-      "fassungsToken": "8e095b5feceb14d27ad971dcf2e60230ce346daddbf01c47825a79507a6ae73c"
-    },
-    {
       "key": "bs_appellationsgericht_VD.2025.151",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -1894,32 +1786,6 @@
           "r": "gerichtsschreiber"
         }
       ]
-    },
-    {
-      "key": "gr_gerichte_ZR2202624",
-      "gericht": "gr_gerichte",
-      "gerichtName": "Kantonsgericht GR",
-      "gerichtstyp": "kantonal",
-      "kanton": "GR",
-      "nummer": "ZR2 2026 24",
-      "bgeReferenz": null,
-      "datum": "2026-06-18",
-      "zitierung": "Kantonsgericht GR ZR2 2026 24 vom 18.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "STPO",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/GR/gr_gerichte/ZR2202624.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR2_2026_24_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609763cc95a5503373e63c556b6d5eb39bddcd7f60c309b855179531fa317ff543789edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609763cc95a5503373e63c556b6d5eb39bddcd7f60c309b855179531fa317ff543789edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=ZR2_2026_24",
-      "fassungsToken": "2aa9a4b720f50fcc3bec410080849baab5977293a16168bfd6fb64853e2d4a1a"
     },
     {
       "key": "bs_sozialversicherungsgericht_UV.2025.49",
@@ -2062,32 +1928,6 @@
           "r": "gerichtsschreiber"
         }
       ]
-    },
-    {
-      "key": "gr_gerichte_ZR1202620",
-      "gericht": "gr_gerichte",
-      "gerichtName": "Kantonsgericht GR",
-      "gerichtstyp": "kantonal",
-      "kanton": "GR",
-      "nummer": "ZR1 2026 20",
-      "bgeReferenz": null,
-      "datum": "2026-06-17",
-      "zitierung": "Kantonsgericht GR ZR1 2026 20 vom 17.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "privat",
-      "sprache": "de",
-      "normKeys": [
-        "ZGB",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/GR/gr_gerichte/ZR1202620.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2026_20_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097657aaf2885e56f7406bfd2814542097f0a67142aec037db737c27c1a2be201ec0edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097657aaf2885e56f7406bfd2814542097f0a67142aec037db737c27c1a2be201ec0edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=ZR1_2026_20",
-      "fassungsToken": "a3ccc1a2257d6aa0c8530d211f52bff81250884e7c04cd7b18eab1876e079925"
     },
     {
       "key": "bger_7B_651_2026",
@@ -2262,33 +2102,6 @@
           "r": "gerichtsschreiber"
         }
       ]
-    },
-    {
-      "key": "gr_gerichte_SR2202589",
-      "gericht": "gr_gerichte",
-      "gerichtName": "Kantonsgericht GR",
-      "gerichtstyp": "kantonal",
-      "kanton": "GR",
-      "nummer": "SR2 2025 89",
-      "bgeReferenz": null,
-      "datum": "2026-06-16",
-      "zitierung": "Kantonsgericht GR SR2 2025 89 vom 16.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "BV",
-        "EMRK",
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/GR/gr_gerichte/SR2202589.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SR2_2025_89_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976d25b9312befc40dd11de14a0abe79aa1b7ac1a663324cc45e73312765e0cdc0dedc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976d25b9312befc40dd11de14a0abe79aa1b7ac1a663324cc45e73312765e0cdc0dedc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SR2_2025_89",
-      "fassungsToken": "e4d3ef82805ffa78ab811aac97038c84333a9885a5ec0ba90289c039b15bac86"
     },
     {
       "key": "bger_12T_3_2025",
@@ -2679,6 +2492,59 @@
       ]
     },
     {
+      "key": "gr_gerichte_ZR2202624",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Kantonsgericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "ZR2 2026 24",
+      "bgeReferenz": null,
+      "datum": "2026-06-10",
+      "zitierung": "Kantonsgericht GR ZR2 2026 24 vom 10.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "STPO",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/ZR2202624.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR2_2026_24_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609763cc95a5503373e63c556b6d5eb39bddcd7f60c309b855179531fa317ff543789edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd609763cc95a5503373e63c556b6d5eb39bddcd7f60c309b855179531fa317ff543789edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=ZR2_2026_24",
+      "fassungsToken": "2aa9a4b720f50fcc3bec410080849baab5977293a16168bfd6fb64853e2d4a1a"
+    },
+    {
+      "key": "gr_gerichte_SR2202589",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Kantonsgericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "SR2 2025 89",
+      "bgeReferenz": null,
+      "datum": "2026-06-10",
+      "zitierung": "Kantonsgericht GR SR2 2025 89 vom 10.06.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BV",
+        "EMRK",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/SR2202589.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SR2_2025_89_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976d25b9312befc40dd11de14a0abe79aa1b7ac1a663324cc45e73312765e0cdc0dedc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976d25b9312befc40dd11de14a0abe79aa1b7ac1a663324cc45e73312765e0cdc0dedc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SR2_2025_89",
+      "fassungsToken": "e4d3ef82805ffa78ab811aac97038c84333a9885a5ec0ba90289c039b15bac86"
+    },
+    {
       "key": "bstger_CR_2026_4",
       "gericht": "bstger",
       "gerichtName": "Bundesstrafgericht",
@@ -2723,33 +2589,6 @@
           "r": "gerichtsschreiber"
         }
       ]
-    },
-    {
-      "key": "be_verwaltungsgericht_2002025599",
-      "gericht": "be_verwaltungsgericht",
-      "gerichtName": "Verwaltungsgericht BE",
-      "gerichtstyp": "kantonal",
-      "kanton": "BE",
-      "nummer": "200 2025 599",
-      "bgeReferenz": null,
-      "datum": "2026-06-09",
-      "zitierung": "Verwaltungsgericht BE 200 2025 599 vom 09.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "sozialversicherung",
-      "sprache": "de",
-      "normKeys": [
-        "ATSG",
-        "IVG",
-        "IVV"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BE/be_verwaltungsgericht/2002025599.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_599_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad273cf5175b9d74bc20c71c385d028f4ffed555681a00870a396a7d8b0706753cc6acdfda3df078e0ed9e37d3f8c27a306?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad273cf5175b9d74bc20c71c385d028f4ffed555681a00870a396a7d8b0706753cc6acdfda3df078e0ed9e37d3f8c27a306&pathIsEncrypted=1&dossiernummer=200_2025_599",
-      "fassungsToken": "605713b41ca552023732ee2cf950c97aeb295448f14b0732a0cc1abdbeb4fae8"
     },
     {
       "key": "bs_appellationsgericht_AUS.2026.49",
@@ -2903,34 +2742,6 @@
       ]
     },
     {
-      "key": "be_verwaltungsgericht_2002025648",
-      "gericht": "be_verwaltungsgericht",
-      "gerichtName": "Verwaltungsgericht BE",
-      "gerichtstyp": "kantonal",
-      "kanton": "BE",
-      "nummer": "200 2025 648",
-      "bgeReferenz": null,
-      "datum": "2026-06-08",
-      "zitierung": "Verwaltungsgericht BE 200 2025 648 vom 08.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "ATSG",
-        "ELG",
-        "ELV",
-        "ZGB"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BE/be_verwaltungsgericht/2002025648.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_648_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2200dd9d00c8338aa730b8170927460030d06756aab0f121e04b1e893433caabfcd89db9552e737c2640484c7b7a92384?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2200dd9d00c8338aa730b8170927460030d06756aab0f121e04b1e893433caabfcd89db9552e737c2640484c7b7a92384&pathIsEncrypted=1&dossiernummer=200_2025_648",
-      "fassungsToken": "22a62a4f0a158837cc385a195fdbf9b3a2a448e1dd9f5d6a40c71969ce8a253b"
-    },
-    {
       "key": "bs_appellationsgericht_AUS.2026.47",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -3031,33 +2842,6 @@
           "r": "gerichtsschreiber"
         }
       ]
-    },
-    {
-      "key": "be_verwaltungsgericht_200202620",
-      "gericht": "be_verwaltungsgericht",
-      "gerichtName": "Verwaltungsgericht BE",
-      "gerichtstyp": "kantonal",
-      "kanton": "BE",
-      "nummer": "200 2026 20",
-      "bgeReferenz": null,
-      "datum": "2026-06-04",
-      "zitierung": "Verwaltungsgericht BE 200 2026 20 vom 04.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "sozialversicherung",
-      "sprache": "de",
-      "normKeys": [
-        "ATSG",
-        "IVG",
-        "IVV"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BE/be_verwaltungsgericht/200202620.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_20_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b70027fc673ce50b6633d8cce7e747aebf12265130a4a6220b3aa8cf261e9c88946931ea66542d72baa82353eeea6717?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b70027fc673ce50b6633d8cce7e747aebf12265130a4a6220b3aa8cf261e9c88946931ea66542d72baa82353eeea6717&pathIsEncrypted=1&dossiernummer=200_2026_20",
-      "fassungsToken": "d0e7af2f67ae4ac8b3455be93c97946fbe63a73e19d1b57e71ad7d1f3ec97b69"
     },
     {
       "key": "bs_appellationsgericht_AUS.2026.48",
@@ -3249,31 +3033,6 @@
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79764&Template=search_result_document.html",
       "fassungsToken": "2026-07-25"
-    },
-    {
-      "key": "be_verwaltungsgericht_200202645",
-      "gericht": "be_verwaltungsgericht",
-      "gerichtName": "Verwaltungsgericht BE",
-      "gerichtstyp": "kantonal",
-      "kanton": "BE",
-      "nummer": "200 2026 45",
-      "bgeReferenz": null,
-      "datum": "2026-06-03",
-      "zitierung": "Verwaltungsgericht BE 200 2026 45 vom 03.06.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "BV"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/BE/be_verwaltungsgericht/200202645.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_45_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b9597f119a514f786990aec4297f1a1805f21c4269f9aa825315f3dd5a0d86a1662fdedfac158674c698a9c72224d159?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b9597f119a514f786990aec4297f1a1805f21c4269f9aa825315f3dd5a0d86a1662fdedfac158674c698a9c72224d159&pathIsEncrypted=1&dossiernummer=200_2026_45",
-      "fassungsToken": "74f041d9fba6852994627dc234b436d02b240009cdf2a2e464e7a6adeed94e22"
     },
     {
       "key": "bs_appellationsgericht_VD.2025.97",
@@ -3688,6 +3447,33 @@
       ]
     },
     {
+      "key": "be_verwaltungsgericht_2002026230",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2026 230",
+      "bgeReferenz": null,
+      "datum": "2026-05-20",
+      "zitierung": "Verwaltungsgericht BE 200 2026 230 vom 20.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "ATSV",
+        "KVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002026230.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_230_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2de547295d41afb4e0daf8f4e61b4fa70fe74af34a19ea0111df82d744c2eb5bb99849ed07289a717e8f574fc555f3167?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2de547295d41afb4e0daf8f4e61b4fa70fe74af34a19ea0111df82d744c2eb5bb99849ed07289a717e8f574fc555f3167&pathIsEncrypted=1&dossiernummer=200_2026_230",
+      "fassungsToken": "8e095b5feceb14d27ad971dcf2e60230ce346daddbf01c47825a79507a6ae73c"
+    },
+    {
       "key": "bstger_SK_2025_57",
       "gericht": "bstger",
       "gerichtName": "Bundesstrafgericht",
@@ -4059,6 +3845,60 @@
       ]
     },
     {
+      "key": "be_verwaltungsgericht_2002025599",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2025 599",
+      "bgeReferenz": null,
+      "datum": "2026-05-12",
+      "zitierung": "Verwaltungsgericht BE 200 2025 599 vom 12.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "IVG",
+        "IVV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025599.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_599_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad273cf5175b9d74bc20c71c385d028f4ffed555681a00870a396a7d8b0706753cc6acdfda3df078e0ed9e37d3f8c27a306?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad273cf5175b9d74bc20c71c385d028f4ffed555681a00870a396a7d8b0706753cc6acdfda3df078e0ed9e37d3f8c27a306&pathIsEncrypted=1&dossiernummer=200_2025_599",
+      "fassungsToken": "605713b41ca552023732ee2cf950c97aeb295448f14b0732a0cc1abdbeb4fae8"
+    },
+    {
+      "key": "be_verwaltungsgericht_200202620",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2026 20",
+      "bgeReferenz": null,
+      "datum": "2026-05-12",
+      "zitierung": "Verwaltungsgericht BE 200 2026 20 vom 12.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "IVG",
+        "IVV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/200202620.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_20_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b70027fc673ce50b6633d8cce7e747aebf12265130a4a6220b3aa8cf261e9c88946931ea66542d72baa82353eeea6717?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b70027fc673ce50b6633d8cce7e747aebf12265130a4a6220b3aa8cf261e9c88946931ea66542d72baa82353eeea6717&pathIsEncrypted=1&dossiernummer=200_2026_20",
+      "fassungsToken": "d0e7af2f67ae4ac8b3455be93c97946fbe63a73e19d1b57e71ad7d1f3ec97b69"
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.38",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -4386,6 +4226,34 @@
       ]
     },
     {
+      "key": "be_verwaltungsgericht_2002025648",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2025 648",
+      "bgeReferenz": null,
+      "datum": "2026-05-11",
+      "zitierung": "Verwaltungsgericht BE 200 2025 648 vom 11.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "ATSG",
+        "ELG",
+        "ELV",
+        "ZGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/2002025648.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_648_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2200dd9d00c8338aa730b8170927460030d06756aab0f121e04b1e893433caabfcd89db9552e737c2640484c7b7a92384?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2200dd9d00c8338aa730b8170927460030d06756aab0f121e04b1e893433caabfcd89db9552e737c2640484c7b7a92384&pathIsEncrypted=1&dossiernummer=200_2025_648",
+      "fassungsToken": "22a62a4f0a158837cc385a195fdbf9b3a2a448e1dd9f5d6a40c71969ce8a253b"
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.41",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -4616,6 +4484,31 @@
       ]
     },
     {
+      "key": "be_verwaltungsgericht_200202645",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "nummer": "200 2026 45",
+      "bgeReferenz": null,
+      "datum": "2026-05-07",
+      "zitierung": "Verwaltungsgericht BE 200 2026 45 vom 07.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/BE/be_verwaltungsgericht/200202645.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2026_45_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b9597f119a514f786990aec4297f1a1805f21c4269f9aa825315f3dd5a0d86a1662fdedfac158674c698a9c72224d159?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad2b9597f119a514f786990aec4297f1a1805f21c4269f9aa825315f3dd5a0d86a1662fdedfac158674c698a9c72224d159&pathIsEncrypted=1&dossiernummer=200_2026_45",
+      "fassungsToken": "74f041d9fba6852994627dc234b436d02b240009cdf2a2e464e7a6adeed94e22"
+    },
+    {
       "key": "bs_appellationsgericht_VD.2025.172",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -4823,6 +4716,33 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "gr_gerichte_SV120269",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Kantonsgericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "SV1 2026 9",
+      "bgeReferenz": null,
+      "datum": "2026-05-04",
+      "zitierung": "Kantonsgericht GR SV1 2026 9 vom 04.05.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BV",
+        "OR",
+        "ZGB"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/SV120269.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SV1_2026_9_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976a2f9f0d97b173961a94990d08d97d18708b1d5e3c91cfe980713c01d0db51c84edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976a2f9f0d97b173961a94990d08d97d18708b1d5e3c91cfe980713c01d0db51c84edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SV1_2026_9",
+      "fassungsToken": "5371e14760cf7da2f335f1055976200d2215eae6f0f1a9381fe4be61f0871a34"
     },
     {
       "key": "bs_appellationsgericht_BES.2026.6",
@@ -5153,6 +5073,33 @@
       ]
     },
     {
+      "key": "gr_gerichte_SBK202638",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Kantonsgericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "SBK 2026 38",
+      "bgeReferenz": null,
+      "datum": "2026-04-28",
+      "zitierung": "Kantonsgericht GR SBK 2026 38 vom 28.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/SBK202638.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/SBK_2026_38_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976100379aa5672b21024ec82fc2ce77387ea726dfb4d5385eaa4b46dfd730a6207edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd60976100379aa5672b21024ec82fc2ce77387ea726dfb4d5385eaa4b46dfd730a6207edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=SBK_2026_38",
+      "fassungsToken": "318ef42d4d5d9b0c43741a4fa1b19f1792a9385eddea29ba4e7f55f0af789ca1"
+    },
+    {
       "key": "bs_sozialversicherungsgericht_AL.2025.19",
       "gericht": "bs_sozialversicherungsgericht",
       "gerichtName": "Sozialversicherungsgericht BS",
@@ -5468,6 +5415,33 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "gr_gerichte_ZR12024196",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Kantonsgericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "ZR1 2024 196",
+      "bgeReferenz": null,
+      "datum": "2026-04-25",
+      "zitierung": "Kantonsgericht GR ZR1 2024 196 vom 25.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "VVG",
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/ZR12024196.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2024_196_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097621f4570664b13bf55e81fbe0fab98d0503043ceb6fa41269cf7621ed24d0d09aedc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097621f4570664b13bf55e81fbe0fab98d0503043ceb6fa41269cf7621ed24d0d09aedc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=ZR1_2024_196",
+      "fassungsToken": "13f1e7260f92e170c9a0ab54cc4c430906c7ed765513f69b99a40f32af1c0556"
     },
     {
       "key": "zh_obergericht_PS260110",
@@ -6023,6 +5997,32 @@
       "quelle": "opencaselaw",
       "quelleUrl": "https://www.gerichte-zh.ch/entscheide/entscheide-drucken.html?tx_frpentscheidsammlungextended_pi3[entscheidDrucken]=40845",
       "fassungsToken": "93ec6a54bf7ca8198ac0822e11cc34dbe75e96bd4b92e71a99c8d167022de769"
+    },
+    {
+      "key": "gr_gerichte_ZR1202620",
+      "gericht": "gr_gerichte",
+      "gerichtName": "Kantonsgericht GR",
+      "gerichtstyp": "kantonal",
+      "kanton": "GR",
+      "nummer": "ZR1 2026 20",
+      "bgeReferenz": null,
+      "datum": "2026-04-16",
+      "zitierung": "Kantonsgericht GR ZR1 2026 20 vom 16.04.2026",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/GR/gr_gerichte/ZR1202620.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://entscheidsuche.gr.ch/tribunavtplus/ServletDownload/ZR1_2026_20_ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097657aaf2885e56f7406bfd2814542097f0a67142aec037db737c27c1a2be201ec0edc1bc0425c099a9488a18062b80f8de?path=ea3b182beef59b8c349185d9526f43b08ca2264ab0e2c0acca19b59adcd6097657aaf2885e56f7406bfd2814542097f0a67142aec037db737c27c1a2be201ec0edc1bc0425c099a9488a18062b80f8de&pathIsEncrypted=1&dossiernummer=ZR1_2026_20",
+      "fassungsToken": "a3ccc1a2257d6aa0c8530d211f52bff81250884e7c04cd7b18eab1876e079925"
     },
     {
       "key": "bs_appellationsgericht_AUS.2026.30",
@@ -15215,31 +15215,6 @@
       ]
     },
     {
-      "key": "sg_gerichte_B2024_58_B2024_59",
-      "gericht": "sg_gerichte",
-      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
-      "gerichtstyp": "kantonal",
-      "kanton": "SG",
-      "nummer": "B 2024/58, B 2024/59",
-      "bgeReferenz": null,
-      "datum": "2026-01-14",
-      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2024/58, B 2024/59 vom 14.01.2026",
-      "leitcharakter": "routine",
-      "regesteVorhanden": true,
-      "regesteKurz": "Steuerbefreiung einer juristischen Person, die Kultuszwecke verfolgt. Art. 80 Abs. 1 lit. h StG und Art. 56 lit. h DBG. Es liegt keine Zweckentfremdung von Mitteln durch die Stiftung vor. Eine Vermögensanlage und -verwaltung ist kein…",
-      "sachgebiet": "steuern",
-      "sprache": "de",
-      "normKeys": [
-        "DBG"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/SG/sg_gerichte/B2024_58_B2024_59.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13355&type=1563347022&cHash=7e76ba1bd641b245bb3fca73c9547024",
-      "fassungsToken": "21b63f4ca126259e053bf491a98863f7f927cb9b0d51e239f55de59dc628b6c4"
-    },
-    {
       "key": "bs_appellationsgericht_SB.2025.16",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -17761,31 +17736,6 @@
       ]
     },
     {
-      "key": "sg_gerichte_B2023_225",
-      "gericht": "sg_gerichte",
-      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
-      "gerichtstyp": "kantonal",
-      "kanton": "SG",
-      "nummer": "B 2023/225",
-      "bgeReferenz": null,
-      "datum": "2025-12-22",
-      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2023/225 vom 22.12.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": true,
-      "regesteKurz": "Gesundheitsrecht, Notfalldienstersatzabgabe, Art. 127 Abs. 1 BV, Art. 40 Ingress und Bst. g zweiter Satzteil MedBG, Art. 50bis ff. GesG, Art. 13 VMB. Da der Kreis der Notfalldienstersatzabgabepflichtigen im kantonalen Gesetz nicht…",
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "BV"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/SG/sg_gerichte/B2023_225.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13379&type=1563347022&cHash=467d04e46c0f7494d2c100144967c506",
-      "fassungsToken": "3d2fcda5eaae2d3127e85eb7eaa0aa3c236ebb4fd54f4e7848cf48799c3eca17"
-    },
-    {
       "key": "bge_152_II_437",
       "gericht": "bge",
       "gerichtName": "Bundesgericht",
@@ -18998,35 +18948,6 @@
         "ansicht": "voll",
         "bgeReferenz": "152 III 137"
       }
-    },
-    {
-      "key": "ag_gerichte_HOR_2024_19",
-      "gericht": "ag_gerichte",
-      "gerichtName": "Obergericht AG",
-      "gerichtstyp": "kantonal",
-      "kanton": "AG",
-      "nummer": "HOR.2024.19",
-      "bgeReferenz": null,
-      "datum": "2025-12-12",
-      "zitierung": "Obergericht AG HOR.2024.19 vom 12.12.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "privat",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "MWSTG",
-        "OR",
-        "ZGB",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/AG/ag_gerichte/HOR_2024_19.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/12143",
-      "fassungsToken": "8c5dd7043deaef09d04c7442356c75a9e32e478dc64f05d014e5c15e595dae13"
     },
     {
       "key": "bs_appellationsgericht_VD.2025.45",
@@ -20745,6 +20666,35 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "ag_gerichte_HOR_2024_19",
+      "gericht": "ag_gerichte",
+      "gerichtName": "Obergericht AG",
+      "gerichtstyp": "kantonal",
+      "kanton": "AG",
+      "nummer": "HOR.2024.19",
+      "bgeReferenz": null,
+      "datum": "2025-12-02",
+      "zitierung": "Obergericht AG HOR.2024.19 vom 02.12.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "MWSTG",
+        "OR",
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/AG/ag_gerichte/HOR_2024_19.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/12143",
+      "fassungsToken": "8c5dd7043deaef09d04c7442356c75a9e32e478dc64f05d014e5c15e595dae13"
     },
     {
       "key": "bs_appellationsgericht_AUS.2025.132",
@@ -26050,32 +26000,6 @@
       ]
     },
     {
-      "key": "sg_gerichte_UV2025_14",
-      "gericht": "sg_gerichte",
-      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
-      "gerichtstyp": "kantonal",
-      "kanton": "SG",
-      "nummer": "UV 2025/14",
-      "bgeReferenz": null,
-      "datum": "2025-10-23",
-      "zitierung": "Verwaltungs-/Versicherungsgericht SG UV 2025/14 vom 23.10.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": true,
-      "regesteKurz": "Art. 6 Abs. 1 UVG; Art. 11 UVV; Leistungspflicht der Unfallversicherung für Rückfall/Spätfolge einer Handgelenksverletzung; es bestehen mindestens geringe Zweifel an der versicherungsmedizinischen Beurteilung, sodass der Sachverhalt als…",
-      "sachgebiet": "sozialversicherung",
-      "sprache": "de",
-      "normKeys": [
-        "UVG",
-        "UVV"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/SG/sg_gerichte/UV2025_14.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=14102&type=1563347022&cHash=b557dcc63ac3556f9bf1d29f05486b6f",
-      "fassungsToken": "056ccd8c9e87da83814cc78d670e5930e12e779295b4aecda44130f512529b76"
-    },
-    {
       "key": "bge_152_IV_189",
       "gericht": "bge",
       "gerichtName": "Bundesgericht",
@@ -26450,31 +26374,30 @@
       }
     },
     {
-      "key": "ag_gerichte_XBE_2025_10",
-      "gericht": "ag_gerichte",
-      "gerichtName": "Obergericht AG",
+      "key": "sg_gerichte_UV2025_14",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
       "gerichtstyp": "kantonal",
-      "kanton": "AG",
-      "nummer": "XBE.2025.10",
+      "kanton": "SG",
+      "nummer": "UV 2025/14",
       "bgeReferenz": null,
       "datum": "2025-10-21",
-      "zitierung": "Obergericht AG XBE.2025.10 vom 21.10.2025",
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG UV 2025/14 vom 21.10.2025",
       "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "privat",
+      "regesteVorhanden": true,
+      "regesteKurz": "Art. 6 Abs. 1 UVG; Art. 11 UVV; Leistungspflicht der Unfallversicherung für Rückfall/Spätfolge einer Handgelenksverletzung; es bestehen mindestens geringe Zweifel an der versicherungsmedizinischen Beurteilung, sodass der Sachverhalt als…",
+      "sachgebiet": "sozialversicherung",
       "sprache": "de",
       "normKeys": [
-        "STPO",
-        "ZGB",
-        "ZPO"
+        "UVG",
+        "UVV"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
-      "datei": "kanton/AG/ag_gerichte/XBE_2025_10.json",
+      "datei": "kanton/SG/sg_gerichte/UV2025_14.json",
       "quelle": "opencaselaw",
-      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11490",
-      "fassungsToken": "cf32d23c284d4acaff1baecec9f7b6d408e24f4b2ec8912dcb6021071e6fba32"
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=14102&type=1563347022&cHash=b557dcc63ac3556f9bf1d29f05486b6f",
+      "fassungsToken": "056ccd8c9e87da83814cc78d670e5930e12e779295b4aecda44130f512529b76"
     },
     {
       "key": "bs_appellationsgericht_BEZ.2025.60",
@@ -28159,31 +28082,6 @@
           "r": "vorsitz"
         }
       ]
-    },
-    {
-      "key": "sg_gerichte_B2024_164",
-      "gericht": "sg_gerichte",
-      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
-      "gerichtstyp": "kantonal",
-      "kanton": "SG",
-      "nummer": "B 2024/164",
-      "bgeReferenz": null,
-      "datum": "2025-10-08",
-      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2024/164 vom 08.10.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": true,
-      "regesteKurz": "Ausländerrecht, Scheinehe, Art. 42Abs. 1 i.V.m. Art. 51 Abs. 1 lit. a AIG. Bedeutung des strafrechtlichen nemo-tenetur-Grundsatzes im ausländerrechtlichen Verfahren, wo die Mitwirkungspflicht gilt (E. 3). Ob eine Scheinehe vorliegt,…",
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "AIG"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/SG/sg_gerichte/B2024_164.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13619&type=1563347022&cHash=4015e66c8d14c7d3dad7d391cf395604",
-      "fassungsToken": "7827ac374cd6d8755d633fb2dc66e96df3d430010e21123d724eb8002501e3ef"
     },
     {
       "key": "bs_appellationsgericht_BEZ.2025.66",
@@ -31740,32 +31638,6 @@
       ]
     },
     {
-      "key": "sg_gerichte_B2025_59",
-      "gericht": "sg_gerichte",
-      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
-      "gerichtstyp": "kantonal",
-      "kanton": "SG",
-      "nummer": "B 2025/59",
-      "bgeReferenz": null,
-      "datum": "2025-09-15",
-      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2025/59 vom 15.09.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": true,
-      "regesteKurz": "Ausländerrecht, Widerruf der Aufenthaltsbewilligung, nachehelicher Härtefall aus zweiter Ehe (Art. 50 Abs. 1 AIG), Recht auf Familienleben (Art. 8 EMRK). Die Wegweisung des Vaters zu seinen drei in der Schweiz aufenthaltsberechtigten…",
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "AIG",
-        "EMRK"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/SG/sg_gerichte/B2025_59.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=14217&type=1563347022&cHash=439d85855c64180665f5ef18ecdc2954",
-      "fassungsToken": "1f0ec474e63d09221a65e1af3492c6400bb725f966f42f1a62a563a46e435253"
-    },
-    {
       "key": "bs_appellationsgericht_BES.2024.88",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -32953,34 +32825,6 @@
       }
     },
     {
-      "key": "ag_gerichte_SST_2024_213",
-      "gericht": "ag_gerichte",
-      "gerichtName": "Obergericht AG",
-      "gerichtstyp": "kantonal",
-      "kanton": "AG",
-      "nummer": "SST.2024.213",
-      "bgeReferenz": null,
-      "datum": "2025-09-09",
-      "zitierung": "Obergericht AG SST.2024.213 vom 09.09.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "OR",
-        "STGB",
-        "STPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/AG/ag_gerichte/SST_2024_213.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11610",
-      "fassungsToken": "7c83d44f4c33e1a7391056dc991e0ad47bd348ab7a19b4a0c183392bc1ea2fe5"
-    },
-    {
       "key": "bs_appellationsgericht_BES.2024.109",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -33647,6 +33491,61 @@
       }
     },
     {
+      "key": "ag_gerichte_ZSU_2025_181",
+      "gericht": "ag_gerichte",
+      "gerichtName": "Obergericht AG",
+      "gerichtstyp": "kantonal",
+      "kanton": "AG",
+      "nummer": "ZSU.2025.181",
+      "bgeReferenz": null,
+      "datum": "2025-09-05",
+      "zitierung": "Obergericht AG ZSU.2025.181 vom 05.09.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "SCHKG",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/AG/ag_gerichte/ZSU_2025_181.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11419",
+      "fassungsToken": "3e4ce79349500a7b0b242878f09d932a207aaaea3918bb5addfee3b649726344"
+    },
+    {
+      "key": "ag_gerichte_SST_2024_213",
+      "gericht": "ag_gerichte",
+      "gerichtName": "Obergericht AG",
+      "gerichtstyp": "kantonal",
+      "kanton": "AG",
+      "nummer": "SST.2024.213",
+      "bgeReferenz": null,
+      "datum": "2025-09-04",
+      "zitierung": "Obergericht AG SST.2024.213 vom 04.09.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGG",
+        "OR",
+        "STGB",
+        "STPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/AG/ag_gerichte/SST_2024_213.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11610",
+      "fassungsToken": "7c83d44f4c33e1a7391056dc991e0ad47bd348ab7a19b4a0c183392bc1ea2fe5"
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2025.102",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -33992,33 +33891,6 @@
         "ansicht": "voll",
         "bgeReferenz": "152 III 127"
       }
-    },
-    {
-      "key": "ag_gerichte_ZSU_2025_181",
-      "gericht": "ag_gerichte",
-      "gerichtName": "Obergericht AG",
-      "gerichtstyp": "kantonal",
-      "kanton": "AG",
-      "nummer": "ZSU.2025.181",
-      "bgeReferenz": null,
-      "datum": "2025-09-03",
-      "zitierung": "Obergericht AG ZSU.2025.181 vom 03.09.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "oeffentlich",
-      "sprache": "de",
-      "normKeys": [
-        "BGG",
-        "SCHKG",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/AG/ag_gerichte/ZSU_2025_181.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11419",
-      "fassungsToken": "3e4ce79349500a7b0b242878f09d932a207aaaea3918bb5addfee3b649726344"
     },
     {
       "key": "bs_appellationsgericht_AUS.2025.101",
@@ -35404,34 +35276,6 @@
       ]
     },
     {
-      "key": "ag_gerichte_ZOR_2024_64",
-      "gericht": "ag_gerichte",
-      "gerichtName": "Obergericht AG",
-      "gerichtstyp": "kantonal",
-      "kanton": "AG",
-      "nummer": "ZOR.2024.64",
-      "bgeReferenz": null,
-      "datum": "2025-08-22",
-      "zitierung": "Obergericht AG ZOR.2024.64 vom 22.08.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": false,
-      "regesteKurz": null,
-      "sachgebiet": "privat",
-      "sprache": "de",
-      "normKeys": [
-        "AHVG",
-        "BGG",
-        "ZGB",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/AG/ag_gerichte/ZOR_2024_64.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11635",
-      "fassungsToken": "8b2eba92d3e75fb60304482702a461ab7b917e09730227b35ab4e225fa3cf1b2"
-    },
-    {
       "key": "bs_appellationsgericht_AUS.2025.96",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -35551,6 +35395,33 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "ag_gerichte_XBE_2025_10",
+      "gericht": "ag_gerichte",
+      "gerichtName": "Obergericht AG",
+      "gerichtstyp": "kantonal",
+      "kanton": "AG",
+      "nummer": "XBE.2025.10",
+      "bgeReferenz": null,
+      "datum": "2025-08-21",
+      "zitierung": "Obergericht AG XBE.2025.10 vom 21.08.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "STPO",
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/AG/ag_gerichte/XBE_2025_10.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11490",
+      "fassungsToken": "cf32d23c284d4acaff1baecec9f7b6d408e24f4b2ec8912dcb6021071e6fba32"
     },
     {
       "key": "bge_152_III_103",
@@ -35752,6 +35623,34 @@
         "ansicht": "voll",
         "bgeReferenz": "152 IV 73"
       }
+    },
+    {
+      "key": "ag_gerichte_ZOR_2024_64",
+      "gericht": "ag_gerichte",
+      "gerichtName": "Obergericht AG",
+      "gerichtstyp": "kantonal",
+      "kanton": "AG",
+      "nummer": "ZOR.2024.64",
+      "bgeReferenz": null,
+      "datum": "2025-08-20",
+      "zitierung": "Obergericht AG ZOR.2024.64 vom 20.08.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "privat",
+      "sprache": "de",
+      "normKeys": [
+        "AHVG",
+        "BGG",
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/AG/ag_gerichte/ZOR_2024_64.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/11635",
+      "fassungsToken": "8b2eba92d3e75fb60304482702a461ab7b917e09730227b35ab4e225fa3cf1b2"
     },
     {
       "key": "bs_sozialversicherungsgericht_IV.2025.31",
@@ -38801,6 +38700,34 @@
       }
     },
     {
+      "key": "sg_gerichte_BV2024_21",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "nummer": "BV 2024/21",
+      "bgeReferenz": null,
+      "datum": "2025-08-04",
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG BV 2024/21 vom 04.08.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Art. 122 ff. ZGB; Art. 281 Abs. 3 ZPO; Art. 22c FZG. Vorsorgeausgleich (Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025, BV 2024/21).",
+      "sachgebiet": "sozialversicherung",
+      "sprache": "de",
+      "normKeys": [
+        "BVG",
+        "FZG",
+        "ZGB",
+        "ZPO"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/SG/sg_gerichte/BV2024_21.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13971&type=1563347022&cHash=d17b83f01a0ea19c90f1d41b5743d673",
+      "fassungsToken": "f56d05be74ca45dc512de38d09e0d7c5a213450405aadb76e9f9fce248d851f8"
+    },
+    {
       "key": "bge_151_IV_297",
       "gericht": "bge",
       "gerichtName": "Bundesgericht",
@@ -41279,34 +41206,6 @@
       }
     },
     {
-      "key": "sg_gerichte_BV2024_21",
-      "gericht": "sg_gerichte",
-      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
-      "gerichtstyp": "kantonal",
-      "kanton": "SG",
-      "nummer": "BV 2024/21",
-      "bgeReferenz": null,
-      "datum": "2025-07-04",
-      "zitierung": "Verwaltungs-/Versicherungsgericht SG BV 2024/21 vom 04.07.2025",
-      "leitcharakter": "routine",
-      "regesteVorhanden": true,
-      "regesteKurz": "Art. 122 ff. ZGB; Art. 281 Abs. 3 ZPO; Art. 22c FZG. Vorsorgeausgleich (Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025, BV 2024/21).",
-      "sachgebiet": "sozialversicherung",
-      "sprache": "de",
-      "normKeys": [
-        "BVG",
-        "FZG",
-        "ZGB",
-        "ZPO"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "kanton/SG/sg_gerichte/BV2024_21.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13971&type=1563347022&cHash=d17b83f01a0ea19c90f1d41b5743d673",
-      "fassungsToken": "f56d05be74ca45dc512de38d09e0d7c5a213450405aadb76e9f9fce248d851f8"
-    },
-    {
       "key": "bs_appellationsgericht_AUS.2025.72",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -41502,6 +41401,32 @@
         "ansicht": "voll",
         "bgeReferenz": "152 I 95"
       }
+    },
+    {
+      "key": "sg_gerichte_B2025_59",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "nummer": "B 2025/59",
+      "bgeReferenz": null,
+      "datum": "2025-07-02",
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2025/59 vom 02.07.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Ausländerrecht, Widerruf der Aufenthaltsbewilligung, nachehelicher Härtefall aus zweiter Ehe (Art. 50 Abs. 1 AIG), Recht auf Familienleben (Art. 8 EMRK). Die Wegweisung des Vaters zu seinen drei in der Schweiz aufenthaltsberechtigten…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG",
+        "EMRK"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/SG/sg_gerichte/B2025_59.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=14217&type=1563347022&cHash=439d85855c64180665f5ef18ecdc2954",
+      "fassungsToken": "1f0ec474e63d09221a65e1af3492c6400bb725f966f42f1a62a563a46e435253"
     },
     {
       "key": "bs_appellationsgericht_BES.2025.45",
@@ -63418,6 +63343,31 @@
       ]
     },
     {
+      "key": "sg_gerichte_B2024_164",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "nummer": "B 2024/164",
+      "bgeReferenz": null,
+      "datum": "2025-02-06",
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2024/164 vom 06.02.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Ausländerrecht, Scheinehe, Art. 42Abs. 1 i.V.m. Art. 51 Abs. 1 lit. a AIG. Bedeutung des strafrechtlichen nemo-tenetur-Grundsatzes im ausländerrechtlichen Verfahren, wo die Mitwirkungspflicht gilt (E. 3). Ob eine Scheinehe vorliegt,…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "AIG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/SG/sg_gerichte/B2024_164.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13619&type=1563347022&cHash=4015e66c8d14c7d3dad7d391cf395604",
+      "fassungsToken": "7827ac374cd6d8755d633fb2dc66e96df3d430010e21123d724eb8002501e3ef"
+    },
+    {
       "key": "bge_151_III_212",
       "gericht": "bge",
       "gerichtName": "Bundesgericht",
@@ -64497,6 +64447,31 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "sg_gerichte_B2024_58_B2024_59",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "nummer": "B 2024/58, B 2024/59",
+      "bgeReferenz": null,
+      "datum": "2025-02-03",
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2024/58, B 2024/59 vom 03.02.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Steuerbefreiung einer juristischen Person, die Kultuszwecke verfolgt. Art. 80 Abs. 1 lit. h StG und Art. 56 lit. h DBG. Es liegt keine Zweckentfremdung von Mitteln durch die Stiftung vor. Eine Vermögensanlage und -verwaltung ist kein…",
+      "sachgebiet": "steuern",
+      "sprache": "de",
+      "normKeys": [
+        "DBG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/SG/sg_gerichte/B2024_58_B2024_59.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13355&type=1563347022&cHash=7e76ba1bd641b245bb3fca73c9547024",
+      "fassungsToken": "21b63f4ca126259e053bf491a98863f7f927cb9b0d51e239f55de59dc628b6c4"
     },
     {
       "key": "bge_151_III_377",
@@ -68879,6 +68854,31 @@
           "r": "gerichtsschreiber"
         }
       ]
+    },
+    {
+      "key": "sg_gerichte_B2023_225",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "nummer": "B 2023/225",
+      "bgeReferenz": null,
+      "datum": "2025-01-08",
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2023/225 vom 08.01.2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": true,
+      "regesteKurz": "Gesundheitsrecht, Notfalldienstersatzabgabe, Art. 127 Abs. 1 BV, Art. 40 Ingress und Bst. g zweiter Satzteil MedBG, Art. 50bis ff. GesG, Art. 13 VMB. Da der Kreis der Notfalldienstersatzabgabepflichtigen im kantonalen Gesetz nicht…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BV"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "kanton/SG/sg_gerichte/B2023_225.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13379&type=1563347022&cHash=467d04e46c0f7494d2c100144967c506",
+      "fassungsToken": "3d2fcda5eaae2d3127e85eb7eaa0aa3c236ebb4fd54f4e7848cf48799c3eca17"
     },
     {
       "key": "bge_151_V_24",

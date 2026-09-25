@@ -9,3 +9,5 @@ Das OCL-decision_date ist bei sg_gerichte das Datum des nachfolgenden BGer-Urtei
 Entscheid David 25.9.2026 (Chat): Variante A — Korrektur der Bestandsdaten aus dem amtlichen Urteilskopf; offen im Bauplan, keine Session angesetzt. Summe heute live falsch 20/24 (GR 6, BE 5, SG 4, AG 5).
 
 Ergänzung 25.9.2026 (OCL-Recherche `ocl-datum-herkunft.md`, Repo-Belege, Abruf 25.9.2026): SG läuft NICHT über den sauberen `sg_publikationen.py`-Scraper, sondern über den Court-Code `sg_gerichte` = die entscheidsuche.ch-Ingestion (`entscheidsuche_ingest.py:111`); plausibel, aber nicht sicher belegt, dass entscheidsuche.ch dort das Datum eines nachgelagerten BGer-Verfahrens einträgt (strukturanalog zu OCL-Issue #90, dort für TI/VD belegt). AG: `decree_date` kommt direkt aus dem JSON-Feld der DecWork/LexWork-API (`ag_gerichte.py:24`), die Ursache des Tage-Musters bleibt UNKLAR (kein Codebeleg gefunden). Bestätigt den Wurzel-Fix-Vorschlag oben: Datum aus dem amtlichen PDF-Kopf lesen statt OCL `decision_date`.
+
+**Erledigt 2026-09-25:** QS-KORPUS Kopfdatum: Adapter kantonsEntscheiddatum + --kopfdatum-refresh, 22 Bestandsdaten korrigiert (Branch feat/qs-korpus-entscheiddatum-kopf)
