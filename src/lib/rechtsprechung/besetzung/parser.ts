@@ -97,8 +97,12 @@ const PARTEI_RE =
 // Roy Garré …»): ohne eigene Alternative griff nur «présidente», das Präfix «vice-»
 // blieb als Phantom-Richter «vice» mit Rolle vorsitz stehen. Die zuerst genannte
 // Vizepräsidentin führt den Spruchkörper wie die «présidente» der Parallelfälle.
+// Nacktes `\bVorsitz\b` (Auflage A1 Gegenprüfung #1117, 25.9.2026): BStGer SN.2026.4
+// «Stefan Heimgartner, Vorsitz Martin Stupf und …» (Zeilenumbruch im Amtstext
+// verloren) ergab den Phantom-Richter `martin-stupf-vorsitz` (Vorname «Vorsitz»).
+// Die Wortgrenze schliesst «Vorsitzende…» aus (eigene Alternative oben).
 const VORSITZ_RE =
-  /vice-?\s?p\s?r[ée]sident(?:e|s)?|\(\s*Vorsitz\s*\)|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
+  /vice-?\s?p\s?r[ée]sident(?:e|s)?|\(\s*Vorsitz\s*\)|\bVorsitz\b|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
 
 /**
  * Referenten-Marker — wird entfernt, setzt aber KEINE Rolle.
@@ -237,9 +241,22 @@ const KONJUNKTION_LEAD = /^(?:und|et|ed|e|&)\b[\s,]*/i;
 const INTERNER_TITEL =
   /(?<=\b\p{Lu}[\p{L}'’-]{2,}\s)(?=(?:Prof\.|Ass\.\s*-?\s*Prof\.|Dr\.|lic\.\s*iur\.|lic\.|MLaw|BLaw|Dipl\.|PD|Bunde(?:s)?richter(?:innen|in)?|Bundesstrafrichter(?:in)?|Bundesverwaltungsrichter(?:in)?|Richter(?:innen|in)?)\s)/gu;
 
+/**
+ * Titel MITTEN im Namen (amtlicher Erfassungsfehler): «Präsident Mark Dr. iur. Schweizer»
+ * (BPatGer S2025_003, so im amtlichen PDF). Steht nach einem Rollenwort genau EIN
+ * gross geschriebenes Wort vor der Titelkette, ist es der Vorname derselben Person —
+ * kein eigener Name. INTERNER_TITEL hätte dort geschnitten und die Phantom-Richter
+ * `mark` + `schweizer` erzeugt (Auflage A1 Gegenprüfung #1117, 25.9.2026). Der Titel
+ * wird darum VOR den Vornamen gezogen. Bewusst eng: nur nach einem Rollenwort, sodass
+ * das fehlende Komma zwischen ZWEI Vollnamen (BEZ.2025.75) weiter getrennt wird.
+ */
+const TITEL_IM_NAMEN =
+  /\b((?:Pr[äa]sident|Richter)(?:in)?\s+)(\p{Lu}[\p{Ll}'’-]+)\s+((?:(?:Prof\.|Dr\.|iur\.|med\.|phil\.|sc\.|nat\.|chem\.|ETH)\s*)+)(?=\p{Lu})/gu;
+
 /** Segment an internen Titel-Startpunkten auftrennen (amtliche Komma-Fehler heilen). */
 function trenneInterneTitel(seg: string): string[] {
-  return seg.split(INTERNER_TITEL).map((x) => x.trim()).filter(Boolean);
+  return seg.replace(TITEL_IM_NAMEN, '$1$3$2 ')
+    .split(INTERNER_TITEL).map((x) => x.trim()).filter(Boolean);
 }
 
 /** Diakritika-/Ligatur-Faltung für den Kanon-Slug (deterministisch, §2). */
