@@ -4900,8 +4900,15 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
      Rechner-Untertitel auf bis zu 7 Zeilen à ~35 Zeichen um und sparten keine
      Höhe (Scroll 3.12 gegen 3.09 Viewports) — darum Deckel 2 (à 545).
      `- 1px`: Rundungspuffer, damit zwei Spuren nie an einem Subpixel scheitern.
-     Nur hier: /vorlagen und die Startseite (ohne Leiste) behalten 380. */
-  .kt-werkbank:has(> .kt-einstieg) .kt-raster {
+     Nur hier: /vorlagen und die Startseite (ohne Leiste) behalten 380.
+     Nachzug Gegenprüfung B10 (26.9.2026): Selektor ohne `:has(> .kt-einstieg)`
+     — bei aktivem Filter fehlt die Themenleiste (RechnerUebersicht.tsx
+     rendert `ZweiachsigerEinstieg` nur ungefiltert), das `:has` griff dann
+     nicht und `.kt-raster` fiel auf die 380-px-Basisregel zurück: @1920 mit
+     Filter DREI Spalten à ~447 px, Untertitel bis 4+ Zeilen. Der Deckel gilt
+     darum für JEDES `.kt-raster` unter `.kt-werkbank` — mit wie ohne
+     Seitenspalte —, `/vorlagen` bleibt unberührt (kein `.kt-werkbank` dort). */
+  .kt-werkbank .kt-raster {
     grid-template-columns: repeat(auto-fill, minmax(max(min(350px, 100%), calc((100% - 1.625rem) / 2 - 1px)), 1fr));
   }
 }

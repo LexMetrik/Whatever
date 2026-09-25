@@ -66,6 +66,24 @@ for (const { pfad, breite, leiste, spalten, minPx } of FAELLE) {
   });
 }
 
+// Nachzug Gegenprüfung B10 (26.9.2026): der Zwei-Spalten-Deckel oben lief über
+// `.kt-werkbank:has(> .kt-einstieg) .kt-raster` — bei aktivem Filter fehlt
+// `ZweiachsigerEinstieg` (RechnerUebersicht.tsx rendert sie nur ungefiltert),
+// das `:has` griff nicht mehr, `.kt-raster` fiel auf die 380-px-Basisregel
+// zurück: @1920 mit Filter DREI Spalten à ~447 px. Eigener Fall, weil die
+// FAELLE-Tabelle oben nur den ungefilterten Zustand prüft.
+test('/rechner @1920 mit Filtertext: höchstens 2 Rasterspalten', async ({ page }) => {
+  await oeffne(page, '/rechner', 1920, 0);
+  await page.locator('#rechner-filter').fill('recht');
+  await expect(page.locator('.kt-einstieg')).toHaveCount(0);
+  const spalten = await page.evaluate(() => {
+    const raster = [...document.querySelectorAll('.kt-raster')].filter((g) => g.getClientRects().length > 0);
+    return raster.map((g) => getComputedStyle(g).gridTemplateColumns.split(' ').length);
+  });
+  expect(spalten.length).toBeGreaterThan(0);
+  for (const n of spalten) expect(n).toBeLessThanOrEqual(2);
+});
+
 for (const pfad of ['/rechner', '/vorlagen']) {
   test(`${pfad} @1920: Katalogtext (auch zugeklappt) höchstens 80 Zeichen je Zeile`, async ({ page }) => {
     await oeffne(page, pfad, 1920, 0);
