@@ -108,14 +108,16 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
     expect(kopfdatumRueckfallMeldung(d, r)).toMatch(/^\[kopfdatum\] Rückfall .* Widerspruch PDF-Seite 2 ohne erkanntes eigenes Aktenzeichen/);
     // gleiches Datum wie die Plattform ⇒ kein Widerspruch
     const gleich = [SG_UV_2025_14_PDF[0], fremdZerlegt[1].replace('21. Oktober 2025', '23. Oktober 2025')];
-    expect(kantonsEntscheiddatum(d, gleich)).toMatchObject({ datum: '2025-10-23', quelle: 'kopf-ocl-volltext' });
+    // … aber kein eigener Titel gelesen ⇒ ehrlich Plattformdatum (Befund C, dritte Gegenprüfung 25.9.2026)
+    expect(kantonsEntscheiddatum(d, gleich)).toMatchObject({ datum: '2025-10-23', quelle: 'plattform-ohne-kopf' });
   });
+  // Seit Befund C (dritte Gegenprüfung 25.9.2026) heisst «kein eigener Titel» ehrlich plattform-ohne-kopf, nie kopf-ocl-volltext.
   it('Sicherheitsnetz eng: Zitat-Vorwort, Titel hinter dem Seitenkopf, PDF ohne eigenes Aktenzeichen lösen es nicht aus', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
     const deck = 'Deckblatt Fall-Nr.: UV 2025/14 Entscheiddatum: 23.10.2025';
-    expect(kantonsEntscheiddatum(d, [deck, 'Mit Entscheid vom 5. März 2025 wies die Vorinstanz ab']).quelle).toBe('kopf-ocl-volltext');
-    expect(kantonsEntscheiddatum(d, [deck, `${'Fliesstext ohne Stoppwort '.repeat(17)}. Urteil vom 5. März 2025 der Vorinstanz`]).quelle).toBe('kopf-ocl-volltext');
-    expect(kantonsEntscheiddatum(d, ['Deckblatt UV 2025/15', 'Urteil vom 1. Mai 2020']).quelle).toBe('kopf-ocl-volltext');
+    expect(kantonsEntscheiddatum(d, [deck, 'Mit Entscheid vom 5. März 2025 wies die Vorinstanz ab']).quelle).toBe('plattform-ohne-kopf');
+    expect(kantonsEntscheiddatum(d, [deck, `${'Fliesstext ohne Stoppwort '.repeat(17)}. Urteil vom 5. März 2025 der Vorinstanz`]).quelle).toBe('plattform-ohne-kopf');
+    expect(kantonsEntscheiddatum(d, ['Deckblatt UV 2025/15', 'Urteil vom 1. Mai 2020']).quelle).toBe('plattform-ohne-kopf');
   });
   it('zerlegtes Aktenzeichen auf der Titelseite: Kopf gewinnt, nicht still das Plattformdatum (Gegenprüfung 25.9.2026)', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
@@ -128,7 +130,7 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
   it('PDF ohne das eigene Aktenzeichen gilt nicht als Kopf dieses Entscheids', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
     const fremd = SG_UV_2025_14_PDF.map((s) => s.replace(/UV 2025\/14/g, 'UV 2025/15'));
-    expect(kantonsEntscheiddatum(d, fremd)).toMatchObject({ datum: '2025-10-23', quelle: 'kopf-ocl-volltext' });
+    expect(kantonsEntscheiddatum(d, fremd)).toMatchObject({ datum: '2025-10-23', quelle: 'plattform-ohne-kopf' });
   });
   it('Widerspruch im OCL-Kopf ⇒ OCL-Wert, kein PDF-Datum', () => {
     const d = det({ full_text: 'Entscheiddatum: 08.01.2025 Verwaltungsgericht Urteil vom 22. Dezember 2025', decision_date: '2025-12-22' });

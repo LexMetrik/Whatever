@@ -1,5 +1,7 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { kantonsEntscheiddatum, kopfdatumRueckfallMeldung, holeAmtlicheKopfSeiten } from '../../scripts/normtext/entscheid-kantonsdatum';
+import { kantonsEntscheiddatum, kopfdatumRueckfallMeldung, holeAmtlicheKopfSeiten, kopfZurueckhalten, ausEigenemTitel, type Zurueckgehalten } from '../../scripts/normtext/entscheid-kantonsdatum';
+import { bestandStattZurueckgehalten, zurueckhalteZeile, waehleNeue, fuehreAdditivZusammen, nachDatumDesc } from '../../scripts/normtext/entscheide-additiv';
+import { readFileSync } from 'node:fs';
 import { kopfdatumRefresh } from '../../scripts/normtext/entscheide-kopfdatum-refresh';
 import { mappeEntscheidOCL, holeEntscheidOCL, type OclDecision } from '../../scripts/normtext/adapter-entscheide';
 
@@ -150,8 +152,101 @@ describe('Punkt 4 — Kopf-Grenze auch für Seiten MIT eigenem Aktenzeichen', ()
     const folge = `UV 2025/14 2/16 ${'Fliesstext ohne Stoppwort '.repeat(17)}. Urteil vom 5. März 2025 der Vorinstanz`;
     const r = kantonsEntscheiddatum(sg(), [PDF_SEITEN[0], folge]);
     expect(r.datum).not.toBe('2025-03-05');
-    expect(r).toMatchObject({ datum: '2025-10-23', quelle: 'kopf-ocl-volltext' });
+    expect(r).toMatchObject({ datum: '2025-10-23', quelle: 'plattform-ohne-kopf' }); // Befund C: kein eigener Titel gelesen
     // derselbe Titel im Seitenkopf zählt weiterhin
     expect(kantonsEntscheiddatum(sg(), [PDF_SEITEN[0], 'UV 2025/14 2/16 Urteil vom 5. März 2025 Besetzung'])).toMatchObject({ datum: '2025-03-05', quelle: 'kopf-amtliches-pdf' });
+  });
+});
+
+// Dritte Gegenprüfung 25.9.2026 (QS-KORPUS). Befund C: PDF geliefert, aber ohne lesbaren
+// eigenen Titel (Scan ohne Textschicht, fremd gesetztes Aktenzeichen) ⇒ bis dahin still das
+// Plattformdatum unter der Quelle `kopf-ocl-volltext`. Befund D: `nurMitAmtlichemKopf` ohne
+// Aufrufer; der Generator-Kantonszweig schrieb das Plattformdatum mit nur einer Warnung.
+describe('Befund C — kein eigener Titel gelesen ⇒ nie still das Plattformdatum', () => {
+  const opts = (log: Zurueckgehalten[]) => ({ nurMitAmtlichemKopf: true, zurueckgehalten: (z: Zurueckgehalten) => log.push(z) });
+  it('echter OCL-Kopf UV 2025/14 + PDF-Scan ohne Textschicht ⇒ plattform-ohne-kopf, Meldung, zurückgehalten', () => {
+    const scan = ['', '', ''];
+    const r = kantonsEntscheiddatum(sg(), scan);
+    expect(r).toMatchObject({ datum: '2025-10-23', quelle: 'plattform-ohne-kopf', grund: 'kopfzeile-datum-az=2025-10-23 im OCL-Kopf ohne eigenen Titel; amtliches PDF ohne eigenes Aktenzeichen' });
+    expect(r.pdfFehlt).toBeUndefined(); // das PDF kam — es trug nur keinen lesbaren Kopf
+    expect(ausEigenemTitel(r)).toBe(false);
+    expect(kopfdatumRueckfallMeldung(sg(), r)).toBe('[kopfdatum] Rückfall auf Plattformdatum 2025-10-23: sg_gerichte UV 2025/14 — kopfzeile-datum-az=2025-10-23 im OCL-Kopf ohne eigenen Titel; amtliches PDF ohne eigenes Aktenzeichen');
+    const log: Zurueckgehalten[] = [];
+    expect(kopfZurueckhalten(sg(), scan, opts(log))).toBe(true);
+    expect(log).toEqual([{ decisionId: 'sg_gerichte_UV_2025_14', court: 'sg_gerichte', nummer: 'UV 2025/14', grund: 'plattform-ohne-kopf 2025-10-23: kopfzeile-datum-az=2025-10-23 im OCL-Kopf ohne eigenen Titel; amtliches PDF ohne eigenes Aktenzeichen' }]);
+  });
+  it('echtes PDF mit anders gesetztem Aktenzeichen «UV 2025 / 14» ⇒ ebenso, nicht kopf-ocl-volltext', () => {
+    const fremd = PDF_SEITEN.map((p) => p.replaceAll('UV 2025/14', 'UV 2025 / 14'));
+    expect(kantonsEntscheiddatum(sg(), fremd)).toMatchObject({ datum: '2025-10-23', quelle: 'plattform-ohne-kopf' });
+    expect(kopfZurueckhalten(sg(), fremd, { nurMitAmtlichemKopf: true })).toBe(true);
+  });
+  it('PDF mit eigenem Aktenzeichen, aber ohne Titel ⇒ «ohne eigenen Titel»; OCL ohne Kopf ⇒ ocl-decision_date, zurückgehalten', () => {
+    expect(kantonsEntscheiddatum(sg(), [PDF_SEITEN[0]]).grund).toMatch(/amtliches PDF ohne eigenen Titel$/);
+    const ohneKopf = sg({ full_text: 'Versicherungsgericht Leistungspflicht', decision_date: '2025-11-21' });
+    expect(kantonsEntscheiddatum(ohneKopf, [PDF_SEITEN[0]])).toMatchObject({ datum: '2025-11-21', quelle: 'ocl-decision_date' });
+    expect(kopfZurueckhalten(ohneKopf, [PDF_SEITEN[0]], { nurMitAmtlichemKopf: true })).toBe(true);
+  });
+  it('Invariante: kopf-ocl-volltext bezeichnet nur noch einen eigenen Titel (titel-vom)', () => {
+    const faelle: Array<[OclDecision, string[] | null]> = [
+      [sg(), null], [sg(), ['', '', '']], [sg(), PDF_SEITEN], [sg(), [PDF_SEITEN[0]]], [sg(), ['Deckblatt UV 2025/15', 'Urteil vom 1. Mai 2020']],
+      [sg({ full_text: 'Publikationsplattform Entscheiddatum: 23.10.2025 Versicherungsgericht' }), ['']],
+      [sg({ full_text: 'Versicherungsgericht Abteilung III Entscheid vom 21. Oktober 2025 Besetzung' }), null],
+    ];
+    const volltext = faelle.map(([d, p]) => kantonsEntscheiddatum(d, p)).filter((r) => r.quelle === 'kopf-ocl-volltext');
+    expect(volltext).toHaveLength(1);
+    for (const r of volltext) expect(r.kopf).toMatchObject({ status: 'ok', regel: 'titel-vom' });
+  });
+  it('ohne nurMitAmtlichemKopf, mit eigenem Titel oder für den Bund ⇒ kein Zurückhalten', () => {
+    const log: Zurueckgehalten[] = [];
+    expect(kopfZurueckhalten(sg(), ['', '', ''], {})).toBe(false);
+    expect(kopfZurueckhalten(sg(), PDF_SEITEN, opts(log))).toBe(false);
+    expect(kopfZurueckhalten(sg({ canton: 'CH', court: 'bger' }), null, opts(log))).toBe(false);
+    expect(log).toEqual([]);
+  });
+});
+
+describe('Befund D — Generator-Kantonszweig: zurückhalten statt Plattformdatum, Bestand unverändert', () => {
+  it('holeEntscheidOCL: PDF kommt ohne eigenen Kopf ⇒ mit nurMitAmtlichemKopf null + Meldekanal; sonst Plattformdatum mit Warnung', async () => {
+    vi.stubGlobal('fetch', async (u: string) => {
+      if (u === PDF_URL) return new Response(minimalPdf('Scan ohne Kopf'), { status: 200 });
+      if (u.includes('/decisions/')) return new Response(JSON.stringify(sg()), { status: 200 });
+      return new Response('', { status: 404 });
+    });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const log: Zurueckgehalten[] = [];
+    expect(await holeEntscheidOCL('sg_gerichte_UV_2025_14', '2026-09-25', { sprache: null, nurMitAmtlichemKopf: true, zurueckgehalten: (z) => log.push(z) })).toBeNull();
+    expect(log.map((z) => z.grund)).toEqual(['plattform-ohne-kopf 2025-10-23: kopfzeile-datum-az=2025-10-23 im OCL-Kopf ohne eigenen Titel; amtliches PDF ohne eigenes Aktenzeichen']);
+    expect((await holeEntscheidOCL('sg_gerichte_UV_2025_14', '2026-09-25', { sprache: null }))?.datum).toBe('2025-10-23');
+    expect(warn.mock.calls.map((c) => String(c[0])).filter((m) => m.startsWith('[kopfdatum] Rückfall auf Plattformdatum'))).toHaveLength(2);
+  }, 15_000);
+  it('bestandStattZurueckgehalten: exakte Identität court + Aktenzeichen, Bestandseintrag byte-gleich, sortiert', () => {
+    const b = bestand();
+    const vorher = JSON.stringify(b);
+    const fremd = { ...bestand(), id: 'kanton/SG/sg_gerichte/UV2025_15', nummer: 'UV 2025/15' };
+    const z = (court: string, nummer: string): Zurueckgehalten => ({ decisionId: 'x', court, nummer, grund: 'g' });
+    expect(bestandStattZurueckgehalten([z('sg_gerichte', 'UV  2025/14 ')], [fremd, b])).toEqual([b]);
+    expect(bestandStattZurueckgehalten([z('sg_gerichte', 'UV 2025/1')], [b])).toEqual([]);
+    expect(bestandStattZurueckgehalten([z('ag_gerichte', 'UV 2025/14')], [b])).toEqual([]);
+    expect(JSON.stringify(b)).toBe(vorher);
+    const zz = [{ ...z('sg_gerichte', 'B 2'), decisionId: 'b' }, { ...z('sg_gerichte', 'A 1'), decisionId: 'a' }];
+    expect(zurueckhalteZeile('sg_gerichte', zz, 0)).toBe(zurueckhalteZeile('sg_gerichte', [...zz].reverse(), 0));
+    expect(zurueckhalteZeile('sg_gerichte', zz, 0)).toBe('[kanton] sg_gerichte: 2 zurückgehalten (kein eigener Urteilskopf; davon 0 Bestand unverändert): A 1 (g); B 2 (g)');
+  });
+  it('additiv: ein zurückgehaltener Neuabruf lässt den Bestandseintrag unverändert und löscht nichts', () => {
+    const b = bestand();
+    const vorher = JSON.stringify(b);
+    const behalten = bestandStattZurueckgehalten([{ decisionId: 'sg_gerichte_UV_2025_14', court: 'sg_gerichte', nummer: 'UV 2025/14', grund: 'g' }], [b]);
+    const ids = new Set([b.id]);
+    const erg = fuehreAdditivZusammen([b], [{ name: 'kantonale', angefordert: 1, geholt: behalten.length, neu: waehleNeue(behalten, ids, 6, nachDatumDesc) }]);
+    expect(erg.abbruch).toBeNull();
+    expect(erg.auswahl).toEqual([b]);
+    expect(JSON.stringify(erg.auswahl[0])).toBe(vorher);
+  });
+  it('Verdrahtung: der Kantonszweig ruft mit nurMitAmtlichemKopf und reicht den Bestand in Vollbau und additiv', () => {
+    const gen = readFileSync('scripts/normtext-entscheide.ts', 'utf8');
+    expect(gen).toMatch(/async function kantonKorpus\([^\n]*bestand: readonly EntscheidSnapshot\[\] = \[\]\): Promise<ZweigLauf> \{\n(?:(?!\nasync function)[\s\S])*?holeEntscheidOCL\(id, datum, \{ sprache: 'de', nurMitAmtlichemKopf: true, zurueckgehalten: /);
+    expect(gen).toMatch(/const behalten = bestandStattZurueckgehalten\(zurueck, bestand\);/);
+    expect(gen).toMatch(/kantonKorpus\(bestandIds, true, basis\)/);
+    expect(gen).toMatch(/kantonKorpus\(new Set\(\), false, ladeBestandSnapshots\(\)\)/);
   });
 });

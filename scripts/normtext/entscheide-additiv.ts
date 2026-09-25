@@ -16,6 +16,8 @@
 //    etwas anderes als «0 neu» (alles schon im Bestand) — Letzteres ist kein
 //    Quellausfall und bricht nicht ab.
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
+import type { Zurueckgehalten } from './entscheid-kantonsdatum';
+export type { Zurueckgehalten };
 
 /** Ergebnis eines additiven Quellzweigs (eidg. oder kantonal). */
 export interface AdditivZweig {
@@ -107,4 +109,28 @@ export function fuehreAdditivZusammen(
     return { auswahl: [], abbruch: '[additiv] 0 Snapshots — bestehender Korpus bleibt unberührt.', neuJeZweig, uebersprungen };
   }
   return { auswahl, abbruch: null, neuJeZweig, uebersprungen };
+}
+
+/**
+ * Bestandsschutz für zurückgehaltene kantonale Neuabrufe (Befund D, dritte Gegenprüfung
+ * 25.9.2026): der Kantonszweig hält Entscheide ohne eigenen Urteilskopf zurück
+ * (`nurMitAmtlichemKopf`, entscheid-kantonsdatum.ts). Ein vorhandener Bestandseintrag
+ * bleibt dabei UNVERÄNDERT: er tritt im Kandidatenpool an die Stelle des Neuabrufs
+ * (Vollbau schreibt den Korpus neu; additiv ist er ohnehin Bestand und fällt in
+ * `waehleNeue` heraus). Identität exakt wie der Kopfdatum-Refresh: court + Aktenzeichen.
+ * Rein, nach id sortiert (§2).
+ */
+export function bestandStattZurueckgehalten(
+  zurueck: readonly Zurueckgehalten[],
+  bestand: readonly EntscheidSnapshot[],
+): EntscheidSnapshot[] {
+  const nr = (s: unknown) => String(s ?? '').replace(/\s+/g, ' ').trim();
+  const keys = new Set(zurueck.map((z) => `${z.court}\u0000${nr(z.nummer)}`));
+  return bestand.filter((s) => keys.has(`${s.gericht}\u0000${nr(s.nummer)}`)).sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+}
+
+/** Log-Zeile je Gericht (nie still, §8): zurückgehaltene Neuabrufe, nach decisionId sortiert (§2). */
+export function zurueckhalteZeile(court: string, zurueck: readonly Zurueckgehalten[], behalten: number): string {
+  const z = [...zurueck].sort((a, b) => (a.decisionId < b.decisionId ? -1 : a.decisionId > b.decisionId ? 1 : 0));
+  return `[kanton] ${court}: ${z.length} zurückgehalten (kein eigener Urteilskopf; davon ${behalten} Bestand unverändert): ${z.map((x) => `${x.nummer} (${x.grund})`).join('; ')}`;
 }

@@ -12,9 +12,13 @@ interface OclKopfFelder { full_text?: unknown; docket_number?: unknown; decision
 
 /**
  * Herkunft des übernommenen Kantons-Entscheiddatums (Bericht/Log, kein Snapshot-Feld).
- * `plattform-ohne-kopf`: Plattform-Angabe im OCL-Kopf (SG-Kopfzeile, «Entscheiddatum:»)
- * ohne eigenen Titel, und das amtliche PDF, das den Kopf trüge, kam nicht (Befund
- * 25.9.2026: SG-PDF von UV 2025/14 nach 43 s, Plattform 23.10. statt Kopf 21.10.2025).
+ * Eigener Titel (amtlicher Urteilskopf): `kopf-ocl-volltext` (NUR Titel im OCL-Kopf),
+ * `kopf-amtliches-pdf` (Titel auf einer PDF-Seite mit eigenem Aktenzeichen).
+ * Ohne eigenen Titel: `plattform-ohne-kopf` — Plattform-Angabe im OCL-Kopf (SG-Kopfzeile,
+ * «Entscheiddatum:»), und das amtliche PDF kam nicht (`pdfFehlt`; Befund 25.9.2026: SG-PDF
+ * von UV 2025/14 nach 43 s, Plattform 23.10. statt Kopf 21.10.2025) ODER kam ohne lesbaren
+ * eigenen Titel (Scan ohne Textschicht, fremd gesetztes Aktenzeichen; dritte Gegenprüfung
+ * 25.9.2026: bis dahin still `kopf-ocl-volltext`); `ocl-decision_date` — OCL-Feld.
  */
 export type KantonsDatumQuelle = 'kopf-ocl-volltext' | 'kopf-amtliches-pdf' | 'plattform-ohne-kopf' | 'ocl-decision_date';
 
@@ -73,12 +77,18 @@ export function kantonsEntscheiddatum(
     const plattform = ocl.status === 'ok' ? [{ datum: ocl.datum, regel: ocl.regel, beleg: ocl.beleg }] : [];
     return { ...rueckfall(`Widerspruch PDF-Seite ${netz.seite} ohne erkanntes eigenes Aktenzeichen (titel-vom=${netz.k.datum}) gegen ${ocl.status === 'ok' ? `${ocl.regel}=${ocl.datum}` : `decision_date=${String(det.decision_date ?? '—')}`}`), kopf: { status: 'widerspruch', kandidaten: [{ datum: netz.k.datum, regel: netz.k.regel, beleg: netz.k.beleg }, ...plattform] } };
   }
-  // `pdfFehlt`: das PDF war nötig (kein eigener Titel im OCL-Kopf, kein Widerspruch), kam aber nicht.
-  if (ocl.status === 'ok' && !seiten.length) return { datum: ocl.datum, quelle: 'plattform-ohne-kopf', kopf: ocl, grund: `${ocl.regel}=${ocl.datum} im OCL-Kopf ohne eigenen Titel; amtliches PDF nicht verfügbar`, pdfFehlt: true };
-  if (ocl.status === 'ok') return { datum: ocl.datum, quelle: 'kopf-ocl-volltext', kopf: ocl };
-  if (!seiten.length) return { ...rueckfall('kein eigenes Kopfdatum im OCL-Kopf; amtliches PDF nicht verfügbar'), pdfFehlt: true };
-  return rueckfall(`kein eigenes Kopfdatum im OCL-Kopf; amtliches PDF ${!pdfEigen ? 'ohne eigenes Aktenzeichen' : 'ohne eigenen Titel'}`);
+  // Das PDF war nötig (kein eigener Titel im OCL-Kopf, kein Widerspruch) und lieferte
+  // keinen eigenen Titel: `pdfFehlt`, wenn es nicht kam; sonst ohne Aktenzeichen/Titel.
+  // Nie `kopf-ocl-volltext` für ein Plattformdatum (dritte Gegenprüfung 25.9.2026, Befund C).
+  const pdf = !seiten.length ? 'amtliches PDF nicht verfügbar' : `amtliches PDF ${!pdfEigen ? 'ohne eigenes Aktenzeichen' : 'ohne eigenen Titel'}`;
+  const fehlt = !seiten.length ? { pdfFehlt: true as const } : {};
+  if (ocl.status === 'ok') return { datum: ocl.datum, quelle: 'plattform-ohne-kopf', kopf: ocl, grund: `${ocl.regel}=${ocl.datum} im OCL-Kopf ohne eigenen Titel; ${pdf}`, ...fehlt };
+  return { ...rueckfall(`kein eigenes Kopfdatum im OCL-Kopf; ${pdf}`), ...fehlt };
 }
+
+/** Datum aus einem EIGENEN Titel des amtlichen Urteilskopfs (OCL-Kopf oder amtliches PDF). */
+export const ausEigenemTitel = (r: { quelle: KantonsDatumQuelle }): boolean =>
+  r.quelle === 'kopf-ocl-volltext' || r.quelle === 'kopf-amtliches-pdf';
 
 /** Erste Seite OHNE erkanntes eigenes Aktenzeichen mit abweichendem Titel im Seitenkopf (Sicherheitsnetz). */
 function kopfOhneAktenzeichen(seiten: string[], docket: string, az: RegExp | null, bisher: string) {
@@ -180,10 +190,30 @@ export async function kopfSeitenMitRueckfallMeldung(det: OclKopfFelder & { court
   return seiten;
 }
 
+/** Zurückgehaltener kantonaler Neuabruf (Meldekanal `KopfHoleOpts.zurueckgehalten`). */
+export interface Zurueckgehalten { decisionId: string; court: string; nummer: string; grund: string }
+
+/** Kantonale Kopf-Optionen des OCL-Abrufs (`HoleOpts` in adapter-entscheide.ts erbt sie). */
+export interface KopfHoleOpts {
+  /** Seiten 1–3 des amtlichen PDF (für `kantonsEntscheiddatum`). */
+  amtlicheKopfSeiten?: string[] | null;
+  /** Kantonal: null statt eines Datums, das nicht aus einem eigenen Titel stammt (Generator-Kantonszweig). */
+  nurMitAmtlichemKopf?: boolean;
+  /** Meldung je zurückgehaltenem Neuabruf (Zählung, Bestandsschutz im Generator). */
+  zurueckgehalten?: (z: Zurueckgehalten) => void;
+}
+
 /**
- * Schnittstelle für Aufrufer wie den Wochenlauf (`HoleOpts.nurMitAmtlichemKopf`):
- * true, wenn das Datum eines KANTONALEN Entscheids nur aus Plattform/OCL stammt,
- * weil das nötige amtliche PDF nicht kam (`pdfFehlt`). Rein (§2).
+ * true ⇒ Neuabruf zurückhalten (Befund D, dritte Gegenprüfung 25.9.2026): mit
+ * `nurMitAmtlichemKopf` gilt ein KANTONALER Entscheid nur, wenn sein Datum aus einem
+ * eigenen Titel stammt (`ausEigenemTitel`) — sonst (Plattform-/OCL-Datum, PDF-Ausfall,
+ * Kopf-Widerspruch) null und Meldung über `zurueckgehalten`, nie still das Plattformdatum
+ * (§8). Bund (canton CH) nie. Deterministisch (§2) bis auf den Meldekanal.
  */
-export const kopfOhneAmtlichesPdf = (det: OclKopfFelder, seiten: string[] | null): boolean =>
-  String(det.canton ?? 'CH') !== 'CH' && !!kantonsEntscheiddatum(det, seiten).pdfFehlt;
+export function kopfZurueckhalten(det: OclKopfFelder & { decision_id?: unknown; court?: unknown }, seiten: string[] | null, o: KopfHoleOpts): boolean {
+  if (!o.nurMitAmtlichemKopf || String(det.canton ?? 'CH') === 'CH') return false;
+  const r = kantonsEntscheiddatum(det, seiten);
+  if (ausEigenemTitel(r)) return false;
+  o.zurueckgehalten?.({ decisionId: String(det.decision_id ?? ''), court: String(det.court ?? ''), nummer: String(det.docket_number ?? ''), grund: `${r.quelle} ${r.datum || '—'}: ${r.grund ?? r.kopf.status}` });
+  return true;
+}
