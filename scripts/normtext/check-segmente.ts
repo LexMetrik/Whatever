@@ -51,6 +51,12 @@
  *    (Posten plan/posten/2026-09-25-segment-tor-modus-c-woechentlich-…).
  *  - Häufigkeit (R3-1, behoben): das Soll ist eine Multimenge; überlappende
  *    Fenster im Blob zählen mit (nur Richtung grün, nie falsches Rot).
+ *  - R3-1b Teilstring-Maskierung im Anker (Nachprüfung GP 3, 25.9.2026):
+ *    steht eine Zeile als Teilstring in einer ANDEREN Zeile desselben Ankers,
+ *    zählt dieser Treffer mit — ihre Löschung bleibt grün (B und C). Belege:
+ *    LSV Anhang 5 ES I «50 / 55 / 65» (in «III 50 55 65»), VVEA Anhang 4
+ *    «Cadmium / 2» (in «Cadmium 2.5»); Näherung ~52 von 7 618 Zeilen-Gruppen.
+ *    Posten plan/posten/2026-09-25-segment-tor-r3-1b-teilstring-….
  *
  * `LEXMETRIK_FEDLEX_CACHE_DIR` (Default `/tmp`): NUR für die eigenen Rot-Beweise
  * (R6–R9, s. Bericht) — ein Test-Cache-Verzeichnis statt des mit anderen
