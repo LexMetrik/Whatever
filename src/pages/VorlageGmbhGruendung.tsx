@@ -191,7 +191,7 @@ export function VorlageGmbhGruendung() {
             <li key={h.slice(0, 40)}>{h}</li>
           ))}
         </ul>
-        <p className="text-xs text-ink-500 max-w-reading">
+        <p className="text-xs text-ink-500 max-w-kleintext">
           Amtliche Vorlagen: Musterstatuten und Muster-Erklärungen beim Handelsregisteramt des Kantons Zürich
           (zh.ch, notariate-zh.ch), Lex-Koller-Formular beim jeweiligen kantonalen Handelsregisteramt;
           elektronischer Weg über EasyGov (die Beurkundung bleibt beim Notariat).

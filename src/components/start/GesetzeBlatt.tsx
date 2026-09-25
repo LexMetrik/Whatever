@@ -183,7 +183,7 @@ function Gebiete({ zu }: { zu: Zu }) {
             </li>
           ))}
         </ul>
-        <p className="max-w-reading font-sans text-xs leading-relaxed text-ink-500">
+        <p className="max-w-kleintext font-sans text-xs leading-relaxed text-ink-500">
           Die Zahl je Zeile ist der bei uns erfasste Volltext ({nf(z.gesetzeBundesrechtVolltext)} Erlasse
           des Bundesrechts), nicht der Umfang der Systematischen Rechtssammlung des Bundes.
         </p>

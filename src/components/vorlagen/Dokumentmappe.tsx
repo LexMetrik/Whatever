@@ -129,7 +129,7 @@ export function MappenCheckliste({ phasen, unterlagen }: {
                     <span className="lc-chip">{ERSTELLER_LABEL[z.ersteller]}</span>
                     {z.ausgeloestDurch && <span className="lc-chip">wegen: {z.ausgeloestDurch}</span>}
                   </div>
-                  {z.hinweis && <p className="text-xs text-ink-500 mt-1 max-w-reading">{z.hinweis}</p>}
+                  {z.hinweis && <p className="text-xs text-ink-500 mt-1 max-w-kleintext">{z.hinweis}</p>}
                 </li>
               ))}
             </ul>
@@ -170,8 +170,8 @@ export function NotariatsHinweis({ kanton }: { kanton: string }) {
         <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline underline-offset-2 hover:text-brass-600">{n.stelle}</a>
         {!n.urlBelegt && <span className="text-warn-700"> (Angabe ohne Gewähr)</span>}
       </p>
-      {n.hinweis && <p className="text-xs text-warn-700 max-w-reading"><NormText text={n.hinweis} /></p>}
-      <p className="text-xs text-ink-500 max-w-reading">{NOTARIAT_FREIZUEGIGKEIT}</p>
+      {n.hinweis && <p className="text-xs text-warn-700 max-w-kleintext"><NormText text={n.hinweis} /></p>}
+      <p className="text-xs text-ink-500 max-w-kleintext">{NOTARIAT_FREIZUEGIGKEIT}</p>
     </div>
   );
 }
@@ -188,8 +188,8 @@ export function HrAmtHinweis({ kanton }: { kanton: string }) {
         <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline underline-offset-2 hover:text-brass-600">{a.name}</a>
         {`, ${a.strasse}, ${a.plzOrt} · ${a.telefon}`}
       </p>
-      {a.hinweis && <p className="text-xs text-ink-500 max-w-reading"><NormText text={a.hinweis} /></p>}
-      <p className="text-xs text-ink-500 max-w-reading">
+      {a.hinweis && <p className="text-xs text-ink-500 max-w-kleintext"><NormText text={a.hinweis} /></p>}
+      <p className="text-xs text-ink-500 max-w-kleintext">
         {`Massgeblich ist der SITZ-Kanton der Gesellschaft (Art. 927 OR). Stand ${HR_AEMTER_STAND} (amtliche Kantonsseiten; zefix-Abgleich offen) – vor Einreichung kurz gegenprüfen.`}
       </p>
     </div>

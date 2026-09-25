@@ -141,7 +141,7 @@ export function VorlageKuendigungVermieter() {
             </div>
           </div>
         )}
-        <p className="text-xs text-ink-500 max-w-reading">
+        <p className="text-xs text-ink-500 max-w-kleintext">
           Ortsübliche Termine sind eine Tatfrage des konkreten Ortes; vertragliche Termine gehen vor.
           Vertiefte Berechnung (alle Kündigungsarten, Zahlungsverzug Art. 257d):{' '}
           <Link to="/rechner/mietrecht" className="text-brass-700 underline">Mietrecht-Fristenrechner</Link>.

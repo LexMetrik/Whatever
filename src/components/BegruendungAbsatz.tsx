@@ -26,7 +26,7 @@ export function BegruendungAbsatz({ text }: { text: string }) {
         {text}
       </p>
       <KopierButton text={text} gegenstand="Absatz" className="lc-btn-outline lc-btn-sm mt-3" />
-      <p className="text-xs text-ink-500 mt-2 max-w-reading">
+      <p className="text-xs text-ink-500 mt-2 max-w-kleintext">
         {BEGRUENDUNG_VORBEHALT}
       </p>
     </details>

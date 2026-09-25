@@ -23,7 +23,7 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
             <button type="button" className="lc-btn-primary" disabled={batchLaeuft} onClick={alleHerunterladen}>
               {batchLaeuft ? 'Erzeuge ZIP …' : `Alle ${mappe.dokumente.length} Dokumente herunterladen (ZIP)`}
             </button>
-            <p className="text-xs text-ink-500 max-w-reading">
+            <p className="text-xs text-ink-500 max-w-kleintext">
               Lädt alle notwendigen Dokumente Ihrer Konstellation als eine ZIP-Datei herunter, je als PDF
               und Word (DOCX) — Statuten und Errichtungsakt (sowie Sacheinlageverträge mit Grundstück) als
               ENTWURF mit Wasserzeichen, die übrigen druckfertig.
