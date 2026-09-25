@@ -78,10 +78,30 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Regeste' });
     const r = kantonsEntscheiddatum(d, ['Deckblatt UV 2025/14 Entscheiddatum: 23.10.2025', 'Urteil vom 1. Mai 2020 der Vorinstanz']);
     expect(r.datum).not.toBe('2020-05-01');
-    expect(r).toMatchObject({ datum: '2025-10-23', quelle: 'kopf-ocl-volltext' });
-    // echte SG-Seite 2 ohne ihre Zeile «Geschäftsnr. UV 2025/14» ⇒ ebenfalls kein PDF-Datum
+    // Titel im Kopf dieser Seite weicht ab ⇒ seit dem Sicherheitsnetz (Gegenprüfung 25.9.2026) widerspruch statt still OCL
+    expect(r).toMatchObject({ datum: '2025-10-23', quelle: 'ocl-decision_date', kopf: { status: 'widerspruch' } });
+    // echte SG-Seite 2 ohne ihre Zeile «Geschäftsnr. UV 2025/14» ⇒ ebenfalls kein PDF-Datum, aber nie still das Plattformdatum
     const ohneAz = [SG_UV_2025_14_PDF[0], SG_UV_2025_14_PDF[1].replace(' Geschäftsnr. UV 2025/14', ''), SG_UV_2025_14_PDF[2]];
-    expect(kantonsEntscheiddatum(d, ohneAz).quelle).toBe('kopf-ocl-volltext');
+    expect(kantonsEntscheiddatum(d, ohneAz)).toMatchObject({ quelle: 'ocl-decision_date', kopf: { status: 'widerspruch' } });
+  });
+  it('Sicherheitsnetz: abweichender Titel im Seitenkopf ohne erkanntes Aktenzeichen ⇒ widerspruch + Meldung (Gegenprüfung 25.9.2026)', () => {
+    const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
+    // Zerlegung, die `aktenzeichenRe` nicht kennt (Trenner, nicht Ziffer)
+    const fremdZerlegt = [SG_UV_2025_14_PDF[0], SG_UV_2025_14_PDF[1].replace('Geschäftsnr. UV 2025/14', 'Geschäftsnr. U V 2025 / 14'), SG_UV_2025_14_PDF[2]];
+    const r = kantonsEntscheiddatum(d, fremdZerlegt);
+    expect(r).toMatchObject({ datum: '2025-10-23', quelle: 'ocl-decision_date', kopf: { status: 'widerspruch' } });
+    if (r.kopf.status === 'widerspruch') expect(r.kopf.kandidaten.map((k) => `${k.regel}=${k.datum}`)).toEqual(['titel-vom=2025-10-21', 'kopfzeile-datum-az=2025-10-23']);
+    expect(kopfdatumRueckfallMeldung(d, r)).toMatch(/^\[kopfdatum\] Rückfall .* Widerspruch PDF-Seite 2 ohne erkanntes eigenes Aktenzeichen/);
+    // gleiches Datum wie die Plattform ⇒ kein Widerspruch
+    const gleich = [SG_UV_2025_14_PDF[0], fremdZerlegt[1].replace('21. Oktober 2025', '23. Oktober 2025')];
+    expect(kantonsEntscheiddatum(d, gleich)).toMatchObject({ datum: '2025-10-23', quelle: 'kopf-ocl-volltext' });
+  });
+  it('Sicherheitsnetz eng: Zitat-Vorwort, Titel hinter dem Seitenkopf, PDF ohne eigenes Aktenzeichen lösen es nicht aus', () => {
+    const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
+    const deck = 'Deckblatt Fall-Nr.: UV 2025/14 Entscheiddatum: 23.10.2025';
+    expect(kantonsEntscheiddatum(d, [deck, 'Mit Entscheid vom 5. März 2025 wies die Vorinstanz ab']).quelle).toBe('kopf-ocl-volltext');
+    expect(kantonsEntscheiddatum(d, [deck, `${'Fliesstext ohne Stoppwort '.repeat(17)}. Urteil vom 5. März 2025 der Vorinstanz`]).quelle).toBe('kopf-ocl-volltext');
+    expect(kantonsEntscheiddatum(d, ['Deckblatt UV 2025/15', 'Urteil vom 1. Mai 2020']).quelle).toBe('kopf-ocl-volltext');
   });
   it('zerlegtes Aktenzeichen auf der Titelseite: Kopf gewinnt, nicht still das Plattformdatum (Gegenprüfung 25.9.2026)', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });

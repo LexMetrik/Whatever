@@ -4,7 +4,7 @@
 // entscheid-kopfdatum.ts; hier die Anwendung auf einen OCL-Entscheid und der
 // Netz-Rückfall auf das amtliche PDF. Angewandt in `mappeEntscheidOCL`.
 
-import { kopfEntscheiddatum, pdfKopfNormalisieren, aktenzeichenRe, type Kopfdatum } from './entscheid-kopfdatum';
+import { kopfEntscheiddatum, kopfBereich, pdfKopfNormalisieren, aktenzeichenRe, type Kopfdatum } from './entscheid-kopfdatum';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
 
 /** Die genutzten Felder eines OCL-Entscheids (strukturell, ohne Import-Zyklus). */
@@ -12,6 +12,13 @@ interface OclKopfFelder { full_text?: unknown; docket_number?: unknown; decision
 
 /** Herkunft des übernommenen Kantons-Entscheiddatums (Bericht/Log, kein Snapshot-Feld). */
 export type KantonsDatumQuelle = 'kopf-ocl-volltext' | 'kopf-amtliches-pdf' | 'ocl-decision_date';
+
+/**
+ * Seitenkopf für das Sicherheitsnetz (Zeichen ab Seitenanfang, flach): der
+ * eigene Titel steht im Bestand 25.9.2026 an Stelle 47 … 329 (42 PDF-Köpfe,
+ * ZH am weitesten); Zitate im Fliesstext der Folgeseiten stehen dahinter.
+ */
+const SEITENKOPF_ZEICHEN = 400;
 
 /**
  * Entscheiddatum eines KANTONALEN Entscheids (QS-KORPUS, Entscheid David 25.9.2026):
@@ -23,6 +30,10 @@ export type KantonsDatumQuelle = 'kopf-ocl-volltext' | 'kopf-amtliches-pdf' | 'o
  * (Identität, `aktenzeichenRe`: auch BE-Punktform «100.2025.363U»). Ein
  * `widerspruch` im OCL-Kopf setzt KEIN Kopfdatum (OCL-Wert, gemeldet über
  * `kopfdatumRueckfallMeldung`; der Bestands-Refresh bricht ab).
+ * Sicherheitsnetz (Gegenprüfung 25.9.2026): trägt eine andere Seite das eigene
+ * Aktenzeichen, steht aber ein ABWEICHENDER Titel im Seitenkopf einer Seite, auf
+ * der es nicht erkannt wird (pdfjs-Zerlegung, die `aktenzeichenRe` nicht kennt),
+ * gewinnt nie still das Plattformdatum: `widerspruch` wie im OCL-Kopf.
  * Der Bund-Pfad (canton 'CH') ruft das NICHT auf — dort stimmt decision_date
  * (Stichprobe 25.9.2026: 13/13 bger/bvger/bstger mit Kopf identisch).
  */
@@ -49,9 +60,24 @@ export function kantonsEntscheiddatum(
       return { datum: k.datum, quelle: 'kopf-amtliches-pdf', kopf: { ...k, abweichung: [...k.abweichung, ...abw] } };
     }
   }
+  const netz = pdfEigen ? kopfOhneAktenzeichen(seiten, docket, az, ocl.status === 'ok' ? ocl.datum : String(det.decision_date ?? '')) : null;
+  if (netz) {
+    const plattform = ocl.status === 'ok' ? [{ datum: ocl.datum, regel: ocl.regel, beleg: ocl.beleg }] : [];
+    return { ...rueckfall(`Widerspruch PDF-Seite ${netz.seite} ohne erkanntes eigenes Aktenzeichen (titel-vom=${netz.k.datum}) gegen ${ocl.status === 'ok' ? `${ocl.regel}=${ocl.datum}` : `decision_date=${String(det.decision_date ?? '—')}`}`), kopf: { status: 'widerspruch', kandidaten: [{ datum: netz.k.datum, regel: netz.k.regel, beleg: netz.k.beleg }, ...plattform] } };
+  }
   if (ocl.status === 'ok') return { datum: ocl.datum, quelle: 'kopf-ocl-volltext', kopf: ocl };
   const pdf = !seiten.length ? 'amtliches PDF nicht verfügbar' : !pdfEigen ? 'amtliches PDF ohne eigenes Aktenzeichen' : 'amtliches PDF ohne eigenen Titel';
   return rueckfall(`kein eigenes Kopfdatum im OCL-Kopf; ${pdf}`);
+}
+
+/** Erste Seite OHNE erkanntes eigenes Aktenzeichen mit abweichendem Titel im Seitenkopf (Sicherheitsnetz). */
+function kopfOhneAktenzeichen(seiten: string[], docket: string, az: RegExp | null, bisher: string) {
+  for (const [i, seite] of seiten.entries()) {
+    if (az?.test(seite)) continue;
+    const k = kopfEntscheiddatum(seite, docket);
+    if (k.status === 'ok' && k.regel === 'titel-vom' && k.datum !== bisher && kopfBereich(seite).indexOf(k.beleg) < SEITENKOPF_ZEICHEN) return { seite: i + 1, k };
+  }
+  return null;
 }
 
 /**
