@@ -230,7 +230,7 @@ const CONFIG: VorlagenSeitenConfig<SkAntworten> = {
   bestaetigung: ({ a }) => (
     <>
       <p className="lc-overline text-brass-700">Vor der Einreichung</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Unterschreiben und im Doppel einreichen</strong><NormText text={` (Art. 131 ZPO) — beim Gericht am Wohnsitz einer Partei.`} /></li>
         <li><strong>Belege beilegen</strong> (Art. 290 lit. e ZPO): Familienausweis/Eheurkunde{a.kinderErfassen ? ', Geburtsurkunden der Kinder' : ''}.</li>
       </ul>

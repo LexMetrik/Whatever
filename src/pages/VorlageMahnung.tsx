@@ -206,7 +206,7 @@ const CONFIG: VorlagenSeitenConfig<MaAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit die Mahnung trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Unterschreiben und nachweisbar zustellen</strong> – eingeschrieben empfohlen; massgebend ist der Zugang.</li>
         <li><strong>Fälligkeit prüfen:</strong><NormText text={` Die Mahnung wirkt nur bei fälliger Forderung (Art. 102 Abs. 1 OR).`} /></li>
       </ul>

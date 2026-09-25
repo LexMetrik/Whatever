@@ -144,7 +144,7 @@ const CONFIG: VorlagenSeitenConfig<HaAntworten, HaZ> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Form-Gate</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Lohn und Material-Entschädigung schriftlich</strong><NormText text={` vor der Arbeitsausgabe (Art. 351a OR).`} /></li>
         <li><strong>Beidseitig unterzeichnen.</strong> Vorbehalten bleibt das Heimarbeitsgesetz (SR 822.31).</li>
       </ul>

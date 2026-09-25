@@ -162,7 +162,7 @@ const CONFIG: VorlagenSeitenConfig<NdaAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit die NDA trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Zweckbindung</strong> – die Informationen dürfen nur für den genannten Zweck verwendet werden.</li>
         <li><strong>Konventionalstrafe</strong><NormText text={` – beweiserleichternd, aber bei Übermass richterlich herabsetzbar (Art. 163 Abs. 3 OR).`} /></li>
       </ul>

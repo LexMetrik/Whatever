@@ -451,7 +451,7 @@ const CONFIG: VorlagenSeitenConfig<MvAntworten, MvZ> = {
     return (
       <>
         <p className="lc-overline text-brass-700">Form-Gate – damit der Vertrag trägt</p>
-        <ul className="lc-list space-y-2 text-body-s text-ink-700">
+        <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
           <li><strong>Beidseitig unterzeichnen</strong> – erfüllt die Schriftform von Index-/Staffelmiete.</li>
           <li><strong>Elektronisch nur mit QES:</strong><NormText text={` Die Schriftform erfüllt elektronisch nur die qualifizierte elektronische Signatur mit qualifiziertem Zeitstempel (Art. 14 Abs. 2bis OR) – einfache E-Signatur oder eingescannte Unterschrift genügen nicht.`} /></li>
           {wohnung && <li><strong>Formularpflicht prüfen:</strong><NormText text={` In BS, BE, FR, GE, LU, NE*, VD*, ZG und ZH ist der Anfangsmietzins mit dem amtlichen Formular mitzuteilen – sonst ist die Mietzinsabrede nichtig (Art. 270 Abs. 2 OR; Stand 4.2.2026, dynamisch).`} /></li>}

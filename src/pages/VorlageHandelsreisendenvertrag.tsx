@@ -196,7 +196,7 @@ const CONFIG: VorlagenSeitenConfig<HrAntworten, HrZ> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Form-Gate</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Schriftlich regeln</strong><NormText text={` (Art. 347a OR): Soweit nicht schriftlich, gelten Gesetz und übliche Bedingungen.`} /></li>
         <li><strong>Beidseitig unterzeichnen.</strong> Anwendbare GAV/NAV gehen vor.</li>
       </ul>

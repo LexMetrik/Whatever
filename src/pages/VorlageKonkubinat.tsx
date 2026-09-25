@@ -157,7 +157,7 @@ const CONFIG: VorlagenSeitenConfig<KkAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit der Vertrag trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Kein gesetzliches Konkubinatsrecht</strong> – nur das ausdrücklich Geregelte gilt.</li>
         <li><strong>Inventarliste</strong><NormText text={` beilegen – sie trennt Allein- von Miteigentum (Art. 646 ZGB).`} /></li>
       </ul>
