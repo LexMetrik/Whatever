@@ -510,7 +510,10 @@ function pruefeSollUnveraendertOhnePinwechsel(): { verstoss: string[]; hinweis?:
 
 function berichteUndBewerte(z: Zwischenergebnis): void {
   const basislinie = ladeBasislinie();
-  const abgleich = gleicheBasislinieAb(z.alleFunde, basislinie, z.geprueftErlasse);
+  // G7: Artikel ohne Projektions-Eintrag wurden nicht geprüft — ihre
+  // Basislinien-Einträge sind «übersprungen», nicht «veraltet» (P10).
+  const ungepruefteArtikel = new Set(z.keinProjektionsEintragGesamt.map((a) => `${a.erlass}\u0000${a.eId}`));
+  const abgleich = gleicheBasislinieAb(z.alleFunde, basislinie, z.geprueftErlasse, ungepruefteArtikel);
   let fehler = false;
 
   console.log(`[check:segmente] Modus ${z.modus} — ${z.eintraege.length} Erlasse, ${z.geprueftArtikelGesamt} Artikel geprüft.`);
@@ -621,10 +624,14 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
   // geprüft hat (kein/veraltetes Soll), ist NICHT «veraltet» (das riete
   // fälschlich «Eintrag entfernen») — nur eine Information, kein Fehler.
   if (abgleich.uebersprungen.length > 0) {
-    const erlasse = new Set(abgleich.uebersprungen.map((e) => e.erlass));
+    const orte = new Set(
+      abgleich.uebersprungen.map((e) =>
+        ungepruefteArtikel.has(`${e.erlass}\u0000${e.eId}`) ? `${e.erlass} ${e.eId}` : e.erlass,
+      ),
+    );
     console.log(
       `ℹ  ${abgleich.uebersprungen.length} Basislinien-Eintrag/Einträge NICHT geprüft ` +
-        `(Erlass übersprungen: kein/veraltetes Soll — ${[...erlasse].join(', ')}).`,
+        `(Erlass übersprungen: kein/veraltetes Soll, bzw. Artikel ohne Projektions-Eintrag — ${[...orte].join(', ')}).`,
     );
   }
   if (abgleich.bekannt.length > 0) {

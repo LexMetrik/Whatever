@@ -90,7 +90,7 @@ export interface BasislinienAbgleich<T> {
   bekannt: BasislinienEintrag[]; // heute noch gefunden, grandfathered (kein Rot)
   neu: T[]; // NICHT in Basislinie ⇒ rot (behält alle Felder des Aufrufers, z.B. `auszug`)
   veraltet: BasislinienEintrag[]; // in Basislinie, aber heute NICHT mehr gefunden ⇒ rot (Eintrag entfernen)
-  uebersprungen: BasislinienEintrag[]; // B10: Erlass diesen Lauf gar nicht geprüft (kein/veraltetes Soll) ⇒ weder bekannt noch veraltet
+  uebersprungen: BasislinienEintrag[]; // B10/G7: Erlass bzw. Artikel diesen Lauf gar nicht geprüft ⇒ weder bekannt noch veraltet
 }
 
 /**
@@ -107,11 +107,16 @@ export interface BasislinienAbgleich<T> {
  *   Erlass wird übersprungen, s. check-segmente.ts), als `uebersprungen`
  *   statt `veraltet`: das Tor riet zuvor fälschlich «Eintrag entfernen», obwohl
  *   der Erlass schlicht nicht geprüft wurde (P8/P9/P12 der Gegenprüfung).
+ * @param ungepruefteArtikel G7 (Runde 3): `"<ERLASS>\u0000<eId>"` der Artikel
+ *   OHNE Projektions-Eintrag — nicht geprüft (eigener Rückschritt-Fehler im
+ *   Aufrufer); ihre Basislinien-Einträge sind `uebersprungen`, nicht «veraltet
+ *   — Eintrag entfernen» (P10 der Gegenprüfung 2).
  */
 export function gleicheBasislinieAb<T extends { erlass: string; eId: string; hash: string }>(
   heutigeFunde: readonly T[],
   basislinie: readonly BasislinienEintrag[],
   geprueftErlasse?: ReadonlySet<string>,
+  ungepruefteArtikel?: ReadonlySet<string>,
 ): BasislinienAbgleich<T> {
   const schluessel = (e: { erlass: string; eId: string; hash: string }): string =>
     `${e.erlass}\u0000${e.eId}\u0000${e.hash}`;
@@ -125,8 +130,11 @@ export function gleicheBasislinieAb<T extends { erlass: string; eId: string; has
     if (eintrag) bekannt.push(eintrag);
     else neu.push(fund);
   }
+  const geprueft = (e: BasislinienEintrag): boolean =>
+    (!geprueftErlasse || geprueftErlasse.has(e.erlass)) &&
+    !(ungepruefteArtikel && ungepruefteArtikel.has(`${e.erlass}\u0000${e.eId}`));
   const nichtGefunden = basislinie.filter((e) => !fundSchluessel.has(schluessel(e)));
-  const veraltet = geprueftErlasse ? nichtGefunden.filter((e) => geprueftErlasse.has(e.erlass)) : nichtGefunden;
-  const uebersprungen = geprueftErlasse ? nichtGefunden.filter((e) => !geprueftErlasse.has(e.erlass)) : [];
+  const veraltet = nichtGefunden.filter(geprueft);
+  const uebersprungen = nichtGefunden.filter((e) => !geprueft(e));
   return { bekannt, neu, veraltet, uebersprungen };
 }

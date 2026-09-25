@@ -252,6 +252,13 @@ describe('gleicheBasislinieAb — neu / bekannt / veraltet', () => {
     expect(abgleich.uebersprungen[0].erlass).toBe('OR');
   });
 
+  it('G7: Basislinien-Einträge eines Artikels OHNE Projektions-Eintrag gelten als übersprungen, nicht «veraltet — entfernen» (P10)', () => {
+    const geprueftErlasse = new Set(['STHG']); // Erlass geprüft, aber art_56 hat keinen Projektions-Eintrag
+    const abgleich = gleicheBasislinieAb([], basislinie, geprueftErlasse, new Set([`STHG\u0000${basislinie[0].eId}`]));
+    expect(abgleich.veraltet).toEqual([]);
+    expect(abgleich.uebersprungen).toHaveLength(1);
+  });
+
   it('B10: ohne geprueftErlasse (altes Verhalten) gelten alle nicht mehr gefundenen Einträge als veraltet', () => {
     const abgleich = gleicheBasislinieAb([], basislinie);
     expect(abgleich.veraltet).toHaveLength(1);
