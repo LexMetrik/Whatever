@@ -388,9 +388,15 @@ test.describe('R2 — die Geometrie der Leiste', () => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto(START)
     const leiste = page.locator(REITER)
-    await expect(page.locator(`${STREIFEN} [data-reiter-schluessel]`)).toHaveCount(1)
-    await expect(page.locator(`${STREIFEN} [data-reiter-schluessel="/kontakt"]`))
-      .toContainText('Kontakt', { timeout: 20_000 })
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3) · W2·29-WERKBANK-REST S3, 25.9.2026 ─
+    // Entscheid David 19.9.2026 «keine reiter für meta seite»: `/kontakt`
+    // trägt wieder KEINEN Reiter (Regel `lib/tabs.oeffnetReiter`). Gemessen
+    // wird damit wieder der Leerzustand 0 → 1 Reiter; die drei Geometrie-
+    // Zusagen darunter sind unverändert. Damit die Null nicht vor der
+    // Hydration gelesen wird, wartet der Fall zuerst auf die Leiste.
+    await expect(leiste).toBeVisible({ timeout: 30_000 })
+    await expect(page.locator('main h1').first()).toContainText('Kontakt', { timeout: 20_000 })
+    await expect(page.locator(`${STREIFEN} [data-reiter-schluessel]`)).toHaveCount(0)
     const leer = await leiste.evaluate((e) => ({
       unterstrich: getComputedStyle(e).borderBottomWidth,
       hoehe: Math.round(e.getBoundingClientRect().height),
