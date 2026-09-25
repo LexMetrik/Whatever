@@ -8392,7 +8392,8 @@
       "sprache": "de",
       "normKeys": [
         "BGG",
-        "BV"
+        "BV",
+        "IRSG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -17177,6 +17178,7 @@
       "sachgebiet": "privat",
       "sprache": "de",
       "normKeys": [
+        "AVG",
         "BGG",
         "OR",
         "ZGB",
@@ -21249,7 +21251,8 @@
         "BGG",
         "BV",
         "EMRK",
-        "OR"
+        "OR",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -21328,7 +21331,8 @@
       "sachgebiet": "steuern",
       "sprache": "fr",
       "normKeys": [
-        "BGG"
+        "BGG",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -25412,6 +25416,7 @@
       "sachgebiet": "oeffentlich",
       "sprache": "de",
       "normKeys": [
+        "AVG",
         "BGG",
         "BV"
       ],
@@ -25565,7 +25570,8 @@
       "sachgebiet": "oeffentlich",
       "sprache": "de",
       "normKeys": [
-        "BGG"
+        "BGG",
+        "IRSG"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -26103,6 +26109,7 @@
       "normKeys": [
         "BGG",
         "FZA",
+        "VRK",
         "VWVG"
       ],
       "bestand": "snapshot",
@@ -33515,7 +33522,8 @@
       "normKeys": [
         "BGG",
         "BV",
-        "NHG"
+        "NHG",
+        "VKL"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -42174,6 +42182,7 @@
         "BV",
         "EMRK",
         "IRSG",
+        "VRK",
         "VSTRR"
       ],
       "bestand": "snapshot",
@@ -44726,7 +44735,8 @@
       "normKeys": [
         "AHVG",
         "BGG",
-        "FZA"
+        "FZA",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -54850,7 +54860,8 @@
       "sprache": "fr",
       "normKeys": [
         "BGG",
-        "IPRG"
+        "IPRG",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -55350,6 +55361,7 @@
       "sachgebiet": "oeffentlich",
       "sprache": "fr",
       "normKeys": [
+        "AVG",
         "BGG",
         "BV",
         "OR"
@@ -84319,6 +84331,7 @@
       "sprache": "de",
       "normKeys": [
         "AHVG",
+        "AVG",
         "BGG",
         "BV",
         "BVG",
@@ -87743,7 +87756,8 @@
       "normKeys": [
         "AIG",
         "BGG",
-        "FZA"
+        "FZA",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -91898,6 +91912,7 @@
       "sprache": "de",
       "normKeys": [
         "ATSG",
+        "AVG",
         "AVIG",
         "AVIV",
         "BGG",
@@ -101034,6 +101049,7 @@
       "sachgebiet": "privat",
       "sprache": "de",
       "normKeys": [
+        "AVG",
         "BGG",
         "OR",
         "ZPO"
@@ -104009,7 +104025,8 @@
       "sprache": "fr",
       "normKeys": [
         "BGG",
-        "IPRG"
+        "IPRG",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -108506,6 +108523,7 @@
       "normKeys": [
         "AHVG",
         "ATSG",
+        "AVG",
         "BGG"
       ],
       "bestand": "snapshot",
@@ -112505,6 +112523,7 @@
       "sprache": "de",
       "normKeys": [
         "ATSG",
+        "AVG",
         "AVIG",
         "AVIV",
         "BGG",
@@ -148486,6 +148505,7 @@
         "BV",
         "DSG",
         "EMRK",
+        "VRK",
         "VWVG"
       ],
       "bestand": "snapshot",
@@ -162884,6 +162904,7 @@
       "sprache": "fr",
       "normKeys": [
         "BGG",
+        "VRK",
         "ZPO"
       ],
       "bestand": "snapshot",
@@ -183405,6 +183426,7 @@
       "normKeys": [
         "BGG",
         "BV",
+        "VRK",
         "VWVG"
       ],
       "bestand": "snapshot",
@@ -194032,7 +194054,8 @@
       "sprache": "fr",
       "normKeys": [
         "BGG",
-        "IPRG"
+        "IPRG",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -206350,6 +206373,7 @@
       "sachgebiet": "oeffentlich",
       "sprache": "fr",
       "normKeys": [
+        "AVG",
         "BGG",
         "BV",
         "OR"
@@ -207471,7 +207495,8 @@
       "sprache": "fr",
       "normKeys": [
         "BGG",
-        "BV"
+        "BV",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
@@ -231049,6 +231074,7 @@
       "sprache": "de",
       "normKeys": [
         "ARG",
+        "AVG",
         "BGG",
         "OR",
         "ZGB"
@@ -238818,6 +238844,7 @@
         "BV",
         "KVG",
         "KVV",
+        "VRK",
         "ZGB"
       ],
       "bestand": "snapshot",
@@ -240889,6 +240916,7 @@
       "sachgebiet": "oeffentlich",
       "sprache": "fr",
       "normKeys": [
+        "AVG",
         "BGG",
         "OR"
       ],
@@ -248294,7 +248322,8 @@
       "normKeys": [
         "AIG",
         "BGG",
-        "FZA"
+        "FZA",
+        "VRK"
       ],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
