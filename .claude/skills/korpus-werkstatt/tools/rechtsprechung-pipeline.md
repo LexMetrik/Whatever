@@ -237,6 +237,12 @@ auf einen NEUEN Regress deutet.
     Urteilskopf (`entscheid-kopfdatum.ts`, PDF-Rückfall `entscheid-kantonsdatum.ts`), Bestand per
     `--kopfdatum-refresh`. Beleg: `bibliothek/rechtsprechung/kantonales-entscheiddatum-kopf-2026-09-25.md`.
 
+11. **BGE-Basis-Record vermischt → clir-Auszug-Rückfall (25.9.2026).** Trägt OCLs Sammlungs-Auszug den
+    laufenden Kopf eines anderen BGE desselben Bandes (Anlass 152 I 2: `full_text`, `statutes`, `cited_decisions`,
+    `docket_number_2` von 152 I 20), ersetzt `ersetzeKonflatiertenAuszug` (`scripts/normtext/clir-auszug.ts`) im
+    Band-Nachzug den Body durch den amtlichen clir-Auszug (`parseClirAuszug`) und verwirft die Record-Felder
+    (statutes/Rubrum/Dispositiv/Zitate); ohne sauberen clir-Auszug verwirft der Konflations-Guard wie bisher.
+
 Weitere am Code verdrahtete Invarianten (für `review.md` relevant), alle in `main()`
 (`scripts/normtext-entscheide.ts`): **BGE-Dedup** — ein bereits als BGE-Volltext erfasstes bger-Urteil
 wird nicht zusätzlich als Routine-Eintrag geführt (Dedup über `bge.filter((s) => s.azaUrteil)`);
