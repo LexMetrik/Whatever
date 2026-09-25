@@ -126,6 +126,10 @@ jobs:
           if [ -n "$NR" ]; then
             npx vite-node scripts/rechtsprechung/wochenlauf-basis.ts -- --pruefe="$NR" --branch="$BRANCH" || {
               echo "**PR #${NR} inzwischen in Prüfung — nicht überschrieben.**" >> "$GITHUB_STEP_SUMMARY"; exit 0; }
+            # R3: ERST Entwurf, dann Push/Body, «bereit» ganz am Schluss — nie ein
+            # bereiter PR mit neuen Daten und altem Body/Befund-Block. Scheitert
+            # es, bricht set -e vor dem Push ab.
+            gh pr ready "$NR" --undo
           fi
           git checkout -q -B "$BRANCH"
           # Positivliste statt `git add -A` (A11): nur, was der Lauf erwartet
@@ -143,15 +147,9 @@ jobs:
           if [ -n "$nr" ]; then
             gh pr edit "$nr" --title "$titel" --body-file "$AUS/bericht.md"
           else
-            entwurf=""; [ "$ENTSCHEID" = "entwurf" ] && entwurf="--draft"
-            gh pr create --base main --head "$BRANCH" $entwurf --title "$titel" --body-file "$AUS/bericht.md"
+            gh pr create --draft --base main --head "$BRANCH" --title "$titel" --body-file "$AUS/bericht.md"
             nr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
           fi
-          # Entwurf-Status dem Befund dieser Woche angleichen (beide Richtungen).
-          # «pr» heisst auch: jeder offene Befund der Vorwoche (Block
-          # «wochenlauf-befunde» im alten Body) wurde erneut geprüft und ist
-          # grün — sonst ist der Entscheid «entwurf» (A2, pruefeVorwoche).
-          if [ "$ENTSCHEID" = "entwurf" ]; then gh pr ready "$nr" --undo || true; else gh pr ready "$nr" || true; fi
           # CI IMMER per workflow_dispatch anstossen (Repo-Muster fedlex-frische.yml
           # K1): der Push oben läuft mit dem github.token des Checkouts, und
           # dessen Events lösen keine Workflows aus (Rekursionssperre). Bis
@@ -161,3 +159,6 @@ jobs:
           # PR-Ereignis — ein doppelter Lauf ist der Preis für eine Regel ohne Fallunterscheidung.
           gh workflow run ci.yml --ref "$BRANCH" || echo "::warning::ci.yml-Dispatch fehlgeschlagen — der Wächter zieht nach."
           echo "PR #${nr} (${ENTSCHEID}) auf ${BRANCH}." >> "$GITHUB_STEP_SUMMARY"
+          # Zuletzt «bereit» — nur bei «pr» (jeder Vorwochen-Befund erneut grün,
+          # A2) und nur, wenn alles davor gelang (set -e); sonst bleibt Entwurf.
+          if [ "$ENTSCHEID" = "pr" ]; then gh pr ready "$nr" || echo "::warning::PR #${nr} bleibt Entwurf (gh pr ready fehlgeschlagen)."; fi

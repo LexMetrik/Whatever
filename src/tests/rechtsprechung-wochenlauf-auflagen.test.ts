@@ -106,7 +106,7 @@ describe('A2 · Befund der Vorwoche verschwindet nicht', () => {
     expect(basis).toMatch(/'--json', 'body,isDraft'/);
     expect(basis).toMatch(/vorwoche: \{ entwurf: pv\.isDraft, \.\.\.leseBefundBlock\(/);
     const yml = readFileSync('.github/workflows/rechtsprechung-wochenlauf.yml', 'utf8');
-    expect(yml).toMatch(/if \[ "\$ENTSCHEID" = "entwurf" \]; then gh pr ready "\$nr" --undo/);
+    expect(yml).toMatch(/if \[ "\$ENTSCHEID" = "pr" \]; then gh pr ready "\$nr" \|\| echo/); // R3: bereit nur bei «pr», zuletzt
     // CLI: Plan mit Vorwochen-Keys, Entscheid mit vorwocheOffen, Block in den Bericht.
     const cli = readFileSync('scripts/rechtsprechung/wochenlauf.ts', 'utf8');
     expect(cli).toMatch(/stichprobenPlan\([^)]*\(vorwoche\?\.befunde \?\? \[\]\)\.map\(\(x\) => x\.key\)\)/);

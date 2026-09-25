@@ -23,13 +23,18 @@ export interface Vorwoche { entwurf: boolean; befunde: VorBefund[] | null; kaput
 /** Platzhalter-Key für einen Befund, dessen Eintrag unbekannt ist (Block fehlte/unlesbar) — nie automatisch grün. */
 export const UNBEKANNT = '(Befund-Block der Vorwoche fehlte oder war unlesbar)';
 
-const MARKE = 'wochenlauf-befunde v1';
+export const MARKE = 'wochenlauf-befunde v1';
 /** HTML-Kommentar mit den offenen Befunden; «<»/«>» als \u-Escape, damit kein «-->» im JSON den Block schliesst. */
 export function befundBlock(b: VorBefund[]): string {
   return `<!-- ${MARKE}\n${JSON.stringify(b).replace(/</g, '\\u003c').replace(/>/g, '\\u003e')}\n-->`;
 }
-/** Liest den Block aus einem PR-Body (auch mit CRLF, wie GitHub nach einer Web-Bearbeitung speichert). */
+/**
+ * Liest den Block aus einem PR-Body (auch mit CRLF, wie GitHub nach einer Web-Bearbeitung speichert).
+ * Mehr als eine Marke ⇒ unlesbar (R1, Nachprüfung #1113): ein zitierter oder leerer Block weiter
+ * oben darf den echten nicht verdecken — welcher gilt, entscheidet ein Mensch.
+ */
 export function leseBefundBlock(body: string): { befunde: VorBefund[] | null; kaputt: boolean } {
+  if (body.split(MARKE).length > 2) return { befunde: null, kaputt: true };
   const m = new RegExp(`<!-- ${MARKE}\\r?\\n([\\s\\S]*?)\\r?\\n-->`).exec(body);
   if (!m) return { befunde: null, kaputt: body.includes(MARKE) };
   try {
@@ -66,6 +71,16 @@ export function offeneBefunde(stichprobe: StichprobenZeile[], vorOffen: VorBefun
   const out: VorBefund[] = stichprobe.filter((s) => s.ergebnis === 'fehltreffer').map((s) => ({ key: s.key, grund: s.detail }));
   for (const b of vorOffen) if (!out.some((o) => o.key === b.key)) out.push(b);
   return out;
+}
+
+/**
+ * R2 (Nachprüfung #1113): ein Eintrag eines DATUM_VOLLPRUEFUNG-Gerichts, der «nicht prüfbar» blieb
+ * (Datum nicht lesbar, Quelle weg, Frist), ist ein eigener Entwurf-Grund — nicht nur eine Handprüfungs-Zeile.
+ */
+export function vollpruefungOffen(plan: RegEintrag[], stichprobe: StichprobenZeile[]): string[] {
+  const voll = new Map(plan.filter((e) => DATUM_VOLLPRUEFUNG.has(e.gericht)).map((e) => [e.key, e.gericht]));
+  return stichprobe.filter((s) => s.ergebnis === 'nicht-pruefbar' && voll.has(s.key))
+    .map((s) => `${voll.get(s.key)!.split('_')[0].toUpperCase()}: Datum nicht belegbar — ${s.key}`);
 }
 
 // ── Stichproben-Pool und Plan (A2, N1, N3) ──────────────────────────────────

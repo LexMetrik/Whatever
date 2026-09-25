@@ -7,7 +7,7 @@ import {
   budgetBefund, anteilText, AUSGENOMMEN, KALENDER_TORE, type BudgetZeile, type BsVollBilanz, type Entscheid, type FrischeZeile, type GuardBefund,
   type RegisterVergleich, type StichprobenZeile, type Tor,
 } from './wochenlauf-kern';
-import { befundBlock, type VorBefund } from './wochenlauf-vorwoche';
+import { befundBlock, MARKE, type VorBefund } from './wochenlauf-vorwoche';
 
 export interface Schritt { name: string; befehl: string; code: number; ausfaelle: string[] }
 export type Modus = 'woche' | 'bs-vollabgleich';
@@ -190,4 +190,27 @@ export function baueSummary(d: BerichtDaten, bericht: string): string {
   return `${kopf}: keine neuen Entscheide\n\n${aus.length
     ? `**Achtung — Quellen ausgefallen, «nichts Neues» ist darum nicht belegt:**\n\n${aus.map((q) => `- ${q.name} (Exit ${q.code}): ${q.ausfaelle.slice(0, 5).join(' · ')}`).join('\n')}\n`
     : 'Alle Quellen erreicht, kein Inhalts-Diff — kein PR.\n'}`;
+}
+
+/** Sicherheitsabstand unter der GitHub-Grenze für PR-Bodies (65 536 Zeichen). */
+export const BODY_MAX = 60_000;
+/**
+ * R3 (Nachprüfung #1113): PR-Body unter BODY_MAX. Gekürzt wird der Kopfteil vor dem
+ * Befund-Block (sichtbar markiert, Volltext in der Job-Summary); Block und Schluss
+ * (Trailer «Gegenpruefung: ausstehend», inPruefung liest ihn) bleiben unversehrt.
+ * Sprengt der Block selbst die Grenze, tritt eine unlesbare Marke an seine Stelle —
+ * der nächste Lauf wertet sie als kaputt ⇒ Entwurf (sichere Richtung).
+ */
+export function kuerzeBody(b: string, laufUrl: string | null, max = BODY_MAX): string {
+  if (b.length < max) return b;
+  const i = b.indexOf(`<!-- ${MARKE}`);
+  const ende = i < 0 ? b.length : b.indexOf('-->', i) + 3;
+  let block = i < 0 ? '' : b.slice(i, ende);
+  const nach = i < 0 ? '' : b.slice(ende);
+  if (block.length > max / 2) block = `<!-- ${MARKE} gekürzt: Block zu gross für den PR-Body, Volltext in der Job-Summary -->`;
+  const vor = i < 0 ? b : b.slice(0, i);
+  let kopf = vor.slice(0, Math.max(0, max - 500 - block.length - nach.length));
+  kopf = kopf.slice(0, kopf.lastIndexOf('\n') + 1);
+  const hinweis = `\n> **Bericht gekürzt** — ${vor.length - kopf.length} Zeichen weggelassen (GitHub-Grenze PR-Body); Volltext in der Job-Summary${laufUrl ? ` des Laufs ${laufUrl}` : ''}.\n\n`;
+  return kopf + hinweis + block + nach;
 }

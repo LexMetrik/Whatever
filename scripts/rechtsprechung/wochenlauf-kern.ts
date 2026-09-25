@@ -644,6 +644,8 @@ export interface Lage {
   vorwocheOffen?: string[];
   /** Nach der Lauf-Frist übersprungene Prüfschritte (N2). */
   fristAus?: string[];
+  /** Nicht prüfbare Einträge eines DATUM_VOLLPRUEFUNG-Gerichts (vollpruefungOffen — R2). */
+  vollpruefungOffen?: string[];
 }
 
 /**
@@ -663,7 +665,7 @@ export function entscheide(l: Lage): { entscheid: Entscheid; gruende: string[] }
   const g: string[] = [];
   if (l.quellenAus.length) g.push(`Quelle ausgefallen: ${l.quellenAus.join(', ')}`);
   if (l.vorwocheVerworfen) g.push(`Vorwoche verworfen: ${l.vorwocheVerworfen}`);
-  g.push(...(l.vorwocheOffen ?? []));
+  g.push(...(l.vorwocheOffen ?? []), ...(l.vollpruefungOffen ?? []));
   if (l.fristAus?.length) g.push(`Lauf-Frist erreicht, nicht geprüft: ${l.fristAus.join(', ')}`);
   if (l.toreRot.length) g.push(`Tor rot: ${l.toreRot.join(', ')}`);
   if (l.nachbauRot.length) g.push(`Nachbau rot: ${l.nachbauRot.join(', ')}`);

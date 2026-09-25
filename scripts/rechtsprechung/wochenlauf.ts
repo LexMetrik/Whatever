@@ -42,10 +42,10 @@ import {
   teilePfade, leseStatusZ, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, uebrigeAufruf, richterPhantome,
   type RegEintrag, type Tor, type StichprobenZeile,
 } from './wochenlauf-kern';
-import { baueBericht, baueCommit, baueSummary, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
+import { baueBericht, baueCommit, baueSummary, kuerzeBody, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
 import { stichprobeZeile, frische } from './wochenlauf-netz';
 import {
-  stichprobenPlan, pruefeVorwoche, offeneBefunde, identitaetGeaendert, bsAktualisiertEintraege, mitFrist, ungeprueft, type Vorwoche,
+  stichprobenPlan, pruefeVorwoche, offeneBefunde, vollpruefungOffen, identitaetGeaendert, bsAktualisiertEintraege, mitFrist, ungeprueft, type Vorwoche,
 } from './wochenlauf-vorwoche';
 import { DATEN_BUDGET, gz } from '../perf/daten-budget';
 
@@ -149,6 +149,7 @@ async function main(): Promise<void> {
   const tore: Tor[] = [];
   const stichprobe: StichprobenZeile[] = [];
   const fristAus: string[] = [];
+  const vollOffen: string[] = [];
   let dateien: string[] = [];
   let gzNachher = gzVorher;
   if (inhaltsDiff) {
@@ -187,6 +188,7 @@ async function main(): Promise<void> {
     const plan = stichprobenPlan(pool, stichprobeN, jetzt, (vorwoche?.befunde ?? []).map((x) => x.key));
     const sp = await mitFrist(plan, weiter, stichprobeZeile, ungeprueft);
     stichprobe.push(...sp.out);
+    vollOffen.push(...vollpruefungOffen(plan, sp.out)); // R2: BE nicht prüfbar ⇒ eigener Entwurf-Grund
     if (sp.uebersprungen) fristAus.push(`Stichprobe ${sp.uebersprungen} von ${plan.length}`);
     dateien = leseStatusZ(git('status', '--porcelain', '-z', '-uall'));
   } else if (checkpoint) {
@@ -202,7 +204,7 @@ async function main(): Promise<void> {
   const sperrt = mergeSchutzSperrt(erwartet);
   const vw = pruefeVorwoche(vorwoche, stichprobe);
   const ent = entscheide({
-    vorwocheOffen: vw.gruende, fristAus,
+    vorwocheOffen: vw.gruende, fristAus, vollpruefungOffen: vollOffen,
     inhaltsDiff, quellenAus, toreRot: tore.filter((t) => t.code !== 0).map((t) => t.name),
     nachbauRot: nachbau.filter((n) => n.code !== 0).map((n) => n.name), stichprobe, mergeSchutzSperrt: sperrt,
     unerwartet, budgetUeber: budgetBefund(budget).ueber, vorwocheVerworfen: basis.vorwocheVerworfen,
@@ -215,7 +217,8 @@ async function main(): Promise<void> {
     unerwartet, entscheid: ent, mergeSchutzSperrt: sperrt, laufUrl, befunde: offeneBefunde(stichprobe, vw.offen),
   };
   const bericht = baueBericht(daten);
-  writeFileSync(join(aus, 'bericht.md'), bericht);
+  // R3: PR-Body < 60 000 Zeichen (GitHub-Grenze 65 536); die Job-Summary trägt den Volltext.
+  writeFileSync(join(aus, 'bericht.md'), kuerzeBody(bericht, laufUrl));
   writeFileSync(join(aus, 'commit.txt'), baueCommit(daten));
   writeFileSync(join(aus, 'ergebnis.json'), JSON.stringify({ ...ent, neu: vergleich.neu.length, entfernt: vergleich.entfernt.length, quellenAus, unerwartet }, null, 1) + '\n');
   writeFileSync(join(aus, 'summary.md'), baueSummary(daten, bericht));
