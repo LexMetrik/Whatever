@@ -1550,6 +1550,18 @@ Das Aktenzeichen ist KEIN Eingabefeld des Falls, sondern Teil der
 Mitnahme — es steht im Ergebnisblock (R4 Ziff. 5), nicht bei den
 Eingaben.
 
+**Eingabe ‖ Ergebnis (W2·31-BILDSCHIRMBREITE B3, 25.9.2026).** Ab 72rem
+Innenbreite der Werkzeug-Karte (`@container/rechnerkarte` an `ui/Card`;
+praktisch: Stufe `weit` ab 2xl, ohne offene Seitenleiste) stehen Ziff. 1–5
+links und Ziff. 6 (bzw. der `ErgebnisPlatzhalter`, R13) rechts, beide ab
+derselben Oberkante. Das Formular wählt die Anordnung mit der Klasse
+`lc-rechner-spalten` an seiner Wurzel; der Ergebnisplatz muss deren direktes
+Kind sein (`data-ergebnisplatz` am `ErgebnisBlock`). Die Reihenfolge im DOM
+— und damit Lese-, Tab- und Vorleseordnung — bleibt Ziff. 1–6. Nicht
+zweispaltig: Einfacher Fristenrechner (eigene Zeilen-Anatomie, auch auf der
+Startseite) und das Zuständigkeits-Trio (Wizard, R12). Wächter:
+`e2e/rechner-breite.e2e.ts`.
+
 ### §R-4 · Ergebnisblock-Skelett (Reihenfolge fix)
 
 Der Ergebnisblock hat überall denselben Rahmen und dieselbe innere
