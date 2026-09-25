@@ -173,6 +173,37 @@ export interface TabEintrag {
 // (`lm:suche-fokus`) entfällt ersatzlos; der Fokus geht auf den neuen Reiter.
 // Die Wahl steht in `components/layout/Reiterleiste.neuerReiter`; `MAX`, Ring
 // und Anheften sind unverändert.
+//
+// ── W2·29-WERKBANK-REST S3 (Entscheid David 19.9.2026) · META-SEITEN OHNE REITER
+//
+// Die R14b-Absätze darüber bleiben als DATIERTE BELEGE stehen (§0 Ziff. 2b) —
+// sie beschreiben den Stand bis `8cb868caa`. Davids Wortlaut 19.9.2026:
+// «keine reiter für meta seite». Das kehrt R14b für GENAU die vier Routen um,
+// die R14 schon ausgenommen hatte: /ueber, /methodik, /einstellungen,
+// /kontakt. Alle übrigen Routen bleiben Reiterinhalt (auch /datenschutz,
+// /abdeckung, /suche — sie stehen nicht im Entscheid).
+//
+// NEUE REGEL, in einem Satz: **Eine Meta-Seite öffnet keinen Reiter und
+// ersetzt keinen; wer sie betritt, verliert den aktiven Reiter als Herkunft.**
+// Der zweite Halbsatz ist die R14-Lehre, nicht Geschmack: blieb die Herkunft
+// auf dem verlassenen Dokument stehen, ERSETZTE die nächste Navigation DESSEN
+// Reiter (gemessen R14-Prüfung §1.4, OR → Meta → ZGB ergab `[ZGB]`). Mit
+// `aktiv = null` greift Fall 3 von `ersetzeTab` («kein aktiver Reiter») — das
+// nächste Dokument kommt hinzu, keins geht verloren.
+// Die Liste steht an DIESER einen Stelle (§5); Leser sind
+// `components/TabTracker.tsx` (Navigation und Mittelklick-Geste) und
+// `components/layout/Shell.tsx` (zweite Fenster). Die Kurzform-Einträge unten
+// bleiben: ein vor dem Entscheid gespeicherter Meta-Reiter trägt weiter
+// seine Kurzform, bis er geschlossen wird.
+const META_OHNE_REITER: readonly string[] = ['/ueber', '/methodik', '/einstellungen', '/kontakt'];
+
+/** Öffnet diese Adresse einen Reiter? `false` genau für die Meta-Seiten
+ *  (Entscheid David 19.9.2026); Query, Anker und ein Schluss-«/» zählen nicht. */
+export function oeffnetReiter(path: string): boolean {
+  const p = path.split('#')[0].split('?')[0];
+  const ohneSchluss = p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p;
+  return !META_OHNE_REITER.includes(ohneSchluss);
+}
 
 // ─── R3-F7 (Prüfbefund 6.9.2026) · KURZFORM STATT SEO-TITEL ─────────────────
 //

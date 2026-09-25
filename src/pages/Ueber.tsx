@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
+import { MetaAbschnitt } from '../components/layout/MetaAbschnitt';
 
 // Seite «Über» – Entstehungsgeschichte, Grundsätze und ehrliche Grenzen.
 export function Ueber() {
@@ -22,8 +23,12 @@ export function Ueber() {
           verpasst, verliert das Recht. Eine solche Berechnung darf nicht von der Tagesform eines
           Sprachmodells abhängen – sie muss verlässlich sein und sich überprüfen lassen.
         </p>
+      </div>
 
-        <h2 className="text-ink-900 font-medium pt-2">Was LexMetrik heute ist</h2>
+      {/* W2·29-WERKBANK-REST S3: die Zwischentitel standen in einer eigenen
+          Stimme (`font-medium`, ohne Display-Schnitt) mitten im Fliesstext;
+          jetzt dieselbe Abschnitts-Hülle wie /methodik und /datenschutz. */}
+      <MetaAbschnitt titel="Was LexMetrik heute ist">
         <p>
           Aus dem Fristenrechner ist eine Arbeitsplattform für Schweizer Recht geworden – gedacht
           als Taschenmesser für den juristischen Alltag:
@@ -45,8 +50,9 @@ export function Ueber() {
             und Gesetzgebungsunterlagen aus amtlichen Quellen, durchsuchbar neben den Normen.
           </li>
         </ul>
+      </MetaAbschnitt>
 
-        <h2 className="text-ink-900 font-medium pt-2">Wonach LexMetrik gebaut ist</h2>
+      <MetaAbschnitt titel="Wonach LexMetrik gebaut ist">
         <ul className="list-disc pl-5 space-y-2">
           <li>
             <span className="text-ink-900">Feste Regeln statt Schätzung.</span> Dieselbe Eingabe
@@ -98,7 +104,7 @@ export function Ueber() {
             David Graf
           </a>
         </p>
-      </div>
+      </MetaAbschnitt>
     </div>
   );
 }

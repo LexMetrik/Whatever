@@ -434,6 +434,12 @@ ergänzt); hier steht, was heute gilt.
    **Der Entscheid selbst bleibt offen und wird hier NICHT getroffen:** R14b nennt ihn einen
    Orchestrator-Entscheid, dessen **Bestätigung durch David aussteht**. `W2·25` hat ihn nicht
    berührt und baut nichts darauf.
+   **Nachtrag 25.9.2026 (W2·29-WERKBANK-REST S3, Entscheid David 19.9.2026 «keine reiter für meta
+   seite»):** `/ueber`, `/methodik`, `/einstellungen`, `/kontakt` öffnen keinen Reiter und ersetzen
+   keinen; die Herkunft fällt weg (R14-Lehre). Liste an EINER Stelle: `lib/tabs.oeffnetReiter`,
+   gelesen von `TabTracker` und `Shell`; Wächter `e2e/w224-r14b-meta-reiter.e2e.ts`. Alle übrigen
+   Routen bleiben Reiterinhalt (R14b). `/datenschutz`, `/abdeckung`, `/suche` tragen weiter einen
+   Reiter — ob `/datenschutz` dazugehört, wartet auf David.
 2. **Die R13-Regel «höchstens EINE Neuer-Reiter-Seite» ist erfüllt** und braucht in `W2·25` keine
    eigene Stelle: `merkeTab` erkennt die offene Sammlung an ihrer Identität (R14, Rückbau).
 

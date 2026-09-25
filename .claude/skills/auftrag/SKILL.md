@@ -205,6 +205,11 @@ auch die Session-Notizen-Datei (§17, Weisung David 15.9.2026): der
 Orchestrator führt sie selbst, nie ein Sub-Agent (Skill `bauschritt`
 Station A/B/E).
 
+**Agent in einen ANDEREN Worktree als den der Session** (25.9.2026, REST S1/S2):
+Write/Edit sind dort per Hook gesperrt; der Auftrag nennt den Schreibweg
+(Bash/python-Heredoc) ausdrücklich — sonst improvisiert der Agent (S1 wich auf
+`EnterWorktree` aus, S2 auf Heredoc).
+
 **Vier Orchestrator-Fallen** (Belege 5.–9.8.2026, Detail: git-Historie):
 (a) nie Probe-/Testnachrichten an Agenten, Empfänger-ID vor dem Senden
 verifizieren (eine Nachricht weckt auch einen beendeten Agenten mit vollem

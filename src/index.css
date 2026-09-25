@@ -277,8 +277,14 @@
        tragen nur die Wärme nach (Hue 84.6°, L unverändert ±0.001). */
     --brass-700: var(--ink-fixed-dark);
     /* Linien- und Fokus-Stufe der neutralen Skala: Kanten, Umrisse, der Ring der Kantonsauswahl,
-       dunkel der Fokusring. Nicht-Text-Marke, darum 3:1 als Schwelle. */
-    --brass-500: #7A766E;
+       dunkel der Fokusring. Nicht-Text-Marke, darum 3:1 als Schwelle.
+
+       Ausnahme mit Text: Füllung der Fristbeginn-Marke im Fristenkalender (`bg-brass-500
+       text-paper`). W2·29-WERKBANK-REST S3 (25.9.2026, Posten Dependabot #918): hell minimal
+       abgedunkelt #7A766E → #78746C (je Kanal −2, Ton gehalten), damit `paper` darauf 4.54:1 trägt
+       (vorher 4.41:1); dunkel unverändert, `paper` dunkel darauf 5.51:1. Die frühere Tinte
+       `auf-gold` mass auf dieser Füllung hell nur 3.47:1 (axe 4.13). */
+    --brass-500: #78746C;
     /* Dekorative Linie und helle Fläche der neutralen Skala (`accent-line-decor`). In beiden Themes
        vergleichsweise hell - Text darauf nimmt darum `auf-gold`. KONTRAST-VERMERK: rein dekorativ,
        trägt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht. Gemessen auf paper 1.58:1 hell /
@@ -1116,7 +1122,16 @@
      hell (Links/Akzent/Status-Text) und die FLÄCHEN-Töne dunkel (aktiver Nav-
      Grund, Hover, Badges), die Linien-/Skala-Mitten bleiben Gold. Aktiviert über
      die .dark-Klasse am <html> (components/thema.ts), nicht über @media — David
-     kann unabhängig vom System umschalten. */
+     kann unabhängig vom System umschalten.
+     ── DK-09 (W2·29-WERKBANK-REST S3, 25.9.2026) · NUR AM BILDSCHIRM ──────────
+     Gemessen (Herz-und-Nieren-Prüfung, bestätigt 25.9.2026; e2e
+     `druck-dunkel-dk09`): Druck aus dem Dunkelmodus setzte die Tinte des
+     Overrides (#E2E0DC) auf Papier-Weiss — 1.32:1. Der Override gilt darum
+     nur ausserhalb des Drucks; der Ausdruck steht immer auf den hellen
+     `:root`-Token. Keine zweite Wertequelle im Druckblock (§5, Token-Quelle
+     `design/tokens.json`): die Klammer entscheidet, WANN die Werte gelten,
+     nicht WELCHE. */
+  @media not print {
   html.dark {
     /* @generated tokens:start — Quelle design/tokens.json, npm run gen:tokens; nie von Hand */
     /* Tinte → hell (Text & Struktur auf dunklem Papier)
@@ -1225,6 +1240,7 @@
        Tönung etwas stärker, damit die Flächen auf Dunkel lesbar bleiben. */
     --status-tint:18%;
   }
+  } /* Ende @media not print (DK-09) */
 
   html { color-scheme: light; }
   body {
@@ -1906,12 +1922,14 @@
     text-underline-offset: .15em;
   }
 
-  /* Der DRUCK fällt in die Zeilenform zurück — die Regeln dafür stehen im
-     einen `@media print`-Block dieser Datei (Suchwort «SATZSPIEGEL IM DRUCK»),
-     nicht hier: `src/tests/druck-fundstellen.test.ts` liest den ERSTEN
-     print-Block der Datei und prüft an ihm die Druck-Zusagen. Ein zweiter,
-     früher stehender Block hat ihm am 6.9.2026 genau die drei Regeln
-     verdeckt, die er sichern soll. Eine Stelle für den Druck (§5). */
+  /* Druck-Regeln stehen im EINEN `@media print`-Block weiter unten, nicht
+     hier: `src/tests/druck-fundstellen.test.ts` liest den ERSTEN print-Block
+     der Datei und prüft an ihm die Druck-Zusagen. Ein zweiter, früher
+     stehender Block hat ihm am 6.9.2026 genau die Regeln verdeckt, die er
+     sichern soll. Eine Stelle für den Druck (§5).
+     (W2·29-WERKBANK-REST S3, 25.9.2026: der Verweis auf die Satzspiegel-
+     Regeln ist gestrichen — die Regeln selbst fielen mit R6c, der Zeiger
+     zeigte seither ins Leere.) */
 
   /* W2.8: lange Erlasse (OR/ZGB ~1099 Art.) — off-screen-Artikel überspringen
      Layout/Paint. Inhalt bleibt im DOM (Suche/Anker/Screenreader/Crawler
@@ -2004,8 +2022,15 @@
        Gestalt wechselt je Breite, die Anker nicht. Bewacht:
        `e2e/leser-v3-scrim-b7n1.e2e.ts` (Druck) und `druck-fundstellen.test.ts`. */
     [data-v3-panel-spur], [data-v3-panel-scrim] { display: none !important; }
+    /* Papier-Weiss. Die TINTE dazu kommt seit DK-09 (25.9.2026) immer aus den
+       hellen `:root`-Token: der Dunkel-Override ist auf `@media not print`
+       geklammert (Block «Dunkelmodus» oben) — vorher druckte der Dunkelmodus
+       #E2E0DC auf dieses Weiss (1.32:1, e2e `druck-dunkel-dk09`). */
     body { background: #fff; }
-    .lc-card, [class*='shadow'] { box-shadow: none !important; }
+    /* W2·29-WERKBANK-REST S3: `.lc-card` aus der Liste gestrichen — die Karte
+       trägt seit U2 (6.9.2026) keinen Schatten mehr (nur Linien), die Regel
+       konnte an ihr nichts mehr tun. Die Tailwind-`shadow-*`-Flächen bleiben. */
+    [class*='shadow'] { box-shadow: none !important; }
     .lc-reveal { animation: none !important; }
     a { color: inherit; text-decoration: none; }
 
@@ -4886,7 +4911,10 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 @media (min-width: 1100px) {
   .es-raster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-.es-gruppe { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+/* W2·29-WERKBANK-REST S3 (25.9.2026): dieselbe Gruppen-Linie trägt die
+   Abschnitte der statischen Seiten (`layout/MetaAbschnitt`, /kontakt) — eine
+   Regel für alle Meta-Seiten statt einer zweiten (§5). */
+.es-gruppe, .meta-abschnitt { border-top: 1px solid var(--rule); padding-top: 1.25rem; }
 .es-zeile + .es-zeile { border-top: 1px solid var(--rule-soft); padding-top: 1.0625rem; margin-top: 1.125rem; }
 
 /* ═══ S6 W1g (W2·29-WERKBANK-LESER, Wunsch David 24.9.2026) · LESER AN DAS

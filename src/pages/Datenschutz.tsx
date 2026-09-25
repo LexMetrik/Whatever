@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SeitenKopf } from '../components/layout/SeitenKopf';
+import { MetaAbschnitt } from '../components/layout/MetaAbschnitt';
 
 // Seite «Datenschutzerklärung» – ENTWURF (Badge), fachliche Prüfung der
 // GANZEN Seite steht aus; Platzhalter [«…»] sind bewusst sichtbar, bis
@@ -9,34 +10,32 @@ import { SeitenKopf } from '../components/layout/SeitenKopf';
 // keine Konten, kein Tracking, Eingaben bleiben im Browser (localStorage),
 // Hosting auf Vercel mit technisch bedingten Server-Logs.
 
-function Abschnitt({ titel, children }: { titel: string; children: React.ReactNode }) {
-  return (
-    <section className="space-y-2 border-t border-line pt-6">
-      <h2 className="text-h3 font-display font-semibold text-ink-900">{titel}</h2>
-      <div className="space-y-2 text-body-s text-ink-600 leading-relaxed">{children}</div>
-    </section>
-  );
-}
+// W2·29-WERKBANK-REST S3 (25.9.2026): hier stand die lokale Funktion
+// `Abschnitt` — wortgleich mit der Inline-Hülle in `Methodik`. Beide sind in
+// `layout/MetaAbschnitt` aufgegangen (§5).
 
 export function Datenschutz() {
   return (
     <div className="space-y-10 max-w-reading">
-      <SeitenKopf overline="Rechtliches" titel="Datenschutzerklärung">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="lc-badge-entwurf" title="Entwurf – fachliche Prüfung steht aus">Entwurf</span>
-          <span className="text-body-s text-ink-500">Stand: 5. Juni 2026 · nach Schweizer Datenschutzgesetz (DSG)</span>
-        </div>
-      </SeitenKopf>
+      {/* W2·29-WERKBANK-REST S3: Status und Stand stehen in der Ausgabe-Zeile
+          des Titelblatt-Bands (dieselbe Zelle, in der /einstellungen seinen
+          §8-Satz führt) statt als eigene Zeile unter dem Band. Wortlaut und
+          Badge unverändert (§8: «Entwurf» bleibt sichtbar). */}
+      <SeitenKopf overline="Rechtliches" titel="Datenschutzerklärung"
+        ausgabe={<>
+          <span className="lc-badge-entwurf mr-2" title="Entwurf – fachliche Prüfung steht aus">Entwurf</span>
+          <span>Stand: 5. Juni 2026 · nach Schweizer Datenschutzgesetz (DSG)</span>
+        </>} />
 
-      <Abschnitt titel="1. Verantwortliche Stelle">
+      <MetaAbschnitt titel="1. Verantwortliche Stelle">
         <p>
           Verantwortlich für die Datenbearbeitung im Zusammenhang mit dieser Website ist:
           <br /><span className="text-warn-700">[Name und Adresse der verantwortlichen Person/Firma – wird ergänzt]</span>.
           Anfragen zum Datenschutz richten Sie bitte über die <Link to="/kontakt" className="text-brass-700 underline hover:text-brass-600">Kontaktseite</Link> an uns.
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
 
-      <Abschnitt titel="2. Grundsatz: Berechnung im Browser">
+      <MetaAbschnitt titel="2. Grundsatz: Berechnung im Browser">
         <p>
           LexMetrik ist so gebaut, dass Ihre Eingaben (Daten in Rechnern und Dokument-Vorlagen)
           <strong> ausschliesslich lokal in Ihrem Browser</strong> verarbeitet werden. Es gibt
@@ -66,17 +65,17 @@ export function Datenschutz() {
           über PLZ, Gemeinde und Strasse funktioniert alternativ vollständig offline in Ihrem
           Browser.
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
 
-      <Abschnitt titel="3. Keine Analyse, kein Tracking">
+      <MetaAbschnitt titel="3. Keine Analyse, kein Tracking">
         <p>
           LexMetrik setzt keine Analyse- oder Marketing-Cookies und keine Tracking-Dienste ein.
           Schriften und Programmcode werden von der eigenen Domain ausgeliefert; es werden keine
           Inhalte von Drittanbietern (z. B. Schriften-CDNs) nachgeladen.
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
 
-      <Abschnitt titel="4. Hosting (Vercel) und Server-Logs">
+      <MetaAbschnitt titel="4. Hosting (Vercel) und Server-Logs">
         <p>
           Diese Website wird bei Vercel Inc. (USA) gehostet. Beim Aufruf der Website verarbeitet
           der Hosting-Anbieter technisch bedingt Verbindungsdaten (insbesondere IP-Adresse,
@@ -98,9 +97,9 @@ export function Datenschutz() {
           <span className="text-warn-700">[Zu prüfen/ergänzen: Vercel-Auftragsverarbeitung,
           Datenübermittlung in die USA und einschlägige Garantien.]</span>
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
 
-      <Abschnitt titel="5. Kontaktaufnahme">
+      <MetaAbschnitt titel="5. Kontaktaufnahme">
         <p>
           Wenn Sie das Kontaktformular nutzen, erfolgt der Versand über Ihr eigenes
           E-Mail-Programm; LexMetrik speichert die Formulareingaben nicht serverseitig. Die
@@ -108,17 +107,17 @@ export function Datenschutz() {
           Bearbeitung der Anfrage und für allfällige Rückfragen verwendet und nicht an Dritte
           weitergegeben.
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
 
-      <Abschnitt titel="6. Externe Links">
+      <MetaAbschnitt titel="6. Externe Links">
         <p>
           Normverweise führen auf die amtliche Sammlung des Bundesrechts
           (fedlex.admin.ch) und vereinzelt auf weitere externe Angebote. Für deren
           Datenbearbeitung gelten die Datenschutzhinweise der jeweiligen Betreiber.
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
 
-      <Abschnitt titel="7. Ihre Rechte">
+      <MetaAbschnitt titel="7. Ihre Rechte">
         <p>
           Nach dem DSG haben Sie insbesondere das Recht auf Auskunft, Berichtigung und Löschung
           Ihrer Personendaten sowie das Recht, einer Bearbeitung zu widersprechen. Da LexMetrik
@@ -126,15 +125,15 @@ export function Datenschutz() {
           die Korrespondenz aus einer Kontaktaufnahme. Wenden Sie sich dafür an die
           verantwortliche Stelle (Ziff. 1).
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
 
-      <Abschnitt titel="8. Änderungen">
+      <MetaAbschnitt titel="8. Änderungen">
         <p>
           Diese Datenschutzerklärung wird bei Bedarf angepasst, etwa wenn neue Funktionen
           (z. B. ein serverseitiger Formularversand oder ein Bezahlzugang) eingeführt werden.
           Es gilt die jeweils hier veröffentlichte Fassung.
         </p>
-      </Abschnitt>
+      </MetaAbschnitt>
     </div>
   );
 }
