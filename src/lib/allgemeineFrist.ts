@@ -501,8 +501,10 @@ export function zustellHinweis(art: ZustellArt, datumISO: string, kanton?: Kanto
     // kantonale Tage, die nur für Art. 142 ZPO Feiertag sind (NE LI-CPC Art. 10a,
     // SO EG ZPO § 22 Abs. 2), zählen; ein unsicher gezählter Tag (GL 2.1.)
     // zählt mit Warnung und dem früheren Datum ohne ihn (strenge Lesart).
+    // Ohne Kanton (Gerichtsort unbekannt) bleibt es bei der früheren, sicheren
+    // Seite: 'allgemein' in allen Kantonen, wie vor der Landung (AF-21).
     const feiertag = (x: Date, lesart: FeiertagsLesart) =>
-      kanton ? istFeiertag(x, kanton, lesart) : KANTONE.every((k) => istFeiertag(x, k, lesart));
+      kanton ? istFeiertag(x, kanton, lesart) : KANTONE.every((k) => istFeiertag(x, k, 'allgemein'));
     const frei = (x: Date, lesart: FeiertagsLesart) =>
       feiertag(x, lesart) ? 'Feiertag' : isSunday(x) ? 'Sonntag' : isSaturday(x) ? 'Samstag' : null;
     for (let g = 0; g < 10; g++) {
