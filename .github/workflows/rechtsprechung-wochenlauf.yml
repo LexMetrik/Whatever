@@ -130,7 +130,7 @@ jobs:
           # schreibt (wochenlauf-kern.ts ERWARTETE_PFADE); Unerwartetes steht im
           # Bericht und macht den PR zum Entwurf.
           git reset -q
-          if [ -s "$AUS/pfade.nul" ]; then git add -A --pathspec-from-file="$AUS/pfade.nul" --pathspec-file-nul; fi
+          if [ -s "$AUS/pfade.nul" ]; then git --literal-pathspecs add -A --pathspec-from-file="$AUS/pfade.nul" --pathspec-file-nul; fi
           git commit -q -F "$AUS/commit.txt"
           # Lease: überschreibt nur, wenn der Branch noch auf dem Stand vom
           # Laufstart steht — ein zwischenzeitlicher fremder Push lässt den

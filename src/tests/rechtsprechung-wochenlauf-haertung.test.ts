@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import {
   erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, entscheide, leseBsDelta, leseBsVoll, waehleStichprobe,
   pruefeText, aktenzeichenVarianten, amtlichesDatum, oclIdFuerPdf, budgetZeilen, budgetBefund, bewerteFrische,
-  teilePfade, inPruefung, zerlegeRunParallel, e2eAuswahl, restMinuten, vergleicheRegister, BOT,
+  teilePfade, leseStatusZ, inPruefung, zerlegeRunParallel, e2eAuswahl, restMinuten, vergleicheRegister, BOT,
   type Lage, type RegEintrag,
 } from '../../scripts/rechtsprechung/wochenlauf-kern';
 import { baueBericht, baueSummary, kopfsatz, type BerichtDaten } from '../../scripts/rechtsprechung/wochenlauf-bericht';
@@ -324,6 +324,10 @@ describe('10/11/14/15 · CI-Auslösung, Fristen, Steuerfläche, Rot-Signal', () 
 });
 
 describe('12 · Positivliste statt git add -A (A11)', () => {
+  it('Status -z: Leerzeichen-Pfade ungequotet, Umbenennung zählt den neuen Pfad', () => {
+    expect(leseStatusZ(' M public/rechtsprechung/bezuege/BS-RiE 640.100.json\0?? daten/bs-fiw/raw/1.html\0R  e2e/neu.json\0e2e/alt.json\0 D public/rechtsprechung/x.json\0'))
+      .toEqual(['public/rechtsprechung/bezuege/BS-RiE 640.100.json', 'daten/bs-fiw/raw/1.html', 'e2e/neu.json', 'public/rechtsprechung/x.json']);
+  });
   it('erwartete Generator-Pfade gestagt, Fremdes nicht ⇒ Entwurf', () => {
     const { erwartet, unerwartet } = teilePfade([
       'public/rechtsprechung/register.json', 'public/rechtsprechung/kanton/BS/bs_zivilgericht/P_2024_9.json',

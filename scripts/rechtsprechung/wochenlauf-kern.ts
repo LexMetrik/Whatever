@@ -470,6 +470,24 @@ export const ERWARTETE_PFADE: RegExp[] = [
   /^src\/lib\/rechtsprechung\/erfasste-keys\.generated\.ts$/,
   /^e2e\/shard-gruppen\.json$/,
 ];
+/**
+ * Pfade aus `git status --porcelain -z -uall`: NUL-getrennt, nie gequotet
+ * (Offline-Probe 25.9.2026: «public/rechtsprechung/bezuege/BS-RiE 640.100.json»
+ * kam ohne -z in Anführungszeichen). Bei Umbenennung/Kopie (R/C) folgt der alte
+ * Pfad als eigenes Feld — er wird übersprungen, der neue zählt.
+ */
+export function leseStatusZ(z: string): string[] {
+  const teile = z.split('\0');
+  const out: string[] = [];
+  for (let i = 0; i < teile.length; i++) {
+    const t = teile[i];
+    if (t.length < 4) continue;
+    out.push(t.slice(3));
+    if (/^[RC]/.test(t)) i++;
+  }
+  return out;
+}
+
 export function teilePfade(dateien: string[]): { erwartet: string[]; unerwartet: string[] } {
   const erwartet: string[] = [];
   const unerwartet: string[] = [];

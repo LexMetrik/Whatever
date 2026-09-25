@@ -35,7 +35,7 @@ import { join } from 'node:path';
 import {
   baenderFuer, vergleicheRegister, erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, KANTONSZWEIG_DATEI,
   leseBsDelta, leseBsVoll, waehleStichprobe, entscheide, mergeSchutzSperrt, budgetZeilen, budgetBefund,
-  teilePfade, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, aktiveGerichte, EIDG_GERICHTE, KANTONS_GERICHTE,
+  teilePfade, leseStatusZ, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, aktiveGerichte, EIDG_GERICHTE, KANTONS_GERICHTE,
   type RegEintrag, type Tor, type StichprobenZeile,
 } from './wochenlauf-kern';
 import { baueBericht, baueCommit, baueSummary, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
@@ -165,7 +165,7 @@ async function main(): Promise<void> {
     }
     gzNachher = gzJetzt();
     for (const e of waehleStichprobe(vergleich.neu, stichprobeN)) stichprobe.push(await stichprobeZeile(e));
-    dateien = git('-c', 'core.quotePath=false', 'status', '--porcelain', '-uall').split('\n').filter(Boolean).map((z) => z.slice(3).split(' -> ').pop()!.replace(/^"|"$/g, ''));
+    dateien = leseStatusZ(git('status', '--porcelain', '-z', '-uall'));
   } else if (checkpoint) {
     git('reset', '-q', '--hard', start); git('clean', '-qfd', '--', 'public', 'daten', 'bibliothek', 'src');
   }
