@@ -24,7 +24,81 @@
       },
       "regeste": {
         "text": "a\n Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und 555 Abs. 2 ZGB Alleinerbin des Nachlasses ist oder der Erblasser einen Erben eingesetzt hat (E. 4).\nRegeste b\n Art. 554 f. ZGB; Erbschaftsverwaltung. Das Recht des Erbschaftsverwalters, in eigenem Namen anstelle der Erben zu handeln, welche die Erbengemeinschaft bilden, erstreckt sich auch auf die Zivilklage, die in einem Strafverfahren adhäsionsweise erhoben wird (E. 3).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge.",
+            "absaetze": [
+              "Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und 555 Abs. 2 ZGB Alleinerbin des Nachlasses ist oder der Erblasser einen Erben eingesetzt hat (E. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-27%3Ade&lang=de&type=show_document",
+            "weitereRegesten": [
+              {
+                "label": "a",
+                "kopf": "Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge.",
+                "absaetze": [
+                  "Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und 555 Abs. 2 ZGB Alleinerbin des Nachlasses ist oder der Erblasser einen Erben eingesetzt hat (E. 4)."
+                ]
+              },
+              {
+                "label": "b",
+                "kopf": "Art. 554 f. ZGB; Erbschaftsverwaltung.",
+                "absaetze": [
+                  "Das Recht des Erbschaftsverwalters, in eigenem Namen anstelle der Erben zu handeln, welche die Erbengemeinschaft bilden, erstreckt sich auch auf die Zivilklage, die in einem Strafverfahren adhäsionsweise erhoben wird (E. 3)."
+                ]
+              }
+            ]
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 121 al. 2 CPP; acquisition de la qualité de partie plaignante par transmission des droits.",
+            "absaetze": [
+              "L'art. 121 al. 2 CPP trouve notamment application à la succession universelle au sens de l'art. 560 CC, y compris lorsque le seul héritier est l'État en vertu des art. 466 et 555 al. 2 CC ou qu'un héritier est institué (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-27%3Afr&lang=fr&type=show_document",
+            "weitereRegesten": [
+              {
+                "label": "a",
+                "kopf": "Art. 121 al. 2 CPP; acquisition de la qualité de partie plaignante par transmission des droits.",
+                "absaetze": [
+                  "L'art. 121 al. 2 CPP trouve notamment application à la succession universelle au sens de l'art. 560 CC, y compris lorsque le seul héritier est l'État en vertu des art. 466 et 555 al. 2 CC ou qu'un héritier est institué (consid. 4)."
+                ]
+              },
+              {
+                "label": "b",
+                "kopf": "Art. 554 s. CC; administration d'office d'une succession.",
+                "absaetze": [
+                  "La qualité de l'administrateur d'office pour agir en son propre nom et à la place des héritiers composant la communauté héréditaire s'étend à l'action civile exercée par adhésion à une procédure pénale (consid. 3)."
+                ]
+              }
+            ]
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 121 cpv. 2 CPP; acquisizione della qualità di accusatore privato per surrogazione legale.",
+            "absaetze": [
+              "L'art. 121 cpv. 2 CPP si applica segnatamente alla successione universale nel senso dell'art. 560 CC anche nel caso in cui l'ente pubblico è l'unico erede giusta gli art. 466 e 555 cpv. 2 CC o in caso di erede istituito (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-27%3Ait&lang=it&type=show_document",
+            "weitereRegesten": [
+              {
+                "label": "a",
+                "kopf": "Art. 121 cpv. 2 CPP; acquisizione della qualità di accusatore privato per surrogazione legale.",
+                "absaetze": [
+                  "L'art. 121 cpv. 2 CPP si applica segnatamente alla successione universale nel senso dell'art. 560 CC anche nel caso in cui l'ente pubblico è l'unico erede giusta gli art. 466 e 555 cpv. 2 CC o in caso di erede istituito (consid. 4)."
+                ]
+              },
+              {
+                "label": "b",
+                "kopf": "Art. 554 seg. CC; amministrazione dell'eredità.",
+                "absaetze": [
+                  "La legittimazione dell'amministratore dell'eredità di agire a nome proprio e in luogo degli eredi componenti la comunione ereditaria si estende anche all'azione civile fatta valere in via adesiva nel procedimento penale (consid. 3)."
+                ]
+              }
+            ]
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

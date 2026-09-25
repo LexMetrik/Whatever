@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 76 Abs. 1 und 2 BGG; Beschwerdelegitimation der Eidgenössischen Stiftungsaufsicht (ESA). Weder Art. 76 Abs. 1 BGG noch Art. 76 Abs. 2 BGG verleihen der Eidgenössischen Stiftungsaufsicht (ESA) die Legitimation zur Erhebung einer Beschwerde in Zivilsachen gegen ein Urteil des Bundesverwaltungsgerichts, welches deren Entscheid aufhebt (E. 1.2-1.4).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 76 Abs. 1 und 2 BGG; Beschwerdelegitimation der Eidgenössischen Stiftungsaufsicht (ESA).",
+            "absaetze": [
+              "Weder Art. 76 Abs. 1 BGG noch Art. 76 Abs. 2 BGG verleihen der Eidgenössischen Stiftungsaufsicht (ESA) die Legitimation zur Erhebung einer Beschwerde in Zivilsachen gegen ein Urteil des Bundesverwaltungsgerichts, welches deren Entscheid aufhebt (E. 1.2-1.4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-III-213%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 76 al. 1 et 2 LTF; qualité pour recourir de l'Autorité fédérale de surveillance des fondations (ASF).",
+            "absaetze": [
+              "Ni l'art. 76 al. 1 LTF, ni l'art. 76 al. 2 LTF ne confèrent à l'Autorité fédérale de surveillance des fondations (ASF) la qualité pour interjeter un recours en matière civile contre un jugement rendu par le Tribunal administratif fédéral qui annule sa décision (consid. 1.2-1.4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-III-213%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 76 cpv. 1 e 2 LTF; legittimazione a ricorrere dell'Autorità federale di vigilanza sulle fondazioni (AVF).",
+            "absaetze": [
+              "Né l'art. 76 cpv. 1 LTF né l'art. 76 cpv. 2 LTF conferiscono all'Autorità federale di vigilanza sulle fondazioni (AVF) il diritto di interporre ricorso in materia civile contro una sentenza del Tribunale amministrativo federale che annulla una sua decisione (consid. 1.2-1.4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-III-213%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

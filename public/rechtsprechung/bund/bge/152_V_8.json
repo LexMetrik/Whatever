@@ -24,7 +24,36 @@
       },
       "regeste": {
         "text": "Art. 42 Abs. 3 Satz 2 IVG; Anspruchsvoraussetzungen für eine Hilflosenentschädigung bei einer Hilflosigkeit leichten Grades wegen des Bedarfs an lebenspraktischer Begleitung. Das in Satz 2 des Art. 42 Abs. 3 IVG vorgesehene restriktive Erfordernis des Rentenanspruchs bei Personen mit ausschliesslicher Beeinträchtigung der psychischen Gesundheit kommt nicht zur Anwendung bei Versicherten mit Beeinträchtigung der geistigen Gesundheit (E. 9.1). Eine versicherte Person mit Autismus-Spektrum-Störung (ASS) muss nach dieser Bestimmung als geistig - und nicht ausschliesslich psychisch - beeinträchtigt gelten, wenn die ASS mit einer intellektuellen Entwicklungsstörung einhergeht (E. 9.2-9.4).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 42 Abs. 3 Satz 2 IVG; Anspruchsvoraussetzungen für eine Hilflosenentschädigung bei einer Hilflosigkeit leichten Grades wegen des Bedarfs an lebenspraktischer Begleitung.",
+            "absaetze": [
+              "Das in Satz 2 des Art. 42 Abs. 3 IVG vorgesehene restriktive Erfordernis des Rentenanspruchs bei Personen mit ausschliesslicher Beeinträchtigung der psychischen Gesundheit kommt nicht zur Anwendung bei Versicherten mit Beeinträchtigung der geistigen Gesundheit (E. 9.1).",
+              "Eine versicherte Person mit Autismus-Spektrum-Störung (ASS) muss nach dieser Bestimmung als geistig - und nicht ausschliesslich psychisch - beeinträchtigt gelten, wenn die ASS mit einer intellektuellen Entwicklungsstörung einhergeht (E. 9.2-9.4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-8%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 42 al. 3, 2e phrase, LAI; conditions du droit à l'allocation pour impotence de degré faible en raison d'un besoin d'accompagnement pour faire face aux nécessités de la vie.",
+            "absaetze": [
+              "La condition restrictive prévue à la 2e phrase de l'art. 42 al. 3 LAI - c'est-à-dire avoir droit à une rente pour les personnes souffrant d'une atteinte à la santé uniquement psychique - n'est pas applicable aux assurés présentant une atteinte à la santé mentale (consid. 9.1).",
+              "Dans le contexte de cette disposition, une personne assurée atteinte d'un trouble du spectre de l'autisme (TSA) doit être considérée comme atteinte d'une maladie mentale - et non uniquement psychique - lorsqu'elle présente un trouble du développement intellectuel associé au TSA (consid. 9.2-9.4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-8%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 42 cpv. 3, seconda frase, LAI; condizioni del diritto all'assegno per grandi invalidi di grado lieve per necessità di essere accompagnato nell'organizzazione della realtà quotidiana.",
+            "absaetze": [
+              "La condizione restrittiva prevista dalla seconda frase dell'art. 42 cpv. 3 LAI - ovvero il diritto alla rendita limitato alle persone che soffrono esclusivamente di un danno alla salute psichica - non è applicabile agli assicurati che presentano un danno alla salute mentale (consid. 9.1).",
+              "Nel contesto di tale disposizione, una persona assicurata affetta da un disturbo dello spettro autistico (DSA) deve essere considerata come affetta da una malattia mentale - e non esclusivamente psichica - quando presenta un disturbo dello sviluppo intellettivo associato al DSA (consid. 9.2-9.4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-8%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

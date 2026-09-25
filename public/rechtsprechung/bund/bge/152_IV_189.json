@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 1b BetmG; Verhältnis zwischen dem Betäubungsmittelgesetz (BetmG) und dem Heilmittelgesetz (HMG) hinsichtlich der Einfuhr von als Heilmittel verwendeten Betäubungsmitteln. Das BetmG geht dem HMG hinsichtlich der Einfuhr von als Heilmitteln verwendeten Betäubungsmitteln vor, da es in diesem Bereich eine strengere Regelung als das HMG trifft (E. 2).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 1b BetmG; Verhältnis zwischen dem Betäubungsmittelgesetz (BetmG) und dem Heilmittelgesetz (HMG) hinsichtlich der Einfuhr von als Heilmittel verwendeten Betäubungsmitteln.",
+            "absaetze": [
+              "Das BetmG geht dem HMG hinsichtlich der Einfuhr von als Heilmitteln verwendeten Betäubungsmitteln vor, da es in diesem Bereich eine strengere Regelung als das HMG trifft (E. 2)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-189%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 1b LStup; relation entre la loi sur les stupéfiants (LStup) et la loi sur les produits thérapeutiques (LPTh) quant à l'importation de stupéfiants utilisés comme produits thérapeutiques.",
+            "absaetze": [
+              "La LStup prime la LPTh quant à l'importation de stupéfiants utilisés comme produits thérapeutiques, étant donné qu'elle formule dans ce domaine une réglementation plus sévère que la LPTh (consid. 2)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-189%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 1b LStup; rapporto tra la legge sugli stupefacenti (LStup) e la legge sugli agenti terapeutici (LATer) per quanto concerne l'importazione di stupefacenti utilizzati come agenti terapeutici.",
+            "absaetze": [
+              "La LStup prevale sulla LATer per quanto concerne l'importazione di stupefacenti utilizzati come agenti terapeutici, ritenuto che essa in questo ambito prevede una normativa più severa rispetto alla LATer (consid. 2)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-189%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

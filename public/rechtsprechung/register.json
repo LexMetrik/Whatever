@@ -5221,6 +5221,88 @@
       ]
     },
     {
+      "key": "bge_152_I_20",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "152 I 20",
+      "bgeReferenz": "152 I 20",
+      "datum": "2026-02-27",
+      "zitierung": "BGE 152 I 20",
+      "leitcharakter": "leitentscheid",
+      "regesteVorhanden": true,
+      "regesteKurz": "Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "fr",
+      "normKeys": [
+        "BGG",
+        "BV",
+        "EMRK",
+        "IRSG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bge/152_I_20.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-20%3Ade&lang=de&zoom=&type=show_document",
+      "fassungsToken": "e72057ed4a1c42dcb66b6778fd117a15d548096f01b3882d294735c5ba7e91e3",
+      "richter": [
+        {
+          "s": "haag",
+          "r": "vorsitz"
+        },
+        {
+          "s": "chaix",
+          "r": "mitglied"
+        },
+        {
+          "s": "kneubuhler",
+          "r": "mitglied"
+        },
+        {
+          "s": "muller",
+          "r": "mitglied"
+        },
+        {
+          "s": "merz",
+          "r": "mitglied"
+        },
+        {
+          "s": "kurz",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_I_20__voll",
+      "gericht": "bger",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "1C_480/2025",
+      "bgeReferenz": null,
+      "datum": "2026-02-27",
+      "zitierung": "BGer 1C_480/2025",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "fr",
+      "normKeys": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": null,
+      "quelle": "opencaselaw",
+      "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://27-02-2026-1C_480-2025&lang=de&type=show_document",
+      "fassungsToken": "e72057ed4a1c42dcb66b6778fd117a15d548096f01b3882d294735c5ba7e91e3",
+      "verweis": {
+        "zielKey": "bge_152_I_20",
+        "ansicht": "voll",
+        "bgeReferenz": "152 I 20"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2026.13",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
@@ -9990,115 +10072,6 @@
         },
         {
           "s": "cruz-joelle",
-          "r": "gerichtsschreiber"
-        }
-      ]
-    },
-    {
-      "key": "bge_152_I_2",
-      "gericht": "bge",
-      "gerichtName": "Bundesgericht",
-      "gerichtstyp": "bundesgericht",
-      "kanton": "CH",
-      "nummer": "152 I 2",
-      "bgeReferenz": "152 I 2",
-      "datum": "2026-01-01",
-      "zitierung": "BGE 152 I 2",
-      "leitcharakter": "leitentscheid",
-      "regesteVorhanden": true,
-      "regesteKurz": "Sperrung von Vermögenswerten im Hinblick auf eine Einziehung bei Scheitern der Rechtshilfe an die Ukraine (Art. 4 SRVG); Anspruch auf vorgängige Anhörung (Art. 29 Abs. 2 BV; Art. 30 VwVG). Anspruch der Kontoinhaber und -inhaberinnen auf…",
-      "sachgebiet": "oeffentlich",
-      "sprache": "fr",
-      "normKeys": [
-        "BGG",
-        "BV",
-        "EMRK",
-        "IRSG",
-        "VWVG"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "bund/bge/152_I_2.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-2%3Ade&lang=de&zoom=&type=show_document",
-      "fassungsToken": "46c9308d946d2f5524bd9cde4a43d6de34d28396ab39b7e94f4c706e28850b96",
-      "richter": [
-        {
-          "s": "haag",
-          "r": "vorsitz"
-        },
-        {
-          "s": "chaix",
-          "r": "mitglied"
-        },
-        {
-          "s": "kneubuhler",
-          "r": "mitglied"
-        },
-        {
-          "s": "muller",
-          "r": "mitglied"
-        },
-        {
-          "s": "merz",
-          "r": "mitglied"
-        },
-        {
-          "s": "kurz",
-          "r": "gerichtsschreiber"
-        }
-      ]
-    },
-    {
-      "key": "bge_152_I_20",
-      "gericht": "bge",
-      "gerichtName": "Bundesgericht",
-      "gerichtstyp": "bundesgericht",
-      "kanton": "CH",
-      "nummer": "152 I 20",
-      "bgeReferenz": "152 I 20",
-      "datum": "2026-01-01",
-      "zitierung": "BGE 152 I 20",
-      "leitcharakter": "leitentscheid",
-      "regesteVorhanden": true,
-      "regesteKurz": "Art. 25 Abs. 3 und Art. 80h lit. b IRSG; Art. 29a BV; Ablehnung des Bundesamts für Justiz (BJ), die Überstellung ins Ausland zur Vollstreckung einer in der Schweiz ausgesprochenen Strafe zu verlangen; Rechtsschutz. Der Verurteilte ist…",
-      "sachgebiet": "oeffentlich",
-      "sprache": "fr",
-      "normKeys": [
-        "BGG",
-        "BV",
-        "EMRK",
-        "IRSG"
-      ],
-      "bestand": "snapshot",
-      "kuratierung": "maschinell",
-      "datei": "bund/bge/152_I_20.json",
-      "quelle": "opencaselaw",
-      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-20%3Ade&lang=de&zoom=&type=show_document",
-      "fassungsToken": "e72057ed4a1c42dcb66b6778fd117a15d548096f01b3882d294735c5ba7e91e3",
-      "richter": [
-        {
-          "s": "haag",
-          "r": "vorsitz"
-        },
-        {
-          "s": "chaix",
-          "r": "mitglied"
-        },
-        {
-          "s": "kneubuhler",
-          "r": "mitglied"
-        },
-        {
-          "s": "muller",
-          "r": "mitglied"
-        },
-        {
-          "s": "merz",
-          "r": "mitglied"
-        },
-        {
-          "s": "kurz",
           "r": "gerichtsschreiber"
         }
       ]

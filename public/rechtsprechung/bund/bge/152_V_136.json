@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 8 Abs. 1 AVIG; Art. 37 Abs. 3 AVIV; Bemessungszeitraum für den versicherten Verdienst bei verzögerter Anmeldung zum Taggeldbezug. Art. 37 Abs. 3 AVIV ist in Verbindung mit Art. 8 Abs. 1 AVIG zu verstehen. Art. 37 Abs. 3 AVIV findet nur dann Anwendung, wenn rückblickend im Zeitpunkt des anrechenbaren Verdienstausfalles und bei einer hypothetischen sofortigen Anmeldung zum Leistungsbezug ein Anspruch auf Arbeitslosenentschädigung bejaht würde. Ansonsten wäre die Voraussetzung eines anspruchsbegründenden Verdienstausfalls nicht erfüllt (E. 4).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 8 Abs. 1 AVIG; Art. 37 Abs. 3 AVIV; Bemessungszeitraum für den versicherten Verdienst bei verzögerter Anmeldung zum Taggeldbezug.",
+            "absaetze": [
+              "Art. 37 Abs. 3 AVIV ist in Verbindung mit Art. 8 Abs. 1 AVIG zu verstehen. Art. 37 Abs. 3 AVIV findet nur dann Anwendung, wenn rückblickend im Zeitpunkt des anrechenbaren Verdienstausfalles und bei einer hypothetischen sofortigen Anmeldung zum Leistungsbezug ein Anspruch auf Arbeitslosenentschädigung bejaht würde. Ansonsten wäre die Voraussetzung eines anspruchsbegründenden Verdienstausfalls nicht erfüllt (E. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-136%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 8 al. 1 LACI; art. 37 al. 3 OACI; période de référence pour le calcul du gain assuré en cas d'inscription au chômage retardée.",
+            "absaetze": [
+              "L'art. 37 al. 3 OACI doit être compris en relation avec l'art. 8 al. 1 LACI. L'art. 37 al. 3 OACI ne s'applique que si, rétrospectivement au moment de la perte de gain à prendre en considération et dans l'hypothèse d'une inscription au chômage faite à temps, une prétention à l'indemnité journalière de chômage serait admise. Autrement, la condition de la perte de gain ouvrant droit aux prestations ne serait pas remplie (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-136%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 8 cpv. 1 LADI; art. 37 cpv. 3 OADI; periodo di calcolo per il guadagno assicurato in caso di annuncio ritardato per la riscossione delle indennità giornaliere.",
+            "absaetze": [
+              "L'art. 37 cpv. 3 OADI deve essere compreso in combinazione con l'art. 8 cpv. 1 LADI. L'art. 37 cpv. 3 OADI trova applicazione soltanto se, retrospettivamente al momento della perdita di guadagno computabile e in caso di un ipotetico annuncio immediato per la riscossione delle prestazioni, il diritto all'indennità di disoccupazione verrebbe riconosciuto. In caso contrario, il presupposto di una perdita di guadagno che dà diritto alle prestazioni non sarebbe adempiuto (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-136%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

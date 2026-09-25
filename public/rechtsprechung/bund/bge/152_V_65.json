@@ -24,7 +24,36 @@
       },
       "regeste": {
         "text": "Art. 4 ATSG; Unfallbegriff; Unglücksfälle beim Tauchen. Zusammenfassung der Rechtsprechung (E. 7). Der Tauchgang in eine Tiefe von rund 100 m, gefolgt von einem Aufstieg innerhalb von knapp sechs Minuten mit tödlichem Verlauf (arterielle Gasembolie, pulmonales Barotrauma, sekundärer Herz-Kreislauf-Stillstand), ist als Unfall zu qualifizieren. Rückweisung zur Prüfung insbesondere einer allfälligen Leistungskürzung oder -verweigerung unter dem Aspekt eines Wagnisses (E. 8).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 4 ATSG; Unfallbegriff; Unglücksfälle beim Tauchen.",
+            "absaetze": [
+              "Zusammenfassung der Rechtsprechung (E. 7).",
+              "Der Tauchgang in eine Tiefe von rund 100 m, gefolgt von einem Aufstieg innerhalb von knapp sechs Minuten mit tödlichem Verlauf (arterielle Gasembolie, pulmonales Barotrauma, sekundärer Herz-Kreislauf-Stillstand), ist als Unfall zu qualifizieren. Rückweisung zur Prüfung insbesondere einer allfälligen Leistungskürzung oder -verweigerung unter dem Aspekt eines Wagnisses (E. 8)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-65%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 4 LPGA; notion d'accident; accidents de plongée.",
+            "absaetze": [
+              "Résumé de la jurisprudence (consid. 7).",
+              "Une plongée à une profondeur d'environ 100 m, suivie d'une remontée effectuée en moins de six minutes ayant entraîné la mort (embolie gazeuse artérielle, barotraumatisme pulmonaire, arrêt cardiovasculaire secondaire), doit être qualifiée d'accident. Renvoi pour examen notamment d'une éventuelle réduction ou d'un refus de prestations sous l'angle d'une entreprise téméraire (consid. 8)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-65%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 4 LPGA; nozione di infortunio; incidente di immersione.",
+            "absaetze": [
+              "Riassunto della giurisprudenza (consid. 7).",
+              "L'immersione a una profondità di circa 100 m, seguita da una risalita della durata di poco meno di sei minuti con esito letale (embolia gassosa arteriosa, barotrauma polmonare, arresto cardiocircolatorio secondario), deve essere qualificata come infortunio. Rinvio per l'esame, in particolare, di un'eventuale riduzione o rifiuto delle prestazioni sotto l'aspetto dell'atto temerario (consid. 8)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-65%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

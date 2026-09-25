@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels. Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den Anklagegrundsatz (E. 2).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 9 und 350 StPO; Abweichung vom ausdrücklich angeklagten Reinheitsgrad eines Betäubungsmittels.",
+            "absaetze": [
+              "Legt das Sachgericht seinem Schuldspruch einen höheren als den ausdrücklich angeklagten Reinheitsgrad zugrunde, verletzt es den Anklagegrundsatz (E. 2)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-242%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 9 et 350 CPP; divergence par rapport au degré de pureté d'un stupéfiant expressément retenu dans l'acte d'accusation.",
+            "absaetze": [
+              "Viole la maxime d'accusation le juge du fond qui fonde son verdict de culpabilité sur un degré de pureté supérieur à celui expressément retenu dans l'acte d'accusation (consid. 2)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-242%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 9 e 350 CPP; divergenza rispetto al grado di purezza di uno stupefacente esplicitamente indicato nell'atto d'accusa.",
+            "absaetze": [
+              "Violazione del principio accusatorio nel caso in cui il giudice di merito ponga a fondamento del verdetto di colpevolezza un grado di purezza superiore a quello indicato esplicitamente nell'atto d'accusa (consid. 2)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-IV-242%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

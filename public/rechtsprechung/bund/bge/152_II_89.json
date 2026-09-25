@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1 bis lit. b AIG. Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz auf eine Nothilfe reduziert werden, wenn dem Vollzug der Landesverweisung kein Grund für einen Aufschub im Sinne von Art. 66d Abs. 1 StGB entgegensteht (E. 4-8).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 82 Abs. 1 Satz 2 AsylG; Art. 86 Abs. 1bis lit. b AIG.",
+            "absaetze": [
+              "Die Sozialhilfebezüge eines Flüchtlings, der rechtskräftig mit einer Landesverweisung nach Art. 66a Abs. 1 StGB belegt wurde, können bis zur tatsächlichen Ausreise aus der Schweiz auf eine Nothilfe reduziert werden, wenn dem Vollzug der Landesverweisung kein Grund für einen Aufschub im Sinne von Art. 66d Abs. 1 StGB entgegensteht (E. 4-8)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-II-89%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 82 al. 1, 2e phrase, LAsi; art. 86 al. 1bis let. b LEI.",
+            "absaetze": [
+              "Les prestations d'aide sociale allouées à un réfugié faisant l'objet d'une expulsion obligatoire conformément à l'art. 66a al. 1 CP peuvent être réduites à l'aide d'urgence jusqu'à son départ effectif du territoire suisse si l'expulsion est exécutable en l'absence de motif de report au sens de l'art. 66d al. 1 CP (consid. 4-8)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-II-89%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 82 cpv. 1, seconda frase, LAsi; art. 86 cpv. 1bis lett. b LStrI.",
+            "absaetze": [
+              "Le prestazioni di aiuto sociale concesse a un rifugiato contro cui è stata pronunciata un'espulsione obbligatoria conformemente all'art. 66a cpv. 1 CP possono essere ridotte all'aiuto d'urgenza fino alla sua partenza effettiva dal territorio svizzero se l'espulsione è eseguibile in assenza di motivo di rinvio ai sensi dell'art. 66d cpv. 1 CP (consid. 4-8)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-II-89%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

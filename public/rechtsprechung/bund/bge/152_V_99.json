@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 11 Abs. 1 lit. c ELG; Anrechnung eines Vermögensteils als Einnahme. Sind die Voraussetzungen für die gemeinsame Berechnung der Ergänzungsleistungen erfüllt, so ist bei einem Ehepaar, bei dem der eine Partner eine Invalidenrente, der andere eine Altersrente bezieht, ein Fünfzehntel des ehelichen Vermögens anzurechnen. Die entsprechende Regelung in der Wegleitung (WEL) ist gesetzeskonform (E. 6).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 11 Abs. 1 lit. c ELG; Anrechnung eines Vermögensteils als Einnahme.",
+            "absaetze": [
+              "Sind die Voraussetzungen für die gemeinsame Berechnung der Ergänzungsleistungen erfüllt, so ist bei einem Ehepaar, bei dem der eine Partner eine Invalidenrente, der andere eine Altersrente bezieht, ein Fünfzehntel des ehelichen Vermögens anzurechnen. Die entsprechende Regelung in der Wegleitung (WEL) ist gesetzeskonform (E. 6)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-99%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 11 al. 1 let. c LPC; imputation d'une part de la fortune à titre de revenu.",
+            "absaetze": [
+              "Si les conditions requises pour le calcul commun des prestations complémentaires sont remplies, il convient, dans le cas d'un couple marié dont l'un des conjoints perçoit une rente d'invalidité et l'autre une rente de vieillesse, de prendre en compte un quinzième de la fortune conjugale. La réglementation correspondante figurant dans les directives (DPC) est conforme à la loi (consid. 6)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-99%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 11 cpv. 1 lett. c LPC; computo di una parte della sostanza come reddito.",
+            "absaetze": [
+              "Se sono adempiuti i presupposti per il calcolo comune delle prestazioni complementari, occorre computare, per una coppia sposata in cui un coniuge beneficia di una rendita d'invalidità e l'altro di una rendita di vecchiaia, un quindicesimo della sostanza coniugale. La corrispondente regolamentazione nelle direttive (DPC) è conforme alla legge (consid. 6)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-99%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 30 Abs. 1 lit. c AVIG; Art. 34 Abs. 1 BV; keine Pflicht zur Stellensuche für Bundesparlamentarier vor den Neuwahlen. Ein Bundesparlamentarier, der sich zur Wiederwahl zur Verfügung stellt, ist nicht gehalten, drei Monate vor den Wahlen mit einer Stellensuche zu beginnen für den Fall, dass seine Kandidatur scheitern sollte. Das Mandat des Bundesparlamentariers kann insoweit nicht mit einem befristeten Arbeitsvertrag verglichen werden, auch wenn die dafür ausgerichtete Entschädigung als Erwerbseinkommen gilt (E. 6).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 30 Abs. 1 lit. c AVIG; Art. 34 Abs. 1 BV; keine Pflicht zur Stellensuche für Bundesparlamentarier vor den Neuwahlen.",
+            "absaetze": [
+              "Ein Bundesparlamentarier, der sich zur Wiederwahl zur Verfügung stellt, ist nicht gehalten, drei Monate vor den Wahlen mit einer Stellensuche zu beginnen für den Fall, dass seine Kandidatur scheitern sollte. Das Mandat des Bundesparlamentariers kann insoweit nicht mit einem befristeten Arbeitsvertrag verglichen werden, auch wenn die dafür ausgerichtete Entschädigung als Erwerbseinkommen gilt (E. 6)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-106%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 30 al. 1 let. c LACI; art. 34 al. 1 Cst.; pas d'obligation de recherche d'emploi pour les parlementaires fédéraux avant les nouvelles élections.",
+            "absaetze": [
+              "Un parlementaire fédéral candidat à sa réélection n'est pas tenu de rechercher un emploi pendant les trois mois qui précèdent l'élection, dans l'hypothèse où sa candidature échouerait. Dans ce contexte, le mandat de parlementaire fédéral ne peut pas être assimilé à un contrat de travail de durée déterminée, même si l'indemnité qui y est liée est considérée comme un revenu provenant d'une activité salariée (consid. 6)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-106%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 30 cpv. 1 lett. c LADI; art. 34 cpv. 1 Cost.; nessun obbligo di ricerca d'impiego per i parlamentari federali prima delle nuove elezioni.",
+            "absaetze": [
+              "Un parlamentare federale candidato alla propria rielezione non è tenuto a cercare un impiego durante i tre mesi che precedono l'elezione, nell'eventualità in cui la sua candidatura non andasse a buon fine. In questo contesto, il mandato di parlamentare federale non può essere assimilato a un contratto di lavoro a tempo determinato, anche se l'indennità ad esso correlata è considerata come un reddito proveniente da un'attività dipendente (consid. 6)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-V-106%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

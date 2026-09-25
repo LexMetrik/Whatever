@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 190 Abs. 2 lit. b IPRG; internationale Schiedsgerichtsbarkeit; Zuständigkeit des Schiedsgerichts. Zuständigkeitsordnung bei internationalen Arbeitsstreitigkeiten im professionellen Fussballsport (E. 4).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 190 Abs. 2 lit. b IPRG; internationale Schiedsgerichtsbarkeit; Zuständigkeit des Schiedsgerichts.",
+            "absaetze": [
+              "Zuständigkeitsordnung bei internationalen Arbeitsstreitigkeiten im professionellen Fussballsport (E. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-III-181%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 190 al. 2 let. b LDIP; arbitrage international; compétence du tribunal arbitral.",
+            "absaetze": [
+              "Règles de compétence en matière de conflits de travail internationaux dans le football professionnel (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-III-181%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 190 cpv. 2 lett. b LDIP; arbitrato internazionale; competenza del tribunale arbitrale.",
+            "absaetze": [
+              "Ordinamento delle competenze in materia di conflitti di lavoro internazionali nel calcio professionistico (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-III-181%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [

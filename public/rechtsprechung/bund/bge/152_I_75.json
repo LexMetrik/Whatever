@@ -24,7 +24,33 @@
       },
       "regeste": {
         "text": "Art. 10 und 11 EMRK; Art. 16 und 22 BV; Art. 85 KV/VD; verweigerte Bewilligung einer politischen Debatte in einer Bildungseinrichtung. Die Verweigerung der Durchführung einer Debatte mit einer ausgewogenen Vertretung der politischen Kräfte und einer angemessenen Moderation in den zehn Wochen vor einer Wahl verletzt die Meinungs- und die Versammlungsfreiheit (E. 4).",
-        "quelle": "opencaselaw"
+        "quelle": "opencaselaw",
+        "sprachfassungen": [
+          {
+            "sprache": "de",
+            "kopf": "Art. 10 und 11 EMRK; Art. 16 und 22 BV; Art. 85 KV/VD; verweigerte Bewilligung einer politischen Debatte in einer Bildungseinrichtung.",
+            "absaetze": [
+              "Die Verweigerung der Durchführung einer Debatte mit einer ausgewogenen Vertretung der politischen Kräfte und einer angemessenen Moderation in den zehn Wochen vor einer Wahl verletzt die Meinungs- und die Versammlungsfreiheit (E. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-75%3Ade&lang=de&type=show_document"
+          },
+          {
+            "sprache": "fr",
+            "kopf": "Art. 10 et 11 CEDH; art. 16 et 22 Cst.; art. 85 Cst./VD; refus d'autoriser la tenue d'un débat politique dans l'établissement de formation.",
+            "absaetze": [
+              "Le refus d'autoriser, dans les dix semaines précédant l'élection, la tenue d'un débat avec une représentation équilibrée des forces politiques et une modération adéquate, viole les libertés d'opinion et de réunion (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-75%3Afr&lang=fr&type=show_document"
+          },
+          {
+            "sprache": "it",
+            "kopf": "Art. 10 e 11 CEDU; art. 16 e 22 Cost.; art. 85 Cost./VD; rifiuto di autorizzare la tenuta di un dibattito politico in un istituto di formazione.",
+            "absaetze": [
+              "Il rifiuto di autorizzare, nelle dieci settimane precedenti l'elezione, la tenuta di un dibattito con una rappresentanza equilibrata delle forze politiche e una moderazione adeguata, viola la libertà d'opinione e la libertà di riunione (consid. 4)."
+            ],
+            "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-75%3Ait&lang=it&type=show_document"
+          }
+        ]
       },
       "regesteAmtlich": true,
       "abschnitte": [
