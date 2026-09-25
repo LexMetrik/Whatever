@@ -54,13 +54,18 @@ export type FacettenRegister = 'g' | 'r' | 'm' | 'w';
 
 const PFEILE = new Set(['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown']);
 
-export function FacettenGruppe({ label, gruppenLabel, optionen, register = 'g' }: {
+export function FacettenGruppe({ label, gruppenLabel, optionen, register = 'g', className }: {
   /** Name der Achse: sichtbares Etikett UND Präfix der Chip-a11y-Namen. */
   label: string;
   /** aria-label der Gruppe, falls es ausführlicher sein soll als `label`. */
   gruppenLabel?: string;
   optionen: FacettenOption[];
   register?: FacettenRegister;
+  /** Zusatzklassen für die Achse (W2·31-BILDSCHIRMBREITE B9, 25.9.2026): die
+   *  Aufrufstelle darf die Reihe z. B. per Container-Query zur Spalte stellen
+   *  (/suche: Filter in der Randspalte). Anatomie, Texte und a11y-Namen bleiben
+   *  hier; ohne Angabe ist das Markup byte-gleich wie vorher. */
+  className?: string;
 }) {
   const zeile = useRef<HTMLDivElement>(null);
 
@@ -82,7 +87,7 @@ export function FacettenGruppe({ label, gruppenLabel, optionen, register = 'g' }
   return (
     <div ref={zeile} role="group" aria-label={gruppenLabel ?? label} data-reg={register}
       onKeyDown={aufTaste}
-      className="fc-zeile flex flex-wrap items-baseline gap-x-4 gap-y-1.5">
+      className={`fc-zeile flex flex-wrap items-baseline gap-x-4 gap-y-1.5${className ? ` ${className}` : ''}`}>
       {/* LM-185 (W2·17-UI-BEFUNDE/B18): das Achsen-Etikett steht in einer festen
           Spalte, nicht mehr inline in seiner natürlichen Breite. Gemessen
           @1440 auf /rechtsprechung (Preview von origin/main, 5.9.2026):

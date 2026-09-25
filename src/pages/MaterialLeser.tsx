@@ -105,7 +105,7 @@ export function MaterialLeser() {
   const m = material;
 
   return (
-    <article className="space-y-8">
+    <article className="space-y-8 @container/material">
       {/* ── B-4 (Design-Konsistenz Runde 2, 31.8.2026) · DERSELBE LESER-KOPF ───
           Dieser Leser lieh sich bis hierher den Kopf der STATISCHEN Seiten
           (`layout/SeitenKopf`) — samt Ablesekante (`scale-rule`), dem Marken-
@@ -168,25 +168,65 @@ export function MaterialLeser() {
         <p className="text-xs text-ink-500 break-all max-w-reading">{m.quelleUrl}</p>
       </LeserKopfGeruest>
 
-      {/* §8: ehrlicher Status — kein Gesetzesrang, fachlich ungeprüft. Seit
-          REST S5c (Entscheid David 25.9.2026) JE GATTUNG: Gesetzgebungsmaterial
-          oder Verwaltungspraxis, Zuordnung aus `gattungVon` (§5). */}
-      <div className="lc-notice max-w-reading">
-        <GattungsHinweis doktyp={m.doktyp} />
-        {m.hinweis && <p className="mt-2 text-ink-500 max-w-reading-s">{m.hinweis}</p>}
+      {/* ── W2·31-BILDSCHIRMBREITE B8 (25.9.2026) · LESESPALTE + RANDSPALTE ──
+          Gemessen (Preview, ESTV-KS-DBG-5A): der Körper stand einspaltig auf
+          640 px, rechts davon blieben im 1072-px-Rahmen auf jeder Breite
+          ≥ 1280 genau 482 px leer; eine Botschaft mit Anker-Liste
+          (BOTSCHAFT-2025-1478) lief @1920 auf 3.7 Bildschirmhöhen.
+          Jetzt ZWEI Spalten, sobald der Artikel selbst 62 rem breit ist:
+          links die Lesespalte (40 rem, unverändert `max-w-reading`) mit dem
+          Kontext — dem einzigen Block mit gelesenem Text (Regesten-Auszüge) —,
+          rechts die Randspalte mit dem Beiwerk: §8-Gattungshinweis oben, die
+          Anker-Liste der Botschaft darunter. 62 rem = Lesespalte 40 + Abstand
+          2 + Randspalte mindestens 20 rem (320 px); darunter bliebe die
+          Randspalte zu schmal für den Hinweis, die Seite steht dann wie bisher
+          einspaltig (Handy, schmale Pane, offene Seitenleiste bei 1280).
+          Die Schwelle misst den ARTIKEL (`@container/material`), nicht das
+          Fenster — Lehre B2: nur so stimmt sie auch neben offener
+          Seitenleiste und in der Split-Pane.
+          DOM-Reihenfolge UNVERÄNDERT (Hinweis → Kontext → Anker): Screenreader
+          und die einspaltige Form lesen den §8-Hinweis weiterhin zuerst; nur
+          das Raster stellt ihn breit nach rechts oben, auf die Höhe der
+          Kontext-Kante, also weiterhin über dem Falz.
+          Stufe bleibt `content` (seitenbreite.ts): mit `weit` wüchse nur die
+          Randspalte (25 → 48 rem), die Lesespalte ist gedeckelt — gemessen
+          wäre das wieder Leerfläche, diesmal in der Randspalte.
+          Zeilen `auto auto 1fr`: der Kontext überspannt alle drei, und seine
+          Überhöhe fällt in die letzte Zeile — sonst verteilte das Raster sie
+          als Lücken zwischen Hinweis und Anker-Liste. */}
+      <div className="flex flex-col gap-8 @[62rem]/material:grid @[62rem]/material:grid-cols-[minmax(0,40rem)_minmax(0,1fr)] @[62rem]/material:grid-rows-[auto_auto_1fr] @[62rem]/material:gap-x-8">
+        {/* §8: ehrlicher Status — kein Gesetzesrang, fachlich ungeprüft. Seit
+            REST S5c (Entscheid David 25.9.2026) JE GATTUNG: Gesetzgebungsmaterial
+            oder Verwaltungspraxis, Zuordnung aus `gattungVon` (§5).
+            B8: in der Randspalte in der Beiwerk-Stufe `body-s` mit ihrem Deckel
+            `max-w-reading-s` (B2a; hält auch im simulierten `weit`), damit die Zeile
+            dort nicht unter ~45 Zeichen fällt. */}
+        <div data-material-randhinweis className="lc-notice max-w-reading @[62rem]/material:col-start-2 @[62rem]/material:row-start-1 @[62rem]/material:max-w-reading-s @[62rem]/material:text-body-s">
+          <GattungsHinweis doktyp={m.doktyp} />
+          {m.hinweis && <p className="mt-2 text-ink-500 max-w-reading-s">{m.hinweis}</p>}
+        </div>
+
+        {/* Einheitliches Kontext-Panel (B3): Norm ↔ Entscheid ↔ Werkzeug über die
+            normKeys des Materials (Burggraben — Behördenpraxis an die Norm/den
+            Entscheid gebunden). B8: die Hülle trägt die Rasterlage; `mt-0`
+            nimmt den Aussenabstand der Lesespalten-Form (`mt-12`) zurück, den
+            bisher `space-y-8` des Artikels überstimmte — der Abstand bleibt
+            damit 32 px wie vorher (jetzt aus `gap-8`). */}
+        <div data-material-lesespalte className="[&>section]:mt-0 @[62rem]/material:col-start-1 @[62rem]/material:row-start-1 @[62rem]/material:row-span-3">
+          <KontextPanel typ="material" normKeys={m.normKeys} />
+        </div>
+
+        {/* W2·6c-E3 · DIE RÜCKRICHTUNG. Am Artikel führt die Entstehungs-Karte zu
+            dieser Botschaft; hier geht derselbe Weg zurück. Der Block rendert NUR
+            mit Anker-Sidecar (§11.5 «Am Material»; ohne ihn steht schon oben der
+            Live-Link) und holt ihn nur bei einer Botschaft — Herleitung in
+            `components/entstehung/MaterialEntstehung.tsx`. B8: Randspalte unter
+            dem Hinweis; `empty:hidden`, damit die leere Hülle (kein Sidecar) in
+            der einspaltigen Form keinen zweiten `gap` erzeugt. */}
+        <div className="empty:hidden @[62rem]/material:col-start-2 @[62rem]/material:row-start-2">
+          <MaterialEntstehung materialKey={m.key} doktyp={m.doktyp} />
+        </div>
       </div>
-
-      {/* Einheitliches Kontext-Panel (B3): Norm ↔ Entscheid ↔ Werkzeug über die
-          normKeys des Materials (Burggraben — Behördenpraxis an die Norm/den
-          Entscheid gebunden). */}
-      <KontextPanel typ="material" normKeys={m.normKeys} />
-
-      {/* W2·6c-E3 · DIE RÜCKRICHTUNG. Am Artikel führt die Entstehungs-Karte zu
-          dieser Botschaft; hier geht derselbe Weg zurück. Der Block rendert NUR
-          mit Anker-Sidecar (§11.5 «Am Material»; ohne ihn steht schon oben der
-          Live-Link) und holt ihn nur bei einer Botschaft — Herleitung in
-          `components/entstehung/MaterialEntstehung.tsx`. */}
-      <MaterialEntstehung materialKey={m.key} doktyp={m.doktyp} />
 
       {/* ── LM-137 (W2·17-UI-BEFUNDE/B16) · TRENNLINIEN DERSELBEN EBENE FLUCHTEN ─
           Diese Linie lief ungedeckelt über die volle Spalte. Gemessen 4.9.2026
