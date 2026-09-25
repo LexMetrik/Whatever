@@ -48924,6 +48924,90 @@
       }
     },
     {
+      "key": "bge_152_I_2",
+      "gericht": "bge",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "152 I 2",
+      "bgeReferenz": "152 I 2",
+      "datum": "2025-05-19",
+      "zitierung": "BGE 152 I 2",
+      "leitcharakter": "leitentscheid",
+      "regesteVorhanden": true,
+      "regesteKurz": "Sperrung von Vermögenswerten im Hinblick auf eine Einziehung bei Scheitern der Rechtshilfe an die Ukraine (Art. 4 SRVG); Anspruch auf vorgängige Anhörung (Art. 29 Abs. 2 BV; Art. 30 VwVG). Anspruch der Kontoinhaber und -inhaberinnen auf…",
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [
+        "BGERR",
+        "BGG",
+        "BV",
+        "EMRK",
+        "STPO",
+        "VWVG"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": "bund/bge/152_I_2.json",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F152-I-2%3Ade&lang=de&zoom=&type=show_document",
+      "fassungsToken": "46c9308d946d2f5524bd9cde4a43d6de34d28396ab39b7e94f4c706e28850b96",
+      "richter": [
+        {
+          "s": "haag",
+          "r": "vorsitz"
+        },
+        {
+          "s": "chaix",
+          "r": "mitglied"
+        },
+        {
+          "s": "kneubuhler",
+          "r": "mitglied"
+        },
+        {
+          "s": "muller",
+          "r": "mitglied"
+        },
+        {
+          "s": "merz",
+          "r": "mitglied"
+        },
+        {
+          "s": "gerber",
+          "r": "gerichtsschreiber"
+        }
+      ]
+    },
+    {
+      "key": "bge_152_I_2__voll",
+      "gericht": "bger",
+      "gerichtName": "Bundesgericht",
+      "gerichtstyp": "bundesgericht",
+      "kanton": "CH",
+      "nummer": "1C_435/2024",
+      "bgeReferenz": null,
+      "datum": "2025-05-19",
+      "zitierung": "BGer 1C_435/2024",
+      "leitcharakter": "routine",
+      "regesteVorhanden": false,
+      "regesteKurz": null,
+      "sachgebiet": "oeffentlich",
+      "sprache": "de",
+      "normKeys": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "datei": null,
+      "quelle": "opencaselaw",
+      "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://19-05-2025-1C_435-2024&lang=de&type=show_document",
+      "fassungsToken": "46c9308d946d2f5524bd9cde4a43d6de34d28396ab39b7e94f4c706e28850b96",
+      "verweis": {
+        "zielKey": "bge_152_I_2",
+        "ansicht": "voll",
+        "bgeReferenz": "152 I 2"
+      }
+    },
+    {
       "key": "bs_appellationsgericht_AUS.2025.52",
       "gericht": "bs_appellationsgericht",
       "gerichtName": "Appellationsgericht BS",
