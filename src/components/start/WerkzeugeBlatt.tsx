@@ -6,7 +6,6 @@ import { kartenDerKategorie } from '../../lib/katalogKategorie';
 import { kartePasst, LEERER_FILTER } from '../../lib/katalogSuche';
 import { KategorieSektion } from '../Katalog';
 import { WERKZEUGE_RECHNER_KATEGORIEN, WERKZEUGE_VORLAGEN_GEBIETE, type BlattOrt } from '../../lib/startBlatt';
-import { istVorlage } from '../../lib/vorlagenKategorie';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
 
@@ -23,9 +22,9 @@ import { BlattSuchFeld, WahlSpalte } from './BlattBausteine';
 // (VorlagenUebersicht.tsx) — `OBERKATEGORIEN` + `KategorieSektion` liefern
 // Gebaute-zuerst/«In Vorbereitung» und die Rechtsgebiets-Gruppierung bereits
 // fertig (Katalog.tsx). Hier stehen nur die Blatt-Anatomie (Wahl, Filterfeld
-// aus `BlattBausteine`) und die Aufteilung Rechner/Vorlagen per `istVorlage`
-// (über `kategorieFuer`/`kartenDerKategorie`, dieselbe Quelle wie /rechner
-// und /vorlagen — keine eigene, zweite Zuordnung, §5).
+// aus `BlattBausteine`) und die Aufteilung Rechner/Vorlagen über
+// `kategorieFuer`/`kartenDerKategorie` (dieselbe Quelle wie /rechner und
+// /vorlagen, und `vorlagen` ≡ `istVorlage` — keine zweite Zuordnung, §5).
 
 const nf = (n: number) => n.toLocaleString('de-CH');
 
@@ -63,7 +62,10 @@ export function WerkzeugeBlatt({ ort, gehe }: { ort: BlattOrt; gehe: (o: BlattOr
 const VORLAGEN_KARTEN = kartenDerKategorie(KATALOG_KARTEN, 'vorlagen');
 const rechnerZahl = (id: OberkategorieId) => kartenDerKategorie(KATALOG_KARTEN, id).filter(istVerfuegbar).length;
 const gebietKarten = (name: string) => VORLAGEN_KARTEN.filter((k) => k.rechtsgebiet === name);
-const vorlagenZahl = (name: string) => gebietKarten(name).filter((k) => istVorlage(k) && istVerfuegbar(k)).length;
+// Kein eigenes `istVorlage` mehr (S5a, 25.9.2026): `kategorieFuer` legt
+// `vorlagen` selbst als `istVorlage` fest (oberkategorien.ts, Typ
+// `RechnerKategorieId`) — Liste und Zahl lesen dieselbe Quelle.
+const vorlagenZahl = (name: string) => gebietKarten(name).filter(istVerfuegbar).length;
 
 function Wahl({ zu }: { zu: (...pfad: string[]) => () => void }) {
   return (

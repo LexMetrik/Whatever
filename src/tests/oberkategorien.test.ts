@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { KATALOG_KARTEN } from '../lib/startseiteConfig';
 import { OBERKATEGORIEN, kategorieFuer } from '../lib/oberkategorien';
+import { kartenDerKategorie } from '../lib/katalogKategorie';
+import { istVorlage } from '../lib/vorlagenKategorie';
 
 // ─── Oberkategorien-Invarianten (Auftrag David 10.6.2026) ───────────────────
 // Das Register gliedert primär nach Zuständigkeiten/Fristen/Gebühren/Vorlagen.
@@ -27,7 +29,11 @@ describe('Oberkategorien (Register-Primärachse)', () => {
     expect(kat('teuerungsrechner')).toBe('gebuehren');
     expect(kat('mietvertrag-wohnen')).toBe('vorlagen');
     expect(kat('ag-gruendung')).toBe('vorlagen');
-    expect(kat('mandatsaufnahme')).toBe('vorlagen');
+    // S5a (W2·29-WERKBANK-REST, deklariert §6.3): vorher 'vorlagen' — eine
+    // Werkzeug-Karte (modus 'rechner') dort stand nur als geplante sichtbar,
+    // fertig auf keiner Katalogseite. Jetzt Rechner-Seite wie `gerichtszitat`.
+    expect(kat('mandatsaufnahme')).toBe('zustaendigkeiten');
+    expect(kat('checklisten')).toBe('zustaendigkeiten');
     // K8 (W2·29-WERKBANK-KATALOGE, deklariert §6.3): Entscheid David 23.9.2026
     // «zitierer auf /rechner zeigen» — vorher 'vorlagen' (auf keiner Seite sichtbar).
     expect(kat('gerichtszitat')).toBe('zustaendigkeiten');
@@ -38,5 +44,20 @@ describe('Oberkategorien (Register-Primärachse)', () => {
       const karten = KATALOG_KARTEN.filter((c) => kategorieFuer(c) === k.id);
       expect(karten.length, k.id).toBeGreaterThan(0);
     }
+  });
+});
+
+// ─── Eine Quelle für Rechner | Vorlagen (W2·29-WERKBANK-REST S5a, 25.9.2026) ─
+//
+// Die Vorlagen-Seite, das Werkzeuge-Blatt und die Kopf-Zähler (gen:zaehler)
+// teilen den Katalog nach `istVorlage`; die Register-Listen nach
+// `kategorieFuer`/`kartenDerKategorie`. Beide Schnitte müssen dieselbe Menge
+// ergeben — sonst steht eine Karte in einer Liste, deren Zahl sie nicht zählt,
+// oder (fertige Werkzeug-Karte in `vorlagen`) auf gar keiner Katalogseite.
+describe('Rechner | Vorlagen: Liste und Zähler aus einer Quelle', () => {
+  it('Kategorie «vorlagen» ≡ istVorlage (auch über den Fallback von kartenDerKategorie)', () => {
+    const ids = (xs: { id: string }[]) => xs.map((k) => k.id).sort();
+    expect(ids(kartenDerKategorie(KATALOG_KARTEN, 'vorlagen'))).toEqual(ids(KATALOG_KARTEN.filter(istVorlage)));
+    expect(KATALOG_KARTEN.filter((k) => !istVorlage(k) && kategorieFuer(k) === 'vorlagen').map((k) => k.id)).toEqual([]);
   });
 });

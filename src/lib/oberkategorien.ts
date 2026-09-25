@@ -9,6 +9,7 @@
 // Vollständigkeit, src/tests/oberkategorien.test.ts).
 
 import type { CalculatorCard } from './startseiteConfig';
+import { istVorlage } from './vorlagenKategorie';
 
 export type OberkategorieId = 'zustaendigkeiten' | 'fristen' | 'gebuehren' | 'vorlagen';
 
@@ -29,17 +30,32 @@ export const OBERKATEGORIEN: Oberkategorie[] = [
     lede: 'Verträge, Eingaben, Erklärungen und Dokumentmappen – regelbasiert aufgesetzt, mit ehrlichen Form-Grenzen.' },
 ];
 
+/** Die Oberkategorien der Rechner-Seite — alle ausser `vorlagen`. */
+export type RechnerKategorieId = Exclude<OberkategorieId, 'vorlagen'>;
+
 // Werkzeug-Karten (rechtsgebietsübergreifend) tragen keinen fachlichen
 // Output-Typ — sie werden EXPLIZIT zugeordnet; der Test bricht, wenn eine
 // neue Werkzeug-Karte hier fehlt (keine stille Fallback-Einsortierung).
-const WERKZEUG_KATEGORIE: Record<string, OberkategorieId> = {
+//
+// EINE Quelle für Rechner | Vorlagen (W2·29-WERKBANK-REST S5a, 25.9.2026):
+// `vorlagen` heisst GENAU `istVorlage` (modus 'vorlage') — der Typ
+// `RechnerKategorieId` verbietet, eine Werkzeug-Karte (modus 'rechner') in
+// `vorlagen` zu hängen. Vorher standen `checklisten`/`mandatsaufnahme` hier
+// mit 'vorlagen': sichtbar nur, solange geplant («In Vorbereitung» auf
+// /vorlagen) — fertig wären sie auf KEINER Katalogseite gestanden (das
+// VorlagenRegister zeigt nur echte Vorlagen, /rechner blendet `vorlagen`
+// aus), der Kopf-Zähler hätte sie aber als Rechner gezählt (gen:zaehler
+// zählt nach `istVorlage`). Dieselbe Klasse wie `gerichtszitat` (K8, unten);
+// Ort wie dort Zuständigkeiten: das einzige Rechner-Register, das Karten
+// ausserhalb seiner Felder als «Weitere Werkzeuge» führt.
+const WERKZEUG_KATEGORIE: Record<string, RechnerKategorieId> = {
   tagerechner: 'fristen',
   'ferien-checker': 'fristen',
   'ferien-assistent': 'fristen',
   teuerungsrechner: 'gebuehren',
   'kostenblatt-export': 'gebuehren',
-  checklisten: 'vorlagen',
-  mandatsaufnahme: 'vorlagen',
+  checklisten: 'zustaendigkeiten',
+  mandatsaufnahme: 'zustaendigkeiten',
   // Gerichts-Baustein-Set (ROADMAP W2·7): der amtliche Zitierer ist ein
   // Text-/Schriftsatz-Baustein, Geschwister der Rubrum-Vorlage. Bis 23.9.2026
   // hier 'vorlagen' — damit stand er auf KEINER Katalogseite (/rechner blendet
@@ -55,7 +71,7 @@ const WERKZEUG_KATEGORIE: Record<string, OberkategorieId> = {
 };
 
 export function kategorieFuer(karte: CalculatorCard): OberkategorieId | null {
-  if (karte.modus === 'vorlage') return 'vorlagen';
+  if (istVorlage(karte)) return 'vorlagen';
   switch (karte.art) {
     case 'zuordnung': return 'zustaendigkeiten';
     case 'frist': return 'fristen';
