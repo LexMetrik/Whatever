@@ -7,7 +7,7 @@ import { KontextPanel } from '../components/kontext/KontextPanel';
 import { MaterialEntstehung } from '../components/entstehung/MaterialEntstehung';
 import { StatusBadge } from '../components/verzahnung/StatusBadge';
 import { GEBIET_LABEL } from '../lib/normtext/register';
-import { MASSGEBLICH_SATZ } from '../lib/benennung';
+import { GattungsHinweis } from '../components/materialien/GattungsHinweis';
 import { Datum } from '../components/ui/Datum';
 import { QuellLink } from '../components/ui/QuellLink';
 import { FehlSeite } from '../components/ui/FehlSeite';
@@ -168,15 +168,11 @@ export function MaterialLeser() {
         <p className="text-xs text-ink-500 break-all max-w-reading">{m.quelleUrl}</p>
       </LeserKopfGeruest>
 
-      {/* §8: ehrlicher Status — Soft-Law, kein Gesetzesrang, fachlich ungeprüft. */}
+      {/* §8: ehrlicher Status — kein Gesetzesrang, fachlich ungeprüft. Seit
+          REST S5c (Entscheid David 25.9.2026) JE GATTUNG: Gesetzgebungsmaterial
+          oder Verwaltungspraxis, Zuordnung aus `gattungVon` (§5). */}
       <div className="lc-notice max-w-reading">
-        <p>
-          <strong>Behördenpublikation, kein Gesetzesrang.</strong> Verwaltungsverordnungen
-          (Kreisschreiben, Wegleitungen, Leitfäden u.&nbsp;a.) binden die Verwaltung intern und
-          sind faktisch praxisleitend, aber für Gerichte und Private nicht direkt verbindlich.
-          {' '}{MASSGEBLICH_SATZ} Maschinell erfasst, fachlich noch nicht
-          geprüft.
-        </p>
+        <GattungsHinweis doktyp={m.doktyp} />
         {m.hinweis && <p className="mt-2 text-ink-500">{m.hinweis}</p>}
       </div>
 

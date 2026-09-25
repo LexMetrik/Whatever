@@ -208,7 +208,9 @@ Station A/B/E).
 **Agent in einen ANDEREN Worktree als den der Session** (25.9.2026, REST S1/S2):
 Write/Edit sind dort per Hook gesperrt; der Auftrag nennt den Schreibweg
 (Bash/python-Heredoc) ausdrücklich — sonst improvisiert der Agent (S1 wich auf
-`EnterWorktree` aus, S2 auf Heredoc).
+`EnterWorktree` aus, S2 auf Heredoc). Gilt auch für Prüfer: das Env-Arbeitsverzeichnis
+des Agenten ist der Session-Worktree, nicht das Prüfziel — Auftrag nennt absolute
+Pfade bzw. `git -C <pfad>` (S5b-Prüfer meldete die Diskrepanz selbst, 25.9.2026).
 
 **Vier Orchestrator-Fallen** (Belege 5.–9.8.2026, Detail: git-Historie):
 (a) nie Probe-/Testnachrichten an Agenten, Empfänger-ID vor dem Senden

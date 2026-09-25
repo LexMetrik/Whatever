@@ -3,12 +3,15 @@
 "erlass":"PVUE",
 "erlassEbene":"bund",
 "dokumente":{
+"bpatger_O2023_017":{"zitierung":"BPatGer O2023_017 vom 12. Juni 2025","regesteKurz":"Erfinderische Tätigkeit, Feststellungsinteresse, Neuheit","datum":"2025-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bpatger_S2024_005_S2024_006_S2024_007":{"zitierung":"BPatGer S2024_005, S2024_006, S2024_007 vom 8. Juli 2025","regesteKurz":"Erfinderische Tätigkeit, Neuheit, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}}
 },
 "proArtikel":{
+"4a":[{"key":"bpatger_O2023_017","gewicht":null}],
 "4b":[{"key":"bpatger_S2024_005_S2024_006_S2024_007","gewicht":null}]
 },
 "gesamtProArtikel":{
+"4a":{"eidg":1},
 "4b":{"eidg":1}
 }
 }

@@ -409,9 +409,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npx -y npm@11 ci
-      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-012
-      - name: Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)
-        run: npm run check:merge-schutz
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-013
       - name: Fachänderungs-Riegel (§6.3 + Fachaenderung-Trailer)
         env:
@@ -586,6 +583,12 @@ jobs:
       - name: SEO-Index · Verfall-UI
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:seo-index && npm run check:verfall-ui
+      # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-012
+      # Am Job-Ende + !cancelled() (25.9.2026, Lauf 36140683376: erster Schritt
+      # rot bis zum Verdikt, 43 Tore übersprungen); Job bleibt rot, wenn rot.
+      - name: Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)
+        if: ${{ !cancelled() }}
+        run: npm run check:merge-schutz
       - name: Kurzquittung (Doku-/Leer-Diff)
         if: needs.diff.outputs.art == 'doku'
         run: echo "Kein Code im Diff — Merge-Schutz, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
