@@ -198,9 +198,10 @@ export function MaterialLeser() {
         {/* §8: ehrlicher Status — kein Gesetzesrang, fachlich ungeprüft. Seit
             REST S5c (Entscheid David 25.9.2026) JE GATTUNG: Gesetzgebungsmaterial
             oder Verwaltungspraxis, Zuordnung aus `gattungVon` (§5).
-            B8: in der Randspalte in der Beiwerk-Stufe `body-s`, damit die Zeile
+            B8: in der Randspalte in der Beiwerk-Stufe `body-s` mit ihrem Deckel
+            `max-w-reading-s` (B2a; hält auch im simulierten `weit`), damit die Zeile
             dort nicht unter ~45 Zeichen fällt. */}
-        <div data-material-randhinweis className="lc-notice max-w-reading @[62rem]/material:col-start-2 @[62rem]/material:row-start-1 @[62rem]/material:text-body-s">
+        <div data-material-randhinweis className="lc-notice max-w-reading @[62rem]/material:col-start-2 @[62rem]/material:row-start-1 @[62rem]/material:max-w-reading-s @[62rem]/material:text-body-s">
           <GattungsHinweis doktyp={m.doktyp} />
           {m.hinweis && <p className="mt-2 text-ink-500 max-w-reading-s">{m.hinweis}</p>}
         </div>
