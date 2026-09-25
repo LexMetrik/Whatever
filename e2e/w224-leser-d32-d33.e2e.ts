@@ -31,6 +31,7 @@
 import { blattFuerArtikel, blattReiter } from './helpers/fassungsRubrik'
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
+import { panelAufziehen } from './helpers/panelOeffnen'
 
 const FELD = '[data-v3-such-zone] input'
 /** Die Lese-ZELLE (Gesetzesspalte) — dieselbe Fläche, die `rahmenSpalten` misst. */
@@ -206,6 +207,75 @@ test.describe('Entscheid A — das Erlass-Blatt ist eine Spalte mit Schiene, wie
     await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
     await page.keyboard.press('r')
     await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  // W3-2 (Audit 25.9.2026, Belege @1440 Esc/✕/Kopf-Knopf/„r"): der Öffner
+  // (Schiene) verschwindet aus dem DOM, SOBALD das Blatt offen ist
+  // (`bild.blattSchiene` kippt auf `false`) — die in `usePopoverAutoZu`
+  // gemerkte Fokus-Referenz war beim Schliessen darum längst verwaist, und der
+  // Fokus blieb auf BODY stehen (4/4, ROT vor dem Fix dieses Schritts). SOLL:
+  // in JEDEM der vier Schliesswege landet der Fokus wieder auf der Schiene.
+  test('(j) @1440: Esc/✕/Kopf-Knopf/„r" geben den Fokus an die Schiene zurück, nie an BODY', async ({ page }) => {
+    test.slow()
+    const fehler = await oeffne(page, '/gesetze/bund/OR', 1440)
+    const schiene = page.locator('[data-v3-blatt-schiene]')
+
+    // (1) Esc
+    await schiene.click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-panel-reiter="aenderungen"]').first().click()
+    await page.locator('[data-v3-panel-reiter="aenderungen"]').first().focus()
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    // (2) ✕ im Panel
+    await schiene.click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-panel-zu]').first().click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    // (3) Kopf-Knopf «Erlass-Blatt ausblenden ›»
+    await schiene.click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.getByRole('button', { name: /Erlass-Blatt ausblenden/ }).first().click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    // (4) Taste «r»
+    await page.locator('body').click({ position: { x: 5, y: 400 } })
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  // (m) Bug-Check 25.9.2026, Nachzug zu PR #1097 (Befund 2/3): dieselbe
+  // Fokus-Rückgabe wie (j), aber in der SPLIT-ANSICHT. `usePopoverAutoZu`
+  // suchte den Öffner beim Schliessen dokumentweit (`document.querySelector`)
+  // — im Split traf das immer den ERSTEN Öffner im DOM (das PRIMÄRE Pane),
+  // auch wenn Panel und Klick im SEKUNDÄREN Pane standen.
+  test('(m) Split @1440: Esc gibt den Fokus an den Öffner IM SEKUNDÄREN Pane zurück, nicht an den primären', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/OR?p=/gesetze/bund/ZGB')
+    const sekundaer = page.locator('[data-pane="sekundaer"]')
+    await expect(sekundaer).toBeVisible({ timeout: 20_000 })
+    await expect(sekundaer.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(500)
+    await panelAufziehen(page, sekundaer)
+    const oeffnerSekundaer = sekundaer.locator('[data-v3-panel-oeffner]').first()
+    await expect(oeffnerSekundaer).toBeVisible({ timeout: 20_000 })
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(oeffnerSekundaer).toBeFocused()
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })

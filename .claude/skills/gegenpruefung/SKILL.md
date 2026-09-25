@@ -191,7 +191,9 @@ einen Gemini-Durchgang als Diskrepanz-Finder fahren (Aufruf: Skill
   kippt den Hash ⇒ neuer Durchgang nötig).
 
 - **Commit-Trailer** setzen (§14 Trailer-Konvention):
-  `Gegenpruefung: bestanden (Opus, <Linsen>) — <Befunde/„keine">`
+  `Gegenpruefung: bestanden (Opus, <Linsen>) — <Befunde>` — Befund-Teil
+  ≥ 15 Zeichen (`check:merge-schutz`), also nie nur «keine», sondern
+  «keine: <Beleg-Kurzfassung>» (RL-39 25.9.2026, Trailer nachgetragen)
   bzw. bei reiner Tor-/Test-Änderung `Gegenpruefung: n/a — reine Prüflogik`.
   **EINZEILIG, im letzten Absatz, nur Trailer-Zeilen dort** (Falle 15.8.2026,
   QS-TYP-LUECKE): `git`'s `%(trailers)`-Parser erkennt den Block nur, wenn

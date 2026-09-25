@@ -376,6 +376,8 @@ leserV3Modell.ts 419, uebersichtAngaben.ts 417. 4 index.css ~71 % Kommentare →
 «Gliederung links 250 px», gebaut sind 288 px (18 rem, seit W2·19 S2) — nicht nachgezogen, die
 Blatt-Schwellen rechnen mit 288. Soll-Zeile Ziff. 2 am 24.9.2026 auf 288 px nachgeführt. 7 (24.9.2026) `src/components/NormText.tsx` 795 Z., nicht in `scripts/schlankheit-bestand.json` — `check:schlankheit` wird ab 801 rot; Schneiden ist in `W2·29-WERKBANK-NACHLAUF` gebucht, vorher nicht wachsen lassen.
 
+**Abschluss LESER 25.9.2026 (Entscheid David: «Leser Welle 3 als letzte Runde, dann Rest starten»):** Welle 3 als ein Durchgang — Audit 13 Befunde/0 kritisch; Daten-Rest #1096 (GP bestanden, live 1866236f), UI-Befunde #1097; DK-24 fällt weg (beide Knopf-Formen sind Entscheide 24.9.: S6 W1f / D-E4). Rest umgehängt: Darstellung → `W2·29-WERKBANK-NACHLAUF` N2, Daten → `W2·27-BUND-FERTIG`/`W2·6d-ENTSTEHUNG`, Werkzeug → `QS-EFFIZIENZ`/`QS-BASIS` (je Posten mit Zeile «Umgehängt 25.9.2026»). `LESER=done`; weiter mit §5f S0.
+
 ## §5b · KATALOGE — Bauplan in Scheiben (Planung 23.9.2026)
 
 **Kernbefunde** (lex-recherche Opus, 23.9.2026): (1) EINE Kachel = `ui/RubrikKachel` + Prop `reg`
