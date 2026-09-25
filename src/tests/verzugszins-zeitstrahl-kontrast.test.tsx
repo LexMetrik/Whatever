@@ -1,4 +1,5 @@
 // @vitest-environment node
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference -- ambiente Deklaration eines anderen tsconfig-Projekts, kein Modul (nicht importierbar)
 /// <reference path="../../scripts/fremdmodule.d.ts" />
 // (Die Referenz bringt die culori-Deklaration der Prüfschicht in `tsc -b`
 // der App — die Messmaschine `scripts/farbwelt-messung.ts` importiert culori,

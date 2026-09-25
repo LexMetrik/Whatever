@@ -17,7 +17,7 @@ import { gattungVon } from '../lib/materialien/gattung';
 import type { DoktypId } from '../lib/materialien/typen';
 
 const text = (d: DoktypId) => renderToStaticMarkup(<GattungsHinweis doktyp={d} />)
-  .replace(/<[^>]+>/g, '').replace(/&nbsp;| /g, ' ');
+  .replace(/<[^>]+>/g, '').replace(/&nbsp;|\u00a0/g, ' ');
 
 describe('S5c · GattungsHinweis — §8-Satz je Gattung', () => {
   for (const d of ['botschaft', 'ratschlag', 'gr-bericht', 'vernehmlassung'] as DoktypId[]) {
