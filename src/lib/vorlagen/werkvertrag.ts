@@ -22,6 +22,29 @@ import { type Detailgrad, DETAILGRAD_DEFAULT, AB_STANDARD, NUR_EXPERTE } from '.
 // - Art. 368 (Mängelrechte: Wandelung/Minderung/Nachbesserung).
 // - Art. 370 Abs. 2/3 (stillschweigende Genehmigung bei unterlassener Prüfung;
 //   verdeckte Mängel sofort nach Entdeckung anzeigen).
+// - RL-39 (VC-01/VC-02, Prüfung Rechtslogik 23.9.2026), Wortlaute am
+//   Fedlex-Filestore neu abgerufen 25.9.2026 (OR-Konsolidierung 20260101,
+//   in Kraft 1.1.–30.9.2026; die bereits publizierten Folgefassungen
+//   20261001 und 20270701 sind in Art. 367/368/370/371 wortgleich):
+//   Art. 370 Abs. 4 OR: «Mängel eines unbeweglichen Werks, die bei der
+//   Abnahme und ordnungsmässigen Prüfung nicht erkennbar waren, sind innert
+//   60 Tagen nach ihrer Entdeckung anzuzeigen. Die Vereinbarung kürzerer
+//   Fristen ist unwirksam. Dasselbe gilt für die folgenden Mängel eines
+//   Werks, die die Mangelhaftigkeit eines unbeweglichen Werks verursacht
+//   haben: a. Mängel eines beweglichen Werks, das bestimmungsgemäss in das
+//   unbewegliche Werk integriert worden ist; b. Mängel eines Werks, das von
+//   einem Architekten oder Ingenieur erstellt und bestimmungsgemäss als
+//   Grundlage für die Erstellung des unbeweglichen Werks verwendet worden
+//   ist.» Art. 367 Abs. 1bis OR trägt dieselben lit. a/b für die Rügefrist.
+//   → «sofort» (Art. 370 Abs. 3) gilt nur noch für das rein bewegliche Werk;
+//   das bewegliche Werk mit Bauwerk-Bezug (Feld `bauwerkBezug`) bekommt für
+//   bauwerkskausale Mängel die 60 Tage.
+//   Art. 368 Abs. 3 OR: «Bei Werken, die auf dem Grund und Boden des
+//   Bestellers errichtet sind und ihrer Natur nach nur mit unverhältnis-
+//   mässigen Nachteilen entfernt werden können, stehen dem Besteller nur die
+//   im zweiten Absatz dieses Artikels genannten Rechte zu.» Art. 368
+//   Abs. 2bis OR: Einschränkung/Ausschluss der unentgeltlichen Verbesserung
+//   zum Voraus «ist ungültig, wenn der Mangel eine Baute betrifft».
 // - Art. 371 Abs. 1 (Verjährung 2 Jahre; 5 Jahre für in unbewegliche Werke
 //   integrierte bewegliche Werke), Abs. 2 (unbewegliches Werk: 5 Jahre).
 // - Art. 372 Abs. 1 (Vergütung bei Ablieferung fällig).
@@ -46,6 +69,11 @@ export type WvAntworten = {
   unternehmerAdresse: string;      // optional
   werkBeschrieb: string;           // das herzustellende Werk
   werkArt: WvWerkArt;
+  /** Nur bei werkArt 'beweglich' wirksam (RL-39): das Werk wird
+   *  bestimmungsgemäss in ein unbewegliches Werk integriert (Art. 367
+   *  Abs. 1bis / 370 Abs. 4 lit. a OR) oder als Architekten-/Ingenieurwerk
+   *  als Grundlage für dessen Erstellung verwendet (lit. b). */
+  bauwerkBezug: boolean;
   ablieferung: string;             // ISO, optional (vereinbarter Termin)
   preis: WvPreis;
   pauschalCHF: string;             // bei 'pauschal' (Festpreis Art. 373)
@@ -64,6 +92,7 @@ export const WV_DEFAULTS: WvAntworten = {
   unternehmerName: '', unternehmerAdresse: '',
   werkBeschrieb: '',
   werkArt: 'beweglich',
+  bauwerkBezug: false,
   ablieferung: '',
   preis: 'pauschal',
   pauschalCHF: '', ansatzCHF: '', ansatzEinheit: 'pro Stunde',
@@ -79,6 +108,7 @@ export type WvGateErgebnis = { blocker: string[]; warnungen: string[]; hinweise:
 export function pruefeWvGates(a: WvAntworten): WvGateErgebnis {
   const hinweise: string[] = [];
   const unbeweglich = a.werkArt === 'unbeweglich';
+  const bauwerkBezug = !unbeweglich && a.bauwerkBezug;
   if (unbeweglich) {
     hinweise.push(
       'UNBEWEGLICHES WERK: Die Frist für die Mängelrüge beträgt 60 Tage; die Vereinbarung einer '
@@ -93,10 +123,29 @@ export function pruefeWvGates(a: WvAntworten): WvGateErgebnis {
       + 'integriert und verursacht dessen Mangelhaftigkeit, gilt die fünfjährige Frist.',
     );
   }
+  if (bauwerkBezug) {
+    hinweise.push(
+      'BAUWERK-BEZUG: Das Werk wird bestimmungsgemäss in ein unbewegliches Werk integriert oder '
+      + 'als Architekten- bzw. Ingenieurwerk als Grundlage für dessen Erstellung verwendet. Für '
+      + 'Mängel, die die Mangelhaftigkeit des unbeweglichen Werks verursacht haben, beträgt die '
+      + 'Frist für die Mängelrüge 60 Tage, bei verdeckten Mängeln 60 Tage ab Entdeckung; die '
+      + 'Vereinbarung kürzerer Fristen ist unwirksam (Art. 367 Abs. 1bis und Art. 370 Abs. 4, '
+      + 'je lit. a/b OR).',
+    );
+  }
+  const verdecktHinweis = unbeweglich
+    ? 'Mängel, die bei der Abnahme und ordnungsmässigen Prüfung nicht erkennbar waren, sind innert '
+      + '60 Tagen nach ihrer Entdeckung anzuzeigen; die Vereinbarung kürzerer Fristen ist unwirksam '
+      + '(Art. 370 Abs. 4 OR).'
+    : bauwerkBezug
+      ? 'verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen (Art. 370 Abs. 3 OR), '
+        + 'soweit sie die Mangelhaftigkeit des unbeweglichen Werks verursacht haben innert 60 Tagen '
+        + 'nach ihrer Entdeckung (Art. 370 Abs. 4 OR).'
+      : 'verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen (Art. 370 Abs. 3 OR).';
   hinweise.push(
     'RÜGEOBLIEGENHEIT: Unterlässt der Besteller die Prüfung und Anzeige, gilt das Werk als '
-    + 'genehmigt (Art. 370 Abs. 2 OR); verdeckte Mängel sind sofort nach ihrer Entdeckung '
-    + 'anzuzeigen (Art. 370 Abs. 3 OR). Die Fristen rechnet der Gewährleistungs-Rechner exakt aus.',
+    + `genehmigt (Art. 370 Abs. 2 OR); ${verdecktHinweis} Die Fristen rechnet der `
+    + 'Gewährleistungs-Rechner exakt aus.',
   );
   hinweise.push(
     'RÜCKTRITTSRECHT DES BESTELLERS: Solange das Werk unvollendet ist, kann der Besteller '
@@ -147,19 +196,17 @@ export const WV_SCHEMA: VorlageSchema = {
     { id: 'WV05_abnahme', ueberschrift: 'Abnahme und Mängelrüge',
       text: 'Nach Ablieferung prüft der Besteller das Werk, sobald es nach dem üblichen '
         + 'Geschäftsgang tunlich ist, und zeigt dem Unternehmer Mängel an (Art. 367 Abs. 1 OR). '
-        + '{{ruegefristSatz}} Verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen; '
-        + 'unterlässt der Besteller die Prüfung und Anzeige, gilt das Werk als genehmigt '
-        + '(Art. 370 Abs. 2 und 3 OR).{{abnahmeProtokollSatz}}',
+        + '{{ruegefristSatz}} {{verdecktSatz}}{{abnahmeProtokollSatz}}',
       nummeriert: true,
-      begruendung: 'Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk).',
+      begruendung: 'Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist- und Verdeckte-Mängel-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk und bei bauwerkskausalen Mängeln eines beweglichen Werks, Art. 367 Abs. 1bis / 370 Abs. 4 OR; sonst «sofort», Art. 370 Abs. 3 OR).',
       norm: 'Art. 367 OR' },
     { id: 'WV06_maengelrechte', ueberschrift: 'Mängelrechte',
       text: 'Bei mangelhaftem Werk stehen dem Besteller die gesetzlichen Mängelrechte zu: '
         + 'Verweigerung der Annahme bei Unbrauchbarkeit, Minderung des Lohnes oder unentgeltliche '
         + 'Nachbesserung, soweit diese dem Unternehmer keine übermässigen Kosten verursacht, '
-        + 'sowie Schadenersatz bei Verschulden (Art. 368 OR).',
+        + 'sowie Schadenersatz bei Verschulden (Art. 368 OR).{{bautenSatz}}',
       nummeriert: true,
-      begruendung: 'Mängelrechte nach Art. 368 OR – immer enthalten.',
+      begruendung: 'Mängelrechte nach Art. 368 OR – immer enthalten; beim unbeweglichen Werk mit Vorbehalt Art. 368 Abs. 3 OR (keine Annahmeverweigerung bei nicht ohne unverhältnismässige Nachteile entfernbaren Bauten) und Hinweis Art. 368 Abs. 2bis OR.',
       norm: 'Art. 368 OR' },
     { id: 'WV07_verjaehrung', ueberschrift: 'Verjährung der Mängelansprüche',
       text: '{{verjaehrungSatz}}',
@@ -210,6 +257,9 @@ export const WV_SCHEMA: VorlageSchema = {
 
 export function wvZusammenstellen(a: WvAntworten) {
   const unbeweglich = a.werkArt === 'unbeweglich';
+  // Bauwerk-Bezug nur beim beweglichen Werk; beim unbeweglichen gilt ohnehin
+  // die 60-Tage-Regel für alle Mängel (RL-39).
+  const bauwerkBezug = !unbeweglich && a.bauwerkBezug;
 
   const pauschalFmt = zahl(a.pauschalCHF) !== null ? fmtCHF(a.pauschalCHF) : '________';
   const ansatzFmt = zahl(a.ansatzCHF) !== null ? fmtCHF(a.ansatzCHF) : '________';
@@ -225,7 +275,42 @@ export function wvZusammenstellen(a: WvAntworten) {
   const ruegefristSatz = unbeweglich
     ? 'Bei diesem unbeweglichen Werk beträgt die Frist für die Mängelrüge 60 Tage; die Vereinbarung '
       + 'einer kürzeren Frist ist unwirksam (Art. 367 Abs. 1bis OR).'
-    : 'Die Mängel sind nach der Prüfung ohne Verzug anzuzeigen.';
+    : bauwerkBezug
+      ? 'Für Mängel dieses Werks, die die Mangelhaftigkeit des unbeweglichen Werks verursacht '
+        + 'haben, beträgt die Frist für die Mängelrüge 60 Tage; die Vereinbarung einer kürzeren '
+        + 'Frist ist unwirksam (Art. 367 Abs. 1bis OR). Im Übrigen sind die Mängel nach der '
+        + 'Prüfung ohne Verzug anzuzeigen.'
+      : 'Die Mängel sind nach der Prüfung ohne Verzug anzuzeigen.';
+
+  // Verdeckte Mängel (VC-01): Art. 370 Abs. 4 OR ersetzt beim unbeweglichen
+  // Werk und bei bauwerkskausalen Mängeln (lit. a/b) das «sofort» aus Abs. 3.
+  // Der Satz für das rein bewegliche Werk bleibt wortgleich wie vor RL-39.
+  const verdecktSatz = unbeweglich
+    ? 'Mängel, die bei der Abnahme und ordnungsmässigen Prüfung nicht erkennbar waren '
+      + '(verdeckte Mängel), sind innert 60 Tagen nach ihrer Entdeckung anzuzeigen; die '
+      + 'Vereinbarung kürzerer Fristen ist unwirksam (Art. 370 Abs. 4 OR). Unterlässt der '
+      + 'Besteller die Prüfung oder die rechtzeitige Anzeige, gilt das Werk als genehmigt '
+      + '(Art. 370 Abs. 2 und 3 OR).'
+    : bauwerkBezug
+      ? 'Verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen; haben sie die '
+        + 'Mangelhaftigkeit des unbeweglichen Werks verursacht, sind sie innert 60 Tagen nach '
+        + 'ihrer Entdeckung anzuzeigen, und die Vereinbarung kürzerer Fristen ist unwirksam '
+        + '(Art. 370 Abs. 4 OR). Unterlässt der Besteller die Prüfung oder die rechtzeitige '
+        + 'Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 und 3 OR).'
+      : 'Verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen; unterlässt der Besteller '
+        + 'die Prüfung und Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 und 3 OR).';
+
+  // VC-02: Art. 368 Abs. 3 OR schliesst die Annahmeverweigerung bei Bauten auf
+  // dem Grund des Bestellers aus; Abs. 2bis macht die Nachbesserung bei Bauten
+  // unentziehbar. Nur beim unbeweglichen Werk.
+  const bautenSatz = unbeweglich
+    ? ' Bei Werken, die auf dem Grund und Boden des Bestellers errichtet sind und ihrer Natur '
+      + 'nach nur mit unverhältnismässigen Nachteilen entfernt werden können, entfällt das Recht, '
+      + 'die Annahme zu verweigern; dem Besteller stehen dann nur Minderung, unentgeltliche '
+      + 'Nachbesserung und Schadenersatz zu (Art. 368 Abs. 3 OR). Eine zum Voraus getroffene '
+      + 'Abrede, die den Anspruch auf unentgeltliche Nachbesserung bei einem Mangel an einer '
+      + 'Baute einschränkt oder ausschliesst, ist ungültig (Art. 368 Abs. 2bis OR).'
+    : '';
 
   const verjaehrungSatz = unbeweglich
     ? 'Die Ansprüche des Bestellers wegen Mängel des Werkes verjähren mit Ablauf von fünf Jahren '
@@ -239,7 +324,12 @@ export function wvZusammenstellen(a: WvAntworten) {
     ...a,
     bestellerBlock: [a.bestellerName, a.bestellerAdresse].filter((s) => s.trim()).join('\n'),
     unternehmerBlock: [a.unternehmerName, a.unternehmerAdresse].filter((s) => s.trim()).join('\n'),
-    werkArtWort: unbeweglich ? 'unbewegliches Werk' : 'bewegliches Werk',
+    werkArtWort: unbeweglich
+      ? 'unbewegliches Werk'
+      : bauwerkBezug
+        ? 'bewegliches Werk, das bestimmungsgemäss in ein unbewegliches Werk integriert oder als '
+          + 'Grundlage für dessen Erstellung verwendet wird'
+        : 'bewegliches Werk',
     ablieferungSatz: a.ablieferung.trim()
       ? ` Das Werk ist bis zum ${fmtIsoStrict(a.ablieferung)} abzuliefern.`
       : '',
@@ -248,6 +338,8 @@ export function wvZusammenstellen(a: WvAntworten) {
       ? ` Der Besteller leistet bei Vertragsschluss eine Akontozahlung von CHF ${anzahlungFmt}, die mit der Schlussvergütung verrechnet wird.`
       : '',
     ruegefristSatz,
+    verdecktSatz,
+    bautenSatz,
     abnahmeProtokollSatz: a.abnahmeProtokoll
       ? ' Über die Abnahme erstellen die Parteien ein gemeinsames Protokoll.'
       : '',

@@ -103,7 +103,8 @@ describe('Werkvertrag — Mängelrüge verdeckter Mängel (VC-01, Art. 370 Abs. 
     const t = e.dokument.absaetze.find((x) => x.bausteinId === 'WV05_abnahme')!.text;
     const docx = docxAbsaetze(e).map((x) => x.text).join('\n');
     expect(docx).toContain(t);
-    const pdf = vorlagenPdfText(t);
+    // PDF-Typografie setzt geschützte Leerzeichen (Abs.\u00a04) → Leerraum normalisieren.
+    const pdf = vorlagenPdfText(t).replace(/\s+/g, ' ');
     expect(pdf).toContain('innert 60 Tagen nach ihrer Entdeckung');
     expect(pdf).toContain('Art. 370 Abs. 4 OR');
   });
