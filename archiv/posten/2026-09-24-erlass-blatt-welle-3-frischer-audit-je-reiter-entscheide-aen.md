@@ -19,3 +19,7 @@ der Runde: Audit je Reiter + Bedienung + Daten, Fix der Befunde, dazu die offene
 Welle-2-Daten-Rest (eigene Daten-Einheit, Gegenprüfung), HN-D7 (DK-24, Ladeanzeige), R2-10,
 D2-Nachläufer. Was nach der Runde offen bleibt, wird umgehängt — Darstellung → `W2·29-WERKBANK-NACHLAUF`
 (N2), Daten → Daten-Schritt, Werkzeug → QS-Schritt —, dann `LESER=done` und `W2·29-WERKBANK-REST` S0.
+
+**Ergebnis 25.9.2026:** Audit (lex-recherche Opus) 13 Befunde, 0 kritisch; ~35 Vorrunden-Befunde live als erledigt bestätigt; Tempo «OR-Entscheide mobil» nicht reproduziert (kalt 1,75–1,85 s, warm 1,38–1,48 s, 4× CPU @390, n=6, load 3–3,5; CI-Shard-Last nicht gemessen). W3-1…W3-5, W3-7, R2-10 in #1097 (Bug-Check Opus, Nachzug 991615c8d/3d5166347); W3-6 (DK-24) bewusst nicht umgesetzt — beide Knopf-Formen sind Entscheide David 24.9. (S6 W1f / D-E4), Wächter `w229-w1f-blatt-artikel.e2e.ts` (f). W3-8/9/12/13 → NACHLAUF, W3-10/11 → BUND-FERTIG (eigene Posten). Daten-Rest #1096.
+
+**Erledigt 2026-09-25:** PR #1097

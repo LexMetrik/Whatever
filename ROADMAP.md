@@ -122,8 +122,8 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
 
 ## Leser — Gesetzes-Darstellung  *(`feld: leser`)*
 
-- [~] **Werkbank-Umbau Schritt 2: der Gesetzes-Leser** *(`W2·29-WERKBANK-LESER`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-LESER · status: wip · blocker: null · dep: [W2·29-WERKBANK-TOKENS] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau Schritt 2: der Gesetzes-Leser** *(`W2·29-WERKBANK-LESER`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-LESER · status: done · blocker: null · dep: [W2·29-WERKBANK-TOKENS] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: die Leser-Hülle auf die Werkbank umziehen — grösster Korpus, darum zuerst. Abnahmeliste
   ist Abschnitt 2 des Funktions-Inventars (jede Fläche, jedes Feld, jeder Zustand). Grenzen:
   **Normtext-Körper golden byte-gleich**, Rechen-/Datenlogik unangetastet, alte Komponente fällt
