@@ -2,7 +2,7 @@
 //
 //   vite-node scripts/rechtsprechung/wochenlauf.ts -- --datum=YYYY-MM-DD \
 //     --aus=<ordner> [--checkpoint] [--stichprobe-n=12] [--modus=woche|bs-vollabgleich]
-//     [--frist-min=165] [--quellen-frist-min=110]
+//     [--frist-min=160] [--quellen-frist-min=110]
 //
 // Fährt die bestehenden Generatoren und Tore der Reihe nach (keine zweite
 // Wahrheit, §5) und schreibt nach --aus: bericht.md (PR-Body), commit.txt,
@@ -17,11 +17,15 @@
 //  1 = Absturz, oder KEIN Diff und dabei eine Quelle ausgefallen (sonst sähe
 //      ein Totalausfall aus wie «nichts Neues»; der Wächter meldet es).
 //
-// FRISTEN (A10): Job-Timeout 185 min. Die Quellen dürfen bis --quellen-frist-min
-// laufen (danach werden verbleibende Quellen übersprungen und als Ausfall
-// gemeldet); jeder weitere Schritt bekommt min(eigene Kappe, Rest bis
-// --frist-min). So endet das Skript vor dem Job-Timeout und der PR-Schritt
-// behält seine Zeit — ein Abbruch durch GitHub verwürfe alles.
+// FRISTEN (A10, N2): Job-Timeout 185 min. Die Quellen dürfen bis
+// --quellen-frist-min laufen (danach werden verbleibende Quellen übersprungen
+// und als Ausfall gemeldet); jeder weitere Schritt bekommt min(eigene Kappe,
+// Rest bis --frist-min). Stichprobe und Frische fragen vor JEDEM Abruf nach der
+// Frist; danach «nicht geprüft» (⇒ Entwurf). Nach der Frist läuft höchstens EIN
+// begonnener Abruf zu Ende: Stichprobe ≤ 5 min (OCL-Detail jget 3×45 s + zwei
+// URLs × 2 × 30 s), Frische ≤ 1 min. Budget: Setup ≤ 10 + Skript ≤ 160 +
+// Überhang ≤ 5 + PR-Schritt ≤ 5 = 180 < 185 — ein Abbruch durch GitHub
+// verwürfe alles.
 //
 // --checkpoint (nur CI, braucht git-Identität): nach jedem erfolgreichen
 // Quell-Schritt ein lokaler WIP-Commit; scheitert ein Schritt (Exit ≠ 0), wird
@@ -40,7 +44,9 @@ import {
 } from './wochenlauf-kern';
 import { baueBericht, baueCommit, baueSummary, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
 import { stichprobeZeile, frische } from './wochenlauf-netz';
-import { stichprobenPlan, pruefeVorwoche, offeneBefunde, type Vorwoche } from './wochenlauf-vorwoche';
+import {
+  stichprobenPlan, pruefeVorwoche, offeneBefunde, identitaetGeaendert, bsAktualisiertEintraege, mitFrist, ungeprueft, type Vorwoche,
+} from './wochenlauf-vorwoche';
 import { DATEN_BUDGET, gz } from '../perf/daten-budget';
 
 const arg = (n: string) => process.argv.find((a) => a.startsWith(n + '='))?.slice(n.length + 1);
@@ -49,12 +55,14 @@ const aus = arg('--aus') ?? '';
 const checkpoint = process.argv.includes('--checkpoint');
 const stichprobeN = Math.max(12, Number(arg('--stichprobe-n') ?? '12'));
 const modus: Modus = arg('--modus') === 'bs-vollabgleich' ? 'bs-vollabgleich' : 'woche';
-const fristMin = Number(arg('--frist-min') ?? '165');
+const fristMin = Number(arg('--frist-min') ?? '160');
 const quellenFristMin = Number(arg('--quellen-frist-min') ?? '110');
 if (!aus) { console.error('--aus=<ordner> fehlt'); process.exit(2); }
 const baender = baenderFuer(datum); // wirft bei fehlendem/kaputtem --datum (§2: nie Date.now in der Erhebung)
 const T0 = Date.now(); // nur Betriebsuhr für Fristen, nie in Daten oder Entscheid-Logik
 const rest = (kappe: number, frist = fristMin) => Math.min(kappe, restMinuten(T0, Date.now(), frist));
+/** Frist offen? Stichprobe und Frische fragen vor JEDEM Abruf (N2). */
+const weiter = () => restMinuten(T0, Date.now(), fristMin) > 0;
 
 const REGISTER = 'public/rechtsprechung/register.json';
 const BS = 'Basel-Stadt (Delta)';
@@ -140,6 +148,7 @@ async function main(): Promise<void> {
   const nachbau: Schritt[] = [];
   const tore: Tor[] = [];
   const stichprobe: StichprobenZeile[] = [];
+  const fristAus: string[] = [];
   let dateien: string[] = [];
   let gzNachher = gzVorher;
   if (inhaltsDiff) {
@@ -171,9 +180,14 @@ async function main(): Promise<void> {
       for (const n of ['check:perf-budget', `e2e (${specs.length} Korpus-Specs)`]) tore.push({ name: n, code: 1, auszug: 'nicht gefahren — Build rot' });
     }
     gzNachher = gzJetzt();
-    // A2: offene Befunde der Vorwoche zwingend erneut (zusätzlich zu n).
-    const plan = stichprobenPlan(vergleich.neu, stichprobeN, jetzt, (vorwoche?.befunde ?? []).map((x) => x.key));
-    for (const e of plan) stichprobe.push(await stichprobeZeile(e));
+    // Pool = neu ∪ Identität geändert ∪ BS aktualisiert (N3); Pflicht zusätzlich
+    // zu n: jeder Eintrag eines DATUM_VOLLPRUEFUNG-Gerichts (N1) und jeder offene
+    // Befund der Vorwoche (A2). Nach der Frist: «nicht geprüft» (N2).
+    const pool = [...vergleich.neu, ...identitaetGeaendert(vorherMain, jetzt), ...bsAktualisiertEintraege(bs.aktualisiert, jetzt)];
+    const plan = stichprobenPlan(pool, stichprobeN, jetzt, (vorwoche?.befunde ?? []).map((x) => x.key));
+    const sp = await mitFrist(plan, weiter, stichprobeZeile, ungeprueft);
+    stichprobe.push(...sp.out);
+    if (sp.uebersprungen) fristAus.push(`Stichprobe ${sp.uebersprungen} von ${plan.length}`);
     dateien = leseStatusZ(git('status', '--porcelain', '-z', '-uall'));
   } else if (checkpoint) {
     git('reset', '-q', '--hard', start); git('clean', '-qfd', '--', 'public', 'daten', 'bibliothek', 'src');
@@ -182,11 +196,13 @@ async function main(): Promise<void> {
   const { erwartet, unerwartet } = teilePfade(dateien);
   writeFileSync(join(aus, 'pfade.nul'), erwartet.map((p) => `${p}\0`).join(''));
   const budget = budgetZeilen(DATEN_BUDGET, gzVorher, gzNachher, erwartet);
-  const fr = modus === 'woche' ? await frische(datum, jetzt) : [];
+  const fri = modus === 'woche' ? await frische(datum, jetzt, weiter) : { zeilen: [], uebersprungen: 0 };
+  if (fri.uebersprungen) fristAus.push(`Frische ${fri.uebersprungen} Gerichte`);
+  const fr = fri.zeilen;
   const sperrt = mergeSchutzSperrt(erwartet);
   const vw = pruefeVorwoche(vorwoche, stichprobe);
   const ent = entscheide({
-    vorwocheOffen: vw.gruende,
+    vorwocheOffen: vw.gruende, fristAus,
     inhaltsDiff, quellenAus, toreRot: tore.filter((t) => t.code !== 0).map((t) => t.name),
     nachbauRot: nachbau.filter((n) => n.code !== 0).map((n) => n.name), stichprobe, mergeSchutzSperrt: sperrt,
     unerwartet, budgetUeber: budgetBefund(budget).ueber, vorwocheVerworfen: basis.vorwocheVerworfen,

@@ -179,6 +179,11 @@ sperrt nicht) ⇒ Entwurf, weil check:merge-schutz dann nicht sperrte.
 0. **In Prüfung nehmen:** Label `in-pruefung` setzen (oder kommentieren/
    committen) — der nächste Lauf überschreibt den PR dann nicht, er setzt aus.
 1. PR lesen. ENTWURF = etwas war rot (Grund im Kopf) — erst beheben, dann weiter.
+   «Kalendergebunden» (check:verfall u. a.) trifft auch main: dort fixen.
+   Offene Befunde stehen im Kommentar-Block `wochenlauf-befunde` des Bodys;
+   der nächste Lauf prüft sie zwingend erneut und hebt den Entwurf erst auf,
+   wenn jeder erneut grün ist. Von Hand quittieren = Eintrag aus dem Block
+   streichen (mit Begründung im PR). BE-Einträge werden vollständig geprüft.
 2. Pflicht-Gegenprüfung (Skill `gegenpruefung`, Prüfer ≠ Bau-Modell) mit den
    Linsen aus «Verifikation» oben, dazu **normKeys inhaltlich** (Remap-Zuwachs
    an Stichproben gegen den Entscheidtext, Lehre #1099). Die Auto-Stichprobe

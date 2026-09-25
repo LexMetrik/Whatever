@@ -8,6 +8,7 @@ import {
   type RegEintrag, type StichprobenZeile, type FrischeZeile,
 } from './wochenlauf-kern';
 import { pdfText } from './wochenlauf-pdf';
+import { mitFrist, NICHT_GEPRUEFT } from './wochenlauf-vorwoche';
 import { clirKandidaten, bgeRefZuClirId } from '../normtext/clir-regeste';
 import { jget, type OclDecision } from '../normtext/adapter-entscheide';
 
@@ -53,15 +54,17 @@ export async function stichprobeZeile(e: RegEintrag): Promise<StichprobenZeile> 
   return { key: e.key, url: seite.url, ergebnis: id.treffer === null ? 'nicht-pruefbar' : id.treffer ? 'treffer' : 'fehltreffer', detail: id.detail, akz: id.akz, datum: id.datum };
 }
 
-/** Jüngstes Quelldatum je Gericht aus dem OCL-Listing (neueste zuerst); Kantone wie der Generator nur de. */
-export async function frische(datum: string, nachher: RegEintrag[]): Promise<FrischeZeile[]> {
-  const out: FrischeZeile[] = [];
-  for (const c of aktiveGerichte([...EIDG_GERICHTE, ...KANTONS_GERICHTE])) {
+/**
+ * Jüngstes Quelldatum je Gericht aus dem OCL-Listing (neueste zuerst); Kantone wie der Generator nur de.
+ * `weiter` = Lauf-Frist noch offen (N2): danach kein Abruf mehr, Zeile «nicht geprüft».
+ */
+export async function frische(datum: string, nachher: RegEintrag[], weiter: () => boolean = () => true): Promise<{ zeilen: FrischeZeile[]; uebersprungen: number }> {
+  const registerDatum = (c: string) => nachher.filter((e) => e.gericht === c && !e.verweis).reduce<string | null>((m, e) => (!m || e.datum > m ? e.datum : m), null);
+  const r = await mitFrist(aktiveGerichte([...EIDG_GERICHTE, ...KANTONS_GERICHTE]), weiter, async (c) => {
     const spr = KANTONS_GERICHTE.includes(c) ? '&language=de' : '';
     const d = await jget<{ results?: OclDecision[] }>(`${OCL}/decisions?court=${c}${spr}&sort=date_desc&limit=1&fields=compact`, 2, 30_000);
-    const reg = nachher.filter((e) => e.gericht === c && !e.verweis).reduce<string | null>((m, e) => (!m || e.datum > m ? e.datum : m), null);
-    out.push(bewerteFrische(datum, c, d?.results?.[0]?.decision_date ?? null, reg));
-  }
-  return out;
+    return bewerteFrische(datum, c, d?.results?.[0]?.decision_date ?? null, registerDatum(c));
+  }, (c): FrischeZeile => ({ gericht: c, quelle: null, register: registerDatum(c), luecke: null, hinweis: NICHT_GEPRUEFT }));
+  return { zeilen: r.out, uebersprungen: r.uebersprungen };
 }
 

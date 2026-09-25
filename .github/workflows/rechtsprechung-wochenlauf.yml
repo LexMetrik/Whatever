@@ -37,11 +37,13 @@ jobs:
   wochenlauf:
     name: Entscheide nachziehen · Bericht · PR
     runs-on: ubuntu-latest
-    # Budget (A10): Quellen ≤ 110 min (--quellen-frist-min, danach übersprungen
-    # und als Ausfall gemeldet), Skript gesamt ≤ 165 min (--frist-min; Nachbau,
-    # Tore ~20 min, Build+e2e ~15 min holen ihre Zeit aus dem Rest), dazu Setup
-    # und PR-Schritt. Ein Abbruch durch GitHub verwürfe alles — darum endet das
-    # Skript vor diesem Deckel.
+    # Budget (A10, N2): Quellen ≤ 110 min (--quellen-frist-min, danach
+    # übersprungen und als Ausfall gemeldet), Skript ≤ 160 min (--frist-min;
+    # Nachbau, Tore, Build+e2e, Stichprobe und Frische holen ihre Zeit aus dem
+    # Rest — nach der Frist «nicht geprüft» ⇒ Entwurf). Summe: Setup ≤ 10 +
+    # Skript ≤ 160 + ein begonnener Abruf ≤ 5 + PR-Schritt ≤ 5 = 180 < 185.
+    # Ein Abbruch durch GitHub verwürfe alles — darum endet das Skript vor
+    # diesem Deckel.
     timeout-minutes: 185
     env:
       TZ: Europe/Zurich # wie ci.yml/fedlex-frische.yml
@@ -98,7 +100,7 @@ jobs:
         run: |
           npx vite-node scripts/rechtsprechung/wochenlauf.ts -- \
             --datum=${{ steps.datum.outputs.iso }} --aus="$RUNNER_TEMP/wochenlauf" --checkpoint \
-            --modus="$MODUS" --quellen-frist-min=110 --frist-min=165
+            --modus="$MODUS" --quellen-frist-min=110 --frist-min=160
 
       - name: Job-Summary
         if: always() && steps.basis.outputs.aussetzen != 'true'

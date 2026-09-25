@@ -458,8 +458,18 @@ export function budgetZeilen(budget: readonly (readonly [string, number])[], vor
   });
 }
 export const BUDGET_WARNUNG = 0.9;
+/**
+ * Ausnutzung als Text, auf 0,1 % ABgerundet; über dem Budget nie «100.0 %»
+ * (Auflage N5 der Gegenprüfung #1113, 25.9.2026: 900 KB + 1 B zeigte toFixed
+ * als «100.0 %», obwohl das Budget gerissen war) — dann «> 100 %».
+ */
+export function anteilText(anteil: number | null): string {
+  if (anteil === null) return '–';
+  const ab = Math.floor(anteil * 1000) / 10;
+  return anteil > 1 && ab <= 100 ? '> 100 %' : `${ab.toFixed(1)} %`;
+}
 export function budgetBefund(z: BudgetZeile[]): { warnung: string[]; ueber: string[] } {
-  const pct = (x: BudgetZeile) => `${x.pfad} ${(100 * (x.anteil ?? 0)).toFixed(1)} %`;
+  const pct = (x: BudgetZeile) => `${x.pfad} ${anteilText(x.anteil ?? 0)}`;
   return {
     warnung: z.filter((x) => x.anteil !== null && x.anteil >= BUDGET_WARNUNG && x.anteil <= 1).map(pct),
     ueber: z.filter((x) => x.anteil !== null && x.anteil > 1).map(pct),
@@ -579,6 +589,17 @@ export function richterPhantome(vorher: Record<string, { name: string }>, nachhe
 
 // ── Tore (Punkt 3) ──────────────────────────────────────────────────────────
 export interface Tor { name: string; code: number; auszug: string }
+/**
+ * Tore, deren Ergebnis am Kalendertag hängt (new Date() ohne --datum), nicht am
+ * Korpus — rot werden sie auf main genauso. Per grep über die check:seriell-
+ * Skripte (25.9.2026, Auflage N4 der Gegenprüfung #1113):
+ *  · check:verfall — scripts/verfall-pruefen.ts `const jetzt = new Date()` (Verfall/Vorlauf);
+ *  · check:bs-materialien — `heute` = new Date() ohne --datum, «stand in der Zukunft»;
+ *  · check:entstehung — Ablauf der Leer-Diff-Ausnahmen gegen `new Date()`.
+ * Nicht darunter: check:pdf (Datum nur mit --netz), check:stand-zukunft (bewusst ohne Wanduhr).
+ * Rot bleibt rot (Entwurf — die Merge-Queue fiele ebenso); der Bericht erklärt es oben.
+ */
+export const KALENDER_TORE: ReadonlySet<string> = new Set(['check:verfall', 'check:bs-materialien', 'check:entstehung']);
 export const auszug = (log: string, n = 4) => log.trim().split('\n').filter((z) => z.trim()).slice(-n).join('\n');
 /**
  * `npm run check` (scripts/run-parallel.ts) in Einzel-Tore zerlegen: je rotem
@@ -648,7 +669,11 @@ export function entscheide(l: Lage): { entscheid: Entscheid; gruende: string[] }
   if (l.nachbauRot.length) g.push(`Nachbau rot: ${l.nachbauRot.join(', ')}`);
   const fehl = l.stichprobe.filter((s) => s.ergebnis === 'fehltreffer').length;
   if (fehl) g.push(`Stichprobe: ${fehl} Fehltreffer`);
-  if (!l.stichprobe.some((s) => s.ergebnis === 'treffer')) g.push('Stichprobe: kein einziger prüfbarer Treffer');
+  // N3: «kein prüfbarer Treffer» nur, wenn wirklich nichts geprüft werden konnte
+  // (Fehltreffer tragen ihren eigenen Grund); eine leere Stichprobe heisst:
+  // weder neue noch geänderte/aktualisierte Einträge im Diff — Handprüfung.
+  if (!l.stichprobe.length) g.push('Stichprobe leer: kein neuer oder aktualisierter Eintrag im Diff prüfbar');
+  else if (l.stichprobe.every((s) => s.ergebnis === 'nicht-pruefbar')) g.push('Stichprobe: kein einziger prüfbarer Treffer');
   if (l.unerwartet.length) g.push(`unerwartete Dateien (nicht gestagt): ${l.unerwartet.length}`);
   if (l.budgetUeber.length) g.push(`Budget überschritten: ${l.budgetUeber.join(', ')}`);
   if (!l.mergeSchutzSperrt) g.push('check:merge-schutz würde diesen Diff NICHT sperren (kein Risiko-Pfad)');

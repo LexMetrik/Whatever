@@ -4,11 +4,16 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
-  kantonalAusfall, uebrigeAufruf, entscheide, waehleStichprobe, type Lage, type RegEintrag, type StichprobenZeile,
+  kantonalAusfall, uebrigeAufruf, entscheide, waehleStichprobe, restMinuten, leseBsDelta, budgetZeilen, budgetBefund, anteilText,
+  aktiveGerichte, AUSGENOMMEN, DATUM_VOLLPRUEFUNG, KALENDER_TORE, EIDG_GERICHTE, KANTONS_GERICHTE,
+  type Lage, type RegEintrag, type StichprobenZeile,
 } from '../../scripts/rechtsprechung/wochenlauf-kern';
+import { frische } from '../../scripts/rechtsprechung/wochenlauf-netz';
+import { DATEN_BUDGET } from '../../scripts/perf/daten-budget';
 import { baueBericht, type BerichtDaten } from '../../scripts/rechtsprechung/wochenlauf-bericht';
 import {
-  befundBlock, leseBefundBlock, pruefeVorwoche, offeneBefunde, stichprobenPlan, UNBEKANNT, type Vorwoche,
+  befundBlock, leseBefundBlock, pruefeVorwoche, offeneBefunde, stichprobenPlan, identitaetGeaendert, bsAktualisiertEintraege,
+  mitFrist, ungeprueft, NICHT_GEPRUEFT, UNBEKANNT, type Vorwoche,
 } from '../../scripts/rechtsprechung/wochenlauf-vorwoche';
 
 const e = (key: string, gericht: string, datum = '2026-09-10', x: Partial<RegEintrag> = {}): RegEintrag => ({ key, gericht, datum, ...x });
@@ -107,5 +112,124 @@ describe('A2 · Befund der Vorwoche verschwindet nicht', () => {
     expect(cli).toMatch(/stichprobenPlan\([^)]*\(vorwoche\?\.befunde \?\? \[\]\)\.map\(\(x\) => x\.key\)\)/);
     expect(cli).toMatch(/vorwocheOffen: vw\.gruende/);
     expect(cli).toMatch(/befunde: offeneBefunde\(stichprobe, vw\.offen\)/);
+  });
+});
+
+describe('N1 · Gerichte mit unzuverlässigem Datum: Vollprüfung', () => {
+  const be = Array.from({ length: 6 }, (_, i) => e(`be_verwaltungsgericht_${i}`, 'be_verwaltungsgericht', '2026-08-3' + (i % 2)));
+  const andere = Array.from({ length: 40 }, (_, i) => e(`bvger_${String(i).padStart(2, '0')}`, 'bvger'));
+  it('eine Stelle, heute nur BE; BE ist nicht ausgenommen', () => {
+    expect([...DATUM_VOLLPRUEFUNG]).toEqual(['be_verwaltungsgericht']);
+    expect(AUSGENOMMEN).not.toHaveProperty('be_verwaltungsgericht');
+  });
+  it('JEDER neue BE-Eintrag in der Stichprobe, zusätzlich zu n', () => {
+    // Mutation: DATUM_VOLLPRUEFUNG-Filter in stichprobenPlan entfernen ⇒ nur ein Teil der BE-Einträge.
+    const plan = stichprobenPlan([...andere, ...be], 12, [...andere, ...be], []);
+    expect(plan.filter((x) => x.gericht === 'be_verwaltungsgericht').map((x) => x.key).sort()).toEqual(be.map((x) => x.key));
+    expect(plan).toHaveLength(18);
+  });
+  it('geänderter BE-Eintrag (Datum) geht ebenfalls in die Stichprobe', () => {
+    const alt = e('be_verwaltungsgericht_alt', 'be_verwaltungsgericht', '2026-05-20', { nummer: '100.2026.12U' });
+    const neu = { ...alt, datum: '2026-05-21' };
+    const geaendert = identitaetGeaendert([alt, andere[0]], [neu, andere[0]]);
+    expect(geaendert.map((x) => x.key)).toEqual(['be_verwaltungsgericht_alt']);
+    expect(identitaetGeaendert([alt], [{ ...alt, titel: 'x' } as RegEintrag])).toEqual([]); // nur Identitätsfelder
+    expect(stichprobenPlan([...andere, ...geaendert], 12, [...andere, neu], []).map((x) => x.key)).toContain('be_verwaltungsgericht_alt');
+  });
+  it('CLI: Pool = neu ∪ Identität geändert ∪ BS aktualisiert', () => {
+    const cli = readFileSync('scripts/rechtsprechung/wochenlauf.ts', 'utf8');
+    expect(cli).toMatch(/const pool = \[\.\.\.vergleich\.neu, \.\.\.identitaetGeaendert\(vorherMain, jetzt\), \.\.\.bsAktualisiertEintraege\(bs\.aktualisiert, jetzt\)\];/);
+    expect(cli).toMatch(/stichprobenPlan\(pool, stichprobeN, jetzt,/);
+  });
+});
+
+describe('N2 · Lauf-Frist deckt Stichprobe und Frische', () => {
+  it('Fake-Uhr: nach der Frist keine Abrufe mehr, Rest «nicht geprüft» ⇒ Entwurf', async () => {
+    // Mutation: in mitFrist weiter() ignorieren ⇒ alle 5 abgerufen, uebersprungen 0.
+    let uhr = 0;
+    const weiter = () => restMinuten(0, uhr, 60) > 0;
+    const abgerufen: string[] = [];
+    const xs = ['a', 'b', 'c', 'd', 'e'].map((k) => e(k, 'bvger'));
+    const r = await mitFrist(xs, weiter, async (x) => { abgerufen.push(x.key); uhr += 30 * 60_000; return z(x.key, 'treffer'); }, ungeprueft);
+    expect(abgerufen).toEqual(['a', 'b']);
+    expect(r.uebersprungen).toBe(3);
+    expect(r.out.slice(2).map((x) => [x.ergebnis, x.detail])).toEqual(Array(3).fill(['nicht-pruefbar', NICHT_GEPRUEFT]));
+    expect(entscheide({ ...gruen, stichprobe: r.out, fristAus: [`Stichprobe ${r.uebersprungen} von ${xs.length}`] })).toEqual({ entscheid: 'entwurf', gruende: ['Lauf-Frist erreicht, nicht geprüft: Stichprobe 3 von 5'] });
+  });
+  it('Frische nach der Frist: kein Netz-Abruf, jede Zeile «nicht geprüft»', async () => {
+    const fr = await frische('2026-09-28', [e('bvger_1', 'bvger', '2026-09-01')], () => false);
+    expect(fr.uebersprungen).toBe(aktiveGerichte([...EIDG_GERICHTE, ...KANTONS_GERICHTE]).length);
+    expect(fr.zeilen.every((f) => f.hinweis === NICHT_GEPRUEFT)).toBe(true);
+    expect(fr.zeilen.find((f) => f.gericht === 'bvger')?.register).toBe('2026-09-01');
+  });
+  it('Budget: Frist + Setup + ein begonnener Abruf + PR-Schritt < Job-Timeout; CLI verdrahtet', () => {
+    const yml = readFileSync('.github/workflows/rechtsprechung-wochenlauf.yml', 'utf8');
+    const job = Number(/timeout-minutes: (\d+)/.exec(yml)![1]);
+    const frist = Number(/--frist-min=(\d+)/.exec(yml)![1]);
+    expect(frist + 10 + 5 + 5).toBeLessThan(job);
+    const cli = readFileSync('scripts/rechtsprechung/wochenlauf.ts', 'utf8');
+    expect(cli).toMatch(/mitFrist\(plan, weiter, stichprobeZeile, ungeprueft\)/);
+    expect(cli).toMatch(/await frische\(datum, jetzt, weiter\)/);
+    expect(cli).toMatch(/vorwocheOffen: vw\.gruende, fristAus,/);
+  });
+});
+
+describe('N3 · aktualisierte BS-Einträge in der Stichprobe', () => {
+  const reg = ['AUS.2026.77', 'AUS.2026.78', 'BES.2026.1'].map((n) => e(`bs_appellationsgericht_${n}`, 'bs_appellationsgericht', '2026-09-17', { quelle: 'gerichte-bs', nummer: n, datei: `kanton/BS/bs_appellationsgericht/${n}.json` }));
+  // Zeilenform: bs-delta.ts berichteBsDelta (Plan wird zweimal gedruckt).
+  const log = [
+    '[bs-delta] Plan: +0 neu · 2 aktualisiert · 3760 unverändert (byte-treu) · −0 Takedown',
+    '[bs-delta]   aktualisiert: kanton/BS/bs_appellationsgericht/AUS.2026.77 (key 80073): inhalt',
+    '[bs-delta]   aktualisiert: kanton/BS/bs_appellationsgericht/BES.2026.1 (key 80110): besetzung; dispositiv',
+    '[bs-delta]   aktualisiert: kanton/BS/bs_appellationsgericht/AUS.2026.77 (key 80073): inhalt',
+  ].join('\n');
+  it('Log → Register-Einträge über `datei`; Vollabgleich ohne neue Einträge hat trotzdem eine Stichprobe', () => {
+    // Mutation: bsAktualisiertEintraege liefert [] ⇒ Stichprobe leer ⇒ Vollabgleich immer Entwurf.
+    const akt = bsAktualisiertEintraege(leseBsDelta(log).aktualisiert, reg);
+    expect(akt.map((x) => x.nummer)).toEqual(['AUS.2026.77', 'BES.2026.1']);
+    expect(stichprobenPlan(akt, 12, reg, []).map((x) => x.key)).toEqual(['bs_appellationsgericht_AUS.2026.77', 'bs_appellationsgericht_BES.2026.1']);
+  });
+  it('«kein prüfbarer Treffer» nur, wenn nichts geprüft werden konnte; leere Stichprobe eigener Grund', () => {
+    // Mutation: alte Regel «!some(treffer)» ⇒ bei reinem Fehltreffer zusätzlich «kein einziger prüfbarer Treffer».
+    expect(entscheide({ ...gruen, stichprobe: [z('a', 'fehltreffer')] }).gruende).toEqual(['Stichprobe: 1 Fehltreffer']);
+    expect(entscheide({ ...gruen, stichprobe: [z('a', 'nicht-pruefbar')] }).gruende).toEqual(['Stichprobe: kein einziger prüfbarer Treffer']);
+    expect(entscheide({ ...gruen, stichprobe: [] }).gruende).toEqual(['Stichprobe leer: kein neuer oder aktualisierter Eintrag im Diff prüfbar']);
+  });
+});
+
+describe('N4 · kalendergebundene Tore oben erklärt', () => {
+  it('check:verfall rot ⇒ Entwurf bleibt, Erklärung steht vor den Zahlen', () => {
+    // Mutation: kalender-Zeile in baueBericht entfernen ⇒ Erklärung fehlt.
+    const ent = entscheide({ ...gruen, toreRot: ['check:verfall'] });
+    expect(ent.entscheid).toBe('entwurf');
+    const body = baueBericht(bericht({ tore: [{ name: 'check:verfall', code: 1, auszug: 'verfallen' }, { name: 'npm test', code: 0, auszug: '' }], entscheid: ent }));
+    const i = body.indexOf('Kalendergebunden — trifft auch main, kein Befund dieses Nachzugs:** check:verfall');
+    expect(i).toBeGreaterThan(0);
+    expect(i).toBeLessThan(body.indexOf('## Zahlen je Gericht'));
+    expect(body).toContain('**ROT** (Exit 1) — kalendergebunden: verfallen');
+    expect(baueBericht(bericht({ tore: [{ name: 'npm test', code: 1, auszug: 'x' }] }))).not.toContain('Kalendergebunden');
+  });
+  it('jedes Kalender-Tor läuft in check:seriell und liest die Wanduhr', () => {
+    const skripte = JSON.parse(readFileSync('package.json', 'utf8')).scripts as Record<string, string>;
+    for (const t of KALENDER_TORE) {
+      expect(skripte['check:seriell']).toContain(`npm run ${t} `);
+      const datei = /scripts\/\S+\.ts/.exec(skripte[t])![0];
+      expect(readFileSync(datei, 'utf8')).toMatch(/new Date\(\)/);
+    }
+  });
+});
+
+describe('N5 · Budget über 100 % nie als «100.0 %»', () => {
+  it('900 KB + 1 B ⇒ «> 100 %» in Befund und Tabelle', () => {
+    // Mutation: anteilText auf toFixed(1) zurück ⇒ «100.0 %».
+    const R = 'public/rechtsprechung/register.json';
+    const b = DATEN_BUDGET.find(([p]) => p === R)![1];
+    expect(b).toBe(900 * 1024);
+    const zeilen = budgetZeilen([[R, b]], { [R]: b - 10 }, { [R]: b + 1 }, []);
+    expect(budgetBefund(zeilen).ueber).toEqual([`${R} > 100 %`]);
+    expect(baueBericht(bericht({ budget: zeilen }))).toContain('| 900.0 KB | > 100 % |');
+    expect(anteilText(0.99951)).toBe('99.9 %');
+    expect(anteilText(1)).toBe('100.0 %');
+    expect(anteilText(1.0512)).toBe('105.1 %');
   });
 });

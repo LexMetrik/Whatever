@@ -4,7 +4,7 @@
 // entschieden wird im Kern. Jeder Befund, den der Kern liefert, erscheint hier
 // — Ausfälle, Guard-Befunde, rote Tore, Budget, Frische, Stichprobe.
 import {
-  budgetBefund, AUSGENOMMEN, type BudgetZeile, type BsVollBilanz, type Entscheid, type FrischeZeile, type GuardBefund,
+  budgetBefund, anteilText, AUSGENOMMEN, KALENDER_TORE, type BudgetZeile, type BsVollBilanz, type Entscheid, type FrischeZeile, type GuardBefund,
   type RegisterVergleich, type StichprobenZeile, type Tor,
 } from './wochenlauf-kern';
 import { befundBlock, type VorBefund } from './wochenlauf-vorwoche';
@@ -70,10 +70,12 @@ export function baueBericht(d: BerichtDaten): string {
   const reg = d.budget.find((z) => z.pfad === 'public/rechtsprechung/register.json');
   const regZu = reg && reg.vorher !== null && reg.nachher !== null ? reg.nachher - reg.vorher : null;
   const hinweise = d.frische.filter((f) => f.hinweis);
+  const kalender = d.tore.filter((t) => t.code !== 0 && KALENDER_TORE.has(t.name)).map((t) => t.name);
   return [
     `Automatischer Rechtsprechungs-${d.modus === 'bs-vollabgleich' ? 'Monatslauf (BS-Vollabgleich)' : 'Wochenlauf'} ${d.datum} (Entscheid David 25.9.2026: «Vorbereiten, Prüfung vor Live»). **Kein Auto-Merge.** Landung erst, wenn eine Session die Gegenprüfung gemacht hat (Skill korpus-werkstatt, «Wochen-Nachzug prüfen und landen»).`,
     '',
     kopfsatz(d),
+    ...(kalender.length ? [`> **Kalendergebunden — trifft auch main, kein Befund dieses Nachzugs:** ${kalender.join(', ')}. Das Tor hängt am Kalendertag, nicht am Korpus; der PR bleibt trotzdem Entwurf, weil die Merge-Queue ebenso fiele (Fix auf main, dann nächster Lauf).`] : []),
     ...bb.warnung.map((w) => `> **Budget-Warnung (≥ 90 %):** ${w}`),
     '',
     d.basis.nr
@@ -118,7 +120,7 @@ export function baueBericht(d: BerichtDaten): string {
     '',
     '| Tor | Ergebnis |',
     '|---|---|',
-    ...d.tore.map((t) => `| \`${t.name}\` | ${t.code === 0 ? 'grün' : `**ROT** (Exit ${t.code}): ${zelle(t.auszug).slice(0, 300)}`} |`),
+    ...d.tore.map((t) => `| \`${t.name}\` | ${t.code === 0 ? 'grün' : `**ROT** (Exit ${t.code})${KALENDER_TORE.has(t.name) ? ' — kalendergebunden' : ''}: ${zelle(t.auszug).slice(0, 300)}`} |`),
     '',
     `check:merge-schutz sperrt diesen Diff bis zum Verdikt: **${d.mergeSchutzSperrt ? 'ja' : 'NEIN'}**`,
     ...(d.unerwartet.length ? ['', `**Unerwartete Dateien — NICHT gestagt** (Positivliste, wochenlauf-kern.ts ERWARTETE_PFADE):`, liste(d.unerwartet, 20)] : []),
@@ -127,7 +129,7 @@ export function baueBericht(d: BerichtDaten): string {
     '',
     '| Datei | Basis | nachher | Budget | Ausnutzung | reicht noch |',
     '|---|---:|---:|---:|---:|---|',
-    ...d.budget.map((z) => `| ${z.pfad.replace('public/rechtsprechung/', '…/')} | ${kb(z.vorher)} | ${kb(z.nachher)} | ${kb(z.budget)} | ${z.anteil === null ? '–' : `${(100 * z.anteil).toFixed(1)} %`} | ${z.wochen === null ? '–' : `~${z.wochen} Wochen`} |`),
+    ...d.budget.map((z) => `| ${z.pfad.replace('public/rechtsprechung/', '…/')} | ${kb(z.vorher)} | ${kb(z.nachher)} | ${kb(z.budget)} | ${anteilText(z.anteil)} | ${z.wochen === null ? '–' : `~${z.wochen} Wochen`} |`),
     ...(regZu !== null && d.dieseWoche.neu > 0 ? ['', `register.json: Zuwachs dieses Laufs ${regZu} B gzip für ${d.dieseWoche.neu} neue Einträge ≈ ${Math.round(regZu / d.dieseWoche.neu)} B je Eintrag (Mischung BGE/BS/übrige).`] : []),
     '',
     '## Frische je Gericht (OCL-Listing neueste zuerst ↔ Register)',
