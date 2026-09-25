@@ -79,9 +79,9 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   gate falsch rot «node_modules passt nicht zu package-lock.json» (Beleg D2/#1072,
   24.9.2026: @ast-grep/cli 0.45.2 vs ^0.45.3).
   Wer aus RAM-Gruenden `npm run gate` auslaesst, faehrt trotzdem die schnellen
-  Konsistenz-Tore `npx vitest run src/tests/design-` (Sekunden, kein Browser)
-  — Beleg #1053 (24.9.2026): Schnellwerkzeug-Reiter mit eigener Kasten-Optik
-  (design-r5, B-R1) fiel erst im Orchestrator-Gate auf, ein Umlauf verloren.
+  Tore `npx vitest run src/tests/design-` und `npm run check:sediment`
+  (Sekunden, kein Browser) — Belege #1053 (24.9.2026, Kasten-Optik design-r5
+  erst im Orchestrator-Gate) und #1073/#1087 (25.9.2026, Export ohne Aufrufer).
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
@@ -94,8 +94,10 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
   ABSCHLUSS: Ein Auftrag endet mit prüfbarer Rückgabe (SHA/Tor-Ausgabe), NIE
   mit «ich warte auf …» — laufende Läufe per until-Schleife zu Ende bringen,
-  Ergebnis lesen, dann zurückmelden (16./17.8.2026: drei Agenten mussten je
-  mehrfach zum Abschluss aufgefordert werden).
+  Ergebnis lesen, dann zurückmelden (16./17.8.2026: drei Agenten gemahnt).
+  600 s ohne Ausgabe bricht den Agenten ab (Watchdog, 3x 25.9.2026, einmal
+  110 Dateien uncommittet): vorher WIP-committen, lange Laeufe
+  `cmd > <log> 2>&1; echo $?`, Netz immer `curl -m 30`.
 
 NUR deterministische, per Byte-Diff oder Test maschinell prüfbare Transformation. Verschachtelte Steuer-Strukturen (@meta-Blöcke, Checkbox-Hierarchien) sind KEINE Mechanik — abbrechen und melden statt raten (Vorfall 4.8.2026). Verschiebe-Aufträge nur mit isolation: worktree; Cut und Paste im SELBEN Commit.
 RÜCKGABE: Pfade + Zeilen-/Byte-Delta + Prüfweg (Diff/Test) + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7), nichts Weiteres.

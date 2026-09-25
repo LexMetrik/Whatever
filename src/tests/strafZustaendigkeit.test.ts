@@ -141,8 +141,17 @@ describe('Oberholzer-Vertiefung 6.6.2026 (N 239–330)', () => {
     const k = bestimmeStrafZustaendigkeit({ anliegen: 'gerichtsstand', tatort: 'bekannt', beteiligung: 'mittaeter', mehrereTatenVerschOrte: true });
     expect(k.weichen.some((w) => w.includes('Art. 33 Abs. 2 und Art. 34 Abs. 1'))).toBe(true);
     expect(k.weichen.some((w) => w.includes('VERFAHRENSEINHEIT'))).toBe(true);
+    // Z1-07 / §6.3 Nr. 23 (RL-42, deklarierte Fachänderung): vorher prüfte
+    // der Test nur die EXISTENZ einer Warnung — das falsche Hauptergebnis
+    // «Tatort, Art. 31 StPO» + Staatsanwaltschaft (Z1-01) blieb grün. Jetzt
+    // Forum und Behörde: Art. 10 Abs. 1 Satz 1 JStPO (gewöhnlicher Aufenthalt
+    // bei Eröffnung), Untersuchungsbehörde nach Art. 6 Abs. 2 JStPO.
     const j = bestimmeStrafZustaendigkeit({ anliegen: 'anzeige', tatort: 'bekannt', beschuldigteMinderjaehrig: true });
-    expect(j.warnungen.some((w) => w.includes('Art. 10 JStPO') || w.includes('JUGENDSTRAF'))).toBe(true);
+    expect(j.forum.normen[0].artikel).toBe('Art. 10 Abs. 1 JStPO');
+    expect(j.forum.text).toContain('GEWÖHNLICHEN AUFENTHALT');
+    expect(j.forum.normen.some((n) => n.artikel.startsWith('Art. 31'))).toBe(false);
+    expect(j.behoerdeTyp).toContain('Art. 6 Abs. 2 JStPO');
+    expect(j.behoerdeTyp).not.toMatch(/^Staatsanwaltschaft/);
     expect(j.normverweise.some((n) => n.artikel === 'Art. 10 JStPO')).toBe(true);
   });
   it('Medien-Antragsdelikt-Wahlrecht (35 II); Gesamtstrafe 34 III; BStGer abschliessend', () => {
@@ -152,5 +161,72 @@ describe('Oberholzer-Vertiefung 6.6.2026 (N 239–330)', () => {
     expect(g.weichen.some((w) => w.includes('GESAMTSTRAFE'))).toBe(true);
     expect(g.fahrplan.some((s) => s.text.includes('ABSCHLIESSEND'))).toBe(true);
     expect(g.fahrplan.some((s) => s.text.includes('in dubio pro duriore'))).toBe(true);
+  });
+});
+
+// RL-42 (Prüfung Rechtslogik 23.9.2026, Z1-01/Z1-02): Jugendstrafverfahren.
+// Wortlaute JStPO (SR 312.1, Fassung 1.7.2025, Fedlex-Filestore
+// eli/cc/2010/226/20250701 de-xml-3, abgerufen 25.9.2026):
+// Art. 10 Abs. 1: «Für die Strafverfolgung ist die Behörde des Ortes
+// zuständig, an dem die oder der beschuldigte Jugendliche bei Eröffnung des
+// Verfahrens den gewöhnlichen Aufenthalt hat. Für die Strafverfolgung im
+// Bereich des Ordnungsbussenverfahrens ist die Behörde des Ortes zuständig,
+// an dem die Straftat begangen worden ist.»
+// Art. 3 Abs. 2: nicht anwendbar sind die StPO-Bestimmungen über lit. a die
+// Übertretungsstrafbehörden (Art. 17 und 357), lit. b die Bundesgerichtsbarkeit
+// (Art. 23–28), lit. c den Gerichtsstand (Art. 31–34).
+describe('Jugendstrafverfahren (Art. 10 JStPO) — RL-42', () => {
+  const jugend = (extra: Partial<StrafInput> = {}) =>
+    bestimmeStrafZustaendigkeit({ anliegen: 'gerichtsstand', tatort: 'bekannt', beschuldigteMinderjaehrig: true, ...extra });
+
+  it('Minderjähriger, Tatort BE, gewöhnlicher Aufenthalt ZH → Forum am Aufenthaltsort (ZH), nicht am Tatort', () => {
+    // Die Engine ist kantonsneutral (Forum als Anknüpfung, der Kanton wird im
+    // UI gewählt): Soll ist die Anknüpfung «gewöhnlicher Aufenthalt» — mit
+    // Tatort BE und Aufenthalt ZH führt sie nach ZH. Der Tatort-Grundsatz
+    // (Art. 31 StPO), der nach BE führen würde, darf nicht das Hauptergebnis sein.
+    for (const tatort of ['bekannt', 'nur_erfolgsort', 'mehrere_orte', 'ausland_oder_ungewiss'] as const) {
+      const r = jugend({ tatort });
+      expect(r.forum.normen[0].artikel).toBe('Art. 10 Abs. 1 JStPO');
+      expect(r.forum.text).toMatch(/^JUGENDSTRAFVERFAHREN/);
+      expect(r.forum.text).toContain('bei ERÖFFNUNG des Verfahrens');
+      expect(r.forum.text).not.toContain('GRUNDSATZ TATORT');
+      expect(r.normverweise.some((n) => /^Art\. 3[12] /.test(n.artikel))).toBe(false);
+    }
+    // Erwachsene unverändert: Tatort-Grundsatz.
+    expect(bestimmeStrafZustaendigkeit({ anliegen: 'gerichtsstand', tatort: 'bekannt' }).forum.normen[0].artikel).toBe('Art. 31 Abs. 1 StPO');
+  });
+
+  it('Z1-02: Tatort nur im ORDNUNGSBUSSENVERFAHREN (Art. 10 Abs. 1 Satz 2), nicht bei allen Übertretungen', () => {
+    const alle = (r: ReturnType<typeof jugend>) => [r.forum.text, r.behoerdeTyp, ...r.warnungen, ...r.weichen].join(' | ');
+    expect(alle(jugend())).not.toContain('Übertretungen: Begehungsort');
+    expect(jugend().forum.text).toContain('ORDNUNGSBUSSENVERFAHREN');
+    // Übertretung (Busse) ausserhalb des Ordnungsbussenverfahrens: gewöhnlicher Aufenthalt bleibt massgeblich.
+    const u = jugend({ uebertretung: true });
+    expect(u.forum.normen[0].artikel).toBe('Art. 10 Abs. 1 JStPO');
+    // Art. 17/357 StPO (Übertretungsstrafbehörden) gelten nicht (Art. 3 Abs. 2 lit. a JStPO).
+    expect(u.behoerdeTyp).not.toContain('ÜBERTRETUNGSSTRAFBEHÖRDE');
+    expect(u.normverweise.some((n) => n.artikel === 'Art. 17 StPO' || n.artikel === 'Art. 357 StPO')).toBe(false);
+  });
+
+  it('Behörde: Untersuchungsbehörde nach kantonaler Wahl (Jugendrichter ODER Jugendanwalt, Art. 6 Abs. 2 JStPO)', () => {
+    const r = jugend();
+    expect(r.behoerdeTyp).toContain('Jugendrichterin');
+    expect(r.behoerdeTyp).toContain('Jugendanwältin');
+    expect(r.normverweise.some((n) => n.artikel === 'Art. 6 JStPO')).toBe(true);
+  });
+
+  it('Art. 33/34 StPO und Bundesgerichtsbarkeit gelten nicht (Art. 3 Abs. 2 lit. b/c JStPO); Trennung Art. 11 JStPO mit Ausnahme', () => {
+    const r = jugend({ beteiligung: 'mittaeter', mehrereTatenVerschOrte: true, moeglichesBundesdelikt: true });
+    expect(r.weichen.some((w) => w.includes('SCHWERSTEN STRAFE'))).toBe(false);
+    expect(r.weichen.some((w) => w.includes('Art. 33 Abs. 2'))).toBe(false);
+    expect(r.warnungen.some((w) => w.includes('Art. 3 Abs. 2 lit. b JStPO'))).toBe(true);
+    expect(r.warnungen.some((w) => w.includes('BUNDESGERICHTSBARKEIT: Art. 23 StPO') )).toBe(false);
+    expect(r.weichen.some((w) => w.includes('Art. 11 JStPO') && w.includes('ausnahmsweise'))).toBe(true);
+  });
+
+  it('Spezialforum bei Minderjährigen: Forum nach Art. 35–37 StPO bleibt, Verhältnis zu Art. 10 JStPO offengelegt', () => {
+    const r = jugend({ spezialforum: 'medien' });
+    expect(r.forum.normen[0].artikel).toBe('Art. 35 StPO');
+    expect(r.warnungen.some((w) => w.includes('Art. 3 Abs. 2 lit. c JStPO') && w.includes('Art. 35–37 StPO'))).toBe(true);
   });
 });

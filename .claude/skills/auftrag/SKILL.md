@@ -250,7 +250,11 @@ Worktree — Preview aus dem Worktree nur mit eigenem `vite`-Prozess im
 Worktree-cwd, sonst prüft man fremden Code; (c) Hintergrund-Bash-Läufe haben
 ein hartes Tool-Timeout von **10 min** (600 000 ms; ein Agenten-Crawl starb nach
 ~70 min als Monitor) — Warte-Schleifen ≤ 9 min und neu setzen, lange Crawls als
-persistenter Monitor oder in Etappen mit Zwischen-Commit; Wächter auf CI je
+persistenter Monitor oder in Etappen mit Zwischen-Commit (Agent-Abbruch nach
+600 s ohne Ausgabe, 3× 25.9.2026: per SendMessage fortsetzen statt neu
+dispatchen — ausser Isolations-Agent, s. (l); Timeout bei GitHub/Fedlex/bger,
+während Google antwortet = IPv4-Ausfall: `curl -4`/`-6` probieren, David
+informieren, 25.9.2026); Wächter auf CI je
 SHA prüfen (`gh run list --branch … headSha`), nicht per `gh pr checks`, das
 auch abgebrochene Alt-Läufe als «fail» zeigt; (d) `test:e2e` prüft ohne vorherigen
 `npm run build` ein altes `dist` — Wurzel-Fix im `webServer` (F11), bis dahin
