@@ -7,6 +7,7 @@
  * sowie den NACHTRAG-Unit-Test «Rolling-Hash-Enthaltensein ≡ String-
  * Enthaltensein» inkl. der drei explizit geforderten Randfälle.
  */
+import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import {
   alleArtikelEids,
@@ -483,5 +484,13 @@ describe('segmentiereArtikel — B2 Restmengen-Prüfung (meldend, kein Segment)'
   it('ohne übergebenes Array (Default) wird gar nicht erst geprüft — kein Verhaltensunterschied an den Segmenten', () => {
     const html = huelle('<ul><li>Text, der ohne Restmeldungs-Array einfach nur fehlt.</li></ul>');
     expect(segmentiereArtikel(html, 'art_1')).toEqual([]);
+  });
+});
+
+describe('G8 (Runde 3): Befund-Etiketten der Basislinie einheitlich', () => {
+  it('jeder Basislinien-Eintrag trägt ein normtext-treue-Etikett (kein zweiter Name für dieselbe Klasse)', () => {
+    const basislinie = JSON.parse(readFileSync('scripts/normtext/segmente-basislinie.json', 'utf8')) as BasislinienEintrag[];
+    const fremd = [...new Set(basislinie.map((e) => e.befund).filter((b) => !/^normtext-treue-[a-z0-9-]+$/.test(b)))];
+    expect(fremd).toEqual([]);
   });
 });

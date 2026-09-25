@@ -83,7 +83,7 @@ export interface BasislinienEintrag {
   hash: string; // Fingerabdruck.hash — DER Schlüssel-Teil (NACHTRAG E: "Segment-Hash")
   laenge: number; // Fingerabdruck.laenge — Zusatzangabe für Lesbarkeit/Kollisionsschutz
   auszug: string; // ≤ 80 Zeichen Klartext, NUR hier erlaubt (kurzer Bug-Beleg, keine Korpus-Kopie)
-  befund: string; // 'normtext-treue-01' | '02' | '03' | '10' | 'unklassiert-…'
+  befund: string; // 'normtext-treue-01' | '-02' | '-03' | '-10' | '-tabellenkopf' | … (G8: stets «normtext-treue-…», Einheitstest)
 }
 
 export interface BasislinienAbgleich<T> {
