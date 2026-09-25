@@ -41,8 +41,14 @@ for (const { breite, leiste, spalten, zeilen } of FAELLE) {
     const m = await page.locator(RASTER).first().evaluate((g) => {
       const cols = getComputedStyle(g).gridTemplateColumns.split(' ').map(parseFloat);
       const titel = g.querySelector('a p.font-medium') as HTMLElement;
-      return { cols, clamp: getComputedStyle(titel).webkitLineClamp };
+      // Nachzug B2 (25.9.2026): das Filterfeld bleibt auf `content` (70 rem),
+      // auch wenn die Seite `weit` steht — Rot-Probe: `max-w-content` an
+      // `.ub-filter` in Materialien.tsx streichen → 87 rem @1920.
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const filter = (document.querySelector('.ub-filter') as HTMLElement).getBoundingClientRect().width;
+      return { cols, clamp: getComputedStyle(titel).webkitLineClamp, filterRem: filter / rem };
     });
+    expect(m.filterRem).toBeLessThanOrEqual(70 + 0.1);
     expect(m.cols).toHaveLength(spalten);
     for (const c of m.cols) expect(c).toBeGreaterThanOrEqual(300);
     expect(m.clamp).toBe(zeilen);

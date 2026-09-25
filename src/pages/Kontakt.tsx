@@ -40,7 +40,13 @@ export function Kontakt() {
   const kopierText = `Betreff: ${e.betreff || '–'}\n\n${e.nachricht}\n\nName: ${e.name || '–'}\nAntwort an: ${e.email || '–'}`;
 
   return (
-    <div className="space-y-10 max-w-reading">
+    <div className="space-y-10">
+      {/* W2·31-BILDSCHIRMBREITE B12 (25.9.2026): kein Deckel mehr am Seiten-
+          Container. Er trug `max-w-reading` samt Titelband — die Seite stand als
+          640-px-Spalte links im 1120-px-Rahmen (Rand @1920 424 links / 856
+          rechts). Jetzt spannt das Band den Rahmen wie auf /methodik,
+          /abdeckung, /einstellungen und der Fehlerseite; das Intro trägt
+          seinen Deckel selbst (`SeitenKopf`: reading), das Formular unten. */}
       <SeitenKopf overline="Kontakt" titel="Kontakt aufnehmen"
         intro="Fragen, Korrekturen zu einer Berechnung oder einem Baustein, Vorschläge für neue Rechner und Vorlagen – Hinweise auf Fehler sind besonders willkommen." />
 
@@ -50,7 +56,8 @@ export function Kontakt() {
           Linie, F0.6). Das Formular steht jetzt in der Gruppen-Anatomie der
           Einstellungen: Tinten-Linie oben (`.meta-abschnitt`), kein Rahmen.
           Felder, Einwilligung, Fehlerbox, Hinweis und Knöpfe unverändert. */}
-      <div className="meta-abschnitt space-y-5">
+      {/* B12: das Formular behält das Lesemass (Felder sind keine Wand). */}
+      <div className="meta-abschnitt space-y-5 max-w-reading">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Field label="Name" optional>
             <input className={inputCls} value={e.name} onChange={(ev) => set('name', ev.target.value)} autoComplete="name" />

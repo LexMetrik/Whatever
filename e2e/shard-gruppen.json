@@ -71,7 +71,8 @@
    "rechtsprechung.e2e.ts",
    "startseite-blatt.e2e.ts",
    "druck-dunkel-dk09.e2e.ts",
-   "suche-randspalte.e2e.ts"
+   "suche-randspalte.e2e.ts",
+   "gesetze-breite.e2e.ts"
   ],
   "4": [
    "gesetze-ux-g3a.e2e.ts",
@@ -190,7 +191,8 @@
    "w224-d37-seitenleiste-gruppen.e2e.ts",
    "expect-vorwarten.e2e.ts",
    "w229-blatt-runde2.e2e.ts",
-   "gesetze-wahl-kopf-reserve.e2e.ts"
+   "gesetze-wahl-kopf-reserve.e2e.ts",
+   "info-seiten-breite.e2e.ts"
   ]
  }
 }

@@ -326,8 +326,12 @@ export function Gesetze() {
           Der sichtbare Text IST der zugängliche Name (WCAG 2.5.3): das frühere
           `aria-label` («Gesetze durchsuchen …») sagte etwas anderes als das,
           was auf dem Bild steht; der Umfang steht in der Fuss-Zeile und ist
-          über `aria-describedby` verknüpft. */}
-      <div className="ub-filter">
+          über `aria-describedby` verknüpft.
+          W2·31-BILDSCHIRMBREITE B4 (25.9.2026): die Seite steht auf `weit`
+          (seitenbreite.ts) — für das Erlass-Register unten. Das Feld bleibt auf
+          der Inhaltsbreite (`max-w-content`): ein 1392 px langer Unterstrich
+          ist eine Wand, kein Feld. Unter `2xl` wirkungslos (Rahmen = content). */}
+      <div className="ub-filter max-w-content">
         <label htmlFor="gesetze-filter" className="lc-overline">Filtern</label>
         <input
           id="gesetze-filter"

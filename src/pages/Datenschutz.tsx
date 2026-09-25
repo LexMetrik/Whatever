@@ -16,7 +16,13 @@ import { MetaAbschnitt } from '../components/layout/MetaAbschnitt';
 
 export function Datenschutz() {
   return (
-    <div className="space-y-10 max-w-reading">
+    <div className="space-y-10">
+      {/* W2·31-BILDSCHIRMBREITE B12 (25.9.2026): kein Deckel mehr am Seiten-
+          Container. Er trug `max-w-reading` samt Titelband — die Seite stand als
+          640-px-Spalte links im 1120-px-Rahmen (Rand @1920 424 links / 856
+          rechts). Jetzt spannt das Band den Rahmen wie auf /methodik,
+          /abdeckung, /einstellungen und der Fehlerseite; der Fliesstext trägt
+          seinen Deckel am Textelement (`MetaAbschnitt`: reading-s). */}
       {/* W2·29-WERKBANK-REST S3: Status und Stand stehen in der Ausgabe-Zeile
           des Titelblatt-Bands (dieselbe Zelle, in der /einstellungen seinen
           §8-Satz führt) statt als eigene Zeile unter dem Band. Wortlaut und

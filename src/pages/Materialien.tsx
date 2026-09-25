@@ -105,8 +105,12 @@ export function Materialien() {
               stehen als eigene Zeile darunter. Sie bleiben <select>: Behörde und
               Dokumenttyp sind Listen mit zweistelliger Optionszahl, keine drei
               Schalter — ein Text-Schalter je Behörde wäre die Lücke, die D22
-              gerade schliesst. */}
-          <div className="ub-filter" role="group" aria-label="Materialien filtern">
+              gerade schliesst.
+              W2·31-BILDSCHIRMBREITE (25.9.2026, Nachzug zu B2): die Seite steht
+              auf `weit` — das Feld bleibt wie auf /gesetze (B4) auf der
+              Inhaltsbreite (`max-w-content`), ein 1392 px langer Unterstrich ist
+              eine Wand, kein Feld. Unter `2xl` wirkungslos (Rahmen = content). */}
+          <div className="ub-filter max-w-content" role="group" aria-label="Materialien filtern">
             <label htmlFor="materialien-filter" className="lc-overline">Filtern</label>
             <input
               id="materialien-filter"
