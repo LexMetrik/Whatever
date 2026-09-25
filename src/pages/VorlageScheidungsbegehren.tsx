@@ -202,7 +202,7 @@ const CONFIG: VorlagenSeitenConfig<SbAntworten> = {
   bestaetigung: ({ a }) => (
     <>
       <p className="lc-overline text-brass-700">Vor der Einreichung</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>BEIDE Ehegatten unterzeichnen</strong><NormText text={` die Eingabe (Art. 285 lit. f ZPO).`} /></li>
         <li><strong>Beilegen:</strong> {a.einigung === 'voll' ? 'vollständige Vereinbarung' : 'Teilvereinbarung'} samt Belegen, Familienausweis{a.kinderErfassen ? ', Geburtsurkunden' : ''} (Art. 285 lit. c/e ZPO).</li>
       </ul>

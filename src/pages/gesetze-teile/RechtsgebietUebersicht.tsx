@@ -35,7 +35,7 @@ export function RechtsgebietUebersicht({ erlasse }: { erlasse: BrowseErlass[] })
         <h2 id="rechtsgebiete-kopf" className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">
           Gesetze nach Rechtsgebiet
         </h2>
-        <p className="text-body-s text-ink-500 max-w-reading">
+        <p className="text-body-s text-ink-500 max-w-reading-s">
           Das Bundesrecht nach seiner Sach-Achse — derselben Einteilung wie die
           Rechtsprechung nach Sachgebiet. Kantonale Erlasse: über «Kantone» nach
           amtlicher Systematik.

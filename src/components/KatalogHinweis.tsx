@@ -21,7 +21,7 @@ export function KatalogHinweis() {
 
       <section>
         <p className="lc-overline mb-1">Rechtlicher Hinweis</p>
-        <p className="text-body-s text-ink-600 max-w-reading">
+        <p className="text-body-s text-ink-600 max-w-reading-s">
           Alle Rechner liefern automatisierte Orientierungsberechnungen und keine Rechtsberatung. Massgeblich
           sind Gesetz, GAV, Vertrag und der konkrete Sachverhalt. Für die Wahrung einer Frist im Einzelfall ist
           allein die nutzende Person verantwortlich.

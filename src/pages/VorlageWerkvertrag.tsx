@@ -177,7 +177,7 @@ const CONFIG: VorlagenSeitenConfig<WvAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit der Werkvertrag trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Mängel rechtzeitig rügen</strong><NormText text={` – beim unbeweglichen Werk (und bei eingebauten Werken oder Plänen für ein Bauwerk) gilt zwingend die 60-Tage-Frist, für verdeckte Mängel ab Entdeckung (Art. 367 Abs. 1bis und Art. 370 Abs. 4 OR); sonst gilt das Werk als genehmigt.`} /></li>
         <li><strong>Verjährung</strong><NormText text={` – 2 Jahre (beweglich) bzw. 5 Jahre (unbeweglich) ab Abnahme (Art. 371 OR).`} /></li>
       </ul>

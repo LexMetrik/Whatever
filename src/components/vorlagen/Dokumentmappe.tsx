@@ -97,7 +97,7 @@ export function MappenAbschnitt({ titel, lead, className = 'space-y-3', children
       {titel && (
         <div>
           <GruppenTitel>{titel}</GruppenTitel>
-          {lead && <p className="text-body-s text-ink-500 max-w-reading">{lead}</p>}
+          {lead && <p className="text-body-s text-ink-500 max-w-reading-s">{lead}</p>}
         </div>
       )}
       {children}
@@ -129,7 +129,7 @@ export function MappenCheckliste({ phasen, unterlagen }: {
                     <span className="lc-chip">{ERSTELLER_LABEL[z.ersteller]}</span>
                     {z.ausgeloestDurch && <span className="lc-chip">wegen: {z.ausgeloestDurch}</span>}
                   </div>
-                  {z.hinweis && <p className="text-xs text-ink-500 mt-1 max-w-reading">{z.hinweis}</p>}
+                  {z.hinweis && <p className="text-xs text-ink-500 mt-1 max-w-kleintext">{z.hinweis}</p>}
                 </li>
               ))}
             </ul>
@@ -164,14 +164,14 @@ export function NotariatsHinweis({ kanton }: { kanton: string }) {
   if (!n) return null;
   return (
     <div className="lc-notice space-y-1">
-      <p className="text-body-s text-ink-700 max-w-reading">
+      <p className="text-body-s text-ink-700 max-w-reading-s">
         <span className="font-medium text-ink-900">Beurkundung im Kanton {kanton}:</span>{' '}
         {NOTARIAT_SYSTEM_LABEL[n.system]} —{' '}
         <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline underline-offset-2 hover:text-brass-600">{n.stelle}</a>
         {!n.urlBelegt && <span className="text-warn-700"> (Angabe ohne Gewähr)</span>}
       </p>
-      {n.hinweis && <p className="text-xs text-warn-700 max-w-reading"><NormText text={n.hinweis} /></p>}
-      <p className="text-xs text-ink-500 max-w-reading">{NOTARIAT_FREIZUEGIGKEIT}</p>
+      {n.hinweis && <p className="text-xs text-warn-700 max-w-kleintext"><NormText text={n.hinweis} /></p>}
+      <p className="text-xs text-ink-500 max-w-kleintext">{NOTARIAT_FREIZUEGIGKEIT}</p>
     </div>
   );
 }
@@ -183,13 +183,13 @@ export function HrAmtHinweis({ kanton }: { kanton: string }) {
   if (!a) return null;
   return (
     <div className="lc-notice space-y-1">
-      <p className="text-body-s text-ink-700 max-w-reading">
+      <p className="text-body-s text-ink-700 max-w-reading-s">
         <span className="font-medium text-ink-900">Anmeldung beim Handelsregisteramt ({kanton}):</span>{' '}
         <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline underline-offset-2 hover:text-brass-600">{a.name}</a>
         {`, ${a.strasse}, ${a.plzOrt} · ${a.telefon}`}
       </p>
-      {a.hinweis && <p className="text-xs text-ink-500 max-w-reading"><NormText text={a.hinweis} /></p>}
-      <p className="text-xs text-ink-500 max-w-reading">
+      {a.hinweis && <p className="text-xs text-ink-500 max-w-kleintext"><NormText text={a.hinweis} /></p>}
+      <p className="text-xs text-ink-500 max-w-kleintext">
         {`Massgeblich ist der SITZ-Kanton der Gesellschaft (Art. 927 OR). Stand ${HR_AEMTER_STAND} (amtliche Kantonsseiten; zefix-Abgleich offen) – vor Einreichung kurz gegenprüfen.`}
       </p>
     </div>
@@ -208,7 +208,7 @@ export function MappenGates({ gates }: { gates: { blocker: string[]; warnungen: 
   const zeilen = (texte: string[], linie: string) => (
     <ul>
       {texte.map((t, i) => (
-        <li key={i} className={`border-t ${linie} py-1.5 first:border-t-0 first:pt-0 last:pb-0 text-body-s max-w-reading`}>• <NormText text={t} /></li>
+        <li key={i} className={`border-t ${linie} py-1.5 first:border-t-0 first:pt-0 last:pb-0 text-body-s max-w-reading-s`}>• <NormText text={t} /></li>
       ))}
     </ul>
   );

@@ -255,7 +255,7 @@ export function RechnerTagerechner() {
           </div>
           {weicheOffen && (
             <div className="lc-notice space-y-2 !mt-3">
-              <p className="text-body-s text-ink-600 max-w-reading">
+              <p className="text-body-s text-ink-600 max-w-reading-s">
                 Drei Fragen führen zum Regime – die Wahl bleibt bei Ihnen:
               </p>
               {/* B-K1, Teil 2 (R9-2): die drei Regime-Wahlen stehen MITTEN IM SATZ.
@@ -268,7 +268,7 @@ export function RechnerTagerechner() {
                   Sprünge in `VorlageSchlichtungsgesuchBs.tsx:517`. Ein Bedienelement,
                   das nur die Farbe ausweist, ist keines (F0.8/WCAG 1.4.1). Fehlender
                   Baustein im Protokoll vermerkt. */}
-              <ol className="space-y-1.5 text-body-s text-ink-600 list-decimal pl-5 max-w-reading">
+              <ol className="space-y-1.5 text-body-s text-ink-600 list-decimal pl-5 max-w-reading-s">
                 <li>
                   Läuft die Frist in einer <span className="font-medium text-ink-900">Betreibungssache</span> (Zahlungsbefehl,
                   Rechtsvorschlag, Fortsetzung, Konkursandrohung – auch gerichtliche Fristen daraus,
@@ -297,7 +297,7 @@ export function RechnerTagerechner() {
                   Ergebnis gelten unverändert.</span>
                 </li>
               </ol>
-              <p className="text-body-s text-ink-500 max-w-reading">
+              <p className="text-body-s text-ink-500 max-w-reading-s">
                 <span className="font-medium text-ink-700">Nicht abgebildet:</span> Fristen in
                 Straf- (StPO), Verwaltungs- (VwVG) und Bundesgerichtsverfahren (BGG) folgen
                 eigenen Stillstandsregeln – dieser Rechner deckt sie nicht ab.

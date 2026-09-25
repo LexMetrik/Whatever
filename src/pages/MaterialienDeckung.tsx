@@ -63,7 +63,7 @@ function EbenenZeile({ name, haben, gesamt, einheit, stand, quelle, hinweis }: {
       <div className="min-w-0">
         <p className="text-body-s font-medium text-ink-900">{name}</p>
         <p className="text-xs leading-snug text-ink-500">{quelle} · Stand {datumCh(stand)}</p>
-        {hinweis && <p className="max-w-reading text-xs leading-snug text-ink-500">{hinweis}</p>}
+        {hinweis && <p className="max-w-kleintext text-xs leading-snug text-ink-500">{hinweis}</p>}
       </div>
       <p className="lc-ziffern text-body-s text-ink-700 sm:text-right">
         <span className="text-ink-900">{nf(haben)}</span>
@@ -116,7 +116,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
         <h2 id="d-ebenen" className="text-h3 font-display font-semibold text-ink-900">
           Ebene für Ebene
         </h2>
-        <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
+        <p className="max-w-reading-s text-body-s leading-relaxed text-ink-600">
           Jede Ebene beantwortet eine andere Frage. Wo wir die Grundgesamtheit kennen, steht
           sie daneben; wo nicht, steht «Grundgesamtheit nicht erhoben» — eine Vollständigkeit
           zu behaupten, die niemand gezählt hat, wäre schlimmer als die Lücke selbst.
@@ -194,7 +194,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
 
       <section aria-labelledby="d-maschinell" className="lc-notice space-y-2">
           <p className="lc-overline" id="d-maschinell">Maschinell abgeleitet, fachlich nicht geprüft</p>
-          <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
+          <p className="max-w-reading-s text-body-s leading-relaxed text-ink-600">
             Die Verbindung «dieses Basler Geschäft gehört zu jenem Erlass» ist in{' '}
             <span className="lc-ziffern text-ink-900">{nf(eb.bsKanten.amtlich)}</span> Fällen amtlich
             belegt und in{' '}
@@ -210,7 +210,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
           Änderungen, zu denen die amtliche Fussnote schweigt
         </h2>
         <>
-            <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
+            <p className="max-w-reading-s text-body-s leading-relaxed text-ink-600">
               Beim Fassungsvergleich sind{' '}
               <strong className="lc-ziffern text-ink-900">{nf(s.altBloecke)}</strong> Textblöcke
               erfasst, die sich zwischen zwei Ständen geändert haben. Bei{' '}
@@ -218,7 +218,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
               <span className="lc-ziffern">{pf(s.altBloecke === 0 ? null : s.ohneEreignis / s.altBloecke)}</span>{' '}
               — nennt die amtliche Fussnote am Artikel kein Ereignis, das die Änderung erklären würde.
             </p>
-            <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
+            <p className="max-w-reading-s text-body-s leading-relaxed text-ink-600">
               Eine Stichprobe zeigt echte, aber geringfügige Änderungen: Berichtigungen,
               vereinheitlichte Terminologie, angepasste Verweise — Vorgänge, für die der
               Fussnoten-Apparat keinen eigenen Eintrag vorsieht.{' '}
@@ -229,7 +229,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
               Vollständigkeit des amtlichen Apparats, nicht als Befund. Die Spalte «ohne Ereignis»
               in der Liste unten zeigt, wo sie sich häuft.
             </p>
-            <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
+            <p className="max-w-reading-s text-body-s leading-relaxed text-ink-600">
               Die Gegenrichtung wird genauso gezeigt und genauso wenig aufgelöst:{' '}
               <strong className="lc-ziffern text-ink-900">{nf(s.konflikte)}</strong> Fussnoten-Ereignisse
               stehen ohne beobachtete Textänderung da, und{' '}
@@ -244,7 +244,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
         <h2 id="d-liste" className="text-h3 font-display font-semibold text-ink-900">
           Jeder Erlass einzeln
         </h2>
-        <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
+        <p className="max-w-reading-s text-body-s leading-relaxed text-ink-600">
           {(
               <>
                 <span className="lc-ziffern">{nf(s.erlasse)}</span> Erlasse, sortierbar über die
@@ -347,7 +347,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
             </tbody>
           </table>
         </div>
-        <p className="max-w-reading pt-2 text-xs leading-snug text-ink-500">
+        <p className="max-w-kleintext pt-2 text-xs leading-snug text-ink-500">
           Ein Gedankenstrich heisst «für diesen Erlass nicht erhoben», nie «null». Erlasse ohne
           Fassungsvergleich tragen in den letzten beiden Spalten einen Strich, weil es für sie
           kein Fenster ab 2021 gibt.
@@ -355,7 +355,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
       </section>
 
       <section className="space-y-2 border-t border-rule-soft pt-6">
-        <p className="max-w-reading text-body-s leading-relaxed text-ink-600">
+        <p className="max-w-reading-s text-body-s leading-relaxed text-ink-600">
           Was die Suche durchsucht, steht auf einer eigenen Seite:{' '}
           <Link to="/abdeckung" className="lc-link">
             Was ist durchsuchbar

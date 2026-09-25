@@ -176,7 +176,7 @@ export function Materialien() {
                         Angleichung ist sichtbar und gewollt — der ausgeschriebene
                         Behördenname bleibt als Lede darunter stehen. */}
                     <GruppenKopf stufe={2} titel={g.kuerzel} zahl={g.materialien.length} />
-                    <p className="text-body-s text-ink-500 max-w-reading">{g.name}</p>
+                    <p className="text-body-s text-ink-500 max-w-reading-s">{g.name}</p>
                   </div>
                   <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-3')}>
                     {g.materialien.map((m) => <MaterialKarte key={m.key} m={m} />)}
@@ -194,14 +194,14 @@ export function Materialien() {
           für die Erläuterungen (Verwaltungspraxis) — Botschaften,
           Vernehmlassungen und Parlamentsvorlagen sind Gesetzgebungsmaterial.
           Vorher: «Faktisches «Soft-Law», kein Gesetzesrang.» für die ganze Rubrik. */}
-      <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-reading">
+      <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-kleintext">
         Kein Gesetzesrang; die Erläuterungen der Verwaltung sind faktisches «Soft-Law». Diese Rubrik führt keine eigenen Volltexte; jeder Eintrag verlinkt die Publikation, massgeblich ist stets {AMTLICHE_FASSUNG_NOMEN}.
       </p>
       {/* W2·6c-DECKUNGS-SEITE (§8): unaufdringlich im Fuss, nicht im Einstieg —
           wer die Rubrik benutzt, sucht ein Dokument; wer wissen will, wie weit
           der Bestand reicht, sucht diesen Satz. Reiner Link, kein Ladevorgang:
           die Deckungs-Sicht wird erst auf der Zielseite geholt. */}
-      <p className="text-micro text-ink-500 max-w-reading">
+      <p className="text-micro text-ink-500 max-w-kleintext">
         Wie weit die Entstehungsgeschichte der Erlasse hinterlegt ist — und wo nicht:{' '}
         <Link to="/materialien/deckung" className="lc-link">
           Was wir nicht haben

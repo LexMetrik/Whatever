@@ -260,7 +260,7 @@ const CONFIG: VorlagenSeitenConfig<EgAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Vor der Einreichung</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Unterschreiben und im Doppel einreichen</strong><NormText text={` (Art. 131 ZPO).`} /></li>
         <li><strong>Glaubhaft machen:</strong> Einkommens-, Wohnkosten- und Kinderbelege beilegen — im Summarverfahren zählen die Urkunden.</li>
       </ul>

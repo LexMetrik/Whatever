@@ -48,10 +48,12 @@ const NAVIGATION = [
     .map((l) => ({ to: l.ziel, label: FUSS_TEXT[l.ziel] ?? l.label })),
 ];
 
-export function Footer() {
+// Die Breite reicht die Shell herein (Seitenart-Tabelle `./seitenbreite`,
+// W2·31 B1a), damit die Kanten des Fusses mit der Inhaltsspalte fluchten.
+export function Footer({ breiteKlasse }: { breiteKlasse: string }) {
   return (
     <footer className="border-t-2 border-rule bg-paper mt-16">
-      <div className="max-w-content mx-auto px-5 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr] gap-x-12 gap-y-8">
+      <div className={`${breiteKlasse} mx-auto px-5 sm:px-6 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr] gap-x-12 gap-y-8`}>
         {/* Marke */}
         <div className="space-y-3">
           <Link to="/" className="inline-flex items-center gap-2 no-underline" aria-label="LexMetrik – Startseite">
@@ -139,7 +141,7 @@ export function Footer() {
 
       {/* Feinschriftzeile */}
       <div className="border-t border-rule-soft">
-        <div className="max-w-content mx-auto px-5 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+        <div className={`${breiteKlasse} mx-auto px-5 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2`}>
           <p className="lc-fineprint">© 2026 LexMetrik</p>
           <p className="lc-fineprint sm:text-right">
             Orientierungsrechner · keine Rechtsberatung · läuft vollständig im Browser

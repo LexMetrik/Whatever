@@ -517,7 +517,7 @@ export function VorschauPanel({ ergebnis, kompakt, extra, nichtAufgenommen, dire
             <VorschauAbsatz key={abs.bausteinId + abs.text.slice(0, 12)} abs={abs} stil={stil} />
           ))}
         </div>
-        <p className="text-micro text-ink-500 mt-6 pt-3 border-t border-line">{ergebnis.dokument.disclaimer}</p>
+        <p className="text-micro text-ink-500 mt-6 pt-3 border-t border-line max-w-kleintext">{ergebnis.dokument.disclaimer}</p>
       </section>
 
       {direktExport && <DirektExportZeile ergebnis={ergebnis} {...direktExport} />}
@@ -535,7 +535,7 @@ export function VorschauPanel({ ergebnis, kompakt, extra, nichtAufgenommen, dire
           {ergebnis.protokoll.map((p) => (
             <li key={p.bausteinId} className="text-body-s text-ink-600 space-y-1">
               <p><span className="num text-ink-500">{p.bausteinId}</span> – <NormText text={p.begruendung} /></p>
-              {p.hinweis && <p className="text-xs text-warn-700">⚠ <NormText text={p.hinweis} /></p>}
+              {p.hinweis && <p className="text-xs text-warn-700 max-w-kleintext">⚠ <NormText text={p.hinweis} /></p>}
               {p.norm && <p><NormLink artikel={p.norm} /></p>}
             </li>
           ))}

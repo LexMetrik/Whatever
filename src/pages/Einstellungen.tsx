@@ -38,7 +38,7 @@ function Zeile({ titel, hinweis, children }: { titel: string; hinweis?: string; 
   return (
     <div className="es-zeile space-y-1.5">
       <p className="text-body-s font-semibold text-ink-900">{titel}</p>
-      {hinweis && <p className="text-xs text-ink-500 max-w-reading">{hinweis}</p>}
+      {hinweis && <p className="text-xs text-ink-500 max-w-kleintext">{hinweis}</p>}
       <div className="pt-1.5">{children}</div>
     </div>
   );

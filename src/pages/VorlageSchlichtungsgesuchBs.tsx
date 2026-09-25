@@ -573,7 +573,7 @@ const CONFIG: VorlagenSeitenConfig<SgAnswers, SgZ> = {
         {!stopp && (
           <section className="lc-highlight space-y-3">
             <p className="lc-overline text-brass-700">Form-Gate – Einreichung & Verfahren</p>
-            <ul className="lc-list space-y-2 text-body-s text-ink-700">
+            <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
               <li><strong>Form:</strong><NormText text={` schriftlich in Papierform, eigenhändig unterzeichnet (Art. 130 ZPO) – von der klagenden Partei, der Vertretung bzw. der zeichnungsberechtigten Person. Elektronisch nur mit anerkannter qualifizierter Signatur; gewöhnliche E-Mail genügt nicht.`} /></li>
               <li><strong>Exemplare:</strong><NormText text={` Gesuch, Beilagenverzeichnis und Beilagen in je einem Exemplar für die Behörde und jede Gegenpartei (Art. 131 ZPO) – hier: `} /><span className="num font-semibold">{ergebnis.exemplare}</span> Exemplare.</li>
               {a.vertretung?.bezeichnung && <li><strong>Vollmacht</strong> beilegen.</li>}

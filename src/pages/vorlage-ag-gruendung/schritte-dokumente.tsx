@@ -23,7 +23,7 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
             <button type="button" className="lc-btn-primary" disabled={batchLaeuft} onClick={alleHerunterladen}>
               {batchLaeuft ? 'Erzeuge ZIP …' : `Alle ${mappe.dokumente.length} Dokumente herunterladen (ZIP)`}
             </button>
-            <p className="text-xs text-ink-500 max-w-reading">
+            <p className="text-xs text-ink-500 max-w-kleintext">
               Lädt alle notwendigen Dokumente Ihrer Konstellation als eine ZIP-Datei herunter, je als PDF
               und Word (DOCX) — Statuten und Errichtungsakt (sowie Sacheinlageverträge mit Grundstück) als
               ENTWURF mit Wasserzeichen, die übrigen druckfertig.
@@ -44,7 +44,7 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
 
       {/* Kosten (Bund) */}
       <MappenAbschnitt titel="Kosten (Bund) und Hinweise">
-        <ul className="lc-list space-y-2 text-body-s text-ink-700">
+        <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
           <KostenBundZeilen emissionsabgabeChf={checkliste.emissionsabgabeChf} />
           {/* P11 (Perfektion): Notariatsgebühr kantonsabhängig aus der
               Tarif-Datenschicht (lib/notariatsgebuehrenGruendung.ts, §5);
@@ -90,7 +90,7 @@ export function SchrittDokumente({ ctx }: { ctx: AgSchrittCtx }) {
 
       {/* Etappe 5/D20+D21: Nach dem Eintrag — Pflichten und Warnung */}
       <MappenAbschnitt titel="Nach dem Eintrag: Pflichten des Verwaltungsrates">
-        <ul className="lc-list space-y-2 text-body-s text-ink-700">
+        <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
           <li>
             <span className="font-medium text-ink-900">Buchführung ist persönliche Pflicht</span> jedes
             VR-Mitglieds: Die Buchführungspflicht folgt aus Art. 957 ff. OR, die Ausgestaltung des

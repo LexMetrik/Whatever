@@ -119,7 +119,7 @@ const CONFIG: VorlagenSeitenConfig<RubrumAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit das Rubrum vollständig wird</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Kopf zuerst:</strong> Das Rubrum bezeichnet Gericht, Parteien und Gegenstand.</li>
         <li><strong>Was noch fehlt:</strong><NormText text={` Dispositiv, Entscheidgründe, Rechtsmittelbelehrung und Unterschrift ergänzen (Art. 238 ZPO; beim Weiterzug Art. 112 BGG).`} /></li>
       </ul>

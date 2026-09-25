@@ -173,7 +173,7 @@ export function MaterialLeser() {
           oder Verwaltungspraxis, Zuordnung aus `gattungVon` (§5). */}
       <div className="lc-notice max-w-reading">
         <GattungsHinweis doktyp={m.doktyp} />
-        {m.hinweis && <p className="mt-2 text-ink-500">{m.hinweis}</p>}
+        {m.hinweis && <p className="mt-2 text-ink-500 max-w-reading-s">{m.hinweis}</p>}
       </div>
 
       {/* Einheitliches Kontext-Panel (B3): Norm ↔ Entscheid ↔ Werkzeug über die

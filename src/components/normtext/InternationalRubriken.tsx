@@ -44,7 +44,7 @@ export function InternationalRubriken({ erlasse, gruppe }: { erlasse: BrowseErla
                 Overline-gesetzten Gruppenköpfen — angeglichen (§G-e). Der
                 erklärende Lede-Satz steht unverändert darunter. */}
             <GruppenKopf stufe={2} titel={g.titel} zahl={g.items.length} />
-            <p className="text-body-s text-ink-500 max-w-reading">{g.lede}</p>
+            <p className="text-body-s text-ink-500 max-w-reading-s">{g.lede}</p>
           </div>
           <ErlassTabelle erlasse={g.items} voll beschriftung={`${g.titel} — Kürzel, Titel, Angaben`} />
         </section>

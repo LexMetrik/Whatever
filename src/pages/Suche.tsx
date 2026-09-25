@@ -147,7 +147,7 @@ export function Suche() {
 
       {q === ''
         ? (
-          <div className="max-w-reading border-t border-rule-soft pt-3">
+          <div className="max-w-reading-s border-t border-rule-soft pt-3">
             <p className="lc-overline mb-1">Tipp</p>
             <p className="text-body-s leading-relaxed text-ink-600">
               Geben Sie einen Begriff, ein Stichwort oder eine Norm ein. Ein Norm-Kürzel

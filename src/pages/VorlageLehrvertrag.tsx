@@ -199,7 +199,7 @@ const CONFIG: VorlagenSeitenConfig<LvAntworten, LvZ> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Form-Gate – damit der Lehrvertrag trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Schriftform ist Gültigkeitsvoraussetzung</strong><NormText text={` (Art. 344a Abs. 1 OR): Lehrbetrieb, lernende Person und – bei Minderjährigkeit – die gesetzliche Vertretung unterzeichnen.`} /></li>
         <li><strong>Genehmigung der kantonalen Behörde</strong> vor Lehrbeginn (Art. 14 BBG); ohne sie darf die Bildung nicht beginnen.</li>
         <li><strong>Jugendarbeitsschutz</strong> (ArGV 5) und Bildungsverordnung des Berufs sind zwingend zu beachten.</li>

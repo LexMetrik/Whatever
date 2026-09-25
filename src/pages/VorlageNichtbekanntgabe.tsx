@@ -126,7 +126,7 @@ const CONFIG: VorlagenSeitenConfig<NbAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit das Gesuch trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Frühestens drei Monate nach Zustellung</strong><NormText text={` des Zahlungsbefehls einreichen (Art. 8a Abs. 3 lit. d SchKG).`} /></li>
         <li><strong>Unterschreiben</strong> – das Gesuch geht als unterzeichnete Eingabe an das Betreibungsamt.</li>
       </ul>

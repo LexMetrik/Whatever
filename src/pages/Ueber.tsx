@@ -8,7 +8,10 @@ export function Ueber() {
     <div className="space-y-10 max-w-reading">
       <SeitenKopf overline="Über" titel="Über LexMetrik" />
 
-      <div className="space-y-4 text-body-s text-ink-600 leading-relaxed">
+      {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): eigener Deckel `reading-s`
+          HIER statt am äusseren Seiten-Container (`max-w-reading`, der auch
+          Titel/Struktur trägt) — Deckel am Textelement, nie am Rahmen (§Step C). */}
+      <div className="space-y-4 text-body-s text-ink-600 leading-relaxed max-w-reading-s">
         <p>Die Idee zu LexMetrik kam mir bei der Vorbereitung auf die Anwaltsprüfung in Basel-Stadt.</p>
         <p>
           Wie viele habe ich dabei auch KI-Tools genutzt. Für das Verständnis schwieriger Fragen

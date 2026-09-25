@@ -431,7 +431,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
               </label>
             ))}
           </div>
-          <p className="text-micro text-ink-500 max-w-reading">
+          <p className="text-micro text-ink-500 max-w-kleintext">
             Strafprozessuale Fristen kennen KEINE Gerichtsferien (Art. 89 Abs. 2 StPO) –
             «Keine Ferien» wählen; als Kanton den Wohnsitz/Sitz der Partei oder ihres
             Rechtsbeistands (Art. 90 Abs. 2 StPO) angeben – massgebend ist nicht der Gerichtsort. Der Verwaltungs-Stillstand (Art. 22a VwVG) und der
