@@ -699,6 +699,13 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
 - **S3 Statische Seiten, Druck, mobil (1.5, 6)** (bau, ~0,5–1): Methodik, Über, Kontakt, Datenschutz, 404;
   `@media print`/`print:` sichten; Posten WerkzeugKopf-Intro @390 (Kurzfassung + aufklappbar, kein Textverlust),
   Tagerechner @320 unter Last, LM-066 Bedienhöhen (`Tabs.tsx` HOEHE vs. `.lc-input`).
+  **Gebaut 25.9.2026 (Bug-Check Sonnet «bestanden mit Auflagen»):** Spec-Korrektur — die statischen Seiten
+  standen schon auf `SeitenKopf`, zu löschen blieben lokale Abschnitt-Hüllen und die Kontakt-Karte. Meta-Seiten
+  ohne Reiter (`lib/tabs.oeffnetReiter`); DK-09 über `@media not print` um den `html.dark`-Tokenblock (keine
+  zweite Wertequelle); Kontrast `brass-500` hell #7A766E → #78746C, Fristbeginn-Tinte `text-paper` (4.54/5.51:1;
+  Fristende war seit GRUNDTON 23.9. schon 4.64) — axe 4.13 lokal grün, Dependabot-Bump der Browser-Tests damit
+  entblockt; WerkzeugKopf-Intro < 640 px drei Zeilen + «Weiterlesen»; Tagerechner @320 deterministisch (nicht
+  lastabhängig), 6 Allowlist-Einträge gestrichen; `kein-abschnitt` wartet auf geladene Daten. LM-066 wartet auf David.
 - **S5 Rückbau und Schluss** (bau, ~0,5): Rest `FAHRPLAN-UI-BEFUNDE.md` abhaken/gegenstandslos → Archiv;
   QS-UI (+ ⧉-Quittung), `W2·19-DESIGN-KONSISTENZ`, `W2·24-C` in Chronik/Archiv; PROJEKTBESCHRIEB §3/§4,
   Inventar datieren; Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Werkzeuge-Blatt eine Quelle,

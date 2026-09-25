@@ -9,3 +9,5 @@ anlass: 19.9.2026
 Umgehängt 24.9.2026 (W2·19-DESIGN-KONSISTENZ → W2·29-WERKBANK-REST, Bündelung in den Werkbank-Umbau, Auftrag David 24.9. «was das Gleiche oder Ähnliches betrifft, auch in diesen Umbau»): S3 (Tagerechner-Fläche; blockiert axe-Update #918, darum nicht erst N1) — zusammen mit dem Fristende-Marker-Posten.
 
 **Ergänzung 25.9.2026 (Herz-und-Nieren-Prüfung HN-D7, SA-07): vorziehen.** Der Posten blockiert Dependabot #918 und damit alle Updates der Browser-Tests (axe/Playwright); die Routine-Updates laufen erst danach wieder.
+
+**Erledigt 2026-09-25:** REST S3 (Kopf c267964a9, PR folgt): gebaut, Bug-Check Sonnet bestanden

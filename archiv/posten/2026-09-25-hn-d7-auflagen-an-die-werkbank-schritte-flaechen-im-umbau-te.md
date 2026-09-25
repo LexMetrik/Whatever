@@ -17,3 +17,5 @@ Dazu aus HN-D4 (DK-06): `ink-400`-Text in `entstehung/*` (SynopseKarte.tsx, Ents
 
 Quelle: Herz-und-Nieren-Prüfung 24.9.2026, UMSETZUNGSPLAN.md Einheit HN-D7 (Projektordner `~/Documents/David/03_Projekte/LexMetrik/pruefung-herz-nieren-2026-09-24/`; Belege in BEFUNDLISTE.md und berichte/). Kürzel: NT normtext-treue · PS pruefsystem · VS verschlankung · SA sicherheit-a11y · DK design-konsistenz · RR rechtslogik-rest; b = zweitgeprüft bestätigt, EA = nur Erstprüfer (vor dem Fix reproduzieren, sonst fällt der Beifang mit Begründungszeile im PR weg). Zeilenangaben Stand main 1d6eeb3c5 (24.9.2026) — vor dem Bau nachmessen.
 - Stand 25.9.2026 (REST S2): DK-06 erledigt (ink-400→ink-500 in entstehung/*, 5.57:1 hell / 5.32:1 dunkel), VS-08 Klasse `.lc-scrollrand-grund-surface` gelöscht; offen: VS-08-Rest `check-sediment.ts` zählt Kommentare, DK-09 (S3), DK-21 Ladeanzeige (S1 + Gesetze.tsx), Kontrast-Posten Dependabot #918 (S3).
+
+**Erledigt 2026-09-25:** REST S3 (Kopf c267964a9, PR folgt): gebaut, Bug-Check Sonnet bestanden
