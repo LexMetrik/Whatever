@@ -155,6 +155,14 @@ describe('parseAnkerInhalt + parseIndexSeite', () => {
     expect(items).toHaveLength(1);
     expect(items[0]).toMatchObject({ titel: 'Kreisschreiben Nr. 50: X', beschreibung: 'Unzulässigkeit …', datumLabel: '10. Oktober 2023' });
   });
+  it('AN-13: Beschreibung behält die Zeilen (erste Zeile = Gegenstand), innerhalb der Zeile normalisiert', () => {
+    const html = ANKER('https://x/dam/de/sd-web/T/dbst-ks-w03-001-de.pdf', 'W03-001D vom 03.10.2002', '10. Oktober 2023',
+      'Die  Abgangsentschädigung resp. Kapitalabfindung des Arbeitgebers\n  - Anhang Beispiele 1 - 6');
+    const items = parseIndexSeite(html);
+    expect(items[0].beschreibung).toBe('Die Abgangsentschädigung resp. Kapitalabfindung des Arbeitgebers\n- Anhang Beispiele 1 - 6');
+    const { dok } = baueDokUndKanten(items[0], [ESTV_KS_SEITEN[0]], '2026-09-25');
+    expect(dok.titel).toBe('W03-001D vom 03.10.2002: Die Abgangsentschädigung resp. Kapitalabfindung des Arbeitgebers');
+  });
 });
 
 describe('baueDokUndKanten (Kaskade ehrlich, §0/A3)', () => {

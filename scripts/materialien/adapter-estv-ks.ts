@@ -300,7 +300,13 @@ export function parseAnkerInhalt(inner: string): { titel: string; beschreibung: 
   if (!t) return null;
   const titel = dekodiereEntities(t[1].replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
   const d = /<p[^>]*class="[^"]*download-item__description[^"]*"[^>]*>([\s\S]*?)<\/p>/.exec(inner);
-  const beschreibung = d ? dekodiereEntities(d[1].replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim() : '';
+  // Zeilen bleiben erhalten (AN-2/AN-13, 25.9.2026): die erste Zeile ist der Gegenstand samt
+  // Dokumentdatum, Folgezeilen listen Anhänge («- Beispiele»); innerhalb der Zeile wie bisher
+  // Whitespace-normalisiert. Wo die Beschreibung als Zitat-Basis dient, wird sie einzeilig.
+  const beschreibung = d
+    ? dekodiereEntities(d[1].replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ' '))
+      .split(/\r?\n/).map((z) => z.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n')
+    : '';
   let datumLabel = '';
   for (const s of inner.matchAll(/<span class="meta-info__item">([^<]*)<\/span>/g)) {
     const v = dekodiereEntities(s[1]).trim();
@@ -361,7 +367,7 @@ export function baueDokUndKanten(
     if (ausBeschreibung.length > 0) {
       erlasse = ausBeschreibung;
       zuordnung = 'amtlich';
-      rohZitatBasis = roh.beschreibung;
+      rohZitatBasis = roh.beschreibung.replace(/\s+/g, ' ');
     } else {
       erlasse = [...new Set(seiten.map((s) => s.kontextErlass))];
       zuordnung = 'maschinell';
