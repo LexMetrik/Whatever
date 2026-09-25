@@ -83,7 +83,11 @@ Nicht nur «Tore grün», sondern die volle Definition of Done (§14.4):
    Output-only-Diffs (`public/rechtsprechung/**`) — dort die Pflicht-Gegenprüfung
    dennoch fahren.
    Linsen: die vier Invarianten oben + die OCL-Quirk-Liste aus
-   `tools/rechtsprechung-pipeline.md`. Davon getrennt der user-getriggerte
+   `tools/rechtsprechung-pipeline.md` + **Zuordnung inhaltlich**: Stichprobe der
+   `normKeys` neuer Einträge (Kürzel → Erlass) gegen die DE-Regeste, gezielt auf
+   sprachübergreifende Homonyme (Beleg #1099, 25.9.2026: fr. «AIMP» = IVöB lief als
+   it. «AIMP» = IRSG — neun Beschaffungs-BGE unter dem IRSG, sieben davon schon live;
+   Runde 1 hatte nur Determinismus/Verdrängung geprüft). Davon getrennt der user-getriggerte
    `review.md`-Audit («prüf das») — das ist **nicht** dieser Pflicht-Pass.
 3. **Status-Marker (§8)** gesetzt — `verifiziert`/«geprüft» **nie automatisch**
    (Zeitsperre bis 1.12.2026; Status-Hebung nur über den `abnahme`-Skill).

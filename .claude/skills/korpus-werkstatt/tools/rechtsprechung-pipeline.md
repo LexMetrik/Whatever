@@ -25,8 +25,18 @@ npm run entscheide -- --datum=$(date +%F) --additiv --eidg=bvger,bstger,bpatger 
 # Offline aus Fixtures (Quelle nicht erreichbar / deterministischer Trockenlauf)
 npm run entscheide:seed -- --datum=$(date +%F)
 
+# BGE-Band-Nachzug (additiv, band-basiert) — DANACH immer --remap (offline): der Nachzug bildet
+# normKeys nur aus statutes, der Remap auch aus dem Fliesstext (Posten «sprachgebundene Alias-
+# Auflösung», bis zur Angleichung; Beleg #1099: +IRSG/+VKL erst im Remap sichtbar)
+npm run entscheide -- --datum=$(date +%F) --additiv --bge-baender=152
+npm run entscheide -- --datum=$(date +%F) --remap
+
 # Integritäts-Tor (Manifest⊇Snapshots · Provenienz · sha · Norm-Index⊆Manifest · BUDGET_MB)
 npm run check:entscheide
+# Vor dem Push bei JEDEM Korpus-Zuwachs die volle Sammelkette + korpusabhängige e2e, nicht nur
+# gate:schnell: check:normkeys (Token-Schwelle 20) und e2e-Zahl-Pins reissen am Zuwachs
+# (Beleg #1099, 25.9.2026: «CV» 19→20 Snapshots, OR 41 BGE 20→21 — ein CI-Lauf verloren)
+npm run check
 
 # §11-Übersichtsliste (bibliothek/) neu schreiben — NICHT von Hand editieren
 npx vite-node scripts/bge-register-generieren.ts > bibliothek/rechtsprechung/bge-register.md
