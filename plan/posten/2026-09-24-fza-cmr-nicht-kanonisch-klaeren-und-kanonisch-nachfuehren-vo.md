@@ -10,3 +10,5 @@ anlass: Befund 2.8.2026, Nachtrag 4.9.2026; Fusion 24.9.2026 (QS-DOKU-DIAET)
   könnte dafür erledigt sein. **Detail:** [FAHRPLAN-FEDLEX-PORTFOLIO.md](fahrplaene/FAHRPLAN-FEDLEX-PORTFOLIO.md) §17.
 
 Aufgegangen 24.9.2026 aus dem Schritt `QS-CURRENCY-KANON` in `QS-KORPUS`; Wortlaut samt `@meta`: ROADMAP-CHRONIK.md, Fusionen 2026-09-24. Risikopfad ⇒ Gegenprüfung.
+
+**Nachtrag 25.9.2026 (Gegenprüfung Segment-Tor):** `check:fedlex-versionen` meldet zusätzlich `krk` NICHT-KANONISCH (gepinnt html-0, kanonisch html-1; Lauf: 161 OK, 69 HINWEIS, 2 AUFHEBUNG, 1 NICHT-KANONISCH). Das Segment-Soll von `krk` beruht auf diesem Pin — beim Re-Pin über die Kaskade mit `--schreiben` neu erzeugen.
