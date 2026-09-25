@@ -80,6 +80,10 @@ jobs:
         run: |
           git config user.name  "rechtsprechung-wochenlauf-bot"
           git config user.email "noreply@anthropic.com"
+          # Label anlegen, bevor die Basis es liest (idempotent; Probelauf 25.9.2026: fehlte).
+          gh label create in-pruefung --force --color FBCA04 \
+            --description "Wochen-PR in Prüfung — der Wochenlauf überschreibt ihn nicht" \
+            || echo "::warning::Label in-pruefung nicht angelegt — Basis liest trotzdem"
           npx vite-node scripts/rechtsprechung/wochenlauf-basis.ts -- \
             --datum=${{ steps.datum.outputs.iso }} --aus="$RUNNER_TEMP/wochenlauf"
 

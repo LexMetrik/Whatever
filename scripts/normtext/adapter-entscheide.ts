@@ -55,26 +55,10 @@ export interface OclStructure {
 /** Antwort von /erwaegung/{id}/{e_number} — voller verbatim Erwägungstext. */
 export interface OclErwaegung { e_number?: string; text?: string; text_chars?: number }
 
-/** Robustes JSON-GET mit Timeout + Retry (OCL-Latenz ist sprunghaft). */
-export async function jget<T = unknown>(url: string, tries = 3, timeoutMs = 45000): Promise<T | null> {
-  for (let i = 0; i < tries; i++) {
-    const ac = new AbortController();
-    const t = setTimeout(() => ac.abort(), timeoutMs);
-    try {
-      const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': RECHTSPRECHUNG_UA }, redirect: 'follow' });
-      clearTimeout(t);
-      if (res.status === 404 || res.status === 422) return null;
-      if (!res.ok) { await sleep(800 * (i + 1)); continue; }
-      return (await res.json()) as T;
-    } catch {
-      clearTimeout(t);
-      await sleep(800 * (i + 1));
-    }
-  }
-  return null;
-}
-
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+// jget (JSON-GET mit Retry, meldet null nie mehr still) und atomIds leben in ocl-abruf.ts
+// (Probelauf Wochenlauf 25.9.2026); re-exportiert, damit Importeure stabil bleiben.
+import { jget, atomIds } from './ocl-abruf';
+export { jget };
 
 /** Voller verbatim Erwägungstext je Knoten (Excerpt in /structure ist bei >5000 Z. gekappt). */
 export async function holeErwaegung(id: string, e: string): Promise<OclErwaegung | null> {
@@ -393,6 +377,7 @@ export function mappeEntscheidOCL(
     // den String iteriert Zeichen und liefert still null (Bug-Check B3, 29.8.2026).
     zitierteNormen: Array.isArray(det.statutes) ? det.statutes : [],
     legalArea: det.legal_area,
+    kanton: canton,
   });
   const gerichtName = gerichtAnzeigename(court, canton, det.court_name as string | undefined);
   // Rubrum nur fürs Bundesgericht (full_text-Struktur zuverlässig); kantonal null —
@@ -478,18 +463,15 @@ export async function holeEntscheidOCL(
   return mappeEntscheidOCL(det, str, abgerufen, opts);
 }
 
-/** Enumeration via Atom-Feed (Frische). Token-Regex auf den Gerichts-Präfix. */
+/** Enumeration via Atom-Feed (Frische): IDs aus dem <id>-Element (atomIds, ocl-abruf.ts). */
 export async function atomFeedIds(court: string, timeoutMs = 60000): Promise<string[]> {
   const ac = new AbortController();
   const t = setTimeout(() => ac.abort(), timeoutMs);
   try {
-    const res = await fetch(`${API}/atom/${court}.xml`, { signal: ac.signal });
+    const res = await fetch(`${API}/atom/${court}.xml`, { signal: ac.signal, headers: { 'User-Agent': RECHTSPRECHUNG_UA } });
     clearTimeout(t);
     if (!res.ok) return [];
-    const xml = await res.text();
-    const ids = new Set<string>();
-    for (const m of xml.matchAll(new RegExp(`${court}_[A-Za-z0-9_]+`, 'g'))) ids.add(m[0]);
-    return [...ids];
+    return atomIds(await res.text(), court); // strukturiert aus <id>, IDs mit «-»/«.» (ocl-abruf.ts)
   } catch {
     clearTimeout(t);
     return [];

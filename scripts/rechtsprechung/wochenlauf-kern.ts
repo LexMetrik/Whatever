@@ -16,6 +16,7 @@
 import { bandJahrVon, istBandjahrPlatzhalter } from '../normtext/bge-bandjahr';
 import { inlineZuText, parseClirUrteilskopf } from '../normtext/clir-regeste';
 import { behalten } from '../gegenpruefung/kern';
+import { OCL_ABRUF } from '../normtext/ocl-abruf';
 
 /** Register-Eintrag (public/rechtsprechung/register.json), nur die gelesenen Felder. */
 export interface RegEintrag {
@@ -117,6 +118,18 @@ export function erkenneAusfaelle(log: string): string[] {
   return out;
 }
 
+/**
+ * Ursachen-Zeilen von jget (ocl-abruf.ts, Präfix OCL_ABRUF) — nur am ZEILENANFANG
+ * (Lehre A1: die npm-Kopfzeile «> vite-node …» wiederholt Argumente). Kein Ausfall
+ * für sich (ein 404 auf EIN Detail ist normal); die CLI hängt sie an einen ohnehin
+ * ausgefallenen Schritt, damit der Bericht das Warum zeigt (Probelauf 25.9.2026:
+ * «bvger: 6 IDs, aber 0 Details» ohne jede Ursache).
+ */
+export function oclUrsachen(log: string, max = 6): string[] {
+  const re = new RegExp(`^${OCL_ABRUF.replace(/[[\]]/g, '\\$&')} `);
+  return [...new Set(log.split('\n').map((z) => z.trimEnd()).filter((z) => re.test(z)))].slice(0, max);
+}
+
 // ── Guard-Befunde (A7) ──────────────────────────────────────────────────────
 /**
  * Schutzregeln der Generatoren, die Einträge NICHT aufnehmen, zurückstufen oder
@@ -160,8 +173,10 @@ export const KANTONS_GERICHTE = ['zh_obergericht', 'be_verwaltungsgericht', 'sg_
  * (9/12 im Bestand); ag_gerichte: um Tage bis Wochen verschoben; gr_gerichte:
  * Bestand 6/6 falsch, +6 bis +62 Tage. Eigene Stichprobe 25.9.2026 gegen die
  * Quell-PDFs bestätigt: SG 2/2, AG 2/3, GR 3/3 Datum ✗. be_verwaltungsgericht
- * bleibt drin (neue Einträge 6/6 richtig), aber nur mit Datumsprüfung — ein
- * BE-Datum-Fehltreffer macht den PR zum Entwurf.
+ * seit dem Probelauf 25.9.2026 (#1129) ebenfalls: Datum gegen die Quell-PDFs
+ * 1/6 neu und 5/12 Bestand falsch (3–5 Wochen zu spät), und die Datumsprüfung
+ * scheiterte auf dem Runner (Quelle nicht erreichbar) — DATUM_VOLLPRUEFUNG
+ * bleibt für die Wiederaufnahme stehen.
  * Rückbau: Posten QS-KORPUS 2026-09-25 Adapter-Datum (a)/(g) — entfällt je
  * Gericht, sobald dessen Datum an der Quelle belegt richtig ankommt.
  */
@@ -169,6 +184,7 @@ export const AUSGENOMMEN: Readonly<Record<string, string>> = {
   sg_gerichte: 'Datum aus OCL unzuverlässig',
   ag_gerichte: 'Datum aus OCL unzuverlässig',
   gr_gerichte: 'Datum aus OCL unzuverlässig',
+  be_verwaltungsgericht: 'Datum aus OCL unzuverlässig — 5/12 Bestand falsch, Messung 25.9.2026',
 };
 export const aktiveGerichte = (gerichte: readonly string[]) => gerichte.filter((g) => !(g in AUSGENOMMEN));
 /**
@@ -296,8 +312,21 @@ export function oclIdFuerPdf(e: RegEintrag): string | null {
  */
 export interface Identitaet { treffer: boolean | null; detail: string; akz?: boolean | null; datum?: boolean | null }
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-/** Wortgrenze für Aktenzeichen: kein Buchstabe/Ziffer/Punkt/Schrägstrich direkt davor oder danach. */
-const grenze = (s: string) => new RegExp(`(?<![\\p{L}\\p{N}./_-])${esc(s).replace(/\s+/g, '\\s+')}(?![\\p{L}\\p{N}/_-]|\\.\\d)`, 'u');
+/**
+ * Wortgrenze für Aktenzeichen: kein Buchstabe/Ziffer/Punkt/Schrägstrich direkt davor oder danach.
+ * Nur Trennzeichen-Varianten DESSELBEN Aktenzeichens gelten (Probelauf 25.9.2026, #1129), nie ein
+ * Präfix (BV.2026.1 trifft BV.2026.10 nicht):
+ *  · verbundene Verfahren — Bereichsendung «-11» bzw. «/143» direkt danach (PDF-Zeilenumbruch
+ *    nach dem Trenner erlaubt): BStGer-Kopf «Numero dell'incarto: BV.2026.10-11», «Numéros de
+ *    dossiers: RR.2025.198-199»; BE «Nrn. 100.2026.142/143»;
+ *  · Leerzeichen im Korpus-Aktenzeichen ≙ Punkt im Urteil: BE «100 2026 142» (OCL) steht im
+ *    PDF als «100.2026.142»;
+ *  · `buchstabe`: EIN Verfahrensart-Grossbuchstabe direkt am Ende, nur für VERFAHRENSART_GERICHTE.
+ */
+const grenze = (s: string, buchstabe = false) =>
+  new RegExp(`(?<![\\p{L}\\p{N}./_-])${esc(s).replace(/\s+/g, '(?:\\s+|\\.)')}(?:[-/]\\s?\\d+)?${buchstabe ? '[A-Z]?' : ''}(?![\\p{L}\\p{N}/_-]|\\.\\d)`, 'u');
+/** Gerichte mit Verfahrensart-Buchstaben am Aktenzeichen im Urteil: BE-PDF-Kopf «100.2026.142/143U» (Probelauf 25.9.2026). */
+export const VERFAHRENSART_GERICHTE: ReadonlySet<string> = new Set(['be_verwaltungsgericht']);
 // Block-Tags als Trenner: sonst verschmelzen «152 V 122</div><div>14.» zu «152 V 12214.»
 const text = (html: string) =>
   inlineZuText(html.replace(/<\/?(?:div|p|td|th|tr|table|h\d|li)\b[^>]*>/gi, ' ')).replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
@@ -407,7 +436,7 @@ export function pruefeText(t: string, e: RegEintrag, art: 'pdf' | 'html'): Ident
   const nr = (e.nummer ?? '').split(',')[0].trim();
   if (!nr) return { treffer: null, akz: null, detail: 'kein Aktenzeichen im Korpus' };
   if (art === 'pdf' && t.replace(/\s+/g, '').length < PDF_MIN_TEXT) return { treffer: null, akz: null, detail: `${nr}: PDF ohne Textebene — Handprüfung` };
-  const var_ = aktenzeichenVarianten(nr, e.gericht).find((v) => grenze(v).test(t));
+  const var_ = aktenzeichenVarianten(nr, e.gericht).find((v) => grenze(v, VERFAHRENSART_GERICHTE.has(e.gericht)).test(t));
   const quelle = art === 'pdf' ? 'PDF' : 'HTML';
   if (!var_) {
     return art === 'pdf'
@@ -627,6 +656,19 @@ export function e2eAuswahl(dateien: string[]): string[] {
 /** Restzeit bis zur Frist in Minuten (≥ 0); die Uhr liest nur die CLI (§2). */
 export const restMinuten = (startMs: number, jetztMs: number, fristMin: number) => Math.max(0, fristMin - (jetztMs - startMs) / 60_000);
 
+/**
+ * Umgebung der Kind-Prozesse (Tore, Generatoren): die geerbte ohne NODE_ENV.
+ * vite-node setzt NODE_ENV=development; geerbt baute `npm run build` den
+ * React-Dev-Build (vendor-react 427 statt 230 kB ⇒ perf-budget rot, e2e gegen
+ * den Dev-Build — Probelauf 25.9.2026, Actions-Lauf 36170527404). Gelöscht,
+ * nicht auf production gezwungen: vitest setzt test, vite build production.
+ */
+export function kindUmgebung(env: NodeJS.ProcessEnv): NodeJS.ProcessEnv {
+  const out = { ...env };
+  delete out.NODE_ENV;
+  return out;
+}
+
 // ── Entscheid ───────────────────────────────────────────────────────────────
 export type Entscheid = 'kein-diff' | 'entwurf' | 'pr';
 export interface Lage {
@@ -644,6 +686,8 @@ export interface Lage {
   vorwocheOffen?: string[];
   /** Nach der Lauf-Frist übersprungene Prüfschritte (N2). */
   fristAus?: string[];
+  /** Nicht prüfbare Einträge eines DATUM_VOLLPRUEFUNG-Gerichts (vollpruefungOffen — R2). */
+  vollpruefungOffen?: string[];
 }
 
 /**
@@ -663,7 +707,7 @@ export function entscheide(l: Lage): { entscheid: Entscheid; gruende: string[] }
   const g: string[] = [];
   if (l.quellenAus.length) g.push(`Quelle ausgefallen: ${l.quellenAus.join(', ')}`);
   if (l.vorwocheVerworfen) g.push(`Vorwoche verworfen: ${l.vorwocheVerworfen}`);
-  g.push(...(l.vorwocheOffen ?? []));
+  g.push(...(l.vorwocheOffen ?? []), ...(l.vollpruefungOffen ?? []));
   if (l.fristAus?.length) g.push(`Lauf-Frist erreicht, nicht geprüft: ${l.fristAus.join(', ')}`);
   if (l.toreRot.length) g.push(`Tor rot: ${l.toreRot.join(', ')}`);
   if (l.nachbauRot.length) g.push(`Nachbau rot: ${l.nachbauRot.join(', ')}`);
