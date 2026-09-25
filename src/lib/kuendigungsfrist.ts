@@ -56,10 +56,21 @@ function wirksameProbezeitMonate(probezeitMonate: number): number {
 /** Letzter Tag der (unverlängerten) Probezeit; null ohne Probezeit.
  *  Bug-Check 10.6.2026: Der erste Arbeitstag zählt mit (1 Monat ab 1.4. endet
  *  am 30.4.). RL-16/F4-03 (24.9.2026): EINE Funktion für Logik UND Rechenweg —
- *  vorher zeigte der Rechenweg addMonths ohne −1 Tag (01.02. statt 31.01.). */
+ *  vorher zeigte der Rechenweg addMonths ohne −1 Tag (01.02. statt 31.01.).
+ *  Nachtrag RL-16b (Gegenprüfung 25.9.2026, deklarierte Fachänderung): Die
+ *  Regel vom 10.6.2026 widerspricht der Rechtsprechung. BGE 144 III 152
+ *  E. 4.4.3: Wird der Vertrag am Tag des Stellenantritts geschlossen, zählt
+ *  dieser Tag nicht (Zivilkomputation), «Art. 77 Abs. 1 Ziff. 3 OR ist ohne
+ *  Weiteres anwendbar» — Antritt 15.7.2015, 1 Monat → Ende 15.8.2015. Bestätigt
+ *  in 8C_317/2021 E. 5.2.3.1 (= BGE 148 III 126): Antritt 16.3.2020, 3 Monate
+ *  → Ende 16.6.2020. Also Ende am gleichnamigen Tag; fehlt er, am letzten Tag
+ *  des Monats (Art. 77 Abs. 1 Ziff. 3 OR — date-fns addMonths kappt genau so:
+ *  31.1. + 1 Monat = 28.2.). Offen gelassen (E. 4.4.3 a.E.): Vertragsschluss
+ *  VOR dem Antritt — dafür rechnet berechneKuendigungsfrist das Vortags-Ende
+ *  als Gegenprobe und warnt, wo es das Ergebnis kippt (§8). */
 function probezeitEnde(vertragsbeginn: Date, probezeitMonate: number): Date | null {
   const monate = wirksameProbezeitMonate(probezeitMonate);
-  return monate === 0 ? null : addDays(addMonths(vertragsbeginn, monate), -1);
+  return monate === 0 ? null : addMonths(vertragsbeginn, monate);
 }
 
 export type KuendigungsfristResultat = {
@@ -117,6 +128,23 @@ export function berechneKuendigungsfrist(
     ? berechneProbezeitVerlaengerung(vb, pzEnde, input.sperrereignisse, input.arbeitstageWoche)
     : null;
   const inProbezeit = istInProbezeit(zugang, pzVerl?.ende ?? pzEnde);
+
+  // Gegenprobe zur offenen Frage aus BGE 144 III 152 E. 4.4.3 a.E.: zählt bei
+  // Vertragsschluss vor dem Antritt der erste Tag mit, endet die Probezeit am
+  // Vortag des gleichnamigen Tages (samt Verlängerung neu gerechnet).
+  if (pzEnde !== null) {
+    const endeVortag = addDays(pzEnde, -1);
+    const verlVortag = isAfter(zugang, endeVortag)
+      ? berechneProbezeitVerlaengerung(vb, endeVortag, input.sperrereignisse, input.arbeitstageWoche)
+      : null;
+    const endeAlt = verlVortag?.ende ?? endeVortag;
+    if (istInProbezeit(zugang, endeAlt) !== inProbezeit) {
+      warnungen.push(
+        `Probezeitende nach BGE 144 III 152 E. 4.4.3 (Art. 77 Abs. 1 Ziff. 3 OR): Der Tag des Stellenantritts zählt nicht mit, wenn der Arbeitsvertrag an diesem Tag geschlossen wurde — gerechnet ist darum mit Ende am ${formatDatum(pzEnde)}${pzVerl ? ` (verlängert bis ${formatDatum(pzVerl.ende)})` : ''}. ` +
+        `Wurde der Vertrag schon vor dem Stellenantritt geschlossen, hat das Bundesgericht offengelassen, ob der erste Tag mitzählt; dann endete die Probezeit am ${formatDatum(endeAlt)}, und der Zugang (${formatDatum(zugang)}) läge ${inProbezeit ? 'ausserhalb' : 'in'} der Probezeit — das Ergebnis hängt davon ab.`,
+      );
+    }
+  }
 
   // RL-16 / F4-04 (24.9.2026): Art. 335b Abs. 2 OR erlaubt höchstens drei
   // Monate — die Kappung bleibt, wird aber offengelegt (§8) statt still.
