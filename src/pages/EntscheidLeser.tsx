@@ -20,11 +20,12 @@ import {
   ENTSCHEID_HIGHLIGHT_INSTANZ, ankunftsAnker,
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
   referenzImTitel, urlMitHash, urlMitLese, zaehleNennungen,
-  angabeImTitel, leitzeileOhneKopfangaben,
+  angabeImTitel, leitzeileOhneKopfangaben, sucheWirksam,
 } from './entscheidLeserRegeln';
 import { datumOderStrich } from '../components/ui/datumText';
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
 import { ErwBereich } from './entscheidErwBereich';
+import { useEntscheidSuche } from './entscheidSucheZustand';
 import { usePaneKlasse, usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 // ── W2·19-DESIGN-KONSISTENZ · B2/BAU-4 (31.8.2026) · KANON-NACHZÜGE ─────────
@@ -34,6 +35,8 @@ import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 // dazu die Satz-Konstante aus `lib/benennung` (B-6).
 import { SeitenTitel } from '../components/ui/SeitenTitel';
 import { FehlSeite } from '../components/ui/FehlSeite';
+import { Ladeanzeige } from '../components/ui/Ladeanzeige';
+import { Datum } from '../components/ui/Datum';
 import { AMTLICHE_FASSUNG, MASSGEBLICH_HALBSATZ, MASSGEBLICH_SATZ } from '../lib/benennung';
 // B-4 (Runde 2, 31.8.2026): die Bänder-Ordnung des Leser-Kopfs — hier löst sie
 // die letzte Misch-Zeile der drei Leser ab (Herleitung im Baustein).
@@ -155,7 +158,10 @@ function SprungNavigation({ ziele, springe, aktiv }: {
             MITGENOMMEN, nicht verloren: `min-height: var(--tap-ziel)` kam bisher
             aus `.lc-chip` und ist a11y-Pflicht (WCAG 2.5.8, in e2e gemessen) —
             es steht jetzt ausdrücklich am Element. LM-005 bleibt: `aktiv === null`
-            zeichnet weiterhin NICHTS aus, die Leiste tritt zurück. */}
+            zeichnet weiterhin NICHTS aus, die Leiste tritt zurück.
+            D8a (REST S1, 25.9.2026): Rollen-Schicht statt Messing-Stufen —
+            die aktive Unterkante trägt die Registerfarbe «Rechtsprechung»
+            (F0.2: Reiter-Unterkante), Hover die Akzent-Rollen. */}
         {ziele.map((z) => (
           <a key={z.anker} href={`#${z.anker}`}
             aria-current={aktiv === z.anker ? 'true' : undefined}
@@ -166,8 +172,8 @@ function SprungNavigation({ ziele, springe, aktiv }: {
             }}
             className={`inline-flex items-center min-h-[var(--tap-ziel)] shrink-0 whitespace-nowrap border-b-2 px-1 text-body-s font-medium no-underline transition-colors ${
               aktiv === z.anker
-                ? 'border-brass-500 text-brass-800'
-                : 'border-transparent text-ink-600 hover:border-brass-400 hover:text-brass-700'
+                ? 'border-reg-r text-ink-900'
+                : 'border-transparent text-ink-600 hover:border-accent-line hover:text-accent-text'
             }`}>
             {z.label}
           </a>
@@ -258,18 +264,11 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   }, [imPane]);
   // Laufindex des «nächste Fundstelle»-Knopfes (LM-208), zyklisch über die Ziele.
   const [fundIdx, setFundIdx] = useState(0);
-  // V5 «Im Entscheid suchen» — komponenten-lokal wie die In-Gesetz-Suche vor
-  // ihrer Adress-Spiegelung: der Begriff ist eine Lesehilfe, kein Ort. Er kommt
-  // bewusst NICHT in die URL (kein Verlaufseintrag je Tastendruck, §Z Ziff. 7).
-  const [suche, setSuche] = useState('');
-  // ── W2·28 · L-2 · EIN Schalter für Hervorhebung UND Treffer-Marken ─────────
-  // Gleiche Bauart wie im Gesetz-Leser (`v3/leserV3Modell.ts`): lokal, nicht
-  // persistiert, und beim RENDER gegen das leere Feld geprüft statt in einem
-  // Effekt zurückgesetzt. Wer das Feld leert, findet beim nächsten Suchen
-  // wieder Farbe vor (§8 — ein stumm fortwirkender Schalter liesse Treffer
-  // verschwinden, ohne dass jemand ihn gesetzt zu haben glaubt).
-  const [markenAusRoh, setzeMarkenAus] = useState(false);
-  const markenAus = suche.trim() !== '' && markenAusRoh;
+  // V5 «Im Entscheid suchen» + W2·28 · L-2 Marken-Schalter: Zustand und die
+  // Rücksetz-Zusage (Leeren → Hervorhebung wieder an) in `entscheidSucheZustand`.
+  const { suche, setzeSuche, markenAusRoh, setzeMarkenAus } = useEntscheidSuche();
+  // REST S1: «leer» heisst hier «keine wirksame Suche» (ab zwei Zeichen, `sucheWirksam`).
+  const markenAus = sucheWirksam(suche) && markenAusRoh;
   const [fsIdx, setFsIdx] = useState<number>(ladeFsIdx);
   const setFs = (i: number) => setFsIdx(speichereFsIdx(i));
 
@@ -400,7 +399,8 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
     // W2·28/L-2: weggeschaltet fällt die Suche aus diesem Zweig heraus — die
     // Norm-Markierung darunter greift dann wieder, genau wie bei leerem Feld.
     // Trefferzahl, Rail-Liste und Sprünge bleiben unberührt (§8).
-    if (suche.trim() !== '' && !markenAus) {
+    // REST S1: Hervorhebung erst ab zwei Zeichen — dieselbe Schwelle wie Rail und Zähler (§5).
+    if (sucheWirksam(suche) && !markenAus) {
       // DIESELBE Instanz wie `maleNennungen`/`loescheNennungen`: dadurch ERSETZT
       // die Suche die Nennungs-Menge, statt neben ihr zu stehen — «Suche schlägt
       // Herkunfts-Nennung» bleibt Zeile für Zeile das erklärte Verhalten.
@@ -482,13 +482,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         wege={[{ to: '/rechtsprechung', label: 'Zur Rechtsprechung' }]} />
     );
   }
+  // W2·29-WERKBANK-REST S1: der geteilte Lade-Baustein (`ui/Ladeanzeige`,
+  // W3-7) statt der siebten Kopie — Text wörtlich, neu mit `role="status"`.
   if (zustand === 'laden' || !snap) {
-    return (
-      <div className="py-12 text-center space-y-3">
-        <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-        <p className="text-body-s text-ink-500">Der Entscheid wird abgerufen …</p>
-      </div>
-    );
+    return <Ladeanzeige text="Der Entscheid wird abgerufen …" className="py-12" />;
   }
 
   const regesteText = snap.regeste ? normalisiereRegeste(snap.regeste.text) : null;
@@ -619,6 +616,17 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           44-px-Tap-Ziel bleibt (F2b). Kein Knopf, kein Wort und keine Reihenfolge
           innerhalb der Bänder ändert sich. */}
       <LeserKopfGeruest
+        // ── W2·29-WERKBANK-REST S1 (25.9.2026) · TITELBLATT «RECHTSPRECHUNG» ──
+        // Board «Unter-Entscheid»: die Identität (Overline · Zitierung ·
+        // Leitzeile · Fakten) steht auf der Registerfläche der Rubrik — dasselbe
+        // Band wie der Erlass-Kopf (LESER S2), Register «r» statt «g». Herkunfts-
+        // Hinweis und Rubrum stehen darunter auf dem Papier (`nachBand`): beide
+        // tragen Bedienelemente bzw. `lc-overline`-Etiketten, deren Töne nur auf
+        // Papier ihre 4.5:1 halten. Kein Wort, kein Knopf und keine Reihenfolge
+        // innerhalb der Bänder ändert sich; neu ist allein das Abrufdatum im
+        // Stand-Band (Board-Zeile «abgerufen am», Datenfeld `abgerufen`, §7).
+        form="titelblatt"
+        register="r"
         // 1 Identität: Gericht · Abteilung · Sachgebiet.
         // B-7 (31.8.2026): dieselbe dreigliedrige Ordnung, die jetzt auch der
         // Erlass-Kopf trägt — hier war sie zu Hause, dort fehlte sie
@@ -672,6 +680,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
                 <p className="text-micro italic text-ink-500">{SYNTH_MARKER[snap.sprache]}</p>
               </div>
             )}
+          </>
+        }
+        nachBand={
+          <>
 
             {/* 3b LM-208 · Herkunfts-Hinweis: wer über einen Norm-Chip hierher kam, sah
                 bisher nirgends, über welche Norm — und musste die Stelle in einem
@@ -684,7 +696,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
                 <span>Aufgerufen über <NormText text={normParam} /></span>
                 {herkunft.ziele.length > 0 ? (
                   <button type="button" onClick={springeZuFundstelle}
-                    className="lc-chip hover:text-brass-700 hover:border-brass-400"
+                    className="lc-chip hover:text-accent-text hover:border-accent-line"
                     title="Zur nächsten wörtlichen Nennung in den Erwägungen springen">
                     {/* Abstand als Klasse, nicht als Leerzeichen: `.lc-chip` ist ein
                         Flex-Container, dort fallen reine Whitespace-Knoten zwischen
@@ -756,6 +768,13 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
             ? <span className="num" title="Parallele Geschäftsnummer desselben Verfahrens">({snap.nummerSekundaer})</span>
             : null,
         ].filter(Boolean) as ReactNode[]}
+        /* 5a' Herkunft (REST S1): das Abrufdatum des Snapshots — dieselbe
+           Frage wie der Standausweis des Erlass-Kopfs («von wann ist diese
+           Kopie?»). Der ECLI des Boards steht bewusst NICHT hier: er wird in
+           `lib/rechtsprechung/ecli.ts` selbst gebildet, nicht amtlich
+           vergeben — als Herkunfts-Angabe gezeigt, behauptete er eine
+           Quelle, die es nicht gibt (§7/§8; offene Frage an David). */
+        stand={[<span key="abruf">Abgerufen <Datum iso={snap.abgerufen} /></span>]}
         /* 5b Stand + Ehrlichkeit — dieselbe Zelle wie der Standausweis des
            Erlass-Kopfs, weil sie dieselbe Frage beantwortet: wie belastbar ist,
            was hier steht?
@@ -777,7 +796,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
               {snap.leitcharakter === 'leitentscheid' && <StatusBadge praedikat="leitentscheid" interaktiv />}
               <span className="lc-badge lc-badge-soft" title={spracheBadgeTitel(snap.sprache)}>{snap.sprache}</span>
-              {snap.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
+              {snap.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" variant="text" />}
             </div>
             <p className="leading-snug">Wiedergabe des amtlichen Urteilstexts — {MASSGEBLICH_HALBSATZ}</p>
           </div>
@@ -798,7 +817,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
                 darum über `children` statt als eigener, gedämpfter <span>;
                 die Dämpfung war das Einzige, was dabei fällt. */}
             <MassgeblicheFassung url={massgeblicheUrl} titel={massgeblichTitel} fehlt={massgeblichFehlt}
-              className="lc-chip hover:text-brass-700 hover:border-brass-400" />
+              className="lc-chip hover:text-accent-text hover:border-accent-line" />
             {/* R17: Lese-Schriftgrösse */}
             {/* shrink-0: das Aktionen-Band ist ein flex-wrap-Streifen; ohne dies
                 staucht der Flex die overflow-hidden-Gruppe bei 390 unter ihre
@@ -837,20 +856,20 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
                 <button type="button" onClick={() => setFs(fsIdx - 1)} disabled={fsIdx === 0}
                   aria-label="Entscheidtext verkleinern"
                   title="Entscheidtext verkleinern — die Anwendung bleibt gleich gross"
-                  className="lc-btn-mini text-ink-600 hover:text-brass-700 disabled:opacity-40">A−</button>
+                  className="lc-btn-mini text-ink-600 hover:text-accent-text disabled:opacity-40">A−</button>
                 <button type="button" onClick={() => setFs(fsIdx + 1)} disabled={fsIdx === FS_STUFEN.length - 1}
                   aria-label="Entscheidtext vergrössern"
                   title="Entscheidtext vergrössern — die Anwendung bleibt gleich gross"
-                  className="lc-btn-mini text-ink-600 hover:text-brass-700 disabled:opacity-40">A+</button>
+                  className="lc-btn-mini text-ink-600 hover:text-accent-text disabled:opacity-40">A+</button>
               </span>
             </span>
             <button type="button" onClick={kopiereZitat}
-              className="lc-chip hover:text-brass-700 hover:border-brass-400"
+              className="lc-chip hover:text-accent-text hover:border-accent-line"
               title="Zitierung + Link in die Zwischenablage kopieren">
               {kopiert ? '✓ kopiert' : '⧉ Zitat kopieren'}
             </button>
             <button type="button" onClick={oeffneLese}
-              className="lc-chip hover:text-brass-700 hover:border-brass-400"
+              className="lc-chip hover:text-accent-text hover:border-accent-line"
               title="Ablenkungsfreier Lesemodus">
               ▭ Lesemodus
             </button>
@@ -991,7 +1010,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               dort rechnen, sonst läge er beim Leeren einen Tick daneben. */}
           {!lese && (
             <ErwBereich abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
-              suche={suche} onSuche={setSuche} springe={springeZuAbschnitt}
+              suche={suche} onSuche={setzeSuche} springe={springeZuAbschnitt}
               markenAusRoh={markenAusRoh} onMarkenSchalten={setzeMarkenAus}
               landkarteSteht={!imPane}
               aktivAnker={aktivAnker} />
@@ -1028,7 +1047,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
       <footer className="mt-12 border-t border-line pt-5 space-y-3 text-body-s text-ink-500">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
           <MassgeblicheFassung url={massgeblicheUrl} titel={massgeblichTitel} fehlt={massgeblichFehlt}
-            className="lc-chip no-underline hover:text-brass-700 hover:border-brass-400" />
+            className="lc-chip no-underline hover:text-accent-text hover:border-accent-line" />
           <span className="text-ink-500">Daten: {QUELLE_LABEL[snap.quelle] ?? snap.quelle}</span>
         </div>
         {/* B-6-NACHZUG (31.8.2026): der Schlusssatz sagte «die amtliche QUELLE»,
@@ -1084,7 +1103,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
           Ton bleibt ink-500 — dieser Link steht am Dokumentende und soll den
           Lesetext nicht überstimmen. */}
       <nav className="border-t border-line pt-5 text-body-s" aria-label="Weitere Entscheide">
-        <Link to="/rechtsprechung" className="text-ink-500 hover:text-brass-700">← Zur Übersicht</Link>
+        <Link to="/rechtsprechung" className="text-ink-500 hover:text-accent-text">← Zur Übersicht</Link>
       </nav>
 
       {lese && (

@@ -79,6 +79,10 @@ export function EntscheidZeile({ e, onNorm }: {
             mit relative/z über dem Overlay-Link, damit sie klickbar bleiben. */}
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-500">
           <span className="text-reg-r" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
+          {/* REST S1 (25.9.2026): «maschinell» als Randnotiz DIREKT hinter dem
+              Sachgebiet, das es qualifiziert (Board) — feste Stelle in Zeile
+              und Karte, statt je nach Umbruch links oder rechts. */}
+          {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" variant="text" />}
           {/* D3 (Gegenprüfungs-Auflage 12.9.2026, PR #816): siehe EntscheidKarte.tsx. */}
           {e.quarantaene && (
             <span className="text-micro italic text-ink-500" data-quarantaene={e.quarantaene}
@@ -91,7 +95,6 @@ export function EntscheidZeile({ e, onNorm }: {
             <span className="text-micro italic text-ink-500"
               title="Betreff/Titel aus dem amtlichen Portal — keine Regeste">amtl. Betreff</span>
           )}
-          {e.kuratierung === 'maschinell' && <StatusBadge praedikat="maschinell" />}
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
           {/* lc-chip-zeile (LM-044/N1): Aktions-Form an der ROLLE (span[role=button]),
               gleiche Grammatik wie in der Karten-Ansicht und der Filterleiste (§23).

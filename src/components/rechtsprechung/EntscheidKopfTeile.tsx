@@ -54,7 +54,7 @@ function bgeJahrgang(snap: EntscheidSnapshot): string {
 // Optik (§13): derselbe dezente Inline-Link wie die Norm-Verweise im Lesetext
 // (gepunktete Unterstreichung, Akzent erst im Hover) — als Link erkennbar, ohne
 // den Rubrum-Block zu tigern. Fokus trägt der globale :focus-visible-Outline (F3).
-const BESETZUNG_LINK = 'underline decoration-dotted underline-offset-2 hover:text-brass-700';
+const BESETZUNG_LINK = 'underline decoration-dotted underline-offset-2 hover:text-accent-text';
 
 // §15.4: der React Compiler ist AUS — die Zerlegung (ein Parser-Lauf) darf nicht
 // an jedem Render des Lesers hängen (Tab-Wechsel, Kopiert-Toast, Lese-Modus,

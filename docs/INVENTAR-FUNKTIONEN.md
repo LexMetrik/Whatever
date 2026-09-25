@@ -1417,7 +1417,8 @@ Norm- und Entscheid-Verzahnung und zwei Ansichten beim BGE.
 6. Fakten-Zeile: Entscheiddatum (falls nicht schon im Titel) · BGE-Referenz (falls
    nicht im Titel) · parallele Zweit-Geschäftsnummer.
 7. **Ehrlichkeits-Zeile:** Leitentscheid-Badge (interaktiv, mit Begriff-Tooltip) ·
-   Sprachbadge · «maschinell»-Badge · Satz «Wiedergabe des amtlichen Urteilstexts —
+   Sprachbadge · «maschinell» (seit REST S1, 25.9.2026: Randnotiz, gepunktet unterstrichen,
+   statt Kasten; Wortlaut unverändert) · Satz «Wiedergabe des amtlichen Urteilstexts —
    massgeblich ist stets die amtliche Fassung.»
 8. Aktionen: Link **«massgebliche Fassung»** (folgt der aktiven Ansicht: Urteil bzw.
    BGE-Sammlung; Marker «(Urteil n. v.)», wenn das unterliegende Urteil nicht
@@ -1433,7 +1434,9 @@ Scroll-Hervorhebung.
 
 **Lesefläche** (zweispaltig ab dem sehr grossen Breakpoint). **Links** die
 Erwägungs-Schiene: Suchfeld «Im Entscheid suchen …», ein reservierter Auskunfts-Slot
-(Trefferzahl je Fassung, Schalter «Hervorhebung» bei Treffern), darunter das
+(Trefferzahl je Fassung, Schalter «Hervorhebung» bei Treffern; seit REST S1, 25.9.2026: Suche
+erst ab zwei Zeichen — bei einem Zeichen Hinweis «Suche ab zwei Zeichen.», Zählzeile während
+der Rechenzeit leer, Schalter «Hervorhebung» setzt sich beim Leeren des Felds zurück), darunter das
 Verzeichnis (Gliederung der Erwägungen bzw. bei aktiver Suche die Treffer-Liste),
 darunter **«Angewandte Normen»** (Chips, springen zur Fundstelle **im Text**). Bei
 laufender, hervorhebender Suche zusätzlich eine **Treffer-Landkarte** (feste
@@ -1530,7 +1533,8 @@ BS-Ratschläge). Je Karte führt eine In-App-Detailseite mit bibliografischen
 Metadaten und Live-Link — **kein gespeicherter Volltext**.
 
 **Elemente.** Seitenkopf (Überschrift «Materialien» + Ausgabe-Zeile «<N>
-Publikationen der Bundesbehörden, bibliografisch mit Live-Link») · Filterfeld
+Materialien (Gesetzgebung) · <N> Erläuterungen (Verwaltungspraxis), bibliografisch mit
+Live-Link» — Wortlaut seit REST S2, 25.9.2026) · Filterfeld
 «Filtern» (Platzhalter «Titel, Nummer oder Behörde …», Fuss-Hinweis zum Suchumfang)
 plus zwei Auswahllisten **«Behörde»** (mit «Kürzel — Name» je Option) und
 **«Dokumenttyp»**. Darunter je Behörde eine Sektion (Gruppenkopf mit Kürzel und

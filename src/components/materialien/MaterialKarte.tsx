@@ -15,44 +15,42 @@ import { StandChip } from '../ui/StandChip';
 // lokale Kopie (Design-Konsistenz, C-Begleitbefund «Stand-Chip-Dedupe»,
 // 31.8.2026) — jetzt EIN Baustein: `ui/StandChip.tsx`.
 
+// W2·29-WERKBANK-REST S2 (25.9.2026) · DIE KARTE DER K-RUBRIKEN. Dieselbe
+// Anatomie wie die Entscheid-Karte (K3, `rechtsprechung/EntscheidKarte`):
+// Haarlinien-Karte, Hover = neutrale Zeilen-Fläche (`.lc-hover-flaeche`) plus
+// unterstrichener Titel, Fuss mit eigener Haarlinie. Messing entfällt (F0.2/
+// F0.3) — die Weiterweg-Zeile tintet beim Überfahren nicht mehr um, der
+// Unterstrich am Titel trägt die Affordanz. Inhalt, Reihenfolge und Wortlaut
+// unverändert (Inventar 3.4, Material-Karte).
 export function MaterialKarte({ m }: { m: BrowseMaterial }) {
   const overline = m.nummer ? `${m.doktypLabel} · ${m.nummer}` : m.doktypLabel;
   return (
     <Link
       to={`/materialien/${encodeURIComponent(m.key)}`}
-      className="lc-card group flex h-full flex-col p-4 no-underline"
+      className="lc-card group flex h-full flex-col p-4 no-underline lc-hover-flaeche"
     >
       <div className="flex items-baseline justify-between gap-3">
         <span className="lc-overline">{overline}</span>
         {m.sprache !== 'de' && <span className="lc-badge lc-badge-soft">{m.sprache}</span>}
       </div>
-      <p className="mt-1.5 text-body-s font-medium text-ink-900 leading-snug line-clamp-3">{m.titel}</p>
+      <p className="mt-1.5 text-body-s font-medium text-ink-900 leading-snug line-clamp-3 underline-offset-2 group-hover:underline">{m.titel}</p>
       {/* lc-chip-zeile (LM-044/N1): der Stand-Chip ist ein <span> ohne role und
           bleibt darum ausdrücklich FLACH — reine Angabe, keine Aktion, kein Link.
-          Genau das war der Befund: «Stand 01.02.2022» war formal nicht von einem
-          Normverweis «ZGB» zu unterscheiden. Die Opt-in-Klasse macht die
-          Flachheit zur ERKLÄRTEN Aussage statt zum Zufall (§23). */}
-      {/* LM-028 (B11-Karten, 4.9.2026): `mt-auto` hängt die Metazeile an den
-          Kartenfuss statt an den Titel (gemessen /materialien @1440: drei- gegen
-          zweizeiliger Titel setzte «Stand …» 19 px auseinander). Die Karte ist
-          dafür eine Flex-Spalte (`flex h-full flex-col`); Kartenhöhe unverändert.
-          LM-195 (B14, 4.9.2026): kein `behoerdeKuerzel` mehr in der Zeile — die
-          Karten liegen immer in der Behörden-Gruppe, deren Kopf das Kürzel trägt
-          (einziger Aufrufer `pages/Materialien.tsx`); bewusst keine Prop dafür.
-          Die `lc-chip-zeile` trägt weiter den Stand-Chip (§23/N1). */}
-      <div className="lc-chip-zeile mt-auto pt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
-        <StandChip stand={m.stand} />
+          LM-028: `mt-auto` hängt den Fuss an die Kartenunterkante (die Karte ist
+          eine Flex-Spalte); LM-195: kein Behördenkürzel, das trägt der
+          Gruppenkopf. Die Weiterweg-Zeile steht dauerhaft sichtbar im selben
+          Fuss (LM-195, zweiter Teil: die Sichtbarkeit einer Aktion hängt nicht
+          am Zeigergerät, §8). */}
+      <div className="mt-auto pt-3">
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5 border-t border-rule-soft pt-2.5">
+          <div className="lc-chip-zeile flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs text-ink-500">
+            <StandChip stand={m.stand} />
+          </div>
+          <span className="inline-flex items-center gap-1 text-xs font-medium text-ink-600">
+            Details &amp; amtliche Fassung →
+          </span>
+        </div>
       </div>
-      {/* ── LM-195, zweiter Teil · DIE KLICKBARKEIT IST SICHTBAR ────────────────
-          Die Weiterweg-Zeile trug `opacity-0 … group-hover:opacity-100` — auf
-          Touch und im Ruhezustand also unsichtbar, während die Karten der übrigen
-          Bereiche ihren Weiterweg stehend zeigen. Die Sichtbarkeit einer Aktion
-          darf nicht am Zeigergerät hängen (§8). Der Hover bleibt als VERSTÄRKUNG:
-          `ink-500` im Ruhezustand → Messing beim Überfahren. Kein Layout-Sprung,
-          weil die Zeile schon vorher Platz belegte (nur `opacity`). */}
-      <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-ink-500 transition-colors group-hover:text-brass-700">
-        Details &amp; amtliche Fassung →
-      </span>
     </Link>
   );
 }
