@@ -29,7 +29,7 @@ export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; bei
   rubrik: { stufe: 'content', beispielPfad: '/rechner' },
   rechner: { stufe: 'content', beispielPfad: '/rechner/kuendigung' },
   vorlage: { stufe: 'content', beispielPfad: '/vorlagen/testament' },
-  gesetze: { stufe: 'content', beispielPfad: '/gesetze' },
+  gesetze: { stufe: 'weit', beispielPfad: '/gesetze' }, // B4 (25.9.2026): Erlass-Register (Titel-Spur)
   'gesetz-leser': { stufe: 'content', beispielPfad: '/gesetze/bund/OR' },
   rechtsprechung: { stufe: 'weit', beispielPfad: '/rechtsprechung' },
   'entscheid-leser': { stufe: 'content', beispielPfad: '/rechtsprechung/bge_152_V_122' },

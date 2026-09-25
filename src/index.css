@@ -4446,7 +4446,13 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   .tb-voll .tb-meta { justify-self: end; }
 }
 
-/* Zwei Spalten erst, wenn beide je ~29 rem tragen (≈ Fenster 1280 px). */
+/* Zwei Spalten erst, wenn beide je ~29 rem tragen (≈ Fenster 1280 px).
+   Bewusst KEINE dritte Spalte (W2·31-BILDSCHIRMBREITE B4, 25.9.2026): auf
+   /gesetze (Stufe `weit`) ist die Liste in der Rechtsgebiet-Karte @1920
+   1352 px breit — drei Spalten gäben je 429 px und kappten 156 von 241
+   Titeln (dev-Messung per CSS-Injektion), zwei Spalten à 660 px kappen 20
+   (vorher 93 bei 500 px). Die Breite geht an die Titel-Spur, nicht an eine
+   Spalte mehr; die 29-rem-Regel bliebe erst ab 91 rem Liste erfüllt. */
 @container (width >= 60rem) {
   .tb-raster-2 {
     grid-auto-flow: column;
