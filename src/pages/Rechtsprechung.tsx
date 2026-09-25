@@ -205,11 +205,22 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
     );
   }
   return (
-    <div>
+    <div className="@container/rspliste">
       {sprungleiste}
       {frueherKnopf}
-      {/* K3: Kopflinie 2 px Tinte, jede Zeile trägt ihre Haarlinie selbst. */}
-      <div ref={behaelterRef} className="border-t-2 border-ink-900">
+      {/* K3: Kopflinie 2 px Tinte, jede Zeile trägt ihre Haarlinie selbst.
+          W2·31-BILDSCHIRMBREITE B6 (25.9.2026): ab 68 rem LISTENBREITE (Stufe
+          `weit`, @1920 gemessen 1144 px) zwei Zeilenspalten statt einer
+          824-px-Spalte mit 72 px je Eintrag — die Liste wird rund halb so hoch
+          (gemessen 26'739 → Wert im Commit). Die Schwelle hängt an der Liste
+          (`@container/rspliste`), nicht am Viewport: @1536 mit offener
+          Seitenleiste (Liste 780 px) bleibt es EINE Spalte (Lehre B2). 68 rem =
+          zwei Spalten à ≥ 33 rem — darunter kappte die Bezeichnung mehr als
+          heute. Reihenfolge bleibt die DOM-Folge (zeilenweise links → rechts),
+          Tab- und Lesereihenfolge laufen gleich. Die Bezeichnung darf in
+          dieser Anordnung auf drei Zeilen umbrechen (`EntscheidZeile`); ihr
+          Mass bleibt die halbe Liste, also im Lesemass. */}
+      <div ref={behaelterRef} className="border-t-2 border-ink-900 @[68rem]/rspliste:grid @[68rem]/rspliste:grid-cols-2 @[68rem]/rspliste:gap-x-6">
         {sichtbar.map((e) => <EntscheidZeile key={e.key} e={e} onNorm={onNorm} />)}
       </div>
       {mehrKnopf}
