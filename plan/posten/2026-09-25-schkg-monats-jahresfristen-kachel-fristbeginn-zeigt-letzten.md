@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: SchKG Monats-/Jahresfristen: Kachel «Fristbeginn» zeigt letzten Ferientag statt Fristbeginn
 anlass: RL-18-Nebenfund, 24.9.2026
 -->

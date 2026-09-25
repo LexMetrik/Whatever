@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: sperrfristen.ts aufteilen (850 Z. > 800, §6.6) — nach RL-16 in Baseline
 -->
 

@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: FristenKalender.tsx:222 istArbeitsfreierTag ohne Kontext — NE-Schliesstage/SO 1. Mai im ZPO/BGG-Kalender nicht markiert
 anlass: RL-22/23-Nebenfunde, 24.9.2026
 -->
