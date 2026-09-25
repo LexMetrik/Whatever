@@ -10,7 +10,8 @@ Gemeinsam für alle Design-Einheiten: Massstab ist das Reglement in der Fassung 
 
 - **An `W2·29-WERKBANK-REST`** (Druckansicht, Entscheid-Leser, Materialien, Alt-Stylesheet-Reste): DK-09 (mittel · EA; erst HN-DESIGN-NACHZUG Sonde D) Druck aus dem Dunkelmodus — im Druckblock `index.css:1976–2008` die hellen Tinten-Token erzwingen, Test Druck × dunkel; DK-06-Code in `entstehung/*` (S2); Umzug der Ladeanzeige (DK-21); VS-08 tote Klasse `.lc-scrollrand-grund-surface` (`index.css:2896`) und Kommentare aus der Sediment-Suche (`check-sediment.ts:100–108`; REST verlangt «`check:sediment` grün ohne Ausnahme»; UD → nach HN-13); den bestehenden Posten Kontrast `.lc-termin-ring`/`.text-auf-gold` **vorziehen** — er blockiert Dependabot #918 und damit Updates der Browser-Tests.
 - Befunde: DK-09 (mittel · EA); DK-06-Code in entstehung/*, DK-21, VS-08 (tief · EA).
-- PRs +1–3 in Werkbank-PRs · Abh.: jeweilige Scheibe · Blocker: W-HN-3 (nur DK-26); HN-DESIGN-NACHZUG (nur DK-09).
+- PRs +1–3 in Werkbank-PRs · Abh.: jeweilige Scheibe · Blocker: W-HN-3 (nur DK-26).
+- Stand 25.9.2026: Blocker HN-DESIGN-NACHZUG (DK-09) entfällt — Live-Nachmessung bestätigt DK-09: Druck aus dem Dunkelmodus setzt Fliesstext #E2E0DC auf Weiss (1.32:1; hell 15.68:1), Gesetzes- UND Entscheid-Leser (Bericht `berichte/design-nachzug-2026-09-25.md` im HN-Projektordner, Meldung Session QS-KORPUS). Fix in REST S3 (Druck), Test Druck × dunkel.
 
 Dazu aus HN-D4 (DK-06): `ink-400`-Text in `entstehung/*` (SynopseKarte.tsx, EntstehungsBlock.tsx, MaterialEntstehung.tsx) auf ink-500/600, wenn S2 den Alt-Block umbaut. Aus HN-D5: Ladeanzeige auf Entscheid-Leser, Materialien, Rechtsprechung aus dem einen Baustein. Der Kontrast-Posten (Dependabot #918) trägt den Vorzieh-Vermerk.
 
