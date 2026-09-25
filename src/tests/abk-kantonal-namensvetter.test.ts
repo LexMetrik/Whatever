@@ -1,8 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
-  normKeysVonSnapshot, sperrEntfernteNormKeys, normKeyFuerAbk,
+  normKeysVonSnapshot, sperrEntfernteNormKeys, KANTONAL_ABK_SPERRE, normKeyFuerAbk,
 } from '../../scripts/normtext/entscheide-mapping';
-import { KANTONAL_ABK_SPERRE } from '../../scripts/normtext/kantonal-namensvetter';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 
 // ─── Kantonale Namensvetter (QS-KORPUS 25.9.2026, Stichproben-Nachzug) ─────────
