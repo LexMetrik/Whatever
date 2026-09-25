@@ -2153,6 +2153,12 @@ Begründungen in `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor `e2e/qsui-hier
    bedingungslos (Opt-in `zeigeWarnungen` entfernt 4.8.2026).
 6. **Fliesstext hält die Lesespalte** (Dach-B2/D-1.5). Ausgenommen ist das Vorschau-
    «Papier»: dessen Mass regelt V2, nicht die Lesespalte der App.
+7. **Intro-/Kopftext-Wachstum ist ein Tiefe-Risiko.** Ein zusätzlicher Halbsatz im
+   Vorlagen-Intro (auch ein Offenlegungshinweis) kann die mobile Dokument-Tiefe-
+   Schranke reissen — erst im Browser-Smoke sichtbar (Beleg #1065, 24.9.2026:
+   `/vorlagen/klage-vereinfacht` 2.81 > 2.8 Bildschirmhöhen). Vor dem Commit
+   `e2e/qsui-hierarchie.e2e.ts` für die Route einzeln fahren oder die Textlänge
+   netto halten — Füllwörter kürzen, nie die Offenlegung.
 
 ### §V · Prüfung (Checkliste vor Commit)
 
