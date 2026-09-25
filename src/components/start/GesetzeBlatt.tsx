@@ -235,7 +235,7 @@ function GebietErlasse({ nr }: { nr: string }) {
   if (!kat) return null;
   return (
     <div className="space-y-4">
-      <p className="max-w-reading font-sans text-body-s text-ink-600">{kat.lede}</p>
+      <p className="max-w-reading-s font-sans text-body-s text-ink-600">{kat.lede}</p>
       <BlattSuchFeld schmal wert={suche} setze={setSuche} label={`In «${kat.titel}» filtern`} />
       <Laedt erlasse={erlasse}>
         {() => gruppen.length

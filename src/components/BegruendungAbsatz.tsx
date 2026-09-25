@@ -22,7 +22,7 @@ export function BegruendungAbsatz({ text }: { text: string }) {
           gerade DIESER Absatz wird gelesen, bevor er in die Rechtsschrift wandert.
           Reine Breitenbegrenzung: Wortlaut und Kopier-Inhalt bleiben unberührt
           (der Text kommt unverändert aus `lib/begruendung.ts`, §5). */}
-      <p className="mt-3 text-body-s text-ink-900 leading-relaxed bg-paper-sunken rounded-md p-3 select-all max-w-reading">
+      <p className="mt-3 text-body-s text-ink-900 leading-relaxed bg-paper-sunken rounded-md p-3 select-all max-w-reading-s">
         {text}
       </p>
       <KopierButton text={text} gegenstand="Absatz" className="lc-btn-outline lc-btn-sm mt-3" />

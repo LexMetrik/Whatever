@@ -22,7 +22,7 @@ export function ZweiachsigerEinstieg() {
     <section className="kt-einstieg space-y-3">
       <div className="space-y-1">
         <p className="lc-overline">Einstieg nach Rechtsgebiet</p>
-        <p className="text-body-s text-ink-600 leading-relaxed max-w-reading">
+        <p className="text-body-s text-ink-600 leading-relaxed max-w-reading-s">
           Dieselben Werkzeuge, quer nach Rechtsgebiet erschlossen – je Gebiet die
           passenden Rechner und Vorlagen nach Aufgabe gruppiert. Aufklappen oder
           unten direkt nach Aufgabe blättern.

@@ -79,7 +79,9 @@ export function RechnerVerjaehrungBoard() {
           </div>
           <div className="lc-notice text-body-s">
             <p className="lc-overline mb-1">Verzahnung: Rügefrist ↔ Verjährung</p>
-            <p className="text-ink-600">
+            {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt —
+                gemessen 973 px / bis 139 Zeichen je Zeile. */}
+            <p className="text-ink-600 max-w-reading-s">
               Bei Kauf und Werkvertrag laufen zwei Fristen getrennt: die <strong>Rügefrist</strong> ist
               eine Verwirkungsfrist (Versäumnis = Genehmigungsfiktion, keine Hemmung/Unterbrechung), die{' '}
               <strong>Verjährung der Mängelrechte</strong> ist eine Einrede und folgt der AT-Mechanik.
@@ -90,7 +92,8 @@ export function RechnerVerjaehrungBoard() {
           </div>
           <div className="lc-notice text-body-s">
             <p className="lc-overline mb-1">Internationaler Warenkauf</p>
-            <p className="text-ink-600">
+            {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt. */}
+            <p className="text-ink-600 max-w-reading-s">
               Für grenzüberschreitende Warenkäufe kann das UN-Kaufrecht (CISG) gelten, mit abweichenden
               Rüge- und Verjährungsregeln.{' '}
               <a href={CISG_URL} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline">CISG (SR 0.221.211.1) auf Fedlex</a>.

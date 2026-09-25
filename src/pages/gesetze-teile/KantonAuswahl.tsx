@@ -110,7 +110,7 @@ export function KantonAuswahl({ gruppen, alleKantone, onWaehle, ansicht, onAnsic
           ehrlich unter «Nicht systematisiert». Zwei Versprechen für dieselbe
           Sache waren ein §8-Verstoss; jetzt steht die Einschränkung VOR dem
           Klick, nicht erst danach. */}
-      <p className="text-body-s text-ink-500 max-w-reading">
+      <p className="text-body-s text-ink-500 max-w-reading-s">
         Erfasst sind die in LexMetrik verwendeten kantonalen Erlasse — nicht die
         vollständige kantonale Gesetzessammlung. Kanton wählen: die Erlasse werden
         dann nach der amtlichen Systematik des Kantons (Sachgebiete) gegliedert,

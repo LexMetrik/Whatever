@@ -67,7 +67,7 @@ export function VerfallUebersicht() {
       <h2 className="text-h3 font-display font-semibold text-ink-900">
         Aktualität &amp; Pflege der Parameter
       </h2>
-      <p className="text-body-s text-ink-600 leading-relaxed max-w-reading">
+      <p className="text-body-s text-ink-600 leading-relaxed max-w-reading-s">
         Einzelne Werte – etwa kantonale Tarife, der hypothekarische Referenzzinssatz oder
         Gebührenordnungen – ändern sich ausserhalb dieser Anwendung und müssen zu einem festen
         Termin neu geprüft werden. Diese Übersicht führt die {VERFALL_TERMINE.length} datierten

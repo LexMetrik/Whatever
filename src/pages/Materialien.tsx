@@ -176,7 +176,7 @@ export function Materialien() {
                         Angleichung ist sichtbar und gewollt — der ausgeschriebene
                         Behördenname bleibt als Lede darunter stehen. */}
                     <GruppenKopf stufe={2} titel={g.kuerzel} zahl={g.materialien.length} />
-                    <p className="text-body-s text-ink-500 max-w-reading">{g.name}</p>
+                    <p className="text-body-s text-ink-500 max-w-reading-s">{g.name}</p>
                   </div>
                   <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-3')}>
                     {g.materialien.map((m) => <MaterialKarte key={m.key} m={m} />)}

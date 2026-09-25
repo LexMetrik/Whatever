@@ -50,7 +50,7 @@ export function GliederungUmschalter({ wert, onWahl }: {
 // ── Relevanz-Sichten ─────────────────────────────────────────────────────────
 
 function RelevanzHinweis({ children }: { children: React.ReactNode }) {
-  return <p className="text-body-s text-ink-500 max-w-reading">{children}</p>;
+  return <p className="text-body-s text-ink-500 max-w-reading-s">{children}</p>;
 }
 
 /** Bund/International: flaches Karten-Gitter nach kuratiertem Leitgesetz-Rang

@@ -12,7 +12,7 @@ export function MassgebendeGesetze({ modus }: { modus: 'rechner' | 'vorlage' }) 
   return (
     <section aria-labelledby="massgebende-gesetze">
       <h2 id="massgebende-gesetze" className="lc-overline mb-2">Massgebende Gesetze im Volltext</h2>
-      <p className="text-body-s text-ink-600 mb-3 max-w-reading">
+      <p className="text-body-s text-ink-600 mb-3 max-w-reading-s">
         Die Erlasse, auf denen diese {modus === 'rechner' ? 'Rechner' : 'Vorlagen'} beruhen — als
         Volltext mit Stand und amtlichem Live-Link.
       </p>

@@ -165,7 +165,11 @@ export function VorlageGmbhGruendung() {
 
       {ergebnis.statutenKlauseln.length > 0 && (
         <MappenAbschnitt titel="Pflichtklauseln in den Statuten">
-          <ul className="space-y-2">
+          {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt,
+              wie die Kosten-Liste unten (1072 px gemessen). Deckel am
+              Raster-`<ul>`, wie beim Vorbild `RechnerTagerechner.tsx` (`<ol
+              max-w-reading>`) — nicht an jedem `<li>` einzeln. */}
+          <ul className="space-y-2 max-w-reading-s">
             {ergebnis.statutenKlauseln.map((k) => (
               <li key={k.norm} className="text-body-s text-ink-700">
                 <span className="font-medium text-ink-900">{k.klausel}</span> <NormLink artikel={k.norm} /> — {k.kern}
@@ -176,7 +180,9 @@ export function VorlageGmbhGruendung() {
       )}
 
       <MappenAbschnitt titel="Kosten (Bund) und Hinweise">
-        <ul className="lc-list space-y-2 text-body-s text-ink-700">
+        {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt —
+            gemessen 1072 px / bis 157 Zeichen je Zeile. */}
+        <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
           <KostenBundZeilen emissionsabgabeChf={ergebnis.emissionsabgabeChf} />
           <li>
             Notariatsgebühren sind kantonal geregelt (z. B. BE: Gebührenverordnung BSG 169.81) und hier bewusst nicht beziffert; Bank-Sperrkonto je nach Institut (Praxisbeispiel ZKB: 0,5 ‰, mind. CHF 250).

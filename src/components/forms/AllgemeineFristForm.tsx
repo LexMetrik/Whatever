@@ -380,7 +380,7 @@ export function AllgemeineFristForm({ live }: {
               {/* QS-UI 8b (B2): Abgrenzungshinweis lief über die volle Kartenbreite —
                   gemessen 910 px gegen die 640-px-Lesespalte. Nur Breite; Wortlaut
                   und Links unverändert (Text aus lib/allgemeineFrist.ts, §5). */}
-              <p className="text-body-s text-ink-500 max-w-reading">
+              <p className="text-body-s text-ink-500 max-w-reading-s">
                 {ALLG_FRIST_HINWEIS.replace(' den ZPO-Fristenrechner, für betreibungsrechtliche den SchKG-Fristenrechner verwenden.', ':')}{' '}
                 <Link to="/rechner/zpo-fristen" className="text-brass-700 no-underline hover:text-brass-600">ZPO-Fristen →</Link>{' · '}
                 <Link to="/rechner/schkg-fristen" className="text-brass-700 no-underline hover:text-brass-600">SchKG-Fristen →</Link>

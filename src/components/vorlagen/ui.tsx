@@ -481,7 +481,7 @@ export function ErgebnisPlatzhalter({ was, titel = 'Ergebnis', rahmen = 'kachel'
   return (
     <div data-platzhalter className="lc-tile border-dashed min-h-40 flex flex-col justify-center gap-1.5 text-center">
       <p className="lc-overline">{titel}</p>
-      <p className="text-body-s text-ink-500 max-w-reading mx-auto">{was}</p>
+      <p className="text-body-s text-ink-500 max-w-reading-s mx-auto">{was}</p>
     </div>
   );
 }

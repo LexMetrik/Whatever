@@ -33,7 +33,12 @@ export function MaterialKarte({ m }: { m: BrowseMaterial }) {
         <span className="lc-overline">{overline}</span>
         {m.sprache !== 'de' && <span className="lc-badge lc-badge-soft">{m.sprache}</span>}
       </div>
-      <p className="mt-1.5 text-body-s font-medium text-ink-900 leading-snug line-clamp-3 underline-offset-2 group-hover:underline">{m.titel}</p>
+      {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ohne eigenen
+          Deckel — heute unkritisch (Rasterspalte 317 px, `line-clamp-3`
+          kappt ohnehin auf 3 Zeilen), aber die Karte wächst erst mit einer
+          breiteren Rasterspalte in einem späteren Posten (B-Reihe); `reading-s`
+          jetzt gesetzt, damit der Titel dann nicht unbegrenzt mitwächst. */}
+      <p className="mt-1.5 text-body-s font-medium text-ink-900 leading-snug line-clamp-3 underline-offset-2 group-hover:underline max-w-reading-s">{m.titel}</p>
       {/* lc-chip-zeile (LM-044/N1): der Stand-Chip ist ein <span> ohne role und
           bleibt darum ausdrücklich FLACH — reine Angabe, keine Aktion, kein Link.
           LM-028: `mt-auto` hängt den Fuss an die Kartenunterkante (die Karte ist

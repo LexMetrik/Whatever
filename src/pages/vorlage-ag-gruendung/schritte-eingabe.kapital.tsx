@@ -68,7 +68,7 @@ export function SchrittKapital({ ctx }: { ctx: AgSchrittCtx }) {
       {(einlageArt === 'sacheinlage' || einlageArt === 'gemischt') && (
         <div className="space-y-3">
           <p className="text-body-s font-medium text-ink-900"><NormText text={`Sacheinlagen (Art. 634 OR)`} /></p>
-          <p className="text-body-s text-ink-500 max-w-reading">
+          <p className="text-body-s text-ink-500 max-w-reading-s">
             Deckungs-Voraussetzungen (Art. 634 Abs. 1 OR): als Aktiven bilanzierbar, übertragbar,
             nach dem Eintrag sofort frei verfügbar (bei Grundstücken: bedingungsloser
             Grundbuch-Anspruch) und durch Übertragung auf Dritte verwertbar.

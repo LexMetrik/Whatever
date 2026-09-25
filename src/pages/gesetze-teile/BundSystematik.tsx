@@ -55,7 +55,7 @@ export function BundSystematik({ erlasse, hashOffen }: { erlasse: BrowseErlass[]
               <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{kat.titel}</span>
             </span>
           }>
-          <p className="text-body-s text-ink-500 max-w-reading">{kat.lede}</p>
+          <p className="text-body-s text-ink-500 max-w-reading-s">{kat.lede}</p>
           {kat.gruppen.map((g) => <GruppenInhalt key={g.id} titel={g.titel} items={g.items} />)}
         </Kategorie>
       ))}

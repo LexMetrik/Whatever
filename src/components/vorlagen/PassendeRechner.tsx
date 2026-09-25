@@ -19,7 +19,7 @@ export function PassendeRechner() {
     // /vorlagen/arbeitsvertrag und /vorlagen/klage-vereinfacht (Gegenprüfungs-
     // Befund B7). Massgeblich ist das Reglement, nicht der neue Chip: die Regel
     // gilt seit 11.6.2026 für jeden Prosa-Absatz der App, V6 ist keine Ausnahme.
-    <p className="text-body-s text-ink-600 max-w-reading">
+    <p className="text-body-s text-ink-600 max-w-reading-s">
       <span className="font-medium text-ink-900">Zuerst rechnen:</span>{' '}
       {rechner.map((r, i) => (
         <span key={r.id}>

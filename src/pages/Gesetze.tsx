@@ -543,7 +543,7 @@ export function Gesetze() {
               Rubriken-Darstellung (§5, identisch zu /international). */}
           {!suche.trim() && ebene === 'international' && (
             <div className="space-y-4">
-              <p className="text-body-s text-ink-500 max-w-reading">
+              <p className="text-body-s text-ink-500 max-w-reading-s">
                 {/* B-6-Nachzug (R2-A): «amtliche Fassung» im Link-Satz, «amtliche
                     Quelle» im Vorbehalt desselben Absatzes — ein Nomen genügt. */}
                 Für die Schweiz massgebliche Staatsverträge und internationales Recht — je mit Live-Link zur amtlichen Fassung (Fedlex SR 0.* bzw. EUR-Lex). Einzelne Erlasse (z. B. EMRK) werden als amtliches PDF in-app angezeigt; massgeblich bleibt stets {AMTLICHE_FASSUNG_NOMEN}.

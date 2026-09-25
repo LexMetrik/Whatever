@@ -208,7 +208,12 @@ export default {
       // check-design-tokens.ts verbietet ihre NEUE Verwendung im Quellbaum.
       zIndex: generiert.zIndex,
       // `reading` (40rem ≈ 66–71 ch) = die knappe Standard-Lesespalte site-weit
-      // (Verdikte, Leden). `normtext` (42rem = 672px) = die etwas grosszügigere
+      // (Verdikte, Leden) — GILT NUR FÜR DIE 18-PX-LEAD-STUFE (`text-body-l`,
+      // RICHTIGGESTELLT W2·31-BILDSCHIRMBREITE B1b, 25.9.2026): auf der
+      // 14-px-Stufe (`text-body-s`) trägt derselbe 40-rem-Deckel 66–100 ch
+      // (Messung unten, `reading-s`), weil dieselbe Pixelbreite auf kleinerer
+      // Schrift mehr Zeichen fasst — Herleitung s. `reading-s` weiter unten.
+      // `normtext` (42rem = 672px) = die etwas grosszügigere
       // Lesespalte NUR des Gesetzes-Readers (E6/A37, David 16.7.2026: «gib dem
       // Gesetz mehr Platz … nutze den Platz der zur Verfügung steht»): die Norm
       // gewinnt Breite und verletzt §13/2 nicht (Lesespalte, nie volle
@@ -271,12 +276,40 @@ export default {
       // aussen) — 1680 und 1920 sahen identisch aus. `weit` hebt den Rahmen ab
       // `2xl` (1536 px) auf 90rem, und zwar je Seitenart laut der Tabelle
       // `SEITENBREITE` (`components/layout/seitenbreite.ts`), nicht global.
-      // NUR für Raster/Tabellen, nie für Fliesstext: der ungedeckelte
-      // PflichtDisclaimer läuft schon unter `content` auf 973 px (120–149
-      // Zeichen je Zeile), global verbreitert auf 1293 px (Inventar
-      // Bildschirmbreite 25.9.2026, /rechner/zpo-fristen) — `reading`/
-      // `normtext`/`kleintext` bleiben die Lesemass-Deckel.
-      maxWidth: { content: '70rem', reading: '40rem', normtext: '42rem', kleintext: '24rem', weit: '90rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte); weit ≈ 1440px (je Seitenart, ab 2xl)
+      // NUR für Raster/Tabellen, nie für Fliesstext: der bis B1b ungedeckelte
+      // PflichtDisclaimer lief schon unter `content` auf 973 px (120–149
+      // Zeichen je Zeile) — global verbreitert wären das 1293 px gewesen
+      // (Inventar Bildschirmbreite 25.9.2026, /rechner/zpo-fristen); seit B1b
+      // trägt er `reading-s` (s. u.) wie jeder andere body-s-Fliesstext.
+      // `reading`/`normtext`/`kleintext`/`reading-s` bleiben die Lesemass-Deckel.
+      //
+      // `reading-s` (30rem = 480px, W2·31-BILDSCHIRMBREITE B1b, 25.9.2026) — DAS
+      // LESEMASS DER 14-PX-STUFE (`text-body-s`). Befund: `reading` (40rem) ist
+      // für die 18-px-Lead-Stufe kalibriert (66–71 ch); auf `text-body-s` trägt
+      // dieselbe Pixelbreite mehr Zeichen. Gemessen: 77 mehrzeilige body-s-
+      // Absätze unter `max-w-reading` auf /ueber, /methodik, /datenschutz,
+      // /kontakt, /materialien(/deckung), /rechner, /vorlagen,
+      // /gesetze (Rechtsgebiet + International + Kanton ZH), /rechner/
+      // tagerechner, /vorlagen/gmbh-gruendung (Playwright headless @1280,
+      // Methode wie oben: Textlänge / distincte Zeilen-y-Positionen).
+      // Verteilung bei 40rem (Ist): Median 68 · p90 86.2 · MAX 100.3 ch — über
+      // beiden Decken (WCAG 80, Haus 75). Kandidaten NEU umgebrochen (echtes
+      // Wrapping per `el.style.maxWidth`, kein Schätzwert) an den 66 Absätzen,
+      // die heute den vollen 40-rem-Deckel ausnutzen (px ≥ 550):
+      //   28 rem (448 px)   Median 55.8 · p90 66.4 · MAX 71.5 ch
+      //   30 rem (480 px)   Median 58.0 · p90 70.0 · MAX 75.0 ch
+      //   32 rem (512 px)   Median 62.5 · p90 75.0 · MAX 78.3 ch
+      //   34 rem (544 px)   Median 64.5 · p90 78.3 · MAX 85.3 ch — verfehlt beide Decken
+      // 30 rem ist die gewählte Zahl: p90 (70) klar unter der Hausdecke (75, mit
+      // Sicherheitsabstand statt exakt an der Grenze wie 32 rem) und MAX (75)
+      // klar unter WCAG (80) — dieselbe Vorsicht wie bei `kleintext` («ein
+      // Deckel, der nur den Median hält, ist keiner»). Name nach Hausstil: die
+      // vorhandenen Lesemass-Token heissen nach ihrem Verbraucher (`reading`,
+      // `normtext`) oder ihrer Schriftrolle (`kleintext` = Feinschrift);
+      // `reading-s` folgt demselben Muster wie `text-body-s`/`text-body-l` (die
+      // Schriftstufen-Suffixe der Typo-Skala oben) und bleibt damit im
+      // bestehenden Namensraum statt einer neuen Wortfamilie.
+      maxWidth: { content: '70rem', reading: '40rem', 'reading-s': '30rem', normtext: '42rem', kleintext: '24rem', weit: '90rem' }, // content ≈ 1120px (Iteration 3: einheitlich schmalere Spalte); weit ≈ 1440px (je Seitenart, ab 2xl)
       // ── DIE EINZUG-SKALA IST GESTRICHEN (Entscheid David 29.8.2026) ────────
       // Hier standen `spacing: { einzug: '1.25rem', 'einzug-mobil': '0.75rem' }`
       // — die Tiefen-Staffelung des Gesetzes-Lesers (W2·5d G1 / V2·L-1, 20 px je

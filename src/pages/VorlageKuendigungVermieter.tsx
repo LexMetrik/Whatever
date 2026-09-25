@@ -75,7 +75,9 @@ export function VorlageKuendigungVermieter() {
 
       <section className="lc-card p-5 sm:p-6 space-y-4">
         <GruppenTitel>Gültigkeits-Checkliste</GruppenTitel>
-        <ol className="space-y-3 text-body-s text-ink-700 list-decimal pl-5">
+        {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt —
+            gemessen 1004 px, mehrzeilige Punkte deutlich über beiden Decken. */}
+        <ol className="space-y-3 text-body-s text-ink-700 list-decimal pl-5 max-w-reading-s">
           <li>
             <strong>Amtliches Formular des Kantons verwenden</strong> (<NormLink artikel="Art. 266l OR" /> Abs. 2):
             das vom Kanton genehmigte Kündigungsformular mit Rechtsmittelbelehrung — erhältlich bei der

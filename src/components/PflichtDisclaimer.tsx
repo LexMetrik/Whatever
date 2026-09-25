@@ -16,8 +16,14 @@ export function PflichtDisclaimer({ text, kurz }: { text?: string; kurz?: string
     //  ErlassLeserKopf) sitzen auf <span>/<div> und bleiben unberührt.
     <details className="lc-notice">
       <summary className="lc-overline cursor-pointer">Rechtlicher Hinweis – keine Rechtsberatung</summary>
-      {kurz && <p className="text-body-s text-ink-700 mt-2 font-medium">{kurz}</p>}
-      <p className="text-body-s text-ink-600 mt-2">
+      {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt — auf
+          24 Nutzern (`grep -rl "<PflichtDisclaimer" src`) lief der Hinweis
+          unter `content` bereits auf 973 px / 120–149 Zeichen je Zeile, über
+          beiden Decken (WCAG 1.4.8 ≤80, Haus ≤75); `weit` (B1a) hätte das auf
+          1293 px verschärft. `reading-s`: die Zahl, nicht die Aussage der
+          Rechtslogik ändert sich (§7/§8 unberührt). */}
+      {kurz && <p className="text-body-s text-ink-700 mt-2 font-medium max-w-reading-s">{kurz}</p>}
+      <p className="text-body-s text-ink-600 mt-2 max-w-reading-s">
         {text ??
           'Automatisierte Orientierungsberechnung – keine Rechtsberatung und keine verbindliche Fristberechnung. ' +
           'Massgeblich sind GAV, Vertrag, Versicherungspolice und der konkrete Sachverhalt; abweichende Regelungen gehen vor. ' +
