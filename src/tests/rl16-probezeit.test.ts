@@ -40,23 +40,27 @@ const PZ_FALL: SperrfristenInput = {
 const hatPzWarnung = (w: string[]) => w.some((x) => x.includes('Art. 335b Abs. 3 OR'));
 
 describe('F4-03 / VB-05 — Rechenweg zeigt dasselbe Probezeitende wie die Logik', () => {
-  it('VB 1.1.2025, 1 Monat → Ende 31.01.2025 (nicht 01.02.)', () => {
+  // Nachtrag RL-16b (25.9.2026, deklarierte Fachänderung): Das Ende selbst
+  // folgt seither BGE 144 III 152 E. 4.4.3 (gleichnamiger Tag, 01.02.) statt
+  // der Vortags-Regel (31.01.); geprüft bleibt, dass Rechenweg und Logik
+  // dasselbe Ende zeigen.
+  it('VB 1.1.2025, 1 Monat → Ende 01.02.2025 (BGE 144 III 152), Rechenweg = Logik', () => {
     const r = berechneKuendigungsfrist({
       vertragsbeginn: '2025-01-01', zugangKuendigung: '2025-09-10', kuendigendePartei: 'arbeitgeber',
       probezeitMonate: 1, kuendigungsterminMonatsende: true,
     });
     const s1 = r.ergebnis.rechenweg[0].zwischenergebnis;
-    expect(s1).toContain('Ende 31.01.2025');
-    expect(s1).not.toContain('01.02.2025');
+    expect(s1).toContain('Ende 01.02.2025');
+    expect(s1).not.toContain('31.01.2025');
   });
 
-  it('Zugang in der Probezeit: VB 1.1.2026, Zugang 20.1.2026 → Ende 31.01.2026', () => {
+  it('Zugang in der Probezeit: VB 1.1.2026, Zugang 20.1.2026 → Ende 01.02.2026', () => {
     const r = berechneKuendigungsfrist({
       vertragsbeginn: '2026-01-01', zugangKuendigung: '2026-01-20', kuendigendePartei: 'arbeitgeber',
       probezeitMonate: 1, kuendigungsterminMonatsende: true,
     });
     expect(r.istProbezeit).toBe(true);
-    expect(r.ergebnis.rechenweg[0].zwischenergebnis).toContain('Ende 31.01.2026');
+    expect(r.ergebnis.rechenweg[0].zwischenergebnis).toContain('Ende 01.02.2026');
   });
 });
 
