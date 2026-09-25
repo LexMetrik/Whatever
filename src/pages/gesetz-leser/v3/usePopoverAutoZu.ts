@@ -133,9 +133,24 @@ export function usePopoverAutoZu({ offen, schliesse, wrapRef, panelRef, modus, a
     window.addEventListener('keydown', taste);
     return () => {
       window.removeEventListener('keydown', taste);
-      if (vorher && typeof vorher.focus === 'function') vorher.focus();
+      // W3-2 (Audit 25.9.2026, @1024/1440): `vorher` ist beim Öffnen der
+      // geklickte Öffner — meist die Schiene (`data-v3-blatt-schiene`). Die
+      // verschwindet aber SOBALD das Panel offen ist (`LeserLeseZeile` rendert
+      // sie nur bei `bild.blattSchiene`, das beim Öffnen auf `false` kippt) —
+      // beim Schliessen ist die gemerkte Referenz darum längst verwaist, und
+      // `.focus()` darauf ist ein stiller No-op: der Fokus blieb auf BODY
+      // stehen (4/4 Belege: Esc/✕/Kopf-Knopf/„r"). Verwaist? Dann den gerade
+      // wieder sichtbaren Öffner über denselben Selektor suchen, den auch die
+      // Aussenklick-Ausnahme benutzt — beim Schliessen ist die Schiene wieder
+      // im DOM, bevor dieses Cleanup läuft (Effekt läuft nach dem Commit).
+      const ziel = vorher && vorher.isConnected
+        ? vorher
+        : aussenAusnahme
+          ? document.querySelector<HTMLElement>(aussenAusnahme)
+          : null;
+      if (ziel && typeof ziel.focus === 'function') ziel.focus();
     };
-  }, [offen, modus, panelRef]);
+  }, [offen, modus, panelRef, aussenAusnahme]);
 
   // ── Aussenklick — in JEDEM Modus ausser `spalte` (Herleitung im Kopf) ─────
   useEffect(() => {
