@@ -184,8 +184,8 @@ sperrt nicht) ⇒ Entwurf, weil check:merge-schutz dann nicht sperrte.
    Offene Befunde stehen im Kommentar-Block `wochenlauf-befunde` des Bodys;
    der nächste Lauf prüft sie zwingend erneut und hebt den Entwurf erst auf,
    wenn jeder erneut grün ist. Von Hand quittieren = Eintrag aus dem Block
-   streichen (mit Begründung im PR). BE ist wie SG/AG/GR ausgenommen (Datum
-   aus OCL unzuverlässig, `AUSGENOMMEN` in wochenlauf-kern.ts).
+   streichen (mit Begründung im PR). SG/AG/GR/BE: jeder neue Eintrag in der
+   Stichprobe (`DATUM_VOLLPRUEFUNG`).
 2. Pflicht-Gegenprüfung (Skill `gegenpruefung`, Prüfer ≠ Bau-Modell) mit den
    Linsen aus «Verifikation» oben, dazu **normKeys inhaltlich** (Remap-Zuwachs
    an Stichproben gegen den Entscheidtext, Lehre #1099). Die Auto-Stichprobe
