@@ -601,17 +601,16 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
       fehler = true;
       console.error(`❌ FEHLER (B6): ${b6.basisFehler}`);
     } else {
-      const ohneBasis = b6.ohneBasisNeu.length + b6.ohneBasisVersion.length;
-      if (ohneBasis > 0) {
+      if (b6.belegPflicht) {
         console.log(
-          `ℹ  B6: ${ohneBasis} Soll-Datei(en) ohne Vergleichsbasis (neu ${b6.ohneBasisNeu.length} / ` +
-            `Versionswechsel ${b6.ohneBasisVersion.length}) — Modus-C-Beleg ${b6.belegFehler ? 'UNGÜLTIG' : 'gültig'}.`,
+          `ℹ  B6: ${b6.ohneBasisNeu.length + b6.ohneBasisVersion.length} Soll-Datei(en) ohne Vergleichsbasis (neu ${b6.ohneBasisNeu.length} / ` +
+            `Versionswechsel ${b6.ohneBasisVersion.length}), Pin-Wechsel ${b6.pinwechsel.length} — Modus-C-Beleg ${b6.belegFehler ? 'UNGÜLTIG' : 'gültig'}.`,
         );
       }
       if (b6.belegFehler) {
         fehler = true;
         console.error(
-          `❌ FEHLER (B6/G4): Soll-Dateien ohne Vergleichsbasis verlangen einen gültigen ${BELEG_DATEINAME} — ${b6.belegFehler}`,
+          `❌ FEHLER (B6/G4/R3-4): Soll-Dateien ohne Vergleichsbasis oder mit Pin-Wechsel verlangen einen gültigen ${BELEG_DATEINAME} — ${b6.belegFehler}`,
         );
         console.error('   → mit vollständigem Cache: npm run check:segmente -- --schreiben (schreibt Soll UND Beleg)');
       }

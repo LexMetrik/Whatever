@@ -641,8 +641,12 @@ describe('G4 (Runde 3): B6 — Soll-Änderung klassieren, Modus-C-Beleg, Urteil'
       ],
       ungueltig,
     );
-    expect(u3).toMatchObject({ belegPflicht: false, verstoss: ['s/c.json'] });
-    expect(u3.belegFehler).toBeUndefined();
+    // R3-4 (GP 3, 25.9.2026 — deklarierte fachliche Änderung): vorher
+    // `belegPflicht: false`; ein Pin-Wechsel verlangt jetzt einen gültigen Beleg (F2).
+    expect(u3).toMatchObject({ belegPflicht: true, belegFehler: 'kein Beleg', pinwechsel: ['s/a.json'], verstoss: ['s/c.json'] });
+    expect(urteileB6([{ pfad: 's/a.json', art: 'pinwechsel' }], gueltig)).toMatchObject({ belegPflicht: true, verstoss: [] });
+    expect(urteileB6([{ pfad: 's/a.json', art: 'pinwechsel' }], gueltig).belegFehler).toBeUndefined();
+    expect(urteileB6([{ pfad: 's/a.json', art: 'unveraendert' }], ungueltig).belegPflicht).toBe(false);
   });
 });
 

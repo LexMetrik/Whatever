@@ -183,13 +183,19 @@ export interface B6Urteil {
   verstoss: string[]; // Pfade: Inhaltswechsel ohne Pin-/Versionswechsel oder unlesbar
   ohneBasisNeu: string[];
   ohneBasisVersion: string[];
+  pinwechsel: string[]; // R3-4: Pin gewandert — Inhaltswechsel nur mit gültigem Beleg
   belegPflicht: boolean;
   belegFehler?: string; // gesetzt ⇔ belegPflicht und Beleg ungültig
 }
 
 /**
  * Gesamturteil B6 aus den klassierten Änderungen. `beleg` wird nur gebraucht,
- * wenn mindestens eine Datei ohne Vergleichsbasis ist (neu/Versionswechsel).
+ * wenn mindestens eine Datei ohne Vergleichsbasis ist (neu/Versionswechsel)
+ * ODER ihr Pin gewandert ist. R3-4 (GP 3, 25.9.2026): ein Pin-Wechsel machte
+ * jeden Inhaltswechsel zulässig — ein Folge-PR konnte Pin wechseln und einen
+ * Anhang aus Soll UND Projektion streichen, B blieb grün (F2). Die Kaskade
+ * fährt ohnehin `--schreiben`, das den Beleg schreibt; die Pflicht kostet dort
+ * nichts. Grenze wie beim Versionswechsel: Reibung, keine Kryptografie.
  */
 export function urteileB6(
   aenderungen: ReadonlyArray<{ pfad: string; art: SollAenderung }>,
@@ -198,8 +204,9 @@ export function urteileB6(
   const verstoss = aenderungen.filter((a) => a.art === 'verstoss' || a.art === 'unlesbar').map((a) => a.pfad);
   const ohneBasisNeu = aenderungen.filter((a) => a.art === 'neu').map((a) => a.pfad);
   const ohneBasisVersion = aenderungen.filter((a) => a.art === 'versionswechsel').map((a) => a.pfad);
-  const belegPflicht = ohneBasisNeu.length + ohneBasisVersion.length > 0;
-  const urteil: B6Urteil = { verstoss, ohneBasisNeu, ohneBasisVersion, belegPflicht };
+  const pinwechsel = aenderungen.filter((a) => a.art === 'pinwechsel').map((a) => a.pfad);
+  const belegPflicht = ohneBasisNeu.length + ohneBasisVersion.length + pinwechsel.length > 0;
+  const urteil: B6Urteil = { verstoss, ohneBasisNeu, ohneBasisVersion, pinwechsel, belegPflicht };
   if (belegPflicht) {
     const b = beleg();
     if (!b.ok) urteil.belegFehler = b.grund;
