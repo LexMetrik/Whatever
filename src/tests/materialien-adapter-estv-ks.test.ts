@@ -6,6 +6,7 @@ import {
   erlasseAusArt,
   erlasseAusBeschreibung,
   titelDatumNachIso,
+  beschreibungDatumNachIso,
   versionsJahrAusTitel,
   anzeigeNummer,
   dokRang,
@@ -201,6 +202,73 @@ describe('baueDokUndKanten (Kaskade ehrlich, §0/A3)', () => {
     const { kanten } = baueDokUndKanten(roh, [dbst], '2026-07-04');
     expect(kanten).toHaveLength(1);
     expect(kanten[0]).toMatchObject({ erlass_key: 'DBG', artikel: '58', quelle: 'amtlich', konfidenz: 'regex-hoch' });
+  });
+});
+
+// W2·29-WERKBANK-LESER, Erlass-Blatt Welle 2 Daten-Rest (25.9.2026). Reproduktion am main
+// 59078ae8c (register.json): 50 von 70 ESTV-KS/-Weisungen trugen stand 2023-10-10 = das
+// Upload-Label der Indexseite (z. B. KS Nr. 11 vom 31.08.2005). Die amtliche Beschreibung
+// derselben Indexseite nennt das Dokumentdatum («… vom 31.08.2005 (Direkte Bundessteuer)»,
+// live https://www.estv.admin.ch/de/kreisschreiben-direkten-bundessteuer, 25.9.2026).
+describe('AN-2 — Dokumentdatum aus der amtlichen Beschreibung statt Upload-Label', () => {
+  const dbst = ESTV_KS_SEITEN[0];
+  it('Haupt-KS: «vom DD.MM.YYYY» der Beschreibung schlägt das Upload-Label', () => {
+    const roh: RohEstvItem = {
+      href: 'https://x/dam/de/sd-web/T/dbst-ks-2005-1-011-d-de.pdf',
+      titel: 'Kreisschreiben Nr. 11: Krankheits- und Unfallkosten',
+      beschreibung: 'Abzug von Krankheits- und Unfallkosten sowie von behinderungsbedingten Kosten vom 31.08.2005 (Direkte Bundessteuer)\nZu diesem Kreisschreiben gehört der folgende Anhang:',
+      datumLabel: '10. Oktober 2023', dateiname: 'dbst-ks-2005-1-011-d-de.pdf',
+    };
+    const { dok } = baueDokUndKanten(roh, [dbst], '2026-09-25');
+    expect(dok.stand).toBe('2005-08-31');
+    expect(dok.stand_quelle).toBe('hub-beschreibung');
+  });
+  it('Beilage: das Datum der Beschreibung ist das des Haupt-KS → Upload-Label bleibt (keine Aussage)', () => {
+    const roh: RohEstvItem = {
+      href: 'https://x/dam/de/sd-web/T/dbst-ks-2008-1-023-d-schema-de.pdf',
+      titel: 'Kreisschreiben Nr. 23 Beilage: Spartenrechnung',
+      beschreibung: 'Spartenrechnung gemäss Kreisschreiben Nr. 23 vom 17.12.2008 (Direkte Bundessteuer)',
+      datumLabel: '10. Oktober 2023', dateiname: 'dbst-ks-2008-1-023-d-schema-de.pdf',
+    };
+    const { dok } = baueDokUndKanten(roh, [dbst], '2026-09-25');
+    expect(dok.stand).toBe('2023-10-10');
+    expect(dok.stand_quelle).toBe('hub-label');
+  });
+  it('nur das erste Datum der ersten Zeile zählt (Anhang-Zeilen nennen fremde Daten)', () => {
+    expect(beschreibungDatumNachIso('Besteuerung von Trusts vom 27.03.2008 (Direkte Bundessteuer)\nDieses Kreisschreiben enthält folgenden Anhang:\n- Kreisschreiben Nr. 30 der SSK vom 22. August 2007')).toBe('2008-03-27');
+    expect(beschreibungDatumNachIso('Fragen und Antworten zum Kreisschreiben Nr. 45')).toBeNull();
+    expect(beschreibungDatumNachIso('Kapitaleinlageprinzip\nvom 09.12.2010')).toBeNull();
+  });
+});
+
+// AN-13 — Reproduktion am main 59078ae8c: ESTV-KS-W03-006 zeigt nummer «W03-006» (aus dem
+// Dateinamen dbst-ks-w03-006) unter dem amtlichen Titel «W01-006D vom 06.06.2001»; die 15
+// Weisungen der W-Serie tragen als Titel nur Signatur + Datum, der Gegenstand steht allein in
+// der amtlichen Beschreibung (live 25.9.2026: «W01-006D vom 06.06.2001 | Verordnung über die
+// pauschale Steueranrechnung»).
+describe('AN-13 — W-Serie: Signatur aus dem amtlichen Titel, Gegenstand aus der Beschreibung', () => {
+  const dbst = ESTV_KS_SEITEN[0];
+  const roh: RohEstvItem = {
+    href: 'https://x/dam/de/sd-web/T/dbst-ks-w03-006-de.pdf',
+    titel: 'W01-006D vom 06.06.2001',
+    beschreibung: 'Verordnung über die pauschale Steueranrechnung\n- Verordnung über die pauschale Steueranrechnung / Änderung vom 9. März 2001',
+    datumLabel: '10. Oktober 2023', dateiname: 'dbst-ks-w03-006-de.pdf',
+  };
+  it('nummer = Signatur des Titels (ohne Sprach-D), Key bleibt dateinamen-stabil', () => {
+    const { dok } = baueDokUndKanten(roh, [dbst], '2026-09-25');
+    expect(dok.id).toBe('ESTV-KS-W03-006');
+    expect(dok.nummer).toBe('W01-006');
+  });
+  it('titel = amtlicher Titel + «: » + erste Zeile der amtlichen Beschreibung (beide wörtlich)', () => {
+    const { dok } = baueDokUndKanten(roh, [dbst], '2026-09-25');
+    expect(dok.titel).toBe('W01-006D vom 06.06.2001: Verordnung über die pauschale Steueranrechnung');
+    expect(dok.stand).toBe('2001-06-06');
+  });
+  it('Titel mit eigenem Gegenstand bleibt unverändert; leere Beschreibung ändert nichts', () => {
+    const ks = baueDokUndKanten({ ...roh, titel: 'Kreisschreiben Nr. 3; Version vom 7. Februar 2024: Anzuwendende Prinzipien', dateiname: 'dbst-ks-w95-003-2024-de.pdf' }, [dbst], '2026-09-25').dok;
+    expect(ks.titel).toBe('Kreisschreiben Nr. 3; Version vom 7. Februar 2024: Anzuwendende Prinzipien');
+    const leer = baueDokUndKanten({ ...roh, beschreibung: '' }, [dbst], '2026-09-25').dok;
+    expect(leer.titel).toBe('W01-006D vom 06.06.2001');
   });
 });
 
