@@ -40,12 +40,12 @@ npm run entscheide -- --datum=$(date +%F) --remap
 npm run check:entscheide
 # Vor dem Push bei JEDEM Korpus-Zuwachs die volle Sammelkette + korpusabhängige e2e, nicht nur
 # gate:schnell: check:normkeys (Token-Schwelle 20) und e2e-Zahl-Pins reissen am Zuwachs
-# (Beleg #1099, 25.9.2026: «CV» 19→20 Snapshots, OR 41 BGE 20→21 — ein CI-Lauf verloren)
+# (Beleg #1099, 25.9.2026: ein CI-Lauf verloren)
 npm run check
 # Ebenfalls VOR der PR-Übergabe — beides reisst sonst erst im PR- bzw. merge_group-Lauf:
 #  · `npm run build && npm run check:perf-budget` — Daten-Nutzlast register.json (Budget 900 KB,
-#    Freigabe David 25.9.2026); Beleg #1112: im merge_group am Budget aus der Queue geworfen
-#  · `npm run check:fachaenderung -- --pr <n>` — Pin-Nachführungen brauchen im PR-Body
+#    Freigabe David 25.9.2026; Beleg #1112)
+#  · `npm run check:fachaenderung -- --pr <n>` — Pin-Nachführungen brauchen im Body
 #    «Fachaenderung: <Norm> — <Begründung>»; Beleg #1112: Form ohne « — » → Tore rot
 
 # §11-Übersichtsliste (bibliothek/) neu schreiben — NICHT von Hand editieren
@@ -232,6 +232,10 @@ auf einen NEUEN Regress deutet.
    `dirGroesseMB(PUB) > BUDGET_MB` ⇒ exit 1. Freigabe David 26.6.: pro Aufgabe **fliessend** setzen
    (Ist + grosszügige Reserve) — bremst Unfälle, limitiert nicht künstlich. Bei Korpus-Ausbau hier
    bewusst nachziehen, mit Begründungs-Kommentar (Anpassungs-Historie steht im File).
+
+10. **Kantonales `decision_date` ≠ Entscheiddatum (25.9.2026)** — oft Mitteilungs-/BGer-Datum; es gilt der
+    Urteilskopf (`entscheid-kopfdatum.ts`, PDF-Rückfall `entscheid-kantonsdatum.ts`), Bestand per
+    `--kopfdatum-refresh`. Beleg: `bibliothek/rechtsprechung/kantonales-entscheiddatum-kopf-2026-09-25.md`.
 
 Weitere am Code verdrahtete Invarianten (für `review.md` relevant), alle in `main()`
 (`scripts/normtext-entscheide.ts`): **BGE-Dedup** — ein bereits als BGE-Volltext erfasstes bger-Urteil

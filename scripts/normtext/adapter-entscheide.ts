@@ -16,6 +16,7 @@ import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
+import { kantonsEntscheiddatum, kopfSeitenFallsNoetig } from './entscheid-kantonsdatum';
 // markenPlausibel/MONAT leben jetzt in erwaegung-normalisieren.ts (Single Source, §5);
 // hier re-exportiert, damit bestehende Importeure/Tests stabil bleiben.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
@@ -27,7 +28,7 @@ import {
   sachgebietFuerEntscheid, bgeSachgebietHint, bgeRoemischSachgebiet,
 } from './sachgebiet-klassierung';
 
-const API = 'https://mcp.opencaselaw.ch/api';
+export const API = 'https://mcp.opencaselaw.ch/api';
 
 // Schlanke Typen der OCL-Rohantworten (nur die genutzten Felder; Index-Signatur
 // für den Rest). Ersetzt `any` (Tor @typescript-eslint/no-explicit-any).
@@ -280,6 +281,7 @@ export interface HoleOpts {
   normKeyHint?: string | null;
   /** Sprachfilter; default 'de'. null = alle. */
   sprache?: string | null;
+  amtlicheKopfSeiten?: string[] | null; // kantonal: Seiten 1–3 des amtlichen PDF (entscheid-kantonsdatum.ts)
 }
 
 /**
@@ -293,10 +295,10 @@ export function mappeEntscheidOCL(
   opts: HoleOpts = {},
 ): EntscheidSnapshot | null {
   if (!det || !det.decision_id) return null;
-  // #1 Plausibilität: ein Entscheid kann nicht NACH dem Abrufzeitpunkt datiert sein
-  // (der Crawl holt nichts aus der Zukunft). Solche Quelldaten sind unzuverlässig
-  // → nicht aufnehmen (ehrlich weglassen statt ein Zukunftsdatum zeigen, §8).
-  const datumRoh = String(det.decision_date ?? '');
+  // #1 Plausibilität: kein Entscheid NACH dem Abruf (Crawl holt nichts aus der Zukunft
+  // → ehrlich weglassen, §8). Kantonal gilt das Datum des amtlichen Urteilskopfs statt
+  // OCL-decision_date (QS-KORPUS 25.9.2026, entscheid-kantonsdatum.ts); Bund unverändert.
+  const datumRoh = String(det.canton ?? 'CH') !== 'CH' ? kantonsEntscheiddatum(det, opts.amtlicheKopfSeiten).datum : String(det.decision_date ?? '');
   if (datumRoh && abgerufen && datumRoh > abgerufen) return null;
 
   // ── Abschnitte aus der amtlichen Gliederung (oder Fallback full_text) ──
@@ -399,10 +401,9 @@ export function mappeEntscheidOCL(
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
   const rubrum = canton === 'CH' ? extrahiereRubrum(det.full_text) : null;
   // Zitierung inkl. Aktenzeichen-Norm „5A 229/2017" → „5A_229/2017" (Abnahme P3: Kopf/Tab/Zitat).
-  const datumDe = fmtDatumDe(String(det.decision_date ?? ''));
   const zitierung = (canton === 'CH'
-    ? String(det.citation_string_de ?? `BGer ${docket} vom ${datumDe}`)
-    : `${gerichtName} ${docket} vom ${datumDe}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
+    ? String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`)
+    : `${gerichtName} ${docket} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
 
   // Leitentscheid ⟺ amtliche Sammlung (BGE): Court 'bge' ODER BGE-Fundstelle.
   // KEIN '!!regeste'-Glied mehr — eine maschinelle/kantonale Regeste begründet keinen
@@ -427,7 +428,7 @@ export function mappeEntscheidOCL(
     nummer: docket,
     bgeReferenz: istBge ? docket : (det.bge_reference ? String(det.bge_reference) : null),
     zitierung,
-    datum: String(det.decision_date ?? ''),
+    datum: datumRoh,
     sprache,
     leitcharakter: leit ? 'leitentscheid' : 'routine',
     sachgebiet,
@@ -475,7 +476,7 @@ export async function holeEntscheidOCL(
   // paragraph_excerpt_chars: OCL-Maximum ist 5000 (höher → HTTP 422 → kein Strukturtext).
   const str = await jget<OclStructure>(`${API}/structure/${decisionId}?paragraph_excerpt_chars=5000`);
   await fuelleGekappteErwaegungen(decisionId, str);
-  return mappeEntscheidOCL(det, str, abgerufen, opts);
+  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten: await kopfSeitenFallsNoetig(det) });
 }
 
 /** Enumeration via Atom-Feed (Frische). Token-Regex auf den Gerichts-Präfix. */
