@@ -1,3 +1,4 @@
+// @shard-gruppe: 3
 import { test, expect } from '@playwright/test';
 
 // ─── /gesetze auf Stufe `weit` (W2·31-BILDSCHIRMBREITE B4, 25.9.2026) ────────

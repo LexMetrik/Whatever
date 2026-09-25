@@ -1,3 +1,4 @@
+// @shard-gruppe: 8
 import { test, expect } from '@playwright/test';
 import { SEITENBREITE } from '../src/components/layout/seitenbreite';
 
