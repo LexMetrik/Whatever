@@ -11,7 +11,7 @@ const SG_BV_2024_21 = 'Publikationsplattform St.Galler Gerichte Fall-Nr.: BV 202
 const SG_UV_2025_14_OCL = 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Saint-Gall Versicherungsgericht 23.10.2025 UV 2025/14 San Gallo Versicherungsgericht 23.10.2025 UV 2025/14 Art. 6 Abs. 1 UVG; Art. 11 UVV; Leistungspflicht der Unfallversicherung';
 const SG_UV_2025_14_PDF = [
   'Publikationsplattform St.Galler Gerichte Fall-Nr.: UV 2025/14 Stelle: Versicherungsgericht Rubrik: UV - Unfallversicherung Publikationsdatum: 21.11.2025 Entscheiddatum: 23.10.2025 Entscheid Versicherungsgericht, 23.10.2025 Art. 6 Abs. 1 UVG; Art. 11 UVV; Leistungspflicht der Unfallversicherung für Rückfall/Spät',
-  'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 21. Oktober 2025 Besetzung Versicherungsrichter Michael Rutz (Vorsitz)',
+  'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 21. Oktober 2025 Besetzung Versicherungsrichter Michael Rutz (Vorsitz), Versicherungsrichterinnen Mirjam Angehrn und Corinne Schambeck; a.o. Gerichtsschreiber Julian Gantenbein Geschäftsnr. UV 2025/14 Parteien',
   'UV 2025/14 2/16 Sachverhalt A. A.a A.___ (nachfolgend',
 ];
 const BE_100_2025_363_PDF = [
@@ -72,6 +72,15 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
   it('echt SG UV 2025/14: Titel auf PDF-Seite 2, Aktenzeichen im PDF ⇒ 21.10.2025', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
     expect(kantonsEntscheiddatum(d, SG_UV_2025_14_PDF)).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });
+  });
+  it('Titel zählt nur auf einer Seite MIT dem eigenen Aktenzeichen (Deckblatt-Az deckt keine Folgeseite, Nachprüfung 25.9.2026)', () => {
+    const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Regeste' });
+    const r = kantonsEntscheiddatum(d, ['Deckblatt UV 2025/14 Entscheiddatum: 23.10.2025', 'Urteil vom 1. Mai 2020 der Vorinstanz']);
+    expect(r.datum).not.toBe('2020-05-01');
+    expect(r).toMatchObject({ datum: '2025-10-23', quelle: 'kopf-ocl-volltext' });
+    // echte SG-Seite 2 ohne ihre Zeile «Geschäftsnr. UV 2025/14» ⇒ ebenfalls kein PDF-Datum
+    const ohneAz = [SG_UV_2025_14_PDF[0], SG_UV_2025_14_PDF[1].replace(' Geschäftsnr. UV 2025/14', ''), SG_UV_2025_14_PDF[2]];
+    expect(kantonsEntscheiddatum(d, ohneAz).quelle).toBe('kopf-ocl-volltext');
   });
   it('PDF ohne das eigene Aktenzeichen gilt nicht als Kopf dieses Entscheids', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });

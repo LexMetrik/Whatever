@@ -19,7 +19,7 @@ export type KantonsDatumQuelle = 'kopf-ocl-volltext' | 'kopf-amtliches-pdf' | 'o
  * Reihenfolge: (1) eigener Titel im OCL-Volltext-Kopf; (2) eigener Titel im Kopf
  * einer Seite des amtlichen PDF (SG-Deckblatt-Fall); (3) Plattform-Angabe im
  * OCL-Kopf («Entscheiddatum:», SG-Kopfzeile); (4) OCL-`decision_date`. Rein (§2).
- * Das PDF zählt nur, wenn eine seiner Seiten das EIGENE Aktenzeichen trägt
+ * Eine PDF-Seite zählt nur, wenn SIE SELBST das EIGENE Aktenzeichen trägt
  * (Identität, `aktenzeichenRe`: auch BE-Punktform «100.2025.363U»). Ein
  * `widerspruch` im OCL-Kopf setzt KEIN Kopfdatum (OCL-Wert, gemeldet über
  * `kopfdatumRueckfallMeldung`; der Bestands-Refresh bricht ab).
@@ -38,7 +38,11 @@ export function kantonsEntscheiddatum(
   const seiten = (amtlicheKopfSeiten ?? []).map(pdfKopfNormalisieren);
   const az = aktenzeichenRe(docket);
   const pdfEigen = !!az && seiten.some((s) => az.test(s));
-  for (const seite of pdfEigen ? seiten : []) {
+  // Identität je Seite: der Titel zählt nur, wenn DIESELBE Seite das eigene
+  // Aktenzeichen trägt (Nachprüfung 25.9.2026: Deckblatt mit Az auf S. 1 machte
+  // sonst ein Vorinstanz-«Urteil vom …» auf S. 2 zum Kopfdatum). Beleg: alle
+  // sechs SG-Titelseiten im Bestand tragen es («Geschäftsnr. UV 2025/14»).
+  for (const seite of az ? seiten.filter((s) => az.test(s)) : []) {
     const k = kopfEntscheiddatum(seite, docket);
     if (k.status === 'ok' && k.regel === 'titel-vom') {
       const abw = ocl.status === 'ok' && ocl.datum !== k.datum ? [{ datum: ocl.datum, regel: ocl.regel, beleg: ocl.beleg }] : [];

@@ -121,7 +121,7 @@ describe('mappeEntscheidOCL — Entscheiddatum aus dem Kopf (kantonal) ', () => 
       full_text: 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Saint-Gall Versicherungsgericht 23.10.2025 UV 2025/14 Art. 6 Abs. 1 UVG; Leistungspflicht der Unfallversicherung.',
     });
     expect(kantonsEntscheiddatum(det).datum).toBe('2025-10-23');
-    const seiten = ['Publikationsplattform St.Galler Gerichte Fall-Nr.: UV 2025/14 Entscheiddatum: 23.10.2025', 'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 2 1 . Oktober 2025 Besetzung'];
+    const seiten = ['Publikationsplattform St.Galler Gerichte Fall-Nr.: UV 2025/14 Entscheiddatum: 23.10.2025', 'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 2 1 . Oktober 2025 Besetzung Geschäftsnr. UV 2025/14 Parteien'];
     const r = kantonsEntscheiddatum(det, seiten);
     expect(r).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });
     expect(mappeEntscheidOCL(det, null, '2026-09-25', { amtlicheKopfSeiten: seiten })!.datum).toBe('2025-10-21');
