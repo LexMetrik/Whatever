@@ -224,7 +224,10 @@ describe('Befund 2 — stiller Rückfall auf OCL decision_date wird gemeldet', (
   });
   it('Kopfdatum gefunden ⇒ keine Meldung', () => {
     const d = det({ docket_number: 'UV 2025/14', full_text: SG_UV_2025_14_OCL });
-    expect(kopfdatumRueckfallMeldung(d, kantonsEntscheiddatum(d, null))).toBeNull();
+    expect(kopfdatumRueckfallMeldung(d, kantonsEntscheiddatum(d, SG_UV_2025_14_PDF))).toBeNull();
+    // Fachliche Änderung 25.9.2026 (PDF-Ausfall-Befund): die SG-Plattform-Kopfzeile allein ist
+    // kein Kopfdatum — ohne PDF meldet der Rückfall jetzt «amtliches PDF nicht verfügbar».
+    expect(kopfdatumRueckfallMeldung(d, kantonsEntscheiddatum(d, null))).toMatch(/Plattformdatum .* amtliches PDF nicht verfügbar$/);
   });
 });
 

@@ -22,7 +22,7 @@ const sg = (over: Partial<OclDecision> = {}): OclDecision => ({
 const bestand = () => mappeEntscheidOCL(sg(), null, '2026-06-26', { amtlicheKopfSeiten: PDF_SEITEN, sprache: null })!;
 
 /** Minimales einseitiges PDF (ASCII-Text), damit pdfjs echte Seiten liefert. */
-function minimalPdf(text: string): Uint8Array {
+function minimalPdf(text: string): ArrayBuffer {
   const inhalt = `BT /F1 12 Tf 72 700 Td (${text}) Tj ET`;
   const objs = [
     '<< /Type /Catalog /Pages 2 0 R >>',
@@ -37,7 +37,7 @@ function minimalPdf(text: string): Uint8Array {
   const xref = pdf.length;
   pdf += `xref\n0 ${objs.length + 1}\n0000000000 65535 f \n${off.map((o) => `${String(o).padStart(10, '0')} 00000 n \n`).join('')}`;
   pdf += `trailer\n<< /Size ${objs.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
-  return new TextEncoder().encode(pdf);
+  return new TextEncoder().encode(pdf).buffer as ArrayBuffer;
 }
 /** fetch-Mock, der nur auf den Abbruch (AbortSignal) reagiert: ein Server, der nicht antwortet. */
 const stumm = (abbrueche: number[]) => (_u: unknown, init?: RequestInit) => new Promise<Response>((_, rej) => {
@@ -102,7 +102,7 @@ describe('Punkt 2 — Live-Import: fehlendes PDF ist erkennbar (Quelle plattform
     expect(warn.mock.calls.map((c) => String(c[0])).filter((m) => m.startsWith('[kopfdatum] Rückfall'))).toEqual([
       '[kopfdatum] Rückfall auf Plattformdatum 2025-10-23: sg_gerichte UV 2025/14 — kopfzeile-datum-az=2025-10-23 im OCL-Kopf ohne eigenen Titel; amtliches PDF nicht verfügbar',
     ]);
-    expect(await holeEntscheidOCL('sg_gerichte_UV_2025_14', '2026-09-25', { sprache: null, nurMitAmtlichemKopf: true } as never)).toBeNull();
+    expect(await holeEntscheidOCL('sg_gerichte_UV_2025_14', '2026-09-25', { sprache: null, nurMitAmtlichemKopf: true })).toBeNull();
     expect(pdfAbrufe.length).toBeGreaterThan(0);
     expect(pdfAbrufe.every((u) => u === PDF_URL)).toBe(true); // nur die amtliche Quelle
   }, 15_000);
@@ -133,14 +133,14 @@ describe('Punkt 3 — Abruf des amtlichen PDF: Grenze 60 s, ein neuer Versuch', 
       return new Response(minimalPdf('Entscheid vom 21. Oktober 2025 UV 2025/14'), { status: 200 });
     });
     vi.spyOn(console, 'warn').mockImplementation(() => {});
-    const seiten = await holeAmtlicheKopfSeiten(PDF_URL, { pauseMs: 0 } as never);
+    const seiten = await holeAmtlicheKopfSeiten(PDF_URL, { pauseMs: 0 });
     expect(n).toBe(2);
     expect(seiten?.join(' ')).toMatch(/Entscheid vom 21\. Oktober 2025 UV 2025\/14/);
   });
   it('HTTP 404 ⇒ kein neuer Versuch', async () => {
     let n = 0;
     vi.stubGlobal('fetch', async () => { n++; return new Response('nicht gefunden', { status: 404 }); });
-    expect(await holeAmtlicheKopfSeiten(PDF_URL, { pauseMs: 0 } as never)).toBeNull();
+    expect(await holeAmtlicheKopfSeiten(PDF_URL, { pauseMs: 0 })).toBeNull();
     expect(n).toBe(1);
   });
 });

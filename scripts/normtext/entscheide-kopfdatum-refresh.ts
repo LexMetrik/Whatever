@@ -14,7 +14,10 @@
 // Tore (§1): exakte Identität court + Aktenzeichen und gleiche Snapshot-id
 // (OCL-Suche ist präfixunscharf, Quirk 8); ein nicht auflösbarer Snapshot
 // bricht den GANZEN Lauf ab (nie ein halb korrigierter Korpus) — ebenso ein
-// Kopf-Widerspruch (Titel ≠ Plattform ohne Identitätsbeleg, Gegenprüfung #1126).
+// Kopf-Widerspruch (Titel ≠ Plattform ohne Identitätsbeleg, Gegenprüfung #1126) —
+// ebenso ein Datumswechsel, dessen neues Datum nicht aus einem EIGENEN Titel stammt
+// (Plattform-/OCL-Feld): ein Bestandsdatum weicht nie still einem Plattformdatum
+// (Befund 25.9.2026: SG-PDF-Zeitüberschreitung, UV 2025/14 kurz 23.10. statt 21.10.2025).
 // Bund (canton CH) und BS (eigener Import, quelle 'gerichte-bs') sind ausgenommen.
 
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
@@ -32,6 +35,8 @@ export interface KopfRefreshZeile {
   abweichung: string;
   /** OCL-Inhalt seit dem Abruf verändert (content_hash ≠ fassungsToken) — nur Hinweis */
   hashDrift: boolean;
+  /** amtliches PDF nötig, aber nicht verfügbar (Datum unverändert, sonst Abbruch) */
+  pdfFehlt: boolean;
 }
 
 export interface KopfRefreshDeps {
@@ -53,6 +58,7 @@ export const istKantonalOcl = (s: EntscheidSnapshot): boolean => s.kanton !== 'C
 export async function kopfdatumRefresh(basis: EntscheidSnapshot[], deps: KopfRefreshDeps): Promise<KopfRefreshZeile[]> {
   const zeilen: KopfRefreshZeile[] = [];
   const ungeloest: string[] = [];
+  let pdfAusfall = 0;
   const plan: Array<{ s: EntscheidSnapshot; datum: string; zitierung: string }> = [];
   for (const s of basis.filter(istKantonalOcl).sort((a, b) => a.id.localeCompare(b.id))) {
     const det = await deps.holeDecision(s);
@@ -72,16 +78,23 @@ export async function kopfdatumRefresh(basis: EntscheidSnapshot[], deps: KopfRef
       ungeloest.push(`${s.id} (Abbildung ${m ? `id/Gericht ${m.id}/${m.gerichtName}` : 'null'})`);
       continue;
     }
+    const titel = r.quelle !== 'ocl-decision_date' && r.kopf.status === 'ok' && r.kopf.regel === 'titel-vom';
+    if (m.datum !== s.datum && !titel) {
+      if (r.pdfFehlt) pdfAusfall++;
+      ungeloest.push(`${s.id} (${r.pdfFehlt ? 'PDF nicht verfügbar' : 'Plattformdatum ohne eigenen Titel'}: ${s.datum} → ${m.datum} aus ${r.quelle})`);
+      continue;
+    }
     zeilen.push({
       id: s.id, alt: s.datum, neu: m.datum, quelle: r.quelle,
       beleg: r.kopf.status === 'ok' ? r.kopf.beleg : (r.grund ?? r.kopf.status),
       abweichung: r.kopf.status === 'ok' ? r.kopf.abweichung.map((a) => `${a.regel}=${a.datum}`).join(', ') : '',
       hashDrift: !!det.content_hash && String(det.content_hash) !== s.fassungsToken,
+      pdfFehlt: !!r.pdfFehlt,
     });
     plan.push({ s, datum: m.datum, zitierung: m.zitierung });
   }
   if (ungeloest.length) {
-    throw new Error(`[kopfdatum-refresh] ABBRUCH — ${ungeloest.length} kantonale Snapshot(s) nicht exakt auflösbar: ${ungeloest.join(', ')}`);
+    throw new Error(`[kopfdatum-refresh] ABBRUCH, nichts geändert — ${ungeloest.length} kantonale Snapshot(s) ungelöst · PDF nicht verfügbar: ${pdfAusfall}: ${ungeloest.join(', ')}`);
   }
   for (const p of plan) {
     // Nur bei Datumswechsel schreiben — sonst byte-treu (§6).
@@ -126,7 +139,8 @@ export async function kopfdatumRefreshLauf(datum: string): Promise<void> {
   }
   const geaendert = zeilen.filter((z) => z.alt !== z.neu).length;
   const ohneKopf = zeilen.filter((z) => z.quelle === 'ocl-decision_date').length;
-  console.log(`[kopfdatum] ${zeilen.length} kantonale OCL-Snapshots · Datum korrigiert: ${geaendert} · ohne Kopfdatum (OCL-Wert behalten): ${ohneKopf}`);
+  const pdfFehlt = zeilen.filter((z) => z.pdfFehlt).length;
+  console.log(`[kopfdatum] ${zeilen.length} kantonale OCL-Snapshots · Datum korrigiert: ${geaendert} · ohne Kopfdatum (OCL-Wert behalten): ${ohneKopf} · PDF nicht verfügbar (Datum unverändert): ${pdfFehlt}`);
   const res = schreibeKorpus(basis, datum);
   console.log(`[kopfdatum] geschrieben: ${res.anzahl} Manifest-Einträge, ${res.normBuckets} Norm-Buckets.`);
 }
