@@ -101,11 +101,12 @@ for (const { breite, hoehe, leiste } of GESTAPELT) {
 //  (5) B2 @1920: die Datums-Kachel «TT.MM.JJJJ · 24.00 Uhr» steht einzeilig
 //      (vorher Kachel 205 px bei 221 px Bedarf → zweizeilig).
 //  (6) B3 @1920: die Phasen-Leisten von ZPO (684/640 px) und SchKG
-//      (1088/640 px) laufen nicht mehr in einen Querscroll — sie brechen um.
+//      (1088/640 px) laufen nicht mehr in einen Querscroll — sie brechen um,
+//      und die Leiste umschliesst ihre Zeilen (kein Überlappen des Folgefelds).
 // ROT ZU BEKOMMEN (§6.7, Beweis im Commit): (4) in index.css die beiden
 // `[data-fehlerbox]`-/`::after`-Regeln streichen; (5) `.lc-kachelraster` auf
-// `grid-template-columns: repeat(3, minmax(0, 1fr))` setzen; (6) in ui/Tabs.tsx
-// die `@[72rem]/rechnerkarte:`-Klassen streichen.
+// `grid-template-columns: repeat(3, minmax(0, 1fr))` setzen; (6) in index.css
+// die `.lc-reiterleiste`-Regeln streichen.
 
 // Erstes Text-/Datumsfeld der Formularwurzel (Datumsfelder sind Textfelder, `DatumInput`).
 const ERSTES_FELD = '.lc-rechner-spalten input:is([type=text],[type=date],:not([type])):visible';
@@ -178,8 +179,12 @@ for (const slug of ['zpo-fristen', 'schkg-fristen']) {
     const m = await leiste.evaluate((l) => ({
       scroll: l.scrollWidth, sicht: l.clientWidth,
       knopf: Math.min(...[...l.children].map((k) => k.getBoundingClientRect().height)),
+      // Umbruch ohne Überlappung: die Leiste umschliesst alle Reiterzeilen
+      // (mit fester Höhe ragte die zweite Zeile ins nächste Feld).
+      ueberstand: Math.max(...[...l.children].map((k) => k.getBoundingClientRect().bottom)) - l.getBoundingClientRect().bottom,
     }));
     expect(m.scroll).toBeLessThanOrEqual(m.sicht);
     expect(m.knopf).toBeGreaterThanOrEqual(36);
+    expect(m.ueberstand).toBeLessThanOrEqual(1);
   });
 }

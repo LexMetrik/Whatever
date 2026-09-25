@@ -131,17 +131,13 @@ export function Tabs<T extends string>({
       // eine Bewegung, die es nicht gibt, ist ein Fleck. Dieselbe Bauform wie
       // die `lg:bg-none`-Zeile an der Seitenleisten-Schiene.
       // ── W2·31-BILDSCHIRMBREITE B3-Nachzug (Gegenprüfung 26.9.2026, Mangel B3)
-      //    · IN DER BREITEN WERKZEUG-KARTE WIRD EBENFALLS UMBROCHEN ──────────
-      // Ab 72rem Kartenbreite steht die Eingabe in der linken Spalte (index.css
-      // `.lc-rechner-spalten`, ~624–640 px). GEMESSEN @1920 am gebauten Stand:
-      // ZPO-Phasen 684/640 px, SchKG-Phasen 1088/640 px (448 px, vier von neun
-      // Phasen verborgen). Ein anderes Spaltenverhältnis hilft der SchKG-Leiste
-      // nicht und nähme der Erben-Tabelle rechts (712 px) die Breite — darum
-      // dieselbe Antwort wie unter 400 px: umbrechen statt schieben. `flex-wrap`
-      // bricht nur, wenn der Platz fehlt; passt die Leiste, bleibt sie eine
-      // Zeile. `min-h-9` am Knopf hält die Desktop-Höhe, die die feste
-      // Container-Höhe im umgebrochenen Zustand nicht mehr gibt.
-      className={`print:hidden flex ${HOEHE[groesse]} items-stretch gap-4 w-fit max-w-full overflow-x-auto lc-scrollrand-x max-[400px]:flex-wrap max-[400px]:h-auto max-[400px]:overflow-x-visible max-[400px]:bg-none @[72rem]/rechnerkarte:flex-wrap @[72rem]/rechnerkarte:h-auto @[72rem]/rechnerkarte:overflow-x-visible @[72rem]/rechnerkarte:bg-none`}
+      //    · IN DER EINGABESPALTE DER BREITEN WERKZEUG-KARTE WIRD UMBROCHEN ──
+      // `lc-reiterleiste` ist nur der Griff: ab 72rem Kartenbreite steht die
+      // Eingabe links (~624–640 px), und die Regel in index.css (Block
+      // `.lc-rechner-spalten`) bricht die Leiste dort um, statt sie zu
+      // schieben — GEMESSEN @1920: ZPO-Phasen 684/640 px, SchKG 1088/640 px
+      // (vier von neun Phasen verborgen). Herleitung und Abwägung dort.
+      className={`lc-reiterleiste print:hidden flex ${HOEHE[groesse]} items-stretch gap-4 w-fit max-w-full overflow-x-auto lc-scrollrand-x max-[400px]:flex-wrap max-[400px]:h-auto max-[400px]:overflow-x-visible max-[400px]:bg-none`}
     >
       {items.map((it, i) => {
         const aktiv = value === it.code;
@@ -178,7 +174,7 @@ export function Tabs<T extends string>({
             // Container geclippt und wäre wirkungslos. h-8/h-9 erfüllen
             // WCAG 2.2 AA (≥24px); AAA (44px) ist in einer scrollbaren
             // Segmented-Control ohne Redesign nicht erreichbar.
-            className={`lc-tab shrink-0 whitespace-nowrap max-[400px]:min-h-11 @[72rem]/rechnerkarte:min-h-9 ${KNOPF[groesse]}`}
+            className={`lc-tab shrink-0 whitespace-nowrap max-[400px]:min-h-11 ${KNOPF[groesse]}`}
           >
             {it.label}
           </button>

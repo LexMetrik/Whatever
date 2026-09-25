@@ -5138,4 +5138,24 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
     min-height: 10rem;
     border-top: 1px dashed var(--rule-soft);
   }
+  /* Nachzug Mangel B3: Reiterleisten (`ui/Tabs`, Griff `lc-reiterleiste`) in
+     der Eingabespalte brechen um, statt zu schieben. Gemessen @1920: ZPO-
+     Phasen 684 px in 640, SchKG-Phasen 1088 px in 640 (448 px, vier von neun
+     Phasen ausserhalb des Bildes). Abwägung: ein anderes Spaltenverhältnis
+     löst SchKG nicht (1088 > jede sinnvolle linke Spur) und nähme der Erben-
+     Tabelle rechts die 712 px; die Scroll-Affordanz allein liesse Phasen
+     unsichtbar. Umbrechen ist die Antwort, die Tabs unter 400 px schon gibt
+     (R-1) — `flex-wrap` bricht nur, wo der Platz fehlt. Die feste Höhe
+     (`sm:h-9`) weicht der Inhaltshöhe, `min-height` am Reiter hält die
+     Desktop-Höhe je Zeile; der Scroll-Schatten entfällt mit dem Schieben.
+     Hier und nicht als `@[72rem]/rechnerkarte:`-Utility im Baustein: das
+     Container-Plugin gibt seine Varianten VOR `sm:` aus, `sm:h-9` gewann
+     (gemessen: zweite Reiterzeile überlappte das nächste Feld). */
+  .lc-rechner-spalten .lc-reiterleiste {
+    flex-wrap: wrap;
+    height: auto;
+    overflow-x: visible;
+    background: none;
+  }
+  .lc-rechner-spalten .lc-reiterleiste > .lc-tab { min-height: 2.25rem; }
 }
