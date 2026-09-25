@@ -31,6 +31,7 @@ import { parseFedlexCacheEintraege, type FedlexCacheEintrag } from './inventar-b
 import { pinBefund, pinIdentitaet } from './cache-pin-befund.ts';
 import {
   addiereZeilenStatistik,
+  alleAnhangEids,
   alleArtikelEids,
   ankerIdVonEid,
   fehlendeIndizes,
@@ -60,6 +61,22 @@ import {
 // `getElementById('art_126_z')` liefert stattdessen IMMER das ERSTE Vorkommen.
 // Jede WEITERE Ausklammerung ist ein echter Befund, kein bekannter Fall.
 const AUSKLAMMERUNG_AUSNAHME = 'KKV\u0000art_126_z__2';
+
+// G3 (Runde 3): Anker, die die HTML trägt, die Projektion aber bewusst bzw.
+// bekanntermassen NICHT als Eintrag führt — geprüft gegen HTML UND AKN-XML
+// (25.9.2026). Jede weitere solche Lücke ist ein Rückschritt (rot); eine
+// Ausnahme, die nicht mehr eintritt, ist veraltet (rot).
+const OHNE_PROJEKTION_BEKANNT: ReadonlyMap<string, string> = new Map([
+  // Deckblatt «Anhänge» — reine Inhaltsübersicht der nummerierten Anhänge,
+  // kein eigener Anhang (dieselbe Regel wie der Extraktor, dort `alleAnhangAnker`).
+  ['CHEMRRV\u0000annex_u1', 'Deckblatt-Inhaltsübersicht, kein eigener Eintrag'],
+  // ECHTER VERLUST, neue Verlust-Klasse: die «Beilage — Beschreibung der
+  // Führerausweiskategorien» (VZV, SR 741.51, Stand 1.1.2026) steht in HTML und
+  // AKN-XML (eId annex_u1/lvl_u1), fehlt in der Projektion; der Extraktor
+  // verwirft unnummerierte annex_uN als Deckblatt, sobald nummerierte Anhänge
+  // existieren. Befund zur Behebung gemeldet (Bau-Bericht Runde 3).
+  ['VZV\u0000annex_u1', 'normtext-treue-deckblatt: Beilage vom Extraktor als Deckblatt verworfen (echter Verlust)'],
+]);
 
 const STANDARD_CACHE_DIR = '/tmp';
 const cacheDir = process.env.LEXMETRIK_FEDLEX_CACHE_DIR || STANDARD_CACHE_DIR;
@@ -190,7 +207,9 @@ function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
   const eIdsAusProjektion = [...(projektion?.values() ?? [])]
     .filter((eintrag) => eintrag.id.startsWith(praefix)) // sollte laut Schema nie vorkommen (empirisch geprüft, 25601/25601)
     .map((eintrag) => eintrag.id.slice(praefix.length));
-  const alleEids = [...new Set([...alleArtikelEids(dokument), ...eIdsAusProjektion])].sort();
+  const alleEids = [
+    ...new Set([...alleArtikelEids(dokument), ...alleAnhangEids(dokument), ...eIdsAusProjektion]),
+  ].sort();
 
   const artikel: Record<string, Fingerabdruck[]> = {};
   const auszuegeJeEid = new Map<string, Map<string, string>>();
@@ -560,12 +579,31 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
       `❌ FEHLER: nur ${z.geprueftArtikelGesamt} Artikel geprüft (Mindestzahl ${MINDEST_ARTIKELZAHL}) — Prüfung unzuverlässig statt grün.`,
     );
   }
-  if (z.keinProjektionsEintragGesamt.length > 0) {
+  // G3: dokumentierte Anker ohne Projektions-Eintrag (OHNE_PROJEKTION_BEKANNT)
+  // melden statt rot; jede andere Lücke ist ein Rückschritt; eine Ausnahme, die
+  // in einem geprüften Erlass nicht mehr eintritt, ist veraltet.
+  const schluessel = (a: { erlass: string; eId: string }): string => `${a.erlass}\u0000${a.eId}`;
+  const bekanntOhne = z.keinProjektionsEintragGesamt.filter((a) => OHNE_PROJEKTION_BEKANNT.has(schluessel(a)));
+  const rueckschritt = z.keinProjektionsEintragGesamt.filter((a) => !OHNE_PROJEKTION_BEKANNT.has(schluessel(a)));
+  const getroffen = new Set(bekanntOhne.map(schluessel));
+  const ausnahmeVeraltet = [...OHNE_PROJEKTION_BEKANNT.keys()].filter(
+    (k) => z.geprueftErlasse.has(k.split('\u0000')[0]) && !getroffen.has(k),
+  );
+  if (bekanntOhne.length > 0) {
+    console.log(`ℹ  ${bekanntOhne.length} dokumentierte(r) Anker ohne Projektions-Eintrag (G3):`);
+    for (const a of bekanntOhne) console.log(`   · ${a.erlass} ${a.eId} — ${OHNE_PROJEKTION_BEKANNT.get(schluessel(a))}`);
+  }
+  if (ausnahmeVeraltet.length > 0) {
+    fehler = true;
+    console.error(`❌ FEHLER: OHNE_PROJEKTION_BEKANNT veraltet (Anker hat jetzt einen Eintrag oder fehlt in der HTML) — Ausnahme entfernen:`);
+    for (const k of ausnahmeVeraltet) console.error(`   · ${k.replace('\u0000', ' ')}`);
+  }
+  if (rueckschritt.length > 0) {
     fehler = true;
     console.error(
-      `❌ FEHLER: ${z.keinProjektionsEintragGesamt.length} im Soll bekannte Artikel haben KEINEN Projektions-Eintrag mehr (Rückschritt):`,
+      `❌ FEHLER: ${rueckschritt.length} im Soll bekannte Artikel haben KEINEN Projektions-Eintrag mehr (Rückschritt):`,
     );
-    for (const { erlass, eId } of z.keinProjektionsEintragGesamt.slice(0, 20)) console.error(`   · ${erlass} ${eId}`);
+    for (const { erlass, eId } of rueckschritt.slice(0, 20)) console.error(`   · ${erlass} ${eId}`);
   }
   if (abgleich.neu.length > 0) {
     fehler = true;

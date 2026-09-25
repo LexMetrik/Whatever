@@ -238,6 +238,26 @@ export function alleArtikelEids(dokument: { querySelectorAll: (sel: string) => I
   return [...eids];
 }
 
+// G3 (Runde 3): Anhang-, scope- und decl-Anker der OBERSTEN Ebene (id ohne «/»)
+// gehören ebenfalls in die HTML-Artikelmenge — sonst blieb ein aus Projektion
+// UND Soll gelöschter Anhang in B und C grün (P13d, ChemRRV annex_2_16). Nur
+// <section> (der Container `<div id="annex">` und Gliederungs-`lvl_*` des
+// Haupttexts sind keine Einträge). Unabhängig vom Extraktor (§ Architektur
+// Ziff. 3 — `alleAnhangAnker` in extrahiere-fedlex.ts wird bewusst NICHT
+// importiert): empirisch 25.9.2026 deckt diese Menge alle 427 Projektions-
+// Einträge ausserhalb art_/disp_ (0 fehlend); nur in der HTML: CHEMRRV und VZV
+// `annex_u1` (s. OHNE_PROJEKTION_BEKANNT in check-segmente.ts).
+const ANHANG_ANKER_MUSTER = /^(?:annex|scope|decl)[^/]*$/;
+
+export function alleAnhangEids(dokument: { querySelectorAll: (sel: string) => Iterable<Knoten> }): string[] {
+  const eids = new Set<string>();
+  for (const el of dokument.querySelectorAll('section[id]')) {
+    const ankerId = el.getAttribute('id') as string;
+    if (ANHANG_ANKER_MUSTER.test(ankerId)) eids.add(ankerId);
+  }
+  return [...eids];
+}
+
 // Absatznummer-Muster (Fedlex-Konvention: <sup>1</sup>, <sup>1bis</sup>, …) —
 // ganze Zeichenkette muss passen (§7 CLAUDE.md: kein Teilstring-Treffer).
 const ABSATZNUMMER_MUSTER =

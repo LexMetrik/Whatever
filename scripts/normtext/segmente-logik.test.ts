@@ -10,6 +10,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import {
+  alleAnhangEids,
   alleArtikelEids,
   ankerIdVonEid,
   fehlendeIndizes,
@@ -440,6 +441,16 @@ describe('G1 (Runde 3): Zeilen-Fingerabdruck je ZEILE aus der HTML, nicht je Pro
       { art: 'p', text: 'kurz' },
     ]);
     expect(fps.map((f) => f.fp.laenge)).toEqual([6]);
+  });
+});
+
+describe('alleAnhangEids — G3 (Runde 3): Anhang-/scope-/decl-Anker der obersten Ebene', () => {
+  it('findet annex_*, scope_*, decl_* als <section>, ignoriert Unterstufen, den div-Container und lvl_* des Haupttexts', () => {
+    const html =
+      '<section id="lvl_I"><article id="art_1"><p>x</p></article></section>' +
+      '<div id="annex"><section id="annex_2_16"><h1>Anhang 2.16</h1><section id="annex_2_16/lvl_u1"><p>y</p></section></section>' +
+      '<section id="scope_u1"><p>z</p></section><section id="decl_u1"><p>w</p></section></div>';
+    expect(alleAnhangEids(parseErlassHtml(html)).sort()).toEqual(['annex_2_16', 'decl_u1', 'scope_u1']);
   });
 });
 
