@@ -14,7 +14,6 @@
 "bge_151_II_742":{"zitierung":"BGE 151 II 742","regesteKurz":"Art. 3 Abs. 1 lit. a und Abs. 2, Art. 4 Abs. 2, Art. 7 Abs. 1 und 2 lit. e und f, Art. 49a KG; Art. 3 SVKG; Art. 5 Abs. 2 der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Wettbewerbsbeeinträchtigung als Voraussetzung…","datum":"2025-01-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_152_IV_189":{"zitierung":"BGE 152 IV 189","regesteKurz":"Art. 1b BetmG; Verhältnis zwischen dem Betäubungsmittelgesetz (BetmG) und dem Heilmittelgesetz (HMG) hinsichtlich der Einfuhr von als Heilmittel verwendeten Betäubungsmitteln. Das BetmG geht dem HMG hinsichtlich der Einfuhr von als…","datum":"2025-10-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_152_IV_189__voll":{"zitierung":"Urteil 7B_444/2025 (nicht publ. in BGE 152 IV 189)","regesteKurz":null,"datum":"2025-10-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 IV 189","urteil":"7B_444/2025"}},
-"bpatger_S2024_008":{"zitierung":"BPatGer S2024_008 vom 12. Juni 2025","regesteKurz":"Einschränkung, Schutzzertifikat, Vorsorgliche Massnahme (provisorisch)","datum":"2025-06-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bs_appellationsgericht_SB.2023.2":{"zitierung":"Appellationsgericht BS SB.2023.2 vom 12.08.2025","regesteKurz":"Verbrechen gegen das Betäubungsmittelgesetz (mit Gefährdung der Gesundheit vieler Menschen und Gewerbsmässigkeit),…","datum":"2025-08-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_SG.2019.7":{"zitierung":"Sozialversicherungsgericht BS SG.2019.7 vom 16.08.2022","regesteKurz":"Leistungen gemäss Arzneimittelliste mit Tarif (ALT) (Bundesgerichtsurteil 9C_65/2023 vom 18.3.2024)…","datum":"2022-08-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
@@ -25,7 +24,6 @@
 "4":[{"key":"bge_152_IV_189","gewicht":0},{"key":"bge_151_II_742","gewicht":0},{"key":"bge_150_V_210","gewicht":0},{"key":"bge_150_IV_255","gewicht":0},{"key":"bge_148_V_348","gewicht":1},{"key":"bs_sozialversicherungsgericht_SG.2019.7","gewicht":null}],
 "5":[{"key":"bge_150_V_210","gewicht":0},{"key":"bs_sozialversicherungsgericht_SG.2019.7","gewicht":null}],
 "9":[{"key":"bge_151_II_742","gewicht":0},{"key":"bge_151_II_323","gewicht":0},{"key":"bge_150_V_210","gewicht":0},{"key":"bs_sozialversicherungsgericht_SG.2019.7","gewicht":null}],
-"14":[{"key":"bpatger_S2024_008","gewicht":null}],
 "16":[{"key":"bge_151_II_323","gewicht":0}],
 "18":[{"key":"bge_152_IV_189","gewicht":0}],
 "20":[{"key":"bge_152_IV_189","gewicht":0}],
@@ -52,7 +50,6 @@
 "4":{"bge":5,"kantonal":1},
 "5":{"bge":1,"kantonal":1},
 "9":{"bge":3,"kantonal":1},
-"14":{"eidg":1},
 "16":{"bge":1},
 "18":{"bge":1},
 "20":{"bge":1},

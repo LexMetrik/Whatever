@@ -3,7 +3,6 @@
 "erlass":"HREGV",
 "erlassEbene":"bund",
 "dokumente":{
-"ag_gerichte_HOR_2025_3":{"zitierung":"Obergericht AG HOR.2025.3 vom 21.08.2025","regesteKurz":null,"datum":"2025-08-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"AG","gericht":"ag_gerichte","status":"kantonal"}},
 "bge_146_III_441":{"zitierung":"BGE 146 III 441","regesteKurz":"Löschung der konkursiten Gesellschaft im Handelsregister/Abtretung von Ansprüchen nach Art. 260 SchKG. Die Löschung der konkursiten Gesellschaft im Handelsregister hat keinen Einfluss auf die Aktivlegitimation der Abtretungsgläubiger nach…","datum":"2020-08-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_III_505__voll":{"zitierung":"Urteil 4A_209/2021 (nicht publ. in BGE 147 III 505)","regesteKurz":null,"datum":"2021-07-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"147 III 505","urteil":"4A_209/2021"}},
 "bge_148_III_362":{"zitierung":"BGE 148 III 362","regesteKurz":"Art. 23 Abs. 1 lit. b FusG; erleichterte Fusion; indirekte Beteiligungsverhältnisse. Das erleichterte Fusionsverfahren gemäss Art. 23 Abs. 1 lit. b FusG ist nur bei direkten Beteiligungsverhältnissen anwendbar (E. 2-6). Regeste Art. 23 al.…","datum":"2022-08-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -21,7 +20,6 @@
 "62":[{"key":"bs_appellationsgericht_ZB.2025.34","gewicht":null},{"key":"bs_appellationsgericht_ZB.2025.27","gewicht":null}],
 "82":[{"key":"bge_147_III_505__voll","gewicht":0,"erwaegungen":["E. 5.2"]}],
 "117":[{"key":"bs_appellationsgericht_BEZ.2025.17","gewicht":null}],
-"126":[{"key":"ag_gerichte_HOR_2025_3","gewicht":null}],
 "131":[{"key":"bge_148_III_362","gewicht":0}],
 "159":[{"key":"bge_146_III_441","gewicht":0}],
 "164":[{"key":"bge_146_III_441","gewicht":0},{"key":"bge_151_III_490__voll","gewicht":0,"erwaegungen":["E. 3.3"]}],
@@ -34,7 +32,6 @@
 "62":{"kantonal":2},
 "82":{"bger":1},
 "117":{"kantonal":1},
-"126":{"kantonal":1},
 "131":{"bge":1},
 "159":{"bge":1},
 "164":{"bge":1,"bger":1},
