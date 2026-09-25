@@ -30,10 +30,8 @@ npm run entscheide -- --datum=$(date +%F) --additiv --eidg=bvger,bstger,bpatger 
 # Offline aus Fixtures (Quelle nicht erreichbar / deterministischer Trockenlauf)
 npm run entscheide:seed -- --datum=$(date +%F)
 
-# BGE-Band-Nachzug (additiv, band-basiert) — danach --remap (offline) als Fixpunkt-Probe: seit
-# 25.9.2026 (QS-KORPUS) berechnet der Nachzug normKeys über den fertigen Merge UND nach dem
-# Anhängen der Regeste-Sprachfassungen mit derselben Funktion wie der Remap (normKeysVonSnapshot);
-# der Remap darf an den neuen BGE nichts mehr ändern (vorher Beleg #1099: +IRSG/+VKL erst dort)
+# BGE-Band-Nachzug (additiv) — danach --remap als Fixpunkt-Probe: seit 25.9.2026 dieselbe
+# normKeys-Ableitung wie der Remap; «verändert: 0» an den neuen BGE erwartet
 npm run entscheide -- --datum=$(date +%F) --additiv --bge-baender=152
 npm run entscheide -- --datum=$(date +%F) --remap
 # Danach (sonst check:zaehler rot):
