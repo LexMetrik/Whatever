@@ -72,7 +72,7 @@ export type Kopfdatum =
 const ZITAT_VORWORT_RE = /(?:^|[\s(])(?:mit|durch|dem|den|das|die|der|des|im|in|zum|zur|gegen|ans|an|laut|gemäss|vgl\.|dieses|diesem|diesen|einem|einen|ein|eine|seinem|ihrem|sein|ihr|und|oder|sowie|bzw\.)\s?$|\(\s?$/;
 
 /** Whitespace (inkl. NBSP/U+202F) kollabieren. */
-const flach = (s: string): string => s.replace(/[  ]/g, ' ').replace(/\s+/g, ' ').trim();
+const flach = (s: string): string => s.replace(/[\u00a0\u202f]/g, ' ').replace(/\s+/g, ' ').trim();
 
 const escRe = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
