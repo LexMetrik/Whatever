@@ -1,6 +1,6 @@
 // Dossier: bibliothek/recherche/arbeitsrecht-rechner.md
 import { parseISO, addDays, addMonths, addYears, differenceInDays, isAfter, isBefore, isEqual, format } from 'date-fns';
-import type { SperrfristenInput, Sperrereignis, SperrereignisTyp, Berechnungsergebnis, Normverweis } from '../types/legal';
+import type { SperrfristenInput, Sperrereignis, Berechnungsergebnis, Normverweis } from '../types/legal';
 
 // Reicheres Ergebnis: strukturierte Beendigung bzw. – bei Nichtigkeit – das Datum,
 // ab dem frühestens neu gekündigt werden kann.
@@ -36,7 +36,7 @@ import { letzerTagDesMonats,
   istInIntervall,
   sperrfristEnde,
 } from './datumsUtils';
-import { berechneKuendigungsfrist, probezeitEnde, subFristMonate, type KuendigungsfristResultat } from './kuendigungsfrist';
+import { berechneKuendigungsfrist, subFristMonate } from './kuendigungsfrist';
 import { rechtsprechung } from '../data/verifikation';
 
 // ─── Feste Normverweise (Art. 336c OR) ────────────────────────────────────
@@ -344,48 +344,9 @@ function unionIntervalle(ivs: Iv[]): Iv[] {
   return merged;
 }
 
-// ─── Probezeitverlängerung Art. 335b Abs. 3 OR (RL-16, W-08 Stufe 1) ──────
-//
-// Fedlex SR 220, Kons. 20260101 (Wortlaut in 20261001 unverändert): «Bei einer
-// effektiven Verkürzung der Probezeit infolge Krankheit, Unfall oder Erfüllung
-// einer nicht freiwillig übernommenen gesetzlichen Pflicht erfolgt eine
-// entsprechende Verlängerung der Probezeit.» Die Engine RECHNET die
-// Verlängerung (noch) nicht — sie braucht die Arbeitstage der Woche
-// (BGE 148 III 126: nachzuholen sind die effektiv versäumten Arbeitstage;
-// W-08 (b), Stufe 2). Bis dahin: Warnung, sobald ein Verlängerungsgrund in die
-// Probezeit fällt und der Zugang nach deren unverlängertem Ende liegt — dann
-// kann der Zugang in der verlängerten Probezeit liegen (7 Tage, keine
-// Sperrfristen), und das Ergebnis ist nicht massgebend. Verlängerungsgründe im
-// Ereignismodell: Krankheit/Unfall sowie obligatorischer Militär-, Schutz- oder
-// Zivildienst (gesetzliche Pflicht); Schwangerschaft und Urlaube nicht.
-const PZ_VERLAENGERUNG_TYPEN: Partial<Record<SperrereignisTyp, string>> = {
-  krankheit_unfall: 'Krankheit/Unfall',
-  militaer_zivil: 'Militär-/Schutz-/Zivildienst',
-};
-
-function probezeitVerlaengerungsWarnung(input: SperrfristenInput, kb: KuendigungsfristResultat): string | null {
-  if (kb.istProbezeit) return null;
-  const vb = parseISO(input.vertragsbeginn);
-  const ende = probezeitEnde(vb, input.probezeitMonate);
-  if (ende === null) return null;
-  const treffer = (input.sperrereignisse ?? [])
-    .map((e, i) => ({ e, nr: i + 1 }))
-    .filter(({ e }) =>
-      PZ_VERLAENGERUNG_TYPEN[e.typ] !== undefined &&
-      !isAfter(parseISO(e.von), ende) &&
-      !isBefore(parseISO(e.bis), vb));
-  if (treffer.length === 0) return null;
-  const liste = treffer
-    .map(({ e, nr }) => `Ereignis ${nr} (${PZ_VERLAENGERUNG_TYPEN[e.typ]}, ${formatDatum(parseISO(e.von))} – ${formatDatum(parseISO(e.bis))})`)
-    .join(', ');
-  return (
-    `Probezeitverlängerung nicht gerechnet: ${liste} fällt in die Probezeit (${formatDatum(vb)} – ${formatDatum(ende)}). ` +
-    `Wird die Probezeit infolge Krankheit, Unfall oder Erfüllung einer nicht freiwillig übernommenen gesetzlichen Pflicht effektiv verkürzt, ` +
-    `verlängert sie sich entsprechend (Art. 335b Abs. 3 OR); nachzuholen sind die effektiv versäumten Arbeitstage (BGE 148 III 126). ` +
-    `Diese Verlängerung rechnet der Rechner nicht. Fällt der Zugang der Kündigung (${formatDatum(parseISO(input.zugangKuendigung))}) in die verlängerte Probezeit, ` +
-    `gilt die Kündigungsfrist von sieben Tagen und es bestehen keine Sperrfristen (Art. 335b Abs. 1, Art. 336c Abs. 1 OR) — das Ergebnis ist dann nicht massgebend.`
-  );
-}
+// Probezeitverlängerung Art. 335b Abs. 3 OR: seit RL-16b (W-08 Stufe 2,
+// 25.9.2026) GERECHNET in berechneKuendigungsfrist (kuendigungsfristProbezeit.ts)
+// aus denselben Sperrereignissen — die Stufe-1-Warnung «nicht gerechnet» entfällt.
 
 // ─── Hauptberechnung ──────────────────────────────────────────────────────
 
@@ -418,8 +379,6 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
     // RL-16: Warnungen der Kündigungsfrist (z. B. Art. 335b Abs. 2, 335c Abs. 2
     // OR) erreichen das Formular nur über dieses Ergebnis — vorher verloren.
     warnungen.push(...kb.ergebnis.warnungen);
-    const pzWarnungAN = probezeitVerlaengerungsWarnung(input, kb);
-    if (pzWarnungAN) warnungen.push(pzWarnungAN);
     return {
       ergebnis: kb.ergebnis.ergebnis + ' (Art. 336c OR nicht anwendbar; Sonderfall Art. 336d OR nicht geprüft.)',
       status: 'ok',
@@ -436,10 +395,8 @@ export function berechneSperrfristen(input: SperrfristenInput): SperrfristenErge
 
   const kb = berechneKuendigungsfrist(input);
   // RL-16: Kündigungsfrist-Warnungen durchreichen (vorher ausser im Pfad ohne
-  // Ereignisse verloren) + Warnung Probezeitverlängerung (Art. 335b Abs. 3 OR).
+  // Ereignisse verloren) — seit RL-16b inkl. Probezeitverlängerung.
   warnungen.push(...kb.ergebnis.warnungen);
-  const pzWarnung = probezeitVerlaengerungsWarnung(input, kb);
-  if (pzWarnung) warnungen.push(pzWarnung);
 
   if (kb.istProbezeit) {
     rechenweg.push({

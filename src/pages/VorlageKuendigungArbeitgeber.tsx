@@ -7,6 +7,8 @@ import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls, NormLink } from '../components/vorlagen/ui';
 import { SperrereignisseEditor } from '../components/forms/SperrereignisseEditor';
+import { ArbeitstageFeld } from '../components/forms/ArbeitstageFeld';
+import { istGueltigeArbeitstage } from '../lib/kuendigungsfristProbezeit';
 import { SperrtageZaehler } from '../components/SperrtageZaehler';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
@@ -139,6 +141,14 @@ function eingabeInhalt({ a, set, z }: SeiteCtx<KagAntworten, KagZusammenstellung
           bekannten Ereignisse — die Prüfung (nichtig / gehemmt) läuft live.
         </p>
         <SperrereignisseEditor wert={a.sperrereignisse} onChange={(liste) => set('sperrereignisse', liste)} />
+        {/* RL-16b Nachzug (Gegenprüfung Runde 2): Arbeitstage für die
+            Probezeitverlängerung nach Art. 335b Abs. 3 OR — Muster der
+            Schwesterformulare (nur sichtbar, wenn eine Probezeit besteht). */}
+        {a.probezeit !== 'keine' && (
+          <Field label="Arbeitstage pro Woche" hint="Für die Verlängerung der Probezeit bei Krankheit, Unfall oder Dienstpflicht (Art. 335b Abs. 3 OR)">
+            <ArbeitstageFeld wert={a.arbeitstageWoche} onChange={(t) => set('arbeitstageWoche', t)} />
+          </Field>
+        )}
         {statusKachel(a, engine)}
         {/* Prefill-Brücke 2.1c: derselbe Fall im Rechner (Zeitstrahl,
             Sperrtage-Kontingente, PDF-Rechenbericht) — Eingaben reisen mit. */}
@@ -156,6 +166,7 @@ function eingabeInhalt({ a, set, z }: SeiteCtx<KagAntworten, KagZusammenstellung
               kuendigungsterminMonatsende: a.kuendigungsterminMonatsende,
               vaterschaftsurlaubResttage: a.vaterschaftsurlaubResttage > 0 ? a.vaterschaftsurlaubResttage : undefined,
               sperrereignisse: a.sperrereignisse,
+              arbeitstageWoche: a.arbeitstageWoche,
             })}
             className="text-brass-700 underline">
             Sperrfristen-Rechner (vorbefüllt) öffnen
@@ -246,6 +257,9 @@ const CONFIG: VorlagenSeitenConfig<KagAntworten, KagZusammenstellung> = {
   normalisieren: (g) => ({
     ...g,
     sperrereignisse: Array.isArray(g.sperrereignisse) ? g.sperrereignisse : [],
+    // RL-16b: ungültiger Speicherstand → Feld fehlt → Engine rechnet Mo–Fr
+    // und warnt «nicht angegeben» (kein stilles Umdeuten, §8).
+    arbeitstageWoche: istGueltigeArbeitstage(g.arbeitstageWoche) ? g.arbeitstageWoche : undefined,
   }),
   // Absender ist die Firma, nicht die nutzende Person — kein Profil-Prefill
   // (Ist-Zustand vor dem Umzug, §6).
