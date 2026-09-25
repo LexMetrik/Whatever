@@ -10,7 +10,9 @@ import { test, expect } from '@playwright/test'
 test.describe('Fristenrechner: Rechenweg folgt den Eingaben oben', () => {
   test('Frist-Änderung oben erreicht Voll-Form und Rechenweg (ZPO-Standard)', async ({ page }) => {
     await page.goto('/rechner/tagerechner')
-    // Oben: einfacher Rechner, Standard-Regime «Gerichtsferien (ZPO)».
+    // Oben: einfacher Rechner, Regime «Gerichtsferien (ZPO)» — bis 24.9.2026
+    // Vorbelegung, seit RL-24/UI-07 (W-12 (c)) ausdrücklich gewählt.
+    await page.getByRole('radio', { name: 'Gerichtsferien (ZPO)' }).check()
     const fristOben = page.locator('input[type="number"]').first()
     await fristOben.fill('8')
     // Unten: der Verfahrens-Tab folgt dem Regime …
@@ -35,6 +37,7 @@ test.describe('Fristenrechner: Rechenweg folgt den Eingaben oben', () => {
     // einem alten #schkg): nach Reload interpretierte das falsche Regime die
     // Werte (§1). Jetzt navigiert der Regime-Wechsel der Brücke mit.
     await page.goto('/rechner/tagerechner')
+    await page.getByRole('radio', { name: 'Gerichtsferien (ZPO)' }).check() // RL-24/UI-07: keine Vorbelegung mehr
     await page.locator('input[type="number"]').first().fill('8')
     await expect(page).toHaveURL(/#zpo$/)
     // Der Live-URL-Sync der Voll-Form trägt die Länge in die Query …
@@ -52,6 +55,9 @@ test.describe('Fristenrechner: Rechenweg folgt den Eingaben oben', () => {
     // 10-Tage-Default des einfachen Rechners), der Kanton zieht mit.
     await page.goto('/rechner/tagerechner?e=2025-03-03&u=tage&l=20&v=ordentlich&k=BE&n=gesetzlich#zpo')
     await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('20')
+    // RL-24/UI-07: ohne gewähltes Regime meldet die Brücke nichts — erst wählen.
+    await page.getByRole('radio', { name: 'Gerichtsferien (ZPO)' }).check()
+    await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('20')
     await page.getByLabel('Kanton (Feiertage)').first().selectOption('AG')
     await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('20')
     // Das per Link geteilte Ereignis-Datum bleibt ebenfalls stehen.
@@ -60,6 +66,7 @@ test.describe('Fristenrechner: Rechenweg folgt den Eingaben oben', () => {
 
   test('Preset-Klick gewinnt gegen frühere Live-Werte (Stomp-Loch, Bug-Check 1.9.2026)', async ({ page }) => {
     await page.goto('/rechner/tagerechner')
+    await page.getByRole('radio', { name: 'Gerichtsferien (ZPO)' }).check() // RL-24/UI-07: keine Vorbelegung mehr
     // Oben ändern → Live-Brücke aktiv (Voll-Form trägt 8).
     await page.locator('input[type="number"]').first().fill('8')
     await expect(page.locator('input[type="number"]').nth(1)).toHaveValue('8')

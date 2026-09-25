@@ -56,6 +56,9 @@ async function kalenderMass(page: import('@playwright/test').Page) {
 test('kompakter Kalender ist zentriert und füllt seine Karte', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 1200 })
   await page.goto(SEITE)
+  // RL-24/UI-07 (W-12 (c), 24.9.2026): ohne Ferien-Wahl kein Fristende und
+  // damit kein Kalender — vorher rechnete die ZPO-Vorbelegung sofort.
+  await page.locator('input[name="einfache-frist-ferien"][value="zpo"]').check()
   await expect(page.getByText('Kalender-Ansicht', { exact: true })).toBeVisible()
   const m = await kalenderMass(page)
   expect(m, 'Kalender-Reihe gefunden').not.toBeNull()
@@ -69,6 +72,7 @@ test('kompakter Kalender ist zentriert und füllt seine Karte', async ({ page })
 test('kompakter Kalender ohne Overflow bei 390px', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto(SEITE)
+  await page.locator('input[name="einfache-frist-ferien"][value="zpo"]').check() // RL-24/UI-07
   await expect(page.getByText('Kalender-Ansicht', { exact: true })).toBeVisible()
   const b = await page.evaluate(() => ({
     scroll: document.documentElement.scrollWidth,
@@ -82,6 +86,8 @@ test('kompakter Kalender ohne Overflow bei 390px', async ({ page }) => {
 test('«/» trägt keinen Fristen-Kalender mehr (V4-Rückbau)', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 1200 })
   await page.goto('/')
-  await expect(page.getByText('Fristende', { exact: true }).first()).toBeVisible()
+  // Bereitschafts-Signal: bis 24.9.2026 das sofort gerechnete «Fristende» der
+  // ZPO-Vorbelegung; seit RL-24/UI-07 (Pflichtwahl) der Platzhalter.
+  await expect(page.getByText('Ferien/Stillstand wählen', { exact: false }).first()).toBeVisible()
   await expect(page.getByText('Kalender-Ansicht', { exact: true })).toHaveCount(0)
 })

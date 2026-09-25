@@ -203,7 +203,7 @@
   "/rechner/erb-fristen": {
     "folge": [
       "Aktenzeichen",
-      "PDF {\"title\":\"Erbrechtliche Fristen (ZGB)\",\"fileBase\":\"Erb-Fristen\",\"domain\":\"erb-fristen\",\"sha\":\"fac6bced38d02684\"}",
+      "PDF {\"title\":\"Erbrechtliche Fristen (ZGB)\",\"fileBase\":\"Erb-Fristen\",\"domain\":\"erb-fristen\",\"sha\":\"12e8eed02df44e89\"}",
       "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: 10.06.2026 (Mittwoch) – Ausschlagung – gesetzliche Erbin/gesetzlicher Erbe (3 Monate).\",\"dateiName\":\"Erb-Frist.ics\",\"endISO\":\"2026-06-10\",\"query\":\"?p=ausschlagung_gesetzlich&t=2026-03-10&w=1&k=ZH\",\"titel\":\"Fristende – Ausschlagung – gesetzliche Erbin/gesetzlicher Erbe (3 Monate)\"}",
       "Teilen {\"query\":\"?p=ausschlagung_gesetzlich&t=2026-03-10&w=1&k=ZH\"}"
     ],
@@ -216,7 +216,7 @@
       "Ergebnis kopieren",
       "Hinweise / Vorbehalte (4)▸",
       "Rechenweg (5 Schritte)▸",
-      "Annahmen (2)▸",
+      "Annahmen (3)▸",
       "Absatz kopieren",
       "PDF-Rechenbericht",
       "In Kalender (.ics)",
@@ -302,20 +302,17 @@
   },
   "/rechner/tagerechner": {
     "folge": [
-      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt eine Wiederherstellung (Art. 148 ZPO) nur ausnahmsweise in Betracht – sie setzt voraus, dass die Partei kein oder nur ein leichtes Verschulden trifft (Art. 148 Abs. 1 ZPO).\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
       "Aktenzeichen",
-      "PDF {\"title\":\"Allgemeine Frist\",\"fileBase\":\"Fristenrechner\",\"domain\":\"allgemeine-frist\",\"sha\":\"1d130a835f2bce29\"}",
+      "PDF {\"title\":\"Allgemeine Frist\",\"fileBase\":\"Fristenrechner\",\"domain\":\"allgemeine-frist\",\"sha\":\"58532841c7de0d90\"}",
       "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: Montag, 06.07.2026 (Art. 77/78 OR).\",\"endISO\":\"2026-07-06\",\"query\":\"?s=2026-06-05&l=30&e=tage&w=1&f=1&k=ZH\",\"titel\":\"Fristende – 30 Tage\"}",
       "Teilen {\"query\":\"?s=2026-06-05&l=30&e=tage&w=1&f=1&k=ZH\"}"
     ],
     "zeilen": [
-      "ICS in «pt-1»",
       "PDF in «flex flex-wrap items-center gap-3»",
       "ICS in «flex flex-wrap items-center gap-3»",
       "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
-      "In Kalender (.ics)",
       "Allgemein (Vertrag/OR)",
       "Zivilprozess (ZPO)",
       "Betreibung (SchKG)",
@@ -324,7 +321,7 @@
       "Rückwärts (spätester Tag)",
       "Tage zwischen zwei Daten",
       "Tagesfrist (Kalendertage)",
-      "Monatsfrist nach OR",
+      "Monatsfrist (gesetzlich)",
       "Kalendertage ohne Verschiebung",
       "Vaterschaftsklage der Mutter – 1 Jahr",
       "Anfechtung der Vaterschaft – relativ 1 Jahr",
@@ -493,20 +490,17 @@
   },
   "/rechner/tagerechner?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich#zpo": {
     "folge": [
-      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt eine Wiederherstellung (Art. 148 ZPO) nur ausnahmsweise in Betracht – sie setzt voraus, dass die Partei kein oder nur ein leichtes Verschulden trifft (Art. 148 Abs. 1 ZPO).\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
       "Aktenzeichen",
       "PDF {\"title\":\"ZPO-Fristberechnung\",\"fileBase\":\"ZPO-Fristen\",\"domain\":\"zpo-fristen\",\"sha\":\"2b01d628dd866f3d\"}",
       "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende (dies ad quem): 12.03.2026, 24.00 Uhr.\",\"dateiName\":\"ZPO-Frist.ics\",\"endISO\":\"2026-03-12\",\"query\":\"?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\",\"titel\":\"Fristende ZPO – 30 Tage\"}",
       "Teilen {\"query\":\"?e=2026-02-10&u=tage&l=30&v=ordentlich&k=BS&n=gesetzlich&z=empfangsbestaetigung&m=bundesgericht&ea=0&el=10&eu=tage\"}"
     ],
     "zeilen": [
-      "ICS in «pt-1»",
       "PDF in «flex flex-wrap items-center gap-3»",
       "ICS in «flex flex-wrap items-center gap-3»",
       "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
-      "In Kalender (.ics)",
       "Allgemein (Vertrag/OR)",
       "Zivilprozess (ZPO)",
       "Betreibung (SchKG)",
@@ -704,20 +698,17 @@
   },
   "/rechner/tagerechner?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS#schkg": {
     "folge": [
-      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt eine Wiederherstellung (Art. 148 ZPO) nur ausnahmsweise in Betracht – sie setzt voraus, dass die Partei kein oder nur ein leichtes Verschulden trifft (Art. 148 Abs. 1 ZPO).\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
       "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: 20.02.2026, 24.00 Uhr.\",\"className\":\"lc-btn-outline lc-btn-sm\",\"dateiName\":\"SchKG-Frist.ics\",\"endISO\":\"2026-02-20\",\"query\":\"?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\",\"titel\":\"Fristende – SchKG-Fristberechnung\"}",
       "Aktenzeichen",
       "PDF {\"title\":\"SchKG-Fristberechnung\",\"fileBase\":\"SchKG-Fristen\",\"domain\":\"schkg-fristen\",\"sha\":\"6a9ffce1c1ad40cb\"}",
       "Teilen {\"query\":\"?e=2026-02-10&u=tage&l=10&m=schkg_betreibungsferien&n=frist&k=BS&a=Zustellung+Zahlungsbefehl&ph=einleitung&ha=0&ra=0\"}"
     ],
     "zeilen": [
-      "ICS in «pt-1»",
       "ICS in «space-y-4»",
       "PDF in «flex flex-wrap items-center gap-3»",
       "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
-      "In Kalender (.ics)",
       "Allgemein (Vertrag/OR)",
       "Zivilprozess (ZPO)",
       "Betreibung (SchKG)",
@@ -743,20 +734,17 @@
   },
   "/rechner/tagerechner?s=2026-02-10&l=30&e=tage&w=1&f=1&k=BS#allgemein": {
     "folge": [
-      "ICS {\"beschreibung\":\"Fristende: 11.03.2026\\nFristenlauf: Gerichtsferien (ZPO)\\nStillstand (Art. 145 ZPO) berücksichtigt\\nVerfahrensart: ordentlich – Fristenstillstand gilt (Art. 145 Abs. 2 ZPO).\\nGerichtsort: ZH (Sitz des Gerichts; massgeblich für Feiertage, nicht der Wohnsitz der Partei/Vertretung).\\nFristtyp: tage; Berechnungsmodus: bundesgerichtliche Praxis (BGer 5A_691/2023).\\nAblauf jeweils um 24.00 Uhr des letzten Tages (dies ad quem).\\nGesetzliche Frist: nicht erstreckbar (Art. 144 Abs. 1 ZPO). Bei Versäumnis kommt nur die Wiederherstellung in Betracht (Art. 148 ZPO).\\nKantonale/lokale Feiertage bitte verifizieren (Gerichtsort massgeblich); bei Unklarheit über einen Feiertag kommt eine Wiederherstellung (Art. 148 ZPO) nur ausnahmsweise in Betracht – sie setzt voraus, dass die Partei kein oder nur ein leichtes Verschulden trifft (Art. 148 Abs. 1 ZPO).\",\"className\":\"lc-btn-outline lc-btn-sm\",\"endISO\":\"2026-03-11\",\"titel\":\"Fristende – 10 Tage ab 01.03.2026 · Gerichtsferien (ZPO)\"}",
       "Aktenzeichen",
-      "PDF {\"title\":\"Allgemeine Frist\",\"fileBase\":\"Fristenrechner\",\"domain\":\"allgemeine-frist\",\"sha\":\"89e7fac3c517f855\"}",
+      "PDF {\"title\":\"Allgemeine Frist\",\"fileBase\":\"Fristenrechner\",\"domain\":\"allgemeine-frist\",\"sha\":\"1b84accf395913c5\"}",
       "ICS {\"aktenzeichen\":\"\",\"beschreibung\":\"Fristende: Donnerstag, 12.03.2026 (Art. 77/78 OR).\",\"endISO\":\"2026-03-12\",\"query\":\"?s=2026-02-10&l=30&e=tage&w=1&f=1&k=BS\",\"titel\":\"Fristende – 30 Tage\"}",
       "Teilen {\"query\":\"?s=2026-02-10&l=30&e=tage&w=1&f=1&k=BS\"}"
     ],
     "zeilen": [
-      "ICS in «pt-1»",
       "PDF in «flex flex-wrap items-center gap-3»",
       "ICS in «flex flex-wrap items-center gap-3»",
       "Teilen in «flex flex-wrap items-center gap-3»"
     ],
     "knoepfe": [
-      "In Kalender (.ics)",
       "Allgemein (Vertrag/OR)",
       "Zivilprozess (ZPO)",
       "Betreibung (SchKG)",
@@ -765,7 +753,7 @@
       "Rückwärts (spätester Tag)",
       "Tage zwischen zwei Daten",
       "Tagesfrist (Kalendertage)",
-      "Monatsfrist nach OR",
+      "Monatsfrist (gesetzlich)",
       "Kalendertage ohne Verschiebung",
       "Vaterschaftsklage der Mutter – 1 Jahr",
       "Anfechtung der Vaterschaft – relativ 1 Jahr",

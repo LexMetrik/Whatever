@@ -90,6 +90,10 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
   const warnungen: string[] = [];
 
   const ereignis = parseISO(input.ereignis);
+  // RL-24/F1-07 (Prüfung Rechtslogik 23.9.2026): ein Nicht-Kalendertag
+  // (2026-02-30) lief bis in date-fns und warf «Invalid time value».
+  // Kontrollierte Meldung wie allgemeineFrist.ts (Muster dort).
+  if (isNaN(ereignis.getTime())) throw new Error('Ungültiges Ereignisdatum.');
 
   // Stillstand: grundsätzlich nach Verfahren (Art. 145 Abs. 2). ABER: Im Schlichtungs-/
   // summarischen Verfahren ist der Hinweis nach Art. 145 Abs. 3 ZPO Gültigkeitsvorschrift
@@ -303,5 +307,8 @@ export function berechneFrist(input: ZpoInput): ZpoErgebnis {
 // Zustellversuch als zugestellt (unabhängig vom Wochentag). Hilfsgrösse.
 
 export function zustellfiktion(erfolgloserVersuch: string): string {
-  return iso(addDays(parseISO(erfolgloserVersuch), 7));
+  const d = parseISO(erfolgloserVersuch);
+  // RL-24/F1-07: keine rohe RangeError-Meldung bei ungültigem Datum.
+  if (isNaN(d.getTime())) throw new Error('Ungültiges Datum des Zustellversuchs.');
+  return iso(addDays(d, 7));
 }

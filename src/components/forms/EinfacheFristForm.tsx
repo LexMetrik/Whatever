@@ -11,7 +11,7 @@ import { stillstandsperioden } from '../../data/zpoFeiertage';
 import type { Kanton } from '../../types/legal';
 import { ErgebnisBlock } from '../ErgebnisBlock';
 import { DatumsFeld } from '../DatumsFeld';
-import { ErgebnisPlatzhalter, FehlerBox, Field } from '../vorlagen/ui';
+import { ErgebnisPlatzhalter, FehlerBox, Field, LiveHeader } from '../vorlagen/ui';
 import { IcsExportButton } from '../IcsExportButton';
 import type { FristMarkierung } from './FristKalenderKompakt';
 import { getStandardKanton } from '../../lib/einstellungen';
@@ -106,8 +106,11 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   const [start, setStart] = useState(heute);
   const [laenge, setLaenge] = useState(10);
   const [einheit, setEinheit] = useState<Einheit>('tage');
-  // Auftrag David: Ferien/Stillstand standardmässig ZPO (Gerichtsferien).
-  const [ferien, setFerien] = useState<Ferien>('zpo');
+  // Auftrag David 10.6.2026 war «standardmässig ZPO (Gerichtsferien)». Ersetzt
+  // durch Entscheid W-12 (c), David 24.9.2026 (RL-24/UI-07, Prüfung
+  // Rechtslogik 23.9.2026): Pflichtwahl OHNE Voreinstellung — die ZPO-Vorgabe
+  // verlängerte summarische/SchKG-Fristen still über die Gerichtsferien.
+  const [ferien, setFerien] = useState<Ferien | null>(null);
   const [kanton, setKanton] = useState<Kanton>(getStandardKanton);
 
   // Die SchKG-Engine führt keine Wochenfristen (gesetzliche SchKG-Fristen
@@ -115,7 +118,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   // Bug-Check §9 (Code-Lupe, MITTEL): beim Wechsel auf SchKG wird die
   // Einheit EXPLIZIT auf Tage gestellt (State = Anzeige) statt «N Wochen»
   // still als «N Tage» zu rechnen.
-  const waehleFerien = (code: Ferien) => {
+  const waehleFerien = (code: Ferien | null) => {
     setFerien(code);
     if (code === 'schkg' && einheit === 'wochen') setEinheit('tage');
   };
@@ -128,7 +131,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   let endeZusatz = '';
   let zeilen: string[] = [];
   let fehler = '';
-  if (gueltig) {
+  if (gueltig && ferien !== null) {
     try {
       if (ferien === 'keine') {
         const r = berechneAllgemeineFrist({
@@ -178,7 +181,7 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   // Auslöse-Bedingungen wie zuvor — verhaltensneutral (§6), und `baueMarkierung`
   // ist rein (§2). Der Export liest hier nur ab, er rechnet nichts (§3).
   const markierung = useMemo(
-    () => (gueltig ? baueMarkierung(start, laenge, einheitEffektiv, ferien, kanton) : null),
+    () => (gueltig && ferien !== null ? baueMarkierung(start, laenge, einheitEffektiv, ferien, kanton) : null),
     [gueltig, start, laenge, einheitEffektiv, ferien, kanton],
   );
   useEffect(() => {
@@ -208,6 +211,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
       if (beruehrt.current.size === 0 && e.ferien === i.ferien) return;
       brueckeAktiv.current = true; // ab der ersten echten Änderung meldet jede weitere
     }
+    // RL-24/UI-07: ohne gewähltes Regime nichts nach unten reichen.
+    if (e.ferien === null) return;
     onEingaben({
       ferien: e.ferien,
       werte: { start: e.start, laenge: e.laenge, einheit: e.einheit, kanton: e.kanton },
@@ -227,6 +232,43 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
   // Eingabe-Atome pixelgleich zu den Voll-Rechnern (Redesign E5): das
   // Haus-Primitiv lc-input statt eines eigenen h-10/ring-Rezepts.
   const inputCls = 'lc-input';
+
+  // Leerzustand des Ergebnisplatzes (R13). RL-24-Nachzug (W2·30-RL-W2A,
+  // 25.9.2026): in den knappen Varianten (Startseite) mit derselben Kopfzeile
+  // «Live-Berechnung» und derselben Anatomie (`space-y-4`, `lc-notice`) wie das
+  // Fristende, das nach der Ferien-Wahl an seine Stelle tritt — als Notiz statt
+  // als gestrichelte Kachel (Startseiten-Rezept «kein lc-tile», katalog R3).
+  // BEWUSST kein `ErgebnisBlock`: vor der Wahl gibt es kein Ergebnis, also
+  // weder `id="lc-ergebnis-einfach"` noch `aria-live` (W-12 c, rl24 UI-07).
+  // Voll-Rechner (Tagerechner) unverändert: gestrichelte Kachel.
+  //
+  // Nachzug Paket 3 (W2·30-RL-W2A, 25.9.2026): die Bühne (`start-schnell`/-`eng`)
+  // reserviert wieder die Höhe des GERECHNETEN Zustands (Revert b6804ec97 — die
+  // Startseiten-Session widersprach der abgesenkten Bühne, s. Commit-Historie).
+  // Damit fehlt dem Leerzustand VOR der Wahl selbst noch die Höhe: sein eigener
+  // Inhalt (Kopfzeile + eine Notizzeile) ist ~56–77 px niedriger als das
+  // Fristende (Kopfzeile + grosser Wert + ICS-Knopf), das an seine Stelle
+  // tritt. Gemessen 25.9.2026 (vite preview, Chromium, `lc-ergebnis-einfach`
+  // nach Wahl «Gerichtsferien (ZPO)», dieselbe Anatomie wie hier):
+  // zweispaltig (@1024–1440 und @390) 138→194 px (+56), einspaltig (@320)
+  // 138→215 px (+77, dort ist die Karte insgesamt schmaler). Die Mindesthöhe
+  // hier geht NICHT auf die gemessenen Werte selbst, sondern auf denselben
+  // Ausgangspunkt wie die Bühne-Tokens (32.25rem/44.5rem, s. tailwind.config.js
+  // §start-schnell): 12.25rem einspaltig-Eingabeanteil 320 px zweispaltig
+  // ergibt exakt 12.25rem (196 px), 44.5rem abzüglich 494 px einspaltig ergibt
+  // exakt 13.625rem (218 px) — die Bühne braucht dadurch VOR der Wahl kein
+  // eigenes Reserve-Polster mehr (Reserve 0 statt 58/66/77 px, e2e
+  // startseite-schnellwerkzeug.e2e.ts «Bühne = Frist-Höhe (U9)»). Derselbe
+  // Container-Bruch (`@[16.5rem]:`) wie im Eingabe-Raster oben (Z. 278) und im
+  // Bühne-Token selbst (`start/Schnellwerkzeug.tsx`) — kein neuer Breakpoint.
+  const leer = (was: string) => knapp
+    ? (
+      <div className="space-y-4 min-h-[13.625rem] @[16.5rem]:min-h-[12.25rem]">
+        <LiveHeader />
+        <ErgebnisPlatzhalter rahmen="notiz" was={was} />
+      </div>
+    )
+    : <ErgebnisPlatzhalter was={was} />;
 
   return (
     <div className="space-y-4">
@@ -305,7 +347,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
              stehen (§1/§8). */
           <div className="col-span-2 sm:col-span-1">
             <Field label="Ferien / Stillstand">
-              <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
+              <select value={ferien ?? ''} onChange={(e) => waehleFerien(e.target.value === '' ? null : e.target.value as Ferien)} className={inputCls + ' w-full'}>
+                <option value="">– wählen –</option>
                 {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
               </select>
             </Field>
@@ -318,7 +361,8 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
         // Dropdown, ohne die Erläuterungstexte (Auftrag David: möglichst wenig).
         <div className="max-w-xs">
           <Field label="Ferien / Stillstand">
-            <select value={ferien} onChange={(e) => waehleFerien(e.target.value as Ferien)} className={inputCls + ' w-full'}>
+            <select value={ferien ?? ''} onChange={(e) => waehleFerien(e.target.value === '' ? null : e.target.value as Ferien)} className={inputCls + ' w-full'}>
+              <option value="">– wählen –</option>
               {FERIEN_OPTIONEN.map((o) => <option key={o.code} value={o.code}>{o.label}</option>)}
             </select>
           </Field>
@@ -378,7 +422,11 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
            `ErgebnisPlatzhalter` (R13) statt eines losen Satzes — er reserviert
            die Fläche (CLS) und sagt an, WAS erscheint. Der Satz selbst ist
            wörtlich unverändert. */
-        <ErgebnisPlatzhalter was="Datum und ganzzahlige Dauer eingeben – das Fristende erscheint sofort." />
+        leer('Datum und ganzzahlige Dauer eingeben – das Fristende erscheint sofort.')
+      ) : ferien === null ? (
+        /* RL-24/UI-07 (W-12 c): Pflichtwahl ohne Voreinstellung — erst die
+           Ferien-Wahl bestimmt das Regime, vorher kein Fristende (§1/§8). */
+        leer('Ferien/Stillstand wählen – das Fristende erscheint sofort.')
       ) : fehler !== '' ? (
         /* R2-E/F1-4: Eingabefehler in der geteilten `FehlerBox` (R8) — sie
            trägt role="alert", der lose Absatz tat es nicht. Wortlaut unverändert. */

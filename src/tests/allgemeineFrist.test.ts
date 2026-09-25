@@ -169,10 +169,14 @@ describe('Verbesserungs-Auftrag 5.6.2026 – P1', () => {
     expect(r.hinweise.join()).toMatch(/Zugangs-Konvention/);
   });
 
-  it('AF-19 Rückwärts: 30.6.2026 − 3 Monate = 29.3.2026 (volle 3 Monate 30.3.–29.6. dazwischen); Klemmung 31.5. − 3 M = 27.2.', async () => {
+  it('AF-19 Rückwärts: 30.6.2026 − 3 Monate = 29.3.2026 (volle 3 Monate 30.3.–29.6. dazwischen); Klemmung 31.5. − 3 M = 28.2.', async () => {
     const { berechneRueckwaertsFrist } = await import('../lib/allgemeineFrist');
     expect(berechneRueckwaertsFrist({ stichtag: '2026-06-30', laenge: 3, einheit: 'monate', verschiebung: 'keine' }).endDatum).toBe('29.03.2026');
-    expect(berechneRueckwaertsFrist({ stichtag: '2026-05-31', laenge: 3, einheit: 'monate', verschiebung: 'keine' }).endDatum).toBe('27.02.2026');
+    // RL-24/F1-06 (Prüfung Rechtslogik 23.9.2026, deklarierte Fachänderung 24.9.2026):
+    // bis dahin hier 27.02.2026 festgeschrieben («geklemmt − 1»). Nach der eigenen
+    // Konvention (volle Frist zwischen Handlung und Stichtag) ist 28.2. + 3 Mt = 28.5.
+    // < 31.5. noch fristwahrend → spätester Tag 28.02.2026.
+    expect(berechneRueckwaertsFrist({ stichtag: '2026-05-31', laenge: 3, einheit: 'monate', verschiebung: 'keine' }).endDatum).toBe('28.02.2026');
   });
 
   it('AF-20 Rückwärts: KEINE automatische Verschiebung am Wochenende; Vorverlegung nur als Option mit Vorbehalt', async () => {

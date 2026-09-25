@@ -187,6 +187,22 @@ export function berechneErbFrist(
   ];
   const warnungen: string[] = [];
 
+  // RL-24/UI-08 (Prüfung Rechtslogik 23.9.2026): die Werktagsverschiebung ist
+  // im Formular vorgewählt und verlängert Verwirkungsfristen (z. B. Art. 567
+  // ZGB) — die Analogie war weder Annahme noch Warnung. Grundlage: Art. 7 ZGB
+  // (allgemeine OR-Bestimmungen über Erfüllung gelten für andere zivilrechtliche
+  // Verhältnisse; ZGB-Snapshot Stand 1.7.2026) i.V.m. Art. 78 OR (Stand
+  // 1.1.2026); Samstag nach SR 173.110.3 (nicht amtlich nachgelesen, Netz aus
+  // 24.9.2026). Ob jede Erb-Frist so zu rechnen ist, ist nicht höchstrichterlich
+  // fixiert — darum offengelegt und bei tatsächlicher Verschiebung die
+  // sichere Variante (rohes Ende) genannt (§8).
+  if (input.werktagsVerschiebung) {
+    annahmen.push('Fristende auf Samstag, Sonntag oder Feiertag → nächster Werktag: Art. 78 OR (Samstag: SR 173.110.3), auf ZGB-Fristen übertragen über Art. 7 ZGB. Diese Analogie ist für die Erb-Fristen nicht höchstrichterlich bestätigt.');
+    if (basis.verschoben) {
+      warnungen.push(`Das Fristende wurde vom ${basis.rohEndDatum} auf den ${basis.endDatum} verschoben. Sichere Variante: spätestens am ${basis.rohEndDatum} handeln.`);
+    }
+  }
+
   if (preset.gruppe === 'erbgang') {
     warnungen.push(
       'Ausschlagung und Inventar-Begehren sind bei der ZUSTÄNDIGEN KANTONALEN BEHÖRDE anzubringen (Art. 570/580 ZGB) – kantonal unterschiedlich organisiert (Erbschaftsamt, Bezirksgericht, Gemeinde).',
