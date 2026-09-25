@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2024.6",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Landesverweisung (Beschwerde bei BG hängig)",
+        "gegenstand": "Landesverweisung (Rückweisungsverfahren betr. SB.2019.74) (Beschwerde am BGer hängig)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Christian Hoenen (Vorsitz), Prof. Dr. Cordula Lötscher, MLaw Anja Dillena und Gerichtsschreiberin lic. iur. Mirjam Kündig"
@@ -576,25 +576,17 @@
         "Dem amtlichen Verteidiger des Berufungsklägers im ersten und zweiten Rückweisungsverfahren, lic. iur. Sararad Arquint, wird ein Honorar von CHF 400.– (einschliesslich Auslagen), zuzüglich 7,7 % MWST von CHF 30.80, somit total CHF 430.80, aus der Gerichtskasse zugesprochen. Art. 135 Abs. 4 der Strafprozessordnung bleibt vollumfänglich vorbehalten."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "ASYLG",
-        "BGG",
-        "BV",
-        "EMRK",
-        "FZA",
-        "STGB",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78608&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-03-11",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "1e9f9f82fad5a3ef487bebe1b33b64042b8823f279dbaa51fa4d9647fb6360ed",
       "erstpublikation": "2026-03-11",
-      "aktualisiert": "2026-03-11",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2025.412",
       "ecli": "ECLI:CH:BSA:2025:ZS.2024.6"
     }

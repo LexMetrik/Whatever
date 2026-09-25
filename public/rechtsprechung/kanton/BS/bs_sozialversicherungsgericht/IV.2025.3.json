@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.3",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Herausgabe von Akten der Invalidenversicherung an die Haftpflichtversicherung rechtmässig; Beschwerdeabweisung. (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "Herausgabe von Akten der Invalidenversicherung an die Haftpflichtversicherung rechtmässig; Beschwerdeabweisung.",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. G. Thomi (Vorsitz), lic. phil. D. Borer, lic. iur. S. Bammatter-Glättli und Gerichtsschreiberin Dr. K. Zimmermann"
@@ -226,23 +226,17 @@
         "          Das Verfahren ist kostenlos."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "ATSG",
-        "BGG",
-        "DSG",
-        "IVG",
-        "ZGB"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79259&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-02-27",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-29",
       "sha": "d308618d58b4143de7c51d2a27141e3c350e3d72fb37e26383f2b0b81f33bf5e",
       "erstpublikation": "2026-01-28",
-      "aktualisiert": "2026-02-27",
+      "aktualisiert": "2026-08-29",
       "nummerSekundaer": "SVG.2026.17",
       "ecli": "ECLI:CH:BSS:2025:IV.2025.3"
     }

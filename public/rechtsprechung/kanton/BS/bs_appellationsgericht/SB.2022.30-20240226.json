@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/SB.2022.30-20240226",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "versuchte schwere Körperverletzung (beim Bundesgericht hängig)",
+        "gegenstand": "versuchte schwere Körperverletzung (Urteil BGer 6B_458/2024 vom 7. Juli 2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Liselotte Henz (Vorsitz), Prof. Dr. Ramon Mabillard, lic. iur. Mia Fuchs und Gerichtsschreiber Dr. Urs Thönen"
@@ -285,21 +285,17 @@
         "Über die Entschädigungen des Verteidigers und des Vertreters der Privatklägerin wird mit separatem Beschluss entschieden."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "STGB",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=76778&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2024-07-02",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-07-25",
       "sha": "eea2d07d9718a98b7f66d960f904c52a254ab9b4f3b077f17915025809c158a4",
       "erstpublikation": "2024-07-02",
-      "aktualisiert": "2024-07-02",
+      "aktualisiert": "2026-07-25",
       "nummerSekundaer": "AG.2024.261",
       "ecli": "ECLI:CH:BSA:2024:SB.2022.30"
     }

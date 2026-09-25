@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/ZV.2023.4",
@@ -243,22 +243,17 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "OR",
-        "VVG",
-        "ZPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77104&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2024-12-31",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-09-18",
       "sha": "c01165d9892646bc422de9549c29287872d7668d7258378c3308312870b47bbb",
       "erstpublikation": "2024-09-25",
-      "aktualisiert": "2024-12-31",
+      "aktualisiert": "2026-09-18",
       "nummerSekundaer": "SVG.2024.122",
       "ecli": "ECLI:CH:BSS:2024:ZV.2023.4"
     }

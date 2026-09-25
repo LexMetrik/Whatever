@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.85",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "IVG Hilflosenentschädigung aufgrund lebenspraktischer Begleitung beim Geburtsgebrechen 404",
+        "gegenstand": "IVG Hilflosenentschädigung aufgrund lebenspraktischer Begleitung beim Geburtsgebrechen 404 (Beschwerde beim Bundesgericht hängig)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), Dr. med. R. von Aarburg, Dr. phil. N. Bechtel und a. o. Gerichtsschreiberin MLaw L. Wepfer"
@@ -275,23 +275,17 @@
         "            Die Beschwerdegegnerin bezahlt dem Beschwerdeführer eine Parteientschädigung von Fr. 3'750.-- (inkl. Auslagen) zuzüglich Mehrwertsteuer (8.1%) von Fr. 303.75. "
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "ATSG",
-        "BGG",
-        "IVG",
-        "IVV",
-        "VWVG"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79841&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-15",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-09-11",
       "sha": "4a10bea719e473527b4b8650cc23140c28cfc3aaa13a926f6e187bf72f3d4729",
       "erstpublikation": "2026-07-14",
-      "aktualisiert": "2026-07-15",
+      "aktualisiert": "2026-09-11",
       "nummerSekundaer": "SVG.2026.128",
       "ecli": "ECLI:CH:BSS:2026:IV.2025.85"
     }

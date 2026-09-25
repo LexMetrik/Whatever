@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2025.97",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Freistellung und Ordentliche Kündigung aufgrund schwerer Pflichtverletzungen",
+        "gegenstand": "Freistellung und Ordentliche Kündigung aufgrund schwerer Pflichtverletzungen (nicht rechtskräftig) (Beschwerde beim BGer hängig)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Stephan Wullschleger, lic. iur. André Equey, Dr. Lukas Schaub und Gerichtsschreiberin MLaw Marion Wüthrich"
@@ -387,21 +387,17 @@
         "Die Kantonspolizei hat dem Rekurrenten für das verwaltungsgerichtliche Rekursverfahren eine Parteientschädigung von CHF 1'030.–, einschliesslich Auslagen und zuzüglich 8,1 % MWST von CHF 83.45, zu bezahlen."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "BV",
-        "OR"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79755&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-06-25",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-21",
       "sha": "d145143920d3243d68c4bdfee75b16c5aad36e97bb9380924096f11bf74f2ad0",
       "erstpublikation": "2026-06-25",
-      "aktualisiert": "2026-06-25",
+      "aktualisiert": "2026-08-21",
       "nummerSekundaer": "AG.2026.372",
       "ecli": "ECLI:CH:BSA:2026:VD.2025.97"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/SB.2023.19",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "ad Bkl. 1: mehrfache versuchte schwere Körperverletzung, Nötigung, mehrfache Gefährdung des Lebens, Widerhandlung gegen das Waffengesetz, (Beschwerde beim BGer hängig) ad Bkl. 2: versuchte schwere Körperverletzung, Gehilfenschaft zur versuchten schweren Körperverletzung, etc.",
+        "gegenstand": "ad Bkl. 1: mehrfache versuchte schwere Körperverletzung, Nötigung, mehrfache Gefährdung des Lebens, (Urteil BGer 7B_749/2025, 7B_750/2025 vom 20. August 2026) ad Bkl. 2: versuchte schwere Körperverletzung, Gehilfenschaft zur versuchten schweren Körperverletzung, etc.",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser (Vorsitz), lic. iur. Lucienne Renaud, Dr. Christoph A. Spenlé, Prof. Dr. Daniela Thurnherr Keller, MLaw Manuel Kreis und Gerichtsschreiber lic. iur. Christian Lindner"
@@ -570,25 +570,17 @@
         "Dem Beurteilten wird eine reduzierte Parteientschädigung im Umfang von 30 Prozent des ausgewiesenen Verteidigungsaufwands zuzüglich 2,6 Stunden für die Berufungsverhandlung zu einem Stundenansatz von CHF 250.‒ (total CHF 7’765.55) ausgerichtet."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BETMG",
-        "BGG",
-        "BV",
-        "EMRK",
-        "GFK",
-        "STGB",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77852&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-08-28",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-09-12",
       "sha": "3ba8e40d209aa71bf964bb091a5dee7f0389f0d3b17c1441dc6f20fd469c39b2",
       "erstpublikation": "2025-08-28",
-      "aktualisiert": "2025-08-28",
+      "aktualisiert": "2026-09-12",
       "nummerSekundaer": "AG.2025.20",
       "ecli": "ECLI:CH:BSA:2024:SB.2023.19"
     }

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/BV.2025.4",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "BVG",
+        "gegenstand": "BVG Anspruch auf eine Invalidenrente; zeitlicher Zusammenhang",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), Dr. med. R. von Aarburg, MLaw A. Zalad und Gerichtsschreiberin MLaw L. Marti"
@@ -334,23 +334,17 @@
         "            Die Beklagte bezahlt der Klägerin eine Parteientschädigung von Fr. 3'750.00 (inkl. Auslagen) zuzüglich 8.1 % Mehrwertsteuer."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "BVG",
-        "IVG",
-        "OR",
-        "ZGB"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79834&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-18",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-07-21",
       "sha": "12d63205bf00d3936a695bbce7121833849ea9a2caaf5ea42830c8ac1778b93b",
       "erstpublikation": "2026-07-18",
-      "aktualisiert": "2026-07-18",
+      "aktualisiert": "2026-07-21",
       "nummerSekundaer": "SVG.2026.124",
       "ecli": "ECLI:CH:BSS:2026:BV.2025.4"
     }

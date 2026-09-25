@@ -13,22 +13,24 @@
 "bge_151_II_304__voll":{"zitierung":"Urteil 1C_217/2023 (nicht publ. in BGE 151 II 304)","regesteKurz":null,"datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 304","urteil":"1C_217/2023"}},
 "bge_152_II_298":{"zitierung":"BGE 152 II 298","regesteKurz":"Art. 78 Abs. 2 BV; Art. 2 und 12 NHG; Art. 19 Abs. 2 GSchG; Art. 32 Abs. 2 GSchV; Art. 17 WaG; Art. 16 VVEA; Beschwerdelegitimation des Schweizer Heimatschutzes; Vorliegen einer Bundesaufgabe. Eine Bundesaufgabe liegt vor, wenn für Anlagen…","datum":"2025-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VD.2021.133":{"zitierung":"Appellationsgericht BS VD.2021.133 vom 17.08.2022","regesteKurz":"Zonenänderung, Festsetzung eines Bebauungsplans, Zuweisung der Lärmempfindlichkeitsstufe, Änderung des Wohnanteilplans,…","datum":"2022-08-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2024.40":{"zitierung":"Appellationsgericht BS VD.2024.40 vom 28.03.2025","regesteKurz":"Kantonaler Nutzungsplan Gewässerraum, Heissensteinbach","datum":"2025-03-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2024.40":{"zitierung":"Appellationsgericht BS VD.2024.40 vom 28.03.2025","regesteKurz":"Kantonaler Nutzungsplan Gewässerraum, Heissensteinbach","datum":"2025-03-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.36":{"zitierung":"Appellationsgericht BS VD.2025.36 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.37":{"zitierung":"Appellationsgericht BS VD.2025.37 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "29":[{"key":"bge_147_II_309__voll","gewicht":0,"erwaegungen":["E. 8.1"]}],
 "32":[{"key":"bge_152_II_298","gewicht":0},{"key":"bge_147_II_309__voll","gewicht":0,"erwaegungen":["E. 8.1","E. 8.4"]},{"key":"bge_146_II_304__voll","gewicht":0,"erwaegungen":["E. 13.1"]}],
 "46":[{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
-"41a":[{"key":"bge_148_II_198","gewicht":0},{"key":"bge_146_II_134","gewicht":0},{"key":"bs_appellationsgericht_VD.2024.40","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
-"41c":[{"key":"bge_152_II_298","gewicht":0},{"key":"bge_148_II_198","gewicht":0},{"key":"bge_146_II_304","gewicht":0},{"key":"bge_151_II_304__voll","gewicht":0},{"key":"bge_146_II_134__voll","gewicht":0,"erwaegungen":["E. 1.1","E. 2.2","E. 4.2","E. 6.3.2","E. 7.1","E. 8.5"]},{"key":"bs_appellationsgericht_VD.2024.40","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
+"41a":[{"key":"bge_148_II_198","gewicht":0},{"key":"bge_146_II_134","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.36","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.37","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.40","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
+"41c":[{"key":"bge_152_II_298","gewicht":0},{"key":"bge_148_II_198","gewicht":0},{"key":"bge_146_II_304","gewicht":0},{"key":"bge_151_II_304__voll","gewicht":0},{"key":"bge_146_II_134__voll","gewicht":0,"erwaegungen":["E. 1.1","E. 2.2","E. 4.2","E. 6.3.2","E. 7.1","E. 8.5"]},{"key":"bs_appellationsgericht_VD.2025.36","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.37","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.40","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.133","gewicht":null}],
 "41d":[{"key":"bge_148_II_198__voll","gewicht":0,"erwaegungen":["E. 7.1","E. 7.5"]}]
 },
 "gesamtProArtikel":{
 "29":{"bger":1},
 "32":{"bge":1,"bger":2},
 "46":{"kantonal":1},
-"41a":{"bge":2,"kantonal":2},
-"41c":{"bge":3,"bger":2,"kantonal":2},
+"41a":{"bge":2,"kantonal":4},
+"41c":{"bge":3,"bger":2,"kantonal":4},
 "41d":{"bger":1}
 }
 }

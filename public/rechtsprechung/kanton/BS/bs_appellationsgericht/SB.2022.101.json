@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/SB.2022.101",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Hinderung einer Amtshandlung und Diensterschwerung (Beschwerde am BG hängig)",
+        "gegenstand": "Hinderung einer Amtshandlung und Diensterschwerung (BGer 6B_175/2024 vom 6. Juli 2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Eva Christ (Vorsitz), Dr. phil. und MLaw Jacqueline Frossard, Prof. Dr. Cordula Lötscher und Gerichtsschreiberin lic. iur. Barbara Grange"
@@ -236,22 +236,17 @@
         "Die Berufungsklägerin trägt die reduzierten Verfahrenskosten von CHF 310.60 sowie die reduzierte Urteilsgebühr von CHF 600.– für das erstinstanzliche Verfahren und eine Gerichtsgebühr von CHF 1'500.– (inklusive Kanzleiauslagen, zuzüglich allfällige übrige Auslagen) für das Berufungsverfahren."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "BV",
-        "STGB",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=76339&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2024-07-04",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-07-28",
       "sha": "547df33944b70fe16d2aacce109c181ce8a275c0347e6bace3cddc77e0059feb",
       "erstpublikation": "2024-07-04",
-      "aktualisiert": "2024-07-04",
+      "aktualisiert": "2026-07-28",
       "nummerSekundaer": "AG.2024.62",
       "ecli": "ECLI:CH:BSA:2023:SB.2022.101"
     }

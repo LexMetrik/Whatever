@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2025.3",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Erkennungsdienstliche Erfassung / Kostenentscheid",
+        "gegenstand": "Erkennungsdienstliche Erfassung / Kostenentscheid (Rückweisungsverfahren betr. BES.2023.87)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser und Gerichtsschreiberin lic. iur. Barbara Noser Dussy"
@@ -154,20 +154,17 @@
         "Für das Rückweisungsverfahren ZS.2025.3 wird der amtlichen Verteidigerin aus der Gerichtskasse ein Honorar von CHF 400.–, einschliesslich Auslagen, zuzüglich 8,1 % MWST von CHF 32.40, somit insgesamt CHF 432.40 ausgerichtet. Art. 135 Abs. 4 StPO kommt in Bezug auf diesen Betrag nicht zur Anwendung."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78651&Template=search_result_document.html",
-      "abgerufen": "2026-09-23",
-      "fassungsToken": "2026-02-05",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "7763494842e4ea10d639862c8127771a127c69d0aa71e261568899589c71d8e5",
       "erstpublikation": "2026-02-05",
-      "aktualisiert": "2026-02-05",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2025.438",
       "ecli": "ECLI:CH:BSA:2025:ZS.2025.3"
     }

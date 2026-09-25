@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2024.5",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Landesverweisung",
+        "gegenstand": "Landesverweisung (Rückweisungsverfahren betr. SB.2022.19)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser (Vorsitz), Dr. phil. und MLaw Jacqueline Frossard, Prof. Dr. Daniela Thurnherr Keller und Gerichtsschreiber Dr. Beat Jucker"
@@ -389,23 +389,17 @@
         "Dem amtlichen Verteidiger, B____, wird für die zweite Instanz ab dem 10. April 2024 ein Honorar in Höhe von CHF 2‘800.– und ein Auslagenersatz von CHF 84.–, zuzüglich Mehrwertsteuer von CHF 233.60 (8,1 % auf CHF 2'884.–), somit total CHF 3‘117.60, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "BV",
-        "EMRK",
-        "STGB",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77557&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-05-06",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "2033a8d7700165fb59088a655fb4229c9ad78048dc1a2caa2befa0d4327ec734",
       "erstpublikation": "2025-05-06",
-      "aktualisiert": "2025-05-06",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2024.607",
       "ecli": "ECLI:CH:BSA:2024:ZS.2024.5"
     }

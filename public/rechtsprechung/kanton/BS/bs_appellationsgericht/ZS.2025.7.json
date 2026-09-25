@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2025.7",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Befehl für erkennungsdienstliche Erfassung / Kosten- und Entschädigungsfolgen",
+        "gegenstand": "Befehl für erkennungsdienstliche Erfassung / Kosten- und Entschädigungsfolgen (Rückweisungsverfahren betr. BES.2024.10)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser und Gerichtsschreiberin lic. iur. Barbara Noser Dussy"
@@ -129,20 +129,17 @@
         "Der Rechtsvertreterin des Beschwerdeführers, Advokatin lic. phil. Constanze Seelmann, wird für das Beschwerdeverfahren BES.2024.10 eine Entschädigung von CHF 1’134.25 und für das Rückweisungsverfahren ZS.2025.7 eine solche von CHF 225.05 (je inkl. Auslagen und Mehrwertsteuer), somit total CHF 1'359.30, aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79310&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-09",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "3b09c7c85bd788b0fec3a350b0e8464d3865b633975d30be578811cc05df3870",
       "erstpublikation": "2026-07-09",
-      "aktualisiert": "2026-07-09",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2026.92",
       "ecli": "ECLI:CH:BSA:2026:ZS.2025.7"
     }

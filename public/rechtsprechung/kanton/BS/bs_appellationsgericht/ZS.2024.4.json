@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2024.4",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Verletzung der Verkehrsregeln, Vereitelung von Massnahmen zur Feststellung der Fahrunfähigkeit (Motorfahrzeugführer) und pflichtwidriges Verhalten bei Unfall (BGer 6B_866/2024 vom 3. April 2025)",
+        "gegenstand": "Verletzung der Verkehrsregeln, Vereitelung von Massnahmen zur Feststellung der Fahrunfähigkeit (Motorfahrzeugführer) und pflichtwidriges Verhalten bei Unfall (Rückweisungsverfahren betr. SB.2020.14) (BGer 6B_866/2024 vom 3. April 2025)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Christian Hoenen (Vorsitz), Dr. Annatina Wirz, lic. iur. Mia Fuchs und Gerichtsschreiber Dr. Martin Seelmann, LL.M."
@@ -314,22 +314,17 @@
         "A____ trägt Verfahrenskosten von CHF 1'085.30 sowie eine Urteilsgebühr von CHF 400.– für das erstinstanzliche Verfahren sowie die Kosten des zweitinstanzlichen Verfahrens mit Einschluss einer Urteilsgebühr von CHF 1’000.– (inkl. Kanzleiauslagen, zzgl. allfällige übrige Auslagen)."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "STGB",
-        "STPO",
-        "SVG"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77365&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-04-24",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "4169245bc696674a0c291c7998c8dcaec42a47a7dc49bb2584e225de6c924c4b",
       "erstpublikation": "2025-04-16",
-      "aktualisiert": "2025-04-24",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2024.529",
       "ecli": "ECLI:CH:BSA:2024:ZS.2024.4"
     }

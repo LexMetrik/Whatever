@@ -4,10 +4,12 @@
 "erlassEbene":"kanton",
 "dokumente":{
 "bs_appellationsgericht_BES.2023.23":{"zitierung":"Appellationsgericht BS BES.2023.23 vom 23.03.2023","regesteKurz":"Verlegung in die Gruppenhaft","datum":"2023-03-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_DGS.2024.34":{"zitierung":"Appellationsgericht BS DGS.2024.34 vom 21.05.2025","regesteKurz":"Ausstandsbegehren gegen die Abteilung Wirtschaftsdelikte der Staatsanwaltschaft","datum":"2025-05-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_DGS.2024.34":{"zitierung":"Appellationsgericht BS DGS.2024.34 vom 21.05.2025","regesteKurz":"Ausstandsbegehren gegen die Abteilung Wirtschaftsdelikte der Staatsanwaltschaft (BGer 7B_587/2025 vom 18. Juni 2026)","datum":"2025-05-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_DGS.2025.44":{"zitierung":"Appellationsgericht BS DGS.2025.44 vom 24.02.2026","regesteKurz":"Ausstandsbegehren gegen die Instruktionsrichterin im Verfahren […]","datum":"2026-02-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_HB.2023.3":{"zitierung":"Appellationsgericht BS HB.2023.3 vom 31.01.2023","regesteKurz":"Verlängerung der Untersuchungshaft","datum":"2023-01-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2022.85":{"zitierung":"Appellationsgericht BS SB.2022.85 vom 22.06.2023","regesteKurz":"Verbrechen gegen das Betäubungsmittelgesetz (mit Gefährdung der Gesundheit vieler Menschen, Bandenmässigkeit) sowie…","datum":"2023-06-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2024.45":{"zitierung":"Appellationsgericht BS SB.2024.45 vom 30.07.2024","regesteKurz":"Verlängerung der stationären therapeutischen Massnahme gemäss Art. 59 Abs. 4 StGB","datum":"2024-07-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2025.61":{"zitierung":"Appellationsgericht BS SB.2025.61 vom 11.12.2025","regesteKurz":"Verlängerung der stationären therapeutischen Massnahme gemäss Art. 59 Abs. 4 StGB","datum":"2025-12-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2021.125":{"zitierung":"Appellationsgericht BS VD.2021.125 vom 18.02.2022","regesteKurz":"Gesuche um Ratenzahlungen sowie um Aufschub des Strafvollzugs","datum":"2022-02-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2021.287":{"zitierung":"Appellationsgericht BS VD.2021.287 vom 30.04.2022","regesteKurz":"Verweigerung der bedingten Entlassung","datum":"2022-04-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.128":{"zitierung":"Appellationsgericht BS VD.2022.128 vom 29.07.2022","regesteKurz":"Vollzugsbefehl","datum":"2022-07-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -27,10 +29,10 @@
 "bs_appellationsgericht_VD.2025.42":{"zitierung":"Appellationsgericht BS VD.2025.42 vom 02.05.2025","regesteKurz":"Aufschub des Strafvollzugs","datum":"2025-05-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"4":[{"key":"bs_appellationsgericht_SB.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.74","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.125","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_SB.2025.61","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.45","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.74","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.125","gewicht":null}],
 "6":[{"key":"bs_appellationsgericht_VD.2025.39","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.74","gewicht":null}],
 "7":[{"key":"bs_appellationsgericht_VD.2025.39","gewicht":null}],
-"10":[{"key":"bs_appellationsgericht_DGS.2024.34","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.119","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.260","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.23","gewicht":null},{"key":"bs_appellationsgericht_HB.2023.3","gewicht":null}],
+"10":[{"key":"bs_appellationsgericht_DGS.2025.44","gewicht":null},{"key":"bs_appellationsgericht_DGS.2024.34","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.119","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.260","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.23","gewicht":null},{"key":"bs_appellationsgericht_HB.2023.3","gewicht":null}],
 "11":[{"key":"bs_appellationsgericht_VD.2023.97","gewicht":null}],
 "21":[{"key":"bs_appellationsgericht_VD.2025.39","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.42","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.85","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.41","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.87","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.36","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.258","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.128","gewicht":null}],
 "22":[{"key":"bs_appellationsgericht_VD.2021.287","gewicht":null}],
@@ -45,10 +47,10 @@
 "59":[{"key":"bs_appellationsgericht_SB.2022.85","gewicht":null}]
 },
 "gesamtProArtikel":{
-"4":{"kantonal":3},
+"4":{"kantonal":4},
 "6":{"kantonal":2},
 "7":{"kantonal":1},
-"10":{"kantonal":5},
+"10":{"kantonal":6},
 "11":{"kantonal":1},
 "21":{"kantonal":8},
 "22":{"kantonal":1},

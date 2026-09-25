@@ -8,26 +8,29 @@
 "bs_appellationsgericht_VD.2022.213":{"zitierung":"Appellationsgericht BS VD.2022.213 vom 08.07.2023","regesteKurz":"Rückstellung des Einbürgerungsgesuchs","datum":"2023-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.122":{"zitierung":"Appellationsgericht BS VD.2023.122 vom 13.01.2024","regesteKurz":"Erlass bzw. Rückerstattung der bereits bezahlten kantonalen Einbürgerungsgebühr","datum":"2024-01-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.55":{"zitierung":"Appellationsgericht BS VD.2023.55 vom 17.11.2023","regesteKurz":"Rückstellung des Einbürgerungsgesuchs","datum":"2023-11-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2023.93":{"zitierung":"Appellationsgericht BS VD.2023.93 vom 31.10.2023","regesteKurz":"Feststellung der Nichtigkeit des Einbürgerungsentscheids (BGer 1D_9/2023 vom 14.2.2024)","datum":"2023-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2023.93":{"zitierung":"Appellationsgericht BS VD.2023.93 vom 31.10.2023","regesteKurz":"Feststellung der Nichtigkeit des Einbürgerungsentscheids (BGer 1D_9/2023 vom 14.2.2024)","datum":"2023-10-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.188":{"zitierung":"Appellationsgericht BS VD.2025.188 vom 27.04.2026","regesteKurz":"Ablehnung des Einbürgerungsgesuchs","datum":"2026-04-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"4":[{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
-"5":[{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
-"9":[{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_VD.2025.188","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
+"5":[{"key":"bs_appellationsgericht_VD.2025.188","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_VD.2025.188","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
 "11":[{"key":"bs_appellationsgericht_VD.2023.93","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null}],
-"12":[{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null}],
+"12":[{"key":"bs_appellationsgericht_VD.2025.188","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null}],
 "15":[{"key":"bs_appellationsgericht_VD.2023.93","gewicht":null}],
-"25":[{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.99","gewicht":null}],
+"23":[{"key":"bs_appellationsgericht_VD.2025.188","gewicht":null}],
+"25":[{"key":"bs_appellationsgericht_VD.2025.188","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.55","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.213","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.223","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.99","gewicht":null}],
 "27":[{"key":"bs_appellationsgericht_VD.2023.122","gewicht":null}]
 },
 "gesamtProArtikel":{
-"4":{"kantonal":2},
-"5":{"kantonal":3},
-"9":{"kantonal":3},
+"4":{"kantonal":3},
+"5":{"kantonal":4},
+"9":{"kantonal":4},
 "11":{"kantonal":2},
-"12":{"kantonal":2},
+"12":{"kantonal":3},
 "15":{"kantonal":1},
-"25":{"kantonal":4},
+"23":{"kantonal":1},
+"25":{"kantonal":5},
 "27":{"kantonal":1}
 }
 }

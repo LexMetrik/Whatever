@@ -34,10 +34,11 @@
 "bs_appellationsgericht_ZB.2021.5":{"zitierung":"Appellationsgericht BS ZB.2021.5 vom 14.01.2022","regesteKurz":"Getrenntleben - Abänderung Unterhaltsanspruch","datum":"2022-01-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZB.2022.28":{"zitierung":"Appellationsgericht BS ZB.2022.28 vom 05.03.2024","regesteKurz":"Forderung (Teilklage)","datum":"2024-03-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_IV.2023.77":{"zitierung":"Sozialversicherungsgericht BS IV.2023.77 vom 14.11.2023","regesteKurz":"Eingliederungsmassnahmen zu Recht nach Durchführung eines Mahn- und Bedenkzeitverfahrens eingestellt","datum":"2023-11-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_UV.2025.36":{"zitierung":"Sozialversicherungsgericht BS UV.2025.36 vom 16.10.2025","regesteKurz":"UVG (Bundesgerichtsurteil 8C_175/2026 vom 26.03.2026)","datum":"2025-10-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_UV.2025.36":{"zitierung":"Sozialversicherungsgericht BS UV.2025.36 vom 16.10.2025","regesteKurz":"UVG (Bundesgerichtsurteil 8C_175/2026 vom 26.03.2026)","datum":"2025-10-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_ZV.2025.3":{"zitierung":"Sozialversicherungsgericht BS ZV.2025.3 vom 12.03.2026","regesteKurz":"Krankentaggeld: krankheitsbedingte Arbeitsunfähigkeit nicht nachgewiesen, Gegenbeweis durch Versicherung erbracht","datum":"2026-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"3":[{"key":"bs_appellationsgericht_VD.2021.270","gewicht":null}],
+"3":[{"key":"bs_sozialversicherungsgericht_ZV.2025.3","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.270","gewicht":null}],
 "4":[{"key":"bs_sozialversicherungsgericht_UV.2025.36","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2024.22","gewicht":null},{"key":"bs_appellationsgericht_AUS.2024.19","gewicht":null},{"key":"bs_sozialversicherungsgericht_IV.2023.77","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.43","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.218","gewicht":null},{"key":"bs_appellationsgericht_AUS.2023.16","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.207","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.158","gewicht":null}],
 "6":[{"key":"bs_appellationsgericht_AUS.2025.132","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.28","gewicht":null},{"key":"bs_appellationsgericht_AUS.2023.42","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.247","gewicht":null}],
 "8":[{"key":"bs_appellationsgericht_VD.2025.92","gewicht":null}],
@@ -50,7 +51,7 @@
 "24":[{"key":"bs_appellationsgericht_AK.2025.27","gewicht":null},{"key":"bs_appellationsgericht_AK.2024.6","gewicht":null},{"key":"bs_appellationsgericht_AK.2023.31","gewicht":null},{"key":"bs_appellationsgericht_AK.2023.2","gewicht":null},{"key":"bs_appellationsgericht_AK.2023.5","gewicht":null},{"key":"bs_appellationsgericht_AK.2022.32","gewicht":null},{"key":"bs_appellationsgericht_AK.2023.9","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.67","gewicht":null}]
 },
 "gesamtProArtikel":{
-"3":{"kantonal":1},
+"3":{"kantonal":2},
 "4":{"kantonal":9},
 "6":{"kantonal":4},
 "8":{"kantonal":1},

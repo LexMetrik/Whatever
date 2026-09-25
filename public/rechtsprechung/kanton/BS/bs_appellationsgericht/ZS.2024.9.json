@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2024.9",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Befehl für erkennungsdienstliche Erfassung / Wiedererwägung",
+        "gegenstand": "Befehl für erkennungsdienstliche Erfassung / Wiedererwägung (Rückweisungsverfahren betr. BES.2022.34)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Liselotte Henz und Gerichtsschreiber Dr. Nicola Inglese"
@@ -225,21 +225,17 @@
         "Der Beschwerdeführer trägt die ordentlichen Kosten des Beschwerdeverfahrens mit einer Gebühr von CHF 800.–, einschliesslich Auslagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "BV",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77409&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-05-27",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "dd33c70e498084c6f2c6d7a0cd3b74d773e9a214fa679a393d24605231addd0c",
       "erstpublikation": "2025-05-27",
-      "aktualisiert": "2025-05-27",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2024.544",
       "ecli": "ECLI:CH:BSA:2024:ZS.2024.9"
     }

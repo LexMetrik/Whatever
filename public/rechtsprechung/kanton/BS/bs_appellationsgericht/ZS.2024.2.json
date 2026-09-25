@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2024.2",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Zivilforderung",
+        "gegenstand": "Zivilforderung (Rückweisungsverfahren betr. SB.2021.8)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Liselotte Henz, Prof. Dr. Daniela Thurnherr Keller, Prof. Dr. Jonas Weber und Gerichtsschreiber Dr. Nicola Inglese"
@@ -319,22 +319,17 @@
         "Es wird festgestellt, dass mit den Akonto-Zahlungen des Berufungsklägers 1 vom 29. März 2021 und 1. Juli 2021 die Parteientschädigung für das erstinstanzliche Verfahren im Umfang von CHF 4‘500.– untergegangen ist."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "BGG",
-        "OR",
-        "STGB",
-        "STPO"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78430&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-09-16",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "094bfd4b4ea5e8410c72045443be582419a1110a5187410fe963556a81511021",
       "erstpublikation": "2025-09-16",
-      "aktualisiert": "2025-09-16",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2025.297",
       "ecli": "ECLI:CH:BSA:2025:ZS.2024.2"
     }

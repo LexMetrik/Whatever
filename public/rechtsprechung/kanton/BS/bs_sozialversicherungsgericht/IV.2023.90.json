@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2023.90",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Anspruch auf eine Invalidenrente; Gerichtsgutachten (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "Anspruch auf eine Invalidenrente; Gerichtsgutachten (Bundesgerichtsurteil 8C_443/2025)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. A. Pfleiderer (Vorsitz), P. Waegeli, Th. Aeschbach und Gerichtsschreiberin MLaw L. Marti"
@@ -280,22 +280,17 @@
         "          Die Beschwerdegegnerin bezahlt der Beschwerdeführerin eine Parteientschädigung von Fr. 4'350.00 (inkl. Auslagen) zuzüglich 7.7 % Mehrwertsteuer auf Fr. 3'750.00 (Fr. 288.75) und 8.1 % Mehrwertsteuer auf Fr. 500.00 (Fr. 40.50)."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "ATSG",
-        "BGG",
-        "IVG",
-        "IVV"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78486&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-09-18",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-07-22",
       "sha": "de461bb60c13e63a25c371b498fe29eb5ae3e6433925ab9410eaa5eb06f27e15",
       "erstpublikation": "2025-09-16",
-      "aktualisiert": "2025-09-18",
+      "aktualisiert": "2026-07-22",
       "nummerSekundaer": "SVG.2025.105",
       "ecli": "ECLI:CH:BSS:2025:IV.2023.90"
     }

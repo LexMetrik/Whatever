@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.40",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "IVG (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "IVG Neuanmeldung; kein Rentenanspruch (Bundesgerichtsurteil 9C_285/2026 vom 29.07.2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), MLaw B. Fürbringer, Th. Aeschbach und Gerichtsschreiberin MLaw L. Marti"
@@ -265,21 +265,17 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen. Zufolge Bewilligung der unentgeltlichen Verbeiständung wird lic. iur. J. Tschopp, Advokat, ein Honorar von Fr. 3'600.00 (inklusive Auslagen) zuzüglich Mehrwertsteuer von Fr. 291.60 aus der Gerichtskasse zugesprochen."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "ATSG",
-        "BGG",
-        "IVG"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79448&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-07-18",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-15",
       "sha": "75a1e73e2e28e8bf94fd3e2949607e51f398bb9686117f92e4b5d18d0f05b4f5",
       "erstpublikation": "2026-07-18",
-      "aktualisiert": "2026-07-18",
+      "aktualisiert": "2026-08-15",
       "nummerSekundaer": "SVG.2026.56",
       "ecli": "ECLI:CH:BSS:2025:IV.2025.40"
     }

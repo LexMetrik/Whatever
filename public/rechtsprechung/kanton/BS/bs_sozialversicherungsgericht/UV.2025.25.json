@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2025.25",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Unfallbegriff vorliegend erfüllt; Beschwerdegutheissung (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "Unfallbegriff vorliegend erfüllt; Beschwerdegutheissung (Bundesgerichtsurteil 8C_171/2026 vom 03.09.2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), MLaw B. Fürbringer, Th. Aeschbach und Gerichtsschreiberin Dr. K. Zimmermann"
@@ -270,21 +270,17 @@
         "            Die ausserordentlichen Kosten werden wettgeschlagen."
       ],
       "zitierteNormen": [],
-      "normKeys": [
-        "ATSG",
-        "BGG",
-        "UVG"
-      ],
+      "normKeys": [],
       "zitierteEntscheide": [],
       "bestand": "snapshot",
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79288&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-03-07",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-09-22",
       "sha": "1db28b4c80e98fd919561e1c8ec1d4efe70ea4151f953c6909577d6ef6537acc",
       "erstpublikation": "2026-02-06",
-      "aktualisiert": "2026-03-07",
+      "aktualisiert": "2026-09-22",
       "nummerSekundaer": "SVG.2026.24",
       "ecli": "ECLI:CH:BSS:2025:UV.2025.25"
     }
