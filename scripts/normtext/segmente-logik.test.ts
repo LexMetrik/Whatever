@@ -9,10 +9,13 @@
  */
 import { describe, it, expect } from 'vitest';
 import {
+  alleArtikelEids,
+  ankerIdVonEid,
   fehlendeIndizes,
   fingerabdruck,
   gleicheBasislinieAb,
   normalisiere,
+  parseErlassHtml,
   projektionsBlob,
   segmentiereArtikel,
   type BasislinienEintrag,
@@ -115,7 +118,11 @@ describe('segmentiereArtikel — Fussnoten, Absatznummer, Tabellen, Anker-Präse
         '<dd>Hongkong a</dd></dl></td></tr></tbody></table>',
     );
     const segmente = segmentiereArtikel(html, 'art_1')!;
-    expect(segmente.map((s) => s.text)).toEqual(['Hongkong a']);
+    // B4: zusätzlich EIN Zeilen-Fingerabdruck (art 'tr') neben dem Zell-Segment
+    // (art 'dd', aus der dl-Zerlegung der einzigen Zelle) — additiv, kein
+    // Ersatz für die feinere Zellzerlegung.
+    expect(segmente.filter((s) => s.art !== 'tr').map((s) => s.text)).toEqual(['Hongkong a']);
+    expect(segmente.filter((s) => s.art === 'tr').map((s) => s.text)).toEqual(['Hongkong a']);
   });
 
   it('entfernt eingebetteten <style>-Inhalt (Inline-SVG-Icon) aus dem Segmenttext', () => {
@@ -224,5 +231,150 @@ describe('gleicheBasislinieAb — neu / bekannt / veraltet', () => {
     expect(abgleich.neu).toHaveLength(1);
     expect(abgleich.bekannt).toHaveLength(0);
     expect(abgleich.veraltet).toHaveLength(1); // der STHG-Eintrag ist heute ebenfalls nicht mehr da
+  });
+
+  it('B10: ein Basislinien-Eintrag eines NICHT geprüften Erlasses gilt als übersprungen, nicht veraltet', () => {
+    const zweiErlasse: BasislinienEintrag[] = [
+      ...basislinie,
+      { erlass: 'OR', eId: 'art_1', hash: 'xyz.999', laenge: 12, auszug: 'ein Auszug', befund: 'normtext-treue-02' },
+    ];
+    const geprueftErlasse = new Set(['STHG']); // OR wurde diesen Lauf übersprungen (kein/veraltetes Soll)
+    const abgleich = gleicheBasislinieAb([], zweiErlasse, geprueftErlasse);
+    expect(abgleich.veraltet).toHaveLength(1);
+    expect(abgleich.veraltet[0].erlass).toBe('STHG');
+    expect(abgleich.uebersprungen).toHaveLength(1);
+    expect(abgleich.uebersprungen[0].erlass).toBe('OR');
+  });
+
+  it('B10: ohne geprueftErlasse (altes Verhalten) gelten alle nicht mehr gefundenen Einträge als veraltet', () => {
+    const abgleich = gleicheBasislinieAb([], basislinie);
+    expect(abgleich.veraltet).toHaveLength(1);
+    expect(abgleich.uebersprungen).toHaveLength(0);
+  });
+});
+
+describe('ankerIdVonEid — B1: disp-Untereinheit eId ⇄ HTML-Anker-ID', () => {
+  it('bildet eine disp-Untereinheits-eId auf ihre HTML-Anker-Form ab (Unterstrich → Schrägstrich)', () => {
+    expect(ankerIdVonEid('disp_u1_art_149')).toBe('disp_u1/art_149');
+  });
+
+  it('lässt eine normale Artikel-eId unverändert (Identität)', () => {
+    expect(ankerIdVonEid('art_56')).toBe('art_56');
+  });
+
+  it('löst einen disp-Untereinheits-Anker über die abgebildete ID auf, die rohe eId liefert weiterhin null (Beleg des Bugs vor dem Fix)', () => {
+    const html =
+      '<article id="disp_u1/art_149"><h6 class="heading">Art.&nbsp;149</h6>' +
+      '<div class="collapseable"><p class="absatz">Datum des Inkrafttretens: 1. Januar 1956</p></div></article>';
+    const segmente = segmentiereArtikel(html, ankerIdVonEid('disp_u1_art_149'));
+    expect(segmente).not.toBeNull();
+    expect(segmente!.map((s) => s.text.trim())).toContain('Datum des Inkrafttretens: 1. Januar 1956');
+    expect(segmentiereArtikel(html, 'disp_u1_art_149')).toBeNull();
+  });
+});
+
+describe('segmentiereArtikel — B2: <dl> DIREKT in <dl> (ohne <dd> dazwischen)', () => {
+  it('zerlegt beide Ebenen, auch wenn die innere <dl> kein umschliessendes <dd> hat', () => {
+    const html = huelle(
+      '<dl><dt>a.</dt><dd>Ist dieser Zinssatz negativ oder null,</dd>' +
+        '<dl><dt>1.</dt><dd>gilt der Mindestsatz;</dd><dt>2.</dt><dd>ist eine Neufestsetzung nötig.</dd></dl></dl>',
+    );
+    const segmente = segmentiereArtikel(html, 'art_1');
+    const texte = segmente!.map((s) => s.text);
+    expect(texte).toContain('Ist dieser Zinssatz negativ oder null,');
+    expect(texte).toContain('gilt der Mindestsatz;');
+    expect(texte).toContain('ist eine Neufestsetzung nötig.');
+    // <dt> bleibt reine Listenmarke, nie ein eigenes Segment:
+    expect(segmente!.some((s) => s.text.trim() === '1.')).toBe(false);
+  });
+});
+
+describe('segmentiereArtikel — B3: Zwischentitel h1–h5 vs. eigene Anker-Überschrift', () => {
+  it('nimmt einen Zwischentitel (h2) als Segment auf, aber NICHT die eigene h1-Überschrift des Ankers', () => {
+    const html =
+      '<section id="annex_10"><h1><a href="#annex_10">Anhang 10</a></h1>' +
+      '<p class="absatz">Einleitungstext.</p><h2>Lichter, Richtungsblinker und Rückstrahler</h2>' +
+      '<p class="absatz">Weiterer Text.</p></section>';
+    const segmente = segmentiereArtikel(html, 'annex_10');
+    expect(segmente).not.toBeNull();
+    const texte = segmente!.map((s) => s.text.trim());
+    expect(texte).not.toContain('Anhang 10');
+    expect(texte).toContain('Lichter, Richtungsblinker und Rückstrahler');
+    expect(texte).toContain('Einleitungstext.');
+    expect(texte).toContain('Weiterer Text.');
+    expect(segmente!.filter((s) => s.art === 'h')).toHaveLength(1);
+  });
+
+  it('lässt die h6-eigene Artikel-Überschrift unverändert unangetastet (kein h1–h5 im Spiel)', () => {
+    const html = huelle('<p class="absatz">Normaler Artikeltext.</p>');
+    const segmente = segmentiereArtikel(html, 'art_1');
+    expect(segmente!.map((s) => s.text.trim())).not.toContain('Art. 1 Sachüberschrift');
+    expect(segmente!.some((s) => s.art === 'h')).toBe(false);
+  });
+});
+
+describe('segmentiereArtikel — B4: Zeilen-Fingerabdruck rettet eine zu kurze Tabellenzelle', () => {
+  it('eine Tarifzelle unter der Segment-Mindestlänge (z.B. "0.77") bleibt über den Zeilen-Fingerabdruck sichtbar', () => {
+    const html = huelle('<table><tbody><tr><td>Grundgebühr</td><td>0.77</td></tr></tbody></table>');
+    const segmente = segmentiereArtikel(html, 'art_1')!;
+    const zeile = segmente.find((s) => s.art === 'tr');
+    expect(zeile).toBeDefined();
+    expect(zeile!.text).toContain('0.77');
+    expect(segmente.some((s) => s.art === 'td' && s.text === '0.77')).toBe(true);
+  });
+
+  it('eine verklebungsfreie Zeilen-Verkettung bei Zellen mit eigener <p>+<dl>-Struktur (kein "Nunter"-Artefakt)', () => {
+    const html = huelle(
+      '<table><tbody><tr><td><p class="man-template-tab-krpr">Bei Temperaturen:</p>' +
+        '<dl><dt>– </dt><dd>über 10 °C: 0,2 mg/l N</dd><dt>– </dt><dd>unter 10 °C: 0,4 mg/l N</dd></dl></td></tr></tbody></table>',
+    );
+    const segmente = segmentiereArtikel(html, 'art_1')!;
+    const zeile = segmente.find((s) => s.art === 'tr');
+    expect(zeile).toBeDefined();
+    expect(zeile!.text).not.toContain('Nunter');
+  });
+});
+
+describe('alleArtikelEids — B5: Artikelmenge aus der HTML, nicht aus der Projektion', () => {
+  it('findet art_* und disp_uN/art_*-Anker, ignoriert andere <article id>-Schemata (z.B. Anhang-Ziffern-Artikel)', () => {
+    const html =
+      '<html><body>' +
+      '<article id="art_1"><h6>Art. 1</h6></article>' +
+      '<article id="disp_u1/art_149"><h6>Art. 149</h6></article>' +
+      '<article id="annex_I/lvl_u1/lvl_I/art_1"><h6>Article 1</h6></article>' +
+      '</body></html>';
+    const dokument = parseErlassHtml(html);
+    expect(alleArtikelEids(dokument).sort()).toEqual(['art_1', 'disp_u1_art_149']);
+  });
+
+  it('dedupliziert eine physisch doppelte id (Fedlex-Quellfehler, z.B. KKV art_126_z) auf EINE eId', () => {
+    const html =
+      '<html><body><article id="art_126_z"><h6>A</h6></article>' +
+      '<article id="art_126_z"><h6>B</h6></article></body></html>';
+    const dokument = parseErlassHtml(html);
+    expect(alleArtikelEids(dokument)).toEqual(['art_126_z']);
+  });
+});
+
+describe('segmentiereArtikel — B2 Restmengen-Prüfung (meldend, kein Segment)', () => {
+  it('meldet nennenswerten Text, der von KEINEM bekannten Segmenttyp erfasst wird (z.B. <ul>/<li>)', () => {
+    const html = huelle('<ul><li>Ein Listenpunkt, der nicht als dl/dd modelliert ist und daher durchrutscht.</li></ul>');
+    const restmeldungen: string[] = [];
+    const segmente = segmentiereArtikel(html, 'art_1', restmeldungen);
+    expect(segmente).toEqual([]); // kein bekannter Segmenttyp fasst <ul>/<li>
+    expect(restmeldungen).toHaveLength(1);
+    expect(restmeldungen[0]).toContain('Ein Listenpunkt');
+  });
+
+  it('bleibt still, wenn die Zerlegung den ganzen Bereich erfasst hat', () => {
+    const html = huelle('<p class="absatz">Ein normaler Satz ohne Rest.</p>');
+    const restmeldungen: string[] = [];
+    segmentiereArtikel(html, 'art_1', restmeldungen);
+    expect(restmeldungen).toHaveLength(0);
+  });
+
+  it('ohne übergebenes Array (Default) wird gar nicht erst geprüft — kein Verhaltensunterschied an den Segmenten', () => {
+    const html = huelle('<ul><li>Text, der ohne Restmeldungs-Array einfach nur fehlt.</li></ul>');
+    expect(segmentiereArtikel(html, 'art_1')).toEqual([]);
   });
 });

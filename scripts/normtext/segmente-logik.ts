@@ -52,7 +52,12 @@ export const SEGMENT_MINDESTLAENGE = 8;
 // deren `segmenterVersion` von der hier exportierten abweicht, gilt als
 // veraltet (wie ein Pin-Mismatch) — ihre Fingerabdrücke wurden mit einer
 // ANDEREN Zerlegung erzeugt und sind gegen die heutige nicht mehr aussagekräftig.
-export const SEGMENTER_VERSION = 1;
+//
+// 2 (Gegenprüfung 25.9.2026, Nachbesserung B1–B5): Zerlegung/Ankerauflösung
+// geändert (dl>dl, h1–h5, Tabellenzeilen-Fingerabdruck, disp-Anker-Abbildung,
+// Artikelmenge aus der HTML statt der Projektion) — jede committete Soll-Datei
+// von Version 1 ist mit der heutigen Logik nicht mehr vergleichbar.
+export const SEGMENTER_VERSION = 2;
 
 // ── Rolling-Hash / Fingerabdruck (NACHTRAG: Rabin-Karp, BigInt-frei) ───────
 // Zwei unabhängige Polynom-Hashes mod 2^31−1 (Mersenne-Primzahl, gängige Wahl
@@ -137,11 +142,68 @@ export function fehlendeIndizes(blobNormalisiert: string, fps: readonly Fingerab
 
 // ── HTML-Segmentierung (Modus C: frische Ableitung) ────────────────────────
 
-export type SegmentArt = 'p' | 'dd' | 'td' | 'th';
+export type SegmentArt = 'p' | 'dd' | 'td' | 'th' | 'h' | 'tr';
 
 export interface RohSegment {
   art: SegmentArt;
   text: string; // roh (noch NICHT normalisiert) — Aufrufer normalisiert + filtert Mindestlänge.
+}
+
+// ── B1/B5 (Gegenprüfung 25.9.2026): eId ⇄ HTML-Anker-ID ────────────────────
+//
+// Die Projektion kodiert den Fedlex-Pfadtrenner "/" innerhalb einer
+// disp-Untereinheit als "_" (z.B. eId "disp_u1_art_149"), die HTML-Anker-ID
+// behält ihn ("disp_u1/art_149"). Ohne diese Abbildung liefert
+// `getElementById(eId)` für JEDEN so aufgebauten Anker `null`: 276 von 276
+// disp-Einträgen (ZGB SchlT 178, OR 83, PatG 9, SchKG 4, VZG 2 — empirisch
+// gezählt, node public/normtext/bund/*.json) fielen dadurch VOR diesem Fix
+// still aus dem Soll, darunter ein echter, unentdeckter Verlust: PatG Art. 149
+// (Inkrafttretens-Daten — steht in HTML, AKN-XML und Prüferliste). Alle
+// übrigen eIds (der weit überwiegende Teil) sind bereits ihre eigene
+// Anker-ID — reine Identität.
+const DISP_EID_MUSTER = /^(disp_u\d+)_(art_.+)$/;
+
+export function ankerIdVonEid(eId: string): string {
+  const treffer = eId.match(DISP_EID_MUSTER);
+  return treffer ? `${treffer[1]}/${treffer[2]}` : eId;
+}
+
+/** Umkehrung von `ankerIdVonEid` — HTML-Anker-ID → Projektions-eId-Form. */
+function eIdVonAnkerId(ankerId: string): string {
+  return ankerId.replace('/', '_');
+}
+
+// Nur ECHTE Artikel-Anker (§ B5-Scope, deckungsgleich mit `check:vollstaendigkeit`,
+// das laut Gegenprüfung ebenfalls "nur art_*" prüft): "art_…" oder eine
+// disp-Untereinheit "disp_uN/art_…". Fedlex vergibt <article id="…"> AUCH für
+// andere Zählungen (z.B. `annex_I/lvl_u1/lvl_I/art_1` — Artikel-Nummerierung
+// INNERHALB eines mehrstufig gegliederten Anhangs, empirisch 62 Vorkommen) —
+// diese sind in KEINEM public/normtext/bund/*.json-eId als eigener Top-Level-
+// Eintrag modelliert (node-Sweep 25.9.2026: 0 Treffer für "/lvl_" unter allen
+// Bund-eIds) und würden sonst als Falsch-Positiv "kein Projektions-Eintrag"
+// (B5-FEHLER) melden, obwohl sie nie einer sein sollten.
+const ARTIKEL_ANKER_MUSTER = /^(art_[^/]+|disp_u\d+\/art_[^/]+)$/;
+
+/**
+ * Alle Artikel-eIds, die laut HTML tatsächlich existieren (B5: die zu prüfende
+ * Artikelmenge kommt aus den HTML-Ankern, NICHT aus der Projektion — sonst
+ * bliebe ein ganzer aus der Projektion GELÖSCHTER Artikel unbemerkt, empirisch
+ * P13b: ZGB Art. 1 aus Projektion UND Soll entfernt blieb in Modus B UND C
+ * grün, weil beide bisher nur über `projektion.values()` iterierten). Ein
+ * `Set` statt einer Liste: KKV trägt zwei physische `<article id="art_126_z">`
+ * (Fedlex-Quellfehler, s. artikel-vorkommen.ts) — beide liefern dieselbe eId
+ * "art_126_z"; das zweite Vorkommen hat in der Projektion den Synthese-Schlüssel
+ * "art_126_z__2" (kein Attribut dieses Namens in der HTML selbst), kommt daher
+ * NICHT aus dieser Funktion, sondern bleibt Sache der Projektions-Vereinigung
+ * im Aufrufer (B1-Ausnahme, `keinAnkerLokalisierbar`).
+ */
+export function alleArtikelEids(dokument: { querySelectorAll: (sel: string) => Iterable<any> }): string[] {
+  const eids = new Set<string>();
+  for (const el of dokument.querySelectorAll('article[id]')) {
+    const ankerId = el.getAttribute('id') as string;
+    if (ARTIKEL_ANKER_MUSTER.test(ankerId)) eids.add(eIdVonAnkerId(ankerId));
+  }
+  return [...eids];
 }
 
 // Absatznummer-Muster (Fedlex-Konvention: <sup>1</sup>, <sup>1bis</sup>, …) —
@@ -209,7 +271,9 @@ function blockText(element: any): string {
  * damit die CLI bei tausenden Artikeln je Erlass-Datei nicht tausendmal neu
  * parst — das Parsen ist der teure Schritt, `getElementById` je Anker billig.
  */
-export function parseErlassHtml(html: string): { getElementById: (id: string) => any } {
+export function parseErlassHtml(
+  html: string,
+): { getElementById: (id: string) => any; querySelectorAll: (sel: string) => Iterable<any> } {
   const { document } = parseHTML(html);
   return document;
 }
@@ -224,39 +288,70 @@ export function parseErlassHtml(html: string): { getElementById: (id: string) =>
  */
 /**
  * Zerlegt einen Bereich (Artikelkörper ODER — rekursiv — eine einzelne
- * Tabellenzelle) in Listen- und Fliesstext-Segmente: Listen rekursiv (<dd>
- * ohne den eigenen, ggf. verschachtelten <dl>-Inhalt — der wird bei der
- * Rekursion als EIGENE Segmente erfasst, empirisch belegt: STHG hat <dd>-Text
- * gefolgt von einem verschachtelten <dl>; <dt> nie, reine Listenmarke, §
- * Architektur Ziff. 4), danach der restliche Fliesstext (jeder <p>, JEDER
- * Klasse — die Extraktor-Klassenliste [absatz09pt, man-template-tab-utit, …]
- * ist für dieses Tor irrelevant: es prüft Enthaltensein, nicht
- * Klassenzugehörigkeit, s. Architektur-Abweichung im Bericht). Mutiert `bereich`
- * (entfernt die verarbeiteten <dl>), damit ein äusserer <p>-Scan sie nicht
- * doppelt sieht — der Aufrufer übergibt darum stets einen Klon.
+ * Tabellenzelle) in Listen- und Fliesstext-Segmente: JEDES <dd> im Bereich
+ * (ohne den eigenen, ggf. verschachtelten <dl>-Inhalt — der wird über
+ * dieselbe `querySelectorAll('dd')` als EIGENES Segment erfasst, egal wie
+ * tief verschachtelt; <dt> nie, reine Listenmarke, § Architektur Ziff. 4),
+ * danach der restliche Fliesstext (jeder <p>, JEDER Klasse — die
+ * Extraktor-Klassenliste [absatz09pt, man-template-tab-utit, …] ist für
+ * dieses Tor irrelevant: es prüft Enthaltensein, nicht Klassenzugehörigkeit,
+ * s. Architektur-Abweichung im Bericht).
+ *
+ * B2 (Gegenprüfung 25.9.2026): die frühere Version ging über eine dd→dl-
+ * Rekursion (nur <dl> DIREKT unter einem <dd>), das übersah ein <dl>, das
+ * OHNE dazwischenliegendes <dd> direkt in einem anderen <dl> steckt
+ * (`<dl><dl>…`) — 22 Listenpunkte verloren (StHG Art. 7 «Ist dieser Zinssatz
+ * negativ oder null …», VVV Anhang 4, HZÜ-Formular). `querySelectorAll('dd')`
+ * findet JEDES <dd> im Teilbaum unabhängig von seiner Elternkette — Fixtures
+ * R2–R4/R6/R7/R12 der Gegenprüfung bestanden das direkt, kein Sonderfall mehr
+ * nötig.
+ *
+ * Mutiert `bereich` (entfernt die verarbeiteten <dl> UND <p>), damit (a) ein
+ * äusserer Scan sie nicht doppelt sieht und (b) die Restmengen-Prüfung des
+ * Aufrufers nur noch UNBEKANNTEN Rest sieht — der Aufrufer übergibt darum
+ * stets einen Klon.
  */
 function segmentiereBereich(bereich: any, segmente: RohSegment[]): void {
-  const sammleDl = (dl: any): void => {
-    for (const dd of [...dl.children].filter((k: any) => k.tagName === 'DD')) {
-      const eigenerKlon = dd.cloneNode(true);
-      for (const verschachtelt of [...eigenerKlon.querySelectorAll('dl')]) verschachtelt.remove();
-      segmente.push({ art: 'dd', text: blockText(eigenerKlon) });
-      for (const kindDl of [...dd.querySelectorAll(':scope > dl')]) sammleDl(kindDl);
-    }
-  };
-  const topLevelDls = [...bereich.querySelectorAll('dl')].filter(
-    (dl: any) => !dl.parentElement?.closest('dl'),
-  );
-  for (const dl of topLevelDls) {
-    sammleDl(dl);
-    dl.remove();
+  for (const dd of [...bereich.querySelectorAll('dd')]) {
+    const eigenerKlon = dd.cloneNode(true);
+    for (const verschachtelt of [...eigenerKlon.querySelectorAll('dl')]) verschachtelt.remove();
+    segmente.push({ art: 'dd', text: blockText(eigenerKlon) });
   }
+  for (const dl of [...bereich.querySelectorAll('dl')]) dl.remove();
   for (const p of [...bereich.querySelectorAll('p')]) {
     segmente.push({ art: 'p', text: blockText(p) });
+    p.remove();
   }
 }
 
-export function segmentiereAnker(dokument: { getElementById: (id: string) => any }, ankerId: string): RohSegment[] | null {
+// B2 (Restmengen-Prüfung, Gegenprüfung 25.9.2026): nach dd/dl/p-Extraktion
+// darf im Bereich kein nennenswerter Text mehr übrig sein — ein unbekannter
+// Block-Typ (z.B. <ul>/<li>, <blockquote>) würde sonst wie dl>dl VOR diesem
+// Fix komplett unbemerkt Text verschlucken. Schwelle wie ein Segment (§
+// Architektur Ziff. 5: < 8 Zeichen sind Marken/Ziffern-Rauschen, kein
+// Verlust-Risiko). Rein meldend (kein Segment, keine Fingerabdruck-Prüfung
+// dagegen) — eine willkürlich zusammengeklebte Restmenge mehrerer, im
+// Original NICHT benachbarter Text-Knoten ist keine verlässliche
+// Enthaltensein-Prüfung gegen den Projektions-Blob (anders als ein
+// tatsächliches HTML-Element).
+function restmenge(bereich: any): string | null {
+  const roh = bereich.textContent ?? '';
+  if (normalisiere(roh).length < SEGMENT_MINDESTLAENGE) return null;
+  return roh.trim().replace(/\s+/g, ' ').slice(0, 80); // lesbare Vorschau (Leerraum erhalten), Schwelle bleibt normalisiert
+}
+
+/**
+ * @param restmeldungen optional: wird — falls übergeben — um eine Meldung
+ *   ergänzt, wenn nach der Zerlegung nennenswerter unklassifizierter Text
+ *   übrig bleibt (B2-Restmengen-Prüfung). `undefined` (Default, Tests/Fixtures
+ *   ohne Interesse daran) macht KEINE Restmengen-Prüfung — reine Performance/
+ *   Kompatibilität, kein Verhaltensunterschied an den Segmenten selbst.
+ */
+export function segmentiereAnker(
+  dokument: { getElementById: (id: string) => any },
+  ankerId: string,
+  restmeldungen?: string[],
+): RohSegment[] | null {
   const wurzel = dokument.getElementById(ankerId);
   if (!wurzel) return null;
   const klon = wurzel.cloneNode(true);
@@ -267,7 +362,30 @@ export function segmentiereAnker(dokument: { getElementById: (id: string) => any
     raus.remove();
   }
 
+  // B3 (Gegenprüfung 25.9.2026): die EIGENE Überschrift EINES NICHT-Artikel-
+  // Ankers (Anhänge nutzen h1 statt h6 — empirisch an VTS annex_10 geprüft:
+  // <section id="annex_10"><h1>…Anhang 10…</h1>…, derselbe Aufbau wie ein
+  // Artikel mit seinem h6) ist stets das ERSTE Element-Kind der Anker-Wurzel;
+  // ihr Text liegt in `artikelLabel`, einem anderen Projektionsfeld — sonst
+  // ein Tor-Artefakt. Ein Zwischentitel weiter unten im Baum ist NIE das
+  // erste Kind der Wurzel und bleibt darum erhalten (s. u.). Für Artikel
+  // selbst ein No-op: ihre eigene Überschrift ist h6, oben bereits entfernt.
+  const erstesKind = klon.firstElementChild;
+  if (erstesKind && /^H[1-5]$/.test(erstesKind.tagName)) erstesKind.remove();
+
   const segmente: RohSegment[] = [];
+
+  // B3: Zwischentitel h1–h5 IRGENDWO im Anker (2'010 in Anhängen + 406
+  // Eigen-Titel weiterer Nicht-Artikel-Anker laut Gegenprüfung — die eigene
+  // Überschrift DIESES Ankers ist bereits oben entfernt) waren zuvor gar kein
+  // Segmenttyp und damit ungeprüft, undokumentiert. Vor der Tabellen-/dl-
+  // Verarbeitung eingesammelt und entfernt (Überschriften stehen in diesem
+  // Korpus nie in einer Tabellenzelle oder Liste — empirisch keine
+  // Gegenbeispiele), damit die Restmengen-Prüfung sie nicht nochmals sieht.
+  for (const h of [...klon.querySelectorAll('h1, h2, h3, h4, h5')]) {
+    segmente.push({ art: 'h', text: blockText(h) });
+    h.remove();
+  }
 
   // Tabellen ZELLWEISE (§ Architektur Ziff. 4 — der Referenz-Prüfer tolerierte
   // abweichende Zeilen-Zerlegung; zellweise ist die feinere, dem JSON-Schema
@@ -278,8 +396,39 @@ export function segmentiereAnker(dokument: { getElementById: (id: string) => any
   // <dd>unter 10 °C: …</dd></dl></td>` — als EIN Blob gelesen verklebte das
   // zu "…Nunter 10…", ein Zerlegungs-Artefakt). Enthält die Zelle KEINE
   // solche innere Struktur, bleibt sie EIN Segment (Fallback: `blockText`).
-  // Danach aus dem Baum lösen, sonst erschienen ihre <p> nochmals unten.
+  //
+  // B4 (Gegenprüfung 25.9.2026): ZUSÄTZLICH ein Fingerabdruck je ZEILE aus
+  // den verketteten Zellen. Grund: 24'368 von 42'101 nicht-leeren Zellen lagen
+  // unter der Segment-Mindestlänge (8 Zeichen — z.B. ein Tarifbetrag «0.77»)
+  // und wurden dadurch NIE gefingerprintet; eine gelöschte Tarifzelle blieb
+  // grün. Eine ganze Zeile verkettet reicht praktisch immer über die
+  // Mindestlänge und macht die Löschung EINER Zelle in der Zeile sichtbar,
+  // ohne die bestehende (feinere) Zellzerlegung zu ersetzen — rein additiv.
+  //
+  // WICHTIG: die Zeile wird aus denselben BEREITS ZERLEGTEN Teilen gebaut wie
+  // die Zellzerlegung unten (nicht aus rohem `blockText(zelle)`) — sonst
+  // reproduziert die Verkettung genau das "…Nunter 10…"-Verklebungs-Artefakt
+  // (s. Kommentar oben), das die Zellzerlegung eigentlich vermeidet: rohe
+  // Zell-Kindelemente (eigene <p>+<dl>-Struktur) haben KEINEN Leerraum
+  // zwischen sich im DOM, `blockText` fügt keinen ein.
   for (const tabelle of [...klon.querySelectorAll('table')]) {
+    for (const zeile of [...tabelle.querySelectorAll('tr')]) {
+      const zellenDerZeile = [...zeile.children].filter(
+        (k: any) => k.tagName === 'TD' || k.tagName === 'TH',
+      );
+      if (zellenDerZeile.length === 0) continue;
+      const zeilenTeile: string[] = [];
+      for (const zelle of zellenDerZeile) {
+        const innereSegmente: RohSegment[] = [];
+        segmentiereBereich(zelle.cloneNode(true), innereSegmente);
+        if (innereSegmente.length > 0) {
+          for (const seg of innereSegmente) zeilenTeile.push(seg.text);
+        } else {
+          zeilenTeile.push(blockText(zelle));
+        }
+      }
+      segmente.push({ art: 'tr', text: zeilenTeile.join(' ') });
+    }
     for (const zelle of [...tabelle.querySelectorAll('td, th')]) {
       const innereSegmente: RohSegment[] = [];
       segmentiereBereich(zelle.cloneNode(true), innereSegmente);
@@ -294,13 +443,19 @@ export function segmentiereAnker(dokument: { getElementById: (id: string) => any
   }
 
   segmentiereBereich(klon, segmente);
+
+  if (restmeldungen) {
+    const rest = restmenge(klon);
+    if (rest) restmeldungen.push(`${ankerId}: "${rest}"`);
+  }
+
   return segmente;
 }
 
 /** Komfort-Wrapper (Fixtures/Tests): parst UND zerlegt in einem Schritt. Die
  * CLI nutzt `parseErlassHtml`+`segmentiereAnker` getrennt (Performance). */
-export function segmentiereArtikel(html: string, ankerId: string): RohSegment[] | null {
-  return segmentiereAnker(parseErlassHtml(html), ankerId);
+export function segmentiereArtikel(html: string, ankerId: string, restmeldungen?: string[]): RohSegment[] | null {
+  return segmentiereAnker(parseErlassHtml(html), ankerId, restmeldungen);
 }
 
 // ── Projektions-Blob (aus dem committeten public/normtext/bund/<KEY>.json) ──
@@ -391,6 +546,7 @@ export interface BasislinienAbgleich<T> {
   bekannt: BasislinienEintrag[]; // heute noch gefunden, grandfathered (kein Rot)
   neu: T[]; // NICHT in Basislinie ⇒ rot (behält alle Felder des Aufrufers, z.B. `auszug`)
   veraltet: BasislinienEintrag[]; // in Basislinie, aber heute NICHT mehr gefunden ⇒ rot (Eintrag entfernen)
+  uebersprungen: BasislinienEintrag[]; // B10: Erlass diesen Lauf gar nicht geprüft (kein/veraltetes Soll) ⇒ weder bekannt noch veraltet
 }
 
 /**
@@ -398,10 +554,20 @@ export interface BasislinienAbgleich<T> {
  * gegen die committete Basislinie ab. Rein — keine I/O, keine Exit-Codes.
  * Generisch über `T`, damit Aufrufer-Zusatzfelder (z.B. ein Modus-C-`auszug`)
  * in `neu` erhalten bleiben, ohne sie hier zu kennen.
+ *
+ * @param geprueftErlasse B10 (Gegenprüfung 25.9.2026): die Erlass-KEYs, die
+ *   DIESEN Lauf tatsächlich geprüft wurden. Ohne dieses Argument (ältere
+ *   Aufrufer/Tests) unverändertes Verhalten — JEDER nicht mehr gefundene
+ *   Eintrag gilt als veraltet. MIT Argument gilt ein Basislinien-Eintrag eines
+ *   Erlasses, das gar nicht geprüft wurde (fehlendes/veraltetes Soll — der
+ *   Erlass wird übersprungen, s. check-segmente.ts), als `uebersprungen`
+ *   statt `veraltet`: das Tor riet zuvor fälschlich «Eintrag entfernen», obwohl
+ *   der Erlass schlicht nicht geprüft wurde (P8/P9/P12 der Gegenprüfung).
  */
 export function gleicheBasislinieAb<T extends { erlass: string; eId: string; hash: string }>(
   heutigeFunde: readonly T[],
   basislinie: readonly BasislinienEintrag[],
+  geprueftErlasse?: ReadonlySet<string>,
 ): BasislinienAbgleich<T> {
   const schluessel = (e: { erlass: string; eId: string; hash: string }): string =>
     `${e.erlass}\u0000${e.eId}\u0000${e.hash}`;
@@ -415,6 +581,8 @@ export function gleicheBasislinieAb<T extends { erlass: string; eId: string; has
     if (eintrag) bekannt.push(eintrag);
     else neu.push(fund);
   }
-  const veraltet = basislinie.filter((e) => !fundSchluessel.has(schluessel(e)));
-  return { bekannt, neu, veraltet };
+  const nichtGefunden = basislinie.filter((e) => !fundSchluessel.has(schluessel(e)));
+  const veraltet = geprueftErlasse ? nichtGefunden.filter((e) => geprueftErlasse.has(e.erlass)) : nichtGefunden;
+  const uebersprungen = geprueftErlasse ? nichtGefunden.filter((e) => !geprueftErlasse.has(e.erlass)) : [];
+  return { bekannt, neu, veraltet, uebersprungen };
 }

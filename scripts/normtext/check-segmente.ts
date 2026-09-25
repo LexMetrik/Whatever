@@ -26,9 +26,12 @@
  * Sessions GETEILTEN `/tmp`, damit die Rot-Proben den echten Cache nie anfassen.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { parseFedlexCacheEintraege, type FedlexCacheEintrag } from './inventar-bund.ts';
 import { pinBefund, pinIdentitaet } from './cache-pin-befund.ts';
 import {
+  alleArtikelEids,
+  ankerIdVonEid,
   fehlendeIndizes,
   fingerabdruck,
   fingerabdrueckeZuSoll,
@@ -47,6 +50,14 @@ import {
   type SollDatei,
   type SollPin,
 } from './segmente-logik.ts';
+
+// B1 (dokumentierte Ausnahme, s. u.): KKV art_126_z__2 ist der Synthese-
+// Schlüssel für das ZWEITE physische `<article id="art_126_z">` in der HTML
+// (Fedlex-Quellfehler, s. artikel-vorkommen.ts) — `getElementById` liefert für
+// diesen Namen NIE ein Element (kein Attribut dieses Wortlauts existiert),
+// `getElementById('art_126_z')` liefert stattdessen IMMER das ERSTE Vorkommen.
+// Jede WEITERE Ausklammerung ist ein echter Befund, kein bekannter Fall.
+const AUSKLAMMERUNG_AUSNAHME = 'KKV\u0000art_126_z__2';
 
 const STANDARD_CACHE_DIR = '/tmp';
 const cacheDir = process.env.LEXMETRIK_FEDLEX_CACHE_DIR || STANDARD_CACHE_DIR;
@@ -146,22 +157,39 @@ interface FrischesSoll {
   artikel: Record<string, Fingerabdruck[]>;
   auszuegeJeEid: Map<string, Map<string, string>>; // eId -> hash -> Auszug (≤80 Zeichen, NUR Report/Basislinie)
   keinAnkerLokalisierbar: string[];
+  restmeldungen: string[]; // B2: nennenswerter unklassifizierter Text nach der Zerlegung (meldend, s. segmente-logik.ts)
 }
 
+/**
+ * B1+B5 (Gegenprüfung 25.9.2026): die zu prüfende Artikelmenge kommt aus DEN
+ * HTML-ANKERN (`alleArtikelEids`), VEREINIGT mit den Projektions-eIds — nicht
+ * NUR aus der Projektion (B5: sonst bliebe ein ganzer aus der Projektion
+ * gelöschter Artikel unbemerkt) und nicht NUR aus der HTML (die Vereinigung
+ * erhält die dokumentierte KKV-Ausnahme: `art_126_z__2` ist ein
+ * Synthese-Schlüssel, der NUR in der Projektion existiert, s.
+ * AUSKLAMMERUNG_AUSNAHME oben). Jede eId wird über `ankerIdVonEid` auf ihre
+ * HTML-Anker-Form abgebildet (B1: disp_uN_x → disp_uN/x) und per
+ * `segmentiereAnker` gegen die HTML aufgelöst — unabhängig davon, ob die
+ * Projektion aktuell einen Eintrag dafür hat oder nicht.
+ */
 function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
   const html = readFileSync(`${cacheDir}/${e.name}.html`, 'utf8');
   const dokument = parseErlassHtml(html);
   const key = e.name.toUpperCase();
+  const praefix = `bund/${key}/`;
   const projektion = ladeProjektion(key);
+  const eIdsAusProjektion = [...(projektion?.values() ?? [])]
+    .filter((eintrag) => eintrag.id.startsWith(praefix)) // sollte laut Schema nie vorkommen (empirisch geprüft, 25601/25601)
+    .map((eintrag) => eintrag.id.slice(praefix.length));
+  const alleEids = [...new Set([...alleArtikelEids(dokument), ...eIdsAusProjektion])].sort();
+
   const artikel: Record<string, Fingerabdruck[]> = {};
   const auszuegeJeEid = new Map<string, Map<string, string>>();
   const keinAnkerLokalisierbar: string[] = [];
+  const restmeldungen: string[] = [];
 
-  for (const eintrag of projektion?.values() ?? []) {
-    const praefix = `bund/${key}/`;
-    if (!eintrag.id.startsWith(praefix)) continue; // sollte laut Schema nie vorkommen (empirisch geprüft, 25601/25601)
-    const eId = eintrag.id.slice(praefix.length);
-    const rohSegmente = segmentiereAnker(dokument, eId);
+  for (const eId of alleEids) {
+    const rohSegmente = segmentiereAnker(dokument, ankerIdVonEid(eId), restmeldungen);
     if (rohSegmente === null) {
       keinAnkerLokalisierbar.push(eId);
       continue;
@@ -184,6 +212,7 @@ function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
     artikel,
     auszuegeJeEid,
     keinAnkerLokalisierbar,
+    restmeldungen,
   };
 }
 
@@ -216,13 +245,27 @@ function pruefeErlassGegenProjektion(
   return { funde, keinProjektionsEintrag, geprueftArtikel };
 }
 
+// ── B1: Ausklammerungen (Anker nicht in der HTML lokalisierbar) ────────────
+//
+// JEDER Lauf, der frisch aus der HTML ableitet (--schreiben, Modus C), zählt
+// UND meldet sie — zulässig ist NUR die dokumentierte Ausnahme KKV
+// art_126_z__2 (s. AUSKLAMMERUNG_AUSNAHME oben); jede weitere ist ein
+// unentdeckter Verlust-Kandidat wie das früher unbemerkte PatG Art. 149 und
+// macht den Lauf ROT statt eine stille Lücke zu bleiben.
+function unerwarteteAusklammerungen(anzeige: ReadonlyArray<{ erlass: string; eId: string }>): string[] {
+  return anzeige
+    .filter((a) => `${a.erlass}\u0000${a.eId}` !== AUSKLAMMERUNG_AUSNAHME)
+    .map((a) => `${a.erlass} ${a.eId}`);
+}
+
 // ── --schreiben ─────────────────────────────────────────────────────────────
 
 function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
   mkdirSync(SOLL_VERZEICHNIS, { recursive: true });
   let gesamtArtikel = 0;
   let gesamtSegmente = 0;
-  let gesamtKeinAnker = 0;
+  const ausklammerungen: Array<{ erlass: string; eId: string }> = [];
+  const restmeldungen: string[] = [];
   for (const e of eintraege) {
     const frisch = leiteFrischesSollAb(e);
     const sollDatei: SollDatei = {
@@ -235,11 +278,25 @@ function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
     writeFileSync(`${SOLL_VERZEICHNIS}/${e.name}.json`, JSON.stringify(sollDatei) + '\n', 'utf8');
     gesamtArtikel += Object.keys(frisch.artikel).length;
     for (const fps of Object.values(frisch.artikel)) gesamtSegmente += fps.length;
-    gesamtKeinAnker += frisch.keinAnkerLokalisierbar.length;
+    for (const eId of frisch.keinAnkerLokalisierbar) ausklammerungen.push({ erlass: e.name.toUpperCase(), eId });
+    restmeldungen.push(...frisch.restmeldungen);
+  }
+  const unerwartet = unerwarteteAusklammerungen(ausklammerungen);
+  if (unerwartet.length > 0) {
+    fehlerUndExit([
+      `❌ FEHLER: --schreiben fand ${unerwartet.length} unerwartete Ausklammerung(en) ` +
+        `(Anker nicht in der HTML lokalisierbar, ausser der dokumentierten Ausnahme ${AUSKLAMMERUNG_AUSNAHME.replace('\u0000', ' ')}):`,
+      ...unerwartet.slice(0, 30).map((a) => `   · ${a}`),
+    ]);
+  }
+  if (restmeldungen.length > 0) {
+    console.log(`ℹ  ${restmeldungen.length} Restmengen-Meldung(en) (B2, meldend — kein Fehler):`);
+    for (const m of restmeldungen.slice(0, 10)) console.log(`   · ${m}`);
   }
   console.log(
     `✓ --schreiben: ${eintraege.length} Soll-Dateien in ${SOLL_VERZEICHNIS}/ geschrieben ` +
-      `(${gesamtArtikel} Artikel, ${gesamtSegmente} Segmente, ${gesamtKeinAnker} ohne lokalisierbaren Anker — ausgeklammert).`,
+      `(${gesamtArtikel} Artikel, ${gesamtSegmente} Segmente, ${ausklammerungen.length} ausgeklammert ` +
+      `[davon ${ausklammerungen.length - unerwartet.length} dokumentierte Ausnahme]).`,
   );
 }
 
@@ -253,6 +310,9 @@ interface Zwischenergebnis {
   keinSoll: string[];
   keinProjektionsEintragGesamt: Array<{ erlass: string; eId: string }>;
   geprueftArtikelGesamt: number;
+  geprueftErlasse: Set<string>; // B10: welche Erlass-KEYs diesen Lauf TATSÄCHLICH geprüft wurden (nicht keinSoll/sollVeraltet)
+  keinAnkerLokalisierbarGesamt: Array<{ erlass: string; eId: string }>; // B1: nur Modus C (Modus B rührt die HTML nie an)
+  restmeldungenGesamt: string[]; // B2: nur Modus C
 }
 
 function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
@@ -260,6 +320,7 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
   const sollVeraltet: string[] = [];
   const keinSoll: string[] = [];
   const keinProjektionsEintragGesamt: Array<{ erlass: string; eId: string }> = [];
+  const geprueftErlasse = new Set<string>();
   let geprueftArtikelGesamt = 0;
 
   for (const e of eintraege) {
@@ -274,12 +335,24 @@ function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
       continue; // ein ungültiges Soll für Enthaltensein zu nutzen wäre wertlos.
     }
     const key = e.name.toUpperCase();
+    geprueftErlasse.add(key);
     const { funde, keinProjektionsEintrag, geprueftArtikel } = pruefeErlassGegenProjektion(key, committedSoll.artikel);
     alleFunde.push(...funde);
     for (const eId of keinProjektionsEintrag) keinProjektionsEintragGesamt.push({ erlass: key, eId });
     geprueftArtikelGesamt += geprueftArtikel;
   }
-  return { modus: 'B', eintraege, alleFunde, sollVeraltet, keinSoll, keinProjektionsEintragGesamt, geprueftArtikelGesamt };
+  return {
+    modus: 'B',
+    eintraege,
+    alleFunde,
+    sollVeraltet,
+    keinSoll,
+    keinProjektionsEintragGesamt,
+    geprueftArtikelGesamt,
+    geprueftErlasse,
+    keinAnkerLokalisierbarGesamt: [],
+    restmeldungenGesamt: [],
+  };
 }
 
 function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
@@ -287,10 +360,16 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
   const sollVeraltet: string[] = [];
   const keinSoll: string[] = [];
   const keinProjektionsEintragGesamt: Array<{ erlass: string; eId: string }> = [];
+  const geprueftErlasse = new Set<string>();
+  const keinAnkerLokalisierbarGesamt: Array<{ erlass: string; eId: string }> = [];
+  const restmeldungenGesamt: string[] = [];
   let geprueftArtikelGesamt = 0;
 
   for (const e of eintraege) {
     const frisch = leiteFrischesSollAb(e);
+    const key = e.name.toUpperCase();
+    for (const eId of frisch.keinAnkerLokalisierbar) keinAnkerLokalisierbarGesamt.push({ erlass: key, eId });
+    restmeldungenGesamt.push(...frisch.restmeldungen);
     const kompaktesSoll = Object.fromEntries(
       Object.entries(frisch.artikel).map(([eId, fps]) => [eId, fingerabdrueckeZuSoll(fps)]),
     );
@@ -303,7 +382,7 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
       if (!pinGleich || !inhaltGleich) sollVeraltet.push(e.name);
     }
 
-    const key = e.name.toUpperCase();
+    geprueftErlasse.add(key);
     const { funde, keinProjektionsEintrag, geprueftArtikel } = pruefeErlassGegenProjektion(
       key,
       kompaktesSoll,
@@ -313,17 +392,127 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     for (const eId of keinProjektionsEintrag) keinProjektionsEintragGesamt.push({ erlass: key, eId });
     geprueftArtikelGesamt += geprueftArtikel;
   }
-  return { modus: 'C', eintraege, alleFunde, sollVeraltet, keinSoll, keinProjektionsEintragGesamt, geprueftArtikelGesamt };
+  return {
+    modus: 'C',
+    eintraege,
+    alleFunde,
+    sollVeraltet,
+    keinSoll,
+    keinProjektionsEintragGesamt,
+    geprueftArtikelGesamt,
+    geprueftErlasse,
+    keinAnkerLokalisierbarGesamt,
+    restmeldungenGesamt,
+  };
+}
+
+// ── B6: Modus-B-Schutz gegen koordinierte Soll+Projektions-Manipulation ────
+//
+// Modus B vergleicht die Projektion NUR gegen das committete Soll — löscht ein
+// Commit denselben Fingerabdruck aus BEIDEN gemeinsam, bleibt B grün (Modus C
+// erkennt es, weil es das Soll frisch aus der HTML ableitet und die Abweichung
+// als «veraltet» meldet — aber C läuft nur im Cache-Pfad, s. Linse 9). B-Regel:
+// eine Soll-Datei darf sich im COMMITTETEN Bereich nur ändern, wenn Pin ODER
+// Segmenter-Version mitgewandert sind — sonst ist der Inhaltswechsel unbelegt.
+// Diff-Basis WIE `check:merge-schutz` (git merge-base gegen origin/main..HEAD,
+// per Umgebungsvariable überschreibbar) — nicht neu erfunden (B6-Auflage,
+// scripts/check-merge-schutz.ts). Ohne auflösbare Basis: NICHT still grün
+// (§6.7) — eine eigene, sichtbare Meldung statt eines gemeldeten "alles ok".
+const B6_BASIS_REF = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
+const B6_KOPF_REF = process.env.MERGE_SCHUTZ_KOPF ?? 'HEAD';
+
+function gitStill(args: string[]): string | null {
+  try {
+    return execFileSync('git', args, { stdio: ['ignore', 'pipe', 'ignore'] }).toString('utf8');
+  } catch {
+    return null;
+  }
+}
+
+function pruefeSollUnveraendertOhnePinwechsel(): { verstoss: string[]; hinweis?: string } {
+  const basis = gitStill(['merge-base', B6_BASIS_REF, B6_KOPF_REF]);
+  if (basis === null) {
+    return { verstoss: [], hinweis: `B6 übersprungen — Referenz '${B6_BASIS_REF}' nicht auflösbar (kein stiller Skip, §6.7).` };
+  }
+  const basisTrim = basis.trim();
+  const diffOut = gitStill(['diff', '--name-only', `${basisTrim}..${B6_KOPF_REF}`, '--', SOLL_VERZEICHNIS]);
+  if (diffOut === null) {
+    return { verstoss: [], hinweis: 'B6 übersprungen — git diff auf die Soll-Dateien fehlgeschlagen.' };
+  }
+  const geaendert = diffOut
+    .split('\n')
+    .map((z) => z.trim())
+    .filter(Boolean);
+  const verstoss: string[] = [];
+  for (const pfad of geaendert) {
+    const alt = gitStill(['show', `${basisTrim}:${pfad}`]);
+    if (alt === null) continue; // Datei neu in diesem Bereich — kein Vergleich möglich, kein B6-Fall.
+    let neu: string;
+    try {
+      neu = readFileSync(pfad, 'utf8');
+    } catch {
+      continue; // gelöscht — anderes Tor/die Basislinie deckt das ab.
+    }
+    let altSoll: SollDatei;
+    let neuSoll: SollDatei;
+    try {
+      altSoll = JSON.parse(alt) as SollDatei;
+      neuSoll = JSON.parse(neu) as SollDatei;
+    } catch {
+      continue; // nicht parsebar — kein B6-Vergleich möglich.
+    }
+    const pinUndVersionGleich =
+      pinIdentGleich(altSoll.pin, neuSoll.pin) && altSoll.segmenterVersion === neuSoll.segmenterVersion;
+    if (pinUndVersionGleich && !sollInhaltGleich(altSoll.artikel, neuSoll.artikel)) verstoss.push(pfad);
+  }
+  return { verstoss };
 }
 
 // ── Bericht + Urteil ─────────────────────────────────────────────────────────
 
 function berichteUndBewerte(z: Zwischenergebnis): void {
   const basislinie = ladeBasislinie();
-  const abgleich = gleicheBasislinieAb(z.alleFunde, basislinie);
+  const abgleich = gleicheBasislinieAb(z.alleFunde, basislinie, z.geprueftErlasse);
   let fehler = false;
 
   console.log(`[check:segmente] Modus ${z.modus} — ${z.eintraege.length} Erlasse, ${z.geprueftArtikelGesamt} Artikel geprüft.`);
+
+  // B1: Ausklammerungen JEDEN Lauf zählen/ausgeben (nur Modus C — Modus B
+  // rührt die HTML nie an, s. Zwischenergebnis). Zulässig nur die
+  // dokumentierte Ausnahme (AUSKLAMMERUNG_AUSNAHME); jede weitere ⇒ rot.
+  if (z.keinAnkerLokalisierbarGesamt.length > 0) {
+    console.log(
+      `ℹ  ${z.keinAnkerLokalisierbarGesamt.length} Ausklammerung(en) (Anker nicht in der HTML lokalisierbar):`,
+    );
+    const unerwartet = unerwarteteAusklammerungen(z.keinAnkerLokalisierbarGesamt);
+    if (unerwartet.length > 0) {
+      fehler = true;
+      console.error(
+        `❌ FEHLER: ${unerwartet.length} davon UNERWARTET (nicht die dokumentierte Ausnahme ` +
+          `${AUSKLAMMERUNG_AUSNAHME.replace('\u0000', ' ')}):`,
+      );
+      for (const a of unerwartet.slice(0, 30)) console.error(`   · ${a}`);
+    }
+  }
+  // B2: Restmengen-Prüfung — meldend, kein Fehler (s. segmente-logik.ts `restmenge`).
+  if (z.restmeldungenGesamt.length > 0) {
+    console.log(`ℹ  ${z.restmeldungenGesamt.length} Restmengen-Meldung(en) (B2, meldend):`);
+    for (const m of z.restmeldungenGesamt.slice(0, 10)) console.log(`   · ${m}`);
+  }
+
+  // B6: nur Modus B (s. Begründung oben — Modus C ist gegen diesen Fall
+  // bereits durch die frische HTML-Ableitung selbst geschützt).
+  if (z.modus === 'B') {
+    const b6 = pruefeSollUnveraendertOhnePinwechsel();
+    if (b6.hinweis) console.log(`ℹ  ${b6.hinweis}`);
+    if (b6.verstoss.length > 0) {
+      fehler = true;
+      console.error(
+        `❌ FEHLER (B6): Soll-Datei(en) im committeten Bereich (${B6_BASIS_REF}..${B6_KOPF_REF}) geändert ` +
+          `OHNE Pin-/Versionswechsel — unbelegter Inhaltswechsel: ${b6.verstoss.join(', ')}`,
+      );
+    }
+  }
 
   if (z.keinSoll.length > 0) {
     fehler = true;
@@ -363,6 +552,16 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
     console.error(`❌ VERALTETE Basislinien-Einträge (heute nicht mehr fehlend — Eintrag entfernen), ${abgleich.veraltet.length}:`);
     for (const e of abgleich.veraltet) console.error(`   · ${e.erlass} ${e.eId} (${e.befund}): "${e.auszug}"`);
   }
+  // B10: ein Basislinien-Eintrag eines Erlasses, das dieser Lauf gar nicht
+  // geprüft hat (kein/veraltetes Soll), ist NICHT «veraltet» (das riete
+  // fälschlich «Eintrag entfernen») — nur eine Information, kein Fehler.
+  if (abgleich.uebersprungen.length > 0) {
+    const erlasse = new Set(abgleich.uebersprungen.map((e) => e.erlass));
+    console.log(
+      `ℹ  ${abgleich.uebersprungen.length} Basislinien-Eintrag/Einträge NICHT geprüft ` +
+        `(Erlass übersprungen: kein/veraltetes Soll — ${[...erlasse].join(', ')}).`,
+    );
+  }
   if (abgleich.bekannt.length > 0) {
     const nachBefund = new Map<string, number>();
     for (const e of abgleich.bekannt) nachBefund.set(e.befund, (nachBefund.get(e.befund) ?? 0) + 1);
@@ -377,6 +576,54 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
   );
 }
 
+// B9 (Gegenprüfung 25.9.2026): --schreiben verlangte bisher IMMER einen
+// vollständigen, pin-gültigen Cache — jeder Kaskadenlauf OHNE Cache (z.B. ein
+// Hand-PR nach Skill `auftrag` 6(g)) brach wegen `set -e` in
+// normtext-repin-kaskade.sh sofort ab (Ort des Befunds: dortige Zeile 55).
+// Fix — hier statt dort, damit derselbe Cache-/Pin-Vergleich EINMAL steht
+// (§5) und jeder Aufrufer von `--schreiben` profitiert, nicht nur die
+// Kaskade: ohne vollständigen/pin-gültigen Cache wird NUR NOCH dann
+// übersprungen (Exit 0, Meldung), wenn ALLE committeten Soll-Dateien bereits
+// mit dem aktuell in fedlex-cache.sh DEKLARIERTEN Pin (+ heutiger Segmenter-
+// Version) übereinstimmen — ein reiner String-Vergleich der Pin-Felder, KEINE
+// HTML nötig. Weicht auch nur EIN Pin ab oder fehlt eine Soll-Datei ganz, ist
+// ein echtes Update nötig, das ohne Cache nicht möglich ist ⇒ FEHLER wie
+// bisher (kein stilles Weiterlaufen mit veraltetem Soll, §6.7).
+function schreibenPfad(eintraege: FedlexCacheEintrag[], vorhanden: number, pinFehler: string[]): void {
+  const vollCacheGueltig = vorhanden === eintraege.length && pinFehler.length === 0;
+  if (vollCacheGueltig) {
+    schreibeSoll(eintraege);
+    return;
+  }
+
+  const fehlend: string[] = [];
+  const veraltet: string[] = [];
+  for (const e of eintraege) {
+    const soll = liesSollDatei(e.name);
+    if (!soll) {
+      fehlend.push(e.name);
+      continue;
+    }
+    const aktuellerPin: SollPin = { eli: e.eli, konsolidierung: e.konsolidierung, htmlN: e.htmlN };
+    if (!pinIdentGleich(soll.pin, aktuellerPin) || soll.segmenterVersion !== SEGMENTER_VERSION) veraltet.push(e.name);
+  }
+  if (fehlend.length === 0 && veraltet.length === 0) {
+    console.log(
+      `ℹ  --schreiben übersprungen (B9): kein vollständiger Cache in ${cacheDir} ` +
+        `(${vorhanden}/${eintraege.length} vorhanden, ${pinFehler.length} pin-ungültig) — ` +
+        `alle ${eintraege.length} Soll-Pins sind bereits aktuell, nichts zu tun.`,
+    );
+    return;
+  }
+  fehlerUndExit([
+    `❌ FEHLER: --schreiben verlangt einen VOLLSTÄNDIGEN, pin-gültigen Cache ` +
+      `(${vorhanden}/${eintraege.length} in ${cacheDir} vorhanden, ${pinFehler.length} pin-ungültig) — ` +
+      `und ${fehlend.length + veraltet.length} Soll-Datei(en) sind nicht aktuell, ein Überspringen ist nicht sicher (B9).`,
+    ...(fehlend.length ? [`   fehlend: ${fehlend.join(', ')}`] : []),
+    ...(veraltet.length ? [`   veraltet: ${veraltet.join(', ')}`] : []),
+  ]);
+}
+
 // ── Haupt ────────────────────────────────────────────────────────────────
 
 function main(): void {
@@ -384,34 +631,42 @@ function main(): void {
   const eintraege = parseFedlexCacheEintraege(shell);
   const { vorhanden, pinFehler } = ermittleCacheZustand(eintraege);
 
+  if (schreibenModus) {
+    schreibenPfad(eintraege, vorhanden, pinFehler);
+    return;
+  }
+
+  // Linse 9 (Orchestrator-Entscheid 25.9.2026, nach Empfehlung der
+  // Gegenprüfung 25.9.2026): Modus B (eingefrorenes Soll, ohne Cache) ist
+  // STANDARD, AUCH LOKAL — ein zufällig voller /tmp-Cache schaltet NICHT mehr
+  // automatisch auf Modus C um (das widersprach zuvor "Modus C nur mit
+  // --cache-pflicht"). Nur --cache-pflicht/LEXMETRIK_CACHE_PFLICHT=1 (oder
+  // --schreiben, oben bereits behandelt) verlangt Modus C.
+  if (!cachePflicht) {
+    berichteUndBewerte(pruefeModusB(eintraege));
+    return;
+  }
+
+  // Ab hier: Modus C angefordert — jetzt zählt der Cache-Zustand. Der
+  // Teilbestand-Fehler feuert damit NUR NOCH im C-Pfad (Linse 9: der geteilte
+  // /tmp, in den andere Sessions schreiben, soll den B-Standardlauf nicht
+  // mehr rot machen können).
   if (vorhanden > 0 && vorhanden < eintraege.length) {
     fehlerUndExit([
-      `❌ FEHLER: nur ${vorhanden}/${eintraege.length} Bund-Erlasse haben einen Cache in ${cacheDir} (Teilbestand)`,
-      "   — entweder ALLE Caches bereitstellen ('bash scripts/fedlex-cache.sh') oder KEINEN.",
+      `❌ FEHLER: --cache-pflicht verlangt ALLE Caches, aber nur ${vorhanden}/${eintraege.length} Bund-Erlasse haben ` +
+        `einen Cache in ${cacheDir} (Teilbestand)`,
+      "   — entweder ALLE Caches bereitstellen ('bash scripts/fedlex-cache.sh') oder OHNE --cache-pflicht laufen lassen (Modus B).",
     ]);
   }
-  if (vorhanden === 0 && cachePflicht) {
+  if (vorhanden === 0) {
     fehlerUndExit([
       `❌ FEHLER: --cache-pflicht/LEXMETRIK_CACHE_PFLICHT verlangt Bund-Caches, aber 0/${eintraege.length} in ${cacheDir} vorhanden.`,
     ]);
   }
-  if (vorhanden === eintraege.length && pinFehler.length > 0) {
+  if (pinFehler.length > 0) {
     fehlerUndExit([...pinFehler, `❌ FEHLER: ${pinFehler.length} Cache(s) pin-ungültig — Prüfung unzuverlässig statt grün.`]);
   }
-
-  if (schreibenModus) {
-    if (vorhanden !== eintraege.length || pinFehler.length > 0) {
-      fehlerUndExit([
-        `❌ FEHLER: --schreiben verlangt einen VOLLSTÄNDIGEN, pin-gültigen Cache ` +
-          `(${vorhanden}/${eintraege.length} in ${cacheDir} vorhanden, ${pinFehler.length} pin-ungültig).`,
-      ]);
-    }
-    schreibeSoll(eintraege);
-    return;
-  }
-
-  const modusC = vorhanden === eintraege.length; // voller, pin-gültiger Cache (bereits oben geprüft)
-  berichteUndBewerte(modusC ? pruefeModusC(eintraege) : pruefeModusB(eintraege));
+  berichteUndBewerte(pruefeModusC(eintraege));
 }
 
 main();
