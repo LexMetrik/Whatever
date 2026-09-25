@@ -5,6 +5,7 @@ import { PaneProvider } from './PaneKontext';
 import { PaneKopf } from './PaneKopf';
 import { RouteHuelle } from './RouteHuelle';
 import { InhaltsKopfMeldeProvider, type KopfDaten } from './InhaltsKopfKontext';
+import { rahmenbreiteKlasse } from './seitenbreite';
 
 // ─── Sekundäres Split-View-Pane («Browser-Fenster»-Modell) ──────────────────
 //
@@ -144,8 +145,9 @@ export function SekundaerPane(props: SekundaerPaneProps) {
                 dortige Ausnahme-Begründung ausdrücklich vermeiden will.
                 Ausserhalb eines Panes rendert dieser Wrapper nie — darum kein
                 `pk()`, das hier ohnehin den Eltern-Kontext läse
-                (`imPane: false`). */}
-            <div className="mx-auto w-full max-w-content px-5 @xl/pane:px-6 py-6">
+                (`imPane: false`). Die Breite folgt der Seitenart DIESER
+                Pane-Location (W2·31 B1a, `./seitenbreite`). */}
+            <div className={`mx-auto w-full ${rahmenbreiteKlasse(loc, 'pane')} px-5 @xl/pane:px-6 py-6`}>
               <UNSAFE_NavigationContext.Provider value={navKontext}>
                 <InhaltsKopfMeldeProvider value={setKopf}>
                   {/* A-6: dieselbe Routen-Hülle wie im Hauptfenster. Schlüssel ist

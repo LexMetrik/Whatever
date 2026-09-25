@@ -7,6 +7,7 @@ import { Reiterleiste, REITER_MIME } from './Reiterleiste';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
 import { Sidebar } from './Sidebar';
 import { Footer } from './Footer';
+import { rahmenbreiteKlasse } from './seitenbreite';
 import { useLocale } from '../locale';
 import { useSeitenleiste, BREITE_MIN, BREITE_MAX, BREITE_SCHRITT } from './useSeitenleiste';
 import { usePaneLayout, PaneSteuerungProvider, MAX_SEKUNDAER, layoutPermalink } from './usePaneLayout';
@@ -106,13 +107,12 @@ export function Shell({ children }: { children: ReactNode }) {
   // weg (`layout/Topbar.tsx`). Es bleibt EINE Landkarte, und die ist auf jeder
   // Route dieselbe. Kein Sonderfall mehr, darum keine Bedingung mehr.
   // R3 (Auftrag David 30.6.2026): die globale Schriftskala (A−/A+) ersetzte den
-  // Inhaltsbreite-Umschalter; die zentrale Inhaltsspalte läuft seither fest auf
-  // `max-w-content` (= die frühere Default-Breite «kompakt», Golden byte-gleich).
-  // Der Steller selbst sitzt seit W2·23-STARTSEITE-V4 (§6.2) auf
-  // `/einstellungen` und hält dort seinen eigenen `useSchriftskala`; die Shell
-  // braucht die Steuer-API nicht mehr. Angewendet wird die gespeicherte Wahl
-  // unverändert vor dem ersten Render in `main.tsx` (`wendeSchriftskalaAn`).
-  const inhaltsbreiteKlasse = 'max-w-content';
+  // Inhaltsbreite-Umschalter; der Steller sitzt seit W2·23-STARTSEITE-V4 (§6.2)
+  // auf `/einstellungen`, angewendet wird die Wahl vor dem ersten Render in
+  // `main.tsx` (`wendeSchriftskalaAn`). Die Breite der Inhaltsspalte (Banner,
+  // Kopf, `<main>`, Footer) kommt seit W2·31-BILDSCHIRMBREITE B1a (25.9.2026)
+  // aus der Seitenart-Tabelle (`./seitenbreite`), nicht mehr fest `max-w-content`.
+  const inhaltsbreiteKlasse = rahmenbreiteKlasse(pathname, 'fenster');
 
   // Split-View (B-1): sekundäre Panes nur ab lg nebeneinander; mobil + Prerender
   // = 1 Pane (istLg startet false → SSR/Default byte-gleich, B-4-Faltung gratis).
@@ -576,7 +576,7 @@ export function Shell({ children }: { children: ReactNode }) {
                         ? '@container/pane absolute inset-0 overflow-y-auto overscroll-contain focus-visible:-outline-offset-2'
                         : 'flex-1 w-full focus:outline-none'}>
                       <div className={multipane
-                        ? 'mx-auto w-full max-w-content px-5 sm:px-6 py-6'
+                        ? `mx-auto w-full ${rahmenbreiteKlasse(pathname, 'pane')} px-5 sm:px-6 py-6`
                         : `${inhaltsbreiteKlasse} mx-auto px-5 sm:px-6 py-8 sm:py-12`}>{children}</div>
                     </main>
                   </PaneProvider>
@@ -627,7 +627,7 @@ export function Shell({ children }: { children: ReactNode }) {
               ))}
             </div>
           </InhaltsKopfMeldeProvider>
-          {!multipane && <Footer />}
+          {!multipane && <Footer breiteKlasse={inhaltsbreiteKlasse} />}
           </PaneSteuerungProvider>
         </div>
       </div>
