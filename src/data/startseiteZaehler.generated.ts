@@ -211,8 +211,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     }
   ],
   "rechtsprechungLeitentscheide": 1339,
-  "materialien": 1683,
-  "materialienGesetzgebung": 1356,
+  "materialien": 1684,
+  "materialienGesetzgebung": 1357,
   "materialienErlaeuterungen": 327,
   "materialienBehoerden": [
     {
@@ -261,7 +261,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "BR",
       "kuerzel": "BR",
       "name": "Bundesrat (Botschaften)",
-      "anzahl": 408
+      "anzahl": 409
     },
     {
       "id": "BUND",
@@ -280,7 +280,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "vorlagen": 26,
   "standGesetze": "2026-09-21",
   "standRechtsprechung": "2026-09-25",
-  "standMaterialien": "2026-09-18",
+  "standMaterialien": "2026-09-25",
   "juengsterGesetzStand": "2026-09-02",
   "juengsterEntscheid": "2026-07-08",
   "juengsteMaterialie": "2026-09-18"
