@@ -588,7 +588,10 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // Bezugs-Projektionen hinkten dem Generator seit #860/#911 nach — der AVG
     // kam in den Normtext-Korpus, seine Kanten (11 Artikel, 1 Erlass) nie in
     // die Shards. Reine Projektions-Nachführung, die eidg-Werte bleiben gleich.
-    expect(bilanz.artikelGesamt).toBe(6228);
+    // 6228 → 6352 (25.9.2026, QS-KORPUS BGE-Band-Nachzug 152, +80 BGE): die neuen
+    // Leitentscheide zitieren 124 bisher unzitierte Artikel. Nullprobe origin/main
+    // = 6228; eidg-Werte (164/93/18) unverändert — die Aussage des Tests steht.
+    expect(bilanz.artikelGesamt).toBe(6352);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
@@ -641,11 +644,15 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // «nicht publ. in BGE …»). Beim BGG trifft das den Grossteil — Eintretens-
     // fragen (E. 1) stehen fast nie im publizierten Auszug. Die Aussage des
     // Tests bleibt: Fundstellen ≠ Entscheide, in BEIDEN Klassen.
+    // DRITTE Nachführung (25.9.2026, QS-KORPUS BGE-Band-Nachzug 152, +80 BGE mit
+    // aza-Volltext): damals bge 1565/525 · bger 9205/1235 (Nullprobe origin/main);
+    // seither bge 1647/559 · bger 9920/1314 — reiner Korpus-Zuwachs, keine
+    // Rechenlogik-Änderung; Faktor Fundstellen/Entscheide bleibt in beiden Klassen > 2.
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/BGG.json', 'utf8')) as BezugsShard;
     const n = klassenImShard(s);
-    expect(n.bge!.kanten).toBe(1565);
-    expect(n.bge!.dokumente).toBe(525);
-    expect(n.bger!.kanten).toBe(9205);
-    expect(n.bger!.dokumente).toBe(1235);
+    expect(n.bge!.kanten).toBe(1647);
+    expect(n.bge!.dokumente).toBe(559);
+    expect(n.bger!.kanten).toBe(9920);
+    expect(n.bger!.dokumente).toBe(1314);
   });
 });
