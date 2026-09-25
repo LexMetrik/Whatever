@@ -12,6 +12,7 @@ import { fehlerKlasse, holeSeite, stichprobeZeile } from '../../scripts/rechtspr
 import { vollpruefungOffen } from '../../scripts/rechtsprechung/wochenlauf-vorwoche';
 import { jget, atomIds, OCL_ABRUF } from '../../scripts/normtext/ocl-abruf';
 import { sachgebietFuerEntscheid } from '../../scripts/normtext/sachgebiet-klassierung';
+import { mappeEntscheidOCL, type OclDecision } from '../../scripts/normtext/adapter-entscheide';
 import { MEHRWORT_KUERZEL, verbindeMehrwortKuerzel } from '../../scripts/normtext/mehrwort-kuerzel';
 import { normKeyFuerAbk, normalisiereAbk, normKeysVonSnapshot, artikelSchluesselVonSnapshot } from '../../scripts/normtext/entscheide-mapping';
 import { extrahiereStatutRefs } from '../lib/rechtsprechung/zitat-extraktion';
@@ -196,5 +197,22 @@ describe('M7 · Workflow legt das Label in-pruefung an, bevor die Basis liest', 
     const i = yml.indexOf('gh label create in-pruefung --force');
     expect(i).toBeGreaterThan(yml.indexOf('name: Basis wählen'));
     expect(i).toBeLessThan(yml.indexOf('npx vite-node scripts/rechtsprechung/wochenlauf-basis.ts'));
+  });
+});
+
+describe('M5 · Verdrahtung: mappeEntscheidOCL reicht den Kanton an die Klassierung', () => {
+  // Nach-Verdikt #1130 (Merge #1126): kanton-Übergabe war nur direkt geprüft.
+  // Mutation: `kanton: canton` in adapter-entscheide.ts auf 'ZH' oder 'CH' ⇒ rot.
+  const det = (over: Partial<OclDecision>): OclDecision => ({
+    decision_id: 'x', language: 'de', docket_number: 'BV.2026.10', decision_date: '2026-08-21',
+    full_text: 'Entscheid BV.2026.10 vom 21. August 2026. Erwägungen folgen hier im Text.', ...over,
+  } as OclDecision);
+  it('bstger «BV.2026.10» (Verwaltungsstrafrecht) bleibt straf', () => {
+    const s = mappeEntscheidOCL(det({ court: 'bstger', canton: 'CH', legal_area: 'criminal' }), null, '2026-09-25')!;
+    expect(s.sachgebiet).toBe('straf');
+  });
+  it('kantonal «BV …» (berufliche Vorsorge) bleibt sozialversicherung', () => {
+    const s = mappeEntscheidOCL(det({ court: 'zh_sozialversicherungsgericht', canton: 'ZH' }), null, '2026-09-25')!;
+    expect(s.sachgebiet).toBe('sozialversicherung');
   });
 });
