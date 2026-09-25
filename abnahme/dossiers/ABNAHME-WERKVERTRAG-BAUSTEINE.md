@@ -85,11 +85,11 @@ Schema `werkvertrag` · Version 1.0.0 (Wettbewerbsanalyse V3; Art. 363/366/367/3
 - **Norm:** Art. 367 OR
 - **Aufnahme:** immer
 - **Nummeriert** (fortlaufende Ziffer im Dokument)
-- **Begründung (Protokoll):** Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk).
+- **Begründung (Protokoll):** Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist- und Verdeckte-Mängel-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk und bei bauwerkskausalen Mängeln eines beweglichen Werks, Art. 367 Abs. 1bis / 370 Abs. 4 OR; sonst «sofort», Art. 370 Abs. 3 OR).
 
 **Wortlaut:**
 
-> Nach Ablieferung prüft der Besteller das Werk, sobald es nach dem üblichen Geschäftsgang tunlich ist, und zeigt dem Unternehmer Mängel an (Art. 367 Abs. 1 OR). {{ruegefristSatz}} Verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen; unterlässt der Besteller die Prüfung und Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 und 3 OR).{{abnahmeProtokollSatz}}
+> Nach Ablieferung prüft der Besteller das Werk, sobald es nach dem üblichen Geschäftsgang tunlich ist, und zeigt dem Unternehmer Mängel an (Art. 367 Abs. 1 OR). {{ruegefristSatz}} {{verdecktSatz}}{{abnahmeProtokollSatz}}
 
 ### 6. `WV06_maengelrechte` — «Mängelrechte»
 
@@ -97,11 +97,11 @@ Schema `werkvertrag` · Version 1.0.0 (Wettbewerbsanalyse V3; Art. 363/366/367/3
 - **Norm:** Art. 368 OR
 - **Aufnahme:** immer
 - **Nummeriert** (fortlaufende Ziffer im Dokument)
-- **Begründung (Protokoll):** Mängelrechte nach Art. 368 OR – immer enthalten.
+- **Begründung (Protokoll):** Mängelrechte nach Art. 368 OR – immer enthalten; beim unbeweglichen Werk mit Vorbehalt Art. 368 Abs. 3 OR (keine Annahmeverweigerung bei nicht ohne unverhältnismässige Nachteile entfernbaren Bauten) und Hinweis Art. 368 Abs. 2bis OR.
 
 **Wortlaut:**
 
-> Bei mangelhaftem Werk stehen dem Besteller die gesetzlichen Mängelrechte zu: Verweigerung der Annahme bei Unbrauchbarkeit, Minderung des Lohnes oder unentgeltliche Nachbesserung, soweit diese dem Unternehmer keine übermässigen Kosten verursacht, sowie Schadenersatz bei Verschulden (Art. 368 OR).
+> Bei mangelhaftem Werk stehen dem Besteller die gesetzlichen Mängelrechte zu: Verweigerung der Annahme bei Unbrauchbarkeit, Minderung des Lohnes oder unentgeltliche Nachbesserung, soweit diese dem Unternehmer keine übermässigen Kosten verursacht, sowie Schadenersatz bei Verschulden (Art. 368 OR).{{bautenSatz}}
 
 ### 7. `WV07_verjaehrung` — «Verjährung der Mängelansprüche»
 

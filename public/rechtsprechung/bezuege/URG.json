@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"URG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -10,6 +10,7 @@
 "bge_151_III_95":{"zitierung":"BGE 151 III 95","regesteKurz":"a Art. 423 OR und Art. 2 Abs. 2 lit. f URG; Gewinnherausgabeanspruch bei Urheberrechtsverletzungen; böser Glaube des Urheberrechtsverletzers bei Werken der angewandten Kunst. An den Beweis des Kennenmüssens von Bestand und Schutzumfang des…","datum":"2024-09-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_III_95__voll":{"zitierung":"Urteil 4A_145/2024 (nicht publ. in BGE 151 III 95)","regesteKurz":null,"datum":"2024-09-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 III 95","urteil":"4A_145/2024"}},
 "bge_151_II_742":{"zitierung":"BGE 151 II 742","regesteKurz":"Art. 3 Abs. 1 lit. a und Abs. 2, Art. 4 Abs. 2, Art. 7 Abs. 1 und 2 lit. e und f, Art. 49a KG; Art. 3 SVKG; Art. 5 Abs. 2 der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Wettbewerbsbeeinträchtigung als Voraussetzung…","datum":"2025-01-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bpatger_S2025_003":{"zitierung":"BPatGer S2025_003 vom 17. Juli 2026","regesteKurz":"Äquivalenz, Erfinderische Tätigkeit, Legitimation (aktiv), Legitimation (passiv), Neuheit, Priorität, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2026-07-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bs_appellationsgericht_BES.2024.91":{"zitierung":"Appellationsgericht BS BES.2024.91 vom 24.10.2025","regesteKurz":"Nichtanhandnahme","datum":"2025-10-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2021.124":{"zitierung":"Appellationsgericht BS VD.2021.124 vom 29.01.2022","regesteKurz":"Gesuch um Ausfallentschädigung im Kulturbereich","datum":"2022-01-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZK.2021.1":{"zitierung":"Appellationsgericht BS ZK.2021.1 vom 07.03.2022","regesteKurz":"Urheberrecht","datum":"2022-03-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -45,7 +46,7 @@
 "58":[{"key":"bge_148_II_92","gewicht":1},{"key":"bge_150_II_153__voll","gewicht":0,"erwaegungen":["E. 1.1"]}],
 "59":[{"key":"bge_150_II_153","gewicht":0},{"key":"bge_148_II_92","gewicht":1},{"key":"bs_appellationsgericht_ZK.2023.7","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.10","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.11","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.12","gewicht":null},{"key":"bs_appellationsgericht_ZK.2022.9","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.1","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.3","gewicht":null},{"key":"bs_appellationsgericht_ZK.2023.6","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.1","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.4","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.5","gewicht":null},{"key":"bs_appellationsgericht_ZK.2021.7","gewicht":null}],
 "60":[{"key":"bge_150_II_153","gewicht":0}],
-"62":[{"key":"bge_151_III_95__voll","gewicht":0,"erwaegungen":["E. 1.1"]}],
+"62":[{"key":"bge_151_III_95__voll","gewicht":0,"erwaegungen":["E. 1.1"]},{"key":"bpatger_S2025_003","gewicht":null}],
 "67":[{"key":"bs_appellationsgericht_BES.2024.91","gewicht":null}],
 "71":[{"key":"bs_appellationsgericht_BES.2024.91","gewicht":null}],
 "74":[{"key":"bge_148_II_92","gewicht":0}],
@@ -71,7 +72,7 @@
 "58":{"bge":1,"bger":1},
 "59":{"bge":2,"kantonal":12},
 "60":{"bge":1},
-"62":{"bger":1},
+"62":{"bger":1,"eidg":1},
 "67":{"kantonal":1},
 "71":{"kantonal":1},
 "74":{"bge":1},

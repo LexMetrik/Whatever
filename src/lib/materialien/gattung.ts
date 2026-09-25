@@ -35,6 +35,17 @@ export function gattungVon(doktyp: DoktypId): Gattung {
   return GESETZGEBUNG_DOKTYPEN.has(doktyp) ? 'materialien' : 'erlaeuterungen';
 }
 
+/** Rang-Etikett je Gattung — EINE Quelle für den Hinweis der Einzelseite
+ *  (`components/materialien/GattungsHinweis`), die SEO-Beschreibung und das
+ *  Crawler-HTML (`lib/seo-detail`), §5. Anlass: Gegenprüfung REST S5c
+ *  (25.9.2026) fand dort noch «Amtliche Ressource (Soft-Law, kein
+ *  Gesetzesrang)» auch für Botschaften — dieselbe Doppel-Wahrheit, die der
+ *  Gattungs-Hinweis auf der Seite behoben hatte. */
+export const GATTUNG_RANG: Record<Gattung, string> = {
+  materialien: 'Gesetzgebungsmaterial, kein Gesetzesrang',
+  erlaeuterungen: 'Behördenpublikation, kein Gesetzesrang',
+};
+
 /** Anzeige-Beschriftung je Gattung (Startseite-Schalter, Trefferzeile). */
 export const GATTUNG_LABEL: Record<Gattung, string> = {
   materialien: 'Materialien',

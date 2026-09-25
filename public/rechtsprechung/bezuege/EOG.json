@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"EOG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -15,6 +15,7 @@
 "bge_150_V_400":{"zitierung":"BGE 150 V 400","regesteKurz":"Art. 16i Abs. 1 lit. a EOG (in der vom 1. Januar 2021 bis 31. Dezember 2023 in Kraft gestandenen Fassung); Vaterschaftsentschädigung bei Anerkennung des Kindes nach dessen Geburt. Die in Art. 16i Abs. 1 lit. a EOG ab dem Zeitpunkt der…","datum":"2024-07-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_V_474":{"zitierung":"BGE 150 V 474","regesteKurz":"Art. 16d Abs. 3 Teilsatz 1 EOG; Art. 25 EOV; Mutterschaftsentschädigung. Der Anspruch auf Mutterschaftsentschädigung endet vorzeitig, wenn die Mutter ihre Erwerbstätigkeit wieder aufnimmt (Art. 16d Abs. 3 Teilsatz 1 EOG) resp. am Tag der…","datum":"2024-10-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_V_129":{"zitierung":"BGE 151 V 129","regesteKurz":"Art. 16g Abs. 1 lit. f und Art. 16n-16s EOG; Koordination der Betreuungsentschädigung mit der Mutterschaftsentschädigung. Es besteht kein triftiger Grund für ein Abweichen vom grundsätzlich klaren Wortlaut von Art. 16g Abs. 1 lit. f EOG,…","datum":"2024-08-30","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_III_81__voll":{"zitierung":"Urteil 5A_384/2024 (nicht publ. in BGE 152 III 81)","regesteKurz":null,"datum":"2025-09-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 III 81","urteil":"5A_384/2024"}},
 "bs_sozialversicherungsgericht_AH.2025.2":{"zitierung":"Sozialversicherungsgericht BS AH.2025.2 vom 06.08.2025","regesteKurz":"Beitragsermittlung Nichterwerbstätiger bei rückwirkend ausgerichteter Rentennachzahlung einer Pensionskasse…","datum":"2025-08-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_EO.2021.4":{"zitierung":"Sozialversicherungsgericht BS EO.2021.4 vom 01.12.2022","regesteKurz":"Rückforderung Corona-Erwerbsersatz (Bundesgerichtsurteil 9C_199/2023 vom 11.12.2023)","datum":"2022-12-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_EO.2025.1":{"zitierung":"Sozialversicherungsgericht BS EO.2025.1 vom 26.11.2025","regesteKurz":"EOG Betreuungsentschädigung bei arbeitsrechtlicher Freistellung","datum":"2025-11-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
@@ -28,7 +29,7 @@
 "11":[{"key":"bge_150_V_1","gewicht":0},{"key":"bge_149_V_2","gewicht":0},{"key":"bge_148_V_427","gewicht":0},{"key":"bge_148_V_373","gewicht":0},{"key":"bge_148_V_253","gewicht":0},{"key":"bge_147_V_278","gewicht":0},{"key":"bs_sozialversicherungsgericht_EO.2025.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_EO.2021.4","gewicht":null}],
 "16":[{"key":"bge_148_V_427","gewicht":0}],
 "24":[{"key":"bge_147_V_423","gewicht":0},{"key":"bs_sozialversicherungsgericht_EO.2025.1","gewicht":null}],
-"27":[{"key":"bge_149_III_258","gewicht":0},{"key":"bge_148_V_253","gewicht":0},{"key":"bs_sozialversicherungsgericht_AH.2025.2","gewicht":null}],
+"27":[{"key":"bge_149_III_258","gewicht":0},{"key":"bge_148_V_253","gewicht":0},{"key":"bge_152_III_81__voll","gewicht":0,"erwaegungen":["E. 4.2"]},{"key":"bs_sozialversicherungsgericht_AH.2025.2","gewicht":null}],
 "16a":[{"key":"bge_148_V_427","gewicht":0}],
 "16b":[{"key":"bge_148_V_253","gewicht":0},{"key":"bge_146_V_378","gewicht":0}],
 "16c":[{"key":"bge_151_V_129","gewicht":0},{"key":"bge_148_V_253","gewicht":1}],
@@ -55,7 +56,7 @@
 "11":{"bge":6,"kantonal":2},
 "16":{"bge":1},
 "24":{"bge":1,"kantonal":1},
-"27":{"bge":2,"kantonal":1},
+"27":{"bge":2,"bger":1,"kantonal":1},
 "16a":{"bge":1},
 "16b":{"bge":2},
 "16c":{"bge":2},

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"BS-253.100",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -7,11 +7,12 @@
 "bs_appellationsgericht_BES.2022.48":{"zitierung":"Appellationsgericht BS BES.2022.48 vom 23.05.2023","regesteKurz":"Befehl für Erkennungsdienstliche Erfassung (Art. 260 StPO)","datum":"2023-05-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2024.100":{"zitierung":"Appellationsgericht BS BES.2024.100 vom 25.02.2025","regesteKurz":"Nichteintreten auf Einsprache infolge Verspätung","datum":"2025-02-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2024.52":{"zitierung":"Appellationsgericht BS BES.2024.52 vom 29.10.2024","regesteKurz":"unentgeltliche Rechtspflege","datum":"2024-10-29","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_DGS.2026.4":{"zitierung":"Appellationsgericht BS DGS.2026.4 vom 07.04.2026","regesteKurz":"Revisionsgesuch betreffend einen Strafbefehl der Staatsanwaltschaft vom 8. August 2025 (VT.[...])","datum":"2026-04-07","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2020.97":{"zitierung":"Appellationsgericht BS SB.2020.97 vom 15.02.2022","regesteKurz":"Landfriedensbruch, mehrfache Gewalt und Drohung gegen Behörden und Beamte und Widerhandlung gegen das kantonale…","datum":"2022-02-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2021.125":{"zitierung":"Appellationsgericht BS SB.2021.125 vom 30.06.2022","regesteKurz":"Widerhandlung gegen das Gesetz über Niederlassung und Aufenthalt","datum":"2022-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2021.132":{"zitierung":"Appellationsgericht BS SB.2021.132 vom 31.05.2023","regesteKurz":"Diebstahl","datum":"2023-05-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2021.57":{"zitierung":"Appellationsgericht BS SB.2021.57 vom 06.02.2024","regesteKurz":"ad 1: Amtsmissbrauch und Urkundenfälschung ad 2: Amtsmissbrauch und Urkundenfälschung ad 3: Amtsbissbrauch","datum":"2024-02-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_SB.2022.101":{"zitierung":"Appellationsgericht BS SB.2022.101 vom 10.11.2023","regesteKurz":"Hinderung einer Amtshandlung und Diensterschwerung (Beschwerde am BG hängig)","datum":"2023-11-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_SB.2022.101":{"zitierung":"Appellationsgericht BS SB.2022.101 vom 10.11.2023","regesteKurz":"Hinderung einer Amtshandlung und Diensterschwerung (BGer 6B_175/2024 vom 6. Juli 2026)","datum":"2023-11-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2022.41":{"zitierung":"Appellationsgericht BS SB.2022.41 vom 11.08.2023","regesteKurz":"Vereitelung von Massnahmen zur Feststellung der Fahrunfähigkeit (Motorfahrzeugführer), Hinderung einer Amtshandlung…","datum":"2023-08-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2023.4":{"zitierung":"Appellationsgericht BS SB.2023.4 vom 30.05.2024","regesteKurz":"Raub (mehrfache, versuchte Begehung), Genugtuung zugunsten von C____, Rückerstattungspflicht gemäss Art. 135 Abs. 4…","datum":"2024-05-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2023.53":{"zitierung":"Appellationsgericht BS SB.2023.53 vom 06.11.2024","regesteKurz":"Landfriedensbruch, Hinderung einer Amtshandlung, Störung von Betrieben, die der Allgemeinheit dienen, mehrfache üble…","datum":"2024-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -23,7 +24,7 @@
 "proArtikel":{
 "1":[{"key":"bs_appellationsgericht_VD.2023.102","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.48","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null}],
 "2":[{"key":"bs_appellationsgericht_SB.2024.74","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.101","gewicht":null},{"key":"bs_appellationsgericht_SB.2021.125","gewicht":null}],
-"4":[{"key":"bs_appellationsgericht_SB.2024.74","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.100","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.53","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.52","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.4","gewicht":null},{"key":"bs_appellationsgericht_AUS.2024.23","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.101","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.41","gewicht":null}],
+"4":[{"key":"bs_appellationsgericht_DGS.2026.4","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.74","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.100","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.53","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.52","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.4","gewicht":null},{"key":"bs_appellationsgericht_AUS.2024.23","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.101","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.41","gewicht":null}],
 "11":[{"key":"bs_appellationsgericht_SB.2020.97","gewicht":null}],
 "14":[{"key":"bs_appellationsgericht_BES.2022.48","gewicht":null}],
 "16":[{"key":"bs_appellationsgericht_SB.2021.132","gewicht":null}],
@@ -35,7 +36,7 @@
 "gesamtProArtikel":{
 "1":{"kantonal":3},
 "2":{"kantonal":3},
-"4":{"kantonal":8},
+"4":{"kantonal":9},
 "11":{"kantonal":1},
 "14":{"kantonal":1},
 "16":{"kantonal":1},

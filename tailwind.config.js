@@ -278,11 +278,11 @@ export default {
       // fort — §17 «gestrichen statt bewacht», kein toter Token im Design-System.
       // Herleitung, Messreihe und Wächter: `pages/gesetz-leser/v3/
       // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT §N-4b.
-      // CLS-Reservierungs-Tokens der Startseite (Startseite V3, §5): benannte
-      // Mindesthöhen für die async-/localStorage-Module — Masse, keine Farben
-      // (hell = dunkel). `modul-news` benennt den bisherigen Arbitrary-Wert der
-      // News-Streifen-Reservierung; `modul-zuletzt` reserviert die Chip-Zeile
-      // von «Zuletzt verwendet» (Fallback-Reservierung, FAHRPLAN §3 #5).
+      // GRABSTEIN (S5a W2·29-WERKBANK-REST, 25.9.2026): hier standen die
+      // Startseiten-Reservierungen `modul-news` (12.5rem) und `modul-zuletzt`
+      // (4.5rem) — ihre Module (News-Streifen, «Zuletzt verwendet»-Reserve) sind
+      // mit dem Werkbank-Umbau fort, kein Klassen-Verbraucher mehr (grep
+      // `min-h-modul-*` über src/: 0). §17 «gestrichen statt bewacht».
       // CLS-Reservierung des Leser-Kopf-Titels (§15.2, A9-Forensik 19.7.2026): der
       // lange «Kürzel — Volltitel» (OR) bricht mit der metrik-angepassten Fallback-
       // Schrift ('Geist Fallback', size-adjust 104.76% ⇒ ~5 % breiter) auf CI-Linux
@@ -293,45 +293,12 @@ export default {
       // Zeilenhöhe 1.15 ⇒ 2 Zeilen = 2.30em, +Puffer 2.35em): der Titelkasten bleibt
       // in BEIDEN Font-Zuständen gleich hoch → kein Swap-Shift. Reserviert nur Platz,
       // versteckt/kürzt nichts (§15/2); kürzere Titel gewinnen etwas Weissraum.
-      // CLS-Reservierung der Fassungs-Zeile am Artikel-Fuss (§15.2, G-HIST-UI-
-      // Forensik 20.7.2026): der Historie-Shard wird per requestIdleCallback
-      // NACH dem ersten Artikel-Render geholt (§15/3) — die «Gilt seit»-Badge
-      // wuchs damit in bereits sichtbare Artikel ein und schob alles darunter.
-      // Gemessen auf /gesetze/bund/MWSTV#art-165 unter 6× CPU-Drossel: CLS 0.0227
-      // gegen 0.0002 ohne die Zeile (94 Zeilen, jede exakt 24 px hoch — die Badge
-      // ist immer EINE Chip-Zeile, die Timeline klappt nur auf ECHTEN Klick auf
-      // ⇒ input-behaftet, CLS-exkludiert). `beiwerk` reserviert diese eine
-      // Zeile am Slot, der ab dem ERSTEN Render steht: der Shard-Resolve füllt
-      // reservierten Platz, statt Platz zu schaffen → kein Shift. Reserviert nur
-      // Platz, versteckt/kürzt nichts (§15/2).
-      // S2-UMBENENNUNG (W2·5m-LESER-V3, Pos. 13): der Token hiess `hist-zeile`
-      // und ist jetzt `beiwerk` — er reserviert den BODEN DER BEIWERK-ZONE
-      // (`[data-beiwerk]`, ArtikelLeser), nicht «eine Historie-Zeile». Der WERT
-      // bleibt 1.5 rem, und das ist gemessen statt gerundet: die Chip-Zeile ist
-      // exakt 24 px hoch (Sonde 17.8.2026 @1440, alle 480 Slots der StPO und
-      // 1598 des OR identisch 24.00 px). Die Design-Grundlage Kap. 3 nennt für
-      // die Zone 2.5 rem; das ist ABWEICHEND NICHT übernommen (§7): 40 px Boden
-      // unter einer 24 px hohen Zeile hiesse 16 px Leerraum an jedem
-      // reservierenden Artikel — also genau die Phantom-Lücke (Ä26), gegen die
-      // dieselbe Etappe antritt. Ein Boden kann ohnehin nur Elemente auffangen,
-      // die kleiner sind als er; der Fussnoten-Apparat misst gemessen 27–187 px
-      // und wird von keinem Token-Wert höhenfest.
-      // S2 · Ä26: die Reservierung wird nur noch dort gesetzt, wo überhaupt eine
-      // Fassungs-Zeile eintreffen kann — und die Frage wird ARTIKELWEISE am
-      // Datenmodell gestellt, nicht am Erlass: `fussAnzeige.length > 0 ||
-      // historie` (ArtikelLeser.tsx). Der Generator baut Historie-Einträge nur
-      // aus Artikel-Fussnoten, also kann ein fussnotenfreier Artikel nie einen
-      // Eintrag bekommen (Invariante, 0 Gegenbeispiele in 24 511 Artikeln).
-      // AUSDRÜCKLICH KEINE Ebenen-Weiche: `erlass.ebene === 'bund'` wäre ein
-      // Erlass-Sonderpfad und liesse die Reserve unter jedem Bund-Artikel ohne
-      // Fussnote stehen; der Rot-Beweis dazu steht im Vollzugsvermerk S2.
-      // NACHZUG-KORREKTUR 17.8.2026 (Bug-Check B2 / Arch 1 / Ä65): hier stand
-      // «`erlass.ebene === 'bund'` — 209 Shards im Korpus, alle Bund» und
-      // beschrieb damit eine Weiche, die so nie gebaut wurde — Doku-Drift gegen
-      // §5. Herleitung, Korpus-Messung (25 403 → 17 547 reservierende Artikel,
-      // −31 %) und die verworfenen engeren Regeln stehen am Slot selbst
-      // (ArtikelLeser.tsx), die Wirkung auf die Höhen-Schätzung in
-      // `src/pages/gesetz-leser/berechnungen.ts`.
+      // GRABSTEIN (S5a W2·29-WERKBANK-REST, 25.9.2026): hier stand `beiwerk`
+      // (1.5rem, bis W2·5m S2 `hist-zeile`) — die Reserve der Fassungs-Zeile am
+      // Artikel-Fuss. Seit die Historie erst auf Klick rendert, ist sie ersatzlos
+      // entfallen (ArtikelHistorie.tsx, ArtikelLeser.tsx); `min-h-beiwerk` steht
+      // in src/ nur noch in Kommentaren. Herleitung und Messreihe: git-Verlauf
+      // dieser Datei vor S5a.
       // `inhalt-region` (Footer-CLS /gesetze, David 25.7.2026, §15.2): EIN
       // Rahmen um die drei exklusiven Inhalts-Zustände der Übersicht
       // (Landeplatz / Trefferregion / Ebenen-Panel) reserviert von Anfang an
@@ -369,7 +336,7 @@ export default {
       // Reserviert nur Platz, versteckt/kürzt nichts (§15/2, §8: der volle
       // Wortlaut steht immer). In der Tailwind-Skala und NICHT als
       // `min-height`-Regel in index.css — das ist die Hausform für
-      // Höhen-Reservierungen (`titel-2z`, `beiwerk`, `inhalt-region`), und
+      // Höhen-Reservierungen (`titel-2z`, `inhalt-region`), und
       // `src/tests/tap-ziel-token.test.ts` hält index.css frei von rohen
       // min-height-Zahlen (F9: dort gehört nur var(--tap-ziel) hin).
       // W2·24-D35-F1 (7.9.2026) · `bez-skelett` reserviert den BODEN der
@@ -414,7 +381,7 @@ export default {
       // 17.5rem: 2 × 280 + 16 = 576 → Unterkante 795 ≤ 800. Die Kacheln tragen
       // ~200 px Inhalt, sie verlieren nur Leerraum; die Gesetze-Wahl passt nach
       // den Blatt-Massen in `index.css` (U13) trotzdem ohne Scroll (Inhalt 520 ≤ 528 px Sicht).
-      minHeight: { 'start-schnell': '32.25rem', 'start-schnell-eng': '44.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '17.5rem', 'start-kachel-s': '8.25rem', 'modul-news': '12.5rem', 'modul-zuletzt': '4.5rem', 'titel-2z': '2.35em', beiwerk: '1.5rem', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
+      minHeight: { 'start-schnell': '32.25rem', 'start-schnell-eng': '44.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '17.5rem', 'start-kachel-s': '8.25rem', 'titel-2z': '2.35em', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht

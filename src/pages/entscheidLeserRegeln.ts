@@ -445,3 +445,19 @@ export function leitzeileOhneKopfangaben(
   rest = rest.replace(/\s+/g, ' ').replace(/^[\s—·,–-]+/, '').replace(/[\s—·,–-]+$/, '').trim();
   return /\p{L}{2}/u.test(rest) ? rest : null;
 }
+
+// ── W2·29-WERKBANK-REST S1 · MINDESTLÄNGE DER ENTSCHEID-SUCHE ────────────────
+// Entscheid David 22.9.2026 (Posten «Entscheid-Suche — Zählzeile und
+// Mindestlänge»): gesucht wird erst ab ZWEI Zeichen. Gemessen 21.9.2026: ein
+// einzelnes Zeichen erzeugte auf einem langen Entscheid 15 019 Treffer in 201
+// Erwägungen und ~150 ms Arbeit — und der teuerste Aufruf war per Konstruktion
+// der erste, unentprellte. Bewusste FACHLICHE Folge, kein Nebeneffekt:
+// Einzelzeichen wie «§» oder eine Ziffer finden nichts mehr. Gezählt wird nach
+// `trim()`, wie überall in dieser Suche. EINE Stelle (§5) für Rail, Zähler,
+// Landkarte UND Hervorhebung im Lesetext.
+const SUCHE_MIN_ZEICHEN = 2;
+
+/** Trägt der Suchbegriff eine Suche (≥ zwei Zeichen nach `trim()`)? */
+export function sucheWirksam(suche: string): boolean {
+  return suche.trim().length >= SUCHE_MIN_ZEICHEN;
+}

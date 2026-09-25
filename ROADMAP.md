@@ -87,7 +87,7 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: W2·29-WERKBANK-REST, W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS -->
+<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
@@ -97,9 +97,9 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
      nachfüllen, wenn der Kopf erledigt ist. Der gestrichene Schwanz steht im Wortlaut in
      ROADMAP-CHRONIK.md (Umschichtung 20.9.2026). -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·29-WERKBANK-REST`** (Werkbank-Umbau Rest und Rückbau) — nach
-> Regel 8.4 nachgezogen 25.9.2026, weil `W2·30-RL-W2A` (Rechtslogik Welle 2a) seit #1073 auf `wip`
-> steht; dann Phase 1 Bund: `W2·27-BUND-FERTIG` → `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Phase 1 Bund) — nach Regel 8.4 nachgezogen
+> 25.9.2026; `W2·29-WERKBANK-REST` (Werkbank-Umbau Rest und Rückbau) ist seit 25.9.2026 `done` (S0–S5c);
+> danach `W2·5l-NORMTEXT-B2` → `QS-KORPUS`. **`@queue`
 > nachgeführt 24.9.2026 auf die laufenden Go-Stränge: Werkbank 22.9., Rechtslogik parallel 24.9.;
 > Bund Phase 1 folgt dahinter; David hat Veto.** Bisheriger Marker und Queue-Schwanz im Wortlaut:
 > ROADMAP-CHRONIK.md, Umschichtung 2026-09-24 (1).
@@ -122,8 +122,8 @@ gebv-schkg-rundung: GebV-SchKG 2 ‰/5 ‰ — Hauskonvention 0.01 behalten oder
 
 ## Leser — Gesetzes-Darstellung  *(`feld: leser`)*
 
-- [ ] **Werkbank-Umbau Schritt 2: der Gesetzes-Leser** *(`W2·29-WERKBANK-LESER`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-LESER · status: ready · blocker: null · dep: [W2·29-WERKBANK-TOKENS] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau Schritt 2: der Gesetzes-Leser** *(`W2·29-WERKBANK-LESER`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-LESER · status: done · blocker: null · dep: [W2·29-WERKBANK-TOKENS] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: die Leser-Hülle auf die Werkbank umziehen — grösster Korpus, darum zuerst. Abnahmeliste
   ist Abschnitt 2 des Funktions-Inventars (jede Fläche, jedes Feld, jeder Zustand). Grenzen:
   **Normtext-Körper golden byte-gleich**, Rechen-/Datenlogik unangetastet, alte Komponente fällt
@@ -428,8 +428,8 @@ Umschichtung 20.9.2026 (2)):*
   Ziel: Gesetze-Blatt ohne Leerfläche, Schnellwerkzeug wählbar, nur höfliche Begrüssungen, «Häufig gebraucht» unter den Kacheln.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d-bis.
 
-- [ ] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-REST · status: ready · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-REST · status: done · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —
   und die letzten Alt-Stylesheet-Reste samt abgelösten Reglementen und Fahrplänen löschen.
   Grenzen: `check:sediment` grün ohne Ausnahme; datierte Belege (`abnahme/**`) bleiben.
@@ -440,6 +440,17 @@ Umschichtung 20.9.2026 (2)):*
   Ziel: N1 Dunkel-Paket, Mono-Diät, Motiv-Katalog, 14-px-Radius der Flächen, CSS-Querschnitt; N2 was
   LESER bewusst umgebucht hat (NormText schneiden, NormChip-Ort, Akkordeon, E3 u. a.). Aus REST gelöst,
   damit REST im Abbruchkriterium bleibt (§2 Ziff. 4). **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f.
+
+- [ ] **Bildschirmbreite je Seitenart nutzen** *(`W2·31-BILDSCHIRMBREITE`, Freigabe David 25.9.2026)*
+  <!-- @meta id: W2·31-BILDSCHIRMBREITE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: null -->
+  Anlass: Inventar 25.9.2026 (messen2.mjs) — ab 1280 px ist Inhalt überall auf 1072 px gedeckelt,
+  bei 1920 bleiben 424 px je Seite leer. Aufträge David 25.9.2026 (wörtlich): «für alle arten von
+  seiten … bildschirmbreite bei allen seiten optimiert wird» · «für jede seitenart eine eigene
+  session … was angezeigt wird» · «zuerst inventarisieren … anschliessend planen» · Plan
+  «einverstanden freigegeben». Grundsatz: Lesemass/Fliesstext wächst nie, nur Raster/Tabellen/
+  Beiwerk nutzen die Breite; eine Session je Posten; Posten „Grundlage“ vor allen anderen. Nr. 0
+  (Startseite) läuft als Posten unter `W2·29-WERKBANK-REST`. Inventar:
+  `~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md`.
 
 - [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
   <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
@@ -518,8 +529,8 @@ Umschichtung 20.9.2026 (2)):*
   §5-Kopien Tarifdaten, ZPO-Kosten Bund, Erbteilung/Verzugszins/Teuerung Rest.
   **Detail:** [FAHRPLAN-RECHTSLOGIK.md](fahrplaene/FAHRPLAN-RECHTSLOGIK.md) §1 (Welle 2b).
 
-- [ ] **Welle 2c — mittlere Befunde Vorlagen/Zuständigkeit/Leser** *(`W2·30-RL-W2C`, Go David 23.9.2026)*
-  <!-- @meta id: W2·30-RL-W2C · status: ready · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
+- [~] **Welle 2c — mittlere Befunde Vorlagen/Zuständigkeit/Leser** *(`W2·30-RL-W2C`, Go David 23.9.2026)*
+  <!-- @meta id: W2·30-RL-W2C · status: wip · blocker: null · dep: [W2·30-RL-W0] · feld: rechtslogik · fahrplan: fahrplaene/FAHRPLAN-RECHTSLOGIK.md -->
   RL-39…RL-47: Werkvertrag, Familienrecht, Vorlagen Gesellschaft/Prozess,
   Straf-/Zivilzuständigkeit, Leser-Fassungsstand Rest, Stammdaten-Adressen,
   Formular-Eingaben, Logik aus UI, Datum-/Zitier-Helfer.

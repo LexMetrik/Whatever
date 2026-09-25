@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "AVIV",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -121,6 +121,16 @@
     ],
     "37": [
       {
+        "key": "bge_152_V_136",
+        "zitierung": "BGE 152 V 136",
+        "regesteKurz": "Art. 8 Abs. 1 AVIG; Art. 37 Abs. 3 AVIV; Bemessungszeitraum für den versicherten Verdienst bei verzögerter Anmeldung zum Taggeldbezug. Art. 37 Abs. 3 AVIV ist in Verbindung mit Art. 8 Abs. 1 AVIG zu verstehen. Art. 37 Abs. 3 AVIV findet…",
+        "datum": "2026-04-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_V_44",
         "zitierung": "BGE 150 V 44",
         "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor…",
@@ -139,6 +149,18 @@
         "datum": "2023-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "45": [
+      {
+        "key": "bge_152_V_60__voll",
+        "zitierung": "Urteil 8C_753/2024 (nicht publ. in BGE 152 V 60)",
+        "regesteKurz": null,
+        "datum": "2025-09-01",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

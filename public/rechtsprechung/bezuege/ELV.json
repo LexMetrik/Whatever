@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"ELV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -18,6 +18,7 @@
 "bge_151_V_264":{"zitierung":"BGE 151 V 264","regesteKurz":"Art. 16a Abs. 1 ELG; Art. 27a Abs. 1 ELV; Rz. 4720.03 der Wegleitung über die Ergänzungsleistungen zur AHV und IV (WEL); Rückforderung rechtmässig bezogener Leistungen; Ermittlung des Nachlasses der verstorbenen EL-Bezügerin bei…","datum":"2025-04-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_V_270":{"zitierung":"BGE 151 V 270","regesteKurz":"Art. 16b ELG in Verbindung mit Art. 16a Abs. 1 ELG und Art. 27a Abs. 1 ELV; Rückerstattung rechtmässig bezogener Ergänzungsleistungen; Beginn der Verwirkungsfrist. Die einjährige relative Frist kann nicht zu laufen beginnen, solange das…","datum":"2025-05-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_V_88":{"zitierung":"BGE 151 V 88","regesteKurz":"Art. 25a Abs. 2 ELV; keine (analoge) Anwendung dieser Bestimmung im Falle der Hilflosigkeit wegen des Bedarfs an lebenspraktischer Begleitung bei der EL-Berechnung einer Einzelperson, welche in einer gemeinschaftlichen Wohnform gemäss Art.…","datum":"2024-10-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_V_99":{"zitierung":"BGE 152 V 99","regesteKurz":"Art. 11 Abs. 1 lit. c ELG; Anrechnung eines Vermögensteils als Einnahme. Sind die Voraussetzungen für die gemeinsame Berechnung der Ergänzungsleistungen erfüllt, so ist bei einem Ehepaar, bei dem der eine Partner eine Invalidenrente, der…","datum":"2026-02-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VD.2022.3":{"zitierung":"Appellationsgericht BS VD.2022.3 vom 28.08.2022","regesteKurz":"Nichtverlängerung der Auftenthaltsbewilligung und Wegweisung","datum":"2022-08-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_EL.2020.8":{"zitierung":"Sozialversicherungsgericht BS EL.2020.8 vom 22.09.2022","regesteKurz":"Beschwerde abgewiesen. Neue Vermögenssituation, die eine EL-Neuberechnung rechtfertigen würde ist weder substantiiert…","datum":"2022-09-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_EL.2021.11":{"zitierung":"Sozialversicherungsgericht BS EL.2021.11 vom 06.09.2023","regesteKurz":"Beschränkung der Vergütung für Hilfe und Betreuung zu Hause im Rahmen der jährlichen Krankheits- und…","datum":"2023-09-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
@@ -54,7 +55,7 @@
 "15a":[{"key":"bs_appellationsgericht_VD.2022.3","gewicht":null}],
 "16c":[{"key":"bs_sozialversicherungsgericht_EL.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2023.1","gewicht":null}],
 "16e":[{"key":"bge_147_V_312","gewicht":0}],
-"17a":[{"key":"bge_146_V_306","gewicht":0},{"key":"be_verwaltungsgericht_2002025648","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2022.6","gewicht":null}],
+"17a":[{"key":"bge_152_V_99","gewicht":0},{"key":"bge_146_V_306","gewicht":1},{"key":"be_verwaltungsgericht_2002025648","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2022.6","gewicht":null}],
 "17c":[{"key":"be_verwaltungsgericht_2002025648","gewicht":null}],
 "17e":[{"key":"be_verwaltungsgericht_2002025648","gewicht":null},{"key":"bs_sozialversicherungsgericht_EL.2024.8","gewicht":null}],
 "19b":[{"key":"bge_150_V_105","gewicht":0},{"key":"bs_sozialversicherungsgericht_EL.2021.11","gewicht":null}],
@@ -83,7 +84,7 @@
 "15a":{"kantonal":1},
 "16c":{"kantonal":3},
 "16e":{"bge":1},
-"17a":{"bge":1,"kantonal":4},
+"17a":{"bge":2,"kantonal":4},
 "17c":{"kantonal":1},
 "17e":{"kantonal":2},
 "19b":{"bge":1,"kantonal":1},

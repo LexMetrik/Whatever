@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "erlass": "OR",
   "gewichtQuelle": "alt",
   "proArtikel": {
@@ -803,6 +803,16 @@
         "gewicht": 2
       },
       {
+        "key": "bge_147_IV_47",
+        "zitierung": "BGE 147 IV 47",
+        "regesteKurz": "a Art. 81 Abs. 1 lit. b BGG; Art. 426 Abs. 2, Art. 433 Abs. 1 lit. b StPO; Beschwerdelegitimation der Privatklägerschaft bezüglich der Kostentragungspflicht einer beschuldigten Person, deren Verfahren eingestellt wurde. Das rechtlich…",
+        "datum": "2020-12-17",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 2
+      },
+      {
         "key": "bge_146_IV_211",
         "zitierung": "BGE 146 IV 211",
         "regesteKurz": "Art. 122 Abs. 1, 126 Abs. 1 lit. a StPO; Art. 305 bis Ziff. 2 StGB; Art. 41, 50 Abs. 3 OR; Zivilklage, Schadenersatzforderung aus Geldwäscherei. Soweit das Gericht die beschuldigte Person schuldig spricht, ist der Entscheid über die…",
@@ -817,16 +827,6 @@
         "zitierung": "BGE 147 III 463",
         "regesteKurz": "Art. 42, 97 und 398 OR; Art. 8 ZGB; Art. 55 Abs. 1 ZPO; Verantwortlichkeit der Bank; Bestimmung des Schadens. Voraussetzungen der Verantwortlichkeit der Bank bei Nichterfüllung von punktuellen Investitionsanweisungen des Kunden (E. 4.1).…",
         "datum": "2021-09-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 1
-      },
-      {
-        "key": "bge_147_IV_47",
-        "zitierung": "BGE 147 IV 47",
-        "regesteKurz": "a Art. 81 Abs. 1 lit. b BGG; Art. 426 Abs. 2, Art. 433 Abs. 1 lit. b StPO; Beschwerdelegitimation der Privatklägerschaft bezüglich der Kostentragungspflicht einer beschuldigten Person, deren Verfahren eingestellt wurde. Das rechtlich…",
-        "datum": "2020-12-17",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -925,20 +925,20 @@
         "gewicht": 0
       },
       {
-        "key": "bge_151_IV_228__voll",
-        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
+        "key": "bge_152_IV_234__voll",
+        "zitierung": "Urteil 7B_65/2023 (nicht publ. in BGE 152 IV 234)",
         "regesteKurz": null,
-        "datum": "2025-02-06",
+        "datum": "2025-12-05",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       },
       {
-        "key": "bge_148_III_11__voll",
-        "zitierung": "Urteil 4A_36/2021 (nicht publ. in BGE 148 III 11)",
+        "key": "bge_151_IV_228__voll",
+        "zitierung": "Urteil 7B_540/2023 (nicht publ. in BGE 151 IV 228)",
         "regesteKurz": null,
-        "datum": "2021-11-01",
+        "datum": "2025-02-06",
         "leitcharakter": "routine",
         "gericht": "bger",
         "kanton": "CH",
@@ -2723,6 +2723,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_190",
+        "zitierung": "BGE 152 III 190",
+        "regesteKurz": "Art. 31 Ziff. 1 Bst. c des Wiener Übereinkommens vom 18. April 1961 über diplomatische Beziehungen; Art. 4 Abs. 1 lit. a GSG; Art. 6 Ziff. 1 EMRK; (private) Hausangestellte eines diplomatischen Vertreters; Zugang zu einem Gericht;…",
+        "datum": "2025-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_148_III_63",
         "zitierung": "BGE 148 III 63",
         "regesteKurz": "Art. 67 und 270 Abs. 2 OR; Verjährung der Klage auf Feststellung der Nichtigkeit des Anfangsmietzinses; Beginn der Verjährungsfrist (Präzisierung der Rechtsprechung). Interesse des Mieters, den Anfangsmietzins anzufechten, je nachdem ob…",
@@ -2872,6 +2882,16 @@
       }
     ],
     "134": [
+      {
+        "key": "bge_152_III_190",
+        "zitierung": "BGE 152 III 190",
+        "regesteKurz": "Art. 31 Ziff. 1 Bst. c des Wiener Übereinkommens vom 18. April 1961 über diplomatische Beziehungen; Art. 4 Abs. 1 lit. a GSG; Art. 6 Ziff. 1 EMRK; (private) Hausangestellte eines diplomatischen Vertreters; Zugang zu einem Gericht;…",
+        "datum": "2025-09-25",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_III_419",
         "zitierung": "BGE 147 III 419",
@@ -3123,6 +3143,18 @@
         "datum": "2025-03-03",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "149": [
+      {
+        "key": "bge_152_IV_27",
+        "zitierung": "BGE 152 IV 27",
+        "regesteKurz": "a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…",
+        "datum": "2026-01-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -3637,6 +3669,18 @@
         "datum": "2022-09-13",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "263": [
+      {
+        "key": "bge_152_IV_27__voll",
+        "zitierung": "Urteil 7B_421/2025 (nicht publ. in BGE 152 IV 27)",
+        "regesteKurz": null,
+        "datum": "2026-01-29",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -4401,6 +4445,26 @@
     ],
     "336": [
       {
+        "key": "bge_149_II_337",
+        "zitierung": "BGE 149 II 337",
+        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
+        "datum": "2023-08-21",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_II_19",
         "zitierung": "BGE 152 II 19",
         "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
@@ -4415,16 +4479,6 @@
         "zitierung": "BGE 150 III 78",
         "regesteKurz": "Art. 336c Abs. 1 lit. b und Art. 336 Abs. 1 lit. a OR; ordentliche Kündigung aufgrund einer andauernden Krankheit. Nach Ablauf der Sperrfrist gemäss Art. 336c Abs. 1 lit. b OR kann der Arbeitgeber den Arbeitsvertrag aufgrund einer…",
         "datum": "2023-11-07",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_149_II_337",
-        "zitierung": "BGE 149 II 337",
-        "regesteKurz": "Art. 10 Abs. 3 lit. a und b, Art. 28 Abs. 1, 2 und 3, Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 26 Abs. 2, Art. 173 Abs. 1 lit. a und b, Art. 183 Abs. 1 lit. a GAV SBB (2019); Art. 328b OR; Art. 2 Abs. 1 lit. b, Art. 3 lit. c Ziff. 2,…",
-        "datum": "2023-08-21",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4529,10 +4583,32 @@
     ],
     "341": [
       {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_147_III_78",
         "zitierung": "BGE 147 III 78",
         "regesteKurz": "Art. 127, 330a OR; Arbeitszeugnis, Verjährung. Klagen auf Ausstellung bzw. Berichtigung eines Arbeitszeugnisses unterliegen der allgemeinen Verjährungsfrist von zehn Jahren gemäss Art. 127 OR (E. 6.2-6.9). Regeste Art. 127, 330a CO;…",
         "datum": "2020-12-28",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "343": [
+      {
+        "key": "bge_152_III_38",
+        "zitierung": "BGE 152 III 38",
+        "regesteKurz": "Art. 68 Abs. 2 lit. d und Art. 247 Abs. 2 ZPO; beruflich qualifizierte Vertreter; einfache oder soziale Untersuchungsmaxime. In Fällen, die der einfachen oder sozialen Untersuchungsmaxime unterliegen, kann und muss das Gericht…",
+        "datum": "2025-08-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4606,6 +4682,16 @@
       }
     ],
     "362": [
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_149_III_202",
         "zitierung": "BGE 149 III 202",
@@ -4721,6 +4807,16 @@
     ],
     "397": [
       {
+        "key": "bge_152_IV_201",
+        "zitierung": "BGE 152 IV 201",
+        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
+        "datum": "2025-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_III_81",
         "zitierung": "BGE 151 III 81",
         "regesteKurz": "Art. 361 Abs. 1, Art. 499 ff. ZGB, Art. 55 SchlT ZGB; öffentliche Beurkundung des Vorsorgeauftrags. Zur Frage, ob Art. 361 Abs. 1 ZGB für die öffentliche Beurkundung eines Vorsorgeauftrags auf die Vorschriften über die öffentliche…",
@@ -4742,6 +4838,16 @@
       }
     ],
     "398": [
+      {
+        "key": "bge_149_III_105",
+        "zitierung": "BGE 149 III 105",
+        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von…",
+        "datum": "2022-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
       {
         "key": "bge_147_III_463",
         "zitierung": "BGE 147 III 463",
@@ -4773,6 +4879,16 @@
         "gewicht": 1
       },
       {
+        "key": "bge_152_III_240",
+        "zitierung": "BGE 152 III 240",
+        "regesteKurz": "Art. 400 Abs. 1 OR; Rückerstattungspflicht für Rückvergütungen, die im Rahmen eines reinen Konto-/Depotvertrags (Execution Only) im Zusammenhang mit dem Vertrieb von Finanzprodukten zuflossen. Hinweis auf die Kontroverse in der Lehre zu…",
+        "datum": "2026-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_150_II_300",
         "zitierung": "BGE 150 II 300",
         "regesteKurz": "Art. 13 Abs. 1 BGFA; Art. 321 Ziff. 2 StGB; Unzulässigkeit der Voraus-Entbindung vom anwaltlichen Berufsgeheimnis im Hinblick auf mögliche spätere Honorarstreitigkeiten. Die klageweise Durchsetzung einer Honorarforderung setzt eine…",
@@ -4793,30 +4909,10 @@
         "gewicht": 0
       },
       {
-        "key": "bge_149_III_105",
-        "zitierung": "BGE 149 III 105",
-        "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von…",
-        "datum": "2022-09-13",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
         "key": "bge_148_III_401",
         "zitierung": "BGE 148 III 401",
         "regesteKurz": "Art. 39 ZPO; Art. 122 Abs. 1 und 3 StPO; Art. 135 Ziff. 2 OR; Auftrag; Klage aus Vertrag; Unzuständigkeit des Strafgerichts; Unterbrechung der Verjährung. Ansprüche aus Vertrag können nicht Gegenstand einer adhäsionsweise erhobenen…",
         "datum": "2022-09-01",
-        "leitcharakter": "leitentscheid",
-        "gericht": "bge",
-        "kanton": "CH",
-        "gewicht": 0
-      },
-      {
-        "key": "bge_146_III_435",
-        "zitierung": "BGE 146 III 435",
-        "regesteKurz": "Art. 222 Abs. 4 SchKG, Art. 400 OR; Auskunftspflicht des Dritten im Konkurs; Folgen für den Beauftragten. Die Auskunftspflicht des Dritten hat den gleichen Umfang wie diejenige des Schuldners. Der Beauftragte des Konkursiten kann gegenüber…",
-        "datum": "2020-06-08",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -4836,6 +4932,26 @@
       }
     ],
     "400": [
+      {
+        "key": "bge_152_III_240",
+        "zitierung": "BGE 152 III 240",
+        "regesteKurz": "Art. 400 Abs. 1 OR; Rückerstattungspflicht für Rückvergütungen, die im Rahmen eines reinen Konto-/Depotvertrags (Execution Only) im Zusammenhang mit dem Vertrieb von Finanzprodukten zuflossen. Hinweis auf die Kontroverse in der Lehre zu…",
+        "datum": "2026-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201",
+        "zitierung": "BGE 152 IV 201",
+        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
+        "datum": "2025-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_147_III_139",
         "zitierung": "BGE 147 III 139",
@@ -4967,6 +5083,16 @@
     ],
     "423": [
       {
+        "key": "bge_152_IV_201",
+        "zitierung": "BGE 152 IV 201",
+        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
+        "datum": "2025-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_151_III_95",
         "zitierung": "BGE 151 III 95",
         "regesteKurz": "a Art. 423 OR und Art. 2 Abs. 2 lit. f URG; Gewinnherausgabeanspruch bei Urheberrechtsverletzungen; böser Glaube des Urheberrechtsverletzers bei Werken der angewandten Kunst. An den Beweis des Kennenmüssens von Bestand und Schutzumfang des…",
@@ -4993,6 +5119,16 @@
         "zitierung": "BGE 149 III 105",
         "regesteKurz": "Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von…",
         "datum": "2022-09-13",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 1
+      },
+      {
+        "key": "bge_152_III_240",
+        "zitierung": "BGE 152 III 240",
+        "regesteKurz": "Art. 400 Abs. 1 OR; Rückerstattungspflicht für Rückvergütungen, die im Rahmen eines reinen Konto-/Depotvertrags (Execution Only) im Zusammenhang mit dem Vertrieb von Finanzprodukten zuflossen. Hinweis auf die Kontroverse in der Lehre zu…",
+        "datum": "2026-01-12",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -5099,6 +5235,18 @@
         "datum": "2022-11-23",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "507": [
+      {
+        "key": "bge_152_IV_27",
+        "zitierung": "BGE 152 IV 27",
+        "regesteKurz": "a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…",
+        "datum": "2026-01-29",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -5899,6 +6047,16 @@
         "datum": "2020-08-06",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -7409,7 +7567,29 @@
         "gewicht": 0
       }
     ],
+    "274d": [
+      {
+        "key": "bge_152_III_38",
+        "zitierung": "BGE 152 III 38",
+        "regesteKurz": "Art. 68 Abs. 2 lit. d und Art. 247 Abs. 2 ZPO; beruflich qualifizierte Vertreter; einfache oder soziale Untersuchungsmaxime. In Fällen, die der einfachen oder sozialen Untersuchungsmaxime unterliegen, kann und muss das Gericht…",
+        "datum": "2025-08-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
     "321a": [
+      {
+        "key": "bge_152_IV_201",
+        "zitierung": "BGE 152 IV 201",
+        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
+        "datum": "2025-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_148_II_426",
         "zitierung": "BGE 148 II 426",
@@ -7427,6 +7607,18 @@
         "datum": "2021-09-06",
         "leitcharakter": "routine",
         "gericht": "bger",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "321b": [
+      {
+        "key": "bge_152_IV_201",
+        "zitierung": "BGE 152 IV 201",
+        "regesteKurz": "a Art. 158 Ziff. 1 Abs. 1 StGB; Art. 321b Abs. 1 OR; ungetreue Geschäftsbesorgung, Rechenschaftspflicht. Die blosse Verletzung der Rechenschaftspflicht im Sinne von Art. 321b Abs. 1 OR durch den Geschäftsführer (Arbeitnehmer) kann unter…",
+        "datum": "2025-12-04",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
         "kanton": "CH",
         "gewicht": 0
       }
@@ -7513,6 +7705,46 @@
     ],
     "324a": [
       {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_V_149",
+        "zitierung": "BGE 152 V 149",
+        "regesteKurz": "Art. 1 Bst. l, zweiter Satz, Art. 3 Abs. 1 und Art. 11 Abs. 2 der Verordnung (EG) Nr. 883/2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung der Systeme der sozialen Sicherheit; Art. 3 Abs. 3 lit. a KVG…",
+        "datum": "2026-02-03",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_30",
+        "zitierung": "BGE 152 III 30",
+        "regesteKurz": "Art. 32 ZPO; Gerichtsstand bei Konsumentenverträgen. Die Weigerung, einen Vertrag abzuschliessen, namentlich ein Bankkonto für den Zahlungsverkehr zu eröffnen, stellt keine Streitigkeit aus einem Konsumentenvertrag im Sinne von Art. 32 ZPO…",
+        "datum": "2026-01-12",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
+        "key": "bge_152_III_145",
+        "zitierung": "BGE 152 III 145",
+        "regesteKurz": "Art. 38a Abs. 1 Satz 1 VVG; Schadenminderungspflicht der krankentaggeldversicherten Person; arbeitsplatzbezogene Arbeitsunfähigkeit; Übergangstaggeld. Allgemeine Versicherungsbedingungen einer Krankentaggeldversicherung dürfen die…",
+        "datum": "2025-09-15",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
+      {
         "key": "bge_152_III_23",
         "zitierung": "BGE 152 III 23",
         "regesteKurz": "Art. 324a Abs. 1 OR; Anspruch auf Lohnfortzahlung des Arbeitnehmers. Beurteilung der Kausalität zwischen dem unverschuldeten Verhinderungsgrund und dem Ausbleiben der Arbeitsleistung des Arbeitnehmers bei mehreren möglichen Ursachen (E. 2).",
@@ -7547,6 +7779,18 @@
         "zitierung": "BGE 146 III 339",
         "regesteKurz": "VVG; Kollektivkrankentaggeldversicherung. Abgrenzung zwischen einer Summen- und einer Schadensversicherung. In casu fällt die abgeschlossene Versicherung in die zweite Kategorie (E. 5.1, 5.2.3 und 5.2.4). Regeste LCA; assurance collective…",
         "datum": "2020-07-14",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "324b": [
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
         "kanton": "CH",
@@ -7836,6 +8080,16 @@
       }
     ],
     "336c": [
+      {
+        "key": "bge_152_V_140",
+        "zitierung": "BGE 152 V 140",
+        "regesteKurz": "Art. 13 Abs. 1 und 2 lit. c, Art. 14 Abs. 1 lit. b und Art. 27 Abs. 1, 2 und 4 AVIG; Art. 336c Abs. 1 lit. b, 2 und 3, Art. 341 Abs. 1 und Art. 362 Abs. 1 OR; Höchstzahl der Taggelder der Arbeitslosenversicherung; Beitragszeit; Anspruch…",
+        "datum": "2026-03-19",
+        "leitcharakter": "leitentscheid",
+        "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      },
       {
         "key": "bge_150_III_78",
         "zitierung": "BGE 150 III 78",
@@ -8703,6 +8957,18 @@
         "datum": "2021-12-03",
         "leitcharakter": "leitentscheid",
         "gericht": "bge",
+        "kanton": "CH",
+        "gewicht": 0
+      }
+    ],
+    "941a": [
+      {
+        "key": "bge_152_IV_201__voll",
+        "zitierung": "Urteil 6B_973/2023 (nicht publ. in BGE 152 IV 201)",
+        "regesteKurz": null,
+        "datum": "2025-12-04",
+        "leitcharakter": "routine",
+        "gericht": "bger",
         "kanton": "CH",
         "gewicht": 0
       }

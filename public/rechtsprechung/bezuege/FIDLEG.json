@@ -1,24 +1,31 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"FIDLEG",
 "erlassEbene":"bund",
 "dokumente":{
 "bge_149_III_105":{"zitierung":"BGE 149 III 105","regesteKurz":"Vertrag \"execution only\"; Veruntreuung von Kundenguthaben durch einen Bankangestellten. Die verschiedenen im Rahmen einer Bankbeziehung abgeschlossenen Verträge bilden einen gemischten Vertrag (E. 4.1). Im Falle der Veruntreuung von…","datum":"2022-09-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_884":{"zitierung":"BGE 151 II 884","regesteKurz":"a Art. 29 Abs. 1 BGG; Art. 38 f. StG; Anträge und Rügen vor Bundesgericht; Änderungen des Streitgegenstands im Rechtsmittelverfahren; Verwirkung der Einrede der funktionellen Unzuständigkeit. Grenzen der Zulässigkeit von Anträgen und Rügen…","datum":"2025-03-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_III_240":{"zitierung":"BGE 152 III 240","regesteKurz":"Art. 400 Abs. 1 OR; Rückerstattungspflicht für Rückvergütungen, die im Rahmen eines reinen Konto-/Depotvertrags (Execution Only) im Zusammenhang mit dem Vertrieb von Finanzprodukten zuflossen. Hinweis auf die Kontroverse in der Lehre zu…","datum":"2026-01-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_sozialversicherungsgericht_AL.2024.18":{"zitierung":"Sozialversicherungsgericht BS AL.2024.18 vom 18.12.2024","regesteKurz":"AVIG Selbstverschuldete Arbeitslosigkeit","datum":"2024-12-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
+"1":[{"key":"bge_152_III_240","gewicht":0}],
+"2":[{"key":"bge_152_III_240","gewicht":0}],
 "3":[{"key":"bge_151_II_884","gewicht":0}],
 "7":[{"key":"bge_149_III_105","gewicht":0}],
 "12":[{"key":"bs_sozialversicherungsgericht_AL.2024.18","gewicht":null}],
 "15":[{"key":"bs_sozialversicherungsgericht_AL.2024.18","gewicht":null}],
-"21":[{"key":"bs_sozialversicherungsgericht_AL.2024.18","gewicht":null}]
+"21":[{"key":"bge_152_III_240","gewicht":0},{"key":"bs_sozialversicherungsgericht_AL.2024.18","gewicht":null}],
+"26":[{"key":"bge_152_III_240","gewicht":0}]
 },
 "gesamtProArtikel":{
+"1":{"bge":1},
+"2":{"bge":1},
 "3":{"bge":1},
 "7":{"bge":1},
 "12":{"kantonal":1},
 "15":{"kantonal":1},
-"21":{"kantonal":1}
+"21":{"bge":1,"kantonal":1},
+"26":{"bge":1}
 }
 }

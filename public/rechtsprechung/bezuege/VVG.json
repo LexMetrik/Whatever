@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"VVG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -22,7 +22,9 @@
 "bge_151_III_591":{"zitierung":"BGE 151 III 591","regesteKurz":"Art. 73 Abs. 1 lit. b BVG; sachliche Zuständigkeit des kantonalen Gerichts für Streitigkeiten im Bereich der beruflichen Vorsorge; Klage auf Rückerstattung von Prämien der gebundenen Selbstvorsorge. Die Klage auf Rückerstattung von Prämien…","datum":"2025-06-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_III_591__voll":{"zitierung":"Urteil 4A_301/2024 (nicht publ. in BGE 151 III 591)","regesteKurz":null,"datum":"2025-06-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 III 591","urteil":"4A_301/2024"}},
 "bge_151_V_280":{"zitierung":"BGE 151 V 280","regesteKurz":"Art. 82 Abs. 2 BVG; gebundene Vorsorge (Säule 3a); Beweismass. Der Nachweis strittiger Fakten ist in Streitigkeiten der gebundenen Vorsorge (Säule 3a) grundsätzlich mit dem strikten Beweismass zu erbringen. Eine Herabsetzung der…","datum":"2025-05-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_III_145":{"zitierung":"BGE 152 III 145","regesteKurz":"Art. 38a Abs. 1 Satz 1 VVG; Schadenminderungspflicht der krankentaggeldversicherten Person; arbeitsplatzbezogene Arbeitsunfähigkeit; Übergangstaggeld. Allgemeine Versicherungsbedingungen einer Krankentaggeldversicherung dürfen die…","datum":"2025-09-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_152_III_7":{"zitierung":"BGE 152 III 7","regesteKurz":"Art. 75 Abs. 3 ATSG; Art. 63 SVG; Ausnahme vom Regressprivileg des Arbeitgebers; Begriff der obligatorischen Haftpflichtversicherung; Unfall mit einem Bagger. Der in Art. 75 Abs. 3 ATSG statuierte Ausschluss des Regressprivilegs des…","datum":"2025-03-13","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_IV_27":{"zitierung":"BGE 152 IV 27","regesteKurz":"a Art. 121 Abs. 2 StPO; Konstituierung der Privatklägerschaft durch Rechtsnachfolge. Art. 121 Abs. 2 StPO findet insbesondere auf die Universalsukzession im Sinne von Art. 560 ZGB Anwendung, auch wenn das Gemeinwesen gemäss Art. 466 und…","datum":"2026-01-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BEZ.2022.64":{"zitierung":"Appellationsgericht BS BEZ.2022.64 vom 15.11.2022","regesteKurz":"Eintreten (BGer 5A_919/2022 vom 6.12.2022)","datum":"2022-11-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZB.2023.64":{"zitierung":"Appellationsgericht BS ZB.2023.64 vom 13.02.2024","regesteKurz":"Abänderung vorsorglicher Unterhaltsbeiträge","datum":"2024-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_ZB.2023.66":{"zitierung":"Appellationsgericht BS ZB.2023.66 vom 17.06.2024","regesteKurz":"Kinderbelange (Obhut, Betreuungsanteile, Kindesunterhalt sowie Kindesschutzmassnahmen)","datum":"2024-06-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -50,6 +52,7 @@
 "bs_sozialversicherungsgericht_ZV.2024.6":{"zitierung":"Sozialversicherungsgericht BS ZV.2024.6 vom 19.06.2025","regesteKurz":"Krankentaggeld: Nachleistungspflicht, ununterbrochene Arbeitsunfähigkeit nicht echtzeitlich dokumentiert","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2024.8":{"zitierung":"Sozialversicherungsgericht BS ZV.2024.8 vom 25.03.2025","regesteKurz":"Klage gutgeheissen; bestehende Passivlegitimation; nachgewiesene Arbeitsunfähigkeit; gültiger…","datum":"2025-03-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2025.2":{"zitierung":"Sozialversicherungsgericht BS ZV.2025.2 vom 13.01.2026","regesteKurz":"ZV01 Klage Krankentaggeld","datum":"2026-01-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_ZV.2025.3":{"zitierung":"Sozialversicherungsgericht BS ZV.2025.3 vom 12.03.2026","regesteKurz":"Krankentaggeld: krankheitsbedingte Arbeitsunfähigkeit nicht nachgewiesen, Gegenbeweis durch Versicherung erbracht","datum":"2026-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "gr_gerichte_ZR12024196":{"zitierung":"Kantonsgericht GR ZR1 2024 196 vom 26.06.2026","regesteKurz":null,"datum":"2026-06-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
@@ -69,7 +72,7 @@
 "40":[{"key":"bge_151_V_280","gewicht":0},{"key":"bge_148_III_134","gewicht":1},{"key":"bge_148_III_105","gewicht":1},{"key":"bs_sozialversicherungsgericht_ZV.2025.2","gewicht":null}],
 "41":[{"key":"bs_sozialversicherungsgericht_ZV.2023.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.1","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2022.64","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2021.7","gewicht":null}],
 "45":[{"key":"bs_sozialversicherungsgericht_ZV.2020.18-20241219","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2020.18","gewicht":null}],
-"46":[{"key":"bge_149_III_242","gewicht":0},{"key":"bge_147_III_78","gewicht":1},{"key":"bge_146_III_14","gewicht":0},{"key":"bge_151_III_591__voll","gewicht":0,"erwaegungen":["E. 3.2"]},{"key":"bge_146_III_25__voll","gewicht":1,"erwaegungen":["E. 5"]},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2020.5","gewicht":null}],
+"46":[{"key":"bge_149_III_242","gewicht":0},{"key":"bge_147_III_78","gewicht":1},{"key":"bge_146_III_14","gewicht":0},{"key":"bge_151_III_591__voll","gewicht":0,"erwaegungen":["E. 3.2"]},{"key":"bge_146_III_25__voll","gewicht":1,"erwaegungen":["E. 5"]},{"key":"bs_sozialversicherungsgericht_ZV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2020.5","gewicht":null}],
 "60":[{"key":"bge_151_III_35","gewicht":0},{"key":"bge_151_III_348__voll","gewicht":0,"erwaegungen":["E. 3.7"]}],
 "61":[{"key":"bs_sozialversicherungsgericht_ZV.2020.18-20241219","gewicht":null}],
 "72":[{"key":"bge_146_III_339","gewicht":0},{"key":"bge_146_III_362__voll","gewicht":0}],
@@ -80,14 +83,15 @@
 "93":[{"key":"bs_sozialversicherungsgericht_BV.2024.10","gewicht":null}],
 "94":[{"key":"bge_148_III_201","gewicht":0}],
 "96":[{"key":"bge_147_III_402","gewicht":0},{"key":"bge_146_III_339","gewicht":0}],
-"98":[{"key":"bs_sozialversicherungsgericht_BV.2024.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.2","gewicht":null}],
+"97":[{"key":"bge_152_III_145","gewicht":0}],
+"98":[{"key":"bge_152_III_145","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2024.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.2","gewicht":null}],
 "100":[{"key":"bge_149_III_242","gewicht":0},{"key":"bge_148_III_105","gewicht":0},{"key":"bs_sozialversicherungsgericht_ZV.2024.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2023.17","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2020.5","gewicht":null}],
 "103a":[{"key":"bge_151_III_35","gewicht":0},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2020.18-20241219","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.7","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.5","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.4","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
-"35a":[{"key":"bge_151_III_35__voll","gewicht":0,"erwaegungen":["E. 2.4.5"]},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
+"35a":[{"key":"bge_151_III_35__voll","gewicht":0,"erwaegungen":["E. 2.4.5"]},{"key":"bs_sozialversicherungsgericht_ZV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
 "35b":[{"key":"bge_151_III_35__voll","gewicht":0,"erwaegungen":["E. 2.4.4","E. 2.4.5"]},{"key":"bs_sozialversicherungsgericht_ZV.2024.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2022.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.2","gewicht":null}],
-"38a":[{"key":"bs_appellationsgericht_ZB.2023.66","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.64","gewicht":null}],
+"38a":[{"key":"bge_152_III_145","gewicht":0},{"key":"bs_appellationsgericht_ZB.2023.66","gewicht":null},{"key":"bs_appellationsgericht_ZB.2023.64","gewicht":null}],
 "95a":[{"key":"bs_sozialversicherungsgericht_ZV.2023.8","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2022.1","gewicht":null}],
-"95c":[{"key":"bge_151_III_35__voll","gewicht":0,"erwaegungen":["E. 2.4.4","E. 2.4.5","E. 2.4.6"]}]
+"95c":[{"key":"bge_152_IV_27","gewicht":0},{"key":"bge_151_III_35__voll","gewicht":0,"erwaegungen":["E. 2.4.4","E. 2.4.5","E. 2.4.6"]}]
 },
 "gesamtProArtikel":{
 "1":{"bger":1},
@@ -106,7 +110,7 @@
 "40":{"bge":3,"kantonal":1},
 "41":{"kantonal":5},
 "45":{"kantonal":3},
-"46":{"bge":3,"bger":2,"kantonal":3},
+"46":{"bge":3,"bger":2,"kantonal":4},
 "60":{"bge":1,"bger":1},
 "61":{"kantonal":1},
 "72":{"bge":1,"bger":1},
@@ -117,13 +121,14 @@
 "93":{"kantonal":1},
 "94":{"bge":1},
 "96":{"bge":2},
-"98":{"kantonal":3},
+"97":{"bge":1},
+"98":{"bge":1,"kantonal":3},
 "100":{"bge":2,"kantonal":4},
 "103a":{"bge":1,"kantonal":11},
-"35a":{"bger":1,"kantonal":6},
+"35a":{"bger":1,"kantonal":7},
 "35b":{"bger":1,"kantonal":5},
-"38a":{"kantonal":2},
+"38a":{"bge":1,"kantonal":2},
 "95a":{"kantonal":2},
-"95c":{"bger":1}
+"95c":{"bge":1,"bger":1}
 }
 }

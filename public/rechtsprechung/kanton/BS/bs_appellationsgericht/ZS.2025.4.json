@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2025.4",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Verlängerung der Sicherheitshaft während des Berufungsverfahrens",
+        "gegenstand": "Verlängerung der Sicherheitshaft während des Berufungsverfahrens (Rückweisungsverfahren betr. SB.2024.112)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser und Gerichtsschreiberin MLaw Nathalie De Luca"
@@ -163,11 +163,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78674&Template=search_result_document.html",
-      "abgerufen": "2026-09-23",
-      "fassungsToken": "2026-01-27",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-14",
       "sha": "284daf7661300249e555248443080d5e6c6f5e1895da61a68dd874a65e56d679",
       "erstpublikation": "2026-01-27",
-      "aktualisiert": "2026-01-27",
+      "aktualisiert": "2026-08-14",
       "nummerSekundaer": "AG.2025.449",
       "ecli": "ECLI:CH:BSA:2025:ZS.2025.4"
     }

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"KLV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -29,6 +29,7 @@
 "bge_151_V_233":{"zitierung":"BGE 151 V 233","regesteKurz":"Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Praxisbesonderheiten (BGE 150 V 129 E. 5.5).…","datum":"2024-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_V_284":{"zitierung":"BGE 151 V 284","regesteKurz":"Art. 32 Abs. 1, Art. 35 Abs. 2 lit. a, Art. 56 Abs. 1 und 6, Art. 59 Abs. 1 lit. b und Abs. 3 lit. a KVG; Wirtschaftlichkeitskontrolle von ärztlichen Leistungserbringern (\"Überarztung\"); Rückerstattung von Vergütungen. Zur Festlegung der…","datum":"2025-04-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_152_V_20":{"zitierung":"BGE 152 V 20","regesteKurz":"Art. 24 Abs. 1 KVG; Ziff. 1.2 Anhang 1 KLV; Art. 14 Abs. 2 lit. b Transplantationsgesetz; Ersatz von Erwerbsausfall bei Organspende. Der vom Organspender direkt gegenüber dem obligatorischen Krankenpflegeversicherer der Organempfängerin…","datum":"2025-06-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_V_8":{"zitierung":"BGE 152 V 8","regesteKurz":"Art. 42 Abs. 3 Satz 2 IVG; Anspruchsvoraussetzungen für eine Hilflosenentschädigung bei einer Hilflosigkeit leichten Grades wegen des Bedarfs an lebenspraktischer Begleitung. Das in Satz 2 des Art. 42 Abs. 3 IVG vorgesehene restriktive…","datum":"2025-09-24","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_sozialversicherungsgericht_KV.2023.16":{"zitierung":"Sozialversicherungsgericht BS KV.2023.16 vom 08.02.2024","regesteKurz":"Spitalbedürftigkeit","datum":"2024-02-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2024.1":{"zitierung":"Sozialversicherungsgericht BS KV.2024.1 vom 11.04.2024","regesteKurz":"Beschwerdegutheissung; Spitalbedürftigkeit muss abgeklärt werden. (Bundesgerichtsurteil 9C_467/2024 vom 20.01.2025)","datum":"2024-04-11","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2024.12":{"zitierung":"Sozialversicherungsgericht BS KV.2024.12 vom 26.01.2026","regesteKurz":"Medizinisch relevanter Sachverhalt unzureichend abgeklärt; Gutheissung der Beschwerde","datum":"2026-01-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
@@ -39,7 +40,7 @@
 "proArtikel":{
 "1":[{"key":"bge_152_V_20","gewicht":0},{"key":"bge_151_V_158","gewicht":0}],
 "5":[{"key":"bge_146_V_253","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
-"7":[{"key":"bge_151_V_1","gewicht":0},{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_148_V_28","gewicht":1},{"key":"bge_147_V_73","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_147_V_16","gewicht":2},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.4","gewicht":null}],
+"7":[{"key":"bge_152_V_8","gewicht":0},{"key":"bge_151_V_1","gewicht":0},{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":1},{"key":"bge_148_V_28","gewicht":1},{"key":"bge_147_V_73","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_147_V_16","gewicht":2},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.4","gewicht":null}],
 "8":[{"key":"bge_151_V_1","gewicht":0},{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_147_V_16","gewicht":1},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
 "10":[{"key":"bge_146_V_253","gewicht":0}],
 "17":[{"key":"bge_147_V_187","gewicht":0}],
@@ -72,7 +73,7 @@
 "gesamtProArtikel":{
 "1":{"bge":2},
 "5":{"bge":1,"kantonal":1},
-"7":{"bge":7,"kantonal":2},
+"7":{"bge":8,"kantonal":2},
 "8":{"bge":4,"kantonal":1},
 "10":{"bge":1},
 "17":{"bge":1},

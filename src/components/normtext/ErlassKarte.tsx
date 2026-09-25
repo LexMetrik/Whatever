@@ -48,10 +48,25 @@ const standJahr = (stand: string): string | null =>
 // 587 Titel enden auf eine Klammer-Zahl, in ALLEN 587 Fällen zeichengleich mit
 // der SR-/Systematik-Nummer derselben Zeile. Nur dieser bewiesene
 // Identitätsfall fällt — das Datum selbst bleibt (Korpus-Werkstatt, §5).
+//
+// NACHTRAG W2·29-WERKBANK-REST S5b (25.9.2026, Posten «Kürzel doppelt …
+// (ESchG) (LS 632.1)»): kantonale Titel enden oft auf die Nummer MIT
+// Sammlungs-Präfix («… (ESchG) (LS 632.1)», «(sGS 941.12)», «(BLV 211.61)») —
+// die Spalte zeigt dieselbe «LS 632.1» daneben. Der Präfix-Fall fällt nur bei
+// ZEICHENGLEICHHEIT von Präfix und Nummer mit der Spalte (Leerraum egal).
+// GEMESSEN 25.9.2026 an public/normtext/register.json: 241 Titel enden auf
+// «(Präfix Nummer)», alle 241 zeichengleich mit `sr` derselben Zeile; der
+// Zahl-Fall ohne Präfix unverändert (584/584). Das amtliche Kürzel «(ESchG)»
+// davor bleibt stehen — es war nie doppelt, doppelt war die Nummer.
 const KLAMMER_NUMMER = /\s*\(([0-9][0-9.]*)\)\s*$/;
+const KLAMMER_PRAEFIX_NUMMER = /\s*\(([A-Za-zÀ-ÿ]{1,5}\s+[0-9][0-9.]*)\)\s*$/;
+const ohneLeerraum = (s: string) => s.replace(/\s+/g, '');
 function ohneDoppelteNummer(titel: string, nummer: string | null | undefined): string {
+  if (!nummer) return titel;
+  const p = KLAMMER_PRAEFIX_NUMMER.exec(titel);
+  if (p) return ohneLeerraum(p[1]) === ohneLeerraum(nummer) ? titel.slice(0, p.index) : titel;
   const m = KLAMMER_NUMMER.exec(titel);
-  if (!m || !nummer) return titel;
+  if (!m) return titel;
   const imTitel = m[1].replace(/\D/g, '');
   const inSpalte = nummer.replace(/\D/g, '');
   return imTitel && imTitel === inSpalte ? titel.slice(0, m.index) : titel;

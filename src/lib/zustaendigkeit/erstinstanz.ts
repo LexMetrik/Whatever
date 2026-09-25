@@ -51,6 +51,18 @@ const N_243: Normverweis = { artikel: 'Art. 243 ZPO', bemerkung: 'Geltungsbereic
 const N_197: Normverweis = { artikel: 'Art. 197 ZPO', bemerkung: 'Grundsatz: Schlichtung vorangestellt' };
 const N_198: Normverweis = { artikel: 'Art. 198 ZPO', bemerkung: 'Ausnahmen vom Schlichtungsverfahren' };
 const N_199: Normverweis = { artikel: 'Art. 199 ZPO', bemerkung: 'Verzicht auf das Schlichtungsverfahren' };
+
+// RL-42 / Z1-03 (Prüfung Rechtslogik 23.9.2026): Art. 199 Abs. 3 ZPO (SR 272,
+// Fassung 1.7.2026, Fedlex-Filestore eli/cc/2010/262/20260701, abgerufen
+// 25.9.2026): «Bei Streitigkeiten, für die nach den Artikeln 5, 6 und 8 eine
+// einzige kantonale Instanz zuständig ist, kann die klagende Partei die Klage
+// direkt beim Gericht einreichen.» — ein WAHLRECHT, keine Ausnahme nach
+// Art. 198 (lit. f nennt seit 1.1.2025 nur noch Art. 7). Vorher stand dreimal
+// wortgleich «Schlichtung entfällt (Art. 199 Abs. 3 ZPO)»; jetzt EIN Satz (§5).
+export const SCHLICHTUNG_FREIWILLIG_199_3 = 'Schlichtung nicht zwingend — die klagende Partei kann die Klage direkt beim Gericht einreichen (Art. 199 Abs. 3 ZPO)';
+/** entfaelltGrund der einzigen Instanz nach Art. 5 — zugleich Erkennungsmerkmal
+ *  für die Darstellung «nicht zwingend» statt «entfällt» (Kopfzeile, Fahrplan). */
+export const GRUND_EINZIGE_INSTANZ_199_3 = `Einzige kantonale Instanz nach Art. 5 ZPO: ${SCHLICHTUNG_FREIWILLIG_199_3}`;
 const N_200: Normverweis = { artikel: 'Art. 200 ZPO', bemerkung: 'Paritätische Schlichtungsbehörden' };
 const N_210: Normverweis = { artikel: 'Art. 210 ZPO', bemerkung: 'Entscheidvorschlag' };
 const N_212: Normverweis = { artikel: 'Art. 212 ZPO', bemerkung: 'Entscheid der Schlichtungsbehörde' };
@@ -210,7 +222,7 @@ export function bestimmeZustaendigkeit(input: ZustaendigkeitInput): Zustaendigke
     const swOk = sw === null || sw > ZPO_SCHWELLEN.HANDELSGERICHT_MIN;
     if (swOk && input.klaegerImHR) {
       hgWeiche = true;
-      weichen.push('Handelsgericht prüfen: handelsrechtliche Streitigkeit nach Art. 6 ZPO (nur in Kantonen mit Handelsgericht, real ZH/BE/AG/SG). Dann Klage direkt beim Gericht, Schlichtung entfällt (Art. 199 Abs. 3 ZPO).');
+      weichen.push(`Handelsgericht prüfen: handelsrechtliche Streitigkeit nach Art. 6 ZPO (nur in Kantonen mit Handelsgericht, real ZH/BE/AG/SG). Beim Handelsgericht als einziger kantonaler Instanz gilt: ${SCHLICHTUNG_FREIWILLIG_199_3}.`);
     } else if (swOk) {
       hgWeiche = true;
       weichen.push('Nur die beklagte Partei ist im Handelsregister eingetragen: Die klagende Partei kann zwischen Handelsgericht und ordentlichem Gericht wählen (Art. 6 Abs. 3 ZPO; nur HG-Kantone).');
@@ -254,7 +266,7 @@ export function bestimmeZustaendigkeit(input: ZustaendigkeitInput): Zustaendigke
   // kennt keine Direktklage ans obere Gericht.
   if (!istEinzigeInstanz && !istScheidung && sw !== null && sw >= ZPO_SCHWELLEN.DIREKTKLAGE_MIN) {
     direktklageWeiche = true;
-    weichen.push(`Direkte Klage ans obere Gericht möglich (Streitwert ≥ CHF ${ZPO_SCHWELLEN.DIREKTKLAGE_MIN.toLocaleString('de-CH')}, Zustimmung der beklagten Partei, Art. 8 ZPO). Dann Schlichtung entfällt (Art. 199 Abs. 3 ZPO).`);
+    weichen.push(`Direkte Klage ans obere Gericht möglich (Streitwert ≥ CHF ${ZPO_SCHWELLEN.DIREKTKLAGE_MIN.toLocaleString('de-CH')}, Zustimmung der beklagten Partei, Art. 8 ZPO). Auf diesem Weg gilt: ${SCHLICHTUNG_FREIWILLIG_199_3}.`);
   }
   if (istEinzigeInstanz) {
     rechenweg.push({
@@ -298,20 +310,23 @@ export function bestimmeZustaendigkeit(input: ZustaendigkeitInput): Zustaendigke
   } else if (istGewaltschutz) {
     entfaelltGrund = 'Klagen wegen Gewalt, Drohungen oder Nachstellungen bzw. elektronischer Überwachung (Art. 198 lit. abis ZPO)';
   } else if (istEinzigeInstanz) {
-    entfaelltGrund = 'Einzige kantonale Instanz nach Art. 5 ZPO — Klage direkt beim Gericht (Art. 199 Abs. 3 ZPO)';
+    entfaelltGrund = GRUND_EINZIGE_INSTANZ_199_3;
   } else if (input.widerklageOderGerichtlicheFrist) {
     entfaelltGrund = 'Widerklage/Hauptintervention bzw. gerichtlich gesetzte Klagefrist (Art. 198 lit. g/h ZPO)';
   }
   const obligatorisch = entfaelltGrund === null;
+  const nurFreiwillig = entfaelltGrund === GRUND_EINZIGE_INSTANZ_199_3;
   // Verzichts-Flags nur, wo überhaupt geschlichtet würde (Präzisierung 5.6.2026).
   const verzichtGemeinsam = obligatorisch && sw !== null && sw >= ZPO_SCHWELLEN.VERZICHT_GEMEINSAM;
   const verzichtEinseitig = obligatorisch && (!!input.beklagteAuslandOderUnbekannt || !!input.glgBetroffen);
   rechenweg.push({
     beschreibung: obligatorisch
       ? '3 · Funktionell: Schlichtungsversuch geht dem Entscheidverfahren grundsätzlich voraus'
-      : `3 · Funktionell: Schlichtung entfällt — ${entfaelltGrund}`,
-    zwischenergebnis: obligatorisch ? 'Schlichtung obligatorisch' : 'keine Schlichtung',
-    normen: obligatorisch ? [N_197] : [N_198],
+      : nurFreiwillig
+        ? `3 · Funktionell: ${entfaelltGrund}`
+        : `3 · Funktionell: Schlichtung entfällt — ${entfaelltGrund}`,
+    zwischenergebnis: obligatorisch ? 'Schlichtung obligatorisch' : nurFreiwillig ? 'Schlichtung freiwillig (Direktklage möglich)' : 'keine Schlichtung',
+    normen: obligatorisch ? [N_197] : nurFreiwillig ? [N_199] : [N_198],
   });
   if (verzichtGemeinsam) {
     weichen.push(`Streitwert ≥ CHF ${ZPO_SCHWELLEN.VERZICHT_GEMEINSAM.toLocaleString('de-CH')}: Die Parteien können gemeinsam auf das Schlichtungsverfahren verzichten (Art. 199 Abs. 1 ZPO).`);
@@ -510,7 +525,9 @@ export function zustaendigkeitErgebnis(
     ? (r.schlichtung.behoerdeTyp === 'paritaetisch_miete' ? 'Schlichtung: paritätische Behörde (Miete)'
       : r.schlichtung.behoerdeTyp === 'paritaetisch_glg' ? 'Schlichtung: paritätische Behörde (GlG)'
       : 'Schlichtung: ordentliche Behörde')
-    : 'Schlichtung entfällt';
+    : r.schlichtung.entfaelltGrund === GRUND_EINZIGE_INSTANZ_199_3
+      ? 'Schlichtung nicht zwingend (Art. 199 Abs. 3 ZPO)'
+      : 'Schlichtung entfällt';
   return {
     ergebnis: `${verfahren} · ${schlicht} · ${r.oertlich.gerichtsstand}`,
     status: 'ok',
@@ -519,6 +536,12 @@ export function zustaendigkeitErgebnis(
       'Binnenverhältnis Schweiz (kein internationaler Sachverhalt; IPRG/LugÜ ausgeklammert).',
       'Streitwert wird vom Nutzer eingegeben; keine Streitwertberechnung durch die Engine.',
       'Summarische Verfahren (Art. 248 ff. ZPO – klare Fälle, vorsorgliche Massnahmen, freiwillige Gerichtsbarkeit) sind nicht abgebildet; dort entfiele die Schlichtung (Art. 198 lit. a ZPO).',
+      // RL-42 / Z1-05: Art. 15 Abs. 1 ZPO (Fassung 1.7.2026): «Richtet sich die
+      // Klage gegen mehrere Streitgenossen, so ist das für eine beklagte Partei
+      // zuständige Gericht für alle beklagten Parteien zuständig, sofern diese
+      // Zuständigkeit nicht nur auf einer Gerichtsstandsvereinbarung beruht.»
+      // Keine Eingabe für mehrere Beklagte → offenlegen statt rechnen (§8).
+      'Berechnet für EINE beklagte Partei. Richtet sich die Klage gegen mehrere Streitgenossen, ist das für eine beklagte Partei zuständige Gericht für alle beklagten Parteien zuständig, sofern diese Zuständigkeit nicht nur auf einer Gerichtsstandsvereinbarung beruht (Art. 15 Abs. 1 ZPO).',
     ],
     warnungen: r.warnungen,
     normverweise: r.normverweise,

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"JSTPO",
 "erlassEbene":"bund",
 "dokumente":{
@@ -19,6 +19,7 @@
 "bs_appellationsgericht_BES.2023.85":{"zitierung":"Appellationsgericht BS BES.2023.85 vom 08.11.2024","regesteKurz":"Genugtuung für ungerechtfertigte Untersuchungshaft etc.","datum":"2024-11-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2024.113":{"zitierung":"Appellationsgericht BS BES.2024.113 vom 20.02.2025","regesteKurz":"Amtliche Verteidigung","datum":"2025-02-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2024.76":{"zitierung":"Appellationsgericht BS BES.2024.76 vom 05.12.2024","regesteKurz":"Verfahrenseinstellung","datum":"2024-12-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_BES.2025.108":{"zitierung":"Appellationsgericht BS BES.2025.108 vom 13.02.2026","regesteKurz":"Nichtanhandnahme","datum":"2026-02-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2025.27":{"zitierung":"Appellationsgericht BS BES.2025.27 vom 22.07.2025","regesteKurz":"Erkennungsdienstliche Erfassung und nicht-invasive Probenahme","datum":"2025-07-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2025.33":{"zitierung":"Appellationsgericht BS BES.2025.33 vom 25.07.2025","regesteKurz":"Durchsuchungs- und Sicherstellungsbefehl","datum":"2025-07-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_BES.2025.45":{"zitierung":"Appellationsgericht BS BES.2025.45 vom 02.07.2025","regesteKurz":"Stationäre Beobachtung","datum":"2025-07-02","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -56,11 +57,11 @@
 "34":[{"key":"bge_146_IV_238__voll","gewicht":0,"erwaegungen":["E. 2.5"]}],
 "36":[{"key":"bs_appellationsgericht_SB.2022.37","gewicht":null}],
 "38":[{"key":"bs_appellationsgericht_SB.2020.119","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.33","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.27","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.45","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.113","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.16","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.85","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.23-20240926","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.136","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.4","gewicht":null},{"key":"bs_appellationsgericht_BES.2022.134","gewicht":null}],
-"39":[{"key":"bge_151_IV_338","gewicht":0},{"key":"bs_appellationsgericht_BES.2025.45","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null}],
+"39":[{"key":"bge_151_IV_338","gewicht":0},{"key":"bs_appellationsgericht_BES.2025.108","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.45","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null}],
 "40":[{"key":"bs_appellationsgericht_SB.2024.114","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.23-20240926","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.23","gewicht":null}],
 "42":[{"key":"bs_appellationsgericht_BES.2023.136","gewicht":null}],
 "43":[{"key":"bs_appellationsgericht_BES.2023.136","gewicht":null}],
-"44":[{"key":"bs_appellationsgericht_SB.2020.119","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.27","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.114","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.45","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.113","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.16","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.85","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.136","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.4","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.14","gewicht":null}],
+"44":[{"key":"bs_appellationsgericht_BES.2025.108","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.119","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.27","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.114","gewicht":null},{"key":"bs_appellationsgericht_BES.2025.45","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.113","gewicht":null},{"key":"bs_appellationsgericht_BES.2024.76","gewicht":null},{"key":"bs_appellationsgericht_SB.2024.16","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.85","gewicht":null},{"key":"bs_appellationsgericht_BES.2023.136","gewicht":null},{"key":"bs_appellationsgericht_SB.2023.4","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.14","gewicht":null}],
 "305":[{"key":"bs_appellationsgericht_SB.2024.114","gewicht":null}]
 },
 "gesamtProArtikel":{
@@ -88,11 +89,11 @@
 "34":{"bger":1},
 "36":{"kantonal":1},
 "38":{"kantonal":12},
-"39":{"bge":1,"kantonal":2},
+"39":{"bge":1,"kantonal":3},
 "40":{"kantonal":3},
 "42":{"kantonal":1},
 "43":{"kantonal":1},
-"44":{"kantonal":11},
+"44":{"kantonal":12},
 "305":{"kantonal":1}
 }
 }

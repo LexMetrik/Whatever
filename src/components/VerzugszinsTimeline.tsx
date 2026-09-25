@@ -20,16 +20,19 @@ import { formatCHF } from '../lib/verzugszins';
 // unterscheidbare Fläche ist — es wird hier nichts als «ok» ausgesagt. Die
 // Zustands-Rolle `--ok-bg` zeigt auf denselben Wert und wäre darum optisch
 // gleich, semantisch aber eine Behauptung, die das Diagramm nicht macht.
-const SATZ_FARBEN = ['var(--brass-100)', 'var(--brass-300)', 'var(--sage-bg)', 'var(--slate-bg)', 'var(--warn-bg)', 'var(--brass-200)'];
+//
+// W2·29-WERKBANK-REST S5c (25.9.2026, Posten «auf-gold auf brass-300 dunkel
+// 1.92:1»): alle sechs Flächen und die «getilgt»-Fläche KIPPEN mit dem Thema,
+// die Beschriftung ist darum überall `--ink-900` — keine Sonderfarbe mehr.
+// Stelle 2 war `--brass-300` mit der nie kippenden Tinte `--auf-gold`; die
+// Annahme «brass-300 bleibt dunkel hell» stimmte nicht (dunkel #514F4B), das
+// Label stand dort mit 1.92:1. An ihrer Stelle `--ink-300` (hell #B0ADA7 /
+// dunkel #534F47), gemessen mit `--ink-900`: 7.01:1 hell, 6.18:1 dunkel;
+// kleinster Abstand zu den fünf übrigen Flächen ΔE2000 13.7 hell / 11.1
+// dunkel (brass-300 hatte 6.8 / 10.9). Probe:
+// src/tests/verzugszins-zeitstrahl-kontrast.test.tsx.
+const SATZ_FARBEN = ['var(--brass-100)', 'var(--ink-300)', 'var(--sage-bg)', 'var(--slate-bg)', 'var(--warn-bg)', 'var(--brass-200)'];
 const GETILGT_FARBE = 'var(--paper-sunken)';
-
-// Label-Textfarbe nach Luminanz der Füllung (helle Füllung → dunkler Text,
-// dunkle → heller). Alle Füllungen ausser --brass-300 flippen mit dem Thema
-// (hell↔dunkel), darum kontrastiert dort --ink-900 in BEIDEN Modi. Einzige
-// Ausnahme: --brass-300 bleibt in Hell UND Dunkel hell (Gold) → fixe dunkle
-// Tinte (--auf-gold), sonst kippt das Label im Dunkel auf hell (~1.3:1).
-const TEXT_AUSNAHME: Record<string, string> = { 'var(--brass-300)': 'var(--auf-gold)' };
-const labelFarbe = (fuellung: string) => TEXT_AUSNAHME[fuellung] ?? 'var(--ink-900)';
 
 type Abschnitt = { tage: number; label: string; farbe: string; title: string };
 type Marker = { pos: number; texte: string[] };
@@ -112,10 +115,9 @@ export function VerzugszinsTimeline({ e }: { e: VerzugszinsErgebnis }) {
                 className="flex items-center justify-center num text-body-s min-w-0"
                 /* Mindestbreite 1.2 % (Konsistenz-Check 5.6.2026, analog
                    KuendigungTimeline): auch ein 1-Tage-Segment in einer
-                   Mehrjahres-Spanne bleibt sichtbar. Textfarbe luminanzbasiert
-                   (labelFarbe), damit auch das helle brass-300-Segment im
-                   Dunkel lesbar bleibt. */
-                style={{ flexGrow: a.tage, flexBasis: 0, background: a.farbe, color: labelFarbe(a.farbe), minWidth: '1.2%' }}>
+                   Mehrjahres-Spanne bleibt sichtbar. Textfarbe `--ink-900`
+                   auf allen Flächen (S5c, Herleitung bei SATZ_FARBEN). */
+                style={{ flexGrow: a.tage, flexBasis: 0, background: a.farbe, color: 'var(--ink-900)', minWidth: '1.2%' }}>
                 <span className="truncate px-1">{a.label}</span>
               </div>
             ))}

@@ -1,26 +1,16 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"AVO",
 "erlassEbene":"bund",
 "dokumente":{
-"bge_146_II_217":{"zitierung":"BGE 146 II 217","regesteKurz":"Art. 7 Abs. 1 und 2, Art. 49a KG; Art. 7 EMRK; Art. 2-6 SVKG; Art. 5 Abs. 2, Art. 11 Abs. 3 lit. a und b der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Voraussetzung und Missbräuchlichkeit einer Kosten-Preis-Schere;…","datum":"2019-12-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_147_II_72":{"zitierung":"BGE 147 II 72","regesteKurz":"Art. 4 Abs. 1, Art. 5 Abs. 1, 2 und 4, Art. 49a KG; Art. 7 EMRK; Art. 2-6 SVKG; Art. 13 Abs. 2 und Art. 18 Abs. 2 PBV; Art. 37 VGG i.V.m. Art. 49 lit. c VwVG; gesetzliche Grundlage einer abgestimmten Verhaltensweise; Anwendung auf eine…","datum":"2021-02-04","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_148_III_201":{"zitierung":"BGE 148 III 201","regesteKurz":"Art. 36 Abs. 2 VAG; Art. 92 Abs. 2 in Verbindung mit Art. 94 VVG; Informationsansprüche der Versicherungsnehmer im Zusammenhang mit Überschussanteilen bei einer Lebensversicherung der Säule 3a. Die Versicherungsunternehmen sind…","datum":"2022-03-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_148_II_25__voll":{"zitierung":"Urteil 2C_43/2020 (nicht publ. in BGE 148 II 25)","regesteKurz":null,"datum":"2021-12-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 25","urteil":"2C_43/2020"}},
-"bge_148_II_321__voll":{"zitierung":"Urteil 2C_44/2020 (nicht publ. in BGE 148 II 321)","regesteKurz":null,"datum":"2022-03-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 321","urteil":"2C_44/2020"}},
-"bge_148_II_521__voll":{"zitierung":"Urteil 2C_39/2020 (nicht publ. in BGE 148 II 521)","regesteKurz":null,"datum":"2022-08-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"148 II 521","urteil":"2C_39/2020"}},
-"bge_151_II_742":{"zitierung":"BGE 151 II 742","regesteKurz":"Art. 3 Abs. 1 lit. a und Abs. 2, Art. 4 Abs. 2, Art. 7 Abs. 1 und 2 lit. e und f, Art. 49a KG; Art. 3 SVKG; Art. 5 Abs. 2 der Verordnung über die Kontrolle von Unternehmenszusammenschlüssen; Wettbewerbsbeeinträchtigung als Voraussetzung…","datum":"2025-01-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_148_III_201":{"zitierung":"BGE 148 III 201","regesteKurz":"Art. 36 Abs. 2 VAG; Art. 92 Abs. 2 in Verbindung mit Art. 94 VVG; Informationsansprüche der Versicherungsnehmer im Zusammenhang mit Überschussanteilen bei einer Lebensversicherung der Säule 3a. Die Versicherungsunternehmen sind…","datum":"2022-03-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
 },
 "proArtikel":{
-"2":[{"key":"bge_147_II_72","gewicht":0},{"key":"bge_146_II_217","gewicht":1}],
-"3":[{"key":"bge_151_II_742","gewicht":0},{"key":"bge_148_II_521__voll","gewicht":0,"erwaegungen":["E. 9.1.2"]},{"key":"bge_148_II_321__voll","gewicht":1,"erwaegungen":["E. 12.3"]},{"key":"bge_148_II_25__voll","gewicht":2,"erwaegungen":["E. 12.1.2"]}],
 "130":[{"key":"bge_148_III_201","gewicht":0}],
 "136":[{"key":"bge_148_III_201","gewicht":0}],
 "137":[{"key":"bge_148_III_201","gewicht":0}]
 },
 "gesamtProArtikel":{
-"2":{"bge":2},
-"3":{"bge":1,"bger":3},
 "130":{"bge":1},
 "136":{"bge":1},
 "137":{"bge":1}

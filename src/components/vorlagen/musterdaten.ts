@@ -204,7 +204,7 @@ export const MUSTER = {
     bestellerName: ANNA.name, bestellerAdresse: ANNA.adresse,
     unternehmerName: 'Beispiel Schreinerei GmbH', unternehmerAdresse: 'Musterplatz 3, 4053 Basel',
     werkBeschrieb: 'Anfertigung eines Esstischs aus Eiche nach Skizze vom 1. März 2026',
-    werkArt: 'beweglich', preis: 'pauschal', pauschalCHF: '4800', ablieferung: '2026-09-01',
+    werkArt: 'beweglich', bauwerkBezug: false, preis: 'pauschal', pauschalCHF: '4800', ablieferung: '2026-09-01',
     ort: 'Basel', datum: '2026-06-13',
   }),
   nda: (): Partial<NdaAntworten> => ({

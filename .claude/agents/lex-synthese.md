@@ -74,14 +74,20 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
   zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
   Beenden nur per eigener PID/Port, nie per Namensmuster (Vorfall 24.9.2026).
+  Per Port NUR den lauschenden Prozess: `lsof -ti tcp:PORT -sTCP:LISTEN` —
+  ohne `-sTCP:LISTEN` liefert lsof auch Client-Verbindungen (25.9.2026: so
+  wurde ein Netzwerkdienst der Claude-App auf Port 4791 beendet, REST S1).
+  Rot-Proben fuer e2e gegen den QUELLCODE (src/), nie gegen dist/ — lokal baut
+  playwright.config vor `preview` neu (F11) und ueberschreibt eine dist-Mutation;
+  die Probe wirkt dann falsch gruen (25.9.2026, DK-09-Probe REST S5b).
   node_modules im Agent-Worktree: eigenes `npm ci --prefer-offline` (Sekunden),
   KEIN Symlink auf den Haupt-Checkout — steht der hinter origin/main, meldet
   gate falsch rot «node_modules passt nicht zu package-lock.json» (Beleg D2/#1072,
   24.9.2026: @ast-grep/cli 0.45.2 vs ^0.45.3).
   Wer aus RAM-Gruenden `npm run gate` auslaesst, faehrt trotzdem die schnellen
-  Konsistenz-Tore `npx vitest run src/tests/design-` (Sekunden, kein Browser)
-  — Beleg #1053 (24.9.2026): Schnellwerkzeug-Reiter mit eigener Kasten-Optik
-  (design-r5, B-R1) fiel erst im Orchestrator-Gate auf, ein Umlauf verloren.
+  Tore `npx vitest run src/tests/design-` und `npm run check:sediment`
+  (Sekunden, kein Browser) — Belege #1053 (24.9.2026, Kasten-Optik design-r5
+  erst im Orchestrator-Gate) und #1073/#1087 (25.9.2026, Export ohne Aufrufer).
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
@@ -94,8 +100,10 @@ KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand �
   nachgelagerter Auftrag nach bestandener adversarialer Pruefung.
   ABSCHLUSS: Ein Auftrag endet mit prüfbarer Rückgabe (SHA/Tor-Ausgabe), NIE
   mit «ich warte auf …» — laufende Läufe per until-Schleife zu Ende bringen,
-  Ergebnis lesen, dann zurückmelden (16./17.8.2026: drei Agenten mussten je
-  mehrfach zum Abschluss aufgefordert werden).
+  Ergebnis lesen, dann zurückmelden (16./17.8.2026: drei Agenten gemahnt).
+  600 s ohne Ausgabe bricht den Agenten ab (Watchdog, 3x 25.9.2026, einmal
+  110 Dateien uncommittet): vorher WIP-committen, lange Laeufe
+  `cmd > <log> 2>&1; echo $?`, Netz immer `curl -m 30`.
 
 Steuer-Doku: dieser Text lenkt Folge-Sessions. Ehrlich, mit Provenienz (Datum, Anlass, Beleg); Pointer auf den Platte-Zustand statt Detailspeicher; keine Erfolgs-Prosa ohne prüfbares Artefakt.
 RÜCKGABE: der Text selbst + betroffene Pfade + Commit-SHA der eigenen Arbeit («Commit <sha>», §14.7; uncommittiert ⇒ ausdrücklich sagen).

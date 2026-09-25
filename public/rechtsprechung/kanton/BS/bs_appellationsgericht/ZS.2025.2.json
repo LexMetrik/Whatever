@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/ZS.2025.2",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Verfahrenseinstellung und Verfahrenskosten",
+        "gegenstand": "Verfahrenseinstellung und Verfahrenskosten (Rückweisungsverfahren betr. SB.2022.124)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser (Vorsitz), Dr. iur. Manuel Kreis, Dr. Katharina Zimmermann und a.o. Gerichtsschreiberin MLaw Lorena Christ"
@@ -148,11 +148,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78673&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-02-27",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-18",
       "sha": "e86245f2ce8ed104706682000aae0141c9f3eb110e76a7b97528a11d0c0f71e0",
       "erstpublikation": "2026-02-27",
-      "aktualisiert": "2026-02-27",
+      "aktualisiert": "2026-08-18",
       "nummerSekundaer": "AG.2025.448",
       "ecli": "ECLI:CH:BSA:2025:ZS.2025.2"
     }

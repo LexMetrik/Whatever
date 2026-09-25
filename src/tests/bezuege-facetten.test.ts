@@ -546,22 +546,32 @@ describe('B7 · Vollständigkeit und Ordnung der ausgelieferten Shards', () => {
     }
   });
 
+  // §6.3-DEKLARATION (25.9.2026, QS-KORPUS BS-Delta): der Test verglich auch den
+  // Platzhalter einer `datumUnbekannt`-Kante (1. Januar des GN-Jahrs) wie ein
+  // echtes Datum — gegen die B-1-Regel des Generators (bezuege-bauen.ts, #1072:
+  // unbekannt ans Klassenende). Unsichtbar, bis der erste datumUnbekannt-
+  // Entscheid kam (BS DGS.2025.13; STPO/21 u.a. rot). Seither: die DATIERTEN
+  // Kanten laufen monoton rückwärts, die unbekannten stehen hinter ihnen.
+  // Gleiche Regel wie Tor T3g in scripts/normtext/check-bezuege.ts.
   it('innerhalb jeder Status-Klasse läuft die Zeit monoton rückwärts', () => {
     for (const erlass of ['OR', 'STPO', 'BGG']) {
       const s = bezugsShard(erlass);
       for (const [token, eintraege] of Object.entries(s.proArtikel)) {
-        const jeKlasse = new Map<string, string[]>();
+        const jeKlasse = new Map<string, Array<{ datum: string; unbekannt: boolean }>>();
         for (const e of eintraege) {
           const k = s.dokumente[e.key];
           if (!k) continue;
           const liste = jeKlasse.get(k.facetten.status) ?? [];
-          liste.push(k.datum);
+          liste.push({ datum: k.datum, unbekannt: k.datumUnbekannt === true });
           jeKlasse.set(k.facetten.status, liste);
         }
-        for (const [status, daten] of jeKlasse) {
-          expect({ erlass, token, status, daten }).toEqual(
-            { erlass, token, status, daten: [...daten].sort().reverse() },
-          );
+        for (const [status, zs] of jeKlasse) {
+          const daten = zs.filter((z) => !z.unbekannt).map((z) => z.datum);
+          const unbekanntFolge = zs.map((z) => z.unbekannt);
+          expect({ erlass, token, status, daten, unbekanntFolge }).toEqual({
+            erlass, token, status, daten: [...daten].sort().reverse(),
+            unbekanntFolge: [...unbekanntFolge].sort((a, b) => Number(a) - Number(b)),
+          });
         }
       }
     }
@@ -580,15 +590,38 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
   ) as { kantenJeStatus: Record<string, number>; artikelJeStatus: Record<string, number>;
         erlasseJeStatus: Record<string, number>; artikelGesamt: number; erlasseGesamt: number };
 
-  it('BEFUND: die Klasse trägt korpusweit 164 Kanten an 93 von 6228 Artikeln', () => {
-    expect(bilanz.kantenJeStatus.eidg).toBe(164);
-    expect(bilanz.artikelJeStatus.eidg).toBe(93);
-    expect(bilanz.erlasseJeStatus.eidg).toBe(18);
+  it('BEFUND: die Klasse trägt korpusweit 159 Kanten an 88 von 6335 Artikeln', () => {
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS, Sperre AIMP/OCP/OS): damals 164
+    // Kanten / 93 Artikel / 18 Erlasse. Die eidg-Klasse verliert die IRSG-Kanten
+    // von bund/bstger/RR_2026_46 (it, nennt das IRSG nur als «AIMP», das seit der
+    // Sperre nicht mehr auflöst — benannte Lücke, §8). Aussage des Tests steht.
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Stichproben-Nachzug eidg. 3×5 +
+    // ZH/BE je 6; SG/AG/GR wegen falschen Datums ausgenommen): eidg 159 → 404 Kanten, 88 → 184 Artikel, 17 → 25 Erlasse —
+    // 15 neue BVGer/BStGer/BPatGer-Urteile (vorher 15, jetzt 30 eidg. Snapshots;
+    // Asyl-/Ausländerrecht zitiert breit). Nullprobe origin/main 284deacdb = 159/88/17.
+    // Die Klasse bleibt gegenüber kantonal (> 50 000) klein; die Aussage steht.
+    expect(bilanz.kantenJeStatus.eidg).toBe(404);
+    expect(bilanz.artikelJeStatus.eidg).toBe(184);
+    expect(bilanz.erlasseJeStatus.eidg).toBe(25);
     // 6217 → 6228 (25.9.2026, W2·29-WERKBANK-LESER Welle 2 D2): die committeten
     // Bezugs-Projektionen hinkten dem Generator seit #860/#911 nach — der AVG
     // kam in den Normtext-Korpus, seine Kanten (11 Artikel, 1 Erlass) nie in
     // die Shards. Reine Projektions-Nachführung, die eidg-Werte bleiben gleich.
-    expect(bilanz.artikelGesamt).toBe(6228);
+    // 6228 → 6352 (25.9.2026, QS-KORPUS BGE-Band-Nachzug 152, +80 BGE): die neuen
+    // Leitentscheide zitieren 124 bisher unzitierte Artikel. Nullprobe origin/main
+    // = 6228; eidg-Werte (164/93/18) unverändert — die Aussage des Tests steht.
+    // 6352 → 6357 (25.9.2026, QS-KORPUS GERICHTS_KUERZEL «CV» → VRK, SR 0.111):
+    // die bisher lautlos verlorenen CV-Zitate treffen fünf zusätzliche VRK-Artikel
+    // (19, 24, 25, 30, 41; Sidecar struktur/bund/VRK.json). eidg-Werte unverändert.
+    // 6357 → 6335 (25.9.2026, Sperre AIMP/OCP/OS): die Fehlzuordnungen an IRSG
+    // (Beschaffungs-BGE), VKL (Jagd, V-StGB-MStGB) und AVO (Kartell) entfallen,
+    // dazu die IRSG-Artikel von RR_2026_46 (s. oben).
+    // 6335 → 6404 (25.9.2026, QS-KORPUS BS-Delta +185 neu / 41 aktualisiert): die
+    // neuen BS-Urteile zitieren 69 bisher unzitierte Artikel (Bund + BS-Erlasse).
+    // eidg-Werte (159/88/17) unverändert — die Aussage des Tests steht.
+    // 6404 → 6431 (25.9.2026, Stichproben-Nachzug, s. oben): die 27 neuen Urteile
+    // zitieren 27 bisher unzitierte Artikel. Nullprobe origin/main 284deacdb = 6404.
+    expect(bilanz.artikelGesamt).toBe(6431);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
@@ -613,7 +646,12 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
   it('klassenImShard zählt je Klasse — Entscheide UND Fundstellen getrennt', () => {
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/OR.json', 'utf8')) as BezugsShard;
     const n = klassenImShard(s);
-    expect(n.eidg).toBeUndefined();          // 0 Fundstellen ⇒ gar kein Eintrag
+    // §6.3-DEKLARATION (25.9.2026, Stichproben-Nachzug): bis dahin trug das OR
+    // keine eidg-Fundstelle (`n.eidg` undefined). Die neuen BPatGer-Urteile
+    // (O2023_002/008, O2023_017, S2025_003) zitieren das OR: 3 Entscheide, 4 Kanten.
+    expect(n.eidg).toEqual({ dokumente: 3, kanten: 4 });
+    // Die frühere Aussage «0 Fundstellen ⇒ gar kein Eintrag» bleibt geprüft:
+    for (const z of Object.values(n)) expect(z.kanten).toBeGreaterThan(0);
     expect(n.bge!.dokumente).toBeGreaterThan(0);
     // Summe der KANTEN == Kanten des Shards (keine doppelte Zählung).
     const summe = Object.values(n).reduce((a, b) => a + b.kanten, 0);
@@ -641,11 +679,15 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // «nicht publ. in BGE …»). Beim BGG trifft das den Grossteil — Eintretens-
     // fragen (E. 1) stehen fast nie im publizierten Auszug. Die Aussage des
     // Tests bleibt: Fundstellen ≠ Entscheide, in BEIDEN Klassen.
+    // DRITTE Nachführung (25.9.2026, QS-KORPUS BGE-Band-Nachzug 152, +80 BGE mit
+    // aza-Volltext): damals bge 1565/525 · bger 9205/1235 (Nullprobe origin/main);
+    // seither bge 1647/559 · bger 9920/1314 — reiner Korpus-Zuwachs, keine
+    // Rechenlogik-Änderung; Faktor Fundstellen/Entscheide bleibt in beiden Klassen > 2.
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/BGG.json', 'utf8')) as BezugsShard;
     const n = klassenImShard(s);
-    expect(n.bge!.kanten).toBe(1565);
-    expect(n.bge!.dokumente).toBe(525);
-    expect(n.bger!.kanten).toBe(9205);
-    expect(n.bger!.dokumente).toBe(1235);
+    expect(n.bge!.kanten).toBe(1647);
+    expect(n.bge!.dokumente).toBe(559);
+    expect(n.bger!.kanten).toBe(9920);
+    expect(n.bger!.dokumente).toBe(1314);
   });
 });

@@ -506,7 +506,9 @@ export function parseBsDokument(bytes: Buffer): ParseErgebnis {
 
 // ─── Snapshot-Assemblierung (§3.4) + Korpus schreiben ────────────────────────
 
-export function docketSafeVergabe(gruppe: Array<{ p: ParseErgebnis; z: InventarZeile }>): Map<number, string> {
+export function docketSafeVergabe(
+  gruppe: Array<{ p: Pick<ParseErgebnis, 'gn' | 'datum'>; z: Pick<InventarZeile, 'key'> }>,
+): Map<number, string> {
   // Kollisionsregel §3.2: erstes Dokument (Datum↑, dann key↑) behält die blanke GN;
   // weitere erhalten '-YYYYMMDD' (Entscheiddatum) bzw. zusätzlich '-<nF30_KEY>'.
   const out = new Map<number, string>();
@@ -578,14 +580,20 @@ export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: str
   return snap;
 }
 
-export async function parseUndSchreibe(inventar: Inventar, datum: string, limit = 0): Promise<void> {
+/** Checkpoint des Fetch (key → Abrufdatum der Rohdatei); leer, wenn keiner vorliegt. */
+export function ladeFetchCheckpoint(): Record<string, { abgerufen: string }> {
   const cpPfad = join(BS_DATEN, 'checkpoint.json');
-  const cp: Record<string, { abgerufen: string }> = existsSync(cpPfad)
-    ? JSON.parse(readFileSync(cpPfad, 'utf8')) : {};
+  return existsSync(cpPfad) ? JSON.parse(readFileSync(cpPfad, 'utf8')) : {};
+}
 
+/**
+ * Rohdateien der gegebenen Inventar-Zeilen parsen, mit Identitäts-Gegenprobe
+ * Inventar ↔ Dokumentkopf und Parser-Report (§3.5). Wirft, sobald auch nur ein
+ * Dokument unparsebar ist (Count-Gate G1) — geteilt von Voll- und Delta-Lauf.
+ */
+export function parseRohdateien(eintraege: InventarZeile[]): Array<{ p: ParseErgebnis; z: InventarZeile }> {
   const geparst: Array<{ p: ParseErgebnis; z: InventarZeile }> = [];
   const fehler: Array<{ key: number; gn: string; grund: string }> = [];
-  const eintraege = limit > 0 ? inventar.eintraege.slice(0, limit) : inventar.eintraege;
   for (const z of eintraege) {
     const pfad = rawPfad(z.key);
     if (!existsSync(pfad)) { fehler.push({ key: z.key, gn: z.gn, grund: 'Rohdatei fehlt (fetch unvollständig)' }); continue; }
@@ -609,6 +617,12 @@ export async function parseUndSchreibe(inventar: Inventar, datum: string, limit 
     for (const f of fehler.slice(0, 15)) console.error(`[bs-parse]   ${f.gn} (key ${f.key}): ${f.grund}`);
     throw new Error(`[bs-parse] ${fehler.length} Dokumente unparsebar — daten/bs-fiw/parse-fehler.json (Count-Gate G1 wäre rot).`);
   }
+  return geparst;
+}
+
+export async function parseUndSchreibe(inventar: Inventar, datum: string, limit = 0): Promise<void> {
+  const cp = ladeFetchCheckpoint();
+  const geparst = parseRohdateien(limit > 0 ? inventar.eintraege.slice(0, limit) : inventar.eintraege);
 
   // docketSafe-Vergabe je (court, GN)-Gruppe (Kollisionsregel §3.2).
   const gruppen = new Map<string, Array<{ p: ParseErgebnis; z: InventarZeile }>>();

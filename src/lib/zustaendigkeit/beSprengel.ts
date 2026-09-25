@@ -27,6 +27,13 @@
 //
 // STATUS (§8): Erstrecherche mit amtlicher Vollerhebung — die fachliche
 // Abnahme durch David steht aus. Kein `verified`-Merkmal wird hier gesetzt.
+// RL-42 / Z1-08 (Prüfung Rechtslogik 23.9.2026, Behalt-Entscheid 25.9.2026):
+// Bewusst noch KEIN UI-Konsument — die Tabelle wird erst nach der fachlichen
+// Abnahme verdrahtet (Posten «K-15-Nachzug · Fachliche Abnahme» und
+// «K-15-Nachzug · UI-Verdrahtung», W2·13-KANTONE-DATEN). Kein Rückbau nach
+// §17-Gegengewicht, weil das Modul kein Wächter, sondern ein abnahmereifer
+// Datenstand ist; ein Rückbau erzwänge die Neu-Erhebung. Wer verdrahtet, zeigt
+// den Status «Entwurf / Abnahme ausstehend» sichtbar an (§8).
 
 import { istRecord, pruefeJson, type JsonPruefer } from '../../data/jsonSchutz';
 import { namensKandidaten } from '../../data/schlichtung/zhAmt';

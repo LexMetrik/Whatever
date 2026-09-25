@@ -405,7 +405,7 @@ export function KopierButton({
   const kopiert = gesteuert ? kopiertExtern : eigen.kopiert;
   return (
     <button type="button" disabled={disabled} className={className}
-      onClick={() => (gesteuert ? onKopieren(text) : eigen.kopieren())}>
+      onClick={() => (gesteuert ? onKopieren(text) : eigen.kopieren({ ansage: `${gegenstand} kopiert` }))}>
       {kopiert ? 'Kopiert ✓' : `${gegenstand} kopieren`}
     </button>
   );

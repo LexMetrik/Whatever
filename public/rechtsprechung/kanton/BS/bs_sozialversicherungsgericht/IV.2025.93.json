@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-23",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/IV.2025.93",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "IVG Invalidenrente",
+        "gegenstand": "IVG Invalidenrente (Beschwerde beim Bundesgericht hängig)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. A. Pfleiderer (Vorsitz), lic. phil. D. Borer, Dr. med. F. W. Eymann und Gerichtsschreiberin lic. iur. B. Bertazzo"
@@ -284,11 +284,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79749&Template=search_result_document.html",
-      "abgerufen": "2026-09-23",
-      "fassungsToken": "2026-07-10",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-21",
       "sha": "f991f8ba556eb382dfeac32f047ce0cbaaf4a5c46e04e44e07d67abb9fc5c14d",
       "erstpublikation": "2026-06-23",
-      "aktualisiert": "2026-07-10",
+      "aktualisiert": "2026-08-21",
       "nummerSekundaer": "SVG.2026.119",
       "ecli": "ECLI:CH:BSS:2026:IV.2025.93"
     }

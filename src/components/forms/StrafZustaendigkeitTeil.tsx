@@ -104,10 +104,16 @@ export function StrafZustaendigkeitTeil() {
     antragsdelikt, uebertretung, moeglichesBundesdelikt: bund,
     beschuldigteMinderjaehrig: minderjaehrig,
   });
-  const sta = kanton !== '' ? staatsanwaltschaftFuer(kanton) : null;
+  // RL-42 (Z1-01): im Jugendstrafverfahren ist weder die (Erwachsenen-)
+  // Staatsanwaltschaft noch das ordentliche Strafgericht zuständig, sondern
+  // die Jugend-Untersuchungsbehörde (Art. 6 Abs. 2 JStPO) bzw. das
+  // Jugendgericht (Art. 7, 34 JStPO) — deren Adressen führt LexMetrik nicht;
+  // Erwachsenen-Adressen werden dann nicht als zuständig ausgegeben (§8).
+  const sta = kanton !== '' && !minderjaehrig ? staatsanwaltschaftFuer(kanton) : null;
   // Sachlich zuständige Gerichte (Ausbau 6.6.2026, Auftrag David):
   // Erstrecherche-Datenschicht data/strafgerichte.ts — 1. Instanz + ZMG.
-  const gerichte = kanton !== '' ? strafgerichteFuer(kanton) : null;
+  const gerichte = kanton !== '' && !minderjaehrig ? strafgerichteFuer(kanton) : null;
+  const behoerdeKurz = minderjaehrig ? 'Jugend-Untersuchungsbehörde' : uebertretung ? 'StA / Übertretungsbehörde' : 'Staatsanwaltschaft';
 
   if (anliegen === 'rechtsmittel') {
     return (
@@ -163,7 +169,7 @@ export function StrafZustaendigkeitTeil() {
               {BETEILIGUNG.map((b) => <option key={b.code} value={b.code}>{b.label}</option>)}
             </select>
           </Field>
-          <Field label="Kanton des Forums (für die konkrete Behörde)" hint="ergibt sich aus dem bestimmten Forum">
+          <Field label="Kanton des Forums (für die konkrete Behörde)" hint={minderjaehrig ? 'bei Minderjährigen: Kanton des gewöhnlichen Aufenthalts (Art. 10 JStPO)' : 'ergibt sich aus dem bestimmten Forum'}>
             <select className={inputCls} value={kanton} onChange={(e) => setKanton(e.target.value as Kanton | '')}>
               <option value="">– wählen –</option>
               {KANTONE.map((k) => <option key={k} value={k}>{k}</option>)}
@@ -185,7 +191,9 @@ export function StrafZustaendigkeitTeil() {
           <GruppenTitel>Örtliches Forum</GruppenTitel>
           <p className="text-body-s text-ink-900">{r.forum.text}.</p>
           <p className="text-body-s text-ink-700">{r.behoerdeTyp}.</p>
-          {bund ? (
+          {minderjaehrig ? (
+            <p className="text-body-s text-ink-500 border-t border-line pt-3">Jugendstrafverfahren: Die Adressen der kantonalen Jugendstrafbehörden (Jugendanwaltschaft bzw. Jugendrichter, Jugendgericht) sind in LexMetrik noch nicht erfasst. Eine Anzeige nimmt auch jede andere Strafverfolgungsbehörde entgegen und leitet sie weiter (Art. 39 StPO).</p>
+          ) : bund ? (
             <div className="border-t border-line pt-3">
               <p className="lc-overline mb-1.5">Bundesanwaltschaft (bei Bundesgerichtsbarkeit)</p>
               <p className="text-body-s text-ink-900 whitespace-pre-line">{BUNDESANWALTSCHAFT.name}{'\n'}{BUNDESANWALTSCHAFT.strasse}{'\n'}{BUNDESANWALTSCHAFT.plzOrt}</p>
@@ -256,7 +264,7 @@ export function StrafZustaendigkeitTeil() {
 
         <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
           <EckdatenKachel label="Forum" wert={r.forum.normen[0]?.artikel ?? '—'} sub="örtliche Anknüpfung" />
-          <EckdatenKachel label="Behörde" wert={uebertretung ? 'StA / Übertretungsbehörde' : 'Staatsanwaltschaft'} />
+          <EckdatenKachel label="Behörde" wert={behoerdeKurz} />
           <EckdatenKachel label="Kritische Fristen" wert={String(r.fristen.filter((f) => f.kritisch).length)} sub={r.fristen.find((f) => f.kritisch)?.frist} />
         </div>
 
@@ -277,7 +285,7 @@ export function StrafZustaendigkeitTeil() {
           pdf={{
             aktenzeichen: aktenzeichen.trim() || undefined,
             title: 'Zuständigkeit (Strafverfahren)',
-            rechtsgrundlage: 'Bestimmung nach Art. 31–42, 301 StPO (Stand 1.1.2024)',
+            rechtsgrundlage: minderjaehrig ? 'Bestimmung nach Art. 10 JStPO (Stand 1.7.2025) und Art. 38–42, 301 StPO' : 'Bestimmung nach Art. 31–42, 301 StPO (Stand 1.1.2024)',
             domain: 'zustaendigkeit',
             fileBase: 'Straf-Zustaendigkeit',
             inputs: {
@@ -291,13 +299,13 @@ export function StrafZustaendigkeitTeil() {
               ...(uebertretung ? { 'Übertretung': 'ja' } : {}),
               ...(bund ? { 'Bund-Katalogfall': 'möglich (Art. 23/24 StPO)' } : {}),
               ...(minderjaehrig ? { 'Minderjährig': 'ja (Art. 10 JStPO)' } : {}),
-              ...(kanton ? { 'Kanton (Forum)': kanton } : {}),
+              ...(kanton ? { [minderjaehrig ? 'Kanton (gewöhnlicher Aufenthalt)' : 'Kanton (Forum)']: kanton } : {}),
             },
             hero: {
               hauptlabel: 'Örtliches Forum',
               hauptwert: r.forum.normen[0]?.artikel ?? '—',
               nebenwerte: [
-                { label: 'Behörde', wert: uebertretung ? 'StA / Übertretungsbehörde' : 'Staatsanwaltschaft' },
+                { label: 'Behörde', wert: behoerdeKurz },
                 ...(r.fristen.some((x) => x.kritisch) ? [{ label: 'Kritische Frist', wert: r.fristen.find((x) => x.kritisch)!.frist }] : []),
               ],
               kontext: r.forum.text,

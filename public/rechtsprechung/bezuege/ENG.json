@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"ENG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -10,7 +10,9 @@
 "bge_150_II_334":{"zitierung":"BGE 150 II 334","regesteKurz":"Art. 19 Abs. 1 lit. e, Art. 19 Abs. 4 lit. d und Art. 72 Abs. 1 EnG; Art. 2 lit. a, Art. 16 Abs. 2 und Anhang 1.5 Ziff. 2.1.2 lit. g EnFV; Unterscheidung zwischen \"Mischanlagen\" und Hybridanlagen; Klärgas als nicht förderungsberechtigter…","datum":"2024-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_150_I_106":{"zitierung":"BGE 150 I 106","regesteKurz":"Art. 26 und 36 BV; Tragweite der Eigentumsgarantie bei der Sanierung von Gebäuden mit elektrischer Heizung; abstrakte Normenkontrolle. Die Sanierungspflicht von Gebäuden mit dezentraler Elektroheizung schränkt die Eigentumsgarantie (Art.…","datum":"2024-04-26","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_136":{"zitierung":"BGE 151 II 136","regesteKurz":"Art. 5 Abs. 1 und Art. 44 Abs. 3 BV; Art. 34 und 62 Abs. 2 EnG; Art. 83a GSchG; Art. 10 BGF; Art. 28 ff. und Ziff. 3.2 lit. b Anhang 3 EnV; Grundsatz der vollständigen Kostenerstattung; Anrechenbarkeit von (wiederkehrenden) Unterhalts- und…","datum":"2025-01-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_312":{"zitierung":"BGE 151 II 312","regesteKurz":"Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich…","datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_151_II_312":{"zitierung":"BGE 151 II 312","regesteKurz":"Art. 39 Abs. 3 Satz 1 und 75 EnG und 80 EnV; neue Energiegesetzgebung; Übergangsrecht; Rückerstattung des bezahlten Zuschlags für die Nutzung des Übertragungsnetzes für Elektrizität. Die Rückerstattung des Netzzuschlags wird jährlich…","datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_II_461":{"zitierung":"BGE 152 II 461","regesteKurz":"Art. 83 lit. z BGG; Art. 22 RPG; Art. 10a Abs. 1 USG; Windpark Montagne-de-Buttes; Frage von grundsätzlicher Bedeutung; Pflicht zur Festlegung des Modells der Windenergieanlage bei der Erteilung der Baubewilligung. Art. 83 lit. z BGG gilt…","datum":"2025-12-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_II_461__voll":{"zitierung":"Urteil 1C_447/2024 (nicht publ. in BGE 152 II 461)","regesteKurz":null,"datum":"2025-12-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 II 461","urteil":"1C_447/2024"}}
 },
 "proArtikel":{
 "10":[{"key":"bge_147_II_164","gewicht":0}],
@@ -26,7 +28,9 @@
 "62":[{"key":"bge_151_II_136","gewicht":0}],
 "72":[{"key":"bge_150_II_334","gewicht":0}],
 "75":[{"key":"bge_151_II_312","gewicht":0}],
-"50a":[{"key":"bge_150_I_106","gewicht":0}]
+"14a":[{"key":"bge_152_II_461","gewicht":0}],
+"50a":[{"key":"bge_150_I_106","gewicht":0}],
+"71c":[{"key":"bge_152_II_461__voll","gewicht":0,"erwaegungen":["E. 3"]}]
 },
 "gesamtProArtikel":{
 "10":{"bge":1},
@@ -42,6 +46,8 @@
 "62":{"bge":1},
 "72":{"bge":1},
 "75":{"bge":1},
-"50a":{"bge":1}
+"14a":{"bge":1},
+"50a":{"bge":1},
+"71c":{"bger":1}
 }
 }

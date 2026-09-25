@@ -1,0 +1,872 @@
+{
+  "/materialien": {
+    "titel": [
+      "Materialien"
+    ],
+    "overline": [
+      "Filtern",
+      "ESTV",
+      "Rundschreiben · Nr. 218",
+      "MWST-Info · Nr. 01",
+      "MWST-Branchen-Info · Nr. 01",
+      "Kreisschreiben · Nr. 11",
+      "KS-Anhang · Nr. 11 · Fragebogen",
+      "Weisung · W03-001",
+      "Merkblatt",
+      "Praxismitteilung · Mitteilung 020",
+      "EDÖB",
+      "Anleitung",
+      "Leitfaden",
+      "Tätigkeitsbericht",
+      "Merkblatt",
+      "SECO",
+      "Wegleitung",
+      "Merkblatt",
+      "BSV",
+      "Wegleitung · 318.102.02",
+      "EHRA",
+      "Praxismitteilung · 1/25",
+      "FINMA",
+      "Rundschreiben · RS 2025/2",
+      "IGE",
+      "Richtlinie",
+      "BR",
+      "Botschaft · 1999.038",
+      "Bund",
+      "Vernehmlassung",
+      "GR BS",
+      "Initiative · 21.1247",
+      "Bericht · 02.0403",
+      "Ratschlag · 01.0221"
+    ],
+    "ausgabe": [
+      "1'357 Materialien (Gesetzgebung) · 327 Erläuterungen (Verwaltungspraxis), bibliografisch mit Live-Link"
+    ],
+    "ueberschriften": [
+      "h2 ESTV",
+      "h2 EDÖB",
+      "h2 SECO",
+      "h2 BSV",
+      "h2 EHRA",
+      "h2 FINMA",
+      "h2 IGE",
+      "h2 BR",
+      "h2 Bund",
+      "h2 GR BS"
+    ],
+    "knoepfe": [],
+    "links": [
+      "Rundschreiben · Nr. 218Zinssätze 2026 für Vorschüsse/Darlehen in Schweizer Franken (Safe-Haven)Stand 29.01.2026Details & amtliche Fassung → → /materialien/ESTV-RS-VSTG-218",
+      "MWST-Info · Nr. 01MWST Übergangsinfo 01 MWST in Kürze und ÜbergangsinfoStand 26.11.2025Details & amtliche Fassung → → /materialien/ESTV-MWST-INFO-01",
+      "MWST-Branchen-Info · Nr. 01MWST-Branchen Info 01 Urproduktion und nahe stehende BereicheStand 27.08.2026Details & amtliche Fassung → → /materialien/ESTV-MWST-BRANCHEN-INFO-01",
+      "Kreisschreiben · Nr. 11Kreisschreiben Nr. 11: Krankheits- und UnfallkostenStand 31.08.2005Details & amtliche Fassung → → /materialien/ESTV-KS-DBG-11",
+      "KS-Anhang · Nr. 11 · FragebogenKreisschreiben Nr. 11 Beilage: Fragebogen für Ärzte und ÄrztinnenStand 10.10.2023Details & amtliche Fassung → → /materialien/ESTV-KS-DBG-11-FRAGEBOGEN",
+      "Weisung · W03-001W03-001D vom 03.10.2002: Die Abgangsentschädigung resp. Kapitalabfindung des ArbeitgebersStand 03.10.2002Details & amtliche Fassung → → /materialien/ESTV-KS-W03-001",
+      "MerkblattS-02.122.1bStand 09.10.2023Details & amtliche Fassung → → /materialien/ESTV-MB-S-02-122-1B",
+      "Praxismitteilung · Mitteilung 020Mitteilung-020-DVS-2024-d vom 18.09.2024 - Checkliste für SpezialfälleStand 18.09.2024Details & amtliche Fassung → → /materialien/ESTV-MITTEILUNG-020-DVS-CHECKLISTE",
+      "AnleitungAnleitung für die Prüfung der Zulässigkeit von Datenübermittlungen ins AuslandStand 10.05.2023Details & amtliche Fassung → → /materialien/EDOEB-ANLEITUNG-AUSLAND",
+      "LeitfadenLeitfaden betreffend Datenbearbeitungen mittels Cookies und ähnlichen TechnologienStand 06.10.2025Details & amtliche Fassung → → /materialien/EDOEB-LEITFADEN-COOKIES",
+      "Tätigkeitsbericht32. Tätigkeitsbericht 2024/2025Stand 30.06.2025Details & amtliche Fassung → → /materialien/EDOEB-TB-32",
+      "MerkblattMerkblatt Anmeldeformulare für MietwohnungenStand 15.07.2025Details & amtliche Fassung → → /materialien/EDOEB-MERKBLATT-ANMELDEFORMULARE-MIETWOHNUNGEN",
+      "WegleitungWegleitung zum Arbeitsgesetz und den Verordnungen 1 und 2Stand 20.02.2026Details & amtliche Fassung → → /materialien/SECO-WEGL-ARG-12",
+      "MerkblattDas Arbeitsgesetz: Die wichtigsten Arbeits- und Ruhezeitbestimmungen in KürzeStand 22.03.2016Details & amtliche Fassung → → /materialien/SECO-MERKBLATT-ARBEITSZEIT",
+      "Wegleitung · 318.102.02Wegleitung über den massgebenden Lohn in der AHV, IV und EO (WML)Stand 21.05.2026Details & amtliche Fassung → → /materialien/BSV-WML",
+      "Praxismitteilung · 1/25Praxismitteilung EHRA 1/25Stand 07.04.2025Details & amtliche Fassung → → /materialien/BJ-EHRA-PM-2025-01",
+      "Rundschreiben · RS 2025/2Verhaltenspflichten nach FIDLEG/FIDLEVStand 21.11.2024Details & amtliche Fassung → → /materialien/FINMA-RS-2025-02",
+      "RichtlinieRichtlinien in Markensachen (gültig ab 1.1.2026)Stand 01.01.2026Details & amtliche Fassung → → /materialien/IGE-RL-MARKEN-2026",
+      "Botschaft · 1999.038Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Revision der freiwilligen Versicherung)Stand 28.04.1999Details & amtliche Fassung → → /materialien/BOTSCHAFT-1999-1_4983_4601_4303",
+      "VernehmlassungÄnderung der Verordnung über Fernmeldedienste (FDV)Stand 18.09.2026Details & amtliche Fassung → → /materialien/VERN-2021-101",
+      "Initiative · 21.1247Kantonale Volksinitiative \"1% gegen globale Armut\"Stand 10.04.2024Details & amtliche Fassung → → /materialien/BS-GR-21.1247",
+      "Bericht · 02.0403Ratschlag und Entwurf betreffend Änderung des Gerichtsorganisationsgesetzes, Änderung der Verordnung betreffend die Gewerblichen Schiedsgerichte vom 19. September 1989 (SG 154.130), Änderung der Gruppeneinteilung und der Zahl der Richterinnen und Richter sowie Änderung der Verordnung betreffend Richterentschädigungen vom 6. Februar 1973Stand 11.03.2002Details & amtliche Fassung → → /materialien/BS-GR-02.0403",
+      "Ratschlag · 01.0221Ratschlag und Entwurf zu einer Änderung des §68 des Polizeigesetzes vom 13. November 1996 (SG 510.100)Stand 20.02.2001Details & amtliche Fassung → → /materialien/BS-GR-01.0221",
+      "Was wir nicht haben → /materialien/deckung"
+    ],
+    "klappen": [],
+    "beschriftungen": [
+      "Filtern",
+      "BehördeAlleESTV — Eidgenössische SteuerverwaltungEDÖB — Eidg. Datenschutz- und ÖffentlichkeitsbeauftragterSECO — Staatssekretariat für WirtschaftBSV — Bundesamt für SozialversicherungenEHRA — Eidg. Amt für das Handelsregister (Bundesamt für Justiz)FINMA — Eidgenössische FinanzmarktaufsichtIGE — Eidg. Institut für Geistiges EigentumBR — Bundesrat (Botschaften)Bund — Bund (Vernehmlassungen)GR BS — Grosser Rat des Kantons Basel-Stadt",
+      "DokumenttypAlleKreisschreibenKS-AnhangWeisungRundschreibenMWST-InfoMWST-Branchen-InfoWegleitungLeitfadenMerkblattRichtlinieAnleitungTätigkeitsberichtBotschaftVernehmlassungRatschlagBerichtInitiativePraxismitteilung"
+    ],
+    "etiketten": [],
+    "quelleStand": [
+      "Stand 29.01.2026",
+      "Details & amtliche Fassung →",
+      "Stand 26.11.2025",
+      "Details & amtliche Fassung →",
+      "Stand 27.08.2026",
+      "Details & amtliche Fassung →",
+      "Stand 31.08.2005",
+      "Details & amtliche Fassung →",
+      "Stand 10.10.2023",
+      "Details & amtliche Fassung →",
+      "Stand 03.10.2002",
+      "Details & amtliche Fassung →",
+      "Stand 09.10.2023",
+      "Details & amtliche Fassung →",
+      "Stand 18.09.2024",
+      "Details & amtliche Fassung →",
+      "Stand 10.05.2023",
+      "Details & amtliche Fassung →",
+      "Stand 06.10.2025",
+      "Details & amtliche Fassung →",
+      "Stand 30.06.2025",
+      "Details & amtliche Fassung →",
+      "Stand 15.07.2025",
+      "Details & amtliche Fassung →",
+      "Stand 20.02.2026",
+      "Details & amtliche Fassung →",
+      "Stand 22.03.2016",
+      "Details & amtliche Fassung →",
+      "Stand 21.05.2026",
+      "Details & amtliche Fassung →",
+      "Stand 07.04.2025",
+      "Details & amtliche Fassung →",
+      "Stand 21.11.2024",
+      "Details & amtliche Fassung →",
+      "Stand 01.01.2026",
+      "Details & amtliche Fassung →",
+      "Stand 28.04.1999",
+      "Details & amtliche Fassung →",
+      "Stand 18.09.2026",
+      "Details & amtliche Fassung →",
+      "Stand 10.04.2024",
+      "Details & amtliche Fassung →",
+      "Stand 11.03.2002",
+      "Details & amtliche Fassung →",
+      "Stand 20.02.2001",
+      "Details & amtliche Fassung →",
+      "Kein Gesetzesrang; die Erläuterungen der Verwaltung sind faktisches «Soft-Law». Diese Rubrik führt keine eigenen Volltexte; jeder Eintrag verlinkt die Publikation, massgeblich ist stets die amtliche Fassung."
+    ],
+    "zustaende": []
+  },
+  "/materialien/BOTSCHAFT-1999-1_4983_4601_4303": {
+    "titel": [
+      "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Revision der freiwilligen Versicherung)"
+    ],
+    "overline": [
+      "BR · Botschaft 1999.038 · Sozialversicherung",
+      "Kontext",
+      "Wendet an · Erlasse3",
+      "Wird zitiert von · Bundesgerichtsentscheide35"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [
+      "h2 Kontext",
+      "h3 Wendet an · Erlasse3",
+      "h3 Wird zitiert von · Bundesgerichtsentscheide35"
+    ],
+    "knoepfe": [
+      "Zeichenerklärung"
+    ],
+    "links": [
+      "Amtliche Fassung ↗ → https://www.fedlex.admin.ch/eli/fga/1999/1_4983_4601_4303/de",
+      "AHVG → /gesetze/bund/AHVG",
+      "AVIG → /gesetze/bund/AVIG",
+      "IVG → /gesetze/bund/IVG",
+      "BGE 152 II 19★ → /rechtsprechung/bge_152_II_19",
+      "BGE 151 II 726★ → /rechtsprechung/bge_151_II_726",
+      "BGE 151 IV 237★ → /rechtsprechung/bge_151_IV_237",
+      "BGE 151 V 186★ → /rechtsprechung/bge_151_V_186",
+      "BGE 151 I 225★ → /rechtsprechung/bge_151_I_225",
+      "BGE 151 V 1★ → /rechtsprechung/bge_151_V_1",
+      "BGE 150 V 454★ → /rechtsprechung/bge_150_V_454",
+      "BGE 151 III 143★ → /rechtsprechung/bge_151_III_143",
+      "Alle 35 erfassten Entscheide ansehen → → /rechtsprechung",
+      "← Alle Materialien → /materialien"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [
+      "nur Verweis",
+      "★",
+      "★",
+      "★",
+      "★",
+      "★",
+      "★",
+      "★",
+      "★"
+    ],
+    "quelleStand": [
+      "· Stand 28.04.1999",
+      "Amtliche Fassung ↗",
+      "Gesetzgebungsmaterial, kein Gesetzesrang. Es dokumentiert das Gesetzgebungsverfahren und kann bei der Auslegung eines Erlasses beigezogen werden, namentlich bei der historischen Auslegung. Massgeblich ist stets die amtliche Fassung. Maschinell erfasst, fachlich noch nicht geprüft.",
+      "3 erfasste Erlasse — aus den zitierten Normen der Quelle abgeleitet.",
+      "Art. 21 Abs. 1 lit. a und b sowie Art. 40 Abs. 1 Satz 2 AHVG (in der bis zum 31. Dezember 2023 geltenden Fassung); Art. 7 lit. c FZA und Art. 4 Abs. 1 und 2 Anhang I FZA; Art. 2 Abs. 1 lit. a der Verordnung (EWG) Nr. 1251/70 vom 29.…",
+      "35 erfasste Entscheide — über die gemeinsam zitierten Erlasse zugeordnet: zwei Schritte entfernt, entsprechend unschärfer. Entscheide beziehen sich auf die im Entscheidzeitpunkt geltende Fassung."
+    ],
+    "zustaende": []
+  },
+  "/materialien/deckung": {
+    "titel": [
+      "Was wir nicht haben"
+    ],
+    "overline": [
+      "Materialien",
+      "Maschinell abgeleitet, fachlich nicht geprüft"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [
+      "h2 Ebene für Ebene",
+      "h2 Änderungen, zu denen die amtliche Fussnote schweigt",
+      "h2 Jeder Erlass einzeln"
+    ],
+    "knoepfe": [
+      "Erlass·",
+      "Fussnoten-Deckung▲",
+      "Fundstellen·",
+      "Änderungen · mit Botschaft·",
+      "Alt-Blöcke·",
+      "ohne Ereignis·"
+    ],
+    "links": [
+      "ADOV → /gesetze/bund/ADOV",
+      "AHVG → /gesetze/bund/AHVG",
+      "ARG → /gesetze/bund/ARG",
+      "CHEMRRV → /gesetze/bund/CHEMRRV",
+      "AHVV → /gesetze/bund/AHVV",
+      "AKKBV → /gesetze/bund/AKKBV",
+      "AIG → /gesetze/bund/AIG",
+      "APOSTILLE → /gesetze/international/APOSTILLE",
+      "Was ist durchsuchbar → /abdeckung"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [],
+    "quelleStand": [
+      "Diese Seite zählt auf, wie weit die Entstehungsgeschichte der erfassten Erlasse hinterlegt ist — und wo sie es nicht ist. Sie ist bewusst unfreundlich gegenüber dem eigenen Bestand: Lücken stehen als Zahl da, nicht als Fussnote. Massgeblich bleibt in jedem Fall die amtliche Fassung.",
+      "Fedlex, Artikel-Fussnoten und Änderungsliste (fedlex.admin.ch) · Stand 14.09.2026",
+      "Die beiden Quellen decken verschiedene Zeiträume ab: die Fussnoten reichen bis in die 1950er-Jahre zurück, die Änderungsliste ist erst ab rund 2000 verlässlich. Der tiefe Anteil ist deshalb keine Fehlerquote, sondern die Reichweite der jüngeren Quelle.",
+      "Fedlex, Bundesblatt (fedlex.admin.ch) · Stand 23.09.2026",
+      "Fedlex, Bundesblatt-Volltext (fedlex.admin.ch) · Stand 11.09.2026",
+      "Parlamentsdienste der Bundesversammlung, Bern (Curia Vista) · Stand 25.09.2026",
+      "Parlamentsdienste der Bundesversammlung, Bern (Curia Vista) · Stand 21.09.2026",
+      "Erlasse mit Fassungsvergleich (Synopse)",
+      "Fedlex, konsolidierte Stände (fedlex.admin.ch) · Stand 12.09.2026",
+      "Der Vergleich «vorher/nachher» braucht konsolidierte Stände; die liegen erst ab 2021 vor. Für ältere Änderungen zeigt die Karte am Artikel nichts an, statt etwas zu behaupten.",
+      "Grosser Rat des Kantons Basel-Stadt (grosserrat.bs.ch) · Stand 25.09.2026",
+      "Kantonsrat Zürich — noch nicht erschlossen · Stand 25.09.2026",
+      "Beim Fassungsvergleich sind 361 Textblöcke erfasst, die sich zwischen zwei Ständen geändert haben. Bei 99 davon — 27.4 % — nennt die amtliche Fussnote am Artikel kein Ereignis, das die Änderung erklären würde.",
+      "Die Gegenrichtung wird genauso gezeigt und genauso wenig aufgelöst: 114 Fussnoten-Ereignisse stehen ohne beobachtete Textänderung da, und 22 Blöcke sind als «Quelle unvollständig» gebucht, weil der amtliche Stand den Artikel nur im Änderungsanhang führt.",
+      "Ein Gedankenstrich heisst «für diesen Erlass nicht erhoben», nie «null». Erlasse ohne Fassungsvergleich tragen in den letzten beiden Spalten einen Strich, weil es für sie kein Fenster ab 2021 gibt.",
+      "Was die Suche durchsucht, steht auf einer eigenen Seite: Was ist durchsuchbar. Diese Seite hier handelt allein von der Entstehungsgeschichte der Erlasse. Keine Rechtsberatung; massgeblich ist die amtliche Fassung."
+    ],
+    "zustaende": []
+  },
+  "/methodik": {
+    "titel": [
+      "Wie LexMetrik rechnet"
+    ],
+    "overline": [
+      "Methodik",
+      "Grenzen"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [
+      "h2 Deterministisch gerechnet statt KI-geschätzt",
+      "h2 Jeder Schritt liegt offen",
+      "h2 Strittige Rechtsfragen werden offengelegt, nicht versteckt",
+      "h2 Geprüft oder In Vorbereitung",
+      "h2 Wie Vorlagen entstehen",
+      "h2 Ihre Daten bleiben bei Ihnen",
+      "h2 Aktualität & Pflege der Parameter"
+    ],
+    "knoepfe": [],
+    "links": [],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "verfallen",
+      "bald fällig",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell",
+      "aktuell"
+    ],
+    "quelleStand": [
+      "Künftige Fassung BankG (SR 952.0)",
+      "Künftige Fassung BBG (SR 412.10)",
+      "Künftige Fassung BBV (SR 412.101)",
+      "Künftige Fassung BEG (SR 957.1)",
+      "Künftige Fassung FIDLEG (SR 950.1)",
+      "Künftige Fassung FINIG (SR 954.1)",
+      "Künftige Fassung GwG (SR 955.0)",
+      "Künftige Fassung HRegV (SR 221.411)",
+      "Künftige Fassung KAG (SR 951.31)",
+      "Künftige Fassung OR (SR 220)",
+      "Künftige Fassung RVOV (SR 172.010.1)",
+      "Künftige Fassung SSV (SR 741.21)",
+      "Künftige Fassung StGB (SR 311.0)",
+      "Künftige Fassung VEV (SR 142.204)",
+      "Künftige Fassung VRV (SR 741.11)",
+      "Künftige Fassung VTS (SR 741.41)",
+      "Künftige Fassung VZAE (SR 142.201)",
+      "Künftige Fassung ZEMIS-V (SR 142.513)",
+      "1.25 % (unverändert; Stand 2.9.2026, publiziert 1.9.2026, BWO https://www.bwo.admin.ch/de/referenzzinssatz) · Prüfrhythmus: quartalsweise (bwo.admin.ch/de/referenzzinssatz)",
+      "Künftige Fassung ChemRRV (SR 814.81)",
+      "TI LTORF (Legge sulle tasse e gli emolumenti del registro fondiario, RL 216.200 = `TI-ti-181`): geltende Fassung 17.5.2024 gilt bis 31.12.2026 (Nachfolge 1.1.2027, Änderung BU 2026, 281).",
+      "Künftige Fassung AHVG (SR 831.10)",
+      "Künftige Fassung AIG (SR 142.20)",
+      "Künftige Fassung AsylG (SR 142.31)",
+      "Künftige Fassung AVIV (SR 837.02)",
+      "Künftige Fassung BankV (SR 952.02)",
+      "Künftige Fassung BPG (SR 172.220.1)",
+      "Künftige Fassung BPV (SR 172.220.111.3)",
+      "Künftige Fassung CO2-Gesetz (SR 641.71)",
+      "Künftige Fassung DBG (SR 642.11)",
+      "Künftige Fassung DesV (SR 232.121)",
+      "Künftige Fassung EBG (SR 742.101)",
+      "Künftige Fassung ELG (SR 831.30)",
+      "Künftige Fassung EnG (SR 730.0)",
+      "Künftige Fassung ERV (SR 952.03)",
+      "Künftige Fassung FINMA-GebV (SR 956.122)",
+      "Künftige Fassung FINMAG (SR 956.1)",
+      "Künftige Fassung HMG (SR 812.21)",
+      "Künftige Fassung IVG (SR 831.20)",
+      "Künftige Fassung KLV (SR 832.112.31)",
+      "Künftige Fassung KVV (SR 832.102)",
+      "Künftige Fassung MSchV (SR 232.111)",
+      "Künftige Fassung MWSTV (SR 641.201)",
+      "Künftige Fassung ParlG (SR 171.10)",
+      "Künftige Fassung PatG (SR 232.14)",
+      "Künftige Fassung UVV (SR 832.202)",
+      "Künftige Fassung VG (SR 170.32)",
+      "Künftige Fassung VGG (SR 173.32)",
+      "Künftige Fassung VwVG (SR 172.021)",
+      "Künftige Fassung VZV (SR 741.51)",
+      "PDF-Stand 13.02.2026 · Prüfrhythmus: jährlich",
+      "Kantons-Snapshots aus dem PDF-Pfad (Fassungs-Bindung)",
+      "Künftige Fassung BVV 3 (SR 831.461.3)",
+      "Künftige Fassung FZV (SR 831.425)",
+      "Künftige Fassung EOG (SR 834.1)",
+      "Künftige Fassung EOV (SR 834.11)",
+      "Künftige Fassung FamZV (SR 836.21)",
+      "Künftige Fassung IVV (SR 831.201)",
+      "Künftige Fassung BVG (SR 831.40)",
+      "Künftige Fassung ELV (SR 831.301)",
+      "Künftige Fassung GSchV (SR 814.201)",
+      "Künftige Fassung KVG (SR 832.10)",
+      "Künftige Fassung StHG (SR 642.14)",
+      "Künftige Fassung FAV (SR 784.101.2)",
+      "Künftige Fassung BV (SR 101)",
+      "Künftige Fassung FinfraG (SR 958.1)",
+      "Künftige Fassung BetmG (SR 812.121)",
+      "Künftige Fassung BVV 2 (SR 831.441.1)",
+      "Künftige Fassung GlG (SR 151.1)",
+      "Künftige Fassung VKL (SR 832.104)",
+      "Künftige Fassung AHVV (SR 831.101)"
+    ],
+    "zustaende": []
+  },
+  "/ueber": {
+    "titel": [
+      "Über LexMetrik"
+    ],
+    "overline": [
+      "Über"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [
+      "h2 Was LexMetrik heute ist",
+      "h2 Wonach LexMetrik gebaut ist"
+    ],
+    "knoepfe": [],
+    "links": [
+      "Abdeckung → /abdeckung",
+      "Methodik → /methodik",
+      "Kontakt → /kontakt",
+      "David Graf → https://www.linkedin.com/in/david-graf-a5667624b/"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [],
+    "quelleStand": [
+      "Gesetzestexte des Bundes und der Kantone im Volltext – jede Bestimmung mit Link auf die geltende amtliche Fassung; die gespeicherten Texte werden automatisch gegen die Quelle abgeglichen, damit keine veraltete Fassung stehen bleibt.",
+      "Rechtsprechung und Materialien – Leitentscheide und Gesetzgebungsunterlagen aus amtlichen Quellen, durchsuchbar neben den Normen.",
+      "Jede Angabe belegt. Rechtswerte tragen die Norm, den Link auf die geltende amtliche Fassung und den Stand. Massgeblich ist immer die amtliche Fassung, nie die Kopie.",
+      "Nur amtliche, urheberrechtsfreie Quellen."
+    ],
+    "zustaende": []
+  },
+  "/kontakt": {
+    "titel": [
+      "Kontakt aufnehmen"
+    ],
+    "overline": [
+      "Kontakt"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [],
+    "knoepfe": [
+      "Nachricht senden",
+      "Nachricht kopieren"
+    ],
+    "links": [
+      "Datenschutzerklärung → /datenschutz"
+    ],
+    "klappen": [],
+    "beschriftungen": [
+      "Name · optional",
+      "E-Mail (für die Antwort)",
+      "Betreff · optional",
+      "Nachricht",
+      "Ich willige ein, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Details in der Datenschutzerklärung."
+    ],
+    "etiketten": [],
+    "quelleStand": [],
+    "zustaende": []
+  },
+  "/datenschutz": {
+    "titel": [
+      "Datenschutzerklärung"
+    ],
+    "overline": [
+      "Rechtliches"
+    ],
+    "ausgabe": [
+      "EntwurfStand: 5. Juni 2026 · nach Schweizer Datenschutzgesetz (DSG)"
+    ],
+    "ueberschriften": [
+      "h2 1. Verantwortliche Stelle",
+      "h2 2. Grundsatz: Berechnung im Browser",
+      "h2 3. Keine Analyse, kein Tracking",
+      "h2 4. Hosting (Vercel) und Server-Logs",
+      "h2 5. Kontaktaufnahme",
+      "h2 6. Externe Links",
+      "h2 7. Ihre Rechte",
+      "h2 8. Änderungen"
+    ],
+    "knoepfe": [],
+    "links": [
+      "Kontaktseite → /kontakt"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [
+      "Entwurf"
+    ],
+    "quelleStand": [
+      "Stand: 5. Juni 2026 · nach Schweizer Datenschutzgesetz (DSG)",
+      "Diese Datenschutzerklärung wird bei Bedarf angepasst, etwa wenn neue Funktionen (z. B. ein serverseitiger Formularversand oder ein Bezahlzugang) eingeführt werden. Es gilt die jeweils hier veröffentlichte Fassung."
+    ],
+    "zustaende": []
+  },
+  "/gibt-es-nicht": {
+    "titel": [
+      "Seite nicht gefunden"
+    ],
+    "overline": [
+      "404 · Nicht gefunden"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [],
+    "knoepfe": [],
+    "links": [
+      "← Katalog – alle Rechner & Vorlagen → /",
+      "← Methodik → /methodik",
+      "← Kontakt → /kontakt"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [],
+    "quelleStand": [],
+    "zustaende": []
+  },
+  "/rechtsprechung/bge_149_IV_213": {
+    "titel": [
+      "BGE 149 IV 213"
+    ],
+    "overline": [
+      "Bundesgericht · IV · Verfahrensrecht",
+      "Angewandte Normen",
+      "Regeste",
+      "▸Weitere Sprachfassungen · Français · Italiano",
+      "Français",
+      "Italiano",
+      "Erwägungen",
+      "Kontext",
+      "Wendet an · Zitierte Normen8",
+      "Zitiert · Zitierte Entscheide5"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [
+      "h2 Erwägungen",
+      "h2 Kontext",
+      "h3 Wendet an · Zitierte Normen8",
+      "h3 Zitiert · Zitierte Entscheide5"
+    ],
+    "knoepfe": [
+      "Leitentscheid",
+      "A−",
+      "A+",
+      "⧉ Zitat kopieren",
+      "▭ Lesemodus",
+      "Amtlicher BGE-Auszug",
+      "Vollständiges Urteil · 1B_643/2022",
+      "Gliederung & Suche▸",
+      "Art. 10 VWVG·",
+      "Art. 28 ZGB",
+      "Art. 30 BV",
+      "Art. 380 STPO·",
+      "Art. 80 BGG↻",
+      "Art. 81 Abs. 1 BGG↻",
+      "Art. 81 Abs. 1 LTF·",
+      "Art. 81 BGG↻"
+    ],
+    "links": [
+      "Amtliche Fassung ↗ → https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=highlight_simple_query&page=13&from_date=&to_date=&from_year=2023&to_year=2023&sort=relevance&insertion_date=&from_date_push=&top_subcollection_clir=bge&query_words=&part=all&de_fr=&de_it=&fr_de=&fr_it=&it_de=&it_fr=&orig=&translation=&rank=130&highlight_docid=atf%3A%2F%2F149-IV-213%3Ade&number_of_ranks=189&azaclir=clir",
+      "Regeste → #abschnitt-regeste",
+      "Erwägungen → #abschnitt-erwaegung",
+      "E. 2 → #e-2",
+      "Art. 28 ZGB → #e-2",
+      "Art. 30 BV → #e-2",
+      "Art. 80 BGG → #e-2",
+      "Art. 81 Abs. 1 BGG → #e-2",
+      "Art. 81 BGG → #e-2",
+      "bger.ch ↗ → https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-IV-213%3Ade&lang=de&type=show_document",
+      "2.§ → #e-2",
+      "Art. 78 Abs. 1 → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_78",
+      "Art. 92 BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_92",
+      "Art. 59 Abs. 1 lit. b → https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_59",
+      "Art. 380 StPO → https://www.fedlex.admin.ch/eli/cc/2010/267/de#art_380",
+      "Art. 80 BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_80",
+      "Art. 81 Abs. 1 BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_81",
+      "Art. 81 Abs. 1 lit. b BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_81",
+      "Art. 81 Abs. 1 lit. b BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_81",
+      "BGE 139 IV 121 → https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F139-IV-121%3Ade&lang=de&type=show_document",
+      "Art. 28 ZGB → https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_28",
+      "BGE 107 Ia 266 → https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F107-Ia-266%3Ade&lang=de&type=show_document",
+      "BGE 107 Ia 266 → https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F107-Ia-266%3Ade&lang=de&type=show_document",
+      "BGE 107 Ia 266 → https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F107-Ia-266%3Ade&lang=de&type=show_document",
+      "Bundesgerichtsgesetzes → https://www.fedlex.admin.ch/eli/cc/2006/218/de",
+      "Art. 81 BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_81",
+      "BGE 133 IV 121 → https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F133-IV-121%3Ade&lang=de&type=show_document",
+      "Art. 10 VwVG → https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de#art_10",
+      "Bundesverfassung → https://www.fedlex.admin.ch/eli/cc/1999/404/de",
+      "Art. 30 BV → https://www.fedlex.admin.ch/eli/cc/1999/404/de#art_30",
+      "Amtliche Fassung ↗ → https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=highlight_simple_query&page=13&from_date=&to_date=&from_year=2023&to_year=2023&sort=relevance&insertion_date=&from_date_push=&top_subcollection_clir=bge&query_words=&part=all&de_fr=&de_it=&fr_de=&fr_it=&it_de=&it_fr=&orig=&translation=&rank=130&highlight_docid=atf%3A%2F%2F149-IV-213%3Ade&number_of_ranks=189&azaclir=clir",
+      "Art. 8 ZGB → https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_8",
+      "← Zur Übersicht → /rechtsprechung"
+    ],
+    "klappen": [
+      "▸Weitere Sprachfassungen · Français · Italiano"
+    ],
+    "beschriftungen": [],
+    "etiketten": [
+      "★Leitentscheid",
+      "de",
+      "maschinell",
+      "↻",
+      "↻",
+      "↻"
+    ],
+    "quelleStand": [
+      "Abgerufen 17.07.2026",
+      "Wiedergabe des amtlichen Urteilstexts — massgeblich ist die amtliche Fassung",
+      "Amtliche Fassung ↗Nur EntscheidtextA−A+⧉ Zitat kopieren▭ Lesemodus",
+      "Amtliche Regeste der amtlichen Sammlung (DE · FR · IT) · Quelle: bger.ch ↗",
+      "Das Urteilsdispositiv ist in dieser Erfassung nicht zuverlässig abgegrenzt — massgeblich ist die amtliche Fassung.",
+      "Amtliche Fassung ↗Daten: OpenCaseLaw",
+      "Der Urteilstext ist als amtliches Werk gemeinfrei (Art. 5 URG). Eine allfällige Regeste ist redaktionell. Diese Wiedergabe ersetzt die amtliche Fassung nicht und stellt keine Rechtsberatung dar. Massgeblich ist stets die amtliche Fassung.",
+      "8 erfasste Normen — aus der Quelle übernommen, maschinell und ohne redaktionelle Durchsicht. Klick springt zur Fundstelle im Urteilstext.",
+      "Zitiert 5 erfasste Entscheide, davon 0 im Korpus. Übrige Zitate maschinell aus dem Urteilstext gelesen — im Korpus (noch) nicht erfasst. Entscheide beziehen sich auf die im Entscheidzeitpunkt geltende Fassung."
+    ],
+    "zustaende": []
+  },
+  "/rechtsprechung/bger_12T_3_2025": {
+    "titel": [
+      "BGer 12T_3/2025 vom 15. Juni 2026"
+    ],
+    "overline": [
+      "Bundesgericht · Verwaltungskommission · Öffentliches Recht",
+      "Angewandte Normen",
+      "Erwägungen",
+      "Dispositiv",
+      "Kontext",
+      "Wendet an · Zitierte Normen7",
+      "Zitiert · Zitierte Entscheide1"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [
+      "h2 Erwägungen",
+      "h2 Dispositiv",
+      "h2 Kontext",
+      "h3 Wendet an · Zitierte Normen7",
+      "h3 Zitiert · Zitierte Entscheide1"
+    ],
+    "knoepfe": [
+      "A−",
+      "A+",
+      "⧉ Zitat kopieren",
+      "▭ Lesemodus",
+      "Gliederung & Suche▸",
+      "Art. 1 Abs. 1 AUFRBGER·",
+      "Art. 1 Abs. 2 BGG",
+      "Art. 109a ASYLG",
+      "Art. 2 Abs. 2 AUFRBGER·",
+      "Art. 3 Abs. 1 VGG",
+      "Art. 71 Abs. 2 VWVG·",
+      "Art. 9 Abs. 2 AUFRBGER·"
+    ],
+    "links": [
+      "Amtliche Fassung ↗ → http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://15-06-2026-12T_3-2025&lang=de&type=show_document",
+      "Erwägungen → #abschnitt-erwaegung",
+      "Dispositiv → #abschnitt-dispositiv",
+      "E. 1.1 → #e-1-1",
+      "E. 1.2 → #e-1-2",
+      "E. 2.1 → #e-2-1",
+      "E. 2.2 → #e-2-2",
+      "E. 3.1 → #e-3-1",
+      "E. 3.2 → #e-3-2",
+      "E. 3.3 → #e-3-3",
+      "E. 3.4 → #e-3-4",
+      "E. 3.5 → #e-3-5",
+      "E. 4 → #e-4",
+      "Art. 1 Abs. 2 BGG → #e-2-2",
+      "Art. 3 Abs. 1 VGG → #e-2-2",
+      "1.§ → #e-1",
+      "1.1§ → #e-1-1",
+      "1.2§ → #e-1-2",
+      "2.§ → #e-2",
+      "2.1§ → #e-2-1",
+      "Art. 71 Abs. 2 VwVG → https://www.fedlex.admin.ch/eli/cc/1969/737_757_755/de#art_71",
+      "2.2§ → #e-2-2",
+      "Art. 1 Abs. 2 BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_1",
+      "Art. 3 Abs. 1 VGG → https://www.fedlex.admin.ch/eli/cc/2006/352/de#art_3",
+      "BGE 144 II 486 → https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F144-II-486%3Ade&lang=de&type=show_document",
+      "3.§ → #e-3",
+      "3.1§ → #e-3-1",
+      "2T_2/2022 → https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=2T_2%2F2022",
+      "2T_1/2022 → https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=2T_1%2F2022",
+      "3.2§ → #e-3-2",
+      "2T_4/2023 → https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=2T_4%2F2023",
+      "Art. 108 → https://www.fedlex.admin.ch/eli/cc/1999/358/de#art_108",
+      "109 → https://www.fedlex.admin.ch/eli/cc/1999/358/de#art_109",
+      "Art. 109a AsylG → https://www.fedlex.admin.ch/eli/cc/1999/358/de#art_109_a",
+      "3.3§ → #e-3-3",
+      "2T_3/2025 → https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?lang=de&type=simple_query&query_words=2T_3%2F2025",
+      "3.4§ → #e-3-4",
+      "3.5§ → #e-3-5",
+      "4.§ → #e-4",
+      "Amtliche Fassung ↗ → http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://15-06-2026-12T_3-2025&lang=de&type=show_document",
+      "Art. 8 ZGB → https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_8",
+      "← Zur Übersicht → /rechtsprechung"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [
+      "de",
+      "maschinell"
+    ],
+    "quelleStand": [
+      "Abgerufen 26.06.2026",
+      "Wiedergabe des amtlichen Urteilstexts — massgeblich ist die amtliche Fassung",
+      "Amtliche Fassung ↗Nur EntscheidtextA−A+⧉ Zitat kopieren▭ Lesemodus",
+      "Amtliche Fassung ↗Daten: OpenCaseLaw",
+      "Der Urteilstext ist als amtliches Werk gemeinfrei (Art. 5 URG). Eine allfällige Regeste ist redaktionell. Diese Wiedergabe ersetzt die amtliche Fassung nicht und stellt keine Rechtsberatung dar. Massgeblich ist stets die amtliche Fassung.",
+      "7 erfasste Normen — aus der Quelle übernommen, maschinell und ohne redaktionelle Durchsicht. Klick springt zur Fundstelle im Urteilstext.",
+      "Zitiert 1 erfasste Entscheide, davon 0 im Korpus. Übrige Zitate maschinell aus dem Urteilstext gelesen — im Korpus (noch) nicht erfasst. Entscheide beziehen sich auf die im Entscheidzeitpunkt geltende Fassung."
+    ],
+    "zustaende": []
+  },
+  "/rechtsprechung/bs_appellationsgericht_BEZ.2024.66": {
+    "titel": [
+      "Appellationsgericht BS BEZ.2024.66 vom 28.11.2024"
+    ],
+    "overline": [
+      "Privatrecht",
+      "Gegenstand",
+      "Besetzung",
+      "Sachverhalt",
+      "Erwägungen",
+      "Dispositiv",
+      "Kontext",
+      "Wendet an · Erlasse3",
+      "Passende Werkzeuge12"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [
+      "h2 Sachverhalt",
+      "h2 Erwägungen",
+      "h2 Dispositiv",
+      "h2 Kontext",
+      "h3 Wendet an · Erlasse3",
+      "h3 Passende Werkzeuge12"
+    ],
+    "knoepfe": [
+      "A−",
+      "A+",
+      "⧉ Zitat kopieren",
+      "▭ Lesemodus",
+      "Gliederung & Suche▸"
+    ],
+    "links": [
+      "Olivier Steiner → /rechtsprechung?richter=steiner-olivier",
+      "Amtliche Fassung ↗ → https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77701&Template=search_result_document.html",
+      "Sachverhalt → #abschnitt-sachverhalt",
+      "Erwägungen → #abschnitt-erwaegung",
+      "Dispositiv → #abschnitt-dispositiv",
+      "E. 1 → #e-1",
+      "E. 2 → #e-2",
+      "E. 3 → #e-3",
+      "1.§ → #e-1",
+      "Art. 20a SchKG → https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de#art_20_a",
+      "Bundesgesetzes über Schuldbetreibung und Konkurs → https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de",
+      "2.§ → #e-2",
+      "3.§ → #e-3",
+      "Art. 20a Abs. 2 Ziff. 5 SchKG → https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de#art_20_a",
+      "Art. 42 BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_42",
+      "Art. 113 BGG → https://www.fedlex.admin.ch/eli/cc/2006/218/de#art_113",
+      "Amtliche Fassung ↗ → https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77701&Template=search_result_document.html",
+      "Art. 8 ZGB → https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_8",
+      "BGG → /gesetze/bund/BGG",
+      "SchKG → /gesetze/bund/SCHKG",
+      "ZPO → /gesetze/bund/ZPO",
+      "⊞Beschwerde ans Bundesgericht (BGG) → /rechner/bgg-fristen",
+      "⊞Betreibungs- & Konkursfristen → /rechner/schkg-fristen",
+      "⊞Betreibungskosten (GebV SchKG) → /rechner/betreibungskosten",
+      "⊞Zuständigkeit Vollstreckung (SchKG) → /rechner/zustaendigkeit#schkg",
+      "▤Nichtbekanntgabe einer Betreibung («Löschung» im Auszug) → /vorlagen/nichtbekanntgabe-betreibung",
+      "⊞Prozesskosten (Gerichts- & Parteikosten) → /rechner/prozesskosten",
+      "⊞Zuständigkeit Zivilprozess → /rechner/zustaendigkeit",
+      "⊞Verfahrens- & Rechtsmittelfristen → /rechner/zpo-fristen",
+      "⊞Streitwert (ZPO) → /rechner/streitwert",
+      "▤Schlichtungsgesuch (alle Kantone) → /vorlagen/schlichtungsgesuch-bs",
+      "▤Klage (vereinfachtes Verfahren) → /vorlagen/klage-vereinfacht",
+      "▤Klage (ordentliches Verfahren) → /vorlagen/klage-ordentlich",
+      "← Zur Übersicht → /rechtsprechung"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [
+      "de",
+      "maschinell"
+    ],
+    "quelleStand": [
+      "Abgerufen 19.07.2026",
+      "Wiedergabe des amtlichen Urteilstexts — massgeblich ist die amtliche Fassung",
+      "Amtliche Fassung ↗Nur EntscheidtextA−A+⧉ Zitat kopieren▭ Lesemodus",
+      "Amtliche Fassung ↗Daten: Rechtsprechungs-Datenbank der Gerichte Basel-Stadt (amtlich)",
+      "Der Urteilstext ist als amtliches Werk gemeinfrei (Art. 5 URG). Eine allfällige Regeste ist redaktionell. Diese Wiedergabe ersetzt die amtliche Fassung nicht und stellt keine Rechtsberatung dar. Massgeblich ist stets die amtliche Fassung.",
+      "3 erfasste Erlasse — aus den zitierten Normen der Quelle abgeleitet."
+    ],
+    "zustaende": []
+  },
+  "/materialien/GIBT-ES-NICHT": {
+    "titel": [
+      "Material nicht gefunden"
+    ],
+    "overline": [
+      "Materialien"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [],
+    "knoepfe": [],
+    "links": [
+      "← Alle Materialien → /materialien"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [],
+    "quelleStand": [],
+    "zustaende": []
+  },
+  "/rechtsprechung/gibt_es_nicht": {
+    "titel": [
+      "Entscheid nicht gefunden"
+    ],
+    "overline": [
+      "Rechtsprechung"
+    ],
+    "ausgabe": [],
+    "ueberschriften": [],
+    "knoepfe": [],
+    "links": [
+      "← Zur Rechtsprechung → /rechtsprechung"
+    ],
+    "klappen": [],
+    "beschriftungen": [],
+    "etiketten": [],
+    "quelleStand": [],
+    "zustaende": []
+  }
+}

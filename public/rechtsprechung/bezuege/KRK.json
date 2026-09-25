@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-23",
+"erzeugt":"2026-09-25",
 "erlass":"KRK",
 "erlassEbene":"bund",
 "dokumente":{
@@ -12,6 +12,8 @@
 "bge_150_I_93":{"zitierung":"BGE 150 I 93","regesteKurz":"Art. 8 Ziff. 1 EMRK; Art. 13 BV; Art. 3 KRK; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Die Nachteile, die mit dem Status der vorläufigen Aufnahme im Vergleich zur Aufenthaltsbewilligung für Kinder im…","datum":"2024-02-07","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_I_314":{"zitierung":"BGE 151 I 314","regesteKurz":"Art. 8 Abs. 2 und 3, Art. 15 und 35 BV; Übertragung der Führung einer öffentlichen Mädchensekundarschule an die Stiftung Schule St. Katharina. (Grundrechtliche) Gewährleistungsverantwortung des Gemeinwesens bei der Übertragung der…","datum":"2025-01-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_I_62":{"zitierung":"BGE 151 I 62","regesteKurz":"Art. 8 EMRK; Art. 3 KRK; Art. 13 BV; Art. 84 Abs. 5 AIG; Umwandlung des Status der vorläufigen Aufnahme in eine Aufenthaltsbewilligung. Verhältnis zwischen Art. 3 KRK und Art. 8 EMRK (E. 5.1). Beeinträchtigung des Privatlebens durch einen…","datum":"2024-07-23","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_I_122":{"zitierung":"BGE 152 I 122","regesteKurz":"Art. 12 BV; Art. 82 Abs. 2, Art. 107a und Art. 111c AsylG. Das Asylgesuch, welches innert der Fünfjahresfrist von Art. 111c Abs. 1 AsylG nach dem rechtskräftigen Abschluss eines Überstellungsverfahrens gemäss Dublin-III-Verordnung und nach…","datum":"2026-02-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"bge_152_I_134":{"zitierung":"BGE 152 I 134","regesteKurz":"Art. 9 EMRK; Art. 8, 15 und 36 BV; Dispensation vom obligatorischen Schwimmunterricht für ein Kind von Angehörigen der Palmarianischen Kirche. Grundsätze zu Gesuchen um Dispensation vom obligatorischen Schulunterricht, insbesondere vom…","datum":"2026-02-10","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BES.2023.85":{"zitierung":"Appellationsgericht BS BES.2023.85 vom 08.11.2024","regesteKurz":"Genugtuung für ungerechtfertigte Untersuchungshaft etc.","datum":"2024-11-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2021.276":{"zitierung":"Appellationsgericht BS VD.2021.276 vom 08.03.2023","regesteKurz":"Nichtverlängerung der Aufenthaltsbewilligung und Wegweisung","datum":"2023-03-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.121":{"zitierung":"Appellationsgericht BS VD.2022.121 vom 24.03.2023","regesteKurz":"Widerruf der Aufenthaltsbewilligung und Wegweisung","datum":"2023-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
@@ -27,26 +29,31 @@
 "bs_appellationsgericht_VD.2025.63":{"zitierung":"Appellationsgericht BS VD.2025.63 vom 23.09.2025","regesteKurz":"Familiennachzug und Wegweisung","datum":"2025-09-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VG.2021.6":{"zitierung":"Appellationsgericht BS VG.2021.6 vom 27.08.2022","regesteKurz":"Änderung der Covid-19-Verordnung zusätzliche Massnahmen (BGer 2C_813/2022 vom 31.5.2023)","datum":"2022-08-27","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_FZ.2022.7":{"zitierung":"Sozialversicherungsgericht BS FZ.2022.7 vom 25.01.2023","regesteKurz":"FLG Ausbildungsbegriff nach Art. 49bis AHVV, gesundheitliche Situation nicht ausreichend abegklärt","datum":"2023-01-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bvger_F_3740_2026":{"zitierung":"BVGer F-3740/2026 vom 16. Juni 2026","regesteKurz":"Nichteintreten auf Asylgesuch und Wegweisung (sicherer Drittstaat - Art. 31a Abs. 1 Bst. a AsylG)","datum":"2026-06-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bvger","status":"eidg"}}
+"bvger_F_3740_2026":{"zitierung":"BVGer F-3740/2026 vom 16. Juni 2026","regesteKurz":"Nichteintreten auf Asylgesuch und Wegweisung (sicherer Drittstaat - Art. 31a Abs. 1 Bst. a AsylG)","datum":"2026-06-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bvger","status":"eidg"}},
+"bvger_F_5721_2026":{"zitierung":"BVGer F-5721/2026 vom 15. September 2026","regesteKurz":"Wegweisung Dublin (Ausländerrecht)","datum":"2026-09-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bvger","status":"eidg"}}
 },
 "proArtikel":{
 "1":[{"key":"bs_appellationsgericht_VD.2024.178","gewicht":null}],
-"3":[{"key":"bge_151_I_62","gewicht":0},{"key":"bge_150_I_93","gewicht":1},{"key":"bge_146_IV_267","gewicht":1},{"key":"bge_147_I_103","gewicht":1},{"key":"bge_148_I_89__voll","gewicht":0,"erwaegungen":["E. 4.1"]},{"key":"bge_147_I_149__voll","gewicht":2,"erwaegungen":["E. 3"]},{"key":"bs_appellationsgericht_VD.2025.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.178","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.46","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.5","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.183","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_sozialversicherungsgericht_FZ.2022.7","gewicht":null},{"key":"bs_appellationsgericht_VG.2021.6","gewicht":null}],
+"3":[{"key":"bge_152_I_122","gewicht":0},{"key":"bge_151_I_62","gewicht":0},{"key":"bge_150_I_93","gewicht":1},{"key":"bge_146_IV_267","gewicht":1},{"key":"bge_147_I_103","gewicht":1},{"key":"bge_148_I_89__voll","gewicht":0,"erwaegungen":["E. 4.1"]},{"key":"bge_147_I_149__voll","gewicht":2,"erwaegungen":["E. 3"]},{"key":"bvger_F_5721_2026","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.178","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.46","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.5","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.183","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_sozialversicherungsgericht_FZ.2022.7","gewicht":null},{"key":"bs_appellationsgericht_VG.2021.6","gewicht":null}],
 "4":[{"key":"bge_146_IV_267","gewicht":0}],
 "9":[{"key":"bge_147_V_312","gewicht":0},{"key":"bge_146_IV_267","gewicht":0},{"key":"bs_appellationsgericht_VD.2025.63","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.51","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.178","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.160","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.175","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null},{"key":"bs_appellationsgericht_VD.2023.5","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.276","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.177","gewicht":null}],
 "12":[{"key":"bge_147_I_149","gewicht":0},{"key":"bvger_F_3740_2026","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.183","gewicht":null},{"key":"bs_appellationsgericht_VD.2022.121","gewicht":null}],
-"14":[{"key":"bge_151_I_314","gewicht":0}],
+"14":[{"key":"bge_152_I_134","gewicht":0},{"key":"bge_151_I_314","gewicht":1}],
 "18":[{"key":"bs_appellationsgericht_VD.2023.147","gewicht":null}],
+"22":[{"key":"bge_152_I_122","gewicht":0}],
+"31":[{"key":"bge_152_I_122","gewicht":0}],
 "37":[{"key":"bge_146_IV_267","gewicht":0},{"key":"bs_appellationsgericht_BES.2023.85","gewicht":null}]
 },
 "gesamtProArtikel":{
 "1":{"kantonal":1},
-"3":{"bge":4,"bger":2,"kantonal":10},
+"3":{"bge":5,"bger":2,"eidg":1,"kantonal":10},
 "4":{"bge":1},
 "9":{"bge":2,"kantonal":9},
 "12":{"bge":1,"eidg":1,"kantonal":2},
-"14":{"bge":1},
+"14":{"bge":2},
 "18":{"kantonal":1},
+"22":{"bge":1},
+"31":{"bge":1},
 "37":{"bge":1,"kantonal":1}
 }
 }

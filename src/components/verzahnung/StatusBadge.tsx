@@ -22,7 +22,7 @@ import { REZEPT } from './statusRezept';
 export function StatusBadge({ praedikat, variant = 'voll', interaktiv = false, detail, className = '' }: {
   praedikat: StatusPraedikat;
   /** 'voll' = ausgeschriebenes Badge (Reader-Kopf/Suche); 'glyph' = blanker ★ mit aria-label (Chip-Reihen). */
-  variant?: 'voll' | 'glyph';
+  variant?: 'voll' | 'glyph' | 'text';
   /** Nur 'voll': Label als touch-/tastaturtauglicher Begriff-Tooltip (Reader-Kopf). */
   interaktiv?: boolean;
   /** Instanz-spezifischer Zusatz (V1c: Revisionsdatum + AS-Fundstelle) — fliesst
@@ -43,6 +43,20 @@ export function StatusBadge({ praedikat, variant = 'voll', interaktiv = false, d
       <span role="img" aria-label={ariaLabel} title={titel}
         className={`${r.glyphTon ?? 'text-brass-700'} ${className}`}>
         {r.glyph}
+      </span>
+    );
+  }
+
+  // Text-Variante (W2·29-WERKBANK-REST S1, 25.9.2026): dasselbe Wort, dasselbe
+  // aria-label und derselbe Erklärtext wie `voll` — nur OHNE Kasten, als
+  // gepunktet unterstrichene Randnotiz (Board «Unter-Rechtsprechung-Register»,
+  // Rezept `.lc-marke-text` in index.css). Wortlaut bleibt (Entscheid David
+  // 24.9.2026: «maschinell» bleibt). ADDITIV: wer `variant` nicht setzt, sieht
+  // weiterhin das Badge — der Gesetzes-Leser (Panels) zieht erst in NACHLAUF nach.
+  if (variant === 'text') {
+    return (
+      <span role="img" aria-label={ariaLabel} title={titel} className={`lc-marke-text ${className}`}>
+        {r.label}
       </span>
     );
   }

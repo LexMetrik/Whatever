@@ -81,6 +81,16 @@ function eingabeInhalt({ a, set }: SeiteCtx<WvAntworten>, schritt: number) {
             items={WERKART_OPTIONEN.map((w) => ({ code: w.id, label: w.label, sub: w.hint }))}
             value={a.werkArt} onSelect={(v) => set('werkArt', v)} />
         </Field>
+        {/* RL-39 (VC-01): Art. 367 Abs. 1bis / 370 Abs. 4 lit. a/b OR — beim
+            beweglichen Werk mit Bauwerk-Bezug gelten für bauwerkskausale
+            Mängel die 60 Tage; beim unbeweglichen Werk ohnehin. */}
+        {a.werkArt === 'beweglich' && (
+          <Checkbox
+            checked={a.bauwerkBezug}
+            onChange={(v) => set('bauwerkBezug', v)}
+            label={<><span>Das Werk wird in ein <strong>Bauwerk eingebaut</strong> oder dient als <strong>Plan</strong> (Architekt/Ingenieur) für dessen Erstellung</span></>}
+            hint={<NormText text="Mängel, die das Bauwerk mangelhaft machen: Rügefrist 60 Tage, auch für verdeckte Mängel ab Entdeckung (Art. 367 Abs. 1bis und Art. 370 Abs. 4 OR)." />} />
+        )}
         <Field label="Ablieferungstermin" optional>
           <DatumsFeld value={a.ablieferung} onChange={(v) => set('ablieferung', v)} className={inputCls} />
         </Field>
@@ -168,7 +178,7 @@ const CONFIG: VorlagenSeitenConfig<WvAntworten> = {
     <>
       <p className="lc-overline text-brass-700">Damit der Werkvertrag trägt</p>
       <ul className="lc-list space-y-2 text-body-s text-ink-700">
-        <li><strong>Mängel rechtzeitig rügen</strong><NormText text={` – beim unbeweglichen Werk gilt zwingend die 60-Tage-Frist (Art. 367 Abs. 1bis OR); sonst gilt das Werk als genehmigt.`} /></li>
+        <li><strong>Mängel rechtzeitig rügen</strong><NormText text={` – beim unbeweglichen Werk (und bei eingebauten Werken oder Plänen für ein Bauwerk) gilt zwingend die 60-Tage-Frist, für verdeckte Mängel ab Entdeckung (Art. 367 Abs. 1bis und Art. 370 Abs. 4 OR); sonst gilt das Werk als genehmigt.`} /></li>
         <li><strong>Verjährung</strong><NormText text={` – 2 Jahre (beweglich) bzw. 5 Jahre (unbeweglich) ab Abnahme (Art. 371 OR).`} /></li>
       </ul>
     </>

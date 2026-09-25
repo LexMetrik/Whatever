@@ -4639,7 +4639,7 @@
   "verfahrensart": "ordentlich",
   "schlichtung": {
    "obligatorisch": false,
-   "entfaelltGrund": "Einzige kantonale Instanz nach Art. 5 ZPO — Klage direkt beim Gericht (Art. 199 Abs. 3 ZPO)",
+   "entfaelltGrund": "Einzige kantonale Instanz nach Art. 5 ZPO: Schlichtung nicht zwingend — die klagende Partei kann die Klage direkt beim Gericht einreichen (Art. 199 Abs. 3 ZPO)",
    "verzichtGemeinsam": false,
    "verzichtEinseitig": false,
    "behoerdeTyp": "ordentlich",
@@ -4696,12 +4696,12 @@
     ]
    },
    {
-    "beschreibung": "3 · Funktionell: Schlichtung entfällt — Einzige kantonale Instanz nach Art. 5 ZPO — Klage direkt beim Gericht (Art. 199 Abs. 3 ZPO)",
-    "zwischenergebnis": "keine Schlichtung",
+    "beschreibung": "3 · Funktionell: Einzige kantonale Instanz nach Art. 5 ZPO: Schlichtung nicht zwingend — die klagende Partei kann die Klage direkt beim Gericht einreichen (Art. 199 Abs. 3 ZPO)",
+    "zwischenergebnis": "Schlichtung freiwillig (Direktklage möglich)",
     "normen": [
      {
-      "artikel": "Art. 198 ZPO",
-      "bemerkung": "Ausnahmen vom Schlichtungsverfahren"
+      "artikel": "Art. 199 ZPO",
+      "bemerkung": "Verzicht auf das Schlichtungsverfahren"
      }
     ]
    },
@@ -16233,12 +16233,12 @@
     },
     {
      "bausteinId": "WV05_abnahme",
-     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk).",
+     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist- und Verdeckte-Mängel-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk und bei bauwerkskausalen Mängeln eines beweglichen Werks, Art. 367 Abs. 1bis / 370 Abs. 4 OR; sonst «sofort», Art. 370 Abs. 3 OR).",
      "norm": "Art. 367 OR"
     },
     {
      "bausteinId": "WV06_maengelrechte",
-     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten.",
+     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten; beim unbeweglichen Werk mit Vorbehalt Art. 368 Abs. 3 OR (keine Annahmeverweigerung bei nicht ohne unverhältnismässige Nachteile entfernbaren Bauten) und Hinweis Art. 368 Abs. 2bis OR.",
      "norm": "Art. 368 OR"
     },
     {
@@ -16294,12 +16294,12 @@
      {
       "bausteinId": "WV05_abnahme",
       "ueberschrift": "Abnahme und Mängelrüge",
-      "text": "4. Nach Ablieferung prüft der Besteller das Werk, sobald es nach dem üblichen Geschäftsgang tunlich ist, und zeigt dem Unternehmer Mängel an (Art. 367 Abs. 1 OR). Bei diesem unbeweglichen Werk beträgt die Frist für die Mängelrüge 60 Tage; die Vereinbarung einer kürzeren Frist ist unwirksam (Art. 367 Abs. 1bis OR). Verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen; unterlässt der Besteller die Prüfung und Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 und 3 OR). Über die Abnahme erstellen die Parteien ein gemeinsames Protokoll."
+      "text": "4. Nach Ablieferung prüft der Besteller das Werk, sobald es nach dem üblichen Geschäftsgang tunlich ist, und zeigt dem Unternehmer Mängel an (Art. 367 Abs. 1 OR). Bei diesem unbeweglichen Werk beträgt die Frist für die Mängelrüge 60 Tage; die Vereinbarung einer kürzeren Frist ist unwirksam (Art. 367 Abs. 1bis OR). Mängel, die bei der Abnahme und ordnungsmässigen Prüfung nicht erkennbar waren (verdeckte Mängel), sind innert 60 Tagen nach ihrer Entdeckung anzuzeigen; die Vereinbarung kürzerer Fristen ist unwirksam (Art. 370 Abs. 4 OR). Unterlässt der Besteller die Prüfung oder die rechtzeitige Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 und 3 OR). Über die Abnahme erstellen die Parteien ein gemeinsames Protokoll."
      },
      {
       "bausteinId": "WV06_maengelrechte",
       "ueberschrift": "Mängelrechte",
-      "text": "5. Bei mangelhaftem Werk stehen dem Besteller die gesetzlichen Mängelrechte zu: Verweigerung der Annahme bei Unbrauchbarkeit, Minderung des Lohnes oder unentgeltliche Nachbesserung, soweit diese dem Unternehmer keine übermässigen Kosten verursacht, sowie Schadenersatz bei Verschulden (Art. 368 OR)."
+      "text": "5. Bei mangelhaftem Werk stehen dem Besteller die gesetzlichen Mängelrechte zu: Verweigerung der Annahme bei Unbrauchbarkeit, Minderung des Lohnes oder unentgeltliche Nachbesserung, soweit diese dem Unternehmer keine übermässigen Kosten verursacht, sowie Schadenersatz bei Verschulden (Art. 368 OR). Bei Werken, die auf dem Grund und Boden des Bestellers errichtet sind und ihrer Natur nach nur mit unverhältnismässigen Nachteilen entfernt werden können, entfällt das Recht, die Annahme zu verweigern; dem Besteller stehen dann nur Minderung, unentgeltliche Nachbesserung und Schadenersatz zu (Art. 368 Abs. 3 OR). Eine zum Voraus getroffene Abrede, die den Anspruch auf unentgeltliche Nachbesserung bei einem Mangel an einer Baute einschränkt oder ausschliesst, ist ungültig (Art. 368 Abs. 2bis OR)."
      },
      {
       "bausteinId": "WV07_verjaehrung",
@@ -16361,12 +16361,12 @@
     },
     {
      "bausteinId": "WV05_abnahme",
-     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk).",
+     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist- und Verdeckte-Mängel-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk und bei bauwerkskausalen Mängeln eines beweglichen Werks, Art. 367 Abs. 1bis / 370 Abs. 4 OR; sonst «sofort», Art. 370 Abs. 3 OR).",
      "norm": "Art. 367 OR"
     },
     {
      "bausteinId": "WV06_maengelrechte",
-     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten.",
+     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten; beim unbeweglichen Werk mit Vorbehalt Art. 368 Abs. 3 OR (keine Annahmeverweigerung bei nicht ohne unverhältnismässige Nachteile entfernbaren Bauten) und Hinweis Art. 368 Abs. 2bis OR.",
      "norm": "Art. 368 OR"
     },
     {
@@ -16489,12 +16489,12 @@
     },
     {
      "bausteinId": "WV05_abnahme",
-     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk).",
+     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist- und Verdeckte-Mängel-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk und bei bauwerkskausalen Mängeln eines beweglichen Werks, Art. 367 Abs. 1bis / 370 Abs. 4 OR; sonst «sofort», Art. 370 Abs. 3 OR).",
      "norm": "Art. 367 OR"
     },
     {
      "bausteinId": "WV06_maengelrechte",
-     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten.",
+     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten; beim unbeweglichen Werk mit Vorbehalt Art. 368 Abs. 3 OR (keine Annahmeverweigerung bei nicht ohne unverhältnismässige Nachteile entfernbaren Bauten) und Hinweis Art. 368 Abs. 2bis OR.",
      "norm": "Art. 368 OR"
     },
     {
@@ -16525,7 +16525,7 @@
   "warnungen": [],
   "hinweise": [
    "UNBEWEGLICHES WERK: Die Frist für die Mängelrüge beträgt 60 Tage; die Vereinbarung einer kürzeren Frist ist unwirksam (Art. 367 Abs. 1bis OR). Die Mängelansprüche verjähren in fünf Jahren nach der Abnahme (Art. 371 Abs. 2 OR).",
-   "RÜGEOBLIEGENHEIT: Unterlässt der Besteller die Prüfung und Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 OR); verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen (Art. 370 Abs. 3 OR). Die Fristen rechnet der Gewährleistungs-Rechner exakt aus.",
+   "RÜGEOBLIEGENHEIT: Unterlässt der Besteller die Prüfung und Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 OR); Mängel, die bei der Abnahme und ordnungsmässigen Prüfung nicht erkennbar waren, sind innert 60 Tagen nach ihrer Entdeckung anzuzeigen; die Vereinbarung kürzerer Fristen ist unwirksam (Art. 370 Abs. 4 OR). Die Fristen rechnet der Gewährleistungs-Rechner exakt aus.",
    "RÜCKTRITTSRECHT DES BESTELLERS: Solange das Werk unvollendet ist, kann der Besteller jederzeit vom Vertrag zurücktreten, schuldet dann aber die Vergütung der geleisteten Arbeit und die volle Schadloshaltung des Unternehmers (Art. 377 OR)."
   ]
  },
@@ -16624,12 +16624,12 @@
     },
     {
      "bausteinId": "WV05_abnahme",
-     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk).",
+     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist- und Verdeckte-Mängel-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk und bei bauwerkskausalen Mängeln eines beweglichen Werks, Art. 367 Abs. 1bis / 370 Abs. 4 OR; sonst «sofort», Art. 370 Abs. 3 OR).",
      "norm": "Art. 367 OR"
     },
     {
      "bausteinId": "WV06_maengelrechte",
-     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten.",
+     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten; beim unbeweglichen Werk mit Vorbehalt Art. 368 Abs. 3 OR (keine Annahmeverweigerung bei nicht ohne unverhältnismässige Nachteile entfernbaren Bauten) und Hinweis Art. 368 Abs. 2bis OR.",
      "norm": "Art. 368 OR"
     },
     {
@@ -16685,12 +16685,12 @@
      {
       "bausteinId": "WV05_abnahme",
       "ueberschrift": "Abnahme und Mängelrüge",
-      "text": "4. Nach Ablieferung prüft der Besteller das Werk, sobald es nach dem üblichen Geschäftsgang tunlich ist, und zeigt dem Unternehmer Mängel an (Art. 367 Abs. 1 OR). Bei diesem unbeweglichen Werk beträgt die Frist für die Mängelrüge 60 Tage; die Vereinbarung einer kürzeren Frist ist unwirksam (Art. 367 Abs. 1bis OR). Verdeckte Mängel sind sofort nach ihrer Entdeckung anzuzeigen; unterlässt der Besteller die Prüfung und Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 und 3 OR). Über die Abnahme erstellen die Parteien ein gemeinsames Protokoll."
+      "text": "4. Nach Ablieferung prüft der Besteller das Werk, sobald es nach dem üblichen Geschäftsgang tunlich ist, und zeigt dem Unternehmer Mängel an (Art. 367 Abs. 1 OR). Bei diesem unbeweglichen Werk beträgt die Frist für die Mängelrüge 60 Tage; die Vereinbarung einer kürzeren Frist ist unwirksam (Art. 367 Abs. 1bis OR). Mängel, die bei der Abnahme und ordnungsmässigen Prüfung nicht erkennbar waren (verdeckte Mängel), sind innert 60 Tagen nach ihrer Entdeckung anzuzeigen; die Vereinbarung kürzerer Fristen ist unwirksam (Art. 370 Abs. 4 OR). Unterlässt der Besteller die Prüfung oder die rechtzeitige Anzeige, gilt das Werk als genehmigt (Art. 370 Abs. 2 und 3 OR). Über die Abnahme erstellen die Parteien ein gemeinsames Protokoll."
      },
      {
       "bausteinId": "WV06_maengelrechte",
       "ueberschrift": "Mängelrechte",
-      "text": "5. Bei mangelhaftem Werk stehen dem Besteller die gesetzlichen Mängelrechte zu: Verweigerung der Annahme bei Unbrauchbarkeit, Minderung des Lohnes oder unentgeltliche Nachbesserung, soweit diese dem Unternehmer keine übermässigen Kosten verursacht, sowie Schadenersatz bei Verschulden (Art. 368 OR)."
+      "text": "5. Bei mangelhaftem Werk stehen dem Besteller die gesetzlichen Mängelrechte zu: Verweigerung der Annahme bei Unbrauchbarkeit, Minderung des Lohnes oder unentgeltliche Nachbesserung, soweit diese dem Unternehmer keine übermässigen Kosten verursacht, sowie Schadenersatz bei Verschulden (Art. 368 OR). Bei Werken, die auf dem Grund und Boden des Bestellers errichtet sind und ihrer Natur nach nur mit unverhältnismässigen Nachteilen entfernt werden können, entfällt das Recht, die Annahme zu verweigern; dem Besteller stehen dann nur Minderung, unentgeltliche Nachbesserung und Schadenersatz zu (Art. 368 Abs. 3 OR). Eine zum Voraus getroffene Abrede, die den Anspruch auf unentgeltliche Nachbesserung bei einem Mangel an einer Baute einschränkt oder ausschliesst, ist ungültig (Art. 368 Abs. 2bis OR)."
      },
      {
       "bausteinId": "WV07_verjaehrung",
@@ -16764,12 +16764,12 @@
     },
     {
      "bausteinId": "WV05_abnahme",
-     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk).",
+     "begruendung": "Prüf- und Rügeobliegenheit (Art. 367/370 OR); Rügefrist- und Verdeckte-Mängel-Satz je Werkart (60 Tage zwingend beim unbeweglichen Werk und bei bauwerkskausalen Mängeln eines beweglichen Werks, Art. 367 Abs. 1bis / 370 Abs. 4 OR; sonst «sofort», Art. 370 Abs. 3 OR).",
      "norm": "Art. 367 OR"
     },
     {
      "bausteinId": "WV06_maengelrechte",
-     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten.",
+     "begruendung": "Mängelrechte nach Art. 368 OR – immer enthalten; beim unbeweglichen Werk mit Vorbehalt Art. 368 Abs. 3 OR (keine Annahmeverweigerung bei nicht ohne unverhältnismässige Nachteile entfernbaren Bauten) und Hinweis Art. 368 Abs. 2bis OR.",
      "norm": "Art. 368 OR"
     },
     {

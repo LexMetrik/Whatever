@@ -20,7 +20,8 @@
    "leser-v3-treffer-reihenfolge.e2e.ts",
    "materialien-m5-verzahnung.e2e.ts",
    "vorlagen-pruefschritt-d5.e2e.ts",
-   "a11y.e2e.ts"
+   "a11y.e2e.ts",
+   "werkzeugkopf-intro-mobil.e2e.ts"
   ],
   "2": [
    "bild-block-items.e2e.ts",
@@ -67,7 +68,8 @@
    "materialien-m3-edoeb.e2e.ts",
    "norm-sprung.e2e.ts",
    "rechtsprechung.e2e.ts",
-   "startseite-blatt.e2e.ts"
+   "startseite-blatt.e2e.ts",
+   "druck-dunkel-dk09.e2e.ts"
   ],
   "4": [
    "gesetze-ux-g3a.e2e.ts",
@@ -115,7 +117,8 @@
    "leser-einzelmodus.e2e.ts",
    "w229-w1f-blatt-artikel.e2e.ts",
    "w229-w1f-blatt-folgt.e2e.ts",
-   "w229-w1f-blatt-scroll.e2e.ts"
+   "w229-w1f-blatt-scroll.e2e.ts",
+   "kontrast-fristmarker.e2e.ts"
   ],
   "6": [
    "d36-einstellungen-fuss.e2e.ts",
@@ -181,7 +184,8 @@
    "w224-d35-f3-vermerke.e2e.ts",
    "w224-d37-seitenleiste-gruppen.e2e.ts",
    "expect-vorwarten.e2e.ts",
-   "w229-blatt-runde2.e2e.ts"
+   "w229-blatt-runde2.e2e.ts",
+   "gesetze-wahl-kopf-reserve.e2e.ts"
   ]
  }
 }

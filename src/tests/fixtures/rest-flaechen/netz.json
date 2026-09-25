@@ -1,0 +1,4900 @@
+{
+ "_meta": {
+  "zweck": "Eingefrorene Fetch-Antworten der Flächen-Ratsche REST (S0) — URL → JSON-Körper; null = 404.",
+  "quelle": "public/ auf Commit 8f13be7d2",
+  "extrahiertAm": "2026-09-25",
+  "auswahl": {
+   "entscheide": [
+    "bge_149_IV_213",
+    "bger_12T_3_2025",
+    "bs_appellationsgericht_BEZ.2024.66"
+   ],
+   "material": "BOTSCHAFT-1999-1_4983_4601_4303",
+   "materialienZahl": 23,
+   "deckungErlasse": [
+    "ADOV",
+    "AHVG",
+    "AHVV",
+    "AIG",
+    "AKKBV",
+    "APOSTILLE",
+    "ARG",
+    "CHEMRRV"
+   ]
+  }
+ },
+ "antworten": {
+  "/rechtsprechung/register.json": {
+   "erzeugt": "2026-09-23",
+   "entscheide": [
+    {
+     "key": "bge_149_IV_213",
+     "gericht": "bge",
+     "gerichtName": "Bundesgericht",
+     "gerichtstyp": "bundesgericht",
+     "kanton": "CH",
+     "nummer": "149 IV 213",
+     "bgeReferenz": "149 IV 213",
+     "datum": "2023-04-06",
+     "zitierung": "BGE 149 IV 213",
+     "leitcharakter": "leitentscheid",
+     "regesteVorhanden": true,
+     "regesteKurz": "Art. 81 Abs. 1 BGG; Beschwerderecht im Ausstandsverfahren. Der Richter oder die Richterin kann den Entscheid, mit dem ein gegen ihn bzw. sie eingereichtes Ablehnungsbegehren gutgeheissen wurde, nicht mit Beschwerde in Strafsachen anfechten…",
+     "sachgebiet": "prozess",
+     "sprache": "de",
+     "normKeys": [
+      "BGG",
+      "BV",
+      "STPO",
+      "VWVG",
+      "ZGB"
+     ],
+     "bestand": "snapshot",
+     "kuratierung": "maschinell",
+     "datei": "bund/bge/149_IV_213.json",
+     "quelle": "opencaselaw",
+     "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=highlight_simple_query&page=13&from_date=&to_date=&from_year=2023&to_year=2023&sort=relevance&insertion_date=&from_date_push=&top_subcollection_clir=bge&query_words=&part=all&de_fr=&de_it=&fr_de=&fr_it=&it_de=&it_fr=&orig=&translation=&rank=130&highlight_docid=atf%3A%2F%2F149-IV-213%3Ade&number_of_ranks=189&azaclir=clir",
+     "fassungsToken": "c24520aa6a5a9db26a773ef648ac018edd4bb3e5e88a9c67fa072609df38cc77",
+     "richter": [
+      {
+       "s": "kneubuhler",
+       "r": "vorsitz"
+      },
+      {
+       "s": "haag",
+       "r": "mitglied"
+      },
+      {
+       "s": "muller",
+       "r": "mitglied"
+      },
+      {
+       "s": "merz",
+       "r": "mitglied"
+      },
+      {
+       "s": "kolz",
+       "r": "mitglied"
+      },
+      {
+       "s": "dold",
+       "r": "gerichtsschreiber"
+      }
+     ]
+    },
+    {
+     "key": "bger_12T_3_2025",
+     "gericht": "bger",
+     "gerichtName": "Bundesgericht",
+     "gerichtstyp": "bundesgericht",
+     "kanton": "CH",
+     "nummer": "12T_3/2025",
+     "bgeReferenz": null,
+     "datum": "2026-06-15",
+     "zitierung": "BGer 12T_3/2025 vom 15. Juni 2026",
+     "leitcharakter": "routine",
+     "regesteVorhanden": false,
+     "regesteKurz": null,
+     "sachgebiet": "oeffentlich",
+     "sprache": "de",
+     "normKeys": [
+      "ASYLG",
+      "BGG",
+      "VGG",
+      "VWVG"
+     ],
+     "bestand": "snapshot",
+     "kuratierung": "maschinell",
+     "datei": "bund/bger/12T_3_2025.json",
+     "quelle": "opencaselaw",
+     "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://15-06-2026-12T_3-2025&lang=de&type=show_document",
+     "fassungsToken": "fcf298092e572c35960df03344dc3ac39b939b584f431e3ef2f5b1051ae98623"
+    },
+    {
+     "key": "bs_appellationsgericht_BEZ.2024.66",
+     "gericht": "bs_appellationsgericht",
+     "gerichtName": "Appellationsgericht BS",
+     "gerichtstyp": "kantonal",
+     "kanton": "BS",
+     "nummer": "BEZ.2024.66",
+     "bgeReferenz": null,
+     "datum": "2024-11-28",
+     "zitierung": "Appellationsgericht BS BEZ.2024.66 vom 28.11.2024",
+     "leitcharakter": "routine",
+     "regesteVorhanden": false,
+     "regesteKurz": "Betreibung",
+     "sachgebiet": "privat",
+     "sprache": "de",
+     "normKeys": [
+      "BGG",
+      "SCHKG",
+      "ZPO"
+     ],
+     "bestand": "snapshot",
+     "kuratierung": "maschinell",
+     "datei": "kanton/BS/bs_appellationsgericht/BEZ.2024.66.json",
+     "quelle": "gerichte-bs",
+     "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77701&Template=search_result_document.html",
+     "fassungsToken": "2025-08-14",
+     "richter": [
+      {
+       "s": "steiner-olivier",
+       "r": "vorsitz"
+      },
+      {
+       "s": "obrecht-liliane",
+       "r": "gerichtsschreiber"
+      }
+     ]
+    }
+   ]
+  },
+  "/rechtsprechung/bund/bge/149_IV_213.json": {
+   "erzeugt": "2026-07-17",
+   "eintraege": [
+    {
+     "id": "bund/bge/149_IV_213",
+     "gericht": "bge",
+     "gerichtName": "Bundesgericht",
+     "gerichtstyp": "bundesgericht",
+     "kanton": "CH",
+     "abteilung": "IV",
+     "nummer": "149 IV 213",
+     "bgeReferenz": "149 IV 213",
+     "zitierung": "BGE 149 IV 213",
+     "datum": "2023-04-06",
+     "sprache": "de",
+     "leitcharakter": "leitentscheid",
+     "sachgebiet": "prozess",
+     "legalArea": "civil",
+     "rubrum": {
+      "besetzung": "Bundesrichter Kneubühler, Präsident, Bundesrichter Haag, Müller, Merz, Kölz, Gerichtsschreiber Dold",
+      "parteien": "Roger Harris, c/o Bezirksgericht Zürich, 10. Abteilung, Einzelgericht, Postfach, 8036 Zürich, vertreten durch Rechtsanwälte Dr. Thomas Sprenger und/oder Dr. Marc Engler, Beschwerdeführer, gegen Staatsanwaltschaft Zürich-Sihl, Stauffacherstrasse 55, Postfach, 8036 Zürich",
+      "gegenstand": "Strafverfahren; Ausstand, Beschwerden gegen die Beschlüsse des Obergerichts des Kantons Zürich, III. Strafkammer, vom 14. November 2022 (UA220042-O/U/AEP)",
+      "vorinstanz": null
+     },
+     "regeste": {
+      "text": "Art. 81 Abs. 1 BGG; Beschwerderecht im Ausstandsverfahren. Der Richter oder die Richterin kann den Entscheid, mit dem ein gegen ihn bzw. sie eingereichtes Ablehnungsbegehren gutgeheissen wurde, nicht mit Beschwerde in Strafsachen anfechten (E. 2).\nRegeste\n Art. 81 al. 1 LTF; droit de recours dans la procédure de récusation. Le (ou la) juge ne peut pas attaquer par un recours en matière pénale la décision par laquelle une demande de récusation déposée contre lui (elle) a été acceptée (consid. 2).\nRegesto\n Art. 81 cpv. 1 LTF; diritto di ricorso nella procedura di ricusazione. Il o la giudice non può impugnare con un ricorso in materia penale la decisione con la quale è stata accolta una domanda di ricusazione presentata nei suoi confronti (consid. 2).",
+      "quelle": "opencaselaw",
+      "sprachfassungen": [
+       {
+        "sprache": "de",
+        "kopf": "Art. 81 Abs. 1 BGG; Beschwerderecht im Ausstandsverfahren.",
+        "absaetze": [
+         "Der Richter oder die Richterin kann den Entscheid, mit dem ein gegen ihn bzw. sie eingereichtes Ablehnungsbegehren gutgeheissen wurde, nicht mit Beschwerde in Strafsachen anfechten (E. 2)."
+        ],
+        "quelleUrl": "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-IV-213%3Ade&lang=de&type=show_document"
+       },
+       {
+        "sprache": "fr",
+        "kopf": "Art. 81 al. 1 LTF; droit de recours dans la procédure de récusation.",
+        "absaetze": [
+         "Le (ou la) juge ne peut pas attaquer par un recours en matière pénale la décision par laquelle une demande de récusation déposée contre lui (elle) a été acceptée (consid. 2)."
+        ],
+        "quelleUrl": "https://www.bger.ch/ext/eurospider/live/fr/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-IV-213%3Afr&lang=fr&type=show_document"
+       },
+       {
+        "sprache": "it",
+        "kopf": "Art. 81 cpv. 1 LTF; diritto di ricorso nella procedura di ricusazione.",
+        "absaetze": [
+         "Il o la giudice non può impugnare con un ricorso in materia penale la decisione con la quale è stata accolta una domanda di ricusazione presentata nei suoi confronti (consid. 2)."
+        ],
+        "quelleUrl": "https://www.bger.ch/ext/eurospider/live/it/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-IV-213%3Ait&lang=it&type=show_document"
+       }
+      ]
+     },
+     "regesteAmtlich": true,
+     "abschnitte": [
+      {
+       "typ": "sachverhalt",
+       "vollstaendig": true,
+       "bloecke": [
+        {
+         "marke": "A.",
+         "tiefe": 1,
+         "text": "Die Staatsanwaltschaft Zürich-Sihl führt gegen A.________ und B.________ ein Strafverfahren wegen Nötigung im Zusammenhang mit der Teilnahme an einer Aktion der Organisation \"C.________\". Nachdem die beiden Beschuldigten Einsprache gegen die sie betreffenden Strafbefehle eingelegt hatten, erhob die Staatsanwaltschaft Anklage beim Bezirksgericht Zürich. Mit Verfügung vom 26. Juli 2022 (im Verfahren von A.________) bzw. vom 21. September 2022 (im Verfahren von B.________) wurde die Hauptverhandlung angesetzt und angekündigt, dass Vizepräsident Roger Harris der zuständige Einzelrichter sei. Am 29. September 2022 stellte die Staatsanwaltschaft Zürich beim Obergericht des Kantons Zürich in beiden Verfahren ein Ausstandsgesuch. Sie machte geltend, Vizepräsident Harris habe in einem parallel laufenden Verfahren mit einem mehr oder weniger identischen Tatvorwurf die beschuldigte Person freigesprochen und an der Hauptverhandlung mit seinen Äusserungen den Eindruck erweckt, er werde in künftigen Fällen ohne Rücksicht auf die Umstände des Einzelfalls gleich entscheiden. Mit zwei im Wesentlichen identischen Beschlüssen vom 14. November 2022 hiess das Obergericht die Ausstandsgesuche gut."
+        },
+        {
+         "marke": "B.",
+         "tiefe": 1,
+         "text": "Mit zwei - ebenfalls im Wesentlichen identischen - Beschwerden in Strafsachen vom 22. Dezember 2022 beantragt Roger Harris dem Bundesgericht, die Beschlüsse des Obergerichts seien aufzuheben und es sei festzustellen, dass er nicht befangen sei. Eventualiter sei die Sache zur neuen Beurteilung an die Vorinstanz zurückzuweisen. Die Staatsanwaltschaft beantragt, auf die Beschwerden nicht einzutreten, und eventualiter, sie abzuweisen. Das Obergericht hat auf eine Stellungnahme verzichtet."
+        }
+       ]
+      },
+      {
+       "typ": "erwaegung",
+       "bloecke": [
+        {
+         "marke": "E. 1",
+         "tiefe": 1,
+         "text": "Die beiden im Wesentlichen gleichlautenden Beschwerden richten sich gegen zwei praktisch identische Entscheide des Obergerichts. Sie hängen inhaltlich eng zusammen. Es rechtfertigt sich deshalb, die Verfahren in sinngemässer Anwendung von Art. 24 BZP (in Verbindung mit Art. 71 BGG) zusammenzufassen und durch ein einziges Urteil zu erledigen (Urteil 1C_679/2021 vom 23. September 2022 E. 1 mit Hinweis)."
+        },
+        {
+         "marke": "E. 2",
+         "tiefe": 1,
+         "text": "Die angefochtenen Entscheide stellen selbstständig eröffnete Zwischenentscheide über Ausstandsbegehren dar. Dagegen steht die Beschwerde in Strafsachen zur Verfügung (Art. 78 Abs. 1 und Art. 92 BGG). Das Obergericht hat nach Art. 59 Abs. 1 lit. b i.V.m. Art. 380 StPO als einzige kantonale Instanz entschieden. Die Beschwerde ist somit gemäss Art. 80 BGG zulässig.\n\nGemäss Art. 81 Abs. 1 BGG ist zur Erhebung einer Beschwerde in Strafsachen berechtigt, wer vor der Vorinstanz am Verfahren teilgenommen oder keine Möglichkeit zur Teilnahme erhalten hat (lit. a) und ein rechtlich geschütztes Interesse an der Aufhebung oder Änderung des angefochtenen Entscheids hat (lit. b).\n\nIn Art. 81 Abs. 1 lit. b BGG werden in einer nicht abschliessenden Aufzählung unter anderem die beschuldigte Person (Ziff. 1) und die Staatsanwaltschaft genannt (Ziff. 3); die von einem Ausstandsentscheid betroffene Gerichtsperson wird dagegen nicht aufgeführt. Die Bestimmung ist als \"Generalklausel mit Regelbeispielen\" konzipiert. Dies bedeutet zum einen, dass die Aufzählung, wie bereits erwähnt, nicht abschliessend ist. Zum andern hat aber auch nicht in jedem Fall ein rechtlich geschütztes Interesse an der Aufhebung oder Änderung eines Entscheids in einer Strafsache, wer in der Aufzählung ausdrücklich genannt ist. Mit anderen Worten verleiht die Bestimmung von Art. 81 Abs. 1 lit. b BGG nicht selbst das rechtlich geschützte Interesse, welches sie voraussetzt (BGE 139 IV 121 E. 4.2 mit Hinweisen und Beispielen).\n\nAus der Beschwerdeschrift geht hervor, dass sich der Beschwerdeführer zum einen als Privatperson zur Beschwerde legitimiert betrachtet, weil er durch die Feststellungen des Obergerichts in seiner beruflichen Ehre und damit in seiner Persönlichkeit verletzt werde (Art. 28 ZGB). Die an ihm geäusserte Kritik könne sich negativ auf seine Mitarbeiterbeurteilung, die Lohnentwicklung und seine Beförderungschancen auswirken. Zum andern macht er geltend, er erfülle nach der Auffassung des Obergerichts den Anspruch auf den gesetzlichen Richter nicht, weshalb er als betroffener Richter ein rechtlich geschütztes Interesse an der Aufhebung oder Änderung des angefochtenen Entscheids habe.\n\nEntgegen der Auffassung des Beschwerdeführers betrifft ihn der Entscheid, die gegen ihn gerichteten Ausstandsgesuche gutzuheissen, einzig in seiner amtlichen Eigenschaft (vgl. BGE 107 Ia 266). Eine Disziplinarmassnahme oder eine andere Anordnung, die ihn in seiner privaten Rechtssphäre treffen würde, wurde nicht erlassen. Der Hinweis, dass künftig derartige Anordnungen (bspw. eine lohnwirksame Massnahme) erfolgen könnten, geht deshalb an der Sache vorbei bzw. über den Streitgegenstand hinaus. Bloss theoretisch mögliche, künftige Auswirkungen vermögen kein schutzwürdiges Interesse zu begründen. Der Streitgegenstand umfasst einzig die Ausstandsfrage, selbst wenn die Behauptung des Beschwerdeführers, dass einzelne Feststellungen in der Entscheidbegründung sein Persönlichkeitsrecht tangieren, zutreffen würde.\n\nZur Beschwerdebefugnis des Richters in seiner amtlichen Eigenschaft hat das Bundesgericht im soeben zitierten BGE 107 Ia 266 dargelegt, dass ein Richter gegen die Gutheissung eines gegen ihn eingereichten Ablehnungsbegehrens ebensowenig zur Beschwerde befugt sei wie gegen die Aufhebung eines von ihm erlassenen Entscheids durch die Rechtsmittelinstanz (a.a.O., S. 269). An dieser Rechtsprechung, die unter der Geltung des Bundesrechtspflegegesetzes vom 16. Dezember 1943 (BS 3 531) zur staatsrechtlichen Beschwerde erging, ist auch nach dem Inkrafttreten des Bundesgerichtsgesetzes (BGG) vom 17. Juni 2005 festzuhalten (vgl. zum Beschwerderecht nach Art. 81 BGG auch BGE 133 IV 121 E. 1.2). Ein Richter oder eine Richterin hat keinen eigenen Anspruch, an einem bestimmten Verfahren mitzuwirken (BENJAMIN SCHINDLER, Die Befangenheit der Verwaltung, 2002, S. 206; BREITENMOSER/SPORI FEDAIL, in: Praxiskommentar Verwaltungsverfahrensgesetz, 2. Aufl. 2016, N. 119 zu Art. 10 VwVG; GEROLD STEINMANN, in: St. Galler Kommentar, Die Schweizerische Bundesverfassung, 3. Aufl. 2014, N. 29 zu Art. 30 BV)."
+        },
+        {
+         "marke": "E. 3",
+         "tiefe": 1,
+         "text": "Auf die Beschwerden ist aus diesem Grund nicht einzutreten.\n\nBei diesem Ausgang des Verfahrens sind die Gerichtskosten dem Beschwerdeführer aufzuerlegen (Art. 66 Abs. 1 BGG). Es ist keine Parteientschädigung zuzusprechen (Art. 68 Abs. 2 BGG)."
+        }
+       ]
+      },
+      {
+       "typ": "dispositiv",
+       "bloecke": [
+        {
+         "marke": "1.",
+         "text": "Die Verfahren 1B_643/2022 und 1B_645/2022 werden vereinigt."
+        },
+        {
+         "marke": "2.",
+         "text": "Auf die Beschwerden wird nicht eingetreten."
+        },
+        {
+         "marke": "3.",
+         "text": "Die Gerichtskosten von Fr. 2'000.-- werden dem Beschwerdeführer auferlegt."
+        },
+        {
+         "marke": "4.",
+         "text": "Dieses Urteil wird dem Beschwerdeführer, der Staatsanwaltschaft Zürich-Sihl und dem Obergericht des Kantons Zürich, III. Strafkammer, schriftlich mitgeteilt."
+        },
+        {
+         "marke": null,
+         "text": "Lausanne, 6. April 2023\n\nIm Namen der I. öffentlich-rechtlichen Abteilung\n\ndes Schweizerischen Bundesgerichts\n\nDer Präsident: Kneubühler\n\nDer Gerichtsschreiber: Dold"
+        }
+       ]
+      }
+     ],
+     "dispositivOrders": [
+      "Die Verfahren 1B_643/2022 und 1B_645/2022 werden vereinigt.",
+      "Auf die Beschwerden wird nicht eingetreten.",
+      "Die Gerichtskosten von Fr. 2'000.-- werden dem Beschwerdeführer auferlegt.",
+      "Dieses Urteil wird dem Beschwerdeführer, der Staatsanwaltschaft Zürich-Sihl und dem Obergericht des Kantons Zürich, III. Strafkammer, schriftlich mitgeteilt."
+     ],
+     "zitierteNormen": [
+      "Art. 10 VWVG",
+      "Art. 28 ZGB",
+      "Art. 30 BV",
+      "Art. 380 STPO",
+      "Art. 80 BGG",
+      "Art. 81 Abs. 1 BGG",
+      "Art. 81 Abs. 1 LTF",
+      "Art. 81 BGG"
+     ],
+     "normKeys": [
+      "BGG",
+      "BV",
+      "STPO",
+      "VWVG",
+      "ZGB"
+     ],
+     "zitierteEntscheide": [
+      "1B_643/2022",
+      "1B_645/2022",
+      "1C_679/2021",
+      "BGE 133 IV 121",
+      "BGE 139 IV 121"
+     ],
+     "bestand": "snapshot",
+     "kuratierung": "maschinell",
+     "quelle": "opencaselaw",
+     "quelleUrl": "https://search.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?lang=de&type=highlight_simple_query&page=13&from_date=&to_date=&from_year=2023&to_year=2023&sort=relevance&insertion_date=&from_date_push=&top_subcollection_clir=bge&query_words=&part=all&de_fr=&de_it=&fr_de=&fr_it=&it_de=&it_fr=&orig=&translation=&rank=130&highlight_docid=atf%3A%2F%2F149-IV-213%3Ade&number_of_ranks=189&azaclir=clir",
+     "abgerufen": "2026-07-17",
+     "fassungsToken": "c24520aa6a5a9db26a773ef648ac018edd4bb3e5e88a9c67fa072609df38cc77",
+     "sha": "4097ecda544edf8b9ad8b215e304d99b22c81b97e7bba6da8a54c5fc4f5546c9",
+     "auszugAbschnitte": [
+      {
+       "typ": "erwaegung",
+       "bloecke": [
+        {
+         "marke": "E. 2",
+         "tiefe": 1,
+         "text": "Die angefochtenen Entscheide stellen selbstständig eröffnete Zwischenentscheide über Ausstandsbegehren dar. Dagegen steht die Beschwerde in Strafsachen zur Verfügung (Art. 78 Abs. 1 und Art. 92 BGG). Das Obergericht hat nach Art. 59 Abs. 1 lit. b i.V.m. Art. 380 StPO als einzige kantonale Instanz entschieden. Die Beschwerde ist somit gemäss Art. 80 BGG zulässig. Gemäss Art. 81 Abs. 1 BGG ist zur Erhebung einer Beschwerde in Strafsachen berechtigt, wer vor der Vorinstanz am Verfahren teilgenommen oder keine Möglichkeit zur Teilnahme erhalten hat (lit. a) und ein rechtlich geschütztes Interesse an der Aufhebung oder Änderung des angefochtenen Entscheids hat (lit. b). BGE 149 IV 213 S. 215 In Art. 81 Abs. 1 lit. b BGG werden in einer nicht abschliessenden Aufzählung unter anderem die beschuldigte Person (Ziff. 1) und die Staatsanwaltschaft genannt (Ziff. 3); die von einem Ausstandsentscheid betroffene Gerichtsperson wird dagegen nicht aufgeführt. Die Bestimmung ist als \"Generalklausel mit Regelbeispielen\" konzipiert. Dies bedeutet zum einen, dass die Aufzählung, wie bereits erwähnt, nicht abschliessend ist. Zum andern hat aber auch nicht in jedem Fall ein rechtlich geschütztes Interesse an der Aufhebung oder Änderung eines Entscheids in einer Strafsache, wer in der Aufzählung ausdrücklich genannt ist. Mit anderen Worten verleiht die Bestimmung von Art. 81 Abs. 1 lit. b BGG nicht selbst das rechtlich geschützte Interesse, welches sie voraussetzt (BGE 139 IV 121 E. 4.2 mit Hinweisen und Beispielen). Aus der Beschwerdeschrift geht hervor, dass sich der Beschwerdeführer zum einen als Privatperson zur Beschwerde legitimiert betrachtet, weil er durch die Feststellungen des Obergerichts in seiner beruflichen Ehre und damit in seiner Persönlichkeit verletzt werde (Art. 28 ZGB). Die an ihm geäusserte Kritik könne sich negativ auf seine Mitarbeiterbeurteilung, die Lohnentwicklung und seine Beförderungschancen auswirken. Zum andern macht er geltend, er erfülle nach der Auffassung des Obergerichts den Anspruch auf den gesetzlichen Richter nicht, weshalb er als betroffener Richter ein rechtlich geschütztes Interesse an der Aufhebung oder Änderung des angefochtenen Entscheids habe. Entgegen der Auffassung des Beschwerdeführers betrifft ihn der Entscheid, die gegen ihn gerichteten Ausstandsgesuche gutzuheissen, einzig in seiner amtlichen Eigenschaft (vgl. BGE 107 Ia 266). Eine Disziplinarmassnahme oder eine andere Anordnung, die ihn in seiner privaten Rechtssphäre treffen würde, wurde nicht erlassen. Der Hinweis, dass künftig derartige Anordnungen (z.B. eine lohnwirksame Massnahme) erfolgen könnten, geht deshalb an der Sache vorbei bzw. über den Streitgegenstand hinaus. Bloss theoretisch mögliche, künftige Auswirkungen vermögen kein schutzwürdiges Interesse zu begründen. Der Streitgegenstand umfasst einzig die Ausstandsfrage, selbst wenn die Behauptung des Beschwerdeführers, dass einzelne Feststellungen in der Entscheidbegründung sein Persönlichkeitsrecht tangieren, zutreffen würde. Zur Beschwerdebefugnis des Richters in seiner amtlichen Eigenschaft hat das Bundesgericht im soeben zitierten BGE 107 Ia 266 dargelegt, BGE 149 IV 213 S. 216 dass ein Richter gegen die Gutheissung eines gegen ihn eingereichten Ablehnungsbegehrens ebensowenig zur Beschwerde befugt sei wie gegen die Aufhebung eines von ihm erlassenen Entscheids durch die Rechtsmittelinstanz (BGE 107 Ia 266 S. 269). An dieser Rechtsprechung, die unter der Geltung des Bundesrechtspflegegesetzes vom 16. Dezember 1943 (BS 3 531) zur staatsrechtlichen Beschwerde erging, ist auch nach dem Inkrafttreten des Bundesgerichtsgesetzes vom 17. Juni 2005 (BGG) festzuhalten (vgl. zum Beschwerderecht nach Art. 81 BGG auch BGE 133 IV 121 E. 1.2). Ein Richter oder eine Richterin hat keinen eigenen Anspruch, an einem bestimmten Verfahren mitzuwirken (BENJAMIN SCHINDLER, Die Befangenheit der Verwaltung, 2002, S. 206; BREITENMOSER/SPORI FEDAIL, in: Praxiskommentar Verwaltungsverfahrensgesetz [VwVG], 2. Aufl. 2016, N. 119 zu Art. 10 VwVG; GEROLD STEINMANN, in: Die schweizerische Bundesverfassung, St. Galler Kommentar, 3. Aufl. 2014, N. 29 zu Art. 30 BV)."
+        }
+       ]
+      }
+     ],
+     "azaUrteil": {
+      "aktenzeichen": "1B_643/2022",
+      "key": "bger_1B_643_2022",
+      "quelleUrl": "http://relevancy.bger.ch/cgi-bin/JumpCGI?id=06.04.2023_1B_643/2022"
+     },
+     "ecli": "ECLI:CH:BGE:2023:149.IV.213"
+    }
+   ]
+  },
+  "/rechtsprechung/bund/bger/12T_3_2025.json": {
+   "erzeugt": "2026-06-26",
+   "eintraege": [
+    {
+     "id": "bund/bger/12T_3_2025",
+     "gericht": "bger",
+     "gerichtName": "Bundesgericht",
+     "gerichtstyp": "bundesgericht",
+     "kanton": "CH",
+     "abteilung": "Verwaltungskommission",
+     "nummer": "12T_3/2025",
+     "bgeReferenz": null,
+     "zitierung": "BGer 12T_3/2025 vom 15. Juni 2026",
+     "datum": "2026-06-15",
+     "sprache": "de",
+     "leitcharakter": "routine",
+     "sachgebiet": "oeffentlich",
+     "legalArea": null,
+     "rubrum": null,
+     "regeste": null,
+     "regesteAmtlich": false,
+     "abschnitte": [
+      {
+       "typ": "erwaegung",
+       "bloecke": [
+        {
+         "marke": "E. 1.1",
+         "tiefe": 2,
+         "text": "A.A.________ und deren Kinder B.A.________ und C.A.________, reichten am 22. Oktober 2021 Beschwerde beim Bundesverwaltungsgericht ein."
+        },
+        {
+         "marke": "E. 1.2",
+         "tiefe": 2,
+         "text": "Am 7. November 2025 reichte A.A.________ und deren Kinder eine Aufsichtsanzeige bei der Verwaltungskommission des Bundesgerichts ein (in der Beschwerdesache xxx des Bundesverwaltungsgerichts, Asylverfahren). Sie rügen eine zu lange Verfahrensdauer und fordern das Bundesverwaltungsgericht auf, die strukturellen Organisationsmängel zu beheben und schnellstmöglich einen Entscheid zu fällen."
+        },
+        {
+         "marke": "E. 2.1",
+         "tiefe": 2,
+         "text": "Beim vorliegenden Verfahren handelt es sich um eine Aufsichtsanzeige im Sinne von Art. 1 Abs. 2 des Bundesgerichtsgesetzes (BGG; SR 173.110) und Art. 3 lit. f des Aufsichtsreglements des Bundesgerichts (AufRBGer; SR 173.110.132) i.V.m. Art. 71 Abs. 1 des Verwaltungsverfahrensgesetzes (VwVG; SR 172.021). Das Einreichen von Aufsichtseingaben begründet keine Parteirechte (Art. 9 Abs. 2 AufRBGer; Art. 71 Abs. 2 VwVG)."
+        },
+        {
+         "marke": "E. 2.2",
+         "tiefe": 2,
+         "text": "Die Aufsicht des Bundesgerichts über das Bundesverwaltungsgericht ist administrativer Art (vgl. Art. 1 Abs. 2 BGG; Art. 3 Abs. 1 VGG; Art. 1 Abs. 1 AufRBGer); die Rechtsprechung ist gemäss Art. 2 Abs. 2 AufRBGer von der Aufsicht ausgenommen. Das Bundesgericht als administrative Aufsichtsbehörde greift im Falle einer Rechtsverweigerung oder Rechtsverzögerung nur ein, wenn ein strukturelles Problem organisatorischer oder administrativer Natur festgestellt wird (BGE 144 II 486). Die Aufsichtsbeschwerde ist kein Ersatzrechtsmittel für die gesetzlich nicht vorgesehene Beschwerde gegen Urteile des Bundesverwaltungsgerichts in Asylsachen."
+        },
+        {
+         "marke": "E. 3.1",
+         "tiefe": 2,
+         "text": "Ob strukturelle Mängel organisatorischer oder administrativer Natur vorliegen, respektive der Geschäftsgang generell den Anforderungen entspricht, ist zwar anhand der beanstandeten konkreten Fälle zu beleuchten; diese müssen aber klare Anhaltspunkte enthalten, dass es sich nicht um einen Einzelfall, sondern um ein allgemeines Problem handelt (vgl. Entscheide 12T_2/2022 vom 23. Dezember 2022 E. 3.1; 12T_1/2022 vom 26. September 2022 E. 2.1)."
+        },
+        {
+         "marke": "E. 3.2",
+         "tiefe": 2,
+         "text": "Im Asyl- und Ausländerwesen ist über eine grosse Anzahl von Fällen zu entscheiden. Die Beschwerdebehörde hat zwangsläufig gewisse Prioritäten zu setzen. Das Bundesverwaltungsgericht wies jüngst in einer Stellungnahme (12T_4/2023 vom 21. November 2023) darauf hin, dass es in einer Behandlungsstrategie bestimme, welche Beschwerdeverfahren prioritär behandelt würden. Die Abteilungen IV und V würden zu Beginn des Jahres ihre Jahresziele festlegen und berücksichtigten dabei einerseits die gesetzlichen Rechtsmittel- und Behandlungsfristen nach Art. 108 und 109 AsylG und andererseits die Behandlungsstrategie des SEM (Art. 109a AsylG). Der Abbau der Altfälle sei auch ein Ziel des Bundesverwaltungsgerichts und werde regelmässig kontrolliert."
+        },
+        {
+         "marke": "E. 3.3",
+         "tiefe": 2,
+         "text": "Das vorliegende Verfahren hat seit Einreichung der Beschwerde mehr als 4,5 Jahre gedauert. In der Stellungnahme (12T_3/2025) vom 19. Dezember 2025 weist das Bundesverwaltungsgericht darauf hin, dass noch mehrere pendente Fälle älter als 50 Monate sind. Per Stichtag vom 30. November 2025 sind dies 89 Fälle in der Abteilung V und 55 Fälle in der Abteilung IV."
+        },
+        {
+         "marke": "E. 3.4",
+         "tiefe": 2,
+         "text": "Auch wenn das Bundesverwaltungsgericht mit der Behandlungsstrategie verschiedene Massnahmen ergreift bzw. ergriffen hat, zeigt die sehr grosse Anzahl von sehr lange hängigen Fällen, dass strukturelle Mängel vorhanden sind. Diese liegen unter anderem in der ungenügenden Priorisierung der Altfälle und damit in einer letztlich ungenügenden Behandlungsstrategie sowie der unzureichenden Ressourcensteuerung zum Abbau der Pendenzen. Die Schwere einer solchen Verzögerung bei der Erledigung der Fälle wird durch den Umstand verschärft, dass es sich jeweils um ein Asylverfahren handelt, dessen Ausgang für die Betroffenen von massgeblicher Bedeutung ist und daher ohne Verzögerung geklärt werden sollte. Demnach stellt das Bundesgericht fest, dass strukturelle Mängel organisatorischer oder administrativer Natur vorliegen."
+        },
+        {
+         "marke": "E. 3.5",
+         "tiefe": 2,
+         "text": "Das Bundesverwaltungsgericht hat dem Bundesgericht bis zum 15. Juli 2026 die Strategie bzw. das Pendenzenmanagement (inkl. Zeitplan) für den Abbau der Altfälle aufzuzeigen. Von Interesse sind diesbezüglich die organisatorischen und personellen Massnahmen."
+        },
+        {
+         "marke": "E. 4",
+         "tiefe": 1,
+         "text": "Das Aufsichtsverfahren ist - besondere Umstände vorbehalten, die hier nicht vorliegen - kostenlos (Art. 10 der Verordnung über Kosten und Entschädigungen im Verwaltungsverfahren; SR 172.041.0).\n\nDemnach stellt das Schweizerische Bundesgericht fest:"
+        }
+       ]
+      },
+      {
+       "typ": "dispositiv",
+       "bloecke": [
+        {
+         "marke": "1.",
+         "text": "Die lange Verfahrensdauer ist auf strukturelle Mängel organisatorischer oder administrativer Natur zurückzuführen."
+        },
+        {
+         "marke": "2.",
+         "text": "Es werden keine Kosten erhoben."
+        },
+        {
+         "marke": "3.",
+         "text": "Diese Feststellung wird der Verwaltungskommission des Bundesverwaltungsgerichts schriftlich mitgeteilt. Den Anzeigenden wird eine Orientierungskopie zugestellt."
+        },
+        {
+         "marke": null,
+         "text": "Lausanne, 15. Juni 2026\n\nIm Namen der Verwaltungskommission des Schweizerischen Bundesgerichts\n\nDer Präsident: Chaix\n\nDer Gerichtsschreiber: Lüscher"
+        }
+       ]
+      }
+     ],
+     "dispositivOrders": [
+      "Die lange Verfahrensdauer ist auf strukturelle Mängel organisatorischer oder administrativer Natur zurückzuführen.",
+      "Es werden keine Kosten erhoben.",
+      "Diese Feststellung wird der Verwaltungskommission des Bundesverwaltungsgerichts schriftlich mitgeteilt. Den Anzeigenden wird eine Orientierungskopie zugestellt."
+     ],
+     "zitierteNormen": [
+      "Art. 1 Abs. 1 AUFRBGER",
+      "Art. 1 Abs. 2 BGG",
+      "Art. 109a ASYLG",
+      "Art. 2 Abs. 2 AUFRBGER",
+      "Art. 3 Abs. 1 VGG",
+      "Art. 71 Abs. 2 VWVG",
+      "Art. 9 Abs. 2 AUFRBGER"
+     ],
+     "normKeys": [
+      "ASYLG",
+      "BGG",
+      "VGG",
+      "VWVG"
+     ],
+     "zitierteEntscheide": [
+      "BGE 144 II 486"
+     ],
+     "bestand": "snapshot",
+     "kuratierung": "maschinell",
+     "quelle": "opencaselaw",
+     "quelleUrl": "http://relevancy.bger.ch/php/aza/http/index.php?highlight_docid=aza://15-06-2026-12T_3-2025&lang=de&type=show_document",
+     "abgerufen": "2026-06-26",
+     "fassungsToken": "fcf298092e572c35960df03344dc3ac39b939b584f431e3ef2f5b1051ae98623",
+     "sha": "d51db0e0510ac6b773f38610292b89a73928c138eb1cbc99e6d6065cd1b978c9",
+     "ecli": "ECLI:CH:BGER:2026:12T_3.2025"
+    }
+   ]
+  },
+  "/rechtsprechung/kanton/BS/bs_appellationsgericht/BEZ.2024.66.json": {
+   "erzeugt": "2026-07-19",
+   "eintraege": [
+    {
+     "id": "kanton/BS/bs_appellationsgericht/BEZ.2024.66",
+     "gericht": "bs_appellationsgericht",
+     "gerichtName": "Appellationsgericht BS",
+     "gerichtstyp": "kantonal",
+     "kanton": "BS",
+     "abteilung": null,
+     "nummer": "BEZ.2024.66",
+     "bgeReferenz": null,
+     "zitierung": "Appellationsgericht BS BEZ.2024.66 vom 28.11.2024",
+     "datum": "2024-11-28",
+     "sprache": "de",
+     "leitcharakter": "routine",
+     "sachgebiet": "privat",
+     "legalArea": null,
+     "rubrum": {
+      "gegenstand": "Betreibung",
+      "parteien": null,
+      "vorinstanz": null,
+      "besetzung": "Dr. Olivier Steiner und a.o. Gerichtsschreiberin MLaw Liliane Obrecht"
+     },
+     "regeste": null,
+     "regesteAmtlich": false,
+     "abschnitte": [
+      {
+       "typ": "sachverhalt",
+       "bloecke": [
+        {
+         "marke": null,
+         "text": "Am 31. Januar 2024 wurde A____ (Schuldnerin) der Zahlungsbefehl [...] vom 23. Oktober 2023 durch Publikation zugestellt. Dagegen erhob die Schuldnerin am 5. Februar 2024 Beschwerde bei der unteren Aufsichtsbehörde über das Betreibungs- und Konkursamt Basel-Stadt. Mit Entscheid vom 22. Oktober 2024 wies die untere Aufsichtsbehörde die Beschwerde ab, soweit sie darauf eintrat.\n\nGegen diesen Entscheid erhob die Schuldnerin am 6. November 2024 (Datum des Poststempels) Beschwerde bei der oberen Aufsichtsbehörde über das Betreibungs- und Konkursamt Basel-Stadt (nachfolgend obere Aufsichtsbehörde). Der Verfahrensleiter der oberen Aufsichtsbehörde zog die Akten der unteren Aufsichtsbehörde bei und verzichtete auf die Einholung einer Beschwerde­ant­wort. Der vorliegende Entscheid wurde auf dem Zirkulationsweg gefällt."
+        }
+       ]
+      },
+      {
+       "typ": "erwaegung",
+       "bloecke": [
+        {
+         "marke": "E. 1",
+         "tiefe": 1,
+         "text": "Entscheide der unteren Aufsichtsbehörde können innert 10 Tagen nach der Eröffnung an die obere Aufsichtsbehörde weitergezogen werden (Art. 18 Abs. 1 des Bundesgesetzes über Schuldbetreibung und Konkurs [SchKG, SR 281.1]). Als solche amtet grundsätzlich das Dreiergericht des Appellationsgerichts (§ 92 Abs. 1 Ziff. 13 des Gerichtsorganisationsgesetzes [GOG, SG 154.100]). Muss allerdings wegen Säumnis ein Nichteintretensentscheid gefällt werden, ist das Einzelgericht zuständig (§ 44 Abs. 1 GOG). Das Verfahren richtet sich nach Art. 20a SchKG. Im Übrigen gelten die Vorschriften der Schweizerischen Zivilprozessordnung (ZPO, SR 272) sinngemäss (§ 5 Abs. 4 des basel-städtischen Gesetzes betreffend die Einführung des Bundesgesetzes über Schuldbetreibung und Konkurs [EG SchKG, SG 230.100]), insbesondere die Bestimmungen von Art. 319 ff. ZPO über das Beschwerdeverfahren."
+        },
+        {
+         "marke": "E. 2",
+         "tiefe": 1,
+         "text": "Die untere Aufsichtsbehörde hat den vorliegend angefochtenen Entscheid vom 22. Oktober 2024 am 24. Oktober 2024 versandt und die Schuldnerin hat den Entscheid am 25. Oktober 2024 empfangen (Sendungsnachverfolgungsnachweis, bei den Akten der unteren Aufsichtsbehörde). Da die Beschwerdefrist 10 Tage beträgt (vgl. oben E. 1), ist die erst am 6. November 2024 erhobene Beschwerde verspätet."
+        },
+        {
+         "marke": "E. 3",
+         "tiefe": 1,
+         "text": "Auf die Beschwerde kann somit wegen Verspätung nicht eingetreten werden. Das Beschwerdeverfahren ist kostenlos (Art. 20a Abs. 2 Ziff. 5 SchKG)."
+        }
+       ]
+      },
+      {
+       "typ": "dispositiv",
+       "bloecke": [
+        {
+         "marke": null,
+         "text": "Demgemäss erkennt die obere Aufsichtsbehörde:"
+        },
+        {
+         "marke": null,
+         "text": "://:       Auf die Beschwerde gegen den Entscheid der unteren Aufsichtsbehörde über das Betreibungs- und Konkursamt Basel-Stadt vom 22. Oktober 2024 wird nicht eingetreten."
+        },
+        {
+         "marke": null,
+         "text": "Es werden keine Kosten erhoben."
+        },
+        {
+         "marke": null,
+         "text": "Mitteilung an:"
+        },
+        {
+         "marke": null,
+         "text": "-       Beschwerdeführerin"
+        },
+        {
+         "marke": null,
+         "text": "-       Betreibungsamt Basel-Stadt"
+        },
+        {
+         "marke": null,
+         "text": "-       Untere Aufsichtsbehörde über das Betreibungs- und Konkursamt"
+        },
+        {
+         "marke": null,
+         "text": "APPELLATIONSGERICHT BASEL-STADT"
+        },
+        {
+         "marke": null,
+         "text": "Die a.o. Gerichtsschreiberin"
+        },
+        {
+         "marke": null,
+         "text": "MLaw Liliane Obrecht"
+        },
+        {
+         "marke": null,
+         "text": "Rechtsmittelbelehrung"
+        },
+        {
+         "marke": null,
+         "text": "Gegen diesen Entscheid kann unter den Voraussetzungen von Art. 72 ff. des Bundesgerichtsgesetzes (BGG) innert 10 Tagen seit schriftlicher Eröffnung Beschwerde in Zivilsachen erhoben werden. Die Beschwerdeschrift ist fristgerecht dem Bundesgericht (1000 Lausanne 14) einzureichen. Für die Anforderungen an deren Inhalt wird auf Art. 42 BGG verwiesen. Über die Zulässigkeit des Rechtsmittels entscheidet das Bundesgericht."
+        },
+        {
+         "marke": null,
+         "text": "Ob an Stelle der Beschwerde in Zivilsachen ein anderes Rechtsmittel in Frage kommt (z.B. die subsidiäre Verfassungsbeschwerde an das Bundesgericht gemäss Art. 113 BGG), ergibt sich aus den anwendbaren gesetzlichen Bestimmungen. Wird sowohl Beschwerde in Zivilsachen als auch Verfassungsbeschwerde erhoben, sind beide Rechtsmittel in der gleichen Rechtsschrift einzureichen."
+        }
+       ]
+      }
+     ],
+     "dispositivOrders": [
+      "Auf die Beschwerde gegen den Entscheid der unteren Aufsichtsbehörde über das Betreibungs- und Konkursamt Basel-Stadt vom 22. Oktober 2024 wird nicht eingetreten.",
+      "Es werden keine Kosten erhoben."
+     ],
+     "zitierteNormen": [],
+     "normKeys": [
+      "BGG",
+      "SCHKG",
+      "ZPO"
+     ],
+     "zitierteEntscheide": [],
+     "bestand": "snapshot",
+     "kuratierung": "maschinell",
+     "quelle": "gerichte-bs",
+     "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=77701&Template=search_result_document.html",
+     "abgerufen": "2026-07-19",
+     "fassungsToken": "2025-08-14",
+     "sha": "cd73a248e8a6d3267809ec7d0c11b202c98fd1a2484ededd0e1f4c5ba6038495",
+     "erstpublikation": "2025-08-14",
+     "aktualisiert": "2025-08-14",
+     "nummerSekundaer": "AG.2024.669",
+     "ecli": "ECLI:CH:BSA:2024:BEZ.2024.66"
+    }
+   ]
+  },
+  "/verzahnung/artikel-revisionen/ASYLG.json": {
+   "erlass": "ASYLG",
+   "proArtikel": {
+    "3": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "6": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "8": {
+     "iso": "2025-04-01",
+     "as": "AS 2024 189"
+    },
+    "9": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "10": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "12": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "13": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "14": {
+     "iso": "2018-01-01",
+     "as": "AS 2016 1249"
+    },
+    "16": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "17": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "19": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "20": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "21": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "22": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 230"
+    },
+    "23": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 230"
+    },
+    "24": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "25": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "26": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 230"
+    },
+    "27": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "28": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "29": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "30": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "31": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "36": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "37": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "38": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "39": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "40": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "41": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "42": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "43": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "44": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "45": {
+     "iso": "2022-09-01",
+     "as": "AS 2022 459"
+    },
+    "46": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "47": {
+     "iso": "2025-04-01",
+     "as": "AS 2024 189"
+    },
+    "51": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "52": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "53": {
+     "iso": "2016-10-01",
+     "as": "AS 2016 2329"
+    },
+    "59": {
+     "iso": "2016-10-01",
+     "as": "AS 2016 2329"
+    },
+    "60": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "61": {
+     "iso": "2024-06-01",
+     "as": "AS 2024 188"
+    },
+    "63": {
+     "iso": "2020-04-01",
+     "as": "AS 2019 1413"
+    },
+    "64": {
+     "iso": "2016-10-01",
+     "as": "AS 2016 2329"
+    },
+    "65": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "68": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "69": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "71": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "72": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "73": {
+     "iso": "2016-10-01",
+     "as": "AS 2016 2329"
+    },
+    "75": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "76": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "78": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "79": {
+     "iso": "2022-06-01",
+     "as": "AS 2021 565"
+    },
+    "80": {
+     "iso": "2016-10-01",
+     "as": "AS 2016 3101"
+    },
+    "81": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "82": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "83": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "84": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "85": {
+     "iso": "2020-01-01",
+     "as": "AS 2018 5343"
+    },
+    "88": {
+     "iso": "2022-06-01",
+     "as": "AS 2021 565"
+    },
+    "89": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "91": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "92": {
+     "iso": "2015-10-01",
+     "as": "AS 2015 3023"
+    },
+    "93": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "94": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "95": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "96": {
+     "iso": "2025-04-01",
+     "as": "AS 2024 189"
+    },
+    "97": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "98": {
+     "iso": "2023-09-01",
+     "as": "AS 2022 491"
+    },
+    "99": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 231"
+    },
+    "100": {
+     "iso": "2023-09-01",
+     "as": "AS 2022 491"
+    },
+    "101": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "102": {
+     "iso": "2023-09-01",
+     "as": "AS 2022 491"
+    },
+    "103": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "104": {
+     "iso": "2007-01-01",
+     "as": "AS 2006 2197"
+    },
+    "105": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 5599"
+    },
+    "106": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "107": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "108": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 230"
+    },
+    "109": {
+     "iso": "2022-06-01",
+     "as": "AS 2021 565"
+    },
+    "110": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "111": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "112": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "113": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "114": {
+     "iso": "2020-11-01",
+     "as": "AS 2020 3989"
+    },
+    "115": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 6521"
+    },
+    "116": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "117": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 6521"
+    },
+    "118": {
+     "iso": "2008-12-12",
+     "as": "AS 2008 447"
+    },
+    "3235": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "102a": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "102abis": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 231"
+    },
+    "102aquater": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 231"
+    },
+    "102aquinquies": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 231"
+    },
+    "102ater": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 231"
+    },
+    "102b": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "102c": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "102cbis": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 231"
+    },
+    "102d": {
+     "iso": "2022-11-22",
+     "as": "AS 2021 365"
+    },
+    "102e": {
+     "iso": "2023-09-01",
+     "as": "AS 2022 491"
+    },
+    "102ebis": {
+     "iso": "2020-04-01",
+     "as": "AS 2019 1413"
+    },
+    "102f": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "102g": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "102h": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 230"
+    },
+    "102j": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "102k": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "102l": {
+     "iso": "2022-09-01",
+     "as": "AS 2022 459"
+    },
+    "102m": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "107a": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "108a": {
+     "iso": "2011-04-01",
+     "as": "AS 2011 925"
+    },
+    "109a": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "109b": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "110a": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "111a": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "111abis": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "111aquater": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 230"
+    },
+    "111ater": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "111b": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "111c": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "111d": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "112a": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "112b": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "116a": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 6521"
+    },
+    "117a": {
+     "iso": "2008-12-12",
+     "as": "AS 2008 447"
+    },
+    "12a": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "17a": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "17b": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "21a": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 230"
+    },
+    "24a": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "24b": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "24c": {
+     "iso": "2018-01-01",
+     "as": "AS 2016 3101"
+    },
+    "24d": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "24e": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "25a": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "25b": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "25c": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "25d": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "25e": {
+     "iso": "2026-06-01",
+     "as": "AS 2026 192"
+    },
+    "26a": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "26b": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "26c": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "26d": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "29a": {
+     "iso": "2024-01-01",
+     "as": "AS 2022 232"
+    },
+    "29b": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "31a": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "31b": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "35a": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "37a": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "37b": {
+     "iso": "2014-02-01",
+     "as": "AS 2013 4375"
+    },
+    "41a": {
+     "iso": "2011-04-01",
+     "as": "AS 2011 925"
+    },
+    "44a": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "45a": {
+     "iso": "2022-11-22",
+     "as": "AS 2021 365"
+    },
+    "5a": {
+     "iso": "2022-06-01",
+     "as": "AS 2021 565"
+    },
+    "5b": {
+     "iso": "2022-11-22",
+     "as": "AS 2021 365"
+    },
+    "6a": {
+     "iso": "2022-06-01",
+     "as": "AS 2021 565"
+    },
+    "79a": {
+     "iso": "2013-07-01",
+     "as": "AS 2013 1035"
+    },
+    "80a": {
+     "iso": "2016-10-01",
+     "as": "AS 2016 3101"
+    },
+    "82a": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4823"
+    },
+    "83a": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "89a": {
+     "iso": "2022-11-22",
+     "as": "AS 2021 365"
+    },
+    "89b": {
+     "iso": "2022-11-22",
+     "as": "AS 2021 365"
+    },
+    "8a": {
+     "iso": "2025-04-01",
+     "as": "AS 2024 189"
+    },
+    "8b": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "93a": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "93b": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    },
+    "95a": {
+     "iso": "2018-01-01",
+     "as": "AS 2016 3101"
+    },
+    "95b": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4085"
+    },
+    "95e": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4085"
+    },
+    "95f": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4085"
+    },
+    "95g": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4085"
+    },
+    "95k": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4085"
+    },
+    "98a": {
+     "iso": "2008-01-01",
+     "as": "AS 2006 4745"
+    },
+    "98b": {
+     "iso": "2008-12-12",
+     "as": "AS 2008 5407"
+    },
+    "99a": {
+     "iso": "2023-09-01",
+     "as": "AS 2022 491"
+    },
+    "99b": {
+     "iso": "2019-03-01",
+     "as": "AS 2016 3101"
+    }
+   }
+  },
+  "/verzahnung/artikel-revisionen/BGG.json": {
+   "erlass": "BGG",
+   "proArtikel": {
+    "1": {
+     "iso": "2012-01-01",
+     "as": "AS 2010 513"
+    },
+    "11": {
+     "iso": "2011-12-05",
+     "as": "AS 2011 4627"
+    },
+    "17": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 689"
+    },
+    "26": {
+     "iso": "2013-07-01",
+     "as": "AS 2013 1493"
+    },
+    "39": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 4651"
+    },
+    "42": {
+     "iso": "2025-01-01",
+     "as": "AS 2023 491"
+    },
+    "46": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 641"
+    },
+    "48": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 4651"
+    },
+    "60": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 4651"
+    },
+    "70": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 3267"
+    },
+    "72": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "74": {
+     "iso": "2012-01-01",
+     "as": "AS 2010 513"
+    },
+    "75": {
+     "iso": "2012-01-01",
+     "as": "AS 2010 513"
+    },
+    "76": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "77": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4179"
+    },
+    "80": {
+     "iso": "2024-07-01",
+     "as": "AS 2024 27"
+    },
+    "81": {
+     "iso": "2024-01-01",
+     "as": "AS 2023 468"
+    },
+    "83": {
+     "iso": "2026-04-01",
+     "as": "AS 2026 99"
+    },
+    "93": {
+     "iso": "2011-04-01",
+     "as": "AS 2011 925"
+    },
+    "97": {
+     "iso": "2007-01-01",
+     "as": "AS 2006 2003"
+    },
+    "100": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "103": {
+     "iso": "2014-08-01",
+     "as": "AS 2014 2309"
+    },
+    "105": {
+     "iso": "2007-01-01",
+     "as": "AS 2006 2003"
+    },
+    "107": {
+     "iso": "2013-02-01",
+     "as": "AS 2013 231"
+    },
+    "111": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "112": {
+     "iso": "2025-01-01",
+     "as": "AS 2023 491"
+    },
+    "117": {
+     "iso": "2026-04-01",
+     "as": "AS 2026 99"
+    },
+    "120": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 3267"
+    },
+    "122": {
+     "iso": "2022-07-01",
+     "as": "AS 2022 289"
+    },
+    "123": {
+     "iso": "2025-01-01",
+     "as": "AS 2023 491"
+    },
+    "124": {
+     "iso": "2022-01-01",
+     "as": "AS 2022 43"
+    },
+    "128": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1881"
+    },
+    "130": {
+     "iso": "2007-01-01",
+     "as": "AS 2006 4213"
+    },
+    "132": {
+     "iso": "2016-01-01",
+     "as": "AS 2015 3205"
+    },
+    "119a": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4179"
+    },
+    "132a": {
+     "iso": "2016-01-01",
+     "as": "AS 2015 9"
+    },
+    "132b": {
+     "iso": "2026-04-01",
+     "as": "AS 2026 99"
+    },
+    "25a": {
+     "iso": "2007-01-01",
+     "as": "AS 2006 4213"
+    },
+    "25b": {
+     "iso": "2012-04-01",
+     "as": "AS 2012 941"
+    },
+    "84a": {
+     "iso": "2013-02-01",
+     "as": "AS 2013 231"
+    }
+   }
+  },
+  "/verzahnung/artikel-revisionen/BV.json": {
+   "erlass": "BV",
+   "proArtikel": {
+    "38": {
+     "iso": "2017-02-12",
+     "as": ""
+    },
+    "41": {
+     "iso": "2022-02-13",
+     "as": ""
+    },
+    "42": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "46": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "47": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "48": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "58": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "60": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "62": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "63": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "64": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "65": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "66": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "67": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "72": {
+     "iso": "2009-11-29",
+     "as": ""
+    },
+    "83": {
+     "iso": "2018-01-01",
+     "as": ""
+    },
+    "85": {
+     "iso": "2016-01-01",
+     "as": ""
+    },
+    "86": {
+     "iso": "2020-01-01",
+     "as": ""
+    },
+    "88": {
+     "iso": "2018-09-23",
+     "as": ""
+    },
+    "95": {
+     "iso": "2013-03-03",
+     "as": "AS 2013 1303"
+    },
+    "106": {
+     "iso": "2012-03-11",
+     "as": ""
+    },
+    "112": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "118": {
+     "iso": "2022-02-13",
+     "as": ""
+    },
+    "119": {
+     "iso": "2015-06-14",
+     "as": "AS 2015 2887"
+    },
+    "121": {
+     "iso": "2014-02-09",
+     "as": "AS 2014 1391"
+    },
+    "122": {
+     "iso": "2007-01-01",
+     "as": "AS 2002 3148"
+    },
+    "123": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "126": {
+     "iso": "2001-12-02",
+     "as": "AS 2002 241"
+    },
+    "128": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "130": {
+     "iso": "2024-01-01",
+     "as": ""
+    },
+    "131": {
+     "iso": "2018-01-01",
+     "as": ""
+    },
+    "132": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "135": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "138": {
+     "iso": "2003-08-01",
+     "as": "AS 2003 1949"
+    },
+    "139": {
+     "iso": "2009-09-27",
+     "as": "AS 2009 6409"
+    },
+    "140": {
+     "iso": "2009-09-27",
+     "as": "AS 2009 6409"
+    },
+    "141": {
+     "iso": "2003-08-01",
+     "as": "AS 2003 1949"
+    },
+    "156": {
+     "iso": "2009-09-27",
+     "as": "AS 2009 6409"
+    },
+    "159": {
+     "iso": "2001-12-02",
+     "as": "AS 2002 241"
+    },
+    "175": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1239"
+    },
+    "188": {
+     "iso": "2007-01-01",
+     "as": "AS 2002 3148"
+    },
+    "189": {
+     "iso": "2009-09-27",
+     "as": "AS 2009 6409"
+    },
+    "196": {
+     "iso": "2021-01-01",
+     "as": "AS 2019 769"
+    },
+    "197": {
+     "iso": "2024-03-03",
+     "as": "AS 2024 197"
+    },
+    "104a": {
+     "iso": "2017-09-24",
+     "as": ""
+    },
+    "10a": {
+     "iso": "2021-03-07",
+     "as": "AS 2021 310"
+    },
+    "112a": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "112b": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "112c": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "117a": {
+     "iso": "2014-05-18",
+     "as": ""
+    },
+    "117b": {
+     "iso": "2021-11-28",
+     "as": ""
+    },
+    "118a": {
+     "iso": "2009-05-17",
+     "as": "AS 2009 5325"
+    },
+    "118b": {
+     "iso": "2010-03-07",
+     "as": "AS 2010 1569"
+    },
+    "119a": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1341"
+    },
+    "121a": {
+     "iso": "2014-02-09",
+     "as": "AS 2014 1391"
+    },
+    "123a": {
+     "iso": "2004-02-08",
+     "as": "AS 2004 2341"
+    },
+    "123b": {
+     "iso": "2008-11-30",
+     "as": "AS 2009 471"
+    },
+    "123c": {
+     "iso": "2014-05-18",
+     "as": "AS 2014 2771"
+    },
+    "129a": {
+     "iso": "2024-01-01",
+     "as": "AS 2023 482"
+    },
+    "139a": {
+     "iso": "2009-09-27",
+     "as": "AS 2009 6409"
+    },
+    "139b": {
+     "iso": "2009-09-27",
+     "as": "AS 2009 6409"
+    },
+    "141a": {
+     "iso": "2003-08-01",
+     "as": "AS 2003 1949"
+    },
+    "191a": {
+     "iso": "2003-04-01",
+     "as": "AS 2002 3148"
+    },
+    "29a": {
+     "iso": "2007-01-01",
+     "as": "AS 2002 3148"
+    },
+    "43a": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "48a": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "5a": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "61a": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "63a": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "64a": {
+     "iso": "2006-05-21",
+     "as": "AS 2006 3033"
+    },
+    "67a": {
+     "iso": "2012-09-23",
+     "as": ""
+    },
+    "75a": {
+     "iso": "2008-01-01",
+     "as": ""
+    },
+    "75b": {
+     "iso": "2012-03-11",
+     "as": ""
+    },
+    "81a": {
+     "iso": "2016-01-01",
+     "as": ""
+    },
+    "85a": {
+     "iso": "2018-01-01",
+     "as": ""
+    },
+    "87a": {
+     "iso": "2016-01-01",
+     "as": ""
+    },
+    "87b": {
+     "iso": "2018-01-01",
+     "as": ""
+    }
+   }
+  },
+  "/verzahnung/artikel-revisionen/VGG.json": {
+   "erlass": "VGG",
+   "proArtikel": {
+    "4": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 3267"
+    },
+    "9": {
+     "iso": "2012-12-01",
+     "as": "AS 2012 5647"
+    },
+    "12": {
+     "iso": "2011-12-05",
+     "as": "AS 2011 4627"
+    },
+    "18": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 689"
+    },
+    "23": {
+     "iso": "2026-06-12",
+     "as": "AS 2026 229"
+    },
+    "28": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 4085"
+    },
+    "31": {
+     "iso": "2008-02-01",
+     "as": "AS 2008 5207"
+    },
+    "32": {
+     "iso": "2021-03-01",
+     "as": "AS 2021 68"
+    },
+    "33": {
+     "iso": "2025-05-15",
+     "as": "AS 2025 269"
+    },
+    "34": {
+     "iso": "2009-01-01",
+     "as": "AS 2008 2049"
+    },
+    "35": {
+     "iso": "2023-09-01",
+     "as": "AS 2022 491"
+    },
+    "44": {
+     "iso": "2011-02-01",
+     "as": "AS 2011 275"
+    },
+    "27a": {
+     "iso": "2007-01-01",
+     "as": "AS 2006 4213"
+    },
+    "27b": {
+     "iso": "2012-04-01",
+     "as": "AS 2012 941"
+    },
+    "36a": {
+     "iso": "2009-01-01",
+     "as": "AS 2008 5207"
+    },
+    "36b": {
+     "iso": "2017-09-01",
+     "as": "AS 2017 4095"
+    }
+   }
+  },
+  "/verzahnung/artikel-revisionen/ZGB.json": {
+   "erlass": "ZGB",
+   "proArtikel": {
+    "1": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "4": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "10": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "13": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "14": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "15": {
+     "iso": "1996-01-01",
+     "as": "AS 1995 1126"
+    },
+    "16": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "17": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "19": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "20": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "21": {
+     "iso": "2007-01-01",
+     "as": "AS 2005 5685"
+    },
+    "23": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "25": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "26": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "27": {
+     "iso": "1985-07-01",
+     "as": ""
+    },
+    "28": {
+     "iso": "1985-07-01",
+     "as": "AS 1984 778"
+    },
+    "30": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "35": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "38": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "39": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 4017"
+    },
+    "40": {
+     "iso": "2004-07-01",
+     "as": ""
+    },
+    "45": {
+     "iso": "2004-07-01",
+     "as": ""
+    },
+    "48": {
+     "iso": "2022-01-01",
+     "as": "AS 2021 758"
+    },
+    "52": {
+     "iso": "2016-01-01",
+     "as": ""
+    },
+    "56": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 4791"
+    },
+    "57": {
+     "iso": "2006-01-01",
+     "as": "AS 2005 4545"
+    },
+    "61": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 656"
+    },
+    "69": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 656"
+    },
+    "71": {
+     "iso": "2005-06-01",
+     "as": "AS 2005 2117"
+    },
+    "81": {
+     "iso": "2006-01-01",
+     "as": "AS 2005 4545"
+    },
+    "83": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 4791"
+    },
+    "84": {
+     "iso": "2024-01-01",
+     "as": "AS 2022 452"
+    },
+    "85": {
+     "iso": "2024-01-01",
+     "as": "AS 2022 452"
+    },
+    "86": {
+     "iso": "2024-01-01",
+     "as": "AS 2022 452"
+    },
+    "87": {
+     "iso": "2006-01-01",
+     "as": "AS 2005 4545"
+    },
+    "88": {
+     "iso": "2006-01-01",
+     "as": "AS 2005 4545"
+    },
+    "89": {
+     "iso": "2006-01-01",
+     "as": "AS 2005 4545"
+    },
+    "90": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "92": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "94": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "95": {
+     "iso": "2006-01-01",
+     "as": "AS 2005 5685"
+    },
+    "96": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "98": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "99": {
+     "iso": "2020-01-01",
+     "as": "AS 2019 3813"
+    },
+    "100": {
+     "iso": "2020-01-01",
+     "as": "AS 2019 3813"
+    },
+    "102": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "105": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "106": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "107": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "108": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "109": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 5437"
+    },
+    "110": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "111": {
+     "iso": "2010-02-01",
+     "as": "AS 2010 281"
+    },
+    "112": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "113": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "114": {
+     "iso": "2004-06-01",
+     "as": "AS 2004 2161"
+    },
+    "115": {
+     "iso": "2004-06-01",
+     "as": "AS 2004 2161"
+    },
+    "116": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "117": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "119": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "120": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "122": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "123": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "124": {
+     "iso": "2024-01-01",
+     "as": "AS 2023 92"
+    },
+    "131": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "132": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "133": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "134": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "159": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "160": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "161": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "172": {
+     "iso": "2007-07-01",
+     "as": "AS 2007 137"
+    },
+    "176": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "177": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "179": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "180": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "181": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "182": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "183": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "186": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "190": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "194": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "208": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "216": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "217": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "220": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "230": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "241": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "252": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "253": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "254": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "255": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "256": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "257": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "258": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "259": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "260": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "261": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "262": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "263": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "264": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "265": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "266": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "267": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "269": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "270": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "271": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "272": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "273": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "274": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "275": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "276": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "277": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "278": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "279": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "285": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "286": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "287": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "288": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "289": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "290": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "291": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "292": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "293": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "294": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "295": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "296": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "297": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "298": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "299": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "300": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "301": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "302": {
+     "iso": "2026-07-01",
+     "as": "AS 2026 94"
+    },
+    "303": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "304": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "305": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "306": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "307": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "308": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "309": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "310": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "311": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "312": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "313": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "314": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "315": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "316": {
+     "iso": "2003-01-01",
+     "as": "AS 2002 3988"
+    },
+    "317": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "318": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "319": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "320": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "321": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "322": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "323": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "324": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "325": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "326": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "327": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "328": {
+     "iso": "2007-01-01",
+     "as": "AS 2005 5685"
+    },
+    "329": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "331": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "333": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "334": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "359": {
+     "iso": "1991-02-01",
+     "as": "AS 1991 362"
+    },
+    "360": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "395": {
+     "iso": "2024-01-01",
+     "as": "AS 2023 84"
+    },
+    "400": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 2801"
+    },
+    "443": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 2947"
+    },
+    "448": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 2947"
+    },
+    "451": {
+     "iso": "2024-01-01",
+     "as": "AS 2023 84"
+    },
+    "455": {
+     "iso": "2020-01-01",
+     "as": "AS 2018 5343"
+    },
+    "457": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "460": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "461": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "462": {
+     "iso": "2007-01-01",
+     "as": "AS 2005 5685"
+    },
+    "465": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "466": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "468": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "470": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "471": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "472": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "473": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "476": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "477": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "482": {
+     "iso": "2003-04-01",
+     "as": "AS 2003 463"
+    },
+    "494": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "503": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "505": {
+     "iso": "1996-01-01",
+     "as": "AS 1995 4882"
+    },
+    "520": {
+     "iso": "1996-01-01",
+     "as": "AS 1995 4882"
+    },
+    "522": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "523": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "529": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "531": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "532": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 312"
+    },
+    "538": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "544": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "551": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "553": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "554": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "561": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "586": {
+     "iso": "2020-01-01",
+     "as": "AS 2018 5343"
+    },
+    "598": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "603": {
+     "iso": "1973-02-15",
+     "as": "AS 1973 93"
+    },
+    "616": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "617": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "618": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "619": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "631": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "633": {
+     "iso": "1973-02-15",
+     "as": "AS 1973 93"
+    },
+    "635": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "641": {
+     "iso": "2003-04-01",
+     "as": "AS 2003 463"
+    },
+    "647": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "648": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "649": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "650": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "655": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "660": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "665": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "668": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "676": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "678": {
+     "iso": "2004-01-01",
+     "as": "AS 2003 4121"
+    },
+    "679": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "681": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "682": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "683": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "684": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "691": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "703": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "720": {
+     "iso": "2003-04-01",
+     "as": "AS 2003 463"
+    },
+    "722": {
+     "iso": "2003-04-01",
+     "as": "AS 2003 463"
+    },
+    "724": {
+     "iso": "2005-06-01",
+     "as": "AS 2005 1869"
+    },
+    "728": {
+     "iso": "2005-06-01",
+     "as": "AS 2005 1869"
+    },
+    "730": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "732": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "741": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "742": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "743": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "744": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "745": {
+     "iso": "2004-01-01",
+     "as": "AS 2003 4121"
+    },
+    "747": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "779": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "782": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "784": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "785": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "787": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "792": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "793": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "799": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "808": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "810": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "818": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "819": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "823": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "836": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "837": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "839": {
+     "iso": "2026-01-01",
+     "as": "AS 2025 270"
+    },
+    "842": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "885": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "901": {
+     "iso": "2010-01-01",
+     "as": "AS 2009 3577"
+    },
+    "905": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 4791"
+    },
+    "915": {
+     "iso": "1991-02-01",
+     "as": "AS 1991 362"
+    },
+    "926": {
+     "iso": "2026-07-01",
+     "as": "AS 2026 16"
+    },
+    "934": {
+     "iso": "2005-06-01",
+     "as": "AS 2005 1869"
+    },
+    "942": {
+     "iso": "2005-01-01",
+     "as": "AS 2004 5085"
+    },
+    "943": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "944": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "949": {
+     "iso": "2005-01-01",
+     "as": "AS 2004 5085"
+    },
+    "950": {
+     "iso": "2008-07-01",
+     "as": "AS 2008 2793"
+    },
+    "953": {
+     "iso": "1991-02-01",
+     "as": "AS 1991 362"
+    },
+    "955": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "956": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "957": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "960": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "961": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "962": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "969": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "970": {
+     "iso": "2005-01-01",
+     "as": "AS 2004 5085"
+    },
+    "973": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "975": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "976": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "977": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "135149": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "280284": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "349358": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "463464": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "620625": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "876883": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "916918": {
+     "iso": "1931-02-01",
+     "as": ""
+    },
+    "105a": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "124a": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "124b": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "124c": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "124d": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "124e": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "131a": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "176a": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "19a": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "19b": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "19c": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "19d": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "255a": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "256a": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "256b": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "256c": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "260a": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "260b": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "260c": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "264a": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "264b": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "264c": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "264d": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "265a": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "265b": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "265c": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "265d": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "267a": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "267b": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268a": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268abis": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268aquater": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268ater": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268b": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268c": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268d": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "268e": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "269a": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "269b": {
+     "iso": "1973-04-01",
+     "as": "AS 1972 2819"
+    },
+    "269c": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "270a": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "270b": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "274a": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "275a": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "276a": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "285a": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "286a": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "287a": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "28a": {
+     "iso": "2007-07-01",
+     "as": "AS 2007 137"
+    },
+    "28b": {
+     "iso": "2020-07-01",
+     "as": "AS 2019 2273"
+    },
+    "28c": {
+     "iso": "2022-01-01",
+     "as": "AS 2019 2273"
+    },
+    "28d28f": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "28g": {
+     "iso": "2007-07-01",
+     "as": "AS 2007 137"
+    },
+    "28h": {
+     "iso": "1985-07-01",
+     "as": "AS 1984 778"
+    },
+    "28i": {
+     "iso": "1985-07-01",
+     "as": "AS 1984 778"
+    },
+    "28k": {
+     "iso": "1985-07-01",
+     "as": "AS 1984 778"
+    },
+    "28l": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "298a": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "298b": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "298c": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "298d": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "298e": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "301a": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "30a": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "30b": {
+     "iso": "2022-01-01",
+     "as": "AS 2021 668"
+    },
+    "314a": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "314abis": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "314b": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "314c": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 2947"
+    },
+    "314d": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 2947"
+    },
+    "314e": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 2947"
+    },
+    "315a": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "315b": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "327a": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "334bis": {
+     "iso": "1973-02-15",
+     "as": "AS 1973 93"
+    },
+    "43a": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 681"
+    },
+    "449c": {
+     "iso": "2024-01-01",
+     "as": "AS 2023 84"
+    },
+    "45a": {
+     "iso": "2023-09-01",
+     "as": "AS 2022 491"
+    },
+    "492a": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "520a": {
+     "iso": "1996-01-01",
+     "as": "AS 1995 4882"
+    },
+    "612a": {
+     "iso": "2007-01-01",
+     "as": "AS 2005 5685"
+    },
+    "613a": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "61a": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 656"
+    },
+    "641a": {
+     "iso": "2003-04-01",
+     "as": "AS 2003 463"
+    },
+    "647a": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "647b": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "647c": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "647d": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "647e": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "649a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "649b": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "649c": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "651a": {
+     "iso": "2003-04-01",
+     "as": "AS 2003 463"
+    },
+    "654a": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "655a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "660a": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "660b": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "666a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "666b": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "679a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "681a": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "681b": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "682a": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "69a": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 6679"
+    },
+    "69b": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 4791"
+    },
+    "69c": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 656"
+    },
+    "69d": {
+     "iso": "2023-01-01",
+     "as": "AS 2020 4005"
+    },
+    "712a": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "712c": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "712e": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "712f": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "712g": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "712l": {
+     "iso": "2001-01-01",
+     "as": "AS 2000 2355"
+    },
+    "720a": {
+     "iso": "2003-04-01",
+     "as": "AS 2003 463"
+    },
+    "740a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "75a": {
+     "iso": "2005-06-01",
+     "as": "AS 2005 2117"
+    },
+    "779a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "779b": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "779c": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "779d": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "779e": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "779f": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "779g": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "779h": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "779i": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "779k": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "779l": {
+     "iso": "1965-07-01",
+     "as": "AS 1965 445"
+    },
+    "781a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "798a": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1410"
+    },
+    "83a": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 6679"
+    },
+    "83b": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 4791"
+    },
+    "83c": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 4791"
+    },
+    "83d": {
+     "iso": "2021-01-01",
+     "as": "AS 2020 957"
+    },
+    "84a": {
+     "iso": "2023-01-01",
+     "as": "AS 2020 4005"
+    },
+    "84b": {
+     "iso": "2023-01-01",
+     "as": "AS 2020 4005"
+    },
+    "86a": {
+     "iso": "2024-01-01",
+     "as": "AS 2022 452"
+    },
+    "86b": {
+     "iso": "2024-01-01",
+     "as": "AS 2022 452"
+    },
+    "86c": {
+     "iso": "2024-01-01",
+     "as": "AS 2022 452"
+    },
+    "89a": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 676"
+    },
+    "89b": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "949a": {
+     "iso": "2005-01-01",
+     "as": "AS 2004 5085"
+    },
+    "949b": {
+     "iso": "2023-01-01",
+     "as": "AS 2018 4017"
+    },
+    "949c": {
+     "iso": "2023-01-01",
+     "as": "AS 2018 4017"
+    },
+    "949d": {
+     "iso": "2019-01-01",
+     "as": "AS 2018 4017"
+    },
+    "956a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "956b": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "961a": {
+     "iso": "1994-01-01",
+     "as": "AS 1993 1404"
+    },
+    "962a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "970a": {
+     "iso": "2005-01-01",
+     "as": "AS 2004 5085"
+    },
+    "974a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "974b": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "976a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "976b": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "976c": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "97a": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    },
+    "dispu1art1": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "dispu1art10": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art10a": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art10b": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art10c": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art10d": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art10e": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art11": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art11a": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art12": {
+     "iso": "2014-07-01",
+     "as": "AS 2014 357"
+    },
+    "dispu1art12a": {
+     "iso": "1996-01-01",
+     "as": "AS 1995 1126"
+    },
+    "dispu1art12b": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "dispu1art12c": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "dispu1art12cbis": {
+     "iso": "2018-01-01",
+     "as": "AS 2017 3699"
+    },
+    "dispu1art12d": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "dispu1art13": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "dispu1art13a": {
+     "iso": "1978-01-01",
+     "as": "AS 1977 237"
+    },
+    "dispu1art13b": {
+     "iso": "1996-01-01",
+     "as": "AS 1995 1126"
+    },
+    "dispu1art13c": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "dispu1art13cbis": {
+     "iso": "2017-01-01",
+     "as": "AS 2015 4299"
+    },
+    "dispu1art13d": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "dispu1art14": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "dispu1art14a": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "dispu1art20": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "dispu1art20bis": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "dispu1art20quater": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "dispu1art20ter": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "dispu1art21": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "dispu1art30": {
+     "iso": "1991-02-01",
+     "as": "AS 1991 362"
+    },
+    "dispu1art3132": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "dispu1art33": {
+     "iso": "1991-02-01",
+     "as": "AS 1991 362"
+    },
+    "dispu1art33a": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "dispu1art33b": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "dispu1art38": {
+     "iso": "2008-07-01",
+     "as": "AS 2008 2793"
+    },
+    "dispu1art39": {
+     "iso": "2008-07-01",
+     "as": "AS 2008 2793"
+    },
+    "dispu1art41": {
+     "iso": "2008-07-01",
+     "as": "AS 2008 2793"
+    },
+    "dispu1art42": {
+     "iso": "2008-07-01",
+     "as": "AS 2008 2793"
+    },
+    "dispu1art44": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "dispu1art45": {
+     "iso": "1965-01-01",
+     "as": "AS 1964 993"
+    },
+    "dispu1art49": {
+     "iso": "2020-01-01",
+     "as": "AS 2018 5343"
+    },
+    "dispu1art52": {
+     "iso": "2013-01-01",
+     "as": "AS 2011 725"
+    },
+    "dispu1art54": {
+     "iso": "2011-01-01",
+     "as": "AS 2010 1739"
+    },
+    "dispu1art55": {
+     "iso": "2012-01-01",
+     "as": "AS 2011 4637"
+    },
+    "dispu1art55a": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 4651"
+    },
+    "dispu1art57": {
+     "iso": "1935-03-01",
+     "as": ""
+    },
+    "dispu1art58": {
+     "iso": "1912-01-01",
+     "as": ""
+    },
+    "dispu1art59": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art60": {
+     "iso": "1912-01-01",
+     "as": ""
+    },
+    "dispu1art61": {
+     "iso": "1912-01-01",
+     "as": ""
+    },
+    "dispu1art6a": {
+     "iso": "2004-07-01",
+     "as": ""
+    },
+    "dispu1art6b": {
+     "iso": "2016-01-01",
+     "as": ""
+    },
+    "dispu1art6bbis": {
+     "iso": "2023-01-01",
+     "as": "AS 2021 656"
+    },
+    "dispu1art6c": {
+     "iso": "2008-01-01",
+     "as": "AS 2007 4791"
+    },
+    "dispu1art6cbis": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 676"
+    },
+    "dispu1art6d": {
+     "iso": "2020-07-01",
+     "as": "AS 2019 2273"
+    },
+    "dispu1art7": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "dispu1art7a": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "dispu1art7abis": {
+     "iso": "2025-01-01",
+     "as": "AS 2024 590"
+    },
+    "dispu1art7b": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "dispu1art7c": {
+     "iso": "2004-06-01",
+     "as": "AS 2004 2161"
+    },
+    "dispu1art7d": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "dispu1art7e": {
+     "iso": "2017-01-01",
+     "as": "AS 2016 2313"
+    },
+    "dispu1art8": {
+     "iso": "2000-01-01",
+     "as": "AS 1999 1118"
+    },
+    "dispu1art8a": {
+     "iso": "2013-01-01",
+     "as": "AS 2012 2569"
+    },
+    "dispu1art8b": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9a": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9b": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9c": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9d": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9e": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9f": {
+     "iso": "1988-01-01",
+     "as": "AS 1986 122"
+    },
+    "dispu1art9g": {
+     "iso": "2022-07-01",
+     "as": "AS 2021 747"
+    }
+   }
+  },
+  "/materialien/register.json": {
+   "erzeugt": "2026-09-25",
+   "materialien": [
+    {
+     "key": "ESTV-RS-VSTG-218",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "rundschreiben",
+     "doktypLabel": "Rundschreiben",
+     "titel": "Zinssätze 2026 für Vorschüsse/Darlehen in Schweizer Franken (Safe-Haven)",
+     "nummer": "Nr. 218",
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.estv.admin.ch/de/rundschreiben-verrechnungssteuer",
+     "stand": "2026-01-29",
+     "rang": 5,
+     "normKeys": [
+      "VSTG",
+      "DBG"
+     ],
+     "hinweis": "Jährlich neu publizierte Mindestzinssätze; verlinkt das amtliche Rundschreiben-Verzeichnis der ESTV."
+    },
+    {
+     "key": "ESTV-MWST-INFO-01",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "mwst-info",
+     "doktypLabel": "MWST-Info",
+     "titel": "MWST Übergangsinfo 01 MWST in Kürze und Übergangsinfo",
+     "nummer": "Nr. 01",
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MI/01",
+     "stand": "2025-11-26",
+     "rang": 101,
+     "normKeys": [
+      "MWSTG"
+     ],
+     "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert."
+    },
+    {
+     "key": "ESTV-MWST-BRANCHEN-INFO-01",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "mwst-branchen-info",
+     "doktypLabel": "MWST-Branchen-Info",
+     "titel": "MWST-Branchen Info 01 Urproduktion und nahe stehende Bereiche",
+     "nummer": "Nr. 01",
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/MBI/01",
+     "stand": "2026-08-27",
+     "rang": 201,
+     "normKeys": [
+      "MWSTG",
+      "MWSTV"
+     ],
+     "hinweis": "Amtliche ESTV-MWST-Webpublikation (Verwaltungsverordnung), kein Gesetzesrang; Inhalt laufend versioniert."
+    },
+    {
+     "key": "ESTV-KS-DBG-11",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "kreisschreiben",
+     "doktypLabel": "Kreisschreiben",
+     "titel": "Kreisschreiben Nr. 11: Krankheits- und Unfallkosten",
+     "nummer": "Nr. 11",
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.estv.admin.ch/dam/de/sd-web/aVpMnA7YXyaD/dbst-ks-2005-1-011-d-de.pdf",
+     "stand": "2005-08-31",
+     "rang": 1220,
+     "normKeys": [
+      "DBG"
+     ],
+     "hinweis": "Amtliche ESTV-Publikation (Verwaltungsverordnung), kein Gesetzesrang."
+    },
+    {
+     "key": "ESTV-KS-DBG-11-FRAGEBOGEN",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "ks-anhang",
+     "doktypLabel": "KS-Anhang",
+     "titel": "Kreisschreiben Nr. 11 Beilage: Fragebogen für Ärzte und Ärztinnen",
+     "nummer": "Nr. 11 · Fragebogen",
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.estv.admin.ch/dam/de/sd-web/f0C0x53jNInC/dbst-ks-2005-1-011-d-fragebogen-de.pdf",
+     "stand": "2023-10-10",
+     "rang": 1221,
+     "normKeys": [
+      "DBG"
+     ],
+     "hinweis": "Amtliche ESTV-Publikation (Verwaltungsverordnung), kein Gesetzesrang."
+    },
+    {
+     "key": "ESTV-KS-W03-001",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "weisung",
+     "doktypLabel": "Weisung",
+     "titel": "W03-001D vom 03.10.2002: Die Abgangsentschädigung resp. Kapitalabfindung des Arbeitgebers",
+     "nummer": "W03-001",
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.estv.admin.ch/dam/de/sd-web/HDKOHBk6rvRZ/dbst-ks-w03-001-de.pdf",
+     "stand": "2002-10-03",
+     "rang": 5031,
+     "normKeys": [
+      "DBG"
+     ],
+     "hinweis": "Amtliche ESTV-Publikation (Verwaltungsverordnung), kein Gesetzesrang. Zuordnung zur Steuerart maschinell aus der Indexseite abgeleitet."
+    },
+    {
+     "key": "ESTV-MB-S-02-122-1B",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "merkblatt",
+     "doktypLabel": "Merkblatt",
+     "titel": "S-02.122.1b",
+     "nummer": null,
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.estv.admin.ch/dam/de/sd-web/jiDIMLsFTgLl/vst-mb-s-02-122-1b-de.pdf",
+     "stand": "2023-10-09",
+     "rang": 6000,
+     "normKeys": [
+      "VSTG"
+     ],
+     "hinweis": "Amtliche ESTV-Publikation (Verwaltungsverordnung), kein Gesetzesrang. Zuordnung zur Steuerart maschinell aus der Indexseite abgeleitet."
+    },
+    {
+     "key": "ESTV-MITTEILUNG-020-DVS-CHECKLISTE",
+     "behoerde": "ESTV",
+     "behoerdeName": "Eidgenössische Steuerverwaltung",
+     "behoerdeKuerzel": "ESTV",
+     "doktyp": "mitteilung",
+     "doktypLabel": "Praxismitteilung",
+     "titel": "Mitteilung-020-DVS-2024-d vom 18.09.2024 - Checkliste für Spezialfälle",
+     "nummer": "Mitteilung 020",
+     "rechtsgebiet": "steuern",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.estv.admin.ch/dam/de/sd-web/2hqENQZfloRj/estv-mitteilung-020-dvs-checkliste-de.pdf",
+     "stand": "2024-09-18",
+     "rang": 7020,
+     "normKeys": [
+      "DBG",
+      "VSTG",
+      "STG"
+     ],
+     "hinweis": "Amtliche ESTV-Publikation (Verwaltungsverordnung), kein Gesetzesrang."
+    },
+    {
+     "key": "EDOEB-ANLEITUNG-AUSLAND",
+     "behoerde": "EDOEB",
+     "behoerdeName": "Eidg. Datenschutz- und Öffentlichkeitsbeauftragter",
+     "behoerdeKuerzel": "EDÖB",
+     "doktyp": "anleitung",
+     "doktypLabel": "Anleitung",
+     "titel": "Anleitung für die Prüfung der Zulässigkeit von Datenübermittlungen ins Ausland",
+     "nummer": null,
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.edoeb.admin.ch/de/bekanntgabe-von-personendaten-ins-ausland",
+     "stand": "2023-05-10",
+     "rang": 2,
+     "normKeys": [
+      "DSG"
+     ],
+     "hinweis": null
+    },
+    {
+     "key": "EDOEB-LEITFADEN-COOKIES",
+     "behoerde": "EDOEB",
+     "behoerdeName": "Eidg. Datenschutz- und Öffentlichkeitsbeauftragter",
+     "behoerdeKuerzel": "EDÖB",
+     "doktyp": "leitfaden",
+     "doktypLabel": "Leitfaden",
+     "titel": "Leitfaden betreffend Datenbearbeitungen mittels Cookies und ähnlichen Technologien",
+     "nummer": null,
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.edoeb.admin.ch/de/dokumentation-datenschutz",
+     "stand": "2025-10-06",
+     "rang": 7,
+     "normKeys": [
+      "DSG"
+     ],
+     "hinweis": null
+    },
+    {
+     "key": "EDOEB-TB-32",
+     "behoerde": "EDOEB",
+     "behoerdeName": "Eidg. Datenschutz- und Öffentlichkeitsbeauftragter",
+     "behoerdeKuerzel": "EDÖB",
+     "doktyp": "taetigkeitsbericht",
+     "doktypLabel": "Tätigkeitsbericht",
+     "titel": "32. Tätigkeitsbericht 2024/2025",
+     "nummer": null,
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.edoeb.admin.ch/de/dokumentation-taetigkeitsberichte",
+     "stand": "2025-06-30",
+     "rang": 8,
+     "normKeys": [
+      "DSG"
+     ],
+     "hinweis": "Behörden-Praxis (erste revDSG-Verfahren); Auslegungsquelle, kein Gesetzesrang."
+    },
+    {
+     "key": "EDOEB-MERKBLATT-ANMELDEFORMULARE-MIETWOHNUNGEN",
+     "behoerde": "EDOEB",
+     "behoerdeName": "Eidg. Datenschutz- und Öffentlichkeitsbeauftragter",
+     "behoerdeKuerzel": "EDÖB",
+     "doktyp": "merkblatt",
+     "doktypLabel": "Merkblatt",
+     "titel": "Merkblatt Anmeldeformulare für Mietwohnungen",
+     "nummer": null,
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.edoeb.admin.ch/dam/de/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf",
+     "stand": "2025-07-15",
+     "rang": 79749285,
+     "normKeys": [
+      "DSG"
+     ],
+     "hinweis": "Amtliche EDÖB-Publikation, kein Gesetzesrang."
+    },
+    {
+     "key": "SECO-WEGL-ARG-12",
+     "behoerde": "SECO",
+     "behoerdeName": "Staatssekretariat für Wirtschaft",
+     "behoerdeKuerzel": "SECO",
+     "doktyp": "wegleitung",
+     "doktypLabel": "Wegleitung",
+     "titel": "Wegleitung zum Arbeitsgesetz und den Verordnungen 1 und 2",
+     "nummer": null,
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.seco.admin.ch/de/wegleitungen",
+     "stand": "2026-02-20",
+     "rang": 1,
+     "normKeys": [
+      "ARG",
+      "ARGV1",
+      "ARGV2"
+     ],
+     "hinweis": "Zentrales Vollzugs-/Auslegungswerk (artikelweise); FR/IT-Fassungen vorhanden."
+    },
+    {
+     "key": "SECO-MERKBLATT-ARBEITSZEIT",
+     "behoerde": "SECO",
+     "behoerdeName": "Staatssekretariat für Wirtschaft",
+     "behoerdeKuerzel": "SECO",
+     "doktyp": "merkblatt",
+     "doktypLabel": "Merkblatt",
+     "titel": "Das Arbeitsgesetz: Die wichtigsten Arbeits- und Ruhezeitbestimmungen in Kürze",
+     "nummer": null,
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.seco.admin.ch/seco/de/home/Publikationen_Dienstleistungen/Publikationen_und_Formulare/Arbeit/Arbeitsbedingungen/Merkblatter_und_Checklisten.html",
+     "stand": "2016-03-22",
+     "rang": 4,
+     "normKeys": [
+      "ARG"
+     ],
+     "hinweis": "Verlinkt das amtliche SECO-Merkblatt-Verzeichnis (Einzel-PDF-Pfad nicht stabil)."
+    },
+    {
+     "key": "BSV-WML",
+     "behoerde": "BSV",
+     "behoerdeName": "Bundesamt für Sozialversicherungen",
+     "behoerdeKuerzel": "BSV",
+     "doktyp": "wegleitung",
+     "doktypLabel": "Wegleitung",
+     "titel": "Wegleitung über den massgebenden Lohn in der AHV, IV und EO (WML)",
+     "nummer": "318.102.02",
+     "rechtsgebiet": "sozialversicherung",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://sozialversicherungen.admin.ch/de/d/6944",
+     "stand": "2026-05-21",
+     "rang": 1,
+     "normKeys": [
+      "AHVG",
+      "AHVV"
+     ],
+     "hinweis": "Verbindliche Vollzugsweisung an die Ausgleichskassen; FR/IT vorhanden."
+    },
+    {
+     "key": "BJ-EHRA-PM-2025-01",
+     "behoerde": "BJ",
+     "behoerdeName": "Eidg. Amt für das Handelsregister (Bundesamt für Justiz)",
+     "behoerdeKuerzel": "EHRA",
+     "doktyp": "mitteilung",
+     "doktypLabel": "Praxismitteilung",
+     "titel": "Praxismitteilung EHRA 1/25",
+     "nummer": "1/25",
+     "rechtsgebiet": "privat",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.ehra.admin.ch/de/praxismitteilungen-ehra",
+     "stand": "2025-04-07",
+     "rang": 2,
+     "normKeys": [
+      "HREGV",
+      "OR"
+     ],
+     "hinweis": "Verlinkt das amtliche EHRA-Verzeichnis der Praxismitteilungen (Direkt-PDF-Pfad nicht stabil)."
+    },
+    {
+     "key": "FINMA-RS-2025-02",
+     "behoerde": "FINMA",
+     "behoerdeName": "Eidgenössische Finanzmarktaufsicht",
+     "behoerdeKuerzel": "FINMA",
+     "doktyp": "rundschreiben",
+     "doktypLabel": "Rundschreiben",
+     "titel": "Verhaltenspflichten nach FIDLEG/FIDLEV",
+     "nummer": "RS 2025/2",
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.finma.ch/de/dokumentation/rundschreiben/",
+     "stand": "2024-11-21",
+     "rang": 2,
+     "normKeys": [
+      "FIDLEG",
+      "FINIG"
+     ],
+     "hinweis": "Verlinkt das amtliche FINMA-Rundschreiben-Verzeichnis (Liste dynamisch); FR/IT/EN vorhanden."
+    },
+    {
+     "key": "IGE-RL-MARKEN-2026",
+     "behoerde": "IGE",
+     "behoerdeName": "Eidg. Institut für Geistiges Eigentum",
+     "behoerdeKuerzel": "IGE",
+     "doktyp": "richtlinie",
+     "doktypLabel": "Richtlinie",
+     "titel": "Richtlinien in Markensachen (gültig ab 1.1.2026)",
+     "nummer": null,
+     "rechtsgebiet": "privat",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.ige.ch/de/uebersicht-dienstleistungen/dokumente-und-links/marken",
+     "stand": "2026-01-01",
+     "rang": 1,
+     "normKeys": [
+      "MSCHG"
+     ],
+     "hinweis": "Verbindliche Prüfungspraxis des IGE; FR/IT vorhanden."
+    },
+    {
+     "key": "BOTSCHAFT-1999-1_4983_4601_4303",
+     "behoerde": "BR",
+     "behoerdeName": "Bundesrat (Botschaften)",
+     "behoerdeKuerzel": "BR",
+     "doktyp": "botschaft",
+     "doktypLabel": "Botschaft",
+     "titel": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Revision der freiwilligen Versicherung)",
+     "nummer": "1999.038",
+     "rechtsgebiet": "sozialversicherung",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/1999/1_4983_4601_4303/de",
+     "stand": "1999-04-28",
+     "rang": 80009572,
+     "normKeys": [
+      "AHVG",
+      "AVIG",
+      "IVG"
+     ],
+     "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft.",
+     "fundstelle": "BBl 1999 4983"
+    },
+    {
+     "key": "VERN-2021-101",
+     "behoerde": "BUND",
+     "behoerdeName": "Bund (Vernehmlassungen)",
+     "behoerdeKuerzel": "Bund",
+     "doktyp": "vernehmlassung",
+     "doktypLabel": "Vernehmlassung",
+     "titel": "Änderung der Verordnung über Fernmeldedienste (FDV)",
+     "nummer": null,
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://www.fedlex.admin.ch/eli/dl/proj/2021/101/cons_1/de",
+     "stand": "2026-09-18",
+     "rang": 579779682,
+     "normKeys": [
+      "FDV"
+     ],
+     "hinweis": "Automatisch über den Fedlex-Gesetzgebungs-Graphen zugeordnet; maschinell, fachlich nicht geprüft. Die Zuordnung zum Erlass kann grob sein (Mantelvorlagen betreffen mehrere Gesetze).",
+     "vernehmlassung": {
+      "status": "abgeschlossen",
+      "fristStart": "2021-12-03",
+      "fristEnde": "2022-03-18",
+      "projEli": "https://fedlex.data.admin.ch/eli/dl/proj/2021/101"
+     }
+    },
+    {
+     "key": "BS-GR-21.1247",
+     "behoerde": "BS-GR",
+     "behoerdeName": "Grosser Rat des Kantons Basel-Stadt",
+     "behoerdeKuerzel": "GR BS",
+     "doktyp": "gr-initiative",
+     "doktypLabel": "Initiative",
+     "titel": "Kantonale Volksinitiative \"1% gegen globale Armut\"",
+     "nummer": "21.1247",
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://grosserrat.bs.ch/?gnr=21.1247",
+     "stand": "2024-04-10",
+     "rang": 11,
+     "normKeys": [
+      "BS-119.500"
+     ],
+     "hinweis": "Zuordnung amtlich: die Fussnote der Gesetzessammlung Basel-Stadt nennt dieses Geschäft."
+    },
+    {
+     "key": "BS-GR-02.0403",
+     "behoerde": "BS-GR",
+     "behoerdeName": "Grosser Rat des Kantons Basel-Stadt",
+     "behoerdeKuerzel": "GR BS",
+     "doktyp": "gr-bericht",
+     "doktypLabel": "Bericht",
+     "titel": "Ratschlag und Entwurf betreffend Änderung des Gerichtsorganisationsgesetzes, Änderung der Verordnung betreffend die Gewerblichen Schiedsgerichte vom 19. September 1989 (SG 154.130), Änderung der Gruppeneinteilung und der Zahl der Richterinnen und Richter sowie Änderung der Verordnung betreffend Richterentschädigungen vom 6. Februar 1973",
+     "nummer": "02.0403",
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://grosserrat.bs.ch/?gnr=02.0403",
+     "stand": "2002-03-11",
+     "rang": 111,
+     "normKeys": [
+      "BS-154.130"
+     ],
+     "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+    },
+    {
+     "key": "BS-GR-01.0221",
+     "behoerde": "BS-GR",
+     "behoerdeName": "Grosser Rat des Kantons Basel-Stadt",
+     "behoerdeKuerzel": "GR BS",
+     "doktyp": "ratschlag",
+     "doktypLabel": "Ratschlag",
+     "titel": "Ratschlag und Entwurf zu einer Änderung des §68 des Polizeigesetzes vom 13. November 1996 (SG 510.100)",
+     "nummer": "01.0221",
+     "rechtsgebiet": "oeffentlich",
+     "sprache": "de",
+     "status": "nur-live-link",
+     "quelleUrl": "https://grosserrat.bs.ch/?gnr=01.0221",
+     "stand": "2001-02-20",
+     "rang": 113,
+     "normKeys": [
+      "BS-510.100"
+     ],
+     "hinweis": "Zuordnung maschinell über die SG-Nummer im amtlichen Geschäftstitel; fachlich nicht geprüft."
+    }
+   ]
+  },
+  "/materialien/anker/BOTSCHAFT-1999-1_4983_4601_4303.json": null,
+  "/rechtsprechung/norm-index-erlasse.json": {
+   "erzeugt": "2026-09-23",
+   "proNorm": {
+    "AHVG": [
+     {
+      "key": "bge_152_II_19",
+      "zitierung": "BGE 152 II 19",
+      "regesteKurz": "Art. 16 Abs. 1 und Art. 24 lit. g DBG; Art. 34b Abs. 1 lit. a und Abs. 2 BPG; Art. 337c Abs. 3 OR; steuerliche Behandlung einer Entschädigung wegen unrechtmässiger fristloser Kündigung nach öffentlichem Personalrecht. Die Entschädigung für…",
+      "datum": "2026-01-19",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_II_726",
+      "zitierung": "BGE 151 II 726",
+      "regesteKurz": "Art. 21 Abs. 1 lit. a und b sowie Art. 40 Abs. 1 Satz 2 AHVG (in der bis zum 31. Dezember 2023 geltenden Fassung); Art. 7 lit. c FZA und Art. 4 Abs. 1 und 2 Anhang I FZA; Art. 2 Abs. 1 lit. a der Verordnung (EWG) Nr. 1251/70 vom 29. Juni…",
+      "datum": "2025-04-14",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_IV_237",
+      "zitierung": "BGE 151 IV 237",
+      "regesteKurz": "Art. 7 Abs. 5 OBG i.V.m. Art. 90 Abs. 1 SVG, Art. 6 Ziff. 2 EMRK; Verurteilung des Fahrzeughalters zur Bezahlung einer Ordnungsbusse wegen einer einfachen Verletzung der Verkehrsregeln, die er nicht persönlich begangen hat; Schuldprinzip.…",
+      "datum": "2024-12-16",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_186",
+      "zitierung": "BGE 151 V 186",
+      "regesteKurz": "Art. 24 Abs. 2, Art. 24a Abs. 1 AHVG; Aufhebung der Witwerrente. Soweit der Rentenaufhebungsgrund von Art. 24 Abs. 2 AHVG nicht (mehr) auf Witwer anwendbar ist, kann er auch für einen geschiedenen Mann, der (im Sinne von Art. 24a Abs. 1…",
+      "datum": "2024-12-16",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_I_225",
+      "zitierung": "BGE 151 I 225",
+      "regesteKurz": "Art. 5, 8 Abs. 1 und 34 Abs. 2, Art. 130 Abs. 3 ter und 3 quater BV, Art. 10a und 11 BPR; Eidgenössische Volksabstimmung vom September 2022 über die Reform der Alters- und Hinterlassenenversicherung (AHV 21), allgemeine Informationslage…",
+      "datum": "2024-12-12",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_1",
+      "zitierung": "BGE 151 V 1",
+      "regesteKurz": "Art. 69 Abs. 1 und 2 ATSG, Art. 122 Abs. 1 KVV; Art. 14 und 15 ATSG; Art. 25a Abs. 1 KVG, Art. 7 Abs. 1 und Abs. 2 lit. c KLV; Art. 9 ATSG, Art. 42 und 42 ter Abs. 1 und Abs. 3 IVG; intersystemische Koordination von Beiträgen der…",
+      "datum": "2024-08-29",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_454",
+      "zitierung": "BGE 150 V 454",
+      "regesteKurz": "Art. 1a Abs. 1 lit. a UVG; Versicherteneigenschaft. Sinn und Zweck dieser Bestimmung ist es, sämtliche in der Schweiz tätigen Arbeitnehmer obligatorisch gegen Unfallfolgen zu versichern. Dem Territorialitätsprinzip folgend ist dabei die…",
+      "datum": "2024-08-12",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_III_143",
+      "zitierung": "BGE 151 III 143",
+      "regesteKurz": "a Art. 356 ff. OR; Art. 20 Abs. 3 AVG; Art. 48c AVV; Beitragspflicht des Personalverleihers für den flexiblen Altersrücktritt. Für die Beitragspflicht des Personalverleihers im Sinne von Art. 20 Abs. 3 AVG ist entscheidend, dass der…",
+      "datum": "2024-08-07",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_III_9",
+      "zitierung": "BGE 151 III 9",
+      "regesteKurz": "Art. 125 ZGB; nachehelicher Unterhalt bei Scheidung im Rentenalter. Die Rechtsprechung, wonach die Pflicht zur Leistung nachehelichen Unterhaltes im Grundsatz längstens bis zum Erreichen des ordentlichen Pensionierungsalters des…",
+      "datum": "2024-08-07",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_III_408",
+      "zitierung": "BGE 150 III 408",
+      "regesteKurz": "Art. 92 Abs. 1 Ziff. 9a SchKG; Pfändung von Sparguthaben aus Sozialversicherungsleistungen. Zur Frage, ob der Pfändung auch Sparguthaben unterliegen, die aus unpfändbaren AHV- oder IV-Renten, Ergänzungsleistungen oder Leistungen der…",
+      "datum": "2024-08-02",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_447",
+      "zitierung": "BGE 150 V 447",
+      "regesteKurz": "Art. 25 Abs. 1 und Art. 35a BVG; Rückforderung einer unrechtmässig erwirkten Invalidenkinderrente, welche gestützt auf eine Zahlungsanweisung direkt an die nicht an der Stammrente berechtigte Kindsmutter ausbezahlt wurde; Begriff des…",
+      "datum": "2024-07-16",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_316",
+      "zitierung": "BGE 150 V 316",
+      "regesteKurz": "Art. 23 Abs. 1 und 3 IVG; Art. 21 quater IVV; Grundentschädigung zur Bemessung des Taggeldes der Invalidenversicherung für Selbständigerwerbende. Aus der Auslegung des Art. 23 Abs. 3 IVG ergibt sich, dass die Berechnung der…",
+      "datum": "2024-06-05",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     }
+    ],
+    "AVIG": [
+     {
+      "key": "bge_151_V_368",
+      "zitierung": "BGE 151 V 368",
+      "regesteKurz": "Art. 31 Abs. 1 AVIG; Art. 46 AVIV; Kurzarbeitsentschädigung; normale Arbeitszeit und flexibles Arbeitszeitsystem; Auslegung eines Arbeitsvertrags. Zusammenfassung der Rechtsprechung zur Gleitzeitarbeit (E. 5.2). Die Auslegung des…",
+      "datum": "2025-06-18",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_296",
+      "zitierung": "BGE 151 V 296",
+      "regesteKurz": "Art. 15 Abs. 2 AVIG; Art. 40b AVIV; Vermittlungsfähigkeit und versicherter Verdienst von behinderten Arbeitslosen. Nach der Regelung von Art. 15 Abs. 2 AVIG schliesst auch ein Invaliditätsgrad von mehr als 80 % die Vermittlungsfähigkeit…",
+      "datum": "2025-04-23",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_219",
+      "zitierung": "BGE 151 V 219",
+      "regesteKurz": "a Art. 15 Abs. 2 BVG i.V.m. Art. 12 lit. j und k BVV 2; Art. 104 f. OR; Verzugszinssatz. Ist dem Vorsorgereglement in Bezug auf die in zeitlicher Hinsicht massgebliche Höhe des Verzugszinssatzes keine Regelung zu entnehmen, gelangen die…",
+      "datum": "2024-10-24",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_235",
+      "zitierung": "BGE 150 V 235",
+      "regesteKurz": "Art. 8 Abs. 1, Art. 24 Abs. 1 und 3 AVIG; Höhe des anzurechnenden Zwischenverdienstes. Unter dem erzielten Zwischenverdienst gemäss Art. 24 Abs. 1 und 3 AVIG ist nicht der arbeitgeberseitig ausbezahlte Geldbetrag, sondern der…",
+      "datum": "2024-04-26",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_188",
+      "zitierung": "BGE 150 V 188",
+      "regesteKurz": "Art. 3 Abs. 2, 3 und 5, Art. 77 UVG; Art. 7 Abs. 1 lit. b, Art. 100 Abs. 1 UVV; mehrere Unfallereignisse; Ende der Versicherungsdeckung bei rückwirkender Leistungseinstellung. Durch die rückwirkende Einstellung der vorübergehenden…",
+      "datum": "2024-04-10",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_198",
+      "zitierung": "BGE 150 V 198",
+      "regesteKurz": "Art. 114 Abs. 5 BV; Art. 5 Abs. 1 lit. c und Art. 13 Abs. 2 und 3 ÜLG (in Kraft seit 1. Juli 2021); Überbrückungsleistungen für ältere Arbeitslose; Anspruchsvoraussetzungen für die Überbrückungsleistungen; Verzicht auf Vermögenswerte;…",
+      "datum": "2024-03-18",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_249",
+      "zitierung": "BGE 150 V 249",
+      "regesteKurz": "Art. 31 Abs. 3 lit. a AVIG; Art. 46b AVIV; Anspruch auf Kurzarbeitsentschädigung - Arbeitszeiterfassung. Nach Art. 31 Abs. 3 lit. a AVIG haben Arbeitnehmer, deren Arbeitsausfall nicht bestimmbar oder deren Arbeitszeit nicht ausreichend…",
+      "datum": "2024-03-07",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_V_44",
+      "zitierung": "BGE 150 V 44",
+      "regesteKurz": "Art. 10 Abs. 2 lit. b, Art. 16 Abs. 2 lit. i und Art. 24 AVIG; Art. 41a Abs. 1 AVIV; Anspruch auf Kompensationszahlungen bei teilweiser Arbeitslosigkeit. Begriff des Zwischenverdienstes bei Ausübung mehrerer Teilzeitbeschäftigungen vor…",
+      "datum": "2023-09-13",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_150_III_22",
+      "zitierung": "BGE 150 III 22",
+      "regesteKurz": "Art. 324 und 91 OR; Annahmeverzug des Arbeitgebers; ungerechtfertigte Verweigerung der gehörig angebotenen Leistung; Betriebsschliessungen zur Bekämpfung des Coronavirus. Die Arbeitsverhinderung als Folge von Massnahmen zur Bekämpfung des…",
+      "datum": "2023-08-30",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_149_V_136",
+      "zitierung": "BGE 149 V 136",
+      "regesteKurz": "Art. 114 Abs. 5 BV; Art. 3 Abs. 1, Art. 4 Abs. 1 und Art. 5 Abs. 1 lit. b ÜLG (in Kraft seit 1. Juli 2021); Art. 8, Art. 15 und Art. 16 des Abkommens vom 21. Juni 1999 zwischen der Schweizerischen Eidgenossenschaft einerseits und der…",
+      "datum": "2023-05-25",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_149_III_258",
+      "zitierung": "BGE 149 III 258",
+      "regesteKurz": "Art. 80 Abs. 1 und Art. 81 Abs. 1 SchKG; definitive Rechtsöffnung und Leistungsurteil auf Bezahlung eines Bruttolohns; Rechtsöffnungstitel; befreiende Einwendung. Definitive Rechtsöffnung im Fall, dass der betriebene Arbeitgeber zur…",
+      "datum": "2023-03-29",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_149_V_21",
+      "zitierung": "BGE 149 V 21",
+      "regesteKurz": "Art. 25 Abs. 3 ATSG; Art. 16 Abs. 3 AHVG; Art. 25 Abs. 3 AHVV; Rückerstattung von Akontobeiträgen. Akontobeiträge, die auf der Grundlage von Art. 24 AHVV von Selbstständigerwerbenden erhoben wurden, können nicht als \"zuviel bezahlte…",
+      "datum": "2023-03-02",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     }
+    ],
+    "IVG": [
+     {
+      "key": "bge_152_V_2",
+      "zitierung": "BGE 152 V 2",
+      "regesteKurz": "Art. 56 Abs. 2, Art. 61 lit. a und f bis ATSG und Art. 69 Abs. 1 bis IVG (beide in der seit 1. Januar 2021 geltenden Fassung); Gerichtskosten im kantonalen Verfahren bei Rechtsverweigerungs- oder Rechtsverzögerungsbeschwerden auf dem…",
+      "datum": "2026-01-29",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_315",
+      "zitierung": "BGE 151 V 315",
+      "regesteKurz": "Art. 9 Abs. 1 IVG; Art. 23 bis Abs. 1-3, Art. 14 Abs. 1 lit. b IVV; Anhang II FZA; Verordnung (EG) Nr. 883/2004; kein Anspruch auf Übernahme von invaliditätsbedingten baulichen Anpassungen an Immobilien im Ausland. Weder die…",
+      "datum": "2025-09-15",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_322",
+      "zitierung": "BGE 151 V 322",
+      "regesteKurz": "Art. 13 Abs. 1 IVG; Ziff. 205 Anhang GgV-EDI; angeborene Dysplasie der Zähne als Geburtsgebrechen. Die versicherte Person hat bereits dann Anspruch auf medizinische Massnahmen zur Behandlung einer angeborenen Dysplasie der Zähne (Ziff. 205…",
+      "datum": "2025-08-11",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_306",
+      "zitierung": "BGE 151 V 306",
+      "regesteKurz": "Art. 6 f. und Art. 44 ATSG; Art. 1a lit. a, Art. 8 Abs. 1, 1 bis und 1 ter , Art. 28 Abs. 1 lit. a und Abs. 1 bis , Art. 57 Abs. 1 lit. e und f, Art. 59 Abs. 3 IVG; Verlauf der beruflichen Eingliederung im Verhältnis zur Arbeitsfähigkeit…",
+      "datum": "2025-06-12",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_258",
+      "zitierung": "BGE 151 V 258",
+      "regesteKurz": "Art. 43 Abs. 1 und Art. 61 lit. c ATSG; Grundsatz der freien Beweiswürdigung; Beweiswert eines Berichts einer Psychologin. Wohl kann eine fachärztliche Beurteilung des Gesundheitszustandes und der Arbeitsfähigkeit grundsätzlich nur…",
+      "datum": "2025-05-23",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_194",
+      "zitierung": "BGE 151 V 194",
+      "regesteKurz": "Art. 6 und 7 Abs. 1, Art. 21 Abs. 4 ATSG; Art. 1a, 4 Abs. 1, Art. 28 Abs. 1 lit. a und Art. 28 Abs. 1 bis IVG; Therapierbarkeit der Gesundheitsschädigung und Rentenanspruch. Die Behandelbarkeit des Leidens tangiert den…",
+      "datum": "2025-02-28",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_II_277",
+      "zitierung": "BGE 151 II 277",
+      "regesteKurz": "Art. 4 und 6 FZA; Art. 4 Abs. 1 und 6 Anhang I FZA; Art. 61a AIG; Art. 18 IVG; Arbeitnehmereigenschaft und Arbeitsvermittlung gemäss IVG; Verbleiberecht in der Schweiz bei Arbeitsunfähigkeit; Verhältnis zum IV-Verfahren. Wird eine…",
+      "datum": "2025-01-30",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_212",
+      "zitierung": "BGE 151 V 212",
+      "regesteKurz": "Art. 42 Abs. 1-3 und Art. 42 ter Abs. 1 und 2 IVG; Art. 35 ter , Art. 37 Abs. 2 lit. c und Art. 38 IVV; invalidenversicherungsrechtliche Heimdefinition im Zusammenhang mit lebenspraktischer Begleitung. Auch eine einzelne Wohnung in einem…",
+      "datum": "2024-12-19",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_79",
+      "zitierung": "BGE 151 V 79",
+      "regesteKurz": "Art. 1a lit. a, Art. 15 sowie Art. 27 IVG in Verbindung mit Art. 41 Abs. 1 lit. l IVV; Übernahme von Aufenthaltskosten in einer Institution bei gleichzeitiger beruflicher Abklärung bzw. erstmaliger beruflicher Eingliederung (Vorlehrjahr)…",
+      "datum": "2024-11-26",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_198",
+      "zitierung": "BGE 151 V 198",
+      "regesteKurz": "Art. 22 bis Abs. 5 und Art. 23 IVG; Art. 20 sexies Abs. 1, Art. 21 septies Abs. 5 und Art. 21 Abs. 3 IVV; Art. 4 und 5 Bst. a der Verordnung (EG) Nr. 883/ 2004 des Europäischen Parlaments und des Rates vom 29. April 2004 zur Koordinierung…",
+      "datum": "2024-11-25",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_219",
+      "zitierung": "BGE 151 V 219",
+      "regesteKurz": "a Art. 15 Abs. 2 BVG i.V.m. Art. 12 lit. j und k BVV 2; Art. 104 f. OR; Verzugszinssatz. Ist dem Vorsorgereglement in Bezug auf die in zeitlicher Hinsicht massgebliche Höhe des Verzugszinssatzes keine Regelung zu entnehmen, gelangen die…",
+      "datum": "2024-10-24",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     },
+     {
+      "key": "bge_151_V_66",
+      "zitierung": "BGE 151 V 66",
+      "regesteKurz": "Art. 8 Abs. 1 BV; Art. 4 Abs. 1 IVG in Verbindung mit Art. 6-8 ATSG; Art. 28 Abs. 1 IVG; invalidisierende Wirkung der Adipositas. Eine Adipositas kann eine zu Rentenleistungen berechtigende Invalidität bewirken, auch wenn sie grundsätzlich…",
+      "datum": "2024-10-22",
+      "leitcharakter": "leitentscheid",
+      "gericht": "bge",
+      "kanton": "CH"
+     }
+    ]
+   }
+  },
+  "/materialien/deckungs-sicht.json": {
+   "profil": "entstehung-deckung/1",
+   "staende": {
+    "deckung": "2026-09-14",
+    "entstehung": "2026-09-23",
+    "synopse": "2026-09-12",
+    "curia": "2026-09-21",
+    "provenienz": "2026-09-25",
+    "normtext": "2026-09-21"
+   },
+   "ebenen": {
+    "anker": {
+     "haben": 4,
+     "gesamt": 43,
+     "stand": "2026-09-11",
+     "quelle": "Fedlex, Bundesblatt-Volltext (fedlex.admin.ch)"
+    },
+    "curia": {
+     "haben": 386,
+     "gesamt": null,
+     "stand": "2026-09-21",
+     "quelle": "Parlamentsdienste der Bundesversammlung, Bern (Curia Vista)"
+    },
+    "verfahrenBund": {
+     "haben": 409,
+     "gesamt": null,
+     "stand": "2026-09-25",
+     "quelle": "Parlamentsdienste der Bundesversammlung, Bern (Curia Vista)"
+    },
+    "verfahrenBs": {
+     "haben": 114,
+     "gesamt": 117,
+     "stand": "2026-09-25",
+     "quelle": "Grosser Rat des Kantons Basel-Stadt (grosserrat.bs.ch)"
+    },
+    "bsKanten": {
+     "amtlich": 8,
+     "maschinell": 114
+    },
+    "zh": {
+     "haben": 0,
+     "gesamt": null,
+     "stand": "2026-09-25",
+     "quelle": "Kantonsrat Zürich — noch nicht erschlossen"
+    }
+   },
+   "erlasse": {
+    "ADOV": {
+     "titel": "Verordnung über die Adoption (Adoptionsverordnung, AdoV)",
+     "sr": "211.221.36",
+     "ocFussnoten": 1,
+     "ocGetroffen": 0,
+     "aenderungen": 1,
+     "mitBotschaft": 0
+    },
+    "AHVG": {
+     "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)",
+     "sr": "831.10",
+     "ocFussnoten": 58,
+     "ocGetroffen": 10,
+     "aenderungen": 55,
+     "mitBotschaft": 26,
+     "fensterAb": "2021-01-01",
+     "schritte": 6,
+     "altBloecke": 71,
+     "ohneEreignis": 18,
+     "konflikte": 16,
+     "quellLuecken": 0
+    },
+    "AHVV": {
+     "titel": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+     "sr": "831.101",
+     "ocFussnoten": 90,
+     "ocGetroffen": 42,
+     "aenderungen": 89,
+     "mitBotschaft": 0,
+     "fensterAb": "2021-01-01",
+     "schritte": 7,
+     "altBloecke": 129,
+     "ohneEreignis": 57,
+     "konflikte": 30,
+     "quellLuecken": 0
+    },
+    "AIG": {
+     "titel": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+     "sr": "142.20",
+     "ocFussnoten": 61,
+     "ocGetroffen": 42,
+     "aenderungen": 59,
+     "mitBotschaft": 45,
+     "fensterAb": "2021-07-01",
+     "schritte": 19,
+     "altBloecke": 123,
+     "ohneEreignis": 21,
+     "konflikte": 65,
+     "quellLuecken": 0
+    },
+    "AKKBV": {
+     "titel": "Akkreditierungs- und Bezeichnungsverordnung (AkkBV)",
+     "sr": "946.512",
+     "ocFussnoten": 11,
+     "ocGetroffen": 7,
+     "aenderungen": 10,
+     "mitBotschaft": 0,
+     "fensterAb": "2023-01-01",
+     "schritte": 2,
+     "altBloecke": 1,
+     "ohneEreignis": 0,
+     "konflikte": 0,
+     "quellLuecken": 0
+    },
+    "APOSTILLE": {
+     "titel": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung (Apostille-Übereinkommen)",
+     "sr": "0.172.030.4",
+     "ocFussnoten": 0,
+     "ocGetroffen": 0,
+     "aenderungen": 0,
+     "mitBotschaft": 0,
+     "fensterAb": "2021-07-06",
+     "schritte": 1,
+     "altBloecke": 0,
+     "ohneEreignis": 0,
+     "konflikte": 0,
+     "quellLuecken": 0
+    },
+    "ARG": {
+     "titel": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
+     "sr": "822.11",
+     "ocFussnoten": 26,
+     "ocGetroffen": 8,
+     "aenderungen": 24,
+     "mitBotschaft": 6,
+     "fensterAb": "2021-01-01",
+     "schritte": 1,
+     "altBloecke": 1,
+     "ohneEreignis": 0,
+     "konflikte": 0,
+     "quellLuecken": 0
+    },
+    "CHEMRRV": {
+     "titel": "Chemikalien-Risikoreduktions-Verordnung (ChemRRV)",
+     "sr": "814.81",
+     "ocFussnoten": 11,
+     "ocGetroffen": 4,
+     "aenderungen": 11,
+     "mitBotschaft": 0,
+     "fensterAb": "2021-01-01",
+     "schritte": 24,
+     "altBloecke": 36,
+     "ohneEreignis": 3,
+     "konflikte": 3,
+     "quellLuecken": 22
+    }
+   }
+  }
+ }
+}

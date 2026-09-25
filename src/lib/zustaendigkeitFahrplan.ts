@@ -1,5 +1,6 @@
 // Dossier: bibliothek/normen/zpo-zustaendigkeit-regelwerk.md
 import type { ZustaendigkeitErgebnis } from './zustaendigkeit';
+import { GRUND_EINZIGE_INSTANZ_199_3 } from './zustaendigkeit/erstinstanz';
 
 // ─── Praxis-Fahrplan aus dem Zuständigkeits-Ergebnis ────────────────────────
 // Reiner Komponist (keine eigene Rechtsregel — alles kommt aus der Engine
@@ -70,7 +71,10 @@ export function fahrplanSchritte(
   } else {
     schritte.push({
       titel: `Verfahren: ${r.verfahrensart === 'vereinfacht' ? 'vereinfacht' : 'ordentlich'}`,
-      text: r.schlichtung.entfaelltGrund
+      // RL-42 / Z1-03: Art. 199 Abs. 3 ZPO ist ein Wahlrecht, keine Ausnahme.
+      text: r.schlichtung.entfaelltGrund === GRUND_EINZIGE_INSTANZ_199_3
+        ? `${r.schlichtung.entfaelltGrund}.`
+        : r.schlichtung.entfaelltGrund
         ? `Keine Schlichtung — ${r.schlichtung.entfaelltGrund}.`
         : 'Das Gericht führt das Verfahren nach Eingang der Klage durch.',
     });
