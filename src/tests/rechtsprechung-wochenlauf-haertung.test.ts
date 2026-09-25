@@ -8,7 +8,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
   erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, entscheide, leseBsDelta, leseBsVoll, waehleStichprobe,
-  pruefeText, aktenzeichenVarianten, datumImText, oclIdFuerPdf, budgetZeilen, budgetBefund, bewerteFrische,
+  pruefeText, aktenzeichenVarianten, amtlichesDatum, oclIdFuerPdf, budgetZeilen, budgetBefund, bewerteFrische,
   teilePfade, inPruefung, zerlegeRunParallel, e2eAuswahl, restMinuten, vergleicheRegister, BOT,
   type Lage, type RegEintrag,
 } from '../../scripts/rechtsprechung/wochenlauf-kern';
@@ -164,31 +164,51 @@ describe('7 · Stichprobe prüfbar: PDF-Text, Wortgrenze, Datum', () => {
     expect(t).toContain('Urteil vom 19. Juni 2026');
     expect(t).toContain('F-4218/2026');
   });
-  it('PDF mit Textebene: Treffer mit Wortgrenze, Präfix-Falle ist Fehltreffer, Scan nicht prüfbar', () => {
+  it('PDF mit Textebene: Aktenzeichen UND Datum getrennt; Präfix-Falle ist Fehltreffer, Scan nicht prüfbar', () => {
     const t = `Abteilung III\nC-706/2026\nAbschreibungsentscheid vom 17. September 2026 ${'Sachverhalt '.repeat(60)}`;
     const bv = e('bvger_C_706_2026', 'bvger', '2026-09-17', { nummer: 'C-706/2026' });
-    expect(pruefeText(t, bv, 'pdf')).toEqual({ treffer: true, detail: 'C-706/2026 · PDF · Datum 2026-09-17 im Text' });
+    expect(pruefeText(t, bv, 'pdf')).toEqual({ treffer: true, akz: true, datum: true, detail: 'C-706/2026 · PDF · 2026-09-17' });
     // Mutation: in pruefeText den PDF-Zweig auf «treffer: null» zurückdrehen ⇒ nicht mehr false.
-    expect(pruefeText(t, { ...bv, nummer: 'C-70/2026' }, 'pdf').treffer).toBe(false);
+    expect(pruefeText(t, { ...bv, nummer: 'C-70/2026' }, 'pdf')).toMatchObject({ treffer: false, akz: false });
     expect(pruefeText(t, { ...bv, nummer: 'C-706/202' }, 'pdf').treffer).toBe(false);
     expect(pruefeText('C-706/2026', bv, 'pdf').treffer).toBeNull();
     expect(pruefeText(t, bv, 'html').treffer).toBe(true);
     expect(pruefeText('<div id="root"></div>', bv, 'html').treffer).toBeNull();
   });
-  it('GR schreibt das Jahr zweistellig: «ZR1 24 196» belegt «ZR1 2024 196», nicht «ZR1 24 19»', () => {
-    expect(aktenzeichenVarianten('ZR1 2024 196')).toEqual(['ZR1 2024 196', 'ZR1 24 196']);
-    expect(aktenzeichenVarianten('HOR.2024.19')).toEqual(['HOR.2024.19']);
-    const t = `Urteil vom 25. April 2026 Referenz ZR1 24 196 Instanz ${'Erwägung '.repeat(80)}`;
-    expect(pruefeText(t, e('k', 'gr_gerichte', '2026-04-25', { nummer: 'ZR1 2024 196' }), 'pdf').detail).toBe('ZR1 2024 196 (als «ZR1 24 196») · PDF · Datum 2026-04-25 im Text');
-    expect(pruefeText(t, e('k', 'gr_gerichte', '2026-04-25', { nummer: 'ZR1 2024 19' }), 'pdf').treffer).toBe(false);
+  it('Datum ist Pflicht-Kriterium (Befund #1117): falsches Korpus-Datum ⇒ Fehltreffer, nicht ermittelbar ⇒ nicht prüfbar', () => {
+    const t = `HOR.2024.19 / ve / lw\nEntscheid vom 2. Dezember 2025\nBesetzung ${'Erwägung '.repeat(80)}`;
+    const ag = e('ag_gerichte_HOR_2024_19', 'ag_gerichte', '2025-12-12', { nummer: 'HOR.2024.19' });
+    // Mutation: Datumszweig in pruefeText entfernen ⇒ treffer true trotz falschem Datum (Stand vor der Schärfung).
+    expect(pruefeText(t, ag, 'pdf')).toEqual({ treffer: false, akz: true, datum: false, detail: 'HOR.2024.19 · PDF · Datum amtlich 2025-12-02 ≠ Korpus 2025-12-12' });
+    expect(pruefeText(t, { ...ag, datum: '2025-12-02' }, 'pdf')).toMatchObject({ treffer: true, akz: true, datum: true });
+    expect(pruefeText(`HOR.2024.19 ${'Erwägung '.repeat(80)}`, ag, 'pdf')).toMatchObject({ treffer: null, akz: true, datum: null });
+    expect(entscheide({ ...gruen, stichprobe: [...gruen.stichprobe, { key: 'ag', url: null, ...pruefeText(t, ag, 'pdf'), ergebnis: 'fehltreffer' }] }).entscheid).toBe('entwurf');
   });
-  it('Datum de/fr/it, mit und ohne führende Null; fremdes Datum trifft nicht', () => {
-    expect(datumImText('Entscheid vom 2. Dezember 2025', '2025-12-02')).toBe(true);
-    expect(datumImText('Entscheid vom 2. Dezember 2025', '2025-12-12')).toBe(false);
-    expect(datumImText('arrêt du 1er mars 2026', '2026-03-01')).toBe(true);
-    expect(datumImText('sentenza del 7 luglio 2026', '2026-07-07')).toBe(true);
-    expect(datumImText('Bern, 08.07.2026', '2026-07-08')).toBe(true);
-    expect(datumImText('Bern, 18.07.2026', '2026-07-08')).toBe(false);
+  it('GR schreibt das Jahr zweistellig — eng: nur gr_gerichte, Wortgrenze bleibt, kein Substring', () => {
+    expect(aktenzeichenVarianten('ZR1 2024 196', 'gr_gerichte')).toEqual(['ZR1 2024 196', 'ZR1 24 196']);
+    expect(aktenzeichenVarianten('SBK 2026 88', 'gr_gerichte')).toEqual(['SBK 2026 88', 'SBK 26 88']);
+    expect(aktenzeichenVarianten('200 2026 230', 'be_verwaltungsgericht')).toEqual(['200 2026 230']);
+    expect(aktenzeichenVarianten('HOR.2024.19', 'gr_gerichte')).toEqual(['HOR.2024.19']);
+    const t = `Urteil vom 25. April 2026\nmitgeteilt am 5. Mai 2026\nReferenz ZR1 24 196\nInstanz ${'Erwägung '.repeat(80)}`;
+    expect(pruefeText(t, e('k', 'gr_gerichte', '2026-04-25', { nummer: 'ZR1 2024 196' }), 'pdf').detail).toBe('ZR1 2024 196 (als «ZR1 24 196») · PDF · 2026-04-25');
+    expect(pruefeText(t, e('k', 'gr_gerichte', '2026-04-25', { nummer: 'ZR1 2024 19' }), 'pdf').treffer).toBe(false);
+    expect(pruefeText(t, e('k', 'gr_gerichte', '2026-04-25', { nummer: 'R1 2024 196' }), 'pdf').treffer).toBe(false);
+  });
+  it('amtliches Datum aus dem Urteilskopf — Formen realer Quell-PDFs vom 25.9.2026', () => {
+    // BStGer, BE (Zwischenwörter), GR (danach «mitgeteilt am»), AG (fehlendes Leerzeichen), SG (Etikett vor BGer-Datum)
+    expect(amtlichesDatum('Beschluss vom 11. Juni 2026\nBerufungskammer … Verfügung … vom 13. Dezember 2024')).toBe('2026-06-11');
+    expect(amtlichesDatum('KV 200 2026 230\nVerwaltungsgericht des Kantons Bern\nUrteil der Einzelrichterin vom 20. Mai 2026\n… betreffend Einspracheentscheid vom 5. März 2026')).toBe('2026-05-20');
+    expect(amtlichesDatum('Urteil vom 25. April 2026\nmitgeteilt am 5. Mai 2026')).toBe('2026-04-25');
+    expect(amtlichesDatum('VBE.2024.584 / nb / nl\nArt. 111\nUrteil vom11. September 2025')).toBe('2025-09-11');
+    expect(amtlichesDatum('Fall-Nr.: B 2024/58\nPublikationsdatum: 25.02.2025\nEntscheiddatum: 03.02.2025\n… mit Urteil vom 14. Januar 2026 abgewiesen')).toBe('2025-02-03');
+    // BVGer Sperrschrift (de/it), fr mit «1er»
+    expect(amtlichesDatum('F-4158/2026\nU r t e i l v o m 1 7 . J u n i 2 0 2 6\nBesetzung')).toBe('2026-06-17');
+    expect(amtlichesDatum('F-4218/2026\nS e n t e n z a d e l 1 9 g i u g n o 2 0 2 6\nComposizione')).toBe('2026-06-19');
+    expect(amtlichesDatum('Arrêt du 1er mars 2026\nComposition')).toBe('2026-03-01');
+    expect(amtlichesDatum('Urteil vom 3.2.2026')).toBe('2026-02-03');
+    expect(amtlichesDatum('Urteil 8C_484/2025 vom 11. Mai 2026')).toBe('2026-05-11');
+    expect(amtlichesDatum('Nichtanhandnahme 12.05.2026 | UE240310 | Obergericht … Beschluss 12.05.2026 UE240310')).toBe('2026-05-12');
+    expect(amtlichesDatum('Referenz ZR1 24 196, keine Datumsfügung')).toBeNull();
   });
   it('BVGer: OCL-id für pdf_url (Form am 25.9.2026 gemessen), sonst keine', () => {
     expect(oclIdFuerPdf(e('bvger_F_4218_2026', 'bvger', '2026-06-19', { nummer: 'F-4218/2026' }))).toBe('bvger_F-4218_2026');
@@ -268,8 +288,9 @@ describe('9 · «in Prüfung» (A9)', () => {
   const unberuehrt = { commits: [{ autor: BOT, committer: BOT }], body: 'x\nGegenpruefung: ausstehend — Wochenlauf, Prüfung vor Landung', labels: [], menschen: [] };
   it('unberührt ⇒ null; jede Spur einer Prüfung ⇒ Grund', () => {
     expect(inPruefung(unberuehrt)).toBeNull();
-    // Mutation: nur den letzten Commit prüfen (alter Stand) ⇒ der erste Fall bliebe unerkannt.
-    expect(inPruefung({ ...unberuehrt, commits: [{ autor: 'David Graf', committer: 'David Graf' }, { autor: BOT, committer: BOT }] })).toMatch(/fremder Commit/);
+    // Mutation: nur den jüngsten Commit prüfen (alter Stand `git log -1`; git log listet
+    // den jüngsten zuerst) ⇒ ein älterer fremder Commit unter einem Bot-Commit bliebe unerkannt.
+    expect(inPruefung({ ...unberuehrt, commits: [{ autor: BOT, committer: BOT }, { autor: 'David Graf', committer: 'David Graf' }] })).toMatch(/fremder Commit/);
     expect(inPruefung({ ...unberuehrt, commits: [{ autor: BOT, committer: 'David Graf' }] })).toMatch(/Committer David Graf/); // amend
     expect(inPruefung({ ...unberuehrt, body: 'Gegenpruefung: bestanden (Opus) — 12/12' })).toMatch(/Verdikt im Body/);
     expect(inPruefung({ ...unberuehrt, labels: ['in-pruefung'] })).toBe('Label in-pruefung');

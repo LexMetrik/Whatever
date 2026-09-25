@@ -147,6 +147,23 @@ export function erkenneGuardBefunde(log: string): GuardBefund[] {
   return out;
 }
 
+// ── Gerichte des Wochenlaufs ────────────────────────────────────────────────
+export const EIDG_GERICHTE = ['bvger', 'bstger', 'bpatger'];
+export const KANTONS_GERICHTE = ['zh_obergericht', 'be_verwaltungsgericht', 'sg_gerichte', 'gr_gerichte', 'ag_gerichte'];
+/**
+ * Gerichte, die der Wochenlauf NICHT nachzieht — die einzige Stelle dafür (§5);
+ * der Bericht nennt sie. Befund Stichproben-Nachzug PR #1117 (25.9.2026): das
+ * OCL-Entscheiddatum ist bei sg_gerichte das Datum des nachfolgenden
+ * BGer-Urteils (9/12 im Bestand), bei ag_gerichte um Tage bis Wochen
+ * verschoben. Rückbau: entfällt, wenn der OCL-Datums-Fix für
+ * sg_gerichte/ag_gerichte gelandet ist (Posten QS-KORPUS Adapter-Datum SG/AG).
+ */
+export const AUSGENOMMEN: Readonly<Record<string, string>> = {
+  sg_gerichte: 'Datum aus OCL unzuverlässig',
+  ag_gerichte: 'Datum aus OCL unzuverlässig',
+};
+export const aktiveGerichte = (gerichte: readonly string[]) => gerichte.filter((g) => !(g in AUSGENOMMEN));
+
 // ── Kantonaler Zweig (A4) ───────────────────────────────────────────────────
 /**
  * Auf main ignoriert `npm run entscheide -- --additiv` die Optionen
@@ -234,8 +251,13 @@ export function oclIdFuerPdf(e: RegEintrag): string | null {
   return e.gericht === 'bvger' && nr ? `bvger_${nr.replace(/\//g, '_')}` : null;
 }
 
-/** treffer: true = belegt, false = Gegenbeweis (Fehltreffer), null = nicht prüfbar. */
-export interface Identitaet { treffer: boolean | null; detail: string }
+/**
+ * Ergebnis einer Identitätsprüfung. `treffer`: true = belegt, false = Gegenbeweis
+ * (Fehltreffer), null = nicht prüfbar. `akz` und `datum` weisen die zwei
+ * Kriterien getrennt aus (true ✓ · false ✗ · null nicht ermittelbar;
+ * undefined = nicht anwendbar, z. B. Bandjahr-Platzhalter).
+ */
+export interface Identitaet { treffer: boolean | null; detail: string; akz?: boolean | null; datum?: boolean | null }
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /** Wortgrenze für Aktenzeichen: kein Buchstabe/Ziffer/Punkt/Schrägstrich direkt davor oder danach. */
 const grenze = (s: string) => new RegExp(`(?<![\\p{L}\\p{N}./_-])${esc(s).replace(/\s+/g, '\\s+')}(?![\\p{L}\\p{N}/_-]|\\.\\d)`, 'u');
@@ -253,15 +275,15 @@ export function pruefeBge(html: string, e: RegEintrag): Identitaet {
   const ref = (e.bgeReferenz ?? '').trim();
   const t = text(html);
   const i = t.indexOf('Urteilskopf');
-  if (!ref || i < 0) return { treffer: false, detail: 'kein Urteilskopf/keine Fundstelle' };
+  if (!ref || i < 0) return { treffer: false, akz: false, detail: 'kein Urteilskopf/keine Fundstelle' };
   const kopf = t.slice(i + 'Urteilskopf'.length, i + 'Urteilskopf'.length + 40);
   if (!new RegExp(`^\\s*${esc(ref).replace(/\s+/g, '\\s+')}(?!\\d)`).test(kopf)) {
-    return { treffer: false, detail: `Urteilskopf nennt «${kopf.trim().slice(0, 20)}», erwartet ${ref}` };
+    return { treffer: false, akz: false, detail: `Urteilskopf nennt «${kopf.trim().slice(0, 20)}», erwartet ${ref}` };
   }
-  if (istBandjahrPlatzhalter({ datum: e.datum, bgeReferenz: ref })) return { treffer: true, detail: `${ref} (Bandjahr-Platzhalter, nur Fundstelle)` };
+  if (istBandjahrPlatzhalter({ datum: e.datum, bgeReferenz: ref })) return { treffer: true, akz: true, detail: `${ref} (Bandjahr-Platzhalter, nur Fundstelle)` };
   const { aza, datumIso } = parseClirUrteilskopf(html);
-  if (datumIso !== e.datum) return { treffer: false, detail: `${ref}: Datum amtlich ${datumIso ?? '–'} ≠ Korpus ${e.datum}` };
-  return { treffer: true, detail: `${ref} · ${aza ?? '–'} · ${datumIso}` };
+  if (datumIso !== e.datum) return { treffer: false, akz: true, datum: datumIso ? false : null, detail: `${ref}: Datum amtlich ${datumIso ?? '–'} ≠ Korpus ${e.datum}` };
+  return { treffer: true, akz: true, datum: true, detail: `${ref} · ${aza ?? '–'} · ${datumIso}` };
 }
 
 /** BS-Portal: «Geschäftsnummer: <nummer>» und «Entscheiddatum: TT.MM.JJJJ» = Korpus. */
@@ -269,63 +291,96 @@ export function pruefeBs(html: string, e: RegEintrag): Identitaet {
   const t = text(html);
   const nr = (e.nummer ?? '').trim();
   const m = /Gesch(?:ä|&auml;)ftsnummer:\s*(\S+)/.exec(t);
-  if (!nr || !m || m[1] !== nr) return { treffer: false, detail: `Geschäftsnummer amtlich «${m?.[1] ?? '–'}», erwartet «${nr}»` };
+  if (!nr || !m || m[1] !== nr) return { treffer: false, akz: false, detail: `Geschäftsnummer amtlich «${m?.[1] ?? '–'}», erwartet «${nr}»` };
   const d = /Entscheiddatum:\s*(\d{2})\.(\d{2})\.(\d{4})/.exec(t);
   const iso = d ? `${d[3]}-${d[2]}-${d[1]}` : null;
-  if (iso !== e.datum) return { treffer: false, detail: `${nr}: Entscheiddatum amtlich ${iso ?? '–'} ≠ Korpus ${e.datum}` };
-  return { treffer: true, detail: `${nr} · ${iso}` };
+  if (iso !== e.datum) return { treffer: false, akz: true, datum: iso ? false : null, detail: `${nr}: Entscheiddatum amtlich ${iso ?? '–'} ≠ Korpus ${e.datum}` };
+  return { treffer: true, akz: true, datum: true, detail: `${nr} · ${iso}` };
 }
 
 /**
- * Schreibweisen desselben Aktenzeichens: GR schreibt im Urteil das Jahr
- * zweistellig («Referenz ZR1 24 196»), OCL/Register vierstellig («ZR1 2024 196»)
- * — Messung 25.9.2026 am GR-PDF. Nur ein freistehendes Jahr (Leerzeichen auf
- * beiden Seiten) wird gekürzt; Zeichenfolge und Reihenfolge bleiben sonst gleich.
+ * Gerichte, deren Urteile das Jahr im Aktenzeichen zweistellig schreiben, wo
+ * OCL/Register es vierstellig führen — eng gefasst, je Gericht belegt:
+ *  · gr_gerichte: «Referenz ZR1 24 196» / «SBK 26 38» / «SV1 26 9» im Urteil,
+ *    «ZR1 2024 196» / «SBK 2026 38» / «SV1 2026 9» im Register (PDF-Messung
+ *    25.9.2026, drei Urteile).
+ * Nur ein freistehendes Jahr (Leerzeichen auf beiden Seiten) wird gekürzt;
+ * Zeichenfolge, Reihenfolge und die Wortgrenze bleiben sonst gleich.
  */
-export function aktenzeichenVarianten(nr: string): string[] {
+export const KURZJAHR_GERICHTE: ReadonlySet<string> = new Set(['gr_gerichte']);
+export function aktenzeichenVarianten(nr: string, gericht: string): string[] {
+  if (!KURZJAHR_GERICHTE.has(gericht)) return [nr];
   const kurz = nr.replace(/(?<=\s)(?:19|20)(\d{2})(?=\s)/g, '$1');
   return kurz === nr ? [nr] : [nr, kurz];
 }
 
 const MONATE: Record<'de' | 'fr' | 'it', string[]> = {
-  de: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+  de: ['januar', 'februar', 'märz', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'dezember'],
   fr: ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'],
   it: ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
 };
-/** Steht das Entscheiddatum (ISO) im Text — «11.05.2026», «11. Mai 2026», «11 mai 2026», «1er …», «1° …»? */
-export function datumImText(t: string, iso: string): boolean {
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
-  if (!m) return false;
-  const [j, mo, ta] = [m[1], Number(m[2]), Number(m[3])];
-  const tag = `0?${ta}${ta === 1 ? '(?:er|°)?' : ''}`;
-  const namen = (['de', 'fr', 'it'] as const).map((s) => MONATE[s][mo - 1]).join('|');
-  const re = new RegExp(`(?<![\\p{N}.])(?:${tag}\\.\\s*0?${mo}\\.\\s*${j}|${tag}\\.?\\s+(?:${namen})\\s+${j})(?!\\p{N})`, 'iu');
-  return re.test(t.replace(/\s+/g, ' '));
+const MONAT_NR = new Map<string, number>(Object.values(MONATE).flatMap((ms) => ms.map((m, i) => [m, i + 1] as [string, number])));
+const MONAT_RE = [...MONAT_NR.keys()].sort((a, b) => b.length - a.length).join('|');
+const TYP_RE = 'urteil|entscheid|beschluss|verfügung|arrêt|décision|jugement|ordonnance|sentenza|decisione|decreto|ordinanza';
+
+/**
+ * Das AMTLICHE Entscheiddatum aus dem Kopf eines Urteils (erste 3000 Zeichen),
+ * gebaut an realen Quell-PDFs (25.9.2026): BStGer «Beschluss vom 11. Juni 2026»,
+ * BVGer gesperrt «U r t e i l v o m 1 7 . J u n i 2 0 2 6» / «S e n t e n z a
+ * d e l 1 9 g i u g n o 2 0 2 6», BE «Urteil der Einzelrichterin vom 20. Mai
+ * 2026», GR «Urteil vom 25. April 2026», AG «Urteil vom11. September 2025», SG
+ * «Entscheiddatum: 03.02.2025», ZH (HTML) «Beschluss 12.05.2026». Weil Sperrschrift die Wortabstände verschluckt,
+ * wird auf dem Kopf OHNE Leerraum gesucht. Vorrang: ein Etikett
+ * «Entscheiddatum:»; sonst die ERSTE Fügung «<Entscheidart> … vom/du/del
+ * <Datum>» mit höchstens 60 Zeichen dazwischen (auch ein Aktenzeichen:
+ * «Urteil 8C_484/2025 vom …»); der Rubrum-Kopf steht vor Vorinstanz- und
+ * Verfahrensdaten.
+ * Nur Tag/Monat/Jahr als Text — keine Zeitstempel, also keine Zeitzonen-Falle.
+ */
+export function amtlichesDatum(t: string): string | null {
+  const k = t.normalize('NFC').slice(0, 3000).replace(/\s+/g, '').toLowerCase();
+  const iso = (j: string, m: number, d: string) => (m >= 1 && m <= 12 && +d >= 1 && +d <= 31 ? `${j}-${String(m).padStart(2, '0')}-${d.padStart(2, '0')}` : null);
+  const etikett = /entscheiddatum:?(\d{1,2})\.(\d{1,2})\.(\d{4})(?!\d)/u.exec(k);
+  if (etikett) return iso(etikett[3], +etikett[2], etikett[1]);
+  const re = new RegExp(`(?:${TYP_RE}).{0,60}?(?:vom|du|del|dell['’]|dello)(\\d{1,2})(?:er|°)?\\.?(?:(${MONAT_RE})|(\\d{1,2})\\.)(\\d{4})(?!\\d)`, 'u');
+  // ZH (HTML-Druckansicht, 25.9.2026): «Beschluss 12.05.2026» — Entscheidart direkt vor dem Zahlendatum.
+  const direkt = new RegExp(`(?:${TYP_RE})(\\d{1,2})\\.(\\d{1,2})\\.(\\d{4})(?!\\d)`, 'u').exec(k);
+  const m = re.exec(k);
+  if (direkt && (!m || direkt.index < m.index)) return iso(direkt[3], +direkt[2], direkt[1]);
+  if (!m) return null;
+  return iso(m[4], m[2] ? MONAT_NR.get(m[2])! : +m[3], m[1]);
 }
 
 /** Unter dieser Zeichenzahl hat ein PDF keine brauchbare Textebene (Scan) — nicht prüfbar statt Fehltreffer. */
 export const PDF_MIN_TEXT = 500;
 
 /**
- * Übrige Gerichte: das (erste) Aktenzeichen steht mit Wortgrenze im Text der
- * Quelle (HTML-Text oder PDF-Text aus wochenlauf-pdf.ts). Beim PDF mit
- * Textebene ist ein FEHLENDES Aktenzeichen ein Gegenbeweis (Fehltreffer); beim
- * HTML nicht (JS-Hülle ohne Inhalt, z. B. weblaw) — dort «nicht prüfbar».
- * Das Entscheiddatum ist nur Zusatzbeleg: ein Urteil nennt viele Daten, ein
- * fehlendes Datum widerlegt nichts.
+ * Übrige Gerichte, ZWEI Kriterien, getrennt ausgewiesen (Befund PR #1117,
+ * 25.9.2026: das OCL-Entscheiddatum ist bei SG/AG falsch — das Datum ist
+ * darum Pflicht, nicht Zusatz):
+ *  · Aktenzeichen: das (erste) Aktenzeichen steht mit Wortgrenze im Text (HTML
+ *    oder PDF-Text aus wochenlauf-pdf.ts). Beim PDF mit Textebene ist ein
+ *    FEHLENDES Aktenzeichen ein Gegenbeweis; beim HTML nicht (JS-Hülle).
+ *  · Datum: amtlichesDatum(Text) = Korpus-Datum, auf den Tag (±0).
+ * treffer nur mit beidem ✓; ein ✗ in einem Kriterium ⇒ Fehltreffer; Datum
+ * nicht ermittelbar ⇒ nicht prüfbar (Teilbeleg, Handprüfung).
  */
 export function pruefeText(t: string, e: RegEintrag, art: 'pdf' | 'html'): Identitaet {
   const nr = (e.nummer ?? '').split(',')[0].trim();
-  if (!nr) return { treffer: null, detail: 'kein Aktenzeichen im Korpus' };
-  if (art === 'pdf' && t.replace(/\s+/g, '').length < PDF_MIN_TEXT) return { treffer: null, detail: `${nr}: PDF ohne Textebene — Handprüfung` };
-  const var_ = aktenzeichenVarianten(nr).find((v) => grenze(v).test(t));
-  if (var_) {
-    const dat = datumImText(t, e.datum) ? ` · Datum ${e.datum} im Text` : ` · Datum ${e.datum} nicht im Text (kein Gegenbeweis)`;
-    return { treffer: true, detail: `${var_ === nr ? nr : `${nr} (als «${var_}»)`}${art === 'pdf' ? ' · PDF' : ''}${dat}` };
+  if (!nr) return { treffer: null, akz: null, detail: 'kein Aktenzeichen im Korpus' };
+  if (art === 'pdf' && t.replace(/\s+/g, '').length < PDF_MIN_TEXT) return { treffer: null, akz: null, detail: `${nr}: PDF ohne Textebene — Handprüfung` };
+  const var_ = aktenzeichenVarianten(nr, e.gericht).find((v) => grenze(v).test(t));
+  const quelle = art === 'pdf' ? 'PDF' : 'HTML';
+  if (!var_) {
+    return art === 'pdf'
+      ? { treffer: false, akz: false, detail: `${nr}: nicht im PDF-Text (${t.length} Zeichen)` }
+      : { treffer: null, akz: null, detail: `${nr}: nicht im HTML (JS-Hülle?) — Handprüfung` };
   }
-  return art === 'pdf'
-    ? { treffer: false, detail: `${nr}: nicht im PDF-Text (${t.length} Zeichen)` }
-    : { treffer: null, detail: `${nr}: nicht im HTML (JS-Hülle?) — Handprüfung` };
+  const akzText = var_ === nr ? nr : `${nr} (als «${var_}»)`;
+  const amtlich = amtlichesDatum(t);
+  if (amtlich === null) return { treffer: null, akz: true, datum: null, detail: `${akzText} · ${quelle} · Datum nicht ermittelbar (Korpus ${e.datum}) — Handprüfung` };
+  if (amtlich !== e.datum) return { treffer: false, akz: true, datum: false, detail: `${akzText} · ${quelle} · Datum amtlich ${amtlich} ≠ Korpus ${e.datum}` };
+  return { treffer: true, akz: true, datum: true, detail: `${akzText} · ${quelle} · ${amtlich}` };
 }
 
 /** HTML einer übrigen Quelle (PDF-Bytes gehen über pdfText + pruefeText). */
@@ -339,7 +394,15 @@ export function pruefeIdentitaet(html: string, e: RegEintrag): Identitaet {
   return g === 'bge' ? pruefeBge(html, e) : g === 'bs' ? pruefeBs(html, e) : pruefeGenerisch(html, e);
 }
 
-export interface StichprobenZeile { key: string; url: string | null; ergebnis: 'treffer' | 'fehltreffer' | 'nicht-pruefbar'; detail: string }
+export interface StichprobenZeile {
+  key: string;
+  url: string | null;
+  ergebnis: 'treffer' | 'fehltreffer' | 'nicht-pruefbar';
+  detail: string;
+  /** Kriterien getrennt (Identitaet.akz/.datum); fehlt = nicht anwendbar. */
+  akz?: boolean | null;
+  datum?: boolean | null;
+}
 
 // ── Budget (Punkt 12) ───────────────────────────────────────────────────────
 export interface BudgetZeile { pfad: string; vorher: number | null; nachher: number | null; budget: number; anteil: number | null; wochen: number | null }

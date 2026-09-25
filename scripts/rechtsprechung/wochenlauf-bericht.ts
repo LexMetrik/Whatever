@@ -4,7 +4,7 @@
 // entschieden wird im Kern. Jeder Befund, den der Kern liefert, erscheint hier
 // — Ausfälle, Guard-Befunde, rote Tore, Budget, Frische, Stichprobe.
 import {
-  budgetBefund, type BudgetZeile, type BsVollBilanz, type Entscheid, type FrischeZeile, type GuardBefund,
+  budgetBefund, AUSGENOMMEN, type BudgetZeile, type BsVollBilanz, type Entscheid, type FrischeZeile, type GuardBefund,
   type RegisterVergleich, type StichprobenZeile, type Tor,
 } from './wochenlauf-kern';
 
@@ -49,6 +49,8 @@ const liste = (xs: string[], max = 40) =>
 const zelle = (s: string) => s.replace(/\|/g, '\\|').replace(/\n/g, ' ');
 const kb = (n: number | null) => (n === null ? '–' : `${(n / 1024).toFixed(1)} KB`);
 const ausgefallen = (q: Schritt) => q.code !== 0 || q.ausfaelle.length > 0;
+/** Kriterium der Stichprobe: ✓ belegt · ✗ widerlegt · «nicht ermittelbar» · – nicht anwendbar. */
+const krit = (k: boolean | null | undefined) => (k === true ? '✓' : k === false ? '✗' : k === null ? 'nicht ermittelbar' : '–');
 
 /** Kopfsatz: ehrlich — «alles grün» nur, wenn auch alle Quellen erreicht wurden. */
 export function kopfsatz(d: BerichtDaten): string {
@@ -84,6 +86,7 @@ export function baueBericht(d: BerichtDaten): string {
     ...d.vergleich.jeGericht.map((z) => `| ${z.gericht} | ${z.vorher} | ${z.nachher} | ${z.nachher - z.vorher >= 0 ? '+' : ''}${z.nachher - z.vorher} | ${z.neuestes ?? '–'} |`),
     '',
     `Neu: ${d.vergleich.neu.length} · entfernt: ${d.vergleich.entfernt.length} (davon dieser Lauf: +${d.dieseWoche.neu} / −${d.dieseWoche.entfernt}) · BGE-Bände ${d.baender.vor}+${d.baender.lauf}`,
+    ...(d.modus === 'woche' && Object.keys(AUSGENOMMEN).length ? ['', `**Ausgenommen (nicht nachgezogen):** ${Object.entries(AUSGENOMMEN).map(([g, w]) => `${g} — ${w}`).join(' · ')}`] : []),
     ...(d.bsVoll ? ['', `BS-Vollabgleich: **${d.bsVoll.geprueft} geprüft · ${d.bsVoll.inhalt + d.bsVoll.liste} geändert** (Inhalt ${d.bsVoll.inhalt}, Listenfelder ${d.bsVoll.liste}) · neu ${d.bsVoll.neu} · Takedown ${d.bsVoll.takedown}`] : []),
     '',
     '## Übersprungene Quellen und Ausfälle',
@@ -133,11 +136,11 @@ export function baueBericht(d: BerichtDaten): string {
     '',
     `## Identitäts-Stichprobe (automatisch): ${tr}/${pr} Treffer${s.length - pr ? `, ${s.length - pr} nicht prüfbar` : ''}`,
     '',
-    'BGE gegen bger.ch clir (Ausweichadresse search.bger.ch), BS gegen das Portal (Geschäftsnummer + Entscheiddatum), übrige gegen die Quelle als HTML- oder PDF-Text (Aktenzeichen mit Wortgrenze, BVGer über OCL `pdf_url`; Datum als Zusatzbeleg). PDF mit Textebene ohne Aktenzeichen = Fehltreffer.',
+    'Zwei Kriterien je Eintrag, getrennt: Aktenzeichen (mit Wortgrenze, nie Substring) und Entscheiddatum (amtlich, auf den Tag). BGE gegen bger.ch clir (Ausweichadresse search.bger.ch), BS gegen das Portal, übrige gegen die Quelle als HTML- oder PDF-Text (BVGer über OCL `pdf_url`). Ein ✗ in einem Kriterium = Fehltreffer ⇒ Entwurf; Datum nicht ermittelbar = nicht prüfbar (Handprüfung).',
     '',
-    '| Eintrag | Ergebnis | Beleg |',
-    '|---|---|---|',
-    ...s.map((x) => `| ${x.url ? `[${x.key}](${x.url})` : x.key} | ${x.ergebnis} | ${zelle(x.detail)} |`),
+    '| Eintrag | Ergebnis | Aktenzeichen | Datum | Beleg |',
+    '|---|---|---|---|---|',
+    ...s.map((x) => `| ${x.url ? `[${x.key}](${x.url})` : x.key} | ${x.ergebnis} | ${krit(x.akz)} | ${krit(x.datum)} | ${zelle(x.detail)} |`),
     '',
     '## Für die prüfende Session',
     '',

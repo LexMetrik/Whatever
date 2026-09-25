@@ -17,7 +17,7 @@
 //  1 = Absturz, oder KEIN Diff und dabei eine Quelle ausgefallen (sonst sähe
 //      ein Totalausfall aus wie «nichts Neues»; der Wächter meldet es).
 //
-// FRISTEN (A10): Job-Timeout 180 min. Die Quellen dürfen bis --quellen-frist-min
+// FRISTEN (A10): Job-Timeout 185 min. Die Quellen dürfen bis --quellen-frist-min
 // laufen (danach werden verbleibende Quellen übersprungen und als Ausfall
 // gemeldet); jeder weitere Schritt bekommt min(eigene Kappe, Rest bis
 // --frist-min). So endet das Skript vor dem Job-Timeout und der PR-Schritt
@@ -34,14 +34,12 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, append
 import { join } from 'node:path';
 import {
   baenderFuer, vergleicheRegister, erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, KANTONSZWEIG_DATEI,
-  leseBsDelta, leseBsVoll, waehleStichprobe, pruefeIdentitaet, pruefeText, oclIdFuerPdf, gruppeVon, entscheide,
-  mergeSchutzSperrt, budgetZeilen, budgetBefund, bewerteFrische, teilePfade, zerlegeRunParallel, e2eAuswahl,
-  restMinuten, auszug, type RegEintrag, type Tor, type StichprobenZeile, type FrischeZeile,
+  leseBsDelta, leseBsVoll, waehleStichprobe, entscheide, mergeSchutzSperrt, budgetZeilen, budgetBefund,
+  teilePfade, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, aktiveGerichte, EIDG_GERICHTE, KANTONS_GERICHTE,
+  type RegEintrag, type Tor, type StichprobenZeile,
 } from './wochenlauf-kern';
 import { baueBericht, baueCommit, baueSummary, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
-import { pdfText } from './wochenlauf-pdf';
-import { clirUrl, bgeRefZuClirId } from '../normtext/clir-regeste';
-import { jget, type OclDecision } from '../normtext/adapter-entscheide';
+import { stichprobeZeile, frische } from './wochenlauf-netz';
 import { DATEN_BUDGET, gz } from '../perf/daten-budget';
 
 const arg = (n: string) => process.argv.find((a) => a.startsWith(n + '='))?.slice(n.length + 1);
@@ -60,9 +58,6 @@ const rest = (kappe: number, frist = fristMin) => Math.min(kappe, restMinuten(T0
 const REGISTER = 'public/rechtsprechung/register.json';
 const BS = 'Basel-Stadt (Delta)';
 const UEBRIGE = 'Übrige Gerichte (additiv)';
-const EIDG = ['bvger', 'bstger', 'bpatger'];
-const KANTONE = ['zh_obergericht', 'be_verwaltungsgericht', 'sg_gerichte', 'gr_gerichte', 'ag_gerichte'];
-const OCL = 'https://mcp.opencaselaw.ch/api'; // wie adapter-entscheide.ts (API nicht exportiert)
 const git = (...a: string[]) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
 const regAus = (json: string): RegEintrag[] => (JSON.parse(json) as { entscheide: RegEintrag[] }).entscheide;
 const leseRegister = () => regAus(readFileSync(REGISTER, 'utf8'));
@@ -103,62 +98,6 @@ async function tor(name: string, cmd: string, args: string[], kappe: number): Pr
   return { t: { name, code: r.code, auszug: auszug(r.log) }, log: r.log };
 }
 
-/** Amtliche Quelle holen: höflich, 30 s Timeout; nächste URL bei 5xx/Netzfehler (bger.ch → search.bger.ch). */
-async function holeSeite(urls: string[]): Promise<{ url: string; bytes: Uint8Array; utf8: boolean } | null> {
-  for (const url of urls) {
-    for (let i = 0; i < 2; i++) {
-      try {
-        const r = await fetch(url, { signal: AbortSignal.timeout(30_000), headers: { 'User-Agent': 'LexMetrik/1.0 (+https://lexmetrik.vercel.app; Wochenlauf-Stichprobe)' } });
-        if (r.ok) return { url, bytes: new Uint8Array(await r.arrayBuffer()), utf8: /utf-8/i.test(r.headers.get('content-type') ?? '') };
-        if (r.status < 500) break;
-      } catch { /* Netz: nächster Versuch */ }
-      await new Promise((ok) => setTimeout(ok, 1500));
-    }
-  }
-  return null;
-}
-
-// TODO(Quellen-PR fix/rechtsprechung-quellen-robust): das www→search-Ausweichen
-// hier ist eine eigene Kopie; nach dessen Landung durch den Export aus
-// clir-regeste.ts ersetzen (§5, eine Quelle).
-async function urlsFuer(e: RegEintrag): Promise<string[]> {
-  if (gruppeVon(e) === 'bge') {
-    const id = bgeRefZuClirId(e.bgeReferenz ?? '');
-    if (!id) return [];
-    const www = clirUrl(id, 'de');
-    return [www, www.replace('://www.bger.ch/', '://search.bger.ch/')];
-  }
-  const ocl = oclIdFuerPdf(e);
-  const pdf = ocl ? (await jget<OclDecision>(`${OCL}/decisions/${encodeURIComponent(ocl)}`))?.pdf_url : null;
-  return [...new Set([pdf, e.quelleUrl].filter((u): u is string => !!u))];
-}
-
-async function stichprobeZeile(e: RegEintrag): Promise<StichprobenZeile> {
-  const urls = await urlsFuer(e);
-  const seite = await holeSeite(urls);
-  if (!seite) return { key: e.key, url: urls[0] ?? null, ergebnis: 'nicht-pruefbar', detail: urls.length ? 'Quelle nicht erreichbar' : 'keine Quell-URL' };
-  let id;
-  if (new TextDecoder('latin1').decode(seite.bytes.slice(0, 5)) === '%PDF-') {
-    try { id = pruefeText(await pdfText(seite.bytes), e, 'pdf'); }
-    catch (x) { id = { treffer: null, detail: `PDF nicht lesbar: ${(x as Error).message.slice(0, 80)}` }; }
-  } else {
-    id = pruefeIdentitaet(new TextDecoder(seite.utf8 ? 'utf-8' : 'iso-8859-1').decode(seite.bytes), e);
-  }
-  return { key: e.key, url: seite.url, ergebnis: id.treffer === null ? 'nicht-pruefbar' : id.treffer ? 'treffer' : 'fehltreffer', detail: id.detail };
-}
-
-/** Jüngstes Quelldatum je Gericht aus dem OCL-Listing (neueste zuerst); Kantone wie der Generator nur de. */
-async function frische(nachher: RegEintrag[]): Promise<FrischeZeile[]> {
-  const out: FrischeZeile[] = [];
-  for (const c of [...EIDG, ...KANTONE]) {
-    const spr = KANTONE.includes(c) ? '&language=de' : '';
-    const d = await jget<{ results?: OclDecision[] }>(`${OCL}/decisions?court=${c}${spr}&sort=date_desc&limit=1&fields=compact`, 2, 30_000);
-    const reg = nachher.filter((e) => e.gericht === c && !e.verweis).reduce<string | null>((m, e) => (!m || e.datum > m ? e.datum : m), null);
-    out.push(bewerteFrische(datum, c, d?.results?.[0]?.decision_date ?? null, reg));
-  }
-  return out;
-}
-
 async function main(): Promise<void> {
   mkdirSync(aus, { recursive: true });
   const D = `--datum=${datum}`;
@@ -177,8 +116,11 @@ async function main(): Promise<void> {
   } else {
     quellen.push(await schritt(`BGE Bd. ${baender.vor}+${baender.lauf}`, 'npm', ['run', 'entscheide', '--', D, '--additiv', `--bge-baender=${baender.vor},${baender.lauf}`], true));
     quellen.push(await schritt(BS, 'npm', ['run', 'entscheide:bs', '--', '--delta', D], true));
-    quellen.push(await schritt(UEBRIGE, 'npm', ['run', 'entscheide', '--', D, '--additiv', `--eidg=${EIDG.join(',')}`, '--eidg-pro=5',
-      `--courts=${KANTONE.join(',')}`, '--kanton-pro=6'], true, (log) => kantonalAusfall(existsSync(KANTONSZWEIG_DATEI), KANTONE, log)));
+    // Ausgenommene Gerichte (AUSGENOMMEN, wochenlauf-kern.ts) fehlen hier und stehen im Bericht.
+    const eidg = aktiveGerichte(EIDG_GERICHTE);
+    const kantone = aktiveGerichte(KANTONS_GERICHTE);
+    quellen.push(await schritt(UEBRIGE, 'npm', ['run', 'entscheide', '--', D, '--additiv', `--eidg=${eidg.join(',')}`, '--eidg-pro=5',
+      `--courts=${kantone.join(',')}`, '--kanton-pro=6'], true, (log) => kantonalAusfall(existsSync(KANTONSZWEIG_DATEI), kantone, log)));
   }
   if (checkpoint) git('reset', '-q', '--mixed', start);
 
@@ -231,7 +173,7 @@ async function main(): Promise<void> {
   const { erwartet, unerwartet } = teilePfade(dateien);
   writeFileSync(join(aus, 'pfade.nul'), erwartet.map((p) => `${p}\0`).join(''));
   const budget = budgetZeilen(DATEN_BUDGET, gzVorher, gzNachher, erwartet);
-  const fr = modus === 'woche' ? await frische(jetzt) : [];
+  const fr = modus === 'woche' ? await frische(datum, jetzt) : [];
   const sperrt = mergeSchutzSperrt(erwartet);
   const ent = entscheide({
     inhaltsDiff, quellenAus, toreRot: tore.filter((t) => t.code !== 0).map((t) => t.name),
