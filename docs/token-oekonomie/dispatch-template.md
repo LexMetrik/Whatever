@@ -100,6 +100,9 @@ zusammengestellt.
   Specs; Vorschau-Server nur fuer die Messung starten und danach beenden; nie
   zwei Test-Laeufe gleichzeitig; eigene chrome-headless-shell-Reste beenden.
   Beenden nur per eigener PID/Port, nie per Namensmuster (Vorfall 24.9.2026).
+  Per Port NUR den lauschenden Prozess: `lsof -ti tcp:PORT -sTCP:LISTEN` —
+  ohne `-sTCP:LISTEN` liefert lsof auch Client-Verbindungen (25.9.2026: so
+  wurde ein Netzwerkdienst der Claude-App auf Port 4791 beendet, REST S1).
   node_modules im Agent-Worktree: eigenes `npm ci --prefer-offline` (Sekunden),
   KEIN Symlink auf den Haupt-Checkout — steht der hinter origin/main, meldet
   gate falsch rot «node_modules passt nicht zu package-lock.json» (Beleg D2/#1072,
