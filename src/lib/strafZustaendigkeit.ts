@@ -68,8 +68,30 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
   const fahrplan: StrafSchritt[] = [];
   const spezial = input.spezialforum ?? 'kein';
 
+  // RL-42 (Z1-01/Z1-02, Prüfung Rechtslogik 23.9.2026): Jugendstrafverfahren.
+  // JStPO SR 312.1, Fassung 1.7.2025 (Fedlex-Filestore eli/cc/2010/226/
+  // 20250701, de-xml-3, abgerufen 25.9.2026), Wortlaute:
+  // Art. 10 Abs. 1: «Für die Strafverfolgung ist die Behörde des Ortes
+  //   zuständig, an dem die oder der beschuldigte Jugendliche bei Eröffnung
+  //   des Verfahrens den gewöhnlichen Aufenthalt hat. Für die Strafverfolgung
+  //   im Bereich des Ordnungsbussenverfahrens ist die Behörde des Ortes
+  //   zuständig, an dem die Straftat begangen worden ist.»
+  // Art. 3 Abs. 2: «Nicht anwendbar sind die Bestimmungen der StPO über:
+  //   a. die Übertretungsstrafbehörden und das Übertretungsstrafverfahren
+  //   (Art. 17 und 357); b. die Bundesgerichtsbarkeit (Art. 23–28); c. den
+  //   Gerichtsstand (Art. 31 und 32) und die besonderen Gerichtsstände im
+  //   Falle mehrerer Beteiligter (Art. 33) und bei mehreren an verschiedenen
+  //   Orten verübten Straftaten (Art. 34); …»
+  // Vorher: Hauptergebnis Tatort (Art. 31 StPO) + Staatsanwaltschaft, die
+  // richtige Regel nur in einer Warnung (mit falschem «Übertretungen:
+  // Begehungsort» statt Ordnungsbussenverfahren).
+  const jugend = input.beschuldigteMinderjaehrig === true;
+
   // ── Stufe 0 · Bundesgerichtsbarkeit (Weiche, keine Subsumtion) ─────────────
-  if (input.moeglichesBundesdelikt) {
+  if (input.moeglichesBundesdelikt && jugend) {
+    warnungen.push('Im JUGENDSTRAFVERFAHREN gelten die Bestimmungen über die Bundesgerichtsbarkeit (Art. 23–28 StPO) NICHT (Art. 3 Abs. 2 lit. b JStPO) — zuständig bleibt die kantonale Jugendstrafbehörde nach Art. 10 JStPO.');
+    normverweise.push({ artikel: 'Art. 3 JStPO' });
+  } else if (input.moeglichesBundesdelikt) {
     warnungen.push('Möglicher Fall von BUNDESGERICHTSBARKEIT: Art. 23 StPO (u. a. Sprengstoff, Völkerstrafrecht, Delikte gegen den Bund) gilt ZWINGEND; Art. 24 Abs. 1 (kriminelle Organisation, Terrorismusfinanzierung, Geldwäscherei, Bestechung u. a.) setzt zusätzlich voraus, dass die Taten zu einem WESENTLICHEN Teil im Ausland oder in MEHREREN Kantonen ohne eindeutigen Schwerpunkt begangen wurden. Bei Vermögens-/Urkundenverbrechen kann die Bundesanwaltschaft fakultativ übernehmen, wenn keine kantonale Behörde befasst ist oder diese um Übernahme ersucht (Abs. 2; die Eröffnung begründet die Zuständigkeit, Abs. 3). Delegation an die Kantone bleibt möglich (Art. 25 — ausser Völkerstrafrecht); Konflikte entscheidet das Bundesstrafgericht (Art. 28), und die Einrede der fehlenden sachlichen Zuständigkeit ist nach der Beurteilung VERWIRKT (Praxis). Im Zweifel nimmt jede Strafverfolgungsbehörde die Anzeige entgegen und leitet weiter (Art. 39 StPO).');
     normverweise.push({ artikel: 'Art. 23 StPO' }, { artikel: 'Art. 24 StPO' });
   }
@@ -89,6 +111,9 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
   } else if (spezial === 'einziehung') {
     forumText = 'Bei selbstständiger Einziehung: Behörden am ORT, WO SICH DIE EINZUZIEHENDEN GEGENSTÄNDE/VERMÖGENSWERTE BEFINDEN; bei mehreren Kantonen entscheidet die zuerst eröffnete Untersuchung';
     forumNormen.push({ artikel: 'Art. 37 StPO' });
+  } else if (jugend) {
+    forumText = 'JUGENDSTRAFVERFAHREN: zuständig ist die Behörde des Ortes, an dem die beschuldigte jugendliche Person bei ERÖFFNUNG des Verfahrens ihren GEWÖHNLICHEN AUFENTHALT hat — nicht der Tatort; die Gerichtsstände der Art. 31–34 StPO gelten nicht (Art. 3 Abs. 2 lit. c JStPO). Ausnahme: im ORDNUNGSBUSSENVERFAHREN die Behörde des Tatorts (Art. 10 Abs. 1 Satz 2 JStPO). Fehlt ein gewöhnlicher Aufenthalt in der Schweiz: bei Taten im Inland die Behörde des Tatorts, bei Taten im Ausland die Behörde des Heimatortes bzw. bei ausländischen Jugendlichen die Behörde des Ortes der ersten Anhaltung (Art. 10 Abs. 2 JStPO). Die Behörde des Tatorts nimmt die dringend notwendigen Ermittlungshandlungen vor (Art. 10 Abs. 3 JStPO)';
+    forumNormen.push({ artikel: 'Art. 10 Abs. 1 JStPO' });
   } else if (input.tatort === 'bekannt') {
     forumText = 'GRUNDSATZ TATORT: zuständig sind die Behörden des Ortes, an dem die Tat VERÜBT worden ist (Begehungsort)';
     forumNormen.push({ artikel: 'Art. 31 Abs. 1 StPO' });
@@ -105,7 +130,14 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
   }
 
   // ── Stufe 3 · Beteiligung ──────────────────────────────────────────────────
-  if ((input.beteiligung ?? 'allein') === 'teilnehmer') {
+  // Jugend: Art. 33/34 StPO gelten nicht (Art. 3 Abs. 2 lit. c JStPO) — die
+  // Anknüpfung bleibt je Jugendlichem Art. 10 JStPO; Art. 11 JStPO trennt
+  // die Verfahren gegen Erwachsene und Jugendliche.
+  if (jugend) {
+    if ((input.beteiligung ?? 'allein') !== 'allein' || input.mehrereTatenVerschOrte) {
+      weichen.push('Die besonderen Gerichtsstände bei mehreren Beteiligten (Art. 33 StPO) und bei mehreren an verschiedenen Orten verübten Taten (Art. 34 StPO) gelten im JUGENDSTRAFVERFAHREN NICHT (Art. 3 Abs. 2 lit. c JStPO) — massgeblich bleibt der gewöhnliche Aufenthalt der jugendlichen Person (Art. 10 JStPO).');
+    }
+  } else if ((input.beteiligung ?? 'allein') === 'teilnehmer') {
     weichen.push('Teilnehmende (Anstiftung/Gehilfenschaft) werden von DENSELBEN Behörden verfolgt wie die Täterschaft — das Forum der Haupttat zieht (Art. 33 Abs. 1 StPO).');
     normverweise.push({ artikel: 'Art. 33 StPO' });
   } else if (input.beteiligung === 'mittaeter') {
@@ -118,7 +150,7 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
   }
 
   // ── Stufe 4 · Mehrere Taten ────────────────────────────────────────────────
-  if (input.mehrereTatenVerschOrte) {
+  if (input.mehrereTatenVerschOrte && !jugend) {
     weichen.push('Mehrere Taten an verschiedenen Orten: zuständig sind die Behörden des Ortes der mit der SCHWERSTEN STRAFE bedrohten Tat — massgeblich ist die abstrakte HÖCHSTSTRAFE (qualifizierte/privilegierte Tatbestände zählen, nicht Strafzumessungsgründe; bei gleicher Höchststrafe die Mindeststrafe; das vollendete Delikt geht dem Versuch vor); bei gleicher Strafdrohung gilt das Prioritätsprinzip (Art. 34 Abs. 1 StPO). Ist in einem Kanton bereits Anklage erhoben oder liegt eine rechtskräftige Erledigung vor, werden die Verfahren GETRENNT geführt (Abs. 2; blosse Sistierung oder Einsprache gegen einen Strafbefehl beendet das Vorverfahren NICHT — Praxis).');
     weichen.push('ABGRENZUNG: Bilden die Einzelhandlungen eine natürliche Handlungseinheit (ein einheitlicher Deliktserfolg), liegt KEINE Tatmehrheit vor — dann gilt die Grundregel des Art. 31 StPO (Praxis). Wer entgegen der Vereinigungsregel von verschiedenen Gerichten zu mehreren gleichartigen Strafen verurteilt wurde, kann beim Gericht der schwersten Strafe die nachträgliche GESAMTSTRAFE verlangen (Art. 34 Abs. 3 StPO).');
     normverweise.push({ artikel: 'Art. 34 StPO' });
@@ -131,9 +163,15 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
   }
 
   // ── Jugendliche (Art. 10 JStPO) — eigener Anknüpfungspunkt ────────────────
-  if (input.beschuldigteMinderjaehrig) {
-    warnungen.push('JUGENDSTRAFVERFAHREN: Für beschuldigte Minderjährige gilt der GEWÖHNLICHE AUFENTHALT bei Verfahrenseröffnung als Anknüpfung (Übertretungen: Begehungsort) — Art. 10 JStPO geht den StPO-Gerichtsständen vor; eine Vereinigung mit Verfahren gegen erwachsene Mitbeteiligte findet nicht statt.');
-    normverweise.push({ artikel: 'Art. 10 JStPO' });
+  // Art. 11 JStPO: «1 Verfahren gegen Erwachsene und Jugendliche werden
+  // getrennt geführt. 2 Auf die Trennung kann ausnahmsweise verzichtet werden,
+  // wenn die Untersuchung durch die Trennung erheblich erschwert würde.»
+  if (jugend) {
+    weichen.push('Verfahren gegen Erwachsene und Jugendliche werden GETRENNT geführt; auf die Trennung kann nur ausnahmsweise verzichtet werden, wenn die Untersuchung sonst erheblich erschwert würde (Art. 11 JStPO).');
+    if (spezial !== 'kein') {
+      warnungen.push('Spezialforum bei einer minderjährigen beschuldigten Person: Art. 3 Abs. 2 lit. c JStPO schliesst nur die Gerichtsstände der Art. 31–34 StPO aus; ob die Spezialgerichtsstände der Art. 35–37 StPO dem Art. 10 JStPO (gewöhnlicher Aufenthalt) vorgehen, regelt das Gesetz nicht ausdrücklich — im Einzelfall prüfen.');
+    }
+    normverweise.push({ artikel: 'Art. 10 JStPO' }, { artikel: 'Art. 3 JStPO' }, { artikel: 'Art. 11 JStPO' });
   }
 
   // ── Stufen 5–8 · Verfahrens-Weichen (immer offenlegen) ─────────────────────
@@ -143,10 +181,18 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
   normverweise.push(...forumNormen, { artikel: 'Art. 38 StPO' }, { artikel: 'Art. 41 StPO' }, { artikel: 'Art. 42 StPO' });
 
   // ── Behördentyp ────────────────────────────────────────────────────────────
-  const behoerdeTyp = input.uebertretung
+  // Art. 6 Abs. 2 JStPO: «Die Kantone bezeichnen als Untersuchungsbehörde:
+  // a. eine oder mehrere Jugendrichterinnen oder einen oder mehrere
+  // Jugendrichter; oder b. eine oder mehrere Jugendanwältinnen oder einen
+  // oder mehrere Jugendanwälte.» Art. 17/357 StPO gelten nicht (Art. 3 Abs. 2
+  // lit. a JStPO) — darum im Jugendfall keine Übertretungsstrafbehörde.
+  const behoerdeTyp = jugend
+    ? 'UNTERSUCHUNGSBEHÖRDE der Jugendstrafrechtspflege des Forum-Kantons — je nach kantonaler Organisation Jugendrichterin/Jugendrichter oder Jugendanwältin/Jugendanwalt (Art. 6 Abs. 2 JStPO); die Übertretungsstrafbehörden der StPO sind nicht anwendbar (Art. 3 Abs. 2 lit. a JStPO)'
+    : input.uebertretung
     ? 'Staatsanwaltschaft bzw. ÜBERTRETUNGSSTRAFBEHÖRDE (in Kantonen mit Verwaltungsbehörden nach Art. 17 StPO — diese haben die Befugnisse der Staatsanwaltschaft, Art. 357 StPO)'
     : 'Staatsanwaltschaft des Forum-Kantons (Untersuchung und Anklage, Art. 16 StPO)';
-  if (input.uebertretung) normverweise.push({ artikel: 'Art. 17 StPO' }, { artikel: 'Art. 357 StPO' });
+  if (jugend) normverweise.push({ artikel: 'Art. 6 JStPO' });
+  else if (input.uebertretung) normverweise.push({ artikel: 'Art. 17 StPO' }, { artikel: 'Art. 357 StPO' });
 
   // ── Fahrplan + Fristen ─────────────────────────────────────────────────────
   if (spezial === 'medien' && input.antragsdelikt) {
@@ -162,7 +208,7 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
     if (input.antragsdelikt) {
       fristen.push({ label: 'Strafantragsfrist', frist: '3 Monate ab dem Tag, an dem die antragsberechtigte Person den Täter kennt', norm: 'Art. 31 StGB', kritisch: true });
     }
-    fahrplan.push({ titel: 'Parteistellung prüfen', text: 'Wer durch die Tat unmittelbar verletzt ist, kann sich bis zum Abschluss des Vorverfahrens als PRIVATKLÄGERSCHAFT konstituieren (Straf- und/oder Zivilklage, Art. 118 f. StPO) — sonst nur Anzeigeperson ohne Verfahrensrechte (Art. 301 Abs. 3 StPO).' });
+    fahrplan.push({ titel: 'Parteistellung prüfen', text: `Wer durch die Tat unmittelbar verletzt ist, kann sich bis zum Abschluss des Vorverfahrens als PRIVATKLÄGERSCHAFT konstituieren (Straf- und/oder Zivilklage, Art. 118 f. StPO) — sonst nur Anzeigeperson ohne Verfahrensrechte (Art. 301 Abs. 3 StPO).${jugend ? ' Im Jugendstrafverfahren nimmt die Privatklägerschaft an der Untersuchung nur teil, wenn dies den Interessen der beschuldigten jugendlichen Person nicht zuwiderläuft, und an der Hauptverhandlung nur bei besonderen Umständen (Art. 20 JStPO).' : ''}` });
   } else {
     // M-6-Fix Bug-Check 6.6.2026: Die verwirkende 10-Tage-Beschwerdefrist
     // stand nur als Prosa in der Weiche — anders als die Strafantragsfrist
@@ -174,7 +220,9 @@ export function bestimmeStrafZustaendigkeit(input: StrafInput): StrafErgebnis {
     // Gerichtsstands-Entscheidung der Staatsanwaltschaften (Art. 39 Abs. 2).
     fristen.push({ label: 'Beschwerde gegen die Gerichtsstands-Entscheidung der Staatsanwaltschaften (Art. 39 Abs. 2)', frist: '10 Tage an die Behörde nach Art. 40 StPO', norm: 'Art. 41 Abs. 2 StPO', kritisch: true });
     fahrplan.push(
-      { titel: 'Forum nach der Kaskade bestimmen', text: 'Spezialforen (Art. 35–37) vor Grundsatz Tatort (Art. 31), dann Kaskade (Art. 32) — Beteiligung (Art. 33) und Tatmehrheit (Art. 34) verschieben das Forum. Massgeblich ist die VERDACHTSLAGE im Entscheidzeitpunkt (nicht das später Beweisbare); im Zweifel zählt das schwerere Delikt («in dubio pro duriore», Praxis).' },
+      jugend
+        ? { titel: 'Forum im Jugendstrafverfahren bestimmen', text: 'Massgeblich ist der gewöhnliche Aufenthalt der jugendlichen Person bei Eröffnung des Verfahrens (Art. 10 Abs. 1 JStPO) — nicht der Tatort; Art. 31–34 StPO gelten nicht (Art. 3 Abs. 2 lit. c JStPO). Kompetenzkonflikte zwischen den Kantonen entscheidet das Bundesstrafgericht (Art. 10 Abs. 7 JStPO).' }
+        : { titel: 'Forum nach der Kaskade bestimmen', text: 'Spezialforen (Art. 35–37) vor Grundsatz Tatort (Art. 31), dann Kaskade (Art. 32) — Beteiligung (Art. 33) und Tatmehrheit (Art. 34) verschieben das Forum. Massgeblich ist die VERDACHTSLAGE im Entscheidzeitpunkt (nicht das später Beweisbare); im Zweifel zählt das schwerere Delikt («in dubio pro duriore», Praxis).' },
       { titel: 'Bei Streit: Einigung → Entscheid', text: 'Die beteiligten Staatsanwaltschaften prüfen die Zuständigkeit von Amtes wegen und klären sie im (informellen) Meinungsaustausch (Art. 39); scheitert die Einigung, entscheidet innerkantonal die Ober-/Generalstaatsanwaltschaft — ihr Entscheid ist seit der Revision 2022 nicht mehr als endgültig bezeichnet — nach der Lehre damit beschwerdefähig (Art. 40 Abs. 1; Praxis) —, interkantonal die Beschwerdekammer des Bundesstrafgerichts: Gesuch des zuerst befassten Kantons unverzüglich, jedenfalls VOR der Anklage; Praxis-Frist 10 Tage nach gescheitertem Austausch, hohe Begründungsanforderungen; der BStGer-Entscheid ist ABSCHLIESSEND (keine Beschwerde ans Bundesgericht).' },
       { titel: 'Festhalten und Grenzen', text: 'Wer trotz Klärungsanlass lange weiterermittelt oder untätig bleibt, anerkennt den Gerichtsstand KONKLUDENT (Praxis). Verhaftete werden anderen Kantonen erst nach verbindlicher Bestimmung zugeführt (Art. 42 Abs. 2); der einmal festgelegte Gerichtsstand kann nur vor der Anklage und nur bei erheblichen NEUEN Tatsachen oder triftigen Gründen geändert werden (Art. 42 Abs. 3).' },
     );
