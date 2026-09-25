@@ -117,7 +117,16 @@ function Wahl({ zu }: { zu: Zu }) {
         <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)} einheit="kantonale Erlasse" />}>
           {/* `max-w-xs` untereinander: die Karte in voller Telefonbreite schob
               die International-Spalte unnötig weit nach unten. */}
-          <div className="mx-auto max-w-xs px-4 lg:max-w-none">
+          {/* W2·29-WERKBANK-REST-BREITE (25.9.2026): `2xl:max-w-[13.5rem]` friert die
+              Kartengrösse auf ihrem Stand VOR `weit` ein (gemessen: 216 px = 13.5rem bei
+              1440 px Feldbreite, Karten-Seitenverhältnis viewBox 1052×744 fest über
+              `w-full h-auto`). Ohne den Deckel wächst die Karte proportional mit der
+              breiteren Spalte (2xl: 340 px) — 38 px höher als die Zeile hoch ist, die
+              U13 auf 800 px Fensterhöhe zugeschnitten hat: Überlauf `.lc-start-blatt-
+              inhalt` 0 → 38 px, Rot-Beweis `e2e/startseite-breite.e2e.ts`. Die Karte
+              trägt keinen Fliesstext (§7 gilt hier nicht) — der Deckel ist reine
+              Höhen-Stabilität (§15), kein Lesemass. */}
+          <div className="mx-auto max-w-xs px-4 lg:max-w-none 2xl:max-w-[13.5rem]">
             {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
                 U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
             <SchweizKarte className="w-full" kompakt onWaehle={(k) => zu('kantone', k)()} nameFuer={kantonName}

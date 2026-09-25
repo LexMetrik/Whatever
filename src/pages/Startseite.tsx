@@ -80,6 +80,37 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     auf `max-w-content` (1072 px Inhalt) gedeckelt, eine breitere Spalte
 //     nähme dem Blatt Breite und liesse die Gesetze-Wahl umbrechen und höher
 //     werden. Telefon unverändert.
+//   · W2·29-WERKBANK-REST-BREITE (25.9.2026, Entscheid David «ja das soll
+//     optimiert werden»): der Satz oben («die Seite ist ab 1280 auf
+//     `max-w-content` gedeckelt») gilt seither nur noch BIS `2xl` (1536 px) —
+//     ab dort trägt der Shell zusätzlich `max-w-weit` (90rem, NUR auf `/`,
+//     `Shell.tsx` `inhaltsbreiteFuer`; alle anderen Routen bleiben byte-gleich
+//     auf `content`). GEWÄHLTE VARIANTE (a): nur die Kachelspalte
+//     (`minmax(0,1fr)` oben in der Grid-Zeile) wächst automatisch mit dem
+//     breiteren Container mit — KEINE Änderung an dieser Datei nötig, die
+//     20rem-Spalte rechts (Schnellwerkzeug/Zuletzt) bleibt exakt dieselbe
+//     Breite wie zuvor, aus demselben Grund wie oben (Lesbarkeit/Umbruch der
+//     Kacheln in `EinfacheFristForm minimal`). Variante (b) — auch die rechte
+//     Spalte verbreitern — wurde verworfen: das Schnellwerkzeug und «Zuletzt»
+//     brauchen die 20rem nicht breiter, ein Wachstum dort hätte nur mehr
+//     Leerraum in den Formularen erzeugt, keinen Mehrwert.
+//     GEMESSEN (Preview-Build, Methode `e2e/startseite-breite.e2e.ts`):
+//       @1280/@1440   Shell 1120px · Feld 712px · Kacheln 348×280px
+//       @1680/@1920   Shell 1440px · Feld 1032px · Kacheln 508×280px
+//     Aside (Schnellwerkzeug/Zuletzt) konstant 320px an allen vier Breiten.
+//     Längste Nutzen-/Teile-Zeile der Kacheln @1920: 72 Zeichen (Materialien-
+//     Kachel «teile»), unter der 75-Zeichen-Decke; Häufig-gebraucht-Zeilen
+//     @1920 höchstens 54 Zeichen. Kachelhöhe bleibt an allen vier Breiten
+//     280px (Token `start-kachel-breit` unverändert) — U4/U13 bleiben damit
+//     unangetastet gültig.
+//     NEBENFUND UND FIX (blockierend für U13): die Kantone-Karte in der
+//     Gesetze-Wahl (`GesetzeBlatt.tsx`, Spalte «Kantone», `SchweizKarte`
+//     `w-full h-auto`) wuchs proportional mit der breiteren Mittelspalte
+//     (216→340px) und riss damit die U13-Zusage «kein Scroll beim Aufklappen»
+//     — `.lc-start-blatt-inhalt`-Überlauf sprang von 0 auf 38px ab `2xl`.
+//     Behoben mit einem `2xl:max-w-[13.5rem]`-Deckel am Kartenwrapper (friert
+//     die Kartengrösse auf ihrem Vor-`weit`-Stand ein; Begründung am Fundort).
+//     Rot-Beweis und volle Messreihe: Kopfkommentar `e2e/startseite-breite.e2e.ts`.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
