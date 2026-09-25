@@ -26,6 +26,8 @@ export interface RegEintrag {
   bgeReferenz?: string | null;
   quelle?: string | null;
   quelleUrl?: string | null;
+  /** Registerpfad des Snapshots (z. B. «kanton/BS/…/AUS.2026.77.json»). */
+  datei?: string | null;
   verweis?: unknown;
 }
 
@@ -169,6 +171,15 @@ export const AUSGENOMMEN: Readonly<Record<string, string>> = {
   gr_gerichte: 'Datum aus OCL unzuverlässig',
 };
 export const aktiveGerichte = (gerichte: readonly string[]) => gerichte.filter((g) => !(g in AUSGENOMMEN));
+/**
+ * Nachgezogene Gerichte mit bekannter Datums-Unzuverlässigkeit — die einzige
+ * Stelle dafür (§5): JEDER neue oder geänderte Eintrag geht zusätzlich zu n in
+ * die Stichprobe (stichprobenPlan, wochenlauf-vorwoche.ts), nicht nur
+ * stichprobenhaft. Auflage N1 der Gegenprüfung #1113 (25.9.2026): BE-Datum
+ * stammt aus OCL wie bei SG/AG/GR; neue Einträge 6/6 richtig, aber nicht belegt
+ * für die Zukunft.
+ */
+export const DATUM_VOLLPRUEFUNG: ReadonlySet<string> = new Set(['be_verwaltungsgericht']);
 
 /**
  * Aufruf «Übrige Gerichte» (npm run entscheide, additiv): eidg. und kantonale
@@ -192,12 +203,17 @@ export function uebrigeAufruf(datum: string): { args: string[]; kantone: string[
  * ein AUSFALL, nie still. Mit Zweig muss jedes angeforderte Gericht im Log
  * vorkommen — der Generator schreibt je Gericht «[kanton] <gericht>: …»
  * (auch bei «übersprungen»); fehlt die Zeile, ebenfalls Ausfall.
+ * Gezählt wird NUR eine Zeile, die mit «[kanton] <gericht>:» BEGINNT
+ * (normtext-entscheide.ts kantonKorpus). Befund Gegenprüfung #1113 (A1,
+ * 25.9.2026): npm druckt den ganzen Aufruf samt «--courts=zh_obergericht,…» als
+ * Kopfzeile ins Log — eine blosse Wortgrenzen-Suche fand dort jedes Gericht,
+ * ein stummer Kantonszweig blieb unentdeckt.
  */
 export const KANTONSZWEIG_DATEI = 'scripts/normtext/entscheide-additiv.ts';
 export function kantonalAusfall(hatZweig: boolean, courts: string[], log: string): string[] {
   if (!courts.length) return [];
   if (!hatZweig) return [`kantonal: übersprungen — Generator ohne additiven Kantonszweig (${KANTONSZWEIG_DATEI} fehlt; ${courts.join(', ')})`];
-  const stumm = courts.filter((c) => !new RegExp(`(?<![\\w-])${c}(?![\\w-])`).test(log));
+  const stumm = courts.filter((c) => !new RegExp(`^\\[kanton\\] ${esc(c)}:`, 'm').test(log));
   return stumm.length ? [`kantonal: keine Rückmeldung im Generator-Log für ${stumm.join(', ')} — AUSFALL`] : [];
 }
 
@@ -603,6 +619,10 @@ export interface Lage {
   unerwartet: string[];
   budgetUeber: string[];
   vorwocheVerworfen: string | null;
+  /** Vorwochen-Befunde, die nicht erneut grün sind (pruefeVorwoche, wochenlauf-vorwoche.ts — A2). */
+  vorwocheOffen?: string[];
+  /** Nach der Lauf-Frist übersprungene Prüfschritte (N2). */
+  fristAus?: string[];
 }
 
 /**
@@ -622,6 +642,8 @@ export function entscheide(l: Lage): { entscheid: Entscheid; gruende: string[] }
   const g: string[] = [];
   if (l.quellenAus.length) g.push(`Quelle ausgefallen: ${l.quellenAus.join(', ')}`);
   if (l.vorwocheVerworfen) g.push(`Vorwoche verworfen: ${l.vorwocheVerworfen}`);
+  g.push(...(l.vorwocheOffen ?? []));
+  if (l.fristAus?.length) g.push(`Lauf-Frist erreicht, nicht geprüft: ${l.fristAus.join(', ')}`);
   if (l.toreRot.length) g.push(`Tor rot: ${l.toreRot.join(', ')}`);
   if (l.nachbauRot.length) g.push(`Nachbau rot: ${l.nachbauRot.join(', ')}`);
   const fehl = l.stichprobe.filter((s) => s.ergebnis === 'fehltreffer').length;

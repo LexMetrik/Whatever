@@ -7,6 +7,7 @@ import {
   budgetBefund, AUSGENOMMEN, type BudgetZeile, type BsVollBilanz, type Entscheid, type FrischeZeile, type GuardBefund,
   type RegisterVergleich, type StichprobenZeile, type Tor,
 } from './wochenlauf-kern';
+import { befundBlock, type VorBefund } from './wochenlauf-vorwoche';
 
 export interface Schritt { name: string; befehl: string; code: number; ausfaelle: string[] }
 export type Modus = 'woche' | 'bs-vollabgleich';
@@ -33,6 +34,8 @@ export interface BerichtDaten {
   entscheid: { entscheid: Entscheid; gruende: string[] };
   mergeSchutzSperrt: boolean;
   laufUrl: string | null;
+  /** Offene Befunde für den nächsten Lauf (A2): stehen sichtbar UND als Block (befundBlock) im Body. */
+  befunde?: VorBefund[];
 }
 
 export const TITEL = (datum: string) => `feat(rechtsprechung): Wochen-Nachzug ${datum} (QS-KORPUS)`;
@@ -141,6 +144,14 @@ export function baueBericht(d: BerichtDaten): string {
     '| Eintrag | Ergebnis | Aktenzeichen | Datum | Beleg |',
     '|---|---|---|---|---|',
     ...s.map((x) => `| ${x.url ? `[${x.key}](${x.url})` : x.key} | ${x.ergebnis} | ${krit(x.akz)} | ${krit(x.datum)} | ${zelle(x.detail)} |`),
+    '',
+    '## Offene Befunde (nächster Lauf prüft sie zwingend erneut)',
+    '',
+    'Fehltreffer dieses Laufs und Befunde der Vorwoche, die nicht erneut grün sind. Solange einer offen ist, bleibt der PR Entwurf. Einen Befund von Hand quittieren: seinen Eintrag aus dem Kommentar-Block `wochenlauf-befunde` in diesem Body streichen.',
+    '',
+    liste((d.befunde ?? []).map((b) => `\`${b.key}\`: ${b.grund.slice(0, 200)}`)),
+    '',
+    befundBlock(d.befunde ?? []),
     '',
     '## Für die prüfende Session',
     '',

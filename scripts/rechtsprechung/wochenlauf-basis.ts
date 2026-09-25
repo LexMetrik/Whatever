@@ -14,6 +14,9 @@
 //    still verworfen (Befund A6, 25.9.2026). Merge-Konflikt → Merge abbrechen,
 //    auf main aufbauen, «Vorwoche verworfen: <Grund>» ⇒ Entwurf.
 // Schreibt <aus>/basis.json und GITHUB_OUTPUT (branch, nr, lease, aussetzen, grund).
+// basis.json trägt dazu `vorwoche` (A2, Gegenprüfung #1113): Entwurf-Status des
+// offenen Auto-PR und die offenen Befunde aus seinem Body (leseBefundBlock,
+// wochenlauf-vorwoche.ts) — der Lauf prüft sie zwingend erneut.
 //
 // Modus «prüfen» (direkt vor dem Push): dieselbe inPruefung-Frage noch einmal —
 // zwischen Laufstart und Push liegen bis zu zwei Stunden. Exit 3 = in Prüfung.
@@ -21,6 +24,7 @@ import { execFileSync } from 'node:child_process';
 import { appendFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { inPruefung, type PrLage } from './wochenlauf-kern';
+import { leseBefundBlock, type Vorwoche } from './wochenlauf-vorwoche';
 
 export type Git = (...a: string[]) => string;
 export const PR_PRAEFIX = 'auto/rechtsprechung-';
@@ -82,7 +86,7 @@ function main(): void {
   const offen = (JSON.parse(gh('pr', 'list', '--state', 'open', '--limit', '200', '--json', 'number,headRefName')) as Array<{ number: number; headRefName: string }>)
     .filter((p) => p.headRefName.startsWith(PR_PRAEFIX)).sort((a, b) => b.number - a.number);
   if (offen.length > 1) console.log(`::warning::${offen.length} offene Auto-PRs (${offen.map((p) => `#${p.number}`).join(', ')}) — es wird nur #${offen[0].number} fortgeführt.`);
-  let basis = { branch: `${PR_PRAEFIX}${datum}`, nr: '', lease: '', aussetzen: '', grund: '', vorwocheVerworfen: '' };
+  let basis = { branch: `${PR_PRAEFIX}${datum}`, nr: '', lease: '', aussetzen: '', grund: '', vorwocheVerworfen: '', vorwoche: null as Vorwoche | null };
   if (offen.length) {
     const { number, headRefName: branch } = offen[0];
     git('fetch', '-q', 'origin', branch);
@@ -91,6 +95,8 @@ function main(): void {
     const grund = inPruefung(sammle(String(number), branch));
     if (grund) basis = { ...basis, aussetzen: 'true', grund };
     else {
+      const pv = JSON.parse(gh('pr', 'view', String(number), '--json', 'body,isDraft')) as { body?: string; isDraft: boolean };
+      basis = { ...basis, vorwoche: { entwurf: pv.isDraft, ...leseBefundBlock(pv.body ?? '') } };
       const r = baueAufVorwoche(git, branch);
       if (!r.ok) basis = { ...basis, vorwocheVerworfen: r.grund };
     }

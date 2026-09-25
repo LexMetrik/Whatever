@@ -146,6 +146,9 @@ jobs:
             nr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
           fi
           # Entwurf-Status dem Befund dieser Woche angleichen (beide Richtungen).
+          # «pr» heisst auch: jeder offene Befund der Vorwoche (Block
+          # «wochenlauf-befunde» im alten Body) wurde erneut geprüft und ist
+          # grün — sonst ist der Entscheid «entwurf» (A2, pruefeVorwoche).
           if [ "$ENTSCHEID" = "entwurf" ]; then gh pr ready "$nr" --undo || true; else gh pr ready "$nr" || true; fi
           # CI IMMER per workflow_dispatch anstossen (Repo-Muster fedlex-frische.yml
           # K1): der Push oben läuft mit dem github.token des Checkouts, und

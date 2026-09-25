@@ -34,12 +34,13 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, append
 import { join } from 'node:path';
 import {
   baenderFuer, vergleicheRegister, erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, KANTONSZWEIG_DATEI,
-  leseBsDelta, leseBsVoll, waehleStichprobe, entscheide, mergeSchutzSperrt, budgetZeilen, budgetBefund,
+  leseBsDelta, leseBsVoll, entscheide, mergeSchutzSperrt, budgetZeilen, budgetBefund,
   teilePfade, leseStatusZ, zerlegeRunParallel, e2eAuswahl, restMinuten, auszug, uebrigeAufruf, richterPhantome,
   type RegEintrag, type Tor, type StichprobenZeile,
 } from './wochenlauf-kern';
 import { baueBericht, baueCommit, baueSummary, type BerichtDaten, type Schritt, type Modus } from './wochenlauf-bericht';
 import { stichprobeZeile, frische } from './wochenlauf-netz';
+import { stichprobenPlan, pruefeVorwoche, offeneBefunde, type Vorwoche } from './wochenlauf-vorwoche';
 import { DATEN_BUDGET, gz } from '../perf/daten-budget';
 
 const arg = (n: string) => process.argv.find((a) => a.startsWith(n + '='))?.slice(n.length + 1);
@@ -102,7 +103,8 @@ async function main(): Promise<void> {
   mkdirSync(aus, { recursive: true });
   const D = `--datum=${datum}`;
   const basisDatei = join(aus, 'basis.json');
-  const b = existsSync(basisDatei) ? JSON.parse(readFileSync(basisDatei, 'utf8')) as { branch?: string; nr?: string; vorwocheVerworfen?: string } : {};
+  const b = existsSync(basisDatei) ? JSON.parse(readFileSync(basisDatei, 'utf8')) as { branch?: string; nr?: string; vorwocheVerworfen?: string; vorwoche?: Vorwoche | null } : {};
+  const vorwoche = b.vorwoche ?? null;
   const basis = { branch: b.branch || null, nr: b.vorwocheVerworfen ? null : b.nr || null, vorwocheVerworfen: b.vorwocheVerworfen || null };
   const vorherLauf = leseRegister();
   let vorherMain = vorherLauf;
@@ -169,7 +171,9 @@ async function main(): Promise<void> {
       for (const n of ['check:perf-budget', `e2e (${specs.length} Korpus-Specs)`]) tore.push({ name: n, code: 1, auszug: 'nicht gefahren — Build rot' });
     }
     gzNachher = gzJetzt();
-    for (const e of waehleStichprobe(vergleich.neu, stichprobeN)) stichprobe.push(await stichprobeZeile(e));
+    // A2: offene Befunde der Vorwoche zwingend erneut (zusätzlich zu n).
+    const plan = stichprobenPlan(vergleich.neu, stichprobeN, jetzt, (vorwoche?.befunde ?? []).map((x) => x.key));
+    for (const e of plan) stichprobe.push(await stichprobeZeile(e));
     dateien = leseStatusZ(git('status', '--porcelain', '-z', '-uall'));
   } else if (checkpoint) {
     git('reset', '-q', '--hard', start); git('clean', '-qfd', '--', 'public', 'daten', 'bibliothek', 'src');
@@ -180,7 +184,9 @@ async function main(): Promise<void> {
   const budget = budgetZeilen(DATEN_BUDGET, gzVorher, gzNachher, erwartet);
   const fr = modus === 'woche' ? await frische(datum, jetzt) : [];
   const sperrt = mergeSchutzSperrt(erwartet);
+  const vw = pruefeVorwoche(vorwoche, stichprobe);
   const ent = entscheide({
+    vorwocheOffen: vw.gruende,
     inhaltsDiff, quellenAus, toreRot: tore.filter((t) => t.code !== 0).map((t) => t.name),
     nachbauRot: nachbau.filter((n) => n.code !== 0).map((n) => n.name), stichprobe, mergeSchutzSperrt: sperrt,
     unerwartet, budgetUeber: budgetBefund(budget).ueber, vorwocheVerworfen: basis.vorwocheVerworfen,
@@ -190,7 +196,7 @@ async function main(): Promise<void> {
   const daten: BerichtDaten = {
     datum, modus, baender, basis, quellen, nachbau, vergleich, dieseWoche: { neu: woche.neu.length, entfernt: woche.entfernt.length },
     bs, bsVoll: leseBsVoll(bsLog), guards: [...logs.values()].flatMap(erkenneGuardBefunde), tore, stichprobe, budget, frische: fr,
-    unerwartet, entscheid: ent, mergeSchutzSperrt: sperrt, laufUrl,
+    unerwartet, entscheid: ent, mergeSchutzSperrt: sperrt, laufUrl, befunde: offeneBefunde(stichprobe, vw.offen),
   };
   const bericht = baueBericht(daten);
   writeFileSync(join(aus, 'bericht.md'), bericht);
