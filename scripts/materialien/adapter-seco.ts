@@ -200,7 +200,7 @@ export function damTokenAusUrl(url: string): string {
 
 /** Drift-Token = sha256/16 über (dateiname + datumslabel + url) — kein Default (§0/A8). */
 export function driftToken(dateiname: string, datumLabel: string, url: string): string {
-  return createHash('sha256').update(`${dateiname} ${datumLabel} ${url}`, 'utf8').digest('hex').slice(0, 16);
+  return createHash('sha256').update(`${dateiname}\u0000${datumLabel}\u0000${url}`, 'utf8').digest('hex').slice(0, 16);
 }
 
 const HINWEIS_SECO = 'Amtliche SECO-Wegleitung, artikelscharf verlinkt.';
@@ -216,7 +216,7 @@ export function baueDokUndKante(
   const stand = datumslabelNachIso(roh.datumLabel);
   const token = korpusToken(art.num, art.suffix);
   const shaId = createHash('sha256')
-    .update([id, roh.titel, roh.href, stand, def.erlassKey, token].join(' '), 'utf8')
+    .update([id, roh.titel, roh.href, stand, def.erlassKey, token].join('\u0000'), 'utf8')
     .digest('hex');
   const dok: SoftLawDok = {
     id,

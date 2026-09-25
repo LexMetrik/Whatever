@@ -12,3 +12,5 @@ anlass: Herz-und-Nieren-Prüfung 24.9.2026, UMSETZUNGSPLAN HN-03 (PS-04, PS-09, 
 - PRs 2 · Abh.: — · Blocker: keiner.
 
 Quelle: Herz-und-Nieren-Prüfung 24.9.2026, UMSETZUNGSPLAN.md Einheit HN-03 (Projektordner `~/Documents/David/03_Projekte/LexMetrik/pruefung-herz-nieren-2026-09-24/`; Belege in BEFUNDLISTE.md und berichte/). Kürzel: NT normtext-treue · PS pruefsystem · VS verschlankung · SA sicherheit-a11y · DK design-konsistenz · RR rechtslogik-rest; b = zweitgeprüft bestätigt, EA = nur Erstprüfer (vor dem Fix reproduzieren, sonst fällt der Beifang mit Begründungszeile im PR weg). Zeilenangaben Stand main 1d6eeb3c5 (24.9.2026) — vor dem Bau nachmessen.
+
+**Erledigt 2026-09-24:** PR #1084 (golden hart, Tabellen-Untergrenze) + PR #1089 (NUL-Escape, Rezidiv-Wache)
