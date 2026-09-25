@@ -39,57 +39,69 @@ describe('HN-04: bundKuerzelNachschlagen — Register statt ERLASS_MAP', () => {
     expect(bundKuerzelNachschlagen('OR')).toBe('OR');
   });
 
-  // Stichprobe der 37 durch HN-04 korrigierten Bundeserlasse (Spec-Beispiele +
+  // Alle 37 durch HN-04 geänderten Bundeserlasse (Spec-Beispiele +
   // Ergänzung), gegen das ECHTE ERLASS_REGISTER — belegt zugleich, dass die
   // Fachänderung im Snapshot-Generator ankommt, nicht nur in der Testdouble.
-  const stichprobe: ReadonlyArray<[gesetzKey: string, altFalsch: string, neuAmtlich: string]> = [
-    ['DESG', 'DESG', 'DesG'],
-    ['BOEB', 'BOEB', 'BöB'],
-    ['FINFRAG', 'FINFRAG', 'FinfraG'],
-    ['APOSTILLE', 'APOSTILLE', 'Apostille-Übk.'],
-    ['HAUE', 'HAUE', 'HAÜ'],
-    ['VSTG', 'VSTG', 'VStG'],
-    ['FUSG', 'FUSG', 'FusG'],
-    ['MSCHG', 'MSCHG', 'MSchG'],
-    ['PATG', 'PATG', 'PatG'],
-    ['BUEG', 'BUEG', 'BüG'],
-    ['BGOE', 'BGOE', 'BGÖ'],
-    ['PUBLG', 'PUBLG', 'PublG'],
-    ['PARLG', 'PARLG', 'ParlG'],
-    ['STBOG', 'STBOG', 'StBOG'],
-    ['ENTG', 'ENTG', 'EntG'],
-    ['GSCHG', 'GSCHG', 'GSchG'],
-    ['ENTSG', 'ENTSG', 'EntsG'],
-    ['WAG', 'WAG', 'WaG'],
-    ['PUEG', 'PUEG', 'PüG'],
-    ['LUGUE', 'LUGUE', 'LugÜ'],
-    ['HZUE', 'HZUE', 'HZÜ'],
-    ['HBEWUE', 'HBEWUE', 'HBewÜ'],
-    ['HKUE', 'HKUE', 'HKÜ'],
-    ['UNO_PAKT_II', 'UNO_PAKT_II', 'UNO-Pakt II'],
-    ['UNO_PAKT_I', 'UNO_PAKT_I', 'UNO-Pakt I'],
-    ['UNO_ANTIFOLTER', 'UNO_ANTIFOLTER', 'UN-Antifolterkonvention'],
-    ['HEUE', 'HEUE', 'HEsÜ'],
-    ['PVUE', 'PVUE', 'PVÜ'],
-    ['ICAO', 'ICAO', 'ICAO-Übk.'],
-    ['STAATENLOSE', 'STAATENLOSE', 'Staatenlose'],
-    ['HKSUE96', 'HKSUE96', 'HKsÜ'],
-    ['HUVUE', 'HUVUE', 'HUVÜ'],
-    ['EAUE', 'EAUE', 'EAUe'],
-    ['MONTREAL', 'MONTREAL', 'Montrealer Übk.'],
-    ['RBUE', 'RBUE', 'RBÜ'],
-    ['UNO_BRK', 'UNO_BRK', 'UNO-BRK'],
-    ['ISTANBUL', 'ISTANBUL', 'Istanbul-Konv.'],
+  // Herkunft je Kürzel (Gegenprüfung HN-04, 25.9.2026, Fedlex-HTML + SPARQL titleShort):
+  // «amtlich» = Fedlex führt die Abkürzung (titleShort, Erlass-Kurztitel oder Ingress
+  // eines Ausführungsgesetzes: HKÜ/HEsÜ über BG-KKE, HAÜ über BG-HAÜ SR 211.221.31);
+  // «Hand-Kürzel» = Fedlex führt keine Abkürzung, das Register-Kürzel ist
+  // Hauskonvention (bibliothek/recherche/fedlex-abkuerzungen-titleshort.md).
+  type Herkunft = 'amtlich' | 'Hand-Kürzel';
+  const stichprobe: ReadonlyArray<[gesetzKey: string, altRueckfall: string, neuRegister: string, herkunft: Herkunft]> = [
+    ['DESG', 'DESG', 'DesG', 'amtlich'],
+    ['BOEB', 'BOEB', 'BöB', 'amtlich'],
+    ['FINFRAG', 'FINFRAG', 'FinfraG', 'amtlich'],
+    ['APOSTILLE', 'APOSTILLE', 'Apostille-Übk.', 'Hand-Kürzel'],
+    ['HAUE', 'HAUE', 'HAÜ', 'amtlich'],
+    ['VSTG', 'VSTG', 'VStG', 'amtlich'],
+    ['FUSG', 'FUSG', 'FusG', 'amtlich'],
+    ['MSCHG', 'MSCHG', 'MSchG', 'amtlich'],
+    ['PATG', 'PATG', 'PatG', 'amtlich'],
+    ['BUEG', 'BUEG', 'BüG', 'amtlich'],
+    ['BGOE', 'BGOE', 'BGÖ', 'amtlich'],
+    ['PUBLG', 'PUBLG', 'PublG', 'amtlich'],
+    ['PARLG', 'PARLG', 'ParlG', 'amtlich'],
+    ['STBOG', 'STBOG', 'StBOG', 'amtlich'],
+    ['ENTG', 'ENTG', 'EntG', 'amtlich'],
+    ['GSCHG', 'GSCHG', 'GSchG', 'amtlich'],
+    ['ENTSG', 'ENTSG', 'EntsG', 'amtlich'],
+    ['WAG', 'WAG', 'WaG', 'amtlich'],
+    ['PUEG', 'PUEG', 'PüG', 'amtlich'],
+    ['LUGUE', 'LUGUE', 'LugÜ', 'amtlich'],
+    ['HZUE', 'HZUE', 'HZÜ', 'Hand-Kürzel'],
+    ['HBEWUE', 'HBEWUE', 'HBewÜ', 'Hand-Kürzel'],
+    ['HKUE', 'HKUE', 'HKÜ', 'amtlich'],
+    ['UNO_PAKT_II', 'UNO_PAKT_II', 'UNO-Pakt II', 'Hand-Kürzel'],
+    ['UNO_PAKT_I', 'UNO_PAKT_I', 'UNO-Pakt I', 'Hand-Kürzel'],
+    ['UNO_ANTIFOLTER', 'UNO_ANTIFOLTER', 'UN-Antifolterkonvention', 'Hand-Kürzel'],
+    ['HEUE', 'HEUE', 'HEsÜ', 'amtlich'],
+    ['PVUE', 'PVUE', 'PVÜ', 'Hand-Kürzel'],
+    ['ICAO', 'ICAO', 'ICAO-Übk.', 'Hand-Kürzel'],
+    ['STAATENLOSE', 'STAATENLOSE', 'Staatenlose', 'Hand-Kürzel'],
+    ['HKSUE96', 'HKSUE96', 'HKsÜ', 'amtlich'],
+    ['HUVUE', 'HUVUE', 'HUVÜ', 'Hand-Kürzel'],
+    ['EAUE', 'EAUE', 'EAUe', 'Hand-Kürzel'],
+    ['MONTREAL', 'MONTREAL', 'Montrealer Übk.', 'Hand-Kürzel'],
+    ['RBUE', 'RBUE', 'RBÜ', 'Hand-Kürzel'],
+    ['UNO_BRK', 'UNO_BRK', 'UNO-BRK', 'Hand-Kürzel'],
+    ['ISTANBUL', 'ISTANBUL', 'Istanbul-Konv.', 'Hand-Kürzel'],
   ];
 
   it.each(stichprobe)(
-    '%s: Register-Kürzel "%s" ist amtlich korrekt, NICHT mehr der alte toUpperCase-Wert "%s"',
-    (gesetzKey, altFalsch, neuAmtlich) => {
+    '%s: alter toUpperCase-Rückfall "%s" → Register-Kürzel "%s" (%s)',
+    (gesetzKey, altRueckfall, neuRegister) => {
       const kuerzel = bundKuerzelNachschlagen(gesetzKey);
-      expect(kuerzel).toBe(neuAmtlich);
-      expect(kuerzel).not.toBe(altFalsch);
+      expect(kuerzel).toBe(neuRegister);
+      expect(kuerzel).not.toBe(altRueckfall);
     },
   );
+
+  it('Aufschlüsselung der 37: 22 amtlich, 15 Hand-Kürzel (Gegenprüfung HN-04)', () => {
+    expect(stichprobe).toHaveLength(37);
+    expect(stichprobe.filter((z) => z[3] === 'amtlich')).toHaveLength(22);
+    expect(stichprobe.filter((z) => z[3] === 'Hand-Kürzel')).toHaveLength(15);
+  });
 
   it('jeder Bund-Eintrag im ERLASS_REGISTER ist über bundKuerzelNachschlagen erreichbar (keine Lücke)', () => {
     const bundEintraege = ERLASS_REGISTER.filter((e) => e.ebene === 'bund');
