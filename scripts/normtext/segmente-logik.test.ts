@@ -11,6 +11,7 @@ import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import {
   alleAnhangEids,
+  dispTextAusserhalbArtikel,
   alleArtikelEids,
   ankerIdVonEid,
   fehlendeIndizes,
@@ -454,6 +455,17 @@ describe('G1 (Runde 3): Zeilen-Fingerabdruck je ZEILE aus der HTML, nicht je Pro
       { art: 'p', text: 'kurz' },
     ]);
     expect(fps.map((f) => f.fp.laenge)).toEqual([6]);
+  });
+});
+
+describe('dispTextAusserhalbArtikel — G10 (Runde 3)', () => {
+  it('zählt disp_uN-Abschnitte mit Text ausserhalb <article> (ohne Überschrift/Fussnoten), nicht die ohne', () => {
+    const html =
+      '<section id="disp_u1"><h1>Übergangsbestimmungen</h1><p>Übergangsbestimmung der Änderung vom 1. Januar 2020</p>' +
+      '<article id="disp_u1/art_1"><p>a</p></article></section>' +
+      '<section id="disp_u2"><h1>Schlussbestimmungen</h1><article id="disp_u2/art_1"><p>b</p></article>' +
+      '<div class="footnotes"><p>Fussnote</p></div></section>';
+    expect(dispTextAusserhalbArtikel(parseErlassHtml(html))).toBe(1);
   });
 });
 

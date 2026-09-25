@@ -21,6 +21,16 @@
  * `--cache-pflicht`/`LEXMETRIK_CACHE_PFLICHT=1` ohne Cache ⇒ FEHLER;
  * pin-ungültiger Cache (bei vollem Bestand) ⇒ FEHLER.
  *
+ * PRÜFUMFANG — bekannte Lücke (G10, Gegenprüfung 2): geprüft wird Text IN den
+ * Ankern (art_*, disp_uN/art_*, Anhang-/scope-/decl-Sektionen). Rund 260–290
+ * `disp_uN`-Abschnitte (Schluss-/Übergangsbestimmungen; GP 2 per lxml-
+ * Textknoten: 261 in 56 Erlassen; dieses Tor 25.9.2026: 289 in 59 — Abschnitt
+ * mit Text ausserhalb article ohne h1–h6/Fussnoten, s. dispTextAusserhalbArtikel)
+ * tragen AUCH Text ausserhalb ihrer <article> (z.B. «Übergangs-
+ * bestimmungen zur Änderung vom …»); er steht in keinem Anker, ist darum nicht
+ * im Soll und wird von diesem Tor nicht geprüft — bekannt als M13, Behebung im
+ * Schritt W2·5l-NORMTEXT-B2. Modus C zählt diese Abschnitte in jedem Lauf.
+ *
  * `LEXMETRIK_FEDLEX_CACHE_DIR` (Default `/tmp`): NUR für die eigenen Rot-Beweise
  * (R6–R9, s. Bericht) — ein Test-Cache-Verzeichnis statt des mit anderen
  * Sessions GETEILTEN `/tmp`, damit die Rot-Proben den echten Cache nie anfassen.
@@ -34,6 +44,7 @@ import {
   alleAnhangEids,
   alleArtikelEids,
   ankerIdVonEid,
+  dispTextAusserhalbArtikel,
   fehlendeIndizes,
   fingerabdrueckeZuSoll,
   gleicheBasislinieAb,
@@ -175,6 +186,7 @@ interface FrischesSoll {
   pin: SollPin;
   artikel: Record<string, Fingerabdruck[]>;
   zeilenStatistik: ZeilenStatistik; // G1: Zeilen ohne Zeilen-Fingerabdruck je Grund (landet im Soll)
+  dispAusserhalb: number; // G10: disp_uN-Abschnitte mit Text ausserhalb <article> (M13, nicht im Soll)
   auszuegeJeEid: Map<string, Map<string, string>>; // eId -> hash -> Auszug (≤80 Zeichen, NUR Report/Basislinie)
   keinAnkerLokalisierbar: string[];
   restmeldungen: string[]; // B2/G5: unklassifizierter Text nach der Zerlegung — ROT (s. segmente-logik.ts restmenge)
@@ -239,6 +251,7 @@ function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
     pin: { eli: e.eli, konsolidierung: e.konsolidierung, htmlN: e.htmlN },
     artikel,
     zeilenStatistik,
+    dispAusserhalb: dispTextAusserhalbArtikel(dokument),
     auszuegeJeEid,
     keinAnkerLokalisierbar,
     restmeldungen,
@@ -356,6 +369,7 @@ interface Zwischenergebnis {
   keinAnkerLokalisierbarGesamt: Array<{ erlass: string; eId: string }>; // B1: nur Modus C (Modus B rührt die HTML nie an)
   restmeldungenGesamt: string[]; // B2: nur Modus C
   zeilenStatistik: ZeilenStatistik; // G1: B aus den Soll-Dateien, C frisch aus der HTML
+  dispAusserhalb?: { abschnitte: number; erlasse: number }; // G10: nur Modus C
 }
 
 function pruefeModusB(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
@@ -411,11 +425,15 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
   const restmeldungenGesamt: string[] = [];
   const zeilenStatistik = leereZeilenStatistik();
   let geprueftArtikelGesamt = 0;
+  let dispAbschnitte = 0;
+  let dispErlasse = 0;
 
   for (const e of eintraege) {
     const frisch = leiteFrischesSollAb(e);
     const key = e.name.toUpperCase();
     addiereZeilenStatistik(zeilenStatistik, frisch.zeilenStatistik);
+    dispAbschnitte += frisch.dispAusserhalb;
+    if (frisch.dispAusserhalb > 0) dispErlasse++;
     for (const eId of frisch.keinAnkerLokalisierbar) keinAnkerLokalisierbarGesamt.push({ erlass: key, eId });
     restmeldungenGesamt.push(...frisch.restmeldungen);
     const kompaktesSoll = Object.fromEntries(
@@ -455,6 +473,7 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
     keinAnkerLokalisierbarGesamt,
     restmeldungenGesamt,
     zeilenStatistik,
+    dispAusserhalb: { abschnitte: dispAbschnitte, erlasse: dispErlasse },
   };
 }
 
@@ -556,6 +575,13 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
       );
       for (const a of unerwartet.slice(0, 30)) console.error(`   · ${a}`);
     }
+  }
+  // G10: bekannte Lücke des Prüfumfangs sichtbar halten (nur C — braucht die HTML).
+  if (z.dispAusserhalb) {
+    console.log(
+      `ℹ  ${z.dispAusserhalb.abschnitte} disp_uN-Abschnitt(e) in ${z.dispAusserhalb.erlasse} Erlass(en) tragen Text ` +
+        `ausserhalb von <article> — nicht im Soll (M13, W2·5l-NORMTEXT-B2; s. Dateikopf).`,
+    );
   }
   // B2/G5: Restmenge (Text ohne Segment) ist ROT (s. segmente-logik.ts `restmenge`).
   if (z.restmeldungenGesamt.length > 0) {

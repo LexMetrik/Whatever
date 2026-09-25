@@ -238,6 +238,23 @@ export function alleArtikelEids(dokument: { querySelectorAll: (sel: string) => I
   return [...eids];
 }
 
+/**
+ * G10 (Runde 3): Zahl der `disp_uN`-Abschnitte (Schluss-/Übergangsteile), die
+ * Text AUSSERHALB ihrer <article> tragen (ohne Überschriften, Fussnoten-Apparat
+ * und Fussnoten-Marken). Dieser Text liegt in KEINEM Anker, den das Tor prüft
+ * (bekannt als M13, Schritt W2·5l-NORMTEXT-B2) — gezählt statt still übergangen.
+ */
+export function dispTextAusserhalbArtikel(dokument: { querySelectorAll: (sel: string) => Iterable<Knoten> }): number {
+  let n = 0;
+  for (const el of dokument.querySelectorAll('section[id]')) {
+    if (!/^disp_u\d+$/.test(el.getAttribute('id') as string)) continue;
+    const klon = ohneStyleUndScript(ohneFussnotenmarken(el.cloneNode(true)));
+    for (const raus of [...klon.querySelectorAll('article, div.footnotes, h1, h2, h3, h4, h5, h6')]) raus.remove();
+    if (normalisiere(klon.textContent ?? '').length > 0) n++;
+  }
+  return n;
+}
+
 // G3 (Runde 3): Anhang-, scope- und decl-Anker der OBERSTEN Ebene (id ohne «/»)
 // gehören ebenfalls in die HTML-Artikelmenge — sonst blieb ein aus Projektion
 // UND Soll gelöschter Anhang in B und C grün (P13d, ChemRRV annex_2_16). Nur
