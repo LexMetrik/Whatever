@@ -37,8 +37,6 @@ npm run entscheide -- --datum=$(date +%F) --additiv --bge-baender=152
 npm run entscheide -- --datum=$(date +%F) --remap
 # Danach Folgeprojektionen (sonst check:zaehler rot):
 npm run gen:zaehler && npm run gen:bezuege-zaehler && npm run datenhaltung:manifest
-# Folgeprojektionen danach (sonst check:zaehler/check:bezuege-zaehler rot, Beleg 152 I 2, 25.9.2026):
-npm run gen:zaehler && npm run gen:bezuege-zaehler && npm run datenhaltung:manifest
 
 # Integritäts-Tor (Manifest⊇Snapshots · Provenienz · sha · Norm-Index⊆Manifest · BUDGET_MB)
 npm run check:entscheide
@@ -242,12 +240,6 @@ auf einen NEUEN Regress deutet.
     `--kopfdatum-refresh`. Beleg: `bibliothek/rechtsprechung/kantonales-entscheiddatum-kopf-2026-09-25.md`.
 11. **BGE-Record vermischt (152 I 2 ← 152 I 20, 25.9.2026)** — Band-Nachzug ersetzt den Auszug durch den
     amtlichen clir-Auszug (`clir-auszug.ts`), sonst verwirft der Konflations-Guard.
-
-11. **BGE-Basis-Record vermischt → clir-Auszug-Rückfall (25.9.2026).** Trägt OCLs Sammlungs-Auszug den
-    laufenden Kopf eines anderen BGE desselben Bandes (Anlass 152 I 2: `full_text`, `statutes`, `cited_decisions`,
-    `docket_number_2` von 152 I 20), ersetzt `ersetzeKonflatiertenAuszug` (`scripts/normtext/clir-auszug.ts`) im
-    Band-Nachzug den Body durch den amtlichen clir-Auszug (`parseClirAuszug`) und verwirft die Record-Felder
-    (statutes/Rubrum/Dispositiv/Zitate); ohne sauberen clir-Auszug verwirft der Konflations-Guard wie bisher.
 
 Weitere am Code verdrahtete Invarianten (für `review.md` relevant), alle in `main()`
 (`scripts/normtext-entscheide.ts`): **BGE-Dedup** — ein bereits als BGE-Volltext erfasstes bger-Urteil
