@@ -147,6 +147,13 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
     [artikelSuche, qArtikel, artikelLimit],
   );
 
+  // Die Ebenen-Felder der Artikel-Suche als EIGENE Abhängigkeiten (Lint
+  // react-hooks/exhaustive-deps, REST S5b 25.9.2026). Verhaltensneutral:
+  // `ladeArtikelSuche` baut beide Arrays je Stufe neu, sie wechseln also genau
+  // dann, wenn auch `artikelTreffer` wechselt — Beweis
+  // `src/tests/universal-suche-memo-deps.test.tsx` (eine Neurechnung je Stufe).
+  const artikelFehlendeEbenen = artikelSuche?.fehlendeEbenen;
+  const artikelNurOnlineEbenen = artikelSuche?.nurOnlineEbenen;
   const gruppen = useMemo(
     // Presets ungekappt holen (limit 999) — `gesamt` soll die ECHTE Trefferzahl
     // sein, nicht das Default-Suchlimit (§8). Die Anzeige kappt in der Gruppe.
@@ -161,8 +168,8 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
         presets: presetSucheFn ? presetSucheFn(q, 999) : null,
         gesetze,
         artikel: artikelTreffer,
-        artikelFehlendeEbenen: artikelSuche?.fehlendeEbenen,
-        artikelNurOnlineEbenen: artikelSuche?.nurOnlineEbenen,
+        artikelFehlendeEbenen,
+        artikelNurOnlineEbenen,
         entscheide,
         materialien,
       }, kappung);
@@ -173,7 +180,7 @@ export function useUniversalSuche(q: string, opt: UniversalSucheOpt = {}): Unive
         ...(onlineGruppe ? [onlineGruppe] : []),
       ];
     },
-    [q, direkt, bge, presetSucheFn, artikelTreffer, gesetze, entscheide, materialien, onlineGruppe, kappung],
+    [q, direkt, bge, presetSucheFn, artikelTreffer, artikelFehlendeEbenen, artikelNurOnlineEbenen, gesetze, entscheide, materialien, onlineGruppe, kappung],
   );
   const allesGeladen = presetSucheFn !== null && artikelSuche !== null && gesetze !== null && entscheide !== null && materialien !== null;
 

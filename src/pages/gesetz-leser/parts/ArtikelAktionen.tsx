@@ -104,7 +104,7 @@ export function ArtikelAktionen({ artikel, basisPfad, zitat, zitatVoll, amtlich,
     const text = was === 'zitat'
       ? zitatMitAusweis(zitatVoll, { abruf: heuteIso(new Date()), permalink, amtlich: amtlich ?? undefined })
       : permalink;
-    kopieren({ text, marke: was });
+    kopieren({ text, marke: was, ansage: was === 'zitat' ? 'Zitat kopiert' : 'Permalink kopiert' });
     // ── LM-202 (David-Entscheid 3.8.2026) ────────────────────────────────
     // «Die URL ändert sich NUR bei explizitem Klick auf einen Artikel-Anker
     // bzw. bei der Teilen-Aktion.» Der «Link»-Knopf IST die Teilen-Aktion; wer

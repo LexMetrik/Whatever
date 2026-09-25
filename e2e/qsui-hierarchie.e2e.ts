@@ -165,6 +165,20 @@ const VERDIKT_BH_REGRESSION = 1.2
 // einschiebt, wird also FRÜHER rot gestellt als bisher.
 // ROT ZU BEKOMMEN (§6.7): die Ausgabe-Zeile in `layout/Shell.tsx` ein zweites
 // Mal einhängen (+31 px) ⇒ arbeitsvertrag steht bei 1.251 und der Fall reisst.
+//
+// ── NACHGEMESSEN 25.9.2026 (W2·29-WERKBANK-REST S5b, Posten «Nachzüge aus R13»,
+// FAHRPLAN-DESIGN-IDENTITAET Ziff. 6 «nach R7/R9 prüfen, ob sie auf den
+// Regelwert zurück kann») — ERGÄNZT, die Messung vom 6.9. oben bleibt:
+// Preview-Build, Chromium @1280×800, 2 Worker; alle 11 Wizard-Flächen:
+//   0.821 patientenverfuegung · 0.821 vollmacht · 0.823 schlichtungsgesuch-bs
+//   0.826 testament · 0.862 rubrum · 0.862 verjaehrungsverzicht · 0.890
+//   ag-gruendung · 0.898 mahnung · 0.963 klage-vereinfacht · 1.001 nda
+//   · 1.201 arbeitsvertrag.
+// Der Regelwert 1.2 läge UNTER dem Maximum (1.201) — zurück geht nicht. Die
+// Schranke bleibt 1.25, jetzt begründet festgeschrieben: 0.049 Luft über dem
+// gemessenen Maximum, die Verteilung ist seit 6.9. stabil (arbeitsvertrag
+// 1.212 → 1.201). Die Tiefe steht seit S5b je Fläche als Annotation im
+// Bericht (`I8-Tiefe …`), nicht mehr nur im Rot-Fall.
 const DOKUMENT_BH_REGRESSION = { desktop: 1.25, mobil: 2.8 } as const
 
 // Die zwei Mappen-Flächen sind KONSTRUKTIONSBEDINGT tief: vor der Mappe steht
@@ -640,6 +654,10 @@ for (const [breite, hoehe, name] of [[1280, 800, 'Desktop'], [390, 844, 'Mobil']
         // Grundlage, KEINE neue Regel; Bauart wie WARN_ABSTAND_REGRESSION).
         const tiefe = b.yStelle! / hoehe
         const schranke = breite >= 1024 ? DOKUMENT_BH_REGRESSION.desktop : DOKUMENT_BH_REGRESSION.mobil
+        // Messwert sichtbar (REST S5b): die Schranke wird an der Verteilung
+        // geführt, nicht am Einzelwert (§0 Ziff. 3) — ohne Annotation war sie nur
+        // im Rot-Fall zu sehen.
+        test.info().annotations.push({ type: `I8-Tiefe ${pfad} @${breite}`, description: tiefe.toFixed(3) })
         if (TIEF_AUSGEWIESEN.includes(pfad)) {
           // Gegenprobe zum Ausweis: eine ausgewiesene Fläche MUSS tief liegen.
           expect(tiefe,

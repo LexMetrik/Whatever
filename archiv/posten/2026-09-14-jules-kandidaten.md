@@ -8,3 +8,5 @@ anlass: Der proaktive Jules-Kanal «Suggestions» ist seit 14.9.2026 abgeschalte
 
 Umgehängt 24.9.2026 (W2·24-C → W2·29-WERKBANK-REST, Bündelung in den Werkbank-Umbau, Auftrag David 24.9. «was das Gleiche oder Ähnliches betrifft, auch in diesen Umbau»): aufgeteilt: Druckregeln → S3 · Allowlist kein-abschnitt → S0 · lr-Spiegel/-Notiz → NACHLAUF N2 · Typ-Härtung tabs.ts bleibt offen, in S5 neu verorten.
 - Stand 25.9.2026 (REST S3): alte Druckregeln gesichtet (3 Blöcke, 31 Utilities) — tot waren nur `.lc-card`-Schattennullung und ein Kommentar-Zeiger, entfernt. Offen: Typ-Härtung `lib/tabs.ts`/`tabGruppen.ts` → S5 neu verorten.
+
+**Erledigt 2026-09-25:** REST S5b: Typ-Härtung tabs.ts/tabGruppen.ts gebaut; übrige Teile früher verteilt (S0/S3/NACHLAUF N2) (Bug-Check Sonnet bestanden)

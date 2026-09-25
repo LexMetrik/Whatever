@@ -28,6 +28,7 @@ import { StufeBadge, ErfassungsgradLegende } from '../components/normtext/Erfass
 import { erfassungsgrad, STUFE_WORT } from '../lib/normtext/erfassungsgrad';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { Leerzustand } from '../components/ui/Leerzustand';
+import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { GruppenKopf } from '../components/ui/GruppenKopf';
 import { RubrikKachel } from '../components/ui/RubrikKachel';
 import { AMTLICHE_FASSUNG_NOMEN } from '../lib/benennung';
@@ -390,12 +391,11 @@ export function Gesetze() {
            von Anfang an UNTERHALB des Folds und bewegt sich nur noch dort.
            Reine Platz-Reservierung: kein Zustand entfernt, kein Inhalt gekürzt
            (§15: Layout ändert das WO, nie das WAS). */
-        <div className="min-h-inhalt-region py-12 text-center space-y-3">
-          <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-          {/* Eigener Lade-Text: NICHT «Wird geladen» — dieser Wortlaut ist dem
-              Suspense-Fallback-Drift-Tor in scripts/prerender.ts vorbehalten. */}
-          <p className="text-body-s text-ink-500">Die Sammlung wird abgerufen …</p>
-        </div>
+        /* Eigener Lade-Text: NICHT «Wird geladen» — dieser Wortlaut ist dem
+           Suspense-Fallback-Drift-Tor in scripts/prerender.ts vorbehalten.
+           Ablesekante + Text + role="status" aus dem EINEN Baustein
+           `ui/Ladeanzeige` (W2·29-WERKBANK-REST S5b, 25.9.2026). */
+        <Ladeanzeige text="Die Sammlung wird abgerufen …" className="min-h-inhalt-region py-12" />
       )}
 
       {erlasse && (

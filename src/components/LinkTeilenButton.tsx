@@ -49,7 +49,7 @@ export function LinkTeilenButton({ query }: {
     // Knopf «Link kopiert ✓» über eine unveränderte Zwischenablage (§8). Der
     // geteilte Hook quittiert erst nach dem Schreiben; den Link kennt er erst
     // beim Klick, darum als Argument (nicht an der Hook-Zeile).
-    kopieren(`${location.origin}${pathname}${q}${hash}`);
+    kopieren({ text: `${location.origin}${pathname}${q}${hash}`, ansage: 'Link kopiert' });
   };
   return (
     // LM-085 (W2·17-UI-BEFUNDE B17, 4.9.2026): war `lc-btn-ghost lc-btn-sm` —
