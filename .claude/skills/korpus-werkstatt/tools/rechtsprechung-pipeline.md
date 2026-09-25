@@ -35,6 +35,8 @@ npm run entscheide:seed -- --datum=$(date +%F)
 # Auflösung», bis zur Angleichung; Beleg #1099: +IRSG/+VKL erst im Remap sichtbar)
 npm run entscheide -- --datum=$(date +%F) --additiv --bge-baender=152
 npm run entscheide -- --datum=$(date +%F) --remap
+# Folgeprojektionen danach (sonst check:zaehler/check:bezuege-zaehler rot, Beleg 152 I 2, 25.9.2026):
+npm run gen:zaehler && npm run gen:bezuege-zaehler && npm run datenhaltung:manifest
 
 # Integritäts-Tor (Manifest⊇Snapshots · Provenienz · sha · Norm-Index⊆Manifest · BUDGET_MB)
 npm run check:entscheide
