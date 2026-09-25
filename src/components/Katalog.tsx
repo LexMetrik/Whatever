@@ -350,9 +350,9 @@ export function KategorieSektion({ kat, karten, ohneKopf, alleOffen, ohneGebiets
   // Verwaltungs-Zuständigkeit; S-2: Vorlagen je Gruppe), erscheinen nicht
   // zusätzlich in der «In Vorbereitung»-Aufklappzeile. Bug-Check §9
   // 10.6.2026 (Code-Lupe, MITTEL): in der Vorlagen-Kategorie nur ECHTE
-  // Vorlagen ausnehmen — geplante Werkzeug-Karten (checklisten,
-  // mandatsaufnahme) zeigt das VorlagenRegister nicht, sie müssen hier
-  // sichtbar bleiben (Kachel-Zähler = Ansicht, §8).
+  // Vorlagen ausnehmen — damals lagen geplante Werkzeug-Karten (checklisten,
+  // mandatsaufnahme) in `vorlagen`; seit S5a (25.9.2026) kann die Kategorie
+  // nur noch echte Vorlagen tragen (oberkategorien.ts, `RechnerKategorieId`).
   // Redesign 24.6.2026: in der Vorlagen-Kategorie wandern ALLE geplanten Vorlagen
   // (nicht mehr je Gruppe gestreut) in DIESEN gemeinsamen «In Vorbereitung»-Block.
   const geplant = gefiltert.filter((k) => !istVerfuegbar(k)

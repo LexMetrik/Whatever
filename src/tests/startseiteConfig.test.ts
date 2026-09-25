@@ -166,24 +166,14 @@ describe('Katalog-Integrität (Rechtsgebiet-Gliederung)', () => {
   });
 });
 
-describe('Detailseiten-Titel = Katalog-Kartentitel (Vereinheitlichung 7.6.2026, §5)', () => {
-  it('wo Karten-ID und Rechner-Slug übereinstimmen, stimmen auch die Titel überein', () => {
-    const aktiveIds = new Map(ALLE_KARTEN.filter((k) => k.status !== 'geplant').map((k) => [k.id, k.title]));
-    // Manuell gemappte Paare (ID ≠ Slug): Lohnfortzahlung/Sperrfristen teilen
-    // sich die kuendigung-Seite (Titel = Themen-Einstieg), teuerung/erb-fristen
-    // tragen abweichende Slugs.
-    const MANUELL: Record<string, string> = {
-      kuendigung: 'kuendigung-sperrfristen',
-      teuerung: 'teuerungsrechner',
-      'erb-fristen': 'erbrecht-fristen',
-    };
-    CALCULATORS.filter((c) => c.status !== 'geplant').forEach((c) => {
-      const kartenId = MANUELL[c.slug] ?? c.slug;
-      const kartenTitel = aktiveIds.get(kartenId);
-      if (kartenTitel) expect(c.titel, `Slug ${c.slug} ↔ Karte ${kartenId}`).toBe(kartenTitel);
-    });
-  });
-});
+// GESTRICHEN (S5a W2·29-WERKBANK-REST, 25.9.2026, deklariert §6.3/§6.7): der
+// Test «Detailseiten-Titel = Katalog-Kartentitel (Vereinheitlichung 7.6.2026)».
+// Seit W2·29-WERKBANK-TOR (22.9.2026) leitet `calculators.ts` den Titel aus
+// derselben Karte ab (`titel: karte.title`) — der Vergleich prüfte die Quelle
+// gegen sich selbst. Einzige verbliebene Rot-Möglichkeit war eine Test-Kopie
+// der Kanon-Abbildung (`MANUELL` ≙ `KANON_KARTE_JE_SLUG`), also eine zweite
+// Wahrheit (§5). Wirksame Wache: `check:sediment` (c2), keine Metadaten-
+// Literale in der Registry.
 
 describe('istVerfuegbar (Pro-Katalog-Auftrag, Phase 1)', () => {
   // Deklarierte Erweiterung 6.6.2026: + Erb-Fristen-Rechner (Quick-Win 1) → 21.

@@ -10,7 +10,7 @@ import { IMMER, TAGESZEITEN } from '../lib/begruessungen';
 import { parseHTML } from 'linkedom';
 import { KATALOG_KARTEN, istVerfuegbar } from '../lib/startseiteConfig';
 import { kartenDerKategorie } from '../lib/katalogKategorie';
-import { OBERKATEGORIEN, kategorieFuer, type OberkategorieId } from '../lib/oberkategorien';
+import { OBERKATEGORIEN, type OberkategorieId } from '../lib/oberkategorien';
 import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 
 /** Alle möglichen Grüsse — für den H1-Inhaltstest unten (D39). */
@@ -458,25 +458,18 @@ describe('§8-Ratsche K0: geplante Karten stehen als «In Vorbereitung», nie al
 // (Fall c) — hier darum nicht doppelt.
 //
 // Invariante: jede verfügbare Rechner-Karte steht als Link im /rechner-
-// Register; eine Rechner-Karte in der Oberkategorie `vorlagen` ist nur als
-// ausdrücklich geführtes, GEPLANTES Vorlagen-Werkzeug zulässig (dann steht sie
-// im «In Vorbereitung»-Block auf /vorlagen, Ratsche K0 oben) — eine verfügbare
-// wäre auf beiden Seiten unsichtbar. Und /rechner zählt im Register dasselbe
-// wie im Kopf (STARTSEITE_ZAEHLER, §5/§8).
+// Register. Und /rechner zählt im Register dasselbe wie im Kopf
+// (STARTSEITE_ZAEHLER, §5/§8).
+// DEKLARIERT (§6.3, S5a W2·29-WERKBANK-REST, 25.9.2026): der Fall «Rechner-
+// Karte in `vorlagen`, nur geplant zulässig» (Liste checklisten/mandats-
+// aufnahme) entfällt — die Kategorie kann seither nur echte Vorlagen tragen
+// (Typ `RechnerKategorieId`, oberkategorien.ts); Wächter ist
+// oberkategorien.test.ts «Rechner | Vorlagen: Liste und Zähler aus einer Quelle».
 describe('K8: jede Rechner-Karte steht auf einer Katalogseite, Kopf = Register', () => {
-  /** Rechner-Karten (modus 'rechner') der Oberkategorie `vorlagen` — ausdrücklich geführt. */
-  const VORLAGEN_WERKZEUGE = ['checklisten', 'mandatsaufnahme'];
-
   const dom = (html: string) => parseHTML(`<!doctype html><html><body>${html}</body></html>`).document;
   const registerLinks = (html: string) => new Set(
     [...dom(html).querySelectorAll('section[id^="register-"] a[href]')].map((a) => a.getAttribute('href')!),
   );
-
-  it('Rechner-Karten bei `vorlagen` sind genau die geführten Vorlagen-Werkzeuge, alle geplant', () => {
-    const beiVorlagen = KATALOG_KARTEN.filter((k) => k.modus === 'rechner' && kategorieFuer(k) === 'vorlagen');
-    expect(beiVorlagen.map((k) => k.id).sort()).toEqual([...VORLAGEN_WERKZEUGE].sort());
-    expect(beiVorlagen.filter((k) => istVerfuegbar(k)).map((k) => k.id)).toEqual([]);
-  });
 
   it('/rechner: jede verfügbare Rechner-Karte als Link im Register, Anzahl = Kopf', () => {
     const soll = KATALOG_KARTEN.filter((k) => k.modus === 'rechner' && istVerfuegbar(k) && k.href);

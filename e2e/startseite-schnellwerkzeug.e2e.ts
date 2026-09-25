@@ -84,6 +84,28 @@ test.describe('Startseite · Schnellwerkzeug wählbar', () => {
     await expect(page.locator('[role=tab][tabindex="0"]')).toHaveCount(1)
   })
 
+  // S5a (W2·29-WERKBANK-REST, 25.9.2026): die Frist-Kurzform nennt ihre
+  // Normbezüge wie Verzugszins und Verjährung — aus der rechnenden Engine
+  // (Rückgabe `normverweise`/`normen`), als Fedlex-Links. Soll je Regime = die
+  // erste Norm, die die Engine für diese Eingabe liefert (allgemeineFrist.ts
+  // N_77, zpoFristen.ts N_142_1, schkgFristen.ts N_31, bggVwvgFristen.ts
+  // stillstandNorm). Vor S5a: keine Normzeile (Rot-Beweis im Bericht).
+  test('Frist: Normbezüge der Engine je Ferien-Regime, als Fedlex-Links', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/')
+    const panel = page.getByRole('tabpanel')
+    await expect(panel.locator('[data-schnell-normen]'), 'vor der Regime-Wahl kein Ergebnis, keine Normzeile').toHaveCount(0)
+    for (const [code, norm] of [
+      ['keine', 'Art. 77 OR'], ['zpo', 'Art. 142 Abs. 1 ZPO'], ['schkg', 'Art. 31 SchKG'],
+      ['bgg', 'Art. 46 Abs. 1 BGG'], ['vwvg', 'Art. 22a Abs. 1 VwVG'],
+    ] as const) {
+      await panel.getByLabel('Ferien / Stillstand').selectOption(code)
+      const zeile = panel.locator('[data-schnell-normen]')
+      await expect(zeile, code).toContainText('Normen:')
+      await expect(zeile.getByRole('link', { name: norm, exact: true }), `${code}: ${norm}`).toHaveAttribute('href', /fedlex\.admin\.ch/)
+    }
+  })
+
   test('§15: Erstaufruf lädt keine Schnellform-Chunks; Nachladen erst bei Wahl', async ({ page }) => {
     const chunks: string[] = []
     page.on('request', (r) => { if (/(Verzugszins|Verjaehrung)SchnellForm/.test(r.url())) chunks.push(r.url()) })
