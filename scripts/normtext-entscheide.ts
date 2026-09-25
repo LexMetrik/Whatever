@@ -1,15 +1,12 @@
 // ─── Build-Orchestrator: Rechtsprechungs-Snapshots erzeugen ──────────────────
-//
 // Resilient (Fahrplan R1/R9), Detail via OCL keyed-Lookups. Zwei Quellen-Zweige:
 //  · Bund (bger): Citation-Graph-BFS (listing-unabhängig) → tief, regeste-reich.
-//  · Kantone: Listing je kantonalem Gericht (kein BFS — deren Zitiergraph führt
-//    nicht zu bger). /structure ist Bund-only → kantonal greift der ehrliche
-//    Fliesstext-Fallback (§8, EntscheidBody).
+//  · Kantone: Listing je Gericht (kein BFS); /structure ist Bund-only → kantonal
+//    greift der ehrliche Fliesstext-Fallback (§8, EntscheidBody).
 // Schreibt NIE von Hand editierte Dateien — alles aus diesem Generator (§7).
 //
 //   vite-node scripts/normtext-entscheide.ts -- --datum=2026-06-23 --limit=45 \
 //     --courts=zh_obergericht,be_verwaltungsgericht --kanton-pro=8
-//
 import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
@@ -88,9 +85,8 @@ const bgeLimit = Number(arg('--bge-limit') ?? '300');
 const eidgCourts = (arg('--eidg') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 const eidgPro = Number(arg('--eidg-pro') ?? '5');
 const additiv = process.argv.includes('--additiv');
-// --bge-refresh (nur additiv): zieht genau die BESTEHENDEN BGE neu, deren Auszug/Volltext
-// aktuell mitten im Wort (U+2026) gekappt ist (W2·6-BGE), und überschreibt sie by id —
-// kein Vollbau, Bund/Kanton/eidg bleiben unberührt. Selbstheilend nach Adapter-Härtung.
+// --bge-refresh (nur additiv): zieht die BESTEHENDEN BGE mit mitten im Wort (U+2026) gekapptem
+// Auszug/Volltext neu (W2·6-BGE), überschreibt by id; Bund/Kanton/eidg unberührt.
 const bgeRefresh = process.argv.includes('--bge-refresh');
 // --regeste-refresh (nur additiv, W2·6-B B1+B2+A18): reichert die BESTEHENDEN
 // amtlichen BGE an — (B2/A18) strukturierte, dreisprachige Regeste aus bger.ch clir
