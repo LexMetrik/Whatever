@@ -131,6 +131,18 @@ eine bewusste Lesespalte (`max-w-reading` ≈ 40rem); volle Fensterbreite für
 Fliesstext ist verboten. *(Die typografisch schwachen amtlichen Anzeigen
 (bger.ch: Times, volle Breite) sind genau der leicht erreichbare Vorsprung.)*
 
+**B2a — Rahmenbreite je Seitenart (W2·31-BILDSCHIRMBREITE B1, 25.9.2026).**
+Die Rahmenbreite (Shell, Pane, Footer) steht je Seitenart an EINER Stelle:
+`SEITENBREITE` in `src/components/layout/seitenbreite.ts`. Stufen: `content`
+(70rem, Standard) und `weit` (90rem, erst ab `2xl`). Grundsatz David 25.9.2026:
+**Fliesstext wächst nie mit der Breite** — `weit` ist nur für Raster, Tabellen
+und Beiwerk. Darum trägt jeder Fliesstext seinen Deckel am Textelement, nach
+Schriftstufe: `body-l`/Lead → `max-w-reading`, `body-s` → `max-w-reading-s`
+(30rem), `xs`/`micro` → `max-w-kleintext`. Wächter: `e2e/seitenbreite.e2e.ts`
+(je Art Rahmen, Footer-Flucht, kein Querscroll, ≤ 80 Zeichen je Zeile — auch
+mit simuliertem `weit`-Rahmen und Schriftskala 1.4). Eine Art wird `weit`,
+indem man ihre Tabellenzeile ändert; der Wächter zieht mit.
+
 **B3 — Klare visuelle Hierarchie, ein Icon-System, vier Status-Familien.**
 Inhalt scanbar gliedern (Überschriften-Hierarchie, Abstand, nicht Textwüste).
 Icons/Symbole **zusätzlich** zum Text (nie als alleiniger Bedeutungsträger).
