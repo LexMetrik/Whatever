@@ -688,9 +688,24 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
 - **S2 Materialien (3.4–3.6)** (bau, ~1, dep S0, parallel S1): Übersicht in der Kartenzeile aus K1, Material-Leser,
   Deckungsseite; **nicht** Board-Tabelle/Filterspalte (neue Funktion). `lr8-*`/`lr7-*`-Rückbau am Ende von S2,
   Leser-Specs (`entstehung-*`, `leser-bezuege-inhalt-d30`) mitfahren.
+  **Gebaut 25.9.2026 (S1 + S2 parallel, je Bug-Check Sonnet «bestanden mit Auflagen», Auflagen erfüllt):**
+  S1 — Kopf auf `LeserKopfGeruest register="r"` (Band «Rechtsprechung», additive Props `register`/`nachBand`),
+  «maschinell» als Randnotiz `StatusBadge variant="text"`, D8a Rollen-Schicht, `ui/SchalterGruppe`,
+  Ladeanzeige, Verhaltensänderungen (Zählzeile leer, Suche ab zwei Zeichen, Marken-Rücksetzen); Körper
+  byte-gleich (Kern-Probe unverändert); ECLI aus dem Board NICHT gezeigt (selbst gebildet, §7/§8 — wartet
+  auf David); MM3-Flake lokal nicht reproduzierbar (Posten offen). S2 — Materialien-Übersicht/-Leser/
+  Deckung auf der Werkbank, Rückbau `lr8-*`/`lr7-bez-*`, DK-06, VS-08, Wortlaut Materialien (Gesetzgebung)/
+  Erläuterungen (Verwaltungspraxis). Hinweisbox der Material-Einzelseite je Gattung wartet auf David.
 - **S3 Statische Seiten, Druck, mobil (1.5, 6)** (bau, ~0,5–1): Methodik, Über, Kontakt, Datenschutz, 404;
   `@media print`/`print:` sichten; Posten WerkzeugKopf-Intro @390 (Kurzfassung + aufklappbar, kein Textverlust),
   Tagerechner @320 unter Last, LM-066 Bedienhöhen (`Tabs.tsx` HOEHE vs. `.lc-input`).
+  **Gebaut 25.9.2026 (Bug-Check Sonnet «bestanden mit Auflagen»):** Spec-Korrektur — die statischen Seiten
+  standen schon auf `SeitenKopf`, zu löschen blieben lokale Abschnitt-Hüllen und die Kontakt-Karte. Meta-Seiten
+  ohne Reiter (`lib/tabs.oeffnetReiter`); DK-09 über `@media not print` um den `html.dark`-Tokenblock (keine
+  zweite Wertequelle); Kontrast `brass-500` hell #7A766E → #78746C, Fristbeginn-Tinte `text-paper` (4.54/5.51:1;
+  Fristende war seit GRUNDTON 23.9. schon 4.64) — axe 4.13 lokal grün, Dependabot-Bump der Browser-Tests damit
+  entblockt; WerkzeugKopf-Intro < 640 px drei Zeilen + «Weiterlesen»; Tagerechner @320 deterministisch (nicht
+  lastabhängig), 6 Allowlist-Einträge gestrichen; `kein-abschnitt` wartet auf geladene Daten. LM-066 wartet auf David.
 - **S5 Rückbau und Schluss** (bau, ~0,5): Rest `FAHRPLAN-UI-BEFUNDE.md` abhaken/gegenstandslos → Archiv;
   QS-UI (+ ⧉-Quittung), `W2·19-DESIGN-KONSISTENZ`, `W2·24-C` in Chronik/Archiv; PROJEKTBESCHRIEB §3/§4,
   Inventar datieren; Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Werkzeuge-Blatt eine Quelle,

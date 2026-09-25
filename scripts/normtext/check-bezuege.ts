@@ -88,6 +88,17 @@
 //     164 — die Bilanz ist eine Projektion der Shards, keine zweite Wahrheit (§5).»
 //  · Grössen-Deckel neu — SHARD_BUDGET_KB testweise auf 700: 5 Shards rot
 //    (BGG 2504, STPO 1194, BS-154.100 1083, BV 746, STGB 714 KB).
+//
+// ── T3g/B-1 (25.9.2026, BS-Delta): Platzhalter-Datum ans Klassenende ────────
+//  · Vorher-Rot (Tor ohne B-1, echter Korpus mit dem ersten datumUnbekannt-
+//    Entscheid): 12 Verstösse, z.B. «STPO/21: Ordnung innerhalb 'kantonal' nicht
+//    chronologisch — 'bs_appellationsgericht_DGS.2022.30' (2022-12-20) steht vor
+//    'bs_appellationsgericht_DGS.2025.13' (2025-01-01), das jünger ist».
+//  · Sabotage der neuen Regel — DGS.2025.13 in STPO/21 an den Anfang der Klasse
+//    'kantonal' verschoben: «STPO/21: Ordnung innerhalb 'kantonal' — datierte
+//    Kante 'bs_appellationsgericht_DGS.2025.33' (2026-01-13) steht nach
+//    'bs_appellationsgericht_DGS.2025.13' mit unbekanntem Datum (B-1: unbekannt
+//    ans Klassenende).»
 
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
@@ -288,7 +299,7 @@ function main(): void {
       const zaehler: Partial<Record<BezugStatus, number>> = {};
       let letzterRang = -1;
       /** Vorgänger-Kante INNERHALB der laufenden Status-Klasse (T3g, B7). */
-      let vorher: { key: string; datum: string } | null = null;
+      let vorher: { key: string; datum: string; unbekannt: boolean } | null = null;
       const bgProjektion: BgKante[] = [];
       for (const e of eintraege) {
         kantenGesamt++;
@@ -333,11 +344,24 @@ function main(): void {
         // Geprüft wird nur die Zeit-Achse: der Gleichstand wird vom Generator
         // über die Bestands-Ordnung aufgelöst und ist hier bewusst nicht
         // nachgebildet (eine zweite Kopie derselben Ordnung wäre §5-Doppelung).
-        if (rang === letzterRang && vorher && vergleicheDatumAbsteigend(vorher.datum, kopf.datum) > 0) {
-          fehler.push(`${erlass}/${token}: Ordnung innerhalb '${f.status}' nicht chronologisch — `
-            + `'${vorher.key}' (${vorher.datum}) steht vor '${e.key}' (${kopf.datum}), das jünger ist (B7: neu→alt).`);
+        // B-1 (Generator `bezuege-bauen.ts`, 23.9.2026): eine Kante mit Platzhalter-
+        // Datum (`datumUnbekannt`) hat keinen Ort auf der Zeitachse und steht AM ENDE
+        // ihrer Klasse. Das Tor prüft genau diese Regel — datiert nach unbekannt ist
+        // rot, unbekannt untereinander ohne Zeitvergleich. Bis 25.9.2026 verglich es
+        // den Platzhalter (1. Januar des GN-Jahrs) wie ein echtes Datum: unsichtbar,
+        // solange der Korpus keinen datumUnbekannt-Entscheid trug (main 8cb868caa: 0);
+        // der erste (BS DGS.2025.13, BS-Delta 25.9.2026) machte 12 Artikel rot.
+        const unbekannt = kopf.datumUnbekannt === true;
+        if (rang === letzterRang && vorher) {
+          if (vorher.unbekannt && !unbekannt) {
+            fehler.push(`${erlass}/${token}: Ordnung innerhalb '${f.status}' — datierte Kante '${e.key}' (${kopf.datum}) `
+              + `steht nach '${vorher.key}' mit unbekanntem Datum (B-1: unbekannt ans Klassenende).`);
+          } else if (!vorher.unbekannt && !unbekannt && vergleicheDatumAbsteigend(vorher.datum, kopf.datum) > 0) {
+            fehler.push(`${erlass}/${token}: Ordnung innerhalb '${f.status}' nicht chronologisch — `
+              + `'${vorher.key}' (${vorher.datum}) steht vor '${e.key}' (${kopf.datum}), das jünger ist (B7: neu→alt).`);
+          }
         }
-        vorher = { key: e.key, datum: kopf.datum };
+        vorher = { key: e.key, datum: kopf.datum, unbekannt };
         letzterRang = rang;
 
         // T5 — gewicht darf in nicht messbaren Klassen NICHT als Zahl erscheinen

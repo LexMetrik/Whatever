@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_sozialversicherungsgericht/UV.2024.27",
@@ -17,7 +17,7 @@
       "sachgebiet": "sozialversicherung",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "UVG (Beschwerde beim Bundesgericht hängig)",
+        "gegenstand": "UVG (Bundesgerichtsurteil 8C_471/2025 vom 10.08.2026)",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. R. Schnyder (Vorsitz), lic. iur. M. Prack Hoenen, Dr. med. F. W. Eymann und Gerichtsschreiberin Dr. K. Zimmermann"
@@ -387,11 +387,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78589&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-02-05",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-09-04",
       "sha": "cc707c0daeeda6423ee802f0f4ec4ea6ae7c16b986e44c5a01b36e1edea0d94c",
       "erstpublikation": "2025-07-12",
-      "aktualisiert": "2026-02-05",
+      "aktualisiert": "2026-09-04",
       "nummerSekundaer": "SVG.2025.117",
       "ecli": "ECLI:CH:BSS:2025:UV.2024.27"
     }

@@ -16,7 +16,7 @@ import { usePaneDnd } from './usePaneDnd';
 import { PaneProvider } from './PaneKontext';
 import { InhaltsKopf } from './InhaltsKopf';
 import { InhaltsKopfMeldeProvider, istInhaltsPfad, kopfVonPfad, type KopfDaten } from './InhaltsKopfKontext';
-import { tabSchluessel, merkeTab, ersetzeTab } from '../../lib/tabs';
+import { tabSchluessel, merkeTab, ersetzeTab, oeffnetReiter } from '../../lib/tabs';
 import { PaneName } from './PaneName';
 import { verlaufLabel, erlassVonPfad, gesetzPfad, entscheidPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { useDialogFokus } from './useDialogFokus';
@@ -329,6 +329,12 @@ export function Shell({ children }: { children: ReactNode }) {
       // ein Fenster auf einer Meta-Route bekam keinen Reiter. Die Ausnahme ist
       // ersatzlos weg (`lib/tabs.ts`, Block «R14b»); jedes Fenster führt jetzt
       // seinen Reiter, egal was darin steht.
+      // W2·29-WERKBANK-REST S3 (Entscheid David 19.9.2026): für die Meta-Seiten
+      // gilt die Ausnahme wieder (`lib/tabs.oeffnetReiter`). Die Zuordnung des
+      // Fensters fällt dabei weg — dieselbe Regel wie `aktiv = null` im
+      // `TabTracker`: die nächste Navigation im Fenster HÄNGT AN, statt den
+      // Reiter zu ersetzen, den das Fenster vor der Meta-Seite zeigte.
+      if (!oeffnetReiter(pfad)) { delete paneReiter.current[seed]; continue; }
       const vorher = paneReiter.current[seed];
       // `merkeTab` ist idempotent (`gleich()`), aber der Vergleich hier spart
       // schon den Speicher-Lesevorgang bei jedem Shell-Render.

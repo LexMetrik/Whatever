@@ -4,6 +4,7 @@ import { normLabel, filterEntscheide, richterHaeufigkeit, INSTANZ_ORDNUNG } from
 import type { BrowseEntscheid, RichterRegister } from '../../lib/rechtsprechung/register';
 import { RichterFilter } from './RichterFilter';
 import { FacettenGruppe } from '../ui/FacettenGruppe';
+import { SchalterGruppe } from '../ui/SchalterGruppe';
 import { SORT_LABEL } from './zustand';
 import { Checkbox } from '../vorlagen/ui';
 
@@ -14,6 +15,11 @@ import { Checkbox } from '../vorlagen/ui';
 // + eine Reihe entfernbarer Aktiv-Filter-Chips, damit nichts unsichtbar filtert.
 // Das Sachgebiet steuert die Rail (Entdoppelung) — hier kein Sachgebiet-Select.
 // Reine Darstellung (§3); Filterung macht filterEntscheide() im Eltern.
+
+const DICHTE_OPTIONEN = [
+  { id: 'liste', label: 'Liste' },
+  { id: 'karten', label: 'Karten' },
+] as const;
 
 const SPRACH_LABEL: Record<string, string> = { de: 'Deutsch', fr: 'Französisch', it: 'Italienisch', rm: 'Rätoromanisch' };
 
@@ -184,13 +190,6 @@ export function EntscheidFilter({
   // Beim Zurücksetzen das Sachgebiet (Rail/URL) bewahren — nur Sekundärfilter+Suche leeren.
   const zuruecksetzen = () => onChange({ sachgebiet: werte.sachgebiet ?? null });
 
-  // D22-Anatomie: Text-Schalter mit Registerstrich statt Kasten-Segment.
-  const dichteBtn = (d: 'liste' | 'karten', label: string) => (
-    <button type="button" onClick={() => onDichte(d)} aria-pressed={dichte === d} className="ub-schalter">
-      {label}
-    </button>
-  );
-
   return (
     <div className="space-y-2.5">
       {/* ── D22 Ziff. 2 (Nachzug D24, 6.9.2026) · EIN FILTERFELD, VOLLE BREITE ─
@@ -233,10 +232,9 @@ export function EntscheidFilter({
               {(Object.keys(SORT_LABEL) as SortModus[]).map((s) => <option key={s} value={s}>{SORT_LABEL[s]}</option>)}
             </select>
           </label>
-          <div className="flex items-center gap-x-4" role="group" aria-label="Ansicht">
-            {dichteBtn('liste', 'Liste')}
-            {dichteBtn('karten', 'Karten')}
-          </div>
+          {/* D22-Anatomie (Text-Schalter statt Kasten-Segment) aus dem EINEN
+              Baustein `ui/SchalterGruppe` (REST S1, 25.9.2026) statt von Hand. */}
+          <SchalterGruppe name="Ansicht" wert={dichte} onWahl={onDichte} optionen={DICHTE_OPTIONEN} />
         </div>
       </div>
 

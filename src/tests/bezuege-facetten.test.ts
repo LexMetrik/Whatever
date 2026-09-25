@@ -546,22 +546,32 @@ describe('B7 · Vollständigkeit und Ordnung der ausgelieferten Shards', () => {
     }
   });
 
+  // §6.3-DEKLARATION (25.9.2026, QS-KORPUS BS-Delta): der Test verglich auch den
+  // Platzhalter einer `datumUnbekannt`-Kante (1. Januar des GN-Jahrs) wie ein
+  // echtes Datum — gegen die B-1-Regel des Generators (bezuege-bauen.ts, #1072:
+  // unbekannt ans Klassenende). Unsichtbar, bis der erste datumUnbekannt-
+  // Entscheid kam (BS DGS.2025.13; STPO/21 u.a. rot). Seither: die DATIERTEN
+  // Kanten laufen monoton rückwärts, die unbekannten stehen hinter ihnen.
+  // Gleiche Regel wie Tor T3g in scripts/normtext/check-bezuege.ts.
   it('innerhalb jeder Status-Klasse läuft die Zeit monoton rückwärts', () => {
     for (const erlass of ['OR', 'STPO', 'BGG']) {
       const s = bezugsShard(erlass);
       for (const [token, eintraege] of Object.entries(s.proArtikel)) {
-        const jeKlasse = new Map<string, string[]>();
+        const jeKlasse = new Map<string, Array<{ datum: string; unbekannt: boolean }>>();
         for (const e of eintraege) {
           const k = s.dokumente[e.key];
           if (!k) continue;
           const liste = jeKlasse.get(k.facetten.status) ?? [];
-          liste.push(k.datum);
+          liste.push({ datum: k.datum, unbekannt: k.datumUnbekannt === true });
           jeKlasse.set(k.facetten.status, liste);
         }
-        for (const [status, daten] of jeKlasse) {
-          expect({ erlass, token, status, daten }).toEqual(
-            { erlass, token, status, daten: [...daten].sort().reverse() },
-          );
+        for (const [status, zs] of jeKlasse) {
+          const daten = zs.filter((z) => !z.unbekannt).map((z) => z.datum);
+          const unbekanntFolge = zs.map((z) => z.unbekannt);
+          expect({ erlass, token, status, daten, unbekanntFolge }).toEqual({
+            erlass, token, status, daten: [...daten].sort().reverse(),
+            unbekanntFolge: [...unbekanntFolge].sort((a, b) => Number(a) - Number(b)),
+          });
         }
       }
     }
@@ -601,7 +611,10 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // 6357 → 6335 (25.9.2026, Sperre AIMP/OCP/OS): die Fehlzuordnungen an IRSG
     // (Beschaffungs-BGE), VKL (Jagd, V-StGB-MStGB) und AVO (Kartell) entfallen,
     // dazu die IRSG-Artikel von RR_2026_46 (s. oben).
-    expect(bilanz.artikelGesamt).toBe(6335);
+    // 6335 → 6404 (25.9.2026, QS-KORPUS BS-Delta +185 neu / 41 aktualisiert): die
+    // neuen BS-Urteile zitieren 69 bisher unzitierte Artikel (Bund + BS-Erlasse).
+    // eidg-Werte (159/88/17) unverändert — die Aussage des Tests steht.
+    expect(bilanz.artikelGesamt).toBe(6404);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });

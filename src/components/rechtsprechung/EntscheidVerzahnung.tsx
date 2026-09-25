@@ -125,7 +125,7 @@ export function ZitierteNormenGruppe({ abschnitte, zitierteNormen, regesteAnker,
           return (
             <span key={norm} className="inline-flex items-center">
               <button type="button" onClick={() => springe(norm)}
-                className="lc-chip num no-underline hover:border-brass-400 hover:text-brass-700 transition-colors"
+                className="lc-chip num no-underline hover:border-accent-line hover:text-accent-text transition-colors"
                 title={hatFundstelle
                   ? `Zur Fundstelle von ${norm} im Urteilstext springen`
                   : `${norm} — keine Textstelle in den Erwägungen; springt zur Regeste`}>
@@ -136,7 +136,7 @@ export function ZitierteNormenGruppe({ abschnitte, zitierteNormen, regesteAnker,
               {readerLink && kannOeffnen && !istOffen(readerLink) && (
                 <button type="button" onClick={() => oeffneDaneben(readerLink)}
                   title={`${norm} nebeneinander öffnen`} aria-label={`${norm} nebeneinander öffnen`}
-                  className="ml-1 inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 hover:text-brass-700 hover:border-brass-400 transition-colors">
+                  className="ml-1 inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 hover:text-accent-text hover:border-accent-line transition-colors">
                   <span aria-hidden className="lc-griff-glyph">⧉</span>
                 </button>
               )}
@@ -201,14 +201,14 @@ export function ZitiertGruppe({ zitierteEntscheide, abschnitte, selbstKey }: {
                   <button type="button" onClick={() => springeZuAnker(k.fundstelleAnker!)}
                     title={`Zur zitierenden Stelle ${ankerLabel(k.fundstelleAnker)} springen`}
                     aria-label={`Zur zitierenden Stelle ${ankerLabel(k.fundstelleAnker)} springen`}
-                    className="ml-1 text-micro num text-ink-500 hover:text-brass-700">
+                    className="ml-1 text-micro num text-ink-500 hover:text-accent-text">
                     ↳ {ankerLabel(k.fundstelleAnker)}
                   </button>
                 )}
                 {kannOeffnen && !istOffen(ziel) && (
                   <button type="button" onClick={() => oeffneDaneben(ziel)}
                     title={`${k.zitat} nebeneinander öffnen`} aria-label={`${k.zitat} nebeneinander öffnen`}
-                    className="ml-1 inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 hover:text-brass-700 hover:border-brass-400 transition-colors">
+                    className="ml-1 inline-flex h-6 w-6 items-center justify-center rounded-md border border-line text-ink-500 hover:text-accent-text hover:border-accent-line transition-colors">
                     <span aria-hidden className="lc-griff-glyph">⧉</span>
                   </button>
                 )}

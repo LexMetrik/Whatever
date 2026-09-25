@@ -1,0 +1,25 @@
+{
+"erzeugt":"2026-09-25",
+"erlass":"BS-724.100",
+"erlassEbene":"kanton",
+"dokumente":{
+"bs_appellationsgericht_VD.2025.148":{"zitierung":"Appellationsgericht BS VD.2025.148 vom 24.03.2026","regesteKurz":"Demonstrationsverbot (Beschwerde am BGer hängig)","datum":"2026-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.192":{"zitierung":"Appellationsgericht BS VD.2025.192 vom 08.07.2026","regesteKurz":"Widerruf einer Standbetriebsbewilligung (nicht rechtskräftig)","datum":"2026-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+},
+"proArtikel":{
+"10":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.148","gewicht":null}],
+"12":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
+"13":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
+"16":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
+"27":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}],
+"50":[{"key":"bs_appellationsgericht_VD.2025.192","gewicht":null}]
+},
+"gesamtProArtikel":{
+"10":{"kantonal":2},
+"12":{"kantonal":1},
+"13":{"kantonal":1},
+"16":{"kantonal":1},
+"27":{"kantonal":1},
+"50":{"kantonal":1}
+}
+}

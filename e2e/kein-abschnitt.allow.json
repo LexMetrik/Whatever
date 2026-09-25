@@ -54,60 +54,6 @@
       "selektor": "button.flex «Reiter 1: BGer 1B_278/2022 vom 20. Juni »",
       "begruendung": "F6/R11 — die GESCHAEFTSNUMMER eines Entscheids bleibt im Reiter bewusst ungekuerzt («OGer AGHOR.2024.19» war der Gegen-Defekt); der Reitertitel «BGer 1B_278/2022 vom 20. Juni 2022» passt @320/390 darum nicht in den Kasten (217 px in 171 bzw. 212 px). Die Loesung ist eine KUERZUNGSREGEL fuer Entscheid-Kurzformen (Datum weg, Gericht abkuerzen) — eine fachliche Entscheidung ueber die Zitierform, nicht eine Geometrie-Korrektur, und damit ausserhalb von R8. R8 hat den Reiter bereits schrumpffaehig gemacht (min-w-0 an Kasten und Beschriftungs-Spans; 22 der 28 Reiter-Funde sind damit weg), dieser Rest IST der Kern von F6. Ziel: eigener Nachzug «F6 Reiter-Kurzform», ROADMAP W2·24-DESIGN-IDENTITAET.",
       "datum": "2026-09-07"
-    },
-    {
-      "route": "/rechner/tagerechner",
-      "viewport": "320",
-      "modus": "hell",
-      "kategorie": "a-ueberlauf-ohne-scroller",
-      "selektor": "input.lc-input «»",
-      "begruendung": "Natives input-Feld im Rechner-Formular; die Ellipse stammt aus der gemeinsamen Feld-Regel in index.css (urspruenglich fuer select in Chromium). Der Feldinhalt ist NICHT unerreichbar — Caret, Pfeiltasten und Auswahl fahren im Feld weiter, das ist die Bedienart eines Eingabefelds. Ein title-Attribut waere hier sogar falsch: es truege den Wert zum Render-Zeitpunkt und liefe bei jeder Eingabe aus dem Tritt (§8, zweite Wahrheit). Kein Bau-Schritt vorgesehen — bewusster Dauerzustand; erneut zu pruefen, falls die Feld-Ellipse je auf reine Anzeigefelder ausgedehnt wird.",
-      "datum": "2026-09-07"
-    },
-    {
-      "route": "/rechner/tagerechner",
-      "viewport": "320",
-      "modus": "hell",
-      "kategorie": "b-ellipsis-ohne-title",
-      "selektor": "input.lc-input «»",
-      "begruendung": "Natives input-Feld im Rechner-Formular; die Ellipse stammt aus der gemeinsamen Feld-Regel in index.css (urspruenglich fuer select in Chromium). Der Feldinhalt ist NICHT unerreichbar — Caret, Pfeiltasten und Auswahl fahren im Feld weiter, das ist die Bedienart eines Eingabefelds. Ein title-Attribut waere hier sogar falsch: es truege den Wert zum Render-Zeitpunkt und liefe bei jeder Eingabe aus dem Tritt (§8, zweite Wahrheit). Kein Bau-Schritt vorgesehen — bewusster Dauerzustand; erneut zu pruefen, falls die Feld-Ellipse je auf reine Anzeigefelder ausgedehnt wird.",
-      "datum": "2026-09-07"
-    },
-    {
-      "route": "/rechner/tagerechner",
-      "viewport": "320",
-      "modus": "dunkel",
-      "kategorie": "a-ueberlauf-ohne-scroller",
-      "selektor": "input.lc-input «»",
-      "begruendung": "Natives input-Feld im Rechner-Formular; die Ellipse stammt aus der gemeinsamen Feld-Regel in index.css (urspruenglich fuer select in Chromium). Der Feldinhalt ist NICHT unerreichbar — Caret, Pfeiltasten und Auswahl fahren im Feld weiter, das ist die Bedienart eines Eingabefelds. Ein title-Attribut waere hier sogar falsch: es truege den Wert zum Render-Zeitpunkt und liefe bei jeder Eingabe aus dem Tritt (§8, zweite Wahrheit). Kein Bau-Schritt vorgesehen — bewusster Dauerzustand; erneut zu pruefen, falls die Feld-Ellipse je auf reine Anzeigefelder ausgedehnt wird.",
-      "datum": "2026-09-07"
-    },
-    {
-      "route": "/rechner/tagerechner",
-      "viewport": "320",
-      "modus": "dunkel",
-      "kategorie": "b-ellipsis-ohne-title",
-      "selektor": "input.lc-input «»",
-      "begruendung": "Natives input-Feld im Rechner-Formular; die Ellipse stammt aus der gemeinsamen Feld-Regel in index.css (urspruenglich fuer select in Chromium). Der Feldinhalt ist NICHT unerreichbar — Caret, Pfeiltasten und Auswahl fahren im Feld weiter, das ist die Bedienart eines Eingabefelds. Ein title-Attribut waere hier sogar falsch: es truege den Wert zum Render-Zeitpunkt und liefe bei jeder Eingabe aus dem Tritt (§8, zweite Wahrheit). Kein Bau-Schritt vorgesehen — bewusster Dauerzustand; erneut zu pruefen, falls die Feld-Ellipse je auf reine Anzeigefelder ausgedehnt wird.",
-      "datum": "2026-09-07"
-    },
-    {
-      "route": "/rechner/tagerechner",
-      "viewport": "320",
-      "modus": "hell",
-      "kategorie": "a-ueberlauf-ohne-scroller",
-      "selektor": "summary.cursor-pointer «Wie wurde die Frist ausgelöst? (optional»",
-      "begruendung": "summary-Element des optionalen Zustell-Helfers (AllgemeineFristForm). Gemessen @320: 214/200 px, overflow-x visible, KEIN Kind ragt heraus — der Ueberschuss stammt vom ::marker des display:list-item, der links ausserhalb des Inhaltskastens sitzt. Der Text selbst bricht seit der Hausregel overflow-wrap:break-word normal um; es ist nichts verdeckt und nichts unerreichbar. Ziel: mit der naechsten Ueberarbeitung der Aufklapp-Bausteine auf einen eigenen Marker umstellen, dann faellt der Eintrag weg — ROADMAP W2·24-DESIGN-IDENTITAET.",
-      "datum": "2026-09-07"
-    },
-    {
-      "route": "/rechner/tagerechner",
-      "viewport": "320",
-      "modus": "dunkel",
-      "kategorie": "a-ueberlauf-ohne-scroller",
-      "selektor": "summary.cursor-pointer «Wie wurde die Frist ausgelöst? (optional»",
-      "begruendung": "summary-Element des optionalen Zustell-Helfers (AllgemeineFristForm). Gemessen @320: 214/200 px, overflow-x visible, KEIN Kind ragt heraus — der Ueberschuss stammt vom ::marker des display:list-item, der links ausserhalb des Inhaltskastens sitzt. Der Text selbst bricht seit der Hausregel overflow-wrap:break-word normal um; es ist nichts verdeckt und nichts unerreichbar. Ziel: mit der naechsten Ueberarbeitung der Aufklapp-Bausteine auf einen eigenen Marker umstellen, dann faellt der Eintrag weg — ROADMAP W2·24-DESIGN-IDENTITAET.",
-      "datum": "2026-09-07"
     }
   ]
 }

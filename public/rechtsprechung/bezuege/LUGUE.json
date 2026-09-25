@@ -41,7 +41,8 @@
 "bs_appellationsgericht_ZK.2020.3":{"zitierung":"Appellationsgericht BS ZK.2020.3 vom 23.04.2024","regesteKurz":"Auskunfts- und Forderungsklage (BGer 4A_580/2024 vom 07.01.25 betr. Teilentscheid AG vom 25.04.24)","datum":"2024-04-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2021.5":{"zitierung":"Sozialversicherungsgericht BS ZV.2021.5 vom 17.02.2022","regesteKurz":"Krankentaggeld; keine Versicherungsunterstellung","datum":"2022-02-17","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_ZV.2021.6":{"zitierung":"Sozialversicherungsgericht BS ZV.2021.6 vom 08.06.2022","regesteKurz":"Kein schutzwürdiges Interesse an der vorsorglichen Beweisführung in Form eines medizinischen Gutachtens glaubhaft…","datum":"2022-06-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_ZV.2024.2":{"zitierung":"Sozialversicherungsgericht BS ZV.2024.2 vom 25.09.2024","regesteKurz":"Krankentaggeldversicherung nach VVG Nichteintreten mangels örtlicher Zuständigkeit","datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_ZV.2024.2":{"zitierung":"Sozialversicherungsgericht BS ZV.2024.2 vom 25.09.2024","regesteKurz":"Krankentaggeldversicherung nach VVG Nichteintreten mangels örtlicher Zuständigkeit","datum":"2024-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"bs_sozialversicherungsgericht_ZV.2025.3":{"zitierung":"Sozialversicherungsgericht BS ZV.2025.3 vom 12.03.2026","regesteKurz":"Krankentaggeld: krankheitsbedingte Arbeitsunfähigkeit nicht nachgewiesen, Gegenbeweis durch Versicherung erbracht","datum":"2026-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_150_III_345","gewicht":0},{"key":"bge_149_III_318","gewicht":0},{"key":"bge_149_III_81","gewicht":0},{"key":"bge_149_III_34","gewicht":0},{"key":"bge_147_III_491","gewicht":1},{"key":"bge_146_III_157","gewicht":1},{"key":"bge_150_III_423__voll","gewicht":0,"erwaegungen":["E. 5","E. 5.1","E. 5.3","E. 5.4"]},{"key":"bs_appellationsgericht_BEZ.2022.45","gewicht":null}],
@@ -50,7 +51,7 @@
 "6":[{"key":"bge_149_III_379","gewicht":0},{"key":"bs_appellationsgericht_ZK.2020.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2021.5","gewicht":null}],
 "9":[{"key":"bs_sozialversicherungsgericht_ZV.2024.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2021.6","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2021.5","gewicht":null}],
 "12":[{"key":"bs_sozialversicherungsgericht_ZV.2021.5","gewicht":null}],
-"13":[{"key":"bs_sozialversicherungsgericht_ZV.2024.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2021.6","gewicht":null}],
+"13":[{"key":"bs_sozialversicherungsgericht_ZV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2024.2","gewicht":null},{"key":"bs_sozialversicherungsgericht_ZV.2021.6","gewicht":null}],
 "15":[{"key":"bge_149_III_379__voll","gewicht":0,"erwaegungen":["E. 3"]}],
 "17":[{"key":"bge_149_III_379","gewicht":0}],
 "18":[{"key":"bs_appellationsgericht_VD.2022.92","gewicht":null}],
@@ -85,7 +86,7 @@
 "6":{"bge":1,"kantonal":2},
 "9":{"kantonal":3},
 "12":{"kantonal":1},
-"13":{"kantonal":2},
+"13":{"kantonal":3},
 "15":{"bger":1},
 "17":{"bge":1},
 "18":{"kantonal":1},

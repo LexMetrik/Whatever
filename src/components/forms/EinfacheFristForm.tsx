@@ -295,13 +295,24 @@ export function EinfacheFristForm({ minimal = false, variante = 'block', onErgeb
           1280 bleibt es darum bei drei bzw. zwei Spalten. */}
       <div className={zeile
         ? 'grid grid-cols-2 gap-3 items-end sm:grid-cols-3 xl:grid-cols-[11.5rem_4.5rem_6rem_5rem_minmax(10.5rem,1fr)]'
-        : `grid ${minimal ? 'grid-cols-1 @[16.5rem]:grid-cols-2' : `grid-cols-2 ${pk('sm:grid-cols-4', '@3xl/pane:grid-cols-4')}`} gap-3 max-w-2xl items-end`}>
+        : `grid ${minimal ? 'grid-cols-1 @[16.5rem]:grid-cols-2' : pk('grid-cols-1 min-[360px]:grid-cols-2 sm:grid-cols-4', 'grid-cols-2 @3xl/pane:grid-cols-4')} gap-3 max-w-2xl items-end`}>
         {/* `minimal` (nur Startseite) misst seine FLÄCHE, nicht das Fenster
             (W2·29-WERKBANK-START-LAYOUT 24.9.2026): seit das Schnellwerkzeug in
             einer Mulde mit Innenabstand steht (`start/StartFlaeche`, ein
             `@container`), blieben @320 nur 240 px — das Datum brauchte 126 px
             Feld und bekam 114 (R8 a/b, `e2e/kein-abschnitt`). Zwei Spalten erst
             ab 16.5 rem = 2 × 126 px + 12 px Abstand, darunter eine. */}
+        {/* Dieselbe Wurzel auf /rechner/tagerechner (W2·29-WERKBANK-REST S3,
+            25.9.2026, Posten «R8 unter Last @320»): die Werkzeug-Karte liess
+            @320 232 px Inhalt, zwei Spalten à 110 px — das Datum «25.09.2026»
+            braucht 126 px (82 px Text + 44 px Kalender-Knopf) und stand
+            gekappt da, deterministisch, nicht nur unter Last (gemessen: 126/110
+            nach 60, 300 und 1500 ms). Bisher stand das in der R8-Allowlist.
+            Zwei Spalten jetzt erst ab 360 px Fenster (Karte 272 px Inhalt →
+            2 × 130 px); darunter eine. Viewport statt Container-Query, weil
+            eine `@[…]`-Stufe neben `sm:grid-cols-4` in der CSS-Reihenfolge
+            nicht sicher vor ihr stünde; das Fenster-Pendant (`pk`, zweites
+            Argument) bleibt unverändert. */}
         {/* R2-E/F1-2: dieselbe `Field`-Anatomie wie in allen übrigen Rechner-
             Formularen (ZPO, SchKG, Gewährleistung …) statt der hauseigenen
             `<label><span class="lc-overline">`-Kopie — Label und Control sind

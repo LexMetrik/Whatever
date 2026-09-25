@@ -1,0 +1,113 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "kanton/BS/bs_appellationsgericht/BEZ.2026.1",
+      "gericht": "bs_appellationsgericht",
+      "gerichtName": "Appellationsgericht BS",
+      "gerichtstyp": "kantonal",
+      "kanton": "BS",
+      "abteilung": null,
+      "nummer": "BEZ.2026.1",
+      "bgeReferenz": null,
+      "zitierung": "Appellationsgericht BS BEZ.2026.1 vom 04.03.2026",
+      "datum": "2026-03-04",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "privat",
+      "legalArea": null,
+      "rubrum": {
+        "gegenstand": "Ordnungsbusse",
+        "parteien": null,
+        "vorinstanz": null,
+        "besetzung": "Dr. Claudius Gelzer und a.o. Gerichtsschreiber BLaw Andrin Spring"
+      },
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "A____ (Beschwerdeführerin) erhob mit Schreiben vom 8. Januar 2026 Beschwerde gegen eine Verfügung der Staatlichen Schlichtungsstelle für Mietstreitigkeiten vom 17. Dezember 2025, in welcher ihr eine Ordnungsbusse von CHF 400.- auferlegt worden ist.\n\nMit Verfügung vom 13. Januar 2026 forderte der Instruktionsrichter am Appellationsgericht die Beschwerdeführerin zur Leistung eines Kostenvorschusses auf. Die Verfügung wurde am 17. Januar 2026 zugestellt. Da der Kostenvorschuss innert der der Beschwerdeführerin gesetzten Frist nicht geleistet wurde, wurde ihr mit Verfügung vom 2. Februar 2026 eine Nachfrist zur Leistung des Kostenvorschusses gesetzt. Sie wurde darauf hingewiesen, dass auf die Beschwerde nicht eingetreten werde, wenn die Frist nicht eingehalten wird. Die Verfügung wurde ihr am 11. Februar 2026 zugestellt.\n\nInnert der ihr gesetzten Nachfrist leistete die Beschwerdeführerin den Kostenvorschuss nicht. Auf die Beschwerde ist im Einklang mit Art. 101 Abs. 3 der Schweizerische Zivilprozessordnung (ZPO, SR 101) nicht einzutreten. Daran ändert auch die E-Mail der Beschwerdeführerin vom 20. Februar 2026 nichts, in welcher sie nach der Höhe des Kostenvorschusses und einem Einzahlungsschein fragte. Diese Anfrage erfolgte per E-Mail und damit nicht in der für Eingaben an das Gericht geforderten Schriftform und zudem erst nach Ablauf der Nachfrist für die Leistung des Kostenvorschusses."
+            }
+          ]
+        },
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "Demgemäss erkennt das Appellationsgericht (Einzelgericht):"
+            },
+            {
+              "marke": null,
+              "text": "://:       Auf die Beschwerde gegen die Verfügung der Staatlichen Schlichtungsstelle für Mietstreitigkeiten vom 17. Dezember 2025 ([...]) wird nicht eingetreten."
+            },
+            {
+              "marke": null,
+              "text": "Es werden keine Gerichtskosten erhoben."
+            },
+            {
+              "marke": null,
+              "text": "Mitteilung an:"
+            },
+            {
+              "marke": null,
+              "text": "-       Beschwerdeführerin"
+            },
+            {
+              "marke": null,
+              "text": "-       Staatliche Schlichtungsstelle für Mietstreitigkeiten"
+            },
+            {
+              "marke": null,
+              "text": "APPELLATIONSGERICHT BASEL-STADT"
+            },
+            {
+              "marke": null,
+              "text": "Der a.o. Gerichtsschreiber"
+            },
+            {
+              "marke": null,
+              "text": "BLaw Andrin Spring"
+            },
+            {
+              "marke": null,
+              "text": "Rechtsmittelbelehrung"
+            },
+            {
+              "marke": null,
+              "text": "Gegen diesen Entscheid kann unter den Voraussetzungen von Art. 72 ff. des Bundesgerichtsgesetzes (BGG) innert 30 Tagen seit schriftlicher Eröffnung Beschwerde in Zivilsachen erhoben werden. In vermögensrechtlichen Angelegenheiten gilt dies nur dann, wenn der Streitwert die Beschwerdesumme gemäss Art. 74 Abs. 1 lit. a oder b BGG erreicht (CHF 15'000.– bei Streitigkeiten aus Miete oder Arbeitsverhältnis bzw. CHF 30'000.– in allen übrigen Fällen) oder wenn sich eine Rechtsfrage von grundsätzlicher Bedeutung stellt. Die Beschwerdeschrift ist fristgerecht dem Bundesgericht (1000 Lausanne 14) einzureichen. Für die Anforderungen an deren Inhalt wird auf Art. 42 BGG verwiesen. Über die Zulässigkeit des Rechtsmittels entscheidet das Bundesgericht."
+            },
+            {
+              "marke": null,
+              "text": "Ob an Stelle der Beschwerde in Zivilsachen ein anderes Rechtsmittel in Frage kommt (z.B. die subsidiäre Verfassungsbeschwerde an das Bundesgericht gemäss Art. 113 BGG), ergibt sich aus den anwendbaren gesetzlichen Bestimmungen. Wird sowohl Beschwerde in Zivilsachen als auch Verfassungsbeschwerde erhoben, sind beide Rechtsmittel in der gleichen Rechtsschrift einzureichen."
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Auf die Beschwerde gegen die Verfügung der Staatlichen Schlichtungsstelle für Mietstreitigkeiten vom 17. Dezember 2025 ([...]) wird nicht eingetreten.",
+        "Es werden keine Gerichtskosten erhoben."
+      ],
+      "zitierteNormen": [],
+      "normKeys": [
+        "BGG"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "gerichte-bs",
+      "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79420&Template=search_result_document.html",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-08-20",
+      "sha": "14cd93aa1c20556157aecab62dc716e748af2e44b41a7b8b0c25c0935b686193",
+      "erstpublikation": "2026-08-20",
+      "aktualisiert": "2026-08-20",
+      "nummerSekundaer": "AG.2026.152",
+      "ecli": "ECLI:CH:BSA:2026:BEZ.2026.1"
+    }
+  ]
+}
