@@ -378,8 +378,8 @@ Umschichtung 20.9.2026 (2)):*
   Grenzen: Rechtsdaten-Tore (§7-Prüftiefe) sind vom Rückbau ausgenommen; jede Streichung mit
   Messwert im Commit. Anlass: Deckel zweimal gerissen in #979 (0,2 KB Luft).
 
-- [ ] **Doku-Diät: Fahrpläne und Belege** *(`QS-DOKU-DIAET`, Go David 22.9.2026)* (dep W2·29-WERKBANK-REST vorgezogen, Entscheid David 24.9.2026)
-  <!-- @meta id: QS-DOKU-DIAET · status: ready · blocker: null · dep: [] · feld: betrieb -->
+- [~] **Doku-Diät: Fahrpläne und Belege** *(`QS-DOKU-DIAET`, Go David 22.9.2026)* (dep W2·29-WERKBANK-REST vorgezogen, Entscheid David 24.9.2026)
+  <!-- @meta id: QS-DOKU-DIAET · status: wip · blocker: null · dep: [] · feld: betrieb -->
   Ziel: (a) die 36 aktiven Fahrpläne gegen «hat der Schritt in 30 Tagen einen Commit gesehen?»
   prüfen, Rest nach `archiv/` (Steuer-Deckel 22.9.2026: 1 268 von 1 290 KB, +389 KB seit
   15.8.); (b) datierte Belege, die kein Werkzeug liest und kein Skill als Pflichtlektüre nennt
