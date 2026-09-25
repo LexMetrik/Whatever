@@ -66,8 +66,10 @@ describe('kopfEntscheiddatum — Fallen', () => {
   it('SG: Kopfzeile gilt nur mit dem EIGENEN Aktenzeichen dahinter', () => {
     expect(kopfEntscheiddatum('St.Gallen Verwaltungsgericht 08.01.2025 B 2023/226', 'B 2023/225').status).toBe('fehlt');
   });
-  it('eigener Titel schlägt abweichende Plattform-Angabe und meldet sie (SG BV 2024/21)', () => {
-    const k = kopfEntscheiddatum('Entscheiddatum: 04.07.2025 Versicherungsgericht Abteilung III Entscheid vom 4. August 2025 Besetzung', 'BV 2024/21');
+  it('eigener Titel MIT Identitätsbeleg schlägt abweichende Plattform-Angabe und meldet sie (SG BV 2024/21)', () => {
+    // Seit Gegenprüfung #1126 nur mit Beleg (eigenes Aktenzeichen, hier die Regeste-Zitierung);
+    // ohne Beleg ⇒ widerspruch (entscheid-kopfdatum-identitaet.test.ts).
+    const k = kopfEntscheiddatum('Entscheiddatum: 04.07.2025 (Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025, BV 2024/21). Versicherungsgericht Abteilung III Entscheid vom 4. August 2025 Besetzung', 'BV 2024/21');
     expect(k).toMatchObject({ status: 'ok', datum: '2025-08-04', regel: 'titel-vom' });
     if (k.status === 'ok') expect(k.abweichung.map((x) => x.datum)).toEqual(['2025-07-04']);
   });

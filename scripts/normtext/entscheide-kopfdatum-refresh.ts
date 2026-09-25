@@ -7,12 +7,14 @@
 // Offline-Neuableitung ist darum unmöglich. Dieser Lauf holt je kantonalem
 // Snapshot den OCL-Volltext (und nur falls nötig den Kopf des amtlichen PDF),
 // bildet ihn mit DEMSELBEN `mappeEntscheidOCL` wie der Live-Import ab (§5) und
-// übernimmt daraus AUSSCHLIESSLICH `datum` + `zitierung`.
+// übernimmt daraus AUSSCHLIESSLICH `datum` + `zitierung` — und damit das daraus
+// abgeleitete ECLI-Jahr (minteEcli liest das Jahr aus `datum`, ecli.ts).
 // `abschnitte`/`sha`/`abgerufen`/`fassungsToken` bleiben unberührt (§7).
 //
 // Tore (§1): exakte Identität court + Aktenzeichen und gleiche Snapshot-id
 // (OCL-Suche ist präfixunscharf, Quirk 8); ein nicht auflösbarer Snapshot
-// bricht den GANZEN Lauf ab (nie ein halb korrigierter Korpus).
+// bricht den GANZEN Lauf ab (nie ein halb korrigierter Korpus) — ebenso ein
+// Kopf-Widerspruch (Titel ≠ Plattform ohne Identitätsbeleg, Gegenprüfung #1126).
 // Bund (canton CH) und BS (eigener Import, quelle 'gerichte-bs') sind ausgenommen.
 
 import type { EntscheidSnapshot } from '../../src/lib/rechtsprechung/typen';
@@ -59,16 +61,20 @@ export async function kopfdatumRefresh(basis: EntscheidSnapshot[], deps: KopfRef
       continue;
     }
     const seiten = await deps.holeSeiten(det);
+    const r = kantonsEntscheiddatum(det, seiten);
+    if (r.kopf.status === 'widerspruch') {
+      ungeloest.push(`${s.id} (${r.grund})`);
+      continue;
+    }
     // Derselbe Mapper wie der Live-Import (§5); abgerufen = Bestandswert (Zukunfts-Riegel).
     const m = mappeEntscheidOCL(det, null, s.abgerufen, { amtlicheKopfSeiten: seiten, sprache: null });
     if (!m || m.id !== s.id || m.gerichtName !== s.gerichtName) {
       ungeloest.push(`${s.id} (Abbildung ${m ? `id/Gericht ${m.id}/${m.gerichtName}` : 'null'})`);
       continue;
     }
-    const r = kantonsEntscheiddatum(det, seiten);
     zeilen.push({
       id: s.id, alt: s.datum, neu: m.datum, quelle: r.quelle,
-      beleg: r.kopf.status === 'ok' ? r.kopf.beleg : r.kopf.status,
+      beleg: r.kopf.status === 'ok' ? r.kopf.beleg : (r.grund ?? r.kopf.status),
       abweichung: r.kopf.status === 'ok' ? r.kopf.abweichung.map((a) => `${a.regel}=${a.datum}`).join(', ') : '',
       hashDrift: !!det.content_hash && String(det.content_hash) !== s.fassungsToken,
     });

@@ -55,7 +55,7 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
   it('eigenes Aktenzeichen unmittelbar vor dem Titel belegt ihn (AG/BS-Kopfform)', () => {
     expect(kopfEntscheiddatum('Entscheiddatum: 04.07.2025 Obergericht XBE.2025.10 Entscheid vom 21. August 2025', 'XBE.2025.10'))
       .toMatchObject({ status: 'ok', datum: '2025-08-21' });
-    expect(kopfEntscheiddatum('Entscheiddatum: 04.07.2025 B 2023/225. Bundesgericht Urteil vom 22. Dezember 2025', 'B 2023/225').status).toBe('widerspruch');
+    expect(kopfEntscheiddatum('Entscheiddatum: 04.07.2025 B 2023/225. Obergericht Urteil vom 22. Dezember 2025', 'B 2023/225').status).toBe('widerspruch');
   });
   it('echt SG UV 2025/14: Titel auf PDF-Seite 2, Aktenzeichen im PDF ⇒ 21.10.2025', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
