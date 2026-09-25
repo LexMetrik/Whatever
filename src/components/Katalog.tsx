@@ -107,7 +107,7 @@ function FristenRegister({ karten }: { karten: CalculatorCard[] }) {
     (zeilen.length > 0 || extra.length > 0) && (
       <div className="space-y-2">
         <GruppenKopf titel={titel} />
-        <p className="text-body-s text-ink-500 max-w-reading">{lede}</p>
+        <p className="text-body-s text-ink-500 max-w-reading-s">{lede}</p>
         <div className={RASTER}>
           {zeilen.map((r) => <ListenZeile key={r.id} k={r.k} subLabel={r.warum ?? r.k.rechtsgebiet} />)}
           {extra.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
@@ -199,7 +199,7 @@ function GebuehrenRegister({ karten, sortiert }: {
         return (
           <div key={r.id} className="space-y-2">
             <GruppenKopf titel={r.titel} zahl={xs.length} />
-            <p className="text-body-s text-ink-500 max-w-reading">{r.lede}</p>
+            <p className="text-body-s text-ink-500 max-w-reading-s">{r.lede}</p>
             <div className={RASTER}>
               {xs.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
             </div>
@@ -243,7 +243,7 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
            Untergruppen (navigation.ts → ScrollZuHash). */
         <div key={s.id} id={`vorlage-${s.id}`} className="space-y-2 scroll-mt-24">
           <GruppenKopf titel={s.title} zahl={verf.length} />
-          <p className="text-body-s text-ink-500 max-w-reading">{s.lede}</p>
+          <p className="text-body-s text-ink-500 max-w-reading-s">{s.lede}</p>
           {s.art === 'eingabe' ? (
             /* Behördeneingaben: drei Unterrubriken, flach (ohne Einrück-Borte). */
             <div className="space-y-3">
@@ -387,7 +387,7 @@ export function KategorieSektion({ kat, karten, ohneKopf, alleOffen, ohneGebiets
               <span className="text-ink-900">{verfuegbar.length}</span> verfügbar
             </span>
           </div>
-          <p className="text-body-s text-ink-500 max-w-reading">{kat.lede}</p>
+          <p className="text-body-s text-ink-500 max-w-reading-s">{kat.lede}</p>
         </div>
       )}
 
@@ -478,7 +478,10 @@ export function KategorieSektion({ kat, karten, ohneKopf, alleOffen, ohneGebiets
           <summary className="cursor-pointer text-body-s text-ink-500 hover:text-ink-900 transition-colors select-none">
             In Vorbereitung <span className="num">({geplant.length})</span>
           </summary>
-          <p className="text-body-s text-ink-500 leading-relaxed pt-2 pl-4">
+          {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt —
+              aufgeklappt 796 px (/rechner) bzw. 1072 px / bis 155 Zeichen je
+              Zeile (/vorlagen), über beiden Decken. */}
+          <p className="text-body-s text-ink-500 leading-relaxed pt-2 pl-4 max-w-reading-s">
             {geplant.map((k, i) => (
               <span key={k.id}>
                 {i > 0 && <span aria-hidden> · </span>}

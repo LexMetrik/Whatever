@@ -53,8 +53,13 @@ export function EntscheidZeile({ e, onNorm }: {
               Wortlaut war weder per Hover noch im A11y-Baum erreichbar. Das
               Muster steht eine Zeile darüber am `datumUnbekannt`-Titel; hier
               fehlte es. Reine Ergänzung, kein Layout-Eingriff. */}
+          {/* W2·31 B6 (25.9.2026): in der zweispaltigen Liste (`@container/
+              rspliste` in `pages/Rechtsprechung.tsx`, ab 68 rem) ist die
+              Bezeichnung halb so breit — dort darf sie auf DREI Zeilen
+              umbrechen statt nach einer Zeile zu kappen. Ausserhalb dieses
+              Containers greift die Variante nicht (benannter Container). */}
           <span title={bezeichnung}
-            className={`min-w-0 flex-1 truncate text-body-s ${synth ? 'text-ink-700' : 'font-medium text-ink-900'} underline-offset-2 group-hover:underline`}>
+            className={`min-w-0 flex-1 truncate @[68rem]/rspliste:whitespace-normal @[68rem]/rspliste:line-clamp-3 text-body-s ${synth ? 'text-ink-700' : 'font-medium text-ink-900'} underline-offset-2 group-hover:underline`}>
             {bezeichnung}
           </span>
           {/* R8 (7.9.2026) · EINE IDENTITAET, DIE NICHT MEHR IN DIE ZEILE PASST.

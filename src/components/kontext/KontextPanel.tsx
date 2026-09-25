@@ -412,7 +412,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                     {botschaften.slice(0, MAX_BOTSCHAFTEN).map((b) => {
                       const titel = (locale === 'fr' && b.titelFr) || (locale === 'it' && b.titelIt) || b.titel;
                       return (
-                        <li key={b.key} className="text-body-s">
+                        <li key={b.key} className="text-body-s max-w-reading-s">
                           <a href={fedlexLokalisiert(b.quelleUrl, locale)} target="_blank" rel="noopener noreferrer"
                             className="no-underline hover:text-brass-700">
                             <Datum iso={b.stand} className="text-ink-500" />
@@ -478,7 +478,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                       const titel = (locale === 'fr' && v.titelFr) || (locale === 'it' && v.titelIt) || v.titel;
                       const laeuft = v.status === 'laufend';
                       return (
-                        <li key={v.key} className="text-body-s">
+                        <li key={v.key} className="text-body-s max-w-reading-s">
                           <a href={fedlexLokalisiert(v.quelleUrl, locale)} target="_blank" rel="noopener noreferrer"
                             className="no-underline hover:text-brass-700">
                             <span className={`lc-overline ${laeuft ? 'text-brass-700' : ''}`}>
@@ -545,7 +545,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                         && klassifiziereFassungsBezug(entscheidDatum(r.datum, r.gericht), rev) === 'revidiert'
                         ? (rev ?? null) : null;
                       return (
-                        <li key={r.key} className="text-body-s">
+                        <li key={r.key} className="text-body-s max-w-reading-s">
                           <Link to={ziel} className="no-underline hover:text-brass-700">
                             <span className="font-medium">{r.zitierung}</span>
                             {r.leitcharakter === 'leitentscheid' && (
@@ -614,7 +614,7 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
               const veraltet = !!m.artikel
                 && klassifiziereFassungsBezug({ iso: m.stand, praezision: 'tag' }, rev) === 'revidiert';
               return (
-                <li key={m.key} className="text-body-s">
+                <li key={m.key} className="text-body-s max-w-reading-s">
                   <Link to={m.pfad} className="no-underline hover:text-brass-700">
                     <span className="text-ink-500">{m.behoerdeKuerzel} · {m.doktypLabel}{m.nummer ? ` ${m.nummer}` : ''}</span>
                     {' — '}<span className="font-medium">{m.titel}</span>

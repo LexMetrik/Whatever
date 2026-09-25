@@ -14,6 +14,7 @@ import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
 import { schreibeKorpus, ladeBestandSnapshots, berichteBezuege } from './normtext/entscheide-schreiben';
+import { kopfdatumRefreshLauf } from './normtext/entscheide-kopfdatum-refresh';
 import {
   normKeysVonSnapshot, remapNormKeys, undeklarierteAltKeys, literaturEntfernteNormKeys,
   sperrEntfernteNormKeys,
@@ -23,6 +24,7 @@ import { holeRegesteSprachfassungen, holeClirHtml, parseClirUrteilskopf, bgeRefZ
 import { verschlechtertDatum } from './normtext/bge-bandjahr';
 import { mergeB1Ergebnis } from './normtext/entscheide-b1-merge';
 import { findeFremdeFundstelleImBody } from './normtext/entscheide-koerper-konflation';
+import { parseClirAuszug } from './normtext/clir-auszug';
 import { waehleNeue, fuehreAdditivZusammen, nachDatumDesc, kantonSortierer } from './normtext/entscheide-additiv';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
 import type { Rechtsgebiet } from '../src/lib/normtext/register';
@@ -116,6 +118,10 @@ const remap = process.argv.includes('--remap');
 // Lauf mit gleichem --datum ändert nichts. Berührt AUSSCHLIESSLICH
 // `rubrum.besetzung`; `abschnitte`/`sha`/Volltext bleiben unberührt (§7 Zitattreue).
 const rubrumRefresh = process.argv.includes('--rubrum-refresh');
+// --kopfdatum-refresh (QS-KORPUS 25.9.2026): kantonale OCL-Snapshots — `datum` +
+// `zitierung` aus dem amtlichen Urteilskopf. NETZ-Lauf; Kern + Tore in
+// scripts/normtext/entscheide-kopfdatum-refresh.ts.
+const kopfdatumRefresh = process.argv.includes('--kopfdatum-refresh');
 /**
  * DEKLARIERTE Alt-Key-Bewahrung (Linse 3, 28.7.2026) — die Ratsche bekommt eine
  * Sperre.
@@ -348,6 +354,7 @@ async function eidgKorpus(ausschluss: ReadonlySet<string> = new Set()): Promise<
 const docketSlug = (d: string) => d.replace(/\s+/g, '').replace(/[^A-Za-z0-9]/g, '_');
 
 async function main() {
+  if (kopfdatumRefresh) { await kopfdatumRefreshLauf(datum); return; }
   // ── Rubrum-Satzzeichen (LM-127/LM-132) — OFFLINE, vor allen Netz-Zweigen ────
   if (rubrumRefresh) {
     const basis = ladeBestandSnapshots();
@@ -510,7 +517,7 @@ async function main() {
       const clirId = bgeRefZuClirId(idZuRef(id));
       const html = clirId ? await holeClirHtml(clirId, 'de', CLIR_CACHE, 300) : null;
       const kopf = html ? parseClirUrteilskopf(html) : { aza: null, datumIso: null };
-      const s = await holeBgeLeitentscheid(id, datum, { azaAz: kopf.aza, datumFallback: kopf.datumIso });
+      const s = await holeBgeLeitentscheid(id, datum, { azaAz: kopf.aza, datumFallback: kopf.datumIso, clirAuszug: html ? parseClirAuszug(html, idZuRef(id)) : null });
       process.stdout.write(s ? (s.azaUrteil ? '.' : '·') : 'x');
       return s;
     })).filter((s): s is EntscheidSnapshot => !!s);
@@ -525,6 +532,8 @@ async function main() {
     // (1C_435/2024) korrekt waren. Der Tor-Wächter in check-entscheide.ts prüft nur
     // `abschnitte`, nicht den Auszug — darum hier VOR dem Schreiben: nicht aufnehmen
     // statt einen fremden Text unter der eigenen Fundstelle zeigen (wie Exakt-Id-Guard).
+    // Rückfall (QS-KORPUS 25.9.2026): der Adapter ersetzt einen fremden Sammlungs-Auszug vorher durch den
+    // amtlichen clir-Auszug (clir-auszug.ts); verworfen wird nur noch, wo clir keinen sauberen Auszug hergibt.
     const koerperText = (a: EntscheidSnapshot['abschnitte'] | undefined) => (a ?? []).flatMap((x) => x.bloecke.map((b) => b.text)).join('\n');
     const konflatiert: string[] = [];
     const neuUniq = neu.filter((s) => !bestandIds.has(s.id)).filter((s) => {

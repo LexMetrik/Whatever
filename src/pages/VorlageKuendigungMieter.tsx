@@ -274,7 +274,7 @@ const CONFIG: VorlagenSeitenConfig<KmAntworten, KmZusammenstellung> = {
   bestaetigung: ({ a }) => (
     <>
       <p className="lc-overline text-brass-700">Damit die Kündigung trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Schriftform</strong> (<NormLink artikel="Art. 266l OR" />): Brief eigenhändig unterschreiben — alle Mieter:innen{a.familienwohnung ? ', bei der Familienwohnung zusätzlich die zustimmende Person' : ''}.</li>
         <li><strong>Zugang entscheidet</strong> — eingeschrieben und zusätzlich per A-Post; spätester rechtzeitiger Zustelltag beachten (siehe Endtermin-Kachel).</li>
         <li><strong>Ortsübliche Termine sind eine Tatfrage</strong> des konkreten Ortes — im Zweifel den Mietvertrag und die örtliche Übung prüfen.</li>

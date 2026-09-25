@@ -53,7 +53,11 @@ export function MaterialEntstehung({ materialKey, doktyp }: {
   return (
     <section className="max-w-reading" data-material-entstehung>
       <h2 className="lc-overline mb-2"><span className="lc-punkt" aria-hidden />Erläutert diese Artikel</h2>
-      <p className="text-xs leading-snug text-ink-500 mb-2">
+      {/* W2·31-BILDSCHIRMBREITE B8 (25.9.2026): beide `xs`-Absätze tragen den
+          Kleintext-Deckel (DESIGN-REGLEMENT B2a). Vorher erbten sie nur das
+          `max-w-reading` der Sektion und liefen gemessen 623 px / 90 Zeichen je
+          Zeile (BOTSCHAFT-2025-1478, einspaltig). */}
+      <p className="text-xs leading-snug text-ink-500 mb-2 max-w-kleintext">
         {ziel
           ? <>Stellen im amtlichen Text dieser Botschaft, die einen Artikel des {ziel.kuerzel} erläutern
             — <span className="num">{sidecar.anker.length}</span> Anker, amtlich aus dem
@@ -78,7 +82,7 @@ export function MaterialEntstehung({ materialKey, doktyp }: {
         ))}
       </ul>
       {sidecar.mehrdeutig.length > 0 && (
-        <p className="mt-2 text-xs leading-snug text-ink-500">
+        <p className="mt-2 text-xs leading-snug text-ink-500 max-w-kleintext">
           <span className="num">{sidecar.mehrdeutig.length}</span> weitere Stellen kommen im Dokument
           mehrfach vor und sind darum keinem Artikel eindeutig zugeordnet — sie stehen hier nicht
           (ein falscher Sprung wäre schlimmer als kein Sprung).

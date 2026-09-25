@@ -15,7 +15,7 @@ export function MetaAbschnitt({ titel, children }: { titel: string; children: Re
   return (
     <section className="meta-abschnitt">
       <AbschnittKopf titel={titel} />
-      <div className="mt-2 space-y-2 text-body-s text-ink-600 leading-relaxed max-w-reading">{children}</div>
+      <div className="mt-2 space-y-2 text-body-s text-ink-600 leading-relaxed max-w-reading-s">{children}</div>
     </section>
   );
 }

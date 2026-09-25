@@ -132,7 +132,7 @@ const CONFIG: VorlagenSeitenConfig<FaAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit die Abtretung trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Schriftform ist zwingend</strong><NormText text={` (Art. 165 Abs. 1 OR) – drucken und von der Zedentin unterschreiben lassen.`} /></li>
         <li><strong>Schuldner-Anzeige nachweisbar zustellen</strong> – {KDG_ZUGANGS_HINWEIS}</li>
       </ul>

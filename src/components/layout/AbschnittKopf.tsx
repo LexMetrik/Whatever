@@ -19,7 +19,7 @@ export function AbschnittKopf({ overline, titel, children, className = '' }: {
     <div className={`min-w-0${className ? ' ' + className : ''}`}>
       {overline && <p className="lc-overline">{overline}</p>}
       <h2 className="text-h3 font-display font-semibold text-ink-900 mt-0.5">{sansAmp(titel)}</h2>
-      {children && <p className="text-body-s text-ink-600 max-w-reading mt-1">{children}</p>}
+      {children && <p className="text-body-s text-ink-600 max-w-reading-s mt-1">{children}</p>}
     </div>
   );
 }

@@ -10,3 +10,5 @@ Abgrenzung: `plan/posten/2026-09-20-rechtsprechungs-uebersicht-p0-rest-korpus-br
 W2·6, «Korpus-Breite») betrifft SG-Regeste-Rest und Übersichts-/Facetten-Fallabdeckung, nicht
 Bildschirmbreite — keine Doppelung, nur Namensnähe; bei Bau dort gegenlesen. Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
+
+**Erledigt 2026-09-25:** PR #1136

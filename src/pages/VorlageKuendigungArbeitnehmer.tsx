@@ -189,7 +189,7 @@ const CONFIG: VorlagenSeitenConfig<KanAntworten, KanZusammenstellung> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit die Kündigung trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Unterschreiben und nachweisbar zustellen</strong> – eingeschrieben und zusätzlich per A-Post (Beweis + zeitnaher Zugang).</li>
         <li><strong>Zugang ist massgebend</strong> – die Frist läuft ab Zugang beim Arbeitgeber, nicht ab Versand.</li>
         <li><strong>Vertragliche Schriftform</strong> (falls vereinbart) ist mit diesem unterschriebenen Brief erfüllt.</li>

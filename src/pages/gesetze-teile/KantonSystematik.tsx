@@ -110,7 +110,7 @@ export function KantonSystematik(
   return (
     <div className="space-y-3">
       {ohneAmtlichenBaum && gruppen.length > 0 && (
-        <p data-kanton-systematik-offen className="text-body-s text-ink-500 max-w-reading">
+        <p data-kanton-systematik-offen className="text-body-s text-ink-500 max-w-reading-s">
           Die amtliche Systematik dieses Kantons ist noch nicht hinterlegt — die
           Erlasse stehen darum nach ihrer systematischen Nummer geordnet. Die
           Sachgebiete folgen mit einem späteren Daten-Nachzug.

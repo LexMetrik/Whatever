@@ -54,7 +54,13 @@ describe('paneKlasse — Verhaltensneutralität des Default-Pfads', () => {
 // Massstäbe für eine Kante — schlimmer als der alte Zustand.
 describe('A-2-Wurzel — die Polsterung des Pane-Wrappers hängt an der Pane', () => {
   const PANE = readFileSync('src/components/layout/Pane.tsx', 'utf8');
-  const WRAPPER = /<div className="mx-auto w-full max-w-content ([^"]*)py-6">/;
+  // W2·31-BILDSCHIRMBREITE B1a (25.9.2026): die Breite des Wrappers ist nicht
+  // mehr das Literal `max-w-content`, sondern kommt aus der Seitenart-Tabelle
+  // (`rahmenbreiteKlasse(loc, 'pane')`, `layout/seitenbreite.ts`; dass sie in
+  // B1a für jede Art `max-w-content` liefert, pinnt `seitenbreite.test.ts`).
+  // Der Anker folgt darum dem neuen Quelltext; die Zusage dieser Sonde — die
+  // POLSTERUNG hängt an der Pane — ist unverändert.
+  const WRAPPER = /<div className=\{`mx-auto w-full \$\{rahmenbreiteKlasse\(loc, 'pane'\)\} ([^`]*)py-6`\}>/;
 
   it('POSITIV-SONDE: der Wrapper steht überhaupt noch da', () => {
     expect(PANE).toMatch(WRAPPER);
@@ -70,7 +76,7 @@ describe('A-2-Wurzel — die Polsterung des Pane-Wrappers hängt an der Pane', (
   });
 
   it('NEGATIV-KONTROLLE: der Ausdruck findet den Vorzustand', () => {
-    const vorher = '<div className="mx-auto w-full max-w-content px-5 sm:px-6 py-6">';
+    const vorher = "<div className={`mx-auto w-full ${rahmenbreiteKlasse(loc, 'pane')} px-5 sm:px-6 py-6`}>";
     expect(vorher.match(WRAPPER)![1]).toMatch(/\b(?:sm|md|lg|xl|2xl):/);
   });
 });

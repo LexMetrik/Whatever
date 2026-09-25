@@ -929,7 +929,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
 
       {/* Einordnung der gewählten Fassung (nicht sticky), gekoppelt an die Ansicht. */}
       {switcherSichtbar && (
-        <p className="text-micro text-ink-500 max-w-reading">
+        <p className="text-micro text-ink-500 max-w-kleintext">
           {ansicht === 'voll'
             ? <>Das vollständige unterliegende Urteil <span className="num">{snap.azaUrteil?.aktenzeichen}</span> — Grundlage der amtlichen Sammlung BGE <span className="num">{snap.bgeReferenz}</span>.</>
             : <>Der amtlich publizierte Auszug der Sammlung BGE <span className="num">{snap.bgeReferenz}</span> — vom Gericht kuratiert.</>}
@@ -944,7 +944,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // darum kommt der Name hier aus derselben Konstante wie der Link selbst
         // (§5). Der Pfeil steht ausgeschrieben dahinter, weil der Nutzer genau
         // diese Beschriftung suchen soll.
-        <p className="text-micro text-ink-500 max-w-reading">
+        <p className="text-micro text-ink-500 max-w-kleintext">
           Auszug aus der amtlichen Sammlung (BGE <span className="num">{snap.bgeReferenz}</span>). Das vollständige Urteil ist bei der Quelle verfügbar ({AMTLICHE_FASSUNG} ↗, oben).
         </p>
       )}
@@ -978,9 +978,22 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
         // Logikverlust, den §1 der Optik vorzieht.
         // Der `@3xl`-Wert aus `Rechtsprechung.tsx` gilt dort für ZWEI GLEICHE
         // Kartenspalten; er ist das Vorbild für die Mechanik, nicht für die Zahl.
+        // ── W2·31-BILDSCHIRMBREITE B7 (25.9.2026) · DER RAND GEHÖRT DEM RAIL ─
+        // Vorher `minmax(0,1fr)_15rem`: die Lesespalte war 800 px breit, der
+        // Text darin 640 px mittig — je 80 px tote Fläche, der Text 80 px
+        // eingerückt gegen Titelblock und Sprungleiste, 112 px Luft bis zum
+        // Rail (gemessen @1280–1920). Jetzt ist die Lesespalte GENAU das
+        // Lesemass (`minmax(0,40rem)`, Text unverändert 640 px) und der Rail
+        // nimmt den Rest (`minmax(15rem,1fr)`, @1280 400 statt 240 px): Suchfeld
+        // und Normen-Liste bekommen die Breite, der Text fluchtet mit dem Kopf.
+        // Wird es eng (Seitenleiste offen), schrumpft zuerst die Lesespalte wie
+        // bisher — der Rail behält seine 15 rem Mindestbreite (Grid-Regel:
+        // feste Obergrenze vor `fr`). Die Seitenart bleibt Stufe `content`:
+        // 90 rem gäben dem Rail 720 px für Nummern-Einträge — Leerfläche,
+        // kein Inhalt.
         <div className={pk(
-          'flex flex-col gap-4 xl:grid xl:grid-cols-[minmax(0,1fr)_15rem] xl:items-start xl:gap-8',
-          'flex flex-col gap-4 @5xl/pane:grid @5xl/pane:grid-cols-[minmax(0,1fr)_15rem] @5xl/pane:items-start @5xl/pane:gap-8',
+          'flex flex-col gap-4 xl:grid xl:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] xl:items-start xl:gap-8',
+          'flex flex-col gap-4 @5xl/pane:grid @5xl/pane:grid-cols-[minmax(0,40rem)_minmax(15rem,1fr)] @5xl/pane:items-start @5xl/pane:gap-8',
         )}>
           {/* B6 (§9-Bug-Check 4.8.2026): im LESEMODUS gibt es den Rail nicht.
               Dort ist der Haupt-Body ausgehängt (der Overlay zeigt seinen
@@ -1062,7 +1075,7 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
             Halbsatz nach Gedankenstrich wird ein eigener Satz, weil die
             Konstante diese Form trägt; ein zweites Literal für die
             Halbsatz-Grammatik wäre wieder eine zweite Wahrheit (§5). */}
-        <p className="text-micro text-ink-500 max-w-reading leading-relaxed">
+        <p className="text-micro text-ink-500 max-w-kleintext leading-relaxed">
           Der Urteilstext ist als amtliches Werk gemeinfrei (Art. 5 URG). Eine allfällige
           Regeste ist redaktionell. Diese Wiedergabe ersetzt die amtliche Fassung nicht und
           stellt keine Rechtsberatung dar. {MASSGEBLICH_SATZ}

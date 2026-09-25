@@ -179,7 +179,7 @@ const CONFIG: VorlagenSeitenConfig<AfAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit der Auftrag trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Jederzeitiges Auflösungsrecht</strong><NormText text={` – beide Parteien können den Auftrag jederzeit beenden; ein Ausschluss wäre wirkungslos (Art. 404 OR).`} /></li>
         <li><strong>Erfolg geschuldet?</strong> – ist ein bestimmtes Werk gewollt, ist der Werkvertrag (Art. 363 ff. OR) die richtige Grundlage.</li>
       </ul>

@@ -176,8 +176,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "LugÜ",
     "HZÜ"
   ],
-  "rechtsprechungVolltext": 5385,
-  "rechtsprechungVollurteilVerweise": 1332,
+  "rechtsprechungVolltext": 5386,
+  "rechtsprechungVollurteilVerweise": 1333,
   "rechtsprechungSachgebiete": [
     {
       "id": "privat",
@@ -197,7 +197,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     {
       "id": "oeffentlich",
       "label": "Öffentliches Recht",
-      "anzahl": 1414
+      "anzahl": 1415
     },
     {
       "id": "steuern",
@@ -210,7 +210,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "anzahl": 1195
     }
   ],
-  "rechtsprechungLeitentscheide": 1339,
+  "rechtsprechungLeitentscheide": 1340,
   "materialien": 1684,
   "materialienGesetzgebung": 1357,
   "materialienErlaeuterungen": 327,

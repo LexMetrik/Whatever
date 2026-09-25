@@ -144,7 +144,7 @@ export function SchrittGesellschaft({ ctx }: { ctx: AgSchrittCtx }) {
               </Field>
             )}
           </div>
-          <p className="text-xs text-ink-500 max-w-reading">
+          <p className="text-xs text-ink-500 max-w-kleintext">
             Inhaberaktien setzen Volliberierung voraus (Art. 683 OR) und schliessen Vinkulierung und die
             Statuten-Langfassung aus; der Nachweis ist der Anmeldung beizulegen (Art. 43 Abs. 1 lit. i HRegV).
           </p>

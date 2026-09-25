@@ -82,7 +82,7 @@ export function Methodik() {
 
         <section className="lc-notice">
           <p className="lc-overline mb-1">Grenzen</p>
-          <p className="text-body-s text-ink-600 max-w-reading">
+          <p className="text-body-s text-ink-600 max-w-reading-s">
             LexMetrik liefert automatisierte Orientierungsberechnungen und Dokument-Entwürfe,
             keine Rechtsberatung. Massgeblich sind Gesetz, GAV, Vertrag und der konkrete
             Sachverhalt. Für die Wahrung einer Frist und die Einhaltung von Formvorschriften

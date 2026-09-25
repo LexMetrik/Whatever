@@ -4,7 +4,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
-  kantonalAusfall, uebrigeAufruf, entscheide, waehleStichprobe, restMinuten, leseBsDelta, budgetZeilen, budgetBefund, anteilText,
+  kantonalAusfall, entscheide, waehleStichprobe, restMinuten, leseBsDelta, budgetZeilen, budgetBefund, anteilText,
   aktiveGerichte, AUSGENOMMEN, DATUM_VOLLPRUEFUNG, KALENDER_TORE, EIDG_GERICHTE, KANTONS_GERICHTE,
   type Lage, type RegEintrag, type StichprobenZeile,
 } from '../../scripts/rechtsprechung/wochenlauf-kern';
@@ -34,8 +34,10 @@ function bericht(x: Partial<BerichtDaten>): BerichtDaten {
 describe('A1 · kantonaler Ausfall trotz npm-Kopfzeile erkannt', () => {
   // Form der Prüfer-Probe gp1113/npmprobe/out.txt: npm druckt den ganzen Aufruf
   // samt «--courts=zh_obergericht,be_verwaltungsgericht» vor jede Ausgabe.
-  const { args, kantone } = uebrigeAufruf('2026-09-28');
-  const kopf = `\n> lexmetrik@0.0.0 entscheide\n> vite-node scripts/normtext-entscheide.ts ${args.slice(3).join(' ')}\n\n`;
+  // Zwei Gerichte FEST (nicht aus uebrigeAufruf): A1 prüft die Anker-Logik, nicht die aktive
+  // Auswahl — BE ist seit dem Probelauf 25.9.2026 ausgenommen (AUSGENOMMEN, M8).
+  const kantone = ['zh_obergericht', 'be_verwaltungsgericht'];
+  const kopf = `\n> lexmetrik@0.0.0 entscheide\n> vite-node scripts/normtext-entscheide.ts --datum=2026-09-28 --additiv --courts=${kantone.join(',')} --eidg=bvger,bstger,bpatger\n\n`;
   it('nur die npm-Kopfzeile im Log ⇒ beide Gerichte stumm (Ausfall)', () => {
     // Mutation: Anker «^\[kanton\] <gericht>:» zurück auf blosse Wortgrenze ⇒ [] (Befund A1).
     expect(kopf).toContain('--courts=zh_obergericht,be_verwaltungsgericht');
@@ -118,9 +120,9 @@ describe('A2 · Befund der Vorwoche verschwindet nicht', () => {
 describe('N1 · Gerichte mit unzuverlässigem Datum: Vollprüfung', () => {
   const be = Array.from({ length: 6 }, (_, i) => e(`be_verwaltungsgericht_${i}`, 'be_verwaltungsgericht', '2026-08-3' + (i % 2)));
   const andere = Array.from({ length: 40 }, (_, i) => e(`bvger_${String(i).padStart(2, '0')}`, 'bvger'));
-  it('eine Stelle, heute nur BE; BE ist nicht ausgenommen', () => {
+  it('eine Stelle, heute nur BE; BE ist seit dem Probelauf 25.9.2026 ausgenommen (M8), die Regel bleibt', () => {
     expect([...DATUM_VOLLPRUEFUNG]).toEqual(['be_verwaltungsgericht']);
-    expect(AUSGENOMMEN).not.toHaveProperty('be_verwaltungsgericht');
+    expect(AUSGENOMMEN).toHaveProperty('be_verwaltungsgericht');
   });
   it('JEDER neue BE-Eintrag in der Stichprobe, zusätzlich zu n', () => {
     // Mutation: DATUM_VOLLPRUEFUNG-Filter in stichprobenPlan entfernen ⇒ nur ein Teil der BE-Einträge.

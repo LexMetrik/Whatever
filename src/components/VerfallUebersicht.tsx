@@ -67,7 +67,7 @@ export function VerfallUebersicht() {
       <h2 className="text-h3 font-display font-semibold text-ink-900">
         Aktualität &amp; Pflege der Parameter
       </h2>
-      <p className="text-body-s text-ink-600 leading-relaxed max-w-reading">
+      <p className="text-body-s text-ink-600 leading-relaxed max-w-reading-s">
         Einzelne Werte – etwa kantonale Tarife, der hypothekarische Referenzzinssatz oder
         Gebührenordnungen – ändern sich ausserhalb dieser Anwendung und müssen zu einem festen
         Termin neu geprüft werden. Diese Übersicht führt die {VERFALL_TERMINE.length} datierten
@@ -94,7 +94,7 @@ export function VerfallUebersicht() {
               </div>
               <p className="text-body-s font-medium text-ink-900">{t.label}</p>
               {(t.wert || t.rhythmus) && (
-                <p className="text-xs text-ink-500 leading-relaxed">
+                <p className="text-xs text-ink-500 leading-relaxed max-w-kleintext">
                   {t.wert}
                   {t.wert && t.rhythmus ? ' · ' : ''}
                   {t.rhythmus ? `Prüfrhythmus: ${t.rhythmus}` : ''}

@@ -164,7 +164,7 @@ export function Materialien() {
             <Leerzustand art="filter" text="Kein Material gefunden."
               weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => { setBehoerde(''); setDoktyp(''); setSuche(''); } }} />
           ) : (
-            <div className="space-y-6">
+            <div className="@container/raster space-y-6">
               {gruppen.map((g) => (
                 <section key={g.behoerde} id={`b-${g.behoerde}`} className="space-y-3 scroll-mt-24">
                   <div className="space-y-1.5">
@@ -176,9 +176,23 @@ export function Materialien() {
                         Angleichung ist sichtbar und gewollt — der ausgeschriebene
                         Behördenname bleibt als Lede darunter stehen. */}
                     <GruppenKopf stufe={2} titel={g.kuerzel} zahl={g.materialien.length} />
-                    <p className="text-body-s text-ink-500 max-w-reading">{g.name}</p>
+                    <p className="text-body-s text-ink-500 max-w-reading-s">{g.name}</p>
                   </div>
-                  <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 gap-3')}>
+                  {/* W2·31-BILDSCHIRMBREITE B2 (25.9.2026): die Seitenart
+                      `materialien` steht auf `weit` (seitenbreite.ts); die
+                      vierte Spalte hängt aber an der RASTERBREITE
+                      (`@container/raster`, ab 78rem), nicht am Viewport —
+                      sonst fiele sie bei offener Seitenleiste mit: gemessen
+                      @1536, Leiste 460 px, `2xl:grid-cols-4` → 4 × 248 px.
+                      78rem hält die Karte bei ≥ 303 px (vorher 349). So greift
+                      sie in Fenster und Pane gleich; der Titel folgt derselben
+                      Schwelle (MaterialKarte). Das `lg:` vor der Fenster-
+                      Variante ist nur CSS-Reihenfolge: Tailwind gibt die
+                      Container-Regeln VOR den Media-Regeln aus, allein verlöre
+                      `@[78rem]/raster:grid-cols-4` gegen `lg:grid-cols-3`
+                      (im Build-CSS nachgesehen). Eine 78rem breite Spalte
+                      setzt ohnehin ≥ lg voraus, die Stapelung ändert nichts. */}
+                  <div className={pk('grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:@[78rem]/raster:grid-cols-4 gap-3', 'grid grid-cols-1 @lg/pane:grid-cols-2 @3xl/pane:grid-cols-3 @[78rem]/raster:grid-cols-4 gap-3')}>
                     {g.materialien.map((m) => <MaterialKarte key={m.key} m={m} />)}
                   </div>
                 </section>
@@ -194,14 +208,14 @@ export function Materialien() {
           für die Erläuterungen (Verwaltungspraxis) — Botschaften,
           Vernehmlassungen und Parlamentsvorlagen sind Gesetzgebungsmaterial.
           Vorher: «Faktisches «Soft-Law», kein Gesetzesrang.» für die ganze Rubrik. */}
-      <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-reading">
+      <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-kleintext">
         Kein Gesetzesrang; die Erläuterungen der Verwaltung sind faktisches «Soft-Law». Diese Rubrik führt keine eigenen Volltexte; jeder Eintrag verlinkt die Publikation, massgeblich ist stets {AMTLICHE_FASSUNG_NOMEN}.
       </p>
       {/* W2·6c-DECKUNGS-SEITE (§8): unaufdringlich im Fuss, nicht im Einstieg —
           wer die Rubrik benutzt, sucht ein Dokument; wer wissen will, wie weit
           der Bestand reicht, sucht diesen Satz. Reiner Link, kein Ladevorgang:
           die Deckungs-Sicht wird erst auf der Zielseite geholt. */}
-      <p className="text-micro text-ink-500 max-w-reading">
+      <p className="text-micro text-ink-500 max-w-kleintext">
         Wie weit die Entstehungsgeschichte der Erlasse hinterlegt ist — und wo nicht:{' '}
         <Link to="/materialien/deckung" className="lc-link">
           Was wir nicht haben

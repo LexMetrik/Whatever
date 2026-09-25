@@ -14,11 +14,12 @@
 "bge_151_II_197__voll":{"zitierung":"Urteil 2C_682/2023 (nicht publ. in BGE 151 II 197)","regesteKurz":null,"datum":"2024-08-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 197","urteil":"2C_682/2023"}},
 "bge_151_I_19__voll":{"zitierung":"Urteil 2C_172/2024 (nicht publ. in BGE 151 I 19)","regesteKurz":null,"datum":"2024-05-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 I 19","urteil":"2C_172/2024"}},
 "bge_152_IV_41__voll":{"zitierung":"Urteil 1C_604/2024 (nicht publ. in BGE 152 IV 41)","regesteKurz":null,"datum":"2025-05-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 IV 41","urteil":"1C_604/2024"}},
+"bge_152_I_2__voll":{"zitierung":"Urteil 1C_435/2024 (nicht publ. in BGE 152 I 2)","regesteKurz":null,"datum":"2025-05-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"152 I 2","urteil":"1C_435/2024"}},
 "bge_152_I_61":{"zitierung":"BGE 152 I 61","regesteKurz":"Art. 30 Abs. 3 BV; Art. 27 Abs. 2, Art. 59 Abs. 3 BGG; Art. 59 und 60 BGerR; Öffentlichkeitsprinzip bei einem Weiterzug eines Schiedsentscheids an das Bundesgericht. Wird ein Schiedsentscheid an das Bundesgericht weitergezogen, gelten die…","datum":"2025-04-22","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "zh_obergericht_UE240310":{"zitierung":"Obergericht ZH UE240310 vom 12.05.2026","regesteKurz":null,"datum":"2026-05-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}}
 },
 "proArtikel":{
-"29":[{"key":"bge_152_IV_41__voll","gewicht":0}],
+"29":[{"key":"bge_152_IV_41__voll","gewicht":0},{"key":"bge_152_I_2__voll","gewicht":0}],
 "30":[{"key":"bge_149_I_366__voll","gewicht":0,"erwaegungen":["E. 1.2"]}],
 "31":[{"key":"bge_148_III_77__voll","gewicht":0,"erwaegungen":["E. 1.1"]}],
 "32":[{"key":"bge_150_I_93__voll","gewicht":0,"erwaegungen":["E. 11.1"]},{"key":"bge_150_V_7__voll","gewicht":0,"erwaegungen":["E. 1.1"]},{"key":"bge_149_V_169__voll","gewicht":0,"erwaegungen":["E. 1"]}],
@@ -31,7 +32,7 @@
 "35a":[{"key":"zh_obergericht_UE240310","gewicht":null}]
 },
 "gesamtProArtikel":{
-"29":{"bger":1},
+"29":{"bger":2},
 "30":{"bger":1},
 "31":{"bger":1},
 "32":{"bger":3},

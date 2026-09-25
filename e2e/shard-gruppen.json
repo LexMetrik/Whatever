@@ -3,6 +3,7 @@
  "gruppen": {
   "1": [
    "ag-gruendung-wizard.e2e.ts",
+   "materialien-breite.e2e.ts",
    "gesetze-historie-badge.e2e.ts",
    "leser-history-hash.e2e.ts",
    "rechtsprechung-besetzung-links.e2e.ts",
@@ -69,7 +70,8 @@
    "norm-sprung.e2e.ts",
    "rechtsprechung.e2e.ts",
    "startseite-blatt.e2e.ts",
-   "druck-dunkel-dk09.e2e.ts"
+   "druck-dunkel-dk09.e2e.ts",
+   "suche-randspalte.e2e.ts"
   ],
   "4": [
    "gesetze-ux-g3a.e2e.ts",
@@ -118,7 +120,8 @@
    "w229-w1f-blatt-artikel.e2e.ts",
    "w229-w1f-blatt-folgt.e2e.ts",
    "w229-w1f-blatt-scroll.e2e.ts",
-   "kontrast-fristmarker.e2e.ts"
+   "kontrast-fristmarker.e2e.ts",
+   "material-leser-randspalte.e2e.ts"
   ],
   "6": [
    "d36-einstellungen-fuss.e2e.ts",
@@ -163,7 +166,9 @@
    "schnellrechner-kalender.e2e.ts",
    "tagerechner-rechenweg-sync.e2e.ts",
    "w224-leser-d32-d33.e2e.ts",
-   "leser-v3-scroll-blur.e2e.ts"
+   "leser-v3-scroll-blur.e2e.ts",
+   "seitenbreite.e2e.ts",
+   "rechtsprechung-breite.e2e.ts"
   ],
   "8": [
    "gesetze-randtitel-6b.e2e.ts",

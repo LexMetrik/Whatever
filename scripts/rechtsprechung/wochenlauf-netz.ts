@@ -14,19 +14,38 @@ import { jget, type OclDecision } from '../normtext/adapter-entscheide';
 
 const OCL = 'https://mcp.opencaselaw.ch/api'; // wie adapter-entscheide.ts (API nicht exportiert)
 
-/** Amtliche Quelle holen: höflich, 30 s Timeout; nächste URL bei 5xx/Netzfehler (Reihenfolge der Liste, BGE: clirKandidaten). */
-export async function holeSeite(urls: string[]): Promise<{ url: string; bytes: Uint8Array; utf8: boolean } | null> {
+/**
+ * Fehlerklasse eines gescheiterten fetch für den Bericht (M4, Probelauf 25.9.2026: BE nur vom
+ * Runner «nicht erreichbar», Ursache verworfen ⇒ Diagnose unmöglich). undici hängt die
+ * Ursache an `cause` (Code wie CERT_HAS_EXPIRED, ECONNRESET); AbortSignal.timeout wirft TimeoutError.
+ */
+export function fehlerKlasse(x: unknown): string {
+  const f = x as { name?: string; message?: string; cause?: { code?: string; name?: string; message?: string } };
+  const code = f?.cause?.code ?? '';
+  if (f?.name === 'TimeoutError' || f?.name === 'AbortError' || /TIMEOUT/.test(code)) return 'Timeout';
+  if (/CERT|TLS|SSL|SELF_SIGNED|UNABLE_TO_VERIFY/i.test(code + ' ' + (f?.cause?.message ?? ''))) return `TLS ${code || (f?.cause?.message ?? '').slice(0, 60)}`.trim();
+  return `Netz ${code || f?.cause?.name || f?.name || 'Fehler'}`.trim();
+}
+
+/**
+ * Amtliche Quelle holen: höflich, 30 s Timeout; nächste URL bei 5xx/Netzfehler (Reihenfolge der
+ * Liste, BGE: clirKandidaten). Scheitert jede URL: `fehler` = letzter Status bzw. Fehlerklasse
+ * («HTTP 403», «TLS CERT_HAS_EXPIRED», «Timeout») statt still null.
+ */
+export async function holeSeite(urls: string[]): Promise<{ url: string; bytes: Uint8Array; utf8: boolean } | { fehler: string }> {
+  let fehler = 'keine Quell-URL';
   for (const url of urls) {
     for (let i = 0; i < 2; i++) {
       try {
         const r = await fetch(url, { signal: AbortSignal.timeout(30_000), headers: { 'User-Agent': 'LexMetrik/1.0 (+https://lexmetrik.vercel.app; Wochenlauf-Stichprobe)' } });
         if (r.ok) return { url, bytes: new Uint8Array(await r.arrayBuffer()), utf8: /utf-8/i.test(r.headers.get('content-type') ?? '') };
+        fehler = `HTTP ${r.status}`;
         if (r.status < 500) break;
-      } catch { /* Netz: nächster Versuch */ }
+      } catch (x) { fehler = fehlerKlasse(x); /* Netz: nächster Versuch */ }
       await new Promise((ok) => setTimeout(ok, 1500));
     }
   }
-  return null;
+  return { fehler };
 }
 
 /** Quell-URLs in Abrufreihenfolge. BGE: clirKandidaten (clir-regeste.ts, eine Quelle, §5 — search.bger.ch, dann www.bger.ch). */
@@ -43,7 +62,7 @@ export async function urlsFuer(e: RegEintrag): Promise<string[]> {
 export async function stichprobeZeile(e: RegEintrag): Promise<StichprobenZeile> {
   const urls = await urlsFuer(e);
   const seite = await holeSeite(urls);
-  if (!seite) return { key: e.key, url: urls[0] ?? null, ergebnis: 'nicht-pruefbar', detail: urls.length ? 'Quelle nicht erreichbar' : 'keine Quell-URL' };
+  if ('fehler' in seite) return { key: e.key, url: urls[0] ?? null, ergebnis: 'nicht-pruefbar', detail: urls.length ? `Quelle nicht erreichbar — ${seite.fehler}` : 'keine Quell-URL' };
   let id;
   if (new TextDecoder('latin1').decode(seite.bytes.slice(0, 5)) === '%PDF-') {
     try { id = pruefeText(await pdfText(seite.bytes), e, 'pdf'); }

@@ -344,7 +344,7 @@ const CONFIG: VorlagenSeitenConfig<VollmachtAntworten, VmZ> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Form – damit Ihre Vollmacht wirkt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Unterschreiben:</strong><NormText text={` Die Vollmacht ist formfrei gültig (Art. 11 OR); als Ausweis gegenüber Banken, Behörden und Gerichten dient die `} /><strong>unterzeichnete</strong><NormText text={` schriftliche Fassung (Art. 33 Abs. 3 OR). Nach dem Ausdruck datieren und unterschreiben.`} /></li>
         <li><strong>Beglaubigung (Usanz):</strong> Für Grundbuch-, Handelsregister- oder Bankgebrauch sowie im Auslandsverkehr die Unterschrift beglaubigen lassen (kantonal: Notariat, teilweise Gemeinde).</li>
         <li><strong>Widerruf:</strong><NormText text={` jederzeit möglich (Art. 34 Abs. 1 OR); kundgegebenen Dritten den Widerruf mitteilen (Art. 34 Abs. 3 OR) und die Urkunde zurückverlangen (Art. 36 OR).`} /></li>

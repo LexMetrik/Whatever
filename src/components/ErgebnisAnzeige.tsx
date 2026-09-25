@@ -183,7 +183,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
             {(warnungenOffen || druckErzwingtOffen) && (
               <div className="px-4 pb-3 space-y-1">
                 {/* Norm- UND Entscheid-Zitate in Warnungen verlinkt (Web-Anzeige; Text unverändert) */}
-                {ergebnis.warnungen.map((w, i) => <p key={i} className="text-body-s text-warn-700 max-w-reading"><NormText text={w} /></p>)}
+                {ergebnis.warnungen.map((w, i) => <p key={i} className="text-body-s text-warn-700 max-w-reading-s"><NormText text={w} /></p>)}
               </div>
             )}
           </div>
@@ -267,7 +267,7 @@ export function ErgebnisAnzeige({ titel, ergebnis }: Props) {
 
         {/* Disclaimer */}
         <div className="border-t border-line pt-4">
-          <p className="text-body-s text-ink-500 italic leading-relaxed max-w-reading">{DISCLAIMER}</p>
+          <p className="text-body-s text-ink-500 italic leading-relaxed max-w-reading-s">{DISCLAIMER}</p>
         </div>
       </div>
       </div>

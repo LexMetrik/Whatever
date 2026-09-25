@@ -95,8 +95,27 @@ export function Suche() {
           verloren, es steht nur nicht mehr im Kopf). */}
       <SeitenKopf titel="Suche" />
 
-      <div role="search" className="space-y-4">
-        <div className="relative max-w-reading">
+      {/* ── W2·31-BILDSCHIRMBREITE B9 (25.9.2026) · LESESPALTE + FILTERSPALTE ──
+          Gemessen (Preview, /suche?q=miete, 223 Treffer): die Trefferliste lief
+          über den ganzen 1072-px-Rahmen — Zeilentitel links, Art-Etikett
+          («Gesetz») rund 700 px weiter rechts —, die Seite stand @1920 auf 8.9
+          Bildschirmhöhen, und der Inhaltstyp-Filter verschwand beim Scrollen.
+          Jetzt: Suchfeld und Treffer in der Lesespalte (40 rem, `max-w-reading`
+          auch einspaltig), der Inhaltstyp-Filter ab 62 rem Seitenbreite als
+          senkrechte Liste in der Randspalte, klebend unter dem App-Kopf.
+          Schwelle und Mechanik wie im Material-Leser (B8): gemessen wird die
+          Seite selbst (`@container/suche`), nicht das Fenster — sonst bräche
+          es neben offener Seitenleiste und in der Split-Pane.
+          DOM-Reihenfolge unverändert (Feld → Filter → Treffer), einspaltig auch
+          die Abstände (Feld–Filter 16 px, Filter–Treffer 32 px). Einzige
+          Strukturänderung: der Filter steht nicht mehr IM `role="search"`-
+          Bereich, sondern als Geschwister danach — er filtert die Treffer, er
+          ist kein Teil der Eingabe; seine Gruppe und die Schalter-Namen bleiben.
+          Stufe bleibt `content` (seitenbreite.ts): `weit` verbreiterte nur die
+          Randspalte, die Trefferliste ist gedeckelt. */}
+      <div className="@container/suche">
+      <div className="flex flex-col gap-4 @[62rem]/suche:grid @[62rem]/suche:grid-cols-[minmax(0,40rem)_minmax(0,1fr)] @[62rem]/suche:grid-rows-[auto_1fr] @[62rem]/suche:gap-x-8 @[62rem]/suche:gap-y-8">
+        <div role="search" className="relative max-w-reading @[62rem]/suche:col-start-1 @[62rem]/suche:row-start-1">
           <input
             type="search"
             value={wert}
@@ -133,43 +152,55 @@ export function Suche() {
             zugänglichen Namen bleiben identisch; sichtbar dazu kommt das
             Achsen-Etikett «INHALTSTYP» vor den Chips. */}
         {q !== '' && facetten.length > 1 && (
-          <FacettenGruppe label="Inhaltstyp" gruppenLabel="Nach Inhaltstyp filtern"
-            optionen={[
-              { id: 'alle' as const, titel: 'Alle', n: facetten.reduce((s, f) => s + f.n, 0) },
-              ...facetten,
-            ].map((o) => ({
-              id: o.id, text: o.titel, n: o.n,
-              aktiv: aktiverTyp === o.id,
-              waehle: () => setTyp(o.id),
-            }))} />
-        )}
-      </div>
-
-      {q === ''
-        ? (
-          <div className="max-w-reading border-t border-rule-soft pt-3">
-            <p className="lc-overline mb-1">Tipp</p>
-            <p className="text-body-s leading-relaxed text-ink-600">
-              Geben Sie einen Begriff, ein Stichwort oder eine Norm ein. Ein Norm-Kürzel
-              («OR 257d») oder ein BGE-Zitat («BGE 152 I 65») springt direkt zur Fundstelle;
-              ein Alltagsbegriff («Miete», «Verjährung») findet die einschlägigen Artikel.{' '}
-              <Link to="/abdeckung" className="text-ink-700 underline hover:text-ink-900">Was ist durchsuchbar? →</Link>
-            </p>
+          // B9: Randspalte, über beide Zeilen, klebt unter dem App-Kopf
+          // (`--app-kopf-h`, index.css) — der Filter bleibt beim Durchgehen von
+          // 200 Artikel-Treffern greifbar. Senkrecht gestellt nur im Raster.
+          <div data-suche-filter className="@[62rem]/suche:col-start-2 @[62rem]/suche:row-span-2 @[62rem]/suche:row-start-1 @[62rem]/suche:sticky @[62rem]/suche:top-[calc(var(--app-kopf-h)+1.5rem)] @[62rem]/suche:self-start">
+            <FacettenGruppe label="Inhaltstyp" gruppenLabel="Nach Inhaltstyp filtern"
+              className="@[62rem]/suche:flex-col @[62rem]/suche:items-start"
+              optionen={[
+                { id: 'alle' as const, titel: 'Alle', n: facetten.reduce((s, f) => s + f.n, 0) },
+                ...facetten,
+              ].map((o) => ({
+                id: o.id, text: o.titel, n: o.n,
+                aktiv: aktiverTyp === o.id,
+                waehle: () => setTyp(o.id),
+              }))} />
           </div>
-        )
-        : (
-          <SuchResultate
-            gruppen={sichtbar}
-            allesGeladen={allesGeladen}
-            q={q}
-            vorschlag={vorschlag}
-            abdeckung={abdeckung}
-            onVorschlag={(b) => setze(b)}
-            onLeeren={() => setze('')}
-            onNavigate={(href) => navigate(href)}
-            sektionsRollen
-          />
         )}
+
+        {/* Treffer bzw. Tipp: Lesespalte. `mt-4` ergänzt einspaltig den
+            Abstand zum Block davor auf die bisherigen 32 px (`space-y-8`); im
+            Raster trägt ihn `gap-y-8`. */}
+        <div data-suche-lesespalte className="mt-4 max-w-reading @[62rem]/suche:col-start-1 @[62rem]/suche:row-start-2 @[62rem]/suche:mt-0">
+        {q === ''
+          ? (
+            <div className="max-w-reading-s border-t border-rule-soft pt-3">
+              <p className="lc-overline mb-1">Tipp</p>
+              <p className="text-body-s leading-relaxed text-ink-600">
+                Geben Sie einen Begriff, ein Stichwort oder eine Norm ein. Ein Norm-Kürzel
+                («OR 257d») oder ein BGE-Zitat («BGE 152 I 65») springt direkt zur Fundstelle;
+                ein Alltagsbegriff («Miete», «Verjährung») findet die einschlägigen Artikel.{' '}
+                <Link to="/abdeckung" className="text-ink-700 underline hover:text-ink-900">Was ist durchsuchbar? →</Link>
+              </p>
+            </div>
+          )
+          : (
+            <SuchResultate
+              gruppen={sichtbar}
+              allesGeladen={allesGeladen}
+              q={q}
+              vorschlag={vorschlag}
+              abdeckung={abdeckung}
+              onVorschlag={(b) => setze(b)}
+              onLeeren={() => setze('')}
+              onNavigate={(href) => navigate(href)}
+              sektionsRollen
+            />
+          )}
+        </div>
+      </div>
+      </div>
     </div>
   );
 }

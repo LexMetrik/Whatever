@@ -78,7 +78,7 @@ function ThemaKarte({ t, proKey }: { t: RechtsgebietThema; proKey: Map<string, B
               §8 wird nicht abgeschwächt, nur richtig eingefärbt. */}
           <span className="lc-badge-entwurf">Entwurf</span>
         </div>
-        <p className="text-body-s text-ink-600 max-w-reading">{t.kurz}</p>
+        <p className="text-body-s text-ink-600 max-w-reading-s">{t.kurz}</p>
       </div>
 
       <div className={pk('grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2', 'grid grid-cols-1 @lg/pane:grid-cols-2 gap-x-5 gap-y-2')}>
@@ -171,7 +171,7 @@ export function RechtsgebietSicht({ erlasse }: { erlasse: BrowseErlass[] }) {
   return (
     <div className="space-y-8">
       <div className="space-y-2">
-        <p className="text-body-s text-ink-500 max-w-reading">
+        <p className="text-body-s text-ink-500 max-w-reading-s">
           Eine zweite Gliederung quer zur amtlichen Systematik: oben die
           kanzleirelevanten Praxisfelder, die mehrere Erlasse zusammenziehen —
           darunter das vollständige Grundgerüst nach Rechtsgebiet. Die
@@ -191,7 +191,7 @@ export function RechtsgebietSicht({ erlasse }: { erlasse: BrowseErlass[] }) {
 
       <section className="space-y-3">
         <GruppenKopf stufe={2} titel="Grundgerüst nach Rechtsgebiet" />
-        <p className="text-body-s text-ink-500 max-w-reading">
+        <p className="text-body-s text-ink-500 max-w-reading-s">
           Das ganze Bundesrecht nach seiner Sach-Achse — <span className="num">{kategorisiert}</span> von{' '}
           <span className="num">{gesamt}</span> Erlassen sind zusätzlich einem Querschnitts-Thema
           zugeordnet, die übrigen bleiben hier erschlossen.

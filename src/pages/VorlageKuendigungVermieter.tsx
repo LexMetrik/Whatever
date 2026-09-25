@@ -75,7 +75,9 @@ export function VorlageKuendigungVermieter() {
 
       <section className="lc-card p-5 sm:p-6 space-y-4">
         <GruppenTitel>Gültigkeits-Checkliste</GruppenTitel>
-        <ol className="space-y-3 text-body-s text-ink-700 list-decimal pl-5">
+        {/* B1b (W2·31-BILDSCHIRMBREITE, 25.9.2026): bis hier ungedeckelt —
+            gemessen 1004 px, mehrzeilige Punkte deutlich über beiden Decken. */}
+        <ol className="space-y-3 text-body-s text-ink-700 list-decimal pl-5 max-w-reading-s">
           <li>
             <strong>Amtliches Formular des Kantons verwenden</strong> (<NormLink artikel="Art. 266l OR" /> Abs. 2):
             das vom Kanton genehmigte Kündigungsformular mit Rechtsmittelbelehrung — erhältlich bei der
@@ -139,7 +141,7 @@ export function VorlageKuendigungVermieter() {
             </div>
           </div>
         )}
-        <p className="text-xs text-ink-500 max-w-reading">
+        <p className="text-xs text-ink-500 max-w-kleintext">
           Ortsübliche Termine sind eine Tatfrage des konkreten Ortes; vertragliche Termine gehen vor.
           Vertiefte Berechnung (alle Kündigungsarten, Zahlungsverzug Art. 257d):{' '}
           <Link to="/rechner/mietrecht" className="text-brass-700 underline">Mietrecht-Fristenrechner</Link>.

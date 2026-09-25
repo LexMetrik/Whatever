@@ -104,7 +104,7 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt, start }: {
     <MappenAbschnitt className="space-y-5">
       <div>
         <p className="lc-overline">Dokumentmappe – Volldokumente (Bargründung)</p>
-        <p className="text-body-s text-ink-500 max-w-reading">
+        <p className="text-body-s text-ink-500 max-w-reading-s">
           Erzeugt aus denselben Weichen wie die Checkliste: Statuten und Errichtungsakt als
           ENTWURF für die Urkundsperson (öffentliche Beurkundung bleibt zwingend, Art. 777 OR),
           die beurkundungsfreien Erklärungen und die Handelsregister-Anmeldung druckfertig.

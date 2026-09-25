@@ -16,8 +16,9 @@ import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
-// markenPlausibel/MONAT leben jetzt in erwaegung-normalisieren.ts (Single Source, §5);
-// hier re-exportiert, damit bestehende Importeure/Tests stabil bleiben.
+import { kantonsEntscheiddatum, kopfSeitenFallsNoetig } from './entscheid-kantonsdatum';
+import { ersetzeKonflatiertenAuszug } from './clir-auszug';
+// markenPlausibel/MONAT: Single Source erwaegung-normalisieren.ts (§5), re-exportiert für Bestands-Importeure.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
 import {
   statutesZuNormKeys, gerichtstypFuerCourt,
@@ -27,7 +28,7 @@ import {
   sachgebietFuerEntscheid, bgeSachgebietHint, bgeRoemischSachgebiet,
 } from './sachgebiet-klassierung';
 
-const API = 'https://mcp.opencaselaw.ch/api';
+export const API = 'https://mcp.opencaselaw.ch/api';
 
 // Schlanke Typen der OCL-Rohantworten (nur die genutzten Felder; Index-Signatur
 // für den Rest). Ersetzt `any` (Tor @typescript-eslint/no-explicit-any).
@@ -55,26 +56,10 @@ export interface OclStructure {
 /** Antwort von /erwaegung/{id}/{e_number} — voller verbatim Erwägungstext. */
 export interface OclErwaegung { e_number?: string; text?: string; text_chars?: number }
 
-/** Robustes JSON-GET mit Timeout + Retry (OCL-Latenz ist sprunghaft). */
-export async function jget<T = unknown>(url: string, tries = 3, timeoutMs = 45000): Promise<T | null> {
-  for (let i = 0; i < tries; i++) {
-    const ac = new AbortController();
-    const t = setTimeout(() => ac.abort(), timeoutMs);
-    try {
-      const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': RECHTSPRECHUNG_UA }, redirect: 'follow' });
-      clearTimeout(t);
-      if (res.status === 404 || res.status === 422) return null;
-      if (!res.ok) { await sleep(800 * (i + 1)); continue; }
-      return (await res.json()) as T;
-    } catch {
-      clearTimeout(t);
-      await sleep(800 * (i + 1));
-    }
-  }
-  return null;
-}
-
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+// jget (JSON-GET mit Retry, meldet null nie mehr still) und atomIds leben in ocl-abruf.ts
+// (Probelauf Wochenlauf 25.9.2026); re-exportiert, damit Importeure stabil bleiben.
+import { jget, atomIds } from './ocl-abruf';
+export { jget };
 
 /** Voller verbatim Erwägungstext je Knoten (Excerpt in /structure ist bei >5000 Z. gekappt). */
 export async function holeErwaegung(id: string, e: string): Promise<OclErwaegung | null> {
@@ -280,6 +265,7 @@ export interface HoleOpts {
   normKeyHint?: string | null;
   /** Sprachfilter; default 'de'. null = alle. */
   sprache?: string | null;
+  amtlicheKopfSeiten?: string[] | null; // kantonal: Seiten 1–3 des amtlichen PDF (entscheid-kantonsdatum.ts)
 }
 
 /**
@@ -293,10 +279,10 @@ export function mappeEntscheidOCL(
   opts: HoleOpts = {},
 ): EntscheidSnapshot | null {
   if (!det || !det.decision_id) return null;
-  // #1 Plausibilität: ein Entscheid kann nicht NACH dem Abrufzeitpunkt datiert sein
-  // (der Crawl holt nichts aus der Zukunft). Solche Quelldaten sind unzuverlässig
-  // → nicht aufnehmen (ehrlich weglassen statt ein Zukunftsdatum zeigen, §8).
-  const datumRoh = String(det.decision_date ?? '');
+  // #1 Plausibilität: kein Entscheid NACH dem Abruf (Crawl holt nichts aus der Zukunft
+  // → ehrlich weglassen, §8). Kantonal gilt das Datum des amtlichen Urteilskopfs statt
+  // OCL-decision_date (QS-KORPUS 25.9.2026, entscheid-kantonsdatum.ts); Bund unverändert.
+  const datumRoh = String(det.canton ?? 'CH') !== 'CH' ? kantonsEntscheiddatum(det, opts.amtlicheKopfSeiten).datum : String(det.decision_date ?? '');
   if (datumRoh && abgerufen && datumRoh > abgerufen) return null;
 
   // ── Abschnitte aus der amtlichen Gliederung (oder Fallback full_text) ──
@@ -393,16 +379,16 @@ export function mappeEntscheidOCL(
     // den String iteriert Zeichen und liefert still null (Bug-Check B3, 29.8.2026).
     zitierteNormen: Array.isArray(det.statutes) ? det.statutes : [],
     legalArea: det.legal_area,
+    kanton: canton,
   });
   const gerichtName = gerichtAnzeigename(court, canton, det.court_name as string | undefined);
   // Rubrum nur fürs Bundesgericht (full_text-Struktur zuverlässig); kantonal null —
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
   const rubrum = canton === 'CH' ? extrahiereRubrum(det.full_text) : null;
   // Zitierung inkl. Aktenzeichen-Norm „5A 229/2017" → „5A_229/2017" (Abnahme P3: Kopf/Tab/Zitat).
-  const datumDe = fmtDatumDe(String(det.decision_date ?? ''));
   const zitierung = (canton === 'CH'
-    ? String(det.citation_string_de ?? `BGer ${docket} vom ${datumDe}`)
-    : `${gerichtName} ${docket} vom ${datumDe}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
+    ? String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`)
+    : `${gerichtName} ${docket} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
 
   // Leitentscheid ⟺ amtliche Sammlung (BGE): Court 'bge' ODER BGE-Fundstelle.
   // KEIN '!!regeste'-Glied mehr — eine maschinelle/kantonale Regeste begründet keinen
@@ -427,7 +413,7 @@ export function mappeEntscheidOCL(
     nummer: docket,
     bgeReferenz: istBge ? docket : (det.bge_reference ? String(det.bge_reference) : null),
     zitierung,
-    datum: String(det.decision_date ?? ''),
+    datum: datumRoh,
     sprache,
     leitcharakter: leit ? 'leitentscheid' : 'routine',
     sachgebiet,
@@ -475,21 +461,18 @@ export async function holeEntscheidOCL(
   // paragraph_excerpt_chars: OCL-Maximum ist 5000 (höher → HTTP 422 → kein Strukturtext).
   const str = await jget<OclStructure>(`${API}/structure/${decisionId}?paragraph_excerpt_chars=5000`);
   await fuelleGekappteErwaegungen(decisionId, str);
-  return mappeEntscheidOCL(det, str, abgerufen, opts);
+  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten: await kopfSeitenFallsNoetig(det) });
 }
 
-/** Enumeration via Atom-Feed (Frische). Token-Regex auf den Gerichts-Präfix. */
+/** Enumeration via Atom-Feed (Frische): IDs aus dem <id>-Element (atomIds, ocl-abruf.ts). */
 export async function atomFeedIds(court: string, timeoutMs = 60000): Promise<string[]> {
   const ac = new AbortController();
   const t = setTimeout(() => ac.abort(), timeoutMs);
   try {
-    const res = await fetch(`${API}/atom/${court}.xml`, { signal: ac.signal });
+    const res = await fetch(`${API}/atom/${court}.xml`, { signal: ac.signal, headers: { 'User-Agent': RECHTSPRECHUNG_UA } });
     clearTimeout(t);
     if (!res.ok) return [];
-    const xml = await res.text();
-    const ids = new Set<string>();
-    for (const m of xml.matchAll(new RegExp(`${court}_[A-Za-z0-9_]+`, 'g'))) ids.add(m[0]);
-    return [...ids];
+    return atomIds(await res.text(), court); // strukturiert aus <id>, IDs mit «-»/«.» (ocl-abruf.ts)
   } catch {
     clearTimeout(t);
     return [];
@@ -657,7 +640,7 @@ export { bgeRoemischSachgebiet };
 export async function holeBgeLeitentscheid(
   bgeId: string,
   abgerufen: string,
-  kopf: { azaAz?: string | null; datumFallback?: string | null } = {},
+  kopf: { azaAz?: string | null; datumFallback?: string | null; clirAuszug?: EntscheidAbschnitt[] | null } = {},
 ): Promise<EntscheidSnapshot | null> {
   // OCL liefert decision_id inkonsistent (`bge_BGE_150_III_223`, `bge_152 III 51`) UND die
   // Keyed-Lookup matcht kurze Seiten-Ids PRÄFIXUNSCHARF: `/decisions/151_V_1` → 151_V_194.
@@ -739,7 +722,7 @@ export async function holeBgeLeitentscheid(
     ],
     legalArea: det.legal_area,
   });
-  const basis = mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeHint ?? roemHint ?? undefined });
+  const basis = ersetzeKonflatiertenAuszug(mappeEntscheidOCL(det, str, abgerufen, { sachgebietHint: bgeHint ?? roemHint ?? undefined }), kopf.clirAuszug, spracheAusBody); // Konflations-Rückfall (clir-auszug.ts)
   if (!basis) return null;
   basis.gerichtName = 'Bundesgericht';
 

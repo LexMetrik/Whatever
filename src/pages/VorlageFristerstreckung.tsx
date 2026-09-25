@@ -154,7 +154,7 @@ const CONFIG: VorlagenSeitenConfig<FeAntworten> = {
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Damit das Gesuch trägt</p>
-      <ul className="lc-list space-y-2 text-body-s text-ink-700">
+      <ul className="lc-list space-y-2 text-body-s text-ink-700 max-w-reading-s">
         <li><strong>Vor Fristablauf einreichen</strong><NormText text={` (Art. 144 Abs. 2 ZPO) – spätestens am letzten Tag beim Gericht einreichen oder der Schweizerischen Post übergeben (Art. 143 Abs. 1 ZPO).`} /></li>
         <li><strong>Unterschreiben</strong> – das Gesuch geht als unterzeichnete Eingabe an das Gericht.</li>
       </ul>
