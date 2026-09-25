@@ -152,7 +152,7 @@ test('/rechner/verjaehrung @1920 ohne Ergebnis und ohne Meldung: leerer Rahmen h
   await expect(page.locator(PLATZ)).toHaveCount(0);
   const rahmen = await page.locator('.lc-rechner-spalten').first().evaluate((el) => {
     const n = getComputedStyle(el, '::after');
-    return { content: n.content, spalte: n.gridColumnStart, hoehe: n.minHeight };
+    return { content: n.content, spalte: n.gridColumnStart, hoehe: n.height };
   });
   expect(rahmen).toEqual({ content: '""', spalte: '2', hoehe: '160px' });
 });

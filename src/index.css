@@ -5123,7 +5123,7 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
      platz ein — sie sagt, warum dort nichts steht; role="alert" und DOM-
      Reihenfolge bleiben. Steht rechts auch keine Box, hält ein leerer Rahmen
      in der Anatomie des `ErgebnisPlatzhalter` (gestrichelte Oberlinie,
-     10 rem) die Spur sichtbar besetzt — ohne Text, weil ein Rahmen keine
+     10 rem hoch wie dessen `min-h-40`) die Spur sichtbar besetzt — ohne Text, weil ein Rahmen keine
      Aussage über die fehlende Eingabe erfinden darf (§8). Feldnahe Meldungen
      stehen im Feld und nicht als Kind der Wurzel: sie bleiben links. */
   .lc-rechner-spalten:not(:has(> :is([data-ergebnisplatz], [data-platzhalter]):not([hidden]))) > [data-fehlerbox] {
@@ -5135,7 +5135,7 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
     content: '';
     grid-column: 2;
     grid-row: 1 / -1;
-    min-height: 10rem;
+    height: 10rem;
     border-top: 1px dashed var(--rule-soft);
   }
   /* Nachzug Mangel B3: Reiterleisten (`ui/Tabs`, Griff `lc-reiterleiste`) in
@@ -5146,8 +5146,12 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
      Tabelle rechts die 712 px; die Scroll-Affordanz allein liesse Phasen
      unsichtbar. Umbrechen ist die Antwort, die Tabs unter 400 px schon gibt
      (R-1) — `flex-wrap` bricht nur, wo der Platz fehlt. Die feste Höhe
-     (`sm:h-9`) weicht der Inhaltshöhe, `min-height` am Reiter hält die
-     Desktop-Höhe je Zeile; der Scroll-Schatten entfällt mit dem Schieben.
+     (`sm:h-9`) der Inhaltshöhe; der Reiter selbst trägt dafür die Höhe
+     seiner Anatomie (`m` = h-9 = 2.25rem; `s`/`zweizeilig` stehen in keiner
+     Formularwurzel — die zweizeilige Leiste der Kündigung liegt über dem
+     Formular, `RechnerKuendigung`). Als `height`, nicht `min-height`: es ist
+     die Grösse des Knopfes, keine Trefferflächen-Untergrenze (F9,
+     `tap-ziel-token.test.ts`). Der Scroll-Schatten entfällt mit dem Schieben.
      Hier und nicht als `@[72rem]/rechnerkarte:`-Utility im Baustein: das
      Container-Plugin gibt seine Varianten VOR `sm:` aus, `sm:h-9` gewann
      (gemessen: zweite Reiterzeile überlappte das nächste Feld). */
@@ -5157,5 +5161,5 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
     overflow-x: visible;
     background: none;
   }
-  .lc-rechner-spalten .lc-reiterleiste > .lc-tab { min-height: 2.25rem; }
+  .lc-rechner-spalten .lc-reiterleiste > .lc-tab { height: 2.25rem; }
 }
