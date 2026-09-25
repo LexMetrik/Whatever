@@ -73,14 +73,6 @@ type Zu = (...pfad: string[]) => () => void;
 // keine Zahl — der Zähler führt keine je Rubrik, und eine Zahl aus den
 // Rubrik-Keys wäre eine Behauptung über das Register, das hier nicht lädt (§15).
 //
-// Einheit (REST S5b, 25.9.2026, Posten «Bund-Spaltenkopf … 7 px Breitenreserve»):
-// «Erlasse» statt «Bundeserlasse»/«kantonale Erlasse» — die Ebene steht als
-// Titel direkt darunter («Bund», «Kantone»), das Präfix war doppelt. GEMESSEN
-// (Playwright, Kopf-Innenbreite − Zahl − Einheit, 1280×800 und 1440×900):
-// vorher Bund 6 px Reserve, mit «1'203» Umbruch → alle drei Köpfe 101 → 126 px,
-// Blatt 17 px Überlauf (U13 rot); nachher Bund 53 px (mit «1'203» 31 px),
-// Kantone 81 px (mit «12'339» 62 px). Probe: e2e/gesetze-wahl-kopf-reserve.e2e.ts.
-//
 // Höhe: `.lc-start-fuellt` (index.css) streckt die Stufe ab `lg` auf die volle
 // Blatthöhe; darunter stehen die Spalten untereinander, das Blatt scrollt.
 
@@ -109,7 +101,7 @@ function Wahl({ zu }: { zu: Zu }) {
     <StufenSuche bereich="alle" label="Gesetze durchsuchen"
       className="lc-start-fuellt grid grid-cols-1 gap-3 lg:grid-rows-[auto_minmax(0,1fr)]">
       <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.25fr_1fr] lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-y-0">
-        <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('bund')} titel="Bund" zahl={nf(z.gesetzeBundesrechtVolltext)} einheit="Erlasse" />}>
+        <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('bund')} titel="Bund" zahl={nf(z.gesetzeBundesrechtVolltext)} einheit="Bundeserlasse" />}>
           <ul aria-label="Rechtsgebiete des Bundes" className="px-2">
             {z.bundSystematik.map((g) => (
               <li key={g.id} className="border-t border-rule-soft">
@@ -122,7 +114,7 @@ function Wahl({ zu }: { zu: Zu }) {
             ))}
           </ul>
         </WahlSpalte>
-        <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)} einheit="Erlasse" />}>
+        <WahlSpalte reg="g" kopf={<RubrikKachel reg="g" onWahl={zu('kantone')} titel="Kantone" zahl={nf(z.gesetzeKantonVolltext)} einheit="kantonale Erlasse" />}>
           {/* `max-w-xs` untereinander: die Karte in voller Telefonbreite schob
               die International-Spalte unnötig weit nach unten. */}
           <div className="mx-auto max-w-xs px-4 lg:max-w-none">
