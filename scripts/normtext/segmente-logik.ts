@@ -414,7 +414,7 @@ export function segmentiereAnker(
   // fügt keinen ein.
   //
   // AUSNAHME (empirisch 25.9.2026 an KRK/GSCHV gefunden, NACH dem ersten
-  // B4-Entwurf): eine Zelle mit eigener <dl>/<dt>/<dd>-Liste wird von der
+  // B4-Entwurf): eine Zelle mit eigener <dl>/<dt>/<dd>-LISTE wird von der
   // Zeilenverkettung ausgenommen. Grund: die Projektion bewahrt für solche
   // Zellen manchmal die Listenmarke als LITERALES Zeichen im Text (z.B. der
   // Gedankenstrich-Marker in GSCHV annex_2 "…Temperaturen: – über 10 °C…",
@@ -426,6 +426,15 @@ export function segmentiereAnker(
   // Falsch-Positiv der Zeilenprüfung, kein echter Verlust (die einzelnen <dd>
   // bleiben über die normale Zellzerlegung unten weiterhin GEPRÜFT, nur ohne
   // den zusätzlichen Zeilen-Fingerabdruck).
+  //
+  // SCHARF AUF 'dd' begrenzt (Regression 25.9.2026, VOR dem Commit gefangen):
+  // eine erste Fassung prüfte `innereSegmente.length > 0` — das erfasst JEDE
+  // Zelle, deren Text in einem <p> steckt (die tarifübliche Fedlex-Konvention,
+  // empirisch an DBG Art. 36 "0.77" gefunden: JEDE Zelle der Tarif-Tabelle hat
+  // ein umschliessendes <p>, ohne jede dt/dd-Listenmarke) — und schaltete den
+  // Zeilen-Fingerabdruck damit für genau den Fall ab, den B4 überhaupt lösen
+  // sollte. `<p>` hat kein benachbartes <dt>, also kein Klebe-Risiko — nur
+  // <dd>-Segmente (aus einer dt/dd-Liste) lösen die Ausnahme aus.
   for (const tabelle of [...klon.querySelectorAll('table')]) {
     for (const zeile of [...tabelle.querySelectorAll('tr')]) {
       const zellenDerZeile = [...zeile.children].filter(
@@ -438,7 +447,7 @@ export function segmentiereAnker(
         const innereSegmente: RohSegment[] = [];
         segmentiereBereich(zelle.cloneNode(true), innereSegmente);
         if (innereSegmente.length > 0) {
-          listenzelleImSpiel = true;
+          if (innereSegmente.some((seg) => seg.art === 'dd')) listenzelleImSpiel = true;
           for (const seg of innereSegmente) zeilenTeile.push(seg.text);
         } else {
           zeilenTeile.push(blockText(zelle));

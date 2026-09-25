@@ -345,6 +345,21 @@ describe('segmentiereArtikel — B4: Zeilen-Fingerabdruck rettet eine zu kurze T
     const segmente = segmentiereArtikel(html, 'art_1')!;
     expect(segmente.some((s) => s.art === 'tr' && s.text === 'Grundgebühr Zuschlag')).toBe(true);
   });
+
+  it('Regression 25.9.2026: eine Zelle deren Text NUR in <p> steckt (kein <dl>) löst die dd-Ausnahme NICHT aus (empirisch an DBG Art. 36 "0.77" gefunden)', () => {
+    // Fedlex verpackt Tarifzellen üblicherweise in <p>, OHNE jede Listenmarke
+    // — eine erste Fassung der dd-Ausnahme prüfte pauschal "hat die Zelle
+    // überhaupt innere Segmente" und schaltete den Zeilen-Fingerabdruck damit
+    // GENAU für diesen (den ursprünglichen B4-)Fall ab.
+    const html = huelle(
+      '<table><tbody><tr><td><p>und für je weitere 100 Franken Einkommen</p></td>' +
+        '<td><p>0.77</p></td><td><p>;</p></td></tr></tbody></table>',
+    );
+    const segmente = segmentiereArtikel(html, 'art_1')!;
+    const zeile = segmente.find((s) => s.art === 'tr');
+    expect(zeile).toBeDefined();
+    expect(zeile!.text).toContain('0.77');
+  });
 });
 
 describe('alleArtikelEids — B5: Artikelmenge aus der HTML, nicht aus der Projektion', () => {

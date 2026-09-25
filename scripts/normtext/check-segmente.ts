@@ -161,6 +161,48 @@ interface FrischesSoll {
 }
 
 /**
+ * B4-Folgebefund (Gegenprüfung-Nachbesserung 25.9.2026, NACH dem ersten
+ * Vollkorpus-Lauf EMPIRISCH gefunden, zweimal nachgeschärft): der naiv
+ * verkettete Zeilen-Fingerabdruck (B4) setzt voraus, dass die Projektion die
+ * Zellen einer Zeile direkt benachbart im Blob ablegt — das gilt NICHT
+ * durchgehend:
+ *  (a) `mehrspaltig.spalten[]` (Objekte `{typ, titel}`) reiht das `typ`-Feld
+ *      ("text"/"zahl") ZWISCHEN je zwei Spalten-`titel`-Werten ein (empirisch
+ *      an EAUE decl_u3: Blob "…textStaatentextNotenaustauschvomzahl…" statt
+ *      direkter Nachbarschaft).
+ *  (b) `items[]` (Objekte `{marke, text, trenner}`, die dt/dd-Listendarstellung)
+ *      reiht `marke`/`trenner` zwischen die `text`-Werte ein — UND Fedlex legt
+ *      mehrsprachige Zellinhalte oft per `<br>` innerhalb EINER Zelle ab, was
+ *      `blockText` (kein Trenner für `<br>`, DOM-Eigenheit) zu einem eigenen
+ *      Klebe-Artefakt verschmilzt, der seinerseits nicht mit der Projektions-
+ *      Reihenfolge übereinstimmt (empirisch an VVV annex_1 "Interne
+ *      Kontrollnummer …" belegt: die Zeilen-Verkettung erwartet die nächste
+ *      Zelle direkt im Anschluss, die Projektion hat dort andere Zeilen
+ *      dazwischen).
+ * Für die REINEN Schemas (`mehrspaltig.kopf`: flaches String-Array,
+ * `mehrspaltig.zeilen[i]`: flaches String-Array je Zeile, schlichter Fliess-
+ * text) gibt es diese Zwischen-Tokens NICHT — dort stehen Zellen tatsächlich
+ * direkt benachbart im Blob (empirisch am ursprünglichen B4-Fall DBG Art. 36
+ * "0.77" bestätigt, reines kopf/zeilen-Schema, KEIN items/spalten).
+ *
+ * Statt jedes weitere Einzelmuster zu verfolgen (bereits zwei gefunden, nach
+ * dem ersten Fix ein DRITTES empirisch aufgetaucht): eine ALLOWLIST statt
+ * einer wachsenden Denylist — der Zeilen-Fingerabdruck läuft NUR, wenn der
+ * GESAMTE Projektions-Eintrag NIRGENDS `items` oder `mehrspaltig.spalten`
+ * verwendet (§1: im Zweifel schwächere Zusatzprüfung statt Falsch-Positive;
+ * die feinere Zellzerlegung bleibt für ALLE Schemas unverändert bestehen). Da
+ * `segmentiereAnker`/`segmentiereBereich` bewusst UNABHÄNGIG von der
+ * Projektion bleiben (§ Architektur Ziff. 3), passiert die Filterung ERST
+ * hier — dieselbe Stelle, die für B5 ohnehin schon die Projektion mitliest.
+ */
+function zeilenFingerabdruckUnsicher(eintrag: ProjektionsEintrag | undefined): boolean {
+  if (!eintrag || !Array.isArray(eintrag.bloecke)) return false;
+  return (eintrag.bloecke as Array<{ items?: unknown; mehrspaltig?: { spalten?: unknown } }>).some(
+    (b) => Boolean(b.items) || (b.mehrspaltig && Array.isArray(b.mehrspaltig.spalten)),
+  );
+}
+
+/**
  * B1+B5 (Gegenprüfung 25.9.2026): die zu prüfende Artikelmenge kommt aus DEN
  * HTML-ANKERN (`alleArtikelEids`), VEREINIGT mit den Projektions-eIds — nicht
  * NUR aus der Projektion (B5: sonst bliebe ein ganzer aus der Projektion
@@ -189,10 +231,13 @@ function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
   const restmeldungen: string[] = [];
 
   for (const eId of alleEids) {
-    const rohSegmente = segmentiereAnker(dokument, ankerIdVonEid(eId), restmeldungen);
+    let rohSegmente = segmentiereAnker(dokument, ankerIdVonEid(eId), restmeldungen);
     if (rohSegmente === null) {
       keinAnkerLokalisierbar.push(eId);
       continue;
+    }
+    if (zeilenFingerabdruckUnsicher(projektion?.get(`${praefix}${eId}`))) {
+      rohSegmente = rohSegmente.filter((s) => s.art !== 'tr');
     }
     const fps: Fingerabdruck[] = [];
     const auszuege = new Map<string, string>();
