@@ -8,3 +8,5 @@ Nach B1, sonst frei. Befund: Normtext-Breite ist korrekt (§3 Schichtentrennung/
 anfassen); nur Beiwerk und die EMRK-Tabelle (603 von 3556 px, scrollt quer) betroffen. Ziel:
 Tabelle ohne Querscroll darstellen, Beiwerk darf die Breitenstufe nutzen. Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
+
+**Erledigt 2026-09-25:** PR #1145
