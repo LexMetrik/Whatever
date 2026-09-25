@@ -41,6 +41,10 @@ describe('kopfEntscheiddatum — Fallen', () => {
     expect(kopfBereich(t)).not.toMatch(/Verfügung/);
     expect(kopfEntscheiddatum(t, '200 2026 94').status).toBe('fehlt');
   });
+  it('Anfechtungsobjekt «Verfügung vom» im Portal-Titel ist nicht das Entscheiddatum (BS IV.2021.50)', () => {
+    const t = 'Geschäftsnummer: IV.2021.50 (SVG.2022.58) Instanz: Sozialversicherungsgericht Titel: IVG Verfügung vom 22. März 2021 Geburtsgebrechen; medizinische Massnahmen Sozialversicherungsgericht des Kantons Basel-Stadt URTEIL vom 3. Februar 2022 Mitwirkende Dr. A. Pfleiderer (Vorsitz)';
+    expect(kopfEntscheiddatum(t, 'IV.2021.50')).toMatchObject({ status: 'ok', datum: '2022-02-03', regel: 'titel-vom' });
+  });
   it('«Einspracheentscheid vom» ist kein eigener Titel', () => {
     expect(kopfEntscheiddatum('Verwaltungsgericht Einspracheentscheid vom 25. März 2026', null).status).toBe('fehlt');
   });

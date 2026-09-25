@@ -35,11 +35,17 @@ const MONAT_ALT = Object.keys(MONATE).join('|');
 /** Stopp-Marker: ab hier Parteien, Vorinstanz, Gegenstand, Sachverhalt (nicht mehr Kopf). */
 const STOPP_RE = /(?<![\p{L}])(?:in Sachen|betreffend|Gegenstand|Parteien|Besetzung|Beteiligte|Sachverhalt|Erwägungen?|Anfechtungsobj)(?![\p{L}])/u;
 
-/** Geschlossene Titel-Liste des EIGENEN Entscheids (Gross- und Versalform). */
+/**
+ * Geschlossene Titel-Liste des EIGENEN Entscheids (Gross- und Versalform).
+ * «Verfügung» fehlt bewusst: im Kopf ist sie fast immer das Anfechtungsobjekt
+ * (BS IV.2021.50, Portal-Titel «IVG Verfügung vom 22. März 2021» vor «URTEIL vom
+ * 3. Februar 2022», Messung 25.9.2026); kein Bestandsurteil trägt sie als Titel.
+ * Lieber ehrlich «fehlt» (Rückfall) als ein Vorinstanz-Datum.
+ */
 const TITEL = [
   'Beschluss und Urteil', 'Urteil und Beschluss', 'Zwischenentscheid', 'Teilentscheid',
-  'Endentscheid', 'Zirkulationsbeschluss', 'Urteil', 'Entscheid', 'Beschluss', 'Verfügung',
-  'URTEIL', 'ENTSCHEID', 'BESCHLUSS', 'VERFÜGUNG',
+  'Endentscheid', 'Zirkulationsbeschluss', 'Urteil', 'Entscheid', 'Beschluss',
+  'URTEIL', 'ENTSCHEID', 'BESCHLUSS',
 ].join('|');
 /** Zulässiger Zusatz zwischen Titel und «vom» (Spruchkörper des eigenen Gerichts). */
 const ZUSATZ = '(?: (?:des|der) (?:Einzelrichters|Einzelrichterin|Präsidenten|Präsidentin|Vizepräsidenten|Vizepräsidentin|Instruktionsrichters|Instruktionsrichterin|Abteilungspräsidenten|Abteilungspräsidentin|Kammerpräsidenten|Kammerpräsidentin))?';
