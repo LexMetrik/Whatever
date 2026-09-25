@@ -25,7 +25,7 @@ export type Seitenart =
  *  auf sich selbst zurückklassifiziert (Unit-Test) und die der e2e-Breiten-
  *  wächter (B1c) je Art misst. Leser-Schlüssel aus `public/*\/register.json`. */
 export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; beispielPfad: string }>> = {
-  startseite: { stufe: 'content', beispielPfad: '/' },
+  startseite: { stufe: 'weit', beispielPfad: '/' }, // W2·31 (25.9.2026): Kachelspalte, Blätter, «Häufig gebraucht»
   rubrik: { stufe: 'content', beispielPfad: '/rechner' },
   rechner: { stufe: 'content', beispielPfad: '/rechner/kuendigung' },
   vorlage: { stufe: 'content', beispielPfad: '/vorlagen/testament' },

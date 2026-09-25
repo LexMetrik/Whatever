@@ -142,6 +142,14 @@ Schriftstufe: `body-l`/Lead → `max-w-reading`, `body-s` → `max-w-reading-s`
 (je Art Rahmen, Footer-Flucht, kein Querscroll, ≤ 80 Zeichen je Zeile — auch
 mit simuliertem `weit`-Rahmen und Schriftskala 1.4). Eine Art wird `weit`,
 indem man ihre Tabellenzeile ändert; der Wächter zieht mit.
+*Startseite (`weit` seit 25.9.2026, Entscheid David «ja das soll optimiert
+werden»):* die Breite geht an die Kachelspalte (Kacheln und aufgeklapptes
+Blatt, 712 → 1032 px) und an «Häufig gebraucht» (drei statt zwei Spalten ab
+52rem Flächenbreite); Schnellwerkzeug-Spalte (20rem), Kachel- und Blatthöhe
+bleiben. Was mitwächst, darf die Höhe nicht treiben: die Kantone-Karte im
+Gesetze-Blatt bleibt auf ihrer `content`-Grösse, damit U13 («kein Scroll beim
+Aufklappen») hält. Gruss und Vertrauensfuss wachsen nicht mit. Wächter:
+`e2e/startseite-breite.e2e.ts`.
 
 **B3 — Klare visuelle Hierarchie, ein Icon-System, vier Status-Familien.**
 Inhalt scanbar gliedern (Überschriften-Hierarchie, Abstand, nicht Textwüste).

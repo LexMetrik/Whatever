@@ -80,6 +80,19 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     auf `max-w-content` (1072 px Inhalt) gedeckelt, eine breitere Spalte
 //     nähme dem Blatt Breite und liesse die Gesetze-Wahl umbrechen und höher
 //     werden. Telefon unverändert.
+//   · W2·31-BILDSCHIRMBREITE (Entscheid David 25.9.2026 «ja das soll
+//     optimiert werden»): der Satz oben («ab 1280 auf `max-w-content`
+//     gedeckelt») gilt seither nur bis `2xl` — die Startseite steht in
+//     `SEITENBREITE` (`layout/seitenbreite.ts`) auf `weit` (90rem ab 1536 px).
+//     Das Raster hier bleibt unverändert: die Kachelspalte `minmax(0,1fr)`
+//     wächst mit (Kachel 348 → 508 px, Blatt 712 → 1032 px), die Spalte rechts
+//     bleibt 20rem (Schnellwerkzeug und «Zuletzt» gewönnen nur Leerraum).
+//     Kachelhöhe und damit die Blatthöhe (576 px) bleiben — U13 hält
+//     @1680/@1920 (Wächter `e2e/startseite-breite.e2e.ts`). Mit der Breite
+//     gehen: «Häufig gebraucht» dreispaltig (`HaeufigGebraucht.tsx`), die
+//     Kantone-Karte bleibt auf ihrer `content`-Grösse (`GesetzeBlatt.tsx`).
+//     Gruss (eine Zeile ≤ 30 Zeichen) und Vertrauensfuss (`max-w-kleintext`)
+//     wachsen nicht mit.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
