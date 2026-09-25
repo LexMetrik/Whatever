@@ -4639,7 +4639,7 @@
   "verfahrensart": "ordentlich",
   "schlichtung": {
    "obligatorisch": false,
-   "entfaelltGrund": "Einzige kantonale Instanz nach Art. 5 ZPO — Klage direkt beim Gericht (Art. 199 Abs. 3 ZPO)",
+   "entfaelltGrund": "Einzige kantonale Instanz nach Art. 5 ZPO: Schlichtung nicht zwingend — die klagende Partei kann die Klage direkt beim Gericht einreichen (Art. 199 Abs. 3 ZPO)",
    "verzichtGemeinsam": false,
    "verzichtEinseitig": false,
    "behoerdeTyp": "ordentlich",
@@ -4696,12 +4696,12 @@
     ]
    },
    {
-    "beschreibung": "3 · Funktionell: Schlichtung entfällt — Einzige kantonale Instanz nach Art. 5 ZPO — Klage direkt beim Gericht (Art. 199 Abs. 3 ZPO)",
-    "zwischenergebnis": "keine Schlichtung",
+    "beschreibung": "3 · Funktionell: Einzige kantonale Instanz nach Art. 5 ZPO: Schlichtung nicht zwingend — die klagende Partei kann die Klage direkt beim Gericht einreichen (Art. 199 Abs. 3 ZPO)",
+    "zwischenergebnis": "Schlichtung freiwillig (Direktklage möglich)",
     "normen": [
      {
-      "artikel": "Art. 198 ZPO",
-      "bemerkung": "Ausnahmen vom Schlichtungsverfahren"
+      "artikel": "Art. 199 ZPO",
+      "bemerkung": "Verzicht auf das Schlichtungsverfahren"
      }
     ]
    },
