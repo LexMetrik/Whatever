@@ -298,12 +298,15 @@ function restmengenFehler(meldungen: readonly string[]): string[] {
 
 // ── --schreiben ─────────────────────────────────────────────────────────────
 
+// G9 (Runde 3): ERST alles ableiten und prüfen (unerwartete Ausklammerungen,
+// Restmengen), DANN schreiben — bei einem Fehler bleibt kein halb
+// geschriebener Soll-Bestand zurück (vorher: alle Dateien geschrieben, dann rot).
 function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
-  mkdirSync(SOLL_VERZEICHNIS, { recursive: true });
   let gesamtArtikel = 0;
   let gesamtSegmente = 0;
   const ausklammerungen: Array<{ erlass: string; eId: string }> = [];
   const restmeldungen: string[] = [];
+  const dateien: Array<{ name: string; inhalt: string }> = [];
   for (const e of eintraege) {
     const frisch = leiteFrischesSollAb(e);
     const sollDatei: SollDatei = {
@@ -314,7 +317,7 @@ function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
         Object.entries(frisch.artikel).map(([eId, fps]) => [eId, fingerabdrueckeZuSoll(fps)]),
       ),
     };
-    writeFileSync(`${SOLL_VERZEICHNIS}/${e.name}.json`, JSON.stringify(sollDatei) + '\n', 'utf8');
+    dateien.push({ name: `${e.name}.json`, inhalt: JSON.stringify(sollDatei) + '\n' });
     gesamtArtikel += Object.keys(frisch.artikel).length;
     for (const fps of Object.values(frisch.artikel)) gesamtSegmente += fps.length;
     for (const eId of frisch.keinAnkerLokalisierbar) ausklammerungen.push({ erlass: e.name.toUpperCase(), eId });
@@ -326,16 +329,19 @@ function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
       `❌ FEHLER: --schreiben fand ${unerwartet.length} unerwartete Ausklammerung(en) ` +
         `(Anker nicht in der HTML lokalisierbar, ausser der dokumentierten Ausnahme ${AUSKLAMMERUNG_AUSNAHME.replace('\u0000', ' ')}):`,
       ...unerwartet.slice(0, 30).map((a) => `   · ${a}`),
+      '   → NICHTS geschrieben (G9).',
     ]);
   }
-  if (restmeldungen.length > 0) fehlerUndExit(restmengenFehler(restmeldungen));
+  if (restmeldungen.length > 0) fehlerUndExit([...restmengenFehler(restmeldungen), '   → NICHTS geschrieben (G9).']);
+
+  mkdirSync(SOLL_VERZEICHNIS, { recursive: true });
+  for (const d of dateien) writeFileSync(`${SOLL_VERZEICHNIS}/${d.name}`, d.inhalt, 'utf8');
   console.log(
     `✓ --schreiben: ${eintraege.length} Soll-Dateien in ${SOLL_VERZEICHNIS}/ geschrieben ` +
       `(${gesamtArtikel} Artikel, ${gesamtSegmente} Segmente, ${ausklammerungen.length} ausgeklammert ` +
       `[davon ${ausklammerungen.length - unerwartet.length} dokumentierte Ausnahme]).`,
   );
 }
-
 // ── Modus B / Modus C ────────────────────────────────────────────────────────
 
 interface Zwischenergebnis {
