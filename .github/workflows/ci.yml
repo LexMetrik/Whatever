@@ -986,7 +986,8 @@ jobs:
       # Das Tor-Wirksamkeits-Audit (bibliothek/, PR #318) hat die 20 Allowlist-
       # Begruendungen per Sabotage geprueft: 17 halten NICHT, 2 sind gar keine
       # Begruendung, 1 haelt. Sechs Proben, sechsmal dasselbe Bild — zustaendiges
-      # Tor ROT, behaupteter Ersatz GRUEN. Die 9x behauptete
+      # Tor ROT, behaupteter Ersatz GRUEN (bei "vom lint mitabgedeckt" war die
+      # lint-Ausgabe sogar byte-identisch zur Baseline). Die 9x behauptete
       # Delegation an fedlex-frische.yml scheitert dreifach: der Workflow faehrt
       # diese Tore nicht, faengt die Fehlerklasse nicht, und lief genau einmal —
       # mit failure.
