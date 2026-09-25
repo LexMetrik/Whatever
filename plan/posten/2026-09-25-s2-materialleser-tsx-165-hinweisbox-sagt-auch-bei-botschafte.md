@@ -5,3 +5,4 @@ anlass: Session-Notizen 2026-09-25
 -->
 
 fachlich falsch (Rechtsnatur je Gattung), Gegenprüfung
+- **Entscheid David 25.9.2026 (Chat, Frage 3 «wie empfohlen»):** Hinweis je Gattung — Botschaften/Vernehmlassungen/Parlamentsgeschäfte «Gesetzgebungsmaterial, kein Gesetzesrang», Erläuterungen (Verwaltungspraxis) der heutige Text zu Verwaltungsverordnungen; dazu der Fuss auf /materialien («Faktisches Soft-Law» nur für Erläuterungen). Aussage zur Rechtsnatur ⇒ Gegenprüfung Pflicht.
