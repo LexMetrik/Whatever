@@ -4,7 +4,8 @@ import { join } from 'node:path';
 import {
   kopfEntscheiddatum, kopfBereich, pdfKopfNormalisieren,
 } from '../../scripts/normtext/entscheid-kopfdatum';
-import { mappeEntscheidOCL, kantonsEntscheiddatum, type OclDecision } from '../../scripts/normtext/adapter-entscheide';
+import { mappeEntscheidOCL, type OclDecision } from '../../scripts/normtext/adapter-entscheide';
+import { kantonsEntscheiddatum } from '../../scripts/normtext/entscheid-kantonsdatum';
 import { kopfdatumRefresh } from '../../scripts/normtext/entscheide-kopfdatum-refresh';
 import type { EntscheidSnapshot } from '../lib/rechtsprechung/typen';
 
@@ -170,9 +171,9 @@ describe('kopfdatumRefresh — Bestand über den Generator (nur datum + zitierun
     expect(gr.datum).toBe('2026-06-24');
     expect(z[0].quelle).toBe('ocl-decision_date');
   });
-  it('Kopfdatum nach dem Abrufdatum wird nicht übernommen', async () => {
+  it('Kopfdatum nach dem Abrufdatum ⇒ Abbruch (Zukunfts-Riegel des Mappers), nichts geändert', async () => {
     const gr = snap({ abgerufen: '2026-04-01' });
-    await kopfdatumRefresh([gr], { holeDecision: async () => det(), holeSeiten: keineSeiten });
+    await expect(kopfdatumRefresh([gr], { holeDecision: async () => det(), holeSeiten: keineSeiten })).rejects.toThrow(/ABBRUCH/);
     expect(gr.datum).toBe('2026-06-24');
   });
 });

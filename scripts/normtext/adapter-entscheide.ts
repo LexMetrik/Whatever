@@ -16,7 +16,7 @@ import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
-import { kopfEntscheiddatum, pdfKopfNormalisieren, type Kopfdatum } from './entscheid-kopfdatum';
+import { kantonsEntscheiddatum, kopfSeitenFallsNoetig } from './entscheid-kantonsdatum';
 // markenPlausibel/MONAT leben jetzt in erwaegung-normalisieren.ts (Single Source, §5);
 // hier re-exportiert, damit bestehende Importeure/Tests stabil bleiben.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
@@ -28,9 +28,7 @@ import {
   sachgebietFuerEntscheid, bgeSachgebietHint, bgeRoemischSachgebiet,
 } from './sachgebiet-klassierung';
 
-const API = 'https://mcp.opencaselaw.ch/api';
-/** OCL-Basis-URL für Nebenpfade (Bestands-Refresh), eine Stelle (§5). */
-export const OCL_API = API;
+export const API = 'https://mcp.opencaselaw.ch/api';
 
 // Schlanke Typen der OCL-Rohantworten (nur die genutzten Felder; Index-Signatur
 // für den Rest). Ersetzt `any` (Tor @typescript-eslint/no-explicit-any).
@@ -283,76 +281,7 @@ export interface HoleOpts {
   normKeyHint?: string | null;
   /** Sprachfilter; default 'de'. null = alle. */
   sprache?: string | null;
-  /**
-   * Seitentexte (Seite 1…3) des AMTLICHEN PDF (source_url), nur kantonal und nur
-   * nötig, wenn der OCL-Volltext keinen eigenen Urteilskopf trägt (SG: OCL führt
-   * oft nur das Publikations-Deckblatt). Geholt von `holeAmtlicheKopfSeiten`.
-   */
-  amtlicheKopfSeiten?: string[] | null;
-}
-
-/** Herkunft des übernommenen Kantons-Entscheiddatums (Bericht/Log, kein Snapshot-Feld). */
-export type KantonsDatumQuelle = 'kopf-ocl-volltext' | 'kopf-amtliches-pdf' | 'ocl-decision_date';
-
-/**
- * Entscheiddatum eines KANTONALEN Entscheids (QS-KORPUS, Entscheid David 25.9.2026):
- * der amtliche Urteilskopf gewinnt, das OCL-`decision_date` ist nur Rückfall.
- * Reihenfolge: (1) eigener Titel im OCL-Volltext-Kopf; (2) eigener Titel im Kopf
- * einer Seite des amtlichen PDF (SG-Deckblatt-Fall); (3) Plattform-Angabe im
- * OCL-Kopf («Entscheiddatum:», SG-Kopfzeile); (4) OCL-`decision_date`. Rein (§2).
- * Der Bund-Pfad (canton 'CH') ruft das NICHT auf — dort stimmt decision_date
- * (Stichprobe 25.9.2026: 13/13 bger/bvger/bstger mit Kopf identisch).
- */
-export function kantonsEntscheiddatum(
-  det: Pick<OclDecision, 'full_text' | 'docket_number' | 'decision_date'>,
-  amtlicheKopfSeiten?: string[] | null,
-): { datum: string; quelle: KantonsDatumQuelle; kopf: Kopfdatum } {
-  const docket = String(det.docket_number ?? '');
-  const ocl = kopfEntscheiddatum(typeof det.full_text === 'string' ? det.full_text : null, docket);
-  if (ocl.status === 'ok' && ocl.regel === 'titel-vom') return { datum: ocl.datum, quelle: 'kopf-ocl-volltext', kopf: ocl };
-  for (const seite of amtlicheKopfSeiten ?? []) {
-    const k = kopfEntscheiddatum(pdfKopfNormalisieren(seite), docket);
-    if (k.status === 'ok' && k.regel === 'titel-vom') {
-      const abw = ocl.status === 'ok' && ocl.datum !== k.datum ? [{ datum: ocl.datum, regel: ocl.regel, beleg: ocl.beleg }] : [];
-      return { datum: k.datum, quelle: 'kopf-amtliches-pdf', kopf: { ...k, abweichung: [...k.abweichung, ...abw] } };
-    }
-  }
-  if (ocl.status === 'ok') return { datum: ocl.datum, quelle: 'kopf-ocl-volltext', kopf: ocl };
-  return { datum: String(det.decision_date ?? ''), quelle: 'ocl-decision_date', kopf: ocl };
-}
-
-/** Zitierung eines kantonalen Entscheids (eine Stelle für Adapter und Bestands-Refresh, §5). */
-export function zitierungKantonal(gerichtName: string, docket: string, datumIso: string): string {
-  return `${gerichtName} ${docket} vom ${fmtDatumDe(datumIso)}`.replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
-}
-
-/**
- * Seiten 1…`seiten` des amtlichen PDF als Text (pdfjs), oder null (kein PDF,
- * Netzfehler). Nur für den kantonalen Kopfdatum-Rückfall; Netz-Zweig, darum
- * NICHT in `mappeEntscheidOCL` (bleibt rein).
- */
-export async function holeAmtlicheKopfSeiten(url: string, seiten = 3, timeoutMs = 30000): Promise<string[] | null> {
-  if (!/^https:\/\//.test(url)) return null;
-  const ac = new AbortController();
-  const t = setTimeout(() => ac.abort(), timeoutMs);
-  try {
-    const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': RECHTSPRECHUNG_UA }, redirect: 'follow' });
-    if (!res.ok) return null;
-    const bytes = new Uint8Array(await res.arrayBuffer());
-    if (String.fromCharCode(...bytes.slice(0, 5)) !== '%PDF-') return null;
-    const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
-    const doc = await pdfjs.getDocument({ data: bytes, verbosity: 0 }).promise;
-    const out: string[] = [];
-    for (let i = 1; i <= Math.min(seiten, doc.numPages); i++) {
-      const inhalt = await (await doc.getPage(i)).getTextContent();
-      out.push(inhalt.items.map((it) => ('str' in it ? it.str : '')).join(' '));
-    }
-    return out;
-  } catch {
-    return null;
-  } finally {
-    clearTimeout(t);
-  }
+  amtlicheKopfSeiten?: string[] | null; // kantonal: Seiten 1–3 des amtlichen PDF (entscheid-kantonsdatum.ts)
 }
 
 /**
@@ -366,16 +295,10 @@ export function mappeEntscheidOCL(
   opts: HoleOpts = {},
 ): EntscheidSnapshot | null {
   if (!det || !det.decision_id) return null;
-  // #1 Plausibilität: ein Entscheid kann nicht NACH dem Abrufzeitpunkt datiert sein
-  // (der Crawl holt nichts aus der Zukunft). Solche Quelldaten sind unzuverlässig
-  // → nicht aufnehmen (ehrlich weglassen statt ein Zukunftsdatum zeigen, §8).
-  // Kantonal: Entscheiddatum aus dem amtlichen Urteilskopf (QS-KORPUS 25.9.2026) —
-  // das OCL-decision_date ist dort oft Mitteilungs-/Publikations-/BGer-Datum.
-  // Bund (CH) unverändert: decision_date (Pfad byte-gleich, §6).
-  const istKanton = String(det.canton ?? 'CH') !== 'CH';
-  const datumRoh = istKanton
-    ? kantonsEntscheiddatum(det, opts.amtlicheKopfSeiten).datum
-    : String(det.decision_date ?? '');
+  // #1 Plausibilität: kein Entscheid NACH dem Abruf (Crawl holt nichts aus der Zukunft
+  // → ehrlich weglassen, §8). Kantonal gilt das Datum des amtlichen Urteilskopfs statt
+  // OCL-decision_date (QS-KORPUS 25.9.2026, entscheid-kantonsdatum.ts); Bund unverändert.
+  const datumRoh = String(det.canton ?? 'CH') !== 'CH' ? kantonsEntscheiddatum(det, opts.amtlicheKopfSeiten).datum : String(det.decision_date ?? '');
   if (datumRoh && abgerufen && datumRoh > abgerufen) return null;
 
   // ── Abschnitte aus der amtlichen Gliederung (oder Fallback full_text) ──
@@ -478,9 +401,9 @@ export function mappeEntscheidOCL(
   // lieber leer als falsch (Abnahme P1: kantonale Extraktion liefert sonst Erwägungstext).
   const rubrum = canton === 'CH' ? extrahiereRubrum(det.full_text) : null;
   // Zitierung inkl. Aktenzeichen-Norm „5A 229/2017" → „5A_229/2017" (Abnahme P3: Kopf/Tab/Zitat).
-  const zitierung = canton === 'CH'
-    ? String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(String(det.decision_date ?? ''))}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2')
-    : zitierungKantonal(gerichtName, docket, datumRoh);
+  const zitierung = (canton === 'CH'
+    ? String(det.citation_string_de ?? `BGer ${docket} vom ${fmtDatumDe(datumRoh)}`)
+    : `${gerichtName} ${docket} vom ${fmtDatumDe(datumRoh)}`).replace(/\b(\d[A-Z])\s+(\d+\/\d{4})/g, '$1_$2');
 
   // Leitentscheid ⟺ amtliche Sammlung (BGE): Court 'bge' ODER BGE-Fundstelle.
   // KEIN '!!regeste'-Glied mehr — eine maschinelle/kantonale Regeste begründet keinen
@@ -505,7 +428,7 @@ export function mappeEntscheidOCL(
     nummer: docket,
     bgeReferenz: istBge ? docket : (det.bge_reference ? String(det.bge_reference) : null),
     zitierung,
-    datum: istKanton ? datumRoh : String(det.decision_date ?? ''),
+    datum: datumRoh,
     sprache,
     leitcharakter: leit ? 'leitentscheid' : 'routine',
     sachgebiet,
@@ -553,15 +476,7 @@ export async function holeEntscheidOCL(
   // paragraph_excerpt_chars: OCL-Maximum ist 5000 (höher → HTTP 422 → kein Strukturtext).
   const str = await jget<OclStructure>(`${API}/structure/${decisionId}?paragraph_excerpt_chars=5000`);
   await fuelleGekappteErwaegungen(decisionId, str);
-  // Kantonal ohne eigenen Urteilskopf im OCL-Volltext (SG-Deckblatt): Kopf des
-  // amtlichen PDF nachlesen (QS-KORPUS 25.9.2026). Bund: kein Zusatzabruf.
-  let amtlicheKopfSeiten: string[] | null = null;
-  if (String(det.canton ?? 'CH') !== 'CH') {
-    const k = kopfEntscheiddatum(typeof det.full_text === 'string' ? det.full_text : null, String(det.docket_number ?? ''));
-    const url = String(det.pdf_url || det.source_url || '');
-    if (!(k.status === 'ok' && k.regel === 'titel-vom') && url) amtlicheKopfSeiten = await holeAmtlicheKopfSeiten(url);
-  }
-  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten });
+  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten: await kopfSeitenFallsNoetig(det) });
 }
 
 /** Enumeration via Atom-Feed (Frische). Token-Regex auf den Gerichts-Präfix. */
