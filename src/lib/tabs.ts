@@ -285,8 +285,14 @@ const GERICHT_KURZ: Record<string, string> = {
  *  nichts, was die Nummer nicht schon identifiziert, und der `title` des
  *  Reiters trägt die vollständige Zitierung weiter. Ohne Ziffern-Wort gibt es
  *  keinen Kern; dann kürzt wie bisher der ganze Text. */
+//  NACHTRAG REST S5b (25.9.2026): auch das Datum in WORT-Form («vom 20. Juni
+//  2022») — GEMESSEN 39 von 6505 Zitierungen (BGer/BVGer/BStGer/BPatGer),
+//  darunter der einzige Rechtsprechungs-Rest der `kein-abschnitt`-Allowlist
+//  (bger_1B_278_2022 @320/390). Nur die zwölf deutschen Monatsnamen; alles
+//  andere bleibt stehen (§7, nichts raten).
+const DATUM_AM_ENDE = /\s+vom\s+(?:\d{1,2}\.\d{1,2}\.\d{2,4}|\d{1,2}\.\s*(?:Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+\d{4})\s*$/;
 function zerlege(zitierung: string): { kopf: string; kern: string } {
-  const ohneDatum = zitierung.replace(/\s+vom\s+\d{1,2}\.\d{1,2}\.\d{2,4}\s*$/, '');
+  const ohneDatum = zitierung.replace(DATUM_AM_ENDE, '');
   const worte = ohneDatum.split(/\s+/).filter(Boolean);
   const i = worte.findIndex((w) => /\d/.test(w));
   if (i <= 0) return { kopf: '', kern: ohneDatum };
@@ -672,17 +678,26 @@ export function loeseAb(path: string): void {
   schreibe(naechste);
 }
 
+/** Roh-Eintrag aus dem Speicher: `path` Text, `label`/`wahl` fehlend oder
+ *  Text; `fest` wird erst beim Normalisieren gelesen (nur `true` zählt). */
+type TabRoh = { path: string; label?: string; wahl?: string; fest?: unknown };
+const istObjekt = (x: unknown): x is Record<string, unknown> => typeof x === 'object' && x !== null;
+function istTabRoh(e: unknown): e is TabRoh {
+  return istObjekt(e) && typeof e.path === 'string' &&
+    (e.label === undefined || typeof e.label === 'string') &&
+    (e.wahl === undefined || typeof e.wahl === 'string');
+}
+
 export function ladeTabs(): TabEintrag[] {
   try {
     const roh = localStorage.getItem(KEY);
-    const arr = roh ? JSON.parse(roh) : [];
+    // Typ-Härtung (REST S5b): der Speicher ist FREMDE Eingabe — `unknown`
+    // statt des stillen `any` aus `JSON.parse`; die Prüfung selbst unverändert.
+    const arr: unknown = roh ? JSON.parse(roh) : [];
     if (!Array.isArray(arr)) return [];
     const gesehen = new Set<string>();
-    return arr
-      .filter((e): e is TabEintrag & { leer?: unknown } =>
-        e && typeof e.path === 'string' &&
-        (e.label === undefined || typeof e.label === 'string') &&
-        (e.wahl === undefined || typeof e.wahl === 'string'))
+    return (arr as unknown[])
+      .filter(istTabRoh)
       .map(({ path, label, wahl, fest }): TabEintrag => ({
         path,
         ...(label ? { label } : {}),
@@ -1082,11 +1097,11 @@ interface GeschlossenerReiter { eintrag: TabEintrag; index: number }
 function ladeGeschlossene(): GeschlossenerReiter[] {
   try {
     const roh = localStorage.getItem(ZU_KEY);
-    const arr = roh ? JSON.parse(roh) : [];
+    const arr: unknown = roh ? JSON.parse(roh) : [];
     if (!Array.isArray(arr)) return [];
-    return arr
+    return (arr as unknown[])
       .filter((x): x is GeschlossenerReiter =>
-        x && typeof x.index === 'number' && x.eintrag && typeof x.eintrag.path === 'string')
+        istObjekt(x) && typeof x.index === 'number' && istObjekt(x.eintrag) && typeof x.eintrag.path === 'string')
       .slice(-ZU_MAX);
   } catch {
     return [];
@@ -1196,8 +1211,8 @@ const MRU_MAX = 10;
 function ladeMru(): string[] {
   try {
     const roh = localStorage.getItem(MRU_KEY);
-    const arr = roh ? JSON.parse(roh) : [];
-    return Array.isArray(arr) ? arr.filter((x): x is string => typeof x === 'string').slice(-MRU_MAX) : [];
+    const arr: unknown = roh ? JSON.parse(roh) : [];
+    return Array.isArray(arr) ? (arr as unknown[]).filter((x): x is string => typeof x === 'string').slice(-MRU_MAX) : [];
   } catch {
     return [];
   }

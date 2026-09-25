@@ -27,6 +27,7 @@ import { MEHR_KNOPF_KLASSEN } from '../components/ui/mehrKnopfKlassen';
 import type { BrowseEntscheid, RichterRegister } from '../lib/rechtsprechung/register';
 import type { Rechtsgebiet } from '../lib/normtext/register';
 import { useSucheAusUrl } from '../components/suche/useSucheAusUrl';
+import { Ladeanzeige } from '../components/ui/Ladeanzeige';
 import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 
 /** Zahl der Ausgabe-Zeile in Schweizer Schreibweise (1'338). */
@@ -384,10 +385,7 @@ export function Rechtsprechung() {
           verzögert oder versteckt: es steht dieselbe Anzeige, nur ohne dass der
           Seitenfuss dafür nach oben rückt. */}
       {!alle && !fehler && (
-        <div className={`${pk('min-h-screen', 'min-h-[24rem]')} space-y-3 py-12 text-center`}>
-          <div className="scale-rule mx-auto max-w-[200px]" aria-hidden />
-          <p className="text-body-s text-ink-500">Die Sammlung wird abgerufen …</p>
-        </div>
+        <Ladeanzeige text="Die Sammlung wird abgerufen …" className={`${pk('min-h-screen', 'min-h-[24rem]')} py-12`} />
       )}
 
       {alle && alle.length === 0 && (
