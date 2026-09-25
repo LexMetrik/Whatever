@@ -246,17 +246,31 @@ const INTERNER_TITEL =
  * (BPatGer S2025_003, so im amtlichen PDF). Steht nach einem Rollenwort genau EIN
  * gross geschriebenes Wort vor der Titelkette, ist es der Vorname derselben Person —
  * kein eigener Name. INTERNER_TITEL hätte dort geschnitten und die Phantom-Richter
- * `mark` + `schweizer` erzeugt (Auflage A1 Gegenprüfung #1117, 25.9.2026). Der Titel
- * wird darum VOR den Vornamen gezogen. Bewusst eng: nur nach einem Rollenwort, sodass
- * das fehlende Komma zwischen ZWEI Vollnamen (BEZ.2025.75) weiter getrennt wird.
+ * `mark` + `schweizer` erzeugt (Auflage A1 Gegenprüfung #1117, 25.9.2026). Der Schnitt
+ * fällt darum VOR den Vornamen; das Stück «Mark Dr. iur. Schweizer» bleibt ganz und
+ * wird erst beim Namensbilden vom inneren Titel befreit (`ohneInnerenTitel`) — so
+ * bleibt der Roh-Name wortgetreu im Freitext auffindbar (Reader-Verlinkung, G5).
+ * Bewusst eng: nur nach einem Rollenwort, sodass das fehlende Komma zwischen ZWEI
+ * Vollnamen (BEZ.2025.75) weiter getrennt wird.
  */
-const TITEL_IM_NAMEN =
-  /\b((?:Pr[äa]sident|Richter)(?:in)?\s+)(\p{Lu}[\p{Ll}'’-]+)\s+((?:(?:Prof\.|Dr\.|iur\.|med\.|phil\.|sc\.|nat\.|chem\.|ETH)\s*)+)(?=\p{Lu})/gu;
+const TITEL_KETTE = '(?:(?:Prof\\.|Dr\\.|iur\\.|med\\.|phil\\.|sc\\.|nat\\.|chem\\.|ETH)\\s*)+';
+const TITEL_IM_NAMEN = new RegExp(
+  `\\b(?:Pr[äa]sident|Richter)(?:in)?\\s+(?=\\p{Lu}[\\p{Ll}'’-]+\\s+${TITEL_KETTE}\\p{Lu})`, 'u');
+const INNERER_TITEL = new RegExp(`^(\\p{Lu}[\\p{Ll}'’-]+)\\s+${TITEL_KETTE}(?=\\p{Lu})`, 'u');
+
+/** «Mark Dr. iur. Schweizer» → «Mark Schweizer» (nur Titelkette direkt nach EINEM Vornamen). */
+const ohneInnerenTitel = (s: string) => s.replace(INNERER_TITEL, '$1 ');
 
 /** Segment an internen Titel-Startpunkten auftrennen (amtliche Komma-Fehler heilen). */
 function trenneInterneTitel(seg: string): string[] {
-  return seg.replace(TITEL_IM_NAMEN, '$1$3$2 ')
-    .split(INTERNER_TITEL).map((x) => x.trim()).filter(Boolean);
+  const teile = (x: string) => x.split(INTERNER_TITEL).map((y) => y.trim()).filter(Boolean);
+  const m = TITEL_IM_NAMEN.exec(seg);
+  if (!m) return teile(seg);
+  const vor = seg.slice(0, m.index + m[0].length);
+  const name = seg.slice(m.index + m[0].length);
+  const kopf = INNERER_TITEL.exec(name)![0];
+  const [erstes = '', ...weitere] = teile(name.slice(kopf.length));
+  return [...teile(vor), `${kopf}${erstes}`.trim(), ...weitere];
 }
 
 /** Diakritika-/Ligatur-Faltung für den Kanon-Slug (deterministisch, §2). */
@@ -526,7 +540,7 @@ function segmentZuRichter(
   // Ein Rest, der noch Ziffern oder ein verbliebenes Rollen-/Verfahrenswort trägt,
   // ist nicht sicher ein Name → verwerfen (Ehrlichkeit, lieber leer als falsch).
   if (/\d/.test(rest)) return null;
-  const teile = tokenisiereName(rest, nurNachname);
+  const teile = tokenisiereName(ohneInnerenTitel(rest), nurNachname);
   if (!teile || !teile.surname) return null;
   // Nachname muss mit einem Buchstaben beginnen (kein Rest-Satzzeichen).
   if (!/[A-Za-zÀ-ÿ]/.test(teile.surname)) return null;
