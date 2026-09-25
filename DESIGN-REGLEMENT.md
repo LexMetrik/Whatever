@@ -482,6 +482,14 @@ prüft der Orchestrator separat). Vier Klassen:
    (Sollwerte legt erst D-9/Stripe-L-Anker fest). Chroma-Dämpfung Akzent (dunkel
    C ≤ hell −10 %) = WARNUNG. **APCA-Spalte NUR beratend** (Lc), nie Fail —
    WCAG 2.2 bleibt das Gate.
+   **Auf Ist gezogen (REST S5c, 25.9.2026):** der Ziel-Hue-88°-Satz galt für
+   D-4 (13.7.2026) und wird nicht überschrieben (§0.2b). Seit
+   `W2·24-DESIGN-IDENTITAET` R1 (6.9.2026, Beleg `design/tokens.json`
+   ink-900-Eintrag) ist die ink-Rampe **chromafrei (C = 0, reines
+   Neutralgrau)** — «die frühere Wärme (Hue 88°) WAR die halbe
+   Creme-Gold-Signatur». Der Hue-Drift-Wächter greift bei C = 0 nicht mehr
+   (OKLCH kennt dort keinen Hue); geprüft bleibt nur die L-Monotonie. Für
+   `brass` gilt Ziff. 4 unverändert.
 
 **F2b-Nachträge (D-3 12.7. · D-4 13.7. · D-5/A38 16.7. · QS-UI 8a 4.8.2026) —
 Messreihen im Archiv, geltende Regeln hier.** Die Vorher/Nachher-Tabellen stehen
@@ -1959,6 +1967,12 @@ Archiv.)*
    Mobile 390 in hell und dunkel.
 8. Kein Push/Deploy ohne Davids ausdrückliches Ja (§9); fachliche Abnahme der
    Optik durch David selbst.
+   **Auf Ist gezogen (REST S5c, 25.9.2026):** CLAUDE.md §9 lautet seit
+   Weisung David 3.8.2026 «Push ist stehend freigegeben»; nur `main` läuft
+   über die Merge-Queue nach Gegenprüfung. Ziff. 8 überholt darum den
+   Push-Teil selbst — gilt nur noch: **fachliche Abnahme der Optik bleibt
+   bei David**, kein stiller Merge auf Risiko-Pfaden ohne Gegenprüfungs-
+   Verdikt (Skill `landung`).
 
 ### §J · Umsetzungs-Entscheide (Stand 23.6.2026)
 
@@ -2172,3 +2186,9 @@ Begründungen in `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor `e2e/qsui-hier
    (§6 Ziff. 3, eigener begründeter Schritt) — nie stillschweigend aufgeweicht.
 6. Kein Push/Deploy ohne Davids ausdrückliches Ja (§9); fachliche Abnahme der
    Optik durch David selbst (Ausprobieren).
+   **Auf Ist gezogen (REST S5c, 25.9.2026):** CLAUDE.md §9 lautet seit
+   Weisung David 3.8.2026 «Push ist stehend freigegeben»; nur `main` läuft
+   über die Merge-Queue nach Gegenprüfung. Ziff. 6 überholt darum den
+   Push-Teil selbst — gilt nur noch: **fachliche Abnahme der Optik bleibt
+   bei David**, kein stiller Merge auf Risiko-Pfaden ohne Gegenprüfungs-
+   Verdikt (Skill `landung`).
