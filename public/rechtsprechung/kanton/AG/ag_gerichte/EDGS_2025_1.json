@@ -1,0 +1,47 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "kanton/AG/ag_gerichte/EDGS_2025_1",
+      "gericht": "ag_gerichte",
+      "gerichtName": "Obergericht AG",
+      "gerichtstyp": "kantonal",
+      "kanton": "AG",
+      "abteilung": "EDGS",
+      "nummer": "EDGS.2025.1",
+      "bgeReferenz": null,
+      "zitierung": "Obergericht AG EDGS.2025.1 vom 20.03.2025",
+      "datum": "2025-03-20",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": null,
+      "rubrum": null,
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "Aargau Verwaltungsbehörden Departement Gesundheit und Soziales 20.03.2025 EDGS.2025.1 Argovie Verwaltungsbehörden Departement Gesundheit und Soziales 20.03.2025 EDGS.2025.1 Argovia Verwaltungsbehörden Departement Gesundheit und Soziales 20.03.2025 EDGS.2025.1\n\nAargau Verwaltungsbehörden Departement Gesundheit und Soziales Argovie Verwaltungsbehörden Departement Gesundheit und Soziales Argovia Verwaltungsbehörden Departement Gesundheit und Soziales Departement Gesundheit und Soziales / Generalsekretariat / Rechtsdienst Departement Gesundheit und Soziales / Generalsekretariat / Rechtsdienst"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [],
+      "normKeys": [],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://decwork.ag.ch/api/main/v1/de/decrees_pdf/10934",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "6447905681c859c0b1af80090e24a044fc82bca9592e2a903f96adf289077d93",
+      "sha": "ab1bbc7c9c76fcfb250510fd147adf9314b0e1d3559fb96de58e578e514e98a9",
+      "ecli": "ECLI:CH:AGG:2025:EDGS.2025.1"
+    }
+  ]
+}

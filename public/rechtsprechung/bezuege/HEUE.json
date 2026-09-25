@@ -3,12 +3,17 @@
 "erlass":"HEUE",
 "erlassEbene":"bund",
 "dokumente":{
+"ag_gerichte_HOR_2025_3":{"zitierung":"Obergericht AG HOR.2025.3 vom 21.08.2025","regesteKurz":null,"datum":"2025-08-21","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"AG","gericht":"ag_gerichte","status":"kantonal"}},
 "bs_appellationsgericht_KE.2023.3":{"zitierung":"Appellationsgericht BS KE.2023.3 vom 25.09.2023","regesteKurz":"Errichtung einer Beistandschaft für E____ (BGer 5A_870/2023 vom 6.12.2023)","datum":"2023-09-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"5":[{"key":"bs_appellationsgericht_KE.2023.3","gewicht":null}]
+"5":[{"key":"bs_appellationsgericht_KE.2023.3","gewicht":null}],
+"22":[{"key":"ag_gerichte_HOR_2025_3","gewicht":null}],
+"26":[{"key":"ag_gerichte_HOR_2025_3","gewicht":null}]
 },
 "gesamtProArtikel":{
-"5":{"kantonal":1}
+"5":{"kantonal":1},
+"22":{"kantonal":1},
+"26":{"kantonal":1}
 }
 }

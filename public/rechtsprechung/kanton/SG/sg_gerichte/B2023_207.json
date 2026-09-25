@@ -1,0 +1,52 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "kanton/SG/sg_gerichte/B2023_207",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "abteilung": "B",
+      "nummer": "B 2023/207",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2023/207 vom 19.09.2025",
+      "datum": "2025-09-19",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": null,
+      "rubrum": null,
+      "regeste": {
+        "text": "Enteignungsrecht, Art. 15-17 EntG SG.\nStreitig war die Bemessung der enteignungsrechtlichen Entschädigung für die Abtretung des Eigentums an eine neu zu schaffende Wegparzelle. Da das Restgrundstück neu einen Grenz- oder Strassenabstand gegenüber der Wegparzelle einzuhalten hat, wird die Nutzbarkeit des Restgrundstücks durch die Abtretung an die Wegparzelle geschmälert, selbst wenn die von der Enteignung betroffene Fläche zuvor innerhalb des kleinen Grenzabstands von 5,0 m lag. Der Schluss der Vorinstanz, die Voraussetzungen für eine Landwert-Kürzung seien nicht gegeben, war deshalb nicht zu beanstanden (E. 5), (Verwaltungsgericht, B 2023/207).\nDie gegen dieses Urteil erhobene Beschwerde ans Bundesgericht wurde mit Urteil vom 19. September 2025 gutgeheissen (Verfahren 1C_469/2024)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "St.Gallen Verwaltungsgericht 18.06.2024 B 2023/207 Saint-Gall Verwaltungsgericht 18.06.2024 B 2023/207 San Gallo Verwaltungsgericht 18.06.2024 B 2023/207\n\nEnteignungsrecht, Art. 15-17 EntG SG. Streitig war die Bemessung der enteignungsrechtlichen Entschädigung für die Abtretung des Eigentums an eine neu zu schaffende Wegparzelle. Da das Restgrundstück neu einen Grenz- oder Strassenabstand gegenüber der Wegparzelle einzuhalten hat, wird die Nutzbarkeit des Restgrundstücks durch die Abtretung an die Wegparzelle geschmälert, selbst wenn die von der Enteignung betroffene Fläche zuvor innerhalb des kleinen Grenzabstands von 5,0 m lag. Der Schluss der Vorinstanz, die Voraussetzungen für eine Landwert-Kürzung seien nicht gegeben, war deshalb nicht zu beanstanden (E. 5), (Verwaltungsgericht, B 2023/207). Die gegen dieses Urteil erhobene Beschwerde ans Bundesgericht wurde mit Urteil vom 19. September 2025 gutgeheissen (Verfahren 1C_469/2024)\n\nSt.Gallen Verwaltungsgericht Saint-Gall Verwaltungsgericht San Gallo Verwaltungsgericht"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [],
+      "normKeys": [
+        "ENTG"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=12905&type=1563347022&cHash=820c4497020780f3e933c756c78abb15",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2f72422a767b96cd098e981aaeec1fff553272d595da239fb0b0a979d1ce4628",
+      "sha": "71c98a450694d66576399381830842c29e2621955ae06709503fc70f971158fb",
+      "ecli": "ECLI:CH:SGG:2025:B.2023.207"
+    }
+  ]
+}
