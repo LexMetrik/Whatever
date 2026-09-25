@@ -595,9 +595,14 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // Kanten / 93 Artikel / 18 Erlasse. Die eidg-Klasse verliert die IRSG-Kanten
     // von bund/bstger/RR_2026_46 (it, nennt das IRSG nur als «AIMP», das seit der
     // Sperre nicht mehr auflöst — benannte Lücke, §8). Aussage des Tests steht.
-    expect(bilanz.kantenJeStatus.eidg).toBe(159);
-    expect(bilanz.artikelJeStatus.eidg).toBe(88);
-    expect(bilanz.erlasseJeStatus.eidg).toBe(17);
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Stichproben-Nachzug eidg. 3×5 +
+    // ZH/BE je 6; SG/AG/GR wegen falschen Datums ausgenommen): eidg 159 → 404 Kanten, 88 → 184 Artikel, 17 → 25 Erlasse —
+    // 15 neue BVGer/BStGer/BPatGer-Urteile (vorher 15, jetzt 30 eidg. Snapshots;
+    // Asyl-/Ausländerrecht zitiert breit). Nullprobe origin/main 284deacdb = 159/88/17.
+    // Die Klasse bleibt gegenüber kantonal (> 50 000) klein; die Aussage steht.
+    expect(bilanz.kantenJeStatus.eidg).toBe(404);
+    expect(bilanz.artikelJeStatus.eidg).toBe(184);
+    expect(bilanz.erlasseJeStatus.eidg).toBe(25);
     // 6217 → 6228 (25.9.2026, W2·29-WERKBANK-LESER Welle 2 D2): die committeten
     // Bezugs-Projektionen hinkten dem Generator seit #860/#911 nach — der AVG
     // kam in den Normtext-Korpus, seine Kanten (11 Artikel, 1 Erlass) nie in
@@ -614,7 +619,9 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // 6335 → 6404 (25.9.2026, QS-KORPUS BS-Delta +185 neu / 41 aktualisiert): die
     // neuen BS-Urteile zitieren 69 bisher unzitierte Artikel (Bund + BS-Erlasse).
     // eidg-Werte (159/88/17) unverändert — die Aussage des Tests steht.
-    expect(bilanz.artikelGesamt).toBe(6404);
+    // 6404 → 6431 (25.9.2026, Stichproben-Nachzug, s. oben): die 27 neuen Urteile
+    // zitieren 27 bisher unzitierte Artikel. Nullprobe origin/main 284deacdb = 6404.
+    expect(bilanz.artikelGesamt).toBe(6431);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
@@ -639,7 +646,12 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
   it('klassenImShard zählt je Klasse — Entscheide UND Fundstellen getrennt', () => {
     const s = JSON.parse(readFileSync('public/rechtsprechung/bezuege/OR.json', 'utf8')) as BezugsShard;
     const n = klassenImShard(s);
-    expect(n.eidg).toBeUndefined();          // 0 Fundstellen ⇒ gar kein Eintrag
+    // §6.3-DEKLARATION (25.9.2026, Stichproben-Nachzug): bis dahin trug das OR
+    // keine eidg-Fundstelle (`n.eidg` undefined). Die neuen BPatGer-Urteile
+    // (O2023_002/008, O2023_017, S2025_003) zitieren das OR: 3 Entscheide, 4 Kanten.
+    expect(n.eidg).toEqual({ dokumente: 3, kanten: 4 });
+    // Die frühere Aussage «0 Fundstellen ⇒ gar kein Eintrag» bleibt geprüft:
+    for (const z of Object.values(n)) expect(z.kanten).toBeGreaterThan(0);
     expect(n.bge!.dokumente).toBeGreaterThan(0);
     // Summe der KANTEN == Kanten des Shards (keine doppelte Zählung).
     const summe = Object.values(n).reduce((a, b) => a + b.kanten, 0);
