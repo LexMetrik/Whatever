@@ -1,8 +1,10 @@
 /**
  * scripts/normtext/segmente-soll.ts — reine Soll-/Basislinien-Logik für
  * `check:segmente` (QS-KORPUS). Ausgelagert aus `segmente-logik.ts` (Runde 3,
- * 25.9.2026 — §6.6 Datei-Schlankheit), dort re-exportiert. Kein DOM, keine I/O.
+ * 25.9.2026 — §6.6 Datei-Schlankheit), dort re-exportiert. Kein DOM, keine I/O:
+ * alles hier ist über In-Memory-Werte testbar (G4: «Einheitstests für B6 und B9»).
  */
+import { createHash } from 'node:crypto';
 
 export interface Fingerabdruck {
   laenge: number;
@@ -73,6 +75,157 @@ export function sollZuFingerabdruecke(paare: [number, string][]): Fingerabdruck[
 
 export function pinIdentGleich(a: SollPin, b: SollPin): boolean {
   return a.eli === b.eli && a.konsolidierung === b.konsolidierung && a.htmlN === b.htmlN;
+}
+
+/** Inhalts-Gleichheit (Mengen je eId, Reihenfolge egal) — Grundlage für «Soll veraltet» (C) und B6. */
+export function sollInhaltGleich(
+  a: Record<string, [number, string][]>,
+  b: Record<string, [number, string][]>,
+): boolean {
+  const schluesselA = Object.keys(a).sort();
+  const schluesselB = Object.keys(b).sort();
+  if (schluesselA.length !== schluesselB.length) return false;
+  for (let i = 0; i < schluesselA.length; i++) if (schluesselA[i] !== schluesselB[i]) return false;
+  for (const eId of schluesselA) {
+    const sa = new Set(a[eId].map(([l, h]) => `${l}:${h}`));
+    const sb = new Set(b[eId].map(([l, h]) => `${l}:${h}`));
+    if (sa.size !== sb.size) return false;
+    for (const v of sa) if (!sb.has(v)) return false;
+  }
+  return true;
+}
+
+// ── B6 (G4, Runde 3): Soll-Änderung im committeten Bereich klassieren ───────
+
+export type SollAenderung =
+  | 'unveraendert' // Inhalt gleich (nur Formatierung o.ä.)
+  | 'pinwechsel' // Pin gewandert — Inhaltswechsel belegt (Frische-Arm/Kaskade)
+  | 'neu' // Datei in der Basis nicht vorhanden — ohne Vergleichsbasis
+  | 'versionswechsel' // segmenterVersion ≠ Basis — ohne Vergleichsbasis
+  | 'geloescht' // Modus B meldet «kein Soll» selbst rot
+  | 'unlesbar' // nicht parsebar ⇒ Verstoss (früher still übersprungen)
+  | 'verstoss'; // Inhalt/Statistik geändert OHNE Pin-/Versionswechsel
+
+/** Klassiert EINE geänderte Soll-Datei; `alt`/`neu` = Dateiinhalt oder `null` (fehlt). */
+export function klassiereSollAenderung(alt: string | null, neu: string | null): SollAenderung {
+  if (neu === null) return 'geloescht';
+  if (alt === null) return 'neu';
+  let altSoll: SollDatei;
+  let neuSoll: SollDatei;
+  try {
+    altSoll = JSON.parse(alt) as SollDatei;
+    neuSoll = JSON.parse(neu) as SollDatei;
+  } catch {
+    return 'unlesbar';
+  }
+  if (!altSoll?.pin || !neuSoll?.pin || !altSoll.artikel || !neuSoll.artikel) return 'unlesbar';
+  if (altSoll.segmenterVersion !== neuSoll.segmenterVersion) return 'versionswechsel';
+  if (!pinIdentGleich(altSoll.pin, neuSoll.pin)) return 'pinwechsel';
+  const gleich =
+    sollInhaltGleich(altSoll.artikel, neuSoll.artikel) &&
+    zeilenStatistikGleich(altSoll.zeilenStatistik, neuSoll.zeilenStatistik);
+  return gleich ? 'unveraendert' : 'verstoss';
+}
+
+// ── Modus-C-Beleg (G4b): Reibung, keine Kryptografie ────────────────────────
+//
+// Jede Soll-Datei OHNE Vergleichsbasis (neu oder Versionswechsel) ist für B6
+// blind — Modus B kann ihren Inhalt nicht gegen einen früheren Stand prüfen.
+// Dann verlangt Modus B einen committeten Beleg, dass die Soll-Dateien aus der
+// HTML erzeugt wurden: `--schreiben` (die einzige Ableitung HTML → Soll)
+// schreibt ihn, mit Hash über ALLE Soll-Dateien. Eine Hand-Änderung danach
+// (P6 im PR-Stand) passt nicht mehr zum Hash ⇒ rot. Muster wie `anhebungen` in
+// messwerte/steuerflaeche.json: kein Schutz gegen Vorsatz, sondern gegen das
+// stille Durchrutschen. Ein SHA-256 statt eines eigenen Rolling-Hashes, weil
+// der Beleg ganze Dateien deckt und `node:crypto` ohnehin da ist.
+
+export const BELEG_DATEINAME = '_modus-c-beleg.json';
+
+export interface ModusCBeleg {
+  segmenterVersion: number;
+  sollHash: string; // sha256 über alle Soll-Dateien (Name + Inhalt, nach Name sortiert)
+  dateien: number;
+  datum: string; // YYYY-MM-DD des Schreibens — bleibt bei unverändertem Hash stehen (byte-gleiche Wiederholung)
+}
+
+export function sollBelegHash(dateien: ReadonlyArray<{ name: string; inhalt: string }>): string {
+  const h = createHash('sha256');
+  for (const d of [...dateien].sort((x, y) => (x.name < y.name ? -1 : x.name > y.name ? 1 : 0))) {
+    h.update(d.name, 'utf8');
+    h.update('\u0000', 'utf8');
+    h.update(d.inhalt, 'utf8');
+    h.update('\u0000', 'utf8');
+  }
+  return h.digest('hex');
+}
+
+export function pruefeBeleg(
+  beleg: ModusCBeleg | null,
+  erwartet: { segmenterVersion: number; sollHash: string },
+): { ok: true } | { ok: false; grund: string } {
+  if (!beleg) return { ok: false, grund: `kein ${BELEG_DATEINAME}` };
+  if (beleg.segmenterVersion !== erwartet.segmenterVersion) {
+    return { ok: false, grund: `Beleg-Version ${beleg.segmenterVersion} ≠ SEGMENTER_VERSION ${erwartet.segmenterVersion}` };
+  }
+  if (beleg.sollHash !== erwartet.sollHash) {
+    return { ok: false, grund: 'Beleg-Hash passt nicht zu den Soll-Dateien (Soll nach --schreiben geändert?)' };
+  }
+  return { ok: true };
+}
+
+export interface B6Urteil {
+  verstoss: string[]; // Pfade: Inhaltswechsel ohne Pin-/Versionswechsel oder unlesbar
+  ohneBasisNeu: string[];
+  ohneBasisVersion: string[];
+  belegPflicht: boolean;
+  belegFehler?: string; // gesetzt ⇔ belegPflicht und Beleg ungültig
+}
+
+/**
+ * Gesamturteil B6 aus den klassierten Änderungen. `beleg` wird nur gebraucht,
+ * wenn mindestens eine Datei ohne Vergleichsbasis ist (neu/Versionswechsel).
+ */
+export function urteileB6(
+  aenderungen: ReadonlyArray<{ pfad: string; art: SollAenderung }>,
+  beleg: () => { ok: true } | { ok: false; grund: string },
+): B6Urteil {
+  const verstoss = aenderungen.filter((a) => a.art === 'verstoss' || a.art === 'unlesbar').map((a) => a.pfad);
+  const ohneBasisNeu = aenderungen.filter((a) => a.art === 'neu').map((a) => a.pfad);
+  const ohneBasisVersion = aenderungen.filter((a) => a.art === 'versionswechsel').map((a) => a.pfad);
+  const belegPflicht = ohneBasisNeu.length + ohneBasisVersion.length > 0;
+  const urteil: B6Urteil = { verstoss, ohneBasisNeu, ohneBasisVersion, belegPflicht };
+  if (belegPflicht) {
+    const b = beleg();
+    if (!b.ok) urteil.belegFehler = b.grund;
+  }
+  return urteil;
+}
+
+// ── B9: --schreiben ohne vollständigen Cache ────────────────────────────────
+
+/**
+ * Welche Soll-Dateien sind gegenüber dem DEKLARIERTEN Pin (fedlex-cache.sh) +
+ * heutiger Segmenter-Version nicht aktuell? Leer ⇒ `--schreiben` darf ohne
+ * Cache überspringen (nichts zu tun); sonst ⇒ FEHLER (Update nötig, ohne HTML
+ * unmöglich). Reiner String-Vergleich, keine HTML.
+ */
+export function sollAktualitaet(
+  eintraege: ReadonlyArray<{ name: string } & SollPin>,
+  liesSoll: (name: string) => SollDatei | null,
+  segmenterVersion: number,
+): { fehlend: string[]; veraltet: string[] } {
+  const fehlend: string[] = [];
+  const veraltet: string[] = [];
+  for (const e of eintraege) {
+    const soll = liesSoll(e.name);
+    if (!soll) {
+      fehlend.push(e.name);
+      continue;
+    }
+    const pin: SollPin = { eli: e.eli, konsolidierung: e.konsolidierung, htmlN: e.htmlN };
+    if (!pinIdentGleich(soll.pin, pin) || soll.segmenterVersion !== segmenterVersion) veraltet.push(e.name);
+  }
+  return { fehlend, veraltet };
 }
 
 // ── Basislinie (§ Architektur Ziff. 7 / NACHTRAG Punkt E) ──────────────────

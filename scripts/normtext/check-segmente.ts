@@ -35,30 +35,39 @@
  * (R6–R9, s. Bericht) — ein Test-Cache-Verzeichnis statt des mit anderen
  * Sessions GETEILTEN `/tmp`, damit die Rot-Proben den echten Cache nie anfassen.
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { parseFedlexCacheEintraege, type FedlexCacheEintrag } from './inventar-bund.ts';
 import { pinBefund, pinIdentitaet } from './cache-pin-befund.ts';
 import {
   addiereZeilenStatistik,
+  BELEG_DATEINAME,
   alleAnhangEids,
   alleArtikelEids,
   ankerIdVonEid,
   dispTextAusserhalbArtikel,
   fehlendeIndizes,
   fingerabdrueckeZuSoll,
+  klassiereSollAenderung,
   gleicheBasislinieAb,
   leereZeilenStatistik,
   parseErlassHtml,
   pinIdentGleich,
+  pruefeBeleg,
   projektionsBlob,
   segmentiereAnker,
   segmenteZuFingerabdruecken,
   SEGMENTER_VERSION,
+  sollAktualitaet,
+  sollBelegHash,
+  sollInhaltGleich,
   sollZuFingerabdruecke,
+  urteileB6,
   zeilenStatistikGleich,
+  type B6Urteil,
   type BasislinienEintrag,
   type Fingerabdruck,
+  type ModusCBeleg,
   type ProjektionsEintrag,
   type SollDatei,
   type SollPin,
@@ -163,23 +172,6 @@ function ladeBasislinie(): BasislinienEintrag[] {
   return JSON.parse(readFileSync(BASISLINIEN_PFAD, 'utf8')) as BasislinienEintrag[];
 }
 
-function sollInhaltGleich(
-  a: Record<string, [number, string][]>,
-  b: Record<string, [number, string][]>,
-): boolean {
-  const schluesselA = Object.keys(a).sort();
-  const schluesselB = Object.keys(b).sort();
-  if (schluesselA.length !== schluesselB.length) return false;
-  for (let i = 0; i < schluesselA.length; i++) if (schluesselA[i] !== schluesselB[i]) return false;
-  for (const eId of schluesselA) {
-    const sa = new Set(a[eId].map(([l, h]) => `${l}:${h}`));
-    const sb = new Set(b[eId].map(([l, h]) => `${l}:${h}`));
-    if (sa.size !== sb.size) return false;
-    for (const v of sa) if (!sb.has(v)) return false;
-  }
-  return true;
-}
-
 // ── Frische Ableitung aus HTML (Modus C / --schreiben) ─────────────────────
 
 interface FrischesSoll {
@@ -192,23 +184,13 @@ interface FrischesSoll {
   restmeldungen: string[]; // B2/G5: unklassifizierter Text nach der Zerlegung — ROT (s. segmente-logik.ts restmenge)
 }
 
-// G1/G6 (Runde 3, 25.9.2026): die frühere Allowlist `zeilenFingerabdruckUnsicher`
-// (Zeilen-Fingerabdruck je Projektions-EINTRAG ab, sobald dort `items` oder
-// `mehrspaltig.spalten` vorkam) ist entfernt — sie liess 62 % aller Zeilen
-// ungeschützt (GebV SchKG Art. 16 «190.–», GebV-HReg Anhang «160.–» grün) und
-// machte das Soll von der Projektion abhängig (G6). Der Entscheid fällt jetzt
-// je Zeile, allein aus der HTML (`segmente-logik.ts`, `zeilenSegmente`).
 /**
- * B1+B5 (Gegenprüfung 25.9.2026): die zu prüfende Artikelmenge kommt aus DEN
- * HTML-ANKERN (`alleArtikelEids`), VEREINIGT mit den Projektions-eIds — nicht
- * NUR aus der Projektion (B5: sonst bliebe ein ganzer aus der Projektion
- * gelöschter Artikel unbemerkt) und nicht NUR aus der HTML (die Vereinigung
- * erhält die dokumentierte KKV-Ausnahme: `art_126_z__2` ist ein
- * Synthese-Schlüssel, der NUR in der Projektion existiert, s.
- * AUSKLAMMERUNG_AUSNAHME oben). Jede eId wird über `ankerIdVonEid` auf ihre
- * HTML-Anker-Form abgebildet (B1: disp_uN_x → disp_uN/x) und per
- * `segmentiereAnker` gegen die HTML aufgelöst — unabhängig davon, ob die
- * Projektion aktuell einen Eintrag dafür hat oder nicht.
+ * B1+B5+G3: die zu prüfende Artikelmenge = HTML-Anker (art_*, disp_uN/art_*,
+ * Anhang-/scope-/decl-Sektionen) VEREINIGT mit den Projektions-eIds — nur HTML
+ * verlöre die KKV-Ausnahme (Synthese-Schlüssel art_126_z__2), nur Projektion
+ * einen ganz gelöschten Artikel (B5). Jede eId wird per `ankerIdVonEid`
+ * (disp_uN_x → disp_uN/x) gegen die HTML aufgelöst. Der Zeilen-Fingerabdruck
+ * hängt seit G1/G6 (Runde 3) nicht mehr von der Projektion ab.
  */
 function leiteFrischesSollAb(e: FedlexCacheEintrag): FrischesSoll {
   const html = readFileSync(`${cacheDir}/${e.name}.html`, 'utf8');
@@ -349,6 +331,7 @@ function schreibeSoll(eintraege: FedlexCacheEintrag[]): void {
 
   mkdirSync(SOLL_VERZEICHNIS, { recursive: true });
   for (const d of dateien) writeFileSync(`${SOLL_VERZEICHNIS}/${d.name}`, d.inhalt, 'utf8');
+  schreibeBeleg(); // G4: Modus-C-Beleg — Hash über alle Soll-Dateien, wie sie jetzt auf der Platte liegen
   console.log(
     `✓ --schreiben: ${eintraege.length} Soll-Dateien in ${SOLL_VERZEICHNIS}/ geschrieben ` +
       `(${gesamtArtikel} Artikel, ${gesamtSegmente} Segmente, ${ausklammerungen.length} ausgeklammert ` +
@@ -481,14 +464,13 @@ function pruefeModusC(eintraege: FedlexCacheEintrag[]): Zwischenergebnis {
 //
 // Modus B vergleicht die Projektion NUR gegen das committete Soll — löscht ein
 // Commit denselben Fingerabdruck aus BEIDEN gemeinsam, bleibt B grün (Modus C
-// erkennt es, weil es das Soll frisch aus der HTML ableitet und die Abweichung
-// als «veraltet» meldet — aber C läuft nur im Cache-Pfad, s. Linse 9). B-Regel:
-// eine Soll-Datei darf sich im COMMITTETEN Bereich nur ändern, wenn Pin ODER
-// Segmenter-Version mitgewandert sind — sonst ist der Inhaltswechsel unbelegt.
-// Diff-Basis WIE `check:merge-schutz` (git merge-base gegen origin/main..HEAD,
-// per Umgebungsvariable überschreibbar) — nicht neu erfunden (B6-Auflage,
-// scripts/check-merge-schutz.ts). Ohne auflösbare Basis: NICHT still grün
-// (§6.7) — eine eigene, sichtbare Meldung statt eines gemeldeten "alles ok".
+// erkennt es über die frische HTML-Ableitung, läuft aber nur im Cache-Pfad).
+// B-Regel: eine Soll-Datei darf sich im COMMITTETEN Bereich nur ändern, wenn
+// Pin ODER Segmenter-Version mitgewandert sind. Diff-Basis WIE
+// `check:merge-schutz` (git merge-base origin/main HEAD, per Umgebung
+// überschreibbar). G4 (Runde 3): ohne auflösbare Basis ROT wie dort (vorher
+// «übersprungen» + grün); Dateien OHNE Vergleichsbasis (neu/Versionswechsel)
+// werden gezählt und verlangen einen gültigen Modus-C-Beleg (segmente-soll.ts).
 const B6_BASIS_REF = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
 const B6_KOPF_REF = process.env.MERGE_SCHUTZ_KOPF ?? 'HEAD';
 
@@ -500,45 +482,67 @@ function gitStill(args: string[]): string | null {
   }
 }
 
-function pruefeSollUnveraendertOhnePinwechsel(): { verstoss: string[]; hinweis?: string } {
-  const basis = gitStill(['merge-base', B6_BASIS_REF, B6_KOPF_REF]);
-  if (basis === null) {
-    return { verstoss: [], hinweis: `B6 übersprungen — Referenz '${B6_BASIS_REF}' nicht auflösbar (kein stiller Skip, §6.7).` };
-  }
-  const basisTrim = basis.trim();
-  const diffOut = gitStill(['diff', '--name-only', `${basisTrim}..${B6_KOPF_REF}`, '--', SOLL_VERZEICHNIS]);
-  if (diffOut === null) {
-    return { verstoss: [], hinweis: 'B6 übersprungen — git diff auf die Soll-Dateien fehlgeschlagen.' };
-  }
-  const geaendert = diffOut
-    .split('\n')
-    .map((z) => z.trim())
-    .filter(Boolean);
-  const verstoss: string[] = [];
-  for (const pfad of geaendert) {
-    const alt = gitStill(['show', `${basisTrim}:${pfad}`]);
-    if (alt === null) continue; // Datei neu in diesem Bereich — kein Vergleich möglich, kein B6-Fall.
-    let neu: string;
-    try {
-      neu = readFileSync(pfad, 'utf8');
-    } catch {
-      continue; // gelöscht — anderes Tor/die Basislinie deckt das ab.
-    }
-    let altSoll: SollDatei;
-    let neuSoll: SollDatei;
-    try {
-      altSoll = JSON.parse(alt) as SollDatei;
-      neuSoll = JSON.parse(neu) as SollDatei;
-    } catch {
-      continue; // nicht parsebar — kein B6-Vergleich möglich.
-    }
-    const pinUndVersionGleich =
-      pinIdentGleich(altSoll.pin, neuSoll.pin) && altSoll.segmenterVersion === neuSoll.segmenterVersion;
-    if (pinUndVersionGleich && !sollInhaltGleich(altSoll.artikel, neuSoll.artikel)) verstoss.push(pfad);
-  }
-  return { verstoss };
+function liesOderNull(pfad: string): string | null {
+  return existsSync(pfad) ? readFileSync(pfad, 'utf8') : null;
 }
 
+/** Alle Soll-Dateien (ohne den Beleg selbst) — Grundlage des Beleg-Hashes. */
+function sollDateienAufPlatte(): Array<{ name: string; inhalt: string }> {
+  if (!existsSync(SOLL_VERZEICHNIS)) return [];
+  return readdirSync(SOLL_VERZEICHNIS)
+    .filter((n) => n.endsWith('.json') && n !== BELEG_DATEINAME)
+    .map((name) => ({ name, inhalt: readFileSync(`${SOLL_VERZEICHNIS}/${name}`, 'utf8') }));
+}
+
+function aktuellerSollHash(): string {
+  return sollBelegHash(sollDateienAufPlatte());
+}
+
+function ladeBeleg(): ModusCBeleg | null {
+  const roh = liesOderNull(`${SOLL_VERZEICHNIS}/${BELEG_DATEINAME}`);
+  if (roh === null) return null;
+  try {
+    return JSON.parse(roh) as ModusCBeleg;
+  } catch {
+    return null;
+  }
+}
+
+/** --schreiben: Beleg nachführen; bei unverändertem Hash bleibt die Datei byte-gleich (Datum steht). */
+function schreibeBeleg(): void {
+  const sollHash = aktuellerSollHash();
+  const alt = ladeBeleg();
+  if (alt && alt.segmenterVersion === SEGMENTER_VERSION && alt.sollHash === sollHash) return;
+  const beleg: ModusCBeleg = {
+    segmenterVersion: SEGMENTER_VERSION,
+    sollHash,
+    dateien: sollDateienAufPlatte().length,
+    datum: new Date().toISOString().slice(0, 10), // Werkzeug-Metadatum, keine Rechenlogik (§2 unberührt)
+  };
+  writeFileSync(`${SOLL_VERZEICHNIS}/${BELEG_DATEINAME}`, JSON.stringify(beleg, null, 2) + '\n', 'utf8');
+}
+
+function pruefeB6(): B6Urteil | { basisFehler: string } {
+  const basis = gitStill(['merge-base', B6_BASIS_REF, B6_KOPF_REF]);
+  if (basis === null) {
+    return {
+      basisFehler:
+        `Referenz '${B6_BASIS_REF}' nicht auflösbar — erst 'git fetch origin', dann erneut ` +
+        `(kein stiller Skip: ein Tor ohne Referenz ist kein Tor, wie check:merge-schutz).`,
+    };
+  }
+  const b = basis.trim();
+  const diffOut = gitStill(['diff', '--name-only', `${b}..${B6_KOPF_REF}`, '--', SOLL_VERZEICHNIS]);
+  if (diffOut === null) return { basisFehler: 'git diff auf die Soll-Dateien fehlgeschlagen.' };
+  const aenderungen = diffOut
+    .split('\n')
+    .map((z) => z.trim())
+    .filter((p) => p && !p.endsWith(`/${BELEG_DATEINAME}`))
+    .map((pfad) => ({ pfad, art: klassiereSollAenderung(gitStill(['show', `${b}:${pfad}`]), liesOderNull(pfad)) }));
+  return urteileB6(aenderungen, () =>
+    pruefeBeleg(ladeBeleg(), { segmenterVersion: SEGMENTER_VERSION, sollHash: aktuellerSollHash() }),
+  );
+}
 // ── Bericht + Urteil ─────────────────────────────────────────────────────────
 
 function berichteUndBewerte(z: Zwischenergebnis): void {
@@ -589,17 +593,41 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
     for (const zeile of restmengenFehler(z.restmeldungenGesamt)) console.error(zeile);
   }
 
-  // B6: nur Modus B (s. Begründung oben — Modus C ist gegen diesen Fall
-  // bereits durch die frische HTML-Ableitung selbst geschützt).
+  // B6: nur Modus B (Modus C ist durch die frische HTML-Ableitung geschützt,
+  // prüft aber den Modus-C-Beleg mit, s. `berichteBeleg`).
   if (z.modus === 'B') {
-    const b6 = pruefeSollUnveraendertOhnePinwechsel();
-    if (b6.hinweis) console.log(`ℹ  ${b6.hinweis}`);
-    if (b6.verstoss.length > 0) {
+    const b6 = pruefeB6();
+    if ('basisFehler' in b6) {
       fehler = true;
-      console.error(
-        `❌ FEHLER (B6): Soll-Datei(en) im committeten Bereich (${B6_BASIS_REF}..${B6_KOPF_REF}) geändert ` +
-          `OHNE Pin-/Versionswechsel — unbelegter Inhaltswechsel: ${b6.verstoss.join(', ')}`,
-      );
+      console.error(`❌ FEHLER (B6): ${b6.basisFehler}`);
+    } else {
+      const ohneBasis = b6.ohneBasisNeu.length + b6.ohneBasisVersion.length;
+      if (ohneBasis > 0) {
+        console.log(
+          `ℹ  B6: ${ohneBasis} Soll-Datei(en) ohne Vergleichsbasis (neu ${b6.ohneBasisNeu.length} / ` +
+            `Versionswechsel ${b6.ohneBasisVersion.length}) — Modus-C-Beleg ${b6.belegFehler ? 'UNGÜLTIG' : 'gültig'}.`,
+        );
+      }
+      if (b6.belegFehler) {
+        fehler = true;
+        console.error(
+          `❌ FEHLER (B6/G4): Soll-Dateien ohne Vergleichsbasis verlangen einen gültigen ${BELEG_DATEINAME} — ${b6.belegFehler}`,
+        );
+        console.error('   → mit vollständigem Cache: npm run check:segmente -- --schreiben (schreibt Soll UND Beleg)');
+      }
+      if (b6.verstoss.length > 0) {
+        fehler = true;
+        console.error(
+          `❌ FEHLER (B6): Soll-Datei(en) im committeten Bereich (${B6_BASIS_REF}..${B6_KOPF_REF}) geändert ` +
+            `OHNE Pin-/Versionswechsel — unbelegter Inhaltswechsel: ${b6.verstoss.join(', ')}`,
+        );
+      }
+    }
+  } else {
+    const beleg = pruefeBeleg(ladeBeleg(), { segmenterVersion: SEGMENTER_VERSION, sollHash: aktuellerSollHash() });
+    if (!beleg.ok) {
+      fehler = true;
+      console.error(`❌ FEHLER (G4): ${BELEG_DATEINAME} passt nicht — ${beleg.grund} → npm run check:segmente -- --schreiben`);
     }
   }
 
@@ -688,37 +716,18 @@ function berichteUndBewerte(z: Zwischenergebnis): void {
   );
 }
 
-// B9 (Gegenprüfung 25.9.2026): --schreiben verlangte bisher IMMER einen
-// vollständigen, pin-gültigen Cache — jeder Kaskadenlauf OHNE Cache (z.B. ein
-// Hand-PR nach Skill `auftrag` 6(g)) brach wegen `set -e` in
-// normtext-repin-kaskade.sh sofort ab (Ort des Befunds: dortige Zeile 55).
-// Fix — hier statt dort, damit derselbe Cache-/Pin-Vergleich EINMAL steht
-// (§5) und jeder Aufrufer von `--schreiben` profitiert, nicht nur die
-// Kaskade: ohne vollständigen/pin-gültigen Cache wird NUR NOCH dann
-// übersprungen (Exit 0, Meldung), wenn ALLE committeten Soll-Dateien bereits
-// mit dem aktuell in fedlex-cache.sh DEKLARIERTEN Pin (+ heutiger Segmenter-
-// Version) übereinstimmen — ein reiner String-Vergleich der Pin-Felder, KEINE
-// HTML nötig. Weicht auch nur EIN Pin ab oder fehlt eine Soll-Datei ganz, ist
-// ein echtes Update nötig, das ohne Cache nicht möglich ist ⇒ FEHLER wie
-// bisher (kein stilles Weiterlaufen mit veraltetem Soll, §6.7).
+// B9 (Gegenprüfung 25.9.2026): --schreiben ohne vollständigen/pin-gültigen
+// Cache überspringt NUR, wenn alle committeten Soll-Dateien schon zum
+// deklarierten Pin (fedlex-cache.sh) + heutiger Segmenter-Version passen
+// (reiner String-Vergleich, `sollAktualitaet`); sonst FEHLER — kein stilles
+// Weiterlaufen mit veraltetem Soll (§6.7). Hier statt in
+// normtext-repin-kaskade.sh, damit jeder Aufrufer profitiert (§5).
 function schreibenPfad(eintraege: FedlexCacheEintrag[], vorhanden: number, pinFehler: string[]): void {
-  const vollCacheGueltig = vorhanden === eintraege.length && pinFehler.length === 0;
-  if (vollCacheGueltig) {
+  if (vorhanden === eintraege.length && pinFehler.length === 0) {
     schreibeSoll(eintraege);
     return;
   }
-
-  const fehlend: string[] = [];
-  const veraltet: string[] = [];
-  for (const e of eintraege) {
-    const soll = liesSollDatei(e.name);
-    if (!soll) {
-      fehlend.push(e.name);
-      continue;
-    }
-    const aktuellerPin: SollPin = { eli: e.eli, konsolidierung: e.konsolidierung, htmlN: e.htmlN };
-    if (!pinIdentGleich(soll.pin, aktuellerPin) || soll.segmenterVersion !== SEGMENTER_VERSION) veraltet.push(e.name);
-  }
+  const { fehlend, veraltet } = sollAktualitaet(eintraege, liesSollDatei, SEGMENTER_VERSION);
   if (fehlend.length === 0 && veraltet.length === 0) {
     console.log(
       `ℹ  --schreiben übersprungen (B9): kein vollständiger Cache in ${cacheDir} ` +
@@ -735,7 +744,6 @@ function schreibenPfad(eintraege: FedlexCacheEintrag[], vorhanden: number, pinFe
     ...(veraltet.length ? [`   veraltet: ${veraltet.join(', ')}`] : []),
   ]);
 }
-
 // ── Haupt ────────────────────────────────────────────────────────────────
 
 function main(): void {

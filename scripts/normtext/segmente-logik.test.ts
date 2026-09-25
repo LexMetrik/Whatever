@@ -20,8 +20,13 @@ import {
   normalisiere,
   parseErlassHtml,
   projektionsBlob,
+  klassiereSollAenderung,
+  pruefeBeleg,
   segmentiereAnker,
   segmentiereArtikel,
+  sollAktualitaet,
+  sollBelegHash,
+  urteileB6,
   segmenteZuFingerabdruecken,
   leereZeilenStatistik,
   type BasislinienEintrag,
@@ -528,5 +533,79 @@ describe('G8 (Runde 3): Befund-Etiketten der Basislinie einheitlich', () => {
     const basislinie = JSON.parse(readFileSync('scripts/normtext/segmente-basislinie.json', 'utf8')) as BasislinienEintrag[];
     const fremd = [...new Set(basislinie.map((e) => e.befund).filter((b) => !/^normtext-treue-[a-z0-9-]+$/.test(b)))];
     expect(fremd).toEqual([]);
+  });
+});
+
+describe('G4 (Runde 3): B6 — Soll-Änderung klassieren, Modus-C-Beleg, Urteil', () => {
+  const pin = { eli: 'cc/1/1', konsolidierung: '20260101', htmlN: 1 };
+  const soll = (artikel: Record<string, [number, string][]>, p = pin, v = 3): string =>
+    JSON.stringify({ pin: p, segmenterVersion: v, artikel });
+
+  it('klassiert neu / versionswechsel / pinwechsel / unveraendert / verstoss / geloescht / unlesbar', () => {
+    const a = soll({ art_1: [[10, 'a.b']] });
+    expect(klassiereSollAenderung(null, a)).toBe('neu');
+    expect(klassiereSollAenderung(a, null)).toBe('geloescht');
+    expect(klassiereSollAenderung(soll({ art_1: [[10, 'a.b']] }, pin, 2), a)).toBe('versionswechsel');
+    expect(klassiereSollAenderung(a, soll({ art_1: [[9, 'c.d']] }, { ...pin, konsolidierung: '20270101' }))).toBe('pinwechsel');
+    expect(klassiereSollAenderung(a, soll({ art_1: [[10, 'a.b']] }))).toBe('unveraendert');
+    expect(klassiereSollAenderung(a, soll({ art_1: [] }))).toBe('verstoss'); // P6: Fingerabdruck still entfernt
+    expect(klassiereSollAenderung(a, soll({}))).toBe('verstoss'); // P13b: Artikel still entfernt
+    expect(klassiereSollAenderung(a, '{kaputt')).toBe('unlesbar');
+  });
+
+  it('Beleg-Hash hängt vom Inhalt ab, nicht von der Reihenfolge', () => {
+    const x = [
+      { name: 'a.json', inhalt: '1' },
+      { name: 'b.json', inhalt: '2' },
+    ];
+    expect(sollBelegHash(x)).toBe(sollBelegHash([...x].reverse()));
+    expect(sollBelegHash(x)).not.toBe(sollBelegHash([{ name: 'a.json', inhalt: '1' }, { name: 'b.json', inhalt: '3' }]));
+  });
+
+  it('Beleg-Prüfung: fehlt / falsche Version / falscher Hash ⇒ nicht ok', () => {
+    const erwartet = { segmenterVersion: 3, sollHash: 'h' };
+    expect(pruefeBeleg(null, erwartet).ok).toBe(false);
+    expect(pruefeBeleg({ segmenterVersion: 2, sollHash: 'h', dateien: 1, datum: '2026-09-25' }, erwartet).ok).toBe(false);
+    expect(pruefeBeleg({ segmenterVersion: 3, sollHash: 'x', dateien: 1, datum: '2026-09-25' }, erwartet).ok).toBe(false);
+    expect(pruefeBeleg({ segmenterVersion: 3, sollHash: 'h', dateien: 1, datum: '2026-09-25' }, erwartet).ok).toBe(true);
+  });
+
+  it('Urteil: Dateien ohne Vergleichsbasis verlangen einen gültigen Beleg; Verstoss bleibt Verstoss', () => {
+    const ungueltig = () => ({ ok: false as const, grund: 'kein Beleg' });
+    const gueltig = () => ({ ok: true as const });
+    const u1 = urteileB6(
+      [
+        { pfad: 's/a.json', art: 'versionswechsel' },
+        { pfad: 's/b.json', art: 'neu' },
+      ],
+      ungueltig,
+    );
+    expect(u1).toMatchObject({ belegPflicht: true, belegFehler: 'kein Beleg', verstoss: [] });
+    expect(u1.ohneBasisNeu).toEqual(['s/b.json']);
+    expect(urteileB6([{ pfad: 's/a.json', art: 'versionswechsel' }], gueltig).belegFehler).toBeUndefined();
+    const u3 = urteileB6(
+      [
+        { pfad: 's/a.json', art: 'pinwechsel' },
+        { pfad: 's/c.json', art: 'verstoss' },
+      ],
+      ungueltig,
+    );
+    expect(u3).toMatchObject({ belegPflicht: false, verstoss: ['s/c.json'] });
+    expect(u3.belegFehler).toBeUndefined();
+  });
+});
+
+describe('G4 (Runde 3): B9 — --schreiben ohne vollständigen Cache', () => {
+  const e = { name: 'sthg', eli: 'cc/1/1', konsolidierung: '20260101', htmlN: 11 };
+  const soll = (k: string, v = 3) => ({ pin: { eli: 'cc/1/1', konsolidierung: k, htmlN: 11 }, segmenterVersion: v, artikel: {} });
+
+  it('alle Pins und die Version aktuell ⇒ nichts zu tun (überspringen zulässig)', () => {
+    expect(sollAktualitaet([e], () => soll('20260101'), 3)).toEqual({ fehlend: [], veraltet: [] });
+  });
+
+  it('Pin-Wechsel, Versionswechsel oder fehlende Datei ⇒ nicht aktuell (FEHLER statt Überspringen)', () => {
+    expect(sollAktualitaet([e], () => soll('20250101'), 3).veraltet).toEqual(['sthg']);
+    expect(sollAktualitaet([e], () => soll('20260101', 2), 3).veraltet).toEqual(['sthg']);
+    expect(sollAktualitaet([e], () => null, 3).fehlend).toEqual(['sthg']);
   });
 });
