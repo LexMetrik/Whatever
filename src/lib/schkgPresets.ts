@@ -270,7 +270,7 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
   // für die Fristberechnung ist die Veröffentlichung im SHAB massgebend.
   // Monatsrechnung Art. 31 SchKG i.V.m. Art. 142 Abs. 2 ZPO (wie
   // `schuldenruf_konkurs`). Regime 'kein': Der Schuldenruf ist eine Handlung
-  // des Sachwalters, keine Betreibungshandlung; BGE 73 III 91 (Regeste: Art. 56,
+  // des Sachwalters, keine Betreibungshandlung; BGE 73 III 91 (Regeste: Art. 56 Ziff. 3 aSchKG,
   // 57 ff., 63 SchKG «sind auf die Verfügungen des Sachwalters im
   // Nachlassverfahren … nicht anwendbar»; gelesen im Scan der amtlichen
   // Sammlung, entscheidsuche.ch CH_BGB_005_BGE-73-III-84, 25.9.2026) —
@@ -281,7 +281,7 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
   // Rechtsfolge ist allein der Verlust des Stimmrechts.
   { key: 'schuldenruf_nachlass', phase: 'nachlass', label: 'Eingabefrist Forderungen (Schuldenruf Nachlass) – 1 Monat', norm: 'Art. 300 Abs. 1 SchKG',
     einheit: 'monate', laenge: 1, modus: 'kein', fristnatur: 'frist', ausloeser: 'Publikation SHAB',
-    hinweis: 'Gesetzliche Frist von einem Monat ab der öffentlichen Bekanntmachung des Sachwalters; massgebend ist die Veröffentlichung im SHAB (Art. 35 Abs. 1 SchKG). Wer nicht fristgerecht eingibt, ist bei den Verhandlungen über den Nachlassvertrag nicht stimmberechtigt (Art. 300 Abs. 1 SchKG). Der Schuldenruf ist eine Handlung des Sachwalters, keine Betreibungshandlung → keine Verlängerung nach Art. 63 SchKG in den Betreibungsferien (BGE 73 III 91).' },
+    hinweis: 'Gesetzliche Frist von einem Monat ab der öffentlichen Bekanntmachung des Sachwalters; massgebend ist die Veröffentlichung im SHAB (Art. 35 Abs. 1 SchKG). Wer nicht fristgerecht eingibt, ist bei den Verhandlungen über den Nachlassvertrag nicht stimmberechtigt (Art. 300 Abs. 1 SchKG). Der Schuldenruf ist eine Handlung des Sachwalters, keine Betreibungshandlung → keine Verlängerung nach Art. 63 SchKG in den Betreibungsferien (BGE 73 III 91 zu Verfügungen des Sachwalters). Vorbehalt: Dieser Entscheid von 1947 betrifft das damalige Nachlassrecht; ob er für die heutige Fassung (Art. 293 ff. SchKG) gilt, ist nicht eigens entschieden. Die Voreinstellung ohne Verlängerung ergibt das frühere, sichere Datum.' },
 
   // ── Arrest ──
   // RL-17 / Befund R5-03 (tief, V14 bestätigt): Die Frist läuft nach Art. 278
