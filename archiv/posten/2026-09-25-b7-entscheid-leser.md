@@ -8,3 +8,5 @@ Nach B1, sonst frei. Befund: Text fest 640 px in 800er-Spalte plus Randspalte 24
 totes Beiwerk, Lesemass selbst korrekt. Ziel: nur Randspalte/Beiwerk darf die Breitenstufe
 nutzen, Lesetext 640 px bleibt unverändert. Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
+
+**Erledigt 2026-09-25:** PR #1136
