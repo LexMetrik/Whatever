@@ -195,7 +195,13 @@ export interface TabEintrag {
 // `components/layout/Shell.tsx` (zweite Fenster). Die Kurzform-Einträge unten
 // bleiben: ein vor dem Entscheid gespeicherter Meta-Reiter trägt weiter
 // seine Kurzform, bis er geschlossen wird.
-const META_OHNE_REITER: readonly string[] = ['/ueber', '/methodik', '/einstellungen', '/kontakt'];
+//
+// ── S5c (Entscheid David 25.9.2026, «wie empfohlen») · /datenschutz dazu
+// Der Satz «auch /datenschutz … steht nicht im Entscheid» oben ist der
+// datierte Stand vom 19.9.2026 (§0 Ziff. 2b). Seit 25.9.2026 ist
+// /datenschutz die fünfte Meta-Seite; /abdeckung und /suche bleiben
+// Reiterinhalt (Inhalts-Seiten, nicht Meta).
+const META_OHNE_REITER: readonly string[] = ['/ueber', '/methodik', '/einstellungen', '/kontakt', '/datenschutz'];
 
 /** Öffnet diese Adresse einen Reiter? `false` genau für die Meta-Seiten
  *  (Entscheid David 19.9.2026); Query, Anker und ein Schluss-«/» zählen nicht. */

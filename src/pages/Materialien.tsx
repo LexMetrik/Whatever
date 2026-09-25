@@ -190,8 +190,12 @@ export function Materialien() {
       {/* D11: der §8-Vorbehalt steht im Fuss, nicht im Einstieg. Die Rubrik
           führt bewusst keine eigenen Volltexte — das ist eine Aussage über die
           Sammlung und gehört zu ihrem Fuss, nicht über ihren Titel. */}
+      {/* REST S5c (Entscheid David 25.9.2026, «je Gattung»): «Soft-Law» nur
+          für die Erläuterungen (Verwaltungspraxis) — Botschaften,
+          Vernehmlassungen und Parlamentsvorlagen sind Gesetzgebungsmaterial.
+          Vorher: «Faktisches «Soft-Law», kein Gesetzesrang.» für die ganze Rubrik. */}
       <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-reading">
-        Faktisches «Soft-Law», kein Gesetzesrang. Diese Rubrik führt keine eigenen Volltexte; jeder Eintrag verlinkt die Publikation, massgeblich ist stets {AMTLICHE_FASSUNG_NOMEN}.
+        Kein Gesetzesrang; die Erläuterungen der Verwaltung sind faktisches «Soft-Law». Diese Rubrik führt keine eigenen Volltexte; jeder Eintrag verlinkt die Publikation, massgeblich ist stets {AMTLICHE_FASSUNG_NOMEN}.
       </p>
       {/* W2·6c-DECKUNGS-SEITE (§8): unaufdringlich im Fuss, nicht im Einstieg —
           wer die Rubrik benutzt, sucht ein Dokument; wer wissen will, wie weit

@@ -47,6 +47,14 @@
 //   C    nur `aktiv.current = null;` in derselben Zeile streichen ⇒ kein
 //        Meta-Reiter, aber der Folge-Klick ERSETZT den verlassenen Reiter
 //        («/gesetze» weg, R14-Verlust) — C wird rot, A bleibt grün.
+//
+// ═══ S5c (25.9.2026) · /datenschutz WIRD FÜNFTE META-SEITE ═══════════════════
+// Entscheid David 25.9.2026 («wie empfohlen»): /datenschutz öffnet ebenfalls
+// keinen Reiter. Die Absätze darüber bleiben datierte Belege (§0 Ziff. 2b);
+// die Aussage «auch /datenschutz bleibt Reiterinhalt» gilt seit S5c nicht
+// mehr. `META` trägt jetzt fünf Routen, `REITER_ROUTEN` vier plus die zwei
+// Dokument-/Übersichts-Routen. Rot seit S5c: in `lib/tabs.META_OHNE_REITER`
+// '/datenschutz' streichen ⇒ Fall A wird auf /datenschutz rot.
 import { test, expect, type Page } from '@playwright/test'
 
 const REITER = 'nav[aria-label="Offene Reiter"]'
@@ -57,12 +65,13 @@ const aktiv = (page: Page) => page.locator(`${REITER} [data-reiter-aktiv="true"]
 const pfade = (page: Page) => page.evaluate(() =>
   (JSON.parse(localStorage.getItem('lexmetrik-tabs') ?? '[]') as { path: string }[]).map((t) => t.path))
 
-/** Die vier Meta-Routen des Entscheids 19.9.2026. */
-const META = ['/ueber', '/methodik', '/einstellungen', '/kontakt']
+/** Die vier Meta-Routen des Entscheids 19.9.2026 plus /datenschutz
+ *  (Entscheid David 25.9.2026, S5c). */
+const META = ['/ueber', '/methodik', '/einstellungen', '/kontakt', '/datenschutz']
 
 /** Routen, die weiter Reiterinhalt sind (R14b unverändert): die übrigen
  *  statischen/Dienst-Routen, die Sammlung, eine Übersicht, ein Dokument. */
-const REITER_ROUTEN = ['/datenschutz', '/abdeckung', '/suche', '/', '/gesetze', '/gesetze/bund/OR']
+const REITER_ROUTEN = ['/abdeckung', '/suche', '/', '/gesetze', '/gesetze/bund/OR']
 
 test.describe.configure({ timeout: 120_000 })
 

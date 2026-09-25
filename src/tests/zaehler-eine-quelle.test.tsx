@@ -156,8 +156,12 @@ describe('K7 · Startseite zählt aus derselben Quelle', () => {
     const knoepfe = [...document.querySelectorAll('button')];
     for (const b of knoepfe) expect(b.querySelector('a, button')).toBeNull();
     const knopfText = knoepfe.map((b) => (b.textContent ?? '').replace(/\s+/g, ' ').trim());
-    expect(knopfText).toContain(`${nf(Z.gesetzeBundesrechtVolltext)}BundeserlasseBund`);
-    expect(knopfText).toContain(`${nf(Z.gesetzeKantonVolltext)}kantonale ErlasseKantone`);
+    // S5c (§6.3, deklariert, Entscheid David 25.9.2026 «wie empfohlen»):
+    // Einheit «Erlasse» statt «Bundeserlasse»/«kantonale Erlasse» — die Ebene
+    // steht als Titel im selben Knopf. Vorher (bis S5b):
+    // `…BundeserlasseBund`, `…kantonale ErlasseKantone`.
+    expect(knopfText).toContain(`${nf(Z.gesetzeBundesrechtVolltext)}ErlasseBund`);
+    expect(knopfText).toContain(`${nf(Z.gesetzeKantonVolltext)}ErlasseKantone`);
     expect(knopfText).toContain(`${nf(Z.gesetzeInternationalVolltext)}StaatsverträgeInternational`);
     const gebiete = document.querySelector('ul[aria-label="Rechtsgebiete des Bundes"]');
     const zeilen = [...(gebiete?.querySelectorAll('button') ?? [])].map((b) => b.textContent);

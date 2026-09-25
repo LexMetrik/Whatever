@@ -369,6 +369,9 @@ const APP_DATEIEN = [
   'pages/gesetz-leser/parts/ArtikelHistorie.tsx',
   'pages/Gesetze.tsx',
   'pages/Materialien.tsx',
+  // S5c (25.9.2026): der Material-Hinweis wanderte aus `pages/MaterialLeser.tsx`
+  // in diesen Baustein — ohne Eintrag fiele er aus dem Geltungsbereich.
+  'components/materialien/GattungsHinweis.tsx',
 ];
 
 // ═══ DIE ZWEI-BEGRIFFE-REGEL (R2-A, 31.8.2026) ══════════════════════════════
@@ -406,7 +409,7 @@ const APP_FLAECHE = APP_DATEIEN.map((d) => ohneKommentare(LIES_APP(d))).join('\n
 
 describe('Positiv-Sonde: die App-Fläche existiert und trägt den geteilten Baustein', () => {
   it('alle gelisteten Dateien sind lesbar und der gefilterte Text ist substanziell', () => {
-    expect(APP_DATEIEN.length).toBe(14);
+    expect(APP_DATEIEN.length).toBe(15);
     expect(APP_FLAECHE.length).toBeGreaterThan(10_000);
     // Eine Beschriftung, die es garantiert gibt: ohne sie hätte der Filter zu
     // viel entfernt und jede Verbots-Sonde wäre grundlos grün.
@@ -524,7 +527,12 @@ describe('B-6: EIN Substantiv für das Massgebliche — «Fassung», nicht «Que
   it('die drei Träger ziehen den Vorbehalt aus der Wortquelle', () => {
     expect(ohneKommentare(LIES_APP('pages/gesetz-leser/parts/ErlassLeserKopf.tsx'))).toContain('MASSGEBLICH_HALBSATZ');
     expect(ohneKommentare(LIES_APP('pages/gesetz-leser/parts/AmtlichesPdf.tsx'))).toContain('MASSGEBLICH_HALBSATZ');
-    expect(ohneKommentare(LIES_APP('pages/MaterialLeser.tsx'))).toContain('MASSGEBLICH_SATZ');
+    // S5c (§6.3, deklariert, Entscheid David 25.9.2026 «je Gattung»): der
+    // Material-Hinweis ist nach `components/materialien/GattungsHinweis`
+    // gewandert (ein Satz je Gattung) — der Leser bindet ihn ein. Geprüft wird
+    // der neue Träger; vorher `pages/MaterialLeser.tsx` enthält MASSGEBLICH_SATZ.
+    expect(ohneKommentare(LIES_APP('components/materialien/GattungsHinweis.tsx'))).toContain('MASSGEBLICH_SATZ');
+    expect(ohneKommentare(LIES_APP('pages/MaterialLeser.tsx'))).toContain('<GattungsHinweis');
   });
 
   it('§8: der Nachdruck «stets» überlebt die Vereinheitlichung', () => {

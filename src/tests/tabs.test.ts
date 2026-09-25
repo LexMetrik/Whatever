@@ -313,18 +313,23 @@ describe('tabs.ts — offene Reiter', () => {
   // ROT ZU BEKOMMEN (§6.7): in `lib/tabs.META_OHNE_REITER` '/kontakt' streichen
   // ⇒ der erste Fall wird rot; die Liste um '/datenschutz' ergänzen ⇒ der
   // zweite wird rot (der Entscheid nennt genau vier Routen).
+  // S5c (Entscheid David 25.9.2026, «wie empfohlen»): /datenschutz ist die
+  // fünfte Meta-Seite. Der Absatz darüber bleibt als datierter Beleg stehen
+  // (§0 Ziff. 2b); rot seit S5c: '/datenschutz' aus der Liste streichen ⇒
+  // der erste Fall wird rot.
   describe('W2·29-REST S3 — oeffnetReiter', () => {
-    it('die vier Meta-Seiten öffnen keinen Reiter — auch mit ?query, #anker, Schluss-«/»', () => {
-      for (const p of ['/ueber', '/methodik', '/einstellungen', '/kontakt']) {
+    it('die fünf Meta-Seiten öffnen keinen Reiter — auch mit ?query, #anker, Schluss-«/»', () => {
+      for (const p of ['/ueber', '/methodik', '/einstellungen', '/kontakt', '/datenschutz']) {
         expect(oeffnetReiter(p), p).toBe(false);
       }
       expect(oeffnetReiter('/kontakt?x=1')).toBe(false);
       expect(oeffnetReiter('/methodik#grenzen')).toBe(false);
       expect(oeffnetReiter('/ueber/')).toBe(false);
+      expect(oeffnetReiter('/datenschutz/')).toBe(false);
     });
 
     it('jede andere Route bleibt Reiterinhalt (R14b unverändert)', () => {
-      for (const p of ['/', '/?r=2', '/datenschutz', '/abdeckung', '/suche', '/gesetze',
+      for (const p of ['/', '/?r=2', '/abdeckung', '/suche', '/gesetze',
         '/gesetze/bund/OR#art_1', '/rechner/tagerechner', '/gibt-es-nicht', '/ueberblick']) {
         expect(oeffnetReiter(p), p).toBe(true);
       }

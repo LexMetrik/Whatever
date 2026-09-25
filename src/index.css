@@ -289,7 +289,12 @@
        vergleichsweise hell - Text darauf nimmt darum `auf-gold`. KONTRAST-VERMERK: rein dekorativ,
        trägt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht. Gemessen auf paper 1.58:1 hell /
        2.15:1 dunkel und auf well 1.48:1 hell / 2.29:1 dunkel. Nie für Text oder für eine Kante, die
-       eine Aussage trägt. */
+       eine Aussage trägt. W2·29-WERKBANK-REST S5c (25.9.2026): die Aussage «in beiden Themes
+       vergleichsweise hell - Text darauf nimmt darum `auf-gold`» trifft seit der Dunkel-Rampe
+       (#514F4B) nicht mehr zu — `auf-gold` darauf misst dunkel 1.92:1. Der einzige Verbraucher mit
+       Text darauf, der Verzugszins-Zeitstrahl (VerzugszinsTimeline.tsx), nutzt brass-300 seit S5c
+       nicht mehr (Stelle 2 der Satz-Palette ist `ink-300`, Beschriftung `ink-900`). Zum Vergleich
+       gemessen: `ink-900` auf brass-300 9.30:1 hell / 6.20:1 dunkel. */
     --brass-300: #CAC7C1;
     /* Punkt- und Dekor-Stufe: Aufzählungsmarken, kleine Zeichen neben Text. */
     --brass-600: #4D4A44;
@@ -453,7 +458,14 @@
        bislang
        nur per Inline-Style erreichbar; hier als Utility). C2-Gegenstück: Text auf --ok-solid
        (flippt
-       bewusst nicht) braucht die STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist). */
+       bewusst nicht) braucht die STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist).
+
+       W2·29-WERKBANK-REST S5c (25.9.2026): der oben als Beleg genannte Verbraucher
+       VerzugszinsTimeline.tsx trägt `auf-gold` nicht mehr — alle Zeitstrahl-Flächen kippen mit dem
+       Thema, die Beschriftung ist `ink-900` (Probe
+       src/tests/verzugszins-zeitstrahl-kontrast.test.tsx). Seit W2·29-WERKBANK-REST S3
+       (FristenKalender, `text-paper`) hat das Token damit KEINEN Verbraucher im Code mehr; Löschen
+       berührt `scripts/farbwelt-tabellen.ts` (ALIAS) und ist ein eigener Schritt. */
     --auf-gold: var(--ink-fixed-dark);
     /* Spiegelbild von `auf-gold`: helle Tinte für Text auf `ok-solid`, das bewusst nicht mit dem
        Thema kippt. Liest auf `ok-solid`. KONTRAST: 4.64:1 auf ok-solid hell und dunkel, seit
