@@ -42,6 +42,11 @@ npm run check:entscheide
 # gate:schnell: check:normkeys (Token-Schwelle 20) und e2e-Zahl-Pins reissen am Zuwachs
 # (Beleg #1099, 25.9.2026: «CV» 19→20 Snapshots, OR 41 BGE 20→21 — ein CI-Lauf verloren)
 npm run check
+# Ebenfalls VOR der PR-Übergabe — beides reisst sonst erst im PR- bzw. merge_group-Lauf:
+#  · `npm run build && npm run check:perf-budget` — Daten-Nutzlast register.json (Budget 900 KB,
+#    Freigabe David 25.9.2026); Beleg #1112: im merge_group am Budget aus der Queue geworfen
+#  · `npm run check:fachaenderung -- --pr <n>` — Pin-Nachführungen brauchen im PR-Body
+#    «Fachaenderung: <Norm> — <Begründung>»; Beleg #1112: Form ohne « — » → Tore rot
 
 # §11-Übersichtsliste (bibliothek/) neu schreiben — NICHT von Hand editieren
 npx vite-node scripts/bge-register-generieren.ts > bibliothek/rechtsprechung/bge-register.md
