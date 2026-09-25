@@ -149,6 +149,36 @@ export interface RohSegment {
   text: string; // roh (noch NICHT normalisiert) — Aufrufer normalisiert + filtert Mindestlänge.
 }
 
+/**
+ * Minimaler struktureller Typ für einen linkedom-Knoten (Lint-Nachbesserung
+ * 25.9.2026, Gegenprüfung-Folgeauftrag: `@typescript-eslint/no-explicit-any`
+ * für die DOM-Durchreiche-Funktionen). Bewusst schmal — nur die hier
+ * tatsächlich genutzten Mitglieder —, statt der vollen linkedom-Typen: volle
+ * DOM-Typen koppeln dieses Tor unnötig eng an eine Parser-Bibliothek und
+ * kollidieren teils mit `lib.dom.d.ts` (s. bereits `parseErlassHtml`s
+ * eigener, ebenso schmaler Rückgabetyp). `childNodes` bleibt auf die
+ * tatsächlich gelesene Teilmenge (nur `textContent`) begrenzt, da Text-Knoten
+ * kein `querySelectorAll` etc. besitzen.
+ */
+interface KnotenText {
+  textContent: string | null;
+}
+interface Knoten extends KnotenText {
+  // Jeder `Knoten` in diesem Modul stammt aus `children`/`querySelectorAll`/
+  // `querySelector`/`cloneNode`/`getElementById` — laut DOM-Spezifikation
+  // IMMER ein Element (nie ein Text-Knoten), `tagName` daher nie undefiniert.
+  // Nur `childNodes` kann Text-Knoten mischen und nutzt darum `KnotenText`.
+  tagName: string;
+  children: Iterable<Knoten>;
+  childNodes: Iterable<KnotenText>;
+  firstElementChild: Knoten | null;
+  cloneNode(tief: boolean): Knoten;
+  querySelector(sel: string): Knoten | null;
+  querySelectorAll(sel: string): Iterable<Knoten>;
+  getAttribute(name: string): string | null;
+  remove(): void;
+}
+
 // ── B1/B5 (Gegenprüfung 25.9.2026): eId ⇄ HTML-Anker-ID ────────────────────
 //
 // Die Projektion kodiert den Fedlex-Pfadtrenner "/" innerhalb einer
@@ -197,7 +227,7 @@ const ARTIKEL_ANKER_MUSTER = /^(art_[^/]+|disp_u\d+\/art_[^/]+)$/;
  * NICHT aus dieser Funktion, sondern bleibt Sache der Projektions-Vereinigung
  * im Aufrufer (B1-Ausnahme, `keinAnkerLokalisierbar`).
  */
-export function alleArtikelEids(dokument: { querySelectorAll: (sel: string) => Iterable<any> }): string[] {
+export function alleArtikelEids(dokument: { querySelectorAll: (sel: string) => Iterable<Knoten> }): string[] {
   const eids = new Set<string>();
   for (const el of dokument.querySelectorAll('article[id]')) {
     const ankerId = el.getAttribute('id') as string;
@@ -212,7 +242,7 @@ const ABSATZNUMMER_MUSTER =
   /^\d+(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)?[a-z]?\.?$/;
 
 /** Entfernt Fussnoten-Verweismarken (<sup> MIT <a>) aus einem (bereits geklonten) Teilbaum. */
-function ohneFussnotenmarken(klon: any): any {
+function ohneFussnotenmarken(klon: Knoten): Knoten {
   for (const sup of [...klon.querySelectorAll('sup')]) {
     if (sup.querySelector('a')) sup.remove();
   }
@@ -229,7 +259,7 @@ function ohneFussnotenmarken(klon: any): any {
  * Icon CSS-Quelltext als "Segment" ausgeben — ein Zerlegungs-Artefakt, kein
  * amtlicher Normtext (empirisch an SSV annex_2 gefunden).
  */
-function ohneStyleUndScript(klon: any): any {
+function ohneStyleUndScript(klon: Knoten): Knoten {
   for (const el of [...klon.querySelectorAll('style, script')]) el.remove();
   return klon;
 }
@@ -249,7 +279,7 @@ function ohneStyleUndScript(klon: any): any {
  * 1<sup>bis</sup>» mitten im Satz), bleibt stehen — sein Text zählt normal mit
  * (Hochstellungs-Reduktion auf den Text, § Architektur Ziff. 5).
  */
-function blockText(element: any): string {
+function blockText(element: Knoten): string {
   const klon = ohneStyleUndScript(ohneFussnotenmarken(element.cloneNode(true)));
   for (const dt of [...klon.querySelectorAll('dt')]) dt.remove();
   const erstesElement = klon.firstElementChild;
@@ -273,9 +303,14 @@ function blockText(element: any): string {
  */
 export function parseErlassHtml(
   html: string,
-): { getElementById: (id: string) => any; querySelectorAll: (sel: string) => Iterable<any> } {
+): { getElementById: (id: string) => Knoten | null; querySelectorAll: (sel: string) => Iterable<Knoten> } {
   const { document } = parseHTML(html);
-  return document;
+  // Einziger Übertritt von linkedoms eigenen (mit `lib.dom.d.ts` kollidierenden
+  // — `cloneNode()` ist dort z.B. auf `Node` statt der aufrufenden Unterklasse
+  // typisiert) Typen auf den schmalen `Knoten`-Vertrag dieses Moduls. Laufzeit-
+  // Verhalten unverändert (reines DOM-Objekt, keine Kopie); JEDE andere
+  // Funktion hier prüft danach echt gegen `Knoten`, keine weitere `any`-Lücke.
+  return document as unknown as { getElementById: (id: string) => Knoten | null; querySelectorAll: (sel: string) => Iterable<Knoten> };
 }
 
 /**
@@ -311,7 +346,7 @@ export function parseErlassHtml(
  * Aufrufers nur noch UNBEKANNTEN Rest sieht — der Aufrufer übergibt darum
  * stets einen Klon.
  */
-function segmentiereBereich(bereich: any, segmente: RohSegment[]): void {
+function segmentiereBereich(bereich: Knoten, segmente: RohSegment[]): void {
   for (const dd of [...bereich.querySelectorAll('dd')]) {
     const eigenerKlon = dd.cloneNode(true);
     for (const verschachtelt of [...eigenerKlon.querySelectorAll('dl')]) verschachtelt.remove();
@@ -334,7 +369,7 @@ function segmentiereBereich(bereich: any, segmente: RohSegment[]): void {
 // Original NICHT benachbarter Text-Knoten ist keine verlässliche
 // Enthaltensein-Prüfung gegen den Projektions-Blob (anders als ein
 // tatsächliches HTML-Element).
-function restmenge(bereich: any): string | null {
+function restmenge(bereich: Knoten): string | null {
   const roh = bereich.textContent ?? '';
   if (normalisiere(roh).length < SEGMENT_MINDESTLAENGE) return null;
   return roh.trim().replace(/\s+/g, ' ').slice(0, 80); // lesbare Vorschau (Leerraum erhalten), Schwelle bleibt normalisiert
@@ -348,7 +383,7 @@ function restmenge(bereich: any): string | null {
  *   Kompatibilität, kein Verhaltensunterschied an den Segmenten selbst.
  */
 export function segmentiereAnker(
-  dokument: { getElementById: (id: string) => any },
+  dokument: { getElementById: (id: string) => Knoten | null },
   ankerId: string,
   restmeldungen?: string[],
 ): RohSegment[] | null {
@@ -438,7 +473,7 @@ export function segmentiereAnker(
   for (const tabelle of [...klon.querySelectorAll('table')]) {
     for (const zeile of [...tabelle.querySelectorAll('tr')]) {
       const zellenDerZeile = [...zeile.children].filter(
-        (k: any) => k.tagName === 'TD' || k.tagName === 'TH',
+        (k: Knoten) => k.tagName === 'TD' || k.tagName === 'TH',
       );
       if (zellenDerZeile.length === 0) continue;
       const zeilenTeile: string[] = [];
