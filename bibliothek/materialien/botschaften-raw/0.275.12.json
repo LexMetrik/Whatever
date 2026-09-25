@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/801"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il decreto federale sull'approvazione e l'attuazione della revisione della Convenzione di Lugano concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 1777"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/801"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il decreto federale sull'approvazione e l'attuazione della revisione della Convenzione di Lugano concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 1777"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/801"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il decreto federale sull'approvazione e l'attuazione della revisione della Convenzione di Lugano concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 1777"
     }
   },
   {
@@ -133,6 +157,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/801"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il decreto federale sull'approvazione e l'attuazione della revisione della Convenzione di Lugano concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 1777"
     }
   }
 ]

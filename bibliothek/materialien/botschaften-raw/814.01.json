@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/624"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla promozione dell'introduzione di carburanti privi di zolfo. (Modifica della legge federale sulla protezione dell'ambiente)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6464"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/624"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla promozione dell'introduzione di carburanti privi di zolfo. (Modifica della legge federale sulla protezione dell'ambiente)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6464"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/624"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla promozione dell'introduzione di carburanti privi di zolfo. (Modifica della legge federale sulla protezione dell'ambiente)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6464"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 7911"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 7911"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/597"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente un credito quadro per l'ambiente globale e una modifica della legge federale sulla protezione dell'ambiente"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 7911"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/767"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo al programma di sgravio 2003 del budget della Confederazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 5615"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/767"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo al programma di sgravio 2003 del budget della Confederazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 5615"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/767"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo al programma di sgravio 2003 del budget della Confederazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 5615"
     }
   },
   {
@@ -366,6 +438,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/234"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione della Convenzione di Aarhus e del suo emendamento "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 4323"
     }
   },
   {
@@ -405,6 +485,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/234"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione della Convenzione di Aarhus e del suo emendamento "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 4323"
     }
   },
   {
@@ -444,6 +532,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/234"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -465,6 +557,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione della Convenzione di Aarhus e del suo emendamento "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 4323"
     }
   },
   {
@@ -483,6 +579,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/614"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -504,6 +604,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla protezione dell'ambiente (Divieto di mettere in commercio legname ottenuto illegalmente)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 1251"
     }
   },
   {
@@ -522,6 +626,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/614"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -543,6 +651,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla protezione dell'ambiente (Divieto di mettere in commercio legname ottenuto illegalmente)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 1251"
     }
   },
   {
@@ -561,6 +673,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2025/178"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",

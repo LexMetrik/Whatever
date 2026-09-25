@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/232"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla revisione totale della legge federale concernente l'aiuto alle vittime di reati (LAV)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 7165"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/232"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla revisione totale della legge federale concernente l'aiuto alle vittime di reati (LAV)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 7165"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/232"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla revisione totale della legge federale concernente l'aiuto alle vittime di reati (LAV)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 7165"
     }
   },
   {
@@ -133,6 +157,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/232"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla revisione totale della legge federale concernente l'aiuto alle vittime di reati (LAV)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 7165"
     }
   }
 ]

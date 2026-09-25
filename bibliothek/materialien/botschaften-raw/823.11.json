@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/460"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/460"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/460"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/560"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Legge federale sul collocamento e il personale a prestito (Legge sul collocamento, LC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 1254"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/560"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Legge federale sul collocamento e il personale a prestito (Legge sul collocamento, LC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 1254"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/560"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Legge federale sul collocamento e il personale a prestito (Legge sul collocamento, LC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 1254"
     }
   }
 ]

@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/155"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4963"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/155"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4963"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/155"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4963"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sugli ostacoli tecnici al commercio"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 7275"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sugli ostacoli tecnici al commercio"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 7275"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/349"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sugli ostacoli tecnici al commercio"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 7275"
     }
   }
 ]

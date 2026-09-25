@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/814"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge sui titoli contabili e la Convenzione dell'Aia sugli strumenti finanziari "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 9315"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/814"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge sui titoli contabili e la Convenzione dell'Aia sugli strumenti finanziari "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 9315"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/814"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge sui titoli contabili e la Convenzione dell'Aia sugli strumenti finanziari "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 9315"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/527"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 11: Fallimento e concordato)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 4125"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/527"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 11: Fallimento e concordato)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 4125"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/527"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 11: Fallimento e concordato)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 4125"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/767"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 12: Arbitrato internazionale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 7163"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/767"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 12: Arbitrato internazionale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 7163"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/767"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Capitolo 12: Arbitrato internazionale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 7163"
     }
   },
   {
@@ -366,6 +438,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/330"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Diritto successorio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 3309"
     }
   },
   {
@@ -405,6 +485,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/330"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sul diritto internazionale privato (Diritto successorio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 3309"
     }
   },
   {
@@ -444,6 +532,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/561"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -483,6 +575,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2025/684"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",

@@ -7,8 +7,9 @@
 // Aufruf: npm run materialien:botschaften -- --datum=$(date +%F)
 import { writeFileSync, mkdirSync } from 'node:fs';
 import {
-  grundmenge, holeBindings, baueBotschaften, serialisiere, sortiereBindings,
+  grundmenge, holeBindings, baueBotschaften, serialisiere, sortiereBindings, filtereBotschaftsKanten,
 } from './botschaften-generieren.ts';
+import { auswirkungsIndex, ladeAuswirkungsQuellen, REVISIONEN_RAW_DIR } from './botschaften-auswirkungen.ts';
 import {
   holeEreignisBindings, baueEreignisse,
 } from './verfahrens-ereignisse.ts';
@@ -19,7 +20,15 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(heute)) { console.error('--datum=YYYY-MM-DD nöt
 
 const meta = grundmenge();
 console.log(`botschaften: Grundmenge ${meta.length} Bund-Volltext-Erlasse → SPARQL-Reverse-Kette …`);
-const bindings = await holeBindings(meta, fetch, 'bibliothek/materialien/botschaften-raw');
+// M-5: Fedlex-Auswirkungen aus dem committeten Revisionen-store-raw (kein zweiter Crawl).
+const quellen = ladeAuswirkungsQuellen(meta.map((m) => m.key));
+if (quellen.length !== meta.length) {
+  console.error(`botschaften: Auswirkungen nur für ${quellen.length}/${meta.length} Erlasse in ${REVISIONEN_RAW_DIR} — erst normtext:revisionen laufen lassen.`);
+  process.exit(1);
+}
+const { index: auswirkungen, fremdOcs } = auswirkungsIndex(quellen);
+console.log(`botschaften: Auswirkungs-Index ${auswirkungen.size} oc, davon ${fremdOcs.length} unter keiner Korpus-SR klassiert (Pfad B)`);
+const bindings = filtereBotschaftsKanten(await holeBindings(meta, fetch, 'bibliothek/materialien/botschaften-raw', fremdOcs));
 
 // E1 (§11.7): zweiter Durchgang gegen denselben Endpunkt — Verfahrenskette je
 // Projekt-Knoten. Die proj-Menge stammt aus dem ersten Durchgang (kein Raten).
@@ -32,7 +41,7 @@ writeFileSync('bibliothek/materialien/verfahren-raw/ereignisse.json',
   JSON.stringify(sortiereBindings(evBindings), null, 2) + '\n', 'utf8');
 const ereignisseProProj = baueEreignisse(evBindings);
 
-const eintraege = baueBotschaften(bindings, meta, ereignisseProProj);
+const eintraege = baueBotschaften(bindings, meta, ereignisseProProj, auswirkungen);
 
 // Zukunfts-Guard (§8-Ehrlichkeit): kein stand > heute.
 const zukunft = eintraege.filter((e) => e.stand > heute);

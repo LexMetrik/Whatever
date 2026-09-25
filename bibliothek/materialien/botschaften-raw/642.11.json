@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/63"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'imposizione in caso di liquidazione delle società anonime di inquilini e la modifica dell'imposizione di fondi immobiliari di investimento con possesso fondiario diretto "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 5966"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/63"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'imposizione in caso di liquidazione delle società anonime di inquilini e la modifica dell'imposizione di fondi immobiliari di investimento con possesso fondiario diretto "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 5966"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/63"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'imposizione in caso di liquidazione delle società anonime di inquilini e la modifica dell'imposizione di fondi immobiliari di investimento con possesso fondiario diretto "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 5966"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2001/155"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo al coordinamento e alla semplificazione delle procedure di imposizione delle imposte dirette nei rapporti intercantonali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 3898"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2001/155"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo al coordinamento e alla semplificazione delle procedure di imposizione delle imposte dirette nei rapporti intercantonali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 3898"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2001/155"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo al coordinamento e alla semplificazione delle procedure di imposizione delle imposte dirette nei rapporti intercantonali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 3898"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/760"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 4733"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/760"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 4733"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/760"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 4733"
     }
   },
   {
@@ -366,6 +438,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/427"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione delle partecipazioni dei collaboratori"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 575"
     }
   },
   {
@@ -405,6 +485,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/427"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione delle partecipazioni dei collaboratori"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 575"
     }
   },
   {
@@ -444,6 +532,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/427"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -465,123 +557,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione delle partecipazioni dei collaboratori"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "642.11"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/1131"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1657"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/618"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-10-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "06.085"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi fédérale sur la simplification du rappel d'impôt en cas de succession et sur l'introduction de la dénonciation spontanée non punissable"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale relativa alla semplificazione del ricupero d'imposta in caso di successione e all'introduzione dell'autodenuncia esente da pena "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "642.11"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/1131"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1657"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/618"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-10-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "06.085"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi fédérale sur la simplification du rappel d'impôt en cas de succession et sur l'introduction de la dénonciation spontanée non punissable"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale relativa alla semplificazione del ricupero d'imposta in caso di successione e all'introduzione dell'autodenuncia esente da pena "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "642.11"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2006/1131"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1657"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/618"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-10-18"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "06.085"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi fédérale sur la simplification du rappel d'impôt en cas de succession et sur l'introduction de la dénonciation spontanée non punissable"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la legge federale relativa alla semplificazione del ricupero d'imposta in caso di successione e all'introduzione dell'autodenuncia esente da pena "
+      "value": "BBl 2005 575"
     }
   },
   {
@@ -600,6 +579,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/128"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -621,6 +604,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulle misure immediate nell'ambito dell'imposizione dei coniugi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 4471"
     }
   },
   {
@@ -639,6 +626,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/128"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -660,6 +651,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulle misure immediate nell'ambito dell'imposizione dei coniugi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 4471"
     }
   },
   {
@@ -678,6 +673,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/128"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -699,6 +698,151 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulle misure immediate nell'ambito dell'imposizione dei coniugi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 4471"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.11"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/1131"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1657"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/618"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-10-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "06.085"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi fédérale sur la simplification du rappel d'impôt en cas de succession et sur l'introduction de la dénonciation spontanée non punissable"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale relativa alla semplificazione del ricupero d'imposta in caso di successione e all'introduzione dell'autodenuncia esente da pena "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 8795"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.11"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/1131"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1657"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/618"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-10-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "06.085"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi fédérale sur la simplification du rappel d'impôt en cas de succession et sur l'introduction de la dénonciation spontanée non punissable"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale relativa alla semplificazione del ricupero d'imposta in caso di successione e all'introduzione dell'autodenuncia esente da pena "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 8795"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.11"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2006/1131"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2005/1657"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/618"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-10-18"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "06.085"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi fédérale sur la simplification du rappel d'impôt en cas de succession et sur l'introduction de la dénonciation spontanée non punissable"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la legge federale relativa alla semplificazione del ricupero d'imposta in caso di successione e all'introduzione dell'autodenuncia esente da pena "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 8795"
     }
   },
   {
@@ -717,6 +861,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/59"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +886,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta federale diretta (Compensazione più rapida degli effetti della progressione a freddo nell'ambito dell'imposta federale diretta)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 1657"
     }
   },
   {
@@ -756,6 +908,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/59"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +933,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta federale diretta (Compensazione più rapida degli effetti della progressione a freddo nell'ambito dell'imposta federale diretta)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 1657"
     }
   },
   {
@@ -795,6 +955,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/59"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -816,6 +980,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta federale diretta (Compensazione più rapida degli effetti della progressione a freddo nell'ambito dell'imposta federale diretta)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 1657"
     }
   },
   {
@@ -834,6 +1002,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/60"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -855,6 +1027,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sullo sgravio fiscale delle famiglie con figli"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 4729"
     }
   },
   {
@@ -873,6 +1049,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/60"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -894,6 +1074,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sullo sgravio fiscale delle famiglie con figli"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 4729"
     }
   },
   {
@@ -912,6 +1096,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/60"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -933,6 +1121,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sullo sgravio fiscale delle famiglie con figli"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 4729"
     }
   },
   {
@@ -951,6 +1143,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/71"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -972,6 +1168,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'esenzione fiscale del soldo dei pompieri "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 2855"
     }
   },
   {
@@ -990,6 +1190,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/71"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1011,6 +1215,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'esenzione fiscale del soldo dei pompieri "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 2855"
     }
   },
   {
@@ -1029,6 +1237,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/71"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1050,6 +1262,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'esenzione fiscale del soldo dei pompieri "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 2855"
     }
   },
   {
@@ -1068,6 +1284,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/240"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1089,6 +1309,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul trattamento fiscale delle spese di formazione e perfezionamento professionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 2607"
     }
   },
   {
@@ -1107,6 +1331,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/240"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1128,6 +1356,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul trattamento fiscale delle spese di formazione e perfezionamento professionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 2607"
     }
   },
   {
@@ -1146,6 +1378,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/240"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1167,6 +1403,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul trattamento fiscale delle spese di formazione e perfezionamento professionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 2607"
     }
   },
   {
@@ -1185,6 +1425,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/504"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1206,6 +1450,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'adeguamento formale delle basi temporali per l'imposizione diretta delle persone fisiche "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 3593"
     }
   },
   {
@@ -1224,6 +1472,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/504"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1245,6 +1497,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'adeguamento formale delle basi temporali per l'imposizione diretta delle persone fisiche "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 3593"
     }
   },
   {
@@ -1263,6 +1519,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/504"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1284,6 +1544,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'adeguamento formale delle basi temporali per l'imposizione diretta delle persone fisiche "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 3593"
     }
   },
   {
@@ -1302,6 +1566,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/155"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1323,6 +1591,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione secondo il dispendio "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 6021"
     }
   },
   {
@@ -1341,6 +1613,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/155"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1362,6 +1638,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione secondo il dispendio "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 6021"
     }
   },
   {
@@ -1380,6 +1660,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/155"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1401,6 +1685,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione secondo il dispendio "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 6021"
     }
   },
   {
@@ -1419,6 +1707,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1440,6 +1732,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per i trasporti pubblici» e il controprogetto diretto (Decreto federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria, FAIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1577"
     }
   },
   {
@@ -1458,6 +1754,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1479,6 +1779,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per i trasporti pubblici» e il controprogetto diretto (Decreto federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria, FAIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1577"
     }
   },
   {
@@ -1497,6 +1801,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/106"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1518,6 +1826,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per i trasporti pubblici» e il controprogetto diretto (Decreto federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria, FAIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1577"
     }
   },
   {
@@ -1536,6 +1848,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/143"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1557,6 +1873,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale su un adeguamento della LIFD e della LAID alle disposizioni generali del CP "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 2869"
     }
   },
   {
@@ -1575,6 +1895,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/143"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1596,6 +1920,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale su un adeguamento della LIFD e della LAID alle disposizioni generali del CP "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 2869"
     }
   },
   {
@@ -1614,6 +1942,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/143"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1635,6 +1967,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale su un adeguamento della LIFD e della LAID alle disposizioni generali del CP "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 2869"
     }
   },
   {
@@ -1653,6 +1989,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/315"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1674,6 +2014,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta federale diretta (Alta vigilanza finanziaria sull'imposta federale diretta) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 4769"
     }
   },
   {
@@ -1692,6 +2036,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/315"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1713,6 +2061,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta federale diretta (Alta vigilanza finanziaria sull'imposta federale diretta) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 4769"
     }
   },
   {
@@ -1731,6 +2083,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/315"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1752,6 +2108,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta federale diretta (Alta vigilanza finanziaria sull'imposta federale diretta) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 4769"
     }
   },
   {
@@ -1770,6 +2130,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/557"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1791,6 +2155,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione degli utili di persone giuridiche con scopi ideali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 5369"
     }
   },
   {
@@ -1809,6 +2177,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/557"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1830,6 +2202,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione degli utili di persone giuridiche con scopi ideali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 5369"
     }
   },
   {
@@ -1848,6 +2224,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/557"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1869,6 +2249,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'imposizione degli utili di persone giuridiche con scopi ideali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 5369"
     }
   },
   {
@@ -1887,6 +2271,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1908,6 +2296,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sulla revisione dell'imposizione alla fonte del reddito da attività lucrativa "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 657"
     }
   },
   {
@@ -1926,6 +2318,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1947,6 +2343,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sulla revisione dell'imposizione alla fonte del reddito da attività lucrativa "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 657"
     }
   },
   {
@@ -1965,6 +2365,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1986,6 +2390,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sulla revisione dell'imposizione alla fonte del reddito da attività lucrativa "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 657"
     }
   },
   {
@@ -2004,6 +2412,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/890"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2025,6 +2437,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul trattamento fiscale delle sanzioni finanziarie"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 8503"
     }
   },
   {
@@ -2043,6 +2459,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/890"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2064,6 +2484,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul trattamento fiscale delle sanzioni finanziarie"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 8503"
     }
   },
   {
@@ -2082,6 +2506,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/890"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2103,6 +2531,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul trattamento fiscale delle sanzioni finanziarie"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 8503"
     }
   },
   {
@@ -2121,6 +2553,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/225"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2142,6 +2578,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul calcolo della deduzione per partecipazioni relative a strumenti TBTF (too big to fail)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 1263"
     }
   },
   {
@@ -2160,6 +2600,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/225"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2181,6 +2625,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul calcolo della deduzione per partecipazioni relative a strumenti TBTF (too big to fail)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 1263"
     }
   },
   {
@@ -2199,6 +2647,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/225"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2220,6 +2672,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul calcolo della deduzione per partecipazioni relative a strumenti TBTF (too big to fail)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 1263"
     }
   },
   {
@@ -2238,6 +2694,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/38"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2278,6 +2738,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/38"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -2298,6 +2762,49 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull’imposizione di rendite vitalizie e forme di previdenza simili"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.11"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2024/3116"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/7024/0205"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2026/482"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-11-27"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "24.091"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über die Erstreckung der Verlustverrechnung"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la loi fédérale sur la prolongation du délai de compensation des pertes"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo alla legge federale concernente l’estensione della compensazione delle perdite"
     }
   },
   {
@@ -2316,6 +2823,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/573"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",

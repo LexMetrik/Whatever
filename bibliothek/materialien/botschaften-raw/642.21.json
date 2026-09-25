@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/701"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale  sull'imposta preventiva (Misure di stimolo del mercato svizzero dei capitali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 6615"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/701"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale  sull'imposta preventiva (Misure di stimolo del mercato svizzero dei capitali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 6615"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/701"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale  sull'imposta preventiva (Misure di stimolo del mercato svizzero dei capitali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 6615"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/583"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sull'imposta preventiva  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 7083"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/583"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sull'imposta preventiva  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 7083"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/583"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge federale sull'imposta preventiva  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 7083"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/76"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge sull'imposta preventiva"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 2325"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/76"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge sull'imposta preventiva"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 2325"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/76"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica della legge sull'imposta preventiva"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 2325"
     }
   },
   {
@@ -366,6 +438,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/719"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta preventiva (Strumenti «too big to fail»)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 8701"
     }
   },
   {
@@ -405,6 +485,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/719"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'imposta preventiva (Strumenti «too big to fail»)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 8701"
     }
   }
 ]

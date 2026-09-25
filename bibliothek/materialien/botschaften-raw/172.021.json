@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/92"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/92"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/92"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -133,6 +157,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2001/22"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -172,6 +204,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2001/22"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -211,6 +251,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2001/22"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/177"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione delle convenzioni n. 94 e n. 100 del Consiglio d'Europa sulla cooperazione amministrativa transfrontaliera"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 5947"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/177"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione delle convenzioni n. 94 e n. 100 del Consiglio d'Europa sulla cooperazione amministrativa transfrontaliera"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 5947"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/177"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione delle convenzioni n. 94 e n. 100 del Consiglio d'Europa sulla cooperazione amministrativa transfrontaliera"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 5947"
     }
   }
 ]

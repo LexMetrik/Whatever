@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/1999/403"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/1999/403"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/1999/403"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/51"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sul freno all'indebitamento"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4653"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/51"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sul freno all'indebitamento"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4653"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/51"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sul freno all'indebitamento"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4653"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/156"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio del 4 dicembre 2000 sull'iniziativa popolare «per l'adesione della Svizzera all'Organizzazione delle Nazioni Unite (ONU)» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 1183"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/156"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio del 4 dicembre 2000 sull'iniziativa popolare «per l'adesione della Svizzera all'Organizzazione delle Nazioni Unite (ONU)» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 1183"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/156"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio del 4 dicembre 2000 sull'iniziativa popolare «per l'adesione della Svizzera all'Organizzazione delle Nazioni Unite (ONU)» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 1183"
     }
   },
   {
@@ -366,6 +438,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Internamento a vita per criminali sessuomani o violenti estremamente pericolosi e refrattari alla terapia» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 3433"
     }
   },
   {
@@ -405,6 +485,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Internamento a vita per criminali sessuomani o violenti estremamente pericolosi e refrattari alla terapia» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 3433"
     }
   },
   {
@@ -444,6 +532,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -465,6 +557,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Internamento a vita per criminali sessuomani o violenti estremamente pericolosi e refrattari alla terapia» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 3433"
     }
   },
   {
@@ -484,6 +580,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/466"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -504,6 +604,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
     }
   },
   {
@@ -523,6 +627,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/466"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -543,6 +651,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
     }
   },
   {
@@ -562,6 +674,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/466"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -582,6 +698,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
     }
   },
   {
@@ -601,6 +721,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/185"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -621,6 +745,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
     }
   },
   {
@@ -640,6 +768,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/185"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -660,6 +792,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
     }
   },
   {
@@ -679,6 +815,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/185"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -699,6 +839,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione totale dell'organizzazione giudiziaria federale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2001 4202"
     }
   },
   {
@@ -717,6 +861,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/785"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +886,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la nuova impostazione della perequazione finanziaria e dei compiti tra Confederazione e Cantoni (NPC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 2291"
     }
   },
   {
@@ -756,6 +908,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/785"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +933,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la nuova impostazione della perequazione finanziaria e dei compiti tra Confederazione e Cantoni (NPC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 2291"
     }
   },
   {
@@ -795,6 +955,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/785"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -816,6 +980,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la nuova impostazione della perequazione finanziaria e dei compiti tra Confederazione e Cantoni (NPC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 2291"
     }
   },
   {
@@ -834,6 +1002,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/184"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -855,6 +1027,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il nuovo ordinamento finanziario"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 1531"
     }
   },
   {
@@ -873,6 +1049,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/184"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -894,6 +1074,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il nuovo ordinamento finanziario"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 1531"
     }
   },
   {
@@ -912,6 +1096,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/184"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -933,6 +1121,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il nuovo ordinamento finanziario"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 1531"
     }
   },
   {
@@ -951,6 +1143,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/222"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -972,6 +1168,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'istituzione del Tribunale amministrativo federale (messaggio aggiuntivo al messaggio concernente la revisione totale dell'organizzazione giudiziaria federale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4787"
     }
   },
   {
@@ -990,6 +1190,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/222"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1011,6 +1215,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'istituzione del Tribunale amministrativo federale (messaggio aggiuntivo al messaggio concernente la revisione totale dell'organizzazione giudiziaria federale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4787"
     }
   },
   {
@@ -1029,6 +1237,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/222"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1050,6 +1262,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'istituzione del Tribunale amministrativo federale (messaggio aggiuntivo al messaggio concernente la revisione totale dell'organizzazione giudiziaria federale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4787"
     }
   },
   {
@@ -1068,6 +1284,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/23"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1089,6 +1309,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per alimenti prodotti senza manipolazioni genetiche»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4937"
     }
   },
   {
@@ -1107,6 +1331,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/23"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1128,6 +1356,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per alimenti prodotti senza manipolazioni genetiche»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4937"
     }
   },
   {
@@ -1146,6 +1378,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/23"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1167,6 +1403,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per alimenti prodotti senza manipolazioni genetiche»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4937"
     }
   },
   {
@@ -1185,6 +1425,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/542"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1206,6 +1450,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il finanziamento aggiuntivo dell'AI"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 4623"
     }
   },
   {
@@ -1224,6 +1472,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/542"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1245,6 +1497,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il finanziamento aggiuntivo dell'AI"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 4623"
     }
   },
   {
@@ -1263,6 +1519,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/542"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1284,6 +1544,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il finanziamento aggiuntivo dell'AI"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 4623"
     }
   },
   {
@@ -1302,6 +1566,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/23"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/650"
     },
     "dateDoc": {
       "type": "literal",
@@ -1323,6 +1591,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -1341,6 +1613,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/23"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/650"
     },
     "dateDoc": {
       "type": "literal",
@@ -1362,6 +1638,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -1380,6 +1660,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/23"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/650"
     },
     "dateDoc": {
       "type": "literal",
@@ -1401,6 +1685,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -1419,6 +1707,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/633"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1440,6 +1732,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla medicina complementare» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 7591"
     }
   },
   {
@@ -1458,6 +1754,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/633"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1479,6 +1779,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla medicina complementare» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2006 7591"
     }
   },
   {
@@ -1497,6 +1801,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/633"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1518,123 +1826,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla medicina complementare» "
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1025"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0968"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/224"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-09-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "07.072"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Verfassungsartikel über die Forschung am Menschen"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'article constitutionnel concernant la recherche sur l'être humain"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'articolo costituzionale sulla ricerca sull'essere umano"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1025"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0968"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/224"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-09-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "07.072"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Verfassungsartikel über die Forschung am Menschen"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'article constitutionnel concernant la recherche sur l'être humain"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'articolo costituzionale sulla ricerca sull'essere umano"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1025"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0968"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/224"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-09-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "07.072"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Verfassungsartikel über die Forschung am Menschen"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'article constitutionnel concernant la recherche sur l'être humain"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'articolo costituzionale sulla ricerca sull'essere umano"
+      "value": "BBl 2006 7591"
     }
   },
   {
@@ -1653,6 +1848,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/82"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1674,6 +1873,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per l'imprescrittibilità dei reati di pornografia infantile» e la legge federale sulla prescrizione dell'azione penale in caso di reati commessi su fanciulli (Modifica del Codice penale e del Codice penale militare) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5369"
     }
   },
   {
@@ -1692,6 +1895,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/82"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1713,6 +1920,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per l'imprescrittibilità dei reati di pornografia infantile» e la legge federale sulla prescrizione dell'azione penale in caso di reati commessi su fanciulli (Modifica del Codice penale e del Codice penale militare) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5369"
     }
   },
   {
@@ -1731,6 +1942,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/82"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1752,6 +1967,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per l'imprescrittibilità dei reati di pornografia infantile» e la legge federale sulla prescrizione dell'azione penale in caso di reati commessi su fanciulli (Modifica del Codice penale e del Codice penale militare) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5369"
     }
   },
   {
@@ -1770,6 +1989,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/292"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1791,6 +2014,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la creazione di un sistema di finanziamento speciale per il traffico aereo (Modifica dell'art. 86 della Costituzione federale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 6373"
     }
   },
   {
@@ -1809,6 +2036,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/292"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1830,6 +2061,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la creazione di un sistema di finanziamento speciale per il traffico aereo (Modifica dell'art. 86 della Costituzione federale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 6373"
     }
   },
   {
@@ -1848,6 +2083,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/292"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1869,6 +2108,151 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la creazione di un sistema di finanziamento speciale per il traffico aereo (Modifica dell'art. 86 della Costituzione federale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 6373"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1025"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0968"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/224"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-09-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "07.072"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Verfassungsartikel über die Forschung am Menschen"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'article constitutionnel concernant la recherche sur l'être humain"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'articolo costituzionale sulla ricerca sull'essere umano"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 6713"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1025"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0968"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/224"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-09-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "07.072"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Verfassungsartikel über die Forschung am Menschen"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'article constitutionnel concernant la recherche sur l'être humain"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'articolo costituzionale sulla ricerca sull'essere umano"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 6713"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2007/1025"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0968"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/224"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-09-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "07.072"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Verfassungsartikel über die Forschung am Menschen"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'article constitutionnel concernant la recherche sur l'être humain"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'articolo costituzionale sulla ricerca sull'essere umano"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 6713"
     }
   },
   {
@@ -1887,6 +2271,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/293"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1908,6 +2296,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Contro l'edificazione di minareti» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 7603"
     }
   },
   {
@@ -1926,6 +2318,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/293"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1947,6 +2343,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Contro l'edificazione di minareti» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 7603"
     }
   },
   {
@@ -1965,6 +2365,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/293"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1986,6 +2390,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Contro l'edificazione di minareti» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 7603"
     }
   },
   {
@@ -2004,6 +2412,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/416"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2025,6 +2437,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare federale «Basta con la costruzione sfrenata di abitazioni secondarie!»  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 8757"
     }
   },
   {
@@ -2043,6 +2459,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/416"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2064,6 +2484,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare federale «Basta con la costruzione sfrenata di abitazioni secondarie!»  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 8757"
     }
   },
   {
@@ -2082,6 +2506,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/416"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2103,6 +2531,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare federale «Basta con la costruzione sfrenata di abitazioni secondarie!»  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 8757"
     }
   },
   {
@@ -2121,6 +2553,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/297"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2142,6 +2578,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «contro le retribuzioni abusive» e la modifica del Codice delle obbligazioni (Diritto della società anonima) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 299"
     }
   },
   {
@@ -2160,6 +2600,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/297"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2181,6 +2625,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «contro le retribuzioni abusive» e la modifica del Codice delle obbligazioni (Diritto della società anonima) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 299"
     }
   },
   {
@@ -2199,6 +2647,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/297"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2220,6 +2672,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «contro le retribuzioni abusive» e la modifica del Codice delle obbligazioni (Diritto della società anonima) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 299"
     }
   },
   {
@@ -2238,6 +2694,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/175"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2259,6 +2719,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per l'espulsione degli stranieri che commettono reati (Iniziativa espulsione)» e la modifica della legge federale sugli stranieri  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 5097"
     }
   },
   {
@@ -2277,6 +2741,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/175"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2298,6 +2766,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per l'espulsione degli stranieri che commettono reati (Iniziativa espulsione)» e la modifica della legge federale sugli stranieri  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 5097"
     }
   },
   {
@@ -2316,6 +2788,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/175"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2337,6 +2813,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «per l'espulsione degli stranieri che commettono reati (Iniziativa espulsione)» e la modifica della legge federale sugli stranieri  "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 5097"
     }
   },
   {
@@ -2355,6 +2835,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/85"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2376,6 +2860,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «gioventù + musica» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 1"
     }
   },
   {
@@ -2394,6 +2882,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/85"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2415,6 +2907,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «gioventù + musica» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 1"
     }
   },
   {
@@ -2433,6 +2929,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/85"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2454,6 +2954,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «gioventù + musica» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 1"
     }
   },
   {
@@ -2472,6 +2976,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/417"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2493,6 +3001,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare federale  «Per giochi in denaro al servizio del bene comune»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 7961"
     }
   },
   {
@@ -2511,6 +3023,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/417"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2532,6 +3048,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare federale  «Per giochi in denaro al servizio del bene comune»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 7961"
     }
   },
   {
@@ -2550,6 +3070,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/417"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2571,6 +3095,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare federale  «Per giochi in denaro al servizio del bene comune»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 7961"
     }
   },
   {
@@ -2589,6 +3117,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/476"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2610,6 +3142,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla medicina di famiglia» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 7553"
     }
   },
   {
@@ -2628,6 +3164,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/476"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2649,6 +3189,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla medicina di famiglia» "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 7553"
     }
   },
   {
@@ -2667,6 +3211,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/476"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2688,123 +3236,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla medicina di famiglia» "
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2014/2361"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/477"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2014/2361"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/477"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2014/2361"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2014/477"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-10"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "12.076"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+      "value": "BBl 2011 7553"
     }
   },
   {
@@ -2823,6 +3258,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/104"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2844,6 +3283,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per i trasporti pubblici» e il controprogetto diretto (Decreto federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria, FAIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1577"
     }
   },
   {
@@ -2862,6 +3305,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/104"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2883,6 +3330,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per i trasporti pubblici» e il controprogetto diretto (Decreto federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria, FAIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1577"
     }
   },
   {
@@ -2901,6 +3352,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/104"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -2922,6 +3377,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per i trasporti pubblici» e il controprogetto diretto (Decreto federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria, FAIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1577"
     }
   },
   {
@@ -2931,36 +3390,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2013/1075"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0667"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2014/2361"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/541"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/477"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-07"
+      "value": "2012-10-10"
     },
     "curia": {
       "type": "literal",
-      "value": "13.051"
+      "value": "12.076"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Änderung der Verfassungsbestimmung zur Fortpflanzungsmedizin und Gentechnologie im Humanbereich (Art. 119 BV) sowie des Fortpflanzungsmedizingesetzes  (Präimplantationsdiagnostik) "
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message concernant la modification de l'article constitutionnel relatif à la procréation médicalement assistée et au génie génétique dans le domaine humain (art. 119 Cst.) et de la loi fédérale sur la procréation médicalement assistée (diagnostic préimplantatoire) "
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente la modifica dell'articolo costituzionale relativo alla medicina riproduttiva e all'ingegneria genetica in ambito umano (art. 119 Cost.) e della legge sulla medicina della procreazione (Diagnosi preimpianto) "
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 8819"
     }
   },
   {
@@ -2970,36 +3437,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2013/1075"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0667"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2014/2361"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/541"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/477"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-07"
+      "value": "2012-10-10"
     },
     "curia": {
       "type": "literal",
-      "value": "13.051"
+      "value": "12.076"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Änderung der Verfassungsbestimmung zur Fortpflanzungsmedizin und Gentechnologie im Humanbereich (Art. 119 BV) sowie des Fortpflanzungsmedizingesetzes  (Präimplantationsdiagnostik) "
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message concernant la modification de l'article constitutionnel relatif à la procréation médicalement assistée et au génie génétique dans le domaine humain (art. 119 Cst.) et de la loi fédérale sur la procréation médicalement assistée (diagnostic préimplantatoire) "
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente la modifica dell'articolo costituzionale relativo alla medicina riproduttiva e all'ingegneria genetica in ambito umano (art. 119 Cost.) e della legge sulla medicina della procreazione (Diagnosi preimpianto) "
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 8819"
     }
   },
   {
@@ -3009,36 +3484,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2013/1075"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1575"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0667"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2014/2361"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/541"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2014/477"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-07"
+      "value": "2012-10-10"
     },
     "curia": {
       "type": "literal",
-      "value": "13.051"
+      "value": "12.076"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Änderung der Verfassungsbestimmung zur Fortpflanzungsmedizin und Gentechnologie im Humanbereich (Art. 119 BV) sowie des Fortpflanzungsmedizingesetzes  (Präimplantationsdiagnostik) "
+      "value": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag "
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message concernant la modification de l'article constitutionnel relatif à la procréation médicalement assistée et au génie génétique dans le domaine humain (art. 119 Cst.) et de la loi fédérale sur la procréation médicalement assistée (diagnostic préimplantatoire) "
+      "value": "Message relatif à l'initiative populaire «Pour que les pédophiles ne travaillent plus avec des enfants» et à la loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (modification du code pénal, du code pénal militaire et du droit pénal des mineurs) en tant que contre-projet indirect"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente la modifica dell'articolo costituzionale relativo alla medicina riproduttiva e all'ingegneria genetica in ambito umano (art. 119 Cost.) e della legge sulla medicina della procreazione (Diagnosi preimpianto) "
+      "value": "Messaggio concernente l'iniziativa popolare «Affinché i pedofili non lavorino più con fanciulli» e il controprogetto indiretto di legge federale sull'interdizione di esercitare un'attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 8819"
     }
   },
   {
@@ -3057,6 +3540,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/295"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3078,6 +3565,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Contro l'immigrazione di massa»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 291"
     }
   },
   {
@@ -3096,6 +3587,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/295"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3117,6 +3612,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Contro l'immigrazione di massa»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 291"
     }
   },
   {
@@ -3135,6 +3634,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/295"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3156,6 +3659,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Contro l'immigrazione di massa»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 291"
     }
   },
   {
@@ -3165,36 +3672,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2015/1320"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2013/1075"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2015/0322"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0667"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2017/752"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/541"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-06-24"
+      "value": "2013-06-07"
     },
     "curia": {
       "type": "literal",
-      "value": "15.050"
+      "value": "13.051"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Für Ernährungssicherheit» "
+      "value": "Botschaft zur Änderung der Verfassungsbestimmung zur Fortpflanzungsmedizin und Gentechnologie im Humanbereich (Art. 119 BV) sowie des Fortpflanzungsmedizingesetzes  (Präimplantationsdiagnostik) "
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour la sécurité alimentaire»"
+      "value": "Message concernant la modification de l'article constitutionnel relatif à la procréation médicalement assistée et au génie génétique dans le domaine humain (art. 119 Cst.) et de la loi fédérale sur la procréation médicalement assistée (diagnostic préimplantatoire) "
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Per la sicurezza alimentare»"
+      "value": "Messaggio concernente la modifica dell'articolo costituzionale relativo alla medicina riproduttiva e all'ingegneria genetica in ambito umano (art. 119 Cost.) e della legge sulla medicina della procreazione (Diagnosi preimpianto) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 5853"
     }
   },
   {
@@ -3204,36 +3719,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2015/1320"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2013/1075"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2015/0322"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0667"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2017/752"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/541"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-06-24"
+      "value": "2013-06-07"
     },
     "curia": {
       "type": "literal",
-      "value": "15.050"
+      "value": "13.051"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Für Ernährungssicherheit» "
+      "value": "Botschaft zur Änderung der Verfassungsbestimmung zur Fortpflanzungsmedizin und Gentechnologie im Humanbereich (Art. 119 BV) sowie des Fortpflanzungsmedizingesetzes  (Präimplantationsdiagnostik) "
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour la sécurité alimentaire»"
+      "value": "Message concernant la modification de l'article constitutionnel relatif à la procréation médicalement assistée et au génie génétique dans le domaine humain (art. 119 Cst.) et de la loi fédérale sur la procréation médicalement assistée (diagnostic préimplantatoire) "
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Per la sicurezza alimentare»"
+      "value": "Messaggio concernente la modifica dell'articolo costituzionale relativo alla medicina riproduttiva e all'ingegneria genetica in ambito umano (art. 119 Cost.) e della legge sulla medicina della procreazione (Diagnosi preimpianto) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 5853"
     }
   },
   {
@@ -3243,36 +3766,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2015/1320"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2013/1075"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2015/0322"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2011/0667"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2017/752"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/541"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-06-24"
+      "value": "2013-06-07"
     },
     "curia": {
       "type": "literal",
-      "value": "15.050"
+      "value": "13.051"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Volksinitiative «Für Ernährungssicherheit» "
+      "value": "Botschaft zur Änderung der Verfassungsbestimmung zur Fortpflanzungsmedizin und Gentechnologie im Humanbereich (Art. 119 BV) sowie des Fortpflanzungsmedizingesetzes  (Präimplantationsdiagnostik) "
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message relatif à l'initiative populaire «Pour la sécurité alimentaire»"
+      "value": "Message concernant la modification de l'article constitutionnel relatif à la procréation médicalement assistée et au génie génétique dans le domaine humain (art. 119 Cst.) et de la loi fédérale sur la procréation médicalement assistée (diagnostic préimplantatoire) "
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente l'iniziativa popolare «Per la sicurezza alimentare»"
+      "value": "Messaggio concernente la modifica dell'articolo costituzionale relativo alla medicina riproduttiva e all'ingegneria genetica in ambito umano (art. 119 Cost.) e della legge sulla medicina della procreazione (Diagnosi preimpianto) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 5853"
     }
   },
   {
@@ -3291,6 +3822,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/751"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3312,6 +3847,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la creazione di un fondo per le strade nazionali e il traffico d'agglomerato, il risanamento finanziario e il Programma di sviluppo strategico strade nazionali (Messaggio FOSTRA)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 2065"
     }
   },
   {
@@ -3330,6 +3869,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/751"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3351,6 +3894,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la creazione di un fondo per le strade nazionali e il traffico d'agglomerato, il risanamento finanziario e il Programma di sviluppo strategico strade nazionali (Messaggio FOSTRA)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 2065"
     }
   },
   {
@@ -3369,6 +3916,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/751"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3390,6 +3941,151 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la creazione di un fondo per le strade nazionali e il traffico d'agglomerato, il risanamento finanziario e il Programma di sviluppo strategico strade nazionali (Messaggio FOSTRA)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 2065"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2015/1320"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2015/0322"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2017/752"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-06-24"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "15.050"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Für Ernährungssicherheit» "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour la sécurité alimentaire»"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Per la sicurezza alimentare»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 5753"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2015/1320"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2015/0322"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2017/752"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-06-24"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "15.050"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Für Ernährungssicherheit» "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour la sécurité alimentaire»"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Per la sicurezza alimentare»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 5753"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2015/1320"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2015/0322"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2017/752"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-06-24"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "15.050"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Volksinitiative «Für Ernährungssicherheit» "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à l'initiative populaire «Pour la sécurité alimentaire»"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'iniziativa popolare «Per la sicurezza alimentare»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2015 5753"
     }
   },
   {
@@ -3408,6 +4104,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/137"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3429,6 +4129,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il nuovo ordinamento finanziario 2021"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 6221"
     }
   },
   {
@@ -3447,6 +4151,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/137"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3468,6 +4176,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il nuovo ordinamento finanziario 2021"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 6221"
     }
   },
   {
@@ -3486,6 +4198,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/137"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3507,6 +4223,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il nuovo ordinamento finanziario 2021"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 6221"
     }
   },
   {
@@ -3525,6 +4245,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/91"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3546,6 +4270,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per la promozione delle vie ciclabili e dei sentieri e percorsi pedonali (Iniziativa per la bici)» e il controprogetto diretto (Decreto federale concernente le vie ciclabili, i sentieri e i percorsi pedonali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 5901"
     }
   },
   {
@@ -3564,6 +4292,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/91"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3585,6 +4317,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per la promozione delle vie ciclabili e dei sentieri e percorsi pedonali (Iniziativa per la bici)» e il controprogetto diretto (Decreto federale concernente le vie ciclabili, i sentieri e i percorsi pedonali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 5901"
     }
   },
   {
@@ -3603,6 +4339,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/91"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3624,6 +4364,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per la promozione delle vie ciclabili e dei sentieri e percorsi pedonali (Iniziativa per la bici)» e il controprogetto diretto (Decreto federale concernente le vie ciclabili, i sentieri e i percorsi pedonali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2017 5901"
     }
   },
   {
@@ -3642,6 +4386,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/240"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3663,6 +4411,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per cure infermieristiche forti (Iniziativa sulle cure infermieristiche)»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 7653"
     }
   },
   {
@@ -3681,6 +4433,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/240"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3702,84 +4458,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Per cure infermieristiche forti (Iniziativa sulle cure infermieristiche)»"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8023/0091"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2023/91"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-08-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.050"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Stabilisierung der AHV (AHV 21) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la stabilisation de l'AVS (AVS 21)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la stabilizzazione dell'AVS (AVS 21)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8023/0091"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2023/91"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-08-28"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.050"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Stabilisierung der AHV (AHV 21) "
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relatif à la stabilisation de l'AVS (AVS 21)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la stabilizzazione dell'AVS (AVS 21)"
+      "value": "BBl 2018 7653"
     }
   },
   {
@@ -3798,6 +4480,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/310"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3819,6 +4505,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sull'iniziativa popolare «Sì al divieto di dissimulare il proprio viso» e il suo controprogetto indiretto (legge federale sulla dissimulazione del viso)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 2913"
     }
   },
   {
@@ -3837,6 +4527,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/310"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3858,6 +4552,104 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sull'iniziativa popolare «Sì al divieto di dissimulare il proprio viso» e il suo controprogetto indiretto (legge federale sulla dissimulazione del viso)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 2913"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8023/0091"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2023/91"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-08-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.050"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Stabilisierung der AHV (AHV 21) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la stabilisation de l'AVS (AVS 21)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la stabilizzazione dell'AVS (AVS 21)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 6305"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/2267"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8023/0091"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2023/91"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-08-28"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.050"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Stabilisierung der AHV (AHV 21) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relatif à la stabilisation de l'AVS (AVS 21)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la stabilizzazione dell'AVS (AVS 21)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 6305"
     }
   },
   {
@@ -3876,6 +4668,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/241"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3897,6 +4693,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla protezione dei fanciulli e degli adolescenti dalla pubblicità per il tabacco (Fanciulli e adolescenti senza pubblicità per il tabacco)»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 7049"
     }
   },
   {
@@ -3915,6 +4715,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/241"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3936,6 +4740,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'iniziativa popolare «Sì alla protezione dei fanciulli e degli adolescenti dalla pubblicità per il tabacco (Fanciulli e adolescenti senza pubblicità per il tabacco)»"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 7049"
     }
   },
   {
@@ -3954,6 +4762,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/197"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -3994,6 +4806,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/482"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -4032,6 +4848,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/482"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",

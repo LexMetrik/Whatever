@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/526"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione della Convenzione internazionale riveduta per la protezione delle novità vegetali e la modifica della legge federale sulla protezione delle novità vegetali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4155"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/526"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione della Convenzione internazionale riveduta per la protezione delle novità vegetali e la modifica della legge federale sulla protezione delle novità vegetali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4155"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/526"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione della Convenzione internazionale riveduta per la protezione delle novità vegetali e la modifica della legge federale sulla protezione delle novità vegetali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4155"
     }
   }
 ]

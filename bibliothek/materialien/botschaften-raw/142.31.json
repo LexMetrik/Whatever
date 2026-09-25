@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/727"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sull'asilo, alla modifica della legge federale sull'assicurazione malattie e alla modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6845"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/727"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sull'asilo, alla modifica della legge federale sull'assicurazione malattie e alla modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6845"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/727"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sull'asilo, alla modifica della legge federale sull'assicurazione malattie e alla modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6845"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/137"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul coordinamento tra la procedura d'asilo e la procedura d'estradizione"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 1467"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/137"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul coordinamento tra la procedura d'asilo e la procedura d'estradizione"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 1467"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/137"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul coordinamento tra la procedura d'asilo e la procedura d'estradizione"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 1467"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/612"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 4455"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/612"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 4455"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/612"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2010 4455"
     }
   },
   {
@@ -366,6 +438,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/778"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio aggiuntivo concernente la modifica della legge sull'asilo (Misure a breve termine)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 7325"
     }
   },
   {
@@ -405,6 +485,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/778"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio aggiuntivo concernente la modifica della legge sull'asilo (Misure a breve termine)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2011 7325"
     }
   },
   {
@@ -444,6 +532,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/778"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -465,123 +557,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio aggiuntivo concernente la modifica della legge sull'asilo (Misure a breve termine)"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "142.31"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0811"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/521"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-09-03"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.063"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereichs)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi sur l'asile (Restructuration du domaine de l'asile)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sull'asilo (Riassetto del settore dell'asilo)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.31"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0811"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/521"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-09-03"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.063"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereichs)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi sur l'asile (Restructuration du domaine de l'asile)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sull'asilo (Riassetto del settore dell'asilo)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.31"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0811"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/521"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-09-03"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.063"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereichs)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi sur l'asile (Restructuration du domaine de l'asile)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sull'asilo (Riassetto del settore dell'asilo)"
+      "value": "BBl 2011 7325"
     }
   },
   {
@@ -600,6 +579,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/379"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -621,6 +604,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo (Proroga delle modifiche urgenti della legge sull'asilo)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 2087"
     }
   },
   {
@@ -639,6 +626,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/379"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -660,6 +651,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo (Proroga delle modifiche urgenti della legge sull'asilo)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 2087"
     }
   },
   {
@@ -678,6 +673,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/379"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -699,6 +698,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo (Proroga delle modifiche urgenti della legge sull'asilo)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 2087"
     }
   },
   {
@@ -717,6 +720,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/360"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +745,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del regolamento (UE) n. 1051/2013 che modifica il codice frontiere Schengen al fine di introdurre norme comuni sul ripristino temporaneo del controllo di frontiera alle frontiere interne (sviluppo dell'acquis di Schengen) e altre modifiche del diritto in materia d'asilo e di stranieri "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 3373"
     }
   },
   {
@@ -756,6 +767,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/360"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +792,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del regolamento (UE) n. 1051/2013 che modifica il codice frontiere Schengen al fine di introdurre norme comuni sul ripristino temporaneo del controllo di frontiera alle frontiere interne (sviluppo dell'acquis di Schengen) e altre modifiche del diritto in materia d'asilo e di stranieri "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 3373"
     }
   },
   {
@@ -795,6 +814,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/360"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -816,6 +839,151 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione dello scambio di note tra la Svizzera e l'Unione europea concernente il recepimento del regolamento (UE) n. 1051/2013 che modifica il codice frontiere Schengen al fine di introdurre norme comuni sul ripristino temporaneo del controllo di frontiera alle frontiere interne (sviluppo dell'acquis di Schengen) e altre modifiche del diritto in materia d'asilo e di stranieri "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 3373"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.31"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0811"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-09-03"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.063"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereichs)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi sur l'asile (Restructuration du domaine de l'asile)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sull'asilo (Riassetto del settore dell'asilo)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 7991"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.31"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0811"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-09-03"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.063"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereichs)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi sur l'asile (Restructuration du domaine de l'asile)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sull'asilo (Riassetto del settore dell'asilo)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 7991"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.31"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/1715"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/0811"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/521"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-09-03"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.063"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereichs)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi sur l'asile (Restructuration du domaine de l'asile)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sull'asilo (Riassetto del settore dell'asilo)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2014 7991"
     }
   },
   {
@@ -834,6 +1002,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/742"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -855,6 +1027,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo (Competenza del Consiglio federale di concludere trattati internazionali sul versamento di sussidi ad alcuni Stati membri dell'UE o a organizzazioni internazionali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 6565"
     }
   },
   {
@@ -873,6 +1049,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/742"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -894,6 +1074,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo (Competenza del Consiglio federale di concludere trattati internazionali sul versamento di sussidi ad alcuni Stati membri dell'UE o a organizzazioni internazionali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 6565"
     }
   },
   {
@@ -912,6 +1096,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/742"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -933,6 +1121,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sull'asilo (Competenza del Consiglio federale di concludere trattati internazionali sul versamento di sussidi ad alcuni Stati membri dell'UE o a organizzazioni internazionali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 6565"
     }
   },
   {
@@ -951,6 +1143,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/459"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -972,6 +1168,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il recepimento e la trasposizione del regolamento (UE) 2019/1896 relativo alla guardia di frontiera e costiera europea e che abroga i regolamenti (UE) n. 1052/2013 e (UE) 2016/1624 (sviluppo dell'acquis di Schengen), nonché una modifica della legge sull'asilo"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 7105"
     }
   },
   {
@@ -990,6 +1190,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/459"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1011,6 +1215,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente il recepimento e la trasposizione del regolamento (UE) 2019/1896 relativo alla guardia di frontiera e costiera europea e che abroga i regolamenti (UE) n. 1052/2013 e (UE) 2016/1624 (sviluppo dell'acquis di Schengen), nonché una modifica della legge sull'asilo"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 7105"
     }
   },
   {
@@ -1029,6 +1237,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/192"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",

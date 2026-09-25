@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/609"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulla protezione dei marchi e una legge federale sulla protezione dello stemma della Svizzera e di altri segni pubblici (Progetto «Swissness»)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 8533"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/609"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulla protezione dei marchi e una legge federale sulla protezione dello stemma della Svizzera e di altri segni pubblici (Progetto «Swissness»)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 8533"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/609"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulla protezione dei marchi e una legge federale sulla protezione dello stemma della Svizzera e di altri segni pubblici (Progetto «Swissness»)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 8533"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero (modifica della legge sulla protezione dei marchi) dell'Atto di Ginevra dell'Accordo di Lisbona sulle denominazioni d'origine e le indicazioni geografiche"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 5827"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero (modifica della legge sulla protezione dei marchi) dell'Atto di Ginevra dell'Accordo di Lisbona sulle denominazioni d'origine e le indicazioni geografiche"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 5827"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/742"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero (modifica della legge sulla protezione dei marchi) dell'Atto di Ginevra dell'Accordo di Lisbona sulle denominazioni d'origine e le indicazioni geografiche"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 5827"
     }
   }
 ]

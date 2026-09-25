@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/742"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sulla protezione della natura e del paesaggio (LPN)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 2151"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/742"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sulla protezione della natura e del paesaggio (LPN)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 2151"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/742"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sulla protezione della natura e del paesaggio (LPN)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 2151"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/467"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione del Protocollo di Nagoya  sull'accesso alle risorse genetiche e la giusta ed equacondivisione dei benefici derivanti dalla loro utilizzazione (Protocollo di Nagoya) e la sua attuazione (legge federale sulla protezione della natura e del paesaggio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 3009"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/467"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione del Protocollo di Nagoya  sull'accesso alle risorse genetiche e la giusta ed equacondivisione dei benefici derivanti dalla loro utilizzazione (Protocollo di Nagoya) e la sua attuazione (legge federale sulla protezione della natura e del paesaggio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 3009"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/467"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione del Protocollo di Nagoya  sull'accesso alle risorse genetiche e la giusta ed equacondivisione dei benefici derivanti dalla loro utilizzazione (Protocollo di Nagoya) e la sua attuazione (legge federale sulla protezione della natura e del paesaggio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2013 3009"
     }
   }
 ]

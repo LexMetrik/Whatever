@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/366"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione della Convenzione penale del Consiglio d'Europa sulla corruzione e del relativo Protocollo aggiuntivo (Modifica del Codice penale e della legge federale contro la concorrenza sleale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 6983"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/366"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione della Convenzione penale del Consiglio d'Europa sulla corruzione e del relativo Protocollo aggiuntivo (Modifica del Codice penale e della legge federale contro la concorrenza sleale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 6983"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/366"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione e l'attuazione della Convenzione penale del Consiglio d'Europa sulla corruzione e del relativo Protocollo aggiuntivo (Modifica del Codice penale e della legge federale contro la concorrenza sleale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 6983"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/703"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale contro la concorrenza sleale (LCSI)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 6151"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/703"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale contro la concorrenza sleale (LCSI)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 6151"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/703"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale contro la concorrenza sleale (LCSI)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 6151"
     }
   }
 ]

@@ -6,123 +6,6 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/875"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2000/1199"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2002/151"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-05-31"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "00.047"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/875"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2000/1199"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2002/151"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-05-31"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "00.047"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/875"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2000/1199"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2002/151"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-05-31"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "00.047"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2000/99"
     },
     "proj": {
@@ -132,6 +15,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/463"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
     }
   },
   {
@@ -171,6 +62,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/463"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
     }
   },
   {
@@ -210,6 +109,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/463"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +134,151 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/875"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2000/1199"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2002/151"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-05-31"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "00.047"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4083"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/875"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2000/1199"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2002/151"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-05-31"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "00.047"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4083"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/875"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2000/1199"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2002/151"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-05-31"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "00.047"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4083"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/743"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sull'asilo, alla modifica della legge federale sull'assicurazione malattie e alla modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6845"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/743"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sull'asilo, alla modifica della legge federale sull'assicurazione malattie e alla modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 6845"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/743"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,240 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sull'asilo, alla modifica della legge federale sull'assicurazione malattie e alla modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1367"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/291"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-09-15"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.061"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1367"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/291"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-09-15"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.061"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1367"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2008/291"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-09-15"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.061"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2007/3062"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2009/559"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-09-15"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.061"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2007/3062"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2009/559"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-09-15"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.061"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2007/3062"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2009/559"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2004-09-15"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "04.061"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
+      "value": "BBl 2002 6845"
     }
   },
   {
@@ -601,6 +439,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/666"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -621,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
     }
   },
   {
@@ -640,6 +486,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/666"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -660,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
     }
   },
   {
@@ -679,6 +533,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/666"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -699,6 +557,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
     }
   },
   {
@@ -718,6 +580,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/139"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -738,6 +604,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
     }
   },
   {
@@ -757,6 +627,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/139"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -777,6 +651,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
     }
   },
   {
@@ -796,6 +674,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/139"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -816,6 +698,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Strategia e temi urgenti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4259"
     }
   },
   {
@@ -834,6 +720,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/401"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -855,6 +745,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Libertà di contrarre)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4293"
     }
   },
   {
@@ -873,6 +767,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/401"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -894,6 +792,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Libertà di contrarre)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4293"
     }
   },
   {
@@ -912,6 +814,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/401"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -933,6 +839,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Libertà di contrarre)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4293"
     }
   },
   {
@@ -951,6 +861,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/523"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -972,6 +886,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Riduzione dei premi) e il decreto federale sui sussidi federali nell'assicurazione malattie"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4327"
     }
   },
   {
@@ -990,6 +908,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/523"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1011,6 +933,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Riduzione dei premi) e il decreto federale sui sussidi federali nell'assicurazione malattie"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4327"
     }
   },
   {
@@ -1029,6 +955,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/523"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1050,6 +980,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Riduzione dei premi) e il decreto federale sui sussidi federali nell'assicurazione malattie"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 4327"
     }
   },
   {
@@ -1059,36 +993,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1750"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/2613"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1367"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2013/428"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/291"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-21"
+      "value": "2004-09-15"
     },
     "curia": {
       "type": "literal",
-      "value": "12.092"
+      "value": "04.061"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über die Krankenversicherung (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung) "
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie (Réintroduction temporaire de l'admission selon le besoin) "
+      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 5551"
     }
   },
   {
@@ -1098,36 +1040,44 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1750"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/2613"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1367"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2013/428"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/291"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-21"
+      "value": "2004-09-15"
     },
     "curia": {
       "type": "literal",
-      "value": "12.092"
+      "value": "04.061"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über die Krankenversicherung (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung) "
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie (Réintroduction temporaire de l'admission selon le besoin) "
+      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 5551"
     }
   },
   {
@@ -1137,36 +1087,185 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1750"
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
     },
     "proj": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2012/2613"
+      "value": "https://fedlex.data.admin.ch/eli/proj/2004/1367"
     },
     "oc": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2013/428"
+      "value": "https://fedlex.data.admin.ch/eli/oc/2008/291"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-21"
+      "value": "2004-09-15"
     },
     "curia": {
       "type": "literal",
-      "value": "12.092"
+      "value": "04.061"
     },
     "titleDe": {
       "type": "literal",
-      "value": "Botschaft zur Änderung des Bundesgesetzes über die Krankenversicherung (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung) "
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
     },
     "titleFr": {
       "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie (Réintroduction temporaire de l'admission selon le besoin) "
+      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
     },
     "titleIt": {
       "type": "literal",
-      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 5551"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2007/3062"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2009/559"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2004-09-15"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "04.061"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 5551"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2007/3062"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2009/559"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2004-09-15"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "04.061"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 5551"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2004/1024"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2007/3062"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2009/559"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2004-09-15"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "04.061"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la révision partielle de la loi fédérale sur l'assurance-maladie (financement hospitalier)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Finanziamento ospedaliero)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2004 5551"
     }
   },
   {
@@ -1185,6 +1284,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/431"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1206,6 +1309,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Correzione dei premi pagati tra il 1996 e il 2011) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1923"
     }
   },
   {
@@ -1224,6 +1331,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/431"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1245,6 +1356,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Correzione dei premi pagati tra il 1996 e il 2011) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1923"
     }
   },
   {
@@ -1263,6 +1378,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/431"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1284,6 +1403,151 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Correzione dei premi pagati tra il 1996 e il 2011) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 1923"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1750"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/2613"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2013/428"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-21"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.092"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über die Krankenversicherung (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie (Réintroduction temporaire de l'admission selon le besoin) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 9439"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1750"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/2613"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2013/428"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-21"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.092"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über die Krankenversicherung (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie (Réintroduction temporaire de l'admission selon le besoin) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 9439"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2012/1750"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2012/2613"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2013/428"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-21"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "12.092"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bundesgesetzes über die Krankenversicherung (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung) "
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur l'assurance-maladie (Réintroduction temporaire de l'admission selon le besoin) "
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Reintroduzione temporanea dell'autorizzazione secondo il bisogno) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2012 9439"
     }
   },
   {
@@ -1302,6 +1566,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/748"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1323,6 +1591,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie. (Adeguamento delle disposizioni con pertinenza internazionale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 1"
     }
   },
   {
@@ -1341,6 +1613,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/748"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1362,6 +1638,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie. (Adeguamento delle disposizioni con pertinenza internazionale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 1"
     }
   },
   {
@@ -1380,6 +1660,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/748"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1401,6 +1685,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie. (Adeguamento delle disposizioni con pertinenza internazionale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 1"
     }
   },
   {
@@ -1419,6 +1707,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/151"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1440,6 +1732,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Rafforzamento della qualità e dell'economicità)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 257"
     }
   },
   {
@@ -1458,6 +1754,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/151"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1479,6 +1779,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Rafforzamento della qualità e dell'economicità)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 257"
     }
   },
   {
@@ -1497,6 +1801,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/413"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1518,6 +1826,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Autorizzazione dei fornitori di prestazioni)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 3125"
     }
   },
   {
@@ -1536,6 +1848,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/413"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1557,6 +1873,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Autorizzazione dei fornitori di prestazioni)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2018 3125"
     }
   },
   {
@@ -1576,6 +1896,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/837"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1596,6 +1920,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Misure di contenimento dei costi  Pacchetto 1)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 6071"
     }
   },
   {
@@ -1615,6 +1943,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/837"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1635,6 +1967,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Misure di contenimento dei costi  Pacchetto 1)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 6071"
     }
   },
   {
@@ -1654,6 +1990,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/630"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1674,6 +2014,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Misure di contenimento dei costi  Pacchetto 1)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 6071"
     }
   },
   {
@@ -1693,6 +2037,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/630"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1713,6 +2061,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale della legge federale sull'assicurazione malattie (Misure di contenimento dei costi  Pacchetto 1)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2019 6071"
     }
   },
   {
@@ -1731,6 +2083,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/345"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1752,6 +2108,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Rimunerazione del materiale sanitario)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 4825"
     }
   },
   {
@@ -1770,6 +2130,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/345"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1791,6 +2155,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sull'assicurazione malattie (Rimunerazione del materiale sanitario)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 4825"
     }
   },
   {
@@ -1809,6 +2177,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2025/568"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1849,6 +2221,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2025/769"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1888,6 +2264,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/74"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1926,6 +2306,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/294"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",

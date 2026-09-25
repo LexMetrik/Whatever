@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/320"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di una legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione; LFus) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4337"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/320"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di una legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione; LFus) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4337"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/320"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di una legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione; LFus) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4337"
     }
   },
   {
@@ -133,6 +157,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/320"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di una legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione; LFus) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 4337"
     }
   }
 ]

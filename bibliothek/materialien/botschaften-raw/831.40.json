@@ -6,123 +6,6 @@
     },
     "botschaft": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/555"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/6036"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2004/207"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-03-01"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "2000.027"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Revision des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relativf à la révision de la loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (1re révision LPP)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione LPP) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/555"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/6036"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2004/207"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-03-01"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "2000.027"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Revision des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relativf à la révision de la loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (1re révision LPP)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione LPP) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2000/555"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/1999/6036"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2004/207"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-03-01"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "2000.027"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Revision des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message relativf à la révision de la loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (1re révision LPP)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione LPP) "
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "botschaft": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/fga/2000/99"
     },
     "proj": {
@@ -132,6 +15,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/442"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
     }
   },
   {
@@ -171,6 +62,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/442"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
     }
   },
   {
@@ -210,6 +109,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/442"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +134,151 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento e l'armonizzazione delle basi legali per il trattamento di dati personali nelle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 255"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/6036"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-03-01"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "2000.027"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Revision des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relativf à la révision de la loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (1re révision LPP)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione LPP) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 2637"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/6036"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-03-01"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "2000.027"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Revision des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relativf à la révision de la loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (1re révision LPP)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione LPP) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 2637"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2000/555"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/1999/6036"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2004/207"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-03-01"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "2000.027"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Revision des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message relativf à la révision de la loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (1re révision LPP)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione LPP) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2000 2637"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/711"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulle misure di risanamento in caso di copertura insufficiente nella previdenza professionale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 6399"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/711"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulle misure di risanamento in caso di copertura insufficiente nella previdenza professionale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 6399"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/711"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulle misure di risanamento in caso di copertura insufficiente nella previdenza professionale"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 6399"
     }
   },
   {
@@ -367,6 +439,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/622"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Riforma strutturale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5669"
     }
   },
   {
@@ -406,6 +486,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/622"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Riforma strutturale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5669"
     }
   },
   {
@@ -445,6 +533,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2010/622"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -465,6 +557,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Riforma strutturale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5669"
     }
   },
   {
@@ -484,6 +580,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/458"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -504,6 +604,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Riforma strutturale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5669"
     }
   },
   {
@@ -523,6 +627,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/458"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -543,6 +651,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Riforma strutturale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5669"
     }
   },
   {
@@ -562,6 +674,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/458"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -582,6 +698,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Riforma strutturale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2007 5669"
     }
   },
   {
@@ -600,6 +720,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -621,6 +745,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Finanziamento degli istituti di previdenza delle corporazioni di diritto pubblico) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 8411"
     }
   },
   {
@@ -639,6 +767,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -660,6 +792,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Finanziamento degli istituti di previdenza delle corporazioni di diritto pubblico) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 8411"
     }
   },
   {
@@ -678,6 +814,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/457"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -699,6 +839,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Finanziamento degli istituti di previdenza delle corporazioni di diritto pubblico) "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2008 8411"
     }
   },
   {
@@ -717,6 +861,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/712"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +886,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Investimento presso la Tesoreria federale di fondi di libero passaggio gestiti dall'istituto collettore)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 6343"
     }
   },
   {
@@ -756,6 +908,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/712"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +933,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Investimento presso la Tesoreria federale di fondi di libero passaggio gestiti dall'istituto collettore)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 6343"
     }
   },
   {
@@ -795,6 +955,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/712"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -816,6 +980,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Investimento presso la Tesoreria federale di fondi di libero passaggio gestiti dall'istituto collettore)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 6343"
     }
   },
   {
@@ -834,6 +1002,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/323"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -873,6 +1045,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/323"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",

@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/99"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la Convenzione dell'Aia del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale, nonché la legge federale relativa a tale Convenzione e a provvedimenti per la protezione del minore nelle adozioni internazionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 5795"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/99"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la Convenzione dell'Aia del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale, nonché la legge federale relativa a tale Convenzione e a provvedimenti per la protezione del minore nelle adozioni internazionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 5795"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/99"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la Convenzione dell'Aia del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale, nonché la legge federale relativa a tale Convenzione e a provvedimenti per la protezione del minore nelle adozioni internazionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 5795"
     }
   },
   {
@@ -133,6 +157,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/99"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la Convenzione dell'Aia del 29 maggio 1993 sulla protezione dei minori e sulla cooperazione in materia di adozione internazionale, nonché la legge federale relativa a tale Convenzione e a provvedimenti per la protezione del minore nelle adozioni internazionali "
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 1999 5795"
     }
   }
 ]

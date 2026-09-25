@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/320"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla navigazione aerea"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 4430"
     }
   },
   {
@@ -55,6 +63,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/320"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +87,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla navigazione aerea"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 4430"
     }
   },
   {
@@ -94,6 +110,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/320"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +134,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla navigazione aerea"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2002 4430"
     }
   },
   {
@@ -132,6 +156,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/534"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +181,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo a una modifica della legge federale sulla navigazione aerea (Esame della compatibilità degli aiuti pubblici con l'accordo sul trasporto aereo tra la Svizzera e la CE)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 6241"
     }
   },
   {
@@ -171,6 +203,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/534"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +228,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo a una modifica della legge federale sulla navigazione aerea (Esame della compatibilità degli aiuti pubblici con l'accordo sul trasporto aereo tra la Svizzera e la CE)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 6241"
     }
   },
   {
@@ -210,6 +250,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/534"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +275,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo a una modifica della legge federale sulla navigazione aerea (Esame della compatibilità degli aiuti pubblici con l'accordo sul trasporto aereo tra la Svizzera e la CE)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2003 6241"
     }
   },
   {
@@ -249,6 +297,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/305"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +322,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla partecipazione della Svizzera all'Agenzia europea della sicurezza aerea AESA (Modifica dell'Allegato all'Accordo tra la Confederazione Svizzera e la Comunità europea sul trasporto aereo e della legge sulla navigazione aerea)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 3857"
     }
   },
   {
@@ -288,6 +344,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/305"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +369,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla partecipazione della Svizzera all'Agenzia europea della sicurezza aerea AESA (Modifica dell'Allegato all'Accordo tra la Confederazione Svizzera e la Comunità europea sul trasporto aereo e della legge sulla navigazione aerea)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 3857"
     }
   },
   {
@@ -327,6 +391,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/305"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +416,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla partecipazione della Svizzera all'Agenzia europea della sicurezza aerea AESA (Modifica dell'Allegato all'Accordo tra la Confederazione Svizzera e la Comunità europea sul trasporto aereo e della legge sulla navigazione aerea)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2005 3857"
     }
   },
   {
@@ -366,6 +438,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +463,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale 1 della legge  sulla navigazione aerea"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 4915"
     }
   },
   {
@@ -405,6 +485,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +510,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale 1 della legge  sulla navigazione aerea"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 4915"
     }
   },
   {
@@ -444,6 +532,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/165"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -465,6 +557,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale 1 della legge  sulla navigazione aerea"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2009 4915"
     }
   },
   {
@@ -483,6 +579,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/605"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -504,6 +604,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale 1+ della legge sulla navigazione aerea (LNA 1+)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 7133"
     }
   },
   {
@@ -522,6 +626,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/605"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -543,6 +651,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale 1+ della legge sulla navigazione aerea (LNA 1+)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2016 7133"
     }
   },
   {
@@ -561,6 +673,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/605"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -582,84 +698,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione parziale 1+ della legge sulla navigazione aerea (LNA 1+)"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "748.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2020/1224"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0468"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2021/468"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-05-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "20.054"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Genehmigung und Umsetzung des Protokolls zur Änderung des Abkommens über strafbare und bestimmte andere an Bord von Luftfahrzeugen begangene Handlungen (Änderung des Luftfahrtgesetzes)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'approbation et la mise en uvre (modification de la loi sur l'aviation) du protocole portant amendement de la convention relative aux infractions et à certains autres actes survenant à bord des aéronefs"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero del Protocollo emendativo della Convenzione concernente le infrazioni e taluni altri atti commessi a bordo di aeromobili (Modifica della legge sulla navigazione aerea)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "748.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2020/1224"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0468"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2021/468"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-05-27"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "20.054"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Genehmigung und Umsetzung des Protokolls zur Änderung des Abkommens über strafbare und bestimmte andere an Bord von Luftfahrzeugen begangene Handlungen (Änderung des Luftfahrtgesetzes)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant l'approbation et la mise en uvre (modification de la loi sur l'aviation) du protocole portant amendement de la convention relative aux infractions et à certains autres actes survenant à bord des aéronefs"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero del Protocollo emendativo della Convenzione concernente le infrazioni e taluni altri atti commessi a bordo di aeromobili (Modifica della legge sulla navigazione aerea)"
+      "value": "BBl 2016 7133"
     }
   },
   {
@@ -678,6 +720,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/295"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -699,6 +745,10 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica urgente della legge sulla navigazione aerea a seguito della crisi COVID-19"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 3667"
     }
   },
   {
@@ -717,6 +767,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/295"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +792,104 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica urgente della legge sulla navigazione aerea a seguito della crisi COVID-19"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 3667"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "748.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2020/1224"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0468"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2021/468"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-05-27"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "20.054"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Genehmigung und Umsetzung des Protokolls zur Änderung des Abkommens über strafbare und bestimmte andere an Bord von Luftfahrzeugen begangene Handlungen (Änderung des Luftfahrtgesetzes)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'approbation et la mise en uvre (modification de la loi sur l'aviation) du protocole portant amendement de la convention relative aux infractions et à certains autres actes survenant à bord des aéronefs"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero del Protocollo emendativo della Convenzione concernente le infrazioni e taluni altri atti commessi a bordo di aeromobili (Modifica della legge sulla navigazione aerea)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 5123"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "748.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2020/1224"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/8021/0468"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2021/468"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-05-27"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "20.054"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Genehmigung und Umsetzung des Protokolls zur Änderung des Abkommens über strafbare und bestimmte andere an Bord von Luftfahrzeugen begangene Handlungen (Änderung des Luftfahrtgesetzes)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant l'approbation et la mise en uvre (modification de la loi sur l'aviation) du protocole portant amendement de la convention relative aux infractions et à certains autres actes survenant à bord des aéronefs"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'approvazione e la trasposizione nel diritto svizzero del Protocollo emendativo della Convenzione concernente le infrazioni e taluni altri atti commessi a bordo di aeromobili (Modifica della legge sulla navigazione aerea)"
+    },
+    "bbl": {
+      "type": "literal",
+      "value": "BBl 2020 5123"
     }
   },
   {
@@ -756,6 +908,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/229"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -795,6 +951,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/229"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
