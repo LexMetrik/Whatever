@@ -56,3 +56,41 @@ for (const { breite, leiste, spalten, clamp, umbruch } of FAELLE) {
     expect(m.umbruch).toBe(umbruch);
   });
 }
+
+// ─── Entscheid-Leser (W2·31-BILDSCHIRMBREITE B7, 25.9.2026) ─────────────────
+// Die Seitenart bleibt Stufe `content`; genutzt wird der Rand INNERHALB des
+// Rahmens: Lesespalte = genau das Lesemass (Text 40 rem, kein Einzug gegen den
+// Kopf), der Rail nimmt den Rest (≥ 15 rem), 2 rem Abstand. Vorher @1280–1920:
+// Spalte 800, Text 640 mittig (je 80 px leer), Rail 240, Abstand 112 px.
+// Nachher: Spalte 640, Rail 400 (@1536 mit Leiste 356), Abstand 32 px.
+// ROT ZU BEKOMMEN (§6.7, Beweis im Commit): in EntscheidLeser.tsx die Spalten
+// auf `xl:grid-cols-[minmax(0,1fr)_15rem]` zurücksetzen → Einzug 80 px.
+const LESER_FAELLE = [
+  { breite: 1920, leiste: 0 },
+  { breite: 1280, leiste: 0 },
+  { breite: 1536, leiste: 460 },
+] as const;
+
+for (const { breite, leiste } of LESER_FAELLE) {
+  test(`/rechtsprechung/bge_152_V_122 @${breite}${leiste ? ` mit Seitenleiste ${leiste} px` : ''}: Text 40 rem ohne Einzug, Rail nimmt den Rand`, async ({ page }) => {
+    if (leiste) {
+      await page.addInitScript((b) => {
+        localStorage.setItem('lexmetrik-seitenleiste-eingeklappt.v2', '0');
+        localStorage.setItem('lexmetrik-seitenleiste-breite', String(b));
+      }, leiste);
+    }
+    await page.setViewportSize({ width: breite, height: 1000 });
+    await page.goto('/rechtsprechung/bge_152_V_122');
+    await expect(page.locator('[data-erw-rail]')).toBeVisible();
+    const m = await page.evaluate(() => {
+      const art = document.querySelector('main#inhalt article.rsp-anker')!.getBoundingClientRect();
+      const zelle = document.querySelector('main#inhalt article.rsp-anker')!.parentElement!.getBoundingClientRect();
+      const rail = document.querySelector('[data-erw-rail]')!.getBoundingClientRect();
+      return { text: art.width, einzug: art.left - zelle.left, rail: rail.width, abstand: rail.left - art.right };
+    });
+    expect(m.text).toBeCloseTo(40 * REM, 0);
+    expect(Math.abs(m.einzug), `Einzug der Lesespalte ${m.einzug}px`).toBeLessThanOrEqual(1);
+    expect(m.rail).toBeGreaterThanOrEqual(15 * REM);
+    expect(m.abstand, `Abstand Text → Rail ${m.abstand}px`).toBeCloseTo(2 * REM, 0);
+  });
+}
