@@ -19,7 +19,7 @@ export const ZUSTAND_PFAD = 'bibliothek/register/soft-law-zustand.jsonl';
 
 export type SoftLawQuelle = 'estv-mwst' | 'seco' | 'edoeb' | 'estv-ks';
 export type DokStatus = 'gelistet' | 'entlistet';
-export type StandQuelle = 'hub-label' | 'pdf-text' | 'pdf-meta' | 'payload' | 'toc' | 'ziffer-datum';
+export type StandQuelle = 'hub-label' | 'hub-beschreibung' | 'pdf-text' | 'pdf-meta' | 'payload' | 'toc' | 'ziffer-datum';
 
 export interface LaufZeile {
   typ: 'lauf';
@@ -68,7 +68,7 @@ export interface Zustand {
 const QUELLEN = new Set<SoftLawQuelle>(['estv-mwst', 'seco', 'edoeb', 'estv-ks']);
 const STATUS = new Set<DokStatus>(['gelistet', 'entlistet']);
 // 'ziffer-datum' (M1/ESTV-MWST): Dokument-Stand = jüngstes «Publiziert am» der Ziffer-Seiten.
-const STAND_QUELLEN = new Set<StandQuelle>(['hub-label', 'pdf-text', 'pdf-meta', 'payload', 'toc', 'ziffer-datum']);
+const STAND_QUELLEN = new Set<StandQuelle>(['hub-label', 'hub-beschreibung', 'pdf-text', 'pdf-meta', 'payload', 'toc', 'ziffer-datum']);
 const ISO = /^\d{4}-\d{2}-\d{2}(T[\d:.]+Z?)?$/;
 const ISO_DATUM = /^(\d{4})-(\d{2})-(\d{2})$/;
 

@@ -62,8 +62,10 @@ export interface BotschaftEintrag {
   quelleUrl: string;    // Fedlex-Live-Link (HTML), §7c
   stand: string;        // Botschafts-Datum ISO
   rang: number;         // Datum absteigend → jüngste zuerst
-  normKeys: string[];   // automatisch aus dem SR-Join (Mantelerlass → mehrere)
+  normKeys: string[];   // SR-Join (Pfad A) ∪ Fedlex-Auswirkungen der ocUris (M-5, Mantelerlass → mehrere)
   hinweis?: string;
+  /** M-7: amtliche BBl-Fundstelle der DE-Fassung («BBl 2006 1», Fedlex `jolux:historicalLegalId`). */
+  fundstelle?: string;
   // ── Paket-5-Join (Finding 1, P0) + Moat-Hebel 2 ──
   projEli?: string;     // Projekt-Knoten (Gesetzgebungs-Graph-Anker)
   ocUris?: string[];    // die AS/oc-Erlasse dieses Projekts unter den normKeys-SR
@@ -96,6 +98,25 @@ function titelText(s: string): string {
   return s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
+/** Fedlex `type-projet/200` = «Botschaft des Bundesrats» (amtliches Vokabular, TYPE_PROJET). */
+/** Amtliche BBl-Fundstellen-Form (M-7). */
+const BBL_FORM = /^BBl \d{4} \d+$/;
+
+export const TYP_BOTSCHAFT = 'https://fedlex.data.admin.ch/vocabulary/type-projet/200';
+
+/**
+ * M-4 (W2·29-WERKBANK-LESER, 25.9.2026): Nur ein Verfahrens-Ereignis vom Typ 200
+ * begründet die Kante Projekt → Botschaft. Live-Beleg (Fedlex-SPARQL 25.9.2026): proj/2005/1572
+ * (Curia 04.054, Gentechfrei-Initiative) verweist mit event/4 type-projet/650 («Abgestimmt am»)
+ * auf fga/2006/1 = die PatG-Botschaft BBl 2006 1 (echte Projekte proj/2005/2004…2009, Curia
+ * 05.082, alle Typ 200). Ohne Filter gewann der kleinste proj (1572) → nummer 04.054, BV als
+ * normKey, Curia-Link auf die Initiative. Bindungen OHNE evType (Alt-Roh, Tests) bleiben —
+ * keine Aussage, kein Verwerfen (§8). Rein.
+ */
+export function filtereBotschaftsKanten(bindings: SparqlBinding[]): SparqlBinding[] {
+  return bindings.filter((b) => !b.evType?.value || b.evType.value === TYP_BOTSCHAFT);
+}
+
 /**
  * REINE parse-Funktion (§2, testbar): SPARQL-Bindings + Grundmengen-Meta → deterministisch
  * sortierte Botschafts-Einträge. Dedupe über die fga-URI (eine Botschaft = ein Eintrag,
@@ -105,6 +126,11 @@ export function baueBotschaften(
   bindings: SparqlBinding[],
   meta: ErlassMeta[],
   ereignisseProProj?: Map<string, VerfahrensEreignis[]>,
+  /** M-5: oc → Erlass-Keys aus den Fedlex-Auswirkungen (botschaften-auswirkungen.ts). Ergänzt
+   *  normKeys um jeden Korpus-Erlass, den ein oc dieser Botschaft ändert; fehlt er, zählt
+   *  allein die SR-Klassierung. Erreichbar bleiben nur Botschaften, deren oc unter einer
+   *  Korpus-SR klassiert ist (Ausbau auf fremd klassierte oc: offen, Deckel-Entscheid). */
+  auswirkungen?: ReadonlyMap<string, ReadonlySet<string>>,
 ): BotschaftEintrag[] {
   const srNachErlass = new Map<string, ErlassMeta>();
   const metaNachKey = new Map<string, ErlassMeta>();
@@ -112,7 +138,7 @@ export function baueBotschaften(
 
   interface Roh {
     fga: string; date: string;
-    de?: string; fr?: string; it?: string;
+    de?: string; fr?: string; it?: string; bbl?: string;
     normKeys: Set<string>; ocUris: Set<string>;
     /** proj-URI → Curia (parliamentDraftId) dieses Projekts. Eine Botschaft kann MEHREREN
      *  Projekt-Knoten zugeordnet sein (live belegt: fga/2016/467 → proj/2016/0065+0066);
@@ -121,10 +147,11 @@ export function baueBotschaften(
     projCuria: Map<string, string>;
   }
   const proBotschaft = new Map<string, Roh>();
-  for (const b of bindings) {
+  for (const b of filtereBotschaftsKanten(bindings)) {
     const fga = b.botschaft?.value;
     const sr = b.sr?.value;
-    if (!fga || !sr) continue;
+    if (!fga) continue;
+    if (!sr) continue;
     const erlass = srNachErlass.get(sr);
     if (!erlass) continue; // SR ausserhalb der Grundmenge → ignorieren
     let r = proBotschaft.get(fga);
@@ -144,6 +171,18 @@ export function baueBotschaften(
     if (!r.de && b.titleDe?.value) r.de = b.titleDe.value;
     if (!r.fr && b.titleFr?.value) r.fr = b.titleFr.value;
     if (!r.it && b.titleIt?.value) r.it = b.titleIt.value;
+    // M-7: Fundstelle aus dcterms:identifier der DE-Expression (alle Jahrgänge; seit dem
+    // digitalen BBl 2022 fehlt jolux:historicalLegalId, live 25.9.2026 fga/2025/3067/de),
+    // sonst historicalLegalId. Nur die amtliche Form «BBl JJJJ S» — alles andere keine Aussage.
+    for (const f of [b.bbl?.value, b.bblHist?.value]) {
+      if (!r.bbl && f && BBL_FORM.test(f.trim())) r.bbl = f.trim();
+    }
+  }
+  // M-5: Auswirkungen der ocUris ergänzen normKeys (nur Keys der Grundmenge).
+  if (auswirkungen) {
+    for (const r of proBotschaft.values()) {
+      for (const oc of r.ocUris) for (const k of auswirkungen.get(oc) ?? []) if (metaNachKey.has(k)) r.normKeys.add(k);
+    }
   }
 
   const out: BotschaftEintrag[] = [];
@@ -180,6 +219,7 @@ export function baueBotschaften(
       rang,
       normKeys,
       hinweis: PROVENIENZ,
+      fundstelle: r.bbl,
       projEli: projEli || undefined,
       ocUris: r.ocUris.size ? [...r.ocUris].sort() : undefined,
       botschaftDate: iso,
@@ -214,23 +254,34 @@ export function shaBotschaft(e: BotschaftEintrag): string {
 }
 
 // ── SPARQL-Query (eine VALUES-Batch) ────────────────────────────────────────────
-export function baueQuery(valuesInline: string): string {
-  return `PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-SELECT ?sr ?botschaft ?proj ?oc ?dateDoc ?curia ?titleDe ?titleFr ?titleIt WHERE {
-  VALUES ?notation { ${valuesInline} }
-  ?tax skos:notation ?notation . BIND(STR(?notation) AS ?sr)
-  ?oc jolux:classifiedByTaxonomyEntry ?tax ; jolux:legalResourceFamilyType <https://fedlex.data.admin.ch/vocabulary/resource-family/oc> .
-  ?proj jolux:hasResultingLegalResource ?oc ; jolux:draftHasLegislativeTask ?event .
+/** Kettenrumpf ab ?oc: Projekt → Ereignis → Botschaft + Felder.
+ *  `?evType` (M-4) und `?bbl` (M-7) OPTIONAL — gefiltert wird im reinen Parser (testbar). */
+function kettenRumpf(): string {
+  return `  ?proj jolux:hasResultingLegalResource ?oc ; jolux:draftHasLegislativeTask ?event .
   ?event jolux:legislativeTaskHasResultingLegalResource ?botschaft .
   ?botschaft jolux:typeDocument <https://fedlex.data.admin.ch/vocabulary/resource-type/23> .
+  OPTIONAL { ?event jolux:legislativeTaskType ?evType . }
   OPTIONAL { ?botschaft jolux:dateDocument ?dateDoc . }
   OPTIONAL { ?proj jolux:parliamentDraftId ?curia . }
   OPTIONAL { ?botschaft jolux:isRealizedBy ?ede . ?ede jolux:language ${LANG.de} ; jolux:title ?titleDe . }
   OPTIONAL { ?botschaft jolux:isRealizedBy ?efr . ?efr jolux:language ${LANG.fr} ; jolux:title ?titleFr . }
   OPTIONAL { ?botschaft jolux:isRealizedBy ?eit . ?eit jolux:language ${LANG.it} ; jolux:title ?titleIt . }
+  OPTIONAL { ?botschaft jolux:isRealizedBy ?ebb . ?ebb jolux:language ${LANG.de} ; <http://purl.org/dc/terms/identifier> ?bbl . }
+  OPTIONAL { ?botschaft jolux:isRealizedBy ?ebh . ?ebh jolux:language ${LANG.de} ; jolux:historicalLegalId ?bblHist . }`;
+}
+
+/** SR (VALUES ?notation) → klassierte oc → Kette. */
+export function baueQuery(valuesInline: string): string {
+  return `PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?sr ?botschaft ?proj ?oc ?evType ?dateDoc ?curia ?titleDe ?titleFr ?titleIt ?bbl ?bblHist WHERE {
+  VALUES ?notation { ${valuesInline} }
+  ?tax skos:notation ?notation . BIND(STR(?notation) AS ?sr)
+  ?oc jolux:classifiedByTaxonomyEntry ?tax ; jolux:legalResourceFamilyType <https://fedlex.data.admin.ch/vocabulary/resource-family/oc> .
+${kettenRumpf()}
 }`;
 }
+
 
 /**
  * Deterministische Ordnung der Roh-Bindings je SR (Befund (f), QS-MONITOR-ROT, 1.9.2026): der
@@ -293,6 +344,7 @@ export function serialisiere(eintraege: BotschaftEintrag[]): string {
     felder.push(`rang: ${e.rang}`);
     felder.push(`normKeys: [${e.normKeys.map(esc).join(', ')}]`);
     if (e.hinweis) felder.push(`hinweis: ${esc(e.hinweis)}`);
+    if (e.fundstelle) felder.push(`fundstelle: ${esc(e.fundstelle)}`);
     if (e.projEli) felder.push(`projEli: ${esc(e.projEli)}`);
     if (e.ocUris) felder.push(`ocUris: [${e.ocUris.map(esc).join(', ')}]`);
     if (e.botschaftDate) felder.push(`botschaftDate: ${esc(e.botschaftDate)}`);

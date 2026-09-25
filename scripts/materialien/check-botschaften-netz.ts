@@ -17,8 +17,9 @@
 // Rot-Beweis 1.9.2026: committete Botschaft ausserhalb der 8 Keys entfernt → alt grün, neu rot.
 
 import {
-  grundmenge, holeBindings, baueBotschaften, type BotschaftEintrag, type ErlassMeta,
+  grundmenge, holeBindings, baueBotschaften, filtereBotschaftsKanten, type BotschaftEintrag, type ErlassMeta,
 } from './botschaften-generieren.ts';
+import { auswirkungsIndex, ladeAuswirkungsQuellen } from './botschaften-auswirkungen.ts';
 import { holeEreignisBindings, baueEreignisse } from './verfahrens-ereignisse.ts';
 import type { VerfahrensEreignis } from '../../src/lib/materialien/verfahren.ts';
 import { BOTSCHAFTEN } from '../../src/lib/materialien/botschaften.generated.ts';
@@ -64,10 +65,12 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  // M-5: derselbe Auswirkungs-Index wie im Generator (committeter Revisionen-store-raw).
+  const auswirkungen = auswirkungsIndex(ladeAuswirkungsQuellen(meta.map((m) => m.key)));
   let bindings;
   let ereignisseProProj;
   try {
-    bindings = await holeBindings(meta); // kein store-raw im Tor
+    bindings = filtereBotschaftsKanten(await holeBindings(meta)); // kein store-raw im Tor
     // E1: zweiter Durchgang (derselbe Endpunkt) für die Verfahrenskette je Projekt-Knoten.
     const projUris = [...new Set(bindings.map((b) => b.proj?.value).filter((v): v is string => !!v))].sort();
     ereignisseProProj = baueEreignisse(await holeEreignisBindings(projUris));
@@ -75,7 +78,7 @@ async function main(): Promise<void> {
     console.error(`check:botschaften-netz: Netzfehler — ${(e as Error).message}`);
     process.exit(2);
   }
-  const live = baueBotschaften(bindings, meta, ereignisseProProj);
+  const live = baueBotschaften(bindings, meta, ereignisseProProj, auswirkungen);
 
   // committet: ALLE Botschaften (Vollabgleich) — die Grundmenge ist dieselbe wie im Generator.
   const committetRelevant = BOTSCHAFTEN;

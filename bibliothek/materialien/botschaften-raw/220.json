@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/170"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -32,6 +36,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Titolo trentesimosecondo del Codice delle obbligazioni (Della contabilità commerciale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5149"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 5149"
     }
   },
   {
@@ -51,6 +64,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/170"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -67,6 +84,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Titolo trentesimosecondo del Codice delle obbligazioni (Della contabilità commerciale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5149"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 5149"
     }
   },
   {
@@ -86,6 +112,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/170"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -102,6 +132,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Titolo trentesimosecondo del Codice delle obbligazioni (Della contabilità commerciale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 5149"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 5149"
     }
   },
   {
@@ -120,6 +159,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/685"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -141,6 +184,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una revisione del Codice delle obbligazioni (diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3148"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3148"
     }
   },
   {
@@ -159,6 +211,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/685"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -180,6 +236,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una revisione del Codice delle obbligazioni (diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3148"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3148"
     }
   },
   {
@@ -198,6 +263,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/685"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -219,6 +288,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una revisione del Codice delle obbligazioni (diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3148"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3148"
     }
   },
   {
@@ -237,6 +315,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/401"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -258,6 +340,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Trasparenza delle retribuzioni corrisposte ai membri del consiglio d'amministrazione e della direzione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4471"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4471"
     }
   },
   {
@@ -276,6 +367,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/401"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -297,6 +392,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Trasparenza delle retribuzioni corrisposte ai membri del consiglio d'amministrazione e della direzione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4471"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4471"
     }
   },
   {
@@ -315,6 +419,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/401"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -336,6 +444,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Trasparenza delle retribuzioni corrisposte ai membri del consiglio d'amministrazione e della direzione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4471"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4471"
     }
   },
   {
@@ -355,6 +472,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/808"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -375,6 +496,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni. (Diritto della società anonima e diritto contabile; adeguamento del diritto della società in nome collettivo, della società in accomandita, della società a garanzia limitata, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 1589"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 1589"
     }
   },
   {
@@ -394,6 +524,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/808"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -414,6 +548,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni. (Diritto della società anonima e diritto contabile; adeguamento del diritto della società in nome collettivo, della società in accomandita, della società a garanzia limitata, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 1589"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 1589"
     }
   },
   {
@@ -433,6 +576,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/808"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -453,6 +600,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni. (Diritto della società anonima e diritto contabile; adeguamento del diritto della società in nome collettivo, della società in accomandita, della società a garanzia limitata, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 1589"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 1589"
     }
   },
   {
@@ -472,6 +628,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/810"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -492,6 +652,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni. (Diritto della società anonima e diritto contabile; adeguamento del diritto della società in nome collettivo, della società in accomandita, della società a garanzia limitata, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 1589"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 1589"
     }
   },
   {
@@ -511,6 +680,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/810"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -531,6 +704,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni. (Diritto della società anonima e diritto contabile; adeguamento del diritto della società in nome collettivo, della società in accomandita, della società a garanzia limitata, della società cooperativa, del registro di commercio e delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 1589"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 1589"
     }
   },
   {
@@ -550,6 +732,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/810"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -570,123 +756,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni. (Diritto della società anonima e diritto contabile; adeguamento del diritto della società in nome collettivo, della società in accomandita, della società a garanzia limitata, della società cooperativa, del registro di commercio e delle ditte commerciali)"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "220"
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 1589"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/2039"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2014/1148"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/289"
-    },
-    "dateDoc": {
+    "bblHist": {
       "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-19"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.090"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Obligationenrechts (Firmenrecht)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code des obligations (Droit des raisons de commerce)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice delle obbligazioni (diritto delle ditte commerciali)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/2039"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2014/1148"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/289"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-19"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.090"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Obligationenrechts (Firmenrecht)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code des obligations (Droit des raisons de commerce)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice delle obbligazioni (diritto delle ditte commerciali)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/2039"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2014/1148"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2016/289"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-19"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "14.090"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Obligationenrechts (Firmenrecht)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification du code des obligations (Droit des raisons de commerce)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica del Codice delle obbligazioni (diritto delle ditte commerciali)"
+      "value": "BBl 2008 1589"
     }
   },
   {
@@ -705,6 +783,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/807"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -726,6 +808,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto in materia di prescrizione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 235"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 235"
     }
   },
   {
@@ -744,6 +835,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/807"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -765,6 +860,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto in materia di prescrizione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 235"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 235"
     }
   },
   {
@@ -783,6 +887,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/807"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -804,6 +912,171 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto in materia di prescrizione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 235"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 235"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/2039"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2014/1148"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/289"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-19"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.090"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Obligationenrechts (Firmenrecht)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code des obligations (Droit des raisons de commerce)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice delle obbligazioni (diritto delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 9305"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 9305"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/2039"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2014/1148"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/289"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-19"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.090"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Obligationenrechts (Firmenrecht)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code des obligations (Droit des raisons de commerce)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice delle obbligazioni (diritto delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 9305"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 9305"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/2039"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2014/1148"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2016/289"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-19"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "14.090"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Obligationenrechts (Firmenrecht)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification du code des obligations (Droit des raisons de commerce)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica del Codice delle obbligazioni (diritto delle ditte commerciali)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 9305"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 9305"
     }
   },
   {
@@ -822,6 +1095,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -843,6 +1120,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto del registro di commercio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 3617"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 3617"
     }
   },
   {
@@ -861,6 +1147,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -882,6 +1172,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto del registro di commercio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 3617"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 3617"
     }
   },
   {
@@ -900,6 +1199,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/178"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -921,6 +1224,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto del registro di commercio) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 3617"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 3617"
     }
   },
   {
@@ -940,6 +1252,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/746"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -960,6 +1276,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto della società anonima)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 399"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 399"
     }
   },
   {
@@ -979,6 +1304,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/746"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -999,6 +1328,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto della società anonima)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 399"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 399"
     }
   },
   {
@@ -1018,6 +1356,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/846"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1038,6 +1380,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto della società anonima)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 399"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 399"
     }
   },
   {
@@ -1057,6 +1408,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/846"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -1077,123 +1432,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Diritto della società anonima)"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "220"
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 399"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2019/0857"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-    },
-    "dateDoc": {
+    "bblHist": {
       "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-22"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.027"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio relativo alla legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2019/0857"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-22"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.027"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio relativo alla legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2019/0857"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2020/799"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-22"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "19.027"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio relativo alla legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
+      "value": "BBl 2017 399"
     }
   },
   {
@@ -1212,6 +1459,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/583"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1233,6 +1484,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'attuazione delle raccomandazioni del Forum globale sulla trasparenza e sullo scambio di informazioni a fini fiscali formulate nel rapporto sulla fase 2 della valutazione tra pari relativa alla Svizzera"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 279"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 279"
     }
   },
   {
@@ -1251,6 +1511,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/583"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1272,6 +1536,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'attuazione delle raccomandazioni del Forum globale sulla trasparenza e sullo scambio di informazioni a fini fiscali formulate nel rapporto sulla fase 2 della valutazione tra pari relativa alla Svizzera"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 279"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 279"
     }
   },
   {
@@ -1290,6 +1563,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/583"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1311,6 +1588,171 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'attuazione delle raccomandazioni del Forum globale sulla trasparenza e sullo scambio di informazioni a fini fiscali formulate nel rapporto sulla fase 2 della valutazione tra pari relativa alla Svizzera"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 279"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 279"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2019/0857"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2020/799"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-22"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.027"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo alla legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 4103"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 4103"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2019/0857"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2020/799"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-22"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.027"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo alla legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 4103"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 4103"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2019/1504"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2019/0857"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2020/799"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-22"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "19.027"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la loi fédérale sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio relativo alla legge federale concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 4103"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 4103"
     }
   },
   {
@@ -1329,6 +1771,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/628"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1350,6 +1796,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sulla lotta contro gli abusi in ambito fallimentare (modifica della legge federale sulla esecuzione e sul fallimento, del Codice delle obbligazioni, del Codice penale, del Codice penale militare e della legge sul casellario giudiziale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 5193"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 5193"
     }
   },
   {
@@ -1368,6 +1823,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2023/628"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1389,6 +1848,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sulla lotta contro gli abusi in ambito fallimentare (modifica della legge federale sulla esecuzione e sul fallimento, del Codice delle obbligazioni, del Codice penale, del Codice penale militare e della legge sul casellario giudiziale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2019 5193"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2019 5193"
     }
   },
   {
@@ -1407,6 +1875,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/33"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1428,6 +1900,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 233"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 233"
     }
   },
   {
@@ -1446,6 +1927,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/33"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1467,6 +1952,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sull'adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 233"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 233"
     }
   },
   {
@@ -1485,6 +1979,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2025/270"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1506,6 +2004,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice delle obbligazioni (Difetti di costruzione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2022 2743"
     }
   }
 ]
