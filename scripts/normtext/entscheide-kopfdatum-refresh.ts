@@ -95,6 +95,18 @@ export async function holeKantonDecisionOcl(s: EntscheidSnapshot): Promise<OclDe
   const d = await jget<{ results?: Zeile[]; decisions?: Zeile[] }>(
     `${OCL_API}/decisions?q=${encodeURIComponent(s.nummer)}&fields=compact&limit=15`);
   const hit = (d?.results ?? d?.decisions ?? []).find((r) => r.court === s.gericht && normNr(r.docket_number) === normNr(s.nummer));
-  if (!hit?.decision_id) return null;
-  return jget<OclDecision>(`${OCL_API}/decisions/${encodeURIComponent(hit.decision_id)}?fields=full`);
+  // Rückfall (die Suche findet nicht jedes Aktenzeichen, Lauf 25.9.2026: 6/30):
+  // die beobachteten ID-Schemata durchprobieren; die Identität prüft der Aufrufer.
+  const nr = normNr(s.nummer);
+  const kandidaten = [...new Set([
+    hit?.decision_id,
+    `${s.gericht}_${nr}`,
+    `${s.gericht}_${nr.replace(/[\s/]+/g, '_')}`,
+    `${s.gericht}_${nr.replace(/,\s*/g, '__').replace(/[\s/]+/g, '_')}`,
+  ].filter((x): x is string => !!x))];
+  for (const id of kandidaten) {
+    const det = await jget<OclDecision>(`${OCL_API}/decisions/${encodeURIComponent(id)}?fields=full`);
+    if (det && det.court === s.gericht && normNr(det.docket_number) === nr) return det;
+  }
+  return null;
 }
