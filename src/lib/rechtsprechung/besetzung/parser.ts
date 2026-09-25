@@ -93,8 +93,12 @@ const PARTEI_RE =
 // Vorsitz, der Referent sitzt daneben — beide standen dadurch mit Rolle «vorsitz» im
 // selben Spruchkörper (bpatger O2024_002 / S2024_005). Der Marker wird jetzt über
 // REFERENT_RE nur noch ENTFERNT, ohne eine Rolle zu setzen.
+// `vice-pr[ée]sident…` (25.9.2026, BStGer BG.2026.62 «Miriam Forni, vice-présidente,
+// Roy Garré …»): ohne eigene Alternative griff nur «présidente», das Präfix «vice-»
+// blieb als Phantom-Richter «vice» mit Rolle vorsitz stehen. Die zuerst genannte
+// Vizepräsidentin führt den Spruchkörper wie die «présidente» der Parallelfälle.
 const VORSITZ_RE =
-  /\(\s*Vorsitz\s*\)|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
+  /vice-?\s?p\s?r[ée]sident(?:e|s)?|\(\s*Vorsitz\s*\)|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
 
 /**
  * Referenten-Marker — wird entfernt, setzt aber KEINE Rolle.

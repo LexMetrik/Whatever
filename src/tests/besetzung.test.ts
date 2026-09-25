@@ -491,3 +491,15 @@ describe('Gegenprüfung 20.7.2026 — Kanon: Abkürzung ist kein Vollname', () =
     expect(r.anzeige.get('pfleiderer-andrea')).toBe('Andrea Pfleiderer');
   });
 });
+
+// Nachzug eidg./kantonal 25.9.2026 (QS-KORPUS): BStGer BG.2026.62 (fr) — der Rollen-
+// Zusatz «vice-présidente» hinterliess das Präfix «vice-» als Phantom-Richter mit
+// Rolle vorsitz (check:besetzung G1b/G5 rot), Miriam Forni verlor den Vorsitz.
+describe('Nachzug 25.9.2026 — «vice-présidente» ist ein Rollenwort', () => {
+  it('BStGer BG.2026.62: kein Richter «vice», Vorsitz bei Forni', () => {
+    const r = slugs('Les juges pénaux fédéraux Miriam Forni, vice-présidente, Roy Garré et Nathalie Zufferey, la greffière Salomé Jaques', 'bstger');
+    expect(r).toEqual([
+      'forni-miriam:vorsitz', 'garre-roy:mitglied', 'zufferey-nathalie:mitglied', 'jaques-salome:gerichtsschreiber',
+    ]);
+  });
+});
