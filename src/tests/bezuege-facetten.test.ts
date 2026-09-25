@@ -580,10 +580,14 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
   ) as { kantenJeStatus: Record<string, number>; artikelJeStatus: Record<string, number>;
         erlasseJeStatus: Record<string, number>; artikelGesamt: number; erlasseGesamt: number };
 
-  it('BEFUND: die Klasse trägt korpusweit 164 Kanten an 93 von 6228 Artikeln', () => {
-    expect(bilanz.kantenJeStatus.eidg).toBe(164);
-    expect(bilanz.artikelJeStatus.eidg).toBe(93);
-    expect(bilanz.erlasseJeStatus.eidg).toBe(18);
+  it('BEFUND: die Klasse trägt korpusweit 159 Kanten an 88 von 6335 Artikeln', () => {
+    // §6.3-DEKLARATION (25.9.2026, QS-KORPUS, Sperre AIMP/OCP/OS): damals 164
+    // Kanten / 93 Artikel / 18 Erlasse. Die eidg-Klasse verliert die IRSG-Kanten
+    // von bund/bstger/RR_2026_46 (it, nennt das IRSG nur als «AIMP», das seit der
+    // Sperre nicht mehr auflöst — benannte Lücke, §8). Aussage des Tests steht.
+    expect(bilanz.kantenJeStatus.eidg).toBe(159);
+    expect(bilanz.artikelJeStatus.eidg).toBe(88);
+    expect(bilanz.erlasseJeStatus.eidg).toBe(17);
     // 6217 → 6228 (25.9.2026, W2·29-WERKBANK-LESER Welle 2 D2): die committeten
     // Bezugs-Projektionen hinkten dem Generator seit #860/#911 nach — der AVG
     // kam in den Normtext-Korpus, seine Kanten (11 Artikel, 1 Erlass) nie in
@@ -594,7 +598,10 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // 6352 → 6357 (25.9.2026, QS-KORPUS GERICHTS_KUERZEL «CV» → VRK, SR 0.111):
     // die bisher lautlos verlorenen CV-Zitate treffen fünf zusätzliche VRK-Artikel
     // (19, 24, 25, 30, 41; Sidecar struktur/bund/VRK.json). eidg-Werte unverändert.
-    expect(bilanz.artikelGesamt).toBe(6357);
+    // 6357 → 6335 (25.9.2026, Sperre AIMP/OCP/OS): die Fehlzuordnungen an IRSG
+    // (Beschaffungs-BGE), VKL (Jagd, V-StGB-MStGB) und AVO (Kartell) entfallen,
+    // dazu die IRSG-Artikel von RR_2026_46 (s. oben).
+    expect(bilanz.artikelGesamt).toBe(6335);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
