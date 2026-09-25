@@ -710,6 +710,20 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
   QS-UI (+ ⧉-Quittung), `W2·19-DESIGN-KONSISTENZ`, `W2·24-C` in Chronik/Archiv; PROJEKTBESCHRIEB §3/§4,
   Inventar datieren; Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Werkzeuge-Blatt eine Quelle,
   Generator «Staatsverträge»); Lagebild `--paper` aus `design/tokens.json`.
+  **Gebaut 25.9.2026** (S5a `#1115`, `9196af793`, gemergt 15:03 UTC; S5b `#1116`, `36b4afd46`, gemergt
+  15:28 UTC — Beleg `gh pr view 1115/1116 --json number,state,mergeCommit,mergedAt`; **S5c-Doku, diese
+  Session**): `FAHRPLAN-UI-BEFUNDE.md` alle 14 offenen Checkboxen gegen Ist-Code geprüft (2 erledigt/
+  überholt, 1 entschieden, 1 umgehängt, 9 echt offen ⇒ Posten unter `W2·29-WERKBANK-NACHLAUF`) — **nicht
+  archiviert**: der Fahrplan trägt einen lebenden Zeiger (`W2·17-UI-BEFUNDE`, status ready, §9/§24 physisch
+  noch vorhanden). `W2·19-DESIGN-KONSISTENZ` **nicht geschlossen** — trägt entgegen der Planungs-Annahme
+  Stand 25.9. wieder 8 offene Posten (Herz-und-Nieren-Befunde HN-D1–D6, PR #1081, 24.9. nachträglich
+  eingebucht); `W2·24-C`/`QS-UI` unverändert 0. Posten geschlossen/verortet (Treffer-Landkarte,
+  W2·9-Kachelhöhen inkl. LM-032→NACHLAUF, Startseite-Breite→`W2·31-BILDSCHIRMBREITE`). PROJEKTBESCHRIEB
+  §3/§4 auf Ist gezogen (Test-/E2E-Zahlen, Prerender-Routen, Katalog-Statusverteilung — DB-Korpuszahlen
+  nicht verifizierbar, `daten/` in diesem Worktree gitignored). `docs/INVENTAR-FUNKTIONEN.md` Kopf datiert.
+  `DESIGN-REGLEMENT.md` 3 veraltete Stellen ergänzt (§0.2b, nicht überschrieben). Lagebild `--paper` liest
+  jetzt `design/tokens.json`. **Katalog-Kleinkram (checklisten/mandatsaufnahme, Systematik «0», Generator
+  «Staatsverträge») nicht Teil dieser Scheibe** — im S5c-Dispatch nicht enthalten, bleibt offen.
 - **Nicht in REST:** Such-Index Rechtsprechung-Blatt (Klasse daten, Gegenprüfung) → `W2·24-PERF-REST`;
   modulepreload/`rel=expect` → `W2·24-PERF-REST`; Worktrees `npm ci` → `QS-EFFIZIENZ`; Reiter-Titel
   Zuständigkeit → `W2·17-UI-BEFUNDE`; Leser-Nachlauf (NormText 795/800, NormChip-Ort, `leserV3Modell`,
