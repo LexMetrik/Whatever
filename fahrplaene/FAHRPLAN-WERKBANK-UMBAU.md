@@ -661,7 +661,8 @@ vierecken», «bei den schnellwerkzeugen auswählen», «bei den begrüssungen d
 `layout/LeserKopfGeruest`, `kontext/KontextPanel`, `verzahnung/StatusBadge`, `SeitenTitel`/`FehlSeite`/`QuellLink`.
 Nicht umgebaut: `EntscheidLeser.tsx` (1130 Z.), `MaterialLeser.tsx`, `Materialien.tsx`, `MaterialienDeckung.tsx`,
 statische Seiten, Alt-Block `lr8-*` (`index.css` ~4715–4990, nur `components/entstehung/*`). Heute rendert kein
-Vitest den Entscheid-Leser. Mit allen 39 Posten wären es 4–5 Sessions — über dem Abbruchkriterium (§2 Ziff. 4).
+Vitest den Entscheid-Leser *(präzisiert 25.9.2026, Bau S0: gilt für die Seite; `EntscheidBody` rendern schon
+`entscheid-body-quarantaene.test.tsx` und `entscheid-konsistenz.test.tsx`)*. Mit allen 39 Posten wären es 4–5 Sessions — über dem Abbruchkriterium (§2 Ziff. 4).
 
 **Entscheide David 24.9.2026 (Chat):** (1) Design-Feinpaket (D6 Dunkel-Paket, D8b Mono-Diät, D8c Motiv-Katalog,
 Radius, CSS-Querschnitt) **aus REST gelöst** → eigener Schritt `W2·29-WERKBANK-NACHLAUF` nach REST. (2) F0.5:
@@ -673,6 +674,13 @@ StatusBadge: Wortlaut **«maschinell» bleibt** (gegen Empfehlung «ungeprüft»
   ein `/materialien/:key`, `/materialien/deckung`, `/methodik`, `/ueber`, `/kontakt`, `/datenschutz`, 404,
   `/rechtsprechung/:key` mit 3 Fixtures über Fetch-Stub) + Entscheid-Kern-Probe (`EntscheidBody`+`RegesteBlock`,
   Hash, wie LESER-S0); `kein-abschnitt`-Sweep um Karten-Dichte. Rot-Beweis Pflicht.
+  **Gebaut 25.9.2026** (Spec-Korrektur: die Rest-Routen stehen nicht im Routen-Manifest, sondern in
+  `src/RouteSwitch.tsx` — die Ratsche rendert `<RouteSwitch/>` und misst den GELADENEN Zustand über einen
+  beidseitig dichten Fetch-Stub, nicht den Erst-Render wie R0): `src/tests/rest-flaechen-ratsche.test.tsx`
+  (13 Adressen, Fixture `rest-flaechen.json` + `rest-flaechen/netz.json`, Schreib-Schalter
+  `REST_FLAECHEN_SCHREIBEN=1`), `src/tests/EntscheidBody.kernprobe.test.tsx` (12 Korpus-Fälle, Hash voll/struktur,
+  Fixture `kern-probe-entscheid.json`; Such-Hervorhebung nicht abgedeckt), `e2e/kein-abschnitt.e2e.ts` Block
+  «Dichte-Sweep /rechtsprechung» (Liste + Karten). Rot-Beweise im PR-Body.
 - **S1 Entscheid-Leser (Inventar 3.3)** (bau, ~1, dep S0): Kopf (Overline Gericht · Sammlung, H1 Zitierung,
   Faktenzeile, Herkunft/ECLI), Regeste, Reiter, Lesemodus, Provenienz-Fuss, Kontext-Blatt; **Körper byte-gleich**.
   Posten D8a slate, «maschinell»-Etikett @390, SchalterGruppe → `ui/`. Geteilt mit LESER: `LeserKopfGeruest`,
