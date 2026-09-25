@@ -34,7 +34,7 @@ function snap(o: Partial<EntscheidSnapshot> = {}): EntscheidSnapshot {
     id: 'bund/bstger/TEST', gericht: 'bstger', gerichtName: 'Bundesstrafgericht',
     gerichtstyp: 'bundesstrafgericht', kanton: 'CH', abteilung: null, nummer: 'TEST',
     bgeReferenz: null, zitierung: 'TEST', datum: '2026-05-19',
-    sprache: 'it', leitcharakter: 'routine', sachgebiet: 'strafrecht', legalArea: null,
+    sprache: 'it', leitcharakter: 'routine', sachgebiet: 'straf', legalArea: null,
     rubrum: null, regeste: null, regesteAmtlich: false,
     abschnitte: [], dispositivOrders: [], zitierteNormen: [], normKeys: [],
     zitierteEntscheide: [], bestand: 'snapshot', kuratierung: 'maschinell',
