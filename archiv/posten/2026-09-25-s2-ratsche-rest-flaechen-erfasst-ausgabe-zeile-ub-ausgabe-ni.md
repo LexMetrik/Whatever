@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-25
 -->
 
 Ratsche schärfen
+
+**Erledigt 2026-09-25:** REST S5b: Ratsche erfasst .ub-ausgabe, Fixture additiv (Bug-Check Sonnet bestanden)

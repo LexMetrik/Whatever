@@ -441,6 +441,17 @@ Umschichtung 20.9.2026 (2)):*
   LESER bewusst umgebucht hat (NormText schneiden, NormChip-Ort, Akkordeon, E3 u. a.). Aus REST gelöst,
   damit REST im Abbruchkriterium bleibt (§2 Ziff. 4). **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f.
 
+- [ ] **Bildschirmbreite je Seitenart nutzen** *(`W2·31-BILDSCHIRMBREITE`, Freigabe David 25.9.2026)*
+  <!-- @meta id: W2·31-BILDSCHIRMBREITE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: null -->
+  Anlass: Inventar 25.9.2026 (messen2.mjs) — ab 1280 px ist Inhalt überall auf 1072 px gedeckelt,
+  bei 1920 bleiben 424 px je Seite leer. Aufträge David 25.9.2026 (wörtlich): «für alle arten von
+  seiten … bildschirmbreite bei allen seiten optimiert wird» · «für jede seitenart eine eigene
+  session … was angezeigt wird» · «zuerst inventarisieren … anschliessend planen» · Plan
+  «einverstanden freigegeben». Grundsatz: Lesemass/Fliesstext wächst nie, nur Raster/Tabellen/
+  Beiwerk nutzen die Breite; eine Session je Posten; Posten „Grundlage“ vor allen anderen. Nr. 0
+  (Startseite) läuft als Posten unter `W2·29-WERKBANK-REST`. Inventar:
+  `~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md`.
+
 - [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
   <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
   Dieselbe Inhaltsklasse site-weit im selben Muster (Split-View vs. Vollansicht, Leser-Köpfe,

@@ -51,6 +51,8 @@ const ZIEL = resolve(wurzel, 'src/data/startseiteZaehler.generated.ts');
 interface ErlassEintrag {
   key: string; ebene: 'bund' | 'kanton'; status: string; kanton?: string;
   kuerzel: string; rechtsgebiet: string;
+  /** SR-Nummer (Staatsverträge: `0.…`; EU-Rechtsakte: null). */
+  sr?: string | null;
   /** Konsolidierungsstand des Snapshots (ISO) — D8: Quelle des Inhaltsalters. */
   stand?: string | null;
 }
@@ -132,6 +134,22 @@ function zaehle() {
   // (systematik.ts, Kommentar am Listenende) — sie steht als eigene Zeile, mit
   // ihrer eigenen Zahl aus derselben Regel.
   const international = bundVolltext.filter((e) => e.rechtsgebiet === 'international');
+  // S5a (W2·29-WERKBANK-REST, 25.9.2026): die Anzeige nennt diese Zahl
+  // «Staatsverträge» (Startseite.tsx Systematik-Fuss, Abdeckung.tsx,
+  // GesetzeBlatt.tsx Kachel «International»). Das stimmt nur, solange die
+  // Säule im Volltext ausschliesslich SR-0-Staatsverträge trägt (Stand
+  // 25.9.2026: 28 von 28; die EU-Rechtsakte DSGVO, KI-VO … sind
+  // `nur-live-link`). Bekommt ein Nicht-Staatsvertrag Volltext, wäre die
+  // Bezeichnung zu eng (§8) — dann bricht der Generator laut, statt still
+  // weiterzuzählen: erst die Bezeichnung an den genannten Stellen nachziehen
+  // (z. B. «internationale Erlasse»), dann diese Sperre anpassen.
+  const keinStaatsvertrag = international.filter((e) => !(e.sr ?? '').startsWith('0.'));
+  if (keinStaatsvertrag.length > 0) {
+    throw new Error(
+      `gen:zaehler: Säule «International» trägt Volltext ausserhalb SR 0 (${keinStaatsvertrag.map((e) => e.key).join(', ')}) — ` +
+      'die Anzeige nennt die Zahl «Staatsverträge» (Startseite.tsx, Abdeckung.tsx, GesetzeBlatt.tsx): Bezeichnung nachziehen, dann diese Sperre anpassen (§8).',
+    );
+  }
   // K5 (W2·29-WERKBANK-KATALOGE, 23.9.2026): die Säule «Bundesrecht» — Bund OHNE
   // International, dieselbe Menge wie Kachel und Tab «Bundesrecht» in /gesetze.
   // Der /gesetze-Kopf zählte die 28 Staatsverträge sonst in den Bundeserlassen

@@ -5,3 +5,5 @@ anlass: Verwaiste Session-Notiz, triagiert 24.9.2026 auf main a3d27e47c (2026-09
 -->
 
 Der Test vergleicht den abgeleiteten Titel mit seiner eigenen Quelle und kann nicht scheitern (§6.7). Test-Änderung = deklarierter Schritt (§6.3), in S5 mit Begründung.
+
+**Erledigt 2026-09-25:** REST S5a: gestrichen (Fachaenderung), Wache bleibt check:sediment c2

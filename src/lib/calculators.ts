@@ -29,6 +29,8 @@
 // wer ihn später abräumt, braucht einen eigenen, deklarierten Schritt. Die
 // wirksame Wache ist seither `check:sediment` (c2): sie verbietet, dass hier
 // je wieder ein Metadaten-Literal auftaucht.
+// Ergänzt 25.9.2026: abgeräumt als deklarierter Schritt in S5a
+// (W2·29-WERKBANK-REST); Begründung am Fundort im Test.
 //
 // Normentreue: Die Norm-Chips sind die `label` der Katalog-Karte. Keine
 // Artikelnummern erfinden — wer eine Norm ändern will, ändert die Karte.

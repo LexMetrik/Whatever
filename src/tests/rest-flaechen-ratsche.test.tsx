@@ -40,8 +40,9 @@
 // Extraktion 25.9.2026 aus public/, Auswahl im `_meta`). Daten-Nachzüge kippen die
 // Ratsche darum nicht. Jede Anfrage ausserhalb der Fixture ist rot, jede
 // Fixture-Antwort muss mindestens einmal angefragt werden (keine toten Daten).
-// Der Zähler `STARTSEITE_ZAEHLER.materialien` (Generat, wandert mit jedem
-// Register-Lauf) ist auf den Stand 25.9.2026 festgesetzt.
+// Die Zähler `STARTSEITE_ZAEHLER.materialien` (+ seit S5b die Gattungs-Zähler der
+// Ausgabe-Zeile; Generat, wandert mit jedem Register-Lauf) sind auf den Stand
+// 25.9.2026 festgesetzt.
 // UHR: fest auf den 7.10.2026, 12:00 (nur `Date`) — die Verfalls-Übersicht auf
 // /methodik rechnet gegen «heute».
 //
@@ -63,7 +64,14 @@ import { RouteSwitch } from '../RouteSwitch';
 
 vi.mock('../data/startseiteZaehler.generated', async (original) => {
   const o = await original<typeof import('../data/startseiteZaehler.generated')>();
-  return { ...o, STARTSEITE_ZAEHLER: { ...o.STARTSEITE_ZAEHLER, materialien: 1684 } };
+  // S5b: die Ausgabe-Zeile /materialien liest die Gattungs-Zähler — mit festgesetzt
+  // (Stand 25.9.2026, 1357 + 327 = 1684), sonst kippte ein Register-Lauf die Ratsche.
+  return {
+    ...o,
+    STARTSEITE_ZAEHLER: {
+      ...o.STARTSEITE_ZAEHLER, materialien: 1684, materialienGesetzgebung: 1357, materialienErlaeuterungen: 327,
+    },
+  };
 });
 
 const FIXTURE = join(__dirname, 'fixtures', 'rest-flaechen.json');
@@ -91,6 +99,10 @@ const ROUTEN = [
 interface Flaeche {
   titel: string[];
   overline: string[];
+  /** Ausgabe-Zeile unter der H1 (`SeitenKopf` → `.ub-ausgabe`, D22) — Bestand/
+   *  Wortlaut der Rubrik; fehlte bis S5b (Posten 25.9.2026: die S2-Wortlaut-
+   *  Änderung «Materialien (Gesetzgebung)» entging der Ratsche). */
+  ausgabe: string[];
   ueberschriften: string[];
   knoepfe: string[];
   links: string[];
@@ -174,6 +186,7 @@ function erfasse(wurzel: Element): Flaeche {
   return {
     titel: alle('h1').map(txt),
     overline: alle('[class*="overline"]').map(txt).filter(Boolean),
+    ausgabe: alle('.ub-ausgabe').map(txt),
     ueberschriften: alle('h2, h3').map((h) => `${h.tagName.toLowerCase()} ${txt(h)}`),
     knoepfe: alle('button, [role="tab"]').map(name).filter(Boolean),
     links: alle('a[href]').map((a) => `${name(a)} → ${a.getAttribute('href')}`),
