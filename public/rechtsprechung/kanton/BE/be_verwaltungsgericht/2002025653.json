@@ -1,0 +1,87 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "kanton/BE/be_verwaltungsgericht/2002025653",
+      "gericht": "be_verwaltungsgericht",
+      "gerichtName": "Verwaltungsgericht BE",
+      "gerichtstyp": "kantonal",
+      "kanton": "BE",
+      "abteilung": null,
+      "nummer": "200 2025 653",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungsgericht BE 200 2025 653 vom 18.08.2026",
+      "datum": "2026-08-18",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "sozialversicherung",
+      "legalArea": "social_insurance",
+      "rubrum": null,
+      "regeste": null,
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "sachverhalt",
+          "vollstaendig": true,
+          "bloecke": [
+            {
+              "marke": "A.",
+              "tiefe": 1,
+              "text": "Der 1964 geborene A.________ (Versicherter bzw. Beschwerdeführer) meldete sich im August 2024 bei der Regionalen Arbeitsvermittlung (RAV) an (Akten der Unia Arbeitslosenkasse [ALK bzw. Beschwerdegegnerin; act. II] 319), nachdem das Pensum in seiner zuletzt ausgeübten Tätigkeit als … bei der C.________ AG (nachfolgend: erste Arbeitgeberin) mit Änderungskündigung vom 22. Juli 2024 (act. II 316) per 1. September 2024 auf 50 % reduziert worden war (vgl. act. II 312 mit 314). Der Versicherte bezog in der Folge seit September 2024 Arbeitslosenentschädigung, wobei das fortbestehende Arbeitsverhältnis bei der ersten Arbeitgeberin als Zwischenverdienst berücksichtigt wurde (vgl. act. II 276 ff., 281 f., 291 f.). Nach Unterzeichnung eines Arbeitsvertrags (act. II 289) mit der D.________ (nachfolgend: zweite Arbeitgeberin) kündigte der Versicherte am 23. September 2024 das Arbeitsverhältnis mit der ersten Arbeitgeberin per Ende Oktober 2024 (act. II 159). Nachdem die ALK eine Stellungnahme bezüglich der Kündigung eingeholt hatte (vgl. Akten des Beschwerdeführers [act. I] 5 S. 4 ff.), stellte sie den Versicherten mit Verfügung vom 22. April 2025 (act. II 204 ff.) wegen selbstverschuldeter Arbeitslosigkeit im Zwischenverdienst rückwirkend ab 1. November 2024 für insgesamt 32 Tage, ausmachend Fr. 2'340.85, in der Anspruchsberechtigung ein. In der Folge verrechnete die ALK 14.6 Einstelltage mit dem laufenden Taggeldbezug im Monat März 2025 (act. II 203) und forderte mit Verfügung vom 24. April 2024 (act. II 200 ff.) zu viel ausbezahlte Arbeitslosenentschädigung in der Höhe von netto Fr. 1'179.55, entsprechend 17.4 Einstelltagen, zurück (vgl. auch act. II 198 f.). Am 20. Mai 2025 erhob der Versicherte gegen die Verfügungen vom 22. und 24. April 2024 je Einsprache (act. II 160 ff., 179 ff.), woraufhin die ALK, Kompetenzzentrum D-CH West, die Verfahren vereinigte und den Versicherten mit Einspracheentscheid vom 4. September 2025 (act. II 89 ff.) in teilweiser Gutheissung ab dem 1. November 2024 neu für die Dauer von 24 Tagen, ausmachend Fr. 1'755.65, in der Anspruchsbe- Urteil des Verwaltungsgerichts des Kantons Bern vom 18. August 2026, ALV 200 2025 653 - 3 - rechtigung einstellte und den Rückforderungsbetrag auf nunmehr Fr. 647.90 festsetzte."
+            },
+            {
+              "marke": "B.",
+              "tiefe": 1,
+              "text": "Hiergegeben erhob der Versicherte, weiterhin vertreten durch die B.________, E.________, am 3. Oktober 2025 Beschwerde und beantragte die Aufhebung des angefochtenen Entscheides, eventualiter die Rückweisung an die Beschwerdegegnerin zur korrekten Eröffnung der Verfügungen vom 22. und 24. April 2024. Die Beschwerdegegnerin schloss mit Beschwerdeantwort vom 14. Oktober 2025 auf Abweisung der Beschwerde."
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 1 Abs. 1 AVIG",
+        "Art. 16 AVIG",
+        "Art. 17 Abs. 1 AVIG",
+        "Art. 18 GAV",
+        "Art. 24 AVIG",
+        "Art. 30 Abs. 1 AVIG",
+        "Art. 30 Abs. 3 AVIG",
+        "Art. 30 AVIG"
+      ],
+      "normKeys": [
+        "AVIG"
+      ],
+      "zitierteEntscheide": [
+        "8C_1021/2012",
+        "8C_331/2019",
+        "8C_437/2024",
+        "8C_586/2018",
+        "8C_66/2017",
+        "8C_789/2014",
+        "8C_846/2018",
+        "9C_348/2009",
+        "9C_627/2022",
+        "9C_791/2010",
+        "BGE 103 V 63",
+        "BGE 110 V 54",
+        "BGE 114 V 350",
+        "BGE 121 V 5",
+        "BGE 122 V 34",
+        "BGE 123 V 150",
+        "BGE 124 V 234",
+        "BGE 124 V 238",
+        "BGE 142 III 599",
+        "BGE 144 V 427",
+        "BGE 151 V 264"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://www.vg-urteile.apps.be.ch/tribunapublikation/tribunavtplus/ServletDownload/200_2025_653_1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad212e044e792e6430a6d6143621a9e4c5a1f324cc39916e8867cf54a15b7897561be6f31709f1d17e8498e4678eed68708?path=1135a87fe828ea5c36ac883cc48cd62c9aece1cd4f76dda28e1f3d8ce0d6f5f916b78087c64293a8e261373f3af02ad212e044e792e6430a6d6143621a9e4c5a1f324cc39916e8867cf54a15b7897561be6f31709f1d17e8498e4678eed68708&pathIsEncrypted=1&dossiernummer=200_2025_653",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "b7cbbd522a68457ad5121c54136cd26cbd603a06f862ee5ded270505af4ac484",
+      "sha": "ca793e823d3128c4e5097d91e91908bfd692dbcce49fef86eff8316349e5c5cd",
+      "ecli": "ECLI:CH:BEV:2026:200.2025.653"
+    }
+  ]
+}

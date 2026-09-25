@@ -5,15 +5,18 @@
 "dokumente":{
 "bge_148_III_201":{"zitierung":"BGE 148 III 201","regesteKurz":"Art. 36 Abs. 2 VAG; Art. 92 Abs. 2 in Verbindung mit Art. 94 VVG; Informationsansprüche der Versicherungsnehmer im Zusammenhang mit Überschussanteilen bei einer Lebensversicherung der Säule 3a. Die Versicherungsunternehmen sind…","datum":"2022-03-09","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_BES.2024.47":{"zitierung":"Appellationsgericht BS BES.2024.47 vom 12.08.2025","regesteKurz":"Verfahrenseinstellung","datum":"2025-08-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_ZB.2022.5":{"zitierung":"Appellationsgericht BS ZB.2022.5 vom 28.04.2022","regesteKurz":"Vorsorgliche Beweisführung (BGer 4A_323/2022 vom 5. Dezember 2022)","datum":"2022-04-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_ZB.2022.5":{"zitierung":"Appellationsgericht BS ZB.2022.5 vom 28.04.2022","regesteKurz":"Vorsorgliche Beweisführung (BGer 4A_323/2022 vom 5. Dezember 2022)","datum":"2022-04-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bstger_SK_2026_22":{"zitierung":"BStGer SK.2026.22 vom 31. August 2026","regesteKurz":"Exercice d'une activité d'assurance sans autorisation de la FINMA (art. 44 LFINMA, en lien avec l'art. 3 al. 1 LSA)","datum":"2026-08-31","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}}
 },
 "proArtikel":{
+"3":[{"key":"bstger_SK_2026_22","gewicht":null}],
 "4":[{"key":"bs_appellationsgericht_ZB.2022.5","gewicht":null}],
 "25":[{"key":"bge_148_III_201","gewicht":0}],
 "36":[{"key":"bge_148_III_201","gewicht":0}],
 "45":[{"key":"bs_appellationsgericht_BES.2024.47","gewicht":null},{"key":"bs_appellationsgericht_ZB.2022.5","gewicht":null}]
 },
 "gesamtProArtikel":{
+"3":{"eidg":1},
 "4":{"kantonal":1},
 "25":{"bge":1},
 "36":{"bge":1},

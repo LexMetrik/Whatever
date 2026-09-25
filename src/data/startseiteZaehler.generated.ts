@@ -176,18 +176,18 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     "LugÜ",
     "HZÜ"
   ],
-  "rechtsprechungVolltext": 5385,
+  "rechtsprechungVolltext": 5407,
   "rechtsprechungVollurteilVerweise": 1332,
   "rechtsprechungSachgebiete": [
     {
       "id": "privat",
       "label": "Privatrecht",
-      "anzahl": 1079
+      "anzahl": 1086
     },
     {
       "id": "straf",
       "label": "Strafrecht",
-      "anzahl": 1484
+      "anzahl": 1488
     },
     {
       "id": "prozess",
@@ -197,17 +197,17 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     {
       "id": "oeffentlich",
       "label": "Öffentliches Recht",
-      "anzahl": 1414
+      "anzahl": 1419
     },
     {
       "id": "steuern",
       "label": "Steuern & Abgaben",
-      "anzahl": 120
+      "anzahl": 121
     },
     {
       "id": "sozialversicherung",
       "label": "Sozialversicherung",
-      "anzahl": 1195
+      "anzahl": 1200
     }
   ],
   "rechtsprechungLeitentscheide": 1339,

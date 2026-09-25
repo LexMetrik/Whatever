@@ -26,14 +26,15 @@
 "bs_appellationsgericht_BES.2023.63":{"zitierung":"Appellationsgericht BS BES.2023.63 vom 30.10.2023","regesteKurz":"Nichtanhandnahme","datum":"2023-10-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_BV.2021.12":{"zitierung":"Sozialversicherungsgericht BS BV.2021.12 vom 12.04.2022","regesteKurz":"Klage teilweise gutgeheissen. Reglementarische Karenzfrist rechtskonform. Verspätet eingebrachtes Vorsorgekapital zu…","datum":"2022-04-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_BV.2025.10":{"zitierung":"Sozialversicherungsgericht BS BV.2025.10 vom 12.03.2026","regesteKurz":"Haben die für die Invalidität mitursächlichen psychischen Faktoren das Krankheitsgeschehen schon während der…","datum":"2026-03-12","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
-"sg_gerichte_BV2024_21":{"zitierung":"Verwaltungs-/Versicherungsgericht SG BV 2024/21 vom 04.07.2025","regesteKurz":"Art. 122 ff. ZGB; Art. 281 Abs. 3 ZPO; Art. 22c FZG. Vorsorgeausgleich (Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025, BV 2024/21).","datum":"2025-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"SG","gericht":"sg_gerichte","status":"kantonal"}}
+"sg_gerichte_BV2024_21":{"zitierung":"Verwaltungs-/Versicherungsgericht SG BV 2024/21 vom 04.07.2025","regesteKurz":"Art. 122 ff. ZGB; Art. 281 Abs. 3 ZPO; Art. 22c FZG. Vorsorgeausgleich (Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025, BV 2024/21).","datum":"2025-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"SG","gericht":"sg_gerichte","status":"kantonal"}},
+"zh_obergericht_PS260195":{"zitierung":"Obergericht ZH PS260195 vom 15.07.2026","regesteKurz":null,"datum":"2026-07-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_151_III_143","gewicht":0},{"key":"bge_148_III_232","gewicht":0},{"key":"bge_147_V_181","gewicht":0},{"key":"bge_146_V_341","gewicht":1}],
 "2":[{"key":"bge_151_V_144","gewicht":0},{"key":"bge_150_V_161","gewicht":0},{"key":"bge_150_V_12","gewicht":0},{"key":"bge_148_III_232","gewicht":0},{"key":"bge_148_V_114","gewicht":1},{"key":"bge_147_V_342","gewicht":0},{"key":"bge_147_V_181","gewicht":0},{"key":"bge_147_V_86","gewicht":0},{"key":"bge_146_V_95","gewicht":0}],
 "3":[{"key":"bge_150_V_440","gewicht":0},{"key":"bge_148_III_232","gewicht":0},{"key":"bs_sozialversicherungsgericht_BV.2025.10","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.12","gewicht":null}],
 "4":[{"key":"bge_148_III_232","gewicht":0},{"key":"bge_148_V_114","gewicht":1},{"key":"bge_146_V_331","gewicht":1},{"key":"bge_146_V_341","gewicht":1},{"key":"bs_appellationsgericht_BES.2023.63","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.12","gewicht":null}],
-"5":[{"key":"bge_151_V_343","gewicht":0},{"key":"bge_151_V_169","gewicht":0},{"key":"bge_150_V_161","gewicht":1},{"key":"bge_148_III_232","gewicht":1},{"key":"bge_148_II_189","gewicht":0},{"key":"bge_148_V_114","gewicht":1},{"key":"bge_149_III_28__voll","gewicht":0,"erwaegungen":["E. 5","E. 6.2.3.2","E. 6.3"]},{"key":"bs_sozialversicherungsgericht_BV.2021.12","gewicht":null}],
+"5":[{"key":"bge_151_V_343","gewicht":0},{"key":"bge_151_V_169","gewicht":0},{"key":"bge_150_V_161","gewicht":1},{"key":"bge_148_III_232","gewicht":1},{"key":"bge_148_II_189","gewicht":0},{"key":"bge_148_V_114","gewicht":1},{"key":"bge_149_III_28__voll","gewicht":0,"erwaegungen":["E. 5","E. 6.2.3.2","E. 6.3"]},{"key":"zh_obergericht_PS260195","gewicht":null},{"key":"bs_sozialversicherungsgericht_BV.2021.12","gewicht":null}],
 "9":[{"key":"bge_151_V_343","gewicht":0},{"key":"bge_148_II_189__voll","gewicht":0,"erwaegungen":["E. 2.2.2"]},{"key":"bs_sozialversicherungsgericht_BV.2021.12","gewicht":null}],
 "18":[{"key":"bge_147_V_86","gewicht":0}],
 "20":[{"key":"bge_151_V_169","gewicht":0},{"key":"bge_150_V_161","gewicht":1},{"key":"bge_148_V_114","gewicht":0}],
@@ -49,7 +50,7 @@
 "2":{"bge":9},
 "3":{"bge":2,"kantonal":2},
 "4":{"bge":4,"kantonal":2},
-"5":{"bge":6,"bger":1,"kantonal":1},
+"5":{"bge":6,"bger":1,"kantonal":2},
 "9":{"bge":1,"bger":1,"kantonal":1},
 "18":{"bge":1},
 "20":{"bge":3},

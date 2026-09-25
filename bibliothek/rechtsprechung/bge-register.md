@@ -116,7 +116,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 | BGE 146 III 25 | Absolute Frist läuft ab dem schädigenden Verhalten und kann vor Erkennbarkeit des Schadens ablaufen (Asbest-Spätschäden). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F146-III-25%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 146 III 265 | Örtliche Zuständigkeit der Schlichtungsbehörde (Gerichtsstände, u. a. Art. 10 ff. ZPO). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F146-III-265%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/pages/VorlageSchlichtungsgesuchBs.tsx | zu verifizieren |
 | BGE 147 III 419 | Art. 138 Abs. 1 OR: Neubeginn der Verjährung erst mit Abschluss des Rechtsstreits vor der befassten Instanz (Ausschöpfung des Instanzenzugs). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F147-III-419%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/verjaehrung.ts | zu verifizieren |
-| BGE 148 III 126 | Verlängerte Probezeit: Nachzuholen sind die effektiv versäumten Arbeitstage (Art. 335b OR). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F148-III-126%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/mietrecht.ts · src/lib/sperrfristen.ts · src/lib/vorlagen/arbeitsvertrag.ts | zu verifizieren |
+| BGE 148 III 126 | Verlängerte Probezeit: Nachzuholen sind die effektiv versäumten Arbeitstage (Art. 335b OR). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F148-III-126%3Ade&lang=de&type=show_document) | src/components/forms/ArbeitstageFeld.tsx · src/components/forms/KombinierteAnsicht.tsx · src/components/forms/KuendigungSperrForm.tsx · src/data/verifikation.ts · src/lib/kuendigungsfrist.ts · src/lib/kuendigungsfristProbezeit.ts · src/lib/mietrecht.ts · src/lib/vorlagen/arbeitsvertrag.ts · src/lib/vorlagen/kuendigungArbeitgeber.ts · src/types/legal.ts | zu verifizieren |
 | BGE 149 III 179 | Die Auflage des Kollokationsplans ist keine Betreibungshandlung → für die Kollokationsklage gelten die ZPO-Gerichtsferien (Art. 145 ZPO), nicht Art. 63 SchKG. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-III-179%3Ade&lang=de&type=show_document) | src/components/forms/SchkgFristenForm.tsx · src/data/verifikation.ts · src/lib/schkgPresets.ts | zu verifizieren |
 | BGE 149 III 202 | Laufende Ferienlohn-Abgeltung im Stundenlohn ist bei Vollzeitbeschäftigung unzulässig – auch bei schwankenden Löhnen (Art. 329d Abs. 2 OR). | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-III-202%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/vorlagen/arbeitsvertrag.ts · src/pages/VorlageArbeitsvertrag.tsx | zu verifizieren |
 | BGE 150 III 367 | Monatsfrist nach Art. 77 Abs. 1 Ziff. 3 OR endet am gleichbezeichneten Tag des Zielmonats. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F150-III-367%3Ade&lang=de&type=show_document) | src/data/verifikation.ts · src/lib/allgemeineFrist.ts · src/lib/schkgFristen.ts | zu verifizieren |
@@ -125,7 +125,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 | BGE 81 II 56 | Prüf- und Rügeobliegenheit (Art. 201 OR) gilt analog beim Grundstückkauf und für zugesicherte Eigenschaften. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F81-II-56%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 | BGE 98 II 191 | Massstab der sofortigen Mängelrüge; wenige Kalendertage nach Kenntnis genügen stets. | [Entscheid](https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F98-II-191%3Ade&lang=de&type=show_document) | src/data/verifikation.ts | zu verifizieren |
 
-## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (58)
+## Lücken: im Code zitiert, aber NICHT im Verifikations-Register (60)
 
 - **1A.122/2005** — src/lib/rechtsprechung/zitat-extraktion.ts
 - **1B_154/2007** — src/lib/strafRechtsmittel.ts
@@ -140,6 +140,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 - **5A_550/2017** — src/data/zpoFeiertage.ts
 - **6B_730/2013** — src/data/zpoFeiertage.ts · src/lib/allgemeineFrist.ts
 - **7B_950/2024** — src/lib/rechtsprechung/besetzung/parser.ts
+- **8C_317/2021** — src/lib/kuendigungsfrist.ts
 - **9C_396/2018** — src/data/zpoFeiertage.ts · src/lib/bgerRechtsweg.ts · src/lib/bggVwvgFristen.ts
 - **BGE 100 Ia 305** — src/lib/gerichtszitat.ts
 - **BGE 104 II 265** — src/lib/gewaehrleistung.ts
@@ -155,6 +156,7 @@ Linkschema zweifach geprüft (Stichproben + Suite). Die Spalte Status zeigt:
 - **BGE 139 II 134** — src/components/rechtsprechung/EntscheidBody.tsx
 - **BGE 140 III 86** — src/lib/rechtsprechung/ecli.ts
 - **BGE 144 II 486** — src/lib/rechtsprechung/abschnitte.ts · src/lib/verzahnung/entscheid-kanten.ts
+- **BGE 144 III 152** — src/lib/kuendigungsfrist.ts
 - **BGE 146 II 111** — src/lib/rechtsprechung/zitat-extraktion.ts
 - **BGE 146 III 1** — src/components/layout/Shell.tsx · src/pages/entscheidLeserRegeln.ts
 - **BGE 147 I 268** — src/lib/rechtsprechung/zitat-extraktion.ts
