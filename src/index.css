@@ -4722,6 +4722,33 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .lc-akzent-w .text-ink-500,
 .lc-akzent-w .lc-overline { color: var(--ink-600); }
 
+/* ── W2·29-WERKBANK-REST S1 (25.9.2026) · TITELBLATT «RECHTSPRECHUNG» ──────
+   `layout/LeserKopfGeruest` mit `register="r"` (Entscheid-Leser): dasselbe
+   Band wie der Erlass-Kopf (S2), Fläche und Strich aus dem Register
+   «Rechtsprechung» (F0.2, nur `--reg-r-flaeche` als Fläche, Tinte darauf).
+   Gemessen 25.9.2026 auf `reg-r-flaeche`: ink-500 4.31:1 hell / 4.28:1 dunkel
+   (< 4.5) → Overline wie die übrigen `text-ink-500` auf ink-600
+   (5.49 / 5.30:1). Auf einer Route mit Register gewinnt ③ (oben,
+   `.lc-route[data-reg] header .lc-overline`: kursive Literata in `reg-r`,
+   7.70 / 6.34:1 auf der Fläche); diese Regel ist der Boden ausserhalb davon.
+   Nur `[data-reg]`: das Gesetzes-Band bleibt unberührt. */
+.lc-titelblatt-band[data-reg="r"] {
+  background: var(--reg-r-flaeche);
+  border-top-color: var(--reg-r);
+}
+.lc-titelblatt-band[data-reg] .lc-overline { color: var(--ink-600); }
+/* Randnotiz statt Kasten (`StatusBadge variant="text"`, «maschinell»): Board
+   «Unter-Rechtsprechung-Register» — gepunktet unterstrichener Text in der
+   Schriftgrösse der Zeile, ink-500 (5.34:1 auf paper, KONTRAST-R1). Die
+   Punktlinie ist Form, nicht Farbe (F2): sie unterscheidet die Randnotiz vom
+   Fliesstext auch ohne Farbsehen. */
+.lc-marke-text {
+  color: var(--ink-500);
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
 /* ─── GB-20 · DIE WAHL-ZEILE (Ferien/Stillstand des Fristenrechners) ────────
    Rezept zum Befund G20 (Herleitung am Aufrufer `forms/EinfacheFristForm`):
    keine Karte, keine Fläche, kein Ring — eine Zeile mit Trennlinie oben und,

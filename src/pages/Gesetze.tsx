@@ -8,8 +8,9 @@ import { InternationalRubriken } from '../components/normtext/InternationalRubri
 import { RechtsgebietSicht } from '../components/normtext/RechtsgebietSicht';
 import {
   GliederungUmschalter, RelevanzGitter, KantonRelevanzListe,
-  KantonGebietGruppen, IntlRechtsgebietSicht, SchalterGruppe,
+  KantonGebietGruppen, IntlRechtsgebietSicht,
 } from '../components/normtext/GesetzeGliederung';
+import { SchalterGruppe } from '../components/ui/SchalterGruppe';
 import { ErlassTabelle } from '../components/normtext/ErlassKarte';
 import { loeseGliederung, speichereGliederung, type Gliederung } from '../lib/normtext/gliederung';
 import {

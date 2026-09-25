@@ -5,3 +5,5 @@ anlass: Session-Notizen 2026-09-23
 -->
 
 Entscheid in K6/REST (StatusBadge geteilt)
+
+**Erledigt 2026-09-25:** REST S1 (Kopf vor Rebase c0bf8b106, PR folgt): gebaut, Bug-Check Sonnet bestanden
