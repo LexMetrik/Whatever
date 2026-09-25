@@ -35,6 +35,8 @@ npm run entscheide:seed -- --datum=$(date +%F)
 # Auflösung», bis zur Angleichung; Beleg #1099: +IRSG/+VKL erst im Remap sichtbar)
 npm run entscheide -- --datum=$(date +%F) --additiv --bge-baender=152
 npm run entscheide -- --datum=$(date +%F) --remap
+# Danach (sonst check:zaehler rot):
+npm run gen:zaehler && npm run gen:bezuege-zaehler && npm run datenhaltung:manifest
 
 # Integritäts-Tor (Manifest⊇Snapshots · Provenienz · sha · Norm-Index⊆Manifest · BUDGET_MB)
 npm run check:entscheide
@@ -236,6 +238,7 @@ auf einen NEUEN Regress deutet.
 10. **Kantonales `decision_date` ≠ Entscheiddatum (25.9.2026)** — oft Mitteilungs-/BGer-Datum; es gilt der
     Urteilskopf (`entscheid-kopfdatum.ts`, PDF-Rückfall `entscheid-kantonsdatum.ts`), Bestand per
     `--kopfdatum-refresh`. Beleg: `bibliothek/rechtsprechung/kantonales-entscheiddatum-kopf-2026-09-25.md`.
+11. **BGE-Record vermischt (152 I 2, 25.9.2026)** — Band-Nachzug nimmt den clir-Auszug (`clir-auszug.ts`).
 
 Weitere am Code verdrahtete Invarianten (für `review.md` relevant), alle in `main()`
 (`scripts/normtext-entscheide.ts`): **BGE-Dedup** — ein bereits als BGE-Volltext erfasstes bger-Urteil
