@@ -210,6 +210,51 @@ test.describe('Entscheid A — das Erlass-Blatt ist eine Spalte mit Schiene, wie
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
 
+  // W3-2 (Audit 25.9.2026, Belege @1440 Esc/✕/Kopf-Knopf/„r"): der Öffner
+  // (Schiene) verschwindet aus dem DOM, SOBALD das Blatt offen ist
+  // (`bild.blattSchiene` kippt auf `false`) — die in `usePopoverAutoZu`
+  // gemerkte Fokus-Referenz war beim Schliessen darum längst verwaist, und der
+  // Fokus blieb auf BODY stehen (4/4, ROT vor dem Fix dieses Schritts). SOLL:
+  // in JEDEM der vier Schliesswege landet der Fokus wieder auf der Schiene.
+  test('(j) @1440: Esc/✕/Kopf-Knopf/„r" geben den Fokus an die Schiene zurück, nie an BODY', async ({ page }) => {
+    test.slow()
+    const fehler = await oeffne(page, '/gesetze/bund/OR', 1440)
+    const schiene = page.locator('[data-v3-blatt-schiene]')
+
+    // (1) Esc
+    await schiene.click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-panel-reiter="aenderungen"]').first().click()
+    await page.locator('[data-v3-panel-reiter="aenderungen"]').first().focus()
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    // (2) ✕ im Panel
+    await schiene.click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.locator('[data-v3-panel-zu]').first().click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    // (3) Kopf-Knopf «Erlass-Blatt ausblenden ›»
+    await schiene.click()
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.getByRole('button', { name: /Erlass-Blatt ausblenden/ }).first().click()
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    // (4) Taste «r»
+    await page.locator('body').click({ position: { x: 5, y: 400 } })
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]').first()).toBeVisible({ timeout: 20_000 })
+    await page.keyboard.press('r')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(schiene).toBeFocused()
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
   test('(i) @1024: die Gliederung weicht dem Blatt nur vorübergehend', async ({ page }) => {
     test.slow()
     await oeffne(page, '/gesetze/bund/ZGB', 1024)

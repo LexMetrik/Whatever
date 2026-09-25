@@ -271,6 +271,18 @@ describe('Reiter «Änderungen» — neue Sidecar-Felder (#1001), optional geles
     expect(html).toContain('Hebt diesen Erlass auf');
     expect(html).not.toContain('in Kraft seit 01.03.2026, im hier gezeigten Text');
   });
+  // W3-1 (Audit 25.9.2026): Fedlex' `aufhebung` meint die Aufhebung EINZELNER
+  // Bestimmungen (Bsp. PatG AS 2026 232, OR TJPG AS 2026 323) — die Marke stand
+  // bisher nackt als «Aufhebung» neben dem Erlasstitel und liess sich als
+  // Aufhebung des GANZEN Erlasses lesen. Identitäts-Treffer mit Wortgrenze
+  // (§0/§7): `>Aufhebung<` darf NICHT mehr vorkommen — «Vollständige Aufhebung»
+  // (anderer Schlüssel, anderer Satz «Hebt diesen Erlass auf») bleibt unberührt.
+  it('W3-1: Wirkung «aufhebung» (einzelne Bestimmungen) heisst «hebt Bestimmungen auf», nicht nackt «Aufhebung»', () => {
+    const html = aenderungen([{ ...rev({ dateEntryInForce: '2026-01-01' }), wirkungen: ['aufhebung'] }]);
+    expect(html).toContain('data-v3-panel-aenderung-wirkung');
+    expect(html).toContain('>hebt Bestimmungen auf<');
+    expect(html).not.toMatch(/>Aufhebung</);
+  });
   it('datumAusErlass: §8-Hinweis, dass das Datum abweichen kann', () => {
     const html = aenderungen([{ ...rev({ dateEntryInForce: '2019-01-01' }), datumAusErlass: true }]);
     expect(html).toContain('Inkrafttreten des ändernden Erlasses');
