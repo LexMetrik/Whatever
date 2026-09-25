@@ -596,7 +596,7 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // von bund/bstger/RR_2026_46 (it, nennt das IRSG nur als «AIMP», das seit der
     // Sperre nicht mehr auflöst — benannte Lücke, §8). Aussage des Tests steht.
     // §6.3-DEKLARATION (25.9.2026, QS-KORPUS Stichproben-Nachzug eidg. 3×5 +
-    // kantonal 5×6): eidg 159 → 404 Kanten, 88 → 184 Artikel, 17 → 25 Erlasse —
+    // ZH/BE je 6; SG/AG/GR wegen falschen Datums ausgenommen): eidg 159 → 404 Kanten, 88 → 184 Artikel, 17 → 25 Erlasse —
     // 15 neue BVGer/BStGer/BPatGer-Urteile (vorher 15, jetzt 30 eidg. Snapshots;
     // Asyl-/Ausländerrecht zitiert breit). Nullprobe origin/main 284deacdb = 159/88/17.
     // Die Klasse bleibt gegenüber kantonal (> 50 000) klein; die Aussage steht.
@@ -619,9 +619,9 @@ describe('B7/c · «Eidg.» ist verdrahtet, aber korpusweit selten (§8)', () =>
     // 6335 → 6404 (25.9.2026, QS-KORPUS BS-Delta +185 neu / 41 aktualisiert): die
     // neuen BS-Urteile zitieren 69 bisher unzitierte Artikel (Bund + BS-Erlasse).
     // eidg-Werte (159/88/17) unverändert — die Aussage des Tests steht.
-    // 6404 → 6450 (25.9.2026, Stichproben-Nachzug, s. oben): die 45 neuen Urteile
-    // zitieren 46 bisher unzitierte Artikel. Nullprobe origin/main 284deacdb = 6404.
-    expect(bilanz.artikelGesamt).toBe(6450);
+    // 6404 → 6431 (25.9.2026, Stichproben-Nachzug, s. oben): die 27 neuen Urteile
+    // zitieren 27 bisher unzitierte Artikel. Nullprobe origin/main 284deacdb = 6404.
+    expect(bilanz.artikelGesamt).toBe(6431);
     // Zum Vergleich, damit die Grössenordnung nicht im Ungefähren bleibt:
     expect(bilanz.kantenJeStatus.kantonal).toBeGreaterThan(50_000);
   });
