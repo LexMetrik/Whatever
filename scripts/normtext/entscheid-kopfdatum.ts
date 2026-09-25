@@ -21,6 +21,11 @@
 //      bewusst NICHT — das sind Zitate, nicht der eigene Kopf.
 // Liefern mehrere Formen VERSCHIEDENE Daten, gilt das Ergebnis als Widerspruch
 // (nie raten, §1) — der Aufrufer behält dann den Quellwert und meldet es.
+// Ein Titel schlägt ein abweichendes Plattform-Datum im selben Kopf NUR mit
+// Identitätsbeleg (eigenes Aktenzeichen, `titelBelegt`) — Gegenprüfung #1126:
+// sonst gewänne ein Fremd-Zitat («…; Urteil vom 22. Dezember 2025», BGer).
+// Aktenzeichen-Identität (`aktenzeichenRe`): Leerzeichen/Punkt gleichwertig
+// (BE-PDF «100.2025.363U» = «100 2025 363»), verbundene Verfahren, eng.
 // Nicht erfasst (im Bestand 25.9.2026 nicht vorhanden): fr./it. Kopfformen —
 // sie fallen ehrlich auf «fehlt» zurück.
 
@@ -68,13 +73,104 @@ export type Kopfdatum =
  * eigene Titel: «wurde mit Urteil vom 22. Dezember 2025 abgewiesen» (SG-
  * Publikationsdeckblatt, BGer-Nachgang), «(Urteil vom …», «gegen den Entscheid
  * vom …». Der eigene Titel steht im Kopf nach Kammer/Aktenzeichen/Namen.
+ * Kleingeschriebene Vorwörter gelten auch mit grossem Anfangsbuchstaben am
+ * Satzanfang: BE-PDF 200 2026 230, Seite 3 (Kopfzeile mit eigenem
+ * Aktenzeichen), «Mit Entscheid vom 5. März 2026 (act. II 11)» ist die
+ * Vorinstanz, amtlich ist das Urteil vom 20. Mai 2026 (Messung 25.9.2026).
+ * Nur der Anfangsbuchstabe, keine Versalien; Eigennamen bleiben exakt.
  */
-const ZITAT_VORWORT_RE = /(?:^|[\s(])(?:mit|durch|dem|den|das|die|der|des|im|in|zum|zur|gegen|ans|an|laut|gemäss|vgl\.|dieses|diesem|diesen|einem|einen|ein|eine|seinem|ihrem|sein|ihr|und|oder|sowie|bzw\.)\s?$|\(\s?$/;
+const ZITAT_VORWOERTER = ['mit', 'durch', 'dem', 'den', 'das', 'die', 'der', 'des', 'im', 'in', 'zum', 'zur', 'gegen', 'ans', 'an', 'laut', 'gemäss', 'vgl.', 'dieses', 'diesem', 'diesen', 'einem', 'einen', 'ein', 'eine', 'seinem', 'ihrem', 'sein', 'ihr', 'und', 'oder', 'sowie', 'bzw.', 'Bundesgericht', 'Bundesgerichts', 'BGer'];
 
 /** Whitespace (inkl. NBSP/U+202F) kollabieren. */
 const flach = (s: string): string => s.replace(/[\u00a0\u202f]/g, ' ').replace(/\s+/g, ' ').trim();
 
 const escRe = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const satzanfang = (w: string): string =>
+  /^\p{Ll}/u.test(w) ? `[${w[0]}${w[0].toUpperCase()}]${escRe(w.slice(1))}` : escRe(w);
+const ZITAT_VORWORT_RE = new RegExp(`(?:^|[\\s(])(?:${ZITAT_VORWOERTER.map(satzanfang).join('|')})[:,]?\\s?$|[(;]\\s?$`, 'u');
+
+/**
+ * Aktenzeichen-Muster (eng, §1): Leerzeichen und Punkt als Trenner gleichwertig
+ * (BE-PDF «100.2025.363U» = OCL «100 2025 363», Messung 25.9.2026); rein
+ * numerische Aktenzeichen zusätzlich mit belegtem BE-Suffix («…363U», nur U) und
+ * verbundenen Verfahren («100.2026.142/143» deckt 142 und 143). Mehrere
+ * Aktenzeichen («B 2024/58, B 2024/59») einzeln; eine Jahres-Gruppe vor der
+ * laufenden Nummer auch zweistellig (GR «SBK 26 38»). Kein Präfix-/Suffix-Treffer:
+ * davor/danach keine Ziffer/kein Buchstabe, danach auch kein «.<Ziffer>».
+ * Leer ⇒ null. Exportiert für Tests.
+ */
+/** Belegte BE-Aktenzeichen-Suffixe (Verwaltungsgericht «100.2025.363U»); erweitern nur mit Beleg. */
+const BE_SUFFIX = '(?:U)';
+
+/**
+ * pdfjs zerlegt Aktenzeichen in Einzel-Items: echte SG-PDF-Seite 2 von B 2024/58
+ * «Geschäftsnr. B 2024/5 8 B 2024/59» (Gegenprüfung 25.9.2026). Darum zwischen
+ * zwei Ziffern DESSELBEN Ziffernblocks ein Leerzeichen zulässig — nur dort, nie
+ * zwischen Buchstaben/Trennern. Eng bleibt es über die Grenze: nach einer
+ * Schlussziffer kein « <Ziffern>» (sonst läse «B 2024/5» in «B 2024/5 8») —
+ * ausser dem Seitenzähler «N / M» der SG-Folgeseiten («B 2023/225 2 / 18»,
+ * «BV 2024/21 2/8», alle fünf SG-PDF im Bestand 25.9.2026).
+ */
+const luft = (s: string): string => escRe(s).replace(/(?<=\d)(?=\d)/g, ' ?');
+
+export function aktenzeichenRe(docket: string | null | undefined): RegExp | null {
+  const alts = flach(String(docket ?? '')).split(/\s*,\s*/).map((az) => {
+    const g = az.split(/[ .]+/).filter(Boolean);
+    if (!g.length) return '';
+    const numerisch = g.every((x) => /^\d+$/.test(x));
+    const letzte = luft(g[g.length - 1]);
+    // Suffix nur die belegte BE-Form «U» (Bestand 25.9.2026: 12× «…U», kein anderer
+    // Buchstabe) — «100.2025.363V» ist nicht als identisch belegt (Nachprüfung 25.9.2026);
+    // verbundene Verfahren ganz gelesen, damit «142/143V» nicht über «142» durchrutscht.
+    const ende = numerisch ? `(?:\\d+/)*${letzte}(?:/\\d+)*${BE_SUFFIX}?(?!/\\d)` : letzte;
+    // GR-Referenz mit Kurzjahr: «SBK 26 38» = «SBK 2026 38» (PDF-Kopf, Messung 25.9.2026).
+    const jahr = (x: string) => (/^(?:19|20)\d{2}$/.test(x) ? `(?:${luft(x.slice(0, 2))} ?)?${luft(x.slice(2))}` : luft(x));
+    return [...g.slice(0, -1).map(jahr), ende].join('[ .]');
+  }).filter(Boolean);
+  return alts.length ? new RegExp(`(?<![\\p{L}\\d.])(?:${alts.join('|')})(?![\\p{L}\\d]|\\.\\d|(?<=\\d) \\d+(?!\\d| ?\\/ ?\\d))`, 'u') : null;
+}
+
+/**
+ * Plattform-Kopfzeile «TT.MM.JJJJ» + Kette aktenzeichenartiger Glieder: das eigene
+ * Aktenzeichen, «und», Versal-/Ziffernglieder («B», «2024/58», «ZR1»), getrennt
+ * durch Leerzeichen, «,», «;», «/». Ein Wort wie «Obergericht» beendet die Kette.
+ * `maske` (für `titelBelegt`) nimmt zusätzlich «Nr.» und BGer-Glieder mit «_» auf
+ * (lieber zu viel maskiert); die Erkennung (Form 2) nicht, damit ein Zitat
+ * «14.01.2026 2C_511/2025, B 2024/59» kein Plattformdatum stiftet.
+ */
+function kopfzeileKette(az: RegExp, maske: boolean): RegExp {
+  const glied = maske ? '(?:Fall-|Geschäfts)?Nr\\.:?|[\\p{Lu}\\d][\\p{Lu}\\d./_-]*(?![\\p{L}\\d])' : '[\\p{Lu}\\d][\\p{Lu}\\d./-]*(?![\\p{L}\\d_])';
+  return new RegExp(`(?<![\\d.])(\\d{2})\\.(\\d{2})\\.(\\d{4})(?:[ ,;/]+(?:(?:${az.source})|und|${glied}))*`, 'gu');
+}
+
+/**
+ * Identitätsbeleg für einen Titel (nur nötig, wenn im selben Kopf ein
+ * abweichendes Plattform-Datum steht): (a) der Kopf zitiert den Entscheid selbst
+ * mit DIESEM Datum und dem EIGENEN Aktenzeichen («vom 4. August 2025, BV 2024/21»,
+ * SG-Regeste; «vom 20.08.2026, Nr. 100.2025.363U», BE-Fusszeile), oder (b) das
+ * eigene Aktenzeichen steht unmittelbar vor dem Titel, ohne Satzzeichen dazwischen
+ * und nicht als Teil einer Plattform-Kopfzeile «TT.MM.JJJJ Az …» (an keiner
+ * Stelle der Liste, gleich welcher Trenner) (AG «XBE.2025.10 Entscheid vom», BS «AK.2022.32 ENTSCHEID vom»).
+ */
+function titelBelegt(kopf: string, titelIndex: number, datum: string, az: RegExp | null): boolean {
+  if (!az) return false;
+  const zitat = new RegExp(`vom ?(?:(\\d{1,2})\\. ?(${MONAT_ALT}) (\\d{4})|(\\d{1,2})\\.(\\d{1,2})\\.(\\d{4})),? (?:Nr\\. ?)?(?:${az.source})`, 'gu');
+  for (const m of kopf.matchAll(zitat)) {
+    const d = m[1] ? iso(m[3], MONATE[m[2]], m[1]) : iso(m[6], m[5], m[4]);
+    if (d === datum) return true;
+  }
+  // Kein Aktenzeichen einer Plattform-Kopfzeile «TT.MM.JJJJ Az …» — auch nicht
+  // das zweite, dem nur «, » vorangeht (Gegenprüfung 25.9.2026, SG «03.02.2025
+  // B 2024/58, B 2024/59 Entscheid vom 14. Januar 2026 des Bundesgerichts»), und
+  // unabhängig vom Listentrenner (Leerzeichen, «/», «;», «und») oder einem
+  // FREMDEN Aktenzeichen davor (Nachprüfung 25.9.2026). Darum wird die ganze
+  // Kette aktenzeichenartiger Glieder direkt nach dem Datum (Versal-/Ziffernglied,
+  // «Nr.», «und», Trenner; ein Wort wie «Obergericht» beendet sie) durch einen
+  // Stopp ersetzt: kein eigenes Aktenzeichen im Nahbereich nach «TT.MM.JJJJ» belegt.
+  const vor = kopf.slice(0, titelIndex).replace(kopfzeileKette(az, true), ';');
+  return new RegExp(`(?:${az.source})[^.;:()«»]{0,30}$`, 'u').test(vor);
+}
 
 /** ISO-Datum mit Kalender-Gegenprobe («31. April» ist kein Datum) und Jahres-Rahmen. */
 function iso(jahr: string, monat: string, tag: string): string | null {
@@ -114,6 +210,8 @@ export function pdfKopfNormalisieren(text: string): string {
  * Beleg SG BV 2024/21 und UV 2025/14 (25.9.2026) — Plattform 04.07.2025 bzw.
  * 23.10.2025, der Urteilskopf selbst 4. August bzw. 21. Oktober 2025. Die
  * abweichende Plattform-Angabe wird als `abweichung` mitgegeben (Bericht).
+ * Das gilt nur mit Identitätsbeleg (`titelBelegt`; BV 2024/21: «vom 4. August
+ * 2025, BV 2024/21» im Kopf); ohne ihn ⇒ `widerspruch` (Gegenprüfung #1126).
  * Widersprechen sich ohne eigenen Titel die Plattform-Angaben untereinander,
  * ist das Ergebnis `widerspruch` (nie raten, §1).
  */
@@ -127,23 +225,29 @@ export function kopfEntscheiddatum(fullText: string | null | undefined, docket?:
     const d = iso(f[3], f[2], f[1]);
     if (d) plattform.push({ datum: d, regel: 'feld-entscheiddatum', beleg: f[0] });
   }
-  const az = flach(String(docket ?? ''));
-  if (az) {
-    const re = new RegExp(`(?<![\\d.])(\\d{2})\\.(\\d{2})\\.(\\d{4}) ${escRe(az)}(?![\\p{L}\\d])`, 'u');
-    const k = re.exec(kopf);
-    if (k) {
-      const d = iso(k[3], k[2], k[1]);
-      if (d) plattform.push({ datum: d, regel: 'kopfzeile-datum-az', beleg: k[0] });
-    }
+  const az = aktenzeichenRe(docket);
+  // Form 2: das eigene Aktenzeichen irgendwo in der Kette nach dem Datum, auch
+  // hinter einem fremden («03.02.2025 B 2024/58, B 2024/59» für B 2024/59;
+  // Nachprüfung 25.9.2026: sonst gewann ein BGer-Titeldatum ohne Gegenkandidat).
+  for (const k of az ? kopf.matchAll(kopfzeileKette(az, false)) : []) {
+    const eigen = az!.exec(k[0].slice(10));
+    const d = eigen ? iso(k[3], k[2], k[1]) : null;
+    if (eigen && d) { plattform.push({ datum: d, regel: 'kopfzeile-datum-az', beleg: k[0].slice(0, 10 + eigen.index + eigen[0].length) }); break; }
   }
   let titel: KopfKandidat | null = null;
+  let titelIndex = 0;
   for (const t of kopf.matchAll(new RegExp(TITEL_VOM_RE.source, 'gu'))) {
-    if (ZITAT_VORWORT_RE.test(kopf.slice(Math.max(0, (t.index ?? 0) - 12), t.index))) continue;
+    if (ZITAT_VORWORT_RE.test(kopf.slice(Math.max(0, (t.index ?? 0) - 16), t.index))) continue;
     const d = iso(t[3], MONATE[t[2]], t[1]);
-    if (d) { titel = { datum: d, regel: 'titel-vom', beleg: t[0] }; break; }
+    if (d) { titel = { datum: d, regel: 'titel-vom', beleg: t[0] }; titelIndex = t.index ?? 0; break; }
   }
 
-  if (titel) return { status: 'ok', ...titel, abweichung: plattform.filter((p) => p.datum !== titel.datum) };
+  if (titel) {
+    const abweichung = plattform.filter((p) => p.datum !== titel.datum);
+    // Abweichendes Plattform-Datum im selben Kopf: Titel nur mit Identitätsbeleg (§1).
+    if (abweichung.length && !titelBelegt(kopf, titelIndex, titel.datum, az)) return { status: 'widerspruch', kandidaten: [titel, ...plattform] };
+    return { status: 'ok', ...titel, abweichung };
+  }
   if (!plattform.length) return { status: 'fehlt' };
   if (new Set(plattform.map((k) => k.datum)).size > 1) return { status: 'widerspruch', kandidaten: plattform };
   return { status: 'ok', ...plattform[0], abweichung: [] };

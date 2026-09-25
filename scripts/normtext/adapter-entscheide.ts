@@ -16,7 +16,7 @@ import { teileSachverhalt } from '../../src/lib/rechtsprechung/sachverhalt';
 import { sha256EntscheidBloecke } from './sha-entscheide';
 import { normalisiereErwaegung } from './erwaegung-normalisieren';
 import { RECHTSPRECHUNG_UA } from './clir-regeste';
-import { kantonsEntscheiddatum, kopfSeitenFallsNoetig } from './entscheid-kantonsdatum';
+import { kantonsEntscheiddatum, kopfSeitenMitRueckfallMeldung, kopfZurueckhalten, type KopfHoleOpts } from './entscheid-kantonsdatum';
 import { ersetzeKonflatiertenAuszug } from './clir-auszug';
 // markenPlausibel/MONAT: Single Source erwaegung-normalisieren.ts (§5), re-exportiert für Bestands-Importeure.
 export { markenPlausibel, MONAT } from './erwaegung-normalisieren';
@@ -24,9 +24,7 @@ import {
   statutesZuNormKeys, gerichtstypFuerCourt,
   gerichtAnzeigename, fmtDatumDe, normKeysVonSnapshot,
 } from './entscheide-mapping';
-import {
-  sachgebietFuerEntscheid, bgeSachgebietHint, bgeRoemischSachgebiet,
-} from './sachgebiet-klassierung';
+import { sachgebietFuerEntscheid, bgeSachgebietHint, bgeRoemischSachgebiet } from './sachgebiet-klassierung';
 
 export const API = 'https://mcp.opencaselaw.ch/api';
 
@@ -42,10 +40,8 @@ export interface OclDecision {
   source_url?: string; canonical_url?: string; pdf_url?: string; // pdf_url: BVGer-PDF (source_url = JS-Hülle), nur Wochenlauf-Stichprobe
   [k: string]: unknown;
 }
-// H-8/B22: OclParagraph liegt jetzt in adapter-typen.ts (löst den Typ-Zyklus
-// mit erwaegung-normalisieren.ts); hier re-exportiert (`export type`), damit
-// bestehende `from './adapter-entscheide'`-Importeure (u. a. Tests) stabil
-// bleiben.
+// H-8/B22: OclParagraph liegt in adapter-typen.ts (löst den Typ-Zyklus mit erwaegung-normalisieren.ts);
+// hier re-exportiert (`export type`), damit bestehende Importeure (u. a. Tests) stabil bleiben.
 export type { OclParagraph } from './adapter-typen';
 export interface OclStructure {
   sachverhalt_excerpt?: string; sachverhalt_chars?: number;
@@ -258,14 +254,14 @@ export function teileDispositiv(roh: string): EntscheidBlock[] | null {
   return bloecke;
 }
 
-export interface HoleOpts {
+/** Kantonale Kopf-Optionen (amtlicheKopfSeiten, nurMitAmtlichemKopf, zurueckgehalten): entscheid-kantonsdatum.ts. */
+export interface HoleOpts extends KopfHoleOpts {
   /** Erzwungenes Sachgebiet (z.B. wenn über law_code gefunden). */
   sachgebietHint?: Rechtsgebiet | null;
   /** Zusätzlicher garantierter Norm-Key (z.B. der law_code der Quelle). */
   normKeyHint?: string | null;
   /** Sprachfilter; default 'de'. null = alle. */
   sprache?: string | null;
-  amtlicheKopfSeiten?: string[] | null; // kantonal: Seiten 1–3 des amtlichen PDF (entscheid-kantonsdatum.ts)
 }
 
 /**
@@ -458,10 +454,12 @@ export async function holeEntscheidOCL(
   const sprache = (det.language ?? 'de') as EntscheidSprache;
   const wantSprache = opts.sprache === undefined ? 'de' : opts.sprache;
   if (wantSprache && sprache !== wantSprache) return null;
+  const seiten = await kopfSeitenMitRueckfallMeldung(det);
+  if (kopfZurueckhalten(det, seiten, opts)) return null; // kantonal ohne eigenen Titel (nurMitAmtlichemKopf)
   // paragraph_excerpt_chars: OCL-Maximum ist 5000 (höher → HTTP 422 → kein Strukturtext).
   const str = await jget<OclStructure>(`${API}/structure/${decisionId}?paragraph_excerpt_chars=5000`);
   await fuelleGekappteErwaegungen(decisionId, str);
-  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten: await kopfSeitenFallsNoetig(det) });
+  return mappeEntscheidOCL(det, str, abgerufen, { ...opts, amtlicheKopfSeiten: seiten });
 }
 
 /** Enumeration via Atom-Feed (Frische): IDs aus dem <id>-Element (atomIds, ocl-abruf.ts). */

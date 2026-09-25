@@ -56,6 +56,27 @@ describe('kopfEntscheiddatum — Fallen', () => {
     expect(kopfEntscheiddatum('Die Beschwerde wurde mit Urteil vom 22. Dezember 2025 abgewiesen', null).status).toBe('fehlt');
     expect(kopfEntscheiddatum('Regeste (Urteil vom 3. Mai 2024, 9C_1/2024)', null).status).toBe('fehlt');
   });
+  // Echte BE-PDF-Seite 3 von 200 2026 230 (Kopfzeile mit eigenem Aktenzeichen,
+  // gekürzt auf Kopfzeile + Satz; Messung 25.9.2026). Amtlich: Urteil vom 20. Mai
+  // 2026; «Mit Entscheid vom 5. März 2026» ist die Vorinstanz (CSS).
+  const BE_S3 = 'Urteil des Verwaltungsgerichts des Kantons Bern vom 20. Mai 2026, KV 200 2026 230 - 3 - '
+    + 'Mit Entscheid vom 5. März 2026 (act. II 11) trat die CSS auf die Einsprache vom 11. September 2025 '
+    + 'mangels Vorliegens einer rechts- konformen Vollmacht nicht ein.';
+  it('Zitat-Vorwort am Satzanfang gross («Mit Entscheid vom …», BE 200 2026 230 S. 3) ist nicht der eigene Titel', () => {
+    expect(kopfEntscheiddatum(BE_S3, '200 2026 230').status).toBe('fehlt');
+    // Die Seitenregel allein schliesst es nicht aus: S. 3 trägt das eigene Aktenzeichen.
+    const r = kantonsEntscheiddatum({ canton: 'BE', docket_number: '200 2026 230', decision_date: '2026-05-20', full_text: null }, [BE_S3]);
+    expect(r.datum).not.toBe('2026-03-05');
+    expect(r.quelle).toBe('ocl-decision_date');
+  });
+  it('Gegenprobe: echter Titel am Satzanfang ohne Vorwort zählt weiter', () => {
+    expect(kopfEntscheiddatum('KV 200 2026 230 Entscheid vom 20. Mai 2026 Besetzung', '200 2026 230'))
+      .toMatchObject({ status: 'ok', datum: '2026-05-20', regel: 'titel-vom' });
+    expect(kopfEntscheiddatum('Verwaltungsgericht. Urteil vom 20. Mai 2026', null))
+      .toMatchObject({ status: 'ok', datum: '2026-05-20', regel: 'titel-vom' });
+    // Nur der Anfangsbuchstabe wird tolerant, keine Versalien.
+    expect(kopfEntscheiddatum('MIT Entscheid vom 20. Mai 2026', null)).toMatchObject({ status: 'ok', datum: '2026-05-20' });
+  });
   it('Mitteilung/Versand/Publikation sind keine Entscheid-Titel', () => {
     expect(kopfEntscheiddatum('Mitteilung vom 5. Mai 2026 Versand vom 6. Mai 2026 Publikationsdatum: 27.02.2025', null).status).toBe('fehlt');
   });
@@ -66,8 +87,10 @@ describe('kopfEntscheiddatum — Fallen', () => {
   it('SG: Kopfzeile gilt nur mit dem EIGENEN Aktenzeichen dahinter', () => {
     expect(kopfEntscheiddatum('St.Gallen Verwaltungsgericht 08.01.2025 B 2023/226', 'B 2023/225').status).toBe('fehlt');
   });
-  it('eigener Titel schlägt abweichende Plattform-Angabe und meldet sie (SG BV 2024/21)', () => {
-    const k = kopfEntscheiddatum('Entscheiddatum: 04.07.2025 Versicherungsgericht Abteilung III Entscheid vom 4. August 2025 Besetzung', 'BV 2024/21');
+  it('eigener Titel MIT Identitätsbeleg schlägt abweichende Plattform-Angabe und meldet sie (SG BV 2024/21)', () => {
+    // Seit Gegenprüfung #1126 nur mit Beleg (eigenes Aktenzeichen, hier die Regeste-Zitierung);
+    // ohne Beleg ⇒ widerspruch (entscheid-kopfdatum-identitaet.test.ts).
+    const k = kopfEntscheiddatum('Entscheiddatum: 04.07.2025 (Entscheid des Versicherungsgerichts des Kantons St. Gallen vom 4. August 2025, BV 2024/21). Versicherungsgericht Abteilung III Entscheid vom 4. August 2025 Besetzung', 'BV 2024/21');
     expect(k).toMatchObject({ status: 'ok', datum: '2025-08-04', regel: 'titel-vom' });
     if (k.status === 'ok') expect(k.abweichung.map((x) => x.datum)).toEqual(['2025-07-04']);
   });
@@ -119,7 +142,7 @@ describe('mappeEntscheidOCL — Entscheiddatum aus dem Kopf (kantonal) ', () => 
       full_text: 'St.Gallen Versicherungsgericht 23.10.2025 UV 2025/14 Saint-Gall Versicherungsgericht 23.10.2025 UV 2025/14 Art. 6 Abs. 1 UVG; Leistungspflicht der Unfallversicherung.',
     });
     expect(kantonsEntscheiddatum(det).datum).toBe('2025-10-23');
-    const seiten = ['Publikationsplattform St.Galler Gerichte Fall-Nr.: UV 2025/14 Entscheiddatum: 23.10.2025', 'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 2 1 . Oktober 2025 Besetzung'];
+    const seiten = ['Publikationsplattform St.Galler Gerichte Fall-Nr.: UV 2025/14 Entscheiddatum: 23.10.2025', 'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 2 1 . Oktober 2025 Besetzung Geschäftsnr. UV 2025/14 Parteien'];
     const r = kantonsEntscheiddatum(det, seiten);
     expect(r).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });
     expect(mappeEntscheidOCL(det, null, '2026-09-25', { amtlicheKopfSeiten: seiten })!.datum).toBe('2025-10-21');

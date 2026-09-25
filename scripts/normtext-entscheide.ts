@@ -1,15 +1,12 @@
 // ─── Build-Orchestrator: Rechtsprechungs-Snapshots erzeugen ──────────────────
-//
 // Resilient (Fahrplan R1/R9), Detail via OCL keyed-Lookups. Zwei Quellen-Zweige:
 //  · Bund (bger): Citation-Graph-BFS (listing-unabhängig) → tief, regeste-reich.
-//  · Kantone: Listing je kantonalem Gericht (kein BFS — deren Zitiergraph führt
-//    nicht zu bger). /structure ist Bund-only → kantonal greift der ehrliche
-//    Fliesstext-Fallback (§8, EntscheidBody).
+//  · Kantone: Listing je Gericht (kein BFS); /structure ist Bund-only → kantonal
+//    greift der ehrliche Fliesstext-Fallback (§8, EntscheidBody).
 // Schreibt NIE von Hand editierte Dateien — alles aus diesem Generator (§7).
 //
 //   vite-node scripts/normtext-entscheide.ts -- --datum=2026-06-23 --limit=45 \
 //     --courts=zh_obergericht,be_verwaltungsgericht --kanton-pro=8
-//
 import {
   holeEntscheidOCL, enumeriereNeueste, enumeriereNeuesteAlle, citedRefZuId, enumeriereBge, enumeriereBgeBaender, holeBgeLeitentscheid,
 } from './normtext/adapter-entscheide';
@@ -25,7 +22,7 @@ import { verschlechtertDatum } from './normtext/bge-bandjahr';
 import { mergeB1Ergebnis } from './normtext/entscheide-b1-merge';
 import { findeFremdeFundstelleImBody } from './normtext/entscheide-koerper-konflation';
 import { parseClirAuszug } from './normtext/clir-auszug';
-import { waehleNeue, fuehreAdditivZusammen, nachDatumDesc, kantonSortierer } from './normtext/entscheide-additiv';
+import { waehleNeue, fuehreAdditivZusammen, nachDatumDesc, kantonSortierer, bestandStattZurueckgehalten, zurueckhalteZeile, type Zurueckgehalten } from './normtext/entscheide-additiv';
 import type { EntscheidSnapshot } from '../src/lib/rechtsprechung/typen';
 import type { Rechtsgebiet } from '../src/lib/normtext/register';
 import * as path from 'node:path';
@@ -88,9 +85,8 @@ const bgeLimit = Number(arg('--bge-limit') ?? '300');
 const eidgCourts = (arg('--eidg') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 const eidgPro = Number(arg('--eidg-pro') ?? '5');
 const additiv = process.argv.includes('--additiv');
-// --bge-refresh (nur additiv): zieht genau die BESTEHENDEN BGE neu, deren Auszug/Volltext
-// aktuell mitten im Wort (U+2026) gekappt ist (W2·6-BGE), und überschreibt sie by id —
-// kein Vollbau, Bund/Kanton/eidg bleiben unberührt. Selbstheilend nach Adapter-Härtung.
+// --bge-refresh (nur additiv): zieht die BESTEHENDEN BGE mit mitten im Wort (U+2026) gekapptem
+// Auszug/Volltext neu (W2·6-BGE), überschreibt by id; Bund/Kanton/eidg unberührt.
 const bgeRefresh = process.argv.includes('--bge-refresh');
 // --regeste-refresh (nur additiv, W2·6-B B1+B2+A18): reichert die BESTEHENDEN
 // amtlichen BGE an — (B2/A18) strukturierte, dreisprachige Regeste aus bger.ch clir
@@ -256,9 +252,10 @@ const spanne = (xs: EntscheidSnapshot[]) => {
  * unverändert). `geholt` zählt die erfolgreich geholten Snapshots für den Leer-Guard.
  * Additiv wählt streng nach Datum desc (`kantonSortierer`), der Vollbau nach Rang.
  * Nicht erreichbare Gerichte landen in `uebersprungen` (nie still, 25.9.2026).
+ * Nur mit eigenem Urteilskopf (Befund D 25.9.2026), sonst zurückgehalten; Bestand bleibt (entscheide-additiv.ts).
  */
 type ZweigLauf = { snaps: EntscheidSnapshot[]; geholt: number; uebersprungen: string[] };
-async function kantonKorpus(ausschluss: ReadonlySet<string> = new Set(), additivModus = false): Promise<ZweigLauf> {
+async function kantonKorpus(ausschluss: ReadonlySet<string> = new Set(), additivModus = false, bestand: readonly EntscheidSnapshot[] = []): Promise<ZweigLauf> {
   const out: EntscheidSnapshot[] = [];
   const uebersprungen: string[] = [];
   let geholt = 0;
@@ -269,13 +266,16 @@ async function kantonKorpus(ausschluss: ReadonlySet<string> = new Set(), additiv
       uebersprungen.push(`${court} (0 IDs)`);
       continue;
     }
+    const zurueck: Zurueckgehalten[] = [];
     const snaps = await mapLimit(ids.slice(0, kantonPro * 4), 4, async (id) => {
-      const s = await holeEntscheidOCL(id, datum, { sprache: 'de' });
+      const s = await holeEntscheidOCL(id, datum, { sprache: 'de', nurMitAmtlichemKopf: true, zurueckgehalten: (z) => zurueck.push(z) });
       process.stdout.write(s ? '.' : 'x');
       return s;
     });
     process.stdout.write('\n');
-    const ok = snaps.filter((s): s is EntscheidSnapshot => !!s);
+    const behalten = bestandStattZurueckgehalten(zurueck, bestand);
+    if (zurueck.length) console.log(zurueckhalteZeile(court, zurueck, behalten.length));
+    const ok = [...snaps.filter((s): s is EntscheidSnapshot => !!s), ...behalten];
     if (!ok.length) {
       console.log(`[kanton] ${court}: übersprungen — ${ids.length} IDs, aber 0 Details geholt`);
       uebersprungen.push(`${court} (0 Details)`);
@@ -746,7 +746,7 @@ async function main() {
     const bestandIds = new Set(basis.map((s) => s.id));
     const leer: ZweigLauf = { snaps: [], geholt: 0, uebersprungen: [] };
     const eidg = eidgCourts.length ? await eidgKorpus(bestandIds) : leer;
-    const kanton = kantCourts.length ? await kantonKorpus(bestandIds, true) : leer;
+    const kanton = kantCourts.length ? await kantonKorpus(bestandIds, true, basis) : leer;
     const erg = fuehreAdditivZusammen(basis, [
       { name: 'eidg.', angefordert: eidgCourts.length, geholt: eidg.geholt, neu: eidg.snaps, uebersprungen: eidg.uebersprungen },
       { name: 'kantonale', angefordert: kantCourts.length, geholt: kanton.geholt, neu: kanton.snaps, uebersprungen: kanton.uebersprungen },
@@ -771,7 +771,7 @@ async function main() {
   for (const s of bge) if (s.azaUrteil && azaN[s.azaUrteil.key] > 1) { aufAuszugZurueck(s); quar++; }
   if (quar) console.log(`[bge] Kollisions-Quarantäne: ${quar} BGE auf Auszug zurückgestuft (aza-Mehrfachzuordnung).`);
   const bund = await bundKorpus();
-  const kanton = kantCourts.length ? (await kantonKorpus()).snaps : [];
+  const kanton = kantCourts.length ? (await kantonKorpus(new Set(), false, ladeBestandSnapshots())).snaps : [];
 
   // Dedup (Budget + §8): bger-Urteile, die bereits als BGE-Volltext erfasst sind, nicht
   // zusätzlich als Routine-Eintrag führen (sonst derselbe Entscheid als Leit- UND Routine).
