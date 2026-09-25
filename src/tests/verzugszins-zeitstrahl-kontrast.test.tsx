@@ -1,4 +1,8 @@
 // @vitest-environment node
+/// <reference path="../../scripts/fremdmodule.d.ts" />
+// (Die Referenz bringt die culori-Deklaration der Prüfschicht in `tsc -b`
+// der App — die Messmaschine `scripts/farbwelt-messung.ts` importiert culori,
+// das kein eigenes `.d.ts` liefert.)
 // ═══ W2·29-WERKBANK-REST S5c · Verzugszins-Zeitstrahl: Beschriftung auf jeder Fläche lesbar
 //
 // Posten 25.9.2026 «S3: Kontrast VerzugszinsTimeline.tsx:30-31 auf-gold auf
