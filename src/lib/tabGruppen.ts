@@ -40,7 +40,7 @@ export function reiterKategorie(path: string): TabKat {
 }
 
 // Piktogramm + Sammel-Label je Kategorie. Glyphen im Messing-Stil der App.
-export const KAT_META: Record<TabKat, { label: string; pikto: string }> = {
+export const KAT_META: Readonly<Record<TabKat, Readonly<{ label: string; pikto: string }>>> = {
   gesetze: { label: 'Gesetze', pikto: '§' },
   rechtsprechung: { label: 'Rechtsprechung', pikto: '⚖' },
   materialien: { label: 'Materialien', pikto: '❑' },
@@ -51,11 +51,14 @@ export const KAT_META: Record<TabKat, { label: string; pikto: string }> = {
 // Feste Reihenfolge der Sammel-Reiter (stabil, unabhängig von Öffnungs-Reihenfolge).
 // Reihenfolge = die der fünf Bereichs-Übersichten,
 // damit Blatt und Navigation dieselbe Ordnung sprechen.
-export const KAT_ORDER: TabKat[] = ['gesetze', 'rechtsprechung', 'materialien', 'vorlagen', 'rechner', 'sonstiges'];
+// Typ-Härtung (REST S5b, 25.9.2026): Reihenfolgen und Tabellen sind geteilte
+// Konstanten — `readonly`, damit kein Aufrufer sie per `sort`/`push` für alle
+// anderen umstellt (Beleg: Mutation `KAT_ORDER.sort()` ⇒ tsc TS2339).
+export const KAT_ORDER: readonly TabKat[] = ['gesetze', 'rechtsprechung', 'materialien', 'vorlagen', 'rechner', 'sonstiges'];
 
 export type Herkunft = 'bund' | 'kanton' | 'international';
-export const HERKUNFT_ORDER: Herkunft[] = ['bund', 'kanton', 'international'];
-export const HERKUNFT_LABEL: Record<Herkunft, string> = {
+export const HERKUNFT_ORDER: readonly Herkunft[] = ['bund', 'kanton', 'international'];
+export const HERKUNFT_LABEL: Readonly<Record<Herkunft, string>> = {
   bund: 'Bund', kanton: 'Kanton', international: 'International',
 };
 

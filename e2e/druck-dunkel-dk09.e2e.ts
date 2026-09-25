@@ -65,10 +65,26 @@ async function dunkelDrucken(page: Page, pfad: string, warte: string) {
   await page.emulateMedia({ media: 'print', colorScheme: 'dark' })
 }
 
+/** Druck-Proben erst messen, wenn der Druck-Zustand steht. Flacker-Befund
+ *  25.9.2026 (#1116, Shard 3/8, Lauf 36149851136): der erste Versuch las
+ *  `#art-1 p` noch mit der DUNKLEN Token-Tinte ink-700 (#BFBAB0), der
+ *  Wiederholungsversuch war grün — die Druck-Emulation war beim ersten
+ *  Messen noch nicht in allen Knoten wirksam. Darum pollen bis zum
+ *  Endzustand; scheitern kann der Test weiter: ohne die `@media not print`-
+ *  Klammer bleibt der Endzustand bei 1.32:1 (Rot-Probe oben). */
+async function druckProben(page: Page, selektoren: string[]) {
+  let proben: Awaited<ReturnType<typeof minKontrast>> = []
+  await expect.poll(async () => {
+    proben = await minKontrast(page, selektoren)
+    return proben.length ? Math.min(...proben.map((p) => p.kontrast)) : 0
+  }, { timeout: 10_000 }).toBeGreaterThanOrEqual(4.5)
+  return proben
+}
+
 test.describe('DK-09 · Druck × dunkel', () => {
   test('Gesetzes-Leser: Titel und Artikeltext ≥ 4,5:1 im Ausdruck', async ({ page }) => {
     await dunkelDrucken(page, '/gesetze/bund/OR', '#art-1')
-    const proben = await minKontrast(page, ['main h1', '#art-1 p', '#art-2 p'])
+    const proben = await druckProben(page, ['main h1', '#art-1 p', '#art-2 p'])
     console.log('DK-09 Gesetz', JSON.stringify(proben))
     expect(proben.length, 'Proben gefunden').toBeGreaterThanOrEqual(3)
     for (const p of proben) expect(p.kontrast, `${p.was} «${p.text}» ${p.farbe}`).toBeGreaterThanOrEqual(4.5)
@@ -76,7 +92,7 @@ test.describe('DK-09 · Druck × dunkel', () => {
 
   test('Entscheid-Leser: Titel und Erwägungstext ≥ 4,5:1 im Ausdruck', async ({ page }) => {
     await dunkelDrucken(page, '/rechtsprechung/bge_149_IV_213', '.rsp-prose p')
-    const proben = await minKontrast(page, ['main h1', '.rsp-prose p'])
+    const proben = await druckProben(page, ['main h1', '.rsp-prose p'])
     console.log('DK-09 Entscheid', JSON.stringify(proben))
     expect(proben.length, 'Proben gefunden').toBeGreaterThanOrEqual(3)
     for (const p of proben) expect(p.kontrast, `${p.was} «${p.text}» ${p.farbe}`).toBeGreaterThanOrEqual(4.5)

@@ -582,7 +582,10 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   // Argument hinein (§5/§10).
   const kopiereZitat = () => {
     const url = typeof location !== 'undefined' ? `${location.origin}${location.pathname}` : '';
-    kopieren(url ? zitatMitAusweis(snap.zitierung, { abruf: heuteIso(new Date()), permalink: url }) : snap.zitierung);
+    kopieren({
+      text: url ? zitatMitAusweis(snap.zitierung, { abruf: heuteIso(new Date()), permalink: url }) : snap.zitierung,
+      ansage: 'Zitat kopiert',
+    });
   };
 
   return (
