@@ -91,3 +91,95 @@ for (const { breite, hoehe, leiste } of GESTAPELT) {
     expect(m.feldDavor).toBe(true);
   });
 }
+
+// ─── Nachzug (Gegenprüfung 26.9.2026) ────────────────────────────────────────
+//  (4) B1 Fehlerzustand @1920: ohne Ergebnis steht die Eingabefehler-Box
+//      (`data-fehlerbox`, role="alert") rechts am Ergebnisplatz statt links,
+//      und wo keine Box erscheint (Ergebnis `null`), hält der leere Rahmen
+//      (`::after` der Wurzel) Spalte 2. Vorher: rechte Spur leer auf 13 von
+//      18 Rechnern (Sonde, je ein Feld geleert).
+//  (5) B2 @1920: die Datums-Kachel «TT.MM.JJJJ · 24.00 Uhr» steht einzeilig
+//      (vorher Kachel 205 px bei 221 px Bedarf → zweizeilig).
+//  (6) B3 @1920: die Phasen-Leisten von ZPO (684/640 px) und SchKG
+//      (1088/640 px) laufen nicht mehr in einen Querscroll — sie brechen um.
+// ROT ZU BEKOMMEN (§6.7, Beweis im Commit): (4) in index.css die beiden
+// `[data-fehlerbox]`-/`::after`-Regeln streichen; (5) `.lc-kachelraster` auf
+// `grid-template-columns: repeat(3, minmax(0, 1fr))` setzen; (6) in ui/Tabs.tsx
+// die `@[72rem]/rechnerkarte:`-Klassen streichen.
+
+// Erstes Text-/Datumsfeld der Formularwurzel (Datumsfelder sind Textfelder, `DatumInput`).
+const ERSTES_FELD = '.lc-rechner-spalten input:is([type=text],[type=date],:not([type])):visible';
+
+const FEHLERFAELLE = [
+  { slug: 'gerichtszitat', leeren: async (page: Page) => {
+    await page.getByLabel('Band', { exact: true }).fill('140');
+    await page.getByLabel('Seite', { exact: true }).fill('');
+    await page.getByLabel('Band', { exact: true }).press('Tab');
+  } },
+  { slug: 'zpo-fristen', leeren: async (page: Page) => {
+    const f = page.getByLabel('Auslösendes Ereignis (Datum)');
+    await f.fill(''); await f.blur();
+  } },
+  { slug: 'erbteilung', leeren: async (page: Page) => {
+    const f = page.locator(ERSTES_FELD).first();
+    await f.fill(''); await f.blur();
+  } },
+] as const;
+
+for (const { slug, leeren } of FEHLERFAELLE) {
+  test(`/rechner/${slug} @1920 Fehlerzustand: Eingabefehler-Box am Ergebnisplatz rechts`, async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.goto(`/rechner/${slug}`);
+    await leeren(page);
+    const box = page.locator('.lc-rechner-spalten > [data-fehlerbox]');
+    await expect(box).toBeVisible();
+    await expect(box).toHaveAttribute('role', 'alert');
+    await expect(page.locator(PLATZ)).toHaveCount(0);
+    const m = await box.evaluate((el) => {
+      const w = (el.parentElement as HTMLElement).getBoundingClientRect();
+      return { links: el.getBoundingClientRect().left, wurzel40: w.left + w.width * 0.4 };
+    });
+    expect(m.links).toBeGreaterThanOrEqual(m.wurzel40);
+  });
+}
+
+test('/rechner/verjaehrung @1920 ohne Ergebnis und ohne Meldung: leerer Rahmen hält Spalte 2', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 1080 });
+  await page.goto('/rechner/verjaehrung');
+  const f = page.locator(ERSTES_FELD).first();
+  await f.fill(''); await f.blur();
+  await expect(page.locator(PLATZ)).toHaveCount(0);
+  const rahmen = await page.locator('.lc-rechner-spalten').first().evaluate((el) => {
+    const n = getComputedStyle(el, '::after');
+    return { content: n.content, spalte: n.gridColumnStart, hoehe: n.minHeight };
+  });
+  expect(rahmen).toEqual({ content: '""', spalte: '2', hoehe: '160px' });
+});
+
+for (const slug of ['verjaehrung', 'zpo-fristen']) {
+  test(`/rechner/${slug} @1920: Datums-Kachel einzeilig`, async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.goto(`/rechner/${slug}`);
+    const wert = page.locator('[data-ergebnisplatz] .lc-tile p', { hasText: /\d{2}\.\d{2}\.\d{4} · 24\.00 Uhr/ }).first();
+    await expect(wert).toBeVisible();
+    const { hoehe, zeile } = await wert.evaluate((p) => ({
+      hoehe: p.getBoundingClientRect().height, zeile: parseFloat(getComputedStyle(p).lineHeight),
+    }));
+    expect(hoehe).toBeLessThan(zeile * 1.5);
+  });
+}
+
+for (const slug of ['zpo-fristen', 'schkg-fristen']) {
+  test(`/rechner/${slug} @1920: Phasen-Leiste ohne Querscroll in der Eingabespalte`, async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.goto(`/rechner/${slug}`);
+    const leiste = page.getByRole('group', { name: 'Verfahrensphase' });
+    await expect(leiste).toBeVisible();
+    const m = await leiste.evaluate((l) => ({
+      scroll: l.scrollWidth, sicht: l.clientWidth,
+      knopf: Math.min(...[...l.children].map((k) => k.getBoundingClientRect().height)),
+    }));
+    expect(m.scroll).toBeLessThanOrEqual(m.sicht);
+    expect(m.knopf).toBeGreaterThanOrEqual(36);
+  });
+}
