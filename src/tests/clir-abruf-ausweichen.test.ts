@@ -9,7 +9,9 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
   holeClirHtml, clirKandidaten, clirUrl, clirAusfallZeile, clirStatistikZuruecksetzen,
+  RECHTSPRECHUNG_UA,
 } from '../../scripts/normtext/clir-regeste';
+import { jget } from '../../scripts/normtext/adapter-entscheide';
 
 const TLS = () => Object.assign(new TypeError('fetch failed'), { cause: { code: 'UNABLE_TO_VERIFY_LEAF_SIGNATURE' } });
 const ok = (html = '<html>Urteilskopf</html>') => new Response(html, { status: 200 });
@@ -98,5 +100,16 @@ describe('holeClirHtml — sichtbarer Ausfall', () => {
     stub(() => new Response('', { status: 502 }));
     await hole();
     expect(clirAusfallZeile()).toMatch(/^\[clir\] AUSFALL: 1 von 2 Abrufen fehlgeschlagen \(/);
+  });
+});
+
+describe('OCL-Abruf jget — identifizierender User-Agent (Repo-Konvention)', () => {
+  it('sendet dieselbe UA-Konstante wie der clir-Abruf', async () => {
+    const f = vi.fn(async (_u: string, _i?: RequestInit) => new Response('{"ok":1}', { status: 200 }));
+    vi.stubGlobal('fetch', f);
+    expect(await jget('https://mcp.opencaselaw.ch/api/decisions/x')).toEqual({ ok: 1 });
+    const headers = f.mock.calls[0][1]?.headers as Record<string, string>;
+    expect(headers['User-Agent']).toBe(RECHTSPRECHUNG_UA);
+    expect(RECHTSPRECHUNG_UA).toMatch(/^LexMetrik\/1\.0 \(\+https:\/\/lexmetrik\.vercel\.app;/);
   });
 });

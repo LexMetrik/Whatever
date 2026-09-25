@@ -43,8 +43,9 @@ export interface RegesteSprachfassungRoh {
   weitereRegesten?: RegesteTeilRoh[];
 }
 
-/** HTTP-Header: identifizierend, höflich (bger.ch schonen). */
-const UA = 'LexMetrik/1.0 (+https://lexmetrik.vercel.app; research crawler; david.graf95@gmail.com)';
+/** HTTP-Header: identifizierend, höflich (bger.ch schonen). Die EINE Konstante
+ *  für die Rechtsprechungs-Abrufe — auch OCL (`jget`, adapter-entscheide.ts). */
+export const RECHTSPRECHUNG_UA = 'LexMetrik/1.0 (+https://lexmetrik.vercel.app; research crawler; david.graf95@gmail.com)';
 
 /**
  * BGE-Referenz («152 V 2», «151 IV 357») → clir-docid-Segment «152-V-2».
@@ -320,7 +321,7 @@ export async function holeClirHtml(
       const ac = new AbortController();
       const t = setTimeout(() => ac.abort(), 45000);
       try {
-        const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': UA }, redirect: 'follow' });
+        const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': RECHTSPRECHUNG_UA }, redirect: 'follow' });
         clearTimeout(t);
         if (res.status === 404) return null;
         if (!res.ok) { letzte.push(`${host}: HTTP ${res.status}`); continue; }
