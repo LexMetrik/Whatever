@@ -391,6 +391,122 @@ export function normKeyFuerAbk(abk: string, datum?: string | null): string | nul
   return damals ? damals.key : key;
 }
 
+// ─── VOM BUNDESGERICHT IM URTEIL SELBST DEFINIERTE KÜRZEL ────────────────────
+// (QS-KORPUS, Entscheid Orchestrator 25.9.2026 «Weg A», Anlass CI-Lauf
+// 36124134898: check:normkeys rot, Token «CV» in 20 Snapshots)
+//
+// WAS HIER HINEINGEHÖRT — und nur das: Kürzel für einen Erlass, der im
+// ERLASS_REGISTER steht, für den Fedlex aber KEIN amtliches Kurzzeichen führt
+// (kein `jolux:titleShort` in der betreffenden Sprache) und den das
+// Bundesgericht im Urteil selbst definiert («… (ci-après: CV; RS 0.111)»). Die
+// generierte ABK_ALIASE-Ebene kann solche Kürzel strukturell nicht tragen — sie
+// ist bewusst Fedlex-only. Ohne diese Tabelle verschwände jedes Zitat lautlos,
+// obwohl Erlass und Register-Eintrag feststehen; der Kopf von
+// check-normkeys-abdeckung.ts nennt das ausdrücklich «offene Arbeit, keine
+// Ausnahme» — darum Zuordnung statt Ignore-Eintrag.
+//
+// GELTUNG: nur Snapshots mit `gerichtstyp === 'bundesgericht'` (bge/bger). Ein
+// Kürzel, das das Bundesgericht definiert, ist für kantonale oder eidg.
+// Entscheide kein Beleg (dort kann dieselbe Buchstabenfolge anderes meinen) —
+// `normKeyFuerAbk` (datumsfrei, auch vom kantonalen Resolver benutzt) sieht
+// diese Tabelle darum NICHT; nur die snapshot-gebundenen Pfade unten.
+//
+// `sprachen` benennt die Sprache der Definitionsstellen. Nicht als Filter auf
+// `snap.sprache` angewandt: deutschsprachige BGE tragen die fr/it-Regeste-
+// Fassungen im selben Snapshot (Beleg bund/bge/151_II_494 [de]: «Regeste
+// Art. 31 et 32 CV; art. 11 par. 1 CDI CH-DK»), und ein Sprachfilter verlöre
+// genau diese Nennungen.
+//
+// REGEL FÜR NEUE EINTRÄGE (dieselbe Belegform, sonst kein Eintrag, §7):
+//   (1) ≥ 3 BGE mit wörtlicher Definitionsstelle (Titel + Kürzel + SR/RS),
+//   (2) Fedlex-SPARQL-Nachweis «kein titleShort» mit Abrufdatum,
+//   (3) Abgrenzung gegen verwechselbare Kürzel im selben Rechtsgebiet,
+//   (4) Register-Key über die SR-Nummer auflösbar (sonst: Korpus-Kandidat,
+//       nicht hier).
+// Eine Kollision mit einem Register-/Fedlex-Kürzel verwirft den Eintrag und
+// erscheint in GERICHTS_KUERZEL_NOTIZEN (nie raten, §1).
+export interface GerichtsKuerzel {
+  readonly abk: string;
+  readonly sr: string;
+  readonly sprachen: ReadonlyArray<'fr' | 'it'>;
+  readonly beleg: string;
+}
+
+export const GERICHTS_KUERZEL: ReadonlyArray<GerichtsKuerzel> = [
+  {
+    abk: 'CV',
+    sr: '0.111',
+    sprachen: ['fr', 'it'],
+    beleg:
+      'Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge, SR 0.111 '
+      + '(Register-Key VRK). Definitionsstellen: bund/bge/152_II_233 «Convention de '
+      + 'Vienne du 23 mai 1969 sur le droit des traités (ci-après: CV; RS 0.111)»; '
+      + 'bund/bge/151_II_726 «Convenzione di Vienna, conclusa il 23 maggio 1969, sul '
+      + 'diritto dei trattati (in seguito: CV [RS 0.111])»; bund/bge/149_III_235 '
+      + '«… sur le droit des traités (RS 0.111; ci-après: CV)»; ebenso 147_II_1, '
+      + '147_V_402, 151_II_213. Alle 20 Snapshots der Tor-Erhebung (25.9.2026) sind '
+      + 'BGE und zitieren Art. 24–32/60 im Sinn des Vertragsrechts. Fedlex-SPARQL '
+      + '(Abruf 25.9.2026, Notation 0.111): Titel FRA «Convention de Vienne du 23 mai '
+      + '1969 sur le droit des traités», ITA «Convenzione di Vienna del 23 maggio 1969 '
+      + 'sul diritto dei trattati» — KEIN jolux:titleShort in DE/FR/IT. Abgrenzung: '
+      + 'das Wiener Übereinkommen über diplomatische Beziehungen (SR 0.191.01) trägt '
+      + 'beim Bundesgericht das EIGENE Kürzel «CVRD» (bund/bge/152_III_190: «Convention '
+      + 'de Vienne sur les relations diplomatiques du 18 avril 1961 (CVRD; RS 0…», im '
+      + 'selben Urteil «CV; RS 0.111» für das Vertragsrecht) — CVRD wird hier nicht '
+      + 'berührt.',
+  },
+];
+
+function baueGerichtsKuerzel(): { tabelle: Map<string, string>; notizen: string[] } {
+  const tabelle = new Map<string, string>();
+  const notizen: string[] = [];
+  const { srKey } = baueSrIndex();
+  for (const g of GERICHTS_KUERZEL) {
+    const abk = normalisiereAbk(g.abk);
+    const key = srKey.get(g.sr);
+    if (key === undefined) { notizen.push(`${g.abk} (SR ${g.sr}) — SR nicht eindeutig im ERLASS_REGISTER: verworfen`); continue; }
+    if (ABK_TABELLE.has(abk) || KOLLISIONEN.includes(abk) || ABK_AUSSCHLUSS.has(abk)) {
+      notizen.push(`${g.abk} (SR ${g.sr}) — kollidiert mit Register-/Fedlex-Kürzel: verworfen`);
+      continue;
+    }
+    if (AUSGESCHLOSSENE_KEYS.has(key)) { notizen.push(`${g.abk} (SR ${g.sr}) → ${key} ausgeschlossen: verworfen`); continue; }
+    if (tabelle.has(abk) && tabelle.get(abk) !== key) { notizen.push(`${g.abk} — doppelt mit verschiedenen SR: verworfen`); tabelle.delete(abk); continue; }
+    tabelle.set(abk, key);
+  }
+  return { tabelle, notizen: notizen.sort() };
+}
+
+const { tabelle: GERICHTS_TABELLE, notizen: GERICHTS_NOTIZEN } = baueGerichtsKuerzel();
+
+/** Verworfene Einträge von GERICHTS_KUERZEL (leer = sauber; der Unit-Test hält das fest). */
+export const GERICHTS_KUERZEL_NOTIZEN: ReadonlyArray<string> = GERICHTS_NOTIZEN;
+
+/**
+ * Register-key eines vom Bundesgericht definierten Kürzels — NUR für
+ * `gerichtstyp === 'bundesgericht'`, sonst null. Datum wie `normKeyFuerAbk`
+ * (Fassungs-Reihe), heute ohne Wirkung (VRK hat keine Reihe).
+ */
+export function gerichtsKuerzelKey(abk: string, gerichtstyp: string | null | undefined, datum?: string | null): string | null {
+  if (gerichtstyp !== 'bundesgericht') return null;
+  const key = GERICHTS_TABELLE.get(normalisiereAbk(abk));
+  if (key === undefined) return null;
+  if (!datum) return key;
+  const reihe = REIHE_JE_KEY.get(key);
+  if (!reihe || reihe.geltend !== key) return key;
+  const damals = reihe.historisch.find((h) => datum < h.bis);
+  return damals ? damals.key : key;
+}
+
+/**
+ * Snapshot-gebundene Auflösung: erst die amtliche Ebene (`normKeyFuerAbk`),
+ * dann — nur bei Bundesgerichts-Snapshots — die Gerichts-Kürzel. EINE Stelle für
+ * alle Snapshot-Pfade (normKeys, Literatur-Befund, Artikel-Schlüssel), damit
+ * Norm-Index und Bezüge dieselbe Zuordnung sehen (§5).
+ */
+export function normKeyImSnapshot(abk: string, gerichtstyp: string | null | undefined, datum?: string | null): string | null {
+  return normKeyFuerAbk(abk, datum) ?? gerichtsKuerzelKey(abk, gerichtstyp, datum);
+}
+
 /**
  * "Art. 32 Abs. 2 BGG" → ['BGG']; mehrere Nennungen dedupliziert.
  * Das Trailing-Token fängt einen angehängten einzelnen Ziffern-Block mit
@@ -421,12 +537,13 @@ export function normKeyFuerAbk(abk: string, datum?: string | null): string | nul
  * dort strukturell schlechter abgeschnitten als die Bundes-Snapshots — ein
  * Unterschied der QUELLE, nicht der Rechtsanwendung.
  */
-export function statutesZuNormKeys(statutes: string[], datum?: string | null): string[] {
+export function statutesZuNormKeys(statutes: string[], datum?: string | null, gerichtstyp?: string | null): string[] {
   const out = new Set<string>();
   for (const s of statutes ?? []) {
     const abk = abkVonStatut(s);
     if (!abk) continue;
-    const k = normKeyFuerAbk(abk, datum);
+    // `gerichtstyp` (optional): nur Bundesgerichts-Snapshots sehen GERICHTS_KUERZEL.
+    const k = normKeyImSnapshot(abk, gerichtstyp, datum);
     if (k) out.add(k);
   }
   return [...out];
@@ -683,9 +800,9 @@ export function fliesstextOhneApparat(snap: EntscheidSnapshot): string {
  */
 export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | null): string[] {
   const datum = fassungsDatumVon(snap);
-  const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? [], datum));
+  const out = new Set<string>(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp));
   for (const ref of extrahiereStatutRefs(fliesstextOhneApparat(snap))) {
-    const k = normKeyFuerAbk(ref.gesetz, datum);
+    const k = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
     if (k) out.add(k);
   }
   if (hint && !AUSGESCHLOSSENE_KEYS.has(hint)) out.add(hint);
@@ -713,11 +830,11 @@ export function normKeysVonSnapshot(snap: EntscheidSnapshot, hint?: string | nul
  */
 export function literaturEntfernteNormKeys(snap: EntscheidSnapshot): string[] {
   const datum = fassungsDatumVon(snap);
-  const ausStatutes = new Set(statutesZuNormKeys(snap.zitierteNormen ?? [], datum));
+  const ausStatutes = new Set(statutesZuNormKeys(snap.zitierteNormen ?? [], datum, snap.gerichtstyp));
   const keysAus = (text: string): Set<string> => {
     const out = new Set<string>();
     for (const ref of extrahiereStatutRefs(text)) {
-      const k = normKeyFuerAbk(ref.gesetz, datum);
+      const k = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
       if (k) out.add(k);
     }
     return out;
@@ -829,7 +946,7 @@ export function artikelSchluesselVonSnapshot(snap: EntscheidSnapshot): Set<strin
   const datum = fassungsDatumVon(snap);
   const text = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextOhneApparat(snap);
   for (const ref of extrahiereStatutRefs(text)) {
-    const rk = normKeyFuerAbk(ref.gesetz, datum);
+    const rk = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, datum);
     if (!rk) continue;
     out.add(`${rk}/${ref.artikel}`);
   }
@@ -1069,7 +1186,7 @@ export function artikelSchluesselMitBefund(snap: EntscheidSnapshot): {
   const roh = new Set<string>();
   const rohText = (snap.zitierteNormen ?? []).join('\n') + '\n' + fliesstextVon(snap);
   for (const ref of extrahiereStatutRefs(rohText)) {
-    const rk = normKeyFuerAbk(ref.gesetz, fassungsDatumVon(snap));
+    const rk = normKeyImSnapshot(ref.gesetz, snap.gerichtstyp, fassungsDatumVon(snap));
     if (rk) roh.add(`${rk}/${ref.artikel}`);
   }
   const literaturVerworfen = [...roh].filter((k) => !schluessel.has(k)).sort();
