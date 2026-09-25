@@ -45,5 +45,5 @@ export function sageKopiertAn(text: string = KOPIER_ANSAGE_TEXT): void {
   const el = kopierAnsageRegion();
   if (!el) return;
   wechsel = !wechsel;
-  el.textContent = wechsel ? text : `${text} `;
+  el.textContent = wechsel ? text : `${text}\u00a0`;
 }

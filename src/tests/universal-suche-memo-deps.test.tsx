@@ -21,7 +21,7 @@ import { createRoot, type Root } from 'react-dom/client';
 import { parseHTML } from 'linkedom';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-const sucheAlles = vi.fn((..._a: unknown[]) => []);
+const sucheAlles = vi.fn<(...a: unknown[]) => never[]>(() => []);
 vi.mock('../lib/universalSuche', async (orig) => ({
   ...(await orig<typeof import('../lib/universalSuche')>()),
   sucheAlles: (...a: unknown[]) => sucheAlles(...a),
