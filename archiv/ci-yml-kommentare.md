@@ -656,6 +656,10 @@ Darunter der Originaltext byte-genau, inklusive Einrückung und `#`.
       # die Marker-Bloecke in `src/index.css` und `tailwind.tokens.generated.js`.
       # Es traegt zusaetzlich die Doppel-Definitions-Wache: kein Token darf
       # ausserhalb der Marker ein zweites Mal definiert sein (§5). Offline, ~1 s.
+      # Nachtrag `check:segmente` (QS-KORPUS, 25.9.2026, ergaenzt — die Zeiten
+      # oben bleiben Beleg ihres Stands): an diesen Schritt angehaengt, Modus B
+      # (ohne Cache) lokal 22–23 s warm unter Parallel-Last (vor G11: 44–58 s),
+      # nicht im «~10 s» oben enthalten; Linux-CI-Laufzeit noch nicht gemessen.
 ```
 
 ## ci-028 · tore · UI-Normzitate (Korpus-Abgleich)

@@ -52,6 +52,7 @@ if [ -z "$datum" ]; then
   exit 1
 fi
 
+npm run check:segmente -- --schreiben
 npm run gen:artikel-bestand
 npm run gen:zaehler
 npm run gen:entstehung-projektion

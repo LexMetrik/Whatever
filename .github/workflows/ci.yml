@@ -515,7 +515,7 @@ jobs:
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-027
       - name: Darstellungs-Kanon (Tokens · Drift · Farbwelt · Linien · p-Klassen)
         if: needs.diff.outputs.art != 'doku'
-        run: npm run check:design-tokens && npm run check:tokens-drift && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen
+        run: npm run check:design-tokens && npm run check:tokens-drift && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen && npm run check:segmente
       # Anlass/Belege: archiv/ci-yml-kommentare.md#ci-028
       - name: UI-Normzitate (Korpus-Abgleich)
         if: needs.diff.outputs.art != 'doku'
