@@ -294,6 +294,7 @@ describe('LegacyMehrspaltigeTabelle — Nachspann (B11)', () => {
       ['Andorra*', '22. Januar', '1996'],
       ['* Vorbehalte und Erklärungen. Lange Fussnote.'],
       ['a Anwendungserklärung nach Art. 56.'],
+      ['b Direktion für Völkerrecht, 3003 Bern, Sitzung vom 9. Mai 2007.'],
     ], ['Vertragsstaaten', 'Ratifikation', '']);
     // Raster: 3 Kopfzellen, 3 Zeilen (die MITTLERE Einzelzelle bleibt Zeile) × 3 = 9 Zellen
     expect((out.match(/role="columnheader"/g) ?? []).length).toBe(3);
@@ -302,6 +303,8 @@ describe('LegacyMehrspaltigeTabelle — Nachspann (B11)', () => {
     expect(nach).toContain('* Vorbehalte und Erklärungen. Lange Fussnote.');
     expect(nach.indexOf('* Vorbehalte')).toBeLessThan(nach.indexOf('a Anwendungserklärung'));
     expect(nach).not.toContain('role="cell"');
+    // Prosa, keine Zahlenzelle: kein Tausender-Apostroph in PLZ und Jahr.
+    expect(nach).toContain('3003 Bern, Sitzung vom 9. Mai 2007.');
   });
 
   it('ohne Einzelzellen-Ende kein Nachspann; einspaltige Tabelle bleibt ganz Raster', () => {
@@ -317,6 +320,7 @@ describe('LegacyMehrspaltigeTabelle — Nachspann (B11)', () => {
     const zellen = [...out.matchAll(/role="cell" class="([^"]*)"/g)].map((m) => m[1]);
     expect(zellen[0]).toContain('min-w-[9rem]');
     expect(zellen[0]).not.toContain('whitespace-nowrap');
+    expect(zellen[0]).toContain('[overflow-wrap:break-word]');
     expect(zellen[1]).toContain('whitespace-nowrap');
     expect(zellen[2]).toContain('whitespace-nowrap');
   });

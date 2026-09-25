@@ -135,12 +135,16 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
 //     stehen als EINZELZELLEN-Zeilen am Ende (Quelle: eine Zeile, die die ganze
 //     Tabelle überspannt). In Spalte 1 gepresst und ohne Umbruch (`w-max`) gaben
 //     sie der ganzen Spalte ihre Länge (bis 350 Zeichen). Sie stehen jetzt unter
-//     dem Raster als Absatz über die Kastenbreite — wie in der Quelle. Betroffen
+//     dem Raster als Absatz über die Kastenbreite — wie in der Quelle, und
+//     OHNE `gruppiereTausender`: es ist Prosa («3003 Bern», «9. Mai 2007»), die
+//     Zell-Gruppierung setzte dort «3'003»/«2'007» (gesehen @1920). Betroffen
 //     (Skript-Zählung public/normtext, 26.9.2026): 82 Legacy-Tabellen in 35
 //     Bundes-/Staatsvertrags-Erlassen, keine kantonale.
 //  2. BESCHRIFTUNGSSPALTE. `w-max` hielt JEDE Zelle einzeilig. Jetzt darf nur
 //     die erste Spalte umbrechen (nie unter 9 rem ≈ 16 Zeichen — sonst zerfällt
-//     sie wortweise, gesehen @390: 42 px, Zeile 1'102 px hoch); alle übrigen
+//     sie wortweise, gesehen @390: 42 px, Zeile 1'102 px hoch; und nie mitten
+//     im Wort: `break-word` statt des geerbten `anywhere` — «Aserbaidscha|n*»
+//     @390 gesehen, 26.9.2026); alle übrigen
 //     bleiben wie bisher einzeilig (`whitespace-nowrap`, Daten/Zahlen brechen nie,
 //     §N-4a). Passt die Tabelle schon heute, ändert sich nichts (`min-w-full`).
 //     Reicht die Breite auch so nicht, bleibt der Querscroll samt Affordanz.
@@ -159,7 +163,7 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
     alleZeilen.some((z) => istNumerischeZelle(z[ci] ?? '')),
   );
   const zelleCls = (ci: number, kopfZeile: boolean) =>
-    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ci > 0 ? ' whitespace-nowrap' : ' min-w-[9rem]'}${
+    `table-cell px-3 py-1.5 leading-snug align-baseline${spalteNumerisch[ci] ? ' text-right whitespace-nowrap' : ci > 0 ? ' whitespace-nowrap' : ' min-w-[9rem] [overflow-wrap:break-word]'}${
       kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'
     }`;
   return (
@@ -189,7 +193,7 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen: alleZeilen }: { kopf?: string
       {/* `sticky left-0`: scrollt das Raster quer, bleibt der Nachspann im Blick. */}
       {nachspann.length > 0 && (
         <span data-tabelle-nachspann="" className="sticky left-0 block border-t border-rule-artikel px-3 py-1.5 text-ink-700">
-          {nachspann.map((t, i) => <span key={i} className="block leading-snug">{gruppiereTausender(t)}</span>)}
+          {nachspann.map((t, i) => <span key={i} className="block leading-snug">{t}</span>)}
         </span>
       )}
     </span>
