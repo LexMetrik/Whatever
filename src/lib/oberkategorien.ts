@@ -31,7 +31,7 @@ export const OBERKATEGORIEN: Oberkategorie[] = [
 ];
 
 /** Die Oberkategorien der Rechner-Seite — alle ausser `vorlagen`. */
-export type RechnerKategorieId = Exclude<OberkategorieId, 'vorlagen'>;
+type RechnerKategorieId = Exclude<OberkategorieId, 'vorlagen'>;
 
 // Werkzeug-Karten (rechtsgebietsübergreifend) tragen keinen fachlichen
 // Output-Typ — sie werden EXPLIZIT zugeordnet; der Test bricht, wenn eine
