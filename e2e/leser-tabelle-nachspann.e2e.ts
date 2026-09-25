@@ -12,8 +12,9 @@ import { test, expect, type Page } from '@playwright/test'
 // Raster, nur Spalte 1 bricht um. Gemessen nachher: @1280 603/603 (kein
 // Querscroll), @390 312/584.
 //
-// Rot gesehen gegen den Quellcode vor B11 (Rot-Probe im Bericht): (a) sw 3558,
-// kein Nachspann; (b) sw 3558.
+// Rot gesehen 26.9.2026 gegen den Quellcode vor B11 (src/ zurückgesetzt, Build
+// durch playwright): (a) «Scroller 3558 px bei 603 px sichtbar»; (b) kein
+// Nachspann im DOM (TypeError beim Messen).
 
 const ERLASS = '/gesetze/international/EMRK'
 
