@@ -73,13 +73,22 @@ export type Kopfdatum =
  * eigene Titel: «wurde mit Urteil vom 22. Dezember 2025 abgewiesen» (SG-
  * Publikationsdeckblatt, BGer-Nachgang), «(Urteil vom …», «gegen den Entscheid
  * vom …». Der eigene Titel steht im Kopf nach Kammer/Aktenzeichen/Namen.
+ * Kleingeschriebene Vorwörter gelten auch mit grossem Anfangsbuchstaben am
+ * Satzanfang: BE-PDF 200 2026 230, Seite 3 (Kopfzeile mit eigenem
+ * Aktenzeichen), «Mit Entscheid vom 5. März 2026 (act. II 11)» ist die
+ * Vorinstanz, amtlich ist das Urteil vom 20. Mai 2026 (Messung 25.9.2026).
+ * Nur der Anfangsbuchstabe, keine Versalien; Eigennamen bleiben exakt.
  */
-const ZITAT_VORWORT_RE = /(?:^|[\s(])(?:mit|durch|dem|den|das|die|der|des|im|in|zum|zur|gegen|ans|an|laut|gemäss|vgl\.|dieses|diesem|diesen|einem|einen|ein|eine|seinem|ihrem|sein|ihr|und|oder|sowie|bzw\.|Bundesgericht|Bundesgerichts|BGer)[:,]?\s?$|[(;]\s?$/;
+const ZITAT_VORWOERTER = ['mit', 'durch', 'dem', 'den', 'das', 'die', 'der', 'des', 'im', 'in', 'zum', 'zur', 'gegen', 'ans', 'an', 'laut', 'gemäss', 'vgl.', 'dieses', 'diesem', 'diesen', 'einem', 'einen', 'ein', 'eine', 'seinem', 'ihrem', 'sein', 'ihr', 'und', 'oder', 'sowie', 'bzw.', 'Bundesgericht', 'Bundesgerichts', 'BGer'];
 
 /** Whitespace (inkl. NBSP/U+202F) kollabieren. */
 const flach = (s: string): string => s.replace(/[\u00a0\u202f]/g, ' ').replace(/\s+/g, ' ').trim();
 
 const escRe = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const satzanfang = (w: string): string =>
+  /^\p{Ll}/u.test(w) ? `[${w[0]}${w[0].toUpperCase()}]${escRe(w.slice(1))}` : escRe(w);
+const ZITAT_VORWORT_RE = new RegExp(`(?:^|[\\s(])(?:${ZITAT_VORWOERTER.map(satzanfang).join('|')})[:,]?\\s?$|[(;]\\s?$`, 'u');
 
 /**
  * Aktenzeichen-Muster (eng, §1): Leerzeichen und Punkt als Trenner gleichwertig
