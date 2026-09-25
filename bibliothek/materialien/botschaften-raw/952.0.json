@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/340"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle banche e le casse di risparmio"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 8060"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 8060"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/340"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle banche e le casse di risparmio"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 8060"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 8060"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/340"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle banche e le casse di risparmio"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 8060"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 8060"
     }
   },
   {
@@ -132,6 +171,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/6"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche (Rafforzamento della protezione dei depositanti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 8841"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 8841"
     }
   },
   {
@@ -171,6 +223,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/6"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche (Rafforzamento della protezione dei depositanti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 8841"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 8841"
     }
   },
   {
@@ -210,6 +275,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/6"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +300,327 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche (Rafforzamento della protezione dei depositanti)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 8841"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 8841"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3317"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/901"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-05-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.049"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 3993"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 3993"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3317"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/901"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-05-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.049"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 3993"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 3993"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3317"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2010/901"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-05-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.049"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 3993"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 3993"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0784"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/559"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-05-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.049"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 3993"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 3993"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0784"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/559"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-05-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.049"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 3993"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 3993"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.0"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0784"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2011/559"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-05-12"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "10.049"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 3993"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 3993"
     }
   },
   {
@@ -249,6 +639,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +664,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio aggiuntivo concernente la modifica della legge sulle banche (averi non rivendicati)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 7495"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 7495"
     }
   },
   {
@@ -288,6 +691,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +716,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio aggiuntivo concernente la modifica della legge sulle banche (averi non rivendicati)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 7495"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2010 7495"
     }
   },
   {
@@ -327,6 +743,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/272"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,240 +768,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio aggiuntivo concernente la modifica della legge sulle banche (averi non rivendicati)"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "952.0"
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2010 7495"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3317"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/901"
-    },
-    "dateDoc": {
+    "bblHist": {
       "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-05-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.049"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3317"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/901"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-05-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.049"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/3317"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2010/901"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-05-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.049"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0784"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/559"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-05-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.049"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0784"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/559"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-05-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.049"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.0"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2010/655"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2010/0784"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2011/559"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-05-12"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "10.049"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la modification de la loi fédérale sur les banques (garantie des dépôts)"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente la modifica della legge sulle banche (Garanzia dei depositi)"
+      "value": "BBl 2010 7495"
     }
   },
   {
@@ -600,6 +795,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -621,6 +820,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche  (rafforzamento della stabilità nel settore finanziario; too big to fail)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 4717"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 4717"
     }
   },
   {
@@ -639,6 +847,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -660,6 +872,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche  (rafforzamento della stabilità nel settore finanziario; too big to fail)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 4717"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 4717"
     }
   },
   {
@@ -678,6 +899,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/126"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -699,6 +924,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche  (rafforzamento della stabilità nel settore finanziario; too big to fail)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 4717"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 4717"
     }
   },
   {
@@ -717,6 +951,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/732"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +976,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche (LBCR) (Insolvenza, garanzia dei depositi, segregazione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 6359"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 6359"
     }
   },
   {
@@ -756,6 +1003,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2022/732"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +1028,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sulle banche (LBCR) (Insolvenza, garanzia dei depositi, segregazione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 6359"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 6359"
     }
   }
 ]

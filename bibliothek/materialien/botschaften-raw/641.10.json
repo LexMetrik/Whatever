@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/62"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 7922"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/62"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 7922"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/62"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'entrata in vigore della nuova Costituzione federale e i necessari adeguamenti legislativi"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 1999 7922"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 1999 7922"
     }
   },
   {
@@ -132,6 +171,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/541"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla legge federale concernente nuove misure urgenti nell'ambito della tassa di negoziazione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 5835"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 5835"
     }
   },
   {
@@ -171,6 +223,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/541"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla legge federale concernente nuove misure urgenti nell'ambito della tassa di negoziazione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 5835"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 5835"
     }
   },
   {
@@ -210,6 +275,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2000/541"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla legge federale concernente nuove misure urgenti nell'ambito della tassa di negoziazione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2000 5835"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2000 5835"
     }
   },
   {
@@ -250,6 +328,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/554"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -270,6 +352,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la proroga di misure urgenti nell'ambito della tassa di negoziazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3597"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3597"
     }
   },
   {
@@ -289,6 +380,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/554"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -309,6 +404,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la proroga di misure urgenti nell'ambito della tassa di negoziazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3597"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3597"
     }
   },
   {
@@ -328,6 +432,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/554"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -348,6 +456,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la proroga di misure urgenti nell'ambito della tassa di negoziazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3597"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3597"
     }
   },
   {
@@ -367,6 +484,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/555"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -387,6 +508,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la proroga di misure urgenti nell'ambito della tassa di negoziazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3597"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3597"
     }
   },
   {
@@ -406,6 +536,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/555"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -426,6 +560,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la proroga di misure urgenti nell'ambito della tassa di negoziazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3597"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3597"
     }
   },
   {
@@ -445,6 +588,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/555"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -465,6 +612,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la proroga di misure urgenti nell'ambito della tassa di negoziazione"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 3597"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 3597"
     }
   },
   {
@@ -483,6 +639,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/520"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -504,6 +664,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle tasse di bollo"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4899"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4899"
     }
   },
   {
@@ -522,6 +691,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/520"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -543,6 +716,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle tasse di bollo"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4899"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4899"
     }
   },
   {
@@ -561,6 +743,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2005/520"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -582,6 +768,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle tasse di bollo"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2004 4899"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2004 4899"
     }
   },
   {
@@ -600,6 +795,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/397"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -621,6 +820,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 4733"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 4733"
     }
   },
   {
@@ -639,6 +847,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/397"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -660,6 +872,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 4733"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 4733"
     }
   },
   {
@@ -678,6 +899,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/397"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -699,6 +924,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 4733"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 4733"
     }
   },
   {
@@ -717,6 +951,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/84"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +976,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle tasse di bollo"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 1511"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 1511"
     }
   },
   {
@@ -756,6 +1003,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/84"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +1028,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle tasse di bollo"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 1511"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 1511"
     }
   },
   {
@@ -795,6 +1055,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/84"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -816,6 +1080,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulle tasse di bollo"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 1511"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 1511"
     }
   },
   {
@@ -834,6 +1107,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/673"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -855,6 +1132,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sulle procedure elettroniche in ambito fiscale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 4705"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 4705"
     }
   },
   {
@@ -873,6 +1159,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/673"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -894,6 +1184,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sulle procedure elettroniche in ambito fiscale"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 4705"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 4705"
     }
   }
 ]

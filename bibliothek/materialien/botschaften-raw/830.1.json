@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/513"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA; revisione dell'allegato)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 803"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 803"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/513"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA; revisione dell'allegato)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 803"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 803"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2002/513"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'adeguamento dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA; revisione dell'allegato)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 803"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 803"
     }
   },
   {
@@ -132,6 +171,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla parte generale del diritto delle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1607"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 1607"
     }
   },
   {
@@ -171,6 +223,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla parte generale del diritto delle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1607"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 1607"
     }
   },
   {
@@ -210,6 +275,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2020/892"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sulla parte generale del diritto delle assicurazioni sociali"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 1607"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 1607"
     }
   }
 ]

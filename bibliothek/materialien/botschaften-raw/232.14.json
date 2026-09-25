@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/848"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/848"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/848"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
     }
   },
   {
@@ -133,6 +172,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
     }
   },
   {
@@ -172,6 +224,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
     }
   },
   {
@@ -211,6 +276,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente l'approvazione di due trattati relativi al sistema di brevetto europeo e la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 3773"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 3773"
     }
   },
   {
@@ -250,6 +328,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/366"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -270,6 +352,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -289,6 +380,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/366"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -309,6 +404,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -328,6 +432,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/366"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -348,6 +456,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -367,6 +484,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/374"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -387,6 +508,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -406,6 +536,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/374"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -426,6 +560,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -445,6 +588,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/374"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -465,6 +612,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio relativo alla modifica della legge sui brevetti e al decreto federale concernente l'approvazione del Trattato sul diritto dei brevetti e del Regolamento di esecuzione "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 1"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 1"
     }
   },
   {
@@ -483,6 +639,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/349"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -504,6 +664,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla modifica della legge sui brevetti (Scelta del sistema di esaurimento nel diritto dei brevetti) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 303"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 303"
     }
   },
   {
@@ -522,6 +691,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/349"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -543,6 +716,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla modifica della legge sui brevetti (Scelta del sistema di esaurimento nel diritto dei brevetti) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 303"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 303"
     }
   },
   {
@@ -561,6 +743,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/349"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -582,6 +768,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio sulla modifica della legge sui brevetti (Scelta del sistema di esaurimento nel diritto dei brevetti) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2008 303"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2008 303"
     }
   },
   {
@@ -600,6 +795,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/232"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -621,6 +820,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sui brevetti"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 7"
     }
   }
 ]

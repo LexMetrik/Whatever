@@ -53,7 +53,7 @@ export const REGISTER_PROVENIENZ_PFAD = join('public', 'materialien', 'register-
 const KERN_FELDER = [
   'key', 'behoerde', 'behoerdeName', 'behoerdeKuerzel', 'doktyp', 'doktypLabel',
   'titel', 'nummer', 'rechtsgebiet', 'sprache', 'status', 'quelleUrl', 'stand',
-  'rang', 'normKeys', 'hinweis', 'vernehmlassung',
+  'rang', 'normKeys', 'hinweis', 'vernehmlassung', 'fundstelle',
 ] as const satisfies ReadonlyArray<keyof BrowseMaterial>;
 
 /**
@@ -143,7 +143,7 @@ export function shaEintrag(r: MaterialRegistereintrag): string {
     // denselben Wert), `artAnker` ist heute in jedem Eintrag `undefined` (Moat-Hebel 2,
     // noch ohne Daten) und trägt darum aktuell keine Drift-Information.
     ...(r.behoerde === 'BR'
-      ? [r.titelFr ?? '', r.titelIt ?? '', r.projEli ?? '', (r.ocUris ?? []).join(','),
+      ? [r.titelFr ?? '', r.titelIt ?? '', r.projEli ?? '', (r.ocUris ?? []).join(','), r.fundstelle ?? '',
          // E1: Verfahrenskette im Drift-Token — ein neuer Verfahrensschritt ändert
          // das sha und wird so vom Register-Tor gesehen.
          (r.ereignisse ?? []).map((v) => `${v.code}:${v.datum ?? ''}:${v.res ?? ''}`).join(';')]
@@ -175,6 +175,8 @@ function vollEintrag(r: MaterialRegistereintrag): MaterialVoll {
     ? {
         ...(r.titelFr ? { titelFr: r.titelFr } : {}),
         ...(r.titelIt ? { titelIt: r.titelIt } : {}),
+        // M-7: BBl-Fundstelle (Kern-Feld: die UI zeigt sie neben der Curia-Nummer).
+        ...(r.fundstelle ? { fundstelle: r.fundstelle } : {}),
         ...(r.projEli ? { projEli: r.projEli } : {}),
         ...(r.ocUris ? { ocUris: r.ocUris } : {}),
         ...(r.botschaftDate ? { botschaftDate: r.botschaftDate } : {}),

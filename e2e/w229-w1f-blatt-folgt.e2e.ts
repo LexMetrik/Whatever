@@ -85,6 +85,13 @@ test.describe('S6 W1f · jeder Reiter folgt dem Artikel', () => {
     await blattFuerArtikel(page.locator('#art-5'), 20_000);
     await blattReiter(page, 'materialien');
     await expect(gruppe(page, 'materialien')).toHaveAttribute('data-v3-blatt-artikel', '5');
-    await expect(gruppe(page, 'materialien')).toHaveText('Zu Art. 5 nichts erfasst.');
+    // Fachänderung 25.9.2026 (#1096, M-5): bis dahin stand hier «Zu Art. 5 nichts
+    // erfasst.» — eine Lücke, kein Soll. Seit die Botschaften auch den Erlassen
+    // zugeordnet werden, die sie über Fedlex-Auswirkungen ändern, erscheint an
+    // Art. 5 BGBM die Botschaft 17.019 (Totalrevision BöB, BBl 2017 1851), deren
+    // Erlass AS 2020 641 Art. 5 BGBM per 1.1.2021 neu fasste (vgl. «Gilt seit
+    // 01.01.2021» im Fall (i) oben).
+    await expect(gruppe(page, 'materialien')).toContainText('17.019');
+    await expect(gruppe(page, 'materialien')).toContainText('AS 2020 641');
   });
 });

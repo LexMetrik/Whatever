@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: property-invarianten «nie Samstag» nur gesetzliche Fristen; ZpoFristenForm-Throw ungefangen; SR 173.110.3 amtlich nachprüfen
 anlass: RL-24-Nebenfund, 24.9.2026
 -->

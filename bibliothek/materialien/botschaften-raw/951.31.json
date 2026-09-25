@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/822"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi di capitale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6395"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 6395"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/822"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi di capitale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6395"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 6395"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/822"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi di capitale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6395"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 6395"
     }
   },
   {
@@ -133,6 +172,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2006/822"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi di capitale)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6395"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 6395"
     }
   },
   {
@@ -171,6 +223,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli investimenti collettivi di capitale (LICol)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 3639"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 3639"
     }
   },
   {
@@ -210,6 +275,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli investimenti collettivi di capitale (LICol)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 3639"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 3639"
     }
   },
   {
@@ -249,6 +327,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2013/116"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +352,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge federale sugli investimenti collettivi di capitale (LICol)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2012 3639"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2012 3639"
     }
   },
   {
@@ -288,6 +379,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +404,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sugli investimenti collettivi («Limited Qualified Investor Fund», L-QIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 6885"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 6885"
     }
   },
   {
@@ -327,6 +431,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/53"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +456,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica della legge sugli investimenti collettivi («Limited Qualified Investor Fund», L-QIF)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 6885"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 6885"
     }
   }
 ]

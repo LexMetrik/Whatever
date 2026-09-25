@@ -16,6 +16,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/361"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -36,6 +40,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di una modifica del Codice civile svizzero (Gestione elettronica dei registri dello stato civile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 1639"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 1639"
     }
   },
   {
@@ -55,6 +68,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/361"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -75,6 +92,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di una modifica del Codice civile svizzero (Gestione elettronica dei registri dello stato civile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 1639"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 1639"
     }
   },
   {
@@ -94,6 +120,10 @@
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2004/361"
     },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
     "dateDoc": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
@@ -114,6 +144,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio a sostegno di una modifica del Codice civile svizzero (Gestione elettronica dei registri dello stato civile) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2001 1639"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2001 1639"
     }
   },
   {
@@ -132,6 +171,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/613"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -153,6 +196,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Parte III: Modifiche della legge federale sul diritto fondiario rurale (LDFR) e della legge federale sull'affitto agricolo (LAAgr), nonché adeguamento delle disposizioni del Codice civile svizzero (CC) in materia di diritti reali immobiliari"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4938"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4938"
     }
   },
   {
@@ -171,6 +223,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/613"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -192,6 +248,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Parte III: Modifiche della legge federale sul diritto fondiario rurale (LDFR) e della legge federale sull'affitto agricolo (LAAgr), nonché adeguamento delle disposizioni del Codice civile svizzero (CC) in materia di diritti reali immobiliari"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4938"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4938"
     }
   },
   {
@@ -210,6 +275,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2003/613"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -231,6 +300,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Parte III: Modifiche della legge federale sul diritto fondiario rurale (LDFR) e della legge federale sull'affitto agricolo (LAAgr), nonché adeguamento delle disposizioni del Codice civile svizzero (CC) in materia di diritti reali immobiliari"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2002 4938"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2002 4938"
     }
   },
   {
@@ -249,6 +327,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -270,6 +352,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legislazione esecutiva della nuova  impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6029"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 6029"
     }
   },
   {
@@ -288,6 +379,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -309,6 +404,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legislazione esecutiva della nuova  impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6029"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 6029"
     }
   },
   {
@@ -327,6 +431,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/787"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -348,6 +456,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legislazione esecutiva della nuova  impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2005 6029"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2005 6029"
     }
   },
   {
@@ -366,6 +483,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -387,6 +508,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7001"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 7001"
     }
   },
   {
@@ -405,6 +535,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -426,6 +560,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7001"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 7001"
     }
   },
   {
@@ -444,6 +587,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/114"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -465,6 +612,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2006 7001"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2006 7001"
     }
   },
   {
@@ -483,6 +639,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/666"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -504,6 +664,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 5283"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 5283"
     }
   },
   {
@@ -522,6 +691,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/666"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -543,6 +716,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 5283"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 5283"
     }
   },
   {
@@ -561,6 +743,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2011/666"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -582,6 +768,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2007 5283"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2007 5283"
     }
   },
   {
@@ -600,6 +795,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/53"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -621,6 +820,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero (Autorità parentale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 9077"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 9077"
     }
   },
   {
@@ -639,6 +847,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/53"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -660,6 +872,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero (Autorità parentale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 9077"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 9077"
     }
   },
   {
@@ -678,6 +899,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2014/53"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -699,6 +924,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero (Autorità parentale) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2011 9077"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2011 9077"
     }
   },
   {
@@ -717,6 +951,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/379"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -738,6 +976,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Conguaglio della previdenza professionale in caso di divorzio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 4887"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 4887"
     }
   },
   {
@@ -756,6 +1003,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/379"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -777,6 +1028,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Conguaglio della previdenza professionale in caso di divorzio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 4887"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2013 4887"
     }
   },
   {
@@ -795,6 +1055,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/379"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -816,123 +1080,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Conguaglio della previdenza professionale in caso di divorzio)"
-    }
-  },
-  {
-    "sr": {
+    },
+    "bbl": {
       "type": "literal",
-      "value": "210"
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2013 4887"
     },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/100"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/2340"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/289"
-    },
-    "dateDoc": {
+    "bblHist": {
       "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-13"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "13.106"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (GAFI)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la mise en uvre des recommandations du Groupe d'action financière (GAFI), révisées en 2012"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria (GAFI) rivedute nel 2012"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "210"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/100"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/2340"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/289"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-13"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "13.106"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (GAFI)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la mise en uvre des recommandations du Groupe d'action financière (GAFI), révisées en 2012"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria (GAFI) rivedute nel 2012"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "210"
-    },
-    "botschaft": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/fga/2014/100"
-    },
-    "proj": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/proj/2013/2340"
-    },
-    "oc": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/oc/2015/289"
-    },
-    "dateDoc": {
-      "type": "literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-13"
-    },
-    "curia": {
-      "type": "literal",
-      "value": "13.106"
-    },
-    "titleDe": {
-      "type": "literal",
-      "value": "Botschaft zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (GAFI)"
-    },
-    "titleFr": {
-      "type": "literal",
-      "value": "Message concernant la mise en uvre des recommandations du Groupe d'action financière (GAFI), révisées en 2012"
-    },
-    "titleIt": {
-      "type": "literal",
-      "value": "Messaggio concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria (GAFI) rivedute nel 2012"
+      "value": "BBl 2013 4887"
     }
   },
   {
@@ -951,6 +1107,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/649"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -972,6 +1132,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Atti dello stato civile e registro fondiario) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3551"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 3551"
     }
   },
   {
@@ -990,6 +1159,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/649"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1011,6 +1184,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Atti dello stato civile e registro fondiario) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3551"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 3551"
     }
   },
   {
@@ -1029,6 +1211,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/649"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1050,6 +1236,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Atti dello stato civile e registro fondiario) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 3551"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 3551"
     }
   },
   {
@@ -1068,6 +1263,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/728"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1089,6 +1288,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero  (Mantenimento del figlio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 529"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 529"
     }
   },
   {
@@ -1107,6 +1315,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/728"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1128,6 +1340,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero  (Mantenimento del figlio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 529"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 529"
     }
   },
   {
@@ -1146,6 +1367,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2015/728"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1167,6 +1392,171 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero  (Mantenimento del figlio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 529"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 529"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "210"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/2340"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-13"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "13.106"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (GAFI)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la mise en uvre des recommandations du Groupe d'action financière (GAFI), révisées en 2012"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria (GAFI) rivedute nel 2012"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 605"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 605"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "210"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/2340"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-13"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "13.106"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (GAFI)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la mise en uvre des recommandations du Groupe d'action financière (GAFI), révisées en 2012"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria (GAFI) rivedute nel 2012"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 605"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 605"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "210"
+    },
+    "botschaft": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/fga/2014/100"
+    },
+    "proj": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/proj/2013/2340"
+    },
+    "oc": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/oc/2015/289"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
+    },
+    "dateDoc": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-13"
+    },
+    "curia": {
+      "type": "literal",
+      "value": "13.106"
+    },
+    "titleDe": {
+      "type": "literal",
+      "value": "Botschaft zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (GAFI)"
+    },
+    "titleFr": {
+      "type": "literal",
+      "value": "Message concernant la mise en uvre des recommandations du Groupe d'action financière (GAFI), révisées en 2012"
+    },
+    "titleIt": {
+      "type": "literal",
+      "value": "Messaggio concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria (GAFI) rivedute nel 2012"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2014 605"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2014 605"
     }
   },
   {
@@ -1185,6 +1575,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/450"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1206,6 +1600,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Protezione dei minorenni) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 3431"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 3431"
     }
   },
   {
@@ -1224,6 +1627,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/450"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1245,6 +1652,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Protezione dei minorenni) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 3431"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 3431"
     }
   },
   {
@@ -1263,6 +1679,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2018/450"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1284,6 +1704,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Protezione dei minorenni) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 3431"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 3431"
     }
   },
   {
@@ -1302,6 +1731,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/425"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1323,6 +1756,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero  (Adozione) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 877"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 877"
     }
   },
   {
@@ -1341,6 +1783,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/425"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1362,6 +1808,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero  (Adozione) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 877"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 877"
     }
   },
   {
@@ -1380,6 +1835,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2017/425"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1401,6 +1860,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero  (Adozione) "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2015 877"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2015 877"
     }
   },
   {
@@ -1419,6 +1887,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/695"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1440,6 +1912,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 6769"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 6769"
     }
   },
   {
@@ -1458,6 +1939,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/695"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1479,6 +1964,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 6769"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 6769"
     }
   },
   {
@@ -1497,6 +1991,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/695"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1518,6 +2016,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero "
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 6769"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 6769"
     }
   },
   {
@@ -1536,6 +2043,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/432"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1557,6 +2068,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale intesa a migliorare la protezione delle vittime di violenza"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 7307"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 7307"
     }
   },
   {
@@ -1575,6 +2095,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/432"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1596,6 +2120,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale intesa a migliorare la protezione delle vittime di violenza"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 7307"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 7307"
     }
   },
   {
@@ -1614,6 +2147,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/432"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1635,6 +2172,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la legge federale intesa a migliorare la protezione delle vittime di violenza"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2017 7307"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2017 7307"
     }
   },
   {
@@ -1653,6 +2199,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/312"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1674,6 +2224,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Codice civile svizzero (Diritto successorio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 5813"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 5813"
     }
   },
   {
@@ -1692,6 +2251,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/312"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1713,6 +2276,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Codice civile svizzero (Diritto successorio)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2018 5813"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2018 5813"
     }
   },
   {
@@ -1731,6 +2303,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/668"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1752,6 +2328,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Codice civile svizzero (Cambiamento del sesso allo stato civile)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 799"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 799"
     }
   },
   {
@@ -1770,6 +2355,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/668"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1791,6 +2380,15 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la revisione del Codice civile svizzero (Cambiamento del sesso allo stato civile)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2020 799"
+    },
+    "bblHist": {
+      "type": "literal",
+      "value": "BBl 2020 799"
     }
   },
   {
@@ -1809,6 +2407,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2024/590"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1830,6 +2432,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Misure contro i matrimoni con minorenni)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2023 2127"
     }
   },
   {
@@ -1848,6 +2455,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/16"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1869,6 +2480,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente la modifica del Codice civile svizzero (Protezione del possesso contro le turbative e le usurpazioni illecite di fondi)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 116"
     }
   },
   {
@@ -1887,6 +2503,10 @@
     "oc": {
       "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/94"
+    },
+    "evType": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/type-projet/200"
     },
     "dateDoc": {
       "type": "literal",
@@ -1908,6 +2528,11 @@
     "titleIt": {
       "type": "literal",
       "value": "Messaggio concernente una modifica del Codice civile svizzero (Educazione non violenta)"
+    },
+    "bbl": {
+      "type": "literal",
+      "datatype": "https://fedlex.data.admin.ch/vocabulary/identifier-type/act-reference",
+      "value": "BBl 2024 2516"
     }
   }
 ]

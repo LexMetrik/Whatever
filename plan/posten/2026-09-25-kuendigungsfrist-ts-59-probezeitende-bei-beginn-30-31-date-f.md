@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·30-RL-W2A
+dach: W2·30-RL-W3
 titel: kuendigungsfrist.ts:59 probezeitEnde bei Beginn 30./31.: date-fns-Rundung liefert 27.2. statt 28.2.
 anlass: RL-16-GP-Nebenfund, 24.9.2026
 -->
