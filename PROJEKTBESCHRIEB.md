@@ -122,9 +122,20 @@ gebraucht»-Zeile, «Zuletzt verwendet» rein lokal. `/pro` und
 ## 3. Architektur
 
 **Stack:** React 19 + TypeScript (strict) + Vite 8 + Tailwind 3 ·
-Vitest (257 Testdateien) · Playwright-E2E (48 Specs, CI-Shards) ·
-jsPDF (PDF), docx (DOCX) · Vercel (statisches Hosting, 63
-Prerender-Routen).
+Vitest (593 Testdateien, `find src/tests -name "*.test.ts*" | wc -l`,
+25.9.2026) · Playwright-E2E (169 Specs, `find e2e -name "*.e2e.ts" | wc -l`,
+25.9.2026; CI-Shards) · jsPDF (PDF), docx (DOCX) · Vercel (statisches
+Hosting, 64 Basis-Prerender-Routen — `ERWARTETE_ROUTEN`,
+`scripts/prerender.ts:62`, Selbstprüfung bei jedem Build; dazu die
+Detailrouten je Erlass/Entscheid/Vorlage/Rechner).
+
+**Werkbank-Umbau (`W2·29-WERKBANK-*`, ab 22.9.2026):** die Darstellungsschicht
+läuft schrittweise auf ein gemeinsames Design-System um — Tokens in
+`design/tokens.json`, geteilte Bausteine unter `src/components/ui/`
+(28 Dateien, Stand 25.9.2026) und `layout/` (`SeitenKopf`, `LeserKopfGeruest`,
+`KontextPanel`). TOR/TOKENS/LESER/KATALOGE/VORLAGEN/RECHNER sind Stand
+25.9.2026 gebaut (`status: done`); REST (Rechtsprechung, Materialien,
+statische Seiten) läuft. Detail: `fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md`.
 
 **Datenhaltung in zwei Welten:**
 
@@ -186,12 +197,13 @@ CHF-Apostroph, «5 %», Guillemets, ss statt ß, Halbgeviert.
 
 ---
 
-## 4. Inventar (Stand 21.7.2026)
+## 4. Inventar (Stand 25.9.2026, REST S5c, Werkbank-Umbau)
 
 **Katalog:** 134 Karten im Code (Rechner + Vorlagen); Status-Verteilung
-ca. 66 × `entwurf` · 86 × `geplant` (inkl. Szenarien-Substati) ·
-**0 × `geprüft`**. Massgeblicher Zähler: `npm run report:inventur`;
-Soll-Inventar: `KATALOG-ROADMAP.md` (Praxis-Abdeckungskarte).
+53 × `entwurf` · 81 × `geplant` · **0 × `geprüft`** (`npm run
+report:inventur`, 25.9.2026 — löst die frühere Angabe «ca. 66/86» ab, die
+nicht auf 134 summierte). Soll-Inventar: `KATALOG-ROADMAP.md`
+(Praxis-Abdeckungskarte).
 
 **Rechner-Schwerpunkte (gebaut, Status entwurf):** kombinierter
 Fristenrechner (Allgemein/ZPO/SchKG) · ZPO-/SchKG-/Erbrechts-/

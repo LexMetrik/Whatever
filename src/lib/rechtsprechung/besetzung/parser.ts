@@ -93,8 +93,16 @@ const PARTEI_RE =
 // Vorsitz, der Referent sitzt daneben — beide standen dadurch mit Rolle «vorsitz» im
 // selben Spruchkörper (bpatger O2024_002 / S2024_005). Der Marker wird jetzt über
 // REFERENT_RE nur noch ENTFERNT, ohne eine Rolle zu setzen.
+// `vice-pr[ée]sident…` (25.9.2026, BStGer BG.2026.62 «Miriam Forni, vice-présidente,
+// Roy Garré …»): ohne eigene Alternative griff nur «présidente», das Präfix «vice-»
+// blieb als Phantom-Richter «vice» mit Rolle vorsitz stehen. Die zuerst genannte
+// Vizepräsidentin führt den Spruchkörper wie die «présidente» der Parallelfälle.
+// Nacktes `\bVorsitz\b` (Auflage A1 Gegenprüfung #1117, 25.9.2026): BStGer SN.2026.4
+// «Stefan Heimgartner, Vorsitz Martin Stupf und …» (Zeilenumbruch im Amtstext
+// verloren) ergab den Phantom-Richter `martin-stupf-vorsitz` (Vorname «Vorsitz»).
+// Die Wortgrenze schliesst «Vorsitzende…» aus (eigene Alternative oben).
 const VORSITZ_RE =
-  /\(\s*Vorsitz\s*\)|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
+  /vice-?\s?p\s?r[ée]sident(?:e|s)?|\(\s*Vorsitz\s*\)|\bVorsitz\b|Vorsitzende(?:r|n)?|P\s?r[äa]sident(?:in|en)?|p\s?r[ée]sident(?:e|s)?|p\s?r[ée]sidant(?:e|s)?|P\s?residente|pr[äa]sidierendes?\s+Mitglied|Einzelrichter(?:in)?|Einzelgericht|juge\s+unique|giudic[ea]\s+unic[ao]/i;
 
 /**
  * Referenten-Marker — wird entfernt, setzt aber KEINE Rolle.
@@ -233,9 +241,36 @@ const KONJUNKTION_LEAD = /^(?:und|et|ed|e|&)\b[\s,]*/i;
 const INTERNER_TITEL =
   /(?<=\b\p{Lu}[\p{L}'’-]{2,}\s)(?=(?:Prof\.|Ass\.\s*-?\s*Prof\.|Dr\.|lic\.\s*iur\.|lic\.|MLaw|BLaw|Dipl\.|PD|Bunde(?:s)?richter(?:innen|in)?|Bundesstrafrichter(?:in)?|Bundesverwaltungsrichter(?:in)?|Richter(?:innen|in)?)\s)/gu;
 
+/**
+ * Titel MITTEN im Namen (amtlicher Erfassungsfehler): «Präsident Mark Dr. iur. Schweizer»
+ * (BPatGer S2025_003, so im amtlichen PDF). Steht nach einem Rollenwort genau EIN
+ * gross geschriebenes Wort vor der Titelkette, ist es der Vorname derselben Person —
+ * kein eigener Name. INTERNER_TITEL hätte dort geschnitten und die Phantom-Richter
+ * `mark` + `schweizer` erzeugt (Auflage A1 Gegenprüfung #1117, 25.9.2026). Der Schnitt
+ * fällt darum VOR den Vornamen; das Stück «Mark Dr. iur. Schweizer» bleibt ganz und
+ * wird erst beim Namensbilden vom inneren Titel befreit (`ohneInnerenTitel`) — so
+ * bleibt der Roh-Name wortgetreu im Freitext auffindbar (Reader-Verlinkung, G5).
+ * Bewusst eng: nur nach einem Rollenwort, sodass das fehlende Komma zwischen ZWEI
+ * Vollnamen (BEZ.2025.75) weiter getrennt wird.
+ */
+const TITEL_KETTE = '(?:(?:Prof\\.|Dr\\.|iur\\.|med\\.|phil\\.|sc\\.|nat\\.|chem\\.|ETH)\\s*)+';
+const TITEL_IM_NAMEN = new RegExp(
+  `\\b(?:Pr[äa]sident|Richter)(?:in)?\\s+(?=\\p{Lu}[\\p{Ll}'’-]+\\s+${TITEL_KETTE}\\p{Lu})`, 'u');
+const INNERER_TITEL = new RegExp(`^(\\p{Lu}[\\p{Ll}'’-]+)\\s+${TITEL_KETTE}(?=\\p{Lu})`, 'u');
+
+/** «Mark Dr. iur. Schweizer» → «Mark Schweizer» (nur Titelkette direkt nach EINEM Vornamen). */
+const ohneInnerenTitel = (s: string) => s.replace(INNERER_TITEL, '$1 ');
+
 /** Segment an internen Titel-Startpunkten auftrennen (amtliche Komma-Fehler heilen). */
 function trenneInterneTitel(seg: string): string[] {
-  return seg.split(INTERNER_TITEL).map((x) => x.trim()).filter(Boolean);
+  const teile = (x: string) => x.split(INTERNER_TITEL).map((y) => y.trim()).filter(Boolean);
+  const m = TITEL_IM_NAMEN.exec(seg);
+  if (!m) return teile(seg);
+  const vor = seg.slice(0, m.index + m[0].length);
+  const name = seg.slice(m.index + m[0].length);
+  const kopf = INNERER_TITEL.exec(name)![0];
+  const [erstes = '', ...weitere] = teile(name.slice(kopf.length));
+  return [...teile(vor), `${kopf}${erstes}`.trim(), ...weitere];
 }
 
 /** Diakritika-/Ligatur-Faltung für den Kanon-Slug (deterministisch, §2). */
@@ -505,7 +540,7 @@ function segmentZuRichter(
   // Ein Rest, der noch Ziffern oder ein verbliebenes Rollen-/Verfahrenswort trägt,
   // ist nicht sicher ein Name → verwerfen (Ehrlichkeit, lieber leer als falsch).
   if (/\d/.test(rest)) return null;
-  const teile = tokenisiereName(rest, nurNachname);
+  const teile = tokenisiereName(ohneInnerenTitel(rest), nurNachname);
   if (!teile || !teile.surname) return null;
   // Nachname muss mit einem Buchstaben beginnen (kein Rest-Satzzeichen).
   if (!/[A-Za-zÀ-ÿ]/.test(teile.surname)) return null;
