@@ -9,7 +9,7 @@ import { join } from 'node:path';
 import {
   erkenneAusfaelle, erkenneGuardBefunde, kantonalAusfall, entscheide, leseBsDelta, leseBsVoll, waehleStichprobe,
   pruefeText, aktenzeichenVarianten, amtlichesDatum, oclIdFuerPdf, budgetZeilen, budgetBefund, bewerteFrische,
-  teilePfade, leseStatusZ, inPruefung, zerlegeRunParallel, e2eAuswahl, restMinuten, vergleicheRegister, BOT,
+  teilePfade, leseStatusZ, inPruefung, aktiveGerichte, KANTONS_GERICHTE, AUSGENOMMEN, zerlegeRunParallel, e2eAuswahl, restMinuten, vergleicheRegister, BOT,
   type Lage, type RegEintrag,
 } from '../../scripts/rechtsprechung/wochenlauf-kern';
 import { baueBericht, baueSummary, kopfsatz, type BerichtDaten } from '../../scripts/rechtsprechung/wochenlauf-bericht';
@@ -179,7 +179,7 @@ describe('7 · Stichprobe prüfbar: PDF-Text, Wortgrenze, Datum', () => {
     const t = `HOR.2024.19 / ve / lw\nEntscheid vom 2. Dezember 2025\nBesetzung ${'Erwägung '.repeat(80)}`;
     const ag = e('ag_gerichte_HOR_2024_19', 'ag_gerichte', '2025-12-12', { nummer: 'HOR.2024.19' });
     // Mutation: Datumszweig in pruefeText entfernen ⇒ treffer true trotz falschem Datum (Stand vor der Schärfung).
-    expect(pruefeText(t, ag, 'pdf')).toEqual({ treffer: false, akz: true, datum: false, detail: 'HOR.2024.19 · PDF · Datum amtlich 2025-12-02 ≠ Korpus 2025-12-12' });
+    expect(pruefeText(t, ag, 'pdf')).toEqual({ treffer: false, akz: true, datum: false, detail: 'HOR.2024.19 · PDF · Datum amtlich 2025-12-02 ≠ Korpus/OCL 2025-12-12' });
     expect(pruefeText(t, { ...ag, datum: '2025-12-02' }, 'pdf')).toMatchObject({ treffer: true, akz: true, datum: true });
     expect(pruefeText(`HOR.2024.19 ${'Erwägung '.repeat(80)}`, ag, 'pdf')).toMatchObject({ treffer: null, akz: true, datum: null });
     expect(entscheide({ ...gruen, stichprobe: [...gruen.stichprobe, { key: 'ag', url: null, ...pruefeText(t, ag, 'pdf'), ergebnis: 'fehltreffer' }] }).entscheid).toBe('entwurf');
@@ -372,6 +372,22 @@ describe('13 · BS-Vollabgleich', () => {
     const cron = /- cron: '([^']+)' # am 3\./.exec(yml)![1];
     expect(yml).toContain(`github.event.schedule == '${cron}' && 'bs-vollabgleich'`);
     expect(yml).toMatch(/options: \[woche, bs-vollabgleich\]/);
+  });
+});
+
+describe('Ausschluss SG/AG/GR (Befund #1117) — eine Stelle, im Bericht sichtbar', () => {
+  it('Wochenlauf zieht SG, AG, GR nicht nach; BE bleibt (mit Datumsprüfung)', () => {
+    expect(aktiveGerichte(KANTONS_GERICHTE)).toEqual(['zh_obergericht', 'be_verwaltungsgericht']);
+    expect(Object.keys(AUSGENOMMEN).sort()).toEqual(['ag_gerichte', 'gr_gerichte', 'sg_gerichte']);
+    expect(baueBericht(bericht({}))).toContain('**Ausgenommen (nicht nachgezogen):** sg_gerichte — Datum aus OCL unzuverlässig');
+  });
+  it('BE-Datum-Fehltreffer ⇒ Entwurf, Bericht nennt amtliches und OCL-Datum', () => {
+    const t = `KV 200 2026 230\nUrteil der Einzelrichterin vom 20. Mai 2026\n${'Erwägung '.repeat(80)}`;
+    const id = pruefeText(t, e('be_verwaltungsgericht_2002026230', 'be_verwaltungsgericht', '2026-06-18', { nummer: '200 2026 230' }), 'pdf');
+    expect(id.detail).toBe('200 2026 230 · PDF · Datum amtlich 2026-05-20 ≠ Korpus/OCL 2026-06-18');
+    const zeile = { key: 'be', url: null, ergebnis: 'fehltreffer' as const, detail: id.detail, akz: id.akz, datum: id.datum };
+    expect(entscheide({ ...gruen, stichprobe: [...gruen.stichprobe, zeile] }).entscheid).toBe('entwurf');
+    expect(baueBericht(bericht({ stichprobe: [zeile] }))).toContain('| be | fehltreffer | ✓ | ✗ | 200 2026 230 · PDF · Datum amtlich 2026-05-20 ≠ Korpus/OCL 2026-06-18 |');
   });
 });
 

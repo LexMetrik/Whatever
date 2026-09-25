@@ -152,15 +152,21 @@ export const EIDG_GERICHTE = ['bvger', 'bstger', 'bpatger'];
 export const KANTONS_GERICHTE = ['zh_obergericht', 'be_verwaltungsgericht', 'sg_gerichte', 'gr_gerichte', 'ag_gerichte'];
 /**
  * Gerichte, die der Wochenlauf NICHT nachzieht — die einzige Stelle dafür (§5);
- * der Bericht nennt sie. Befund Stichproben-Nachzug PR #1117 (25.9.2026): das
- * OCL-Entscheiddatum ist bei sg_gerichte das Datum des nachfolgenden
- * BGer-Urteils (9/12 im Bestand), bei ag_gerichte um Tage bis Wochen
- * verschoben. Rückbau: entfällt, wenn der OCL-Datums-Fix für
- * sg_gerichte/ag_gerichte gelandet ist (Posten QS-KORPUS Adapter-Datum SG/AG).
+ * der Bericht nennt sie. Befund Stichproben-Nachzug PR #1117 (25.9.2026): OCL
+ * liefert `decision_date` schon falsch, der Adapter übernimmt es als Text
+ * (adapter-entscheide.ts) — sg_gerichte: Datum des nachfolgenden BGer-Urteils
+ * (9/12 im Bestand); ag_gerichte: um Tage bis Wochen verschoben; gr_gerichte:
+ * Bestand 6/6 falsch, +6 bis +62 Tage. Eigene Stichprobe 25.9.2026 gegen die
+ * Quell-PDFs bestätigt: SG 2/2, AG 2/3, GR 3/3 Datum ✗. be_verwaltungsgericht
+ * bleibt drin (neue Einträge 6/6 richtig), aber nur mit Datumsprüfung — ein
+ * BE-Datum-Fehltreffer macht den PR zum Entwurf.
+ * Rückbau: Posten QS-KORPUS 2026-09-25 Adapter-Datum (a)/(g) — entfällt je
+ * Gericht, sobald dessen Datum an der Quelle belegt richtig ankommt.
  */
 export const AUSGENOMMEN: Readonly<Record<string, string>> = {
   sg_gerichte: 'Datum aus OCL unzuverlässig',
   ag_gerichte: 'Datum aus OCL unzuverlässig',
+  gr_gerichte: 'Datum aus OCL unzuverlässig',
 };
 export const aktiveGerichte = (gerichte: readonly string[]) => gerichte.filter((g) => !(g in AUSGENOMMEN));
 
@@ -300,7 +306,8 @@ export function pruefeBs(html: string, e: RegEintrag): Identitaet {
 
 /**
  * Gerichte, deren Urteile das Jahr im Aktenzeichen zweistellig schreiben, wo
- * OCL/Register es vierstellig führen — eng gefasst, je Gericht belegt:
+ * OCL/Register es vierstellig führen — eng gefasst, je Gericht belegt (GR ist
+ * derzeit AUSGENOMMEN; die Regel bleibt für die Wiederaufnahme):
  *  · gr_gerichte: «Referenz ZR1 24 196» / «SBK 26 38» / «SV1 26 9» im Urteil,
  *    «ZR1 2024 196» / «SBK 2026 38» / «SV1 2026 9» im Register (PDF-Messung
  *    25.9.2026, drei Urteile).
@@ -379,7 +386,7 @@ export function pruefeText(t: string, e: RegEintrag, art: 'pdf' | 'html'): Ident
   const akzText = var_ === nr ? nr : `${nr} (als «${var_}»)`;
   const amtlich = amtlichesDatum(t);
   if (amtlich === null) return { treffer: null, akz: true, datum: null, detail: `${akzText} · ${quelle} · Datum nicht ermittelbar (Korpus ${e.datum}) — Handprüfung` };
-  if (amtlich !== e.datum) return { treffer: false, akz: true, datum: false, detail: `${akzText} · ${quelle} · Datum amtlich ${amtlich} ≠ Korpus ${e.datum}` };
+  if (amtlich !== e.datum) return { treffer: false, akz: true, datum: false, detail: `${akzText} · ${quelle} · Datum amtlich ${amtlich} ≠ Korpus/OCL ${e.datum}` };
   return { treffer: true, akz: true, datum: true, detail: `${akzText} · ${quelle} · ${amtlich}` };
 }
 
