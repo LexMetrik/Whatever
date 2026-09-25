@@ -67,7 +67,11 @@ export const SEGMENT_MINDESTLAENGE = 8;
 // aus der HTML (G1: Kopfzeilen aus, Listenmarken/Bildzellen trennen Stücke,
 // ≥ 2 Zellen), Anhang-/scope-/decl-Anker in der HTML-Menge (G3), caption als
 // Segment (G5), Zeilen-Statistik in der Soll-Datei.
-export const SEGMENTER_VERSION = 3;
+//
+// 4 (Nachzug R3-1, Gegenprüfung 3, 25.9.2026): Häufigkeit zählt (Multimenge,
+// `fehlendeIndizes`); Zellen verschachtelter Tabellen nur noch EINMAL
+// segmentiert (vorher dreifach, heute 1 Fall: SSV annex_2).
+export const SEGMENTER_VERSION = 4;
 
 // ── Rolling-Hash / Fingerabdruck (NACHTRAG: Rabin-Karp, BigInt-frei) ───────
 // Zwei unabhängige Polynom-Hashes mod 2^31−1 (Mersenne-Primzahl, gängige Wahl
@@ -93,19 +97,25 @@ export function fingerabdruck(normalisiertesSegment: string): Fingerabdruck {
 }
 
 /**
- * Markiert in `gefunden` jeden Index aus `ziele`, dessen Hash-Paar (a, b) als
- * Fenster der Länge `laenge` im Blob vorkommt. G11 (Runde 3, §15): statt eines
- * Strings je Fenster (`"a.b"` in einem Set — bei ~25'600 Artikeln × allen
- * Segmentlängen der teuerste Schritt von Modus B) wird je Fenster nur die Zahl
+ * Zählt je Ziel-Gruppe (gleiches Hash-Paar (a, b)) die Fenster der Länge
+ * `laenge` im Blob. G11 (Runde 3, §15): statt eines Strings je Fenster (`"a.b"`
+ * in einem Set — der teuerste Schritt von Modus B) wird je Fenster nur die Zahl
  * `a` in einer Map nachgeschlagen und bei Treffer `b` verglichen. Dieselbe
- * Rollformel, dieselben beiden Hashes — kein Logikverlust (Unit-Test gegen
- * naive String-Suche unverändert, Modus-B/C-Ergebnis byte-gleich, s. Bericht).
+ * Rollformel, dieselben beiden Hashes (Unit-Test gegen naive String-Suche).
+ * R3-1 (GP 3, 25.9.2026): gezählt statt nur markiert; die Zählung endet je
+ * Gruppe bei der Soll-Anzahl. Überlappende Fenster zählen mit — das wirkt nur
+ * in die grüne Richtung, nie als falsches Rot.
  */
-function markiereFenster(
+interface ZielGruppe {
+  b: number;
+  indizes: number[]; // Indizes in `fps` mit genau diesem Fingerabdruck (Soll-Anzahl = Länge)
+  treffer: number;
+}
+
+function zaehleFenster(
   blobNormalisiert: string,
   laenge: number,
-  ziele: ReadonlyMap<number, ReadonlyArray<{ b: number; i: number }>>,
-  gefunden: Set<number>,
+  ziele: ReadonlyMap<number, ReadonlyArray<ZielGruppe>>,
 ): void {
   const n = blobNormalisiert.length;
   if (laenge <= 0 || laenge > n) return; // Länge > Blob-Länge: kann nie enthalten sein.
@@ -124,7 +134,7 @@ function markiereFenster(
   }
   const pruefe = (): void => {
     const kandidaten = ziele.get(a);
-    if (kandidaten) for (const k of kandidaten) if (k.b === b) gefunden.add(k.i);
+    if (kandidaten) for (const g of kandidaten) if (g.b === b && g.treffer < g.indizes.length) g.treffer++;
   };
   pruefe();
   for (let i = laenge; i < n; i++) {
@@ -144,22 +154,33 @@ function markiereFenster(
  * Soll) und Modus C (Fingerabdrücke frisch aus HTML): liefert die Indizes der
  * NICHT im Blob enthaltenen Fingerabdrücke (parallel zu `fps`), gruppiert nach
  * Länge, damit jede Blob-Länge nur einmal abgefahren wird.
+ *
+ * R3-1 (Gegenprüfung 3, 25.9.2026): `fps` ist eine MULTIMENGE. Trägt ein Anker
+ * denselben Fingerabdruck k-mal (VVEA Anhang 5: «Cadmium / 10» in vier
+ * Tabellen), muss der Blob ihn mindestens k-mal enthalten — vorher genügte ein
+ * Vorkommen, der Verlust einer der vier Zeilen blieb grün. Fehlen j der k
+ * Vorkommen, gelten die j LETZTEN Indizes der Gruppe als fehlend.
  */
 export function fehlendeIndizes(blobNormalisiert: string, fps: readonly Fingerabdruck[]): number[] {
-  const nachLaenge = new Map<number, Map<number, Array<{ b: number; i: number }>>>();
+  const nachLaenge = new Map<number, Map<number, ZielGruppe[]>>();
   fps.forEach((fp, i) => {
     const [a36, b36] = fp.hash.split('.');
     const a = parseInt(a36, 36);
     const b = parseInt(b36, 36);
     let ziele = nachLaenge.get(fp.laenge);
     if (!ziele) nachLaenge.set(fp.laenge, (ziele = new Map()));
-    const liste = ziele.get(a);
-    if (liste) liste.push({ b, i });
-    else ziele.set(a, [{ b, i }]);
+    let liste = ziele.get(a);
+    if (!liste) ziele.set(a, (liste = []));
+    const gruppe = liste.find((g) => g.b === b);
+    if (gruppe) gruppe.indizes.push(i);
+    else liste.push({ b, indizes: [i], treffer: 0 });
   });
-  const gefunden = new Set<number>();
-  for (const [laenge, ziele] of nachLaenge) markiereFenster(blobNormalisiert, laenge, ziele, gefunden);
-  return fps.map((_, i) => i).filter((i) => !gefunden.has(i));
+  const fehlend: number[] = [];
+  for (const [laenge, ziele] of nachLaenge) {
+    zaehleFenster(blobNormalisiert, laenge, ziele);
+    for (const liste of ziele.values()) for (const g of liste) fehlend.push(...g.indizes.slice(g.treffer));
+  }
+  return fehlend.sort((x, y) => x - y);
 }
 
 // ── HTML-Segmentierung (Modus C: frische Ableitung) ────────────────────────
@@ -621,13 +642,20 @@ export function segmentiereAnker(
       beschriftung.remove();
     }
     for (const zelle of [...tabelle.querySelectorAll('td, th')]) {
+      // R3-1 (Nachzug, SEGMENTER_VERSION 4): Zellen einer VERSCHACHTELTEN
+      // Tabelle segmentiert deren eigener Durchlauf — vorher kam ihr Text
+      // dreifach ins Soll (äussere Zelle, innere Zelle, innere Tabelle), mit der
+      // Häufigkeitsprüfung ein falsches Rot (SSV annex_2 «4.77.4», HTML 1×).
+      if (zelle.closest('table') !== tabelle) continue;
+      const zellKlon = zelle.cloneNode(true);
+      for (const innen of [...zellKlon.querySelectorAll('table')]) innen.remove();
       const innereSegmente: RohSegment[] = [];
-      segmentiereBereich(zelle.cloneNode(true), innereSegmente);
+      segmentiereBereich(zellKlon.cloneNode(true), innereSegmente);
       if (innereSegmente.length > 0) {
         segmente.push(...innereSegmente);
       } else {
         const art: SegmentArt = zelle.tagName.toLowerCase() === 'th' ? 'th' : 'td';
-        segmente.push({ art, text: blockText(zelle) });
+        segmente.push({ art, text: blockText(zellKlon) });
       }
     }
     tabelle.remove();

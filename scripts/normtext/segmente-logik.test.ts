@@ -26,6 +26,7 @@ import {
   segmentiereArtikel,
   sollAktualitaet,
   sollBelegHash,
+  sollInhaltGleich,
   urteileB6,
   segmenteZuFingerabdruecken,
   leereZeilenStatistik,
@@ -213,6 +214,56 @@ describe('Rolling-Hash-Enthaltensein ≡ String-Enthaltensein (NACHTRAG, Pflicht
     const a = fingerabdruck(normalisiere('Erstes Segment mit genug Zeichen.'));
     const b = fingerabdruck(normalisiere('Zweites Segment mit genug Zeichen.'));
     expect(a.hash).not.toBe(b.hash);
+  });
+});
+
+describe('R3-1 (GP 3): Soll-Fingerabdrücke sind eine Multimenge — Häufigkeit zählt', () => {
+  // Nachbild VVEA (SR 814.600) Anhang 5: dieselbe Zeile «Cadmium / 10» in mehreren Tabellen eines Ankers.
+  const zeile = fingerabdruck(normalisiere('Cadmium10'));
+  const andere = fingerabdruck(normalisiere('Kupfer3000'));
+
+  it('zweimal im Soll, zweimal im Blob ⇒ nichts fehlt', () => {
+    expect(fehlendeIndizes('AntimonCadmium10BleiCadmium10Kupfer3000', [zeile, andere, zeile])).toEqual([]);
+  });
+
+  it('zweimal im Soll, EINMAL im Blob ⇒ das zweite Vorkommen fehlt (vorher grün, M10)', () => {
+    expect(fehlendeIndizes('AntimonCadmium10BleiKupfer3000', [zeile, andere, zeile])).toEqual([2]);
+  });
+
+  it('dreimal im Soll, nie im Blob ⇒ alle drei fehlen', () => {
+    expect(fehlendeIndizes('AntimonBlei', [zeile, zeile, zeile])).toEqual([0, 1, 2]);
+  });
+
+  it('mehr Vorkommen im Blob als im Soll ⇒ nichts fehlt (Überschuss ist nicht Gegenstand, R3-3)', () => {
+    expect(fehlendeIndizes('Cadmium10Cadmium10Cadmium10', [zeile])).toEqual([]);
+  });
+
+  it('sollInhaltGleich vergleicht Häufigkeiten: ein entferntes Duplikat ist ein Inhaltswechsel', () => {
+    const z: [number, string] = [zeile.laenge, zeile.hash];
+    const k: [number, string] = [andere.laenge, andere.hash];
+    expect(sollInhaltGleich({ annex_5: [z, k, z] }, { annex_5: [k, z, z] })).toBe(true);
+    expect(sollInhaltGleich({ annex_5: [z, k, z] }, { annex_5: [z, k] })).toBe(false);
+    expect(sollInhaltGleich({ annex_5: [z, z, k] }, { annex_5: [z, k, k] })).toBe(false);
+  });
+
+  it('verschachtelte Tabelle (SSV annex_2): Zelltext der inneren Tabelle kommt genau EINMAL ins Soll', () => {
+    const html =
+      '<section id="annex_2"><table><tr><td><table><tr><td><dl><dt>4.77.4</dt>' +
+      '<dd>Anzeige der Überleitung von Fahrstreifen (Art. 59)</dd></dl></td></tr></table></td></tr></table></section>';
+    const segmente = segmentiereArtikel(html, 'annex_2') ?? [];
+    const treffer = segmente.filter((s) => normalisiere(s.text) === normalisiere('Anzeige der Überleitung von Fahrstreifen (Art. 59)'));
+    expect(treffer).toHaveLength(1);
+  });
+
+  it('Basislinie als Multimenge: ein Eintrag deckt genau EINEN Fund, der zweite gleiche Fund ist neu', () => {
+    const eintrag: BasislinienEintrag = { erlass: 'VVEA', eId: 'annex_5', hash: zeile.hash, laenge: zeile.laenge, auszug: 'Cadmium 10', befund: 'normtext-treue-01' };
+    const fund = { erlass: 'VVEA', eId: 'annex_5', hash: zeile.hash };
+    const einmal = gleicheBasislinieAb([fund], [eintrag]);
+    expect([einmal.bekannt.length, einmal.neu.length, einmal.veraltet.length]).toEqual([1, 0, 0]);
+    const zweimal = gleicheBasislinieAb([fund, fund], [eintrag]);
+    expect([zweimal.bekannt.length, zweimal.neu.length, zweimal.veraltet.length]).toEqual([1, 1, 0]);
+    const zweiEintraegeEinFund = gleicheBasislinieAb([fund], [eintrag, { ...eintrag }]);
+    expect([zweiEintraegeEinFund.bekannt.length, zweiEintraegeEinFund.veraltet.length]).toEqual([1, 1]);
   });
 });
 

@@ -77,7 +77,11 @@ export function pinIdentGleich(a: SollPin, b: SollPin): boolean {
   return a.eli === b.eli && a.konsolidierung === b.konsolidierung && a.htmlN === b.htmlN;
 }
 
-/** Inhalts-Gleichheit (Mengen je eId, Reihenfolge egal) — Grundlage für «Soll veraltet» (C) und B6. */
+/**
+ * Inhalts-Gleichheit (MULTIMENGEN je eId, Reihenfolge egal) — Grundlage für
+ * «Soll veraltet» (C) und B6. R3-1 (GP 3, 25.9.2026): vorher Mengen — ein aus
+ * Soll UND Projektion gemeinsam entferntes Duplikat blieb für B6 unsichtbar.
+ */
 export function sollInhaltGleich(
   a: Record<string, [number, string][]>,
   b: Record<string, [number, string][]>,
@@ -86,11 +90,13 @@ export function sollInhaltGleich(
   const schluesselB = Object.keys(b).sort();
   if (schluesselA.length !== schluesselB.length) return false;
   for (let i = 0; i < schluesselA.length; i++) if (schluesselA[i] !== schluesselB[i]) return false;
+  const sortiert = (paare: [number, string][]): string =>
+    paare
+      .map(([l, h]) => `${l}:${h}`)
+      .sort()
+      .join('\u0000');
   for (const eId of schluesselA) {
-    const sa = new Set(a[eId].map(([l, h]) => `${l}:${h}`));
-    const sb = new Set(b[eId].map(([l, h]) => `${l}:${h}`));
-    if (sa.size !== sb.size) return false;
-    for (const v of sa) if (!sb.has(v)) return false;
+    if (a[eId].length !== b[eId].length || sortiert(a[eId]) !== sortiert(b[eId])) return false;
   }
   return true;
 }
@@ -273,20 +279,29 @@ export function gleicheBasislinieAb<T extends { erlass: string; eId: string; has
 ): BasislinienAbgleich<T> {
   const schluessel = (e: { erlass: string; eId: string; hash: string }): string =>
     `${e.erlass}\u0000${e.eId}\u0000${e.hash}`;
-  const basisMap = new Map(basislinie.map((e) => [schluessel(e), e]));
-  const fundSchluessel = new Set(heutigeFunde.map(schluessel));
+  // R3-1 (GP 3, 25.9.2026): Multimenge — JEDER Basislinien-Eintrag deckt genau
+  // EINEN Fund. Fehlt dasselbe Segment (Duplikat im Anker) ein weiteres Mal,
+  // ist der Mehr-Fund neu (rot), statt still vom bestehenden Eintrag gedeckt.
+  const frei = new Map<string, BasislinienEintrag[]>();
+  for (const e of basislinie) {
+    const k = schluessel(e);
+    const liste = frei.get(k);
+    if (liste) liste.push(e);
+    else frei.set(k, [e]);
+  }
 
   const bekannt: BasislinienEintrag[] = [];
   const neu: T[] = [];
   for (const fund of heutigeFunde) {
-    const eintrag = basisMap.get(schluessel(fund));
+    const eintrag = frei.get(schluessel(fund))?.shift();
     if (eintrag) bekannt.push(eintrag);
     else neu.push(fund);
   }
   const geprueft = (e: BasislinienEintrag): boolean =>
     (!geprueftErlasse || geprueftErlasse.has(e.erlass)) &&
     !(ungepruefteArtikel && ungepruefteArtikel.has(`${e.erlass}\u0000${e.eId}`));
-  const nichtGefunden = basislinie.filter((e) => !fundSchluessel.has(schluessel(e)));
+  const uebrig = new Set([...frei.values()].flat());
+  const nichtGefunden = basislinie.filter((e) => uebrig.has(e)); // Reihenfolge der Basislinie
   const veraltet = nichtGefunden.filter(geprueft);
   const uebersprungen = nichtGefunden.filter((e) => !geprueft(e));
   return { bekannt, neu, veraltet, uebersprungen };
