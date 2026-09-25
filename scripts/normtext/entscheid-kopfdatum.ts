@@ -103,21 +103,32 @@ const ZITAT_VORWORT_RE = new RegExp(`(?:^|[\\s(])(?:${ZITAT_VORWOERTER.map(satza
 /** Belegte BE-Aktenzeichen-Suffixe (Verwaltungsgericht «100.2025.363U»); erweitern nur mit Beleg. */
 const BE_SUFFIX = '(?:U)';
 
+/**
+ * pdfjs zerlegt Aktenzeichen in Einzel-Items: echte SG-PDF-Seite 2 von B 2024/58
+ * «Geschäftsnr. B 2024/5 8 B 2024/59» (Gegenprüfung 25.9.2026). Darum zwischen
+ * zwei Ziffern DESSELBEN Ziffernblocks ein Leerzeichen zulässig — nur dort, nie
+ * zwischen Buchstaben/Trennern. Eng bleibt es über die Grenze: nach einer
+ * Schlussziffer kein « <Ziffern>» (sonst läse «B 2024/5» in «B 2024/5 8») —
+ * ausser dem Seitenzähler «N / M» der SG-Folgeseiten («B 2023/225 2 / 18»,
+ * «BV 2024/21 2/8», alle fünf SG-PDF im Bestand 25.9.2026).
+ */
+const luft = (s: string): string => escRe(s).replace(/(?<=\d)(?=\d)/g, ' ?');
+
 export function aktenzeichenRe(docket: string | null | undefined): RegExp | null {
   const alts = flach(String(docket ?? '')).split(/\s*,\s*/).map((az) => {
     const g = az.split(/[ .]+/).filter(Boolean);
     if (!g.length) return '';
     const numerisch = g.every((x) => /^\d+$/.test(x));
-    const letzte = escRe(g[g.length - 1]);
+    const letzte = luft(g[g.length - 1]);
     // Suffix nur die belegte BE-Form «U» (Bestand 25.9.2026: 12× «…U», kein anderer
     // Buchstabe) — «100.2025.363V» ist nicht als identisch belegt (Nachprüfung 25.9.2026);
     // verbundene Verfahren ganz gelesen, damit «142/143V» nicht über «142» durchrutscht.
     const ende = numerisch ? `(?:\\d+/)*${letzte}(?:/\\d+)*${BE_SUFFIX}?(?!/\\d)` : letzte;
     // GR-Referenz mit Kurzjahr: «SBK 26 38» = «SBK 2026 38» (PDF-Kopf, Messung 25.9.2026).
-    const jahr = (x: string) => (/^(?:19|20)\d{2}$/.test(x) ? `(?:${x.slice(0, 2)})?${x.slice(2)}` : escRe(x));
+    const jahr = (x: string) => (/^(?:19|20)\d{2}$/.test(x) ? `(?:${luft(x.slice(0, 2))} ?)?${luft(x.slice(2))}` : luft(x));
     return [...g.slice(0, -1).map(jahr), ende].join('[ .]');
   }).filter(Boolean);
-  return alts.length ? new RegExp(`(?<![\\p{L}\\d.])(?:${alts.join('|')})(?![\\p{L}\\d]|\\.\\d)`, 'u') : null;
+  return alts.length ? new RegExp(`(?<![\\p{L}\\d.])(?:${alts.join('|')})(?![\\p{L}\\d]|\\.\\d|(?<=\\d) \\d+(?!\\d| ?\\/ ?\\d))`, 'u') : null;
 }
 
 /**

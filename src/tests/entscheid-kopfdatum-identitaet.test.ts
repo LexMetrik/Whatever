@@ -14,6 +14,7 @@ const SG_UV_2025_14_PDF = [
   'Kanton St.Gallen Gerichte 1/16 Versicherungsgericht Abteilung III Entscheid vom 21. Oktober 2025 Besetzung Versicherungsrichter Michael Rutz (Vorsitz), Versicherungsrichterinnen Mirjam Angehrn und Corinne Schambeck; a.o. Gerichtsschreiber Julian Gantenbein Geschäftsnr. UV 2025/14 Parteien',
   'UV 2025/14 2/16 Sachverhalt A. A.a A.___ (nachfolgend',
 ];
+const SG_B_2024_58_S2 = 'Kanton St.Gallen Gerichte Verwaltungsgericht Abteilung III Entscheid vom 3. Februar 2025 Besetzung Abteilungspräsident Brunner ; Verwaltungsrichterin Bietenharder, Verwal- tungsrichter Engeler ; Gerichtsschreiber Geertsen Geschäftsnr. B 2024/5 8 B 2024/59 Verfahrens - beteiligte Kantonales Steueramt';
 const BE_100_2025_363_PDF = [
   '100.2025.363U DAM/BDE/AMA Verwaltungsgericht des Kantons Bern Verwaltungsrechtliche Abteilung Urteil des Einzelrichters vom 20. August 2026 Verwaltungsrichter Daum, Abteilungspräsident Gerichtsschreiberin Baerfuss Klossner A._____',
   'Urteil des Verwaltungsgerichts des Kantons Bern vom 20.08.2026, Nr. 100.2025.363U, Seite 2 Der Einzelrichter',
@@ -82,6 +83,14 @@ describe('Befund 1 — Titel gegen Plattformfeld im selben Kopf', () => {
     const ohneAz = [SG_UV_2025_14_PDF[0], SG_UV_2025_14_PDF[1].replace(' Geschäftsnr. UV 2025/14', ''), SG_UV_2025_14_PDF[2]];
     expect(kantonsEntscheiddatum(d, ohneAz).quelle).toBe('kopf-ocl-volltext');
   });
+  it('zerlegtes Aktenzeichen auf der Titelseite: Kopf gewinnt, nicht still das Plattformdatum (Gegenprüfung 25.9.2026)', () => {
+    const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
+    const zerlegt = [SG_UV_2025_14_PDF[0], SG_UV_2025_14_PDF[1].replace('Geschäftsnr. UV 2025/14', 'Geschäftsnr. UV 2025/1 4'), SG_UV_2025_14_PDF[2]];
+    expect(kantonsEntscheiddatum(d, zerlegt)).toMatchObject({ datum: '2025-10-21', quelle: 'kopf-amtliches-pdf' });
+    // echte SG-Seite 2 von B 2024/58 (pdfjs 25.9.2026), Aktenzeichen allein
+    const b58 = det({ docket_number: 'B 2024/58', decision_date: '2026-01-14', full_text: 'St.Gallen Verwaltungsgericht 03.02.2025 B 2024/58, B 2024/59 Steuerbefreiung' });
+    expect(kantonsEntscheiddatum(b58, [SG_B_2024_58_S2])).toMatchObject({ datum: '2025-02-03', quelle: 'kopf-amtliches-pdf' });
+  });
   it('PDF ohne das eigene Aktenzeichen gilt nicht als Kopf dieses Entscheids', () => {
     const d = det({ docket_number: 'UV 2025/14', decision_date: '2025-10-23', full_text: SG_UV_2025_14_OCL });
     const fremd = SG_UV_2025_14_PDF.map((s) => s.replace(/UV 2025\/14/g, 'UV 2025/15'));
@@ -129,6 +138,18 @@ describe('Befund 3 — Aktenzeichen-Identität: Leerzeichen/Punkt, verbundene Ve
   });
   it('mehrere Aktenzeichen (SG «B 2024/58, B 2024/59»): jedes einzeln', () => {
     expect(re('B 2024/58, B 2024/59').test('(Verwaltungsgericht, B 2024/58 und B 2024/59)')).toBe(true);
+  });
+  it('pdfjs zerlegt Ziffern (echte SG-Seite 2 «Geschäftsnr. B 2024/5 8 B 2024/59», Gegenprüfung 25.9.2026), eng', () => {
+    const s2 = 'Gerichtsschreiber Geertsen Geschäftsnr. B 2024/5 8 B 2024/59 Verfahrens - beteiligte';
+    expect(re('B 2024/58').test(s2)).toBe(true);
+    expect(re('B 2024/5').test(s2)).toBe(false);
+    expect(re('B 2024/580').test(s2)).toBe(false);
+    expect(re('B 2024/58').test('B 2024/5 80')).toBe(false);
+    expect(re('UV 2025/14').test('Geschäftsnr. UV 2025/1 4 Parteien')).toBe(true);
+    // Seitenzähler der SG-Folgeseiten ist keine zerlegte Ziffer (echte Seiten 3, Bestand 25.9.2026)
+    expect(re('B 2023/225').test('B 2023/225 2 / 18 D as Verwaltungsgericht')).toBe(true);
+    expect(re('BV 2024/21').test('BV 2024/21 2/8 Sachverhalt')).toBe(true);
+    expect(re('B 2023/22').test('B 2023/22 5 2 / 18')).toBe(false);
   });
   it('leeres Aktenzeichen ⇒ kein Muster', () => {
     expect(aktenzeichenRe('')).toBeNull();
