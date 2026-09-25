@@ -63,7 +63,10 @@ function wirksameProbezeitMonate(probezeitMonate: number): number {
  *  dieser Tag nicht (Zivilkomputation), «Art. 77 Abs. 1 Ziff. 3 OR ist ohne
  *  Weiteres anwendbar» — Antritt 15.7.2015, 1 Monat → Ende 15.8.2015. Bestätigt
  *  in 8C_317/2021 E. 5.2.3.1 (= BGE 148 III 126): Antritt 16.3.2020, 3 Monate
- *  → Ende 16.6.2020. Also Ende am gleichnamigen Tag; fehlt er, am letzten Tag
+ *  → Ende 16.6.2020 [Präzisierung 25.9.2026: E. 5.2.3.1 steht nur im
+ *  vollständigen Urteil 8C_317/2021, entscheidsuche.ch
+ *  CH_BGer_008_8C-317-2021_2022-03-08, nicht in der Publikation BGE 148 III
+ *  126]. Also Ende am gleichnamigen Tag; fehlt er, am letzten Tag
  *  des Monats (Art. 77 Abs. 1 Ziff. 3 OR — date-fns addMonths kappt genau so:
  *  31.1. + 1 Monat = 28.2.). Offen gelassen (E. 4.4.3 a.E.): Vertragsschluss
  *  VOR dem Antritt — dafür rechnet berechneKuendigungsfrist das Vortags-Ende

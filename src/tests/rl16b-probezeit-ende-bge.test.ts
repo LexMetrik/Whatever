@@ -17,6 +17,13 @@
 // krank 15.–19.6.2020 → Ausfalltage «15. und 16. Juni 2020» (E. 5.2.7), Ende
 // 23.6.2020 (E. 5.2.9), Kündigung 22.6. in der Probezeit, siebentägige Frist
 // bis 29.6.2020 (E. 4.1).
+// Präzisierung (Gegenprüfung Runde 2, 25.9.2026; beide Volltexte abgerufen
+// 25.9.2026): E. 5.2.3.1 samt Zitat und E. 4.1 stehen NUR im vollständigen
+// Urteil 8C_317/2021 (https://entscheidsuche.ch/docs/CH_BGer/CH_BGer_008_8C-317-2021_2022-03-08.html),
+// nicht in der amtlichen Publikation BGE 148 III 126
+// (https://entscheidsuche.ch/docs/CH_BGE/CH_BGE_005_BGE-148-III-126_2022.html);
+// «= BGE 148 III 126» oben meint dasselbe Verfahren, nicht denselben Text.
+// E. 5.2.7 und E. 5.2.9 stehen in beiden Fassungen.
 //
 // Art. 77 Abs. 1 Ziff. 3 OR (Fedlex SR 220, Filestore 20260101): fehlt der
 // gleichnamige Tag im letzten Monat, «auf den letzten Tag dieses Monates».
