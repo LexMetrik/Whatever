@@ -23,7 +23,9 @@
  * Jedes Token wird mit `normalisiereAbk` normalisiert und einer von drei Klassen
  * zugeordnet: GEMAPPT (`normKeyFuerAbk` ≠ null), AUSGESCHLOSSEN (steht in
  * `ABK_AUSSCHLUSS` — bewusste Lücke, zählt NICHT als ungemappt, wird aber
- * sichtbar ausgewiesen) oder UNGEMAPPT.
+ * sichtbar ausgewiesen; ebenso die SPRACH_HOMONYME, die nur sprachgebunden je
+ * Textstück auflösen, QS-KORPUS 25.9.2026 — das Tor zählt sprachungebunden) oder
+ * UNGEMAPPT.
  *
  * SCHWELLE = 20 SNAPSHOTS, datenbasiert (Messung 28.7.2026, 5'093 Snapshots).
  * Häufigkeit ist bewusst die SNAPSHOT-Frequenz (in wie vielen Entscheiden kommt
@@ -140,6 +142,7 @@ import {
   ABK_ALIAS_NOTIZEN,
   ABK_AUSSCHLUSS,
   ABK_KOLLISIONEN,
+  SPRACH_HOMONYME,
   abkVonStatut,
   ERLASS_FASSUNGS_REIHEN,
   fliesstextOhneApparat,
@@ -572,11 +575,12 @@ function main(): void {
     normKeyFuerAbk(z.token)
     ?? (!z.ausserhalbBger ? gerichtsKuerzelKey(z.token, 'bundesgericht') : null);
   const gemappt = alle.filter((z) => key(z) !== null);
+  const bewusst = (t: string): boolean => ABK_AUSSCHLUSS.has(t) || SPRACH_HOMONYME.has(t);
   const ausgeschlossen = alle.filter(
-    (z) => key(z) === null && ABK_AUSSCHLUSS.has(z.token),
+    (z) => key(z) === null && bewusst(z.token),
   );
   const ungemappt = alle.filter(
-    (z) => key(z) === null && !ABK_AUSSCHLUSS.has(z.token),
+    (z) => key(z) === null && !bewusst(z.token),
   );
 
   const summe = (liste: TokenZahl[], feld: 'statutes' | 'fliesstext'): number =>
@@ -784,9 +788,9 @@ function main(): void {
   }
   if (ausgeschlossen.length > 0) {
     console.log(
-      '  AUSGESCHLOSSEN (bewusste Lücke, kein Fehler): '
+      '  AUSGESCHLOSSEN / SPRACHGEBUNDEN (bewusst, kein Fehler): '
       + ausgeschlossen
-        .map((z) => `${z.token} (${z.snapshots})`)
+        .map((z) => `${z.token}${SPRACH_HOMONYME.has(z.token) ? '[sprachgebunden]' : ''} (${z.snapshots})`)
         .join(', '),
     );
   }
