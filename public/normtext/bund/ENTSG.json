@@ -1,11 +1,11 @@
 {
-  "erzeugt": "2026-09-14",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "bund/ENTSG/art_1",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "1",
       "artikelLabel": "Art. 1",
       "bloecke": [
@@ -34,7 +34,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_1",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "97eae7f58a7939e45c28b73fad53a2d6ce03f3b990d731218f931cb1f8bcf0f6"
     },
@@ -42,7 +42,7 @@
       "id": "bund/ENTSG/art_1_a",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "1_a",
       "artikelLabel": "Art. 1a",
       "bloecke": [
@@ -83,7 +83,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_1_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "6f0fe1a2492577a94799791d90dabac38fab6df8bf6ed0d18966f4d27ad592d8"
     },
@@ -91,7 +91,7 @@
       "id": "bund/ENTSG/art_1_b",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "1_b",
       "artikelLabel": "Art. 1b",
       "bloecke": [
@@ -130,7 +130,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_1_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "cfa2771c75746375a4b8164531f4f50b4e775f66a1eccd6bc33457e5a664c78c"
     },
@@ -138,7 +138,7 @@
       "id": "bund/ENTSG/art_2",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "2",
       "artikelLabel": "Art. 2",
       "bloecke": [
@@ -203,7 +203,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_2",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "0fd136e8292af8fd1bfed0e7d42bca9e4e7152ba42d2fb3ea19805070e8fbdc3"
     },
@@ -211,7 +211,7 @@
       "id": "bund/ENTSG/art_3",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "3",
       "artikelLabel": "Art. 3",
       "bloecke": [
@@ -222,7 +222,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_3",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "79b85325361a5bb9e56d088b66d58c64e576df512b93e95ee57ca2fd81ea634d"
     },
@@ -230,7 +230,7 @@
       "id": "bund/ENTSG/art_4",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "4",
       "artikelLabel": "Art. 4",
       "bloecke": [
@@ -259,7 +259,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_4",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "5b66a02d5a15daa5d5497a836c6a0741b592794fe32f3878e73c8d05dd2802d5"
     },
@@ -267,7 +267,7 @@
       "id": "bund/ENTSG/art_5",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "5",
       "artikelLabel": "Art. 5",
       "bloecke": [
@@ -290,7 +290,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_5",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "a025348d914179c5a9841911cf32c3fe4c06809d9f9cfff420aab925ee98eeb8"
     },
@@ -298,7 +298,7 @@
       "id": "bund/ENTSG/art_6",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "6",
       "artikelLabel": "Art. 6",
       "bloecke": [
@@ -353,7 +353,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_6",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "cf7db86c640570c0f5aa8d14afe877bb98c985fa78cedfb95116b7b75b1370b3"
     },
@@ -361,7 +361,7 @@
       "id": "bund/ENTSG/art_7",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "7",
       "artikelLabel": "Art. 7",
       "bloecke": [
@@ -410,7 +410,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_7",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "fa6805fe0e015caf997b1739685d5c1fb7a99f05ee8dd9dfe6f744018dd0cd73"
     },
@@ -418,7 +418,7 @@
       "id": "bund/ENTSG/art_7_a",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "7_a",
       "artikelLabel": "Art. 7a",
       "bloecke": [
@@ -441,7 +441,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_7_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "3b5f6c7a0fbd8d4b7dff236229c9618c8edf131305ef938da2a58ec9f57fe8d3"
     },
@@ -449,7 +449,7 @@
       "id": "bund/ENTSG/art_8",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "8",
       "artikelLabel": "Art. 8",
       "bloecke": [
@@ -472,7 +472,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_8",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "c40ff76ef43b0a044f0fb9a2a74995d16f6fb80b3fa35542ee44ddc112fac7df"
     },
@@ -480,7 +480,7 @@
       "id": "bund/ENTSG/art_8_a",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "8_a",
       "artikelLabel": "Art. 8a",
       "bloecke": [
@@ -503,7 +503,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_8_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "b80b65b1c1307fdc676fbe1fa6d01c47275f074224576e46b3a447b0ace68bd1"
     },
@@ -511,7 +511,7 @@
       "id": "bund/ENTSG/art_9",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "9",
       "artikelLabel": "Art. 9",
       "bloecke": [
@@ -580,7 +580,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_9",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "07489d616f1a49fcc20256a7ea36048b93c07109d852d7a6f0574427500ed481"
     },
@@ -588,7 +588,7 @@
       "id": "bund/ENTSG/art_10",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "10",
       "artikelLabel": "Art. 10",
       "aufgehoben": true,
@@ -600,7 +600,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_10",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -608,7 +608,7 @@
       "id": "bund/ENTSG/art_11",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "11",
       "artikelLabel": "Art. 11",
       "bloecke": [
@@ -619,7 +619,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_11",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "158e8249a82d052a78540e287391531695ea96e5e970a16e61d8696163a05208"
     },
@@ -627,7 +627,7 @@
       "id": "bund/ENTSG/art_12",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "12",
       "artikelLabel": "Art. 12",
       "bloecke": [
@@ -668,7 +668,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_12",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "05d05cbec4da9a960830d9bf7a45e165b3d2dca6a643f9567842dff6737c189f"
     },
@@ -676,7 +676,7 @@
       "id": "bund/ENTSG/art_13",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "13",
       "artikelLabel": "Art. 13",
       "bloecke": [
@@ -687,7 +687,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_13",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "df6c70e7e74e50093f17711a7b4a6ffdf968dbb3afe9a6773a34335c1fd2feaf"
     },
@@ -695,7 +695,7 @@
       "id": "bund/ENTSG/art_14",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "14",
       "artikelLabel": "Art. 14",
       "bloecke": [
@@ -706,7 +706,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_14",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "d615b87af2060a7f9aeead4426f38e9f022a0e40957be599b0cc9fb0bb5bdf7c"
     },
@@ -714,7 +714,7 @@
       "id": "bund/ENTSG/art_14_a",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "14_a",
       "artikelLabel": "Art. 14a",
       "bloecke": [
@@ -729,7 +729,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_14_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "a752f0c58799e44d190c3d66c3a4ba659d837726a4de4c31f05470038165dea7"
     },
@@ -737,7 +737,7 @@
       "id": "bund/ENTSG/art_15",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "15",
       "artikelLabel": "Art. 15",
       "bloecke": [
@@ -752,7 +752,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#art_15",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "34029dc52df2abbbfa7f5eec9bf30256544862810ea845773e8b6beef907e460"
     },
@@ -760,7 +760,7 @@
       "id": "bund/ENTSG/annex_u1",
       "ebene": "bund",
       "quelle": "ENTSG",
-      "erlass": "ENTSG",
+      "erlass": "EntsG",
       "artikel": "annex_u1",
       "artikelLabel": "Anhang",
       "bloecke": [
@@ -780,7 +780,7 @@
       ],
       "stand": "2024-01-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2003/231/de#annex_u1",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20240101",
       "sha": "ff5e180fd7bd5f51e7d9f9c7cc4548bb3b1a7cac57d8b50d30deff7e71c846e2"
     }

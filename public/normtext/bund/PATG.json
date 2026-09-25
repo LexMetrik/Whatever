@@ -1,11 +1,11 @@
 {
-  "erzeugt": "2026-09-14",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "bund/PATG/art_1",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "1",
       "artikelLabel": "Art. 1",
       "bloecke": [
@@ -24,7 +24,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_1",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "7e6fb71a2b3c61ed91bcc8c938cd582f81402ae6bcb6ca1b17061a96ee38088d"
     },
@@ -32,7 +32,7 @@
       "id": "bund/PATG/art_1_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "1_a",
       "artikelLabel": "Art. 1a",
       "bloecke": [
@@ -47,7 +47,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_1_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "1a63a12a167e5703dfd7aeb6330097ee1b1e97815709165054f536ada01f7bcc"
     },
@@ -55,7 +55,7 @@
       "id": "bund/PATG/art_1_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "1_b",
       "artikelLabel": "Art. 1b",
       "bloecke": [
@@ -70,7 +70,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_1_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "41eb631d65b6120becf6a66524f157cbe7b5f7473db4f4dbcaa0fa27045c9b7e"
     },
@@ -78,7 +78,7 @@
       "id": "bund/PATG/art_2",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "2",
       "artikelLabel": "Art. 2",
       "bloecke": [
@@ -133,7 +133,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_2",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8a1e9bf5496dd8d2e9e73120ecd3e483a5aa8f0d5ec0aba2be540c025dab90a8"
     },
@@ -141,7 +141,7 @@
       "id": "bund/PATG/art_3",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "3",
       "artikelLabel": "Art. 3",
       "bloecke": [
@@ -160,7 +160,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_3",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "540e0bf928badf90eed467a141f6e8a6c710e8faa08a68768e927f5c8b03a369"
     },
@@ -168,7 +168,7 @@
       "id": "bund/PATG/art_4",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "4",
       "artikelLabel": "Art. 4",
       "bloecke": [
@@ -179,7 +179,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_4",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d3d3858298fcfdd5d3db4533783fce60a9535388b20d867ac1f353a9de59fb59"
     },
@@ -187,7 +187,7 @@
       "id": "bund/PATG/art_5",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "5",
       "artikelLabel": "Art. 5",
       "bloecke": [
@@ -206,7 +206,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_5",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "922cb2be04edd6d48ee16ff544d75350d330001a4f036f358f77e0df71073158"
     },
@@ -214,7 +214,7 @@
       "id": "bund/PATG/art_6",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "6",
       "artikelLabel": "Art. 6",
       "bloecke": [
@@ -229,7 +229,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_6",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b6bb42bfe5cb9a259ab8e0a38b4e51082ddf2d35c511d52ae6c3600c0921c85c"
     },
@@ -237,7 +237,7 @@
       "id": "bund/PATG/art_7",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "7",
       "artikelLabel": "Art. 7",
       "bloecke": [
@@ -270,7 +270,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_7",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "ad4423c032f63e774a8eac77ef9fda4e26b80dfe474413c124ede81b9737e678"
     },
@@ -278,7 +278,7 @@
       "id": "bund/PATG/art_7_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "7_a",
       "artikelLabel": "Art. 7a",
       "aufgehoben": true,
@@ -290,7 +290,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_7_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -298,7 +298,7 @@
       "id": "bund/PATG/art_7_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "7_b",
       "artikelLabel": "Art. 7b",
       "bloecke": [
@@ -319,7 +319,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_7_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "4511e295314fbd94fffa8db17ee38e3a34230bb9bf639a819004730976cd281e"
     },
@@ -327,7 +327,7 @@
       "id": "bund/PATG/art_7_c",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "7_c",
       "artikelLabel": "Art. 7c",
       "bloecke": [
@@ -338,7 +338,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_7_c",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "3e0905d45d842272ede87ab628a3ae031cb7a3d6e5cbf5ca7738759260370591"
     },
@@ -346,7 +346,7 @@
       "id": "bund/PATG/art_7_d",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "7_d",
       "artikelLabel": "Art. 7d",
       "bloecke": [
@@ -357,7 +357,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_7_d",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "4c4dc55c3cca033ed0a2197e5a18316c9e000d930837d8c2ffd81f33fa19329e"
     },
@@ -365,7 +365,7 @@
       "id": "bund/PATG/art_8",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "8",
       "artikelLabel": "Art. 8",
       "bloecke": [
@@ -384,7 +384,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_8",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5f2d581912cc7d74d4787dad03fb808e6d0de3bccb26cf55b02e158096a59d52"
     },
@@ -392,7 +392,7 @@
       "id": "bund/PATG/art_8_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "8_a",
       "artikelLabel": "Art. 8a",
       "bloecke": [
@@ -407,7 +407,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_8_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "87b911d1e375b1af346f2711e8183d2cf55d20af1e13c631c05d3c37c28a0840"
     },
@@ -415,7 +415,7 @@
       "id": "bund/PATG/art_8_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "8_b",
       "artikelLabel": "Art. 8b",
       "bloecke": [
@@ -426,7 +426,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_8_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4c393aedc495506662ecdd91a7fd0a89afb31bf7a59c53a465a41dab616da58"
     },
@@ -434,7 +434,7 @@
       "id": "bund/PATG/art_8_c",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "8_c",
       "artikelLabel": "Art. 8c",
       "bloecke": [
@@ -445,7 +445,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_8_c",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "957f73778d8b5299fd715eda889c1e750949672f2149cb9a20f1d28c28542dda"
     },
@@ -453,7 +453,7 @@
       "id": "bund/PATG/art_9",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "9",
       "artikelLabel": "Art. 9",
       "bloecke": [
@@ -502,7 +502,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_9",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5173b79f1e0dd12013c995e1beffabd2ed3a631d72c6964b32e313a79b371490"
     },
@@ -510,7 +510,7 @@
       "id": "bund/PATG/art_9_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "9_a",
       "artikelLabel": "Art. 9a",
       "bloecke": [
@@ -537,7 +537,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_9_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "238f6f3b65385029228eb95ae3a06986f88ae303eb961e2ca30fcb057604ba08"
     },
@@ -545,7 +545,7 @@
       "id": "bund/PATG/art_10",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "10",
       "artikelLabel": "Art. 10",
       "aufgehoben": true,
@@ -557,7 +557,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_10",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -565,7 +565,7 @@
       "id": "bund/PATG/art_11",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "11",
       "artikelLabel": "Art. 11",
       "bloecke": [
@@ -584,7 +584,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_11",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5ea05076d355bb8296de5a029d9ed69f040fe71b1a9d411b88493aee7bfacd50"
     },
@@ -592,7 +592,7 @@
       "id": "bund/PATG/art_12",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "12",
       "artikelLabel": "Art. 12",
       "bloecke": [
@@ -607,7 +607,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_12",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b24cbb03672e6fe3094345278e8c32a8c5c54e458de3cfc48ec523e452258b0e"
     },
@@ -615,7 +615,7 @@
       "id": "bund/PATG/art_13",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "13",
       "artikelLabel": "Art. 13",
       "bloecke": [
@@ -644,7 +644,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_13",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "3336bd11cdeb8d4c393b62ba6d540a434820a23ae7a1260a6913cc40f152121f"
     },
@@ -652,7 +652,7 @@
       "id": "bund/PATG/art_14",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "14",
       "artikelLabel": "Art. 14",
       "bloecke": [
@@ -667,7 +667,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_14",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5ddca9d6459edeb41751ba385a13d1d77ca93998c81b343e241a522f656327dd"
     },
@@ -675,7 +675,7 @@
       "id": "bund/PATG/art_15",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "15",
       "artikelLabel": "Art. 15",
       "bloecke": [
@@ -700,7 +700,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_15",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "aca9982559126112a3691a3dae59df8dda9e332dd93044bb7e138d05ffcccde9"
     },
@@ -708,7 +708,7 @@
       "id": "bund/PATG/art_16",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "16",
       "artikelLabel": "Art. 16",
       "bloecke": [
@@ -719,7 +719,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_16",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e2a4a57985a36e84be415690cf76ce5a51998e0b7be8ec7445eaefd12a3c73ec"
     },
@@ -727,7 +727,7 @@
       "id": "bund/PATG/art_17",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "17",
       "artikelLabel": "Art. 17",
       "bloecke": [
@@ -754,7 +754,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_17",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "566420b32883744d8ab5fbb9bac211c9016c04eef8fd57e3c9a5b3a714b9afd5"
     },
@@ -762,7 +762,7 @@
       "id": "bund/PATG/art_18",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "18",
       "artikelLabel": "Art. 18",
       "bloecke": [
@@ -781,7 +781,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_18",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d5b2e5d2144d8fce4e00fbf48b4ad14d111263ffbe85cf456d9c11d179884de5"
     },
@@ -789,7 +789,7 @@
       "id": "bund/PATG/art_19",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "19",
       "artikelLabel": "Art. 19",
       "bloecke": [
@@ -804,7 +804,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_19",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "ee7340e78000d76be713b66b8b3224d08bb69bb022261b4922182d37aa8c0572"
     },
@@ -812,7 +812,7 @@
       "id": "bund/PATG/art_20",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "20",
       "artikelLabel": "Art. 20",
       "bloecke": [
@@ -827,7 +827,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_20",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "fe4c5f17629c573b8db39c08a1d636f858ab9b9c640a3e66333c718d3e6e3cb9"
     },
@@ -835,7 +835,7 @@
       "id": "bund/PATG/art_20_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "20_a",
       "artikelLabel": "Art. 20a",
       "bloecke": [
@@ -846,7 +846,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_20_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "1d8d3e8342096cc189e03e97ce424d5f9a3b81fc01dcf2f2cdb61e4f85139a67"
     },
@@ -854,7 +854,7 @@
       "id": "bund/PATG/art_21_23",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "21_23",
       "artikelLabel": "Art. 21–23",
       "aufgehoben": true,
@@ -866,7 +866,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_21_23",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -874,7 +874,7 @@
       "id": "bund/PATG/art_24",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "24",
       "artikelLabel": "Art. 24",
       "bloecke": [
@@ -903,7 +903,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_24",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "aed145c1bd642fc3cbbf818fe2689a86a99608c6a0745717b2c017c2435b327e"
     },
@@ -911,7 +911,7 @@
       "id": "bund/PATG/art_25",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "25",
       "artikelLabel": "Art. 25",
       "bloecke": [
@@ -930,7 +930,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_25",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "af3ab2afad033186fba937f10132141079f63eda026627348ae514425080628f"
     },
@@ -938,7 +938,7 @@
       "id": "bund/PATG/art_26",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "26",
       "artikelLabel": "Art. 26",
       "bloecke": [
@@ -971,7 +971,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_26",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "61de849519f6765f79a7f85b2a5f91f0753e00bbf573350b607cd9f9e4ca64b3"
     },
@@ -979,7 +979,7 @@
       "id": "bund/PATG/art_27",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "27",
       "artikelLabel": "Art. 27",
       "bloecke": [
@@ -998,7 +998,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_27",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "4a3238599fd65445026df5f83cf929b9952d47541c08f5b1c3e8a351fd7703a0"
     },
@@ -1006,7 +1006,7 @@
       "id": "bund/PATG/art_28",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "28",
       "artikelLabel": "Art. 28",
       "bloecke": [
@@ -1017,7 +1017,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_28",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "987329eac9b03b4862488334cd5af71f940adda6895e34415d14f079710dc5d7"
     },
@@ -1025,7 +1025,7 @@
       "id": "bund/PATG/art_28_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "28_a",
       "artikelLabel": "Art. 28a",
       "bloecke": [
@@ -1036,7 +1036,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_28_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "abf39578b6af98a3829c93f53ff853707787d45765b0bbda9b5ba8bdb416f28b"
     },
@@ -1044,7 +1044,7 @@
       "id": "bund/PATG/art_29",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "29",
       "artikelLabel": "Art. 29",
       "bloecke": [
@@ -1071,7 +1071,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_29",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "4e25dcfbf85eec5140a8cb247250fd8dff91430342abffb39dd0b1d8a3a9202d"
     },
@@ -1079,7 +1079,7 @@
       "id": "bund/PATG/art_30",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "30",
       "artikelLabel": "Art. 30",
       "bloecke": [
@@ -1094,7 +1094,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_30",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8a9e1e051f37c33c8b6ca7ac3b9e54d38b8adc3c9ae6be735d9cdef35159d53d"
     },
@@ -1102,7 +1102,7 @@
       "id": "bund/PATG/art_31",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "31",
       "artikelLabel": "Art. 31",
       "bloecke": [
@@ -1117,7 +1117,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_31",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e56b12a97ec1c5d656d719110215b25b38784c3995dd5c0599a69198ab507d02"
     },
@@ -1125,7 +1125,7 @@
       "id": "bund/PATG/art_32",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "32",
       "artikelLabel": "Art. 32",
       "bloecke": [
@@ -1140,7 +1140,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_32",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5aba07532001a86b42b42c1956a7cd9181429c6e4857c9431b47eb6fcde22733"
     },
@@ -1148,7 +1148,7 @@
       "id": "bund/PATG/art_33",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "33",
       "artikelLabel": "Art. 33",
       "bloecke": [
@@ -1175,7 +1175,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_33",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "a63becf72e81cf77e7e5a6e4d002b37d72b007e7ce51e1c58d6f2c55107bc590"
     },
@@ -1183,7 +1183,7 @@
       "id": "bund/PATG/art_34",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "34",
       "artikelLabel": "Art. 34",
       "bloecke": [
@@ -1202,7 +1202,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_34",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "ad48687b5769e0a3a32b365af17678d0362d8d683ab4df9a592f5e448b14f2fe"
     },
@@ -1210,7 +1210,7 @@
       "id": "bund/PATG/art_35",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "35",
       "artikelLabel": "Art. 35",
       "bloecke": [
@@ -1229,7 +1229,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_35",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5ad77515980397d024d1b0bf96d9ab840a80fb5638b9ea7a6548a8caef8c9e50"
     },
@@ -1237,7 +1237,7 @@
       "id": "bund/PATG/art_35_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "35_a",
       "artikelLabel": "Art. 35a",
       "bloecke": [
@@ -1260,7 +1260,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_35_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "2e0a41e5ae31eda9f27c816a5327b9d5d3e240292a70facfbaae43f8055b29cd"
     },
@@ -1268,7 +1268,7 @@
       "id": "bund/PATG/art_35_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "35_b",
       "artikelLabel": "Art. 35b",
       "bloecke": [
@@ -1279,7 +1279,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_35_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "ef4d94fd3a0f6e61cfcb30f54d381a885bbdb19d4b2c9a80a1fd512211ac30fa"
     },
@@ -1287,7 +1287,7 @@
       "id": "bund/PATG/art_36",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "36",
       "artikelLabel": "Art. 36",
       "bloecke": [
@@ -1306,7 +1306,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_36",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e9a9a67d49f6a71231251c422ea6ad336762e1bf9b0d134d201158d37e157618"
     },
@@ -1314,7 +1314,7 @@
       "id": "bund/PATG/art_36_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "36_a",
       "artikelLabel": "Art. 36a",
       "bloecke": [
@@ -1329,7 +1329,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_36_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b976e3426f76cf858012410d34e2a399d4265eef7e105065e90abc442130ce77"
     },
@@ -1337,7 +1337,7 @@
       "id": "bund/PATG/art_37",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "37",
       "artikelLabel": "Art. 37",
       "bloecke": [
@@ -1356,7 +1356,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_37",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "809c4bd739f2a4c24a9fd0b6a238fdb3f796a8cb2208a3c4094c3bb133a76e55"
     },
@@ -1364,7 +1364,7 @@
       "id": "bund/PATG/art_38",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "38",
       "artikelLabel": "Art. 38",
       "bloecke": [
@@ -1379,7 +1379,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_38",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "58ad8229c62792d92b74a9628f1f735a13004644a0922ba53607caac037caa0b"
     },
@@ -1387,7 +1387,7 @@
       "id": "bund/PATG/art_39",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "39",
       "artikelLabel": "Art. 39",
       "bloecke": [
@@ -1398,7 +1398,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_39",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "0a46bad017267c4a2bcd3a0ad2a5dbe5c562a299ef64e7e82ff63a6a6cca5802"
     },
@@ -1406,7 +1406,7 @@
       "id": "bund/PATG/art_40",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "40",
       "artikelLabel": "Art. 40",
       "bloecke": [
@@ -1421,7 +1421,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_40",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "78be9d6b8e5f18f677890c991b8771b479815918231e57e1d1accbe20868671f"
     },
@@ -1429,7 +1429,7 @@
       "id": "bund/PATG/art_40_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "40_a",
       "artikelLabel": "Art. 40a",
       "bloecke": [
@@ -1440,7 +1440,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_40_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "806493fdd2d87a0e092af26235b3ad399f471626b393dd2c501c08013487ccbf"
     },
@@ -1448,7 +1448,7 @@
       "id": "bund/PATG/art_40_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "40_b",
       "artikelLabel": "Art. 40b",
       "bloecke": [
@@ -1459,7 +1459,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_40_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "623d0b5b74896b4051fd93e03e67fc10d8c89e88ea6663edbd6f8ac17b520042"
     },
@@ -1467,7 +1467,7 @@
       "id": "bund/PATG/art_40_c",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "40_c",
       "artikelLabel": "Art. 40c",
       "bloecke": [
@@ -1478,7 +1478,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_40_c",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "f2948e75e3958b318020076ada0ec2f2d1b549003d82682b170180c34db97656"
     },
@@ -1486,7 +1486,7 @@
       "id": "bund/PATG/art_40_d",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "40_d",
       "artikelLabel": "Art. 40d",
       "bloecke": [
@@ -1513,7 +1513,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_40_d",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "c983021ab7be775bef4c06d22beaceb765ca52b1a4192073026e9dccc40463e1"
     },
@@ -1521,7 +1521,7 @@
       "id": "bund/PATG/art_40_e",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "40_e",
       "artikelLabel": "Art. 40e",
       "bloecke": [
@@ -1552,7 +1552,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_40_e",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "57d5c93e23a1fe7189399895f2da96a76fd9697d9bfa7b5ba17e4827327c3acd"
     },
@@ -1560,7 +1560,7 @@
       "id": "bund/PATG/art_41",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "41",
       "artikelLabel": "Art. 41",
       "bloecke": [
@@ -1571,7 +1571,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_41",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d79c6df24621e93ad7e6e1ddfaf8572b17a567335a1595ec79766b4cb7689727"
     },
@@ -1579,7 +1579,7 @@
       "id": "bund/PATG/art_42_44",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "42_44",
       "artikelLabel": "Art. 42–44",
       "aufgehoben": true,
@@ -1591,7 +1591,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_42_44",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -1599,7 +1599,7 @@
       "id": "bund/PATG/art_45_46",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "45_46",
       "artikelLabel": "Art. 45–46",
       "aufgehoben": true,
@@ -1611,7 +1611,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_45_46",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -1619,7 +1619,7 @@
       "id": "bund/PATG/art_46_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "46_a",
       "artikelLabel": "Art. 46a",
       "bloecke": [
@@ -1680,7 +1680,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_46_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "9e7c8850dca0fc3615b5546712901ed6c74034fb73d02e80f5afef70f37214b7"
     },
@@ -1688,7 +1688,7 @@
       "id": "bund/PATG/art_47",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "47",
       "artikelLabel": "Art. 47",
       "bloecke": [
@@ -1711,7 +1711,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_47",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "2560503da3ebd27c594072eeaa4c02a3538360d0980025ab8cadaa43202753ab"
     },
@@ -1719,7 +1719,7 @@
       "id": "bund/PATG/art_48",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "48",
       "artikelLabel": "Art. 48",
       "bloecke": [
@@ -1752,7 +1752,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_48",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d1907a020906154626cf816d1f5995da4b8d991223e8089ba45618a8a86c6063"
     },
@@ -1760,7 +1760,7 @@
       "id": "bund/PATG/art_48_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "48_a",
       "artikelLabel": "Art. 48a",
       "bloecke": [
@@ -1775,7 +1775,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_48_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "2ea17acc7ad12da0556038de5edcf07f7387139dfc9be2e2f465923b830ec180"
     },
@@ -1783,7 +1783,7 @@
       "id": "bund/PATG/art_48_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "48_b",
       "artikelLabel": "Art. 48b",
       "bloecke": [
@@ -1794,7 +1794,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_48_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e2be47979132a0ee337811ed9c89d702a4a22c195d79859641ace720486e2ab9"
     },
@@ -1802,7 +1802,7 @@
       "id": "bund/PATG/art_49",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "49",
       "artikelLabel": "Art. 49",
       "bloecke": [
@@ -1843,7 +1843,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_49",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "328fc1fefd309794398eb69abed96b2ca78f8560c50f26820ccdb75a497a144d"
     },
@@ -1851,7 +1851,7 @@
       "id": "bund/PATG/art_49_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "49_a",
       "artikelLabel": "Art. 49a",
       "bloecke": [
@@ -1876,7 +1876,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_49_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "7ef917214b89bb92074540b866c0fd3088054e3fcb8ffba21ad59e60b8595aed"
     },
@@ -1884,7 +1884,7 @@
       "id": "bund/PATG/art_50",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "50",
       "artikelLabel": "Art. 50",
       "bloecke": [
@@ -1899,7 +1899,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_50",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8e90e662feeefe2c4198fd8e78d58497fd17bfcde11f69c800344449e5fae5ad"
     },
@@ -1907,7 +1907,7 @@
       "id": "bund/PATG/art_50_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "50_a",
       "artikelLabel": "Art. 50a",
       "bloecke": [
@@ -1930,7 +1930,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_50_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "a90fcb3d0a14b413ade48da5639ef1eaf825d032013fe2b4dc19129c940ef2d2"
     },
@@ -1938,7 +1938,7 @@
       "id": "bund/PATG/art_51",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "51",
       "artikelLabel": "Art. 51",
       "bloecke": [
@@ -1957,7 +1957,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_51",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "177b8bdd0e5b5ad105df32f4dbe9211d8fa5e208bff2c46e86a65fea2f5adb76"
     },
@@ -1965,7 +1965,7 @@
       "id": "bund/PATG/art_52",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "52",
       "artikelLabel": "Art. 52",
       "bloecke": [
@@ -1998,7 +1998,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_52",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "82f0422856f7b1f435f3c65bb913589332aa9976cad712b41c011bc7212d03e5"
     },
@@ -2006,7 +2006,7 @@
       "id": "bund/PATG/art_53_54",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "53_54",
       "artikelLabel": "Art. 53–54",
       "aufgehoben": true,
@@ -2018,7 +2018,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_53_54",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2026,7 +2026,7 @@
       "id": "bund/PATG/art_55",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "55",
       "artikelLabel": "Art. 55",
       "bloecke": [
@@ -2037,7 +2037,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_55",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "fb126195a85a724c8c014a421283c2b4ab259346ee0717a9431609c361d2e388"
     },
@@ -2045,7 +2045,7 @@
       "id": "bund/PATG/art_55_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "55_a",
       "artikelLabel": "Art. 55a",
       "aufgehoben": true,
@@ -2057,7 +2057,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_55_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2065,7 +2065,7 @@
       "id": "bund/PATG/art_55_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "55_b",
       "artikelLabel": "Art. 55b",
       "bloecke": [
@@ -2076,7 +2076,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_55_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "9726df2dc60266f93c905ffac173095c4d3a047a10e044da803c822396b925ea"
     },
@@ -2084,7 +2084,7 @@
       "id": "bund/PATG/art_56",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "56",
       "artikelLabel": "Art. 56",
       "bloecke": [
@@ -2117,7 +2117,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_56",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "06c46bc2f8af0d84314348641fa60004f5d583c4bace06bb212c7bbe2a884257"
     },
@@ -2125,7 +2125,7 @@
       "id": "bund/PATG/art_57",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "57",
       "artikelLabel": "Art. 57",
       "bloecke": [
@@ -2154,7 +2154,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_57",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e77e6befeba681fe96c784c505d1def2f9eb1f836e18ade22c4dfd28404daa6a"
     },
@@ -2162,7 +2162,7 @@
       "id": "bund/PATG/art_58",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "58",
       "artikelLabel": "Art. 58",
       "bloecke": [
@@ -2177,7 +2177,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_58",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "f3791652fce505003e21e01ec9b1e27e978675bc67402fc91a14eca520df2575"
     },
@@ -2185,7 +2185,7 @@
       "id": "bund/PATG/art_58_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "58_a",
       "artikelLabel": "Art. 58a",
       "bloecke": [
@@ -2210,7 +2210,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_58_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "4a2538a9394f8250643d86002ca7574a03635716d6d812f3ce0b7ef79d00c564"
     },
@@ -2218,7 +2218,7 @@
       "id": "bund/PATG/art_59",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "59",
       "artikelLabel": "Art. 59",
       "bloecke": [
@@ -2259,7 +2259,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_59",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5fa2d90c86a3059246f692faa6c4ad8f15385edb5cdbf85ab3c4ab65907dba8f"
     },
@@ -2267,7 +2267,7 @@
       "id": "bund/PATG/art_59_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "59_a",
       "artikelLabel": "Art. 59a",
       "bloecke": [
@@ -2296,7 +2296,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_59_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8a02b3a7be58daed1e8a20ea77d90f261c5c5a084fa5f1c13649e5b106699f7f"
     },
@@ -2304,7 +2304,7 @@
       "id": "bund/PATG/art_59_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "59_b",
       "artikelLabel": "Art. 59b",
       "aufgehoben": true,
@@ -2316,7 +2316,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_59_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2324,7 +2324,7 @@
       "id": "bund/PATG/art_59_c",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "59_c",
       "artikelLabel": "Art. 59c",
       "bloecke": [
@@ -2347,7 +2347,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_59_c",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "c3ed9b8173e0478933edb2b79a32df1093f53dd40f5106a8f667a2ab98b746d3"
     },
@@ -2355,7 +2355,7 @@
       "id": "bund/PATG/art_59_d",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "59_d",
       "artikelLabel": "Art. 59d",
       "aufgehoben": true,
@@ -2367,7 +2367,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_59_d",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2375,7 +2375,7 @@
       "id": "bund/PATG/art_60",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "60",
       "artikelLabel": "Art. 60",
       "bloecke": [
@@ -2398,7 +2398,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_60",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "f00a483ad34e9c9db97fc2ad224829011d8363dce5fe0845098f61ca44a05917"
     },
@@ -2406,7 +2406,7 @@
       "id": "bund/PATG/art_61",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "61",
       "artikelLabel": "Art. 61",
       "bloecke": [
@@ -2443,7 +2443,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_61",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "9bbd183be19586aaa372634c267cee29fbf7e1bd9184726fb4e176f4f77d9278"
     },
@@ -2451,7 +2451,7 @@
       "id": "bund/PATG/art_62",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "62",
       "artikelLabel": "Art. 62",
       "aufgehoben": true,
@@ -2463,7 +2463,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_62",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2471,7 +2471,7 @@
       "id": "bund/PATG/art_63",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "63",
       "artikelLabel": "Art. 63",
       "bloecke": [
@@ -2486,7 +2486,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_63",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "dfc23e943b70e090357299a9ed5b7ab04c5c2010a8f1fad1c5114b9be412bef0"
     },
@@ -2494,7 +2494,7 @@
       "id": "bund/PATG/art_63_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "63_a",
       "artikelLabel": "Art. 63a",
       "aufgehoben": true,
@@ -2506,7 +2506,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_63_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2514,7 +2514,7 @@
       "id": "bund/PATG/art_64",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "64",
       "artikelLabel": "Art. 64",
       "bloecke": [
@@ -2529,7 +2529,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_64",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "67dcada70a73d6c21a1233067b7d442be9ad87ac71aac6d3bdc9ed4b9b28c66f"
     },
@@ -2537,7 +2537,7 @@
       "id": "bund/PATG/art_65",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "65",
       "artikelLabel": "Art. 65",
       "bloecke": [
@@ -2552,7 +2552,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_65",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "447ae013170181f7bdc2d0c20a0783d4f90421b3f53f8965a8ae2a2656737486"
     },
@@ -2560,7 +2560,7 @@
       "id": "bund/PATG/art_65_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "65_a",
       "artikelLabel": "Art. 65a",
       "bloecke": [
@@ -2587,7 +2587,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_65_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "9e0fd55de7978d1f375c931eb56e80a77eb34f59d3d7bdd7ef8bafaca5dae7bf"
     },
@@ -2595,7 +2595,7 @@
       "id": "bund/PATG/art_66",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "66",
       "artikelLabel": "Art. 66",
       "bloecke": [
@@ -2624,7 +2624,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_66",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5b655d61d0a82e233b28fbbefac707d5e92b977b24c586ed4c624af7db277777"
     },
@@ -2632,7 +2632,7 @@
       "id": "bund/PATG/art_67",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "67",
       "artikelLabel": "Art. 67",
       "bloecke": [
@@ -2647,7 +2647,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_67",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "9519f4b898bc3c46c8dcced8cb7885aff2a36afdcd2f1a2dea6d266fb70c7767"
     },
@@ -2655,7 +2655,7 @@
       "id": "bund/PATG/art_68",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "68",
       "artikelLabel": "Art. 68",
       "bloecke": [
@@ -2670,7 +2670,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_68",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "0459951eab0d48b6031ca4c50f0994977ae519c4338611dbeb48c52fa764f71e"
     },
@@ -2678,7 +2678,7 @@
       "id": "bund/PATG/art_69",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "69",
       "artikelLabel": "Art. 69",
       "bloecke": [
@@ -2697,7 +2697,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_69",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "28ab9073960a77324122c36e55b08cce1c0446b87db125f9062c48266eb2af8b"
     },
@@ -2705,7 +2705,7 @@
       "id": "bund/PATG/art_70",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "70",
       "artikelLabel": "Art. 70",
       "bloecke": [
@@ -2720,7 +2720,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_70",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "4d62dabb101ba5c01600ce34a47b69c6638eb41aafafa987beed3137572df0cc"
     },
@@ -2728,7 +2728,7 @@
       "id": "bund/PATG/art_70_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "70_a",
       "artikelLabel": "Art. 70a",
       "bloecke": [
@@ -2739,7 +2739,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_70_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "daffeb949fa2df31b96f3b26c6166066d32fcca57475b08e8e8c0d62a48695fa"
     },
@@ -2747,7 +2747,7 @@
       "id": "bund/PATG/art_71",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "71",
       "artikelLabel": "Art. 71",
       "bloecke": [
@@ -2758,7 +2758,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_71",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "fc159d41d59e09a37de1f266b6695640c1a38f0e7ae08e1901f4c74e7d42c916"
     },
@@ -2766,7 +2766,7 @@
       "id": "bund/PATG/art_72",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "72",
       "artikelLabel": "Art. 72",
       "bloecke": [
@@ -2781,7 +2781,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_72",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "826f3c3380b73563b83d25cbaf53ad74a2420da8abf50ebf58b0d8712794322c"
     },
@@ -2789,7 +2789,7 @@
       "id": "bund/PATG/art_73",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "73",
       "artikelLabel": "Art. 73",
       "bloecke": [
@@ -2812,7 +2812,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_73",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "a852d8823cc55c67816aa3ab2d9612af24b6f2abab30dfc24845acd4428c867a"
     },
@@ -2820,7 +2820,7 @@
       "id": "bund/PATG/art_74",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "74",
       "artikelLabel": "Art. 74",
       "bloecke": [
@@ -2861,7 +2861,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_74",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "172e26c79a9cfdb6365a7fc434229f9136d3e1483cc586f59fbb15c2a23c4061"
     },
@@ -2869,7 +2869,7 @@
       "id": "bund/PATG/art_75",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "75",
       "artikelLabel": "Art. 75",
       "bloecke": [
@@ -2884,7 +2884,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_75",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "52d5e496601ffedf45dbeca9092d09d01358a0d780da858a5d45ec5fabe1a03e"
     },
@@ -2892,7 +2892,7 @@
       "id": "bund/PATG/art_76",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "76",
       "artikelLabel": "Art. 76",
       "aufgehoben": true,
@@ -2904,7 +2904,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_76",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2912,7 +2912,7 @@
       "id": "bund/PATG/art_77",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "77",
       "artikelLabel": "Art. 77",
       "bloecke": [
@@ -2963,7 +2963,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_77",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "c53560e48e098ff7412af02553318d7a2724ad65158158a2e9021c7493acf461"
     },
@@ -2971,7 +2971,7 @@
       "id": "bund/PATG/art_78",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "78",
       "artikelLabel": "Art. 78",
       "aufgehoben": true,
@@ -2983,7 +2983,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_78",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2991,7 +2991,7 @@
       "id": "bund/PATG/art_79_80",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "79_80",
       "artikelLabel": "Art. 79–80",
       "aufgehoben": true,
@@ -3003,7 +3003,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_79_80",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3011,7 +3011,7 @@
       "id": "bund/PATG/art_81",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "81",
       "artikelLabel": "Art. 81",
       "bloecke": [
@@ -3030,7 +3030,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_81",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8bc109f5487a7f90dac00a18ac0e5616b8afb1695b6ef5416839435d5d12f215"
     },
@@ -3038,7 +3038,7 @@
       "id": "bund/PATG/art_81_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "81_a",
       "artikelLabel": "Art. 81a",
       "bloecke": [
@@ -3053,7 +3053,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_81_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e0ce8c59e129a74812c56004a96640f4dc4a59adccf41e55f3e0d146f9ead674"
     },
@@ -3061,7 +3061,7 @@
       "id": "bund/PATG/art_82",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "82",
       "artikelLabel": "Art. 82",
       "bloecke": [
@@ -3076,7 +3076,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_82",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "3e1d2f397503089699ab2abaa1ff5e7f42d77a28190de27996f9ffff1a06b31b"
     },
@@ -3084,7 +3084,7 @@
       "id": "bund/PATG/art_83",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "83",
       "artikelLabel": "Art. 83",
       "bloecke": [
@@ -3095,7 +3095,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_83",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e5bd4e0f5bfe9f2304bca6d4df33f153182be425db863c31d3f2d926e1d6b784"
     },
@@ -3103,7 +3103,7 @@
       "id": "bund/PATG/art_83_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "83_a",
       "artikelLabel": "Art. 83a",
       "bloecke": [
@@ -3114,7 +3114,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_83_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "929b9bbce4ea3d6c834aba2b2fe6ffaa3ec7565f4acc157fbe147a7bfb10af7e"
     },
@@ -3122,7 +3122,7 @@
       "id": "bund/PATG/art_84",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "84",
       "artikelLabel": "Art. 84",
       "bloecke": [
@@ -3137,7 +3137,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_84",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "c8871b9bf88853ac825c58daec78ba7ae88a1f2e1aebbdfc86df2ea746a181a0"
     },
@@ -3145,7 +3145,7 @@
       "id": "bund/PATG/art_85",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "85",
       "artikelLabel": "Art. 85",
       "bloecke": [
@@ -3160,7 +3160,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_85",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "aa18db271e83cb62abec55fae586a27141fc7c64bb73159bc06e5f8ef7d440e9"
     },
@@ -3168,7 +3168,7 @@
       "id": "bund/PATG/art_86",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86",
       "artikelLabel": "Art. 86",
       "bloecke": [
@@ -3187,7 +3187,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b47ea9186e8076f831332641a8c25804228e7776e25a43a6b4f85ce72eb73d78"
     },
@@ -3195,7 +3195,7 @@
       "id": "bund/PATG/art_86_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_a",
       "artikelLabel": "Art. 86a",
       "bloecke": [
@@ -3210,7 +3210,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "2c8e553ee1bc4951080b9f117a1b2922c3a9bd7f423faae126caa78e13b25dcb"
     },
@@ -3218,7 +3218,7 @@
       "id": "bund/PATG/art_86_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_b",
       "artikelLabel": "Art. 86b",
       "bloecke": [
@@ -3263,7 +3263,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d366ee74870ee617476bed1906518c6057b500b1ebbe52bba2dc1ff1a39d0f90"
     },
@@ -3271,7 +3271,7 @@
       "id": "bund/PATG/art_86_c",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_c",
       "artikelLabel": "Art. 86c",
       "bloecke": [
@@ -3308,7 +3308,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_c",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "4bfb7523a5f379d13f6b8e5866f3e1208cdcfdbf20a787108db30979fc8b469e"
     },
@@ -3316,7 +3316,7 @@
       "id": "bund/PATG/art_86_d",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_d",
       "artikelLabel": "Art. 86d",
       "bloecke": [
@@ -3335,7 +3335,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_d",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5e2b3733b64e8911008f382d9fc25edab269f3b9256664c4ace716fb153672c5"
     },
@@ -3343,7 +3343,7 @@
       "id": "bund/PATG/art_86_e",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_e",
       "artikelLabel": "Art. 86e",
       "bloecke": [
@@ -3362,7 +3362,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_e",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "178840ea6ae545d21f8550bf8e8e29970f4899cac6af9b21426a3590b262ee09"
     },
@@ -3370,7 +3370,7 @@
       "id": "bund/PATG/art_86_f",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_f",
       "artikelLabel": "Art. 86f",
       "bloecke": [
@@ -3389,7 +3389,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_f",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "7ec792fa5707177a0f446a377315114d95bf16c3cb87643a41261a0edef4c8c7"
     },
@@ -3397,7 +3397,7 @@
       "id": "bund/PATG/art_86_g",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_g",
       "artikelLabel": "Art. 86g",
       "bloecke": [
@@ -3412,7 +3412,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_g",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "7da09d3f9c06a51a4c0a0bdbb2fdd853790e52775909b52da9ec081abf6d7acc"
     },
@@ -3420,7 +3420,7 @@
       "id": "bund/PATG/art_86_h",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_h",
       "artikelLabel": "Art. 86h",
       "bloecke": [
@@ -3431,7 +3431,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_h",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d7b707ec9cee5d83fd903bfbd3bab1545c70e423a08438d78973eff582042090"
     },
@@ -3439,7 +3439,7 @@
       "id": "bund/PATG/art_86_i",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_i",
       "artikelLabel": "Art. 86i",
       "bloecke": [
@@ -3454,7 +3454,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_i",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "df532f770cb3389c97223461c82050bc4c6b02eb3be91adddca16b732aa89e63"
     },
@@ -3462,7 +3462,7 @@
       "id": "bund/PATG/art_86_j",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_j",
       "artikelLabel": "Art. 86j",
       "bloecke": [
@@ -3477,7 +3477,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_j",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "9d5c26a0210c743145a781750775c8ff04fc955104bbf4d1daa7928b11087ded"
     },
@@ -3485,7 +3485,7 @@
       "id": "bund/PATG/art_86_k",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_k",
       "artikelLabel": "Art. 86k",
       "bloecke": [
@@ -3500,7 +3500,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_k",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "fdd5b848913ac48b8779330104713804ad7c0ce376ca9dc96ac76843c3f48506"
     },
@@ -3508,7 +3508,7 @@
       "id": "bund/PATG/art_86_l",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "86_l",
       "artikelLabel": "Art. 86l",
       "bloecke": [
@@ -3549,7 +3549,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_86_l",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8b39b0731fc0c6a2516b7a88bb7ea293a373b112c2b7866ebd3208cc7ff83274"
     },
@@ -3557,7 +3557,7 @@
       "id": "bund/PATG/art_8790",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "8790",
       "artikelLabel": "Art. 8790",
       "aufgehoben": true,
@@ -3569,7 +3569,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_8790",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3577,7 +3577,7 @@
       "id": "bund/PATG/art_91_94",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "91_94",
       "artikelLabel": "Art. 91–94",
       "aufgehoben": true,
@@ -3589,7 +3589,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_91_94",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3597,7 +3597,7 @@
       "id": "bund/PATG/art_95",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "95",
       "artikelLabel": "Art. 95",
       "aufgehoben": true,
@@ -3609,7 +3609,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_95",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3617,7 +3617,7 @@
       "id": "bund/PATG/art_96101",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "96101",
       "artikelLabel": "Art. 96101",
       "aufgehoben": true,
@@ -3629,7 +3629,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_96101",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3637,7 +3637,7 @@
       "id": "bund/PATG/art_102_103",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "102_103",
       "artikelLabel": "Art. 102–103",
       "aufgehoben": true,
@@ -3649,7 +3649,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_102_103",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3657,7 +3657,7 @@
       "id": "bund/PATG/art_104106",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "104106",
       "artikelLabel": "Art. 104106",
       "aufgehoben": true,
@@ -3669,7 +3669,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_104106",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3677,7 +3677,7 @@
       "id": "bund/PATG/art_106_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "106_a",
       "artikelLabel": "Art. 106a",
       "aufgehoben": true,
@@ -3689,7 +3689,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_106_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3697,7 +3697,7 @@
       "id": "bund/PATG/art_107_108",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "107_108",
       "artikelLabel": "Art. 107–108",
       "aufgehoben": true,
@@ -3709,7 +3709,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_107_108",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3717,7 +3717,7 @@
       "id": "bund/PATG/art_109",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "109",
       "artikelLabel": "Art. 109",
       "bloecke": [
@@ -3736,7 +3736,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_109",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "433879d7803f1a1f476315ec8a7c1c78fc21d997074db1b5eae4e7c1da2ddbcb"
     },
@@ -3744,7 +3744,7 @@
       "id": "bund/PATG/art_110",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "110",
       "artikelLabel": "Art. 110",
       "bloecke": [
@@ -3755,7 +3755,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_110",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "bf04bf876d85064154e37a92b9f398d6a7120f0e7b13e13a1558c1a64db53e47"
     },
@@ -3763,7 +3763,7 @@
       "id": "bund/PATG/art_110_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "110_a",
       "artikelLabel": "Art. 110a",
       "bloecke": [
@@ -3774,7 +3774,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_110_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "f0f5486c8cb223e07e9ea971953d3f316dd8241ea02f9fc69c325b4c01f243e3"
     },
@@ -3782,7 +3782,7 @@
       "id": "bund/PATG/art_111",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "111",
       "artikelLabel": "Art. 111",
       "bloecke": [
@@ -3797,7 +3797,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_111",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "dd55ade0f7c52cee98598bb7f4f5576496e11abd5a1aa556d7f8ff350736d164"
     },
@@ -3805,7 +3805,7 @@
       "id": "bund/PATG/art_112_116",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "112_116",
       "artikelLabel": "Art. 112–116",
       "aufgehoben": true,
@@ -3817,7 +3817,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_112_116",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3825,7 +3825,7 @@
       "id": "bund/PATG/art_117",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "117",
       "artikelLabel": "Art. 117",
       "bloecke": [
@@ -3836,7 +3836,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_117",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "695bc45771e9a818d4ddd8473d59f722d2d16b24acdfbcf14a86768c05fb21ae"
     },
@@ -3844,7 +3844,7 @@
       "id": "bund/PATG/art_118",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "118",
       "artikelLabel": "Art. 118",
       "bloecke": [
@@ -3855,7 +3855,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_118",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "10b18cdf8b9aac2801e9de708296441990d3319cbfa8092a0ce122c35ba2ed86"
     },
@@ -3863,7 +3863,7 @@
       "id": "bund/PATG/art_119",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "119",
       "artikelLabel": "Art. 119",
       "aufgehoben": true,
@@ -3875,7 +3875,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_119",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3883,7 +3883,7 @@
       "id": "bund/PATG/art_120",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "120",
       "artikelLabel": "Art. 120",
       "aufgehoben": true,
@@ -3895,7 +3895,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_120",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3903,7 +3903,7 @@
       "id": "bund/PATG/art_121",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "121",
       "artikelLabel": "Art. 121",
       "bloecke": [
@@ -3932,7 +3932,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_121",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "a87572cf3848c3700e6fbd0630ca37e3409c1e9858c65a4dcd3b22621608b9fd"
     },
@@ -3940,7 +3940,7 @@
       "id": "bund/PATG/art_122",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "122",
       "artikelLabel": "Art. 122",
       "bloecke": [
@@ -3959,7 +3959,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_122",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "49102f579a52233fa3c31d7a1205ed2aa495607cbc8ec048d83ddb7bc2a4ba13"
     },
@@ -3967,7 +3967,7 @@
       "id": "bund/PATG/art_123",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "123",
       "artikelLabel": "Art. 123",
       "bloecke": [
@@ -3978,7 +3978,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_123",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "523511eca1f4b40c207454eaef1dd1126e8a0a5cf9d11c7ae946008926d17b09"
     },
@@ -3986,7 +3986,7 @@
       "id": "bund/PATG/art_124",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "124",
       "artikelLabel": "Art. 124",
       "bloecke": [
@@ -4001,7 +4001,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_124",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "837f2919d7d7859d89f5da294df921d809d300a03db49a611e3e7de9ce3abcbf"
     },
@@ -4009,7 +4009,7 @@
       "id": "bund/PATG/art_125",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "125",
       "artikelLabel": "Art. 125",
       "bloecke": [
@@ -4034,7 +4034,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_125",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "a610089cd7d12ba7ca3d9f1539d5b9f177c752f2755db8a960484e1d289170f7"
     },
@@ -4042,7 +4042,7 @@
       "id": "bund/PATG/art_126",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "126",
       "artikelLabel": "Art. 126",
       "bloecke": [
@@ -4057,7 +4057,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_126",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "81a5459bb647fd95c75fcf264a238b60cc335187beb4eedd88aad6d3481462bd"
     },
@@ -4065,7 +4065,7 @@
       "id": "bund/PATG/art_127",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "127",
       "artikelLabel": "Art. 127",
       "bloecke": [
@@ -4076,7 +4076,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_127",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "80d600e96d66e109ca756b4b58574e361b03422467b48b55d4ba4d420013f7da"
     },
@@ -4084,7 +4084,7 @@
       "id": "bund/PATG/art_128",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "128",
       "artikelLabel": "Art. 128",
       "bloecke": [
@@ -4109,7 +4109,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_128",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "7259815e9adad4e717f5ef31465fc334a206982bb3a587b33c750f3c51bf42d0"
     },
@@ -4117,7 +4117,7 @@
       "id": "bund/PATG/art_129",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "129",
       "artikelLabel": "Art. 129",
       "bloecke": [
@@ -4132,7 +4132,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_129",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "be2c8c8b4ada2d8bf335bb11f2b3a92a3d5fcf63732cbb2f1f5b496997605fec"
     },
@@ -4140,7 +4140,7 @@
       "id": "bund/PATG/art_130",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "130",
       "artikelLabel": "Art. 130",
       "bloecke": [
@@ -4151,7 +4151,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_130",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "68501db67050e3f4793738a090a27ceeb4d21142a65cc698e22b7420401dd4ff"
     },
@@ -4159,7 +4159,7 @@
       "id": "bund/PATG/art_131",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "131",
       "artikelLabel": "Art. 131",
       "bloecke": [
@@ -4178,7 +4178,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_131",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "a727c60df1327fa304d46c3c471b1c5efa93d607d715b4184f31e15c4d7ac1ba"
     },
@@ -4186,7 +4186,7 @@
       "id": "bund/PATG/art_132",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "132",
       "artikelLabel": "Art. 132",
       "bloecke": [
@@ -4197,7 +4197,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_132",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "416ab27291c10f923ee501430738d9a408bfb0e00690f0d03f6b1ddafc03413f"
     },
@@ -4205,7 +4205,7 @@
       "id": "bund/PATG/art_133",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "133",
       "artikelLabel": "Art. 133",
       "bloecke": [
@@ -4224,7 +4224,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_133",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "491cd5cd2172388202ba9d7cb77896e1ae63540572bde282404bb9dfe6f5a61b"
     },
@@ -4232,7 +4232,7 @@
       "id": "bund/PATG/art_134",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "134",
       "artikelLabel": "Art. 134",
       "bloecke": [
@@ -4243,7 +4243,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_134",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d24e55858436498a1d829735f90e1da978032d2d33cd5fbfa1fa252199fea4a8"
     },
@@ -4251,7 +4251,7 @@
       "id": "bund/PATG/art_135",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "135",
       "artikelLabel": "Art. 135",
       "bloecke": [
@@ -4262,7 +4262,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_135",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5d770e48bae864a7d52186751da0848b8e36abfa5abe2254706c7e7914ab1522"
     },
@@ -4270,7 +4270,7 @@
       "id": "bund/PATG/art_136",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "136",
       "artikelLabel": "Art. 136",
       "bloecke": [
@@ -4281,7 +4281,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_136",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "df0d10b2cb814d470d3fb9ebd6f3540254ccd629836b05791dbb100327316793"
     },
@@ -4289,7 +4289,7 @@
       "id": "bund/PATG/art_137",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "137",
       "artikelLabel": "Art. 137",
       "bloecke": [
@@ -4300,7 +4300,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_137",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "f647e98fa17f664530d5bee1d2cf82decf14e4ff03623d5625ad730cc8953e08"
     },
@@ -4308,7 +4308,7 @@
       "id": "bund/PATG/art_138",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "138",
       "artikelLabel": "Art. 138",
       "bloecke": [
@@ -4337,7 +4337,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_138",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "bcc9bdebe73f5411d97168b1afb10b74c403d7eaec0cc5977e3a021a5d034beb"
     },
@@ -4345,7 +4345,7 @@
       "id": "bund/PATG/art_139",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "139",
       "artikelLabel": "Art. 139",
       "aufgehoben": true,
@@ -4357,7 +4357,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_139",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4365,7 +4365,7 @@
       "id": "bund/PATG/art_140",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140",
       "artikelLabel": "Art. 140",
       "bloecke": [
@@ -4380,7 +4380,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e0a6d7a21c9ff093e8ca4fdd092b1e689d929f3680d3c080e8f419b2f19d4732"
     },
@@ -4388,7 +4388,7 @@
       "id": "bund/PATG/art_140_a",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_a",
       "artikelLabel": "Art. 140a",
       "bloecke": [
@@ -4407,7 +4407,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_a",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "9bb0b249c92c37d013c00ee6303f51a9915fb21b6726e359b65c6678223d86ff"
     },
@@ -4415,7 +4415,7 @@
       "id": "bund/PATG/art_140_b",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_b",
       "artikelLabel": "Art. 140b",
       "bloecke": [
@@ -4440,7 +4440,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_b",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "fbfaa35a43834e132d637406ffe4ffa9dfb6ac878d14725ac40e302e78ab725e"
     },
@@ -4448,7 +4448,7 @@
       "id": "bund/PATG/art_140_c",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_c",
       "artikelLabel": "Art. 140c",
       "bloecke": [
@@ -4467,7 +4467,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_c",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "2798fc742a06b237b17381e43d9b76176ad017989be7a7f56600981615639250"
     },
@@ -4475,7 +4475,7 @@
       "id": "bund/PATG/art_140_d",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_d",
       "artikelLabel": "Art. 140d",
       "bloecke": [
@@ -4490,7 +4490,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_d",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "c0dda86ed4ac9cbc114e4b5e05ea77ef5cac10efa6d3e9dafc2d1a8974c1aa28"
     },
@@ -4498,7 +4498,7 @@
       "id": "bund/PATG/art_140_e",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_e",
       "artikelLabel": "Art. 140e",
       "bloecke": [
@@ -4517,7 +4517,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_e",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e33db8aa5cdbde84d21b40ddf59d3f5757a71423388cc927548a6887457d2df8"
     },
@@ -4525,7 +4525,7 @@
       "id": "bund/PATG/art_140_f",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_f",
       "artikelLabel": "Art. 140f",
       "bloecke": [
@@ -4550,7 +4550,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_f",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "bbca46c820a16e8b5ee460989dfa07340454ca374e082e2eb3d1739992dacf40"
     },
@@ -4558,7 +4558,7 @@
       "id": "bund/PATG/art_140_g",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_g",
       "artikelLabel": "Art. 140g",
       "bloecke": [
@@ -4569,7 +4569,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_g",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "843b0057af1036a6826081937ed270667a759f8d6dc2c9142b5260de8cc5d341"
     },
@@ -4577,7 +4577,7 @@
       "id": "bund/PATG/art_140_h",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_h",
       "artikelLabel": "Art. 140h",
       "bloecke": [
@@ -4596,7 +4596,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_h",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "3108c015fe906189bf79898cb7f8bc60106867cfb22eb9f801b9345dda8d7985"
     },
@@ -4604,7 +4604,7 @@
       "id": "bund/PATG/art_140_i",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_i",
       "artikelLabel": "Art. 140i",
       "bloecke": [
@@ -4637,7 +4637,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_i",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "2c47c66c0fea028fd104ebca46bb12c52458cc55a299213fb944354814d2827a"
     },
@@ -4645,7 +4645,7 @@
       "id": "bund/PATG/art_140_k",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_k",
       "artikelLabel": "Art. 140k",
       "bloecke": [
@@ -4682,7 +4682,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_k",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "24a6a071df184a3093a6f4c60e2a7534247a165bb53b652c1ed7ae66250bdbac"
     },
@@ -4690,7 +4690,7 @@
       "id": "bund/PATG/art_140_l",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_l",
       "artikelLabel": "Art. 140l",
       "bloecke": [
@@ -4705,7 +4705,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_l",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "c72d955d799968312bd6ecf5aaf93aaff3d33845273bced73e39a21339eaaefd"
     },
@@ -4713,7 +4713,7 @@
       "id": "bund/PATG/art_140_m",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_m",
       "artikelLabel": "Art. 140m",
       "bloecke": [
@@ -4724,7 +4724,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_m",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "c3bf1fefadf2cb630205b0253d67a13b545d35091360641289b472bac3ac5ae1"
     },
@@ -4732,7 +4732,7 @@
       "id": "bund/PATG/art_140_n",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_n",
       "artikelLabel": "Art. 140n",
       "bloecke": [
@@ -4757,7 +4757,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_n",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8e9e5f8aa72c329dced2a2a0b384f4bcbf9f23db1107cd739137b6d16ac11d75"
     },
@@ -4765,7 +4765,7 @@
       "id": "bund/PATG/art_140_o",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_o",
       "artikelLabel": "Art. 140o",
       "bloecke": [
@@ -4780,7 +4780,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_o",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b0a70c5b89416357d03bd57d3a75656b4ca0e1a92d8d6baae17d1ef3bbba0b07"
     },
@@ -4788,7 +4788,7 @@
       "id": "bund/PATG/art_140_p",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_p",
       "artikelLabel": "Art. 140p",
       "bloecke": [
@@ -4799,7 +4799,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_p",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "fa2809bd3f94d7f7b03dfa69798d81a64fec0bb0c9da223f4a87c0be9a6ac84c"
     },
@@ -4807,7 +4807,7 @@
       "id": "bund/PATG/art_140_q",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_q",
       "artikelLabel": "Art. 140q",
       "bloecke": [
@@ -4818,7 +4818,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_q",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "711dc9eef5513ebfe49f75869ec1b5e51461ef4d9bfa1c177c5a8f969fceed2f"
     },
@@ -4826,7 +4826,7 @@
       "id": "bund/PATG/art_140_r",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_r",
       "artikelLabel": "Art. 140r",
       "bloecke": [
@@ -4841,7 +4841,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_r",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "bdd73294a74e6dd9db45552555a789f02709575b2935dfad0f88da8d61da8135"
     },
@@ -4849,7 +4849,7 @@
       "id": "bund/PATG/art_140_s",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_s",
       "artikelLabel": "Art. 140s",
       "bloecke": [
@@ -4864,7 +4864,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_s",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "5e853fca344823ac814291ed82b15b757c233c0323a54a04166c558de07db9e4"
     },
@@ -4872,7 +4872,7 @@
       "id": "bund/PATG/art_140_t",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_t",
       "artikelLabel": "Art. 140t",
       "bloecke": [
@@ -4905,7 +4905,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_t",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "f6170e1e6c950df455317130d236833c156743ff5c832a3a271f65903dd14ff8"
     },
@@ -4913,7 +4913,7 @@
       "id": "bund/PATG/art_140_u",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_u",
       "artikelLabel": "Art. 140u",
       "bloecke": [
@@ -4932,7 +4932,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_u",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "d717fce88e8958f37c0ef9cff3f598a42f4175df4eadf469bb1c1a99062641df"
     },
@@ -4940,7 +4940,7 @@
       "id": "bund/PATG/art_140_v",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_v",
       "artikelLabel": "Art. 140v",
       "bloecke": [
@@ -4955,7 +4955,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_v",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "1b812c423eebc470cd8627b0551c48e7e48a0e97d8926455acd28da979c0623b"
     },
@@ -4963,7 +4963,7 @@
       "id": "bund/PATG/art_140_w",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_w",
       "artikelLabel": "Art. 140w",
       "bloecke": [
@@ -4974,7 +4974,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_w",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "84671217fcddfc9a2e7af7a431da1665faaa64ec92a52f14ed84ede444879fdf"
     },
@@ -4982,7 +4982,7 @@
       "id": "bund/PATG/art_140_x",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_x",
       "artikelLabel": "Art. 140x",
       "bloecke": [
@@ -5023,7 +5023,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_x",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "14b496cac1bb337d995804a87f93ffe13355a10bc84f5ceaf52c20c15b984523"
     },
@@ -5031,7 +5031,7 @@
       "id": "bund/PATG/art_140_y",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_y",
       "artikelLabel": "Art. 140y",
       "bloecke": [
@@ -5042,7 +5042,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_y",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e4cef1321ff15e4462d543ec5c41d1e6077c266e13e81607be17c496959b6207"
     },
@@ -5050,7 +5050,7 @@
       "id": "bund/PATG/art_140_z",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "140_z",
       "artikelLabel": "Art. 140z",
       "bloecke": [
@@ -5079,7 +5079,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#art_140_z",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "73ec37b7b17d462a3030c41d5a4ba95f516aaddfc01855963b42084aa619b642"
     },
@@ -5087,7 +5087,7 @@
       "id": "bund/PATG/disp_u1_art_141",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_141",
       "artikelLabel": "Art. 141",
       "bloecke": [
@@ -5102,7 +5102,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_141",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "8420bc047e4ffcedfb33f6336d940ad3efcf6d92c57195d6f09d5f02c18b2777"
     },
@@ -5110,7 +5110,7 @@
       "id": "bund/PATG/disp_u1_art_142",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_142",
       "artikelLabel": "Art. 142",
       "bloecke": [
@@ -5121,7 +5121,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_142",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "e1abe288dbe62c1a40ba95d8008ab947ce89ed09905c7fc74b53748f74411f44"
     },
@@ -5129,7 +5129,7 @@
       "id": "bund/PATG/disp_u1_art_143",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_143",
       "artikelLabel": "Art. 143",
       "bloecke": [
@@ -5154,7 +5154,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_143",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "cbedec3d757520aea151c6ffe395a880707067d5b663a46ba2948ba55b2b2d78"
     },
@@ -5162,7 +5162,7 @@
       "id": "bund/PATG/disp_u1_art_144",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_144",
       "artikelLabel": "Art. 144",
       "aufgehoben": true,
@@ -5174,7 +5174,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_144",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -5182,7 +5182,7 @@
       "id": "bund/PATG/disp_u1_art_145",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_145",
       "artikelLabel": "Art. 145",
       "bloecke": [
@@ -5197,7 +5197,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_145",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "ea7202d9226db51251f62a9c0471e676e7681a3b43861c59898968029338fbf1"
     },
@@ -5205,7 +5205,7 @@
       "id": "bund/PATG/disp_u1_art_146",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_146",
       "artikelLabel": "Art. 146",
       "bloecke": [
@@ -5220,7 +5220,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_146",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "73654cf8108dc252199fecffda1029ffa7635c6a0b139a251fa71b91a03c5293"
     },
@@ -5228,7 +5228,7 @@
       "id": "bund/PATG/disp_u1_art_147",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_147",
       "artikelLabel": "Art. 147",
       "bloecke": [
@@ -5251,7 +5251,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_147",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "6f34b5f8c112f4f924cf0f7964a4735ad559527bcfdd696ecafc27500e23ca49"
     },
@@ -5259,7 +5259,7 @@
       "id": "bund/PATG/disp_u1_art_148",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_148",
       "artikelLabel": "Art. 148",
       "bloecke": [
@@ -5274,7 +5274,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_148",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "a2374c7127f22e3fb9bb30078ec59d5dcf48355a6f2b26de5c27d49a485868cc"
     },
@@ -5282,7 +5282,7 @@
       "id": "bund/PATG/disp_u1_art_149",
       "ebene": "bund",
       "quelle": "PATG",
-      "erlass": "PATG",
+      "erlass": "PatG",
       "artikel": "disp_u1_art_149",
       "artikelLabel": "Art. 149",
       "bloecke": [
@@ -5301,7 +5301,7 @@
       ],
       "stand": "2025-07-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1955/871_893_899/de#disp_u1/art_149",
-      "abgerufen": "2026-09-14",
+      "abgerufen": "2026-09-25",
       "fassungsToken": "20250701",
       "sha": "3e785038fa2ba2269ea1f5c4b53a09c10362b65828a0ba67fa11fc481395ccd0"
     }
