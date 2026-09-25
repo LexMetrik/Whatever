@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/SB.2024.31",
@@ -17,7 +17,7 @@
       "sachgebiet": "straf",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "grobe Verletzung der Verkehrsregeln (Beschwerde beim BG hängig)",
+        "gegenstand": "grobe Verletzung der Verkehrsregeln Urteil BG vom 29.07.2026 6B_772/2025",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "lic. iur. Marc Oser (Vorsitz), Dr. Andreas Traub, Dr. Katharina Zimmermann und Gerichtsschreiberin MLaw Nathalie De Luca"
@@ -242,11 +242,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=78607&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2025-12-02",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-09-02",
       "sha": "65871d67cdbf0d08233ae01914594c6bfa586c0cc64bd8ba6149354a73900fe6",
       "erstpublikation": "2025-12-02",
-      "aktualisiert": "2025-12-02",
+      "aktualisiert": "2026-09-02",
       "nummerSekundaer": "AG.2025.411",
       "ecli": "ECLI:CH:BSA:2025:SB.2024.31"
     }

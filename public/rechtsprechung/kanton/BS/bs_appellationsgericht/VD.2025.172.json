@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-07-19",
+  "erzeugt": "2026-09-25",
   "eintraege": [
     {
       "id": "kanton/BS/bs_appellationsgericht/VD.2025.172",
@@ -17,7 +17,7 @@
       "sachgebiet": "oeffentlich",
       "legalArea": null,
       "rubrum": {
-        "gegenstand": "Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung (nicht rechtskräftig)",
+        "gegenstand": "Widerruf der Niederlassungsbewilligung und Rückstufung auf eine Aufenthaltsbewilligung",
         "parteien": null,
         "vorinstanz": null,
         "besetzung": "Dr. Stephan Wullschleger, lic. iur. André Equey, Dr. Christoph A. Spenlé und Gerichtsschreiber MLaw Damian Wyss"
@@ -331,11 +331,11 @@
       "kuratierung": "maschinell",
       "quelle": "gerichte-bs",
       "quelleUrl": "https://rechtsprechung.gerichte.bs.ch/cgi-bin/nph-omniscgi.exe?OmnisPlatform=WINDOWS&WebServerUrl=rechtsprechung.gerichte.bs.ch&WebServerScript=%2Fcgi-bin%2Fnph-omniscgi.exe&OmnisLibrary=JURISWEB&OmnisClass=rtFindinfoWebHtmlService&OmnisServer=JURISWEB%2C7000&Schema=BS_FI_WEB&Parametername=WEB&cSprache=DE&Aufruf=getMarkupDocument&nF30_KEY=79625&Template=search_result_document.html",
-      "abgerufen": "2026-07-19",
-      "fassungsToken": "2026-06-11",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "2026-07-29",
       "sha": "783736b7c306ce4faa8410afe11a8127782ce5c0c54f6682950ab03ef1b296aa",
       "erstpublikation": "2026-06-11",
-      "aktualisiert": "2026-06-11",
+      "aktualisiert": "2026-07-29",
       "nummerSekundaer": "AG.2026.300",
       "ecli": "ECLI:CH:BSA:2026:VD.2025.172"
     }

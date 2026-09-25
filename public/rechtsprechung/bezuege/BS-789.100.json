@@ -4,14 +4,17 @@
 "erlassEbene":"kanton",
 "dokumente":{
 "bs_appellationsgericht_VD.2021.236":{"zitierung":"Appellationsgericht BS VD.2021.236 vom 03.02.2023","regesteKurz":"Neubau Trinkwasser Reservoir, Ausnahmeantrag (RPG)","datum":"2023-02-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2024.107":{"zitierung":"Appellationsgericht BS VD.2024.107 vom 19.06.2025","regesteKurz":"Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern…","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2024.107":{"zitierung":"Appellationsgericht BS VD.2024.107 vom 19.06.2025","regesteKurz":"Abbruch von zwei Doppelmehrfamilienhäusern und Neubau von zwei Mehrfamilienhäusern und drei Reiheneinfamilienhäusern…","datum":"2025-06-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.35":{"zitierung":"Appellationsgericht BS VD.2025.35 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...](1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "8":[{"key":"bs_appellationsgericht_VD.2021.236","gewicht":null}],
+"9":[{"key":"bs_appellationsgericht_VD.2025.35","gewicht":null}],
 "26":[{"key":"bs_appellationsgericht_VD.2024.107","gewicht":null}]
 },
 "gesamtProArtikel":{
 "8":{"kantonal":1},
+"9":{"kantonal":1},
 "26":{"kantonal":1}
 }
 }

@@ -64,8 +64,15 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 //    aus CLI-`gzip -c … | wc -c` = 163323 Bytes — Node-`zlib.gzipSync` misst
 //    wegen anderer Default-Kompression/Header ~0.6 % tiefer; das Tor prüft
 //    ausschliesslich den `gz()`-Wert, der Deckel 175 KB bleibt unverändert.)
+//
+//    Freigabe David 25.9.2026 (Chat, §15-Budgetentscheid): register.json 780 →
+//    900 KB. Anlass: BS-Delta #1112 (+185 Urteile) hob das Register auf 795.0 KB
+//    gzip (merge_group-Lauf 36141636309 rot); die Wochen-Automatik (#1113) lässt
+//    es weiter wachsen. Reserve ≈ 3–4 Monate Zuwachs. Kein Logikverlust (§15):
+//    nur die Schranke, keine Projektion geändert. Wurzel-Fix als Posten
+//    QS-PERF «Rechtsprechungs-Register aufteilen» — die Anhebung ersetzt ihn nicht.
 export const DATEN_BUDGET: readonly (readonly [string, number])[] = [
-  ['public/rechtsprechung/register.json', 780 * 1024],
+  ['public/rechtsprechung/register.json', 900 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
   ['public/such-index/artikel.json', 5_850 * 1024], // K3, 1.9.2026: Ist 5 311 KB gzip (Bund-only)

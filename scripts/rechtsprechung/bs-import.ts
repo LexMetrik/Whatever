@@ -6,9 +6,16 @@
 // Phasen (Bauplan §5): Inventar (16 Requests, Count-Gates G1/G2) → Fetch (golden
 // store, resumierbar) → Parse (offline, Fidelity-Gates) → schreibeKorpus()
 // (Bestand von Platte + BS additiv; §6: kein Drift der bestehenden Snapshots).
-// --delta: Inventar neu, nur neue/aktualisierte Keys fetchen; aus dem Portal
-// verschwundene Scope-Einträge fallen aus inventar.json → ihre Snapshots werden
-// beim Schreiben entfernt (Takedown-Respekt §2/§5.4) und im Report ausgewiesen.
+// --delta (Wurzel-Fix 25.9.2026, Regel + Begründung in bs-delta.ts): Inventar neu,
+// dann Plan Soll (Inventar) ↔ Ist (committeter Korpus) — NUR neue und aktualisierte
+// Keys werden geholt und geparst, alle übrigen BS-Snapshots bleiben byte-treu von
+// der Platte (auch `abgerufen`); aus dem Portal verschwundene Scope-Einträge werden
+// entfernt (Takedown-Respekt §2/§5.4) und im Report ausgewiesen. Bis 25.9.2026
+// reichte --delta das GANZE Inventar an Fetch und Parse weiter: ohne lokalen
+// Roh-Store (daten/bs-fiw/raw/ ist nicht eingecheckt) holte es alle ~3950
+// Dokumente neu und stempelte den Bestand um. Wiederaufnehmbar: `--delta
+// --fetch-only` / `--delta --parse-only` rechnen denselben Plan. --limit ist mit
+// --delta gesperrt (ein Teil-Delta liesse Plan-Zeilen ohne Rohdatei zurück).
 // --kopfdatum-nachtrag (B-1, 23.9.2026): nur die Dokumente OHNE Metadaten-Datum
 // holen und ihr Datum aus dem Deckblatt nachtragen (`nachtragKopfdatum`); kein
 // Inventar-Neubau, kein Vollabruf.
@@ -17,6 +24,8 @@ import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { baueInventar, type Inventar } from './bs-inventar';
 import { fetcheAlle, BS_DATEN, FEHLERLISTE } from './bs-fetch';
+import { planeBsDelta, zuHolen, berichteBsDelta, parseUndSchreibeDelta } from './bs-delta';
+import { ladeBestandSnapshots } from '../normtext/entscheide-schreiben';
 
 const arg = (name: string): string | null => {
   const p = process.argv.find((a) => a.startsWith(name + '='));
@@ -38,6 +47,7 @@ async function main() {
   const nurFetch = hat('--fetch-only');
   const nurParse = hat('--parse-only');
   const delta = hat('--delta');
+  if (delta && limit > 0) throw new Error('[bs-import] --limit ist mit --delta gesperrt (Plan-Zeilen ohne Rohdatei).');
 
   // ── Sonderlauf B-1: Kopf-Datum der datumlosen Dokumente nachtragen ──
   // Holt NUR die Rohdateien der Inventar-Einträge ohne Metadaten-Datum (golden
@@ -56,24 +66,19 @@ async function main() {
   // ── Phase 1: Inventar (übersprungen bei --fetch-only/--parse-only) ──
   if (!nurFetch && !nurParse) {
     mkdirSync(BS_DATEN, { recursive: true });
-    const alt: Inventar | null = existsSync(INVENTAR_PFAD) ? ladeInventar() : null;
     const inv = await baueInventar(datum);
-    if (delta && alt) {
-      const altKeys = new Set(alt.eintraege.map((z) => z.key));
-      const neuKeys = new Set(inv.eintraege.map((z) => z.key));
-      const neue = inv.eintraege.filter((z) => !altKeys.has(z.key));
-      const weg = alt.eintraege.filter((z) => !neuKeys.has(z.key));
-      console.log(`[bs-import] Delta: +${neue.length} neu, −${weg.length} aus dem Portal verschwunden (Takedown-Respekt: Snapshots werden entfernt).`);
-      for (const z of weg) console.log(`[bs-import]   entfernt: ${z.gn} (key ${z.key})`);
-    }
     writeFileSync(INVENTAR_PFAD, JSON.stringify(inv, null, 1) + '\n', 'utf8');
     console.log(`[bs-import] Inventar geschrieben: ${inv.eintraege.length} Scope-Einträge.`);
+    if (delta) berichteBsDelta(planeBsDelta(inv, ladeBestandSnapshots()));
     if (nurInventar) return;
   }
 
   // ── Phase 2: Fetch (golden store, resumierbar) ──
   if (!nurParse) {
-    const inv = ladeInventar();
+    const voll = ladeInventar();
+    // Delta: nur die Plan-Zeilen (neu + aktualisiert) holen, nie das ganze Inventar.
+    const inv: Inventar = delta ? { ...voll, eintraege: zuHolen(planeBsDelta(voll, ladeBestandSnapshots())) } : voll;
+    if (delta) console.log(`[bs-import] Delta-Fetch: ${inv.eintraege.length} von ${voll.eintraege.length} Scope-Einträgen.`);
     const bericht = await fetcheAlle(inv, datum, limit);
     if (bericht.fehler.length) {
       console.error(`[bs-import] ${bericht.fehler.length} Fetch-Fehler — Fehlerliste: ${FEHLERLISTE}`);
@@ -84,6 +89,7 @@ async function main() {
   }
 
   // ── Phase 3+4: Parse (offline) + Korpus schreiben ──
+  if (delta) { await parseUndSchreibeDelta(ladeInventar(), datum); return; }
   const { parseUndSchreibe } = await import('./bs-parse');
   await parseUndSchreibe(ladeInventar(), datum, limit);
 }

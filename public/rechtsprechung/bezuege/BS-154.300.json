@@ -7,17 +7,14 @@
 "bs_appellationsgericht_SB.2020.116":{"zitierung":"Appellationsgericht BS SB.2020.116 vom 19.12.2022","regesteKurz":"mehrfache einfache Körperverletzung","datum":"2022-12-19","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2021.9":{"zitierung":"Appellationsgericht BS SB.2021.9 vom 03.04.2024","regesteKurz":"Vergewaltigung, versuchte Vergewaltigung sowie sexuelle Nötigung","datum":"2024-04-03","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_SB.2022.3":{"zitierung":"Appellationsgericht BS SB.2022.3 vom 10.05.2023","regesteKurz":"Verbrechen gegen das Betäubungsmittelgesetz (mit Gefährdung der Gesundheit vieler Menschen), mehrfaches Vergehen gegen…","datum":"2023-05-10","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2023.33":{"zitierung":"Appellationsgericht BS VD.2023.33 vom 20.10.2023","regesteKurz":"Ausrichtung von Sitzungsgeldern für die Mitwirkung in der staatlichen Schlichtungsstelle für Mietangelegenheiten","datum":"2023-10-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_SG.2019.2":{"zitierung":"Sozialversicherungsgericht BS SG.2019.2 vom 08.04.2022","regesteKurz":"Kumulierte Abrechnung zweier Tarifpositionen, Prüfung insbesondere der Zweckmässigkeit der zusätzlich verrechneten…","datum":"2022-04-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2023.33":{"zitierung":"Appellationsgericht BS VD.2023.33 vom 20.10.2023","regesteKurz":"Ausrichtung von Sitzungsgeldern für die Mitwirkung in der staatlichen Schlichtungsstelle für Mietangelegenheiten","datum":"2023-10-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bs_appellationsgericht_VD.2023.33","gewicht":null}],
-"6":[{"key":"bs_sozialversicherungsgericht_SG.2019.2","gewicht":null}],
 "7":[{"key":"bs_appellationsgericht_SB.2021.9","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.3","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.116","gewicht":null},{"key":"bs_appellationsgericht_SB.2018.2","gewicht":null}]
 },
 "gesamtProArtikel":{
 "1":{"kantonal":1},
-"6":{"kantonal":1},
 "7":{"kantonal":4}
 }
 }

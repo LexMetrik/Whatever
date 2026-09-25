@@ -3,12 +3,15 @@
 "erlass":"BS-952.200",
 "erlassEbene":"kanton",
 "dokumente":{
-"bs_appellationsgericht_BES.2022.58":{"zitierung":"Appellationsgericht BS BES.2022.58 vom 04.07.2022","regesteKurz":"Parteientschädigung bei Verfahrenseinstellung","datum":"2022-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_BES.2022.58":{"zitierung":"Appellationsgericht BS BES.2022.58 vom 04.07.2022","regesteKurz":"Parteientschädigung bei Verfahrenseinstellung","datum":"2022-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.148":{"zitierung":"Appellationsgericht BS VD.2025.148 vom 24.03.2026","regesteKurz":"Demonstrationsverbot (Beschwerde am BGer hängig)","datum":"2026-03-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"13":[{"key":"bs_appellationsgericht_BES.2022.58","gewicht":null}]
+"13":[{"key":"bs_appellationsgericht_BES.2022.58","gewicht":null}],
+"14":[{"key":"bs_appellationsgericht_VD.2025.148","gewicht":null}]
 },
 "gesamtProArtikel":{
-"13":{"kantonal":1}
+"13":{"kantonal":1},
+"14":{"kantonal":1}
 }
 }
