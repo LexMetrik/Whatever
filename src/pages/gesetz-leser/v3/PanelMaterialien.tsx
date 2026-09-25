@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { AbrufFehler } from '../../../components/ui/AbrufFehler';
 import { GruppenKopf } from '../../../components/ui/GruppenKopf';
+import { StatusBadge } from '../../../components/verzahnung/StatusBadge';
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { fedlexLokalisiert, type Locale } from '../../../components/locale';
 import { VERNEHMLASSUNG_STATUS_LABEL, vernehmlassungInArbeit, type VernehmlassungBezug } from '../../../lib/materialien/vernehmlassungen';
@@ -188,6 +189,22 @@ export function PanelMaterialien({ stand, ebene, locale = 'de', aenderungNachBot
               <span className="flex flex-wrap items-baseline gap-x-2">
                 <span className="text-body-s font-medium text-ink-800">{g.doktypLabel}{g.nummer ? <span className="num"> {g.nummer}</span> : null}</span>
                 <span className="num text-micro text-ink-500">vom {datumAnzeige(g.stand)}</span>
+                {/* R2-10 (Audit 25.9.2026), korrigiert Bug-Check 25.9.2026 (§8):
+                    die BS-Grossrat-Zuordnungen tragen ihren Hinweis heute NUR im
+                    gemeinsamen Absatz über dem ganzen Reiter
+                    (`data-v3-materialien-hinweis`) — je Zeile stand nichts,
+                    anders als am Entscheid (`EntscheidZeile.tsx`, `kuratierung`).
+                    `g.hinweis` ist NICHT gleichbedeutend mit «maschinell»: das
+                    Register (K-16, `KantonalesGeschaeft`/`bsKanten` in
+                    src/lib/materialien/typen.ts) kennt auch den amtlichen Weg
+                    «Zuordnung amtlich: die Fussnote der Gesetzessammlung … nennt
+                    dieses Geschäft» — 8 von 117 BS-Geschäften (jq über
+                    public/materialien/register.json, 25.9.2026). Die strukturierte
+                    Herkunft (`bsKanten[].quelle`) fliesst absichtlich NICHT ins
+                    Browser-Manifest (nur `register-provenienz.json`, „vom Browser
+                    NIE geholt“) — hier bleibt nur die Textunterscheidung am
+                    `hinweis`-Präfix, den der Generator setzt. */}
+                {g.hinweis && !g.hinweis.startsWith('Zuordnung amtlich') && <StatusBadge praedikat="maschinell" />}
               </span>
               <span className="mt-0.5 block text-micro leading-snug text-ink-600">
                 {g.titel}{' '}

@@ -1,5 +1,6 @@
 import { Suspense, type ReactNode } from 'react';
 import { ErrorBoundary } from '../ErrorBoundary';
+import { Ladeanzeige } from '../ui/Ladeanzeige';
 import { usePaneKlasse } from './PaneKontext';
 import { registerVonPfad } from './bereiche';
 
@@ -44,12 +45,7 @@ import { registerVonPfad } from './bereiche';
  *  (FAHRPLAN-DESIGN 5.3). Laden ist Aktivität, kein Fehler. */
 function RouteLadeanzeige() {
   const pk = usePaneKlasse();
-  return (
-    <div className={`${pk('min-h-screen', 'min-h-[24rem]')} py-16 text-center space-y-3`}>
-      <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-      <p className="text-body-s text-ink-500">Wird geladen …</p>
-    </div>
-  );
+  return <Ladeanzeige text="Wird geladen …" className={`${pk('min-h-screen', 'min-h-[24rem]')} py-16`} />;
 }
 
 export function RouteHuelle({ schluessel, children }: {

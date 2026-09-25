@@ -6,6 +6,7 @@ import type { CurrencyMap, ErlassKopf } from '../../lib/normtext/browse';
 import { KontextPanel } from '../../components/kontext/KontextPanel';
 import { QuellLink } from '../../components/ui/QuellLink';
 import { Datum } from '../../components/ui/Datum';
+import { Ladeanzeige } from '../../components/ui/Ladeanzeige';
 import { ErlassLeserKopf } from './parts';
 import { AmtlichesPdf } from './parts/AmtlichesPdf';
 import { UebersichtBox } from './v3/UebersichtBox';
@@ -27,12 +28,7 @@ import { routenEbene } from '../../lib/normtext/erlassAdresse';
 // Lade-Pfade (Fehler ausgenommen), damit der einwachsende React-Baum keinen
 // grossen Sprung erzeugt.
 export function LadeAnzeige() {
-  return (
-    <div className="min-h-screen py-12 text-center space-y-3">
-      <div className="scale-rule max-w-[200px] mx-auto" aria-hidden />
-      <p className="text-body-s text-ink-500">Der Erlass wird abgerufen …</p>
-    </div>
-  );
+  return <Ladeanzeige text="Der Erlass wird abgerufen …" className="min-h-screen py-12" />;
 }
 
 // ── Übersicht der Früh-Ansichten (pdf-embed / nur-live-link) ────────────────
@@ -132,9 +128,11 @@ function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
             dem Linien-Kanon (§2.2⑦). Das PDF IST die amtliche Fassung (§7/§8). */}
         <div className="relative">
           {!pdfBereit && (
-            <div aria-hidden className="absolute inset-0 z-sticky flex flex-col items-center justify-center gap-3 rounded-lg border border-rule-struktur bg-paper-sunken py-12 text-center">
-              <div className="scale-rule max-w-[200px]" />
-              <p className="text-body-s text-ink-500">Amtliches PDF wird geladen …</p>
+            // W3-7: `aria-hidden` ist gefallen — die vorige Fassung verbarg die
+            // Ladeauskunft vollständig vor Screenreadern (kein `role="status"`
+            // hätte darunter ohnehin gewirkt); `Ladeanzeige` kündigt sie jetzt an.
+            <div className="absolute inset-0 z-sticky flex flex-col items-center justify-center rounded-lg border border-rule-struktur bg-paper-sunken py-12">
+              <Ladeanzeige text="Amtliches PDF wird geladen …" />
             </div>
           )}
           <iframe src={`/normtext/${erlass.pdfPfad}#view=FitH`} title={`${erlass.kuerzel} — amtliches PDF`}
