@@ -86,7 +86,8 @@ const escRe = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
  * (BE-PDF «100.2025.363U» = OCL «100 2025 363», Messung 25.9.2026); rein
  * numerische Aktenzeichen zusätzlich mit BE-Suffix-Buchstabe («…363U») und
  * verbundenen Verfahren («100.2026.142/143» deckt 142 und 143). Mehrere
- * Aktenzeichen («B 2024/58, B 2024/59») einzeln. Kein Präfix-/Suffix-Treffer:
+ * Aktenzeichen («B 2024/58, B 2024/59») einzeln; eine Jahres-Gruppe vor der
+ * laufenden Nummer auch zweistellig (GR «SBK 26 38»). Kein Präfix-/Suffix-Treffer:
  * davor/danach keine Ziffer/kein Buchstabe, danach auch kein «.<Ziffer>».
  * Leer ⇒ null. Exportiert für Tests.
  */
@@ -97,7 +98,9 @@ export function aktenzeichenRe(docket: string | null | undefined): RegExp | null
     const numerisch = g.every((x) => /^\d+$/.test(x));
     const letzte = escRe(g[g.length - 1]);
     const ende = numerisch ? `(?:\\d+/)*${letzte}(?:/\\d+)*[A-Z]?` : letzte;
-    return [...g.slice(0, -1).map(escRe), ende].join('[ .]');
+    // GR-Referenz mit Kurzjahr: «SBK 26 38» = «SBK 2026 38» (PDF-Kopf, Messung 25.9.2026).
+    const jahr = (x: string) => (/^(?:19|20)\d{2}$/.test(x) ? `(?:${x.slice(0, 2)})?${x.slice(2)}` : escRe(x));
+    return [...g.slice(0, -1).map(jahr), ende].join('[ .]');
   }).filter(Boolean);
   return alts.length ? new RegExp(`(?<![\\p{L}\\d.])(?:${alts.join('|')})(?![\\p{L}\\d]|\\.\\d)`, 'u') : null;
 }

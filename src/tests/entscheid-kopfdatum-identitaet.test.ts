@@ -95,6 +95,12 @@ describe('Befund 3 — Aktenzeichen-Identität: Leerzeichen/Punkt, verbundene Ve
     expect(re('UV 2025/14').test('XUV 2025/14')).toBe(false);
     expect(re('B 2023/225').test('B 2023/225A')).toBe(false);
   });
+  it('GR-Referenz mit Kurzjahr («Referenz SBK 26 38», echter PDF-Kopf) = «SBK 2026 38», eng', () => {
+    expect(re('SBK 2026 38').test('mitgeteilt am 28. Mai 2026 Referenz SBK 26 38 Instanz')).toBe(true);
+    expect(re('SBK 2026 38').test('Referenz SBK 26 388')).toBe(false);
+    expect(re('SBK 2026 38').test('Referenz SBK 25 38')).toBe(false);
+    expect(re('B 2023/225').test('B 23/225')).toBe(false);
+  });
   it('mehrere Aktenzeichen (SG «B 2024/58, B 2024/59»): jedes einzeln', () => {
     expect(re('B 2024/58, B 2024/59').test('(Verwaltungsgericht, B 2024/58 und B 2024/59)')).toBe(true);
   });
