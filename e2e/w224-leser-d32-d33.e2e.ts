@@ -31,6 +31,7 @@
 import { blattFuerArtikel, blattReiter } from './helpers/fassungsRubrik'
 import { test, expect, type Page } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
+import { panelAufziehen } from './helpers/panelOeffnen'
 
 const FELD = '[data-v3-such-zone] input'
 /** Die Lese-ZELLE (Gesetzesspalte) — dieselbe Fläche, die `rahmenSpalten` misst. */
@@ -251,6 +252,30 @@ test.describe('Entscheid A — das Erlass-Blatt ist eine Spalte mit Schiene, wie
     await page.keyboard.press('r')
     await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
     await expect(schiene).toBeFocused()
+
+    expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
+  })
+
+  // (m) Bug-Check 25.9.2026, Nachzug zu PR #1097 (Befund 2/3): dieselbe
+  // Fokus-Rückgabe wie (j), aber in der SPLIT-ANSICHT. `usePopoverAutoZu`
+  // suchte den Öffner beim Schliessen dokumentweit (`document.querySelector`)
+  // — im Split traf das immer den ERSTEN Öffner im DOM (das PRIMÄRE Pane),
+  // auch wenn Panel und Klick im SEKUNDÄREN Pane standen.
+  test('(m) Split @1440: Esc gibt den Fokus an den Öffner IM SEKUNDÄREN Pane zurück, nicht an den primären', async ({ page }) => {
+    test.slow()
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/OR?p=/gesetze/bund/ZGB')
+    const sekundaer = page.locator('[data-pane="sekundaer"]')
+    await expect(sekundaer).toBeVisible({ timeout: 20_000 })
+    await expect(sekundaer.locator('[data-v3-kopf]')).toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(500)
+    await panelAufziehen(page, sekundaer)
+    const oeffnerSekundaer = sekundaer.locator('[data-v3-panel-oeffner]').first()
+    await expect(oeffnerSekundaer).toBeVisible({ timeout: 20_000 })
+    await page.keyboard.press('Escape')
+    await expect(page.locator('[data-v3-panel]')).toHaveCount(0, { timeout: 15_000 })
+    await expect(oeffnerSekundaer).toBeFocused()
 
     expect(fehler, `Konsolen-/Seitenfehler: ${fehler.join(' | ')}`).toEqual([])
   })
