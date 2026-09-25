@@ -69,6 +69,7 @@ export interface RailPunkt { anker: string; marke: string; tiefe: number; anzahl
 // trug keine Aussage mehr, die nicht der Kontext schon trägt).
 export const ErwaegungsRail = memo(function ErwaegungsRail({
   gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe, markenSchalter, sucheAktiv,
+  mindestHinweis = false,
 }: {
   /** Erwägungs-Gliederung der SICHTBAREN Fassung (`erwaegungsGliederung`). */
   gliederung: readonly RailPunkt[];
@@ -98,6 +99,11 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
    *  ohne Rückfall aufs rohe `suche`: ein vergessener Prop wäre sonst wieder die
    *  Zwei-Stände-Kante; so fängt sie der Compiler (Bug-Check 21.9.2026). */
   sucheAktiv: boolean;
+  /** REST S1 (Entscheid David 22.9.2026, Suche ab zwei Zeichen): das Feld
+   *  trägt Text, der noch keine Suche ist. Der Slot sagt es ruhig an, statt
+   *  stumm nicht zu reagieren (§8) — bewusst OHNE aria-live (keine
+   *  zusätzlichen Sprechakte je Tastendruck, Entscheid Zählzeile). */
+  mindestHinweis?: boolean;
 }) {
   // Mobil (und in der schmalen Pane) eingeklappt starten: der Lesetext gehört
   // zuerst ans Auge. Ob die Spalte steht, entscheidet allein CSS — kein
@@ -169,6 +175,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
               dieses Slots ist, dass er RESERVIERT ist, und ein Slot, der beim
               Tippen doch einwächst, wäre genau der gemessene Fehler von oben. */}
           <div className="mt-1 min-h-12">
+          {mindestHinweis && <p data-erw-mindestlaenge className="text-micro text-ink-500">Suche ab zwei Zeichen.</p>}
           {aktiv && (
             // §8: BEIDE Zahlen, sobald sie auseinanderfallen. «16 Treffer»
             // allein verschwiege, dass fünf davon im Sachverhalt liegen und in

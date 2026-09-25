@@ -4,6 +4,7 @@
  * und `…-marken-schalter-hervorhebung-…`), je ein Block:
  *   (a) Zählzeile bleibt während der Rechenzeit LEER — Platz reserviert,
  *       kein «wird gezählt» (keine zusätzlichen aria-live-Sprechakte).
+ *   (b) Suche erst ab zwei Zeichen — Rail, Zähler, Landkarte und Hervorhebung.
  * Harness wie `entscheid-erw-ein-stand.test.tsx`: Fake-Timer-Render gegen den
  * echten `ErwBereich`-Baum (linkedom + react-dom/client).
  */
@@ -13,6 +14,8 @@ import { parseHTML } from 'linkedom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ErwBereich } from '../pages/entscheidErwBereich';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
+import { readFileSync } from 'node:fs';
+import { sucheWirksam } from '../pages/entscheidLeserRegeln';
 
 const ABSCHNITTE: EntscheidAbschnitt[] = [
   { typ: 'sachverhalt', bloecke: [{ marke: null, text: 'A. Ausgangslage.' }] },
@@ -87,5 +90,52 @@ describe('(a) Zählzeile während der Rechenzeit: leer, Platz reserviert', () =>
     expect(ziel.querySelector('[aria-live]'), 'keine Ansage vor dem Ergebnis').toBeNull();
     await act(async () => { vi.advanceTimersByTime(0); });
     expect(ziel.querySelector('[data-erw-treffer]')?.textContent).toMatch(/^2 Treffer in 2 Erwägungen/);
+  });
+});
+
+describe('(b) Suche erst ab zwei Zeichen', () => {
+  beforeEach(() => { vi.useFakeTimers(); });
+  afterEach(async () => {
+    await abbauen();
+    vi.unstubAllGlobals();
+    vi.useRealTimers();
+  });
+
+  it('die Schwelle: zwei Zeichen nach trim(), Einzelzeichen wie «§» tragen keine Suche', () => {
+    expect(sucheWirksam('')).toBe(false);
+    expect(sucheWirksam('§')).toBe(false);
+    expect(sucheWirksam(' 7 ')).toBe(false);
+    expect(sucheWirksam('Be')).toBe(true);
+    expect(sucheWirksam(' 64 ')).toBe(true);
+  });
+
+  it('ein Zeichen: keine Treffer-Zeile, volles Verzeichnis, ruhiger Hinweis ohne aria-live', async () => {
+    const ziel = aufbauen();
+    await rendern(ziel, '');
+    const gliederung = ziel.querySelectorAll('nav[aria-label="Erwägungen"] ul li').length;
+    await rendern(ziel, 'B');
+    await act(async () => { vi.advanceTimersByTime(500); });
+    expect(ziel.querySelector('[data-erw-treffer]'), 'keine Zählung für ein Zeichen').toBeNull();
+    expect(ziel.querySelectorAll('nav[aria-label="Erwägungen"] ul li').length).toBe(gliederung);
+    const hinweis = ziel.querySelector('[data-erw-mindestlaenge]');
+    expect(hinweis?.textContent).toBe('Suche ab zwei Zeichen.');
+    expect(hinweis?.getAttribute('aria-live')).toBeNull();
+  });
+
+  it('das zweite Zeichen betritt die Suche SOFORT (0-ms-Regel), der Hinweis geht', async () => {
+    const ziel = aufbauen();
+    await rendern(ziel, '');
+    await rendern(ziel, 'B');
+    await act(async () => { vi.advanceTimersByTime(0); });
+    await rendern(ziel, 'Be');
+    await act(async () => { vi.advanceTimersByTime(0); });
+    expect(ziel.querySelector('[data-erw-treffer]')?.textContent).toMatch(/Treffer in/);
+    expect(ziel.querySelector('[data-erw-mindestlaenge]')).toBeNull();
+  });
+
+  it('die Hervorhebung im Lesetext hängt an derselben Schwelle', () => {
+    const q = readFileSync('src/pages/EntscheidLeser.tsx', 'utf8');
+    expect(q).toContain('if (sucheWirksam(suche) && !markenAus) {');
+    expect(q).toContain('const markenAus = sucheWirksam(suche) && markenAusRoh;');
   });
 });

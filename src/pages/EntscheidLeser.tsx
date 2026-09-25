@@ -20,7 +20,7 @@ import {
   ENTSCHEID_HIGHLIGHT_INSTANZ, ankunftsAnker,
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
   referenzImTitel, urlMitHash, urlMitLese, zaehleNennungen,
-  angabeImTitel, leitzeileOhneKopfangaben,
+  angabeImTitel, leitzeileOhneKopfangaben, sucheWirksam,
 } from './entscheidLeserRegeln';
 import { datumOderStrich } from '../components/ui/datumText';
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
@@ -274,7 +274,8 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
   // wieder Farbe vor (§8 — ein stumm fortwirkender Schalter liesse Treffer
   // verschwinden, ohne dass jemand ihn gesetzt zu haben glaubt).
   const [markenAusRoh, setzeMarkenAus] = useState(false);
-  const markenAus = suche.trim() !== '' && markenAusRoh;
+  // REST S1: «leer» heisst hier «keine wirksame Suche» (ab zwei Zeichen, `sucheWirksam`).
+  const markenAus = sucheWirksam(suche) && markenAusRoh;
   const [fsIdx, setFsIdx] = useState<number>(ladeFsIdx);
   const setFs = (i: number) => setFsIdx(speichereFsIdx(i));
 
@@ -405,7 +406,8 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
     // W2·28/L-2: weggeschaltet fällt die Suche aus diesem Zweig heraus — die
     // Norm-Markierung darunter greift dann wieder, genau wie bei leerem Feld.
     // Trefferzahl, Rail-Liste und Sprünge bleiben unberührt (§8).
-    if (suche.trim() !== '' && !markenAus) {
+    // REST S1: Hervorhebung erst ab zwei Zeichen — dieselbe Schwelle wie Rail und Zähler (§5).
+    if (sucheWirksam(suche) && !markenAus) {
       // DIESELBE Instanz wie `maleNennungen`/`loescheNennungen`: dadurch ERSETZT
       // die Suche die Nennungs-Menge, statt neben ihr zu stehen — «Suche schlägt
       // Herkunfts-Nennung» bleibt Zeile für Zeile das erklärte Verhalten.
