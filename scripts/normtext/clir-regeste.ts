@@ -24,7 +24,7 @@
 // zierender User-Agent, gedrosselt, Rohantwort gecacht (Re-Parse ohne Re-Crawl).
 
 import type { EntscheidSprache } from '../../src/lib/rechtsprechung/typen';
-import { promises as fs } from 'node:fs';
+import { promises as fs, writeSync } from 'node:fs';
 import * as path from 'node:path';
 
 export interface RegesteTeilRoh {
@@ -57,9 +57,33 @@ export function bgeRefZuClirId(ref: string): string | null {
 
 /** clir-URL einer Sprachfassung (amtliche Quelle-URL, §7). */
 export function clirUrl(clirId: string, sprache: EntscheidSprache): string {
+  return clirUrlAufHost('www.bger.ch', clirId, sprache);
+}
+
+function clirUrlAufHost(host: string, clirId: string, sprache: EntscheidSprache): string {
   const docid = encodeURIComponent(`atf://${clirId}:${sprache}`);
-  return `https://www.bger.ch/ext/eurospider/live/${sprache}/php/clir/http/index.php`
+  return `https://${host}/ext/eurospider/live/${sprache}/php/clir/http/index.php`
     + `?highlight_docid=${docid}&lang=${sprache}&type=show_document`;
+}
+
+/**
+ * Abruf-Spiegel für clir, in Abruf-Reihenfolge — die EINE Stelle (§5; die
+ * Wochenlauf-Stichprobe baute dieselbe Idee lokal nach). Beide Hosts liefern
+ * denselben Pfad, der fachliche Teil (Urteilskopf/Regeste) ist byte-identisch
+ * (Messung 25.9.2026). search.bger.ch ZUERST: www.bger.ch schickt kein
+ * Zwischenzertifikat, Node-fetch scheitert dort sofort mit
+ * UNABLE_TO_VERIFY_LEAF_SIGNATURE (Node 24.16, auch mit --use-system-ca;
+ * curl/Browser ergänzen die Kette selbst) — www zuerst kostete je Abruf einen
+ * Fehlversuch. Ausweichen auf den nächsten Host bei Netz-/TLS-Fehler oder
+ * Status ≥ 500 (Anlass #1099, 25.9.2026: www.bger.ch durchgehend 503, 0/81
+ * Regesten, bis von Hand auf search.bger.ch umgestellt wurde).
+ * Gespeicherte/angezeigte Links bleiben `clirUrl()` = www.bger.ch (Provenienz).
+ */
+export const CLIR_HOSTS = ['search.bger.ch', 'www.bger.ch'] as const;
+
+/** Alle Abruf-URLs einer Sprachfassung in Abruf-Reihenfolge (s. CLIR_HOSTS). */
+export function clirKandidaten(clirId: string, sprache: EntscheidSprache): string[] {
+  return CLIR_HOSTS.map((h) => clirUrlAufHost(h, clirId, sprache));
 }
 
 /**
@@ -233,33 +257,85 @@ export function parseClirUrteilskopf(html: string): { aza: string | null; datumI
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+// ── Ausfall-Buchhaltung je Prozess (kein stilles Schlucken, Anlass #1099) ──
+// Zählt Netz-Abrufe (Cache-Treffer nicht) und endgültig gescheiterte Abrufe
+// samt Grund. Beim Prozessende steht EINE Summenzeile auf stderr, sobald ≥ 1
+// Abruf scheiterte — der aufrufende Generator muss dafür nichts tun.
+const statistik = { abrufe: 0, ausfaelle: 0, gruende: new Map<string, number>() };
+let exitHookGesetzt = false;
+
+/** Summenzeile `[clir] AUSFALL: …` oder null, solange kein Abruf scheiterte. */
+export function clirAusfallZeile(): string | null {
+  if (statistik.ausfaelle === 0) return null;
+  const gruende = [...statistik.gruende].map(([g, n]) => `${g} ×${n}`).join('; ');
+  return `[clir] AUSFALL: ${statistik.ausfaelle} von ${statistik.abrufe} Abrufen fehlgeschlagen (${gruende})`;
+}
+
+/** Nur für Tests: Buchhaltung zurücksetzen. */
+export function clirStatistikZuruecksetzen(): void {
+  statistik.abrufe = 0; statistik.ausfaelle = 0; statistik.gruende.clear();
+}
+
+function exitHookSetzen(): void {
+  if (exitHookGesetzt) return;
+  exitHookGesetzt = true;
+  // 'exit' feuert bei natürlichem Ende UND bei process.exit(); writeSync, weil
+  // im exit-Handler keine asynchrone Ausgabe mehr abläuft.
+  process.once('exit', () => {
+    const zeile = clirAusfallZeile();
+    if (zeile) { try { writeSync(2, zeile + '\n'); } catch { /* stderr zu */ } }
+  });
+}
+
+function fehlerGrund(e: unknown): string {
+  const err = e as { name?: string; code?: string; cause?: { code?: string } };
+  if (err?.name === 'AbortError') return 'Timeout';
+  return err?.cause?.code ?? err?.code ?? err?.name ?? 'Netzfehler';
+}
+
 /**
  * Holt EINE clir-Sprachfassung (mit Datei-Cache; Re-Parse ohne Re-Crawl).
  * iso-8859-1-Dekodierung. Höflich: identifizierender UA, Timeout, Retry, Drossel.
- * Rückgabe: das rohe HTML (oder null bei hartem Fehler/404).
+ * Abruf über `clirKandidaten()` (search.bger.ch, dann www.bger.ch): je Runde
+ * jeder Host einmal, Ausweichen bei Netz-/TLS-Fehler oder Status ≥ 500 (auch
+ * sonstiges !ok); 404 = Dokument fehlt ⇒ sofort null, KEIN Ausweichen.
+ * Rückgabe: das rohe HTML (oder null bei hartem Fehler/404). Harte Fehler
+ * zählen in die Summenzeile (`clirAusfallZeile`).
  */
 export async function holeClirHtml(
   clirId: string, sprache: EntscheidSprache, cacheDir: string, drosselMs = 500,
+  opt: { backoffMs?: number } = {},
 ): Promise<string | null> {
   const cacheDatei = path.join(cacheDir, `${clirId}_${sprache}.html`);
   try { return await fs.readFile(cacheDatei, 'utf8'); } catch { /* nicht gecacht */ }
-  const url = clirUrl(clirId, sprache);
+  exitHookSetzen();
+  statistik.abrufe++;
+  const backoff = opt.backoffMs ?? 800;
+  const urls = clirKandidaten(clirId, sprache);
+  const letzte: string[] = [];
   for (let i = 0; i < 3; i++) {
-    const ac = new AbortController();
-    const t = setTimeout(() => ac.abort(), 45000);
-    try {
-      const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': UA }, redirect: 'follow' });
-      clearTimeout(t);
-      if (res.status === 404) return null;
-      if (!res.ok) { await sleep(800 * (i + 1)); continue; }
-      const buf = new Uint8Array(await res.arrayBuffer());
-      const html = new TextDecoder('iso-8859-1').decode(buf);
-      await fs.mkdir(cacheDir, { recursive: true });
-      await fs.writeFile(cacheDatei, html, 'utf8');
-      await sleep(drosselMs);   // Netz höflich
-      return html;
-    } catch { clearTimeout(t); await sleep(800 * (i + 1)); }
+    letzte.length = 0;
+    for (const url of urls) {
+      const host = new URL(url).host;
+      const ac = new AbortController();
+      const t = setTimeout(() => ac.abort(), 45000);
+      try {
+        const res = await fetch(url, { signal: ac.signal, headers: { 'User-Agent': UA }, redirect: 'follow' });
+        clearTimeout(t);
+        if (res.status === 404) return null;
+        if (!res.ok) { letzte.push(`${host}: HTTP ${res.status}`); continue; }
+        const buf = new Uint8Array(await res.arrayBuffer());
+        const html = new TextDecoder('iso-8859-1').decode(buf);
+        await fs.mkdir(cacheDir, { recursive: true });
+        await fs.writeFile(cacheDatei, html, 'utf8');
+        await sleep(drosselMs);   // Netz höflich
+        return html;
+      } catch (e) { clearTimeout(t); letzte.push(`${host}: ${fehlerGrund(e)}`); }
+    }
+    if (i < 2) await sleep(backoff * (i + 1));
   }
+  statistik.ausfaelle++;
+  for (const g of letzte) statistik.gruende.set(g, (statistik.gruende.get(g) ?? 0) + 1);
   return null;
 }
 
