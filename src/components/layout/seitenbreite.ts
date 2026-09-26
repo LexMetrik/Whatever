@@ -26,7 +26,7 @@ export type Seitenart =
  *  wächter (B1c) je Art misst. Leser-Schlüssel aus `public/*\/register.json`. */
 export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; beispielPfad: string }>> = {
   startseite: { stufe: 'weit', beispielPfad: '/' }, // W2·31 (25.9.2026): Kachelspalte, Blätter, «Häufig gebraucht»
-  rubrik: { stufe: 'content', beispielPfad: '/rechner' },
+  rubrik: { stufe: 'weit', beispielPfad: '/rechner' }, // B10 (26.9.2026): Katalog-Raster /rechner, /vorlagen
   rechner: { stufe: 'weit', beispielPfad: '/rechner/kuendigung' }, // B3 (25.9.2026): Eingabe ‖ Ergebnis
   vorlage: { stufe: 'content', beispielPfad: '/vorlagen/testament' },
   gesetze: { stufe: 'weit', beispielPfad: '/gesetze' }, // B4 (25.9.2026): Erlass-Register (Titel-Spur)

@@ -4891,6 +4891,26 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
     border-right: 1px solid var(--rule-soft); padding-right: 1.375rem;
   }
   .kt-werkbank:has(> .kt-einstieg) > :not(.kt-einstieg) { grid-column: 2; }
+  /* W2·31-BILDSCHIRMBREITE B10 (26.9.2026): neben der Themenleiste GENAU zwei
+     Spalten, sobald das Raster 2 × 350 + 26 = 726 px fasst (350 = die Zeile
+     mobil @390). Gemessen (Preview, /rechner): @1536 mit offener Seitenleiste
+     (460 px) misst das Raster 752 px — mit dem Bestand `min(380px)` fiel es
+     auf EINE Spalte (Bedarf 786), jetzt 2 à 363. Stufe weit @1920 misst es
+     1116 px: DREI Spalten (Probe mit 350: 3 à 355) brachen die langen
+     Rechner-Untertitel auf bis zu 7 Zeilen à ~35 Zeichen um und sparten keine
+     Höhe (Scroll 3.12 gegen 3.09 Viewports) — darum Deckel 2 (à 545).
+     `- 1px`: Rundungspuffer, damit zwei Spuren nie an einem Subpixel scheitern.
+     Nur hier: /vorlagen und die Startseite (ohne Leiste) behalten 380.
+     Nachzug Gegenprüfung B10 (26.9.2026): Selektor ohne `:has(> .kt-einstieg)`
+     — bei aktivem Filter fehlt die Themenleiste (RechnerUebersicht.tsx
+     rendert `ZweiachsigerEinstieg` nur ungefiltert), das `:has` griff dann
+     nicht und `.kt-raster` fiel auf die 380-px-Basisregel zurück: @1920 mit
+     Filter DREI Spalten à ~447 px, Untertitel bis 4+ Zeilen. Der Deckel gilt
+     darum für JEDES `.kt-raster` unter `.kt-werkbank` — mit wie ohne
+     Seitenspalte —, `/vorlagen` bleibt unberührt (kein `.kt-werkbank` dort). */
+  .kt-werkbank .kt-raster {
+    grid-template-columns: repeat(auto-fill, minmax(max(min(350px, 100%), calc((100% - 1.625rem) / 2 - 1px)), 1fr));
+  }
 }
 
 /* Einstieg nach Rechtsgebiet: Klapp-Zeilen mit Haarlinie; zweispaltig von
