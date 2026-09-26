@@ -193,7 +193,7 @@ for (const slug of ['gmbh-gruendung', 'kapitalerhoehung']) {
 }
 
 for (const slug of ['testament', 'mietvertrag']) {
-  test(`/vorlagen/${slug}: Zeilenfall @1920 gleich wie @1280 (Musterdaten)`, async ({ page }) => {
+  test(`/vorlagen/${slug}: Zeilenfall @1920 wie @1280 (Musterdaten, ±3 %)`, async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 800 });
     await bereit(page, `/vorlagen/${slug}`, true);
     const schmal = await messe(page);
@@ -206,7 +206,13 @@ for (const slug of ['testament', 'mietvertrag']) {
     expect(schmal.zoom).toBe(1);
     expect(Math.abs(schmal.satz! - SATZ)).toBeLessThanOrEqual(1);
     expect(schmal.zeilen).toBeGreaterThan(20);
-    expect(breit.zeilen, `Zeilen @1280 ${schmal.zeilen} / @1920 ${breit.zeilen}`).toBe(schmal.zeilen);
+    // Toleranz (26.9.2026, CI-Befund #1150): unter `zoom` rundet die Schrift auf
+    // Linux-Runnern anders als auf macOS — gemessen testament 22 → 23, mietvertrag
+    // 92 → 94 Zeilen, lokal (macOS) exakt gleich. Die Zusage «das Blatt wächst,
+    // die Zeile nicht» bleibt scharf: ein mitwachsender Satzspiegel (z. B. zoom
+    // ohne Satzbreiten-Deckel, 624 statt 446 px) senkt die Zeilenzahl um ~30 %.
+    const toleranz = Math.max(1, Math.ceil(schmal.zeilen! * 0.03));
+    expect(Math.abs(breit.zeilen! - schmal.zeilen!), `Zeilen @1280 ${schmal.zeilen} / @1920 ${breit.zeilen} (Toleranz ${toleranz})`).toBeLessThanOrEqual(toleranz);
   });
 }
 
