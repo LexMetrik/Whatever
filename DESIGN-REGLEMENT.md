@@ -2213,6 +2213,22 @@ Begründungen in `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor `e2e/qsui-hier
    `e2e/qsui-hierarchie.e2e.ts` für die Route einzeln fahren oder die Textlänge
    netto halten — Füllwörter kürzen, nie die Offenlegung.
 
+**Grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5, 26.9.2026).**
+Das Vorschau-Papier hat EINE Geometrie (`src/index.css`, Block «Vorlagen:
+grösseres Papier»): Hat das Panel (`VorschauPanel`, Griff
+`data-vorschau-panel`) weniger als 43.5rem Platz, füllt das Papier ihn wie
+bisher; ab 43.5rem steht ein festes Blatt, dessen Satzspiegel als Ganzes um
+1.4 vergrössert ist (`zoom`), bei unveränderter Satzbreite von 27.875rem in
+Papier-Einheiten — der Zeilenfall ist derselbe wie in der 520-px-Spalte
+(B2a: Fliesstext wächst nie; Ziff. 6: das Papier folgt seinem Format, nicht
+dem Bildschirm). Kopfzeile, Disclaimer und alles unter dem Papier bleiben
+unvergrössert und höchstens 32.5rem breit. Im Wizard (Arbeitsfläche
+`@container/vorlagenflaeche`) bleibt die Formularspalte höchstens 32.5rem;
+ab 80rem steht rechts das grosse Blatt, bündig mit dem Rahmen, und die
+Mindesthöhe der Vorschau-Zelle wächst mit dem Zoom. Die Mappen zeigen
+dasselbe Blatt statt einer Bahn über die ganze Rahmenbreite. Druck, PDF und
+DOCX sind unberührt (`@media screen`). Wächter: `e2e/vorlagen-breite.e2e.ts`.
+
 ### §V · Prüfung (Checkliste vor Commit)
 
 1. `npm run golden:vergleich` byte-gleich (Inhalt unberührt — Hauptbeweis §6).
