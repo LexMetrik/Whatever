@@ -1,0 +1,56 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "kanton/SG/sg_gerichte/B2024_185_B2024_186",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "abteilung": "B",
+      "nummer": "B 2024/185, B 2024/186",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2024/185, B 2024/186 vom 12.03.2025",
+      "datum": "2025-03-12",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "steuern",
+      "legalArea": "tax",
+      "rubrum": null,
+      "regeste": {
+        "text": "Erlass der Kantons- und Gemeindesteuern und der direkten Bundessteuer. Art. 224 Abs. 1 StG (sGS 811.1). Art. 167 DBG (SR 642.11). Steuererlassverordnung; SR 642.121.\nEin Steuererlass fiel konkret zufolge fehlenden Nachweises einer grossen Härte/Notlage (Art. 224 Abs. 1 StG) sowie fehlender Rücklagenbildung (Art. 167a lit. b DBG) ausser Betracht, weshalb die Frage der Gläubigerbevorzugung offenbleiben konnte. Abweisung der Beschwerde und Bestätigung des angefochtenen Entscheids.\n(Verwaltungsgericht, B 2024/185, B 2024/186)\nAuf eine gegen dieses Urteil erhobene Beschwerde trat das Bundesgericht mit Urteil vom 25. April 2025 nicht ein (Verfahren 9D_6/2025).",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "St.Gallen Verwaltungsgericht 12.03.2025 B 2024/185, B 2024/186 Saint-Gall Verwaltungsgericht 12.03.2025 B 2024/185, B 2024/186 San Gallo Verwaltungsgericht 12.03.2025 B 2024/185, B 2024/186\n\nErlass der Kantons- und Gemeindesteuern und der direkten Bundessteuer. Art. 224 Abs. 1 StG (sGS 811.1). Art. 167 DBG (SR 642.11). Steuererlassverordnung; SR 642.121. Ein Steuererlass fiel konkret zufolge fehlenden Nachweises einer grossen Härte/Notlage (Art. 224 Abs. 1 StG) sowie fehlender Rücklagenbildung (Art. 167a lit. b DBG) ausser Betracht, weshalb die Frage der Gläubigerbevorzugung offenbleiben konnte. Abweisung der Beschwerde und Bestätigung des angefochtenen Entscheids. (Verwaltungsgericht, B 2024/185, B 2024/186) Auf eine gegen dieses Urteil erhobene Beschwerde trat das Bundesgericht mit Urteil vom 25. April 2025 nicht ein (Verfahren 9D_6/2025).\n\nSt.Gallen Verwaltungsgericht Saint-Gall Verwaltungsgericht San Gallo Verwaltungsgericht"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 167 DBG",
+        "Art. 167a DBG",
+        "Art. 224 Abs. 1 STG"
+      ],
+      "normKeys": [
+        "DBG"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13533&type=1563347022&cHash=8fdd05c1d7b2a4e80775cd3f60f20cd9",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "fd16e661dc18a0435626d3ef782b9082ee37689e9fc68f000a58a5aea51ffd0e",
+      "sha": "e347df4f83b20a963a9523ba94e11baf68b7b3b697771e01d9cb84c3f0b32da1",
+      "ecli": "ECLI:CH:SGG:2025:B.2024.185.B.2024.186"
+    }
+  ]
+}
