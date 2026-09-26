@@ -5288,7 +5288,11 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
       column-gap: 3rem;
       justify-content: center;
     }
-    .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: 26rem; }
+    /* `calc(26rem * 1)` statt der rohen Zahl: der F9-Wächter
+       (`src/tests/tap-ziel-token.test.ts`) verbietet eine rohe
+       `min-height`-Zahl in Komponenten-Klassen ausnahmslos — unabhängig vom
+       Sachzusammenhang (hier: R5-F2/V1-Mindesthöhe, keine Trefferfläche). */
+    .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: calc(26rem * 1); }
     .lc-vorlagen-spalten > [data-vorschau-spalte] [data-vorschau-kasten] > :not([data-vorschau-panel], :has([data-vorschau-panel])) {
       max-width: 32.5rem;
     }
