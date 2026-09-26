@@ -5250,7 +5250,7 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
          Eine Ersatz-Vorschau (`vorschauErsatz`, z. B. «Kein Dokument») bleibt
          32.5rem breit; ein Seiten-Wrapper um das Panel (AG-Gründung:
          Dokument-Wahl) bleibt ungedeckelt, sonst schnitte der Deckel das
-         Blatt. Die Mindesthöhe der Vorschau-Zelle (`md:min-h-[26rem]`,
+         Blatt. Die Mindesthöhe der Vorschau-Zelle (`md:min-h-vorschau` (26rem),
          R5-F2/V1: kein Guckloch bei kurzen Schritten) wächst mit dem Zoom
          (nur unter `@supports`, s. (A)) — sonst zeigte das grössere Blatt bei
          kurzen Schritten weniger Papierzeilen als vorher (Sichtprüfung
@@ -5288,11 +5288,9 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
       column-gap: 3rem;
       justify-content: center;
     }
-    /* `calc(26rem * 1)` statt der rohen Zahl: der F9-Wächter
-       (`src/tests/tap-ziel-token.test.ts`) verbietet eine rohe
-       `min-height`-Zahl in Komponenten-Klassen ausnahmslos — unabhängig vom
-       Sachzusammenhang (hier: R5-F2/V1-Mindesthöhe, keine Trefferfläche). */
-    .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: calc(26rem * 1); }
+    /* Mindesthöhe aus dem Token `minHeight.vorschau` (tailwind.config.js) —
+       dieselbe Quelle wie `md:min-h-vorschau` in wizard.tsx (§5, F9/D2). */
+    .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: theme('minHeight.vorschau'); }
     .lc-vorlagen-spalten > [data-vorschau-spalte] [data-vorschau-kasten] > :not([data-vorschau-panel], :has([data-vorschau-panel])) {
       max-width: 32.5rem;
     }
@@ -5302,7 +5300,7 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
       [data-wizard-grid].lc-vorlagen-spalten {
         grid-template-columns: 32.5rem calc(27.875rem * var(--papier-zoom) + 4.5rem + 2px);
       }
-      .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: calc(26rem * var(--papier-zoom)); }
+      .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: calc(theme('minHeight.vorschau') * var(--papier-zoom)); }
     }
   }
 }

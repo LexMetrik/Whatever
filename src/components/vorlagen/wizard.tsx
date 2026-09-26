@@ -257,8 +257,8 @@ export function VorlagenWizardRahmen({
             Mechanik auf, sonst druckte nur der Ausschnitt. Kein
             `lc-scrollrand-y`: das Blatt deckte dessen Verlauf zu. */}
         <div data-vorschau-spalte className={pk(
-          'hidden md:block md:relative md:self-stretch md:min-h-[26rem]',
-          'hidden @3xl/pane:block @3xl/pane:relative @3xl/pane:self-stretch @3xl/pane:min-h-[26rem]')}>
+          'hidden md:block md:relative md:self-stretch md:min-h-vorschau',
+          'hidden @3xl/pane:block @3xl/pane:relative @3xl/pane:self-stretch @3xl/pane:min-h-vorschau')}>
           <div className={pk('md:absolute md:inset-0 print:static', '@3xl/pane:absolute @3xl/pane:inset-0 print:static')}>
             <div tabIndex={0} aria-label="Dokument-Vorschau" data-vorschau-kasten
               className={pk(

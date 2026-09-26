@@ -425,7 +425,7 @@ export default {
       // 17.5rem: 2 × 280 + 16 = 576 → Unterkante 795 ≤ 800. Die Kacheln tragen
       // ~200 px Inhalt, sie verlieren nur Leerraum; die Gesetze-Wahl passt nach
       // den Blatt-Massen in `index.css` (U13) trotzdem ohne Scroll (Inhalt 520 ≤ 528 px Sicht).
-      minHeight: { 'start-schnell': '32.25rem', 'start-schnell-eng': '44.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '17.5rem', 'start-kachel-s': '8.25rem', 'titel-2z': '2.35em', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem' },
+      minHeight: { 'start-schnell': '32.25rem', 'start-schnell-eng': '44.5rem', 'start-kachel': '13.75rem', 'start-kachel-breit': '17.5rem', 'start-kachel-s': '8.25rem', 'titel-2z': '2.35em', 'bez-skelett': '3rem', 'inhalt-region': 'calc(100svh - 8rem)', 'kopf-stand': '5.4375rem', 'kopf-stand-sm': '4.375rem', 'kopf-stand-md': '3.375rem', vorschau: '26rem' }, // vorschau: Mindesthöhe der Vorlagen-Vorschauzelle (R5-F2/V1; eine Quelle für wizard.tsx und index.css, W2·31 B5 26.9.2026)
       // E4-Korrektur (David 25.7.2026): der frühere `toc-kontext`-33vh-Slot-
       // Token ist ERSATZLOS entfernt — er klemmte das Gliederungs-Sichtfenster
       // ein («aktuell schneidet es gliederung ab»). Das Kontext-Panel steht
