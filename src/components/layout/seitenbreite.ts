@@ -28,7 +28,7 @@ export const SEITENBREITE: Readonly<Record<Seitenart, { stufe: Breitenstufe; bei
   startseite: { stufe: 'weit', beispielPfad: '/' }, // W2·31 (25.9.2026): Kachelspalte, Blätter, «Häufig gebraucht»
   rubrik: { stufe: 'weit', beispielPfad: '/rechner' }, // B10 (26.9.2026): Katalog-Raster /rechner, /vorlagen
   rechner: { stufe: 'weit', beispielPfad: '/rechner/kuendigung' }, // B3 (25.9.2026): Eingabe ‖ Ergebnis
-  vorlage: { stufe: 'content', beispielPfad: '/vorlagen/testament' },
+  vorlage: { stufe: 'weit', beispielPfad: '/vorlagen/testament' }, // B5 (26.9.2026): Formular ‖ grösseres Papier
   gesetze: { stufe: 'weit', beispielPfad: '/gesetze' }, // B4 (25.9.2026): Erlass-Register (Titel-Spur)
   'gesetz-leser': { stufe: 'content', beispielPfad: '/gesetze/bund/OR' },
   rechtsprechung: { stufe: 'weit', beispielPfad: '/rechtsprechung' },

@@ -11,3 +11,5 @@ im Lesemass. Abgrenzung: `plan/posten/2026-09-20-vorlagen-breite.md` (Dach W3-AU
 Themen-/Fallabdeckung der Vorlagen, nicht Bildschirmbreite — keine Doppelung, nur Namensnähe.
 Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
+
+**Erledigt 2026-09-26:** PR #1150

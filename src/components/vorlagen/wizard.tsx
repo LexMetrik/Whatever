@@ -181,8 +181,14 @@ export function VorlagenWizardRahmen({
       {/* Zweispaltig: Formular links, klebende Vorschau rechts; mobil
           einspaltig mit einklappbarer Vorschau. `items-start`: die Karte
           schlägt oben an — die Zeilenhöhe bemisst die Formular-Spalte, nicht
-          das Dokument (R5-F2/V1, Messung `abnahme/design-identitaet/R5-F2.md`). */}
-      <div data-wizard-grid className={`grid grid-cols-1 items-start ${pk('md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]', '@3xl/pane:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]')} gap-6 ${pk('md:gap-8', '@3xl/pane:gap-8')}`}>
+          das Dokument (R5-F2/V1, Messung `abnahme/design-identitaet/R5-F2.md`).
+          W2·31-BILDSCHIRMBREITE B5: die Hülle `@container/vorlagenflaeche`
+          misst die Breite der Arbeitsfläche (Fenster, Seitenleiste, Pane) —
+          ab 84rem wird das Papier grösser (`index.css`, `.lc-vorlagen-spalten`).
+          Eigene Hülle statt Container am Wurzel-Div: der schwebende
+          «Vorschau ↓»-Knopf (`fixed`) bleibt ausserhalb des Containers. */}
+      <div className="@container/vorlagenflaeche">
+      <div data-wizard-grid className={`lc-vorlagen-spalten grid grid-cols-1 items-start ${pk('md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]', '@3xl/pane:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]')} gap-6 ${pk('md:gap-8', '@3xl/pane:gap-8')}`}>
         <div className="flex min-w-0 flex-col">
         {/* Formularstrecke: Linien statt Kasten (R5-F2/V3) — 2 px `--rule`
             oben, 1 px `--rule-soft` unten. `data-formular-karte` = Messgriff. */}
@@ -250,11 +256,11 @@ export function VorlagenWizardRahmen({
             sein muss (axe `scrollable-region-focusable`). `print:` hebt die
             Mechanik auf, sonst druckte nur der Ausschnitt. Kein
             `lc-scrollrand-y`: das Blatt deckte dessen Verlauf zu. */}
-        <div className={pk(
-          'hidden md:block md:relative md:self-stretch md:min-h-[26rem]',
-          'hidden @3xl/pane:block @3xl/pane:relative @3xl/pane:self-stretch @3xl/pane:min-h-[26rem]')}>
+        <div data-vorschau-spalte className={pk(
+          'hidden md:block md:relative md:self-stretch md:min-h-vorschau',
+          'hidden @3xl/pane:block @3xl/pane:relative @3xl/pane:self-stretch @3xl/pane:min-h-vorschau')}>
           <div className={pk('md:absolute md:inset-0 print:static', '@3xl/pane:absolute @3xl/pane:inset-0 print:static')}>
-            <div tabIndex={0} aria-label="Dokument-Vorschau"
+            <div tabIndex={0} aria-label="Dokument-Vorschau" data-vorschau-kasten
               className={pk(
                 'md:sticky md:top-28 md:max-h-[min(calc(100dvh-8rem),100%)] md:overflow-y-auto md:overscroll-contain print:static print:max-h-none print:overflow-visible',
                 '@3xl/pane:sticky @3xl/pane:top-28 @3xl/pane:max-h-[min(calc(100dvh-8rem),100%)] @3xl/pane:overflow-y-auto @3xl/pane:overscroll-contain print:static print:max-h-none print:overflow-visible')}>
@@ -262,6 +268,7 @@ export function VorlagenWizardRahmen({
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       {/* Mobil: schwebender Sprung zur Live-Vorschau — gefülltes Pill, damit
@@ -489,7 +496,7 @@ export function VorschauPanel({ ergebnis, kompakt, extra, nichtAufgenommen, dire
   const stilStore = useAusgabeStil();
   const stil = stilOverride ?? stilStore;
   return (
-    <div className="space-y-4">
+    <div data-vorschau-panel className="space-y-4">
       {/* Live-Vorschau als «Papier» — dieselben Formatvorlagen wie PDF und
           DOCX; das Blatt bleibt Blatt (Fläche + Kante), auch im Werkbank-Kleid.
           `data-dokument`: Tor-Griff (qsui-hierarchie I8/I9) — das Verdikt einer
@@ -504,7 +511,7 @@ export function VorschauPanel({ ergebnis, kompakt, extra, nichtAufgenommen, dire
           </p>
           <StilUmschalter stil={stil} />
         </div>
-        <div className="font-sans text-ink-900" style={{ ...VORSCHAU.papier, ...(kompakt ? { fontSize: 'var(--vorschau-fs-kompakt)', lineHeight: 1.55 } : { fontSize: 'var(--vorschau-fs)', lineHeight: 1.6 }) }}>
+        <div data-papier className="font-sans text-ink-900" style={{ ...VORSCHAU.papier, ...(kompakt ? { fontSize: 'var(--vorschau-fs-kompakt)', lineHeight: 1.55 } : { fontSize: 'var(--vorschau-fs)', lineHeight: 1.6 }) }}>
           {/* Eingaben tragen ihren Titel im fetten Betreff – kein Dokumenttitel;
               Verfügung/Vertrag: zentrierter Titel MIT Haarlinie (wie PDF/DOCX) */}
           {ergebnis.dokument.format !== 'eingabe' && (

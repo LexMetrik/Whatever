@@ -2213,6 +2213,34 @@ Begründungen in `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor `e2e/qsui-hier
    `e2e/qsui-hierarchie.e2e.ts` für die Route einzeln fahren oder die Textlänge
    netto halten — Füllwörter kürzen, nie die Offenlegung.
 
+**Grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5,
+26.9.2026; Gegenprüfungs-Nachzug 26.9.2026: Zoom 1.2 statt 1.4, zentriert
+statt Fuge in der Mitte, `@supports`-Schutz).**
+Das Vorschau-Papier hat EINE Geometrie (`src/index.css`, Block «Vorlagen:
+grösseres Papier»): Hat das Panel (`VorschauPanel`, Griff
+`data-vorschau-panel`) weniger als 37.5rem Platz, füllt das Papier ihn wie
+bisher; ab 37.5rem steht ein festes Blatt, dessen Satzspiegel als Ganzes um
+1.2 vergrössert ist (`zoom`), bei unveränderter Satzbreite von 27.875rem in
+Papier-Einheiten — der Zeilenfall ist derselbe wie in der 520-px-Spalte
+(B2a: Fliesstext wächst nie; Ziff. 6: das Papier folgt seinem Format, nicht
+dem Bildschirm). 1.4 zeigte @1920 spürbar weniger Vorschautext je Bildschirm
+(Innen-Scroll Mietvertrag 2.98 → 4.03); die Schwelle 37.5rem (vormals
+43.5rem) folgt dem kleineren Zoom — sonst läge sie über der neuen, kleineren
+Blattbreite (38.075rem) und die Vergrösserung spränge nie mehr an.
+Kopfzeile, Disclaimer und alles unter dem Papier bleiben unvergrössert und
+höchstens 32.5rem breit. Im Wizard (Arbeitsfläche `@container/vorlagenflaeche`)
+bleibt die Formularspalte höchstens 32.5rem; ab 80rem steht rechts das
+grosse Blatt, das Formular-Blatt-Paar **zentriert** im Rahmen (nicht mehr
+bündig mit dem Rahmen: das drückte das Formular an den linken Rand mit einer
+Fuge von ~174 px statt symmetrischer Aussenränder), der Spaltenabstand
+bleibt der bisherige `gap` (3rem), und die Mindesthöhe der Vorschau-Zelle
+wächst mit dem Zoom. Ohne `zoom`-Unterstützung (Firefox < 126) gilt dasselbe
+feste Blatt OHNE Vergrösserung (`@supports (zoom: 1.2)` schützt die
+Breiten-/Höhenformeln — sonst wüchse der Kasten, während der Satz mangels
+`zoom` bei der Grundgrösse bliebe). Die Mappen zeigen dasselbe Blatt statt
+einer Bahn über die ganze Rahmenbreite. Druck, PDF und DOCX sind unberührt
+(`@media screen`). Wächter: `e2e/vorlagen-breite.e2e.ts`.
+
 ### §V · Prüfung (Checkliste vor Commit)
 
 1. `npm run golden:vergleich` byte-gleich (Inhalt unberührt — Hauptbeweis §6).
