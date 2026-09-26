@@ -5183,3 +5183,84 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   }
   .lc-rechner-spalten .lc-reiterleiste > .lc-tab { height: 2.25rem; }
 }
+
+/* ═══ Vorlagen: grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5, 26.9.2026) ═══
+   Gemessen (Stufe content): Formular 520 ‖ Vorschau 520 px auf 1280, 1680 und
+   1920 in allen 27 Wizard-Vorlagen — das Papier (Satzbreite 446 px,
+   Grundschrift 14.72 px) blieb auf jeder Breite gleich klein, links und rechts
+   je 400 px leer (@1920). In den zwei Mappen (GmbH-Gründung, Kapitalerhöhung)
+   lief das Papier dagegen über die ganze Rahmenbreite: 1000 px Satzbreite, bis
+   163 Zeichen je Zeile im Bausteinprotokoll. Die Seitenart `vorlage` steht
+   darum auf `weit` (seitenbreite.ts), und das Papier hat EINE Geometrie:
+
+   (A) Papier (`[data-vorschau-panel]`, wizard.tsx `VorschauPanel`, gemessen an
+       der Breite des Panels selbst — Wizard-Spalte, Mappen-Reiter, mobiler
+       Klappblock): Hat das Panel weniger Platz als ein grosses Blatt, füllt
+       das Papier ihn wie bisher. Ab 43.5rem Platz steht ein festes Blatt:
+       Satzspiegel um `--papier-zoom` vergrössert (`zoom`), Satzbreite in
+       Papier-Einheiten 27.875rem = 446 px — die Breite des Wizard-Papiers bei
+       1280 px. Der Zeilenfall (Zeichen je Zeile) bleibt damit derselbe;
+       breiter wird nur das Blatt, in seiner eigenen Proportion (Grundsatz
+       David 25.9.2026: Fliesstext wächst nie). `zoom` statt `font-size`: die
+       Rollen-Abstände stehen in rem (`vorschauStil.ts`, §V-2) — eine grössere
+       Schrift allein verschöbe das Verhältnis Schrift zu Einzug und Abstand;
+       `zoom` skaliert Schrift, Einzüge, Linien und Abstände gemeinsam. 1.4 =
+       20.6 px Grundschrift: das Blatt füllt die Arbeitsfläche der Stufe weit
+       (1392 px) neben der Formularspalte bis auf eine Fuge von rund 11rem;
+       mehr wäre Präsentationsgrösse, weniger eine breitere leere Fuge.
+       Kopfzeile des Papiers (Stil-Umschalter) und Disclaimer bleiben
+       unvergrössert; alles unter dem Papier (Direkt-Export, Zusatzblöcke,
+       Bausteinprotokoll) bleibt unvergrössert und höchstens 32.5rem breit —
+       Bedienung und Beiwerk, deren Zeilen dürfen nicht länger werden als in
+       der 520-px-Spalte. Wirkung in den Mappen auch bei 1280 px (Panel
+       1072 px): Blatt statt Bahn, Protokoll gedeckelt.
+   (B) Wizard-Raster (`.lc-vorlagen-spalten`, gemessen an der Arbeitsfläche
+       `@container/vorlagenflaeche`): Die Formularspalte bleibt höchstens
+       32.5rem = 520 px, ihre Breite bei 1280 px. Grund (Messung 26.9.2026,
+       Wortzählung wie e2e/seitenbreite): eine 40rem-Spalte liess Hinweise,
+       Notizen und Protokollzeilen in 27 Vorlagen auf 83–119 Zeichen je Zeile
+       wachsen (278 Funde @1920 gegen 27 vorbestehende @1280).
+       · über 67rem (1072 px = Stufe content, dort unverändert) bis unter 80rem:
+         beide Spalten höchstens 32.5rem, der Rest geht in die Fuge;
+       · ab 80rem (Stufe weit @1536–1920: 1392 px): rechts die Spalte des
+         grossen Blatts (27.875rem × Zoom + Innenabstand 2 × 2.25rem `sm:p-9`
+         + 2 px Kante), das Blatt schliesst rechts mit dem Rahmen ab
+         (`space-between`). Eine Ersatz-Vorschau (`vorschauErsatz`, z. B.
+         «Kein Dokument») bleibt 32.5rem breit; ein Seiten-Wrapper um das
+         Panel (AG-Gründung: Dokument-Wahl) bleibt ungedeckelt, sonst schnitte
+         der Deckel das Blatt. Die Mindesthöhe der Vorschau-Zelle
+         (`md:min-h-[26rem]`, R5-F2/V1: kein Guckloch bei kurzen Schritten)
+         wächst mit dem Zoom — sonst zeigte das grössere Blatt bei kurzen
+         Schritten weniger Papierzeilen als vorher (Sichtprüfung 26.9.2026:
+         Testament Schritt 1, Kasten 460 px, fünf Zeilen).
+   Offene Seitenleiste (460 px) @1536, Schriftskala 1.4 und 390 px bleiben
+   unter den Schwellen: unverändert. Reine Darstellung (§3): DOM-, Lese- und
+   Tab-Reihenfolge unverändert; der Assemble-Text ist nicht berührt (golden
+   byte-gleich). `@media screen`: Ausdruck, PDF und DOCX sind unberührt. */
+@media screen {
+  :where(.lc-vorlagen-spalten, [data-vorschau-panel]) { --papier-zoom: 1.4; }
+  [data-vorschau-panel] { container: vorschaupanel / inline-size; }
+  @container vorschaupanel (width >= 43.5rem) {
+    [data-vorschau-panel] > [data-dokument] {
+      width: min(100%, calc(27.875rem * var(--papier-zoom) + 4.5rem + 2px));
+    }
+    [data-vorschau-panel] > [data-dokument] > [data-papier] { zoom: var(--papier-zoom); }
+    [data-vorschau-panel] > :not([data-dokument]) { max-width: 32.5rem; }
+  }
+  @container vorlagenflaeche (width > 67rem) {
+    [data-wizard-grid].lc-vorlagen-spalten {
+      grid-template-columns: repeat(2, minmax(0, 32.5rem));
+      justify-content: space-between;
+    }
+  }
+  @container vorlagenflaeche (width >= 80rem) {
+    [data-wizard-grid].lc-vorlagen-spalten {
+      grid-template-columns: 32.5rem calc(27.875rem * var(--papier-zoom) + 4.5rem + 2px);
+      column-gap: 3rem;
+    }
+    .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: calc(26rem * var(--papier-zoom)); }
+    .lc-vorlagen-spalten > [data-vorschau-spalte] [data-vorschau-kasten] > :not([data-vorschau-panel], :has([data-vorschau-panel])) {
+      max-width: 32.5rem;
+    }
+  }
+}
