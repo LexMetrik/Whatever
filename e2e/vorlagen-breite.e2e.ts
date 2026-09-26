@@ -2,19 +2,24 @@
 import { test, expect, type Page } from '@playwright/test';
 import { ROUTEN_MANIFEST } from '../src/routesManifest';
 
-// ─── Vorlagen: grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5, 26.9.2026) ──
+// ─── Vorlagen: grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5, 26.9.2026;
+//     Gegenprüfungs-Nachzug 26.9.2026: Zoom 1.4→1.2, Paar zentriert statt Fuge
+//     in der Mitte, `@supports`-Schutz für `zoom`) ──
 //
 // `e2e/seitenbreite.e2e.ts` prüft den RAHMEN der Seitenart `vorlage` (Stufe
 // weit, 1440 px ab 2xl). Was die Breite NUTZT, prüft dieser Wächter
 // (Regeln: `src/index.css`, Block «Vorlagen: grösseres Papier»):
 //  (1) @1920, ALLE Vorlagen-Routen aus `ROUTEN_MANIFEST` (§5 — keine
 //      abgeschriebene Liste): das Papier (`[data-vorschau-panel] >
-//      [data-dokument]`) ist um 1.4 vergrössert, seine Satzbreite bleibt in
-//      Papier-Einheiten 446 px (= 27.875rem, die Breite bei 1280 px); die
-//      Formularspalte bleibt ≤ 520 px (32.5rem) und alles unter dem Papier
-//      bzw. eine Ersatz-Vorschau ≤ 520 px — so kann keine Zeile länger werden
-//      als bei 1280 px (Grundsatz David 25.9.2026: Fliesstext wächst nie).
-//      Wizard: das Blatt schliesst rechts mit dem Raster ab. Keine
+//      [data-dokument]`) ist um `--papier-zoom` vergrössert (Erwartung aus der
+//      CSS-Variable gelesen, nicht als Literal — Gegenprüfungs-Auflage
+//      26.9.2026), seine Satzbreite bleibt in Papier-Einheiten 446 px
+//      (= 27.875rem, die Breite bei 1280 px); die Formularspalte bleibt
+//      ≤ 520 px (32.5rem) und alles unter dem Papier bzw. eine Ersatz-Vorschau
+//      ≤ 520 px — so kann keine Zeile länger werden als bei 1280 px
+//      (Grundsatz David 25.9.2026: Fliesstext wächst nie). Wizard: das
+//      Formular-Blatt-Paar steht ZENTRIERT im Rahmen — die Aussenränder links
+//      und rechts sind gleich gross (±2 px), keine einseitige Fuge. Keine
 //      horizontale Scrollbar.
 //  (1b) Mappen (GmbH-Gründung, Kapitalerhöhung) mit Musterdaten: dasselbe
 //      Blatt (Zoom, Satzbreite, Protokoll-Deckel) statt der Bahn über die
@@ -33,16 +38,28 @@ import { ROUTEN_MANIFEST } from '../src/routesManifest';
 // `[data-vorschau-panel] > :not([data-dokument]) { max-width: 32.5rem }`
 // streichen → Beiwerk unter dem Papier 698 px: (1) rot; (c) in index.css die
 // Regel `[data-vorschau-panel] { container: … }` streichen → kein Zoom:
-// (1) rot auf den Mappen und den Wizard-Routen.
+// (1) rot auf den Mappen und den Wizard-Routen; (d) in index.css bei
+// `(width >= 80rem)` `justify-content: center` durch `space-between` ersetzen
+// → Formular klebt links (Rand links 0 px, Rand rechts ~215 px): (1) rot
+// (Ränder-Assertion) auf allen Wizard-Routen — Rot-Beweis 26.9.2026:
+// Vollmacht @1920 Rand links 0 / rechts 214.8 statt 107.4/107.4.
+//
+// `zoom`-Fallback ohne `@supports`-Schutz (Firefox < 126 kennt `zoom` nicht):
+// mit Chromium simuliert (CDP `Emulation.setEmulatedMedia`-Override auf die
+// Vergrösserungsformel OHNE `@supports`-Gate) wuchs der Kasten auf die
+// Zielbreite, während der Satz mangels `zoom` bei der Grundgrösse blieb —
+// die Regeln stehen darum im eigenen `@supports (zoom: 1.2)`-Block
+// (`src/index.css`); dieser Wächter prüft nur den Regelfall (Chromium
+// unterstützt `zoom`), das Fallback-Verhalten ist im CSS-Kommentar belegt.
 
 const VORLAGEN = ROUTEN_MANIFEST.map((r) => r.pfad).filter((p) => p.startsWith('/vorlagen/'));
-const ZOOM = 1.4;
 const SATZ = 446; // 27.875rem
 const SPALTE = 520; // 32.5rem
 
 interface Messung {
-  wizard: boolean; grid: number | null; form: number | null; zelle: number | null;
-  papier: number | null; zoom: number | null; satz: number | null; papierRechts: number | null;
+  wizard: boolean; grid: number | null; gridLinks: number | null; form: number | null;
+  formLinks: number | null; zelle: number | null; papier: number | null; zoom: number | null;
+  zoomVar: number | null; satz: number | null; papierRechts: number | null;
   gridRechts: number | null; beiwerk: number; zeilen: number | null; querscroll: boolean;
 }
 
@@ -68,6 +85,12 @@ async function messe(page: Page): Promise<Messung> {
     const papier = panel?.querySelector(':scope > [data-dokument]') ?? null;
     const koerper = papier?.querySelector(':scope > [data-papier]') ?? null;
     const zoom = sicht(koerper) ? Number(getComputedStyle(koerper).zoom) : null;
+    // `--papier-zoom` DIREKT aus der CSS-Variable gelesen (Gegenprüfungs-
+    // Auflage 26.9.2026: die Zoom-Erwartung kommt aus der Variable, nicht als
+    // Literal im Test) — Träger ist `.lc-vorlagen-spalten` oder das Panel
+    // selbst (`:where(...)`-Regel in index.css).
+    const zoomTraeger = document.querySelector('.lc-vorlagen-spalten') ?? panel;
+    const zoomVar = zoomTraeger ? parseFloat(getComputedStyle(zoomTraeger).getPropertyValue('--papier-zoom')) : null;
     // Beiwerk: Panel-Kinder ausser dem Papier; Ersatz-Vorschau im Kasten.
     const beiwerk = [
       ...(panel ? [...panel.children].filter((c) => !c.matches('[data-dokument]')) : []),
@@ -92,10 +115,13 @@ async function messe(page: Page): Promise<Messung> {
     return {
       wizard: sicht(grid),
       grid: w(grid),
+      gridLinks: sicht(grid) ? grid.getBoundingClientRect().left : null,
       form: sicht(grid) ? w(grid.firstElementChild) : null,
+      formLinks: sicht(grid) ? grid.firstElementChild!.getBoundingClientRect().left : null,
       zelle: w(zelle),
       papier: w(papier),
       zoom,
+      zoomVar,
       satz: sicht(koerper) && zoom ? koerper.getBoundingClientRect().width / zoom : null,
       papierRechts: sicht(papier) ? papier.getBoundingClientRect().right : null,
       gridRechts: sicht(grid) ? grid.getBoundingClientRect().right : null,
@@ -112,7 +138,7 @@ test('Routenliste: alle Vorlagen aus dem Manifest', () => {
 });
 
 for (const pfad of VORLAGEN) {
-  test(`${pfad} @1920: Papier ×${ZOOM} bei gleicher Satzbreite, Formular und Beiwerk ≤ ${SPALTE} px`, async ({ page }) => {
+  test(`${pfad} @1920: Papier ×--papier-zoom bei gleicher Satzbreite, Formular und Beiwerk ≤ ${SPALTE} px, Aussenränder symmetrisch`, async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1080 });
     await bereit(page, pfad);
     const m = await messe(page);
@@ -125,14 +151,24 @@ for (const pfad of VORLAGEN) {
     // Seiten ohne Papier (Checkliste Kündigung Vermieter; Mappen und
     // AG-Gründung ohne Dokument: Leerzustand) prüfen nur Rahmen und Beiwerk.
     if (m.papier == null) return;
-    if (m.wizard) expect(Math.abs(m.papierRechts! - m.gridRechts!), ort).toBeLessThanOrEqual(1);
-    expect(m.zoom, ort).toBeCloseTo(ZOOM, 5);
+    if (m.wizard) {
+      // Gegenprüfungs-Auflage 26.9.2026: das Formular-Blatt-Paar steht
+      // zentriert im Rahmen — Rand links (Formular↔Raster) und Rand rechts
+      // (Papier↔Raster) sind gleich gross, keine einseitige Fuge in der Mitte.
+      // (Vormals prüfte dieser Wächter «Blatt schliesst rechts mit dem
+      // Rahmen ab» — genau das war Befund 1 der Gegenprüfung: das drückte
+      // das Formular an den linken Rand.)
+      const randLinks = m.formLinks! - m.gridLinks!;
+      const randRechts = m.gridRechts! - m.papierRechts!;
+      expect(Math.abs(randLinks - randRechts), `${ort} randLinks=${randLinks} randRechts=${randRechts}`).toBeLessThanOrEqual(2);
+    }
+    expect(m.zoom, ort).toBeCloseTo(m.zoomVar!, 5);
     expect(Math.abs(m.satz! - SATZ), ort).toBeLessThanOrEqual(1);
   });
 }
 
 for (const slug of ['gmbh-gruendung', 'kapitalerhoehung']) {
-  test(`/vorlagen/${slug} (Mappe, Musterdaten) @1920: Blatt statt Bahn — Papier ×${ZOOM}, Satzbreite ${SATZ} px, Protokoll ≤ ${SPALTE} px`, async ({ page }) => {
+  test(`/vorlagen/${slug} (Mappe, Musterdaten) @1920: Blatt statt Bahn — Papier ×--papier-zoom, Satzbreite ${SATZ} px, Protokoll ≤ ${SPALTE} px`, async ({ page }) => {
     // Vorher lief das Mappen-Papier über die ganze Rahmenbreite (Satzbreite
     // 998 px @1280, bis 163 Zeichen je Zeile im Bausteinprotokoll).
     await page.setViewportSize({ width: 1920, height: 1080 });
@@ -140,7 +176,7 @@ for (const slug of ['gmbh-gruendung', 'kapitalerhoehung']) {
     const m = await messe(page);
     const ort = JSON.stringify(m);
     expect(m.papier, ort).not.toBeNull();
-    expect(m.zoom, ort).toBeCloseTo(ZOOM, 5);
+    expect(m.zoom, ort).toBeCloseTo(m.zoomVar!, 5);
     expect(Math.abs(m.satz! - SATZ), ort).toBeLessThanOrEqual(1);
     expect(m.beiwerk, ort).toBeLessThanOrEqual(SPALTE + 0.5);
   });
@@ -152,7 +188,10 @@ for (const slug of ['testament', 'mietvertrag']) {
     await bereit(page, `/vorlagen/${slug}`, true);
     const schmal = await messe(page);
     await page.setViewportSize({ width: 1920, height: 1080 });
-    await expect.poll(async () => (await messe(page)).zoom).toBeCloseTo(ZOOM, 5);
+    await expect.poll(async () => {
+      const m = await messe(page);
+      return m.zoomVar ? m.zoom! / m.zoomVar : null;
+    }).toBeCloseTo(1, 5);
     const breit = await messe(page);
     expect(schmal.zoom).toBe(1);
     expect(Math.abs(schmal.satz! - SATZ)).toBeLessThanOrEqual(1);
