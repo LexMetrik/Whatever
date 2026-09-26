@@ -55,6 +55,7 @@ import { ROUTEN_MANIFEST } from '../src/routesManifest';
 const VORLAGEN = ROUTEN_MANIFEST.map((r) => r.pfad).filter((p) => p.startsWith('/vorlagen/'));
 const SATZ = 446; // 27.875rem
 const SPALTE = 520; // 32.5rem
+const SPALTENGAP = 48; // 3rem, column-gap zwischen Formular und Blatt ab 80rem (index.css)
 
 interface Messung {
   wizard: boolean; grid: number | null; gridLinks: number | null; form: number | null;
@@ -154,13 +155,22 @@ for (const pfad of VORLAGEN) {
     if (m.wizard) {
       // Gegenprüfungs-Auflage 26.9.2026: das Formular-Blatt-Paar steht
       // zentriert im Rahmen — Rand links (Formular↔Raster) und Rand rechts
-      // (Papier↔Raster) sind gleich gross, keine einseitige Fuge in der Mitte.
-      // (Vormals prüfte dieser Wächter «Blatt schliesst rechts mit dem
-      // Rahmen ab» — genau das war Befund 1 der Gegenprüfung: das drückte
-      // das Formular an den linken Rand.)
+      // (Papier↔Raster) sind gleich gross UND spürbar > 0 (nicht nur
+      // zufällig gleich, wie es `space-between` mit genau 2 Spalten auch
+      // liefert — dort sind BEIDE Ränder 0 und die Restfläche steckt
+      // unsichtbar in der Fuge; Rot-Beweis 26.9.2026 fing genau das ab, ehe
+      // die `randLinks`/`randRechts`-Gleichheit allein geprüft wurde).
+      // Die Spaltenfuge selbst bleibt der feste `column-gap` (3rem = 48 px,
+      // `index.css`) statt die Restfläche zu verschlucken.
+      const formRight = m.formLinks! + m.form!;
+      const papierLeft = m.papierRechts! - m.papier!;
+      const fugeMitte = papierLeft - formRight;
       const randLinks = m.formLinks! - m.gridLinks!;
       const randRechts = m.gridRechts! - m.papierRechts!;
-      expect(Math.abs(randLinks - randRechts), `${ort} randLinks=${randLinks} randRechts=${randRechts}`).toBeLessThanOrEqual(2);
+      const belege = `${ort} fugeMitte=${fugeMitte} randLinks=${randLinks} randRechts=${randRechts}`;
+      expect(Math.abs(fugeMitte - SPALTENGAP), belege).toBeLessThanOrEqual(2);
+      expect(randLinks, belege).toBeGreaterThan(10);
+      expect(Math.abs(randLinks - randRechts), belege).toBeLessThanOrEqual(2);
     }
     expect(m.zoom, ort).toBeCloseTo(m.zoomVar!, 5);
     expect(Math.abs(m.satz! - SATZ), ort).toBeLessThanOrEqual(1);
