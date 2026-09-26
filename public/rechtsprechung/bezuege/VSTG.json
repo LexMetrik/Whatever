@@ -18,7 +18,8 @@
 "bge_151_II_494":{"zitierung":"BGE 151 II 494","regesteKurz":"Art. 31 und 32 VRK; Art. 11 Abs. 1 DBA CH-DK; Nutzungsberechtigung an Zinsen; Rechtsmissbrauch im Völkerrecht. Die Auslegung von Art. 11 Abs. 1 DBA CH-DK ergibt, dass nur gesetzliche und vertragliche Weiterleitungsverpflichtungen die…","datum":"2024-10-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_68":{"zitierung":"BGE 151 II 68","regesteKurz":"Art. 120 Abs. 2 BGG; Art. 20 der Verordnung vom 22. August 1967 über die Anrechnung ausländischer Quellensteuern, vormals Verordnung über die pauschale Steueranrechnung; Art. 57 f. VStG; Zulässigkeit der Klage eines Kantons gegen den Bund…","datum":"2024-08-12","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_827":{"zitierung":"BGE 151 II 827","regesteKurz":"Art. 5 aAbs. 1 bis VStG; Kapitaleinlageprinzip; gesonderte Verbuchung in der Handelsbilanz und Meldung an die ESTV; Vermächtnis. Wenn Inhaber von Beteiligungsrechten der Gesellschaft vermächtnisweise Aktiven zuwenden, liegt eine…","datum":"2025-03-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_151_II_827__voll":{"zitierung":"Urteil 9C_690/2023 (nicht publ. in BGE 151 II 827)","regesteKurz":null,"datum":"2025-03-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 827","urteil":"9C_690/2023"}}
+"bge_151_II_827__voll":{"zitierung":"Urteil 9C_690/2023 (nicht publ. in BGE 151 II 827)","regesteKurz":null,"datum":"2025-03-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 827","urteil":"9C_690/2023"}},
+"bstger_BV_2026_10":{"zitierung":"BStGer BV.2026.10 vom 21. August 2026","regesteKurz":"Sequestro (art. 46 DPA)","datum":"2026-08-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bstger","status":"eidg"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_147_II_338","gewicht":0}],
@@ -47,6 +48,7 @@
 "57":[{"key":"bge_151_II_68","gewicht":0}],
 "58":[{"key":"bge_151_II_68","gewicht":0}],
 "61":[{"key":"bge_150_II_437","gewicht":0}],
+"67":[{"key":"bstger_BV_2026_10","gewicht":null}],
 "4a":[{"key":"bge_150_II_369","gewicht":0}]
 },
 "gesamtProArtikel":{
@@ -76,6 +78,7 @@
 "57":{"bge":1},
 "58":{"bge":1},
 "61":{"bge":1},
+"67":{"eidg":1},
 "4a":{"bge":1}
 }
 }

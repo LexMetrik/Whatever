@@ -11,10 +11,11 @@
 "bge_151_II_304":{"zitierung":"BGE 151 II 304","regesteKurz":"Art. 18 Abs. 1 ter NHG; Art. 14 Abs. 6 NHV; Art. 7 Abs. 4 JSG; Fuss- und Wanderwegprojekt in einem der letzten nicht erschlossenen Tobel der Region; Autonomiebeschwerde der Gemeinden gegen die teilweise Aufhebung dieses Projekts durch das…","datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_II_304__voll":{"zitierung":"Urteil 1C_217/2023 (nicht publ. in BGE 151 II 304)","regesteKurz":null,"datum":"2024-11-21","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 II 304","urteil":"1C_217/2023"}},
 "bge_152_II_298":{"zitierung":"BGE 152 II 298","regesteKurz":"Art. 78 Abs. 2 BV; Art. 2 und 12 NHG; Art. 19 Abs. 2 GSchG; Art. 32 Abs. 2 GSchV; Art. 17 WaG; Art. 16 VVEA; Beschwerdelegitimation des Schweizer Heimatschutzes; Vorliegen einer Bundesaufgabe. Eine Bundesaufgabe liegt vor, wenn für Anlagen…","datum":"2025-09-01","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bge_152_II_311":{"zitierung":"BGE 152 II 311","regesteKurz":"a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…","datum":"2025-11-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}}
+"bge_152_II_311":{"zitierung":"BGE 152 II 311","regesteKurz":"a Art. 10 Abs. 2 und Art. 13 WaG; Waldfeststellung; Geltung des statischen oder dynamischen Waldbegriffs. Frage offengelassen, ob die im Jahr 1996 rechtskräftig festgestellte statische Waldgrenze - wie in Art. 13 Abs. 1 WaG vorgeschrieben…","datum":"2025-11-27","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
+"sg_gerichte_B2025_70":{"zitierung":"Verwaltungs-/Versicherungsgericht SG B 2025/70 vom 25.08.2025","regesteKurz":"Wahl- und Abstimmungsfreiheit, Art. 40 Abs. 1 KV, Art. 1 Abs. 1 lit. d Ziff. 2 WAG Das Verfahren zur Zuteilung der 63 in einem einzigen Wahlkreis zu vergebenden Sitze des St. Galler Stadtparlaments auf die beteiligten Listen und…","datum":"2025-08-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"SG","gericht":"sg_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
-"1":[{"key":"bge_150_I_213","gewicht":0}],
+"1":[{"key":"bge_150_I_213","gewicht":0},{"key":"sg_gerichte_B2025_70","gewicht":null}],
 "2":[{"key":"bge_152_II_311","gewicht":0}],
 "5":[{"key":"bge_152_II_311","gewicht":0},{"key":"bge_149_II_86","gewicht":0},{"key":"bge_148_II_36","gewicht":1},{"key":"bge_147_II_319","gewicht":2}],
 "6":[{"key":"bge_147_II_319__voll","gewicht":0,"erwaegungen":["E. 7","E. 7.1","E. 7.2"]}],
@@ -27,7 +28,7 @@
 "50":[{"key":"bge_150_I_213","gewicht":0}]
 },
 "gesamtProArtikel":{
-"1":{"bge":1},
+"1":{"bge":1,"kantonal":1},
 "2":{"bge":1},
 "5":{"bge":4},
 "6":{"bger":1},

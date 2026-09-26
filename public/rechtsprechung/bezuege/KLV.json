@@ -3,6 +3,7 @@
 "erlass":"KLV",
 "erlassEbene":"bund",
 "dokumente":{
+"be_verwaltungsgericht_2002025685":{"zitierung":"Verwaltungsgericht BE 200 2025 685 vom 18.08.2026","regesteKurz":null,"datum":"2026-08-18","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BE","gericht":"be_verwaltungsgericht","status":"kantonal"}},
 "bge_146_V_129__voll":{"zitierung":"Urteil 9C_529/2019 (nicht publ. in BGE 146 V 129)","regesteKurz":null,"datum":"2020-05-11","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"146 V 129","urteil":"9C_529/2019"}},
 "bge_146_V_253":{"zitierung":"BGE 146 V 253","regesteKurz":"Art. 25, 27 und 52 Abs. 2 KVG; Art. 33 und 35 KVV; Art. 5 KLV; therapeutische Massnahmen im Zusammenhang mit Geburtsgebrechen. Es besteht kein Anspruch darauf, dass die Kosten einer Hippotherapie, welche der an angeborenen cerebralen…","datum":"2020-06-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_147_V_16":{"zitierung":"BGE 147 V 16","regesteKurz":"a Art. 43 ATSG; Art. 18 Abs. 1 UVV in der bis am 31. Dezember 2016 gültig gewesenen Fassung; Abklärung des Anspruchs auf Hauspflegeleistungen. Art. 43 ATSG statuiert keine Rechtspflicht, eine bestimmte Methode, genau definierte Verfahren…","datum":"2020-08-28","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
@@ -40,8 +41,8 @@
 "proArtikel":{
 "1":[{"key":"bge_152_V_20","gewicht":0},{"key":"bge_151_V_158","gewicht":0}],
 "5":[{"key":"bge_146_V_253","gewicht":0},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
-"7":[{"key":"bge_152_V_8","gewicht":0},{"key":"bge_151_V_1","gewicht":0},{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":1},{"key":"bge_148_V_28","gewicht":1},{"key":"bge_147_V_73","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_147_V_16","gewicht":2},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.4","gewicht":null}],
-"8":[{"key":"bge_151_V_1","gewicht":0},{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_147_V_16","gewicht":1},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
+"7":[{"key":"bge_152_V_8","gewicht":0},{"key":"bge_151_V_1","gewicht":0},{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":1},{"key":"bge_148_V_28","gewicht":1},{"key":"bge_147_V_73","gewicht":0},{"key":"bge_147_V_35","gewicht":1},{"key":"bge_147_V_16","gewicht":2},{"key":"be_verwaltungsgericht_2002025685","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.4","gewicht":null}],
+"8":[{"key":"bge_151_V_1","gewicht":0},{"key":"bge_150_V_281","gewicht":0},{"key":"bge_150_V_273","gewicht":0},{"key":"bge_147_V_16","gewicht":1},{"key":"be_verwaltungsgericht_2002025685","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.12","gewicht":null}],
 "10":[{"key":"bge_146_V_253","gewicht":0}],
 "17":[{"key":"bge_147_V_187","gewicht":0}],
 "28":[{"key":"bge_146_V_253","gewicht":0}],
@@ -66,15 +67,15 @@
 "37e":[{"key":"bge_149_V_119","gewicht":0}],
 "3b":[{"key":"bge_151_V_233","gewicht":0}],
 "4b":[{"key":"bge_151_V_284","gewicht":0}],
-"7a":[{"key":"bge_150_V_281","gewicht":0},{"key":"bge_148_V_28","gewicht":0},{"key":"bge_147_V_450","gewicht":0},{"key":"bge_147_V_16","gewicht":1},{"key":"bs_sozialversicherungsgericht_KV.2024.4-20251114","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.16","gewicht":null}],
-"8a":[{"key":"bge_147_V_450","gewicht":0}],
+"7a":[{"key":"bge_150_V_281","gewicht":0},{"key":"bge_148_V_28","gewicht":0},{"key":"bge_147_V_450","gewicht":0},{"key":"bge_147_V_16","gewicht":1},{"key":"be_verwaltungsgericht_2002025685","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.4-20251114","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.3","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2024.1","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.16","gewicht":null}],
+"8a":[{"key":"bge_147_V_450","gewicht":0},{"key":"be_verwaltungsgericht_2002025685","gewicht":null}],
 "8c":[{"key":"bge_150_V_273","gewicht":0}]
 },
 "gesamtProArtikel":{
 "1":{"bge":2},
 "5":{"bge":1,"kantonal":1},
-"7":{"bge":8,"kantonal":2},
-"8":{"bge":4,"kantonal":1},
+"7":{"bge":8,"kantonal":3},
+"8":{"bge":4,"kantonal":2},
 "10":{"bge":1},
 "17":{"bge":1},
 "28":{"bge":1},
@@ -99,8 +100,8 @@
 "37e":{"bge":1},
 "3b":{"bge":1},
 "4b":{"bge":1},
-"7a":{"bge":4,"kantonal":4},
-"8a":{"bge":1},
+"7a":{"bge":4,"kantonal":5},
+"8a":{"bge":1,"kantonal":1},
 "8c":{"bge":1}
 }
 }

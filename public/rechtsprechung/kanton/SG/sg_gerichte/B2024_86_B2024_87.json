@@ -1,0 +1,57 @@
+{
+  "erzeugt": "2026-09-25",
+  "eintraege": [
+    {
+      "id": "kanton/SG/sg_gerichte/B2024_86_B2024_87",
+      "gericht": "sg_gerichte",
+      "gerichtName": "Verwaltungs-/Versicherungsgericht SG",
+      "gerichtstyp": "kantonal",
+      "kanton": "SG",
+      "abteilung": "B",
+      "nummer": "B 2024/86, B 2024/87",
+      "bgeReferenz": null,
+      "zitierung": "Verwaltungs-/Versicherungsgericht SG B 2024/86, B 2024/87 vom 06.11.2024",
+      "datum": "2024-11-06",
+      "sprache": "de",
+      "leitcharakter": "routine",
+      "sachgebiet": "steuern",
+      "legalArea": "tax",
+      "rubrum": null,
+      "regeste": {
+        "text": "Steuerrecht, Nachsteuern, Art. 199 StG, Art. 151 DBG, Ermessenveranlagung, Art. 177 StG, Art. 130 Abs. 2 DBG. Die Steuerpflichtige hatte während mehrerer Steuerjahre drei ausländische Bankkonti nicht deklariert, weshalb Nachsteuern zu erheben waren. Da die steuerfreie Herkunft der Gelder auf den drei nicht deklarierten Konti von der Beschwerdeführerin nicht hinreichend nachgewiesen wurde, erfolgte eine entsprechende Aufrechnung als Einkommen (Verwaltungsgericht, B 2024/86, B 2024/87).\n\nAuf eine gegen dieses Urteil erhobene Beschwerde trat das Bundesgericht mit Urteil vom 6. März 2025nicht ein (Verfahren 9C_3/2025)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "erwaegung",
+          "bloecke": [
+            {
+              "marke": null,
+              "text": "St.Gallen Verwaltungsgericht 06.11.2024 B 2024/86, B 2024/87 Saint-Gall Verwaltungsgericht 06.11.2024 B 2024/86, B 2024/87 San Gallo Verwaltungsgericht 06.11.2024 B 2024/86, B 2024/87\n\nSteuerrecht, Nachsteuern, Art. 199 StG, Art. 151 DBG, Ermessenveranlagung, Art. 177 StG, Art. 130 Abs. 2 DBG. Die Steuerpflichtige hatte während mehrerer Steuerjahre drei ausländische Bankkonti nicht deklariert, weshalb Nachsteuern zu erheben waren. Da die steuerfreie Herkunft der Gelder auf den drei nicht deklarierten Konti von der Beschwerdeführerin nicht hinreichend nachgewiesen wurde, erfolgte eine entsprechende Aufrechnung als Einkommen (Verwaltungsgericht, B 2024/86, B 2024/87).\n\nAuf eine gegen dieses Urteil erhobene Beschwerde trat das Bundesgericht mit Urteil vom 6. März 2025nicht ein (Verfahren 9C_3/2025)\n\nSt.Gallen Verwaltungsgericht Saint-Gall Verwaltungsgericht San Gallo Verwaltungsgericht"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [],
+      "zitierteNormen": [
+        "Art. 130 Abs. 2 DBG",
+        "Art. 151 DBG",
+        "Art. 177 STG",
+        "Art. 199 STG"
+      ],
+      "normKeys": [
+        "DBG"
+      ],
+      "zitierteEntscheide": [],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://publikationen.sg.ch/rechtsprechung-gerichte?tx_diamjudicalsg_judicalpublicationpdf%5Bcontroller%5D=DownloadPdf&tx_diamjudicalsg_judicalpublicationpdf%5Bpublication%5D=13305&type=1563347022&cHash=ebc00063c249b0bcaea41cb8e1756c33",
+      "abgerufen": "2026-09-25",
+      "fassungsToken": "94eb120fe4fa2ea4238260e88f027a43ff31ef985624aafa5d1fb17810a8ce6b",
+      "sha": "bbda2903a6e01b7f1f58aa320d20a0aac4ca7d3310411a7b34898461ec8cc379",
+      "ecli": "ECLI:CH:SGG:2024:B.2024.86.B.2024.87"
+    }
+  ]
+}
