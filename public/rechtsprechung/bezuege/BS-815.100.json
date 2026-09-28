@@ -1,15 +1,18 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"BS-815.100",
 "erlassEbene":"kanton",
 "dokumente":{
-"bs_appellationsgericht_VD.2022.132":{"zitierung":"Appellationsgericht BS VD.2022.132 vom 22.03.2023","regesteKurz":"Bewilligung einer Kindertagesstätte","datum":"2023-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2022.132":{"zitierung":"Appellationsgericht BS VD.2022.132 vom 22.03.2023","regesteKurz":"Bewilligung einer Kindertagesstätte","datum":"2023-03-22","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2024.42-79679":{"zitierung":"Appellationsgericht BS ZB.2024.42 vom 20.05.2026","regesteKurz":"Kinderbelange Name, Obhut, persönlicher Verkehr, Unterhalt sowie Beistandschaft (Beschwerde am BG)","datum":"2026-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
+"2":[{"key":"bs_appellationsgericht_ZB.2024.42-79679","gewicht":null}],
 "3":[{"key":"bs_appellationsgericht_VD.2022.132","gewicht":null}],
 "11":[{"key":"bs_appellationsgericht_VD.2022.132","gewicht":null}]
 },
 "gesamtProArtikel":{
+"2":{"kantonal":1},
 "3":{"kantonal":1},
 "11":{"kantonal":1}
 }

@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"MSCHG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -21,6 +21,7 @@
 "bge_150_III_83__voll":{"zitierung":"Urteil 4A_290/2023 (nicht publ. in BGE 150 III 83)","regesteKurz":null,"datum":"2023-11-29","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"150 III 83","urteil":"4A_290/2023"}},
 "bge_151_III_106":{"zitierung":"BGE 151 III 106","regesteKurz":"a Art. 3 Abs. 1 lit. e UWG; unnötige Anlehnung. Bei einer unnötigen Anlehnung wird die eigene Leistung mit derjenigen des Mitbewerbers verbunden, um den Bekanntheitsgrad der fremden Leistung oder des Mitbewerbers auszubeuten. Ein solcher…","datum":"2024-09-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_III_106__voll":{"zitierung":"Urteil 4A_166/2024 (nicht publ. in BGE 151 III 106)","regesteKurz":null,"datum":"2024-09-17","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bger","status":"bger"},"unpubliziert":{"bge":"151 III 106","urteil":"4A_166/2024"}},
+"bpatger_O2022_006":{"zitierung":"BPatGer O2022_006 vom 15. April 2024","regesteKurz":"Erfinderische Tätigkeit, Neuheit, Örtliche Zuständigkeit international, Priorität, Unzulässige Änderung (Art. 123(2) EPÜ)","datum":"2024-04-15","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bpatger","status":"eidg"}},
 "bs_appellationsgericht_ZK.2023.10":{"zitierung":"Appellationsgericht BS ZK.2023.10 vom 04.09.2023","regesteKurz":"Vorsorgliche Massnahmen betreffend UWG","datum":"2023-09-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
@@ -40,7 +41,7 @@
 "49":[{"key":"bge_147_III_326","gewicht":0}],
 "52":[{"key":"bge_150_III_83","gewicht":0},{"key":"bge_148_III_257","gewicht":1},{"key":"bge_147_III_98","gewicht":0},{"key":"bs_appellationsgericht_ZK.2023.10","gewicht":null}],
 "53":[{"key":"bge_147_III_85","gewicht":0}],
-"55":[{"key":"bge_146_III_89","gewicht":0},{"key":"bge_148_III_409__voll","gewicht":0,"erwaegungen":["E. 2","E. 9"]},{"key":"bge_147_III_517__voll","gewicht":0,"erwaegungen":["E. 4"]},{"key":"bge_147_III_85__voll","gewicht":0,"erwaegungen":["E. 2.1","E. 2.3"]}],
+"55":[{"key":"bge_146_III_89","gewicht":0},{"key":"bge_148_III_409__voll","gewicht":0,"erwaegungen":["E. 2","E. 9"]},{"key":"bge_147_III_517__voll","gewicht":0,"erwaegungen":["E. 4"]},{"key":"bge_147_III_85__voll","gewicht":0,"erwaegungen":["E. 2.1","E. 2.3"]},{"key":"bpatger_O2022_006","gewicht":null}],
 "57":[{"key":"bge_146_III_89","gewicht":0},{"key":"bge_148_III_409__voll","gewicht":0,"erwaegungen":["E. 2"]}],
 "64":[{"key":"bge_147_III_326","gewicht":0}],
 "72":[{"key":"bge_146_III_89__voll","gewicht":0,"erwaegungen":["E. 5.3"]}],
@@ -68,7 +69,7 @@
 "49":{"bge":1},
 "52":{"bge":3,"kantonal":1},
 "53":{"bge":1},
-"55":{"bge":1,"bger":3},
+"55":{"bge":1,"bger":3,"eidg":1},
 "57":{"bge":1,"bger":1},
 "64":{"bge":1},
 "72":{"bger":1},

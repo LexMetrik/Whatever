@@ -1,0 +1,86 @@
+{
+  "erzeugt": "2026-09-28",
+  "eintraege": [
+    {
+      "id": "bund/bvger/D_2751_2023",
+      "gericht": "bvger",
+      "gerichtName": "Bundesverwaltungsgericht",
+      "gerichtstyp": "bundesverwaltungsgericht",
+      "kanton": "CH",
+      "abteilung": "Abteilung IV (Asylrecht)",
+      "nummer": "D-2751/2023",
+      "bgeReferenz": null,
+      "zitierung": "BVGer D-2751/2023 vom 16. September 2026",
+      "datum": "2026-09-16",
+      "sprache": "fr",
+      "leitcharakter": "routine",
+      "sachgebiet": "oeffentlich",
+      "legalArea": "administrative",
+      "rubrum": {
+        "besetzung": "Yanick Felley (président du collège), Camilla Mariéthoz Wyssen, Daniele Cattaneo, juges, Nicole Ricklin, greffière",
+        "parteien": "A._______, né le (...), Afghanistan, représenté par Mlaw Mariflor Lopez, BAS Beratungsstelle für Asylsuchende der Region Basel, (...), recourant, contre Secrétariat d'Etat aux migrations (SEM), Quellenweg 6, 3003 Berne, autorité inférieure",
+        "gegenstand": null,
+        "vorinstanz": null
+      },
+      "regeste": {
+        "text": "Asile (sans exécution du renvoi)",
+        "quelle": "opencaselaw"
+      },
+      "regesteAmtlich": false,
+      "abschnitte": [
+        {
+          "typ": "dispositiv",
+          "bloecke": [
+            {
+              "marke": "1.",
+              "text": "Le recours est rejeté."
+            },
+            {
+              "marke": "2.",
+              "text": "La demande d'assistance judiciaire partielle est admise."
+            },
+            {
+              "marke": "3.",
+              "text": "Il n'est pas perçu de frais de procédure."
+            },
+            {
+              "marke": "4.",
+              "text": "Le présent arrêt est adressé au recourant, au SEM et à l'autorité cantonale. Le président du collège: La greffière: Yanick Felley Nicole Ricklin Expédition:"
+            }
+          ]
+        }
+      ],
+      "dispositivOrders": [
+        "Le recours est rejeté.",
+        "La demande d'assistance judiciaire partielle est admise.",
+        "Il n'est pas perçu de frais de procédure.",
+        "Le présent arrêt est adressé au recourant, au SEM et à l'autorité cantonale.\nLe président du collège :"
+      ],
+      "zitierteNormen": [
+        "Art. 105 LASI",
+        "Art. 3 Abs. 1 LASI",
+        "Art. 3 Abs. 2 LASI",
+        "Art. 3 LASI",
+        "Art. 31 LTAF",
+        "Art. 33 LTAF",
+        "Art. 37 LTAF",
+        "Art. 44 LASI"
+      ],
+      "normKeys": [
+        "ASYLG",
+        "VGG"
+      ],
+      "zitierteEntscheide": [
+        "D-2751/2023"
+      ],
+      "bestand": "snapshot",
+      "kuratierung": "maschinell",
+      "quelle": "opencaselaw",
+      "quelleUrl": "https://bvger.weblaw.ch/cache?id=672273a2-8aa3-4c15-a4b0-071662c0dfad&guiLanguage=fr",
+      "abgerufen": "2026-09-28",
+      "fassungsToken": "4b152fb0ba9b4222d8a85d5de7f2d21cea7062823531185958125a4fb8e26d46",
+      "sha": "6f3e0b85f7ad8b53e16cf22dc35706458da7776821a02dd5add45ca32f7be9bb",
+      "ecli": "ECLI:CH:BVGER:2026:D-2751.2023"
+    }
+  ]
+}

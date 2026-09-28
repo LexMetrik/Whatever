@@ -1,6 +1,6 @@
 # Rechtsprechungs-Register — alle zitierten Bundesgerichtsentscheide
 
-Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-09-26
+Generiert: `npx vite-node scripts/bge-register-generieren.ts` · Stand 2026-09-28
 
 **Quelle + Stand:** SSoT ist `src/data/verifikation.ts` (93 Einträge);
 Links deterministisch aus `src/lib/bge.ts`. **URL-Schemata empirisch verifiziert**

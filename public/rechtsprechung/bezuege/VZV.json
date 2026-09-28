@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"VZV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -18,7 +18,8 @@
 "bs_appellationsgericht_SB.2023.8":{"zitierung":"Appellationsgericht BS SB.2023.8 vom 16.11.2023","regesteKurz":"Nichtabgabe von Ausweisen und/oder Kontrollschildern","datum":"2023-11-16","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2019.144":{"zitierung":"Appellationsgericht BS VD.2019.144 vom 23.07.2024","regesteKurz":"Sicherungsentzug des Führerausweises","datum":"2024-07-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2022.239":{"zitierung":"Appellationsgericht BS VD.2022.239 vom 26.02.2023","regesteKurz":"Sicherungsaberkennung und Einzug des ausländischen Führerausweises","datum":"2023-02-26","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_sozialversicherungsgericht_IV.2023.61":{"zitierung":"Sozialversicherungsgericht BS IV.2023.61 vom 05.10.2023","regesteKurz":"IVG","datum":"2023-10-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
+"bs_sozialversicherungsgericht_IV.2023.61":{"zitierung":"Sozialversicherungsgericht BS IV.2023.61 vom 05.10.2023","regesteKurz":"IVG","datum":"2023-10-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
+"gr_gerichte_VR1202631":{"zitierung":"Kantonsgericht GR VR1 2026 31 vom 09.09.2026","regesteKurz":null,"datum":"2026-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "27":[{"key":"bge_151_IV_365","gewicht":0}],
@@ -32,6 +33,7 @@
 "75":[{"key":"bge_150_II_390","gewicht":0}],
 "78":[{"key":"bge_149_IV_299","gewicht":0}],
 "80":[{"key":"bge_150_I_120","gewicht":0}],
+"82":[{"key":"gr_gerichte_VR1202631","gewicht":null}],
 "106":[{"key":"bs_appellationsgericht_SB.2023.8","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.100","gewicht":null}],
 "107":[{"key":"bge_149_IV_299","gewicht":0}],
 "115":[{"key":"bge_148_II_491__voll","gewicht":0,"erwaegungen":["E. 6.1","E. 6.2","E. 7"]}],
@@ -50,6 +52,7 @@
 "75":{"bge":1},
 "78":{"bge":1},
 "80":{"bge":1},
+"82":{"kantonal":1},
 "106":{"kantonal":2},
 "107":{"bge":1},
 "115":{"bger":1},

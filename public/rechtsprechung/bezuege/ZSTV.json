@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"ZSTV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -12,7 +12,8 @@
 "bge_150_IV_389":{"zitierung":"BGE 150 IV 389","regesteKurz":"a Art. 262 StGB; Störung des Totenfriedens. Die am 1. Juli 2023 in Kraft getretene redaktionelle Anpassung von Art. 262 StGB, die rein sprachlicher Natur ist und vor allem auf eine geschlechtsneutrale Formulierung abzielt, bleibt für die…","datum":"2024-07-16","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_151_III_1":{"zitierung":"BGE 151 III 1","regesteKurz":"Art. 30b Abs. 1 und 4 Ziff. 1 ZGB in Verbindung mit Art. 16 ZGB; Art. 16 ZStV; Aushändigung von Identitätsdokumenten des Kindes, Änderung des Geschlechtseintrages im Personenstandsregister; Prüfung der Urteilsfähigkeit der erklärenden…","datum":"2024-11-06","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_152_III_127":{"zitierung":"BGE 152 III 127","regesteKurz":"Art. 44 und 45 IPRG; Ort der Eheschliessung, wenn sich eine der betroffenen Personen im Zeitpunkt des amtlichen Rechtsaktes in der Schweiz befindet und die andere im Ausland. Gibt die Verlobte ihr Eheversprechen in Anwesenheit von Zeugen…","datum":"2025-09-03","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
-"bs_appellationsgericht_VD.2025.204":{"zitierung":"Appellationsgericht BS VD.2025.204 vom 24.04.2026","regesteKurz":"Berichtigung des Personenstandsregisters","datum":"2026-04-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2025.204":{"zitierung":"Appellationsgericht BS VD.2025.204 vom 24.04.2026","regesteKurz":"Berichtigung des Personenstandsregisters","datum":"2026-04-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2024.42-79679":{"zitierung":"Appellationsgericht BS ZB.2024.42 vom 20.05.2026","regesteKurz":"Kinderbelange Name, Obhut, persönlicher Verkehr, Unterhalt sowie Beistandschaft (Beschwerde am BG)","datum":"2026-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
 "8":[{"key":"bge_150_III_160__voll","gewicht":0,"erwaegungen":["E. 4.7"]}],
@@ -25,7 +26,7 @@
 "90":[{"key":"bge_150_III_34__voll","gewicht":0,"erwaegungen":["E. 1.2"]},{"key":"bge_148_III_384__voll","gewicht":1,"erwaegungen":["E. 1.2"]},{"key":"bge_148_III_245__voll","gewicht":1,"erwaegungen":["E. 1.2"]}],
 "15a":[{"key":"bge_148_III_384","gewicht":0}],
 "34a":[{"key":"bge_150_IV_389","gewicht":0}],
-"37a":[{"key":"bs_appellationsgericht_VD.2025.204","gewicht":null}]
+"37a":[{"key":"bs_appellationsgericht_ZB.2024.42-79679","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.204","gewicht":null}]
 },
 "gesamtProArtikel":{
 "8":{"bger":1},
@@ -38,6 +39,6 @@
 "90":{"bger":3},
 "15a":{"bge":1},
 "34a":{"bge":1},
-"37a":{"kantonal":1}
+"37a":{"kantonal":2}
 }
 }

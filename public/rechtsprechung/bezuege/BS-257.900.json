@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"BS-257.900",
 "erlassEbene":"kanton",
 "dokumente":{
@@ -9,12 +9,13 @@
 "bs_appellationsgericht_VD.2024.172":{"zitierung":"Appellationsgericht BS VD.2024.172 vom 25.01.2025","regesteKurz":"Gesuch um Entschädigung und Genugtuung gemäss Opferhilfegesetz","datum":"2025-01-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.173":{"zitierung":"Appellationsgericht BS VD.2024.173 vom 25.01.2025","regesteKurz":"Gesuch um Entschädigung und Genugtuung gemäss Opferhilfegesetz","datum":"2025-01-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2024.18":{"zitierung":"Appellationsgericht BS VD.2024.18 vom 14.08.2024","regesteKurz":"Gesuch um Entschädigung gemäss Opferhilfegesetz (Beschwerde beim BGer hängig)","datum":"2024-08-14","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_VD.2025.201":{"zitierung":"Appellationsgericht BS VD.2025.201 vom 31.08.2026","regesteKurz":"Genugtuung gemäss Opferhilfegesetz (noch nicht in Rechtskraft erwachsen)","datum":"2026-08-31","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2025.68":{"zitierung":"Appellationsgericht BS VD.2025.68 vom 13.08.2025","regesteKurz":"Genugtuung gemäss Opferhilfegesetz","datum":"2025-08-13","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
 },
 "proArtikel":{
-"3":[{"key":"bs_appellationsgericht_VD.2025.68","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.169","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.171","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.172","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.173","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.18","gewicht":null}]
+"3":[{"key":"bs_appellationsgericht_VD.2025.201","gewicht":null},{"key":"bs_appellationsgericht_VD.2025.68","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.169","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.170","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.171","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.172","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.173","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.18","gewicht":null}]
 },
 "gesamtProArtikel":{
-"3":{"kantonal":7}
+"3":{"kantonal":8}
 }
 }

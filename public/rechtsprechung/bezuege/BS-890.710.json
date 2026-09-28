@@ -1,9 +1,10 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"BS-890.710",
 "erlassEbene":"kanton",
 "dokumente":{
 "bs_appellationsgericht_VD.2024.86":{"zitierung":"Appellationsgericht BS VD.2024.86 vom 25.11.2024","regesteKurz":"Beiträge an die Kosten der ausserfamiliären Unterbringung","datum":"2024-11-25","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"bs_appellationsgericht_ZB.2024.42-79679":{"zitierung":"Appellationsgericht BS ZB.2024.42 vom 20.05.2026","regesteKurz":"Kinderbelange Name, Obhut, persönlicher Verkehr, Unterhalt sowie Beistandschaft (Beschwerde am BG)","datum":"2026-05-20","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2023.8":{"zitierung":"Sozialversicherungsgericht BS KV.2023.8 vom 28.11.2023","regesteKurz":"KVG","datum":"2023-11-28","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}},
 "bs_sozialversicherungsgericht_KV.2025.4":{"zitierung":"Sozialversicherungsgericht BS KV.2025.4 vom 08.07.2025","regesteKurz":"KVG, Einstellung der Prämienverbilligung; Mitwirkungspflichtverletzung, (Beschwerde beim Bundesgericht hängig)","datum":"2025-07-08","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_sozialversicherungsgericht","status":"kantonal"}}
 },
@@ -15,7 +16,7 @@
 "15":[{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
 "16":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null},{"key":"bs_appellationsgericht_VD.2024.86","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2023.8","gewicht":null}],
 "17":[{"key":"bs_appellationsgericht_VD.2024.86","gewicht":null}],
-"19":[{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null}],
+"19":[{"key":"bs_appellationsgericht_ZB.2024.42-79679","gewicht":null},{"key":"bs_sozialversicherungsgericht_KV.2025.4","gewicht":null}],
 "28":[{"key":"bs_appellationsgericht_VD.2024.86","gewicht":null}],
 "29":[{"key":"bs_appellationsgericht_VD.2024.86","gewicht":null}]
 },
@@ -27,7 +28,7 @@
 "15":{"kantonal":1},
 "16":{"kantonal":3},
 "17":{"kantonal":1},
-"19":{"kantonal":1},
+"19":{"kantonal":2},
 "28":{"kantonal":1},
 "29":{"kantonal":1}
 }

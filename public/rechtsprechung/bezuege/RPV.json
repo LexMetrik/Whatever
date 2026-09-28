@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"RPV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -29,7 +29,8 @@
 "bge_151_II_737":{"zitierung":"BGE 151 II 737","regesteKurz":"Art. 50, Art. 126 Abs. 1 und Art. 126g AIG; Übergangsbestimmung in Bezug auf die Erweiterung der Härtefallregelung bei häuslicher Gewalt. Inhalt und Hintergrund der speziellen Übergangsbestimmung von Art. 126g AIG zur Änderung von Art. 50…","datum":"2025-03-19","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bge_152_II_276":{"zitierung":"BGE 152 II 276","regesteKurz":"Art. 18a Abs. 3 RPG; Bewilligung von Solaranlagen auf Dächern innerhalb der Bauzone; Vorliegen einer Bundesaufgabe. Zur Pflicht zur Anhörung der zuständigen kantonalen Fachstelle betreffend die Notwendigkeit eines Gutachtens nach Art. 7…","datum":"2026-01-05","facetten":{"quelltyp":"rechtsprechung","ebene":"bund","kanton":"CH","gericht":"bge","status":"bge"}},
 "bs_appellationsgericht_VD.2025.36":{"zitierung":"Appellationsgericht BS VD.2025.36 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2025.37":{"zitierung":"Appellationsgericht BS VD.2025.37 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2025.37":{"zitierung":"Appellationsgericht BS VD.2025.37 vom 06.01.2026","regesteKurz":"Bauentscheid Nr. BBG [...] (1) vom 13. Dezember 2023 in Sachen Abbruch Wohnbaute, Inzlingerstrasse 230 sowie Abbruch…","datum":"2026-01-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"gr_gerichte_VR1202631":{"zitierung":"Kantonsgericht GR VR1 2026 31 vom 09.09.2026","regesteKurz":null,"datum":"2026-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_150_II_2__voll","gewicht":0,"erwaegungen":["E. 1.2"]}],
@@ -41,7 +42,7 @@
 "26":[{"key":"bge_146_II_134","gewicht":0}],
 "30":[{"key":"bge_146_II_134","gewicht":0}],
 "33":[{"key":"bge_147_II_300","gewicht":0}],
-"34":[{"key":"bge_147_II_25__voll","gewicht":0,"erwaegungen":["E. 2.1"]}],
+"34":[{"key":"bge_147_II_25__voll","gewicht":0,"erwaegungen":["E. 2.1"]},{"key":"gr_gerichte_VR1202631","gewicht":null}],
 "37":[{"key":"bge_150_II_48","gewicht":0}],
 "38":[{"key":"bge_150_II_48","gewicht":0}],
 "39":[{"key":"bge_147_II_465","gewicht":0},{"key":"bge_147_II_25","gewicht":0}],
@@ -67,7 +68,7 @@
 "26":{"bge":1},
 "30":{"bge":1},
 "33":{"bge":1},
-"34":{"bger":1},
+"34":{"bger":1,"kantonal":1},
 "37":{"bge":1},
 "38":{"bge":1},
 "39":{"bge":2},

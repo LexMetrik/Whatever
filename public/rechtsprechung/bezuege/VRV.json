@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"VRV",
 "erlassEbene":"bund",
 "dokumente":{
@@ -38,7 +38,8 @@
 "bs_appellationsgericht_VD.2021.275":{"zitierung":"Appellationsgericht BS VD.2021.275 vom 09.08.2022","regesteKurz":"Verkehrsanordnung Feldbergstrasse, Tempo 30","datum":"2022-08-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.170":{"zitierung":"Appellationsgericht BS VD.2023.170 vom 30.06.2024","regesteKurz":"Widerruf der Niederlassungsbewilligung und Wegweisung","datum":"2024-06-30","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
 "bs_appellationsgericht_VD.2023.24":{"zitierung":"Appellationsgericht BS VD.2023.24 vom 04.07.2023","regesteKurz":"Warnungsentzug des Führerausweises","datum":"2023-07-04","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
-"bs_appellationsgericht_VD.2025.11":{"zitierung":"Appellationsgericht BS VD.2025.11 vom 05.05.2025","regesteKurz":"Warnungsentzug des Führerausweises","datum":"2025-05-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}}
+"bs_appellationsgericht_VD.2025.11":{"zitierung":"Appellationsgericht BS VD.2025.11 vom 05.05.2025","regesteKurz":"Warnungsentzug des Führerausweises","datum":"2025-05-05","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"BS","gericht":"bs_appellationsgericht","status":"kantonal"}},
+"gr_gerichte_VR1202631":{"zitierung":"Kantonsgericht GR VR1 2026 31 vom 09.09.2026","regesteKurz":null,"datum":"2026-09-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"GR","gericht":"gr_gerichte","status":"kantonal"}}
 },
 "proArtikel":{
 "1":[{"key":"bge_148_IV_30","gewicht":0}],
@@ -60,6 +61,7 @@
 "47":[{"key":"bge_148_III_343__voll","gewicht":0,"erwaegungen":["E. 3.4"]},{"key":"bs_appellationsgericht_SB.2023.53","gewicht":null}],
 "56":[{"key":"bge_149_IV_153","gewicht":0}],
 "57":[{"key":"bs_appellationsgericht_SB.2024.48","gewicht":null}],
+"90":[{"key":"gr_gerichte_VR1202631","gewicht":null}],
 "4a":[{"key":"bge_149_IV_153__voll","gewicht":0},{"key":"bs_appellationsgericht_SB.2024.33","gewicht":null},{"key":"bs_appellationsgericht_SB.2022.38","gewicht":null},{"key":"bs_appellationsgericht_SB.2020.51","gewicht":null},{"key":"bs_appellationsgericht_VD.2021.275","gewicht":null}],
 "59a":[{"key":"bge_150_I_120__voll","gewicht":0,"erwaegungen":["E. 5.5.3"]}]
 },
@@ -83,6 +85,7 @@
 "47":{"bger":1,"kantonal":1},
 "56":{"bge":1},
 "57":{"kantonal":1},
+"90":{"kantonal":1},
 "4a":{"bger":1,"kantonal":4},
 "59a":{"bger":1}
 }

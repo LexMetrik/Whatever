@@ -1,5 +1,5 @@
 {
-"erzeugt":"2026-09-25",
+"erzeugt":"2026-09-28",
 "erlass":"GEBV_SCHKG",
 "erlassEbene":"bund",
 "dokumente":{
@@ -25,6 +25,7 @@
 "zh_obergericht_PS260142":{"zitierung":"Obergericht ZH PS260142 vom 24.07.2026","regesteKurz":null,"datum":"2026-07-24","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
 "zh_obergericht_PS260151":{"zitierung":"Obergericht ZH PS260151 vom 23.04.2026","regesteKurz":null,"datum":"2026-04-23","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
 "zh_obergericht_PS260195":{"zitierung":"Obergericht ZH PS260195 vom 15.07.2026","regesteKurz":null,"datum":"2026-07-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
+"zh_obergericht_PS260212":{"zitierung":"Obergericht ZH PS260212 vom 01.07.2026","regesteKurz":null,"datum":"2026-07-01","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
 "zh_obergericht_PS260245":{"zitierung":"Obergericht ZH PS260245 vom 15.07.2026","regesteKurz":null,"datum":"2026-07-15","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
 "zh_obergericht_PS260265":{"zitierung":"Obergericht ZH PS260265 vom 06.08.2026","regesteKurz":null,"datum":"2026-08-06","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
 "zh_obergericht_PS260270":{"zitierung":"Obergericht ZH PS260270 vom 09.07.2026","regesteKurz":null,"datum":"2026-07-09","facetten":{"quelltyp":"rechtsprechung","ebene":"kanton","kanton":"ZH","gericht":"zh_obergericht","status":"kantonal"}},
@@ -46,7 +47,7 @@
 "39":[{"key":"gr_gerichte_SBK202688","gewicht":null}],
 "47":[{"key":"bge_149_III_124__voll","gewicht":0,"erwaegungen":["E. 2.3.2"]}],
 "48":[{"key":"bs_appellationsgericht_BEZ.2021.36","gewicht":null}],
-"52":[{"key":"bs_appellationsgericht_BEZ.2026.3","gewicht":null},{"key":"ag_gerichte_ZSU_2025_181","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2024.41","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2024.10","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.67","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.47","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.40","gewicht":null}],
+"52":[{"key":"zh_obergericht_PS260212","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2026.3","gewicht":null},{"key":"ag_gerichte_ZSU_2025_181","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2024.41","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2024.10","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.67","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.47","gewicht":null},{"key":"bs_appellationsgericht_BEZ.2023.40","gewicht":null}],
 "54":[{"key":"zh_obergericht_PS260072","gewicht":null}],
 "55":[{"key":"zh_obergericht_PS260072","gewicht":null}],
 "61":[{"key":"gr_gerichte_SBK202688","gewicht":null},{"key":"zh_obergericht_RT260100","gewicht":null},{"key":"zh_obergericht_PS260245","gewicht":null},{"key":"zh_obergericht_PS260270","gewicht":null},{"key":"gr_gerichte_SBK202638","gewicht":null},{"key":"zh_obergericht_PS260151","gewicht":null}],
@@ -69,7 +70,7 @@
 "39":{"kantonal":1},
 "47":{"bger":1},
 "48":{"kantonal":1},
-"52":{"kantonal":7},
+"52":{"kantonal":8},
 "54":{"kantonal":1},
 "55":{"kantonal":1},
 "61":{"kantonal":6},
