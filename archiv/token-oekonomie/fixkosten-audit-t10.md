@@ -81,3 +81,17 @@ has been denied»), die Werkzeugliste der laufenden Session blieb unverändert. 
 Wegfall aus der Liste einer NEUEN Session und Wirkung auf Sub-Agenten — beim nächsten
 Session-Start prüfen (Werkzeugliste bzw. `/context`) und hier ergänzen.
 
+**Ergänzung 26.9.2026 — Prüfung in neuer Session: Hebel greift NICHT auf die Liste.** In der
+Desktop-App-Session vom 26.9.2026 (Aufräum-Session, Haupt-Checkout) stehen trotz der sechs
+deny-Einträge in `.claude/settings.local.json` (Alpha Vantage, Gmail, Calendar, Drive,
+PowerPoint, seit 25.9. auch Vercel-Konto `mcp__f95b061a-…`) **alle Werkzeugnamen dieser
+Server weiterhin in der deferred-Liste** des Session-Starts; Gmail, Drive, Calendar und
+Vercel-Konto zusätzlich mit ihren Server-Hinweistexten. Befund: in der Desktop-App wirkt
+deny nur auf Aufrufe, nicht auf die Werkzeugliste — die erhoffte Einsparung (Schätzung
+25.9.: 7 500–10 500 Tokens, rund 7–10 % des Startkontexts) tritt nicht ein. Wirkung auf
+Sub-Agenten ungeprüft. Nutzungszählung 25.9.2026 (2265 Transkripte, 21.7.–25.9.): Gmail,
+Calendar, Drive, PowerPoint, Vercel-Konto je 0 Aufrufe, Alpha Vantage 1 (Sperrtest);
+Vercel-PLUGIN 28 Aufrufe in 9 Sessions, zuletzt 8.9. Lehre: «nie gebraucht» erst nach
+Zählung behaupten. Verbleibender Hebel bleibt Account-Ebene (Konnektoren in claude.ai
+trennen) = David-Entscheid.
+

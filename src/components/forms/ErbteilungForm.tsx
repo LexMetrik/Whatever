@@ -169,7 +169,7 @@ export function ErbteilungForm() {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer */}
       <PflichtDisclaimer kurz="Quoten-Orientierung (Art. 457 ff., 470 ff. ZGB, Revision 2023). Massgebend ist das Todesdatum." text={ERB_DISCLAIMER} />
 
@@ -306,7 +306,7 @@ export function ErbteilungForm() {
       {ergebnis && (
         <ErgebnisBlock>
           {/* Eckdaten */}
-          <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+          <div className="lc-kachelraster">
             <EckdatenKachel label="Rechtsstand"
               wert={ergebnis.rechtsstand === 'neu' ? 'Neues Recht (ab 1.1.2023)' : 'Altes Recht (bis 31.12.2022)'} />
             <EckdatenKachel akzent num label="Verfügbare Quote"

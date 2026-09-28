@@ -239,7 +239,7 @@ export function ZpoFristenForm({ live }: {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer (Ziff. 9) – immer sichtbar, kompakt. Volltext im Ergebnis-Panel. */}
       <PflichtDisclaimer kurz="Rechnerische Orientierung (Art. 142–147 ZPO, Praxis BGer 5A_691/2023). Massgeblich ist der Gerichtsort." text={DISCLAIMER} />
 
@@ -419,7 +419,7 @@ export function ZpoFristenForm({ live }: {
       {ergebnis && (
         <ErgebnisBlock id="lc-ergebnis-zpo">
           {/* Prominente Eckdaten */}
-          <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+          <div className="lc-kachelraster">
             {[
               { label: 'Massgeblicher Ereignistag', val: ergebnis.massgeblicherEreignistag },
               { label: 'Fristbeginn (dies a quo)', val: ergebnis.diesAQuo },

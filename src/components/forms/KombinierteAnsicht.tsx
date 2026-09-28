@@ -109,7 +109,7 @@ export function KombinierteAnsicht({ startwerte }: {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Drei Teilberechnungen (Lohnfortzahlung · Kündigungsfrist · Sperrfristen) mit gemeinsamen Eingaben; Stichtage je Modul verschieden." />
       {/* R2-E/F1-8: neutrale Hinweisbox = `lc-notice` (R11), nicht `lc-panel`.

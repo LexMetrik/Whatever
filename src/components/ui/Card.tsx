@@ -8,12 +8,15 @@ import type { ReactNode, HTMLAttributes } from 'react';
 // des Boards «Unter-Rechner» (`.lc-werkzeug-karte`, index.css;
 // W2·29-WERKBANK-RECHNER R2). Die frühere Variante `padding="md"` hatte keinen
 // Aufrufer mehr und fiel weg.
+// `@container/rechnerkarte` (W2·31-BILDSCHIRMBREITE B3, 25.9.2026): die Karte
+// ist der Messrahmen für «Eingabe ‖ Ergebnis» (`.lc-rechner-spalten`,
+// index.css) — die Spaltenwahl hängt an ihrer Breite, nicht am Fenster.
 export function Card({ children, className = '', ...rest }: {
   children: ReactNode;
   className?: string;
 } & HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={`lc-werkzeug-karte p-6 sm:p-8${className ? ' ' + className : ''}`} {...rest}>
+    <div className={`lc-werkzeug-karte @container/rechnerkarte p-6 sm:p-8${className ? ' ' + className : ''}`} {...rest}>
       {children}
     </div>
   );

@@ -153,7 +153,7 @@ export function BgerRechtswegForm() {
   } : null;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Beschwerdetyp, Frist und Abteilung nach BGG/BGerR; Rechtsfragen werden offengelegt, nie entschieden."
         text={BGER_DISCLAIMER} />
@@ -237,7 +237,7 @@ export function BgerRechtswegForm() {
 
       {ergebnis && (
         <ErgebnisBlock>
-          <div className={`grid grid-cols-1 ${pk('sm:grid-cols-3', '@xl/pane:grid-cols-3')} gap-3`}>
+          <div className="lc-kachelraster">
             <EckdatenKachel label="Beschwerde" wert={ergebnis.beschwerdeTyp.replace('Beschwerde in ', '')} sub={ergebnis.fristNorm} />
             {/* LM-034: «jederzeit» ist ein Wort, keine Frist-Zahl — Mono nur für
                 die Tages-Angabe (DESIGN-REGLEMENT §4b(e)). */}

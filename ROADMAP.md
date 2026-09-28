@@ -374,8 +374,8 @@ Umschichtung 20.9.2026 (2)):*
   LESER bewusst umgebucht hat (NormText schneiden, NormChip-Ort, Akkordeon, E3 u. a.). Aus REST gelöst,
   damit REST im Abbruchkriterium bleibt (§2 Ziff. 4). **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5f.
 
-- [~] **Bildschirmbreite je Seitenart nutzen** *(`W2·31-BILDSCHIRMBREITE`, Freigabe David 25.9.2026)*
-  <!-- @meta id: W2·31-BILDSCHIRMBREITE · status: wip · blocker: null · dep: [] · feld: design -->
+- [ ] **Bildschirmbreite je Seitenart nutzen** *(`W2·31-BILDSCHIRMBREITE`, Freigabe David 25.9.2026)*
+  <!-- @meta id: W2·31-BILDSCHIRMBREITE · status: ready · blocker: null · dep: [] · feld: design -->
   Anlass: Inventar 25.9.2026 (messen2.mjs) — ab 1280 px ist Inhalt überall auf 1072 px gedeckelt,
   bei 1920 bleiben 424 px je Seite leer. Aufträge David 25.9.2026 (wörtlich): «für alle arten von
   seiten … bildschirmbreite bei allen seiten optimiert wird» · «für jede seitenart eine eigene

@@ -75,7 +75,7 @@ export function ErbFristenForm() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer
         kurz="Erbrechtliche Fristen-Orientierung (Art. 521/533/567 ff. ZGB). Fristbeginn und Behördenzuständigkeit sind fachlich zu prüfen."
         text={ERB_DISCLAIMER}
@@ -111,7 +111,7 @@ export function ErbFristenForm() {
 
       {ergebnis && (
         <ErgebnisBlock>
-          <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+          <div className="lc-kachelraster">
             <EckdatenKachel akzent num label="Fristende" wert={ergebnis.resultat.endDatum}
               sub={ergebnis.resultat.endWochentag} />
             <EckdatenKachel num label="Frist"

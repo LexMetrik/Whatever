@@ -64,8 +64,10 @@ export function RechnerUebersicht() {
           (Filter → Einstieg → Register) und damit die Tab-Folge bleibt. */}
       <div className="kt-werkbank">
         {/* D22 Ziff. 2 — EINE Filterzeile über die volle Inhaltsbreite (Label über
-            Feld). Der sichtbare Text IST der zugängliche Name (WCAG 2.5.3). */}
-        <div className="ub-filter">
+            Feld). Der sichtbare Text IST der zugängliche Name (WCAG 2.5.3).
+            B10 (26.9.2026): die Seite steht auf Stufe `weit`; das Feld bleibt
+            auf `content` gedeckelt wie auf /gesetze und /materialien (B2/B4). */}
+        <div className="ub-filter max-w-content">
           <label htmlFor="rechner-filter" className="lc-overline">Filtern</label>
           <input id="rechner-filter" type="search" value={filter}
             onChange={(e) => setFilter(e.target.value)}

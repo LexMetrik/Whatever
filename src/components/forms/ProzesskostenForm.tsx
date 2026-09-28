@@ -187,7 +187,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Startseite-Schnellrechner (minimal): kein per-Tab-Disclaimer — die Startseite
           trägt den globalen Pflicht-Hinweis (§8). Voll-Rechner: Disclaimer bleibt. */}
       {!minimal && <PflichtDisclaimer kurz="Gerichtskosten + Parteientschädigung nach kantonalem Tarif (Art. 95/96 ZPO); Ermessenstarife als Spanne." text={DISCLAIMER} />}
@@ -344,7 +344,7 @@ export function ProzesskostenForm({ minimal = false }: { minimal?: boolean } = {
                 <p className="mt-3 text-body-s text-ink-600">Ermessensverteilung — kein bezifferter Wert; massgebend ist die richterliche Würdigung.</p>
               ) : kostenrisiko.berechenbar ? (
                 <>
-                  <div className={pk('mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3', 'mt-3 grid grid-cols-1 @xl/pane:grid-cols-3 gap-3')}>
+                  <div className="mt-3 lc-kachelraster">
                     <div className="lc-tile">
                       <p className="text-xs text-ink-500 mb-1">Gerichtskosten zu Ihren Lasten{kostenrisiko.unentgeltlich ? ' (UR-befreit)' : ''}</p>
                       <p className="num text-body-l font-semibold text-ink-900">{spanneText(kostenrisiko.gerichtskostenZuLasten)}</p>

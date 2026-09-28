@@ -171,7 +171,7 @@ export function MietrechtForm() {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer kurz="Orientierung (Art. 253 ff. OR). Ortsübliche Termine sind Tatfrage; verbindlich ist die Schlichtungsbehörde." text={MIET_DISCLAIMER} />
 
       <div className={`grid grid-cols-1 ${pk('sm:grid-cols-2', '@lg/pane:grid-cols-2')} gap-4`}>
@@ -282,7 +282,7 @@ export function MietrechtForm() {
         <ErgebnisBlock>
           {/* FE-5: byte-gleiches Markup → geteilte EckdatenKachel (Inventur
               10.6.2026: einzige exakt deckungsgleiche Rest-Dublette). */}
-          <div className={`grid grid-cols-1 ${pk('sm:grid-cols-3', '@xl/pane:grid-cols-3')} gap-3`}>
+          <div className="lc-kachelraster">
             {/* LM-039 (B11-Karten, 4.9.2026): der Platzhalter war ein nacktes
                 «–» — auf /rechner/mietrecht trug die dritte Kachel neben zwei
                 Datums-Kacheln nur diesen Strich (4.9. gemessen). Ein Strich

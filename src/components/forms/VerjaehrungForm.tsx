@@ -151,7 +151,7 @@ export function VerjaehrungForm() {
     setUnterbrechungen((arr) => arr.map((u, j) => (j === i ? { ...u, ...patch } : u)));
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Pflicht-Disclaimer */}
       <PflichtDisclaimer kurz="Verjährungs-Orientierung (Art. 60/67/127 ff. OR). Kenntniszeitpunkt und Sonderfristen sind fachlich zu prüfen." text={VERJ_DISCLAIMER} />
 
@@ -274,7 +274,7 @@ export function VerjaehrungForm() {
       {ergebnis && (
         <ErgebnisBlock>
           {/* Eckdaten – relative und absolute Frist getrennt; die massgebliche trägt das Badge */}
-          <div className={pk(`grid grid-cols-1 sm:grid-cols-2 ${hatAbsolut ? 'lg:grid-cols-4' : 'sm:grid-cols-3'} gap-3`, `grid grid-cols-1 @lg/pane:grid-cols-2 ${hatAbsolut ? '@4xl/pane:grid-cols-4' : '@xl/pane:grid-cols-3'} gap-3`)}>
+          <div className={hatAbsolut ? 'lc-kachelraster [--kacheln:4]' : 'lc-kachelraster'}>
             <FristKarte
               label={hatAbsolut ? `Relative Frist – ${REGIME[regime].relativJahre} Jahre` : `Frist – ${REGIME[regime].relativJahre} Jahre`}
               sub={`ab ${beginnLabel}`}

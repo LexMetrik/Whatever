@@ -8,3 +8,5 @@ Nach B1 und nach B3 (Rechner) — Katalogtext dort mit deckeln, sonst Doppelarbe
 Katalogtext 110–155 Zeichen/Zeile auf /rechner und /vorlagen. Ziel: Katalogtext im Lesemass,
 Kachel-/Listenraster darf die Breitenstufe nutzen. Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
+
+**Erledigt 2026-09-25:** PR #1147

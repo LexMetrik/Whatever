@@ -2290,6 +2290,26 @@
      dadurch erst richtig lesbar). */
   .lc-tile { background: transparent; border: 0;
     border-top: 1px solid var(--rule-soft); @apply p-4; }
+  /* Kachelraster der Ergebnis-Eckdaten (W2·31-BILDSCHIRMBREITE B3-Nachzug,
+     Gegenprüfung 26.9.2026, Mangel B2). Die Spaltenzahl folgt der EIGENEN
+     Breite, nicht dem Viewport: vorher `sm:grid-cols-3` (bzw. `lg:…-4`), im
+     Pane `@xl/pane:…` (pk). In der 640-px-Ergebnisspalte @1920 brach
+     «01.03.2034 · 24.00 Uhr» zweizeilig (Kachel 205 px, gemessener Bedarf
+     221 px = Wert text-body-l semibold + p-4); gestapelt ebenso bei 656 und
+     528 px Breite (@768/@640). Regel: höchstens `--kacheln` Spalten (R-4:
+     max. 3 Eckdaten; Verjährung mit absoluter Frist 4), jede mindestens
+     14 rem — sonst eine Spalte weniger. `auto-fill` hält leere Spuren wie
+     `grid-cols-3` (zwei Kacheln bleiben je ein Drittel breit). Keine
+     Container-Query am Ergebnisplatz: `container-type: inline-size` setzt
+     dessen Mindestbreite auf 0 und schöbe die Erben-Tabelle wieder in den
+     Querscroll (gemessen 712/640 px). */
+  .lc-kachelraster {
+    --kacheln: 3;
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: repeat(auto-fill,
+      minmax(max(min(100%, 14rem), (100% - (var(--kacheln) - 1) * .75rem) / var(--kacheln)), 1fr));
+  }
   /* Werkzeug-Karte der Rechner-Seiten (`ui/Card`, W2·29-WERKBANK-RECHNER R2):
      Registerstrich oben wie `.ub-kopf` und die Abschnitte des Boards
      «Unter-Rechner», unten die Haarlinie — kein Kasten (U2). */
@@ -4871,6 +4891,26 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
     border-right: 1px solid var(--rule-soft); padding-right: 1.375rem;
   }
   .kt-werkbank:has(> .kt-einstieg) > :not(.kt-einstieg) { grid-column: 2; }
+  /* W2·31-BILDSCHIRMBREITE B10 (26.9.2026): neben der Themenleiste GENAU zwei
+     Spalten, sobald das Raster 2 × 350 + 26 = 726 px fasst (350 = die Zeile
+     mobil @390). Gemessen (Preview, /rechner): @1536 mit offener Seitenleiste
+     (460 px) misst das Raster 752 px — mit dem Bestand `min(380px)` fiel es
+     auf EINE Spalte (Bedarf 786), jetzt 2 à 363. Stufe weit @1920 misst es
+     1116 px: DREI Spalten (Probe mit 350: 3 à 355) brachen die langen
+     Rechner-Untertitel auf bis zu 7 Zeilen à ~35 Zeichen um und sparten keine
+     Höhe (Scroll 3.12 gegen 3.09 Viewports) — darum Deckel 2 (à 545).
+     `- 1px`: Rundungspuffer, damit zwei Spuren nie an einem Subpixel scheitern.
+     Nur hier: /vorlagen und die Startseite (ohne Leiste) behalten 380.
+     Nachzug Gegenprüfung B10 (26.9.2026): Selektor ohne `:has(> .kt-einstieg)`
+     — bei aktivem Filter fehlt die Themenleiste (RechnerUebersicht.tsx
+     rendert `ZweiachsigerEinstieg` nur ungefiltert), das `:has` griff dann
+     nicht und `.kt-raster` fiel auf die 380-px-Basisregel zurück: @1920 mit
+     Filter DREI Spalten à ~447 px, Untertitel bis 4+ Zeilen. Der Deckel gilt
+     darum für JEDES `.kt-raster` unter `.kt-werkbank` — mit wie ohne
+     Seitenspalte —, `/vorlagen` bleibt unberührt (kein `.kt-werkbank` dort). */
+  .kt-werkbank .kt-raster {
+    grid-template-columns: repeat(auto-fill, minmax(max(min(350px, 100%), calc((100% - 1.625rem) / 2 - 1px)), 1fr));
+  }
 }
 
 /* Einstieg nach Rechtsgebiet: Klapp-Zeilen mit Haarlinie; zweispaltig von
@@ -5054,3 +5094,213 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
 }
 .lc-route[data-reg="m"] .lc-titelblatt-band .lc-overline { color: var(--ink-600); }
 .lc-route[data-reg="m"]:has(.lc-titelblatt-band)::before { content: none; }
+
+/* ═══ Rechner: Eingabe ‖ Ergebnis (W2·31-BILDSCHIRMBREITE B3, 25.9.2026) ═════
+   Gemessen @1920 (Stufe content, Karte 1008 px Innenbreite): der Ergebnis-
+   block begann bei 916–2302 px, auf 14 von 19 Rechnern unter dem Falz
+   (Viewport 1080). Ab einer KARTEN-Breite von 72rem (Stufe `weit`: 1328 px
+   innen; Stufe content: 1008 — bleibt gestapelt; offene Seitenleiste oder
+   Schriftskala 1.4: gestapelt) stehen die Formularteile R3 Ziff. 1–5 links,
+   der Ergebnisplatz (R3 Ziff. 6: `ErgebnisBlock` bzw. `ErgebnisPlatzhalter`,
+   R13) rechts, beide ab derselben Oberkante. Reine Darstellung (§3): DOM-
+   und damit Lese-, Tab- und Vorlese-Reihenfolge bleiben (Eingabe vor
+   Ergebnis), die aria-live-Region ist dieselbe; Druck und 390 px liegen
+   unter der Schwelle und sind unverändert.
+   Die Spalten-Wahl trifft das FORMULAR (Klasse `lc-rechner-spalten` an seiner
+   Wurzel, deren direktes Kind der Ergebnisplatz ist) — Sonderlayouts
+   (Einfacher Fristenrechner, Zuständigkeits-Wizard) tragen sie nicht.
+   Zeilen-Mechanik: die linken Kinder belegen je eine `auto`-Zeile; der
+   Ergebnisplatz überspannt alle Zeilen bis zur `1fr`-Zeile am Schluss. Ein
+   Element, das eine flexible Spur überspannt, gibt seine Höhe nur an diese
+   ab — die linken Zeilen werden nicht gedehnt (CSS Grid §12.5). Die 24 Zeilen
+   decken jede heutige Formularwurzel (max. gemessen: siehe Wächter
+   `e2e/rechner-breite.e2e.ts`); weitere Kinder liefen unter die Spalten, nie
+   in sie hinein.
+   Spaltenbreiten: halb/halb; die rechte Spur behält ihre Mindestbreite
+   (`minmax(auto, 1fr)`), damit ein Ergebnis mit Mindestbreite nicht in einen
+   Querscroll fällt — gemessen: Erben-Tabelle `min-w-[42rem]` braucht 712 px,
+   halb/halb gab 640 (Querscroll 712/640); die linke Spur weicht dann aus. */
+@container rechnerkarte (width >= 72rem) {
+  .lc-rechner-spalten {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(auto, 1fr);
+    grid-template-rows: repeat(24, auto) 1fr;
+    column-gap: 3rem;
+    align-items: start;
+  }
+  .lc-rechner-spalten > * { grid-column: 1; }
+  .lc-rechner-spalten > :is([data-ergebnisplatz], [data-platzhalter]):not([hidden]) {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    margin-top: 0;
+  }
+  /* Nachzug (Gegenprüfung 26.9.2026, Mangel B1): bei ungültiger Eingabe
+     rendern die Formulare weder Ergebnis noch Platzhalter — die rechte Spur
+     stand leer. Gemessen @1920 (18 Rechner, je ein Feld geleert): leer auf
+     13 Rechnern, teils mit Eingabefehler-Box links, teils ganz ohne Meldung
+     (Ergebnis `null`). Ohne Ergebnis nimmt die Box der Ergebnis-Ebene
+     (`FehlerBox` bzw. die Status-Meldung mit `data-fehlerbox`) den Ergebnis-
+     platz ein — sie sagt, warum dort nichts steht; role="alert" und DOM-
+     Reihenfolge bleiben. Steht rechts auch keine Box, hält ein leerer Rahmen
+     in der Anatomie des `ErgebnisPlatzhalter` (gestrichelte Oberlinie,
+     10 rem hoch wie dessen `min-h-40`) die Spur sichtbar besetzt — ohne Text, weil ein Rahmen keine
+     Aussage über die fehlende Eingabe erfinden darf (§8). Feldnahe Meldungen
+     stehen im Feld und nicht als Kind der Wurzel: sie bleiben links. */
+  .lc-rechner-spalten:not(:has(> :is([data-ergebnisplatz], [data-platzhalter]):not([hidden]))) > [data-fehlerbox] {
+    grid-column: 2;
+    grid-row: 1 / -1;
+    margin-top: 0;
+  }
+  .lc-rechner-spalten:not(:has(> :is([data-ergebnisplatz], [data-platzhalter], [data-fehlerbox]):not([hidden])))::after {
+    content: '';
+    grid-column: 2;
+    grid-row: 1 / -1;
+    height: 10rem;
+    border-top: 1px dashed var(--rule-soft);
+  }
+  /* Nachzug Mangel B3: Reiterleisten (`ui/Tabs`, Griff `lc-reiterleiste`) in
+     der Eingabespalte brechen um, statt zu schieben. Gemessen @1920: ZPO-
+     Phasen 684 px in 640, SchKG-Phasen 1088 px in 640 (448 px, vier von neun
+     Phasen ausserhalb des Bildes). Abwägung: ein anderes Spaltenverhältnis
+     löst SchKG nicht (1088 > jede sinnvolle linke Spur) und nähme der Erben-
+     Tabelle rechts die 712 px; die Scroll-Affordanz allein liesse Phasen
+     unsichtbar. Umbrechen ist die Antwort, die Tabs unter 400 px schon gibt
+     (R-1) — `flex-wrap` bricht nur, wo der Platz fehlt. Die feste Höhe
+     (`sm:h-9`) der Inhaltshöhe; der Reiter selbst trägt dafür die Höhe
+     seiner Anatomie (`m` = h-9 = 2.25rem; `s`/`zweizeilig` stehen in keiner
+     Formularwurzel — die zweizeilige Leiste der Kündigung liegt über dem
+     Formular, `RechnerKuendigung`). Als `height`, nicht `min-height`: es ist
+     die Grösse des Knopfes, keine Trefferflächen-Untergrenze (F9,
+     `tap-ziel-token.test.ts`). Der Scroll-Schatten entfällt mit dem Schieben.
+     Hier und nicht als `@[72rem]/rechnerkarte:`-Utility im Baustein: das
+     Container-Plugin gibt seine Varianten VOR `sm:` aus, `sm:h-9` gewann
+     (gemessen: zweite Reiterzeile überlappte das nächste Feld). */
+  .lc-rechner-spalten .lc-reiterleiste {
+    flex-wrap: wrap;
+    height: auto;
+    overflow-x: visible;
+    background: none;
+  }
+  .lc-rechner-spalten .lc-reiterleiste > .lc-tab { height: 2.25rem; }
+}
+
+/* ═══ Vorlagen: grösseres Papier auf breiten Bildschirmen (W2·31-BILDSCHIRMBREITE B5, 26.9.2026;
+   Gegenprüfungs-Nachzug 26.9.2026: Zoom 1.4→1.2, Paar zentriert statt Fuge in
+   der Mitte, `@supports`-Schutz für `zoom`) ═══
+   Gemessen (Stufe content): Formular 520 ‖ Vorschau 520 px auf 1280, 1680 und
+   1920 in allen 27 Wizard-Vorlagen — das Papier (Satzbreite 446 px,
+   Grundschrift 14.72 px) blieb auf jeder Breite gleich klein, links und rechts
+   je 400 px leer (@1920). In den zwei Mappen (GmbH-Gründung, Kapitalerhöhung)
+   lief das Papier dagegen über die ganze Rahmenbreite: 1000 px Satzbreite, bis
+   163 Zeichen je Zeile im Bausteinprotokoll. Die Seitenart `vorlage` steht
+   darum auf `weit` (seitenbreite.ts), und das Papier hat EINE Geometrie:
+
+   (A) Papier (`[data-vorschau-panel]`, wizard.tsx `VorschauPanel`, gemessen an
+       der Breite des Panels selbst — Wizard-Spalte, Mappen-Reiter, mobiler
+       Klappblock): Hat das Panel weniger Platz als ein grosses Blatt, füllt
+       das Papier ihn wie bisher. Ab 37.5rem Platz steht ein festes Blatt
+       (Gegenprüfung 26.9.2026: mit Zoom 1.2 statt 1.4 ist das vergrösserte
+       Blatt selbst nur noch 38.075rem breit — die alte Schwelle 43.5rem lag
+       darüber und liess die Vergrösserung nie mehr anspringen, Rot-Beweis
+       im Commit):
+       Satzspiegel um `--papier-zoom` vergrössert (`zoom`), Satzbreite in
+       Papier-Einheiten 27.875rem = 446 px — die Breite des Wizard-Papiers bei
+       1280 px. Der Zeilenfall (Zeichen je Zeile) bleibt damit derselbe;
+       breiter wird nur das Blatt, in seiner eigenen Proportion (Grundsatz
+       David 25.9.2026: Fliesstext wächst nie). `zoom` statt `font-size`: die
+       Rollen-Abstände stehen in rem (`vorschauStil.ts`, §V-2) — eine grössere
+       Schrift allein verschöbe das Verhältnis Schrift zu Einzug und Abstand;
+       `zoom` skaliert Schrift, Einzüge, Linien und Abstände gemeinsam.
+       **1.2** (Gegenprüfung 26.9.2026, vormals 1.4: zeigte @1920 spürbar
+       weniger Vorschautext je Bildschirm — Innen-Scroll des Mietvertrags
+       2.98 → 4.03) = 17.66 px Grundschrift: das Blatt füllt die Arbeitsfläche
+       der Stufe weit (1392 px) neben der Formularspalte, das Restmass verteilt
+       sich als Aussenrand (B), nicht als Fuge in der Mitte.
+       Kopfzeile des Papiers (Stil-Umschalter) und Disclaimer bleiben
+       unvergrössert; alles unter dem Papier (Direkt-Export, Zusatzblöcke,
+       Bausteinprotokoll) bleibt unvergrössert und höchstens 32.5rem breit —
+       Bedienung und Beiwerk, deren Zeilen dürfen nicht länger werden als in
+       der 520-px-Spalte. Wirkung in den Mappen auch bei 1280 px (Panel
+       1072 px): Blatt statt Bahn, Protokoll gedeckelt.
+       **`@supports (zoom: 1.2)`-Schutz** (Gegenprüfung 26.9.2026): Firefox
+       < 126 kennt `zoom` nicht — ohne Schutz wüchse der Kasten (Breite/
+       Mindesthöhe × `--papier-zoom`) auf die Zielgrösse, während der Text
+       mangels `zoom` bei der Grundgrösse bliebe (Leerraum im Papier). Die
+       vergrössernden Breiten-/Höhenformeln stehen darum in einem eigenen
+       `@supports`-Block; ausserhalb gilt dasselbe feste Blatt OHNE
+       Vergrösserung (Formel ohne `* var(--papier-zoom)` = der Stand vor
+       dieser Vergrösserung). Mit Chromium simuliert (Regel-Override auf
+       `zoom: revert` bzw. `@supports not`): Kasten und Satzbreite bleiben
+       dann beide bei der Grundgrösse — kein Leerraum.
+   (B) Wizard-Raster (`.lc-vorlagen-spalten`, gemessen an der Arbeitsfläche
+       `@container/vorlagenflaeche`): Die Formularspalte bleibt höchstens
+       32.5rem = 520 px, ihre Breite bei 1280 px. Grund (Messung 26.9.2026,
+       Wortzählung wie e2e/seitenbreite): eine 40rem-Spalte liess Hinweise,
+       Notizen und Protokollzeilen in 27 Vorlagen auf 83–119 Zeichen je Zeile
+       wachsen (278 Funde @1920 gegen 27 vorbestehende @1280).
+       · über 67rem (1072 px = Stufe content, dort unverändert) bis unter 80rem:
+         beide Spalten höchstens 32.5rem, der Rest geht in die Fuge;
+       · ab 80rem (Stufe weit @1536–1920: 1392 px): rechts die Spalte des
+         grossen Blatts (27.875rem × Zoom + Innenabstand 2 × 2.25rem `sm:p-9`
+         + 2 px Kante), der Spaltenabstand bleibt der bisherige `gap` (3rem) —
+         das Formular-Blatt-Paar steht als Block **zentriert** im Rahmen
+         (`justify-content: center`, Gegenprüfung 26.9.2026; vormals
+         `space-between`: drückte das Formular an den linken Rand mit einer
+         Fuge von ~174 px zur Papierspalte statt symmetrischer Aussenränder).
+         Eine Ersatz-Vorschau (`vorschauErsatz`, z. B. «Kein Dokument») bleibt
+         32.5rem breit; ein Seiten-Wrapper um das Panel (AG-Gründung:
+         Dokument-Wahl) bleibt ungedeckelt, sonst schnitte der Deckel das
+         Blatt. Die Mindesthöhe der Vorschau-Zelle (`md:min-h-vorschau` (26rem),
+         R5-F2/V1: kein Guckloch bei kurzen Schritten) wächst mit dem Zoom
+         (nur unter `@supports`, s. (A)) — sonst zeigte das grössere Blatt bei
+         kurzen Schritten weniger Papierzeilen als vorher (Sichtprüfung
+         26.9.2026: Testament Schritt 1, Kasten 460 px, fünf Zeilen).
+   Offene Seitenleiste (460 px) @1536, Schriftskala 1.4 und 390 px bleiben
+   unter den Schwellen: unverändert. Reine Darstellung (§3): DOM-, Lese- und
+   Tab-Reihenfolge unverändert; der Assemble-Text ist nicht berührt (golden
+   byte-gleich). `@media screen`: Ausdruck, PDF und DOCX sind unberührt. */
+@media screen {
+  :where(.lc-vorlagen-spalten, [data-vorschau-panel]) { --papier-zoom: 1.2; }
+  [data-vorschau-panel] { container: vorschaupanel / inline-size; }
+  @container vorschaupanel (width >= 37.5rem) {
+    [data-vorschau-panel] > [data-dokument] {
+      width: min(100%, calc(27.875rem + 4.5rem + 2px));
+    }
+    [data-vorschau-panel] > :not([data-dokument]) { max-width: 32.5rem; }
+  }
+  @supports (zoom: 1.2) {
+    @container vorschaupanel (width >= 37.5rem) {
+      [data-vorschau-panel] > [data-dokument] {
+        width: min(100%, calc(27.875rem * var(--papier-zoom) + 4.5rem + 2px));
+      }
+      [data-vorschau-panel] > [data-dokument] > [data-papier] { zoom: var(--papier-zoom); }
+    }
+  }
+  @container vorlagenflaeche (width > 67rem) {
+    [data-wizard-grid].lc-vorlagen-spalten {
+      grid-template-columns: repeat(2, minmax(0, 32.5rem));
+      justify-content: space-between;
+    }
+  }
+  @container vorlagenflaeche (width >= 80rem) {
+    [data-wizard-grid].lc-vorlagen-spalten {
+      grid-template-columns: 32.5rem calc(27.875rem + 4.5rem + 2px);
+      column-gap: 3rem;
+      justify-content: center;
+    }
+    /* Mindesthöhe aus dem Token `minHeight.vorschau` (tailwind.config.js) —
+       dieselbe Quelle wie `md:min-h-vorschau` in wizard.tsx (§5, F9/D2). */
+    .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: theme('minHeight.vorschau'); }
+    .lc-vorlagen-spalten > [data-vorschau-spalte] [data-vorschau-kasten] > :not([data-vorschau-panel], :has([data-vorschau-panel])) {
+      max-width: 32.5rem;
+    }
+  }
+  @supports (zoom: 1.2) {
+    @container vorlagenflaeche (width >= 80rem) {
+      [data-wizard-grid].lc-vorlagen-spalten {
+        grid-template-columns: 32.5rem calc(27.875rem * var(--papier-zoom) + 4.5rem + 2px);
+      }
+      .lc-vorlagen-spalten > [data-vorschau-spalte] { min-height: calc(theme('minHeight.vorschau') * var(--papier-zoom)); }
+    }
+  }
+}

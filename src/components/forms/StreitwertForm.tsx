@@ -135,7 +135,7 @@ export function StreitwertForm() {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       <PflichtDisclaimer kurz="Streitwert nach Rechtsbegehren (Art. 91 ff. ZPO); Ermessens-Konstellationen setzt das Gericht fest." text={SW_DISCLAIMER} />
 
       {/* Begehren-Editor — R2-F/F1-9: der handgebaute Behälter (`border

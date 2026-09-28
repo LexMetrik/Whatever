@@ -405,9 +405,11 @@ export function KategorieSektion({ kat, karten, ohneKopf, alleOffen, ohneGebiets
           BEWUSST KEIN Text-Schalter je Facette: die Achse führt ~14
           Rechtsgebiete. Dieselbe Begründung wie bei den Materialien-Facetten in
           R12A — ein Schalter je Wert wäre genau die Wand, die D22 abräumt.
-          Das <select> bleibt, es bekommt nur die Hülle. */}
+          Das <select> bleibt, es bekommt nur die Hülle.
+          B10 (26.9.2026): /vorlagen steht auf Stufe `weit` — die Hülle bleibt
+          auf `content` gedeckelt wie auf /gesetze und /materialien (B2/B4). */}
       {filterAktiv && vorhandeneGebiete.length > 1 && (
-        <div className="ub-filter" role="group" aria-label="Vorlagen nach Rechtsgebiet filtern">
+        <div className="ub-filter max-w-content" role="group" aria-label="Vorlagen nach Rechtsgebiet filtern">
           <label htmlFor={`vorlagen-filter-${kat.id}`} className="lc-overline">Filtern</label>
           <select id={`vorlagen-filter-${kat.id}`}
             value={[...aktiveGebiete][0] ?? ''}

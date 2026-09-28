@@ -163,7 +163,7 @@ export function LohnfortzahlungForm() {
 
   return (
     <BeruehrtRahmen>
-    <div className="space-y-6">
+    <div className="space-y-6 lc-rechner-spalten">
       {/* Skalen-Hinweis – kompakt, aufklappbar */}
       <PflichtDisclaimer kurz="Skalen = Gerichtspraxis, nicht gerichtsverbindlich (Art. 324a Abs. 2 OR)." text={SKALEN_HINWEIS} />
 

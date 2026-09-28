@@ -9,3 +9,5 @@ Baubeginn wiederholen. Befund: Ergebnis liegt bei 1063–2397 px unter dem Falz 
 betroffen); PflichtDisclaimer-Deckel kommt aus B1, hier nur Layout/Falz. Lesemass der Formulare
 bleibt unverändert, nur Raster/Ergebnisblock darf die Breitenstufe nutzen. Messquelle:
 ~/Documents/David/03_Projekte/LexMetrik/bildschirmbreite-2026-09-25/inventar-seitenarten.md.
+
+**Erledigt 2026-09-25:** PR #1146
