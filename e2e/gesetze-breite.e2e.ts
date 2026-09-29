@@ -64,3 +64,81 @@ test('/gesetze @1536 mit Seitenleiste 460 px: Register folgt dem Container, zwei
   expect(m.cols).toHaveLength(2);
   for (const c of m.cols) expect(c).toBeGreaterThanOrEqual(440);
 });
+
+// ─── Bündel C (W2·31-BILDSCHIRMBREITE, 29.9.2026, Prüferbefund B4) ───────────
+//
+// Die Rubriken/Rechtsgebiets-Sichten unter `?ebene=international`/`?ebene=
+// bund` bleiben EINSPALTIG (wenige Zeilen je Gruppe, `spaltig={false}`) — dort
+// griff die B4-Zweispalten-Bremse nicht, die Titel-Spur wuchs auf den vollen
+// Container (`minmax(0,1fr)`): GEMESSEN vorher (headless Playwright) Median-
+// Lücke Titelende→Zahl 260 px / Max 516 px (International @1920), 223 px /
+// 827 px (Bund @1920). Ursache und Deckel (30rem, derselbe Wert wie
+// `reading-s`) stehen bei `.tb-link`/`.tb-voll .tb-link` in index.css.
+// ROT ZU BEKOMMEN (§6.7, Beweis im Commit): in index.css bei den beiden
+// `@container`-Regeln `minmax(0, 30rem) auto 1fr` zurück auf `minmax(0, 1fr)
+// auto` (ohne Leerspalte) → Lücken wie oben.
+
+function textRechtsAbstand() {
+  function textEnd(el: HTMLElement): number {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let maxRight = -Infinity;
+    let node: Node | null;
+    // eslint-disable-next-line no-cond-assign
+    while ((node = walker.nextNode())) {
+      if (!node.textContent?.trim()) continue;
+      const r = document.createRange();
+      r.selectNodeContents(node);
+      for (const rect of Array.from(r.getClientRects())) {
+        if (rect.width > 0 && rect.right > maxRight) maxRight = rect.right;
+      }
+    }
+    return maxRight;
+  }
+  const rows = [...document.querySelectorAll('.tb-zeile')];
+  const gaps = rows.map((row) => {
+    const t = row.querySelector('.tb-titel') as HTMLElement | null;
+    const m = row.querySelector('.tb-meta') as HTMLElement | null;
+    if (!t || !m) return null;
+    return Math.round(m.getBoundingClientRect().left - textEnd(t));
+  }).filter((x): x is number => x !== null).sort((a, b) => a - b);
+  return { medianGap: gaps[Math.floor(gaps.length / 2)], maxGap: gaps[gaps.length - 1] };
+}
+
+for (const [ebene, maxMedian, maxMax] of [['international', 120, 250], ['bund', 150, 500]] as const) {
+  test(`/gesetze?ebene=${ebene} @1920: Blickfeld-Deckel hält die Lücke Titel→Zahl klein`, async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.goto(`/gesetze?ebene=${ebene}`);
+    if (ebene === 'bund') {
+      // Bund-Systematik steht standardmässig eingeklappt (Auftrag David
+      // 25.6.2026) — «Alle aufklappen» macht die Zeilen sichtbar.
+      await page.getByRole('button', { name: 'Alle aufklappen' }).click();
+    }
+    await expect(page.locator('.tb-zeile').first()).toBeVisible();
+    const m = await page.evaluate(textRechtsAbstand);
+    expect(m.medianGap).toBeLessThan(maxMedian);
+    expect(m.maxGap).toBeLessThan(maxMax);
+  });
+}
+
+test('/gesetze @1280 unter Schriftskala 1.4: Register-Titel bleibt unter 70 Zeichen/Zeile', async ({ page }) => {
+  // Posten «Register-Titel .tb-titel unter Schriftskala 1.4 @1280 ~89 Zeichen/
+  // Zeile» — GEMESSEN vorher (headless) 79.1 ch (single-column, Container
+  // wächst über die 60-rem-Zweispalten-Schwelle hinaus, s. `useSchriftskala`),
+  // nachher mit dem 30rem-Deckel 59.8 ch.
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto('/gesetze');
+  await page.evaluate(() => { document.documentElement.style.fontSize = '140%'; });
+  await expect(page.locator(`${LISTE} .tb-zeile`).first()).toBeVisible();
+  const chPerLine = await page.evaluate(() => {
+    const sample = document.querySelector('#rechtsgebiete-uebersicht .tb-titel') as HTMLElement;
+    const cs = getComputedStyle(sample);
+    const probe = document.createElement('span');
+    probe.textContent = '0';
+    probe.style.cssText = `position:absolute; visibility:hidden; font-family:${cs.fontFamily}; font-size:${cs.fontSize};`;
+    document.body.appendChild(probe);
+    const chW = probe.getBoundingClientRect().width;
+    probe.remove();
+    return sample.getBoundingClientRect().width / chW;
+  });
+  expect(chPerLine).toBeLessThan(70);
+});

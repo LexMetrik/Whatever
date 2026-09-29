@@ -4447,11 +4447,27 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 .tb-voll .tb-titel { color: var(--ink-700); }
 .tb-voll .tb-meta { justify-self: start; flex-wrap: wrap; white-space: normal; gap: 0.25rem 0.75rem; }
 
-/* Ab dieser CONTAINER-Breite trägt die Zeile alle drei Spuren nebeneinander. */
+/* Ab dieser CONTAINER-Breite trägt die Zeile alle drei Spuren nebeneinander.
+   Blickfeld-Deckel (W2·31-BILDSCHIRMBREITE C, 29.9.2026, Prüfer B2/B4): OHNE
+   Deckel wächst die Titel-Spur mit jedem Container-px mit (`1fr`) — bei
+   wenigen/kurzen Zeilen (International-Rubriken, ≤9 je Gruppe) reisst die
+   Zahl bis zu 516 px vom Textende weg (GEMESSEN @1920, `/gesetze?ebene=
+   international`, headless Playwright vor dem Fix), bei Bund bis 827 px; das
+   Register selbst kappte @1920 ohnehin schon auf 468 px (zwei Spalten binden
+   den Rest). Deckel = derselbe Wert wie `reading-s` (30rem, „DAS LESEMASS DER
+   14-PX-STUFE" oben) — `.tb-titel` läuft auf genau dieser Stufe (0.875rem),
+   kein neuer Wert (§5/§10). Der vierte, unbenannte `1fr`-Track fängt den
+   Rest ab: ohne ihn würde der Rest an die `auto`-Meta-Spur fallen (Grid-Spec:
+   Restraum geht an `auto`-Tracks ohne `fr`-Konkurrenz) — das Problem
+   verschöbe sich nur von der Titel- auf die Meta-Spur. NACHHER (derselbe
+   Messweg): International median 260→55 px, max 516→197 px, Bund median
+   223→118 px, max 827→473 px; Mehrkappung mässig (International 0/37→2/37,
+   Bund 9/204→11/204 bei ≤2 Zeilen) — unter dem 20-%-Mass, das B4 für dieselbe
+   Titel-Spur am Register bereits gesetzt hat (`e2e/gesetze-breite.e2e.ts`). */
 @container (width >= 30rem) {
   .tb-link {
-    grid-template-columns: var(--tb-nr, 5.5rem) minmax(0, 1fr) auto;
-    grid-template-areas: "nr titel meta";
+    grid-template-columns: var(--tb-nr, 5.5rem) minmax(0, 30rem) auto 1fr;
+    grid-template-areas: "nr titel meta .";
   }
   .tb-voll .tb-link {
     grid-template-columns: var(--tb-nr, 7.5rem) minmax(0, 1fr);
@@ -4460,8 +4476,8 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
 }
 @container (width >= 56rem) {
   .tb-voll .tb-link {
-    grid-template-columns: var(--tb-nr, 7.5rem) minmax(0, 1fr) auto;
-    grid-template-areas: "nr titel meta";
+    grid-template-columns: var(--tb-nr, 7.5rem) minmax(0, 30rem) auto 1fr;
+    grid-template-areas: "nr titel meta .";
   }
   .tb-voll .tb-meta { justify-self: end; }
 }

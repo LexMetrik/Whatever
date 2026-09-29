@@ -11,13 +11,25 @@ import { test, expect } from '@playwright/test';
 //      drei Zeilen wie vor B2. Die Schwelle hängt am Raster, nicht am
 //      Viewport: @1536 mit offener Seitenleiste (460 px) bleiben es drei
 //      Spalten — eine Viewport-Stufe `2xl:grid-cols-4` gab dort 4 × 248 px.
-//  (2) /materialien/deckung: die freie Breite fällt an die Erlass-Spalte
-//      (Zahlenspalten `w-px`). Vorher 328 von 1072 px (31 %); nachher 648
-//      von 1072 (60 %) bzw. 968 von 1392 (70 %). Schwelle 50 %.
+//  (2) /materialien/deckung: die Erlass-Spalte trägt einen FESTEN Deckel
+//      (Zahlenspalten bleiben `w-px`). Bündel C (W2·31-BILDSCHIRMBREITE,
+//      29.9.2026, Prüferbefund B2 «niedrig») löst die alte B2-Zusage «> 50 %»
+//      ab: GEMESSEN vorher (headless Playwright) trug die volle Restbreite
+//      648 px @1280/1440 und 968 px ab 1536 die Erlass-Spalte, während Titel
+//      median nur 384 px brauchen — Median-Lücke Titelende→Spaltenrand 264 px
+//      @1280, 584 px @1920 (das Auge verlor die Erlass↔Zahlen-Zeile, dasselbe
+//      Bild wie an der Gesetzes-Titel-Spur, `.tb-link`/index.css). Neuer
+//      Deckel: 30rem (480 px), derselbe Wert wie dort — EIN Mass für dieselbe
+//      Anatomie (§5/§10), über `<colgroup>` + Leerspalte (`max-width` allein
+//      auf der `<th>` genügte im Test nicht, automatisches Tabellen-Layout
+//      dehnte trotzdem auf 569/739 px). Die Spalte ist jetzt auf JEDER Breite
+//      480 px breit, nicht mehr «mehr als die Hälfte».
 // ROT ZU BEKOMMEN (§6.7, Beweis im Commit): (1) in Materialien.tsx das `lg:`
 // vor `@[78rem]/raster:grid-cols-4` streichen → 3 statt 4 Spalten @1920
 // (Container-Regel verliert die CSS-Reihenfolge gegen `lg:grid-cols-3`);
-// (2) `w-px` an den Zahlenzellen entfernen → 31 %.
+// (2) `w-px` an den Zahlenzellen entfernen → 31 %; (3) die `<colgroup>` in
+// MaterialienDeckung.tsx entfernen → die Erlass-Spalte dehnt wieder auf
+// 648/968 px (Beleg oben).
 
 const RASTER = 'section[id^="b-"] .grid';
 
@@ -56,14 +68,42 @@ for (const { breite, leiste, spalten, zeilen } of FAELLE) {
 }
 
 for (const breite of [1920, 1280]) {
-  test(`/materialien/deckung @${breite}: Erlass-Spalte trägt mehr als die halbe Tabellenbreite`, async ({ page }) => {
+  test(`/materialien/deckung @${breite}: Erlass-Spalte deckelt bei 30rem, Rest an die Leerspalte`, async ({ page }) => {
     await page.setViewportSize({ width: breite, height: 900 });
     await page.goto('/materialien/deckung');
     await expect(page.locator('[data-deckung-zeile]').first()).toBeVisible();
-    const anteil = await page.locator('[data-deckung-tabelle]').evaluate((t) => {
+    const m = await page.locator('[data-deckung-tabelle]').evaluate((t) => {
       const erlass = t.querySelector('thead th') as HTMLElement;
-      return erlass.getBoundingClientRect().width / t.getBoundingClientRect().width;
+      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      return { erlassRem: erlass.getBoundingClientRect().width / rem, tabelle: t.getBoundingClientRect().width };
     });
-    expect(anteil).toBeGreaterThan(0.5);
+    // Bündel C (29.9.2026): fester Deckel statt Anteil an der Tabellenbreite
+    // — die Spalte bleibt 30rem, unabhängig davon, wie breit die Tabelle ist
+    // (vorher > 50 %, s. Kopfkommentar).
+    expect(m.erlassRem).toBeCloseTo(30, 1);
+  });
+
+  test(`/materialien/deckung @${breite}: Lücke Titel→Zahlenspalte bleibt klein (Blickfeld-Deckel)`, async ({ page }) => {
+    await page.setViewportSize({ width: breite, height: 900 });
+    await page.goto('/materialien/deckung');
+    await expect(page.locator('[data-deckung-zeile]').first()).toBeVisible();
+    // Rot-Beweis (§6.7): vor dem Deckel lag die Median-Lücke bei 264 px
+    // (@1280) bzw. 584 px (@1920) — GEMESSEN, s. Kopfkommentar.
+    const medianGap = await page.locator('[data-deckung-tabelle]').evaluate((t) => {
+      const rows = [...t.querySelectorAll('tbody tr')];
+      const gaps = rows.map((r) => {
+        const th = r.querySelector('th') as HTMLElement;
+        const span = th.querySelector('span.text-xs') as HTMLElement | null;
+        if (!span || getComputedStyle(span).display === 'none') return null;
+        const range = document.createRange();
+        range.selectNodeContents(span);
+        const rects = [...range.getClientRects()];
+        if (!rects.length) return null;
+        const textRight = Math.max(...rects.map((x) => x.right));
+        return th.getBoundingClientRect().right - textRight;
+      }).filter((x): x is number => x !== null).sort((a, b) => a - b);
+      return gaps[Math.floor(gaps.length / 2)];
+    });
+    expect(medianGap).toBeLessThan(150);
   });
 }
