@@ -65,56 +65,39 @@ test('/gesetze @1536 mit Seitenleiste 460 px: Register folgt dem Container, zwei
   for (const c of m.cols) expect(c).toBeGreaterThanOrEqual(440);
 });
 
-// ─── Bündel C (W2·31-BILDSCHIRMBREITE, 29.9.2026, Prüferbefund B4) ───────────
+// ─── Neuansatz 30.9.2026 (Entscheid Orchestrator, Gegenprüfung PR #1156) ─────
 //
-// Die Rubriken/Rechtsgebiets-Sichten unter `?ebene=international`/`?ebene=
-// bund` bleiben EINSPALTIG (wenige Zeilen je Gruppe, `spaltig={false}`) — dort
-// griff die B4-Zweispalten-Bremse nicht, die Titel-Spur wuchs auf den vollen
-// Container (`minmax(0,1fr)`): GEMESSEN vorher (headless Playwright) Median-
-// Lücke Titelende→Zahl 260 px / Max 516 px (International @1920), 223 px /
-// 827 px (Bund @1920). Ursache und Deckel (30rem, derselbe Wert wie
-// `reading-s`) stehen bei `.tb-link`/`.tb-voll .tb-link` in index.css.
-// ROT ZU BEKOMMEN (§6.7, Beweis im Commit): in index.css bei den beiden
-// `@container`-Regeln `minmax(0, 30rem) auto 1fr` zurück auf `minmax(0, 1fr)
-// auto` (ohne Leerspalte) → Lücken wie oben.
+// Bündel C (29.9.2026) hatte einen Breiten-DECKEL auf die Titel-Spur gesetzt
+// (`minmax(0,30rem) auto 1fr` bei `.tb-link`/`.tb-voll .tb-link`), um die
+// Lücke Titelende→Zahl auf breiten, einspaltigen Rubriken (`?ebene=
+// international`/`?ebene=bund`, wenige Zeilen je Gruppe, `spaltig={false}`)
+// klein zu halten. Zwei Gegenprüfungs-Runden zeigten: derselbe Deckel trifft
+// KURZE und LANGE Titel in DERSELBEN Spur gegenläufig — er hielt die Lücke
+// klein, kappte dafür zwangsläufig MEHR Titel (GEMESSEN, PR-Kopf 50ec54c vs.
+// main: International 0→7 von 37, Bund 9→11 von 204 @1920). Lesbarkeit hat
+// Vorrang (§8, Grundsatz W2·31 «Lesemass wächst nie, aber nichts wird unnötig
+// abgeschnitten») — der Deckel ist vollständig zurückgenommen, `.tb-link`/
+// `.tb-voll .tb-link` stehen wieder auf `minmax(0, 1fr)` wie `main`.
+//
+// Statt die Spur zu verengen, überbrückt ein gepunkteter Leader (Background-
+// Image auf `.tb-titel`, Schweizer-Fahrplan-Vorbild Ort … Zeit) die Lücke rein
+// dekorativ — KEINE Breiten-, Umbruch- oder Kappungs-Änderung, nur ab
+// `@container (width >= 80rem)`. Schwelle GEMESSEN (`.tb-huelle`-Breite):
+// bis 1072 px Container (Viewport 1024–1440) moderate Lücke (International
+// med 46/max 196, Bund med 73/max 507 @1280, dev-Messung), ab 1392 px
+// Container (Viewport ab 1536) «real gross» (International med 260/max 516,
+// Bund med 223/max 827 @1920) — 80rem (1280 px) trennt sauber dazwischen.
 
-function textRechtsAbstand() {
-  function textEnd(el: HTMLElement): number {
-    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-    let maxRight = -Infinity;
-    let node: Node | null;
-    // eslint-disable-next-line no-cond-assign
-    while ((node = walker.nextNode())) {
-      if (!node.textContent?.trim()) continue;
-      const r = document.createRange();
-      r.selectNodeContents(node);
-      for (const rect of Array.from(r.getClientRects())) {
-        if (rect.width > 0 && rect.right > maxRight) maxRight = rect.right;
-      }
-    }
-    return maxRight;
-  }
-  const rows = [...document.querySelectorAll('.tb-zeile')];
-  const gaps = rows.map((row) => {
-    const t = row.querySelector('.tb-titel') as HTMLElement | null;
-    const m = row.querySelector('.tb-meta') as HTMLElement | null;
-    if (!t || !m) return null;
-    return Math.round(m.getBoundingClientRect().left - textEnd(t));
-  }).filter((x): x is number => x !== null).sort((a, b) => a - b);
-  return { medianGap: gaps[Math.floor(gaps.length / 2)], maxGap: gaps[gaps.length - 1] };
-}
-
-// Nachbesserung Gegenprüfung (Bündel C, 30.9.2026, Prüferbefund 5 «NIEDRIG»):
-// die Gap-Sonden trugen nur Obergrenzen — ein Deckel, der zu eng wird oder
-// verschwindet (Titel und Zahl überlappen/verschmelzen), blieb grün. Jetzt je
-// eine Untergrenze knapp unter dem GEMESSENEN Ist-Wert (PR-Kopf, 30.9.2026):
-// international med 37/max 111, bund med 94/max 377.
-for (const [ebene, minMedian, maxMedian, minMax, maxMax] of [
-  ['international', 15, 120, 50, 250],
-  ['bund', 40, 150, 200, 500],
+const KAPP_MAIN: Record<string, number> = {
+  'international-1920': 0, 'international-1280': 1,
+  'bund-1920': 9, 'bund-1280': 38,
+};
+for (const [ebene, breite] of [
+  ['international', 1920], ['international', 1280],
+  ['bund', 1920], ['bund', 1280],
 ] as const) {
-  test(`/gesetze?ebene=${ebene} @1920: Blickfeld-Deckel hält die Lücke Titel→Zahl klein`, async ({ page }) => {
-    await page.setViewportSize({ width: 1920, height: 1080 });
+  test(`/gesetze?ebene=${ebene} @${breite}: nicht mehr gekappte Titel als main (Neuansatz statt Deckel)`, async ({ page }) => {
+    await page.setViewportSize({ width: breite, height: 1080 });
     await page.goto(`/gesetze?ebene=${ebene}`);
     if (ebene === 'bund') {
       // Bund-Systematik steht standardmässig eingeklappt (Auftrag David
@@ -122,38 +105,52 @@ for (const [ebene, minMedian, maxMedian, minMax, maxMax] of [
       await page.getByRole('button', { name: 'Alle aufklappen' }).click();
     }
     await expect(page.locator('.tb-zeile').first()).toBeVisible();
-    const m = await page.evaluate(textRechtsAbstand);
-    expect(m.medianGap).toBeGreaterThan(minMedian);
-    expect(m.medianGap).toBeLessThan(maxMedian);
-    expect(m.maxGap).toBeGreaterThan(minMax);
-    expect(m.maxGap).toBeLessThan(maxMax);
+    // GEMESSEN (headless Playwright, 30.9.2026): exakt gleich main (0/1/9/38),
+    // kein Delta — s. Kopfkommentar. `≤` statt `=` aus demselben Grund wie die
+    // Register-Anteilsprobe oben («damit der wachsende Korpus nicht pinnt»),
+    // guardet aber dieselbe Regression.
+    // ROT ZU BEKOMMEN (§6.7, Beweis im Commit): gegen den PR-Kopf VOR dieser
+    // Nachbesserung (50ec54c, Deckel `minmax(0,30rem) auto 1fr`) liefert
+    // International @1920 7 (> 0) und Bund @1920 11 (> 9) — beide schlagen
+    // dann fehl (GEMESSEN in der Commit-Historie, s. Kopfkommentar).
+    const gekappt = await page.locator('.tb-titel').evaluateAll(
+      (els) => els.filter((t) => (t as HTMLElement).offsetParent
+        && t.scrollHeight > t.clientHeight + 1).length,
+    );
+    expect(gekappt).toBeLessThanOrEqual(KAPP_MAIN[`${ebene}-${breite}`]);
   });
 }
 
-test('/gesetze @1280 unter Schriftskala 1.4: Register-Titel bleibt unter 70 Zeichen/Zeile', async ({ page }) => {
-  // Posten «Register-Titel .tb-titel unter Schriftskala 1.4 @1280 ~89 Zeichen/
-  // Zeile» — GEMESSEN vorher (headless) 79.1 ch (single-column, Container
-  // wächst über die 60-rem-Zweispalten-Schwelle hinaus, s. `useSchriftskala`),
-  // nachher mit dem 30rem-Deckel 59.8 ch.
-  await page.setViewportSize({ width: 1280, height: 900 });
-  await page.goto('/gesetze');
-  await page.evaluate(() => { document.documentElement.style.fontSize = '140%'; });
-  await expect(page.locator(`${LISTE} .tb-zeile`).first()).toBeVisible();
-  const chPerLine = await page.evaluate(() => {
-    const sample = document.querySelector('#rechtsgebiete-uebersicht .tb-titel') as HTMLElement;
-    const cs = getComputedStyle(sample);
-    const probe = document.createElement('span');
-    probe.textContent = '0';
-    probe.style.cssText = `position:absolute; visibility:hidden; font-family:${cs.fontFamily}; font-size:${cs.fontSize};`;
-    document.body.appendChild(probe);
-    const chW = probe.getBoundingClientRect().width;
-    probe.remove();
-    return sample.getBoundingClientRect().width / chW;
+// Blickfeld-Führung: sichtbar ab dem 80rem-Container, darunter (auch @1280,
+// wo main schon 1072 px Container trägt) unverändert aus. ROT ZU BEKOMMEN
+// (§6.7, gemessen gegen `origin/main` 30.9.2026): main kennt die Führung nie
+// — `backgroundImage` bleibt dort bei JEDER Breite `none`, die `@1920`-Probe
+// unten schlägt auf main fehl (erwartet ein Gradient, main liefert `none`).
+for (const ebene of ['international', 'bund'] as const) {
+  test(`/gesetze?ebene=${ebene}: Leader-Führung ab 80rem-Container sichtbar, bei @1280 aus`, async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    await page.goto(`/gesetze?ebene=${ebene}`);
+    if (ebene === 'bund') await page.getByRole('button', { name: 'Alle aufklappen' }).click();
+    const erste = page.locator('.tb-titel').first();
+    await expect(erste).toBeVisible();
+    await expect(erste).toHaveCSS('background-image', /repeating-linear-gradient/);
+    await page.setViewportSize({ width: 1280, height: 1080 });
+    await expect(erste).toHaveCSS('background-image', 'none');
   });
-  // Nachbesserung Gegenprüfung (Prüferbefund 5 «NIEDRIG», 30.9.2026): nur
-  // eine Obergrenze liess einen zu eng gewordenen Deckel (Titel bricht auf
-  // fast jedem Wort) grün durch. GEMESSEN (PR-Kopf) ~59.8 ch — Untergrenze
-  // knapp darunter.
-  expect(chPerLine).toBeGreaterThan(40);
-  expect(chPerLine).toBeLessThan(70);
-});
+}
+
+// Posten «Register-Titel .tb-titel (/gesetze) unter Schriftskala 1.4 @1280
+// ~89 ch» — WIEDERERÖFFNET 30.9.2026 (`plan/posten/2026-09-26-register-
+// titel-tb-titel-gesetze-unter-schriftskala-1-4-1280.md`): der 30-rem-Deckel
+// (59.8 ch, vorher 79.1 ch main) ist mit Bündel C komplett zurückgenommen
+// (s. Kopfkommentar oben). GEPRÜFT, ob ein enger gefasster Deckel (z. B.
+// `max-width: 62ch` NUR auf `.tb-titel`, Text mit Umbruch statt Klemmung)
+// dasselbe Problem OHNE Mehr-Kappung löst: GEMESSEN (headless Playwright,
+// 30.9.2026, `/gesetze` @1280 Schriftskala 1.4) — ohne Deckel 79.1 ch / 2 von
+// 241 Titeln gekappt, MIT einem 62-ch-Deckel 61.9 ch / 8 von 241 gekappt
+// (vierfach). Dieselbe Ursache wie beim Breiten-Deckel: ein Deckel auf
+// dieselbe Spur trifft kurze und lange Titel gegenläufig — nicht ohne
+// Mehr-Kappung lösbar, also NICHT umgesetzt (§8 Lesbarkeit vor Deckel). Die
+// alte Zusage (`chPerLine < 70`) ist darum ENTFERNT statt rot gehalten — sie
+// gehörte zum jetzt zurückgenommenen Deckel. Der Posten bleibt offen
+// (`plan/posten/...`), Entscheid Titel-Kappung vs. Lesemass liegt bei David.
