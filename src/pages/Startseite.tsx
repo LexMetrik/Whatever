@@ -93,6 +93,14 @@ import { VertrauensFuss } from '../components/start/VertrauensFuss';
 //     Kantone-Karte bleibt auf ihrer `content`-Grösse (`GesetzeBlatt.tsx`).
 //     Gruss (eine Zeile ≤ 30 Zeichen) und Vertrauensfuss (`max-w-kleintext`)
 //     wachsen nicht mit.
+//   · W2·31 G (26.9.2026, Posten «Startseite @1920: Kachelinneres 508×280
+//     recht leer»): die Rechtsprechungs-Kachel bekommt ab 1536 px eine
+//     Teile-Zeile («Leitentscheide») wie die drei anderen (`teileAb2xl`,
+//     `StartKachelFeld.tsx`) — die Kachelhöhe bleibt 280 px (U13-Deckel,
+//     0 px Scroll-Reserve gemessen bei `/?blatt=gesetze` 1536×864, s. dort).
+//     Die Kantone-Karte im Gesetze-Blatt (`2xl:max-w-[15.5rem]`) bleibt UN-
+//     VERÄNDERT: gemessen 26.9.2026 @1536×864 `scrollHeight === clientHeight`
+//     (0 px Reserve) — jede Vergrösserung der Karte reisst U13 sofort.
 //   · Der Modul-Baukasten (Ein-/Aus-/Umordnen, R10) ist gestrichen
 //     (Auswahlfrage 23.9.2026 «Streichen»): Systematik, Kantone und Materialien
 //     sind jetzt Stufen der Kacheln, nicht zweite Wege daneben.
@@ -112,8 +120,15 @@ const KACHELN: readonly KachelDef[] = [
     einheit: 'Erlasse im Volltext, Bund und Kantone',
     nutzen: 'Bundesrecht nach Rechtsgebiet, Kantone über die Landeskarte, internationales Recht',
     teile: `${nf(z.gesetzeBundesrechtVolltext)} Bundeserlasse · ${nf(z.gesetzeKantonVolltext)} Kantonserlasse · ${nf(z.gesetzeInternationalVolltext)} Staatsverträge` },
+  // W2·31 G (26.9.2026, Posten «Kachelinneres 508×280 recht leer»): die
+  // Kachel trug als einzige der vier keine Teile-Zeile — bei 508 px Breite
+  // (Stufe `weit`) blieben rund 148 px Höhe ungenutzt (gemessen, Zelle bleibt
+  // fest 280 px hoch, U13-Deckel). `teile` nutzt eine bereits geladene
+  // Zählerzahl (§15: keine neue Datenlast), `teileAb2xl`: die Zeile zeigt nur
+  // ab 1536 px — unter 1536 bleibt die Kachel unverändert (Bauregel).
   { rubrik: 'rechtsprechung', reg: 'r', ziel: '/rechtsprechung', titel: 'Rechtsprechung', zahl: nf(z.rechtsprechungVolltext),
-    einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet' },
+    einheit: 'Entscheide im Volltext', nutzen: 'Bundesgericht und kantonale Gerichte, nach Sachgebiet',
+    teile: `${nf(z.rechtsprechungLeitentscheide)} amtliche Leitentscheide (BGE)`, teileAb2xl: true },
   // U12 (David 24.9.2026: «materialien soll erläuterungen und materialien
   // enthalten»): die Kachel führt BEIDE Gattungen (Hausbegriffe wie im Leser,
   // `lib/materialien/gattung.ts`) — vorher nannte der Nutzen nur die

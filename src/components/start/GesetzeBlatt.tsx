@@ -133,7 +133,12 @@ function Wahl({ zu }: { zu: Zu }) {
               249 px Hülle, Karte 216 px). Ohne Deckel wüchse sie mit dem 1032-px-Blatt
               auf ~340 px und damit ~60 px höher — die Gesetze-Wahl liefe über (U13
               «kein Scroll beim Aufklappen», Rot-Beweis `e2e/startseite-breite.e2e.ts`).
-              Unter `2xl` bindet der Deckel nie (Rahmen dort ≤ `content`). */}
+              Unter `2xl` bindet der Deckel nie (Rahmen dort ≤ `content`).
+              NACHGEMESSEN W2·31 G (26.9.2026, Posten «Kantone-Spalte wirkt um
+              die fest 216 px grosse Karte leer»): `.lc-start-blatt-inhalt`
+              @1536×864 hat `scrollHeight === clientHeight` (0 px Reserve) —
+              der Deckel bleibt bewusst unverändert, jede Vergrösserung der
+              Karte reisst U13 sofort. */}
           <div className="mx-auto max-w-xs px-4 lg:max-w-none 2xl:max-w-[15.5rem]">
             {/* `kompakt`: diese Spalte ist die schmale Darstellung (Befund
                 U1-Bau) — grössere Trefferfläche für kleine Kantone (U5). */}
