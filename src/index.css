@@ -4466,6 +4466,65 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
   .tb-voll .tb-meta { justify-self: end; }
 }
 
+/* Blickfeld-Führung statt Deckel (W2·31-BILDSCHIRMBREITE, Neuansatz
+   30.9.2026, Entscheid Orchestrator nach zwei Gegenprüfungs-Runden auf
+   PR #1156): ein Breiten-DECKEL der Titel-Spur (frühere Fassung dieses
+   Blocks, `minmax(0, 30rem) auto 1fr`) hielt die Lücke Titelende→Zahl klein,
+   kappte dafür zwangsläufig MEHR Titel (International/Bund je 0/37→7/37 bzw.
+   9/204→11/204 @1920 GEMESSEN) — dieselbe Spalte trägt sowohl sehr kurze als
+   auch sehr lange Titel, ein Deckel trifft beide gegenläufig. Lesbarkeit hat
+   Vorrang (§8, Grundsatz W2·31 «Lesemass wächst nie, aber nichts wird
+   unnötig abgeschnitten»). Die Spur bleibt darum `minmax(0, 1fr)` (Stand vor
+   dem Deckel, s. oben) — WIRKUNGSGLEICH mit `main`, keine Breiten- oder
+   Umbruch-Änderung, nur eine rein dekorative Zeilenführung on top.
+   Statt die Lücke zu verkleinern, überbrückt sie ein gepunkteter Leader
+   (Schweizer Fahrplan-Vorbild: Ort … Zeit) vom Titelende bis zum Spaltenrand
+   — als BACKGROUND, nicht als `border-bottom`, damit die Boxhöhe (und damit
+   nichts an Breite/Umbruch/Kappung) unverändert bleibt. `.tb-titel` füllt
+   die ganze `1fr`-Spur (auch wenn der Text kürzer ist), der Hintergrund
+   überdeckt darum automatisch genau die Lücke — kein Text-Messen nötig.
+   Schwelle 80rem (1280 px Container): GEMESSEN (headless Playwright,
+   30.9.2026, `.tb-huelle`-Breite) liegt die Lücke bei ≤1072 px Container
+   (Viewport 1024–1440) noch moderat (International med 46/max 196, Bund
+   med 73/max 507), springt aber bei ≥1392 px Container (Viewport ab 1536,
+   derselbe Sprung wie der `weit`-Token) auf International med 260/max 516,
+   Bund med 223/max 827 — 80rem trennt sauber zwischen beiden Stufen.
+   Nur ab dieser Stufe zeigen, sonst (auch bei @1024/1280/1440) unverändert
+   `main`. Farbe `--rule-soft` (derselbe Ton wie der Zeilentrenner
+   `.tb-zeile`, kein neuer Wert, §5) — auf Hover/Fokus AUS (Vertiefung sonst
+   mit dem `text-decoration:underline` überlagert, Konflikt zweier Linien
+   auf derselben Höhe). */
+@container (width >= 80rem) {
+  .tb-titel {
+    background-image: repeating-linear-gradient(to right, var(--rule-soft) 0 2px, transparent 2px 5px);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100% 1px;
+  }
+  .tb-link:hover .tb-titel, .tb-link:focus-visible .tb-titel { background-image: none; }
+}
+
+/* Derselbe Leader für die Deckungstabelle (`/materialien/deckung`,
+   `data-deckung-erlasstitel` an der Titel-`<span>` in MaterialienDeckung.tsx)
+   — dieselbe Anatomie (Erlass-Titel, dann eine Lücke, dann die Zahlenspalten),
+   derselbe frühere Deckel-Fehlschlag (2 → 74 gekappte Titel @1920, s. Commit-
+   Historie), dieselbe Lösung. KEIN `@container`: die Tabelle steckt in
+   keinem Inline-Size-Container, darum der `2xl`-Viewport (1536 px, exakt der
+   Tailwind-Breakpoint, den die Seite schon für die Spaltenbreite nutzt) statt
+   eines rem-Werts (rem in `@media` bindet an die Root-Schriftgrösse, nicht an
+   den Viewport — bei Schriftskala 1.4 wäre die Schwelle sonst verschoben).
+   GEMESSEN (main, 30.9.2026): Erlass-Spalte 648 px bis 1440 px, 968 px ab
+   1536 px, Median-Lücke Titelende→Spaltenrand 264 px @1280 → 584 px @1920 —
+   derselbe Sprung wie bei `.tb-titel` oben, dieselbe Schwelle. */
+@media (min-width: 1536px) {
+  [data-deckung-erlasstitel] {
+    background-image: repeating-linear-gradient(to right, var(--rule-soft) 0 2px, transparent 2px 5px);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100% 1px;
+  }
+}
+
 /* Zwei Spalten erst, wenn beide je ~29 rem tragen (≈ Fenster 1280 px).
    Bewusst KEINE dritte Spalte (W2·31-BILDSCHIRMBREITE B4, 25.9.2026): auf
    /gesetze (Stufe `weit`) ist die Liste in der Rechtsgebiet-Karte @1920

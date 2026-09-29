@@ -341,7 +341,16 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                     >
                       {z.key}
                     </Link>
-                    <span className="hidden truncate text-xs text-ink-500 sm:block" title={z.titel}>
+                    {/* `data-deckung-erlasstitel`: Blickfeld-Leader ab 1536 px
+                        Viewport, gepunktete Linie Titelende→Zahlenspalte statt
+                        eines Breiten-Deckels (Neuansatz 30.9.2026, Begründung
+                        und Messwerte bei `@media (min-width: 1536px)` in
+                        index.css). */}
+                    <span
+                      data-deckung-erlasstitel
+                      className="hidden truncate text-xs text-ink-500 sm:block"
+                      title={z.titel}
+                    >
                       {z.titel}
                     </span>
                   </th>
