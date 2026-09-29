@@ -302,10 +302,29 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
             MIT einer eigenen Leerspalte am Ende, die den Rest abfängt (sonst
             floss der Rest wieder zurück in die Erlass-Spalte). Die Leerspalte
             trägt `aria-hidden`, damit kein Screenreader eine leere Zelle
-            ansagt. NACHHER: Erlass-Spalte 480 px auf jeder Breite, Median-
-            Lücke 264→96 px (@1280), 584→96 px (@1920). Ersetzt die alte
-            B2-Zusage «Erlass-Spalte > 50 % der Tabellenbreite» — angepasst in
-            `e2e/materialien-breite.e2e.ts` mit Begründung (§6.3). */}
+            ansagt.
+            Nachbesserung Gegenprüfung (Bündel C, 30.9.2026, Prüferbefund 1
+            «HOCH»): `sm:w-[30rem]` auf `<col>` ist in automatischem
+            Tabellen-Layout kein Deckel, sondern eine MINDESTBREITE — die
+            Spalte wird nie schmaler, auch wenn der Rahmen es ist. GEMESSEN
+            (headless Playwright, PR-Kopf vs. `main`, `/materialien/deckung`):
+            verdeckte Zahlen-Pixel @640 88→314, @768 0→186, unter Schriftskala
+            1.4 @1024 0→284, @1280 0→28 — der Deckel griff ab `sm` (640 px)
+            immer, auch dort, wo 30 rem nie hinpassen. Der Deckel bleibt exakt
+            bei 30 rem (kein neuer Wert), wirkt aber erst ab `2xl` (1536 px,
+            derselbe Rahmen wie der `weit`-Token in tailwind.config.js) — bis
+            dahin unverändert `main`: `<th>` `sm:max-w-[16rem]`, `<col>` ohne
+            Breite, Leerspalte unter `2xl` ausgeblendet (`hidden 2xl:table-*`),
+            sonst zählte ihr Randstrich 2-4 px mit. NACHHER (derselbe Messweg,
+            alle sieben Breiten × beide Schriftskalen): verdeckt 0 überall,
+            identisch zu `main` unter 1536 px. Bei ≥1536 px bleibt der
+            Kompromiss aus Prüferbefund 2 («MITTEL») unverändert bestehen —
+            Median-Lücke 94.7 px @1920 (Ziel ≤120 px, Kriterium c erfüllt),
+            aber mehr gekappte Titel als `main` (2→74 @1920 fs0, 3→74 fs1.4):
+            das ist der PREIS des Deckels selbst (ein 30-rem-Deckel kappt
+            zwangsläufig mehr als ein Feld, das bis 968 px wachsen darf) und
+            nicht mehr durch die Breakpoint-Verschiebung behebbar — ehrlich
+            gemeldet statt erzwungen (§6.7, Rückgabe-Bericht). */}
         <div className="mt-2 overflow-x-auto lc-scrollrand-x sm:mt-4">
           <table data-deckung-tabelle className="w-full min-w-[30rem] border-collapse text-body-s sm:min-w-[38rem]">
             <caption className="sr-only">
@@ -313,9 +332,9 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
               Fassungsvergleichs. Die Spaltenköpfe sortieren.
             </caption>
             <colgroup>
-              <col className="sm:w-[30rem]" />
+              <col className="2xl:w-[30rem]" />
               <col /><col /><col /><col /><col />
-              <col />
+              <col className="hidden 2xl:table-column" />
             </colgroup>
             <thead>
               <tr>
@@ -344,14 +363,16 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                   </th>
                 ))}
                 {/* Leerspalte zum Deckel oben — fängt den Rest ab, trägt
-                    nichts an (kein `scope`, `aria-hidden`). */}
-                <th aria-hidden className="border-b-2 border-rule" />
+                    nichts an (kein `scope`, `aria-hidden`). Nur ab `2xl`
+                    aktiv (Nachbesserung Befund 1): darunter trüge ihr
+                    Randstrich sonst 2-4 px bei, die main nicht kennt. */}
+                <th aria-hidden className="hidden border-b-2 border-rule 2xl:table-cell" />
               </tr>
             </thead>
             <tbody>
               {liste.map((z) => (
                 <tr key={z.key} data-deckung-zeile={z.key} className="border-b border-rule-soft align-baseline">
-                  <th scope="row" className="max-w-[7rem] py-1.5 pr-3 text-left font-normal sm:max-w-[30rem] sm:pr-4">
+                  <th scope="row" className="max-w-[7rem] py-1.5 pr-3 text-left font-normal sm:max-w-[16rem] sm:pr-4 2xl:max-w-[30rem]">
                     {/* §5: die Erlass-Adresse hat EINE Ableitung. Hier stand
                         `/gesetze/bund/<key>` von Hand — für die 14 erfassten
                         Staatsverträge (CISG, EMRK, UNO_PAKT_I/II …) wäre das
@@ -381,7 +402,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
                   <td className="lc-ziffern w-px whitespace-nowrap py-1.5 pl-2 text-right sm:pl-4 text-ink-600">
                     {z.ohneEreignis === undefined ? '—' : nf(z.ohneEreignis)}
                   </td>
-                  <td aria-hidden />
+                  <td aria-hidden className="hidden 2xl:table-cell" />
                 </tr>
               ))}
             </tbody>

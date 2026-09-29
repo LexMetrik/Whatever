@@ -104,7 +104,15 @@ function textRechtsAbstand() {
   return { medianGap: gaps[Math.floor(gaps.length / 2)], maxGap: gaps[gaps.length - 1] };
 }
 
-for (const [ebene, maxMedian, maxMax] of [['international', 120, 250], ['bund', 150, 500]] as const) {
+// Nachbesserung Gegenprüfung (Bündel C, 30.9.2026, Prüferbefund 5 «NIEDRIG»):
+// die Gap-Sonden trugen nur Obergrenzen — ein Deckel, der zu eng wird oder
+// verschwindet (Titel und Zahl überlappen/verschmelzen), blieb grün. Jetzt je
+// eine Untergrenze knapp unter dem GEMESSENEN Ist-Wert (PR-Kopf, 30.9.2026):
+// international med 37/max 111, bund med 94/max 377.
+for (const [ebene, minMedian, maxMedian, minMax, maxMax] of [
+  ['international', 15, 120, 50, 250],
+  ['bund', 40, 150, 200, 500],
+] as const) {
   test(`/gesetze?ebene=${ebene} @1920: Blickfeld-Deckel hält die Lücke Titel→Zahl klein`, async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1080 });
     await page.goto(`/gesetze?ebene=${ebene}`);
@@ -115,7 +123,9 @@ for (const [ebene, maxMedian, maxMax] of [['international', 120, 250], ['bund', 
     }
     await expect(page.locator('.tb-zeile').first()).toBeVisible();
     const m = await page.evaluate(textRechtsAbstand);
+    expect(m.medianGap).toBeGreaterThan(minMedian);
     expect(m.medianGap).toBeLessThan(maxMedian);
+    expect(m.maxGap).toBeGreaterThan(minMax);
     expect(m.maxGap).toBeLessThan(maxMax);
   });
 }
@@ -140,5 +150,10 @@ test('/gesetze @1280 unter Schriftskala 1.4: Register-Titel bleibt unter 70 Zeic
     probe.remove();
     return sample.getBoundingClientRect().width / chW;
   });
+  // Nachbesserung Gegenprüfung (Prüferbefund 5 «NIEDRIG», 30.9.2026): nur
+  // eine Obergrenze liess einen zu eng gewordenen Deckel (Titel bricht auf
+  // fast jedem Wort) grün durch. GEMESSEN (PR-Kopf) ~59.8 ch — Untergrenze
+  // knapp darunter.
+  expect(chPerLine).toBeGreaterThan(40);
   expect(chPerLine).toBeLessThan(70);
 });
