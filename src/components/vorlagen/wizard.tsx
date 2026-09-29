@@ -195,8 +195,14 @@ export function VorlagenWizardRahmen({
         <div data-formular-karte className="border-t-2 border-b border-t-rule border-b-rule-soft pt-5 pb-6 space-y-5"
           onInput={merkeEingabe} onChange={merkeEingabe}>
           {/* key={schritt}: re-mountet den Schrittinhalt → dezenter Einblende-
-              Fade beim Schrittwechsel (Redesign E8); Fehlerbox/Buttons bleiben ruhig. */}
-          <div key={schritt} className="lc-route space-y-5">
+              Fade beim Schrittwechsel (Redesign E8); Fehlerbox/Buttons bleiben ruhig.
+              `lc-vorlagen-schritt` (W2·31-BILDSCHIRMBREITE Bündel F, 30.9.2026):
+              EIN Scope-Anker für den Lesemass-Deckel der Schritt-Hinweise
+              (index.css) — 26 Fundstellen über alle Vorlagen (`p`/`li` in
+              text-xs/text-body-s, Auszählung `mess-sweep`-Methode wie
+              e2e/seitenbreite.e2e.ts messeLesemass), EIN Deckel an DIESER
+              Klasse statt an 26 Einzelstellen (§5/§10). */}
+          <div key={schritt} className="lc-route lc-vorlagen-schritt space-y-5">
             {/* tabIndex=-1: KEINE Tab-Station (die Überschrift bleibt aus der
                 Reihenfolge), nur programmatisch fokussierbar — das Ziel des
                 Sprungs aus dem Prüf-Befund (D5). */}

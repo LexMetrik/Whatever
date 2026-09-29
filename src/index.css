@@ -3654,6 +3654,44 @@
   .lc-notice { @apply rounded-none text-ink-600; background: transparent; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
   .lc-notice-warn { @apply lc-notice bg-warn-bg text-warn-700; border-left-color: var(--warn-line); }
   .lc-notice-danger { @apply lc-notice bg-danger-bg text-danger-700; border-left-color: var(--danger-line); }
+  /* Lesemass in `.lc-notice`/-warn/-danger (W2·31-BILDSCHIRMBREITE Bündel F,
+     30.9.2026): ohne eigenen Deckel liest die Box so breit wie ihr Container.
+     Stufe nach Schriftgrösse, wie die bestehenden Belege für dieselben zwei
+     Stufen: `max-w-reading-s` an `text-body-s`-Fliesstext (ui.tsx
+     PflichtDisclaimer, VorlageSchlichtungsgesuchBs.tsx Mängelliste),
+     `max-w-kleintext` an `text-xs`-Fliesstext (wizard.tsx Speicher-Fussnote,
+     LM-125 — dort lief dieselbe Zeile bei `max-w-reading` auf 110 ch/Zeile
+     @1440). Ohne die engere text-xs-Stufe reichte EIN gemeinsamer Deckel
+     nicht: bei gleicher Breite passen in die kleinere Schrift mehr Zeichen.
+     `:where()` hält die Spezifität auf NULL (Muster wie
+     `.lc-leser :where(a[href])` oben) — eine Aufrufstelle mit eigenem
+     `max-w-*`-Utility (z. B. `materialien`s `@[62rem]/material:max-w-reading-s`)
+     gewinnt weiterhin, weil Tailwind dessen Utility-Klasse nach dieser
+     components-Regel ausspielt. Vorsorglich (kein aktueller >80ch-Fund in
+     `.lc-notice` selbst — die 26 unten sind freie `p`/`li`), falls ein
+     künftiger Hinweis doch in die Box wandert. */
+  :where(.lc-notice, .lc-notice-warn, .lc-notice-danger).text-body-s,
+  :where(.lc-notice, .lc-notice-warn, .lc-notice-danger) :where(.text-body-s) { max-width: theme('maxWidth.reading-s'); }
+  :where(.lc-notice, .lc-notice-warn, .lc-notice-danger).text-xs,
+  :where(.lc-notice, .lc-notice-warn, .lc-notice-danger) :where(.text-xs) { max-width: theme('maxWidth.kleintext'); }
+
+  /* Lesemass in den Vorlagen-Schritten (dieselbe W2·31-Ursache): die 26
+     gemeldeten Fundstellen (bis 116 Zeichen/Zeile, WCAG-Deckel 80) sind KEINE
+     `.lc-notice`, sondern freistehende Absätze/Listenpunkte — Fliesstext-Tipps
+     («Tipp: …»), Prüf-Vorbehalte, Feld-Hinweise (`Field`-`hint`-Prop, ui.tsx)
+     und die «Offene Verifikationen»-Listen der Prüf-Schritte, alle in
+     text-xs/text-body-s und ink-500/600 (Nachmessung per Playwright-Wort-Rect-
+     Block-Detection, dieselbe Methode wie `e2e/seitenbreite.e2e.ts`
+     `messeLesemass`, über alle 30 Vorlagen/alle Schritte: 26 Treffer — exakte
+     Deckung mit der Posten-Zahl). EIN Deckel an EINEM Scope-Anker statt an 26
+     Einzelstellen (§5/§10): `.lc-vorlagen-schritt` markiert den
+     Schritt-Inhalt-Rahmen (wizard.tsx, EINE Stelle, alle Vorlagen laufen
+     darüber). `:where()` (Spezifität NULL, s. o.) lässt eine Aufrufstelle mit
+     eigenem `max-w-*` weiterhin gewinnen. */
+  .lc-vorlagen-schritt :where(p, li, dd, blockquote, figcaption).text-body-s,
+  .lc-vorlagen-schritt :where(p, li, dd, blockquote, figcaption) :where(.text-body-s) { max-width: theme('maxWidth.reading-s'); }
+  .lc-vorlagen-schritt :where(p, li, dd, blockquote, figcaption).text-xs,
+  .lc-vorlagen-schritt :where(p, li, dd, blockquote, figcaption) :where(.text-xs) { max-width: theme('maxWidth.kleintext'); }
 
   /* Messing-Hervorhebungsbox (Form-Gates der Vorlagen: «damit Ihre Vorlage
      wirkt») — vorher 12× wortgleich inline nachgebaut (FAHRPLAN-DESIGN 2.1). */
