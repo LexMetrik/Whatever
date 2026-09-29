@@ -303,7 +303,7 @@ export function DeckungsSicht({ p }: { p: DeckungProjektion }) {
             floss der Rest wieder zurück in die Erlass-Spalte). Die Leerspalte
             trägt `aria-hidden`, damit kein Screenreader eine leere Zelle
             ansagt. NACHHER: Erlass-Spalte 480 px auf jeder Breite, Median-
-            Lücke 264→? / 584→? (Zahlen im PR-Bericht). Ersetzt die alte
+            Lücke 264→96 px (@1280), 584→96 px (@1920). Ersetzt die alte
             B2-Zusage «Erlass-Spalte > 50 % der Tabellenbreite» — angepasst in
             `e2e/materialien-breite.e2e.ts` mit Begründung (§6.3). */}
         <div className="mt-2 overflow-x-auto lc-scrollrand-x sm:mt-4">

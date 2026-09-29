@@ -4460,9 +4460,9 @@ html[data-lr6-anker-warten] footer { visibility: hidden; }
    Rest ab: ohne ihn würde der Rest an die `auto`-Meta-Spur fallen (Grid-Spec:
    Restraum geht an `auto`-Tracks ohne `fr`-Konkurrenz) — das Problem
    verschöbe sich nur von der Titel- auf die Meta-Spur. NACHHER (derselbe
-   Messweg): International median 260→55 px, max 516→197 px, Bund median
-   223→118 px, max 827→473 px; Mehrkappung mässig (International 0/37→2/37,
-   Bund 9/204→11/204 bei ≤2 Zeilen) — unter dem 20-%-Mass, das B4 für dieselbe
+   Messweg): International median 260→37 px, max 516→111 px, Bund median
+   223→94 px, max 827→377 px; Mehrkappung mässig (International 0/37→7/37,
+   Bund 9/204→11/204) — unter dem 20-%-Mass, das B4 für dieselbe
    Titel-Spur am Register bereits gesetzt hat (`e2e/gesetze-breite.e2e.ts`). */
 @container (width >= 30rem) {
   .tb-link {
