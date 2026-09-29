@@ -4889,6 +4889,17 @@ a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
   .kt-werkbank > .kt-einstieg {
     grid-column: 1; grid-row: 1 / span 2; align-self: start;
     border-right: 1px solid var(--rule-soft); padding-right: 1.375rem;
+    /* Posten 2026-09-26 (W2·31 B): ab hier steht der Einstieg als Spalte —
+       ohne `sticky` lief die linke Spalte beim Scrollen leer mit, ab dem
+       ersten Bildschirm. Offset/Deckel wie `pages/Suche.tsx` (`--app-kopf-h`
+       + 1.5rem Luft, dasselbe Mass unten): eigene Scrollfläche, falls die
+       aufgeklappte Liste den Rest-Viewport sprengt (die Klapp-Zeilen in
+       `ZweiachsigerEinstieg.tsx` bleiben zu, bis man selbst öffnet). */
+    position: sticky;
+    top: calc(var(--app-kopf-h) + 1.5rem);
+    max-height: calc(100dvh - var(--app-kopf-h) - 3rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   .kt-werkbank:has(> .kt-einstieg) > :not(.kt-einstieg) { grid-column: 2; }
   /* W2·31-BILDSCHIRMBREITE B10 (26.9.2026): neben der Themenleiste GENAU zwei
