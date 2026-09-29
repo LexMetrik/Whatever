@@ -78,7 +78,6 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
   liste: BrowseEntscheid[]; dichte: Dichte; onNorm: (k: string) => void;
   speicherKey: string; mitSprungleiste?: boolean;
 }) {
-  const pk = usePaneKlasse();
   // Fenster aus der Sitzung wiederherstellen — LAZY, also schon im ersten Render
   // (J1-Prüfpunkt: nach «zurück» muss das Dokument sofort wieder so hoch sein,
   // sonst greift die zentrale Scroll-Wiederherstellung in App.tsx ins Leere).
@@ -183,21 +182,31 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
   );
   if (dichte === 'karten') {
     return (
-      <div>
+      <div className="@container/rspliste">
         {sprungleiste}
         {frueherKnopf}
         {/* C-1 (Design-Konsistenz, 31.8.2026): das Raster hing als einzige
             Karten-Fläche der App noch am VIEWPORT (`xl:grid-cols-2`) statt an
             der eigenen Breite. Im Split-View war der Effekt sichtbar falsch
             herum: eine schmale Pane auf einem breiten Bildschirm bekam zwei
-            Spalten, eine breite Pane auf einem schmalen Gerät keine. `pk()`
-            wählt zwischen Viewport- und Container-Query-Stufen (48:1 die
-            hausweite Form). Die Spaltenzahl bleibt bewusst bei ZWEI: die
-            Entscheid-Karte trägt Regeste und Norm-Chips und ist breiter als
-            die Erlass-Karte des dreispaltigen `Gitter`-Rezepts — dieselbe
-            Klassenkette wäre eine Gleichsetzung zweier verschiedener Inhalte
-            (§1), darum bleiben die beiden Raster getrennt. */}
-        <div ref={behaelterRef} className={pk('grid grid-cols-1 gap-3 xl:grid-cols-2', 'grid grid-cols-1 gap-3 @3xl/pane:grid-cols-2')}>
+            Spalten, eine breite Pane auf einem schmalen Gerät keine. Die
+            Spaltenzahl bleibt bewusst bei ZWEI: die Entscheid-Karte trägt
+            Regeste und Norm-Chips und ist breiter als die Erlass-Karte des
+            dreispaltigen `Gitter`-Rezepts — dieselbe Klassenkette wäre eine
+            Gleichsetzung zweier verschiedener Inhalte (§1), darum bleiben die
+            beiden Raster getrennt.
+            W2·31-BILDSCHIRMBREITE Bündel D (29.9.2026): der frühere `pk()`-
+            Umschalter (Viewport `xl:` ausserhalb, `@3xl/pane` NUR im
+            Split-View) massporte ausserhalb einer Pane weiterhin am Fenster —
+            mit offener Seitenleiste (Sidebar.tsx, kein Split-View) blieb
+            `imPane` false, das Raster bekam also bei @1280/1440 zwei Spalten,
+            obwohl die tatsächliche Breite dafür nicht reichte (Karten < 33 rem,
+            Rot-Beweis im PR). Fix: derselbe eigene Container wie unten in der
+            Zeilen-Dichte (`@container/rspliste`), jetzt auch von der Karten-
+            Dichte getragen — er misst die reale Breite unabhängig von Pane
+            ODER Seitenleiste, `pk()`/`imPane` entfallen hier ersatzlos. Schwelle
+            unverändert `3xl` (48 rem) — dieselbe Zahl wie zuvor `@3xl/pane`. */}
+        <div ref={behaelterRef} className="grid grid-cols-1 gap-3 @3xl/rspliste:grid-cols-2">
           {sichtbar.map((e) => <EntscheidKarte key={e.key} e={e} onNorm={onNorm} />)}
         </div>
         {mehrKnopf}

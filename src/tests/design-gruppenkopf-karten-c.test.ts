@@ -178,18 +178,36 @@ describe('Stand-Chip liegt genau einmal', () => {
 });
 
 // ─── C-1 · Karten-Raster an der eigenen Breite ──────────────────────────────
+//
+// W2·31-BILDSCHIRMBREITE Bündel D (29.9.2026, deklarierte Änderung): der
+// frühere `pk()`-Umschalter (Viewport `xl:` ausserhalb, `@3xl/pane` NUR im
+// Split-View) mass ausserhalb einer Pane weiterhin am Fenster — mit offener
+// Seitenleiste (kein Split-View) blieb `imPane` false, das Raster bekam zwei
+// Spalten, obwohl die reale Breite dafür nicht reichte. Fix: derselbe eigene
+// Container wie die Zeilen-Dichte (`@container/rspliste`), `pk()`/`imPane`
+// entfallen für dieses Raster ersatzlos. Die Prüfung wandert entsprechend von
+// «wählt über pk()» auf «hängt am eigenen Container, nicht am Viewport».
 
-describe('C-1 · das Entscheid-Raster hängt an der Pane-Breite', () => {
-  it('Rechtsprechung.tsx wählt das Raster über pk()', () => {
+describe('C-1 · das Entscheid-Raster hängt an der eigenen Breite (Container-Query)', () => {
+  it('Rechtsprechung.tsx zeichnet das Karten-Raster über @container/rspliste', () => {
     const inhalt = lies('pages/Rechtsprechung.tsx');
     expect(inhalt).toContain(
-      "pk('grid grid-cols-1 gap-3 xl:grid-cols-2', 'grid grid-cols-1 gap-3 @3xl/pane:grid-cols-2')",
+      'className="grid grid-cols-1 gap-3 @3xl/rspliste:grid-cols-2"',
     );
   });
 
   it('keine Karten-Fläche setzt eine nackte Viewport-Spaltenzahl mehr', () => {
-    // Vorher: className="grid grid-cols-1 gap-3 xl:grid-cols-2" — ohne pk().
+    // Vorher: className="grid grid-cols-1 gap-3 xl:grid-cols-2" — ohne Container-Query.
     const inhalt = lies('pages/Rechtsprechung.tsx');
     expect(inhalt).not.toMatch(/className="grid grid-cols-1 gap-3 xl:grid-cols-2"/);
+  });
+
+  it('NEGATIV-KONTROLLE: der Ausdruck findet die Vorher-Form (pk()-Umschalter)', () => {
+    // Wortlaut vor Bündel D (29.9.2026): pk() wählte zwischen Viewport- und
+    // Pane-Container-Stufe, ausserhalb einer Pane also stets die Viewport-Stufe.
+    const vorher =
+      "<div ref={behaelterRef} className={pk('grid grid-cols-1 gap-3 xl:grid-cols-2', 'grid grid-cols-1 gap-3 @3xl/pane:grid-cols-2')}>";
+    expect(/className="grid grid-cols-1 gap-3 xl:grid-cols-2"/.test(vorher)).toBe(false);
+    expect(vorher).toContain("pk('grid grid-cols-1 gap-3 xl:grid-cols-2'");
   });
 });
