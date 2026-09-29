@@ -137,6 +137,18 @@ export function Tabs<T extends string>({
       // `.lc-rechner-spalten`) bricht die Leiste dort um, statt sie zu
       // schieben — GEMESSEN @1920: ZPO-Phasen 684/640 px, SchKG 1088/640 px
       // (vier von neun Phasen verborgen). Herleitung und Abwägung dort.
+      // NACHTRAG (Folgeposten 29.9.2026, nachgebessert Gegenprüfung PR #1154):
+      // derselbe Umbruch gilt seither auch UNTERHALB der 72rem-Schwelle, ab
+      // Fensterbreite 640 px (Stufe content, SchKG-Phasenleiste passt sonst
+      // nicht in 1008–1072 px) — als eigener `@media (min-width: 40rem)`-Block
+      // in index.css, OHNE obere Schranke (überschneidet sich absichtlich mit
+      // dem 72rem-Block: der hat seit dem Sprungmarke-Fix selbst kein
+      // `flex-wrap` mehr). Ein reiner `@container`-Schwellenwert träfe 640 px
+      // nicht: die Karte springt an dieser Fensterbreite selbst im Innenmass,
+      // `p-6`→`sm:p-8`, Herleitung dort. Mit fester `height: 2.25rem` an den
+      // Reitern (dieselbe Anatomie-Höhe wie im 72rem-Block, kein `min-height`: der
+      // Wächter F9/D2 lässt dort nur `var(--tap-ziel)` zu). Unterhalb 640 px
+      // (Handy) bleibt diese Klasse hier allein zuständig, unverändert.
       className={`lc-reiterleiste print:hidden flex ${HOEHE[groesse]} items-stretch gap-4 w-fit max-w-full overflow-x-auto lc-scrollrand-x max-[400px]:flex-wrap max-[400px]:h-auto max-[400px]:overflow-x-visible max-[400px]:bg-none`}
     >
       {items.map((it, i) => {
